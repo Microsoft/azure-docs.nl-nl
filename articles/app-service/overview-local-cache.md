@@ -6,12 +6,12 @@ ms.assetid: e34d405e-c5d4-46ad-9b26-2a1eda86ce80
 ms.topic: article
 ms.date: 03/04/2016
 ms.custom: seodec18
-ms.openlocfilehash: b9e43cb9188df8274d5bafa7fd9bc90c24339237
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 81782f63199a9fe8f43f56aeefcd1c68951d57a4
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286839"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852249"
 ---
 # <a name="azure-app-service-local-cache-overview"></a>Overzicht van lokale cache Azure App Service
 
@@ -52,7 +52,7 @@ De functie Azure App Service lokale cache biedt een weer gave van webrollen van 
 
 U kunt de lokale cache configureren met behulp van een combi natie van gereserveerde app-instellingen. U kunt deze app-instellingen configureren met behulp van de volgende methoden:
 
-* [Azure-portal](#Configure-Local-Cache-Portal)
+* [Azure Portal](#Configure-Local-Cache-Portal)
 * [Azure Resource Manager](#Configure-Local-Cache-ARM)
 
 ### <a name="configure-local-cache-by-using-the-azure-portal"></a>Lokale cache configureren met behulp van de Azure Portal
@@ -120,3 +120,6 @@ Lokale cache helpt te voor komen dat de app voor opslag is gestart. Uw app kan e
 
 ### <a name="does-local-cache-exclude-any-directories-from-being-copied-to-the-faster-local-drive"></a>Sluit de lokale cache alle directory's uit die naar het snellere lokale station worden gekopieerd?
 Als onderdeel van de stap waarmee de opslag inhoud wordt gekopieerd, wordt een map met de naam opslag plaats uitgesloten. Dit helpt bij scenario's waarbij uw site-inhoud mogelijk een broncode beheer opslagplaats bevat die mogelijk niet nodig is in de dag van de dag van de app. 
+
+### <a name="how-to-flush-the-local-cache-logs-after-a-site-management-operation"></a>De logboeken van de lokale cache leegmaken na een site beheer bewerking?
+Als u de logboeken van de lokale cache wilt leegmaken, stopt en start u de app opnieuw. Met deze actie wordt de oude cache gewist. 

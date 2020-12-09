@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 929aed28df2725ccde62c348a18ef7b41334e233
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 03f2109a32cd8a8c2643f3c2aa74900f4edd1cee
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172126"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852843"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -32,12 +32,12 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 
 - **Uitgebreide tabel extractie** : formulier Recognizer biedt nu uitgebreide tabel extractie, waarin onze krachtige OCR-mogelijkheden (optische teken herkenning) worden gecombineerd met een analyse model met uitgebreide informatie. Met de formulier herkenning kunt u gegevens ophalen uit tabellen, inclusief complexe tabellen met samengevoegde kolommen, rijen, zonder randen en meer. 
  
-  :::image type="content" source="./media/tables-example.jpg" alt-text="voor beeld van tabellen" lightbox="./media/tables-example.jpg":::
+  :::image type="content" source="./media/tables-example.jpg" alt-text="voorbeeld van tabellen" lightbox="./media/tables-example.jpg":::
 
  
   > [Meer informatie over indelings extractie](concept-layout.md)
 
-- **Update van client bibliotheek** : de [client bibliotheken](quickstarts/client-library.md) voor .net, Python, Java en Java script hebben algemene Beschik baarheid.
+- **Update van client bibliotheek** : de nieuwste versie van de [client bibliotheken](quickstarts/client-library.md) voor .net, Python, Java en Java script ondersteunen de API voor formulier herkenning 2,1.
 - **Nieuwe ondersteunde taal: Japans** -de volgende nieuwe talen worden nu ondersteund: voor `AnalyzeLayout` en `AnalyzeCustomForm` : Japans ( `ja` ). [Taalondersteuning](language-support.md)
 - **Tekst lijn stijl vermelding (handgeschreven/Overig) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
 - **Kwaliteits verbeteringen** : extractie verbeteringen, waaronder de extractie van één cijfer.

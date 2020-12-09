@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 1299cbf1b837315a1a95c8a2ec2e4ed0706d959c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 70235001ad28901abd3c47872a6a241422e6f916
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999325"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763645"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -261,7 +261,7 @@ Definieer de verwijderingsmethode met de volgende code:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u geleerd hoe u de Face-clientbibliotheek voor .NET gebruikt om basistaken voor gezichtsherkenning uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
+In deze quickstart hebt u geleerd hoe u de Face-clientbibliotheek voor .NET gebruikt om eenvoudige gezichtsherkenningstaken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
 
 > [!div class="nextstepaction"]
 > [Verwijzing naar de Face-API (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)

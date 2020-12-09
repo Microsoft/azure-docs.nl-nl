@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 543e6115be30963600d867bb9c2a03dfbb54e9f1
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: abc8cffa3d5b9dffb55beabc90cdaecb3adc647f
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576550"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852520"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Het voorbeeldhulpprogramma voor labelen implementeren
 
@@ -35,7 +35,7 @@ De snelste manier om gegevens labelen te beginnen, is het hulp programma voor he
 Voordat we aan de slag gaan, is het belang rijk te weten dat er twee manieren zijn om het hulp programma voor het labelen van het voor beeld te implementeren in een Azure container instance (ACI). Beide opties worden gebruikt voor het uitvoeren van het hulp programma labelen met ACI: 
 
 * [Azure Portal gebruiken](#azure-portal)
-* [De Azure CLI gebruiken](#azure-cli)
+* [Met behulp van de Azure CLI](#azure-cli)
 
 ### <a name="azure-portal"></a>Azure Portal
 
@@ -99,6 +99,9 @@ Volg deze stappen om een nieuwe resource te maken met behulp van de Azure Portal
 
 > [!NOTE]
 > Wanneer u uw web-app maakt, kunt u ook autorisatie/verificatie configureren. Dit is niet nodig om aan de slag te gaan. 
+
+> [!IMPORTANT]
+> Mogelijk moet u TLS inschakelen voor uw web-app om het adres weer te geven `https` . Volg de instructies in [een TLS-eind punt inschakelen](https://docs.microsoft.com/azure/container-instances/container-instances-container-group-ssl) om een zijspan wagen in te stellen dan TLS/SSL biedt voor uw web-app.
 
 ### <a name="azure-cli"></a>Azure CLI
 

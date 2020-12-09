@@ -2,13 +2,13 @@
 title: Koppelings sjablonen voor implementatie
 description: Hierin wordt beschreven hoe u gekoppelde sjablonen in een Azure Resource Manager sjabloon gebruikt om een modulaire sjabloon oplossing te maken. Toont hoe parameter waarden worden door gegeven, geef een parameter bestand op en dynamisch gemaakte Url's.
 ms.topic: conceptual
-ms.date: 11/06/2020
-ms.openlocfilehash: 603445fdd96cc72a2d64bae21a47cfeabd6dd167
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.date: 12/07/2020
+ms.openlocfilehash: 1e2ccc57b42f8072c9aa28612d534507b9a674ed
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366333"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852095"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources
 
@@ -380,6 +380,12 @@ Zie voor meer informatie:
 - [Zelf studie: een sjabloon specificatie met gekoppelde sjablonen maken](./template-specs-create-linked.md).
 - [Zelf studie: een sjabloon specificatie als gekoppelde sjabloon implementeren](./template-specs-deploy-linked-template.md).
 
+## <a name="dependencies"></a>Afhankelijkheden
+
+Net als bij andere resource typen kunt u afhankelijkheden instellen tussen de gekoppelde sjablonen. Als de resources in één gekoppelde sjabloon moeten worden geïmplementeerd vóór resources in een tweede gekoppelde sjabloon, stelt u de tweede sjabloon in die afhankelijk is van de eerste.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/linked-dependency.json" highlight="10,22,24":::
+
 ## <a name="contentversion"></a>contentVersion
 
 U hoeft de `contentVersion` eigenschap voor de eigenschap of niet op te geven `templateLink` `parametersLink` . Als u geen opgeeft `contentVersion` , wordt de huidige versie van de sjabloon geïmplementeerd. Als u een waarde voor de inhouds versie opgeeft, moet deze overeenkomen met de versie in de gekoppelde sjabloon. anders mislukt de implementatie met een fout.
@@ -388,7 +394,7 @@ U hoeft de `contentVersion` eigenschap voor de eigenschap of niet op te geven `t
 
 In de vorige voor beelden zijn in code vastgelegde URL-waarden voor de sjabloon koppelingen weer gegeven. Deze benadering werkt mogelijk voor een eenvoudige sjabloon, maar werkt niet goed voor een groot aantal modulaire sjablonen. In plaats daarvan kunt u een statische variabele maken om een basis-URL voor de hoofd sjabloon op te slaan en vervolgens dynamisch Url's te maken voor de gekoppelde sjablonen van die basis-URL. Het voor deel van deze benadering is dat u de sjabloon eenvoudig kunt verplaatsen of splitsen omdat u alleen de statische variabele in de hoofd sjabloon hoeft te wijzigen. In de hoofd sjabloon worden de juiste Uri's door gegeven in de sjabloon die is samengesteld.
 
-In het volgende voor beeld ziet u hoe u een basis-URL gebruikt om twee Url's te maken voor gekoppelde sjablonen ( **sharedTemplateUrl** en **vmTemplate** ).
+In het volgende voor beeld ziet u hoe u een basis-URL gebruikt om twee Url's te maken voor gekoppelde sjablonen (**sharedTemplateUrl** en **vmTemplate**).
 
 ```json
 "variables": {
@@ -472,156 +478,19 @@ Bij het ophalen van een uitvoer eigenschap van een gekoppelde sjabloon, mag de n
 
 De volgende voor beelden laten zien hoe u kunt verwijzen naar een gekoppelde sjabloon en een uitvoer waarde kunt ophalen. De gekoppelde sjabloon retourneert een eenvoudig bericht.  Eerst de gekoppelde sjabloon:
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "variables": {},
-  "resources": [],
-  "outputs": {
-    "greetingMessage": {
-      "value": "Hello World",
-      "type" : "string"
-    }
-  }
-}
-```
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/helloworld.json":::
 
 Met de hoofd sjabloon wordt de gekoppelde sjabloon geïmplementeerd en wordt de geretourneerde waarde opgehaald. Er wordt verwezen naar de implementatie bron op naam en de naam van de eigenschap die wordt geretourneerd door de gekoppelde sjabloon.
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "variables": {},
-  "resources": [
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
-      "name": "linkedTemplate",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[uri(deployment().properties.templateLink.uri, 'helloworld.json')]",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    }
-  ],
-  "outputs": {
-    "messageFromLinkedTemplate": {
-      "type": "string",
-      "value": "[reference('linkedTemplate').outputs.greetingMessage.value]"
-    }
-  }
-}
-```
-
-Net als bij andere resource typen kunt u afhankelijkheden instellen tussen de gekoppelde sjabloon en andere resources. Als voor andere resources een uitvoer waarde van de gekoppelde sjabloon is vereist, moet u ervoor zorgen dat de gekoppelde sjabloon wordt geïmplementeerd. Of, wanneer de gekoppelde sjabloon afhankelijk is van andere resources, moet u ervoor zorgen dat andere resources worden geïmplementeerd vóór de gekoppelde sjabloon.
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/helloworldparent.json" highlight="10,23":::
 
 In het volgende voor beeld ziet u een sjabloon waarmee een openbaar IP-adres wordt geïmplementeerd en de resource-ID van de Azure-resource wordt geretourneerd voor die open bare IP:
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "publicIPAddresses_name": {
-      "type": "string"
-    }
-  },
-  "variables": {},
-  "resources": [
-    {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2018-11-01",
-      "name": "[parameters('publicIPAddresses_name')]",
-      "location": "eastus",
-      "properties": {
-        "publicIPAddressVersion": "IPv4",
-        "publicIPAllocationMethod": "Dynamic",
-        "idleTimeoutInMinutes": 4
-      },
-      "dependsOn": []
-    }
-  ],
-  "outputs": {
-    "resourceID": {
-      "type": "string",
-      "value": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_name'))]"
-    }
-  }
-}
-```
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/public-ip.json" highlight="27":::
 
 Als u het open bare IP-adres uit de vorige sjabloon wilt gebruiken bij het implementeren van een load balancer, koppelt u deze aan de sjabloon en declareert u een afhankelijkheid van de `Microsoft.Resources/deployments` resource. Het open bare IP-adres op de load balancer wordt ingesteld op de uitvoer waarde van de gekoppelde sjabloon.
 
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "loadBalancers_name": {
-      "defaultValue": "mylb",
-      "type": "string"
-    },
-    "publicIPAddresses_name": {
-      "defaultValue": "myip",
-      "type": "string"
-    }
-  },
-  "variables": {},
-  "resources": [
-    {
-      "type": "Microsoft.Network/loadBalancers",
-      "apiVersion": "2018-11-01",
-      "name": "[parameters('loadBalancers_name')]",
-      "location": "eastus",
-      "properties": {
-        "frontendIPConfigurations": [
-          {
-            "name": "LoadBalancerFrontEnd",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                // this is where the output value from linkedTemplate is used
-                "id": "[reference('linkedTemplate').outputs.resourceID.value]"
-              }
-            }
-          }
-        ],
-        "backendAddressPools": [],
-        "loadBalancingRules": [],
-        "probes": [],
-        "inboundNatRules": [],
-        "outboundNatRules": [],
-        "inboundNatPools": []
-      },
-      // This is where the dependency is declared
-      "dependsOn": [
-        "linkedTemplate"
-      ]
-    },
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
-      "name": "linkedTemplate",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[uri(deployment().properties.templateLink.uri, 'publicip.json')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters":{
-          "publicIPAddresses_name":{"value": "[parameters('publicIPAddresses_name')]"}
-        }
-      }
-    }
-  ]
-}
-```
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json" highlight="28,41":::
 
 ## <a name="deployment-history"></a>Implementatie geschiedenis
 
@@ -803,7 +672,7 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 
 In de volgende voor beelden ziet u veelvoorkomende toepassingen van gekoppelde sjablonen.
 
-|Hoofd sjabloon  |Een gekoppelde sjabloon |Beschrijving  |
+|Hoofd sjabloon  |Een gekoppelde sjabloon |Description  |
 |---------|---------| ---------|
 |[Hallo wereld](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Retourneert een teken reeks uit een gekoppelde sjabloon. |
 |[Load Balancer met openbaar IP-adres](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Hiermee wordt het open bare IP-adres uit de gekoppelde sjabloon geretourneerd en wordt die waarde ingesteld in load balancer. |

@@ -9,12 +9,12 @@ metadata:
   author: ggailey777
   ms.author: azfundocs
   ms.date: 09/17/2019
-  ms.openlocfilehash: 576b35c357c533918ff9bc384d816217730d34b1
-  ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+  ms.openlocfilehash: c2271970fb9a8b500e78687547030d39c5f241e3
+  ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/20/2020
-  ms.locfileid: "94965337"
+  ms.lasthandoff: 12/07/2020
+  ms.locfileid: "96751705"
 landingContent:
 - title: Over Azure Functions
   linkLists:
@@ -42,6 +42,8 @@ landingContent:
     links:
     - text: Uw eerste functie maken (C#)
       url: create-first-function-vs-code-csharp.md
+    - text: Uw eerste functie maken (Go)
+      url: create-first-function-vs-code-other.md?tabs=go
     - text: Uw eerste functie maken (Java)
       url: create-first-function-vs-code-java.md
     - text: Uw eerste functie maken (JavaScript)
@@ -50,6 +52,8 @@ landingContent:
       url: create-first-function-vs-code-powershell.md
     - text: Uw eerste functie maken (Python)
       url: create-first-function-vs-code-python.md
+    - text: Uw eerste functie maken (Rust)
+      url: create-first-function-vs-code-other.md?tabs=rust
     - text: Uw eerste functie maken (TypeScript)
       url: create-first-function-vs-code-typescript.md
   - linkListType: learn

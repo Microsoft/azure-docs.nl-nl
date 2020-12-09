@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: 4d29d7401cf944e8d999db847ce2e1266169ea34
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4635bcc51d2ab626b16ddcf02e772bf3df3cad4d
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448418"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763737"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Key Vault integreren met DigiCert-certificeringsinstantie
 
@@ -128,7 +128,10 @@ Als het certificaat is uitgegeven in de status 'uitgeschakeld' in de Azure-porta
 
  ![Certificaatbewerking](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
 
-Raadpleeg de [Certificaatbewerkingen in de REST API-naslag voor Key Vault](/rest/api/keyvault) voor meer informatie. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen.
+Foutbericht: 'Voer een samenvoegingsbewerking uit om deze aanvraag voor een certificaat te voltooien'.
+U moet de CSR die door de CA is ondertekend, samenvoegen om deze aanvraag te voltooien. Klik [hier](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-signing-request) voor meer informatie
+
+Raadpleeg de [Certificaatbewerkingen in de Key Vault REST API-referentie](/rest/api/keyvault) voor meer informatie. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

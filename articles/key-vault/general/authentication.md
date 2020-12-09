@@ -7,12 +7,12 @@ ms.date: 08/27/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 7423114d2da23207dfcc1a329675b8c902b1f320
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 455caf0b80d82b03f8d00929addeab15a1af6d7e
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754212"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Verifiëren bij Azure Key Vault
 
@@ -102,6 +102,9 @@ Zie [Toegang tot Azure Key Vault achter een firewall](./access-behind-firewall.m
 In het volgende diagram ziet u het proces waarbij een toepassing een Key Vault API aanroept voor het ophalen van een geheim:
 
 ![De Azure Key Vault-verificatiestroom](../media/authentication/authentication-flow.png)
+
+> [!NOTE]
+> Key Vault SDK-clients voor geheimen, certificaten en sleutels doen een extra aanroep naar Key Vault zonder toegangstoken, wat resulteert in 401-reactie om gegevens van de tenant op te halen. Zie [Verificatie, aanvragen en antwoorden](authentication-requests-and-responses.md) voor meer informatie
 
 ## <a name="code-examples"></a>Codevoorbeelden
 

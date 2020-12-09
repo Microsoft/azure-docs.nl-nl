@@ -66,6 +66,8 @@
           href: sap-hana-backup-support-matrix.md
         - name: Ondersteuningsmatrix voor back-ups van Azure-bestandsshares
           href: azure-file-share-support-matrix.md
+        - name: Active Directory-domeincontrollers
+          href: active-directory-backup-restore.md
         - name: Ondersteunde VM-SKU's voor Azure Policy
           href: backup-azure-policy-supported-skus.md
     - name: Veelgestelde vragen

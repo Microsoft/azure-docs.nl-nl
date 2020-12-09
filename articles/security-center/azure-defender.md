@@ -7,12 +7,12 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 41d98750f3c869eff5abf7482a9bb04435407318
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8bf3959651048a7a568df1d94aa07aa206663d50
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436756"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750982"
 ---
 # <a name="introduction-to-azure-defender"></a>Inleiding tot Azure Defender
 
@@ -39,6 +39,8 @@ Als u Azure Defender inschakelt in het gedeelte **Prijzen en instellingen** van 
 - [Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)
 - [Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)
 - [Azure Defender voor Key Vault](defender-for-key-vault-introduction.md)
+- [Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)
+- [Azure Defender voor DNS](defender-for-dns-introduction.md)
 
 Elk van deze abonnementen wordt afzonderlijk beschreven in de documentatie voor Security Center.
 
@@ -61,9 +63,9 @@ Implementeer [Azure Arc](https://azure.microsoft.com/services/azure-arc/) en sch
 
 
 
-## <a name="security-alerts"></a>Beveiligingswaarschuwingen 
+## <a name="azure-defender-security-alerts"></a>Beveiligingswaarschuwingen in Azure Defender 
 
-Wanneer Azure Defender een bedreiging detecteert in een gedeelte van uw omgeving, wordt een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren.
+Wanneer Azure Defender een bedreiging detecteert in een gedeelte van uw omgeving, wordt een beveiligingswaarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren.
 
 U kunt een waarschuwing altijd exporteren, ongeacht of deze is gegenereerd door Security Center of door Security Center is ontvangen van een geïntegreerd beveiligingsproduct. Als u waarschuwingen wilt exporteren naar Azure Sentinel, een extern SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen streamen naar een SIEM-, SOAR- of IT Service Management-oplossing](export-to-siem.md).
 

@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/30/2020
+ms.date: 12/07/2020
 ms.author: memildin
-ms.openlocfilehash: 0dbd208cea64a3b2dc22f7603f654127e5b46294
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: d8b690201ea4349f9577377ff24c91bd75ecd58b
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511760"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751866"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -37,6 +37,7 @@ Updates in december omvatten:
 
 - [Azure Defender voor SQL-servers op computers is algemeen beschikbaar](#azure-defender-for-sql-servers-on-machines-is-generally-available)
 - [Azure Defender voor SQL-ondersteuning voor een toegewezen SQL-pool in Azure Synapse Analytics is algemeen beschikbaar](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
+- [Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Azure Defender voor SQL-servers op computers is algemeen beschikbaar
 
@@ -68,6 +69,24 @@ Azure Defender voor SQL beveiligt uw toegewezen SQL-pools met:
 Azure Defender voor SQL-ondersteuning voor SQL-pools in Azure Synapse Analytics wordt automatisch toegevoegd aan de bundel Azure SQL-databases in Azure Security Center. Op de pagina met de Synapse-werkruimte in Azure Portal ziet u een nieuw tabblad Azure Defender voor SQL.
 
 Lees meer informatie over [Azure Defender voor SQL](defender-for-sql-introduction.md).
+
+
+### <a name="two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview"></a>Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)
+
+We hebben twee nieuwe, cloudeigen beschermingsmogelijkheden tegen bedreigingen toegevoegd voor uw Azure-omgeving.
+
+Deze nieuwe beschermingen verbeteren uw tolerantie tegen aanvullen van bedreigende actoren en vergroten het aantal Azure-resources dat wordt beschermd door Azure Defender.
+
+- **Azure Defender voor Resource Manager** - bewaakt automatisch alle resourcebeheerbewerkingen die in uw organisatie worden uitgevoerd. Zie voor meer informatie:
+    - [Inleiding op Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)
+    - [Reageren op Azure Defender voor Resource Manager-waarschuwingen](defender-for-resource-manager-usage.md)
+    - [Lijst met waarschuwingen door Azure Defender voor Resource Manager](alerts-reference.md#alerts-resourcemanager)
+
+- **Azure Defender voor DNS** - bewaakt continu alle DNS-query's van uw Azure-resources. Zie voor meer informatie:
+    - [Inleiding tot Azure Defender voor DNS](defender-for-dns-introduction.md)
+    - [Reageren op Azure Defender voor DNS-waarschuwingen](defender-for-dns-usage.md)
+    - [Lijst met waarschuwingen door Azure Defender voor DNS](alerts-reference.md#alerts-dns)
+
 
 ## <a name="november-2020"></a>November 2020
 
@@ -124,7 +143,7 @@ Zie [NIST SP 800-171 R2](https://csrc.nist.gov/publications/detail/sp/800-171/re
 
 U kunt de lijst met aanbevelingen voor de beveiliging nu filteren op verschillende criteria. In het volgende voorbeeld is de lijst met aanbevelingen gefilterd zodat er aanbevelingen worden weergegeven die voldoen aan de volgende criteria:
 
-- Ze zijn **algemeen beschikbaar** (d.w.z. geen preview)
+- zijn **algemeen beschikbaar** (niet in preview)
 - Ze zijn bedoeld voor **opslagaccounts**
 - Ze bieden ondersteuning voor **snelle oplossingen** voor herstel
 
@@ -226,7 +245,7 @@ Meer informatie over [Azure Firewall](https://azure.microsoft.com/services/azure
 
 De aanbeveling **Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services** bevat nu een snelle oplossing.
 
-Zie [Aanbevelingen voor beveiliging: een naslaggids](recommendations-reference.md) voor meer informatie over deze aanbeveling en alle andere aanbevelingen van Security Center.
+Raadpleeg [Aanbevelingen voor beveiliging: een naslaggids](recommendations-reference.md) voor meer informatie over deze aanbeveling en alle andere aanbevelingen van Security Center.
 
 :::image type="content" source="./media/release-notes/authorized-ip-ranges-recommendation.png" alt-text="Aanbeveling Geautoriseerde IP-bereiken moeten worden gedefinieerd voor Kubernetes Services met de snelle oplossing":::
 

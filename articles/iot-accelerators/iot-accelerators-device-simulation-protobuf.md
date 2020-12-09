@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
-ms.openlocfilehash: 12aa18c966745b450b3c9aa55e87e576b0c3f99b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 77a795b8f704084b612a2dcbd364b8d5be0a3333
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018525"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852146"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Telemetrie serialiseren met protocol buffers
 
@@ -277,4 +277,4 @@ Veel IoT Hub-functies bieden geen systeem eigen ondersteuning voor protobuf of a
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt geleerd hoe u apparaat simulatie kunt aanpassen om protobuf te gebruiken voor het verzenden van telemetrie, is de volgende stap nu het leren om [een aangepaste installatie kopie in de cloud te implementeren](iot-accelerators-device-simulation-deploy-image.md).
+Nu u hebt geleerd hoe u apparaat simulatie kunt aanpassen om protobuf te gebruiken om telemetrie te verzenden, gaat u de volgende stap naar de GitHub-opslag plaats voor meer informatie over het [simuleren van apparaten](https://github.com/Azure/device-simulation-dotnet).

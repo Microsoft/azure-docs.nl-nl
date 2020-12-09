@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 3295815be035544d27da52926e5271c2c5551f28
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 58891bdb4601744129c97454f43202d3ba07b709
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076042"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852554"
 ---
 # <a name="create-an-advanced-device-model"></a>Een geavanceerd apparaatmodel maken
 
@@ -30,15 +30,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Als u de stappen in deze hand leiding wilt volgen, hebt u een geïmplementeerd exemplaar van Device simulatie in uw Azure-abonnement nodig.
 
-Als u Apparaatsimulatie nog niet hebt geïmplementeerd, moet u de snelstart [Een IoT-apparaatsimulatie in Azure implementeren en uitvoeren](quickstart-device-simulation-deploy.md) voltooien.
+Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
 
 ### <a name="open-device-simulation"></a>Apparaatsimulatie openen
 
-Als u Apparaatsimulatie in uw browser wilt uitvoeren, gaat u eerst naar [Oplossingsverbeteringen van Microsoft Azure IoT](https://www.azureiotsolutions.com).
-
-Mogelijk wordt u gevraagd u aan te melden met de referenties van uw Azure-abonnement.
-
-Klik vervolgens op starten op de tegel voor apparaat simulatie die u hebt geïmplementeerd in de werk **balk** [implementeren en een IOT-apparaat simuleren in azure Quick Start](quickstart-device-simulation-deploy.md) .
+Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
 
 ## <a name="device-models"></a>Apparaatmodellen
 
@@ -89,7 +85,7 @@ De volgende eigenschappen beschrijven het model van het apparaat. Elk type heeft
 
 ### <a name="iot-protocol"></a>IoT-Protocol
 
-IoT-apparaten kunnen verbinding maken met behulp van verschillende protocollen. Met de simulatie kunt u **AMQP**, **MQTT**of **http**gebruiken:
+IoT-apparaten kunnen verbinding maken met behulp van verschillende protocollen. Met de simulatie kunt u **AMQP**, **MQTT** of **http** gebruiken:
 
 ```json
 "Protocol": "AMQP"
@@ -166,7 +162,7 @@ De velden die in het schema worden weer gegeven, kunnen van de volgende typen zi
 * Object-geserialiseerd met JSON
 * Binair geserialiseerd met base64
 * Tekst
-* Boolean
+* Booleaans
 * Geheel getal
 * Dubbel
 * DateTime
@@ -188,7 +184,7 @@ Gesimuleerde apparaten kunnen ook reageren op methode aanroepen, in welk geval z
 
 In deze hand leiding ziet u hoe u een model maakt voor een drone. De drone keert wille keurig rond een initiële set coördinaten om locatie en hoogte te wijzigen.
 
-Kopieer de volgende JSON naar een tekst editor en sla deze ** op alsdrone.jsop**.
+Kopieer de volgende JSON naar een tekst editor en sla deze **op alsdrone.jsop**.
 
 ### <a name="device-definition-json-example"></a>JSON-voor beeld van Device definition
 

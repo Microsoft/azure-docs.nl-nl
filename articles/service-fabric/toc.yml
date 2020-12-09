@@ -6,7 +6,7 @@
       href: service-fabric-overview.md
     - name: Beheerde Service Fabric-clusters
       href: overview-managed-cluster.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: ARM-sjabloon
@@ -687,7 +687,7 @@
                   href: service-fabric-how-to-remove-node-type.md
             - name: Upgraden
               items:
-                - name: Een VM-schaalsetextensie toevoegen aan een beheerd clusterknooppunttype
+                - name: Een virtuelemachineschaalsetextensie toevoegen aan een beheerd clusterknooppunttype
                   href: how-to-managed-cluster-vmss-extension.md
                 - name: De Service Fabric-versie upgraden
                   href: service-fabric-cluster-upgrade-version-azure.md
@@ -797,6 +797,8 @@
               href: configure-existing-cluster-enable-managed-identity-token-service.md
             - name: Een nieuw Azure Service Fabric-cluster configureren met beheerde identiteit
               href: configure-new-azure-service-fabric-enable-managed-identity.md
+            - name: Een beheerd Service Fabric-cluster configureren met een beheerde identiteit
+              href: how-to-managed-identity-managed-cluster-virtual-machine-scale-sets.md
         - name: Installatie van toepassing
           items:
             - name: Een toepassing implementeren met beheerde identiteit

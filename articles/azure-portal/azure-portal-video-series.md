@@ -4,12 +4,12 @@ description: Vind video demo's voor het werken met Azure-Services in de portal. 
 keywords: ''
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0762174a3207c0620d3b6413d14c817014fc49a0
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 131ec94e321388a3578cd2fd59fdb2fd75339c5e
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745856"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852605"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Videoserie met instructies voor de Azure-portal
 
@@ -17,17 +17,17 @@ In de video serie van de Azure Portal wordt beschreven hoe u kunt werken met Azu
 
 ## <a name="featured-video"></a>Aanbevolen video
 
-In deze aanbevolen video laten we zien hoe u een App Service domein maakt en beheert.
+In deze aanbevolen video laten we u zien hoe u aan de slag kunt gaan in azure met behulp van het Azure Quick Start Center.
 
-> [!VIDEO https://www.youtube.com/embed/b1kDT8-6a3g]
+> [!VIDEO https://www.youtube.com/embed/mb5k9nXMtBM]
 
-[Een App Service domein maken en beheren](https://www.youtube.com/watch?v=b1kDT8-6a3g)
+[Aan de slag met Azure met behulp van het Azure Quick Start Center](https://www.youtube.com/watch?v=mb5k9nXMtBM)
 
 Over deze recente Video's die u mogelijk hebt gemist:
 
-| [Een aangepast domein toevoegen en beveiligen op uw App Service web-app](https://www.youtube.com/watch?v=bXP6IvNYISw)  | [Verbeteringen in de ervaring van de virtuele Linux-machine](https://www.youtube.com/watch?v=obg6Fq2T898)  | [BLOB-versie beheer gebruiken](https://www.youtube.com/watch?v=m7e9h1gedWQ)  |
+| [Toepassingen beheren in azure Kubernetes service](https://www.youtube.com/watch?v=YfARHb52Bp4)  | [Azure-werkmappen maken met behulp van Logboeken en para meters](https://www.youtube.com/watch?v=EC7n1Oo6D-o)  | [Een aangepast domein toevoegen en beveiligen op uw App Service web-app](https://www.youtube.com/watch?v=bXP6IvNYISw) |
 | ------| ------ | ------ |
-| [![Afbeelding van YouTube video over het toevoegen en beveiligen van een aangepast domein op uw App Service web-app](https://i.ytimg.com/vi/bXP6IvNYISw/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAf2gcTSuNBP-DczGeEB7rQLKc4UQ)](http://www.youtube.com/watch?v=bXP6IvNYISw) | [![Afbeelding van YouTube video over verbeteringen in de ervaring van de virtuele Linux-machine](https://i.ytimg.com/vi/obg6Fq2T898/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAiBhmM0tZo_eV_u_JClkx3SXaWFw)](https://www.youtube.com/watch?obg6Fq2T898) | [![Afbeelding van YouTube video over het gebruik van BLOB-versie beheer](https://i.ytimg.com/vi/m7e9h1gedWQ/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBUZwS_xaZIkYNakpHFvFIiD8i-Tw)](http://www.youtube.com/watch?v=m7e9h1gedWQ) |
+| [![Afbeelding van YouTube video over het beheren van toepassingen in azure Kubernetes service](https://i.ytimg.com/vi/YfARHb52Bp4/hqdefault.jpg)](https://www.youtube.com/watch?YfARHb52Bp4) | [![Afbeelding van YouTube video over het bouwen van Azure-werkmappen met behulp van Logboeken en para meters](https://i.ytimg.com/vi/EC7n1Oo6D-o/hqdefault.jpg)](http://www.youtube.com/watch?v=EC7n1Oo6D-o) | [![Afbeelding van YouTube video over het toevoegen en beveiligen van een aangepast domein op uw App Service web-app](https://i.ytimg.com/vi/bXP6IvNYISw/hqdefault.jpg)](http://www.youtube.com/watch?v=bXP6IvNYISw) |
 
 ## <a name="video-playlist"></a>Video-afspeel lijst
 

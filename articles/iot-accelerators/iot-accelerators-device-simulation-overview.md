@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.date: 12/03/2018
 ms.author: dobett
-ms.openlocfilehash: f58eb05ed582cf18157a76f4d637d72a228f4e96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7be0278fd8870395b8495168eb9723780eba4b26
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "65464868"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852367"
 ---
 # <a name="device-simulation-solution-accelerator-overview"></a>Overzicht van de oplossingsversneller voor apparaatsimulatie
 
@@ -36,7 +36,7 @@ Simulatie van apparaten is gratis. Device simulatie wordt echter geïmplementeer
 
 ## <a name="sample-simulations"></a>Voorbeeld simulaties
 
-Wanneer u Device simulatie implementeert, krijgt u enkele voor beelden van simulaties en voorbeeld apparaten. U kunt deze voor beelden gebruiken voor meer informatie over het gebruik van simulatie van apparaten. Als u aan de slag wilt gaan, voert u een [voorbeeld simulatie uit die 10 vracht wagens simuleert](quickstart-device-simulation-deploy.md). U kunt ook [uw eigen simulatie maken met behulp van een van de beschik bare voorbeeld apparaten](iot-accelerators-device-simulation-create-simulation.md).
+Wanneer u Device simulatie implementeert, krijgt u enkele voor beelden van simulaties en voorbeeld apparaten. U kunt deze voor beelden gebruiken voor meer informatie over het gebruik van simulatie van apparaten. Voer een [voorbeeld simulatie](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md)uit om aan de slag te gaan. U kunt ook [uw eigen simulatie maken met behulp van een van de beschik bare voorbeeld apparaten](iot-accelerators-device-simulation-create-simulation.md).
 
 ![Simulatieconfiguratie](media/iot-accelerators-device-simulation-overview/samplesimulation1.png)
 
@@ -60,7 +60,7 @@ Met geavanceerde Device-modellen kunt u:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd over de apparaat simulatie oplossings versneller en de mogelijkheden ervan. Ga verder met de Snelstartgids om aan de slag te gaan met de oplossings versneller:
+In dit artikel hebt u geleerd over de apparaat simulatie oplossings versneller en de mogelijkheden ervan. Ga naar de GitHub-opslag plaats om de oplossings versneller te implementeren:
 
 > [!div class="nextstepaction"]
-> [een IoT-apparaatsimulatie in Azure implementeren en uitvoeren](quickstart-device-simulation-deploy.md)
+> [een IoT-apparaatsimulatie in Azure implementeren en uitvoeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md)

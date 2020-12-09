@@ -7,20 +7,19 @@ services: iot-fundamentals
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: dobett
-ms.openlocfilehash: 0678b2c36d341b2bc2bd9be755b9a6213acdd462
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 0cd98705d2d6947ff766f528e4e92f1e51bcc42d
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206081"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852809"
 ---
 # <a name="what-azure-technologies-and-services-can-you-use-to-create-iot-solutions"></a>Welke Azure-technologieën en -services kunt u gebruiken om IoT-oplossingen te maken?
 
 Azure IoT-technologieën en -services bieden u opties voor het maken van een breed scala aan IoT-oplossingen waarmee digitale transformatie voor uw organisatie mogelijk wordt. U kunt bijvoorbeeld:
 
-- Gebruik [Azure IoT Central](https://apps.azureiotcentral.com), een beheerd IoT-toepassingsplatform voor het bouwen en implementeren van een veilige IoT-oplossing op bedrijfsniveau. IoT Central bevat een verzameling branchespecifieke toepassingssjablonen, zoals voor de detailhandel en gezondheidszorg, om het ontwikkelingsproces van uw oplossing te versnellen.
-- Breid de open-source codebasis uit voor een Azure IoT-[oplossingsverbetering](https://www.azureiotsolutions.com) om een veelvoorkomend IoT-scenario te implementeren, zoals externe controle of predictief onderhoud.
-- Gebruik Azure IoT-platformservices zoals [Azure IoT Hub](../iot-hub/about-iot-hub.md) en de [Azure IoT-apparaat-SDK's](../iot-hub/iot-hub-devguide-sdks.md) om een aangepaste IoT-oplossing helemaal zelf te bouwen.
+* Gebruik [Azure IoT Central](https://apps.azureiotcentral.com), een beheerd IoT-toepassingsplatform voor het bouwen en implementeren van een veilige IoT-oplossing op bedrijfsniveau. IoT Central bevat een verzameling branchespecifieke toepassingssjablonen, zoals voor de detailhandel en gezondheidszorg, om het ontwikkelingsproces van uw oplossing te versnellen.
+* Gebruik Azure IoT-platformservices zoals [Azure IoT Hub](../iot-hub/about-iot-hub.md) en de [Azure IoT-apparaat-SDK's](../iot-hub/iot-hub-devguide-sdks.md) om een aangepaste IoT-oplossing helemaal zelf te bouwen.
 
 ![Azure IoT-technologieën, -services en -oplossingen](./media/iot-services-and-technologies/iot-technologies-services.png)
 
@@ -40,10 +39,8 @@ De [Azure IoT-oplossingsverbeteringen](https://www.azureiotsolutions.com) zijn e
 
 Azure IoT-oplossingsverbeteringen bieden een hoog niveau van controle over uw IoT-oplossing. De oplossingsverbeteringen bevatten vooraf ontwikkelde oplossingen voor veelvoorkomende IoT-scenario's die u binnen enkele minuten kunt implementeren in uw Azure-abonnement. De scenario's omvatten:
 
-  - Externe bewaking
-  - Verbonden factory
-  - Voorspellend onderhoud
-  - Apparaatsimulatie
+* Verbonden factory
+* Apparaatsimulatie
 
 De opensource-codebasis voor alle oplossingsverbeteringen is beschikbaar op GitHub. Download de code om een oplossingsverbetering aan te passen om te voldoen aan uw specifieke IoT-vereisten.
 
@@ -92,4 +89,3 @@ Probeer een van de snelstarts voor een praktijkervaring:
 
 - [Een Azure IoT Central-toepassing maken](../iot-central/core/quick-deploy-iot-central.md)
 - [Telemetrie verzenden van een apparaat naar een IoT-hub](../iot-hub/quickstart-send-telemetry-cli.md)
-- [Een externe bewakingsoplossing in de cloud proberen](../iot-accelerators/quickstart-remote-monitoring-deploy.md)

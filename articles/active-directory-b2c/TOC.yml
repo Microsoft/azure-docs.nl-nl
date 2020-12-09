@@ -125,10 +125,12 @@
       items:
         - name: Stroom maken
           items:
-            - name: Registreren of aanmelden
-              href: tutorial-create-user-flows.md
+            - name: Gebruikersstromen maken
+              href: create-user-flow.md
             - name: Referenties voor wachtwoord van resource-eigenaar
               href: configure-ropc.md
+            - name: Telefoonverificatie instellen
+              href: phone-authentication-user-flows.md
             - name: Zelf een wachtwoord opnieuw instellen configureren
               href: user-flow-self-service-password-reset.md
         - name: Voorwaardelijke toegang toevoegen

@@ -55,6 +55,12 @@
         - name: Azure Defender voor Key Vault
           displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
+        - name: Azure Defender voor Resource Manager
+          displayName: ARM
+          href: defender-for-resource-manager-introduction.md
+        - name: Azure Defender voor DNS
+          displayName: domain
+          href: defender-for-dns-introduction.md
         - name: Azure Defender voor Kubernetes
           displayName: 'clusters, k8s, aks'
           href: defender-for-kubernetes-introduction.md
@@ -253,6 +259,11 @@
         - name: Reageren op Azure Defender voor Key Vault-waarschuwingen
           displayName: 'akv, kv'
           href: defender-for-key-vault-usage.md
+        - name: Reageren op Azure Defender voor DNS-waarschuwingen
+          href: defender-for-dns-usage.md
+        - name: Reageren op Azure Defender voor Resource Manager-waarschuwingen
+          displayName: arm
+          href: defender-for-resource-manager-usage.md
         - name: Beveiligingsincidenten beheren
           href: security-center-incident.md
         - name: Bedreigingsinformatierapporten genereren

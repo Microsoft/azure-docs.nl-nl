@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 9/17/2020
-ms.openlocfilehash: 1a51d2140528e3f6ed6da0ca699d7b71b91638ec
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.date: 12/8/2020
+ms.openlocfilehash: bd8f5a28b709a45e99e846fb4e242f774aca80c5
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92743159"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902507"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -138,6 +138,7 @@ Autohervatten wordt geactiveerd als een van de volgende voor waarden op elk mome
 |Transparent Data Encryption|Status of status van transparante gegevens versleuteling weer geven|
 |Evaluatie van beveiligingsproblemen|Ad hoc-scans en periodieke scans als deze functie is ingeschakeld|
 |Gegevens Archief voor query (prestaties)|Query Store-instellingen wijzigen of weer geven|
+|Aanbevelingen voor prestaties|Aanbevelingen voor prestaties weer geven of Toep assen|
 |Autotuning|Toepassing en verificatie van aanbevelingen voor automatische afstemming, zoals automatisch indexeren|
 |Data base kopiëren|Maak een Data Base als kopie.<br>Exporteren naar een BACPAC-bestand.|
 |SQL-gegevens synchronisatie|Synchronisatie tussen de data bases van de hub en het lid die worden uitgevoerd op een configureerbaar schema of die hand matig worden uitgevoerd|
@@ -179,7 +180,7 @@ Het maken van een nieuwe data base of het verplaatsen van een bestaande Data Bas
 
 In de volgende voor beelden wordt een nieuwe data base gemaakt in de serverloze Compute-laag.
 
-#### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
+#### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
 
 Zie [Quick Start: een enkele data base maken in Azure SQL database met behulp van de Azure Portal](single-database-create-quickstart.md).
 
@@ -252,7 +253,7 @@ Een serverloze data base kan op dezelfde manier worden verplaatst naar een inger
 
 Het wijzigen van de maximale of minimale vCores en de vertraging voor autopause wordt uitgevoerd met behulp van de [set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) opdracht in Power shell met behulp van de `MaxVcore` `MinVcore` argumenten, en `AutoPauseDelayInMinutes` .
 
-### <a name="use-the-azure-cli"></a>De Azure CLI gebruiken
+### <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
 Het wijzigen van de maximale of minimale vCores en de vertraging voor autopause wordt uitgevoerd met behulp van de opdracht [AZ SQL DB Update](/cli/azure/sql/db#az-sql-db-update) in azure CLI met behulp van de `capacity` `min-capacity` argumenten, en `auto-pause-delay` .
 
@@ -314,17 +315,17 @@ Zie [serverloze Compute-laag](resource-limits-vcore-single-databases.md#general-
 
 De hoeveelheid berekenings kosten is het maximum van CPU-gebruik en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid CPU en het gebruikte geheugen kleiner is dan het minimum aantal dat voor elk is ingericht, wordt de ingerichte hoeveelheid gefactureerd. Als u de CPU wilt vergelijken met geheugen voor facturerings doeleinden, wordt geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore opnieuw te schalen.
 
-- **Gefactureerde resource** : CPU en geheugen
-- **Gefactureerd bedrag** : vCore eenheids prijs * Max (min vCores, vCores gebruikt, min geheugen gb * 1/3, geheugen GB gebruikt * 1/3) 
-- **Facturerings frequentie** : per seconde
+- **Gefactureerde resource**: CPU en geheugen
+- **Gefactureerd bedrag**: vCore eenheids prijs * Max (min vCores, vCores gebruikt, min geheugen gb * 1/3, geheugen GB gebruikt * 1/3) 
+- **Facturerings frequentie**: per seconde
 
 De vCore eenheids prijs is de kosten per vCore per seconde. Raadpleeg de [pagina met prijzen](https://azure.microsoft.com/pricing/details/sql-database/single/) voor de Azure SQL database voor specifieke eenheids prijzen in een bepaalde regio.
 
 De gefactureerde hoeveelheid berekenings kosten wordt weer gegeven met de volgende metriek:
 
-- **Metrisch** : App_cpu_billed (vCore seconden)
-- **Definitie** : Max (min vCores, vCores gebruikt, min geheugen gb * 1/3, geheugen GB gebruikt * 1/3)
-- **Rapportage frequentie** : per minuut
+- **Metrisch**: App_cpu_billed (vCore seconden)
+- **Definitie**: Max (min vCores, vCores gebruikt, min geheugen gb * 1/3, geheugen GB gebruikt * 1/3)
+- **Rapportage frequentie**: per minuut
 
 Deze hoeveelheid wordt per seconde berekend en op 1 minuut geaggregeerd.
 

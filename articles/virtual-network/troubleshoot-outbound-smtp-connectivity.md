@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: 063ebc40fd845fe6300b008e7ca048357a2fce49
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: d2e5996da5a1fe3f5b154d57ee509f25e54e30ac
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95806670"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862357"
 ---
 # <a name="troubleshoot-outbound-smtp-connectivity-issues-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in azure oplossen
 
@@ -39,7 +39,7 @@ Voor Enterprise Agreement Azure-gebruikers is er geen wijziging in de technische
 
 Als u vóór 15 november 2017 bent aangemeld voor het betalen per gebruik-abonnement, is er geen wijziging in de technische mogelijkheid om uitgaande e-mail bezorging uit te proberen. U kunt uitgaande e-mail bezorging van Azure-Vm's binnen deze abonnementen rechtstreeks naar externe e-mail providers zonder enige beperkingen van het Azure-platform. Het is niet gegarandeerd dat e-mail providers inkomende e-mail van een wille keurige gebruiker accepteren en dat gebruikers rechtstreeks met e-mail providers aan de slag kunnen gaan met het oplossen van problemen met de aflevering van berichten of ongewenste e-mail met betrekking tot specifieke providers.
 
-Voor betalen naar gebruik-abonnementen die zijn gemaakt na 15 november 2017, zijn er technische beperkingen die de e-mail blok keren die rechtstreeks vanuit de virtuele machines in deze abonnementen wordt verzonden. Als u de mogelijkheid wilt bieden om e-mail van Azure-Vm's rechtstreeks naar externe e-mail providers te verzenden (niet via een geverifieerde SMTP-relay), kunt u een aanvraag indienen om de beperking te verwijderen in het gedeelte **connectiviteit** van de Blade **problemen vaststellen en oplossen** voor een Azure Virtual Network-resource in de Azure Portal. Als u dit hebt gekwalificeerd, wordt uw abonnement ingeschakeld of ontvangt u instructies voor de volgende stappen.
+Voor betalen naar gebruik-abonnementen die zijn gemaakt na 15 november 2017, zijn er technische beperkingen die de e-mail blok keren die rechtstreeks vanuit de virtuele machines in deze abonnementen wordt verzonden. Als u de mogelijkheid wilt bieden om e-mail van Azure-Vm's rechtstreeks naar externe e-mail providers te verzenden (niet via een geverifieerde SMTP-relay) en u hebt een account in goede staat met een betaalrun, kunt u een aanvraag indienen om de beperking te verwijderen in het gedeelte **connectiviteit** van de Blade **problemen vaststellen en oplossen** voor een Azure Virtual Network-resource in de Azure Portal. Als u dit hebt gekwalificeerd, wordt uw abonnement ingeschakeld of ontvangt u instructies voor de volgende stappen. 
 
 Nadat een abonnement voor betalen per gebruik is uitgesloten en de Vm's zijn gestopt en gestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
 
@@ -54,13 +54,13 @@ Als u deze typen abonnementen gebruikt, raden we u aan om SMTP-relay-services te
 
 ## <a name="cloud-service-provider-csp"></a>Cloud serviceprovider (CSP)
 
-Als u Azure-resources gebruikt via CSP, kunt u een aanvraag indienen om de beperking te verwijderen in het gedeelte ' connectiviteit ' van de Blade ' Diagnostic and solve ' voor een Virtual Network-resource in azure Portal. Als u dit hebt gekwalificeerd, wordt uw abonnement ingeschakeld of ontvangt u instructies voor de volgende stappen.
+Als u Azure-resources gebruikt via CSP, kunt u een aanvraag indienen om de beperking te verwijderen in het gedeelte **connectiviteit** van de Blade **problemen vaststellen en oplossen** voor een Virtual Network resource in azure Portal. Als u dit hebt gekwalificeerd, wordt uw abonnement ingeschakeld of ontvangt u instructies voor de volgende stappen.
 
 ## <a name="microsoft-partner-network-mpn-bizspark-plus-or-azure-sponsorship"></a>Microsoft Partner Network (MPN), BizSpark plus of Azure Sponsorship
 
 Voor Microsoft Partner Network (MPN), BizSpark plus-of Azure Sponsorship-abonnementen die zijn gemaakt na 15 november 2017, worden er technische beperkingen gesteld voor het blok keren van e-mail die rechtstreeks vanuit de virtuele machines in deze abonnementen wordt verzonden. Als u de mogelijkheid wilt om e-mail van Azure-vm's rechtstreeks naar externe e-mail providers te verzenden (niet via een geverifieerde SMTP-relay), kunt u een aanvraag indienen door een ondersteunings aanvraag te openen met behulp van het volgende probleem type: **technische**  >  **Virtual Network**  >  **connectiviteit**  >  **kan geen e-mail verzenden (SMTP/poort 25)**. Zorg ervoor dat u gegevens toevoegt over waarom uw implementatie e-mail rechtstreeks naar e-mail providers moet verzenden in plaats van een geverifieerde relay te gebruiken. Aanvragen worden beoordeeld en goedgekeurd door micro soft. Aanvragen kunnen pas worden verleend nadat aanvullende fraude controles zijn voltooid. 
 
-Nadat een abonnement voor betalen per gebruik is uitgesloten en de Vm's zijn gestopt en gestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
+Nadat een abonnement is uitgesloten en de Vm's zijn gestopt en gestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
 
 ## <a name="restrictions-and-limitations"></a>Beperkingen en beperkingen
 
@@ -68,4 +68,4 @@ Nadat een abonnement voor betalen per gebruik is uitgesloten en de Vm's zijn ges
 
 ## <a name="need-help-contact-support"></a>Hulp nodig? Contact opnemen met ondersteuning
 
-Als u nog steeds hulp nodig hebt, [neemt u contact op](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) met de ondersteuning om uw probleem snel op te lossen met behulp van het volgende probleem type: aanvraag type voor het beheer van het **abonnement** : **aanvragen om een e-mail stroom voor poort 25**
+Als u nog steeds hulp nodig hebt, [neemt u contact op](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) met de ondersteuning om uw probleem snel op te lossen met behulp van het volgende probleem type: **technische**  >  **Virtual Network**  >  **connectiviteit**  >  **kan geen e-mail verzenden (SMTP/poort 25)**.

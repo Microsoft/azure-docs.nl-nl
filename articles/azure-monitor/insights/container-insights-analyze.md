@@ -3,12 +3,12 @@ title: Kubernetes bewaking met Azure Monitor voor containers | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de prestaties van een Kubernetes-cluster kunt weer geven en analyseren met Azure Monitor voor containers.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: de61e8e5b2716a3ca212a0a830a4d48b8bd2c3ef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a1f661089b3a6357abb3eed584401e6a8ae2e2fb
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011078"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905703"
 ---
 # <a name="monitor-your-kubernetes-cluster-performance-with-azure-monitor-for-containers"></a>Uw Kubernetes-cluster prestaties bewaken met Azure Monitor voor containers
 
@@ -117,7 +117,7 @@ Azure Monitor voor containers biedt ook ondersteuning voor Azure Monitor [Metric
 
 In Metrics Explorer kunt u geaggregeerde gegevens over knoop punt-en pod-gebruik weer geven van Azure Monitor voor containers. De volgende tabel bevat een overzicht van de Details om u te helpen begrijpen hoe u de metrische grafieken kunt gebruiken voor het visualiseren van metrische gegevens over containers.
 
-|Naamruimte | Metrisch | Beschrijving |
+|Naamruimte | Gegevens | Beschrijving |
 |----------|--------|-------------|
 | inzichten. container/knoop punten | |
 | | cpuUsageMillicores | Cumulatieve meting van het CPU-gebruik in het cluster. Het is een CPU-kern die is gesplitst in 1000 eenheden (milli = 1000). Wordt gebruikt om het gebruik van kern geheugens in een container te bepalen waar veel toepassingen één kern geheugen gebruiken.|
@@ -228,7 +228,7 @@ De rijstructuur begint met een controller. Wanneer u een controller uitbreidt, k
 
 Selecteer de waarde onder de kolom **knoop punt** voor de specifieke controller.
 
-![Voor beeld inzoomen van het knoop punt naar de controller in de prestatie weergave](./media/container-insights-analyze/drill-down-controller-node.png)
+![Voor beeld inzoomen van controller naar knoop punt in de weer gave prestaties](./media/container-insights-analyze/drill-down-controller-node.png)
 
 De informatie die wordt weer gegeven wanneer u controllers bekijkt, wordt beschreven in de volgende tabel.
 
@@ -297,31 +297,8 @@ Azure Network Policy Manager bevat informatieve Prometheus-metrische gegevens di
 
 ## <a name="workbooks"></a>Werkmappen
 
-Werkmappen combi neren tekst, [logboek query's](/azure/data-explorer/kusto/query/), [metrische gegevens](../platform/data-platform-metrics.md)en para meters in uitgebreide interactieve rapporten. Werkmappen kunnen worden bewerkt door andere teamleden die toegang hebben tot dezelfde Azure-resources.
+Werkmappen combi neren tekst, logboek query's, metrische gegevens en para meters in uitgebreide interactieve rapporten waarmee u de prestaties van het cluster kunt analyseren. Zie [werkmappen in azure monitor voor containers](container-insights-reports.md) voor een beschrijving van de werkmappen die beschikbaar zijn voor Azure monitor voor containers.
 
-Azure Monitor voor containers bevat vier werkmappen om aan de slag te gaan:
-
-- **Schijf capaciteit**: presenteert interactieve schijf gebruiks grafieken voor elke schijf die wordt weer gegeven in het knoop punt binnen een container in de volgende perspectieven:
-
-    - Schijf percentage gebruik voor alle schijven.
-    - Vrije schijf ruimte voor alle schijven.
-    - Een raster dat de schijf van elk knoop punt weergeeft, het percentage gebruikte ruimte, trend van het percentage gebruikte ruimte, vrije schijf ruimte (GiB) en trend van vrije schijf ruimte (GiB). Wanneer een rij wordt geselecteerd in de tabel, wordt het percentage gebruikte ruimte en vrije schijf ruimte (GiB) onder de rij weer gegeven.
-
-- **Schijf-i/o**: geeft interactieve schijf gebruiks grafieken weer voor elke schijf die aan het knoop punt binnen een container wordt gepresenteerd door de volgende perspectieven:
-
-    - Schijf-I/O wordt op alle schijven samenvatten door gelezen bytes per seconde, geschreven bytes per seconde en lees-en schrijf bewerkingen in bytes per seconde.
-    - Acht prestatie grafieken tonen kpi's waarmee u de prestaties van schijf-I/O-knel punten kunt meten en identificeren.
-
-- **Kubelet**: bevat twee rasters die de bedrijfs statistieken van het sleutel knooppunt tonen:
-
-    - Overzicht per knooppunt raster geeft een overzicht van de totale bewerking, het totale aantal fouten en geslaagde bewerkingen op percentage en trend voor elk knoop punt.
-    - Overzicht per bewerkings type geeft een samen vatting van de totale bewerking, het totale aantal fouten en geslaagde bewerkingen op percentage en trend.
-
-- **Netwerk**: presenteert interactieve netwerk gebruiks diagrammen voor de netwerk adapter van elk knoop punt en een raster geeft de belangrijkste prestatie-indica toren om de prestaties van uw netwerk adapters te meten.
-
-U opent deze werkmappen door elk ervan te selecteren in de vervolg keuzelijst **werkmappen weer geven** .
-
-![Vervolg keuzelijst werkmappen weer geven](./media/container-insights-analyze/view-workbooks-dropdown-list.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

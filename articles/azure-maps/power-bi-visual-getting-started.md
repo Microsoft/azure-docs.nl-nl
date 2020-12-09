@@ -3,22 +3,22 @@ title: Aan de slag met de Azure Maps Power BI Visual | Microsoft Azure kaarten
 description: In dit artikel leert u hoe u de Microsoft Azure kaarten Visual voor Power BI kunt gebruiken.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 06/26/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 5c89922aef1ba802ee694aaed9bae2ac2dd273ee
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: a563a7776e84289e38743057778e8fe10fd17503
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896239"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904700"
 ---
 # <a name="getting-started-with-the-azure-maps-power-bi-visual"></a>Aan de slag met de Azure Maps Power BI Visual
 
-<Token>**van toepassing op:** ![ Groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor * *_gebruikers_* met een ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor ontwerpers &-ontwikkel aars ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI Desktop ![ X geeft Nee aan. ](media/power-bi-visual/no.png) Er is een Pro-of Premium-licentie vereist</Token>
+<Token>**van toepassing op:** ![ Groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor **_gebruikers_* met een ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI-service voor ontwerpers &-ontwikkel aars ![ groen vinkje. ](media/power-bi-visual/yes.png) Power BI Desktop ![ X geeft Nee aan. ](media/power-bi-visual/no.png) Er is een Pro-of Premium-licentie vereist</Token>
 
 In dit artikel wordt beschreven hoe u de Microsoft Azure kaarten Visual voor Power BI kunt gebruiken.
 
@@ -45,15 +45,15 @@ U of uw beheerder moet mogelijk uw firewall bijwerken om toegang te geven tot he
 
 Zie [Microsoft Azure juridische informatie](https://azure.microsoft.com/support/legal/)voor meer informatie over privacy en gebruiksrecht overeenkomst met betrekking tot de Azure Maps-Visual.
 
-## <a name="preview-behavior-and-requirements"></a>Preview-gedrag en -vereisten
+## <a name="azure-maps-visual-preview-behavior-and-requirements"></a>Gedrag en vereisten voor het visualiseren van Azure Maps (preview)
 
-Er zijn enkele overwegingen en vereisten voor deze preview-versie van _ * Azure Maps * *:
+Er zijn enkele overwegingen en vereisten voor _ *Azure Maps** Visual. :
 
--   De **Azure Maps** Visual is in de preview-versie en moet zijn ingeschakeld in Power bi Desktop. Als u **Azure Maps** wilt inschakelen, selecteert u **Bestands** &gt; **Opties en instellingen** &gt; **Opties** &gt; **Preview-functies** en selecteert u vervolgens het selectie vakje **Azure Maps** . Als de Azure Maps Visual niet beschikbaar is nadat u dit hebt gedaan, moet u waarschijnlijk de schakel optie Tenant beheerder in de beheer Portal inschakelen.
+-   De **Azure Maps** Visual (preview) moet zijn ingeschakeld in Power bi Desktop. Als u **Azure Maps** Visual wilt inschakelen **File** , selecteert u &gt; Opties voor bestands **Opties en instellingen** &gt; **Options** &gt; **Preview-functies** en selecteert u vervolgens het selectie vakje **Azure Maps** . Als de Azure Maps Visual niet beschikbaar is nadat u dit hebt gedaan, moet u waarschijnlijk de schakel optie Tenant beheerder in de beheer Portal inschakelen.
 -   De gegevensset moet velden bevatten met informatie over **breedte graad** en **lengte graad** . Geocodering van locatie velden wordt toegevoegd in een toekomstige update.
 -   Het ingebouwde besturings element legenda voor Power BI wordt momenteel niet weer gegeven in deze preview. Deze wordt toegevoegd in een toekomstige update.
 
-## <a name="use-the-azure-maps-visual"></a>De Azure Maps-Visual gebruiken
+## <a name="use-the-azure-maps-visual-preview"></a>De Azure Maps Visual gebruiken (preview-versie)
 
 Zodra het **Azure Maps** visuele element is ingeschakeld, selecteert u het **Azure Maps** pictogram in het deel venster **Visualisaties** .
 
@@ -135,7 +135,7 @@ De Azure Maps Visual is beschikbaar in de volgende services en toepassingen:
 | Mobiele Power BI-toepassingen             | Ja          |
 | Power BI publiceren op internet                  | Nee           |
 | Power BI Embedded                        | Nee           |
-| Power BI-service insluiten (PowerBI.com) | Ja          |
+| Power BI-service insluiten (PowerBI.com) | Yes          |
 
 Ondersteuning voor extra Power BI Services/apps wordt toegevoegd aan toekomstige updates.
 
@@ -173,7 +173,7 @@ Meer informatie over de Azure Maps Power BI Visual:
 De Visual aanpassen:
 
 > [!div class="nextstepaction"]
-> [Tips en trucs voor het gebruik van kleuren in Power BI](/power-bi/visuals/service-tips-and-tricks-for-color-formatting)
+> [Tips en trucs voor het gebruik van opmaak in Power BI](/power-bi/visuals/service-tips-and-tricks-for-color-formatting)
 
 > [!div class="nextstepaction"]
 > [Titels, legenda's en achtergronden van visualisaties aanpassen](/power-bi/visuals/power-bi-visualization-customize-title-background-and-legend)

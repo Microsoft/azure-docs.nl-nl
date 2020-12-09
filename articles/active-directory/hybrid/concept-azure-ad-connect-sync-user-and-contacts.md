@@ -15,12 +15,12 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9470e9af38fdd814f5059538656e6a3dbb8e3a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e015f7937db6788aa4473a8a04434121299901e9
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279309"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861779"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Azure AD Connect Sync: informatie over gebruikers, groepen en contact personen
 Er zijn verschillende redenen waarom u meerdere Active Directory forests zou hebben en er verschillende implementatie topologieën zijn. Algemene modellen bevatten een account-resource-implementatie en algemene sync'ed-forests na een fusie & overname. Maar zelfs als er zuivere modellen zijn, zijn hybride modellen ook gebruikelijk. De standaard configuratie in Azure AD Connect-synchronisatie gaat niet uit van een bepaald model, maar afhankelijk van de manier waarop gebruikers overeenkomst in de installatie handleiding is geselecteerd, kan verschillende gedragingen worden waargenomen.
@@ -41,13 +41,13 @@ Belang rijke punten waar u rekening mee moet houden bij het synchroniseren van g
 
 * Azure AD Connect biedt geen ondersteuning voor het synchroniseren van [primaire groepslid maatschappen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771489(v=ws.11)) naar Azure AD.
 
-* Azure AD Connect biedt geen ondersteuning voor het synchroniseren van [dynamische distributie groepslid maatschappen](/Exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups?view=exchserver-2019) naar Azure AD.
+* Azure AD Connect biedt geen ondersteuning voor het synchroniseren van [dynamische distributie groepslid maatschappen](/Exchange/recipients/dynamic-distribution-groups/dynamic-distribution-groups) naar Azure AD.
 
 * Een Active Directory groep als een e-mail groep synchroniseren met Azure AD:
 
     * Als het kenmerk *proxyAddress attribuut* van de groep leeg is, moet het *e-mail* kenmerk een waarde hebben
 
-    * Als het kenmerk *proxyAddress attribuut* van de groep niet-leeg is, moet deze ten minste één SMTP-proxy adres waarde bevatten. Enkele voorbeelden:
+    * Als het kenmerk *proxyAddress attribuut* van de groep niet-leeg is, moet deze ten minste één SMTP-proxy adres waarde bevatten. Hier volgen enkele voorbeelden:
     
       * Een Active Directory groep waarvan het kenmerk proxyAddress attribuut de waarde *{"een x500:/0 = contoso. com/OE = users/CN = testgroup"}* heeft, wordt in azure AD geen e-mail ingeschakeld. Het bevat geen SMTP-adres.
       
@@ -71,7 +71,7 @@ Uitgeschakelde accounts worden ook gesynchroniseerd met Azure AD. Uitgeschakelde
 De veronderstelling is dat als er een uitgeschakeld gebruikers account wordt gevonden, er nog geen ander actief account wordt gedetecteerd en dat het object wordt ingericht in azure AD met de userPrincipalName en source Anchor gevonden. Als een ander actief account wordt toegevoegd aan hetzelfde omgekeerde object, worden de userPrincipalName en source Anchor gebruikt.
 
 ## <a name="changing-sourceanchor"></a>Source Anchor wijzigen
-Wanneer een object naar Azure AD is geëxporteerd, mag het source Anchor niet meer worden gewijzigd. Wanneer het object is geëxporteerd, wordt het **cloudSourceAnchor** -kenmerk dat is ingesteld met de **Source Anchor** -waarde die is geaccepteerd door Azure AD. Als **Source Anchor** is gewijzigd en niet overeenkomt met **cloudSourceAnchor**, wordt met de regel **uit voor Aad-gebruiker toevoegen** het fout **kenmerk source Anchor**verwijderd. In dit geval moeten de configuratie of de gegevens worden gecorrigeerd, zodat dezelfde source anchor in de omgekeerde tekst opnieuw wordt weer gegeven voordat het object opnieuw kan worden gesynchroniseerd.
+Wanneer een object naar Azure AD is geëxporteerd, mag het source Anchor niet meer worden gewijzigd. Wanneer het object is geëxporteerd, wordt het **cloudSourceAnchor** -kenmerk dat is ingesteld met de **Source Anchor** -waarde die is geaccepteerd door Azure AD. Als **Source Anchor** is gewijzigd en niet overeenkomt met **cloudSourceAnchor**, wordt met de regel **uit voor Aad-gebruiker toevoegen** het fout **kenmerk source Anchor** verwijderd. In dit geval moeten de configuratie of de gegevens worden gecorrigeerd, zodat dezelfde source anchor in de omgekeerde tekst opnieuw wordt weer gegeven voordat het object opnieuw kan worden gesynchroniseerd.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 * [Azure AD Connect synchronisatie: synchronisatie opties aanpassen](how-to-connect-sync-whatis.md)

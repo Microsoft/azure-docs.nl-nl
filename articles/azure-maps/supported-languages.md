@@ -1,19 +1,19 @@
 ---
-title: Ondersteuning voor lokalisatie | Microsoft Azure kaarten
+title: Ondersteuning voor lokalisatie met Microsoft Azure Maps
 description: Zie welke regio's Azure Maps ondersteunt met services zoals kaarten, zoek functies, route ring, weer en verkeers incidenten. Meer informatie over het instellen van de weergave parameter.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 11/20/2019
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: a6664b5a2c0c6b4de2435ee5c8bb29f63560c342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50e5d0721eb14d1fcdfad26aaf081bfa370e954e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88037691"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904513"
 ---
 # <a name="localization-support-in-azure-maps"></a>Ondersteuning voor lokalisatie in Azure Maps
 
@@ -22,10 +22,10 @@ Azure Maps ondersteunt diverse talen en weer gaven op basis van land/regio. In d
 
 ## <a name="azure-maps-supported-languages"></a>Azure Maps ondersteunde talen
 
-Azure Maps zijn gelokaliseerd in de verschillende talen van alle services. De volgende tabel bevat de ondersteunde taal codes voor elke service.  
+Azure Maps zijn gelokaliseerd in de verschillende talen van alle services. De volgende tabel bevat de ondersteunde taal codes voor elke service.  
   
 
-| Id         | Naam                   |  Maps | Zoeken | Routering | Weer | Verkeers incidenten | JS-toewijzings beheer |
+| Id         | Name                   |  Maps | Zoeken | Routering | Weer | Verkeers incidenten | JS-toewijzings beheer |
 |------------|------------------------|:-----:|:------:|:-------:|:--------:|:-----------------:|:--------------:|
 | af-ZA      | Afrikaans              |       |    ✓   |    ✓    |         |                   |                |
 | ar-SA      | Arabisch                 |   ✓   |    ✓   |    ✓    |    ✓      |         ✓         |        ✓       |
@@ -129,10 +129,10 @@ Betrokken Azure Maps REST-services:
  * Zoekadres omkeren
  * Adres omgekeerde cross-straat ophalen
  * Post-zoekopdracht binnen geometrie
- * Batch Preview voor het zoeken naar een adres
- * Voor beeld van het terugdraaiende batch bericht na zoeken
+ * Post Search-adres batch
+ * Batch voor het terugdraaien van Zoek adressen
  * Zoek opdracht op route plaatsen
- * Voor beeld van zoeken in fuzzy batch
+ * Zoeken in zoek actie batch
 
  
 ### <a name="sdks"></a>SDK's
@@ -147,7 +147,7 @@ De weer gave-para meter is standaard ingesteld op **Unified**, zelfs als u deze 
 
 De volgende tabel bevat ondersteunde weer gaven.
 
-| Weergave         | Beschrijving                            |  Maps | Zoeken | JS-Map Control |
+| Weergave         | Description                            |  Maps | Zoeken | JS-Map Control |
 |--------------|----------------------------------------|:-----:|:------:|:--------------:|
 | AE           | Verenigde Arabische Emiraten (Arabische weer gave)    |   ✓   |        |     ✓          |
 | AR           | Argentinië (Argentijnse weer gave)           |   ✓   |    ✓   |     ✓          |

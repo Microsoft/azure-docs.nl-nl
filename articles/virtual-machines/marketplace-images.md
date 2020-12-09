@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 07/07/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 3de79e5cb3db2d0c52d13826900ec7160271edf9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a971f6e56f441ab05a6a9b483eeef990d3ea31f
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86225096"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903748"
 ---
 # <a name="supply-azure-marketplace-purchase-plan-information-when-creating-images"></a>Informatie over het aankoop plan van Azure Marketplace leveren bij het maken van installatie kopieën
 
@@ -24,15 +24,13 @@ Zie [Azure Marketplace-installatie kopieën zoeken en gebruiken](./windows/cli-p
 
 
 ## <a name="get-the-source-vm-information"></a>De gegevens van de bron-VM ophalen
-Als u nog steeds de oorspronkelijke virtuele machine hebt, kunt u de informatie over het abonnement, de uitgever en de SKU ophalen met behulp van Get-AzVM. In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden de gegevens van het aankoop plan weer gegeven.
+Als u nog steeds de oorspronkelijke VM hebt, kunt u de naam van het abonnement, de uitgever en de product informatie ophalen met behulp van Get-AzVM. In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden vervolgens de informatie over het aankoop plan voor de virtuele machine weer gegeven.
 
 ```azurepowershell-interactive
 $vm = Get-azvm `
    -ResourceGroupName myResourceGroup `
    -Name myVM
-$vm.Plan.Publisher
-$vm.Plan.Name
-$vm.Plan.Product
+$vm.Plan
 ```
 
 ## <a name="create-the-image-definition"></a>De definitie van de installatie kopie maken
@@ -72,7 +70,7 @@ De definitie van de installatie kopie maken met behulp van de  `-PurchasePlanPub
 Maak vervolgens een installatie kopie versie met behulp van [New-AzGalleryImageVersion](/powershell/module/az.compute/new-azgalleryimageversion). U kunt een installatie kopie versie maken op basis van een [virtuele machine](image-version-vm-powershell.md#create-an-image-version), een [beheerde installatie kopie](image-version-managed-image-powershell.md#create-an-image-version), een [VHD\snapshot](image-version-snapshot-powershell.md#create-an-image-version)of [een andere versie van de installatie kopie](image-version-another-gallery-powershell.md#create-the-image-version). 
 
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Wanneer u een virtuele machine maakt op basis van de installatie kopie, kunt u de informatie uit de definitie van de installatie kopie gebruiken om de gegevens van de uitgever door te geven met behulp van [set-AzVMPlan](/powershell/module/az.compute/set-azvmplan).
 

@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 11/03/2020
+ms.date: 12/07/2020
 ms.author: tisande
-ms.openlocfilehash: 9e62d6c475a4aeb366d034af1c80fc728f1a9211
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 2d99e0e2b65f7131e564e6ab64e454d2947c58a6
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335803"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903017"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,8 +28,8 @@ In sommige gevallen wilt u mogelijk dit automatische gedrag overschrijven, zodat
 
 Azure Cosmos DB ondersteunt twee indexerings modi:
 
-- **Consistent** : de index wordt synchroon bijgewerkt wanneer u items maakt, bijwerkt of verwijdert. Dit betekent dat de consistentie van uw Lees query's de [consistentie is die voor het account is geconfigureerd](consistency-levels.md).
-- **Geen** : indexeren is uitgeschakeld op de container. Dit wordt meestal gebruikt wanneer een container wordt gebruikt als een pure sleutel waarde Store zonder dat hiervoor secundaire indexen nodig zijn. Het kan ook worden gebruikt om de prestaties van bulk bewerkingen te verbeteren. Nadat de bulk bewerkingen zijn voltooid, kan de index modus worden ingesteld op consistent en vervolgens worden bewaakt met behulp van de [IndexTransformationProgress](how-to-manage-indexing-policy.md#dotnet-sdk) totdat de bewerking is voltooid.
+- **Consistent**: de index wordt synchroon bijgewerkt wanneer u items maakt, bijwerkt of verwijdert. Dit betekent dat de consistentie van uw Lees query's de [consistentie is die voor het account is geconfigureerd](consistency-levels.md).
+- **Geen**: indexeren is uitgeschakeld op de container. Dit wordt meestal gebruikt wanneer een container wordt gebruikt als een pure sleutel waarde Store zonder dat hiervoor secundaire indexen nodig zijn. Het kan ook worden gebruikt om de prestaties van bulk bewerkingen te verbeteren. Nadat de bulk bewerkingen zijn voltooid, kan de index modus worden ingesteld op consistent en vervolgens worden bewaakt met behulp van de [IndexTransformationProgress](how-to-manage-indexing-policy.md#dotnet-sdk) totdat de bewerking is voltooid.
 
 > [!NOTE]
 > Azure Cosmos DB ondersteunt ook een vertraagde indexerings modus. Luie indexering voert updates op de index met een veel lager prioriteitsniveau uit als de engine geen andere taken uitvoert. Dit kan leiden tot **inconsistente of onvolledige** queryresultaten. Als u van plan bent om een query uit te voeren op een Cosmos-container, moet u geen luie indexering selecteren. Nieuwe containers kunnen geen luie indexering selecteren. U kunt een uitzonde ring aanvragen door contact op te nemen met de [ondersteuning van Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) (behalve als u een Azure Cosmos-account gebruikt in de [serverloze](serverless.md) modus die geen ondersteuning biedt voor Lazy indexering).
@@ -79,7 +79,7 @@ Elk indexerings beleid moet het basispad bevatten `/*` als een opgenomen of uitg
 
 - De eigenschap System `_etag` wordt standaard uitgesloten van indexeren, tenzij de ETAG wordt toegevoegd aan het opgenomen pad voor indexering.
 
-- Als de indexerings modus is ingesteld op **consistent** , worden de systeem eigenschappen `id` `_ts` automatisch geïndexeerd.
+- Als de indexerings modus is ingesteld op **consistent**, worden de systeem eigenschappen `id` `_ts` automatisch geïndexeerd.
 
 Bij het opnemen en uitsluiten van paden kunnen de volgende kenmerken optreden:
 
@@ -91,7 +91,7 @@ Bij het opnemen en uitsluiten van paden kunnen de volgende kenmerken optreden:
 
 Als deze eigenschap niet is opgegeven, hebben deze eigenschappen de volgende standaard waarden:
 
-| **Eigenschaps naam**     | **Standaard waarde** |
+| **Eigenschaps naam**     | **Standaardwaarde** |
 | ----------------------- | -------------------------------- |
 | `kind`   | `range` |
 | `precision`   | `-1`  |
@@ -105,9 +105,9 @@ Als uw opgenomen paden en uitgesloten paden een conflict veroorzaken, heeft het 
 
 Hier volgt een voorbeeld:
 
-**Opgenomen pad** : `/food/ingredients/nutrition/*`
+**Opgenomen pad**: `/food/ingredients/nutrition/*`
 
-**Uitgesloten pad** : `/food/ingredients/*`
+**Uitgesloten pad**: `/food/ingredients/*`
 
 In dit geval heeft het opgenomen pad voor rang op het uitgesloten pad, omdat dit nauw keuriger is. Op basis van deze paden worden alle gegevens in het `food/ingredients` pad, of genest binnen, uitgesloten van de index. De uitzonde ring hiervan zijn gegevens in het opgenomen pad: `/food/ingredients/nutrition/*` , dat wordt geïndexeerd.
 
@@ -201,6 +201,7 @@ De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen
 - Bij het maken van een samengestelde index voor het optimaliseren van query's met meerdere filters, `ORDER` heeft de samengestelde index geen invloed op de resultaten. Deze eigenschap is optioneel.
 - Als u geen samengestelde index voor een query met filters voor meerdere eigenschappen definieert, zal de query toch slagen. De RU-kosten van de query kunnen echter worden verminderd met een samengestelde index.
 - Query's met beide statistische functies (bijvoorbeeld aantal of som) en filters hebben ook voor deel van samengestelde indexen.
+- Filter expressies kunnen gebruikmaken van meerdere samengestelde indexen.
 
 Bekijk de volgende voor beelden waarin een samengestelde index is gedefinieerd voor de eigenschappen naam, leeftijd en tijds tempel:
 
@@ -213,6 +214,7 @@ Bekijk de volgende voor beelden waarin een samengestelde index is gedefinieerd v
 | ```(name ASC, age ASC)```     | ```SELECT * FROM c WHERE c.name != "John" AND c.age > 18``` | ```No```             |
 | ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age = 18 AND c.timestamp > 123049923``` | ```Yes```            |
 | ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp = 123049923``` | ```No```            |
+| ```(name ASC, age ASC) and (name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp > 123049923``` | ```Yes```            |
 
 ### <a name="queries-with-a-filter-as-well-as-an-order-by-clause"></a>Query's met een filter en een ORDER BY-component
 

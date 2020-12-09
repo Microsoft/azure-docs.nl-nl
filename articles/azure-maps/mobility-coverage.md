@@ -1,27 +1,32 @@
 ---
-title: Mobiliteits dekking (Transit)
-description: Meer informatie over het dekkings niveau van de Azure Maps Mobility-service voorziet in welke regio's voor open bare doorvoer functies, zoals route ring en service waarschuwingen.
+title: Mobiliteits dekking (door Voer) in Microsoft Azure Maps Mobility Services (preview-versie)
+description: Ontdek welk dekkings niveau de Azure Maps Mobility Services (preview) biedt in welke regio's voor open bare doorvoer functies, zoals route ring en service waarschuwingen.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 07/23/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 10a0f9b1b21b060d7c33aeb52fb72f950cedf0e6
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: e902f313edf22d75f6b183575c3dc8d0dd94bc1f
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779147"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904751"
 ---
-# <a name="azure-maps-mobility-coverage"></a>Mobiliteits dekking Azure Maps
+# <a name="azure-maps-mobility-services-preview-coverage"></a>Dekking van Azure Maps Mobility Services (preview)
 
-De Azure Maps [Mobility-service](/rest/api/maps/mobility) verbetert de ontwikkelings tijd voor toepassingen met open bare doorvoer functies, zoals Transit Routering en zoek opdrachten voor open bare door Voer in de buurt. Gebruikers kunnen gedetailleerde informatie ophalen over OV-haltes, -lijnen en -schema's. De Mobility-service biedt gebruikers ook de mogelijkheid om halte- en lijngeometrieën, waarschuwingen voor haltes, lijnen en servicegebieden, en realtime aankomsttijden van openbaar vervoer en servicewaarschuwingen. Daarnaast biedt de Mobility-service mogelijkheden voor routering met multimodale opties voor reisplanning. Met multimodale reisplanning worden de opties voor lopen, fietsen en openbaar vervoer in één reis opgenomen. Gebruikers hebben ook toegang tot gedetailleerde multimodale stapsgewijze routes. 
+> [!IMPORTANT]
+> Azure Maps Mobility Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+
+De Azure Maps [Mobility Services](/rest/api/maps/mobility) verbetert de ontwikkelings tijd voor toepassingen met open bare doorvoer functies, zoals Transit Routering en zoek opdrachten voor open bare door Voer in de buurt. Gebruikers kunnen gedetailleerde informatie ophalen over OV-haltes, -lijnen en -schema's. Met de mobiliteits Services kunnen gebruikers ook stoppen en lijn geometries, waarschuwingen voor beëindiging, regels en service gebieden en real-time open bare door Voer en service waarschuwingen ophalen. Daarnaast bieden de Mobility-Services mogelijkheden voor route ring met opties voor multimodale reis planning. Met multimodale reisplanning worden de opties voor lopen, fietsen en openbaar vervoer in één reis opgenomen. Gebruikers hebben ook toegang tot gedetailleerde multimodale stapsgewijze routes.
 
 Azure Maps biedt niet hetzelfde niveau van informatie en nauw keurigheid voor alle steden en landen/regio's. De mogelijkheid om open bare doorvoer gegevens aan te roepen, is afhankelijk van het metro gebied. Daarnaast mogen de kaart gegevens niet alle open bare doorvoer opties en-instanties bevatten die het metro gebied gebruiken.
 
-De volgende tabel bevat informatie over de dekking van Azure Maps Mobility-service.
+De volgende tabel bevat informatie over de dekking van Azure Maps Mobility-Services.
 
 | Symbool | Betekenis |
 |--------|---------|
@@ -149,17 +154,17 @@ De volgende tabel bevat informatie over de dekking van Azure Maps Mobility-servi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het aanvragen van doorvoer gegevens met de Mobility-service:
+Meer informatie over het aanvragen van doorvoer gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Transit gegevens aanvragen](how-to-request-transit-data.md)
 
-Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility service:
+Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Real-time gegevens aanvragen](how-to-request-real-time-data.md)
 
-De documentatie voor de Azure Maps Mobility Service API verkennen
+De API-documentatie voor Azure Maps Mobility Services (preview) verkennen
 
 > [!div class="nextstepaction"]
-> [API-documentatie voor Mobility service](/rest/api/maps/mobility)
+> [API-documentatie voor Mobility Services](/rest/api/maps/mobility)

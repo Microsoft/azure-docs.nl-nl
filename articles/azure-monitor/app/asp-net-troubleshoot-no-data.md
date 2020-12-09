@@ -4,12 +4,12 @@ description: Ziet u geen gegevens in Azure-toepassing Insights? Probeer het hier
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: c3f0350152ece32829291012d583be87a90227cf
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 26ba586715c7b76ff8972c6574c3c29b837713a1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748930"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904462"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Problemen met geen gegevens Application Insights voor .NET/.NET core oplossen
 
@@ -39,6 +39,10 @@ ms.locfileid: "96748930"
 
 * Zie [probleem oplossing status monitor](./monitor-performance-live-website-now.md#troubleshoot).
 
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=net) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
+
+
 ## <a name="filenotfoundexception-could-not-load-file-or-assembly-microsoftaspnet-telemetrycorrelation"></a>FileNotFoundException: kan het bestand of de assembly micro soft. AspNet TelemetryCorrelation niet laden
 
 Zie [GitHub issue 1610] (voor meer informatie over deze fout https://github.com/microsoft/ApplicationInsights-dotnet/issues/1610) .
@@ -64,7 +68,7 @@ Wanneer u een upgrade uitvoert van Sdk's die ouder zijn dan (2,4), moet u ervoor
     </TelemetryModules>
     ```
 
-***Fout bij het uitvoeren van een upgrade kan leiden tot onverwachte uitzonde ringen of telemetrie niet worden verzameld.** _
+**_Fout bij het uitvoeren van een upgrade kan leiden tot onverwachte uitzonde ringen of telemetrie niet worden verzameld._* _
 
 
 ## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Geen optie voor het toevoegen van Application Insights in Visual Studio

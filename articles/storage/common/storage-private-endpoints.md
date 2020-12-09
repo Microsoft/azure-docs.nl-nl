@@ -10,12 +10,12 @@ ms.date: 03/12/2020
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 96e6b7a672e2967403626cb9ba7db87fc4dd795c
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 0da970724a5d6f0ad42ba64939f316ec1ada855b
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980198"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905550"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Privé-eind punten voor Azure Storage gebruiken
 
@@ -125,10 +125,6 @@ Zie [prijzen van Azure Private Link](https://azure.microsoft.com/pricing/details
 ## <a name="known-issues"></a>Bekende problemen
 
 Denk aan de volgende bekende problemen met persoonlijke eind punten voor Azure Storage.
-
-### <a name="copy-blob-support"></a>Ondersteuning voor BLOB kopiëren
-
-Als het opslag account wordt beveiligd door een firewall en het account wordt geopend via privé-eind punten, kan dat account niet fungeren als de bron van een Kopieer bewerking voor [BLOB](/rest/api/storageservices/copy-blob) .
 
 ### <a name="storage-access-constraints-for-clients-in-vnets-with-private-endpoints"></a>Toegangs beperkingen voor opslag voor clients in VNets met privé-eind punten
 

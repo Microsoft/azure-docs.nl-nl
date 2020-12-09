@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ce068f1b43fcd6611d4abf65029cbcc5de3b7d30
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c9ee57baf63867e4dca4236d484321586cfb3b17
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311597"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862340"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Gebruik het vertolkings pakket om ML-modellen & voor spellingen in python uit te leggen (preview)
 
@@ -47,7 +47,7 @@ In het volgende voor beeld ziet u hoe u het vertolkings pakket gebruikt op uw pe
     pip install azureml-interpret
     ```
 
-2. Train een voorbeeld model in een lokale Jupyter-notebook.
+2. Train een voorbeeld model in een lokale Jupyter Notebook.
 
     ```python
     # load breast cancer dataset, a well-known small dataset that comes with scikit-learn
@@ -242,7 +242,7 @@ In het volgende voor beeld ziet u hoe u de-klasse kunt gebruiken `ExplanationCli
     ```bash
     pip install azureml-interpret
     ```
-1. Een trainings script maken in een lokale Jupyter-notebook. Bijvoorbeeld `train_explain.py`.
+1. Een trainings script maken in een lokale Jupyter Notebook. Bijvoorbeeld `train_explain.py`.
 
     ```python
     from azureml.interpret import ExplanationClient
@@ -275,7 +275,7 @@ In het volgende voor beeld ziet u hoe u de-klasse kunt gebruiken `ExplanationCli
 
 1. Stel een Azure Machine Learning Compute in als uw reken doel en verzend uw trainings uitvoering. Zie [Azure machine learning compute-clusters maken en beheren](how-to-create-attach-compute-cluster.md) voor instructies. Mogelijk vindt u ook de [voorbeeld notitieblokken](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) nuttig.
 
-1. Down load de uitleg in uw lokale Jupyter-notebook.
+1. Down load de uitleg in uw lokale Jupyter Notebook.
 
     ```python
     from azureml.interpret import ExplanationClient
@@ -296,13 +296,13 @@ In het volgende voor beeld ziet u hoe u de-klasse kunt gebruiken `ExplanationCli
 
 ## <a name="visualizations"></a>Visualisaties
 
-Nadat u de uitleg in uw lokale Jupyter-notebook hebt gedownload, kunt u het visualisatie dashboard gebruiken om uw model te begrijpen en te interpreteren.
+Nadat u de uitleg in uw lokale Jupyter Notebook hebt gedownload, kunt u het visualisatie dashboard gebruiken om uw model te begrijpen en te interpreteren.
 
 ### <a name="understand-entire-model-behavior-global-explanation"></a>Volledige model gedrag begrijpen (globale uitleg) 
 
 De volgende grafieken bieden een algemeen overzicht van het getrainde model samen met de voor spellingen en toelichtingen.
 
-|Plotten|Beschrijving|
+|Plotten|Description|
 |----|-----------|
 |Gegevens verkennen| Geeft een overzicht van de gegevensset samen met Voorspellings waarden.|
 |Wereld wijd belang|Aggregateert de belang rijke waarden van de functie van afzonderlijke data Points om de algemene belangrijkste K (Configureer bare K) belangrijkste functies van het model weer te geven. Hiermee wordt het algemene gedrag van het onderliggende model duidelijker.|
@@ -316,7 +316,7 @@ De volgende grafieken bieden een algemeen overzicht van het getrainde model same
 
 U kunt het urgentie diagram van de afzonderlijke functie voor elk gegevens punt laden door te klikken op een van de afzonderlijke gegevens punten in een van de algemene grafieken.
 
-|Plotten|Beschrijving|
+|Plotten|Description|
 |----|-----------|
 |Lokale urgentie|Hier worden de belangrijkste K (Configureer bare K) belang rijke functies voor een afzonderlijke voor spelling weer gegeven. Helpt het lokale gedrag van het onderliggende model op een specifiek gegevens punt te illustreren.|
 |Perturbation exploratie (wat als-analyse)|Hiermee kunnen de functie waarden van het geselecteerde gegevens punt worden gewijzigd en worden de resulterende wijzigingen in de Voorspellings waarde geobserveerd.|

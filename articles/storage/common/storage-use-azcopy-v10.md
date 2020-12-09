@@ -4,16 +4,16 @@ description: AzCopy is een opdracht regel programma dat u kunt gebruiken om gege
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/09/2020
+ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperfq2
-ms.openlocfilehash: ad9b40b448b48500cd6882ac614611f91370ec9e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 9379417fcb96dce8a59f7d81335cec44e1bb5e6a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410263"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901769"
 ---
 # <a name="get-started-with-azcopy"></a>Aan de slag met AzCopy
 
@@ -95,19 +95,20 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 Zie [using Shared Access signatures (SAS) (Engelstalig)](./storage-sas-overview.md)voor meer informatie over SAS-tokens en hoe u er een kunt verkrijgen.
 
+<a id="transfer-data"></a>
+
 ## <a name="transfer-data"></a>Gegevens overdragen
 
 Nadat u uw identiteit hebt goedgekeurd of een SAS-token hebt aangeschaft, kunt u beginnen met het overbrengen van gegevens.
 
 Zie een van deze artikelen om voorbeeld opdrachten te vinden.
 
-- [Gegevens overdragen met AzCopy en blob-opslag](storage-use-azcopy-blobs.md)
-
-- [Gegevens overdragen met AzCopy en bestandopslag](storage-use-azcopy-files.md)
-
-- [Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)
-
-- [Gegevens overdragen met AzCopy en Azure Stack Storage](/azure-stack/user/azure-stack-storage-transfer#azcopy)
+| Service | Artikel |
+|--------|-----------|
+|Azure Blob Storage |[Bestanden uploaden naar Azure Blob Storage](storage-use-azcopy-blobs-upload.md)<br><br>[Blobs downloaden van Azure Blob-opslag](storage-use-azcopy-blobs-download.md)<br><br>[Blobs kopiëren tussen Azure-opslag accounts](storage-use-azcopy-blobs-download.md)<br><br>[Synchroniseren met Azure Blob Storage](storage-use-azcopy-blobs-download.md)|
+|Azure Files |[Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)|
+|Amazon S3|[Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)|
+|Opslag Azure Stack|[Gegevens overdragen met AzCopy en Azure Stack Storage](/azure-stack/user/azure-stack-storage-transfer#azcopy)|
 
 ## <a name="use-in-a-script"></a>Gebruiken in een script
 

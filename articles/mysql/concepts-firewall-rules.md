@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 4efd9fd814165755d27de1d269b6319890f7190d
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: eb178e38001e54ac39a269c8b8cdef12c77d74cf
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541603"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901946"
 ---
 # <a name="azure-database-for-mysql-server-firewall-rules"></a>Firewall regels van Azure Database for MySQL server
 Firewalls verhinderen alle toegang tot uw database server totdat u opgeeft welke computers zijn gemachtigd. De firewall verleent toegang tot de server op basis van het oorspronkelijke IP-adres van elke aanvraag.
@@ -69,6 +69,8 @@ Houd rekening met de volgende punten wanneer de toegang tot de Microsoft Azure-D
 * **Kan geen verbinding maken met een Azure-resource met een toegestaan IP-adres:** Controleer of het **micro soft. SQL** service-eind punt is ingeschakeld voor het subnet waarmee u verbinding maakt. Als **micro soft. SQL** is ingeschakeld, betekent dit dat u alleen VNet- [service-eindpunt regels](concepts-data-access-and-security-vnet.md) wilt gebruiken op dat subnet.
 
    Het is bijvoorbeeld mogelijk dat u de volgende fout ziet als u verbinding maakt vanaf een Azure-VM in een subnet waarvoor **micro soft. SQL** is ingeschakeld, maar geen corresponderende VNet-regel heeft:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
+
+* De **firewall regel is niet beschikbaar voor de IPv6-indeling:** De firewall-regels moeten de IPv4-indeling hebben. Als u firewall regels in de IPv6-indeling opgeeft, wordt de validatie fout weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

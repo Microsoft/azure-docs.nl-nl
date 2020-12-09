@@ -3,24 +3,24 @@ title: Feedback geven over de Azure Maps | Microsoft Azure kaarten
 description: Geef feedback over de gegevens met behulp van Microsoft Azure Maps-kaarten.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 08/19/2019
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b53ea7cf3ec29d7bad7e65a535cd140877bcea09
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 4be775d8a6a8c476bcc659a902c7f43c12a6d6d0
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895508"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905329"
 ---
 # <a name="provide-data-feedback-to-azure-maps"></a>Feedback geven over de Azure Maps
 
 Azure Maps is sinds mei 2018 beschikbaar. Azure Maps beschikt over nieuwe kaart gegevens, gemakkelijk te gebruiken REST Api's en krachtige Sdk's om onze zakelijke klanten te ondersteunen met verschillende soorten bedrijfs toepassingen. De echte wereld wordt elke seconde gewijzigd en het is van essentieel belang dat we een concrete digitale vertegenwoordiging bieden aan onze klanten. Onze klanten die plannen voor het openen of sluiten van faciliteiten, moeten onze kaarten direct bijwerken. Daarom kunnen ze efficiënt plannen voor levering, onderhoud of klanten service bij de juiste faciliteiten. We hebben de Azure Maps data feedback-site gemaakt om ervoor te zorgen dat onze klanten direct feedback kunnen geven. De feedback van klanten gaat rechtstreeks naar onze gegevens providers en hun kaart editors. Ze kunnen snel feedback evalueren en opnemen in onze toewijzings producten.  
 
-[Azure Maps site voor gegevens feedback](https://feedback.azuremaps.com) biedt onze klanten een gemakkelijke manier om feedback te geven over kaart gegevens, met name op zakelijke punten van interesse en privé. In dit artikel wordt uitgelegd hoe u verschillende soorten feedback kunt geven met behulp van de Azure Maps feedback site.
+De [feedback site van Azure Maps-gegevens (preview)](https://feedback.azuremaps.com) biedt onze klanten een eenvoudige manier om informatie over de kaart gegevens op te geven, met name op zakelijke punten van interesse-en verblijfs adressen. In dit artikel wordt uitgelegd hoe u verschillende soorten feedback kunt geven met behulp van de Azure Maps feedback site.
 
 ## <a name="add-a-business-place-or-a-residential-address"></a>Een bedrijfs locatie of een woon adres toevoegen 
 

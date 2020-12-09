@@ -1,21 +1,26 @@
 ---
-title: Pakket vereisten in Azure Maps Maker tekenen
+title: Pakket vereisten in Microsoft Azure Maps Creator maken (preview)
 description: Meer informatie over de vereisten voor het teken pakket voor het converteren van uw ontwerp bestanden voor de locatie om gegevens toe te wijzen
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 6/12/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philMea
-ms.openlocfilehash: 2c3e46bf386e70cbe35d96728ede896d6bf0dc7d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 26b6273b4dd2371790025515e35b71d1fc863ebe
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013119"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903459"
 ---
 # <a name="drawing-package-requirements"></a>Vereisten voor tekenpakketten
+
+
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 U kunt geüploade teken pakketten converteren naar kaart gegevens met behulp van de [Azure Maps conversie service](/rest/api/maps/conversion). In dit artikel worden de teken pakket vereisten voor de conversie-API beschreven. Als u een voorbeeld pakket wilt weer geven, kunt u het voorbeeld [teken pakket](https://github.com/Azure-Samples/am-creator-indoor-data-examples)downloaden.
 
@@ -176,11 +181,11 @@ Hoewel er vereisten gelden wanneer u de manifest-objecten gebruikt, zijn niet al
 
 | Object | Vereist | Beschrijving |
 | :----- | :------- | :------- |
-| `version` | waar |Schema versie van manifest. Op dit moment wordt alleen versie 1,1 ondersteund.|
-| `directoryInfo` | waar | Geeft een overzicht van de geografische locatie-en contact gegevens. Het kan ook worden gebruikt voor een overzicht van de geografische en contact gegevens van een inzittende. |
-| `buildingLevels` | waar | Hiermee geeft u de niveaus van de gebouwen en de bestanden die het ontwerp van de niveaus bevatten. |
-| `georeference` | waar | Bevat numerieke geografische gegevens voor de faciliteit tekening. |
-| `dwgLayers` | waar | Een lijst met de namen van de lagen en elke laag bevat de namen van de eigen functies. |
+| `version` | true |Schema versie van manifest. Op dit moment wordt alleen versie 1,1 ondersteund.|
+| `directoryInfo` | true | Geeft een overzicht van de geografische locatie-en contact gegevens. Het kan ook worden gebruikt voor een overzicht van de geografische en contact gegevens van een inzittende. |
+| `buildingLevels` | true | Hiermee geeft u de niveaus van de gebouwen en de bestanden die het ontwerp van de niveaus bevatten. |
+| `georeference` | true | Bevat numerieke geografische gegevens voor de faciliteit tekening. |
+| `dwgLayers` | true | Een lijst met de namen van de lagen en elke laag bevat de namen van de eigen functies. |
 | `unitProperties` | onjuist | Kan worden gebruikt om aanvullende meta gegevens voor de onderdelen van de eenheid in te voegen. |
 | `zoneProperties` | onjuist | Kan worden gebruikt om aanvullende meta gegevens in te voegen voor de zone-functies. |
 
@@ -190,7 +195,7 @@ In de volgende secties worden de vereisten voor elk object gedetailleerd beschre
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-| `name`      | tekenreeks | waar   |  De naam van het gebouw. |
+| `name`      | tekenreeks | true   |  De naam van het gebouw. |
 | `streetAddress`|    tekenreeks |    onjuist    | Het adres van het gebouw. |
 |`unit`     | tekenreeks    |  onjuist    |  Eenheid in gebouw. |
 | `locality` |    tekenreeks |    onjuist |    De naam van een gebied, groep of regio. Bijvoorbeeld "overlake" of "Central District". De lokale locatie maakt geen deel uit van het post adres. |
@@ -211,26 +216,26 @@ Het `buildingLevels` object bevat een JSON-matrix met de niveaus van gebouwen.
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-|`levelName`    |tekenreeks    |waar |    Beschrijvende niveau naam. Bijvoorbeeld: Floor 1, lobby, Blue parkeren of Basement.|
-|`ordinal` | geheel getal |    waar | Bepaalt de verticale volg orde van niveaus. Elke faciliteit moet een niveau hebben met een rang telwoord van 0. |
+|`levelName`    |tekenreeks    |true |    Beschrijvende niveau naam. Bijvoorbeeld: Floor 1, lobby, Blue parkeren of Basement.|
+|`ordinal` | geheel getal |    true | Bepaalt de verticale volg orde van niveaus. Elke faciliteit moet een niveau hebben met een rang telwoord van 0. |
 |`heightAboveFacilityAnchor` | numeriek | onjuist |    Niveau hoogte boven het anker in meters. |
 | `verticalExtent` | numeriek | onjuist | De hoogte (breedte) van het niveau in meters. |
-|`filename` |    tekenreeks |    waar |    Bestandssysteempad naar het bestands systeem van de CAD-tekening voor een gebouw niveau. Deze moet relatief zijn ten opzichte van de hoofdmap van het zip-bestand van het gebouw. |
+|`filename` |    tekenreeks |    true |    Bestandssysteempad naar het bestands systeem van de CAD-tekening voor een gebouw niveau. Deze moet relatief zijn ten opzichte van de hoofdmap van het zip-bestand van het gebouw. |
 
 ### `georeference`
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|`lat`    | numeriek |    waar |    Decimale weer gave van graden met een breedte graad op de oorspronkelijke positie van de tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` .|
-|`lon`    |numeriek|    waar|    Decimale weer gave van graden met de lengte van de faciliteit tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` . |
-|`angle`|    numeriek|    waar|   De hoek rechtsom, in graden, tussen True en de verticale as (Y) van de tekening.   |
+|`lat`    | numeriek |    true |    Decimale weer gave van graden met een breedte graad op de oorspronkelijke positie van de tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` .|
+|`lon`    |numeriek|    true|    Decimale weer gave van graden met de lengte van de faciliteit tekening. De oorsprongs coördinaten moeten zich in WGS84 Web Mercator () bekomen `EPSG:3857` . |
+|`angle`|    numeriek|    true|   De hoek rechtsom, in graden, tussen True en de verticale as (Y) van de tekening.   |
 
 ### `dwgLayers`
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|`exterior`    |tekenreeksmatrix|    waar|    Namen van lagen die het buitenste bouw profiel definiëren.|
-|`unit`|    tekenreeksmatrix|    waar|    Namen van lagen waarmee eenheden worden gedefinieerd.|
+|`exterior`    |tekenreeksmatrix|    true|    Namen van lagen die het buitenste bouw profiel definiëren.|
+|`unit`|    tekenreeksmatrix|    true|    Namen van lagen waarmee eenheden worden gedefinieerd.|
 |`wall`|    tekenreeksmatrix    |onjuist|    Namen van lagen waarmee wanden worden gedefinieerd.|
 |`door`    |tekenreeksmatrix|    onjuist   | Namen van lagen waarmee deuren worden gedefinieerd.|
 |`unitLabel`    |tekenreeksmatrix|    onjuist    |Namen van lagen waarmee de namen van eenheden worden gedefinieerd.|
@@ -243,7 +248,7 @@ Het `unitProperties` object bevat een JSON-matrix met de eigenschappen van de ee
 
 | Eigenschap  | Type | Vereist | Description |
 |-----------|------|----------|-------------|
-|`unitName`    |tekenreeks    |waar    |De naam van de eenheid die aan deze record moet worden gekoppeld `unitProperty` . Deze record is alleen geldig wanneer er een label overeenkomst `unitName` in de lagen is gevonden `unitLabel` . |
+|`unitName`    |tekenreeks    |true    |De naam van de eenheid die aan deze record moet worden gekoppeld `unitProperty` . Deze record is alleen geldig wanneer er een label overeenkomst `unitName` in de lagen is gevonden `unitLabel` . |
 |`categoryName`|    tekenreeks|    onjuist    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
 |`navigableBy`| tekenreeksmatrix |    onjuist    |Hiermee worden de typen navigatie agenten aangegeven die de eenheid kunnen passeren. Deze eigenschap informeert de wayfinding-mogelijkheden. De toegestane waarden zijn: `pedestrian` , `wheelchair` , `machine` , `bicycle` , `automobile` , `hiredAuto` , `bus` , `railcar` , `emergency` , `ferry` , `boat` en `disallowed` .|
 |`routeThroughBehavior`|    tekenreeks|    onjuist    |Het gedrag van de route voor de eenheid. De toegestane waarden zijn `disallowed` , `allowed` en `preferred` . De standaardwaarde is `allowed`.|
@@ -263,7 +268,7 @@ Het `zoneProperties` object bevat een JSON-matrix met zone-eigenschappen.
 
 | Eigenschap  | Type | Vereist | Beschrijving |
 |-----------|------|----------|-------------|
-|zone naam        |tekenreeks    |waar    |De naam van de zone die aan de record moet worden gekoppeld `zoneProperty` . Deze record is alleen geldig wanneer een label overeenkomst `zoneName` wordt gevonden in de `zoneLabel` laag van de zone.  |
+|zone naam        |tekenreeks    |true    |De naam van de zone die aan de record moet worden gekoppeld `zoneProperty` . Deze record is alleen geldig wanneer een label overeenkomst `zoneName` wordt gevonden in de `zoneLabel` laag van de zone.  |
 |categoryName|    tekenreeks|    onjuist    |Categorie naam. Raadpleeg de [categorie](https://aka.ms/pa-indoor-spacecategories)voor een volledige lijst met categorieën. |
 |zoneNameAlt|    tekenreeks|    onjuist    |Alternatieve naam van de zone.  |
 |zoneNameSubtitle|    tekenreeks |    onjuist    |Ondertitel van de zone. |
@@ -407,10 +412,10 @@ Hier volgt een voor beeld van een manifest bestand voor het voorbeeld teken pakk
 Als uw teken pakket aan de vereisten voldoet, kunt u de [Azure Maps conversie service](/rest/api/maps/conversion) gebruiken om het pakket te converteren naar een kaart gegevensset. Vervolgens kunt u de gegevensset gebruiken om een binnenste kaart te genereren met behulp van de module kaarten.
 
 > [!div class="nextstepaction"]
->[Maker voor kaarten in de binnenste](creator-indoor-maps.md)
+>[Creator (preview) voor kaarten in de binnenste](creator-indoor-maps.md)
 
 > [!div class="nextstepaction"]
-> [Zelf studie: een kaart maken voor een koppeling binnen](tutorial-creator-indoor-maps.md)
+> [Zelf studie: een koppeling maken (preview) in het binnenste](tutorial-creator-indoor-maps.md)
 
 > [!div class="nextstepaction"]
 > [Dynamische stijlen voor kaarten in de binnenste](indoor-map-dynamic-styling.md)

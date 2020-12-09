@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 05/20/2020
+ms.date: 12/08/2020
 ms.author: curtand
-ms.openlocfilehash: 795c68fc063d98bdee6ccf59dba6ee718dc92d03
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b3af7c5bd55e748b1d1f4cf8f192797187da30a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84323022"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901793"
 ---
 # <a name="microsoft-authenticator-for-android-in-the-public-cloud-in-china"></a>Microsoft Authenticator voor Android in de openbare cloud in China
 
@@ -57,6 +57,7 @@ MFA-registratie/-verificatie met alleen mobiele TOTP-/verificatie-codes | Ja
 Registratie via telefonische aanmelding | Nee
 Bestaande telefonische aanmelding met pushmeldingen | Nee
 Bestaande telefonische verificatie van aanmeldingen door uitvoeren van handmatige controle op verificatieaanvragen | Ja
+Ondersteuning voor de verificator-app voor persoonlijke micro soft-accounts | Nee
 
 ## <a name="next-steps"></a>Volgende stappen
 

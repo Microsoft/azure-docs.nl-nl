@@ -1,27 +1,33 @@
 ---
-title: Gegevens structuren van de Mobility-service in Azure Maps | Microsoft Azure kaarten
-description: Krijg inzicht in de manier waarop gegevens worden ingedeeld in metro gebieden in Azure Maps Mobility-Services. Bekijk in welke velden informatie over open bare doorvoer onderbrekingen en-lijnen worden opgeslagen.
+title: Gegevens structuren van Mobility Services (preview-versie) in Microsoft Azure Maps
+description: Krijg inzicht in de manier waarop gegevens worden ingedeeld in metro gebieden in Azure Maps Mobility-Services (preview). Bekijk in welke velden informatie over open bare doorvoer onderbrekingen en-lijnen worden opgeslagen.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 06/05/2019
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 60d45febced2f2d678d41682f7f27bf668943de2
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8ffedc18ba331733723a6293756b60b733cc32cf
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896307"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904717"
 ---
-# <a name="data-structures-in-azure-maps-mobility-service"></a>Gegevens structuren in de Azure Maps Mobility-service
+# <a name="data-structures-in-azure-maps-mobility-services-preview"></a>Gegevens structuren in Azure Maps Mobility-Services (preview) 
 
-In dit artikel wordt het concept van metro gebied in [Azure Maps Mobility-service](/rest/api/maps/mobility)geïntroduceerd. We bespreken enkele algemene velden die worden geretourneerd wanneer deze service wordt opgevraagd voor open bare doorvoer onderbrekingen en-lijnen. We raden u aan dit artikel te lezen voordat u met de Mobility service-Api's ontwikkelt.
+> [!IMPORTANT]
+> Azure Maps Mobility Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+
+
+In dit artikel wordt het concept van het metro gebied in [Azure Maps Mobility-Services](/rest/api/maps/mobility)geïntroduceerd. We bespreken enkele algemene velden die worden geretourneerd wanneer deze service wordt opgevraagd voor open bare doorvoer onderbrekingen en-lijnen. We raden u aan dit artikel te lezen voordat u de Mobility Services-Api's ontwikkelt.
 
 ## <a name="metro-area"></a>Metro gebied
 
-De gegevens van de Mobility-service worden gegroepeerd op ondersteunde metro gebieden. Metro gebieden volgen niet de grenzen van steden. Een metro gebied kan meerdere steden, gevulde stad en rond steden bevatten. Een land/regio kan eigenlijk een metro gebied zijn. 
+De gegevens van Mobility Services (preview) worden gegroepeerd op ondersteunde metro gebieden. Metro gebieden volgen niet de grenzen van steden. Een metro gebied kan meerdere steden, gevulde stad en rond steden bevatten. Een land/regio kan eigenlijk een metro gebied zijn. 
 
 De `metroID` is de id van een metro gebied dat kan worden gebruikt voor het aanroepen van de informatie-API voor het ophalen van een [metro gebied](/rest/api/maps/mobility/getmetroareainfopreview). Gebruik Azure Maps ' "een metro-API verkrijgen" om doorvoer typen, doorvoer instanties, actieve waarschuwingen en aanvullende Details voor de gekozen metro lijn aan te vragen. U kunt ook de ondersteunde metro gebieden en metroIDs aanvragen. De Id's van een metro gebied kunnen worden gewijzigd.
 
@@ -37,7 +43,7 @@ Als u wilt beginnen, kunt u stoppen met het verzoek om een transit op te halen m
 
 ## <a name="line-groups-and-lines"></a>Lijn groepen en-regels
 
-Mobility service maakt gebruik van een parallel gegevens model voor lijnen en lijn groepen. Dit model wordt gebruikt om beter te kunnen omgaan met wijzigingen die zijn overgenomen van [GTFS](http://gtfs.org/) -routes en de TRIPS-gegevens.
+Mobility Services (preview) gebruiken een parallel gegevens model voor lijnen en lijn groepen. Dit model wordt gebruikt om beter te kunnen omgaan met wijzigingen die zijn overgenomen van [GTFS](http://gtfs.org/) -routes en de TRIPS-gegevens.
 
 
 ### <a name="line-groups"></a>Regel groepen
@@ -54,17 +60,17 @@ Als u wilt beginnen, kunt u regel groepen aanvragen met behulp van de [regel-API
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het aanvragen van doorvoer gegevens met de Mobility-service:
+Meer informatie over het aanvragen van doorvoer gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Transit gegevens aanvragen](how-to-request-transit-data.md)
 
-Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility service:
+Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Real-time gegevens aanvragen](how-to-request-real-time-data.md)
 
-De documentatie voor de Azure Maps Mobility Service API verkennen
+De API-documentatie voor Azure Maps Mobility Services (preview) verkennen
 
 > [!div class="nextstepaction"]
-> [API-documentatie voor Mobility service](/rest/api/maps/mobility)
+> [API-documentatie voor Mobility Services](/rest/api/maps/mobility)

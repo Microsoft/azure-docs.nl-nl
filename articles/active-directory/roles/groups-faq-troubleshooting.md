@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f80f67ac695c17cc760e0e87fb9b11384fb7585
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 8735a0d34b9fcf5b86b6592980ffc5c7c3e3073c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377731"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861932"
 ---
 # <a name="troubleshooting-roles-assigned-to-cloud-groups"></a>Problemen met rollen die zijn toegewezen aan cloudgroepen oplossen
 
@@ -32,16 +32,16 @@ Hier volgen enkele veelgestelde vragen en tips voor probleem oplossing voor het 
 
 **A:** Standaard beheert alleen de beheerder van de bevoegde rol en de globale beheerder het lidmaatschap van een door een functie toewijs bare groep, maar u kunt het beheer van aan rollen toewijs bare groepen delegeren door groeps eigenaren toe te voegen.
 
-**V** : Ik ben een helpdesk beheerder in mijn organisatie, maar ik kan het wacht woord van een gebruiker die een directory lezer is, niet bijwerken. Waarom gebeurt dit?
+**V**: Ik ben een helpdesk beheerder in mijn organisatie, maar ik kan het wacht woord van een gebruiker die een directory lezer is, niet bijwerken. Waarom gebeurt dit?
 
-**A** : de gebruiker heeft mogelijk een gemapeerde Directory lezer met een door een functie toewijs bare groep. Alle leden en eigen aren van een door een functie toewijs bare groep zijn beveiligd. Alleen gebruikers met de rol privileged Authentication Administrator of globale beheerder kunnen referenties voor een beveiligde gebruiker opnieuw instellen.
+**A**: de gebruiker heeft mogelijk een gemapeerde Directory lezer met een door een functie toewijs bare groep. Alle leden en eigen aren van een door een functie toewijs bare groep zijn beveiligd. Alleen gebruikers met de rol privileged Authentication Administrator of globale beheerder kunnen referenties voor een beveiligde gebruiker opnieuw instellen.
 
 **V:** Ik kan het wacht woord van een gebruiker niet bijwerken. Er is geen rol met een hoger privilege toegewezen aan de gebruiker. Waarom gebeurt dit?
 
 **A:** De gebruiker kan een eigenaar zijn van een door een functie toewijs bare groep. Wij beveiligen eigen aren van door rollen toewijs bare groepen om misbruik van bevoegdheden te voor komen. Een voor beeld hiervan kan zijn als er een groep Contoso_Security_Admins is toegewezen aan de rol beveiligings beheerder, waarbij Bob de groeps eigenaar is en ANNEER is wachtwoord beheerder in de organisatie. Als deze beveiliging niet aanwezig is, kan Anja de referenties van Dirk opnieuw instellen en zijn identiteit overnemen. Daarna kan Anne zichzelf of iedereen toevoegen aan de groep Contoso_Security_Admins groep om een beveiligings beheerder in de organisatie te worden. Als u wilt weten of een gebruiker een groeps eigenaar is, haalt u de lijst met objecten in eigendom van die gebruiker op en controleert u of voor een van de groepen isAssignableToRole is ingesteld op True. Zo ja, dan is die gebruiker beveiligd en is het gedrag inherent aan het ontwerp. Raadpleeg deze documentes voor het ophalen van objecten in eigendom:
 
-- [Get-AzureADUserOwnedObject](/powershell/module/azuread/get-azureaduserownedobject?view=azureadps-2.0)  
-- [OwnedObjects weer geven](/graph/api/user-list-ownedobjects?tabs=http&view=graph-rest-1.0)
+- [Get-AzureADUserOwnedObject](/powershell/module/azuread/get-azureaduserownedobject)  
+- [OwnedObjects weer geven](/graph/api/user-list-ownedobjects?tabs=http)
 
 **V:** Kan ik een toegangs beoordeling maken voor groepen die kunnen worden toegewezen aan Azure AD-rollen (met name groepen waarvoor de eigenschap isAssignableToRole is ingesteld op waar)?  
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: jingwang
-ms.openlocfilehash: ef7f7ba659d874d4514c45e9391912f3027e2265
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 0b10a4de78c44e4c0a113a1f1a46c316b13a1f78
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592053"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96902154"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Kopieer activiteit in Azure Data Factory
 
@@ -61,7 +61,7 @@ U kunt de Kopieer activiteit gebruiken om bestanden te kopiëren tussen twee op 
 * Kopieer gegevens in de indeling van de tekst in het type gzip (gecomprimeerd) in de vorm van Azure Blob-opslag en schrijf deze naar Azure SQL Database.
 * Veel meer activiteiten waarvoor serialisatie/deserialisatie of compressie/decompressie nodig is.
 
-## <a name="supported-regions"></a>Ondersteunde regio's
+## <a name="supported-regions"></a>Ondersteunde regio’s
 
 De service die de Kopieer activiteit mogelijk maakt, is wereld wijd beschikbaar in de regio's en geografies die worden vermeld in [Azure Integration runtime-locaties](concepts-integration-runtime.md#integration-runtime-location). De wereld wijd beschik bare topologie zorgt voor een efficiënte verplaatsing van gegevens die doorgaans interregionale hops voor komt. Zie [producten per regio](https://azure.microsoft.com/regions/#services) om de beschik baarheid van Data Factory en het verplaatsen van gegevens in een specifieke regio te controleren.
 
@@ -254,7 +254,7 @@ Deze functie wordt ondersteund bij het kopiëren van gegevens uit een bron in de
 
 - [Azure SQL Database](connector-azure-sql-database.md)
 - [Beheerd exemplaar van Azure SQL Database](connector-azure-sql-managed-instance.md)
-- [Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)](connector-azure-sql-data-warehouse.md)
+- [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md)
 - [SQL Server](connector-sql-server.md)
 
 ![Sink-tabellen maken](media/copy-activity-overview/create-sink-table.png)

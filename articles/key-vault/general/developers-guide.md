@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 6fa9f5d86d3640bf3ae0233e7d6d8a00752f5b6d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 895b8441f340d085932cade513c9f8929491b374
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460802"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904258"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -22,7 +22,7 @@ Met Key Vault kunt u veilig toegang krijgen tot gevoelige informatie in uw toepa
 - Sleutels, geheimen en certificaten zijn beveiligd zonder dat u zelf de code hoeft te schrijven en u kunt deze eenvoudig gebruiken vanuit uw toepassingen.
 - U kunt klanten toestaan hun eigen sleutels, geheimen en certificaten te beheren, zodat u zich op de basis van de functies voor de software van de kern kan concentreren. Op deze manier zijn uw toepassingen niet verantwoordelijk voor de verantwoordelijkheid of de mogelijke aansprakelijkheid voor de Tenant sleutels, geheimen en certificaten van uw klanten.
 - Uw toepassing kan gebruikmaken van sleutels voor ondertekening en versleuteling, maar blijft het sleutel beheer extern vanuit uw toepassing. Zie [about Keys](../keys/about-keys.md) (Engelstalig) voor meer informatie over sleutels
-- U kunt referenties, zoals wacht woorden, toegangs sleutels en SAS-tokens die deze opslaan in Key Vault als geheimen beheren, Zie [over geheimen](../secrets/about-secrets.md)
+- U kunt referenties, zoals wacht woorden, toegangs sleutels en SAS-tokens, beheren door ze op te slaan in Key Vault als geheimen, Zie [over geheimen](../secrets/about-secrets.md)
 - Certificaten beheren. Zie [over certificaten](../certificates/about-certificates.md) voor meer informatie.
 
 Zie [Wat is Key Vault](overview.md)voor meer algemene informatie over Azure Key Vault.

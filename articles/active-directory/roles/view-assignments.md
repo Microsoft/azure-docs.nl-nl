@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9f7c6ec0917adbca5b44feee1ec285f4337ac4c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8546c2b50c78c7a24d07c75d2d730fd2566e8ba0
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579025"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862085"
 ---
 # <a name="view-custom-role-assignments-using-azure-active-directory"></a>Aangepaste roltoewijzingen weer geven met behulp van Azure Active Directory
 
@@ -32,14 +32,14 @@ In dit artikel wordt beschreven hoe u aangepaste rollen kunt weer geven die u he
 In deze procedure wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft.
 
 1. Meld u aan bij het [Azure AD-beheer centrum](https://aad.portal.azure.com) met privileged Role Administrator of Global Administrator Permissions in de Azure AD-organisatie.
-1. Selecteer **Azure Active Directory** , selecteer **rollen en beheerders** en selecteer vervolgens een rol om deze te openen en de eigenschappen ervan weer te geven.
+1. Selecteer **Azure Active Directory**, selecteer **rollen en beheerders** en selecteer vervolgens een rol om deze te openen en de eigenschappen ervan weer te geven.
 1. Selecteer **toewijzingen** om de toewijzingen voor de rol weer te geven.
 
     ![Roltoewijzingen en-machtigingen weer geven bij het openen van een rol in de lijst](./media/view-assignments/role-assignments.png)
 
 ## <a name="view-role-assignments-using-azure-ad-powershell"></a>Roltoewijzingen weer geven met behulp van Azure AD Power shell
 
-In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Power shell, kunt u de cmdlets gebruiken in [aangepaste rollen toewijzen met Power shell](custom-assign-powershell.md).
+In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/#directory_roles) . Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Power shell, kunt u de cmdlets gebruiken in [aangepaste rollen toewijzen met Power shell](custom-assign-powershell.md).
 
 ### <a name="prepare-powershell"></a>PowerShell voorbereiden
 
@@ -109,7 +109,7 @@ In deze sectie wordt beschreven hoe u toewijzingen van een rol met een bereik me
 
     ![App-registraties maken of bewerken op de App-registraties pagina](./media/view-assignments/app-reg-all-apps.png)
 
-1. Selecteer in de app-registratie **rollen en beheerders** , en selecteer vervolgens een rol om de eigenschappen ervan weer te geven.
+1. Selecteer in de app-registratie **rollen en beheerders**, en selecteer vervolgens een rol om de eigenschappen ervan weer te geven.
 
     ![Roltoewijzingen van de app-registratie weer geven op de pagina App-registraties](./media/view-assignments/app-reg-assignments.png)
 

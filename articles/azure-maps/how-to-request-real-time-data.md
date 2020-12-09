@@ -1,24 +1,29 @@
 ---
-title: Gegevens in realtime openbaar door Voer aanvragen | Microsoft Azure kaarten
-description: Meer informatie over het aanvragen van real-time gegevens voor openbaar door Voer, zoals aankomsten bij een doorvoer stop. Zie de Azure Maps Mobility-service gebruiken voor dit doel einde.
+title: Real-time gegevens van open bare door Voer met Microsoft Azure Maps Mobility Services (preview) aanvragen
+description: Meer informatie over het aanvragen van real-time gegevens voor openbaar door Voer, zoals aankomsten bij een doorvoer stop. Zie de Azure Maps Mobility Services (preview) gebruiken voor dit doel einde.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 09/06/2019
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: e6f6d0738cb1673b752e35761a112f2ca22a409e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d3e3dc4b0e3bc64a38856da8344583b744ea62b6
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895712"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906043"
 ---
-# <a name="request-real-time-public-transit-data-using-the-azure-maps-mobility-service"></a>Real-time gegevens van open bare door Voer aanvragen met behulp van de Azure Maps Mobility-service
+# <a name="request-real-time-public-transit-data-using-the-azure-maps-mobility-services-preview"></a>Real-time gegevens van open bare door Voer aanvragen met behulp van de Azure Maps Mobility Services (preview) 
 
-In dit artikel wordt beschreven hoe u Azure Maps [Mobility-service](/rest/api/maps/mobility) kunt gebruiken om gegevens in realtime open bare door voer te aanvragen.
+> [!IMPORTANT]
+> Azure Maps Mobility Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+
+In dit artikel wordt beschreven hoe u Azure Maps [Mobility-Services](/rest/api/maps/mobility) kunt gebruiken om gegevens in realtime open bare door voer te aanvragen.
 
 In dit artikel leert u hoe u de volgende realtime aankomsten kunt aanvragen voor alle regels die bij een bepaalde Stop arriveren
 
@@ -30,13 +35,13 @@ In dit artikel wordt gebruikgemaakt van de [app postman](https://www.getpostman.
 
 ## <a name="request-real-time-arrivals-for-a-stop"></a>Dagelijkse aankomsten aanvragen voor een stop
 
-Als u gegevens in realtime wilt ontvangen van een bepaalde open bare doorvoer stop, moet u een aanvraag indienen bij de API voor de [real-time-ontvangst](/rest/api/maps/mobility/getrealtimearrivalspreview) van de Azure Maps [Mobility-service](/rest/api/maps/mobility). U hebt de **metroID** en **stopID** nodig om de aanvraag te volt ooien. Zie voor meer informatie over het aanvragen van deze para meters onze hand leiding voor het [aanvragen van open bare Transit routes](./how-to-request-transit-data.md).
+Als u gegevens in realtime wilt ontvangen van een bepaalde open bare doorvoer stop, moet u een aanvraag indienen bij de [API voor realtime-ontvangst](/rest/api/maps/mobility/getrealtimearrivalspreview) van de Azure Maps [Mobility-service (preview)](/rest/api/maps/mobility). U hebt de **metroID** en **stopID** nodig om de aanvraag te volt ooien. Zie voor meer informatie over het aanvragen van deze para meters onze hand leiding voor het [aanvragen van open bare Transit routes](./how-to-request-transit-data.md).
 
 We gebruiken ' 522 ' als onze metro-ID. Dit is de metro-ID voor het gebied ' Seattle – Tacoma – Bellevue, WA '. Gebruik "522---2060603" als de stop-ID, deze bus stopt op "ne 24 st & 162nd Ave ne, Bellevue WA". Voer de volgende stappen uit om de volgende vijf gegevens over de dagelijkse duur te aanvragen voor alle volgende Live-aankomsten:
 
 1. Open de Postman-app, zodat u een verzameling kunt maken om de aanvragen op te slaan. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Collection** (Verzameling) in het venster **Create New** (Nieuwe maken).  Geef de verzameling een naam en selecteer de knop **Create** (Maken).
 
-2. Selecteer nogmaals **New** (Nieuw) om de aanvraag te maken. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u in de vorige stap hebt gemaakt, als de locatie waar u de aanvraag wilt opslaan. Selecteer vervolgens **Opslaan** .
+2. Selecteer nogmaals **New** (Nieuw) om de aanvraag te maken. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u in de vorige stap hebt gemaakt, als de locatie waar u de aanvraag wilt opslaan. Selecteer vervolgens **Opslaan**.
 
     ![Een aanvraag maken in postman](./media/how-to-request-transit-data/postman-new.png)
 
@@ -113,12 +118,12 @@ We gebruiken ' 522 ' als onze metro-ID. Dit is de metro-ID voor het gebied ' Sea
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het aanvragen van doorvoer gegevens met de Mobility-service:
+Meer informatie over het aanvragen van doorvoer gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Transit gegevens aanvragen](how-to-request-transit-data.md)
 
-Bekijk de documentatie voor de Azure Maps Mobility Service API:
+De API-documentatie voor Azure Maps Mobility Services (preview) verkennen:
 
 > [!div class="nextstepaction"]
-> [API-documentatie voor Mobility service](/rest/api/maps/mobility)
+> [API-documentatie voor Mobility Services](/rest/api/maps/mobility)

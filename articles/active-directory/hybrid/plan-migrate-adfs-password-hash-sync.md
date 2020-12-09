@@ -12,12 +12,12 @@ ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c058f74bb4e390fe7a5003d6ab5d963c56ef2d5
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: dca888bf9e3dc75e80764949a11d95efe3514635
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836373"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861813"
 ---
 # <a name="migrate-from-federation-to-password-hash-synchronization-for-azure-active-directory"></a>Migreren van Federatie naar wacht woord hash synchronisatie voor Azure Active Directory
 
@@ -115,7 +115,7 @@ Controleer alle instellingen die mogelijk zijn aangepast voor uw Federatie-ontwe
 Raadpleeg deze artikelen voor meer informatie:
 
 * [AD FS prompt = ondersteuning voor aanmeld parameters](/windows-server/identity/ad-fs/operations/ad-fs-prompt-login)
-* [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication?view=azureadps-1.0)
+* [Set-MsolDomainAuthentication](/powershell/module/msonline/set-msoldomainauthentication)
 
 > [!NOTE]
 > Als **SupportsMfa** is ingesteld op **True**, gebruikt u een on-premises multi-factor Authentication-oplossing om een tweede factor Challenge in te voeren in de verificatie stroom van de gebruiker. Deze installatie werkt niet meer voor Azure AD-verificatie scenario's nadat dit domein is geconverteerd van federatieve naar beheerde authenticatie. Nadat u Federatie hebt uitgeschakeld, neemt u de relatie met uw on-premises Federatie op. Dit omvat ook on-premises MFA-adapters. 
@@ -442,7 +442,7 @@ Nadat u hebt gecontroleerd of alle gebruikers en clients zijn geverifieerd via A
 
 Als u AD FS niet gebruikt voor andere doel einden (dat wil zeggen, voor andere Relying Party-vertrouwens relaties), is het veilig om AD FS op dit punt uit te voeren.
 
-### <a name="rollback"></a>Actie
+### <a name="rollback"></a>Terugdraaiactie
 
 Als u een belang rijk probleem ontdekt en dit niet snel kunt oplossen, kunt u ervoor kiezen om de oplossing terug te zetten naar Federatie.
 

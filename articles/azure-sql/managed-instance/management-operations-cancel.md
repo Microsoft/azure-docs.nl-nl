@@ -12,12 +12,12 @@ author: urosmil
 ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
-ms.openlocfilehash: 092981f9d74a3f9f18c491ca6cee539a29e73c83
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 342491178d55dacbdc68e6c9042623d381dff898
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782498"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861541"
 ---
 # <a name="canceling-azure-sql-managed-instance-management-operations"></a>De Azure SQL Managed instance Management-bewerkingen worden geannuleerd
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -38,14 +38,14 @@ De volgende tabel bevat een overzicht van de beheer bewerkingen, ongeacht of u d
 
 Categorie  |Bewerking  |Geannuleerd  |Geschatte annulerings duur  |
 |---------|---------|---------|---------|
-|Implementatie |Instantie maken |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Algemeen) |Nee |  |
-|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Bedrijfskritiek) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Algemeen) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Bedrijfskritiek) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Bijwerken |Wijziging van de servicelaag van de instantie (van Algemeen naar Bedrijfskritiek en omgekeerd) |Ja |90% van de bewerkingen is binnen 5 minuten voltooid. |
-|Verwijderen |Verwijdering van exemplaar |Nee |  |
-|Verwijderen |Verwijderen van virtueel cluster (als een door de gebruiker geïnitieerde bewerking) |Nee |  |
+|Implementatie |Instantie maken |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Algemeen) |No |  |
+|Bijwerken |Opslag van exemplaren omhoog/omlaag schalen (Bedrijfskritiek) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Algemeen) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Rekenkracht van instantie (vCores) omhoog en omlaag schalen (Bedrijfskritiek) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Bijwerken |Wijziging van de servicelaag van de instantie (van Algemeen naar Bedrijfskritiek en omgekeerd) |Yes |90% van de bewerkingen is binnen 5 minuten voltooid. |
+|Verwijderen |Verwijdering van exemplaar |No |  |
+|Verwijderen |Verwijderen van virtueel cluster (als een door de gebruiker geïnitieerde bewerking) |No |  |
 
 ## <a name="cancel-management-operation"></a>Beheer bewerking annuleren
 
@@ -61,7 +61,7 @@ Voer de volgende stappen uit om beheer bewerkingen te annuleren met de Azure Por
 
 1. Selecteer **de bewerking annuleren** onder aan de pagina. 
 
-   :::image type="content" source="media/management-operations-cancel/cancel-operation.png" alt-text="Selecteer het vak actieve bewerking om de pagina actieve bewerking te openen.":::
+   :::image type="content" source="media/management-operations-cancel/cancel-operation.png" alt-text="Selecteer Annuleren om de bewerking te annuleren.":::
 
 1. Bevestig dat u de bewerking wilt annuleren. 
 
@@ -95,7 +95,7 @@ foreach ($mo in $managementOperations ) {
 
 Zie [Get-AzSqlInstanceOperation](/powershell/module/az.sql/get-azsqlinstanceoperation) en [Stop-AzSqlInstanceOperation](/powershell/module/az.sql/stop-azsqlinstanceoperation)voor gedetailleerde uitleg over opdrachten.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de Azure CLI nog niet hebt geïnstalleerd, raadpleegt u [de Azure cli installeren](/cli/azure/install-azure-cli).
 
@@ -116,13 +116,12 @@ Zie [AZ SQL mi op](/cli/azure/sql/mi/op)voor gedetailleerde opdracht uitleg.
 
 ## <a name="canceled-deployment-request"></a>De implementatie aanvraag is geannuleerd
 
-Met API versie 2020-02-02, zodra de aanvraag voor het maken van een instantie wordt geaccepteerd, bestaat het exemplaar als een resource, ongeacht de voortgang van het implementatie proces (status van beheerd exemplaar is **inrichten** ). Als u de aanvraag voor de exemplaar implementatie annuleert (nieuwe instantie maken), wordt het beheerde exemplaar van de **inrichtings** status naar **FailedToCreate** .
+Met API versie 2020-02-02, zodra de aanvraag voor het maken van een instantie wordt geaccepteerd, bestaat het exemplaar als een resource, ongeacht de voortgang van het implementatie proces (status van beheerd exemplaar is **inrichten**). Als u de aanvraag voor de exemplaar implementatie annuleert (nieuwe instantie maken), wordt het beheerde exemplaar van de **inrichtings** status naar **FailedToCreate**.
 
 Instanties die niet zijn gemaakt, zijn nog steeds aanwezig als resource en: 
 
 - Worden niet in rekening gebracht
 - Niet meerekenen naar resource limieten (subnet-of vCore-quotum)
-- De instantie naam is gereserveerd: als u een exemplaar wilt implementeren met dezelfde naam, verwijdert u het mislukte exemplaar om de naam vrij te geven
 
 
 > [!NOTE]

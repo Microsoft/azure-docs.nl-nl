@@ -4,12 +4,12 @@ description: Configureer prestaties, Beschik baarheid en hulpprogram ma's voor a
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 861a9f53c2f149268e06005053206a7411e842f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 970971082e684ebcb6efce07bb707ffbb20ed228
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91838939"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904173"
 ---
 # <a name="configure-application-insights-for-your-aspnet-website"></a>Application Insights voor uw ASP.NET-website configureren
 
@@ -25,6 +25,10 @@ Als u Application Insights wilt toevoegen aan uw ASP.NET-website, moet u het vol
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 - Een [op Application Insights werk ruimte gebaseerde resource](create-workspace-resource.md)maken.
+
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=net) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
+
 
 ## <a name="create-a-basic-aspnet-web-app"></a>Een eenvoudige ASP.NET-Web-app maken
 
@@ -46,7 +50,7 @@ Deze sectie bevat instructies voor het automatisch toevoegen van Application Ins
     <InstrumentationKey>your-instrumentation-key-goes-here</InstrumentationKey>
     ```
 4. Selecteer **project**  >  **Manage NuGet packages**  >  **updates** > elk `Microsoft.ApplicationInsights` NuGet-pakket bij te werken naar de laatste stabiele versie.   
-5. Voer de toepassing uit door **IIS Express**te selecteren. Er wordt een eenvoudige ASP.NET-app gestart. Wanneer u navigeert, worden de pagina's op de telemetrie van de site verzonden naar Application Insights.
+5. Voer de toepassing uit door **IIS Express** te selecteren. Er wordt een eenvoudige ASP.NET-app gestart. Wanneer u navigeert, worden de pagina's op de telemetrie van de site verzonden naar Application Insights.
 
 ## <a name="add-application-insights-manually"></a>Application Insights hand matig toevoegen
 

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: kenwith
-ms.openlocfilehash: 1765c6a7d19a11730567acd5e41deebc0a20cec2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 88d004836d5311fc3a971df81a3dc6e6ab605ca9
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993989"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861388"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Toewijzing van toepassingen op basis van kenmerken met bereik filters
 In dit artikel wordt uitgelegd hoe u bereik filters gebruikt voor het definiëren van op kenmerken gebaseerde regels die bepalen welke gebruikers worden ingericht voor een toepassing.
@@ -94,7 +94,7 @@ Bereik filters worden geconfigureerd als onderdeel van de kenmerk toewijzingen v
    
    j. **Greater_Than_OR_EQUALS.** -Component retourneert ' True ' als het geëvalueerde kenmerk groter is dan of gelijk is aan de waarde. De waarde die is opgegeven voor het filter bereik moet een geheel getal zijn en het kenmerk van de gebruiker moet een geheel getal zijn [0, 1, 2,...]. 
    
-   k. **Neem.** -Component retourneert ' True ' als het geëvalueerde kenmerk de teken reeks waarde (hoofdletter gevoelig) bevat, zoals [hier](/dotnet/api/system.string.contains?view=netframework-4.8)wordt beschreven. 
+   k. **Neem.** -Component retourneert ' True ' als het geëvalueerde kenmerk de teken reeks waarde (hoofdletter gevoelig) bevat, zoals [hier](/dotnet/api/system.string.contains)wordt beschreven. 
 
 
 >[!IMPORTANT] 

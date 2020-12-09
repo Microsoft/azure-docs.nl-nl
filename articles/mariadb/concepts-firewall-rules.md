@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: f8233e9974964e5d760d6b0b388278ff4eee7b34
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 452ef4787812dbdf88eb541cf5a164f2888dddcc
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534480"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905431"
 ---
 # <a name="azure-database-for-mariadb-server-firewall-rules"></a>Firewall regels van Azure Database for MariaDB server
 Firewalls verhinderen alle toegang tot uw database server totdat u opgeeft welke computers zijn gemachtigd. De firewall verleent toegang tot de server op basis van het oorspronkelijke IP-adres van elke aanvraag.
@@ -72,6 +72,7 @@ Houd rekening met de volgende punten wanneer toegang tot de Microsoft Azure data
 
    Het is bijvoorbeeld mogelijk dat u de volgende fout ziet als u verbinding maakt vanaf een Azure-VM in een subnet waarvoor **micro soft. SQL** is ingeschakeld, maar geen corresponderende VNet-regel heeft:  `FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
+* De **firewall regel is niet beschikbaar voor de IPv6-indeling:** De firewall-regels moeten de IPv4-indeling hebben. Als u firewall regels in de IPv6-indeling opgeeft, wordt de validatie fout weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Azure Database for MariaDB firewall regels maken en beheren met behulp van de Azure Portal](./howto-manage-firewall-portal.md)

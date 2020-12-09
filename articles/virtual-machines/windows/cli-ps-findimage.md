@@ -1,48 +1,86 @@
 ---
-title: Azure Marketplace-installatie kopieën zoeken en gebruiken
-description: Gebruik Azure PowerShell om de uitgever, aanbieding, SKU en versie te bepalen voor VM-installatie kopieën van Marketplace.
+title: Azure Marketplace-installatie kopieën en-abonnementen zoeken en gebruiken
+description: Gebruik Azure PowerShell om Publisher, aanbieding, SKU, versie en plan gegevens voor VM-installatie kopieën van Marketplace te zoeken en te gebruiken.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 01/25/2019
+ms.date: 12/07/2020
 ms.author: cynthn
-ms.openlocfilehash: 96b5e3770a3f5e08237d61eab05cfeafbc72a5db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45e6b157dba5ef7410d8a5c0223fd3ecb52f39d0
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288346"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906264"
 ---
-# <a name="find-and-use-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>VM-installatie kopieën zoeken en gebruiken in azure Marketplace met Azure PowerShell
+# <a name="find-and-use-azure-marketplace-vm-images-with-azure-powershell"></a>Azure Marketplace-VM-installatie kopieën zoeken en gebruiken met Azure PowerShell     
 
-In dit artikel wordt beschreven hoe u Azure PowerShell kunt gebruiken om VM-installatie kopieën te vinden in azure Marketplace. U kunt vervolgens een Marketplace-installatie kopie opgeven wanneer u een VM maakt.
+In dit artikel wordt beschreven hoe u Azure PowerShell kunt gebruiken om VM-installatie kopieën te vinden in azure Marketplace. U kunt vervolgens een installatie kopie van een Marketplace opgeven en informatie plannen wanneer u een VM maakt.
 
 U kunt ook bladeren in beschik bare installatie kopieën en aanbiedingen met behulp van de [Azure Marketplace](https://azuremarketplace.microsoft.com/) -winkel, de [Azure Portal](https://portal.azure.com)of de [Azure cli](../linux/cli-ps-findimage.md). 
 
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
 
-## <a name="table-of-commonly-used-windows-images"></a>Tabel met veelgebruikte Windows-installatie kopieën
 
-In deze tabel ziet u een subset van beschik bare Sku's voor de aangegeven uitgevers en aanbiedingen.
+## <a name="create-a-vm-from-vhd-with-plan-information"></a>Een virtuele machine maken op basis van VHD met plan gegevens
 
-| Uitgever | Aanbieding | Sku |
-|:--- |:--- |:--- |
-| MicrosoftWindowsServer |WindowsServer |2019-Datacenter |
-| MicrosoftWindowsServer |WindowsServer |2019-Data Center-core |
-| MicrosoftWindowsServer |WindowsServer |2019-Data Center-met-containers |
-| MicrosoftWindowsServer |WindowsServer |2016-Data Center |
-| MicrosoftWindowsServer |WindowsServer |2016-Data Center-Server-Core |
-| MicrosoftWindowsServer |WindowsServer |2016-Data Center-met-containers |
-| MicrosoftWindowsServer |WindowsServer |2012-R2-Datacenter |
-| MicrosoftWindowsServer |WindowsServer |2012-Datacenter |
-| MicrosoftSharePoint |MicrosoftSharePointServer |sp2019 |
-| MicrosoftSQLServer |SQL2019-WS2016 |Enterprise |
-| MicrosoftRServer |RServer-WS2016 |Enterprise |
+Als u een bestaande VHD hebt die is gemaakt met behulp van een Azure Marketplace-installatie kopie, moet u mogelijk de informatie van het aankoop plan opgeven wanneer u een nieuwe virtuele machine maakt op basis van die VHD.
 
-## <a name="navigate-the-images"></a>Navigeren door de afbeeldingen
+Als u nog steeds de oorspronkelijke virtuele machine hebt of een andere virtuele machine die is gemaakt op basis van dezelfde afbeelding, kunt u de naam van het abonnement, de uitgever en de product informatie ophalen met behulp van Get-AzVM. In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden de gegevens van het aankoop plan weer gegeven.
+
+```azurepowershell-interactive
+$vm = Get-azvm `
+   -ResourceGroupName myResourceGroup `
+   -Name myVM
+$vm.Plan
+```
+
+Als u de informatie over het abonnement niet hebt opgehaald voordat de oorspronkelijke VM werd verwijderd, kunt u een [ondersteunings aanvraag](https://ms.portal.azure.com/#create/Microsoft.Support)indienen. Ze moeten de VM-naam, abonnements-id en het tijds tempel van de verwijderings bewerking hebben.
+
+Als u een virtuele machine wilt maken met behulp van een VHD, raadpleegt u dit artikel [een VM maken op basis van een gespecialiseerde VHD](create-vm-specialized.md) en toevoegen aan een regel om de plan gegevens toe te voegen aan de VM-configuratie met behulp van [set-AzVMPlan](/powershell/module/az.compute/set-azvmplan) vergelijkbaar met het volgende:
+
+```azurepowershell-interactive
+$vmConfig = Set-AzVMPlan `
+   -VM $vmConfig `
+   -Publisher "publisherName" `
+   -Product "productName" `
+   -Name "planName"
+```
+
+## <a name="create-a-new-vm-from-a-marketplace-image"></a>Een nieuwe virtuele machine maken op basis van een Marketplace-installatie kopie
+
+Als u de informatie over de installatie kopie die u wilt gebruiken al hebt, kunt u deze informatie door geven aan de cmdlet [set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage) om installatie kopie-informatie toe te voegen aan de VM-configuratie. Zie de volgende secties voor het zoeken en weer geven van de beschik bare installatie kopieën in de Marketplace.
+
+Voor sommige betaalde afbeeldingen moet u ook informatie over het aankoop plan opgeven met behulp van de [set-AzVMPlan](/powershell/module/az.compute/set-azvmplan). 
+
+```powershell
+...
+
+$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize Standard_D1
+
+# Set the Marketplace image
+$offerName = "windows-data-science-vm"
+$skuName = "windows2016"
+$version = "19.01.14"
+$vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version $version
+
+# Set the Marketplace plan information, if needed
+$publisherName = "microsoft-ads"
+$productName = "windows-data-science-vm"
+$planName = "windows2016"
+$vmConfig = Set-AzVMPlan -VM $vmConfig -Publisher $publisherName -Product $productName -Name $planName
+
+...
+```
+
+Vervolgens geeft u de VM-configuratie samen met de andere configuratie-objecten door aan de `New-AzVM` cmdlet. Zie dit [script](https://github.com/Azure/azure-docs-powershell-samples/blob/master/virtual-machine/create-vm-detailed/create-windows-vm-detailed.ps1)voor een gedetailleerd voor beeld van het gebruik van een VM-configuratie met Power shell.
+
+Als u een bericht ontvangt over het accepteren van de voor waarden van de afbeelding, raadpleegt u de sectie [akkoord met de voor waarden](#accept-the-terms) verderop in dit artikel.
+
+## <a name="list-images"></a>Afbeeldingen weer geven
 
 Een manier om een installatie kopie op een locatie te vinden is door de cmdlets [Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), [Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer)en [Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku) in volg orde uit te voeren:
 
@@ -276,41 +314,7 @@ Accepted          : True
 Signdate          : 2/23/2018 7:49:31 PM
 ```
 
-### <a name="deploy-using-purchase-plan-parameters"></a>Implementeren met behulp van Purchase Plan-para meters
 
-Nadat u de voor waarden voor een afbeelding hebt geaccepteerd, kunt u een virtuele machine in dat abonnement implementeren. Zoals weer gegeven in het volgende code fragment, gebruikt u de cmdlet [set-AzVMPlan](/powershell/module/az.compute/set-azvmplan) om de Marketplace-plan gegevens voor het VM-object in te stellen. Zie de [voor beelden van Power shell-scripts](powershell-samples.md)voor een volledig script om netwerk instellingen voor de virtuele machine te maken en de implementatie te volt ooien.
-
-```powershell
-...
-
-$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize Standard_D1
-
-# Set the Marketplace plan information
-
-$publisherName = "microsoft-ads"
-
-$productName = "windows-data-science-vm"
-
-$planName = "windows2016"
-
-$vmConfig = Set-AzVMPlan -VM $vmConfig -Publisher $publisherName -Product $productName -Name $planName
-
-$cred=Get-Credential
-
-$vmConfig = Set-AzVMOperatingSystem -Windows -VM $vmConfig -ComputerName "myVM" -Credential $cred
-
-# Set the Marketplace image
-
-$offerName = "windows-data-science-vm"
-
-$skuName = "windows2016"
-
-$version = "19.01.14"
-
-$vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version $version
-...
-```
-Vervolgens geeft u de VM-configuratie samen met de netwerk configuratie objecten door aan de `New-AzVM` cmdlet.
 
 ## <a name="next-steps"></a>Volgende stappen
 

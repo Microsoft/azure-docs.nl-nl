@@ -10,12 +10,12 @@ ms.date: 08/11/2020
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: 4eb9b0077d1d0591953a40d98a220d7aa0683de7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: fa71dc1e6b3a09827f2ad3d9f714622da5a36222
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497942"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862442"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Een IR bewaken in Azure Data Factory
 
@@ -47,12 +47,12 @@ De volgende tabel bevat beschrijvingen van de eigenschappen die worden geretourn
 
 | Eigenschap | Beschrijving |
 -------- | ------------- | 
-| Naam | De naam van de Azure Integration runtime. |  
+| Name | De naam van de Azure Integration runtime. |  
 | Staat | Status van de Azure Integration runtime. | 
 | Locatie | Locatie van de Azure Integration runtime. Zie [Inleiding tot Integration runtime](concepts-integration-runtime.md)voor meer informatie over de locatie van een Azure Integration runtime. |
 | DataFactoryName | De naam van de data factory waarvan de Azure Integration runtime deel uitmaakt. | 
 | ResourceGroupName | De naam van de resource groep waartoe de data factory behoort.  |
-| Beschrijving | Beschrijving van de Integration runtime.  |
+| Description | Beschrijving van de Integration runtime.  |
 
 ### <a name="status"></a>Status
 
@@ -76,7 +76,7 @@ De volgende tabel bevat beschrijvingen van de bewakings eigenschappen voor **elk
 
 | Eigenschap | Beschrijving | 
 | -------- | ----------- | 
-| Naam | De naam van de zelf-hostende Integration runtime en knoop punten die eraan zijn gekoppeld. Knoop punt is een on-premises Windows-computer waarop de zelf-hostende Integration runtime is geïnstalleerd. |  
+| Name | De naam van de zelf-hostende Integration runtime en knoop punten die eraan zijn gekoppeld. Knoop punt is een on-premises Windows-computer waarop de zelf-hostende Integration runtime is geïnstalleerd. |  
 | Status | De status van de algemene zelf-hostende Integration runtime en elk knoop punt. Voor beeld: online/offline/beperkt/etc. Zie de volgende sectie voor meer informatie over deze statussen. | 
 | Versie | De versie van de zelf-hostende Integration runtime en elk knoop punt. De versie van de zelf-hostende Integration runtime wordt bepaald op basis van de versie van de knoop punten in de groep. Als er knoop punten met verschillende versies in de zelf-hostende Integration runtime-installatie zijn, worden alleen de knoop punten met hetzelfde versie nummer als de logische zelf-hostende Integration runtime-functie correct uitgevoerd. Andere bevinden zich in de beperkte modus en moeten hand matig worden bijgewerkt (alleen als de automatische update mislukt). | 
 | Beschikbaar geheugen | Beschikbaar geheugen op een zelf-hostend Integration runtime-knoop punt. Deze waarde is een bijna realtime moment opname. | 
@@ -104,7 +104,7 @@ De volgende tabel bevat mogelijke statussen van een zelf-hostende Integration ru
 | Online | Het knoop punt is verbonden met de Data Factory-service. |
 | Offline | Het knoop punt is offline. |
 | Abonnement | Het knoop punt wordt automatisch bijgewerkt. |
-| Beperkt | Vanwege een probleem met de verbinding. Wordt mogelijk veroorzaakt door een probleem met de HTTP-poort 8050, een probleem met de Service Bus-verbinding of een probleem met de synchronisatie van referenties. |
+| Beperkt | Vanwege een probleem met de verbinding. Wordt mogelijk veroorzaakt door een probleem met de HTTP-poort 8060, een probleem met de Service Bus-verbinding of een probleem met de synchronisatie van referenties. |
 | Niet-actief | Het knoop punt bevindt zich in een configuratie die verschilt van de configuratie van andere hoofd knooppunten. |
 
 Een knoop punt kan inactief zijn wanneer er geen verbinding kan worden gemaakt met andere knoop punten.
@@ -175,7 +175,7 @@ Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $A
 
 De volgende tabel bevat beschrijvingen van eigenschappen die door de bovenstaande cmdlet voor een Azure-SSIS IR worden geretourneerd.
 
-| Eigenschap/status              | Beschrijving                  |
+| Eigenschap/status              | Description                  |
 | ---------------------------- | ---------------------------- |
 | CreateTime                   | De UTC-tijd waarop uw Azure-SSIS IR is gemaakt. |
 | Knooppunten                        | De toegewezen/beschik bare knoop punten van uw Azure-SSIS IR met knooppunt-specifieke statussen (starten/beschikbaar/recyclen/niet beschikbaar) en fouten die kunnen optreden. |
@@ -196,8 +196,8 @@ De volgende tabel bevat beschrijvingen van eigenschappen die door de bovenstaand
 | Type                         | Het IR-type (beheerd/zelf-Hostend) van uw Azure-SSIS IR. |
 | ResourceGroupName            | De naam van uw Azure-resource groep waarin uw ADF en Azure-SSIS IR zijn gemaakt. |
 | DataFactoryName              | De naam van de ADF. |
-| Naam                         | De naam van uw Azure-SSIS IR. |
-| Beschrijving                  | De beschrijving van uw Azure-SSIS IR. |
+| Name                         | De naam van uw Azure-SSIS IR. |
+| Description                  | De beschrijving van uw Azure-SSIS IR. |
   
 #### <a name="status-per-azure-ssis-ir-node"></a>Status (per Azure-SSIS IR knoop punt)
 
@@ -214,7 +214,7 @@ De volgende tabel bevat mogelijke statussen van een Azure-SSIS IR knoop punt:
 
 De volgende tabel bevat mogelijke algemene statussen van een Azure-SSIS IR. De algemene status is afhankelijk van de gecombineerde status van alle knoop punten die deel uitmaken van de Azure-SSIS IR. 
 
-| Algemene status | Beschrijving | 
+| Algemene status | Description | 
 | -------------- | ----------- | 
 | Eerste        | De knoop punten van uw Azure-SSIS IR zijn niet toegewezen/voor bereid. | 
 | Starten       | De knoop punten van uw Azure-SSIS IR worden toegewezen/voor bereid en de facturering is gestart. |

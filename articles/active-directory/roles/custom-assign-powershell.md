@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cd9148f1084727141f725d76f7ae756f44e210e
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: d4695d0844ef8b707edce53a05de611c91223a46
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379516"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861949"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Aangepaste rollen met resource bereik toewijzen met behulp van Power shell in Azure Active Directory
 
-In dit artikel wordt beschreven hoe u een roltoewijzing maakt op organisatie bereik in Azure Active Directory (Azure AD). Voor het toewijzen van een rol in het bereik van de organisatie wordt toegang verleend via de Azure AD-organisatie. Zie [een aangepaste rol maken en deze toewijzen aan](custom-create.md)de hand van een resource bereik voor het maken van een roltoewijzing met een bereik van één Azure AD-resource. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) .
+In dit artikel wordt beschreven hoe u een roltoewijzing maakt op organisatie bereik in Azure Active Directory (Azure AD). Voor het toewijzen van een rol in het bereik van de organisatie wordt toegang verleend via de Azure AD-organisatie. Zie [een aangepaste rol maken en deze toewijzen aan](custom-create.md)de hand van een resource bereik voor het maken van een roltoewijzing met een bereik van één Azure AD-resource. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/#directory_roles) .
 
 Zie [beheerders rollen toewijzen in azure Active Directory](permissions-reference.md)voor meer informatie over Azure AD-beheerders rollen.
 
@@ -69,7 +69,7 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-Gebruik de [cmdlet Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0)om de rol toe te wijzen aan een Service-Principal in plaats van een gebruiker.
+Gebruik de [cmdlet Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal)om de rol toe te wijzen aan een Service-Principal in plaats van een gebruiker.
 
 ## <a name="operations-on-roledefinition"></a>Bewerkingen op RoleDefinition
 

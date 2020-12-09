@@ -5,16 +5,16 @@ services: storage
 author: santoshc
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/08/2020
+ms.date: 12/08/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 9638d4f8a44b044bb02d3f77d259860128d2e9db
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 07ad0714d0294ad90150acb9df14f17bfc1f5f0d
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462242"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905363"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Firewalls en virtuele netwerken voor Azure Storage configureren
 
@@ -390,6 +390,7 @@ Met de instelling **vertrouwde micro soft-Services toestaan...** kunt u ook een 
 | :----------------------------- | :------------------------------------- | :----------------- |
 | Azure API Management           | Microsoft.ApiManagement/service        | Hiermee wordt de API Management-service toegang tot opslag accounts achter firewall ingeschakeld met behulp van beleid. [Meer informatie](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
 | Azure Cognitive Search         | Micro soft. Search/searchServices        | Hiermee kunnen Cognitive Search Services toegang krijgen tot opslag accounts voor indexering, verwerking en query's. |
+| Azure Cognitive Services       | Micro soft. CognitiveService             | Hiermee wordt Cognitive Services toegang tot opslag accounts. |
 | Azure Container Registry Tasks | Micro soft. ContainerRegistry/registers | ACR-taken hebben toegang tot opslag accounts tijdens het maken van container installatie kopieën. |
 | Azure Data Factory             | Micro soft. DataFactory/fabrieken        | Hiermee hebt u toegang tot opslag accounts via de ADF-runtime. |
 | Azure Data Share               | Microsoft.DataShare/accounts           | Hiermee wordt toegang tot opslag accounts via een gegevens share toegestaan. |

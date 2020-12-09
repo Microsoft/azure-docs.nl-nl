@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
-ms.openlocfilehash: cfda4d7970c734d92c9f2355d553721ef6165e43
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 77d7b8a0bf4d7fe9a94a61ea3f2f4279246ffb69
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911848"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903884"
 ---
 # <a name="create-human-reviews"></a>Mensen beoordelingen maken
 
@@ -28,7 +28,7 @@ In deze hand leiding leert u hoe u [beoordelingen](../review-api.md#reviews) kun
 ## <a name="image-reviews"></a>Beoordelingen van afbeeldingen
 
 1. Ga naar het [hulp programma voor controle](https://contentmoderator.cognitive.microsoft.com/), selecteer het tabblad **try** en upload enkele afbeeldingen om te controleren.
-1. Zodra de verwerking van de geüploade installatie kopieën is voltooid, gaat u naar het tabblad **controleren** en selecteert u **afbeelding** .
+1. Zodra de verwerking van de geüploade installatie kopieën is voltooid, gaat u naar het tabblad **controleren** en selecteert u **afbeelding**.
 
     ![Chrome-browser met het beoordelings programma met de optie voor het controleren van de afbeelding gemarkeerd](images/review-images-1.png)
 
@@ -38,7 +38,7 @@ In deze hand leiding leert u hoe u [beoordelingen](../review-api.md#reviews) kun
 
     ![Chrome-browser met het beoordelings programma met gelabelde afbeeldingen voor beoordeling](images/review-images-2.png)
 
-1. Als u meer informatie wilt weer geven over een afbeelding, klikt u op het beletsel teken in de miniatuur en selecteert u **Details weer geven** . U kunt een installatie kopie toewijzen aan een subteam met de optie **verplaatsen naar** (Zie de sectie [teams](./configure.md#manage-team-and-subteams) voor meer informatie over subteams).
+1. Als u meer informatie wilt weer geven over een afbeelding, klikt u op het beletsel teken in de miniatuur en selecteert u **Details weer geven**. U kunt een installatie kopie toewijzen aan een subteam met de optie **verplaatsen naar** (Zie de sectie [teams](./configure.md#manage-team-and-subteams) voor meer informatie over subteams).
 
     ![Een afbeelding met de optie Details weer geven gemarkeerd](images/review-images-3.png)
 
@@ -56,4 +56,4 @@ Tekst beoordelingen worden op dezelfde manier gebruikt als voor beeld Beoordelin
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u geleerd hoe u beoordelingen kunt instellen en gebruiken via het [hulp programma content moderator beoordeling](https://contentmoderator.cognitive.microsoft.com). Raadpleeg vervolgens de [rest API gids](../try-review-api-review.md) of de [.NET SDK Quick](../client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp) start voor meer informatie over het programmatisch maken van Beoordelingen.
+In deze hand leiding hebt u geleerd hoe u beoordelingen kunt instellen en gebruiken via het [hulp programma content moderator beoordeling](https://contentmoderator.cognitive.microsoft.com). Raadpleeg vervolgens de [API-console handleiding](../try-review-api-review.md) of de [.NET SDK Quick](../client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp) start voor meer informatie over het programmatisch maken van Beoordelingen.

@@ -1,23 +1,27 @@
 ---
-title: Veelgestelde vragen over Microsoft Azure Maps-Services (FAQ)
-description: Vind antwoord op veelgestelde vragen over de gegevens en functies van Azure Maps weer Services.
+title: Veelgestelde vragen over Microsoft Azure Maps-Services (preview)
+description: Vind antwoord op veelgestelde vragen over de gegevens en functies van Azure Maps weer Services (preview).
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 12/04/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 2a5a58c1515c647bb76bf35f3a5eaade3d00588a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 8b7726e4e8fee0044a7865c8c494ef6451425676
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96747323"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903867"
 ---
-# <a name="azure-maps-weather-services-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Maps-Services
+# <a name="azure-maps-weather-services-preview-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Maps-Services (preview)
 
-In dit artikel vindt u antwoorden op veelgestelde vragen over de gegevens en functies van [Azure Maps weer Services](https://docs.microsoft.com/rest/api/maps/weather) . De volgende onderwerpen komen aan bod:
+> [!IMPORTANT]
+> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel vindt u antwoorden op veelgestelde vragen over de gegevens en functies van Azure Maps [weer Services](https://docs.microsoft.com/rest/api/maps/weather) . De volgende onderwerpen komen aan bod:
 
 * Gegevens bronnen en gegevens modellen
 * Dekking en beschik baarheid van weer Services
@@ -51,7 +55,7 @@ Deze gegevens sets worden in realtime gecontroleerd op nauw keurigheid van het D
 
 Een groot aantal voor weers pellen-hulp systemen wordt gebruikt voor het formuleren van globale prognoses. Meer dan 150 numerieke prognose modellen worden elke dag gebruikt, zowel externe als interne gegevens sets. Dit omvat overheids modellen, zoals de ECMWF van het Euro pees centrum en het Amerikaanse Global Forecast-systeem (GFS). Daarnaast heeft AccuWeather in bedrijfs eigen modellen met een hoge resolutie die de voor keur heeft verkleinen voor specifieke locaties en strategische regionale domeinen om weer een grotere nauw keurigheid te voors pellen. De unieke overvloei-en wegings algoritmen van AccuWeather zijn in de laatste paar decennia ontwikkeld. Deze algoritmen maken optimaal gebruik van de talloze prognose invoer om zeer nauw keurige prognoses te bieden.
 
-## <a name="weather-services-coverage-and-availability"></a>Dekking en beschik baarheid van weer Services
+## <a name="weather-services-preview-coverage-and-availability"></a>Voor beeld-dekking en beschik baarheid van weer Services (preview-versie)
 
 **Wat voor soort dekking kan ik verwachten voor verschillende landen/regio's?**
 
@@ -73,11 +77,11 @@ Azure Maps Forecast-Api's worden opgeslagen in de cache van Maxi maal 30 minuten
 
 ## <a name="developing-with-azure-maps-sdks"></a>Ontwikkelen met Azure Maps Sdk's
 
-**Ondersteunt Azure Maps Web-SDK systeem eigen integratie van weer Services?**
+**Ondersteunt Azure Maps websdk systeem eigen integratie van weer Services (preview-versie)?**
 
 De Azure Maps Web-SDK biedt een Services-module. De Services-module is een helper-bibliotheek waarmee u gemakkelijk de Azure Maps REST-services in web-of Node.js toepassingen kunt gebruiken. met behulp van Java script of type script. Zie onze [documentatie](https://docs.microsoft.com/azure/azure-maps/how-to-use-services-module)als u aan de slag wilt gaan.
 
-**Ondersteunt Azure Maps Android SDK systeem eigen integratie van weer Services?**
+**Ondersteunt Azure Maps Android SDK systeem eigen integratie van weer Services (preview-versie)?**
 
 De Azure Maps Android-Sdk's bieden ondersteuning voor Mercator-tegel lagen. Dit kan x/y/zoom-notatie, een Quad-sleutel notatie of een EPSG 3857-begrenzingsvak bevatten.
 
@@ -99,7 +103,7 @@ Ja. Naast de tegels in realtime radar en satellieten kunnen Azure Maps klanten e
 
 **Biedt u pictogrammen voor verschillende weers omstandigheden?**
 
-Ja. U kunt [hier](https://docs.microsoft.com/azure/azure-maps/weather-services-concepts#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts enkele van de weer service Api's, zoals de  [huidige voor waarden van de API ophalen](https://aka.ms/azuremapsweathercurrentconditions), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
+Ja. U kunt [hier](https://docs.microsoft.com/azure/azure-maps/weather-services-concepts#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts een deel van de Api's van de weer service (preview-versie), zoals de  [huidige voor waarden van de API ophalen](https://aka.ms/azuremapsweathercurrentconditions), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -110,15 +114,15 @@ Als deze veelgestelde vragen niet beantwoordt aan uw vraag, kunt u contact met o
 * Microsoft Ondersteuning. Als u een nieuwe ondersteunings aanvraag wilt maken, selecteert u in het [Azure Portal](https://portal.azure.com/)op het tabblad Help de knop **Help** en ondersteuning en selecteert u vervolgens **nieuwe ondersteunings aanvraag**.
 * [Azure Maps UserVoice](https://feedback.azure.com/forums/909172-azure-maps) om functie aanvragen te verzenden.
 
-Meer informatie over het aanvragen van real-time en geraamde weer gegevens met Azure Maps weer Services:
+Meer informatie over het aanvragen van real-time en geraamde weers gegevens met behulp van Azure Maps weer Services (preview):
 > [!div class="nextstepaction"]
 > [Real-time gegevens opvragen ](how-to-request-weather-data.md)
 
-Het artikel over Azure Mapses van weer Services:
+Artikel over concepten van Azure Maps weer Services (preview):
 > [!div class="nextstepaction"]
-> [Concepten van weer Services](weather-coverage.md)
+> [Concepten voor Weather-services](weather-coverage.md)
 
-Bekijk de documentatie voor de Azure Maps weer Services API:
+Verken de API-documentatie voor Azure Maps weer Services (preview):
 
 > [!div class="nextstepaction"]
 > [Azure Maps weer Services](/rest/api/maps/weather)

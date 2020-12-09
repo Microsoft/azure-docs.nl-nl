@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 875297821a423d9f16fb8af86445590b5012bd4d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a3583f19eada83b45b2289a938ac5e15b1efb4a4
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654198"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861611"
 ---
 # <a name="get-all-application-proxy-apps-with-a-token-lifetime-policy"></a>Alle toepassingsproxy-apps ophalen met een beleid voor de levensduur van het token
 
@@ -38,14 +38,14 @@ Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module (preview)](/po
 
 | Opdracht | Opmerkingen |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Hiermee wordt een service-principal opgehaald. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Hiermee wordt een Azure AD-toepassing opgehaald. |
+|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Hiermee wordt een service-principal opgehaald. |
+|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Hiermee wordt een Azure AD-toepassing opgehaald. |
 |[Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview) | Hiermee wordt een beleid in Azure AD opgehaald. |
 |[Get-AzureADServicePrincipalPolicy](/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview) | Hiermee wordt het beleid van een service-principal in Azure AD opgehaald. |
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie het [overzicht van de Azure PowerShell-module](/powershell/azure/active-directory/overview?view=azureadps-2.0) voor meer informatie over de Azure AD PowerShell-module.
+Zie het [overzicht van de Azure PowerShell-module](/powershell/azure/active-directory/overview) voor meer informatie over de Azure AD PowerShell-module.
 
 Zie [Azure AD PowerShell-voorbeelden voor de Azure AD-toepassingsproxy](../application-proxy-powershell-samples.md) voor andere PowerShell-voorbeelden voor de toepassingsproxy.

@@ -1,18 +1,18 @@
 ---
 title: Meerdere exemplaren van een uitvoer waarde definiëren
-description: Gebruik een Kopieer bewerking in een Azure Resource Manager sjabloon om meerdere keren te herhalen wanneer een waarde uit een implementatie wordt geretourneerd.
+description: Gebruik een Kopieer bewerking in een Azure Resource Manager sjabloon (ARM-sjabloon) om meerdere keren te herhalen wanneer een waarde uit een implementatie wordt geretourneerd.
 ms.topic: conceptual
 ms.date: 04/17/2020
-ms.openlocfilehash: 50c4b4b8f301ad88d3dfde98ace1aed4431693db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ae20ed9ec3fdb3b76adbd370f5ba22f9386d613
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82583421"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905941"
 ---
 # <a name="output-iteration-in-arm-templates"></a>Uitvoer herhaling in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u meer dan één waarde voor een uitvoer in uw Azure Resource Manager-sjabloon (ARM) kunt maken. Door het element **copy** toe te voegen aan de sectie outputs van uw sjabloon, kunt u tijdens de implementatie dynamisch een aantal items retour neren.
+In dit artikel wordt beschreven hoe u meer dan één waarde voor een uitvoer in uw Azure Resource Manager-sjabloon maakt (ARM-sjabloon). Door het element toe te voegen `copy` aan de sectie uitvoer van uw sjabloon, kunt u tijdens de implementatie dynamisch een aantal items retour neren.
 
 U kunt ook kopiëren met [resources](copy-resources.md), [Eigenschappen in een resource](copy-properties.md)en [variabelen](copy-variables.md)gebruiken.
 
@@ -27,9 +27,9 @@ Het element Copy heeft de volgende algemene indeling:
 }
 ```
 
-De eigenschap **Count** geeft het aantal iteraties op dat u voor de uitvoer waarde wilt.
+De `count` eigenschap geeft het aantal iteraties op dat u voor de uitvoer waarde wilt.
 
-De eigenschap **input** geeft de eigenschappen aan die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de eigenschap **input** . Dit kan één eigenschap zijn (zoals een teken reeks) of een object met verschillende eigenschappen.
+`input`Met de eigenschap geeft u de eigenschappen op die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de `input` eigenschap. Dit kan één eigenschap zijn (zoals een teken reeks) of een object met verschillende eigenschappen.
 
 ## <a name="copy-limits"></a>Limieten kopiëren
 
@@ -171,6 +171,5 @@ In het voor gaande voor beeld wordt een matrix met de volgende waarden geretourn
   * [Resource iteratie in ARM-sjablonen](copy-resources.md)
   * [Eigenschaps herhaling in ARM-sjablonen](copy-properties.md)
   * [Variabele herhaling in ARM-sjablonen](copy-variables.md)
-* Zie [arm-sjablonen ontwerpen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
-* Zie [een toepassing implementeren met een arm-sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.
-
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.

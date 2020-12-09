@@ -1,20 +1,20 @@
 ---
 title: Sjabloon implementeren-IntelliJ idee
-description: Meer informatie over het maken van uw eerste Azure Resource Manager-sjabloon met behulp van het IntelliJ-idee en hoe u deze implementeert.
+description: Leer hoe u uw eerste Azure Resource Manager-sjabloon maakt (ARM-sjabloon) met behulp van het IntelliJ-idee en hoe u dit implementeert.
 ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 6a596eff70bfc20b5a6752ef47398bd14d527c97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0e007fe8930b30cee1c95159d7e964e3792449f
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90973339"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905958"
 ---
 # <a name="create-and-deploy-arm-templates-by-using-the-intellij-idea"></a>ARM-sjablonen maken en implementeren met behulp van het IntelliJ-idee
 
-Leer hoe u een Azure Resource Manager-sjabloon (ARM) implementeert in azure met behulp van het IntelliJ-idee en het proces voor het bewerken en bijwerken van de sjabloon rechtstreeks vanuit de IDE. ARM-sjablonen zijn JSON-bestanden waarmee de resources worden gedefinieerd die u voor uw oplossing moet implementeren. Zie het [overzicht van het implementeren van sjablonen](overview.md) om de concepten te begrijpen die verband houden met het implementeren en beheren van Azure-oplossingen.
+Meer informatie over het implementeren van een Azure Resource Manager sjabloon (ARM-sjabloon) naar Azure met behulp van het IntelliJ-idee en het proces voor het bewerken en bijwerken van de sjabloon rechtstreeks vanuit de IDE. ARM-sjablonen zijn JSON-bestanden waarmee de resources worden gedefinieerd die u voor uw oplossing moet implementeren. Zie het [overzicht van sjabloon implementatie](overview.md)voor meer informatie over de concepten van het implementeren en beheren van uw Azure-oplossingen.
 
 ![Portal diagram van Resource Manager-sjabloon](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-export-deploy-template-portal.png)
 
@@ -40,7 +40,7 @@ In plaats van een sjabloon helemaal opnieuw te maken, opent u een sjabloon in [A
 
     ![Resource Manager-sjabloon met de rechter muisknop om implementatie te maken](./media/create-templates-use-intellij/resource-manager-create-deployment-right-click.png)
 
-1. Configuratie van de **implementatie naam**, het **abonnement**, de **resource groep**en de **regio**. Hier implementeren we de sjabloon in een nieuwe resource groep `testRG` . Selecteer vervolgens pad voor **resource sjabloon** als `azuredeploy.json` en **resource parameters** tijdens `azuredeploy.parameters.json` het downloaden.
+1. Configuratie van de **implementatie naam**, het **abonnement**, de **resource groep** en de **regio**. Hier implementeren we de sjabloon in een nieuwe resource groep `testRG` . Selecteer vervolgens pad voor **resource sjabloon** als `azuredeploy.json` en **resource parameters** tijdens `azuredeploy.parameters.json` het downloaden.
 
     ![Resource Manager-sjabloon bestanden selecteren om implementatie te maken](./media/create-templates-use-intellij/resource-manager-create-deployment-select-files.png)
 

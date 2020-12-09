@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b5b83d75df734c667c365f20fad2e1f62f997d7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 95f70005f2c7f53833163dcd5f0d2ee89b3db37c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994278"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861286"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Maak een flexibele toegangs beheer strategie met Azure Active Directory
 
@@ -266,7 +266,7 @@ De wijzigingen die u hebt gemaakt als onderdeel van het geactiveerde rampen plan
 3. Terugdraaiende wijzigingen die u hebt aangebracht en die tijdens de onderbreking zijn gedocumenteerd.
 4. Als u een account voor toegang tot nood gevallen hebt gebruikt, moet u de referenties opnieuw genereren en de nieuwe gegevens van de referenties fysiek beveiligen als onderdeel van de procedures voor de nood toegangs account.
 5. Ga door met het [sorteren van alle risico detecties](../reports-monitoring/concept-sign-ins.md) die zijn gerapporteerd na de onderbreking van verdachte activiteiten.
-6. Alle vernieuwings tokens die zijn uitgegeven [met Power shell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) intrekken voor een aantal gebruikers. Het intrekken van alle vernieuwings tokens is belang rijk voor geprivilegieerde accounts die worden gebruikt tijdens de onderbreking en het uitvoeren ervan zal afdwingen dat ze opnieuw worden geverifieerd en voldoen aan het beheer van het herstelde beleid.
+6. Alle vernieuwings tokens die zijn uitgegeven [met Power shell](/powershell/module/azuread/revoke-azureaduserallrefreshtoken) intrekken voor een aantal gebruikers. Het intrekken van alle vernieuwings tokens is belang rijk voor geprivilegieerde accounts die worden gebruikt tijdens de onderbreking en het uitvoeren ervan zal afdwingen dat ze opnieuw worden geverifieerd en voldoen aan het beheer van het herstelde beleid.
 
 ## <a name="emergency-options"></a>Opties voor nood gevallen
 
@@ -287,7 +287,7 @@ Als uw organisatie verouderd beleid voor MFA per gebruiker gebruikt, kunt u het 
 * [Documentatie voor Azure AD-verificatie](./howto-mfaserver-iis.md)
 * [Beheer accounts voor toegang in nood gevallen beheren in azure AD](../roles/security-emergency-access.md)
 * [Benoemde locaties configureren in Azure Active Directory](../reports-monitoring/quickstart-configure-named-locations.md)
-  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0)
+  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
 * [Hybride Azure Active Directory-apparaten configureren](../devices/hybrid-azuread-join-plan.md)
 * [Implementatiehandleiding Windows Hello voor Bedrijven](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Richt lijnen voor wacht woorden-micro soft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)

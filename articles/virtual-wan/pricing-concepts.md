@@ -6,15 +6,15 @@ services: virtual-wan
 author: reyandap
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 12/08/2020
 ms.author: reyandap
 ms.custom: references_pricing
-ms.openlocfilehash: b4025990a1a62351d3971d788558dea8ecb390ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ced9bb33be341d35904967092414676a6ffe3ac
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327954"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905533"
 ---
 # <a name="about-virtual-wan-pricing"></a>Over de prijzen voor Virtual WAN
 
@@ -38,7 +38,7 @@ Een **schaal eenheid** biedt de eenheid voor de totale capaciteit van site-naar-
 
 ### <a name="what-is-a-connection-unit"></a><a name="connection-unit"></a>Wat is een verbindings eenheid?
 
-Een **verbindings eenheid** is van toepassing op alle on-premises/niet-micro soft-eind punten die verbinding maken met Azure-gateways. Voor site-naar-site-VPN impliceert dit branches. Voor gebruikers VPN (punt-naar-site) duidt dit op externe gebruikers. Voor ExpressRoute duidt dit op ExpressRoute circuit Connections.<br>Bijvoorbeeld:
+Een **verbindings eenheid** is van toepassing op alle on-premises/niet-micro soft-eind punten die verbinding maken met Azure-gateways. Voor site-naar-site-VPN impliceert deze waarde branches. Voor gebruikers VPN (punt-naar-site) duidt deze waarde op externe gebruikers. Voor ExpressRoute impliceert deze waarde ExpressRoute-circuit verbindingen.<br>Bijvoorbeeld:
 
 * Een vertakkings verbinding die verbinding maakt met Azure VPN in een virtuele hub kostte € 0,05/HR. Daarom 100 vertakkings verbindingen die verbinding maken met een virtuele Azure-hub, kosten $0,05 * 100/uur.
 
@@ -50,32 +50,7 @@ Een **verbindings eenheid** is van toepassing op alle on-premises/niet-micro sof
 
 * Verkeer dat binnenkomt in azure, wordt niet in rekening gebracht. Verkeer dat Azure verlaat (via VPN-, ExpressRoute-of punt-naar-site-VPN-verbindingen) is onderhevig aan de standaard [kosten voor Azure-gegevens overdracht](https://azure.microsoft.com/pricing/details/bandwidth/).
 
-* Voor de kosten voor gegevens overdracht tussen een virtuele WAN-hub en een externe virtuele WAN-hub of een VNet in een andere regio dan de bron-hub gelden kosten voor gegevens overdracht voor verkeer dat een hub verlaat. Voor beeld: verkeer dat een VS-Oost-hub verlaat, wordt $0,02/GB in rekening gebracht naar een VS West-hub. Er worden geen kosten in rekening gebracht voor verkeer dat binnenkomt op de VS West-hub. In de volgende tabellen worden de kosten weer gegeven.
-
-In de onderstaande tabellen worden de volgende afkortingen gebruikt: {naam: Noord-Amerika}, {EU: Europa}, {MEA: Midden-Oosten-Afrika}, {OC: Oceania (Australië-centraal en Australië-centraal 2)}, {LATAM: Latijns-Amerika} 
-
-**Prijzen binnen continenten (*)**
-
-| Intra-Continent| Prijs ($/GB)|
-|---|---|
-| De nr.|$ 0,02 |
-| EU naar EU |$ 0,02 |
-| Azië en Azië (met uitzonde ring van China)|$0,10 |
-| MEA naar MEA|$0,16 |
-| LATAM-LATAM |$0,16 |
-| OC-OC|$0,12 |
-
-**Inter-continentale prijzen (*)**
-
-| Inter-Continental| Prijs ($/GB)|
-|---|---|
-| VAN de in de EU of EU naar de nr. |$0,07 |
-| VAN LATAM naar een wille keurige locatie |$0,17 |
-| VAN MEA naar een wille keurige locatie |$0,17 |
-| VAN OCEANIA naar een wille keurige locatie |$0,12 |
-| Vanuit Azië (met uitzonde ring van CHINA) naar elke locatie |$0,12 |
-
-(*) Enkele kosten kunnen van toepassing zijn vanaf 1 augustus 2020.
+* Voor de kosten voor gegevens overdracht tussen een virtuele WAN-hub en een externe virtuele WAN-hub of een VNet in een andere regio dan de bron-hub gelden kosten voor gegevens overdracht voor verkeer dat een hub verlaat. Voor beeld: verkeer dat een VS-Oost-hub verlaat, wordt $0,02/GB in rekening gebracht naar een VS West-hub. Er worden geen kosten in rekening gebracht voor verkeer dat binnenkomt op de VS West-hub. Alle hub-naar-hub-verkeer is onderhevig aan Inter-Region (intra-continentale) kosten voor [Azure-gegevens overdracht](https://azure.microsoft.com/pricing/details/bandwidth/). 
 
 ### <a name="what-is-the-difference-between-a-standard-hub-fee-and-a-standard-hub-processing-fee"></a><a name="fee"></a>Wat is het verschil tussen een Standard hub-tarief en een standaard hub-verwerkings tarief?
 

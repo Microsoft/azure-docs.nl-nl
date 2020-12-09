@@ -3,12 +3,12 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie agent gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: e941938fce09e8729856322a5b6572b46a3714be
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: a956d5e8dcfa82f85020928e1427a08ac8fe7a69
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075481"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906247"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -60,9 +60,9 @@ De gast configuratie client controleert elke vijf minuten op nieuwe inhoud. Zodr
 
 Beleids definities voor gast configuratie zijn inclusief nieuwe versies. Oudere versies van besturings systemen die beschikbaar zijn in azure Marketplace, worden uitgesloten als de gast configuratie agent niet compatibel is. In de volgende tabel ziet u een lijst met ondersteunde besturings systemen in azure-installatie kopieën:
 
-|Publisher|Naam|Versies|
+|Publisher|Name|Versies|
 |-|-|-|
-|Canonical|Ubuntu Server|14,04 en hoger|
+|Canonical|Ubuntu Server|14,04-18,04|
 |Credativ|Debian|8 en hoger|
 |Microsoft|Windows Server|2012 en hoger|
 |Microsoft|Windows-client|Windows 10|
@@ -120,7 +120,7 @@ Azure Policy maakt gebruik van de eigenschap **complianceStatus** van de gast co
 
 #### <a name="auditing-operating-system-settings-following-industry-baselines"></a>De instellingen van het besturings systeem controleren volgens de industrie basislijnen
 
-Een initiatief in Azure Policy biedt de mogelijkheid om de instellingen van het besturings systeem te controleren na een ' basis lijn '. De definitie, _ \[ Preview \] : controleren van Windows-vm's die niet overeenkomen met de basis instellingen van Azure Security_ bevat een set regels op basis van Active Directory groepsbeleid.
+Een initiatief in Azure Policy biedt de mogelijkheid om de instellingen van het besturings systeem te controleren na een ' basis lijn '. De definitie, _\[ Preview \] : controleren van Windows-vm's die niet overeenkomen met de basis instellingen van Azure Security_ bevat een set regels op basis van Active Directory groepsbeleid.
 
 De meeste instellingen zijn beschikbaar als para meters. Met para meters kunt u bepalen wat er wordt gecontroleerd.
 Lijn het beleid uit met uw vereisten of wijs het beleid toe aan gegevens van derden, zoals industriële regelgevende normen.

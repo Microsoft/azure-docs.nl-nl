@@ -1,5 +1,5 @@
 ---
-title: Gebruikers toewijzing voor een app in Azure Active Directory beheren
+title: Gebruikerstoewijzing beheren voor een app in Azure Active Directory
 description: Meer informatie over het toewijzen en verwijderen van gebruikers en groepen voor een app met behulp van Azure Active Directory voor identiteits beheer.
 services: active-directory
 author: kenwith
@@ -11,14 +11,14 @@ ms.topic: how-to
 ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
-ms.openlocfilehash: 55934e8c33b74740b7398be1ae18a3ef899aee74
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 22acfc5095b1ffcad382fa2b665a86d382645e7a
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651274"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861674"
 ---
-# <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Gebruikers toewijzing voor een app in Azure Active Directory beheren
+# <a name="manage-user-assignment-for-an-app-in-azure-active-directory"></a>Gebruikerstoewijzing beheren voor een app in Azure Active Directory
 
 In dit artikel wordt beschreven hoe u gebruikers en groepen toewijst aan bedrijfs toepassingen in Azure Active Directory (Azure AD), vanuit de Azure Portal of met behulp van Power shell. Wanneer u een gebruiker toewijst aan een toepassing, wordt de toepassing weer gegeven in [mijn apps](https://myapps.microsoft.com/) van de gebruiker voor eenvoudige toegang. Als de toepassing rollen beschikbaar maakt, kunt u ook een specifieke rol aan de gebruiker toewijzen.
 
@@ -81,11 +81,11 @@ U kunt de Graph API gebruiken om gebruikers en groepen voor een app toe te wijze
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
-Voor meer informatie over het toewijzen van een gebruiker aan een toepassingsrol raadpleegt u de documentatie voor [New-AzureADUserAppRoleAssignment](/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
+Voor meer informatie over het toewijzen van een gebruiker aan een toepassingsrol raadpleegt u de documentatie voor [New-AzureADUserAppRoleAssignment](/powershell/module/azuread/new-azureaduserapproleassignment).
 
 Als u een groep aan een bedrijfs-app wilt toewijzen, moet u vervangen door `Get-AzureADUser` `Get-AzureADGroup` en vervangen door `New-AzureADUserAppRoleAssignment` `New-AzureADGroupAppRoleAssignment` .
 
-Zie de documentatie voor [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment?view=azureadps-2.0)voor meer informatie over het toewijzen van een groep aan een toepassingsrol.
+Zie de documentatie voor [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment)voor meer informatie over het toewijzen van een groep aan een toepassingsrol.
 
 ### <a name="example"></a>Voorbeeld
 

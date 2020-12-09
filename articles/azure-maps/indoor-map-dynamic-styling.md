@@ -1,21 +1,25 @@
 ---
-title: Dynamische stijlen implementeren voor de kaarten van Azure Maps Maker binnenshuis
-description: Meer informatie over het implementeren van dynamische opmaak voor plattegronden in de maker
+title: Dynamische stijlen implementeren voor de toewijzing van Azure Maps Maker (preview)
+description: Meer informatie over het implementeren van dynamische opmaak voor Creator-kaarten (preview)
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: b9ce0d0770c7e6c4579469cc16d8c76c309a33d1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 266dc5d62f6224495075546528ad71d806d415ac
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895372"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903442"
 ---
-# <a name="implement-dynamic-styling-for-creator-indoor-maps"></a>Dynamische stijlen voor het maken van kaarten in de maker implementeren
+# <a name="implement-dynamic-styling-for-creator-preview-indoor-maps"></a>Dynamische stijlen voor het maken van de maker (preview-versie) implementeren
+
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Azure Maps- [functie status service](/rest/api/maps/featurestate) maakt het mogelijk om stijlen toe te passen op basis van de dynamische eigenschappen van de functies van de gegevens van de binnenste kaart.  U kunt bijvoorbeeld faciliteit Vergader zalen met een specifieke kleur weer geven om de status van bezetting weer te geven. In dit artikel laten we u zien hoe u met behulp van de [functie status service](/rest/api/maps/featurestate) en de [WEBMODULE](how-to-use-indoor-module.md)over een dynamisch overzicht kunt weer geven van de toewijzings functies.
 
@@ -23,7 +27,7 @@ Azure Maps- [functie status service](/rest/api/maps/featurestate) maakt het moge
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
-3. [Een Creator-resource maken](how-to-manage-creator.md)
+3. [Een bron voor het maken van een maker (preview-resource)](how-to-manage-creator.md)
 4. Down load het [voorbeeld teken pakket](https://github.com/Azure-Samples/am-creator-indoor-data-examples).
 5. [Maak een kaart voor binnenste](tutorial-creator-indoor-maps.md) om een en te verkrijgen `tilesetId` `statesetId` .
 6. Bouw een webtoepassing met behulp van de stappen in [de module voor de binnenste kaart gebruiken](how-to-use-indoor-module.md).
@@ -66,7 +70,7 @@ In de volgende sectie wordt de bezettings *status* van Office ingesteld `UNIT26`
 
  We gaan nu de status van de twee kant oren bijwerken `UNIT26` en `UNIT27` :
 
-1. Selecteer in de Postman-toepassing de optie **New** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer in de Postman-toepassing de optie **New**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
 2. Gebruik de [API voor de functie-update status](/rest/api/maps/featurestate/updatestatespreview) om de status bij te werken. Geef de statusset-ID en `UNIT26` een van de twee eenheden door. Voeg uw Azure Maps-abonnements sleutel toe. Dit is de URL van een **post** -aanvraag om de status bij te werken:
 
@@ -74,7 +78,7 @@ In de volgende sectie wordt de bezettings *status* van Office ingesteld `UNIT26`
     https://atlas.microsoft.com/featureState/state?api-version=1.0&statesetID={statesetId}&featureID=UNIT26&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Stel in de **headers** van de **POST** -aanvraag `Content-Type` in op `application/json`. In de **hoofd tekst** van de **post** -aanvraag schrijft u de volgende JSON met de functie-updates. De update wordt alleen opgeslagen als de tijds tempel na het tijds tempel dat is gebruikt in de vorige functie status update aanvragen voor dezelfde functie is `ID` . Geef de ' bezette ' door `keyName` om de waarde bij te werken.
+3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. In de **hoofd tekst** van de **post** -aanvraag schrijft u de volgende JSON met de functie-updates. De update wordt alleen opgeslagen als de tijds tempel na het tijds tempel dat is gebruikt in de vorige functie status update aanvragen voor dezelfde functie is `ID` . Geef de ' bezette ' door `keyName` om de waarde bij te werken.
 
     ```json
     {
@@ -113,7 +117,7 @@ De webtoepassing die u eerder hebt geopend in een browser, moet nu de bijgewerkt
 Lees voor meer informatie:
 
 > [!div class="nextstepaction"]
-> [Koppeling voor binnenste toewijzing](creator-indoor-maps.md)
+> [Maker (preview) voor een binnenste toewijzing](creator-indoor-maps.md)
 
 Zie de naslag informatie voor de Api's die in dit artikel worden vermeld:
 

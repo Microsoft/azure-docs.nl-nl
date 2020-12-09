@@ -4,15 +4,15 @@ description: Gegevens overdragen met AzCopy en file storage. AzCopy is een opdra
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: a19cca515bafa1d06f93d71b4868011a7c922354
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 087af322240322e44e70a9b5279eb7d251e735be
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792834"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901861"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>Gegevens overdragen met AzCopy en bestandsopslag 
 
@@ -72,7 +72,7 @@ U kunt ook een bestand uploaden met behulp van een Joker teken (*) ergens in het
 
 ### <a name="upload-a-directory"></a>Een map uploaden
 
-In dit voor beeld wordt een map (en alle bestanden in die map) naar een bestands share gekopieerd. Het resultaat is een map in de bestands share met dezelfde naam.
+In dit voorbeeld wordt een map (met alle bestanden in de map) gekopieerd naar een bestandsshare. Het resultaat is een map in de bestandsshare met dezelfde naam.
 
 |    |     |
 |--------|-----------|
@@ -147,7 +147,7 @@ U kunt de azcopy-opdracht [kopiëren](storage-ref-azcopy-copy.md) gebruiken om b
 Deze sectie bevat de volgende voor beelden:
 
 > [!div class="checklist"]
-> * Een bestand downloaden
+> * Bestand downloaden
 > * Een directory downloaden
 > * De inhoud van een map downloaden
 > * Specifieke bestanden downloaden
@@ -166,7 +166,7 @@ Deze sectie bevat de volgende voor beelden:
 > [!NOTE]
 > Als de `Content-md5` eigenschaps waarde van een bestand een hash bevat, wordt in AzCopy een MD5-hash voor gedownloade gegevens berekend en wordt gecontroleerd of de MD5-hash die is opgeslagen in de eigenschap van het bestand `Content-md5` overeenkomt met de berekende hash. Als deze waarden niet overeenkomen, mislukt de down load tenzij u dit gedrag overschrijft door toe te voegen `--check-md5=NoCheck` of `--check-md5=LogOnly` aan de Kopieer opdracht.
 
-### <a name="download-a-file"></a>Een bestand downloaden
+### <a name="download-a-file"></a>Bestand downloaden
 
 |    |     |
 |--------|-----------|
@@ -184,7 +184,7 @@ Dit voor beeld resulteert in een map met `C:\myDirectory\myFileShareDirectory` d
 
 ### <a name="download-the-contents-of-a-directory"></a>De inhoud van een map downloaden
 
-U kunt de inhoud van een map downloaden zonder de bovenliggende map zelf te kopiëren met behulp van het Joker teken (*).
+U kunt de inhoud van een map downloaden zonder de map waar de inhoud in zit te kopiëren, door het jokerteken (*) te gebruiken.
 
 |    |     |
 |--------|-----------|
@@ -207,7 +207,7 @@ Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met de `--include
 | **Syntaxis** | `azcopy copy 'https://<storage-account-name>.file.core.windows.net/<file-share-or-directory-name><SAS-token>' '<local-directory-path>'  --include-path <semicolon-separated-file-list>` |
 | **Voorbeeld** | `azcopy copy 'https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'C:\myDirectory'  --include-path 'photos;documents\myFile.txt' --recursive` |
 
-In dit voor beeld worden de `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/photos` map en het bestand door AzCopy overgedragen `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/documents/myFile.txt` . U moet de `--recursive` optie voor het overdragen van alle bestanden in de `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/photos` map toevoegen.
+In dit voor beeld worden de `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/photos` map en het bestand door AzCopy overgedragen `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/documents/myFile.txt` . Neem de `--recursive` optie op voor het overdragen van alle bestanden in de `https://mystorageaccount.file.core.windows.net/myFileShare/myDirectory/photos` map.
 
 U kunt ook bestanden uitsluiten met behulp van de `--exclude-path` optie. Zie voor meer informatie [azcopy Copy](storage-ref-azcopy-copy.md) Reference docs.
 
@@ -248,7 +248,7 @@ Deze sectie bevat de volgende voor beelden:
 > * Een bestand kopiëren naar een ander opslag account
 > * Een map kopiëren naar een ander opslag account
 > * Een bestands share kopiëren naar een ander opslag account
-> * Alle bestands shares, directory's en bestanden kopiëren naar een ander opslag account
+> * Alle bestandsshares, mappen en bestanden kopiëren naar een ander opslagaccount
 
 > [!TIP]
 > U kunt uw Kopieer bewerking aanpassen met behulp van optionele vlaggen. Hier volgen enkele voor beelden.
@@ -283,7 +283,7 @@ Deze sectie bevat de volgende voor beelden:
 | **Syntaxis** | `azcopy copy 'https://<source-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' 'https://<destination-storage-account-name>.file.core.windows.net/<file-share-name><SAS-token>' --recursive` |
 | **Voorbeeld** | `azcopy copy 'https://mysourceaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' 'https://mydestinationaccount.file.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-07-04T05:30:08Z&st=2019-07-03T21:30:08Z&spr=https&sig=CAfhgnc9gdGktvB=ska7bAiqIddM845yiyFwdMH481QA8%3D' --recursive` |
 
-### <a name="copy-all-file-shares-directories-and-files-to-another-storage-account"></a>Alle bestands shares, directory's en bestanden kopiëren naar een ander opslag account
+### <a name="copy-all-file-shares-directories-and-files-to-another-storage-account"></a>Alle bestandsshares, mappen en bestanden kopiëren naar een ander opslagaccount
 
 |    |     |
 |--------|-----------|
@@ -292,14 +292,14 @@ Deze sectie bevat de volgende voor beelden:
 
 ## <a name="synchronize-files"></a>Bestanden synchroniseren
 
-U kunt de inhoud van een bestands share synchroniseren met een andere bestands share. U kunt ook de inhoud van een map in een bestands share synchroniseren met de inhoud van een map die zich in een andere bestands share bevindt. Synchronisatie is in één richting. Met andere woorden, u kunt kiezen welke van deze twee eind punten de bron is en welke het doel is. Synchronisatie gebruikt ook server-naar-server-Api's.
+U kunt de inhoud van een bestands share synchroniseren met een andere bestands share. U kunt ook de inhoud van een map in een bestands share synchroniseren met de inhoud van een map die zich in een andere bestands share bevindt. Synchronisatie is een manier. Met andere woorden, u kunt kiezen welke van deze twee eind punten de bron is en welke het doel is. Synchronisatie gebruikt ook server-naar-server-Api's.
 
 > [!NOTE]
 > Dit scenario wordt momenteel alleen ondersteund voor accounts die geen hiërarchische naam ruimte hebben. De huidige release van AzCopy synchroniseert niet tussen Azure Files en Blob Storage.
 
 Met de opdracht [Sync](storage-ref-azcopy-sync.md) worden bestands namen en tijds tempels met de laatste wijziging vergeleken. Stel de `--delete-destination` optionele vlag in op een waarde van `true` of `prompt` om bestanden in de doelmap te verwijderen als deze bestanden niet meer in de bron directory aanwezig zijn.
 
-Als u de `--delete-destination` vlag instelt op `true` AzCopy, worden bestanden verwijderd zonder dat u een prompt hoeft op te geven. Als u wilt dat er een prompt wordt weer gegeven voordat AzCopy een bestand verwijdert, stelt u de `--delete-destination` vlag in op `prompt` .
+Als u de `--delete-destination` vlag instelt op `true` , worden bestanden door AzCopy verwijderd zonder dat er een prompt wordt gegeven. Als u wilt dat er een prompt wordt weer gegeven voordat AzCopy een bestand verwijdert, stelt u de `--delete-destination` vlag in op `prompt` .
 
 > [!TIP]
 > U kunt de synchronisatie bewerking aanpassen met behulp van optionele vlaggen. Hier volgen enkele voor beelden.
@@ -348,8 +348,6 @@ Meer voor beelden vindt u in een van deze artikelen:
 
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 
-- [Gegevens overdragen met AzCopy en blob-opslag](storage-use-azcopy-blobs.md)
-
-- [Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)
+- [Gegevens overdragen](storage-use-azcopy-v10.md#transfer-data)
 
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

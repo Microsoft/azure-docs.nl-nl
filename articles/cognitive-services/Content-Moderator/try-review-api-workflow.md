@@ -10,14 +10,14 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 3e58be4b94457d95d28cf6528b9151e4be1802cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 79749533d636f4b73ff3bef6b12d9e842ac485ea
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72754186"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905146"
 ---
-# <a name="define-and-use-moderation-workflows-rest"></a>Toezicht werk stromen definiëren en gebruiken (REST)
+# <a name="define-and-use-moderation-workflows-api-console"></a>Toezicht werk stromen definiëren en gebruiken (API-console)
 
 Werk stromen zijn op de cloud gebaseerde aangepaste filters die u kunt gebruiken om inhoud efficiënter af te handelen. Werk stromen kunnen verbinding maken met verschillende services om inhoud op verschillende manieren te filteren en vervolgens de juiste actie ondernemen. In deze hand leiding wordt beschreven hoe u de werk stroom REST Api's kunt gebruiken via de API-console om werk stromen te maken en te gebruiken. Zodra u de structuur van de Api's begrijpt, kunt u deze aanroepen eenvoudig naar een wille keurig platform met een REST-compatibel poort.
 
@@ -25,26 +25,26 @@ Werk stromen zijn op de cloud gebaseerde aangepaste filters die u kunt gebruiken
 
 - Meld u aan of maak een account op de site van het Content Moderator [controle programma](https://contentmoderator.cognitive.microsoft.com/) .
 
-## <a name="create-a-workflow"></a>Een werk stroom maken
+## <a name="create-a-workflow"></a>Een werkstroom maken
 
-Als u een werk stroom wilt maken of bijwerken, gaat u naar de pagina **[werk stroom-API-verwijzing maken of bijwerken](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59)** en selecteert u de knop voor uw sleutel regio (u kunt dit vinden in de eind punt-URL op de pagina **referenties** van het [hulp programma voor controle](https://contentmoderator.cognitive.microsoft.com/)). Hiermee wordt de API-console gestart, waar u eenvoudig REST API-aanroepen kunt maken en uitvoeren.
+Als u een werk stroom wilt maken of bijwerken, gaat u naar de pagina **[werk stroom-API-verwijzing maken of bijwerken](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/5813b46b3f9b0711b43c4c59)** en selecteert u de knop voor uw sleutel regio. U vindt uw regio in de eind punt-URL op de pagina **referenties** van het [hulp programma voor controle](https://contentmoderator.cognitive.microsoft.com/). Hiermee wordt de API-console gestart, waar u eenvoudig REST API-aanroepen kunt maken en uitvoeren.
 
 ![Werk stroom: selectie van pagina regio maken of bijwerken](images/test-drive-region.png)
 
 ### <a name="enter-rest-call-parameters"></a>REST Call-para meters invoeren
 
-Voer waarden in voor **team**, **werk stroomnaam**en **OCP-APIM-Subscription-Key**:
+Voer waarden in voor **team**, **werk stroomnaam** en **OCP-APIM-Subscription-Key**:
 
 - **team**: de team-ID die u hebt gemaakt bij het instellen van het account voor het [beoordelings programma](https://contentmoderator.cognitive.microsoft.com/) (gevonden in het veld **id** op het scherm met de referenties van het controle programma).
 - **workflowactie**: de naam van een nieuwe werk stroom die u wilt toevoegen (of een bestaande naam als u een bestaande werk stroom wilt bijwerken).
-- **OCP-APIM-abonnements sleutel**: uw content moderator sleutel. U vindt dit op het tabblad **instellingen** van het [hulp programma voor beoordeling](https://contentmoderator.cognitive.microsoft.com).
+- **OCP-APIM-abonnements sleutel**: uw content moderator sleutel. U kunt deze sleutel vinden op het tabblad **instellingen** van het [hulp programma voor beoordeling](https://contentmoderator.cognitive.microsoft.com).
 
 ![Werk stroom: query parameters en kopteksten voor console maken of bijwerken](images/workflow-console-parameters.PNG)
 
 ### <a name="enter-a-workflow-definition"></a>Een werk stroom definitie invoeren
 
 1. Bewerk het vak **hoofd tekst** van de aanvraag om de JSON-aanvraag in te voeren met Details voor de **Beschrijving** en het **type** ( `Image` of `Text` ).
-2. Voor **expressie**kopieert u de standaard JSON-expressie voor de werk stroom. De uiteindelijke JSON-teken reeks moet er als volgt uitzien:
+2. Voor **expressie** kopieert u de standaard JSON-expressie voor de werk stroom. De uiteindelijke JSON-teken reeks moet er als volgt uitzien:
 
 ```json
 {
@@ -102,7 +102,7 @@ Voer de para meters voor REST-aanroep in, zoals in de bovenstaande sectie. Contr
 
 ![Query parameters en kopteksten ophalen](images/workflow-get-default.PNG)
 
-Selecteer **Verzenden**. Als de bewerking is geslaagd, is de **reactie status** en wordt in `200 OK` het vak **reactie inhoud** de werk stroom weer gegeven in JSON-indeling, zoals in het volgende voor beeld:
+Selecteer **Verzenden**. Als de bewerking is geslaagd, is de **reactie status** en wordt in `200 OK` het vak **reactie inhoud** de werk stroom in JSON-indeling weer gegeven, zoals in het volgende voor beeld:
 
 ```json
 {

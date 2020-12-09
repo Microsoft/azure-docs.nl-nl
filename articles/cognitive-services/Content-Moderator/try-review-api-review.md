@@ -10,14 +10,14 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: pafarley
-ms.openlocfilehash: a9726e41a84926d00d48b51e31f534a3d8c2fe0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 479c7c455f07d098edd327196803e85df24dfb6d
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72757144"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905127"
 ---
-# <a name="create-human-reviews-rest"></a>Menselijke beoordelingen maken (REST)
+# <a name="create-human-reviews-api-console"></a>Menselijke beoordelingen maken (API-console)
 
 [Beoordelingen](./review-api.md#reviews) van de winkel en de weer gave van inhoud voor menselijke moderators om te beoordelen. Wanneer een gebruiker een beoordeling voltooit, worden de resultaten verzonden naar een opgegeven eind punt voor terugbellen. In deze hand leiding leert u hoe u beoordelingen kunt instellen met behulp van de REST-Api's controleren via de API-console. Zodra u de structuur van de Api's begrijpt, kunt u deze aanroepen eenvoudig naar een wille keurig platform met een REST-compatibel poort.
 
@@ -33,9 +33,9 @@ Als u een beoordeling wilt maken, gaat u naar de pagina voor het maken van API *
 
 ### <a name="enter-rest-call-parameters"></a>REST Call-para meters invoeren
 
-Voer waarden in voor **teamnaam**en **OCP-APIM-Subscription-Key**:
+Voer waarden in voor **teamnaam** en **OCP-APIM-Subscription-Key**:
 
-- **team**naam: de team-ID die u hebt gemaakt bij het instellen van het account voor het [beoordelings programma](https://contentmoderator.cognitive.microsoft.com/) (gevonden in het veld **id** op het scherm met de referenties van het controle programma).
+- **team** naam: de team-ID die u hebt gemaakt bij het instellen van het account voor het [beoordelings programma](https://contentmoderator.cognitive.microsoft.com/) (gevonden in het veld **id** op het scherm met de referenties van het controle programma).
 - **OCP-APIM-abonnements sleutel**: uw content moderator sleutel. U vindt dit op het tabblad **instellingen** van het [hulp programma voor beoordeling](https://contentmoderator.cognitive.microsoft.com).
 
 ### <a name="enter-a-review-definition"></a>Voer een beoordelings definitie in

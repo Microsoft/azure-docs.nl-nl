@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: e2d87d4322ac6b91a19a4775c23ceec75d528030
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 43c39c40af6e02861211a8666fefa57c34072f32
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325329"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905193"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Beoordelingen, werk stromen en taken voor content toezicht
 
@@ -42,7 +42,7 @@ Gebruik de **Zoek** werkbalk om de beoordelingen te sorteren op diverse categori
 > [!div class="mx-imgBorder"]
 > ![De werk balk Zoeken wordt weer gegeven. Er zijn verschillende keuze lijsten met invoervak voor het invoeren van zoek criteria, zoals de status van de controle en de tags.](./Review-Tool-user-Guide/images/review-search.png)
 
-Raadpleeg de [hand leiding voor het beoordelings programma](./review-tool-user-guide/review-moderated-images.md) om te beginnen met het maken van recensies of raadpleeg de [rest API gids](./try-review-api-review.md) voor informatie over hoe u dit kunt doen.
+Raadpleeg de [hand leiding voor het beoordelings programma](./review-tool-user-guide/review-moderated-images.md) om aan de slag te gaan met het maken van recensies of Raadpleeg de [API-console handleiding](./try-review-api-review.md) voor informatie over hoe u dit kunt doen via een programma.
 
 ## <a name="workflows"></a>Werkstromen
 
@@ -80,13 +80,13 @@ Werk stromen worden gedefinieerd als JSON-teken reeksen, waardoor ze via een pro
 }
 ```
 
-Raadpleeg de [hand leiding voor het hulp programma](./review-tool-user-guide/workflows.md) voor het maken en gebruiken van werk stromen of raadpleeg de [rest API gids](./try-review-api-workflow.md) voor informatie over hoe u dit kunt doen met programma code.
+Raadpleeg de [hand leiding voor het hulp programma](./review-tool-user-guide/workflows.md) voor het maken en gebruiken van werk stromen of Raadpleeg de [API-console handleiding](./try-review-api-workflow.md) voor informatie over hoe u dit kunt doen via een programma.
 
 ## <a name="jobs"></a>Taken
 
 Een toezicht taak fungeert als een soort wrapper voor de functionaliteit van toezicht op inhoud, werk stromen en Beoordelingen. De taak scant uw inhoud met behulp van de Content Moderator afbeeldings toezicht-API of tekst toezicht-API en controleert deze vervolgens op de aangewezen werk stroom. Op basis van de werk stroom resultaten kan de inhoud niet worden gecontroleerd in het [beoordelings programma](./review-tool-user-guide/human-in-the-loop.md). Hoewel zowel beoordelingen als werk stromen kunnen worden gemaakt en geconfigureerd met hun respectieve Api's, kunt u met de taak-API een gedetailleerd rapport verkrijgen van het hele proces (dat kan worden verzonden naar een opgegeven call back-eind punt).
 
-Raadpleeg de [rest API-hand leiding](./try-review-api-job.md) om aan de slag te gaan met taken.
+Zie de [API-console handleiding](./try-review-api-job.md) om aan de slag te gaan met taken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

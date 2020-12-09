@@ -1,24 +1,29 @@
 ---
-title: Doorvoer gegevens aanvragen met Microsoft Azure Maps Mobility service
-description: Informatie over het gebruik van de Azure Maps Mobility-service om gegevens van open bare door voer te vragen, zoals metro gebied-Id's, door Voer gestopt, routes en route routes.
+title: Doorvoer gegevens aanvragen met Microsoft Azure Maps Mobility Services (preview-versie)
+description: Meer informatie over het gebruik van de Azure Maps Mobility Services (preview) voor het aanvragen van open bare doorvoer gegevens, zoals metro gebied-Id's, door Voer gestopt, routes en route routes.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 07/22/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 3f6f50d0ffeb48b5f359221992cc9a51d2ebb056
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 740080d742f535f868b2ae194b24bebe5ac6ac24
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895661"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906026"
 ---
-# <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Open bare doorvoer gegevens aanvragen met behulp van de Azure Maps Mobility-service
+# <a name="request-public-transit-data-using-the-azure-maps-mobility-services-preview"></a>Open bare doorvoer gegevens aanvragen met behulp van de Azure Maps Mobility Services (preview) 
 
-In dit artikel wordt beschreven hoe u Azure Maps [Mobility-service](/rest/api/maps/mobility) kunt gebruiken om open bare doorvoer gegevens aan te vragen. Transit gegevens omvatten schattingen voor door Voer, route gegevens en reis tijd.
+> [!IMPORTANT]
+> Azure Maps Mobility Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+
+In dit artikel wordt beschreven hoe u Azure Maps [Mobility-Services](/rest/api/maps/mobility) kunt gebruiken om open bare doorvoer gegevens aan te vragen. Transit gegevens omvatten schattingen voor door Voer, route gegevens en reis tijd.
 
 In dit artikel leert u het volgende:
 
@@ -36,13 +41,13 @@ In deze zelfstudie wordt gebruikgemaakt van de [Postman](https://www.postman.com
 
 ## <a name="get-a-metro-area-id"></a>Een metro gebied-ID ophalen
 
-Als u gedetailleerde informatie over de door Voer-instanties en ondersteunde typen voor een bepaalde stedelijke ruimte wilt aanvragen, hebt u dit `metroId` gebied nodig. Met de API voor het ophalen van een [metro gebied](/rest/api/maps/mobility/getmetroareapreview) kunt u metro gebieden aanvragen waarin de Azure Maps Mobility-service beschikbaar is. Het antwoord bevat details zoals de `metroId` , `metroName` en de weer gave van de geometrie van het metro gebied in geojson-indeling.
+Als u gedetailleerde informatie over de door Voer-instanties en ondersteunde typen voor een bepaalde stedelijke ruimte wilt aanvragen, hebt u dit `metroId` gebied nodig. Met de API voor het maken van een [metro gebied](/rest/api/maps/mobility/getmetroareapreview) kunt u metro gebieden opvragen waarin de Azure Maps Mobility services beschikbaar zijn. Het antwoord bevat details zoals de `metroId` , `metroName` en de weer gave van de geometrie van het metro gebied in geojson-indeling.
 
 Laten we een aanvraag indienen om het metro gebied voor de Seattle-Tacoma metro gebied-ID op te halen. Voer de volgende stappen uit om de ID voor een metro gebied aan te vragen:
 
 1. Open de Postman-app, zodat u een verzameling kunt maken om de aanvragen op te slaan. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Collection** (Verzameling) in het venster **Create New** (Nieuwe maken).  Geef de verzameling een naam en selecteer de knop **Create** (Maken).
 
-2. Selecteer nogmaals **New** (Nieuw) om de aanvraag te maken. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u in de vorige stap hebt gemaakt als de locatie waar u de aanvraag wilt opslaan. Selecteer vervolgens **Opslaan** .
+2. Selecteer nogmaals **New** (Nieuw) om de aanvraag te maken. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u in de vorige stap hebt gemaakt als de locatie waar u de aanvraag wilt opslaan. Selecteer vervolgens **Opslaan**.
   
     ![Een aanvraag maken in postman](./media/how-to-request-transit-data/postman-new.png)
 
@@ -115,9 +120,9 @@ Met de Azure Maps Get-service in de [nabije Transit](/rest/api/maps/mobility/get
 
 Volg de onderstaande stappen om een aanvraag in te stellen voor de in gebruik zijnde [door Voer](/rest/api/maps/mobility/getnearbytransitpreview):
 
-1. In postman klikt u op **nieuwe** aanvraag  |  **Get aanvraag** en geeft u de naam op die zich in de **buurt bevindt** .
+1. In postman klikt u op **nieuwe** aanvraag  |  **Get aanvraag** en geeft u de naam op die zich in de **buurt bevindt**.
 
-2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden** .
+2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden**.
 
     ```HTTP
     https://atlas.microsoft.com/mobility/transit/nearby/json?subscription-key={subscription-key}&api-version=1.0&query=47.63096,-122.126&radius=300&objectType=stop
@@ -224,15 +229,15 @@ We gebruiken de Azure Maps [fuzzy Search-service](/rest/api/maps/search/getsearc
 
 Volg de onderstaande stappen om een aanvraag naar de fuzzy Search-service te maken:
 
-1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en geef deze de naam **locatie coördinaten ophalen** .
+1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en geef deze de naam **locatie coördinaten ophalen**.
 
-2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in en klik op **verzenden** .
+2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in en klik op **verzenden**.
 
     ```HTTP
     https://atlas.microsoft.com/search/fuzzy/json?subscription-key={subscription-key}&api-version=1.0&query=space needle
     ```
 
-3. Als u het antwoord zorgvuldig bekijkt, bevat het meerdere locaties in de resultaten voor de Space naald-zoek opdracht. Elk resultaat bevat de locatie coördinaten onder de **positie** . Kopieer de `lat` en `lon` onder de **positie** van het eerste resultaat.
+3. Als u het antwoord zorgvuldig bekijkt, bevat het meerdere locaties in de resultaten voor de Space naald-zoek opdracht. Elk resultaat bevat de locatie coördinaten onder de **positie**. Kopieer de `lat` en `lon` onder de **positie** van het eerste resultaat.
 
    ```JSON
    {
@@ -331,11 +336,11 @@ Volg de onderstaande stappen om een aanvraag naar de fuzzy Search-service te mak
 
 Voer de volgende stappen uit om een route aanvraag te maken:
 
-1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en noem deze **Get Route info** .
+1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en noem deze **Get Route info**.
 
-2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden** .
+2. Selecteer op het tabblad opbouw functie de methode http **ophalen** , voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden**.
 
-    Er worden open bare Transit routes voor een bus aangevraagd door de `modeType` para meters en op te geven `transitType` . De aanvraag-URL bevat de locaties die zijn opgehaald in de vorige secties. `originType`We hebben nu een **stopId** . En voor de `destionationType` hebben we de **positie** .
+    Er worden open bare Transit routes voor een bus aangevraagd door de `modeType` para meters en op te geven `transitType` . De aanvraag-URL bevat de locaties die zijn opgehaald in de vorige secties. `originType`We hebben nu een **stopId**. En voor de `destionationType` hebben we de **positie**.
 
     Bekijk de [lijst met URI-para meters](/rest/api/maps/mobility/gettransitroutepreview#uri-parameters) die u in uw aanvraag kunt gebruiken bij de [API Get Transit routes](/rest/api/maps/mobility/gettransitroutepreview).
   
@@ -520,15 +525,15 @@ Voer de volgende stappen uit om een route aanvraag te maken:
     }
     ```
 
-4. Als u zorgvuldig rekening houdt, worden er meerdere **bus** -routes in het antwoord. Elke route heeft een unieke **schema-ID** , een samen vatting waarin elke poot van de route wordt beschreven, en een `itineraryFare` die de gespecificeerde en totale prijs voor bus tickets levert. Een route gedeelte is het deel van de route tussen twee stop waypoints. Vervolgens worden er Details voor de snelste route opgevraagd met behulp `itineraryId` van de in de reactie.
+4. Als u zorgvuldig rekening houdt, worden er meerdere **bus** -routes in het antwoord. Elke route heeft een unieke **schema-ID**, een samen vatting waarin elke poot van de route wordt beschreven, en een `itineraryFare` die de gespecificeerde en totale prijs voor bus tickets levert. Een route gedeelte is het deel van de route tussen twee stop waypoints. Vervolgens worden er Details voor de snelste route opgevraagd met behulp `itineraryId` van de in de reactie.
 
 ## <a name="request-fastest-route-itinerary"></a>Snel route schema aanvragen
 
 Met de Azure Maps service voor [Transit traject ophalen](/rest/api/maps/mobility/gettransititinerarypreview) kunt u gegevens voor een bepaalde route aanvragen met behulp van de route **-id** van de routes die wordt geretourneerd door de API-service [Get Transit routes](/rest/api/maps/mobility/gettransitroutepreview) . Voer de volgende stappen uit om een aanvraag uit te voeren:
 
-1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en noem deze **Get Transit info** .
+1. Klik in postman op **nieuwe** aanvraag  |  **Get aanvraag** en noem deze **Get Transit info**.
 
-2. Selecteer op het tabblad opbouw functie de methode http **ophalen** . Voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden** .
+2. Selecteer op het tabblad opbouw functie de methode http **ophalen** . Voer de volgende aanvraag-URL in voor uw API-eind punt en klik op **verzenden**.
 
     We stellen de `detailType` para meter in op **geometrie** zodat het antwoord informatie bevat over het stoppen van open bare door Voer en het omschakelen van de navigatie voor het volgen van stappen en fiets zijden van de route.
 
@@ -796,12 +801,12 @@ Met de Azure Maps service voor [Transit traject ophalen](/rest/api/maps/mobility
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility service:
+Meer informatie over het aanvragen van real-time gegevens met behulp van Mobility Services (preview):
 
 > [!div class="nextstepaction"]
 > [Real-time gegevens aanvragen](how-to-request-real-time-data.md)
 
-De documentatie voor de Azure Maps Mobility Service API verkennen
+De API-documentatie voor Azure Maps Mobility Services (preview) verkennen
 
 > [!div class="nextstepaction"]
-> [Documentatie voor Mobility service](/rest/api/maps/mobility)
+> [Documentatie voor Mobility Services](/rest/api/maps/mobility)

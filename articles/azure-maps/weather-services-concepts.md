@@ -1,6 +1,6 @@
 ---
-title: Concepten van weer Services in Microsoft Azure Maps
-description: Meer informatie over de concepten die van toepassing zijn op Microsoft Azure kaarten weer Services.
+title: Concepten van weer Services (preview-versie) in Microsoft Azure Maps
+description: Meer informatie over de concepten die van toepassing zijn op Microsoft Azure Maps-Services (preview).
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 09/10/2020
@@ -8,20 +8,24 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: ea8698b7bf402850e506ec126cd2a7bb6ce05823
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 657cb6a86122d267b86e82b6f02eb58e968cddd3
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896724"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904734"
 ---
-# <a name="weather-services-in-azure-maps"></a>Weer Services in Azure Maps
+# <a name="weather-services-preview-in-azure-maps"></a>Weer Services (preview) in Azure Maps
 
-In dit artikel worden concepten geïntroduceerd die van toepassing zijn op de [Azure Maps weers Services](/rest/api/maps/weather). We raden u aan dit artikel uit te voeren voordat u begint met de weers-Api's.
+> [!IMPORTANT]
+> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel worden concepten geïntroduceerd die van toepassing zijn op Azure Maps [weers Services](/rest/api/maps/weather). We raden u aan dit artikel uit te voeren voordat u begint met de weers-Api's.
 
 ## <a name="unit-types"></a>Eenheids typen
 
-Sommige van de weers-Api's kunnen gebruikers toestaan om op te geven of de gegevens worden geretourneerd in metrische eenheden of als Britse maat eenheid. De geretourneerde antwoorden voor deze Api's zijn unit type en een numerieke waarde die kan worden gebruikt voor eenheids vertalingen. Zie de tabel hieronder om deze waarden te interpreteren.
+Met een aantal van de weer service-Api's (preview) kunnen gebruikers opgeven of de gegevens worden geretourneerd in metrische eenheden of in Britse units. De geretourneerde antwoorden voor deze Api's zijn unit type en een numerieke waarde die kan worden gebruikt voor eenheids vertalingen. Zie de tabel hieronder om deze waarden te interpreteren.
 
 |Unit type|Beschrijving         |
 |--------|--------------------|
@@ -52,7 +56,7 @@ Sommige van de weers-Api's kunnen gebruikers toestaan om op te geven of de gegev
 
 ## <a name="weather-icons"></a>Weer pictogrammen
 
-Sommige van de weer service Api's retour neren de `iconCode` in het antwoord. De `iconCode` is een numerieke waarde die wordt gebruikt om het pictogram te definiëren. U kunt niet rechtstreeks vanuit uw toepassingen een koppeling naar deze installatie kopieën maken, de Url's kunnen worden gewijzigd.
+Sommige van de weer service-Api's (preview) retour neren de `iconCode` in het antwoord. De `iconCode` is een numerieke waarde die wordt gebruikt om het pictogram te definiëren. U kunt niet rechtstreeks vanuit uw toepassingen een koppeling naar deze installatie kopieën maken, de Url's kunnen worden gewijzigd.
 
 | Pictogram nummer |Pictogram| Dag | 'S | Tekst |
 |-------------|:----:|-----|-------|------|
@@ -81,10 +85,10 @@ Sommige van de weer service Api's retour neren de `iconCode` in het antwoord. De
 | 25           | :::image type="icon" source="./media/weather-services-concepts/sleet-i.png"::: | Ja |  Ja   | Sleet|
 | 26           | :::image type="icon" source="./media/weather-services-concepts/freezing-rain.png"::: | Ja |  Ja   | Vries regen|
 | 29           | :::image type="icon" source="./media/weather-services-concepts/rain-snow.png"::: | Ja |  Ja   | Regen en sneeuw|
-| 30           | :::image type="icon" source="./media/weather-services-concepts/hot-i.png"::: | Ja |  Ja   | Warm|
+| 30           | :::image type="icon" source="./media/weather-services-concepts/hot-i.png"::: | Ja |  Ja   | Dynamisch|
 | 31           | :::image type="icon" source="./media/weather-services-concepts/cold-i.png"::: | Ja |  Ja   | Koud|
 | 32           | :::image type="icon" source="./media/weather-services-concepts/windy-i.png"::: | Ja |  Ja   | Wikkeling|
-| 33           | :::image type="icon" source="./media/weather-services-concepts/clear-night.png"::: | Nee  |  Ja   | Clear|
+| 33           | :::image type="icon" source="./media/weather-services-concepts/clear-night.png"::: | Nee  |  Ja   | Veilig|
 | 34           | :::image type="icon" source="./media/weather-services-concepts/mostly-clear-night.png"::: | Nee  |  Ja   | Voornamelijk wissen|
 | 35           | :::image type="icon" source="./media/weather-services-concepts/partly-cloudy-night.png"::: | Nee  |  Ja   | Deels Cloud|
 | 36           | :::image type="icon" source="./media/weather-services-concepts/intermittent-clouds-Night.png"::: | Nee  |  Ja   | Periodieke Clouds|

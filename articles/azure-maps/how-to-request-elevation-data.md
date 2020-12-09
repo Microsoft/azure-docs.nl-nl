@@ -1,24 +1,28 @@
 ---
-title: Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service
-description: Meer informatie over het aanvragen van uitbrei ding van gegevens met behulp van de Azure Maps-uitbreidings service.
+title: Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service (preview)
+description: Meer informatie over het aanvragen van uitbrei ding van gegevens met behulp van de Azure Maps-uitbreidings service (preview).
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 12/02/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 9937d72b44eb33df8027eddb9a9f500a372c9037
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: af3653d9e4509b1aa31a377dfc22cb6b6b2ff34e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552839"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906060"
 ---
-# <a name="request-elevation-data-using-the-azure-maps-elevation-service"></a>Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service
+# <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service (preview)
 
-De Azure Maps- [uitbreidings service](https://docs.microsoft.com/rest/api/maps/elevation) biedt api's voor het opvragen van verhogings gegevens voor locaties op aarde. U kunt voor beelden van uitbrei ding van bevoegdheden aanvragen in paden, binnen een bepaald begrenzingsvak of op specifieke coördinaten. U kunt ook de [weer gave-API voor de tegel v2-ophalen](https://docs.microsoft.com/rest/api/maps/renderv2) gebruiken om de uitbreidings gegevens op te halen in de tegel indeling. De tegels worden in de GeoTIFF-Raster indeling geleverd. Dit artikel laat u zien hoe u Azure Maps-uitbreidings service en de tegel-API Get-toewijzing kunt gebruiken om gegevens over benodigde bevoegdheden te vragen. De verhogings gegevens kunnen worden aangevraagd in geojson-en GeoTiff-indelingen.
+> [!IMPORTANT]
+> De Azure Maps-uitbreidings service is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+De Azure Maps- [uitbreidings service](https://docs.microsoft.com/rest/api/maps/elevation) voorziet in api's voor het uitvoeren van een query op een wille keurige plaats in het Opper vlak van de aarde. U kunt voor beelden van uitbrei ding van bevoegdheden aanvragen in paden, binnen een bepaald begrenzingsvak of op specifieke coördinaten. U kunt ook de [weer gave-API voor de tegel v2-ophalen](https://docs.microsoft.com/rest/api/maps/renderv2) gebruiken om de uitbreidings gegevens op te halen in de tegel indeling. De tegels worden in de GeoTIFF-Raster indeling geleverd. Dit artikel laat u zien hoe u Azure Maps-uitbreidings service en de tegel-API Get-toewijzing kunt gebruiken om gegevens over benodigde bevoegdheden te vragen. De verhogings gegevens kunnen worden aangevraagd in geojson-en GeoTiff-indelingen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,7 +54,7 @@ Voor het aanvragen van uitbrei ding van gegevens in de indeling raster tegel, ge
 
 ## <a name="request-elevation-data-in-geojson-format"></a>Uitbrei ding van gegevens aanvragen in geojson-indeling
 
-Gebruik de Api's van de Elevation-service om verhogings gegevens in geojson-indeling aan te vragen. In deze sectie ziet u een van de drie Api's:
+Gebruik de Api's van de Elevation-service (preview-versie) om verhogings gegevens in geojson-indeling aan te vragen. In deze sectie ziet u een van de drie Api's:
 
 * [Gegevens ophalen voor punten](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
 * [Gegevens plaatsen voor punten](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates)
@@ -443,7 +447,7 @@ In dit voor beeld geven we rijen = 3 en kolommen = 6. 18 verhogings waarden word
     }
     ```
 
-## <a name="samples-use-elevation-service-apis-in-azure-maps-control"></a>Voor beelden: gebruik de Api's van de uitbreidings service in Azure Maps besturings element
+## <a name="samples-use-elevation-service-preview-apis-in-azure-maps-control"></a>Voor beelden: gebruik de Api's van de uitbreidings service (preview-versie) in Azure Maps besturings element
 
 ### <a name="get-elevation-data-by-coordinate-position"></a>Verhogings gegevens ophalen op positie van coördinaat
 
@@ -478,16 +482,16 @@ Zie de <a href='https://codepen.io/azuremaps/pen/7bee08e5cb13d05cb0a11636b60f14c
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over de Azure Maps-uitbreidings-Api's:
+Zie voor meer informatie over de Api's voor de Azure Maps-uitbrei ding (preview):
 
 > [!div class="nextstepaction"]
-> [Verhoging-gegevens ophalen voor lat-lange coördinaten](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
+> [Uitbrei ding (preview): gegevens ophalen voor lat-lange coördinaten](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
 
 > [!div class="nextstepaction"]
-> [Verhoging: gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
+> [Uitbrei ding (preview): gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
 
 > [!div class="nextstepaction"]
-> [Verhoging: gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
+> [Uitbrei ding (preview): gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
 
 > [!div class="nextstepaction"]
 > [Rendering v2 – kaart tegel ophalen](https://docs.microsoft.com/rest/api/maps/renderv2)

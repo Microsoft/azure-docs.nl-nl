@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eb656e46ce5e26fca5ae5c094f9b8bb85819caa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d33b419e0f24201d661ad0f5f1373022ea6e9e9f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89275773"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861745"
 ---
 # <a name="azure-ad-connect-sync-handling-largeobject-errors-caused-by-usercertificate-attribute"></a>Azure AD Connect Sync: afhandelings LargeObject-fouten veroorzaakt door userCertificate-kenmerk
 
@@ -49,7 +49,7 @@ Totdat de LargeObject-fout is opgelost, kunnen andere kenmerk wijzigingen naar h
  * Verminder het aantal certificaat waarden voor het on-premises AD-object (15 of minder) door waarden te verwijderen die niet meer in gebruik zijn door uw organisatie. Dit is geschikt als de kenmerken aanzienlijk worden veroorzaakt door verlopen of ongebruikte certificaten. U kunt het [Power shell-script dat hier beschikbaar is](https://gallery.technet.microsoft.com/Remove-Expired-Certificates-0517e34f) , gebruiken om verlopen certificaten in uw on-PREMISes ad te vinden, te maken en te verwijderen. Voordat u de certificaten verwijdert, is het raadzaam om te controleren of de Administrators van de open bare-sleutel infrastructuur in uw organisatie.
 
  * Configureer Azure AD Connect om het kenmerk userCertificate uit te sluiten van export naar Azure AD. Over het algemeen wordt deze optie niet aanbevolen omdat het kenmerk door micro soft Online Services kan worden gebruikt om specifieke scenario's mogelijk te maken. Met name:
-    * Het kenmerk userCertificate voor het gebruikers object wordt gebruikt door Exchange Online-en Outlook-clients voor het ondertekenen van berichten en versleuteling. Raadpleeg artikel [S/MIME voor bericht ondertekening en versleuteling voor](/microsoft-365/security/office-365-security/s-mime-for-message-signing-and-encryption?view=o365-worldwide)meer informatie over deze functie.
+    * Het kenmerk userCertificate voor het gebruikers object wordt gebruikt door Exchange Online-en Outlook-clients voor het ondertekenen van berichten en versleuteling. Raadpleeg artikel [S/MIME voor bericht ondertekening en versleuteling voor](/microsoft-365/security/office-365-security/s-mime-for-message-signing-and-encryption)meer informatie over deze functie.
 
     * Het kenmerk userCertificate van het computer object wordt door Azure AD gebruikt om Windows 10 on-premises domein apparaten toe te staan om verbinding te maken met Azure AD. Voor meer informatie over deze functie raadpleegt u het artikel [verbinding maken tussen domein apparaten en Azure AD voor Windows 10-ervaringen](../devices/hybrid-azuread-join-plan.md).
 
@@ -113,12 +113,12 @@ Er moet een bestaande synchronisatie regel zijn ingeschakeld en geconfigureerd v
 ### <a name="step-3-create-the-outbound-sync-rule-required"></a>Stap 3. De uitgaande synchronisatie regel vereist maken
 De nieuwe synchronisatie regel moet hetzelfde **bereik filter** hebben en een **hogere prioriteit** hebben dan de bestaande synchronisatie regel. Dit zorgt ervoor dat de nieuwe synchronisatie regel van toepassing is op dezelfde set objecten als de bestaande synchronisatie regel en overschrijft de bestaande synchronisatie regel voor het kenmerk userCertificate. De synchronisatie regel maken:
 1. Klik in de editor voor synchronisatie regels op de knop **nieuwe regel toevoegen** .
-2. Geef onder het **tabblad Beschrijving**de volgende configuratie op:
+2. Geef onder het **tabblad Beschrijving** de volgende configuratie op:
 
     | Kenmerk | Waarde | Details |
     | --- | --- | --- |
-    | Naam | *Geef een naam op* | Bijvoorbeeld *' uit tot Aad – Custom override voor userCertificate '* |
-    | Beschrijving | *Geef een beschrijving op* | Bijvoorbeeld, *als het kenmerk userCertificate meer dan 15 waarden heeft, wordt Null geëxporteerd. "* |
+    | Name | *Geef een naam op* | Bijvoorbeeld *' uit tot Aad – Custom override voor userCertificate '* |
+    | Description | *Geef een beschrijving op* | Bijvoorbeeld, *als het kenmerk userCertificate meer dan 15 waarden heeft, wordt Null geëxporteerd. "* |
     | Verbonden systeem | *De Azure AD-connector selecteren* |
     | Type verbonden systeem object | **gebruiker** | |
     | Omgekeerd object type | **gelaedeerde** | |

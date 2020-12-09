@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: pafarley
-ms.openlocfilehash: 0be77dc1ac249c37f9b59078451d8fbe35f17458
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6eb2a2d2762b60a12bb9a24b92e2edae4b846cd1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72754244"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904139"
 ---
 # <a name="define-and-use-moderation-workflows"></a>Toezicht werk stromen definiëren en gebruiken
 
@@ -39,9 +39,9 @@ Geef een naam op voor uw werk stroom, voer een beschrijving in en kies of de wer
 
 ### <a name="define-evaluation-criteria"></a>Evaluatie criteria definiëren
 
-In het volgende scherm gaat u naar de sectie **als** . Kies **voor waarde**in het bovenste vervolg keuzemenu. Zo kunt u de voor waarde configureren waaronder de werk stroom actie moet ondernemen. Als u meerdere voor waarden wilt gebruiken, kiest u in plaats daarvan **combi natie** . 
+In het volgende scherm gaat u naar de sectie **als** . Kies **voor waarde** in het bovenste vervolg keuzemenu. Zo kunt u de voor waarde configureren waaronder de werk stroom actie moet ondernemen. Als u meerdere voor waarden wilt gebruiken, kiest u in plaats daarvan **combi natie** . 
 
-Selecteer vervolgens een connector. In dit voor beeld wordt **Content moderator**gebruikt. Afhankelijk van de connector die u kiest, krijgt u verschillende opties voor gegevens uitvoer. Zie de sectie [connectors](./configure.md#connectors) in de instellingen handleiding voor het hulp programma voor meer informatie over het instellen van andere connectors.
+Selecteer vervolgens een connector. In dit voor beeld wordt **Content moderator** gebruikt. Afhankelijk van de connector die u kiest, krijgt u verschillende opties voor gegevens uitvoer. Zie de sectie [connectors](./configure.md#connectors) in de instellingen handleiding voor het hulp programma voor meer informatie over het instellen van andere connectors.
 
 ![Werk stroom connector selecteren](images/image-workflow-connect-to.PNG)
 
@@ -83,4 +83,4 @@ Ga naar het tabblad **afbeelding** onder **controleren** en controleer of er een
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze hand leiding hebt u geleerd hoe u toezicht werk stromen kunt instellen en gebruiken vanuit het Content Moderator [controle programma](https://contentmoderator.cognitive.microsoft.com). Raadpleeg vervolgens de [rest API Guide](../try-review-api-workflow.md) voor informatie over het programmatisch maken van werk stromen.
+In deze hand leiding hebt u geleerd hoe u toezicht werk stromen kunt instellen en gebruiken vanuit het Content Moderator [controle programma](https://contentmoderator.cognitive.microsoft.com). Bekijk vervolgens de [API-console handleiding](../try-review-api-workflow.md) voor informatie over het programmatisch maken van werk stromen.

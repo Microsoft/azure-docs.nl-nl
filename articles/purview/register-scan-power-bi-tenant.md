@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: af394b68a943f4c89358a719c155606c264b9dc4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ce23119e568347fff2ad270cfea7f8b563cae529
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552945"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904989"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
@@ -49,16 +49,12 @@ Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de b
 
 ## <a name="associate-the-security-group-with-the-tenant"></a>De beveiligings groep koppelen aan de Tenant
 
-1. Meld u aan bij de [Beheer Portal van Power bi](https://app.powerbi.com/admin-portal/tenantSettings?allowServicePrincipalsUseReadAdminAPIsUI=1). Deze functie vlag toevoegen aan de URI:  `allowServicePrincipalsUseReadAdminAPIsUI=1` . Met deze vlag wordt de functie ingeschakeld waarmee u de beveiligings groep kunt koppelen. Bijvoorbeeld:
-
-    ```http
-    https://app.powerbi.com/admin-portal/tenantSettings?allowServicePrincipalsUseReadAdminAPIsUI=1
-    ```
+1. Meld u aan bij de [Beheer Portal van Power bi](https://app.powerbi.com/admin-portal/tenantSettings).
 
     > [!Important]
     > U moet een Power BI beheerder zijn om de pagina met Tenant instellingen weer te geven.
 
-1. Met **instellingen voor ontwikkel aars**  >  **kunt u met Service-principals alleen-lezen Power bi-api's (preview-versie) gebruiken**.
+1. Met **instellingen voor ontwikkel aars** kunt u met  >  **service-principals alleen-lezen Power bi beheer-api's (preview-versie) gebruiken**.
 1. Selecteer **specifieke beveiligings groepen**.
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Afbeelding die laat zien hoe service-principals machtigingen voor alleen-lezen Power BI-beheer-API kunnen krijgen":::

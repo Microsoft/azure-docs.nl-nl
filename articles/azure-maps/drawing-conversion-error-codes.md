@@ -3,17 +3,17 @@ title: Conversie fouten en waarschuwingen voor Azure Maps tekening
 description: Meer informatie over de conversie fouten en waarschuwingen die u kunt door lopen tijdens het gebruik van de Azure Maps conversie service. Lees de aanbevelingen voor het oplossen van de fouten en de waarschuwingen, met enkele voor beelden.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philMea
-ms.openlocfilehash: 04a43e3e2fa9ad77e11f82ff38a144a1de3add78
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: cecc19f0984ce1801d50e5cbda73e98a01e2825b
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895933"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906213"
 ---
 # <a name="drawing-conversion-errors-and-warnings"></a>Fouten en waarschuwingen over tekenconversies
 
@@ -159,7 +159,7 @@ De waarschuwing **redundantAttribution** treedt op wanneer het manifest redundan
 
 #### <a name="how-to-fix-redundantattribution"></a>*RedundantAttribution oplossen*
 
-Verwijder redundante of conflicterende object eigenschappen om een * *redundantAttribution* waarschuwing te herstellen.
+Verwijder redundante of conflicterende object eigenschappen om een **redundantAttribution* waarschuwing te herstellen.
 
 ### <a name="manifestwarning"></a>**manifestWarning**
 
@@ -311,7 +311,7 @@ Er wordt ook een **invalidArchiveFormat** -fout gegenereerd als het zip-archief 
 
 Als u een **invalidArchiveFormat** -fout wilt oplossen, controleert u het volgende:
 
-* De naam van het archief bestand eindigt op _. zip_ .
+* De naam van het archief bestand eindigt op _. zip_.
 * Uw ZIP-archief bevat gegevens.
 * U kunt uw ZIP-archief openen.
 
@@ -330,7 +330,7 @@ U hebt geprobeerd een teken pakket met een onjuiste `udid` para meter te uploade
 Als u een **invalidUserData** -fout wilt oplossen, controleert u het volgende:
 
 * U hebt een juiste versie `udid` voor het geüploade pakket ingevoerd.
-* Azure Maps Maker is ingeschakeld voor het Azure Maps-account dat u hebt gebruikt voor het uploaden van het teken pakket.
+* Azure Maps Creator (preview) is ingeschakeld voor het Azure Maps account dat u hebt gebruikt voor het uploaden van het teken pakket.
 * De API-aanvraag voor de conversie service bevat de abonnements sleutel voor het Azure Maps account dat u hebt gebruikt voor het uploaden van het teken pakket.
 
 ### <a name="dwgerror"></a>**dwgError**
@@ -392,7 +392,7 @@ De **missingManifest** -fout wordt veroorzaakt door een of meer van de volgende 
 
 Als u een **missingManifest** -fout wilt oplossen, controleert u of het archief een bestand bevat met de naam _manifest.jsop_ op het hoofd niveau van het zip-archief.
 
-### <a name="conflict"></a>**conflicteren**
+### <a name="conflict"></a>**conflict**
 
 #### <a name="description-for-conflict"></a>*Beschrijving voor conflict*
 
@@ -506,4 +506,4 @@ Als u een **verticalPenetrationError** -fout wilt oplossen, leest u meer over he
 > [Azure Maps tekening fout visualer gebruiken](drawing-error-visualizer.md)
 
 > [!div class="nextstepaction"]
-> [Koppeling voor binnenste toewijzing](creator-indoor-maps.md)
+> [Maker (preview) voor een binnenste toewijzing](creator-indoor-maps.md)

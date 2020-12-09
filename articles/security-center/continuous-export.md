@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 10/27/2020
+ms.date: 12/08/2020
 ms.author: memildin
-ms.openlocfilehash: 43b66a59062a230aa2fba6909172deb5f1740b28
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: bdca5a753a49c26587db27892b54c2cb88910c83
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122300"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862459"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -41,7 +41,7 @@ In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics w
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|<ul><li>**Beveiligings beheerder** of- **eigenaar** voor de resource groep</li><li>Schrijf machtigingen voor de doel resource</li><li>Als u het Azure Policy beleid ' DeployIfNotExist ' gebruikt dat hieronder wordt beschreven, hebt u ook machtigingen nodig voor het toewijzen van beleid</li></ul>|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere gov<br>![Ja](./media/icons/yes-icon.png) Gov China (naar Event hub)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere gov<br>![Yes](./media/icons/yes-icon.png) Gov China (naar Event hub)|
 |||
 
 
@@ -72,6 +72,7 @@ De onderstaande stappen zijn nodig om een doorlopende export naar Log Analytics 
     - De resultaten van evaluatie van beveiligings problemen op uw SQL-servers op computers moeten worden hersteld (preview-versie)
     - Beveiligingsproblemen met installatiekopieën in Azure Container Registry moeten worden hersteld (mogelijk gemaakt door Qualys)
     - Beveiligingsproblemen op uw virtuele machines moeten worden hersteld
+    - Er moeten systeemupdates op uw computers worden geïnstalleerd
 
     Schakel de optie **beveiligings resultaten bevatten** in om de resultaten op te vragen met deze aanbevelingen.
 

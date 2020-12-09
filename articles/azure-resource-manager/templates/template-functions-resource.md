@@ -3,12 +3,12 @@ title: 'Sjabloon functies: bronnen'
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om waarden over resources op te halen.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: b7bb726250c6d1ef8a597481b5f7e95f024a56d4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3b5a2642ebbabac61e46f4d9b0a2dfec9610a673
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183988"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902660"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Resource functies voor ARM-sjablonen
 
@@ -205,7 +205,7 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | Micro soft. ApiManagement/service/namedValues | [listValue](/rest/api/apimanagement/2019-12-01/namedvalue/listvalue) |
 | Micro soft. ApiManagement/service/openidConnectProviders | [listSecrets](/rest/api/apimanagement/2019-12-01/openidconnectprovider/listsecrets) |
 | Micro soft. AppConfiguration/configurationStores | [Listkeys ophalen](/rest/api/appconfiguration/configurationstores/listkeys) |
-| Micro soft. AppPlatform/lente | [listTestKeys](/rest/api/azurespringclould/services/listtestkeys) |
+| Micro soft. AppPlatform/lente | [listTestKeys](/rest/api/azurespringcloud/services/listtestkeys) |
 | Micro soft. Automation/automationAccounts | [Listkeys ophalen](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Bat-CH/batchAccounts | [listkeys ophalen](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/werk ruimten/experimenten/taken | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
@@ -284,7 +284,7 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | Micro soft. Network/applicationSecurityGroups | listIpConfigurations |
 | Micro soft. notification hubs/naam ruimten/authorizationRules | [listkeys ophalen](/rest/api/notificationhubs/namespaces/listkeys) |
 | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules | [listkeys ophalen](/rest/api/notificationhubs/notificationhubs/listkeys) |
-| Microsoft.OperationalInsights/workspaces | [list](/rest/api/loganalytics/workspaces/list) |
+| Microsoft.OperationalInsights/workspaces | [orderverzamellijst](/rest/api/loganalytics/workspaces/list) |
 | Microsoft.OperationalInsights/workspaces | Listkeys ophalen |
 | Micro soft. PolicyInsights/herstel bewerkingen | [listDeployments](/rest/api/policy-insights/remediations/listdeploymentsatresourcegroup) |
 | Micro soft. RedHatOpenShift/openShiftClusters | [listCredentials](/rest/api/openshift/openshiftclusters/listcredentials) |
@@ -313,15 +313,15 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | micro soft. Web/locaties | listwsdlinterfaces |
 | micro soft. Web/apimanagementaccounts/api's/Connections | listconnectionkeys |
 | micro soft. Web/apimanagementaccounts/api's/Connections | listsecrets |
-| micro soft. web/sites/back-ups | [list](/rest/api/appservice/webapps/listbackups) |
-| Micro soft. web/sites/config | [list](/rest/api/appservice/webapps/listconfigurations) |
+| micro soft. web/sites/back-ups | [orderverzamellijst](/rest/api/appservice/webapps/listbackups) |
+| Micro soft. web/sites/config | [orderverzamellijst](/rest/api/appservice/webapps/listconfigurations) |
 | micro soft. web/sites/functies | [listkeys ophalen](/rest/api/appservice/webapps/listfunctionkeys)
 | micro soft. web/sites/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecrets) |
 | micro soft. web/sites/hybridconnectionnamespaces/relays | [listkeys ophalen](/rest/api/appservice/appserviceplans/listhybridconnectionkeys) |
 | micro soft. web/sites | [listsyncfunctiontriggerstatus](/rest/api/appservice/webapps/listsyncfunctiontriggers) |
 | micro soft. web/sites/sleuven/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecretsslot) |
-| micro soft. web/sites/sleuven/back-ups | [list](/rest/api/appservice/webapps/listbackupsslot) |
-| Micro soft. web/sites/sleuven/configuratie | [list](/rest/api/appservice/webapps/listconfigurationsslot) |
+| micro soft. web/sites/sleuven/back-ups | [orderverzamellijst](/rest/api/appservice/webapps/listbackupsslot) |
+| Micro soft. web/sites/sleuven/configuratie | [orderverzamellijst](/rest/api/appservice/webapps/listconfigurationsslot) |
 | micro soft. web/sites/sleuven/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecretsslot) |
 
 Als u wilt bepalen welke resource typen een lijst bewerking hebben, hebt u de volgende opties:

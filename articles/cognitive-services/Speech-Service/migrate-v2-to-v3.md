@@ -1,7 +1,7 @@
 ---
 title: Migreren van v2 naar v3 REST API-Speech-Service
 titleSuffix: Azure Cognitive Services
-description: Vergeleken met v2 bevat de nieuwe API-versie V3 een set kleinere belang rijke wijzigingen. Dit document helpt u in geen enkele tijd te migreren naar de nieuwe primaire versie.
+description: Dit document helpt ontwikkel aars bij het migreren van code van v2 naar v3 in de spraak-naar-tekst REST API speech Services.
 services: cognitive-services
 author: bexxx
 manager: nitinme
@@ -11,40 +11,36 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: rbeckers
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd1dae963781cc0caacc25938e700a4c70a1f51a
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: c5bc00ecf5e4c8ae440ce6610e9be8c8f77ed666
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96737991"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862204"
 ---
-# <a name="migration-from-v20-to-v30-of-speech-to-text-rest-api"></a>Migratie van v 2.0 naar v 3.0 van spraak naar tekst REST API
+# <a name="migrate-code-from-v20-to-v30-of-the-rest-api"></a>Code migreren van v 2.0 naar v 3.0 van de REST API
 
-De V3-versie van de spraak REST API verbetert de vorige API-versie ten opzichte van betrouw baarheid en gebruiks gemak. De API-indeling wordt nauw keuriger uitgelijnd met andere Azure-of Cognitive Services-API's. Dit helpt u bij het Toep assen van uw bestaande vaardig heden wanneer u de spraak-API gebruikt.
-
-Het overzicht van de API is beschikbaar als [Swagger-document](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0). Dit is ideaal om u een API-overzicht te geven en de nieuwe API te testen.
-
-We bieden voor beelden voor C# en python. Voor batch-transcripties vindt u de voor beelden in de [github-voorbeeld opslagplaats](https://aka.ms/csspeech/samples) in de `samples/batch` submap.
+Vergeleken met v2 is de V3-versie van de speech Services-REST API voor spraak naar tekst betrouwbaarder, gemakkelijker te gebruiken en consistent met Api's voor soort gelijke Services. De meeste teams kunnen binnen een of twee dagen van v2 naar v3 migreren.
 
 ## <a name="forward-compatibility"></a>Compatibiliteit door sturen
 
-Om te zorgen voor een soepele migratie naar v3, kunnen alle entiteiten van v2 ook worden gevonden in de V3 API onder dezelfde identiteit. Als er een schema wijziging van het resultaat is (bijvoorbeeld transcripties), worden de antwoorden voor een GET in v3-versie van de API in het v3-schema weer geven. Als u de GET in v2-versie van de API uitvoert, heeft het resultaat schema de v2-indeling. Nieuw gemaakte entiteiten op v3 **zijn niet** beschikbaar op v2.
+Alle entiteiten van v2 kunnen ook worden gevonden in de V3 API onder dezelfde identiteit. Als het schema van een resultaat is gewijzigd, (bijvoorbeeld transcripties), wordt het resultaat van een GET in de V3-versie van de API gebruikt voor het v3-schema. Het resultaat van een GET in de v2-versie van de API maakt gebruik van hetzelfde v2-schema. Nieuw gemaakte entiteiten op v3 zijn **niet** beschikbaar in de resultaten van v2-api's.
 
 ## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
-De lijst met belang rijke wijzigingen is gesorteerd op basis van de grootte van wijzigingen die nodig zijn om aan te passen. Er zijn slechts een paar wijzigingen waarvoor een niet-gelastige wijziging in de aanroepende code is vereist. Voor de meeste wijzigingen is eenvoudige hernoemen vereist. De tijd die nodig is om teams te migreren van v2 naar v3 variëren tussen enkele uur en een paar dagen. De voor delen van verbeterde stabiliteit, eenvoudigere code, snellere reacties worden de investering echter snel verschoven. 
+De lijst met belang rijke wijzigingen is gesorteerd op basis van de grootte van wijzigingen die nodig zijn om aan te passen. Bij slechts enkele wijzigingen zijn niet-essentiële wijzigingen in de aanroepende code vereist. De meeste wijzigingen vereisen alleen een wijziging in item namen.
 
 ### <a name="host-name-changes"></a>Gewijzigde namen van hosts
 
-De hostnamen zijn gewijzigd van {Region}. cri's. AI naar {Region}. API. cognitieve. Microsoft. com. In deze wijziging bevatten de paden niet meer ' API/', omdat deze deel uitmaakt van de hostnaam. Zie het [Swagger-document](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0) voor een volledige beschrijving van regio's en paden.
+De hostnaam van het eind punt is gewijzigd van `{region}.cris.ai` in `{region}.api.cognitive.microsoft.com` . Paden naar de nieuwe eind punten bevatten niet meer `api/` , omdat deze deel uitmaakt van de hostnaam. In het [Swagger-document](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0) worden geldige regio's en paden weer gegeven.
 
 ### <a name="identity-of-an-entity"></a>Identiteit van een entiteit
 
-De eigenschap `id` is vervangen door `self` . In v2 moest een API-gebruiker weten hoe onze paden op de API worden gemaakt. Dit was niet-uitbreidbaar en vereist overbodig werk van de gebruiker. De eigenschap `id` (UUID) wordt vervangen door `self` (teken reeks), de locatie van de entiteit (URL). De waarde is nog uniek tussen alle entiteiten. Als `id` is opgeslagen als een teken reeks in uw code, is een eenvoudige naam wijziging voldoende voor de ondersteuning van het nieuwe schema. U kunt nu de `self` inhoud als URL gebruiken voor alle rest-aanroepen voor uw entiteit (Get, patch, Delete).
+De eigenschap `id` is nu `self` . In v2 moest een API-gebruiker weten hoe onze paden op de API worden gemaakt. Dit was niet-uitbreidbaar en vereist overbodig werk van de gebruiker. De eigenschap `id` (UUID) wordt vervangen door `self` (teken reeks), de locatie van de entiteit (URL). De waarde is nog uniek tussen alle entiteiten. Als een `id` teken reeks in uw code is opgeslagen, is een naamswijziging voldoende om het nieuwe schema te ondersteunen. U kunt nu de `self` inhoud gebruiken als de URL voor de `GET` -, `PATCH` -en `DELETE` rest-aanroepen voor uw entiteit.
 
-Als voor de entiteit extra functionaliteit beschikbaar is onder andere paden, worden deze weer gegeven onder `links` . Een goed voor beeld is een transcriptie die een afzonderlijke methode heeft voor `GET` de inhoud van de transcriptie.
+Als de entiteit extra functionaliteit beschikbaar heeft via andere paden, worden deze weer gegeven onder `links` . In het volgende voor beeld voor transcriptie wordt een afzonderlijke methode voor `GET` de inhoud van de transcriptie weer gegeven:
 
-v2 transcriptie:
+**v2 transcriptie:**
 
 ```json
 {
@@ -57,7 +53,7 @@ v2 transcriptie:
 }
 ```
 
-V3 transcriptie:
+**V3 transcriptie:**
 
 ```json
 {
@@ -73,11 +69,11 @@ V3 transcriptie:
 }
 ```
 
-Afhankelijk van de implementatie van uw client is het mogelijk niet voldoende om de naam van de eigenschap te wijzigen. We raden u aan gebruik te maken van de geretourneerde waarden van `self` en `links` als de doel-url's van uw rest-aanroepen en niet om de paden in uw-client te genereren. Door de geretourneerde Url's te gebruiken, kunt u ervoor zorgen dat toekomstige wijzigingen in paden uw client code niet beschadigen.
+Afhankelijk van de implementatie van uw code is het mogelijk niet voldoende om de naam van de eigenschap te wijzigen. We raden u aan de geretourneerde `self` en `links` waarden als doel-url's van uw rest-aanroepen te gebruiken in plaats van paden in uw client te genereren. Door de geretourneerde Url's te gebruiken, kunt u ervoor zorgen dat toekomstige wijzigingen in paden uw client code niet beschadigen.
 
 ### <a name="working-with-collections-of-entities"></a>Werken met verzamelingen entiteiten
 
-Voorheen heeft de v2 API alle beschik bare entiteiten in een antwoord geretourneerd. Voor een meer nauw keurige controle over de verwachte grootte van het antwoord, in v3 worden alle antwoorden van verzamelingen gepagineerd. U hebt controle over het aantal geretourneerde entiteiten en de verschuiving van de pagina. Dit gedrag maakt het eenvoudig om de runtime van de reactie processor te voors pellen en is consistent met andere Azure-Api's.
+Voorheen hebben de v2 API alle beschik bare entiteiten geretourneerd. Om een meer nauw keurige controle over de verwachte grootte van het antwoord in v3 toe te staan, worden alle verzamelings resultaten gepagineerd. U hebt controle over het aantal geretourneerde entiteiten en de begin verschuiving van de pagina. Dit gedrag maakt het eenvoudig om de runtime van de reactie processor te voors pellen.
 
 De basis vorm van het antwoord is hetzelfde voor alle verzamelingen:
 
@@ -91,20 +87,20 @@ De basis vorm van het antwoord is hetzelfde voor alle verzamelingen:
 }
 ```
 
-De eigenschap `values` bevat een subset van de beschik bare verzamelings entiteiten. Het aantal en de offset kunnen worden beheerd met behulp van de query parameters `skip` en `top` . Als `@nextLink` is niet null, zijn er meer gegevens beschikbaar en kan de volgende batch met gegevens worden opgehaald door een Get on-bewerking uit te voeren `$.@nextLink` .
+De `values` eigenschap bevat een subset van de beschik bare verzamelings entiteiten. Het aantal en de offset kunnen worden beheerd met behulp van de- `skip` en- `top` query parameters. Als dat `@nextLink` niet het `null` geval is, zijn er meer gegevens beschikbaar en kan de volgende batch met gegevens worden opgehaald door een Get on-bewerking uit te voeren `$.@nextLink` .
 
 Voor deze wijziging moet het `GET` voor de verzameling in een lus worden aangeroepen totdat alle elementen zijn geretourneerd.
 
 ### <a name="creating-transcriptions"></a>Transcripties maken
 
-Een gedetailleerde beschrijving van het maken van transcriptie vindt [u in batch transcriptie How-to](./batch-transcription.md).
+Een gedetailleerde beschrijving van het maken van batches met transcripties vindt u in [batch transcriptie How-to](./batch-transcription.md).
 
-Het maken van transcripties is gewijzigd in v3 om expliciet specifieke transcriptie-opties in te stellen. Alle (optioneel) configuratie-eigenschappen kunnen nu worden ingesteld in de `properties` eigenschap.
-Versie v3 ondersteunt nu meerdere invoer bestanden en vereist daarom een lijst met Url's en geen enkele URL zoals vereist voor v2. De naam van de eigenschap is gewijzigd van `recordingsUrl` in `contentUrls` . De functionaliteit van het analyseren van sentiment in transcripties is verwijderd op v3. U wordt aangeraden de [tekst analyse](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) van micro soft cognitieve service te gebruiken.
+Met de V3 transcriptie-API kunt u specifieke transcriptie-opties expliciet instellen. Alle (optioneel) configuratie-eigenschappen kunnen nu worden ingesteld in de `properties` eigenschap.
+Versie v3 ondersteunt ook meerdere invoer bestanden, zodat er een lijst met Url's is vereist in plaats van een enkele URL als v2. De naam van de eigenschap v2 `recordingsUrl` is nu `contentUrls` in v3. De functionaliteit van het analyseren van sentiment in transcripties is verwijderd in v3. Zie [tekst analyse](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) van micro soft cognitieve service voor sentiment-analyse opties.
 
-Met de nieuwe eigenschap `timeToLive` onder `properties` kunt u de bestaande voltooide entiteiten weghalen. `timeToLive`Hiermee geeft u de duur op waarna een voltooide entiteit automatisch wordt verwijderd. Stel deze in op een hoge waarde (bijvoorbeeld `PT12H` ) wanneer de entiteiten voortdurend worden getraceerd, verbruikt en verwijderd en daarom doorgaans lang vóór 12 uur worden verwerkt.
+Met de nieuwe eigenschap `timeToLive` onder `properties` kunt u de bestaande voltooide entiteiten weghalen. `timeToLive`Hiermee geeft u de duur op waarna een voltooide entiteit automatisch wordt verwijderd. Stel deze in op een hoge waarde (bijvoorbeeld `PT12H` ) wanneer de entiteiten voortdurend worden bijgehouden, verbruikt en verwijderd en daarom doorgaans lang vóór 12 uur zijn verstreken.
 
-v2 transcriptie POST-aanvraag tekst:
+**v2 transcriptie POST-aanvraag tekst:**
 
 ```json
 {
@@ -120,7 +116,7 @@ v2 transcriptie POST-aanvraag tekst:
 }
 ```
 
-hoofd tekst van v3 transcriptie POST-aanvraag:
+**hoofd tekst van v3 transcriptie POST-aanvraag:**
 
 ```json
 {
@@ -141,9 +137,9 @@ hoofd tekst van v3 transcriptie POST-aanvraag:
 
 ### <a name="format-of-v3-transcription-results"></a>Indeling van v3 transcriptie-resultaten
 
-Het schema van transcriptie-resultaten is enigszins gewijzigd om te worden uitgelijnd met de transcripties die zijn gemaakt door real-time-eind punten. Een uitgebreide beschrijving van de nieuwe indeling vindt u in de [batch-transcriptie How-to](./batch-transcription.md). Het schema van het resultaat wordt gepubliceerd in onze [github-voorbeeld opslagplaats](https://aka.ms/csspeech/samples) onder `samples/batch/transcriptionresult_v3.schema.json` .
+Het schema van transcriptie-resultaten is enigszins gewijzigd om te worden uitgelijnd met transcripties die zijn gemaakt door real-time-eind punten. Zoek een uitgebreide beschrijving van de nieuwe indeling in de [batch-transcriptie](./batch-transcription.md). Het schema van het resultaat wordt gepubliceerd in onze [github-voorbeeld opslagplaats](https://aka.ms/csspeech/samples) onder `samples/batch/transcriptionresult_v3.schema.json` .
 
-De eigenschaps namen zijn nu Camel en de waarden voor het kanaal en de spreker maken gebruik van geheeltallige typen. Als u de indeling van de duur wilt uitlijnen met andere Azure-Api's, is deze nu ingedeeld zoals beschreven in ISO 8601.
+Eigenschaps namen zijn nu Camel en de waarden voor `channel` en `speaker` gebruiken nu gehele getallen. Voor de duur van de tijd wordt nu de structuur gebruikt die wordt beschreven in ISO 8601, die overeenkomt met de duur notatie die wordt gebruikt in andere Azure-Api's.
 
 Voor beeld van een v3-transcriptie resultaat. De verschillen worden beschreven in de opmerkingen.
 
@@ -208,11 +204,11 @@ Voor beeld van een v3-transcriptie resultaat. De verschillen worden beschreven i
 
 ### <a name="getting-the-content-of-entities-and-the-results"></a>De inhoud van entiteiten en de resultaten ophalen
 
-In v2 zijn de koppelingen naar de invoer-of resultaat bestanden genoteerd met de rest van de meta gegevens van de entiteit. Als verbetering van v3 is er een duidelijke schei ding tussen de meta gegevens van de entiteit, die wordt geretourneerd door een GET on `$.self` en de details en referenties voor toegang tot de resultaat bestanden. Deze schei ding helpt de gegevens van klanten te beveiligen en biedt de nauw keurige controle over de geldigheids duur van de referenties.
+In v2 zijn de koppelingen naar de invoer-of resultaat bestanden genoteerd met de rest van de meta gegevens van de entiteit. Als verbetering van v3 is er een duidelijke schei ding tussen de meta gegevens van de entiteit (die worden geretourneerd door een GET aan `$.self` ) en de details en referenties voor toegang tot de resultaat bestanden. Met deze schei ding worden klant gegevens beschermd en kunnen ze de duur van de geldigheid van de referenties nauw keurig bepalen.
 
-In v3 is er een eigenschap `files` met de naam onder koppelingen voor het geval de entiteit gegevens beschikbaar stelt (data sets, transcripties, eind punten en evaluaties). Een GET on `$.links.files` retourneert een lijst met bestanden en SAS-URL voor toegang tot de inhoud van elk bestand. Als u de geldigheids duur van de SAS-Url's wilt beheren, kunt u de query parameter `sasValidityInSeconds` gebruiken om de levens duur op te geven.
+In v3 `links` neemt u een sub-eigenschap `files` op die wordt aangeroepen als de entiteit gegevens (gegevens sets, transcripties, eind punten of evaluaties) beschikbaar stelt. Een GET on `$.links.files` retourneert een lijst met bestanden en een SAS-URL voor toegang tot de inhoud van elk bestand. Als u de geldigheids duur van de SAS-Url's wilt beheren, kunt u de query parameter `sasValidityInSeconds` gebruiken om de levens duur op te geven.
 
-v2 transcriptie:
+**v2 transcriptie:**
 
 ```json
 {
@@ -226,7 +222,7 @@ v2 transcriptie:
 }
 ```
 
-V3 transcriptie:
+**V3 transcriptie:**
 
 ```json
 {
@@ -237,7 +233,7 @@ V3 transcriptie:
 }
 ```
 
-Vervolgens zou een GET on `$.links.files` resulteren in:
+**Een GET on `$.links.files` zou resulteren in:**
 
 ```json
 {
@@ -271,27 +267,27 @@ Vervolgens zou een GET on `$.links.files` resulteren in:
 }
 ```
 
-De `kind` geeft de indeling van de inhoud van het bestand aan. Voor transcripties zijn de bestanden van de soort de `TranscriptionReport` samen vatting van de taak en de bestanden van de soort het `Transcription` resultaat van de taak zelf.
+De `kind` eigenschap geeft de indeling van de inhoud van het bestand aan. Voor transcripties zijn de bestanden van de soort de `TranscriptionReport` samen vatting van de taak en de bestanden van de soort het `Transcription` resultaat van de taak zelf.
 
 ### <a name="customizing-models"></a>Modellen aanpassen
 
-Vóór v3 was er een onderscheid tussen een ' akoestische model ' en een ' taal model ' wanneer een model werd getraind. Dit onderscheid heeft tot gevolg dat er meerdere modellen moeten worden opgegeven bij het maken van eind punten of transcripties. Om dit proces te vereenvoudigen voor een beller, zijn de verschillen verwijderd en zijn alle items afhankelijk van de inhoud van de gegevens sets die worden gebruikt voor model training. Met deze wijziging ondersteunt het maken van het model nu gemengde gegevens sets (taal gegevens en akoestische gegevens). Eind punten en transcripties vereisen nu slechts één model.
+Vóór v3 was er een verschil tussen een _akoestisch model_ en een _taal model_ toen een model werd getraind. Dit onderscheid heeft tot gevolg dat er meerdere modellen moeten worden opgegeven bij het maken van eind punten of transcripties. Om dit proces te vereenvoudigen voor een beller, zijn de verschillen verwijderd en zijn alle items afhankelijk van de inhoud van de gegevens sets die worden gebruikt voor model training. Met deze wijziging ondersteunt het maken van het model nu gemengde gegevens sets (taal gegevens en akoestische gegevens). Eind punten en transcripties vereisen nu slechts één model.
 
-Met deze wijziging is de nood zaak van een `kind` in het bericht verwijderd en kunnen er `datasets[]` nu meerdere gegevens sets van dezelfde of gemengde typen worden opgenomen.
+Met deze wijziging is de nood zaak van een `kind` in de `POST` bewerking verwijderd en kan de `datasets[]` matrix nu meerdere gegevens sets van dezelfde of gemengde typen bevatten.
 
-Ter verbetering van de resultaten van een getraind model worden de akoestische gegevens automatisch intern gebruikt voor de taal training. Over het algemeen bieden modellen die zijn gemaakt via de V3 API meer nauw keurige resultaten dan modellen die met de v2 API zijn gemaakt.
+Ter verbetering van de resultaten van een getraind model worden de akoestische gegevens automatisch intern gebruikt tijdens de taal training. Over het algemeen bieden modellen die zijn gemaakt via de V3 API meer nauw keurige resultaten dan modellen die met de v2 API zijn gemaakt.
 
 ### <a name="retrieving-base-and-custom-models"></a>Basis-en aangepaste modellen ophalen
 
 Voor het vereenvoudigen van het ophalen van de beschik bare modellen heeft v3 de verzamelingen basis modellen gescheiden van de ' aangepaste modellen ' van de klant. De twee routes zijn nu `GET /speechtotext/v3.0/models/base` en `GET /speechtotext/v3.0/models/` .
 
-Voorheen werden alle modellen samen in één antwoord geretourneerd.
+In v2 werden alle modellen samen in één antwoord geretourneerd.
 
 ### <a name="name-of-an-entity"></a>Naam van een entiteit
 
-De naam van de eigenschap `name` is gewijzigd in `displayName` . Dit wordt uitgelijnd met andere Azure-Api's om identiteits eigenschappen niet aan te geven. De waarde van deze eigenschap mag niet uniek zijn en kan worden gewijzigd nadat de entiteit is gemaakt met een `PATCH` .
+De `name` eigenschap is nu `displayName` . Dit is consistent met andere Azure-Api's om identiteits eigenschappen niet aan te geven. De waarde van deze eigenschap mag niet uniek zijn en kan worden gewijzigd nadat de entiteit is gemaakt met een `PATCH` bewerking.
 
-v2 transcriptie:
+**v2 transcriptie:**
 
 ```json
 {
@@ -299,7 +295,7 @@ v2 transcriptie:
 }
 ```
 
-V3 transcriptie:
+**V3 transcriptie:**
 
 ```json
 {
@@ -309,9 +305,9 @@ V3 transcriptie:
 
 ### <a name="accessing-referenced-entities"></a>Toegang tot entiteiten waarnaar wordt verwezen
 
-In v2 verwijzingen naar entiteiten waarnaar wordt verwezen, zijn altijd gefactureerd, bijvoorbeeld de gebruikte modellen van een eind punt. Het nesten van entiteiten resulteerde in grote reacties en consumers gebruiken de geneste inhoud zelden. Als u de grootte van het antwoord wilt verkleinen en de prestaties van alle API-gebruikers wilt verbeteren, worden de entiteiten waarnaar wordt verwezen, niet meer in het antwoord in de regel vermeld. In plaats daarvan wordt een verwijzing naar de andere entiteit gebruikt, die rechtstreeks kan worden gebruikt. Deze verwijzing kan worden gebruikt voor een volgende `GET` (ook wel een URL), volgens hetzelfde patroon als de `self` koppeling.
+In v2 werden entiteiten waarnaar wordt verwezen, altijd in het overzicht beschreven, bijvoorbeeld de gebruikte modellen van een eind punt. Het nesten van entiteiten resulteerde in grote reacties en consumers gebruiken de geneste inhoud zelden. Als u de grootte van het antwoord wilt verkleinen en de prestaties wilt verbeteren, worden de entiteiten waarnaar wordt verwezen, niet meer in het antwoord vermeld. In plaats daarvan wordt een verwijzing naar de andere entiteit weer gegeven en kan deze direct worden gebruikt voor een volgende `GET` (ook wel een URL), volgens hetzelfde patroon als de `self` koppeling.
 
-v2 transcriptie:
+**v2 transcriptie:**
 
 ```json
 {
@@ -335,7 +331,6 @@ v2 transcriptie:
           "createdDateTime": "2019-01-07T11:34:12Z",
           "locale": "en-US",
           "name": "Language dataset",
-          
         }
       ]
     },
@@ -343,7 +338,7 @@ v2 transcriptie:
 }
 ```
 
-V3 transcriptie:
+**V3 transcriptie:**
 
 ```json
 {
@@ -354,13 +349,13 @@ V3 transcriptie:
 }
 ```
 
-Als u de details van een model waarnaar wordt verwezen wilt gebruiken, zoals wordt weer gegeven in het bovenstaande voor beeld, vereenvoudigt u het probleem van een GET on `$.model.self` .
+Als u de details van een model waarnaar wordt verwezen wilt gebruiken, zoals wordt weer gegeven in het bovenstaande voor beeld, hoeft u alleen maar een GET on aan te geven `$.model.self` .
 
 ### <a name="retrieving-endpoint-logs"></a>Eindpunt logboeken ophalen
 
-Versie v2 van de service die de antwoorden van eind punten in de logboek registratie ondersteunt. Om de resultaten van een eind punt met v2 op te halen, moest een ' gegevens export ' worden gemaakt, waarbij een moment opname van de resultaten wordt weer gegeven die zijn gedefinieerd door een tijds bereik. Het proces voor het exporteren van batches met gegevens is inflexibel geworden. De V3 API biedt toegang tot elk afzonderlijk bestand en maakt herhalingen mogelijk.
+Versie v2 van de service ondersteunt het eind punt resultaat van de logboek registratie. Als u de resultaten van een eind punt met v2 wilt ophalen, maakt u een ' gegevens export ', waarin een moment opname wordt weer gegeven van de resultaten die zijn gedefinieerd door een tijds bereik. Het proces voor het exporteren van batches met gegevens was inflexibeler. De V3 API biedt toegang tot elk afzonderlijk bestand en maakt herhalingen mogelijk.
 
-Een geslaagde v3-eind punt:
+**Een geslaagde v3-eind punt:**
 
 ```json
 {
@@ -371,7 +366,7 @@ Een geslaagde v3-eind punt:
 }
 ```
 
-Antwoord van GET `$.links.logs` :
+**Antwoord van GET `$.links.logs` :**
 
 ```json
 {
@@ -393,15 +388,15 @@ Antwoord van GET `$.links.logs` :
 }
 ```
 
-De paginering voor eindpunt logboeken werkt op dezelfde manier als alle andere verzamelingen, behalve dat er geen offset kan worden opgegeven. Vanwege de grote hoeveelheid beschik bare gegevens moest de server paginering worden geïmplementeerd.
+De paginering voor eindpunt logboeken werkt op dezelfde manier als alle andere verzamelingen, behalve dat er geen offset kan worden opgegeven. Vanwege de grote hoeveelheid beschik bare gegevens, wordt de paginering bepaald door de-server.
 
-In v3 kan elk eindpunt logboek afzonderlijk worden verwijderd door een verwijdering uit te geven aan het `self` bestand of door middel van verwijderen op `$.links.logs` . Als u een eind gegevens wilt opgeven, kunt u de query parameter `endDate` toevoegen aan de aanvraag.
+In v3 kan elk eindpunt logboek afzonderlijk worden verwijderd door een bewerking uit te geven `DELETE` voor het `self` bestand of door gebruik te maken `DELETE` van `$.links.logs` . Als u een eind datum wilt opgeven, kunt u de query parameter `endDate` toevoegen aan de aanvraag.
 
-### <a name="using-custom-properties"></a>' Aangepaste ' eigenschappen gebruiken
+### <a name="using-custom-properties"></a>Aangepaste eigenschappen gebruiken
 
-Voor het scheiden van aangepaste eigenschappen van de optionele configuratie-eigenschappen bevinden alle expliciet benoemde eigenschappen zich nu in de `properties` eigenschap en alle eigenschappen die zijn gedefinieerd voor aanroepers bevinden zich nu in de `customProperties` eigenschap.
+Voor het scheiden van aangepaste eigenschappen van de optionele configuratie-eigenschappen bevinden alle expliciet benoemde eigenschappen zich nu in de `properties` eigenschap en alle eigenschappen die door de aanroepers zijn gedefinieerd, bevinden zich nu in de `customProperties` eigenschap.
 
-v2 transcriptie-entiteit
+**v2 transcriptie-entiteit:**
 
 ```json
 {
@@ -413,7 +408,7 @@ v2 transcriptie-entiteit
 }
 ```
 
-V3 transcriptie-entiteit
+**V3 transcriptie-entiteit:**
 
 ```json
 {
@@ -427,14 +422,22 @@ V3 transcriptie-entiteit
 }
 ```
 
-Deze wijziging heeft ook het gebruik van de juiste typen voor alle expliciet benoemde eigenschappen onder `properties` (bijvoorbeeld bool in plaats van een teken reeks) ingeschakeld.
+Met deze wijziging kunt u ook de juiste typen gebruiken voor alle expliciet benoemde eigenschappen onder `properties` (bijvoorbeeld Booleaans in plaats van een teken reeks).
 
 ### <a name="response-headers"></a>Antwoordheaders
 
-V3 retourneert niet langer de header `Operation-Location` naast de header `Location` op post-aanvragen. De waarde van beide headers gebruikt om precies hetzelfde te zijn. Er wordt nu alleen een `Location` resultaat geretourneerd.
+V3 retourneert niet langer de `Operation-Location` header naast de `Location` koptekst op `POST` aanvragen. De waarde van beide headers in v2 is hetzelfde. Nu `Location` wordt alleen geretourneerd.
 
 Omdat de nieuwe API-versie nu wordt beheerd door Azure API Management (APIM), worden de gerelateerde headers `X-RateLimit-Limit` beperkt `X-RateLimit-Remaining` en `X-RateLimit-Reset` niet opgenomen in de antwoord headers.
 
 ### <a name="accuracy-tests"></a>Nauw keurigheid testen
 
-De naam van nauw keurigheid tests is gewijzigd in evaluaties, omdat de nieuwe naam beter beschrijft wat ze vertegenwoordigen. De nieuws paden zijn bijvoorbeeld ' https://{Region}. API. cognitieve. Microsoft. com/speechtotext/v 3.0/evaluaties '.
+De naam van nauw keurigheid tests is gewijzigd in evaluaties, omdat de nieuwe naam beter beschrijft wat ze vertegenwoordigen. De nieuwe paden zijn: `https://{region}.api.cognitive.microsoft.com/speechtotext/v3.0/evaluations` .
+
+## <a name="next-steps"></a>Volgende stappen
+
+Bekijk alle functies van deze veelgebruikte REST Api's die worden meegeleverd met spraak Services:
+
+* [REST API voor spraak-naar-tekst](rest-speech-to-text.md)
+* [Swagger-document](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0) voor v3 van de rest API
+* Bekijk de voorbeeld [opslagplaats voor github](https://aka.ms/csspeech/samples) in de submap voor voorbeeld code voor het uitvoeren van batch transcripties `samples/batch` .

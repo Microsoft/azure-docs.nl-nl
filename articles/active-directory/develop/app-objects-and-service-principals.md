@@ -13,12 +13,12 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 7fe48cf28ab3004087e2b022d7a9eca69a1e58e2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e4325303f5a10fa1df670495dd6d8190167182e8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169627"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861099"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
@@ -49,7 +49,7 @@ Om toegang te krijgen tot bronnen die worden beveiligd door een Azure AD-Tenant,
 
 Een Service-Principal is de lokale weer gave of het toepassings exemplaar van een globaal toepassings object in één Tenant of directory. Een Service-Principal is een concreet exemplaar dat is gemaakt op basis van het toepassings object en die bepaalde eigenschappen overneemt van dat toepassings object.  Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke app-object.  Het Service-Principal-object definieert wat de app daad werkelijk in de specifieke Tenant kan doen, wie toegang heeft tot de app en welke resources de app kan gebruiken.
 
-Wanneer een toepassing toestemming krijgt om toegang te krijgen tot bronnen in een Tenant (na registratie of [toestemming](developer-glossary.md#consent)), wordt er een Service-Principal-object gemaakt. U kunt ook een Service Principal-object maken in een Tenant met behulp van [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http), de [Azure Portal][AZURE-Portal]en andere hulpprogram ma's.  Wanneer u de portal gebruikt, wordt automatisch een service-principal gemaakt wanneer u een toepassing registreert.
+Wanneer een toepassing toestemming krijgt om toegang te krijgen tot bronnen in een Tenant (na registratie of [toestemming](developer-glossary.md#consent)), wordt er een Service-Principal-object gemaakt. U kunt ook een Service Principal-object maken in een Tenant met behulp van [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), de [Azure Portal][AZURE-Portal]en andere hulpprogram ma's.  Wanneer u de portal gebruikt, wordt automatisch een service-principal gemaakt wanneer u een toepassing registreert.
 
 De Blade **bedrijfs toepassingen** in de portal wordt gebruikt om de service-principals in een Tenant weer te geven en te beheren. U kunt de machtigingen van de Service-Principal zien, machtigingen voor de gebruiker die hiervoor zijn gemachtigd, de gebruikers die toestemming hebben gegeven, aanmeldings gegevens en meer.
 
@@ -91,8 +91,8 @@ In dit voorbeeld scenario:
 ## <a name="next-steps"></a>Volgende stappen
 
 - U kunt de [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) gebruiken om de toepassing en Service-Principal-objecten op te vragen.
-- U kunt toegang krijgen tot het toepassings object van een toepassing met behulp van de Microsoft Graph-API, de manifest-editor [van de Azure Portal][AZURE-Portal] of [Azure AD Power shell-cmdlets](/powershell/azure/?view=azureadps-2.0), zoals wordt vertegenwoordigd door de entiteit van de OData- [toepassing][MS-Graph-App-Entity].
-- U kunt toegang krijgen tot het Service-Principal-object van een toepassing via de Microsoft Graph-API of [Azure AD Power shell-cmdlets](/powershell/azure/?view=azureadps-2.0), zoals wordt aangegeven door de OData [ServicePrincipal-entiteit][MS-Graph-Sp-Entity].
+- U kunt toegang krijgen tot het toepassings object van een toepassing met behulp van de Microsoft Graph-API, de manifest-editor [van de Azure Portal][AZURE-Portal] of [Azure AD Power shell-cmdlets](/powershell/azure/), zoals wordt vertegenwoordigd door de entiteit van de OData- [toepassing][MS-Graph-App-Entity].
+- U kunt toegang krijgen tot het Service-Principal-object van een toepassing via de Microsoft Graph-API of [Azure AD Power shell-cmdlets](/powershell/azure/), zoals wordt aangegeven door de OData [ServicePrincipal-entiteit][MS-Graph-Sp-Entity].
 
 <!--Image references-->
 

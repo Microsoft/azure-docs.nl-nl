@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e4533334204a3a1cfd46ff27b04ff0c05350dfc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8198feca2956f81e397ddee447057c1a5af99a4a
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973912"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859501"
 ---
 # <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Een basisgroep maken en leden toevoegen met Azure Active Directory
 U kunt een basisgroep maken met behulp van de portal Azure Active Directory (Azure AD). Voor de toepassing van dit artikel wordt een basisgroep toegevoegd aan één resource door de resource-eigenaar (administrator) en deze bevat specifieke leden (werknemers) die toegang nodig hebben tot die resource. Voor complexere scenario's, met inbegrip van dynamische lidmaatschappen en regels maken, zie de [Azure Active Directory gebruiker beheerdocumentatie](../enterprise-users/index.yml).
@@ -77,7 +77,7 @@ U kunt op hetzelfde moment een basisgroep maken en leden toevoegen. Gebruik de v
 
 ## <a name="turn-on-or-off-group-welcome-email"></a>Welkomst bericht van groep in-of uitschakelen
 
-Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, of het nu een dynamisch of statisch lidmaatschap is, wordt een welkomst melding verzonden naar alle gebruikers die zijn toegevoegd aan de groep. Wanneer een van de kenmerken van een gebruiker of apparaat wordt gewijzigd, worden alle regels voor de dynamische groep in de organisatie verwerkt voor mogelijke lidmaatschaps wijzigingen. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps). 
+Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, of het nu een dynamisch of statisch lidmaatschap is, wordt een welkomst melding verzonden naar alle gebruikers die zijn toegevoegd aan de groep. Wanneer een van de kenmerken van een gebruiker of apparaat wordt gewijzigd, worden alle regels voor de dynamische groep in de organisatie verwerkt voor mogelijke lidmaatschaps wijzigingen. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup). 
 
 ## <a name="next-steps"></a>Volgende stappen
 

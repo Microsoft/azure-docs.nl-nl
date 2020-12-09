@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7edafd8a4a85e00a02486c646c77ddff5ff3e6b
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 47d7d541ed7d9805641ffdfde381d482c8700006
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94737095"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858736"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Wachtwoord-hashsynchronisatie implementeren met Azure AD Connect-synchronisatie
 In dit artikel vindt u informatie die u nodig hebt om uw gebruikers wachtwoorden te synchroniseren vanuit een on-premises Active Directory-exemplaar naar een op de cloud gebaseerde Azure Active Directory (Azure AD)-exemplaar.
@@ -53,10 +53,10 @@ In de volgende sectie wordt uitgelegd hoe de synchronisatie van wachtwoord-hashe
 
 1. Op de AD Connect-server wordt elke twee minuten om de wacht woord-hashes (het kenmerk unicodePwd) van een DC aangevraagd.  Deze aanvraag is via het standaard [MS-DRSR-](/openspecs/windows_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47) replicatie protocol dat wordt gebruikt voor het synchroniseren van gegevens tussen dc's. Het service account moet repliceren Directory-wijzigingen hebben en Directory repliceren wijzigt alle AD-machtigingen (die standaard worden verleend tijdens de installatie) om de wacht woord-hashes te verkrijgen.
 2. Voordat de domein controller wordt verzonden, wordt de MD4-wachtwoord-hash versleuteld met behulp van een sleutel die een [MD5](https://www.rfc-editor.org/rfc/rfc1321.txt) -hash van de RPC-sessie sleutel en een Salt is. Vervolgens wordt het resultaat verzonden naar de synchronisatie agent voor wacht woord-hash via RPC. De domein controller geeft het zout ook door aan de synchronisatie agent door gebruik te maken van het DC-replicatie protocol, zodat de agent de envelop kan ontsleutelen.
-3. Nadat de synchronisatie agent voor wacht woord-hash de versleutelde envelop heeft, gebruikt [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider?view=netcore-3.1) en het zout om een sleutel te genereren voor het ontsleutelen van de ontvangen gegevens naar de oorspronkelijke MD4-indeling. De synchronisatie agent voor wacht woord-hashes heeft nooit toegang tot het wacht woord voor lees bare tekst. Het gebruik van MD5 van de wacht woord-hash-synchronisatie agent is strikt voor compatibiliteit van replicatie protocollen met de domein controller, en wordt alleen lokaal gebruikt tussen de domein controller en de synchronisatie agent voor wacht woord-hashes.
+3. Nadat de synchronisatie agent voor wacht woord-hash de versleutelde envelop heeft, gebruikt [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider) en het zout om een sleutel te genereren voor het ontsleutelen van de ontvangen gegevens naar de oorspronkelijke MD4-indeling. De synchronisatie agent voor wacht woord-hashes heeft nooit toegang tot het wacht woord voor lees bare tekst. Het gebruik van MD5 van de wacht woord-hash-synchronisatie agent is strikt voor compatibiliteit van replicatie protocollen met de domein controller, en wordt alleen lokaal gebruikt tussen de domein controller en de synchronisatie agent voor wacht woord-hashes.
 4. De wacht woord-hash synchronisatie agent breidt de hash van het binaire wacht woord van 16 bytes naar 64 bytes door eerst de hash naar een hexadecimale teken reeks van 32 bytes te converteren en vervolgens deze teken reeks terug te converteren naar binair met UTF-16-code ring.
 5. De synchronisatie agent voor wacht woord-hashes voegt een per gebruiker zout toe, bestaande uit een Salt van 10 bytes lengte, tot het binaire 64-byte om de oorspronkelijke hash verder te beveiligen.
-6. De synchronisatie agent voor wacht woord-hash combineert vervolgens de MD4-hash plus het per gebruiker zout en voert deze in de functie [PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) . 1000 iteraties van de hash-algoritme voor het [HMAC-sha256-](/dotnet/api/system.security.cryptography.hmacsha256?view=netcore-3.1) versleutelen worden gebruikt. 
+6. De synchronisatie agent voor wacht woord-hash combineert vervolgens de MD4-hash plus het per gebruiker zout en voert deze in de functie [PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) . 1000 iteraties van de hash-algoritme voor het [HMAC-sha256-](/dotnet/api/system.security.cryptography.hmacsha256) versleutelen worden gebruikt. 
 7. De wacht woord-hash synchronisatie agent neemt de resulterende 32-byte hash, voegt zowel het zouten per gebruiker als het aantal SHA256-iteraties toe (voor gebruik door Azure AD). vervolgens verzendt de teken reeks van Azure AD Connect naar Azure AD via TLS.</br> 
 8. Wanneer een gebruiker zich probeert aan te melden bij Azure AD en het wacht woord invoert, wordt het wacht woord uitgevoerd via hetzelfde MD4 + Salt + PBKDF2 + HMAC-SHA256-proces. Als de resulterende hash overeenkomt met de hash die is opgeslagen in azure AD, wordt het juiste wacht woord door de gebruiker ingevoerd en geverifieerd.
 
@@ -142,7 +142,7 @@ Ter ondersteuning van tijdelijke wacht woorden in azure AD voor gesynchroniseerd
 
 #### <a name="account-expiration"></a>Account verloop tijd
 
-Als uw organisatie gebruikmaakt van het kenmerk accountExpires als onderdeel van het beheer van gebruikers accounts, wordt dit kenmerk niet gesynchroniseerd met Azure AD. Als gevolg hiervan is een verlopen Active Directory-account in een omgeving geconfigureerd voor het synchroniseren van wachtwoord-hashes nog steeds actief in azure AD. Het is raadzaam dat als het account is verlopen, een werk stroom actie een Power shell-script moet activeren waarmee het Azure AD-account van de gebruiker wordt uitgeschakeld (gebruik de cmdlet [set-AzureADUser](/powershell/module/azuread/set-azureaduser?view=azureadps-2.0) ). Als het account is ingeschakeld, moet de Azure AD-instantie daarentegen zijn ingeschakeld.
+Als uw organisatie gebruikmaakt van het kenmerk accountExpires als onderdeel van het beheer van gebruikers accounts, wordt dit kenmerk niet gesynchroniseerd met Azure AD. Als gevolg hiervan is een verlopen Active Directory-account in een omgeving geconfigureerd voor het synchroniseren van wachtwoord-hashes nog steeds actief in azure AD. Het is raadzaam dat als het account is verlopen, een werk stroom actie een Power shell-script moet activeren waarmee het Azure AD-account van de gebruiker wordt uitgeschakeld (gebruik de cmdlet [set-AzureADUser](/powershell/module/azuread/set-azureaduser) ). Als het account is ingeschakeld, moet de Azure AD-instantie daarentegen zijn ingeschakeld.
 
 ### <a name="overwrite-synchronized-passwords"></a>Gesynchroniseerde wacht woorden overschrijven
 

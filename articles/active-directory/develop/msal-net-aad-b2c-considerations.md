@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b683eaaf4c93ef0dcf74680e1e174e0f867a7041
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8be41f3fcf4d32ee81d1290c6a50a27f2cd45ee7
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173393"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860963"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>MSAL.NET gebruiken om gebruikers aan te melden met sociale identiteiten
 
@@ -165,7 +165,7 @@ Er wordt een update voor dit [probleem](https://github.com/AzureAD/microsoft-aut
 
 ### <a name="known-issue-with-azure-ad-b2c"></a>Bekend probleem met Azure AD B2C
 
-MSAL.NET ondersteunt een [token cache](/dotnet/api/microsoft.identity.client.tokencache?view=azure-dotnet). De cache sleutel voor tokens is gebaseerd op de claims die zijn geretourneerd door de ID-provider (IdP).
+MSAL.NET ondersteunt een [token cache](/dotnet/api/microsoft.identity.client.tokencache). De cache sleutel voor tokens is gebaseerd op de claims die zijn geretourneerd door de ID-provider (IdP).
 
 Momenteel heeft MSAL.NET twee claims nodig om een token cache sleutel te bouwen:
 

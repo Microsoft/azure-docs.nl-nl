@@ -13,12 +13,12 @@ ms.date: 11/12/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db8774d6868d55c7d040b1894c4a14d989cb2702
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 4a8fcb14ac397791822c3a9065275dbfb2b3b7dd
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371865"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860419"
 ---
 # <a name="frequently-asked-questions-about-azure-active-directory"></a>Veelgestelde vragen over Azure Active Directory
 Azure Active Directory (Azure AD) is een uitgebreide IDaaS-oplossing (Identity as a Service) waarin alle aspecten van identiteit, toegangsbeheer en beveiliging zijn opgenomen.
@@ -130,7 +130,7 @@ Voor Microsoft 365 gebruikers kan uw beheerder het wacht woord opnieuw instellen
 Beheerders kunnen wachtwoorden van Azure AD-accounts via een van de volgende opties opnieuw instellen:
 
 - [Accounts in Azure Portal opnieuw instellen](active-directory-users-reset-password-azure-portal.md)
-- [PowerShell gebruiken](/powershell/module/msonline/set-msoluserpassword?view=azureadps-1.0)
+- [PowerShell gebruiken](/powershell/module/msonline/set-msoluserpassword)
 
 
 ---
@@ -212,4 +212,4 @@ Zie [Automate user provisioning and deprovisioning to SaaS applications with Azu
 ---
 **V: Kan ik een veilige LDAP-verbinding instellen met Azure AD?**
 
-**A:** Nee. Azure AD biedt geen ondersteuning voor het LDAP-protocol (Lightweight Directory Access Protocol) of Secure LDAP rechtstreeks. Het is echter mogelijk om Azure AD Domain Services-instantie (Azure AD DS) in te scha kelen op uw Azure AD-Tenant met correct geconfigureerde netwerk beveiligings groepen via Azure-netwerken om LDAP-connectiviteit te bewerkstelligen. Zie [Configure secure LDAP for a Azure Active Directory Domain Services Managed Domain](../../active-directory-domain-services/tutorial-configure-ldaps.md) (Engelstalig) voor meer informatie.
+**A:**  Geen. Azure AD biedt geen ondersteuning voor het LDAP-protocol (Lightweight Directory Access Protocol) of Secure LDAP rechtstreeks. Het is echter mogelijk om Azure AD Domain Services-instantie (Azure AD DS) in te scha kelen op uw Azure AD-Tenant met correct geconfigureerde netwerk beveiligings groepen via Azure-netwerken om LDAP-connectiviteit te bewerkstelligen. Zie [Configure secure LDAP for a Azure Active Directory Domain Services Managed Domain](../../active-directory-domain-services/tutorial-configure-ldaps.md) (Engelstalig) voor meer informatie.

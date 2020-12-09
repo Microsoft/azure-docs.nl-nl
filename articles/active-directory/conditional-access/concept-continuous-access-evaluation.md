@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e21bac5dd78cb9c9f40e6b91ff80fedabb9bc75
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: b7519b6c7e1f3381be77b9a0734ddda250228e7d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602254"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860300"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -105,7 +105,7 @@ Als u geen gebruik maakt van CAE-compatibele clients, blijft de standaard levens
 
 1. Een client met CAE-ondersteuning geeft referenties of een vernieuwings token door aan Azure AD die vraagt om een toegangs token voor een bepaalde resource.
 1. Een toegangs token wordt samen met andere artefacten naar de client geretourneerd.
-1. Een beheerder [trekt expliciet alle vernieuwings tokens voor de gebruiker in](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0). Er wordt een intrekkings gebeurtenis verzonden naar de resource provider vanuit Azure AD.
+1. Een beheerder [trekt expliciet alle vernieuwings tokens voor de gebruiker in](/powershell/module/azuread/revoke-azureaduserallrefreshtoken). Er wordt een intrekkings gebeurtenis verzonden naar de resource provider vanuit Azure AD.
 1. Er wordt een toegangs token aan de resource provider door gegeven. De resource provider evalueert de geldigheid van het token en controleert of er een intrekkings gebeurtenis voor de gebruiker is. De resource provider gebruikt deze informatie om te bepalen of u toegang wilt verlenen aan de resource.
 1. In dit geval weigert de resource provider de toegang en stuurt een 401 + claim-Challenge terug naar de client.
 1. De-client die geschikt is voor CAE, begrijpt de 401 + claim Challenge. Het omzeilt de caches en gaat terug naar stap 1, verzendt het vernieuwings token samen met de claim uitdaging terug naar Azure AD. Azure AD evalueert vervolgens alle voor waarden en vraagt de gebruiker in dit geval opnieuw te verifiëren.

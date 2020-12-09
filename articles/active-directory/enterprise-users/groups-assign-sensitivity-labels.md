@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4931006ba690ff7e059da5de8b0bc816271af30c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 3b40171d87ccffa7c5c4fb72d2e79af015b1d16f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547896"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859960"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Gevoeligheids labels toewijzen aan Microsoft 365 groepen in Azure Active Directory
 
@@ -68,7 +68,7 @@ Als u gepubliceerde labels op groepen wilt Toep assen, moet u eerst de functie i
     Set-AzureADDirectorySetting -Id $Setting.Id -DirectorySetting $Setting
     ```
 
-U moet ook uw gevoeligheids labels synchroniseren met Azure AD. Zie voor instructies [het inschakelen van gevoeligheids labels voor containers en het synchroniseren van labels](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
+U moet ook uw gevoeligheids labels synchroniseren met Azure AD. Zie voor instructies [het inschakelen van gevoeligheids labels voor containers en het synchroniseren van labels](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#how-to-enable-sensitivity-labels-for-containers-and-synchronize-labels).
 
 ## <a name="assign-a-label-to-a-new-group-in-azure-portal"></a>Een label toewijzen aan een nieuwe groep in Azure Portal
 

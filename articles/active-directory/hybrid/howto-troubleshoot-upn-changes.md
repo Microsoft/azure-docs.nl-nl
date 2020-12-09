@@ -1,5 +1,5 @@
 ---
-title: Wijzigingen van Azure User Principle Name (UPN) plannen en oplossen
+title: Wijzigingen van Azure User Principal Name (UPN) plannen en oplossen
 description: Bekende problemen en oplossingen voor UPN-wijzigingen begrijpen
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59b304505c29f424d85d5b1e16dc83c060ac2ac1
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 19e40d135316c1c7cd270d2804fff1f487937685
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744595"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858532"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Wijzigingen in de principal-naam van gebruikers plannen en oplossen in Azure Active Directory
 
@@ -135,7 +135,7 @@ Gebruikers kunnen problemen ondervinden met eenmalige aanmelding met toepassinge
 De problemen die in deze sectie worden vermeld, zijn vastgesteld op de Windows 10-update van 2020 (2004).
 
 **Tijdelijke oplossing** <br>
-Sta voldoende tijd toe om de UPN-wijziging te synchroniseren met Azure AD. Nadat u hebt gecontroleerd of de nieuwe UPN wordt weer gegeven in de Azure AD-Portal, vraagt u de gebruiker om zich aan te melden met de nieuwe UPN. U kunt ook controleren via [Power shell](/powershell/module/azuread/get-azureaduser?view=azureadps-2.0). Nadat u zich hebt aangemeld met de nieuwe UPN, kunnen er nog steeds verwijzingen naar de oude UPN worden weer gegeven op de Windows-instelling ' toegang tot werk of school '.
+Sta voldoende tijd toe om de UPN-wijziging te synchroniseren met Azure AD. Nadat u hebt gecontroleerd of de nieuwe UPN wordt weer gegeven in de Azure AD-Portal, vraagt u de gebruiker om zich aan te melden met de nieuwe UPN. U kunt ook controleren via [Power shell](/powershell/module/azuread/get-azureaduser). Nadat u zich hebt aangemeld met de nieuwe UPN, kunnen er nog steeds verwijzingen naar de oude UPN worden weer gegeven op de Windows-instelling ' toegang tot werk of school '.
 
 ![Scherm opname van geverifieerde domeinen](./media/howto-troubleshoot-upn-changes/other-user.png)
 

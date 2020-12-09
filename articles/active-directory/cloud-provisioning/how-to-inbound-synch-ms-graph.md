@@ -11,12 +11,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b797bf5c7e69990a29f0d14c31586d0e85b42426
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: f308f46fc021a1d08f4065d48558a6dd71786c7c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96737983"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860352"
 ---
 # <a name="inbound-synchronization-for-cloud-provisioning-using-ms-graph-api"></a>Inkomende synchronisatie voor Cloud inrichting met behulp van MS Graph API
 
@@ -30,7 +30,7 @@ De structuur van dit proces bestaat uit de volgende stappen.  Dit zijn:
 - [Synchronisatie taak starten](#start-sync-job)
 - [Beoordelings status](#review-status)
 
-Gebruik deze [Microsoft Azure Active Directory-module voor Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/?view=azureadps-1.0) opdrachten om synchronisatie in te scha kelen voor een productie Tenant, een vereiste om de beheer webservice aan te roepen voor die Tenant.
+Gebruik deze [Microsoft Azure Active Directory-module voor Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/) opdrachten om synchronisatie in te scha kelen voor een productie Tenant, een vereiste om de beheer webservice aan te roepen voor die Tenant.
 
 ## <a name="basic-setup"></a>Basisconfiguratie
 

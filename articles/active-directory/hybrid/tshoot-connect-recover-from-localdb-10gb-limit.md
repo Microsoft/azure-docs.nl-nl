@@ -16,12 +16,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ca5361d8500ecd4ea22a577d0a4dc7ced606eab
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4b45decd2f2cf9c99cffb0e08d4d6a5c5cfafc67
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997644"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858396"
 ---
 # <a name="azure-ad-connect-how-to-recover-from-localdb-10-gb-limit"></a>Azure AD Connect: problemen met LocalDB met een limiet van 10 GB oplossen
 Azure AD Connect vereist een SQL Server-database voor het opslaan van identiteitsgegevens. U kunt de standaard SQL Server 2012 Express LocalDB gebruiken die samen met Azure AD Connect is geïnstalleerd, maar ook uw eigen volledige SQL. Voor SQL Server Express geldt een limiet van 10 GB. Wanneer u LocalDB gebruikt en deze limiet is bereikt, kan de Azure AD Connect-synchronisatieservice niet langer starten of goed synchroniseren. In dit artikel worden de herstel stappen beschreven.
@@ -55,7 +55,7 @@ Bepaal eerst of de synchronisatie service nog steeds actief is:
 5. Als deze niet actief is, probeert u de service te starten. Als de service met succes wordt gestart, slaat u [de database stap kleiner](#shrink-the-database) en gaat u naar de stap [Run Data History-gegevens verwijderen](#delete-run-history-data) . Ga anders verder met [de stap data base verkleinen](#shrink-the-database) .
 
 ### <a name="shrink-the-database"></a>De data base verkleinen
-Gebruik de verkleinings bewerking om voldoende DB-ruimte vrij te maken om de synchronisatie service te starten. Hiermee wordt DB-ruimte vrijgemaakt door spaties in de data base te verwijderen. Deze stap is het beste omdat u niet zeker weet dat u altijd ruimte kunt herstellen. Lees dit artikel [een Data Base verkleinen](/sql/relational-databases/databases/shrink-a-database?view=sql-server-ver15)voor meer informatie over de verkleinings bewerking.
+Gebruik de verkleinings bewerking om voldoende DB-ruimte vrij te maken om de synchronisatie service te starten. Hiermee wordt DB-ruimte vrijgemaakt door spaties in de data base te verwijderen. Deze stap is het beste omdat u niet zeker weet dat u altijd ruimte kunt herstellen. Lees dit artikel [een Data Base verkleinen](/sql/relational-databases/databases/shrink-a-database)voor meer informatie over de verkleinings bewerking.
 
 > [!IMPORTANT]
 > Sla deze stap over als u de synchronisatie service kunt uitvoeren. Het wordt afgeraden de SQL-Data Base te verkleinen omdat deze kan leiden tot slechte prestaties vanwege een verhoogde fragmentatie.

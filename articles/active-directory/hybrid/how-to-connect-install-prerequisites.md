@@ -16,12 +16,12 @@ ms.date: 11/05/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 032b1ca945cf729f8a6682cf71d26a716b1e8863
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: edace0298514d1fc3cfd3afcff73fa0d29e18f0c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172343"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858770"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Vereisten voor Azure AD Connect
 In dit artikel worden de vereisten en de hardwarevereisten voor Azure Active Directory (Azure AD)-verbinding beschreven.
@@ -52,7 +52,7 @@ Azure Active Directory Connect ondertekende Power shell-scripts worden uitgevoer
 
 Het aanbevolen uitvoerings beleid tijdens de installatie is ' RemoteSigned '.
 
-Zie [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7)voor meer informatie over het instellen van het Power shell-uitvoerings beleid.
+Zie [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy)voor meer informatie over het instellen van het Power shell-uitvoerings beleid.
 
 
 ### <a name="azure-ad-connect-server"></a>Azure AD Connect server

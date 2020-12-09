@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6b51fe1349b2ece89b97cf9436ad3374374ad309
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: ed93944c2a94370250fb75a679c1ac37a2a8418c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741572"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861150"
 ---
 # <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Contact gegevens van gebruikers verificatie vooraf invullen voor Azure Active Directory self-service voor wachtwoord herstel (SSPR)
 
@@ -125,7 +125,7 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 
 ### <a name="use-powershell-version-2"></a>Power shell versie 2 gebruiken
 
-[Down load en installeer de Azure AD-versie 2 Power shell-module](/powershell/module/azuread/?view=azureadps-2.0)om aan de slag te gaan.
+[Down load en installeer de Azure AD-versie 2 Power shell-module](/powershell/module/azuread/)om aan de slag te gaan.
 
 Voer de volgende opdrachten uit om snel te installeren vanuit recente versies van Power shell die ondersteuning bieden voor `Install-Module` . De eerste regel controleert of de module al is geïnstalleerd:
 

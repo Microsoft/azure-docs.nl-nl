@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e85f36f1b970a4848ee132fe37bd1b0f4f4fdc82
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: d8bc1a96109eda9cc2ee1f86cec892cc5ce9308d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489519"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860317"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Procedure: verouderde verificatie naar Azure AD blok keren met voorwaardelijke toegang   
 
@@ -119,7 +119,7 @@ U kunt alle beschik bare granting-besturings elementen voor de andere voor waard
 
 ### <a name="sharepoint-online-and-b2b-guest-users"></a>Share point online en B2B-gast gebruikers
 
-Om B2B-gebruikers toegang te blok keren via verouderde verificatie naar share point online, moeten organisaties verouderde verificatie uitschakelen in share point met de `Set-SPOTenant` Power shell-opdracht en de `-LegacyAuthProtocolsEnabled` para meter instellen op `$false` . Meer informatie over het instellen van deze para meter vindt u in het referentie document van share point Power shell over [set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps)
+Om B2B-gebruikers toegang te blok keren via verouderde verificatie naar share point online, moeten organisaties verouderde verificatie uitschakelen in share point met de `Set-SPOTenant` Power shell-opdracht en de `-LegacyAuthProtocolsEnabled` para meter instellen op `$false` . Meer informatie over het instellen van deze para meter vindt u in het referentie document van share point Power shell over [set-SPOTenant](/powershell/module/sharepoint-online/set-spotenant)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1e1bbdfe1cb83f9b479861840081cd0bb138957
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: bb134a2fb784e02f5e00c9e88ab0df1794489e0c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441875"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860589"
 ---
 # <a name="the-elements-of-the-b2b-collaboration-invitation-email---azure-active-directory"></a>De elementen van het e-mail adres uitnodiging voor B2B-samen werking-Azure Active Directory
 
@@ -79,14 +79,14 @@ Een gast gebruiker kan deze stappen volgen om de organisaties weer te geven of t
 2. Voer uw e-mail adres in en volg de aanmeldings stappen voor verificatie met eenmalige wacht woord voor e-mail.
 3. Bekijk de organisaties die u hebt geblokkeerd of Exporteer de namen met kopiëren en plakken.
    > [!NOTE]
-   > Als u een organisatie die u hebt geblokkeerd, toestemming wilt geven om u opnieuw uit te nodigen, kunt u de organisatie kiezen en **volgende**selecteren.
+   > Als u een organisatie die u hebt geblokkeerd, toestemming wilt geven om u opnieuw uit te nodigen, kunt u de organisatie kiezen en **volgende** selecteren.
 
 ## <a name="how-the-language-is-determined"></a>Hoe de taal wordt bepaald
 
 De taal die wordt weer gegeven aan de gast gebruiker in het e-mail bericht met de uitnodiging wordt bepaald door de volgende instellingen. Deze instellingen worden weer gegeven in volg orde van prioriteit. Als een instelling niet is geconfigureerd, bepaalt de volgende instelling in de lijst de taal.
 
-- De eigenschap **messageLanguage** van het [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo?view=graph-rest-1.0) -object als de Create API voor de uitnodiging wordt gebruikt
--   De eigenschap **preferredLanguage** die is opgegeven in het [gebruikers object](/graph/api/resources/user?view=graph-rest-1.0) van de gast
+- De eigenschap **messageLanguage** van het [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo) -object als de Create API voor de uitnodiging wordt gebruikt
+-   De eigenschap **preferredLanguage** die is opgegeven in het [gebruikers object](/graph/api/resources/user) van de gast
 -   De **taal** van de meldingen die is ingesteld in de eigenschappen van de thuis Tenant van de gast gebruiker (alleen voor Azure AD-tenants)
 -   De **taal** van de meldingen die is ingesteld in de eigenschappen van de resource-Tenant
 

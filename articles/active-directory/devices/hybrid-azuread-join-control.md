@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66b216e5e511d2d80378ee7e2d124dccbc7abcb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 38754b9e349e27afcff58dac27a616e3e4fb5319
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85252709"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860929"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Gecontroleerde validatie van hybride Azure AD-deelname
 
@@ -82,7 +82,7 @@ Gebruik het volgende voor beeld om een groepsbeleid-object (GPO) te maken om een
 Als u AD FS gebruikt, moet u eerst SCP aan de client zijde configureren met behulp van de bovenstaande instructies door het groeps beleidsobject te koppelen aan uw AD FS-servers. Het SCP-object definieert de bron van de autoriteit voor object apparaatobject. Het kan on-premises of Azure AD zijn. Wanneer SCP aan de client zijde is geconfigureerd voor AD FS, wordt de bron voor object-objecten ingesteld als Azure AD.
 
 > [!NOTE]
-> Als u SCP aan client zijde op uw AD FS-servers niet configureert, wordt de bron voor apparaat-id's als on-premises beschouwd. ADFS begint vervolgens met het verwijderen van de apparaten uit de on-premises map na de opgegeven periode die is gedefinieerd in het kenmerk ' MaximumInactiveDays ' van de ADFS-apparaatregistratie. AD FS-apparaatregistratie kunnen worden gevonden met behulp van de [cmdlet Get-AdfsDeviceRegistration](/powershell/module/adfs/get-adfsdeviceregistration?view=win10-ps).
+> Als u SCP aan client zijde op uw AD FS-servers niet configureert, wordt de bron voor apparaat-id's als on-premises beschouwd. ADFS begint vervolgens met het verwijderen van de apparaten uit de on-premises map na de opgegeven periode die is gedefinieerd in het kenmerk ' MaximumInactiveDays ' van de ADFS-apparaatregistratie. AD FS-apparaatregistratie kunnen worden gevonden met behulp van de [cmdlet Get-AdfsDeviceRegistration](/powershell/module/adfs/get-adfsdeviceregistration).
 
 ## <a name="controlled-validation-of-hybrid-azure-ad-join-on-windows-down-level-devices"></a>Gecontroleerde validatie van hybride Azure AD-deelname op Windows-apparaten op het lagere niveau
 

@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2999fb8b3c3687c68e7eb38a60f128e24028871f
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: fed7123d916c1dc0facab3bd22e6b3f03d39684f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779699"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858957"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -279,7 +279,7 @@ Alle combi Naties van client-server-en browser-server moet TLS 1,2-en moderne co
 
 Betrokken omgevingen zijn:
 - Azure US Gov
-- [Office 365 GCC High & DoD](/microsoft-365/compliance/tls-1-2-in-office-365-gcc?view=o365-worldwide)
+- [Office 365 GCC High & DoD](/microsoft-365/compliance/tls-1-2-in-office-365-gcc)
  
 ---
 
@@ -354,7 +354,7 @@ De ervaring voor de integratie-assistent (preview) is nu beschikbaar voor Azure 
 
 U kunt nu de sjabloon-ID van elke Azure AD-rol weer geven in de Azure Portal. Selecteer in azure AD de  **Beschrijving** van de geselecteerde rol. 
 
-Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](/graph/api/resources/directoryrole?view=graph-rest-1.0) -en [roleDefinition](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie id van de [functie sjabloon](../roles/permissions-reference.md#role-template-ids)voor meer informatie over de id van de functie sjabloon.
+Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](/graph/api/resources/directoryrole) -en [roleDefinition](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie id van de [functie sjabloon](../roles/permissions-reference.md#role-template-ids)voor meer informatie over de id van de functie sjabloon.
 
 ---
 
@@ -678,7 +678,7 @@ Als u uitgaande firewall regels in uw organisatie hebt, werkt u de regels bij zo
 **Type:** Plan voor wijziging  
 **Service categorie:** **Product mogelijkheid** voor identiteits beveiliging: identiteits beveiliging & beveiliging
 
-De portal voor identiteits beveiliging wordt bijgewerkt met de wijzigingen die zijn aangebracht in de [nieuwe release](/microsoft-365/security/mtp/microsoft-secure-score-whats-new?view=o365-worldwide)van de micro soft Secure Score. 
+De portal voor identiteits beveiliging wordt bijgewerkt met de wijzigingen die zijn aangebracht in de [nieuwe release](/microsoft-365/security/mtp/microsoft-secure-score-whats-new)van de micro soft Secure Score. 
 
 De preview-versie met de wijzigingen is aan het begin van september beschikbaar. De wijzigingen in de preview-versie zijn onder andere:
 - De naam van de beveiligde score voor identiteits beveiliging is gewijzigd in ' beveiligde score voor identiteit ' voor een merk uitlijning met een beveiligde Score van micro soft
@@ -1057,7 +1057,7 @@ Azure Government tenants die gebruikmaken van de B2B-samenwerkings functies kunn
 **Product mogelijkheden:** B2B/B2C
  
 
-De eigenschappen externalUserState en externalUserStateChangedDateTime kunnen worden gebruikt om uitgenodigde B2B-gasten te vinden die hun uitnodigingen nog niet hebben geaccepteerd, evenals het bouwen van automatisering, zoals het verwijderen van gebruikers die hun uitnodigingen na een aantal dagen niet hebben geaccepteerd. Deze eigenschappen zijn nu beschikbaar in MS Graph v1. Raadpleeg het [resource type](/graph/api/resources/user?view=graph-rest-1.0)van de gebruiker voor hulp bij het gebruik van deze eigenschappen.
+De eigenschappen externalUserState en externalUserStateChangedDateTime kunnen worden gebruikt om uitgenodigde B2B-gasten te vinden die hun uitnodigingen nog niet hebben geaccepteerd, evenals het bouwen van automatisering, zoals het verwijderen van gebruikers die hun uitnodigingen na een aantal dagen niet hebben geaccepteerd. Deze eigenschappen zijn nu beschikbaar in MS Graph v1. Raadpleeg het [resource type](/graph/api/resources/user)van de gebruiker voor hulp bij het gebruik van deze eigenschappen.
  
 ---
 
@@ -1131,7 +1131,7 @@ Er is een nieuwe gedelegeerde machtiging EntitlementManagement. Read. all is nu 
 **Service categorie:** Identiteits beveiliging  
 **Product mogelijkheden:** Beveiliging van identiteits beveiliging &
  
-De riskyUsers-en riskDetections-Microsoft Graph Api's zijn nu algemeen beschikbaar. Nu ze beschikbaar zijn op het eind punt van de v 1.0, nodigen we u uit om ze in productie te gebruiken. Raadpleeg de [Microsoft Graph-documenten](/graph/api/resources/identityprotectionroot?view=graph-rest-1.0)voor meer informatie.
+De riskyUsers-en riskDetections-Microsoft Graph Api's zijn nu algemeen beschikbaar. Nu ze beschikbaar zijn op het eind punt van de v 1.0, nodigen we u uit om ze in productie te gebruiken. Raadpleeg de [Microsoft Graph-documenten](/graph/api/resources/identityprotectionroot)voor meer informatie.
  
 ---
 

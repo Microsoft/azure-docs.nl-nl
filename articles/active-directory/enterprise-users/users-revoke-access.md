@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 12/02/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d808b920ddc6ff6f1d44252c27d67edd9c0dc353
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 826ca9fc20d8bbcf9a5f90ccc895b9f9867a6be1
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575513"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860572"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Gebruikers toegang intrekken in Azure Active Directory
 
@@ -60,13 +60,13 @@ Voor een hybride omgeving met on-premises Active Directory gesynchroniseerd met 
 
 Als beheerder in de Active Directory maakt u verbinding met uw on-premises netwerk, opent u Power shell en voert u de volgende acties uit:
 
-1. Schakel de gebruiker uit in Active Directory. Raadpleeg [Disable-ADAccount](/powershell/module/addsadministration/disable-adaccount?view=win10-ps).
+1. Schakel de gebruiker uit in Active Directory. Raadpleeg [Disable-ADAccount](/powershell/module/addsadministration/disable-adaccount).
 
     ```PowerShell
     Disable-ADAccount -Identity johndoe  
     ```
 
-1. Het wacht woord van de gebruiker twee keer opnieuw instellen in de Active Directory. Raadpleeg [set-ADAccountPassword](/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps).
+1. Het wacht woord van de gebruiker twee keer opnieuw instellen in de Active Directory. Raadpleeg [set-ADAccountPassword](/powershell/module/addsadministration/set-adaccountpassword).
 
     > [!NOTE]
     > De reden voor het twee keer wijzigen van het wacht woord van een gebruiker is het verminderen van het risico van Pass-the-hash, met name als er vertragingen optreden bij de on-premises wachtwoord replicatie. Als u veilig kunt aannemen dat dit account niet is aangetast, kunt u het wacht woord slechts eenmaal opnieuw instellen.
@@ -83,18 +83,18 @@ Als beheerder in de Active Directory maakt u verbinding met uw on-premises netwe
 
 Als beheerder in Azure Active Directory opent u Power shell, voert u uit ``Connect-AzureAD`` en neemt u de volgende acties:
 
-1. Schakel de gebruiker uit in azure AD. Raadpleeg [set-AzureADUser](/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0).
+1. Schakel de gebruiker uit in azure AD. Raadpleeg [set-AzureADUser](/powershell/module/azuread/Set-AzureADUser).
 
     ```PowerShell
     Set-AzureADUser -ObjectId johndoe@contoso.com -AccountEnabled $false
     ```
-1. Trek de Azure AD-vernieuwings tokens van de gebruiker in. Raadpleeg [REVOKE-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0).
+1. Trek de Azure AD-vernieuwings tokens van de gebruiker in. Raadpleeg [REVOKE-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken).
 
     ```PowerShell
     Revoke-AzureADUserAllRefreshToken -ObjectId johndoe@contoso.com
     ```
 
-1. Schakel de apparaten van de gebruiker uit. Raadpleeg [Get-AzureADUserRegisteredDevice](/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0).
+1. Schakel de apparaten van de gebruiker uit. Raadpleeg [Get-AzureADUserRegisteredDevice](/powershell/module/azuread/get-azureaduserregistereddevice).
 
     ```PowerShell
     Get-AzureADUserRegisteredDevice -ObjectId johndoe@contoso.com | Set-AzureADDevice -AccountEnabled $false

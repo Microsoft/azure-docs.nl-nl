@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77ecc23e2969ce4ce26eef7b9a3a485389d08ce0
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: dd438a09b929274808984322981f6d21da0bf68f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837104"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860946"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -25,7 +25,7 @@ ms.locfileid: "94837104"
 ### <a name="q-i-registered-the-device-recently-why-cant-i-see-the-device-under-my-user-info-in-the-azure-portal-or-why-is-the-device-owner-marked-as-na-for-hybrid-azure-active-directory-azure-ad-joined-devices"></a>V: Ik heb het apparaat onlangs geregistreerd. Waarom kan ik het apparaat niet zien onder mijn gebruikers gegevens in de Azure Portal? Of waarom is de eigenaar van het apparaat gemarkeerd als N/A voor Hybrid Azure Active Directory (Azure AD) gekoppelde apparaten?
 
 **A:** Windows 10-apparaten die zijn toegevoegd aan hybride Azure AD worden niet weer gegeven onder **gebruikers apparaten**.
-Gebruik de weer gave **alle apparaten** in de Azure Portal. U kunt ook een Power shell [Get-MsolDevice-](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0) cmdlet gebruiken.
+Gebruik de weer gave **alle apparaten** in de Azure Portal. U kunt ook een Power shell [Get-MsolDevice-](/powershell/module/msonline/get-msoldevice) cmdlet gebruiken.
 
 Onder **gebruikers apparaten** worden alleen de volgende apparaten weer gegeven:
 

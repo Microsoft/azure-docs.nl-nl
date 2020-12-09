@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 02/13/2020
 ms.author: davidmu
 ms.custom: aaddev
-ms.openlocfilehash: 13cbeca909b445d75fcbcf7b3751183421479d42
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a799d7c32ad632303931adf838ca8e2e715b2adc
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90052559"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860181"
 ---
 # <a name="microsoft-graph-api"></a>Microsoft Graph API
 
@@ -34,7 +34,7 @@ Microsoft Graph ondersteunt momenteel twee versies: v 1.0 en bèta. De versie v 
 
 Zie [Microsoft Graph bèta-eindpunt referentie](/graph/api/overview?view=graph-rest-beta) voor meer informatie over het gebruik van de bèta-api's.
 
-Zie [Microsoft Graph referentie rest API v 1.0](/graph/api/overview?view=graph-rest-1.0) als u de api's van v 1.0 wilt gaan gebruiken
+Zie [Microsoft Graph referentie rest API v 1.0](/graph/api/overview) als u de api's van v 1.0 wilt gaan gebruiken
 
 ## <a name="get-started"></a>Aan de slag
 

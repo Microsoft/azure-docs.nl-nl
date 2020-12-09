@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: 5f529e6148463ae384791985659378cb9d0a5046
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 90e215ea445c8c700e351149e9c7a91d9a595252
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168862"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859518"
 ---
 # <a name="azure-active-directory-authentication-management-operations-reference-guide"></a>Naslag Gids voor verificatie beheer van Azure Active Directory
 
@@ -288,7 +288,7 @@ Als verouderde verificatie veel in uw omgeving wordt gebruikt, moet u plannen om
 
 #### <a name="legacy-authentication-recommended-reading"></a>Verouderde verificatie wordt aanbevolen te lezen
 
-- [POP3-of IMAP4-toegang tot post vakken in Exchange server in-of uitschakelen](/exchange/clients/pop3-and-imap4/configure-mailbox-access?view=exchserver-2019)
+- [POP3-of IMAP4-toegang tot post vakken in Exchange server in-of uitschakelen](/exchange/clients/pop3-and-imap4/configure-mailbox-access)
 
 ### <a name="consent-grants"></a>Verleende toestemming
 

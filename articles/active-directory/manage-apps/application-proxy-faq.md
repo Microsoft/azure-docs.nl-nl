@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: ef38c5364a0df1df63be825e2c46009174840b72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e9a03c82fd4bd79e7a47fa34ff7a69870c52f018
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658125"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858379"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -204,5 +204,5 @@ Dit scenario wordt niet rechtstreeks ondersteund. De opties voor dit scenario zi
 1. Publiceer zowel de HTTP-en HTTPS-Url's als afzonderlijke toepassingen met een Joker teken, maar geef elk een ander aangepast domein. Deze configuratie werkt, omdat deze verschillende externe URL'S hebben.
 
 2. Publiceer de HTTPS-URL via een Joker toepassing. Publiceer de HTTP-toepassingen afzonderlijk met de volgende Power shell-cmdlets voor toepassings proxy:
-   - [Toepassings proxy toepassings beheer](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management&preserve-view=true)
-   - [Application proxy-connector beheer](/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management&preserve-view=true)
+   - [Toepassings proxy toepassings beheer](/powershell/module/azuread/#application_proxy_application_management&preserve-view=true)
+   - [Application proxy-connector beheer](/powershell/module/azuread/#application_proxy_connector_management&preserve-view=true)

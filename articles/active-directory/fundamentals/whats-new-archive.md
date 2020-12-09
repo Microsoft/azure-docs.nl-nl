@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4750de0b9b0d44dbe30571e308227d2123b5e447
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 4cd6aa8c1936d9f07421f6508755a5b6d4852813
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602084"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859178"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Wilt u archiveren wat er nieuw is in Azure Active Directory?
 
@@ -424,7 +424,7 @@ De Delta query voor oAuth2PermissionGrant is beschikbaar voor de open bare previ
 
 **Product mogelijkheden:** Ontwikkelaars ervaring
 
-De Delta query voor contact personen in de organisatie is algemeen beschikbaar. U kunt nu wijzigingen in productie-apps bijhouden zonder voortdurend te hoeven pollen Microsoft Graph. Vervang bestaande code die continu orgContact-gegevens doorzoekt door de Delta query om de prestaties aanzienlijk te verbeteren. [Meer informatie.](/graph/api/orgcontact-delta?tabs=http&view=graph-rest-1.0)
+De Delta query voor contact personen in de organisatie is algemeen beschikbaar. U kunt nu wijzigingen in productie-apps bijhouden zonder voortdurend te hoeven pollen Microsoft Graph. Vervang bestaande code die continu orgContact-gegevens doorzoekt door de Delta query om de prestaties aanzienlijk te verbeteren. [Meer informatie.](/graph/api/orgcontact-delta?tabs=http)
 
 ---
 
@@ -436,7 +436,7 @@ De Delta query voor contact personen in de organisatie is algemeen beschikbaar. 
 
 **Product mogelijkheden:** Ontwikkelaars ervaring
 
-De Delta query voor toepassingen is over het algemeen beschikbaar. U kunt nu wijzigingen in productie-apps bijhouden zonder voortdurend te hoeven pollen Microsoft Graph. Vervang bestaande code die continu toepassings gegevens doorzoekt op Delta query's om de prestaties aanzienlijk te verbeteren. [Meer informatie.](/graph/api/application-delta?view=graph-rest-1.0)
+De Delta query voor toepassingen is over het algemeen beschikbaar. U kunt nu wijzigingen in productie-apps bijhouden zonder voortdurend te hoeven pollen Microsoft Graph. Vervang bestaande code die continu toepassings gegevens doorzoekt op Delta query's om de prestaties aanzienlijk te verbeteren. [Meer informatie.](/graph/api/application-delta)
 
 ---
 
@@ -654,7 +654,7 @@ Toegevoegde acties voor verbetering:
 - Zorg ervoor dat alle gebruikers multi-factor Authentication voor beveiligde toegang kunnen volt ooien
 - MFA vereisen voor beheerders rollen
 
-Voor deze nieuwe maat regelen voor verbetering moet u uw gebruikers of beheerders registreren voor multi-factor Authentication (MFA) in uw directory en de juiste set beleids regels instellen die voldoen aan de behoeften van uw organisatie. Het belangrijkste doel is om de flexibiliteit te bieden en ervoor te zorgen dat al uw gebruikers en beheerders kunnen verifiëren met meerdere factoren of prompts voor identiteits verificatie op basis van een risico. Dit kan de vorm hebben van meerdere beleids regels waarmee beslissingen met een bereik worden toegepast, of het instellen van standaard instellingen voor beveiliging (vanaf 16 maart) waarmee micro soft beslist wanneer gebruikers voor MFA moeten worden aangevraagd. [Lees meer over wat er nieuw is in micro soft Secure Score](/microsoft-365/security/mtp/microsoft-secure-score?view=o365-worldwide#whats-new).
+Voor deze nieuwe maat regelen voor verbetering moet u uw gebruikers of beheerders registreren voor multi-factor Authentication (MFA) in uw directory en de juiste set beleids regels instellen die voldoen aan de behoeften van uw organisatie. Het belangrijkste doel is om de flexibiliteit te bieden en ervoor te zorgen dat al uw gebruikers en beheerders kunnen verifiëren met meerdere factoren of prompts voor identiteits verificatie op basis van een risico. Dit kan de vorm hebben van meerdere beleids regels waarmee beslissingen met een bereik worden toegepast, of het instellen van standaard instellingen voor beveiliging (vanaf 16 maart) waarmee micro soft beslist wanneer gebruikers voor MFA moeten worden aangevraagd. [Lees meer over wat er nieuw is in micro soft Secure Score](/microsoft-365/security/mtp/microsoft-secure-score#whats-new).
 
 ---
 
@@ -844,7 +844,7 @@ De volgende verbeterings acties worden toegevoegd:
 - Zorg ervoor dat alle gebruikers MFA voor beveiligde toegang kunnen volt ooien
 - MFA vereisen voor beheerders rollen
 
-Voor deze nieuwe verbeterings acties moet u uw gebruikers of beheerders registreren voor MFA in uw directory en de juiste set beleids regels instellen die voldoen aan de behoeften van uw organisatie. Het belangrijkste doel is om de flexibiliteit te bieden en ervoor te zorgen dat al uw gebruikers en beheerders kunnen verifiëren met meerdere factoren of prompts voor identiteits verificatie op basis van een risico. Dit kan de vorm hebben van de standaard instellingen voor beveiliging waarmee micro soft kan bepalen wanneer gebruikers voor MFA moeten worden aangevraagd of wanneer er meerdere beleids regels gelden voor het Toep assen van beslissingen met een bereik. Als onderdeel van deze verbeteringen van de verbeterings actie, worden beleids regels voor basis beveiliging niet meer opgenomen in Score berekeningen. [Meer informatie over de micro soft Secure Score](/microsoft-365/security/mtp/microsoft-secure-score-whats-coming?view=o365-worldwide).
+Voor deze nieuwe verbeterings acties moet u uw gebruikers of beheerders registreren voor MFA in uw directory en de juiste set beleids regels instellen die voldoen aan de behoeften van uw organisatie. Het belangrijkste doel is om de flexibiliteit te bieden en ervoor te zorgen dat al uw gebruikers en beheerders kunnen verifiëren met meerdere factoren of prompts voor identiteits verificatie op basis van een risico. Dit kan de vorm hebben van de standaard instellingen voor beveiliging waarmee micro soft kan bepalen wanneer gebruikers voor MFA moeten worden aangevraagd of wanneer er meerdere beleids regels gelden voor het Toep assen van beslissingen met een bereik. Als onderdeel van deze verbeteringen van de verbeterings actie, worden beleids regels voor basis beveiliging niet meer opgenomen in Score berekeningen. [Meer informatie over de micro soft Secure Score](/microsoft-365/security/mtp/microsoft-secure-score-whats-coming).
 
 ---
 
@@ -1379,7 +1379,7 @@ Het menu nieuwe **beveiliging** bevat:
 
 - Voorwaardelijke toegang
 - Identiteitsbeveiliging
-- Security Center
+- Beveiligingscentrum
 - Identiteits veilige Score
 - Verificatiemethoden
 - MFA
@@ -1544,7 +1544,7 @@ Vanaf 1 juli 2019 heeft micro soft de MFA-server voor nieuwe implementaties gest
 
 ---
 
-## <a name="august-2019"></a>augustus 2019
+## <a name="august-2019"></a>Augustus 2019
 
 ### <a name="enhanced-search-filtering-and-sorting-for-groups-is-available-in-the-azure-ad-portal-public-preview"></a>Uitgebreide zoek-, filter-en sorteer bewerkingen voor groepen zijn beschikbaar in de Azure AD-Portal (open bare preview)
 
@@ -2164,7 +2164,7 @@ Zie [een naamgevings beleid afdwingen voor Office 365-groepen](../enterprise-use
 
 We zijn blij met het aankondigen van de algemene Beschik baarheid van Microsoft Graph API-eind punten ondersteuning voor Azure AD-activiteiten Logboeken. Met deze versie kunt u nu versie 1,0 van zowel de Azure AD-audit logboeken en de Api's voor aanmeld Logboeken gebruiken.
 
-Zie overzicht van de [API voor Azure AD-controle logboeken](/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0)voor meer informatie.
+Zie overzicht van de [API voor Azure AD-controle logboeken](/graph/api/resources/azure-ad-auditlog-overview)voor meer informatie.
 
 ---
 
@@ -3783,7 +3783,7 @@ Zie voor meer informatie:
 
 Ondersteuning voor toepassings proxy-cmdlets is nu beschikbaar in de Power shell-module. Hiervoor moet u de Power shell-modules bijgewerkt blijven: als u meer dan een jaar achter raakt, werken sommige cmdlets niet meer.
 
-Zie [AzureAD](/powershell/module/Azuread/?view=azureadps-2.0)voor meer informatie.
+Zie [AzureAD](/powershell/module/Azuread/)voor meer informatie.
 
 ---
 

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: d83b69ea7c2a4459d30c4ceb90f62ab6a1a10cc2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 49dd8b65db771a182138f13218adda2f0e7f7396
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648171"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858226"
 ---
 # <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Apps weer geven met uw Azure AD-Tenant voor identiteits beheer
 In de Quick Start- [serie op toepassings beheer](view-applications-portal.md) worden de basis principes uitgelegd. Hierin leert u hoe u alle apps kunt weer geven met behulp van uw Azure AD-Tenant voor identiteits beheer. In dit artikel Dives een beetje dieper op de typen apps die u vindt.
@@ -31,7 +31,7 @@ Bij het filteren op **alle toepassingen** wordt in de **lijst** **alle toepassin
 - Wanneer u een nieuwe toepassings registratie toevoegt door een aangepaste toepassing te maken met behulp van het [toepassings register](../develop/quickstart-register-app.md)
 - Wanneer u een nieuwe toepassings registratie toevoegt door een aangepaste toepassing te maken met behulp van de [Portal voor toepassings registratie van de v 2.0-toepassing](../develop/quickstart-register-app.md)
 - Wanneer u een toepassing toevoegt, ontwikkelt u met behulp van de [ASP.NET-verificatie methoden](https://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions) of [verbonden services](https://devblogs.microsoft.com/visualstudio/connecting-to-cloud-services/) van Visual Studio
-- Wanneer u een Service-Principal-object maakt met behulp van de [Azure AD Power shell-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
+- Wanneer u een Service-Principal-object maakt met behulp van de [Azure AD Power shell-module](/powershell/azure/active-directory/install-adv2)
 - Wanneer u [een toepassing](../develop/howto-convert-app-to-be-multi-tenant.md) als beheerder hebt om gegevens in uw Tenant te gebruiken
 - Wanneer een [gebruiker een toepassing](../develop/howto-convert-app-to-be-multi-tenant.md) gebruikt om gegevens in uw Tenant te gebruiken
 - Wanneer u bepaalde services voor het opslaan van gegevens in uw Tenant inschakelt. Een voor beeld is het opnieuw instellen van een wacht woord, dat wordt gemodelleerd als Service-Principal om het beleid voor wachtwoord herstel veilig op te slaan.

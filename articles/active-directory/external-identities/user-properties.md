@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd0a2b44fd54eb716b5e1b8f9eabc923ccd7977f
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4c97958add682a4c49d7832843c0b95ffd2663bf
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285848"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859628"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker
 
@@ -59,7 +59,7 @@ Voor gast gebruikers met de status 2 is de **bron** een **micro soft-account**.
 
 ![Status 2 gast gebruiker na inwisseling van aanbieding](media/user-properties/after-redemption-state2.png)
 
-Voor gast gebruikers met de status 3 en status 4 is de eigenschap **Source** ingesteld op **Azure Active Directory** of **Windows Server Active Directory** , zoals wordt beschreven in de volgende sectie.
+Voor gast gebruikers met de status 3 en status 4 is de eigenschap **Source** ingesteld op **Azure Active Directory** of **Windows Server Active Directory**, zoals wordt beschreven in de volgende sectie.
 
 ## <a name="key-properties-of-the-azure-ad-b2b-collaboration-user"></a>Belangrijkste eigenschappen van de Azure AD B2B-samenwerkings gebruiker
 ### <a name="usertype"></a>UserType
@@ -110,7 +110,7 @@ Ja. Gast objecten zijn standaard niet zichtbaar in de algemene adres lijst van u
 
 ## <a name="can-i-update-a-guest-users-email-address"></a>Kan ik het e-mail adres van een gast gebruiker bijwerken?
 
-Als een gast gebruiker uw uitnodiging accepteert en vervolgens het e-mail adres wijzigt, wordt de nieuwe e-mail niet automatisch gesynchroniseerd met het gast gebruikers object in uw Directory. De eigenschap mail wordt gemaakt via [Microsoft Graph-API](/graph/api/resources/user?view=graph-rest-1.0). U kunt de eigenschap e-mail bijwerken via de Microsoft Graph-API, het Exchange-beheer centrum of [Exchange Online Power shell](/powershell/module/exchange/users-and-groups/set-mailuser?view=exchange-ps). De wijziging wordt weer gegeven in het gebruikers object van de Azure AD-gast.
+Als een gast gebruiker uw uitnodiging accepteert en vervolgens het e-mail adres wijzigt, wordt de nieuwe e-mail niet automatisch gesynchroniseerd met het gast gebruikers object in uw Directory. De eigenschap mail wordt gemaakt via [Microsoft Graph-API](/graph/api/resources/user). U kunt de eigenschap e-mail bijwerken via de Microsoft Graph-API, het Exchange-beheer centrum of [Exchange Online Power shell](/powershell/module/exchange/users-and-groups/set-mailuser). De wijziging wordt weer gegeven in het gebruikers object van de Azure AD-gast.
 
 ## <a name="next-steps"></a>Volgende stappen
 

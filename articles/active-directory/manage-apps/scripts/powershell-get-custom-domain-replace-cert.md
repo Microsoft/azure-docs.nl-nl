@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 81f9810753c7ef60143021e7dd78f3f01489b7ff
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7cdd0144a7906bbb904475bd40dc9d8bc5e12742
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653705"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859389"
 ---
 # <a name="get-all-application-proxy-applications-published-with-the-identical-certificate-and-replace-it"></a>Alle toepassingsproxytoepassingen ophalen die zijn gepubliceerd met het identieke certificaat en dit vervangen
 
@@ -28,7 +28,7 @@ In dit PowerShell-voorbeeldscript kunt u het certificaat bulksgewijs vervangen v
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0) (AzureAD) of de [AzureAD V2 PowerShell voor Graph-module (preview)](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview) vereist.
+Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module](/powershell/azure/active-directory/install-adv2) (AzureAD) of de [AzureAD V2 PowerShell voor Graph-module (preview)](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview) vereist.
 
 ## <a name="sample-script"></a>Voorbeeldscript
 
@@ -38,13 +38,13 @@ Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module](/powershell/a
 
 | Opdracht | Opmerkingen |
 |---|---|
-|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0) | Hiermee wordt een service-principal opgehaald. |
-|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0) | Hiermee wordt een Azure AD-toepassing opgehaald. |
-|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Hiermee wordt een toepassing opgehaald die is geconfigureerd voor een toepassingsproxy in Azure AD. |
-|[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate?view=azureadps-2.0) | Hiermee wordt een certificaat toegewezen aan een toepassing die is geconfigureerd voor een toepassingsproxy in Azure AD. Met deze opdracht wordt het certificaat geüpload en kan de toepassing gebruikmaken van aangepaste domeinen. |
+|[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Hiermee wordt een service-principal opgehaald. |
+|[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Hiermee wordt een Azure AD-toepassing opgehaald. |
+|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication) | Hiermee wordt een toepassing opgehaald die is geconfigureerd voor een toepassingsproxy in Azure AD. |
+|[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate) | Hiermee wordt een certificaat toegewezen aan een toepassing die is geconfigureerd voor een toepassingsproxy in Azure AD. Met deze opdracht wordt het certificaat geüpload en kan de toepassing gebruikmaken van aangepaste domeinen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie het [overzicht van de Azure PowerShell-module](/powershell/azure/active-directory/overview?view=azureadps-2.0) voor meer informatie over de Azure AD PowerShell-module.
+Zie het [overzicht van de Azure PowerShell-module](/powershell/azure/active-directory/overview) voor meer informatie over de Azure AD PowerShell-module.
 
 Zie [Azure AD PowerShell-voorbeelden voor de Azure AD-toepassingsproxy](../application-proxy-powershell-samples.md) voor andere PowerShell-voorbeelden voor de toepassingsproxy.

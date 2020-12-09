@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7a77c110c12fd6b42e8defbe43a40579b9c6588
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 681f5a6cecd43eb69adf24544c774cbd22da8a49
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168760"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860538"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Problemen oplossen Azure Active Directory B2B-samen werking
 
@@ -52,7 +52,7 @@ Veelvoorkomende fouten zijn onder andere:
 
 ### <a name="invitees-admin-has-disallowed-emailverified-users-from-being-created-in-their-tenant"></a>De beheerder van de uitnodiging heeft niet toegestaan dat EmailVerified-gebruikers worden gemaakt in hun Tenant
 
-Wanneer u gebruikers uitnodigt waarvan de organisatie gebruikmaakt van Azure Active Directory, maar waarbij het account van de specifieke gebruiker niet bestaat (bijvoorbeeld omdat de gebruiker niet bestaat in azure AD contoso.com). De beheerder van contoso.com kan een beleid hebben om te voor komen dat gebruikers worden gemaakt. De gebruiker moet contact met hun beheerder controleren om te bepalen of externe gebruikers zijn toegestaan. De beheerder van de externe gebruiker moet mogelijk geverifieerde gebruikers in hun domein toestaan (zie dit [artikel](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) over het toestaan van geverifieerde e-mail gebruikers).
+Wanneer u gebruikers uitnodigt waarvan de organisatie gebruikmaakt van Azure Active Directory, maar waarbij het account van de specifieke gebruiker niet bestaat (bijvoorbeeld omdat de gebruiker niet bestaat in azure AD contoso.com). De beheerder van contoso.com kan een beleid hebben om te voor komen dat gebruikers worden gemaakt. De gebruiker moet contact met hun beheerder controleren om te bepalen of externe gebruikers zijn toegestaan. De beheerder van de externe gebruiker moet mogelijk geverifieerde gebruikers in hun domein toestaan (zie dit [artikel](/powershell/module/msonline/set-msolcompanysettings) over het toestaan van geverifieerde e-mail gebruikers).
 
 ![Fout met de mede deling dat de Tenant gebruikers geen geverifieerde e-mail berichten toestaan](media/troubleshoot/allow-email-verified-users.png)
 

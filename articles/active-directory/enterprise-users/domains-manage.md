@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dd77b1d82fc427f53a251ef66230b450c1060fd
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 7b8867a137e38e7400da877f4c239e517cbebe05
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547573"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859977"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Aangepaste domein namen in uw Azure Active Directory beheren
 
@@ -73,7 +73,7 @@ U moet deze resource in uw Azure AD-organisatie wijzigen of verwijderen voordat 
 
 U kunt een domein naam in het [Azure AD-beheer centrum](https://aad.portal.azure.com) **ForceDelete** of gebruikmaken van [Microsoft Graph-API](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true). Deze opties gebruiken een asynchrone bewerking en werken alle verwijzingen van de aangepaste domein naam zoals " user@contoso.com " bij naar de oorspronkelijke standaard domein naam, zoals " user@contoso.onmicrosoft.com ."
 
-Als u **ForceDelete** wilt aanroepen in de Azure Portal, moet u ervoor zorgen dat er minder dan 1000 verwijzingen naar de domein naam zijn en alle verwijzingen waarbij Exchange de inrichtings service is, moeten worden bijgewerkt of verwijderd in het [Exchange-beheer centrum](https://outlook.office365.com/ecp/). Dit omvat Exchange Mail-Enabled-beveiligings groepen en gedistribueerde lijsten. Zie [beveiligings groepen met e-mail beveiliging verwijderen](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups&preserve-view=true)voor meer informatie. De **ForceDelete** -bewerking kan ook niet worden uitgevoerd als aan een van de volgende voor waarden wordt voldaan:
+Als u **ForceDelete** wilt aanroepen in de Azure Portal, moet u ervoor zorgen dat er minder dan 1000 verwijzingen naar de domein naam zijn en alle verwijzingen waarbij Exchange de inrichtings service is, moeten worden bijgewerkt of verwijderd in het [Exchange-beheer centrum](https://outlook.office365.com/ecp/). Dit omvat Exchange Mail-Enabled-beveiligings groepen en gedistribueerde lijsten. Zie [beveiligings groepen met e-mail beveiliging verwijderen](/Exchange/recipients/mail-enabled-security-groups#Remove%20mail-enabled%20security%20groups&preserve-view=true)voor meer informatie. De **ForceDelete** -bewerking kan ook niet worden uitgevoerd als aan een van de volgende voor waarden wordt voldaan:
 
 * U hebt een domein aangeschaft via Microsoft 365-abonnements services van het domein
 * U bent een partner die u beheert namens een andere klant organisatie
@@ -110,11 +110,11 @@ Als u merkt dat aan een van de voor waarden niet is voldaan, moet u de verwijzin
 
 De meeste beheer taken voor domein namen in Azure Active Directory kunnen ook worden voltooid met behulp van micro soft power shell of via een programma met behulp van de Microsoft Graph-API.
 
-* [Power shell gebruiken voor het beheren van domein namen in azure AD](/powershell/module/azuread/?view=azureadps-2.0#domains&preserve-view=true)
+* [Power shell gebruiken voor het beheren van domein namen in azure AD](/powershell/module/azuread/#domains&preserve-view=true)
 * [Bron type van het domein](/graph/api/resources/domain?view=graph-rest-1.0&preserve-view=true)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Aangepaste domeinnamen toevoegen](../fundamentals/add-custom-domain.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)
-* [Beveiligings groepen met Exchange-e-mail verwijderen in Exchange-beheer centrum op een aangepaste domein naam in azure AD](/Exchange/recipients/mail-enabled-security-groups?view=exchserver-2019#Remove%20mail-enabled%20security%20groups&preserve-view=true)
+* [Beveiligings groepen met Exchange-e-mail verwijderen in Exchange-beheer centrum op een aangepaste domein naam in azure AD](/Exchange/recipients/mail-enabled-security-groups#Remove%20mail-enabled%20security%20groups&preserve-view=true)
 * [Een aangepaste domein naam ForceDelete met Microsoft Graph-API](/graph/api/domain-forcedelete?view=graph-rest-beta&preserve-view=true)

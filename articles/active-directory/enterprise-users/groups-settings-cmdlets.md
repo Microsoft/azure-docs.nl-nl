@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da8fe904f71fdf6f01c926bf6fa3f050ba825309
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 70387717c15dade349a323e663ac0fd31935a15f
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548134"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859875"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Azure Active Directory cmdlets voor het configureren van groepsinstellingen
 
@@ -28,7 +28,7 @@ Dit artikel bevat instructies voor het gebruik van Azure Active Directory (Azure
 > [!IMPORTANT]
 > Voor sommige instellingen is een Azure Active Directory Premium P1-licentie vereist. Zie de tabel met [sjabloon instellingen](#template-settings) voor meer informatie.
 
-Voor meer informatie over het voor komen van niet-beheerders gebruikers om beveiligings groepen te maken, stelt u `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` in zoals beschreven in [set-MSOLCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
+Voor meer informatie over het voor komen van niet-beheerders gebruikers om beveiligings groepen te maken, stelt u `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` in zoals beschreven in [set-MSOLCompanySettings](/powershell/module/msonline/set-msolcompanysettings).
 
 Instellingen voor Microsoft 365 groepen worden geconfigureerd met behulp van een instellingen object en een SettingsTemplate-object. In eerste instantie ziet u geen instellingen objecten in uw directory, omdat uw directory is geconfigureerd met de standaard instellingen. Als u de standaard instellingen wilt wijzigen, moet u een nieuw instellingen object maken met behulp van een instellingen sjabloon. Instellingen sjablonen worden gedefinieerd door micro soft. Er zijn verschillende instellingen sjablonen. Als u de instellingen van Microsoft 365 groep voor uw Directory wilt configureren, gebruikt u de sjabloon groep. Unified. Als u de instellingen van Microsoft 365 groep wilt configureren voor één groep, gebruikt u de sjabloon groep. Unified. Guest. Deze sjabloon wordt gebruikt voor het beheren van gast toegang tot een Microsoft 365 groep. 
 
@@ -319,7 +319,7 @@ Met deze stap worden de instellingen op mapniveau verwijderd, die van toepassing
    ```
 
 ## <a name="cmdlet-syntax-reference"></a>Naslag informatie over de cmdlet-syntaxis
-U kunt meer Azure Active Directory Power shell-documentatie vinden op [Azure Active Directory-cmdlets](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0).
+U kunt meer Azure Active Directory Power shell-documentatie vinden op [Azure Active Directory-cmdlets](/powershell/azure/active-directory/install-adv2).
 
 ## <a name="additional-reading"></a>Meer artikelen
 

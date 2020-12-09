@@ -17,12 +17,12 @@ ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1efafd353bea20ea1ada0b5e92a9e6df00deb78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c075e19422341ad7ccfd3ad951517876ab26a495
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273597"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858413"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: accounts en machtigingen
 
@@ -50,7 +50,7 @@ Naast deze drie accounts die worden gebruikt om Azure AD Connect uit te voeren, 
 
 
 >[!IMPORTANT]
-> Vanaf build 1.4. # # #. # het is niet meer mogelijk om een ondernemings Administrator of een domein beheerders account te gebruiken als AD DS Connector-account.  Als u probeert een account in te voeren dat een ondernemings beheerder of domein beheerder is wanneer u **bestaand account gebruiken**opgeeft, wordt er een fout bericht weer gegeven.
+> Vanaf build 1.4. # # #. # het is niet meer mogelijk om een ondernemings Administrator of een domein beheerders account te gebruiken als AD DS Connector-account.  Als u probeert een account in te voeren dat een ondernemings beheerder of domein beheerder is wanneer u **bestaand account gebruiken** opgeeft, wordt er een fout bericht weer gegeven.
 
 > [!NOTE]
 > Het wordt ondersteund voor het beheren van de beheer accounts die worden gebruikt in Azure AD Connect vanuit een ESAE-beheer forest (ook wel bekend als ' rode forest ').
@@ -158,7 +158,7 @@ Wanneer u een upgrade uitvoert van de ene versie van Azure AD Connect naar een n
 >Vanaf build 1.1.484 heeft Azure AD Connect een regressie fout geïntroduceerd waarvoor sysadmin-machtigingen zijn vereist om de SQL database bij te werken.  Deze fout is gecorrigeerd in Build 1.1.647.  Als u een upgrade naar deze versie uitvoert, hebt u sysadmin-machtigingen nodig.  Dbo-machtigingen zijn niet voldoende.  Als u probeert een upgrade uit te voeren van Azure AD Connect zonder sysadmin-machtigingen, mislukt de upgrade en wordt Azure AD Connect niet meer correct uitgevoerd.  Micro soft is hiervan op de hoogte en werkt ermee om dit te corrigeren.
 
 
-| Principaal | Machtigingen vereist | Gebruikt voor |
+| Principal | Machtigingen vereist | Gebruikt voor |
 | --- | --- | --- |
 | Gebruiker die de installatie wizard uitvoert |Beheerder van de lokale server |Binaire bestanden bijwerken. |
 | Gebruiker die de installatie wizard uitvoert |Lid van ADSyncAdmins |Wijzigingen aanbrengen in synchronisatie regels en andere configuratie. |
@@ -175,7 +175,7 @@ Als u aangepaste instellingen gebruikt, bent u zelf verantwoordelijk voor het ma
 ### <a name="adsync-service-account"></a>ADSync-serviceaccount
 De synchronisatie service kan worden uitgevoerd onder verschillende accounts. Het kan worden uitgevoerd onder een **virtueel service account** (leverancierspecifieke naam), een **beheerd service account voor groepen** (gMSA/sMSA) of een gewoon gebruikers account. De ondersteunde opties zijn gewijzigd met de release van 2017 april wanneer u een nieuwe installatie maakt. Als u een upgrade uitvoert van een eerdere versie van Azure AD Connect, zijn deze extra opties niet beschikbaar.
 
-| Type account | Installatie optie | Beschrijving |
+| Type account | Installatie optie | Description |
 | --- | --- | --- |
 | [Virtueel service-account](#virtual-service-account) | Express en aangepast, 2017 april en hoger | Dit is de optie die wordt gebruikt voor alle snelle installaties, met uitzonde ring van installaties op een domein controller. Voor aangepast is dit de standaard optie, tenzij een andere optie wordt gebruikt. |
 | [Door groep beheerd serviceaccount](#group-managed-service-account) | Aangepast, 2017 april en hoger | Als u een externe SQL Server gebruikt, raden we u aan een beheerd service account voor een groep te gebruiken. |
@@ -200,7 +200,7 @@ Legenda:
 - sMSA- [zelfstandig beheerd service account](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
 - gMSA: door [groep beheerd service account](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))
 
-| | LocalDB</br>Express | LocalDB/LocalSQL</br>Aangepast | Externe SQL</br>Aangepast |
+| | LocalDB</br>Express | LocalDB/LocalSQL</br>Aangepast telefoonnummer | Externe SQL</br>Aangepast telefoonnummer |
 | --- | --- | --- | --- |
 | **computer die lid is van een domein** | **KENMERK**</br>Lokaal account (2008) | **KENMERK**</br>Lokaal account (2008)</br>Lokaal account</br>Domeinaccount</br>sMSA, gMSA | **gMSA**</br>Domeinaccount |
 | **Domein controller** | **Domeinaccount** | *gMSA*</br>**Domeinaccount**</br>sMSA| *gMSA*</br>**Domeinaccount**|
@@ -215,9 +215,9 @@ Het leveranciersspecifieke kenmerk is bedoeld om te worden gebruikt met scenario
 Voor deze functie is Windows Server 2008 R2 of later vereist. Als u Azure AD Connect installeert op Windows Server 2008, wordt de installatie in plaats daarvan terugvallen op het gebruik van een [gebruikers account](#user-account) .
 
 #### <a name="group-managed-service-account"></a>Door groep beheerd service account
-Als u een externe SQL Server gebruikt, raden we u aan een **beheerd service account**voor een groep te gebruiken. Zie overzicht van door een groep [beheerde service accounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))voor meer informatie over het voorbereiden van uw Active Directory voor door een groep beheerd service account.
+Als u een externe SQL Server gebruikt, raden we u aan een **beheerd service account** voor een groep te gebruiken. Zie overzicht van door een groep [beheerde service accounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))voor meer informatie over het voorbereiden van uw Active Directory voor door een groep beheerd service account.
 
-Als u deze optie wilt gebruiken, selecteert u op de pagina [vereiste onderdelen installeren](how-to-connect-install-custom.md#install-required-components) de optie **een bestaand service account gebruiken**en selecteert u een **beheerd service account**.  
+Als u deze optie wilt gebruiken, selecteert u op de pagina [vereiste onderdelen installeren](how-to-connect-install-custom.md#install-required-components) de optie **een bestaand service account gebruiken** en selecteert u een **beheerd service account**.  
 ![KENMERK](./media/reference-connect-accounts-permissions/serviceaccount.png)  
 Het wordt ook ondersteund voor het gebruik van een [zelfstandig beheerd service account](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10)). Deze kunnen echter alleen worden gebruikt op de lokale computer en er is geen voor deel voor het gebruik van de standaard virtuele-service account.
 
@@ -252,7 +252,7 @@ Er is een limiet van 20 synchronisatie service-accounts in azure AD. Als u de li
 Als u ongebruikte Azure AD-service accounts wilt verwijderen, voert u de volgende Azure AD Power shell-cmdlet uit: `Remove-AzureADUser -ObjectId <ObjectId-of-the-account-you-wish-to-remove>`
 
 >[!NOTE]
->Voordat u de bovenstaande Power shell-opdrachten kunt gebruiken, moet u de [Azure Active Directory Power shell for Graph-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0#installing-the-azure-ad-module) installeren en verbinding maken met uw exemplaar van Azure AD via [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0)
+>Voordat u de bovenstaande Power shell-opdrachten kunt gebruiken, moet u de [Azure Active Directory Power shell for Graph-module](/powershell/azure/active-directory/install-adv2#installing-the-azure-ad-module) installeren en verbinding maken met uw exemplaar van Azure AD via [Connect-AzureAD](/powershell/module/azuread/connect-azuread)
 
 Zie [het Azure AD Connect account beheren](how-to-connect-azureadaccount.md) voor meer informatie over het beheren of opnieuw instellen van het wacht woord voor het account van de Azure AD-connector.
 

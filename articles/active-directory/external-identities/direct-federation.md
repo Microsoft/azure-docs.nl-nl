@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a23056445331c82aded878a77d1e0e730e4e2ceb
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5beae56a5d38c4620481c27c3f42c52602984e6b
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96339469"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860623"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -66,7 +66,7 @@ Als u bijvoorbeeld directe Federatie instelt voor _ * fabrikam. com * *, wordt d
 Als u de meta gegevens-URL in de instellingen van de identiteits provider opgeeft, wordt het handtekening certificaat door Azure AD automatisch vernieuwd wanneer het verloopt. Als het certificaat echter om een of andere reden vóór de verloop tijd wordt geroteerd, of als u geen meta gegevens-URL opgeeft, kan Azure AD deze niet vernieuwen. In dit geval moet u het handtekening certificaat hand matig bijwerken.
 
 ### <a name="limit-on-federation-relationships"></a>Limiet voor Federatie relaties
-Momenteel wordt een maximum van 1.000 Federatie relaties ondersteund. Deze limiet omvat zowel [interne](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) als directe overkoepelende organisaties.
+Momenteel wordt een maximum van 1.000 Federatie relaties ondersteund. Deze limiet omvat zowel [interne](/powershell/module/msonline/set-msoldomainfederationsettings) als directe overkoepelende organisaties.
 
 ### <a name="limit-on-multiple-domains"></a>Limiet voor meerdere domeinen
 Er wordt momenteel geen ondersteuning geboden voor directe Federatie met meerdere domeinen van dezelfde Tenant.

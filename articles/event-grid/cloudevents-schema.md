@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u het CloudEvents-schema gebruikt voor 
 ms.topic: conceptual
 ms.date: 11/10/2020
 ms.custom: devx-track-js, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: d794996a699bdd1bb63e7a894346128aa108e95c
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: baac7311a23bb4de032a8ab8b2e99a5ad9cae786
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504370"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96858277"
 ---
 # <a name="use-cloudevents-v10-schema-with-event-grid"></a>CloudEvents v 1.0-schema gebruiken met Event Grid
 Naast het [standaard schema](event-schema.md)van de gebeurtenis, ondersteunt Azure Event grid systeem eigen gebeurtenissen in de [JSON-implementatie van CloudEvents v 1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) en [http-protocol binding](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) is een [open specificatie](https://github.com/cloudevents/spec/blob/v1.0/spec.md) voor het beschrijven van gebeurtenis gegevens.
@@ -62,16 +62,20 @@ De waarden van headers voor gebeurtenissen die in het CloudEvents-schema en het 
 
 ## <a name="configure-event-grid-for-cloudevents"></a>Event Grid configureren voor CloudEvents
 
-U kunt Event Grid gebruiken voor zowel invoer als uitvoer van gebeurtenissen in het CloudEvents-schema. U kunt CloudEvents gebruiken voor systeem gebeurtenissen, zoals Blob Storage gebeurtenissen en IoT Hub gebeurtenissen, en aangepaste gebeurtenissen. Het kan ook deze gebeurtenissen op de achtergrond transformeren.
+U kunt Event Grid gebruiken voor zowel de invoer als uitvoer van gebeurtenissen in het CloudEvents-schema. In de volgende tabel worden de mogelijke trans formaties beschreven:
+
+ Event Grid resource | Invoer schema       | Leverings schema
+|---------------------|-------------------|---------------------
+| Systeem onderwerpen       | Event Grid schema | Event Grid schema of CloudEvent-schema
+| Gebruikers onderwerpen/domeinen | Event Grid schema | Event Grid schema
+| Gebruikers onderwerpen/domeinen | CloudEvent-schema | CloudEvent-schema
+| Gebruikers onderwerpen/domeinen | Aangepast schema     | Aangepast schema of Event Grid schema of CloudEvent-schema
+| PartnerTopics       | CloudEvent-schema | CloudEvent-schema
 
 
-| Invoer schema       | Uitvoer schema
-|--------------------|---------------------
-| CloudEvents-indeling | CloudEvents-indeling
-| Event Grid indeling  | CloudEvents-indeling
-| Event Grid indeling  | Event Grid indeling
+Voor alle gebeurtenis schema's moet Event Grid worden gevalideerd bij het publiceren naar een Event Grid onderwerp en bij het maken van een gebeurtenis abonnement.
 
-Voor alle gebeurtenis schema's moet Event Grid worden gevalideerd bij het publiceren naar een event grid-onderwerp en bij het maken van een gebeurtenis abonnement. Zie [Event grid beveiliging en verificatie](security-authentication.md)voor meer informatie.
+Zie [Event grid beveiliging en verificatie](security-authentication.md)voor meer informatie.
 
 ### <a name="input-schema"></a>Invoer schema
 

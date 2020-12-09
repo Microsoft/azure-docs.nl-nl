@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 3ec9718d313e7e8d757eb41c230225bdcf9ebd49
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: e9334d222d443679362514481ecd83b90bbda0ac
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749042"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855070"
 ---
 # <a name="sampling-in-application-insights"></a>Steekproeven in Application Insights
 
@@ -34,7 +34,7 @@ De volgende tabel bevat een overzicht van de beschik bare bemonsterings typen vo
 |-|-|-|-|
 | ASP.NET | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | ASP.NET Core | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Alleen als er geen andere steek proeven van kracht zijn |
-| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | Nee | Alleen als er geen andere steek proeven van kracht zijn |
+| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | No | Alleen als er geen andere steek proeven van kracht zijn |
 | Java | Nee | [Ja](#configuring-fixed-rate-sampling-for-java-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | Node.JS | Nee | [Ja](./nodejs.md#sampling) | Alleen als er geen andere steek proeven van kracht zijn
 | Python | Nee | [Ja](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Alleen als er geen andere steek proeven van kracht zijn |
@@ -315,18 +315,12 @@ Standaard is geen steek proef ingeschakeld in de Java-Agent en-SDK. Momenteel wo
 
 1. [Applicationinsights-agent-3.0.0-Preview. 5. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0-PREVIEW.5/applicationinsights-agent-3.0.0-PREVIEW.5.jar) downloaden
 
-1. Als u steek proeven wilt inschakelen, voegt u het volgende toe aan het `ApplicationInsights.json` bestand:
+1. Als u steek proeven wilt inschakelen, voegt u het volgende toe aan het `applicationinsights.json` bestand:
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "sampling": {
-        "fixedRate": {
-          "percentage": 10 //this is just an example that shows you how to enable only only 10% of transaction 
-        }
-      }
-    }
+  "sampling": {
+    "percentage": 10 //this is just an example that shows you how to enable only only 10% of transaction 
   }
 }
 ```
@@ -559,7 +553,7 @@ De nauw keurigheid van de benadering is grotendeels afhankelijk van het geconfig
 
 * Steek proeven voor opname kunnen automatisch worden uitgevoerd voor telemetrie boven een bepaald volume, als de SDK geen steek proeven uitvoert. Deze configuratie werkt bijvoorbeeld als u een oudere versie van de ASP.NET SDK of Java SDK gebruikt.
 * Als u de huidige ASP.NET-of ASP.NET Core Sdk's gebruikt (die worden gehost in azure of op uw eigen server), krijgt u standaard adaptieve steek proeven, maar u kunt overschakelen naar een vaste frequentie zoals hierboven wordt beschreven. Met een steek proef van een vaste frequentie synchroniseert de SDK van de browser automatisch met voor beeld van gerelateerde gebeurtenissen. 
-* Als u de huidige Java-agent gebruikt, kunt u configureren `ApplicationInsights.json` (voor Java SDK, configureren `ApplicationInsights.xml` ) om steek proeven met een vaste frequentie in te scha kelen. Steek proeven zijn standaard uitgeschakeld. Met een steek proef van een vaste frequentie worden de browser-SDK en de-server automatisch gesynchroniseerd met voor beeld van gerelateerde gebeurtenissen.
+* Als u de huidige Java-agent gebruikt, kunt u configureren `applicationinsights.json` (voor Java SDK, configureren `ApplicationInsights.xml` ) om steek proeven met een vaste frequentie in te scha kelen. Steek proeven zijn standaard uitgeschakeld. Met een steek proef van een vaste frequentie worden de browser-SDK en de-server automatisch gesynchroniseerd met voor beeld van gerelateerde gebeurtenissen.
 
 *Er zijn bepaalde zeldzame gebeurtenissen die ik altijd wil zien. Hoe kan ik de bemonsterings module naraken?*
 

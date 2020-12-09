@@ -1,17 +1,17 @@
 ---
 title: Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 description: Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
-author: nkiest
-ms.author: nikiest
+author: noakup
+ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 8633aba2f7cda5dec4a48e9f7132283f8235f746
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: a85619b4947808ba1c13df3c1543102eea7273fd
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317517"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853919"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -43,7 +43,7 @@ Azure Monitor bereik van een persoonlijke koppeling is een groeperings bron voor
 Voordat u uw AMPLS-bronnen instelt, moet u rekening houden met de vereisten voor netwerk isolatie. Evalueer de toegang tot het open bare Internet van uw virtuele netwerken en de toegangs beperkingen van elk van uw Azure Monitor resources (dat wil zeggen, Application Insights onderdelen en Log Analytics werk ruimten).
 
 > [!NOTE]
-> Hub-en-spoke-netwerken, of een andere topologie van peered netwerken, kunnen een privé-koppeling instellen tussen de hub (hoofd) VNet en de relevante Azure Monitor resources, in plaats van een persoonlijke koppeling op elke en elk VNet in te stellen. Dit is vooral handig als de Azure Monitor bronnen die door deze netwerken worden gebruikt, worden gedeeld. Als u echter wilt toestaan dat elk VNet toegang krijgt tot een afzonderlijke set bewakings resources, maakt u een persoonlijke koppeling naar een toegewezen AMPLS voor elk netwerk.
+> Hub-spoke-netwerken of een andere topologie van peered netwerken kunnen een persoonlijke koppeling instellen tussen de hub (hoofd) VNet en de relevante Azure Monitor resources, in plaats van een persoonlijke koppeling in te stellen op elke en elk VNet. Dit is vooral handig als de Azure Monitor bronnen die door deze netwerken worden gebruikt, worden gedeeld. Als u echter wilt toestaan dat elk VNet toegang krijgt tot een afzonderlijke set bewakings resources, maakt u een persoonlijke koppeling naar een toegewezen AMPLS voor elk netwerk.
 
 ### <a name="evaluate-which-virtual-networks-should-connect-to-a-private-link"></a>Evalueren welke virtuele netwerken verbinding moeten maken met een privé-koppeling
 
@@ -85,6 +85,11 @@ In de onderstaande topologie:
 * Workspace2 maakt verbinding met AMPLS A en AMPLS B met 2/5 (40%) van de mogelijke AMPLS-verbindingen.
 
 ![Diagram van AMPLS-limieten](./media/private-link-security/ampls-limits.png)
+
+> [!NOTE]
+> In sommige netwerktopologieën (voornamelijk hub-spoke) kunt u snel de 10 VNets-limiet voor één AMPLS bereiken. In dergelijke gevallen is het raadzaam om een gedeelde koppeling van een persoonlijke verbinding te gebruiken in plaats van afzonderlijke verbindingen. Maak een enkel persoonlijk eind punt in het hub-netwerk, koppel het aan uw AMPLS en peer de relevante netwerken naar het hub-netwerk.
+
+![Hub en spoke-single-PE](./media/private-link-security/hub-and-spoke-with-single-private-endpoint.png)
 
 ## <a name="example-connection"></a>Voorbeeld verbinding
 

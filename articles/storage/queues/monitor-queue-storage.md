@@ -9,12 +9,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: be340ffd2df53124f516e370359df688d887ab6c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 15bc943052218761327fa57ce8ff6f5d32bfb116
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780957"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855087"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Azure-wachtrij opslag bewaken
 
@@ -99,6 +99,8 @@ Zie voor algemene instructies de [Diagnostische instelling maken voor het verzam
 
 #### <a name="archive-logs-to-a-storage-account"></a>Logboeken archiveren in een opslag account
 
+Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt u voor het volume van de logboeken die worden verzonden naar het opslag account. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
+
 1. Selecteer het selectie vakje **archiveren naar een opslag account** en selecteer vervolgens de knop **configureren** .
 
    > [!div class="mx-imgBorder"]
@@ -110,6 +112,8 @@ Zie voor algemene instructies de [Diagnostische instelling maken voor het verzam
    > Zie [Azure-resource logboeken archiveren](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) om te begrijpen wat de vereisten zijn voor het opslag account voordat u een opslag account als export doel kiest.
 
 #### <a name="stream-logs-to-azure-event-hubs"></a>Logboeken streamen naar Azure Event Hubs
+
+Als u ervoor kiest om uw logboeken naar een Event Hub te streamen, betaalt u voor het volume van de logboeken die worden verzonden naar de Event Hub. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
 
 1. Selecteer de **stroom naar een event hub** selectie vakje en selecteer vervolgens de knop **configureren** .
 
@@ -143,6 +147,8 @@ Zie voor algemene instructies de [Diagnostische instelling maken voor het verzam
 
 #### <a name="archive-logs-to-a-storage-account"></a>Logboeken archiveren in een opslag account
 
+Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt u voor het volume van de logboeken die worden verzonden naar het opslag account. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
+
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) samen met de `StorageAccountId` para meter.
 
 ```powershell
@@ -160,6 +166,8 @@ Hier volgt een voorbeeld:
 Zie [Azure resource logs archiveren via Azure PowerShell](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
 
 #### <a name="stream-logs-to-an-event-hub"></a>Logboeken streamen naar een Event Hub
+
+Als u ervoor kiest om uw logboeken naar een Event Hub te streamen, betaalt u voor het volume van de logboeken die worden verzonden naar de Event Hub. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
 
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) met de `EventHubAuthorizationRuleId` para meter.
 
@@ -187,7 +195,7 @@ Hier volgt een voorbeeld:
 
 Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Open eerst de [Azure Cloud shell](../../cloud-shell/overview.md)of als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) , opent u een opdracht console toepassing zoals Windows Power shell.
 
@@ -200,6 +208,8 @@ Zie [Azure-resource logboeken streamen naar log Analytics werk ruimte in azure m
    Vervang de `<subscription-id>` waarde van de tijdelijke aanduiding door de id van uw abonnement.
 
 #### <a name="archive-logs-to-a-storage-account"></a>Logboeken archiveren in een opslag account
+
+Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt u voor het volume van de logboeken die worden verzonden naar het opslag account. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
 
 Schakel Logboeken in met behulp van de opdracht [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
@@ -218,6 +228,8 @@ Hier volgt een voorbeeld:
 Zie voor een beschrijving van elke para meter de [Archief bron logboeken via de Azure cli](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Logboeken streamen naar een Event Hub
+
+Als u ervoor kiest om uw logboeken naar een Event Hub te streamen, betaalt u voor het volume van de logboeken die worden verzonden naar de Event Hub. Zie de sectie **platform logs** van de pagina met [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/#platform-logs) voor specifieke prijzen.
 
 Schakel Logboeken in met behulp van de opdracht [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) .
 
@@ -299,7 +311,7 @@ U kunt metrische waarden op account niveau van uw opslag account of de wachtrij 
    Get-AzMetric -ResourceId $resourceId -MetricNames "UsedCapacity" -TimeGrain 01:00:00
 ```
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 #### <a name="list-the-account-level-metric-definition"></a>De metrische definitie op account niveau weer geven
 

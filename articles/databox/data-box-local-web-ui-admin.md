@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/03/2020
+ms.date: 12/07/2020
 ms.author: alkohli
-ms.openlocfilehash: 90869af032a381cecd3e65f5d5b367156dd047c5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 859eb6abd138f0660407618bba4550daf9158ab9
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576838"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855002"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Gebruik de lokale web-UI voor het beheren van uw Data Box en Data Box Heavy
 
@@ -29,15 +29,15 @@ Als u problemen met het apparaat ondervindt, kunt u een ondersteuningspakket mak
 
 Als u een ondersteunings pakket wilt genereren, voert u de volgende stappen uit:
 
-1. Ga in de lokale web-UI naar **contact opnemen met ondersteuning**. Selecteer eventueel **exclusief geheugen dump**. Selecteer vervolgens **ondersteunings pakket maken**.
+1. Ga in de lokale web-UI naar **contact opnemen met ondersteuning**. Selecteer eventueel **Geheugen dumps toevoegen**. Selecteer vervolgens **ondersteunings pakket maken**.
 
     Een geheugen dump is de inhoud van het geheugen van uw apparaat, opgeslagen na een systeem fout.
 
-    U moet de optie voor het **toevoegen van geheugen dump** niet selecteren, tenzij ondersteuning om een te vragen. Het duurt lang om een ondersteunings pakket te verzamelen dat een geheugen dump bevat, en gevoelige gegevens worden opgenomen.
+    U moet de optie voor het **toevoegen van geheugen dumps** niet selecteren, tenzij ondersteuning wordt gevraagd voor een. Het duurt lang voordat een ondersteunings pakket met geheugen dumps wordt verzameld en er zijn gevoelige gegevens opgenomen.
 
     ![Ondersteuningspakket maken 1](media/data-box-local-web-ui-admin/create-support-package-1.png)
 
-    Er wordt een ondersteuningspakket verzameld. Deze bewerking duurt enkele minuten als u alleen systeem logboeken opneemt. Als u een geheugen dump opneemt, duurt het veel langer.
+    Er wordt een ondersteuningspakket verzameld. Deze bewerking duurt enkele minuten als u alleen systeem logboeken opneemt. Als u geheugen dumps opneemt, duurt het veel langer.
 
     ![Ondersteuningspakket maken 2](media/data-box-local-web-ui-admin/create-support-package-2.png)
 

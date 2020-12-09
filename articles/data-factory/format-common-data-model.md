@@ -5,14 +5,14 @@ author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 12/07/2020
 ms.author: makromer
-ms.openlocfilehash: 7fc3a63f841a88451746d088a527a41d756e711f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e3152f1dff4a80ce3ae8bd121215ceb2595b9ee2
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015168"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854002"
 ---
 # <a name="common-data-model-format-in-azure-data-factory"></a>Gemeen schappelijke gegevens model indeling in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -20,9 +20,6 @@ ms.locfileid: "95015168"
 Het gegevens systeem van het common data model (CDM) maakt het mogelijk om gegevens en de betekenis ervan eenvoudig te delen tussen toepassingen en bedrijfs processen. Zie het overzicht van [common data model](/common-data-model/) voor meer informatie.
 
 In Azure Data Factory kunnen gebruikers gegevens transformeren van CDM-entiteiten in zowel model.jsop als manifest formulier opgeslagen in [Azure data Lake Store Gen2](connector-azure-data-lake-storage.md) (ADLS Gen2) met toewijzing van gegevens stromen. U kunt gegevens in de CDM-indeling ook opvangen met een CDM-entiteits verwijzing waarmee uw gegevens in de gepartitioneerde mappen in de CSV-of Parquet worden ingedeeld. 
-
-> [!NOTE]
-> De standaard-connector voor gegevens modellen (CDM) voor ADF-gegevens stromen is momenteel beschikbaar als open bare preview.
 
 ## <a name="mapping-data-flow-properties"></a>Eigenschappen van gegevens stroom toewijzen
 
@@ -43,7 +40,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Hoofd locatie: mappad | Locatie van de hoofdmap van de map CDM | ja | Tekenreeks | folderPath |
 | Manifest bestand: pad naar entiteit | Mappad van de entiteit binnen de hoofdmap | nee | Tekenreeks | entityPath |
 | Manifest bestand: manifest naam | De naam van het manifest bestand. Standaard waarde is ' default '  | Nee | Tekenreeks | manifestnaam |
-| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Tijdstempel | modifiedAfter <br> modifiedBefore | 
+| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Timestamp | modifiedAfter <br> modifiedBefore | 
 | Gekoppelde schema service | De gekoppelde service waar de verzameling zich bevindt | Ja, als u een manifest gebruikt | `'adlsgen2'` of `'github'` | corpusStore | 
 | Container voor entiteits verwijzing | Container verzameling is in | Ja, als u Manifest en verzameling in ADLS Gen2 gebruikt | Tekenreeks | adlsgen2_fileSystem |
 | Opslag plaats voor entiteit verwijzing | Naam van de GitHub-opslagplaats | Ja, als u Manifest en verzameling in GitHub gebruikt | Tekenreeks | github_repository |
@@ -88,7 +85,6 @@ Wanneer u gegevens stroom kolommen aan entiteits eigenschappen in de Sink-trans 
 2. Zoek de partities. Locatie-eigenschap 
 3. Wijzig ' blob.core.windows.net ' in ' dfs.core.windows.net '
 4. De code ring '% 2F ' in de URL naar '/' oplossen
- 
 
 ### <a name="cdm-source-data-flow-script-example"></a>Voor beeld van CDM-bron gegevensstroom script
 

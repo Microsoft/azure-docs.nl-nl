@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 4dc5b84ff127aef173deecfd2be705004d92ee0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7df04bd75f3fd11b1caa702655cbd204fc2b4fda
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449919"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854836"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Azure-netwerk bewakings oplossingen in Azure Monitor
 
@@ -37,14 +37,20 @@ De oplossing voor het beheer van [Netwerkprestatiemeter](../../networking/networ
 
 Zie [Netwerkprestatiemeter](../../networking/network-monitoring-overview.md)voor meer informatie.
 
-## <a name="azure-application-gateway-and-network-security-group-analytics"></a>Analyse van Azure-toepassing gateway en netwerk beveiligings groep
-Voor het gebruik van de oplossingen:
+## <a name="network-security-group-analytics"></a>Analyse van netwerk beveiligings groep
+
 1. Voeg de beheer oplossing toe aan Azure Monitor en
 2. Schakel diagnostische gegevens in om de diagnostische gegevens om te leiden naar een Log Analytics werk ruimte in Azure Monitor. Het is niet nodig om de logboeken te schrijven naar Azure Blob-opslag.
 
-U kunt Diagnostische gegevens en de bijbehorende oplossing inschakelen voor een of beide Application Gateway-en netwerk beveiligings groepen.
+Als Diagnostische logboeken niet zijn ingeschakeld, zijn de Blade-Dash boards voor die resource leeg en wordt er een fout bericht weer gegeven.
 
-Als u diagnostische bron logboek registratie niet inschakelt voor een bepaald bron type, maar u de oplossing installeert, zijn de dashboard bladen voor die resource leeg en wordt er een fout bericht weer gegeven.
+## <a name="azure-application-gateway-analytics"></a>Azure-toepassing gateway-analyse
+
+1. Schakel diagnostische gegevens in om de diagnostische gegevens om te leiden naar een Log Analytics werk ruimte in Azure Monitor.
+2. Gebruik de werkmap sjabloon voor Application Gateway om de gedetailleerde samen vatting voor uw resource te gebruiken.
+
+Als Diagnostische logboeken niet zijn ingeschakeld voor Application Gateway, worden alleen de standaard gegevens van de metriek in de werkmap ingevuld.
+
 
 > [!NOTE]
 > In januari 2017 wordt de ondersteunde manier voor het verzenden van logboeken van toepassings gateways en netwerk beveiligings groepen naar een Log Analytics werk ruimte gewijzigd. Als u de oplossing **Azure Networking Analytics (afgeschaft)** ziet, raadpleegt u [migreren van de oude netwerk analyse oplossing voor de](#migrating-from-the-old-networking-analytics-solution) stappen die u moet volgen.
@@ -61,37 +67,15 @@ De volgende tabel toont methoden voor gegevens verzameling en andere informatie 
 | Azure |  |  |&#8226; |  |  |Wanneer geregistreerd |
 
 
-## <a name="azure-application-gateway-analytics-solution-in-azure-monitor"></a>Azure-toepassing gateway Analytics-oplossing in Azure Monitor
-
-![Azure Application Gateway-analyse-symbool](media/azure-networking-analytics/azure-analytics-symbol.png)
-
-De volgende logboeken worden ondersteund voor toepassings gateways:
-
-* ApplicationGatewayAccessLog
-* ApplicationGatewayPerformanceLog
-* ApplicationGatewayFirewallLog
-
-De volgende metrische gegevens worden ondersteund voor toepassings gateways: opnieuw
-
-
-* doorvoer snelheid van 5 minuten
-
-### <a name="install-and-configure-the-solution"></a>De oplossing installeren en configureren
-Gebruik de volgende instructies om de Azure-toepassing gateway Analytics-oplossing te installeren en configureren:
-
-1. Schakel de Azure-toepassing gateway Analytics-oplossing in op [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureAppGatewayAnalyticsOMS?tab=Overview) of gebruik het proces dat wordt beschreven in [Azure monitor oplossingen toevoegen van de Oplossingengalerie](./solutions.md).
-2. Schakel logboek registratie van diagnostische gegevens in voor de [toepassings gateways](../../application-gateway/application-gateway-diagnostics.md) die u wilt bewaken.
-
-#### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Diagnostische gegevens van Azure-toepassing gateway inschakelen in de portal
+### <a name="enable-azure-application-gateway-diagnostics-in-the-portal"></a>Diagnostische gegevens van Azure-toepassing gateway inschakelen in de portal
 
 1. Navigeer in het Azure Portal naar de Application Gateway resource die u wilt bewaken.
-2. Selecteer *Diagnostische logboeken* om de volgende pagina te openen.
+2. Selecteer *instellingen voor diagnostische gegevens* om de volgende pagina te openen.
 
-   ![Scherm afbeelding van de pagina Diagnostische logboeken voor een Application Gateway bron met de optie voor het inschakelen van diagnostische gegevens.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics01.png)
-3. Klik op *Diagnostische gegevens inschakelen* om de volgende pagina te openen.
+   ![Scherm afbeelding van de configuratie van diagnostische instellingen voor de Application Gateway resource.](media/azure-networking-analytics/diagnostic-settings-1.png)
 
-   ![Scherm afbeelding van de pagina voor het configureren van diagnostische instellingen. De optie voor Send to Log Analytics is geselecteerd als drie logboek typen en een metriek.](media/azure-networking-analytics/log-analytics-appgateway-enable-diagnostics02.png)
-4. Als u Diagnostische gegevens wilt inschakelen *, klikt u op onder* *status*.
+   [![Scherm afbeelding van de pagina voor het configureren van diagnostische instellingen.](media/azure-networking-analytics/diagnostic-settings-2.png)](media/azure-networking-analytics/application-gateway-diagnostics-2.png#lightbox)
+
 5. Klik op het selectie vakje voor *verzenden naar log Analytics*.
 6. Selecteer een bestaande Log Analytics werk ruimte of maak een werk ruimte.
 7. Klik op het selectie vakje onder **logboek** voor elk van de logboek typen die u wilt verzamelen.
@@ -109,28 +93,33 @@ $gateway = Get-AzApplicationGateway -Name 'ContosoGateway'
 Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspaceId -Enabled $true
 ```
 
-### <a name="use-azure-application-gateway-analytics"></a>Azure-toepassing gateway-analyse gebruiken
-![afbeelding van de tegel Azure-toepassing gateway Analytics](media/azure-networking-analytics/log-analytics-appgateway-tile.png)
+#### <a name="accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights"></a>Toegang tot Azure-toepassing gateway-analyse via Azure Monitor Network Insights
 
-Nadat u op de tegel **Azure-toepassing gateway Analytics** in het overzicht hebt geklikt, kunt u samen vattingen van uw logboeken weer geven en vervolgens inzoomen op Details voor de volgende categorieën:
+U kunt Application Insights openen via het tabblad inzichten binnen uw Application Gateway resource.
 
-* Application Gateway Access-logboeken
-  * Client-en Server fouten voor Application Gateway Access-logboeken
-  * Aanvragen per uur voor elke Application Gateway
-  * Mislukte aanvragen per uur voor elke Application Gateway
-  * Fouten door de gebruikers agent voor toepassings gateways
-* Prestaties Application Gateway
-  * Host-status voor Application Gateway
-  * Maximum-en 95e percentiel voor mislukte Application Gateway-aanvragen
+![Scherm opname van Application Gateway Insights ](media/azure-networking-analytics/azure-appgw-insights.png
+)
 
-![Scherm afbeelding van het Application Gateway Access logboeken dash board met tegels met gegevens voor gateway fouten, aanvragen en mislukte aanvragen.](media/azure-networking-analytics/log-analytics-appgateway01.png)
+Op het tabblad gedetailleerde meet gegevens weer geven wordt de vooraf ingevulde werkmap geopend met een samen vatting van uw Application Gateway.
 
-![Scherm opname van het Application Gateway Access logboeken dash board met tegels met gegevens voor fouten per gebruikers agent, status van host en mislukte aanvragen.](media/azure-networking-analytics/log-analytics-appgateway02.png)
+[![Scherm opname van Application Gateway werkmap](media/azure-networking-analytics/azure-appgw-workbook.png)](media/azure-networking-analytics/application-gateway-workbook.png#lightbox)
 
-Controleer op het **Azure-toepassing gateway Analytics** -dash board de samenvattings informatie op een van de Blades en klik vervolgens op een van de pagina's om gedetailleerde informatie weer te geven op de pagina zoeken in Logboeken.
+## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Migreren van Azure gateway Analytics-oplossing naar Azure Monitor-werkmappen
 
-Op een van de zoek pagina's in Logboeken kunt u de resultaten weer geven op tijd, gedetailleerde resultaten en de Zoek geschiedenis van het logboek. U kunt ook filteren op facetten om de resultaten te beperken.
+> [!NOTE]
+> De oplossing voor de analyse van de Azure-toepassing gateway is verouderd en de aanbevolen manier om analyses te gebruiken is via werkmappen die worden weer gegeven via Azure Monitor Network Insights voor de Application Gateway resource.
 
+* Als de diagnostische instelling al is ingeschakeld om logboeken op te slaan in een Log Analytics-werk ruimte, kan Azure Monitor netwerk Insights-werkmap gegevens van dezelfde locatie gebruiken. Er is geen nieuwe configuratie vereist.
+
+* Alle gegevens in het verleden zijn al beschikbaar in de werkmap en de diagnostische instellingen voor het punt zijn ingeschakeld. Er is geen gegevens overdracht vereist.
+
+* Er is geen actieve wissel knop vereist om over te scha kelen naar werkmappen. Zowel de analyse oplossing als de netwerk Insight-werkmap kunnen parallel werken.
+
+* Er zijn geen extra kosten verbonden aan Azure Monitor werkmappen. Log Analytics-werk ruimte worden nog steeds gefactureerd volgens het gebruik.
+
+* Als u de Azure gateway Analytics-oplossing wilt opschonen vanuit uw werk ruimte, kunt u de oplossing verwijderen van de resource pagina van de oplossing.
+
+[![Scherm afbeelding van de optie voor het verwijderen van Azure-toepassing gateway Analytics-oplossing.](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
 
 ## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Analyse oplossing voor Azure-netwerk beveiligings groep in Azure Monitor
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: devx-track-csharp
 ms.reviewer: sdash
-ms.openlocfilehash: 642a382f2ec5da7821c9d709bd27d592ced31c8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3383b4a3c2eab1f62d180c31e278f07b92c649c5
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90974030"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853512"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Toepassings overzicht: gedistribueerde toepassingen sorteren
 
@@ -52,7 +52,7 @@ Selecteer **fouten onderzoeken** om het deel venster fouten te starten.
 
 ### <a name="investigate-performance"></a>Prestaties onderzoeken
 
-Selecteer **prestaties onderzoeken**om prestatie problemen op te lossen.
+Selecteer **prestaties onderzoeken** om prestatie problemen op te lossen.
 
 ![Scherm afbeelding van de knop onderzoek prestaties](media/app-map/investigate-performance.png)
 
@@ -76,7 +76,7 @@ Als u de gegevens van uw toepassing verder wilt opvragen en onderzoeken, klikt u
 
 ### <a name="alerts"></a>Waarschuwingen
 
-Selecteer **waarschuwingen**als u actieve waarschuwingen en de onderliggende regels wilt weer geven die ervoor zorgen dat de waarschuwingen worden geactiveerd.
+Selecteer **waarschuwingen** als u actieve waarschuwingen en de onderliggende regels wilt weer geven die ervoor zorgen dat de waarschuwingen worden geactiveerd.
 
 ![Scherm afbeelding van de knop waarschuwingen](media/app-map/alerts.png)
 
@@ -165,10 +165,8 @@ Voor [Java-agent 3,0](./java-in-process-agent.md) is de rolnaam van de Cloud ing
 
 ```json
 {
-  "instrumentationSettings": {
-    "preview": {
-      "roleName": "my cloud role name"
-    }
+  "role": {
+    "name": "my cloud role name"
   }
 }
 ```

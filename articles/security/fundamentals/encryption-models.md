@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a00dc5beb2bde02f71b40f6eb374502136c37c67
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 141daa485fae5aba2db23647fada30ba5b621cd0
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410484"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854611"
 ---
 # <a name="data-encryption-models"></a>Gegevensversleutelingmodellen
 
@@ -159,7 +159,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Translator Text                  | Ja                | Ja                | -                  |
 | Power BI                         | Yes                | Ja, RSA 4096-bits  | -                  |
 | **Analyse**                    |                    |                    |                    |
-| Azure Stream Analytics           | Yes                | N.v.t.\*              | -                  |
+| Azure Stream Analytics           | Yes                | Klikt\*\*            | -                  |
 | Event Hubs                       | Ja                | Ja                | -                  |
 | Functies                        | Ja                | Ja                | -                  |
 | Azure Analysis Services          | Ja                | -                  | -                  |
@@ -197,7 +197,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Table Storage                    | Ja                | Ja                | Ja                |
 | Azure Cosmos DB                  | Ja                | Ja                | -                  |
 | Azure Databricks                 | Ja                | Ja                | -                  |
-| Azure Database Migration Service | Yes                | N.v.t.\*              | -                  |
+| Azure Database Migration Service | Yes                | n.v.t.\*              | -                  |
 | **DevOps**                       |                    |                    |                    |
 | Azure DevOps Services            | Ja                | -                  | Ja                |
 | Azure-opslagplaatsen                      | Ja                | -                  | Ja                |
@@ -215,7 +215,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | Azure Site Recovery              | Yes                | -                  | -                  |
 | Azure Migrate                    | Ja                | Ja                | -                  |
 | **Media**                        |                    |                    |                    |
-| Media Services                   | Ja                | -                  | Ja                |
+| Media Services                   | Ja                | Ja                | Ja                |
 | **Beveiliging**                     |                    |                    |                    |
 | Azure Security Center voor IoT    | Ja                | Ja                | -                  |
 | Azure Sentinel                   | Ja                | Ja                | -                  |
@@ -230,7 +230,7 @@ De Azure-Services die elk versleutelings model ondersteunen:
 | File Sync                        | Ja                | Ja                | -                  |
 | Queue Storage                    | Ja                | Ja                | Ja                |
 | Avere vFXT                       | Yes                | -                  | -                  |
-| Azure Cache voor Redis            | Yes                | N.v.t.\*              | -                  |
+| Azure Cache voor Redis            | Yes                | n.v.t.\*              | -                  |
 | Azure NetApp Files               | Ja                | Ja                | -                  |
 | Archive Storage                  | Ja                | Ja                | -                  |
 | StorSimple                       | Ja                | Ja                | Ja                |

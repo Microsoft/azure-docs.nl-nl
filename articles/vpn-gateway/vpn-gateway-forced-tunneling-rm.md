@@ -1,49 +1,39 @@
 ---
 title: Geforceerde tunneling configureren voor site-naar-site-verbindingen
-description: Het omleiden of ' forceren ' van alle Internet verkeer naar uw on-premises locatie.
+description: Alle Internet verkeer omleiden (forceren) naar uw on-premises locatie.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/02/2020
+ms.date: 12/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 00f98a5086b9a9bf21054138cf01d26a550338da
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c12297019b49d7b3cb644ae9c7a904e4ca697f0b
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92673840"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855036"
 ---
-# <a name="configure-forced-tunneling-using-the-azure-resource-manager-deployment-model"></a>Geforceerde tunneling met het implementatiemodel van Azure Resource Manager configureren
+# <a name="configure-forced-tunneling"></a>Geforceerde tunneling configureren
 
-Met geforceerde tunneling kunt u alle voor internet bestemde verkeer geforceerd terugsturen naar uw on-premises locatie via een site-naar-site-VPN-tunnel voor inspectie en controle. Dit is een kritieke beveiligings vereiste voor de meeste IT-beleids regels van ondernemingen. Zonder geforceerde tunneling passeren Internet-gebonden verkeer van uw virtuele machines in azure altijd rechtstreeks naar het Internet, zonder de optie om het verkeer te controleren of te controleren. Onbevoegde toegang tot internet kan mogelijk leiden tot vrijgeven van informatie of andere typen beveiligings Risico's.
+Met geforceerde tunneling kunt u alle voor internet bestemde verkeer geforceerd terugsturen naar uw on-premises locatie via een site-naar-site-VPN-tunnel voor inspectie en controle. Dit is een kritieke beveiligings vereiste voor de meeste IT-beleids regels van ondernemingen. Als u geforceerde tunneling niet configureert, gaat Internet-gebonden verkeer van uw virtuele machines in azure altijd rechtstreeks door naar Internet en zonder de optie om het verkeer te controleren of te controleren. Onbevoegde toegang tot internet kan mogelijk leiden tot vrijgeven van informatie of andere typen beveiligings Risico's.
 
-
-
-[!INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
-
-Dit artikel begeleidt u bij het configureren van geforceerde tunneling voor virtuele netwerken die zijn gemaakt met het Resource Manager-implementatie model. Geforceerde tunneling kan worden geconfigureerd met behulp van Power shell, niet via de portal. Als u geforceerde tunneling wilt configureren voor het klassieke implementatie model, selecteert u klassiek artikel in de volgende vervolg keuzelijst:
-
-> [!div class="op_single_selector"]
-> * [Power shell-klassiek](vpn-gateway-about-forced-tunneling.md)
-> * [PowerShell - Resource Manager](vpn-gateway-forced-tunneling-rm.md)
-> 
-> 
+Geforceerde tunneling kan worden geconfigureerd met behulp van Azure PowerShell. Het kan niet worden geconfigureerd met behulp van de Azure Portal. Dit artikel helpt u bij het configureren van geforceerde tunneling voor virtuele netwerken die zijn gemaakt met het Resource Manager-implementatie model. Zie [geforceerde tunneling-Classic](vpn-gateway-about-forced-tunneling.md)als u geforceerde tunneling wilt configureren voor het klassieke implementatie model.
 
 ## <a name="about-forced-tunneling"></a>Over geforceerde tunneling
 
-In het volgende diagram ziet u hoe geforceerde tunneling werkt. 
+In het volgende diagram ziet u hoe geforceerde tunneling werkt.
 
-![Geforceerde tunneling](./media/vpn-gateway-forced-tunneling-rm/forced-tunnel.png)
+:::image type="content" source="./media/vpn-gateway-forced-tunneling-rm/forced-tunnel.png" alt-text="Diagram toont geforceerde tunneling.":::
 
-In het bovenstaande voor beeld wordt het frontend-subnet niet geforceerd getunneld. De werk belastingen in het frontend-subnet kunnen rechtstreeks blijven accepteren en reageren op aanvragen van de klant via internet. De subnetten van de middelste laag en de back-end worden geforceerd getunneld. Uitgaande verbindingen van deze twee subnetten met Internet worden via een van de S2S VPN-tunnels geforceerd of teruggeleid naar een on-premises site.
+In dit voor beeld is het frontend-subnet niet geforceerde tunneling. De werk belastingen in het frontend-subnet kunnen rechtstreeks blijven accepteren en reageren op aanvragen van de klant via internet. De subnetten van de middelste laag en de back-end worden geforceerd getunneld. Uitgaande verbindingen van deze twee subnetten met Internet worden via een van de site-naar-site (S2S) VPN-tunnels geforceerd of omgeleid naar een on-premises site.
 
 Hierdoor kunt u Internet toegang beperken en inspecteren vanuit uw virtuele machines of Cloud Services in azure, terwijl u doorgaat met het inschakelen van de service architectuur met meerdere lagen. Als uw virtuele netwerken geen Internet gerichte workloads hebben, kunt u ook geforceerde tunneling Toep assen op de gehele virtuele netwerken.
 
 ## <a name="requirements-and-considerations"></a>Vereisten en overwegingen
 
-Geforceerde Tunneling in azure wordt geconfigureerd via door de gebruiker gedefinieerde routes van het virtuele netwerk. Het omleiden van verkeer naar een on-premises site wordt uitgedrukt als een standaard route naar de Azure VPN-gateway. Voor meer informatie over door de gebruiker gedefinieerde route ring en virtuele netwerken raadpleegt u [door de gebruiker gedefinieerde routes en door sturen via IP](../virtual-network/virtual-networks-udr-overview.md).
+Geforceerde Tunneling in azure wordt geconfigureerd met de aangepaste door de gebruiker gedefinieerde routes van het virtuele netwerk. Het omleiden van verkeer naar een on-premises site wordt uitgedrukt als een standaard route naar de Azure VPN-gateway. Zie aangepaste door de [gebruiker gedefinieerde routes](../virtual-network/virtual-networks-udr-overview.md#user-defined)voor meer informatie over door de gebruiker gedefinieerde route ring en virtuele netwerken.
 
 * Elk subnet van het virtuele netwerk heeft een ingebouwde systeem routerings tabel. De systeem routerings tabel heeft de volgende drie groepen routes:
   
@@ -70,9 +60,9 @@ Installeer de meest recente versie van de PowerShell-cmdlets van Azure Resource 
 >
 >
 
-### <a name="to-log-in"></a>Aanmelden
+### <a name="to-sign-in"></a>Aanmelden
 
-[!INCLUDE [To log in](../../includes/vpn-gateway-cloud-shell-ps-login.md)]
+[!INCLUDE [Sign in](../../includes/vpn-gateway-cloud-shell-ps-login.md)]
 
 ## <a name="configure-forced-tunneling"></a>Geforceerde tunneling configureren
 
@@ -82,7 +72,7 @@ Installeer de meest recente versie van de PowerShell-cmdlets van Azure Resource 
 >
 
 
-1. Maak een resourcegroep.
+1. Een resourcegroep maken.
 
    ```powershell
    New-AzResourceGroup -Name 'ForcedTunneling' -Location 'North Europe'

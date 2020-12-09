@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/18/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cd813c6db9d03b0b7c84497e5b44f6ecdb591437
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 4f98eac4305333ec7225c90da2777b7e02f050a0
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912851"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853529"
 ---
 # <a name="analyze-video-content-for-objectionable-material-in-c"></a>Video-inhoud voor aanstootgevend materiaal in C analyseren #
 
@@ -37,7 +37,7 @@ Volg de instructies in [Create a Azure Media Services account](../../media-servi
 
 ### <a name="create-an-azure-active-directory-application"></a>Een Azure Active Directory-toepassing maken
 
-Ga naar het nieuwe AMS-abonnement in de Azure Portal en selecteer **API-toegang** in het menu aan de zijkant. Selecteer **verbinding maken met Azure Media Services met Service-Principal** . Let op de waarde in het veld **rest API eindpunt** . u hebt dit later nodig.
+Ga naar het nieuwe AMS-abonnement in de Azure Portal en selecteer **API-toegang** in het menu aan de zijkant. Selecteer **verbinding maken met Azure Media Services met Service-Principal**. Let op de waarde in het veld **rest API eindpunt** . u hebt dit later nodig.
 
 Selecteer in het gedeelte **Azure AD-App** de optie **nieuwe maken** en geef uw nieuwe Azure AD-toepassings registratie een naam (bijvoorbeeld ' VideoModADApp '). Klik op **Opslaan** en wacht enkele minuten totdat de toepassing is geconfigureerd. Vervolgens ziet u de nieuwe app-registratie in het gedeelte **Azure AD-App** van de pagina.
 
@@ -55,9 +55,9 @@ De Azure Media Services Explorer is een gebruikers vriendelijke frontend voor AM
 
 ## <a name="create-the-visual-studio-project"></a>Het Visual Studio-project maken
 
-1. Maak in Visual Studio een nieuw **console-app-project (.NET Framework)** en noem het **VideoModeration** . 
+1. Maak in Visual Studio een nieuw **console-app-project (.NET Framework)** en noem het **VideoModeration**. 
 1. Als uw oplossing nog meer projecten bevat, selecteert u deze als het enkele opstartproject.
-1. Download de vereiste NuGet-pakketten. Klik met de rechtermuisknop op uw project in Solution Explorer en selecteer **NuGet-pakketten beheren** . Zoek en installeer vervolgens de volgende pakketten:
+1. Download de vereiste NuGet-pakketten. Klik met de rechtermuisknop op uw project in Solution Explorer en selecteer **NuGet-pakketten beheren**. Zoek en installeer vervolgens de volgende pakketten:
     - windowsazure. Media Services
     - windowsazure. Media Services. Extensions
 
@@ -84,7 +84,7 @@ using System.Collections.Generic;
 
 ### <a name="set-up-resource-references"></a>Resource verwijzingen instellen
 
-Voeg de volgende statische velden toe aan de klasse **Program** in _Program.cs_ . Deze velden bevatten de gegevens die nodig zijn om verbinding te maken met uw AMS-abonnement. Vul deze in met de waarden die u in de bovenstaande stappen hebt ontvangen. Houd er rekening mee dat `CLIENT_ID` de waarde van de **toepassings-id** van uw Azure AD-app is en de `CLIENT_SECRET` waarde is van de ' VideoModKey ' die u hebt gemaakt voor die app.
+Voeg de volgende statische velden toe aan de klasse **Program** in _Program.cs_. Deze velden bevatten de gegevens die nodig zijn om verbinding te maken met uw AMS-abonnement. Vul deze in met de waarden die u in de bovenstaande stappen hebt ontvangen. Houd er rekening mee dat `CLIENT_ID` de waarde van de **toepassings-id** van uw Azure AD-app is en de `CLIENT_SECRET` waarde is van de ' VideoModKey ' die u hebt gemaakt voor die app.
 
 ```csharp
 // declare constants and globals
@@ -159,7 +159,7 @@ RunContentModeratorJob(asset);
 
 ### <a name="create-an-azure-media-context"></a>Een Azure-media context maken
 
-Voeg de volgende methode toe aan de klasse **Program** . Dit maakt gebruik van uw AMS-referenties om communicatie met AMS toe te staan.
+Voeg de volgende methode toe aan de klasse **Program**. Dit maakt gebruik van uw AMS-referenties om communicatie met AMS toe te staan.
 
 ```csharp
 // Creates a media context from azure credentials
@@ -180,7 +180,7 @@ static void CreateMediaContext()
 
 ### <a name="add-the-code-to-create-an-azure-storage-context"></a>De code toevoegen om een Azure Storage context te maken
 
-Voeg de volgende methode toe aan de klasse **Program** . U gebruikt de opslag context, die u hebt gemaakt op basis van uw opslag referenties, om toegang te krijgen tot de Blob-opslag.
+Voeg de volgende methode toe aan de klasse **Program**. U gebruikt de opslag context, die u hebt gemaakt op basis van uw opslag referenties, om toegang te krijgen tot de Blob-opslag.
 
 ```csharp
 // Creates a storage context from the AMS associated storage name and key
@@ -317,7 +317,7 @@ static void RunContentModeratorJob(IAsset asset)
 }
 ```
 
-### <a name="add-helper-functions"></a>Hulp functies toevoegen
+### <a name="add-helper-functions"></a>Helperfuncties toevoegen
 
 Met deze methoden wordt het Content Moderator-uitvoer bestand (JSON) gedownload uit de Azure Media Services-Asset en kan de status van de taak voor toezicht worden bijgehouden, zodat het programma de status actief kan registreren in de-console.
 
@@ -365,9 +365,9 @@ static void StateChanged(object sender, JobStateChangedEventArgs e)
 Analyseer het JSON-antwoord nadat de taak voor inhouds toezicht is voltooid. Deze bestaat uit de volgende elementen:
 
 - Samen vatting van video gegevens
-- **Opnamen** als ' **fragmenten** '
-- **Key-frames** als " **Events** " met de vlag **reviewRecommended "(= True of false)** op basis van de scores voor **volwassenen** en **ongepaste**
-- **Start** , **duration** , **totalDuration** en **Time Stamp** bevinden zich in ' Ticks '. Delen door **tijd schaal** om het getal in seconden op te halen.
+- **Opnamen** als '**fragmenten**'
+- **Key-frames** als "**Events**" met de vlag **reviewRecommended "(= True of false)** op basis van de scores voor **volwassenen** en **ongepaste**
+- **Start**, **duration**, **totalDuration** en **Time Stamp** bevinden zich in ' Ticks '. Delen door **tijd schaal** om het getal in seconden op te halen.
  
 > [!NOTE]
 > - `adultScore` vertegenwoordigt de potentiële aanwezigheids-en voorspellende Score van inhoud die in bepaalde situaties als seksueel expliciet of volwassen kan worden beschouwd.
@@ -430,9 +430,5 @@ Analyseer het JSON-antwoord nadat de taak voor inhouds toezicht is voltooid. Dez
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het genereren van [video beoordelingen](video-reviews-quickstart-dotnet.md) uit uw toezicht uitvoer.
-
-U kunt de [transcriptie](video-transcript-moderation-review-tutorial-dotnet.md) van uw video beoordelingen toevoegen.
-
-Bekijk de gedetailleerde zelf studie over het bouwen van een [volledige video-en transcriptie oplossing](video-transcript-moderation-review-tutorial-dotnet.md).
 
 [Down load de Visual Studio-oplossing](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) voor deze en andere content moderator Quick starts voor .net.

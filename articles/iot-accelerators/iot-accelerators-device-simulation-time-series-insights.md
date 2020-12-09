@@ -8,12 +8,12 @@ ms.date: 08/20/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: db9ba3efe60af830c0e15310b6127c18130f00b9
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: e1409b43f0ce1fc0d8c622dda79e857ac6abdd33
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076246"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854560"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Time Series Insights gebruiken om telemetrie te visualiseren die wordt verzonden vanuit de apparaat simulatie oplossings versneller
 
@@ -23,7 +23,7 @@ Met de Device simulatie Solution Accelerator kunt u telemetrie genereren op basi
 
 Als u de stappen in deze hand leiding wilt volgen, hebt u een actief Azure-abonnement nodig. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-In de stappen in deze hand leiding wordt ervan uitgegaan dat u de apparaat simulatie oplossings versneller hebt geïmplementeerd in uw Azure-abonnement. Als u de oplossings versneller nog niet hebt geïmplementeerd, volgt u de stappen in de Snelstartgids [een simulatie van een Cloud oplossing implementeren en uitvoeren](quickstart-device-simulation-deploy.md) .
+In de stappen in deze hand leiding wordt ervan uitgegaan dat u de apparaat simulatie oplossings versneller hebt geïmplementeerd in uw Azure-abonnement. Zie [device simulatie Deployment](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) op github als u nog geen apparaat simulatie hebt geïmplementeerd.
 
 In dit artikel wordt ervan uitgegaan dat de naam van uw oplossings versneller is **Contoso-simulatie**. Vervang **Contoso-simulatie** door de naam van uw oplossings versneller als u de volgende stappen uitvoert.
 
@@ -68,7 +68,7 @@ In de volgende stappen wordt de Azure CLI in de Azure Cloud Shell gebruikt voor 
     | Naam van omgeving | De volgende scherm afbeelding maakt gebruik van de naam **Contoso-TSI**. Kies uw eigen unieke naam wanneer u deze stap uitvoert. |
     | Abonnement | Selecteer uw Azure-abonnement in de vervolgkeuzelijst. |
     | Resourcegroep | **Contoso-simulatie**. Gebruik de naam van uw oplossings versneller. |
-    | Locatie | In dit voor beeld wordt **VS-Oost**gebruikt. Maak uw omgeving in dezelfde regio als de simulatie Accelerator van uw apparaat. |
+    | Locatie | In dit voor beeld wordt **VS-Oost** gebruikt. Maak uw omgeving in dezelfde regio als de simulatie Accelerator van uw apparaat. |
     | Sku |**S1** |
     | Capaciteit | **1** |
 
@@ -155,7 +155,7 @@ De Time Series Insights Explorer is een web-app die u kunt gebruiken voor het vi
 
     ![Time Series Insights Explorer-query toevoegen](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-new-query.png)
 
-1. Selecteer de **laatste 30 minuten** als tijds Panne, **vochtigheids graad** als **meting**en **iothub-Connection-apparaat-id** als **splitsing op** waarde:
+1. Selecteer de **laatste 30 minuten** als tijds Panne, **vochtigheids graad** als **meting** en **iothub-Connection-apparaat-id** als **splitsing op** waarde:
 
     ![Time Series Insights Explorer-query](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-query2.png)
 
@@ -167,7 +167,7 @@ De Time Series Insights Explorer is een web-app die u kunt gebruiken voor het vi
 
 Als u van plan bent om verder te gaan, moet u de oplossings versneller implementeren.
 
-Als u de oplossings versneller niet meer nodig hebt, verwijdert u deze van de pagina [ingerichte oplossingen](https://www.azureiotsolutions.com/Accelerators#dashboard) door deze te selecteren en vervolgens op **oplossing verwijderen**te klikken.
+Als u de oplossings versneller niet meer nodig hebt, verwijdert u deze van de pagina [ingerichte oplossingen](https://www.azureiotsolutions.com/Accelerators#dashboard) door deze te selecteren en vervolgens op **oplossing verwijderen** te klikken.
 
 Als u de Time Series Insights-omgeving aan de resource groep van de oplossings versneller hebt toegevoegd, wordt deze automatisch verwijderd wanneer u de oplossings versneller verwijdert. Anders moet u de Time Series Insights omgeving hand matig verwijderen uit de Azure Portal.
 

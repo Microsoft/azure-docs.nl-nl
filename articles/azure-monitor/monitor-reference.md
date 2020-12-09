@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 5be6a2d73be35b3d637df9364364784d373dabb3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 08d30fb72398c4b43422eb21f132d5fddd5502b7
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186691"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853137"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Wat wordt er bewaakt door Azure Monitor?:
 In dit artikel worden de verschillende toepassingen en services beschreven die door Azure Monitor worden bewaakt. 
@@ -40,7 +40,7 @@ Inzichten bieden een aangepaste bewakings ervaring voor bepaalde toepassingen en
 
 Oplossingen zijn gebaseerd op logboek query's en weer gaven die zijn aangepast voor een bepaalde toepassing of service. Ze verzamelen en analyseren alleen logboeken en worden na verloop van tijd afgeschaft om inzicht te krijgen in de voor keuren.
 
-| Oplossing | Description |
+| Oplossing | Beschrijving |
 |:---|:---|
 | [Status van agent](insights/solution-agenthealth.md) | Analyseer de status en configuratie van Log Analytics agents. |
 | [Waarschuwingsbeheer](platform/alert-management-solution.md) | Analyseer waarschuwingen die zijn verzameld van System Center Operations Manager, nagios of zabbix. |
@@ -99,7 +99,7 @@ De volgende tabel geeft een lijst van Azure-Services en de gegevens die ze in Az
 |Database for PostgreSQL | Ja | Ja | Nee |  |
 |Database Migration Service | Nee | Nee | Nee |  |
 |Databricks | Nee | Ja | Nee |  |
-|DDoS Protection | Ja | Ja | Nee |  |
+|DDoS-beveiliging | Ja | Ja | Nee |  |
 |DevOps | Nee | Nee | Nee |  |
 |DNS | Ja | Nee | Nee |  |
 |Domeinnamen | Nee | Nee | Nee |  |
@@ -177,7 +177,7 @@ Zie [overzicht van Azure monitor-agents](platform/agents-overview.md) voor meer 
 
 | Agent |  Metrische gegevens | Logboeken |
 |:---|:---|:---|:---|
-| [Azure Monitor-agent (preview-versie)](platform/azure-monitor-agent-overview.md) | Ja | Ja |
+| [Azure Monitor-agent (preview)](platform/azure-monitor-agent-overview.md) | Ja | Ja |
 | [Log Analytics-agent](platform/log-analytics-agent.md) | Nee | Ja|
 | [Diagnostische extensie](platform/diagnostics-extension-overview.md) | Ja | Nee |
 | [Telegraf-agent](platform/collect-custom-metrics-linux-telegraf.md) | Ja | Nee |
@@ -187,16 +187,16 @@ Zie [overzicht van Azure monitor-agents](platform/agents-overview.md) voor meer 
 ## <a name="product-integrations"></a>Product integraties
 De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log Analytics-werk ruimte, zodat deze kunnen worden geanalyseerd met andere logboek gegevens die worden verzameld door Azure Monitor.
 
-| Product/service | Description |
+| Product/service | Beschrijving |
 |:---|:---|
 | [Azure Automation](../automation/index.yml) | Updates van het besturings systeem beheren en wijzigingen bijhouden op Windows-en Linux-computers. Zie [Wijzigingen bijhouden](../automation/change-tracking/overview.md) en [updatebeheer](../automation/update-management/overview.md). |
 | [Azure Information Protection ](/azure/information-protection/) | U kunt documenten en e-mail berichten classificeren en optioneel beveiligen. Zie [centrale rapportage voor Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
 | [Azure Security Center](../security-center/index.yml) | Verzamelen en analyseren van beveiligings gebeurtenissen en het uitvoeren van bedreigings analyses. [Gegevens verzameling in azure Security Center](../security-center/security-center-enable-data-collection.md) weer geven |
 | [Azure Sentinel](../sentinel/index.yml) | Maakt verbinding met verschillende bronnen, waaronder Office 365 en Amazon Web Services Cloud Trail. Zie [verbinding maken met gegevens bronnen](../sentinel/connect-data-sources.md). |
 | [Microsoft Intune](/intune/) | Een diagnostische instelling maken om logboeken naar Azure Monitor te verzenden. Zie [logboek gegevens naar opslag, Event hubs of log Analytics verzenden in intune (preview)](/intune/fundamentals/review-logs-using-azure-monitor).  |
-| Netwerk  | [Netwerkprestatiemeter](insights/network-performance-monitor.md) -Controleer de netwerk verbinding en prestaties voor service-en toepassings eindpunten.<br>[Azure-toepassing gateway](insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) -logboeken en metrische gegevens van Azure-toepassing gateway analyseren.<br>[Traffic Analytics](../network-watcher/traffic-analytics.md) -Network Watcher netwerk beveiligings groep (NSG) stroom logboeken analyseren om inzicht te krijgen in de verkeers stroom in uw Azure-Cloud. |
+| Netwerk  | [Netwerkprestatiemeter](insights/network-performance-monitor.md) -Controleer de netwerk verbinding en prestaties voor service-en toepassings eindpunten.<br>[Azure-toepassing gateway](insights/azure-networking-analytics.md#azure-application-gateway-analytics) -logboeken en metrische gegevens van Azure-toepassing gateway analyseren.<br>[Traffic Analytics](../network-watcher/traffic-analytics.md) -Network Watcher netwerk beveiligings groep (NSG) stroom logboeken analyseren om inzicht te krijgen in de verkeers stroom in uw Azure-Cloud. |
 | [Office 365](insights/solution-office-365.md) | Uw Office 365-omgeving bewaken. Bijgewerkte versie met verbeterde onboarding beschikbaar via Azure Sentinel. |
-| [SQL-analyse](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
+| [SQL Analytics](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
 | [Surface Hub](insights/surface-hubs.md) | De status en het gebruik van Surface Hub apparaten bijhouden. |
 | [System Center Operations Manager](/system-center/scom) | Gegevens verzamelen van Operations Manager agents door hun beheer groep te verbinden met Azure Monitor. Zie [Operations Manager verbinding maken met Azure monitor](platform/om-agents.md)<br> Evalueer het risico en de status van uw System Center Operations Manager-beheer groep met [Operations Manager-beoordelings](insights/scom-assessment.md) oplossing. |
 | [Micro soft teams-kamers](/microsoftteams/room-systems/azure-monitor-deploy) | Geïntegreerd, end-to-end-beheer van micro soft teams-apparaten. |
@@ -208,7 +208,7 @@ De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log
 ## <a name="other-solutions"></a>Andere oplossingen
 Andere oplossingen zijn beschikbaar voor het bewaken van verschillende toepassingen en services, maar actieve ontwikkeling is gestopt en is mogelijk niet beschikbaar in alle regio's. Deze worden gedekt door de Azure Log Analytics gegevens opname service level agreement.
 
-| Oplossing | Description |
+| Oplossing | Beschrijving |
 |:---|:---|
 | [Active Directory status controle](insights/ad-assessment.md) | Het risico en de status van uw Active Directory omgevingen evalueren. |
 | [Replicatie status van Active Directory](insights/ad-replication-status.md) | Bewaakt uw Active Directory-omgeving regel matig voor replicatie fouten. |
@@ -222,7 +222,7 @@ Andere oplossingen zijn beschikbaar voor het bewaken van verschillende toepassin
 
 ## <a name="third-party-integration"></a>Integratie van derden
 
-| Oplossing | Description |
+| Oplossing | Beschrijving |
 |:---|:---|
 | [ITSM](platform/itsmc-overview.md) | Met de IT Service Management-connector (ITSMC) kunt u Azure verbinden met een ondersteund ITSM-product/service (IT-servicebeheer).  |
 

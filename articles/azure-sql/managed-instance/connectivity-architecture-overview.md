@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 10/22/2020
-ms.openlocfilehash: 5ebe0bcf1e491166c5fc61597904056307f9679c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e67376e2ef79f9711f54ce54d0d91623593ca8ea
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098005"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853285"
 ---
 # <a name="connectivity-architecture-for-azure-sql-managed-instance"></a>Connectiviteitsarchitectuur van Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -107,7 +107,7 @@ Implementeer SQL Managed instance in een toegewezen subnet in het virtuele netwe
 - **Voldoende IP-adressen:** Het subnet van het SQL-beheerde exemplaar moet ten minste 32 IP-adressen hebben. Zie [de grootte van het subnet voor SQL Managed instance bepalen](vnet-subnet-determine-size.md)voor meer informatie. U kunt beheerde exemplaren in [het bestaande netwerk](vnet-existing-add-subnet.md) implementeren nadat u deze hebt geconfigureerd om te voldoen aan [de netwerk vereisten voor SQL Managed instance](#network-requirements). Als dat niet mogelijk is, kunt u een [nieuw netwerk en subnet](virtual-network-subnet-create-arm-template.md) maken.
 
 > [!IMPORTANT]
-> Wanneer u een beheerd exemplaar maakt, wordt een netwerk intentie beleid toegepast op het subnet om niet-compatibele wijzigingen in de netwerk installatie te voor komen. Nadat het laatste exemplaar van het subnet is verwijderd, wordt het netwerkintentiebeleid ook verwijderd.
+> Wanneer u een beheerd exemplaar maakt, wordt een netwerk intentie beleid toegepast op het subnet om niet-compatibele wijzigingen in de netwerk installatie te voor komen. Nadat het laatste exemplaar van het subnet is verwijderd, wordt het netwerkintentiebeleid ook verwijderd. De onderstaande regels zijn alleen bedoeld ter informatie en u moet ze niet implementeren met ARM-sjabloon/Power shell/CLI. Als u de meest recente officiële sjabloon wilt gebruiken, kunt u [deze altijd ophalen uit de portal](https://docs.microsoft.com/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal).
 
 ### <a name="mandatory-inbound-security-rules-with-service-aided-subnet-configuration"></a>Verplichte regels voor binnenkomende beveiliging met configuratie van geaidede subnetten
 
@@ -309,226 +309,14 @@ Als het virtuele netwerk een aangepaste DNS bevat, moet de aangepaste DNS-server
 
 ### <a name="networking-constraints"></a>Netwerk beperkingen
 
-**TLS 1,2 wordt afgedwongen voor uitgaande verbindingen** : In januari 2020 heeft micro soft TLS 1,2 afgedwongen voor verkeer binnen de service in alle Azure-Services. Voor Azure SQL Managed instance heeft dit tot gevolg dat TLS 1,2 wordt afgedwongen voor uitgaande verbindingen die worden gebruikt voor replicatie en gekoppelde server verbindingen met SQL Server. Als u versies van SQL Server ouder dan 2016 met SQL Managed instance gebruikt, moet u ervoor zorgen dat er [TLS 1,2-specifieke updates](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) zijn toegepast.
+**TLS 1,2 wordt afgedwongen voor uitgaande verbindingen**: In januari 2020 heeft micro soft TLS 1,2 afgedwongen voor verkeer binnen de service in alle Azure-Services. Voor Azure SQL Managed instance heeft dit tot gevolg dat TLS 1,2 wordt afgedwongen voor uitgaande verbindingen die worden gebruikt voor replicatie en gekoppelde server verbindingen met SQL Server. Als u versies van SQL Server ouder dan 2016 met SQL Managed instance gebruikt, moet u ervoor zorgen dat er [TLS 1,2-specifieke updates](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) zijn toegepast.
 
 De volgende functies van het virtuele netwerk worden momenteel niet ondersteund met SQL Managed instance:
 
-- **Micro soft-peering** : het inschakelen van [micro soft-peering](../../expressroute/expressroute-faqs.md#microsoft-peering) op ExpressRoute-circuits die rechtstreeks of buiten gebruik worden gepeerd met een virtueel netwerk waarbij het SQL Managed instance-exemplaar van invloed is op de verkeers stroom tussen onderdelen van een SQL Managed instance binnen het virtuele netwerk en de services waarvan deze afhankelijk is, waardoor Implementaties van SQL Managed instance naar virtueel netwerk waarop micro soft-peering al is ingeschakeld, zullen naar verwachting mislukken.
-- **Globale Virtual Network-peering** : de [peering van virtuele netwerken](../../virtual-network/virtual-network-peering-overview.md) tussen Azure-regio's werkt niet voor door SQL beheerde instanties die worden geplaatst in subnetten die zijn gemaakt vóór 9/22/2020.
-- **AzurePlatformDNS** : het gebruik van [de AzurePlatformDNS-servicetag voor](../../virtual-network/service-tags-overview.md) het blok keren van de DNS-omzetting van het platform zou het SQL Managed instance niet beschikbaar laten. Hoewel SQL Managed instance de door de klant gedefinieerde DNS voor DNS-omzetting in de Engine ondersteunt, is er een afhankelijkheid van platform-DNS voor platform bewerkingen.
-- **NAT-gateway** : door [Azure Virtual Network NAT](../../virtual-network/nat-overview.md) te gebruiken voor het beheren van uitgaande verbindingen met een specifiek openbaar IP-adres, wordt het door SQL beheerde exemplaar niet beschikbaar weer gegeven. De service SQL Managed instance is momenteel beperkt tot het gebruik van basis load balancer die geen samen werking van binnenkomende en uitgaande stromen biedt met Virtual Network NAT.
-
-### <a name="deprecated-network-requirements-without-service-aided-subnet-configuration"></a>Keur Netwerk vereisten zonder service-aided subnet-configuratie
-
-Implementeer SQL Managed instance in een toegewezen subnet in het virtuele netwerk. Het subnet moet de volgende eigenschappen hebben:
-
-- **Toegewezen subnet:** Het subnet van het SQL Managed instance kan geen andere Cloud service bevatten die eraan is gekoppeld en kan geen gateway-subnet zijn. Het subnet mag geen resource bevatten, maar een door SQL beheerd exemplaar, en u kunt later geen andere typen resources toevoegen in het subnet.
-- **Netwerk beveiligings groep (NSG):** Een NSG die aan het virtuele netwerk is gekoppeld, moet regels voor [inkomende beveiliging](#mandatory-inbound-security-rules) en [uitgaande beveiligings regels](#mandatory-outbound-security-rules) vóór andere regels definiëren. U kunt een NSG gebruiken voor het beheren van de toegang tot het gegevens eind punt van de SQL Managed instance door verkeer te filteren op poort 1433 en poorten 11000-11999 wanneer SQL Managed instance is geconfigureerd voor omleidings verbindingen.
-- Door de **gebruiker gedefinieerde route tabel (UDR):** Een UDR-tabel die aan het virtuele netwerk is gekoppeld, moet specifieke [vermeldingen](#user-defined-routes)bevatten.
-- **Geen service-eind punten:** Er moet geen service-eind punt zijn gekoppeld aan het subnet van het SQL-beheerde exemplaar. Zorg ervoor dat de optie service-eind punten is uitgeschakeld tijdens het maken van het virtuele netwerk.
-- **Voldoende IP-adressen:** Het subnet van het SQL-beheerde exemplaar moet ten minste 16 IP-adressen hebben. Het aanbevolen minimumaantal is 32 IP-adressen. Zie [de grootte van het subnet voor SQL Managed instance bepalen](vnet-subnet-determine-size.md)voor meer informatie. U kunt beheerde exemplaren in [het bestaande netwerk](vnet-existing-add-subnet.md) implementeren nadat u deze hebt geconfigureerd om te voldoen aan [de netwerk vereisten voor SQL Managed instance](#network-requirements). Als dat niet mogelijk is, kunt u een [nieuw netwerk en subnet](virtual-network-subnet-create-arm-template.md) maken.
-
-> [!IMPORTANT]
-> U kunt geen nieuw beheerd exemplaar implementeren als het doel-subnet deze kenmerken niet heeft. Wanneer u een beheerd exemplaar maakt, wordt een netwerk intentie beleid toegepast op het subnet om niet-compatibele wijzigingen in de netwerk installatie te voor komen. Nadat het laatste exemplaar van het subnet is verwijderd, wordt het netwerkintentiebeleid ook verwijderd.
-
-### <a name="mandatory-inbound-security-rules"></a>Verplichte regels voor binnenkomende beveiliging
-
-| Naam       |Poort                        |Protocol|Bron           |Doel|Actie|
-|------------|----------------------------|--------|-----------------|-----------|------|
-|beheer  |9000, 9003, 1438, 1440, 1452|TCP     |Alle              |MI-SUBNET  |Toestaan |
-|mi_subnet   |Alle                         |Alle     |MI-SUBNET        |MI-SUBNET  |Toestaan |
-|health_probe|Alle                         |Alle     |AzureLoadBalancer|MI-SUBNET  |Toestaan |
-
-### <a name="mandatory-outbound-security-rules"></a>Verplichte uitgaande beveiligings regels
-
-| Naam       |Poort          |Protocol|Bron           |Doel|Actie|
-|------------|--------------|--------|-----------------|-----------|------|
-|beheer  |443, 12000    |TCP     |MI-SUBNET        |AzureCloud |Toestaan |
-|mi_subnet   |Alle           |Alle     |MI-SUBNET        |MI-SUBNET  |Toestaan |
-
-> [!IMPORTANT]
-> Zorg ervoor dat er slechts één binnenkomende regel is voor poorten 9000, 9003, 1438, 1440 en 1452, en één uitgaande regel voor poorten 443 en 12000. Het inrichten van SQL Managed instance via Azure Resource Manager implementaties mislukt als inkomende en uitgaande regels afzonderlijk voor elke poort worden geconfigureerd. Als deze poorten zich in afzonderlijke regels bevinden, mislukt de implementatie met de fout code `VnetSubnetConflictWithIntendedPolicy` .
-
-\* MI-SUBNET verwijst naar het IP-adres bereik voor het SUBNET in de vorm x. x. x. x/y. U kunt deze informatie vinden in het Azure Portal, in eigenschappen van subnet.
-
-> [!IMPORTANT]
-> Hoewel vereiste binnenkomende beveiligings regels verkeer toestaan van _een_ bron op poort 9000, 9003, 1438, 1440 en 1452, worden deze poorten beveiligd door een ingebouwde firewall. Zie [het adres van het beheer eindpunt bepalen](management-endpoint-find-ip-address.md)voor meer informatie.
-
-> [!NOTE]
-> Als u transactionele replicatie gebruikt in een SQL Managed instance en als u een exemplaar database als een uitgever of een distributeur gebruikt, opent u poort 445 (TCP uitgaand) in de beveiligings regels van het subnet. Deze poort biedt toegang tot de Azure-bestands share.
-
-### <a name="user-defined-routes"></a>Door de gebruiker gedefinieerde routes
-
-|Naam|Adresvoorvoegsel|Volgende hop|
-|----|--------------|-------|
-|subnet_to_vnetlocal|MI-SUBNET|Virtueel netwerk|
-|Mi-13-64-11-nexthop-Internet|13.64.0.0/11|Internet|
-|Mi-13-104-14-nexthop-Internet|13.104.0.0/14|Internet|
-|Mi-20-33-16-nexthop-Internet|20.33.0.0/16|Internet|
-|Mi-20-34-15-nexthop-Internet|20.34.0.0/15|Internet|
-|Mi-20-36-14-nexthop-Internet|20.36.0.0/14|Internet|
-|Mi-20-40-13-nexthop-Internet|20.40.0.0/13|Internet|
-|Mi-20-48-12-nexthop-Internet|20.48.0.0/12|Internet|
-|Mi-20-64-10-nexthop-Internet|20.64.0.0/10|Internet|
-|Mi-20-128-16-nexthop-Internet|20.128.0.0/16|Internet|
-|Mi-20-135-16-nexthop-Internet|20.135.0.0/16|Internet|
-|Mi-20-136-16-nexthop-Internet|20.136.0.0/16|Internet|
-|Mi-20-140-15-nexthop-Internet|20.140.0.0/15|Internet|
-|Mi-20-143-16-nexthop-Internet|20.143.0.0/16|Internet|
-|Mi-20-144-14-nexthop-Internet|20.144.0.0/14|Internet|
-|Mi-20-150-15-nexthop-Internet|20.150.0.0/15|Internet|
-|Mi-20-160-12-nexthop-Internet|20.160.0.0/12|Internet|
-|Mi-20-176-14-nexthop-Internet|20.176.0.0/14|Internet|
-|Mi-20-180-14-nexthop-Internet|20.180.0.0/14|Internet|
-|Mi-20-184-13-nexthop-Internet|20.184.0.0/13|Internet|
-|Mi-20-192-10-nexthop-Internet|20.192.0.0/10|Internet|
-|Mi-40-64-10-nexthop-Internet|40.64.0.0/10|Internet|
-|Mi-51-4-15-nexthop-Internet|51.4.0.0/15|Internet|
-|Mi-51-8-16-nexthop-Internet|51.8.0.0/16|Internet|
-|Mi-51-10-15-nexthop-Internet|51.10.0.0/15|Internet|
-|Mi-51-18-16-nexthop-Internet|51.18.0.0/16|Internet|
-|Mi-51-51-16-nexthop-Internet|51.51.0.0/16|Internet|
-|Mi-51-53-16-nexthop-Internet|51.53.0.0/16|Internet|
-|Mi-51-103-16-nexthop-Internet|51.103.0.0/16|Internet|
-|Mi-51-104-15-nexthop-Internet|51.104.0.0/15|Internet|
-|Mi-51-132-16-nexthop-Internet|51.132.0.0/16|Internet|
-|Mi-51-136-15-nexthop-Internet|51.136.0.0/15|Internet|
-|Mi-51-138-16-nexthop-Internet|51.138.0.0/16|Internet|
-|Mi-51-140-14-nexthop-Internet|51.140.0.0/14|Internet|
-|Mi-51-144-15-nexthop-Internet|51.144.0.0/15|Internet|
-|Mi-52-96-12-nexthop-Internet|52.96.0.0/12|Internet|
-|Mi-52-112-14-nexthop-Internet|52.112.0.0/14|Internet|
-|Mi-52-125-16-nexthop-Internet|52.125.0.0/16|Internet|
-|Mi-52-126-15-nexthop-Internet|52.126.0.0/15|Internet|
-|Mi-52-130-15-nexthop-Internet|52.130.0.0/15|Internet|
-|Mi-52-132-14-nexthop-Internet|52.132.0.0/14|Internet|
-|Mi-52-136-13-nexthop-Internet|52.136.0.0/13|Internet|
-|Mi-52-145-16-nexthop-Internet|52.145.0.0/16|Internet|
-|Mi-52-146-15-nexthop-Internet|52.146.0.0/15|Internet|
-|Mi-52-148-14-nexthop-Internet|52.148.0.0/14|Internet|
-|Mi-52-152-13-nexthop-Internet|52.152.0.0/13|Internet|
-|Mi-52-160-11-nexthop-Internet|52.160.0.0/11|Internet|
-|Mi-52-224-11-nexthop-Internet|52.224.0.0/11|Internet|
-|Mi-64-4-18-nexthop-Internet|64.4.0.0/18|Internet|
-|Mi-65-52-14-nexthop-Internet|65.52.0.0/14|Internet|
-|Mi-66-119-144-20-nexthop-Internet|66.119.144.0/20|Internet|
-|Mi-70-37-17-nexthop-Internet|70.37.0.0/17|Internet|
-|Mi-70-37-128-18-nexthop-Internet|70.37.128.0/18|Internet|
-|Mi-91-190-216-21-nexthop-Internet|91.190.216.0/21|Internet|
-|Mi-94-245-64-18-nexthop-Internet|94.245.64.0/18|Internet|
-|Mi-103-9-8-22-nexthop-Internet|103.9.8.0/22|Internet|
-|Mi-103-25-156-24-nexthop-Internet|103.25.156.0/24|Internet|
-|Mi-103-25-157-24-nexthop-Internet|103.25.157.0/24|Internet|
-|Mi-103-25-158-23-nexthop-Internet|103.25.158.0/23|Internet|
-|Mi-103-36-96-22-nexthop-Internet|103.36.96.0/22|Internet|
-|Mi-103-255-140-22-nexthop-Internet|103.255.140.0/22|Internet|
-|Mi-104-40-13-nexthop-Internet|104.40.0.0/13|Internet|
-|Mi-104-146-15-nexthop-Internet|104.146.0.0/15|Internet|
-|Mi-104-208-13-nexthop-Internet|104.208.0.0/13|Internet|
-|Mi-111-221-16-20-nexthop-Internet|111.221.16.0/20|Internet|
-|Mi-111-221-64-18-nexthop-Internet|111.221.64.0/18|Internet|
-|Mi-129-75-16-nexthop-Internet|129.75.0.0/16|Internet|
-|Mi-131-107-16-nexthop-Internet|131.107.0.0/16|Internet|
-|Mi-131-253-1-24-nexthop-Internet|131.253.1.0/24|Internet|
-|Mi-131-253-3-24-nexthop-Internet|131.253.3.0/24|Internet|
-|Mi-131-253-5-24-nexthop-Internet|131.253.5.0/24|Internet|
-|Mi-131-253-6-24-nexthop-Internet|131.253.6.0/24|Internet|
-|Mi-131-253-8-24-nexthop-Internet|131.253.8.0/24|Internet|
-|Mi-131-253-12-22-nexthop-Internet|131.253.12.0/22|Internet|
-|Mi-131-253-16-23-nexthop-Internet|131.253.16.0/23|Internet|
-|Mi-131-253-18-24-nexthop-Internet|131.253.18.0/24|Internet|
-|Mi-131-253-21-24-nexthop-Internet|131.253.21.0/24|Internet|
-|Mi-131-253-22-23-nexthop-Internet|131.253.22.0/23|Internet|
-|Mi-131-253-24-21-nexthop-Internet|131.253.24.0/21|Internet|
-|Mi-131-253-32-20-nexthop-Internet|131.253.32.0/20|Internet|
-|Mi-131-253-61-24-nexthop-Internet|131.253.61.0/24|Internet|
-|Mi-131-253-62-23-nexthop-Internet|131.253.62.0/23|Internet|
-|Mi-131-253-64-18-nexthop-Internet|131.253.64.0/18|Internet|
-|Mi-131-253-128-17-nexthop-Internet|131.253.128.0/17|Internet|
-|Mi-132-245-16-nexthop-Internet|132.245.0.0/16|Internet|
-|Mi-134-170-16-nexthop-Internet|134.170.0.0/16|Internet|
-|Mi-134-177-16-nexthop-Internet|134.177.0.0/16|Internet|
-|Mi-137-116-15-nexthop-Internet|137.116.0.0/15|Internet|
-|Mi-137-135-16-nexthop-Internet|137.135.0.0/16|Internet|
-|Mi-138-91-16-nexthop-Internet|138.91.0.0/16|Internet|
-|Mi-138-196-16-nexthop-Internet|138.196.0.0/16|Internet|
-|Mi-139-217-16-nexthop-Internet|139.217.0.0/16|Internet|
-|Mi-139-219-16-nexthop-Internet|139.219.0.0/16|Internet|
-|Mi-141-251-16-nexthop-Internet|141.251.0.0/16|Internet|
-|Mi-146-147-16-nexthop-Internet|146.147.0.0/16|Internet|
-|Mi-147-243-16-nexthop-Internet|147.243.0.0/16|Internet|
-|Mi-150-171-16-nexthop-Internet|150.171.0.0/16|Internet|
-|Mi-150-242-48-22-nexthop-Internet|150.242.48.0/22|Internet|
-|Mi-157-54-15-nexthop-Internet|157.54.0.0/15|Internet|
-|Mi-157-56-14-nexthop-Internet|157.56.0.0/14|Internet|
-|Mi-157-60-16-nexthop-Internet|157.60.0.0/16|Internet|
-|Mi-167-105-16-nexthop-Internet|167.105.0.0/16|Internet|
-|Mi-167-220-16-nexthop-Internet|167.220.0.0/16|Internet|
-|Mi-168-61-16-nexthop-Internet|168.61.0.0/16|Internet|
-|Mi-168-62-15-nexthop-Internet|168.62.0.0/15|Internet|
-|Mi-191-232-13-nexthop-Internet|191.232.0.0/13|Internet|
-|Mi-192-32-16-nexthop-Internet|192.32.0.0/16|Internet|
-|Mi-192-48-225-24-nexthop-Internet|192.48.225.0/24|Internet|
-|Mi-192-84-159-24-nexthop-Internet|192.84.159.0/24|Internet|
-|Mi-192-84-160-23-nexthop-Internet|192.84.160.0/23|Internet|
-|Mi-192-197-157-24-nexthop-Internet|192.197.157.0/24|Internet|
-|Mi-193-149-64-19-nexthop-Internet|193.149.64.0/19|Internet|
-|Mi-193-221-113-24-nexthop-Internet|193.221.113.0/24|Internet|
-|Mi-194-69-96-19-nexthop-Internet|194.69.96.0/19|Internet|
-|Mi-194-110-197-24-nexthop-Internet|194.110.197.0/24|Internet|
-|Mi-198-105-232-22-nexthop-Internet|198.105.232.0/22|Internet|
-|Mi-198-200-130-24-nexthop-Internet|198.200.130.0/24|Internet|
-|Mi-198-206-164-24-nexthop-Internet|198.206.164.0/24|Internet|
-|Mi-199-60-28-24-nexthop-Internet|199.60.28.0/24|Internet|
-|Mi-199-74-210-24-nexthop-Internet|199.74.210.0/24|Internet|
-|Mi-199-103-90-23-nexthop-Internet|199.103.90.0/23|Internet|
-|Mi-199-103-122-24-nexthop-Internet|199.103.122.0/24|Internet|
-|Mi-199-242-32-20-nexthop-Internet|199.242.32.0/20|Internet|
-|Mi-199-242-48-21-nexthop-Internet|199.242.48.0/21|Internet|
-|Mi-202-89-224-20-nexthop-Internet|202.89.224.0/20|Internet|
-|Mi-204-13-120-21-nexthop-Internet|204.13.120.0/21|Internet|
-|Mi-204-14-180-22-nexthop-Internet|204.14.180.0/22|Internet|
-|Mi-204-79-135-24-nexthop-Internet|204.79.135.0/24|Internet|
-|Mi-204-79-179-24-nexthop-Internet|204.79.179.0/24|Internet|
-|Mi-204-79-181-24-nexthop-Internet|204.79.181.0/24|Internet|
-|Mi-204-79-188-24-nexthop-Internet|204.79.188.0/24|Internet|
-|Mi-204-79-195-24-nexthop-Internet|204.79.195.0/24|Internet|
-|Mi-204-79-196-23-nexthop-Internet|204.79.196.0/23|Internet|
-|Mi-204-79-252-24-nexthop-Internet|204.79.252.0/24|Internet|
-|Mi-204-152-18-23-nexthop-Internet|204.152.18.0/23|Internet|
-|Mi-204-152-140-23-nexthop-Internet|204.152.140.0/23|Internet|
-|Mi-204-231-192-24-nexthop-Internet|204.231.192.0/24|Internet|
-|Mi-204-231-194-23-nexthop-Internet|204.231.194.0/23|Internet|
-|Mi-204-231-197-24-nexthop-Internet|204.231.197.0/24|Internet|
-|Mi-204-231-198-23-nexthop-Internet|204.231.198.0/23|Internet|
-|Mi-204-231-200-21-nexthop-Internet|204.231.200.0/21|Internet|
-|Mi-204-231-208-20-nexthop-Internet|204.231.208.0/20|Internet|
-|Mi-204-231-236-24-nexthop-Internet|204.231.236.0/24|Internet|
-|Mi-205-174-224-20-nexthop-Internet|205.174.224.0/20|Internet|
-|Mi-206-138-168-21-nexthop-Internet|206.138.168.0/21|Internet|
-|Mi-206-191-224-19-nexthop-Internet|206.191.224.0/19|Internet|
-|Mi-207-46-16-nexthop-Internet|207.46.0.0/16|Internet|
-|Mi-207-68-128-18-nexthop-Internet|207.68.128.0/18|Internet|
-|Mi-208-68-136-21-nexthop-Internet|208.68.136.0/21|Internet|
-|Mi-208-76-44-22-nexthop-Internet|208.76.44.0/22|Internet|
-|Mi-208-84-21-nexthop-Internet|208.84.0.0/21|Internet|
-|Mi-209-240-192-19-nexthop-Internet|209.240.192.0/19|Internet|
-|Mi-213-199-128-18-nexthop-Internet|213.199.128.0/18|Internet|
-|Mi-216-32-180-22-nexthop-Internet|216.32.180.0/22|Internet|
-|Mi-216-220-208-20-nexthop-Internet|216.220.208.0/20|Internet|
-|Mi-23-96-13-nexthop-Internet|23.96.0.0/13|Internet|
-|Mi-42-159-16-nexthop-Internet|42.159.0.0/16|Internet|
-|Mi-51-13-17-nexthop-Internet|51.13.0.0/17|Internet|
-|Mi-51-107-16-nexthop-Internet|51.107.0.0/16|Internet|
-|Mi-51-116-16-nexthop-Internet|51.116.0.0/16|Internet|
-|Mi-51-120-16-nexthop-Internet|51.120.0.0/16|Internet|
-|Mi-51-120-128-17-nexthop-Internet|51.120.128.0/17|Internet|
-|Mi-51-124-16-nexthop-Internet|51.124.0.0/16|Internet|
-|Mi-102-37-18-nexthop-Internet|102.37.0.0/18|Internet|
-|Mi-102-133-16-nexthop-Internet|102.133.0.0/16|Internet|
-|Mi-199-30-16-20-nexthop-Internet|199.30.16.0/20|Internet|
-|Mi-204-79-180-24-nexthop-Internet|204.79.180.0/24|Internet|
-||||
+- **Micro soft-peering**: het inschakelen van [micro soft-peering](../../expressroute/expressroute-faqs.md#microsoft-peering) op ExpressRoute-circuits die rechtstreeks of buiten gebruik worden gepeerd met een virtueel netwerk waarbij het SQL Managed instance-exemplaar van invloed is op de verkeers stroom tussen onderdelen van een SQL Managed instance binnen het virtuele netwerk en de services waarvan deze afhankelijk is, waardoor Implementaties van SQL Managed instance naar virtueel netwerk waarop micro soft-peering al is ingeschakeld, zullen naar verwachting mislukken.
+- **Globale Virtual Network-peering**: de [peering van virtuele netwerken](../../virtual-network/virtual-network-peering-overview.md) tussen Azure-regio's werkt niet voor door SQL beheerde instanties die worden geplaatst in subnetten die zijn gemaakt vóór 9/22/2020.
+- **AzurePlatformDNS**: het gebruik van [de AzurePlatformDNS-servicetag voor](../../virtual-network/service-tags-overview.md) het blok keren van de DNS-omzetting van het platform zou het SQL Managed instance niet beschikbaar laten. Hoewel SQL Managed instance de door de klant gedefinieerde DNS voor DNS-omzetting in de Engine ondersteunt, is er een afhankelijkheid van platform-DNS voor platform bewerkingen.
+- **NAT-gateway**: door [Azure Virtual Network NAT](../../virtual-network/nat-overview.md) te gebruiken voor het beheren van uitgaande verbindingen met een specifiek openbaar IP-adres, wordt het door SQL beheerde exemplaar niet beschikbaar weer gegeven. De service SQL Managed instance is momenteel beperkt tot het gebruik van basis load balancer die geen samen werking van binnenkomende en uitgaande stromen biedt met Virtual Network NAT.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
-ms.openlocfilehash: 7c1b9ad033ade3b577dc4a06e84801dab3b7eb70
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 76cfefa3f104ecef69e28fecd1c37fc336b0ce8c
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763958"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854645"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Een App Service-app configureren in het Azure Portal
 
@@ -29,7 +29,7 @@ Selecteer in het menu links van de app **configuratie**  >  **Toepassings instel
 
 ![Toepassingsinstellingen](./media/configure-common/open-ui.png)
 
-Voor ASP.NET-en ASP.NET Core-ontwikkel aars is het instellen van de app-instellingen in App Service vergelijkbaar met de instelling in `<appSettings>` in *Web.config* of *appsettings.jsop*, maar de waarden in app service overschrijven ze in *Web.config* of *appsettings.jsop*. U kunt de ontwikkelings instellingen (bijvoorbeeld het lokale MySQL-wacht woord) in *Web.config* of *appsettings.jsop* -en productie geheimen beveiligen (bijvoorbeeld Azure MySQL-database wachtwoord) veilig in app service. Dezelfde code maakt gebruik van uw ontwikkelings instellingen wanneer u lokaal fouten opspoort en uw productie geheimen gebruikt wanneer deze worden geïmplementeerd in Azure.
+Voor ASP.NET-en ASP.NET Core-ontwikkel aars is het instellen van de app-instellingen in App Service vergelijkbaar met de instelling in `<appSettings>` in *Web.config* of *appsettings.jsop*, maar de waarden in app service overschrijven ze in *Web.config* of *appsettings.jsop*. U kunt de ontwikkelings instellingen (bijvoorbeeld het lokale MySQL-wacht woord) in *Web.config* of *appsettings.jsop* en productie geheimen (bijvoorbeeld Azure MySQL-database wachtwoord) veilig in app service blijven. Dezelfde code maakt gebruik van uw ontwikkelings instellingen wanneer u lokaal fouten opspoort en uw productie geheimen gebruikt wanneer deze worden geïmplementeerd in Azure.
 
 U kunt ook de app-instellingen ophalen als omgevings variabelen tijdens runtime. Zie voor taalspecifieke stappen voor de taal stack:
 

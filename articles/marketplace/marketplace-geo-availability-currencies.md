@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
 author: keferna
 ms.author: keferna
-ms.date: 07/29/2020
-ms.openlocfilehash: bdb746c75a175d906301bcfca0b1472383fceff9
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.date: 12/07/2020
+ms.openlocfilehash: 118fe70abf52a6c96f4f2dc47e3ad23a388f3598
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778067"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853744"
 ---
 # <a name="geographic-availability-and-currency-support-for-the-commercial-marketplace"></a>Geografische Beschik baarheid en valuta ondersteuning voor de commerciële Marketplace
 
@@ -46,22 +46,22 @@ Commerciële Marketplace-aanbiedingen kunnen worden aangeschaft in 141-geografi 
 | Brunei                              | BN        | USD          | BND, EUR, SGD, USD |
 | Bulgarije                            | BG        | EUR          | BGN, EUR, USD |
 | Cabo Verde                          | CV        | USD          | CVE, EUR, USD |
-| Kameroen                            | CM        | USD          | XAF, EUR, USD |
-| Canada                              | CA        | CAD          | CAD, EUR, USD  |
-| Kaaimaneilanden                      | KY        | USD          | KYD, EUR, USD |
+| Kameroen                            | CM        | USD          | EUR, USD, XAF |
+| Canada                              | CA        | CAD          | CAD, EUR, USD |
+| Kaaimaneilanden                      | KY        | USD          | EUR, KYD, USD |
 | Chili                               | CL        | USD          | CLP, EUR, USD |
 | China\**                            | CN        | N.v.t.          | N.v.t. |
 | Colombia                            | CO        | USD          | COP, EUR, USD |
 | Costa Rica                          | CR        | USD          | CRC, EUR, USD |
-| Cote d'Ivoire                       | CI        | USD          | XOF, EUR, USD |
-| Kroatië                             | HR        | EUR          | HRK, EUR, USD |
+| Cote d'Ivoire                       | CI        | USD          | EUR, USD, XOF |
+| Kroatië                             | HR        | EUR          | EUR, HRK, USD |
 | Curaçao                             | WAARNAAR        | USD          | ANG, EUR, USD |
 | Cyprus                              | CY        | EUR          | EUR, USD  |
-| Czechia                             | CZ        | EUR          | EUR, USD, CZK |
+| Czechia                             | CZ        | EUR          | CZK, EUR, USD |
 | Denemarken                             | DK        | DKK          | DKK, EUR, USD |
 | Dominicaanse Republiek                  | DO        | USD          | DOP, EUR, USD |
 | Ecuador                             | EC        | USD          | EUR, USD |
-| Egypte                               | EG        | USD          | EUR, EGP EUR |
+| Egypte                               | EG        | USD          | EGP, EUR, USD |
 | El Salvador                         | SV        | USD          | EUR, USD |
 | Estland                             | EE        | EUR          | EUR, USD |
 | Ethiopië                            | ET        | USD          | ETB, EUR, USD |
@@ -91,7 +91,7 @@ Commerciële Marketplace-aanbiedingen kunnen worden aangeschaft in 141-geografi 
 | Kenia                               | KE        | USD          | EUR, KES, USD |
 | Korea (Zuid)                       | KR        | KRW          | EUR, VERLOOPT, USD |
 | Koeweit                              | KW        | USD          | EUR, KWD, USD |
-| Kirgistan                          | KG        | USD          | USD, EUR, KGS |
+| Kirgistan                          | KG        | USD          | EUR, KGS, USD |
 | Letland                              | LV        | EUR          | EUR, USD |
 | Libanon                             | LB        | USD          | EUR, LBP, USD |
 | Libië                               | LY        | USD          | EUR, LYD, USD |
@@ -139,8 +139,8 @@ Commerciële Marketplace-aanbiedingen kunnen worden aangeschaft in 141-geografi 
 | Slovenië                            | SI        | EUR          | EUR, USD |
 | Zuid-Afrika                        | ZA        | USD          | EUR, USD, ZAR |
 | Spanje                               | ES        | EUR          | EUR, USD |
-| Sri Lanka                           | LK        | USD          | EUR, USD, LKR |
-| Zweden                              | SE        | SEK          | EUR, USD, SEK |
+| Sri Lanka                           | LK        | USD          | EUR, LKR, USD |
+| Zweden                              | SE        | SEK          | EUR, SEK, USD  |
 | Zwitserland                         | CH        | CHF          | CHF, EUR, USD |
 | Taiwan                              | TW        | TWD          | EUR, TWD, USD |
 | Tadzjikistan                          | TJ        | USD          | EUR, TJS, USD |
@@ -151,7 +151,7 @@ Commerciële Marketplace-aanbiedingen kunnen worden aangeschaft in 141-geografi 
 | Turkije                              | TR        | USD          | EUR, TRY, USD |
 | Turkmenistan                        | TM        | USD          | EUR, TMT, USD |
 | Oeganda                              | UG        | USD          | EUR, UGX, USD |
-| Oekraïne                             | UA        | USD          | EUR, UAH, RUB, USD |
+| Oekraïne                             | UA        | USD          | EUR, RUB, UAH, USD |
 | Verenigde Arabische Emiraten                | AE        | USD          | AED, EUR, USD |
 | Verenigd Koninkrijk                      | GB        | GBP          | EUR, GBP, USD |
 | Verenigde Staten                       | VS        | USD          | EUR, USD |

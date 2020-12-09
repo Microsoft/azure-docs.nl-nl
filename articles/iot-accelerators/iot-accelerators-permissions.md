@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: 6585718a549c0e0a6eac1ab50788798e1021fef9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b05ed6e1239721bcf3c1cf33d3ee63a992fd9843
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446809"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96853221"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>De azureiotsolutions.com-site gebruiken voor het implementeren van uw oplossings versneller
 
@@ -22,7 +22,7 @@ U kunt Azure IoT-oplossings Accelerators implementeren voor uw Azure-abonnement 
 ![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
 
 > [!TIP]
-> Als u meer controle over het implementatie proces nodig hebt, kunt u de [CLI gebruiken voor het implementeren van een oplossings versneller](iot-accelerators-remote-monitoring-deploy-cli.md).
+> Als u meer controle over het implementatie proces nodig hebt, kunt u de CLI gebruiken voor het implementeren van een oplossings versneller.
 
 U kunt de oplossings versnellers implementeren in de volgende configuraties:
 
@@ -64,9 +64,4 @@ Als u een hardwarefabrikant bent, klikt u op **een partner** om meer te weten te
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de quickstarts om een van de oplossingsverbeteringen uit te proberen:
-
-* [Een externe bewakingsoplossing uitproberen](quickstart-remote-monitoring-deploy.md)
-* [Een oplossing voor een verbonden fabriek uitproberen](quickstart-connected-factory-deploy.md)
-* [Een oplossing voor voorspellend onderhoud uitproberen](quickstart-predictive-maintenance-deploy.md)
-* [Een apparaatsimulatieoplossing uitproberen](quickstart-device-simulation-deploy.md)
+Als u een van de IoT-oplossings accelerators wilt uitproberen, bekijkt u de Snelstartgids: [een verbonden fabrieks oplossing proberen](quickstart-connected-factory-deploy.md).

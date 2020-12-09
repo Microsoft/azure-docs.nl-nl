@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: b-juche
-ms.openlocfilehash: 5409f9177116add1fd794ec1e72f276daf34e029
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1537a87999f9a8eecf83a2431b2f53d3ceaedacb
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659145"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96854696"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -60,7 +60,7 @@ Nee, Azure NetApp Files biedt momenteel geen ondersteuning voor dual stack-VNet 
 
 Gegevens verkeer tussen NFSv 4.1-clients en Azure NetApp Files volumes kan worden versleuteld met Kerberos met AES-256-versleuteling. Zie [Configure nfsv 4.1 Kerberos encryption for Azure NetApp files](configure-kerberos-encryption.md) voor meer informatie.   
 
-Gegevens verkeer tussen NFSv3-of SMBv3-clients naar Azure NetApp Files volumes is niet versleuteld. Het verkeer van een Azure-VM (waarop een NFS-of SMB-client wordt uitgevoerd) moet echter worden Azure NetApp Files net zo veilig zijn als andere verkeer van Azure-VM-naar-VM. Dit verkeer is lokaal voor het Azure Data Center-netwerk. 
+Gegevens verkeer tussen NFSv3-of SMB3-clients naar Azure NetApp Files volumes is niet versleuteld. Het verkeer van een Azure-VM (waarop een NFS-of SMB-client wordt uitgevoerd) moet echter worden Azure NetApp Files net zo veilig zijn als andere verkeer van Azure-VM-naar-VM. Dit verkeer is lokaal voor het Azure Data Center-netwerk. 
 
 ### <a name="can-the-storage-be-encrypted-at-rest"></a>Kan de opslag in rust worden versleuteld?
 

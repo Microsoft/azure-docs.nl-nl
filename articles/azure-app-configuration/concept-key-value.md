@@ -1,17 +1,17 @@
 ---
 title: Informatie over Azure-app configuratie sleutel-waarde Store
 description: Informatie over sleutel waarde-opslag in Azure-app configuratie, waarin configuratie gegevens worden opgeslagen als sleutel waarden. Sleutel waarden zijn een representatie van toepassings instellingen.
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: conceptual
-ms.date: 02/19/2020
-ms.openlocfilehash: b1998532c3d9e4272d91280d57d9ea2f6e7a262c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 08/04/2020
+ms.openlocfilehash: ad9e96433a7ee72476ae2251c684d17ec7a6d1ce
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88586389"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930242"
 ---
 # <a name="keys-and-values"></a>Sleutels en waarden
 
@@ -28,7 +28,7 @@ Hier volgt een voor beeld van sleutel namen die zijn gestructureerd in een hiër
     AppName:Service2:ApiEndpoint
 ```
 
-Het gebruik van configuratie gegevens in Application Frameworks kan specifieke naamgevings schema's voor sleutel waarden dicteren. In het voor beeld van de lente van een Java-Framework definieert `Environment` u bijvoorbeeld bronnen voor het leveren van instellingen aan een lente-toepassing.  Deze zijn para meters van variabelen die *toepassings naam* en- *profiel*bevatten. Sleutels voor lente-Cloud configuratie gegevens beginnen meestal met deze twee elementen gescheiden door een scheidings teken.
+Het gebruik van configuratie gegevens in Application Frameworks kan specifieke naamgevings schema's voor sleutel waarden dicteren. In het voor beeld van de lente van een Java-Framework definieert `Environment` u bijvoorbeeld bronnen voor het leveren van instellingen aan een lente-toepassing.  Deze zijn para meters van variabelen die *toepassings naam* en- *profiel* bevatten. Sleutels voor lente-Cloud configuratie gegevens beginnen meestal met deze twee elementen gescheiden door een scheidings teken.
 
 Sleutels die zijn opgeslagen in App Configuration zijn hoofdlettergevoelige tekenreeksen, op basis van Unicode. De sleutels *app1* en *app1* zijn uniek in een app-configuratie opslag. Houd dit in gedachten wanneer u configuratie-instellingen in een toepassing gebruikt omdat sommige Frameworks configuratie sleutels hoofdletter gevoelig verwerken. Het is niet raadzaam om cases te gebruiken om sleutels te onderscheiden.
 
@@ -76,7 +76,7 @@ Elke sleutelwaarde is uniek te identificeren met de sleutel en een label, welke 
 
 U kunt ook de volgende label patronen toevoegen:
 
-| Label | Beschrijving |
+| Label | Description |
 |---|---|
 | `label` wordt weggelaten of `label=*` | Komt overeen met een label, inclusief `\0` |
 | `label=%00` | Komt overeen met `\0` label |

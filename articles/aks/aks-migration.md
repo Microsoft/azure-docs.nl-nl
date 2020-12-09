@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 9371feb527bbb2d94d43072bb8a44a6705b45055
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e73ca9e485e6926c30a73ba56b24bcd4dc9a836
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87280219"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929732"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Migreren naar Azure Kubernetes service (AKS)
 
@@ -132,7 +132,7 @@ Als uw toepassing meerdere replica's kan hosten die naar dezelfde bestands share
 * Wijs uw live verkeer naar uw nieuwe AKS-cluster.
 * Verbreek de verbinding met het oude cluster.
 
-Als u met een lege share wilt beginnen en een kopie van de bron gegevens wilt maken, kunt u de [`az storage file copy`](/cli/azure/storage/file/copy?view=azure-cli-latest) opdrachten gebruiken om uw gegevens te migreren.
+Als u met een lege share wilt beginnen en een kopie van de bron gegevens wilt maken, kunt u de [`az storage file copy`](/cli/azure/storage/file/copy) opdrachten gebruiken om uw gegevens te migreren.
 
 
 #### <a name="migrating-persistent-volumes"></a>Permanente volumes migreren
@@ -159,7 +159,7 @@ Sommige open source-hulpprogram ma's kunnen u helpen bij het maken van beheerde 
 
 ### <a name="deployment-of-your-cluster-configuration"></a>Implementatie van uw cluster configuratie
 
-We raden u aan om uw bestaande, doorlopende integratie (CI) en continue Delivery (CD)-pijp lijn te gebruiken voor het implementeren van een bekende, goede configuratie op AKS. U kunt Azure-pijp lijnen gebruiken om [uw toepassingen te bouwen en te implementeren in AKS](/azure/devops/pipelines/ecosystems/kubernetes/aks-template?view=azure-devops). Kloon uw bestaande implementatie taken en zorg ervoor dat `kubeconfig` u naar het nieuwe AKS-cluster verwijst.
+We raden u aan om uw bestaande, doorlopende integratie (CI) en continue Delivery (CD)-pijp lijn te gebruiken voor het implementeren van een bekende, goede configuratie op AKS. U kunt Azure-pijp lijnen gebruiken om [uw toepassingen te bouwen en te implementeren in AKS](/azure/devops/pipelines/ecosystems/kubernetes/aks-template). Kloon uw bestaande implementatie taken en zorg ervoor dat `kubeconfig` u naar het nieuwe AKS-cluster verwijst.
 
 Als dat niet mogelijk is, kunt u resource definities uit uw bestaande Kubernetes-cluster exporteren en vervolgens Toep assen op AKS. U kunt gebruiken `kubectl` om objecten te exporteren.
 

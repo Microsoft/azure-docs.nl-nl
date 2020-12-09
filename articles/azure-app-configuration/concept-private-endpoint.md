@@ -2,17 +2,17 @@
 title: Privé-eind punten gebruiken voor Azure-app configuratie
 description: Uw app-configuratie archief beveiligen met behulp van privé-eind punten
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: conceptual
-ms.date: 3/12/2020
-ms.author: lcozzens
-ms.openlocfilehash: a29c8c02093f47807ec71ffcc01e26514976ce79
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 07/15/2020
+ms.openlocfilehash: 6cadadfb3623d05dd3ae3851acd5eaca13860023
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071707"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929840"
 ---
 # <a name="using-private-endpoints-for-azure-app-configuration"></a>Privé-eind punten gebruiken voor Azure-app configuratie
 
@@ -41,7 +41,7 @@ Wanneer u een persoonlijk eind punt maakt, moet u de app-configuratie opslag opg
 
 ### <a name="connecting-to-private-endpoints"></a>Verbinding maken met privé-eind punten
 
-Azure is afhankelijk van de DNS-omzetting om verbindingen van het VNet naar de configuratie opslag via een persoonlijke koppeling te routeren. U kunt snel verbindings reeksen vinden in de Azure portal door uw app-configuratie archief te selecteren en vervolgens **instellingen**  >  **toegangs sleutels**te selecteren.  
+Azure is afhankelijk van de DNS-omzetting om verbindingen van het VNet naar de configuratie opslag via een persoonlijke koppeling te routeren. U kunt snel verbindings reeksen vinden in de Azure portal door uw app-configuratie archief te selecteren en vervolgens **instellingen**  >  **toegangs sleutels** te selecteren.  
 
 > [!IMPORTANT]
 > Gebruik hetzelfde connection string om verbinding te maken met uw app-configuratie archief met behulp van persoonlijke eind punten zoals u zou gebruiken voor een openbaar eind punt. Maak geen verbinding met het archief met behulp van de `privatelink` subdomein-URL.

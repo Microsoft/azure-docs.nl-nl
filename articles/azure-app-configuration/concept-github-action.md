@@ -1,17 +1,17 @@
 ---
 title: Uw GitHub-opslag plaats synchroniseren met de app-configuratie
 description: Gebruik GitHub-acties om uw app-configuratie-exemplaar automatisch bij te werken wanneer u uw GitHub-opslag plaats bijwerkt.
-author: lisaguthrie
-ms.author: lcozzens
-ms.date: 02/20/2020
+author: AlexandraKemperMS
+ms.author: alkemper
+ms.date: 05/28/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 66d0e32e7dfdd5ab2abee5108ac8ce54c5222747
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b2b5f4bcbcc5af07a763ee4dff2d42413750fb7
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87371818"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930276"
 ---
 # <a name="sync-your-github-repository-to-app-configuration"></a>Uw GitHub-opslag plaats synchroniseren met de app-configuratie
 
@@ -25,7 +25,7 @@ Een GitHub actions- [werk stroom](https://help.github.com/articles/about-github-
 De GitHub- [documentatie](https://help.github.com/actions/automating-your-workflow-with-github-actions/configuring-a-workflow) biedt uitgebreide weer gave van github-werk stromen en-acties. 
 
 ## <a name="enable-github-actions-in-your-repository"></a>GitHub-acties inschakelen in uw opslag plaats
-Als u deze GitHub actie wilt gaan gebruiken, gaat u naar uw opslag plaats en selecteert u het tabblad **acties** . Selecteer **nieuwe werk stroom**en **Stel zelf een werk stroom**in. Ga ten slotte naar de Marketplace voor ' Azure-app-configuratie synchronisatie '.
+Als u deze GitHub actie wilt gaan gebruiken, gaat u naar uw opslag plaats en selecteert u het tabblad **acties** . Selecteer **nieuwe werk stroom** en **Stel zelf een werk stroom** in. Ga ten slotte naar de Marketplace voor ' Azure-app-configuratie synchronisatie '.
 > [!div class="mx-imgBorder"]
 > ![Selecteer het tabblad actie](media/find-github-action.png)
 
@@ -308,15 +308,15 @@ Invoer parameters geven gegevens op die worden gebruikt door de actie tijdens ru
 
 | Invoer naam | Vereist? | Waarde |
 |----|----|----|
-| configurationFile | Ja | Relatief pad naar het configuratie bestand in de opslag plaats.  Globs-patronen worden ondersteund en kunnen meerdere bestanden bevatten. |
-| indeling | Ja | Bestands indeling van het configuratie bestand.  Geldige indelingen zijn: JSON, YAML, eigenschappen. |
-| connectionString | Ja | Verbindings reeks voor het app-configuratie-exemplaar. De connection string moet worden opgeslagen als een geheim in de GitHub-opslag plaats en alleen de geheime naam moet in de werk stroom worden gebruikt. |
-| scheiding | Ja | Scheidings teken dat wordt gebruikt bij het afvlakken van het configuratie bestand naar sleutel-waardeparen.  Geldige waarden zijn:. , ; : - _ __ / |
-| beleids | Nee | Het voor voegsel dat moet worden toegevoegd aan het begin van de sleutels. |
-| label | Nee | Label dat wordt gebruikt bij het instellen van sleutel-waardeparen. Als u geen waarde opgeeft, wordt een NULL-label gebruikt. |
-| beperking | Nee | Een Booleaanse waarde die bepaalt of de strikte modus is ingeschakeld. De standaardwaarde is false. |
-| diepga | Nee | Maximale diepte voor het afvlakken van het configuratie bestand.  Depth moet een positief getal zijn.  De standaard waarde heeft geen maximale diepte. |
-| tags | Nee | Hiermee geeft u de tag die is ingesteld op sleutel-waardeparen.  De verwachte indeling is een stringified vorm van een JSON-object van de volgende vorm: {[propertyname: String]: String;} Elke eigenschaps naam-waarde wordt een tag. |
+| configurationFile | Yes | Relatief pad naar het configuratie bestand in de opslag plaats.  Globs-patronen worden ondersteund en kunnen meerdere bestanden bevatten. |
+| indeling | Yes | Bestands indeling van het configuratie bestand.  Geldige indelingen zijn: JSON, YAML, eigenschappen. |
+| connectionString | Yes | Verbindings reeks voor het app-configuratie-exemplaar. De connection string moet worden opgeslagen als een geheim in de GitHub-opslag plaats en alleen de geheime naam moet in de werk stroom worden gebruikt. |
+| scheiding | Yes | Scheidings teken dat wordt gebruikt bij het afvlakken van het configuratie bestand naar sleutel-waardeparen.  Geldige waarden zijn:. , ; : - _ __ / |
+| beleids | No | Het voor voegsel dat moet worden toegevoegd aan het begin van de sleutels. |
+| label | No | Label dat wordt gebruikt bij het instellen van sleutel-waardeparen. Als u geen waarde opgeeft, wordt een NULL-label gebruikt. |
+| beperking | No | Een Booleaanse waarde die bepaalt of de strikte modus is ingeschakeld. De standaardwaarde is false. |
+| diepga | No | Maximale diepte voor het afvlakken van het configuratie bestand.  Depth moet een positief getal zijn.  De standaard waarde heeft geen maximale diepte. |
+| tags | No | Hiermee geeft u de tag die is ingesteld op sleutel-waardeparen.  De verwachte indeling is een stringified vorm van een JSON-object van de volgende vorm: {[propertyname: String]: String;} Elke eigenschaps naam-waarde wordt een tag. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

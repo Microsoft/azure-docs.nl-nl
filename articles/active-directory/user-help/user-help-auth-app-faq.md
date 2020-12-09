@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 12/01/2020
+ms.date: 12/09/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: f0cb7d4ebe428da4a370433b3e90a829f30489db
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: a1307aa19c66e3f6fcb71f677e6c67551d2a01f9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512202"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928321"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -118,7 +118,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **A**: Nee, meldingen werken alleen met micro soft-accounts en Azure Active Directory-accounts. Als uw werk of school gebruikmaakt van Azure AD-accounts, kunnen ze deze functie uitschakelen.
 
-### <a name="backup-and-recovery"></a>Back-up en herstel
+### <a name="backup-and-recovery"></a>Back-ups maken en herstellen
 
 **V**: Ik heb een nieuw apparaat of ik heb mijn apparaat teruggezet vanuit een back-up. Hoe kan ik mijn accounts in verificator opnieuw instellen?
 
@@ -207,6 +207,74 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 **V**: mijn app voor Apple Watch is vastgelopen. Kan ik mijn crash logboeken verzenden zodat je het kunt onderzoeken?
 
 **A**: u moet er eerst voor zorgen dat u ervoor hebt gekozen om uw analyses met ons te delen. Als u een TestFlight-gebruiker bent, bent u al aangemeld. Als dat niet het geval is, gaat u naar **instellingen > Privacy > Analytics** en selecteert u de opties **share iPhone & watch bekijken** en **delen met app-ontwikkel aars** .<br>Nadat u zich hebt aangemeld, kunt u proberen om uw crash te reproduceren zodat uw crash logboeken automatisch naar ons worden verzonden om te worden onderzocht. Als u uw crash echter niet kunt reproduceren, kunt u de logboek bestanden hand matig kopiëren en naar ons verzenden.<ol><li>Open de controle-app op uw telefoon, ga naar **instellingen > algemeen** en klik vervolgens op **Watch-analyse kopiëren**.</li><li>Zoek de overeenkomstige crash onder **instellingen > privacybeleid > analytics > Analytics-gegevens** en kopieer de hele tekst vervolgens hand matig.</li><li>Open de verificator op uw telefoon en plak de gekopieerde tekst in het tekstvak **delen met app-ontwikkel aars** op de pagina **Logboeken verzenden** .</li></ol>
+
+## <a name="autofill-for-consumers"></a>Automatisch door voeren voor consumenten
+
+**V**: wat is automatisch door voeren in verificator?
+
+**A**: de verificator-app slaat nu veilig wacht woorden op voor apps en websites die u op uw telefoon bezoekt. U kunt automatisch invullen gebruiken om uw wacht woorden op uw iOS-en Android-apparaten te synchroniseren en in te voeren. Nadat u de verificator-app hebt ingesteld als een automatische provider op uw telefoon, wordt u gevraagd uw wacht woorden op te slaan wanneer u deze invoert op een site of aanmeldings pagina voor een app. De wacht woorden worden opgeslagen als onderdeel van [uw Microsoft-account](https://account.microsoft.com/account) en zijn ook beschikbaar wanneer u zich aanmeldt bij micro soft Edge met uw Microsoft-account.
+
+**V**: welke gegevens kunnen door de verificator worden door voeren?
+
+**A**: de verificator kan gebruikers namen en wacht woorden invullen voor sites en apps die u op uw telefoon bezoekt.
+
+**V**: hoe kan ik het automatisch invullen van wacht woorden inschakelen in verificator op mijn telefoon?
+
+**A**: Volg deze stappen:
+
+1. Open de verificator-app.
+1. Schakel in **instellingen** onder **bèta** **automatisch invullen** in.
+1. Op het tabblad **wacht woorden** in verificator selecteert u **Aanmelden met Microsoft** en meldt u zich aan met [uw Microsoft-account](https://account.microsoft.com/account). Deze functie ondersteunt momenteel alleen micro soft-accounts en biedt nog geen ondersteuning voor werk-of school accounts.
+
+**V**: hoe kan ik de standaard provider voor automatisch invullen op mijn telefoon instellen als verificator?
+
+**A**: Volg deze stappen:
+
+1. Open de **instellingen** van de verificator en schakel vervolgens **automatisch invullen** in bij **bèta** .
+1. Meld u aan met [uw Microsoft-account](https://account.microsoft.com/account)op het tabblad **wacht woorden** in de app.
+1. Voer een van de volgende handelingen uit:
+
+   - Selecteer in iOS onder **instellingen** de optie **automatisch invullen inschakelen** in de sectie instellingen voor automatisch door voeren voor informatie over het instellen van verificator als standaard provider voor automatisch door voeren.
+   - Selecteer in Android onder **instellingen** de optie **instellen als automatische provider** in het gedeelte instellingen voor automatisch door voeren om verificator in te stellen als standaard provider voor automatisch door voeren.
+
+**V**: wat moet ik doen als de schakel optie voor **automatisch door voeren** in instellingen grijs wordt weer gegeven?
+
+**A**: automatisch door voeren is momenteel in bèta en is nog niet ingeschakeld voor alle organisaties of account typen. Als de schakel optie voor **automatisch aanvullen** in **instellingen** grijs wordt weer gegeven, is het waarschijnlijk dat u de verificator-app gebruikt met uw werk account. U kunt deze functie gebruiken op een apparaat waar uw werk account niet is toegevoegd. Als uw organisatie samen met micro soft werkt, wordt de schakel optie voor **automatisch aanvullen** ingeschakeld, zelfs wanneer een werk account wordt toegevoegd aan de verificator.
+
+**V**: hoe kan ik het synchroniseren van wacht woorden niet langer?
+
+**A**: als u wilt stoppen met het synchroniseren van wacht woorden in de verificator-app, opent u **instellingen** van instellingen voor  >  **automatisch door voeren**  >  **synchronisatie-account**. Op het volgende scherm kunt u de optie **synchroniseren stoppen en alle gegevens van automatisch door voeren verwijderen**. Hiermee worden wacht woorden en andere gegevens over automatisch door voeren van het apparaat verwijderd. Het verwijderen van gegevens over automatisch door voeren heeft geen invloed op multi-factor Authentication.
+
+**V**: hoe worden mijn wacht woorden beschermd door de verificator-app?
+
+**A**: verificator-app biedt al een hoge mate van beveiliging voor multi-factor Authentication en account beheer, en dezelfde High Security-balk is ook uitgebreid voor het beheren van uw wacht woorden.
+
+- **Sterke verificatie is vereist voor de verificator-app**: aanmelden bij verificator vereist een tweede factor. Dit betekent dat uw wacht woorden in de verificator-app niet kunnen worden geopend, zelfs niet als iemand uw Microsoft-account-wacht woord heeft.
+- **Gegevens over automatisch door voeren worden beveiligd met biometrie en de wachtwoord code**: voordat u een wacht woord voor een app of site kunt invoeren, is voor de verificator biometrisch of wachtwoord code voor het apparaat vereist. Dit zorgt ervoor dat zelfs als iemand anders toegang heeft tot uw apparaat, het niet mogelijk is om uw wacht woord in te vullen of weer te geven, omdat ze de biometrische of pincode van het apparaat niet kunnen opgeven. Bovendien kan een gebruiker de pagina met wacht woorden alleen openen als ze biometrische of pincode hebben, zelfs als ze app-vergren deling in app-instellingen uitschakelen.
+- Versleutelde **wacht woorden op het apparaat**: wacht woorden op het apparaat zijn versleuteld en sleutels voor versleuteling/ontsleuteling worden nooit opgeslagen en worden altijd direct gegenereerd. Wacht woorden worden alleen ontsleuteld wanneer een gebruiker dat wil, dat wil zeggen tijdens het door voeren of wanneer de gebruiker het wacht woord wil zien, beide biometrische of pincode vereisen.
+- **Cloud-en netwerk beveiliging**: uw wacht woorden in de cloud worden alleen versleuteld en ontsleuteld wanneer ze uw apparaat bereiken. Wacht woorden worden gesynchroniseerd via een met SSL beveiligde HTTPS-verbinding, waarmee wordt gegarandeerd dat een aanvaller gevoelige gegevens niet kan Eavesdrop wanneer deze wordt gesynchroniseerd. We zorgen er ook voor dat de Sanity van gegevens die via het netwerk worden gesynchroniseerd, wordt gecontroleerd met behulp van cryptografische gehashte functies (met name op hash-gebaseerde bericht verificatie code).
+
+## <a name="autofill-for-it-admins"></a>Automatisch door voeren voor IT-beheerders
+
+**V**: zullen mijn werk nemers of studenten gebruikmaken van het automatisch invullen van wacht woorden in de verificator-app?
+
+**A**: Nee. De functie voor automatisch door voeren is momenteel in bèta en is nog niet ingeschakeld voor alle organisaties of account typen. Als uw werk nemer of student hun werk-of school account aan Microsoft Authenticator app heeft toegevoegd, zijn wacht woorden niet meer toegankelijk voor deze gebruikers. De enige uitzonde ring op deze beperking is wanneer uw werk nemer of student het account work of school toevoegt aan micro soft Cloud multi-factor Authentication als een [extern of een account van derden](user-help-auth-app-add-non-ms-account.md).
+
+**V**: kan ik de functie voor automatisch aanvullen beschikbaar maken voor mijn werk nemers (of studenten)?
+
+**A**: Ja. Om uw werk nemers of studenten in te scha kelen, kan uw bedrijf of school worden toegevoegd aan een lijst met toegestane apps. Neem contact op met uw ondersteunings-of micro soft-website om toe te voegen aan de acceptatie lijst. Als u een IT-beheerder bent voor uw organisatie, kunt u ook een formulier invullen om uw interesse in te stellen in samen voegen in de [lijst met toegestane apps voor automatisch door voeren in verificator](https://aka.ms/RequestAutofillInAuthenticator).
+
+**V**: wordt het wacht woord voor het werk-of school account van mijn gebruikers automatisch gesynchroniseerd?
+
+**A**: Nee. Met wacht woord door voeren wordt geen werk-of school account-wacht woord voor uw gebruikers gesynchroniseerd. Wanneer gebruikers een site of een app bezoeken, bieden verificator het wacht woord voor die site of app op te slaan, en wordt het wacht woord alleen opgeslagen wanneer de gebruiker kiest.
+  
+**V**: kan ik toestaan: lijst met alleen bepaalde gebruikers van mijn organisatie voor automatisch door voeren?
+
+**A**: Nee. Ondernemingen kunnen op dit moment alleen automatisch invullen van wacht woorden inschakelen voor alle of geen van hun werk nemers. Deze besturings elementen worden geleidelijk uitgebreid.
+
+**V**: wat moet ik doen als mijn werk nemer of student meerdere werk-of school accounts heeft? Mijn werk nemer heeft bijvoorbeeld accounts van meerdere ondernemingen of scholen in hun Microsoft Authenticator.
+
+**A**: alle ondernemingen of scholen die in de verificator-app worden toegevoegd, moeten worden aangegeven voor het automatisch door voeren van de app-eigenaar om deze in te kunnen gebruiken. De enige uitzonde ring op deze beperking is wanneer uw werk nemer of student het account work of school toevoegt aan micro soft Cloud multi-factor Authentication als een [extern of een account van derden](user-help-auth-app-add-non-ms-account.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

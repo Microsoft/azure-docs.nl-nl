@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: c734c0ceb9c4d5418edc51a2c3ad3c052637ad31
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: fa99920c8e9d8cd532bb6230d6a337a038ee3e31
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696979"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929307"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Beheerde identiteiten gebruiken voor App Service en Azure Functions
 
@@ -308,7 +308,7 @@ Een app kan de beheerde identiteit gebruiken om tokens te verkrijgen voor toegan
 Mogelijk moet u de doel bron configureren om toegang toe te staan vanuit uw toepassing. Als u bijvoorbeeld een token aanvraagt om toegang te krijgen tot Key Vault, moet u ervoor zorgen dat u een toegangs beleid hebt toegevoegd dat de identiteit van uw toepassing bevat. Anders worden uw aanroepen naar Key Vault geweigerd, zelfs als ze het token bevatten. Zie [Azure-Services die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)voor meer informatie over welke bronnen Azure Active Directory-tokens ondersteunen.
 
 > [!IMPORTANT]
-> De back-end-services voor beheerde identiteiten bewaren een cache per resource-URI gedurende ongeveer acht uur. Als u het toegangs beleid van een bepaalde doel resource bijwerkt en direct een token voor die bron ophaalt, kunt u een token in de cache met verouderde machtigingen ontvangen totdat het token verloopt. Er is momenteel geen manier om het vernieuwen van tokens af te dwingen.
+> De back-end-services voor beheerde identiteiten zorgen voor een cache per resource-URI gedurende circa 24 uur. Als u het toegangs beleid van een bepaalde doel resource bijwerkt en direct een token voor die bron ophaalt, kunt u een token in de cache met verouderde machtigingen ontvangen totdat het token verloopt. Er is momenteel geen manier om het vernieuwen van tokens af te dwingen.
 
 Er is een eenvoudig REST-protocol voor het verkrijgen van een token in App Service en Azure Functions. Dit kan worden gebruikt voor alle toepassingen en talen. Voor .NET en Java biedt de Azure SDK een abstractie over dit protocol en wordt een lokale ontwikkel ervaring vergemakkelijkt.
 
@@ -324,7 +324,7 @@ Er zijn twee omgevings variabelen gedefinieerd voor een app met een beheerde ide
 
 De **IDENTITY_ENDPOINT** is een lokale URL van waaruit uw app tokens kan aanvragen. Als u een token voor een resource wilt ophalen, maakt u een HTTP GET-aanvraag naar dit eind punt, met inbegrip van de volgende para meters:
 
-> | Parameternaam    | In     | Beschrijving                                                                                                                                                                                                                                                                                                                                |
+> | Parameternaam    | In     | Description                                                                                                                                                                                                                                                                                                                                |
 > |-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | resource          | Query’s uitvoeren  | De Azure AD-resource-URI van de resource waarvoor een token moet worden verkregen. Dit kan een van de [Azure-Services zijn die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) of een andere resource-URI.    |
 > | api-versie       | Query’s uitvoeren  | De versie van de token-API die moet worden gebruikt. Gebruik ' 2019-08-01 ' of hoger (tenzij u Linux-verbruik gebruikt, dat momenteel alleen ' 2017-09-01 ' biedt).                                                                                                                                                                                                                                                                 |
@@ -338,7 +338,7 @@ De **IDENTITY_ENDPOINT** is een lokale URL van waaruit uw app tokens kan aanvrag
 
 Een geslaagd 200 OK-antwoord bevat een JSON-hoofd tekst met de volgende eigenschappen:
 
-> | Naam van eigenschap | Beschrijving                                                                                                                                                                                                                                        |
+> | Naam van eigenschap | Description                                                                                                                                                                                                                                        |
 > |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | access_token  | Het aangevraagde toegangs token. De aanroepende webservice kan dit token gebruiken om te verifiëren bij de ontvangende webservice.                                                                                                                               |
 > | client_id     | De client-ID van de identiteit die is gebruikt.                                                                                                                                                                                                       |

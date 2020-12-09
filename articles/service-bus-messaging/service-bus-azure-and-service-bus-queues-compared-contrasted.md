@@ -3,17 +3,17 @@ title: Azure Storage- en Service Bus-wachtrijen vergelijken
 description: Analyseer verschillen en overeenkomsten tussen twee typen wacht rijen die door Azure worden aangeboden.
 ms.topic: article
 ms.date: 11/04/2020
-ms.openlocfilehash: 5c65cf5ef2d572417ea70d0e0259cf2c03ab590e
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 31992aa2012009c51cbeae78010ae8ced65fc872
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379567"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928304"
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>Storage Queues and Service Bus Queues - Compared and Contrasted (Storage-wachtrijen en Service Bus-wachtrijen: overeenkomsten en verschillen)
 In dit artikel worden de verschillen en overeenkomsten geanalyseerd tussen de twee typen wacht rijen die worden aangeboden door Microsoft Azure: opslag wachtrijen en Service Bus wacht rijen. Met behulp van deze informatie kunt u een beter gefundeerde beslissing nemen over welke oplossing het beste aan uw behoeften voldoet.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure ondersteunt twee typen wachtrij mechanismen: **opslag wachtrijen** en **wacht rijen voor service bus**.
 
 **Opslag wachtrijen** maken deel uit van de [Azure Storage](https://azure.microsoft.com/services/storage/) -infra structuur. Ze bieden u de mogelijkheid om grote aantallen berichten op te slaan. U hebt overal ter wereld toegang tot berichten via geverifieerde oproepen met HTTP of HTTPS. Een wachtrijbericht kan maximaal 64 KB groot zijn. Een wachtrij kan miljoenen berichten bevatten, tot aan de totale capaciteitslimiet van een opslagaccount. Wachtrijen worden vaak gebruikt om een voorraad werk te maken dat asynchroon moet worden verwerkt. Zie [Wat zijn Azure Storage wachtrijen](../storage/queues/storage-queues-introduction.md)voor meer informatie.
@@ -131,7 +131,7 @@ In deze sectie worden opslag wachtrijen en Service Bus wachtrijen vergeleken met
 | Maximale bericht grootte |**64 kB**<br/><br/>(48 KB wanneer **Base64** -code ring wordt gebruikt)<br/><br/>Azure ondersteunt grote berichten door wacht rijen en blobs te combi neren. op die wijze kunt u Maxi maal 200 GB voor één item in de wachtrij plaatsen. |**256 KB** of **1 MB**<br/><br/>(inclusief header en hoofd tekst, maximale header grootte: 64 KB).<br/><br/>Is afhankelijk [van de servicelaag](service-bus-premium-messaging.md). |
 | Maximale bericht-TTL |**Oneindig** (API-versie 2017-07-27 of hoger) |**Time span. Max** |
 | Maximum aantal wacht rijen |**Onbeperkt** |**10.000**<br/><br/>(per service naam ruimte) |
-| Maximum aantal gelijktijdige clients |**Onbeperkt** |**Onbeperkt**<br/><br/>(100 gelijktijdige verbindings limiet geldt alleen voor communicatie op basis van TCP-protocol) |
+| Maximum aantal gelijktijdige clients |**Onbeperkt** |**5\.000** |
 
 ### <a name="additional-information"></a>Aanvullende informatie
 * Service Bus dwingt de limiet voor de wachtrij grootte af. De maximale wachtrij grootte wordt opgegeven bij het maken van een wachtrij. Dit kan een waarde tussen 1 GB en 80 GB zijn. Als de grootte van de wachtrij deze limiet bereikt, worden extra inkomende berichten geweigerd en ontvangt de aanroeper een uitzonde ring. Zie [Service Bus quota's](service-bus-quotas.md)voor meer informatie over quota's in service bus.

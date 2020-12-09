@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: 55651b3201676ee5cddb5412e950791afaa4e87a
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 01af7b251c9ce3bfebb87016c85ea3efd9c0e8ac
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852129"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928763"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
 
@@ -42,6 +42,13 @@ Meerdere Azure-gegevens fabrieken kunnen verbinding maken met één Azure contro
 
 ## <a name="create-new-data-factory-connection"></a>Nieuwe Data Factory verbinding maken
 
+>[!Note]
+>Als u de Data Factory verbindingen wilt toevoegen of verwijderen, moet u een van de controle sfeer liggen-rollen toewijzen:
+>- Eigenaar
+>- Beheerder van gebruikerstoegang
+>
+> Daarnaast moeten gebruikers de data factory ' eigenaar ' of ' Inzender ' zijn. 
+
 Volg de onderstaande stappen om een bestaand Data Factory accounts te koppelen aan uw controle sfeer liggen-Data Catalog.
 
 1. Selecteer **beheer centrum** in het navigatie deel venster aan de linkerkant.
@@ -70,11 +77,6 @@ Ga als volgt te werk om een data factory verbinding te verwijderen:
 1. Selecteer **bevestigen** in het pop-upvenster om de geselecteerde Data Factory verbindingen te verwijderen.
 
     :::image type="content" source="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png" alt-text="Scherm afbeelding die laat zien hoe u gegevens fabrieken selecteert om verbinding te verwijderen." lightbox="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png":::
-
->[!Note]
->Als u de Data Factory verbindingen wilt toevoegen of verwijderen, moet u een van de controle sfeer liggen-rollen toewijzen:
->- Eigenaar
->- Beheerders van gebruikers toegang dan moeten de gebruikers de data factory ' eigenaar ' of ' Inzender ' of ' Data Factory Inzender ' zijn. 
 
 ## <a name="configure-a-self-hosted-ir-to-collect-lineage-from-on-prem-sql"></a>Een zelf-hostende IR configureren voor het verzamelen van afkomst uit on-premises SQL
 

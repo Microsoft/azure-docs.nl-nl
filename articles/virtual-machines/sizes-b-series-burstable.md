@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 819654ef88584cb91d6032e46256258aaed524fd
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ea812df825288eae3822cce01b24ebc82534c541
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500305"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928814"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Grootte van de B-serie bebreekbaar virtuele machines
 
@@ -132,7 +132,7 @@ bijvoorbeeld: in het bovenstaande exemplaar is uw basis lijn 20%. Als u 10% van 
 
 ### <a name="q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart"></a>V: Waarom is mijn resterende tegoed ingesteld op 0 na het opnieuw implementeren of stoppen/starten?
 
-**A** : wanneer een virtuele machine ' REDPLOYED ' is en de VM naar een ander knoop punt verplaatst, gaat het geaccumuleerde tegoed verloren. Als de virtuele machine is gestopt/gestart, maar blijft op hetzelfde knoop punt, behoudt de VM het geaccumuleerde tegoed. Wanneer de VM wordt vernieuwd op een knoop punt, ontvangt deze een eerste tegoed, voor Standard_B8ms deze 240 is.
+**A** : wanneer een virtuele machine opnieuw wordt geïmplementeerd en de VM naar een ander knoop punt wordt verplaatst, gaat het geaccumuleerde tegoed verloren. Als de virtuele machine is gestopt/gestart, maar blijft op hetzelfde knoop punt, behoudt de VM het geaccumuleerde tegoed. Wanneer de VM wordt vernieuwd op een knoop punt, ontvangt deze een eerste tegoed, voor Standard_B8ms deze 240 is.
 
 ### <a name="q-what-happens-if-i-deploy-an-unsupported-os-image-on-b1ls"></a>V: wat gebeurt er als ik een niet-ondersteunde installatie kopie van het besturings systeem Implementeer op B1ls?
 

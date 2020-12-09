@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: jingwang
-ms.openlocfilehash: a8cd6386ed6004935b0a1e45a53c01668166c0e4
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 1b3ab569666ea413ba36da0dc00f6c37336c4443
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902252"
+ms.locfileid: "96931298"
 ---
 # <a name="copy-data-from-and-to-a-rest-endpoint-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar een REST-eind punt met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -303,12 +303,19 @@ De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kop
 | requestMethod | De HTTP-methode. Toegestane waarden zijn **post** (standaard), **put** en **patch**. | No |
 | additionalHeaders | Aanvullende HTTP-aanvraag headers. | No |
 | httpRequestTimeout | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Deze waarde is de time-out voor het verkrijgen van een reactie, niet de time-out voor het schrijven van de gegevens. De standaard waarde is **00:01:40**.  | No |
-| requestInterval | De interval tijd tussen verschillende aanvragen in milisecond. De waarde van het aanvraag interval moet een getal tussen [10, 60000] zijn. |  No |
+| requestInterval | De interval tijd tussen verschillende aanvragen in milliseconden. De waarde van het aanvraag interval moet een getal tussen [10, 60000] zijn. |  No |
 | httpCompressionType | Het type HTTP-compressie dat moet worden gebruikt bij het verzenden van gegevens met een optimaal compressie niveau. Toegestane waarden zijn **none** en **gzip**. | No |
 | writeBatchSize | Het aantal records dat per batch naar de REST-Sink moet worden geschreven. De standaard waarde is 10000. | No |
 
->[!NOTE]
->REST-connector als Sink werkt met de REST-eind punten die JSON accepteren. De gegevens worden alleen in JSON verzonden.
+REST-connector als Sink werkt samen met de REST-Api's die JSON accepteren. De gegevens worden in JSON verzonden met het volgende patroon. Als dat nodig is, kunt u de [schema toewijzing](copy-activity-schema-and-type-mapping.md#schema-mapping) van de Kopieer activiteit gebruiken om de vorm van de bron gegevens te wijzigen zodat deze voldoet aan de verwachte Payload door de rest API.
+
+```json
+[
+    { <data object> },
+    { <data object> },
+    ...
+]
+```
 
 **Voorbeeld:**
 
@@ -348,7 +355,7 @@ De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kop
 
 ## <a name="pagination-support"></a>Paginerings ondersteuning
 
-Normaal gesp roken beperkt REST API de grootte van de reactie lading van een enkele aanvraag onder een redelijk nummer; tijdens het retour neren van een grote hoeveelheid gegevens wordt het resultaat in meerdere pagina's gesplitst en moeten aanroepers opeenvolgende aanvragen verzenden om de volgende pagina van het resultaat op te halen. Normaal gesp roken is de aanvraag voor één pagina dynamisch en samengesteld op basis van de informatie die wordt geretourneerd door het antwoord op de vorige pagina.
+Bij het kopiëren van gegevens uit REST-Api's beperkt de REST API de grootte van de reactie lading van een enkele aanvraag onder een redelijk nummer; tijdens het retour neren van een grote hoeveelheid gegevens wordt het resultaat in meerdere pagina's gesplitst en moeten aanroepers opeenvolgende aanvragen verzenden om de volgende pagina van het resultaat op te halen. Normaal gesp roken is de aanvraag voor één pagina dynamisch en samengesteld op basis van de informatie die wordt geretourneerd door het antwoord op de vorige pagina.
 
 Deze algemene REST-connector ondersteunt de volgende paginerings patronen: 
 
@@ -459,7 +466,7 @@ De sjabloon definieert twee para meters:
 
 4. U ziet de pijp lijn die u hebt gemaakt, zoals wordt weer gegeven in het volgende voor beeld:  ![ scherm afbeelding toont de pijp lijn die is gemaakt op basis van de sjabloon.](media/solution-template-copy-from-rest-or-http-using-oauth/pipeline.png)
 
-5. Selecteer **Web** webactiviteit. Geef in **instellingen** de corresponderende **URL**, **methode**, **headers** en **hoofd tekst** op om een OAUTH Bearer-token op te halen uit de API voor aanmelden van de service waarvan u gegevens wilt kopiëren. In de tijdelijke aanduiding in de sjabloon wordt een voor beeld van een Azure Active Directory (AAD) OAuth gedemonstreerd. Opmerking AAD-verificatie wordt systeem eigen ondersteund door REST connector. Dit is slechts een voor beeld van een OAuth-stroom. 
+5. Selecteer  webactiviteit. Geef in **instellingen** de corresponderende **URL**, **methode**, **headers** en **hoofd tekst** op om een OAUTH Bearer-token op te halen uit de API voor aanmelden van de service waarvan u gegevens wilt kopiëren. In de tijdelijke aanduiding in de sjabloon wordt een voor beeld van een Azure Active Directory (AAD) OAuth gedemonstreerd. Opmerking AAD-verificatie wordt systeem eigen ondersteund door REST connector. Dit is slechts een voor beeld van een OAuth-stroom. 
 
     | Eigenschap | Beschrijving |
     |:--- |:--- |:--- |

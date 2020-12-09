@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 29db2214ddabeb6df2aa937c4ccd1f9938143969
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fcc482e215e646fec20516f35641bd05398d2f2d
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949442"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928712"
 ---
 # <a name="manage-azure-ad-b2c-custom-policies-with-azure-powershell"></a>Azure AD B2C aangepaste beleids regels beheren met Azure PowerShell
 
@@ -31,7 +31,7 @@ Azure PowerShell biedt verschillende cmdlets voor het opdracht regel-en op scrip
 
 * [Azure AD B2C Tenant](tutorial-create-tenant.md)en referenties voor een gebruiker in de directory met de [B2C IEF Policy](../active-directory/roles/permissions-reference.md#b2c-ief-policy-administrator) beheerdersrol
 * [Aangepast beleid](custom-policy-get-started.md) dat is geüpload naar uw Tenant
-* [Module Azure AD Power shell voor Graph **Preview**](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
+* [Module Azure AD Power shell voor Graph **Preview**](/powershell/azure/active-directory/install-adv2)
 
 ## <a name="connect-powershell-session-to-b2c-tenant"></a>Een Power shell-sessie verbinden met de B2C-Tenant
 

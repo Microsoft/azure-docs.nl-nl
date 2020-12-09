@@ -3,13 +3,13 @@ title: Azure Monitor resource logboeken ondersteunde services en categorieën
 description: Verwijzing van Azure Monitor inzicht krijgen in de ondersteunde services en het gebeurtenis schema voor Azure-resource Logboeken.
 ms.subservice: logs
 ms.topic: reference
-ms.date: 06/03/2020
-ms.openlocfilehash: 463b1d9d9c3ed1d94728874ba814554deb4f97c6
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 12/09/2020
+ms.openlocfilehash: c7b2d48b40843930bba78f54d2294769d952daf6
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920828"
+ms.locfileid: "96931225"
 ---
 # <a name="supported-categories-for-azure-resource-logs"></a>Ondersteunde categorieën voor Azure-resource logboeken
 
@@ -23,7 +23,7 @@ Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap
 
 ## <a name="costs"></a>Kosten
 
- Er zijn kosten verbonden aan het verzenden en opslaan van gegevens in Log Analytics en/of event hub. Bron logboeken zijn één type gegevens dat u naar deze locaties kunt verzenden. Er zijn extra [kosten verbonden aan het exporteren van sommige categorieën resource logboeken](https://azure.microsoft.com/pricing/details/monitor/). Andere kosten zijn gratis voor de export. In de onderstaande tabel worden de details weer gegeven.
+Er zijn kosten verbonden aan het verzenden en opslaan van gegevens in Log Analytics, Azure Storage en/of event hub. U kunt betalen voor de kosten om de gegevens op deze locaties op te halen en deze daar te bewaren.  Bron logboeken zijn één type gegevens dat u naar deze locaties kunt verzenden. Er zijn extra [kosten verbonden aan het exporteren van sommige categorieën resource logboeken](https://azure.microsoft.com/pricing/details/monitor/) naar deze locaties, terwijl andere geen export kosten in rekening worden gebracht. De specifieke export kosten worden in de onderstaande tabel weer gegeven.
 
 ## <a name="supported-log-categories-per-resource-type"></a>Ondersteunde logboek categorieën per resource type
 

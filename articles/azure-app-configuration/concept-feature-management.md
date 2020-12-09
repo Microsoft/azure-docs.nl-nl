@@ -1,18 +1,18 @@
 ---
 title: Onderdeel beheer met Azure-app configuratie
 description: Functies in-en uitschakelen met behulp van Azure-app configuratie
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.custom: devx-track-dotnet
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: b77f0063b37adbfaecaff68387e858d0077561b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cfd676092bcaede58909a3ec1eefeabb4c80f86b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212662"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930225"
 ---
 # <a name="feature-management-overview"></a>Overzicht van functie beheer
 
@@ -22,7 +22,7 @@ Feature Management is een moderne software-ontwikkelings praktijk die de functie
 
 Met functie beheer kunnen ontwikkel aars de volgende problemen oplossen:
 
-* **Code Branch Management**: gebruik functie vlaggen om nieuwe toepassings functionaliteit te verpakken die momenteel wordt ontwikkeld. Deze functionaliteit is standaard verborgen. U kunt de functie veilig verzenden, zelfs als deze nog niet is voltooid, en deze blijft in productie. Met deze methode, een *donkere implementatie*genoemd, kunt u al uw code aan het einde van elke ontwikkel cyclus vrijgeven. Het is niet meer nodig om code vertakkingen in meerdere ontwikkel cycli te onderhouden, omdat voor een bepaalde functie meer dan één cyclus vereist is.
+* **Code Branch Management**: gebruik functie vlaggen om nieuwe toepassings functionaliteit te verpakken die momenteel wordt ontwikkeld. Deze functionaliteit is standaard verborgen. U kunt de functie veilig verzenden, zelfs als deze nog niet is voltooid, en deze blijft in productie. Met deze methode, een *donkere implementatie* genoemd, kunt u al uw code aan het einde van elke ontwikkel cyclus vrijgeven. Het is niet meer nodig om code vertakkingen in meerdere ontwikkel cycli te onderhouden, omdat voor een bepaalde functie meer dan één cyclus vereist is.
 * **Test in productie**: gebruik functie vlaggen om vroegtijdige toegang te verlenen tot nieuwe functionaliteit in de productie. U kunt bijvoorbeeld de toegang tot team leden of interne bèta testers beperken. Deze gebruikers hebben de volledige betrouw baarheid van de productie in plaats van een gesimuleerde of gedeeltelijke ervaring in een test omgeving.
 * **Flighting**: gebruik functie vlaggen om een incrementele nieuwe functionaliteit voor eind gebruikers te implementeren. U kunt eerst een klein percentage van uw gebruikers populatie instellen en dit percentage geleidelijk verhogen.
 * **Instant Kill-Switch**: functie vlaggen bieden een inherenend veiligheids netwerk voor het vrijgeven van nieuwe functionaliteit. U kunt toepassings functies in-en uitschakelen zonder dat u code hoeft te implementeren. Als dat nodig is, kunt u een functie snel uitschakelen zonder uw toepassing opnieuw te bouwen en opnieuw te implementeren.

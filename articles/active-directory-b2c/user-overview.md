@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f7a4d0852edded516b7fbe42f15abfe160e44cd3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0a8e08d0045d0520241341cc08fb800468ed6897
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952791"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928610"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Overzicht van gebruikers accounts in Azure Active Directory B2C
 
@@ -50,21 +50,21 @@ Wanneer u een nieuw werk account toevoegt, moet u rekening houden met de volgend
 U kunt de volgende informatie gebruiken om een nieuw werk account te maken:
 
 - [Azure-portal](../active-directory/fundamentals/add-users-azure-active-directory.md)
-- [Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-post-users)
 
 ### <a name="update-a-user-profile"></a>Een gebruikers profiel bijwerken
 
 U kunt de volgende informatie gebruiken om het profiel van een gebruiker bij te werken:
 
 - [Azure-portal](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
-- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update)
 
 ### <a name="reset-a-password-for-a-user"></a>Een wacht woord voor een gebruiker opnieuw instellen
 
 U kunt de volgende informatie gebruiken om het wacht woord van een gebruiker opnieuw in te stellen:
 
 - [Azure-portal](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
-- [Microsoft Graph](/graph/api/user-update?view=graph-rest-1.0)
+- [Microsoft Graph](/graph/api/user-update)
 
 ## <a name="guest-user"></a>Gast gebruiker
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 11/19/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: e0a77e1e4757c8951756c3e41479628c293dfd8f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b8bdb216cbe8d359f35c758ae89f4267ab223483
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174829"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928746"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 
@@ -56,6 +56,10 @@ Azure AD kan momenteel geen null-kenmerken inrichten. Als een kenmerk null is vo
 **Maximum aantal tekens voor expressies voor kenmerk toewijzing**
 
 Expressies voor kenmerk toewijzing mogen Maxi maal 10.000 tekens bevatten. 
+
+**Niet-ondersteunde bereik filters**
+
+Directory-extensies, appRoleAssignments, User type en accountExpires worden niet ondersteund als bereik filters.
 
 
 ## <a name="service-issues"></a>Serviceproblemen 

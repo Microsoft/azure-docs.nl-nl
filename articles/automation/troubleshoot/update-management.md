@@ -5,12 +5,12 @@ services: automation
 ms.date: 12/04/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: e8fc2a840ce019282625f286a6d54b132a1806c8
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: c6d0f38eaa25f2fe033a5e2cf48ee6daa51fcbe6
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751254"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929273"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Problemen met Updatebeheer oplossen
 
@@ -19,7 +19,7 @@ In dit artikel worden problemen beschreven die u kunt uitvoeren bij het implemen
 >[!NOTE]
 >Als u problemen ondervindt bij het implementeren van Updatebeheer op een Windows-computer, opent u de Windows-Logboeken en raadpleegt u het gebeurtenis logboek van **Operations Manager** onder **Logboeken voor toepassingen en services** op de lokale computer. Zoek naar gebeurtenissen met gebeurtenis-ID 4502 en gebeurtenis details die bevatten `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent` .
 
-## <a name="scenario-linux-updates-shown-as-pending-and-those-installed-vary"></a>Scenario: Linux-updates die worden weer gegeven als in behandeling en die zijn geïnstalleerd, zijn afhankelijk
+## <a name="scenario-linux-updates-shown-as-pending-and-those-installed-vary"></a><a name="updates-linux-installed-different"></a>Scenario: Linux-updates die worden weer gegeven als in behandeling en die zijn geïnstalleerd, zijn afhankelijk
 
 ### <a name="issue"></a>Probleem
 

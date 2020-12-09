@@ -1,17 +1,17 @@
 ---
 title: Door de klant beheerde sleutels gebruiken om uw configuratie gegevens te versleutelen
 description: Uw configuratie gegevens versleutelen met door de klant beheerde sleutels
-author: lisaguthrie
-ms.author: lcozzens
-ms.date: 02/18/2020
+author: AlexandraKemperMS
+ms.author: alkemper
+ms.date: 07/28/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 8942c93b7346613b8cfdc97d9afe09f1c473fb10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46a1e99a7bc75efa85fcb5eff649c14af5abd17b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87384868"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930497"
 ---
 # <a name="use-customer-managed-keys-to-encrypt-your-app-configuration-data"></a>Door de klant beheerde sleutels gebruiken voor het versleutelen van uw app-configuratie gegevens
 Met Azure-app configuratie wordt [gevoelige informatie op rest versleuteld](../security/fundamentals/encryption-atrest.md). Het gebruik van door de klant beheerde sleutels biedt verbeterde gegevens beveiliging door u de mogelijkheid te bieden om uw versleutelings sleutels te beheren.  Wanneer beheerde sleutel versleuteling wordt gebruikt, wordt alle gevoelige informatie in de app-configuratie versleuteld met een door de gebruiker verstrekte Azure Key Vault sleutel.  Dit biedt de mogelijkheid om de versleutelings sleutel op aanvraag te draaien.  Het biedt ook de mogelijkheid om de toegang tot gevoelige gegevens in de Azure-app configuratie in te trekken door de toegang tot de sleutel van het app-configuratie-exemplaar in te trekken.

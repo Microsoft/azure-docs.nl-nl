@@ -1,20 +1,20 @@
 ---
 title: ARM-sjabloon test Toolkit
-description: Hierin wordt beschreven hoe u de ARM-sjabloon test Toolkit uitvoert op uw sjabloon. Met de Toolkit kunt u zien of u aanbevolen procedures hebt geïmplementeerd.
+description: Hierin wordt beschreven hoe u de Azure Resource Manager sjabloon (ARM-sjabloon) test Toolkit uitvoert op uw sjabloon. Met de Toolkit kunt u zien of u aanbevolen procedures hebt geïmplementeerd.
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 73f6db8cbd5e4d7a0670c394f6af338aae8e9e79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29ebe2f0ec4d4c39154272bbbdf4d0c9ede9fd95
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89439557"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928185"
 ---
 # <a name="use-arm-template-test-toolkit"></a>ARM-sjabloon test Toolkit gebruiken
 
-Met de [Azure Resource Manager (arm)-sjabloon test Toolkit](https://aka.ms/arm-ttk) wordt gecontroleerd of de sjabloon aanbevolen procedures gebruikt. Als uw sjabloon niet voldoet aan de aanbevolen procedures, wordt een lijst met waarschuwingen met de voorgestelde wijzigingen geretourneerd. Met behulp van de test Toolkit kunt u leren hoe u veelvoorkomende problemen bij het ontwikkelen van sjablonen voor komt.
+Met de [Azure Resource Manager sjabloon (arm-sjabloon) test Toolkit](https://aka.ms/arm-ttk) wordt gecontroleerd of de sjabloon aanbevolen procedures gebruikt. Als uw sjabloon niet voldoet aan de aanbevolen procedures, wordt een lijst met waarschuwingen met de voorgestelde wijzigingen geretourneerd. Met behulp van de test Toolkit kunt u leren hoe u veelvoorkomende problemen bij het ontwikkelen van sjablonen voor komt.
 
 De test Toolkit bevat een aantal [standaard testen](test-cases.md). Deze tests zijn aanbevelingen, maar geen vereisten. U kunt bepalen welke tests relevant zijn voor uw doelen en aanpassen welke tests worden uitgevoerd.
 
@@ -120,7 +120,7 @@ De Toolkit is een set Power shell-scripts die kunnen worden uitgevoerd met een o
    Test-AzTemplate -TemplatePath /path/to/template
    ```
 
-## <a name="result-format"></a>Resultaat indeling
+## <a name="result-format"></a>Resultaatopmaak
 
 Tests die worden uitgevoerd in de **groen** worden weer gegeven en zijn voorafgegaan door **[+]**.
 
@@ -164,7 +164,7 @@ Test-AzTemplate -TemplatePath $TemplateFolder -Test "Resources Should Have Locat
 
 Voor ARM-sjablonen voert de Toolkit alle tests uit in de map **\arm-ttk\testcases\deploymentTemplate**. Als u een test permanent wilt verwijderen, verwijdert u het bestand uit de map.
 
-Voor [CreateUiDefinition](../managed-applications/create-uidefinition-overview.md) -bestanden worden alle tests in de map **\arm-ttk\testcases\CreateUiDefinition**uitgevoerd.
+Voor [CreateUiDefinition](../managed-applications/create-uidefinition-overview.md) -bestanden worden alle tests in de map **\arm-ttk\testcases\CreateUiDefinition** uitgevoerd.
 
 Als u uw eigen test wilt toevoegen, maakt u een bestand met de naam Conventie: **Your-Custom-Test-Name.test.ps1**.
 
@@ -282,4 +282,4 @@ In het volgende voor beeld ziet u hoe u de tests uitvoert.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [test cases voor Toolkit voor](test-cases.md)meer informatie over de standaard tests.
+Zie [standaard test cases voor arm-sjabloon test Toolkit](test-cases.md)voor meer informatie over de standaard tests.

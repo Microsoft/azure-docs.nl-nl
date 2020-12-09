@@ -3,14 +3,14 @@ title: Update-implementaties voor Azure Automation maken Updatebeheer
 description: In dit artikel wordt beschreven hoe u update-implementaties plant en hoe u de status ervan controleert.
 services: automation
 ms.subservice: update-management
-ms.date: 10/27/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 41ccecfb844f11a0d234271bcddc1851d3c02fda
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ec0d6d618edad87b76861ea834adb2f29531e6f5
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742284"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929664"
 ---
 # <a name="how-to-deploy-updates-and-review-results"></a>Updates implementeren en resultaten bekijken
 
@@ -43,9 +43,9 @@ Als u een nieuwe update-implementatie wilt plannen, voert u de volgende stappen 
 
 2. Afhankelijk van de resource die u hebt geselecteerd, gaat u naar Updatebeheer:
 
-   * Als u uw Automation-account hebt geselecteerd, gaat u naar **Update beheer** onder **Update beheer** en selecteert u **Update-implementatie plannen** .
-   * Als u een virtuele machine van Azure hebt geselecteerd, gaat u naar **gast en host-updates** en selecteert u vervolgens **Ga naar updatebeheer** .
-   * Als u een server met Arc-functionaliteit hebt geselecteerd, gaat u naar **updatebeheer** en selecteert u **Update-implementatie plannen** .
+   * Als u uw Automation-account hebt geselecteerd, gaat u naar **Update beheer** onder **Update beheer** en selecteert u **Update-implementatie plannen**.
+   * Als u een virtuele machine van Azure hebt geselecteerd, gaat u naar **gast en host-updates** en selecteert u vervolgens **Ga naar updatebeheer**.
+   * Als u een server met Arc-functionaliteit hebt geselecteerd, gaat u naar **updatebeheer** en selecteert u **Update-implementatie plannen**.
 
 3. Voer onder **nieuwe update-implementatie** in het veld **naam** een unieke naam in voor uw implementatie.
 
@@ -76,12 +76,12 @@ Als u een nieuwe update-implementatie wilt plannen, voert u de volgende stappen 
    > [!NOTE]
    > U kunt geen updates opgeven die in de update-implementatie zijn vervangen.
 
-9. Selecteer **schema-instellingen** . De standaard begintijd is 30 minuten na de huidige tijd. U kunt de starttijd op elke gewenste tijd instellen, maar minstens 10 minuten na de huidige tijd.
+9. Selecteer **schema-instellingen**. De standaard begintijd is 30 minuten na de huidige tijd. U kunt de starttijd op elke gewenste tijd instellen, maar minstens 10 minuten na de huidige tijd.
 
     > [!NOTE]
     > Deze optie is anders als u een met Arc ingeschakelde server hebt geselecteerd. U kunt **nu een update** of een begin tijd van 20 minuten in de toekomst selecteren.
 
-10. Gebruik het **terugkeer patroon** om op te geven of de implementatie één keer wordt uitgevoerd of een terugkerend schema gebruikt en selecteer **OK** .
+10. Gebruik het **terugkeer patroon** om op te geven of de implementatie één keer wordt uitgevoerd of een terugkerend schema gebruikt en selecteer **OK**.
 
 11. Selecteer in de regio **pre-scripts + post-scripts** de scripts die moeten worden uitgevoerd vóór en na de implementatie. Zie [pre-scripts en post scripts beheren](pre-post-scripts.md)voor meer informatie.
 
@@ -102,14 +102,14 @@ Als u een nieuwe update-implementatie wilt plannen, voert u de volgende stappen 
     * Alleen opnieuw opstarten; met deze optie worden geen updates geïnstalleerd
 
     > [!NOTE]
-    > De registersleutels onder [Registry keys used to manage restart](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) (registersleutels voor het beheren van opnieuw opstarten) kunnen een gebeurtenis voor opnieuw opstarten veroorzaken als **Opties voor opnieuw opstarten** is ingesteld op **Nooit opnieuw opstarten** .
+    > De registersleutels onder [Registry keys used to manage restart](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) (registersleutels voor het beheren van opnieuw opstarten) kunnen een gebeurtenis voor opnieuw opstarten veroorzaken als **Opties voor opnieuw opstarten** is ingesteld op **Nooit opnieuw opstarten**.
 
-14. Wanneer u klaar bent met het configureren van de implementatie planning, selecteert u **maken** .
+14. Wanneer u klaar bent met het configureren van de implementatie planning, selecteert u **maken**.
 
     ![Deelvenster Planningsinstellingen bijwerken](./media/deploy-updates/manageupdates-schedule-win.png)
 
     > [!NOTE]
-    > Wanneer u klaar bent met het configureren van het implementatie schema voor een geselecteerde server die is ingeschakeld voor de Arc, selecteert u **controleren + maken** .
+    > Wanneer u klaar bent met het configureren van het implementatie schema voor een geselecteerde server die is ingeschakeld voor de Arc, selecteert u **controleren + maken**.
 
 15. U keert nu terug naar het statusdashboard. Selecteer **implementatie planningen** om de implementatie planning weer te geven die u hebt gemaakt. Er worden Maxi maal 500 schema's weer gegeven. Als u meer dan 500 planningen hebt en u de volledige lijst wilt bekijken, raadpleegt u de REST API methode [Software-update configuraties-lijst](/rest/api/automation/softwareupdateconfigurations/list) . Geef API-versie 2019-06-01 of hoger op.
 
@@ -121,7 +121,7 @@ U kunt een voor beeld-runbook gebruiken om een wekelijkse update-implementatie t
 
 ## <a name="check-deployment-status"></a>Implementatie status controleren
 
-Nadat de geplande implementatie is gestart, ziet u de status ervan op het tabblad **geschiedenis** onder **Update beheer** . Als de implementatie momenteel wordt uitgevoerd, is de status **Wordt uitgevoerd** . Wanneer de implementatie is voltooid, verandert de status in **geslaagd** . Als er fouten zijn met een of meer updates in de implementatie, is de status **mislukt** .
+Nadat de geplande implementatie is gestart, ziet u de status ervan op het tabblad **geschiedenis** onder **Update beheer**. Als de implementatie momenteel wordt uitgevoerd, is de status **Wordt uitgevoerd**. Wanneer de implementatie is voltooid, verandert de status in **geslaagd**. Als er fouten zijn met een of meer updates in de implementatie, is de status **mislukt**.
 
 ## <a name="view-results-of-a-completed-update-deployment"></a>Resultaten van een voltooide update-implementatie weer geven
 

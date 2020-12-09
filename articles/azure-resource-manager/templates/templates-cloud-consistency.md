@@ -1,23 +1,23 @@
 ---
 title: Sjablonen opnieuw gebruiken voor verschillende Clouds
-description: Ontwikkel Azure Resource Manager sjablonen die consistent werken voor verschillende Cloud omgevingen. Maak nieuwe sjablonen voor de Azure Stack of werk deze bij.
+description: Ontwikkel Azure Resource Manager sjablonen (ARM-sjablonen) die consistent werken voor verschillende Cloud omgevingen. Maak nieuwe sjablonen voor de Azure Stack of werk deze bij.
 author: marcvaneijk
 ms.topic: conceptual
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: ea010a625c3e3cd6228513299d878733bf3775ce
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 806556a8da97ec84fe8141b95198b4a7da95c062
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744761"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928355"
 ---
 # <a name="develop-arm-templates-for-cloud-consistency"></a>ARM-sjablonen ontwikkelen voor Cloud consistentie
 
 [!INCLUDE [requires-azurerm](../../../includes/requires-azurerm.md)]
 
-Een belang rijk voor deel van Azure is consistentie. Ontwikkelings investeringen voor één locatie kunnen in een ander worden herbruikbaar. Met een Azure Resource Manager ARM-sjabloon kunnen uw implementaties consistent en herhaald worden in omgevingen, waaronder de wereld wijde Azure, Azure soevereine Clouds en Azure Stack. Als u sjablonen voor verschillende Clouds wilt gebruiken, moet u echter rekening houden met de Cloud afhankelijke afhankelijkheden, zoals in deze hand leiding wordt uitgelegd.
+Een belang rijk voor deel van Azure is consistentie. Ontwikkelings investeringen voor één locatie kunnen in een ander worden herbruikbaar. Met een Azure Resource Manager sjabloon (ARM-sjabloon) kunnen uw implementaties consistent en herhaald worden in omgevingen, waaronder de wereld wijde Azure, Azure soevereine Clouds en Azure Stack. Als u sjablonen voor verschillende Clouds wilt gebruiken, moet u echter rekening houden met de Cloud afhankelijke afhankelijkheden, zoals in deze hand leiding wordt uitgelegd.
 
 Micro soft biedt intelligente, zakelijke kant-en-klare Cloud Services op verschillende locaties, waaronder:
 
@@ -443,8 +443,8 @@ Naam ruimten van eind punten kunnen ook worden gebruikt in de uitvoer van een sj
 
 In het algemeen vermijdt u hardcoded eind punten in een sjabloon. De best practice is het gebruik van de functie voor de verwijzings sjabloon om de eind punten dynamisch op te halen. Zo is het eind punt meestal hardcoded de naam ruimte van het eind punt voor opslag accounts. Elk opslag account heeft een unieke FQDN die wordt samengesteld door de naam van het opslag account samen te voegen met de eindpunt naam ruimte. Een Blob Storage-account met de naam mystorageaccount1 resulteert in verschillende FQDN-namen, afhankelijk van de Cloud:
 
-* **mystorageaccount1.blob.core.Windows.net** wanneer deze wordt gemaakt in de wereld wijde Azure-Cloud.
-* **mystorageaccount1.blob.core.chinacloudapi.cn** wanneer deze wordt gemaakt in de Azure China 21vianet-Cloud.
+* `mystorageaccount1.blob.core.windows.net` Wanneer deze wordt gemaakt in de wereld wijde Azure-Cloud.
+* `mystorageaccount1.blob.core.chinacloudapi.cn` Wanneer deze wordt gemaakt in de Azure China 21Vianet-Cloud.
 
 Met de volgende functie van de referentie sjabloon wordt de naam ruimte van het eind punt opgehaald van de opslag Resource provider:
 
@@ -641,7 +641,7 @@ Er is ook een versie van elke specifieke extensie. Deze versie wordt weer gegeve
         ...
 ```
 
-Als u een lijst met de beschik bare versies voor een specifieke VM-extensie wilt ophalen, gebruikt u de cmdlet [Get-AzureRmVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage) . In het volgende voor beeld worden de beschik bare versies van de VM-extensie voor Power shell DSC (desired state Configuration) opgehaald van **myLocation** :
+Als u een lijst met de beschik bare versies voor een specifieke VM-extensie wilt ophalen, gebruikt u de cmdlet [Get-AzureRmVMExtensionImage](/powershell/module/az.compute/get-azvmextensionimage) . In het volgende voor beeld worden de beschik bare versies van de VM-extensie voor Power shell DSC (desired state Configuration) opgehaald van **myLocation**:
 
 ```azurepowershell-interactive
 Get-AzureRmVMExtensionImage -Location myLocation -PublisherName Microsoft.PowerShell -Type DSC | FT

@@ -3,16 +3,16 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 11/30/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 37ab05ce7e963ab7fdc4d2b02e254adaa205446c
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 4b557c9772e76b6b61cdf01799ee30ba6bc11807
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327488"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928423"
 ---
-# <a name="update-management-overview"></a>Overzicht van updatebeheer
+# <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
 U kunt Updatebeheer in Azure Automation gebruiken om updates van besturings systemen te beheren voor uw virtuele Windows-en Linux-machines in azure, in on-premises omgevingen en in andere Cloud omgevingen. U kunt snel de status van beschik bare updates op alle agent computers beoordelen en het proces voor het installeren van vereiste updates voor servers beheren.
 
@@ -72,7 +72,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 > [!NOTE]
 > Update-evaluatie van Linux-machines wordt alleen ondersteund in bepaalde regio's, zoals vermeld in het Automation-account en de tabel Log Analytics werkruimte [toewijzingen](../how-to/region-mappings.md#supported-mappings).
 
-|Besturingssysteem  |Notities  |
+|Besturingssysteem  |Opmerkingen  |
 |---------|---------|
 |Windows Server 2019 (Data Center/Data Center core/Standard)<br><br>Windows Server 2016 (Data Center/Data Center core/Standard)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 ||
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
@@ -88,7 +88,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 
 De volgende tabel bevat een lijst met niet-ondersteunde besturings systemen:
 
-|Besturingssysteem  |Notities  |
+|Besturingssysteem  |Opmerkingen  |
 |---------|---------|
 |Windows-client     | Client besturingssystemen (zoals Windows 7 en Windows 10) worden niet ondersteund.<br> Voor Azure Windows virtueel bureau blad (WVD), de aanbevolen methode<br> voor het beheren van updates is [micro soft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) voor patch beheer voor Windows 10-client computers. |
 |Windows Server 2016 Nano Server     | Niet ondersteund.       |
@@ -152,17 +152,17 @@ Zie [Connect Operations Manager to Azure monitor logs](../../azure-monitor/platf
 > [!NOTE]
 > Updatebeheer om computers met de Log Analytics agent volledig te beheren, moet u bijwerken naar de Log Analytics agent voor Windows of de Log Analytics-agent voor Linux. Zie [een Operations Manager-agent bijwerken](/system-center/scom/deploy-upgrade-agents)voor meer informatie over het bijwerken van de agent. In omgevingen waarin Operations Manager wordt gebruikt, moet u System Center Operations Manager 2012 R2 UR 14 of hoger uitvoeren.
 
-## <a name="data-collection"></a>Gegevensverzameling
+## <a name="data-collection"></a>Gegevens verzamelen
 
 ### <a name="supported-sources"></a>Ondersteunde bronnen
 
 De volgende tabel beschrijft de verbonden bronnen die Updatebeheer ondersteunt:
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 | --- | --- | --- |
-| Windows-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
-| Linux-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
-| Beheergroep Operations Manager |Ja |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| Windows-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
+| Linux-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
+| Beheergroep Operations Manager |Yes |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
 
 ### <a name="collection-frequency"></a>Verzamelingsfrequentie
 
@@ -224,7 +224,7 @@ In de volgende tabel worden de ondersteunde classificaties voor Linux-updates ge
 >
 > Er is geen classificatie van Linux-updates en deze worden gerapporteerd in de categorie **andere updates** . Updatebeheer gebruikt gegevens die worden gepubliceerd door de ondersteunde distributies, met name de uitgebrachte [ovaal](https://oval.mitre.org/) (open beveiligings-en evaluatie taal). Omdat Internet toegang is beperkt van deze nationale Clouds, heeft Updatebeheer geen toegang tot deze bestanden en kan deze niet worden gebruikt.
 
-Voor Linux kan Updatebeheer een onderscheid maken tussen essentiële updates en beveiligings updates in de Cloud, terwijl evaluatie gegevens worden weer gegeven vanwege gegevens verrijking in de Cloud. Voor patching is Updatebeheer afhankelijk van de classificatie gegevens die op de computer beschikbaar zijn. In tegens telling tot andere distributies is CentOS deze informatie niet beschikbaar in de RTM-versie. Als er CentOS machines zijn geconfigureerd voor het retour neren van beveiligings gegevens voor de volgende opdracht, kunt Updatebeheer patch op basis van classificaties.
+Voor Linux kan Updatebeheer onderscheid maken tussen essentiële updates en beveiligings updates in de Cloud onder classificatie **beveiliging** en **anderen**, terwijl evaluatie gegevens worden weer gegeven vanwege gegevens verrijking in de Cloud. Voor patching is Updatebeheer afhankelijk van de classificatie gegevens die op de computer beschikbaar zijn. In tegens telling tot andere distributies is CentOS deze informatie niet beschikbaar in de RTM-versie. Als er CentOS machines zijn geconfigureerd voor het retour neren van beveiligings gegevens voor de volgende opdracht, kunt Updatebeheer patch op basis van classificaties.
 
 ```bash
 sudo yum -q --security check-update
@@ -233,6 +233,10 @@ sudo yum -q --security check-update
 Er is momenteel geen ondersteunde methode voor het inschakelen van systeem eigen classificatie-gegevens beschikbaarheid op CentOS. Op dit moment wordt beperkte ondersteuning geboden aan klanten die deze functie mogelijk zelf hebben ingeschakeld.
 
 Als u updates wilt classificeren voor Red Hat Enter prise versie 6, moet u de yum-beveiligings-invoeg toepassing installeren. Op Red Hat Enterprise Linux 7 maakt de invoeg toepassing al deel uit van yum. u hoeft niets te installeren. Zie het volgende Red Hat [Knowledge-artikel](https://access.redhat.com/solutions/10021)voor meer informatie.
+
+Wanneer u een update plant om uit te voeren op een Linux-machine, bijvoorbeeld is geconfigureerd voor het installeren van alleen updates die overeenkomen met de **beveiligings** classificatie, kunnen de geïnstalleerde updates afwijken van of een subset zijn van de updates die overeenkomen met deze classificatie. Wanneer een evaluatie van updates van het besturings systeem die in behandeling zijn voor uw Linux-machine wordt uitgevoerd, opent u het [beveiligings probleem en](https://oval.mitre.org/) de door de Linux distributie-leverancier verschafte ovaal bestanden door updatebeheer voor classificatie.
+
+De categorisatie wordt uitgevoerd voor Linux-updates als **beveiliging** of **anderen** op basis van de ovale bestanden, die updates bevatten over beveiligings problemen of beveiligings problemen. Maar wanneer de update planning wordt uitgevoerd, wordt deze uitgevoerd op de Linux-machine met behulp van de juiste pakket manager, zoals YUM, APT of ZYPPER om ze te installeren. Pakket beheer voor de Linux-distributie kan een ander mechanisme hebben voor het classificeren van updates, waarbij de resultaten kunnen verschillen van de waarden die zijn verkregen via OVALE bestanden door Updatebeheer. Zie [problemen met de update-implementatie van Linux oplossen](../troubleshoot/update-management.md#updates-linux-installed-different)om de computer hand matig te controleren en te begrijpen welke updates van toepassing zijn op beveiliging die relevant zijn voor uw pakket beheer.
 
 ## <a name="integrate-update-management-with-configuration-manager"></a>Updatebeheer integreren met Configuration Manager
 

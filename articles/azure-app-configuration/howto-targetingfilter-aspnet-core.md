@@ -3,16 +3,16 @@ title: Gefaseerde implementatie van functies voor doel groepen inschakelen
 titleSuffix: Azure App Configuration
 description: Meer informatie over het inschakelen van de gefaseerde implementatie van functies voor doel groepen
 ms.service: azure-app-configuration
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.topic: conceptual
-ms.date: 8/7/2020
-ms.openlocfilehash: d1574b8a3f8cda3341c0aaf355911e2e93a7bcab
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.date: 11/20/2020
+ms.openlocfilehash: c415eaeab2edd0a1b324bba4266266201cb50cbf
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557709"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929681"
 ---
 # <a name="enable-staged-rollout-of-features-for-targeted-audiences"></a>Gefaseerde implementatie van functies voor doel groepen inschakelen
 
@@ -144,9 +144,9 @@ De volledige *ConfigureServices* -methode ziet er als volgt uit:
 
 1. Selecteer de volgende opties:
 
-    - **Standaard percentage** : 0
-    - **Groepen** : Voer een **naam** in van _contoso.com_ en een **percentage** van _50_
-    - **Gebruikers** : `test@contoso.com`
+    - **Standaard percentage**: 0
+    - **Groepen**: Voer een **naam** in van _contoso.com_ en een **percentage** van _50_
+    - **Gebruikers**: `test@contoso.com`
 
     Het scherm onderdeel filter ziet er als volgt uit:
 

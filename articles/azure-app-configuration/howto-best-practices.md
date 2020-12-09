@@ -3,21 +3,20 @@ title: Aanbevolen procedures voor Azure-app-configuratie | Microsoft Docs
 description: Leer de aanbevolen procedures voor het gebruik van Azure-app configuratie. Onderwerpen zijn onder andere belang rijke groeperingen, sleutel waarde-samen stellingen, Boots trap van de app-configuratie en meer.
 services: azure-app-configuration
 documentationcenter: ''
-author: lisaguthrie
-manager: maiye
+author: AlexandraKemperMS
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 05/02/2019
-ms.author: lcozzens
+ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: c45d1668ad39e9584a89921f46218ba243978a05
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 038d19270fbdb672d397eb2bd56bd27e17ea7af9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078048"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929086"
 ---
 # <a name="azure-app-configuration-best-practices"></a>Aanbevolen procedures voor Azure-app configuratie
 
@@ -42,7 +41,7 @@ Het is belang rijk om ervoor te zorgen dat sleutels uw toepassings code bevat om
 
 App-configuratie behandelt alle sleutels die ermee zijn opgeslagen als onafhankelijke entiteiten. App-configuratie probeert geen relatie tussen sleutels af te leiden of sleutel waarden over te nemen op basis van de hiërarchie. U kunt meerdere sets sleutels samen voegen, met behulp van labels die zijn gekoppeld aan de juiste configuratie stacks in uw toepassings code.
 
-We kijken naar een voorbeeld. Stel dat u een instelling hebt met de naam **Asset1**, waarvan de waarde kan variëren op basis van de ontwikkelings omgeving. U maakt een sleutel met de naam ' Asset1 ' met een leeg label en een label met de naam ' ontwikkeling '. In het eerste label plaatst u de standaard waarde voor **Asset1**en plaatst u een specifieke waarde voor ' ontwikkeling ' in de laatste.
+We kijken naar een voorbeeld. Stel dat u een instelling hebt met de naam **Asset1**, waarvan de waarde kan variëren op basis van de ontwikkelings omgeving. U maakt een sleutel met de naam ' Asset1 ' met een leeg label en een label met de naam ' ontwikkeling '. In het eerste label plaatst u de standaard waarde voor **Asset1** en plaatst u een specifieke waarde voor ' ontwikkeling ' in de laatste.
 
 In uw code haalt u eerst de sleutel waarden zonder labels op en vervolgens haalt u dezelfde set sleutel waarden een tweede keer op met het label ' ontwikkeling '. Wanneer u de waarden de tweede keer ophaalt, worden de vorige waarden van de sleutels overschreven. Met het configuratie systeem van .NET Core kunt u meerdere sets configuratie gegevens boven op elkaar stapelen. Als een sleutel in meer dan één set bestaat, wordt de laatste set die deze bevat, gebruikt. Met een modern programmeer raamwerk, zoals .NET core, krijgt u deze gestapelde mogelijkheid gratis als u een systeem eigen configuratie provider gebruikt om toegang te krijgen tot de app-configuratie. Het volgende code fragment laat zien hoe u stacking in een .NET core-toepassing kunt implementeren:
 
@@ -79,7 +78,7 @@ Buitensporige aanvragen voor app-configuratie kunnen leiden tot beperking of ove
 
 * Verhoog de time-out voor vernieuwen, met name als uw configuratie waarden niet vaak veranderen. Geef een nieuwe time-out voor vernieuwen op met behulp van de [ `SetCacheExpiration` methode](/dotnet/api/microsoft.extensions.configuration.azureappconfiguration.azureappconfigurationrefreshoptions.setcacheexpiration).
 
-* Bekijk één *Sentinel-sleutel*in plaats van de afzonderlijke sleutels te bekijken. Vernieuw alle configuratie alleen als de verklikker sleutel wordt gewijzigd. Zie [dynamische configuratie in een ASP.net core-app gebruiken](enable-dynamic-configuration-aspnet-core.md) voor een voor beeld.
+* Bekijk één *Sentinel-sleutel* in plaats van de afzonderlijke sleutels te bekijken. Vernieuw alle configuratie alleen als de verklikker sleutel wordt gewijzigd. Zie [dynamische configuratie in een ASP.net core-app gebruiken](enable-dynamic-configuration-aspnet-core.md) voor een voor beeld.
 
 * Gebruik Azure Event Grid om meldingen te ontvangen wanneer de configuratie wordt gewijzigd, in plaats van voortdurend te pollen voor wijzigingen. Zie [Azure-app configuratie gebeurtenissen naar een webeindpunt routeren](./howto-app-configuration-event.md) voor meer informatie
 

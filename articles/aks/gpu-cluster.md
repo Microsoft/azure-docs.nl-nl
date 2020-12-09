@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 08/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: f631f8ee022f501cb30af4aae5cf48294b9ca3c2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: d7e312f049acc0b74aa0a253864bfce6100044bd
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125832"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929137"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Gebruik Gpu's voor computerintensieve werk belastingen op Azure Kubernetes service (AKS)
 
@@ -58,7 +58,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 Voordat de Gpu's in de knoop punten kunnen worden gebruikt, moet u een Daemonset voor de invoeg toepassing voor NVIDIA-apparaten implementeren. Deze Daemonset voert een pod uit op elk knoop punt om de vereiste Stuur Programma's voor de Gpu's op te geven.
 
-Maak eerst een naam ruimte met behulp van de kubectl-opdracht [naam ruimte maken][kubectl-create] , zoals *GPU-resources* :
+Maak eerst een naam ruimte met behulp van de kubectl-opdracht [naam ruimte maken][kubectl-create] , zoals *GPU-resources*:
 
 ```console
 kubectl create namespace gpu-resources
@@ -134,13 +134,13 @@ De `GPUDedicatedVHDPreview` functie registreren:
 az feature register --name GPUDedicatedVHDPreview --namespace Microsoft.ContainerService
 ```
 
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-list):
 
 ```azurecli
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/GPUDedicatedVHDPreview')].{Name:name,State:properties.state}"
 ```
 
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider?view=azure-cli-latest#az-provider-register) :
+Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) :
 
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
@@ -198,7 +198,7 @@ aks-nodepool1-28993262-0   Ready    agent   13m   v1.12.7
 
 Gebruik nu de opdracht [kubectl beschrijven knoop punt][kubectl-describe] om te bevestigen dat de gpu's Schedulable zijn. Onder het gedeelte *capaciteit* moet de GPU worden weer geven als `nvidia.com/gpu:  1` .
 
-In het volgende verkorte voor beeld ziet u dat er een GPU beschikbaar is op het knoop punt met de naam *AKS-nodepool1-18821093-0* :
+In het volgende verkorte voor beeld ziet u dat er een GPU beschikbaar is op het knoop punt met de naam *AKS-nodepool1-18821093-0*:
 
 ```console
 $ kubectl describe node aks-nodepool1-28993262-0
@@ -289,7 +289,7 @@ kubectl apply -f samples-tf-mnist-demo.yaml
 
 ## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Bekijk de status en de uitvoer van de GPU-ingeschakelde werk belasting
 
-Bewaak de voortgang van de taak met behulp van de opdracht [kubectl Get Jobs][kubectl-get] with het `--watch` argument. Het kan een paar minuten duren voordat de installatie kopie is opgehaald en de gegevensset wordt verwerkt. Wanneer in de kolom *voltooiings* de *1/1* wordt weer gegeven, is de taak voltooid. Sluit de `kubetctl --watch` opdracht af met *CTRL-C* :
+Bewaak de voortgang van de taak met behulp van de opdracht [kubectl Get Jobs][kubectl-get] with het `--watch` argument. Het kan een paar minuten duren voordat de installatie kopie is opgehaald en de gegevensset wordt verwerkt. Wanneer in de kolom *voltooiings* de *1/1* wordt weer gegeven, is de taak voltooid. Sluit de `kubetctl --watch` opdracht af met *CTRL-C*:
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch

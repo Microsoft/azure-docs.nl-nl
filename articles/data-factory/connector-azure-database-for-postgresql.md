@@ -1,6 +1,6 @@
 ---
-title: Gegevens kopiëren van en naar Azure Database for PostgreSQL
-description: Informatie over het kopiëren van gegevens van en naar Azure Database for PostgreSQL met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
+title: Gegevens kopiëren en transformeren in Azure Database for PostgreSQL
+description: Meer informatie over het kopiëren en transformeren van gegevens in Azure Database for PostgreSQL met behulp van Azure Data Factory.
 services: data-factory
 ms.author: jingwang
 author: linda33wj
@@ -10,19 +10,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/26/2020
-ms.openlocfilehash: 11e0d3336f085ccae9a7fb83ed050d69a15ce42b
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.date: 12/08/2020
+ms.openlocfilehash: 2537167783f3e68c52c665dafa9378193852acb4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296502"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930378"
 ---
-# <a name="copy-data-to-and-from-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Database for PostgreSQL met behulp van Azure Data Factory
+# <a name="copy-and-transform-data-in-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens in Azure Database for PostgreSQL kopiëren en transformeren met behulp van Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-In dit artikel wordt beschreven hoe u de functie Copy activity in Azure Data Factory gebruikt om gegevens te kopiëren van Azure Database for PostgreSQL. Het is gebaseerd op de [Kopieer activiteit in azure Data Factory](copy-activity-overview.md) artikel, waarin een algemeen overzicht van de Kopieer activiteit wordt weer gegeven.
+In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens te kopiëren van en naar Azure Database for PostgreSQL, en om gegevens in Azure Database for PostgreSQL te transformeren met behulp van gegevens stromen. Lees het [artikel Inleiding](introduction.md)voor meer informatie over Azure Data Factory.
 
 Deze connector is speciaal bedoeld voor de [Azure database for PostgreSQL-service](../postgresql/overview.md). Als u gegevens wilt kopiëren vanuit een algemene PostgreSQL-data base die zich on-premises of in de Cloud bevindt, gebruikt u de [postgresql-connector](connector-postgresql.md).
 
@@ -31,11 +31,8 @@ Deze connector is speciaal bedoeld voor de [Azure database for PostgreSQL-servic
 Deze Azure Database for PostgreSQL-connector wordt ondersteund voor de volgende activiteiten:
 
 - [Kopieer activiteit](copy-activity-overview.md) met een [ondersteunde bron/Sink-matrix](copy-activity-overview.md)
+- [Gegevens stroom toewijzen](concepts-data-flow-overview.md)
 - [Activiteit Lookup](control-flow-lookup-activity.md)
-
-U kunt gegevens van Azure Database for PostgreSQL kopiëren naar elk ondersteund Sink-gegevens archief. U kunt ook gegevens van elk ondersteund brongegevens archief kopiëren naar Azure Database for PostgreSQL. Zie de tabel [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevens archieven die door de Kopieer activiteit worden ondersteund als bronnen en Sinks.
-
-Azure Data Factory biedt een ingebouwd stuur programma om connectiviteit mogelijk te maken. Daarom hoeft u geen stuur Programma's hand matig te installeren om deze connector te gebruiken.
 
 ## <a name="getting-started"></a>Aan de slag
 
@@ -60,7 +57,7 @@ Een typische connection string is `Server=<server>.postgres.database.azure.com;D
 | EncryptionMethod (EM)| De methode die het stuur programma gebruikt voor het versleutelen van gegevens die worden verzonden tussen het stuur programma en de database server. Bijvoorbeeld:  `EncryptionMethod=<0/1/6>;`| 0 (geen versleuteling) **(standaard)** /1 (SSL)/6 (RequestSSL) | No |
 | ValidateServerCertificate (VSC) | Hiermee wordt bepaald of het stuur programma het certificaat valideert dat door de database server wordt verzonden wanneer SSL-versleuteling is ingeschakeld (versleutelings methode = 1). Bijvoorbeeld:  `ValidateServerCertificate=<0/1>;`| 0 (uitgeschakeld) **(standaard)** /1 (ingeschakeld) | No |
 
-**Voor beeld**:
+**Voorbeeld**:
 
 ```json
 {
@@ -74,7 +71,7 @@ Een typische connection string is `Server=<server>.postgres.database.azure.com;D
 }
 ```
 
-**Voor beeld**:
+**Voorbeeld**:
 
 **_Wacht woord opslaan in azure Key Vault_* _
 
@@ -109,7 +106,7 @@ Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u de eige
 | type | De eigenschap type van de DataSet moet worden ingesteld op **AzurePostgreSqlTable** | Yes |
 | tableName | Naam van de tabel | Nee (als "query" in activiteit bron is opgegeven) |
 
-**Voor beeld**:
+**Voorbeeld**:
 
 ```json
 {
@@ -138,7 +135,7 @@ Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u het bro
 | type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzurePostgreSqlSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `SELECT * FROM mytable` of `SELECT * FROM "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld. | Nee (als de eigenschap TableName in de gegevensset is opgegeven) |
 
-**Voor beeld**:
+**Voorbeeld**:
 
 ```json
 "activities":[
@@ -181,7 +178,7 @@ Als u gegevens wilt kopiëren naar Azure Database for PostgreSQL, worden de volg
 | writeBatchSize | Hiermee worden gegevens in de Azure Database for PostgreSQL tabel ingevoegd wanneer de buffer grootte writeBatchSize bereikt.<br>Toegestane waarde is een geheel getal dat het aantal rijen vertegenwoordigt. | Nee (de standaard waarde is 10.000) |
 | writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br>Toegestane waarden zijn time span-teken reeksen. Een voor beeld is 00:30:00 (30 minuten). | Nee (de standaard waarde is 00:00:30) |
 
-**Voor beeld**:
+**Voorbeeld**:
 
 ```json
 "activities":[
@@ -212,6 +209,63 @@ Als u gegevens wilt kopiëren naar Azure Database for PostgreSQL, worden de volg
         }
     }
 ]
+```
+
+## <a name="mapping-data-flow-properties"></a>Eigenschappen van gegevens stroom toewijzen
+
+Wanneer gegevens worden getransformeerd in de toewijzing van gegevens stromen, kunt u tabellen lezen en ernaar schrijven vanuit Azure Database for PostgreSQL. Zie voor meer informatie de [bron transformatie](data-flow-source.md) en [sink-trans](data-flow-sink.md) formatie in gegevens stromen toewijzen. U kunt ervoor kiezen om een Azure Database for PostgreSQL-gegevensset of een [inline-gegevensset](data-flow-source.md#inline-datasets) als bron-en Sink-type te gebruiken.
+
+### <a name="source-transformation"></a>Bron transformatie
+
+De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteund door Azure Database for PostgreSQL bron. U kunt deze eigenschappen bewerken op het tabblad **bron opties** .
+
+| Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
+| ---- | ----------- | -------- | -------------- | ---------------- |
+| Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de gegevensset. | No | - |*(alleen voor inline-gegevensset)*<br>tableName |
+| Query’s uitvoeren | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `select * from mytable where customerId > 1000 and customerId < 2000` or `select * from "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld.| Nee | Tekenreeks | query |
+| Batchgrootte | Geef een batch grootte op om grote hoeveel heden gegevens naar batches te segmenteren. | No | Geheel getal | batchSize |
+| Isolatie niveau | Kies een van de volgende isolatie niveaus:<br>-Doorgevoerde lezen<br>-Niet-doorgevoerde lezen (standaard)<br>-Herhaal bare Lees bewerking<br>-Serialiseerbaar<br>-Geen (isolatie niveau negeren) | No | <small>READ_COMMITTED<br/>READ_UNCOMMITTED<br/>REPEATABLE_READ<br/>SERIALIZABLE<br/>GEEN</small> |isolationLevel |
+
+#### <a name="azure-database-for-postgresql-source-script-example"></a>Voor beeld van Azure Database for PostgreSQL-bron script
+
+Wanneer u Azure Database for PostgreSQL als bron type gebruikt, is het gekoppelde gegevensstroom script:
+
+```
+source(allowSchemaDrift: true,
+    validateSchema: false,
+    isolationLevel: 'READ_UNCOMMITTED',
+    query: 'select * from mytable',
+    format: 'query') ~> AzurePostgreSQLSource
+```
+
+### <a name="sink-transformation"></a>Sink-trans formatie
+
+De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteund door Azure Database for PostgreSQL sink. U kunt deze eigenschappen bewerken op het tabblad **sink-opties** .
+
+| Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
+| ---- | ----------- | -------- | -------------- | ---------------- |
+| Update methode | Geef op welke bewerkingen zijn toegestaan voor uw database bestemming. De standaard instelling is alleen invoegen toestaan.<br>Als u rijen wilt bijwerken, upsert of verwijderen, is een [ALTER Row Transform](data-flow-alter-row.md) vereist om rijen voor die acties te labelen. | Yes | `true` of `false` | verwijderd <br/>invoegen <br/>bij te werken <br/>upsertable |
+| Sleutel kolommen | Voor updates, upsert en verwijderen moeten de sleutel kolom (men) worden ingesteld om te bepalen welke rij moet worden gewijzigd.<br>De kolom naam die u kiest als de sleutel, wordt gebruikt als onderdeel van de volgende update, upsert, verwijderen. Daarom moet u een kolom kiezen die in de Sink-toewijzing voor komt. | No | Matrix | keys |
+| Schrijf sleutel kolommen overs Laan | Als u de waarde niet naar de sleutel kolom wilt schrijven, selecteert u "schrijven van sleutel kolommen overs Laan". | No | `true` of `false` | skipKeyWrites |
+| Tabel actie |Hiermee wordt bepaald of alle rijen van de doel tabel opnieuw moeten worden gemaakt of verwijderd voordat er wordt geschreven.<br>- **Geen**: er wordt geen actie uitgevoerd voor de tabel.<br>- **Opnieuw maken**: de tabel wordt verwijderd en opnieuw gemaakt. Vereist als er dynamisch een nieuwe tabel wordt gemaakt.<br>- **Afkappen**: alle rijen uit de doel tabel worden verwijderd. | No | `true` of `false` | opnieuw maken<br/>afkappen |
+| Batchgrootte | Geef op hoeveel rijen er in elke batch worden geschreven. Grotere batch grootten verbeteren de compressie en Optima Lise ring van het geheugen, maar er zijn geen uitzonde ringen in het geheugen bij het opslaan van gegevens. | No | Geheel getal | batchSize |
+| SQL-scripts vooraf en na | Geef meerdere SQL-scripts op die moeten worden uitgevoerd vóór (vóór verwerking) en nadat (na verwerking) gegevens naar uw Sink-Data Base zijn geschreven. | Nee | Tekenreeks | preSQLs<br>postSQLs |
+
+#### <a name="azure-database-for-postgresql-sink-script-example"></a>Voor beeld van Azure Database for PostgreSQL-Sink-script
+
+Wanneer u Azure Database for PostgreSQL als Sink-type gebruikt, is het gekoppelde gegevensstroom script:
+
+```
+IncomingStream sink(allowSchemaDrift: true,
+    validateSchema: false,
+    deletable:false,
+    insertable:true,
+    updateable:true,
+    upsertable:true,
+    keys:['keyColumn'],
+    format: 'table',
+    skipDuplicateMapInputs: true,
+    skipDuplicateMapOutputs: true) ~> AzurePostgreSQLSink
 ```
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit

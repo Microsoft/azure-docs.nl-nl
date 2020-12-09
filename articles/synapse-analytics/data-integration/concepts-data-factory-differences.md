@@ -2,18 +2,18 @@
 title: Verschillen met Azure Data Factory
 description: Meer informatie over hoe de mogelijkheden voor gegevens integratie van Azure Synapse Analytics verschillen van die van Azure Data Factory
 services: synapse-analytics
-author: djpmsft
+author: shirleywangmsft
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.author: daperlov
+ms.author: shwang
 ms.reviewer: jrasnick
-ms.openlocfilehash: 10f5336dd4c8a02acf623b1b14226ca676006953
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: db5d05e1a211ce14926ee4031054669fff5110d9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357646"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930208"
 ---
 # <a name="data-integration-in-azure-synapse-analytics-versus-azure-data-factory"></a>Gegevens integratie in azure Synapse Analytics versus Azure Data Factory
 
@@ -42,7 +42,6 @@ De volgende functies gedragen zich op een andere manier of bestaan momenteel nie
 
 * **Wrangling-gegevens stromen:** De activiteit wrangling data flow is op dit moment alleen beschikbaar in Azure Data Factory.
 * **De oplossings sjabloon galerie:** In Azure Data Factory kunnen gebruikers pijplijn sjablonen vinden in de galerie met oplossingen sjablonen. In Synapse-werk ruimten bevat het kennis centrum een andere set sjablonen, samen met aanvullende gegevens sets en SQL-scripts. 
-* **Git-integratie en een systeem eigen CI/cd-oplossing:** Momenteel kan een Synapse-werk ruimte geen verbinding maken met een Git-opslag plaats, maar ook niet hetzelfde continue integratie-en leverings proces als Azure Data Factory.
 * **Integratie met Azure monitor:** Synapse-werk ruimten worden niet geïntegreerd met Azure Monitor zoals Azure Data Factory.
 * **Runtime configuratie voor hybride integratie:** Binnen een Synapse-werk ruimte kan een gebruiker geen beheerde VNet-IR en een Azure IR hebben. Deze functie wordt ondersteund in Azure Data Factory.
 * **Delen van integratie-runtime:** Zelf-hostende Integration Runtimes kunnen niet worden gedeeld tussen Synapse-werk ruimten. Deze functie wordt ondersteund in Azure Data Factory.

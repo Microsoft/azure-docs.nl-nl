@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 15e5d257259bb4dfc98528cb726dbd2cc1f9a903
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f55af61a061bf3a3897569058aace728f7465b64
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498724"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862119"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-net"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (.NET)
 In deze zelfstudie maakt u een .NET Core-consoletoepassing om berichten te verzenden naar en te ontvangen van een Service Bus-wachtrij met behulp van het pakket **Azure.Messaging.ServiceBus**. 
@@ -55,26 +55,9 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
         static string queueName = "<QUEUE NAME>";
     ```
 
-    Voer uw verbindingsstring in voor de naamruimte als de variabele `ServiceBusConnectionString`. Voer de naam van uw wachtrij in.
+    Voer uw verbindingsstring in voor de naamruimte als de variabele `connectionString`. Voer de naam van uw wachtrij in.
 
-1. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee wordt de `SendMessagesAsync()`-methode aangeroepen die u in de volgende stap toevoegt om berichten naar de wachtrij te verzenden. 
-
-    ```csharp
-    public static async Task Main(string[] args)
-    {    
-        const int numberOfMessages = 10;
-        
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Send messages.
-        await SendMessagesAsync(numberOfMessages);
-
-        Console.ReadKey();
-    }
-    ```
-1. Voeg direct na de `Main()` methode de volgende `SendMessagesAsync()` methode toe voor het uitvoeren van het werk van het verzenden van het aantal berichten dat is opgegeven door `numberOfMessagesToSend` (momenteel ingesteld op 10):
+1. Voer direct na de methode `Main()` de volgende methode `SendMessagesAsync()` toe, die het bericht verzendt:
 
     ```csharp
         static async Task SendMessageAsync()
@@ -101,9 +84,9 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
         {
             // create a queue containing the messages and return it to the caller
             Queue<ServiceBusMessage> messages = new Queue<ServiceBusMessage>();
-            messages.Enqueue(new ServiceBusMessage("First message"));
-            messages.Enqueue(new ServiceBusMessage("Second message"));
-            messages.Enqueue(new ServiceBusMessage("Third message"));
+            messages.Enqueue(new ServiceBusMessage("First message in the batch"));
+            messages.Enqueue(new ServiceBusMessage("Second message in the batch"));
+            messages.Enqueue(new ServiceBusMessage("Third message in the batch"));
             return messages;
         }
     ```

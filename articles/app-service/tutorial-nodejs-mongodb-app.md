@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 06/16/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-js, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 9c204a07e3c5edff028342af1c88b15ebac0754b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 25d5aa3961ad5dabd29ab4501d8f5076362d9df8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012193"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862260"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Zelfstudie: Een app voor Node.js en MongoDB bouwen in Azure
 
@@ -47,11 +47,12 @@ Wat u leert:
 
 Vereisten voor het voltooien van deze zelfstudie:
 
-1. [Git installeren](https://git-scm.com/)
-2. [Node.js en NPM installeren](https://nodejs.org/)
-3. [Bower installeren ](https://bower.io/) (vereist voor [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started))
-4. [Gulp.js installeren ](https://gulpjs.com/) (vereist voor [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started))
-5. [MongoDB Community Edition installeren en uitvoeren](https://docs.mongodb.com/manual/administration/install-community/) 
+- [Git installeren](https://git-scm.com/)
+- [Node.js en NPM installeren](https://nodejs.org/)
+- [Bower installeren ](https://bower.io/) (vereist voor [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started))
+- [Gulp.js installeren ](https://gulpjs.com/) (vereist voor [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started))
+- [MongoDB Community Edition installeren en uitvoeren](https://docs.mongodb.com/manual/administration/install-community/)
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)] 
 
 ## <a name="test-local-mongodb"></a>MongoDB lokaal testen
 
@@ -111,8 +112,6 @@ De MEAN.js-voorbeeldtoepassing slaat gebruikersgegevens op in de database. Als d
 Selecteer **Admin > Manage Articles** om enkele artikelen toe te voegen.
 
 Als u Node.js wilt stoppen, drukt u in de terminal op `Ctrl+C`. 
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-production-mongodb"></a>Productie-MongoDB maken
 
@@ -306,7 +305,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (5/5), done.
 Writing objects: 100% (5/5), 489 bytes | 0 bytes/s, done.
 Total 5 (delta 3), reused 0 (delta 0)
-remote: Updating branch 'master'.
+remote: Updating branch 'main'.
 remote: Updating submodules.
 remote: Preparing deployment for commit id '6c7c716eee'.
 remote: Running custom deployment command...
@@ -317,7 +316,7 @@ remote: Handling node.js deployment.
 .
 remote: Deployment successful.
 To https://&lt;app-name&gt;.scm.azurewebsites.net/&lt;app-name&gt;.git
- * [new branch]      master -> master
+ * [new branch]      main -> main
 </pre>
 
 Het implementatieproces voert [Gulp](https://gulpjs.com/) na `npm install` uit. In App Service worden tijdens de implementatie geen Gulp- of Grunt-taken uitgevoerd, dus deze voorbeeldopslagplaats bevat twee extra bestanden in de hoofdmap om deze in te schakelen: 
@@ -468,7 +467,7 @@ Leg in het lokale terminalvenster uw wijzigingen vast in Git en push de codewijz
 
 ```bash
 git commit -am "added article comment"
-git push azure master
+git push azure main
 ```
 
 Zodra `git push` is voltooid, gaat u naar de Azure-app en probeert u de nieuwe functionaliteit uit.

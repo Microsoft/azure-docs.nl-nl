@@ -5,12 +5,12 @@ ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 06/18/2020
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
-ms.openlocfilehash: 7d6c0d13e440beb9a934adba3908cc9a08f396f1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b3c172584c42e1ed1d7ca94b6cd51bedd4e49dae
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997903"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862289"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Een Ruby- en een Postgres-app maken in Azure App Service op Linux
 
@@ -34,10 +34,11 @@ In deze zelfstudie leert u het volgende:
 
 Vereisten voor het voltooien van deze zelfstudie:
 
-* [Git installeren](https://git-scm.com/)
-* [Ruby 2.6 installeren](https://www.ruby-lang.org/en/documentation/installation/)
-* [Ruby on Rails 5.1 installeren](https://guides.rubyonrails.org/v5.1/getting_started.html)
-* [PostgreSQL installeren en uitvoeren](https://www.postgresql.org/download/)
+- [Git installeren](https://git-scm.com/)
+- [Ruby 2.6 installeren](https://www.ruby-lang.org/en/documentation/installation/)
+- [Ruby on Rails 5.1 installeren](https://guides.rubyonrails.org/v5.1/getting_started.html)
+- [PostgreSQL installeren en uitvoeren](https://www.postgresql.org/download/)
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="prepare-local-postgres"></a>Lokale Postgres voorbereiden
 
@@ -103,8 +104,6 @@ Ga naar `http://localhost:3000` in een browser. Voeg een paar taken op de pagina
 ![Ruby on Rails is verbonden met Postgres](./media/tutorial-ruby-postgres-app/postgres-connect-success.png)
 
 Typ `Ctrl + C` in de terminal om de Rails-server te stoppen.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-postgres-in-azure"></a>Postgres maken in Azure
 
@@ -292,7 +291,7 @@ git remote add azure <paste-copied-url-here>
 Push naar de externe Azure-instantie om de Ruby on Rails-toepassing te implementeren. U wordt gevraagd naar het wachtwoord dat u eerder hebt opgegeven als onderdeel van het maken van de implementatiegebruiker.
 
 ```bash
-git push azure master
+git push azure main
 ```
 
 Tijdens de implementatie communiceert Azure App Service de voortgang naar Git.
@@ -303,7 +302,7 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 291 bytes | 0 bytes/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
-remote: Updating branch 'master'.
+remote: Updating branch 'main'.
 remote: Updating submodules.
 remote: Preparing deployment for commit id 'a5e076db9c'.
 remote: Running custom deployment command...
@@ -422,7 +421,7 @@ Voer uw wijzigingen door in Git en push de codewijzigingen vervolgens naar Azure
 ```bash
 git add .
 git commit -m "added complete checkbox"
-git push azure master
+git push azure main
 ```
 
 Zodra `git push` is voltooid, gaat u naar de Azure-app en probeert u de nieuwe functionaliteit uit.

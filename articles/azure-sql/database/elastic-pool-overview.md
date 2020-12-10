@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, sstein
-ms.date: 07/28/2020
-ms.openlocfilehash: 3b76af2c6c949f2591cee880a1991c6f240806a2
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.date: 12/9/2020
+ms.openlocfilehash: d1ba9445441f38c55b40a8f8ca55471ea8b0a06d
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107892"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008585"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Meerdere databases in Azure SQL Database beheren en schalen met elastische pools
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -74,38 +74,18 @@ Dit voorbeeld is om de volgende redenen ideaal:
 - Het piekgebruik voor elke database vindt plaats op verschillende momenten.
 - eDTU‘s worden gedeeld tussen meerdere databases.
 
-De prijs van een groep is een functie van de groep eDTU's. Hoewel de prijs per eDTU voor een groep 1,5 x groter is dan de prijs per DTU voor een individuele database, **kunnen eDTU's in een groep door veel databases worden gedeeld en zijn er dus minder eDTU's nodig**. Deze verschillen in prijsbepaling en het delen van eDTU's vormen de basis van de mogelijke prijsbesparing die groepen kunnen bieden.
+In het-aankoop model voor DTU is de prijs van een pool een functie van de groep Edtu's. Hoewel de prijs per eDTU voor een groep 1,5 x groter is dan de prijs per DTU voor een individuele database, **kunnen eDTU's in een groep door veel databases worden gedeeld en zijn er dus minder eDTU's nodig**. Deze verschillen in prijsbepaling en het delen van eDTU's vormen de basis van de mogelijke prijsbesparing die groepen kunnen bieden.
 
-De volgende vuist regels met betrekking tot het aantal data bases en database gebruik helpen ervoor te zorgen dat een pool gereduceerde kosten oplevert vergeleken met het gebruik van reken grootten voor afzonderlijke data bases.
-
-### <a name="minimum-number-of-databases"></a>Minimum aantal databases
-
-Als de totale hoeveelheid resources voor afzonderlijke data bases meer is dan 1,5 x de resources die nodig zijn voor de groep, is een elastische pool rendabeler.
-
-***Voor beeld van een op DTU gebaseerd inkoop model*** Er zijn ten minste twee S3-data bases of ten minste 15 S0-data bases nodig voor een 100-eDTU-groep om rendabeler te zijn dan het gebruik van reken grootten voor afzonderlijke data bases.
-
-### <a name="maximum-number-of-concurrently-peaking-databases"></a>Maximum aantal gelijktijdig piekende databases
-
-Door resources te delen, kunnen niet alle data bases in een pool gelijktijdig bronnen gebruiken tot de limiet die beschikbaar is voor afzonderlijke data bases. Hoe minder data bases gelijktijdig pieken, hoe lager de pool bronnen kunnen worden ingesteld en hoe rendabeler de groep wordt. In het algemeen, niet groter dan 2/3 (of 67%) van de data bases in de groep moeten tegelijkertijd pieken op de limiet van de resources.
-
-***Voor beeld van een op DTU gebaseerd inkoop model*** Om de kosten voor drie S3-data bases in een 200 eDTU-groep te verlagen, kunnen Maxi maal twee van deze data bases tegelijkertijd pieken in het gebruik. Of, als meer dan twee van deze vier S3-databases gelijktijdig pieken, zou de groep moeten worden uitgebreid tot meer dan 200 eDTU's. Als het formaat van de groep wordt gewijzigd naar meer dan 200 Edtu's, moeten er meer S3-data bases aan de groep worden toegevoegd om de kosten lager te blijven dan reken grootten voor afzonderlijke data bases.
-
-Opmerking in dit voor beeld is het gebruik van andere data bases in de pool niet in aanmerking. Als alle databases voortdurend in enige mate gebruik maken van eDTU's, kan minder dan 2/3 (of 67%) van de databases tegelijkertijd pieken.
-
-### <a name="resource-utilization-per-database"></a>Resource gebruik per data base
-
-Een groot verschil tussen het piek- en gemiddelde gebruik van een database geeft langere perioden van laag gebruik en korte perioden hoog gebruik aan. Dit gebruikspatroon is ideaal voor het delen van resources met meerdere databases. Een database zou een geschikte kandidaat voor een groep kunnen zijn als het piekgebruik ongeveer 1,5 keer groter is dan het gemiddelde gebruik.
-
-***Voor beeld van een op DTU gebaseerd inkoop model*** Een S3-data base die pieken op 100 Dtu's en gemiddeld gebruik 67 Dtu's of minder is een goede kandidaat voor het delen van Edtu's in een pool. Ook een S1-database die piekt tot 20 DTU's en gemiddeld 13 DTU's of minder gebruikt, is een goede kandidaat voor een groep.
+In het vCore-aankoop model is de vCore-eenheids prijs voor elastische Pools hetzelfde als de prijs voor de vCore-eenheid voor afzonderlijke data bases.
 
 ## <a name="how-do-i-choose-the-correct-pool-size"></a>Hoe kan ik de juiste pool grootte kiezen
 
 De beste grootte voor een pool is afhankelijk van de geaggregeerde resources die nodig zijn voor alle data bases in de groep. Dit omvat het bepalen van het volgende:
 
-- Het maximum aantal resources dat wordt gebruikt door alle data bases in de pool (Maxi maal Dtu's of maximum vCores, afhankelijk van uw keuze van het aankoop model).
+- De maximale reken resources die worden gebruikt door alle data bases in de pool.  Reken bronnen worden geïndexeerd door Edtu's of vCores, afhankelijk van uw keuze van een aankoop model.
 - De maximum opslag in bytes die door alle databases in de groep wordt gebruikt.
 
-Zie het [op DTU gebaseerde inkoop model](service-tiers-dtu.md) of het [op vCore gebaseerde aankoop model](service-tiers-vcore.md)voor de beschik bare service lagen en limieten voor elk resource model.
+Zie het [op DTU gebaseerde aankoop model](service-tiers-dtu.md) of het [op vCore gebaseerde aankoop model](service-tiers-vcore.md)voor service lagen en resource limieten in elk aankoop model.
 
 Aan de hand van de volgende stappen kunt u schatten of een pool rendabeler is dan de afzonderlijke data bases:
 
@@ -119,10 +99,10 @@ Voor op vCore gebaseerd inkoop model:
 
 MAX (<*totale aantal db's* x- *VCore gebruik per DB* ->, <*aantal gelijktijdig pieken db's* X *piek vCore gebruik per DB*>)
 
-2. Schat hoeveel opslagruimte de groep nodig heeft door het aantal bytes op te tellen dat nodig is voor alle databases in de groep. Bepaal daarna hoe groot de eDTU-groep moet zijn om aan deze hoeveelheid opslag te voldoen.
+2. Schatting van de totale opslag ruimte die nodig is voor de groep door de benodigde gegevens grootte voor alle data bases in de groep toe te voegen. Bepaal voor het DTU-aankoop model de eDTU-groeps grootte die deze hoeveelheid opslag biedt.
 3. Neem voor het op DTU gebaseerde aankoop model meer van de eDTU-schattingen uit stap 1 en stap 2. Neem voor het op vCore gebaseerde aankoop model de vCore-schatting uit stap 1.
 4. Bekijk de [pagina met prijzen voor SQL database](https://azure.microsoft.com/pricing/details/sql-database/) en zoek de kleinste groeps grootte die groter is dan de schatting van stap 3.
-5. Vergelijk de prijs van de groep uit stap 5 met de prijs voor het gebruik van de juiste reken grootten voor afzonderlijke data bases.
+5. Vergelijk de prijs van de groep uit stap 4 met de prijs voor het gebruik van de juiste reken grootten voor afzonderlijke data bases.
 
 > [!IMPORTANT]
 > Als het aantal data bases in een pool het maximum ondersteunt, moet u het [bron beheer overwegen in compacte elastische Pools](elastic-pool-resource-management.md).
@@ -156,7 +136,7 @@ Pooldatabases ondersteunen in het algemeen dezelfde [bedrijfscontinuïteitsfunct
 Er zijn twee manieren waarop u een elastische pool kunt maken in de Azure Portal.
 
 1. Ga naar de [Azure Portal](https://portal.azure.com) om een elastische pool te maken. Zoek en selecteer **Azure SQL**.
-2. Selecteer **+ Toevoegen** om de pagina **SQL-implementatieoptie selecteren** te openen. U kunt aanvullende informatie over elastische Pools weer geven door **Details weer geven** te selecteren op de tegel **data bases** .
+2. Selecteer **+Toevoegen** om de pagina **SQL-implementatieoptie selecteren** te openen. U kunt aanvullende informatie over elastische Pools weer geven door **Details weer geven** te selecteren op de tegel **data bases** .
 3. Selecteer in de tegel **data bases** de optie **elastische groep** in de vervolg keuzelijst **resource type** en selecteer vervolgens **maken**:
 
    ![Een elastische pool maken](./media/elastic-pool-overview/create-elastic-pool.png)
@@ -168,7 +148,7 @@ Er zijn twee manieren waarop u een elastische pool kunt maken in de Azure Portal
 
 De servicelaag van de pool bepaalt de functies die beschikbaar zijn voor de elastische elementen in de groep en de maximale hoeveelheid beschik bare bronnen voor elke Data Base. Zie resource limieten voor elastische Pools in het DTU- [model](resource-limits-dtu-elastic-pools.md#elastic-pool-storage-sizes-and-compute-sizes)voor meer informatie. Zie voor vCore resource limieten voor elastische Pools op [vCore gebaseerde resource limieten: elastische Pools](resource-limits-vcore-elastic-pools.md).
 
-Klik op **groep configureren**om de resources en prijs van de groep te configureren. Selecteer vervolgens een servicelaag, voeg data bases toe aan de groep en configureer de resource limieten voor de groep en de bijbehorende data bases.
+Klik op **groep configureren** om de resources en prijs van de groep te configureren. Selecteer vervolgens een servicelaag, voeg data bases toe aan de groep en configureer de resource limieten voor de groep en de bijbehorende data bases.
 
 Wanneer u klaar bent met het configureren van de groep, kunt u op Toep assen klikken, de groep een naam krijgen en op OK klikken om de groep te maken.
 
@@ -176,34 +156,7 @@ Wanneer u klaar bent met het configureren van de groep, kunt u op Toep assen kli
 
 In de Azure Portal kunt u het gebruik van een elastische pool en de data bases in die groep bewaken. U kunt ook een reeks wijzigingen aanbrengen in uw elastische pool en alle wijzigingen tegelijk verzenden. Deze wijzigingen omvatten het toevoegen of verwijderen van data bases, het wijzigen van de instellingen voor de elastische groep of het wijzigen van de data base-instellingen.
 
-Zoek en open een elastische groep in de portal om te beginnen met het bewaken van uw elastische pool. U ziet eerst een scherm dat u een overzicht geeft van de status van uw elastische pool. Dit omvat:
-
-- Bewakings grafieken met het gebruik van resources van de elastische pool
-- Recente waarschuwingen en aanbevelingen, indien beschikbaar, voor de elastische pool
-
-In de volgende afbeelding ziet u een voor beeld van een elastische pool:
-
-![Groeps weergave](./media/elastic-pool-overview/basic.png)
-
-Als u meer informatie over de groep wilt, kunt u klikken op een van de beschik bare gegevens in dit overzicht. Als u op het **resource gebruik** -diagram klikt, gaat u naar de weer gave Azure-controle, waar u de metrische gegevens en het tijd venster kunt aanpassen dat in de grafiek wordt weer gegeven. Wanneer u op beschik bare meldingen klikt, gaat u naar een Blade met de volledige details van die waarschuwing of aanbeveling.
-
-Als u de data bases in de pool wilt bewaken, kunt u klikken op **database resource gebruik** in de sectie **bewaking** van het menu resource aan de linkerkant.
-
-![Pagina database resource gebruik](./media/elastic-pool-overview/db-utilization.png)
-
-### <a name="to-customize-the-chart-display"></a>De grafiek weergave aanpassen
-
-U kunt het diagram en de metrische pagina bewerken om andere metrische gegevens weer te geven, zoals het CPU-percentage, het IO-percentage en het gebruikte logboek-IO-percentage.
-
-Op het formulier **grafiek bewerken** kunt u een vast tijds bereik selecteren of op **aangepast** klikken om een 24-uurs venster in de afgelopen twee weken te selecteren. vervolgens selecteert u de resources die u wilt bewaken.
-
-### <a name="to-select-databases-to-monitor"></a>Te bewaken data bases selecteren
-
-Standaard worden in de grafiek in de Blade **database resource gebruik** de top 5-data bases weer gegeven op DTU of CPU (afhankelijk van uw servicelaag). U kunt de data bases in deze grafiek wijzigen door data bases in de lijst onder de grafiek te selecteren en te deselecteren via de selectie vakjes aan de linkerkant.
-
-U kunt ook meer metrische gegevens selecteren om naast elkaar in deze database tabel weer te geven om een beter beeld te krijgen van de prestaties van uw data bases.
-
-Zie [SQL database-waarschuwingen in azure portal maken](alerts-insights-configure-portal.md)voor meer informatie.
+U kunt gebruikmaken van de ingebouwde [hulpprogram ma's](https://docs.microsoft.com/azure/azure-sql/database/alerts-insights-configure-portal)voor [prestatie bewaking](https://docs.microsoft.com/azure/azure-sql/database/performance-guidance) en waarschuwingen, in combi natie met prestatie classificaties.  Daarnaast kan SQL Database [metrische gegevens en resourcelogboeken verzenden](https://docs.microsoft.com/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal) die bewaking eenvoudiger maken.
 
 ## <a name="customer-case-studies"></a>Casestudy's van klanten
 

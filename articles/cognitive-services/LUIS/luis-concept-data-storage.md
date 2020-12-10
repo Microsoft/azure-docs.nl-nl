@@ -8,16 +8,21 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 10/13/2020
-ms.openlocfilehash: fd7499bd5e216f2a625d87ea13996da851a1889e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 12/07/2020
+ms.openlocfilehash: a58bcff4e39c4a4a907cd8567b47b074ff299bd5
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019208"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008449"
 ---
 # <a name="data-storage-and-removal-in-language-understanding-luis-cognitive-services"></a>Gegevens opslag en verwijderen in Language Understanding (LUIS) Cognitive Services
-LUIS slaat gegevens op die zijn versleuteld in een Azure-gegevens opslag die overeenkomt met de regio die is opgegeven door de sleutel. Deze gegevens worden 30 dagen bewaard. 
+
+LUIS slaat gegevens op die zijn versleuteld in een Azure-gegevens opslag die overeenkomt met [de regio](luis-reference-regions.md) die is opgegeven door de sleutel. 
+
+* Gegevens die worden gebruikt om het model te trainen, zoals entiteiten, intenties en uitingen, worden opgeslagen in LUIS voor de levens duur van de toepassing. Als een eigenaar of Inzender de app verwijdert, worden deze gegevens verwijderd. Als een toepassing in 90 dagen niet is gebruikt, wordt deze verwijderd. 
+
+* Ontwerpers van toepassingen kunnen ervoor kiezen om [logboek registratie in te scha kelen](luis-how-to-review-endpoint-utterances.md#log-user-queries-to-enable-active-learning) op de uitingen die worden verzonden naar een gepubliceerde toepassing. Als deze functie is ingeschakeld, worden uitingen 30 dagen opgeslagen en kunnen ze worden weer gegeven door de auteur van de toepassing. Als logboek registratie niet is ingeschakeld wanneer de toepassing wordt gepubliceerd, worden deze gegevens niet opgeslagen.
 
 ## <a name="export-and-delete-app"></a>App exporteren en verwijderen
 Gebruikers hebben volledige controle over het [exporteren](luis-how-to-start-new-app.md#export-app) en [verwijderen](luis-how-to-start-new-app.md#delete-app) van de app. 

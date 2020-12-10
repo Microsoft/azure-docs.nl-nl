@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: c35647a46cd252ce045d10e8dfefcf78236ba74b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2ab39f090124aaf590798795f446bda5b0fe48a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961717"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008551"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Veelgestelde vragen over Azure App Service on Linux
 
@@ -70,7 +70,7 @@ Ja.
 
 **Kan ik *webdeploy/MSDeploy* gebruiken om mijn web-app te implementeren?**
 
-Ja, u moet een app-instelling met de `WEBSITE_WEBDEPLOY_USE_SCM` naam *False*instellen.
+Ja, u moet een app-instelling met de `WEBSITE_WEBDEPLOY_USE_SCM` naam *False* instellen.
 
 **Git-implementatie van mijn toepassing mislukt wanneer Linux-web-app wordt gebruikt. Hoe kan ik het probleem omzeilen?**
 
@@ -94,7 +94,7 @@ Ja, Schakel `perMessageDeflate` de Node.js code van de server in. Als u bijvoorb
 
 ```nodejs
 const io = require('socket.io')(server,{
-  perMessageDeflate :false
+  perMessageDeflate :false
 });
 ```
 
@@ -122,7 +122,7 @@ Geef de volledige register-URL op, inclusief `http://` of `https://` .
 
 **Wat is de indeling voor de naam van de installatie kopie in de optie persoonlijk REGI ster?**
 
-Voeg de volledige naam van de installatie kopie toe, met inbegrip van de URL van het persoonlijke REGI ster (bijvoorbeeld myacr.azurecr.io/dotnet:latest). Namen van installatie kopieën die gebruikmaken van een aangepaste poort, [kunnen niet via de portal worden ingevoerd](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650). `docker-custom-image-name`Gebruik het [ `az` opdracht regel programma](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set)om in te stellen.
+Voeg de volledige naam van de installatie kopie toe, met inbegrip van de URL van het persoonlijke REGI ster (bijvoorbeeld myacr.azurecr.io/dotnet:latest). Namen van installatie kopieën die gebruikmaken van een aangepaste poort, [kunnen niet via de portal worden ingevoerd](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650). `docker-custom-image-name`Gebruik het [ `az` opdracht regel programma](/cli/azure/webapp/config/container#az-webapp-config-container-set)om in te stellen.
 
 **Kan ik meer dan één poort op mijn aangepaste container installatie kopie beschikbaar maken?**
 
@@ -174,7 +174,7 @@ Dit zijn de regels voor het bepalen van de toegang tot de container, in volg ord
 - Als geen van de bovenstaande voor waarden waar is, is de eerste container die in het bestand is gedefinieerd toegankelijk (beschikbaar)
 
 
-## <a name="web-sockets"></a>Websockets
+## <a name="web-sockets"></a>websockets
 
 Web sockets worden ondersteund in Linux-apps.
 

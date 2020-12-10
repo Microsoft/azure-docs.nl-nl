@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: duau
-ms.openlocfilehash: c49a3da5bef6059ff5c59cc271cfa58a80153312
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: f514e158e0914475bfe0b7b7ee2c1bf6a63396fe
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762751"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008398"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -161,10 +161,10 @@ Azure National Clouds zijn geïsoleerd van elkaar en van wereld wijde commercië
 | **Chicago** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | n.v.t. | 10G, 100G | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
 | **Dallas** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | n.v.t. | 10G, 100G | Equinix, Megaport, Verizon |
 | **New York** | [Equinix NY5](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny5/) | n.v.t. | 10G, 100G | Equinix, CenturyLink Cloud Connect, Verizon |
-| **Phoenix** | [CyrusOne Chandler](https://cyrusone.com/locations/arizona/phoenix-arizona-chandler/) | VS (overheid) - Arizona | n.v.t. | BIJ&T netbond, CenturyLink Cloud Connect, Mega Port |
+| **Phoenix** | [CyrusOne Chandler](https://cyrusone.com/locations/arizona/phoenix-arizona-chandler/) | VS (overheid) - Arizona | 10G, 100G | BIJ&T netbond, CenturyLink Cloud Connect, Mega Port |
 | **San Antonio** | [CyrusOne SA2](https://cyrusone.com/locations/texas/san-antonio-texas-ii/) | VS (overheid) - Texas | n.v.t. | CenturyLink Cloud Connect, Megaport |
 | **Silicon Valley** | [Equinix SV4](https://www.equinix.com/locations/americas-colocation/united-states-colocation/silicon-valley-data-centers/sv4/) | n.v.t. | 10G, 100G | OP&T, Equinix, Level 3 Communications, Verizon |
-| **Seattle** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | n.v.t. | n.v.t. | Equinix, Megaport |
+| **Seattle** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | n.v.t. | 10G, 100G | Equinix, Megaport |
 | **Washington DC** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | US DoD-oost, US Gov-Virginia | 10G, 100G | BIJ&T netobligatie, CenturyLink Cloud Connect, Equinix, Level 3 Communications, Mega Port, Verizon |
 
 ### <a name="china"></a>China

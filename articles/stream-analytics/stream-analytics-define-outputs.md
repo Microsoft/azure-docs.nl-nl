@@ -7,13 +7,13 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.custom: contperfq1
-ms.date: 10/2/2020
-ms.openlocfilehash: 022e2e25c96473f49468f2bd48e5ee997933baea
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 12/9/2020
+ms.openlocfilehash: 70a2d5fac643c9af6954f154e1c91813bbbfa5bc
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348709"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008381"
 ---
 # <a name="outputs-from-azure-stream-analytics"></a>Uitvoer van Azure Stream Analytics
 
@@ -25,14 +25,14 @@ Sommige typen uitvoer ondersteunen [partitionering](#partitioning)en [uitvoer ba
 
 | Uitvoertype | Partitionering | Beveiliging | 
 |-------------|--------------|----------|
-|[Azure Data Lake Storage Gen 1](azure-data-lake-storage-gen1-output.md)|Ja|Azure Active Directory-gebruiker </br> MSI|
-|[Azure SQL Database](sql-database-output.md)|Ja, optioneel.|SQL-gebruikers authenticatie </br> MSI (preview-versie)|
-|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Ja|SQL-gebruikers authenticatie|
-|[Blob-opslag en Azure Data Lake gen 2](blob-storage-azure-data-lake-gen2-output.md)|Ja|MSI </br> Toegangssleutel|
-|[Azure Event Hubs](event-hubs-output.md)|Ja, de partitie sleutel kolom moet worden ingesteld in de uitvoer configuratie.|Toegangssleutel|
-|[Power BI](power-bi-output.md)|Nee|Azure Active Directory-gebruiker </br> MSI|
+|[Azure Data Lake Storage Gen 1](azure-data-lake-storage-gen1-output.md)|Ja|Azure Active Directory-gebruiker </br> , Beheerde identiteit|
+|[Azure SQL Database](sql-database-output.md)|Ja, optioneel.|SQL-gebruikers auth, </br> Beheerde identiteit (preview)|
+|[Azure Synapse Analytics](azure-synapse-analytics-output.md)|Ja|SQL-gebruikers auth, </br> Beheerde identiteit (preview)|
+|[Blob-opslag en Azure Data Lake gen 2](blob-storage-azure-data-lake-gen2-output.md)|Ja|Toegangs sleutel, </br> Beheerde identiteit (preview)|
+|[Azure Event Hubs](event-hubs-output.md)|Ja, de partitie sleutel kolom moet worden ingesteld in de uitvoer configuratie.|Toegangs sleutel, </br> Beheerde identiteit (preview)|
+|[Power BI](power-bi-output.md)|Nee|Azure Active Directory gebruiker, </br> Beheerde identiteit|
 |[Azure Table storage](table-storage-output.md)|Ja|Accountsleutel|
-|[Azure Service Bus-wachtrijen](service-bus-queues-output.md)|Ja|Toegangssleutel|
+|[Azure Service Bus wachtrijen](service-bus-queues-output.md)|Ja|Toegangssleutel|
 |[Azure Service Bus onderwerpen](service-bus-topics-output.md)|Ja|Toegangssleutel|
 |[Azure Cosmos DB](azure-cosmos-db-output.md)|Ja|Toegangssleutel|
 |[Azure Functions](azure-functions-output.md)|Ja|Toegangssleutel|
@@ -41,7 +41,7 @@ Sommige typen uitvoer ondersteunen [partitionering](#partitioning)en [uitvoer ba
 
 Stream Analytics ondersteunt partities voor alle uitvoer, met uitzonde ring van Power BI. Voor meer informatie over partitie sleutels en het aantal uitvoer schrijvers raadpleegt u het artikel voor het specifieke uitvoer type waarin u bent geïnteresseerd. Alle uitvoer artikelen zijn gekoppeld in de vorige sectie.  
 
-Voor een geavanceerde afstemming van de partities kan ook het aantal uitvoer schrijvers worden beheerd met behulp van een `INTO <partition count>` ( [INTO](/stream-analytics-query/into-azure-stream-analytics#into-shard-count)Zie) component in uw query. Dit kan handig zijn bij het bereiken van een gewenste taak topologie. Als uw uitvoer adapter niet is gepartitioneerd, veroorzaakt een gebrek aan gegevens in één invoer partitie een vertraging tot de duur van de late aankomst. In dergelijke gevallen wordt de uitvoer samengevoegd met één schrijver, wat kan leiden tot knel punten in de pijp lijn. Zie [Azure stream Analytics overwegingen voor gebeurtenis orders](./stream-analytics-time-handling.md)voor meer informatie over het beleid voor late ontvangst.
+Voor een geavanceerde afstemming van de partities kan ook het aantal uitvoer schrijvers worden beheerd met behulp van een `INTO <partition count>` ( [](/stream-analytics-query/into-azure-stream-analytics#into-shard-count)Zie) component in uw query. Dit kan handig zijn bij het bereiken van een gewenste taak topologie. Als uw uitvoer adapter niet is gepartitioneerd, veroorzaakt een gebrek aan gegevens in één invoer partitie een vertraging tot de duur van de late aankomst. In dergelijke gevallen wordt de uitvoer samengevoegd met één schrijver, wat kan leiden tot knel punten in de pijp lijn. Zie [Azure stream Analytics overwegingen voor gebeurtenis orders](./stream-analytics-time-handling.md)voor meer informatie over het beleid voor late ontvangst.
 
 ## <a name="output-batch-size"></a>Grootte van uitvoer batch
 

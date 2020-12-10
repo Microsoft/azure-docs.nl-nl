@@ -7,19 +7,22 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 04/01/2020
-ms.openlocfilehash: e583cedc04113615c50cc9906cbd11a99ff48683
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 12/09/2020
+ms.openlocfilehash: 182ec758a8764a959b39296163e63e800cf5108c
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421716"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008481"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Werken met zoek resultaten in azure Cognitive Search
 
-In dit artikel wordt uitgelegd hoe u een query-antwoord krijgt dat terugkeert met een totaal aantal overeenkomende documenten, gepagineerde resultaten, gesorteerde resultaten en door waarden gemarkeerde termen.
+In dit artikel wordt uitgelegd hoe u een query-antwoord kunt formuleren in azure Cognitive Search. De structuur van een antwoord wordt bepaald door para meters in de query: [document zoeken](/rest/api/searchservice/Search-Documents) in de rest API-of [searchresults-klasse](/dotnet/api/azure.search.documents.models.searchresults-1) in de .NET SDK. De para meters in de query kunnen worden gebruikt om de resultatenset op de volgende manieren te structureren:
 
-De structuur van een antwoord wordt bepaald door para meters in de query: [document zoeken](/rest/api/searchservice/Search-Documents) in de rest API-of [searchresults-klasse](/dotnet/api/azure.search.documents.models.searchresults-1) in de .NET SDK.
++ Het aantal documenten in de resultaten beperken of batcheren (standaard 50)
++ Velden selecteren die in de resultaten moeten worden meegenomen
++ Order resultaten
++ Een overeenkomende hele of gedeeltelijke term markeren in de hoofd tekst van de zoek resultaten
 
 ## <a name="result-composition"></a>Resultaten samen stelling
 
@@ -38,6 +41,14 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 
 > [!NOTE]
 > Als u afbeeldings bestanden wilt toevoegen aan een resultaat, zoals een foto van een product of logo, slaat u deze buiten Azure Cognitive Search op, maar voegt u een veld in uw index toe om te verwijzen naar de afbeeldings-URL in het zoek document. Voor beelden van indexen die afbeeldingen in de resultaten ondersteunen, zijn de **realestate-voor beeld-US-** demo, in deze [Snelstartgids](search-create-app-portal.md)en in de [nieuwe demo-app voor taken in Utrecht City](https://aka.ms/azjobsdemo).
+
+### <a name="tips-for-unexpected-results"></a>Tips voor onverwachte resultaten
+
+Af en toe zijn de stoffen en niet de structuur van de resultaten onverwacht. Wanneer de query resultaten onverwacht zijn, kunt u deze query wijzigingen proberen om te zien of het gaat om het volgende:
+
++ Wijzig **`searchMode=any`** (standaard) in **`searchMode=all`** om overeenkomsten te vereisen voor alle criteria in plaats van een criterium. Dit geldt met name wanneer Boole-Opera tors worden opgenomen in de query.
+
++ Experimenteer met verschillende lexicale analyse functies of aangepaste analyse functies om te zien of het resultaat van de query wordt gewijzigd. Met de standaard-Analyzer worden woord afgebroken woorden gesplitst en worden woorden naar hoofd formulieren verminderd, wat doorgaans de robuustheid van een query-antwoord verbetert. Als u echter afbreek streepjes wilt behouden of als teken reeksen speciale tekens bevatten, moet u mogelijk aangepaste analyse functies configureren om ervoor te zorgen dat de index tokens in de juiste indeling bevat. Zie voor meer informatie zoeken op de [gedeeltelijke term en patronen met speciale tekens (afbreek streepjes, joker tekens, regex, patronen)](search-query-partial-matching.md).
 
 ## <a name="paging-results"></a>Resultaten pagineren
 
@@ -80,9 +91,9 @@ U ziet dat document 2 twee keer wordt opgehaald. De reden hiervoor is dat het ni
 
 ## <a name="ordering-results"></a>Resultaten ordenen
 
-Voor Zoek opdrachten in volledige tekst worden de resultaten automatisch gerangschikt op basis van een zoek Score, berekend aan de hand van term frequentie en nabijheid in een document, met hogere scores naar documenten met meer of betere overeenkomsten voor een zoek term. 
+Voor Zoek opdrachten in volledige tekst worden de resultaten automatisch gerangschikt op basis van een zoek Score, berekend aan de hand van term frequentie en nabijheid in een document (afgeleid van [TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)), met hogere scores naar documenten met meer of betere overeenkomsten voor een zoek term. 
 
-Zoek scores geven algemeen inzicht in de relevantie, waarbij de sterkte van de overeenkomst wordt weer gegeven in vergelijking met andere documenten in dezelfde resultatenset. Scores zijn niet altijd consistent met de ene query naar de volgende, dus wanneer u met query's werkt, kunnen er kleine verschillen optreden in de manier waarop Zoek documenten worden besteld. Er zijn verschillende uitleg waarom dit kan gebeuren.
+Zoek scores geven algemeen inzicht in de relevantie aan, die overeenkomen met de sterkte van de overeenkomst ten opzichte van andere documenten in dezelfde resultatenset. Scores zijn echter niet altijd consistent met de ene query naar de volgende, dus wanneer u met query's werkt, kunnen er kleine verschillen optreden in de manier waarop Zoek documenten worden besteld. Er zijn verschillende uitleg waarom dit kan gebeuren.
 
 | Oorzaak | Beschrijving |
 |-----------|-------------|
@@ -90,11 +101,11 @@ Zoek scores geven algemeen inzicht in de relevantie, waarbij de sterkte van de o
 | Meerdere replica's | Voor services die gebruikmaken van meerdere replica's, worden query's op elke replica parallel verleend. De index statistieken die worden gebruikt voor het berekenen van een zoek Score worden berekend per replica, met de resultaten samengevoegd en geordend in het query-antwoord. Replica's zijn voornamelijk Spie gels van elkaar, maar statistieken kunnen verschillen als gevolg van kleine verschillen in de status. Eén replica kan bijvoorbeeld verwijderde documenten hebben die bijdragen aan hun statistieken, die uit andere replica's zijn samengevoegd. Normaal gesp roken zijn verschillen in statistieken per replica duidelijker in kleinere indexen. |
 | Identieke scores | Als meerdere documenten dezelfde score hebben, kan het zijn dat deze eerst worden weer gegeven.  |
 
-### <a name="consistent-ordering"></a>Consistente volg orde
+### <a name="how-to-get-consistent-ordering"></a>Consistente volg orde krijgen
 
-Gezien de volg orde van de resultaten van Flex, wilt u mogelijk andere opties verkennen als consistentie een toepassings vereiste is. De eenvoudigste benadering is het sorteren op een veld waarde, zoals classificatie of datum. Voor scenario's waarin u wilt sorteren op een specifiek veld, zoals een classificatie of datum, kunt u expliciet een [ `$orderby` expressie](query-odata-filter-orderby-syntax.md)definiëren die kan worden toegepast op elk veld dat is geïndexeerd als **sorteerbaar**.
+Als consistente volg orde een toepassings vereiste is, kunt u expliciet een [ **`$orderby`** ]-expressie (query-odata-filter-OrderBy-syntax.MD) definiëren voor een veld. Alleen velden die zijn geïndexeerd als **`sortable`** kunnen worden gebruikt om resultaten te best Ellen. Velden die meestal worden gebruikt in de **`$orderby`** velden classificatie, datum en locatie als u de waarde van de **`orderby`** para meter opgeeft om veld namen op te vragen en de [**`geo.distance()` functie**](query-odata-filter-orderby-syntax.md) voor georuimtelijke waarden te gebruiken.
 
-Een andere optie is het gebruik van een [aangepast Score profiel](index-add-scoring-profiles.md). Score profielen bieden u meer controle over de rang schikking van items in de zoek resultaten, met de mogelijkheid om overeenkomsten te verhogen die in specifieke velden worden gevonden. De extra waarderings logica kan u helpen kleine verschillen tussen replica's te overschrijven omdat de zoek scores voor elk document verder uit elkaar liggen. U wordt aangeraden het [classificatie algoritme](index-ranking-similarity.md) voor deze benadering te hanteren.
+Een andere benadering die consistentie bevordert, is het gebruik van een [aangepast Score profiel](index-add-scoring-profiles.md). Score profielen bieden u meer controle over de rang schikking van items in de zoek resultaten, met de mogelijkheid om overeenkomsten te verhogen die in specifieke velden worden gevonden. De extra waarderings logica kan u helpen kleine verschillen tussen replica's te overschrijven omdat de zoek scores voor elk document verder uit elkaar liggen. U wordt aangeraden het [classificatie algoritme](index-ranking-similarity.md) voor deze benadering te hanteren.
 
 ## <a name="hit-highlighting"></a>Markeren
 

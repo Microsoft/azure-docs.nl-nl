@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: pharring
 ms.author: pharring
 ms.date: 11/10/2020
-ms.openlocfilehash: 73fea1e1928cf4e1bd5342aa0a4c885ccb5cf137
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: e4fffe0efa9f6900ef8d83c0a1b150b4249c22b3
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548168"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008568"
 ---
 # <a name="release-notes-for-microsoftapplicationinsightssnapshotcollector"></a>Opmerkingen bij de release voor micro soft. ApplicationInsights. SnapshotCollector
 
@@ -21,6 +21,11 @@ Meer [informatie](./snapshot-debugger.md) over de Application Insights snapshot 
 Voor fout rapporten en feedback opent u een probleem op GitHub op https://github.com/microsoft/ApplicationInsights-dotnet
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+## <a name="1375"></a>[1.3.7.5](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.5)
+Een release van een punt om een oplossing te backport van 1.4.0-pre.
+### <a name="bug-fixes"></a>Opgeloste fouten
+- Corrigeer [ObjectDisposedException bij het afsluiten](https://github.com/microsoft/ApplicationInsights-dotnet/issues/2097).
 
 ## <a name="1374"></a>[1.3.7.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.4)
 Een punt versie om een probleem op te lossen dat is ontdekt bij het testen van het scenario voor de code in het test Azure App Service.

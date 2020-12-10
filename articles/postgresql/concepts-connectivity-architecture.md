@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.openlocfilehash: a6e2bc93a589e0a3f709eb1a8956bf8ca3d8bf6b
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 88d2dc456ab3dba1a21babae36712439b6231d30
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242055"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008517"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Connectiviteits architectuur in Azure Database for PostgreSQL
 In dit artikel wordt uitgelegd wat de Azure Database for PostgreSQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for PostgreSQL data base-exemplaar van clients, zowel binnen als buiten Azure.
@@ -42,7 +42,7 @@ De volgende tabel geeft een lijst van de primaire en secundaire IP-adressen van 
 | China - noord 2 | 40.73.50.0     |
 | Azië - oost | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     |
 | VS - oost | 40.121.158.30, 191.238.6.43, 40.71.8.203, 40.71.83.113   |
-| US - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  |
+| VS - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  |
 | Frankrijk - centraal | 40.79.137.0, 40.79.129.1  |
 | Frankrijk - zuid | 40.79.177.0     |
 | Duitsland - centraal | 51.4.144.100     |
@@ -50,7 +50,7 @@ De volgende tabel geeft een lijst van de primaire en secundaire IP-adressen van 
 | India - centraal | 104.211.96.159     |
 | India - zuid | 104.211.224.146  |
 | India - west | 104.211.160.80    |
-| Japan East | 13.78.61.196, 191.237.240.43  |
+| Japan East | 13.78.61.196, 191.237.240.43, 40.79.192.23 |
 | Japan - west | 104.214.148.156, 191.238.68.11, 40.74.96.6, 40.74.96.7    |
 | Korea - centraal | 52.231.32.42   |
 | Korea - zuid | 52.231.200.86    |

@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 1c28de679bd957a472e543489a2dd15b3883aed5
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: baae35c87f306f5773fa8061f27e9793754ccc9c
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327182"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008500"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -213,6 +213,8 @@ Er zijn een aantal algemene scenario's waarin u mogelijk Vm's moet herstellen.
 **Meerdere Vm's van domein controllers in één domein herstellen** | Als andere domein controllers in hetzelfde domein kunnen worden bereikt via het netwerk, kan de domein controller worden hersteld, zoals elke VM. Als het de laatste domein controller in het domein is, of als er een herstel in een geïsoleerd netwerk is uitgevoerd, gebruikt u een [forest recovery](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery).
 **Een VM van één domein controller herstellen in een configuratie met meerdere domeinen** |  Herstel de schijven en maak een virtuele machine met [behulp van Power shell](backup-azure-vms-automation.md#restore-the-disks)  
 **Meerdere domeinen in één forest herstellen** | We raden u aan een [forest-herstel](/windows-server/identity/ad-ds/manage/ad-forest-recovery-single-domain-in-multidomain-recovery)uit te voeren.
+
+Zie [back up and Restore Active Directory Domain controllers](active-directory-backup-restore.md)voor meer informatie.
 
 ## <a name="track-the-restore-operation"></a>De herstel bewerking bijhouden
 

@@ -1,15 +1,18 @@
 ---
 title: AWS-exemplaren detecteren met Azure Migrate-serverevaluatie
 description: Informatie over het detecteren van AWS-exemplaren met Azure Migrate-serverevaluatie.
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: b837ae89831024b169782fe9ae1a062677a4b45b
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dda6f6e37a42d4ee55a32fc8e1c05916c6be4367
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311282"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753124"
 ---
 # <a name="tutorial-discover-aws-instances-with-server-assessment"></a>Zelfstudie: AWS-exemplaren detecteren met Serverevaluatie
 
@@ -153,13 +156,13 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
 3.  Controleer de meest recente versie van het apparaat en de hashwaarden:
     - Voor de openbare cloud:
 
-        **Scenario** | **Downloaden*** | **Hash-waarde**
+        **Scenario** | **Downloaden** _ | _ *Hash-waarde**
         --- | --- | ---
         Fysiek (85 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140334) | 207157bab39303dca1c2b93562d6f1deaa05aa7c992f480138e17977641163fb
 
     - Voor Azure Government:
 
-        **Scenario** | **Downloaden*** | **Hash-waarde**
+        **Scenario** | **Downloaden** _ | _ *Hash-waarde**
         --- | --- | ---
         Fysiek (85 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140338) | ca67e8dbe21d113ca93bfe94c1003ab7faba50472cb03972d642be8a466f78ce
  

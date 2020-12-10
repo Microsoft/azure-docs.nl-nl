@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: IoT Device'
 - devx-track-js
 - devx-track-azurecli
-ms.openlocfilehash: 74d5e5395853bcba20b2012e54dd8f9fea03afe6
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 9ec2c51f01d6b13f33bc2d537a8f73a6721967d4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748548"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572521"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
@@ -28,7 +28,7 @@ ms.locfileid: "92748548"
 
 Naast het ontvangen van telemetriegegevens van uw apparaten, moet u mogelijk vanaf een back-endservice uw apparaten configureren. Wanneer u een gewenste configuratie naar uw apparaten verzendt, wilt u mogelijk ook status- en nalevingsupdates van die apparaten ontvangen. U stelt bijvoorbeeld een doelbereik in voor de operationele temperatuur voor een apparaat of verzamelt firmwareversiegegevens van uw apparaten.
 
-Om de statusgegevens tussen een apparaat en een IoT hub te synchroniseren, gebruikt u a _pparaatdubbels_ . Een [apparaatdubbel](iot-hub-devguide-device-twins.md) is een JSON-document dat is gekoppeld aan een specifiek apparaat en door IoT Hub wordt opgeslagen in de cloud waar u ze kunt [doorzoeken](iot-hub-devguide-query-language.md). Een apparaatdubbel bevat _gewenste eigenschappen_ , _gerapporteerde eigenschappen_ en _labels_ . Een gewenste eigenschap wordt ingesteld door een back-endtoepassing en gelezen door een apparaat. Een gerapporteerde eigenschap wordt ingesteld door een apparaat en gelezen door een back-endtoepassing. Een label wordt ingesteld door een back-endtoepassing en nooit naar een apparaat verzonden. U gebruikt labels om uw apparaten te organiseren. In deze zelfstudie ziet u hoe u gewenste en gerapporteerde eigenschappen kunt gebruiken om statusgegevens te synchroniseren:
+Om de statusgegevens tussen een apparaat en een IoT hub te synchroniseren, gebruikt u a _pparaatdubbels_. Een [apparaatdubbel](iot-hub-devguide-device-twins.md) is een JSON-document dat is gekoppeld aan een specifiek apparaat en door IoT Hub wordt opgeslagen in de cloud waar u ze kunt [doorzoeken](iot-hub-devguide-query-language.md). Een apparaatdubbel bevat _gewenste eigenschappen_, _gerapporteerde eigenschappen_ en _labels_. Een gewenste eigenschap wordt ingesteld door een back-endtoepassing en gelezen door een apparaat. Een gerapporteerde eigenschap wordt ingesteld door een apparaat en gelezen door een back-endtoepassing. Een label wordt ingesteld door een back-endtoepassing en nooit naar een apparaat verzonden. U gebruikt labels om uw apparaten te organiseren. In deze zelfstudie ziet u hoe u gewenste en gerapporteerde eigenschappen kunt gebruiken om statusgegevens te synchroniseren:
 
 ![Overzicht dubbels](media/tutorial-device-twins/DeviceTwins.png)
 
@@ -39,11 +39,9 @@ In deze zelfstudie voert u de volgende taken uit:
 > * Gewenste eigenschappen gebruiken om statusgegevens naar uw gesimuleerd apparaat te zenden.
 > * Gerapporteerde eigenschappen gebruiken om statusgegevens van uw gesimuleerd apparaat te ontvangen.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-## <a name="prerequisites"></a>Vereisten
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 De twee voorbeeldtoepassingen die u uitvoert in deze snelstartgids zijn geschreven in Node.js. Node.js v10.x.x of hoger moet zijn geïnstalleerd op uw ontwikkelcomputer.
 
@@ -83,7 +81,7 @@ az iot hub show-connection-string --name $hubname --policy-name service -o table
 
 ```
 
-Deze zelfstudie gebruikt een gesimuleerd apparaat genaamd **MyTwinDevice** . Het volgende script voegt dit apparaat toe aan uw identiteitsregister en haalt de verbindingsreeks op:
+Deze zelfstudie gebruikt een gesimuleerd apparaat genaamd **MyTwinDevice**. Het volgende script voegt dit apparaat toe aan uw identiteitsregister en haalt de verbindingsreeks op:
 
 ```azurecli-interactive
 # Set the name of your IoT hub:
@@ -120,35 +118,35 @@ De volgende code haalt een dubbel op van het clientobject:
 
 ### <a name="sample-desired-properties"></a>Voorbeeld gewenste eigenschappen
 
-U kunt uw gewenste eigenschappen organiseren op elke manier die handig is voor uw toepassing. Dit voorbeeld gebruikt een eigenschap van het hoogste niveau genaamd **fanOn** en groepeert de overige eigenschappen in aparte **componenten** . Het volgende JSON-fragment toont de structuur van de gewenste eigenschappen die in deze zelfstudie worden gebruikt:
+U kunt uw gewenste eigenschappen organiseren op elke manier die handig is voor uw toepassing. Dit voorbeeld gebruikt een eigenschap van het hoogste niveau genaamd **fanOn** en groepeert de overige eigenschappen in aparte **componenten**. Het volgende JSON-fragment toont de structuur van de gewenste eigenschappen die in deze zelfstudie worden gebruikt:
 
 [!code[Sample desired properties](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/desired.json "Sample desired properties")]
 
 ### <a name="create-handlers"></a>Handlers maken
 
-U kunt handlers maken voor updates voor gewenste eigenschappen die reageren op updates op verschillende niveaus in de JSON-hiërarchie. Deze handler zorgt er bijvoorbeeld voor dat alle wijzigingen voor gewenste eigenschappen naar het apparaat worden verzonden vanuit een back-endtoepassing. De **delta** -variabele bevat de gewenste eigenschappen die zijn verzonden vanaf de back-endoplossing:
+U kunt handlers maken voor updates voor gewenste eigenschappen die reageren op updates op verschillende niveaus in de JSON-hiërarchie. Deze handler zorgt er bijvoorbeeld voor dat alle wijzigingen voor gewenste eigenschappen naar het apparaat worden verzonden vanuit een back-endtoepassing. De **delta**-variabele bevat de gewenste eigenschappen die zijn verzonden vanaf de back-endoplossing:
 
 [!code-javascript[Handle all properties](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=allproperties&highlight=2 "Handle all properties")]
 
-De volgende handler reageert alleen op wijzigingen die worden aangebracht aan de gewenste eigenschap **fanOn** :
+De volgende handler reageert alleen op wijzigingen die worden aangebracht aan de gewenste eigenschap **fanOn**:
 
 [!code-javascript[Handle fan property](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=fanproperty&highlight=2 "Handle fan property")]
 
 ### <a name="handlers-for-multiple-properties"></a>Handlers voor meerdere eigenschappen
 
-In het eerder getoonde voorbeeld van gewenste JSON-eigenschappen bevat de node **klimaat** onder **componenten** twee eigenschappen, **minTemperature** en **maxTemperature** .
+In het eerder getoonde voorbeeld van gewenste JSON-eigenschappen bevat de node **klimaat** onder **componenten** twee eigenschappen, **minTemperature** en **maxTemperature**.
 
-Een lokaal **dubbel** -object van een apparaat slaat een volledige reeks van gewenste en gerapporteerde eigenschappen op. De **delta** gezonden door het back-end updatet mogelijk maar een subset van gewenste eigenschappen. In het volgende codefragment, als het gesimuleerd apparaat een update ontvangt voor maar een van de **minTemperature** en **maxTemperature** , gebruikt het de waarde in de lokale dubbel voor de andere waarde om het apparaat te configureren:
+Een lokaal **dubbel**-object van een apparaat slaat een volledige reeks van gewenste en gerapporteerde eigenschappen op. De **delta** gezonden door het back-end updatet mogelijk maar een subset van gewenste eigenschappen. In het volgende codefragment, als het gesimuleerd apparaat een update ontvangt voor maar een van de **minTemperature** en **maxTemperature**, gebruikt het de waarde in de lokale dubbel voor de andere waarde om het apparaat te configureren:
 
 [!code-javascript[Handle climate component](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=climatecomponent&highlight=2 "Handle climate component")]
 
-Het lokale **dubbel** -object van een apparaat slaat een volledige reeks van gewenste en gerapporteerde eigenschappen op. De **delta** gezonden door het back-end updatet mogelijk maar een subset van gewenste eigenschappen.
+Het lokale **dubbel**-object van een apparaat slaat een volledige reeks van gewenste en gerapporteerde eigenschappen op. De **delta** gezonden door het back-end updatet mogelijk maar een subset van gewenste eigenschappen.
 
 ### <a name="handle-insert-update-and-delete-operations"></a>Invoeg-, update- en verwijderbewerkingen verwerken
 
 De gewenste eigenschappen die vanaf het back-end zijn verzonden geven niet aan welke bewerking wordt uitgevoerd op een bepaalde gewenste eigenschap. Uw code moet de bewerking afleiden uit de huidige set van gewenste eigenschappen die lokaal zijn opgeslagen en de wijzigingen die vanuit de hub zijn verzonden.
 
-Het volgende fragment toont aan hoe het gesimuleerd apparaat invoeg-, update- en verwijderbewerkingen in de lijst van **componenten** in de gewenste eigenschappen verwerkt. U kunt zien hoe u **null** -waarden gebruikt om aan te geven dat een component moet worden verwijderd:
+Het volgende fragment toont aan hoe het gesimuleerd apparaat invoeg-, update- en verwijderbewerkingen in de lijst van **componenten** in de gewenste eigenschappen verwerkt. U kunt zien hoe u **null**-waarden gebruikt om aan te geven dat een component moet worden verwijderd:
 
 [!code-javascript[Handle components](~/iot-samples-node/iot-hub/Tutorials/DeviceTwins/SimulatedDevice.js?name=components&highlight=2,6,13 "Handle components")]
 
@@ -194,7 +192,7 @@ De volgende schermafbeelding toont de uitvoer van de gesimuleerd apparaattoepass
 
 ![Schermopname die laat zien hoe zowel de handler van het hoogste niveau als de klimaatcomponenthandlers worden uitgevoerd.](./media/tutorial-device-twins/SimulatedDevice1.png)
 
-De volgende schermafbeelding laat de uitvoer van de back-endtoepassing zien en accentueert hoe die een update zendt naar de gewenste eigenschap **maxTemperature** :
+De volgende schermafbeelding laat de uitvoer van de back-endtoepassing zien en accentueert hoe die een update zendt naar de gewenste eigenschap **maxTemperature**:
 
 ![Schermopname die de uitvoer van de back-endtoepassing laat zien, met het verzenden van een update gemarkeerd.](./media/tutorial-device-twins/BackEnd1.png)
 

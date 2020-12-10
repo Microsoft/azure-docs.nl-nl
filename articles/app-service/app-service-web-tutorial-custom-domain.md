@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a74a3b7542a8d683e9bbf16f99c9b2646d95e00d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b45e1fbaf912cc045ba51a79db434baecbabdf43
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95986534"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608262"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -206,7 +206,7 @@ Als u een A-record wilt toewijzen aan een app, meestal aan het hoofddomein, maak
 > | Recordtype | Host | Waarde |
 > | - | - | - |
 > | A | `www` | IP-adres uit [Het IP-adres van de app kopiëren](#info) |
-> | TXT | `asuid.www` | `<app-name>.azurewebsites.net` |
+> | TXT | `asuid.www` | [De verificatie-id die u eerder hebt ontvangen](#get-a-domain-verification-id) |
 >
 
 Nadat de records zijn toegevoegd, lijkt de pagina met DNS-records op het volgende voorbeeld:

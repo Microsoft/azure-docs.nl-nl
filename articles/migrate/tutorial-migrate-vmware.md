@@ -1,15 +1,18 @@
 ---
 title: "Azure Migrate: Server Migration voor het migreren van VMware-VM's zonder agent"
 description: Leer hoe u een migratie zonder agent voor VMware-VM's uitvoert met Azure Migrate.
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 202886bc0a7738f8211cfea6d90a380c7bac82b8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 88b3879a648117329f2485012542b48d6a7a7755
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492944"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752682"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 

@@ -1,14 +1,17 @@
 ---
 title: On-premises servers evalueren met een geïmporteerd CSV-bestand met Azure Migrate-serverevaluatie
 description: Beschrijft hoe u on-premises servers kunt detecteren voor migratie naar Azure met behulp van een geïmporteerd CSV-bestand in Azure Migrate-serverevaluatie
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
-ms.openlocfilehash: 30f17bb6b22d4d19cf225aa52d8284f5306a44ee
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dfa7ee941e2c373b02fe5fb2f2a648a60a677670
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92308394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753106"
 ---
 # <a name="tutorial-assess-servers-using-an-imported-csv-file"></a>Zelfstudie: Servers evalueren aan de hand van een geïmporteerd CSV-bestand
 
@@ -138,7 +141,7 @@ De volgende tabel bevat een overzicht van de bestandsvelden die moeten worden in
 **Totaal door schijf geschreven doorvoer** | Nee | Gegevens die naar de schijf worden geschreven, in MB per seconde.
 **Netwerk in doorvoer** | Nee | Gegevens ontvangen door de server, in MB per seconde.
 **Netwerk uitgaande doorvoer** | Nee | Gegevens verzonden door de server, in MB per seconde.
-** Type firmware** | Nee | Serverfirmware. Waarden kunnen "BIOS" of "UEFI" zijn.
+**Type firmware** | Nee | Serverfirmware. Waarden kunnen "BIOS" of "UEFI" zijn.
 **MAC-adres**| Nee | MAC-adres van server.
 
 

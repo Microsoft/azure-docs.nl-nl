@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4854e61b646c0ca2a2070d676e3efc5cfbac6b9b
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 564f19a1be5b3ce8a5267a07bd4f1f6de80fecf1
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044578"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621277"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>Zelfstudie: Custom Vision Service gebruiken om afbeeldingsclassificatie uit te voeren aan de rand
 
@@ -326,7 +326,7 @@ In plaats van een echte camera te gebruiken om dit scenario een afbeeldingsfeed 
 
 1. Navigeer naar de testafbeelding in **Cognitive-CustomVision-Windows** / **Samples** / **Images** / **Test**. 
 
-2. Kopieer**test_image.jpg** 
+2. Kopieer **test_image.jpg** 
 
 3. Blader naar de map van uw IoT Edge-oplossing en plak de testafbeelding in de map **modules** / **cameraCapture**. De afbeelding moet zich in dezelfde map bevinden als het bestand main.py dat u in de vorige sectie hebt bewerkt. 
 
@@ -449,9 +449,7 @@ Anders kunt u de lokale configuraties en Azure-resources die u in dit artikel he
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u een Custom Vision-model getraind en het als een module op een IoT Edge-apparaat geïmplementeerd. Daarna hebt u een module gemaakt die query's kan uitvoeren naar de afbeeldingsclassificatieservice en de resultaten kan rapporteren aan IoT Hub. 
-
-Als u een uitgebreidere versie van dit scenario wilt proberen met een live camera-feed, raadpleegt u het GitHub-project[Custom Vision en Azure IoT Edge op een Raspberry Pi 3](https://github.com/Azure-Samples/Custom-vision-service-iot-edge-raspberry-pi). 
+In deze zelfstudie hebt u een Custom Vision-model getraind en het als een module op een IoT Edge-apparaat geïmplementeerd. Daarna hebt u een module gemaakt die query's kan uitvoeren naar de afbeeldingsclassificatieservice en de resultaten kan rapporteren aan IoT Hub.
 
 Ga verder met de volgende zelfstudies om te leren hoe Azure IoT Edge u verder kan helpen bij het omzetten van uw gegevens in bedrijfsinzichten.
 

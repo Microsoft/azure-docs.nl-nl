@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a37353615e35cd75c126c268de71d10077a9071
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc2f7d3ce5f8329038fea4ecbb5242015fb3fd0d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89268431"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860130"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Zelfstudie: Hybride Azure Active Directory-deelname configureren voor federatieve domeinen
 
@@ -199,7 +199,7 @@ Hier volgen drie manieren om de status van het apparaat te zoeken en te controle
 
 ### <a name="using-powershell"></a>PowerShell gebruiken
 
-Controleer de registratiestatus van apparaten in uw Azure-tenant met behulp van **[Get-MsolDevice](/powershell/module/msonline/get-msoldevice)** . Deze cmdlet bevindt zich in de [Azure Active Directory PowerShell-module](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-2.0).
+Controleer de registratiestatus van apparaten in uw Azure-tenant met behulp van **[Get-MsolDevice](/powershell/module/msonline/get-msoldevice)** . Deze cmdlet bevindt zich in de [Azure Active Directory PowerShell-module](/powershell/azure/active-directory/install-msonlinev1).
 
 Wanneer u de cmdlet **Get-MSolDevice** gebruikt om de servicedetails te controleren:
 

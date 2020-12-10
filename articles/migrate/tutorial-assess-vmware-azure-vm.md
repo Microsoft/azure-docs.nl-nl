@@ -1,15 +1,18 @@
 ---
 title: Virtuele VMware-machines beoordelen voor migratie naar virtuele Azure-machines met Serverevaluatie in Azure Migrate
 description: Leer hoe u virtuele VMware-machines beoordeelt voor migratie naar virtuele Azure-machines met Serverevaluatie.
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: 01db7128cd990098caa25ba2cd79f2f2a2b28d78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aad1e2a1c8d7ce6a1b6219c42893b1f4a59c6f42
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90108076"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753141"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-azure-vms"></a>Zelfstudie: VMware-VM's evalueren voor migratie naar Azure-VM's
 

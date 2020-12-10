@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: 7b6f762dd04244f430f08894cc06991796a11229
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: e5587c4826fea780c1e379ee1599440b2865dd50
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96004922"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862221"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Zelfstudie: Azure SQL Database-verbinding vanuit App Service beveiligen met een beheerde identiteit
 
@@ -47,7 +47,9 @@ Dit artikel gaat verder waar u bent gebleven in [Zelfstudie: Een ASP.NET-app bou
 
 Als u fouten wilt opsporen in uw app met SQL Database als de back-end, zorgt u ervoor dat de clientverbinding vanuit uw computer is toegestaan. Als dat niet het geval is, voegt u het IP-adres van de client toe door de stappen te volgen op [IP-firewallregels op serverniveau beheren met de Azure-portal](../azure-sql/database/firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Bereid uw omgeving voor op Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="grant-database-access-to-azure-ad-user"></a>Databasetoegang verlenen aan Azure AD-gebruiker
 
@@ -87,7 +89,7 @@ Visual Studio voor Mac is niet geïntegreerd met Azure AD-verificatie. De [Micro
 
 Als Azure CLI is geïnstalleerd op uw lokale computer, meldt u zich met de volgende opdracht aan bij Azure CLI met behulp van uw Azure AD-gebruiker:
 
-```bash
+```azurecli
 az login --allow-no-subscriptions
 ```
 U kunt nu uw app ontwikkelen en fouten opsporen met de SQL Database als back-end, met behulp van Azure AD-verificatie.
@@ -206,7 +208,7 @@ Hier is een voorbeeld van de uitvoer:
 
 Meld u in de Cloud Shell aan bij SQL Database met behulp van de SQLCMD-opdracht. Vervang _\<server-name>_ door de naam van uw server _\<db-name>_ met de naam van de database die uw app gebruikt en _\<aad-user-name>_ en _\<aad-password>_ met de referenties van uw Azure AD-gebruiker.
 
-```azurecli-interactive
+```bash
 sqlcmd -S <server-name>.database.windows.net -d <db-name> -U <aad-user-name> -P "<aad-password>" -G -l 30
 ```
 
@@ -249,7 +251,7 @@ Klik op de publicatiepagina op **Publiceren**.
 
 ```bash
 git commit -am "configure managed identity"
-git push azure master
+git push azure main
 ```
 
 Wanneer de nieuwe webpagina uw takenlijst weergeeft, maakt uw app verbinding met de database met behulp van de beheerde identiteit.

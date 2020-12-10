@@ -1,15 +1,18 @@
 ---
 title: Fysieke servers detecteren met Azure Migrate-serverevaluatie
 description: Meer informatie over het detecteren van on-premises fysieke servers met Azure Migrate-serverevaluatie.
+author: vineetvikram
+ms.author: vivikram
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 83ff63392c6cbcaa6a2ea011eb60199f61844bb1
-ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
+ms.openlocfilehash: 1263bc3ffe18aa951b3e5b61747c889d36acbab1
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93148334"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752804"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Zelfstudie: Fysieke servers detecteren met Serverevaluatie
 
@@ -37,7 +40,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**Apparaat** | U hebt een machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> - Windows Server 2016 is geïnstalleerd. _(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_<br/><br/> - Ongeveer 16 GB RAM, 8 vCPU's en 80 GB schijfruimte.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
+**Apparaat** | U hebt een machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd. _(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_<br/><br/> - Ongeveer 16 GB RAM, 8 vCPU's en 80 GB schijfruimte.<br/><br/> -Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
 **Windows-servers** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
 **Linux-servers** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.
 

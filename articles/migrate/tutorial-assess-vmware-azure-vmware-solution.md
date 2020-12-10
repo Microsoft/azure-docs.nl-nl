@@ -1,15 +1,18 @@
 ---
 title: Virtuele VMware-machines beoordelen voor migratie naar Azure VMware Solution (AVS) met Azure Migrate
 description: Leer hoe u virtuele VMware-machines beoordeelt voor migratie naar AVS met Azure Migrate-serverevaluatie.
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: 29f7f824d96aedd80e490ba84c390be4d9493683
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6d3c6f77b062939a88e7277cb7f0ab6ecff9fcb
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604237"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753073"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-avs"></a>Zelfstudie: VMware-VM's evalueren voor migratie naar AVS
 
@@ -77,7 +80,7 @@ Voer als volgt een evaluatie uit:
    - Laat in **Opslagtype** **vSAN** ongemoeid. Dit is het standaard opslagtype voor een privécloud.
    - **Gereserveerde instanties** worden momenteel niet ondersteund voor AVS-knooppunten.
 8. In **VM-grootte**:
-    - Selecteer onder **Knooppunttype**een knooppunttype op basis van de werkbelastingen die worden uitgevoerd op de on-premises virtuele machines.
+    - Selecteer onder **Knooppunttype** een knooppunttype op basis van de werkbelastingen die worden uitgevoerd op de on-premises virtuele machines.
         - Azure Migrate adviseert het knooppunt van knooppunten die nodig zijn om de virtuele machines naar AVS te migreren.
         - Het standaard knooppunttype is AV36.
     - **FTT-instelling, RAID-niveau**, selecteert u de combinatie van fouttolerantie en RAID.  De geselecteerde FTT-optie bepaalt samen met de schijfvereiste voor de on-premises virtuele machine de totale vSAN-opslag die is vereist in AVS.

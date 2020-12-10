@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Azure Container Registry-taak 
 ms.topic: tutorial
 ms.date: 11/24/2020
 ms.custom: seodec18, mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 32b4dbe2563731664030dbc32c2b570ccc3e1d12
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 342f7fc37edb3a1623b72c57e8766b1a484d0e8d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030642"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559147"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Zelfstudie: Builds van containerinstallatiekopieën automatiseren wanneer een basisinstallatiekopie wordt bijgewerkt in een Azure-containerregister 
 
@@ -32,10 +32,10 @@ In deze zelfstudie:
 
 In deze zelfstudie wordt ervan uitgegaan dat u de omgeving al hebt geconfigureerd en de stappen uit de eerste twee zelfstudies in de reeks hebt uitgevoerd:
 
-* Azure Container Registry maken
-* Voorbeeldopslagplaats splitsen
-* Voorbeeldopslagplaats klonen
-* Persoonlijk toegangstoken van GitHub maken
+- Azure Container Registry maken
+- Voorbeeldopslagplaats splitsen
+- Voorbeeldopslagplaats klonen
+- Persoonlijk toegangstoken van GitHub maken
 
 Als u de volgende zelfstudies nog niet hebt afgerond, moet u dit doen voordat u verdergaat:
 
@@ -44,6 +44,9 @@ Als u de volgende zelfstudies nog niet hebt afgerond, moet u dit doen voordat u 
 [Builds van containerinstallatiekopieën automatiseren met Azure Container Registry Tasks](container-registry-tutorial-build-task.md)
 
 ### <a name="configure-the-environment"></a>De omgeving configureren
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+- Voor dit artikel is versie 2.0.46 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 Vul deze variabelen voor de shell-omgeving in met waarden die geschikt zijn voor uw omgeving. Hoewel deze stap strikt genomen niet vereist is, vereenvoudigt u hiermee de uitvoering van meerregelige Azure CLI-opdrachten in deze zelfstudie. Als u deze omgevingsvariabelen niet invult, moet u elke bijbehorende waarde handmatig vervangen wanneer deze wordt weergegeven in de voorbeeldopdrachten.
 

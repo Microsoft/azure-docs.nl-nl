@@ -1,15 +1,18 @@
 ---
 title: GCP-VM-exemplaren (Google Cloud Platform) ontdekken, evalueren en migreren naar Azure
 description: In dit artikel wordt beschreven hoe u GCP-VM's kunt migreren naar Azure met Azure Migrate.
+author: deseelam
+ms.author: deseelam
+ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: MVC
-ms.openlocfilehash: 0093bb453131eb87172021a976b8019a23e445f1
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: ddde352df5fc6063dbe04aa05fe01fca9747f8fa
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302587"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752835"
 ---
 # <a name="discover-assess-and-migrate-google-cloud-platform-gcp-vms-to-azure"></a>GCP-VM’s (Google Cloud Platform) ontdekken, evalueren en migreren naar Azure
 

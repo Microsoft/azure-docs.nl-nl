@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 07/13/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a120e015bd8ca38e32bd8cbef1fd48f4caef8e44
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 97aabfa39954aa6ba937166eb54c05ac4874ea7e
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837801"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741335"
 ---
 # <a name="tutorial-use-risk-detections-for-user-sign-ins-to-trigger-azure-ad-multi-factor-authentication-or-password-changes"></a>Zelfstudie: Risicodetectie voor gebruikersaanmeldingen gebruiken als trigger voor Azure AD Multi-Factor Authentication of het wijzigen van wachtwoorden
 

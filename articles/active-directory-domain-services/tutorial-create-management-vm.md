@@ -1,20 +1,20 @@
 ---
 title: 'Zelfstudie: een beheer-VM voor Azure Active Directory Domain Services maken | Microsoft Docs'
 description: In deze zelfstudie leert u hoe u een virtuele Windows-machine maakt en configureert waarmee u een door Azure Active Directory Domain Services beheerd domein kunt beheren.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 52a97b824824d8e9eaf79cfa4a447494bf1525cf
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.author: justinha
+ms.openlocfilehash: d017fc3fc53c9f89978893670df10ecd731da904
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175148"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618175"
 ---
 # <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Een beheer-VM maken om een door Azure AD Domain Services beheerd domein te configureren en te beheren
 

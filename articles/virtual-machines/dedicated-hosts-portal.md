@@ -5,25 +5,19 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: how-to
 ms.workload: infrastructure
-ms.date: 09/04/2020
+ms.date: 12/07/2020
 ms.author: cynthn
-ms.openlocfilehash: a6bef4944207e26f2de93daa89fa1418c5c44c4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b166363a8c64a4a4c5d34efa55dcaefa09d6df49
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91373106"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007939"
 ---
 # <a name="deploy-vms-and-scale-sets-to-dedicated-hosts-using-the-portal"></a>Vm's en schaal sets implementeren op toegewezen hosts met behulp van de portal 
 
 Dit artikel begeleidt u bij het maken van een toegewezen Azure- [host](dedicated-hosts.md) voor het hosten van uw virtuele machines (vm's). 
 
-
-> [!IMPORTANT]
-> Dit artikel heeft ook betrekking op automatische plaatsing van virtuele machines en schaal sets. Automatische plaatsing is momenteel beschikbaar als open bare preview.
-> Als u wilt deel nemen aan de preview, voltooit u de preview-voorbereidings enquête op [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
-> Als u de preview-functie in de Azure Portal wilt gebruiken, moet u deze URL: [https://aka.ms/vmssadh](https://aka.ms/vmssadh) .
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -42,17 +36,17 @@ U kunt er ook voor kiezen om zowel beschikbaarheids zones als fout domeinen te g
 In dit voor beeld maken we een hostgroep met 1 beschikbaarheids zone en twee fout domeinen. 
 
 
-1. Open Azure [Portal](https://portal.azure.com). Als u de preview-versie voor **automatische plaatsing**wilt proberen, gebruikt u deze URL: [https://aka.ms/vmssadh](https://aka.ms/vmssadh) .
+1. Open Azure [Portal](https://portal.azure.com). 
 1. Selecteer in de linkerbovenhoek **een resource maken** .
 1. Zoek naar **hostgroep** en selecteer **hostgroepen** in de resultaten.
 1. Selecteer op de pagina **hostgroepen** de optie **maken**.
 1. Selecteer het abonnement dat u wilt gebruiken en selecteer vervolgens **Nieuw maken** om een nieuwe resource groep te maken.
 1. Typ *myDedicatedHostsRG* als **naam** en selecteer **OK**.
-1. Typ *myHostGroup*voor de naam van de **hostgroep**.
+1. Typ *myHostGroup* voor de naam van de **hostgroep**.
 1. Selecteer bij **Locatie** **VS - oost**.
-1. Selecteer voor de **beschikbaarheids zone**de optie **1**.
-1. Selecteer **2**bij **aantal fout domeinen**.
-1. Als u de **automatische plaatsings** -URL hebt gebruikt, selecteert u deze optie om automatisch vm's en scale set-instanties toe te wijzen aan een beschik bare host in deze groep.
+1. Selecteer voor de **beschikbaarheids zone** de optie **1**.
+1. Selecteer **2** bij **aantal fout domeinen**.
+1. Selecteer **automatische plaatsing** om automatisch vm's en schaal sets toe te wijzen aan een beschik bare host in deze groep.
 1. Selecteer **controleren + maken** en wacht vervolgens op validatie.
 1. Zodra u het bericht **validatie is voltooid** ziet, selecteert u **maken** om de hostgroep te maken.
 
@@ -72,7 +66,7 @@ Als u het aantal fout domeinen voor uw hostgroep instelt, wordt u gevraagd om he
 1. Selecteer op de pagina **gereserveerde hosts** de optie **maken**.
 1. Selecteer het abonnement dat u wilt gebruiken.
 1. Selecteer *myDedicatedHostsRG* als de **resource groep**.
-1. In **Details**van het exemplaar typt u *MyHost* voor de **naam** en selecteert u *VS-Oost* voor de locatie.
+1. In **Details** van het exemplaar typt u *MyHost* voor de **naam** en selecteert u *VS-Oost* voor de locatie.
 1. Selecteer in **hardwareprofiel** *standaard Es3 Family-type 1* voor de **grootte familie**, selecteer *myHostGroup* voor de **hostgroep** en selecteer vervolgens *1* voor het **fout domein**. Laat de standaard waarden voor de rest van de velden ongewijzigd.
 1. Wanneer u klaar bent, selecteert u **controleren + maken** en wacht u op validatie.
 1. Zodra u het bericht **validatie is voltooid** ziet, selecteert u **maken** om de host te maken.
@@ -81,30 +75,19 @@ Als u het aantal fout domeinen voor uw hostgroep instelt, wordt u gevraagd om he
 
 1. Kies in de linkerbovenhoek van de Azure-portal **Een resource maken**.
 1. In het zoekvak boven de lijst met resources van Azure Marketplace zoekt en selecteert u de installatie kopie die u wilt gebruiken en kiest u **maken**.
-1. Controleer op het tabblad **basis beginselen** onder **Project Details**of het juiste abonnement is geselecteerd en selecteer vervolgens *myDedicatedHostsRG* als de **resource groep**. 
+1. Controleer op het tabblad **basis beginselen** onder **Project Details** of het juiste abonnement is geselecteerd en selecteer vervolgens *myDedicatedHostsRG* als de **resource groep**. 
 1. Typ onder **Exemplaardetails***myVM* als **Naam van de virtuele machine** en kies *VS - oost* als de **Locatie**.
-1. Selecteer in **beschikbaarheids opties** **beschikbaarheids zone**selecteren, selecteer *1* in de vervolg keuzelijst.
+1. Selecteer in **beschikbaarheids opties** **beschikbaarheids zone** selecteren, selecteer *1* in de vervolg keuzelijst.
 1. Voor de grootte selecteert u **grootte wijzigen**. Kies in de lijst met beschik bare grootten een van de Esv3-reeksen, zoals **Standard E2s v3**. Mogelijk moet u het filter wissen om alle beschik bare grootten weer te geven.
 1. Vul zo nodig de overige velden op het tabblad **basis** .
-1. Selecteer boven aan de pagina het tabblad **Geavanceerd** en selecteer in de sectie **host** *MyHostGroup* voor **hostgroep** en *myHost* voor de **host**. 
+1. Als u wilt opgeven welke host moet worden gebruikt voor uw virtuele machine, selecteert u het tabblad **Geavanceerd** in de sectie **host** en selecteert u *MyHostGroup* voor **hostgroep** en *myHost* voor de **host** aan de bovenkant van de pagina. Anders wordt uw virtuele machine automatisch op een host met capaciteit geplaatst.
     ![Hostgroep en host selecteren](./media/dedicated-hosts-portal/advanced.png)
 1. Laat de resterende standaardwaarden staan ​​en selecteer vervolgens de knop **Beoordelen en maken** aan de onderkant van de pagina.
 1. Wanneer u het bericht ziet dat de validatie is voltooid, selecteert u **maken**.
 
 Het duurt een paar minuten voor uw virtuele machine is geïmplementeerd.
 
-## <a name="create-a-scale-set-preview"></a>Een schaalset maken (preview-versie)
-
-> [!IMPORTANT]
-> Virtual Machine Scale Sets op toegewezen hosts is momenteel beschikbaar als open bare preview.
->
-> Als u wilt deel nemen aan de preview, voltooit u de preview-voorbereidings enquête op [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
->
-> Als u de preview-functie in de Azure Portal wilt gebruiken, moet u deze URL: [https://aka.ms/vmssadh](https://aka.ms/vmssadh) .
->
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. 
->
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+## <a name="create-a-scale-set"></a>Een schaalset maken 
 
 Wanneer u een schaalset implementeert, geeft u de hostgroep op.
 
@@ -112,7 +95,7 @@ Wanneer u een schaalset implementeert, geeft u de hostgroep op.
 1. Selecteer **toevoegen** om een nieuwe schaalset te maken.
 1. Vul de velden op het tabblad **basis beginselen** in zoals gebruikelijk, maar zorg ervoor dat u een VM-grootte selecteert uit de reeks die u voor uw specifieke host hebt gekozen, zoals **Standard E2s v3**.
 1. Op het tabblad **Geavanceerd** , voor het **spreidings algoritme** , selecteert u **maximale sprei ding**.
-1. Selecteer in **hostgroep**de hostgroep in de vervolg keuzelijst. Als u de groep onlangs hebt gemaakt, kan het een minuut duren voordat deze wordt toegevoegd aan de lijst.
+1. Selecteer in **hostgroep** de hostgroep in de vervolg keuzelijst. Als u de groep onlangs hebt gemaakt, kan het een minuut duren voordat deze wordt toegevoegd aan de lijst.
 
 ## <a name="add-an-existing-vm"></a>Een bestaande VM toevoegen 
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 5dbd49312b58dc656e2239e8a0a4acea614023de
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: d38c57a8c8504e1e03406f7cd8a0b61725cb0511
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317129"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008079"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -107,7 +107,13 @@ Gebruik de [implementatie uitbreiding Synapse werk ruimte](https://marketplace.v
 
      ![Extensie toevoegen](media/add-extension-task.png)
 
-1.  Geef in de taak gerelateerde Git-opslagplaats gegevens van **workspace_publish** op en selecteer resource groep, regio, naam en Cloud omgeving voor de doel werkruimte. Geef para meters en waarden op als u dat nodig hebt.
+1.  Selecteer in de taak **...** Naast het vak **sjabloon** om het sjabloon bestand te kiezen.
+
+1. Selecteren **...** Naast het vak **sjabloon parameters** om het parameter bestand te kiezen.
+
+1. Selecteer de verbinding, de resource groep en de naam van de doel werkruimte. 
+
+1. Selecteren **...** Naast het vak **sjabloon parameters negeren** en voer de gewenste parameter waarden in voor de doel werkruimte. 
 
     ![Implementatie van Synapse-werk ruimte](media/create-release-artifacts-deployment.png)
 

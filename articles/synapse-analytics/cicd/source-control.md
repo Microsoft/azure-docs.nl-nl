@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: b6cadbf5c3a33c1a954a47f37b33ad8703f40b69
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2f1fe7c25327e8ecab9b450cab167391d8949b0a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350735"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008155"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
@@ -138,6 +138,24 @@ Als u voor de eerste keer verbinding maakt met GitHub vanuit Synapse Studio, vol
 
 Zodra u deze stappen hebt uitgevoerd, kan uw werk ruimte verbinding maken met zowel open bare als privé-opslag plaatsen binnen uw organisatie. Als u geen verbinding kunt maken, probeert u de cache van de browser te wissen en opnieuw te proberen.
 
+#### <a name="already-connected-to-github-using-a-personal-account"></a>Al verbonden met GitHub met een persoonlijk account
+
+Als u al verbinding hebt gemaakt met GitHub en alleen machtigingen hebt verleend voor toegang tot een persoonlijk account, volgt u de onderstaande stappen om machtigingen toe te kennen aan een organisatie.
+
+1. Ga naar GitHub en open **instellingen**.
+
+    ![Instellingen voor GitHub openen](media/github-settings.png)
+
+1. Selecteer **toepassingen**. Op het tabblad **geautoriseerde OAuth-apps** ziet u *Azure Synapse*.
+
+    ![OAuth-apps autoriseren](media/authorize-app.png)
+
+1. Selecteer de *Azure-Synapse* en verleen de toegang tot uw organisatie.
+
+    ![Organisatie machtiging verlenen](media/grant-organization-permission.png)
+
+Zodra u deze stappen hebt voltooid, kan uw werk ruimte verbinding maken met zowel open bare als privé-opslag plaatsen binnen uw organisatie.
+
 ## <a name="version-control"></a>Versiebeheer
 
 Met versie besturings systemen (ook wel bekend als _broncode beheer_) kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Broncode beheer is een essentieel hulp programma voor projecten met meerdere ontwikkel aars.
@@ -163,6 +181,7 @@ Standaard worden in Synapse Studio de werkruimte sjablonen gegenereerd en opgesl
 ```
 
 Azure Synapse Studio kan slechts één Publiceer vertakking tegelijk hebben. Wanneer u een nieuwe publicatie vertakking opgeeft, zou de vorige publicatie vertakking niet worden verwijderd. Als u de vorige Publish-vertakking wilt verwijderen, moet u deze hand matig verwijderen.
+
 
 ### <a name="publish-code-changes"></a>Code wijzigingen publiceren
 

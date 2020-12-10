@@ -8,23 +8,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
-ms.date: 11/19/2019
-ms.openlocfilehash: 60b100e1100b8a4925a967f8b7265f1612e5beb7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 12/08/2020
+ms.openlocfilehash: d4bde21dd13b562ffbb51b27ef083ee53685397a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018902"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007960"
 ---
 # <a name="add-contributors-to-your-app"></a>Inzenders toevoegen aan uw app
 
-Een app-eigenaar kan mede werkers toevoegen aan apps. Deze mede werkers kunnen het model, de training en de publicatie van de app, wijzigen.
-
-[!INCLUDE [Manage collaborators and contributors based on migrated or not-migrated apps](./includes/manage-contributor-collaborator-migration.md)]
+Een app-eigenaar kan mede werkers toevoegen aan apps. Deze inzenders kunnen het model, de training en de publicatie van de App wijzigen. Zodra u uw account hebt [gemigreerd](luis-migration-authoring.md) , worden _inzenders_ beheerd in de Azure portal voor de bewerkings resource met behulp van de pagina **toegangs beheer (IAM)** . Voeg een gebruiker toe met behulp van het e-mail adres van de samen werker en de rol _Inzender_ .
 
 ## <a name="add-contributor-to-azure-authoring-resource"></a>Inzender toevoegen aan de Azure-ontwerp bron
-
-De volgende procedure geldt voor alle gebruikers die zijn **gemigreerd** om de Azure-ontwerp bron te gebruiken.
 
 U hebt gemigreerd als uw LUIS-ontwerp ervaring is gekoppeld aan een bewerkings resource op de pagina **Manage-> Azure-resources** in de Luis-Portal.
 
@@ -41,26 +37,15 @@ U hebt gemigreerd als uw LUIS-ontwerp ervaring is gekoppeld aan een bewerkings r
 
     Als u problemen ondervindt met deze roltoewijzing, raadpleegt u [Azure-roltoewijzingen](../../role-based-access-control/role-assignments-portal.md) en [probleem oplossing voor Azure-toegangs beheer](../../role-based-access-control/troubleshooting.md#problems-with-azure-role-assignments).
 
-## <a name="add-collaborator-to-luis-app"></a>Een samen werker toevoegen aan de LUIS-app
+## <a name="view-the-app-as-a-contributor"></a>De app als een bijdrager weer geven
 
-De volgende procedure geldt voor alle gebruikers die **niet zijn gemigreerd** om de Azure-ontwerp bron te gebruiken.
+Nadat u als bijdrager hebt toegevoegd, [meldt u zich aan bij de Luis-Portal](sign-in-luis-portal.md).
 
-U bent niet gemigreerd als uw LUIS-ontwerp ervaring niet is gekoppeld aan een bewerkings resource op de pagina **Azure-resources beheren** in de Luis >-Portal.
-
-Een app heeft één auteur, de eigenaar, maar kan veel deel nemers hebben. Als u samen werkers wilt toestaan om uw LUIS-app te bewerken, moet u de e-mail toevoegen die wordt gebruikt voor toegang tot de LUIS-Portal naar de lijst met mede werkers. Zodra ze zijn toegevoegd, wordt de app weer gegeven in de LUIS-Portal.
-
-1. Selecteer **beheren** in het menu rechtsboven en selecteer vervolgens deel **nemers** in het linkermenu.
-
-1. Selecteer **samen werker toevoegen** op de werk balk.
-
-1. Voer het e-mail adres in dat de samen werker gebruikt om zich aan te melden bij de LUIS-Portal.
-
-    ![E-mail adres van de mede werker toevoegen](./media/luis-how-to-collaborate/add-collaborator-pop-up.png)
-
+[!INCLUDE [switch azure directories](includes/switch-azure-directories.md)]
 
 ### <a name="users-with-multiple-emails"></a>Gebruikers met meerdere e-mail berichten
 
-Als u inzenders/mede werkers aan een LUIS-app toevoegt, geeft u precies het e-mail adres op. Terwijl Azure Active Directory (Azure AD) toestaat dat één gebruiker meer dan één e-mail account heeft gebruikt, moet de gebruiker zich aanmelden met het e-mail adres dat is opgegeven bij het toevoegen van de mede werker/samen werker.
+Als u mede werkers aan een LUIS-app toevoegt, geeft u het exacte e-mail adres op. Terwijl Azure Active Directory (Azure AD) toestaat dat één gebruiker meer dan één e-mail account heeft gebruikt, moet de gebruiker zich aanmelden met het e-mail adres dat is opgegeven bij het toevoegen van de mede werker.
 
 <a name="owner-and-collaborators"></a>
 

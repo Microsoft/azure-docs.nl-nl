@@ -3,16 +3,16 @@ title: Azure Service Bus als Event Grid bron
 description: Hierin worden de eigenschappen beschreven die worden gegeven voor Service Bus gebeurtenissen met Azure Event Grid
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 81293321b3a8fb989023a231c905996b4059bd81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34c6990c4e6e87304c457a5b2ca6459c404c8d9a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86121131"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008109"
 ---
 # <a name="azure-service-bus-as-an-event-grid-source"></a>Azure Service Bus als Event Grid bron
 
-In dit artikel vindt u de eigenschappen en het schema voor Service Bus gebeurtenissen.Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's.
+In dit artikel vindt u de eigenschappen en het schema voor Service Bus gebeurtenissen. Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's.
 
 ## <a name="event-grid-event-schema"></a>Event Grid-gebeurtenisschema
 
@@ -24,8 +24,12 @@ Service Bus worden de volgende gebeurtenis typen meeverzonden:
 | ---------- | ----------- |
 | Micro soft. ServiceBus. ActiveMessagesAvailableWithNoListeners | Deze gebeurtenis treedt op wanneer er actieve berichten in een wachtrij of abonnement zijn en er geen ontvangers Luis teren. |
 | Micro soft. ServiceBus. DeadletterMessagesAvailableWithNoListener | Deze gebeurtenis treedt op wanneer er actieve berichten in een wachtrij met onbestelbare meldingen en geen actieve listeners zijn. |
+| Micro soft. ServiceBus. ActiveMessagesAvailablePeriodicNotifications | Deze gebeurtenis wordt regel matig gegenereerd als er actieve berichten in een wachtrij of abonnement zijn, zelfs als er actieve listeners zijn voor die specifieke wachtrij of dit abonnement. |
+| Micro soft. ServiceBus. DeadletterMessagesAvailablePeriodicNotifications | Deze gebeurtenis treedt regel matig op als er zich berichten in de Deadletter-entiteit van een wachtrij of abonnement bevinden, zelfs als er actieve listeners zijn voor de Deadletter-entiteit van die specifieke wachtrij of dit abonnement. | 
 
 ### <a name="example-event"></a>Voorbeeld gebeurtenis
+
+#### <a name="active-messages-available-with-no-listeners"></a>Actieve berichten die beschikbaar zijn zonder listeners
 
 In het volgende voor beeld ziet u het schema van actieve berichten zonder listeners:
 
@@ -49,6 +53,8 @@ In het volgende voor beeld ziet u het schema van actieve berichten zonder listen
 }]
 ```
 
+#### <a name="deadletter-messages-available-with-no-listener"></a>Beschik bare Deadletter-berichten zonder listener
+
 Het schema voor een wachtrij gebeurtenis met een onbestelbare berichten is vergelijkbaar:
 
 ```json
@@ -71,6 +77,50 @@ Het schema voor een wachtrij gebeurtenis met een onbestelbare berichten is verge
 }]
 ```
 
+#### <a name="active-messages-available-periodic-notifications"></a>Actieve berichten beschik bare periodieke meldingen
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.ActiveMessagesAvailablePeriodicNotifications",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
+#### <a name="deadletter-messages-available-periodic-notifications"></a>Deadletter berichten beschik bare periodieke meldingen
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.DeadletterMessagesAvailablePeriodicNotifications",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
 ### <a name="event-properties"></a>Gebeurtenis eigenschappen
 
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
@@ -79,7 +129,7 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 | -------- | ---- | ----------- |
 | onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld kan niet worden geschreven. Event Grid biedt deze waarde. |
 | onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
-| Type | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| eventType | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
 | eventTime | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
 | id | tekenreeks | De unieke id voor de gebeurtenis. |
 | gegevens | object | Gebeurtenis gegevens van Blob-opslag. |

@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/14/2019
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 653110b953b6947254d5063a9e389505d45ea4cb
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: e5793d21f27128162095e2d86e13006c5b6e7b7c
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149014"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007990"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Implementatie referenties voor Azure App Service configureren
 [Azure app service](./overview.md) ondersteunt twee typen referenties voor [lokale Git-implementatie](deploy-local-git.md) en [FTP/S-implementatie](deploy-ftp.md). Deze referenties zijn niet hetzelfde als de referenties van uw Azure-abonnement.
@@ -23,7 +23,7 @@ U kunt uw referenties op gebruikers niveau configureren op de [resource pagina](
 
 ### <a name="in-the-cloud-shell"></a>In de Cloud Shell
 
-Als u de implementatie gebruiker wilt configureren in de [Cloud shell](https://shell.azure.com), voert u de opdracht [AZ webapp Deployment User set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
+Als u de implementatie gebruiker wilt configureren in de [Cloud shell](https://shell.azure.com), voert u de opdracht [AZ webapp Deployment User set](/cli/azure/webapp/deployment/user#az-webapp-deployment-user-set) uit. Vervang \<username> en \<password> door de gebruikersnaam en het wachtwoord van de gebruiker van de implementatie. 
 
 - De gebruikersnaam moet uniek zijn binnen Azure en voor lokale Git-pushes en mag het symbool @ niet bevatten. 
 - Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen. 
@@ -42,7 +42,7 @@ In de Azure Portal moet u ten minste één app hebben voordat u toegang kunt kri
 
     ![Laat zien hoe u het FTP-dash board kunt selecteren in het implementatie centrum van Azure-app Services.](./media/app-service-deployment-credentials/access-no-git.png)
 
-    Als u de Git-implementatie al hebt geconfigureerd, selecteert u **app Services**  >  ** &lt; any_app>**  >  **Deployment Center**  >  **FTP/credentials**.
+    Als u de Git-implementatie al hebt geconfigureerd, selecteert u **app Services**  >  **&lt; any_app>**  >  **Deployment Center**  >  **FTP/credentials**.
 
     ![Laat zien hoe u het FTP-dash board kunt selecteren in het implementatie centrum in Azure-app Services voor uw geconfigureerde Git-implementatie.](./media/app-service-deployment-credentials/access-with-git.png)
 
@@ -52,7 +52,7 @@ Wanneer u de referenties voor de implementatie hebt ingesteld, kunt u de gebruik
 
 ![Laat zien hoe u de gebruikers naam voor git-implementatie kunt vinden op de overzichts pagina van uw app.](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
 
-Als de Git-implementatie is geconfigureerd, wordt op de pagina een **Git/implementatie-gebruikers naam**weer gegeven. anders een **FTP/implementatie-gebruikers naam**.
+Als de Git-implementatie is geconfigureerd, wordt op de pagina een **Git/implementatie-gebruikers naam** weer gegeven. anders een **FTP/implementatie-gebruikers naam**.
 
 > [!NOTE]
 > Het wacht woord voor implementatie op gebruikers niveau wordt niet weer gegeven in Azure. Als u het wacht woord vergeet, kunt u uw referenties opnieuw instellen door de stappen in deze sectie te volgen.
@@ -68,9 +68,9 @@ Omdat referenties op gebruikers niveau zijn gekoppeld aan de gebruiker en niet a
 ## <a name="get-and-reset-app-level-credentials"></a><a name="appscope"></a>Referenties op app-niveau ophalen en opnieuw instellen
 De referenties op app-niveau ophalen:
 
-1. Selecteer in het menu links in het [Azure Portal](https://portal.azure.com) **app Services**  >  ** &lt; any_app>**  >  **Deployment Center**  >  **FTP/credentials**.
+1. Selecteer in het menu links in het [Azure Portal](https://portal.azure.com) **app Services**  >  **&lt; any_app>**  >  **Deployment Center**  >  **FTP/credentials**.
 
-2. Selecteer **app-referenties**en selecteer de koppeling **kopiëren** om de gebruikers naam of het wacht woord te kopiëren.
+2. Selecteer **app-referenties** en selecteer de koppeling **kopiëren** om de gebruikers naam of het wacht woord te kopiëren.
 
 Als u de referenties op app-niveau opnieuw wilt instellen, selecteert u **referenties opnieuw instellen** in hetzelfde dialoog venster.
 
@@ -96,7 +96,7 @@ Voer de volgende CLI-opdracht uit om basis verificatie toegang tot de Web Deploy
 az resource update --resource-group <resource-group> --name scm --namespace Microsoft.Web --resource-type basicPublishingCredentialsPolicies --parent sites/<site-name> --set properties.allow=false
 ```
 
-Als u wilt controleren of de referenties van het publicatie profiel zijn geblokkeerd voor webimplementatie, kunt u [een web-app publiceren met Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019).
+Als u wilt controleren of de referenties van het publicatie profiel zijn geblokkeerd voor webimplementatie, kunt u [een web-app publiceren met Visual Studio 2019](/visualstudio/deployment/quickstart-deploy-to-azure).
 
 ### <a name="disable-access-to-the-api"></a>Toegang tot de API uitschakelen
 

@@ -1,15 +1,14 @@
 ---
 title: 'Veelgestelde vragen: back-ups maken van virtuele Azure-machines'
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over het maken van back-ups van virtuele Azure-machines met de Azure Backup-service.
-ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 0f4f990654cc23fde7cf1ad2e37ba1ada76d94e3
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ba2779305302e91f68cb2664c90f53fdf9a9ca55
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324785"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008347"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Veelgestelde vragen: back-ups maken van virtuele Azure-machines
 
@@ -163,11 +162,20 @@ Voor bewerkingen zoals geheime/sleutel rollen is deze stap niet vereist en dezel
 
 ### <a name="can-i-access-the-vm-once-restored-due-to-a-vm-having-broken-relationship-with-domain-controller"></a>Kan ik toegang krijgen tot de virtuele machine nadat deze is hersteld vanwege een verbroken relatie met de domein controller?
 
-Ja, u kunt de VM na het herstellen openen als gevolg van een virtuele machine met een verbroken relatie met de domein controller. Raadpleeg dit [artikel](./backup-azure-arm-restore-vms.md#post-restore-steps) voor meer informatie
+Ja, u kunt de VM na het herstellen openen als gevolg van een virtuele machine met een verbroken relatie met de domein controller. Zie dit [artikel](./backup-azure-arm-restore-vms.md#post-restore-steps) voor meer informatie.
+
+### <a name="can-i-cancel-an-in-progress-restore-job"></a>Kan ik een herstel taak die in voortgang is, annuleren?
+Nee, u kunt de herstel taak die wordt uitgevoerd niet annuleren.
 
 ### <a name="why-restore-operation-is-taking-long-time-to-complete"></a>Waarom duurt mijn herstelbewerking zo lang?
 
 De totale herstel tijd is afhankelijk van de invoer/uitvoer-bewerkingen per seconde (IOPS) en de door Voer van het opslag account. De totale herstel tijd kan worden beïnvloed als het doel-opslag account is geladen met andere Lees-en schrijf bewerkingen van toepassingen. Als u de herstel bewerking wilt verbeteren, selecteert u een opslag account dat niet is geladen met andere toepassings gegevens.
+
+### <a name="how-do-we-handle-create-new-virtual-machine-restore-type-conflicts-with-governance-policies"></a>Hoe kan ik ' nieuwe virtuele machine maken ' verwerken-type conflicten herstellen met beleid voor beheer?
+
+Azure Backup maakt gebruik van ' attach '-schijven van herstel punten en bekijkt geen verwijzingen naar uw installatie kopie of galerieën. In het beleid kunt u dus "storageProfile. osDisk. createOption as attach" controleren en de script voorwaarde is:
+
+`if (storageProfile.osDisk.createOption == "Attach") then { exclude <Policy> }`
 
 ## <a name="manage-vm-backups"></a>Back-ups van uw virtuele machine beheren
 

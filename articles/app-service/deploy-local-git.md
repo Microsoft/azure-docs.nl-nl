@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 84e257111e8da0546cf104e0cc5d3ac95a9294ba
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 5ed3e858168ce5ad9a7f089b723bb75ca8a49fca
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558671"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007514"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Lokale Git-implementatie naar Azure App Service
 
@@ -45,7 +45,7 @@ De eenvoudigste manier om lokale Git-implementatie voor uw app in te scha kelen 
 
 ### <a name="get-the-deployment-url"></a>De implementatie-URL ophalen
 
-Als u de URL wilt ophalen voor het inschakelen van lokale Git-implementatie voor een bestaande app, voert u [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) uit in de Cloud shell. Vervang \<app-name> en \<group-name> door de namen van uw app en de bijbehorende Azure-resource groep.
+Als u de URL wilt ophalen voor het inschakelen van lokale Git-implementatie voor een bestaande app, voert u [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source#az-webapp-deployment-source-config-local-git) uit in de Cloud shell. Vervang \<app-name> en \<group-name> door de namen van uw app en de bijbehorende Azure-resource groep.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
@@ -54,7 +54,7 @@ az webapp deployment source config-local-git --name <app-name> --resource-group 
 > Als u een Linux-app-service-abonnement gebruikt, moet u deze para meter toevoegen:--runtime python | 3.7
 
 
-Als u een nieuwe app met Git wilt maken, voert u [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) in het Cloud shell uit met de `--deployment-local-git` para meter. Vervang \<app-name> , \<group-name> , en \<plan-name> door de namen van uw nieuwe Git-app, de Azure-resource groep en het Azure app service plan.
+Als u een nieuwe app met Git wilt maken, voert u [`az webapp create`](/cli/azure/webapp#az-webapp-create) in het Cloud shell uit met de `--deployment-local-git` para meter. Vervang \<app-name> , \<group-name> , en \<plan-name> door de namen van uw nieuwe Git-app, de Azure-resource groep en het Azure app service plan.
 
 ```azurecli-interactive
 az webapp create --name <app-name> --resource-group <group-name> --plan <plan-name> --deployment-local-git
@@ -154,7 +154,7 @@ Mogelijk worden de volgende veelvoorkomende fout berichten weer geven wanneer u 
 |`RPC failed; result=22, HTTP code = 5xx.`|Deze fout kan optreden als u probeert een grote Git-opslag plaats via HTTPS te pushen.|Wijzig de Git-configuratie op de lokale computer zodat deze `postBuffer` groter wordt. Bijvoorbeeld: `git config --global http.postBuffer 524288000`.|
 |`Error - Changes committed to remote repository but your web app not updated.`|U hebt een Node.js-app geïmplementeerd met een _package.jsin_ een bestand dat aanvullende vereiste modules bevat.|Bekijk de `npm ERR!` fout berichten vóór deze fout voor meer context over de fout. Hieronder vindt u de bekende oorzaken van deze fout en de bijbehorende `npm ERR!` berichten:<br /><br />**Onjuist gevormd package.jsbestand**: `npm ERR! Couldn't read dependencies.`<br /><br />**Systeem eigen module heeft geen binaire distributie voor Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />of <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Documentatie voor project kudu](https://github.com/projectkudu/kudu/wiki)
 - [Continue implementatie naar Azure App Service](deploy-continuous-deployment.md)

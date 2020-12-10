@@ -4,12 +4,12 @@ description: Bevat een samenvatting van ondersteuningsinstellingen en -beperking
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: 70a81b42ad2fb417902a627afb1651d572844648
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: be0c576da6e38233423a79f562f767de806d7640
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548508"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008364"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Ondersteunings matrix voor Azure Backup
 
@@ -67,7 +67,7 @@ Dit wordt what's ondersteund als u back-ups wilt maken van virtuele Azure-machin
 
 **Machine** | **Waarvan wordt een back-up gemaakt?** | **Locatie** | **Functies**
 --- | --- | --- | ---
-**Back-ups van Azure VM met behulp van VM-extensie** | Volledige VM | Maak een back-up naar de kluis. | De uitbrei ding wordt geïnstalleerd wanneer u back-up voor een virtuele machine inschakelt.<br/><br/> Eenmaal per dag een back-up maken.<br/><br/> App-bewuste back-up voor Windows-Vm's; bestands consistente back-up voor Linux Vm's. U kunt app-consistentie voor Linux-machines configureren met aangepaste scripts.<br/><br/> Herstel de VM of schijf.<br/><br/> Kan geen back-up maken van een virtuele machine van Azure naar een on-premises locatie.
+**Back-ups van Azure VM met behulp van VM-extensie** | Volledige VM | Maak een back-up naar de kluis. | De uitbrei ding wordt geïnstalleerd wanneer u back-up voor een virtuele machine inschakelt.<br/><br/> Eenmaal per dag een back-up maken.<br/><br/> App-bewuste back-up voor Windows-Vm's; bestands consistente back-up voor Linux Vm's. U kunt app-consistentie voor Linux-machines configureren met aangepaste scripts.<br/><br/> Herstel de VM of schijf.<br/><br/>Het [maken van back-ups en herstellen van Active Directory domein controllers](active-directory-backup-restore.md) wordt ondersteund.<br><br> Kan geen back-up maken van een virtuele machine van Azure naar een on-premises locatie.
 **Back-ups van Azure-VM'S met behulp van MARS-agent** | Bestanden, mappen, systeemstatus | Maak een back-up naar de kluis. | Drie keer per dag een back-up maken.<br/><br/> Als u een back-up wilt maken van specifieke bestanden of mappen in plaats van de hele virtuele machine, kan de MARS-agent worden uitgevoerd naast de VM-extensie.
 **Azure VM met DPM** | Bestanden, mappen, volumes, systeem status, app-gegevens | Maak een back-up naar de lokale opslag van de virtuele machine van Azure waarop DPM wordt uitgevoerd. DPM voert vervolgens een back-up uit naar de kluis. | App-bewuste moment opnamen.<br/><br/> Volledige granulariteit voor back-up en herstel.<br/><br/> Linux wordt ondersteund voor virtuele machines (Hyper-V-/VMware).<br/><br/> Oracle wordt niet ondersteund.
 **Azure VM met MABS** | Bestanden, mappen, volumes, systeem status, app-gegevens | Maak een back-up naar de lokale opslag van de virtuele machine van Azure waarop MABS wordt uitgevoerd. MABS voert vervolgens een back-up uit naar de kluis. | App-bewuste moment opnamen.<br/><br/> Volledige granulariteit voor back-up en herstel.<br/><br/> Linux wordt ondersteund voor virtuele machines (Hyper-V-/VMware).<br/><br/> Oracle wordt niet ondersteund.

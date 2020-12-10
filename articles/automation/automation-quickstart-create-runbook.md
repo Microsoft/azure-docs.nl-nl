@@ -55,7 +55,7 @@ Maak eerst een runbook. Het voorbeeldrunbook dat in deze quickstart is gemaakt, 
 
 1. Klik op **Opslaan** om een conceptversie van het runbook op te slaan.
 
-    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-edit-runbook.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-edit-runbook.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken' met een codevoorbeeld in het rechtervenster.":::
 
 ## <a name="test-the-runbook"></a>Het runbook testen
 
@@ -65,13 +65,13 @@ Zodra het runbook is gemaakt, moet u het testen om te zien of het werkt.
 
 1. Voer een waarde in bij **Naam** en klik op **Starten**. De testtaak wordt gestart en de taakstatus en uitvoer worden weergegeven.
 
-    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-test-runbook.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+    :::image type="content" source="./media/automation-quickstart-create-runbook/automation-test-runbook.png" alt-text="Schermopname van het testvenster met een voorbeeldwaarde in het naamveld.":::
 
 1. Sluit het testvenster door op de **X** in de rechterbovenhoek te klikken. Selecteer **OK** in de pop-up die wordt weergegeven.
 
 1. Op de pagina PowerShell-runbook bewerken klikt u op **Publiceren** om het runbook als de officiële versie van het runbook in het account te publiceren.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken' met de geselecteerde knop 'Publiceren'.":::
 
 ## <a name="run-the-runbook"></a>Het runbook uitvoeren
 
@@ -79,15 +79,15 @@ Zodra het runbook is gepubliceerd, wordt de overzichtspagina weergegeven.
 
 1. Klik op de overzichtspagina van het runbook op **Starten** om de configuratiepagina Runbook starten voor dit runbook te openen.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-start.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-start.png" alt-text="Schermopname van de configuratiepagina 'Runbook starten'.":::
 
 1. Laat **Naam** leeg, zodat de standaardwaarde wordt gebruikt en klik op **OK**. De runbooktaak is verzonden en de pagina Taak wordt weergegeven.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-job-page.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-job-page.png" alt-text="Schermopname van de taakpagina waarop de knop 'Uitvoer' geselecteerd wordt weergegeven.":::
 
 1. Wanneer de taakstatus `Running` of `Completed` is, klikt u op **Uitvoer** om het deelvenster Uitvoer te openen en de runbookuitvoer weer te geven.
 
-   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job-output.png" alt-text="Schermopname van de pagina 'PowerShell-runbook bewerken'.":::
+   :::image type="content" source="./media/automation-quickstart-create-runbook/automation-hello-world-runbook-job-output.png" alt-text="Schermopname van het deelvenster 'Uitvoer' waarin de runbookuitvoer wordt weergegeven.":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

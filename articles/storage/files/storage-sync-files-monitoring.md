@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 59c489fac8bf02263cc51833675af414d5de6a52
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 87d0b740ec4f7ffb8966b386c273c023f69c42d8
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686001"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008296"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure File Sync bewaken
 
@@ -42,14 +42,14 @@ De metrische gegevens voor Azure File Sync zijn standaard ingeschakeld en worden
 
 De volgende metrische gegevens voor Azure File Sync zijn beschikbaar in Azure Monitor:
 
-| Naam van meetwaarde | Beschrijving |
+| Naam van metrische gegevens | Beschrijving |
 |-|-|
 | Gesynchroniseerde bytes | Grootte van de overgedragen gegevens (uploaden en downloaden).<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
 | Cloud lagen intrekken | De grootte van de gegevens die worden ingetrokken.<br><br>**Opmerking**: deze metrische gegevens worden in de toekomst verwijderd. Gebruik de grootte van de Cloud-laag voor het intrekken van de grootte van gegevens die zijn ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam |
-| Grootte van intrekken Cloud lagen | De grootte van de gegevens die worden ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam, naam van synchronisatie groep |
-| Grootte van intrekken van Cloud lagen op toepassing | De grootte van de gegevens die worden ingetrokken door de toepassing.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: toepassings naam, Server naam, naam synchronisatie groep |
-| Door Voer van Cloud lagen intrekken | Grootte van gegevens intrekken doorvoer snelheid.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam, naam van synchronisatie groep |
-| Bestanden die niet worden gesynchroniseerd | Het aantal bestanden dat niet kan worden gesynchroniseerd.<br><br>Eenheid: aantal<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
+| Grootte van intrekken Cloud lagen | De grootte van de gegevens die worden ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: Server naam, naam van synchronisatie groep |
+| Grootte van intrekken van Cloud lagen op toepassing | De grootte van de gegevens die worden ingetrokken door de toepassing.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: toepassings naam, Server naam, naam synchronisatie groep |
+| Door Voer van Cloud lagen intrekken | Grootte van gegevens intrekken doorvoer snelheid.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: Server naam, naam van synchronisatie groep |
+| Bestanden die niet worden gesynchroniseerd | Het aantal bestanden dat niet kan worden gesynchroniseerd.<br><br>Eenheid: aantal<br>Aggregatie typen: Average, Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
 | Gesynchroniseerde bestanden | Aantal overgebrachte bestanden (uploaden en downloaden).<br><br>Eenheid: aantal<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
 | Online status van de server | Aantal heartbeats dat is ontvangen van de server.<br><br>Eenheid: aantal<br>Aggregatie type: maximum<br>Toepasselijke dimensie: Server naam |
 | Resultaat van synchronisatie sessie | Resultaat van synchronisatie sessie (1 = synchronisatie sessie geslaagd; 0 = synchronisatie sessie mislukt)<br><br>Eenheid: aantal<br>Aggregatie typen: maximum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
@@ -63,7 +63,7 @@ Waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waard
 1. Ga naar de **opslag synchronisatie service** in de **Azure Portal**. 
 2. Klik in het gedeelte bewaking op **waarschuwingen** en klik vervolgens op **+ nieuwe waarschuwings regel**.
 3. Klik op **voor waarde selecteren** en geef de volgende informatie op voor de waarschuwing: 
-    - **Metrisch gegeven**
+    - **Meting**
     - **Dimensie naam**
     - **Waarschuwingslogica**
 4. Klik op **actie groep selecteren** en voeg een actie groep (E-mail, SMS, enzovoort) toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
@@ -118,7 +118,7 @@ Als u de status van een **Server eindpunt** wilt weer geven in de portal, gaat u
 
 - De volgende metrische grafieken kunnen worden weer gegeven in de portal van de opslag synchronisatie service:
 
-  | Naam van meetwaarde | Beschrijving | Naam Blade |
+  | Naam van metrische gegevens | Beschrijving | Naam Blade |
   |-|-|-|
   | Gesynchroniseerde bytes | Grootte van overgedragen gegevens (uploaden en downloaden) | Synchronisatie groep, Server eindpunt |
   | Cloud lagen intrekken | Grootte van gegevens die zijn ingetrokken | Geregistreerde servers |

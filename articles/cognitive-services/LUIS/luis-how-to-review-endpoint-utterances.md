@@ -8,19 +8,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
-ms.date: 05/07/2020
-ms.openlocfilehash: 9777e4f9b2205d2f6cdf6158b035e2a18403d69f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/08/2020
+ms.openlocfilehash: ea2b44d05d25756a16b6b84f0734966b1f579848
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541455"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007599"
 ---
 # <a name="how-to-improve-the-luis-app-by-reviewing-endpoint-utterances"></a>De LUIS-app verbeteren door eind punt uitingen te controleren
 
 Het proces voor het controleren van het eind punt uitingen voor de juiste voor spellingen wordt [actief leren](luis-concept-review-endpoint-utterances.md)genoemd. Met het actieve leer proces worden eindpunt query's vastgelegd en wordt het uitingen van de gebruiker geselecteerd. U kunt deze uitingen bekijken om de intentie te selecteren en entiteiten te markeren voor deze uitingen. Ga akkoord met deze wijzigingen in uw voorbeelduitingen en klik vervolgens op trainen en publiceren. LUIS identificeert uitingen nauw keuriger.
 
-## <a name="enable-active-learning"></a>Actief leren inschakelen
+## <a name="log-user-queries-to-enable-active-learning"></a>Gebruikers query's registreren om actief leren in te scha kelen
 
 Als u actief leren wilt inschakelen, moet u gebruikers query's registreren. Dit wordt bereikt door de query van het [eind punt](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) aan te roepen met de `log=true` para meter en waarde van de query reeks.
 
@@ -34,7 +34,7 @@ Gebruik de LUIS-Portal om de juiste eindpunt query te maken.
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding toont de koppeling voor het wijzigen van query parameters.](./media/luis-tutorial-review-endpoint-utterances/azure-portal-change-query-url-settings.png)
 
-1. Schakel **logboeken opslaan** vervolgens opslaan door **gereed**te selecteren.
+1. Schakel **logboeken opslaan** vervolgens opslaan door **gereed** te selecteren.
 
     > [!div class="mx-imgBorder"]
     > ![Gebruik de LUIS-Portal om logboeken op te slaan. Dit is vereist voor actief leren.](./media/luis-tutorial-review-endpoint-utterances/luis-portal-manage-azure-resource-save-logs.png)

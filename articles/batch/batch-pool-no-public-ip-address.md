@@ -3,15 +3,15 @@ title: Een Azure Batch-pool zonder openbare IP-adressen maken
 description: Meer informatie over het maken van een groep zonder open bare IP-adressen
 author: pkshultz
 ms.topic: how-to
-ms.date: 10/08/2020
+ms.date: 12/9/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 09a5632f969117e69e68bbe0df2bfbab9a8a102b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 806e85fca0a509d56e248fc7779fba0f0a59a61d
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842132"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007667"
 ---
 # <a name="create-an-azure-batch-pool-without-public-ip-addresses"></a>Een Azure Batch-pool zonder openbare IP-adressen maken
 
@@ -25,7 +25,8 @@ Als u de toegang tot deze knoop punten wilt beperken en de detectie van deze kno
 
 > [!IMPORTANT]
 > Ondersteuning voor Pools zonder open bare IP-adressen in Azure Batch is momenteel beschikbaar als open bare Preview voor de volgende regio's: Frankrijk-centraal, Azië-oost, VS-West-Centraal, Zuid-Centraal VS, VS-West 2, Verenigde Staten, Europa-noord, VS-Oost 2, VS-midden, Europa-west, Noord-Centraal VS, VS-West, Australië-oost, Japan-Oost, Japan-West.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 

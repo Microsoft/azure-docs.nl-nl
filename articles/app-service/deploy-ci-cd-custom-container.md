@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/08/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 8a51fbcb7b7504b9a16e8d0025856c2b007070a9
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: e879d8370821ea465147e344d0fe95836c843ff4
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928005"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008007"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Doorlopende implementatie met Web App for Containers
 
@@ -23,7 +23,7 @@ In deze zelf studie configureert u continue implementatie voor een aangepaste co
 
 ![Scherm opname van ACR-webhook](./media/deploy-ci-cd-custom-container/ci-cd-acr-02.png)
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer de optie **app service** aan de linkerkant van de pagina.
 3. Selecteer de naam van de app waarvoor u een continue implementatie wilt configureren.
 4. Selecteer op de pagina **container instellingen** de optie **Eén container**
@@ -41,7 +41,7 @@ Klik in uw Container Registry op webhooks om de huidige webhooks weer te geven.
 
 ## <a name="enable-continuous-deployment-with-docker-hub-optional"></a>Continue implementatie met docker hub inschakelen (optioneel)
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer de optie **app service** aan de linkerkant van de pagina.
 3. Selecteer de naam van de app waarvoor u een continue implementatie wilt configureren.
 4. Selecteer op de pagina **container instellingen** de optie **Eén container**
@@ -55,7 +55,7 @@ Kopieer de webhook-URL. Als u een webhook voor docker hub wilt toevoegen, volgt 
 
 ## <a name="automate-with-cli"></a>Automatiseren met CLI
 
-Voor het configureren van CI/CD met behulp van de Azure CLI voert u de opdracht [AZ webapp Deployment container config](/cli/azure/webapp/deployment/container?view=azure-cli-latest#az-webapp-deployment-container-config) uit om de webhook-URL te genereren. De URL kan worden gebruikt om uw DockerHub of Azure Container Registry te configureren.
+Voor het configureren van CI/CD met behulp van de Azure CLI voert u de opdracht [AZ webapp Deployment container config](/cli/azure/webapp/deployment/container#az-webapp-deployment-container-config) uit om de webhook-URL te genereren. De URL kan worden gebruikt om uw DockerHub of Azure Container Registry te configureren.
 
 ```azurecli-interactive
 az webapp deployment container config --name <app-name> --resource-group <group-name> --enable-cd true

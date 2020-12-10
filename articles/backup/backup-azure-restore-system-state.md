@@ -3,12 +3,12 @@ title: Systeem status herstellen naar een Windows-Server
 description: Stapsgewijze uitleg voor het herstellen van de Windows Server-systeem status vanuit een back-up in Azure.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 824ed5e71934af370211bfa8b4c266fe4323b4ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ef23d6ff16c263e310304cc240c2090751640b1
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89377434"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008466"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Systeem status herstellen naar Windows Server
 
@@ -32,7 +32,7 @@ In de volgende stappen wordt uitgelegd hoe u de configuratie van uw Windows-Serv
 
     ![Gegevens herstellen](./media/backup-azure-restore-windows-server/recover.png)
 
-3. Selecteer in het deel venster **aan** de slag de optie **deze server ( `<server name>` )** en selecteer **volgende**om de gegevens op dezelfde server of computer te herstellen.
+3. Selecteer in het deel venster **aan** de slag de optie **deze server ( `<server name>` )** en selecteer **volgende** om de gegevens op dezelfde server of computer te herstellen.
 
     ![Selecteer deze optie voor de server om de gegevens op dezelfde computer te herstellen](./media/backup-azure-restore-system-state/samemachine.png)
 
@@ -50,7 +50,7 @@ In de volgende stappen wordt uitgelegd hoe u de configuratie van uw Windows-Serv
 
     Azure Backup koppelt het lokale herstel punt en gebruikt dit als een herstel volume.
 
-7. Geef in het volgende deel venster de bestemming op voor de herstelde systeem status bestanden. Selecteer vervolgens **Bladeren** om Windows Verkenner te openen en de gewenste bestanden en mappen te vinden. Met deze optie kunt **u kopieën maken, zodat u met beide versies**kopieën van afzonderlijke bestanden in een bestaand systeem status bestands archief maakt, in plaats van de kopie van het hele archief van de systeem status te maken.
+7. Geef in het volgende deel venster de bestemming op voor de herstelde systeem status bestanden. Selecteer vervolgens **Bladeren** om Windows Verkenner te openen en de gewenste bestanden en mappen te vinden. Met deze optie kunt **u kopieën maken, zodat u met beide versies** kopieën van afzonderlijke bestanden in een bestaand systeem status bestands archief maakt, in plaats van de kopie van het hele archief van de systeem status te maken.
 
     ![Herstel opties](./media/backup-azure-restore-system-state/recover-as-files.png)
 
@@ -88,7 +88,7 @@ De terminologie die in deze stappen wordt gebruikt, omvat:
 6. Selecteer in het deel venster back-upserver selecteren de *bron machine* in de lijst met weer gegeven machines.
 7. Kies in het deel venster herstel modus selecteren de optie **systeem status** en selecteer **volgende**.
 
-    ![Zoeken](./media/backup-azure-restore-system-state/recover-type-selection.png)
+    ![Search](./media/backup-azure-restore-system-state/recover-type-selection.png)
 
 8. Selecteer een herstel punt in de agenda in het deel venster **volume en datum selecteren** . U kunt herstellen vanaf een herstel punt in de tijd. **Vetgedrukte** datums geven de beschik baarheid van ten minste één herstel punt aan. Wanneer u een datum selecteert en er meerdere herstel punten beschikbaar zijn, kiest u het specifieke herstel punt in het vervolg keuzemenu **tijd** .
 
@@ -100,7 +100,7 @@ De terminologie die in deze stappen wordt gebruikt, omvat:
 
     ![Versleuteling](./media/backup-azure-restore-system-state/recover-as-files.png)
 
-    Met deze optie kunt **u kopieën maken, zodat u met beide versies**kopieën van afzonderlijke bestanden in een bestaand systeem status bestands archief maakt, in plaats van de kopie van het hele archief van de systeem status te maken.
+    Met deze optie kunt **u kopieën maken, zodat u met beide versies** kopieën van afzonderlijke bestanden in een bestaand systeem status bestands archief maakt, in plaats van de kopie van het hele archief van de systeem status te maken.
 
 11. Controleer de details van herstel in het bevestigings venster en selecteer **herstellen**.
 
@@ -116,15 +116,15 @@ Nadat u de systeem status hebt hersteld als bestanden met behulp van Azure Recov
 
 1. Open de module Windows Server Back-up. Als u niet weet waar de module is geïnstalleerd, zoekt u op de computer of server naar **Windows Server back-up**.
 
-    De bureau blad-app wordt weer gegeven in de zoek resultaten. Als het niet wordt weer gegeven, of als u fouten tegen komt wanneer u de toepassing opent, moet u de **Windows Server back-up-functies**en afhankelijke onderdelen daaronder installeren die beschikbaar zijn in de **wizard functies toevoegen** in **Serverbeheer**.
+    De bureau blad-app wordt weer gegeven in de zoek resultaten. Als het niet wordt weer gegeven, of als u fouten tegen komt wanneer u de toepassing opent, moet u de **Windows Server back-up-functies** en afhankelijke onderdelen daaronder installeren die beschikbaar zijn in de **wizard functies toevoegen** in **Serverbeheer**.
 
 1. Selecteer in de module de optie **lokale back-up**.
 
     ![Lokale back-up selecteren om van daaruit te herstellen](./media/backup-azure-restore-system-state/win-server-backup-local-backup.png)
 
-1. Selecteer op de lokale back-upconsole in het **deel venster acties**de optie **herstellen** om de wizard herstellen te openen.
+1. Selecteer op de lokale back-upconsole in het **deel venster acties** de optie **herstellen** om de wizard herstellen te openen.
 
-1. Selecteer de optie, **een back-up die is opgeslagen op een andere locatie**en selecteer **volgende**.
+1. Selecteer de optie, **een back-up die is opgeslagen op een andere locatie** en selecteer **volgende**.
 
    ![kiezen om naar een andere server te herstellen](./media/backup-azure-restore-system-state/backup-stored-in-diff-location.png)
 
@@ -140,7 +140,7 @@ Nadat u de systeem status hebt hersteld als bestanden met behulp van Azure Recov
 
 1. Selecteer in het deel venster herstel type selecteren de optie **systeem status** en selecteer **volgende**.
 
-1. Voor de locatie van de systeem status herstel selecteert u **oorspronkelijke locatie**en selecteert u **volgende**.
+1. Voor de locatie van de systeem status herstel selecteert u **oorspronkelijke locatie** en selecteert u **volgende**.
 
     Als u een domein controller herstelt, ziet u de volgende extra optie:
 
@@ -201,6 +201,8 @@ Dit artikel heeft alleen betrekking op het eerste scenario, waarmee u een nonaut
 
 1. Wanneer u de herstel bewerking hebt voltooid, moet u de server opnieuw opstarten in de normale modus. Open een opdracht prompt en typ het volgende: `bcdedit /deletevalue safeboot`
 1. Start de server opnieuw op.
+
+Zie [back up and Restore Active Directory Domain controllers](active-directory-backup-restore.md)voor meer informatie.
 
 ## <a name="troubleshoot-failed-system-state-restore"></a>Mislukt herstel van systeemstatus oplossen
 

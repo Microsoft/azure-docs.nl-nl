@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 5c3bfbdf133777f0bc219d1306f80bd4d38b56ea
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 0a59c748dba87765537fc7c9d6382c7d2b726f43
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746264"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008058"
 ---
 # <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Rapporten en stroomlogboeken voor DDoS-aanvalsbeperking configureren 
 
@@ -80,9 +80,15 @@ U kunt de stroom logboeken voor aanvals beveiliging verbinden met Azure Sentinel
 
 ### <a name="azure-ddos-protection-workbook"></a>Azure DDoS Protection werkmap
 
-Als u de gegevens van stroom logboeken wilt weer geven in het dash board van Azure Analytics, kunt u het voorbeeld dashboard importeren uit https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Azure%20DDoS%20Protection%20Workbook
+U kunt deze Azure Resource Manager (ARM)-sjabloon gebruiken voor het implementeren van een aanvals Analytics-werkmap. Met deze werkmap kunt u de aanvals gegevens op verschillende deel Vensters visualiseren om eenvoudig inzicht te krijgen in wat er in de hand is. Wanneer u deze ARM-sjabloon implementeert, moet u het volgende invullen:
 
-Stroom logboeken bevatten de volgende velden: 
+* Werkruimtenaam
+* Werkruimte ResourceGroup
+* ID van werk ruimte-abonnement
+
+[![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520DDoS%2520Protection%2520Workbook%2FAzureDDoSWorkbook_ARM.json)
+
+De stroom logboeken bevatten de volgende velden: 
 - Bron-IP
 - Doel-IP
 - Bronpoort 

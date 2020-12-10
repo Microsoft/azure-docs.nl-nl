@@ -2,7 +2,6 @@
 title: Gegevens kopiëren van Amazon RedShift
 description: Meer informatie over het kopiëren van gegevens van Amazon Redshift naar ondersteunde Sink-gegevens archieven met behulp van Azure Data Factory.
 services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
 manager: shwang
@@ -10,13 +9,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/04/2018
-ms.openlocfilehash: a756a3cec5702570751e0bea09a4f59152accafc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/09/2020
+ms.openlocfilehash: b17c567b2e83bef3c37c8f1272091021a1943b15
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484541"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008317"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Gegevens kopiëren van Amazon Redshift met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -24,7 +23,6 @@ ms.locfileid: "89484541"
 > * [Huidige versie](connector-amazon-redshift.md)
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens van een Amazon Redshift te kopiëren. Het is gebaseerd op het artikel overzicht van de [Kopieer activiteit](copy-activity-overview.md) . Dit geeft een algemeen overzicht van de Kopieer activiteit.
 
@@ -164,9 +162,9 @@ Meer informatie over het gebruik van Unload om gegevens te kopiëren van Amazon 
 
 [Unload](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) is een mechanisme dat door Amazon Redshift wordt geleverd, waarmee de resultaten van een query kunnen worden verwijderd naar een of meer bestanden in de Amazon Simple Storage-service (Amazon S3). Het is de manier die door Amazon wordt aanbevolen voor het kopiëren van een grote gegevensset vanuit Redshift.
 
-**Voor beeld: gegevens kopiëren van Amazon Redshift naar Azure Synapse Analytics (voorheen SQL Data Warehouse) met behulp van verwijderen, gefaseerde kopie en poly base**
+**Voor beeld: gegevens kopiëren van Amazon Redshift naar Azure Synapse Analytics met behulp van verwijderen, gefaseerde kopie en poly base**
 
-Voor dit voor beeld-use-case verwijdert u met de Kopieer activiteit gegevens uit Amazon Redshift naar Amazon S3 zoals geconfigureerd in "redshiftUnloadSettings", en kopieert u vervolgens gegevens van Amazon S3 naar Azure Blob zoals opgegeven in "stagingSettings", ten slotte poly Base voor het laden van gegevens in azure Synapse Analytics (voorheen SQL Data Warehouse). Alle tussenliggende indeling wordt verwerkt door de Kopieer activiteit op de juiste manier.
+Voor deze voorbeeld use-case verwijdert u met de Kopieer activiteit gegevens uit Amazon Redshift naar Amazon S3, zoals geconfigureerd in "redshiftUnloadSettings", en kopieert u vervolgens gegevens van Amazon S3 naar Azure Blob zoals opgegeven in "stagingSettings", ten slotte poly Base voor het laden van gegevens in azure Synapse Analytics. Alle tussenliggende indeling wordt verwerkt door de Kopieer activiteit op de juiste manier.
 
 ![Kopieer werk stroom voor RedShift naar Azure Synapse Analytics](media/copy-data-from-amazon-redshift/redshift-to-sql-dw-copy-workflow.png)
 
@@ -221,10 +219,10 @@ Bij het kopiëren van gegevens uit Amazon Redshift worden de volgende toewijzing
 | Amazon Redshift-gegevens type | Data Factory-gegevens type interim |
 |:--- |:--- |
 | BIGINT |Int64 |
-| True |Tekenreeks |
+| BOOLEAN |Tekenreeks |
 | CHAR |Tekenreeks |
 | DATE |DateTime |
-| KOMMA |Decimaal |
+| DECIMAL |Decimaal |
 | DUBBELE PRECISIE |Dubbel |
 | INTEGER |Int32 |
 | REAL |Enkelvoudig |

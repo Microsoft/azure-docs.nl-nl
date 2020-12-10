@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 10/30/2020
-ms.openlocfilehash: dcf3db33818448116da53d8a01d0c62aca7bc1af
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 12/09/2020
+ms.openlocfilehash: 12630e5e4b332d875a75c59d2fdafecd23be0b17
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000076"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005426"
 ---
 # <a name="load-data-into-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens laden in azure Synapse Analytics met behulp van Azure Data Factory
 
@@ -102,7 +102,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     a. Klik op **+ Nieuwe verbinding maken** om een verbinding toe te voegen
 
-    b. Selecteer **Azure Synapse Analytics (voorheen SQL Data Warehouse)** in de galerie en selecteer **door gaan**. U kunt ' SQL ' in het zoekvak typen om de connectors te filteren.
+    b. Selecteer **Azure Synapse Analytics** in de galerie en selecteer **door gaan**.
 
     ![Azure Synapse Analytics selecteren](./media/load-azure-sql-data-warehouse/select-azure-sql-dw-sink.png)
 

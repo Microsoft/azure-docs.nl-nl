@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/05/2020
-ms.openlocfilehash: 834e4fe8c7b3923f40a07c02c0310200db222308
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.date: 12/09/2020
+ms.openlocfilehash: 027852216b3f2055a5a381d00aff94526953b898
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697251"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007871"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Een eenvoudige query maken in azure Cognitive Search
 
@@ -22,6 +22,14 @@ In azure Cognitive Search roept de [syntaxis van de eenvoudige query](query-simp
 In dit artikel gebruiken we voor beelden om de eenvoudige syntaxis te illustreren, waarbij u de `search=` para meter van een bewerking voor het [zoeken naar een document](/rest/api/searchservice/search-documents) vult.
 
 Een alternatieve query syntaxis is [volledige lucene](query-lucene-syntax.md), waardoor complexere query structuren worden ondersteund, zoals fuzzy en zoek opdrachten met Joker tekens. Dit kan meer tijd kosten om te verwerken. Zie [de syntaxis Full lucene gebruiken](search-query-lucene-examples.md)voor meer informatie en voor beelden met de volledige syntaxis.
+
+Kies uit de volgende hulpprogram ma's en Api's voor het verzenden van query's.
+
+| Methodologie | Beschrijving |
+|-------------|-------------|
+| [Search Explorer (portal)](search-explorer.md) | Voorziet in een zoek balk en opties voor selecties van index en API-versie. Resultaten worden geretourneerd als JSON-documenten. Aanbevolen voor verkennen, testen en valideren. <br/>[Meer informatie.](search-get-started-portal.md#query-index) | 
+| [Postman of Visual Studio code](search-get-started-rest.md) | Webtest-hulpprogram ma's zijn een uitstekende keuze voor het formuleren van [Zoek documenten](/rest/api/searchservice/search-documents) rest-aanroepen. De REST API ondersteunt elke programmatische bewerking in azure Cognitive Search, zodat u aanvragen interactief kunt verlenen om uw onderzoek te richten op een specifieke taak.  |
+| [SearchClient (.NET)](/dotnet/api/azure.search.documents.searchclient) | Client die kan worden gebruikt om een query uit te zoeken op een Azure Cognitive Search-index.  <br/>[Meer informatie.](search-howto-dotnet-sdk.md)  |
 
 ## <a name="formulate-requests-in-postman"></a>Aanvragen formuleren in postman
 

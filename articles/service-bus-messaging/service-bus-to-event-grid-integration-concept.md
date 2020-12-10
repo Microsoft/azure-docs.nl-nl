@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: f0aaa82db61b5f40e42d6dad641bc09d5add9d0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 621402975411afb63055a7d6a45d86d9e026e284
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078330"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007752"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Overzicht integratie Azure Service Bus met Azure Event Grid
 
@@ -39,7 +39,9 @@ Ga naar de naam ruimte van uw Service Bus en selecteer vervolgens **toegangs beh
 Service Bus gaat vandaag gebeurtenissen verzenden voor twee scenario's:
 
 * [ActiveMessagesWithNoListenersAvailable](#active-messages-available-event)
-* DeadletterMessagesAvailable
+* [DeadletterMessagesAvailable](#deadletter-messages-available-event)
+* [ActiveMessagesAvailablePeriodicNotifications](#active-messages-available-periodic-notifications)
+* [DeadletterMessagesAvailablePeriodicNotifications](#deadletter-messages-available-periodic-notifications)
 
 Bovendien worden de standaard Event Grid-beveiliging en [verificatiemechanismen](../event-grid/security-authentication.md) gebruikt.
 
@@ -71,7 +73,7 @@ Het schema voor deze gebeurtenis is als volgt:
 }
 ```
 
-#### <a name="dead-letter-messages-available-event"></a>De gebeurtenis Berichten beschikbaar in de wachtrij voor onbestelbare berichten
+#### <a name="deadletter-messages-available-event"></a>Gebeurtenis beschik bare Deadletter-berichten
 
 U krijgt minimaal een gebeurtenis per wachtrij voor onbestelbare berichten, waarin zich berichten bevinden maar waar geen actieve ontvangers zijn.
 
@@ -82,6 +84,58 @@ Het schema voor deze gebeurtenis is als volgt:
   "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
   "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
   "eventType": "Microsoft.ServiceBus.DeadletterMessagesAvailableWithNoListener",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
+#### <a name="active-messages-available-periodic-notifications"></a>Actieve berichten beschik bare periodieke meldingen
+
+Deze gebeurtenis wordt periodiek gegenereerd als u actieve berichten hebt over de specifieke wachtrij of het abonnement, zelfs als er actieve listeners zijn voor die specifieke wachtrij of dit abonnement.
+
+Het schema voor de gebeurtenis is als volgt.
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.ActiveMessagesAvailablePeriodicNotifications",
+  "eventTime": "2018-02-14T05:12:53.4133526Z",
+  "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
+  "data": {
+    "namespaceName": "YOUR SERVICE BUS NAMESPACE WILL SHOW HERE",
+    "requestUri": "https://YOUR-SERVICE-BUS-NAMESPACE-WILL-SHOW-HERE.servicebus.windows.net/TOPIC-NAME/subscriptions/SUBSCRIPTIONNAME/$deadletterqueue/messages/head",
+    "entityType": "subscriber",
+    "queueName": "QUEUE NAME IF QUEUE",
+    "topicName": "TOPIC NAME IF TOPIC",
+    "subscriptionName": "SUBSCRIPTION NAME"
+  },
+  "dataVersion": "1",
+  "metadataVersion": "1"
+}]
+```
+
+#### <a name="deadletter-messages-available-periodic-notifications"></a>Deadletter berichten beschik bare periodieke meldingen
+
+Deze gebeurtenis wordt periodiek gegenereerd als u deadletter-berichten hebt in de specifieke wachtrij of het abonnement, zelfs als er actieve listeners zijn voor de deadletter-entiteit van die specifieke wachtrij of dit abonnement.
+
+Het schema voor de gebeurtenis is als volgt.
+
+```json
+[{
+  "topic": "/subscriptions/<subscription id>/resourcegroups/DemoGroup/providers/Microsoft.ServiceBus/namespaces/<YOUR SERVICE BUS NAMESPACE WILL SHOW HERE>",
+  "subject": "topics/<service bus topic>/subscriptions/<service bus subscription>",
+  "eventType": "Microsoft.ServiceBus.DeadletterMessagesAvailablePeriodicNotifications",
   "eventTime": "2018-02-14T05:12:53.4133526Z",
   "id": "dede87b0-3656-419c-acaf-70c95ddc60f5",
   "data": {
@@ -132,7 +186,7 @@ Ga als volgt te werk als u een nieuw Event Grid-abonnement wilt maken:
 
 ## <a name="azure-cli-instructions"></a>Instructies voor Azure CLI
 
-Controleer eerst of Azure CLI versie 2.0 of hoger is geïnstalleerd. [Download het installatieprogramma](/cli/azure/install-azure-cli?view=azure-cli-latest). Selecteer **Windows + X**en open een nieuwe Power shell-console met beheerders machtigingen. U kunt ook een opdrachtshell in Azure Portal gebruiken.
+Controleer eerst of Azure CLI versie 2.0 of hoger is geïnstalleerd. [Download het installatieprogramma](/cli/azure/install-azure-cli?view=azure-cli-latest). Selecteer **Windows + X** en open een nieuwe Power shell-console met beheerders machtigingen. U kunt ook een opdrachtshell in Azure Portal gebruiken.
 
 Voer de volgende code uit:
 

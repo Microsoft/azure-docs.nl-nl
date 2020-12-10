@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: d46aacc441b412a117d906e0201a9bed6046a338
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7178b8079bbb2411e0b38c3ef59a9981fb2d55be
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961602"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005236"
 ---
 # <a name="open-an-ssh-session-to-a-linux-container-in-azure-app-service"></a>Open een SSH-sessie naar een Linux-container in Azure App Service
 
@@ -39,9 +39,9 @@ Zie [SSH configureren in een aangepaste container](configure-custom-container.md
 
 Met TCP-tunneling kunt u een netwerk verbinding maken tussen uw ontwikkel computer en Web App for Containers via een geverifieerde WebSocket-verbinding. U kunt hiermee een SSH-sessie openen met uw container in App Service van de client van uw keuze.
 
-Om aan de slag te gaan, moet u [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest)installeren. Open [Azure Cloud shell](../cloud-shell/overview.md)om te zien hoe het werkt zonder Azure CLI te installeren. 
+Om aan de slag te gaan, moet u [Azure cli](/cli/azure/install-azure-cli)installeren. Open [Azure Cloud shell](../cloud-shell/overview.md)om te zien hoe het werkt zonder Azure CLI te installeren. 
 
-Open een externe verbinding met uw app met behulp van de opdracht [AZ webapp Remote-Connection Create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create) . Geef _\<subscription-id>_ _\<group-name>_ en \_ \<app-name> _ op voor uw app.
+Open een externe verbinding met uw app met behulp van de opdracht [AZ webapp Remote-Connection Create](/cli/azure/ext/webapp/webapp/remote-connection#ext-webapp-az-webapp-remote-connection-create) . Geef _\<subscription-id>_ _\<group-name>_ en \_ \<app-name> _ op voor uw app.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &

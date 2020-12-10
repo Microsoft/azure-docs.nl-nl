@@ -5,15 +5,15 @@ author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure
-ms.date: 07/28/2020
+ms.date: 12/07/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: a42b07254deaf19d253f7523631018bfe7166a57
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4e29bb0fee496af6a8c0fd30d5559bf865123c39
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96339588"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007888"
 ---
 # <a name="azure-dedicated-hosts"></a>Met Azure toegewezen hosts
 
@@ -67,11 +67,6 @@ De Resource Manager-voorbeeld sjabloon die [hier](https://github.com/Azure/azure
 
 ## <a name="manual-vs-automatic-placement"></a>Hand matig versus automatische plaatsing 
 
-> [!IMPORTANT]
-> Automatische plaatsing is momenteel beschikbaar als open bare preview.
-> Als u wilt deel nemen aan de preview, voltooit u de preview-voorbereidings enquête op [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
 Wanneer u een virtuele machine in azure maakt, kunt u selecteren welke specifieke host u wilt gebruiken. U kunt ook de optie gebruiken om uw virtuele machines automatisch te plaatsen op bestaande hosts binnen een hostgroep. 
 
 Wanneer u een nieuwe hostgroep maakt, moet u ervoor zorgen dat de instelling voor automatische VM-plaatsing is geselecteerd. Wanneer u een virtuele machine maakt, selecteert u de hostgroep en laat u Azure de beste host voor uw virtuele machine kiezen. 
@@ -91,11 +86,6 @@ Bekende problemen en beperkingen bij het gebruik van automatische plaatsing van 
 
 Met schaal sets voor virtuele machines kunt u een groep virtuele machines behandelen als één resource en beschik baarheid, beheer, schalen en indelings beleid Toep assen als groep. Uw bestaande gereserveerde hosts kunnen ook worden gebruikt voor virtuele-machine schaal sets. 
 
-> [!IMPORTANT]
-> Virtual Machine Scale Sets op toegewezen hosts is momenteel beschikbaar als open bare preview.
-> Als u wilt deel nemen aan de preview, voltooit u de preview-voorbereidings enquête op [https://aka.ms/vmss-adh-preview](https://aka.ms/vmss-adh-preview) .
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
 Bij het maken van een schaalset voor virtuele machines kunt u een bestaande hostgroep opgeven zodat alle VM-exemplaren op specifieke hosts worden gemaakt.
 
 De volgende vereisten zijn van toepassing bij het maken van een schaalset voor virtuele machines in een specifieke hostgroep:
@@ -109,7 +99,7 @@ De volgende vereisten zijn van toepassing bij het maken van een schaalset voor v
 - De ondersteunde VM-grootten voor uw toegewezen hosts moeten overeenkomen met de grootte die voor uw schaalset wordt gebruikt.
 
 Niet alle instellingen voor indelings-en optimalisatie van schaal sets worden ondersteund door toegewezen hosts. Pas de volgende instellingen toe op uw schaalset: 
-- Overinrichting uitschakelen.
+- Overinrichting wordt niet aanbevolen en is standaard uitgeschakeld. U kunt overinrichting inschakelen, maar de toewijzing van de schaalset mislukt als de hostgroep geen capaciteit heeft voor alle virtuele machines, met inbegrip van de overingerichte instanties. 
 - De Orchestration-modus ScaleSetVM gebruiken 
 - Gebruik geen proximity-plaatsings groepen voor co-locatie
 

@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: fa99920c8e9d8cd532bb6230d6a337a038ee3e31
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 8e1f7bb2faaf9d2c706e63ae73b9e265eb95d09b
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929307"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007208"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Beheerde identiteiten gebruiken voor App Service en Azure Functions
 
@@ -109,7 +109,7 @@ De volgende stappen helpen u bij het maken van een app en het toewijzen van een 
 
 1. Als dat nodig is, installeert u de Azure PowerShell met behulp van de instructies in de [Azure PowerShell Guide](/powershell/azure/)en voert `Login-AzAccount` u uit om een verbinding te maken met Azure.
 
-2. Maak een functie-app met behulp van Azure PowerShell. Zie voor meer voor beelden van het gebruik van Azure PowerShell met Azure Functions de [verwijzing AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions):
+2. Maak een functie-app met behulp van Azure PowerShell. Zie voor meer voor beelden van het gebruik van Azure PowerShell met Azure Functions de [verwijzing AZ. functions](/powershell/module/az.functions/#functions):
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -219,7 +219,7 @@ De volgende stappen helpen u bij het maken van een app en het toewijzen van een 
 
 1. Als dat nodig is, installeert u de Azure PowerShell met behulp van de instructies in de [Azure PowerShell Guide](/powershell/azure/)en voert `Login-AzAccount` u uit om een verbinding te maken met Azure.
 
-2. Maak een functie-app met behulp van Azure PowerShell. Zie de [Naslag informatie over AZ. functions](/powershell/module/az.functions/?view=azps-4.1.0#functions)(Engelstalig) voor meer voor beelden van het gebruik van Azure PowerShell met Azure functions. Het onderstaande script maakt ook gebruik van `New-AzUserAssignedIdentity` dat afzonderlijk moet worden geïnstalleerd als per [Create, lijst of een door de gebruiker toegewezen beheerde identiteit te verwijderen met behulp van Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
+2. Maak een functie-app met behulp van Azure PowerShell. Zie de [Naslag informatie over AZ. functions](/powershell/module/az.functions/#functions)(Engelstalig) voor meer voor beelden van het gebruik van Azure PowerShell met Azure functions. Het onderstaande script maakt ook gebruik van `New-AzUserAssignedIdentity` dat afzonderlijk moet worden geïnstalleerd als per [Create, lijst of een door de gebruiker toegewezen beheerde identiteit te verwijderen met behulp van Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
 
     ```azurepowershell-interactive
     # Create a resource group.
@@ -324,7 +324,7 @@ Er zijn twee omgevings variabelen gedefinieerd voor een app met een beheerde ide
 
 De **IDENTITY_ENDPOINT** is een lokale URL van waaruit uw app tokens kan aanvragen. Als u een token voor een resource wilt ophalen, maakt u een HTTP GET-aanvraag naar dit eind punt, met inbegrip van de volgende para meters:
 
-> | Parameternaam    | In     | Description                                                                                                                                                                                                                                                                                                                                |
+> | Parameternaam    | In     | Beschrijving                                                                                                                                                                                                                                                                                                                                |
 > |-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | resource          | Query’s uitvoeren  | De Azure AD-resource-URI van de resource waarvoor een token moet worden verkregen. Dit kan een van de [Azure-Services zijn die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) of een andere resource-URI.    |
 > | api-versie       | Query’s uitvoeren  | De versie van de token-API die moet worden gebruikt. Gebruik ' 2019-08-01 ' of hoger (tenzij u Linux-verbruik gebruikt, dat momenteel alleen ' 2017-09-01 ' biedt).                                                                                                                                                                                                                                                                 |
@@ -338,7 +338,7 @@ De **IDENTITY_ENDPOINT** is een lokale URL van waaruit uw app tokens kan aanvrag
 
 Een geslaagd 200 OK-antwoord bevat een JSON-hoofd tekst met de volgende eigenschappen:
 
-> | Naam van eigenschap | Description                                                                                                                                                                                                                                        |
+> | Naam van eigenschap | Beschrijving                                                                                                                                                                                                                                        |
 > |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | access_token  | Het aangevraagde toegangs token. De aanroepende webservice kan dit token gebruiken om te verifiëren bij de ontvangende webservice.                                                                                                                               |
 > | client_id     | De client-ID van de identiteit die is gebruikt.                                                                                                                                                                                                       |

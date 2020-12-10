@@ -3,12 +3,12 @@ title: Uw app uitvoeren vanuit een ZIP-pakket
 description: Implementeer het ZIP-pakket van uw app met behulp van atomisch. Verbeter de voorspel baarheid en betrouw baarheid van het gedrag van uw app tijdens het ZIP-implementatie proces.
 ms.topic: article
 ms.date: 01/14/2020
-ms.openlocfilehash: 5cc909d79b3f5ea2b4c6a3da12bc7250addbe00c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3440653455626af4e3705d89349a66d6bf2fbfc0
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77920719"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008126"
 ---
 # <a name="run-your-app-in-azure-app-service-directly-from-a-zip-package"></a>Uw app rechtstreeks vanuit een ZIP-pakket uitvoeren in Azure App Service
 
@@ -41,13 +41,13 @@ az webapp config appsettings set --resource-group <group-name> --name <app-name>
 
 ## <a name="run-the-package"></a>Het pakket uitvoeren
 
-De eenvoudigste manier om een pakket in uw App Service uit te voeren, is met de Azure CLI [AZ webapp Deployment source config-](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-zip) opdracht. Bijvoorbeeld:
+De eenvoudigste manier om een pakket in uw App Service uit te voeren, is met de Azure CLI [AZ webapp Deployment source config-](/cli/azure/webapp/deployment/source#az-webapp-deployment-source-config-zip) opdracht. Bijvoorbeeld:
 
 ```azurecli-interactive
 az webapp deployment source config-zip --resource-group <group-name> --name <app-name> --src <filename>.zip
 ```
 
-Omdat de `WEBSITE_RUN_FROM_PACKAGE` app-instelling is ingesteld, wordt met deze opdracht de pakket inhoud niet uitgepakt naar de map *D:\home\site\wwwroot* van uw app. In plaats daarvan uploadt het ZIP-bestand naar *D:\home\data\SitePackages*en maakt het een *packagename.txt* in dezelfde directory, die de naam bevat van het zip-pakket dat tijdens runtime wordt geladen. Als u uw ZIP-pakket op een andere manier uploadt (zoals [FTP](deploy-ftp.md)), moet u de *D:\home\data\SitePackages* -map en het *packagename.txt* bestand hand matig maken.
+Omdat de `WEBSITE_RUN_FROM_PACKAGE` app-instelling is ingesteld, wordt met deze opdracht de pakket inhoud niet uitgepakt naar de map *D:\home\site\wwwroot* van uw app. In plaats daarvan uploadt het ZIP-bestand naar *D:\home\data\SitePackages* en maakt het een *packagename.txt* in dezelfde directory, die de naam bevat van het zip-pakket dat tijdens runtime wordt geladen. Als u uw ZIP-pakket op een andere manier uploadt (zoals [FTP](deploy-ftp.md)), moet u de *D:\home\data\SitePackages* -map en het *packagename.txt* bestand hand matig maken.
 
 Met deze opdracht wordt ook de app opnieuw gestart. Omdat `WEBSITE_RUN_FROM_PACKAGE` is ingesteld, app service het geüploade pakket koppelen als de alleen-lezen *wwwroot* -map en wordt de app rechtstreeks vanuit die gekoppelde map uitgevoerd.
 

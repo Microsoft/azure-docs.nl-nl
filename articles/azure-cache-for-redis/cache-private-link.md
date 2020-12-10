@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 31ae4605b6cc9e26c89beea692fe61fcbda49c4c
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 22bdf93e7236ae5220a6bb7c6ead898628bb51a1
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621498"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007582"
 ---
 # <a name="azure-cache-for-redis-with-azure-private-link-public-preview"></a>Azure-cache voor redis met persoonlijke Azure-koppeling (open bare preview)
 In dit artikel leert u hoe u een virtueel netwerk en een Azure-cache maakt voor een redis-exemplaar met een persoonlijk eind punt met behulp van de Azure Portal. U leert ook hoe u een persoonlijk eind punt kunt toevoegen aan een bestaand Azure-cache geheugen voor redis-instantie.
@@ -224,7 +224,12 @@ PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/
 ```
 
 ### <a name="are-network-security-groups-nsg-enabled-for-private-endpoints"></a>Zijn netwerk beveiligings groepen (NSG) ingeschakeld voor privé-eind punten?
-Nee, ze zijn uitgeschakeld voor privé-eind punten. Als er echter andere bronnen op het subnet aanwezig zijn, wordt NSG Enforcement toegepast op deze resources.
+Nee, ze zijn uitgeschakeld voor privé-eind punten. Hoewel aan subnetten met het persoonlijke eind punt NSG zijn gekoppeld, zijn de regels niet effectief op het verkeer dat door het persoonlijke eind punt wordt verwerkt. U moet [netwerk beleid afdwingen uitgeschakeld](../private-link/disable-private-endpoint-network-policy.md) om persoonlijke eind punten te implementeren in een subnet. NSG wordt nog steeds afgedwongen op andere workloads die worden gehost op hetzelfde subnet. Voor routes op elk client subnet wordt het voor voegsel/32 gebruikt. voor het wijzigen van het standaard routerings gedrag is een vergelijk bare UDR vereist. 
+
+Beheer het verkeer met behulp van NSG-regels voor uitgaand verkeer op de bron-clients. Implementeer afzonderlijke routes met het voor voegsel/32 om persoonlijke eindpunt routes te negeren. NSG-stroom logboeken en controle gegevens voor uitgaande verbindingen worden nog steeds ondersteund en kunnen worden gebruikt
+
+### <a name="can-i-use-firewall-rules-with-private-endpoints"></a>Kan ik Firewall regels met persoonlijke eind punten gebruiken?
+Nee, dit is een huidige beperking van privé-eind punten. Het persoonlijke eind punt werkt niet goed als de firewall regels zijn geconfigureerd voor de cache.
 
 ### <a name="how-can-i-connect-to-a-clustered-cache"></a>Hoe kan ik verbinding maken met een geclusterde cache?
 `publicNetworkAccess` moet worden ingesteld op `Disabled` en er mag slechts één particuliere eindpunt verbinding zijn.

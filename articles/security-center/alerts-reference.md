@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/22/2020
+ms.date: 12/10/2020
 ms.author: memildin
-ms.openlocfilehash: 68fa63bf42b7577402d8c58ebe22a0a16b5776fb
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 4254288a85b3b57afbdd6833242a6f4ad0eb0afc
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750999"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005134"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 
@@ -372,7 +372,7 @@ Onderaan deze pagina staat een tabel met een beschrijving van de Azure Security 
 [Extra informatie en opmerkingen](defender-for-dns-introduction.md)
 
 | Waarschuwing                                                                                                                | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                      | Intentie<br>([Meer informatie](#intentions)) | Severity |
-|----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|---------------------------------------|
+|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------:|
 | **Afwijkend gebruik van netwerkprotocol (preview)**<br>(AzureDNS_ProtocolAnomaly)                                         | Er is afwijkend protocolgebruik gedetecteerd door analyse van DNS-transacties vanaf %{CompromisedEntity}. Dergelijk verkeer kan weliswaar onschadelijk zijn, maar kan wijzen op misbruik van dit veelgebruikte protocol om het filteren van netwerkverkeer te omzeilen. Veelvoorkomende gerelateerde activiteiten van aanvallers zijn het kopiëren van tools voor extern beheer naar een geïnfecteerde host en het exfiltreren van gebruikersgegevens van de host.                                          | Exfiltration                          | -        |
 | **Anonieme netwerkactiviteit (preview)**<br>(AzureDNS_DarkWeb)                                                       | Er is anonieme netwerkactiviteit gedetecteerd door analyse van DNS-transacties vanaf %{CompromisedEntity}. Dergelijke activiteit kan rechtmatig gedrag van gebruikers zijn, maar wordt vaak door aanvallers gebruikt om opsporing en fingerprinting van netwerkcommunicatie te omzeilen. Een typische, bijkomende aanvalsactiviteit betreft het downloaden en uitvoeren van schadelijke software of hulpprogramma's voor extern beheer. | Exfiltration                          | -        |
 | **Anonieme netwerkactiviteit met behulp van webproxy (preview)**<br>(AzureDNS_DarkWebProxy)                                  | Er is anonieme netwerkactiviteit gedetecteerd door analyse van DNS-transacties vanaf %{CompromisedEntity}. Dergelijke activiteit kan rechtmatig gedrag van gebruikers zijn, maar wordt vaak door aanvallers gebruikt om opsporing en fingerprinting van netwerkcommunicatie te omzeilen. Een typische, bijkomende aanvalsactiviteit betreft het downloaden en uitvoeren van schadelijke software of hulpprogramma's voor extern beheer. | Exfiltration                          | -        |

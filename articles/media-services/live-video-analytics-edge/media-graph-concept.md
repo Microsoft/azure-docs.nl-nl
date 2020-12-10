@@ -3,12 +3,12 @@ title: Media Graph-concept-Azure
 description: Met een media grafiek kunt u definiëren waar media moeten worden vastgelegd, hoe deze moeten worden verwerkt en waar de resultaten moeten worden bezorgd. Dit artikel bevat een gedetailleerde beschrijving van het concept van media Graph.
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 7def82160547b759c7ab4c40c681052747261920
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5efb62440b52d6219373d15ba3d19ddac1a2a834
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91567075"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97007837"
 ---
 # <a name="media-graph"></a>Mediagrafiek
 
@@ -41,7 +41,7 @@ De waarden voor de para meters in de topologie worden opgegeven wanneer u grafie
 De levens cyclus van Graph-topologieën en grafiek exemplaren wordt weer gegeven in het volgende status diagram.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/media-graph/graph-topology-lifecycle.svg" alt-text="Mediagrafiek":::
+> :::image type="content" source="./media/media-graph/graph-topology-lifecycle.svg" alt-text="Grafiek topologie en de levens cyclus van Graph-instanties":::
 
 U begint met [het maken van een grafiek topologie](direct-methods.md#graphtopologyset). Vervolgens maakt u voor elke live video-feed die u met deze topologie wilt verwerken, [een exemplaar van Graph](direct-methods.md#graphinstanceset). 
 
@@ -70,7 +70,7 @@ Live video Analytics op IoT Edge ondersteunt de volgende typen knoop punten in e
 
 #### <a name="rtsp-source"></a>RTSP-bron 
 
-Met een RTSP-bron knooppunt kunt u media opnemen vanuit een [RTSP](https://tools.ietf.org/html/rfc2326 server). Bewakings-en op IP gebaseerde camera's verzenden hun gegevens in een protocol met de naam RTSP (Realtime-Streaming-Protocol) dat verschilt van andere typen apparaten, zoals telefoons en video camera's. Dit protocol wordt gebruikt voor het instellen en beheren van de media sessies tussen een server (de camera) en een client. Het RTSP-bron knooppunt in een media grafiek fungeert als een-client en kan een sessie met een RTSP-server tot stand brengen. Veel apparaten, zoals de meeste [IP-camera's](https://en.wikipedia.org/wiki/IP_camera) , hebben een ingebouwde RTSP-server. [ONVIF](https://www.onvif.org/) vereist dat RTSP wordt ondersteund in de definitie van [profielen G, S & T-](https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_Feature_overview_v2-3.pdf) compatibele apparaten. Het RTSP-bron knooppunt vereist dat u een RTSP-URL opgeeft, samen met referenties voor het inschakelen van een geverifieerde verbinding.
+Een RTSP-bron knooppunt stelt u in staat om media van een [RTSP](https://tools.ietf.org/html/rfc2326) -server op te nemen. Bewakings-en op IP gebaseerde camera's verzenden hun gegevens in een protocol met de naam RTSP (Realtime-Streaming-Protocol) dat verschilt van andere typen apparaten, zoals telefoons en video camera's. Dit protocol wordt gebruikt voor het instellen en beheren van de media sessies tussen een server (de camera) en een client. Het RTSP-bron knooppunt in een media grafiek fungeert als een-client en kan een sessie met een RTSP-server tot stand brengen. Veel apparaten, zoals de meeste [IP-camera's](https://en.wikipedia.org/wiki/IP_camera) , hebben een ingebouwde RTSP-server. [ONVIF](https://www.onvif.org/) vereist dat RTSP wordt ondersteund in de definitie van [profielen G, S & T-](https://www.onvif.org/wp-content/uploads/2019/12/ONVIF_Profile_Feature_overview_v2-3.pdf) compatibele apparaten. Het RTSP-bron knooppunt vereist dat u een RTSP-URL opgeeft, samen met referenties voor het inschakelen van een geverifieerde verbinding.
 
 #### <a name="iot-hub-message-source"></a>Bron van IoT Hub bericht 
 

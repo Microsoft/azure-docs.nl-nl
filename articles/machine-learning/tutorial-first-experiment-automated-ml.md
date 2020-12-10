@@ -11,12 +11,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 07/10/2020
 ms.custom: automl
-ms.openlocfilehash: 866be6a2449f3b10d200968782b90653e1363906
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 4b2769139e74289c4760b5c398c80380afea351f
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359796"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921892"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
@@ -241,7 +241,7 @@ In deze zelfstudie over geautomatiseerde machine learning heeft u de geautomatis
 > [Een webservice gebruiken](how-to-consume-web-service.md#consume-the-service-from-power-bi)
 
 + Meer informatie over [geautomatiseerde machine learning](concept-automated-ml.md).
-+ Raadpleeg het artikel [Geautomatiseerde machine learning-resultaten begrijpen](how-to-understand-automated-ml.md#classification) voor meer informatie over metrische classificatiegegevens en grafieken.
++ Raadpleeg het artikel [Geautomatiseerde machine learning-resultaten begrijpen](how-to-understand-automated-ml.md) voor meer informatie over metrische classificatiegegevens en grafieken.
 + Meer informatie over [featurization](how-to-configure-auto-features.md#featurization).
 + Meer informatie over [gegevensprofilering](how-to-connect-data-ui.md#profile).
 

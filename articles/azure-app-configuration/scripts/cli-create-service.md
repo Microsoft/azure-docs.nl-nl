@@ -3,18 +3,18 @@ title: 'Azure CLI-voorbeeldscript: een Azure App Configuration Store maken'
 titleSuffix: Azure App Configuration
 description: Een Azure App Configuration-archief maken met behulp van een Azure CLI-voorbeeldscript. Zie koppelingen naar referentieartikelen voor opdrachten die worden gebruikt in het script.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.topic: sample
 ms.date: 01/24/2020
-ms.author: lcozzens
+ms.author: alkemper
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 13b8e88d10d66f96db6b50e505d4e579cb1f2f2b
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 4554ca64dccaa69e3a6fb63e5c28a6bcbb1a32e4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566908"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930837"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Een Azure App-configuratiearchief maken
 

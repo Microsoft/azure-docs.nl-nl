@@ -5,12 +5,12 @@ ms.author: puagarw
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
-ms.openlocfilehash: 36b2e829e56cf4d3b5ace64af989fa7f71725c44
-ms.sourcegitcommit: d95cab0514dd0956c13b9d64d98fdae2bc3569a0
+ms.openlocfilehash: 15b0413eabcfae7e3a4b28243caf2a708260ccae
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91360834"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932214"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Implementatiecentrum voor Azure Kubernetes
 
@@ -56,7 +56,7 @@ In deze zelfstudie leert u het volgende:
 
    ![Schermopname van Azure Portal met een pijl die naar het Implementatiecentrum wijst.](media/deployment-center-launcher/settings.png)
 
-1. Kies de locatie van de code en selecteer **Volgende**. Selecteer vervolgens een van de momenteel ondersteunde opslagplaatsen: **[Azure opslagplaats](/azure/devops/repos/index?view=azure-devops)** of **GitHub**.
+1. Kies de locatie van de code en selecteer **Volgende**. Selecteer vervolgens een van de momenteel ondersteunde opslagplaatsen: **[Azure opslagplaats](/azure/devops/repos/index)** of **GitHub**.
 
     Azure-opslagplaats is een set hulpprogramma's voor versiebeheer waarmee u uw code kunt beheren. Ongeacht of uw software project groot of klein is, is een vroegtijdig gebruik van versiebeheer een goed idee.
 
@@ -77,7 +77,7 @@ In deze zelfstudie leert u het volgende:
 
     ![Schermopname van het Implementatiecentrum met het bericht Kan geen Dockerfile vinden in de opslagplaats.](media/deployment-center-launcher/dockerfile.png)
 
-1. Selecteer een bestaand containerregister of maak er een, en selecteer vervolgens **Voltooien**. De pijplijn wordt automatisch gemaakt en wacht op build-in [Azure-pijplijnen](/azure/devops/pipelines/index?view=azure-devops).
+1. Selecteer een bestaand containerregister of maak er een, en selecteer vervolgens **Voltooien**. De pijplijn wordt automatisch gemaakt en wacht op build-in [Azure-pijplijnen](/azure/devops/pipelines/index).
 
     Azure-pijplijnen is een cloudservice die u kunt gebruiken om automatisch uw codeproject te bouwen en te testen en het beschikbaar te maken voor andere gebruikers. Azure-pijplijnen combineren continue integratie en continue levering om uw code constant en consistent te testen en te bouwen en naar een doel te verzenden.
 
@@ -115,7 +115,7 @@ Het implementatiecentrum configureert automatisch uw CI/CD-pijplijn van uw Azure
 
 Het implementatiecentrum maakt en configureert automatisch de relatie tussen uw Azure DevOps-organisatie en uw Azure-abonnement. Deze stappen omvatten het configureren van een Azure-serviceverbinding om uw Azure-abonnement te verifiëren bij Azure DevOps. Het geautomatiseerde proces maakt ook een release pijplijn die continue levering aan Azure biedt.
 
-1. Selecteer **Pijplijnen**en selecteer vervolgens **Releases**.
+1. Selecteer **Pijplijnen** en selecteer vervolgens **Releases**.
 
 1. Als u de release pijplijn wilt bewerken, selecteert u **Bewerken**.
 

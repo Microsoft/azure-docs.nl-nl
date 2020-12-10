@@ -3,19 +3,19 @@ title: 'Azure CLI-voorbeeldscript: een Azure App Configuration-archief verwijder
 titleSuffix: Azure App Configuration
 description: Een Azure App Configuration-archief verwijderen met behulp van een Azure CLI-voorbeeldscript. Zie koppelingen naar referentieartikelen voor opdrachten die worden gebruikt in het script.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 02/19/2020
-ms.author: lcozzens
+ms.author: alkemper
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 70d3505ce14fcecece55391bc0a5361838b34111
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 49d6a85faa55de5dbf50377998dbe2fc829d9f6f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566891"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929783"
 ---
 # <a name="delete-an-azure-app-configuration-store"></a>Een Azure App Configuration-archief verwijderen
 

@@ -6,13 +6,13 @@ ms.topic: how-to
 author: markjbrown
 ms.author: mjbrown
 ms.date: 09/17/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 67abcea1b5d7657ffcd342d4cddb9a96bdd8c63a
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 2579326e92144149472874611b5307920a93c049
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030880"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031399"
 ---
 # <a name="command-line-and-powershell-reference-for-azure-cosmos-db-emulator"></a>Naslag informatie over de opdracht regel en Power shell voor Azure Cosmos DB-emulator
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]

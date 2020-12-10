@@ -11,13 +11,13 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.custom: contperfq4
-ms.openlocfilehash: 964cd77a24a7a73bf1151ba9e6ab43509e664b9f
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.custom: contperf-fy20q4
+ms.openlocfilehash: 209125a5cc8d86c1af07966d52681aa91ea7dc19
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743068"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97026996"
 ---
 # <a name="configure-azure-ad-multi-factor-authentication-settings"></a>Azure AD Multi-Factor Authentication-instellingen configureren
 
@@ -100,7 +100,7 @@ Voer de volgende stappen uit om fraude waarschuwingen in te scha kelen en te con
 
 ### <a name="view-fraud-reports"></a>Fraude rapporten weer geven
 
-Selecteer **Azure Active Directory**  >  verificatie gegevens voor **aanmeldingen**  >  **Authentication Details**. Het fraude rapport maakt nu deel uit van het standaard rapport van Azure AD-aanmeldingen en wordt weer gegeven in de **"resultaat Details"** als MFA is geweigerd, er is een fraude code ingevoerd.
+Selecteer **Azure Active Directory**  >  verificatie gegevens voor **aanmeldingen**  >  . Het fraude rapport maakt nu deel uit van het standaard rapport van Azure AD-aanmeldingen en wordt weer gegeven in de **"resultaat Details"** als MFA is geweigerd, er is een fraude code ingevoerd.
  
 ## <a name="notifications"></a>Meldingen
 
@@ -160,7 +160,7 @@ Als u de MFA-beller-ID niet hebt geconfigureerd in de Verenigde Staten, zijn Voi
 
 Voer de volgende stappen uit om uw eigen beller-ID-nummer te configureren:
 
-1. Blader naar **Azure Active Directory** instellingen voor de  >  **Security**  >  **MFA**  >  **telefoon oproep** voor de beveiliging MFA.
+1. Blader naar **Azure Active Directory** instellingen voor de  >    >    >  **telefoon oproep** voor de beveiliging MFA.
 1. Stel het **ID-nummer van de MFA-beller** in op het aantal dat gebruikers op hun telefoon willen zien. Alleen op basis van Amerikaanse nummers zijn toegestaan.
 1. Selecteer **Opslaan** wanneer u klaar bent.
 
@@ -218,7 +218,7 @@ De volgende voorbeeld scripts kunnen worden gebruikt voor het maken van uw eigen
 
 Als u uw eigen aangepaste berichten wilt gebruiken, voert u de volgende stappen uit:
 
-1. Blader naar **Azure Active Directory** instellingen voor de  >  **Security**  >  **MFA**  >  **telefoon oproep** voor de beveiliging MFA.
+1. Blader naar **Azure Active Directory** instellingen voor de  >    >    >  **telefoon oproep** voor de beveiliging MFA.
 1. Selecteer **begroeting toevoegen**.
 1. Kies het **type** begroeting, zoals *begroeting (standaard)* of de  *verificatie is geslaagd*.
 1. Selecteer de **taal** op basis van de vorige sectie op het gedrag van de [aangepaste taal voor berichten](#custom-message-language-behavior).
@@ -229,7 +229,7 @@ Als u uw eigen aangepaste berichten wilt gebruiken, voert u de volgende stappen 
 
 Instellingen voor app-wacht woorden, vertrouwde IP-adressen, verificatie opties en onthoud multi-factor Authentication voor Azure AD Multi-Factor Authentication kunnen worden gevonden in service-instellingen. Dit is meer van een verouderde Portal en maakt geen deel uit van de normale Azure AD-Portal.
 
-U kunt toegang krijgen tot de service-instellingen via de Azure portal door te bladeren naar **Azure Active Directory**  >  **Security** MFA aan de slag  >  **MFA**  >  **Getting started**  >  **Configure**  >  **Extra op de cloud gebaseerde MFA-instellingen** configureren. Een nieuw venster of tabblad wordt geopend met aanvullende opties voor *Service-instellingen* .
+U kunt toegang krijgen tot de service-instellingen via de Azure portal door te bladeren naar **Azure Active Directory**  >  **Security** MFA aan de slag  >    >    >    >  **Extra op de cloud gebaseerde MFA-instellingen** configureren. Een nieuw venster of tabblad wordt geopend met aanvullende opties voor *Service-instellingen* .
 
 ## <a name="trusted-ips"></a>Goedgekeurde IP-adressen
 

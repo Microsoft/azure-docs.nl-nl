@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van beheerde identiteiten in azure
 services: container-service
 ms.topic: article
 ms.date: 12/06/2020
-ms.openlocfilehash: e2a80ea869e17665e8a6d4fbd6960c3ccc8c1042
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 68d8111da5ec10f23d14b375a18229bca075da84
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751271"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97026826"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -34,7 +34,7 @@ U moet de volgende bron hebben geïnstalleerd:
 
 AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde services en invoeg toepassingen.
 
-| Identiteit                       | Naam    | Toepassing | Standaard machtigingen | Uw eigen identiteit meenemen
+| Identiteit                       | Naam    | Gebruiksvoorbeeld | Standaard machtigingen | Uw eigen identiteit meenemen
 |----------------------------|-----------|----------|
 | Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Preview
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
@@ -119,7 +119,7 @@ De door het systeem toegewezen identiteit bijwerken:
 az aks update -g <RGName> -n <AKSName> --enable-managed-identity
 ```
 
-De door de gebruiker toegewezen identiteit bijwerken:
+De functie vlag voor de door de gebruiker toegewezen identiteit registreren:
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.ContainerService -n UserAssignedIdentityPreview

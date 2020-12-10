@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 11/02/2020
 author: parthpandyaMSFT
 ms.author: parthp
-ms.custom: contperfq2
-ms.openlocfilehash: 39a9b363c847b615bfbe049b4b47628e8688c607
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: d88e2b18d4e4f9df0606832356e383aaaf51cf73
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458112"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028441"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Een commercieel Marketplace-account maken in het partner centrum
 
@@ -67,7 +67,7 @@ Uw uitgevers profiel bevat uw bedrijfs naam en MPN-ID. Als u dit nog niet hebt g
 
     Nadat u bent Inge schreven, wordt u naar de pagina overzicht van commerciële Marketplace geleid. Het account voor commerciële Marketplace wordt weer gegeven in het linkerdeel venster.
 
-1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen** (tandwiel pictogram) in de rechter bovenhoek > Program ma's voor **account instellingen**  >  **Programs**.
+1. Als u wilt controleren of het account voor commerciële Marketplace als geregistreerd wordt vermeld, selecteert u **instellingen** (tandwiel pictogram) in de rechter bovenhoek > Program ma's voor **account instellingen**  >  .
 
 U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Ga door met [het toevoegen van nieuwe uitgevers aan de commerciële Marketplace](#add-new-publishers-to-the-commercial-marketplace-program).
 
@@ -145,7 +145,7 @@ De publicatie overeenkomst en het profiel gegevens van het bedrijf worden overge
 Een organisatie kan meerdere uitgevers koppelen aan een commerciële Marketplace-account. Een bestaande gebruiker kan meer uitgevers toevoegen nadat u zich hebt aangemeld bij het partner centrum door **instellingen**  >  **account instellingen** te selecteren  >  **organisatie profiel-**  >  **id's**  >  **Voeg Publisher toe**.
 
 >[!NOTE]
->Voordat u een nieuwe uitgever toevoegt, moet u de lijst met bestaande uitgevers controleren door u aan te melden bij partner centrum en **account instellingen** te selecteren  >  **Publishers**.
+>Voordat u een nieuwe uitgever toevoegt, moet u de lijst met bestaande uitgevers controleren door u aan te melden bij partner centrum en **account instellingen** te selecteren  >  .
 
 Extra gebruikers van dezelfde Azure Active Directory-Tenant kunnen de volgende stappen gebruiken om een nieuwe uitgever toe te voegen.
 

@@ -8,20 +8,20 @@ ms.service: api-management
 ms.topic: article
 ms.date: 09/23/2020
 ms.author: apimpm
-ms.custom: contperfq1
-ms.openlocfilehash: 9892c311651df39b882c3aa38596a905d22a42ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: face4beab450e92be76b2bb90e45625e025de6ee
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91618774"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027914"
 ---
 # <a name="protect-a-web-api-backend-in-azure-api-management-by-using-oauth-20-authorization-with-azure-ad"></a>Een web-API-back-end beveiligen in azure API Management met behulp van OAuth 2,0-autorisatie met Azure AD 
 
 In deze hand leiding wordt beschreven hoe u uw [Azure API Management](api-management-key-concepts.md) -exemplaar configureert om een API te beveiligen met behulp van het [OAuth 2,0-protocol met Azure Active Directory (Azure AD)](../active-directory/develop/active-directory-v2-protocols.md). 
 
 > [!NOTE]
-> Deze functie is beschikbaar in de lagen **ontwikkelaars**, **Basic**, **Standard**en **Premium** van API management.
+> Deze functie is beschikbaar in de lagen **ontwikkelaars**, **Basic**, **Standard** en **Premium** van API management.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -29,7 +29,7 @@ Als u de stappen in dit artikel wilt volgen, hebt u het volgende nodig:
 
 - Een API Management-exemplaar
 - Een API die wordt gepubliceerd en die gebruikmaakt van het API Management-exemplaar
-- Een Azure AD-Tenant
+- Een Azure AD-tenant
 
 ## <a name="overview"></a>Overzicht
 
@@ -93,9 +93,9 @@ Een andere toepassing registreren in azure AD om de ontwikkelaars console te ver
 
 1. Maak een client geheim voor deze toepassing voor gebruik in een volgende stap.
 
-   1. Selecteer in de lijst met pagina's voor uw client-app **certificaten & geheimen**en selecteer **Nieuw client geheim**.
+   1. Selecteer in de lijst met pagina's voor uw client-app **certificaten & geheimen** en selecteer **Nieuw client geheim**.
 
-   1. Geef onder **een client geheim toevoegen**een **Beschrijving**op. Kies wanneer de sleutel moet verlopen en selecteer **toevoegen**.
+   1. Geef onder **een client geheim toevoegen** een **Beschrijving** op. Kies wanneer de sleutel moet verlopen en selecteer **toevoegen**.
 
 Wanneer het geheim is gemaakt, noteert u de sleutel waarde voor gebruik in een volgende stap. 
 
@@ -111,9 +111,9 @@ Nu u twee toepassingen hebt geregistreerd die de API en de ontwikkelaars console
 
 1. Selecteer onder **een API selecteren** **de optie mijn api's**, zoek en selecteer vervolgens uw back-end-app.
 
-1. Selecteer onder **gedelegeerde machtigingen**de juiste machtigingen voor uw back-end-app en selecteer vervolgens **machtigingen toevoegen**.
+1. Selecteer onder **gedelegeerde machtigingen** de juiste machtigingen voor uw back-end-app en selecteer vervolgens **machtigingen toevoegen**.
 
-1. Selecteer eventueel op de pagina **API-machtigingen** de optie ** \<your-tenant-name> toestemming van beheerder geven** om toestemming uit te geven namens alle gebruikers in deze map. 
+1. Selecteer eventueel op de pagina **API-machtigingen** de optie **\<your-tenant-name> toestemming van beheerder geven** om toestemming uit te geven namens alle gebruikers in deze map. 
 
 ## <a name="enable-oauth-20-user-authorization-in-the-developer-console"></a>OAuth 2,0-gebruikers autorisatie inschakelen in de ontwikkelaars console
 
@@ -125,31 +125,31 @@ In dit voor beeld is de ontwikkelaars console de client-app. In de volgende stap
 
 1. Selecteer **OAuth 2,0**  >  **toevoegen**.
 
-1. Geef een **weergave naam** en een **Beschrijving**op.
+1. Geef een **weergave naam** en een **Beschrijving** op.
 
-1. Voer voor de URL voor de **registratie pagina**van de client een tijdelijke aanduiding in, bijvoorbeeld `http://localhost` . De **URL voor de registratie pagina** van de client verwijst naar een pagina die gebruikers kunnen gebruiken om hun eigen accounts te maken en te configureren voor OAuth 2,0-providers die dit ondersteunen. In dit voor beeld maken gebruikers geen eigen accounts en configureren ze daarom een tijdelijke aanduiding.
+1. Voer voor de URL voor de **registratie pagina** van de client een tijdelijke aanduiding in, bijvoorbeeld `http://localhost` . De **URL voor de registratie pagina** van de client verwijst naar een pagina die gebruikers kunnen gebruiken om hun eigen accounts te maken en te configureren voor OAuth 2,0-providers die dit ondersteunen. In dit voor beeld maken gebruikers geen eigen accounts en configureren ze daarom een tijdelijke aanduiding.
 
-1. Selecteer **autorisatie code**voor het **type autorisatie verlening**.
+1. Selecteer **autorisatie code** voor het **type autorisatie verlening**.
 
-1. Geef de URL van het **autorisatie-eind punt** en de URL van het **token eind punt**op. Deze waarden worden opgehaald van de pagina **eind punten** in uw Azure AD-Tenant. Blader opnieuw naar de pagina **app-registraties** en selecteer **eind punten**.
+1. Geef de URL van het **autorisatie-eind punt** en de URL van het **token eind punt** op. Deze waarden worden opgehaald van de pagina **eind punten** in uw Azure AD-Tenant. Blader opnieuw naar de pagina **app-registraties** en selecteer **eind punten**.
 
 
-1. Kopieer het **OAuth 2,0-autorisatie-eind punt**en plak dit in het tekstvak **URL van autorisatie-eind punt** . Selecteer **bericht** onder Autorisatie aanvraag methode.
+1. Kopieer het **OAuth 2,0-autorisatie-eind punt** en plak dit in het tekstvak **URL van autorisatie-eind punt** . Selecteer **bericht** onder Autorisatie aanvraag methode.
 
-1. Kopieer het **OAuth 2,0 token-eind punt**en plak het in het tekstvak **URL voor token-eind punt** . 
+1. Kopieer het **OAuth 2,0 token-eind punt** en plak het in het tekstvak **URL voor token-eind punt** . 
 
    >[!IMPORTANT]
    > Gebruik **v1** -of **v2** -eind punten. Afhankelijk van de versie die u kiest, is de onderstaande stap echter anders. U kunt het beste v2-eind punten gebruiken. 
 
-1. Als u **v1** -eind punten gebruikt, voegt u een body-para meter met de naam **resource**toe. Gebruik de **toepassings-id** van de back-end-app voor de waarde van deze para meter. 
+1. Als u **v1** -eind punten gebruikt, voegt u een body-para meter met de naam **resource** toe. Gebruik de **toepassings-id** van de back-end-app voor de waarde van deze para meter. 
 
 1. Als u **v2** -eind punten gebruikt, gebruikt u het bereik dat u hebt gemaakt voor de back-end-app in het **standaard bereik** veld. Zorg er ook voor dat u de waarde voor de [`accessTokenAcceptedVersion`](../active-directory/develop/reference-app-manifest.md#accesstokenacceptedversion-attribute) eigenschap instelt op `2` in het manifest van de [toepassing](../active-directory/develop/reference-app-manifest.md).
 
 1. Geef vervolgens de client referenties op. Dit zijn de referenties voor de client-app.
 
-1. Gebruik voor **client-id**de **toepassings-id** van de client-app.
+1. Gebruik voor **client-id** de **toepassings-id** van de client-app.
 
-1. Gebruik voor **client geheim**de sleutel die u eerder hebt gemaakt voor de client-app. 
+1. Gebruik voor **client geheim** de sleutel die u eerder hebt gemaakt voor de client-app. 
 
 1. Direct na het client geheim bevindt zich het **redirect_url** voor het toekennings type voor autorisatie code. Noteer deze URL.
 
@@ -157,7 +157,7 @@ In dit voor beeld is de ontwikkelaars console de client-app. In de volgende stap
 
 1. Ga terug naar de registratie van uw client-app in Azure Active Directory en selecteer **verificatie**.
 
-1. Klik onder **platform configuraties** op **een platform toevoegen**en selecteer het type als **Web**, plak de **redirect_url** onder **omleidings-URI**en klik vervolgens op de knop **configureren** om op te slaan.
+1. Klik onder **platform configuraties** op **een platform toevoegen** en selecteer het type als **Web**, plak de **redirect_url** onder **omleidings-URI** en klik vervolgens op de knop **configureren** om op te slaan.
 
 Nu u een OAuth 2,0-autorisatie server hebt geconfigureerd, kan de ontwikkelaars console toegangs tokens van Azure AD verkrijgen. 
 
@@ -169,7 +169,7 @@ De volgende stap is om OAuth 2,0-gebruikers autorisatie in te scha kelen voor uw
 
 1. Ga naar **Settings**.
 
-1. Kies onder **beveiliging** **OAuth 2,0**en selecteer de OAuth 2,0-server die u eerder hebt geconfigureerd. 
+1. Kies onder **beveiliging** **OAuth 2,0** en selecteer de OAuth 2,0-server die u eerder hebt geconfigureerd. 
 
 1. Selecteer **Opslaan**.
 

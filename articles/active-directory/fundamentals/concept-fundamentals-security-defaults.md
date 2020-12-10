@@ -11,13 +11,13 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.custom: contperfq4
-ms.openlocfilehash: c26cbf55c1e3883605d4c65659511af20cf02c7f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.custom: contperf-fy20q4
+ms.openlocfilehash: 9c912b7122a40ae39bcbb703e1387af25fff2bc8
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996675"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029903"
 ---
 # <a name="what-are-security-defaults"></a>Wat zijn de standaard beveiligings instellingen?
 
@@ -147,7 +147,7 @@ Hier vindt u stapsgewijze hand leidingen over hoe u voorwaardelijke toegang kunt
 
 - [MFA vereisen voor beheerders](../conditional-access/howto-conditional-access-policy-admin-mfa.md)
 - [MFA vereisen voor Azure-beheer](../conditional-access/howto-conditional-access-policy-azure-management.md)
-- [Verouderde verificatie blokkeren](../conditional-access/howto-conditional-access-policy-block-legacy.md)
+- [Verouderde verificatie blok keren](../conditional-access/howto-conditional-access-policy-block-legacy.md)
 - [MFA vereisen voor alle gebruikers](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
 - [Azure AD MFA-registratie vereisen](../identity-protection/howto-identity-protection-configure-mfa-policy.md) : vereist Azure AD Identity Protection onderdeel van Azure AD Premium P2.
 

@@ -11,20 +11,28 @@ ms.topic: reference
 ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 868d99a82009dc8545fc24ad1cfa1da3959da131
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0bbe40a2329143b9abd4554ec715c64e5c26d4eb
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88852074"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028101"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
 Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verbeteringen in hun pagina-elementen. In het volgende wijzigingslog bestand worden de wijzigingen aangegeven die in elke versie zijn geïntroduceerd.
 
-[!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
-
 ## <a name="self-asserted-page-selfasserted"></a>Zelfbevestigende pagina (selfasserted)
+
+**2.1.1**
+
+- Voeg een UXString toe `heading` , naast `intro` de weer gave op de pagina als titel. Dit is standaard verborgen.
+- Ondersteuning toegevoegd voor het opslaan van wacht woorden voor een iCloud-sleutel hanger.
+- Er is ondersteuning toegevoegd voor het gebruik van beleid of de query reeks parameter `pageFlavor` om de lay-out (klassiek, oceanBlue of slateGray) te selecteren.
+- Er zijn disclaimers toegevoegd op de zelf-bevestigingen pagina.
+- De focus wordt nu op het eerste Bewerk bare veld geplaatst wanneer de pagina wordt geladen.
+- De focus wordt nu op het eerste fout veld geplaatst wanneer meerdere velden fouten bevatten.
+- De focus wordt nu op de knop wijzigen geplaatst nadat de e-mail verificatie code is geverifieerd.
 
 **2.1.0**
 
@@ -38,12 +46,16 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 
 - De velden gebruikers naam/e-mail adres en wacht woord gebruiken nu het `form` HTML-element zodat Edge en Internet Explorer (IE) deze gegevens op de juiste manier kunnen opslaan.
 - Er is een Configureer bare validatie vertraging voor gebruikers invoer toegevoegd voor verbeterde gebruikers ervaring.
-- Toegankelijkheids oplossingen
+- Er is een probleem met toegankelijkheid opgelost zodat fout berichten nu worden gelezen door Verteller. 
+- De focus wordt nu op het wachtwoord veld geplaatst nadat het e-mail bericht is geverifieerd.
+- Verwijderd `autofocus` uit het besturings element selectie vakje. 
+- Er is ondersteuning toegevoegd voor een weer gave-widget voor verificatie via telefoon nummer.
 - U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
-- Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
-- Ondersteuning voor Chrome-vertaling
+- Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties.
+- Ondersteuning voor Chrome-vertaling.
+- Er is ondersteuning toegevoegd voor Tenant huisstijl op pagina's van de gebruikers stroom.
 
 **1.1.0**
 
@@ -58,6 +70,15 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 
 ## <a name="unified-sign-in-sign-up-page-with-password-reset-link-unifiedssp"></a>Aanmeldings pagina voor Unified Sign-in met de koppeling voor het opnieuw instellen van een wacht woord (unifiedssp)
 
+**2.1.1**
+- Voeg een UXString toe `heading` , naast `intro` de weer gave op de pagina als titel. Dit is standaard verborgen.
+- Er is ondersteuning toegevoegd voor het gebruik van beleid of de query reeks parameter `pageFlavor` om de lay-out (klassiek, oceanBlue of slateGray) te selecteren.
+- Ondersteuning toegevoegd voor het opslaan van wacht woorden voor een iCloud-sleutel hanger.
+- De focus wordt nu op het eerste fout veld geplaatst wanneer meerdere velden fouten bevatten.
+- De focus wordt nu op het eerste Bewerk bare veld geplaatst wanneer de pagina wordt geladen.
+- Er is een nieuwe locatie toegevoegd voor de selectie koppeling claim provider `bottomUnderFormClaimsProviderSelections` .
+- Verwijderde UXStrings die niet meer worden gebruikt.
+
 **2.1.0**
 
 - Er is ondersteuning toegevoegd voor meerdere registratie koppelingen.
@@ -66,12 +87,13 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 **1.2.0**
 
 - De velden gebruikers naam/e-mail adres en wacht woord gebruiken nu het `form` HTML-element zodat Edge en Internet Explorer (IE) deze gegevens op de juiste manier kunnen opslaan.
-- Toegankelijkheids oplossingen
+- Toegankelijkheids oplossingen.
 - U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
-- Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
-- Ondersteuning voor Chrome-vertaling
+- Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties.
+- Ondersteuning voor Chrome-vertaling.
+- Er is ondersteuning toegevoegd voor Tenant huisstijl op pagina's van de gebruikers stroom.
 
 **1.1.0**
 
@@ -82,6 +104,12 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 - Eerste release
 
 ## <a name="mfa-page-multifactor"></a>MFA-pagina (multi-factor)
+
+**1.2.2**
+- Er is een probleem opgelost met het automatisch invullen van de verificatie code bij het gebruik van iOS.
+- Er is een probleem opgelost met het omleiden van een token naar het Relying Party van de Android-webweergave. 
+- Voeg een UXString toe `heading` , naast `intro` de weer gave op de pagina als titel. Dit is standaard verborgen.  
+- Er is ondersteuning toegevoegd voor het gebruik van beleid of de query reeks parameter `pageFlavor` om de lay-out (klassiek, oceanBlue of slateGray) te selecteren.
 
 **1.2.1**
 
@@ -94,7 +122,8 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
-- Ondersteuning voor Chrome-vertaling
+- Ondersteuning voor Chrome-vertaling.
+- Er is ondersteuning toegevoegd voor Tenant huisstijl op pagina's van de gebruikers stroom.
 
 **1.1.0**
 

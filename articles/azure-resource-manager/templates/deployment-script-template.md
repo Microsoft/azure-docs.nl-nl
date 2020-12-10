@@ -5,18 +5,18 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 11/24/2020
+ms.date: 12/10/2020
 ms.author: jgao
-ms.openlocfilehash: dcc968353edf0e9cf3d63408d02baf94c6cabd9f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4ec6796cd0ed91987c1ef52fb5e9494a3142e00e
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95902439"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030447"
 ---
 # <a name="use-deployment-scripts-in-templates-preview"></a>Implementatie scripts gebruiken in sjablonen (preview-versie)
 
-Meer informatie over het gebruik van implementatie scripts in azure-resource sjablonen. Met een nieuw resource type `Microsoft.Resources/deploymentScripts` , kunnen gebruikers implementatie scripts uitvoeren in sjabloon implementaties en uitvoerings resultaten controleren. Deze scripts kunnen worden gebruikt voor het uitvoeren van aangepaste stappen zoals:
+Meer informatie over het gebruik van implementatie scripts in azure-resource sjablonen. Met een nieuw resource type `Microsoft.Resources/deploymentScripts` , kunnen gebruikers scripts uitvoeren in sjabloon implementaties en uitvoerings resultaten controleren. Deze scripts kunnen worden gebruikt voor het uitvoeren van aangepaste stappen zoals:
 
 - gebruikers toevoegen aan een map
 - bewerkingen voor gegevens vlak uitvoeren, bijvoorbeeld blobs of een Seed-data base kopiëren
@@ -29,7 +29,6 @@ De voor delen van het implementatie script:
 
 - Eenvoudig te coderen, gebruiken en fouten opsporen. U kunt implementatie scripts ontwikkelen in uw favoriete ontwikkel omgevingen. De scripts kunnen worden inge sloten in sjablonen of in externe script bestanden.
 - U kunt de script taal en het platform opgeven. Momenteel worden Azure PowerShell-en Azure CLI-implementatie scripts in de Linux-omgeving ondersteund.
-- Toestaan dat de identiteiten worden opgegeven die worden gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen een door de [gebruiker toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) ondersteund.
 - Het door geven van opdracht regel argumenten naar het script toestaan.
 - Kan script uitvoer opgeven en deze weer door geven aan de implementatie.
 
@@ -38,12 +37,13 @@ De bron van het implementatie script is alleen beschikbaar in de regio's waar Az
 > [!IMPORTANT]
 > Een opslag account en een container exemplaar zijn nodig voor het uitvoeren van scripts en het oplossen van problemen. U hebt de opties om een bestaand opslag account op te geven, anders wordt het opslag account samen met het container exemplaar automatisch gemaakt door de script service. De twee automatisch gemaakte resources worden doorgaans verwijderd door de script service wanneer de uitvoering van het implementatie script wordt uitgevoerd in een Terminal status. U wordt gefactureerd voor de resources totdat de resources zijn verwijderd. Zie voor meer informatie het [opschonen van implementatie script bronnen](#clean-up-deployment-script-resources).
 
+> [!IMPORTANT]
+> De deploymentScripts resource API-versie 2020-10-01 ondersteunt [OnBehalfofTokens (OBO)](../../active-directory/develop/v2-oauth2-on-behalf-of-flow.md). Met behulp van OBO maakt de implementatie script service gebruik van het token van de implementatie-principal voor het maken van de onderliggende resources voor het uitvoeren van implementatie scripts, waaronder Azure container instance, een Azure-opslag account en roltoewijzingen voor de beheerde identiteit. In oudere API-versies wordt de beheerde identiteit gebruikt voor het maken van deze resources.
+> Poging tot logica voor Azure-aanmelding is nu ingebouwd in het wrapper-script. Als u machtigingen verleent in dezelfde sjabloon waar u implementatie scripts uitvoert.  De implementatie script service probeert de aanmelding gedurende tien minuten met een interval van 10 seconden totdat de roltoewijzing van de beheerde identiteit wordt gerepliceerd.
+
 ## <a name="prerequisites"></a>Vereisten
 
-- **Een door de gebruiker toegewezen beheerde identiteit met de rol van de mede werker van de doel resource groep**. Deze identiteit wordt gebruikt om implementatiescripts uit te voeren. Als u bewerkingen buiten de resource groep wilt uitvoeren, moet u extra machtigingen verlenen. Wijs de identiteit bijvoorbeeld toe aan het abonnements niveau als u een nieuwe resource groep wilt maken.
-
-  > [!NOTE]
-  > De script service maakt een opslag account (tenzij u een bestaand opslag account opgeeft) en een container exemplaar op de achtergrond.  Een door de gebruiker toegewezen beheerde identiteit met de rol van de Inzender op het abonnements niveau is vereist als het abonnement de Azure Storage-account (micro soft. Storage) en de resource providers van het Azure-container exemplaar (micro soft. ContainerInstance) niet heeft geregistreerd.
+- **(Optioneel) een door de gebruiker toegewezen beheerde identiteit met de vereiste machtigingen om de bewerkingen in het script uit te voeren**. Voor de API-versie 2020-10-01 of hoger van het implementatie script wordt de implementatie-Principal gebruikt om onderliggende resources te maken. Als het script moet worden geverifieerd bij Azure en Azure-specifieke acties moeten worden uitgevoerd, raden we u aan het script aan te bieden met een door de gebruiker toegewezen beheerde identiteit. De beheerde identiteit moet de vereiste toegang hebben in de doel resource groep om de bewerking in het script te kunnen volt ooien. U kunt zich ook aanmelden bij Azure in het implementatie script. Als u bewerkingen buiten de resource groep wilt uitvoeren, moet u extra machtigingen verlenen. Wijs de identiteit bijvoorbeeld toe aan het abonnements niveau als u een nieuwe resource groep wilt maken. 
 
   Als u een identiteit wilt maken, raadpleegt u [een door de gebruiker toegewezen beheerde identiteit maken met behulp van de Azure Portal](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md), of met behulp van [Azure cli](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)of met [behulp van Azure PowerShell](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md). U hebt de identiteits-id nodig wanneer u de sjabloon implementeert. De indeling van de identiteit is als volgt:
 
@@ -135,7 +135,7 @@ De volgende JSON is een voor beeld.  Het meest recente sjabloon schema kunt u [h
 
 Details van eigenschaps waarde:
 
-- **Identiteit**: de implementatie script service gebruikt een door de gebruiker toegewezen beheerde identiteit voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
+- **Identiteit**: voor implementatie script-API-versie 2020-10-01 of hoger is een door de gebruiker toegewezen beheerde identiteit optioneel tenzij u specifieke bewerkingen van Azure in het script moet uitvoeren.  Voor de API-versie 2019-10-01-preview is een beheerde identiteit vereist als de implementatie script service deze gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
 - **kind**: Geef het type script op. Momenteel worden Azure PowerShell-en Azure CLI-scripts ondersteund. De waarden zijn **AzurePowerShell** en **AzureCLI**.
 - **updatetag**: als u deze waarde wijzigt tussen de implementaties van een sjabloon, wordt het implementatie script opnieuw uitgevoerd. Als u de functie newGuid () of utcNow () gebruikt, kunnen beide functies alleen worden gebruikt in de standaard waarde voor een para meter. Zie [Script meerdere keren uitvoeren](#run-script-more-than-once) voor meer informatie.
 - **containerSettings**: Geef de instellingen op om Azure container instance aan te passen.  **containerGroupName** is voor het opgeven van de naam van de container groep.  Als u niets opgeeft, wordt de groeps naam automatisch gegenereerd.
@@ -169,14 +169,11 @@ Details van eigenschaps waarde:
 - Voor [Beeld 2](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-keyvault-subscription.json): een resource groep maken op abonnements niveau, een sleutel kluis maken in de resource groep en vervolgens het implementatie script gebruiken om een certificaat toe te wijzen aan de sleutel kluis.
 - Voor [Beeld 3](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-keyvault-mi.json): een door de gebruiker toegewezen beheerde identiteit maken, de rol Inzender toewijzen aan de identiteit op het niveau van de resource groep, een sleutel kluis maken en vervolgens het implementatie script gebruiken om een certificaat toe te wijzen aan de sleutel kluis.
 
-> [!NOTE]
-> U kunt het beste een door de gebruiker toegewezen identiteit maken en vooraf machtigingen verlenen. U kunt zich aanmelden en aan machtigingen gerelateerde fouten krijgen als u de identiteit maakt en machtigingen verleent in dezelfde sjabloon waar u implementatie scripts uitvoert. Het duurt enige tijd voordat de machtigingen van kracht worden.
-
 ## <a name="use-inline-scripts"></a>Inline-scripts gebruiken
 
 Voor de volgende sjabloon is één resource gedefinieerd met het `Microsoft.Resources/deploymentScripts` type. Het gemarkeerde deel is het inline-script.
 
-:::code language="json" source="~/resourcemanager-templates/deployment-script/deploymentscript-helloworld.json" range="1-54" highlight="34-40":::
+:::code language="json" source="~/resourcemanager-templates/deployment-script/deploymentscript-helloworld.json" range="1-44" highlight="24-30":::
 
 > [!NOTE]
 > Omdat de inline-implementatie scripts tussen dubbele aanhalings tekens staan, moeten de teken reeksen in de implementatie scripts worden geescaped met behulp van een **&#92;** of tussen enkele aanhalings tekens staan. U kunt ook overwegen om de teken reeks vervanging te gebruiken zoals deze wordt weer gegeven in het vorige JSON-voor beeld.
@@ -188,11 +185,10 @@ Als u het script wilt uitvoeren, selecteert u **proberen** de Cloud shell te ope
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the name of the resource group to be created"
 $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$id = Read-Host -Prompt "Enter the user-assigned managed identity ID"
 
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.json" -identity $id
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-helloworld.json"
 
 Write-Host "Press [ENTER] to continue ..."
 ```
@@ -239,7 +235,7 @@ De ondersteunende bestanden worden tijdens de runtime gekopieerd naar azscripts/
 
 De volgende sjabloon laat zien hoe waarden worden door gegeven tussen twee deploymentScripts-resources:
 
-:::code language="json" source="~/resourcemanager-templates/deployment-script/deploymentscript-basic.json" range="1-84" highlight="39-40,66":::
+:::code language="json" source="~/resourcemanager-templates/deployment-script/deploymentscript-basic.json" range="1-68" highlight="30-31,50":::
 
 In de eerste resource definieert u een variabele met de naam **$DeploymentScriptOutputs** en gebruikt u deze om de uitvoer waarden op te slaan. Als u de uitvoer waarde van een andere resource in de sjabloon wilt openen, gebruikt u:
 
@@ -276,7 +272,7 @@ Een opslag account en een container exemplaar zijn nodig voor het uitvoeren van 
 
     Deze combi Naties bieden ondersteuning voor bestands shares.  Zie [een Azure-bestands share](../../storage/files/storage-how-to-create-file-share.md) en [typen opslag accounts](../../storage/common/storage-account-overview.md)maken voor meer informatie.
 - De firewall regels van het opslag account worden nog niet ondersteund. Raadpleeg [Firewalls en virtuele netwerken voor Azure Storage configureren](../../storage/common/storage-network-security.md) voor meer informatie.
-- De door de gebruiker toegewezen beheerde identiteit van het implementatie script moet machtigingen hebben voor het beheren van het opslag account, waaronder lezen, maken, bestands shares verwijderen.
+- Implementatie-Principal moet machtigingen hebben voor het beheren van het opslag account, waaronder lezen, maken, bestands shares verwijderen.
 
 Als u een bestaand opslag account wilt opgeven, voegt u de volgende JSON toe aan het eigenschaps element van `Microsoft.Resources/deploymentScripts` :
 
@@ -540,6 +536,8 @@ De levens cyclus van deze resources wordt bepaald door de volgende eigenschappen
 > [!NOTE]
 > Het is niet raadzaam om het opslag account en het container exemplaar dat door de script service wordt gegenereerd voor andere doel einden te gebruiken. De twee resources kunnen worden verwijderd, afhankelijk van de levens cyclus van het script.
 
+Als u het container exemplaar en het opslag account voor het oplossen van problemen wilt behouden, kunt u een opdracht voor de slaap stand toevoegen aan het script.  Bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep).
+
 ## <a name="run-script-more-than-once"></a>Script meer dan één keer uitvoeren
 
 Uitvoering van het implementatie script is een idempotent-bewerking. Als geen van de deploymentScripts-resource-eigenschappen (met inbegrip van het inline-script) wordt gewijzigd, wordt het script niet uitgevoerd wanneer u de sjabloon opnieuw implementeert. De implementatie script service vergelijkt de resource namen in de sjabloon met de bestaande resources in dezelfde resource groep. Er zijn twee opties als u hetzelfde implementatie script meerdere keren wilt uitvoeren:
@@ -562,7 +560,7 @@ Nadat het script is getest, kunt u dit als een implementatie script in uw sjablo
 
 ## <a name="deployment-script-error-codes"></a>Fout codes voor implementatie scripts
 
-| Foutcode | Description |
+| Foutcode | Beschrijving |
 |------------|-------------|
 | DeploymentScriptInvalidOperation | De resource definitie van het implementatie script in de sjabloon bevat ongeldige eigenschaps namen. |
 | DeploymentScriptResourceConflict | Kan een bron van het implementatie script die zich in een niet-Terminal status bevindt, niet verwijderen en de uitvoering is niet langer dan 1 uur. Het is ook niet mogelijk om hetzelfde implementatie script uit te voeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resource groepsnaam en resource naam), maar met de inhoud van verschillende script hoofdtekst tegelijk. |

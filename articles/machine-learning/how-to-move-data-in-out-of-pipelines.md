@@ -9,13 +9,13 @@ ms.author: laobri
 author: lobrien
 ms.date: 08/20/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq4, devx-track-python, data4ml
-ms.openlocfilehash: bf5bfd8c2047764f9a03889c8fdd5012dc38ab65
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
+ms.openlocfilehash: 8a5663df590e0f617f8049f0201e6e508351c755
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359762"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027574"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
 

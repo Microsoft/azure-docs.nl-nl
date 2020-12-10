@@ -6,14 +6,14 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 ms.date: 06/21/2019
-ms.openlocfilehash: 6353fe988b9b94c27ab777741bf63d3869579d9e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 8d591bb9c4b2ef8100946082f19115b99b30dde1
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124438"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027489"
 ---
 # <a name="set-up-alerts-for-azure-stream-analytics-jobs"></a>Waarschuwingen instellen voor Azure Stream Analytics taken
 
@@ -30,15 +30,15 @@ In het volgende voor beeld ziet u hoe u waarschuwingen instelt voor wanneer de s
 
 2. Ga op de pagina **taak** naar het gedeelte **bewaking** .  
 
-3. Selecteer **metrische gegevens** en vervolgens **nieuwe waarschuwings regel** .
+3. Selecteer **metrische gegevens** en vervolgens **nieuwe waarschuwings regel**.
 
    ![Setup van Azure Portal Stream Analytics-waarschuwingen](./media/stream-analytics-set-up-alerts/stream-analytics-set-up-alerts.png)  
 
-4. De naam van uw Stream Analytics-taak moet automatisch worden weer gegeven onder **resource** . Klik op **voor waarde toevoegen** en selecteer **alle beheer bewerkingen** onder **signaal logica configureren** .
+4. De naam van uw Stream Analytics-taak moet automatisch worden weer gegeven onder **resource**. Klik op **voor waarde toevoegen** en selecteer **alle beheer bewerkingen** onder **signaal logica configureren**.
 
    ![Signaal naam voor Stream Analytics waarschuwing selecteren](./media/stream-analytics-set-up-alerts/stream-analytics-condition-signal.png)  
 
-5. Onder **signaal logica configureren** wijzigt u **het gebeurtenis niveau** in **Alles** en wijzigt u de **status** in **mislukt** . Laat de **gebeurtenis** leeg en selecteer **gereed** .
+5. Onder **signaal logica configureren** wijzigt u **het gebeurtenis niveau** in **Alles** en wijzigt u de **status** in **mislukt**. Laat de **gebeurtenis** leeg en selecteer **gereed**.
 
    ![Signaal logica voor Stream Analytics waarschuwing configureren](./media/stream-analytics-set-up-alerts/stream-analytics-configure-signal-logic.png) 
 
@@ -46,11 +46,11 @@ In het volgende voor beeld ziet u hoe u waarschuwingen instelt voor wanneer de s
 
    ![Een waarschuwing instellen voor een Azure streaming Analytics-taak](./media/stream-analytics-set-up-alerts/stream-analytics-add-group-email-action.png)
 
-7. De **resource** , **voor waarde** en **actie groepen** moeten elk een vermelding bevatten. Houd er rekening mee dat de gedefinieerde voor waarden moeten worden vervuld om de waarschuwingen te starten. U kunt bijvoorbeeld het gemiddelde meten van een metrische waarde over de afgelopen 15 minuten, op basis van metingen om de 5 minuten.
+7. De **resource**, **voor waarde** en **actie groepen** moeten elk een vermelding bevatten. Houd er rekening mee dat de gedefinieerde voor waarden moeten worden vervuld om de waarschuwingen te starten. U kunt bijvoorbeeld het gemiddelde meten van een metrische waarde over de afgelopen 15 minuten, op basis van metingen om de 5 minuten.
 
    ![Scherm afbeelding toont het dialoog venster regel maken met RESOURCE, voor waarde en actie groep.](./media/stream-analytics-set-up-alerts/stream-analytics-create-alert-rule-2.png)
 
-   Voeg een **waarschuwings regel naam** , **Beschrijving** en de **resource groep** toe aan de **waarschuwings Details** en klik op **waarschuwings regel maken** om de regel voor uw stream Analytics-taak te maken.
+   Voeg een **waarschuwings regel naam**, **Beschrijving** en de **resource groep** toe aan de **waarschuwings Details** en klik op **waarschuwings regel maken** om de regel voor uw stream Analytics-taak te maken.
 
    ![Scherm afbeelding toont het dialoog venster regel maken met WAARSCHUWINGS DETAILS.](./media/stream-analytics-set-up-alerts/stream-analytics-create-alert-rule.png)
    
@@ -58,7 +58,7 @@ In het volgende voor beeld ziet u hoe u waarschuwingen instelt voor wanneer de s
 
 De volgende waarschuwingen worden aanbevolen voor het bewaken van de prestaties van uw Stream Analytics-taak. Deze metrische gegevens moeten elke minuut worden geëvalueerd gedurende de laatste periode van vijf minuten.
 
-|Metrisch gegeven|Conditie|Tijd aggregatie|Drempelwaarde|Corrigerende maat regelen|
+|Gegevens|Voorwaarde|Tijd aggregatie|Drempelwaarde|Corrigerende maat regelen|
 |-|-|-|-|-|
 |% Gebruik|Groter dan|Maximum|80|Er zijn meerdere factoren die het gebruik van SU% verhogen. U kunt schalen met query parallel Lise ring of het aantal streaming-eenheden verhogen. Zie [Query-parallellisatie gebruiken in Azure Stream Analytics](stream-analytics-parallelization.md) voor meer informatie.|
 |Runtime-fouten|Groter dan|Totaal|0|Bekijk de activiteiten of de logboeken van de resource en breng de gewenste wijzigingen aan in de invoer, query of uitvoer.|

@@ -12,15 +12,15 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-- contperfq1
+- contperf-fy21q1
 - fasttrack-edit
 - iot
-ms.openlocfilehash: 4e06edaf6323c13b3a5af037b5b85b5b0acecc79
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: d206f40380ddb60a53ec8af2802a65af94f5820d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505645"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97027795"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Communiceren met uw IoT-hub met het MQTT-protocol
 
@@ -141,7 +141,7 @@ Deze map bevat twee voor beelden van opdrachten die worden gebruikt met mosquitt
 
 Als een apparaat de Sdk's van het apparaat niet kan gebruiken, kan het nog steeds verbinding maken met de eind punten van het open bare apparaat met behulp van het MQTT-protocol op poort 8883. In het **Connect** -pakket moet het apparaat de volgende waarden gebruiken:
 
-* Gebruik voor het veld **ClientId** het **apparaat** -id.
+* Gebruik voor het veld **ClientId** het **apparaat**-id.
 
 * Voor het veld **username** gebruikt u `{iothubhostname}/{device_id}/?api-version=2018-06-30` , waarbij `{iothubhostname}` de volledige CNAME is van de IOT-hub.
 
@@ -180,7 +180,7 @@ Als een apparaat de Sdk's van het apparaat niet kan gebruiken, kan het nog steed
 
 Voor MQTT Connect-en Disconnect-pakketten IoT Hub een gebeurtenis op het kanaal van de **Operations-bewaking** . Deze gebeurtenis bevat aanvullende informatie die u kan helpen bij het oplossen van verbindings problemen.
 
-De apparaat-app **kan een bericht** in het **Connect** -pakket opgeven. De app van het apparaat moet de naam van het `devices/{device_id}/messages/events/` `devices/{device_id}/messages/events/{property_bag}` onderwerp gebruiken om **Will** te definiëren dat berichten worden doorgestuurd als een telemetrie-bericht. **Will** Als de netwerk verbinding is gesloten, maar er nog geen **Verbrekings** pakket van het apparaat is ontvangen, stuurt IOT hub **het bericht dat** in het **Connect** -pakket is opgegeven, naar het telemetrie-kanaal. Het telemetrie-kanaal kan het eind punt van de standaard **gebeurtenissen** zijn of een aangepast eind punt dat is gedefinieerd door IOT hub route ring. Aan het bericht is de eigenschap **iothub-Message type** met de waarde **van toegewezen** .
+De apparaat-app **kan een bericht** in het **Connect** -pakket opgeven. De app van het apparaat moet de naam van het `devices/{device_id}/messages/events/` `devices/{device_id}/messages/events/{property_bag}` onderwerp gebruiken om  te definiëren dat berichten worden doorgestuurd als een telemetrie-bericht.  Als de netwerk verbinding is gesloten, maar er nog geen **Verbrekings** pakket van het apparaat is ontvangen, stuurt IOT hub **het bericht dat** in het **Connect** -pakket is opgegeven, naar het telemetrie-kanaal. Het telemetrie-kanaal kan het eind punt van de standaard **gebeurtenissen** zijn of een aangepast eind punt dat is gedefinieerd door IOT hub route ring. Aan het bericht is de eigenschap **iothub-Message type** met de waarde **van toegewezen** .
 
 ## <a name="using-the-mqtt-protocol-directly-as-a-module"></a>Het MQTT-protocol direct gebruiken (als een module)
 
@@ -296,7 +296,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Hier volgt een lijst met IoT Hub implementatie-specifieke gedragingen:
 
-* IoT Hub biedt geen ondersteuning voor QoS 2-berichten. Als een apparaat-app een bericht publiceert met **QoS 2** , wordt de netwerk verbinding IOT hub gesloten.
+* IoT Hub biedt geen ondersteuning voor QoS 2-berichten. Als een apparaat-app een bericht publiceert met **QoS 2**, wordt de netwerk verbinding IOT hub gesloten.
 
 * IoT Hub blijven geen berichten behouden. Als een apparaat een bericht verzendt waarbij de vlag **bewaren** is ingesteld op 1, IOT hub voegt de eigenschap **mqtt-retain** toe aan het bericht. In dit geval wordt in plaats van het behouden bericht te blijven IoT Hub door gegeven aan de back-end-app.
 
@@ -309,9 +309,9 @@ Zie voor meer informatie [de hand leiding voor SMS-ontwikkel aars](iot-hub-devgu
 
 Als u berichten van IoT Hub wilt ontvangen, moet een apparaat zich abonneren met `devices/{device_id}/messages/devicebound/#` als een **onderwerps filter**. Het Joker teken op meerdere niveaus `#` in het onderwerps filter wordt alleen gebruikt om het apparaat in staat te stellen extra eigenschappen in de onderwerpnaam te ontvangen. IoT Hub staat het gebruik van de of- `#` `?` joker tekens voor het filteren van subonderwerpen niet toe. Omdat IoT Hub geen pub-submessa ging Broker voor algemeen gebruik is, worden alleen de gedocumenteerde onderwerps namen en onderwerps filters ondersteund.
 
-Het apparaat ontvangt geen berichten van IoT Hub totdat het is geabonneerd op het apparaat-specifieke eind punt, vertegenwoordigd door het `devices/{device_id}/messages/devicebound/#` onderwerps filter. Nadat een abonnement is ingesteld, ontvangt het apparaat Cloud-naar-apparaat-berichten die zijn verzonden na het tijdstip van het abonnement. Als het apparaat verbinding maakt met de vlag **CleanSession** ingesteld op **0** , wordt het abonnement gehandhaafd in verschillende sessies. In dit geval wordt de volgende keer dat het apparaat verbinding maakt met **CleanSession 0** alle openstaande berichten ontvangen die worden verzonden terwijl de verbinding is verbroken. Als het apparaat gebruikmaakt van een **CleanSession** -vlag ingesteld op **1** , worden er geen berichten van IOT hub ontvangen totdat deze zich op het eind punt van het apparaat abonneert.
+Het apparaat ontvangt geen berichten van IoT Hub totdat het is geabonneerd op het apparaat-specifieke eind punt, vertegenwoordigd door het `devices/{device_id}/messages/devicebound/#` onderwerps filter. Nadat een abonnement is ingesteld, ontvangt het apparaat Cloud-naar-apparaat-berichten die zijn verzonden na het tijdstip van het abonnement. Als het apparaat verbinding maakt met de vlag **CleanSession** ingesteld op **0**, wordt het abonnement gehandhaafd in verschillende sessies. In dit geval wordt de volgende keer dat het apparaat verbinding maakt met **CleanSession 0** alle openstaande berichten ontvangen die worden verzonden terwijl de verbinding is verbroken. Als het apparaat gebruikmaakt van een **CleanSession** -vlag ingesteld op **1** , worden er geen berichten van IOT hub ontvangen totdat deze zich op het eind punt van het apparaat abonneert.
 
-IoT Hub levert berichten met de **onderwerpnaam** `devices/{device_id}/messages/devicebound/` of `devices/{device_id}/messages/devicebound/{property_bag}` wanneer er bericht eigenschappen zijn. `{property_bag}` bevat URL-gecodeerde sleutel/waarde-paren van bericht eigenschappen. Alleen toepassings eigenschappen en door de gebruiker instel bare systeem eigenschappen (zoals **messageId** of **correlationId** ) worden opgenomen in de eigenschappen verzameling. De namen van systeem eigenschappen hebben het voor voegsel **$** , toepassings eigenschappen gebruiken de oorspronkelijke eigenschaps naam zonder voor voegsel. Zie het [verzenden van apparaat-naar-Cloud-berichten](#sending-device-to-cloud-messages)voor meer informatie over de indeling van de eigenschappen verzameling.
+IoT Hub levert berichten met de **onderwerpnaam** `devices/{device_id}/messages/devicebound/` of `devices/{device_id}/messages/devicebound/{property_bag}` wanneer er bericht eigenschappen zijn. `{property_bag}` bevat URL-gecodeerde sleutel/waarde-paren van bericht eigenschappen. Alleen toepassings eigenschappen en door de gebruiker instel bare systeem eigenschappen (zoals **messageId** of **correlationId**) worden opgenomen in de eigenschappen verzameling. De namen van systeem eigenschappen hebben het voor voegsel **$** , toepassings eigenschappen gebruiken de oorspronkelijke eigenschaps naam zonder voor voegsel. Zie het [verzenden van apparaat-naar-Cloud-berichten](#sending-device-to-cloud-messages)voor meer informatie over de indeling van de eigenschappen verzameling.
 
 In Cloud-naar-apparaat-berichten worden de waarden in de eigenschappen verzameling weer gegeven, zoals in de volgende tabel:
 
@@ -321,13 +321,13 @@ In Cloud-naar-apparaat-berichten worden de waarden in de eigenschappen verzameli
 | lege teken reeks | `key=` | De sleutel gevolgd door een gelijkteken zonder waarde |
 | niet-null, niet-lege waarde | `key=value` | De sleutel gevolgd door een gelijkteken en de waarde |
 
-In het volgende voor beeld ziet u een eigenschappen verzameling die drie toepassings eigenschappen bevat: **prop1** met de waarde `null` ; **prop2** , een lege teken reeks (""); en **prop3** met de waarde "een teken reeks".
+In het volgende voor beeld ziet u een eigenschappen verzameling die drie toepassings eigenschappen bevat: **prop1** met de waarde `null` ; **prop2**, een lege teken reeks (""); en **prop3** met de waarde "een teken reeks".
 
 ```mqtt
 /?prop1&prop2=&prop3=a%20string
 ```
 
-Wanneer een apparaat-app zich abonneert op een onderwerp met **QoS 2** , geeft IOT hub Maxi maal QoS-niveau 1 in het **SUBACK** -pakket. Daarna levert IoT Hub berichten naar het apparaat met behulp van QoS 1.
+Wanneer een apparaat-app zich abonneert op een onderwerp met **QoS 2**, geeft IOT hub Maxi maal QoS-niveau 1 in het **SUBACK** -pakket. Daarna levert IoT Hub berichten naar het apparaat met behulp van QoS 1.
 
 ## <a name="retrieving-a-device-twins-properties"></a>De eigenschappen van een onderliggend apparaat ophalen
 
@@ -355,7 +355,7 @@ De mogelijke status codes zijn:
 
 |Status | Beschrijving |
 | ----- | ----------- |
-| 200 | Geslaagd |
+| 200 | Success |
 | 429 | Te veel aanvragen (beperkt), conform [IOT hub beperking](iot-hub-devguide-quotas-throttling.md) |
 | 5 * * | Serverfouten |
 

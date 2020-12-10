@@ -7,13 +7,13 @@ ms.topic: article
 author: emuench
 ms.author: mingshen
 ms.date: 10/15/2020
-ms.custom: contperfq2
-ms.openlocfilehash: c4fdf8e986b9c98588689a57bde8ca9464667abe
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: aeee13152364c31d82f674df784a27114035a041
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129538"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028543"
 ---
 # <a name="azure-consumption-commitment-benefit"></a>Voordeel van Azure-verbruikstoezegging
 

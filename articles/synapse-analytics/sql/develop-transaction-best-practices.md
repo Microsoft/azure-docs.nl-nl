@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a17e3c80f15bb1e4c5aacba4dc974e363eca285e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 908f047a22491d50337f51c0a6dce7f2db8a2ebc
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319864"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97026809"
 ---
 # <a name="optimize-transactions-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Trans acties met een toegewezen SQL-groep optimaliseren in azure Synapse Analytics 
 
@@ -44,7 +44,7 @@ De limieten voor de transactie beveiliging zijn alleen van toepassing op volledi
 
 De volgende bewerkingen kunnen mini maal worden geregistreerd:
 
-* CREATE TABLE ALS SELECT ([CTAS]) (.. /SQL-Data-Warehouse/SQL-Data-Warehouse-develop-CTAs.MD? TOC =/Azure/Synapse-Analytics/toc.jsop&BC =/Azure/Synapse-Analytics/breadcrumb/toc.jsaan)
+* CREATE TABLE als selecteren ([CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json))
 * INVOEGEN.. UITGESCHAKELD
 * CREATE INDEX
 * ALTER INDEX REBUILD

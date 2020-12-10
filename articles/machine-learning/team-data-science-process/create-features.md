@@ -10,20 +10,20 @@ ms.subservice: team-data-science-process
 ms.topic: conceptual
 ms.date: 05/14/2020
 ms.author: tdsp
-ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath, contperfq4
-ms.openlocfilehash: 44b5baa074b62a072873d8097de184a2813b54ec
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath, contperf-fy20q4
+ms.openlocfilehash: 7cf97edcb2f2f7a23d5c899194d497deade1f507
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322017"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031858"
 ---
 # <a name="feature-engineering-in-data-science"></a>Functie techniek in data wetenschappen
 
 In dit artikel vindt u informatie over feature engineering en de bijbehorende rol bij het verbeteren van gegevens in machine learning. Leer van voor beelden die zijn getekend uit [Azure machine learning Studio (klassieke)](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio) experimenten. 
 
-* **Functie techniek** : het proces van het maken van nieuwe functies van onbewerkte gegevens om de voorspellende kracht van het leer algoritme te verg Roten. Functies die zijn ontworpen, moeten extra informatie vastleggen die niet eenvoudig zichtbaar is in de oorspronkelijke functieset.
-* **Functie selectie** : het proces van het selecteren van de sleutel subset van functies om de dimensionaliteit van het trainings probleem te verminderen.
+* **Functie techniek**: het proces van het maken van nieuwe functies van onbewerkte gegevens om de voorspellende kracht van het leer algoritme te verg Roten. Functies die zijn ontworpen, moeten extra informatie vastleggen die niet eenvoudig zichtbaar is in de oorspronkelijke functieset.
+* **Functie selectie**: het proces van het selecteren van de sleutel subset van functies om de dimensionaliteit van het trainings probleem te verminderen.
 
 Normaal gesp roken **functie techniek** wordt eerst toegepast om extra functies te genereren en vervolgens wordt de **functie selectie** uitgevoerd om irrelevante, redundante of zeer gecorreleerde functies te elimineren.
 

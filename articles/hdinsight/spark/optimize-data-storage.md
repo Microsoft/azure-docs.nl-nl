@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 092757728e791f60616d9dceca43e109e7f0019e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: ad09cdc2c0054c9d9a58e6bfa00252862f1e8c0f
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88757809"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028220"
 ---
 # <a name="data-storage-optimization-for-apache-spark"></a>Optimalisatie van gegevens opslag voor Apache Spark
 
@@ -57,8 +57,8 @@ Wanneer u een nieuw Spark-cluster maakt, kunt u Azure Blob Storage of Azure Data
 
 | Winkeltype | Bestandssysteem | Snelheid | Wijk | Gebruiksscenario's |
 | --- | --- | --- | --- | --- |
-| Azure Blob Storage | **wasb:**//URL/ | **Standaard** | Ja | Tijdelijk cluster |
-| Azure Blob Storage (beveiligd) | **wasbs:**//URL/ | **Standaard** | Ja | Tijdelijk cluster |
+| Azure Blob Storage | **wasb:**//URL/ | **Standard** | Ja | Tijdelijk cluster |
+| Azure Blob Storage (beveiligd) | **wasbs:**//URL/ | **Standard** | Ja | Tijdelijk cluster |
 | Azure Data Lake Storage Gen 2| **abfs:**//URL/ | **Gereed** | Ja | Tijdelijk cluster |
 | Azure Data Lake Storage Gen 1| **ADL:**//URL/ | **Gereed** | Ja | Tijdelijk cluster |
 | Lokale HDFS | **hdfs:**//URL/ | **Snelste** | Nee | Interactive 24/7-cluster |

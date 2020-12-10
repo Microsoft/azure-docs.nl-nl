@@ -7,13 +7,13 @@ ms.date: 11/10/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.custom: contperfq2
-ms.openlocfilehash: 55607527ced2e5d93a61cfd85477758482f18daa
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: b0a86a32148086a3b644d0bf147d12be0d812536
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495420"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030312"
 ---
 # <a name="install-and-use-azure-iot-explorer"></a>Azure IoT Explorer installeren en gebruiken
 
@@ -28,7 +28,7 @@ Zie het GitHub [Leesmij](https://github.com/Azure/azure-iot-explorer/blob/master
 
 Als u het hulp programma Azure IoT Explorer wilt gebruiken, hebt u het volgende nodig:
 
-- Een Azure IoT hub. Er zijn veel manieren om een IoT-hub toe te voegen aan uw Azure-abonnement, zoals [het maken van een IOT-hub met behulp van de Azure cli](../iot-hub/iot-hub-create-using-cli.md). U hebt de IoT hub-connection string nodig om het hulp programma Azure IoT Explorer uit te voeren. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+- Een Azure IoT-hub. Er zijn veel manieren om een IoT-hub toe te voegen aan uw Azure-abonnement, zoals [het maken van een IOT-hub met behulp van de Azure cli](../iot-hub/iot-hub-create-using-cli.md). U hebt de IoT hub-connection string nodig om het hulp programma Azure IoT Explorer uit te voeren. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Een apparaat dat is geregistreerd in uw IoT-hub. U kunt IoT Explorer gebruiken om apparaatregistratie te maken en te beheren in uw IoT Hub.
 
 ## <a name="install-azure-iot-explorer"></a>Azure IoT Explorer installeren
@@ -111,7 +111,7 @@ U kunt de alleen-lezen eigenschappen die zijn gedefinieerd in een interface weer
 
 Nadat u een wijziging hebt ingediend, kunt u de status van de update volgen: **synchronisatie**, **geslaagd** of **fout**. Wanneer de synchronisatie is voltooid, ziet u de nieuwe waarde van uw eigenschap in de kolom **gemelde eigenschap** . Als u naar andere pagina's navigeert voordat de synchronisatie is voltooid, ontvangt het hulp programma nog steeds een melding wanneer de update is voltooid. U kunt ook het meldingen centrum van het hulp programma gebruiken om de meldings geschiedenis te bekijken.
 
-#### <a name="commands"></a>Opdrachten
+#### <a name="commands"></a>Opdracht
 
 Als u een opdracht wilt verzenden naar een apparaat, gaat u naar het tabblad **opdrachten** :
 

@@ -1,5 +1,5 @@
 ---
-title: Problemen bij het aanmelden bij geconfigureerde apps voor eenmalige aanmelding op basis van SAML
+title: Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML
 description: Richt lijnen voor de specifieke fouten bij het aanmelden bij een toepassing die u hebt geconfigureerd voor op SAML gebaseerde federatieve eenmalige aanmelding met Azure Active Directory
 services: active-directory
 author: kenwith
@@ -11,32 +11,32 @@ ms.topic: troubleshooting
 ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
-ms.custom: contperfq2
-ms.openlocfilehash: e75669c70c67d55c94642a0f6dbe3c9dbc3376e6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: e6d3674aaa4c89f42c2e7b87a6be6cdc8ecabf64
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651546"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028271"
 ---
-# <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Problemen bij het aanmelden bij geconfigureerde apps voor eenmalige aanmelding op basis van SAML
+# <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML
 Voor het oplossen van de onderstaande aanmeldings problemen raden we het volgende aan om de oplossings stappen beter te diagnosticeren en te automatiseren:
 
-- Installeer de [beveiligde browser uitbreiding mijn apps](./access-panel-deployment-plan.md) om Azure Active Directory (Azure AD) te helpen bij het verbeteren van de test ervaring in de Azure Portal.
-- Reproduceer de fout met behulp van de test ervaring op de pagina app-configuratie in de Azure Portal. Meer informatie over het [opsporen van op SAML gebaseerde toepassingen voor eenmalige aanmelding](./debug-saml-sso-issues.md)
+- Installeer de [browseruitbreiding Mijn beveiligde apps](./access-panel-deployment-plan.md) om Azure AD (Azure Active Directory) te helpen betere diagnose en oplossingen te bieden bij het gebruik van de testversie in de Azure-portal.
+- Reproduceer de fout via de testversie op de app-configuratiepagina in de Azure-portal. Meer informatie over het [opsporen van op SAML gebaseerde toepassingen voor eenmalige aanmelding](./debug-saml-sso-issues.md)
 
 Als u de [test ervaring](./debug-saml-sso-issues.md) in de Azure Portal met de beveiligde browser uitbreiding van mijn apps gebruikt, hoeft u de onderstaande stappen niet hand matig uit te voeren om de configuratie pagina voor eenmalige aanmelding op basis van SAML te openen.
 
-De configuratie pagina voor eenmalige aanmelding op basis van SAML openen:
+Ga als volgt te werk om de configuratiepagina voor eenmalige aanmelding op basis van SAML te openen:
 1.  Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder** of **coadmin**.
 1.  Open de **uitbrei ding Azure Active Directory** door **alle services** boven aan het hoofd navigatie menu te selecteren.
 1.  Typ **' Azure Active Directory '** in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
-1.  Selecteer **bedrijfs toepassingen** in het navigatie menu Azure Active Directory aan de linkerkant.
-1.  Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven.
-    Als u de toepassing die u wilt weer geven hier niet ziet, gebruikt u het **filter** besturings element boven aan de **lijst alle toepassingen** en stelt u de optie voor het **weer geven** van **alle toepassingen** in.
+1.  Selecteer **Bedrijfstoepassingen** in het linkernavigatiemenu van Azure Active Directory.
+1.  Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+    Als u de gewenste toepassing niet ziet, gebruikt u het besturingselement **Filter** bovenaan de **lijst Alle toepassingen**, en stelt u de optie **Weergeven** in op **Alle toepassingen**.
 1.  Selecteer de toepassing die u wilt configureren voor eenmalige aanmelding.
 1. Zodra de toepassing is geladen, selecteert u **eenmalige aanmelding** in het navigatie menu aan de linkerkant van de toepassing.
-1. Selecteer SSO op basis van SAML.
+1. Selecteer Eenmalige aanmelding op basis van SAML.
 
 ## <a name="application-not-found-in-directory"></a>Kan de toepassing niet vinden in de map
 `Error AADSTS70001: Application with Identifier 'https:\//contoso.com' was not found in the directory.`

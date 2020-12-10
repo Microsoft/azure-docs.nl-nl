@@ -346,6 +346,8 @@
           href: monitor-logic-apps.md
         - name: Logische apps bewaken met Azure Monitor-logboeken
           href: monitor-logic-apps-log-analytics.md
+        - name: Logische apps bewaken in Azure Security Center
+          href: healthy-unhealthy-resource.md
         - name: B2B-berichten bewaken met Azure Monitor-logboeken
           href: monitor-b2b-messages-log-analytics.md
         - name: Bewakings- en traceringsquery's maken

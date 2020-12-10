@@ -6,8 +6,6 @@
       href: about-iot-accelerators.md
     - name: AzureIoTSolutions.com
       href: iot-accelerators-permissions.md
-    - name: Externe bewaking
-      href: iot-accelerators-remote-monitoring-sample-walkthrough.md
     - name: Industriële IoT
       href: overview-iot-industrial.md
       items:
@@ -21,37 +19,15 @@
           href: iot-accelerators-connected-factory-features.md
     - name: Apparaatsimulatie
       href: iot-accelerators-device-simulation-overview.md
-    - name: Voorspellend onderhoud
-      href: iot-accelerators-predictive-walkthrough.md
-- name: Quickstarts
-  expanded: true
+- name: Snelstartgidsen
   items:
-    - name: Een externe bewakingsoplossing uitproberen
-      href: quickstart-remote-monitoring-deploy.md
     - name: Een oplossing voor een verbonden fabriek uitproberen
       href: quickstart-connected-factory-deploy.md
-    - name: Een apparaatsimulatieoplossing uitproberen
-      href: quickstart-device-simulation-deploy.md
-    - name: Een oplossing voor voorspellend onderhoud uitproberen
-      href: quickstart-predictive-maintenance-deploy.md
+    - name: De oplossingsverbetering voor apparaatsimulatie implementeren
+      href: 'https://github.com/Azure/device-simulation-dotnet/blob/master/README.md'
+  expanded: true
 - name: Zelfstudies
   items:
-    - name: Externe bewaking
-      items:
-        - name: IoT-apparaten bewaken
-          href: iot-accelerators-remote-monitoring-monitor.md
-        - name: Problemen met apparaten detecteren
-          href: iot-accelerators-remote-monitoring-automate.md
-        - name: Apparaten configureren
-          href: iot-accelerators-remote-monitoring-manage.md
-        - name: Een analyse uitvoeren van de hoofdoorzaak van een waarschuwing
-          href: iot-accelerators-remote-monitoring-root-cause-analysis.md
-        - name: Waarschuwingen gebruiken en apparaatproblemen oplossen
-          href: iot-accelerators-remote-monitoring-maintain.md
-        - name: Apparaatconfiguraties bulksgewijs bijwerken
-          href: iot-accelerators-remote-monitoring-bulk-configuration-update.md
-        - name: Afwijkingen aan de rand detecteren
-          href: iot-accelerators-remote-monitoring-edge.md
     - name: Apparaatsimulatie
       items:
         - name: Een simulatie maken en uitvoeren
@@ -60,14 +36,6 @@
           href: iot-accelerators-device-simulation-create-custom-device.md
 - name: Concepten
   items:
-    - name: Externe bewaking
-      items:
-        - name: Architectuur
-          href: iot-accelerators-remote-monitoring-architectural-choices.md
-        - name: Apparaatmodelschema
-          href: iot-accelerators-remote-monitoring-device-schema.md
-        - name: Apparaatmodelgedrag
-          href: iot-accelerators-remote-monitoring-device-behavior.md
     - name: Industriële IoT
       items:
         - name: OPC Twin-architectuur
@@ -76,79 +44,6 @@
           href: overview-opc-vault-architecture.md
 - name: Instructiegidsen
   items:
-    - name: Externe bewaking
-      items:
-        - name: Oplossing implementeren
-          items:
-            - name: Implementeren met behulp van de CLI
-              href: iot-accelerators-remote-monitoring-deploy-cli.md
-            - name: Lokaal implementeren met Visual Studio
-              href: iot-accelerators-remote-monitoring-deploy-local.md
-            - name: Lokaal implementeren met VS Code
-              href: iot-accelerators-remote-monitoring-deploy-local-vscode.md
-            - name: Lokaal implementeren met IntelliJ
-              href: iot-accelerators-remote-monitoring-deploy-local-java.md
-            - name: Lokaal implementeren met Docker
-              href: iot-accelerators-remote-monitoring-deploy-local-docker.md
-        - name: Verbinding maken met een echt apparaat
-          items:
-            - name: C op Windows
-              href: iot-accelerators-connecting-devices.md
-            - name: C op Linux
-              href: iot-accelerators-connecting-devices-linux.md
-            - name: C op Raspberry Pi
-              href: iot-accelerators-connecting-pi-c.md
-            - name: Node.js (algemeen)
-              href: iot-accelerators-connecting-devices-node.md
-            - name: Node.js op Raspberry Pi
-              href: iot-accelerators-connecting-pi-node.md
-            - name: MXChip IoT DevKit
-              href: iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md
-        - name: Een apparaat simuleren
-          items:
-            - name: Een gesimuleerd apparaat maken
-              href: iot-accelerators-remote-monitoring-create-simulated-device.md
-            - name: Een gesimuleerd apparaat implementeren
-              href: iot-accelerators-remote-monitoring-deploy-simulated-device.md
-        - name: De gebruikersinterface aanpassen
-          href: iot-accelerators-remote-monitoring-customize.md
-          items:
-            - name: Een pagina toevoegen
-              href: iot-accelerators-remote-monitoring-customize-page.md
-            - name: Een service toevoegen
-              href: iot-accelerators-remote-monitoring-customize-service.md
-            - name: Een raster toevoegen
-              href: iot-accelerators-remote-monitoring-customize-grid.md
-            - name: Een flyout toevoegen
-              href: iot-accelerators-remote-monitoring-customize-flyout.md
-            - name: Een deelvenster toevoegen
-              href: iot-accelerators-remote-monitoring-customize-panel.md
-        - name: Een microservice aanpassen en opnieuw implementeren
-          href: iot-accelerators-microservices-example.md
-        - name: Het configuratiepakket van het apparaat importeren
-          href: iot-accelerators-remote-monitoring-import-adm-package.md
-        - name: IoT Edge-apparaten verbinden
-          items:
-            - name: Een IoT Edge-apparaat toevoegen
-              href: iot-accelerators-remote-monitoring-add-edge-device.md
-            - name: Een IoT Edge-pakket importeren
-              href: iot-accelerators-remote-monitoring-import-edge-package.md
-        - name: E-mailacties configureren
-          href: iot-accelerators-remote-monitoring-email-actions.md
-        - name: Toegangsbeheer configureren
-          href: iot-accelerators-remote-monitoring-rbac.md
-        - name: Telemetrie verkennen
-          items:
-            - name: Telemetrie visualiseren met Power BI
-              href: iot-accelerators-integrate-data-powerbi.md
-            - name: Integreer Azure Time Series Insights met Externe bewaking
-              href: iot-accelerators-remote-monitoring-integrate-time-series-insights.md
-            - name: Telemetrie analyseren met Data Lake
-              href: iot-accelerators-integrate-data-lake.md
-            - name: Toegang verlenen tot de telemetrieverkenner
-              href: iot-accelerators-remote-monitoring-rbac-tsi.md
-        - name: SIM-gegevens integreren
-          href: iot-accelerators-remote-monitoring-telefonica-sim.md
     - name: Industriële IoT
       items:
         - name: Verbonden factory
@@ -193,8 +88,6 @@
           href: iot-accelerators-device-simulation-time-series-insights.md
         - name: Telemetrie serialiseren met Protobuf
           href: iot-accelerators-device-simulation-protobuf.md
-        - name: Een aangepaste Docker-installatiekopie implementeren
-          href: iot-accelerators-device-simulation-deploy-image.md
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
@@ -223,20 +116,6 @@
           href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
         - name: IoT Device-SDK's
           href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
-    - name: Externe bewaking
-      items:
-        - name: Snelzoekgids voor ontwikkelaars (.NET)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide'
-        - name: Snelzoekgids voor ontwikkelaars (Java)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/wiki/Developer-Reference-Guide'
-        - name: Ontwikkelaarsgids voor het oplossen van problemen
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide'
-        - name: GitHub-opslagplaats (.NET)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet'
-        - name: GitHub-opslagplaats (Java)
-          href: 'https://github.com/Azure/azure-iot-pcs-remote-monitoring-java'
-        - name: Veelgestelde vragen over bewaking op afstand
-          href: iot-accelerators-faq-rm-v2.md
     - name: Industriële IoT
       items:
         - name: GitHub-opslagplaats
@@ -249,24 +128,12 @@
           href: 'https://github.com/Azure/device-simulation-dotnet/wiki/Simulation-Service-Developer-Reference-Guide'
         - name: GitHub-opslagplaats
           href: 'https://github.com/Azure/device-simulation-dotnet'
-    - name: GitHub-opslagplaats voor predictief onderhoud
-      href: 'https://github.com/Azure/azure-iot-predictive-maintenance'
     - name: Referentiearchitectuur
       href: /azure/architecture/reference-architectures/iot
       items:
         - name: Downloaden
-          href: /azure/architecture/reference-architectures/iot
-        - name: Partnerimplementaties
-          items:
-            - name: Intel Connected Logistics Platform
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/intel-connected-logistics-platform'
-            - name: Edge Dynamometer Analysis
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis'
-            - name: Digital Signage-oplossing
-              href: 'https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution'
+          href: 'https://aka.ms/iotrefarchitecture'
     - name: Veelgestelde vragen
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'
-    - name: Externe bewaking V1
-      href: /previous-versions/azure/iot-suite/

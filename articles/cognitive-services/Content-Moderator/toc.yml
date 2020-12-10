@@ -12,7 +12,7 @@
   items:
     - name: Content Moderator op internet proberen
       href: quick-start.md
-    - name: De clientbibliotheek gebruiken
+    - name: De clientbibliotheek of REST API gebruiken
       href: client-libraries.md
 - name: Zelfstudies
   items:
@@ -20,8 +20,6 @@
       href: ecommerce-retail-catalog-moderation.md
     - name: Facebook-inhoud beheren
       href: facebook-post-moderation.md
-    - name: Video's en transcripties beoordelen
-      href: video-transcript-moderation-review-tutorial-dotnet.md
 - name: Concepten
   items:
     - name: Beheer van afbeeldingen
@@ -38,7 +36,7 @@
   items:
     - name: Inhoud beheren
       items:
-        - name: REST-API
+        - name: API-console
           items:
             - name: Afbeeldingen - API-console
               href: try-image-api.md
@@ -60,7 +58,7 @@
       items:
         - name: Beoordelingsprogramma (browser)
           href: Review-Tool-User-Guide/Review-Moderated-Images.md
-        - name: REST-API
+        - name: API-console
           href: try-review-api-review.md
         - name: Videobeoordelingen (.NET)
           href: video-reviews-quickstart-dotnet.md
@@ -70,11 +68,11 @@
       items:
         - name: Beoordelingsprogramma (browser)
           href: Review-Tool-User-Guide/Workflows.md
-        - name: REST-API
+        - name: API-console
           href: try-review-api-workflow.md
     - name: Taken definiëren en gebruiken
       items:
-        - name: REST-API
+        - name: API-console
           href: try-review-api-job.md
         - name: .NET SDK
           href: moderation-jobs-quickstart-dotnet.md

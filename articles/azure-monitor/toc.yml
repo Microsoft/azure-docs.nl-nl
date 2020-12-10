@@ -29,10 +29,6 @@
           href: learn/quick-collect-windows-computer.md
     - name: Toepassingen bewaken
       items:
-        - name: .Net-toepassing
-          href: learn/quick-monitor-portal.md
-        - name: .NET Core-toepassing
-          href: learn/dotnetcore-quick-start.md
         - name: Node.js-toepassing
           href: learn/nodejs-quick-start.md
         - name: Mobiele toepassing
@@ -680,8 +676,10 @@
                       href: app/java-standalone-telemetry-processors.md
                     - name: Configuratie van JVM-argumenten
                       href: app/java-standalone-arguments.md
-                    - name: Upgraden van 2.x
+                    - name: Upgraden van SDK 2.x
                       href: app/java-standalone-upgrade-from-2x.md
+                    - name: Problemen oplossen
+                      href: app/java-standalone-troubleshoot.md
             - name: On-premises servers
               items:
                 - name: ASP.NET
@@ -1014,6 +1012,8 @@
           href: insights/container-insights-deployment-hpa-metrics.md
         - name: Permanente volumes bewaken
           href: insights/container-insights-persistent-volumes.md
+        - name: Tabblad Rapporten
+          href: insights/container-insights-reports.md
         - name: Livegegevens weergeven
           items:
             - name: Overzicht van livegegevens (preview)

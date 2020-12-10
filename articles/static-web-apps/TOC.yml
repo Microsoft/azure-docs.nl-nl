@@ -66,9 +66,13 @@
   items:
     - name: Uw vaardigheden ontwikkelen met Microsoft Learn
       items:
-        - name: 'Een Angular-, React-, Svelte- of Vue JavaScript-app en -API publiceren'
+        - name: 'Een Angular-, React-, Svelte- of Vue JavaScript-app publiceren'
           href: /learn/modules/publish-app-service-static-web-app-api
+        - name: Een API publiceren
+          href: /learn/modules/publish-static-web-app-api-preview-url
         - name: Een statische web-app maken en publiceren met Gatsby
           href: /learn/modules/create-deploy-static-webapp-gatsby-app-service
+        - name: Een statische web-app maken en publiceren met Blazor
+          href: /learn/modules/publish-app-service-static-web-app-api-dotnet
     - name: Quota
       href: quotas.md

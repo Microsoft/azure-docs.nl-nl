@@ -6,5 +6,5 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 10/23/2020
 ms.locfileid: "90533153"
 ---
-<Token>**VAN TOEPASSING OP:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure SQL Database :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure SQL Managed Instance </Token> 
+<Token>**VAN TOEPASSING OP:** :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure SQL Database :::image type="icon" source="../media/applies-to/yes.png" border="false":::Azure SQL Managed Instance</Token> 
 

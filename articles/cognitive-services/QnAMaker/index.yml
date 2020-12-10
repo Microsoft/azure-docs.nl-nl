@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Documentatie voor QnA Maker
   description: QnA Maker is een cloudgebaseerde API-service voor het maken van een vraag- en antwoordlaag over uw gegevens in gespreksstijl. Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen. De QnA Maker-service beantwoordt de in natuurlijke taal gestelde vragen van uw gebruikers door deze te koppelen aan de best mogelijke antwoorden uit de QnA's in uw Knowledge Base.
-  ms.openlocfilehash: 54c5e8c880020ac4c29dc730902dadef10838390
-  ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+  ms.openlocfilehash: d1236b8a40d43ac5203cd4cac8aa607c925a04d7
+  ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/30/2020
-  ms.locfileid: "96338080"
+  ms.lasthandoff: 12/09/2020
+  ms.locfileid: "96932724"
 landingContent:
 - title: Over QnA Maker
   linkLists:
@@ -50,7 +50,7 @@ landingContent:
     links:
     - text: Opvolgprompts gebruiken om meerdere beurten in een gesprek te maken
       url: how-to/multiturn-conversation.md
-    - text: Chit-chit toevoegen
+    - text: Chit-chat toevoegen
       url: how-to/chit-chat-knowledge-base.md
     - text: Een beveiligde SharePoint-gegevensbron toevoegen
       url: how-to/add-sharepoint-datasources.md

@@ -8,17 +8,17 @@ author: KumudD
 manager: ''
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2017
 ms.author: aldomel
-ms.openlocfilehash: ad0a5fc5940c36aa5d2d6912987b154532bc80a1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ca6460497fa026feca503df741ad6811a95fb9e3
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000875"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936927"
 ---
 # <a name="virtual-network-traffic-routing"></a>Routering van verkeer in virtuele netwerken
 
@@ -207,7 +207,7 @@ De pijlen geven de richting van het verkeer aan.
 
 De routetabel voor *Subnet1* in de afbeelding bevat de volgende routes:
 
-|Id  |Bron |Status  |Adresvoorvoegsels    |Volgend hoptype          |IP-adres van volgende hop|Naam van door gebruiker gedefinieerde route| 
+|Id  |Bron |Staat  |Adresvoorvoegsels    |Volgend hoptype          |IP-adres van volgende hop|Naam van door gebruiker gedefinieerde route| 
 |----|-------|-------|------              |-------                |--------           |--------      |
 |1   |Standaard|Ongeldig|10.0.0.0/16         |Virtueel netwerk        |                   |              |
 |2   |Gebruiker   |Actief |10.0.0.0/16         |Virtueel apparaat      |10.0.100.4         |Within-VNet1  |
@@ -241,7 +241,7 @@ Hier volgt een uitleg van elke route-id:
 
 De routetabel voor *Subnet2* in de afbeelding bevat de volgende routes:
 
-|Bron  |Status  |Adresvoorvoegsels    |Volgend hoptype             |IP-adres van volgende hop|
+|Bron  |Staat  |Adresvoorvoegsels    |Volgend hoptype             |IP-adres van volgende hop|
 |------- |-------|------              |-------                   |--------           
 |Standaard |Actief |10.0.0.0/16         |Virtueel netwerk           |                   |
 |Standaard |Actief |10.1.0.0/16         |VNet-peering              |                   |

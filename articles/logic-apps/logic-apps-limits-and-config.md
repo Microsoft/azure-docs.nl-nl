@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 12/07/2020
-ms.openlocfilehash: 154be7e4340c798ba1d014b210361f666864797e
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: ee314708f0d564bf1af639a3d864ea19472425cf
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921515"
+ms.locfileid: "96937624"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -47,7 +47,7 @@ Dit zijn de limieten voor een definitie van een enkele logische app:
 
 Dit zijn de limieten voor het uitvoeren van een enkele logische app:
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
 |------|--------------------|---------------------------------------|-------|
 | Uitvoeringsduur | 90 dagen | 366 dagen | De uitvoerings duur wordt berekend met behulp van de begin tijd van de uitvoering en de limiet die is opgegeven in de werk stroom instelling, [**uitvoerings geschiedenis in dagen**](#change-duration) op die begin tijd. <p><p>Als u de standaard limiet wilt wijzigen, raadpleegt u de [uitvoerings duur en de retentie van de geschiedenis in de opslag ruimte wijzigen](#change-duration). |
 | Bewaar periode voor geschiedenis in opslag | 90 dagen | 366 dagen | Als de duur van een uitvoering de huidige Bewaar limiet voor de uitvoerings geschiedenis overschrijdt, wordt de uitvoering verwijderd uit de uitvoerings geschiedenis in de opslag. Of de uitvoering is voltooid of er een time-out optreedt, de retentie van de uitvoerings geschiedenis wordt altijd berekend met behulp van de begin tijd van de uitvoering en de huidige limiet die is opgegeven in de werk stroom instelling, de [**Bewaar periode voor de geschiedenis in dagen**](#change-retention). Ongeacht de vorige limiet wordt de huidige limiet altijd gebruikt voor het berekenen van de Bewaar periode. <p><p>Als u de standaard limiet wilt wijzigen en meer informatie wilt, raadpleegt u de [duur en de retentie van de uitvoerings geschiedenis in de opslag ruimte wijzigen](#change-retention). Als u de maximum limiet wilt verhogen, [neemt u contact op met het Logic apps team](mailto://logicappsemail@microsoft.com) voor hulp bij uw vereisten. |
@@ -225,7 +225,7 @@ Dit zijn de limieten voor één binnenkomende of uitgaande oproep:
 
 Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webhook-aanvragen, zodat de time-out voor deze bewerkingen mogelijk langer is dan deze limieten. Zie de technische Details voor de specifieke connector en ook [werk stroom triggers en acties](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)voor meer informatie.
 
-| Name | Logic Apps (multi tenant) | Logic Apps (preview-versie) | Integratie service omgeving | Notities |
+| Name | Logic Apps (multi tenant) | Logic Apps (preview-versie) | Integratie service omgeving | Opmerkingen |
 |------|---------------------------|----------------------|---------------------------------|-------|
 | Uitgaande aanvraag | 120 seconden <br>(2 minuten) | 230 seconden <br>(3,9 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van uitgaande aanvragen zijn aanroepen van de HTTP-trigger of actie. Zie [Azure Logic Apps Preview](logic-apps-overview-preview.md)voor meer informatie over de preview-versie. <p><p>**Tip**: gebruik een [asynchroon polling-patroon](../logic-apps/logic-apps-create-api-app.md#async-pattern) of een [until-lus](../logic-apps/logic-apps-workflow-actions-triggers.md#until-action)voor het uitvoeren van bewerkingen die langer worden uitgevoerd. Als u de time-outlimieten wilt omzeilen wanneer u een andere logische app aanroept die een [aanroepbaar eind punt](logic-apps-http-endpoint.md)heeft, kunt u in plaats daarvan de ingebouwde Azure Logic apps actie gebruiken, die u kunt vinden in de connector kiezer onder **ingebouwde**. |
 | Inkomende aanvraag | 120 seconden <br>(2 minuten) | 230 seconden <br>(3,9 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van binnenkomende aanvragen zijn onder andere aanroepen die zijn ontvangen door de aanvraag trigger, de HTTP-webhook-trigger en de HTTP-webhook-actie. Zie [Azure Logic Apps Preview](logic-apps-overview-preview.md)voor meer informatie over de preview-versie. <p><p>**Opmerking**: voor de oorspronkelijke beller om het antwoord te krijgen, moeten alle stappen in het antwoord binnen de limiet worden voltooid, tenzij u een andere logische app als geneste werk stroom aanroept. Zie [Logic apps aanroepen, activeren of nesten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie. |
@@ -235,7 +235,7 @@ Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webh
 
 #### <a name="message-size"></a>Berichtgrootte
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
 |------|--------------------|---------------------------------------|-------|
 | Berichtgrootte | 100 MB | 200 MB | Zie [grote berichten verwerken met Chunking](../logic-apps/logic-apps-handle-large-messages.md)om deze limiet te omzeilen. Sommige connectors en Api's ondersteunen echter mogelijk geen Chunking of zelfs de standaard limiet. <p><p>-Connectors zoals AS2, X12 en EDIFACT hebben hun eigen [B2B-bericht limieten](#b2b-protocol-limits). <br>-ISE-connectors maken gebruik van de ISE-limiet, niet de limieten voor niet-ISE-connectors. |
 | Bericht grootte met Chunking | 1 GB | 5 GB | Deze limiet geldt voor acties die systeem eigen ondersteuning bieden voor Chunking of waarmee u Chunking in de runtime configuratie kunt inschakelen. <p><p>Als u een ISE gebruikt, wordt deze limiet door de Logic Apps-Engine ondersteund, maar de connectors hebben hun eigen segment beperking tot de limiet van de engine. Zie de [API-naslag informatie voor de Azure Blob Storage-connector](/connectors/azureblob/). Zie [grote berichten afhandelen met Chunking](../logic-apps/logic-apps-handle-large-messages.md)voor meer informatie over segmenteren. |
@@ -243,7 +243,7 @@ Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webh
 
 #### <a name="character-limits"></a>Teken limieten
 
-| Name | Notities |
+| Name | Opmerkingen |
 |------|-------|
 | Limiet voor evaluatie van expressie | 131.072 tekens | De `@concat()` , `@base64()` , `@string()` expressies mogen niet langer zijn dan deze limiet. |
 | Maximum aantal tekens van aanvraag-URL | 16.384 tekens |
@@ -279,7 +279,7 @@ Dit zijn de limieten voor een logische app die begint met een trigger voor aanvr
 
 Dit zijn de limieten voor aangepaste connectors die u kunt maken op basis van web-Api's.
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
 |------|--------------------|---------------------------------------|-------|
 | Aantal aangepaste connectors | 1000 per Azure-abonnement | 1000 per Azure-abonnement ||
 | Aantal aanvragen per minuut voor een aangepaste connector | 500 aanvragen per minuut per verbinding | 2.000 aanvragen per minuut per *aangepaste connector* ||
@@ -305,15 +305,15 @@ Elk Azure-abonnement heeft deze limieten voor het integratie account:
 
 * 1.000 totaal aantal integratie accounts, met inbegrip van integratie accounts in een [ISE (Integration service Environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) voor zowel [ontwikkel aars als Premium-sku's](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level).
 
-* Elke ISE, of [Developer of Premium](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), is beperkt tot 20 totaal aantal integratie accounts:
+* Elke ISE, of [Developer of Premium](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), is beperkt tot een totaal aantal integratie accounts, maar [u kunt deze limiet verhogen voor extra kosten](logic-apps-pricing.md#fixed-pricing):
 
   | ISE SKU | Limieten voor integratieaccounts |
   |---------|----------------------------|
-  | **Premium** | 20 totaal- [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) accounts, met inbegrip van één standaard account gratis. Er zijn geen gratis of basis accounts toegestaan. |
-  | **Developer** | 20 totaal- [gratis](../logic-apps/logic-apps-pricing.md#integration-accounts) (beperkt tot 1 account) en [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) gecombineerd, of alle standaard accounts. Er zijn geen basis accounts toegestaan. Gebruik de [Developer-SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) voor experimenteren, ontwikkelen en testen, maar niet voor productie-of prestatie testen. |
+  | **Premium** | 20 totaal- [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) accounts, met inbegrip van één standaard account gratis. U kunt [meer integratie accounts voor extra kosten](logic-apps-pricing.md#fixed-pricing)hebben. Er zijn geen gratis of basis accounts toegestaan. |
+  | **Developer** | 20 totaal- [gratis](../logic-apps/logic-apps-pricing.md#integration-accounts) (beperkt tot 1 account) en [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) gecombineerd, of alle standaard accounts. U kunt [meer integratie accounts voor extra kosten](logic-apps-pricing.md#fixed-pricing)hebben. Er zijn geen basis accounts toegestaan. Gebruik de [Developer-SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) voor experimenteren, ontwikkelen en testen, maar niet voor productie-of prestatie testen. |
   |||
 
-Aanvullende kosten zijn van toepassing op integratie accounts die u toevoegt buiten de integratie accounts die zijn opgenomen in een ISE. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over de prijzen en facturerings werkzaamheden voor ISEs. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
+Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over de prijzen en facturerings werkzaamheden voor ISEs. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
 
 <a name="artifact-number-limits"></a>
 
@@ -351,7 +351,7 @@ Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/
 
 ### <a name="throughput-limits"></a>Doorvoerlimieten
 
-| Runtime-eind punt | Gratis | Basic | Standard | Notities |
+| Runtime-eind punt | Gratis | Basic | Standard | Opmerkingen |
 |------------------|------|-------|----------|-------|
 | Lees aanroepen per 5 minuten | 3000 | 30.000 | 60.000 | Deze limiet is van toepassing op aanroepen die de onbewerkte invoer en uitvoer ophalen uit de uitvoerings geschiedenis van een logische app. U kunt de werk belasting naar meerdere accounts distribueren als dat nodig is. |
 | Aanroepen starten per 5 minuten | 3000 | 30.000 | 45.000 | U kunt de werk belasting naar meerdere accounts distribueren als dat nodig is. |
@@ -365,7 +365,7 @@ Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/
 
 Dit zijn de limieten voor de bericht grootte die van toepassing zijn op B2B-protocollen:
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
 |------|--------------------|---------------------------------------|-------|
 | AS2 | v2-100 MB<br>v1-25 MB | v2-200 MB <br>v1-25 MB | Van toepassing op decoderen en coderen |
 | X12 | 50 MB | 50 MB | Van toepassing op decoderen en coderen |

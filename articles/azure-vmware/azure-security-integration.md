@@ -3,12 +3,12 @@ title: Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integra
 description: Meer informatie over het beveiligen van uw Azure VMware-oplossings-Vm's met de systeem eigen beveiligings tools van Azure vanaf één dash board in Azure Security Center.
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 53669f2988a7ff7ab1150b155a65c7a187c6f1c8
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: e461e7e49619f7063c0583975f36a2e3dfe5a724
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94370150"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937335"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 
@@ -78,7 +78,7 @@ Azure Defender breidt de geavanceerde bedreigings beveiliging van Azure Security
 5. Vul op het tabblad **Resource Details** de volgende gegevens in: 
     - Abonnement
     - Resourcegroep
-    - Region 
+    - Regio 
     - Besturingssysteem
     - Details van de proxy server
     
@@ -100,7 +100,7 @@ Azure Defender breidt de geavanceerde bedreigings beveiliging van Azure Security
 
 3. Selecteer de naam van uw resource. Er wordt een pagina geopend met de details van de beveiligings status van uw resource.
 
-4. Onder **aanbeveling lijst** , selecteert u de tabbladen **aanbevelingen** , **door gegeven beoordelingen** en **niet-beschik bare beoordelingen** om deze details weer te geven.
+4. Onder **aanbeveling lijst**, selecteert u de tabbladen **aanbevelingen**, **door gegeven beoordelingen** en **niet-beschik bare beoordelingen** om deze details weer te geven.
 
     :::image type="content" source="media/azure-security-integration/view-recommendations-assessments.png" alt-text="Een scherm opname van Azure Security Center waarin aanbevelingen en evaluaties van de beveiliging worden weer gegeven.":::
 
@@ -157,7 +157,7 @@ Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken 
     - Naam
     - Beschrijving
     - Strategieën
-    - Ernst
+    - Severity
     - Status
 
     Selecteer **volgende: regel logica instellen >**.
@@ -173,13 +173,13 @@ Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken 
         |where count_ > 3
         ```
         
-    - Entiteit toewijzen
+    - Entiteiten toewijzen
     - Query planning
     - Waarschuwingsdrempel
     - Gebeurtenissen groeperen
     - Onderdrukking
 
-    Selecteer **Volgende**.
+    Selecteer **Next**.
 
 6. Schakel op het tabblad **incident instellingen** het selectie vakje **incidenten maken van waarschuwingen die door deze Analytics regel zijn geactiveerd** in en selecteer **volgende: automatisch antwoord >**.
  

@@ -8,22 +8,22 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: 3b0a413db304b4f9d2c50a3d221c480f1e9dc37a
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 57cb1c405e00acb346421d64190a71e9211d21ff
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552532"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938831"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-purview"></a>Quota's voor resources beheren en verg Roten met Azure controle sfeer liggen
  
 Azure controle sfeer liggen is een Cloud service die door gegevens gebruikers kan worden gebruikt. U gebruikt Azure controle sfeer liggen voor het centraal beheren van gegevens beheer over uw gegevens en het gebruik van Cloud-en on-premises omgevingen. Met de service kunnen bedrijfs analisten zoeken naar relevante gegevens met behulp van zinvolle zakelijke voor waarden. Neem contact op met de ondersteuning als u de limieten wilt verhogen tot de maximumwaarde voor uw abonnement.
  
-## <a name="azure-purview-limits"></a>Limieten voor Azure controle sfeer liggen
+## <a name="azure-purview-limits"></a>Azure Purview-limieten
  
 |**Resource**|  **Standaard limiet**  |**Maximum limiet**|
 |---|---|---|
-|Controle sfeer liggen accounts per Tenant (alle abonnementen gecombineerd)|3|Contact met ondersteuning|
+|Controle sfeer liggen-accounts per regio, per Tenant (alle abonnementen gecombineerd)|3|Contact met ondersteuning|
 |vCores beschikbaar voor scannen, per account *|160|160|
 |Gelijktijdige scans, per account op een bepaald moment. De limiet is gebaseerd op het type gescande gegevens bronnen *|5 | 10 |
 |Maximale tijd waarop een scan kan worden uitgevoerd|7 dagen|7 dagen|

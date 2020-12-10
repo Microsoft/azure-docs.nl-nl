@@ -10,12 +10,12 @@ ms.date: 11/20/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 118aaa368f48838a33d130d8dddc89bb8dce3f3e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d435ced4c8ec56fae5081ede367b593d2b66ef0f
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498180"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936536"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Beperkte toegang verlenen tot Azure Storage-resources met behulp van Shared Access signatures (SAS)
 
@@ -76,6 +76,9 @@ Een Shared Access Signature kan een van de volgende twee vormen hebben:
 ## <a name="how-a-shared-access-signature-works"></a>Hoe een Shared Access Signature werkt
 
 Een Shared Access Signature is een ondertekende URI die verwijst naar een of meer opslag resources. De URI bevat een token dat een speciale set query parameters bevat. Het token geeft aan hoe de bronnen kunnen worden gebruikt door de client. Een van de query parameters, de hand tekening, wordt samengesteld op basis van de SAS-para meters en ondertekend met de sleutel die is gebruikt voor het maken van de SAS. Deze hand tekening wordt door Azure Storage gebruikt om toegang tot de opslag bron te verlenen.
+
+> [!NOTE]
+> Het is niet mogelijk om de generatie van SAS-tokens te controleren. Gebruikers met bevoegdheden voor het genereren van een SAS-token, hetzij met behulp van de account sleutel, hetzij via een Azure RBAC-roltoewijzing, kunnen dit doen zonder de kennis van de eigenaar van het opslag account. Zorg ervoor dat u de machtigingen beperkt waarmee gebruikers SAS-tokens kunnen genereren. Als u wilt voor komen dat gebruikers een SAS genereren die is ondertekend met de account sleutel voor werk belastingen voor blobs en wacht rijen, kunt u de toegang tot gedeelde sleutels voor het opslag account niet meer toestaan. Zie [autorisatie met gedeelde sleutel voor komen](shared-key-authorization-prevent.md)voor meer informatie.
 
 ### <a name="sas-signature-and-authorization"></a>SAS-hand tekening en autorisatie
 

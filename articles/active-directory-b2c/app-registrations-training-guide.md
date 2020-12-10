@@ -11,12 +11,12 @@ ms.date: 05/25/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 16b5814835ec5cad6b66087fee37676155196339
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7bb38b382add2a0ea3506c31c5e6e76a985df6a1
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952077"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936468"
 ---
 # <a name="the-new-app-registrations-experience-for-azure-active-directory-b2c"></a>De nieuwe App-registraties ervaring voor Azure Active Directory B2C
 
@@ -63,7 +63,7 @@ In de verouderde ervaring werden apps altijd gemaakt als klant gerichte toepassi
 > [!NOTE]
 > Deze optie is vereist om Azure AD B2C gebruikers stromen te kunnen uitvoeren om gebruikers voor deze toepassing te verifiëren. Meer informatie [over het registreren van een toepassing voor gebruik met gebruikers stromen.](tutorial-register-applications.md)
 
-U kunt deze optie ook gebruiken om Azure AD B2C als een SAML-service provider te gebruiken. [Meer informatie](identity-provider-adfs2016-custom.md).
+U kunt deze optie ook gebruiken om Azure AD B2C als een SAML-service provider te gebruiken. [Meer informatie](identity-provider-adfs.md).
 
 ## <a name="applications-for-devops-scenarios"></a>Toepassingen voor DevOps-scenario's
 U kunt de andere account typen gebruiken om een app te maken voor het beheren van uw DevOps-scenario's, zoals het gebruik van Microsoft Graph voor het uploaden van identiteits experience Framework-beleids regels of het inrichten van gebruikers. Meer informatie [over hoe u een Microsoft Graph-toepassing registreert om Azure AD B2C resources te beheren](microsoft-graph-get-started.md).
@@ -116,5 +116,5 @@ Om aan de slag te gaan met de nieuwe app registratie-ervaring:
 * Meer informatie [over het registreren van een web-API](add-web-api-application.md).
 * Meer informatie [over het registreren van een systeem eigen client toepassing](add-native-application.md).
 * Meer informatie [over hoe u een Microsoft Graph-toepassing registreert om Azure AD B2C resources te beheren](microsoft-graph-get-started.md).
-* Meer informatie [over het gebruik van Azure AD B2C als een SAML-service provider.](identity-provider-adfs2016-custom.md)
+* Meer informatie [over het gebruik van Azure AD B2C als een SAML-service provider.](identity-provider-adfs.md)
 * Meer informatie over [toepassings typen](application-types.md).

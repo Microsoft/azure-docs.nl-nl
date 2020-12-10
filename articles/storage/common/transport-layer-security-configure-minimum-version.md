@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/03/2020
+ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 683f0e070ad77add62ed76eabd70b42ba15f012e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b6c75bc13bf26510ee72968c5a27407b6b7bfee6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498129"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937488"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Een mini maal vereiste versie van Transport Layer Security (TLS) afdwingen voor aanvragen van een opslag account
 
@@ -135,7 +135,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName `
 (Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).MinimumTlsVersion
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de minimale TLS-versie wilt configureren voor een opslag account met Azure CLI, installeert u Azure CLI versie 2.9.0 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **minimumTlsVersion** voor een nieuw of bestaand opslag account. Geldige waarden voor **minimumTlsVersion** zijn `TLS1_0` , `TLS1_1` en `TLS1_2` .
 
@@ -339,6 +339,23 @@ Nadat u het beleid met het effect deny hebt gemaakt en aan een bereik hebt toege
 In de volgende afbeelding ziet u de fout die optreedt als u probeert een opslag account te maken met de minimale TLS-versie die is ingesteld op TLS 1,0 (de standaard waarde voor een nieuw account) wanneer een beleid met een deny-effect vereist dat de minimum versie van TLS wordt ingesteld op TLS 1,2.
 
 :::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="Scherm opname met de fout die optreedt bij het maken van een opslag account in schending van het beleid":::
+
+## <a name="permissions-necessary-to-require-a-minimum-version-of-tls"></a>Benodigde machtigingen voor het vereisen van een minimum versie van TLS
+
+Als u de eigenschap **MinimumTlsVersion** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+
+- De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
+- De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
+- De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
+
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+
+Roltoewijzingen moeten zijn gericht op het niveau van het opslag account of hoger, zodat een gebruiker een minimum versie van TLS vereist voor het opslag account. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
+
+Zorg ervoor dat u alleen de toewijzing van deze rollen beperkt tot degenen die de mogelijkheid moeten hebben om een opslag account te maken of om de eigenschappen ervan bij te werken. Gebruik het principe van minimale bevoegdheden om ervoor te zorgen dat gebruikers de minste machtigingen hebben die ze nodig hebben om hun taken uit te voeren. Zie [Aanbevolen procedures voor Azure RBAC](../../role-based-access-control/best-practices.md)voor meer informatie over het beheren van toegang met Azure RBAC.
+
+> [!NOTE]
+> De service beheerder rollen van de klassieke abonnements beheerder en Co-Administrator omvatten het equivalent van de Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner) van de rol. De rol **eigenaar** omvat alle acties, dus een gebruiker met een van deze beheerders rollen kan ook opslag accounts maken en beheren. Zie [Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-beheerdersrollen](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles) voor meer informatie.
 
 ## <a name="network-considerations"></a>Overwegingen voor het netwerk
 

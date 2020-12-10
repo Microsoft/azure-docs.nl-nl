@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 553c33b3d5ea2e3f1ee81503cb69fe15db387af6
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bb3c7cc3f51eae90c5b712d224407e639b232fbc
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745023"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938882"
 ---
 # <a name="classification-insights-about-your-data-from-azure-purview"></a>Inzicht in de classificatie van uw gegevens vanuit Azure controle sfeer liggen
 
@@ -44,7 +44,7 @@ In azure controle sfeer liggen zijn classificaties vergelijkbaar met de label Ta
 Controle sfeer liggen maakt gebruik van dezelfde gevoelige informatie typen als Microsoft 365, zodat u uw bestaande beveiligings beleid en-beveiliging kunt uitrekken in uw hele data-erfgoed.
 
 > [!NOTE]
-> Nadat u uw bron typen hebt gescand, geeft u de **classificatie** een aantal uur inzicht in de nieuwe activa.
+> Nadat u uw bron typen hebt gescand, geeft u een aantal uur de **classificatie** inzicht in de nieuwe activa.
 
 **Classificatie inzichten weer geven:**
 
@@ -91,7 +91,7 @@ Ga op een van de volgende manieren te werk om meer te weten te komen:
 |**Het raster sorteren** |Selecteer een kolomkop om het raster op die kolom te sorteren. | 
 |**Kolommen bewerken**     |  Als u meer of minder kolommen in het raster wilt weer geven, selecteert u **kolommen bewerken** :::image type="icon" source="media/insights/ico-columns.png" border="false"::: en selecteert u vervolgens de kolommen die u wilt weer geven of de volg orde wijzigen.   |
 |**Meer inzoomen**     | Als u wilt inzoomen op een specifieke classificatie, selecteert u een naam in de kolom **classificatie** om de **classificatie per bron** rapport weer te geven. <br><br>In dit rapport worden gegevens weer gegeven voor de geselecteerde classificatie, met inbegrip van de bron naam, het bron type, de abonnements-ID en het aantal geclassificeerde bestanden en tabellen.      |
-|**Door assets bladeren**     |  Als u wilt bladeren door de activa die met een specifieke classificatie of bron zijn gevonden, selecteert u een classificatie of bron, afhankelijk van het rapport dat u bekijkt **Browse assets** en selecteert u vervolgens in :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: de filters bladeren. <br><br>In de zoek resultaten worden alle geclassificeerde assets weer gegeven die voor het geselecteerde filter zijn gevonden.  Zie [Search the Azure controle sfeer liggen Data Catalog](how-to-search-catalog.md)voor meer informatie.       |
+|**Door assets bladeren**     |  Als u wilt bladeren door de activa die met een specifieke classificatie of bron zijn gevonden, selecteert u een classificatie of bron, afhankelijk van het rapport dat u bekijkt  en selecteert u vervolgens in :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: de filters bladeren. <br><br>In de zoek resultaten worden alle geclassificeerde assets weer gegeven die voor het geselecteerde filter zijn gevonden.  Zie [Search the Azure controle sfeer liggen Data Catalog](how-to-search-catalog.md)voor meer informatie.       |
 | | |
 
 ## <a name="next-steps"></a>Volgende stappen

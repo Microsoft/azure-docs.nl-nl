@@ -7,24 +7,24 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 3ac90b79053e59047dbe64598688e77b9df059d1
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: b51be165d3d05ae753c7e0e5536a157fbbacf1ab
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358708"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938627"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Meer informatie over uw Azure Cosmos DB-factuur
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Als volledig beheerde Cloud-systeem eigen database service, Azure Cosmos DB vereenvoudigt de facturering door alleen de database bewerkingen en de gebruikte opslag ruimte te gebruiken. Er zijn geen aanvullende licentie kosten, hardware, kosten voor hulp programma of faciliteiten in vergelijking met on-premises of door IaaS gehoste alternatieven. Wanneer u rekening houdt met de mogelijkheden van meerdere regio's van Azure Cosmos DB, biedt de database service een aanzienlijke verlaging van de kosten in vergelijking met bestaande on-premises of IaaSe oplossingen.
 
-- **Database bewerkingen** : de manier waarop u uw database bewerkingen in rekening brengt, is afhankelijk van het type Azure Cosmos-account dat u gebruikt.
+- **Database bewerkingen**: de manier waarop u uw database bewerkingen in rekening brengt, is afhankelijk van het type Azure Cosmos-account dat u gebruikt.
 
-  - **Ingerichte door Voer** : u wordt per uur gefactureerd voor de maximale ingerichte door Voer voor een bepaald uur, in stappen van 100 ru/s.
-  - **Serverloos** : u wordt per uur gefactureerd voor de totale hoeveelheid aanvraag eenheden die door uw database bewerkingen worden verbruikt.
+  - **Ingerichte door Voer**: u wordt per uur gefactureerd voor de maximale ingerichte door Voer voor een bepaald uur, in stappen van 100 ru/s.
+  - **Serverloos**: u wordt per uur gefactureerd voor de totale hoeveelheid aanvraag eenheden die door uw database bewerkingen worden verbruikt.
 
-- **Opslag** : er wordt een vast bedrag in rekening gebracht voor de totale hoeveelheid opslag ruimte (in GB) die door uw gegevens en indexen voor een bepaald uur wordt verbruikt.
+- **Opslag**: er wordt een vast bedrag in rekening gebracht voor de totale hoeveelheid opslag ruimte (in GB) die door uw gegevens en indexen voor een bepaald uur wordt verbruikt.
 
 Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/) voor de meest recente prijs informatie.
 
@@ -130,7 +130,7 @@ We gaan ervan uit dat u een Azure Cosmos-container maakt in VS West. De containe
 |**Item** |**Gebruik (maand)**|**Snelheid** |**Maandelijkse kosten** |
 |---------|---------|---------|-------|
 |Doorvoer factuur voor container in West-VS (alle regio's zijn schrijfbaar)       | 10.000 RU/SEC * 24 * 30    |$0,016 per 100 RU/sec per uur    |$1.152 |
-|Doorvoer factuur voor drie extra regio's: VS-Oost, Europa-noord en Azië-oost (alle regio's zijn schrijfbaar)        | (3 + 1) * 10.000 RU/SEC * 24 * 30    |$0,016 per 100 RU/sec per uur   |$4.608 |
+|Doorvoer factuur voor drie extra regio's: VS-Oost, Europa-noord en Azië-oost (alle regio's zijn schrijfbaar)        | 3 * 10.000 RU/SEC * 24 * 30    |$0,016 per 100 RU/sec per uur   |$3.456 |
 |Opslag factuur voor container in West-VS      | 250 GB    |$0,25/GB  |$62,50|
 |Opslag factuur voor 3 extra regio's-VS-Oost, Europa-noord en Azië-oost      | 3 * 250 GB    |$0,25/GB  |$187,50|
 |**Totaal**     |     |  |**$6.010**|
@@ -286,7 +286,7 @@ Uw totale factuur (zonder gereserveerde capaciteit) zou worden (waarbij 30 dagen
 |**Regio**| **Uurtarief per uur op basis van 100 RU/s**|**Eenheden (RU/s)**|**Gefactureerd bedrag (per uur)**| **Gefactureerd bedrag (maandelijks)**|
 |----|----|----|----|----|
 |VS - oost|$0,008 |50 K|$4|$2.880 |
-|Japan - oost|$0,009 |50 K| $4,50 |$3.240 |
+|Japan East|$0,009 |50 K| $4,50 |$3.240 |
 |Totaal|||$8,50|$6.120 |
 
 U kunt in plaats daarvan een gereserveerde capaciteit hebben gekocht. U kunt gereserveerde capaciteit voor 100-K RU/seconde kopen tegen de prijs van $56.064 gedurende één jaar (bij 20% korting) of $6,40 per uur. Bekijk de prijzen voor gereserveerde capaciteit op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/).  
@@ -300,7 +300,7 @@ Wat u effectief hebt aangeschaft, is een tegoed van $8 per uur, voor 100 K RU pe
 |**Regio**| **Uurtarief per uur op basis van 100 RU/s**|**Eenheden (RU/s)**| **Gefactureerd bedrag (per uur)**| **Gefactureerd bedrag (maandelijks)**|
 |----|----|----|----|----|
 |VS - oost|$0,008 |50 K|$4|$2.880 |
-|Japan - oost|$0,009 |50 K| $4,50 |$3.240 |
+|Japan East|$0,009 |50 K| $4,50 |$3.240 |
 |||Betalen naar gebruik|$8,50|$6120|
 |Aangeschafte gereserveerde capaciteit|$0,0064 (20% korting) |100 RU/sec of $8 capaciteit vooraf aangeschaft |-$8|-$5.760 |
 |Netfactuur|||$ 0,50 |$360 |

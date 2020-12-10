@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: ac75a5b0b59a06855b7ee88d971c269ca915e429
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 35f4aae246f105d832aaf92c5c5797c8a65b44f1
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763160"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938537"
 ---
 # <a name="azure-digital-twins-high-availability-and-disaster-recovery"></a>Azure Digital Apparaatdubbels hoge Beschik baarheid en herstel na nood gevallen
 
@@ -38,6 +38,29 @@ Door micro soft **geïnitieerde failover** wordt door micro soft in zeldzame gev
 
 >[!NOTE]
 > Sommige Azure-Services bieden ook een extra optie met de door de **klant geïnitieerde failover**, waarmee klanten een failover voor hun exemplaar kunnen initiëren, bijvoorbeeld om een Dr-analyse uit te voeren. Dit mechanisme wordt momenteel **niet ondersteund** door Azure Digital apparaatdubbels. 
+
+## <a name="monitor-service-health"></a>Servicestatus bewaken
+
+Als er een failover wordt uitgevoerd voor Azure Digital Apparaatdubbels-exemplaren, kunt u het proces bewaken met het hulp programma [Azure service Health](https://docs.microsoft.com/azure/service-health/service-health-overview) . Service Health houdt de status van uw Azure-Services in verschillende regio's en abonnementen bij en deelt de communicatie met de service die invloed heeft op storingen en uitval tijd.
+
+Tijdens een failover-gebeurtenis kan Service Health een indicatie geven wanneer uw service niet actief is en wanneer er een back-up wordt gemaakt.
+
+Service Health gebeurtenissen weer geven...
+1. Navigeer naar [service Health](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) in het Azure Portal (u kunt deze koppeling gebruiken of zoeken met de zoek balk van de portal).
+1. Gebruik het menu aan de linkerkant om over te scha kelen naar de pagina *status geschiedenis* .
+1. Zoek naar een *probleem naam* die begint met **Azure Digital apparaatdubbels** en selecteer deze.
+
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/navigate.png" alt-text="Scherm afbeelding van de Azure Portal de pagina met de status geschiedenis wordt weer gegeven. Er is een lijst met verschillende problemen van de afgelopen paar dagen en een probleem met de naam ' Azure Digital Apparaatdubbels-Europa-west-Reduced ' is gemarkeerd." lightbox="media/concepts-high-availability-disaster-recovery/navigate.png":::
+
+1. Voor algemene informatie over de onderbreking bekijkt u het tabblad *samen vatting* .
+
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/summary.png" alt-text="Op de pagina status geschiedenis is het tabblad samen vatting gemarkeerd. Op het tabblad wordt algemene informatie weer gegeven, zoals de resource die is beïnvloed, de regio en het abonnement." lightbox="media/concepts-high-availability-disaster-recovery/summary.png":::
+1. Voor meer informatie over en updates van het probleem in de loop van de tijd bekijkt u het tabblad *updates van problemen* .
+
+    :::image type="content" source="media/concepts-high-availability-disaster-recovery/issue-updates.png" alt-text="Op de pagina status geschiedenis is het tabblad updates van problemen gemarkeerd. Op het tabblad worden verschillende vermeldingen weer gegeven met de huidige status van een dag geleden." lightbox="media/concepts-high-availability-disaster-recovery/issue-updates.png":::
+
+
+Houd er rekening mee dat de informatie die in dit hulp programma wordt weer gegeven, niet specifiek is voor één Azure Digital-instantie. Nadat u Service Health hebt gebruikt om te begrijpen wat er gebeurt met de Azure Digital Apparaatdubbels-service in een bepaalde regio of abonnement, kunt u een stap verder volgen met behulp van het [resource Health-hulp programma](troubleshoot-resource-health.md) om in te zoomen op specifieke instanties en te controleren of ze worden beïnvloed.
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 

@@ -11,22 +11,37 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 506f6a2025a61b4d9d16918b2a95de620171c46b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 9f81d059c1a71bf6349d0ef9b4aae8f7a47c161f
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147851"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938780"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Een IoT Edge apparaat configureren om te fungeren als transparante gateway
 
 In dit artikel vindt u gedetailleerde instructies voor het configureren van een IoT Edge apparaat om te werken als een transparante gateway zodat andere apparaten kunnen communiceren met IoT Hub. In dit artikel wordt de term *IOT Edge gateway* gebruikt om te verwijzen naar een IOT edge apparaat dat is geconfigureerd als een transparante gateway. Zie [How a IOT edge-apparaten kunnen worden gebruikt als een gateway](./iot-edge-as-gateway.md)voor meer informatie.
+
+<!-- 1.0.10 -->
+::: moniker range="iotedge-2018-06"
 
 >[!NOTE]
 >Dat
 >
 > * Apparaten met rand mogelijkheden kunnen geen verbinding maken met IoT Edge gateways.
 > * Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
+
+::: moniker-end
+
+<!-- 1.2.0 -->
+::: moniker range=">=iotedge-2020-11"
+
+>[!NOTE]
+>Dat
+>
+> * Downstream-apparaten kunnen het uploaden van bestanden niet gebruiken.
+
+::: moniker-end
 
 Er zijn drie algemene stappen voor het instellen van een geslaagde transparante gateway verbinding. In dit artikel wordt de eerste stap behandeld:
 
@@ -76,7 +91,7 @@ Voor productie scenario's moet u deze bestanden met uw eigen certificerings inst
    2. Maak een basis-CA-certificaat. Aan het einde van deze instructies hebt u een basis-CA-certificaat bestand:
       * `<path>/certs/azure-iot-test-only.root.ca.cert.pem`.
    3. IoT Edge CA-certificaten voor apparaten maken. Aan het einde van deze instructies hebt u een CA-certificaat van het apparaat en de bijbehorende persoonlijke sleutel:
-      * `<path>/certs/iot-edge-device-<cert name>-full-chain.cert.pem` en 
+      * `<path>/certs/iot-edge-device-<cert name>-full-chain.cert.pem` maar
       * `<path>/private/iot-edge-device-<cert name>.key.pem`
 
 2. Als u de certificaten op een andere computer hebt gemaakt, kopieert u deze naar uw IoT Edge-apparaat.

@@ -3,12 +3,12 @@ title: Ondersteuning voor het verplaatsen van bewerkingen per resource type
 description: Een lijst met de Azure-resource typen die kunnen worden verplaatst naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 226686e51c8b59b6963609a95a2cb3c2cc03d621
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 0b1304b273523d42ad62f4e392fb803e1c174b69
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780991"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937522"
 ---
 # <a name="move-operation-support-for-resources"></a>Ondersteuning voor het verplaatsen van resources voor bronnen
 
@@ -1423,7 +1423,7 @@ Ga naar de naam ruimte van een resource provider:
 > | networkinterfaces | Ja | Ja |
 > | networkprofiles | Nee | Nee |
 > | networksecuritygroups | Ja | Ja |
-> | networkwatchers | Ja | Nee |
+> | networkwatchers | Nee | Nee |
 > | networkwatchers / connectionmonitors | Ja | Nee |
 > | networkwatchers / flowlogs | Ja | Nee |
 > | networkwatchers / pingmeshes | Ja | Nee |

@@ -1,0 +1,50 @@
+---
+title: Een id-provider toevoegen-Azure Active Directory B2C | Microsoft Docs
+description: Meer informatie over het toevoegen van een id-provider aan uw Active Directory B2C-Tenant.
+services: active-directory-b2c
+author: msmimart
+manager: celestedg
+ms.author: mimart
+ms.date: 12/07/2020
+ms.custom: mvc
+ms.topic: how-to
+ms.service: active-directory
+ms.subservice: B2C
+ms.openlocfilehash: 7d694ec97f6dac93b7bc20908e0a7c29f7f23661
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96939088"
+---
+# <a name="add-an-identity-provider-to-your-azure-active-directory-b2c-tenant"></a>Een id-provider toevoegen aan uw Azure Active Directory B2C-Tenant
+
+U kunt Azure AD B2C configureren zodat gebruikers zich kunnen aanmelden bij uw toepassing met referenties van externe id-providers voor sociale netwerken of voor ondernemingen (IdP). Azure AD B2C ondersteunt externe id-providers zoals Facebook, Microsoft-account, Google, Twitter en iedere andere id-provider die ondersteuning biedt voor OAuth 1.0, OAuth 2.0, OpenID Connect en SAML-protocollen.
+
+Met federatie van externe id-providers kunt u uw consumenten de mogelijkheid bieden om zich aan te melden met hun bestaande accounts voor sociale netwerken of onderneming, zonder dat u een nieuw account hoeft te maken voor alleen uw toepassing.
+
+Op de registratie- of aanmeldingspagina wordt door Azure AD B2C een lijst weergegeven met externe id-providers waaruit de gebruiker kan kiezen om zich aan te melden. Zodra ze een van de externe id-providers hebben geselecteerd, worden ze omgeleid naar de website van de geselecteerde provider om daar het aanmeldingsproces te voltooien. Nadat de gebruiker zich heeft aangemeld, keert deze terug naar Azure AD B2C voor verificatie van het account in uw toepassing.
+
+![Voorbeeld van mobiele aanmelding met een account voor sociale netwerken (Facebook)](media/add-identity-provider/external-idp.png)
+
+U kunt met behulp van Azure Portal id-providers aan uw [gebruikers stromen](user-flow-overview.md) toevoegen die worden ondersteund door Azure Active Directory B2C (Azure AD B2C). U kunt ook id-providers toevoegen aan uw [aangepaste beleids regels](custom-policy-get-started.md).
+
+## <a name="select-an-identity-provider"></a>Een id-provider selecteren
+
+Gewoonlijk gebruikt u slechts één id-provider in uw toepassingen, maar u kunt er eventueel meer toevoegen. In de onderstaande artikelen vindt u informatie over het maken van de ID-provider toepassing, het toevoegen van de ID-provider aan uw Tenant en het toevoegen van de ID-provider aan uw gebruikers stroom of aangepast beleid.
+
+* [AD FS](identity-provider-adfs.md)
+* [Amazon](identity-provider-amazon.md)
+* [Azure AD (één tenant)](identity-provider-azure-ad-single-tenant.md)
+* [Azure AD (multitenant)](identity-provider-azure-ad-multi-tenant.md)
+* [Facebook](identity-provider-facebook.md)
+* [Algemene id-providers](identity-provider-generic-openid-connect.md)
+* [GitHub](identity-provider-github.md)
+* [Google](identity-provider-google.md)
+* [LinkedIn](identity-provider-linkedin.md)
+* [Microsoft-account](identity-provider-microsoft-account.md)
+* [QQ](identity-provider-qq.md)
+* [Salesforce](identity-provider-salesforce.md)
+* [Twitter](identity-provider-twitter.md)
+* [WeChat](identity-provider-wechat.md)
+* [Weibo](identity-provider-weibo.md)

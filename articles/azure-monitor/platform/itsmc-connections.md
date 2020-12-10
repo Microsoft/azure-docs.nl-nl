@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 502d5a5c4b3d13d32fece648ce1de6763d012096
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: a0ef8d9f28f90db77686c3139c8b45eccfb669aa
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932282"
+ms.locfileid: "96938814"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>ITSM-producten/-services verbinden met IT-servicebeheerconnector
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw ITSM-product/-service en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren. Zie [overzicht](./itsmc-overview.md)voor meer informatie over ITSMC.
@@ -309,8 +309,7 @@ De volgende secties bevatten informatie over het aansluiten van uw Provance-prod
 
 > [!NOTE]
 > 
-> Met ingang van 1-okt-2020 Provance ITSM-integratie met Azure-waarschuwing wordt niet langer ingeschakeld voor nieuwe klanten. Nieuwe ITSM-verbindingen worden niet ondersteund. 
-> Bestaande ITSM-verbindingen worden ondersteund.
+> We stellen onze Provance-klanten voor om [webhook-actie](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -367,8 +366,7 @@ De volgende secties bevatten informatie over het aansluiten van uw Cher well-pro
 
 > [!NOTE]
 > 
-> Met ingang van 1-okt-2020 Cher well ITSM-integratie met Azure-waarschuwing wordt niet langer ingeschakeld voor nieuwe klanten. Nieuwe ITSM-verbindingen worden niet ondersteund. 
-> Bestaande ITSM-verbindingen worden ondersteund.
+> We stellen onze Cher well-klanten voor om [webhook-actie](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
 
 ### <a name="prerequisites"></a>Vereisten
 

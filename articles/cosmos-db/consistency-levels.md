@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.openlocfilehash: 742ff2e6cff4569b5b7eeb131cd4394277b6c3cd
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 965e4a8cd704670ec06ae6b927b97c3a8b93030c
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100453"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938661"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Consistentieniveaus in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -22,7 +22,7 @@ De meeste in de handel Verkrijg bare, gedistribueerde NoSQL-data bases die tegen
 
 - *Sterk*
 - *Gebonden veroudering*
-- *Beëindigen*
+- *Sessie*
 - *Consistent voor voegsel*
 - *Uiteindelijke*
 
@@ -44,22 +44,25 @@ Lees consistentie is van toepassing op één Lees bewerking binnen een logische 
 
 U kunt op elk gewenst moment het standaard consistentie niveau configureren voor uw Azure Cosmos-account. Het standaard consistentie niveau dat voor uw account is geconfigureerd, is van toepassing op alle Azure Cosmos-data bases en containers onder dat account. Alle Lees bewerkingen en query's die zijn uitgegeven voor een container of een Data Base, gebruiken standaard het opgegeven consistentie niveau. Zie [het standaard consistentie niveau configureren](how-to-manage-consistency.md#configure-the-default-consistency-level)voor meer informatie. U kunt ook het standaard consistentie niveau voor een specifieke aanvraag overschrijven. Zie How to [override the default Consistency level](how-to-manage-consistency.md?#override-the-default-consistency-level) article voor meer informatie.
 
+> [!IMPORTANT]
+> U moet een SDK-exemplaar opnieuw maken nadat u het standaard consistentie niveau hebt gewijzigd. U kunt dit doen door de toepassing opnieuw te starten. Dit zorgt ervoor dat de SDK het nieuwe standaard consistentie niveau gebruikt.
+
 ## <a name="guarantees-associated-with-consistency-levels"></a>Garanties die zijn gekoppeld aan de consistentie niveaus
 
 Azure Cosmos DB garandeert dat 100 procent van de Lees aanvragen voldoet aan de consistentie garantie voor het gekozen consistentie niveau. De exacte definities van de vijf consistentie niveaus in Azure Cosmos DB met behulp van de TLA + specificatie taal zijn opgenomen in de [Azure-Cosmos-TLA](https://github.com/Azure/azure-cosmos-tla) github opslag plaats.
 
 De semantiek van de vijf consistentie niveaus worden hier beschreven:
 
-- **Sterk** : sterke consistentie biedt een linearizability-garantie. Linearizability verwijst naar de gelijktijdigheid van aanvragen. De Lees bewerkingen worden gegarandeerd de meest recente doorgevoerde versie van een item te retour neren. Een client ziet nooit een niet-doorgevoerde of gedeeltelijke schrijf bewerking. Gebruikers worden altijd gegarandeerd de laatste vastgelegde schrijf bewerkingen te lezen.
+- **Sterk**: sterke consistentie biedt een linearizability-garantie. Linearizability verwijst naar de gelijktijdigheid van aanvragen. De Lees bewerkingen worden gegarandeerd de meest recente doorgevoerde versie van een item te retour neren. Een client ziet nooit een niet-doorgevoerde of gedeeltelijke schrijf bewerking. Gebruikers worden altijd gegarandeerd de laatste vastgelegde schrijf bewerkingen te lezen.
 
   In de volgende afbeelding ziet u de sterke consistentie met muzikale notities. Wanneer u de gegevens van andere regio's hebt geschreven naar de regio vs-West 2, krijgt u de meest recente waarde:
 
-  :::image type="content" source="media/consistency-levels/strong-consistency.gif" alt-text="Consistentie als een spectrum":::
+  :::image type="content" source="media/consistency-levels/strong-consistency.gif" alt-text="Afbeelding van het niveau van sterke consistentie":::
 
-- **Gebonden veroudering** : de Lees bewerkingen worden gegarandeerd de consistentie van het voor voegsel garanderen. De Lees bewerkingen kunnen vertraging oplopen bij schrijf bewerkingen door de meeste *"K"* -versies (dat wil zeggen "updates") van een item of door een *T* -outinterval, afhankelijk van wat het eerst wordt bereikt. Met andere woorden, wanneer u de gebonden veroudering kiest, kan de ' verouderd ' op twee manieren worden geconfigureerd:
+- **Gebonden veroudering**: de Lees bewerkingen worden gegarandeerd de consistentie van het voor voegsel garanderen. De Lees bewerkingen kunnen vertraging oplopen bij schrijf bewerkingen door de meeste *"K"* -versies (dat wil zeggen "updates") van een item of door een *T* -outinterval, afhankelijk van wat het eerst wordt bereikt. Met andere woorden, wanneer u de gebonden veroudering kiest, kan de ' verouderd ' op twee manieren worden geconfigureerd:
 
-- Het aantal versies ( *K* ) van het item
-- De tijds interval ( *T* ) Lees bewerkingen kunnen vertraging oplopen achter de schrijf bewerkingen
+- Het aantal versies (*K*) van het item
+- De tijds interval (*T*) Lees bewerkingen kunnen vertraging oplopen achter de schrijf bewerkingen
 
 Voor een account van één regio is de minimum waarde *K* en *T* 10 schrijf bewerkingen of 5 seconden. Voor accounts met meerdere regio's is de minimale waarde van *K* en *T* 100.000 schrijf bewerkingen of 300 seconden.
 
@@ -74,9 +77,9 @@ Binnen het verouderde venster biedt gebonden veroudering de volgende consistenti
 
   Gebonden verouderd wordt vaak gekozen door wereld wijd gedistribueerde toepassingen die weinig schrijf latentie verwachten, maar die de totale garantie voor de globale bestelling vereisen. Gebonden verouderd is handig voor toepassingen met groeps samenwerking en delen, aandelen tikker, publiceren/abonneren/wachtrij, enzovoort. In de volgende afbeelding ziet u de gebonden consistentie van veroudering met muzikale notities. Nadat de gegevens zijn geschreven naar de regio vs-West 2, lezen de regio's ' vs Oost 2 ' en ' Australië-oost ' de geschreven waarde op basis van de geconfigureerde maximale vertragings tijd of het maximum aantal bewerkingen:
 
-  :::image type="content" source="media/consistency-levels/bounded-staleness-consistency.gif" alt-text="Consistentie als een spectrum":::
+  :::image type="content" source="media/consistency-levels/bounded-staleness-consistency.gif" alt-text="Afbeelding van het consistentie niveau van de gebonden veroudering":::
 
-- **Sessie** : in een enkele client sessie Lees bewerkingen worden gegarandeerd het consistente voor voegsel, monotone Lees bewerkingen, monotone schrijf bewerkingen, lees-uw-schrijf bewerkingen en lees-en schrijf bewerkingen. Hierbij wordt ervan uitgegaan dat u één schrijver-sessie hebt of het sessie token deelt voor meerdere schrijvers.
+- **Sessie**: in een enkele client sessie Lees bewerkingen worden gegarandeerd het consistente voor voegsel, monotone Lees bewerkingen, monotone schrijf bewerkingen, lees-uw-schrijf bewerkingen en lees-en schrijf bewerkingen. Hierbij wordt ervan uitgegaan dat u één schrijver-sessie hebt of het sessie token deelt voor meerdere schrijvers.
 
 Clients buiten de sessie die schrijf bewerkingen uitvoeren, zien de volgende garanties:
 
@@ -87,9 +90,9 @@ Clients buiten de sessie die schrijf bewerkingen uitvoeren, zien de volgende gar
 
   Sessie consistentie is het meest gebruikte consistentie niveau voor zowel de ene regio als wereld wijd gedistribueerde toepassingen. Het biedt schrijf latentie, Beschik baarheid en lees doorvoer die vergelijkbaar zijn met die van uiteindelijke consistentie, maar biedt ook de consistentie garanties die van toepassing zijn op de behoeften van toepassingen die zijn geschreven om te kunnen worden gebruikt in de context van een gebruiker. In de volgende afbeelding ziet u de consistentie van de sessie met muzikale notities. De "West US 2 Writer" en de "West US 2 Reader" gebruiken dezelfde sessie (sessie A), zodat ze beide dezelfde gegevens op hetzelfde moment lezen. Terwijl de regio ' Australië-oost ' gebruikmaakt van ' sessie B ', worden gegevens later ontvangen, maar in dezelfde volg orde als de schrijf bewerkingen.
 
-  :::image type="content" source="media/consistency-levels/session-consistency.gif" alt-text="Consistentie als een spectrum":::
+  :::image type="content" source="media/consistency-levels/session-consistency.gif" alt-text="Afbeelding van consistentie niveau van de sessie":::
 
-- **Consistent voor voegsel** : updates die worden geretourneerd, bevatten een voor voegsel van alle updates, zonder onderbrekingen. Consistent consistentie niveau van het voor voegsel zorgt ervoor dat lees bewerkingen die nooit worden uitgevoerd, niet worden weer gegeven.
+- **Consistent voor voegsel**: updates die worden geretourneerd, bevatten een voor voegsel van alle updates, zonder onderbrekingen. Consistent consistentie niveau van het voor voegsel zorgt ervoor dat lees bewerkingen die nooit worden uitgevoerd, niet worden weer gegeven.
 
 Als schrijf bewerkingen zijn uitgevoerd in de volg orde `A, B, C` , ziet een client een `A` van de, `A,B` , of `A,B,C` , maar niet-beschik bare permutaties zoals `A,C` of `B,A,C` . Consistent voor voegsel biedt schrijf latentie, Beschik baarheid en lees doorvoer die vergelijkbaar zijn met die van uiteindelijke consistentie, maar biedt ook de volg orde van de bestellingen die voldoen aan de behoeften van scenario's waarin de volg orde belang rijk is.
 
@@ -102,12 +105,12 @@ Hieronder vindt u de consistentie garanties voor consistent voor voegsel:
 
 In de volgende afbeelding ziet u de consistentie van het consistentie voorvoegsel met muzikale notities. In alle regio's zien de Lees bewerkingen nooit buiten de juiste volg orde:
 
-  :::image type="content" source="media/consistency-levels/consistent-prefix.gif" alt-text="Consistentie als een spectrum":::
+  :::image type="content" source="media/consistency-levels/consistent-prefix.gif" alt-text="Afbeelding van consistent voor voegsel":::
 
-- **Uiteindelijk** : er is geen garantie voor lees bewerkingen. Als er verder geen schrijfbewerkingen worden uitgevoerd, convergeren de replica's uiteindelijk.  
+- **Uiteindelijk**: er is geen garantie voor lees bewerkingen. Als er verder geen schrijfbewerkingen worden uitgevoerd, convergeren de replica's uiteindelijk.  
 Uiteindelijke consistentie is de zwakke vorm van consistentie, omdat een client de waarden kan lezen die ouder zijn dan de waarde die het eerder had gelezen. Uiteindelijke consistentie is ideaal wanneer de toepassing geen garantie voor het ordenen van de toepassingen vereist. Voor beelden zijn het aantal retweeten, leuk of niet-threaded opmerkingen. In de volgende afbeelding ziet u de uiteindelijke consistentie met muzikale notities.
 
-  :::image type="content" source="media/consistency-levels/eventual-consistency.gif" alt-text="Consistentie als een spectrum":::
+  :::image type="content" source="media/consistency-levels/eventual-consistency.gif" alt-text="viIllustration van de uiteindelijke consistentie":::
 
 ## <a name="consistency-guarantees-in-practice"></a>Consistentie garanties in de praktijk
 
@@ -140,11 +143,11 @@ De exacte RTT-latentie is een functie van de snelheid van de afstand en de Azure
 
 - Voor een bepaald type schrijf bewerking, zoals invoegen, vervangen, upsert en verwijderen, is de schrijf doorvoer voor aanvraag eenheden identiek voor alle consistentie niveaus.
 
-|**Consistentie niveau**|**Quorum Lees bewerkingen**|**Quorum schrijf bewerkingen**|
+|**Consistentieniveau**|**Quorum Lees bewerkingen**|**Quorum schrijf bewerkingen**|
 |--|--|--|
 |**Sterk**|Lokale minderheid|Wereld wijde meerderheid|
 |**Gebonden veroudering**|Lokale minderheid|Lokale meerderheid|
-|**Beëindigen**|Enkele replica (met sessie token)|Lokale meerderheid|
+|**Sessie**|Enkele replica (met sessie token)|Lokale meerderheid|
 |**Consistent voor voegsel**|Enkele replica|Lokale meerderheid|
 |**Uiteindelijke**|Enkele replica|Lokale meerderheid|
 
@@ -153,11 +156,11 @@ De exacte RTT-latentie is een functie van de snelheid van de afstand en de Azure
 
 ## <a name="consistency-levels-and-data-durability"></a><a id="rto"></a>Consistentie niveaus en gegevens duurzaamheid
 
-Binnen een wereld wijd gedistribueerde database omgeving is er een rechtstreekse relatie tussen het consistentie niveau en de duurzaamheid van de gegevens in de aanwezigheid van een regionale storing. Wanneer u uw bedrijfs continuïteits plan ontwikkelt, moet u weten wat de Maxi maal toegestane tijd is voordat de toepassing volledig wordt hersteld na een storende gebeurtenis. De tijd die nodig is om een toepassing volledig te herstellen, wordt de **beoogde herstel tijd** ( **RTO** ) genoemd. U moet ook inzicht krijgen in de maximale periode van recente gegevens updates die de toepassing kan afnemen bij het herstellen na een storende gebeurtenis. De tijds periode van updates die u mogelijk wilt verliezen, is **Recovery Point Objective** ( **RPO** ) genoemd.
+Binnen een wereld wijd gedistribueerde database omgeving is er een rechtstreekse relatie tussen het consistentie niveau en de duurzaamheid van de gegevens in de aanwezigheid van een regionale storing. Wanneer u uw bedrijfs continuïteits plan ontwikkelt, moet u weten wat de Maxi maal toegestane tijd is voordat de toepassing volledig wordt hersteld na een storende gebeurtenis. De tijd die nodig is om een toepassing volledig te herstellen, wordt de **beoogde herstel tijd** (**RTO**) genoemd. U moet ook inzicht krijgen in de maximale periode van recente gegevens updates die de toepassing kan afnemen bij het herstellen na een storende gebeurtenis. De tijds periode van updates die u mogelijk wilt verliezen, is **Recovery Point Objective** (**RPO**) genoemd.
 
 In de onderstaande tabel wordt de relatie tussen consistentie model en gegevens duurzaamheid gedefinieerd in aanwezigheid van een regionale storing. Het is belang rijk te weten dat in een gedistribueerd systeem, zelfs met sterke consistentie, geen gedistribueerde data base met een RPO en RTO van nul is vanwege [Cap theorema](https://en.wikipedia.org/wiki/CAP_theorem).
 
-|**Regio (s)**|**Replicatie modus**|**Consistentieniveau**|**RPO**|**RTO**|
+|**Regio (s)**|**Replicatie modus**|**Consistentie niveau**|**RPO**|**RTO**|
 |---------|---------|---------|---------|---------|
 |1|Enkele of meerdere schrijf regio's|Elk consistentie niveau|< 240 minuten|<1 week|
 |>1|Enkele schrijf regio|Sessie, consistent voor voegsel, uiteindelijk|< 15 minuten|< 15 minuten|

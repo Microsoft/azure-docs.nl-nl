@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: f97facd8d184be05cbfd79af92dbcaab3a022ebd
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: d54994a7c64718835e70381f92abed83ef693018
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746298"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938508"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Open bare Azure-Load Balancer bijwerken
 [Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](./skus.md#skus)voor meer informatie over Load Balancer SKU.
@@ -26,7 +26,7 @@ Er zijn twee fasen in een upgrade:
 
 Er is een Azure PowerShell script beschikbaar dat het volgende doet:
 
-* Hiermee maakt u een standaard SKU-Load Balancer in de resource groep en de locatie die u opgeeft.
+* Hiermee maakt u een standaard-SKU Load Balancer met een locatie die u opgeeft in dezelfde resource groep van de basis Standard Load Balancer.
 * Hiermee wordt het open bare IP-adres van de Basic-SKU bijgewerkt naar de standaard-SKU.
 * Hiermee worden de configuraties van de basis-SKU Load Balancer naadloos gekopieerd naar de zojuist gemaakte Standard Load Balancer.
 * Hiermee maakt u een standaard regel voor uitgaand verkeer waarmee uitgaande verbindingen mogelijk worden gemaakt.
@@ -58,7 +58,7 @@ Er is een Azure PowerShell script beschikbaar dat het volgende doet:
 
 ## <a name="download-the-script"></a>Het script downloaden
 
-Down load het migratie script van de  [PowerShell Gallery](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/2.0).
+Down load het migratie script van de  [PowerShell Gallery](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/4.0).
 ## <a name="use-the-script"></a>Het script gebruiken
 
 Er zijn twee opties voor u afhankelijk van de instellingen en voor keuren van uw lokale Power shell-omgeving:
@@ -92,14 +92,13 @@ Het script uitvoeren:
 
    * **oldRgName: [teken reeks]: vereist** – dit is de resource groep voor de bestaande basis Load Balancer u een upgrade wilt uitvoeren. Als u deze teken reeks waarde wilt vinden, gaat u naar Azure Portal, selecteert u de basis Load Balancer bron en klikt u op het **overzicht** van de Load Balancer. De resource groep bevindt zich op deze pagina.
    * **oldLBName: [teken reeks]: vereist** – dit is de naam van de bestaande Basic-Balancer die u wilt bijwerken. 
-   * **newrgName: [teken reeks]: vereist** – dit is de resource groep waarin de Standard Load Balancer worden gemaakt. Dit kan een nieuwe resource groep of een bestaande zijn. Als u een bestaande resource groep kiest, moet u er rekening mee houden dat de naam van de Load Balancer uniek moeten zijn binnen de resource groep. 
    * **newLBName: [string]: vereist** : dit is de naam voor de Standard Load Balancer die u wilt maken.
 1. Voer het script uit met de juiste para meters. Het kan vijf tot zeven minuten duren voordat de bewerking is voltooid.
 
     **Voorbeeld**
 
    ```azurepowershell
-   AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newLbName "LBForUpgrade"
+   AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newLbName "LBForUpgrade"
    ```
 
 ### <a name="create-an-outbound-rule-for-outbound-connection"></a>Een uitgaande regel voor de uitgaande verbinding maken

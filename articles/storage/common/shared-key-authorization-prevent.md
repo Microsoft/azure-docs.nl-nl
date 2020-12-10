@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/20/2020
+ms.date: 12/07/2020
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: ce0ea938cac4afa043b8770a4d6a98f08ec145ec
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6a24713a6027c38d2b9817928f3a82161bd37314
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484886"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936723"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Verificatie van gedeelde sleutels voor een Azure Storage account voor komen (preview-versie)
 
@@ -23,13 +23,11 @@ Elke beveiligde aanvraag voor een Azure Storage account moet worden geautoriseer
 Wanneer u de verificatie van een gedeelde sleutel voor een opslag account niet toestaat, wijst Azure Storage alle volgende aanvragen af bij dat account dat is geautoriseerd met de toegangs sleutels voor het account. Alleen beveiligde aanvragen die zijn gemachtigd met Azure AD, slagen. Zie [toegang tot blobs en wacht rijen toestaan met Azure Active Directory](storage-auth-aad.md)voor meer informatie over het gebruik van Azure AD.
 
 > [!WARNING]
-> Azure Storage ondersteunt Azure AD-autorisatie alleen voor aanvragen voor Blob-en wachtrij opslag. Als u autorisatie met gedeelde sleutel voor een opslag account niet toestaat, zullen aanvragen naar Azure Files-of tabel opslag die gebruikmaken van gedeelde sleutel autorisatie, mislukken.
->
-> Tijdens de preview-aanvraag worden aanvragen voor Azure Files of tabel opslag die gebruikmaken van SAS-tokens (Shared Access Signature) die zijn gegenereerd met behulp van de toegangs sleutels voor het account, slagen wanneer de verificatie van de gedeelde sleutel niet is toegestaan. Zie [over de preview-versie](#about-the-preview)voor meer informatie.
->
-> Het niet toestaan van toegang tot gedeelde sleutels voor een opslag account heeft geen invloed op SMB-verbindingen met Azure Files.
+> Azure Storage ondersteunt Azure AD-autorisatie alleen voor aanvragen voor Blob-en wachtrij opslag. Als u autorisatie met gedeelde sleutel voor een opslag account niet toestaat, zullen aanvragen naar Azure Files-of tabel opslag die gebruikmaken van gedeelde sleutel autorisatie, mislukken. Omdat de Azure Portal altijd een verificatie met een gedeelde sleutel gebruikt om toegang te krijgen tot bestands-en tabel gegevens, is het niet mogelijk om toegang te krijgen tot de gegevens van het bestand of de tabel in de Azure Portal als u autorisatie met gedeelde sleutel voor het opslag account niet toestaat.
 >
 > Micro soft raadt u aan om alle Azure Files-of tabel opslag gegevens te migreren naar een afzonderlijk opslag account voordat u toegang tot het account via een gedeelde sleutel niet toestaat, of als u deze instelling niet toepast op opslag accounts die ondersteuning bieden voor Azure Files of de werk belasting van de tabel opslag.
+>
+> Het niet toestaan van toegang tot gedeelde sleutels voor een opslag account heeft geen invloed op SMB-verbindingen met Azure Files.
 
 In dit artikel wordt beschreven hoe u aanvragen detecteert die zijn verzonden met gedeelde sleutel autorisatie en hoe u de autorisatie van gedeelde sleutels voor uw opslag account herstelt. Zie [over de preview-versie](#about-the-preview)als u wilt weten hoe u zich kunt registreren voor de preview-versie.
 
@@ -125,7 +123,7 @@ De eigenschap **AllowSharedKeyAccess** is niet standaard ingesteld en retourneer
 > [!WARNING]
 > Als clients momenteel toegang hebben tot gegevens in uw opslag account met een gedeelde sleutel, raadt micro soft u aan deze clients te migreren naar Azure AD voordat u de gedeelde sleutel toegang tot het opslag account niet toestaat.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een opslag account in de Azure Portal niet toe te staan:
 
@@ -135,7 +133,7 @@ Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een 
 
     :::image type="content" source="media/shared-key-authorization-prevent/shared-key-access-portal.png" alt-text="Scherm afbeelding die laat zien hoe toegang tot gedeelde sleutels voor accounts niet kan worden toegestaan":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de verificatie van gedeelde sleutels voor een opslag account met Azure CLI niet wilt toestaan, installeert u Azure CLI versie 2.9.1 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **allowSharedKeyAccess** voor een nieuw of bestaand opslag account.
 
@@ -193,15 +191,32 @@ resources
 | project subscriptionId, resourceGroup, name, allowSharedKeyAccess
 ```
 
+## <a name="permissions-for-allowing-or-disallowing-shared-key-access"></a>Machtigingen voor het toestaan of weigeren van toegang tot gedeelde sleutels
+
+Als u de eigenschap **AllowSharedKeyAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+
+- De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
+- De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
+- De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
+
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+
+Roltoewijzingen moeten worden ingedeeld op het niveau van het opslag account of hoger, zodat een gebruiker toegang tot gedeelde sleutels voor het opslag account toestaat of weigert. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
+
+Zorg ervoor dat u alleen de toewijzing van deze rollen beperkt tot degenen die de mogelijkheid moeten hebben om een opslag account te maken of om de eigenschappen ervan bij te werken. Gebruik het principe van minimale bevoegdheden om ervoor te zorgen dat gebruikers de minste machtigingen hebben die ze nodig hebben om hun taken uit te voeren. Zie [Aanbevolen procedures voor Azure RBAC](../../role-based-access-control/best-practices.md)voor meer informatie over het beheren van toegang met Azure RBAC.
+
+> [!NOTE]
+> De service beheerder rollen van de klassieke abonnements beheerder en Co-Administrator omvatten het equivalent van de Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner) van de rol. De rol **eigenaar** omvat alle acties, dus een gebruiker met een van deze beheerders rollen kan ook opslag accounts maken en beheren. Zie [Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-beheerdersrollen](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles) voor meer informatie.
+
 ## <a name="understand-how-disallowing-shared-key-affects-sas-tokens"></a>Begrijpen hoe het niet toestaan van gedeelde sleutels van invloed is op SAS-tokens
 
-Wanneer de gedeelde sleutel niet is toegestaan voor het opslag account, worden met Azure Storage SAS-tokens verwerkt op basis van het type SA'S en de service waarop de aanvraag is gericht. In de volgende tabel ziet u hoe elk type SAS is toegestaan en hoe Azure Storage die SA'S afhandelt wanneer de eigenschap **AllowSharedKeyAccess** voor het opslag account **False** is.
+Wanneer gedeelde sleutel toegang niet is toegestaan voor het opslag account, worden met Azure Storage SAS-tokens verwerkt op basis van het type SA'S en de service waarop de aanvraag is gericht. In de volgende tabel ziet u hoe elk type SAS is toegestaan en hoe Azure Storage die SA'S afhandelt wanneer de eigenschap **AllowSharedKeyAccess** voor het opslag account **False** is.
 
 | Type SAS | Type autorisatie | Gedrag wanneer AllowSharedKeyAccess onwaar is |
 |-|-|-|
 | SAS voor gebruikers overdracht (alleen Blob-opslag) | Azure AD | De aanvraag is toegestaan. Micro soft raadt u aan om de SAS voor gebruikers te gebruiken wanneer dat mogelijk is voor een superieure beveiliging. |
-| Service-SA'S | Gedeelde sleutel | De aanvraag is geweigerd voor Blob Storage. De aanvraag is toegestaan voor de wachtrij-en tabel opslag en voor Azure Files. Zie [aanvragen met SAS-tokens zijn toegestaan voor wacht rijen, tabellen en bestanden wanneer AllowSharedKeyAccess is](#requests-with-sas-tokens-are-permitted-for-queues-tables-and-files-when-allowsharedkeyaccess-is-false) ingesteld op False in de sectie **over de preview-versie** voor meer informatie. |
-| Account-SAS | Gedeelde sleutel | De aanvraag is geweigerd voor Blob Storage. De aanvraag is toegestaan voor de wachtrij-en tabel opslag en voor Azure Files. Zie [aanvragen met SAS-tokens zijn toegestaan voor wacht rijen, tabellen en bestanden wanneer AllowSharedKeyAccess is](#requests-with-sas-tokens-are-permitted-for-queues-tables-and-files-when-allowsharedkeyaccess-is-false) ingesteld op False in de sectie **over de preview-versie** voor meer informatie. |
+| Service-SA'S | Gedeelde sleutel | De aanvraag is geweigerd voor alle Azure Storage services. |
+| Account-SAS | Gedeelde sleutel | De aanvraag is geweigerd voor alle Azure Storage services. |
 
 Zie voor meer informatie over gedeelde toegangs handtekeningen [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](storage-sas-overview.md).
 
@@ -219,7 +234,7 @@ Sommige hulpprogram ma's van Azure bieden de mogelijkheid om Azure AD-autorisati
 | Azure PowerShell | Ondersteund. Zie [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot blobgegevens](../blobs/authorize-data-operations-powershell.md) of [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot wachtrij gegevens](../queues/authorize-data-operations-powershell.md)voor meer informatie over het autoriseren van Power shell-opdrachten voor BLOB-of wachtrij bewerkingen met Azure AD. |
 | Azure CLI | Ondersteund. Zie [Azure cli-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-of wachtrij gegevens](../blobs/authorize-data-operations-cli.md)voor meer informatie over het autoriseren van Azure cli-opdrachten met Azure AD voor toegang tot Blob-en wachtrij gegevens. |
 | Azure IoT Hub | Ondersteund. Zie [IOT hub-ondersteuning voor virtuele netwerken](../../iot-hub/virtual-network-support.md)voor meer informatie. |
-| Azure Cloud Shell | Azure Cloud Shell is een geïntegreerde shell in de Azure Portal. Azure Cloud Shell hosts bestanden voor persistentie in een Azure-bestands share in een opslag account. Deze bestanden worden niet meer toegankelijk als de autorisatie van de gedeelde sleutel niet is toegestaan voor dat opslag account. Zie [verbinding maken met de opslag van uw Microsoft Azure-bestanden](../../cloud-shell/overview.md#connect-your-microsoft-azure-files-storage)voor meer informatie. <br /><br /> Als u de opdrachten in Azure Cloud Shell wilt uitvoeren om opslag accounts te beheren waarvoor gedeelde-sleutel toegang niet is toegestaan, moet u eerst controleren of u de benodigde machtigingen voor deze accounts hebt gekregen via Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Zie [Wat is Azure Role-based Access Control (Azure RBAC)?](../../role-based-access-control/overview.md)voor meer informatie. |
+| Azure Cloud Shell | Azure Cloud Shell is een geïntegreerde shell in de Azure Portal. Azure Cloud Shell hosts bestanden voor persistentie in een Azure-bestands share in een opslag account. Deze bestanden worden niet meer toegankelijk als de autorisatie van de gedeelde sleutel niet is toegestaan voor dat opslag account. Zie [verbinding maken met de opslag van uw Microsoft Azure-bestanden](../../cloud-shell/overview.md#connect-your-microsoft-azure-files-storage)voor meer informatie. <br /><br /> Als u de opdrachten in Azure Cloud Shell wilt uitvoeren om opslag accounts te beheren waarvoor gedeelde-sleutel toegang niet is toegestaan, moet u eerst controleren of u de juiste machtigingen hebt gekregen voor deze accounts via Azure RBAC. Zie [Wat is Azure Role-based Access Control (Azure RBAC)?](../../role-based-access-control/overview.md)voor meer informatie. |
 
 ## <a name="about-the-preview"></a>Over de preview-versie
 
@@ -240,10 +255,6 @@ Azure-metrische gegevens en logboek registratie Azure Monitor geen onderscheid m
 - Een SAS voor gebruikers overdracht is geautoriseerd met Azure AD en is toegestaan op een aanvraag voor Blob-opslag wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **False**.
 
 Wanneer u het verkeer naar uw opslag account evalueert, moet u er rekening mee houden dat metrische gegevens en logboeken zoals beschreven in [het type verificatie dat door client toepassingen wordt gebruikt](#detect-the-type-of-authorization-used-by-client-applications) , aanvragen kunnen bevatten die zijn gemaakt met een SAS voor gebruikers overdracht. Voor meer informatie over hoe Azure Storage reageert op een SAS wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **Onwaar**, Zie [begrijpen hoe het niet toestaan van gedeelde sleutels van invloed is op SAS-tokens](#understand-how-disallowing-shared-key-affects-sas-tokens).
-
-### <a name="requests-with-sas-tokens-are-permitted-for-queues-tables-and-files-when-allowsharedkeyaccess-is-false"></a>Aanvragen met SAS-tokens zijn toegestaan voor wacht rijen, tabellen en bestanden wanneer AllowSharedKeyAccess is ingesteld op False
-
-Wanneer de toegang tot gedeelde sleutels niet is toegestaan voor het opslag account tijdens de preview, blijven gedeelde toegangs handtekeningen die doel wachtrij-, tabel-of Azure Files resources zijn toegestaan. Deze beperking is van toepassing op zowel service SAS-tokens als account-SAS-tokens. Beide typen SA'S worden geautoriseerd met een gedeelde sleutel.
 
 ## <a name="next-steps"></a>Volgende stappen
 

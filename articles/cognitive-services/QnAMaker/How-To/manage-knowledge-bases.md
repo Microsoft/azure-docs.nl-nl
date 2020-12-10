@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 8c13dc0854fb29467b0fe8a1ce5f2dfc1c19bd78
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c7bb79cbd67ba2fb151641ddeeb31b54e399b906
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352334"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938253"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>Knowledge Base maken en instellingen beheren
 
@@ -46,7 +46,7 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
     |--|--|
     |**Schakel uitpakken van meerdere paden in vanuit URL's, .pdf- of .docx-bestanden.**|Ingeschakeld|
     |**Standaardantwoordtekst**| `Quickstart - default answer not found.`|
-    |**+ URL toevoegen**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**+ URL toevoegen**|`https://azure.microsoft.com/en-us/support/faq/`|
     |**Chit-chat**|**Professional** selecteren|
 
 1. Selecteer in **stap 5**, **Uw KB maken**.
@@ -67,7 +67,7 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
 
 1.  Selecteer **Instellingen**. De volgende lijst bevat velden die u kunt wijzigen.
 
-       |Doel|Bewerking|
+       |Doel|Actie|
        |--|--|
        |URL toevoegen|U kunt nieuwe Url's toevoegen om nieuwe veelgestelde vragen over inhoud toe te voegen aan de Knowledge Base door te klikken op **Knowledge Base beheren-> koppeling + URL toevoegen** .|
        |URL verwijderen|U kunt bestaande Url's verwijderen door het pictogram verwijderen te selecteren, de prullenbak kan.|

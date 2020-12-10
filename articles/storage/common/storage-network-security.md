@@ -9,12 +9,12 @@ ms.date: 12/08/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 07ad0714d0294ad90150acb9df14f17bfc1f5f0d
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: c2074402225c8134329e00003e4fbdfd95b5dba6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905363"
+ms.locfileid: "96938405"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Firewalls en virtuele netwerken voor Azure Storage configureren
 
@@ -64,7 +64,7 @@ U kunt de standaard regels voor netwerk toegang voor opslag accounts beheren via
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
+1. Klik op het menu instellingen met de naam **netwerk**.
 
 1. Als u de toegang standaard wilt weigeren, kiest u toegang vanaf **geselecteerde netwerken** toestaan. Als u verkeer van alle netwerken wilt toestaan, verleent u toegang vanaf **Alle netwerken**.
 
@@ -148,7 +148,7 @@ U kunt regels voor virtuele netwerken voor opslag accounts beheren via de Azure 
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
+1. Klik op het menu instellingen met de naam **netwerk**.
 
 1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 
@@ -272,7 +272,7 @@ U kunt IP-netwerk regels voor opslag accounts beheren via de Azure Portal, Power
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
+1. Klik op het menu instellingen met de naam **netwerk**.
 
 1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 
@@ -415,7 +415,7 @@ U kunt netwerk regel uitzonderingen beheren via de Azure Portal, Power shell of 
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
+1. Klik op het menu instellingen met de naam **netwerk**.
 
 1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 

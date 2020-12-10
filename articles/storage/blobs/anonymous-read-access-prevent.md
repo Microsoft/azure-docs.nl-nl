@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/02/2020
+ms.date: 12/09/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: f12a899d3b6daa3b233e6a799871afca1e24d046
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 179e60a41a9cd6a2277959b3cd31159c796d845d
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533741"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937284"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs voor komen
 
@@ -287,6 +287,23 @@ Nadat u het beleid met het effect deny hebt gemaakt en aan een bereik hebt toege
 In de volgende afbeelding ziet u de fout die optreedt wanneer u probeert om een opslag account te maken dat open bare toegang (de standaard waarde voor een nieuw account) toestaat wanneer een beleid met een deny-effect vereist dat open bare toegang niet is toegestaan.
 
 :::image type="content" source="media/anonymous-read-access-prevent/deny-policy-error.png" alt-text="Scherm opname met de fout die optreedt bij het maken van een opslag account in schending van het beleid":::
+
+## <a name="permissions-for-allowing-or-disallowing-public-access"></a>Machtigingen voor het toestaan of weigeren van open bare toegang
+
+Als u de eigenschap **AllowBlobPublicAccess** voor het opslag account wilt instellen, moet een gebruiker gemachtigd zijn om opslag accounts te maken en te beheren. Azure RBAC-rollen (op rollen gebaseerd toegangs beheer) die deze machtigingen bieden, zijn onder andere de actie **micro soft. Storage/Storage accounts/write** of **micro \* soft. Storage/Storage accounts/* _. Ingebouwde rollen met deze actie zijn onder andere:
+
+- De rol van Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner)
+- De rol [inzender](../../role-based-access-control/built-in-roles.md#contributor) Azure Resource Manager
+- De rol [Inzender voor opslag accounts](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
+
+Deze rollen bieden geen toegang tot gegevens in een opslag account via Azure Active Directory (Azure AD). Ze bevatten echter de _ * micro soft. Storage/Storage accounts/listkeys ophalen/Action * *, waarmee toegang wordt verleend aan de toegangs sleutels voor het account. Met deze machtiging kan een gebruiker de toegangs sleutels voor het account gebruiken om toegang te krijgen tot alle gegevens in een opslag account.
+
+Roltoewijzingen moeten zijn gericht op het niveau van het opslag account of hoger, zodat een gebruiker open bare toegang tot het opslag account toestaat of weigert. Zie [inzicht in het bereik voor Azure RBAC](../../role-based-access-control/scope-overview.md)voor meer informatie over het gebruikersrol bereik.
+
+Zorg ervoor dat u alleen de toewijzing van deze rollen beperkt tot degenen die de mogelijkheid moeten hebben om een opslag account te maken of om de eigenschappen ervan bij te werken. Gebruik het principe van minimale bevoegdheden om ervoor te zorgen dat gebruikers de minste machtigingen hebben die ze nodig hebben om hun taken uit te voeren. Zie [Aanbevolen procedures voor Azure RBAC](../../role-based-access-control/best-practices.md)voor meer informatie over het beheren van toegang met Azure RBAC.
+
+> [!NOTE]
+> De service beheerder rollen van de klassieke abonnements beheerder en Co-Administrator omvatten het equivalent van de Azure Resource Manager [eigenaar](../../role-based-access-control/built-in-roles.md#owner) van de rol. De rol **eigenaar** omvat alle acties, dus een gebruiker met een van deze beheerders rollen kan ook opslag accounts maken en beheren. Zie [Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-beheerdersrollen](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

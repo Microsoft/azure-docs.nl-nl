@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 12/03/2020
+ms.date: 12/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 21b1004a347dec3a7f2a6460d8b853350bf36ff0
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 5559e491be15f8f848329405736fc977267c70cc
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571042"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938593"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>High Performance Computing VM-grootten
 
@@ -29,6 +29,9 @@ HBv2 Vm's feature 200 GB/sec Mellanox HDR InfiniBand, terwijl zowel de virtuele 
 [HC-serie](hc-series.md) Vm's zijn geoptimaliseerd voor toepassingen die worden aangedreven door een compacte reken kracht, zoals impliciete, geeindigd element analyse, moleculaire dynamiek en reken kundige schei kunde. HC Vm's feature 44 Intel Xeon Platinum 8168-processor kernen, 8 GB aan RAM per CPU-kern en geen hyperthreading. Het Intel Xeon Platinum-platform biedt ondersteuning voor een uitgebreid ecosysteem van Intel-software Programma's zoals de Intel math-kernelmodus.
 
 [H-serie](h-series.md) Vm's zijn geoptimaliseerd voor toepassingen die worden aangedreven door hoge CPU-frequenties of grote geheugen per kern vereisten. Met de H-serie Vm's functie 8 of 16 Intel Xeon E5 2667 v3 processor cores, 7 of 14 GB RAM per CPU-kern en zonder hyperthreading. Functies van de H-serie 56 GB/sec Mellanox FDR InfiniBand in een niet-blokkerende Fat-structuur configuratie voor consistente RDMA-prestaties. Virtuele machines uit de H-serie ondersteunen Intel MPI 5. x en MS-MPI.
+
+> [!NOTE]
+> Alle virtuele machines uit de HBv2-, HB-en HC-serie hebben exclusieve toegang tot de fysieke servers. Er is slechts één virtuele machine per fysieke server en er is geen gedeeld multitenancy met andere virtuele machines voor deze VM-grootten.
 
 > [!NOTE]
 > De [A8-A11-vm's](./sizes-previous-gen.md#a-series---compute-intensive-instances) worden gepland voor buiten gebruiks telling op 3/2021. Zie voor meer informatie [HPC-migratie handleiding](https://azure.microsoft.com/resources/hpc-migration-guide/).

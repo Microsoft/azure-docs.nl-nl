@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: 9189d4d8cda5f9fcfce7e6ac2097414aa29f0a68
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: fc15176318dcfae99434f50a0b4370f371cec05a
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317466"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938236"
 ---
 # <a name="increase-the-resilience-of-authentication-and-authorization-in-client-applications-you-develop"></a>Verhoog de flexibiliteit van verificatie en autorisatie in client toepassingen die u ontwikkelt
 
@@ -30,7 +30,9 @@ MSAL slaat tokens op en gebruikt een patroon voor het ophalen van Silent-tokens.
 
 ![Afbeelding van een apparaat met en toepassing met behulp van MSAL om micro soft Identity aan te roepen](media/resilience-client-app/resilience-with-microsoft-authentication-library.png)
 
-Wanneer u MSAL gebruikt, kunt u tokens in de cache opslaan, vernieuwen en Silent-tokens ophalen met behulp van het volgende patroon.
+Bij het gebruik van MSAL, wordt het in de cache opslaan van tokens, vernieuwen en Silent-aanschaf automatisch ondersteund. U kunt eenvoudige patronen gebruiken om de tokens te verkrijgen die nodig zijn voor moderne verificatie. We ondersteunen veel talen en u kunt een voor beeld vinden dat overeenkomt met uw taal en scenario op onze pagina met voor [beelden](https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code) .
+
+## <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 try
@@ -42,6 +44,28 @@ catch(MsalUiRequiredException ex)
     result = await app.AcquireToken(scopes).WithClaims(ex.Claims).ExecuteAsync()
 }
 ```
+
+## <a name="javascript"></a>[Ondersteunen](#tab/javascript)
+
+```javascript
+return myMSALObj.acquireTokenSilent(request).catch(error => {
+    console.warn("silent token acquisition fails. acquiring token using redirect");
+    if (error instanceof msal.InteractionRequiredAuthError) {
+        // fallback to interaction when silent call fails
+        return myMSALObj.acquireTokenPopup(request).then(tokenResponse => {
+            console.log(tokenResponse);
+
+            return tokenResponse;
+        }).catch(error => {
+            console.error(error);
+        });
+    } else {
+        console.warn(error);
+    }
+});
+```
+
+---
 
 MSAL kan in sommige gevallen proactief tokens vernieuwen. Wanneer de micro soft-identiteit een langlopend token uitgeeft, kan deze informatie naar de client verzenden voor de optimale tijd voor het vernieuwen van het token ("vernieuwen \_ in"). MSAL zal het token proactief vernieuwen op basis van deze gegevens. De app wordt uitgevoerd terwijl het oude token geldig is, maar zal een langere periode hebben om een nieuwe geslaagde token verwerving te maken.
 
@@ -65,7 +89,9 @@ Ontwikkel aars moeten een proces voor het bijwerken van de nieuwste MSAL-versie 
 
 [Controleer de nieuwste versie van micro soft. Identity. Web en release-opmerkingen](https://github.com/AzureAD/microsoft-identity-web/releases)
 
-## <a name="if-not-using-msal-use-these-resilient-patterns-for-token-handling"></a>Als u MSAL niet gebruikt, gebruikt u deze flexibele patronen voor het verwerken van tokens
+## <a name="use-resilient-patterns-for-token-handling"></a>Flexibele patronen gebruiken voor het verwerken van tokens
+
+Als u geen gebruik maakt van MSAL, kunt u deze flexibele patronen gebruiken voor het verwerken van tokens. Deze aanbevolen procedures worden automatisch geïmplementeerd door de MSAL-bibliotheek. 
 
 Over het algemeen roept een toepassing die gebruikmaakt van moderne verificatie een eind punt aan om tokens op te halen die de gebruiker verifiëren of de toepassing autoriseren om beveiligde Api's aan te roepen. MSAL is bedoeld om de details van de verificatie te verwerken en verschillende patronen te implementeren om de tolerantie van dit proces te verbeteren. Gebruik de richt lijnen in deze sectie om aanbevolen procedures te implementeren als u ervoor kiest om een andere bibliotheek dan MSAL te gebruiken. Als u MSAL gebruikt, kunt u al deze aanbevolen procedures gratis uitvoeren, omdat MSAL deze automatisch implementeert.
 

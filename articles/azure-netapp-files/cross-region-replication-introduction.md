@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/23/2020
+ms.date: 12/09/2020
 ms.author: b-juche
-ms.openlocfilehash: db1e8ce2e4fe9ae81bc2299ae70e9ff83941b5b4
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 7c78d5fa89d6d4f3c73bdd1fe9b6d2fdae97c011
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95245871"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937471"
 ---
 # <a name="cross-region-replication-of-azure-netapp-files-volumes"></a>Replicatie tussen regio's van Azure NetApp Files volumes
 
@@ -38,14 +38,15 @@ Azure NetApp Files volume replicatie is momenteel beschikbaar in de volgende vas
 * VS Zuid-Centraal en VS-Oost
 * VS Zuid-Centraal en VS Oost 2 
 * VS Oost 2 en VS Centraal 
-* Europa-noord en Europa-west
-* UK-zuid en UK-west
 * Australië-oost en Australië-zuidoost
 * Canada-centraal en Canada-oost
-* Japan-Oost en Japan-West
-* UK-zuid en Duitsland-west-centraal
-* Zuidoost-Azië en Australië-oost
 * Centraal-India en India-zuid
+* Duitsland-west-centraal en Duitsland-noord
+* Japan-Oost en Japan-West
+* Europa-noord en Europa-west
+* Zuidoost-Azië en Australië-oost
+* UK-zuid en Duitsland-west-centraal
+* UK-zuid en UK-west
 
 ## <a name="service-level-objectives"></a>Serviceniveau doelstellingen
 
@@ -111,11 +112,11 @@ De kosten voor de opslag capaciteit van de vaste Azure NetApp Files voor maand 2
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
-* [Volume replicatie maken](cross-region-replication-create-peering.md)
+* [Volumereplicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
-* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
+* [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 
 

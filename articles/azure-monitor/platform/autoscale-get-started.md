@@ -4,12 +4,12 @@ description: Meer informatie over het schalen van uw resource web-app, Cloud ser
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 95f94bd1e80c05658d9033047950d4b49fca4643
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: bf0194e82acde0406cfeb57af027831f92a90c92
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920664"
+ms.locfileid: "96938304"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met Automatische schaalaanpassing in Azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
@@ -136,9 +136,11 @@ Wanneer het pad voor de status controle wordt gegeven, wordt door App Service he
 > [!NOTE]
 > Houd er rekening mee dat uw App Service plan moet worden uitgeschaald naar twee of meer exemplaren en een **eenvoudige laag of hoger** zijn om de Load Balancer uitzonde ring te laten optreden. Als u slechts één exemplaar hebt, wordt het niet verwijderd uit het load balancer, zelfs niet als het een slechte status heeft. 
 
-De resterende in orde zijnde instanties kunnen een grotere belasting hebben. Om te voor komen dat de resterende instanties overblijven, worden niet meer dan de helft van uw instanties uitgesloten. Als een App Service plan bijvoorbeeld wordt uitgeschaald naar vier instanties en 3 van de status niet in orde, wordt Maxi maal 2 uitgesloten van de loadbalancer-rotatie. De andere twee instanties (1 in orde en 1 zijn beschadigd) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, kunt u de `WEBSITE_HEALTHCHECK_MAXUNHEALTHYWORKERPERCENT` app-instelling instellen op een waarde tussen `0` en `100` . Als u dit instelt op een hogere waarde, worden er meer beschadigde instanties verwijderd (de standaard waarde is 50).
+Daarnaast wordt het status controlepad gepingd wanneer instanties worden toegevoegd of opnieuw worden gestart, zoals tijdens het uitschalen van bewerkingen, het hand matig opnieuw opstarten of het implementeren van code via de SCM-site. Als de status controle mislukt tijdens deze bewerkingen, worden de mislukte instanties niet toegevoegd aan de load balancer. Dit voor komt dat deze bewerkingen een negatieve invloed hebben op de beschik baarheid van uw toepassing.
 
-Als een exemplaar gedurende één uur niet in orde is, wordt het vervangen door een nieuw exemplaar. Er wordt Maxi maal één exemplaar per uur vervangen, met een maximum van drie exemplaren per dag per App Service plan.
+Wanneer u status controle gebruikt, kunnen uw resterende gezonde instanties meer belasting ondervinden. Om te voor komen dat de resterende instanties overblijven, worden niet meer dan de helft van uw instanties uitgesloten. Als een App Service plan bijvoorbeeld wordt uitgeschaald naar vier instanties en 3 van de status niet in orde, wordt Maxi maal 2 uitgesloten van de loadbalancer-rotatie. De andere twee instanties (1 in orde en 1 zijn beschadigd) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, kunt u de `WEBSITE_HEALTHCHECK_MAXUNHEALTHYWORKERPERCENT` app-instelling instellen op een waarde tussen `0` en `100` . Als u dit instelt op een hogere waarde, worden er meer beschadigde instanties verwijderd (de standaard waarde is 50).
+
+Als de status controles gedurende één uur mislukken voor alle apps op een exemplaar, wordt het exemplaar vervangen. Er wordt Maxi maal één exemplaar per uur vervangen, met een maximum van drie exemplaren per dag per App Service plan.
 
 ### <a name="monitoring"></a>Bewaking
 

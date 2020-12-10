@@ -10,17 +10,17 @@ tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/14/2019
 ms.author: kaanan
-ms.openlocfilehash: ceafbacb4cfc99b5327423ff1a50b82292030893
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c468f289c9dbfe949890c5462dd7c9be3e548d5a
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479252"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938757"
 ---
 # <a name="virtual-network-tap"></a>Virtual Network TAP
 > [!IMPORTANT]
@@ -38,7 +38,7 @@ Voordat u een virtueel netwerk maakt, moet u een bevestigings bericht hebben ont
 
 De accounts die u gebruikt voor het Toep assen van TIKT op netwerk interfaces, moeten worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste rol](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) waaraan de nodige acties zijn toegewezen in de volgende tabel:
 
-| Actie | Naam |
+| Actie | Name |
 |---|---|
 | Micro soft. Network/virtualNetworkTaps/* | Vereist voor het maken, bijwerken, lezen en verwijderen van een virtueel netwerk Tik op resource |
 | Micro soft. Network/networkInterfaces/lezen | Vereist voor het lezen van de netwerk interface bron waarop de Tik wordt geconfigureerd |

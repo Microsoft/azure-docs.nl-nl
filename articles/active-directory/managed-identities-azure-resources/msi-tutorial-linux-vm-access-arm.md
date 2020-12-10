@@ -12,20 +12,18 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/03/2020
+ms.date: 12/01/2020
 ms.author: barclayn
 ROBOTS: NOINDEX,NOFOLLOW
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f899a6c1b4f359f7e8d6e1e05389aa697b4f1bd7
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 247b3c1b4341eff11069a6af324fff5cf1fba62c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359694"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546587"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>Zelfstudie: een door de gebruiker toegewezen beheerde identiteit gebruiken op een Linux-VM om toegang te krijgen tot Azure Resource Manager
-
-[!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
 In deze zelfstudie wordt uitgelegd hoe u een door de gebruiker toegewezen beheerde identiteit maakt, deze toewijst aan een Linux-VM en die identiteit vervolgens gebruikt om toegang te krijgen tot de Azure Resource Manager-API. Beheerde identiteiten voor Azure-resources worden automatisch beheerd door Azure. Ze maken verificatie mogelijk voor services die Azure AD-verificatie ondersteunen, zonder dat er referenties in uw code hoeven te worden ingesloten. 
 

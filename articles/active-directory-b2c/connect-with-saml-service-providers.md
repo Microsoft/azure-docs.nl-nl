@@ -12,12 +12,12 @@ ms.date: 11/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 7c6ba79a82fe3d291008f3317ddce7df4adcda0a
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: ad7fe062d30f6858296ad4a2638b62c190862365
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "96309644"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936434"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -39,7 +39,7 @@ Samen vatting van de twee niet-exclusieve kern scenario's met SAML:
 | Scenario | Azure AD B2C rol | Uitleg |
 | -------- | ----------------- | ------- |
 | Mijn toepassing verwacht een SAML-bevestiging om een verificatie te volt ooien. | **Azure AD B2C fungeert als de ID-provider (IdP)**<br />Azure AD B2C fungeert als een SAML-IdP voor de toepassingen. | Dit artikel. |
-| Mijn gebruikers hebben eenmalige aanmelding nodig met een id-provider die SAML-compatibel is, zoals ADFS, Sales Force of shibboleth.  | **Azure AD B2C fungeert als service provider (SP)**<br />Azure AD B2C fungeert als een service provider bij het maken van verbinding met de SAML-ID-provider. Het is een Federatie proxy tussen uw toepassing en de SAML-ID-provider.  | <ul><li>[Aanmelden met behulp van aangepast beleid instellen met ADFS als een SAML-IdP](identity-provider-adfs2016-custom.md)</li><li>[Aanmelden met een Sales Force SAML-provider instellen met behulp van aangepast beleid](identity-provider-salesforce-custom.md)</li></ul> |
+| Mijn gebruikers hebben eenmalige aanmelding nodig met een id-provider die SAML-compatibel is, zoals ADFS, Sales Force of shibboleth.  | **Azure AD B2C fungeert als service provider (SP)**<br />Azure AD B2C fungeert als een service provider bij het maken van verbinding met de SAML-ID-provider. Het is een Federatie proxy tussen uw toepassing en de SAML-ID-provider.  | <ul><li>[Aanmelden met behulp van aangepast beleid instellen met ADFS als een SAML-IdP](identity-provider-adfs.md)</li><li>[Aanmelden met een Sales Force SAML-provider instellen met behulp van aangepast beleid](identity-provider-salesforce.md)</li></ul> |
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -393,7 +393,7 @@ Als u wilt dat Azure AD B2C versleutelde beweringen verzendt, stelt u het **Want
 
 ## <a name="enable-identity-provider-initiated-flow-optional"></a>Door ID-provider geïnitieerde stroom inschakelen (optioneel)
 
-In de door de provider geïnitieerde stroom wordt het aanmeldings proces geïnitieerd door de ID-provider (Azure AD B2C), die een ongevraagd SAML-antwoord naar de service provider (uw Relying Party toepassing) verzendt. Er worden momenteel geen scenario's ondersteund waarbij de initiator-ID-provider een externe ID-provider is, bijvoorbeeld [AD-FS](identity-provider-adfs2016-custom.md)of [Sales Force](identity-provider-salesforce-custom.md).
+In de door de provider geïnitieerde stroom wordt het aanmeldings proces geïnitieerd door de ID-provider (Azure AD B2C), die een ongevraagd SAML-antwoord naar de service provider (uw Relying Party toepassing) verzendt. Er worden momenteel geen scenario's ondersteund waarbij de initiator-ID-provider een externe ID-provider is, bijvoorbeeld [AD-FS](identity-provider-adfs.md)of [Sales Force](identity-provider-salesforce.md).
 
 Als u de stroom voor de ID-provider (Azure AD B2C) wilt inschakelen, stelt u het **IdpInitiatedProfileEnabled** -meta gegevens item `true` in op in het [technische profiel van Relying Party](relyingparty.md#technicalprofile).
 
@@ -443,7 +443,7 @@ De volgende opties voor SAML-Relying Party (RP) worden ondersteund via uw eigen 
 
 Een SAML-token is een beveiligings token dat is uitgegeven door Azure AD B2C nadat het aanmelden is geslaagd. Het bevat informatie over de gebruiker, de service provider waarvoor het token is bedoeld, de hand tekening en de geldigheids duur. De volgende tabel geeft een lijst van de claims en eigenschappen die u kunt verwachten in een SAML-token dat is uitgegeven door Azure AD B2C.
 
-|Element  |Eigenschap  |Notities  |
+|Element  |Eigenschap  |Opmerkingen  |
 |---------|---------|---------|
 |`<Response>`| `ID` | Een automatisch gegenereerde unieke id van het antwoord. | 
 |`<Response>`| `InResponseTo` | De ID van de SAML-aanvraag waarnaar dit bericht wordt gestuurd. | 

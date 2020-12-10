@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/03/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a3eefdb742d847950819fccfd87b9b5501cbefd
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f43a890185fcd69967fd2a035c27e1cf92798f04
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93079237"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548151"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Aan de slag met de Azure Cosmos DB Table-API en Azure Table Storage met behulp van de .NET-SDK
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -83,7 +83,7 @@ Volg deze stappen voor het verkrijgen van het NuGet-pakket:
    }
    ```
 
-1. Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen** , **Nieuw item** en voeg een klasse genaamd **AppSettings.cs** toe.
+1. Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen**, **Nieuw item** en voeg een klasse genaamd **AppSettings.cs** toe.
 
 1. Voeg de volgende code toe aan het bestand AppSettings.cs. Dit bestand leest de verbindingsreeks uit het bestand Settings.json en wijst deze toe aan de configuratieparameter:
 
@@ -91,7 +91,7 @@ Volg deze stappen voor het verkrijgen van het NuGet-pakket:
 
 ## <a name="parse-and-validate-the-connection-details"></a>De verbindingsgegevens parseren en valideren
 
-1. Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen** , **Nieuw item** en voeg een klasse genaamd **Common.cs** toe. U zult code schrijven om de verbindingsgegevens te valideren en een tabel te maken in deze klasse.
+1. Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen**, **Nieuw item** en voeg een klasse genaamd **Common.cs** toe. U zult code schrijven om de verbindingsgegevens te valideren en een tabel te maken in deze klasse.
 
 1. Definieer een methode `CreateStorageAccountFromConnectionString`, zoals hieronder weergegeven. Met deze methode worden de verbindingsgegevens geparseerd en wordt gevalideerd dat de accountnaam en -sleutel die in het bestand Settings.json zijn opgegeven, geldig zijn.
 
@@ -113,7 +113,7 @@ tableClient.TableClientConfiguration.UseRestExecutorForCosmosEndpoint = true;
 
 Entiteiten worden toegewezen aan C#-objecten met behulp van een aangepaste klasse die is afgeleid van [TableEntity](/dotnet/api/microsoft.azure.cosmos.table.tableentity). Als u een entiteit wilt toevoegen aan een tabel, maakt u een klasse die de eigenschappen van uw entiteit definieert.
 
-Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen** , **Nieuwe map** en noem de map **Model**. In de map Model voegt u een klasse genaamd **CustomerEntity.cs** toe en voegt u er de volgende code aan toe.
+Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen**, **Nieuwe map** en noem de map **Model**. In de map Model voegt u een klasse genaamd **CustomerEntity.cs** toe en voegt u er de volgende code aan toe.
 
 :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/Model/CustomerEntity.cs":::
 
@@ -123,25 +123,25 @@ Met deze code definieert u een entiteitsklasse die de voornaam van de klant als 
 
 Met het volgende codevoorbeeld wordt een entiteitsobject gemaakt en aan de tabel toegevoegd. De methode InsertOrMerge in de klasse [TableOperation](/dotnet/api/microsoft.azure.cosmos.table.tableoperation) wordt gebruikt om een entiteit in te voegen of samen te voegen. De methode [CloudTable.ExecuteAsync](/dotnet/api/microsoft.azure.cosmos.table.cloudtable.executeasync?preserve-view=true&view=azure-dotnet) wordt aangeroepen om de bewerking uit te voeren. 
 
-Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen** , **Nieuw item** en voeg een klasse genaamd **SamplesUtils.cs** toe. In deze klasse wordt alle code opgeslagen die vereist is om CRUD-bewerkingen op de entiteiten uit te voeren. 
+Klik met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen**, **Nieuw item** en voeg een klasse genaamd **SamplesUtils.cs** toe. In deze klasse wordt alle code opgeslagen die vereist is om CRUD-bewerkingen op de entiteiten uit te voeren. 
 
 :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="InsertItem":::
 
 ## <a name="get-an-entity-from-a-partition"></a>Een entiteit uit een partitie ophalen
 
-U kunt een entiteit uit een partitie ophalen door de methode Retrieve onder de klasse [TableOperation](/dotnet/api/microsoft.azure.cosmos.table.tableoperation) te gebruiken. Met het volgende codevoorbeeld worden de rijsleutel van de partitiesleutel, het e-mailadres en het telefoonnummer van een klantentiteit opgehaald. Met dit voorbeeld worden ook de aanvraageenheden afgedrukt die zijn verbruikt om query’s uit te voeren voor de entiteit. Als u query’s wilt uitvoeren voor een entiteit, voegt u de volgende code toe aan het bestand **SamplesUtils.cs** :
+U kunt een entiteit uit een partitie ophalen door de methode Retrieve onder de klasse [TableOperation](/dotnet/api/microsoft.azure.cosmos.table.tableoperation) te gebruiken. Met het volgende codevoorbeeld worden de rijsleutel van de partitiesleutel, het e-mailadres en het telefoonnummer van een klantentiteit opgehaald. Met dit voorbeeld worden ook de aanvraageenheden afgedrukt die zijn verbruikt om query’s uit te voeren voor de entiteit. Als u query’s wilt uitvoeren voor een entiteit, voegt u de volgende code toe aan het bestand **SamplesUtils.cs**:
 
 :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="QueryData":::
 
 ## <a name="delete-an-entity"></a>Een entiteit verwijderen
 
-U kunt een entiteit gemakkelijk verwijderen nadat u deze hebt opgehaald. Hiervoor gebruikt u hetzelfde patroon dat is getoond voor het bijwerken van een entiteit. Met de volgende code wordt een klantentiteit opgehaald en verwijderd. Als u een entiteit wilt verwijderen, voegt u de volgende code toe aan het bestand **SamplesUtils.cs** : 
+U kunt een entiteit gemakkelijk verwijderen nadat u deze hebt opgehaald. Hiervoor gebruikt u hetzelfde patroon dat is getoond voor het bijwerken van een entiteit. Met de volgende code wordt een klantentiteit opgehaald en verwijderd. Als u een entiteit wilt verwijderen, voegt u de volgende code toe aan het bestand **SamplesUtils.cs**: 
 
 :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="DeleteItem":::
 
 ## <a name="execute-the-crud-operations-on-sample-data"></a>De CRUD-bewerkingen uitvoeren op voorbeeldgegevens
 
-Nadat u de methoden hebt gedefinieerd om een tabel te maken en entiteiten in te voegen of samen te voegen, voert u deze methoden uit op de voorbeeldgegevens. Hiertoe klikt u met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen** , **Nieuw item** , voeg een klasse genaamd **BasicSamples.cs** toe en voeg de volgende code eraan toe. Met deze code wordt een tabel gemaakt en worden er entiteiten aan toegevoegd.
+Nadat u de methoden hebt gedefinieerd om een tabel te maken en entiteiten in te voegen of samen te voegen, voert u deze methoden uit op de voorbeeldgegevens. Hiertoe klikt u met de rechtermuisknop op uw project **CosmosTableSamples**. Selecteer **Toevoegen**, **Nieuw item**, voeg een klasse genaamd **BasicSamples.cs** toe en voeg de volgende code eraan toe. Met deze code wordt een tabel gemaakt en worden er entiteiten aan toegevoegd.
 
 Als u de entiteit en tabel aan het eind van het project niet wilt verwijderen, verwijdert u de opmerkingen van de methoden `await table.DeleteIfExistsAsync()` en `SamplesUtils.DeleteEntityAsync(table, customer)` uit de volgende code. U kunt het beste de opmerkingen van deze methoden verwijderen en de gegevens valideren voordat u de tabel verwijdert.
 
@@ -149,7 +149,7 @@ Als u de entiteit en tabel aan het eind van het project niet wilt verwijderen, v
 
 Met de vorige code wordt een tabel gemaakt die begint met ‘demo’ en wordt de gegenereerde GUID toegevoegd aan de tabelnaam. Vervolgens wordt een klantentiteit toegevoegd met ‘Harp Walter’ als voor- en achternaam en wordt het telefoonnummer van deze gebruiker later bijgewerkt. 
 
-In deze zelfstudie hebt u code gebouwd om eenvoudige CRUD-bewerkingen uit te voeren op de gegevens die in het Table-API-account zijn opgeslagen. U kunt ook geavanceerde bewerkingen uitvoeren, zoals batchinvoeging van gegevens, query’s uitvoeren op alle gegevens in een partitie, query’s uitvoeren op een reeks gegevens in een partitie, en tabellen in het account weergeven waarvan de namen beginnen met het opgegeven voorvoegsel. U kunt het volledige voorbeeld downloaden in de GitHub-opslagplaats [azure-cosmos-table-dotnet-core-getting-started](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started). De klasse [AdvancedSamples.cs](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started/blob/master/CosmosTableSamples/AdvancedSamples.cs) bevat nog meer bewerkingen die u op de gegevens kunt uitvoeren.  
+In deze zelfstudie hebt u code gebouwd om eenvoudige CRUD-bewerkingen uit te voeren op de gegevens die in het Table-API-account zijn opgeslagen. U kunt ook geavanceerde bewerkingen uitvoeren, zoals batchinvoeging van gegevens, query’s uitvoeren op alle gegevens in een partitie, query’s uitvoeren op een reeks gegevens in een partitie, en tabellen in het account weergeven waarvan de namen beginnen met het opgegeven voorvoegsel. U kunt het volledige voorbeeld downloaden in de GitHub-opslagplaats [azure-cosmos-table-dotnet-core-getting-started](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started). De klasse [AdvancedSamples.cs](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started/blob/main/CosmosTableSamples/AdvancedSamples.cs) bevat nog meer bewerkingen die u op de gegevens kunt uitvoeren.  
 
 ## <a name="run-the-project"></a>Het project uitvoeren
 

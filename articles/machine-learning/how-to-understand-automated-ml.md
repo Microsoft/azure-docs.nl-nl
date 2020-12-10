@@ -8,15 +8,15 @@ ms.author: chgrego
 ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 11/30/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2, automl
-ms.openlocfilehash: 43ce1c4865b3458ccd9c0ac17589f8ca5d77d92f
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: a3b3640922daf84357354efc389e20afea78d216
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922075"
+ms.locfileid: "96937709"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
@@ -81,7 +81,7 @@ balanced_accuracy|Nauw keurigheid in evenwicht is het reken kundige gemiddelde v
 f1_score|F1-Score is het harmonische gemiddelde van Precision en intrekken. Het is een goede evenwichtige maat eenheid voor zowel fout-positieve als onjuiste negatieven. Er wordt echter geen rekening gehouden met de waarde voor het account. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere,<li>  `f1_score_macro`: het reken kundige gemiddelde van de F1-score voor elke klasse. <li> `f1_score_micro`: berekend door het totale aantal positieve, onwaare negatieven en fout-positieven te tellen. <li> `f1_score_weighted`: gewogen gemiddelde per klasse frequentie van de F1-score voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)|
 log_loss|Dit is de functie verlies die wordt gebruikt in (MultiNomial) logistiek regressie en uitbrei dingen van IT, zoals Neural-netwerken, gedefinieerd als de negatieve kans op Logboeken van de werkelijke labels op basis van de voor spellingen van een Probabilistic-classificatie. <br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.log_loss.html)|
 norm_macro_recall| Genormaliseerde macro intrekken is een terugroep macro: gemiddeld en genormaliseerd, zodat wille keurige prestaties een Score van 0 hebben en de perfecte prestaties een Score van 1 hebben. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1] |`(recall_score_macro - R)`&nbsp;/&nbsp;`(1 - R)` <br><br>waar, `R` de verwachte waarde van `recall_score_macro` voor wille keurige voor spellingen.<br><br>`R = 0.5`&nbsp;voor &nbsp; binaire &nbsp; classificatie. <br>`R = (1 / C)` voor problemen met de classificatie van C-klasse.|
-Matthews-correlatie coëfficiënt | Matthews-correlatie coëfficiënt is een evenwichtige meet nauwkeurigheid, die zelfs kan worden gebruikt als één klasse veel meer steek proeven heeft dan de andere. Een coëfficiënt van 1 geeft perfecte voor spelling, 0 wille keurige voor spelling en-1 inverse voor spelling.<br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.matthews_corrcoef.html)|
+matthews_correlation | Matthews-correlatie coëfficiënt is een evenwichtige meet nauwkeurigheid, die zelfs kan worden gebruikt als één klasse veel meer steek proeven heeft dan de andere. Een coëfficiënt van 1 geeft perfecte voor spelling, 0 wille keurige voor spelling en-1 inverse voor spelling.<br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.matthews_corrcoef.html)|
 precisie|Precision is de mogelijkheid van een model om te voor komen dat negatieve steek proeven als positief worden gelabeld. <br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li> `precision_score_macro`, het reken kundige gemiddelde van de precisie voor elke klasse. <li> `precision_score_micro`, globaal berekend door het totale aantal positieve en foutieve positieven te tellen. <li> `precision_score_weighted`, het reken kundige gemiddelde van de precisie voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)|
 relevante overeenkomsten| Intrekken is de mogelijkheid van een model voor het detecteren van alle positieve voor beelden. <br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li>`recall_score_macro`: het reken kundige gemiddelde van het intrekken van elke klasse. <li> `recall_score_micro`: globaal berekend door het totale aantal positieve, onwaare negatieven en foutieve positieven te tellen.<li> `recall_score_weighted`: het reken kundige gemiddelde van het intrekken van elke klasse, gewogen op het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|
 weighted_accuracy|Gewogen nauw keurigheid is nauw keurig wanneer elk voor beeld wordt gewogen door het totale aantal steek proeven dat tot dezelfde klasse behoort. <br><br>**Doel stelling:** Dichter bij 1 hoe beter <br>**Bereik:** [0, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|
@@ -182,7 +182,7 @@ Een over-vertrouwbaar model heeft meer voor speld dat de waarschijnlijkheid geli
 
 ## <a name="regressionforecasting-metrics"></a>Metrische gegevens voor regressie/prognose
 
-Automatische ML berekent dezelfde metrische gegevens over prestaties voor elk gegenereerd model, ongeacht of het gaat om een regressie-of prognose-experiment. Deze metrische gegevens worden ook Norma Lise ring voor het maken van een vergelijking tussen modellen die zijn getraind voor gegevens met verschillende bereiken. Zie [metrische gegevens normalisatie](#metric-normalization) voor meer informatie  
+Automatische ML berekent dezelfde metrische gegevens over prestaties voor elk gegenereerd model, ongeacht of het gaat om een regressie-of prognose-experiment. Deze metrische gegevens worden ook Norma Lise ring voor het maken van een vergelijking tussen modellen die zijn getraind voor gegevens met verschillende bereiken. Zie [metrische normalisatie](#metric-normalization)voor meer informatie.  
 
 De volgende tabel bevat een overzicht van de prestatie gegevens voor modellen die zijn gegenereerd voor regressie-en prognose experimenten. Net als bij classificatie-metrische gegevens zijn deze metrische gegevens ook gebaseerd op de scikit leer implementaties. De relevante scikit-documentatie is dienovereenkomstig gekoppeld in het veld **berekening** .
 

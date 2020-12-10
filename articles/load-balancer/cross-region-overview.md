@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: f0630599c7c52f11a4cf3153bae38ad2d515b6bc
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 8a2ad6cea4ab97742261b1cfd84975b243a46e87
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029758"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938712"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -35,7 +35,7 @@ Azure Standard Load Balancer ondersteunt taak verdeling tussen regio's, waarbij 
 * [Bouwen op bestaande Load Balancer](#build-cross-region-solution-on-existing-azure-load-balancer) oplossing zonder leer curve
 
 > [!IMPORTANT]
-> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is verborgen in de preview-Portal. Meld u aan om **https://preview.portal.azure.com/?feature.globallb=true** de functie weer te geven en te implementeren.. </br> </br>
+> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is verborgen in de preview-portal. Meld u aan om **https://preview.portal.azure.com** de functie weer te geven en te implementeren.. </br> </br>
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De taak verdeling tussen regio's biedt dezelfde voor delen van hoge prestaties en lage latentie als regionale standaard load balancer. 
@@ -51,7 +51,7 @@ De front-end-IP-configuratie van uw load balancer voor meerdere regio's is stati
 
 Configureer regionale redundantie door een algemeen frontend openbaar IP-adres toe te voegen aan uw bestaande load balancers. 
 
-Als de ene regio uitvalt, wordt het verkeer doorgestuurd naar het dichtstbijzijnde regionale load balancer.  
+Als de ene regio uitvalt, wordt het verkeer doorgestuurd naar de dichtstbijzijnde regionale load balancer.  
 
 De status test van de Kruis regio load balancer informatie over beschik baarheid elke 20 seconden verzamelen. Als een regionale load balancer de beschik baarheid van 0 daalt, wordt de fout door de Kruis regio load balancer gedetecteerd. De regionale load balancer wordt vervolgens uit de rotatie gehaald. 
 
@@ -122,14 +122,14 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 * VS - west 
 * Europa - noord 
 * VS - zuid-centraal 
-* VS - west 2 
+* US - west 2 
 * Verenigd Koninkrijk Zuid 
 * Azië - zuidoost 
 * VS - noord-centraal 
-* Japan - oost 
+* Japan East 
 * Azië - oost 
 * VS - west-centraal 
-* Australië - zuidoost 
+* Australia Southeast 
 * Australië - oost 
 * India - centraal 
 

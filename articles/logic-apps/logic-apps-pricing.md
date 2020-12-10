@@ -7,13 +7,13 @@ author: jonfancey
 ms.author: jonfan
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
-ms.date: 10/29/2020
-ms.openlocfilehash: 486930776b4b4b6d852102be723ac1047ebd5e0a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.date: 12/07/2020
+ms.openlocfilehash: 520b4a0e87f27a90a604947ae0b558066b4ab82f
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098481"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937590"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Prijs model voor Azure Logic Apps
 
@@ -65,7 +65,7 @@ Voor Logic apps die u in een ISE maakt en uitvoert, betaalt u voor deze mogelijk
 
   * **Ontwikkelaar** ISE SKU: Eén integratie account voor de [gratis laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)
 
-  Elke ISE-SKU is beperkt tot 5 totale integratie accounts. Voor extra kosten kunt u meer integratie accounts hebben op basis van uw ISE-SKU:
+  Elk ISE kan een [beperkt aantal integratie accounts](logic-apps-limits-and-config.md#integration-account-limits)hebben, ongeacht de SKU. U kunt deze limiet verhogen voor extra kosten:
 
   * **Premium** ISE SKU: Maxi maal vier standaard accounts. Geen vrije of basis accounts.
 
@@ -85,13 +85,13 @@ Azure Logic Apps-connectors helpen uw logische app toegang te bieden tot apps, s
 
 Een trigger is altijd de eerste stap in de werk stroom van een logische app. Dit is een speciale actie waarmee een logisch app-exemplaar wordt gemaakt en uitgevoerd wanneer aan specifieke criteria wordt voldaan of een specifieke gebeurtenis plaatsvindt. Triggers handelen op verschillende manieren, wat van invloed is op hoe de logische app wordt gemeten. Hier volgen de verschillende soorten triggers die in Azure Logic Apps bestaan:
 
-* **Trigger voor terugkeer patroon** : u kunt deze algemene trigger gebruiken die niet specifiek is voor een service of systeem, om de werk stroom van de logische app te starten en een logische app-exemplaar te maken dat wordt uitgevoerd op basis van het terugkeer interval dat u in de trigger hebt ingesteld. U kunt bijvoorbeeld een terugkeer patroon trigger instellen die elke drie dagen of op een complexere planning wordt uitgevoerd.
+* **Trigger voor terugkeer patroon**: u kunt deze algemene trigger gebruiken die niet specifiek is voor een service of systeem, om de werk stroom van de logische app te starten en een logische app-exemplaar te maken dat wordt uitgevoerd op basis van het terugkeer interval dat u in de trigger hebt ingesteld. U kunt bijvoorbeeld een terugkeer patroon trigger instellen die elke drie dagen of op een complexere planning wordt uitgevoerd.
 
-* **Polling trigger** : u kunt deze meer gespecialiseerde terugkeer patroon trigger gebruiken die meestal is gekoppeld aan de beheerde connector voor een specifieke service of systeem, om te controleren of er gebeurtenissen of berichten zijn die voldoen aan de criteria voor het maken en uitvoeren van een logische app-exemplaar op basis van het terugkeer interval dat u in de trigger hebt ingesteld. Zelfs wanneer er geen exemplaar van een logische app wordt gemaakt, bijvoorbeeld wanneer triggers worden overgeslagen, metert de Logic Apps-service elke polling-aanvraag als een uitvoering. Als u het polling-interval wilt opgeven, stelt u de trigger in via de ontwerp functie voor logische apps.
+* **Polling trigger**: u kunt deze meer gespecialiseerde terugkeer patroon trigger gebruiken die meestal is gekoppeld aan de beheerde connector voor een specifieke service of systeem, om te controleren of er gebeurtenissen of berichten zijn die voldoen aan de criteria voor het maken en uitvoeren van een logische app-exemplaar op basis van het terugkeer interval dat u in de trigger hebt ingesteld. Zelfs wanneer er geen exemplaar van een logische app wordt gemaakt, bijvoorbeeld wanneer triggers worden overgeslagen, metert de Logic Apps-service elke polling-aanvraag als een uitvoering. Als u het polling-interval wilt opgeven, stelt u de trigger in via de ontwerp functie voor logische apps.
 
   [!INCLUDE [logic-apps-polling-trigger-non-standard-metering](../../includes/logic-apps-polling-trigger-non-standard-metering.md)]
 
-* **Webhook-trigger** : in plaats van een polling trigger te gebruiken, kunt u een webhook-trigger gebruiken om te wachten tot de client een aanvraag verzendt naar de logische app op een specifieke eind punt-URL. Elke aanvraag die naar het eind punt van de webhook wordt verzonden, telt als een actie-uitvoering. De trigger Request en HTTP-webhook zijn bijvoorbeeld zowel generieke webhook-triggers. Sommige connectors voor services of systemen hebben ook webhook-triggers.
+* **Webhook-trigger**: in plaats van een polling trigger te gebruiken, kunt u een webhook-trigger gebruiken om te wachten tot de client een aanvraag verzendt naar de logische app op een specifieke eind punt-URL. Elke aanvraag die naar het eind punt van de webhook wordt verzonden, telt als een actie-uitvoering. De trigger Request en HTTP-webhook zijn bijvoorbeeld zowel generieke webhook-triggers. Sommige connectors voor services of systemen hebben ook webhook-triggers.
 
 <a name="actions"></a>
 
@@ -118,19 +118,19 @@ Een [vast prijs model](https://azure.microsoft.com/pricing/details/logic-apps) i
 
 Azure Logic Apps biedt gratis, Basic-en Standard-integratie accounts. De lagen basis en standaard worden ondersteund door de Logic Apps Service Level Agreement (SLA), terwijl de laag gratis niet wordt ondersteund door een SLA en limieten heeft voor de beschik baarheid, door Voer en het gebruik van de regio. Met uitzonde ring van de integratie accounts voor de gratis laag kunt u in elke Azure-regio meer dan één integratie account hebben. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
 
-Als u een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), [Premium of Developer](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level)hebt, kan uw ISE 5 totale integratie accounts hebben. Zie de sectie vorig [vast prijs model](#fixed-pricing) in dit onderwerp voor meer informatie over hoe het vaste prijs model werkt voor een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
+Als u een [ISE ( *Integration service Environment* )](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)hebt, ongeacht de [SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), kan uw ISE een [beperkt aantal integratie accounts](logic-apps-limits-and-config.md#integration-account-limits)hebben, maar u kunt [deze limiet verhogen voor extra kosten](#fixed-pricing). Zie de sectie vorig [vast prijs model](#fixed-pricing) in dit onderwerp voor meer informatie over hoe het vaste prijs model werkt voor een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
 
 Als u wilt kiezen tussen een gratis, basis of standaard integratie account, raadpleegt u deze use-case-beschrijvingen:
 
-* **Gratis** : als u wilt proberen om verkennende scenario's, niet productie scenario's. Deze laag is alleen beschikbaar voor open bare regio's in azure, zoals vs-West of Zuidoost-Azië, maar niet voor [Azure China 21vianet](/azure/china/overview-operations) of [Azure Government](../azure-government/documentation-government-welcome.md).
+* **Gratis**: als u wilt proberen om verkennende scenario's, niet productie scenario's. Deze laag is alleen beschikbaar voor open bare regio's in azure, zoals vs-West of Zuidoost-Azië, maar niet voor [Azure China 21vianet](/azure/china/overview-operations) of [Azure Government](../azure-government/documentation-government-welcome.md).
 
-* **Basis** : voor wanneer u alleen bericht verwerking wilt of als een kleine zakelijke partner die een relatie heeft met een handels partner met een grotere bedrijfs entiteit
+* **Basis**: voor wanneer u alleen bericht verwerking wilt of als een kleine zakelijke partner die een relatie heeft met een handels partner met een grotere bedrijfs entiteit
 
-* **Standaard** : voor wanneer u COMPLEXere B2B-relaties hebt en een groter aantal entiteiten dat u moet beheren
+* **Standaard**: voor wanneer u COMPLEXere B2B-relaties hebt en een groter aantal entiteiten dat u moet beheren
 
 <a name="data-retention"></a>
 
-## <a name="data-retention"></a>Bewaartijd voor gegevens
+## <a name="data-retention"></a>Gegevensretentie
 
 Met uitzonde ring van Logic apps die worden uitgevoerd in een Integration service Environment (ISE), worden alle invoer en uitvoer die zijn opgeslagen in de uitvoerings geschiedenis van de logische app, gefactureerd op basis van de [uitvoerings periode](logic-apps-limits-and-config.md#run-duration-retention-limits)van een logische app. Logic apps die in een ISE worden uitgevoerd, zijn geen kosten voor het bewaren van gegevens. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
 
@@ -146,9 +146,9 @@ Om u te helpen bij het bewaken van het opslag verbruik van uw logische app, kunt
 
 1. Zoek en open uw logische app in de Azure Portal.
 
-1. Selecteer in het menu van de logische app, onder **bewaking** , **metrische gegevens** .
+1. Selecteer in het menu van de logische app, onder **bewaking**, **metrische gegevens**.
 
-1. Selecteer in het rechterdeel venster onder **grafiek titel** in de lijst **metriek** het **facturerings gebruik voor uitvoeringen van opslag verbruik** .
+1. Selecteer in het rechterdeel venster onder **grafiek titel** in de lijst **metriek** het **facturerings gebruik voor uitvoeringen van opslag verbruik**.
 
    Met deze metriek krijgt u het aantal verbruiks eenheden voor opslag in GB per maand dat wordt gefactureerd.
 
@@ -165,7 +165,7 @@ Om u te helpen bij het bewaken van het opslag verbruik van uw logische app, kunt
 
 1. Selecteer in het rechterdeel venster onder **uitvoerings geschiedenis** de uitvoering met de invoer en uitvoer die u wilt controleren.
 
-1. Kies onder **uitvoering van logische app** de optie **Details uitvoeren** .
+1. Kies onder **uitvoering van logische app** de optie **Details uitvoeren**.
 
 1. Selecteer de actie die u wilt weer geven in het detail venster van de **logische app-uitvoering** in de tabel acties, waarin de status en duur van elke actie worden vermeld.
 

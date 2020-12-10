@@ -12,12 +12,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 8cbc683f06b809ec4d9c63a61d73a0c731a92cd7
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 14b49c531ae11c056f9b6970e1ac00adcd68b296
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651615"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937165"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps
 
@@ -61,6 +61,7 @@ Toegang tot mijn apps kan worden geblokkeerd vanwege een probleem met het accoun
 -   [De multi-factor Authentication-status van een gebruiker controleren](#check-a-users-multi-factor-authentication-status)
 -   [De contact gegevens voor de verificatie van een gebruiker controleren](#check-a-users-authentication-contact-info)
 -   [De groepslid maatschappen van een gebruiker controleren](#check-a-users-group-memberships)
+-   [Controleren of een gebruiker meer dan 999 app-roltoewijzingen heeft](#check-if-a-user-has-more-than-999-app-role-assignments)
 -   [De toegewezen licenties van een gebruiker controleren](#check-a-users-assigned-licenses)
 -   [Een licentie toewijzen aan een gebruiker](#assign-a-user-a-license)
 
@@ -139,6 +140,16 @@ Voer de volgende stappen uit om de groepslid maatschappen van een gebruiker te c
 6.  **Zoek** naar de gebruiker die u wilt interesseren en **Selecteer de rij** die u wilt selecteren.
 7.  Selecteer **groepen** om te zien van welke groepen de gebruiker lid is.
 
+### <a name="check-if-a-user-has-more-than-999-app-role-assignments"></a>Controleren of een gebruiker meer dan 999 app-roltoewijzingen heeft
+Als aan een gebruiker meer dan 999 app-roltoewijzingen zijn toegewezen, worden mogelijk niet alle apps in mijn apps weer geven.
+
+Dit komt doordat mijn apps momenteel Maxi maal 999 app-roltoewijzingen lezen om te bepalen aan welke apps gebruikers worden toegewezen. Als een gebruiker is toegewezen aan meer dan 999 apps, is het niet mogelijk om te bepalen welke van deze apps wordt weer gegeven in de portal mijn apps.
+
+Ga als volgt te werk om het aantal toegewezen app-roltoewijzingen voor een gebruiker te controleren:
+1. Installeer de Power shell-module [**micro soft. Graph**](https://github.com/microsoftgraph/msgraph-sdk-powershell) .
+2. Voer uit `Connect-MgGraph -Scopes "Directory.Read.All"` en verifieer als **globale beheerder.**
+3. Voer uit `$m = Get-MgUserAppRoleAssignment -UserId "<userId>" | Measure; $m.Count` om te bepalen hoeveel app-roltoewijzingen aan de gebruiker momenteel zijn verleend.
+
 ### <a name="check-a-users-assigned-licenses"></a>De toegewezen licenties van een gebruiker controleren
 Voer de volgende stappen uit om de toegewezen licenties van een gebruiker te controleren:
 1.  Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder.**
@@ -172,14 +183,14 @@ Voer de volgende stappen uit om te controleren of u de juiste diepte koppeling h
 1. Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder** of **co-beheerder.**
 2. Open de **uitbrei ding Azure Active Directory** door **alle services** boven aan het hoofd navigatie menu te selecteren.
 3. Typ **' Azure Active Directory**' in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
-4. Selecteer **bedrijfs toepassingen** in het navigatie menu Azure Active Directory aan de linkerkant.
-5. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+4. Selecteer **Bedrijfstoepassingen** in het linkernavigatiemenu van Azure Active Directory.
+5. Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
    * Als u de toepassing die u wilt weer geven hier niet ziet, gebruikt u het **filter** besturings element boven aan de **lijst alle toepassingen** en stelt u de optie voor het **weer geven** van **alle toepassingen in.**
 6. Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder** of **co-beheerder.**
 7. Open de **uitbrei ding Azure Active Directory** door **alle services** boven aan het hoofd navigatie menu te selecteren.
 8. Typ **' Azure Active Directory**' in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
-9. Selecteer **bedrijfs toepassingen** in het navigatie menu Azure Active Directory aan de linkerkant.
-10. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+9. Selecteer **Bedrijfstoepassingen** in het linkernavigatiemenu van Azure Active Directory.
+10. Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
     * Als u de toepassing die u wilt weer geven hier niet ziet, gebruikt u het **filter** besturings element boven aan de **lijst alle toepassingen** en stelt u de optie voor het **weer geven** van **alle toepassingen in.**
 11. Selecteer de toepassing waarvoor u de diepe koppeling wilt controleren.
 12. Zoek het label **gebruikers toegangs-URL**. Uw diepte koppeling moet overeenkomen met deze URL.

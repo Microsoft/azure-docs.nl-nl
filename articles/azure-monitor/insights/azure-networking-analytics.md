@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 7df04bd75f3fd11b1caa702655cbd204fc2b4fda
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 9e2210cdbcc2916723c8c2e2ed1ef514d427c9d6
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854836"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032181"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Azure-netwerk bewakings oplossingen in Azure Monitor
 
@@ -120,6 +120,8 @@ Op het tabblad gedetailleerde meet gegevens weer geven wordt de vooraf ingevulde
 * Als u de Azure gateway Analytics-oplossing wilt opschonen vanuit uw werk ruimte, kunt u de oplossing verwijderen van de resource pagina van de oplossing.
 
 [![Scherm afbeelding van de optie voor het verwijderen van Azure-toepassing gateway Analytics-oplossing.](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
+
+Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../platform/workbooks-overview.md)
 
 ## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Analyse oplossing voor Azure-netwerk beveiligings groep in Azure Monitor
 

@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: ajburnle
 ms.reviewer: vincesm
-ms.custom: it-pro, seodec18, contperfq1
+ms.custom: it-pro, seodec18, contperf-fy21q1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8825dcb2d8dbcf4a1296d8bace84b3d2716687f
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 2c556940ace02f2e7bf0354e67d32df7c5c6714e
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602027"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032759"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Wat zijn de standaard machtigingen voor gebruikers in Azure Active Directory?
 In Azure Active Directory (Azure AD) wordt aan alle gebruikers een reeks standaardmachtigingen verleend. De toegang van een gebruiker bestaat uit het type gebruiker, hun [roltoewijzingen](active-directory-users-assign-role-azure-portal.md)en hun eigendom van afzonderlijke objecten. Dit artikel beschrijft deze standaardmachtigingen en bevat een vergelijking van de standaardinstellingen voor lid- en gastgebruikers. De standaard gebruikers machtigingen kunnen alleen worden gewijzigd in gebruikers instellingen in azure AD.

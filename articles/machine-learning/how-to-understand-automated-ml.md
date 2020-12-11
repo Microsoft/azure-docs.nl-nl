@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq2, automl
-ms.openlocfilehash: a3b3640922daf84357354efc389e20afea78d216
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.custom: how-to, contperf-fy21q2, automl
+ms.openlocfilehash: 747cc88cdea59017483245b59e4b2c56c4b06a40
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937709"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032929"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
@@ -190,6 +190,7 @@ De volgende tabel bevat een overzicht van de prestatie gegevens voor modellen di
 --|--|--|
 explained_variance|De uitleg afwijking meet de mate waarin een model accounts voor de variatie in de doel variabele. Het is het percentage afname van de oorspronkelijke gegevens tot de variantie van de fouten. Wanneer het gemiddelde van de fouten 0 is, is het gelijk aan het kwadraat van de berekening (Zie r2_score hieronder). <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html)|
 mean_absolute_error|De gemiddelde absolute fout is de verwachte waarde van de absolute waarde van het verschil tussen het doel en de voor spelling.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) <br><br> Dergelijke <br>`mean_absolute_error` <br>  `normalized_mean_absolute_error`, de mean_absolute_error gedeeld door het bereik van de gegevens. | [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|
+mean_absolute_percentage_error|Gemiddelde absolute percentage fout (MAPE) is een meting van het gemiddelde verschil tussen een voorspelde waarde en de werkelijke waarde.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) ||
 median_absolute_error|Mediaan absolute fout is de mediaan van alle absolute verschillen tussen het doel en de voor spelling. Dit verlies is robuust voor uitbijters.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke <br> `median_absolute_error`<br> `normalized_median_absolute_error`: de median_absolute_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|
 r2_score|R ^ 2 is de determinatie coëfficiënt of het percentage verlaging in kwadratische fouten ten opzichte van een basislijn model dat het gemiddelde uitvoert. <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|
 root_mean_squared_error |Root mean error (RMSE) is de vierkantswortel van het verwachte verschil in kwadraat tussen het doel en de voor spelling. Voor een onzuivere Estimator is RMSE gelijk aan de standaard deviatie.<br> <br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke<br> `root_mean_squared_error` <br> `normalized_root_mean_squared_error`: de root_mean_squared_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|

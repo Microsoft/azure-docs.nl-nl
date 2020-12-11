@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/19/2020
+ms.date: 12/10/2020
 ms.author: memildin
-ms.openlocfilehash: cf297cdeec88a31950d007246f987957db80e247
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ecfb4bdbd523dd1514333a2185186eab0a7e4aaa
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785881"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032674"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Beveiligingsoplossingen integreren in Azure Security Center
 Dit document helpt u bij het beheren van beveiligingsoplossingen die al zijn gekoppeld aan Azure Security Center en bij het toevoegen van nieuwe oplossingen.
@@ -26,11 +26,11 @@ Dit document helpt u bij het beheren van beveiligingsoplossingen die al zijn gek
 ## <a name="integrated-azure-security-solutions"></a>Geïntegreerde Azure-beveiligingsoplossingen
 Met Security Center kunt u gemakkelijk geïntegreerde beveiligingsoplossingen in Azure inschakelen. Voordelen zijn:
 
-- **Vereenvoudigde implementatie** : Security Center biedt gestroomlijnde inrichting van geïntegreerde partneroplossingen. Security Center kan de agent op uw virtuele machines inrichten voor oplossingen zoals antimalware en evaluatie van beveiligings problemen. Voor firewall apparaten kan Security Center een groot deel van de vereiste netwerk configuratie zijn.
-- **Geïntegreerde detecties** : beveiligings gebeurtenissen van partner oplossingen worden automatisch verzameld, geaggregeerd en weer gegeven als onderdeel van Security Center waarschuwingen en incidenten. Deze gebeurtenissen worden ook gekoppeld aan detecties van andere bronnen voor geavanceerde detectie van bedreigingen.
-- **Geïntegreerde statuscontrole en beheer** : klanten kunnen geïntegreerde statusgebeurtenissen gebruiken om alle partneroplossingen in één oogopslag te controleren. Er zijn basisbeheermogelijkheden beschikbaar, met eenvoudige toegang tot geavanceerde installatie met behulp van de partneroplossing.
+- **Vereenvoudigde implementatie**: Security Center biedt gestroomlijnde inrichting van geïntegreerde partneroplossingen. Security Center kan de agent op uw virtuele machines inrichten voor oplossingen zoals antimalware en evaluatie van beveiligings problemen. Voor firewall apparaten kan Security Center een groot deel van de vereiste netwerk configuratie zijn.
+- **Geïntegreerde detecties**: beveiligings gebeurtenissen van partner oplossingen worden automatisch verzameld, geaggregeerd en weer gegeven als onderdeel van Security Center waarschuwingen en incidenten. Deze gebeurtenissen worden ook gekoppeld aan detecties van andere bronnen voor geavanceerde detectie van bedreigingen.
+- **Geïntegreerde statuscontrole en beheer**: klanten kunnen geïntegreerde statusgebeurtenissen gebruiken om alle partneroplossingen in één oogopslag te controleren. Er zijn basisbeheermogelijkheden beschikbaar, met eenvoudige toegang tot geavanceerde installatie met behulp van de partneroplossing.
 
-Geïntegreerde beveiligings oplossingen omvatten momenteel de evaluatie van beveiligings problemen met [Qualys](https://www.qualys.com/public-cloud/#azure) en [Rapid7](https://www.rapid7.com/products/insightvm/) en micro soft Application Gateway Web Application firewall.
+Geïntegreerde beveiligings oplossingen omvatten momenteel de evaluatie van beveiligings problemen met [Qualys](https://www.qualys.com/public-cloud/#azure) en [Rapid7](https://www.rapid7.com/products/insightvm/) en [Microsoft Azure Web Application firewall op Azure-toepassing gateway](../web-application-firewall/ag/ag-overview.md).
 
 > [!NOTE]
 > Security Center installeert de Log Analytics agent niet op virtualisatie apparaten van de partner, omdat de meeste beveiligings leveranciers externe agents die op hun apparaten worden uitgevoerd, niet verbieden.
@@ -49,9 +49,9 @@ Azure-beveiligingsoplossingen die zijn geïmplementeerd vanuit Security Center, 
 
 ## <a name="manage-integrated-azure-security-solutions-and-other-data-sources"></a>Geïntegreerde Azure-beveiligingsoplossingen en andere gegevensbronnen beheren
 
-1. Open **Security Center** vanuit het [Azure Portal](https://azure.microsoft.com/features/azure-portal/).
+1. Ga naar [Azure Portal](https://azure.microsoft.com/features/azure-portal/) en open **Security Center**.
 
-1. Selecteer in het menu van Security Center **beveiligings oplossingen** .
+1. Selecteer in het menu van Security Center **beveiligings oplossingen**.
 
 Op de pagina **beveiligings oplossingen** kunt u de status van geïntegreerde Azure-beveiligings oplossingen bekijken en basis beheer taken uitvoeren.
 

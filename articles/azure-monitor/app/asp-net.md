@@ -3,13 +3,13 @@ title: Bewaking configureren voor ASP.NET met Azure-toepassing Insights | Micros
 description: Configureer prestaties, Beschik baarheid en hulpprogram ma's voor analyse van gebruikers gedrag voor uw ASP.NET-website, die on-premises of in azure wordt gehost.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.custom: contperfq1
-ms.openlocfilehash: 970971082e684ebcb6efce07bb707ffbb20ed228
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: f9cb5370dcddf783e533664c4c141779402103f0
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904173"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028985"
 ---
 # <a name="configure-application-insights-for-your-aspnet-website"></a>Application Insights voor uw ASP.NET-website configureren
 
@@ -42,8 +42,8 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 Deze sectie bevat instructies voor het automatisch toevoegen van Application Insights aan een op een sjabloon gebaseerde ASP.NET-Web-app. Vanuit uw ASP.NET Web app-project in Visual Studio:
 
-1. Selecteer **Application Insights Telemetry toevoegen**  >  **Application Insights SDK (lokaal)**  >  **volgende**  >  **Finish**  >  **sluiten**.
-2. Open het `ApplicationInsights.config`-bestand. 
+1. Selecteer **Application Insights Telemetry toevoegen**  >  **Application Insights SDK (lokaal)**  >  **volgende**  >    >  **sluiten**.
+2. Open het bestand `ApplicationInsights.config`. 
 3. Voeg vóór de afsluit `</ApplicationInsights>` code een regel toe met de instrumentatie sleutel voor uw Application Insights bron.  De instrumentatie sleutel vindt u in het deel venster Overzicht van de zojuist gemaakte Application Insights resource die u hebt gemaakt als onderdeel van de vereisten voor dit artikel.
 
     ```xml

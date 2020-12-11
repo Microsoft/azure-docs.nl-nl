@@ -7,13 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: jawilley
-ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: ab9fc4f08b96fc10a20125c30af2d6b8050c7606
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.custom: devx-track-dotnet, contperf-fy21q2
+ms.openlocfilehash: f503f132794f6d04b587a78b8f838acba26f9ac3
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341736"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032011"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Tips voor betere prestaties van Azure Cosmos DB en .NET
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,13 +41,13 @@ Voor Linux en andere niet-ondersteunde platforms waarbij ServiceInterop.dll niet
 
 De vier hier vermelde toepassings typen gebruiken standaard 32-bits host verwerking. Ga als volgt te werk om de verwerking van de host te wijzigen in 64-bits verwerking voor uw toepassings type:
 
-- **Voor uitvoer bare toepassingen** : Stel in het venster **project eigenschappen** in het deel venster voor het **maken** van het [platform doel](/visualstudio/ide/how-to-configure-projects-to-target-platforms?preserve-view=true&view=vs-2019) in op **x64**.
+- **Voor uitvoer bare toepassingen**: Stel in het venster **project eigenschappen** in het deel venster voor het **maken** van het [platform doel](/visualstudio/ide/how-to-configure-projects-to-target-platforms?preserve-view=true&view=vs-2019) in op **x64**.
 
-- **Voor op VSTest gebaseerde test projecten** : Selecteer in het menu **test** van Visual Studio **Test** test  >  **instellingen** testen en stel de **standaard architectuur** van de processor in op **x64**.
+- **Voor op VSTest gebaseerde test projecten**: Selecteer in het menu **test** van Visual Studio test  >  **instellingen** testen en stel de **standaard architectuur** van de processor in op **x64**.
 
-- **Voor lokaal geïmplementeerde ASP.NET-webtoepassingen** : Selecteer **extra**  >  **Opties**  >  **projecten en oplossingen**  >  **webprojecten** , en selecteer vervolgens **de 64-bits versie van IIS Express voor websites en projecten gebruiken**.
+- **Voor lokaal geïmplementeerde ASP.NET-webtoepassingen**: Selecteer **extra**  >  **Opties**  >  **projecten en oplossingen**  >  **webprojecten**, en selecteer vervolgens **de 64-bits versie van IIS Express voor websites en projecten gebruiken**.
 
-- **Voor ASP.NET-webtoepassingen die zijn geïmplementeerd op Azure** : Selecteer in het Azure Portal in **toepassings instellingen** het **64-bits** platform.
+- **Voor ASP.NET-webtoepassingen die zijn geïmplementeerd op Azure**: Selecteer in het Azure Portal in **toepassings instellingen** het **64-bits** platform.
 
 > [!NOTE] 
 > Nieuwe Visual Studio-projecten worden standaard ingesteld op **elke CPU**. We raden u aan om uw project in te stellen op **x64** zodat het niet wordt overgeschakeld naar **x86**. Een project dat is ingesteld op **een CPU** kan eenvoudig overschakelen naar **x86** als een afhankelijkheid van alleen een x86-processor is toegevoegd.<br/>
@@ -156,13 +156,13 @@ SQL .NET SDK ondersteunt parallelle query's, waarmee u parallel een gepartitione
 
 Parallelle query's bieden twee para meters die u aan uw vereisten kunt aanpassen: 
 
-- **MaxConcurrency** : Hiermee bepaalt u het maximum aantal partities waarmee gelijktijdig query's kunnen worden uitgevoerd.
+- **MaxConcurrency**: Hiermee bepaalt u het maximum aantal partities waarmee gelijktijdig query's kunnen worden uitgevoerd.
 
    Parallelle query werkt door meerdere partities parallel te doorzoeken. Maar gegevens van een afzonderlijke partitie worden serieel opgehaald ten opzichte van de query. De instelling `MaxConcurrency` in [SDK v3](https://github.com/Azure/azure-cosmos-dotnet-v3) voor het aantal partities is de beste kans om de meest uitvoerende query te bereiken, op voor waarde dat alle andere systeem omstandigheden hetzelfde blijven. Als u het aantal partities niet weet, kunt u de mate van parallelle uitvoering instellen op een hoog getal. Het systeem kiest het minimum (aantal partities, door de gebruiker opgegeven invoer) als de mate van parallelle uitvoering.
 
     Parallelle query's produceren het meest voor deel als de gegevens gelijkmatig worden verdeeld over alle partities met betrekking tot de query. Als de gepartitioneerde verzameling is gepartitioneerd zodat alle of de meeste gegevens die door een query zijn geretourneerd, in een paar partities worden geconcentreerd (één partitie is het ergste geval), kunnen deze partities de prestaties van de query opsporen.
    
-- **MaxBufferedItemCount** : bepaalt het aantal vooraf opgehaalde resultaten.
+- **MaxBufferedItemCount**: bepaalt het aantal vooraf opgehaalde resultaten.
 
    Parallelle query is ontworpen om de resultaten vooraf op te halen terwijl de huidige batch met resultaten door de client wordt verwerkt. Deze vooraf ophalen helpt de algehele latentie van een query te verbeteren. De `MaxBufferedItemCount` para meter beperkt het aantal vooraf opgehaalde resultaten. Stel `MaxBufferedItemCount` in op het verwachte aantal geretourneerde resultaten (of een hoger getal), zodat de query het maximale voor deel van het vooraf ophalen kan ontvangen.
 

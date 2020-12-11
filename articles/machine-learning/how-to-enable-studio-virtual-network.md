@@ -10,13 +10,13 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 10/21/2020
-ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: a90b98e8be976da9ee2669ab3b5fed4a890f0fb2
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.custom: contperf-fy20q4, tracking-python
+ms.openlocfilehash: 8dc8446ecbc203622ce7c2163136c1c26aac1cc7
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576609"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032725"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk
 
@@ -93,7 +93,7 @@ Elke Azure Machine Learning-werk ruimte wordt geleverd met twee standaard-opslag
 
 In de volgende tabel wordt beschreven waarom u beheerde identiteits verificatie moet inschakelen voor de standaard opslag accounts voor uw werk ruimte.
 
-|Opslagaccount  | Notities  |
+|Storage-account  | Opmerkingen  |
 |---------|---------|
 |Standaard-Blob-opslag voor werk ruimte| Hierin worden model assets van de ontwerp functie opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om modellen te implementeren in de ontwerp functie. <br> <br> U kunt een designer-pijp lijn visualiseren en uitvoeren als er een niet-standaard gegevens opslag wordt gebruikt die is geconfigureerd voor het gebruik van beheerde identiteit. Als u echter probeert een getraind model te implementeren zonder beheerde identiteit in te scha kelen op de standaard gegevens opslag, mislukt de implementatie ongeacht andere gegevens opslag die in gebruik zijn.|
 |Standaard bestands Archief voor de werk ruimte| Hiermee worden AutoML-experiment-assets opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om AutoML experimenten in te dienen. |

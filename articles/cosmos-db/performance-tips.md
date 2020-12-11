@@ -7,13 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: sngun
-ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: f2da2047469f342814ff349cfa059ed61e3adc25
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.custom: devx-track-dotnet, contperf-fy21q2
+ms.openlocfilehash: 962b95307b440c3bafde019b5b2b630461718073
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339679"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029002"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Tips voor betere prestaties van Azure Cosmos DB en .NET SDK v2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -46,7 +46,7 @@ U wordt aangeraden Windows 64-bits host te verwerken voor betere prestaties. De 
 
 - Voor uitvoer bare toepassingen kunt u de verwerking van een host wijzigen door het [platform doel](/visualstudio/ide/how-to-configure-projects-to-target-platforms?preserve-view=true&view=vs-2019) in te stellen op **x64**  in het venster **project eigenschappen** op het tabblad **opbouwen** .
 
-- Voor VSTest test projecten kunt u de verwerking van de host wijzigen door test **Test**  >  **instellingen** testen  >  **standaard processor architectuur als x64** te selecteren in het menu van Visual Studio **testen** .
+- Voor VSTest test projecten kunt u de verwerking van de host wijzigen door test   >  **instellingen** testen  >  **standaard processor architectuur als x64** te selecteren in het menu van Visual Studio **testen** .
 
 - Voor lokaal geïmplementeerde ASP.NET-webtoepassingen kunt u de verwerking van de host wijzigen door **de 64-bits versie van IIS Express voor websites en projecten** te selecteren onder **extra**  >  **Opties**  >  **projecten en oplossingen**  >  **webprojecten**.
 

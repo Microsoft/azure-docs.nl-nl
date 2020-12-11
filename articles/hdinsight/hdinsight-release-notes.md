@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: 00b5d220cdbc511a309d55cfca2049508049fa30
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 0895e84363d40bdbf30408f2b2a0d95f951eb303
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549001"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032555"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Opmerkingen bij de release van Azure HDInsight
 
@@ -64,3 +64,18 @@ HDInsight blijft de betrouw baarheid en prestaties van het cluster verbeteren.
 
 ## <a name="component-version-change"></a>Onderdeel versie wijzigen
 Er is geen wijziging van de onderdeel versie voor deze versie. In [dit document](./hdinsight-component-versioning.md)vindt u de huidige versie van de onderdelen voor hdinsight 4,0 en hdinsight 3,6.
+
+## <a name="known-issues"></a>Bekende problemen
+### <a name="prevent-hdinsight-cluster-vms-from-rebooting-periodically"></a>Voor komen dat Vm's van het HDInsight-cluster periodiek opnieuw opstarten
+
+Vanaf medio november 2020 hebt u mogelijk gedetecteerd dat de virtuele machines van het HDInsight-cluster op regel matige basis opnieuw worden opgestart. Dit kan worden veroorzaakt door:
+
+1.  Clamav is ingeschakeld in uw cluster. Het nieuwe azsec-clamav-pakket verbruikt een grote hoeveelheid geheugen die het opnieuw opstarten van knoop punten activeert. 
+2.  Een CRON-taak is dagelijks gepland, waarmee wordt gecontroleerd op wijzigingen in de lijst met certificerings instanties (Ca's) die worden gebruikt door Azure-Services. Wanneer een nieuw CA-certificaat beschikbaar is, voegt het script het certificaat toe aan het vertrouwens archief van de JDK en wordt opnieuw opgestart gepland.
+
+HDInsight is het implementeren van oplossingen en het Toep assen van patch voor alle actieve clusters voor beide problemen. Als u de correctie onmiddellijk wilt Toep assen en wilt voor komen dat er onverwachte Vm's opnieuw worden opgestart, kunt u onderstaande script acties op alle cluster knooppunten uitvoeren als een permanente script actie. Er wordt nog een bericht weer gegeven na de oplossing en de patch is voltooid.
+```
+https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/replace_cacert_script.sh
+https://healingscriptssa.blob.core.windows.net/healingscripts/ChangeOOMPolicyAndApplyLatestConfigForClamav.sh
+```
+

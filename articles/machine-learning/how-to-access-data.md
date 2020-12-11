@@ -10,13 +10,13 @@ ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/03/2020
-ms.custom: how-to, contperfq1, devx-track-python, data4ml
-ms.openlocfilehash: c85989dc02bddd136c56a81993df7a507a84d3b4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: how-to, contperf-fy21q1, devx-track-python, data4ml
+ms.openlocfilehash: bb63ac6de6c48bb3853bd235d908ee745ff5279d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460273"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032844"
 ---
 # <a name="connect-to-storage-services-on-azure"></a>Verbinding maken met Storage services in azure
 

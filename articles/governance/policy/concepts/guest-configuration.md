@@ -3,12 +3,12 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie agent gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: a956d5e8dcfa82f85020928e1427a08ac8fe7a69
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 2fd1f17d38b0a58fbf64670849a8d5e13bb00cf8
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906247"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032708"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -47,7 +47,7 @@ In de computer gebruikt de gast configuratie-client lokale hulpprogram ma's om d
 
 De volgende tabel bevat een lijst met de lokale hulpprogram ma's die op elk ondersteund besturings systeem worden gebruikt. Voor ingebouwde inhoud verwerkt gast configuratie automatisch het laden van deze hulpprogram ma's.
 
-|Besturingssysteem|Validatie programma|Notities|
+|Besturingssysteem|Validatie programma|Opmerkingen|
 |-|-|-|
 |Windows|[Power shell desired state Configuration](/powershell/scripting/dsc/overview/overview) v2| Een kant geladen naar een map die alleen door Azure Policy wordt gebruikt. Er is geen conflict met Windows Power shell DSC. Power shell Core is niet toegevoegd aan het systeempad.|
 |Linux|[Chef-specificatie](https://www.chef.io/inspec/)| Installeert chef Inspec-versie 2.2.61 op de standaard locatie en wordt toegevoegd aan het systeempad. Afhankelijkheden voor het INSPEC-pakket, waaronder Ruby en Python, worden ook geïnstalleerd. |
@@ -60,7 +60,7 @@ De gast configuratie client controleert elke vijf minuten op nieuwe inhoud. Zodr
 
 Beleids definities voor gast configuratie zijn inclusief nieuwe versies. Oudere versies van besturings systemen die beschikbaar zijn in azure Marketplace, worden uitgesloten als de gast configuratie agent niet compatibel is. In de volgende tabel ziet u een lijst met ondersteunde besturings systemen in azure-installatie kopieën:
 
-|Publisher|Name|Versies|
+|Publisher|Naam|Versies|
 |-|-|-|
 |Canonical|Ubuntu Server|14,04-18,04|
 |Credativ|Debian|8 en hoger|
@@ -84,7 +84,7 @@ Voor virtuele machines die gebruikmaken van virtuele netwerken voor communicatie
 
 ### <a name="communicate-over-private-link-in-azure"></a>Communiceren via een persoonlijke koppeling in azure
 
-Virtuele machines kunnen een [persoonlijke koppeling](../../../private-link/private-link-overview.md) gebruiken voor communicatie met de gast configuratie service. Pas tag toe met de naam `EnablePrivateNeworkGC` en waarde `TRUE` om deze functie in te scha kelen. De tag kan worden toegepast vóór of na het Toep assen van beleids definities voor gast configuratie op de computer.
+Virtuele machines kunnen een [persoonlijke koppeling](../../../private-link/private-link-overview.md) gebruiken voor communicatie met de gast configuratie service. Pas tag toe met de naam `EnablePrivateNetworkGC` en waarde `TRUE` om deze functie in te scha kelen. De tag kan worden toegepast vóór of na het Toep assen van beleids definities voor gast configuratie op de computer.
 
 Verkeer wordt gerouteerd met behulp van het [virtuele openbaar IP-adres](../../../virtual-network/what-is-ip-address-168-63-129-16.md) van Azure om een beveiligd, geverifieerd kanaal met Azure-platform bronnen te maken.
 

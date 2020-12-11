@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Resource Health
 description: Overzicht van Azure Resource Health
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: c8089e907f555ac970fea06361a2ab1bbc944778
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5ad8867b110039e4dcc34b20c8a61fccfd39eaf
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536491"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032861"
 ---
 # <a name="azure-resource-health-faq"></a>Veelgestelde vragen over Azure Resource Health
 Meer informatie over de antwoorden op veelgestelde vragen over Azure Resource Health.
@@ -52,7 +52,6 @@ Resource Health [ondersteunt](resource-health-alert-arm-template-guide.md) waars
 Nadat u zich hebt aangemeld bij de Azure Portal, zijn er meerdere manieren om toegang te krijgen tot Resource Health:
 - Navigeer naar uw resource. Selecteer in de navigatie balk aan de linkerkant de optie **resource status**
 - Ga naar de Blade Azure Service Health.  Selecteer in de navigatie balk aan de linkerkant de optie **resource status**.
-- Open de Blade **Help en ondersteuning** door het vraag teken in de rechter bovenhoek van de portal te selecteren en vervolgens **Help en ondersteuning**te selecteren. Zodra de Blade is geopend, selecteert u **resource status**
 
 U kunt ook de Resource Health-API gebruiken om informatie te verkrijgen over de status van uw resources.
 
@@ -60,7 +59,7 @@ U kunt ook de Resource Health-API gebruiken om informatie te verkrijgen over de 
 De lijst met status controles en resource typen die via Resource Health worden ondersteund, kunt u [hier](resource-health-checks-resource-types.md)vinden.
 
 ## <a name="what-should-i-do-if-my-resource-is-showing-available-but-i-believe-it-is-not"></a>Wat moet ik doen als mijn resource beschikbaar wordt weer gegeven, maar ik geloof het niet? "
-Bij het controleren van de status van een resource kunt u met de rechter muisknop op **rapporteren onjuiste**status. Voordat u het rapport verzendt, hebt u de mogelijkheid om aanvullende informatie te verstrekken over waarom u denkt dat de huidige status onjuist is.
+Bij het controleren van de status van een resource kunt u met de rechter muisknop op **rapporteren onjuiste** status. Voordat u het rapport verzendt, hebt u de mogelijkheid om aanvullende informatie te verstrekken over waarom u denkt dat de huidige status onjuist is.
 
 ## <a name="is-resource-health-available-for-all-azure-regions"></a>Is Resource Health beschikbaar voor alle Azure-regio's? 
 De resource status is beschikbaar in alle Azure-geografische gebieden.
@@ -69,8 +68,6 @@ De resource status is beschikbaar in alle Azure-geografische gebieden.
 De gegevens die worden verstrekt door Resource Health, zijn specifieker dan de status van Azure of het dash board Service Health.
 
 Terwijl de [Azure-status](https://status.azure.com) en het service Health-dash board u informeren over Service problemen die van invloed zijn op een breed scala aan klanten (bijvoorbeeld een Azure-regio), worden er door resource Health meer gedetailleerde gebeurtenissen weer gegeven die alleen relevant zijn voor de specifieke resource. Als een host bijvoorbeeld onverwacht opnieuw wordt opgestart, wordt door Resource Health alleen de klanten gewaarschuwd waarvan de virtuele machines op die host werden uitgevoerd.
-
-Het is belang rijk om te zien dat u de zicht baarheid van gebeurtenissen die van invloed zijn op uw resources, Resource Health ook de Opper vlakken die in het dash board van Service Health zijn gepubliceerd, kunt volt ooien.
 
 ## <a name="do-i-need-to-activate-resource-health-for-each-resource"></a>Moet Ik Resource Health voor elke resource activeren?
 Nee, status informatie is beschikbaar voor alle resource typen die beschikbaar zijn via Resource Health. 

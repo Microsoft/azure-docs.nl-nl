@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 08/06/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq1
-ms.openlocfilehash: 6cb455880852295d7176e813208a93919a2c14bb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, contperf-fy21q1
+ms.openlocfilehash: ab7a74166e85f2ba9fd73e7323cf9cd200cf32e4
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318265"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031025"
 ---
 # <a name="create-compute-targets-for-model-training-and-deployment-in-azure-machine-learning-studio"></a>Reken doelen voor model training en implementatie in Azure Machine Learning Studio maken
 
@@ -93,7 +93,7 @@ Gebruik de [bovenstaande stappen](#portal-create) om het reken exemplaar te make
 |Type virtuele machine |  Kies CPU of GPU. Dit type kan niet worden gewijzigd nadat het is gemaakt     |
 |Grootte van de virtuele machine     |  Ondersteunde grootten voor virtuele machines kunnen worden beperkt in uw regio. De [beschikbaarheids lijst](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) controleren     |
 |SSH-toegang inschakelen/uitschakelen     |   SSH-toegang is standaard uitgeschakeld.  SSH-toegang kan niet. gewijzigd na het maken. Zorg ervoor dat u toegang inschakelt als u van plan bent om interactief fouten op te lossen met [versus externe code](how-to-set-up-vs-code-remote.md)   |
-|Geavanceerde instellingen     |  Optioneel. Configureer een virtueel netwerk. Geef de **resource groep** , het **virtuele netwerk** en het **subnet** op om het reken exemplaar te maken binnen een Azure-Virtual Network (vnet). Zie deze [netwerk vereisten](./how-to-secure-training-vnet.md) voor vnet voor meer informatie.  |
+|Geavanceerde instellingen     |  Optioneel. Configureer een virtueel netwerk. Geef de **resource groep**, het **virtuele netwerk** en het **subnet** op om het reken exemplaar te maken binnen een Azure-Virtual Network (vnet). Zie deze [netwerk vereisten](./how-to-secure-training-vnet.md) voor vnet voor meer informatie.  |
 
 ### <a name="compute-clusters"></a><a name="amlcompute"></a> Reken clusters
 
@@ -108,13 +108,13 @@ Maak een berekenings cluster met één of meerdere knoop punten voor uw training
 |Grootte van de virtuele machine     |  Ondersteunde grootten voor virtuele machines kunnen worden beperkt in uw regio. De [beschikbaarheids lijst](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) controleren     |
 |Minimum aantal knooppunten | Het minimum aantal knoop punten dat u wilt inrichten. Als u een toegewezen aantal knoop punten wilt, stelt u dit aantal hier in. Bespaar geld door het minimum in te stellen op 0, zodat u niet betaalt voor knoop punten wanneer het cluster niet actief is. |
 |Maximum aantal knoop punten | Het maximum aantal knoop punten dat u wilt inrichten. De compute wordt automatisch geschaald naar een maximum van dit aantal knoop punten wanneer een taak wordt verzonden. |
-|Geavanceerde instellingen     |  Optioneel. Configureer een virtueel netwerk. Geef de **resource groep** , het **virtuele netwerk** en het **subnet** op om het reken exemplaar te maken binnen een Azure-Virtual Network (vnet). Zie deze [netwerk vereisten](./how-to-secure-training-vnet.md) voor vnet voor meer informatie.   Ook [beheerde identiteiten](#managed-identity) koppelen om toegang tot resources te verlenen     |
+|Geavanceerde instellingen     |  Optioneel. Configureer een virtueel netwerk. Geef de **resource groep**, het **virtuele netwerk** en het **subnet** op om het reken exemplaar te maken binnen een Azure-Virtual Network (vnet). Zie deze [netwerk vereisten](./how-to-secure-training-vnet.md) voor vnet voor meer informatie.   Ook [beheerde identiteiten](#managed-identity) koppelen om toegang tot resources te verlenen     |
 
 #### <a name="set-up-managed-identity"></a><a name="managed-identity"></a> Beheerde identiteit instellen
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-intro.md)]
 
-Tijdens het maken van het cluster of bij het bewerken van de details van het reken cluster, in de **Geavanceerde instellingen** , kunt u **een beheerde identiteit toewijzen** en een door het systeem toegewezen identiteit opgeven.
+Tijdens het maken van het cluster of bij het bewerken van de details van het reken cluster, in de **Geavanceerde instellingen**, kunt u **een beheerde identiteit toewijzen** en een door het systeem toegewezen identiteit opgeven.
 
 #### <a name="managed-identity-usage"></a>Gebruik van beheerde identiteit
 
@@ -132,7 +132,7 @@ Maak of koppel een Azure Kubernetes service-cluster (AKS) voor grootschalige dei
 |---------|---------|
 |Naam berekening     |  <li>De naam is vereist. De naam moet tussen 2 en 16 tekens lang zijn. </li><li>Geldige tekens zijn onder andere hoofd letters, cijfers en het  **-** teken.</li><li>De naam moet beginnen met een letter</li><li>De naam moet uniek zijn voor alle bestaande berekeningen binnen een Azure-regio. U ziet een waarschuwing als de naam die u kiest, niet uniek is</li><li>Als het **-**  teken wordt gebruikt, moet dit worden gevolgd door ten minste één letter later in de naam</li>     |
 |Kubernetes-service | Selecteer **nieuwe maken** en vul de rest van het formulier in.  Of selecteer **bestaande gebruiken** en selecteer vervolgens een bestaand AKS-cluster in uw abonnement.
-|Region |  Selecteer de regio waar het cluster wordt gemaakt |
+|Regio |  Selecteer de regio waar het cluster wordt gemaakt |
 |Grootte van de virtuele machine     |  Ondersteunde grootten voor virtuele machines kunnen worden beperkt in uw regio. De [beschikbaarheids lijst](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) controleren     |
 |Cluster doel  | Selecteer **productie** of **dev-test** |
 |Aantal knooppunten | Het aantal knoop punten vermenigvuldigd met het aantal kernen van de virtuele machine (Vcpu's) moet groter zijn dan of gelijk zijn aan 12. |

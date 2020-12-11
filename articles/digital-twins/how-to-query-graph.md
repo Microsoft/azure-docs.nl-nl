@@ -7,13 +7,13 @@ ms.author: baanders
 ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.custom: contperfq2
-ms.openlocfilehash: 45b177bd35af9748ff80ecc38f2d1c803c10546e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 966b87dfb3111d7a112ea99f37dee730495d491f
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452816"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032827"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 

@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/28/2020
-ms.custom: contperfq1, contperfq2
-ms.openlocfilehash: 756c87299db85e426b4793d51bea833aa694a830
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.custom: contperf-fy21q1, contperf-fy21q2
+ms.openlocfilehash: 70fbbdfc5d8f1bac5fa27175ea25be1503a77594
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145953"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031892"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>De Apache Beeline-client gebruiken met Apache Hive
 
@@ -56,7 +56,7 @@ Dit voor beeld is gebaseerd op het gebruik van de Beeline-client van een SSH-ver
     show tables;
     ```
 
-    Op een nieuw cluster wordt slechts één tabel weer gegeven: **hivesampletable** .
+    Op een nieuw cluster wordt slechts één tabel weer gegeven: **hivesampletable**.
 
 4. Gebruik de volgende opdracht om het schema voor de hivesampletable weer te geven:
 
@@ -163,7 +163,7 @@ Dit voor beeld is een voortzetting van het vorige voor beeld. Gebruik de volgend
     nano query.hql
     ```
 
-1. Gebruik de volgende tekst als de inhoud van het bestand. Met deze query maakt u een nieuwe interne tabel met de naam **errorLogs** :
+1. Gebruik de volgende tekst als de inhoud van het bestand. Met deze query maakt u een nieuwe interne tabel met de naam **errorLogs**:
 
     ```hiveql
     CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
@@ -181,7 +181,7 @@ Dit voor beeld is een voortzetting van het vorige voor beeld. Gebruik de volgend
     > [!NOTE]  
     > In tegens telling tot externe tabellen, verwijdert het verwijderen van een interne tabel ook de onderliggende gegevens.
 
-1. Als u het bestand wilt opslaan, gebruikt u **CTRL** + **X** en voert u vervolgens **Y** en tenslotte **Enter** .
+1. Als u het bestand wilt opslaan, gebruikt u **CTRL** + **X** en voert u vervolgens **Y** en tenslotte **Enter**.
 
 1. Gebruik het volgende om het bestand uit te voeren met beeline:
 

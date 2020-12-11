@@ -10,13 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: b03eb8015d318471cf8bf11fc5a3cd94044d2cfe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
+ms.openlocfilehash: 6aa54f65b504e61a5e74ed584c5dad51e49eb087
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455582"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031450"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -305,7 +305,7 @@ automl_classifier = AutoMLConfig(
 
 Er zijn enkele opties die u in uw AutoMLConfig kunt definiëren om uw experiment te beëindigen.
 
-|Criteria| beschrijving
+|Criteria| description
 |----|----
 Geen &nbsp; criteria | Als u geen afsluit parameters definieert, wordt het experiment voortgezet tot er geen verdere voortgang wordt gemaakt op basis van uw primaire metriek.
 Na &nbsp; een &nbsp; &nbsp; tijds duur &nbsp;| Gebruik `experiment_timeout_minutes` in uw instellingen om te bepalen hoe lang, in minuten, uw experiment moet blijven werken. <br><br> Om te voor komen dat er storingen optreden, is er mini maal 15 minuten of 60 minuten als uw rij op kolom grootte groter is dan 10.000.000.

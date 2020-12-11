@@ -7,13 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: maquaran
-ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: 7901ad4f67f6f3243a2d3b8dc25733ac68b612db
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.custom: devx-track-dotnet, contperf-fy21q2
+ms.openlocfilehash: c30e97a4bff8fa845f6eb3c3092a00ee541e59f4
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608364"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032793"
 ---
 # <a name="azure-cosmos-db-sql-sdk-connectivity-modes"></a>Azure Cosmos DB SQL SDK-connectiviteits modi
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]

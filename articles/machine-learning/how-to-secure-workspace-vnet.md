@@ -10,13 +10,13 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
-ms.custom: how-to, contperfq4, tracking-python, contperfq1
-ms.openlocfilehash: 8082694b9f08023653d47e1f7fb442219cf8b475
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: how-to, contperf-fy20q4, tracking-python, contperf-fy21q1
+ms.openlocfilehash: 07b8c130a2a22554e4cd5b33996d5a5ee967d47f
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316693"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029529"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Een Azure Machine Learning-werk ruimte beveiligen met virtuele netwerken
 
@@ -87,7 +87,7 @@ Als u een Azure-opslag account wilt gebruiken voor de werk ruimte in een virtuee
 
     1. Schakel het selectie vakje __vertrouwde micro soft-Services toegang geven tot dit opslag account__ in. Dit geeft niet alle Azure-Services toegang tot uw opslag account.
     
-        * Resources van sommige services die **in uw abonnement zijn geregistreerd** , hebben toegang tot het opslag account **in hetzelfde abonnement** voor Select-bewerkingen. U kunt bijvoorbeeld Logboeken schrijven of back-ups maken.
+        * Resources van sommige services die **in uw abonnement zijn geregistreerd**, hebben toegang tot het opslag account **in hetzelfde abonnement** voor Select-bewerkingen. U kunt bijvoorbeeld Logboeken schrijven of back-ups maken.
         * Resources van sommige services kunnen expliciet toegang krijgen tot uw opslag account door __een Azure-rol__ toe te wijzen aan de door het systeem toegewezen beheerde identiteit.
 
         Raadpleeg [Firewalls en virtuele netwerken voor Azure Storage configureren](../storage/common/storage-network-security.md#trusted-microsoft-services) voor meer informatie.
@@ -153,7 +153,7 @@ De syntaxis voor het overs laan van de validatie van de gegevensset is vergelijk
 - JSON 
 - Parquet
 - SQL
-- File
+- Bestand
 
 Met de volgende code wordt een nieuwe JSON-gegevensset en-sets gemaakt `validate=False` .
 

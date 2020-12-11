@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: 47377817b62d33e8af79e4a0d2dceb68ba9dbdc5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 83e9a96573bbc72e0afff61cc0f151f95b081e30
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658644"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031576"
 ---
 # <a name="azure-firewall-service-tags"></a>Azure Firewall-service Tags
 
@@ -22,7 +22,7 @@ Azure Firewall service tags kunnen worden gebruikt in het doel veld netwerk rege
 
 ## <a name="supported-service-tags"></a>Ondersteunde service Tags
 
-Zie [beveiligings groepen](../virtual-network/network-security-groups-overview.md#service-tags) voor een lijst met Service tags die beschikbaar zijn voor gebruik in azure firewall-netwerk regels.
+Zie [service tags van het virtuele netwerk](../virtual-network/service-tags-overview.md#available-service-tags) voor een lijst met Service tags die beschikbaar zijn voor gebruik in azure firewall-netwerk regels.
 
 ## <a name="next-steps"></a>Volgende stappen
 

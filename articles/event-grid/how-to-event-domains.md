@@ -4,12 +4,12 @@ description: Laat zien hoe u grote sets met onderwerpen beheert in Azure Event G
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 277db97211b196c9853470c2d12cc2246a4005b2
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: e6861e89def10eec391bf302b1ddc726b38bb98c
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92330074"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109892"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Onderwerpen beheren en gebeurtenissen publiceren met behulp van gebeurtenis domeinen
 
@@ -22,23 +22,13 @@ In dit artikel wordt beschreven hoe u:
 
 Zie voor meer informatie over gebeurtenis domeinen [begrijpen gebeurtenis domeinen voor het beheren van Event grid onderwerpen](event-domains.md).
 
-[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
-
-## <a name="install-preview-feature"></a>Preview-functie installeren
-
-[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
-
 ## <a name="create-an-event-domain"></a>Een gebeurtenis domein maken
 
 Als u grote sets met onderwerpen wilt beheren, maakt u een gebeurtenis domein.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
 ```azurecli-interactive
-# If you haven't already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
 az eventgrid domain create \
   -g <my-resource-group> \
   --name <my-domain-name> \
@@ -47,11 +37,7 @@ az eventgrid domain create \
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 ```azurepowershell-interactive
-# If you have not already installed the module, do it now.
-# This module is required for preview features.
-Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
-
-New-AzureRmEventGridDomain `
+New-AzEventGridDomain `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain-name> `
   -Location <location>
@@ -83,7 +69,7 @@ Het beheren van toegang tot onderwerpen geschiedt via [roltoewijzing](../role-ba
 
 Event Grid heeft twee ingebouwde rollen, die u kunt gebruiken om bepaalde gebruikers toegang te verlenen voor verschillende onderwerpen binnen een domein. Deze rollen zijn `EventGrid EventSubscription Contributor (Preview)` , waarmee u abonnementen kunt maken en verwijderen, en `EventGrid EventSubscription Reader (Preview)` waarmee u alleen gebeurtenis abonnementen kunt weer geven.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 De volgende Azure CLI-opdracht beperkt het `alice@contoso.com` maken en verwijderen van gebeurtenis abonnementen alleen in het onderwerp `demotopic1` :
 
 ```azurecli-interactive
@@ -97,7 +83,7 @@ az role assignment create \
 De volgende Power shell-opdracht is beperkt `alice@contoso.com` tot het maken en verwijderen van alleen gebeurtenis abonnementen in het onderwerp `demotopic1` :
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment `
+New-AzRoleAssignment `
   -SignInName alice@contoso.com `
   -RoleDefinitionName "EventGrid EventSubscription Contributor (Preview)" `
   -Scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
@@ -114,7 +100,7 @@ Abonneren op een onderwerp in een domein is hetzelfde als abonneren op een ander
 
 Normaal gesp roken maakt de gebruiker aan wie u toegang hebt verleend in de voor gaande sectie het abonnement. U kunt dit artikel vereenvoudigen door het abonnement te maken. 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -126,7 +112,7 @@ az eventgrid event-subscription create \
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```azurepowershell-interactive
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -ResourceId "/subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1" `
   -EventSubscriptionName <event-subscription> `
   -Endpoint https://contoso.azurewebsites.net/api/updates
@@ -138,7 +124,7 @@ Als u een eind punt nodig hebt om uw gebeurtenissen te abonneren op, kunt u alti
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"  alt="Button to Deploy to Aquent." /></a>
 
-Machtigingen die zijn ingesteld voor een onderwerp worden opgeslagen in Azure Active Directory en moeten expliciet worden verwijderd. Als u een gebeurtenis abonnement verwijdert, wordt de toegang van gebruikers tot het maken van gebeurtenis abonnementen niet ingetrokken als deze schrijf toegang heeft voor een onderwerp.
+Machtigingen die zijn ingesteld voor een onderwerp worden opgeslagen in Azure Active Directory en moeten expliciet worden verwijderd. Als u een gebeurtenis abonnement verwijdert, wordt de toegang van gebruikers tot het maken van gebeurtenis abonnementen niet ingetrokken als de gebruiker schrijf toegang heeft voor een onderwerp.
 
 
 ## <a name="publish-events-to-an-event-grid-domain"></a>Gebeurtenissen publiceren naar een Event Grid domein
@@ -172,7 +158,7 @@ Het publiceren van gebeurtenissen naar een domein is hetzelfde als het [publicer
 }]
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 Als u het domein eindpunt wilt ophalen met Azure CLI, gebruikt u
 
 ```azurecli-interactive
@@ -193,7 +179,7 @@ az eventgrid domain key list \
 Als u het domein eindpunt wilt ophalen met Power shell, gebruikt u
 
 ```azurepowershell-interactive
-Get-AzureRmEventGridDomain `
+Get-AzEventGridDomain `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain>
 ```
@@ -201,13 +187,27 @@ Get-AzureRmEventGridDomain `
 Als u de sleutels voor een domein wilt ophalen, gebruikt u:
 
 ```azurepowershell-interactive
-Get-AzureRmEventGridDomainKey `
+Get-AzEventGridDomainKey `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain>
 ```
 ---
 
 En gebruik vervolgens uw favoriete methode om een HTTP POST te maken voor het publiceren van uw gebeurtenissen in uw Event Grid domein.
+
+## <a name="search-lists-of-topics-or-subscriptions"></a>Lijsten met onderwerpen of abonnementen zoeken
+
+Als u een groot aantal onderwerpen of abonnementen wilt doorzoeken en beheren, ondersteunen de Api's van Event Grid de vermelding en paginering.
+
+### <a name="using-cli"></a>CLI gebruiken
+Met de volgende opdracht worden bijvoorbeeld alle onderwerpen weer gegeven met de naam met `mytopic` . 
+
+```azurecli-interactive
+az eventgrid topic list --odata-query "contains(name, 'mytopic')"
+```
+
+Zie voor meer informatie over deze opdracht [`az eventgrid topic list`](/cli/azure/eventgrid/topic?#az_eventgrid_topic_list) . 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 56f7224d93293a0a26d09692996d2c4a4ace344b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8e4a9201c14e71520bd58ff1017b700ca47fa21
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803735"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109811"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -37,7 +37,7 @@ De aanbevolen topologie voor het primaire knooppunt type vereist de onderstaande
 
  ![Architectuur van Azure Service Fabric-beschikbaarheids zone][sf-architecture]
 
-## <a name="networking-requirements"></a>Netwerk vereisten
+## <a name="networking-requirements"></a>Netwerkvereisten
 ### <a name="public-ip-and-load-balancer-resource"></a>Openbaar IP-adres en Load Balancer bron
 Als u de eigenschap zones wilt inschakelen voor een resource met een schaalset voor virtuele machines, moet de load balancer en IP-resource waarnaar wordt verwezen door deze schaalset voor virtuele machines, beide gebruikmaken van een *standaard* -SKU. Als u een load balancer of IP-bron maakt zonder de SKU-eigenschap, wordt een basis-SKU gemaakt die geen ondersteuning biedt voor Beschikbaarheidszones. Een standaard-SKU load balancer blokkeert standaard al het verkeer van de buiten kant. Als u buiten verkeer wilt toestaan, moet er een NSG in het subnet worden geïmplementeerd.
 
@@ -332,4 +332,96 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 
 ```
 
+## <a name="preview-enable-multiple-availability-zones-in-single-virtual-machine-scale-set"></a>Evaluatie Meerdere beschikbaarheids zones inschakelen in één schaalset voor virtuele machines
+
+De eerder genoemde oplossing maakt gebruik van één nodeType per AZ. Met de volgende oplossing kunnen gebruikers 3 AZ in hetzelfde nodeType implementeren.
+
+De volledige voorbeeld sjabloon is [hier](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-Windows-Multiple-AZ-Secure)aanwezig.
+
+![Architectuur van Azure Service Fabric-beschikbaarheids zone][sf-multi-az-arch]
+
+### <a name="configuring-zones-on-a-virtual-machine-scale-set"></a>Zones configureren op een schaalset voor virtuele machines
+Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de volgende drie waarden in de resource van de virtuele-machine schaalset opgeven.
+
+* De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
+* De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True.
+* De derde waarde is "zoneBalance" en is optioneel, waardoor strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. Meer informatie over [zoneBalancing](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
+* De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
+
+```json
+{
+    "apiVersion": "2018-10-01",
+    "type": "Microsoft.Compute/virtualMachineScaleSets",
+    "name": "[parameters('vmNodeType1Name')]",
+    "location": "[parameters('computeLocation')]",
+    "zones": ["1", "2", "3"],
+    "properties": {
+        "singlePlacementGroup": "true",
+        "zoneBalance": false
+    }
+}
+```
+
+>[!NOTE]
+> * **SF-clusters moeten ten minste één primair nodeType hebben. DurabilityLevel van primaire nodeTypes moet zilver of hoger zijn.**
+> * De AZ-schaalset voor virtuele machines moet worden geconfigureerd met ten minste 3 Beschikbaarheids zones, onafhankelijk van de durabilityLevel.
+> * AZ spanning van de schaalset voor virtuele machines met Silver duurzaamheid (of hoger) moet ten minste 15 Vm's hebben.
+> * AZ spanning van virtuele-machine schaal sets met Bronze duurzaamheid moet minstens 6 Vm's hebben.
+
+### <a name="enabling-the-support-for-multiple-zones-in-the-service-fabric-nodetype"></a>Ondersteuning voor meerdere zones inschakelen in het Service Fabric nodeType
+Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van meerdere beschikbaarheids zones.
+
+* De eerste waarde is **multipleAvailabilityZones** die moet worden ingesteld op True voor het NodeType.
+* De tweede waarde is **sfZonalUpgradeMode** en is optioneel. Deze eigenschap kan niet worden gewijzigd als er al een NodeType met meerdere AZ is aanwezig in het cluster.
+      De eigenschap bepaalt de logische groepering van Vm's in upgrade domeinen.
+          Als waarde is ingesteld op False (platte modus): Vm's onder het knooppunt type worden gegroepeerd in UD die de zone gegevens in 5 UDs negeren.
+          Als waarde wordt wegge laten of is ingesteld op True (hiërarchische modus): de Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs.
+          Deze eigenschap definieert alleen het upgrade gedrag voor ServiceFabric toepassings-en code-upgrades. De onderliggende upgrades voor virtuele-machine schaal sets worden nog steeds parallel in alle AZ-computers.
+      Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunt typen waarvoor geen meerdere zones zijn ingeschakeld.
+* De derde waarde is **vmssZonalUpgradeMode = parallel**. Dit is een *verplichte* eigenschap die in het cluster moet worden geconfigureerd als een NodeType met meerdere AZs wordt toegevoegd. Met deze eigenschap wordt de upgrade modus gedefinieerd voor de updates voor de schaalset van virtuele machines die parallel worden uitgevoerd in alle AZ tegelijk.
+      Deze eigenschap kan nu alleen worden ingesteld op parallel.
+* De Service Fabric cluster resource apiVersion moet 2020-12-01-preview of hoger zijn.
+* De versie van de cluster code moet ' 7.2.445 ' of hoger zijn.
+
+```json
+{
+    "apiVersion": "2020-12-01-preview",
+    "type": "Microsoft.ServiceFabric/clusters",
+    "name": "[parameters('clusterName')]",
+    "location": "[parameters('clusterLocation')]",
+    "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', parameters('supportLogStorageAccountName'))]"
+    ],
+    "properties": {
+        "SFZonalUpgradeMode": "Hierarchical",
+        "VMSSZonalUpgradeMode": "Parallel",
+        "nodeTypes": [
+          {
+                "name": "[parameters('vmNodeType0Name')]",
+                "multipleAvailabilityZones": true,
+          }
+        ]
+}
+```
+
+>[!NOTE]
+> * Open bare IP-en Load Balancer-resources moeten gebruikmaken van de standaard-SKU zoals eerder in het artikel is beschreven.
+> * de eigenschap multipleAvailabilityZones van het nodeType kan alleen worden gedefinieerd op het moment dat het nodeType wordt gemaakt en kan later niet worden gewijzigd. Bestaande nodeTypes kan daarom niet worden geconfigureerd met deze eigenschap.
+> * Als "hierarchicalUpgradeDomain" wordt wegge laten of is ingesteld op True, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen.
+> * Het is raadzaam om het niveau van de cluster betrouwbaarheid in te stellen op Platinum om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
+
+>[!NOTE]
+> Voor best practice wordt aanbevolen hierarchicalUpgradeDomain ingesteld op True of worden wegge laten. De implementatie volgt de zonegebonden-distributie van Vm's die van invloed zijn op een kleinere hoeveelheid replica's en/of exemplaren waardoor ze veiliger zijn.
+> Gebruik hierarchicalUpgradeDomain ingesteld op False als de implementatie snelheid een prioriteit is of alleen stateless werk belasting wordt uitgevoerd op het knooppunt type met meerdere AZ. Dit leidt ertoe dat de UDe Walk parallel in alle AZ-activiteiten plaatsvindt.
+
+### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Migratie naar het knooppunt type met meerdere Beschikbaarheidszones
+Voor alle migratie scenario's moet een nieuw nodeType worden toegevoegd waarvoor meerdere beschikbaarheids zones worden ondersteund. Een bestaande nodeType kan niet worden gemigreerd om meerdere zones te ondersteunen.
+In dit artikel [vindt](https://docs.microsoft.com/azure/service-fabric/service-fabric-scale-up-primary-node-type ) u gedetailleerde stappen voor het toevoegen van een nieuw NodeType en het toevoegen van de andere resources die vereist zijn voor het nieuwe NodeType, zoals de IP-en lb-resources. In dit artikel wordt ook nu beschreven hoe u het bestaande nodeType buiten gebruik stelt nadat het nodeType met meerdere beschikbaarheids zones aan het cluster is toegevoegd.
+
+* Migratie van een nodeType dat gebruikmaakt van basis LB en IP-bronnen: dit wordt [hier](https://docs.microsoft.com/azure/service-fabric/service-fabric-cross-availability-zones#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) al beschreven voor de oplossing met één knooppunt type per AZ. 
+    Voor het nieuwe knooppunt type is het enige verschil dat er slechts één virtuele-machine schaalset is en 1 NodeType voor alle AZ in plaats van 1 elk per AZ.
+* Migratie van een nodeType dat gebruikmaakt van de standaard-SKU LB en IP-resources met NSG: Volg dezelfde procedure als hierboven, met de uitzonde ring dat het niet nodig is om nieuwe LB-, IP-en NSG-resources toe te voegen en dezelfde bronnen kunnen opnieuw worden gebruikt in het nieuwe nodeType.
+
+
 [sf-architecture]: ./media/service-fabric-cross-availability-zones/sf-cross-az-topology.png
+[sf-multi-az-arch]: ./media/service-fabric-cross-availability-zones/sf-multi-az-topology.png

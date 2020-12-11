@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: aadc8e817eb2b5de856ac73cfd010b48d0531bfc
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 9735293c182e7fe67a498529425459c13a199101
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523434"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109790"
 ---
 # <a name="understand-the-roles-required-to-perform-common-tasks-in-synapse"></a>Meer informatie over de rollen die zijn vereist voor het uitvoeren van algemene taken in Synapse
 
@@ -58,6 +58,7 @@ De volgende tabel bevat algemene taken en voor elke taak, de Synapse RBAC of de 
 
 >[!Note]
 >- De Synapse-beheerder wordt voor elke taak niet weer gegeven, tenzij dit de enige rol is die de benodigde machtiging biedt.  Een Synapse-beheerder kan alle taken uitvoeren die worden ingeschakeld door andere Synapse RBAC-rollen.</br>
+>- De mini maal vereiste Synapse RBAC-rol wordt weer gegeven.
 >- Alle Synapse RBAC-rollen in elk bereik bieden u Synapse-gebruikers machtigingen in de werk ruimte
 >- Alle Synapse RBAC-machtigingen/-acties die in de tabel worden weer gegeven, zijn voor voegsels van micro soft/Synapse/werk ruimten/... </br>
 
@@ -69,51 +70,50 @@ Taak (ik wil...) |Rol (ik moet zijn...)|Synapse RBAC-machtiging/actie
 |Een lijst met SQL-groepen, Apache Spark Pools, Integration Runtimes en toegang tot de configuratie gegevens|Synapse-gebruiker of|lezen|
 ||Eigenaar, bijdrager of lezer van Azure in de werk ruimte|geen
 |Gekoppelde services, referenties, beheerde persoonlijke eind punten vermelden|Synapse-gebruiker|lezen
-**SQL-pools**||
+SQL-GROEPEN|
 Een toegewezen SQL-groep of een serverloze SQL-groep maken|Azure-eigenaar of Inzender in de werk ruimte|geen
 Een toegewezen SQL-groep beheren (onderbreken, schalen of verwijderen)|Azure-eigenaar of Inzender voor de SQL-groep of-werk ruimte|geen
-Een SQL-script maken</br>|Synapse-gebruiker of </br>Azure-eigenaar of Inzender in de werk ruimte, </br>*Er zijn aanvullende SQL-machtigingen vereist om een SQL-script uit te voeren*.|
+Een SQL-script maken</br>|Synapse-gebruiker of </br>Azure-eigenaar of Inzender in de werk ruimte, </br>*Er zijn aanvullende SQL-machtigingen vereist voor het uitvoeren van een SQL-script, het publiceren of door voeren van wijzigingen*.|
 Een gepubliceerd SQL-script weer geven en openen| Synapse artefact gebruiker, artefact Uitgever, Synapse Inzender|artefacten/lezen
 Een SQL-script uitvoeren op een serverloze SQL-groep|SQL-machtigingen voor de groep (automatisch verleend aan een Synapse-beheerder)|geen
-Een SQL-script uitvoeren op een toegewezen SQL-groep|Vereist SQL-machtigingen voor de groep|geen
+Een SQL-script uitvoeren op een toegewezen SQL-groep|SQL-machtigingen voor de groep|geen
 Een nieuw, bijgewerkt of verwijderd SQL-script publiceren|Synapse artefact Uitgever, Synapse-bijdrager|sqlScripts/schrijven, verwijderen
-Wijzigingen door voeren in een SQL-script aan een Git-opslag plaats|Vereist Git-machtigingen op de opslag plaats|
+Wijzigingen door voeren in een SQL-script aan de Git-opslag plaats|Vereist Git-machtigingen op de opslag plaats|
 Active Directory beheerder toewijzen in de werk ruimte (via de werkruimte eigenschappen in azure Portal)|Azure-eigenaar of Inzender in de werk ruimte |
-**Apache Spark groepen**||
+APACHE SPARK-POOLS|
 Een Apache Spark-pool maken|Azure-eigenaar of Inzender in de werk ruimte|
 Apache Spark toepassingen bewaken| Synapse-gebruiker|lezen
 De logboeken voor het uitvoeren van notebooks en taken weer geven |Synapse Compute-operator|
 Een notitie blok of Spark-taak die wordt uitgevoerd op een Apache Spark groep annuleren|Synapse Compute-operator voor de Apache Spark groep.|bigDataPools/useCompute
-Een notitie blok of taak definitie maken|Synapse gebruiker of Azure-eigenaar, Inzender of lezer in de werk ruimte</br> *Er zijn aanvullende machtigingen vereist om uit te voeren, te publiceren of op te slaan*|lezen
+Een notitie blok of taak definitie maken|Synapse-gebruiker of </br>Eigenaar, bijdrager of lezer van Azure in de werk ruimte</br> *Er zijn aanvullende machtigingen vereist voor het uitvoeren, publiceren of door voeren van wijzigingen*|lezen</br></br></br></br></br> 
 Een gepubliceerde notitie blok of taak definitie weer geven en openen, inclusief het controleren van de opgeslagen uitvoer|Synapse artefact gebruiker, Synapse artefact Uitgever, Synapse Inzender in de werk ruimte|artefacten/lezen
 Een notitie blok uitvoeren en de uitvoer controleren|Synapse Apache Spark Administrator, Synapse Compute-operator voor de geselecteerde Apache Spark groep|bigDataPools/useCompute 
 Een notitie blok of taak definitie (inclusief uitvoer) publiceren of verwijderen voor de service|Publisher voor artefacten in de werk ruimte, Synapse Apache Spark beheerder|notebooks/schrijven, verwijderen
-Wijzigingen door voeren in een notitie blok of taak definitie voor de Git-werk vertakking|Git-machtigingen|geen
-**Pijp lijnen, Integration runtimes, gegevens stromen, gegevens sets en triggers**||
+Wijzigingen door voeren in een notitie blok of taak definitie voor de Git-opslag plaats|Git-machtigingen|geen
+PIJP LIJNEN, INTEGRATION RUNTIMES, GEGEVENS STROMEN, GEGEVENS SETS & TRIGGERS|
 Een Integration runtime maken, bijwerken of verwijderen|Azure-eigenaar of Inzender in de werk ruimte|
 Runtime status van Integration bewaken|Synapse-gebruiker|lezen, pijp lijnen/viewOutputs
 Pijplijn uitvoeringen controleren|Synapse artefact Uitgever/Synapse-bijdrager|lezen, pijp lijnen/viewOutputs 
-Een pijplijn maken |Synapse-gebruiker </br>[**_onder overweging + Synapse Credential gebruiker op WorkspaceSystemIdentity_* _]</br>_Additional machtigingen zijn vereist voor het publiceren of opslaan van *|lezen, referenties/UseSecret/actie
-Een gegevens stroom, gegevensset of trigger maken |Synapse-gebruiker</br>*Er zijn aanvullende machtigingen vereist om te publiceren of op te slaan*|lezen
+Een pijplijn maken |Synapse-gebruiker</br>*Er zijn aanvullende Synapse-machtigingen vereist voor het opsporen, toevoegen van triggers, publiceren of door voeren van wijzigingen*|lezen
+Een gegevens stroom of gegevensset maken |Synapse-gebruiker</br>*Er zijn aanvullende Synapse-machtigingen vereist om wijzigingen te publiceren of door te voeren*|lezen
 Een gepubliceerde pijp lijn weer geven en openen |Synapse artefact gebruiker | artefacten/lezen
 Gegevens van gegevensset bekijken|Synapse gebruiker + Synapse-referentie gebruiker op de WorkspaceSystemIdentity| 
 Fouten opsporen in een pijp lijn met behulp van de standaard Integration runtime|Synapse gebruiker + Synapse-referentie gebruiker op de WorkspaceSystemIdentity referentie|wie </br>referenties/useSecret
-Een trigger maken, inclusief trigger nu|Synapse gebruiker + Synapse-referentie gebruiker op de WorkspaceSystemIdentity|lezen, referenties/useSecret/actie
+Een trigger maken, inclusief trigger nu (vereist toestemming om de pijp lijn uit te voeren)|Synapse gebruiker + Synapse-referentie gebruiker op de WorkspaceSystemIdentity|lezen, referenties/useSecret/actie
+Een pijp lijn uitvoeren/uitvoeren|Synapse gebruiker + Synapse-referentie gebruiker op de WorkspaceSystemIdentity|lezen, referenties/useSecret/actie
 Gegevens kopiëren met het Gegevens kopiëren-hulp programma|Synapse gebruiker + Synapse-referentie gebruiker op de werkruimte systeem identiteit|lezen, referenties/useSecret/actie
 Gegevens opnemen (met behulp van een schema)|Synapse Auteur + Synapse-referentie gebruiker op de werkruimte systeem identiteit|lezen, referenties/useSecret/actie
-Een nieuwe, bijgewerkte of verwijderde pijp lijn, gegevens stroom of trigger publiceren naar de service|Synapse artefact uitgever in de werk ruimte|pijp lijnen/schrijven, verwijderen</br>gegevens stromen schrijven, verwijderen</br>Triggers/schrijven, verwijderen
-Een nieuwe, bijgewerkte of verwijderde gegevensstroom, gegevensset of trigger naar de service publiceren|Uitgever van artefacten in de werk ruimte|Triggers/schrijven, verwijderen
-Wijzigingen in pijp lijnen, gegevens stromen, gegevens sets, triggers (door Voer) opslaan in de Git-opslag plaats |Git-machtigingen|geen 
-**Gekoppelde services**||
-Een gekoppelde service maken (inclusief het toewijzen van een referentie)|Synapse-gebruiker</br>*Er zijn aanvullende machtigingen vereist om uit te voeren, te publiceren of op te slaan*|lezen
+Een nieuwe, bijgewerkte of verwijderde pijp lijn, gegevens stroom of trigger naar de service publiceren|Synapse artefact uitgever in de werk ruimte|pijp lijnen/schrijven, verwijderen</br>gegevens stromen/schrijven, verwijderen</br>Triggers/schrijven, verwijderen
+Wijzigingen door voeren in pijp lijnen, gegevens stromen, gegevens sets of triggers aan de Git-opslag plaats |Git-machtigingen|geen 
+GEKOPPELDE SERVICES|
+Een gekoppelde service maken (inclusief het toewijzen van een referentie)|Synapse-gebruiker</br>*Er zijn aanvullende machtigingen vereist voor het gebruik van een gekoppelde service met referenties, of voor het publiceren of door voeren van wijzigingen*|lezen
 Een gepubliceerde gekoppelde service weer geven en openen|Synapse artefact gebruiker|linkedServices/schrijven, verwijderen  
-Verbinding testen op een gekoppelde service die is beveiligd door een referentie|Gebruiker van Synapse-en Synapse-referentie|referenties/useSecret/actie|
-Een gekoppelde service publiceren|Synapse artefact Uitgever|linkedServices/schrijven, verwijderen
-Gekoppelde service definities opslaan (door voeren) aan het git-opslag plaats|Git-machtigingen|geen
-**Toegangsbeheer**||
+Verbinding testen op een gekoppelde service die is beveiligd door een referentie|Gebruikers-Synapse gebruiker + Synapse|referenties/useSecret/actie|
+Een gekoppelde service publiceren|Synapse artefact Uitgever, Synapse gekoppelde Data Manager|linkedServices/schrijven, verwijderen
+Gekoppelde service definities door voeren naar de Git-opslag plaats|Git-machtigingen|geen
+TOEGANGS BEHEER|
 Synapse RBAC-roltoewijzingen in elk bereik controleren|Synapse-gebruiker|lezen
-Synapse RBAC-roltoewijzingen toewijzen en verwijderen voor gebruikers, groepen en service-principals| Synapse-beheerder in de werk ruimte of op een specifiek bereik voor werk ruimte-items|roleAssignments/schrijven, verwijderen
-Synapse RBAC-toegang tot code artefacten maken of verwijderen|Synapse-beheerder in het bereik van de werk ruimte|roleAssignments/schrijven, verwijderen   
+Synapse RBAC-roltoewijzingen toewijzen en verwijderen voor gebruikers, groepen en service-principals| Synapse-beheerder in de werk ruimte of op een specifiek bereik voor werk ruimte-items|roleAssignments/schrijven, verwijderen 
 
 >[!Note]
 >Gast gebruikers van een andere Tenant kunnen geen roltoewijzingen controleren, toevoegen of wijzigen, ongeacht de rol waaraan ze zijn toegewezen. 

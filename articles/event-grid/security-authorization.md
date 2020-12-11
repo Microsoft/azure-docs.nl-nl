@@ -3,12 +3,12 @@ title: Beveiliging en verificatie Azure Event Grid
 description: Beschrijving van Azure Event Grid en de concepten ervan.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 5a1e4af17c2f4335ed26490bfc2408c66f4aee6b
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 24954ce0a0dc54a04720c0d0b495d14e950a2f71
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328722"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109586"
 ---
 # <a name="authorizing-access-to-event-grid-resources"></a>Toegang tot Event Grid-resources autoriseren
 Met Azure Event Grid kunt u het toegangs niveau dat aan verschillende gebruikers wordt gegeven, beheren om verschillende **beheer bewerkingen** uit te voeren, zoals abonnementen op lijst gebeurtenissen, nieuwe maken en sleutels genereren. Event Grid maakt gebruik van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
@@ -17,17 +17,18 @@ Met Azure Event Grid kunt u het toegangs niveau dat aan verschillende gebruikers
 > EventGrid biedt geen ondersteuning voor Azure RBAC voor het publiceren van gebeurtenissen naar Event Grid onderwerpen of domeinen. Gebruik een Shared Access Signature SAS-sleutel of-token om clients te verifiëren die gebeurtenissen publiceren. Zie [Publishing-clients verifiëren](security-authenticate-publishing-clients.md)voor meer informatie. 
 
 ## <a name="operation-types"></a>Bewerkings typen
+Voer de volgende Azure CLI-opdracht uit voor een lijst met bewerkingen die worden ondersteund door Azure Event Grid: 
 
-Event Grid ondersteunt de volgende acties:
+```azurecli-interactive
+az provider operation show --namespace Microsoft.EventGrid
+```
 
-* Micro soft. EventGrid/*/Read
-* Micro soft. EventGrid/*/write
-* Micro soft. EventGrid/*/Delete
+Met de volgende bewerkingen wordt mogelijk geheime informatie geretourneerd, waardoor de normale Lees bewerkingen worden gefilterd. Het is raadzaam de toegang tot deze bewerkingen te beperken. 
+
 * Micro soft. EventGrid/eventSubscriptions/getFullUrl/Action
 * Micro soft. EventGrid/topics/Listkeys ophalen/Action
 * Micro soft. EventGrid/topics/regenerateKey/Action
 
-Met de laatste drie bewerkingen wordt mogelijk geheime informatie geretourneerd, waardoor de normale Lees bewerkingen worden gefilterd. Het is raadzaam de toegang tot deze bewerkingen te beperken. 
 
 ## <a name="built-in-roles"></a>Ingebouwde rollen
 

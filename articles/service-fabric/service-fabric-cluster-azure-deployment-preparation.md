@@ -3,12 +3,12 @@ title: Een Azure Service Fabric-cluster implementatie plannen
 description: Meer informatie over het plannen en voorbereiden van een productie-Service Fabric cluster implementatie naar Azure.
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 1064e59491b7144aafade24bd50131478fe025eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9de59811397eb47809c6d71f608e43beae5bfadb
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87281324"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109620"
 ---
 # <a name="plan-and-prepare-for-a-cluster-deployment"></a>Plannen en voorbereiden voor een cluster implementatie
 
@@ -89,8 +89,6 @@ Tijdelijke besturingssysteem schijven zijn geen specifieke Service Fabric-functi
 
 > [!NOTE]
 > Gebruikers toepassingen mogen geen afhankelijkheid/bestand/artefact hebben op de besturingssysteem schijf, omdat de besturingssysteem schijf verloren gaat in het geval van een upgrade van het besturings systeem.
-> Daarom is het niet raadzaam om [PatchOrchestrationApplication](https://github.com/microsoft/Service-Fabric-POA) te gebruiken met tijdelijke schijven.
->
 
 > [!NOTE]
 > Bestaande niet-tijdelijke VMSS kunnen niet in-place worden bijgewerkt om tijdelijke schijven te gebruiken.

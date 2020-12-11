@@ -3542,6 +3542,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "articles/firewall/log-analytics-samples.md",
+      "redirect_url": "/azure/firewall/firewall-workbook",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "articles/frontdoor/waf-faq.md",
       "redirect_url": "/azure/web-application-firewall/afds/waf-faq",
       "redirect_document_id": false
@@ -55737,6 +55742,11 @@
     {
       "source_path": "articles/media-services/previous/media-services-configure-tricaster-live-encoder.md",
       "redirect_url": "/azure/media-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "articles/databox-online/azure-stack-edge-gpu-2011-release-notes.md",
+      "redirect_url": "/azure/databox-online/azure-stack-edge-gpu-2012-release-notes",
       "redirect_document_id": false
     },
     {

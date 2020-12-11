@@ -3,12 +3,12 @@ title: De agent voor Azure Arc-servers beheren
 description: In dit artikel worden de verschillende beheer taken beschreven die u normaal gesp roken uitvoert tijdens de levens cyclus van de computer agent die verbonden is met Azure Arc ingeschakeld.
 ms.date: 10/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 63db1177b193cad66208964ec377fab0779f23ba
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9e17bf58d1e94b64d1cdc6ff0b57b1b6a81be180
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130966"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107189"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>De verbonden machine agent beheren en onderhouden
 
@@ -160,7 +160,7 @@ Het hulp programma Azcmagent (Azcmagent.exe) wordt gebruikt voor het configurere
 
 * **-h of--Help** : toont beschik bare opdracht regel parameters
 
-    Als u bijvoorbeeld gedetailleerde Help voor de para meter **reconnect** wilt weer geven, typt u `azcmagent reconnect -h` . 
+    Als u bijvoorbeeld gedetailleerde Help voor de para meter **Connect** wilt weer geven, typt u `azcmagent connect -h` . 
 
 * **-v of-uitgebreid** -uitgebreide logboek registratie inschakelen
 
@@ -219,8 +219,8 @@ Met beide van de volgende methoden wordt de agent verwijderd, maar wordt de map 
 1. Ga als volgt te werk om de Windows-agent te verwijderen van de computer:
 
     a. Meld u bij de computer aan met een account met beheerders machtigingen.  
-    b. Selecteer in **het configuratie scherm** de optie **Program ma's en onderdelen** .  
-    c. In **Program ma's en onderdelen** selecteert u **Azure Connected machine agent** , selecteert u **verwijderen** en selecteert u vervolgens **Ja** .  
+    b. Selecteer in **het configuratie scherm** de optie **Program ma's en onderdelen**.  
+    c. In **Program ma's en onderdelen** selecteert u **Azure Connected machine agent**, selecteert u **verwijderen** en selecteert u vervolgens **Ja**.  
 
     >[!NOTE]
     > U kunt de wizard Setup van agent ook uitvoeren door te dubbel klikken op het **AzureConnectedMachineAgent.msi** Installer-pakket.
@@ -281,7 +281,7 @@ Als u van plan bent om het beheer van de machine met ondersteunende services in 
 
 1. Open Azure Arc enabled servers door naar de [Azure Portal](https://aka.ms/hybridmachineportal)te gaan.
 
-2. Selecteer de computer in de lijst, selecteer het beletsel teken ( **...** ) en selecteer vervolgens **verwijderen** .
+2. Selecteer de computer in de lijst, selecteer het beletsel teken (**...**) en selecteer vervolgens **verwijderen**.
 
 ## <a name="update-or-remove-proxy-settings"></a>Proxy-instellingen bijwerken of verwijderen
 

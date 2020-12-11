@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 11/09/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4fa0f4d87567bd77faacfd2373dba0d2b8996446
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 81a1263d0eacbffa77e2e35e4594e23235394183
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873366"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108668"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
 
@@ -152,7 +152,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **cancel_message** | De gebruiker heeft het invoeren van zelfbevestigende informatie geannuleerd |
 | **preloader_alt** | Een ogenblik geduld |
 | **ver_but_send** | Verificatie code verzenden |
-| **alert_yes** | Ja |
+| **alert_yes** | Yes |
 | **error_fieldIncorrect** | Een of meer velden zijn onjuist ingevuld. Controleer uw vermeldingen en probeer het opnieuw. |
 | **jaareinde** | Year |
 | **verifying_blurb** | De gegevens worden verwerkt. een ogen blik geduld... |
@@ -170,7 +170,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **ver_incorrect_format** | Onjuiste indeling. |
 | **ver_but_edit** | E-mail wijzigen |
 | **ver_but_verify** | Code verifiëren |
-| **alert_no** | Nee |
+| **alert_no** | No |
 | **ver_info_msg** | De verificatie code is verzonden naar het postvak in. Kopieer het naar het invoervak hieronder. |
 | **profieldag** | Dag |
 | **ver_fail_throttled** | Er zijn te veel aanvragen om dit e-mail adres te controleren. Wacht even en probeer het opnieuw. |
@@ -442,7 +442,7 @@ Hier volgen de Id's voor het [ondersteunings fout bericht van het onderhouds ser
 
 ## <a name="azure-ad-mfa-error-messages"></a>Azure AD MFA-fout berichten
 
-Hier volgen de Id's voor een fout bericht over het [technische profiel van Azure AD MFA](multi-factor-auth-technical-profile.md) :
+Hier volgen de Id's voor een fout bericht van het [technische profiel van Azure AD MFA](multi-factor-auth-technical-profile.md) :
 
 | Id | Standaardwaarde |
 | -- | ------------- |
@@ -547,5 +547,5 @@ Hier volgen de Id's voor claim transformaties fout berichten:
 
 Raadpleeg de volgende artikelen voor lokalisatie van voor beelden:
 
-- [Taal aanpassing met aangepast beleid in Azure Active Directory B2C](custom-policy-localization.md)
-- [Taal aanpassing met gebruikers stromen in Azure Active Directory B2C](user-flow-language-customization.md)
+- [Taal aanpassing met aangepast beleid in Azure Active Directory B2C](language-customization.md)
+- [Taal aanpassing met gebruikers stromen in Azure Active Directory B2C](language-customization.md)

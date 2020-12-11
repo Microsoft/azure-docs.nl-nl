@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 384f178481f7a6ff202d5363ba09c242b1fc366d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 30b7788419695db7ee5d4b81714bf55248a41b4a
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951788"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108719"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -78,7 +78,7 @@ De e-mail handtekening bevat de naam van de Azure AD B2C Tenant die u hebt ingev
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) als globale beheerder.
 1. Open de Blade **Azure Active Directory** .
-1. Klik op het tabblad **Eigenschappen** .
+1. Klik op het tabblad **Eigenschappen**.
 1. Wijzig het veld **naam** .
 1. Klik bovenaan de pagina op **Opslaan**.
 
@@ -124,7 +124,7 @@ Nee, Azure AD B2C biedt geen ondersteuning voor dezelfde set rapporten als Azure
 
 ### <a name="can-i-localize-the-ui-of-pages-served-by-azure-ad-b2c-what-languages-are-supported"></a>Kan ik de gebruikers interface lokaliseren van pagina's die worden bediend door Azure AD B2C? Welke talen worden ondersteund?
 
-Ja, Zie [taal aanpassing](user-flow-language-customization.md). We bieden vertalingen voor 36 talen en u kunt alle teken reeksen aanpassen aan uw behoeften.
+Ja, Zie [taal aanpassing](language-customization.md). We bieden vertalingen voor 36 talen en u kunt alle teken reeksen aanpassen aan uw behoeften.
 
 ### <a name="can-i-use-my-own-urls-on-my-sign-up-and-sign-in-pages-that-are-served-by-azure-ad-b2c-for-instance-can-i-change-the-url-from-contosob2clogincom-to-logincontosocom"></a>Kan ik mijn eigen Url's gebruiken op mijn registratie-en aanmeldings pagina's die worden bediend door Azure AD B2C? Bijvoorbeeld, kan ik de URL wijzigen van contoso.b2clogin.com in login.contoso.com?
 

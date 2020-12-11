@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 03/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b01f1edd4305c09a874b177e4bca373991c9162e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46f04c55b40d4f1bdbbf5fd55eb648d1d3294056
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85203806"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108413"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Predikaten en PredicateValidations
 
@@ -36,7 +36,7 @@ Het element **predikaten** moet direct na het **ClaimsSchema** -element binnen h
 
 Het element **predikaten** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Predicaat | 1: n | Een lijst met predikaten. |
 
@@ -44,26 +44,26 @@ Het **predicaat** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor het predicaat. Andere elementen kunnen deze id in het beleid gebruiken. |
-| Methode | Ja | Het type methode dat moet worden gebruikt voor validatie. Mogelijke waarden: [IsLengthRange](#islengthrange), [MatchesRegex](#matchesregex), [IncludesCharacters](#includescharacters)of [IsDateRange](#isdaterange).  |
-| HelpText | Nee | Een fout bericht voor gebruikers als de controle mislukt. Deze teken reeks kan worden gelokaliseerd met behulp van de [taal aanpassing](localization.md) |
+| Id | Yes | Een id die wordt gebruikt voor het predicaat. Andere elementen kunnen deze id in het beleid gebruiken. |
+| Methode | Yes | Het type methode dat moet worden gebruikt voor validatie. Mogelijke waarden: [IsLengthRange](#islengthrange), [MatchesRegex](#matchesregex), [IncludesCharacters](#includescharacters)of [IsDateRange](#isdaterange).  |
+| HelpText | No | Een fout bericht voor gebruikers als de controle mislukt. Deze teken reeks kan worden gelokaliseerd met behulp van de [taal aanpassing](localization.md) |
 
 Het **predicaat** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | UserHelpText | 0:1 | Keur Een fout bericht voor gebruikers als de controle mislukt. |
 | Parameters | 1:1 | De para meters voor het methode type van de teken reeks validatie. |
 
 Het element **para meters** bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Parameter | 1: n | De para meters voor het methode type van de teken reeks validatie. |
 
 Het **parameter** element bevat de volgende kenmerken:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Id | 1:1 | De id van de para meter. |
 
@@ -75,8 +75,8 @@ De methode IsLengthRange controleert of de lengte van een teken reeks claim waar
 
 | Parameter | Vereist | Beschrijving |
 | ------- | ----------- | ----------- |
-| Maximum | Ja | Het maximum aantal tekens dat kan worden ingevoerd. |
-| Minimum | Ja | Het minimum aantal tekens dat moet worden ingevoerd. |
+| Maximum | Yes | Het maximum aantal tekens dat kan worden ingevoerd. |
+| Minimum | Yes | Het minimum aantal tekens dat moet worden ingevoerd. |
 
 
 In het volgende voor beeld ziet u een methode IsLengthRange met de para meters `Minimum` en `Maximum` geeft u het lengte bereik van de teken reeks op:
@@ -96,7 +96,7 @@ De methode MatchesRegex controleert of een teken reeks claim waarde overeenkomt 
 
 | Parameter | Vereist | Beschrijving |
 | ------- | ----------- | ----------- |
-| RegularExpression | Ja | Het reguliere expressie patroon dat moet worden vergeleken. |
+| RegularExpression | Yes | Het reguliere expressie patroon dat moet worden vergeleken. |
 
 In het volgende voor beeld ziet `MatchesRegex` u een methode met de para meter `RegularExpression` die een reguliere expressie specificeert:
 
@@ -114,7 +114,7 @@ De methode IncludesCharacters controleert of een teken reeks claim waarde een te
 
 | Parameter | Vereist | Beschrijving |
 | ------- | ----------- | ----------- |
-| CharacterSet | Ja | De set tekens die kan worden ingevoerd. Bijvoorbeeld kleine letters  `a-z` , hoofd letters, `A-Z` cijfers, `0-9` of een lijst met symbolen, zoals `@#$%^&amp;*\-_+=[]{}|\\:',?/~"();!` . |
+| CharacterSet | Yes | De set tekens die kan worden ingevoerd. Bijvoorbeeld kleine letters  `a-z` , hoofd letters, `A-Z` cijfers, `0-9` of een lijst met symbolen, zoals `@#$%^&amp;*\-_+=[]{}|\\:',?/~"();!` . |
 
 In het volgende voor beeld ziet `IncludesCharacters` u een methode met de para meter `CharacterSet` die de set tekens specificeert:
 
@@ -132,8 +132,8 @@ De methode IsDateRange controleert of een datum claim waarde ligt tussen een ber
 
 | Parameter | Vereist | Beschrijving |
 | ------- | ----------- | ----------- |
-| Maximum | Ja | De grootste mogelijke datum die kan worden ingevoerd. De notatie van de datum volgt de `yyyy-mm-dd` Conventie of `Today` . |
-| Minimum | Ja | De kleinste mogelijke datum die kan worden ingevoerd. De notatie van de datum volgt de `yyyy-mm-dd` Conventie of `Today` .|
+| Maximum | Yes | De grootste mogelijke datum die kan worden ingevoerd. De notatie van de datum volgt de `yyyy-mm-dd` Conventie of `Today` . |
+| Minimum | Yes | De kleinste mogelijke datum die kan worden ingevoerd. De notatie van de datum volgt de `yyyy-mm-dd` Conventie of `Today` .|
 
 In het volgende voor beeld ziet u een `IsDateRange` methode met de para meters `Minimum` en `Maximum` geeft u het datum bereik op met een notatie van `yyyy-mm-dd` en `Today` .
 
@@ -148,7 +148,7 @@ In het volgende voor beeld ziet u een `IsDateRange` methode met de para meters `
 
 ## <a name="predicatevalidations"></a>PredicateValidations
 
-Hoewel de predikaten de validatie definiëren voor het controleren op basis van een claim type, wordt in de **PredicateValidations** groep een reeks predikaten gevormd om een gebruikers invoer validatie te vormen die kan worden toegepast op een claim type. Elk **PredicateValidation** -element bevat een set **PredicateGroup** -elementen die een set **PredicateReference** -elementen bevatten die naar een **predikaat**verwijzen. Om de validatie door te voeren, moet de waarde van de claim alle tests van een predikaat door geven onder alle **PredicateGroup** met hun set **PredicateReference** -elementen.
+Hoewel de predikaten de validatie definiëren voor het controleren op basis van een claim type, wordt in de **PredicateValidations** groep een reeks predikaten gevormd om een gebruikers invoer validatie te vormen die kan worden toegepast op een claim type. Elk **PredicateValidation** -element bevat een set **PredicateGroup** -elementen die een set **PredicateReference** -elementen bevatten die naar een **predikaat** verwijzen. Om de validatie door te voeren, moet de waarde van de claim alle tests van een predikaat door geven onder alle **PredicateGroup** met hun set **PredicateReference** -elementen.
 
 Het element **PredicateValidations** moet direct na het element **predikaten** worden weer gegeven binnen het [BuildingBlocks](buildingblocks.md) -element.
 
@@ -172,7 +172,7 @@ Het element **PredicateValidations** moet direct na het element **predikaten** w
 
 Het element **PredicateValidations** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | PredicateValidation | 1: n | Een lijst met validatie van predikaten. |
 
@@ -180,17 +180,17 @@ Het element **PredicateValidation** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor de validatie van predikaten. Het element **claim** type kan deze id in het beleid gebruiken. |
+| Id | Yes | Een id die wordt gebruikt voor de validatie van predikaten. Het element **claim** type kan deze id in het beleid gebruiken. |
 
 Het element **PredicateValidation** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | PredicateGroups | 1: n | Een lijst met predicaat groepen. |
 
 Het element **PredicateGroups** bevat het volgende element:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | PredicateGroup | 1: n | Een lijst met predikaten. |
 
@@ -198,11 +198,11 @@ Het element **PredicateGroup** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor de predicaat groep.  |
+| Id | Yes | Een id die wordt gebruikt voor de predicaat groep.  |
 
 Het **PredicateGroup** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | UserHelpText | 0:1 |  Een beschrijving van het predikaat waarmee gebruikers kunnen zien welke waarde ze moeten typen. |
 | PredicateReferences | 1: n | Een lijst met predikaten-verwijzingen. |
@@ -211,11 +211,11 @@ Het **PredicateReferences** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| MatchAtLeast | Nee | Hiermee geeft u op dat de waarde moet overeenkomen met een groot aantal predicaat definities voor de invoer die moet worden geaccepteerd. Als niet wordt opgegeven, moet de waarde overeenkomen met alle predicaat definities. |
+| MatchAtLeast | No | Hiermee geeft u op dat de waarde moet overeenkomen met een groot aantal predicaat definities voor de invoer die moet worden geaccepteerd. Als niet wordt opgegeven, moet de waarde overeenkomen met alle predicaat definities. |
 
 Het **PredicateReferences** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | PredicateReference | 1: n | Een verwijzing naar een predikaat. |
 
@@ -223,7 +223,7 @@ Het **PredicateReference** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id die wordt gebruikt voor de validatie van predikaten.  |
+| Id | Yes | Een id die wordt gebruikt voor de validatie van predikaten.  |
 
 
 ## <a name="configure-password-complexity"></a>Wachtwoord complexiteit configureren
@@ -233,10 +233,10 @@ Met **predikaten** en **PredicateValidationsInput** kunt u de complexiteits vere
 - Met **behulp van** de `IsLengthRange` -methode valideert u of het wacht woord tussen de 8 en 64 tekens moet lang zijn.
 - Met de methode wordt in **kleine letters** `IncludesCharacters` gecontroleerd of het wacht woord een kleine letter bevat.
 - **Hoofd letters** met de `IncludesCharacters` methode valideert of het wacht woord een hoofd letter bevat.
-- **Number** Als u de `IncludesCharacters` methode gebruikt, wordt gevalideerd of het wacht woord een cijfer bevat.
-- **Symbol** Met het symbool `IncludesCharacters` dat de methode gebruikt, wordt gevalideerd of het wacht woord een van de symbool tekens bevat.
+-  Als u de `IncludesCharacters` methode gebruikt, wordt gevalideerd of het wacht woord een cijfer bevat.
+-  Met het symbool `IncludesCharacters` dat de methode gebruikt, wordt gevalideerd of het wacht woord een van de symbool tekens bevat.
 - **Pincode** met behulp van de `MatchesRegex` methode valideert of het wacht woord alleen cijfers bevat.
-- **AllowedAADCharacters** Met behulp `MatchesRegex` van de methode valideert u of het wacht woord alleen een ongeldig teken heeft opgegeven.
+-  Met behulp `MatchesRegex` van de methode valideert u of het wacht woord alleen een ongeldig teken heeft opgegeven.
 - **DisallowedWhitespace** met behulp van de `MatchesRegex` -methode valideert of het wacht woord niet begint of eindigt met een spatie.
 
 ```xml
@@ -428,4 +428,4 @@ Voeg in uw claim type het element **PredicateValidationReference** toe en geef d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [configureren van wachtwoord complexiteit met aangepaste beleids regels in azure Active Directory B2C](custom-policy-password-complexity.md) met behulp van validatie van predikaten.
+- Meer informatie over het [configureren van wachtwoord complexiteit met aangepaste beleids regels in azure Active Directory B2C](password-complexity.md) met behulp van validatie van predikaten.

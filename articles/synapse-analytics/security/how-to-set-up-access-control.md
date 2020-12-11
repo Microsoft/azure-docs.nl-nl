@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 12/03/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7243d24204c8e15ae4246718cafb24d31f804d02
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 62c30356017b5ea5d93351e6f22b8b7b0c22718c
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96519175"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109263"
 ---
 # <a name="how-to-set-up-access-control-for-your-synapse-workspace"></a>Toegangs beheer instellen voor uw Synapse-werk ruimte 
 
@@ -43,7 +43,7 @@ Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het conf
 
 In dit document worden standaard namen gebruikt om de instructies te vereenvoudigen. Vervang ze door de namen van uw keuze.
 
-|Instelling | Standaard naam | Beschrijving |
+|Instelling | Standaard naam | Description |
 | :------ | :-------------- | :---------- |
 | **Synapse-werkruimte** | `workspace1` |  De naam die de Synapse-werk ruimte heeft. |
 | **ADLSGEN2-account** | `storage1` | Het ADLS-account dat moet worden gebruikt met uw werk ruimte. |
@@ -54,7 +54,7 @@ In dit document worden standaard namen gebruikt om de instructies te vereenvoudi
 ## <a name="step-1-set-up-security-groups"></a>STAP 1: beveiligings groepen instellen
 
 >[!Note] 
->Tijdens de preview-periode is het aanbevolen om beveiligings groepen te maken die zijn toegewezen aan de Synapse **Synapse SQL-beheerder** en **Synapse Apache Spark beheerders** rollen.  Met de introductie van nieuwe Synapse RBAC-rollen en-bereiken, is het nu raadzaam deze nieuwe mogelijkheden te gebruiken om de toegang tot uw werk ruimte te beheren.  Deze nieuwe rollen en bereiken bieden meer configuratie flexibiliteit en herkennen ontwikkel aars vaak een combi natie van SQL en Spark in het maken van Analytics-toepassingen en moeten mogelijk toegang krijgen tot specifieke bronnen in de werk ruimte. [Meer informatie](./synapse-workspace-synapse-rbac.md).
+>Tijdens de preview-periode is het aanbevolen om beveiligings groepen te maken die zijn toegewezen aan de Synapse **Synapse SQL-beheerder** en **Synapse Apache Spark beheerders** rollen.  Met de introductie van nieuwe Synapse RBAC-rollen en-bereiken, is het nu raadzaam deze nieuwe mogelijkheden te gebruiken om de toegang tot uw werk ruimte te beheren.  Deze nieuwe rollen en bereiken bieden meer configuratie flexibiliteit en herkennen dat ontwikkel aars vaak een combi natie van SQL en Spark gebruiken in het maken van Analytics-toepassingen en moeten mogelijk toegang krijgen tot specifieke resources in plaats van de hele werk ruimte. Meer [informatie](./synapse-workspace-synapse-rbac.md) over Synapse RBAC.
 
 Maak de volgende beveiligings groepen voor uw werk ruimte:
 
@@ -66,9 +66,9 @@ Maak de volgende beveiligings groepen voor uw werk ruimte:
 U wijst binnenkort Synapse-rollen toe aan deze groepen in het bereik van de werk ruimte.  
 
 Deze beveiligings groep ook maken: 
-- **`workspace1_SQLAdministrators`**, groep voor gebruikers die beheerders rechten nodig Active Directory hebben binnen SQL-groepen in de werk ruimte. 
+- **`workspace1_SQLAdmins`**, groep voor gebruikers die SQL Active Directory-beheer instantie nodig hebben binnen SQL-groepen in de werk ruimte. 
 
-De `workspace1_SynapseSQLAdministrators` groep wordt gebruikt wanneer u SQL-machtigingen in SQL-groepen configureert terwijl u deze maakt. 
+De `workspace1_SQLAdmins` groep wordt gebruikt wanneer u SQL-machtigingen in SQL-groepen configureert terwijl u deze maakt. 
 
 Deze vijf groepen zijn voldoende voor een eenvoudige installatie. Later kunt u beveiligings groepen toevoegen voor het afhandelen van gebruikers die meer gespecialiseerde toegang nodig hebben of om gebruikers alleen toegang te geven tot specifieke bronnen.
 
@@ -84,6 +84,7 @@ Deze vijf groepen zijn voldoende voor een eenvoudige installatie. Later kunt u b
 Een Synapse-werk ruimte gebruikt een standaard opslag container voor:
   - Opslaan van de back-upgegevens bestanden voor Spark-tabellen
   - Uitvoerings logboeken voor Spark-taken
+  - Bibliotheken beheren die u wilt installeren
 
 Bepaal de volgende informatie over uw opslag:
 
@@ -94,7 +95,7 @@ Bepaal de volgende informatie over uw opslag:
 
   - Wijs de rol **Inzender voor BLOB-gegevens opslag** toe aan `workspace1_SynapseAdmins` 
   - Wijs de rol **Inzender voor BLOB-gegevens opslag** toe aan `workspace1_SynapseContributors`
-  - Wijs de rol **Inzender gegevens van Blob-opslag** toe aan `workspace1_SynapseComputeOperators` **<< valideren**  
+  - Wijs de rol **Inzender voor BLOB-gegevens opslag** toe aan `workspace1_SynapseComputeOperators`
 
 ## <a name="step-3-create-and-configure-your-synapse-workspace"></a>STAP 3: uw Synapse-werk ruimte maken en configureren
 
@@ -106,14 +107,14 @@ Maak in het Azure Portal een Synapse-werk ruimte:
 - Kiezen `storage1` voor het opslag account
 - Kies `container1` voor de container die wordt gebruikt als het "Bestands systeem".
 - Open WS1 in Synapse Studio
-- Ga naar **beheer**  >  **Access Control** en wijs de volgende Synapse-rollen toe aan de beveiligings groepen in het bereik van de *werk ruimte* .
+- Ga naar **Manage**  >  **Access Control** en wijs de volgende Synapse-rollen toe aan de beveiligings groepen in het *werkruimte bereik* :
   - Wijs de beheerdersrol **Synapse** toe aan `workspace1_SynapseAdministrators` 
   - Wijs de rol **Inzender voor Synapse** toe aan `workspace1_SynapseContributors` 
-  - Wijs de rol **SQL Compute-operator Synapse** toe aan `workspace1_SynapseComputeOperators`
+  - Wijs de rol **Synapse Compute operator** toe aan `workspace1_SynapseComputeOperators`
 
 ## <a name="step-4-grant-the-workspace-msi-access-to-the-default-storage-container"></a>STAP 4: de werk ruimte-MSI toegang verlenen tot de standaard opslag container
 
-Als u pijp lijnen wilt uitvoeren en systeem taken wilt uitvoeren, moet u voor Synapse de door de werk ruimte beheerde service-identiteit (MSI) toegang tot hebben `container1` in het standaard ADLS Gen2-account.
+Voor het uitvoeren van pijp lijnen en het uitvoeren van systeem taken vereist Synapse dat de beheerde service-id (MSI) van de werk ruimte toegang moet hebben tot `container1` in het standaard ADLS Gen2-account.
 
 - Open de Azure Portal
 - Zoek het opslag account, `storage1` en klik vervolgens `container1`
@@ -121,9 +122,9 @@ Als u pijp lijnen wilt uitvoeren en systeem taken wilt uitvoeren, moet u voor Sy
   - Als deze niet is toegewezen, wijst u deze toe.
   - Het MSI-bestand heeft dezelfde naam als de werk ruimte. In dit artikel zou het zijn `workspace1` .
 
-## <a name="step-5-grant-the-synapse-administrators-the-azure-contributor-role-on-the-workspace"></a>STAP 5: Ken de Synapse-Administrators de rol Azure contributor toe aan de werk ruimte 
+## <a name="step-5-grant-synapse-administrators-the-azure-contributor-role-on-the-workspace"></a>STAP 5: Ken Synapse Administrators de rol Azure contributor toe aan de werk ruimte 
 
-Voor het maken van SQL-groepen, Apache Spark Pools en integratie-runtimes, moeten gebruikers ten minste Azure contributor-toegang hebben in de werk ruimte. Met de rol Inzender kunnen deze gebruikers ook de resources beheren, met inbegrip van onderbreken en schalen.
+Voor het maken van SQL-groepen, Apache Spark Pools en integratie-Runtimes moeten gebruikers ten minste toegang hebben tot de Azure-Inzender voor de werk ruimte. Met de rol Inzender kunnen deze gebruikers ook de resources beheren, met inbegrip van onderbreken en schalen.
 
 - Open de Azure Portal
 - Zoek de werk ruimte, `workspace1`
@@ -131,44 +132,44 @@ Voor het maken van SQL-groepen, Apache Spark Pools en integratie-runtimes, moete
 
 ## <a name="step-6-assign-sql-active-directory-admin-role"></a>STAP 6: SQL Active Directory beheerdersrol toewijzen
 
-De maker van het werk station wordt automatisch ingesteld als de Active Directory beheerder voor de werk ruimte.  Deze rol kan slechts aan één gebruiker of groep worden toegewezen. In deze stap wijst u de Active Directory beheerder in de werk ruimte toe aan de `workspace1_SynapseSQLAdministrators` beveiligings groep.  Als u deze rol toewijst, krijgt deze groep uiterst bevoegde beheerders toegang tot alle SQL-groepen.   
+De maker van het werk station wordt automatisch ingesteld als de SQL Active Directory-beheerder voor de werk ruimte.  Deze rol kan slechts aan één gebruiker of groep worden toegewezen. In deze stap wijst u de SQL Active Directory-beheerder in de werk ruimte toe aan de `workspace1_SQLAdmins` beveiligings groep.  Als u deze rol toewijst, krijgt deze groep uiterst bevoegde beheerders toegang tot alle SQL-groepen en data bases in de werk ruimte.   
 
 - Open de Azure Portal
 - Ga naar `workspace1`
 - Selecteer onder **instellingen** de optie **SQL Active Directory-beheerder**
-- Selecteer **beheerder instellen** en kies **`workspace1_SynapseSQLAdministrators`**
+- Selecteer **beheerder instellen** en kies **`workspace1_SQLAdmins`**
 
 >[!Note]
->Deze stap is optioneel.  U kunt ervoor kiezen om de SQL-beheerders groep een minder privileged-rol te geven. Als `db_owner` u of andere SQL-rollen wilt toewijzen, moet u scripts uitvoeren op elke SQL database. 
+>Stap 6 is optioneel.  U kunt ervoor kiezen om de `workspace1_SQLAdmins` groep een minder privileged-rol te geven. Als `db_owner` u of andere SQL-rollen wilt toewijzen, moet u scripts uitvoeren op elke SQL database. 
 
 ## <a name="step-7-grant-access-to-sql-pools"></a>STAP 7: toegang verlenen aan SQL-groepen
 
-Standaard wordt aan alle gebruikers die de Synapse-beheerdersrol toegewezen, de SQL `db_owner` -functie toegewezen op de serverloze SQL-groep, ' ingebouwd '.
+Standaard wordt aan alle gebruikers die de Synapse-beheerdersrol toegewezen, ook de SQL-functie toegewezen aan `db_owner` de serverloze SQL-groep, ingebouwde en alle bijbehorende data bases.
 
-Toegang tot SQL-groepen voor andere gebruikers en voor de werk ruimte MSI wordt beheerd met behulp van SQL-machtigingen.  Voor het toewijzen van SQL-machtigingen moet u SQL-scripts uitvoeren op elke SQL-groep nadat deze is gemaakt.  Er zijn drie gevallen waarin u deze scripts moet uitvoeren:
-1. Andere gebruikers toegang verlenen tot de serverloze SQL-groep, ' ingebouwd '
-2. Gebruikers toegang verlenen tot specifieke Pools
-3. Het verlenen van de werk ruimte MSI toegang tot een SQL-groep om pijp lijnen in te scha kelen waarvoor toegang tot de SQL-groep is vereist.
+Toegang tot SQL-groepen voor andere gebruikers en voor de werk ruimte MSI wordt beheerd met behulp van SQL-machtigingen.  Voor het toewijzen van SQL-machtigingen moet u SQL-scripts uitvoeren op elke SQL database na het maken.  Er zijn drie gevallen waarin u deze scripts moet uitvoeren:
+1. Andere gebruikers toegang verlenen tot de serverloze SQL-groep, ingebouwde en data bases
+2. Gebruikers toegang verlenen tot specifieke pool databases
+3. Het verlenen van de werk ruimte-MSI toegang tot een SQL-groeps database om pijp lijnen in te scha kelen waarvoor toegang tot de SQL-groep is vereist.
 
 Hieronder vindt u een voor beeld van SQL-scripts.
 
-Om toegang te verlenen aan een toegewezen SQL-groep, kunnen de scripts worden uitgevoerd door de maker van de werk ruimte of een lid van de `workspace1_SynapseSQL Administrators` groep.  
+Om toegang te verlenen aan een toegewezen SQL-groeps database, kunnen de scripts worden uitgevoerd door de maker van de werk ruimte of een lid van de `workspace1_SQLAdmins` groep.  
 
-Als u toegang wilt verlenen tot de serverloze SQL-groep, ' ingebouwd ', kunnen de scripts ook worden uitgevoerd door een lid van de  `workspace1_SynapseAdministrators` groep. 
+Om toegang te verlenen tot de serverloze SQL-groep, ' ingebouwd ', kunnen de scripts worden uitgevoerd door elk lid van de `workspace1_SQLAdmins` groep of de  `workspace1_SynapseAdministrators` groep. 
 
 > [!TIP]
-> De onderstaande stappen moeten worden uitgevoerd voor **elke** SQL-groep om gebruikers toegang te verlenen tot alle SQL-data bases, met uitzonde ring van de sectie [werkruimte machtigingen](#workspace-scoped-permission) waar u gebruiker een sysadmin-rol kunt toewijzen.
+> De onderstaande stappen moeten worden uitgevoerd voor **elke** SQL-groep om gebruikers toegang te verlenen tot alle SQL-data bases, met uitzonde ring van de sectie [werkruimte machtigingen](#workspace-scoped-permission) waar u een gebruiker kunt toewijzen aan een sysadmin-rol op het niveau van de werk ruimte.
 
-### <a name="step-71-serverless-sql-pools"></a>STAP 7,1: SQL-groepen zonder server
+### <a name="step-71-serverless-sql-pool-built-in"></a>STAP 7,1: SQL-groep zonder server, ingebouwd
 
-In deze sectie vindt u voor beelden om een gebruiker een machtiging te geven voor een bepaalde data base of volledige server machtigingen.
+In deze sectie vindt u voorbeeld scripts waarin wordt getoond hoe een gebruiker toegang krijgt tot een bepaalde data base of aan alle data bases in de serverloze SQL-groep, ' ingebouwd '.
 
 > [!NOTE]
 > Vervang in de script voorbeelden de *alias* door de alias van de gebruiker of groep waaraan toegang is verleend en *domein* met het bedrijfs domein dat u gebruikt.
 
-#### <a name="pool-scoped-permission"></a>Machtiging voor groeps bereik
+#### <a name="database-scoped-permission"></a>Data base-scoped permission
 
-Als u toegang wilt verlenen aan een gebruiker aan **één** serverloze SQL-groep, volgt u de stappen in dit voor beeld:
+Als u toegang wilt verlenen aan een gebruiker aan **één** serverloze SQL database, volgt u de stappen in dit voor beeld:
 
 1. AANMELDING maken
 
@@ -182,7 +183,7 @@ Als u toegang wilt verlenen aan een gebruiker aan **één** serverloze SQL-groep
 2. GEBRUIKER maken
 
     ```sql
-    use yourdb -- Use your DB name
+    use yourdb -- Use your database name
     go
     CREATE USER alias FROM LOGIN [alias@domain.com];
     ```
@@ -190,7 +191,7 @@ Als u toegang wilt verlenen aan een gebruiker aan **één** serverloze SQL-groep
 3. GEBRUIKER toevoegen aan leden van de opgegeven rol
 
     ```sql
-    use yourdb -- Use your DB name
+    use yourdb -- Use your database name
     go
     alter role db_owner Add member alias -- Type USER name from step 2
     ```
@@ -200,25 +201,27 @@ Als u toegang wilt verlenen aan een gebruiker aan **één** serverloze SQL-groep
 Gebruik het script in dit voor beeld om volledige toegang te verlenen aan **alle** SERVERloze SQL-groepen in de werk ruimte:
 
 ```sql
+use master
+go
 CREATE LOGIN [alias@domain.com] FROM EXTERNAL PROVIDER;
-ALTER SERVER ROLE  sysadmin  ADD MEMBER [alias@domain.com];
+ALTER SERVER ROLE sysadmin ADD MEMBER [alias@domain.com];
 ```
 
 ### <a name="step-72-dedicated-sql-pools"></a>STAP 7,2: toegewezen SQL-groepen
 
-Als u toegang wilt verlenen aan **één** exclusieve SQL-groep, volgt u deze stappen in de Synapse SQL script-editor:
+Als u toegang wilt verlenen aan **één** exclusieve SQL-groeps database, volgt u deze stappen in de Synapse SQL script-editor:
 
 1. Maak de gebruiker in de-data base door de volgende opdracht uit te voeren op de doel database, die is geselecteerd met de vervolg keuzelijst *verbinding maken* :
 
     ```sql
-    --Create user in SQL DB
+    --Create user in the database
     CREATE USER [<alias@domain.com>] FROM EXTERNAL PROVIDER;
     ```
 
 2. Zo kent u de gebruiker een rol toe om toegang te krijgen tot de database:
 
     ```sql
-    --Create user in SQL DB
+    --Grant role to the user in the database
     EXEC sp_addrolemember 'db_owner', '<alias@domain.com>';
     ```
 
@@ -226,32 +229,35 @@ Als u toegang wilt verlenen aan **één** exclusieve SQL-groep, volgt u deze sta
 > *db_datareader* en *db_datawriter* kunnen worden gebruikt voor lees-en schrijf machtigingen als het verlenen van *db_owner* machtiging niet gewenst is.
 > *Db_owner* machtiging is vereist voor een Spark-gebruiker om rechtstreeks vanuit Spark naar of vanuit een SQL-groep te lezen en te schrijven.
 
-Nadat de gebruikers zijn gemaakt, controleert u of de serverloze SQL-groep het opslag account kan opvragen.
+Nadat u de gebruikers hebt gemaakt, voert u query's uit om te controleren of de serverloze SQL-groep een query kan uitvoeren voor het opslag account.
 
-### <a name="step-73-sl-access-control-for-workspace-pipeline-runs"></a>STAP 7,3: SL-toegangs beheer voor werk ruimte pijplijn uitvoeringen
+### <a name="step-73-sql-access-control-for-synapse-pipeline-runs"></a>STAP 7,3: SQL-toegangs beheer voor Synapse-pijplijn uitvoeringen
 
-### <a name="workspace-managed-identity"></a>Door een werkruimte beheerde identiteit
+### <a name="workspace-managed-identity"></a>Beheerde identiteit van werk ruimte
 
 > [!IMPORTANT]
 > Als u pijp lijnen met gegevens sets of activiteiten wilt uitvoeren die verwijzen naar een SQL-groep, moet de werk ruimte-id toegang krijgen tot de SQL-groep.
 
-Voer de volgende opdrachten uit voor elke SQL-pool opdat de door de werkruimte beheerde identiteit pijplijnen kan uitvoeren op de database van de SQL-pool:
+Voer de volgende opdrachten uit op elke SQL-groep zodat de door de werk ruimte beheerde systeem identiteit pijp lijnen kan uitvoeren op de data base (s) van de SQL-groep:  
+
+>[!note]
+>In de onderstaande scripts, voor een toegewezen SQL-groeps database, is DATABASENAME hetzelfde als de naam van de groep.  Voor een data base in de serverloze SQL-groep ' ingebouwd ' is DATABASENAME de naam van de data base.
 
 ```sql
---Create user in DB
+--Create a SQL user for the workspace MSI in database
 CREATE USER [<workspacename>] FROM EXTERNAL PROVIDER;
 
 --Granting permission to the identity
-GRANT CONTROL ON DATABASE::<SQLpoolname> TO <workspacename>;
+GRANT CONTROL ON DATABASE::<databasename> TO <workspacename>;
 ```
 
 Deze machtiging kan worden verwijderd door in dezelfde SQL-pool het volgende script uit te voeren:
 
 ```sql
---Revoking permission to the identity
-REVOKE CONTROL ON DATABASE::<SQLpoolname> TO <workspacename>;
+--Revoke permission granted to the workspace MSI
+REVOKE CONTROL ON DATABASE::<databasename> TO <workspacename>;
 
---Deleting the user in the DB
+--Delete the workspace MSI user in the database
 DROP USER [<workspacename>];
 ```
 
@@ -266,7 +272,7 @@ Als u de toegang wilt beheren, kunt u gebruikers toevoegen aan en verwijderen ui
 Als laatste stap om uw werk ruimte te beveiligen, moet u de netwerk toegang beveiligen met behulp van:
 - [Werkruimte firewall](./synapse-workspace-ip-firewall.md)
 - [Beheerd virtueel netwerk](./synapse-workspace-managed-vnet.md) 
-- [Privé-eindpunten](./synapse-workspace-managed-private-endpoints.md)
+- [Privé-eind punten](./synapse-workspace-managed-private-endpoints.md)
 - [Private Link](../../azure-sql/database/private-endpoint-overview.md)
 
 ## <a name="step-10-completion"></a>STAP 10: voltooiing

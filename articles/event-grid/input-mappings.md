@@ -3,22 +3,16 @@ title: Aangepast veld toewijzen aan Azure Event Grid schema
 description: In dit artikel wordt beschreven hoe u uw aangepaste schema converteert naar het Azure Event Grid schema wanneer uw gebeurtenis gegevens niet overeenkomen met Event Grid schema.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 836e7b340c5c89100207e2f9409710b8dfa5e3bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34381782c9337631b0aa04e47eb5897a8071139a
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105520"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109195"
 ---
 # <a name="map-custom-fields-to-event-grid-schema"></a>Aangepaste velden toewijzen aan Event Grid-schema
 
 Als uw gebeurtenis gegevens niet overeenkomen met het verwachte [Event grid schema](event-schema.md), kunt u nog steeds gebruikmaken van Event grid om gebeurtenis te routeren naar abonnees. In dit artikel wordt beschreven hoe u uw schema aan het Event Grid schema kunt toewijzen.
-
-[!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
-
-## <a name="install-preview-feature"></a>Preview-functie installeren
-
-[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
 
 ## <a name="original-event-schema"></a>Oorspronkelijk gebeurtenis schema
 
@@ -40,7 +34,7 @@ Hoewel deze indeling niet overeenkomt met het vereiste schema, Event Grid u in s
 
 Wanneer u een aangepast onderwerp maakt, geeft u op hoe velden van de oorspronkelijke gebeurtenis moeten worden toegewezen aan het event grid-schema. Er zijn drie waarden die u gebruikt om de toewijzing aan te passen:
 
-* De waarde van het **invoer schema** geeft u het type schema op. De beschik bare opties zijn CloudEvents schema, aangepast gebeurtenis schema of Event Grid schema. De standaard waarde is Event Grid schema. Gebruik aangepast gebeurtenis schema bij het maken van een aangepaste toewijzing tussen uw schema en het event grid-schema. Wanneer gebeurtenissen zich in het CloudEvents-schema bevinden, gebruikt u het Cloudevents-schema.
+* De waarde van het **invoer schema** geeft u het type schema op. De beschik bare opties zijn CloudEvents schema, aangepast gebeurtenis schema of Event Grid schema. De standaard waarde is Event Grid schema. Gebruik aangepast gebeurtenis schema bij het maken van een aangepaste toewijzing tussen uw schema en het event grid-schema. Wanneer gebeurtenissen de CloudEvents-indeling hebben, gebruikt u het CloudEvents-schema.
 
 * De eigenschap **standaard waarden toewijzen** geeft standaard waarden voor velden in het event grid schema op. U kunt standaard waarden instellen voor `subject` , `eventtype` , en `dataversion` . Normaal gesp roken gebruikt u deze para meter wanneer uw aangepaste schema geen veld bevat dat overeenkomt met een van deze drie velden. U kunt bijvoorbeeld opgeven dat de gegevens versie altijd is ingesteld op **1,0**.
 
@@ -49,10 +43,6 @@ Wanneer u een aangepast onderwerp maakt, geeft u op hoe velden van de oorspronke
 Als u een aangepast onderwerp met Azure CLI wilt maken, gebruikt u:
 
 ```azurecli-interactive
-# If you have not already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
 az eventgrid topic create \
   -n demotopic \
   -l eastus2 \
@@ -65,11 +55,7 @@ az eventgrid topic create \
 Gebruik voor PowerShell:
 
 ```azurepowershell-interactive
-# If you have not already installed the module, do it now.
-# This module is required for preview features.
-Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
-
-New-AzureRmEventGridTopic `
+New-AzEventGridTopic `
   -ResourceGroupName myResourceGroup `
   -Name demotopic `
   -Location eastus2 `
@@ -107,9 +93,9 @@ az eventgrid event-subscription create \
 In het volgende voor beeld wordt een abonnement op een event grid-onderwerp gemaakt en wordt het Event Grid schema gebruikt. Gebruik voor PowerShell:
 
 ```azurepowershell-interactive
-$topicid = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demoTopic).Id
+$topicid = (Get-AzEventGridTopic -ResourceGroupName myResourceGroup -Name demoTopic).Id
 
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -ResourceId $topicid `
   -EventSubscriptionName eventsub1 `
   -EndpointType webhook `
@@ -120,7 +106,7 @@ New-AzureRmEventGridSubscription `
 In het volgende voor beeld wordt het invoer schema van de gebeurtenis gebruikt:
 
 ```azurepowershell-interactive
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -ResourceId $topicid `
   -EventSubscriptionName eventsub2 `
   -EndpointType webhook `
@@ -146,8 +132,8 @@ curl -X POST -H "aeg-sas-key: $key" -d "$event" $endpoint
 Gebruik voor PowerShell:
 
 ```azurepowershell-interactive
-$endpoint = (Get-AzureRmEventGridTopic -ResourceGroupName myResourceGroup -Name demotopic).Endpoint
-$keys = Get-AzureRmEventGridTopicKey -ResourceGroupName myResourceGroup -Name demotopic
+$endpoint = (Get-AzEventGridTopic -ResourceGroupName myResourceGroup -Name demotopic).Endpoint
+$keys = Get-AzEventGridTopicKey -ResourceGroupName myResourceGroup -Name demotopic
 
 $htbody = @{
     myEventTypeField="Created"
@@ -184,7 +170,7 @@ Het eerste gebruikte abonnement voor het gebeurtenis raster schema. De indeling 
 }
 ```
 
-Deze velden bevatten de toewijzingen van het aangepaste onderwerp. **myEventTypeField** is toegewezen aan **Event**type. De standaard waarden voor **DataVersion** en **subject** worden gebruikt. Het **gegevens** object bevat de oorspronkelijke velden van het gebeurtenis schema.
+Deze velden bevatten de toewijzingen van het aangepaste onderwerp. **myEventTypeField** is toegewezen aan **Event** type. De standaard waarden voor **DataVersion** en **subject** worden gebruikt. Het **gegevens** object bevat de oorspronkelijke velden van het gebeurtenis schema.
 
 Voor het tweede abonnement is het invoer gebeurtenis schema gebruikt. De indeling van de bezorgde gebeurtenis is:
 

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 4befcaf6b8c6b6bc4fddacb179883551609f7e19
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 5f408699cae9580188a3780fc8f8654eaa97c26b
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928644"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108430"
 ---
 # <a name="tutorial-for-configuring-lexisnexis-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van LexisNexis met Azure Active Directory B2C
 
@@ -82,7 +82,7 @@ Implementeer de meegeleverde [API-code](https://github.com/azure-ad-b2c/partner-
 
 Toepassings instellingen kunnen worden [geconfigureerd in de app service in azure](../app-service/configure-common.md#configure-app-settings).  Met deze methode kunnen instellingen veilig worden geconfigureerd zonder deze in een opslag plaats te controleren. U moet de volgende instellingen opgeven voor de rest-API:
 
-| Toepassingsinstellingen | Bron | Opmerkingen |
+| Toepassingsinstellingen | Bron | Notities |
 | :-------- | :------------| :-----------|
 |ThreatMetrix: URL | ThreatMetrix-account configuratie |     |
 |ThreatMetrix: OrgId | ThreatMetrix-account configuratie |     |
@@ -95,7 +95,7 @@ Toepassings instellingen kunnen worden [geconfigureerd in de app service in azur
 
 Deze oplossing maakt gebruik van aangepaste UI-sjablonen die door Azure AD B2C worden geladen. Deze UI-sjablonen doen het profileren dat rechtstreeks naar de ThreatMetrix-service wordt verzonden.
 
-Raadpleeg deze [instructies](./custom-policy-ui-customization.md#custom-page-content-walkthrough) voor het implementeren van de toegevoegde [gebruikers interface bestanden](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) naar een Blob Storage-account. De instructies omvatten het instellen van een Blob Storage-account, het configureren van CORS en het inschakelen van open bare toegang.
+Raadpleeg deze [instructies](./customize-ui-with-html.md#custom-page-content-walkthrough) voor het implementeren van de toegevoegde [gebruikers interface bestanden](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template) naar een Blob Storage-account. De instructies omvatten het instellen van een Blob Storage-account, het configureren van CORS en het inschakelen van open bare toegang.
 
 De gebruikers interface is gebaseerd op de sjabloon van de [oceaan blauw](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/ThreatMetrix/ui-template/ocean_blue). Alle koppelingen in de gebruikers interface moeten worden bijgewerkt om te verwijzen naar de geïmplementeerde locatie. Zoek en vervang in de map gebruikers interface https://yourblobstorage/blobcontainer de geïmplementeerde locatie.
 

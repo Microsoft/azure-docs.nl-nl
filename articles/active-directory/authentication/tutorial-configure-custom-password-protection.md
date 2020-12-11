@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 07/13/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03a5f355263b80ef2e5e1c829877dc96ca55787a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 89abdcf4c76c92c2ed967594527d323b2cd8be32
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837886"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741181"
 ---
 # <a name="tutorial-configure-custom-banned-passwords-for-azure-active-directory-password-protection"></a>Zelfstudie: Aangepaste verboden wachtwoorden configureren voor Azure Active Directory-wachtwoordbeveiliging
 
@@ -72,7 +72,7 @@ Voer de volgende stappen uit om de aangepaste lijst met verboden wachtwoorden in
 
     * De aangepaste lijst met verboden wachtwoorden kan maximaal 1000 termen bevatten.
     * De aangepaste lijst met verboden wachtwoorden is niet hoofdlettergevoelig.
-    * De aangepaste lijst met verboden wachtwoorden ondersteunt het vervangen van veelvoorkomende tekens, zoals 'o' en '0' of 'a' en '@'.
+    * De aangepaste lijst met verboden wachtwoorden ondersteunt het vervangen van veelvoorkomende tekens, zoals 'o' en '0' of 'a' en '\@'.
     * De minimumlengte van een tekenreeks is vier tekens en de maximumlengte is 16 tekens.
 
     Geef de woorden op die u wilt verbieden in wachtwoorden, zoals wordt weergegeven in het volgende voorbeeld:

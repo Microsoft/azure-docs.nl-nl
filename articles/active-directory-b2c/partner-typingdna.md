@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 06/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 6f62675d27310a15c434baba8e3451a3cd81f058
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 68617d86fda940c5d3752f2389088a8c729aebec
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953522"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108345"
 ---
 # <a name="tutorial-for-configuring-typingdna-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van TypingDNA met Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ In dit overzicht leert u hoe u een voor beeld van een online-betalings toepassin
 
 2. Wanneer de gebruiker de pagina verzendt, wordt de type kenmerk van de gebruiker door de TypingDNA-bibliotheek berekend. Daarna voegt u de gegevens in een verborgen tekst veld in dat Azure AD B2C heeft gerenderd. Dit veld is verborgen met CSS.  
 
-    Het voor [Beeld bevat HTML-bestanden](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignUp.cshtml) met de Java script-en CSS-wijzigingen, waarnaar wordt verwezen door de- `api.selfasserted.tdnasignin` en- `api.selfasserted.tdnasignup` inhouds definities. Raadpleeg [de pagina-inhoud](./custom-policy-ui-customization.md#hosting-the-page-content) hosten om uw HTML-bestanden te hosten.
+    Het voor [Beeld bevat HTML-bestanden](https://github.com/azure-ad-b2c/partner-integrations/blob/master/samples/TypingDNA/source-code/selfAssertedSignUp.cshtml) met de Java script-en CSS-wijzigingen, waarnaar wordt verwezen door de- `api.selfasserted.tdnasignin` en- `api.selfasserted.tdnasignup` inhouds definities. Raadpleeg [de pagina-inhoud](./customize-ui-with-html.md#hosting-the-page-content) hosten om uw HTML-bestanden te hosten.
 
 3. Azure AD B2C heeft nu het type patroon binnen de claim verzameling wanneer de gebruiker zijn of haar referenties verzendt. Dit moet een API (u) aanroepen om deze gegevens door te geven aan het TypingDNA-REST API-eind punt. Deze API is opgenomen in het voor [beeld (typingDNA-API-interface)](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface).
 4. De middelste laag-API geeft de type patroon gegevens door aan TypingDNA REST API. Bij het aanmelden wordt het [eind punt van de controle gebruiker](https://api.typingdna.com/index.html#api-API_Services-GetUser) aangeroepen om te bevestigen dat de gebruiker niet bestaat en vervolgens wordt het eind punt van het [opslag patroon](https://api.typingdna.com/index.html#api-API_Services-saveUserPattern) aangeroepen om het eerste type patroon van de gebruiker op te slaan.
@@ -160,7 +160,7 @@ Deze drempel waarden moeten worden aangepast aan uw use-case.
 
 1. Host de [TypingDNA-API-interface](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) bij de door u gewenste hosting provider
 2. Alle exemplaren van `apiKey` en `apiSecret` in [TypingDNA-API-interface](https://github.com/azure-ad-b2c/partner-integrations/tree/master/samples/TypingDNA/source-code/TypingDNA-API-Interface) oplossing vervangen door de referenties van uw TypingDNA-dash board
-3. Host de HTML-bestanden van uw provider van de keuze volgens de [vereisten voor](./custom-policy-ui-customization.md#3-configure-cors) CORS
+3. Host de HTML-bestanden van uw provider van de keuze volgens de [vereisten voor](./customize-ui-with-html.md#3-configure-cors) CORS
 4. Vervang de LoadURI-elementen voor de `api.selfasserted.tdnasignup` en de `api.selfasserted.tdnasignin` inhouds definities in het `TrustFrameworkExtensions.xml` bestand respectievelijk naar de URI van uw gehoste HTML-bestanden.
 5. Maak een B2C-beleids sleutel onder Identity experience Framework op de Blade Azure AD in de **Azure Portal**. Gebruik de `Generate` optie en geef deze sleutel een naam `tdnaHashedId` .
 6. De TenantId in de beleids bestanden vervangen

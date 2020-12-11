@@ -3,12 +3,12 @@ title: Aandachtspunten voor de opslag van Azure Functions
 description: Meer informatie over de opslag vereisten van Azure Functions en over het versleutelen van opgeslagen gegevens.
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: aefd9a35235a09d94973f383603349f6862bbdd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67ff822208f065041e479fc484173d9f06a773ba
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318178"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107240"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Aandachtspunten voor de opslag van Azure Functions
 
@@ -27,15 +27,19 @@ Azure Functions moet een Azure Storage-account zijn wanneer u een exemplaar van 
 
 ## <a name="storage-account-requirements"></a>Vereisten voor een opslagaccount
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. Dit komt omdat functies afhankelijk zijn van Azure Storage voor bewerkingen, zoals het beheren van triggers en de uitvoering van logboek functies. Sommige opslag accounts bieden geen ondersteuning voor wacht rijen en tabellen. Deze accounts omvatten alleen Blob-opslag accounts, Azure Premium Storage en opslag accounts voor algemeen gebruik met ZRS-replicatie. Deze niet-ondersteunde accounts worden van de Blade opslag account gefilterd bij het maken van een functie-app.
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. Dit komt omdat functies afhankelijk zijn van Azure Storage voor bewerkingen, zoals het beheren van triggers en de uitvoering van logboek functies. Sommige opslag accounts bieden geen ondersteuning voor wacht rijen en tabellen. Deze accounts omvatten alleen Blob-opslag accounts, Azure Premium Storage en opslag accounts voor algemeen gebruik met ZRS-replicatie.
 
 Zie [Introductie van de Azure Storage-services](../storage/common/storage-introduction.md#core-storage-services) voor meer informatie over opslagaccounttypen. 
 
-Hoewel u een bestaand opslag account kunt gebruiken met uw functie-app, moet u ervoor zorgen dat deze aan deze vereisten voldoet. Opslag accounts die zijn gemaakt als onderdeel van de stroom voor het maken van de functie-app, worden gegarandeerd voldoen aan deze vereisten voor opslag accounts.  
+Hoewel u een bestaand opslag account kunt gebruiken met uw functie-app, moet u ervoor zorgen dat deze aan deze vereisten voldoet. Opslag accounts die zijn gemaakt als onderdeel van de stroom voor het maken van de functie-app in de Azure Portal zijn gegarandeerd voldoen aan deze vereisten voor opslag accounts. In de portal worden niet-ondersteunde accounts gefilterd bij het kiezen van een bestaand opslag account tijdens het maken van een functie-app. In deze stroom kunt u alleen bestaande opslag accounts kiezen in dezelfde regio als de functie-app die u aan het maken bent. Zie [locatie van opslag account](#storage-account-location)voor meer informatie.
 
 ## <a name="storage-account-guidance"></a>Richt lijnen voor opslag accounts
 
 Voor elke functie-app moet een opslag account worden gebruikt. Als dat account wordt verwijderd, wordt de functie-app niet uitgevoerd. Zie problemen [met opslag problemen oplossen voor informatie over het](functions-recover-storage-account.md)oplossen van problemen met opslag. De volgende aanvullende overwegingen zijn van toepassing op het opslag account dat wordt gebruikt door functie-apps.
+
+### <a name="storage-account-location"></a>De locatie van het opslagaccount
+
+Voor de beste prestaties moet uw functie-app gebruikmaken van een opslag account in dezelfde regio, waardoor de latentie wordt verminderd. Het Azure Portal afdwingt deze best practice. Als u om een of andere reden een opslag account moet gebruiken in een andere regio dan uw functie-app, moet u uw functie-app maken buiten de portal. 
 
 ### <a name="storage-account-connection-setting"></a>Instelling voor verbinding met opslag account
 

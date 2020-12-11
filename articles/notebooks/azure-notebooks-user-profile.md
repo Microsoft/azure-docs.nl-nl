@@ -3,12 +3,12 @@ title: Gebruikers profiel en-ID voor gebruik met Azure Notebooks preview
 description: Uw gebruikers profiel en gebruikers-ID maken en beheren met Azure Notebooks, dat onderdeel wordt van de URL van gedeelde notitie blokken.
 ms.topic: conceptual
 ms.date: 02/25/2019
-ms.openlocfilehash: 9a1ff7f92faec21f537f068f0a33473700ddfed8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30d70365fcc0c72df01b4dc059b6e0f4cc607bba
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85831349"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109501"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks-preview"></a>Uw profiel en gebruikers-ID voor Azure Notebooks preview
 
@@ -54,11 +54,11 @@ Als u uw profiel wilt bewerken, gebruikt u de opdracht **Profiel gegevens bewerk
 | Profiel foto | Een afbeelding die wordt weer gegeven op de profiel pagina. |
 | Accountgegevens | Uw weergave naam, gebruikers-ID en open bare e-mail account. Het e-mail account biedt andere gebruikers een gemiddelde om contact met u op te nemen en kan afwijken van het [account](azure-notebooks-user-account.md) dat u gebruikt om u aan te melden Azure notebooks zichzelf. |
 | Profiel gegevens | Uw locatie, bedrijf, functie titel, website en een korte beschrijving van uzelf. |
-| Sociale profielen | Uw GItHub-, Twitter-en Facebook-Id's als u ze wilt delen. |
+| Sociale profielen | Uw GitHub-, Twitter-en Facebook-Id's als u ze wilt delen. |
 | Privacyinstellingen | Biedt twee opdrachten:<ul><li>**Mijn profiel exporteren**: maakt en downloadt een *zip* -bestand met alle informatie die Azure notebooks opgeslagen in uw profiel, inclusief uw foto, profiel gegevens en beveiligings Logboeken.</li><li>**Mijn account verwijderen**: alle persoonlijke gegevens die zijn opgeslagen in azure notebooks, worden permanent verwijderd.</li></ul> |
 | Site functies inschakelen | Hiermee kunt u aspecten van het gedrag van Azure Notebooks beheren:<ul><li>**Unified frontend voor notebooks**: Hiermee kunt u sneller opstarten van notebooks en betere persistentie.</li><li>Wordt **standaard uitgevoerd in jjupyterlab**: Azure notebooks biedt standaard een eenvoudige gebruikers interface die geschikt is voor de meeste gebruikers. Jjupyterlab biedt een rijkere maar complexere interface voor ervaren gebruikers.</li><li>**VNext-website**: Hiermee wordt de moderne webindeling ingeschakeld die in deze documentatie wordt weer gegeven.</li></ul> |
 
 ## <a name="next-steps"></a>Volgende stappen  
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: een Jupyter-notebook maken en uitvoeren om lineaire regressie uit te voeren](tutorial-create-run-jupyter-notebook.md)
+> [Snelstartgids: een Jupyter Notebook-project exporteren](quickstart-export-jupyter-notebook-project.md)

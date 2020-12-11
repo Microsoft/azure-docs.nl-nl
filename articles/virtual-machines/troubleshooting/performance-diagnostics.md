@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 9/20/2018
 ms.author: anandh
-ms.openlocfilehash: 04b70e593e8b1bee8beb72ac88bc8441bc38bb9a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: fb0928c75b8fee567e9d0f03489794bd9f65e91e
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963241"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109433"
 ---
 # <a name="performance-diagnostics-for-azure-virtual-machines"></a>Diagnostische gegevens over prestaties voor virtuele Azure-machines
 
@@ -48,12 +48,12 @@ U kunt prestatie diagnostiek rechtstreeks vanuit de Azure Portal uitvoeren, waar
 
     | Distributie               | Versie                                         |
     |----------------------------|-------------------------------------------------|
-    | Oracle Linux server        | 6,10 [ `*` ], 7,3, 7,6, 7,5 |
-    | CentOS                     | 6,5 [ `*` ], 7,6                                    |
-    | RHEL                       | 7,2, 7,5, 8,0 [ `*` ]                               |
+    | Oracle Linux server        | 6,10 [ `*` ], 7,3, 7,5, 7,6, 7,7, 7,8 |
+    | CentOS                     | 6,5 [ `*` ], 7,6, 7,7, 7,8                                    |
+    | RHEL                       | 7,2, 7,5, 8,0 [ `*` ], 8,1, 8,2                               |
     | Ubuntu                     | 14,04, 16,04, 18,04, 20,04                               |
     | Debian                     | 8, 9, 10 [ `*` ]                                    |
-    | SLES                       | 12 SP4 [ `*` ]                                      |
+    | SLES                       | 12 SP4 [ `*` ], 12 SP5 [ `*` ], 15 [ `*` ], 15 SP1 [ `*` ], 15 SP2 [ `*` ]                                      |
     |                            |                                                   |
 
 >[!Note]
@@ -63,7 +63,7 @@ U kunt prestatie diagnostiek rechtstreeks vanuit de Azure Portal uitvoeren, waar
 
 Met diagnostische gegevens over prestaties wordt een VM-extensie geïnstalleerd waarmee een diagnostisch hulp programma wordt uitgevoerd met de naam PerfInsights. PerfInsights is beschikbaar voor [Windows](./how-to-use-perfinsights.md) en [Linux](./how-to-use-perfinsights-linux.md). Voer de volgende stappen uit om prestatie diagnostiek te installeren en uit te voeren:
 
-1. Selecteer **virtuele machines**in de linkerkolom van de opdrachten.
+1. Selecteer **virtuele machines** in de linkerkolom van de opdrachten.
 1. Selecteer in de lijst met VM-namen de virtuele machine waarvoor u Diagnostische gegevens wilt uitvoeren.
 1. Selecteer in de rechter kolom met opdrachten **prestatie diagnostiek**.
 
@@ -188,10 +188,10 @@ U kunt de gegevens van het opslag account weer geven met behulp van de knop inst
 Er zijn meerdere manieren om het diagnostische rapport te delen met micro soft.
 
 **Optie 1:** Het meest recente rapport automatisch delen  
-Wanneer u een ondersteunings ticket met micro soft opent, is het belang rijk om het rapport over prestatie diagnostiek te delen. Als u ervoor hebt gekozen deze informatie met micro soft te delen terwijl u de diagnostische gegevens uitvoert (door het selectie vakje**Ik ga akkoord met de diagnostische informatie te delen met micro**Soft), is micro soft in staat om met een SAS-koppeling naar het uitvoer zip-bestand tot 30 dagen na de uitvoerings datum toegang te krijgen tot het rapport. Alleen het meest recente rapport is beschikbaar voor de ondersteunings technicus.
+Wanneer u een ondersteunings ticket met micro soft opent, is het belang rijk om het rapport over prestatie diagnostiek te delen. Als u ervoor hebt gekozen deze informatie met micro soft te delen terwijl u de diagnostische gegevens uitvoert (door het selectie vakje **Ik ga akkoord met de diagnostische informatie te delen met micro** Soft), is micro soft in staat om met een SAS-koppeling naar het uitvoer zip-bestand tot 30 dagen na de uitvoerings datum toegang te krijgen tot het rapport. Alleen het meest recente rapport is beschikbaar voor de ondersteunings technicus.
 
 **Optie 2:** Een Shared Access Signature genereren voor het gecomprimeerde bestand van het diagnostische rapport  
-U kunt een koppeling naar het gecomprimeerde bestand in rapporten delen met behulp van hand tekeningen voor gedeelde toegang. Volg hiervoor de volgende stappen:
+U kunt een koppeling naar het gecomprimeerde bestand in rapporten delen met behulp van hand tekeningen voor gedeelde toegang. Voer hiervoor de volgende stappen uit:
 
 1. Blader in het Azure Portal naar het opslag account waarin de diagnostische gegevens zijn opgeslagen.
 1. Selecteer **blobs** onder het gedeelte **BLOB service** .
@@ -199,7 +199,7 @@ U kunt een koppeling naar het gecomprimeerde bestand in rapporten delen met behu
 1. Selecteer het gecomprimeerde uitvoer bestand voor prestatie diagnostiek dat u wilt delen.
 1. Op het tabblad **SAS genereren** selecteert u de criteria voor delen.
 1. Klik op **genereren BLOB SAS-token en URL**.
-1. Kopieer de **URL**van de BLOB-SAS en deel deze met de ondersteunings technicus.
+1. Kopieer de **URL** van de BLOB-SAS en deel deze met de ondersteunings technicus.
 
 **Optie 3:** Het rapport downloaden van het opslag account
 

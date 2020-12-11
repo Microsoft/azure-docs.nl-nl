@@ -4,12 +4,12 @@ description: In dit artikel worden populaire algemene vragen over Azure Site Rec
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 3da86eead5b927a2a71d7b1a28bc5966bf5f8840
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: add5874dc828f05c7c51f0f378988c94cbd42486
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369434"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109552"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Algemene vragen over Azure Site Recovery
 
@@ -272,6 +272,9 @@ Site Recovery maakt om de vijf minuten een crash-consistent herstel punt.
 Toepassings consistente herstel punten worden gemaakt op basis van toepassings consistente moment opnamen. Toepassings consistente herstel punten nemen dezelfde gegevens op als crash-consistente moment opnamen terwijl ook gegevens worden vastgelegd in het geheugen en alle trans acties die worden uitgevoerd.
 
 Vanwege hun extra inhoud zijn toepassings consistente moment opnamen het meest betrokken en nemen ze het langst mee. We raden toepassings consistente herstel punten aan voor database besturingssystemen en-toepassingen, zoals SQL Server.
+
+>[!Note]
+>Het is niet mogelijk om toepassings consistente herstel punten te maken op Windows-computers als dit meer dan 64 volumes heeft.
 
 ### <a name="what-is-the-impact-of-application-consistent-recovery-points-on-application-performance"></a>Wat is de impact van toepassings consistente herstel punten op de prestaties van toepassingen?
 

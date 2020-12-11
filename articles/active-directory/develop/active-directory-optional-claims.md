@@ -12,12 +12,12 @@ ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: e71ab0293dade56c14dce7318fc96021a040b102
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 3fd91bb86b32a958344dc366cfcd142bff369c1f
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433303"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108141"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -96,7 +96,7 @@ Sommige optionele claims kunnen worden geconfigureerd om de manier waarop de cla
 | Naam van eigenschap  | Aanvullende naam van eigenschap | Description |
 |----------------|--------------------------|-------------|
 | `upn`          |                          | Kan worden gebruikt voor SAML-en JWT-antwoorden, en voor de tokens v 1.0 en v 2.0. |
-|                | `include_externally_authenticated_upn`  | Bevat de gast-UPN zoals deze is opgeslagen in de resource-Tenant. bijvoorbeeld `foo_hometenant.com#EXT#@resourcetenant.com` |
+|                | `include_externally_authenticated_upn`  | Bevat de gast-UPN zoals deze is opgeslagen in de resource-Tenant. Bijvoorbeeld: `foo_hometenant.com#EXT#@resourcetenant.com` |
 |                | `include_externally_authenticated_upn_without_hash` | Hetzelfde als hierboven, behalve dat de hash-markeringen ( `#` ) worden vervangen door onderstrepings tekens ( `_` ), bijvoorbeeld `foo_hometenant.com_EXT_@resourcetenant.com` |
 
 #### <a name="additional-properties-example"></a>Voor beeld van extra eigenschappen
@@ -124,7 +124,7 @@ Dit OptionalClaims-object zorgt ervoor dat het ID-token dat naar de client wordt
 
 U kunt optionele claims voor uw toepassing configureren via de gebruikers interface of het toepassings manifest.
 
-1. Ga naar de [Azure Portal](https://portal.azure.com). Zoek en selecteer de optie **Azure Active Directory**.
+1. Ga naar [Azure Portal](https://portal.azure.com). Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer in de sectie **beheren** de optie **app-registraties**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
 
@@ -139,7 +139,7 @@ U kunt optionele claims voor uw toepassing configureren via de gebruikers interf
 1. Selecteer **Toevoegen**.
 
 > [!NOTE]
-> De Blade **configuratie** van de gebruikers interface-optie token is niet beschikbaar voor apps die momenteel zijn geregistreerd in een Azure AD B2C-Tenant. Voor toepassingen die zijn geregistreerd in een B2C-Tenant, kunnen de optionele claims worden geconfigureerd door het toepassings manifest te wijzigen. Zie [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid in azure Active Directory B2C](../../active-directory-b2c/custom-policy-configure-user-input.md) voor meer informatie. 
+> De Blade **configuratie** van de gebruikers interface-optie token is niet beschikbaar voor apps die momenteel zijn geregistreerd in een Azure AD B2C-Tenant. Voor toepassingen die zijn geregistreerd in een B2C-Tenant, kunnen de optionele claims worden geconfigureerd door het toepassings manifest te wijzigen. Zie [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid in azure Active Directory B2C](../../active-directory-b2c/configure-user-input.md) voor meer informatie. 
 
 **Optionele claims configureren via het toepassings manifest:**
 
@@ -235,7 +235,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via de gebruikers interface:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 1. Selecteer **app-registraties** in het gedeelte **beheren** .
@@ -248,7 +248,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via het toepassings manifest:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
@@ -379,7 +379,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Configuratie van de gebruikers interface:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
@@ -402,7 +402,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Manifest configuratie:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 1. Zoek de toepassing waarvoor u de optionele claims wilt configureren in de lijst en selecteer deze.

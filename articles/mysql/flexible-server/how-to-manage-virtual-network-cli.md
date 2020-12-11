@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
-ms.openlocfilehash: 70cb1297c4b47f22f9eb5cc6992e6fcd6c58b364
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a41cd2ce14ceb452d783b472955de347199d0870
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545035"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109467"
 ---
 # <a name="create-and-manage-virtual-networks-for-azure-database-for-mysql---flexible-server-using-the-azure-cli"></a>Virtuele netwerken maken en beheren voor Azure Database for MySQL-flexibele server met behulp van de Azure CLI
 
@@ -53,7 +53,7 @@ az account set --subscription <subscription id>
 U kunt de `az mysql flexible-server` opdracht gebruiken om de flexibele server met *persoonlijke toegang (VNet-integratie)* te maken. Deze opdracht maakt gebruik van particuliere toegang (VNet-integratie) als de standaard verbindings methode. Er wordt voor u een virtueel netwerk en subnet gemaakt als er geen wordt weer gegeven. U kunt ook het bestaande virtuele netwerk en subnet met subnet-ID opgeven. <!-- You can provide the **vnet**,**subnet**,**vnet-address-prefix** or**subnet-address-prefix** to customize the virtual network and subnet.--> Er zijn verschillende opties voor het maken van een flexibele server met behulp van CLI, zoals wordt weer gegeven in de onderstaande voor beelden.
 
 >[!Important]
-> Met deze opdracht wordt het subnet gedelegeerd naar **micro soft. DBforMySQL/flexibleServers** . Deze delegatie houdt in dat alleen Azure Database for MySQL Flexibele servers dat subnet kunnen gebruiken. Er kunnen zich geen andere Azure-resourcetypen in het gedelegeerde subnet bevinden.
+> Met deze opdracht wordt het subnet gedelegeerd naar **micro soft. DBforMySQL/flexibleServers**. Deze delegatie houdt in dat alleen Azure Database for MySQL Flexibele servers dat subnet kunnen gebruiken. Er kunnen zich geen andere Azure-resourcetypen in het gedelegeerde subnet bevinden.
 >
 
 Raadpleeg de [naslag documentatie](/cli/azure/mysql/flexible-server) van Azure CLI voor de volledige lijst met CONFIGUREER bare cli-para meters. In de onderstaande opdrachten kunt u optioneel de resource groep opgeven.
@@ -62,21 +62,22 @@ Raadpleeg de [naslag documentatie](/cli/azure/mysql/flexible-server) van Azure C
     ```azurecli-interactive
     az mysql flexible-server create
     ```
-<!--- Create a flexible server using already existing virtual network and subnet
+- Maak een flexibele server met al het bestaande virtuele netwerk en subnet. Als het virtuele netwerk en het subnet niet bestaan, wordt het virtuele netwerk en het subnet met het standaard adres voorvoegsel gemaakt.
     ```azurecli-interactive
     az mysql flexible-server create --vnet myVnet --subnet mySubnet
-    ```-->
-- Maak een flexibele server met behulp van al het bestaande virtuele netwerk, subnet en de subnet-ID. Er mag geen andere bron in het subnet worden geïmplementeerd. dit subnet wordt overgedragen aan **micro soft. DBforMySQL/flexibleServers** , als dit nog niet is gedelegeerd.
+    ```
+
+- Maak een flexibele server met behulp van al het bestaande virtuele netwerk, subnet en de subnet-ID. Er mag geen andere bron in het subnet worden geïmplementeerd. dit subnet wordt overgedragen aan **micro soft. DBforMySQL/flexibleServers**, als dit nog niet is gedelegeerd.
     ```azurecli-interactive
     az mysql flexible-server create --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNetName}/subnets/{SubnetName}
     ```
     > [!Note]
     > Het virtuele netwerk en het subnet moeten zich in dezelfde regio en hetzelfde abonnement bevinden als uw flexibele server.
-<!--
-- Create a flexible server using new virtual network, subnet with non-default address prefix
+<
+- Een flexibele server maken met behulp van het nieuwe virtuele netwerk, een subnet met een niet-standaard adres voorvoegsel.
     ```azurecli-interactive
-    az mysql flexible-server create --vnet myVnet --vnet-address-prefix 10.0.0.0/24 --subnet mySubnet --subnet-address-prefix 10.0.0.0/24
-    ```-->
+    az mysql flexible-server create --vnet myVnet --address-prefixes 10.0.0.0/24 --subnet mySubnet --subnet-prefixes 10.0.0.0/24
+    ```
 Raadpleeg de [naslag documentatie](/cli/azure/mysql/flexible-server) van Azure CLI voor de volledige lijst met CONFIGUREER bare cli-para meters.
 
 

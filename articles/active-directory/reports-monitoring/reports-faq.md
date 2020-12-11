@@ -16,12 +16,12 @@ ms.date: 05/12/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1984e2f0bb55115c7d700b91f564d9f01c145151
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c274424641ee0173d68f0de9061415815b0df588
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90015327"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107427"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Veelgestelde vragen over Azure Active Directory rapporten
 
@@ -37,7 +37,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Direc
 
 **V: Ik gebruik momenteel de `https://graph.windows.net/<tenant-name>/reports/` endpoint api's om Azure AD-beveiligings rapporten (specifieke typen detecties, zoals gelekte referenties of aanmeldingen vanaf anonieme IP-adressen), via programma code te halen in onze rapportage systemen. Waar moet ik naar overschakelen?**
 
-**A:** U kunt de [API voor risico detectie van identiteits beveiliging](../identity-protection/howto-identity-protection-graph-api.md)gebruiken   voor toegang tot beveiligings detecties via Microsoft Graph. Deze nieuwe indeling biedt meer flexibiliteit in de manier waarop u gegevens kunt opvragen, met geavanceerde filters, veld selectie en meer, en waarmee risico detecties in één type worden gestandaardiseerd, zodat integratie gemakkelijker kan worden geïntegreerd in Siem's en andere hulpprogram ma's voor gegevens verzameling. Omdat de gegevens een andere indeling hebben, kunt u geen nieuwe query vervangen door uw oude query's. [De nieuwe API maakt echter gebruik van Microsoft Graph](/graph/api/resources/identityriskevent?view=graph-rest-beta). Dit is de micro soft-norm voor dergelijke api's als Microsoft 365 of Azure AD. Het werk vereist dus dat uw huidige Microsoft Graph investeringen kunnen worden uitgebreid of dat u de overgang naar dit nieuwe standaard platform kunt starten.
+**A:** U kunt de [API voor risico detectie van identiteits beveiliging](../identity-protection/howto-identity-protection-graph-api.md) gebruiken voor toegang tot beveiligings detecties via Microsoft Graph. Deze nieuwe indeling biedt meer flexibiliteit in de manier waarop u gegevens kunt opvragen, met geavanceerde filters, veld selectie en meer, en waarmee risico detecties in één type worden gestandaardiseerd, zodat integratie gemakkelijker kan worden geïntegreerd in Siem's en andere hulpprogram ma's voor gegevens verzameling. Omdat de gegevens een andere indeling hebben, kunt u geen nieuwe query vervangen door uw oude query's. [De nieuwe API maakt echter gebruik van Microsoft Graph](/graph/api/resources/identityriskevent?view=graph-rest-beta). Dit is de micro soft-norm voor dergelijke api's als Microsoft 365 of Azure AD. Het werk vereist dus dat uw huidige Microsoft Graph investeringen kunnen worden uitgebreid of dat u de overgang naar dit nieuwe standaard platform kunt starten.
 
 ---
 
@@ -49,7 +49,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Direc
 
 **V: hoe binnenkort moeten de activiteiten gegevens na het verkrijgen van een Premium-licentie worden weer gegeven?**
 
-**A:** Als u al activiteiten gegevens als een gratis licentie hebt, kunt u deze direct weer geven. Als u geen gegevens hebt, duurt het één of twee dagen voordat de gegevens in de rapporten worden weer gegeven.
+**A:** Als u al activiteiten gegevens als een gratis licentie hebt, kunt u deze direct weer geven. Als u geen gegevens hebt, duurt het Maxi maal drie dagen voordat de gegevens in de rapporten worden weer gegeven.
 
 ---
 

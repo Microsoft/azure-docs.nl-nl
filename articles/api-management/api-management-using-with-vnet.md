@@ -10,15 +10,15 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/22/2020
+ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: 7af15552a489f36d87204bfefe47e579cc19f6dc
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: e36f7c6085908630d5e7aa2593fe4d57202d6ee7
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778760"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107648"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Azure API Management gebruiken met virtuele netwerken
 Met Azure Virtual Networks (VNETs) kunt u uw Azure-resources in een routeerbaar netwerk (buiten internet) plaatsen waarvan u de toegang beheert. Deze netwerken kunnen vervolgens worden verbonden met uw on-premises netwerken met behulp van verschillende VPN-technologieën. Voor meer informatie over Azure Virtual Networks begint u met de informatie hier: [overzicht van azure Virtual Network](../virtual-network/virtual-networks-overview.md).
@@ -109,15 +109,16 @@ Hieronder vindt u een lijst met veelvoorkomende fouten die zich kunnen voordoen 
 
 * **Poorten die vereist zijn voor API Management**: binnenkomend en uitgaand verkeer in het Subnet waarin API Management wordt geïmplementeerd, kunnen worden beheerd met behulp van de [netwerk beveiligings groep][Network Security Group]. Als een van deze poorten niet beschikbaar is, werkt API Management mogelijk niet goed en wordt deze mogelijk niet meer toegankelijk. Als een of meer van deze poorten zijn geblokkeerd, is een ander veelvoorkomend probleem met de configuratie bij het gebruik van API Management met een VNET.
 
-<a name="required-ports"> </a> Wanneer een API Management service-exemplaar wordt gehost in een VNET, worden de poorten in de volgende tabel gebruikt.
+<a name="required-ports"></a> Wanneer een API Management service-exemplaar wordt gehost in een VNET, worden de poorten in de volgende tabel gebruikt.
 
 | Bron/doel poort (en) | Richting          | Transport Protocol |   [Service Tags](../virtual-network/network-security-groups-overview.md#service-tags) <br> Bron/doel   | Doel ( \* )                                                 | Virtual Network type |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
 | */[80], 443                  | Inkomend            | TCP                | INTERNET/VIRTUAL_NETWORK            | Client communicatie met API Management                      | Extern             |
 | */3443                     | Inkomend            | TCP                | ApiManagement/VIRTUAL_NETWORK       | Beheer eindpunt voor Azure Portal en Power shell         | Externe & intern  |
 | */443                  | Uitgaand           | TCP                | VIRTUAL_NETWORK/opslag             | **Afhankelijkheid van Azure Storage**                             | Externe & intern  |
-| */443                  | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureActiveDirectory | [Azure Active Directory](api-management-howto-aad.md) (indien van toepassing)                   | Externe & intern  |
+| */443                  | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureActiveDirectory | Afhankelijkheid van [Azure Active Directory](api-management-howto-aad.md) en Azure-sleutel kluis                  | Externe & intern  |
 | */1433                     | Uitgaand           | TCP                | VIRTUAL_NETWORK/SQL                 | **Toegang tot Azure SQL-eind punten**                           | Externe & intern  |
+| */433                     | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureKeyVault                 | **Toegang tot Azure-sleutel kluis**                           | Externe & intern  |
 | */5671, 5672, 443          | Uitgaand           | TCP                | VIRTUAL_NETWORK-EventHub            | Afhankelijkheid voor [logboek registratie van Event hub-beleid](api-management-howto-log-event-hubs.md) en bewakings agent | Externe & intern  |
 | */445                      | Uitgaand           | TCP                | VIRTUAL_NETWORK/opslag             | Afhankelijkheid van de Azure-bestands share voor [Git](api-management-configuration-repository-git.md)                      | Externe & intern  |
 | */443, 12000                     | Uitgaand           | TCP                | VIRTUAL_NETWORK-Cloud            | Status-en bewakings uitbreiding         | Externe & intern  |
@@ -191,7 +192,7 @@ Als u verbindings problemen wilt oplossen, kunt u [algemene problemen met de net
 
 * **Bronnen navigatie koppelingen**: bij het implementeren van het Resource Manager-type vnet-subnet, API Management het subnet reserveert door een resource navigatie koppeling te maken. Als het subnet al een resource van een andere provider bevat, **mislukt** de implementatie. En wanneer u een API Management-service naar een ander subnet verplaatst of verwijdert, worden de navigatie koppeling naar die resource verwijderd.
 
-## <a name="subnet-size-requirement"></a><a name="subnet-size"> </a> Vereiste voor de grootte van het subnet
+## <a name="subnet-size-requirement"></a><a name="subnet-size"></a> Vereiste voor de grootte van het subnet
 Azure reserveert een aantal IP-adressen binnen elk subnet en deze adressen kunnen niet worden gebruikt. Het eerste en laatste IP-adres van de subnetten zijn gereserveerd voor protocol conformiteit, samen met drie meer adressen die worden gebruikt voor Azure-Services. Zie [zijn er beperkingen voor het gebruik van IP-adressen in deze subnetten?](../virtual-network/virtual-networks-faq.md#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets) voor meer informatie.
 
 Naast de IP-adressen die worden gebruikt door de Azure VNET-infra structuur, maakt elk API Management-exemplaar in het subnet gebruik van twee IP-adressen per eenheid van Premium SKU of één IP-adres voor de Developer-SKU. Elk exemplaar reserveert een extra IP-adres voor de externe load balancer. Bij het implementeren in een intern virtueel netwerk is een extra IP-adres voor de interne load balancer vereist.
@@ -200,7 +201,7 @@ Gezien de berekening boven de minimale grootte van het subnet, waarbij API Manag
 
 Voor elke extra schaal eenheid van API Management zijn twee meer IP-adressen vereist.
 
-## <a name="routing"></a><a name="routing"> </a> Route ring
+## <a name="routing"></a><a name="routing"></a> Route ring
 + Een openbaar IP-adres (VIP) met gelijke taak verdeling wordt gereserveerd om toegang te bieden tot alle service-eind punten.
 + Een IP-adres uit een subnet IP-bereik (DIP) wordt gebruikt voor toegang tot bronnen binnen het vnet en een openbaar IP-adres (VIP) wordt gebruikt voor toegang tot bronnen buiten het vnet.
 + Het open bare IP-adres met taak verdeling vindt u op de Blade Overzicht/essentiële elementen in het Azure Portal.
@@ -212,7 +213,7 @@ Voor elke extra schaal eenheid van API Management zijn twee meer IP-adressen ver
 * Voor API Management implementaties in meerdere regio's die in de interne virtuele netwerk modus zijn geconfigureerd, zijn gebruikers verantwoordelijk voor het beheer van de taak verdeling over meerdere regio's, aangezien ze eigenaar zijn van de route ring.
 * De connectiviteit van een bron in een globaal gepeerd VNET in een andere regio naar API Management service in de interne modus werkt niet als gevolg van de platform beperking. Zie [resources in één virtueel netwerk kunnen niet communiceren met interne Load Balancer van Azure in een peered virtueel netwerk](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints) voor meer informatie
 
-## <a name="control-plane-ip-addresses"></a><a name="control-plane-ips"> </a> IP-adressen van besturings vlak
+## <a name="control-plane-ip-addresses"></a><a name="control-plane-ips"></a> IP-adressen van besturings vlak
 
 De IP-adressen worden gedeeld door **Azure-omgeving**. Wanneer het IP-adres voor binnenkomende aanvragen dat is gemarkeerd met **Global** , moet worden toegestaan naast het specifieke IP-adres van de **regio** .
 

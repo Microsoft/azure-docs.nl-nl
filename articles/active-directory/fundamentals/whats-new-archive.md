@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f50a380f2c794d26903e44c0bd1b1569d77a127
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a8e9841c71a6f5bc2e12887f41c62b43a17203a6
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093312"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107581"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Wilt u archiveren wat er nieuw is in Azure Active Directory?
 
@@ -2536,7 +2536,7 @@ Voor meer informatie over het kiezen van specifieke versies van pagina-elementen
 
 U kunt nu de wachtwoord complexiteit van uw organisatie instellen voor uw eind gebruikers, in plaats van uw systeem eigen Azure AD-wachtwoord beleid te gebruiken. Op de Blade **Eigenschappen** van uw gebruikers stromen (voorheen bekend als uw ingebouwde beleids regels) kunt u een wachtwoord complexiteit van **eenvoudig** of **sterk** kiezen, of u kunt een **aangepaste** set vereisten maken.
 
-Zie [complexiteits vereisten configureren voor wacht woorden in azure Active Directory B2C](../../active-directory-b2c/user-flow-password-complexity.md)voor meer informatie over de configuratie van de vereisten voor wachtwoord complexiteit.
+Zie [complexiteits vereisten configureren voor wacht woorden in azure Active Directory B2C](../../active-directory-b2c/password-complexity.md)voor meer informatie over de configuratie van de vereisten voor wachtwoord complexiteit.
 
 ---
 

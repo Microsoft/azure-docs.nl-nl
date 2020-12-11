@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0bbe40a2329143b9abd4554ec715c64e5c26d4eb
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: beb38be985457ea36b2cea9a6dc337ba305d503f
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028101"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108498"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
@@ -46,16 +46,17 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 
 - De velden gebruikers naam/e-mail adres en wacht woord gebruiken nu het `form` HTML-element zodat Edge en Internet Explorer (IE) deze gegevens op de juiste manier kunnen opslaan.
 - Er is een Configureer bare validatie vertraging voor gebruikers invoer toegevoegd voor verbeterde gebruikers ervaring.
+- Toegankelijkheids oplossingen
 - Er is een probleem met toegankelijkheid opgelost zodat fout berichten nu worden gelezen door Verteller. 
 - De focus wordt nu op het wachtwoord veld geplaatst nadat het e-mail bericht is geverifieerd.
 - Verwijderd `autofocus` uit het besturings element selectie vakje. 
-- Er is ondersteuning toegevoegd voor een weer gave-widget voor verificatie via telefoon nummer.
-- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
+- Er is ondersteuning toegevoegd voor een weergave besturings element voor verificatie via telefoon nummer.
+- U kunt nu het `data-preload="true"` kenmerk [in uw HTML-tags] (Customize-UI-with-HTML. MD #-richt lijnen toevoegen-voor
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties.
 - Ondersteuning voor Chrome-vertaling.
-- Er is ondersteuning toegevoegd voor Tenant huisstijl op pagina's van de gebruikers stroom.
+- Er is ondersteuning toegevoegd voor de huis stijl van het bedrijf op pagina's van de gebruikers stroom.
 
 **1.1.0**
 
@@ -87,8 +88,8 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 **1.2.0**
 
 - De velden gebruikers naam/e-mail adres en wacht woord gebruiken nu het `form` HTML-element zodat Edge en Internet Explorer (IE) deze gegevens op de juiste manier kunnen opslaan.
-- Toegankelijkheids oplossingen.
-- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
+- Toegankelijkheids oplossingen
+- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](customize-ui-with-html.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties.
@@ -118,7 +119,7 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 **1.2.0**
 
 - Toegankelijkheids oplossingen
-- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
+- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](customize-ui-with-html.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
@@ -144,7 +145,7 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 **1.2.0**
 
 - Toegankelijkheids oplossingen
-- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
+- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](customize-ui-with-html.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
@@ -165,7 +166,7 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 **1.2.0**
 
 - Toegankelijkheids oplossingen
-- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
+- U kunt nu het `data-preload="true"` kenmerk toevoegen aan [uw HTML-tags](customize-ui-with-html.md#guidelines-for-using-custom-page-content) om de laad volgorde voor CSS en Java script te bepalen.
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties
@@ -177,4 +178,4 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [de gebruikers interface van uw toepassing aanpassen met behulp van een aangepast beleid](custom-policy-ui-customization.md)voor meer informatie over het aanpassen van de gebruikers interface van uw toepassingen in een aangepast beleid.
+Zie [de gebruikers interface van uw toepassing aanpassen met behulp van een aangepast beleid](customize-ui-with-html.md)voor meer informatie over het aanpassen van de gebruikers interface van uw toepassingen in een aangepast beleid.

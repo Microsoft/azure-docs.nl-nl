@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 27a00c69a4423e45b46b9c3d0340bb7cd1a35d65
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 88244ec3ba4bbebe7d6096fa3ac49bd4f1b8f661
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92095895"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108617"
 ---
 # <a name="localization-element"></a>Lokalisatie-element
 
@@ -354,5 +354,5 @@ In de sectie meta gegevens van een niet-bevestigd technisch profiel moet DataUri
 
 Raadpleeg de volgende artikelen voor lokalisatie van voor beelden:
 
-- [Taal aanpassing met aangepast beleid in Azure Active Directory B2C](custom-policy-localization.md)
-- [Taal aanpassing met gebruikers stromen in Azure Active Directory B2C](user-flow-language-customization.md)
+- [Taal aanpassing met aangepast beleid in Azure Active Directory B2C](language-customization.md)
+- [Taal aanpassing met gebruikers stromen in Azure Active Directory B2C](language-customization.md)

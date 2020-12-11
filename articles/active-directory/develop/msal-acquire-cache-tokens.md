@@ -13,12 +13,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: da79a74121318993f807ec3bde101b652a8b49da
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 34cdaa42f3a41ae04c73c570bb4fede01a786af2
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628132"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107835"
 ---
 # <a name="acquire-and-cache-tokens-using-the-microsoft-authentication-library-msal"></a>Tokens verkrijgen en in de cache opslaan met behulp van de micro soft Authentication Library (MSAL)
 
@@ -122,6 +122,8 @@ Als uw client een toegangs token aanvraagt, retourneert Azure AD ook een verific
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u MSAL voor Java gebruikt, hebt u meer informatie over [aangepaste serialisatie van de token cache in MSAL voor Java](msal-java-token-cache-serialization.md).
-
-Meer informatie over het [afhandelen van fouten en uitzonde ringen](msal-handling-exceptions.md).
+Diverse platformen die door MSAL worden ondersteund, hebben extra informatie over token cache in de documentatie voor de bibliotheek van dat platform. Bijvoorbeeld:
+- [Een Token ophalen uit de token cache met behulp van MSAL.NET](msal-net-acquire-token-silently.md)
+- [Eenmalige aanmelding met MSAL.js](msal-js-sso.md)
+- [Serialisatie van aangepaste token cache in MSAL voor python](msal-python-token-cache-serialization.md)
+- [Aangepaste serialisatie van token cache in MSAL voor Java](msal-java-token-cache-serialization.md)

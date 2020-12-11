@@ -13,12 +13,12 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev devx-track-js
-ms.openlocfilehash: 327280c193c3c2fb829e468bccfc352f35edfdb5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ef1c0003978251dd2637915e56dc396e85f4438f
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92673503"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107869"
 ---
 # <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Micro soft-verificatie bibliotheek voor Java script gebruiken om te werken met Azure AD B2C
 
@@ -207,14 +207,14 @@ Wanneer een gebruiker een **verg eten wacht woord** selecteert, genereert uw toe
 
     Nadat het wacht woord opnieuw is ingesteld, keert de gebruiker terug naar de toepassing om u opnieuw aan te melden.
 
-    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Aanmeldings scherm weer gegeven door Azure AD B2C" border="false":::
+    :::image type="content" source="media/msal-b2c-overview/user-journey-02-password-reset.png" alt-text="Scherm voor wachtwoord herstel wordt weer gegeven door Azure AD B2C" border="false":::
 
-    Zie [MSAL-fout-en uitzonderings codes](msal-handling-exceptions.md)voor meer informatie over fout codes en het verwerken van uitzonde ringen.
+    Zie [MSAL-fout-en uitzonderings codes](msal-error-handling-js.md)voor meer informatie over fout codes en het verwerken van uitzonde ringen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over deze Azure AD B2C-concepten:
 
-- [Gebruikers stromen](../../active-directory-b2c/tutorial-create-user-flows.md)
+- [Gebruikersstromen](../../active-directory-b2c/tutorial-create-user-flows.md)
 - [Aangepast beleid](../../active-directory-b2c/custom-policy-get-started.md)
-- [UX-aanpassing](../../active-directory-b2c/custom-policy-configure-user-input.md)
+- [UX-aanpassing](../../active-directory-b2c/configure-user-input.md)

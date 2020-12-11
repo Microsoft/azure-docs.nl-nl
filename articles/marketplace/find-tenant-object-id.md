@@ -6,12 +6,12 @@ ms.topic: article
 author: keferna
 ms.author: keferna
 ms.date: 10/09/2020
-ms.openlocfilehash: db09943085cb7934bca5d7f2dc24ba692613ee19
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 2b1ba0779649c4955987c7dae9802cefaba89b79
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426904"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109335"
 ---
 # <a name="find-tenant-id-object-id-and-partner-association-details"></a>Tenant-ID, object-ID en koppelings gegevens van de partner zoeken
 
@@ -24,25 +24,25 @@ Als u scherm opnamen van deze items wilt ophalen in Azure Cloud Shell voor hulp 
 
 ## <a name="find-tenant-id"></a>Tenant-ID zoeken
 
-1. Ga naar de [Azure Portal](https://ms.portal.azure.com/).
+1. Ga naar [Azure Portal](https://ms.portal.azure.com/).
 2. Selecteer **Azure Active Directory**.
 
     :::image type="content" source="media/tenant-and-object-id/icon-azure-ad.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
 
-3. Selecteer **Groepen**. Uw Tenant-ID bevindt zich in het vak **informatie over de Tenant** .
+3. Selecteer **Overzicht**. Uw Tenant-ID moet worden weer gegeven onder **basis informatie**.
 
-    :::image type="content" source="media/tenant-and-object-id/select-groups-1.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/select-groups-1.png" alt-text="Selecteer groepen in Azure Portal.":::
 
 ## <a name="find-subscriptions-and-roles"></a>Abonnementen en rollen zoeken
 
 1. Ga naar de Azure Portal en selecteer **Azure Active Directory** zoals u in stap 1 en 2 hierboven hebt genoteerd.
 2. Selecteer **Abonnementen**.
 
-    :::image type="content" source="media/tenant-and-object-id/icon-azure-subscriptions-1.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/icon-azure-subscriptions-1.png" alt-text="Het pictogram abonnementen in Azure Portal.":::
 
 3. Abonnementen en rollen weer geven.
 
-    :::image type="content" source="media/tenant-and-object-id/subscriptions-screen-1.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/subscriptions-screen-1.png" alt-text="Het scherm abonnementen in Azure Portal.":::
 
 ## <a name="find-partner-id"></a>Partner-ID zoeken
 
@@ -50,7 +50,7 @@ Als u scherm opnamen van deze items wilt ophalen in Azure Cloud Shell voor hulp 
 2. Selecteer een abonnement.
 3. Selecteer onder **facturering** **partner gegevens**.
 
-    :::image type="content" source="media/tenant-and-object-id/menu-partner-information.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/menu-partner-information.png" alt-text="Partner gegevens in het menu links.":::
 
 ## <a name="find-user-object-id"></a>Gebruiker zoeken (object-ID)
 
@@ -60,40 +60,40 @@ Als u scherm opnamen van deze items wilt ophalen in Azure Cloud Shell voor hulp 
 4. Blader naar of zoek naar de gewenste gebruiker en selecteer vervolgens de account naam om de profiel gegevens van het gebruikers account weer te geven.
 5. De object-ID bevindt zich in de sectie identiteit aan de rechter kant.
 
-    :::image type="content" source="media/tenant-and-object-id/azure-ad-admin-center.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/azure-ad-admin-center.png" alt-text="Azure Active Directory-beheer centrum.":::
 
 6. Zoek **roltoewijzingen** door **toegangs beheer (IAM)** te selecteren in het menu links en vervolgens **roltoewijzingen**.
 
-    :::image type="content" source="https://docs.microsoft.com/azure/role-based-access-control/media/role-assignments-portal/role-assignments.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="https://docs.microsoft.com/azure/role-based-access-control/media/role-assignments-portal/role-assignments.png" alt-text="Roltoewijzingen voor Azure-resources.":::
 
 ## <a name="find-ids-for-debugging"></a>Id's zoeken voor fout opsporing
 
 In deze sectie wordt beschreven hoe u een Tenant-, object-en partner-ID-koppeling kunt vinden voor fout opsporing.
 
-1. Ga naar de [Azure Portal](https://ms.portal.azure.com/).
+1. Ga naar [Azure Portal](https://ms.portal.azure.com/).
 2. Open Azure Cloud Shell door het Power shell-pictogram rechtsboven te selecteren.
 
-    :::image type="content" source="media/tenant-and-object-id/icon-azure-cloud-shell-1.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/icon-azure-cloud-shell-1.png" alt-text="Power shell-pictogram in de rechter bovenhoek van het scherm.":::
 
 3. Selecteer **Power shell**.
 
-    :::image type="content" source="media/tenant-and-object-id/icon-powershell.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/icon-powershell.png" alt-text="Selecteer de Power shell-koppeling.":::
 
 4. Selecteer het vak **abonnement** om te kiezen aan welke doos de partner is gekoppeld en **Maak vervolgens opslag**. Dit is een eenmalige actie. Als u al een opslag hebt ingesteld, gaat u verder met de volgende stap.
 
-    :::image type="content" source="media/tenant-and-object-id/create-storage-window.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/create-storage-window.png" alt-text="Selecteer de knop opslag maken.":::
 
 5. Als u opslag (of al hebt) maakt, wordt het Azure Cloud Shell-venster geopend.
 
-    :::image type="content" source="media/tenant-and-object-id/cloud-shell-window-1.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/cloud-shell-window-1.png" alt-text="Het Azure Cloud Shell-venster.":::
 
 6. Voor partner koppelings Details installeert u de extensie met de volgende opdracht:<br>`az extension add --name managementpartner`.<br>Azure Cloud Shell ziet u dat de extensie al is geïnstalleerd:
 
-    :::image type="content" source="media/tenant-and-object-id/cloud-shell-window-2.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/cloud-shell-window-2.png" alt-text="Het Azure Cloud Shell venster met de extensie is al geïnstalleerd.":::
 
 7. Raadpleeg de partner gegevens met behulp van deze opdracht:<br>`az managementpartner show --partner-id xxxxxx`<br>Bijvoorbeeld: `az managementpartner show --partner-id 4760962`.<br>Een scherm opname van de opdracht resultaten uitlijnen die er ongeveer als volgt uitziet:
 
-    :::image type="content" source="media/tenant-and-object-id/partner-id-sample-screenshot.png" alt-text="Het Azure Active Directory pictogram in Azure Portal.":::
+    :::image type="content" source="media/tenant-and-object-id/partner-id-sample-screenshot.png" alt-text="Voorbeeld scherm met de resultaten van de vorige opdracht om de parter-ID weer te geven.":::
 
 >[!NOTE]
 >Als meerdere abonnementen een scherm opname vereisen, gebruikt u deze opdracht om te scha kelen tussen abonnementen:<br>`az account set --subscription "My Demos"`

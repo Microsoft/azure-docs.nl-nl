@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 03/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: dbeb2540084fad2cfab3ce360dd15b60a75e5e59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ec99558f3a168b770ad19fb4f6c811a31c44f08
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85389323"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108873"
 ---
 # <a name="azure-active-directory-b2c-enable-custom-attributes-in-a-custom-profile-policy"></a>Azure Active Directory B2C: aangepaste kenmerken in een aangepast profiel beleid inschakelen
 
-In het artikel [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid](custom-policy-configure-user-input.md) leert u hoe u ingebouwde [kenmerken van gebruikers profielen](user-profile-attributes.md)gebruikt. In dit artikel schakelt u een aangepast kenmerk in de map Azure Active Directory B2C (Azure AD B2C) in. Later kunt u het nieuwe kenmerk gebruiken als aangepaste claim in [gebruikers stromen](user-flow-overview.md) of [aangepaste beleids regels](custom-policy-get-started.md) tegelijk.
+In het artikel [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid](configure-user-input.md) leert u hoe u ingebouwde [kenmerken van gebruikers profielen](user-profile-attributes.md)gebruikt. In dit artikel schakelt u een aangepast kenmerk in de map Azure Active Directory B2C (Azure AD B2C) in. Later kunt u het nieuwe kenmerk gebruiken als aangepaste claim in [gebruikers stromen](user-flow-overview.md) of [aangepaste beleids regels](custom-policy-get-started.md) tegelijk.
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -42,14 +42,14 @@ Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk gebruike
 
 Extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing met de naam B2C-Extensions-app. Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure AD B2C, app-registraties.
 
-De *extensie-eigenschap*, het *aangepaste kenmerk*en de *aangepaste claim* verwijzen naar hetzelfde item in de context van dit artikel. De naam kan variëren, afhankelijk van de context, zoals toepassing, object of beleid.
+De *extensie-eigenschap*, het *aangepaste kenmerk* en de *aangepaste claim* verwijzen naar hetzelfde item in de context van dit artikel. De naam kan variëren, afhankelijk van de context, zoals toepassing, object of beleid.
 
 ## <a name="get-the-application-properties"></a>De toepassings eigenschappen ophalen
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
-1. Selecteer **app-registraties**en selecteer vervolgens **alle toepassingen**.
+1. Selecteer **app-registraties** en selecteer vervolgens **alle toepassingen**.
 1. Selecteer de `b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.`-toepassing.
 1. Kopieer de volgende id's naar het klem bord en sla ze op:
     * **Toepassings-id**. Bijvoorbeeld: `11111111-1111-1111-1111-111111111111`.
@@ -85,10 +85,10 @@ Als u aangepaste kenmerken in uw beleid wilt inschakelen, geeft u de **toepassin
 2. Zorg ervoor dat u de map met uw Azure AD-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C-Tenant bevat.
 3. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 4. Selecteer een **Framework voor identiteits ervaring**.
-5. Selecteer **aangepast beleid uploaden**en upload de TrustFrameworkExtensions.xml-beleids bestanden die u hebt gewijzigd.
+5. Selecteer **aangepast beleid uploaden** en upload de TrustFrameworkExtensions.xml-beleids bestanden die u hebt gewijzigd.
 
 > [!NOTE]
-> De eerste keer dat het technische profiel van Azure AD de claim naar de map persistent maakt, wordt gecontroleerd of het aangepaste kenmerk bestaat. Als dat niet het geval is, wordt het aangepaste kenmerk gemaakt.  
+> De eerste keer dat het technische profiel van Azure AD de claim naar de map persistent maakt, wordt gecontroleerd of het aangepaste kenmerk bestaat. Als dat niet het geval is, wordt het aangepaste kenmerk gemaakt.  
 
 ## <a name="create-a-custom-attribute-through-azure-portal"></a>Een aangepast kenmerk maken via Azure Portal
 
@@ -96,7 +96,7 @@ Dezelfde extensie kenmerken worden gedeeld door ingebouwde en aangepaste beleids
 
 U kunt deze kenmerken maken met behulp van de portal-gebruikers interface voor of nadat u ze in uw aangepaste beleids regels gebruikt. Volg de richt lijnen voor het [definiëren van aangepaste kenmerken in azure Active Directory B2C](user-flow-custom-attributes.md). Wanneer u een kenmerk **loyaltyId** in de portal maakt, moet u dit als volgt:
 
-|Naam     |Gebruikt in |
+|Name     |Gebruikt in |
 |---------|---------|
 |`extension_loyaltyId`  | Aangepast beleid|
 |`extension_<b2c-extensions-app-guid>_loyaltyId`  | [Microsoft Graph API](manage-user-accounts-graph-api.md)|
@@ -132,7 +132,7 @@ In het volgende voor beeld ziet u het gebruik van een aangepast kenmerk in Azure
 
 ## <a name="use-a-custom-attribute-in-a-policy"></a>Een aangepast kenmerk gebruiken in een beleid
 
-Volg de richt lijnen voor het [toevoegen van claims en het aanpassen van gebruikers invoer met aangepast beleid](custom-policy-configure-user-input.md). In dit voor beeld wordt een ingebouwde claim ' City ' gebruikt. Als u een aangepast kenmerk wilt gebruiken, vervangt u ' City ' door uw eigen aangepaste kenmerken.
+Volg de richt lijnen voor het [toevoegen van claims en het aanpassen van gebruikers invoer met aangepast beleid](configure-user-input.md). In dit voor beeld wordt een ingebouwde claim ' City ' gebruikt. Als u een aangepast kenmerk wilt gebruiken, vervangt u ' City ' door uw eigen aangepaste kenmerken.
 
 
 ## <a name="next-steps"></a>Volgende stappen

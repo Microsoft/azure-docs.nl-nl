@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 333bb42643539cedec04d37680749c749a003536
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: cf0437b985865248393e9f68da264fcae5af7f12
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994057"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108549"
 ---
 # <a name="tutorial-for-configuring-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van arkose Labs met Azure Active Directory B2C
 
@@ -147,9 +147,9 @@ Down load Git Bash en voer de volgende stappen uit:
 
 1. Maak een gebruikers stroom op basis van de [informatie.](tutorial-create-user-flows.md) Stop bij het bereiken van de sectie **de gebruikers stroom testen**.
 
-2. Schakel Java script in uw [gebruikers stroom](user-flow-javascript-overview.md)in.
+2. Schakel Java script in uw [gebruikers stroom](javascript-and-page-layout.md)in.
 
-3. Schakel op de pagina dezelfde gebruikers stroom de URL voor de aangepaste pagina in: Ga naar de pagina-indeling **gebruikers stroom**  >  **page layout**  >  **Gebruik aangepaste pagina-inhoud**  =  **Ja**  >  **Invoegen aangepaste pagina-URL**.
+3. Schakel op de pagina dezelfde gebruikers stroom de URL voor de aangepaste pagina in: Ga naar de pagina-indeling **gebruikers stroom**  >    >  **Gebruik aangepaste pagina-inhoud**  =  **Ja**  >  **Invoegen aangepaste pagina-URL**.
 Deze URL voor de aangepaste pagina wordt opgehaald uit de locatie van het index.html-bestand in de Blob-opslag  
 
    ![Scherm opname van de opslag-URL van arkose Labs](media/partner-arkose-labs/arkose-storage-url.png)

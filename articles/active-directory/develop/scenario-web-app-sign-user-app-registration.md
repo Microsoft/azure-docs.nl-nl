@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 29f5d2960a678204387b2bd1dfd6d4acdc4f9c3d
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 30d646ff7d4f97289ff238211418ac57cd8167a4
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442511"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107682"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Web-app die zich aanmeldt bij gebruikers: app-registratie
 
@@ -41,52 +41,52 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 > De te gebruiken Portal verschilt, afhankelijk van of uw toepassing wordt uitgevoerd in de Microsoft Azure open bare Cloud of in een nationale of soevereine Cloud. Zie [National Clouds](./authentication-national-cloud.md#app-registration-endpoints)(Engelstalig) voor meer informatie.
 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account. U kunt zich ook aanmelden bij de [Azure Portal keuze](./authentication-national-cloud.md#app-registration-endpoints) voor de nationale Cloud.
-2. Als uw account u toegang geeft tot meer dan één Tenant, selecteert u uw account in de rechter bovenhoek. Stel vervolgens uw portal-sessie in op de gewenste Azure Active Directory-Tenant (Azure AD).
-3. Selecteer in het linkerdeel venster de **Azure Active Directory** -service en selecteer vervolgens **app-registraties**  >  **nieuwe registratie**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **beheren** de optie **app-registraties**  >  **nieuwe registratie**.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
+   1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
    1. Kies de ondersteunde account typen voor uw toepassing. (Zie [ondersteunde account typen](./v2-supported-account-types.md).)
-   1. Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt zichtbaar voor gebruikers van de app. Voer bijvoorbeeld **AspNetCore-webapp** in.
-   1. Voor **omleidings-URI** voegt u het type toepassing toe en de URI-bestemming die geretourneerde token Reacties accepteert na een geslaagde verificatie. Voer bijvoorbeeld in **https://localhost:44321** . Selecteer vervolgens **Registreren**.
-   ![Scherm afbeelding toont de pagina een toepassing registreren waar u registreren kunt selecteren.](media/scenario-webapp/scenario-webapp-app-registration-1.png)
-1. Selecteer het menu **Verificatie** en voeg dan de volgende gegevens toe:
-   1. Voor **antwoord-URL** , add **https://localhost:44321/signin-oidc** van het type **Web**.
-   1. In de sectie **Geavanceerde instellingen** stelt u de **Afmeldings-URL** in op **https://localhost:44321/signout-oidc** .
+   1. Voor **omleidings-URI** voegt u het type toepassing toe en de URI-bestemming die geretourneerde token Reacties accepteert na een geslaagde verificatie. Voer bijvoorbeeld `https://localhost:44321` in.
+   1. Selecteer **Registreren**.
+1. Selecteer onder **beheren** de optie **verificatie** en voeg de volgende gegevens toe:
+   1. Voeg in het gedeelte **Web** `https://localhost:44321/signin-oidc` een **omleidings-URI** toe.
+   1. `https://localhost:44321/signout-oidc`Als **afmeldings-URL** toevoegen.
    1. Selecteer **id-tokens** onder **Impliciete toekenning**.
    1. Selecteer **Opslaan**.
-  ![Scherm afbeelding toont de verificatie opties, waar u de wijzigingen kunt aanbrengen die worden beschreven.](media/scenario-webapp/scenario-webapp-app-registration-2.png)
- 
+   
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
+   1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
    1. Kies de ondersteunde account typen voor uw toepassing. (Zie [ondersteunde account typen](./v2-supported-account-types.md).)
-   1. Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt zichtbaar voor gebruikers van de app. Voer bijvoorbeeld **MailApp-openidconnect-v2** in.
    1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: **https://localhost:44326/** .
-1. Selecteer **Registreren** om de toepassing te maken.
-1. Selecteer het menu **verificatie** .
-1. Selecteer in **Advanced settings** de  |  sectie **impliciete verleende** instellingen de optie **id-tokens**. Voor dit voor beeld moet de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om u aan te melden bij de gebruiker.
+   1. Selecteer **Registreren** om de toepassing te maken.
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Selecteer in de sectie **impliciete toekenning** **id-tokens**. Voor dit voor beeld moet de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om u aan te melden bij de gebruiker.
 1. Selecteer **Opslaan**.
 
 # <a name="java"></a>[Java](#tab/java)
 
-1. Wanneer de **pagina een toepassing registreren** wordt weer gegeven, voert u een weergave naam in voor de toepassing. Voer bijvoorbeeld **Java-webapp** in.
-1. Selecteer **accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)** en selecteer **Web-app/API** voor **toepassings type**.
-1. Selecteer **registreren** om de toepassing te registreren.
-1. Selecteer in het menu links **verificatie**. Onder **omleidings-uri's** , selecteert u **Web**.
-
-1. Voer twee omleidings-Uri's in: één voor de aanmeldings pagina en een voor de grafiek pagina. Gebruik voor beide dezelfde host en hetzelfde poort nummer, gevolgd door **/msal4jsample/Secure/Aad** voor de aanmeldings pagina en **msal4jsample/Graph/me** voor de pagina met gebruikers informatie.
-
-   Het voor beeld maakt standaard gebruik van:
-
+1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in: 
+    1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen. 
+    1. Selecteer **accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)**.
+    1. Selecteer **registreren** om de toepassing te registreren.
+1. Selecteer onder **beheren** de optie **verificatie**  >  **een platform toevoegen**.
+1. Selecteer **Web**.
+1. Voer voor **omleidings-URI** hetzelfde host-en poort nummer in, gevolgd door `/msal4jsample/secure/aad` voor de aanmeldings pagina. 
+1. Selecteer **Configureren**.
+1. Gebruik in de sectie **Web** het host-en poort nummer, gevolgd door **/msal4jsample/Graph/me** als een **omleidings-URI** voor de pagina met gebruikers informatie.
+Het voor beeld maakt standaard gebruik van:
    - **http://localhost:8080/msal4jsample/secure/aad**
    - **http://localhost:8080/msal4jsample/graph/me**
 
-  Selecteer vervolgens **Opslaan**.
-
-1. Selecteer **certificaten & geheimen** in het menu.
+1. Selecteer **Opslaan**.
+1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
 1. Selecteer in de sectie **client geheimen** de optie **Nieuw client geheim** en voer vervolgens de volgende handelingen uit:
 
    1. Voer een beschrijving van de sleutel in.
@@ -97,14 +97,13 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 # <a name="python"></a>[Python](#tab/python)
 
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
-   1. Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt zichtbaar voor gebruikers van de app. Voer bijvoorbeeld **python-webapp** in.
+   1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
    1. Wijzig **ondersteunde account typen** **in accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)**.
    1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: **http://localhost:5000/getAToken** .
-1. Selecteer **Registreren** om de toepassing te maken.
+   1. Selecteer **Registreren** om de toepassing te maken.
 1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
-1. Selecteer in het linkermenu **certificaten & geheimen**.
+1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
 1. Selecteer in de sectie **client geheimen** de optie **Nieuw client geheim** en voer vervolgens de volgende handelingen uit:
-
    1. Voer een beschrijving van de sleutel in.
    1. Selecteer een sleutelduur van **Over 1 jaar**.
    1. Selecteer **Toevoegen**.

@@ -11,12 +11,12 @@ ms.date: 05/25/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7bb38b382add2a0ea3506c31c5e6e76a985df6a1
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 7c9e3344ed819f607feeab88ac43a9dc286a61e0
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936468"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109093"
 ---
 # <a name="the-new-app-registrations-experience-for-azure-active-directory-b2c"></a>De nieuwe App-registraties ervaring voor Azure Active Directory B2C
 
@@ -97,7 +97,7 @@ In de nieuwe ervaring, in plaats van **sleutels**, gebruikt u de Blade **certifi
 ## <a name="features-not-applicable-in-azure-ad-b2c-tenants"></a>Functies die niet van toepassing zijn in Azure AD B2C tenants
 De volgende Azure AD-App-registratie mogelijkheden zijn niet van toepassing op of beschikbaar in Azure AD B2C tenants:
 - **Rollen en beheerders** : momenteel niet beschikbaar voor Azure AD B2C.
-- **Branding** -gebruikers interface/UX-aanpassing is geconfigureerd in de **huis stijl** van het bedrijf of als onderdeel van een gebruikers stroom. Meer informatie over [het aanpassen van de gebruikers interface in azure Active Directory B2C](customize-ui-overview.md).
+- **Branding** -gebruikers interface/UX-aanpassing is geconfigureerd in de **huis stijl** van het bedrijf of als onderdeel van een gebruikers stroom. Meer informatie over [het aanpassen van de gebruikers interface in azure Active Directory B2C](customize-ui-with-html.md).
 - **Verificatie** van de uitgever van het domein-uw app is geregistreerd op *. onmicrosoft.com*, dat geen geverifieerd domein is. Daarnaast wordt het domein van de uitgever voornamelijk gebruikt voor het verlenen van toestemming van de gebruiker, wat niet van toepassing is op Azure AD B2C-apps voor gebruikers verificatie. [Meer informatie over het Publisher-domein](../active-directory/develop/howto-configure-publisher-domain.md).
 - **Token configuratie** -het token is geconfigureerd als onderdeel van een gebruikers stroom in plaats van een app.
 - De **Quick** starts zijn momenteel niet beschikbaar voor Azure AD B2C-tenants.

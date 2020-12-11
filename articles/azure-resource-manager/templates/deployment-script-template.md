@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: jgao
-ms.openlocfilehash: 3a229d1e6752eabd099a5bc60ef93f1d4e85a26b
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 7566235cf92965d5d3de1ec7f40353430ec7e0c6
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092751"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107138"
 ---
 # <a name="use-deployment-scripts-in-arm-templates-preview"></a>Implementatie scripts gebruiken in ARM-sjablonen (preview-versie)
 
@@ -536,7 +536,7 @@ De levens cyclus van deze resources wordt bepaald door de volgende eigenschappen
 > [!NOTE]
 > Het is niet raadzaam om het opslag account en het container exemplaar dat door de script service wordt gegenereerd voor andere doel einden te gebruiken. De twee resources kunnen worden verwijderd, afhankelijk van de levens cyclus van het script.
 
-Als u het container exemplaar en het opslag account voor het oplossen van problemen wilt behouden, kunt u een opdracht voor de slaap stand toevoegen aan het script.  Gebruik bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep).
+Het container exemplaar en het opslag account worden verwijderd volgens de **cleanupPreference**. Als het script mislukt en **cleanupPreference** niet is ingesteld op **Always**, houdt het implementatie proces de container echter gedurende één uur automatisch actief. U kunt dit uur gebruiken om het script op te lossen. Als u wilt dat de container wordt uitgevoerd nadat de implementatie is voltooid, voegt u een slaapstandtoets toe aan het script. Voeg bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep) toe aan het einde van uw script. Als u de stap van de slaap stand niet toevoegt, wordt de container ingesteld op een Terminal status en is deze niet toegankelijk, zelfs niet als deze nog niet is verwijderd.
 
 ## <a name="run-script-more-than-once"></a>Script meer dan één keer uitvoeren
 
@@ -560,7 +560,7 @@ Nadat het script is getest, kunt u dit als een implementatie script in uw sjablo
 
 ## <a name="deployment-script-error-codes"></a>Fout codes voor implementatie scripts
 
-| Foutcode | Beschrijving |
+| Foutcode | Description |
 |------------|-------------|
 | DeploymentScriptInvalidOperation | De resource definitie van het implementatie script in de sjabloon bevat ongeldige eigenschaps namen. |
 | DeploymentScriptResourceConflict | Kan geen resource voor een implementatie script verwijderen die zich in de niet-Terminal status bevindt en de uitvoering niet langer dan 1 uur is overschreden. Het is ook niet mogelijk om hetzelfde implementatie script opnieuw uit te voeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resource groepsnaam en resource naam), maar met verschillende script hoofdtekst op hetzelfde moment. |

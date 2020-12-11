@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fd2f7d46df09085d19b19709c7f45cd3d6566988
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 018d90db06948f3fd6a34b56c65088641a9ca874
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92628657"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108974"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -24,7 +24,7 @@ ms.locfileid: "92628657"
 
 U kunt het uiterlijk van elk [zelf bevestigd technisch profiel](self-asserted-technical-profile.md)aanpassen. Azure Active Directory B2C (Azure AD B2C) voert code uit in de browser van uw klant en maakt gebruik van een moderne benadering genoemd cross-Origin Resource Sharing (CORS).
 
-Als u de gebruikers interface wilt aanpassen, geeft u een URL op in het **ContentDefinition** -element met aangepaste HTML-inhoud. In het zelfondertekende technische profiel of **OrchestrationStep** , wijst u naar die inhouds definitie-id. De inhouds definitie kan een **LocalizedResourcesReferences** -element bevatten dat een lijst bevat met gelokaliseerde resources die moeten worden geladen. Azure AD B2C combineert elementen van de gebruikersinterface met de HTML-inhoud die vanaf de URL wordt geladen en presenteert vervolgens de pagina aan de gebruiker.
+Als u de gebruikers interface wilt aanpassen, geeft u een URL op in het **ContentDefinition** -element met aangepaste HTML-inhoud. In het zelfondertekende technische profiel of **OrchestrationStep**, wijst u naar die inhouds definitie-id. De inhouds definitie kan een **LocalizedResourcesReferences** -element bevatten dat een lijst bevat met gelokaliseerde resources die moeten worden geladen. Azure AD B2C combineert elementen van de gebruikersinterface met de HTML-inhoud die vanaf de URL wordt geladen en presenteert vervolgens de pagina aan de gebruiker.
 
 Het **ContentDefinitions** -element bevat URL'S naar HTML5-sjablonen die kunnen worden gebruikt in de reis van een gebruiker. De HTML5-pagina-URI wordt gebruikt voor een opgegeven gebruikers interface stap. Bijvoorbeeld het aanmelden of aanmelden, het opnieuw instellen van het wacht woord of de fout pagina's. U kunt het uiterlijk wijzigen door de LoadUri voor het HTML5-bestand te overschrijven. U kunt nieuwe inhouds definities maken op basis van uw behoeften. Dit element kan een gelokaliseerde bronnen verwijzing bevatten naar de lokalisatie-id die is opgegeven in het [lokalisatie](localization.md) -element.
 
@@ -63,11 +63,11 @@ Het element **ContentDefinition** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Ja | Een id voor een inhouds definitie. De waarde is één opgegeven in de sectie **inhouds definitie-id's** verderop op deze pagina. |
+| Id | Yes | Een id voor een inhouds definitie. De waarde is één opgegeven in de sectie **inhouds definitie-id's** verderop op deze pagina. |
 
 Het **ContentDefinition** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | LoadUri | 1:1 | Een teken reeks die de URL van de HTML5-pagina voor de inhouds definitie bevat. |
 | RecoveryUri | 1:1 | Een teken reeks die de URL van de HTML-pagina bevat voor het weer geven van een fout met betrekking tot de inhouds definitie. De waarde moet momenteel niet worden gebruikt `~/common/default_page_error.html` . |
@@ -79,7 +79,7 @@ Het **ContentDefinition** -element bevat de volgende elementen:
 
 Het element **DataUri** wordt gebruikt om de pagina-id op te geven. Azure AD B2C gebruikt de pagina-id om UI-elementen en Java script aan de client zijde te laden en te initiëren. De notatie van de waarde is `urn:com:microsoft:aad:b2c:elements:page-name:version` . De volgende tabel geeft een lijst van de pagina-id's die u kunt gebruiken.
 
-| Pagina-id | Beschrijving |
+| Pagina-id | Description |
 | ----- | ----------- |
 | `globalexception` | Hiermee wordt een fout pagina weer gegeven wanneer een uitzonde ring of een fout wordt aangetroffen. |
 | `providerselection`, `idpselection` | Een lijst met de id-providers waaruit gebruikers kunnen kiezen tijdens het aanmelden.  |
@@ -90,7 +90,7 @@ Het element **DataUri** wordt gebruikt om de pagina-id op te geven. Azure AD B2C
 
 ### <a name="select-a-page-layout"></a>Selecteer een pagina-indeling
 
-U kunt [Java script-client-side code](javascript-samples.md) inschakelen door `contract` tussen `elements` en het pagina Type in te voegen. Bijvoorbeeld `urn:com:microsoft:aad:b2c:elements:contract:page-name:version`.
+U kunt [Java script-client-side code](javascript-and-page-layout.md) inschakelen door `contract` tussen `elements` en het pagina Type in te voegen. Bijvoorbeeld `urn:com:microsoft:aad:b2c:elements:contract:page-name:version`.
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
@@ -111,7 +111,7 @@ In het volgende voor beeld ziet u de **DataUri** - `selfasserted` versie `1.2.0`
 
 #### <a name="migrating-to-page-layout"></a>Migreren naar pagina-indeling
 
-De notatie van de waarde moet het woord `contract` : _urn: com: micro soft: AAD: B2C: elementen: **contract** :p Age-name: Version_ bevatten. Als u een pagina-indeling wilt opgeven in uw aangepaste beleids regels die gebruikmaken van een oude **DataUri** -waarde, gebruikt u de volgende tabel om te migreren naar de nieuwe indeling.
+De notatie van de waarde moet het woord `contract` : _urn: com: micro soft: AAD: B2C: elementen:**contract**:p Age-name: Version_ bevatten. Als u een pagina-indeling wilt opgeven in uw aangepaste beleids regels die gebruikmaken van een oude **DataUri** -waarde, gebruikt u de volgende tabel om te migreren naar de nieuwe indeling.
 
 | Oude DataUri-waarde | Nieuwe DataUri-waarde |
 | ----------------- | ----------------- |
@@ -164,7 +164,7 @@ In het volgende voor beeld ziet u de inhouds definitie-id's en de bijbehorende *
 
 Een **META** gegevenselement bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | Item | 0: n | De meta gegevens die betrekking hebben op de inhouds definitie. |
 
@@ -172,7 +172,7 @@ Het element **item** van het **META** gegevenselement bevat de volgende kenmerke
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Sleutel | Ja | De meta gegevens sleutel.  |
+| Sleutel | Yes | De meta gegevens sleutel.  |
 
 #### <a name="metadata-keys"></a>Meta gegevens sleutels
 
@@ -180,13 +180,13 @@ De inhouds definitie ondersteunt de volgende meta gegevens items:
 
 | Sleutel | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| DisplayName | Nee | Een teken reeks die de naam van de inhouds definitie bevat. |
+| DisplayName | No | Een teken reeks die de naam van de inhouds definitie bevat. |
 
 ### <a name="localizedresourcesreferences"></a>LocalizedResourcesReferences
 
 Het **LocalizedResourcesReferences** -element bevat de volgende elementen:
 
-| Element | Instanties | Beschrijving |
+| Element | Instanties | Description |
 | ------- | ----------- | ----------- |
 | LocalizedResourcesReference | 1: n | Een lijst met gelokaliseerde resource verwijzingen voor de inhouds definitie. |
 
@@ -194,8 +194,8 @@ Het **LocalizedResourcesReference** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Taal | Ja | Een teken reeks die een ondersteunde taal voor het beleid bevat per RFC 5646-Tags voor het identificeren van talen. |
-| LocalizedResourcesReferenceId | Ja | De id van het **LocalizedResources** -element. |
+| Taal | Yes | Een teken reeks die een ondersteunde taal voor het beleid bevat per RFC 5646-Tags voor het identificeren van talen. |
+| LocalizedResourcesReferenceId | Yes | De id van het **LocalizedResources** -element. |
 
 In het volgende voor beeld wordt een registratie-of aanmeldings definitie weer gegeven met een verwijzing naar lokalisatie voor Engels, Frans en Spaans:
 
@@ -221,7 +221,7 @@ Zie [lokalisatie](localization.md)voor meer informatie over het toevoegen van lo
 
 Het kenmerk ID van het element **ContentDefinition** geeft het type pagina aan dat is gekoppeld aan de inhouds definitie. Het element definieert de context waarin een aangepaste HTML5/CSS-sjabloon wordt toegepast. De volgende tabel beschrijft de set met inhouds definitie-Id's die worden herkend door het Framework voor identiteits ervaring en de pagina typen die aan hen zijn gerelateerd. U kunt uw eigen inhouds definities met een wille keurige ID maken.
 
-| Id | Standaard sjabloon | Beschrijving |
+| Id | Standaard sjabloon | Description |
 | -- | ---------------- | ----------- |
 | **API. error** | [uitzonde ring. cshtml](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina** : er wordt een fout pagina weer gegeven wanneer een uitzonde ring of een fout wordt aangetroffen. |
 | **API. idpselections** | [idpSelector. cshtml](https://login.microsoftonline.com/static/tenant/default/idpSelector.cshtml) | Pagina voor het selecteren van de **identiteits provider** : geeft een lijst van id-providers waaruit gebruikers kunnen kiezen tijdens het aanmelden. De opties zijn doorgaans ondernemings-id-providers, sociale id-providers zoals Facebook en Google + of lokale accounts. |
@@ -238,4 +238,4 @@ Het kenmerk ID van het element **ContentDefinition** geeft het type pagina aan d
 
 Zie voor een voor beeld van het aanpassen van de gebruikers interface met behulp van inhouds definities:
 
-[De gebruikers interface van uw toepassing aanpassen met behulp van een aangepast beleid](custom-policy-ui-customization.md)
+[De gebruikers interface van uw toepassing aanpassen met behulp van een aangepast beleid](customize-ui-with-html.md)

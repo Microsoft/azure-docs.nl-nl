@@ -55,6 +55,8 @@
               href: manage-vm-extensions-powershell.md
             - name: Extensies implementeren met ARM-sjabloon
               href: manage-vm-extensions-template.md
+        - name: Gebruikte beheerde identiteiten op de server
+          href: managed-identity-authentication.md
         - name: Agent beheren
           href: manage-agent.md
     - name: Scenario's

@@ -563,10 +563,10 @@
             - name: Toewijzing van OAuth 2.0-wachtwoordreferenties van resource-eigenaar
               displayName: ROPC
               href: v2-oauth-ropc.md
-            - name: 'OAuth 2,0-assertiestroom voor SAML-bearer'
-              href: v2-saml-bearer-assertion.md
             - name: Rollover van ondertekeningssleutel
               href: active-directory-signing-key-rollover.md
+            - name: Tokenuitwisselingsscenario's
+              href: scenario-token-exchange-saml-oauth.md
             - name: Id-tokens
               href: id-tokens.md
             - name: Toegangstokens

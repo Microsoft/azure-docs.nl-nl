@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Experimenten uitvoeren met behulp van Azure Automated ML'
-description: Een zelfstudie over het uitvoeren van machine learning-experimenten met behulp van Apache Spark en Azure Automated ML
+title: 'Zelfstudie: Een model trainen in Python met geautomatiseerde ML'
+description: Zelfstudie over hoe u een machine learning-model traint in Python in Azure Synapse met Apache Spark en geautomatiseerde ML.
 services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: b2fbc74304cdb71d9cb3e1ea476af8c92eb99b7e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: abb7266d90171abc628739aa8f50f1760a32f68d
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458840"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093329"
 ---
-# <a name="tutorial-run-experiments-using-azure-automated-ml-and-apache-spark"></a>Zelfstudie: Experimenten uitvoeren met behulp van Azure Automated ML en Apache Spark
+# <a name="tutorial-train-a-machine-learning-model-in-python-in-azure-synapse-with-apache-spark-and-automated-ml"></a>Zelfstudie: Een machine learning-model trainen in Python in Azure Synapse met Apache Spark en geautomatiseerde ML
 
 Azure Machine Learning is een cloudomgeving die u kunt gebruiken voor het trainen, implementeren, automatiseren, beheren en volgen van machine learning-modellen. 
 
@@ -155,11 +155,11 @@ Met de volgende code worden de bestaande werkruimte en de standaard-Azure Machin
 import pandas 
 from azureml.core import Dataset
 
-# Get the AML Default Datastore
+# Get the Azure Machine Learning Default Datastore
 datastore = ws.get_default_datastore()
 training_pd = training_data.toPandas().to_csv('training_pd.csv', index=False)
 
-# Convert into AML Tabular Dataset
+# Convert into Azure Machine Learning Tabular Dataset
 datastore.upload_files(files = ['training_pd.csv'],
                        target_path = 'train-dataset/tabular/',
                        overwrite = True,
@@ -168,7 +168,7 @@ dataset_training = Dataset.Tabular.from_delimited_files(path = [(datastore, 'tra
 ```
 ![Afbeelding van geüploade gegevensset.](./media/azure-machine-learning-spark-notebook/upload-dataset.png)
 
-## <a name="submit-an-automl-experiment"></a>Een AutoML-experiment verzenden
+## <a name="submit-an-automated-ml-experiment"></a>Een geautomatiseerd ML-experiment indienen
 
 #### <a name="define-training-settings"></a>Trainingsinstellingen definiëren
 1. U moet de experimentparameter en modelinstellingen voor training definiëren om een experiment te verzenden. U kunt de volledige lijst met instellingen [hier](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train) bekijken.
@@ -221,7 +221,7 @@ Zodra het experiment is voltooid, retourneert de uitvoer informatie over de volt
 ![Schermopname van modeluitvoer.](./media/azure-machine-learning-spark-notebook/model-output.png)
 
 > [!NOTE]
-> Nadat het AutoML-experiment is verzonden, worden verschillende iteraties en modeltypen uitgevoerd. Deze uitvoering duurt doorgaans 1 tot 1,5 uur. 
+> Nadat het geautomatiseerd ML-experiment is verzonden, worden verschillende iteraties en modeltypen uitgevoerd. Deze uitvoering duurt doorgaans 1 tot 1,5 uur. 
 
 #### <a name="retrieve-the-best-model"></a>Het beste model ophalen
 Om het beste model uit uw iteraties te selecteren, gebruiken we de functie ```get_output``` om het model te retourneren dat het beste is uitgevoerd en aangepast. Met de onderstaande code wordt model opgehaald dat het beste is uitgevoerd en aangepast voor alle geregistreerde metrische gegevens of voor een bepaalde herhaling.
@@ -325,7 +325,7 @@ plt.show()
 Zodra het beste model is gevalideerd, kunt u dit model registreren bij Azure Machine Learning. Nadat u het model hebt geregistreerd, kunt u het geregistreerde model downloaden of implementeren, en alle bestanden ontvangen die u hebt geregistreerd.
 
 ```python
-description = 'My AutoML Model'
+description = 'My automated ML model'
 model_path='outputs/model.pkl'
 model = best_run.register_model(model_name = 'NYCGreenTaxiModel', model_path = model_path, description = description)
 print(model.name, model.version)
@@ -336,7 +336,7 @@ NYCGreenTaxiModel 1
 ## <a name="view-results-in-azure-machine-learning"></a>Resultaten bekijken in Azure Machine Learning
 Ten slotte kunt u ook de resultaten van herhalingen bekijken door naar het experiment te navigeren in uw Azure Machine Learning-werkruimte. Hier kunt u extra informatie vinden over de status van de uitvoering, de gebruikte modellen, en andere metrische modelgegevens. 
 
-![Schermopname van de AML-werkruimte.](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
+![Schermopname van Azure Machine Learning-werkruimte.](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)

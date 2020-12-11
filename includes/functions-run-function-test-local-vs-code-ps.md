@@ -4,18 +4,17 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/19/2020
 ms.author: glenga
-ms.openlocfilehash: ca8da227c97a44abe14354a5c530d508ce357884
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a5c113849296275432acf1f5603377a1909a2c04
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88703071"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96842265"
 ---
 ## <a name="run-the-function-locally"></a>De functie lokaal uitvoeren
 
 Azure Functions Core Tools integreert met Visual Studio Code, zodat u Azure Functions-projecten lokaal kunt uitvoeren en problemen erin kunt oplossen. raadpleeg [Fouten lokaal opsporen in PowerShell Azure Functions](../articles/azure-functions/functions-debug-powershell-local.md) voor informatie over hoe u fouten oplost in Visual Studio Code. 
-
-1. Druk op F5 om het functie-app-project te starten. De uitvoer van Core Tools wordt weergegeven in het deelvenster **Terminal**.
+1. Druk op <kbd>F5</kbd> om het functie-app-project te starten en uw functie aan te roepen. De uitvoer van Core Tools wordt weergegeven in het deelvenster **Terminal**. Als u problemen ondervindt met het uitvoeren op Windows, moet u ervoor zorgen dat de standaardterminal voor Visual Studio Code niet is ingesteld op **WSL Bash**.
 
 1. Kopieer het URL-eindpunt van de door HTTP getriggerde functie in het deelvenster **Terminal**.
 

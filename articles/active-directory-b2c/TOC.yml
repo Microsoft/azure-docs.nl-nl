@@ -121,16 +121,48 @@
           href: signin-appauth-ios.md
         - name: Android met App Auth
           href: signin-appauth-android.md
+    - name: Id-providers
+      items:
+        - name: Een id-provider toevoegen
+          href: add-identity-provider.md
+        - name: AD FS
+          href: identity-provider-adfs.md
+        - name: Amazon
+          href: identity-provider-amazon.md
+        - name: Azure AD (één tenant)
+          href: identity-provider-azure-ad-single-tenant.md
+        - name: Azure AD (multitenant)
+          href: identity-provider-azure-ad-multi-tenant.md
+        - name: Facebook
+          href: identity-provider-facebook.md
+        - name: Algemene id-providers
+          href: identity-provider-generic-openid-connect.md
+        - name: GitHub
+          href: identity-provider-github.md
+        - name: Google
+          href: identity-provider-google.md
+        - name: LinkedIn
+          href: identity-provider-linkedin.md
+        - name: Microsoft-account
+          href: identity-provider-microsoft-account.md
+        - name: QQ
+          href: identity-provider-qq.md
+        - name: SalesForce
+          href: identity-provider-salesforce.md
+        - name: Twitter
+          href: identity-provider-twitter.md
+        - name: WeChat
+          href: identity-provider-wechat.md
+        - name: Weibo
+          href: identity-provider-weibo.md
     - name: Gebruikersstroom
       items:
         - name: Stroom maken
           items:
-            - name: Gebruikersstromen maken
-              href: create-user-flow.md
+            - name: Registreren of aanmelden
+              href: tutorial-create-user-flows.md
             - name: Referenties voor wachtwoord van resource-eigenaar
               href: configure-ropc.md
-            - name: Telefoonverificatie instellen
-              href: phone-authentication-user-flows.md
             - name: Zelf een wachtwoord opnieuw instellen configureren
               href: user-flow-self-service-password-reset.md
         - name: Voorwaardelijke toegang toevoegen
@@ -150,32 +182,6 @@
             - name: MFA inschakelen
               href: custom-policy-multi-factor-authentication.md
               displayName: multi-factor auth
-        - name: Externe id-providers
-          items:
-            - name: Amazon
-              href: identity-provider-amazon.md
-            - name: Azure AD (één tenant)
-              href: identity-provider-azure-ad-single-tenant.md
-            - name: Microsoft-account
-              href: identity-provider-microsoft-account.md
-            - name: Facebook
-              href: identity-provider-facebook.md
-            - name: GitHub
-              href: identity-provider-github.md
-            - name: Google
-              href: identity-provider-google.md
-            - name: LinkedIn
-              href: identity-provider-linkedin.md
-            - name: QQ
-              href: identity-provider-qq.md
-            - name: Twitter
-              href: identity-provider-twitter.md
-            - name: WeChat
-              href: identity-provider-wechat.md
-            - name: Weibo
-              href: identity-provider-weibo.md
-            - name: Algemene id-providers
-              href: identity-provider-generic-openid-connect.md
         - name: Tokens en sessiebeheer
           items:
             - name: Tokens configureren
@@ -236,32 +242,6 @@
               href: javascript-samples.md
             - name: Wachtwoordcomplexiteit
               href: custom-policy-password-complexity.md
-        - name: Externe id-providers
-          items:
-            - name: OIDC-/OAuth-providers
-              items:
-                - name: Amazon
-                  href: identity-provider-amazon-custom.md
-                - name: Azure AD (één tenant)
-                  href: identity-provider-azure-ad-single-tenant-custom.md
-                - name: Azure AD (multitenant)
-                  href: identity-provider-azure-ad-multi-tenant-custom.md
-                - name: Google
-                  href: identity-provider-google-custom.md
-                - name: LinkedIn
-                  href: identity-provider-linkedin-custom.md
-                - name: Microsoft-account
-                  href: identity-provider-microsoft-account-custom.md
-                - name: Twitter
-                  href: identity-provider-twitter-custom.md
-            - name: SAML-providers
-              items:
-                - name: AD FS
-                  href: identity-provider-adfs2016-custom.md
-                  displayName: SAML
-                - name: SalesForce
-                  href: identity-provider-salesforce-custom.md
-                  displayName: SAML
         - name: Tokens en sessiebeheer
           items:
             - name: Tokens aanpassen

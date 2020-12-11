@@ -21,14 +21,8 @@
           displayName: 'assign key, assign resource, add key, add resource, test, deploy, endpoint, query, publish'
     - name: Browser gebruiken
       href: luis-get-started-get-intent-from-browser.md
-    - name: SDK gebruiken
-      href: azure-sdk-quickstart.md
-    - name: REST-API's gebruiken
-      items:
-        - name: Intentie ophalen
-          href: luis-get-started-rest-get-intent.md
-        - name: Model wijzigen
-          href: luis-get-started-rest-get-model.md
+    - name: De clientbibliotheken en REST API gebruiken
+      href: client-libraries-rest-api.md
 - name: Zelfstudies
   items:
     - name: Een afbreekbare app bouwen

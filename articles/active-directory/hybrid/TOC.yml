@@ -132,6 +132,8 @@
           href: how-to-connect-install-existing-tenant.md
         - name: Taken na de installatie
           href: how-to-connect-post-installation.md
+        - name: Azure AD Connect verwijderen
+          href: how-to-connect-uninstall.md
     - name: Plannen en ontwerpen
       items:
         - name: Ontwerpconcepten

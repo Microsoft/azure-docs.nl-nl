@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 4f1aceed7e6a41a8ad4f3a062f23a796e31e34ad
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 1b95b1e96dc26fb72338518fc969c69b035d5f68
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601676"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095233"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Verificatie en autorisatie in Azure App Service en Azure Functions
 
@@ -33,7 +33,7 @@ Voor beveiligde verificatie en autorisatie is grondige inzichten van beveiliging
 
 Zie [gebruikers verificatie en autorisatie voor mobiele apps met Azure app service](/previous-versions/azure/app-service-mobile/app-service-mobile-auth)voor meer informatie over systeem eigen mobiele apps.
 
-## <a name="how-it-works"></a>Uitleg
+## <a name="how-it-works"></a>Hoe werkt het?
 
 ### <a name="on-windows"></a>In Windows
 
@@ -90,7 +90,7 @@ App Service maakt gebruik van [federatieve identiteiten](https://en.wikipedia.or
 | Provider | Aanmeldings eindpunt |
 | - | - |
 | [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) | `/.auth/login/aad` |
-| [Micro soft-account](../active-directory/develop/v2-overview.md) | `/.auth/login/microsoftaccount` |
+| [Microsoft-account](../active-directory/develop/v2-overview.md) | `/.auth/login/microsoftaccount` |
 | [Facebook](https://developers.facebook.com/docs/facebook-login) | `/.auth/login/facebook` |
 | [Google](https://developers.google.com/identity/choose-auth) | `/.auth/login/google` |
 | [Twitter](https://developer.twitter.com/en/docs/basics/authentication) | `/.auth/login/twitter` |
@@ -152,6 +152,7 @@ Met deze optie hoeft u geen verificatie code in uw app te schrijven. Nauw keurig
 
 ## <a name="more-resources"></a>Meer bronnen
 
+* [Zelf studie: gebruikers verifiëren en autoriseren in een web-app die toegang heeft tot Azure Storage en Microsoft Graph](scenario-secure-app-authentication-app-service.md)
 * [Zelf studie: gebruikers end-to-end verifiëren en autoriseren in Azure App Service (Windows)](tutorial-auth-aad.md)  
 * [Zelf studie: gebruikers end-to-end verifiëren en autoriseren in Azure App Service voor Linux](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
 * [Verificatie en autorisatie aanpassen in App Service](app-service-authentication-how-to.md)

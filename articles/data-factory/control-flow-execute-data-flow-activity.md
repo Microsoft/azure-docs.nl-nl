@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.author: makromer
 ms.date: 11/24/2020
-ms.openlocfilehash: c436d75384c527ba7666cd2e6e780b9d8a93eae2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1c0ed7cf38cc01623169216ec45e88d198ede3d2
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003940"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095080"
 ---
 # <a name="data-flow-activity-in-azure-data-factory"></a>Gegevens stroom activiteit in Azure Data Factory
 
@@ -57,13 +57,13 @@ Gebruik de activiteit gegevens stroom om gegevens te transformeren en te verplaa
 
 Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
-stroom | De verwijzing naar de gegevens stroom die wordt uitgevoerd | DataFlowReference | Yes
-integrationRuntime | De compute-omgeving waarop de gegevens stroom wordt uitgevoerd. Als deze niet is opgegeven, wordt Azure Integration runtime automatisch opgelost. | IntegrationRuntimeReference | No
-compute. coreCount | Het aantal kern geheugens dat in het Spark-cluster wordt gebruikt. Kan alleen worden opgegeven als Azure Integration runtime automatisch wordt opgelost | 8, 16, 32, 48, 80, 144, 272 | No
-compute. computeType | Het type berekening dat in het Spark-cluster wordt gebruikt. Kan alleen worden opgegeven als Azure Integration runtime automatisch wordt opgelost | "Algemeen", "ComputeOptimized", "MemoryOptimized" | No
-staging. linkedService | Als u een Azure Synapse Analytics-bron of sink gebruikt, geeft u het opslag account op dat wordt gebruikt voor het maken van poly base-staging.<br/><br/>Als uw Azure Storage is geconfigureerd met het VNet-service-eind punt, moet u beheerde identiteits verificatie gebruiken met ' vertrouwde micro soft-service toestaan ' die is ingeschakeld voor het opslag account, raadpleegt u de [gevolgen van het gebruik van VNet-service-eind punten met Azure Storage](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Lees ook de benodigde configuraties voor [Azure Blob](connector-azure-blob-storage.md#managed-identity) en [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#managed-identity) .<br/> | Linkedservicereference is | Alleen als de gegevens stroom leest of schrijft naar een Azure Synapse-analyse
+gegevensstroom | De verwijzing naar de gegevens stroom die wordt uitgevoerd | DataFlowReference | Ja
+integrationRuntime | De compute-omgeving waarop de gegevens stroom wordt uitgevoerd. Als deze niet is opgegeven, wordt Azure Integration runtime automatisch opgelost. | IntegrationRuntimeReference | Nee
+compute. coreCount | Het aantal kern geheugens dat in het Spark-cluster wordt gebruikt. Kan alleen worden opgegeven als Azure Integration runtime automatisch wordt opgelost | 8, 16, 32, 48, 80, 144, 272 | Nee
+compute. computeType | Het type berekening dat in het Spark-cluster wordt gebruikt. Kan alleen worden opgegeven als Azure Integration runtime automatisch wordt opgelost | "Algemeen", "ComputeOptimized", "MemoryOptimized" | Nee
+staging. linkedService | Als u een Azure Synapse Analytics-bron of sink gebruikt, geeft u het opslag account op dat wordt gebruikt voor het maken van poly base-staging.<br/><br/>Als uw Azure Storage is geconfigureerd met het VNet-service-eind punt, moet u beheerde identiteits verificatie gebruiken met ' vertrouwde micro soft-service toestaan ' die is ingeschakeld voor het opslag account, raadpleegt u de [gevolgen van het gebruik van VNet-service-eind punten met Azure Storage](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-virtual-network-service-endpoints-with-azure-storage). Lees ook de benodigde configuraties voor [Azure Blob](connector-azure-blob-storage.md#managed-identity) en [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#managed-identity) .<br/> | Linkedservicereference is | Alleen als de gegevens stroom leest of schrijft naar een Azure Synapse-analyse
 staging. folderPath | Als u een Azure Synapse Analytics-bron of-sink gebruikt, wordt het mappad in het Blob Storage-account dat wordt gebruikt voor poly base staging | Tekenreeks | Alleen als de gegevens stroom leest of schrijft naar Azure Synapse Analytics
-traceLevel | Het logboek registratie niveau van de uitvoering van de activiteit van de gegevens stroom instellen | Fijn, grof, geen | No
+traceLevel | Het logboek registratie niveau van de uitvoering van de activiteit van de gegevens stroom instellen | Fijn, grof, geen | Nee
 
 ![Gegevens stroom uitvoeren](media/data-flow/activity-data-flow.png "Gegevens stroom uitvoeren")
 
@@ -88,7 +88,7 @@ Voor de uitvoering van pijp lijnen is het cluster een taak cluster, dat enkele m
 
 ### <a name="polybase"></a>PolyBase
 
-Als u een Azure Synapse Analytics (voorheen SQL Data Warehouse) als sink of bron gebruikt, moet u een faserings locatie voor het laden van poly base-batches kiezen. Met poly Base kan batch in bulk worden geladen in plaats van de gegevensrij per rij te laden. Poly base verlaagt drastisch de laad tijd in azure Synapse Analytics.
+Als u een Azure Synapse Analytics als sink of bron gebruikt, moet u een faserings locatie voor het laden van poly base-batches kiezen. Met poly Base kan batch in bulk worden geladen in plaats van de gegevensrij per rij te laden. Poly base verlaagt drastisch de laad tijd in azure Synapse Analytics.
 
 ## <a name="logging-level"></a>Logboek registratie niveau
 

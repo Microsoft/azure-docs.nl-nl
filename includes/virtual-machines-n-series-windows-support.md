@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: caad292f06710fca8d6f64476eead5dfcb164e9d
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: f99aedc21c3b51975649f8944ab53536d365a7d1
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96537041"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97096322"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Ondersteunde besturingssystemen en stuurprogramma’s
 
@@ -34,7 +34,9 @@ NVIDIA Tesla (CUDA)-Stuur Programma's voor NC-, NCv2-, NCv3-, NCasT4_v3-, ND-en 
 
 Micro soft distribueert installatie Programma's voor NVIDIA-raster stations voor NV-en NVv3-Vm's die worden gebruikt als virtuele werk stations of voor virtuele toepassingen. Installeer alleen deze raster Stuur Programma's op virtuele machines uit de Azure NV-serie, alleen voor de besturings systemen die in de volgende tabel worden vermeld. Deze Stuur Programma's omvatten licenties voor raster-Virtual GPU-software in Azure. U hoeft geen NVIDIA vGPU-software licentie server in te stellen.
 
-De raster Stuur Programma's die opnieuw worden gedistribueerd door Azure, werken niet op Vm's uit de niet-NV-serie, zoals NC-, NCv2-, NCv3-, ND-en NDv2-serie-vm's. De enige uitzonde ring hierop is de NCas_T4_V3 VM-serie waar de raster Stuur Programma's de grafische functionaliteiten kunnen inschakelen die vergelijkbaar zijn met de NV-serie.
+De raster Stuur Programma's die opnieuw worden gedistribueerd door Azure, werken niet op Vm's uit de niet-NV-serie, zoals NCv2-, NCv3-, ND-en NDv2-serie-vm's. De enige uitzonde ring hierop is de NCas_T4_V3 VM-serie waar de raster Stuur Programma's de grafische functionaliteiten kunnen inschakelen die vergelijkbaar zijn met de NV-serie.
+
+De NC-Series met NVIDIA K80 Gpu's bieden geen ondersteuning voor GRID/grafische toepassingen.  
 
 Houd er rekening mee dat de NVIDIA-extensie altijd het meest recente stuur programma installeert. We bieden hier koppelingen naar de vorige versie voor klanten, die afhankelijk zijn van een oudere versie.
 

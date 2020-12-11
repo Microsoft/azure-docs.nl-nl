@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 9e0c5ae119b734f91e8cfa1e7afb11a96e13035c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 2e4ff4d9159947ea87f97d56f3fb9c2825698227
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549069"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095063"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Veelgestelde vragen over verschillende API's in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -41,7 +41,7 @@ Elke API werkt onafhankelijk, met uitzonde ring van de Gremlin-en SQL-API, die i
 
 ### <a name="is-azure-cosmos-db-hipaa-compliant"></a>Is Azure Cosmos DB HIPAA-compatibel?
 
-Ja, Azure Cosmos DB is HIPAA-compatibel. HIPAA stelt vereisten vast voor het gebruik, de openbaarmaking en de beveiliging van individueel identificeerbare gezondheidsinformatie. Zie het [vertrouwens centrum van micro soft](https://www.microsoft.com/en-us/TrustCenter/Compliance/HIPAA)voor meer informatie.
+Ja, Azure Cosmos DB is HIPAA-compatibel. HIPAA stelt vereisten vast voor het gebruik, de openbaarmaking en de beveiliging van individueel identificeerbare gezondheidsinformatie. Zie het [vertrouwens centrum van micro soft](/compliance/regulatory/offering-hipaa-hitech)voor meer informatie.
 
 ### <a name="what-are-the-storage-limits-of-azure-cosmos-db"></a>Wat zijn de opslag limieten van Azure Cosmos DB?
 
@@ -190,7 +190,7 @@ De SQL-API ondersteunt in talen geïntegreerde trans acties via Java script-opge
 
 U kunt op een van de volgende manieren bulksgewijs documenten in Azure Cosmos DB invoegen:
 
-* Het hulp programma bulk-uitvoerder, zoals beschreven in het gebruik [Using bulk executor Java library](bulk-executor-java.md) van een bulk-uitvoerder [.net-bibliotheek](bulk-executor-dot-net.md)
+* Het hulp programma bulk-uitvoerder, zoals beschreven in het gebruik [](bulk-executor-java.md) van een bulk-uitvoerder [.net-bibliotheek](bulk-executor-dot-net.md)
 * Het hulp programma voor gegevens migratie, zoals beschreven in [hulp programma voor database migratie voor Azure Cosmos DB](import-data.md).
 * Opgeslagen procedures, zoals beschreven in [Java script-programmering aan server zijde voor Azure Cosmos DB](stored-procedures-triggers-udfs.md).
 

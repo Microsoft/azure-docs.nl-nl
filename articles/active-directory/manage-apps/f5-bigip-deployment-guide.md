@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7555a0b9d7b3336b1020e8f1d9c3445e09afc6f0
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: 6c03009b08dcf33bf4b84bc91232af96e7ba2c71
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317991"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095182"
 ---
 # <a name="tutorial-to-deploy-f5-big-ip-virtual-edition-vm-in-azure-iaas-for-secure-hybrid-access"></a>Zelf studie voor het implementeren van een VM met een virtuele editie van F5 in azure IaaS voor beveiligde hybride toegang
 
@@ -44,7 +44,7 @@ Eerdere F5 BIG-IP-ervaring of kennis is niet nodig, maar we raden u echter aan d
 
 - Een certificaat voor joker tekens of alternatieve naam voor onderwerp (SAN) om webtoepassingen te publiceren via Secure Socket Layer (SSL). [Laten we](https://letsencrypt.org/) een gratis 90 dagen certificaat voor testen aanbieden.
 
-- Een SSL-certificaat voor het beveiligen van de BIG-IPs beheer interface. Een certificaat dat wordt gebruikt voor het publiceren van web-apps kan worden gebruikt als het onderwerp overeenkomt met de FQDN (Fully Qualified Domain Name) van het BIG-IP-adres. Een Joker teken dat is gedefinieerd met een onderwerp *. contoso.com is bijvoorbeeld geschikt voor https://big-ip-vm.contoso.com:8443
+- Een SSL-certificaat voor het beveiligen van de BIG-IPs beheer interface. Een certificaat dat wordt gebruikt voor het publiceren van web-apps kan worden gebruikt als het onderwerp overeenkomt met de FQDN (Fully Qualified Domain Name) van het BIG-IP-adres. Een Joker teken dat is gedefinieerd met een onderwerp *. contoso.com is bijvoorbeeld geschikt voor `https://big-ip-vm.contoso.com:8443`
 
 Implementaties van VM'S en basis systeem configuraties duren ongeveer 30 minuten, op welk moment uw BIG-IP-platform gereed is voor het implementeren van een van de hieronder [vermelde SHA](f5-aad-integration.md)-scenario's.
 
@@ -216,7 +216,7 @@ Bij de volgende stappen wordt ervan uitgegaan dat de DNS-zone van het open bare 
  |:-------|:-----------|
  |Abonnement| Hetzelfde abonnement als de BIG-IP-VM|
  |DNS-zone| DNS-zone die gemachtigd is voor het geverifieerde domein achtervoegsel dat door uw gepubliceerde websites wordt gebruikt, bijvoorbeeld www.contoso.com |
- |Name | De hostnaam die u opgeeft, wordt omgezet in het open bare IP-adres dat is gekoppeld aan het geselecteerde secundaire IP-adres. Zorg ervoor dat u de juiste DNS-IP-toewijzingen definieert. Zie laatste installatie kopie in de sectie configuratie van netwerken, bijvoorbeeld intranet.contoso.com > 13.77.148.215|
+ |Naam | De hostnaam die u opgeeft, wordt omgezet in het open bare IP-adres dat is gekoppeld aan het geselecteerde secundaire IP-adres. Zorg ervoor dat u de juiste DNS-IP-toewijzingen definieert. Zie laatste installatie kopie in de sectie configuratie van netwerken, bijvoorbeeld intranet.contoso.com > 13.77.148.215|
  | TTL | 1 |
  |TTL-eenheden | Tijden |
 
@@ -250,7 +250,7 @@ Standaard zijn Azure VNets en gekoppelde subnetten particuliere netwerken die ge
  |Protocol| TCP |
  |Bewerking| Toestaan|
  |Prioriteit|De laagste beschik bare waarde tussen 100 en 4096|
- |Name | Een beschrijvende naam, bijvoorbeeld: `BIG-IP-VM_Web_Services_80_443`|
+ |Naam | Een beschrijvende naam, bijvoorbeeld: `BIG-IP-VM_Web_Services_80_443`|
 
 3. Selecteer **toevoegen** om de wijzigingen door te voeren en sluit het **netwerk** menu.
 
@@ -329,7 +329,7 @@ Het beveiligen van beheer verkeer van en naar BIG-IPs Webconfiguratie is een cru
 
 6. Ga in de linker navigatie balk naar **systeem**  >  **configuratie**  >  **apparaat**  >  **NTP**
 
-7. Geef een betrouw bare NTP-bron op en selecteer **toevoegen**, gevolgd door **Update**. bijvoorbeeld `time.windows.com`
+7. Geef een betrouw bare NTP-bron op en selecteer **toevoegen**, gevolgd door **Update**. Bijvoorbeeld: `time.windows.com`
 
 U hebt nu een DNS-record nodig om de BIG-IPs FQDN die in de vorige stappen is opgegeven, op te lossen naar het primaire privé-IP-adres. Er moet een record worden toegevoegd aan de interne DNS van uw omgeving of aan het localhost-bestand van een PC die wordt gebruikt om verbinding te maken met de Webconfiguratie van het BIG-IP-adres. In beide gevallen moet de browser waarschuwing niet meer worden weer gegeven wanneer u rechtstreeks verbinding maakt met de Webconfiguratie. Dat wil zeggen, niet via een toepassings proxy of een andere omgekeerde proxy.
 
@@ -387,7 +387,7 @@ Een van de laatste stappen voor het voorbereiden van een BIG-IP voor SHA is om e
 
 2. Voer in de **lijst DNS-Zoek server** het IP-adres in van de DNS-server van uw omgevingen
 
-3. Selecteer **Add**  >  **Update** toevoegen
+3. Selecteer   >  **Update** toevoegen
 
 Als afzonderlijke en optionele stap kunt u overwegen een LDAP- [configuratie](https://somoit.net/f5-big-ip/authentication-using-active-directory) te gebruiken voor het verifiëren van de systeem eigen-IP-sysadmins tegen ad in plaats van lokale Big-IP-accounts te beheren.
 
@@ -471,7 +471,7 @@ Get-AzVmSnapshot -ResourceGroupName '<E.g.contoso-RG>' -VmName '<E.g.BIG-IP-VM>'
 >[!NOTE]
 >Op het moment van schrijven is de cmdlet AzVmSnapshot beperkt tot het herstellen van de meest recente moment opname, op basis van datum. Moment opnamen worden opgeslagen in de hoofdmap van de resource groep van de virtuele machine. Houd er rekening mee dat bij het herstellen van moment opnamen een Azure VM opnieuw wordt gestart. Dit is dus een goed moment.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 -   [BIG-IP VE-wacht woord opnieuw instellen in azure](https://clouddocs.f5.com/cloud/public/v1/shared/azure_passwordreset.html)
     -   [Het wacht woord opnieuw instellen zonder de portal te gebruiken](https://clouddocs.f5.com/cloud/public/v1/shared/azure_passwordreset.html#reset-the-password-without-using-the-portal)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: fd773ade0173fc1c238a5ce44e864e1255ed9044
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 9b5b20de1b86eae72de54b3f2c1cf37074fba144
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920657"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095165"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
@@ -251,8 +251,46 @@ Mogelijk hebt u een beperkt aantal SMS-acties in een actie groep.
 
 Prijzen voor ondersteunde landen/regio's worden vermeld op de [pagina met Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/).
 
-**Lijst met landen waarin SMS-meldingen worden ondersteund** 
-| **Land code**  |  **Land naam** | | 61 | Australië | | 43 | Oosten rijk | | 32 | België | | 55 | Brazilië | | 1 | Canada | | 56 | Chili | | 86 | China | | 420 | Tsjechië | | 45 | Denemarken | | 372 | Estland | | 358 | Finland | | 33 | Frank rijk | | 49 | Duitsland | | 852 | Hongkong | | 91 | India | | 353 | Ierland | | 972 | Israël | | 39 | Italië | | 81 | Japan | | 352 | Luxemburg | | 60 | Maleisië | | 52 | Mexico | | 31 | Nederland | | 64 | Nieuw-Zeeland | | 47 | Noor wegen | | 351 | Portugal | | 1 | Puerto Rico | | 40 | Roemenië | | 65 | Singapore | | 27 | Zuid-Afrika | | 82 | Zuid-Korea | | 34 | Spanje | | 41 | Zwitser land | | 886 | Taiwan | | 44 |  Verenigd Konink rijk | | 1 | Verenigde Staten |
+**Lijst met landen waarin SMS-meldingen worden ondersteund**
+
+| Landnummer | Naam van land/regio |
+|:---|:---|
+| 61 | Australië |
+| 43 | Oostenrijk |
+| 32 | België |
+| 55 | Brazilië |
+| 1 |Canada |
+| 56 | Chili |
+| 86 | China |
+| 420 | Tsjechische Republiek |
+| 45 | Denemarken |
+| 372 | Estland |
+| 358 | Finland |
+| 33 | Frankrijk |
+| 49 | Duitsland |
+| 852 | Hongkong |
+| 91 | India |
+| 353 | Ierland |
+| 972 | Israël |
+| 39 | Italië |
+| 81 | Japan |
+| 352 | Luxemburg |
+| 60 | Maleisië |
+| 52 | Mexico |
+| 31 | Nederland |
+| 64 | Nieuw-Zeeland |
+| 47 | Noorwegen |
+| 351 | Portugal |
+| 1 | Puerto Rico |
+| 40 | Roemenië |
+| 65 | Singapore |
+| 27 | Zuid-Afrika |
+| 82 | Zuid-Korea |
+| 34 | Spanje |
+| 41 | Zwitserland |
+| 886 | Taiwan |
+| 44 | Verenigd Koninkrijk |
+| 1 | Verenigde Staten |
 
 ### <a name="voice"></a>Spraak
 Zie het artikel [informatie over de frequentie beperking](./alerts-rate-limiting.md) voor meer belang rijk gedrag.

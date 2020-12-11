@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 45393f116149f6cf16763d2d7033f8425df235bf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fd33ca4c5d637e31230d8c124fdb9ec7c71d2ba7
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998828"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094842"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Azure Blob-opslag trigger voor Azure Functions
 
@@ -322,6 +322,9 @@ Het `@BlobTrigger` kenmerk wordt gebruikt om u toegang te geven tot de BLOB waar
 ## <a name="blob-name-patterns"></a>Patronen voor BLOB-naam
 
 U kunt een patroon van een BLOB-naam opgeven in de `path` eigenschap in *function.jsop* of in de `BlobTrigger` kenmerk-constructor. Het naam patroon kan een [filter of een bindings expressie](./functions-bindings-expressions-patterns.md)zijn. De volgende secties bevatten voor beelden.
+
+> [!TIP]
+> Een container naam kan geen resolver bevatten in het naam patroon.
 
 ### <a name="get-file-name-and-extension"></a>Bestands naam en-extensie ophalen
 

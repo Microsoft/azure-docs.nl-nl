@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, fasttrack-edit, devx-track-python
-ms.openlocfilehash: 6bd4d5d82af213063b2000693e46d22744604480
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 888afdc2764fed9f0b2c8b548c3e2b1c48e9a31e
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88214118"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094673"
 ---
 # <a name="azure-event-grid-output-binding-for-azure-functions"></a>Azure Event Grid uitvoer binding voor Azure Functions
 
@@ -40,7 +40,7 @@ public static EventGridEvent Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTim
 }
 ```
 
-In het volgende voor beeld ziet u hoe u de `IAsyncCollector` interface gebruikt om een batch berichten te verzenden.
+In het volgende voorbeeld ziet u hoe u de `IAsyncCollector`-interface gebruikt om een batch berichten te verzenden.
 
 ```csharp
 [FunctionName("EventGridAsyncOutput")]
@@ -99,6 +99,10 @@ public static void Run(TimerInfo myTimer, ICollector<EventGridEvent> outputEvent
     outputEvent.Add(new EventGridEvent("message-id-2", "subject-name", "event-data", "event-type", DateTime.UtcNow, "1.0"));
 }
 ```
+
+# <a name="java"></a>[Java](#tab/java)
+
+De Event Grid uitvoer binding is niet beschikbaar voor Java.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -160,6 +164,70 @@ module.exports = function(context) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u hoe u een functie kunt configureren om een Event Grid gebeurtenis bericht uit te voeren. De sectie waar `type` is ingesteld voor `eventGrid` het configureren van de waarden die nodig zijn om een event grid uitvoer binding te maken.
+
+```powershell
+{
+  "bindings": [
+    {
+      "type": "eventGrid",
+      "name": "outputEvent",
+      "topicEndpointUri": "MyEventGridTopicUriSetting",
+      "topicKeySetting": "MyEventGridTopicKeySetting",
+      "direction": "out"
+    },
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    }
+  ]
+}
+```
+
+Gebruik in uw functie de `Push-OutputBinding` om een gebeurtenis naar een aangepast onderwerp te verzenden via de Event grid uitvoer binding.
+
+```powershell
+using namespace System.Net
+
+# Input bindings are passed in via param block.
+param($Request, $TriggerMetadata)
+
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
+
+# Interact with query parameters or the body of the request.
+$message = $Request.Query.Message
+
+Push-OutputBinding -Name outputEvent -Value  @{
+    id = "1"
+    EventType = "testEvent"
+    Subject = "testapp/testPublish"
+    EventTime = "2020-08-27T21:03:07+00:00"
+    Data = @{
+        Message = $message
+    }
+    DataVersion = "1.0"
+}
+
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = 200
+    Body = "OK"
+})
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 In het volgende voor beeld ziet u een trigger binding in een *function.jsin* het bestand en een [python-functie](functions-reference-python.md) die gebruikmaakt van de binding. Vervolgens wordt er in een gebeurtenis naar het aangepaste onderwerp gezonden, zoals opgegeven door de `topicEndpointUri` .
@@ -194,7 +262,6 @@ import logging
 import azure.functions as func
 import datetime
 
-
 def main(eventGridEvent: func.EventGridEvent, 
          outputEvent: func.Out[func.EventGridOutputEvent]) -> None:
 
@@ -210,10 +277,6 @@ def main(eventGridEvent: func.EventGridEvent,
             data_version="1.0"))
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-De Event Grid uitvoer binding is niet beschikbaar voor Java.
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
@@ -222,7 +285,7 @@ De Event Grid uitvoer binding is niet beschikbaar voor Java.
 
 Gebruik voor [C# class-bibliotheken](functions-dotnet-class-library.md)het kenmerk [EventGridAttribute](https://github.com/Azure/azure-functions-eventgrid-extension/blob/dev/src/EventGridExtension/OutputBinding/EventGridAttribute.cs) .
 
-De constructor van het kenmerk maakt de naam van een app-instelling die de naam van het aangepaste onderwerp bevat en de naam van een app-instelling die de sleutel van het onderwerp bevat. Zie [output-Configuration (](#configuration)Engelstalig) voor meer informatie over deze instellingen. Hier volgt een voorbeeld van een `EventGrid`-kenmerk:
+De constructor van het kenmerk maakt de naam van een app-instelling die de naam van het aangepaste onderwerp bevat en de naam van een app-instelling die de sleutel van het onderwerp bevat. Zie [Uitvoer: configuratie](#configuration) voor meer informatie over deze instellingen. Hier volgt een voorbeeld van een `EventGrid`-kenmerk:
 
 ```csharp
 [FunctionName("EventGridOutput")]
@@ -239,17 +302,21 @@ Zie voor een volledig [voor beeld.](#example)
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+De Event Grid uitvoer binding is niet beschikbaar voor Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 De Event Grid uitvoer binding is niet beschikbaar voor python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-De Event Grid uitvoer binding is niet beschikbaar voor Java.
 
 ---
 
@@ -260,8 +327,8 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |function.json-eigenschap | Kenmerkeigenschap |Beschrijving|
 |---------|---------|----------------------|
 |**type** | N.v.t. | Moet worden ingesteld op ' eventGrid '. |
-|**direction** | N.v.t. | Moet worden ingesteld op out. Deze para meter wordt automatisch ingesteld wanneer u de binding maakt in de Azure Portal. |
-|**name** | N.v.t. | De naam van de variabele die wordt gebruikt in de functie code waarmee de gebeurtenis wordt aangeduid. |
+|**direction** | N.v.t. | Moet worden ingesteld op 'out'. Deze parameter wordt automatisch ingesteld wanneer u de binding maakt in de Azure-portal. |
+|**name** | N.v.t. | De naam van de variabele die in functiecode wordt gebruikt, vertegenwoordigt de gebeurtenis. |
 |**topicEndpointUri** |**TopicEndpointUri** | De naam van een app-instelling die de URI voor het aangepaste onderwerp bevat, zoals `MyTopicEndpointUri` . |
 |**topicKeySetting** |**TopicKeySetting** | De naam van een app-instelling die een toegangs sleutel voor het aangepaste onderwerp bevat. |
 
@@ -274,23 +341,27 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Berichten verzenden met behulp van een methode parameter, zoals `out EventGridEvent paramName` . Als u meerdere berichten wilt schrijven, kunt u `ICollector<EventGridEvent>` of gebruiken `IAsyncCollector<EventGridEvent>` in plaats van `out EventGridEvent` .
+Verzend berichten met behulp van een methodeparameter, zoals `out EventGridEvent paramName`. Als u meerdere berichten wilt schrijven, kunt u `ICollector<EventGridEvent>` of `IAsyncCollector<EventGridEvent>` gebruiken in plaats van `out EventGridEvent`.
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
-Berichten verzenden met behulp van een methode parameter, zoals `out EventGridEvent paramName` . In C#-script `paramName` is de waarde die is opgegeven in de `name` eigenschap van *function.jsop*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<EventGridEvent>` of gebruiken `IAsyncCollector<EventGridEvent>` in plaats van `out EventGridEvent` .
-
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-U krijgt toegang tot de uitvoer gebeurtenis door gebruik te maken `context.bindings.<name>` `<name>` van de waarde die is opgegeven in de `name` eigenschap van *function.jsop*.
-
-# <a name="python"></a>[Python](#tab/python)
-
-De Event Grid uitvoer binding is niet beschikbaar voor python.
+Verzend berichten met behulp van een methodeparameter, zoals `out EventGridEvent paramName`. In C#-script is `paramName` de waarde die is opgegeven in de eigenschap `name` van *function.json*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<EventGridEvent>` of `IAsyncCollector<EventGridEvent>` gebruiken in plaats van `out EventGridEvent`.
 
 # <a name="java"></a>[Java](#tab/java)
 
 De Event Grid uitvoer binding is niet beschikbaar voor Java.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Open de uitvoergebeurtenis met behulp van `context.bindings.<name>` waarbij `<name>` de waarde is die is opgegeven voor de eigenschap `name` van *function.json*.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Open de gebeurtenis output met behulp van de- `Push-OutputBinding` commandlet om een gebeurtenis te verzenden naar de Event grid uitvoer binding.
+
+# <a name="python"></a>[Python](#tab/python)
+
+De Event Grid uitvoer binding is niet beschikbaar voor python.
 
 ---
 

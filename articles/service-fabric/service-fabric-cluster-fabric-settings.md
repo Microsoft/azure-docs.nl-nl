@@ -3,12 +3,12 @@ title: Instellingen van Azure Service Fabric cluster wijzigen
 description: In dit artikel worden de infrastructuur instellingen en het Fabric-upgrade beleid beschreven dat u kunt aanpassen.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: 1f16e89dd1131f6aea64e5e72a342b3b737f3728
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c055ad1dad8b9574c8d811284a34619ee3648a10
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187218"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095267"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
 In dit artikel worden de verschillende infrastructuur instellingen voor uw Service Fabric cluster beschreven die u kunt aanpassen. Voor clusters die worden gehost in azure, kunt u instellingen aanpassen via de [Azure Portal](https://portal.azure.com) of met behulp van een Azure Resource Manager sjabloon. Zie [de configuratie van een Azure-cluster upgraden](service-fabric-cluster-config-upgrade-azure.md)voor meer informatie. Voor zelfstandige clusters past u de instellingen aan door de *ClusterConfig.jsin* het bestand bij te werken en een configuratie-upgrade uit te voeren op uw cluster. Zie [de configuratie van een zelfstandig cluster upgraden](service-fabric-cluster-config-upgrade-windows-server.md)voor meer informatie.
@@ -877,7 +877,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 | --- | --- | --- | --- |
 |ConnectionOpenTimeout|Time span, standaard waarde is gebruikelijk:: time span:: FromSeconds (60)|Statisch|Geef een tijds duur in seconden op. Er is een time-out opgetreden voor de configuratie van de verbinding voor zowel binnenkomend als geaccepteerde kant (inclusief beveiligings onderhandeling in beveiligde modus) |
 |FrameHeaderErrorCheckingEnabled|BOOL, default is TRUE|Statisch|Standaard instelling voor fout controle op frame header in niet-beveiligde modus; de instelling van het onderdeel overschrijft dit. |
-|MessageErrorCheckingEnabled|BOOL, default is FALSE|Statisch|Standaard instelling voor fout controle op bericht header en hoofd tekst in niet-beveiligde modus; de instelling van het onderdeel overschrijft dit. |
+|MessageErrorCheckingEnabled|BOOL, default is TRUE|Statisch|Standaard instelling voor fout controle op bericht header en hoofd tekst in niet-beveiligde modus; de instelling van het onderdeel overschrijft dit. |
 |ResolveOption|teken reeks, standaard instelling is "niet opgegeven"|Statisch|Hiermee wordt bepaald hoe FQDN wordt opgelost.  Geldige waarden zijn ' niet opgegeven/IPv4/IPv6 '. |
 |SendTimeout|Time span, standaard waarde is gebruikelijk:: time span:: FromSeconds (300)|Dynamisch|Geef een tijds duur in seconden op. Verzend time-out voor het detecteren van een vastgelopen verbinding. TCP-fouten rapporten zijn niet betrouwbaar in sommige omgevingen. Dit moet mogelijk worden aangepast op basis van de beschik bare netwerk bandbreedte en grootte van uitgaande gegevens ( \* MaxMessageSize \/ \* SendQueueSizeLimit). |
 

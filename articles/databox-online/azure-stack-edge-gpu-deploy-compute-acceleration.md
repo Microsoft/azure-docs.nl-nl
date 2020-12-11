@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 11/05/2020
 ms.author: alkohli
-ms.openlocfilehash: 0aaad18ba5bf98ca2ad53bd86605dfc6cce3e52c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: cf70b24dae70ad2e64f3443e4c4d959d46fb4ea4
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466535"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095029"
 ---
 # <a name="use-compute-acceleration-on-azure-stack-edge-pro-gpu-for-kubernetes-deployment"></a>Berekenings versnelling gebruiken op Azure Stack Edge Pro GPU voor Kubernetes-implementatie
 
@@ -28,8 +28,8 @@ Berekenings versnelling is een term die specifiek wordt gebruikt voor Azure Stac
 
 In het artikel wordt Compute Acceleration alleen beschreven met behulp van GPU of VPU voor de volgende apparaten:
 
-- **Azure stack Edge Pro GPU** : deze apparaten kunnen 1 of 2 NVIDIA T4 TENSOR core GPU hebben. Zie [NVIDIA T4](https://www.nvidia.com/data-center/tesla-t4/)voor meer informatie.
-- **Azure stack Edge Pro R** : deze apparaten hebben één nVidia T4 TENSOR core GPU. Zie [NVIDIA T4](https://www.nvidia.com/data-center/tesla-t4/)voor meer informatie.
+- **Azure stack Edge Pro GPU** : deze apparaten kunnen 1 of 2 NVIDIA T4 TENSOR core GPU hebben. Zie [NVIDIA T4](https://www.nvidia.com/en-us/data-center/tesla-t4/)voor meer informatie.
+- **Azure stack Edge Pro R** : deze apparaten hebben één nVidia T4 TENSOR core GPU. Zie [NVIDIA T4](https://www.nvidia.com/en-us/data-center/tesla-t4/)voor meer informatie.
 - **Azure stack Edge mini maal R** : deze apparaten hebben 1 Intel Movidius TALLOZE X VPU. Zie [Intel Movidius talloze X VPU](https://www.movidius.com/MyriadX)voor meer informatie.
 
 

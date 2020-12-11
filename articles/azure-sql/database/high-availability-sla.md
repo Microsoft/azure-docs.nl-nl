@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 10/28/2020
-ms.openlocfilehash: e5e58f8592fcf8627870c3a574335bbe34394064
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 15067a046d8adc0ba38101bbe24cdc48cd433d56
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095437"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -122,7 +122,7 @@ Een failover kan worden gestart met behulp van Power shell, REST API of Azure CL
 
 |Implementatie type|PowerShell|REST-API| Azure CLI|
 |:---|:---|:---|:---|
-|Database|[Invoke-AzSqlDatabaseFailover](/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Data base-failover](/rest/api/sql/databases(failover)/failover/)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
+|Database|[Invoke-AzSqlDatabaseFailover](/powershell/module/az.sql/invoke-azsqldatabasefailover)|[Data base-failover](/rest/api/sql/databases/failover)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
 |Elastische pool|[Invoke-AzSqlElasticPoolFailover](/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[Failover van elastische groep](/rest/api/sql/elasticpools(failover)/failover/)|[AZ rest](/cli/azure/reference-index#az-rest) kan worden gebruikt voor het aanroepen van een rest API aanroep vanuit Azure cli|
 |Beheerd exemplaar|[Invoke-AzSqlInstanceFailover](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[Beheerde instanties-failover](/rest/api/sql/managed%20instances%20-%20failover/failover)|[AZ SQL mi failover](/cli/azure/sql/mi/#az-sql-mi-failover)|
 

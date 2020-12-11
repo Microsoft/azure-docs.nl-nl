@@ -2,7 +2,7 @@
 title: Veelgestelde vragen-Azure dedicated HSM | Microsoft Docs
 description: Vind antwoorden op veelgestelde vragen over de speciale hardware Security-module van Azure, zoals basis informatie, interoperabiliteit, hoge Beschik baarheid en ondersteuning.
 services: dedicated-hsm
-author: johncdawson
+author: keithp
 manager: rkarlin
 tags: azure-resource-manager
 ms.custom: mvc, seodec18
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/05/2020
-ms.author: mbaldwin
-ms.openlocfilehash: 0d3309283279c887c00a475ccedfe1edaf311ae5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/10/2020
+ms.author: keithp
+ms.openlocfilehash: 61a9fcc5490c20383a2ae7d5c57b7fda7567c643
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88189867"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095148"
 ---
 # <a name="frequently-asked-questions-faq"></a>Veelgestelde vragen
 
@@ -32,11 +32,11 @@ Een Hardware Security module (HSM) is een fysiek computer apparaat dat wordt geb
 
 ### <a name="q-what-is-the-azure-dedicated-hsm-offering"></a>V: wat is de voor Azure speciale HSM-aanbieding?
 
-De toegewezen HSM van Azure is een Cloud service die Hsm's ondervindt in azure-data centers die rechtstreeks zijn verbonden met het virtuele netwerk van een klant. Deze Hsm's zijn speciale netwerk apparaten (Gemalto SafeNet Network HSM 7 model A790). Ze worden direct geïmplementeerd in de privé-IP-adres ruimte van een klant en micro soft heeft geen toegang tot de cryptografische functionaliteit van de Hsm's. Alleen de klant heeft volledige beheer-en cryptografische controle over deze apparaten. Klanten zijn verantwoordelijk voor het beheer van het apparaat en ze kunnen volledige activiteiten logboeken rechtstreeks vanaf hun apparaten ontvangen. Gespecialiseerde Hsm's helpen klanten te voldoen aan nalevings vereisten, zoals FIPS 140-2 level 3, HIPAA, PCI-DSS en eIDAS en vele andere.
+De toegewezen HSM van Azure is een Cloud service die Hsm's ondervindt in azure-data centers die rechtstreeks zijn verbonden met het virtuele netwerk van een klant. Deze Hsm's zijn speciale netwerk apparaten (Thales Network Luna HSM 7). Ze worden direct geïmplementeerd in de privé-IP-adres ruimte van een klant en micro soft heeft geen toegang tot de cryptografische functionaliteit van de Hsm's. Alleen de klant heeft volledige beheer-en cryptografische controle over deze apparaten. Klanten zijn verantwoordelijk voor het beheer van het apparaat en ze kunnen volledige activiteiten logboeken rechtstreeks vanaf hun apparaten ontvangen. Gespecialiseerde Hsm's helpen klanten te voldoen aan nalevings vereisten, zoals FIPS 140-2 level 3, HIPAA, PCI-DSS en eIDAS en vele andere.
 
 ### <a name="q-what-hardware-is-used-for-dedicated-hsm"></a>V: welke hardware wordt gebruikt voor een toegewezen HSM?
 
-Micro soft heeft een partnerschap met Gemalto voor het leveren van de toegewezen HSM-service van Azure. Het specifieke apparaat dat wordt gebruikt, is het [SafeNet Luna Network HSM 7 model A790](https://safenet.gemalto.com/data-encryption/hardware-security-modules-hsms/safenet-network-hsm/). Dit apparaat biedt niet alleen de FIPS 140-2-gevalideerde firmware op niveau 3, maar biedt ook lage latentie, hoge prestaties en hoge capaciteit via 10 partities. 
+Micro soft heeft een partnerschap met Thales voor het leveren van de toegewezen HSM-service van Azure. Het specifieke apparaat dat wordt gebruikt, is het [Thales-netwerk Luna HSM 7](https://cpl.thalesgroup.com/encryption/hardware-security-modules/network-hsms). Dit apparaat biedt niet alleen de FIPS 140-2-gevalideerde firmware op niveau 3, maar biedt ook lage latentie, hoge prestaties en hoge capaciteit via 10 partities. 
 
 ### <a name="q-what-is-an-hsm-used-for"></a>V: waarvoor wordt een HSM gebruikt?
 
@@ -44,11 +44,18 @@ Hsm's worden gebruikt voor het opslaan van cryptografische sleutels die worden g
 
 ### <a name="q-how-does-dedicated-hsm-work"></a>V: Hoe werkt speciale HSM?
 
-Klanten kunnen Hsm's in specifieke regio's inrichten met behulp van Power shell of de opdracht regel interface. De klant geeft aan met welk virtueel netwerk de Hsm's verbinding wordt gemaakt en nadat de Hsm's is ingericht, wordt in het aangewezen subnet op toegewezen IP-adressen in de privé-IP-adres ruimte van de klant beschikbaar gesteld. Vervolgens kunnen klanten via SSH verbinding maken met de Hsm's voor het beheer van apparaten en het beheer, het instellen van HSM-client verbindingen, het initialiseren van Hsm's, het maken van partities, het definiëren en toewijzen van rollen zoals de partitie-Officer, de versleutelingsset en de gebruiker van crypto grafie. De klant gebruikt vervolgens Gemalto die de HSM-client hulpprogramma's/SDK/software heeft verschaft om cryptografische bewerkingen uit hun toepassingen uit te voeren.
+Klanten kunnen Hsm's in specifieke regio's inrichten met behulp van Power shell of de opdracht regel interface. De klant geeft aan met welk virtueel netwerk de Hsm's verbinding wordt gemaakt en nadat de Hsm's is ingericht, wordt in het aangewezen subnet op toegewezen IP-adressen in de privé-IP-adres ruimte van de klant beschikbaar gesteld. Vervolgens kunnen klanten via SSH verbinding maken met de Hsm's voor het beheer van apparaten en het beheer, het instellen van HSM-client verbindingen, het initialiseren van Hsm's, het maken van partities, het definiëren en toewijzen van rollen zoals de partitie-Officer, de versleutelingsset en de gebruiker van crypto grafie. De klant gebruikt vervolgens Thales die de HSM-client hulpprogramma's/SDK/software heeft verschaft om cryptografische bewerkingen uit hun toepassingen uit te voeren.
 
 ### <a name="q-what-software-is-provided-with-the-dedicated-hsm-service"></a>V: welke software wordt meegeleverd met de speciale HSM-service?
 
-Gemalto levert alle software voor het HSM-apparaat nadat het is ingericht door micro soft. De software is beschikbaar op de [Gemalto-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Gemalto-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload. De ondersteunde client software is versie 7,2, die compatibel is met de gevalideerde firmware versie van de FIPS 140-2 level 3-7.0.3. 
+Thales levert alle software voor het HSM-apparaat nadat het is ingericht door micro soft. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload. De ondersteunde client software is versie 7,2, die compatibel is met de gevalideerde firmware versie van de FIPS 140-2 level 3-7.0.3. 
+
+### <a name="q-what-extra-costs-may-be-incurred-with-dedicated-hsm-service"></a>V: welke extra kosten worden mogelijk gemaakt met een speciale HSM-service?
+
+De volgende items worden extra kosten in rekening gebracht wanneer u de speciale HSM-service gebruikt. 
+* Het gebruik van een toegewezen on-premises back-upapparaat kan worden gebruikt met een toegewezen HSM-service, maar dit leidt echter tot extra kosten en moet rechtstreeks worden afgeleid van Thales.
+* Er wordt een toegewezen HSM met een 10-partitie licentie meegeleverd. Als een klant meer partities nodig heeft, worden er extra kosten in rekening gebracht voor extra licenties die rechtstreeks vanuit Thales worden gebrond.
+* Voor een toegewezen HSM is een netwerk infrastructuur (VNET, VPN Gateway, enzovoort) vereist en bronnen zoals virtuele machines voor apparaatconfiguratie. Deze extra bronnen nemen extra kosten in beslag en worden niet opgenomen in de specifieke HSM-service prijzen.
 
 ### <a name="q-does-azure-dedicated-hsm-offer-password-based-and-ped-based-authentication"></a>V: heeft Azure toegewezen HSM een op wacht woord gebaseerde en PED verificatie aangeboden?
 
@@ -56,11 +63,11 @@ Op dit moment biedt Azure dedicated HSM alleen Hsm's met verificatie op basis va
 
 ### <a name="q-will-azure-dedicated-hsm-host-my-hsms-for-me"></a>V: zal Azure dedicated HSM host mijn Hsm's voor mij?
 
-Micro soft biedt alleen de Gemalto SafeNet Luna Network HSM via de toegewezen HSM-service en kan geen door klanten geleverde apparaten hosten.
+Micro soft biedt alleen het Thales-netwerk Luna HSM 7 via de speciale HSM-service en kan geen door klanten geleverde apparaten hosten.
 
 ### <a name="q-does-azure-dedicated-hsm-support-payment-pineft-features"></a>V: heeft Azure exclusieve HSM-functies voor de ondersteuning van betalingen (PINCODEs/EFT)?
 
-De specifieke HSM-service van Azure maakt gebruik van SafeNet Luna Network HSM 7-apparaten (model A790). Deze apparaten bieden geen ondersteuning voor de specifieke functionaliteit voor betalings-HSM (zoals pincode of EFT) of certificeringen. Als u wilt dat de exclusieve HSM-service van Azure in de toekomst betaling Hsm's ondersteunt, geeft u de feedback door aan uw micro soft-account vertegenwoordiger.
+De specifieke HSM-service van Azure maakt gebruik van Thales netwerk Luna HSM 7-apparaten. Deze apparaten bieden geen ondersteuning voor het gebruik van de speciale HSM-specifieke functionaliteit (zoals pincode of EFT) of certificeringen. Als u wilt dat de exclusieve HSM-service van Azure in de toekomst betaling Hsm's ondersteunt, geeft u de feedback door aan uw micro soft-account vertegenwoordiger.
 
 ### <a name="q-which-azure-regions-is-dedicated-hsm-available-in"></a>V: in welke Azure-regio's is een speciale HSM beschikbaar?
 
@@ -94,7 +101,7 @@ Vanaf eind maart 2019 is toegewezen HSM beschikbaar in de volgende 14 regio's. V
 
 ### <a name="q-how-does-my-application-connect-to-a-dedicated-hsm"></a>V: Hoe maakt mijn toepassing verbinding met een toegewezen HSM?
 
-U gebruikt Gemalto voor HSM-client hulpprogramma's/SDK/software voor het uitvoeren van cryptografische bewerkingen vanuit uw toepassingen. De software is beschikbaar op de [Gemalto-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Gemalto-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload.
+U gebruikt Thales voor HSM-client hulpprogramma's/SDK/software voor het uitvoeren van cryptografische bewerkingen vanuit uw toepassingen. De software is beschikbaar op de [Thales-portal voor klant ondersteuning](https://supportportal.gemalto.com/csm/). Klanten die de speciale HSM-service gebruiken, moeten worden geregistreerd voor Thales-ondersteuning en beschikken over een klant-ID waarmee toegang kan worden gezocht en de relevante software kan worden gedownload.
 
 ### <a name="q-can-an-application-connect-to-dedicated-hsm-from-a-different-vnet-in-or-across-regions"></a>V: kan een toepassing verbinding maken met een specifieke HSM vanuit een ander VNET in of tussen verschillende regio's?
 
@@ -110,7 +117,7 @@ Nee. Toegewezen Azure-Hsm's zijn alleen toegankelijk vanuit uw virtuele netwerk.
 
 ### <a name="q-can-i-import-keys-from-an-existing-on-premises-hsm-to-dedicated-hsm"></a>V: kan ik sleutels uit een bestaande HSM op locatie importeren in een speciale HSM?
 
-Ja, als u on-premises Gemalto SafeNet Hsm's hebt. Er zijn meerdere methoden. Raadpleeg de Gemalto HSM-documentatie.
+Ja, als u een on-premises Thales-netwerk Luna HSM 7 Hsm's hebt. Er zijn meerdere methoden. Raadpleeg de [Thales HSM-documentatie](https://thalesdocs.com/gphsm/luna/7.2/docs/network/Content/Home_network.htm).
 
 ### <a name="q-what-operating-systems-are-supported-by-dedicated-hsm-client-software"></a>V: welke besturings systemen worden ondersteund door toegewezen HSM-client software?
 
@@ -119,7 +126,7 @@ Ja, als u on-premises Gemalto SafeNet Hsm's hebt. Er zijn meerdere methoden. Raa
 
 ### <a name="q-how-do-i-configure-my-client-application-to-create-a-high-availability-configuration-with-multiple-partitions-from-multiple-hsms"></a>V: Hoe kan ik mijn client toepassing configureren om een configuratie met een hoge Beschik baarheid te maken met meerdere partities van meerdere Hsm's?
 
-Als u maximale Beschik baarheid wilt, moet u de configuratie van de HSM-client toepassing instellen op het gebruik van partities van elke HSM. Raadpleeg de documentatie van de Gemalto HSM-client software.
+Als u maximale Beschik baarheid wilt, moet u de configuratie van de HSM-client toepassing instellen op het gebruik van partities van elke HSM. Raadpleeg de documentatie van de Thales HSM-client software.
 
 ### <a name="q-what-authentication-mechanisms-are-supported-by-dedicated-hsm"></a>V: welke verificatie mechanismen worden ondersteund door een toegewezen HSM?
 
@@ -131,7 +138,7 @@ PKCS # 11, java (JCA/JCE), micro soft CAPI en CNG, OpenSSL
 
 ### <a name="q-can-i-importmigrate-keys-from-luna-56-hsms-to-azure-dedicated-hsms"></a>V: kan ik sleutels importeren/migreren van Luna 5/6 Hsm's naar toegewezen Hsm's van Azure?
 
-Ja. Raadpleeg de Gemalto-migratie handleiding. 
+Ja. Neem contact op met uw Thales-vertegenwoordiger voor de juiste Thales-migratie handleiding. 
 
 ## <a name="using-your-hsm"></a>Uw HSM gebruiken
 
@@ -156,7 +163,7 @@ Nee. Toegewezen HSM wordt rechtstreeks ingericht in de privé-IP-adres ruimte va
 
 ## <a name="administration-access-and-control"></a>Beheer, toegang en beheer
 
-### <a name="q-does-the-customer-get-full-exclusive-control-over-the-hsms-with-dedicated-hsms"></a>V: heeft de klant volledige exclusieve controle over de Hsm's met de toegewezen Hsm's?
+### <a name="q-does-the-customer-get-full-exclusive-control-over-the-hsms-with-dedicated-"></a>V: biedt de klant volledige exclusieve controle over de Hsm's met dedicated '?
 
 Ja. Elk HSM-apparaat is volledig toegewezen aan één klant en niemand heeft een beheer beheer na de inrichting en het beheerders wachtwoord is gewijzigd.
 
@@ -164,9 +171,9 @@ Ja. Elk HSM-apparaat is volledig toegewezen aan één klant en niemand heeft een
 
 Micro soft heeft geen beheer-of cryptografische controle over de HSM. Micro soft heeft toegang op monitor niveau via een seriële poort verbinding om eenvoudige telemetrie te verkrijgen, zoals de status van de Tempe ratuur en het onderdeel. Hierdoor kan micro soft proactieve meldingen over status problemen bieden. Als dat nodig is, kan de klant dit account uitschakelen.
 
-### <a name="q-what-is-the-tenantadmin-account-microsoft-uses-i-am-used-to-the-admin-user-being-admin-on-safenet-hsms"></a>V: wat is het ' tenantadmin-account dat wordt gebruikt door micro soft, ik heb de beheerder van de gebruiker ' admin ' op SafeNet Hsm's?
+### <a name="q-what-is-the-tenant-admin-account-microsoft-uses-i-am-used-to-the-admin-user-being-admin-on-thales-luna-hsms"></a>V: wat is het account ' Tenant beheerder ' dat door micro soft wordt gebruikt, ik gebruik de beheerder van de gebruiker ' admin ' op Thales Luna Hsm's?
 
-Het HSM-apparaat wordt geleverd met een standaard gebruiker van de beheerder met het gebruikelijke standaard wachtwoord. Micro soft wil geen standaard wachtwoorden gebruiken terwijl een apparaat in een groep wacht om te worden ingericht door klanten. Dit voldoet niet aan onze strikte beveiligings vereisten. Daarom stellen we een sterk wacht woord in dat wordt verwijderd bij de inrichtings tijd. Bij het inrichten van de tijd maken we ook een nieuwe gebruiker in de rol Admin met de naam ' tenantadmin '. Deze gebruiker heeft het standaard wachtwoord en klanten wijzigen dit als de eerste actie wanneer u zich voor het eerst aanmeldt bij het nieuw ingerichte apparaat. Dit proces garandeert een hoge mate van beveiliging en onderhoudt onze belofte van exclusieve administratieve controle voor onze klanten. Houd er rekening mee dat de gebruiker ' tenantadmin ' kan worden gebruikt om het wacht woord van de gebruikers beheerder opnieuw in te stellen als een klant dat account liever gebruikt. 
+Het HSM-apparaat wordt geleverd met een standaard gebruiker van de beheerder met het gebruikelijke standaard wachtwoord. Micro soft wil geen standaard wachtwoorden gebruiken terwijl een apparaat in een groep wacht om te worden ingericht door klanten. Dit voldoet niet aan onze strikte beveiligings vereisten. Daarom stellen we een sterk wacht woord in dat wordt verwijderd bij de inrichtings tijd. Na het inrichten van de tijd maken we ook een nieuwe gebruiker in de beheerdersrol met de naam Tenant beheerder. Deze gebruiker heeft het standaard wachtwoord en klanten wijzigen dit als de eerste actie wanneer u zich voor het eerst aanmeldt bij het nieuw ingerichte apparaat. Dit proces garandeert een hoge mate van beveiliging en onderhoudt onze belofte van exclusieve administratieve controle voor onze klanten. Houd er rekening mee dat de gebruiker ' Tenant beheerder ' kan worden gebruikt om het wacht woord van de gebruikers beheerder opnieuw in te stellen als een klant dat account liever gebruikt. 
 
 ### <a name="q-can-microsoft-or-anyone-at-microsoft-access-keys-in-my-dedicated-hsm"></a>V: kunnen micro soft of iemand bij micro soft Access Keys in mijn toegewezen HSM?
 
@@ -174,7 +181,7 @@ Nee. Micro soft heeft geen toegang tot de sleutels die zijn opgeslagen in de toe
 
 ### <a name="q-can-i-upgrade-softwarefirmware-on-hsms-allocated-to-me"></a>V: kan ik een upgrade uitvoeren van software/firmware op Hsm's die aan mij zijn toegewezen?
 
-Micro soft raadt u ten zeerste aan om de software/firmware op de HSM niet bij te werken. De klant heeft echter volledige administratieve controle, inclusief het upgraden van software/firmware als er specifieke functies zijn vereist uit verschillende firmware versies. Voordat u wijzigingen aanbrengt, moeten de implicaties worden begrepen, omdat dit bijvoorbeeld van invloed is op de FIPS-gevalideerde status. 
+De klant heeft volledige administratieve controle, inclusief het upgraden van software/firmware als er specifieke functies zijn vereist uit verschillende firmware versies. Voordat u wijzigingen aanbrengt, kunt u contact opnemen met micro soft over uw upgrade. HSMRequest@microsoft.com  
 
 ### <a name="q-how-do-i-manage-dedicated-hsm"></a>V: Hoe kan ik specifieke HSM beheren?
 
@@ -182,7 +189,7 @@ U kunt toegewezen Hsm's beheren door ze te openen via SSH.
 
 ### <a name="q-how-do-i-manage-partitions-on-the-dedicated-hsm"></a>V: Hoe kan ik partities op de toegewezen HSM beheren?
 
-De Gemalto HSM-client software wordt gebruikt voor het beheren van de Hsm's en partities.
+De Thales HSM-client software wordt gebruikt voor het beheren van de Hsm's en partities.
 
 ### <a name="q-how-do-i-monitor-my-hsm"></a>V: Hoe kan ik bewaken van mijn HSM?
 
@@ -196,7 +203,7 @@ Ja. U kunt Logboeken van het HSM-apparaat naar een syslog-server verzenden
 
 ### <a name="q-is-it-possible-to-configure-high-availability-in-the-same-region-or-across-multiple-regions"></a>V: is het mogelijk om hoge Beschik baarheid te configureren in dezelfde regio of in meerdere regio's?
 
-Ja. Configuratie van hoge Beschik baarheid en Setup worden uitgevoerd in de HSM-client software van Gemalto. Hsm's van hetzelfde VNET of andere VNETs in dezelfde regio of in verschillende regio's, of on-premises Hsm's die zijn verbonden met een VNET met behulp van site-naar-site-of Point-to-Point VPN, kunnen worden toegevoegd aan dezelfde configuratie voor hoge Beschik baarheid. U moet erop gewezen dat het sleutel materiaal alleen synchroniseert en geen specifieke configuratie-items zoals rollen.
+Ja. Configuratie van hoge Beschik baarheid en Setup worden uitgevoerd in de HSM-client software van Thales. Hsm's van hetzelfde VNET of andere VNETs in dezelfde regio of in verschillende regio's, of on-premises Hsm's die zijn verbonden met een VNET met behulp van site-naar-site-of Point-to-Point VPN, kunnen worden toegevoegd aan dezelfde configuratie voor hoge Beschik baarheid. U moet erop gewezen dat het sleutel materiaal alleen synchroniseert en geen specifieke configuratie-items zoals rollen.
 
 ### <a name="q-can-i-add-hsms-from-my-on-premises-network-to-a-high-availability-group-with-azure-dedicated-hsm"></a>V: kan ik Hsm's van mijn on-premises netwerk toevoegen aan een groep met hoge Beschik baarheid met een toegewezen HSM van Azure?
 
@@ -222,7 +229,7 @@ Azure-data centers hebben uitgebreide fysieke en procedures voor beveiligings co
 
 ### <a name="q-what-happens-if-there-is-a-security-breach-or-hardware-tampering-event"></a>V: wat gebeurt er als er sprake is van een inbreuk op de beveiliging of het knoeien met de hardware?
 
-De speciale HSM-service maakt gebruik van SafeNet netwerk HSM 7-apparaten. Deze apparaten ondersteunen detectie van fysieke en logische manipulatie. Als er zich een onrecht matige gebeurtenis voordoet, worden de Hsm's automatisch nul.
+De toegewezen HSM-service maakt gebruik van Thales netwerk Luna HSM 7-apparaten. Deze apparaten ondersteunen detectie van fysieke en logische manipulatie. Als er zich een onrecht matige gebeurtenis voordoet, worden de Hsm's automatisch nul.
 
 ### <a name="q-how-do-i-ensure-that-keys-in-my-dedicated-hsms-are-not-lost-due-to-error-or-a-malicious-insider-attack"></a>V: Hoe kan ik ervoor te zorgen dat sleutels in mijn toegewezen Hsm's niet verloren gaan als gevolg van een fout of een kwaadwillende Insider-aanval?
 
@@ -230,13 +237,13 @@ Het is raadzaam om een on-premises HSM-back-upapparaat te gebruiken om regel mat
 
 ### <a name="q-how-do-i-get-support-for-dedicated-hsm"></a>V: Hoe kan ik ondersteuning voor toegewezen HSM verkrijgen?
 
-Ondersteuning wordt geboden door zowel micro soft als Gemalto.  Als u een probleem hebt met de hardware-of netwerk toegang, verhoogt u een ondersteunings aanvraag met micro soft en als u een probleem ondervindt met HSM-configuratie, software en toepassings ontwikkeling, wordt een ondersteunings aanvraag met Gemalto gegenereerd. Als u een onbepaald probleem hebt, kunt u een ondersteunings aanvraag indienen bij micro soft en kan Gemalto indien nodig worden ingeschakeld. 
+Ondersteuning wordt geboden door zowel micro soft als Thales.  Als u een probleem hebt met de hardware-of netwerk toegang, verhoogt u een ondersteunings aanvraag met micro soft en als u een probleem ondervindt met HSM-configuratie, software en toepassings ontwikkeling, wordt een ondersteunings aanvraag met Thales gegenereerd. Als u een onbepaald probleem hebt, kunt u een ondersteunings aanvraag indienen bij micro soft en kan Thales indien nodig worden ingeschakeld. 
 
-### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-safenet-luna-7-hsm"></a>V: Hoe kan ik de client software, documentatie en toegang verkrijgen tot integratie richtlijnen voor de SafeNet Luna 7 HSM?
+### <a name="q-how-do-i-get-the-client-software-documentation-and-access-to-integration-guidance-for-the-thales-network-luna-hsm-7"></a>V: Hoe kan ik de client software, documentatie en toegang verkrijgen tot integratie richtlijnen voor het Thales-netwerk Luna HSM 7?
 
-Nadat u zich hebt geregistreerd voor de service, wordt er een Gemalto-klant-ID gegeven die registratie toestaat in de Gemalto-portal voor klanten ondersteuning. Hiermee wordt toegang tot alle software en documentatie ingeschakeld en worden ondersteunings aanvragen rechtstreeks met Gemalto ingeschakeld.
+Nadat u zich hebt geregistreerd voor de service, wordt er een Thales-klant-ID gegeven die registratie toestaat in de Thales-portal voor klanten ondersteuning. Hiermee wordt toegang tot alle software en documentatie ingeschakeld en worden ondersteunings aanvragen rechtstreeks met Thales ingeschakeld.
 
-### <a name="q-if-there-is-a-security-vulnerability-found-and-a-patch-is-released-by-gemalto-who-is-responsible-for-upgradingpatching-osfirmware"></a>V: als er een beveiligings probleem is gevonden en er een patch wordt uitgebracht door Gemalto, wie verantwoordelijk is voor het bijwerken/patchen van besturings systeem/firmware?
+### <a name="q-if-there-is-a-security-vulnerability-found-and-a-patch-is-released-by-thales-who-is-responsible-for-upgradingpatching-osfirmware"></a>V: als er een beveiligings probleem is gevonden en er een patch wordt uitgebracht door Thales, wie verantwoordelijk is voor het bijwerken/patchen van besturings systeem/firmware?
 
 Micro soft heeft niet de mogelijkheid om verbinding te maken met Hsm's die aan klanten zijn toegewezen. Klanten moeten hun Hsm's bijwerken en patchen.
 
@@ -248,11 +255,11 @@ De HSM heeft een optie voor opnieuw opstarten van de opdracht regel. Er treden e
 
 ### <a name="q-is-it-safe-to-store-encryption-keys-for-my-most-important-data-in-dedicated-hsm"></a>V: is het veilig om versleutelings sleutels voor mijn belangrijkste gegevens op te slaan in een toegewezen HSM?
 
-Ja, specifieke HSM-bepalingen SafeNet netwerk HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3-gevalideerde Hsm's. 
+Ja, toegewezen HSM-bepalingen Thales netwerk Luna HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3 gevalideerd Hsm's. 
 
 ### <a name="q-what-cryptographic-keys-and-algorithms-are-supported-by-dedicated-hsm"></a>V: welke cryptografische sleutels en algoritmen worden ondersteund door een toegewezen HSM?
 
-Speciale HSM-service bepalingen SafeNet netwerk HSM 7-apparaten. Ze bieden ondersteuning voor een breed scala aan cryptografische sleutel typen en algoritmen, waaronder: volledige Suite B-ondersteuning
+Speciale HSM-service bepalingen Thales netwerk Luna HSM 7-apparaten. Ze bieden ondersteuning voor een breed scala aan cryptografische sleutel typen en algoritmen, waaronder: volledige Suite B-ondersteuning
 
 * Asymmetrisch
   * RSA
@@ -276,21 +283,21 @@ Speciale HSM-service bepalingen SafeNet netwerk HSM 7-apparaten. Ze bieden onder
 
 ### <a name="q-is-dedicated-hsm-fips-140-2-level-3-validated"></a>V: is toegewezen HSM FIPS 140-2 level 3 gevalideerd?
 
-Ja. Speciale HSM-service bepalingen SafeNet netwerk HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3-gevalideerde Hsm's.
+Ja. Speciale HSM-service bepalingen Thales netwerk Luna HSM 7-apparaten die gebruikmaken van FIPS 140-2 level 3 gevalideerd Hsm's.
 
 ### <a name="q-what-do-i-need-to-do-to-make-sure-i-operate-dedicated-hsm-in-fips-140-2-level-3-validated-mode"></a>V: wat moet ik doen om ervoor te zorgen dat ik specifieke HSM in de modus voor de gevalideerde FIPS 140-2 level 3 heb?
 
-De speciale HSM-service bepalingen SafeNet Luna Network HSM 7 Appliances. Op deze apparaten wordt gebruikgemaakt van FIPS 140-2 level 3-gevalideerde Hsm's. De standaard geïmplementeerde configuratie, het besturings systeem en de firmware zijn ook FIPS-validatie. U hoeft geen actie te ondernemen voor naleving van FIPS 140-2 level 3.
+De speciale HSM-service voorziet Thales netwerk Luna HSM 7-apparaten. Op deze apparaten wordt gebruikgemaakt van FIPS 140-2 level 3-gevalideerde Hsm's. De standaard geïmplementeerde configuratie, het besturings systeem en de firmware zijn ook FIPS-validatie. U hoeft geen actie te ondernemen voor naleving van FIPS 140-2 level 3.
 
 ### <a name="q-how-does-a-customer-ensure-that-when-an-hsm-is-deprovisioned-all-the-key-material-is-wiped-out"></a>V: Hoe zorgt een klant ervoor dat wanneer de inrichting van een HSM ongedaan wordt gemaakt, het hoofd materiaal wordt gewist?
 
-Voordat de inrichting wordt aangevraagd, moet een klant de HSM hebben gezerod met behulp van Gemalto geleverde HSM-client hulpprogramma's.
+Voordat de inrichting wordt aangevraagd, moet een klant de HSM hebben gezerod met behulp van Thales geleverde HSM-client hulpprogramma's.
 
 ## <a name="performance-and-scale"></a>Prestaties en schaal
 
 ### <a name="q-how-many-cryptographic-operations-are-supported-per-second-with-dedicated-hsm"></a>V: hoeveel cryptografische bewerkingen worden per seconde ondersteund met een toegewezen HSM?
 
-Toegewezen HSM-voorzieningen SafeNet netwerk HSM 7-apparaten (model A790). Hier volgt een samen vatting van de maximale prestaties voor bepaalde bewerkingen: 
+Toegewezen HSM-voorzieningen Thales netwerk Luna HSM 7 Hsm's. Hier volgt een samen vatting van de maximale prestaties voor bepaalde bewerkingen: 
 
 * RSA-2048:10.000 trans acties per seconde
 * ECC-P256:20.000 trans acties per seconde

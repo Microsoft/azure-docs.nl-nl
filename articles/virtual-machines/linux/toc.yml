@@ -944,8 +944,6 @@
               href: ../disks-enable-ultra-ssd.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Een benchmark-test uitvoeren op een schijf
               href: disks-benchmarks.md
-            - name: Prestaties optimaliseren
-              href: optimization.md
         - name: Niet-gekoppelde schijven zoeken - CLI
           href: find-unattached-disks.md
         - name: Niet-gekoppelde schijven zoeken - Portal

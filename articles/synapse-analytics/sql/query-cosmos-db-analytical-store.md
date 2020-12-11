@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 129534727248ff05b5d38da60dead7903d9a5815
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 22103ad580fa474f44eaf42c696d19bbbd137c8e
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744462"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095097"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -222,7 +222,7 @@ FROM OPENROWSET(
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
 
-Gebruik niet `OPENROWSET` zonder expliciet gedefinieerd schema, omdat dit van invloed kan zijn op de prestaties. Zorg ervoor dat u de kleinst mogelijke grootten voor uw kolommen gebruikt (bijvoorbeeld VARCHAR (100) in plaats van standaard VARCHAR (8000)). U moet een van de volgende UTF-8-sorteringen gebruiken als standaard database sortering of instellen als expliciete kolom sortering om [conversie probleem met UTF-8](/troubleshoot/reading-utf8-text)te voor komen. Sortering `Latin1_General_100_BIN2_UTF8` biedt de beste prestaties wanneer Yu filter gegevens gebruikt in bepaalde teken reeks kolommen.
+Gebruik niet `OPENROWSET` zonder expliciet gedefinieerd schema, omdat dit van invloed kan zijn op de prestaties. Zorg ervoor dat u de kleinst mogelijke grootten voor uw kolommen gebruikt (bijvoorbeeld VARCHAR (100) in plaats van standaard VARCHAR (8000)). U moet een van de volgende UTF-8-sorteringen gebruiken als standaard database sortering of instellen als expliciete kolom sortering om [conversie probleem met UTF-8](/azure/synapse-analytics/troubleshoot/reading-utf8-text)te voor komen. Sortering `Latin1_General_100_BIN2_UTF8` biedt de beste prestaties wanneer Yu filter gegevens gebruikt in bepaalde teken reeks kolommen.
 
 ## <a name="query-nested-objects-and-arrays"></a>Geneste objecten en matrices doorzoeken
 

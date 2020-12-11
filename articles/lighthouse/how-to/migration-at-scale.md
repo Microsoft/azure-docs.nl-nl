@@ -3,12 +3,12 @@ title: Migratie projecten op schaal beheren met Azure Migrate
 description: Meer informatie over het effectief gebruiken van Azure Migrate op gedelegeerde klanten resources.
 ms.date: 12/4/2020
 ms.topic: how-to
-ms.openlocfilehash: d1a01149c80b30f279f7d68551946c3ffe404d5e
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 16b92f3aa4dc3bfcb71eb232170c4df30348f8db
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621566"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095386"
 ---
 # <a name="manage-migration-projects-at-scale-with-azure-migrate"></a>Migratie projecten op schaal beheren met Azure Migrate
 
@@ -39,7 +39,7 @@ Deze aanpak minimaliseert de context overschakelen voor service providers die ov
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
 1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
-1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Met deze gebruiker [maakt u een Azure migrate project](/migrate/create-manage-projects.md)en selecteert u het juiste gedelegeerde klant abonnement.
+1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Met deze gebruiker [maakt u een Azure migrate project](/azure/migrate/create-manage-projects)en selecteert u het juiste gedelegeerde klant abonnement.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md).
 
    Voor virtuele VMware-machines kunt u, voordat u het apparaat configureert, de detectie beperken tot vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke Vm's. Als u het bereik wilt instellen, wijst u machtigingen toe voor het account dat het apparaat gebruikt voor toegang tot de vCenter Server. Dit is handig als de virtuele machines van meerdere klanten worden gehost op de Hyper Visor. U kunt het detectie bereik van Hyper-V niet beperken.
@@ -61,7 +61,7 @@ Met deze aanpak kunnen service providers snel migratie-en evaluatie projecten st
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
 1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
-1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Deze gebruiker [maakt een Azure migrate project](/migrate/create-manage-projects.md) in een abonnement dat behoort tot de beheer-Tenant.
+1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Deze gebruiker [maakt een Azure migrate project](/azure/migrate/create-manage-projects) in een abonnement dat behoort tot de beheer-Tenant.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md). De on-premises Vm's worden gedetecteerd en beoordeeld binnen het migratie project dat in de beheer Tenant is gemaakt en vervolgens van daaruit gemigreerd.
 
    Als u meerdere klanten beheert op dezelfde Hyper-V-host, kunt u alle werk belastingen tegelijk ontdekken. Klantspecifieke Vm's kunnen in dezelfde groep worden geselecteerd, een evaluatie kan worden gemaakt en de migratie kan worden uitgevoerd door het juiste abonnement van de klant te selecteren als doel bestemming. U hoeft het detectie bereik niet te beperken en u kunt een volledig overzicht van alle werk belastingen van de klant in één migratie project onderhouden.

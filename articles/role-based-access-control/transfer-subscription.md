@@ -8,14 +8,14 @@ ms.service: role-based-access-control
 ms.devlang: na
 ms.topic: how-to
 ms.workload: identity
-ms.date: 10/06/2020
+ms.date: 12/10/2020
 ms.author: rolyon
-ms.openlocfilehash: ad0ba3c63f6f0ef6e7e02051031cf215c2e72cce
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 92b27690ab1f2ca8d98eb2231c5a27bc508613f8
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648239"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095420"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Een Azure-abonnement overdragen naar een andere Azure AD-adres lijst
 
@@ -53,7 +53,12 @@ Hier volgen enkele redenen waarom u een abonnement wilt overdragen:
 - Een deel van uw bedrijf is opgesplitst in een afzonderlijk bedrijf en u moet een deel van uw resources verplaatsen naar een andere Azure AD-adres lijst.
 - U wilt een deel van uw resources in een andere Azure AD-Directory beheren voor beveiligings isolatie doeleinden.
 
-Voor het overdragen van een abonnement is downtime vereist om het proces te volt ooien. Afhankelijk van uw scenario is het wellicht beter om de resources opnieuw te maken en gegevens te kopiëren naar de doel directory en het-abonnement.
+### <a name="alternate-approaches"></a>Andere manieren
+
+Voor het overdragen van een abonnement is downtime vereist om het proces te volt ooien. Afhankelijk van uw scenario kunt u de volgende alternatieve benaderingen overwegen:
+
+- De resources opnieuw maken en gegevens kopiëren naar de doel directory en het-abonnement.
+- Een architectuur met meerdere mappen aannemen en het abonnement in de bronmap laten staan. Gebruik Azure Lighthouse om resources te delegeren zodat gebruikers in de doel Directory toegang hebben tot het abonnement in de bronmap. Zie [Azure Lighthouse in Enter prise-scenario's](../lighthouse/concepts/enterprise.md)voor meer informatie.
 
 ### <a name="understand-the-impact-of-transferring-a-subscription"></a>Meer informatie over de gevolgen van het overdragen van een abonnement
 
@@ -383,3 +388,4 @@ Als u de toegang van gebruikers in de bronmap wilt verwijderen zodat ze geen toe
 - [Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account](../cost-management-billing/manage/billing-subscription-transfer.md)
 - [Overdracht van Azure-abonnementen tussen abonnees en CSP's](../cost-management-billing/manage/transfer-subscriptions-subscribers-csp.md)
 - [Een Azure-abonnement aan uw Azure Active Directory-tenant toevoegen of koppelen](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
+- [Azure Lighthouse in zakelijke scenario's](../lighthouse/concepts/enterprise.md)

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: d889c82142cda60b920f7b29bd91755cbc34f525
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 48ff32655b107958a3e8e42dbd7de0f405a6fffa
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701446"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094859"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Toegangsbeheer in Azure Data Lake Storage Gen1
 
@@ -34,8 +34,6 @@ Er zijn twee soorten toegangsbeheerlijsten (ACL's): **Toegangs-ACL's** en **Stan
 
 Toegangs-ACL's en Standaard-ACL's hebben dezelfde structuur.
 
-
-
 > [!NOTE]
 > Als u de Standaard-ACL voor een bovenliggend item wijzigt, heeft dit geen invloed op de Toegangs-ACL of de Standaard ACL van bestaande onderliggende items.
 >
@@ -45,7 +43,7 @@ Toegangs-ACL's en Standaard-ACL's hebben dezelfde structuur.
 
 De machtigingen voor een bestandssysteemobject zijn **Lezen**, **Schrijven** en **Uitvoeren**. Deze kunnen worden gebruikt voor bestanden en mappen zoals weergegeven in de onderstaande tabel:
 
-|            |    File     |   Map |
+|            |    Bestand     |   Map |
 |------------|-------------|----------|
 | **Lezen (L)** | Kan de inhoud van een bestand lezen | Moet worden **gelezen** en **uitgevoerd** om de inhoud van de map weer te geven|
 | **Schrijven (S)** | Kan schrijven of toevoegen aan een bestand | **Schrijven** en **Uitvoeren** zijn vereist om onderliggende items in een map te maken |
@@ -74,7 +72,7 @@ Hieronder volgen enkele algemene scenario's die u helpen te begrijpen welke mach
 | Bewerking | Object              |    /      | Den   | Port land   | Data.txt       |
 |-----------|---------------------|-----------|------------|-------------|----------------|
 | Lezen      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
-| Toevoegen aan | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
+| Toevoegen aan | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `-W-`          |
 | Verwijderen    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Maken    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Lijst      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |

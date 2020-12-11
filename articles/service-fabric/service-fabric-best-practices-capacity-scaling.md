@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 96cd460ddfea863eb27a1087ff59f3b87acf65d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41cfff11e44a3d052614aa3c81a4623f59bbbbf5
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531301"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97095284"
 ---
 # <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Capaciteits planning en schalen voor Azure Service Fabric
 
@@ -50,21 +50,11 @@ Voor het [verticaal schalen](./virtual-machine-scale-set-scale-node-type-scale-o
 > [!NOTE]
 > Uw primaire knooppunt type dat als host optreedt voor Service Fabric systeem services, moet het hoogste niveau van de duurzaamheid of hoger zijn. Nadat u Silver duurzaamheid hebt ingeschakeld, worden cluster bewerkingen zoals upgrades, het toevoegen of verwijderen van knoop punten langzamer, omdat het systeem optimaliseert voor gegevens beveiliging ten opzichte van de snelheid van de bewerkingen.
 
-Verticaal schalen van een schaalset voor virtuele machines is een destructieve bewerking. In plaats daarvan schaalt u het cluster horizon taal door een nieuwe schaalset toe te voegen met de gewenste SKU. Migreer vervolgens uw services naar de gewenste SKU om een veilige, verticale schaal bewerking te volt ooien. Het wijzigen van een resource-SKU voor een schaalset voor virtuele machines is een destructieve bewerking omdat de host van uw hosts wordt hersteld, waardoor alle lokaal blijvende status wordt verwijderd.
+Verticaal schalen van een schaalset voor virtuele machines door eenvoudigweg de resource-SKU te wijzigen, is een destructieve bewerking, omdat de hosts hierdoor opnieuw worden geimageeerd, waardoor alle lokale permanente statussen worden verwijderd. In plaats daarvan moet u het cluster horizon taal schalen door een nieuwe schaalset toe te voegen met de gewenste SKU en vervolgens uw services naar de nieuwe schaalset te migreren om een veilige bewerking voor verticale schaling te volt ooien.
 
-Uw cluster maakt gebruik van Service Fabric [knooppunt eigenschappen en plaatsings beperkingen](./service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints) om te bepalen waar u de services van uw toepassing wilt hosten. Wanneer u het primaire knooppunt type verticaal wilt schalen, declareert u identieke eigenschaps waarden voor `"nodeTypeRef"` . U kunt deze waarden vinden in de uitbrei ding Service Fabric voor schaal sets voor virtuele machines. 
-
-In het volgende code fragment van een resource manager-sjabloon worden de eigenschappen weer gegeven die u moet declareren. Deze heeft dezelfde waarde voor de nieuwe ingerichte schaal sets waarop u de schaalt, en wordt alleen ondersteund als tijdelijke stateful service voor uw cluster.
-
-```json
-"settings": {
-   "nodeTypeRef": ["[parameters('primaryNodetypeName')]"]
-}
-```
+Uw cluster maakt gebruik van Service Fabric [knooppunt eigenschappen en plaatsings beperkingen](./service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints) om te bepalen waar u de services van uw toepassing wilt hosten. Bij het verticaal schalen van een primair knooppunt type implementeert u een tweede primaire knooppunt type en stelt u ( `"isPrimary": false` ) in op het oorspronkelijke primaire knooppunt type en gaat u verder met het uitschakelen van de knoop punten en het verwijderen van de bijbehorende schaalset en bijbehorende resources. Zie [het primaire knooppunt type van een service Fabric cluster omhoog schalen](service-fabric-scale-up-primary-node-type.md)voor meer informatie.
 
 > [!NOTE]
-> Laat uw cluster niet actief met meerdere schaal sets die dezelfde `nodeTypeRef` eigenschaps waarde hebben die langer is dan vereist om een geslaagde verticale schaal bewerking te volt ooien.
->
 > Valideer bewerkingen in test omgevingen altijd voordat u wijzigingen aanbrengt in de productie omgeving. Service Fabric cluster systeem services hebben standaard een plaatsings beperking naar het primaire knooppunt type doel.
 
 Als de knooppunt eigenschappen en plaatsings beperkingen zijn gedeclareerd, voert u de volgende stappen uit voor één VM-exemplaar. Hierdoor kunnen de systeem services (en stateful Services) op de juiste wijze worden afgesloten op het VM-exemplaar dat u verwijdert, omdat er elders nieuwe replica's worden gemaakt.
@@ -170,7 +160,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> Wanneer u in een cluster schaalt, ziet u dat het verwijderde knoop punt/VM-exemplaar wordt weer gegeven in een slechte staat in Service Fabric Explorer. Zie [gedragingen die u mogelijk in service Fabric Explorer kunt](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer)zien voor een uitleg van dit gedrag. U kunt:
+> Wanneer u in een cluster schaalt, ziet u dat het verwijderde knoop punt/VM-exemplaar wordt weer gegeven in een slechte staat in Service Fabric Explorer. Zie [gedragingen die u mogelijk in service Fabric Explorer kunt](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer)zien voor een uitleg van dit gedrag. U kunt het volgende doen:
 > * Roep de [opdracht Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps&preserve-view=true) aan met de juiste knooppunt naam.
 > * Implementeer het [service Fabric hulp programma voor automatisch schalen](https://github.com/Azure/service-fabric-autoscale-helper/) in uw cluster. Deze toepassing zorgt ervoor dat de geschaalde knoop punten uit Service Fabric Explorer worden gewist.
 
@@ -198,7 +188,7 @@ Het betrouwbaarheids niveau is ingesteld in de sectie eigenschappen van de [reso
 ## <a name="durability-levels"></a>Duurzaamheids niveaus
 
 > [!WARNING]
-> Voor knooppunt typen met de duurzaamheid Bronze zijn _geen bevoegdheden_nodig. Infrastructuur taken die van invloed zijn op uw staatloze workloads, worden niet gestopt of uitgesteld. Dit kan van invloed zijn op uw workloads. 
+> Voor knooppunt typen met de duurzaamheid Bronze zijn _geen bevoegdheden_ nodig. Infrastructuur taken die van invloed zijn op uw staatloze workloads, worden niet gestopt of uitgesteld. Dit kan van invloed zijn op uw workloads. 
 >
 > Gebruik alleen Bronze duurzaamheid voor knooppunt typen die stateless werk belastingen uitvoeren. Voer zilver of hoger uit om de status consistentie te garanderen. Kies de juiste betrouw baarheid op basis van de richt lijnen in de [documentatie over capaciteits planning](./service-fabric-cluster-capacity.md).
 

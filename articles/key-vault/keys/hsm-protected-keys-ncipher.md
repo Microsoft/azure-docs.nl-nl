@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 05/29/2020
 ms.author: ambapat
-ms.openlocfilehash: f5d58f89aa87a39d12b2d6f6a3a91254a653a088
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8a1f3b5e80152fb0fb9458aef0d3524dd2d6f5eb
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784657"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092326"
 ---
 # <a name="import-hsm-protected-keys-for-key-vault-ncipher"></a>Met HSM beveiligde sleutels importeren voor Key Vault (nCipher)
 
@@ -61,7 +61,7 @@ Raadpleeg de volgende tabel voor een lijst met vereisten voor BYOK voor Azure Ke
 | --- | --- |
 | Een abonnement op Azure |Als u een Azure-sleutelkluis wilt maken, hebt u een Azure-abonnement nodig: meld u aan voor een [gratis proefversie](https://azure.microsoft.com/pricing/free-trial/). |
 | De Premium-servicelaag van Azure Key Vault voor de ondersteuning van met HSM beveiligde sleutels |Zie de [website met prijzen voor Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/) voor meer informatie over de servicelagen en mogelijkheden voor Azure Key Vault. |
-| HSM's uit de nCipher nShield-serie, smartcards en ondersteunende software |U moet toegang hebben tot een HSM (Hardware Security Module) van nCipher en weten hoe een HSM uit de nCipher nShield-serie in grote lijnen werkt. Zie [deze website van nCipher (Engelstalig)](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/how-to-buy) voor een lijst met compatibele modellen, of om een HSM te kopen als u er nog geen hebt. |
+| HSM's uit de nCipher nShield-serie, smartcards en ondersteunende software |U moet toegang hebben tot een HSM (Hardware Security Module) van nCipher en weten hoe een HSM uit de nCipher nShield-serie in grote lijnen werkt. Zie [deze website van nCipher (Engelstalig)](https://go.ncipher.com/rs/104-QOX-775/images/nCipher_nShield_Family_Brochure.pdf?_ga=2.106120835.1607422418.1590478092-577009923.1587131206) voor een lijst met compatibele modellen, of om een HSM te kopen als u er nog geen hebt. |
 | De volgende hardware en software:<ol><li>Een offline x64-werkstation met minimaal Windows 7 en nCipher nShield-software van ten minste versie 11.50.<br/><br/>Als op dit werkstation Windows 7 wordt uitgevoerd, moet u [Microsoft .NET Framework 4.5 installeren](https://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Een werkstation met een internetverbinding en minimaal Windows 7 en **minimaal versie 1.1.0** van [Azure PowerShell](/powershell/azure/?view=azps-1.2.0).</li><li>Een USB-station of een ander draagbaar opslagapparaat met ten minste 16 MB beschikbare ruimte.</li></ol> |Uit veiligheidsoverwegingen raden we u aan het eerste werkstation niet aan te sluiten op een netwerk. Deze aanbeveling wordt echter niet programmatisch afgedwongen.<br/><br/>In de onderstaande instructies wordt dit werkstation het offline werkstation genoemd.</p></blockquote><br/>Als uw tenantsleutel is bedoeld voor een productienetwerk, adviseren we bovendien dat u een tweede, afzonderlijk werkstation gebruikt om de toolset te downloaden en de tenantsleutel te uploaden. Voor testdoeleinden kunt u echter hetzelfde werkstation gebruiken als het eerste.<br/><br/>In de onderstaande instructies wordt dit tweede werkstation het online werkstation genoemd.</p></blockquote><br/> |
 
 ## <a name="generate-and-transfer-your-key-to-azure-key-vault-hsm"></a>Uw sleutel genereren en overbrengen naar een HSM van Azure Key Vault
@@ -255,7 +255,7 @@ Voer voor deze tweede stap de volgende procedures uit op het werkstation dat nie
 
 Installeer de ondersteunende software van nCipher op een Windows-computer en koppel vervolgens een nCipher nShield-HSM aan die computer.
 
-Zorg ervoor dat de tools van nCipher zich in het pad bevinden ( **%nfast_home%\bin** ). Typ bijvoorbeeld het volgende:
+Zorg ervoor dat de tools van nCipher zich in het pad bevinden ( **%nfast_home%\bin**). Typ bijvoorbeeld het volgende:
 
   ```cmd
   set PATH=%PATH%;"%nfast_home%\bin"
@@ -287,7 +287,7 @@ Start een opdrachtprompt en voer het programma new-world van nCipher uit.
     new-world.exe --initialize --cipher-suite=DLf3072s256mRijndael --module=1 --acs-quorum=2/3
    ```
 
-Dit programma maakt een **Beveiligingswereld** -bestand op %NFAST_KMDATA%\local\world, wat overeenkomt met de map C:\ProgramData\nCipher\Key Management Data\local. U kunt verschillende waarden voor het quorum gebruiken, maar in ons voorbeeld wordt u gevraagd om drie lege kaarten en pincodes in te voeren. Vervolgens geven twee van de kaarten volledige toegang tot de Security World. Deze kaarten worden de **Beheerderskaartenset** voor de nieuwe beveiligingswereld.
+Dit programma maakt een **Beveiligingswereld**-bestand op %NFAST_KMDATA%\local\world, wat overeenkomt met de map C:\ProgramData\nCipher\Key Management Data\local. U kunt verschillende waarden voor het quorum gebruiken, maar in ons voorbeeld wordt u gevraagd om drie lege kaarten en pincodes in te voeren. Vervolgens geven twee van de kaarten volledige toegang tot de Security World. Deze kaarten worden de **Beheerderskaartenset** voor de nieuwe beveiligingswereld.
 
 > [!NOTE]
 > Als uw HSM geen ondersteuning biedt voor de nieuwere coderingssuite DLf3072s256mRijndael, kunt u --cipher-suite= DLf3072s256mRijndael vervangen door --cipher-suite=DLf1024s160mRijndael
@@ -416,13 +416,13 @@ Het gedownloade pakket valideren:
      >
 2. Controleer of het volgende wordt weergegeven. Dit geeft aan dat de validatie is gelukt: **Result: SUCCESS**
 
-Met dit script wordt de keten van ondertekening gecontroleerd tot de hoofdsleutel van nShield. De hash van deze hoofdsleutel is ingesloten in het script en de waarde moet gelijk zijn aan **59178a47 de508c3f 291277ee 184f46c4 f1d9c639** . U kunt deze waarde ook afzonderlijk bevestigen door naar de [website van nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/validation) te gaan.
+Met dit script wordt de keten van ondertekening gecontroleerd tot de hoofdsleutel van nShield. De hash van deze hoofdsleutel is ingesloten in het script en de waarde moet gelijk zijn aan **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. U kunt deze waarde ook afzonderlijk bevestigen door naar de [website van nCipher](https://www.ncipher.com) te gaan.
 
 U kunt nu een nieuwe sleutel gaan maken.
 
 ### <a name="step-35-create-a-new-key"></a>Stap 3.5: een nieuwe sleutel maken
 
-Genereer een sleutel met behulp van het nCipher nShield-programma **generatekey** .
+Genereer een sleutel met behulp van het nCipher nShield-programma **generatekey**.
 
 Voer de volgende opdracht uit om de sleutel te genereren:
 
@@ -432,11 +432,11 @@ generatekey --generate simple type=RSA size=2048 protect=module ident=contosokey
 
 Volg de volgende instructies om deze opdracht uit te voeren:
 
-* De parameter *protect* moet worden ingesteld op de waarde **module** , zoals weergegeven. Hiermee maakt u een modulair beveiligde sleutel. De BYOK-toolset biedt geen ondersteuning voor met OCS beveiligde sleutels.
+* De parameter *protect* moet worden ingesteld op de waarde **module**, zoals weergegeven. Hiermee maakt u een modulair beveiligde sleutel. De BYOK-toolset biedt geen ondersteuning voor met OCS beveiligde sleutels.
 * Vervang de waarde van *contosokey* voor de **ident** en **plainname** door een willekeurige tekenreekswaarde. Om de administratieve overhead zo veel mogelijk te beperken en de kans op fouten te verkleinen, raden we u aan om voor beiden dezelfde waarde te gebruiken. De waarde voor **ident** mag alleen cijfers, streepjes en kleine letters bevatten.
-* De pubexp is leeg (standaard) in dit voorbeeld, maar u kunt specifieke waarden opgeven. Raadpleeg de [documentatie van nCipher](https://www.ncipher.com/resources/solution-briefs/protect-sensitive-data-rest-and-use-across-premises-and-azure-based) voor meer informatie.
+* De pubexp is leeg (standaard) in dit voorbeeld, maar u kunt specifieke waarden opgeven. Raadpleeg de [documentatie van nCipher](https://www.entrust.com/-/media/documentation/brochures/entrust-nshield-general-purpose-hsms-br-a4.pdf) voor meer informatie.
 
-Met deze opdracht maakt u een getokeniseerd sleutelbestand in de map %NFAST_KMDATA%\local met een naam die begint met **key_simple_** , gevolgd door de **ident** die is opgegeven in de opdracht. Bijvoorbeeld: **key_simple_contosokey** . Dit bestand bevat een versleutelde sleutel.
+Met deze opdracht maakt u een getokeniseerd sleutelbestand in de map %NFAST_KMDATA%\local met een naam die begint met **key_simple_** , gevolgd door de **ident** die is opgegeven in de opdracht. Bijvoorbeeld: **key_simple_contosokey**. Dit bestand bevat een versleutelde sleutel.
 
 Maak van deze Tokenized sleutel een back-up op een veilige locatie.
 
@@ -668,7 +668,7 @@ Volg de volgende instructies om deze opdracht uit te voeren:
 * Vervang *SubscriptionID* door de id van het Azure-abonnement dat uw sleutelkluis bevat. U hebt deze waarde eerder opgehaald, in **Stap 1.2: id van Azure-abonnement ophalen** van de stap [Het online werkstation voorbereiden](#step-1-prepare-your-internet-connected-workstation) .
 * Vervang *ContosoFirstHSMKey* door een label dat wordt gebruikt voor de naam van het uitvoerbestand.
 
-Als de opdrachten allemaal zijn voltooid, ziet u **Result: SUCCESS** en staat er in de huidige map een nieuw bestand met de volgende naam: KeyTransferPackage- *ContosoFirstHSMkey* .byok
+Als de opdrachten allemaal zijn voltooid, ziet u **Result: SUCCESS** en staat er in de huidige map een nieuw bestand met de volgende naam: KeyTransferPackage-*ContosoFirstHSMkey*.byok
 
 ### <a name="step-43-copy-your-key-transfer-package-to-the-internet-connected-workstation"></a>Stap 4.3: uw pakket voor sleuteloverdracht kopiëren naar het online werkstation
 

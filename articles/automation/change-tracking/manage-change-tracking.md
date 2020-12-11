@@ -3,14 +3,14 @@ title: Wijzigingen bijhouden en inventaris in Azure Automation beheren
 description: In dit artikel leest u hoe u Wijzigingen bijhouden en inventaris kunt gebruiken om wijzigingen in de software en micro soft-Services in uw omgeving bij te houden.
 services: automation
 ms.subservice: change-inventory-management
-ms.date: 11/02/2020
+ms.date: 12/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 99cdc4191320efb37b37e4ec38e808f3961a1207
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 636dbf95567f761aee19bd567b0835173ce36ccc
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288734"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093618"
 ---
 # <a name="manage-change-tracking-and-inventory"></a>Wijzigingen bijhouden en inventaris beheren
 
@@ -99,6 +99,7 @@ Gebruik de volgende stappen om bestands tracering op Linux-computers te configur
 Met het bijhouden van bestands inhoud kunt u de inhoud van een bestand voor en na een bijgehouden wijziging bekijken. De functie slaat de inhoud van het bestand op in een [opslag account](../../storage/common/storage-account-overview.md) nadat elke wijziging is doorgevoerd. Hier volgen enkele regels om de inhoud van het bestand bij te houden:
 
 * Een standaard opslag account met het Resource Manager-implementatie model is vereist voor het opslaan van bestands inhoud.
+* Standaard accepteren opslagaccounts verbindingen van clients in elk netwerk. Als u uw opslag account hebt beveiligd om alleen bepaalde verkeer toe te staan, moet u de configuratie regels aanpassen zodat uw Automation-account er verbinding mee kan maken. Zie [Azure Storage firewalls en virtuele netwerken configureren](../../storage/common/storage-network-security.md).
 * Gebruik geen Premium-en klassieke implementatie model opslag accounts. Zie [over Azure Storage-accounts](../../storage/common/storage-account-create.md).
 * U kunt het opslag account koppelen aan slechts één Automation-account.
 * Wijzigingen bijhouden en inventaris moeten zijn ingeschakeld in uw Automation-account.

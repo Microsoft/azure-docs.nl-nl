@@ -1,23 +1,23 @@
 ---
-title: Een overdracht bijwerken
+title: Een delegatie bijwerken
 description: Meer informatie over het bijwerken van een delegering voor een klant die eerder is geboardd naar Azure Lighthouse.
 ms.date: 12/03/2020
 ms.topic: how-to
-ms.openlocfilehash: 90827281ac9b05105700298494af0b60b0fa511f
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: e204d1f3546e6e978f91c7e808065a388a4af4b3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96610895"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093414"
 ---
-# <a name="update-a-delegation"></a>Een overdracht bijwerken
+# <a name="update-a-delegation"></a>Een delegatie bijwerken
 
 Nadat u een abonnement (of resource groep) naar Azure Lighthouse hebt voor bereid, moet u mogelijk wijzigingen aanbrengen. Uw klant wil bijvoorbeeld dat u aanvullende beheer taken moet uitvoeren waarvoor een andere ingebouwde rol van Azure is vereist, of u moet mogelijk de Tenant wijzigen waaraan een klant abonnement is overgedragen.
 
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, kunnen [bedrijven die meerdere tenants beheren](../concepts/enterprise.md) , hetzelfde proces gebruiken voor het instellen van Azure Lighthouse en het samen voegen van hun beheer ervaring.
 
-Als u [uw klant via Azure Resource Manager (arm)-Sjablonen](onboard-customer.md)hebt ingepakt, moet er een nieuwe implementatie voor die klant worden uitgevoerd. Afhankelijk van wat u wilt wijzigen, kunt u de oorspronkelijke aanbieding bijwerken of de oorspronkelijke aanbieding verwijderen en een nieuwe maken.
+Als u [uw klant hebt ingepakt via Azure Resource Manager sjablonen (arm-sjablonen)](onboard-customer.md), moet voor die klant een nieuwe implementatie worden uitgevoerd. Afhankelijk van wat u wilt wijzigen, kunt u de oorspronkelijke aanbieding bijwerken of de oorspronkelijke aanbieding verwijderen en een nieuwe maken.
 
 - **Als u alleen autorisaties wijzigt**: u kunt uw overdracht bijwerken door alleen de sectie **autorisaties** van de arm-sjabloon te wijzigen.
 - **Als u de beheer-Tenant wijzigt**: u moet een nieuwe arm-sjabloon maken die gebruikmaakt van een andere **mspOfferName** dan uw vorige aanbieding.

@@ -7,16 +7,16 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: jgao
-ms.openlocfilehash: 4ec6796cd0ed91987c1ef52fb5e9494a3142e00e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 3a229d1e6752eabd099a5bc60ef93f1d4e85a26b
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030447"
+ms.locfileid: "97092751"
 ---
-# <a name="use-deployment-scripts-in-templates-preview"></a>Implementatie scripts gebruiken in sjablonen (preview-versie)
+# <a name="use-deployment-scripts-in-arm-templates-preview"></a>Implementatie scripts gebruiken in ARM-sjablonen (preview-versie)
 
-Meer informatie over het gebruik van implementatie scripts in azure-resource sjablonen. Met een nieuw resource type `Microsoft.Resources/deploymentScripts` , kunnen gebruikers scripts uitvoeren in sjabloon implementaties en uitvoerings resultaten controleren. Deze scripts kunnen worden gebruikt voor het uitvoeren van aangepaste stappen zoals:
+Meer informatie over het gebruik van implementatie scripts in azure-resource sjablonen (ARM-sjablonen). Met een nieuw resource type `Microsoft.Resources/deploymentScripts` , kunnen gebruikers scripts uitvoeren in sjabloon implementaties en uitvoerings resultaten controleren. Deze scripts kunnen worden gebruikt voor het uitvoeren van aangepaste stappen zoals:
 
 - gebruikers toevoegen aan een map
 - bewerkingen voor gegevens vlak uitvoeren, bijvoorbeeld blobs of een Seed-data base kopiëren
@@ -39,7 +39,7 @@ De bron van het implementatie script is alleen beschikbaar in de regio's waar Az
 
 > [!IMPORTANT]
 > De deploymentScripts resource API-versie 2020-10-01 ondersteunt [OnBehalfofTokens (OBO)](../../active-directory/develop/v2-oauth2-on-behalf-of-flow.md). Met behulp van OBO maakt de implementatie script service gebruik van het token van de implementatie-principal voor het maken van de onderliggende resources voor het uitvoeren van implementatie scripts, waaronder Azure container instance, een Azure-opslag account en roltoewijzingen voor de beheerde identiteit. In oudere API-versies wordt de beheerde identiteit gebruikt voor het maken van deze resources.
-> Poging tot logica voor Azure-aanmelding is nu ingebouwd in het wrapper-script. Als u machtigingen verleent in dezelfde sjabloon waar u implementatie scripts uitvoert.  De implementatie script service probeert de aanmelding gedurende tien minuten met een interval van 10 seconden totdat de roltoewijzing van de beheerde identiteit wordt gerepliceerd.
+> Pogings logica voor Azure Sign in is nu ingebouwd in het wrapper-script. Als u machtigingen verleent in dezelfde sjabloon waar u implementatie scripts uitvoert.  De implementatie script service probeert zich 10 minuten aan te melden met een interval van 10 seconden totdat de roltoewijzing van de beheerde identiteit wordt gerepliceerd.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -135,7 +135,7 @@ De volgende JSON is een voor beeld.  Het meest recente sjabloon schema kunt u [h
 
 Details van eigenschaps waarde:
 
-- **Identiteit**: voor implementatie script-API-versie 2020-10-01 of hoger is een door de gebruiker toegewezen beheerde identiteit optioneel tenzij u specifieke bewerkingen van Azure in het script moet uitvoeren.  Voor de API-versie 2019-10-01-preview is een beheerde identiteit vereist als de implementatie script service deze gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
+- **Identiteit**: voor implementatie script-API-versie 2020-10-01 of hoger is een door de gebruiker toegewezen beheerde identiteit optioneel tenzij u in het script specifieke acties van Azure moet uitvoeren.  Voor de API-versie 2019-10-01-preview is een beheerde identiteit vereist als de implementatie script service deze gebruikt voor het uitvoeren van de scripts. Op dit moment wordt alleen door de gebruiker toegewezen beheerde identiteit ondersteund.
 - **kind**: Geef het type script op. Momenteel worden Azure PowerShell-en Azure CLI-scripts ondersteund. De waarden zijn **AzurePowerShell** en **AzureCLI**.
 - **updatetag**: als u deze waarde wijzigt tussen de implementaties van een sjabloon, wordt het implementatie script opnieuw uitgevoerd. Als u de functie newGuid () of utcNow () gebruikt, kunnen beide functies alleen worden gebruikt in de standaard waarde voor een para meter. Zie [Script meerdere keren uitvoeren](#run-script-more-than-once) voor meer informatie.
 - **containerSettings**: Geef de instellingen op om Azure container instance aan te passen.  **containerGroupName** is voor het opgeven van de naam van de container groep.  Als u niets opgeeft, wordt de groeps naam automatisch gegenereerd.
@@ -143,7 +143,7 @@ Details van eigenschaps waarde:
 - **azPowerShellVersion** / **azCliVersion**: Geef de module versie op die moet worden gebruikt. Zie [vereisten](#prerequisites)voor een lijst met ondersteunde Power shell-en CLI-versies.
 - **arguments**: Geef de parameterwaarden op. De waarden worden gescheiden door een spatie.
 
-    Met implementatie scripts worden de argumenten gesplitst in een matrix met teken reeksen door het aanroepen van de [CommandLineToArgvW ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) -systeem aanroep. Dit is nodig omdat de argumenten worden door gegeven als een [opdracht eigenschap](/rest/api/container-instances/containergroups/createorupdate#containerexec) naar Azure container instance en de opdracht eigenschap een matrix van teken reeks is.
+    Met implementatie scripts worden de argumenten gesplitst in een matrix met teken reeksen door het aanroepen van de [CommandLineToArgvW ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) -systeem aanroep. Deze stap is nodig omdat de argumenten worden door gegeven als een [opdracht eigenschap](/rest/api/container-instances/containergroups/createorupdate#containerexec) naar Azure container instance en de opdracht eigenschap een matrix van teken reeks is.
 
     Als de argumenten escape tekens bevatten, gebruikt u [JsonEscaper](https://www.jsonescaper.com/) om de tekens te verdubbelen. Plak de oorspronkelijke escape teken reeks in het hulp programma en selecteer vervolgens **Escape**.  Het hulp programma voert een dubbele escape teken reeks uit. In de vorige voorbeeld sjabloon is het argument bijvoorbeeld **: naam \\ "John Davids \\ "**.  De escape teken reeks is **: name \\ \\ \\ "John Davids \\ \\ \\ "**.
 
@@ -229,7 +229,7 @@ U kunt complexe logica van elkaar scheiden in een of meer ondersteunende script 
 
 Ondersteunende script bestanden kunnen worden aangeroepen vanuit inline scripts en primaire script bestanden. Ondersteunende script bestanden hebben geen beperkingen voor de bestands extensie.
 
-De ondersteunende bestanden worden tijdens de runtime gekopieerd naar azscripts/azscriptinput. Gebruik relatief pad om te verwijzen naar de ondersteunende bestanden van inline-scripts en primaire script bestanden.
+De ondersteunende bestanden worden naar `azscripts/azscriptinput` tijdens de runtime gekopieerd. Gebruik relatief pad om te verwijzen naar de ondersteunende bestanden van inline-scripts en primaire script bestanden.
 
 ## <a name="work-with-outputs-from-powershell-script"></a>Werken met uitvoer van Power shell-script
 
@@ -309,15 +309,15 @@ De script service stelt de inrichtings status van de resource in op **mislukt** 
 
 Als omgevings variabelen (EnvironmentVariable) in uw container instanties worden ingesteld, kunt u een dynamische configuratie opgeven van de toepassing of het script dat door de container wordt uitgevoerd. Met het implementatie script worden niet-beveiligde en beveiligde omgevings variabelen op dezelfde manier verwerkt als Azure container instance. Zie [omgevings variabelen instellen in container instanties](../../container-instances/container-instances-environment-variables.md#secure-values)voor meer informatie.
 
-De Maxi maal toegestane grootte voor omgevings variabelen is 64 kB.
+De Maxi maal toegestane grootte voor omgevings variabelen is 64 KB.
 
 ## <a name="monitor-and-troubleshoot-deployment-scripts"></a>Implementatie scripts bewaken en problemen oplossen
 
-De script service maakt een [opslag account](../../storage/common/storage-account-overview.md) (tenzij u een bestaand opslag account opgeeft) en een [container exemplaar](../../container-instances/container-instances-overview.md) voor het uitvoeren van een script. Als deze resources automatisch worden gemaakt door de script service, hebben beide bronnen het **azscripts** -achtervoegsel in de resource namen.
+De script service maakt een [opslag account](../../storage/common/storage-account-overview.md) (tenzij u een bestaand opslag account opgeeft) en een [container exemplaar](../../container-instances/container-instances-overview.md) voor het uitvoeren van een script. Als deze resources automatisch worden gemaakt door de script service, hebben beide bronnen het `azscripts` achtervoegsel in de resource namen.
 
 ![Bron namen van Resource Manager-sjabloon implementatie script](./media/deployment-script-template/resource-manager-template-deployment-script-resources.png)
 
-Het gebruikers script, de uitvoerings resultaten en het stdout-bestand worden opgeslagen in de bestands shares van het opslag account. Er bevindt zich een map met de naam **azscripts**. In de map zijn er twee mappen voor de invoer en de uitvoer bestanden: **azscriptinput** en **azscriptoutput**.
+Het gebruikers script, de uitvoerings resultaten en het stdout-bestand worden opgeslagen in de bestands shares van het opslag account. Er is een map met de naam `azscripts` . In de map zijn er twee mappen voor de invoer en de uitvoer bestanden: `azscriptinput` en `azscriptoutput` .
 
 De output-map bevat een **executionresult.json** en het uitvoerbestand van het script. U kunt het fout bericht voor het uitvoeren van scripts zien in **executionresult.jsop**. Het uitvoer bestand wordt alleen gemaakt wanneer het script is uitgevoerd. De input-map bevat een scriptbestand voor het PowerShell-systeem en de scriptbestanden voor de gebruikersimplementatie. U kunt het script bestand voor de gebruikers implementatie vervangen door een herziene versie en het implementatie script opnieuw uitvoeren vanuit het Azure container-exemplaar.
 
@@ -536,7 +536,7 @@ De levens cyclus van deze resources wordt bepaald door de volgende eigenschappen
 > [!NOTE]
 > Het is niet raadzaam om het opslag account en het container exemplaar dat door de script service wordt gegenereerd voor andere doel einden te gebruiken. De twee resources kunnen worden verwijderd, afhankelijk van de levens cyclus van het script.
 
-Als u het container exemplaar en het opslag account voor het oplossen van problemen wilt behouden, kunt u een opdracht voor de slaap stand toevoegen aan het script.  Bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep).
+Als u het container exemplaar en het opslag account voor het oplossen van problemen wilt behouden, kunt u een opdracht voor de slaap stand toevoegen aan het script.  Gebruik bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep).
 
 ## <a name="run-script-more-than-once"></a>Script meer dan één keer uitvoeren
 
@@ -563,7 +563,7 @@ Nadat het script is getest, kunt u dit als een implementatie script in uw sjablo
 | Foutcode | Beschrijving |
 |------------|-------------|
 | DeploymentScriptInvalidOperation | De resource definitie van het implementatie script in de sjabloon bevat ongeldige eigenschaps namen. |
-| DeploymentScriptResourceConflict | Kan een bron van het implementatie script die zich in een niet-Terminal status bevindt, niet verwijderen en de uitvoering is niet langer dan 1 uur. Het is ook niet mogelijk om hetzelfde implementatie script uit te voeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resource groepsnaam en resource naam), maar met de inhoud van verschillende script hoofdtekst tegelijk. |
+| DeploymentScriptResourceConflict | Kan geen resource voor een implementatie script verwijderen die zich in de niet-Terminal status bevindt en de uitvoering niet langer dan 1 uur is overschreden. Het is ook niet mogelijk om hetzelfde implementatie script opnieuw uit te voeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resource groepsnaam en resource naam), maar met verschillende script hoofdtekst op hetzelfde moment. |
 | DeploymentScriptOperationFailed | De implementatie script bewerking is niet intern mislukt. Neem contact op met micro soft ondersteuning. |
 | DeploymentScriptStorageAccountAccessKeyNotSpecified | De toegangs sleutel is niet opgegeven voor het bestaande opslag account.|
 | DeploymentScriptContainerGroupContainsInvalidContainers | Een container groep die door de implementatie script service is gemaakt, is extern gewijzigd en er zijn ongeldige containers toegevoegd. |
@@ -576,7 +576,7 @@ Nadat het script is getest, kunt u dit als een implementatie script in uw sjablo
 | DeploymentScriptStorageAccountInvalidAccessKeyFormat | Ongeldige sleutel indeling voor het opslag account. Zie [toegangs sleutels voor opslag accounts beheren](../../storage/common/storage-account-keys-manage.md). |
 | DeploymentScriptExceededMaxAllowedTime | De uitvoerings tijd van het implementatie script overschrijdt de time-outwaarde die is opgegeven in de resource definitie voor het implementatie script. |
 | DeploymentScriptInvalidOutputs | De uitvoer van het implementatie script is geen geldig JSON-object. |
-| DeploymentScriptContainerInstancesServiceLoginFailure | De door de gebruiker toegewezen beheerde identiteit kan niet worden aangemeld na 10 pogingen met een interval van 1 minuut. |
+| DeploymentScriptContainerInstancesServiceLoginFailure | De door de gebruiker toegewezen beheerde identiteit kan zich niet aanmelden na 10 pogingen met een interval van 1 minuut. |
 | DeploymentScriptContainerGroupNotFound | Een container groep die door de implementatie script service is gemaakt, is verwijderd door een extern hulp programma of proces. |
 | DeploymentScriptDownloadFailure | Kan geen ondersteunend script downloaden. Zie [ondersteund script gebruiken](#use-supporting-scripts).|
 | DeploymentScriptError | Het gebruikers script heeft een fout gegenereerd. |

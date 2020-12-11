@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - device-developer
-ms.openlocfilehash: 1a050daa3a4b3ae9be5ef40961c40adaa90dc72b
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 90246459663980de25e301817f651e7719e8f380
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96121819"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033172"
 ---
 # <a name="get-connected-to-azure-iot-central"></a>Verbinding maken met Azure IoT Central
 
@@ -178,11 +178,21 @@ Deze aanpak is nuttig wanneer u experimenteert met IoT Central of apparaten test
 
 ## <a name="associate-a-device-with-a-device-template"></a>Een apparaat koppelen aan een apparaatprofiel
 
-IoT Central koppelt automatisch een apparaat aan een apparaatprofiel wanneer het apparaat verbinding maakt. Een apparaat verzendt een model-ID wanneer deze verbinding maakt. IoT Central maakt gebruik van de model-ID voor het identificeren van de apparaatprofiel voor dat specifieke model van het apparaat. Het detectie proces werkt als volgt:
+IoT Central koppelt automatisch een apparaat aan een apparaatprofiel wanneer het apparaat verbinding maakt. Een apparaat verzendt een [model-id](../../iot-pnp/iot-plug-and-play-glossary.md#model-id) wanneer deze verbinding maakt. IoT Central maakt gebruik van de model-ID voor het identificeren van de apparaatprofiel voor dat specifieke model van het apparaat. Het detectie proces werkt als volgt:
 
 1. Als de sjabloon voor het apparaat al is gepubliceerd in de IoT Central toepassing, wordt het apparaat gekoppeld aan de sjabloon voor het apparaat.
-1. Als de sjabloon voor het apparaat nog niet is gepubliceerd in de IoT Central toepassing, IoT Central zoekt u het model van het apparaat in de open bare model opslagplaats. Als IoT Central het model vindt, wordt het gebruikt voor het genereren van een basis sjabloon voor het apparaat.
+1. Als de sjabloon voor het apparaat nog niet is gepubliceerd in de IoT Central toepassing, IoT Central zoekt u het model van het apparaat in de [open bare model opslagplaats](https://github.com/Azure/iot-plugandplay-models). Als IoT Central het model vindt, wordt het gebruikt voor het genereren van een basis sjabloon voor het apparaat.
 1. Als IoT Central het model niet in de open bare model opslagplaats vindt, wordt het apparaat gemarkeerd als niet- **gekoppeld**. Een operator kan een apparaatprofiel maken voor het apparaat en vervolgens het niet-gekoppelde apparaat migreren naar de nieuwe apparaatprofiel.
+
+In de volgende scherm afbeelding ziet u hoe u de model-ID van een sjabloon in IoT Central kunt weer geven. Selecteer een onderdeel in een sjabloon en selecteer vervolgens **identiteit weer geven**:
+
+:::image type="content" source="media/concepts-get-connected/model-id.png" alt-text="Scherm opname met model-ID in de sjabloon voor het apparaat van de Thermo staat.":::
+
+U kunt het model van de [Thermo](https://github.com/Azure/iot-plugandplay-models/blob/main/dtmi/com/example/thermostat-1.json) staat weer geven in de open bare model opslagplaats. De definitie van de model-ID ziet er als volgt uit:
+
+```json
+"@id": "dtmi:com:example:Thermostat;1"
+```
 
 ## <a name="device-status-values"></a>Waarden van apparaatstatus
 

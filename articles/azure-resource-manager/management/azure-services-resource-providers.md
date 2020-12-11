@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: faea6badc24d0152e94fc507cafdb15932d1ea3e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5e89b2b7cf7c27a501d93f63c74d81d8fb40883c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452624"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033541"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -35,6 +35,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. AutonomousSystems | [Autonome systemen](https://www.microsoft.com/ai/autonomous-systems) |
 | Micro soft. AVS | [Azure VMware Solution](../../azure-vmware/index.yml) |
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
+| Micro soft. AzureArcData | Azure Arc ingeschakelde Data Services-REGI ster |
 | Micro soft. Azureworden | SQL Server REGI ster |
 | Micro soft. AzureStack | baan |
 | Micro soft. AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
@@ -57,7 +58,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. ClassicSubscription- [geregistreerd](#registration) | Klassiek implementatiemodel |
 | Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
 | Micro soft. commerce- [geregistreerd](#registration) | baan |
-| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtual Machine Scale Sets](../../virtual-machine-scale-sets/index.yml) |
+| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtuele-machineschaalsets](../../virtual-machine-scale-sets/index.yml) |
 | Micro soft. verbruik- [geregistreerd](#registration) | [Cost Management](/azure/cost-management/) |
 | Micro soft. ContainerInstance | [Container Instances](../../container-instances/index.yml) |
 | Microsoft.ContainerRegistry | [Container Registry](../../container-registry/index.yml) |
@@ -137,7 +138,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal- [geregistreerd](#registration) | [Azure Portal](../../azure-portal/index.yml) |
+| Micro soft. Portal- [geregistreerd](#registration) | [Azure-portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |
@@ -163,7 +164,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. SoftwarePlan | Licentie |
 | Micro soft. Solutions | [Azure Managed Applications](../managed-applications/index.yml) |
 | Microsoft.Sql | [Azure SQL Database](../../azure-sql/database/index.yml)<br /> [Azure SQL Managed Instance](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
-| Micro soft. SqlVirtualMachine | [SQL Server op virtuele machines in Azure](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
+| Micro soft. SqlVirtualMachine | [SQL Server op Azure Virtual Machines](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
 | Microsoft.Storage | [Storage](../../storage/index.yml) |
 | Micro soft. StorageCache | [Azure HPC Cache](../../hpc-cache/index.yml) |
 | Micro soft. StorageSync | [Storage](../../storage/index.yml) |

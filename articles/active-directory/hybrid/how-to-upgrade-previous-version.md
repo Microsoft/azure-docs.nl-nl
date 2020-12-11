@@ -16,15 +16,18 @@ ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b78d3cab17b0cc4085c824cf35d4c6037f0e2af5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65fc0e84582c005c5796ceac86ee28fc46b2e1d8
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319857"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094213"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: upgraden van een vorige naar de meest recente versie
-In dit onderwerp worden de verschillende methoden beschreven die u kunt gebruiken om uw Azure Active Directory (Azure AD) Connect-installatie te upgraden naar de nieuwste versie. We raden u aan uw huidige versie van Azure AD Connect te gebruiken. U kunt ook de stappen in de sectie [Swing Migration](#swing-migration) gebruiken wanneer u een substantiële configuratie wijziging aanbrengt.
+In dit onderwerp worden de verschillende methoden beschreven die u kunt gebruiken om uw Azure Active Directory (Azure AD) Connect-installatie te upgraden naar de nieuwste versie.  U kunt ook de stappen in de sectie [Swing Migration](#swing-migration) gebruiken wanneer u een substantiële configuratie wijziging aanbrengt.
+
+>[!NOTE]
+> Het is belang rijk dat u uw servers up-to-date hebt met de nieuwste releases van Azure AD Connect. Er worden voortdurend upgrades naar AADConnect gemaakt en deze upgrades bevatten oplossingen voor beveiligings problemen en bugs, evenals verbeteringen in de prestaties en schaal baarheid. Als u wilt weten wat de nieuwste versie is, en om te zien welke wijzigingen zijn aangebracht tussen versies, raadpleegt u de [release-versie geschiedenis](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-version-history)
 
 >[!NOTE]
 > Er wordt momenteel een upgrade van een versie van Azure AD Connect naar de huidige versie ondersteund. In-place Upgrades van DirSync of ADSync worden niet ondersteund en een swing migratie is vereist.  Als u een upgrade wilt uitvoeren van DirSync, raadpleegt u [upgrade van het hulp programma Azure AD Sync (DirSync)](how-to-dirsync-upgrade-get-started.md) of de sectie [Swing Migration](#swing-migration) (Engelstalig).  </br>In de praktijk kunnen klanten op extreem oude versies problemen ondervinden die niet rechtstreeks verband houden met Azure AD Connect. Servers die gedurende enkele jaren zijn geproduceerd, hebben doorgaans verschillende patches toegepast en kunnen niet allemaal worden verwerkt.  In het algemeen moeten klanten die in 12-18 maanden niet zijn bijgewerkt, een swing-upgrade overwegen, omdat dit de meest conservatieve en minst Risk ante optie is.
@@ -54,7 +57,7 @@ Als u wijzigingen hebt aangebracht in de out-of-Box-synchronisatie regels, worde
 
 Tijdens in-place upgrade zijn mogelijk wijzigingen aangebracht die vereisen dat specifieke synchronisatie activiteiten (inclusief volledige import stap en volledige synchronisatie stap) worden uitgevoerd nadat de upgrade is voltooid. Als u dergelijke activiteiten wilt uitstellen, raadpleegt u de sectie de [volledige synchronisatie uitstellen na de upgrade](#how-to-defer-full-synchronization-after-upgrade).
 
-Als u Azure AD Connect met een niet-standaard connector (bijvoorbeeld algemene LDAP-connector en algemene SQL-connector) gebruikt, moet u de bijbehorende connector configuratie in de [Synchronization Service Manager](./how-to-connect-sync-service-manager-ui-connectors.md) na in-place upgrade vernieuwen. Raadpleeg voor meer informatie over het vernieuwen van de connector configuratie de sectie artikel [release connector versie geschiedenis-probleem oplossing](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history#troubleshooting). Als u de configuratie niet vernieuwt, zullen de stappen voor importeren en exporteren niet goed werken voor de connector. U ontvangt de volgende fout in het gebeurtenis logboek van de toepassing met het bericht *assembly-versie in Aad connector Configuration ("X.X.xxx. X ') is vroeger dan de werkelijke versie (' X.X.XXX. X ') van ' C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll '.*
+Als u Azure AD Connect met een niet-standaard connector (bijvoorbeeld algemene LDAP-connector en algemene SQL-connector) gebruikt, moet u de bijbehorende connector configuratie in de [Synchronization Service Manager](./how-to-connect-sync-service-manager-ui-connectors.md) na in-place upgrade vernieuwen. Raadpleeg voor meer informatie over het vernieuwen van de connector configuratie de sectie artikel [release connector versie geschiedenis-probleem oplossing](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history#troubleshooting). Als u de configuratie niet vernieuwt, zullen de stappen voor importeren en exporteren niet goed werken voor de connector. U ontvangt de volgende fout in het gebeurtenis logboek van de toepassing met het bericht *assembly-versie in Aad-connector configuratie (x. x. xxx. x) is vroeger dan de daad werkelijke versie (x. x. xxx. x) van ' C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll '.*
 
 ## <a name="swing-migration"></a>Swingmigratie
 Als u een complexe implementatie of veel objecten hebt, is het wellicht niet praktisch om een in-place upgrade uit te voeren op het live-systeem. Voor sommige klanten kan dit proces meerdere dagen duren, en gedurende deze periode worden er geen wijzigingen in de Delta verwerkt. U kunt deze methode ook gebruiken wanneer u van plan bent om belang rijke wijzigingen aan te brengen in de configuratie en u deze wilt uitproberen voordat ze naar de cloud worden gepusht.

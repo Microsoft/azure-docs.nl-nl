@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 39625914f179dfc8d5511b9a3d386cc8332b7efa
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a96d49a029eb83e24c1fb86954406693aa9c33a3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456298"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093958"
 ---
 # <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Aanbevolen procedures voor het laden van gegevens met behulp van exclusieve SQL-groepen in azure Synapse Analytics
 
@@ -71,6 +71,9 @@ Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de vo
        ,MEMBERNAME = 'loader'
    );
 ```
+<br><br>
+>[!IMPORTANT] 
+>Dit is een zeer voor beeld van het toewijzen van 100% resources van de SQL-groep aan één belasting. Hiermee krijgt u een maximum gelijktijdigheid van 1. Houd er rekening mee dat deze alleen moet worden gebruikt voor de initiële belasting, waarbij u extra werkbelasting groepen met hun eigen configuraties moet maken om resources in uw workloads te balanace. 
 
 Als u een belasting wilt uitvoeren met resources voor de werkbelasting groep laden, meldt u zich aan als Loader en voert u de belasting uit.
 

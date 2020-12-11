@@ -6,13 +6,13 @@ ms.date: 09/24/2020
 ms.custom:
 - H1Hack27Feb2017
 - devx-track-csharp
-- contperfq1
-ms.openlocfilehash: 1bacb0c71c05aeb983bfa9ebf71873a22fea39a1
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+- contperf-fy21q1
+ms.openlocfilehash: b4c6ab99b0fa93e5fdea4256d6f232cc0fe4218e
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "91277696"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033728"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Toepassingen implementeren op reken knooppunten met batch-toepassings pakketten
 
@@ -81,9 +81,9 @@ Als u de toepassingen wilt weer geven in uw batch-account, selecteert u **toepas
 
 Als u deze menu optie selecteert, wordt het venster **toepassingen** geopend. In dit venster wordt de ID weer gegeven van elke toepassing in uw account en de volgende eigenschappen:
 
-- **Pakketten** : het aantal versies dat is gekoppeld aan deze toepassing.
-- **Standaard versie** : indien van toepassing, de versie van de toepassing die wordt geïnstalleerd als er geen versie wordt opgegeven bij het implementeren van de toepassing.
-- **Updates toestaan** : Hiermee geeft u op of pakket updates en verwijderingen zijn toegestaan.
+- **Pakketten**: het aantal versies dat is gekoppeld aan deze toepassing.
+- **Standaard versie**: indien van toepassing, de versie van de toepassing die wordt geïnstalleerd als er geen versie wordt opgegeven bij het implementeren van de toepassing.
+- **Updates toestaan**: Hiermee geeft u op of pakket updates en verwijderingen zijn toegestaan.
 
 Als u de [bestands structuur](files-and-directories.md) van het toepassings pakket op een reken knooppunt wilt zien, gaat u naar uw batch-account in de Azure Portal. Selecteer **groepen**. Selecteer vervolgens de pool die het reken knooppunt bevat. Selecteer het reken knooppunt waarop het toepassings pakket is geïnstalleerd en open de map **toepassingen** .
 
@@ -91,9 +91,9 @@ Als u de [bestands structuur](files-and-directories.md) van het toepassings pakk
 
 Als u de details van een toepassing wilt bekijken, selecteert u deze in het venster **toepassingen** . U kunt de volgende instellingen configureren voor uw toepassing.
 
-- **Updates toestaan** : geeft aan of toepassings pakketten kunnen worden [bijgewerkt of verwijderd](#update-or-delete-an-application-package). De standaard waarde is **Ja**. Indien ingesteld op **Nee** , kunnen bestaande toepassings pakketten niet worden bijgewerkt of verwijderd, maar nieuwe toepassings pakket versies kunnen nog steeds worden toegevoegd.
-- **Standaard versie** : het standaard toepassings pakket dat moet worden gebruikt wanneer de toepassing wordt geïmplementeerd, als er geen versie is opgegeven.
-- **Weergave naam** : een beschrijvende naam die door uw batch-oplossing kan worden gebruikt wanneer informatie over de toepassing wordt weer gegeven. Deze naam kan bijvoorbeeld worden gebruikt in de gebruikers interface van een service die u via batch aan uw klanten verstrekt.
+- **Updates toestaan**: geeft aan of toepassings pakketten kunnen worden [bijgewerkt of verwijderd](#update-or-delete-an-application-package). De standaard waarde is **Ja**. Indien ingesteld op **Nee**, kunnen bestaande toepassings pakketten niet worden bijgewerkt of verwijderd, maar nieuwe toepassings pakket versies kunnen nog steeds worden toegevoegd.
+- **Standaard versie**: het standaard toepassings pakket dat moet worden gebruikt wanneer de toepassing wordt geïmplementeerd, als er geen versie is opgegeven.
+- **Weergave naam**: een beschrijvende naam die door uw batch-oplossing kan worden gebruikt wanneer informatie over de toepassing wordt weer gegeven. Deze naam kan bijvoorbeeld worden gebruikt in de gebruikers interface van een service die u via batch aan uw klanten verstrekt.
 
 ### <a name="add-a-new-application"></a>Een nieuwe toepassing toevoegen
 
@@ -105,9 +105,9 @@ Selecteer in uw batch-account **toepassingen** en selecteer vervolgens **toevoeg
 
 Voer de volgende gegevens in:
 
-- **Toepassings-id** : de id van de nieuwe toepassing.
-- **Versie** : de versie van het toepassings pakket dat u uploadt.
-- **Toepassings pakket** : het. zip-bestand met de binaire bestanden van de toepassing en de ondersteunings dossiers die nodig zijn om de toepassing uit te voeren.
+- **Toepassings-id**: de id van de nieuwe toepassing.
+- **Versie**: de versie van het toepassings pakket dat u uploadt.
+- **Toepassings pakket**: het. zip-bestand met de binaire bestanden van de toepassing en de ondersteunings dossiers die nodig zijn om de toepassing uit te voeren.
 
 De **toepassings-id en-** **versie** die u invoert, moeten voldoen aan de volgende vereisten:
 

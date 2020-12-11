@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 09/13/2020
-ms.openlocfilehash: 8250f7154cfb2739d065980284da67a200680d89
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 805bc2aecda37599234c81dd928868d8c14aea4e
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919721"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091986"
 ---
 # <a name="train-machine-learning-models"></a>machine learning modellen trainen
 Met Apache Spark in azure Synapse Analytics kunt u machine learning met big data, waardoor u waardevolle inzicht kunt krijgen in grote hoeveel heden gestructureerde, ongestructureerde en snel te verplaatsen gegevens. Er zijn verschillende opties voor het trainen van machine learning modellen met behulp van Azure Spark in azure Synapse Analytics: Apache Spark MLlib, Azure Machine Learning en verschillende andere open-source-bibliotheken. 
@@ -44,13 +44,13 @@ De micro Soft Machine Learning-bibliotheek voor Apache Spark is [MMLSpark](https
 MMLSpark biedt een laag bovenop de Api's met een laag niveau van SparkML bij het bouwen van schaal bare ML-modellen, zoals het indexeren van teken reeksen, het afdwingen van gegevens in een indeling die wordt verwacht door machine learning algoritmen en het samen stellen van functie vectoren. De MMLSpark-bibliotheek vereenvoudigt deze en andere veelvoorkomende taken voor het bouwen van modellen in PySpark.
 
 ## <a name="automated-ml-in-azure-machine-learning"></a>Automatische ML in Azure Machine Learning 
-Azure Machine Learning is een cloudomgeving die u kunt gebruiken voor het trainen, implementeren, automatiseren, beheren en volgen van machine learning-modellen. Automated ML (AutoML) in Azure Machine Learning accepteert trainings gegevens en configuratie-instellingen en herhaalt automatisch combi Naties van verschillende methoden, modellen en instellingen van de functie voor normalisatie/standaardisering, om het beste model te ontvangen. 
+Azure Machine Learning is een cloudomgeving die u kunt gebruiken voor het trainen, implementeren, automatiseren, beheren en volgen van machine learning-modellen. Automatische ML in Azure Machine Learning accepteert trainings gegevens en configuratie-instellingen en herhaalt automatisch combi Naties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en afstemming-instellingen om het beste model te ontvangen. 
 
-Wanneer u AutoML binnen Azure Synapse Analytics gebruikt, kunt u gebruikmaken van de diepe integratie tussen de verschillende services om de verificatie & model training te vereenvoudigen. 
+Bij gebruik van automatische ML in azure Synapse Analytics kunt u gebruikmaken van de diepe integratie tussen de verschillende services om de verificatie & model training te vereenvoudigen. 
 
 > [!NOTE]
 > 
-> U kunt meer te weten komen over het maken van een Azure Machine Learning AutoML-experiment door deze [zelf studie](./spark/../apache-spark-azure-machine-learning-tutorial.md)te volgen.
+> U vindt meer informatie over het maken van een Azure Machine Learning-experiment voor automatische ML door deze [zelf studie](./spark/../apache-spark-azure-machine-learning-tutorial.md)te volgen.
 
 ## <a name="azure-cognitive-services"></a>Azure Cognitive Services
 [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/what-are-cognitive-services) biedt machine learning mogelijkheden om algemene problemen op te lossen, zoals het analyseren van tekst voor emotioneel sentiment of het analyseren van installatie kopieën om objecten of gezichten te herkennen. U hebt geen speciale machine learning- of data science-kennis nodig om deze services te kunnen gebruiken. Een cognitieve service biedt deel of alle onderdelen in een machine learning oplossing: gegevens, algoritme en getraind model. Deze services zijn bedoeld om algemene kennis van uw gegevens te vereisen zonder dat u ervaring hoeft te hebben met machine learning of gegevens wetenschap. U kunt deze vooraf getrainde Cognitive Services automatisch gebruiken in azure Synapse Analytics.
@@ -58,6 +58,6 @@ Wanneer u AutoML binnen Azure Synapse Analytics gebruikt, kunt u gebruikmaken va
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel vindt u een overzicht van de verschillende opties voor het trainen van machine learning modellen binnen Apache Spark Pools in azure Synapse Analytics. U kunt meer te weten komen over model training door onderstaande zelf studie te volgen:
 
-- Voer automatische ML experimenten uit met behulp van Azure Machine Learning en Azure Synapse Analytics: [AutoML-zelf studie](./spark/../apache-spark-autoscale.md) 
+- Voer automatische ML experimenten uit met behulp van Azure Machine Learning en Azure Synapse Analytics: [zelf studie over automatisch ml](./spark/../apache-spark-autoscale.md) 
 - SparkML experimenten uitvoeren: [Apache SparkML-zelf studie](../spark/apache-spark-azure-machine-learning-tutorial.md)
 - De standaard bibliotheken weer geven: [Azure Synapse Analytics runtime](../spark/apache-spark-version-support.md)

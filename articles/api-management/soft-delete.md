@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vladvino
 ms.author: apimpm
 ms.date: 11/27/2020
-ms.openlocfilehash: fca98414a87f3b8a4f3c0969a28ee95c7ed47dc3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 72e91715398b4920c62afae5f36aa09954a577f9
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501468"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092139"
 ---
 # <a name="api-management-soft-delete-preview"></a>API Management zacht verwijderen (preview-versie)
 
@@ -29,7 +29,7 @@ De functie voor voorlopig verwijderen is beschikbaar via [rest API](/rest/api/ap
 
 | Bewerking | Beschrijving | API Management naam ruimte | Minimale API-versie |
 |--|--|--|--|
-| [Maken of bijwerken](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/createorupdate) | Hiermee wordt een API Management service gemaakt of bijgewerkt.  | API Management-service | Elk |
+| [Maken of bijwerken](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/createorupdate) | Hiermee wordt een API Management service gemaakt of bijgewerkt.  | API Management-service | Alle |
 | [Maken of bijwerken](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/createorupdate) met `restore` eigenschap ingesteld op **waar** | Hiermee wordt de verwijdering van API Management-service ongedaan gemaakt als deze eerder zacht werd verwijderd. Als `restore` is opgegeven en ingesteld op `true` alle andere eigenschappen, wordt genegeerd.  | API Management-service |  2020-06-01-preview |
 | [Verwijderen](/rest/api/apimanagement/2020-06-01-preview/apimanagementservice/delete) | Hiermee verwijdert u een bestaande API Management-service. | API Management-service | 2020-01-01-preview|
 | [Ophalen op naam](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) | De voorlopig verwijderde API Management-service op naam ophalen. | Verwijderde Services | 2020-06-01-preview |
@@ -48,7 +48,7 @@ Als uw APIM-exemplaar niet binnen 48 uur wordt hersteld, is het permanent verwij
 
 ## <a name="list-deleted-apim-instances"></a>Verwijderde APIM-instanties weer geven
 
-U kunt controleren of een voorlopig verwijderd APIM-exemplaar beschikbaar is voor herstel (Undelete) met behulp van de verwijderde Services [ophalen op basis van de naam](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) of [lijst op basis van een abonnement](/deletedservices/listbysubscription) .
+U kunt controleren of een voorlopig verwijderd APIM-exemplaar beschikbaar is voor herstel (Undelete) met behulp van de verwijderde Services [ophalen op basis van de naam](/rest/api/apimanagement/2020-06-01-preview/deletedservices/getbyname) of [lijst op basis van een abonnement](/rest/api/apimanagement/2020-06-01-preview/deletedservices/listbysubscription) .
 
 ### <a name="get-a-soft-deleted-instance-by-name"></a>Een voorlopig verwijderd exemplaar op naam ophalen
 
@@ -76,7 +76,7 @@ Als deze beschikbaar is voor ongedaan maken, wordt er door Azure een record gere
 
 ### <a name="list-all-soft-deleted-instances-for-a-given-subscription"></a>Alle voorlopig verwijderde exemplaren voor een bepaald abonnement weer geven
 
-Gebruik de API Management [lijst per abonnements](/deletedservices/listbysubscription) bewerking, `{subscriptionId}` waarbij u de abonnements-id vervangt:
+Gebruik de API Management [lijst per abonnements](/rest/api/apimanagement/2020-06-01-preview/deletedservices/listbysubscription) bewerking, `{subscriptionId}` waarbij u de abonnements-id vervangt:
 
 ```rest
 GET https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/deletedservices?api-version=2020-06-01-preview

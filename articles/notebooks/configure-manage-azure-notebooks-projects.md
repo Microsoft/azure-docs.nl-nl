@@ -4,14 +4,14 @@ description: Meer informatie over het beheren van meta gegevens van project, pro
 ms.topic: how-to
 ms.date: 02/28/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7674c2151922d26e069b5cd285cb311d7a18fa98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb106132cf0dfb14dc41c1d4b480fd3a1d7fd7fe
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852800"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093533"
 ---
-# <a name="manage-and-configure-projects-in-azure-notebooks-preview"></a><a id="manage-and-configure-projects" /> Projecten beheren en configureren in Azure Notebooks preview
+# <a name="manage-and-configure-projects-in-azure-notebooks-preview"></a>Projecten beheren en configureren in Azure Notebooks preview
 
 [!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
@@ -36,7 +36,7 @@ Standaard worden projecten uitgevoerd op de **gratis Compute** -laag. Dit is bep
 
 ## <a name="edit-project-metadata"></a>Meta gegevens van project bewerken
 
-Selecteer in het project dashboard **project instellingen**en selecteer vervolgens het tabblad **informatie** , dat de meta gegevens van het project bevat, zoals beschreven in de volgende tabel. U kunt de meta gegevens van het project op elk gewenst moment wijzigen.
+Selecteer in het project dashboard **project instellingen** en selecteer vervolgens het tabblad **informatie** , dat de meta gegevens van het project bevat, zoals beschreven in de volgende tabel. U kunt de meta gegevens van het project op elk gewenst moment wijzigen.
 
 | Instelling | Beschrijving |
 | --- | --- |
@@ -74,7 +74,7 @@ Elk item in de bestands lijst van het project bevat opdrachten via een context m
 
 ![Opdrachten in het context menu van een bestand](media/project-file-commands.png)
 
-| Opdracht | Sneltoets | Bewerking |
+| Opdracht | Sneltoets | Actie |
 | --- | --- | --- |
 | Uitvoeren | r (of klik) | Voert een notitieblok bestand uit. Andere bestands typen worden geopend voor weer gave.  |
 | Koppeling kopiëren | y | Kopieert een koppeling naar het bestand naar het klem bord. |
@@ -92,7 +92,7 @@ Een voor beeld van een bestand of notitie blok is een alleen-lezen weer gave van
 
 De voorbeeld pagina ondersteunt meerdere werkbalk opdrachten met sneltoetsen:
 
-| Opdracht | Sneltoets | Bewerking |
+| Opdracht | Sneltoets | Actie |
 | --- | --- | --- |
 | Delen | s | Hier wordt de pop-up weer gegeven van waaruit u een koppeling kunt verkrijgen, delen met sociale media, HTML ophalen voor insluiten en een e-mail verzendt. |
 | Klonen | c  | Kopieer het notitie blok naar uw account. |
@@ -117,11 +117,11 @@ De eerste keer dat Azure Notebooks een server voor het project maakt, wordt gezo
 
 U kunt de omgevings instellingen van het project gebruiken om afzonderlijke stappen te maken voor het configureren van de omgeving.
 
-Selecteer in het project dashboard **project instellingen**en selecteer vervolgens het tabblad **omgeving** waarin u de installatie stappen voor het project toevoegt, verwijdert en wijzigt:
+Selecteer in het project dashboard **project instellingen** en selecteer vervolgens het tabblad **omgeving** waarin u de installatie stappen voor het project toevoegt, verwijdert en wijzigt:
 
 ![Menu Project instellingen met het tabblad omgeving geselecteerd](media/project-settings-environment-steps.png)
 
-Als u een stap wilt toevoegen, selecteert u eerst **+ toevoegen**en selecteert u vervolgens een stap type in de vervolg keuzelijst **bewerking** :
+Als u een stap wilt toevoegen, selecteert u eerst **+ toevoegen** en selecteert u vervolgens een stap type in de vervolg keuzelijst **bewerking** :
 
 ![Bewerkings kiezer voor een nieuwe omgevings installatie stap](media/project-settings-environment-details.png)
 
@@ -145,7 +145,7 @@ In het project dashboard wordt met de opdracht **Terminal** een Linux-terminal g
 > [!Note]
 > Als u opstart scripts in de omgeving van uw project hebt, kan het openen van de terminal een bericht weer geven met de melding dat de installatie nog wordt uitgevoerd.
 
-U kunt in de terminal een standaard Linux-opdracht geven. U kunt ook `ls` in de basismap gebruiken om de verschillende omgevingen te zien die zich op de virtuele machine bevinden, zoals *anaconda2_501*, *anaconda3_420*, *anaconda3_501*, *IfSharp*en *R*, samen met een *projectmap* die het project bevat:
+U kunt in de terminal een standaard Linux-opdracht geven. U kunt ook `ls` in de basismap gebruiken om de verschillende omgevingen te zien die zich op de virtuele machine bevinden, zoals *anaconda2_501*, *anaconda3_420*, *anaconda3_501*, *IfSharp* en *R*, samen met een *projectmap* die het project bevat:
 
 ![Project terminal in Azure Notebooks](media/project-terminal.png)
 

@@ -11,13 +11,13 @@ ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.custom: contperfq2
-ms.openlocfilehash: d5c42675b182fbc34354c75778214463adfe491f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: d14e4808d5bec03dff9406f37e63ee4c76e601f8
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648137"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033218"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens
 
@@ -76,7 +76,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
     | Instelling       | Type         | Beschrijving  |
     | ------------- | ------------ | ------------ |
-    | _EnableGroupSpecificConsent_   | Boolean-waarde | Vlag waarmee wordt aangegeven of groeps eigenaren specifieke machtigingen mogen verlenen. |
+    | _EnableGroupSpecificConsent_   | Booleaans | Vlag waarmee wordt aangegeven of groeps eigenaren specifieke machtigingen mogen verlenen. |
     | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Als _EnableGroupSpecificConsent_ is ingesteld op ' True ' en deze waarde is ingesteld op de object-id van een groep, worden leden van de geïdentificeerde groep gemachtigd om groeps-specifieke machtigingen te verlenen aan de groepen waarvan ze eigenaar zijn. |
 
 1. Update-instellingen waarden voor de gewenste configuratie:
@@ -99,7 +99,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
     $limitedToValue.Value = "{group-object-id}"
     ```
 
-1. Sla uw instellingen op.
+1. Sla uw wijzigingen op.
 
     ```powershell
     if ($settings.Id) {

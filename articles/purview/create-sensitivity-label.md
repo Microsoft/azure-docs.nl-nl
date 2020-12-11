@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 195ddfcc3c781c1866a7751f989c9460463edbb9
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: c824e0abea7320a20441e51caa2a05d534ff61b3
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558161"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092683"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -190,7 +190,6 @@ Voor meer informatie over het instellen van scans op diverse assets in azure con
 |**Azure Blob Storage**     |[Azure-Blob Storage registreren en controleren](register-scan-azure-blob-storage-source.md)         |
 |**Azure Data Lake Storage**     |[Azure Data Lake Storage Gen1 registreren en scannen](register-scan-adls-gen1.md) </br>[Azure Data Lake Storage Gen2 registreren en scannen](register-scan-adls-gen2.md)         |
 |**Azure SQL Databases**|[Een Azure SQL Database registreren en scannen](register-scan-azure-sql-database.md) </br>[Een door Azure SQL Database beheerd exemplaar registreren en scannen](register-scan-azure-sql-database-managed-instance.md)|
-|**Opslag accounts achter firewalls**     |[Opslag accounts achter een firewall scannen in azure controle sfeer liggen](scan-sqlresource-firewall.md)         |
 | | |
 
 ## <a name="view-labels-on-assets"></a>Labels op assets weer geven

@@ -2,14 +2,14 @@
 title: 'Concepten: persoonlijke Clouds van Azure VMware-oplossing controleren en herstellen'
 description: Meer informatie over hoe de Azure VMware-oplossing VMware ESXi servers bewaakt en herstelt in een persoonlijke cloud van Azure VMware-oplossing.
 ms.topic: conceptual
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 ms.date: 11/20/2020
-ms.openlocfilehash: 6c37ff6cc0715182453669f67306094af2f00cdf
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7f367a6ef9b86f235a16a698735cfb58a11f6862
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024344"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033592"
 ---
 # <a name="monitor-and-repair-azure-vmware-solution-private-clouds"></a>Persoonlijke Clouds van Azure VMware-oplossing controleren en herstellen
 

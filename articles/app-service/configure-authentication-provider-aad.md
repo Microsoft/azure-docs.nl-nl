@@ -5,12 +5,12 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 2968fd84febdd3b98aa5d8b42cbf3fb66cad2036
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0c06cb11d916b417cf577b7b8f3578749feddd62
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289794"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092224"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding
 
@@ -44,15 +44,17 @@ Volg deze aanbevolen procedures bij het instellen van uw app en verificatie:
    1. Kies **bestaande AD-app selecteren** en klik vervolgens op **Azure AD-App**.
    2. Kies een bestaande app-registratie en klik op **OK**.
 
-3. Selecteer **OK** om de app app service te registreren in azure Active Directory. Er wordt een nieuwe app-registratie gemaakt.
+4. Selecteer **OK** om de app app service te registreren in azure Active Directory. Er wordt een nieuwe app-registratie gemaakt.
 
     ![Snelle instellingen in Azure Active Directory](./media/configure-authentication-provider-aad/express-settings.png)
 
-4. Beschrijving App Service biedt standaard verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. U moet gebruikers in uw app-code autoriseren. Als u app-toegang alleen wilt beperken voor gebruikers die zijn geverifieerd door Azure Active Directory, stelt **u een actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** om u aan te **melden met Azure Active Directory**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde omgeleid naar Azure Active Directory voor authenticatie.
+5. Beschrijving App Service biedt standaard verificatie, maar beperkt geen geautoriseerde toegang tot uw site-inhoud en Api's. U moet gebruikers in uw app-code autoriseren. Als u app-toegang alleen wilt beperken voor gebruikers die zijn geverifieerd door Azure Active Directory, stelt **u een actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** om u aan te **melden met Azure Active Directory**. Wanneer u deze functionaliteit instelt, vereist uw app dat alle aanvragen worden geverifieerd. Ook worden alle niet-geverifieerde omgeleid naar Azure Active Directory voor authenticatie.
 
     > [!CAUTION]
     > Het beperken van de toegang op deze manier is van toepassing op alle aanroepen naar uw app. Dit is mogelijk niet wenselijk voor apps met een openbaar beschik bare start pagina, zoals in veel toepassingen met één pagina. Voor dergelijke toepassingen kunt u **anonieme aanvragen (geen actie)** de voor keur geven, waarbij de app de aanmelding zelf hand matig start. Zie voor meer informatie [verificatie stroom](overview-authentication-authorization.md#authentication-flow).
-5. Selecteer **Opslaan**.
+6. Selecteer **Opslaan**.
+
+Zie [deze zelf studie](scenario-secure-app-authentication-app-service.md)voor een voor beeld van het configureren van Azure AD-aanmelding voor een web-app die toegang heeft tot Azure Storage en Microsoft Graph.
 
 ## <a name="configure-with-advanced-settings"></a><a name="advanced"> </a>Configureren met geavanceerde instellingen
 
@@ -80,7 +82,7 @@ Voer de volgende stappen uit:
 1. Nadat de app-registratie is gemaakt, kopieert u de **toepassings-id** en de **Directory (Tenant)-ID** voor later.
 1. Selecteer **Verificatie**. Schakel onder **impliciete toekenning** **id-tokens** in om OpenID Connect te verbinden met gebruikers aanmeldingen van app service.
 1. Beschrijving Selecteer **huis stijl**. Voer de URL van uw App Service-app in op de URL van de **Start pagina** en selecteer **Opslaan**.
-1. Selecteer **een API** -  >  **set** beschikbaar maken. Plak de URL van uw App Service-app in een app met één Tenant en selecteer **Opslaan** en voor de app voor meerdere tenants, plak in de URL die is gebaseerd op een van de geverifieerde Tenant domeinen en selecteer vervolgens **Opslaan**.
+1. Selecteer **een API**-  >  **set** beschikbaar maken. Plak de URL van uw App Service-app in een app met één Tenant en selecteer **Opslaan** en voor de app voor meerdere tenants, plak in de URL die is gebaseerd op een van de geverifieerde Tenant domeinen en selecteer vervolgens **Opslaan**.
 
    > [!NOTE]
    > Deze waarde is de **URI van de toepassings-id** van de app-registratie. Als uw web-app toegang tot een API in de Cloud vereist, hebt u de URI van de **toepassings-id** van de web-app nodig wanneer u de Cloud app Service Resource configureert. U kunt dit bijvoorbeeld gebruiken als u wilt dat de Cloud service expliciet toegang tot de Web-App verleent.
@@ -95,7 +97,7 @@ Voer de volgende stappen uit:
 ### <a name="enable-azure-active-directory-in-your-app-service-app"></a><a name="secrets"> </a>Azure Active Directory in uw app service-app inschakelen
 
 1. In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app.
-1. Selecteer in het linkerdeel venster onder **instellingen** de optie **verificatie/autorisatie**  >  **On**.
+1. Selecteer in het linkerdeel venster onder **instellingen** de optie **verificatie/autorisatie**  >  .
 1. Beschrijving Standaard staat App Service verificatie niet-geverifieerde toegang tot uw app toe. Als u gebruikers verificatie wilt afdwingen, stelt **u de actie in die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd** om u aan te **melden met Azure Active Directory**.
 1. Selecteer onder **Azure Active Directory** de optie **Verificatieproviders**.
 1. Selecteer in de **beheer modus** **geavanceerd** en configureer app service verificatie volgens de volgende tabel:
@@ -157,6 +159,7 @@ U hebt nu een daemon-client toepassing geconfigureerd die toegang heeft tot uw A
 ## <a name="next-steps"></a><a name="related-content"> </a>Volgende stappen
 
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
+* [Zelf studie: gebruikers verifiëren en autoriseren in een web-app die toegang heeft tot Azure Storage en Microsoft Graph](scenario-secure-app-authentication-app-service.md)
 * [Zelfstudie: Zelfstudie: Gebruikers eind-tot-eind verifiëren en autoriseren in Azure App Service](tutorial-auth-aad.md)
 <!-- URLs. -->
 

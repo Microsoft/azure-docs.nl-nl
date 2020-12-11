@@ -3,15 +3,15 @@ title: Azure multi-factor Authentication instellen voor het virtuele bureau blad
 description: Azure multi-factor Authentication instellen voor verbeterde beveiliging in Windows virtueel bureau blad.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 10/20/2020
+ms.date: 12/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 35af8191cfe237175cbd6669797d1744ac3ecd49
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 00aba5d169a05eab25dcc63ca813955e71d09598
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92312653"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092377"
 ---
 # <a name="enable-azure-multifactor-authentication-for-windows-virtual-desktop"></a>Azure multi-factor Authentication inschakelen voor virtueel bureau blad van Windows
 
@@ -44,9 +44,9 @@ U kunt als volgt een beleid voor voorwaardelijke toegang maken waarvoor multi-fa
 3. Selecteer **Nieuw beleid**.
 4. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
 5. Onder **Toewijzingen** selecteert u **Gebruikers en groepen**.
-6. Onder **insluiten**selecteert u **gebruikers en groepen**  >  **gebruikers en groepen** selecteren > kiest u de groep die u hebt gemaakt in de fase [vereisten](#prerequisites) .
+6. Onder **insluiten** selecteert u **gebruikers en groepen**  >  **gebruikers en groepen** selecteren > kiest u de groep die u hebt gemaakt in de fase [vereisten](#prerequisites) .
 7. Selecteer **Gereed**.
-8. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **apps selecteren**.
+8. Onder **Cloud-apps of acties**  >  , selecteert u **apps selecteren**.
 9. Selecteer een van de volgende apps op basis van de versie van het virtuele Windows-bureau blad dat u gebruikt.
    
    - Als u Windows virtueel bureau blad (klassiek) gebruikt, kiest u deze apps:
@@ -67,7 +67,7 @@ U kunt als volgt een beleid voor voorwaardelijke toegang maken waarvoor multi-fa
    > 
    > Als u Windows virtueel bureau blad (klassiek) gebruikt, kunt u dit oplossen door de App-ID 9cdead84-a844-4324-93f2-b2e6bb768d07 toe te voegen aan het beleid als het beleid voor voorwaardelijke toegang alle toegang blokkeert en alleen virtuele Windows-bureau blad-app-Id's uitsluit. Door deze app-ID niet toe te voegen, wordt de feed-detectie van Windows virtueel bureau blad-bronnen (klassiek) geblokkeerd.
 
-10. Ga naar **voor waarden**  >  **client-apps**en selecteer waar u het beleid wilt Toep assen:
+10. Ga naar **voor waarden**  >  **client-apps** en selecteer waar u het beleid wilt Toep assen:
     
     - Selecteer **browser** als u wilt dat het beleid wordt toegepast op de webclient.
     - Selecteer **mobiele apps en desktop-clients** als u het beleid wilt Toep assen op andere clients.
@@ -76,7 +76,7 @@ U kunt als volgt een beleid voor voorwaardelijke toegang maken waarvoor multi-fa
     > [!div class="mx-imgBorder"]
     > ![Een scherm opname van de pagina client-apps. De gebruiker heeft het selectie vakje Mobile apps en desktop-clients ingeschakeld.](media/select-apply.png)
 
-11. Wanneer u uw app hebt geselecteerd, kiest u **selecteren**en selecteert u **gereed**.
+11. Wanneer u uw app hebt geselecteerd, kiest u **selecteren** en selecteert u **gereed**.
 
     > [!div class="mx-imgBorder"]
     > ![Een scherm opname van de pagina Cloud-apps of-acties. De Windows Virtual Desktop-en Windows Virtual Desktop Client-apps worden rood gemarkeerd.](media/cloud-apps-enterprise.png)
@@ -84,10 +84,13 @@ U kunt als volgt een beleid voor voorwaardelijke toegang maken waarvoor multi-fa
     >[!NOTE]
     >Als u de App-ID wilt vinden van de app die u wilt selecteren, gaat u naar **bedrijfs toepassingen** en selecteert u **micro soft-toepassingen** in de vervolg keuzelijst toepassings type.
 
-12. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **multi-factor Authentication vereisen**en **selecteert**u vervolgens.
-13. Onder **toegangs beheer**  >  **sessie**selecteert u **aanmeldings frequentie**, stelt u de waarde in op de gewenste tijd tussen prompts en selecteert u **selecteren**. Als u de waarde bijvoorbeeld instelt op **1** en de eenheid op **uren**, is multi-factor Authentication vereist als een verbinding wordt gestart op een uur na de laatste.
+12. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **multi-factor Authentication vereisen** en **selecteert** u vervolgens.
+13. Onder **toegangs beheer**  >  **sessie** selecteert u **aanmeldings frequentie**, stelt u de waarde in op de gewenste tijd tussen prompts en selecteert u **selecteren**. Als u de waarde bijvoorbeeld instelt op **1** en de eenheid op **uren**, is multi-factor Authentication vereist als een verbinding wordt gestart op een uur na de laatste.
 14. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 15. Selecteer **maken** om uw beleid in te scha kelen.
+
+>[!NOTE]
+>Wanneer u de webclient gebruikt om u via uw browser aan te melden bij het virtuele bureau blad van Windows, wordt in het logboek de client-App-ID weer geven als a85cf173-4192-42f8-81fa-777a763e6e2c (Windows-client voor virtueel bureau blad). Dit komt doordat de client-app intern is gekoppeld aan de server app-ID waarvoor het beleid voor voorwaardelijke toegang is ingesteld. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

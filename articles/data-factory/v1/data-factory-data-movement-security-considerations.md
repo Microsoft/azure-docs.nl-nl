@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: e995cd8f300787a19934e9b9eeae1dea73e8576c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c694cf58f4c6b613cbc183753785a34bc15063bd
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093601"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Azure Data Factory-beveiligings overwegingen voor gegevens verplaatsing
 
@@ -33,7 +33,7 @@ Hoewel Data Factory alleen beschikbaar is in de regio's **VS-West**, VS- **Oost*
 Azure Data Factory zichzelf geen gegevens opslaat, met uitzonde ring van de gekoppelde service referenties voor gegevens archieven in de Cloud, die zijn versleuteld met behulp van certificaten. Hiermee kunt u gegevensgestuurde werk stromen maken om de verplaatsing van gegevens te organiseren tussen [ondersteunde gegevens archieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) en gegevens verwerking met behulp van [Compute Services](data-factory-compute-linked-services.md) in andere regio's of in een on-premises omgeving. U kunt hiermee ook [werk stromen bewaken en beheren](data-factory-monitor-manage-pipelines.md) met zowel programmatische als gebruikersinterface mechanismen.
 
 Gegevens verplaatsing met Azure Data Factory is **gecertificeerd** voor:
--   [HIPAA/HITECH](https://www.microsoft.com/en-us/trustcenter/Compliance/HIPAA)  
+-   [HIPAA/HITECH](/compliance/regulatory/offering-hipaa-hitech)  
 -   [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27001)  
 -   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018) 
 -   [CSA STER](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification)

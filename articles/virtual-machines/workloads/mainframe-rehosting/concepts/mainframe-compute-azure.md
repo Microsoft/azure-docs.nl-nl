@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 9c5941ec88cd793961ad66245d0dc0b5e0d7772f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04ec652c6e7ce8de003a464c6427439cf1519eab
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86998932"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092666"
 ---
 # <a name="move-mainframe-compute-to-azure"></a>Mainframe Compute verplaatsen naar Azure
 
@@ -29,7 +29,7 @@ Zoals in de afbeelding wordt weer gegeven, kan een TPM-emulator op Azure de werk
 
 ## <a name="mainframe-compute-at-a-glance"></a>Mainframe Compute in één oogopslag
 
-In de z14-mainframe worden de processors in Maxi maal vier *bakken*geordend. Een *lade* is gewoon een cluster met processors en chip sets. Elke lade kan zes actieve Central processor-chips (CP) hebben en elke CP heeft 10 systeem controller (SC)-chips. In de Intel x86-terminologie zijn er zes sockets per lade, 10 kernen per socket en vier lade. Deze architectuur biedt het ruwe equivalent van 24 sockets en 240 kernen, maximum, voor een z14.
+In de z14-mainframe worden de processors in Maxi maal vier *bakken* geordend. Een *lade* is gewoon een cluster met processors en chip sets. Elke lade kan zes actieve Central processor-chips (CP) hebben en elke CP heeft 10 systeem controller (SC)-chips. In de Intel x86-terminologie zijn er zes sockets per lade, 10 kernen per socket en vier lade. Deze architectuur biedt het ruwe equivalent van 24 sockets en 240 kernen, maximum, voor een z14.
 
 De snelle z14 CP heeft een klok snelheid van 5,2 GHz. Normaal gesp roken wordt een z14 met alle CPs in het vak geleverd. Ze worden naar behoefte geactiveerd. Een klant wordt doorgaans gefactureerd voor ten minste vier uur reken tijd per maand, ondanks het werkelijke gebruik.
 
@@ -135,4 +135,4 @@ Elke laag kan ook geschikte nood herstel services bieden. Voor productie-en data
 ### <a name="more-migration-resources"></a>Meer migratie resources
 
 - [Azure Virtual Data Center lift-en Shift-gids](https://azure.microsoft.com/resources/azure-virtual-datacenter-lift-and-shift-guide/)
-- [GlusterFS iSCSI](https://docs.gluster.org/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)
+- [GlusterFS iSCSI](https://glusterdocs.readthedocs.io/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)

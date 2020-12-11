@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 0dfb518a22fd84e0280577382715d6e554e914e8
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: fa8f9ad2d15730d2a0a2c1a722aa3970bbc8f173
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753991"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033983"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Ondersteunings matrix voor VMware-migratie
 
@@ -54,12 +54,12 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 
 **Ondersteuning** | **Details**
 --- | ---
-**Ondersteunde besturingssystemen** | U kunt [Windows](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) -en [Linux](../virtual-machines/linux/endorsed-distros.md) -besturings systemen migreren die worden ondersteund door Azure.
+**Ondersteunde besturings systemen** | U kunt [Windows](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) -en [Linux](../virtual-machines/linux/endorsed-distros.md) -besturings systemen migreren die worden ondersteund door Azure.
 **Windows-Vm's in azure** | Mogelijk moet u [enkele wijzigingen aanbrengen](prepare-for-migration.md#verify-required-changes-before-migrating) op vm's vóór de migratie. 
 **Virtuele Linux-machines in azure** | Voor sommige Vm's zijn mogelijk wijzigingen vereist zodat ze kunnen worden uitgevoerd in Azure.<br/><br/> Voor Linux worden de wijzigingen automatisch door Azure Migrate voor deze besturings systemen aangebracht:<br/> -Red Hat Enterprise Linux 7,8, 7,7, 7,6, 7,5, 7,4, 7,0, 6. x<br/> -Cent OS 7,7, 7,6, 7,5, 7,4, 6. x</br> -SUSE Linux Enterprise Server 12 SP1 +<br/> -SUSE Linux Enterprise Server 15 SP1 <br/>-Ubuntu 19,04, 19,10, 14.04 LTS, 16.04 LTS, 18.04 LTS<br/> -Debian 7, 8 <br/> Oracle Linux 7.7, 7.7CI<br/> Voor andere besturings systemen voert u de [vereiste wijzigingen](prepare-for-migration.md#verify-required-changes-before-migrating) hand matig uit.
 **Linux-opstart** | Als/boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteem schijf bevinden en niet over meerdere schijven worden verspreid.<br/> Als/boot deel uitmaakt van de hoofd partitie (/), moet de partitie '/' zich op de besturingssysteem schijf bevindt en niet over andere schijven beschikken.
 **UEFI-opstart** | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2. 
-**Schijfgrootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 32 TB voor gegevens schijven.
+**Schijf grootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 32 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 60 schijven per VM.
 **Versleutelde schijven/volumes** | Vm's met versleutelde schijven/volumes worden niet ondersteund voor migratie.
 **Gedeeld schijf cluster** | Niet ondersteund.
@@ -73,7 +73,7 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 **IPv6** | Niet ondersteund.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
 **Gelijktijdige replicatie** | 300 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 300.
-
+**Automatische installatie van de Azure VM-agent (Windows-agent)** | Ondersteund voor Windows Server 2008 R2.
 
 ### <a name="appliance-requirements-agentless"></a>Vereisten voor apparaten (zonder agent)
 
@@ -122,7 +122,7 @@ De tabel bevat een overzicht van de VMware VM-ondersteuning voor VMware-Vm's die
 **UEFI-opstart** | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2. 
 **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
-**Schijfgrootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 8 TB voor gegevens schijven.
+**Schijf grootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 8 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 63 schijven per VM.
 **Versleutelde schijven/volumes** | Vm's met versleutelde schijven/volumes worden niet ondersteund voor migratie.
 **Gedeeld schijf cluster** | Niet ondersteund.

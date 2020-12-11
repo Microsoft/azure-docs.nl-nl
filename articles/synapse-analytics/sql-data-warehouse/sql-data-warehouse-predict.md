@@ -11,12 +11,12 @@ ms.date: 07/21/2020
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: ce77a169e28e21aa37be2a49997a58ee42c93807
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: b1a2e802f66132a88060fb74831781055897b077
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510825"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093652"
 ---
 # <a name="score-machine-learning-models-with-predict"></a>Score machine learning modellen met voor spel
 
@@ -35,7 +35,7 @@ De toegewezen SQL-Groep verwacht een vooraf getraind model. Houd rekening met de
 
 - De toegewezen SQL-pool ondersteunt alleen ONNX-indelings modellen. ONNX is een open-source model indeling waarmee u modellen tussen verschillende Frameworks kunt uitwisselen om interoperabiliteit mogelijk te maken. U kunt uw bestaande modellen converteren naar de ONNX-indeling met behulp van frameworks die de systeem eigen ondersteuning bieden of pakketten converteren. Bijvoorbeeld [sklearn-onnx-](https://github.com/onnx/sklearn-onnx) pakket converteren scikit-modellen naar onnx. [ONNX github-opslag plaats](https://github.com/onnx/tutorials#converting-to-onnx-format) bevat een lijst met ondersteunde frameworks en voor beelden.
 
-   Als u gebruikmaakt van [automatische ml](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) voor training, moet u de para meter *ENABLE_ONNX_COMPATIBLE_MODELS* instellen op True om een onnx-indelings model te maken. [Automatische machine learning notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) toont een voor beeld van hoe u AutoML kunt gebruiken om een machine learning model van ONNX-indeling te maken.
+   Als u gebruikmaakt van [automatische ml](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) voor training, moet u de para meter *ENABLE_ONNX_COMPATIBLE_MODELS* instellen op True om een onnx-indelings model te maken. [Automatische machine learning notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) toont een voor beeld van het gebruik van geautomatiseerd ml voor het maken van een machine learning model van de ONNX-indeling.
 
 - De volgende gegevens typen worden ondersteund voor de invoer gegevens:
     - int, bigint, Real, float

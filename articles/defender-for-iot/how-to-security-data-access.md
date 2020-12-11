@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 677ab3327f2357ce7b242c314b44702370779def
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c4f65da4f9a4f7ade94d76e99d57439e62b3c808
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351670"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092054"
 ---
 # <a name="access-your-security-data"></a>Toegang tot uw beveiligings gegevens
 
@@ -37,7 +37,7 @@ Voor toegang tot uw waarschuwingen en aanbevelingen in uw Log Analytics-werk rui
 1. Kies een waarschuwing of aanbeveling in Defender voor IoT.
 1. Klik op **nader onderzoek** en klik vervolgens op **de kolom DeviceID om te zien op welke apparaten deze waarschuwing wordt weer gegeven**.
 
-Zie [aan de slag met query's in log Analytics](//azure/log-analytics/query-language/get-started-queries)voor meer informatie over het opvragen van gegevens uit log Analytics.
+Zie [aan de slag met query's in log Analytics](/azure/azure-monitor/log-query/get-started-queries)voor meer informatie over het opvragen van gegevens uit log Analytics.
 
 ## <a name="security-alerts"></a>Beveiligingswaarschuwingen
 
@@ -87,7 +87,7 @@ SecurityAlert
     DisplayName
 ```
 
-| IoTHubId                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Aantal |
+| IoTHubId                                                                                                       | DeviceId      | AlertSeverity | DisplayName                           | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|-----|
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Hoog          | Beveiligings aanval geslaagd           | 9   |
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Normaal        | De lokale aanmeldings poging op het apparaat is mislukt  | 242 |
@@ -164,7 +164,7 @@ SecurityRecommendation
 | summarize Cnt=count() by IoTHubId, DeviceId, RecommendationSeverity
 ```
 
-| IoTHubId                                                                                                       | DeviceId      | RecommendationSeverity | Aantal |
+| IoTHubId                                                                                                       | DeviceId      | RecommendationSeverity | Count |
 |----------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----|
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Hoog          | 2   |
 | /Subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | <device_name> | Normaal        | 1 |

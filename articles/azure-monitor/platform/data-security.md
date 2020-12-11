@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 5aa379f6601bc324bd08c53f251b2097141eec69
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 87cdecd29d684c712853970c8246002132d274ac
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911631"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094332"
 ---
 # <a name="log-analytics-data-security"></a>Log Analytics gegevens beveiliging
 Dit document is bedoeld om informatie te verschaffen die specifiek is voor Log Analytics, een functie van Azure Monitor, om de informatie over [Vertrouwenscentrum van Azure](https://www.microsoft.com/en-us/trust-center?rtc=1)aan te vullen.  
@@ -21,7 +21,7 @@ In dit artikel wordt uitgelegd hoe data door Log Analytics wordt verzameld, verw
 De Log Analytics-service beheert uw gegevens op basis van de Cloud veilig door de volgende methoden te gebruiken:
 
 * Gegevensscheiding
-* Bewaartijd voor gegevens
+* Gegevensretentie
 * Fysieke beveiliging
 * Incidentbeheer
 * Naleving
@@ -55,7 +55,7 @@ Het wordt niet aanbevolen om uw agent expliciet in te stellen voor gebruik van T
 ## <a name="data-segregation"></a>Gegevensscheiding
 Nadat uw gegevens door de Log Analytics-service zijn opgenomen, worden de gegevens in de gehele service logisch gescheiden gehouden van elk onderdeel. Alle gegevens worden gelabeld per werk ruimte. Deze markering blijft aanwezig gedurende de levenscyclus van de gegevens en deze wordt afgedwongen op elke laag van de service. Uw gegevens worden opgeslagen in een specifieke data base in het opslag cluster in de regio die u hebt geselecteerd.
 
-## <a name="data-retention"></a>Bewaartijd voor gegevens
+## <a name="data-retention"></a>Gegevensretentie
 Zoek gegevens voor geïndexeerde logboeken worden opgeslagen en bewaard volgens uw prijs plan. Zie [log Analytics prijzen](https://azure.microsoft.com/pricing/details/log-analytics/)voor meer informatie.
 
 Als onderdeel van uw [abonnements overeenkomst](https://azure.microsoft.com/support/legal/subscription-agreement/)houdt micro soft uw gegevens volgens de voor waarden van de overeenkomst.  Wanneer klant gegevens worden verwijderd, worden er geen fysieke stations vernietigd.  
@@ -72,14 +72,14 @@ De volgende tabel bevat een aantal van de beschik bare oplossingen en biedt voor
 
 De volgende tabel bevat voor beelden van gegevens typen:
 
-| **Gegevenstype** | **Fields** |
+| **Gegevens type** | **Fields** |
 | --- | --- |
 | Waarschuwing |Naam van waarschuwing, beschrijving van waarschuwing, BaseManagedEntityId, probleem-ID, IsMonitorAlert, RuleId, ResolutionState, prioriteit, Ernst, categorie, eigenaar, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Configuratie |KlantId, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, Change date |
 | Gebeurtenis |Gebeurtenis-instantie, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, Uitgevernaam, FullNumber, Number, Category, ChannelLevel, LoggingComputer, Event Data, EventParameters, TimeGenerated, TimeAdded <br>**Opmerking:** Wanneer u gebeurtenissen met aangepaste velden in het Windows-gebeurtenis logboek schrijft, worden deze door Log Analytics verzameld. |
 | Metagegevens |BaseManagedEntityId, object status, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, netwerkwerknaam, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP-adres, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, principalnaam, OffsetInMinuteFromGreenwichTime |
 | Prestaties |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
-| Status |StateChangeEventId, StateId, NewHealthState, OldHealthState, context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
+| Staat |StateChangeEventId, StateId, NewHealthState, OldHealthState, context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
 ## <a name="physical-security"></a>Fysieke beveiliging
 De Log Analytics-service wordt beheerd door personeel van micro soft en alle activiteiten worden vastgelegd en kunnen worden gecontroleerd. Log Analytics wordt gebruikt als een Azure-service en voldoet aan alle vereisten voor naleving en beveiliging van Azure. U kunt details weer geven over de fysieke beveiliging van Azure-assets op pagina 18 van het [overzicht van Microsoft Azure beveiliging](https://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Fysieke toegangs rechten voor beveiligde gebieden worden binnen één werkdag gewijzigd voor iedereen die niet meer verantwoordelijk is voor de Log Analytics service, met inbegrip van overdracht en beëindiging. Meer informatie over de wereld wijde fysieke infra structuur die [wordt gebruikt voor micro soft-data centers](https://azure.microsoft.com/global-infrastructure/).
@@ -127,7 +127,7 @@ Azure Log Analytics voldoet aan de volgende vereisten:
 * [ISO 22301](https://azure.microsoft.com/blog/iso22301/)
 * [Betaal kaart (PCI-compatibel) Data Security Standard (PCI DSS)](https://www.microsoft.com/en-us/TrustCenter/Compliance/PCI) door de PCI Security Standards-Raad.
 * [Service organization Controls (SOC) 1 type 1 en SOC 2 type 1](https://www.microsoft.com/en-us/TrustCenter/Compliance/SOC1-and-2) voldoen aan het beleid
-* [HIPAA en Hitech](https://www.microsoft.com/en-us/TrustCenter/Compliance/hipaa) voor bedrijven die een HIPAA-overeenkomst voor bedrijven hebben
+* [HIPAA en Hitech](/compliance/regulatory/offering-hipaa-hitech) voor bedrijven die een HIPAA-overeenkomst voor bedrijven hebben
 * Algemene technische criteria van Windows
 * Micro soft Trustworthy Computing
 * Als Azure-service worden de onderdelen die Log Analytics gebruikt, voldoen aan de vereisten voor naleving van Azure. Meer informatie vindt u op de naleving van het [vertrouwens centrum van micro soft](https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx).

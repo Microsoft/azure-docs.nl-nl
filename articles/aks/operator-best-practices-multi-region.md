@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 110a25fca0b0e764650665635dbe545de7a350cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b53c0002af3680567aabf0955f6bb4e0d99c2ab1
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653993"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093431"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor bedrijfs continuïteit en herstel na nood gevallen in azure Kubernetes service (AKS)
 
@@ -35,7 +35,7 @@ Er wordt een AKS-cluster geïmplementeerd in één regio. Als u uw systeem wilt 
 
 * [**Beschik baarheid van AKS-regio**](./quotas-skus-regions.md#region-availability): Kies regio's sluiten voor uw gebruikers. AKS wordt doorlopend uitgebreid naar nieuwe regio's.
 * [**Gekoppelde Azure-regio's**](../best-practices-availability-paired-regions.md): Kies voor uw geografische gebied twee regio's die aan elkaar zijn gekoppeld. Gekoppelde regio's coördineren platform updates en bepalen waar nodig herstel taken.
-* **Beschik baarheid**van de service: Bepaal of de gekoppelde regio's warm/hot, Hot/warme of warme/koud moeten zijn. Wilt u beide regio's tegelijk uitvoeren, met een regio die *gereed* is voor het leveren van verkeer? Of wilt u dat er voor een regio een tijd is om het verkeer te kunnen verwerken?
+* **Beschik baarheid** van de service: Bepaal of de gekoppelde regio's warm/hot, Hot/warme of warme/koud moeten zijn. Wilt u beide regio's tegelijk uitvoeren, met een regio die *gereed* is voor het leveren van verkeer? Of wilt u dat er voor een regio een tijd is om het verkeer te kunnen verwerken?
 
 De beschik baarheid en gekoppelde regio's van de AKS-regio zijn een gezamenlijke overweging. Implementeer uw AKS-clusters in gekoppelde regio's die zijn ontworpen voor het samen stellen van de regionale nood herstel. AKS is bijvoorbeeld beschikbaar in VS-Oost en VS-West. Deze regio's zijn gekoppeld. Kies deze twee regio's wanneer u een AKS BC/DR-strategie maakt.
 
@@ -113,7 +113,7 @@ Uw toepassingen kunnen Azure Storage gebruiken voor hun gegevens. Omdat uw toepa
 
 Voor uw toepassingen is mogelijk permanente opslag vereist, zelfs nadat een Pod is verwijderd. In Kubernetes kunt u permanente volumes gebruiken om gegevens opslag te behouden. Permanente volumes worden gekoppeld aan een VM-knoop punt en vervolgens weer blootgesteld aan het gehele. Permanente volumes volgen een Peul, zelfs als het Peul wordt verplaatst naar een ander knoop punt binnen hetzelfde cluster.
 
-De replicatie strategie die u gebruikt, is afhankelijk van uw opslag oplossing. Veelvoorkomende opslag oplossingen zoals [Gluster](https://docs.gluster.org/en/latest/Administrator%20Guide/Geo%20Replication/), [CEPH](https://docs.ceph.com/docs/master/cephfs/disaster-recovery/), [toren](https://rook.io/docs/rook/v1.2/ceph-disaster-recovery.html)en [Portworx](https://docs.portworx.com/scheduler/kubernetes/going-production-with-k8s.html#disaster-recovery-with-cloudsnaps) bieden hun eigen richt lijnen voor herstel na nood gevallen en replicatie.
+De replicatie strategie die u gebruikt, is afhankelijk van uw opslag oplossing. Veelvoorkomende opslag oplossingen zoals [Gluster](https://docs.gluster.org/en/latest/Administrator-Guide/Geo-Replication/), [CEPH](https://docs.ceph.com/docs/master/cephfs/disaster-recovery/), [toren](https://rook.io/docs/rook/v1.2/ceph-disaster-recovery.html)en [Portworx](https://docs.portworx.com/scheduler/kubernetes/going-production-with-k8s.html#disaster-recovery-with-cloudsnaps) bieden hun eigen richt lijnen voor herstel na nood gevallen en replicatie.
 
 De typische strategie bestaat uit het bieden van een gemeen schappelijk opslag punt waar toepassingen hun gegevens kunnen schrijven. Deze gegevens worden vervolgens gerepliceerd tussen regio's en vervolgens lokaal geopend.
 

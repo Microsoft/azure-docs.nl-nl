@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 11/13/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: ced78955c71f37a5a6f5231f61e5327428834f00
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ca55186a53b228aa97cc82d33a09aa3ffe455eee
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919526"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97092003"
 ---
 # <a name="machine-learning-with-apache-spark"></a>Machine learning met Apache Spark
 
@@ -43,8 +43,8 @@ Raadpleeg het artikel over het [trainen van modellen in azure Synapse Analytics]
 ### <a name="sparkml-and-mllib"></a>SparkML en MLlib
 Met de mogelijkheden van de gedistribueerde reken kracht van Spark in het geheugen is het een goede keuze voor de iteratieve algoritmen die worden gebruikt in machine learning-en grafiek berekeningen. ```spark.ml``` biedt een uniforme set Api's op hoog niveau waarmee gebruikers machine learning pijp lijnen kunnen maken en afstemmen. ```spark.ml```Ga naar de [Apache Spark ml-programmeer gids](https://spark.apache.org/docs/1.2.2/ml-guide.html)voor meer informatie over.
 
-### <a name="azure-machine-learning-automl"></a>Azure Machine Learning AutoML
-[Azure machine learning AutoML](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) (geautomatiseerd machine learning) helpt bij het automatiseren van het proces voor het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. De onderdelen voor het uitvoeren van de Azure Machine Learning AutoML SDK worden rechtstreeks in de Synapse-runtime gebouwd.
+### <a name="azure-machine-learning-automated-ml"></a>Azure Machine Learning automatische ML
+[Azure machine learning automaten](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) (geautomatiseerd machine learning) helpt u bij het automatiseren van het proces voor het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. De onderdelen voor het uitvoeren van de Azure Machine Learning Automated ML SDK worden rechtstreeks in de Synapse-runtime gebouwd.
 
 ### <a name="open-source-libraries"></a>Open-source-bibliotheken
 Elke Apache Spark pool in azure Synapse Analytics wordt geleverd met een set vooraf geladen en populaire machine learning bibliotheken.  Enkele van de relevante machine learning bibliotheken die standaard zijn opgenomen, zijn:
@@ -68,7 +68,7 @@ Als u een model registreert, kunt u meta gegevens over modellen in uw werk ruimt
 Bekijk de volgende zelf studies om aan de slag te gaan met machine learning in azure Synapse Analytics:
 - [Gegevens analyseren met Azure Synapse-notebooks](../spark/apache-spark-data-visualization-tutorial.md)
 
-- [Een machine learning model trainen met AutoML](../spark/apache-spark-azure-machine-learning-tutorial.md)
+- [Een machine learning model trainen met automatische MILLILITERs](../spark/apache-spark-azure-machine-learning-tutorial.md)
 
 - [Een machine learning model trainen met Apache Spark MLlib](../spark/apache-spark-machine-learning-mllib-notebook.md)
   

@@ -7,13 +7,13 @@ ms.topic: how-to
 author: trkeya
 ms.author: trkeya
 ms.date: 10/27/2020
-ms.custom: contperfq2
-ms.openlocfilehash: 3d96973d4d1e37ae3fee21eb70e3e32a45867f0c
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 26ceee828bae7ea3fe2d78ec1393f308556b8401
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491950"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033354"
 ---
 # <a name="update-existing-offers-in-the-commercial-marketplace"></a>Bestaande aanbiedingen bijwerken in de commerciële Marketplace
 
@@ -23,13 +23,13 @@ In dit artikel wordt uitgelegd hoe u updates voor bestaande aanbiedingen en abon
 
 Gebruik deze stappen om een aanbieding bij te werken die is gepubliceerd naar de preview-versie of de status Live.
 
-1. Selecteer de naam van de aanbieding die u wilt bijwerken. De status van de aanbieding kan worden vermeld als **Preview** , **Live** , **publiceren in voortgang** , **concept** , **aandacht vereist** of **niet beschikbaar** (als u eerder hebt gekozen om te stoppen met het verkopen van de aanbieding). Zodra deze aanbieding is geselecteerd, wordt de **overzichts** pagina van de aanbieding geopend.
-1. Selecteer de aanbiedings pagina die u wilt bijwerken, zoals **Eigenschappen** , aanbiedings **vermelding** of **Preview** (of selecteer **Update** op de betreffende kaart op de **overzichts** pagina van de aanbieding).
+1. Selecteer de naam van de aanbieding die u wilt bijwerken. De status van de aanbieding kan worden vermeld als **Preview**, **Live**, **publiceren in voortgang**, **concept**, **aandacht vereist** of **niet beschikbaar** (als u eerder hebt gekozen om te stoppen met het verkopen van de aanbieding). Zodra deze aanbieding is geselecteerd, wordt de **overzichts** pagina van de aanbieding geopend.
+1. Selecteer de aanbiedings pagina die u wilt bijwerken, zoals **Eigenschappen**, aanbiedings **vermelding** of **Preview** (of selecteer **Update** op de betreffende kaart op de **overzichts** pagina van de aanbieding).
 1. Breng uw wijzigingen aan en selecteer **concept opslaan**. Herhaal dit proces totdat alle wijzigingen zijn voltooid.
 1. Controleer de wijzigingen op de pagina **[vergelijken](#compare-changes-to-your-offer)** .
 1. Wanneer u klaar bent om uw bijgewerkte aanbieding te publiceren, selecteert u op elke pagina **controleren en publiceren** . De pagina **controleren en publiceren** wordt geopend. Op deze pagina ziet u de voltooiings status voor de secties van de aanbieding die u hebt bijgewerkt: 
-    - Niet- **gepubliceerde wijzigingen** : de sectie is bijgewerkt en is voltooid. Alle vereiste gegevens zijn opgegeven en er zijn geen fouten geïntroduceerd in de updates.
-    - **Onvolledig** : de updates die in de sectie zijn aangebracht, introduceren fouten die moeten worden hersteld of waarvoor meer informatie moet worden verstrekt.
+    - Niet- **gepubliceerde wijzigingen**: de sectie is bijgewerkt en is voltooid. Alle vereiste gegevens zijn opgegeven en er zijn geen fouten geïntroduceerd in de updates.
+    - **Onvolledig**: de updates die in de sectie zijn aangebracht, introduceren fouten die moeten worden hersteld of waarvoor meer informatie moet worden verstrekt.
 2. Selecteer **publiceren** om de bijgewerkte aanbieding te verzenden voor publicatie. Uw aanbieding gaat vervolgens door de standaard [procedure voor validatie en publicatie](../review-publish-offer.md#validation-and-publishing-steps).
 
 > [!IMPORTANT]
@@ -102,7 +102,7 @@ Voordat u updates voor uw Live-of [Preview](#compare-changes-to-a-preview-offer)
   ![Filters voor het vergelijken van updates voor uw gepubliceerde of preview-aanbieding](./media/compare-changes-marketplace.png)
 
 >[!NOTE]
-> De volgende pagina's ondersteunen momenteel geen **vergelijking** :
+> De volgende pagina's ondersteunen momenteel geen **vergelijking**:
 >- CSP reseller-groep
 >- Technische configuratie van test station
 >- Marketplace-lijst testen
@@ -135,7 +135,7 @@ Nadat u het verkopen van een aanbieding of abonnement hebt gestopt, kunt u deze 
 
 ## <a name="remove-offers-from-existing-customers"></a>Aanbiedingen van bestaande klanten verwijderen
 
-Als u aanbiedingen van bestaande klanten wilt verwijderen, moet u [een ondersteunings aanvraag registreren](https://aka.ms/marketplacepublishersupport). Selecteer in de lijst ondersteunings onderwerpen de optie **commerciële Marketplace** -  >  **aanbieding of app opheffen, verwijderen of beëindigen** en verzend de aanvraag. Het ondersteunings team leidt u door het proces voor het verwijderen van de aanbieding.
+Als u aanbiedingen van bestaande klanten wilt verwijderen, moet u [een ondersteunings aanvraag registreren](https://aka.ms/marketplacepublishersupport). Selecteer in de lijst ondersteunings onderwerpen de optie **commerciële Marketplace**-  >  **aanbieding of app opheffen, verwijderen of beëindigen** en verzend de aanvraag. Het ondersteunings team leidt u door het proces voor het verwijderen van de aanbieding.
 
 ## <a name="next-steps"></a>Volgende stappen
 

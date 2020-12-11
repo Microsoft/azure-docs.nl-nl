@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 10/07/2020
+ms.date: 12/04/2020
 ms.author: aahi
-ms.openlocfilehash: f79cfce514b81c5829ee7791c18e24d3bc6563b5
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 3b6c2a5a50cedadd8818eae735df55b661e794ef
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369372"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034017"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Virtuele Azure Cognitive Services-netwerken configureren
 
@@ -49,19 +49,22 @@ Virtuele netwerken (VNETs) worden ondersteund in [regio's waar Cognitive service
 > * Custom Vision
 > * Face
 > * Form Recognizer
+> * Immersive Reader
 > * Language Understanding (LUIS)
 > * Personalizer
-> * Tekstanalyse
+> * Speech Services
+> * Text Analytics
 > * QnA Maker
 > * Translator Text
-> * Immersive Reader
+
 
 > [!NOTE]
 > Als u LUIS gebruikt, kunt u met de tag **CognitiveServicesManagement** alleen de service gebruiken met de SDK of de rest API. Als u de LUIS-Portal vanuit een virtueel netwerk wilt openen en gebruiken, moet u de volgende tags gebruiken:  
-> * **AzureResourceManager** 
-> * **CognitiveServicesManagement**
 > * **AzureActiveDirectory**
 > * **AzureFrontDoor. front-end**
+> * **AzureResourceManager** 
+> * **CognitiveServicesManagement**
+
 
 
 ## <a name="change-the-default-network-access-rule"></a>Standaardregel voor netwerktoegang wijzigen
@@ -491,7 +494,7 @@ Met persoonlijke eind punten voor Cognitive Services resources kunt u het volgen
 
 Een persoonlijk eind punt is een speciale netwerk interface voor een Azure-resource in uw [VNet](../virtual-network/virtual-networks-overview.md). Het maken van een persoonlijk eind punt voor uw Cognitive Services resource zorgt voor een veilige connectiviteit tussen clients in uw VNet en uw bron. Het persoonlijke eind punt krijgt een IP-adres uit het IP-adres bereik van uw VNet. De verbinding tussen het persoonlijke eind punt en de Cognitive Services-service maakt gebruik van een beveiligde persoonlijke koppeling.
 
-Toepassingen in het VNet kunnen naadloos verbinding maken met de service via het persoonlijke eind punt, met behulp van dezelfde verbindings reeksen en autorisatie mechanismen die ze anders zouden gebruiken. De uitzonde ring is de speech-service, waarvoor een afzonderlijk eind punt is vereist. Zie de sectie over [privé-eind punten met de spraak service](#private-endpoints-with-the-speech-service). Privé-eind punten kunnen worden gebruikt met alle protocollen die worden ondersteund door de Cognitive Services bron, inclusief REST.
+Toepassingen in het VNet kunnen naadloos verbinding maken met de service via het persoonlijke eind punt, met behulp van dezelfde verbindings reeksen en autorisatie mechanismen die ze anders zouden gebruiken. De uitzonde ring hierop is de spraak Services, waarvoor een afzonderlijk eind punt is vereist. Zie de sectie over [privé-eind punten met de spraak Services](#private-endpoints-with-the-speech-services). Privé-eind punten kunnen worden gebruikt met alle protocollen die worden ondersteund door de Cognitive Services bron, inclusief REST.
 
 Privé-eind punten kunnen worden gemaakt in subnetten die gebruikmaken van [service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md). Clients in een subnet kunnen verbinding maken met een Cognitive Services bron met behulp van een persoonlijk eind punt, terwijl service-eind punten worden gebruikt voor toegang tot anderen.
 
@@ -509,17 +512,17 @@ Wanneer u het persoonlijke eind punt maakt, moet u de Cognitive Services resourc
 
 ### <a name="connecting-to-private-endpoints"></a>Verbinding maken met privé-eind punten
 
-Clients op een VNet met behulp van het privé-eind punt moeten hetzelfde connection string gebruiken voor de Cognitive Services resource als clients die verbinding maken met het open bare eind punt. De uitzonde ring is de speech-service, waarvoor een afzonderlijk eind punt is vereist. Zie de sectie over [privé-eind punten met de spraak service](#private-endpoints-with-the-speech-service). We vertrouwen op DNS-omzetting om de verbindingen van het VNet naar de Cognitive Services bron via een persoonlijke verbinding automatisch te routeren. De speech-service 
+Clients op een VNet met behulp van het privé-eind punt moeten hetzelfde connection string gebruiken voor de Cognitive Services resource als clients die verbinding maken met het open bare eind punt. De uitzonde ring hierop is de spraak Services, waarvoor een afzonderlijk eind punt is vereist. Zie de sectie over [privé-eind punten met de spraak Services](#private-endpoints-with-the-speech-services). We vertrouwen op DNS-omzetting om de verbindingen van het VNet naar de Cognitive Services bron via een persoonlijke verbinding automatisch te routeren. 
 
 Er wordt standaard een [privé-DNS-zone](../dns/private-dns-overview.md) gekoppeld aan het VNet met de vereiste updates voor de privé-eind punten. Als u echter uw eigen DNS-server gebruikt, moet u mogelijk aanvullende wijzigingen aanbrengen in uw DNS-configuratie. In de volgende sectie over [DNS-wijzigingen](#dns-changes-for-private-endpoints) worden de vereiste updates voor persoonlijke eind punten beschreven.
 
-### <a name="private-endpoints-with-the-speech-service"></a>Privé-eind punten met de speech-service
+### <a name="private-endpoints-with-the-speech-services"></a>Privé-eind punten met de spraak Services
 
-Wanneer u privé-eind punten gebruikt met de speech-service, moet u een aangepast eind punt gebruiken om de spraak service aan te roepen. U kunt het globale eind punt niet gebruiken. Het eind punt moet dit patroon volgen: `{account}.{stt|tts|voice|dls}.speech.microsoft.com` .
+Zie [spraak Services gebruiken met privé-eind punten van de persoonlijke Azure-koppeling](Speech-Service/speech-services-private-link.md).
 
 ### <a name="dns-changes-for-private-endpoints"></a>DNS-wijzigingen voor privé-eind punten
 
-Wanneer u een persoonlijk eind punt maakt, wordt de DNS CNAME-bron record voor de Cognitive Services resource bijgewerkt naar een alias in een subdomein met het voor voegsel ' *privatelink* '. Standaard maken we ook een [privé-DNS-zone](../dns/private-dns-overview.md), die overeenkomt met het subdomein ' *privatelink* ', met de DNS a-bron records voor de privé-eind punten.
+Wanneer u een persoonlijk eind punt maakt, wordt de DNS CNAME-bron record voor de Cognitive Services resource bijgewerkt naar een alias in een subdomein met het voor voegsel '*privatelink*'. Standaard maken we ook een [privé-DNS-zone](../dns/private-dns-overview.md), die overeenkomt met het subdomein '*privatelink*', met de DNS a-bron records voor de privé-eind punten.
 
 Wanneer u de eind punt-URL van buiten het VNet met het persoonlijke eind punt oplost, wordt deze omgezet in het open bare eind punt van de Cognitive Services resource. Wanneer het is opgelost vanuit het VNet dat het persoonlijke eind punt host, wordt de eind punt-URL omgezet naar het IP-adres van het privé-eind punt.
 

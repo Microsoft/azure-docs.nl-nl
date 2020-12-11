@@ -7,13 +7,13 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/24/2020
 ms.author: duau
-ms.custom: contperfq1
-ms.openlocfilehash: bb0d3cebd9382ef2c81b217417cfbcb6198b6ebb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 2742b03bcacd73e7e602666b898417f295905f19
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89565920"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034068"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>ExpressRoute-werkstromen voor circuitinrichting en -statussen
 
@@ -108,7 +108,7 @@ Schakel dit in om toegang te krijgen tot micro soft onlineservices, zoals Micros
 De volgende sectie bevat een overzicht van de verschillende ExpressRoute-circuit statussen voor het ExpressRoute partner Connectivity-model.
 Elk ExpressRoute-partner circuit heeft twee statussen:
 
-* **ServiceProviderProvisioningState** vertegenwoordigt de status van de zijde van de connectiviteits provider. De naam kan *NotProvisioned*, *Provisioning*of *ingericht*zijn. Het ExpressRoute-circuit moet een ingerichte status hebben om peering te kunnen configureren. **Deze status heeft alleen betrekking op ExpressRoute-partner circuits en wordt niet weer gegeven in de eigenschappen van een ExpressRoute direct-circuit**.
+* **ServiceProviderProvisioningState** vertegenwoordigt de status van de zijde van de connectiviteits provider. De naam kan *NotProvisioned*, *Provisioning* of *ingericht* zijn. Het ExpressRoute-circuit moet een ingerichte status hebben om peering te kunnen configureren. **Deze status heeft alleen betrekking op ExpressRoute-partner circuits en wordt niet weer gegeven in de eigenschappen van een ExpressRoute direct-circuit**.
 
 * **Status** staat voor de inrichtings status van micro soft. Deze eigenschap wordt ingesteld op ingeschakeld wanneer u een ExpressRoute-circuit maakt
 

@@ -89,6 +89,8 @@
       maintainContext: true
     - name: Een opslagaccount upgraden
       href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+    - name: Een verwijderd opslagaccount herstellen
+      href: ../common/storage-account-recover.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: De opslagemulator gebruiken
       href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
       maintainContext: true

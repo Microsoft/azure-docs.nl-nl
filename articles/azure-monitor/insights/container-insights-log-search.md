@@ -3,12 +3,12 @@ title: Logboeken van Azure Monitor voor containers opvragen | Microsoft Docs
 description: Azure Monitor voor containers worden metrische gegevens en logboek registraties verzameld, en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 08c42fab84cb5180497f8da4f077b9bd82283ad4
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 9bfa63a49da33289b8c811007f210e6546579d9d
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95747676"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033558"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Logboeken van Azure Monitor voor containers opvragen
 
@@ -20,8 +20,8 @@ In de volgende tabel worden de details van de records die worden verzameld door 
 
 | Gegevens | Gegevensbron | Gegevenstype | Velden |
 |------|-------------|-----------|--------|
-| Container voorraad | Kubelet | `ContainerInventory` | TimeGenerated, computer, container naam, ContainerHostname, Image, ImageTag, ContainerState, ExitCode, EnvironmentVar, Command, CreatedTime, StartedTime, FinishedTime, hebben, ContainerID, ImageID |
-| Container logboek | Docker | `ContainerLog` | TimeGenerated, computer, afbeeldings-ID, container naam, LogEntrySource, LogEntry, hebben, ContainerID |
+| Container voorraad | Kubelet | `ContainerInventory` | TimeGenerated, computer, name, ContainerHostname, Image, ImageTag, ContainerState, ExitCode, EnvironmentVar, Command, CreatedTime, StartedTime, FinishedTime, hebben, ContainerID, ImageID |
+| Container logboek | Docker | `ContainerLog` | TimeGenerated, computer, afbeeldings-ID, naam, LogEntrySource, LogEntry, hebben, ContainerID |
 | Container-knooppunt inventaris | Uitvoeren-API | `ContainerNodeInventory`| TimeGenerated, computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, hebben|
 | Inventaris van Peul in een Kubernetes-cluster | Uitvoeren-API | `KubePodInventory` | TimeGenerated, computer, ClusterId, ContainerCreationTimeStamp, PodUid, PodCreationTimeStamp, ContainerRestartCount, PodRestartCount, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, controller naam, container status, ContainerStatusReason, ContainerID, containerName, naam, PodLabel, namespace, PodStatus, clustername, PodIp, hebben |
 | Inventaris van knoop punten die deel uitmaken van een Kubernetes-cluster | Uitvoeren-API | `KubeNodeInventory` | TimeGenerated, computer, clustername, ClusterId, LastTransitionTimeReady, labels, status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, hebben | 
@@ -31,7 +31,7 @@ In de volgende tabel worden de details van de records die worden verzameld door 
 | Prestatie gegevens voor containers onderdeel van het Kubernetes-cluster | Metrische gegevens over gebruik worden opgehaald uit cAdvisor en limieten van de uitvoeren-API | Perf &#124; waarbij ObjectName = = "K8SContainer" | Tellernaam &#40; cpuRequestNanoCores, memoryRequestBytes, cpuLimitNanoCores, memoryWorkingSetBytes, restartTimeEpoch, cpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, TimeGenerated, CounterPath, hebben | 
 | Aangepaste metrische gegevens ||`InsightsMetrics` | Computer, naam, naam ruimte, oorsprong, hebben, tags<sup>1</sup>, TimeGenerated, type, Va, _ResourceId | 
 
-<sup>1</sup> de eigenschap *Tags* vertegenwoordigt [meerdere dimensies](../platform/data-platform-metrics.md#multi-dimensional-metrics) voor de bijbehorende metriek. Zie overzicht van InsightsMetrics voor meer informatie over de metrische gegevens die in de tabel worden verzameld en opgeslagen `InsightsMetrics` en een beschrijving [InsightsMetrics overview](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md)van de record eigenschappen.
+<sup>1</sup> de eigenschap *Tags* vertegenwoordigt [meerdere dimensies](../platform/data-platform-metrics.md#multi-dimensional-metrics) voor de bijbehorende metriek. Zie overzicht van InsightsMetrics voor meer informatie over de metrische gegevens die in de tabel worden verzameld en opgeslagen `InsightsMetrics` en een beschrijving [](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md)van de record eigenschappen.
 
 ## <a name="search-logs-to-analyze-data"></a>Zoek Logboeken om gegevens te analyseren
 
@@ -47,7 +47,7 @@ De container logboeken uitvoer die wordt doorgestuurd naar uw werk ruimte zijn S
 
 Het is vaak handig om query's te bouwen die beginnen met een voor beeld of twee en deze vervolgens te wijzigen zodat ze aan uw vereisten voldoen. Om geavanceerdere query's te kunnen bouwen, kunt u experimenteren met de volgende voorbeeld query's:
 
-| Query | Description | 
+| Query’s uitvoeren | Beschrijving | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project computer, name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; weergave tabel | Alle levenscyclus gegevens van een container weer geven| 
 | KubeEvents_CL<br> &#124; waar niet (IsEmpty (Namespace_s))<br> &#124; sorteren op TimeGenerated desc<br> &#124; weergave tabel | Kubernetes-gebeurtenissen|

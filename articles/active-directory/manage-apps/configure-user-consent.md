@@ -11,13 +11,13 @@ ms.topic: how-to
 ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
-ms.custom: contperfq2
-ms.openlocfilehash: 1617015d6d4a026d5dadda667dcd03447a20c288
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: c279b7f4ec2d70e7eb6a97abf02cfbf4f2ef87f0
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649497"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033609"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Configureren hoe eindgebruikers toestemming geven voor toepassingen
 
@@ -147,7 +147,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
     | Instelling       | Type         | Beschrijving  |
     | ------------- | ------------ | ------------ |
-    | _BlockUserConsentForRiskyApps_   | Boolean-waarde |  Markering die aangeeft of de gebruikers toestemming wordt geblokkeerd wanneer een Risk ante aanvraag wordt gedetecteerd. |
+    | _BlockUserConsentForRiskyApps_   | Booleaans |  Markering die aangeeft of de gebruikers toestemming wordt geblokkeerd wanneer een Risk ante aanvraag wordt gedetecteerd. |
 
 1. Waarde voor de update-instellingen voor de gewenste configuratie:
 
@@ -161,7 +161,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
     $riskBasedConsentEnabledValue.Value = "True"
     ```
 
-1. Sla uw instellingen op.
+1. Sla uw wijzigingen op.
 
     ```powershell
     if ($settings.Id) {

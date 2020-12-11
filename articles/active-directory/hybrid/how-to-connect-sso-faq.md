@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f757d8f59c06d573d71099941530dfc28174ac42
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 9a3e2dd1ac58c89060fc3e09e97617cb2a68d8ac
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420479"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094570"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Azure Active Directory naadloze eenmalige aanmelding: veelgestelde vragen
 
@@ -54,7 +54,7 @@ Daarnaast krijgen gebruikers een stille aanmeldings ervaring als een toepassing 
 | De naam van de toepassing | URL van de toepassing die moet worden gebruikt |
 | -- | -- |
 | SharePoint Online | https: \/ /contoso.SharePoint.com |
-| Azure-portal | https: \/ /Portal.Azure.com/contoso.com |
+| Azure Portal | https: \/ /Portal.Azure.com/contoso.com |
 
 Vervang in de bovenstaande tabellen ' contoso.com ' door de domein naam om naar de juiste toepassings-Url's voor uw Tenant te gaan.
 
@@ -66,7 +66,7 @@ Ja. Naadloze SSO ondersteunt `Alternate ID` als de gebruikers naam wanneer deze 
 
 **V: wat is het verschil tussen de eenmalige aanmelding van [Azure AD](../devices/overview.md) en naadloze SSO?**
 
-[Azure AD-deelname](../devices/overview.md) levert SSO aan gebruikers als hun apparaten zijn geregistreerd bij Azure AD. Deze apparaten hoeven geen lid te zijn van een domein. SSO wordt met behulp van *primaire vernieuwings tokens* of *PRTs* , en niet met Kerberos. De gebruikers ervaring is het meest optimaal op Windows 10-apparaten. SSO wordt automatisch uitgevoerd in de micro soft Edge-browser. Het werkt ook op Chrome met het gebruik van een browser extensie.
+[Azure AD-deelname](../devices/overview.md) levert SSO aan gebruikers als hun apparaten zijn geregistreerd bij Azure AD. Deze apparaten hoeven geen lid te zijn van een domein. SSO wordt met behulp van *primaire vernieuwings tokens* of *PRTs*, en niet met Kerberos. De gebruikers ervaring is het meest optimaal op Windows 10-apparaten. SSO wordt automatisch uitgevoerd in de micro soft Edge-browser. Het werkt ook op Chrome met het gebruik van een browser extensie.
 
 U kunt zowel Azure AD-deelname als naadloze SSO gebruiken voor uw Tenant. Deze twee functies zijn complementair. Als beide functies zijn ingeschakeld, heeft SSO van Azure AD-deelname voor rang op naadloze SSO.
 
@@ -82,6 +82,9 @@ Het is belang rijk dat u de Kerberos-ontsleutelings sleutel voor het `AZUREADSSO
 >We raden u ten zeerste aan de Kerberos-ontsleutelingssleutel ten minste elke 30 dagen uit te voeren.
 
 Volg deze stappen op de on-premises server waarop u Azure AD Connect:
+
+   > [!NOTE]
+   >U hebt de referenties domein beheerder en globale beheerder nodig om de volgende stappen uit te voeren.
 
    **Stap 1. Lijst met AD-forests ophalen waar naadloze SSO is ingeschakeld**
 

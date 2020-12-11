@@ -10,13 +10,13 @@ author: nishankgu
 ms.author: nigup
 ms.date: 12/1/2020
 ms.topic: conceptual
-ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: 30859593e240c4143dc298cff446ce8bc116a993
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.custom: troubleshooting,contperf-fy20q4, contperf-fy21q2
+ms.openlocfilehash: 58dacc9e65da6502d083446cb7202c222cb7e795
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780583"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034034"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Quota voor resources beheren en verg Roten met Azure Machine Learning
 
@@ -122,7 +122,7 @@ U kunt geen limieten genereren voor virtuele machines boven de waarden die in de
 
 Zie [container instances limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits)voor meer informatie.
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>Opslag
 Azure Storage heeft een limiet van 250 opslag accounts per regio, per abonnement. Deze limiet is inclusief standaard-en Premium-opslag accounts.
 
 Als u de limiet wilt verhogen, kunt u een aanvraag indienen via [ondersteuning voor Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Het Azure Storage team controleert uw aanvraag en kan Maxi maal 250 opslag accounts voor een regio goed keuren.

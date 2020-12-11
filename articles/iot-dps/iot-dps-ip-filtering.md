@@ -7,12 +7,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
 ms.date: 03/12/2020
-ms.openlocfilehash: f50c84212e62fae378d9d95e8990e084c82bb99a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4067d157a13618b008e2cb1a5fee31259bfd43a9
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000365"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094349"
 ---
 # <a name="use-azure-iot-dps-ip-connection-filters"></a>IP-verbindingsfilters van Azure IoT DPS gebruiken
 
@@ -135,7 +135,7 @@ Werk de kenmerken van de IP-filterregel van de sjabloon bij op basis van uw vere
 
 | Kenmerk                | Beschrijving |
 | ------------------------ | ----------- |
-| **FilterName**           | Geef een naam op voor de IP-filterregel. Dit moet een unieke, niet-hoofdlettergevoelige tekenreeks van maximaal 128 tekens zijn. Alleen de ASCII 7-bits alfanumerieke tekens plus  {'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''} worden geaccepteerd. |
+| **FilterName**           | Geef een naam op voor de IP-filterregel. Dit moet een unieke, niet-hoofdlettergevoelige tekenreeks van maximaal 128 tekens zijn. Alleen de ASCII 7-bits alfanumerieke tekens plus  `{'-', ':', '/', '\', '.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '''}`   worden geaccepteerd. |
 | **Actie**               | Geaccepteerde waarden zijn **Accepteren** of  **Afwijzen** als actie voor de IP-filterregel. |
 | **ipMask**               | Geef één IPv4-adres op of een blok met IP-adressen in CIDR-notatie. Bijvoorbeeld in CIDR-notatie staat 192.168.100.0/22 voor de 1024 IPv4-adressen van 192.168.100.0 tot en met 192.168.103.255. |
 

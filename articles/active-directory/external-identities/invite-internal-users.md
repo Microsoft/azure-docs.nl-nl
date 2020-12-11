@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03c2c55988df04cc45ef4a1d66d959513c1626d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75839893d0048841440f2c790df7d23ad825d962
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87908594"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093465"
 ---
 # <a name="invite-internal-users-to-b2b-collaboration"></a>Interne gebruikers uitnodigen voor B2B-samen werking
 
@@ -32,7 +32,7 @@ Als u een uitnodiging naar een bestaand intern account verzendt, kunt u de objec
 
 In de open bare preview-versie kan de in dit artikel beschreven methode voor het uitnodigen van interne gebruikers voor B2B-samen werking niet worden gebruikt in deze gevallen:
 
-- Er is al een Exchange-licentie toegewezen aan de interne gebruiker.
+- De interne gebruiker heeft een toegewezen Exchange-licentie.
 - De gebruiker is afkomstig uit een domein dat is ingesteld voor directe Federatie in uw Directory.
 - De interne gebruiker is een alleen-Cloud account en het hoofd account is niet in azure AD.
 

@@ -90,6 +90,8 @@
               href: data-box-local-web-ui-admin.md
             - name: Zelfbeheerde verzending gebruiken
               href: data-box-portal-customer-managed-shipping.md
+            - name: Uw eigen certificaten gebruiken
+              href: data-box-bring-your-own-certificates.md
             - name: Door de klant beheerde sleutel inschakelen
               href: data-box-customer-managed-encryption-key-portal.md
             - name: Klanten-lockbox gebruiken

@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 8e1f7bb2faaf9d2c706e63ae73b9e265eb95d09b
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 4c7ba5806707e818f0ef13717d5f00b542c37614
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007208"
+ms.locfileid: "97092734"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Beheerde identiteiten gebruiken voor App Service en Azure Functions
 
@@ -522,7 +522,8 @@ Update-AzFunctionApp -Name $functionAppName -ResourceGroupName $resourceGroupNam
 
 ## <a name="next-steps"></a>Volgende stappen
 
-> [!div class="nextstepaction"]
-> [Veilig toegang SQL Database met behulp van een beheerde identiteit](app-service-web-tutorial-connect-msi.md)
+- [Veilig toegang SQL Database met behulp van een beheerde identiteit](app-service-web-tutorial-connect-msi.md)
+- [Veilig toegang Azure Storage met behulp van een beheerde identiteit](scenario-secure-app-access-storage.md)
+- [Microsoft Graph veilig aanroepen met behulp van een beheerde identiteit](scenario-secure-app-access-microsoft-graph-as-app.md)
 
 [Naslag informatie over micro soft. Azure. Services. AppAuthentication]: ../key-vault/general/service-to-service-authentication.md

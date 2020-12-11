@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: b6f66813ea23f6c9d4b47a3733d0c72c683d0676
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 03ef75f43d8c8c854c3803ceb30f31b292d566c3
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493981"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033422"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
@@ -48,7 +48,7 @@ Stroom logboeken zijn de bron van waarheid voor alle netwerk activiteiten in uw 
 **Sleutel eigenschappen**
 
 - Stroom logboeken worden uitgevoerd op [laag 4](https://en.wikipedia.org/wiki/OSI_model#Layer_4:_Transport_Layer) en alle IP-stromen die in en uit een NSG worden opgenomen, worden geregistreerd
-- Logboeken worden verzameld via het Azure-platform en zijn niet van invloed op de resources van klanten of netwerk prestaties.
+- Logboeken worden verzameld op **1-min-interval** via het Azure-platform en hebben geen invloed op de resources van klanten of netwerk prestaties.
 - Logboeken worden geschreven in de JSON-indeling en tonen uitgaand en binnenkomend verkeer per NSG regel.
 - Elke logboek record bevat de netwerk interface (NIC) de stroom is van toepassing op 5-tuple-informatie, de verkeers beslissing & (alleen versie 2) doorvoer gegevens. Zie de _logboek indeling_ hieronder voor meer informatie.
 - Stroom logboeken hebben een Bewaar functie waarmee de logboeken automatisch kunnen worden verwijderd tot een jaar nadat ze zijn gemaakt. 
@@ -317,7 +317,7 @@ Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen v
 
 ## <a name="updating-parameters"></a>Para meters bijwerken
 
-**Azure Portal**
+**Azure-portal**
 
 Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
 
@@ -361,17 +361,23 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **Binnenkomende stromen die zijn geregistreerd van Internet ip's naar vm's zonder open bare ip's**: vm's waaraan geen openbaar IP-adres is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als instantie niveau openbaar IP of die deel uitmaken van een basis Load Balancer back-end-groep, gebruiken [standaard SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk stroom logboek vermeldingen voor stromen van IP-adressen van Internet, als de stroom bestemd is voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel Azure deze stromen naar de virtuele machine niet toestaat, wordt de poging geregistreerd en wordt deze weer gegeven in het NSG-stroom logboek van Network Watcher. U wordt aangeraden ongewenste binnenkomend Internet verkeer expliciet met NSG te blok keren.
 
+**Probleem met Application Gateway v2-SUBNET NSG**: flow-logboek registratie op het toepassings gateway v2-subnet NSG wordt momenteel [niet ondersteund](https://docs.microsoft.com/azure/application-gateway/application-gateway-faq#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Dit probleem heeft geen invloed op Application Gateway v1.
+
 **Incompatibele Services**: vanwege de beperkingen van het huidige platform worden een kleine set Azure-Services niet ondersteund door NSG-stroom Logboeken. De huidige lijst met incompatibele Services is
 - [Azure Kubernetes Services (AKS)](https://azure.microsoft.com/services/kubernetes-service/)
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 
-## <a name="best-practices"></a>Best practices
+## <a name="best-practices"></a>Aanbevolen procedures
 
 **Inschakelen op kritieke VNETs/subnetten**: stroom logboeken moeten worden ingeschakeld op alle kritieke VNETs/subnetten in uw abonnement als controle bare en beveiligings best practice. 
 
 **Schakel logboek registratie van de NSG-stroom in op alle nsg's die zijn gekoppeld aan een resource**: stroom logboek registratie in Azure is geconfigureerd op de NSG-resource. Een stroom wordt alleen gekoppeld aan één NSG-regel. In scenario's waarin meerdere Nsg's worden gebruikt, wordt aangeraden om NSG-stroom Logboeken in te scha kelen op alle Nsg's het subnet of de netwerk interface van een resource heeft toegepast om ervoor te zorgen dat alle verkeer wordt geregistreerd. Zie [hoe verkeer wordt geëvalueerd](../virtual-network/network-security-group-how-it-works.md) in netwerk beveiligings groepen voor meer informatie.
 
+**Met NSG op NIC-en subnetniveau**: als NSG is geconfigureerd op de NIC en op het subnet-niveau, moet de stroom logboek registratie worden ingeschakeld op beide nsg's. 
+
 **Opslag inrichten**: opslag moet worden ingericht in afstemming met het verwachte flow-logboek volume.
+
+Naam: de naam van de NSG moet Maxi maal 80 tekens en de namen **van** de NSG-regels tot 65 tekens zijn. Als de namen groter zijn dan de teken limiet, kan deze worden afgekapt tijdens het vastleggen.
 
 ## <a name="troubleshooting-common-issues"></a>Oplossen van algemene problemen
 

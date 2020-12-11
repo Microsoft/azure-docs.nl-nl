@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: af3653d9e4509b1aa31a377dfc22cb6b6b2ff34e
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 76232a917e8856a06645fabc0ab4716195c5c0e1
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906060"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094196"
 ---
 # <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service (preview)
 
@@ -56,8 +56,8 @@ Voor het aanvragen van uitbrei ding van gegevens in de indeling raster tegel, ge
 
 Gebruik de Api's van de Elevation-service (preview-versie) om verhogings gegevens in geojson-indeling aan te vragen. In deze sectie ziet u een van de drie Api's:
 
-* [Gegevens ophalen voor punten](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
-* [Gegevens plaatsen voor punten](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates)
+* [Gegevens ophalen voor punten](/rest/api/maps/elevation/getdataforpoints)
+* [Gegevens plaatsen voor punten](/rest/api/maps/elevation/postdataforpoints)
 * [Gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
 * [Gegevens voor poly lijn plaatsen](https://docs.microsoft.com/rest/api/maps/elevation/postdataforpolyline)
 * [Gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
@@ -67,7 +67,7 @@ Gebruik de Api's van de Elevation-service (preview-versie) om verhogings gegeven
 
 ### <a name="request-elevation-data-for-points"></a>Gegevens over benodigde bevoegdheden voor punten aanvragen
 
-In dit voor beeld gebruiken we de [API gegevens ophalen voor Points](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates) om verhogings gegevens aan te vragen bij Mt. Everest en Chamlang bergen. Vervolgens gebruiken we de post- [gegevens voor Points API](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates) om gegevens over benodigde bevoegdheden te vragen met behulp van dezelfde twee punten. De breedte graad en lengte graad van de URL worden verwacht in WGS84 (World Geodetic System).
+In dit voor beeld gebruiken we de [API gegevens ophalen voor Points](/rest/api/maps/elevation/getdataforpoints) om verhogings gegevens aan te vragen bij Mt. Everest en Chamlang bergen. Vervolgens gebruiken we de post- [gegevens voor Points API](/rest/api/maps/elevation/postdataforpoints) om gegevens over benodigde bevoegdheden te vragen met behulp van dezelfde twee punten. De breedte graad en lengte graad van de URL worden verwacht in WGS84 (World Geodetic System).
 
  >[!IMPORTANT]
  >Vanwege de lengte limiet van 2048 voor de URL-tekens is het niet mogelijk om meer dan 100 coördinaten door te geven als een door pijp lijn gescheiden teken reeks in een URL GET-aanvraag. Als u wilt dat er meer dan 100 coördinaten worden door gegeven als een door de pijp lijn gescheiden teken reeks, gebruikt u de POST-gegevens voor punten.
@@ -103,7 +103,7 @@ In dit voor beeld gebruiken we de [API gegevens ophalen voor Points](https://doc
     }
     ```
 
-4. Nu noemen we de post- [gegevens voor punt-API](https://docs.microsoft.com/rest/api/maps/elevation/postdataforlatlongcoordinates) om uitbrei ding van gegevens voor dezelfde twee punten te verkrijgen. Selecteer de **post** HTTP-methode op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
+4. Nu noemen we de post- [gegevens voor punt-API](/rest/api/maps/elevation/postdataforpoints) om uitbrei ding van gegevens voor dezelfde twee punten te verkrijgen. Selecteer de **post** HTTP-methode op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 
     ```http
     https://atlas.microsoft.com/elevation/point/json?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
@@ -456,7 +456,7 @@ Op de volgende voorbeeld webpagina ziet u hoe u het kaart besturings element kun
 <br/>
 
 <iframe height="500" style="width:100%;" scrolling="no" title="Uitbrei ding op positie ophalen" src="https://codepen.io/azuremaps/embed/c840b510e113ba7cb32809591d5f96a2?height=500&theme-id=default&default-tab=js,result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-Zie Azure Maps ( <a href='https://codepen.io/azuremaps/pen/c840b510e113ba7cb32809591d5f96a2'>Get elevation at position</a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) op <a href='https://codepen.io'>CodePen</a>() op de pen voor meer informatie.
+Zie Azure Maps ( <a href='https://codepen.io/azuremaps/pen/c840b510e113ba7cb32809591d5f96a2'></a> <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) op <a href='https://codepen.io'>CodePen</a>() op de pen voor meer informatie.
 </iframe>
 
 ### <a name="get-elevation-data-by-bounding-box"></a>Uitbrei ding van gegevens ophalen door begrenzingsvak
@@ -485,7 +485,7 @@ Zie de <a href='https://codepen.io/azuremaps/pen/7bee08e5cb13d05cb0a11636b60f14c
 Zie voor meer informatie over de Api's voor de Azure Maps-uitbrei ding (preview):
 
 > [!div class="nextstepaction"]
-> [Uitbrei ding (preview): gegevens ophalen voor lat-lange coördinaten](https://docs.microsoft.com/rest/api/maps/elevation/getdataforlatlongcoordinates)
+> [Uitbrei ding (preview): gegevens ophalen voor lat-lange coördinaten](/rest/api/maps/elevation/getdataforpoints)
 
 > [!div class="nextstepaction"]
 > [Uitbrei ding (preview): gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)

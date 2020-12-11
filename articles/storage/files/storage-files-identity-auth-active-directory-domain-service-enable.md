@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: rogarana
 ms.subservice: files
-ms.custom: contperfq1, devx-track-azurecli
-ms.openlocfilehash: 5d900f105728efc6f58c4f9f7412cea157cbfe20
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.custom: contperf-fy21q1, devx-track-azurecli
+ms.openlocfilehash: deed7c3dce2d7da1940a8a4871efac7453e2cf60
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630376"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033677"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Active Directory Domain Services authenticatie inschakelen op Azure Files
 
@@ -39,7 +39,7 @@ Voordat u Azure AD over SMB voor Azure-bestands shares inschakelt, moet u ervoor
 
     Als u verificatie met Azure AD-referenties wilt ondersteunen, moet u Azure AD Domain Services inschakelen voor uw Azure AD-Tenant. Als u niet de beheerder van de Azure AD-Tenant bent, neemt u contact op met de beheerder en volgt u de stapsgewijze richt lijnen om Azure Active Directory Domain Services in te [scha kelen met behulp van de Azure Portal](../../active-directory-domain-services/tutorial-create-instance.md).
 
-    Het duurt doorgaans ongeveer 15 minuten voordat een Azure AD DS-implementatie is voltooid. Controleer of de status van de Azure-AD DS **wordt weer gegeven** , waarbij de wachtwoord hash-synchronisatie is ingeschakeld, voordat u doorgaat met de volgende stap.
+    Het duurt doorgaans ongeveer 15 minuten voordat een Azure AD DS-implementatie is voltooid. Controleer of de status van de Azure-AD DS **wordt weer gegeven**, waarbij de wachtwoord hash-synchronisatie is ingeschakeld, voordat u doorgaat met de volgende stap.
 
 1.  **Domein-lid worden van een Azure-VM met Azure AD DS.**
 

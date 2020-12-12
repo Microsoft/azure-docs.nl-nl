@@ -8,17 +8,18 @@ editor: ''
 tags: azure-resource-management
 ms.assetid: 95a89072-0edf-49b5-88ed-584891c0e066
 ms.service: virtual-machines-sql
+ms.subservice: backup
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: f3723c792dfe962f2cbf16e3b167faf66c50a92e
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 4a102fc805750f7dd460c1878a730b9ca4ce1c37
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327454"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359367"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Back-ups maken en herstellen voor SQL Server op virtuele machines in azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -31,7 +32,7 @@ In het eerste deel van dit artikel vindt u een overzicht van de beschik bare opt
 
 De volgende tabel bevat informatie over verschillende opties voor back-up en herstel voor SQL Server op Azure-Vm's:
 
-| Strategie | SQL-versies | Beschrijving |
+| Strategie | SQL-versies | Description |
 |---|---|---|
 | [Automatische back-up](#automated) | 2014<br/> 2016<br/> 2017 | Met automatische back-up kunt u regel matige back-ups plannen voor alle data bases op een SQL Server-VM. Back-ups worden Maxi maal 30 dagen opgeslagen in azure Storage. Vanaf SQL Server 2016 biedt automatische back-up v2 extra opties, zoals het configureren van hand matige planning en de frequentie van volledige en logboek back-ups. |
 | [Azure Backup voor SQL-VM's](#azbackup) | 2008<br/> 2012<br/> 2014<br/> 2016<br/> 2017 | Azure Backup biedt een back-upfunctie voor bedrijfs klasse voor SQL Server op Azure-Vm's. Met deze service kunt u back-ups centraal beheren voor meerdere servers en duizenden data bases. Data bases kunnen worden hersteld naar een bepaald punt in de tijd in de portal. Het biedt een aanpasbaar Bewaar beleid waarmee back-ups voor jaren kunnen worden onderhouden. |

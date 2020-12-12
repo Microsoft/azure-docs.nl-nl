@@ -8,18 +8,19 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 388c464e-a16e-4c9d-a0d5-bb7cf5974689
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 335cc707cb1192d3dbf08f51e78d4e82441dd05a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 60bb5ac652a80b5ae52c91f91fa0c80440e9cc82
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094452"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359078"
 ---
 # <a name="configure-a-sql-server-always-on-availability-group-across-different-azure-regions"></a>Een SQL Server AlwaysOn-beschikbaarheids groep configureren in verschillende Azure-regio's
 
@@ -96,7 +97,7 @@ Voer de volgende stappen uit om een replica te maken in een extern Data Center:
 
 1. Voeg een IP-adres bron toe aan het cluster.
 
-   U kunt de IP-adres bron maken in Failoverclusterbeheer. Selecteer de naam van het cluster, klik met de rechter muisknop op de cluster naam onder **cluster kern resources** en selecteer **Eigenschappen** : 
+   U kunt de IP-adres bron maken in Failoverclusterbeheer. Selecteer de naam van het cluster, klik met de rechter muisknop op de cluster naam onder **cluster kern resources** en selecteer **Eigenschappen**: 
 
    ![Scherm opname waarin de ' Failoverclusterbeheer ' wordt weer gegeven met een cluster naam, ' server naam ' en ' Eigenschappen ' geselecteerd.](./media/availability-group-manually-configure-multiple-regions/cluster-name-properties.png)
 
@@ -113,7 +114,7 @@ Voer de volgende stappen uit om een replica te maken in een extern Data Center:
 
 1. Voeg een IP-adres bron toe aan de rol van de beschikbaarheids groep in het cluster. 
 
-   Klik met de rechter muisknop op de rol van de beschikbaarheids groep in Failoverclusterbeheer, kies **resource toevoegen** , **meer resources** en **IP-adres** selecteren.
+   Klik met de rechter muisknop op de rol van de beschikbaarheids groep in Failoverclusterbeheer, kies **resource toevoegen**, **meer resources** en **IP-adres** selecteren.
 
    ![IP-adres maken](./media/availability-group-manually-configure-multiple-regions/20-add-ip-resource.png)
 
@@ -170,16 +171,16 @@ Als u de verbindings reeksen niet kunt wijzigen, kunt u de cache voor naam omzet
 Als u de verbinding van de listener met de externe regio wilt testen, kunt u een failover uitvoeren voor de replicatie naar de externe regio. Hoewel de replica asynchroon is, is failover kwetsbaar voor mogelijk gegevens verlies. Als u een failover wilt uitvoeren zonder gegevens verlies, wijzigt u de beschikbaarheids modus in synchroon en stelt u de failover-modus in op automatisch. Voer de volgende stappen uit:
 
 1. In **objectverkenner** maakt u verbinding met het exemplaar van SQL Server dat als host fungeert voor de primaire replica.
-1. Klik onder **AlwaysOn-beschikbaarheidsgroepen** , **beschikbaarheids groepen** met de rechter muisknop op uw beschikbaarheids groep en selecteer **Eigenschappen** .
+1. Klik onder **AlwaysOn-beschikbaarheidsgroepen**, **beschikbaarheids groepen** met de rechter muisknop op uw beschikbaarheids groep en selecteer **Eigenschappen**.
 1. Stel op de pagina **Algemeen** onder **beschikbaarheids replica's** de secundaire replica in op de Dr-site om de beschikbaarheids modus voor **synchrone door Voer** en de modus **automatische** failover te gebruiken.
-1. Als u een secundaire replica op dezelfde site hebt als uw primaire replica voor hoge Beschik baarheid, stelt u deze replica in op **asynchroon door voeren** en **hand matig** .
+1. Als u een secundaire replica op dezelfde site hebt als uw primaire replica voor hoge Beschik baarheid, stelt u deze replica in op **asynchroon door voeren** en **hand matig**.
 1. Selecteer OK.
-1. Klik in **objectverkenner** met de rechter muisknop op de beschikbaarheids groep en selecteer **dash board weer geven** .
+1. Klik in **objectverkenner** met de rechter muisknop op de beschikbaarheids groep en selecteer **dash board weer geven**.
 1. Controleer op het dash board of de replica op de DR-site is gesynchroniseerd.
-1. Klik in **objectverkenner** met de rechter muisknop op de beschikbaarheids groep en selecteer **failover...** . SQL Server beheer Studios opent een wizard voor het uitvoeren van een failover van SQL Server.  
+1. Klik in **objectverkenner** met de rechter muisknop op de beschikbaarheids groep en selecteer **failover...**. SQL Server beheer Studios opent een wizard voor het uitvoeren van een failover van SQL Server.  
 1. Selecteer **volgende** en selecteer de SQL Server instantie in de Dr-site. Selecteer **volgende** opnieuw.
-1. Maak verbinding met het SQL Server-exemplaar op de DR-site en selecteer **volgende** .
-1. Controleer op de pagina **samen vatting** de instellingen en selecteer **volt ooien** .
+1. Maak verbinding met het SQL Server-exemplaar op de DR-site en selecteer **volgende**.
+1. Controleer op de pagina **samen vatting** de instellingen en selecteer **volt ooien**.
 
 Nadat de verbinding is getest, verplaatst u de primaire replica terug naar uw primaire data centrum en stelt u de beschikbaarheids modus weer in op de normale instellingen van het besturings systeem. De volgende tabel bevat de normale operationele instellingen voor de architectuur die in dit document wordt beschreven:
 

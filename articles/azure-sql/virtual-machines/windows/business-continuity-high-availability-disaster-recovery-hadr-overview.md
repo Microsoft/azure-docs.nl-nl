@@ -8,17 +8,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: 53981f7e-8370-4979-b26a-93a5988d905f
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2020
 ms.author: mathoma
-ms.openlocfilehash: 194c6a5cead400e1bac78ba42cb7238b64bd3b7b
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: dbe5fba838e7c4ad9487a29889eab11d4e42671f
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327471"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358920"
 ---
 # <a name="business-continuity-and-hadr-for-sql-server-on-azure-virtual-machines"></a>Bedrijfs continuïteit en HADR voor SQL Server op Azure Virtual Machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -84,9 +85,20 @@ U kunt een oplossing voor herstel na nood geval hebben voor uw SQL Server-data b
 
 Als u [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot:primaryr3)hebt, kunt u hybride plannen voor herstel na nood gevallen (Dr) implementeren met SQL Server zonder extra licentie kosten te betalen voor het passieve nood herstel exemplaar.
 
-In de volgende afbeelding gebruikt de installatie SQL Server uitgevoerd op een virtuele machine van Azure die 12 kernen gebruikt als herstel replica voor nood gevallen voor een on-premises SQL Server implementatie die gebruikmaakt van 12 kernen. In het verleden moet u 12 kernen van SQL Server voor de on-premises implementatie en de implementatie van Azure Virtual Machines. Het nieuwe voor deel biedt voor delen van de passieve replica voor uitvoering op een virtuele machine van Azure. Nu moet u slechts 12 kernen van SQL Server uitvoeren op de on-premises computer, zolang er wordt voldaan aan de criteria voor herstel na nood gevallen voor de passieve replica op Azure Virtual Machines.
+U kunt bijvoorbeeld een actief primair on-premises hebben en een gratis, passief secundair voor DR in Azure: 
 
-![Gratis replica voor herstel na nood gevallen in azure](./media/business-continuity-high-availability-disaster-recovery-hadr-overview/free-dr-replica-azure.png)
+![Gratis secundair passief in azure](./media/business-continuity-high-availability-disaster-recovery-hadr-overview/failover-with-secondary-in-azure.png)
+
+In de voor gaande afbeelding gebruikt de installatie SQL Server die wordt uitgevoerd op een virtuele machine van Azure die 12 kernen gebruikt als nood herstel replica voor een on-premises SQL Server implementatie die gebruikmaakt van 12 kernen. In het verleden moet u 12 kernen van SQL Server voor de on-premises implementatie en de implementatie van Azure Virtual Machines. Het nieuwe voor deel biedt voor delen van de passieve replica voor uitvoering op een virtuele machine van Azure. Nu moet u slechts 12 kernen van SQL Server uitvoeren op de on-premises computer, zolang er wordt voldaan aan de criteria voor herstel na nood gevallen voor de passieve replica op Azure Virtual Machines.
+
+U kunt ook twee gratis, passieve secundairen maken wanneer alle drie de replica's worden gehost in Azure: 
+
+![Twee gratis passief wanneer alles in azure](./media/business-continuity-high-availability-disaster-recovery-hadr-overview/failover-with-primary-in-azure.png)
+
+U kunt ook een hybride failover-omgeving configureren, met een gelicentieerde primaire on-premises, een gratis passief voor HA en twee gratis passief voor DR: 
+
+![Drie gratis passief wanneer omgeving Hybrid is met één primaire on-premises replica](./media/business-continuity-high-availability-disaster-recovery-hadr-overview/hybrid-with-primary-on-prem.png)
+
 
 Zie [Licentievoorwaarden voor het product](https://www.microsoft.com/licensing/product-licensing/products) voor meer informatie. 
 

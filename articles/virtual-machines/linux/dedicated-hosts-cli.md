@@ -6,19 +6,19 @@ ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 11/12/2020
 ms.author: cynthn
-ms.openlocfilehash: d2cf78d328017f96552bd51794ac997c394d18f1
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: ef0c8d53d885f11acdcf578db155de3d7848887e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008415"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360064"
 ---
 # <a name="deploy-to-dedicated-hosts-using-the-azure-cli"></a>Implementeren naar toegewezen hosts met behulp van de Azure CLI
  
 
 Dit artikel begeleidt u bij het maken van een toegewezen Azure- [host](../dedicated-hosts.md) voor het hosten van uw virtuele machines (vm's). 
 
-Zorg ervoor dat u Azure CLI-versie 2.0.70 of hoger hebt geïnstalleerd en dat u bent aangemeld bij een Azure-account met `az login` . 
+Zorg ervoor dat u Azure CLI-versie 2.16.0 of hoger hebt geïnstalleerd en dat u bent aangemeld bij een Azure-account met `az login` . 
 
 
 ## <a name="limitations"></a>Beperkingen

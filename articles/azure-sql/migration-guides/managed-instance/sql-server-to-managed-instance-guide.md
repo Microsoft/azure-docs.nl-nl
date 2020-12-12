@@ -1,5 +1,5 @@
 ---
-title: SQL Server naar SQL Managed instance-migratie handleiding
+title: 'SQL Server naar SQL Managed instance: migratie handleiding'
 description: Volg deze hand leiding voor het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 5d5404537ad107a54bd32110727e5a7d0f74ebea
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ac8b0e0c2cdbd46626677f4be0f78800d839ad28
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326893"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358891"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]

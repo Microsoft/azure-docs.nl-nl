@@ -8,19 +8,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 01/24/2019
+ms.date: 11/02/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: cba8837fc738884fc187b13083487c2ab62d25f0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 21c8e75ac81a443b1dd9d4a0f43263bbf40bee88
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020089"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359197"
 ---
 # <a name="add-non-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Niet-micro soft-accounts toevoegen aan de app Microsoft Authenticator
 
-Voeg uw niet-micro soft-accounts, zoals voor Google, Facebook of GitHub, toe aan de Microsoft Authenticator-app voor twee ledige verificatie. De app Microsoft Authenticator werkt met elke app die verificatie in twee stappen gebruikt en met elk account dat de TOTP-normen (Time-Based One-Time Passwords) ondersteunt.
+Als u niet-micro soft-accounts hebt, zoals Google, Facebook of GitHub, kunt u deze voor twee ledige verificatie toevoegen aan de app Microsoft Authenticator. De Microsoft Authenticator-app werkt met elke app die gebruikmaakt van twee ledige verificatie en elk account dat de op tijd gebaseerde mobiele TOTP-standaarden (one-time password) ondersteunt.
 
 >[!Important]
 >Voordat u uw account kunt toevoegen, moet u de app Microsoft Authenticator downloaden en installeren. Als u dat nog niet hebt gedaan, volgt u de stappen in het artikel [De app downloaden en installeren](user-help-auth-app-download-install.md).
@@ -130,7 +130,7 @@ Voeg uw GitHub-account toe door twee ledige verificatie in te scha kelen en het 
 
 1. Selecteer op de pagina **twee ledige verificatie** op uw computer **instellen met behulp van een app**.
 
-2. Sla uw herstel codes op zodat u weer terug kunt gaan naar uw account als u geen toegang meer hebt en selecteer **volgende**. 
+2. Sla uw herstel codes op zodat u weer terug kunt gaan naar uw account als u geen toegang meer hebt en selecteer **volgende**.
 
     U kunt uw codes opslaan door ze te downloaden naar uw apparaat, door een harde kopie af te drukken of door ze te kopiëren naar een hulp programma voor wachtwoord beheer.
 

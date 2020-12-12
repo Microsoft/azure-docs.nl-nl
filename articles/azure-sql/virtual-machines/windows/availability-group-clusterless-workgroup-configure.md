@@ -8,17 +8,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: 53981f7e-8370-4979-b26a-93a5988d905f
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/29/2020
 ms.author: mathoma
-ms.openlocfilehash: 5714a2fd79d01f4cbc445c1ec1a726209ab6d427
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 0f194101720481f71434709c467d0e3130a0f1f9
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124931"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359452"
 ---
 # <a name="configure-a-workgroup-availability-group"></a>Een beschikbaarheids groep voor werk groepen configureren 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,7 +41,7 @@ Ter referentie worden de volgende para meters in dit artikel gebruikt, maar kunn
 | :------ | :---------------------------------- |
 | **Knooppunt1**   | AGNode1 (10.0.0.4) |
 | **Knooppunt2**   | AGNode2 (10.0.0.5) |
-| **Clusternaam** | AGWGAG (10.0.0.6 ALS) |
+| **Cluster naam** | AGWGAG (10.0.0.6 ALS) |
 | **Listener** | AGListener (10.0.0.7) | 
 | **DNS-achtervoegsel** | ag.wgcluster.example.com | 
 | **Naam van werk groep** | AGWorkgroup | 
@@ -53,14 +54,14 @@ In deze stap configureert u het DNS-achtervoegsel voor beide servers. Bijvoorbee
 Voer de volgende stappen uit om het DNS-achtervoegsel te configureren:
 
 1. RDP in op het eerste knoop punt en Open Serverbeheer. 
-1. Selecteer **lokale server** en selecteer vervolgens de naam van uw virtuele machine onder **computer naam** . 
-1. Selecteer **wijzigen...** onder **om de naam van deze computer te wijzigen...** . 
+1. Selecteer **lokale server** en selecteer vervolgens de naam van uw virtuele machine onder **computer naam**. 
+1. Selecteer **wijzigen...** onder **om de naam van deze computer te wijzigen...**. 
 1. Wijzig de naam van de werkgroepnaam zodat deze een zinvol is, zoals `AGWORKGROUP` : 
 
    ![Naam van werk groep wijzigen](./media/availability-group-clusterless-workgroup-configure/1-change-workgroup-name.png)
 
 1. Selecteer **meer...** om het dialoog venster **DNS-achtervoegsel en NetBIOS-computer naam** te openen. 
-1. Typ de naam van het DNS-achtervoegsel onder **primair DNS-achtervoegsel van deze computer** , zoals `ag.wgcluster.example.com` en selecteer **OK** : 
+1. Typ de naam van het DNS-achtervoegsel onder **primair DNS-achtervoegsel van deze computer**, zoals `ag.wgcluster.example.com` en selecteer **OK**: 
 
    ![Scherm afbeelding toont het dialoog venster D N S en NetBIOS-computer naam waarin u de waarde kunt invoeren.](./media/availability-group-clusterless-workgroup-configure/2-add-dns-suffix.png)
 
@@ -115,12 +116,12 @@ Er zijn belang rijke verschillen tussen de zelf studie en wat er moet gebeuren v
 
 Nadat het cluster is gemaakt, wijst u een statisch cluster-IP-adres toe. Voer hiervoor de volgende stappen uit:
 
-1. Open **Failoverclusterbeheer** op een van de knoop punten, selecteer het cluster, klik met de rechter muisknop op de **naam: \<ClusterNam>** onder **cluster kern resources** en selecteer vervolgens **Eigenschappen** . 
+1. Open **Failoverclusterbeheer** op een van de knoop punten, selecteer het cluster, klik met de rechter muisknop op de **naam: \<ClusterNam>** onder **cluster kern resources** en selecteer vervolgens **Eigenschappen**. 
 
    ![Eigenschappen voor de cluster naam starten](./media/availability-group-clusterless-workgroup-configure/5-launch-cluster-name-properties.png)
 
-1. Selecteer het IP-adres onder **IP-adressen** en selecteer **bewerken** . 
-1. Selecteer **statische gebruiken** , geef het IP-adres van het cluster op en selecteer vervolgens **OK** : 
+1. Selecteer het IP-adres onder **IP-adressen** en selecteer **bewerken**. 
+1. Selecteer **statische gebruiken**, geef het IP-adres van het cluster op en selecteer vervolgens **OK**: 
 
    ![Geef een statisch IP-adres voor het cluster op](./media/availability-group-clusterless-workgroup-configure/6-provide-static-ip-for-cluster.png)
 
@@ -184,7 +185,7 @@ Voer de volgende stappen uit om het eerste knoop punt te configureren:
 
 Voer de volgende stappen uit om het tweede knoop punt te configureren: 
 
-1. Maak verbinding met het tweede knoop punt met **SQL Server Management Studio** , zoals `AGNode2` . 
+1. Maak verbinding met het tweede knoop punt met **SQL Server Management Studio**, zoals `AGNode2` . 
 1. Voer in een **Nieuw query** venster de volgende Transact-SQL-instructie (T-SQL) uit na het bijwerken naar een complex en veilig wacht woord: 
 
    ```sql

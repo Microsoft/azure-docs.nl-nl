@@ -1,5 +1,5 @@
 ---
-title: SQL Server voor SQL Database-migratie handleiding
+title: 'SQL Server SQL Database: migratie handleiding'
 description: Volg deze hand leiding voor het migreren van uw SQL Server-data bases naar Azure SQL Database.
 ms.service: sql-database
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: ee4abaf3c9f6aa70ba14920711c8917994254649
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: f4f54aa02fb56ba5bf5ae9fcec2dae07c7dc0a27
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326961"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358976"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Migratie handleiding: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]

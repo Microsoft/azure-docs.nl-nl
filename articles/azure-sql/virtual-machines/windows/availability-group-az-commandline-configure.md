@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 9129d0cb44aea9b85c5569d4d939c0904c398c07
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 865ee3a5aeb8a2dd06d8759ba04d02259d2b4bee
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556519"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359962"
 ---
 # <a name="use-powershell-or-az-cli-to-configure-an-availability-group-for-sql-server-on-azure-vm"></a>Power shell of AZ CLI gebruiken voor het configureren van een beschikbaarheids groep voor SQL Server op Azure VM 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,13 +47,13 @@ U hebt de volgende account machtigingen nodig voor het configureren van de Alway
 - Een bestaand domein gebruikers account met een machtiging voor het **maken van computer objecten** in het domein. Een domein beheerders account heeft bijvoorbeeld doorgaans voldoende machtigingen (bijvoorbeeld: account@domain.com ). _Dit account moet ook lid zijn van de lokale groep Administrators op elke virtuele machine om het cluster te maken._
 - Het domein gebruikers account dat SQL Server beheert. 
  
-## <a name="create-a-storage-account"></a>Create a storage account 
+## <a name="create-a-storage-account"></a>Een opslagaccount maken 
 
 Het cluster heeft een opslag account nodig om te fungeren als de cloudwitness. U kunt elk bestaand opslag account gebruiken of u kunt een nieuw opslag account maken. Als u een bestaand opslag account wilt gebruiken, gaat u verder met de volgende sectie. 
 
 Met het volgende code fragment wordt het opslag account gemaakt: 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Create the storage account
@@ -88,7 +89,7 @@ De opdracht groep Azure CLI [AZ SQL VM Group](/cli/azure/sql/vm/group) beheert d
 
 Het volgende code fragment definieert de meta gegevens voor het cluster:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Define the cluster metadata
@@ -133,7 +134,7 @@ Als u de eerste SQL Server VM toevoegt aan het cluster, wordt het cluster gemaak
 
 Met het volgende code fragment wordt het cluster gemaakt en wordt de eerste SQL Server VM hieraan toegevoegd: 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Add SQL Server VMs to cluster
@@ -215,7 +216,7 @@ Voor de always on-beschikbaarheids groep-listener is een intern exemplaar van Az
 
 Met het volgende code fragment maakt u de interne load balancer:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Create the internal load balancer
@@ -240,7 +241,7 @@ New-AzLoadBalancer -name sqlILB -ResourceGroupName <resource group name> `
 ---
 
 >[!IMPORTANT]
-> De open bare IP-resource voor elke SQL Server virtuele machine moet een standaard-SKU hebben om compatibel te zijn met de standaard load balancer. Als u de SKU van de open bare IP-resource van de virtuele machine wilt bepalen, gaat u naar de **resource groep** , selecteert u de resource voor het **open bare IP-adres** voor de gewenste SQL Server VM en zoekt u de waarde onder **SKU** in het deel venster **overzicht** .  
+> De open bare IP-resource voor elke SQL Server virtuele machine moet een standaard-SKU hebben om compatibel te zijn met de standaard load balancer. Als u de SKU van de open bare IP-resource van de virtuele machine wilt bepalen, gaat u naar de **resource groep**, selecteert u de resource voor het **open bare IP-adres** voor de gewenste SQL Server VM en zoekt u de waarde onder **SKU** in het deel venster **overzicht** .  
 
 ## <a name="create-listener"></a>Listener maken
 
@@ -258,7 +259,7 @@ De *resource-id* van het subnet is de waarde van `/subnets/<subnetname>` toegevo
 
 Met het volgende code fragment wordt de beschikbaarheids groep-listener gemaakt:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Create the availability group listener
@@ -305,7 +306,7 @@ Er is een toegevoegde laag complexiteit wanneer u een beschikbaarheids groep imp
 
 Een nieuwe replica toevoegen aan de beschikbaarheids groep:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Voeg de SQL Server virtuele machine toe aan de cluster groep:
    ```azurecli-interactive
@@ -372,7 +373,7 @@ Een nieuwe replica toevoegen aan de beschikbaarheids groep:
 
 Een replica verwijderen uit de beschikbaarheids groep:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Verwijder de replica uit de beschikbaarheids groep met behulp van SQL Server Management Studio. 
 1. De meta gegevens van de SQL Server virtuele machine uit de listener verwijderen:
@@ -427,7 +428,7 @@ Als u de beschikbaarheids groep die u later hebt geconfigureerd met de Azure CLI
 
 U kunt de methode het beste verwijderen via de SQL IaaS agent-extensie met behulp van het volgende code fragment in de Azure CLI. Hiermee verwijdert u de meta gegevens van de beschikbaarheids groep van de SQL IaaS agent-extensie. Ook wordt de listener fysiek uit de beschikbaarheids groep verwijderd. 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 # Remove the availability group listener
@@ -454,7 +455,7 @@ Remove-AzAvailabilityGroupListener -Name <Listener> `
 Verwijder alle knoop punten uit het cluster om deze te vernietigen en verwijder vervolgens de meta gegevens van het cluster uit de SQL IaaS agent-extensie. U kunt dit doen met behulp van de Azure CLI of Power shell. 
 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Verwijder eerst alle SQL Server-Vm's uit het cluster: 
 

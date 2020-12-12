@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.author: sngun
-ms.openlocfilehash: 6840b2188f3d7e7524c4c98d7e1b6d32440e6812
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 0374886482b43eefe6df5e107fd4da371633099d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339356"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359775"
 ---
 # <a name="frequently-asked-questions-about-the-gremlin-api-in-azure-cosmos-db"></a>Veelgestelde vragen over de Gremlin-API in Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -29,7 +29,7 @@ De **executionProfile ()** preview-stap kan worden gebruikt om een analyse van h
 g.V('mary').out('knows').executionProfile()
 ```
 
-**Voorbeeld uitvoer**
+**Voorbeelduitvoer**
 
 ```json
 [
@@ -109,7 +109,7 @@ Azure Cosmos DB Gremlin API maakt gebruik van de open source-Stuur Programma's a
 
 ### <a name="how-can-i-protect-against-injection-attacks-using-gremlin-drivers"></a>Hoe kan ik beveiligen tegen ininjectie aanvallen met behulp van Gremlin-Stuur Programma's?
 
-De meeste systeem eigen Apache Tinkerpop Gremlin-Stuur Programma's bieden de mogelijkheid om een woorden lijst met para meters op te geven voor het uitvoeren van query's. Dit is een voor beeld van hoe u dit doet in [Gremlin.net](https://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) en in [Gremlin-java script](https://github.com/Azure-Samples/azure-cosmos-db-graph-nodejs-getting-started/blob/master/app.js).
+De meeste systeem eigen Apache Tinkerpop Gremlin-Stuur Programma's bieden de mogelijkheid om een woorden lijst met para meters op te geven voor het uitvoeren van query's. Dit is een voor beeld van hoe u dit doet in [Gremlin.net](https://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) en in [Gremlin-java script](https://github.com/Azure-Samples/azure-cosmos-db-graph-nodejs-getting-started/blob/main/app.js).
 
 ### <a name="why-am-i-getting-the-gremlin-query-compilation-error-unable-to-find-any-method-error"></a>Waarom krijg ik de fout ' Gremlin-query compilatie fout: kan geen van de volgende methoden vinden '?
 

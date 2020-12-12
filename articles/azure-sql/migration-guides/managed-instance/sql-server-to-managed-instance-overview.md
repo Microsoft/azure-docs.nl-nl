@@ -1,5 +1,5 @@
 ---
-title: SQL Server naar SQL Managed instance-migratie overzicht
+title: 'SQL Server naar SQL Managed instance: migratie overzicht'
 description: Meer informatie over de verschillende hulpprogram ma's en opties die beschikbaar zijn voor het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 878d59445dde839ca9e702ac0c49af676e48a42f
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: d1360589fe2c2ec13c341dd14793db0ca8b809c4
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531187"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358874"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -203,7 +203,7 @@ Sommige functies zijn alleen beschikbaar als het [compatibiliteits niveau van de
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Beschrijving  |
+|Asset  |Description  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, waaronder Azure SQL MI.|

@@ -6,6 +6,7 @@ documentationcenter: ''
 author: MashaMSFT
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 04/08/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1c1dd2ba5eb6ee61a0f8cf151649441cbc783166
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 4c25adc16d14b4a5fb72ae0103ca05b193b40499
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553521"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359163"
 ---
 # <a name="extend-support-for-sql-server-2008-and-sql-server-2008-r2-with-azure"></a>Ondersteuning voor SQL Server 2008 en SQL Server 2008 R2 met Azure uitbreiden
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -40,7 +41,7 @@ Klanten die zich op SQL Server 2008 bevinden, moeten zelf een installatie of upg
 Voor installatie kopieën die via Azure Marketplace worden geïmplementeerd, wordt de SQL IaaS-extensie vooraf geïnstalleerd. De SQL IaaS-uitbrei ding is een vereiste voor flexibele licenties en automatische patching. Klanten die zelf geïnstalleerde Vm's implementeren, moeten de SQL IaaS-extensie hand matig installeren. De SQL IaaS-extensie wordt niet ondersteund in Windows Server 2008.
 
 > [!NOTE]
-> Hoewel de SQL Server Blades **maken** en **beheren** met de SQL Server 2008 R2-installatie kopie in de Azure Portal worden gebruikt, worden de volgende functies _niet ondersteund_ : automatische back-ups, Azure Key Vault integratie, R Services en opslag configuratie.
+> Hoewel de SQL Server Blades **maken** en **beheren** met de SQL Server 2008 R2-installatie kopie in de Azure Portal worden gebruikt, worden de volgende functies _niet ondersteund_: automatische back-ups, Azure Key Vault integratie, R Services en opslag configuratie.
 
 ## <a name="licensing"></a>Licentieverlening
 Betalen per gebruik SQL Server 2008 R2-implementaties kunnen worden omgezet in [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/).
@@ -66,9 +67,9 @@ De [Azure database Migration service](../../../dms/dms-overview.md) is een optie
 
 Oplossingen voor nood herstel voor EOS SQL Server op een Azure VM zijn als volgt:
 
-- **SQL Server back-ups** : gebruik Azure backup om uw EOS SQL Server 2008 en 2008 R2 te beschermen tegen Ransomware, onbedoeld verwijderen en beschadiging met een RPO van 15 minuten en herstel naar een bepaald tijdstip. Zie [dit artikel](../../../backup/sql-support-matrix.md#scenario-support)voor meer informatie.
-- **Logboek verzending** : u kunt een back-upreplica van het logboek maken in een andere zone of Azure-regio met doorlopende herstel bewerkingen om de RTO te verminderen. U moet de verzen ding van het logboek hand matig configureren.
-- **Azure site Recovery** : u kunt uw virtuele machine repliceren tussen zones en regio's via Azure site Recovery replicatie. SQL Server vereist app-consistente moment opnamen om herstel in het geval van een ramp te garanderen. Azure Site Recovery biedt een minimale RPO van 1 uur en een periode van twee uur (plus SQL Server herstel tijd) RTO voor EOS SQL Server herstel na nood gevallen.
+- **SQL Server back-ups**: gebruik Azure backup om uw EOS SQL Server 2008 en 2008 R2 te beschermen tegen Ransomware, onbedoeld verwijderen en beschadiging met een RPO van 15 minuten en herstel naar een bepaald tijdstip. Zie [dit artikel](../../../backup/sql-support-matrix.md#scenario-support)voor meer informatie.
+- **Logboek verzending**: u kunt een back-upreplica van het logboek maken in een andere zone of Azure-regio met doorlopende herstel bewerkingen om de RTO te verminderen. U moet de verzen ding van het logboek hand matig configureren.
+- **Azure site Recovery**: u kunt uw virtuele machine repliceren tussen zones en regio's via Azure site Recovery replicatie. SQL Server vereist app-consistente moment opnamen om herstel in het geval van een ramp te garanderen. Azure Site Recovery biedt een minimale RPO van 1 uur en een periode van twee uur (plus SQL Server herstel tijd) RTO voor EOS SQL Server herstel na nood gevallen.
 
 ## <a name="security-patching"></a>Beveiligings patches
 

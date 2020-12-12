@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: ramkris
-ms.openlocfilehash: eae5c38c80c43ffed5138733d9425e2055dc0b76
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 06498a27b95a72148497efd2d1e600d802414359
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334001"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359554"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>big data Analytics versnellen met behulp van de Apache Spark om de connector te Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,9 +31,11 @@ U kunt de connector gebruiken met [Azure Databricks](https://azure.microsoft.com
 > Deze connector ondersteunt de core-(SQL) API van Azure Cosmos DB.
 > Gebruik de [MongoDb Spark-connector](https://docs.mongodb.com/spark-connector/master/)voor Cosmos DB voor MONGODB-API.
 > Voor Cosmos DB Cassandra-API gebruikt u de [Cassandra Spark-connector](https://github.com/datastax/spark-cassandra-connector).
->
 
-## <a name="quickstart"></a>Snelstartgids
+> [!IMPORTANT]
+> De Azure Cosmos DB Spark-connector wordt momenteel niet ondersteund voor [serverloze](serverless.md) accounts. Dit wordt verholpen omdat de serverloze aanbieding algemeen beschikbaar wordt.
+
+## <a name="quickstart"></a>Snelstart
 
 * Volg de stappen in aan [de slag met de Java SDK](./create-sql-api-java.md) om een Cosmos DB account in te stellen en een aantal gegevens in te vullen.
 * Volg de stappen in [Azure Databricks](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal) aan de slag om een Azure Databricks-werk ruimte en-cluster in te stellen.
@@ -276,10 +278,10 @@ mvn clean package
 De [Cosmos DB Spark github-opslag plaats](https://github.com/Azure/azure-cosmosdb-spark) heeft de volgende voorbeeld notitieblokken en-scripts die u kunt proberen.
 
 * **On-time vlucht prestaties met Spark en Cosmos DB (Seattle)** [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/On-Time%20Flight%20Performance%20with%20Spark%20and%20Cosmos%20DB%20-%20Seattle.ipynb)  |  [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/On-Time%20Flight%20Performance%20with%20Spark%20and%20Cosmos%20DB%20-%20Seattle.html): sluit Spark aan Cosmos DB met behulp van HDInsight Jupyter Notebook Service om Spark SQL, GraphFrames te demonstreren en vertragingen in de vlucht te voors pellen met behulp van ml-pijp lijnen.
-* **Twitter-bron met Apache Spark en Azure Cosmos DB wijzigings feed** : [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Twitter%20with%20Spark%20and%20Azure%20Cosmos%20DB%20Change%20Feed.ipynb)  |  [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Twitter%20with%20Spark%20and%20Azure%20Cosmos%20DB%20Change%20Feed.html)
-* **Apache Spark gebruiken om Cosmos DB grafieken te doorzoeken** : [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Using%20Apache%20Spark%20to%20query%20Cosmos%20DB%20Graphs.ipynb)  |  [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Using%20Apache%20Spark%20to%20query%20Cosmos%20DB%20Graphs.html)
+* **Twitter-bron met Apache Spark en Azure Cosmos DB wijzigings feed**: [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Twitter%20with%20Spark%20and%20Azure%20Cosmos%20DB%20Change%20Feed.ipynb)  |  [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Twitter%20with%20Spark%20and%20Azure%20Cosmos%20DB%20Change%20Feed.html)
+* **Apache Spark gebruiken om Cosmos DB grafieken te doorzoeken**: [ipynb](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Using%20Apache%20Spark%20to%20query%20Cosmos%20DB%20Graphs.ipynb)  |  [HTML](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/notebooks/Using%20Apache%20Spark%20to%20query%20Cosmos%20DB%20Graphs.html)
 * **[Azure Databricks verbinding maken met Azure Cosmos DB](https://docs.databricks.com/spark/latest/data-sources/azure/cosmosdb-connector.html)** met behulp van `azure-cosmosdb-spark` .  Hier vindt u ook een Azure Databricks versie van de [laptop voor on-time vlucht prestaties](https://github.com/dennyglee/databricks/tree/master/notebooks/Users/denny%40databricks.com/azure-databricks).
-* **[Lambda-architectuur met Azure Cosmos DB en HDInsight (Apache Spark)](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/readme.md)** : u kunt de operationele overhead verminderen van het onderhouden van Big Data pijp lijnen met behulp van Cosmos DB en Spark.
+* **[Lambda-architectuur met Azure Cosmos DB en HDInsight (Apache Spark)](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/readme.md)**: u kunt de operationele overhead verminderen van het onderhouden van Big Data pijp lijnen met behulp van Cosmos DB en Spark.
 
 ## <a name="more-information"></a>Meer informatie
 

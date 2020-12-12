@@ -7,18 +7,19 @@ author: MashaMSFT
 tags: azure-resource-manager
 ms.assetid: ebd23868-821c-475b-b867-06d4a2e310c7
 ms.service: virtual-machines-sql
+ms.subservice: backup
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 78b422cd41f4cea72b74257fe70c09471e9d2d5b
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: f41614d54dc4320f683f406b2882a7b388bb4c3d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556572"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358415"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Automatische back-up versie 2 voor virtuele machines van Azure (Resource Manager)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,18 +35,18 @@ Met automatische back-up v2 wordt [beheerde back-up](/sql/relational-databases/b
 ## <a name="prerequisites"></a>Vereisten
 Als u automatische back-up v2 wilt gebruiken, controleert u de volgende vereisten:
 
-**Besturings systeem** :
+**Besturings systeem**:
 
 - Windows Server 2012 R2 of hoger
 
-**SQL Server versie/editie** :
+**SQL Server versie/editie**:
 
 - SQL Server 2016 of hoger: Developer, Standard of ENTER prise
 
 > [!NOTE]
 > Zie voor SQL Server 2014 [automatische back-up voor SQL Server 2014](automated-backup-sql-2014.md).
 
-**Database configuratie** :
+**Database configuratie**:
 
 - Doel _gebruikers_ databases moeten het volledige herstel model gebruiken. Systeem databases hoeven niet het volledige herstel model te gebruiken. Als u echter wilt dat logboek back-ups moeten worden gemaakt voor model of MSDB, moet u het volledige herstel model gebruiken. Zie [back-up onder het volledige herstel model](/previous-versions/sql/sql-server-2008-r2/ms190217(v=sql.105))voor meer informatie over de impact van het volledige herstel model op back-ups. 
 - De SQL Server VM is geregistreerd met de SQL IaaS agent-extensie in de [volledige beheer modus](sql-agent-extension-manually-register-single-vm.md#upgrade-to-full). 
@@ -56,7 +57,7 @@ In de volgende tabel worden de opties beschreven die kunnen worden geconfigureer
 
 ### <a name="basic-settings"></a>Basisinstellingen
 
-| Instelling | Bereik (standaard) | Beschrijving |
+| Instelling | Bereik (standaard) | Description |
 | --- | --- | --- |
 | **Automatische back-up** | Inschakelen/uitschakelen (uitgeschakeld) | Hiermee wordt automatische back-ups voor een Azure-VM met SQL Server 2016/2017 Developer, Standard of ENTER prise in-of uitgeschakeld. |
 | **Bewaar periode** | 1-30 dagen (30 dagen) | Het aantal dagen dat back-ups moeten worden bewaard. |
@@ -66,7 +67,7 @@ In de volgende tabel worden de opties beschreven die kunnen worden geconfigureer
 
 ### <a name="advanced-settings"></a>Geavanceerde instellingen
 
-| Instelling | Bereik (standaard) | Beschrijving |
+| Instelling | Bereik (standaard) | Description |
 | --- | --- | --- |
 | **Back-ups van de systeem database** | Inschakelen/uitschakelen (uitgeschakeld) | Als deze functie is ingeschakeld, wordt ook een back-up gemaakt van de systeem databases: Master, MSDB en model. Controleer voor de MSDB-en model databases of ze zich in de modus voor volledig herstel bevinden als u wilt dat logboek back-ups worden gemaakt. Logboek back-ups worden nooit uitgevoerd voor de hoofd database. Er worden geen back-ups gemaakt voor TempDB. |
 | **Back-upschema** | Hand matig/automatisch (automatisch) | Het back-upschema wordt standaard automatisch bepaald op basis van de logboek groei. Met hand matig back-upschema kan de gebruiker het tijd venster voor back-ups opgeven. In dit geval worden back-ups alleen uitgevoerd met de opgegeven frequentie en tijdens het opgegeven tijd venster van een bepaalde dag. |
@@ -158,7 +159,7 @@ $resourcegroupname = "resourcegroupname"
 
 Als de uitbrei ding voor de SQL Server IaaS-agent is geïnstalleerd, wordt deze weer gegeven als ' SqlIaaSAgent ' of ' SQLIaaSExtension '. **ProvisioningState** voor de uitbrei ding moet ook ' geslaagd ' weer geven. 
 
-Als de app niet is geïnstalleerd of niet is ingericht, kunt u deze installeren met de volgende opdracht. Naast de naam van de virtuele machine en de resource groep moet u ook de regio ( **$Region** ) opgeven waarin uw VM zich bevindt.
+Als de app niet is geïnstalleerd of niet is ingericht, kunt u deze installeren met de volgende opdracht. Naast de naam van de virtuele machine en de resource groep moet u ook de regio (**$Region**) opgeven waarin uw VM zich bevindt.
 
 ```powershell
 $region = "EASTUS2"
@@ -191,7 +192,7 @@ FullBackupWindowHours       : 2
 LogBackupFrequency          : 60
 ```
 
-Als uw uitvoer laat zien dat **inschakelen** is ingesteld op **Onwaar** , moet u automatische back-up inschakelen. Het goede nieuws is dat u op dezelfde manier automatische back-ups inschakelt en configureert. Zie de volgende sectie voor deze informatie.
+Als uw uitvoer laat zien dat **inschakelen** is ingesteld op **Onwaar**, moet u automatische back-up inschakelen. Het goede nieuws is dat u op dezelfde manier automatische back-ups inschakelt en configureert. Zie de volgende sectie voor deze informatie.
 
 > [!NOTE] 
 > Als u de instellingen direct na het aanbrengen van een wijziging controleert, is het mogelijk dat u de oude configuratie waarden terugkrijgt. Wacht enkele minuten en controleer de instellingen opnieuw om er zeker van te zijn dat uw wijzigingen zijn toegepast.

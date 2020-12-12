@@ -8,18 +8,19 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: c492db4c-3faa-4645-849f-5a1a663be55a
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8572a73586b01967c8aef7f6c4947b5ce96146b4
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 1a9a2f9d999a51f2b4600e8379d4a8913675b338
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324853"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360013"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -46,7 +47,7 @@ U hebt een Azure-account nodig. U kunt [een gratis Azure-account openen of de](h
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer **+** deze optie om een nieuw object te maken in de portal.
 
    ![Nieuw object](./media/availability-group-manually-configure-prerequisites-tutorial-/01-portalplus.png)
@@ -95,7 +96,7 @@ Het virtuele netwerk maken in de Azure Portal:
    | **Subnetadresbereik** |10.33.0.0/29 |
    | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. Het **abonnement** is leeg als u slechts één abonnement hebt. |
    | **Resourcegroep** |Kies **bestaande gebruiken** en kies de naam van de resource groep. |
-   | **Locatie** |De Azure-locatie opgeven. |
+   | **location**: |De Azure-locatie opgeven. |
 
    De adres ruimte en het adres bereik van het subnet kunnen afwijken van de tabel. Afhankelijk van uw abonnement stelt de portal een beschik bare adres ruimte en een bijbehorend adres bereik voor het subnet voor. Als er onvoldoende adres ruimte beschikbaar is, gebruikt u een ander abonnement.
 
@@ -140,7 +141,7 @@ De volgende tabel geeft een overzicht van de netwerk configuratie-instellingen:
 | **Subnetadresbereik** |Deze waarde is afhankelijk van de beschik bare adresbereiken in uw abonnement. Een typische waarde is 10.0.1.0/24. |
 | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. |
 | **Resourcegroep** |**SQL-HA-RG** |
-| **Locatie** |Geef dezelfde locatie op die u hebt gekozen voor de resource groep. |
+| **location**: |Geef dezelfde locatie op die u hebt gekozen voor de resource groep. |
 
 ## <a name="create-availability-sets"></a>Beschikbaarheidssets maken
 
@@ -192,7 +193,7 @@ De volgende tabel bevat de instellingen voor deze twee computers:
 | **Wachtwoord** |Contoso! 0000 |
 | **Abonnement** |*Uw abonnement* |
 | **Resourcegroep** |SQL-HA-RG |
-| **Locatie** |*Uw locatie* |
+| **location**: |*Uw locatie* |
 | **Grootte** |DS1_V2 |
 | **Storage** | **Beheerde schijven gebruiken**  -  **Ja** |
 | **Virtueel netwerk** |autoHAVNET |

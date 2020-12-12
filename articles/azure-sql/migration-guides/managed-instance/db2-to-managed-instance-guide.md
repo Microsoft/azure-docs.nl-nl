@@ -1,5 +1,5 @@
 ---
-title: 'Migratie handleiding: DB2 naar SQL-beheerd exemplaar'
+title: 'DB2 naar SQL Managed instance: migratie handleiding'
 description: Volg deze hand leiding voor het migreren van uw DB2-data bases naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: c31187e87f18f0ec84cd5b80ccab997d0ba381c3
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 3902661553bbb390e6e999e0f67cd043eee8df09
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324751"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359180"
 ---
 # <a name="migration-guide-db2-to-sql-managed-instance"></a>Migratie handleiding: DB2 naar SQL-beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -86,7 +86,7 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Selecteer **verbinding maken met Azure SQL database**. 
     1. Voer de verbindings gegevens in om verbinding te maken met uw Azure SQL Managed instance.  
     1. Kies uw doel database in de vervolg keuzelijst. 
-    1. Selecteer **Verbinden**. 
+    1. Selecteer **Verbinding maken**. 
 
    :::image type="content" source="media/db2-to-managed-instance-guide/connect-to-sql-managed-instance.png" alt-text="Vul de details in om verbinding te maken met SQL Server":::
 
@@ -158,7 +158,7 @@ Sommige SQL Server-functies zijn alleen beschikbaar als het [compatibiliteits ni
 
 Raadpleeg de volgende bronnen voor meer hulp, die zijn ontwikkeld ter ondersteuning van een werkelijke migratie project betrokkenheid:
 
-|Asset  |Beschrijving  |
+|Asset  |Description  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Detectie-en evaluatie pakket voor gegevens bronnen van DB2 zOS](https://github.com/Microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script op een Data Base hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand op het bestands systeem. Verschillende bestands indelingen worden ondersteund, met inbegrip van *. CSV, zodat u de resultaten kunt vastleggen in externe hulpprogram ma's zoals werk bladen. Deze methode kan nuttig zijn als u eenvoudig resultaten wilt delen met teams waarop de workbench niet is geïnstalleerd.|

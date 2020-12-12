@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: df50583e650d3d44e702c0f7d1596f2a733a4445
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 244fae9f8611acd21f2ee6cd7dafa45b88606456
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556383"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359350"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Een FCI maken met gedeelde Azure-schijven (SQL Server op virtuele machines van Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -33,7 +33,7 @@ Zie voor meer informatie een overzicht van [FCI met SQL Server op Azure vm's](fa
 Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Ga [gratis](https://azure.microsoft.com/free/)aan de slag. 
-- [Twee of meer virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md). [Beschikbaarheids sets](../../../virtual-machines/windows/tutorial-availability-sets.md) en [proximity placement groups](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) (PPGs) worden beide ondersteund. Als u een PPG gebruikt, moeten alle knoop punten zich in dezelfde groep bevinden.
+- [Twee of meer virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md). [Beschikbaarheids sets](../../../virtual-machines/windows/tutorial-availability-sets.md) en [proximity placement groups](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) (PPGs) die worden ondersteund voor Premium-SSD-en [beschikbaarheids zones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , worden ondersteund voor Ultra disks. Als u een PPG gebruikt, moeten alle knoop punten zich in dezelfde groep bevinden.
 - Een account met machtigingen voor het maken van objecten op zowel virtuele Azure-machines als in Active Directory.
 - De meest recente versie van [Power shell](/powershell/azure/install-az-ps). 
 
@@ -44,7 +44,7 @@ Implementeer een beheerde Premium-SSD schijf met de functie gedeelde schijf inge
 Als u een gedeelde Azure-schijf wilt toevoegen, gaat u als volgt te werk: 
 
 
-1. Sla het volgende script *op alsSharedDiskConfig.jsop* : 
+1. Sla het volgende script *op alsSharedDiskConfig.jsop*: 
 
    ```JSON
    { 
@@ -153,10 +153,10 @@ Als u het cluster wilt valideren met behulp van de gebruikers interface, gaat u 
 
 1. Klik onder **Serverbeheer** op **extra** en selecteer vervolgens **Failoverclusterbeheer**.
 1. Selecteer onder **Failoverclusterbeheer** **actie** en selecteer vervolgens **configuratie valideren**.
-1. Selecteer **Volgende**.
+1. Selecteer **Next**.
 1. Voer onder **servers of een cluster selecteren** de namen van beide virtuele machines in.
 1. Onder **test opties** selecteert u **alleen geselecteerde tests uitvoeren**. 
-1. Selecteer **Volgende**.
+1. Selecteer **Next**.
 1. Selecteer onder **selectie testen** alle tests *behalve* **opslag**
 
 ## <a name="test-cluster-failover"></a>Cluster-Failover testen

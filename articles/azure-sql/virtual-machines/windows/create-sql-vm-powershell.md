@@ -8,6 +8,7 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 98d50dd8-48ad-444f-9031-5378d8270d7b
 ms.service: virtual-machines-sql
+ms.subservice: deployment
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -15,12 +16,12 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c49f8b2732a1b62760cec69626d56751971e6a44
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: a3f51a07b274320d1cd9f12b33703d8ec7f21f49
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556434"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359656"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Azure PowerShell gebruiken om SQL Server in te richten op Azure Virtual Machines
 
@@ -28,7 +29,7 @@ ms.locfileid: "94556434"
 
 Deze hand leiding bevat opties voor het inrichten van SQL Server op Azure Virtual Machines (Vm's) voor het gebruik van Power shell. Voor een gestroomlijnd Azure PowerShell-voor beeld dat afhankelijk is van standaard waarden, raadpleegt u de [virtuele machine van SQL Azure PowerShell Quick](sql-vm-create-powershell-quickstart.md)start.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
 [!INCLUDE [updated-for-az.md](../../../../includes/updated-for-az.md)]
 
@@ -135,7 +136,7 @@ Gebruik de volgende variabelen om de SQL Server installatie kopie te definiëren
    Get-AzVMImageSku -Location $Location -Publisher 'MicrosoftSQLServer' -Offer $OfferName | Select Skus
    ```
 
-1. Voor deze zelf studie gebruikt u de SQL Server 2017 Developer Edition ( **SQLDEV** ). De Developer Edition is gratis gelicentieerd voor testen en ontwikkeling en u betaalt alleen voor de kosten van het uitvoeren van de virtuele machine.
+1. Voor deze zelf studie gebruikt u de SQL Server 2017 Developer Edition (**SQLDEV**). De Developer Edition is gratis gelicentieerd voor testen en ontwikkeling en u betaalt alleen voor de kosten van het uitvoeren van de virtuele machine.
 
    ```powershell
    $Sku = "SQLDEV"
@@ -151,7 +152,7 @@ Voer deze cmdlet uit om uw nieuwe resource groep te maken.
 New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 ```
 
-## <a name="create-a-storage-account"></a>Create a storage account
+## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Voor de virtuele machine zijn opslag resources vereist voor de schijf met het besturings systeem en voor de SQL Server gegevens en logboek bestanden. Voor eenvoud maakt u één schijf voor beide. U kunt later extra schijven toevoegen met behulp van de cmdlet [add-Azure Disk](/powershell/module/servicemanagement/azure.service/add-azuredisk) om uw SQL Server-gegevens en-logboek bestanden op toegewezen schijven te plaatsen. Gebruik de cmdlet [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount) om een standaard-opslag account te maken in de nieuwe resource groep. Geef de variabelen op die u eerder hebt geïnitialiseerd voor de naam van het opslag account, de naam van de opslag-SKU en de locatie.
 

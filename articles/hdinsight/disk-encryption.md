@@ -8,12 +8,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: a9a90fbb2eedd6db2873d4ac2a5fea94c05c7eed
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4e895cdba1bfc16eac0450bd05271f0e41985b7b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005653"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359756"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Dubbele versleuteling van Azure HDInsight voor Data-at-rest
 
@@ -71,7 +71,7 @@ Zie [een door de gebruiker toegewezen beheerde identiteit maken](../active-direc
 
 ### <a name="create-azure-key-vault"></a>Azure Key Vault maken
 
-Een sleutelkluis maken. Zie [Azure Key Vault maken](../key-vault/general/quick-create-portal.md) voor specifieke stappen.
+Maak een sleutelkluis. Zie [Azure Key Vault maken](../key-vault/general/quick-create-portal.md) voor specifieke stappen.
 
 HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt, kunt u uw sleutels importeren in Azure Key Vault. Houd er rekening mee dat voor de sleutel kluis **voorlopig verwijderen** moet zijn ingeschakeld. Ga voor meer informatie over het importeren van bestaande sleutels naar [sleutels, geheimen en certificaten](../key-vault/general/about-keys-secrets-certificates.md).
 
@@ -119,15 +119,24 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
 
 U bent nu klaar om een nieuw HDInsight-cluster te maken. Door de klant beheerde sleutels kunnen alleen worden toegepast op nieuwe clusters tijdens het maken van het cluster. Versleuteling kan niet worden verwijderd uit door de klant beheerde sleutel clusters en door de klant beheerde sleutels kunnen niet worden toegevoegd aan bestaande clusters.
 
+Vanaf de [release van November 2020](hdinsight-release-notes.md#release-date-11182020)ondersteunt HDInsight het maken van clusters met behulp van versie-en versie-minder sleutel-uri's. Als u het cluster maakt met een sleutel-URI met een versie-less, probeert het HDInsight-cluster de automatische draaiing van sleutels uit te voeren wanneer de sleutel wordt bijgewerkt in uw Azure Key Vault. Als u het cluster met een versie sleutel-URI maakt, moet u een hand matige rotatie van de sleutel uitvoeren zoals wordt beschreven in [de versleutelings sleutel draaien](#rotating-the-encryption-key).
+
+Voor clusters die zijn gemaakt voor de release van november 2020, moet u hand matig een sleutel draaiing uitvoeren met behulp van de versie sleutel-URI.
+
 #### <a name="using-the-azure-portal"></a>Azure Portal gebruiken
 
-Geef tijdens het maken van het cluster de volledige **sleutel-id** op, met inbegrip van de sleutel versie. Bijvoorbeeld `https://contoso-kv.vault.azure.net/keys/myClusterKey/46ab702136bc4b229f8b10e8c2997fa4`. U moet ook de beheerde identiteit toewijzen aan het cluster en de sleutel-URI opgeven.
+Tijdens het maken van een cluster kunt u een versie sleutel of een versieloze sleutel op de volgende manier gebruiken:
+
+- **Versie** : Geef tijdens het maken van het cluster de volledige **sleutel-id** op, met inbegrip van de sleutel versie. Bijvoorbeeld `https://contoso-kv.vault.azure.net/keys/myClusterKey/46ab702136bc4b229f8b10e8c2997fa4`.
+- **Versieloze** : Geef tijdens het maken van het cluster alleen de **sleutel-id** op. Bijvoorbeeld `https://contoso-kv.vault.azure.net/keys/myClusterKey`.
+
+U moet de beheerde identiteit ook toewijzen aan het cluster.
 
 ![Nieuw cluster maken](./media/disk-encryption/create-cluster-portal.png)
 
 #### <a name="using-azure-cli"></a>Azure CLI gebruiken
 
-In het volgende voor beeld ziet u hoe u Azure CLI gebruikt om een nieuw Apache Spark-cluster te maken waarvoor schijf versleuteling is ingeschakeld. Zie [Azure cli AZ hdinsight Create](/cli/azure/hdinsight#az-hdinsight-create)voor meer informatie.
+In het volgende voor beeld ziet u hoe u Azure CLI gebruikt om een nieuw Apache Spark-cluster te maken waarvoor schijf versleuteling is ingeschakeld. Zie [Azure cli AZ hdinsight Create](/cli/azure/hdinsight#az-hdinsight-create)voor meer informatie. De para meter `encryption-key-version` is optioneel.
 
 ```azurecli
 az hdinsight create -t spark -g MyResourceGroup -n MyCluster \
@@ -141,7 +150,7 @@ az hdinsight create -t spark -g MyResourceGroup -n MyCluster \
 
 #### <a name="using-azure-resource-manager-templates"></a>Azure Resource Manager-sjablonen gebruiken
 
-In het volgende voor beeld ziet u hoe u een Azure Resource Manager sjabloon gebruikt om een nieuw Apache Spark-cluster te maken waarvoor schijf versleuteling is ingeschakeld. Zie [Wat zijn arm-sjablonen?](../azure-resource-manager/templates/overview.md)voor meer informatie.
+In het volgende voor beeld ziet u hoe u een Azure Resource Manager sjabloon gebruikt om een nieuw Apache Spark-cluster te maken waarvoor schijf versleuteling is ingeschakeld. Zie [Wat zijn arm-sjablonen?](../azure-resource-manager/templates/overview.md)voor meer informatie. De Resource Manager-sjabloon eigenschap `diskEncryptionKeyVersion` is optioneel.
 
 In dit voor beeld wordt Power shell gebruikt om de sjabloon aan te roepen.
 
@@ -355,7 +364,7 @@ De inhoud van de resource beheer sjabloon, `azuredeploy.json` :
 
 ### <a name="rotating-the-encryption-key"></a>De versleutelings sleutel draaien
 
-Er zijn mogelijk scenario's waarin u mogelijk de versleutelings sleutels wilt wijzigen die door het HDInsight-cluster worden gebruikt nadat het is gemaakt. Dit kan eenvoudig zijn via de portal. Voor deze bewerking moet het cluster toegang hebben tot zowel de huidige sleutel als de beoogde nieuwe sleutel, anders kan de bewerking voor het draaien van de sleutel niet worden uitgevoerd.
+U kunt de versleutelings sleutels die op uw actieve cluster worden gebruikt, wijzigen met behulp van de Azure Portal of Azure CLI. Voor deze bewerking moet het cluster toegang hebben tot zowel de huidige sleutel als de beoogde nieuwe sleutel, anders kan de bewerking voor het draaien van de sleutel niet worden uitgevoerd. Voor clusters die zijn gemaakt na de release van november 2020 kunt u kiezen of u wilt dat uw nieuwe sleutel een versie heeft of niet. Voor clusters die zijn gemaakt voor de release van november 2020, moet u een versie sleutel gebruiken bij het draaien van de versleutelings sleutel.
 
 #### <a name="using-the-azure-portal"></a>Azure Portal gebruiken
 

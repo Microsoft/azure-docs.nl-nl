@@ -7,6 +7,7 @@ author: MashaMSFT
 tags: azure-resource-manager
 ms.assetid: aa5bf144-37a3-4781-892d-e0e300913d03
 ms.service: virtual-machines-sql
+ms.subservice: migration
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -14,12 +15,12 @@ ms.date: 07/30/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: ae89091eb57eade39f8b7581fc5df7ad449e8590
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 789554121af1c83d9077e6153ca9db01477bde25
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553553"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360149"
 ---
 # <a name="move-a-sql-server-vm-to-another-region-within-azure-with-azure-site-recovery"></a>Een SQL Server VM verplaatsen naar een andere regio in azure met Azure Site Recovery
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -114,14 +115,14 @@ De volgende stappen laten zien hoe u Azure Site Recovery kunt gebruiken om het v
    ![Voortgang van testen van testfailover controleren](./media/move-sql-vm-different-region/monitor-failover-test-job.png)
 
 1. Wanneer de test is voltooid, gaat u naar **virtuele machines** in de portal en bekijkt u de nieuwe virtuele machine. Zorg ervoor dat de SQL Server virtuele machine wordt uitgevoerd, de juiste grootte heeft en is verbonden met het juiste netwerk. 
-1. Verwijder de virtuele machine die is gemaakt als onderdeel van de test, omdat de **failover** -optie grijs wordt weer gegeven tot de failover-test resources zijn opgeschoond. Ga terug naar de kluis, selecteer **gerepliceerde items** , selecteer de SQL Server VM en selecteer vervolgens **testfailover opschonen**. Leg alle waarnemingen vast die zijn gekoppeld aan de test in de sectie **notities** en schakel het selectie vakje in naast **testen is voltooid. Virtuele machines voor testfailover verwijderen**. Selecteer **OK** om de resources na de test op te schonen. 
+1. Verwijder de virtuele machine die is gemaakt als onderdeel van de test, omdat de **failover** -optie grijs wordt weer gegeven tot de failover-test resources zijn opgeschoond. Ga terug naar de kluis, selecteer **gerepliceerde items**, selecteer de SQL Server VM en selecteer vervolgens **testfailover opschonen**. Leg alle waarnemingen vast die zijn gekoppeld aan de test in de sectie **notities** en schakel het selectie vakje in naast **testen is voltooid. Virtuele machines voor testfailover verwijderen**. Selecteer **OK** om de resources na de test op te schonen. 
 
    ![items opschonen na failover-test](./media/move-sql-vm-different-region/cleanup-test-items.png)
 
 ## <a name="move-the-sql-server-vm"></a>De SQL Server VM verplaatsen 
 De volgende stappen laten zien hoe u de SQL Server VM van de bron regio kunt verplaatsen naar de doel regio. 
 
-1. Ga naar de **Recovery Services** kluis, selecteer **gerepliceerde items** , selecteer de virtuele machine en selecteer vervolgens **failover**. 
+1. Ga naar de **Recovery Services** kluis, selecteer **gerepliceerde items**, selecteer de virtuele machine en selecteer vervolgens **failover**. 
 
    ![Failover initiëren](./media/move-sql-vm-different-region/initiate-failover.png)
 
@@ -130,7 +131,7 @@ De volgende stappen laten zien hoe u de SQL Server VM van de bron regio kunt ver
 1. Selecteer **OK** om de failover te starten.
 1. U kunt het failoverproces bewaken op dezelfde **site Recovery** -pagina die u hebt bekeken bij het controleren van de failover-test in de vorige sectie. 
 1. Nadat de taak is voltooid, controleert u of de SQL Server virtuele machine wordt weer gegeven in de doel regio zoals verwacht. 
-1. Ga terug naar de kluis, selecteer **gerepliceerde items** , selecteer de SQL Server virtuele machine en selecteer **door voeren** om het verplaatsings proces te volt ooien naar de doel regio. Wacht tot de doorvoertaak is voltooid. 
+1. Ga terug naar de kluis, selecteer **gerepliceerde items**, selecteer de SQL Server virtuele machine en selecteer **door voeren** om het verplaatsings proces te volt ooien naar de doel regio. Wacht tot de doorvoertaak is voltooid. 
 1. Registreer uw SQL Server-VM met de SQL IaaS agent-extensie om de beheer baarheid van **virtuele SQL-machines** in te scha kelen in de Azure Portal en de functies die aan de uitbrei ding zijn gekoppeld. Zie [SQL Server VM registreren met de extensie van SQL IaaS-agent](sql-agent-extension-manually-register-single-vm.md)voor meer informatie. 
 
   > [!WARNING]

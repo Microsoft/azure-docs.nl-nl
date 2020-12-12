@@ -4,16 +4,16 @@ description: Dit artikel bevat een verzameling AzCopy-voorbeeld opdrachten die u
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/08/2020
+ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 11d40805cda2ea2e3693c6c93034ae19f1f0fcc0
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: ec88a3c740ceda7ccf352f8f32f94e2cd52d0988
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907516"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358755"
 ---
 # <a name="upload-files-to-azure-blob-storage-by-using-azcopy-v10"></a>Bestanden uploaden naar Azure Blob Storage met behulp van AzCopy V10 toevoegen
 
@@ -135,9 +135,11 @@ U kunt ook bestanden uitsluiten met behulp van de `--exclude-pattern` optie. Zie
 
 De `--include-pattern` `--exclude-pattern` Opties en zijn alleen van toepassing op bestands namen en niet op het pad.  Als u alle tekst bestanden in een mapstructuur wilt kopiëren, gebruikt u de `–recursive` optie om de volledige mapstructuur op te halen en gebruikt u vervolgens de `–include-pattern` en geeft `*.txt` u op om alle tekst bestanden op te halen.
 
-### <a name="upload-files-that-were-modified-after-a-date-and-time"></a>Bestanden uploaden die na een datum en tijd zijn gewijzigd 
+### <a name="upload-files-that-were-modified-before-or-after-a-date-and-time"></a>Bestanden uploaden die zijn gewijzigd vóór of na een datum en tijd 
 
-Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met de `--include-after` optie. Geef een datum en tijd op in de ISO-8601-indeling (bijvoorbeeld: `2020-08-19T15:04:00Z` ). 
+Gebruik de [azcopy](storage-ref-azcopy-copy.md) -opdracht copy met `--include-before` de `--include-after` optie of. Geef een datum en tijd op in de ISO-8601-indeling (bijvoorbeeld: `2020-08-19T15:04:00Z` ). 
+
+De volgende voor beelden uploaden bestanden die zijn gewijzigd op of na de opgegeven datum.
 
 |    |     |
 |--------|-----------|
@@ -186,10 +188,10 @@ Zie [Opties](storage-ref-azcopy-copy.md#options)voor een volledige lijst.
 
 Meer voor beelden vindt u in deze artikelen:
 
-- [Voor beelden: downloaden](storage-use-azcopy-blobs-download.md)
-- [Voor beelden: kopiëren tussen accounts](storage-use-azcopy-blobs-copy.md)
-- [Voor beelden: synchroniseren](storage-use-azcopy-blobs-synchronize.md)
-- [Voor beelden: Amazon S3-buckets](storage-use-azcopy-s3.md)
+- [Voorbeelden: Downloaden](storage-use-azcopy-blobs-download.md)
+- [Voorbeelden: Kopiëren tussen accounts](storage-use-azcopy-blobs-copy.md)
+- [Voorbeelden: Synchroniseren](storage-use-azcopy-blobs-synchronize.md)
+- [Voorbeelden: Amazon S3-bucket](storage-use-azcopy-s3.md)
 - [Voor beelden: Azure Files](storage-use-azcopy-files.md)
 - [Zelfstudie: on-premises gegevens migreren naar cloudopslag met behulp van AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

@@ -4,15 +4,15 @@ description: U kunt autorisatie referenties opgeven voor AzCopy-bewerkingen met 
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/03/2020
+ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: b13b5e1e27e9717066ff8f1aa8e245e8d9f54bbb
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 43002fdfbdce146b52774aa4182445bf34dd7199
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498112"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360285"
 ---
 # <a name="authorize-access-to-blobs-with-azcopy-and-azure-active-directory-azure-ad"></a>Toegang verlenen tot blobs met AzCopy en Azure Active Directory (Azure AD)
 
@@ -73,7 +73,7 @@ Met deze opdracht worden een verificatiecode en de URL van een website geretourn
 
 Er wordt een aanmeldingsvenster weergegeven. Meld u in dat venster aan bij uw Azure-account met behulp van de referenties van uw Azure-account. Nadat u bent aangemeld, kunt u het browservenster sluiten en AzCopy gebruiken.
 
-<a id="service-principal"></a>
+<a id="managed-identity"></a>
 
 ## <a name="authorize-a-managed-identity"></a>Een beheerde identiteit autoriseren
 
@@ -116,6 +116,8 @@ azcopy login --identity --identity-resource-id "<resource-id>"
 ```
 
 Vervang de `<resource-id>` tijdelijke aanduiding door de resource-id van de door de gebruiker toegewezen beheerde identiteit.
+
+<a id="service-principal"></a>
 
 ## <a name="authorize-a-service-principal"></a>Een Service-Principal autoriseren
 
@@ -181,8 +183,113 @@ Vervang de `<path-to-certificate-file>` tijdelijke aanduiding door het relatieve
 > [!NOTE]
 > U kunt een prompt gebruiken zoals in dit voor beeld wordt weer gegeven. Op die manier wordt uw wacht woord niet weer gegeven in de opdracht geschiedenis van de console. 
 
-<a id="managed-identity"></a>
+## <a name="authorize-without-a-keyring-linux"></a>Autoriseren zonder sleutel hanger (Linux)
 
+Als uw besturings systeem geen geheim archief heeft, zoals een *sleutel hanger*, werkt de `azcopy login` opdracht niet. In plaats daarvan kunt u omgevings variabelen in het geheugen instellen voordat u elke bewerking uitvoert. Deze waarden verdwijnen uit het geheugen nadat de bewerking is voltooid, dus moet u deze variabelen telkens instellen wanneer u een azcopy-opdracht uitvoert.
+
+### <a name="authorize-a-user-identity"></a>Een gebruikers identiteit autoriseren
+
+Nadat u hebt gecontroleerd of uw gebruikers-id het benodigde autorisatie niveau heeft gekregen, typt u de volgende opdracht en drukt u vervolgens op ENTER.
+
+```bash
+export AZCOPY_AUTO_LOGIN_TYPE=DEVICE
+```
+
+Voer vervolgens een wille keurige azcopy-opdracht uit (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
+
+Met deze opdracht worden een verificatiecode en de URL van een website geretourneerd. Open de website, geef de code op en kies vervolgens de knop **Volgende**.
+
+![Een container maken](media/storage-use-azcopy-v10/azcopy-login.png)
+
+Er wordt een aanmeldingsvenster weergegeven. Meld u in dat venster aan bij uw Azure-account met behulp van de referenties van uw Azure-account. Nadat u zich hebt aangemeld, kan de bewerking worden voltooid.
+
+### <a name="authorize-by-using-a-system-wide-managed-identity"></a>Autoriseren met behulp van een beheerde identiteit voor het hele systeem
+
+Zorg er eerst voor dat u een op het hele systeem beheerde identiteit hebt ingeschakeld op uw VM. Zie door [het systeem toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#system-assigned-managed-identity).
+
+Typ de volgende opdracht en druk vervolgens op ENTER.
+
+```bash
+export AZCOPY_AUTO_LOGIN_TYPE=MSI
+```
+
+Voer vervolgens een wille keurige azcopy-opdracht uit (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
+
+### <a name="authorize-by-using-a-user-assigned-managed-identity"></a>Autoriseren met een door de gebruiker toegewezen beheerde identiteit
+
+Zorg er eerst voor dat u een door de gebruiker toegewezen beheerde identiteit hebt ingeschakeld op de virtuele machine. Zie door de [gebruiker toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#user-assigned-managed-identity).
+
+Typ de volgende opdracht en druk vervolgens op ENTER.
+
+```bash
+export AZCOPY_AUTO_LOGIN_TYPE=MSI
+```
+
+Typ vervolgens een van de volgende opdrachten en druk vervolgens op ENTER.
+
+```bash
+export AZCOPY_MSI_CLIENT_ID=<client-id>
+```
+
+Vervang de `<client-id>` tijdelijke aanduiding door de client-id van de door de gebruiker toegewezen beheerde identiteit.
+
+```bash
+export AZCOPY_MSI_OBJECT_ID=<object-id>
+```
+
+Vervang de `<object-id>` tijdelijke aanduiding door de object-id van de door de gebruiker toegewezen beheerde identiteit.
+
+```bash
+export AZCOPY_MSI_RESOURCE_STRING=<resource-id>
+```
+
+Vervang de `<resource-id>` tijdelijke aanduiding door de resource-id van de door de gebruiker toegewezen beheerde identiteit.
+
+Nadat u deze variabelen hebt ingesteld, kunt u elke wille keurige azcopy-opdracht uitvoeren (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
+
+### <a name="authorize-a-service-principal"></a>Een Service-Principal autoriseren
+
+Voordat u een script uitvoert, moet u zich ten minste één keer interactief aanmelden zodat u AzCopy kunt opgeven met de referenties van de Service-Principal.  Deze referenties worden opgeslagen in een beveiligd en versleuteld bestand, zodat uw script geen gevoelige informatie hoeft op te geven.
+
+U kunt zich aanmelden bij uw account door gebruik te maken van een client geheim of door het wacht woord te gebruiken van een certificaat dat is gekoppeld aan de app-registratie van uw service-principal.
+
+#### <a name="authorize-a-service-principal-by-using-a-client-secret"></a>Een Service-Principal autoriseren met behulp van een client geheim
+
+Typ de volgende opdracht en druk vervolgens op ENTER.
+
+```bash
+export AZCOPY_AUTO_LOGIN_TYPE=SPN
+export AZCOPY_SPA_APPLICATION_ID=<application-id>
+export AZCOPY_SPA_CLIENT_SECRET=<client-secret>
+```
+
+Vervang de `<application-id>` tijdelijke aanduiding door de toepassings-id van de app-registratie van uw service-principal. Vervang de `<client-secret>` tijdelijke aanduiding door het client geheim.
+
+> [!NOTE]
+> Overweeg het gebruik van een prompt om het wacht woord van de gebruiker te verzamelen. Op die manier wordt uw wacht woord niet weer gegeven in de opdracht geschiedenis. 
+
+Voer vervolgens een wille keurige azcopy-opdracht uit (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
+
+#### <a name="authorize-a-service-principal-by-using-a-certificate"></a>Een Service-Principal autoriseren met behulp van een certificaat
+
+Als u uw eigen referenties voor autorisatie wilt gebruiken, kunt u een certificaat uploaden naar de registratie van uw app en dat certificaat vervolgens gebruiken om u aan te melden.
+
+Naast het uploaden van uw certificaat naar de registratie van uw app, moet u ook een kopie van het certificaat hebben opgeslagen op de machine of VM waarop AzCopy wordt uitgevoerd. Deze kopie van het certificaat moet zich in bestaan. PFX of. PEM-indeling en moet de persoonlijke sleutel bevatten. De persoonlijke sleutel moet met een wacht woord zijn beveiligd. 
+
+Typ de volgende opdracht en druk vervolgens op ENTER.
+
+```bash
+export AZCOPY_AUTO_LOGIN_TYPE=SPN
+export AZCOPY_SPA_CERT_PATH=<path-to-certificate-file>
+export AZCOPY_SPA_CERT_PASSWORD=<certificate-password>
+```
+
+Vervang de `<path-to-certificate-file>` tijdelijke aanduiding door het relatieve of volledig gekwalificeerde pad naar het certificaat bestand. AzCopy slaat het pad naar dit certificaat op, maar er wordt geen kopie van het certificaat opgeslagen. Zorg er dus voor dat u dat certificaat blijft bewaren. Vervang de `<certificate-password>` tijdelijke aanduiding door het wacht woord van het certificaat.
+
+> [!NOTE]
+> Overweeg het gebruik van een prompt om het wacht woord van de gebruiker te verzamelen. Op die manier wordt uw wacht woord niet weer gegeven in de opdracht geschiedenis. 
+
+Voer vervolgens een wille keurige azcopy-opdracht uit (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
 
 ## <a name="next-steps"></a>Volgende stappen
 

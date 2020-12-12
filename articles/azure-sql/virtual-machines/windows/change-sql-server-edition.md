@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
@@ -13,12 +14,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 801a9a112615bd6220b5f273b51ed39248ebcd45
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: b6ea6f947b2cd8d7d9c38a0e5e440ce5fd273bb7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556468"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358823"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>In-place wijziging van SQL Server-editie op Azure VM
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

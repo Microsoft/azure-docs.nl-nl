@@ -7,18 +7,19 @@ author: MashaMSFT
 editor: monicar
 ms.assetid: 14b39cde-311c-4ddf-98f3-8694e01a7d3b
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/06/2019
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 147c507cde9abf2ef97098c6b41fbbd4d67f02d2
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 9337d1c2767923e6dc7c6b267e0c180b460a116e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324802"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359418"
 ---
 # <a name="configure-one-or-more-always-on-availability-group-listeners---resource-manager"></a>Een of meer listeners voor Always on-beschikbaarheids groep configureren-Resource Manager
 

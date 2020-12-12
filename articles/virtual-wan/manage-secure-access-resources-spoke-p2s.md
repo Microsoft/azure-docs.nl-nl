@@ -6,14 +6,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: d4257e5ade1e32ec971bb77f9d5a686d30195735
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: b0937bbd72460b1d46ce0394af1933e858424966
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111332"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360319"
 ---
 # <a name="manage-secure-access-to-resources-in-spoke-vnets-for-user-vpn-clients"></a>Veilige toegang tot bronnen in spoke VNets voor VPN-clients van gebruikers beheren
 
@@ -41,7 +41,11 @@ De punt-naar-site-configuratie (P2S) definieert de para meters voor het verbinde
 
 Wanneer u de verificatie methode selecteert, hebt u drie opties. Voor elke methode gelden specifieke vereisten. Selecteer een van de volgende methoden en voer de stappen uit.
 
-* **Azure Active Directory-verificatie:** Haal de toepassings-ID op van de Azure VPN-bedrijfs toepassing die is geregistreerd in uw Azure AD-Tenant, [de uitgever](https://sts.windows.net/your-Directory-ID/)en [de Azure AD-Tenant](https://login.microsoftonline.com/your-Directory-ID).
+* **Azure Active Directory-verificatie:** Het volgende te verkrijgen:
+
+   * De **toepassings-id** van de Azure VPN-bedrijfs toepassing die in uw Azure AD-Tenant is geregistreerd.
+   * De **verlener**. Bijvoorbeeld: `https://sts.windows.net/your-Directory-ID`.
+   * De **Azure AD-Tenant**. Bijvoorbeeld: `https://login.microsoftonline.com/your-Directory-ID`.
 
 * **RADIUS-gebaseerde verificatie:** Haal het IP-adres, het RADIUS-server geheim en de certificaat gegevens van de RADIUS-server op.
 

@@ -8,12 +8,12 @@ ms.author: sngun
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b74a403cef8474ae32d98a20899437c2124f3abf
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: ba4d4e63bdd1e795bc1c599d0eae8a595aa0d643
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340376"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359520"
 ---
 # <a name="working-with-dates-in-azure-cosmos-db"></a>Werken met datums in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -94,6 +94,6 @@ Meer informatie over het configureren van het indexerings beleid in [Azure Cosmo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* De code voorbeelden downloaden en uitvoeren [op github](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples)
+* De code voorbeelden downloaden en uitvoeren [op github](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/code-samples)
 * Meer informatie over [SQL-query's](sql-query-getting-started.md)
 * Meer informatie over [Azure Cosmos DB indexerings beleid](index-policy.md)

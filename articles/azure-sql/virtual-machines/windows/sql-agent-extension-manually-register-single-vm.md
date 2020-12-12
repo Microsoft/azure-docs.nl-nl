@@ -6,6 +6,7 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 48c996b6c7d0024b256908565c57032fe3e18514
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: bb7331747db301be5db00d550eec211f75257e29
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545635"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360030"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>SQL Server VM registreren met de SQL IaaS agent-extensie
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -278,7 +279,7 @@ Het ongedaan maken van de registratie van de virtuele SQL-machine met de SQL Iaa
 
 Voer de volgende stappen uit om de registratie van uw SQL Server-VM bij de uitbrei ding ongedaan te maken met de Azure Portal:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Ga naar de SQL-VM-resource. 
   
    ![Resource van virtuele SQL-machines](./media/sql-agent-extension-manually-register-single-vm/sql-vm-manage.png)

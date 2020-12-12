@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 7577c8510746d1140c1f8b70081f600d992ae512
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c255a3d68b1a24e25c1c0e308faa3fd364a15861
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016672"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358738"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset wijzigen
 
@@ -284,7 +284,7 @@ Zodra het model voor de schaalset is bijgewerkt, is de nieuwe configuratie van t
 Schaal sets hebben een ' upgrade beleid ' dat bepaalt hoe Vm's up-to-date worden gebracht met het nieuwste model voor schaal sets. De drie modi voor het upgrade beleid zijn:
 
 - **Automatische** -in deze modus biedt de schaalset geen garanties over de volg orde van de vm's die worden uitgevoerd. De schaalset kan alle Vm's op hetzelfde moment uitvoeren. 
-- **Rolling** In deze modus wordt de update in batches met een optionele onderbrekings tijd tussen batches getotaliseerd.
+-  In deze modus wordt de update in batches met een optionele onderbrekings tijd tussen batches getotaliseerd.
 - **Hand matig** : in deze modus, wanneer u het model voor de schaalset bijwerkt, gebeurt er niets met bestaande vm's.
  
 Als u bestaande Vm's wilt bijwerken, moet u een hand matige upgrade uitvoeren van elke bestaande VM. U kunt deze hand matige upgrade uitvoeren met:
@@ -350,12 +350,12 @@ Sommige eigenschappen kunnen worden gewijzigd, met uitzonde ring van de huidige 
 
 - **singlePlacementGroup** -als singlePlacementGroup is ingesteld op True, kan dit worden gewijzigd in false. Als singlePlacementGroup echter False is, kan het **niet** worden gewijzigd in True.
 - **subnet** -het subnet van een schaalset kan worden gewijzigd zolang het oorspronkelijke subnet en het nieuwe subnet zich in hetzelfde virtuele netwerk bevinden.
+- **imageReferenceSku** -image-referentie-SKU kan worden bijgewerkt voor [distributies](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), Windows Server/client-installatie kopieën en installatie kopieën zonder [plan gegevens](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage#view-plan-properties). 
 
 ### <a name="properties-that-require-deallocation-to-change"></a>Eigenschappen waarvan de toewijzing moet worden gewijzigd
 Sommige eigenschappen kunnen alleen worden gewijzigd in bepaalde waarden als de toewijzing van de virtuele machines in de schaalset ongedaan wordt gemaakt. Deze eigenschappen zijn onder andere:
 
-- **SKU-naam**: als de nieuwe VM-SKU niet wordt ondersteund op de hardware waarop de schaalset momenteel is ingeschakeld, moet u de toewijzing van de vm's in de schaalset ongedaan maken voordat u de naam van de SKU wijzigt. Zie [het formaat van een Azure VM wijzigen](../virtual-machines/windows/resize-vm.md)voor meer informatie.
-
+- **SKU-naam**: als de nieuwe VM-SKU niet wordt ondersteund op de hardware waarop de schaalset momenteel is ingeschakeld, moet u de toewijzing van de vm's in de schaalset ongedaan maken voordat u de naam van de SKU wijzigt. Zie [het formaat van een Azure VM wijzigen](../virtual-machines/windows/resize-vm.md)voor meer informatie. 
 
 ## <a name="vm-specific-updates"></a>VM-specifieke updates
 Bepaalde wijzigingen kunnen worden toegepast op specifieke Vm's in plaats van de eigenschappen van de globale schaalset. Op dit moment is de enige specifieke VM-update die wordt ondersteund, om gegevens schijven te koppelen/loskoppelen van Vm's in de schaalset. Deze functie is beschikbaar als preview-versie. Zie de [Preview-documentatie](https://github.com/Azure/vm-scale-sets/tree/master/preview/disk)voor meer informatie.

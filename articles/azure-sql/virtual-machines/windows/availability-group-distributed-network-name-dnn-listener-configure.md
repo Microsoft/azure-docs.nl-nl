@@ -7,6 +7,7 @@ author: MashaMSFT
 manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: abfcd6a13bc5e8ad262fe47111eb680ad00a34df
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 07ce01304f27ded4e0a566777fcf7027f7a15e4b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168874"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359435"
 ---
 # <a name="configure-a-dnn-listener-for-an-availability-group"></a>Een DNN-listener configureren voor een beschikbaarheids groep
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,7 +37,7 @@ Voor een alternatieve connectiviteits optie kunt u in plaats daarvan een [VNN-li
 
 Een DNN-listener (Distributed Network name) vervangt de traditionele listener voor de beschikbaarheids groep van de VNN (Virtual Network name) wanneer deze wordt gebruikt met AlwaysOn- [beschikbaarheids groepen op SQL Server vm's](availability-group-overview.md). Dit leidt tot een Azure Load Balancer om verkeer te routeren, de implementatie, het onderhoud en het verbeteren van de failover te vereenvoudigen. 
 
-Gebruik de DNN-listener voor het vervangen van een bestaande VNN-listener, of gebruik deze in combi natie met een bestaande VNN-listener, zodat uw beschikbaarheids groep twee afzonderlijke verbindings punten heeft: een met de naam van de VNN-listener (en poort als niet-standaard) en één met de naam en poort van de DNN-listener. 
+Gebruik de DNN-listener voor het vervangen van een bestaande VNN-listener, of gebruik deze in combinatie met een bestaande VNN-listener, zodat uw beschikbaarheidsgroep twee afzonderlijke verbindingspunten heeft: één met de naam (en poort, indien niet-standaard) van de VNN-listener en één met de naam en poort van de DNN-listener. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -136,7 +137,7 @@ SELECT * FROM SYS.AVAILABILITY_GROUP_LISTENERS
 
 Een waarde van `1` voor `is_distributed_network_name` geeft aan dat de listener een gedistribueerde netwerk naam (DNN) is: 
 
-:::image type="content" source="media/availability-group-distributed-network-name-dnn-listener-configure/dnn-listener-tsql.png" alt-text="Bekijk de DNN-listener onder beschikbaarheids groep-listeners in SQL Server Management Studio (SSMS)":::
+:::image type="content" source="media/availability-group-distributed-network-name-dnn-listener-configure/dnn-listener-tsql.png" alt-text="Gebruik sys.availability_group_listeners om DNN-listeners te identificeren met de waarde 1 in is_distributed_network_name":::
 
 
 ## <a name="update-connection-string"></a>connection string bijwerken
@@ -151,7 +152,7 @@ Voer de volgende stappen uit om de failover te testen:
 
 1. Maak verbinding met de DNN-listener of een van de replica's met behulp van [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
 1. Vouw AlwaysOn- **beschikbaarheids groep** uit in **objectverkenner**. 
-1. Klik met de rechter muisknop op de beschikbaarheids groep en kies **failover** om de **wizard Failover**te openen. 
+1. Klik met de rechter muisknop op de beschikbaarheids groep en kies **failover** om de **wizard Failover** te openen. 
 1. Volg de aanwijzingen voor het kiezen van een failover-doel en het mislukken van de beschikbaarheids groep naar een secundaire replica. 
 1. Controleer of de data base is gesynchroniseerd met de status van de nieuwe primaire replica. 
 1. Beschrijving Een failback uitvoeren naar de oorspronkelijke primaire of een andere secundaire replica. 

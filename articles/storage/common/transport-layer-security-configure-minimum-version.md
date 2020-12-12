@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: b6c75bc13bf26510ee72968c5a27407b6b7bfee6
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 558f4792a055fc491f15600ecc5502c3a114a94b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937488"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360217"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Een mini maal vereiste versie van Transport Layer Security (TLS) afdwingen voor aanvragen van een opslag account
 
@@ -87,6 +87,9 @@ StorageBlobLogs
 
 Wanneer u zeker weet dat verkeer van clients met oudere versies van TLS mini maal is, of dat het acceptabel is voor mislukte aanvragen met een oudere versie van TLS, kunt u beginnen met het afdwingen van een minimale TLS-versie in uw opslag account. Vereisen dat clients een minimum versie van TLS gebruiken om aanvragen voor een opslag account te maken, deel uitmaakt van een strategie om beveiligings Risico's voor uw gegevens te minimaliseren.
 
+> [!IMPORTANT]
+> Als u een service gebruikt die verbinding maakt met Azure Storage, moet u ervoor zorgen dat die service de juiste versie van TLS gebruikt voor het verzenden van aanvragen naar Azure Storage voordat u de vereiste minimum versie voor een opslag account instelt.
+
 ### <a name="configure-the-minimum-tls-version-for-a-storage-account"></a>De minimale TLS-versie configureren voor een opslag account
 
 Als u de minimale TLS-versie voor een opslag account wilt configureren, stelt u de **MinimumTlsVersion** -versie voor het account in. Deze eigenschap is beschikbaar voor alle opslag accounts die zijn gemaakt met het Azure Resource Manager-implementatie model. Zie [overzicht van opslag accounts](storage-account-overview.md)voor meer informatie over het Azure Resource Manager-implementatie model.
@@ -135,7 +138,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName `
 (Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).MinimumTlsVersion
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u de minimale TLS-versie wilt configureren voor een opslag account met Azure CLI, installeert u Azure CLI versie 2.9.0 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **minimumTlsVersion** voor een nieuw of bestaand opslag account. Geldige waarden voor **minimumTlsVersion** zijn `TLS1_0` , `TLS1_1` en `TLS1_2` .
 

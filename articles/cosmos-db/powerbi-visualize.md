@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 3b47c7e8f31b51d51f5fad20cc068debb1dc2927
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b27bab9ea3029264143caaacf094f0a799894356
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339730"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359860"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Azure Cosmos DB-gegevens visualiseren met behulp van de Power BI-connector 
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -32,7 +32,7 @@ Voordat u de instructies in deze Power BI zelf studie volgt, moet u ervoor zorge
 
 * [Down load de nieuwste versie van Power bi Desktop](https://powerbi.microsoft.com/desktop).
 
-* Down load de [voorbeeld gegevens van Volcano](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json) van github.
+* Down load de [voorbeeld gegevens van Volcano](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/main/SampleData/VolcanoData.json) van github.
 
 * [Maak een Azure Cosmos-database account](create-cosmosdb-resources-portal.md#create-an-azure-cosmos-db-account) en importeer de Volcano-gegevens met behulp van het [hulp programma voor gegevens migratie Azure Cosmos DB](import-data.md). Bij het importeren van gegevens moet u rekening houden met de volgende instellingen voor de bron en de doelen in het hulp programma voor gegevens migratie:
 
@@ -76,13 +76,13 @@ U haalt de Volcano-gegevens op uit het Azure Cosmos DB-account en visualiseert g
 
 1. Voer Power BI Desktop uit.
 
-2. U kunt **gegevens ophalen** , **recente bronnen** weer geven of **andere rapporten** rechtstreeks vanuit het welkomst scherm openen. Selecteer de ' X ' in de rechter bovenhoek om het scherm te sluiten. De **rapport** weergave van Power bi Desktop wordt weer gegeven.
+2. U kunt **gegevens ophalen**, **recente bronnen** weer geven of **andere rapporten** rechtstreeks vanuit het welkomst scherm openen. Selecteer de ' X ' in de rechter bovenhoek om het scherm te sluiten. De **rapport** weergave van Power bi Desktop wordt weer gegeven.
    
    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbireportview.png" alt-text="Power BI Desktop rapport weergave-Power BI-connector":::
 
 3. Selecteer het lint **Start** en klik vervolgens op **gegevens ophalen**.  Het venster **gegevens ophalen** wordt weer gegeven.
 
-4. Klik op **Azure** , selecteer **Azure Cosmos DB (bèta)** en klik vervolgens op **verbinding maken**. 
+4. Klik op **Azure**, selecteer **Azure Cosmos DB (bèta)** en klik vervolgens op **verbinding maken**. 
 
    :::image type="content" source="./media/powerbi-visualize/power_bi_connector_pbigetdata.png" alt-text="Power BI Desktop gegevens ophalen-Power BI-connector":::
 

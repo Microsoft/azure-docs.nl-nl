@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7d50185169b22a136ce81bd3aebae235cf49498b
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 6dd95fc8fd0ab0099ac7404d4ca4e4b1851f650f
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436620"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359602"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Beveiligde toegang tot gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -95,7 +95,7 @@ Hier volgt een typisch ontwerp patroon waarbij bron tokens kunnen worden aangevr
 
 Het genereren en beheren van bron tokens worden verwerkt door de systeem eigen Cosmos DB-client bibliotheken. Als u echter REST gebruikt, moet u de aanvraag-en verificatie headers maken. Zie [Access Control op Cosmos DB resources](/rest/api/cosmos-db/access-control-on-cosmosdb-resources) of de bron code voor onze [.net SDK](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/Authorization/AuthorizationHelper.cs) of [Node.js SDK](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts)voor meer informatie over het maken van verificatie headers voor rest.
 
-Zie de [resource token Broker-app](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)voor een voor beeld van een middle-tier service die wordt gebruikt om resource tokens te genereren of Broker.
+Zie de [resource token Broker-app](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)voor een voor beeld van een middle-tier service die wordt gebruikt om resource tokens te genereren of Broker.
 
 ## <a name="users"></a>Gebruikers<a id="users"></a>
 

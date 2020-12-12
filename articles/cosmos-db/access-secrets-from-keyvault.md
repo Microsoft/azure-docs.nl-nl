@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 6c5ef4f0ee0d68e2eae755f000423db4620b834d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: a9bea0664f99a21ac734de666c802e9875ff00b5
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341379"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359316"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Azure Cosmos-sleutels beveiligen met Azure Key Vault 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -45,7 +45,7 @@ De volgende stappen zijn vereist om Azure Cosmos DB toegangs sleutels op te slaa
 
 ## <a name="add-azure-cosmos-db-access-keys-to-the-key-vault"></a>Azure Cosmos DB toegangs sleutels toevoegen aan de Key Vault.
 1. Ga naar het Key Vault dat u in de vorige stap hebt gemaakt en open het tabblad **geheimen** .  
-2. Selecteer **+ genereren/importeren** , 
+2. Selecteer **+ genereren/importeren**, 
 
    * Selecteer **hand matig** voor **Upload opties**.
    * Geef een **naam** op voor uw geheim
@@ -59,7 +59,7 @@ De volgende stappen zijn vereist om Azure Cosmos DB toegangs sleutels op te slaa
 
 ## <a name="create-an-azure-web-application"></a>Een Azure-webtoepassing maken
 
-1. Een Azure-webtoepassing maken of u kunt de app downloaden vanuit de [github-opslag plaats](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/Demo/keyvaultdemo). Het is een eenvoudige MVC-toepassing.  
+1. Een Azure-webtoepassing maken of u kunt de app downloaden vanuit de [github-opslag plaats](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/Demo/keyvaultdemo). Het is een eenvoudige MVC-toepassing.  
 
 2. Pak de gedownloade toepassing uit en open het **HomeController.cs** -bestand. Werk de geheime ID in op de volgende regel:
 
@@ -82,9 +82,9 @@ In deze sectie registreert u de toepassing met Azure Active Directory en geeft u
 
 1. Ga naar het Azure Portal en open de **Key Vault** die u hebt gemaakt in de vorige sectie.  
 
-2. Open **toegangs beleid** , selecteer **+ nieuwe** zoeken de web-app die u hebt geïmplementeerd, selecteer machtigingen en selecteer **OK**.  
+2. Open **toegangs beleid**, selecteer **+ nieuwe** zoeken de web-app die u hebt geïmplementeerd, selecteer machtigingen en selecteer **OK**.  
 
-   :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Toegangs beleid toevoegen":::
+   :::image type="content" source="./media/access-secrets-from-keyvault/add-access-policy.png" alt-text="Toegangsbeleid toevoegen":::
 
 Als u de toepassing nu uitvoert, kunt u het geheim lezen van Key Vault.
 

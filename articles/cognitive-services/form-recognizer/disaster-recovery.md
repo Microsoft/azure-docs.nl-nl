@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 79cf0ef059d96ac66f5918605e999d3936d589d2
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 168dcf994d00ba1cb2070665ada5a55cf86cfa4a
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95486514"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359809"
 ---
 # <a name="back-up-and-recover-your-form-recognizer-models"></a>Back-ups van uw formulieren Recognizer-modellen maken en herstellen
 
@@ -69,7 +69,7 @@ POST https://{SOURCE_FORM_RECOGNIZER_RESOURCE_ENDPOINT}/formrecognizer/v2.0/cust
 Ocp-Apim-Subscription-Key: {SOURCE_FORM_RECOGNIZER_RESOURCE_API_KEY}
 ```
 
-De hoofd tekst van uw aanvraag moet de volgende indeling hebben. U moet de resource-ID en de regio naam van de doel resource invoeren. U hebt ook de model-ID, het toegangs token en de verloop waarde nodig die u uit de vorige stap hebt gekopieerd.
+De hoofd tekst van uw aanvraag moet de volgende indeling hebben. U moet de resource-ID en de regio naam van de doel resource invoeren. U kunt de resource-ID vinden op het tabblad **Eigenschappen** van uw resource in het Azure Portal en u kunt de regio naam vinden op het tabblad **sleutels en eind punt** . U hebt ook de model-ID, het toegangs token en de verloop waarde nodig die u uit de vorige stap hebt gekopieerd.
 
 ```json
 {

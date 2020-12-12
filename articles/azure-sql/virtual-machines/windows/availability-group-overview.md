@@ -8,18 +8,19 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 601eebb1-fc2c-4f5b-9c05-0e6ffd0e5334
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: overview
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8573e45270dfd1ff984eae3dc5fbf1dc5f2fc6da
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f39380e253d3fa9e86bfea3a8c436862738ff8e3
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600860"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359928"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>AlwaysOn-beschikbaarheidsgroep op SQL Server op Azure-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/21/2020
-ms.openlocfilehash: 2fd7a3e512b79651fdcf6a6ac0c14822361fc263
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b8f9759d19089f74d62def41b205d862ce9a7d43
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350191"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359724"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Overzicht van Azure HDInsight 4,0
 
@@ -38,7 +38,12 @@ Onderdeel ondersteunt nu dynamische gerealiseerde weer gaven of de voor berekeni
 
 ### <a name="hive-transactional-tables"></a>Transactionele Hive-tabellen
 
-HDI 4,0 bevat Apache Hive 3. Hive 3 vereist atomische, consistentie, isolatie en duurzaamheids compatibiliteit voor transactionele tabellen die in het Hive-Warehouse wonen. ACID-compatibele tabellen en tabelgegevens worden via Hive geopend en beheerd. Gegevens in tabellen voor maken, ophalen, bijwerken en verwijderen moeten zich in de ORC-bestands indeling (Optimized Row column) bevinden. Alleen-invoegen tabellen ondersteunen alle bestands indelingen.
+HDI 4,0 bevat Apache Hive 3. Hive 3 vereist atomische, consistentie, isolatie en duurzaamheids compatibiliteit voor transactionele tabellen die in het Hive-Warehouse wonen. ACID-compatibele tabellen en tabelgegevens worden via Hive geopend en beheerd. Gegevens in tabellen voor maken, ophalen, bijwerken en verwijderen moeten zich in de ORC-bestands indeling (Optimized Row column) bevinden. Alleen-invoegen tabellen ondersteunen alle bestands indelingen. 
+
+> [!Note]
+> ZUUR/transactionele ondersteuning werkt alleen voor beheerde tabellen en niet voor externe tabellen. Externe tabellen zijn zodanig ontworpen dat externe partijen tabel gegevens kunnen lezen en schrijven, zonder dat Hive-perfoming elke wijziging van de onderliggende gegevens kan worden vermeden. Voor ACID-tabellen kan Hive de onderliggende gegevens wijzigen met comprimeren en trans acties.
+
+Voor delen van zuren tabellen zijn de volgende:
 
 * ACID v2 heeft prestatieverbeteringen in zowel het opslagformaat als de engine voor uitvoerbewerkingen.
 

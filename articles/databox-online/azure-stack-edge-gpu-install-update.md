@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 12/11/2020
 ms.author: alkohli
-ms.openlocfilehash: 8d17528728c5519244210217b35d6cd6a3afe715
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 004c84387c51233542b1bbbf11d33cdff42259af
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449125"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359146"
 ---
 # <a name="update-your-azure-stack-edge-pro-gpu"></a>Uw Azure Stack Edge Pro GPU bijwerken 
 
@@ -22,9 +22,14 @@ In dit artikel worden de stappen beschreven die nodig zijn om updates te install
 De in dit artikel beschreven procedure is uitgevoerd met een andere versie van de software, maar het proces blijft hetzelfde voor de huidige software versie.
 
 > [!IMPORTANT]
-> - Update **2011** is de huidige update. <!--and corresponds to **2.1.1377.2170** software version on your device.--> Ga naar [release opmerkingen](azure-stack-edge-gpu-2011-release-notes.md)voor meer informatie over deze update.
->
-> - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Deze update bevat de software-updates van het apparaat en de Kubernetes-updates. Gezien de Azure Stack Edge Pro is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en duurt het apparaat een downtime van Maxi maal 30 minuten voor de update.
+> - Update **2012** is de huidige update en komt overeen met:
+>   - Software versie van apparaat- **2.2.1438.2470**
+>   - Kubernetes-Server versie- **v 1.17.3**
+>   - IoT Edge-versie: **0.1.0-beta10**
+>    
+>    Ga naar [release opmerkingen](azure-stack-edge-gpu-2012-release-notes.md)voor meer informatie over wat er nieuw is in deze update.
+> - Om 2012-update toe te passen, moet op uw apparaat 2010 worden uitgevoerd.
+> - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Deze update bevat de software-updates van het apparaat en de Kubernetes-updates. Gezien de Azure Stack Edge Pro is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en wordt het apparaat een downtime van Maxi maal 1,5 uur voor de update.
 
 Als u updates op uw apparaat wilt installeren, moet u eerst de locatie van de update server configureren. Nadat de update server is geconfigureerd, kunt u de updates Toep assen via de Azure Portal gebruikers interface of de lokale webgebruikersinterface.
 
@@ -46,7 +51,7 @@ Deze stappen worden afzonderlijk beschreven in de volgende gedeelten.
     
     Ga voor meer informatie naar [Windows Server Update Services (WSUS)](/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)
 
-## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
+## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
 
 U wordt aangeraden updates te installeren via de Azure Portal. Het apparaat scant eenmaal per dag automatisch op updates. Zodra de updates beschikbaar zijn, ziet u een melding in de portal. Vervolgens kunt u de updates downloaden en installeren. 
 
@@ -161,7 +166,7 @@ Voer de volgende stappen uit om de update te downloaden uit de Microsoft Update 
 
 2. Voer in het zoekvak van de catalogus van Microsoft Update het Knowledge Base-nummer (KB) in van de hotfix of de voor waarden voor de update die u wilt downloaden. Voer bijvoorbeeld **Azure stack Edge Pro** in en klik vervolgens op **zoeken**.
    
-    De update vermelding wordt weer gegeven als **Azure stack Edge update 2011**.
+    De update vermelding wordt weer gegeven als **Azure stack Edge update 2012**.
    
     <!--![Search catalog 2](./media/azure-stack-edge-gpu-install-update/download-update-2b.png)-->
 
@@ -196,7 +201,7 @@ Het volt ooien van deze procedure duurt ongeveer 20 minuten. Voer de volgende st
 
 5. De update wordt gestart. Nadat het apparaat is bijgewerkt, wordt het opnieuw opgestart. De lokale gebruikers interface is niet toegankelijk in deze duur.
    
-6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar **onderhouds**  >  **Software-update** in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **Azure stack Edge 2011** zijn.
+6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar **onderhouds**  >  **Software-update** in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **Azure stack Edge 2012** zijn.
 
    <!--![update device 6](./media/azure-stack-edge-gpu-install-update/local-ui-update-6.png)--> 
 

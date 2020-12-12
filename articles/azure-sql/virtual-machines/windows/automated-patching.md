@@ -8,18 +8,19 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 58232e92-318f-456b-8f0a-2201a541e08d
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/07/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d6c7ea0057553ea0052ded72353d22ade86b9d74
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 429fe39f84a54c22fa97178b85f417d76dc84a8e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91298895"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359469"
 ---
 # <a name="automated-patching-for-sql-server-on-azure-virtual-machines-resource-manager"></a>Automatische patching voor SQL Server op virtuele machines van Azure (Resource Manager)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -65,7 +66,7 @@ Als u automatische patching wilt gebruiken, moet u rekening houden met de volgen
 ## <a name="settings"></a>Instellingen
 In de volgende tabel worden de opties beschreven die kunnen worden geconfigureerd voor automatische patching. De werkelijke configuratie stappen variëren, afhankelijk van of u de Azure Portal-of Azure Windows Power shell-opdrachten gebruikt.
 
-| Instelling | Mogelijke waarden | Beschrijving |
+| Instelling | Mogelijke waarden | Description |
 | --- | --- | --- |
 | **Automatisch patchen** |Inschakelen/uitschakelen (uitgeschakeld) |Hiermee schakelt u automatische patching voor een virtuele machine van Azure in of uit. |
 | **Onderhoudsplanning** |Dagelijks, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag |Het schema voor het downloaden en installeren van Windows-, SQL Server-en micro soft-updates voor uw virtuele machine. |

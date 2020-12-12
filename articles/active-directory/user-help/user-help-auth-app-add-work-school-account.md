@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 01/24/2019
+ms.date: 11/15/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: e003c45aa1e7d75b709b7fbf99532fb1302fcbb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04c9bc429d9663f7ac36b6ba8f40abf225eb71c6
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797646"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359103"
 ---
 # <a name="add-your-work-or-school-account-to-the-microsoft-authenticator-app"></a>Voeg uw werk-of school account toe aan de app Microsoft Authenticator
 
@@ -27,30 +27,49 @@ Als uw organisatie twee ledige verificatie gebruikt, kunt u uw werk-of school ac
 
 ## <a name="add-your-work-or-school-account"></a>Uw werk- of schoolaccount toevoegen
 
-1. Ga op uw computer naar de pagina [aanvullende beveiligings verificatie](https://account.activedirectory.windowsazure.com/proofup.aspx?proofup=1) .
+U kunt uw werk-of school account toevoegen aan de app Microsoft Authenticator door een van de volgende handelingen uit te voeren:
 
-    >[!Note]
-    >Als de pagina **aanvullende beveiligings verificatie** niet wordt weer gegeven, is het mogelijk dat de beheerder de ervaring voor beveiligings gegevens (preview) heeft ingeschakeld. Als dat het geval is, volgt u de instructies in de sectie [beveiligings gegevens instellen voor het gebruik van een verificator-app](security-info-setup-auth-app.md) . Als dat niet het geval is, moet u contact opnemen met de Help Desk van uw organisatie voor hulp. Zie voor meer informatie over beveiligings informatie [overzicht van beveiligings gegevens (preview)](./security-info-setup-signin.md).
+- Aanmelden met uw werk-of schoolaccount referenties (preview-versie)
+- Een QR-code scannen
 
-2. Schakel het selectie vakje naast de **verificator-app**in en selecteer **configureren**.
+### <a name="sign-in-with-your-credentials"></a>Aanmelden met uw referenties
 
-    De pagina **Mobiele app configureren** wordt weergegeven.
+>[!Note]
+>Deze functie kan alleen worden gebruikt door gebruikers met wie de beheerder via de verificator-app zich heeft aangemeld.
 
-    ![Scherm met de QR-code](./media/user-help-auth-app-download-install/auth-app-barcode.png)
+Als u een account wilt toevoegen door u aan te melden bij uw werk-of school account met behulp van uw referenties:
 
-3. Open de Microsoft Authenticator-app, selecteer **Account toevoegen** in het pictogram **Aanpassen en controle** in de rechterbovenhoek en selecteer vervolgens **Werk- of schoolaccount**.
+1. Open de Microsoft Authenticator-app, selecteer de **+** knop en tik op **werk-of school account toevoegen**. Selecteer **Aanmelden**.
 
-    >[!Note]
-    >Als dit de eerste keer is dat u de Microsoft Authenticator-app instelt, wordt u mogelijk gevraagd of u de app toegang wilt geven tot uw camera (iOS) of de app wilt toestaan foto's te maken en video op te nemen (Android). U moet **Toestaan** selecteren, zodat de Authenticator-app toegang heeft tot uw camera om in de volgende stap een foto te maken van de QR-code. Als u de app geen cameratoegang geeft, kunt u de Authenticator-app wel installeren, maar moet u de codegegevens handmatig toevoegen. Zie [hand matig een account toevoegen aan de app](user-help-auth-app-add-account-manual.md)voor meer informatie over het hand matig toevoegen van de code.
+1. Voer de referenties voor uw werk-of school account in. Als u een tijdelijke toegangs doorvoer (tik) hebt, kunt u deze gebruiken om u aan te melden. Op dit moment kunt u mogelijk worden geblokkeerd door een van de volgende voor waarden uit te voeren:
 
-4. Gebruik de camera van uw apparaat om de QR-code te scannen vanuit het scherm **mobiele app configureren** op uw computer en kies vervolgens **gereed**.
+   - Als u onvoldoende verificatie methoden hebt voor uw account om een sterk verificatie token te krijgen, kunt u niet door gaan met het toevoegen van een account.
 
-    >[!Note]
-    >Als uw camera de QR-code niet kan vastleggen, kunt u uw account gegevens hand matig toevoegen aan de Microsoft Authenticator-app voor twee ledige verificatie. Zie [hand matig uw account toevoegen](user-help-auth-app-add-account-manual.md)voor meer informatie en hoe u dit doet.
+   - Als u het bericht ontvangt `You might be signing in from a location that is restricted by your admin` , bent u geblokkeerd en moet een beheerder u de blok kering in [beveiligings gegevens](https://mysignins.microsoft.com/security-info)opheffen.
 
-5. Bekijk het scherm **accounts** van de app op uw apparaat om te controleren of uw account juist is en of er een verificatie code van zes cijfers is. Voor extra beveiliging verandert de verificatie code elke 30 seconden om te voor komen dat iemand meerdere keren een code gebruikt.
+   - Als u zich niet hebt geblokkeerd voor het aanmelden via een telefoon met de verificator-app door uw beheerder, kunt u de apparaatregistratie door lopen om in te stellen voor aanmelding zonder wacht woord en Azure Multi-Factor Authentication (MFA).
 
-    ![Scherm accounts](./media/user-help-auth-app-download-install/auth-app-accounts.png)
+1. Op dit moment kunt u worden gevraagd om een QR-code te scannen die door uw organisatie is opgegeven voor het instellen van een on-premises multi-factor Authentication-account in de app. U hoeft dit alleen te doen als uw organisatie gebruikmaakt van een on-premises MFA-server.
+
+1. Tik op het apparaat op het account en Controleer in de weer gave volledig scherm dat uw account juist is en of er een verificatie code van zes cijfers is. Voor extra beveiliging verandert de verificatie code elke 30 seconden om te voor komen dat iemand meerdere keren een code gebruikt.
+
+## <a name="sign-in-with-a-qr-code"></a>Aanmelden met een QR-code
+
+Ga als volgt te werk om een account toe te voegen door een QR-code te scannen:
+
+1. Ga op uw computer naar de pagina **aanvullende beveiligings verificatie** .
+
+   >[!Note]
+   >Als de pagina **aanvullende beveiligings verificatie** niet wordt weer gegeven, is het mogelijk dat de beheerder de ervaring voor beveiligings gegevens (preview) heeft ingeschakeld. Als dat het geval is, volgt u de instructies in de sectie [beveiligings gegevens instellen voor het gebruik van een verificator-app](security-info-setup-auth-app.md) . Als dat niet het geval is, moet u contact opnemen met de Help Desk van uw organisatie voor hulp. Zie voor meer informatie over beveiligings informatie [uw beveiligings gegevens instellen bij een aanmeldings prompt](security-info-setup-signin.md).
+
+1. Schakel het selectie vakje naast de verificator-app in en selecteer vervolgens **configureren**. De pagina **Mobiele app configureren** wordt weergegeven.
+
+   ![Scherm met een QR-code](./media/user-help-auth-app-add-work-school-account/auth-app-barcode.png)
+
+1. Open de Microsoft Authenticator-app, selecteer het pictogram ![ met het plus teken op Ios-of Android-apparaten, ](media/user-help-auth-app-add-work-school-account/plus-icon.png) Selecteer **account toevoegen** en selecteer vervolgens **werk-of school account,** gevolgd door **een QR-code scannen**.
+   Als u geen account hebt ingesteld in de verificator-app, ziet u een grote blauwe knop met de tekst **account toevoegen**.
+
+Als u niet wordt gevraagd om uw camera te gebruiken om een QR-code te scannen, controleert u in de instellingen van uw telefoon of de verificator-app toegang heeft tot de telefoon camera.
 
 ## <a name="next-steps"></a>Volgende stappen
 

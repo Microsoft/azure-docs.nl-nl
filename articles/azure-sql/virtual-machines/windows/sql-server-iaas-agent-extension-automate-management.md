@@ -8,6 +8,7 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: effe4e2f-35b5-490a-b5ef-b06746083da4
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -16,12 +17,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 572363f429cb828d44c9dd12ba2424930c94fefe
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: e8268630b2c108dc95ded059ce41866a14fadd0e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553526"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359248"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Beheer automatiseren met de uitbrei ding IaaS agent van SQL Server
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -35,15 +36,15 @@ Dit artikel bevat een overzicht van de uitbrei ding. Zie de artikelen voor [auto
 
 De SQL Server IaaS agent-extensie biedt een aantal voor delen voor SQL Server op Azure-Vm's: 
 
-- **Functie voordelen** : de uitbrei ding ontgrendelt een aantal voor delen van automatiserings functies, zoals portal beheer, licentie flexibiliteit, automatische back-ups, automatische patching en meer. Zie de voor [delen van functies](#feature-benefits) verderop in dit artikel voor meer informatie. 
+- **Functie voordelen**: de uitbrei ding ontgrendelt een aantal voor delen van automatiserings functies, zoals portal beheer, licentie flexibiliteit, automatische back-ups, automatische patching en meer. Zie de voor [delen van functies](#feature-benefits) verderop in dit artikel voor meer informatie. 
 
-- **Naleving** : de uitbrei ding biedt een vereenvoudigde methode voor het voldoen aan de vereiste om aan micro soft te melden dat de Azure Hybrid Benefit is ingeschakeld, zoals is opgegeven in de product termen. Dit proces voor komt dat het nodig is om licentie registratie formulieren voor elke resource te beheren.  
+- **Naleving**: de uitbrei ding biedt een vereenvoudigde methode voor het voldoen aan de vereiste om aan micro soft te melden dat de Azure Hybrid Benefit is ingeschakeld, zoals is opgegeven in de product termen. Dit proces voor komt dat het nodig is om licentie registratie formulieren voor elke resource te beheren.  
 
-- **Gratis** : de uitbrei ding in alle drie de beheer baarheids modi is volledig gratis. Er zijn geen extra kosten verbonden aan de uitbrei ding of het wijzigen van de beheer modus. 
+- **Gratis**: de uitbrei ding in alle drie de beheer baarheids modi is volledig gratis. Er zijn geen extra kosten verbonden aan de uitbrei ding of het wijzigen van de beheer modus. 
 
-- **Vereenvoudigd licentie beheer** : de uitbrei ding vereenvoudigt het SQL Server licentie beheer en biedt u de mogelijkheid om SQL Server vm's snel te identificeren met de Azure Hybrid Benefit die is ingeschakeld met behulp van de [Azure Portal](manage-sql-vm-portal.md), de Azure CLI of Power shell: 
+- **Vereenvoudigd licentie beheer**: de uitbrei ding vereenvoudigt het SQL Server licentie beheer en biedt u de mogelijkheid om SQL Server vm's snel te identificeren met de Azure Hybrid Benefit die is ingeschakeld met behulp van de [Azure Portal](manage-sql-vm-portal.md), de Azure CLI of Power shell: 
 
-   # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+   # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
    ```azurecli-interactive
    $vms = az sql vm list | ConvertFrom-Json

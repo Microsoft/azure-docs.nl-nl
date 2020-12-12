@@ -3,12 +3,12 @@ title: Sjabloon functies-numeriek
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om met getallen te werken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 1484826b2377fe2adb2ac6ae2ab3ee6243b26c2c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: f3687581d94f80cc923614a0655da1813bd5c97b
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920449"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359707"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Numerieke functies voor ARM-sjablonen
 
@@ -247,7 +247,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 `float(arg1)`
 
-Zet de waarde om in een getal met drijvende komma. U kunt deze functie alleen gebruiken bij het door geven van aangepaste para meters aan een toepassing, zoals een logische app. De `float` functie wordt niet ondersteund in Becip.  Zie de [ondersteuning voor numerieke typen anders dan 32-integers](https://github.com/Azure/bicep/issues/486).
+Zet de waarde om in een getal met drijvende komma. U kunt deze functie alleen gebruiken bij het door geven van aangepaste para meters aan een toepassing, zoals een logische app. De `float` functie wordt niet ondersteund in Bicep.  Zie de [ondersteuning voor numerieke typen anders dan 32-integers](https://github.com/Azure/bicep/issues/486).
 
 ### <a name="parameters"></a>Parameters
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/04/2020
 ms.author: rosouz
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 46164a5cd96941609c8a6484470fff863680f9d3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9a4e35a235fe6ee6950bd1b4c35cbf9e72ac2893
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096594"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359231"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Streams wijzigen in de API van Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -67,7 +67,7 @@ enumerator.Dispose();
 
 # <a name="java"></a>[Java](#tab/java)
 
-In het volgende voor beeld ziet u hoe u de functionaliteit Change stream gebruikt in Java, in het volledige voor beeld, dit [github opslag plaats](https://github.com/Azure-Samples/azure-cosmos-db-mongodb-java-changestream/blob/master/mongostream/src/main/java/com/azure/cosmos/mongostream/App.java). In dit voor beeld ziet u ook hoe u de `resumeAfter` methode gebruikt om alle wijzigingen van de laatste lees bewerking te zoeken. 
+In het volgende voor beeld ziet u hoe u de functionaliteit Change stream gebruikt in Java, in het volledige voor beeld, dit [github opslag plaats](https://github.com/Azure-Samples/azure-cosmos-db-mongodb-java-changestream/blob/main/mongostream/src/main/java/com/azure/cosmos/mongostream/App.java). In dit voor beeld ziet u ook hoe u de `resumeAfter` methode gebruikt om alle wijzigingen van de laatste lees bewerking te zoeken. 
 
 ```java
 Bson match = Aggregates.match(Filters.in("operationType", asList("update", "replace", "insert")));

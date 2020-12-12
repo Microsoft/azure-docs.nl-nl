@@ -4,16 +4,16 @@ description: In dit artikel vindt u Naslag informatie voor de azcopy-Kopieer opd
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 07/24/2020
+ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: fd71f4eb56974b93637c23eddc81e5f33ce788b8
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 6390aafca4937a480e4d92ff04003a294b9c0e20
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512151"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356171"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -276,13 +276,15 @@ Bestanden en mappen overzetten naar Azure Storage-account en de opgegeven query-
 
 **--include-after-** teken reeks bevatten alleen de bestanden die zijn gewijzigd op of na de opgegeven datum/tijd. De waarde moet de indeling ISO8601 hebben. Als er geen tijd zone is opgegeven, wordt ervan uitgegaan dat de waarde zich in de lokale tijd zone bevindt van de machine waarop AzCopy wordt uitgevoerd. bijvoorbeeld `2020-08-19T15:04:00Z` voor een UTC-tijd of `2020-08-19` voor middernacht (00:00) in de lokale tijd zone. Net als bij AzCopy 10,5 is deze vlag alleen van toepassing op bestanden, niet op mappen, zodat de mapeigenschappen niet worden gekopieerd wanneer deze vlag met of wordt gebruikt `--preserve-smb-info` `--preserve-smb-permissions` .
 
+ **--de teken reeks voor insluiting** bevat alleen de bestanden die zijn gewijzigd vóór of op de opgegeven datum/tijd. De waarde moet de indeling ISO8601 hebben. Als er geen tijd zone is opgegeven, wordt ervan uitgegaan dat de waarde zich in de lokale tijd zone bevindt van de machine waarop AzCopy wordt uitgevoerd. Bijvoorbeeld `2020-08-19T15:04:00Z` voor een UTC-tijd of `2020-08-19` voor middernacht (00:00) in de lokale tijd zone. Vanaf AzCopy 10,7 is deze vlag alleen van toepassing op bestanden, niet op mappen, zodat de mapeigenschappen niet worden gekopieerd wanneer deze vlag met `--preserve-smb-info` of wordt gebruikt `--preserve-smb-permissions` .
+
 **--include-** kenmerk reeks (alleen Windows) bevat bestanden waarvan de kenmerken overeenkomen met de kenmerk lijst. Bijvoorbeeld: A; Z N
 
 **--include-** teken reeks bevat alleen deze paden bij het kopiëren. Deze optie biedt geen ondersteuning voor joker tekens (*). Hiermee wordt het relatieve pad voor voegsel gecontroleerd (bijvoorbeeld: `myFolder;myFolder/subDirName/file.pdf` ).
 
 **--include-patroon** teken reeks bevatten alleen deze bestanden bij het kopiëren. Deze optie biedt ondersteuning voor joker tekens (*). Scheid bestanden met behulp van een `;` .
 
-**--lijst-van-versie** teken reeks geeft een bestand op waarin elke versie-id wordt weer gegeven op een afzonderlijke regel. Zorg ervoor dat de bron moet verwijzen naar een enkele Blob en dat alle versie-id's die zijn opgegeven in het bestand met deze vlag, alleen bij de bron-BLOB horen. AzCopy worden de opgegeven versies gedownload in de opgegeven doelmap. Zie [eerdere versies van een BLOB downloaden](storage-use-azcopy-blobs.md#download-previous-versions-of-a-blob)voor meer informatie.
+**--lijst-van-versie** teken reeks geeft een bestand op waarin elke versie-id wordt weer gegeven op een afzonderlijke regel. Zorg ervoor dat de bron moet verwijzen naar een enkele Blob en dat alle versie-Id's die zijn opgegeven in het bestand met deze vlag, alleen bij de bron-BLOB horen. AzCopy worden de opgegeven versies gedownload in de opgegeven doelmap. Zie [eerdere versies van een BLOB downloaden](storage-use-azcopy-blobs.md#download-previous-versions-of-a-blob)voor meer informatie.
 
 **--** teken reeks op logboek niveau definiëren de logboek uitgebreidheids voor het logboek bestand, beschik bare niveaus: info (alle aanvragen/antwoorden), waarschuwing (trage antwoorden), fout (alleen mislukte aanvragen) en geen (geen uitvoer Logboeken). (standaard `INFO` ). 
 

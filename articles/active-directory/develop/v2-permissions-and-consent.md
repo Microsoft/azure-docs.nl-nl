@@ -12,12 +12,12 @@ ms.date: 09/23/2020
 ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperf-fy21q1, identityplatformtop40
-ms.openlocfilehash: c113a252363d3b94131ac423f795f6efb13b1975
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 14b6d6ecc6523199102fd3ef9370fe901c4ff51d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029546"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355695"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
 
@@ -89,7 +89,7 @@ Het `profile` bereik kan worden gebruikt met het `openid` bereik en andere. Hier
 Het [ `offline_access` bereik](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) biedt uw app namens de gebruiker een langere periode toegang tot resources. Op de pagina toestemming wordt dit bereik weer gegeven als de machtiging ' toegang tot gegevens waartoe u toegang hebt verleend '. Wanneer een gebruiker het bereik goedkeurt `offline_access` , kan uw app vernieuwings tokens ontvangen van het micro soft Identity platform-token-eind punt. Vernieuwings tokens zijn lang in het geleefde. Uw app kan nieuwe toegangs tokens verkrijgen als oudere versies verlopen.
 
 > [!NOTE]
-> Deze machtiging wordt weer gegeven op alle toestemmings schermen, zelfs voor stromen die geen vernieuwings token bieden (de [impliciete stroom](v2-oauth2-implicit-grant-flow.md)).  Dit is bedoeld om scenario's te behandelen waarbij een client binnen de impliciete stroom kan beginnen en vervolgens naar de code stroom kunt gaan waar een vernieuwings token wordt verwacht.
+> Deze machtiging wordt weer gegeven op alle toestemmings schermen, zelfs voor stromen die geen vernieuwings token bieden (de [impliciete stroom](v2-oauth2-implicit-grant-flow.md)). Dit is bedoeld om scenario's te behandelen waarbij een client in de impliciete stroom kan beginnen en vervolgens naar de code stroom gaan waar een vernieuwings token wordt verwacht.
 
 Op het micro soft-identiteits platform (aanvragen van het v 2.0-eind punt) moet uw app het bereik expliciet aanvragen `offline_access` om vernieuwings tokens te ontvangen. Dit betekent dat wanneer u een autorisatie code inwisselt in de [OAuth 2,0-autorisatie code stroom](active-directory-v2-protocols.md), alleen een toegangs token van het `/token` eind punt ontvangt. Het toegangs token is voor korte tijd geldig. Het toegangs token verloopt doorgaans over een uur. Op dat moment moet uw app de gebruiker terug naar het `/authorize` eind punt omleiden om een nieuwe autorisatie code op te halen. Afhankelijk van het type app, moet de gebruiker tijdens deze omleiding mogelijk hun referenties opnieuw invoeren of opnieuw toestemming geven voor machtigingen.
 

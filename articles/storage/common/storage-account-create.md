@@ -1,23 +1,23 @@
 ---
-title: Create a storage account
+title: Een opslagaccount maken
 titleSuffix: Azure Storage
 description: Meer informatie over het maken van een opslag account voor het opslaan van blobs, bestanden, wacht rijen en tabellen. Een Azure-opslag account biedt een unieke naam ruimte in Microsoft Azure voor het lezen en schrijven van uw gegevens.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: b7faec5023abe37802d8b08980f216934d70a6ac
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c8d07e53e259fff28e662f0c1ca3934eabf015e8
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005539"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357446"
 ---
-# <a name="create-a-storage-account"></a>Create a storage account
+# <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Een Azure-opslag account bevat al uw Azure Storage gegevens objecten: blobs, bestanden, wacht rijen, tabellen en schijven. Het opslag account biedt een unieke naam ruimte voor uw Azure Storage gegevens die overal ter wereld toegankelijk zijn via HTTP of HTTPS. Gegevens in uw Azure Storage-account zijn duurzaam en Maxi maal beschikbaar, veilig en zeer schaalbaar.
 
@@ -102,7 +102,7 @@ N.v.t.
 
 ---
 
-## <a name="create-a-storage-account"></a>Create a storage account
+## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Elk opslagaccount moet behoren tot een Azure-resourcegroep. Een resourcegroep is een logische container voor het groeperen van uw Azure-services. Wanneer u een opslagaccount maakt, kunt u een nieuwe resourcegroep maken of een bestaande resourcegroep gebruiken. In dit artikel wordt beschreven hoe u een nieuwe resourcegroep maakt.
 
@@ -286,3 +286,4 @@ U kunt ook de resource groep verwijderen, waardoor het opslag account en eventue
 - [Overzicht van opslagaccounts](storage-account-overview.md)
 - [Upgraden naar een V2-opslagaccount voor algemeen gebruik](storage-account-upgrade.md)
 - [Een Azure Storage-account naar een andere regio verplaatsen](storage-account-move.md)
+- [Een verwijderd opslagaccount herstellen](storage-account-recover.md)

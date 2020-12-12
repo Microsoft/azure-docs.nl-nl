@@ -7,6 +7,7 @@ author: MashaMSFT
 manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 8f8513746271fff0ab52603e31b75304d5ebc1bf
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 5670a29e86eb201a707e5ceef28043aafe4839d9
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168879"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357973"
 ---
 # <a name="configure-azure-load-balancer-for-failover-cluster-instance-vnn"></a>Azure Load Balancer configureren voor VNN van het failovercluster
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -71,11 +72,11 @@ Gebruik de [Azure Portal](https://portal.azure.com) om de Load Balancer te maken
 
 1. Ga terug naar de Azure-resource groep die de virtuele machines bevat en zoek de nieuwe load balancer. Mogelijk moet u de weer gave van de resource groep vernieuwen. Selecteer de load balancer.
 
-1. Selecteer **back-endservers**en selecteer vervolgens **toevoegen**.
+1. Selecteer **back-endservers** en selecteer vervolgens **toevoegen**.
 
 1. Koppel de back-endpool met de beschikbaarheidsset die de virtuele machines bevat.
 
-1. Onder **IP-configuraties**voor het doelnet **werk selecteert u virtuele machine** en kiest u de virtuele machines die als cluster knooppunten zullen worden beschouwd. Zorg ervoor dat u alle virtuele machines opneemt die als host moeten fungeren voor de FCI of beschikbaarheids groep.
+1. Onder **IP-configuraties** voor het doelnet **werk selecteert u virtuele machine** en kiest u de virtuele machines die als cluster knooppunten zullen worden beschouwd. Zorg ervoor dat u alle virtuele machines opneemt die als host moeten fungeren voor de FCI of beschikbaarheids groep.
 
 1. Selecteer **OK** om de back-endpool te maken.
 
@@ -85,7 +86,7 @@ Gebruik de [Azure Portal](https://portal.azure.com) om de Load Balancer te maken
 
 1. Selecteer **Toevoegen**.
 
-1. Stel in het deel venster **status test toevoegen** de volgende Health probe para meters in: <span id="probe"> </span>
+1. Stel in het deel venster **status test toevoegen** de volgende Health probe para meters in: <span id="probe"></span>
 
    - **Naam**: een naam voor de status test.
    - **Protocol**: TCP.
@@ -97,7 +98,7 @@ Gebruik de [Azure Portal](https://portal.azure.com) om de Load Balancer te maken
 
 ## <a name="set-load-balancing-rules"></a>Taakverdelings regels instellen
 
-1. Selecteer **regels voor taak verdeling**in het deel venster Load Balancer.
+1. Selecteer **regels voor taak verdeling** in het deel venster Load Balancer.
 
 1. Selecteer **Toevoegen**.
 
@@ -137,10 +138,10 @@ In de volgende tabel worden de waarden beschreven die u moet bijwerken:
 
 |**Waarde**|**Beschrijving**|
 |---------|---------|
-|`Cluster Network Name`| De naam van het Windows Server-failovercluster voor het netwerk. Klik in **Failoverclusterbeheer**  >  **netwerken**met de rechter muisknop op het netwerk en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
-|`SQL Server FCI/AG listener IP Address Resource Name`|De resource naam voor het IP-adres van de SQL Server-FCI of AG-listener. Klik in **Failoverclusterbeheer**  >  **rollen**onder de rol SQL Server FCI onder **Server naam**met de rechter muisknop op de IP-adres bron en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
+|`Cluster Network Name`| De naam van het Windows Server-failovercluster voor het netwerk. Klik in **Failoverclusterbeheer**  >  **netwerken** met de rechter muisknop op het netwerk en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
+|`SQL Server FCI/AG listener IP Address Resource Name`|De resource naam voor het IP-adres van de SQL Server-FCI of AG-listener. Klik in **Failoverclusterbeheer**  >  **rollen** onder de rol SQL Server FCI onder **Server naam** met de rechter muisknop op de IP-adres bron en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
 |`ILBIP`|Het IP-adres van de interne load balancer (ILB). Dit adres wordt geconfigureerd in de Azure Portal als het front-end-adres van de ILB. Dit is ook het IP-adres van de SQL Server FCI. U kunt deze in **Failoverclusterbeheer** vinden op dezelfde eigenschappen pagina waar u de hebt opgeslagen `<SQL Server FCI/AG listener IP Address Resource Name>` .|
-|`nnnnn`|De test poort die u hebt geconfigureerd in de status test van de load balancer. Alle ongebruikte TCP-poort is geldig.|
+|`nnnnn`|De test poort die u hebt geconfigureerd in de status test van de load balancer. Elke ongebruikte TCP-poort is geldig.|
 |SubnetMask| Het subnetmasker voor de cluster parameter. Dit moet het TCP IP-broadcast adres zijn: `255.255.255.255` .| 
 
 
@@ -161,7 +162,7 @@ Voer de volgende stappen uit:
 1. Maak verbinding met een van de SQL Server cluster knooppunten met behulp van RDP.
 1. Open **Failoverclusterbeheer**. Selecteer **Rollen**. U ziet welk knoop punt eigenaar is van de SQL Server rol FCI.
 1. Klik met de rechter muisknop op de SQL Server FCI rol. 
-1. Selecteer **verplaatsen**en selecteer vervolgens **best mogelijke knoop punt**.
+1. Selecteer **verplaatsen** en selecteer vervolgens **best mogelijke knoop punt**.
 
 **Failoverclusterbeheer** toont de rol en de bijbehorende resources gaan offline. De resources worden vervolgens verplaatst en weer online in het andere knoop punt.
 

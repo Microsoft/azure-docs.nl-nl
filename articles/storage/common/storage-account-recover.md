@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c37e4aeb9b9af1c4f792d0827fec39750a1b1c2a
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: f57cd3361d7888d9d7f747955257d96282274fd6
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095979"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357342"
 ---
 # <a name="recover-a-deleted-storage-account"></a>Een verwijderd opslagaccount herstellen
 
@@ -73,3 +73,5 @@ Voer de volgende stappen uit om een verwijderd opslag account te herstellen vanu
 
 - [Overzicht van opslagaccounts](storage-account-overview.md)
 - [Een opslagaccount maken](storage-account-create.md)
+- [Upgraden naar een V2-opslagaccount voor algemeen gebruik](storage-account-upgrade.md)
+- [Een Azure Storage-account naar een andere regio verplaatsen](storage-account-move.md)

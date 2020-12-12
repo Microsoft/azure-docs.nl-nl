@@ -7,6 +7,7 @@ author: MashaMSFT
 manager: jroth
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
@@ -14,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: dff6d69a107091a0ce030065da0f70a3d68c5841
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 8549592ace00e712929ebc76045a32531b9db659
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168840"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358313"
 ---
 # <a name="configure-a-dnn-for-failover-cluster-instance"></a>Een DNN configureren voor het failover-cluster exemplaar
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -131,7 +132,7 @@ Voer de volgende stappen uit om mogelijke eigen aars bij te werken:
 
 1. Schakel het selectie vakje uit voor knoop punten die geen deel uitmaken van het failover-cluster exemplaar. De lijst met mogelijke eigen aars voor de DNN-resource moet overeenkomen met de lijst met mogelijke eigen aars voor de SQL Server-exemplaar bron. Als er bijvoorbeeld wordt aangenomen dat DATA3 geen deel uitmaakt van de FCI, is de volgende afbeelding een voor beeld van het verwijderen van DATA3 uit de lijst met mogelijke eigen aars voor de DNN-resource: 
 
-   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/clear-check-for-nodes-not-in-fci.png" alt-text="Snelmenu voor de DNN-resource met de opdracht eigenschappen gemarkeerd.":::
+   :::image type="content" source="media/hadr-distributed-network-name-dnn-configure/clear-check-for-nodes-not-in-fci.png" alt-text="Schakel het selectie vakje uit naast de knoop punten die geen deel uitmaken van de FCI voor mogelijke eigen aren van de DNN-resource":::
 
 1. Selecteer **OK** om uw wijzigingen op te slaan. 
 
@@ -161,7 +162,7 @@ Voer de volgende stappen uit om de failover te testen:
 1. Maak verbinding met een van de SQL Server cluster knooppunten met behulp van RDP.
 1. Open **Failoverclusterbeheer**. Selecteer **Rollen**. U ziet welk knoop punt eigenaar is van de SQL Server rol FCI.
 1. Klik met de rechter muisknop op de SQL Server FCI rol. 
-1. Selecteer **verplaatsen**en selecteer vervolgens **best mogelijke knoop punt**.
+1. Selecteer **verplaatsen** en selecteer vervolgens **best mogelijke knoop punt**.
 
 **Failoverclusterbeheer** toont de rol en de bijbehorende resources gaan offline. De resources worden vervolgens verplaatst en weer online in het andere knoop punt.
 

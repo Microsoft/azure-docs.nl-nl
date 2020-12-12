@@ -7,17 +7,18 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: a9289fad6f7ae1030628bedcf1a62cacc0b1e23a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 52d6bc97245423a4add392ab05634d21bcf83a0d
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564460"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358007"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Virtuele machines voorbereiden voor een FCI (SQL Server op Azure-Vm's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -47,19 +48,22 @@ Voor de functie failover cluster moeten virtuele machines in een [beschikbaarhei
 
 Selecteer zorgvuldig de optie voor de beschik baarheid van de VM die overeenkomt met de gewenste cluster configuratie: 
 
- - **Gedeelde Azure-schijven** : [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) die is geconfigureerd met het fout domein en het bijwerken van het domein ingesteld op 1 en geplaatst in een [proximity-plaatsings groep](../../../virtual-machines/windows/proximity-placement-groups-portal.md).
- - **Premium-bestands shares** : [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) of [beschikbaarheids zone](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address). Premium-bestands shares zijn de enige gedeelde opslag optie als u beschikbaarheids zones kiest als de beschikbaarheids configuratie voor uw virtuele machines. 
- - **Opslagruimten direct** : [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
+- **Gedeelde Azure-schijven**: de beschikbaarheids optie is afhankelijk van het gebruik van Premium Ssd's of UltraDisk:
+   - Premium-SSD: [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) in verschillende fout-en update domeinen voor Premium-ssd's die in een [proximity-plaatsings groep](../../../virtual-machines/windows/proximity-placement-groups-portal.md)zijn geplaatst.
+   - Ultra disk: [beschikbaarheids zone](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , maar de virtuele machines moeten in dezelfde beschikbaarheids zone worden geplaatst, waardoor de beschik baarheid van het cluster tot 99,9% wordt verminderd. 
+- **Premium-bestands shares**: [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set) of [beschikbaarheids zone](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address).
+- **Opslagruimten direct**: [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#create-an-availability-set).
 
->[!IMPORTANT]
->U kunt de beschikbaarheidsset niet instellen of wijzigen nadat u een virtuele machine hebt gemaakt.
+> [!IMPORTANT]
+> U kunt de beschikbaarheidsset niet instellen of wijzigen nadat u een virtuele machine hebt gemaakt.
 
 ## <a name="create-the-virtual-machines"></a>De virtuele machines maken
 
 Nadat u de beschik baarheid van uw VM hebt geconfigureerd, kunt u uw virtuele machines maken. U kunt ervoor kiezen om een installatie kopie van Azure Marketplace te gebruiken waarop SQL Server al is geïnstalleerd. Als u echter een installatie kopie kiest voor SQL Server op Azure-Vm's, moet u SQL Server verwijderen van de virtuele machine voordat u het failover-cluster exemplaar configureert. 
 
 ### <a name="considerations"></a>Overwegingen
-Bij een failover-gastcluster voor een Azure IaaS-VM adviseren we één NIC per server (clusterknooppunt) en één subnet. Een Azure-netwerk maakt gebruikt van fysieke redundantie, waardoor extra NIC's en subnetten overbodig zijn voor een gastcluster voor een Azure IaaS-VM. Hoewel het clustervalidatierapport een waarschuwing zal bevatten dat de knooppunten alleen bereikbaar zijn in één netwerk, kan deze waarschuwing zonder problemen worden genegeerd in het geval van failover-gastclusters voor een Azure IaaS-VM.
+
+Voor een Azure VM-gast-failovercluster wordt een enkele NIC per server (cluster knooppunt) en één subnet aanbevolen. Een Azure-netwerk maakt gebruikt van fysieke redundantie, waardoor extra NIC's en subnetten overbodig zijn voor een gastcluster voor een Azure IaaS-VM. Hoewel het clustervalidatierapport een waarschuwing zal bevatten dat de knooppunten alleen bereikbaar zijn in één netwerk, kan deze waarschuwing zonder problemen worden genegeerd in het geval van failover-gastclusters voor een Azure IaaS-VM.
 
 Plaats beide virtuele machines:
 
@@ -109,9 +113,9 @@ Deze tabel bevat informatie over de poorten die u mogelijk moet openen, afhankel
 
    | Doel | Poort | Notities
    | ------ | ------ | ------
-   | SQL Server | TCP 1433 | Normale poort voor standaard exemplaren van SQL Server. Als u een installatie kopie uit de galerie hebt gebruikt, wordt deze poort automatisch geopend. </br> </br> **Gebruikt door** : alle FCI-configuraties. |
-   | Statustest | TCP 59999 | Een open TCP-poort. Configureer de load balancer [Health probe](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) en het cluster om deze poort te gebruiken. </br> </br> **Gebruikt door** : FCI met Load Balancer. |
-   | Bestandsshare | UDP 445 | Poort die door de bestands share service wordt gebruikt. </br> </br> **Gebruikt door** : FCI met Premium-bestands share. |
+   | SQL Server | TCP 1433 | Normale poort voor standaard exemplaren van SQL Server. Als u een installatie kopie uit de galerie hebt gebruikt, wordt deze poort automatisch geopend. </br> </br> **Gebruikt door**: alle FCI-configuraties. |
+   | Statustest | TCP 59999 | Een open TCP-poort. Configureer de load balancer [Health probe](failover-cluster-instance-vnn-azure-load-balancer-configure.md#configure-health-probe) en het cluster om deze poort te gebruiken. </br> </br> **Gebruikt door**: FCI met Load Balancer. |
+   | Bestandsshare | UDP 445 | Poort die door de bestands share service wordt gebruikt. </br> </br> **Gebruikt door**: FCI met Premium-bestands share. |
 
 ## <a name="join-the-domain"></a>Aan domein toevoegen
 

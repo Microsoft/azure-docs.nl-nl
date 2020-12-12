@@ -8,18 +8,19 @@ editor: ''
 tags: azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 07/09/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 12ba0900f2499965f7843672183310dfecfbab2b
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 42d7760d25f6ab591c19889eb2159711d6de1b07
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146668"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356749"
 ---
 # <a name="migrate-log-disk-to-ultra-disk"></a>Logboek schijf migreren naar ultra Disk
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -44,15 +45,15 @@ Voer de volgende stappen uit om de compatibiliteit in te scha kelen:
 
 1. Ga naar de virtuele machine in de [Azure Portal](https://portal.azure.com/). 
 1. Stop/toewijzing van de virtuele machine ongedaan maken. 
-1. Selecteer **schijven** onder **instellingen** en selecteer vervolgens **extra instellingen** . 
+1. Selecteer **schijven** onder **instellingen** en selecteer vervolgens **extra instellingen**. 
 
    :::image type="content" source="media/storage-migrate-to-ultradisk/additional-disks-settings-azure-portal.png" alt-text="Selecteer extra instellingen voor schijven onder instellingen in het Azure Portal":::
 
-1. Selecteer **Ja** om **compatibiliteit met ultra disk in te scha kelen** . 
+1. Selecteer **Ja** om **compatibiliteit met ultra disk in te scha kelen**. 
 
-   :::image type="content" source="../../../virtual-machines/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Selecteer extra instellingen voor schijven onder instellingen in het Azure Portal":::
+   :::image type="content" source="../../../virtual-machines/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Scherm opname met de optie Ja.":::
 
-1. Selecteer **Opslaan** . 
+1. Selecteer **Opslaan**. 
 
 
 
@@ -83,7 +84,7 @@ Configureer SQL Server om het nieuwe logboek station te gebruiken. U kunt dit do
 1. Controleer het service account dat wordt gebruikt door SQL Server. U kunt dit doen met behulp van SQL Server Configuration Manager of services. msc.
 1. Ga naar de nieuwe schijf. 
 1. Maak een map (of meerdere mappen) die moet worden gebruikt voor het logboek bestand. 
-1. Klik met de rechter muisknop op de map en selecteer **Eigenschappen** .
+1. Klik met de rechter muisknop op de map en selecteer **Eigenschappen**.
 1. Geef op het tabblad **beveiliging** volledige controle toegang tot het SQL Server-service account. 
 1. Selecteer **OK**  om uw instellingen op te slaan. 
 1. Herhaal dit voor elke hoofdmap van het hoofd niveau waar u SQL-gegevens wilt hebben. 
@@ -143,14 +144,14 @@ Op dit moment is de data base online met het logboek op de nieuwe locatie.
 Gebruik SSMS om de bestaande bestanden te verplaatsen naar een nieuwe locatie:
 
 1. Maak verbinding met uw data base in SQL Server Management Studio (SSMS). 
-1. Klik met de rechter muisknop op de data base, selecteer **Eigenschappen** en selecteer vervolgens **bestanden** . 
+1. Klik met de rechter muisknop op de data base, selecteer **Eigenschappen** en selecteer vervolgens **bestanden**. 
 1. Noteer het pad van de bestaande bestanden. 
 1. Selecteer **OK** om het dialoogvenster te sluiten. 
-1. Klik met de rechter muisknop op de data base en selecteer **taken**  >  **loskoppelen** . 
+1. Klik met de rechter muisknop op de data base en selecteer **taken**  >  **loskoppelen**. 
 1. Volg de wizard om de data base los te koppelen. 
 1. Verplaats het logboek bestand hand matig naar de nieuwe locatie met bestanden Verkenner.
 1. De data base in SQL Server Management Studio koppelen
-   1. Klik met de rechter muisknop op **data bases** in **objectverkenner** en selecteer **Data Base bijvoegen** . 
+   1. Klik met de rechter muisknop op **data bases** in **objectverkenner** en selecteer **Data Base bijvoegen**. 
    1. Voeg in het dialoog venster elk bestand toe, met inbegrip van het logboek bestand op de nieuwe locatie. 
    1. Selecteer **OK** om de data base te koppelen. 
 

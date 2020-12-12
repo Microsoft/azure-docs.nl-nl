@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8eb8de2424012d12f216f154eb077028a8f82d76
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a89a456b5d9ee36909d5d742a7880d72e5ed86fd
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173699"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355853"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Vereisten voor Azure AD Connect-cloudinrichting
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) verbinden met Cloud inrichting als uw identiteits oplossing.
@@ -51,11 +51,23 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 
 ### <a name="in-your-on-premises-environment"></a>In uw on-premises omgeving
 
-1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2012 R2 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
+ 1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2012 R2 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
 
-1. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
+ >[!NOTE]
+ > Houd er rekening mee dat het definiëren van een bereik filter een geheugen kosten op de hostserver kost.  Als er geen bereik filter wordt gebruikt, is er geen extra geheugen kosten. De minimale 4 GB biedt ondersteuning voor synchronisatie voor Maxi maal 12 organisatie-eenheden die zijn gedefinieerd in het filter bereik. Als u extra Ou's wilt synchroniseren, moet u de minimale hoeveelheid geheugen verhogen. Gebruik de volgende tabel als richt lijn:
+ >
+ >  
+ >  | Aantal organisatie-eenheden in bereik filter| Mini maal vereist geheugen|
+ >  | --- | --- |
+ >  | 12| 4 GB|
+ >  | 18|5,5 GB|
+ >  | 28|10 + GB|
+ >
+ > 
 
-1. Als er zich een firewall tussen uw servers en Azure AD bevindt, configureert u de volgende items:
+ 2. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
+
+ 3. Als er zich een firewall tussen uw servers en Azure AD bevindt, configureert u de volgende items:
    - Zorg ervoor dat agenten *uitgaande* aanvragen voor Azure AD via de volgende poorten kunnen maken:
 
         | Poortnummer | Hoe dat wordt gebruikt |
@@ -100,7 +112,20 @@ Voer de volgende stappen uit om TLS 1,2 in te scha kelen.
 
 1. Start de server opnieuw.
 
+## <a name="known-limitations"></a>Bekende beperkingen
+Hier volgen enkele bekende beperkingen:
 
+### <a name="delta-synchronization"></a>Deltasynchronisatie
+
+- Filteren van groeps bereik voor Delta synchronisatie biedt geen ondersteuning voor meer dan 1500 leden.
+- Wanneer u een groep verwijdert die wordt gebruikt als onderdeel van het filter bereik van een groep, worden gebruikers die lid zijn van de groep, niet verwijderd. 
+- Wanneer u de naam van de organisatie-eenheid of groep in het bereik wijzigt, worden de gebruikers niet verwijderd door Delta synchronisatie.
+
+### <a name="provisioning-logs"></a>Inrichtingslogboeken
+- Bij inrichtings Logboeken wordt niet duidelijk onderscheid gemaakt tussen Create-en update-bewerkingen.  Mogelijk wordt er een bewerking voor het maken van een update en een update bewerking voor een maken weer geven.
+
+### <a name="group-re-naming-or-ou-re-naming"></a>Hernoemen van groep of organisatie-eenheid opnieuw
+- Als u de naam van een groep of organisatie-eenheid in AD binnen het bereik van een bepaalde configuratie wijzigt, kan de inrichtings taak van de Cloud de naam wijziging in AD niet herkennen. De taak wordt niet in quarantaine gezet en blijft in orde.
 
 
 ## <a name="next-steps"></a>Volgende stappen 

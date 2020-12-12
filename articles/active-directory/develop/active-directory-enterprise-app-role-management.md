@@ -10,14 +10,14 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/22/2019
+ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 376086d0fc84e04645215b26ba896cf22f3f9c57
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 46a676f90eb9b628551c50f9c3bf664056dd6ca7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647882"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355939"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: de rol claim configureren die is uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -38,7 +38,7 @@ Als uw toepassing verwacht dat aangepaste rollen worden door gegeven in een SAML
 
     ![Azure Active Directory pictogram][1]
 
-2. Selecteer **bedrijfs toepassingen**. Selecteer vervolgens **alle toepassingen**.
+2. Selecteer **Enterprise-toepassingen**. Selecteer vervolgens **alle toepassingen**.
 
     ![Het deelvenster Bedrijfstoepassingen][2]
 

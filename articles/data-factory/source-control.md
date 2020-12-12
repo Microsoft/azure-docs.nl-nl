@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: d219ff8469c471a37deb47e0f217292d70e8f0f9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 75073cd2f0dae9cac12175677427671101813a90
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497109"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355219"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -29,7 +29,7 @@ Standaard Azure Data Factory gebruikers interface-schrijvers (UX) direct voor de
 Azure Data Factory kunt u een Git-opslag plaats met behulp van Azure opslag plaatsen of GitHub configureren om een betere ontwerp ervaring te bieden. Git is een versie beheersysteem waarmee u eenvoudiger wijzigingen kunt bijhouden en samen werken. In dit artikel wordt beschreven hoe u in een Git-opslag plaats kunt configureren en gebruiken, samen met het markeren van aanbevolen procedures en een probleemoplossings handleiding.
 
 > [!NOTE]
-> Azure Data Factory Git-integratie is niet beschikbaar in de Azure Government Cloud.
+> Azure Data Factory Git-integratie is alleen beschikbaar voor GitHub Enter prise in de Azure Government Cloud.
 
 Voor meer informatie over hoe Azure Data Factory integreert met git, raadpleegt u de video over 15 minuten zelf studie:
 
@@ -199,7 +199,7 @@ Zodra u deze stappen hebt uitgevoerd, kan uw fabriek verbinding maken met zowel 
 - GitHub-integratie met de Data Factory Visual authoring-hulpprogram ma's werkt alleen in de algemeen beschik bare versie van Data Factory.
 
 
-- Er kunnen Maxi maal 1.000 entiteiten per resource type (zoals pijp lijnen en gegevens sets) worden opgehaald uit één GitHub-vertakking. Als deze limiet is bereikt, wordt u geadviseerd om uw resources te splitsen in afzonderlijke fabrieken. Deze beperking is niet van Azure DevOps git.
+- Er kunnen Maxi maal 1.000 entiteiten per resource type (zoals pijp lijnen en gegevens sets) worden opgehaald uit één GitHub-vertakking. Als deze limiet is bereikt, wordt u geadviseerd om uw resources te splitsen in afzonderlijke fabrieken. Deze beperking is niet aanwezig in Azure DevOps Git.
 
 ## <a name="version-control"></a>Versiebeheer
 

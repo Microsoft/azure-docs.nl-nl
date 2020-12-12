@@ -9,16 +9,17 @@ ms.service: virtual-machines-sql
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
+ms.subservice: management
 ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 37f6e60aea033dee8adfd66839c82b9fd165c879
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: da136c1f3ce36bf85592c3c73c9e8f92c41c7442
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556252"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357905"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Het licentiemodel voor een virtuele SQL-machine in Azure wijzigen
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -71,11 +72,11 @@ U kunt het licentie model rechtstreeks vanuit de portal wijzigen:
 ![Azure Hybrid Benefit in de portal](./media/licensing-model-azure-hybrid-benefit-ahb-change/ahb-in-portal.png)
 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 U kunt de Azure CLI gebruiken om uw licentie model te wijzigen.  
 
-Geef de volgende waarden op voor het **licentie type** :
+Geef de volgende waarden op voor het **licentie type**:
 - `AHUB` voor de Azure Hybrid Benefit
 - `PAYG` voor betalen naar gebruik
 - `DR` de gratis HA/DR-replica activeren
@@ -91,7 +92,7 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type <license-type
 
 U kunt Power shell gebruiken om uw licentie model te wijzigen.
 
-Geef de volgende waarden op voor het **licentie type** :
+Geef de volgende waarden op voor het **licentie type**:
 - `AHUB` voor de Azure Hybrid Benefit
 - `PAYG` voor betalen naar gebruik
 - `DR` de gratis HA/DR-replica activeren

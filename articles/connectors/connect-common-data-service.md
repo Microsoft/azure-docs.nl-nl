@@ -1,22 +1,25 @@
 ---
-title: Verbinding maken met Common Data Service
-description: Common Data Service records maken en beheren met behulp van Azure Logic Apps
+title: Verbinding maken met Common Data Service (micro soft Dataverse)
+description: Common Data Service-records (micro soft Dataverse) met Azure Logic Apps maken en beheren
 services: logic-apps
 ms.suite: integration
 ms.reviewer: jdaly, logicappspm
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 12/11/2020
 tags: connectors
-ms.openlocfilehash: de85a61cbd699ec9ac2669f8abb6217254038de9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b17c3d54b7065a18e015363a0362766f844e4e10
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334579"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355114"
 ---
-# <a name="create-and-manage-records-in-common-data-service-by-using-azure-logic-apps"></a>Records in Common Data Service maken en beheren met behulp van Azure Logic Apps
+# <a name="create-and-manage-records-in-common-data-service-microsoft-dataverse-by-using-azure-logic-apps"></a>Records maken en beheren in Common Data Service (micro soft Dataverse) met behulp van Azure Logic Apps
 
-Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [common data service-connector](/connectors/commondataservice/)kunt u geautomatiseerde werk stromen maken waarmee records in uw [common data service](/powerapps/maker/common-data-service/data-platform-intro) -Data Base worden beheerd. Met deze werk stromen kunnen records worden gemaakt, records worden bijgewerkt en andere bewerkingen worden uitgevoerd. U kunt ook gegevens uit uw Common Data Service-data base ophalen en de uitvoer beschikbaar maken voor andere acties die u in uw logische app kunt gebruiken. Wanneer bijvoorbeeld een record wordt bijgewerkt in uw Common Data Service-data base, kunt u een e-mail bericht verzenden met behulp van de Office 365 Outlook-Connector.
+> [!NOTE]
+> In november 2020 is Common Data Service gewijzigd in micro soft Dataverse.
+
+Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [common data service-connector](/connectors/commondataservice/)kunt u geautomatiseerde werk stromen bouwen waarmee records in uw [common data service, nu micro soft Dataverse-data base, worden](/powerapps/maker/common-data-service/data-platform-intro) beheerd. Met deze werk stromen kunnen records worden gemaakt, records worden bijgewerkt en andere bewerkingen worden uitgevoerd. U kunt ook gegevens uit uw Common Data Service-data base ophalen en de uitvoer beschikbaar maken voor andere acties die u in uw logische app kunt gebruiken. Wanneer bijvoorbeeld een record wordt bijgewerkt in uw Common Data Service-data base, kunt u een e-mail bericht verzenden met behulp van de Office 365 Outlook-Connector.
 
 Dit artikel laat zien hoe u een logische app kunt maken waarmee een taak record wordt gemaakt wanneer er een nieuwe lead record wordt aangemaakt.
 
@@ -51,16 +54,16 @@ Voor dit voor beeld voegt u de trigger Common Data Service toe die wordt geactiv
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Omgeving** | Ja | De omgeving waarin u bijvoorbeeld ' fabrikam Sales production ' wilt bewaken. Zie [overzicht van Power platform-omgevingen](/power-platform/admin/environments-overview)voor meer informatie. |
-   | **Naam van entiteit** | Ja | De entiteit die u wilt bewaken, bijvoorbeeld ' leads ' |
-   | **Bereik** | Ja | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
+   | **Omgeving** | Yes | De omgeving waarin u bijvoorbeeld ' fabrikam Sales production ' wilt bewaken. Zie [overzicht van Power platform-omgevingen](/power-platform/admin/environments-overview)voor meer informatie. |
+   | **Naam van entiteit** | Yes | De entiteit die u wilt bewaken, bijvoorbeeld ' leads ' |
+   | **Bereik** | Yes | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Common Data Service actie toevoegen
 
 Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuwe lead record wordt gemaakt.
 
-1. Selecteer **nieuwe stap**onder de trigger **Wanneer een record wordt gemaakt** .
+1. Selecteer **nieuwe stap** onder de trigger **Wanneer een record wordt gemaakt** .
 
 1. Typ `common data service` in het zoekvak. Selecteer in de lijst acties deze actie: **een nieuwe record maken**
 
@@ -72,8 +75,8 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Naam van organisatie** | Ja | De omgeving waarin u de record wilt maken, die niet dezelfde omgeving in uw trigger moet zijn, maar ' fabrikam Sales production ' in dit voor beeld is |
-   | **Naam van entiteit** | Ja | De entiteit waar u de record wilt maken, bijvoorbeeld ' taken ' |
+   | **Naam van organisatie** | Yes | De omgeving waarin u de record wilt maken, die niet dezelfde omgeving in uw trigger moet zijn, maar ' fabrikam Sales production ' in dit voor beeld is |
+   | **Naam van entiteit** | Yes | De entiteit waar u de record wilt maken, bijvoorbeeld ' taken ' |
    | **Onderwerp** | Ja, op basis van de entiteit die in dit voor beeld is geselecteerd | Een korte beschrijving van de doel stelling voor deze taak |
    ||||
 
@@ -87,7 +90,7 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
       ![Trigger uitvoer selecteren voor gebruik in taak record](./media/connect-common-data-service/create-new-record-action-select-trigger-outputs.png)
 
-      | Uitvoer activeren | Beschrijving |
+      | Uitvoer activeren | Description |
       |----------------|-------------|
       | **Voornaam** | De voor naam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
       | **Achternaam** | De achternaam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
@@ -100,17 +103,17 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
 1. Sla uw logische app op. Selecteer **Opslaan** op de werkbalk van de ontwerper.
 
-1. Als u de logische app hand matig wilt starten, selecteert u **uitvoeren**op de werk balk van de ontwerp functie. Als u uw logische app wilt testen, maakt u een nieuwe lead record.
+1. Als u de logische app hand matig wilt starten, selecteert u **uitvoeren** op de werk balk van de ontwerp functie. Als u uw logische app wilt testen, maakt u een nieuwe lead record.
 
 ## <a name="trigger-only-on-updated-attributes"></a>Alleen activeren bij bijgewerkte kenmerken
 
 Voor triggers die worden uitgevoerd wanneer records worden bijgewerkt, zoals de actie **Wanneer een record wordt bijgewerkt** , kunt u filter kenmerken gebruiken zodat uw logische app alleen wordt uitgevoerd wanneer de opgegeven kenmerken worden bijgewerkt. Deze mogelijkheid helpt u om te voor komen dat de logische app wordt uitgevoerd.
 
-1. Selecteer **kenmerk filters**in de lijst **nieuwe para meter toevoegen** van de trigger.
+1. Selecteer **kenmerk filters** in de lijst **nieuwe para meter toevoegen** van de trigger.
 
    ![Scherm afbeelding met de actie ' wanneer een record wordt bijgewerkt ' en de lijst ' nieuwe para meter toevoegen ' met de eigenschap ' attribute filters ' geselecteerd.](./media/connect-common-data-service/when-record-updated-trigger-add-attribute-filters.png)
 
-1. Selecteer voor elk **item kenmerk filters**het kenmerk dat u wilt controleren op updates, bijvoorbeeld:
+1. Selecteer voor elk **item kenmerk filters** het kenmerk dat u wilt controleren op updates, bijvoorbeeld:
 
    ![Eigenschap attribute filters toevoegen](./media/connect-common-data-service/when-record-updated-trigger-select-attribute-filter.png)
 

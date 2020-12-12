@@ -1,14 +1,14 @@
 ---
 title: Activiteit van serviceprovider bekijken
 description: Klanten kunnen vastgelegde activiteiten weer geven om acties te bekijken die door service providers worden uitgevoerd via het beheer van gedelegeerde resources van Azure.
-ms.date: 10/12/2020
+ms.date: 12/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 56c8b88274909aa55e19a4b364aaa3ace2a0c26d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dcf177cc41dac846d096607445ff4c3d433620ca
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371083"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356375"
 ---
 # <a name="view-service-provider-activity"></a>Activiteit van serviceprovider bekijken
 
@@ -42,6 +42,12 @@ Zie [waarschuwingen voor activiteiten logboeken maken en beheren](../../azure-mo
 U kunt query's maken om uw vastgelegde activiteiten te analyseren of te focussen op specifieke items. Bijvoorbeeld: een audit vereist dat u rapporteert over alle acties op beheer niveau die zijn uitgevoerd op een abonnement. U kunt een query maken om alleen op deze acties te filteren en de resultaten te sorteren op gebruiker, datum of een andere waarde.
 
 Zie [overzicht van logboek query's in azure monitor](../../azure-monitor/log-query/log-query-overview.md)voor meer informatie.
+
+## <a name="view-user-activity-across-domains"></a>Gebruikers activiteit in meerdere domeinen weer geven
+
+U kunt activiteiten van afzonderlijke gebruikers in meerdere domeinen weer geven met behulp van de voorbeeld werkmap [activiteiten logboeken per domein](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) .
+
+Resultaten kunnen worden gefilterd op domein naam. U kunt ook extra filters toep assen, zoals categorie, niveau of resource groep.
 
 ## <a name="next-steps"></a>Volgende stappen
 

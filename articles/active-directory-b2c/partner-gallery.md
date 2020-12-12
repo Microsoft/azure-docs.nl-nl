@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bbcb3367f4a1b99ae6689a5d9fa33b7629145ead
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 4592742b99d7c3e915c31ca5a202355d32e76d68
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092548"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356120"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -51,6 +51,7 @@ Micro soft-partners met de volgende Isv's voor MFA en verificatie zonder wacht w
 |:-------------------------|:--------------|
 | ![Scherm afbeelding van een hypr-logo](./media/partner-gallery/hypr-logo.png) | [Hypr](./partner-hypr.md) is een verificatie provider zonder wacht woord, waarmee wacht woorden met een open bare sleutel versleuteling worden vervangen door fraude, phishing en hergebruik van referenties. |
 | ![Scherm afbeelding van een Itsme-logo](./media/partner-gallery/itsme-logo.png) | [Itsme](./partner-itsme.md) is een digitale id-oplossing voor identificatie, authenticatie en Trust Services (eiDAS) waarmee gebruikers veilig kunnen worden aangemeld zonder kaart lezers, wacht woorden, twee ledige verificatie en meerdere pincodes. |
+| ![Scherm afbeelding van een Nevis-logo](./media/partner-gallery/nevis-logo.png) | [Nevis](./partner-nevis.md) maakt verificatie zonder wacht woord mogelijk en biedt een volledige, volledig brandende eindgebruikers ervaring met Nevis Access-app voor sterke klant verificatie en om te voldoen aan de PSD2-transactie vereisten. |
 | ![Scherm afbeelding van een trusona-logo](./media/partner-gallery/trusona-logo.png) | [Trusona](./partner-trusona.md) -integratie helpt u veilig te registreren en maakt verificatie zonder wacht woord, MFA en digitale licentie controle mogelijk. |
 | ![Scherm opname van een twilio-logo.](./media/partner-gallery/twilio-logo.png) | [Twilio verify app](./partner-twilio.md) biedt meerdere oplossingen om MFA in te scha kelen via EENMALIGe SMS-wacht woord (OTP), op tijd gebaseerd wacht woord (mobiele totp) en push meldingen, en om te voldoen aan de vereisten voor de SCA voor PSD2. |
 | ![Scherm afbeelding van een typingDNA-logo](./media/partner-gallery/typingdna-logo.png) | [TypingDNA](./partner-twilio.md) maakt sterke klanten verificatie mogelijk door het type patroon van een gebruiker te analyseren. Het helpt bedrijven een stille MFA in te scha kelen en te voldoen aan de SCA-vereisten voor PSD2. |

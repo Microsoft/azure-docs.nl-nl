@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2020
+ms.date: 12/11/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40751b7864cc62d17836ab6d57cd106f6904f64a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 788512db242bf1a1c6f18ffc0ee773bd3372aa42
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744105"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355863"
 ---
 # <a name="data-residency-and-customer-data-for-azure-ad-multi-factor-authentication"></a>Gegevens locatie en klant gegevens voor Azure AD-Multi-Factor Authentication
 
@@ -57,7 +57,7 @@ Voor open bare Azure-Clouds, met uitzonde ring van Azure B2C-verificatie, NPS-ex
 | Microsoft Authenticator-melding | In Multi-Factor Authentication-logboeken<br />Gegevens archief van Multi-Factor Authentication-activiteiten rapport<br />Geblokkeerde gebruikers als fraude gerapporteerd<br />Wijzigings aanvragen wanneer het token van Microsoft Authenticator wordt gewijzigd |
 
 > [!NOTE]
-> Het gegevens archief van het Multi-Factor Authentication-activiteiten rapport wordt opgeslagen in de Verenigde Staten voor alle Clouds, ongeacht de regio die de verificatie aanvraag verwerkt. Microsoft Azure Duitsland, Microsoft Azure beheerd door 21Vianet en micro soft Government Cloud hebben hun eigen onafhankelijke gegevens opslag gescheiden van de gegevens archieven van open bare Cloud regio's, maar deze gegevens worden altijd opgeslagen in de Verenigde Staten.
+> Het gegevens archief van het Multi-Factor Authentication-activiteiten rapport wordt opgeslagen in de Verenigde Staten voor alle Clouds, ongeacht de regio die de verificatie aanvraag verwerkt. Microsoft Azure Duitsland, Microsoft Azure beheerd door 21Vianet en micro soft Government Cloud hebben hun eigen onafhankelijke gegevens opslag gescheiden van de gegevens archieven van open bare Cloud regio's, maar deze gegevens worden altijd opgeslagen in de Verenigde Staten. Deze gegevens archieven bevatten persoonlijk identificeer bare informatie (PII) zoals user principal name (UPN) en het volledige telefoon nummer. 
 
 Voor Microsoft Azure Government, Microsoft Azure Duitsland, Microsoft Azure beheerd door 21Vianet, Azure B2C-verificatie, NPS-extensie en Windows Server 2016-of 2019 AD FS-adapter, worden de volgende persoons gegevens opgeslagen:
 

@@ -7,17 +7,18 @@ author: MashaMSFT
 tags: azure-resource-manager
 ms.assetid: 169fc765-3269-48fa-83f1-9fe3e4e40947
 ms.service: virtual-machines-sql
+ms.subservice: management
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/26/2019
 ms.author: mathoma
-ms.openlocfilehash: 3a4b7d68d7cd21ccb4b7eb8b97e0d331fb236e96
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: d713faf7062f82110be5fa8378faca368b9bb7a2
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146719"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356704"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>Opslagconfiguratie voor SQL Server-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -46,7 +47,7 @@ Bij het inrichten van een Azure-VM met behulp van een SQL Server galerie-afbeeld
 
 ![Scherm opname van het tabblad SQL Server instellingen en de optie voor het wijzigen van de configuratie.](./media/storage-configuration/sql-vm-storage-configuration-provisioning.png)
 
-Selecteer het type werk belasting waarvoor u uw SQL Server wilt implementeren onder **opslag optimalisatie** . Met de optie **Algemeen** optimalisatie hebt u standaard één gegevens schijf met een maximale IOPS van 5000. u gebruikt hetzelfde station voor uw gegevens, het transactie logboek en de tempdb-opslag. Als u **transactionele verwerking** (OLTP) of **gegevens opslag** selecteert, wordt er een afzonderlijke schijf voor gegevens gemaakt, een afzonderlijke schijf voor het transactie logboek en lokale SSD gebruiken voor TempDB. Er zijn geen opslag verschillen tussen **transactionele verwerking** en **Data Warehousing** , maar de configuratie van de [Stripe en tracerings markeringen](#workload-optimization-settings)worden gewijzigd. Als u Premium Storage kiest, wordt de cache ingesteld op *ReadOnly* voor het gegevens station en *geen* voor het logboek station volgens [SQL Server aanbevolen procedures](performance-guidelines-best-practices.md)voor de VM-prestaties. 
+Selecteer het type werk belasting waarvoor u uw SQL Server wilt implementeren onder **opslag optimalisatie**. Met de optie **Algemeen** optimalisatie hebt u standaard één gegevens schijf met een maximale IOPS van 5000. u gebruikt hetzelfde station voor uw gegevens, het transactie logboek en de tempdb-opslag. Als u **transactionele verwerking** (OLTP) of **gegevens opslag** selecteert, wordt er een afzonderlijke schijf voor gegevens gemaakt, een afzonderlijke schijf voor het transactie logboek en lokale SSD gebruiken voor TempDB. Er zijn geen opslag verschillen tussen **transactionele verwerking** en **Data Warehousing**, maar de configuratie van de [Stripe en tracerings markeringen](#workload-optimization-settings)worden gewijzigd. Als u Premium Storage kiest, wordt de cache ingesteld op *ReadOnly* voor het gegevens station en *geen* voor het logboek station volgens [SQL Server aanbevolen procedures](performance-guidelines-best-practices.md)voor de VM-prestaties. 
 
 ![Configuratie van VM-opslag SQL Server tijdens het inrichten](./media/storage-configuration/sql-vm-storage-configuration.png)
 
@@ -54,7 +55,7 @@ De schijf configuratie kan volledig worden aangepast, zodat u de opslag topologi
 
 Daarnaast hebt u de mogelijkheid om de cache voor de schijven in te stellen. Azure-Vm's hebben een cache technologie met meerdere lagen, die [BLOB-cache](../../../virtual-machines/premium-storage-performance.md#disk-caching) heet als deze wordt gebruikt met [Premium-schijven](../../../virtual-machines/disks-types.md#premium-ssd). BLOB-cache maakt gebruik van een combi natie van het RAM-geheugen van de virtuele machine en de lokale SSD voor caching. 
 
-Schijf cache voor Premium-SSD kan *alleen-lezen* , *readwrite* of *geen* zijn. 
+Schijf cache voor Premium-SSD kan *alleen-lezen*, *readwrite* of *geen* zijn. 
 
 - *ReadOnly* -caching is zeer nuttig voor SQL Server gegevens bestanden die zijn opgeslagen op Premium Storage. *Alleen* -lezen cache levert lage lees latentie, grote Lees-IOPS en door Voer als, lees bewerkingen worden uitgevoerd vanuit de cache, die zich in het geheugen van de virtuele machine bevindt en de lokale SSD. Deze Lees bewerkingen zijn veel sneller dan lees bewerkingen van gegevens schijf, die afkomstig zijn van Azure Blob-opslag. Premium-opslag telt niet de Lees bewerkingen van de cache naar de schijf-IOPS en door voer. Daarom kan uw toepas bare totale IOPS en door voer worden gerealiseerd. 
 - *Geen* cache configuratie moet worden gebruikt voor de schijven die worden gehost SQL Server logboek bestand, terwijl het logboek bestand opeenvolgend wordt geschreven en niet in aanmerking komt voor *ReadOnly* -caching. 
@@ -62,7 +63,7 @@ Schijf cache voor Premium-SSD kan *alleen-lezen* , *readwrite* of *geen* zijn.
 
 
    > [!TIP]
-   > Zorg ervoor dat uw opslag configuratie overeenkomt met de beperkingen die zijn opgelegd door de geselecteerde VM-grootte. Als u opslag parameters kiest die de prestaties van de VM-grootte overschrijden, treedt er een fout op: `The desired performance might not be reached due to the maximum virtual machine disk performance cap.` . Verlaag de IOPs door het schijf type te wijzigen of verhoog de limiet voor de snelheid van de virtuele machine door de VM-grootte te verhogen. 
+   > Zorg ervoor dat uw opslag configuratie overeenkomt met de beperkingen die zijn opgelegd door de geselecteerde VM-grootte. Als u opslag parameters kiest die de prestaties van de VM-grootte overschrijden, resulteert dit in een waarschuwing: `The desired performance might not be reached due to the maximum virtual machine disk performance cap` . Verlaag de IOPs door het schijf type te wijzigen of verhoog de limiet voor de snelheid van de virtuele machine door de VM-grootte te verhogen. Hiermee wordt het inrichten niet gestopt. 
 
 
 Op basis van uw keuzes voert Azure de volgende opslag configuratie taken uit na het maken van de VM:
@@ -94,14 +95,14 @@ U kunt de volgende Snelstartgids-sjabloon gebruiken om een SQL Server virtuele m
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Voor bestaande SQL Server Vm's kunt u enkele opslag instellingen wijzigen in de Azure Portal. Open de [resource van de virtuele SQL-machines](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource)en selecteer **overzicht** . Op de pagina overzicht van SQL Server wordt het huidige opslag gebruik van uw VM weer gegeven. Alle stations die op uw virtuele machine bestaan, worden weer gegeven in deze grafiek. Voor elk station wordt de opslag ruimte weer gegeven in vier secties:
+Voor bestaande SQL Server Vm's kunt u enkele opslag instellingen wijzigen in de Azure Portal. Open de [resource van de virtuele SQL-machines](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource)en selecteer **overzicht**. Op de pagina overzicht van SQL Server wordt het huidige opslag gebruik van uw VM weer gegeven. Alle stations die op uw virtuele machine bestaan, worden weer gegeven in deze grafiek. Voor elk station wordt de opslag ruimte weer gegeven in vier secties:
 
 * SQL-gegevens
 * SQL-logboek
 * Overige (niet-SQL-opslag)
 * Beschikbaar
 
-Als u de opslag instellingen wilt wijzigen, selecteert u **configureren** onder **instellingen** . 
+Als u de opslag instellingen wilt wijzigen, selecteert u **configureren** onder **instellingen**. 
 
 ![Scherm afbeelding die de configuratie optie en de sectie opslag gebruik markeert.](./media/storage-configuration/sql-vm-storage-configuration-existing.png)
 
@@ -140,7 +141,7 @@ Azure gebruikt de volgende instellingen voor het maken van de opslag groep op SQ
 
 In de volgende tabel worden de drie beschik bare opties voor werkbelasting typen en de bijbehorende optimalisaties beschreven:
 
-| Type werk belasting | Beschrijving | Optimalisaties |
+| Type werk belasting | Description | Optimalisaties |
 | --- | --- | --- |
 | **Algemeen** |Standaard instelling die de meeste werk belastingen ondersteunt |Geen |
 | **Transactionele verwerking** |Optimaliseert de opslag voor traditionele OLTP-workloads van data bases |Tracerings vlag 1117<br/>Tracerings vlag 1118 |

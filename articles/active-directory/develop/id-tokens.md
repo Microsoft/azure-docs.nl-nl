@@ -14,16 +14,16 @@ ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 2059c473c8429e7498992e26c0a2c90ea835c537
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 784f1cc7b7e063166dc1f24851ab217cef8d831a
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89646591"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355644"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Tokens van micro soft Identity platform ID
 
-`id_tokens` worden verzonden naar de client toepassing als onderdeel van een OIDC-stroom ( [OpenID Connect Connect](v2-protocols-oidc.md) ). Ze kunnen worden verzonden aan de zijkant of in plaats van een toegangs token en worden door de client gebruikt om de gebruiker te verifiëren.
+`id_tokens` worden verzonden naar de client toepassing als onderdeel van een OIDC-stroom ( [OpenID Connect Connect](v2-protocols-oidc.md) ). Ze kunnen naast of in plaats van een toegangs token worden verzonden en door de client worden gebruikt om de gebruiker te verifiëren.
 
 ## <a name="using-the-id_token"></a>De id_token gebruiken
 
@@ -96,7 +96,7 @@ In deze lijst worden de JWT-claims weer gegeven die in de meeste id_tokens stand
 
 ### <a name="using-claims-to-reliably-identify-a-user-subject-and-object-id"></a>Claims gebruiken om een gebruiker op een betrouw bare wijze te identificeren (onderwerp en object-ID)
 
-Bij het identificeren van een gebruiker (bijvoorbeeld het zoeken in een Data Base of het bepalen van de machtigingen), is het essentieel om informatie te gebruiken die constant en uniek blijft.  Oudere toepassingen gebruiken soms het veld zoals het e-mail adres, een telefoon nummer of de UPN.  Deze kunnen worden gewijzigd in de loop van de tijd en kunnen ook opnieuw worden gebruikt wanneer een werk nemer hun naam wijzigt, of een werk nemer krijgt een e-mail adres dat overeenkomt met dat van een vorige, niet meer werk nemer. Het is dus **belang rijk** dat uw toepassing geen gebruik maakt van Human-Lees bare gegevens voor het identificeren van een door de gebruiker gelezen Lees bewerking. Dit betekent dat iemand deze leest en deze wil wijzigen.  Gebruik in plaats daarvan de claims die worden verschaft door de OIDC-standaard of de uitbrei ding claims die door micro soft worden verschaft, `sub` en `oid` claims.
+Bij het identificeren van een gebruiker (bijvoorbeeld het zoeken in een Data Base of het bepalen van de machtigingen), is het essentieel om informatie te gebruiken die constant en uniek blijft. Oudere toepassingen gebruiken soms velden zoals het e-mail adres, een telefoon nummer of de UPN.  Deze kunnen worden gewijzigd in de loop van de tijd en kunnen ook opnieuw worden gebruikt wanneer een werk nemer hun naam wijzigt, of een werk nemer krijgt een e-mail adres dat overeenkomt met dat van een vorige, niet meer werk nemer. Het is dus **belang rijk** dat uw toepassing geen gebruik maakt van Human-Lees bare gegevens voor het identificeren van een door de gebruiker gelezen Lees bewerking. Dit betekent dat iemand deze leest en deze wil wijzigen. Gebruik in plaats daarvan de claims die worden verschaft door de OIDC-standaard of de uitbrei ding claims die door micro soft worden verschaft, `sub` en `oid` claims.
 
 Als u gegevens op de juiste manier per gebruiker wilt opslaan, kunt u `sub` of `oid` alleen gebruiken (zoals guid's uniek), waarbij u `tid` indien nodig wordt gebruikt voor route ring of sharding.  Als u gegevens wilt delen tussen services, `oid` + `tid` is het beste omdat alle apps dezelfde `oid` en `tid` claims voor een bepaalde gebruiker krijgen.  De `sub` claim in het micro soft Identity-platform is ' pair-goed ': het is uniek op basis van een combi natie van de token ontvanger, de Tenant en de gebruiker.  Daarom ontvangen twee apps waarvoor ID-tokens voor een bepaalde gebruiker aanvragen een andere `sub` claim, maar dezelfde `oid` claims voor die gebruiker.
 

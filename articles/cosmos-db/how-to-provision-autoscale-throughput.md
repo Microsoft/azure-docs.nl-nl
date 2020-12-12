@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/15/2020
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 615ce7da3ec480b766ceaeb307c50f7cb759fd4a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 52904296df77d9097a6180345388e8e702e2bca0
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93100113"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357618"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db---sql-api"></a>Automatisch schalen door Voer in te richten op Data Base of container in Azure Cosmos DB-SQL-API
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -34,7 +34,7 @@ Als u een andere API gebruikt, raadpleegt u [API voor MongoDb](how-to-provision-
 
    :::image type="content" source="./media/how-to-provision-autoscale-throughput/create-new-autoscale-container.png" alt-text="Een container maken en door Voer ingericht voor automatisch schalen configureren":::
 
-1. Selecteer **OK** .
+1. Selecteer **OK**.
 
 Als u automatisch schalen wilt inrichten voor een gedeelde doorvoer database, selecteert u de optie **doorvoer database inrichten** bij het maken van een nieuwe data base. 
 
@@ -51,7 +51,7 @@ Als u automatisch schalen wilt inrichten voor een gedeelde doorvoer database, se
 
 1. Onder **schalen** selecteert u de optie voor **automatisch schalen** en **slaat** u deze op.
 
-   :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Een container maken en door Voer ingericht voor automatisch schalen configureren":::
+   :::image type="content" source="./media/how-to-provision-autoscale-throughput/autoscale-scale-and-settings.png" alt-text="Automatisch schalen inschakelen voor een bestaande container":::
 
 > [!NOTE]
 > Wanneer u automatisch schalen inschakelt voor een bestaande data base of container, wordt de begin waarde voor het maximale aantal RU/s bepaald door het systeem, op basis van uw huidige hand matige ingerichte instellingen voor de door Voer en opslag. Nadat de bewerking is voltooid, kunt u indien nodig het maximum aantal RU/s wijzigen. [Meer informatie.](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) 
@@ -128,7 +128,7 @@ U kunt [versie 4,0 of hoger](https://mvnrepository.com/artifact/com.azure/azure-
 // Create instance of CosmosClient
 CosmosAsyncClient client = new CosmosClientBuilder()
     .setEndpoint(HOST)
-    .setKey(MASTER)
+    .setKey(PRIMARYKEY)
     .setConnectionPolicy(CONNECTIONPOLICY)
     .buildAsyncClient();
 
@@ -145,7 +145,7 @@ CosmosAsyncDatabase database = client.createDatabase(databaseName, autoscaleThro
 // Create instance of CosmosClient
 CosmosClient client = new CosmosClientBuilder()
     .setEndpoint(HOST)
-    .setKey(MASTER)
+    .setKey(PRIMARYKEY)
     .setConnectionPolicy(CONNECTIONPOLICY)
     .buildClient();
 

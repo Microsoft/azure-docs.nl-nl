@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/17/2020
+ms.date: 12/11/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 7008cfcdeb4615b42839f92a6df71357f9acf911
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 2c9c4cd643e2e4b89f9a7d8f44a6569d0dde2b37
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484988"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357378"
 ---
 # <a name="storage-account-overview"></a>Overzicht van opslagaccounts
 
@@ -54,7 +54,7 @@ V1-opslag accounts voor algemeen gebruik bieden toegang tot alle Azure Storage-s
 - Wachtrijen
 - Tabellen
 
-In de meeste gevallen moet u v2-accounts voor algemeen gebruik gebruiken. U kunt voor deze scenario's algemene v1-accounts gebruiken:
+Micro soft adviseert v2-accounts voor algemeen gebruik voor de meeste scenario's. U kunt voor deze scenario's algemene v1-accounts gebruiken:
 
 - Voor uw toepassingen is het klassieke Azure-implementatie model vereist. V2-accounts voor algemeen gebruik en Blob Storage-accounts ondersteunen alleen het implementatie model van Azure Resource Manager.
 
@@ -152,7 +152,7 @@ U kunt met behulp van de volgende benaderingen toegang tot de gegevens in uw ops
 
 - **Azure Active Directory:** Gebruik de referenties van Azure Active Directory (Azure AD) om een gebruiker, groep of een andere identiteit te verifiëren voor toegang tot Blob-en wachtrij gegevens. Als de verificatie van een identiteit is geslaagd, retourneert Azure AD een token dat wordt gebruikt voor het autoriseren van de aanvraag bij Azure Blob-opslag of-wachtrij opslag. Zie [toegang tot Azure Storage verifiëren met behulp van Azure Active Directory](storage-auth-aad.md)voor meer informatie.
 - **Gedeelde sleutel autorisatie:** Gebruik de toegangs sleutel voor uw opslag account om een connection string te maken dat uw toepassing tijdens runtime gebruikt om toegang te krijgen tot Azure Storage. De waarden in de connection string worden gebruikt om de *autorisatie* -header te maken die wordt door gegeven aan Azure Storage. Zie [Azure Storage-verbindings reeksen configureren](storage-configure-connection-string.md)voor meer informatie.
-- **Shared Access Signature:** Gebruik een gedeelde hand tekening voor toegang om de toegang tot resources in uw opslag account te delegeren als u geen Azure AD-autorisatie gebruikt. Een Shared Access Signature is een token dat alle informatie bevat die nodig is voor het autoriseren van een aanvraag voor het Azure Storage van de URL. U kunt de opslag Resource, de toegekende machtigingen en het interval opgeven waarvoor de machtigingen geldig zijn als onderdeel van de Shared Access-hand tekening. Zie [using Shared Access signatures (SAS) (Engelstalig)](storage-sas-overview.md)voor meer informatie.
+- **Shared Access Signature:** Een Shared Access Signature (SAS) is een token dat gedelegeerde toegang tot resources in uw opslag account toestaat. Het SAS-token Kapselt alle benodigde informatie in om een aanvraag voor het Azure Storage van de URL te autoriseren. Wanneer u een SAS maakt, kunt u opgeven welke machtigingen de SAS verleent aan een bron en het interval waarover de machtigingen geldig zijn. Een SAS-token kan worden ondertekend met Azure AD-referenties of met een gedeelde sleutel. Zie [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](storage-sas-overview.md)voor meer informatie.
 
 > [!NOTE]
 > Het verifiëren van gebruikers of toepassingen die gebruikmaken van Azure AD-referenties biedt een superieure beveiliging en gebruiks gemak ten opzichte van andere autorisatie methoden. U kunt de verificatie van de gedeelde sleutel blijven gebruiken met uw toepassingen, maar met Azure AD wordt de nood zaak om uw account toegangs sleutel op te slaan met uw code. U kunt ook door gaan met het gebruik van Shared Access signatures (SAS) om nauw keurige toegang tot resources in uw opslag account te verlenen, maar Azure AD biedt soort gelijke mogelijkheden zonder de behoefte aan het beheer van SAS-tokens of een probleem bij het intrekken van een aangetaste SAS.
@@ -192,3 +192,5 @@ Zie [Azure Storage Services rest API Reference](/rest/api/storageservices/)(Enge
 
 - [Een opslagaccount maken](storage-account-create.md)
 - [Een blok-blob-opslagaccount maken](../blobs/storage-blob-create-account-block-blob.md)
+- [Upgraden naar een V2-opslagaccount voor algemeen gebruik](storage-account-upgrade.md)
+- [Een verwijderd opslagaccount herstellen](storage-account-recover.md)

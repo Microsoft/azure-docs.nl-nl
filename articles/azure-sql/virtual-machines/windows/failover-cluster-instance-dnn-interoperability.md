@@ -7,17 +7,18 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: how-to
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: ca782e9949f990857db408919cac342d7f712d2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c92aa3b35240831fad14919dc73609d803c610a
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91272613"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358211"
 ---
 # <a name="feature-interoperability-with-sql-server-fci--dnn"></a>Functie compatibiliteit met SQL Server FCI & DNN
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -86,7 +87,7 @@ Stel dat u een uitgever hebt die als FCI is geconfigureerd met behulp van DNN in
 
 Gebruik de volledige exemplaar naam voor een benoemd exemplaar, zoals in het volgende voor beeld: 
 
-:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Configureer de DNS-naam van DNN als de netwerk alias met behulp van SQL Server Configuration Manager." :::
+:::image type="content" source="media/failover-cluster-instance-dnn-interoperability/alias-named-instance-configuration-manager.png" alt-text="Gebruik de volledige naam van het exemplaar bij het configureren van een netwerk alias voor een benoemd exemplaar." :::
 
 ## <a name="database-mirroring"></a>Databasespiegeling
 
@@ -176,6 +177,6 @@ Maak vervolgens een netwerk alias om aan toe te wijzen `vnnname\insta1` `dnnlsnr
 
 Zie voor meer informatie: 
 
-- [Windows-cluster technologieën](/windows-server/failover-clustering/failover-clustering-overview)   
-- [Failover-cluster exemplaren SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
+- [Windows-clustertechnologieën](/windows-server/failover-clustering/failover-clustering-overview)   
+- [Instanties van een SQL Server-failovercluster](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server)
 

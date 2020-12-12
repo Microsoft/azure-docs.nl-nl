@@ -1,14 +1,14 @@
 ---
 title: Overdrachts wijzigingen in uw beheer Tenant bewaken
 description: Meer informatie over het bewaken van overdrachts activiteiten van klant tenants naar uw beheer Tenant.
-ms.date: 09/08/2020
+ms.date: 12/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 15e96939d4115bd93260687f637143cc798a4331
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d254c90881d23255dda5c38a868eb61e51b4f08
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336595"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356409"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Overdrachts wijzigingen in uw beheer Tenant bewaken
 
@@ -175,9 +175,10 @@ Gebruikers aan wie de bewakings lezer Azure ingebouwde rol in het hoofd bereik i
 1. Ga naar de pagina **mijn klanten** en selecteer vervolgens **activiteiten logboek** in het navigatie menu aan de linkerkant.
 1. Zorg ervoor dat **Directory-activiteit** is geselecteerd in het filter aan de bovenkant van het scherm.
 
-Er wordt een lijst met overdrachts wijzigingen weer gegeven. U kunt **kolommen bewerken** selecteren om de **status**, **gebeurtenis categorie**, **tijd**, **tijds tempel**, **abonnement**en gebeurtenis te tonen of te verbergen, **geïnitieerd door**, **resource groep**, **resource type**en **resource** waarden.
+Er wordt een lijst met overdrachts wijzigingen weer gegeven. U kunt **kolommen bewerken** selecteren om de **status**, **gebeurtenis categorie**, **tijd**, **tijds tempel**, **abonnement** en gebeurtenis te tonen of te verbergen, **geïnitieerd door**, **resource groep**, **resource type** en **resource** waarden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het voorbereiden van klanten op [Azure Lighthouse](../concepts/azure-delegated-resource-management.md).
 - Meer informatie over [Azure monitor](../../azure-monitor/index.yml) en het [Azure-activiteiten logboek](../../azure-monitor/platform/platform-logs-overview.md).
+- Raadpleeg de voorbeeld werkmap [activiteiten logboeken per domein](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) voor meer informatie over het weer geven van Azure-activiteiten logboeken tussen abonnementen met een optie om deze te filteren op domein naam.

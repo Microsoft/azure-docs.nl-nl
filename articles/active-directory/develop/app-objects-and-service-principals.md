@@ -13,12 +13,12 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: e4325303f5a10fa1df670495dd6d8190167182e8
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: b08f00730e15dd0c7415a28adf85b87c95d7b1ed
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861099"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347142"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
@@ -47,9 +47,9 @@ De entiteit van de Microsoft Graph- [toepassing][MS-Graph-App-Entity] definieert
 ## <a name="service-principal-object"></a>Service-Principal-object
 Om toegang te krijgen tot bronnen die worden beveiligd door een Azure AD-Tenant, moet de entiteit die toegang vereist, worden vertegenwoordigd door een beveiligingsprincipal. Deze vereiste geldt voor zowel gebruikers (gebruikers-principal) als toepassingen (Service-Principal). De beveiligingsprincipal definieert het toegangs beleid en de machtigingen voor de gebruiker/toepassing in de Azure AD-Tenant. Hierdoor kunnen kern functies, zoals verificatie van de gebruiker/toepassing tijdens het aanmelden, en autorisatie tijdens de toegang tot bronnen worden ingeschakeld.
 
-Een Service-Principal is de lokale weer gave of het toepassings exemplaar van een globaal toepassings object in één Tenant of directory. Een Service-Principal is een concreet exemplaar dat is gemaakt op basis van het toepassings object en die bepaalde eigenschappen overneemt van dat toepassings object.  Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke app-object.  Het Service-Principal-object definieert wat de app daad werkelijk in de specifieke Tenant kan doen, wie toegang heeft tot de app en welke resources de app kan gebruiken.
+Een Service-Principal is de lokale weer gave of het toepassings exemplaar van een globaal toepassings object in één Tenant of directory. Een Service-Principal is een concreet exemplaar dat is gemaakt op basis van het toepassings object en die bepaalde eigenschappen overneemt van dat toepassings object. Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke app-object.  Het Service-Principal-object definieert wat de app daad werkelijk in de specifieke Tenant kan doen, wie toegang heeft tot de app en welke resources de app kan gebruiken.
 
-Wanneer een toepassing toestemming krijgt om toegang te krijgen tot bronnen in een Tenant (na registratie of [toestemming](developer-glossary.md#consent)), wordt er een Service-Principal-object gemaakt. U kunt ook een Service Principal-object maken in een Tenant met behulp van [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), de [Azure Portal][AZURE-Portal]en andere hulpprogram ma's.  Wanneer u de portal gebruikt, wordt automatisch een service-principal gemaakt wanneer u een toepassing registreert.
+Wanneer een toepassing toestemming krijgt om toegang te krijgen tot bronnen in een Tenant (na registratie of [toestemming](developer-glossary.md#consent)), wordt er een Service-Principal-object gemaakt. U kunt ook Service Principal-objecten in een Tenant maken met behulp van [Azure PowerShell](howto-authenticate-service-principal-powershell.md), [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?tabs=http), de [Azure Portal][AZURE-Portal]en andere hulpprogram ma's. Wanneer u de portal gebruikt, wordt automatisch een service-principal gemaakt wanneer u een toepassing registreert.
 
 De Blade **bedrijfs toepassingen** in de portal wordt gebruikt om de service-principals in een Tenant weer te geven en te beheren. U kunt de machtigingen van de Service-Principal zien, machtigingen voor de gebruiker die hiervoor zijn gemachtigd, de gebruikers die toestemming hebben gegeven, aanmeldings gegevens en meer.
 

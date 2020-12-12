@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 5ed3e858168ce5ad9a7f089b723bb75ca8a49fca
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 26fd8bc73fad3ea313641fc4b1e0f454ee2c0813
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007514"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347775"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Lokale Git-implementatie naar Azure App Service
 
@@ -80,7 +80,7 @@ Gebruik de URL die in de volgende stap wordt gebruikt om uw app te implementeren
    git remote add azure <url>
    ```
    
-1. Pushen naar de externe Azure met `git push azure main` . 
+1. Pushen naar de externe Azure met `git push azure master` . 
    
 1. Voer in het venster **Git-referentie beheer** uw wacht woord voor de [implementatie gebruiker](#configure-a-deployment-user)in, niet uw aanmeldings wachtwoord voor Azure.
    
@@ -131,7 +131,7 @@ Lokale Git-implementatie voor uw app inschakelen met Azure-pijp lijnen (preview)
    git remote add azure <url>
    ```
    
-1. Pushen naar de externe Azure met `git push azure main` . 
+1. Pushen naar de externe Azure met `git push azure master` . 
    
 1. Meld u op de pagina **Git-referentie beheer** aan met uw VisualStudio.com-gebruikers naam. Zie [overzicht van Azure DevOps Services-verificatie](/vsts/git/auth-overview?view=vsts)voor andere verificatie methoden.
    
@@ -149,12 +149,12 @@ Mogelijk worden de volgende veelvoorkomende fout berichten weer geven wanneer u 
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|De app is niet actief.|Start de app in het Azure Portal. Git-implementatie is niet beschikbaar wanneer de web-app is gestopt.|
 |`Couldn't resolve host 'hostname'`|De adres gegevens voor de externe Azure-computer zijn onjuist.|Gebruik de `git remote -v` opdracht om alle externe-en de bijbehorende URL weer te geven. Controleer of de URL voor de externe Azure juist is. Als dat nodig is, kunt u deze extern verwijderen en opnieuw maken met de juiste URL.|
-|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'main'.`|U hebt geen vertakking opgegeven tijdens `git push` of u hebt geen waarde ingesteld `push.default` in `.gitconfig` .|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
-|`src refspec [branchname] does not match any.`|U probeert te pushen naar een andere vertakking dan Main op de externe Azure.|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
+|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'main'.`|U hebt geen vertakking opgegeven tijdens `git push` of u hebt geen waarde ingesteld `push.default` in `.gitconfig` .|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure master` .|
+|`src refspec [branchname] does not match any.`|U probeert te pushen naar een andere vertakking dan Main op de externe Azure.|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure master` .|
 |`RPC failed; result=22, HTTP code = 5xx.`|Deze fout kan optreden als u probeert een grote Git-opslag plaats via HTTPS te pushen.|Wijzig de Git-configuratie op de lokale computer zodat deze `postBuffer` groter wordt. Bijvoorbeeld: `git config --global http.postBuffer 524288000`.|
 |`Error - Changes committed to remote repository but your web app not updated.`|U hebt een Node.js-app geïmplementeerd met een _package.jsin_ een bestand dat aanvullende vereiste modules bevat.|Bekijk de `npm ERR!` fout berichten vóór deze fout voor meer context over de fout. Hieronder vindt u de bekende oorzaken van deze fout en de bijbehorende `npm ERR!` berichten:<br /><br />**Onjuist gevormd package.jsbestand**: `npm ERR! Couldn't read dependencies.`<br /><br />**Systeem eigen module heeft geen binaire distributie voor Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />of <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 - [Documentatie voor project kudu](https://github.com/projectkudu/kudu/wiki)
 - [Continue implementatie naar Azure App Service](deploy-continuous-deployment.md)

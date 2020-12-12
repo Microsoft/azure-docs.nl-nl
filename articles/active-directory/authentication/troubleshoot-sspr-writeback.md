@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a3044127aacb5910a270d40d94d3255031a71a2
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 4d6bf4df1499d919cead0a184054e5ba0db9c06e
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741300"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346597"
 ---
 # <a name="troubleshoot-self-service-password-reset-writeback-in-azure-active-directory"></a>Problemen met het terugschrijven van wacht woord opnieuw instellen in Azure Active Directory
 
@@ -42,6 +42,11 @@ Voor Azure AD Connect versie *1.1.443.0* en hoger is *uitgaande https* -toegang 
 
 * *\*. passwordreset.microsoftonline.com*
 * *\*. servicebus.windows.net*
+
+Azure [gov-eind punten](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers):
+
+* *\*. passwordreset.microsoftonline.us*
+* *\*. servicebus.usgovcloudapi.net*
 
 Zie de [lijst met IP-adresbereiken van Microsoft Azure Data Center](https://www.microsoft.com/download/details.aspx?id=41653)als u meer granulariteit nodig hebt. Deze lijst wordt elke woensdag bijgewerkt en gaat in op de volgende maandag.
 
@@ -101,7 +106,7 @@ Als het probleem niet wordt opgelost door de nieuwste versie van de Azure AD Con
 
 Azure AD Connect moet AD DS machtiging **wacht woord opnieuw instellen** zijn vereist om wacht woord terugschrijven uit te voeren. Als u wilt controleren of Azure AD Connect de vereiste machtiging heeft voor een bepaalde on-premises AD DS gebruikers account, gebruikt u de Windows-functie **effectief machtigingen** :
 
-1. Meld u aan bij de Azure AD Connect-server en start de **Synchronization Service Manager** door **Start**  >  **synchronisatie service** starten te selecteren.
+1. Meld u aan bij de Azure AD Connect-server en start de **Synchronization Service Manager** door   >  **synchronisatie service** starten te selecteren.
 1. Selecteer op het tabblad **connectors** de on-premises **Active Directory Domain Services** -connector en selecteer vervolgens **Eigenschappen**.
 
     :::image type="content" source="./media/troubleshoot-sspr-writeback/synchronization-service-manager.png" alt-text="Synchronization Service Manager waarin wordt weer gegeven hoe u eigenschappen kunt bewerken" border="false":::
@@ -150,7 +155,7 @@ Een best practice bij het oplossen van problemen met wacht woord terugschrijven 
 
 ### <a name="if-the-source-of-the-event-is-adsync"></a>Als de bron van de gebeurtenis ADSync is
 
-| Code | Naam of bericht | Beschrijving |
+| Code | Naam of bericht | Description |
 | --- | --- | --- |
 | 6329 | Afwijzen: MMS (4924) 0x80230619: ' door een beperking wordt voor komen dat het wacht woord wordt gewijzigd in de huidige opgegeven. ' | Deze gebeurtenis treedt op wanneer de service voor het terugschrijven van wacht woorden probeert in te stellen op uw lokale adres lijst die niet voldoet aan de vereisten voor wachtwoord duur, geschiedenis, complexiteit of filtering van het domein. <br> <br> Als u een minimale wachtwoord duur hebt en het wacht woord onlangs hebt gewijzigd binnen dat venster, kunt u het wacht woord niet meer wijzigen tot de opgegeven leeftijd in uw domein is bereikt. Voor test doeleinden moet de minimale leeftijd worden ingesteld op 0. <br> <br> Als u vereisten voor wachtwoord geschiedenis hebt ingeschakeld, moet u een wacht woord selecteren dat niet is gebruikt in de afgelopen *N* keer, waarbij *N* de instelling voor wachtwoord geschiedenis is. Als u een wacht woord selecteert dat in de afgelopen *N* keer is gebruikt, ziet u een fout in dit geval. Voor test doeleinden moet de wachtwoord geschiedenis worden ingesteld op 0. <br> <br> Als u vereisten voor wachtwoord complexiteit hebt, worden deze allemaal afgedwongen wanneer de gebruiker een wacht woord probeert te wijzigen of opnieuw in te stellen. <br> <br> Als wachtwoord filters zijn ingeschakeld en een gebruiker een wacht woord selecteert dat niet voldoet aan de filter criteria, mislukt de bewerking voor opnieuw instellen of wijzigen. |
 | 6329 | MMS (3040): admaexport. cpp (2837): de server bevat niet het besturings element LDAP-wachtwoord beleid. | Dit probleem treedt op als LDAP_SERVER_POLICY_HINTS_OID besturings element (1.2.840.113556.1.4.2066) niet is ingeschakeld op de Dc's. Als u de functie voor het terugschrijven van wacht woorden wilt gebruiken, moet u het besturings element inschakelen. Hiertoe moet de Dc's zich op Windows Server 2008R2 of later bevindt. |
@@ -158,7 +163,7 @@ Een best practice bij het oplossen van problemen met wacht woord terugschrijven 
 
 ### <a name="if-the-source-of-the-event-is-passwordresetservice"></a>Als de bron van de gebeurtenis PasswordResetService is
 
-| Code | Naam of bericht | Beschrijving |
+| Code | Naam of bericht | Description |
 | --- | --- | --- |
 | 31001 | PasswordResetStart | Deze gebeurtenis geeft aan dat de on-premises service een aanvraag voor het opnieuw instellen van een wacht woord heeft gedetecteerd voor een federatieve, Pass-Through-verificatie of gebruiker met hash-synchronisatie met wacht woord afkomstig uit de Cloud. Deze gebeurtenis is de eerste gebeurtenis in elke terugschrijf bewerking van een wacht woord. |
 | 31002 | PasswordResetSuccess | Deze gebeurtenis geeft aan dat een gebruiker een nieuw wacht woord heeft geselecteerd tijdens een bewerking voor het opnieuw instellen van een wacht woord. We hebben vastgesteld dat dit wacht woord voldoet aan de vereisten voor het bedrijfs wachtwoord. Het wacht woord is teruggeschreven naar de lokale Active Directory-omgeving. |

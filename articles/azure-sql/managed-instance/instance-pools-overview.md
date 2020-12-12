@@ -12,12 +12,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein
 ms.date: 09/05/2019
-ms.openlocfilehash: ab77c8cf563c315768ad1c16089d8d939c085322
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: bc345509db1c2a14afb0ae781eccad8f77395c18
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782651"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347061"
 ---
 # <a name="what-is-an-azure-sql-managed-instance-pool-preview"></a>Wat is een Azure SQL Managed instance-groep (preview)?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ Daarnaast ondersteunen instantie groepen systeem eigen VNet-integratie zodat u m
 
 Exemplaar groepen bieden de volgende voor delen:
 
-1. Mogelijkheid om 2 vCore-instanties te hosten. *\* Alleen voor instanties in de exemplaar groepen* .
+1. Mogelijkheid om 2 vCore-instanties te hosten. *\* Alleen voor instanties in de exemplaar groepen*.
 2. Voorspel bare en snelle exemplaar implementatie tijd (Maxi maal 5 minuten).
 3. Minimale toewijzing van IP-adressen.
 
@@ -59,7 +59,7 @@ De volgende lijst bevat de belangrijkste gebruiks situaties waarbij exemplaar gr
 
 ## <a name="architecture"></a>Architectuur
 
-Exemplaar groepen hebben een vergelijk bare architectuur voor reguliere ( *enkelvoudige* ) beheerde exemplaren. Voor de ondersteuning van [implementaties in azure Virtual Networks](../../virtual-network/virtual-network-for-azure-services.md) en voor het afschermen en beveiligen van klanten kunnen exemplaar groepen ook worden gebaseerd op [virtuele clusters](connectivity-architecture-overview.md#high-level-connectivity-architecture). Virtuele clusters vertegenwoordigen een specifieke set geïsoleerde virtuele machines die zijn geïmplementeerd in het subnet van het virtuele netwerk van de klant.
+Exemplaar groepen hebben een vergelijk bare architectuur voor reguliere (*enkelvoudige*) beheerde exemplaren. Voor de ondersteuning van [implementaties in azure Virtual Networks](../../virtual-network/virtual-network-for-azure-services.md) en voor het afschermen en beveiligen van klanten kunnen exemplaar groepen ook worden gebaseerd op [virtuele clusters](connectivity-architecture-overview.md#high-level-connectivity-architecture). Virtuele clusters vertegenwoordigen een specifieke set geïsoleerde virtuele machines die zijn geïmplementeerd in het subnet van het virtuele netwerk van de klant.
 
 Het belangrijkste verschil tussen de twee implementatie modellen is dat instantie groepen meerdere implementaties van SQL Server processen toestaan op hetzelfde knoop punt van de virtuele machine, die resources best rijken met behulp van [Windows-taak objecten](/windows/desktop/ProcThread/job-objects), terwijl afzonderlijke instanties altijd op een knoop punt van een virtuele machine worden uitgevoerd.
 
@@ -76,9 +76,12 @@ Er bestaan verschillende resourcebeperkingen met betrekking tot exemplaarpools e
 - Exemplaar groepen zijn alleen beschikbaar op GEN5-hardware.
 - Beheerde exemplaren in een groep hebben toegewezen CPU en RAM, dus het geaggregeerde aantal vCores voor alle exemplaren moet kleiner zijn dan of gelijk zijn aan het aantal vCores dat aan de pool is toegewezen.
 - Alle [limieten op exemplaar niveau](resource-limits.md#service-tier-characteristics) zijn van toepassing op instanties die in een groep zijn gemaakt.
-- Naast limieten op exemplaar niveau zijn er ook twee limieten opgelegd *voor het niveau van de instantie groep* :
+- Naast limieten op exemplaar niveau zijn er ook twee limieten opgelegd *voor het niveau van de instantie groep*:
   - Totale opslag grootte per pool (8 TB).
-  - Totaal aantal data bases per pool (100).
+  - Totaal aantal gebruikers databases per groep. Deze limiet is afhankelijk van de vCores waarde van de groep:
+    - 8 vCores-pool ondersteunt Maxi maal 200 data bases,
+    - 16 vCores-pool ondersteunt Maxi maal 400 data bases,
+    - 24-en grotere vCores-groepen ondersteunen Maxi maal 500 data bases.
 - AAD-beheerder kan niet worden ingesteld voor de instanties die in de exemplaar groep worden geïmplementeerd. Daarom kan AAD-verificatie niet worden gebruikt.
 
 De totale opslag toewijzing en het aantal data bases voor alle exemplaren moeten kleiner zijn dan of gelijk zijn aan de limieten die worden weer gegeven door exemplaar groepen.
@@ -86,8 +89,9 @@ De totale opslag toewijzing en het aantal data bases voor alle exemplaren moeten
 - Exemplaar groepen ondersteunen 8, 16, 24, 32, 40, 64 en 80 vCores.
 - Beheerde exemplaren binnen Pools ondersteunen 2, 4, 8, 16, 24, 32, 40, 64 en 80 vCores.
 - Beheerde instanties in Pools ondersteunen opslag grootten tussen 32 GB en 8 TB, met uitzonde ring van:
-  - 2 vCore-instanties ondersteunen grootten tussen 32 GB en 640 GB
-  - 4 vCore-instanties ondersteunen de omvang van 32 GB en 2 TB
+  - 2 vCore-instanties ondersteunen de omvang van 32 GB en 640 GB.
+  - 4 vCore-instanties ondersteunen de omvang van 32 GB en 2 TB.
+- Beheerde exemplaren binnen Pools hebben een limiet van Maxi maal 100 gebruikers databases per instantie, met uitzonde ring van 2 vCore-instanties die ondersteuning bieden voor Maxi maal 50 gebruikers databases per instantie.
 
 De [eigenschap service tier](resource-limits.md#service-tier-characteristics) is gekoppeld aan de bron van de exemplaar groep, dus alle exemplaren in een pool moeten dezelfde servicelaag zijn als de servicelaag van de groep. Op dit moment is alleen de servicelaag Algemeen beschikbaar (Zie de volgende sectie over beperkingen in de huidige preview).
 
@@ -137,8 +141,8 @@ de vCore prijs voor een pool wordt in rekening gebracht, ongeacht het aantal exe
 
 Voor de berekenings prijs (gemeten in vCores) zijn twee prijs opties beschikbaar:
 
-  1. *Inbegrepen licentie* : prijs van SQL Server licenties is inbegrepen. Dit geldt voor de klanten die ervoor kiezen geen bestaande SQL Server licenties met Software Assurance toe te passen.
-  2. *Azure Hybrid Benefit* : een gereduceerde prijs met inbegrip van Azure Hybrid Benefit voor SQL Server. Klanten kunnen zich op deze prijs aanmelden door gebruik te maken van hun bestaande SQL Server licenties met Software Assurance. Zie [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/)voor Beschik baarheid en andere informatie.
+  1. *Inbegrepen licentie*: prijs van SQL Server licenties is inbegrepen. Dit geldt voor de klanten die ervoor kiezen geen bestaande SQL Server licenties met Software Assurance toe te passen.
+  2. *Azure Hybrid Benefit*: een gereduceerde prijs met inbegrip van Azure Hybrid Benefit voor SQL Server. Klanten kunnen zich op deze prijs aanmelden door gebruik te maken van hun bestaande SQL Server licenties met Software Assurance. Zie [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/)voor Beschik baarheid en andere informatie.
 
 Het is niet mogelijk om verschillende prijs opties in te stellen voor afzonderlijke exemplaren in een pool. Alle exemplaren in de bovenliggende groep moeten de prijs van de licentie of de Azure Hybrid Benefit prijs zijn. Het licentie model voor de groep kan worden gewijzigd nadat de groep is gemaakt.
 

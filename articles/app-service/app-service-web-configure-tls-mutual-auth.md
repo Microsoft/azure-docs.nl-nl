@@ -3,14 +3,14 @@ title: Wederzijdse TLS-verificatie configureren
 description: Meer informatie over het verifiëren van client certificaten op TLS. Azure App Service kunt het client certificaat beschikbaar maken voor de app-code voor verificatie.
 ms.assetid: cd1d15d3-2d9e-4502-9f11-a306dac4453a
 ms.topic: article
-ms.date: 10/01/2019
+ms.date: 12/11/2020
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 145b999d7bf8597c06d6e3d4a36d01b182c8ae68
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ceeb3d31652c04eb9a69c1c8bb4b114e6f38d52
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88213641"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347716"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Wederzijdse TLS-verificatie voor Azure App Service configureren
 
@@ -24,20 +24,33 @@ U kunt de toegang tot uw Azure App Service-app beperken door verschillende verif
 
 ## <a name="enable-client-certificates"></a>Client certificaten inschakelen
 
-Als u uw app wilt instellen op het vereisen van client certificaten, kunt u overstappen **op** het selectie vakje binnenkomend certificaat door algemene **configuratie**-  >  **instellingen** te selecteren in azure portal of de `clientCertEnabled` instelling voor uw app in te stellen op `true` . Als u de instelling wilt instellen, voert u de volgende opdracht uit in de [Cloud shell](https://shell.azure.com).
+Uw app instellen voor het vereisen van client certificaten:
+
+1. Selecteer in de linkernavigatiebalk van de beheer pagina van de app de   >  **algemene instellingen** voor configuratie.
+
+1. Stel de **client certificaat modus** in op **vereist**. Klik bovenaan de pagina op **Opslaan**.
+
+Als u hetzelfde wilt doen met Azure CLI, voert u de volgende opdracht uit in de [Cloud shell](https://shell.azure.com):
 
 ```azurecli-interactive
-az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>
+az webapp update --set clientCertEnabled=true --name <app-name> --resource-group <group-name>
 ```
 
 ## <a name="exclude-paths-from-requiring-authentication"></a>Paden uitsluiten voor het vereisen van verificatie
 
-Wanneer u wederzijdse verificatie inschakelt voor uw toepassing, is voor alle paden in de hoofdmap van uw app een client certificaat vereist voor toegang. Als u wilt toestaan dat bepaalde paden open blijven voor anonieme toegang, kunt u uitsluitings paden definiëren als onderdeel van de configuratie van uw toepassing.
+Wanneer u wederzijdse verificatie inschakelt voor uw toepassing, is voor alle paden in de hoofdmap van uw app een client certificaat vereist voor toegang. Als u deze vereiste voor bepaalde paden wilt verwijderen, definieert u uitsluitings paden als onderdeel van de configuratie van uw toepassing.
 
-Uitsluitings paden kunnen worden geconfigureerd door algemene instellingen voor **configuratie**te selecteren  >  **General Settings** en een uitgesloten pad te definiëren. In dit voor beeld wordt `/public` een client certificaat niet aangevraagd door iets onder het pad voor uw toepassing.
+1. Selecteer in de linkernavigatiebalk van de beheer pagina van de app de   >  **algemene instellingen** voor configuratie.
+
+1. Klik naast **client-uitsluitings paden** op het pictogram bewerken.
+
+1. Klik op **Nieuw pad**, geef een pad op en klik op **OK**.
+
+1. Klik bovenaan de pagina op **Opslaan**.
+
+In de volgende scherm afbeelding wordt voor alle items onder het `/public` pad voor uw app geen client certificaat aangevraagd.
 
 ![Paden voor certificaat uitsluiting][exclusion-paths]
-
 
 ## <a name="access-client-certificate"></a>Client certificaat openen
 

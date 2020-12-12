@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 09/28/2020
+ms.date: 12/11/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1cdf983dc8fed64c7d283ac216eb803746add95
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 6299f9ad660252ae39903401672d493b1c1ad52c
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029367"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347486"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Een verbonden organisatie toevoegen in het beheer van rechten van Azure AD
 
@@ -29,7 +29,13 @@ Met Azure Active Directory (Azure AD) toeslag beheer kunt u samen werken met men
 
 ## <a name="what-is-a-connected-organization"></a>Wat is een verbonden organisatie?
 
-Een verbonden organisatie is een extern Azure AD-adres lijst of-domein waarmee u een relatie hebt.
+Een verbonden organisatie is een andere organisatie waarmee u een relatie hebt.  Om ervoor te zorgen dat de gebruikers in die organisatie toegang kunnen krijgen tot uw resources, zoals uw share point online-sites of-apps, hebt u een weer gave van de gebruikers van die organisatie in die map nodig.  Omdat de gebruikers in die organisatie zich in de meeste gevallen nog niet in uw Azure AD-Directory bevinden, kunt u het rechten beheer gebruiken om ze naar wens naar uw Azure AD-adres lijst te brengen.  
+
+Er zijn drie manieren waarop het beheer van rechten de gebruikers kan opgeven die een verbonden organisatie vormen.  Dit kan worden
+
+* gebruikers in een andere Azure AD-Directory,
+* gebruikers in een andere niet-Azure AD-Directory die is geconfigureerd voor directe Federatie, of
+* gebruikers in een andere AD-directory zonder Azure, waarvan de e-mail adressen allemaal dezelfde domein naam hebben gemeen.
 
 Stel bijvoorbeeld dat u werkt met de Woodgrove Bank en u wilt samen werken met twee externe organisaties. Deze twee organisaties hebben verschillende configuraties:
 

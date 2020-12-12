@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 7f5db2a2df7314c89f2ebba8e7e54ebe24126386
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 20dc6cde9cce6a9d57047940a38adb5cf004ae6a
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098231"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347673"
 ---
 # <a name="azure-table-storage-input-bindings-for-azure-functions"></a>Invoer bindingen voor Azure Table Storage voor Azure Functions
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 08/25/2020
-ms.openlocfilehash: 70ce1807ea6080e3efc0cf3266a9940c9ddb9cd3
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 71b9c96c1855180106f7dfa9a31f0ee8b06ceb67
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489349"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347860"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Azure-tabel opslag gebruiken om leads voor commerciële Marketplace te beheren
 
@@ -55,7 +55,7 @@ Als uw Customer Relationship Management-systeem (CRM) niet expliciet wordt onder
 
     ![Azure-tabellen](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-tables.png)
 
-    U kunt [Azure Storage Explorer](https://archive.codeplex.com/?p=azurestorageexplorer) of een ander hulp programma gebruiken om de gegevens in uw opslag tabel te bekijken. U kunt ook de gegevens in de Azure-tabel exporteren.
+    U kunt [Azure Storage Explorer](https://www.storageexplorer.com) of een ander hulp programma gebruiken om de gegevens in uw opslag tabel te bekijken. U kunt ook de gegevens in de Azure-tabel exporteren.
 
 ## <a name="optional-use-power-automate-to-get-lead-notifications"></a>Beschrijving Energie automatisering gebruiken om lead meldingen op te halen
 
@@ -97,22 +97,22 @@ In het voor beeld wordt een stroom gemaakt waarmee automatisch een e-mail meldin
    In de volgende reeks stappen maakt u verbinding met uw tabel en stelt u de verwerkings logica in voor het verwerken van nieuwe leads.
 
 1. Selecteer **+ nieuwe stap**. Zoek vervolgens naar **Get entities** in het venster **een actie kiezen** .
-1. Onder **acties** , selecteert u **entiteiten ophalen (Azure Table Storage)**.
-1. Geef in het venster **Azure Table Storage** informatie op voor de volgende vakken en selecteer **maken** :
+1. Onder **acties**, selecteert u **entiteiten ophalen (Azure Table Storage)**.
+1. Geef in het venster **Azure Table Storage** informatie op voor de volgende vakken en selecteer **maken**:
 
-    * **Verbindings naam** : Geef een beschrijvende naam op voor de verbinding die u tot stand brengt tussen deze stroom en de tabel.
-    * **Naam van opslag account** : Geef de naam op van het opslag account voor de tabel. U kunt deze naam vinden op de pagina **toegangs sleutels** van het opslag account.
-    * **Gedeelde opslag sleutel** : Geef de sleutel waarde voor uw opslag account voor de tabel op. U kunt deze waarde vinden op de pagina **toegangs sleutels** van het opslag account.
+    * **Verbindings naam**: Geef een beschrijvende naam op voor de verbinding die u tot stand brengt tussen deze stroom en de tabel.
+    * **Naam van opslag account**: Geef de naam op van het opslag account voor de tabel. U kunt deze naam vinden op de pagina **toegangs sleutels** van het opslag account.
+    * **Gedeelde opslag sleutel**: Geef de sleutel waarde voor uw opslag account voor de tabel op. U kunt deze waarde vinden op de pagina **toegangs sleutels** van het opslag account.
 
       ![Azure Table Storage-venster](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-table-storage.png)
 
    Nadat u **maken** hebt geselecteerd, wordt het venster **entiteiten ophalen** weer gegeven. Selecteer hier **Geavanceerde opties weer geven** en geef informatie op over de volgende vakken:
 
-   * **Tabel** : Selecteer de naam van de tabel (uit [een tabel maken](#create-a-table-in-your-storage-account)). In de volgende afbeelding ziet u de vraag wanneer `marketplaceleads` de tabel voor dit voor beeld wordt geselecteerd.
+   * **Tabel**: Selecteer de naam van de tabel (uit [een tabel maken](#create-a-table-in-your-storage-account)). In de volgende afbeelding ziet u de vraag wanneer `marketplaceleads` de tabel voor dit voor beeld wordt geselecteerd.
 
      ![Het venster entiteiten ophalen](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-table-get-entities.png)
 
-   * **Filter query** : Schakel dit selectie vakje in en plak deze functie in het vak: `Timestamp gt datetime'@{body('Get_past_time')}'`
+   * **Filter query**: Schakel dit selectie vakje in en plak deze functie in het vak: `Timestamp gt datetime'@{body('Get_past_time')}'`
 
      ![Het dialoog venster entiteiten ophalen, query filteren](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-table-get-entities-filter-query.png)
 
@@ -134,8 +134,8 @@ In het voor beeld wordt een stroom gemaakt waarmee automatisch een e-mail meldin
 
    In de volgende stappen stelt u de actie in die moet worden uitgevoerd op basis van het resultaat van de voor waarde:
 
-   * Als de voor waarde wordt omgezet in **als Nee** , moet u niets doen.
-   * Als de voor waarde wordt omgezet in **Indien ja** , moet u een actie activeren die uw werk-of school account verbindt om een e-mail te verzenden. 
+   * Als de voor waarde wordt omgezet in **als Nee**, moet u niets doen.
+   * Als de voor waarde wordt omgezet in **Indien ja**, moet u een actie activeren die uw werk-of school account verbindt om een e-mail te verzenden. 
 
 1. Selecteer **een actie toevoegen** onder **als ja**.
 
@@ -150,8 +150,8 @@ In het voor beeld wordt een stroom gemaakt waarmee automatisch een e-mail meldin
 
 1. Geef in het Office 365 Outlook-venster informatie op over de volgende vakken:
 
-    1. **Naar** : Voer een e-mail adres in voor iedereen die deze melding ontvangt.
-    1. **Onderwerp** : Geef een onderwerp op voor het e-mail adres. Een voor beeld is **nieuwe leads.**
+    1. **Naar**: Voer een e-mail adres in voor iedereen die deze melding ontvangt.
+    1. **Onderwerp**: Geef een onderwerp op voor het e-mail adres. Een voor beeld is **nieuwe leads.**
     1. **Hoofd** tekst: Voeg de tekst toe die u in elk e-mail bericht wilt toevoegen (optioneel) en plak deze vervolgens in `body('Get_entities')?['value']` .
 
     >[!NOTE]
@@ -193,7 +193,7 @@ Wanneer u klaar bent om de informatie over het beheer van leads voor uw aanbiedi
 1. Plak de connection string uit het Azure Storage-account dat u hebt gemaakt door de eerdere stappen in het vak **opslag account Connection String** te volgen.
      ![Lead beheer, opslag account voor verbindings Details](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-table-connection-details.png)
 
-1. **E-mail adres van contact persoon** : Geef e-mails op voor personen in uw bedrijf die e-mail meldingen moeten ontvangen wanneer er een nieuwe lead wordt ontvangen. U kunt meerdere e-mail berichten opgeven door deze te scheiden met een punt komma.
+1. **E-mail adres van contact persoon**: Geef e-mails op voor personen in uw bedrijf die e-mail meldingen moeten ontvangen wanneer er een nieuwe lead wordt ontvangen. U kunt meerdere e-mail berichten opgeven door deze te scheiden met een punt komma.
 
 1. Selecteer **OK**.
 

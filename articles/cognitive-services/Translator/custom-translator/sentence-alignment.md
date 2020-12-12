@@ -9,16 +9,16 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: a8a662bf94e958d9e96a454ced9c44058b178a8c
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: e5d360933cbeb611046aede6164ec2e2fa497664
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366839"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347792"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Zin en uitlijning in parallelle documenten
 
-Tijdens de training worden de zinnen in parallelle documenten gekoppeld of uitgelijnd. De aangepaste vertaler rapporteert het aantal zinnen dat kan worden gekoppeld als de uitgelijnde zinnen in elk van de gegevens sets.
+Na het uploaden van documenten, worden de zinnen die aanwezig zijn in parallelle documenten gekoppeld of uitgelijnd. De aangepaste vertaler rapporteert het aantal zinnen dat kan worden gekoppeld als de uitgelijnde zinnen in elk van de gegevens sets.
 
 ## <a name="pairing-and-alignment-process"></a>Proces voor koppelen en uitlijnen
 
@@ -37,7 +37,7 @@ Voor een succes volle training bevat de onderstaande tabel het minimale aantal z
 | Document type   | Aanbevolen minimum aantal zinnen | Maximum aantal zinnen |
 |------------|--------------------------------------------|--------------------------------|
 | Training   | 10.000                                     | Geen bovengrens                 |
-| Optimalisatie     | 500                                      | 2500       |
+| Afstemmen     | 500                                      | 2500       |
 | Testen    | 500                                      | 2500  |
 | Woordenlijst | 0                                          | Geen bovengrens                 |
 

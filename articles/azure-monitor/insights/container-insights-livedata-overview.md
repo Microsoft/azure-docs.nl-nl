@@ -4,12 +4,12 @@ description: In dit artikel wordt een overzicht gegeven van de real-time weer ga
 ms.topic: conceptual
 ms.date: 12/07/2020
 ms.custom: references_regions
-ms.openlocfilehash: a97d7ed5fe513798f4265498f4efa60098ea15c6
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 3bfc9aa0f0238d99d9336abe592fa721459f4220
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920732"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346803"
 ---
 # <a name="how-to-view-kubernetes-logs-events-and-pod-metrics-in-real-time"></a>Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven
 
@@ -35,7 +35,7 @@ Gebruik de volgende procedure om de Live-logboeken weer te geven voor implementa
 
 5. Selecteer een pod om de verzameling van de Live-gegevens te starten.
 
-    ![Live-logboeken voor implementatie](./media/container-insights-livedata-overview/live-data-deployment.png)
+    [![Live-logboeken voor implementatie](./media/container-insights-livedata-overview/live-data-deployment.png)](./media/container-insights-livedata-overview/live-data-deployment.png#lightbox)
 
 ## <a name="view-logs"></a>Logboeken weergeven
 
@@ -107,16 +107,22 @@ Nadat de verificatie is voltooid, wordt het console venster voor Live gegevens (
 ## <a name="using-live-data-views"></a>Live data views gebruiken
 In de volgende secties wordt de functionaliteit beschreven die u kunt gebruiken in de verschillende dynamische gegevens weergaven.
 
-### <a name="search"></a>Zoeken
+### <a name="search"></a>Search
 De functie voor Live gegevens (preview) omvat zoek functionaliteit. In het **Zoek** veld kunt u de resultaten filteren door een sleutel woord of-term te typen en alle overeenkomende resultaten zijn gemarkeerd om snelle controle toe te staan. Tijdens het weer geven van gebeurtenissen kunt u de resultaten ook beperken met behulp van de **filter** Pill rechts van de zoek balk. Afhankelijk van de resource die u hebt geselecteerd, wordt in de Pill een Pod, naam ruimte of cluster weer gegeven waaruit u kunt kiezen.
 
 ![Filter voorbeeld van live data console-deel venster](./media/container-insights-livedata-overview/livedata-pane-filter-example.png)
+
+![Het filter voorbeeld van live data console voor implementatie](./media/container-insights-livedata-overview/live-data-deployment-search.png)
 
 ### <a name="scroll-lock-and-pause"></a>Scroll Lock en PAUSE
 
 Als u de functie voor automatisch schuiven wilt onderbreken en het gedrag van het deel venster wilt beheren, kunt u hand matig door de nieuwe gegevens lezen door de **Schuif** optie te gebruiken. Als u AutoScroll opnieuw wilt inschakelen, selecteert u de **Schuif** optie opnieuw. U kunt het ophalen van logboek-of gebeurtenis gegevens ook onderbreken door de optie **pause** te selecteren en wanneer u klaar bent om verder te gaan, selecteert u **afspelen**.
 
 ![Live data-console venster Live-weer gave onderbreken](./media/container-insights-livedata-overview/livedata-pane-scroll-pause-example.png)
+
+![Live data-console venster Live-weer gave onderbreken voor implementatie](./media/container-insights-livedata-overview/live-data-deployment-pause.png)
+
+
 
 >[!IMPORTANT]
 >We raden u aan om tijdens korte tijd alleen een onderbreking in te stellen of te onderbreken tijdens het oplossen van een probleem. Deze aanvragen kunnen van invloed zijn op de beschik baarheid en beperking van de Kubernetes-API op uw cluster.

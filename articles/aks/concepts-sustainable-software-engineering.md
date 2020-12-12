@@ -4,16 +4,16 @@ description: Meer informatie over duurzame software engineering in azure Kuberne
 services: container-service
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: 2457de7bdaa94a6e2269515fafe6689d44960625
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 700723041855fdae4f994480d180292fdfd12e15
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90984976"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346891"
 ---
 # <a name="sustainable-software-engineering-principles-in-azure-kubernetes-service-aks"></a>Duurzame software techniek Principles in azure Kubernetes service (AKS)
 
-De methoden van duurzame software techniek zijn een set competenties die u helpen bij het definiëren, bouwen en uitvoeren van duurzame toepassingen. Het algemene doel is het verminderen van de carbon footprint van elk aspect van uw toepassing. Het [project Principles. Green][principles-green] bevat een overzicht van de principes van duurzame software techniek.
+De methoden van duurzame software techniek zijn een set competenties die u helpen bij het definiëren, bouwen en uitvoeren van duurzame toepassingen. Het algemene doel is het verminderen van de carbon footprint van elk aspect van uw toepassing. [De beginselen van duurzame software techniek][principles-sse] hebben een overzicht van de principes van duurzame software techniek.
 
 Een belang rijk idee van een duurzame software techniek is dat het een verschuiving in prioriteiten is en de focus heeft. In veel gevallen is software ontworpen en uitgevoerd op een manier die zich richt op snelle prestaties en een lage latentie. Duurzame software techniek richt zich op het verminderen van zoveel mogelijk kool emissies. In sommige gevallen kan het Toep assen van duurzame software techniek leiden tot snellere prestaties of een lagere latentie, zoals bij het verlagen van de totale netwerk reis. In andere gevallen kan het verminderen van de uitstoot van emissies leiden tot tragere prestaties of een grotere latentie, zoals het vertragen van het uitstellen van werk belastingen met een lage prioriteit. Voordat u overweegt de ontwikkeling van duurzame software techniek toe te passen op uw toepassing, kunt u de prioriteiten, behoeften en de berekenings verhouding van uw toepassing controleren.
 
@@ -32,7 +32,7 @@ Nadat u het gebruik van het cluster hebt bekeken, kunt u overwegen de functies t
 
 Het verg Roten van het gebruik kan ook overtollige knoop punten verminderen, waardoor de energie die wordt verbruikt door [resource reserveringen op elk knoop punt][resource-reservations]vermindert.
 
-Bekijk ook de CPU-en geheugen *aanvragen* en *limieten* in de Kubernetes-manifesten van uw toepassingen. Als u de waarden voor geheugen en CPU verlaagt, zijn er meer geheugen en CPU beschikbaar voor het cluster om andere workloads uit te voeren. Naarmate u meer werk belastingen met lagere CPU en geheugen uitvoert, wordt uw cluster meer flexibel toegewezen, waardoor uw gebruik wordt verg root. Wanneer u de CPU en het geheugen voor uw toepassingen verlaagt, kan het gedrag van uw toepassingen worden verslechterd of Insta Biel als u deze waarden te laag instelt. Voordat u de CPU-en geheugen *aanvragen* en *limieten*wijzigt, kunt u overwegen een aantal benchmark tests uit te voeren om te begrijpen of deze waarden juist zijn ingesteld. U hoeft deze waarden bovendien nooit te verlagen tot het punt wanneer uw toepassing Insta Biel wordt.
+Bekijk ook de CPU-en geheugen *aanvragen* en *limieten* in de Kubernetes-manifesten van uw toepassingen. Als u de waarden voor geheugen en CPU verlaagt, zijn er meer geheugen en CPU beschikbaar voor het cluster om andere workloads uit te voeren. Naarmate u meer werk belastingen met lagere CPU en geheugen uitvoert, wordt uw cluster meer flexibel toegewezen, waardoor uw gebruik wordt verg root. Wanneer u de CPU en het geheugen voor uw toepassingen verlaagt, kan het gedrag van uw toepassingen worden verslechterd of Insta Biel als u deze waarden te laag instelt. Voordat u de CPU-en geheugen *aanvragen* en *limieten* wijzigt, kunt u overwegen een aantal benchmark tests uit te voeren om te begrijpen of deze waarden juist zijn ingesteld. U hoeft deze waarden bovendien nooit te verlagen tot het punt wanneer uw toepassing Insta Biel wordt.
 
 ## <a name="reduce-network-travel"></a>Netwerk reizen verminderen
 
@@ -74,4 +74,4 @@ Meer informatie over de functies van AKS die in dit artikel worden genoemd:
 [node-sizing]: use-multiple-node-pools.md#specify-a-vm-size-for-a-node-pool
 [sustainability-calculator]: https://azure.microsoft.com/blog/microsoft-sustainability-calculator-helps-enterprises-analyze-the-carbon-emissions-of-their-it-infrastructure/
 [system-pools]: use-system-pools.md
-[principles-green]: https://principles.green/
+[principles-sse]: https://docs.microsoft.com/learn/modules/sustainable-software-engineering-overview/

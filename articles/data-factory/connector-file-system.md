@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: jingwang
-ms.openlocfilehash: afb940d63f76acce6575b74bf5a21a7fb912fc4e
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 4741053acdefe27eadc380d9144c548af4b5143c
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920104"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346093"
 ---
 # <a name="copy-data-to-or-from-a-file-system-by-using-azure-data-factory"></a>Gegevens kopiëren van of naar een bestands systeem met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -153,7 +153,7 @@ De volgende eigenschappen worden ondersteund voor bestands systeem onder `storeS
 | OPTIE 1: statisch pad<br> | Kopiëren uit de opgegeven map of het opgegeven bestandspad in de gegevensset. Als u alle bestanden uit een map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `_` . |  |
 | OPTIE 2: filter aan server zijde<br>-File filter  | Systeem eigen filter op bestands server, dat betere prestaties biedt dan het filter voor OPTION 3-joker tekens. Wordt gebruikt `*` om nul of meer tekens te zoeken en `?` nul of één teken te zoeken. Meer informatie over de syntaxis en opmerkingen van de **opmerkingen** in [deze sectie](/dotnet/api/system.io.directory.getfiles?view=netframework-4.7.2#System_IO_Directory_GetFiles_System_String_System_String_System_IO_SearchOption_). | No                                                          |
 | OPTIE 3: filter aan client zijde<br>- wildcardFolderPath | Het mappad met Joker tekens om de bron mappen te filteren. Dit filter gebeurt op ADF-zijde, ADF de mappen/bestanden onder het opgegeven pad opsommen en vervolgens het filter voor joker tekens Toep assen.<br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke mapnaam Joker teken of escape-teken bevat. <br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | No                                            |
-| OPTIE 3: filter aan client zijde<br>- wildcardFileName | De naam van het bestand met Joker tekens onder de opgegeven folderPath/wildcardFolderPath voor het filteren van bron bestanden. Dit filter gebeurt op ADF-zijde, ADF de bestanden onder het opgegeven pad opsommen en vervolgens het filter voor joker tekens Toep assen.<br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke mapnaam Joker teken of escape-teken bevat.<br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
+| OPTIE 3: filter aan client zijde<br>- wildcardFileName | De naam van het bestand met Joker tekens onder de opgegeven folderPath/wildcardFolderPath voor het filteren van bron bestanden. Dit filter gebeurt op ADF-zijde, ADF de bestanden onder het opgegeven pad opsommen en vervolgens het filter voor joker tekens Toep assen.<br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke bestands naam Joker teken of escape-teken bevat.<br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
 | OPTIE 3: een lijst met bestanden<br>- fileListPath | Hiermee wordt aangegeven dat een opgegeven bestandenset moet worden gekopieerd. Wijs naar een tekst bestand met een lijst met bestanden die u wilt kopiëren, één bestand per regel, het relatieve pad naar het pad dat is geconfigureerd in de gegevensset.<br/>Wanneer u deze optie gebruikt, geeft u geen bestands naam op in DataSet. Meer voor beelden vindt u in [voor beelden van bestands lijsten](#file-list-examples). |No |
 | ***Aanvullende instellingen:** _ |  | |
 | recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Houd er rekening mee dat wanneer recursief is ingesteld op True en de Sink een archief op basis van bestanden is, een lege map of submap niet wordt gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn _ *True*(standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |

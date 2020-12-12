@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: e3503a9eef5c11db35684ca61fb1ee39525a465d
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 9f2b0dccde0532646457a0841fc2798e103d8cc7
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427595"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347945"
 ---
 # <a name="configure-object-replication-for-block-blobs"></a>Object replicatie configureren voor blok-blobs
 
@@ -45,7 +45,7 @@ Als u toegang hebt tot de bron-en doel opslag accounts, kunt u het object replic
 
 Voordat u object replicatie configureert in de Azure Portal, maakt u de bron-en doel containers in hun respectieve opslag accounts, als deze nog niet bestaan. Schakel ook BLOB-versie beheer in en wijzig de feed voor het bron account en schakel BLOB-versie beheer in op het doel account.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 De Azure Portal maakt automatisch het beleid voor het bron account nadat u dit hebt geconfigureerd voor het doel account.
 
@@ -146,7 +146,7 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -InputObject $destPolicy
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u een replicatie beleid wilt maken met Azure CLI, installeert u eerst Azure CLI versie 2.11.1 of hoger. Zie [aan de slag met Azure cli](/cli/azure/get-started-with-azure-cli)voor meer informatie.
 
@@ -272,7 +272,7 @@ In het volgende voor beeld wordt een replicatie beleid gedefinieerd voor het doe
 }
 ```
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om de object replicatie te configureren voor het doel account met een JSON-bestand in de Azure Portal:
 
@@ -291,7 +291,7 @@ Voer de volgende stappen uit om de object replicatie te configureren voor het do
 U kunt vervolgens een JSON-bestand met de beleids definitie downloaden dat u aan een andere gebruiker kunt aanbieden om het bron account te configureren. Voer de volgende stappen uit om dit JSON-bestand te downloaden:
 
 1. Navigeer naar de **object replicatie** -instellingen voor het doel account in de Azure Portal.
-1. Selecteer de knop **meer** naast het beleid dat u wilt downloaden en selecteer vervolgens **regels downloaden** , zoals wordt weer gegeven in de volgende afbeelding.
+1. Selecteer de knop **meer** naast het beleid dat u wilt downloaden en selecteer vervolgens **regels downloaden**, zoals wordt weer gegeven in de volgende afbeelding.
 
     :::image type="content" source="media/object-replication-configure/replication-rules-download-portal.png" alt-text="Scherm afbeelding die laat zien hoe replicatie regels worden gedownload naar een JSON-bestand":::
 
@@ -314,7 +314,7 @@ $destPolicy = Get-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
 $destPolicy | ConvertTo-Json -Depth 5 > c:\temp\json.txt
 ```
 
-Als u het JSON-bestand wilt gebruiken voor het configureren van het replicatie beleid voor het bron account met Power shell, haalt u het lokale bestand op en converteert u deze van JSON naar een-object. Roep vervolgens de opdracht [set-AzStorageObjectReplicationPolicy](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) aan om het beleid op het bron account te configureren, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om waarden tussen punt haken en het bestandspad te vervangen door uw eigen waarden:
+Als u het JSON-bestand wilt gebruiken voor het definiëren van het replicatie beleid voor het bron account met Power shell, haalt u het lokale bestand op en converteert u deze van JSON naar een-object. Roep vervolgens de opdracht [set-AzStorageObjectReplicationPolicy](/powershell/module/az.storage/set-azstorageobjectreplicationpolicy) aan om het beleid op het bron account te configureren, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om waarden tussen punt haken en het bestandspad te vervangen door uw eigen waarden:
 
 ```powershell
 $object = Get-Content -Path C:\temp\json.txt | ConvertFrom-Json
@@ -326,7 +326,7 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -Rule $object.Rules
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u de replicatie beleids definitie voor het doel account wilt schrijven naar een JSON-bestand vanuit Azure CLI, roept u de opdracht [AZ Storage account of-Policy show](/cli/azure/storage/account/or-policy#az_storage_account_or_policy_show) aan en voert u uit naar een bestand.
 
@@ -353,7 +353,7 @@ az storage account or-policy create \
 
 U kunt de replicatie status voor een BLOB in het bron account controleren met behulp van de Azure Portal, Power shell of Azure CLI. Eigenschappen van object replicatie worden pas ingevuld nadat de replicatie is voltooid of mislukt.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om de replicatie status voor een BLOB in het bron account in de Azure Portal te controleren:
 
@@ -376,7 +376,7 @@ $blobSrc = Get-AzStorageBlob -Container $srcContainerName1 `
 $blobSrc.BlobProperties.ObjectReplicationSourceProperties[0].Rules[0].ReplicationStatus
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u de replicatie status voor een BLOB in het bron account met Azure CLI wilt controleren, haalt u de waarde van de eigenschap object replicatie **status** op, zoals wordt weer gegeven in het volgende voor beeld:
 
@@ -402,7 +402,7 @@ Als de replicatie status voor een BLOB in het bron account mislukt, wordt de vol
 
 Als u een replicatie beleid en de bijbehorende regels wilt verwijderen, gebruikt u Azure Portal, Power shell of CLI.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om een replicatie beleid te verwijderen in de Azure Portal:
 
@@ -427,7 +427,7 @@ Remove-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -PolicyId $destPolicy.PolicyId
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u een replicatie beleid wilt verwijderen, verwijdert u het beleid van zowel het bron account als het doel account. Als u het beleid verwijdert, worden ook alle bijbehorende regels verwijderd.
 

@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 06/18/2020
 ms.author: victorh
-ms.openlocfilehash: 7256f94b8e8376cf98a279d085a131a4ce84826f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 2b1b68b32ccd5a4dda0b71736da4e2d1e2566b6b
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658619"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97348013"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Azure Firewall-toepassingsregels met SQL-FQDN's configureren
 
@@ -35,19 +35,56 @@ Als u niet-standaardpoorten gebruikt voor SQL IaaS-verkeer, kunt u die poorten c
    > [!NOTE]
    > De SQL- *proxy* modus kan leiden tot meer latentie vergeleken met *omleiden*. Als u de omleidings modus wilt blijven gebruiken. Dit is de standaard instelling voor clients die verbinding maken met Azure. u kunt de toegang filteren met behulp van de SQL- [service-tag](service-tags.md) in Firewall- [netwerk regels](tutorial-firewall-deploy-portal.md#configure-a-network-rule).
 
-3. Een toepassings regel met SQL FQDN configureren om toegang tot een SQL-Server toe te staan:
+3. Maak een nieuwe regel verzameling met een toepassings regel met behulp van SQL FQDN om toegang tot een SQL-Server toe te staan:
 
    ```azurecli
-   az extension add -n azure-firewall
+    az extension add -n azure-firewall
+    
+    az network firewall application-rule create \ 
+    -g FWRG \
+    --f azfirewall \ 
+    --c sqlRuleCollection \
+    --priority 1000 \
+    --action Allow \
+    --name sqlRule \
+    --protocols mssql=1433 \
+    --source-addresses 10.0.0.0/24 \
+    --target-fqdns sql-serv1.database.windows.net
+   ```
 
-   az network firewall application-rule create \
-   -g FWRG \
-   -f azfirewall \
-   -c FWAppRules \
-   -n srule \
-   --protocols mssql=1433 \
-   --source-addresses 10.0.0.0/24 \
-   --target-fqdns sql-serv1.database.windows.net
+## <a name="configure-using-azure-powershell"></a>Configureren met behulp van Azure PowerShell
+
+1. Implementeer een [Azure Firewall met behulp van Azure PowerShell](deploy-ps.md).
+2. Als u verkeer filtert op Azure SQL Database, Azure Synapse Analytics of SQL Managed instance, zorg ervoor dat de SQL-connectiviteits modus is ingesteld op **proxy**. Zie [Azure SQL-connectiviteits instellingen](../azure-sql/database/connectivity-settings.md#change-the-connection-policy-via-the-azure-cli)voor meer informatie over het overschakelen naar een andere SQL-connectiviteits modus.
+
+   > [!NOTE]
+   > De SQL- *proxy* modus kan leiden tot meer latentie vergeleken met *omleiden*. Als u de omleidings modus wilt blijven gebruiken. Dit is de standaard instelling voor clients die verbinding maken met Azure. u kunt de toegang filteren met behulp van de SQL- [service-tag](service-tags.md) in Firewall- [netwerk regels](tutorial-firewall-deploy-portal.md#configure-a-network-rule).
+
+3. Maak een nieuwe regel verzameling met een toepassings regel met behulp van SQL FQDN om toegang tot een SQL-Server toe te staan:
+
+   ```azurepowershell
+   $AzFw = Get-AzFirewall -Name "azfirewall" -ResourceGroupName "FWRG"
+    
+   $sqlRule = @{
+      Name          = "sqlRule"
+      Protocol      = "mssql:1433" 
+      TargetFqdn    = "sql-serv1.database.windows.net"
+      SourceAddress = "10.0.0.0/24"
+   }
+    
+   $rule = New-AzFirewallApplicationRule @sqlRule
+    
+   $sqlRuleCollection = @{
+      Name       = "sqlRuleCollection" 
+      Priority   = 1000 
+      Rule       = $rule
+      ActionType = "Allow"
+   }
+    
+   $ruleCollection = New-AzFirewallApplicationRuleCollection @sqlRuleCollection
+    
+   $Azfw.ApplicationRuleCollections.Add($ruleCollection)    
+   Set-AzFirewall -AzureFirewall $AzFw    
    ```
 
 ## <a name="configure-using-the-azure-portal"></a>Configureren met behulp van Azure Portal

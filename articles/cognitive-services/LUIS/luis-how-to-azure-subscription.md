@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a71c1a0df1a72e3831fa54a041539f62b38a0aca
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 19c27dc80f9af013c458663c9c7afb0033683acd
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95999906"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97348064"
 ---
 # <a name="create-luis-resources"></a>LUIS-resources maken
 
@@ -51,16 +51,13 @@ Als u het eigendom van een resource wilt wijzigen, kunt u een van de volgende ac
 * Het [eigendom](../../cost-management-billing/manage/billing-subscription-transfer.md) van het abonnement overdragen.
 * Exporteer de LUIS-app als een bestand en importeer de app vervolgens op een ander abonnement. Exporteren is beschikbaar op de pagina **mijn apps** in de Luis-Portal.
 
-
-## <a name="resource-limits"></a>Resourcelimieten
+## <a name="resource-limits"></a>Bronlimieten
 
 ### <a name="authoring-key-creation-limits"></a>Limieten voor het maken van sleutels ontwerpen
 
-U kunt Maxi maal tien ontwerp sleutels per regio per abonnement maken.
+U kunt Maxi maal tien ontwerp sleutels per regio per abonnement maken. Publicatie regio's verschillen van het ontwerpen van regio's. Zorg ervoor dat u een app maakt in de ontwerp regio die overeenkomt met het publicatie gebied waar u uw client toepassing wilt plaatsen. Zie voor meer informatie over de manier waarop de ontwerp regio's aan publicatie regio's worden toegewezen, de [regio's ontwerpen en publiceren](luis-reference-regions.md). 
 
-Zie [belang rijke limieten](luis-limits.md#key-limits) en Azure- [regio's](luis-reference-regions.md)voor meer informatie.
-
-Publicatie regio's verschillen van het ontwerpen van regio's. Zorg ervoor dat u een app maakt in de ontwerp regio die overeenkomt met het publicatie gebied waar u uw client toepassing wilt plaatsen.
+Zie [sleutel limieten](luis-limits.md#key-limits)voor meer informatie over sleutel limieten.
 
 ### <a name="errors-for-key-usage-limits"></a>Fouten met betrekking tot de limieten voor het sleutel gebruik
 
@@ -204,7 +201,7 @@ Resource `kind` :
     ```
 
     > [!Note]
-    > Deze sleutels worden niet gebruikt door de Luis-Portal totdat ze zijn toegewezen **Manage** op de  >  pagina **Azure-resources** beheren in de Luis-Portal.
+    > Deze sleutels worden niet gebruikt door de Luis-Portal totdat ze zijn toegewezen op de  >  pagina **Azure-resources** beheren in de Luis-Portal.
 
 <a name="assign-an-authoring-resource-in-the-luis-portal-for-all-apps"></a>
 

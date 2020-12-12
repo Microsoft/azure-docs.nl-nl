@@ -1,72 +1,72 @@
 ---
-title: Problemen oplossen-Azure Monitor Application Insights java
-description: Problemen met Azure Monitor Application Insights Java oplossen
+title: Problemen met Azure Monitor Application Insights voor Java oplossen
+description: Meer informatie over het oplossen van problemen met de Java-Agent voor Azure Monitor Application Insights
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: cf27763f857cc1fd1aad5256d0c6cecf91251caf
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 1ccfd583b58d129268af2a94e3072200e58308cd
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855618"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347827"
 ---
-# <a name="troubleshooting-azure-monitor-application-insights-java"></a>Problemen met Azure Monitor Application Insights Java oplossen
+# <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
-In dit artikel hebben we enkele veelvoorkomende problemen besproken die een gebruiker kan belicht tijdens het instrumenteren van een Java-toepassing met behulp van de Java-Agent, samen met de stappen om deze problemen op te lossen.
+In dit artikel worden enkele veelvoorkomende problemen besproken die u kunt tegen komen tijdens het instrumenteren van een Java-toepassing met behulp van de Java-Agent voor Application Insights. We behandelen ook de stappen om deze problemen op te lossen. Application Insights is een functie van de Azure Monitor platform-service.
 
-## <a name="self-diagnostic-log-file"></a>Logboek bestand voor automatische diagnose
+## <a name="check-the-self-diagnostic-log-file"></a>Het logboek bestand voor automatische diagnose controleren
 
-Application Insights Java 3,0 resulteert standaard in een logboek bestand `applicationinsights.log` met de naam in dezelfde map waarin het `applicationinsights-agent-3.0.0.jar` bestand zich bevindt.
+De Java 3,0-agent voor Application Insights produceert standaard een logboek bestand met `applicationinsights.log` de naam in dezelfde map waarin het bestand zich bevindt `applicationinsights-agent-3.0.0.jar` .
 
 Dit logboek bestand is de eerste plaats om te controleren of er hints zijn voor eventuele problemen die zich voordoen.
 
-## <a name="upgrade-from-application-insights-java-2x-sdk"></a>Upgrade van Application Insights Java 2. x SDK
+## <a name="upgrade-from-the-application-insights-java-2x-sdk"></a>Upgrade van de Application Insights Java 2. x SDK
 
-Zie [upgrade van 2. x SDK](./java-standalone-upgrade-from-2x.md).
+Als u de Application Insights Java 2. x-SDK al gebruikt in uw toepassing, kunt u deze blijven gebruiken. De Java 3,0-agent detecteert deze. Zie [upgrade uitvoeren van de Java 2. x SDK](./java-standalone-upgrade-from-2x.md)voor meer informatie.
 
-## <a name="upgrade-from-30-preview"></a>Upgrade van 3,0 Preview
+## <a name="upgrade-from-application-insights-java-30-preview"></a>Upgrade van Application Insights Java 3,0 Preview
 
-Als u een upgrade uitvoert van de preview-versie van 3,0, moet u alle [configuratie opties](./java-standalone-config.md) zorgvuldig controleren, omdat de JSON-structuur volledig is gewijzigd in de 3,0 ga-release.
+Als u een upgrade uitvoert van de Java 3,0 Preview-agent, controleert u alle [configuratie opties](./java-standalone-config.md) zorgvuldig. De JSON-structuur is volledig gewijzigd in de 3,0-release voor algemene Beschik baarheid (GA).
 
 Deze wijzigingen zijn onder andere:
 
-1.  De naam van het configuratie bestand zelf is gewijzigd van `ApplicationInsights.json` in `applicationinsights.json` .
-2.  Het `instrumentationSettings` knoop punt is niet meer aanwezig. Alle inhoud in `instrumentationSettings` wordt verplaatst naar het hoofd niveau. 
-3.  Configuratie knooppunten zoals `sampling` , `jmxMetrics` , `instrumentation` en `heartbeat` worden verplaatst van `preview` naar het hoofd niveau.
+-  De naam van het configuratie bestand is gewijzigd van `ApplicationInsights.json` in `applicationinsights.json` .
+-  Het `instrumentationSettings` knoop punt is niet meer aanwezig. Alle inhoud in `instrumentationSettings` wordt verplaatst naar het hoofd niveau. 
+-  Configuratie knooppunten zoals `sampling` , `jmxMetrics` , `instrumentation` en `heartbeat` worden `preview` naar het hoofd niveau verplaatst.
 
-## <a name="ssl-certificate-issues"></a>SSL-certificaat problemen
+## <a name="import-ssl-certificates"></a>SSL-certificaten importeren
 
-Als u de standaard Java-opslag locatie gebruikt, heeft deze al alle CA-basis certificaten en hoeft u geen verdere SSL-certificaten te importeren.
+Als u de standaard Java-opslag groep gebruikt, heeft deze al alle CA-basis certificaten. U hoeft niet meer SSL-certificaten te importeren.
 
 Als u een aangepaste Java-opslag groep gebruikt, moet u mogelijk de Application Insights endpoint SSL-certificaten importeren.
 
-### <a name="some-key-terminology"></a>Een belang rijke terminologie:
-Sleutel *Archief* is een opslag plaats van certificaten, open bare en persoonlijke sleutels. Doorgaans hebben JDK-distributies een uitvoerbaar bestand om ze te beheren `keytool` .
+### <a name="key-terminology"></a>Belangrijkste terminologie
+Een sleutel *Archief* is een opslag plaats van certificaten, open bare sleutels en persoonlijke sleutels. Doorgaans hebben distributies van Java Development Kit een uitvoerbaar bestand om ze te beheren: `keytool` .
 
 Het volgende voor beeld is een eenvoudige opdracht voor het importeren van een SSL-certificaat in de-opslag:
 
 `keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name".cer -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
 
-### <a name="steps-to-download-and-add-the-ssl-certificate"></a>Stappen om het SSL-certificaat te downloaden en toe te voegen:
+### <a name="steps-to-download-and-add-an-ssl-certificate"></a>Stappen om een SSL-certificaat te downloaden en toe te voegen
 
-1.  Open uw favoriete browser en ga naar de `IngestionEndpoint` URL die aanwezig is in de verbindings reeks die wordt gebruikt om uw toepassing te instrumenteren, zoals hieronder wordt weer gegeven
+1.  Open uw favoriete browser en ga naar de `IngestionEndpoint` URL die wordt weer gegeven in de Connection String die wordt gebruikt om uw toepassing te instrumenteren.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Verbindings reeks Application Insights":::
+    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Scherm opname waarin een Application Insights connection string wordt weer gegeven.":::
 
-2.  Klik op het pictogram site gegevens weer geven (vergren delen) op de browser en klik op certificaat optie, zoals hieronder weer gegeven
+2.  Selecteer het pictogram **site-informatie weer geven** in de browser en selecteer vervolgens de optie **certificaat** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="SSL-certificaat vastleggen":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Scherm afbeelding van de optie certificaat in site gegevens.":::
 
-3.  Ga naar het tabblad Details en klik op kopiëren naar bestand.
-4.  Klik op de knop Volgende en selecteer base-64 Encoded X. 509 (. CER) ' Format teren en selecteer volgende.
+3.  Ga naar het tabblad **Details** en selecteer **kopiëren naar bestand**.
+4.  Selecteer de knop **volgende** , selecteer **Base-64 Encoded X. 509 (. CER)** en selecteer vervolgens opnieuw **volgende** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="SSL-certificaat ExportWizard":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Scherm opname van de wizard Certificaat exporteren, met een geselecteerde indeling.":::
 
-5.  Geef het bestand op waarin u het SSL-certificaat wilt opslaan. Klik ten slotte op volgende en volt ooien. Het bericht ' het exporteren is voltooid ' wordt weer gegeven.
-6.  Zodra u het certificaat hebt, is het tijd om het certificaat te importeren in een Java-sleutel archief. Gebruik de bovenstaande [opdracht](#some-key-terminology) om certificaten te importeren.
+5.  Geef het bestand op waarin u het SSL-certificaat wilt opslaan. Selecteer vervolgens **volgende**  >  **volt ooien**. Het bericht ' het exporteren is voltooid ' wordt weer gegeven.
+6.  Nadat u het certificaat hebt, is het tijd om het certificaat te importeren in een Java-archief. Gebruik de [voor gaande opdracht](#key-terminology) om certificaten te importeren.
 
 > [!WARNING]
-> U moet deze stappen herhalen om het nieuwe certificaat te krijgen voordat het huidige certificaat is verlopen. De informatie over de verval datum vindt u op het tabblad Details van de pop-up certificaat, zoals hieronder wordt weer gegeven
-
-:::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Details van SSL-certificaat":::
+> U moet deze stappen herhalen om het nieuwe certificaat op te halen voordat het huidige certificaat verloopt. Op het tabblad **Details** van het dialoog venster **certificaat** vindt u informatie over de verval datum.
+>
+> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Scherm opname van de details van het SSL-certificaat.":::

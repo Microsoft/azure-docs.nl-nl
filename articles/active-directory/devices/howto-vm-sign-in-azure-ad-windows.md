@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 134148fa3ea73212d85393cc433d60f7ddeecd17
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8644040565bd46800b888a32653b6c8bbf89f096
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837121"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347435"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -157,6 +157,9 @@ Er zijn meerdere manieren waarop u roltoewijzingen voor virtuele machines kunt c
 - De Azure AD Portal-ervaring gebruiken
 - De Azure Cloud Shell-ervaring gebruiken
 
+> [!NOTE]
+> De beheerders aanmelding van de virtuele machine en de aanmeld rollen van de virtuele-machine gebruiker gebruiken dataActions en kunnen daarom niet worden toegewezen in het bereik van de beheer groep. Momenteel kunnen deze rollen alleen worden toegewezen in het abonnements bereik.
+
 ### <a name="using-azure-ad-portal-experience"></a>Azure AD Portal-ervaring gebruiken
 
 Roltoewijzingen configureren voor uw Azure AD Windows Server 2019 Data Center-Vm's:
@@ -177,8 +180,8 @@ Na enkele ogen blikken wordt de rol bij de geselecteerde scope toegewezen aan de
 In het volgende voor beeld wordt [AZ roltoewijzing Create](/cli/azure/role/assignment#az-role-assignment-create) gebruikt om de rol van de beheerder van de virtuele machine toe te wijzen aan de VM voor uw huidige Azure-gebruiker. De gebruikers naam van uw actieve Azure-account wordt verkregen met [AZ account show](/cli/azure/account#az-account-show)en de scope wordt ingesteld op de virtuele machine die in een vorige stap is gemaakt met [AZ VM show](/cli/azure/vm#az-vm-show). Het bereik kan ook worden toegewezen aan een resource groep of abonnement, en normale machtigingen voor Azure RBAC-overname zijn van toepassing. Zie [Aanmelden bij een virtuele Linux-machine in azure met Azure Active Directory-verificatie](../../virtual-machines/linux/login-using-aad.md)voor meer informatie.
 
 ```   AzureCLI
-username=$(az account show --query user.name --output tsv)
-vm=$(az vm show --resource-group myResourceGroup --name myVM --query id -o tsv)
+$username=$(az account show --query user.name --output tsv)
+$vm=$(az vm show --resource-group myResourceGroup --name myVM --query id -o tsv)
 
 az role assignment create \
     --role "Virtual Machine Administrator Login" \

@@ -3,12 +3,12 @@ title: Uw Azure VMware-oplossings resource inschakelen
 description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: 526d6b38f4b4e3f6c4806b71b4728dee90cf558a
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 8bcb61c07a3f0310754cd50931f4576e836deffb
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325074"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346534"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
 Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
@@ -18,7 +18,7 @@ Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure V
 U hebt een Azure-account in een Azure-abonnement nodig. Het Azure-abonnement moet voldoen aan een van de volgende criteria:
 
 * Een abonnement onder een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft.
-* Een door de Cloud Solution Provider (CSP) beheerd abonnement onder een Azure-abonnement.
+* Een door de Cloud Solution Provider (CSP) beheerd abonnement onder een bestaande CSP Azure biedt een contract of een Azure-abonnement.
 
 
 ## <a name="enable-azure-vmware-solution-for-ea-customers"></a>Azure VMware-oplossing voor EA-klanten inschakelen
@@ -61,7 +61,7 @@ Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings t
 
 ## <a name="enable-azure-vmware-solution-for-csp-customers"></a>Azure VMware-oplossing voor CSP-klanten inschakelen 
 
-Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruiken om de Azure VMware-oplossing voor hun klanten in te scha kelen. 
+Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruiken om de Azure VMware-oplossing voor hun klanten in te scha kelen. In dit artikel wordt [CSP Azure-abonnement](/partner-center/azure-plan-lp.md) gebruikt als voor beeld om de inkoop procedure voor partners te illustreren.
 
    >[!IMPORTANT] 
    >Azure VMware Solution service biedt geen multitenancy vereist. Hosting partners die dit vereisen, worden niet ondersteund. 
@@ -76,9 +76,9 @@ Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruike
 
 1. Selecteer **Azure-abonnement** en selecteer vervolgens **toevoegen aan winkel wagen**. 
 
-1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](/partner-center/azure-plan-manage)voor meer informatie.
+1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](/partner-center/azure-plan-manage.md)voor meer informatie.
 
-Na het configureren van het Azure-abonnement en de benodigde vSphere RBAC-machtigingen zijn aanwezig als CSP, stelt u micro soft in staat om het quotum voor een Azure-abonnement in te scha kelen. Toegang tot Azure Portal van het partner centrum door gebruik te maken van **beheerder namens** (administrate) procedure.
+Nadat u het Azure-abonnement hebt geconfigureerd en de benodigde [Azure RBAC-machtigingen](/partner-center/azure-plan-manage.md) voor het abonnement zijn ingesteld, wordt micro soft aangeraden om het quotum voor een Azure-abonnement in te scha kelen. Krijg toegang tot Azure Portal van het [micro soft Partner Center](https://partner.microsoft.com) met behulp **van beheer namens** (administrate).
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com).
 

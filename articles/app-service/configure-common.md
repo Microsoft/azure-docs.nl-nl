@@ -1,21 +1,21 @@
 ---
 title: Apps in de portal configureren
-description: Meer informatie over het configureren van algemene instellingen voor een App Service-app in de Azure Portal. App-instellingen, verbindings reeksen, platform, taal stack, container, enzovoort.
+description: Meer informatie over het configureren van algemene instellingen voor een App Service-app in de Azure Portal. App-instellingen, app-configuratie, verbindings reeksen, platform, taal stack, container, enzovoort.
 keywords: Azure app service, Web-app, app-instellingen, omgevings variabelen
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
-ms.date: 08/13/2019
+ms.date: 12/07/2020
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
-ms.openlocfilehash: 76cfefa3f104ecef69e28fecd1c37fc336b0ce8c
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 4594a3a7ac7af7acf75fa5c47e2eab3246fc00e7
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854645"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346752"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Een App Service-app configureren in het Azure Portal
 
-In dit onderwerp wordt uitgelegd hoe u algemene instellingen configureert voor web-apps, mobiele back-end of API-apps met behulp van de [Azure Portal].
+In dit artikel wordt uitgelegd hoe u algemene instellingen configureert voor web-apps, mobiele back-end of API-apps met behulp van de [Azure Portal].
 
 ## <a name="configure-app-settings"></a>App-instellingen configureren
 
@@ -118,7 +118,10 @@ In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervo
 
 Voor ASP.NET-en ASP.NET Core-ontwikkel aars is het instellen van verbindings reeksen in App Service vergelijkbaar met de instelling in `<connectionStrings>` in *Web.config*, maar de waarden die u in app service instelt, worden in *Web.config* genegeerd. U kunt de ontwikkelings instellingen (bijvoorbeeld een database bestand) in *Web.config* -en productie geheimen (bijvoorbeeld SQL database referenties) veilig in app service blijven. Dezelfde code maakt gebruik van uw ontwikkelings instellingen wanneer u lokaal fouten opspoort en uw productie geheimen gebruikt wanneer deze worden geïmplementeerd in Azure.
 
-Voor andere taal stacks is het beter om de [app-instellingen](#configure-app-settings) te gebruiken, omdat verbindings reeksen speciale opmaak in de variabele sleutels nodig hebben om toegang te krijgen tot de waarden. Hier volgt één uitzonde ring: voor bepaalde typen van Azure-data bases wordt samen met de app een back-up gemaakt als u de verbindings reeksen in uw app configureert. Zie [waarvan een back-up wordt gemaakt](manage-backup.md#what-gets-backed-up)voor meer informatie. Als u deze geautomatiseerde back-up niet nodig hebt, gebruikt u de app-instellingen.
+Voor andere taal stacks is het beter om de [app-instellingen](#configure-app-settings) te gebruiken, omdat verbindings reeksen speciale opmaak in de variabele sleutels nodig hebben om toegang te krijgen tot de waarden. 
+
+> [!NOTE]
+> Er is een situatie waarin u mogelijk verbindings reeksen wilt gebruiken in plaats van de app-instellingen voor non-.NET talen: voor bepaalde Azure-database typen wordt _alleen_ een back-up van de app gemaakt als u een Connection String voor de data base in uw app service app configureert. Zie [waarvan een back-up wordt gemaakt](manage-backup.md#what-gets-backed-up)voor meer informatie. Als u deze geautomatiseerde back-up niet nodig hebt, gebruikt u de app-instellingen.
 
 In runtime zijn verbindings reeksen beschikbaar als omgevings variabelen, met als voor voegsel de volgende verbindings typen:
 
@@ -184,7 +187,7 @@ Verbindings reeksen hebben de volgende JSON-indeling:
 
 ## <a name="configure-general-settings"></a>Algemene instellingen configureren
 
-In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer **Configuration**  >  **algemene instellingen** configuratie in het menu van de app.
+In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app. Selecteer   >  **algemene instellingen** configuratie in het menu van de app.
 
 ![Algemene instellingen](./media/configure-common/open-general.png)
 
@@ -228,21 +231,27 @@ In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervo
 
 ![Paden toewijzen](./media/configure-common/open-path.png)
 
-Op de pagina **paden toewijzen** worden verschillende dingen weer gegeven op basis van het type besturings systeem.
+> [!NOTE] 
+> Op het tabblad **paden** kunnen specifieke instellingen voor het besturings systeem worden weer gegeven die verschillen van het voor beeld dat hier wordt weer gegeven.
 
 ### <a name="windows-apps-uncontainerized"></a>Windows-apps (niet in container)
 
 Voor Windows-apps kunt u de IIS-handlertoewijzing aanpassen en virtuele toepassingen en mappen.
 
-Met handlertoewijzing kunt u aangepaste script processors toevoegen voor het afhandelen van aanvragen voor specifieke bestands extensies. Als u een aangepaste handler wilt toevoegen, klikt u op **nieuwe handler**. Configureer de handler als volgt:
+Met handlertoewijzing kunt u aangepaste script processors toevoegen voor het afhandelen van aanvragen voor specifieke bestands extensies. Als u een aangepaste handler wilt toevoegen, klikt u op **nieuwe handlertoewijzing**. Configureer de handler als volgt:
 
 - **Extensie**. De bestands extensie die u wilt verwerken, zoals *\* . php* of *handler. fcgi*.
 - **Script processor**. Het absolute pad van de script processor naar u. Aanvragen voor bestanden die overeenkomen met de bestands extensie worden verwerkt door de script processor. Gebruik het pad `D:\home\site\wwwroot` om te verwijzen naar de hoofdmap van uw app.
 - **Argumenten**. Optionele opdracht regel argumenten voor de script processor.
 
-Aan elke app wordt het standaard hoofdpad ( `/` ) toegewezen `D:\home\site\wwwroot` , waar uw code standaard wordt geïmplementeerd. Als de hoofdmap van de app zich in een andere map bevindt, of als uw opslag plaats meer dan één toepassing heeft, kunt u hier virtuele toepassingen en directory's bewerken of toevoegen. Klik op **nieuwe virtuele toepassing of directory**.
+Aan elke app wordt het standaard hoofdpad ( `/` ) toegewezen `D:\home\site\wwwroot` , waar uw code standaard wordt geïmplementeerd. Als de hoofdmap van de app zich in een andere map bevindt, of als uw opslag plaats meer dan één toepassing heeft, kunt u hier virtuele toepassingen en directory's bewerken of toevoegen. 
 
-Als u virtuele toepassingen en directory's wilt configureren, geeft u elke virtuele map en het bijbehorende fysieke pad op ten opzichte van de hoofdmap van de website ( `D:\home` ). U kunt eventueel het selectie vakje van de **toepassing** selecteren om een virtuele map als een toepassing te markeren.
+Klik op het tabblad **pad toewijzingen** op **nieuwe virtuele toepassing of map**. 
+
+- Als u een virtuele map aan een fysiek pad wilt toewijzen, schakelt u het selectie vakje **map** in. Geef de virtuele map en het bijbehorende relatieve (fysieke) pad naar de hoofdmap van de website op ( `D:\home` ).
+- Als u een virtuele map als een webtoepassing wilt markeren, schakelt u het selectie vakje **Directory** uit.
+  
+  ![Directory selectie vakje](./media/configure-common/directory-check-box.png)
 
 ### <a name="containerized-apps"></a>Apps in de container
 

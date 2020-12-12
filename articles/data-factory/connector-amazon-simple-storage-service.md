@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/08/2020
-ms.openlocfilehash: 10859423d90f7ea55dded00522de34d94493eec1
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 925a0270c50d20790c093eaf193d66e0acd4cd11
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902287"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347401"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Gegevens kopiëren uit de Amazon Simple Storage-service met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van Data Factory service die u gebruikt:"]
@@ -185,7 +185,7 @@ De volgende eigenschappen worden ondersteund voor Amazon S3 onder `storeSettings
 | OPTIE 1: statisch pad<br> | Kopiëren van de opgegeven Bucket of map/bestandspad die is opgegeven in de gegevensset. Als u alle bestanden van een Bucket of map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `_` . |  |
 | OPTIE 2: S3-voor voegsel<br>-voor voegsel | Voor voegsel voor de S3-sleutel naam onder de opgegeven Bucket die in een gegevensset is geconfigureerd voor het filteren van S3-bron bestanden. S3-sleutels waarvan de naam begint met `bucket_in_dataset/this_prefix` zijn geselecteerd. Er wordt gebruikgemaakt van S3's service-side filter, dat betere prestaties levert dan een filter voor joker tekens.<br/><br/>Als u een voor voegsel gebruikt en wilt kopiëren naar een op een bestand gebaseerde Sink met behoud van de hiërarchie, noteert u het pad na de laatste "/" in het voor voegsel blijven behouden. U hebt bijvoorbeeld  `bucket/folder/subfolder/file.txt` de bron en het voor voegsel geconfigureerd als `folder/sub` . vervolgens wordt het pad naar het bestand behouden `subfolder/file.txt` . | No |
 | OPTIE 3: Joker teken<br>- wildcardFolderPath | Het mappad met Joker tekens onder de opgegeven Bucket die is geconfigureerd in een gegevensset om bron mappen te filteren. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken). Gebruik `^` dit om te escapen als uw mapnaam een Joker teken of escape tekens bevat in. <br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | No                                            |
-| OPTIE 3: Joker teken<br>- wildcardFileName | De bestands naam met Joker tekens onder de opgegeven Bucket en mappad (of pad naar de map met Joker tekens) om bron bestanden te filteren. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken). Gebruik `^` dit om te escapen als uw mapnaam een Joker teken of escape tekens bevat in.  Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
+| OPTIE 3: Joker teken<br>- wildcardFileName | De bestands naam met Joker tekens onder de opgegeven Bucket en mappad (of pad naar de map met Joker tekens) om bron bestanden te filteren. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken). Gebruik `^` dit om te escapen als uw bestands naam een Joker teken of escape tekens bevat in.  Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
 | OPTIE 4: een lijst met bestanden<br>- fileListPath | Hiermee wordt aangegeven dat een opgegeven bestandenset moet worden gekopieerd. Wijs naar een tekst bestand met een lijst met bestanden die u wilt kopiëren, één bestand per regel, het relatieve pad naar het pad dat is geconfigureerd in de gegevensset.<br/>Wanneer u deze optie gebruikt, geeft u geen bestands naam op in de gegevensset. Meer voor beelden vindt u in [voor beelden van bestands lijsten](#file-list-examples). |No |
 | ***Aanvullende instellingen:** _ |  | |
 | recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Houd er rekening mee dat wanneer _ *recursieve** is ingesteld op **True** en de Sink een archief op basis van bestanden is, een lege map of submap niet wordt gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn **True** (standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |

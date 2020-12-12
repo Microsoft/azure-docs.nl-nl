@@ -11,16 +11,16 @@ author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: ca0cfd7c38dde5e7307c31989791aa3906b9cbe5
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 2d759a8ed58d5b323f9894a5127c222ce1f75c52
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357280"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97345973"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
-Automatische machine learning, ook wel geautomatiseerd ML of AutoML genoemd, is het proces van het automatiseren van de tijdrovende, terugkerende taken van het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. Automatische ML is gebaseerd op een door braak van onze [micro soft research-afdeling](https://www.microsoft.com/research/project/automl/).
+Automatische machine learning, ook wel geautomatiseerd ML of AutoML genoemd, is het proces van het automatiseren van de tijdrovende, terugkerende taken van het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. Automatische ML in Azure Machine Learning is gebaseerd op een door braak van onze [micro soft research-afdeling](https://www.microsoft.com/research/project/automl/).
 
 De traditionele ontwikkeling van machine learning modellen is het bronnen-intensief, waardoor de kennis en tijd van het domein belang rijk zijn voor het produceren en vergelijken van tien tallen modellen. Met automatische machine learning versnelt u de tijd die nodig is om productie-Ready ML-modellen te verkrijgen met een geweldig gemak en efficiëntie.
 
@@ -67,7 +67,7 @@ De geavanceerde prognose configuratie bevat:
 
 Bekijk voor beelden van regressie en automatische machine learning voor voor spellingen in deze python-notebooks: [verkoop prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb), [vraag prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb)en [drank productie prognose](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-beer-remote/auto-ml-forecasting-beer-remote.ipynb).
 
-## <a name="how-automl-works"></a>Hoe AutoML werkt
+## <a name="how-automated-ml-works"></a>Hoe geautomatiseerd ML werkt
 
 Tijdens de training maakt Azure Machine Learning een aantal pijp lijnen parallel die verschillende algoritmen en para meters voor u proberen. De service herhaalt een combi natie van ML-algoritmen die zijn gekoppeld aan functie selecties, waarbij elke herhaling een model met een trainings Score produceert. Hoe hoger de score, hoe beter het model wordt beschouwd als uw gegevens.  Het wordt gestopt zodra de afsluit criteria die in het experiment zijn gedefinieerd, zijn gevonden. 
 
@@ -75,14 +75,14 @@ Met **Azure machine learning** kunt u uw automatische ml-experimenten ontwerpen 
 
 1. **Bepaal welk ml-probleem** moet worden opgelost: classificatie, prognose of regressie
 
-1. **Kies of u de python-SDK of de web-ervaring van Studio wilt gebruiken** : meer informatie over de pariteit tussen de [python-SDK en Studio Web Experience](#parity).
+1. **Kies of u de python-SDK of de web-ervaring van Studio wilt gebruiken**: meer informatie over de pariteit tussen de [python-SDK en Studio Web Experience](#parity).
 
    * Voor een beperkte of geen code-ervaring kunt u de Azure Machine Learning Studio Web Experience op [https://ml.azure.com](https://ml.azure.com/)  
    * Bekijk voor python-ontwikkel aars de [Azure machine learning PYTHON SDK](how-to-configure-auto-train.md) 
     
-1. **Geef de bron en de indeling van de gelabelde trainings gegevens op** : numpy-matrices of Panda-data frame
+1. **Geef de bron en de indeling van de gelabelde trainings gegevens op**: numpy-matrices of Panda-data frame
 
-1. **Configureer het reken doel voor model training** , zoals uw [lokale computer, Azure machine learning reken processen, externe vm's of Azure Databricks](how-to-set-up-training-targets.md).  Meer informatie over geautomatiseerde training [op een externe bron](how-to-auto-train-remote.md).
+1. **Configureer het reken doel voor model training**, zoals uw [lokale computer, Azure machine learning reken processen, externe vm's of Azure Databricks](how-to-set-up-training-targets.md).  Meer informatie over geautomatiseerde training [op een externe bron](how-to-auto-train-remote.md).
 
 1. **Configureer de para meters voor automatische machine learning** die bepalen hoeveel iteraties boven verschillende modellen, afstemming-instellingen, geavanceerde preverwerking/parametrisatie en welke metrische gegevens er moeten worden weer gegeven bij het bepalen van het beste model.  
 1. **Verzend de trainings uitvoering.**
@@ -117,7 +117,7 @@ Voor automatische machine learning experimenten wordt parametrisatie automatisch
 
 In elk automatisch machine learning experiment worden uw gegevens automatisch geschaald of genormaliseerd om de Help-algoritmen goed uit te voeren. Tijdens de model training wordt een van de volgende schalen of normalisatie technieken toegepast op elk model. Meer informatie over hoe AutoML helpt [om te voor komen dat gegevens in uw modellen worden gespreid en niet in evenwicht worden gegeven](concept-manage-ml-pitfalls.md) .
 
-|Normalisatie aanpassen &nbsp; & &nbsp;| Beschrijving |
+|Normalisatie aanpassen &nbsp; & &nbsp;| Description |
 | ------------- | ------------- |
 | [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Functies standaardiseren door het gemiddelde en de schaal aanpassing te verwijderen voor eenheids variantie  |
 | [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Transformeert functies door elke functie te schalen op basis van het minimum en maximum van die kolom  |
@@ -141,8 +141,8 @@ Schakel deze instelling in met:
 
 Automatische machine learning ondersteunt ensemble-modellen die standaard zijn ingeschakeld. Ensemble Learning verbetert de machine learning resultaten en voorspellende prestaties door het combi neren van meerdere modellen, in tegens telling tot het gebruik van één model. De ensembles herhalingen worden weer gegeven als de laatste herhalingen van de uitvoering. Automatische machine learning maakt gebruik van zowel stem-als gestapelde ensemble-methoden voor het combi neren van modellen:
 
-* **Stem** : voor speld op basis van het gewogen gemiddelde van voorspelde klasse-kansen (voor classificatie taken) of voorspelde regressie doelen (voor regressie taken).
-* **Stapelen** : stacking combineert heterogene-modellen en treinen een meta model op basis van de uitvoer van de afzonderlijke modellen. De huidige standaard-META modellen zijn LogisticRegression voor classificatie taken en ElasticNet voor regressie-en prognose taken.
+* **Stem**: voor speld op basis van het gewogen gemiddelde van voorspelde klasse-kansen (voor classificatie taken) of voorspelde regressie doelen (voor regressie taken).
+* **Stapelen**: stacking combineert heterogene-modellen en treinen een meta model op basis van de uitvoer van de afzonderlijke modellen. De huidige standaard-META modellen zijn LogisticRegression voor classificatie taken en ElasticNet voor regressie-en prognose taken.
 
 Het [selectie algoritme van Caruana ensemble](http://www.niculescu-mizil.org/papers/shotgun.icml04.revised.rev2.pdf) met gesorteerde ensemble-initialisatie wordt gebruikt om te bepalen welke modellen er moeten worden gebruikt in de ensemble. Op hoog niveau initialiseert dit algoritme de ensemble met Maxi maal vijf modellen met de beste afzonderlijke scores en verifieert dat deze modellen binnen 5% drempelwaarde van de beste score zijn om een slechte initiële ensemble te voor komen. Vervolgens wordt voor elke ensemble-iteratie een nieuw model toegevoegd aan de bestaande ensemble en wordt de resulterende score berekend. Als een nieuw model de bestaande ensemble-score heeft verbeterd, wordt de ensemble bijgewerkt met het nieuwe model.
 
@@ -152,14 +152,14 @@ Zie de [procedure](how-to-configure-auto-train.md#ensemble) voor het wijzigen va
 
 De webinterface voor automatische ML maakt altijd gebruik van een extern [Compute-doel](concept-compute-target.md).  Maar wanneer u de python-SDK gebruikt, kiest u een lokale Compute of een extern Compute-doel voor de automatische ML-training.
 
-* **Lokale Compute** : training vindt plaats op de computer van uw lokale laptop of virtuele machine. 
-* **Externe Compute** : training vindt plaats op machine learning compute-clusters.  
+* **Lokale Compute**: training vindt plaats op de computer van uw lokale laptop of virtuele machine. 
+* **Externe Compute**: training vindt plaats op machine learning compute-clusters.  
 
 ### <a name="choose-compute-target"></a>Reken doel kiezen
 Houd rekening met deze factoren bij het kiezen van het berekenings doel:
 
- * **Kies een lokale Compute** : als uw scenario wordt gebruikt voor initiële onderzoeken of demo's met behulp van kleine gegevens en korte treinen (d.w.z. seconden of een paar minuten per onderliggend item), kan de training op uw lokale computer een betere keuze zijn.  Er is geen instel tijd, de infrastructuur resources (uw PC of virtuele machine) zijn direct beschikbaar.
- * **Kies een Remote ml Compute-Cluster** : als u training hebt met grotere gegevens sets, zoals in productie training, modellen maken die langere treinen nodig hebben, biedt externe Compute veel betere end-to-end tijd prestaties, omdat `AutoML` parallelliseren-treinen worden verdeeld over de knoop punten van het cluster. Op externe Compute wordt de opstart tijd voor de interne infra structuur ongeveer 1,5 minuten per onderliggende uitvoering toegevoegd, plus extra minuten voor de cluster infrastructuur als de virtuele machines nog niet actief zijn.
+ * **Kies een lokale Compute**: als uw scenario wordt gebruikt voor initiële onderzoeken of demo's met behulp van kleine gegevens en korte treinen (d.w.z. seconden of een paar minuten per onderliggend item), kan de training op uw lokale computer een betere keuze zijn.  Er is geen instel tijd, de infrastructuur resources (uw PC of virtuele machine) zijn direct beschikbaar.
+ * **Kies een Remote ml Compute-Cluster**: als u training hebt met grotere gegevens sets, zoals in productie training, modellen maken die langere treinen nodig hebben, biedt externe Compute veel betere end-to-end tijd prestaties, omdat `AutoML` parallelliseren-treinen worden verdeeld over de knoop punten van het cluster. Op externe Compute wordt de opstart tijd voor de interne infra structuur ongeveer 1,5 minuten per onderliggende uitvoering toegevoegd, plus extra minuten voor de cluster infrastructuur als de virtuele machines nog niet actief zijn.
 
 ### <a name="pros-and-cons"></a>Voor-en nadelen
 Houd rekening met deze voor delen en nadelen bij het kiezen van lokaal versus extern.

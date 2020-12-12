@@ -7,17 +7,17 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 1f541b947c04619892291e47002ea9b0dbb6d38d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9f6692db2da3722507136a468d1dcbdc2985e73f
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340556"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347554"
 ---
 # <a name="transactional-batch-operations-in-azure-cosmos-db-using-the-net-sdk"></a>Transactionele batch bewerkingen in Azure Cosmos DB met behulp van de .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Transactionele batch beschrijft een groep punt bewerkingen die moeten slagen of mislukken samen met dezelfde partitie sleutel in een container. In de .NET SDK wordt de- `TranscationalBatch` klasse gebruikt voor het definiëren van deze batch bewerkingen. Als alle bewerkingen zijn geslaagd in de volg orde waarin ze worden beschreven in de transactionele batch-bewerking, wordt de trans actie doorgevoerd. Als een bewerking echter mislukt, wordt de hele trans actie teruggedraaid.
+Transactionele batch beschrijft een groep punt bewerkingen die moeten slagen of mislukken samen met dezelfde partitie sleutel in een container. In de .NET SDK wordt de- `TransactionalBatch` klasse gebruikt voor het definiëren van deze batch bewerkingen. Als alle bewerkingen zijn geslaagd in de volg orde waarin ze worden beschreven in de transactionele batch-bewerking, wordt de trans actie doorgevoerd. Als een bewerking echter mislukt, wordt de hele trans actie teruggedraaid.
 
 ## <a name="whats-a-transaction-in-azure-cosmos-db"></a>Wat is een trans actie in Azure Cosmos DB
 
@@ -35,7 +35,7 @@ Azure Cosmos DB ondersteunt momenteel opgeslagen procedures, die ook het transac
 
 * **Taal optie** : transactionele batch wordt ondersteund op de SDK en de taal waarmee u al werkt, terwijl opgeslagen procedures moeten worden geschreven in Java script.
 * **Code versie beheer** : toepassings code voor versie beheer en onboarding op uw CI/cd-pijp lijn is veel belang rijker dan het organiseren van de update van een opgeslagen procedure en ervoor te zorgen dat de rollover op het juiste moment plaatsvindt. De wijzigingen worden ook eenvoudiger ongedaan gemaakt.
-* **Prestaties** : de latentie van gelijkwaardige bewerkingen tot 30% verkleind in vergelijking met de uitvoering van de opgeslagen procedure.
+* **Prestaties** : verminderde latentie bij vergelijk bare bewerkingen met een waarde van Maxi maal 30% in vergelijking met de uitgevoerde procedure.
 * **Serialisatie van inhoud** : elke bewerking binnen een transactionele batch kan gebruikmaken van aangepaste opties voor serialisatie voor de payload.
 
 ## <a name="how-to-create-a-transactional-batch-operation"></a>Een transactionele batch bewerking maken
@@ -51,13 +51,13 @@ TransactionalBatch batch = container.CreateTransactionalBatch(new PartitionKey(p
   .CreateItem<ChildClass>(child);
 ```
 
-Vervolgens moet u de volgende aanroepen `ExecuteAsync` :
+Vervolgens moet u aanroepen `ExecuteAsync` voor de batch:
 
 ```csharp
 TransactionalBatchResponse batchResponse = await batch.ExecuteAsync();
 ```
 
-Zodra het antwoord is ontvangen, moet u controleren of het al dan niet is gelukt en de resultaten ophalen:
+Nadat het antwoord is ontvangen, controleert u of het is geslaagd of niet, en haalt u de resultaten op:
 
 ```csharp
 using (batchResponse)
@@ -72,7 +72,7 @@ using (batchResponse)
 }
 ```
 
-Als er een fout optreedt, heeft de mislukte bewerking de status code van de bijbehorende fout. Dat alle andere bewerkingen een 424-status code (mislukte afhankelijkheid) hebben. In het onderstaande voor beeld mislukt de bewerking omdat deze probeert een item te maken dat al bestaat (409 HTTP status code. conflict). Status codes maken het gemakkelijker om de oorzaak van transactie storingen te identificeren.
+Als er een fout optreedt, heeft de mislukte bewerking de status code van de bijbehorende fout. Voor alle andere bewerkingen geldt een status code van 424 (mislukte afhankelijkheid). In het onderstaande voor beeld mislukt de bewerking omdat deze probeert een item te maken dat al bestaat (409 HTTP status code. conflict). Met de status code kan een de oorzaak van de transactie fout worden geïdentificeerd.
 
 ```csharp
 // Parent's birthday!
@@ -100,7 +100,7 @@ using (failedBatchResponse)
 
 Wanneer de `ExecuteAsync` methode wordt aangeroepen, worden alle bewerkingen in het `TransactionalBatch` object gegroepeerd, geserialiseerd in één nettolading en verzonden als één aanvraag aan de Azure Cosmos DB-service.
 
-De service ontvangt de aanvraag en voert alle bewerkingen binnen een transactionele scope uit en retourneert een antwoord met hetzelfde serialisatie protocol. Dit antwoord is een geslaagde of mislukte reactie en bevat alle afzonderlijke respons op de bewerking.
+De service ontvangt de aanvraag en voert alle bewerkingen binnen een transactionele scope uit en retourneert een antwoord met hetzelfde serialisatie protocol. Dit antwoord is een geslaagde of mislukte bewerking en levert afzonderlijke bewerkings reacties per bewerking.
 
 De SDK stelt het antwoord op u in staat om het resultaat te controleren en eventueel elk van de interne bewerkings resultaten te extra heren.
 
@@ -108,7 +108,7 @@ De SDK stelt het antwoord op u in staat om het resultaat te controleren en event
 
 Er zijn momenteel twee bekende limieten:
 
-* De limiet voor de grootte van Azure Cosmos DB-aanvragen geeft aan dat de `TransactionalBatch` Payload niet groter mag zijn dan 2 MB en dat de maximale uitvoerings tijd 5 seconden is.
+* De limiet voor de grootte van de Azure Cosmos DB-aanvraag beperkt de grootte van de `TransactionalBatch` nettolading tot niet meer dan 2 MB en de maximale uitvoerings tijd is 5 seconden.
 * Er is een huidige limiet van 100 bewerkingen per `TransactionalBatch` om ervoor te zorgen dat de prestaties zoals verwacht en binnen de sla's zijn.
 
 ## <a name="next-steps"></a>Volgende stappen

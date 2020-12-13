@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 38ab16fbadee245810a4486170dd54922c0c38f9
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 4c87dd905ae842647e7ec2e365abf450caf352b0
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558909"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369324"
 ---
 # <a name="security-control-v2-network-security"></a>Beveiligings controle v2: netwerk beveiliging
 
@@ -20,7 +20,7 @@ Netwerk beveiliging heeft betrekking op besturings elementen voor het beveiligen
 
 ## <a name="ns-1-implement-security-for-internal-traffic"></a>NS-1: beveiliging voor intern verkeer implementeren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-1 | 9,2, 9,4, 14,1, 14,2, 14,3 | AC-4, CA-3, SC-7 |
 
@@ -52,7 +52,7 @@ Gebruik Azure Sentinel om het gebruik van verouderde onveilige protocollen, zoal
 
 ## <a name="ns-2-connect-private-networks-together"></a>NS-2: particuliere netwerken met elkaar verbinden
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-2 | N.v.t. | CA-3, AC-17, MA-4 |
 
@@ -80,7 +80,7 @@ Als u twee of meer virtuele netwerken in azure met elkaar wilt verbinden, gebrui
 
 ## <a name="ns-3-establish-private-network-access-to-azure-services"></a>NS-3: Toegang tot Azure-services via particulier netwerk tot stand brengen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-3 | 14,1 | AC-4, CA-3, SC-7 |
 
@@ -104,7 +104,7 @@ Persoonlijke toegang is een extra verdedigings maatregel naast verificatie en ve
 
 ## <a name="ns-4-protect-applications-and-services-from-external-network-attacks"></a>NS-4: toepassingen en Services beveiligen tegen aanvallen van externe netwerken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-4 | 9,5, 12,3, 12,9 | SC-5, SC-7 |
 
@@ -134,7 +134,7 @@ Beveilig Azure-bronnen tegen aanvallen van externe netwerken, waaronder DDoS-aan
 
 ## <a name="ns-5-deploy-intrusion-detectionintrusion-prevention-systems-idsips"></a>NS-5: inbraak detectie/inbraak preventie systemen (ID'S/IP'S) implementeren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-5 | 12,6, 12,7 | SI-4 |
 
@@ -160,7 +160,7 @@ Opmerking: als u een wettelijke of andere vereiste hebt voor het gebruik van ID'
 
 ## <a name="ns-6-simplify-network-security-rules"></a>NS-6: netwerk beveiligings regels vereenvoudigen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-6 | 1.5 | IA-4 |
 
@@ -186,7 +186,7 @@ U kunt ook toepassings beveiligings groepen gebruiken om complexe beveiligings c
 
 ## <a name="ns-7-secure-domain-name-service-dns"></a>NS-7: secure Domain Name Service (DNS)
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | NS-7 | N.v.t. | SC-20, SC-21 |
 

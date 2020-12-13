@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: af9a86613b3aa29cc01b5ef0daa1f3854940deaf
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 935a6b41152ff914889e299b6455fbb30b2f0447
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96534060"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369052"
 ---
 # <a name="security-control-v2-governance-and-strategy"></a>Beveiligings controle v2: governance en strategie
 
@@ -20,7 +20,7 @@ Governance en strategie biedt richt lijnen voor het garanderen van een samenhang
 
 ## <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: Strategie voor asset-management en gegevensbescherming definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-1 | 2, 13 | SC, AC |
 
@@ -63,7 +63,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ## <a name="gs-2-define-enterprise-segmentation-strategy"></a>GS-2: Segmentatiestrategie van bedrijf definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-2 | 4, 9, 16 | AC, CA, SC |
 
@@ -87,7 +87,7 @@ Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor a
 
 ## <a name="gs-3-define-security-posture-management-strategy"></a>GS-3: Strategie voor het beheer van beveiligingspostuur definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-3 | 20, 3, 5 | RA, CM, SC |
 
@@ -103,7 +103,7 @@ U kunt de Risico's voor uw afzonderlijke assets en de omgeving die ze hosten, vo
 
 ## <a name="gs-4-align-organization-roles-responsibilities-and-accountabilities"></a>GS-4: Organisatierollen, verantwoordelijkheden en aansprakelijkheden afstemmen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-4 | N.v.t. | PL, PM |
 
@@ -123,7 +123,7 @@ Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden 
 
 ## <a name="gs-5-define-network-security-strategy"></a>GS-5: Strategie voor netwerkbeveiliging definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-5 | 9 | CA, SC |
 
@@ -161,7 +161,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ## <a name="gs-6-define-identity-and-privileged-access-strategy"></a>GS-6: Strategie voor het gebruik van identiteiten en uitgebreide toegang definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-6 | 16, 4 | AC, AU, SC |
 
@@ -197,7 +197,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ## <a name="gs-7-define-logging-and-threat-response-strategy"></a>GS-7: Strategie voor logboekregistratie en respons op bedreigingen definiëren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-7 | 19 | IR, AU, RA, SC |
 
@@ -238,7 +238,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ## <a name="gs-8-define-backup-and-recovery-strategy"></a>GS-8: de strategie voor back-up en herstel bepalen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-8 | 10 | CP (consistentie en partitietolerantie) |
 

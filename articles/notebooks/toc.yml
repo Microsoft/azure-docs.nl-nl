@@ -8,43 +8,11 @@
   items:
     - name: Aanmelden en een gebruikers-id instellen
       href: quickstart-sign-in-azure-notebooks.md
-    - name: Een notebook maken en delen
-      href: quickstart-create-share-jupyter-notebook.md
-    - name: Een notebook klonen
-      href: quickstart-clone-jupyter-notebook.md
-    - name: Een lokaal Jupyter-notebook migreren
-      href: quickstart-migrate-local-jupyter-notebook.md
-    - name: Een aangepaste omgeving gebruiken
-      href: quickstart-create-jupyter-notebook-project-environment.md
     - name: Uw project exporteren
       href: quickstart-export-jupyter-notebook-project.md
-- name: Zelfstudies
-  items:
-    - name: Een notebook maken en uitvoeren
-      href: tutorial-create-run-jupyter-notebook.md
-- name: Voorbeelden
-  items:
-    - name: Voorbeelden van notebooks
-      href: azure-notebooks-samples.md
 - name: Concepten
   items:
     - name: Accounts
       href: azure-notebooks-user-account.md
     - name: Profielen
       href: azure-notebooks-user-profile.md
-- name: Instructiegidsen
-  items:
-    - name: Projecten maken en klonen
-      href: create-clone-jupyter-notebooks.md
-    - name: Projecten beheren en configureren
-      href: configure-manage-azure-notebooks-projects.md
-    - name: Pakketten in een notebook installeren
-      href: install-packages-jupyter-notebook.md
-    - name: Een diavoorstelling presenteren
-      href: present-jupyter-notebooks-slideshow.md
-    - name: Werken met gegevensbestanden
-      href: work-with-project-data-files.md
-    - name: Toegang tot gegevensresources
-      href: access-data-resources-jupyter-notebooks.md
-    - name: Virtuele machines voor datatechnologie gebruiken
-      href: use-data-science-virtual-machine.md

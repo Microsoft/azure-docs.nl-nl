@@ -7,45 +7,45 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2b21bea924ee8eaed37246ce55feaf8243e3e7d4
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 33f5dff65fa7ad8274051f784f2e61dc8366d389
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408734"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368848"
 ---
 # <a name="security-control-v2-identity-management"></a>Beveiligings controle v2: identiteits beheer
 
 Identiteits beheer is van toepassing op besturings elementen voor het instellen van een beveiligde identiteits-en toegangs beheer met Azure Active Directory. Dit geldt ook voor het gebruik van eenmalige aanmelding, sterke verificaties, beheerde identiteiten (en service principes) voor toepassingen, voorwaardelijke toegang en het controleren van afwijkingen van accounts.
 
-## <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>Chat-1: Azure Active Directory standaardiseren als het centrale identiteits-en verificatie systeem
+## <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: Azure Active Directory standaardiseren als het centrale identiteits--en verificatiesysteem
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-1 | 16,1, 16,2, 16,4, 16,5 | IA-2, IA-8, AC-2, AC-3 |
 
-Azure Active Directory (Azure AD) is de standaard service voor identiteits-en toegangs beheer van Azure. U moet de standaardisatie van Azure AD gebruiken om het identiteits-en toegangs beheer van uw organisatie in te bepalen:
-- Micro soft-cloud resources, zoals de Azure Portal, Azure Storage, Azure Virtual Machines (Linux en Windows), Azure Key Vault, PaaS en SaaS-toepassingen.
+Azure Active Directory (Azure AD) is de standaard service voor identiteits-en toegangs beheer van Azure. U moet standaardiseren in overeenstemming met Azure AD om het identiteits- en toegangsbeheer van uw organisatie te regelen in:
+- Microsoft-cloudresources, zoals Azure Portal, Azure Storage, Azure Virtual Machines (Linux en Windows), Azure Key Vault, PaaS en SaaS-toepassingen.
 
-- De resources van uw organisatie, zoals toepassingen op Azure of uw bedrijfs netwerk resources.
+- De resources van uw organisatie, zoals toepassingen in Azure of resources van uw bedrijfsnetwerk.
 
-Het beveiligen van Azure AD moet een hoge prioriteit hebben in de Cloud beveiligings procedure van uw organisatie. Azure AD biedt een beveiligde score voor identiteiten om u te helpen bij het beoordelen van uw identiteits beveiligings postuur ten opzichte van de best practice aanbevelingen van micro soft. Gebruik de score om te meten hoe nauw keurig uw configuratie overeenkomt met best practice aanbevelingen en om verbeteringen aan te brengen in uw beveiligings postuur.
+Het beveiligen van Azure AD moet een hoge prioriteit hebben bij het nemen van beveiligingsmaatregelen voor de cloud in uw organisatie. Azure AD biedt een id-beveiligingsscore om u te helpen uw postuur voor identiteitsbeveiliging te bepalen ten opzichte van de best practices die Microsoft aanbeveelt. Gebruik de score om te meten hoe goed uw configuratie aansluit bij de aanbevelingen en om verbeteringen door te voeren in uw beveiligingspostuur.
 
-Opmerking: Azure AD biedt ondersteuning voor externe ID-providers, waarmee gebruikers zonder Microsoft-account zich kunnen aanmelden bij hun toepassingen en resources met hun externe identiteit.
+Opmerking: Azure AD biedt ondersteuning voor externe iD-providers, zodat gebruikers zonder Microsoft-account zich met hun externe identiteit kunnen aanmelden bij hun toepassingen en resources.
 
-- [Pacht in azure AD](../../active-directory/develop/single-and-multi-tenant-apps.md)
+- [Tenancy in Azure AD](../../active-directory/develop/single-and-multi-tenant-apps.md)
 
-- [Een Azure AD-exemplaar maken en configureren](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Een Azure AD-instantie maken en configureren](../../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 - [Azure AD-tenants definiëren](https://azure.microsoft.com/resources/securing-azure-environments-with-azure-active-directory/)  
 
-- [Externe ID-providers voor een toepassing gebruiken](../../active-directory/external-identities/identity-providers.md)
+- [Externe id-providers gebruiken voor een toepassing](../../active-directory/external-identities/identity-providers.md)
 
-- [Wat is de beveiligde score voor identiteiten in azure AD](../../active-directory/fundamentals/identity-secure-score.md)
+- [Wat is de id-beveiligingsscore in Azure AD?](../../active-directory/fundamentals/identity-secure-score.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Identiteits-en sleutel beheer](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys) 
 
@@ -55,9 +55,9 @@ Opmerking: Azure AD biedt ondersteuning voor externe ID-providers, waarmee gebru
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
-## <a name="im-2-manage-application-identities-securely-and-automatically"></a>IM-2: toepassings identiteiten veilig en automatisch beheren
+## <a name="im-2-manage-application-identities-securely-and-automatically"></a>IM-2: Toepassingsidentiteiten veilig en automatisch beheren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-2 | N.v.t. | AC-2, AC-3, IA-2, IA-4, IA-9 |
 
@@ -75,17 +75,17 @@ Voor services die geen beheerde identiteiten ondersteunen, gebruikt u Azure AD o
 
 Azure Key Vault gebruiken voor registratie van beveiligings-principals: verificatie # autoriseren-a-Security-Principal-to-Access-Key-kluis
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Identiteits-en sleutel beheer](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
-## <a name="im-3-use-azure-ad-single-sign-on-sso-for-application-access"></a>IM-3: eenmalige aanmelding (SSO) van Azure AD gebruiken voor toegang tot toepassingen
+## <a name="im-3-use-azure-ad-single-sign-on-sso-for-application-access"></a>IM-3: Eenmalige aanmelding (SSO) van Azure AD gebruiken voor toegang tot toepassingen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-3 | 4.4 | IA-2, IA-4 |
 
@@ -95,9 +95,9 @@ Gebruik eenmalige aanmelding (SSO) van Azure AD voor het beheren en beveiligen v
 
 - [Meer informatie over de SSO van de toepassing met Azure AD](../../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -105,9 +105,9 @@ Gebruik eenmalige aanmelding (SSO) van Azure AD voor het beheren en beveiligen v
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
-## <a name="im-4-use-strong-authentication-controls-for-all-azure-active-directory-based-access"></a>Chat-4: gebruik sterke verificatie-instellingen voor alle toegang op basis van Azure Active Directory
+## <a name="im-4-use-strong-authentication-controls-for-all-azure-active-directory-based-access"></a>IM-4: Gebruik krachtige besturingselementen voor verificatie voor alle op Azure Active Directory gebaseerde toegang
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-4 | 4,2, 4,4 4,5, 11,5, 12,11, 16,3 | AC-2, AC-3, IA-2, IA-4 |
 
@@ -122,17 +122,17 @@ Als er nog steeds verouderde verificatie op basis van wacht woorden wordt gebrui
 
 Opmerking: verificatie op basis van wachtwoord referenties is alleen vatbaar voor populaire aanvals methoden. Voor een betere beveiliging gebruikt u sterke verificatie zoals MFA en een sterk wachtwoord beleid. Voor toepassingen van derden en Marketplace-services die standaard wachtwoorden kunnen hebben, moet u deze wijzigen tijdens de initiële service-instelling. 
 
-- [MFA inschakelen in azure](../../active-directory/authentication/howto-mfa-getstarted.md)
+- [MFA inschakelen in Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
 
-- [Inleiding tot verificatie opties met een wacht woord voor Azure Active Directory](../../active-directory/authentication/concept-authentication-passwordless.md)
+- [Algemene informatie over opties voor verificatie zonder wachtwoord voor Azure Active Directory](../../active-directory/authentication/concept-authentication-passwordless.md)
 
-- [Standaard wachtwoord beleid voor Azure AD](../../active-directory/authentication/concept-sspr-policy.md#password-policies-that-only-apply-to-cloud-user-accounts)
+- [Standaardwachtwoordbeleid voor Azure AD](../../active-directory/authentication/concept-sspr-policy.md#password-policies-that-only-apply-to-cloud-user-accounts)
 
-- [Verwijder beschadigde wacht woorden met Azure AD-wachtwoord beveiliging](../../active-directory/authentication/concept-password-ban-bad.md)
+- [Ongeschikte wachtwoorden voorkomen met Azure AD-wachtwoordbeveiliging](../../active-directory/authentication/concept-password-ban-bad.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -140,14 +140,14 @@ Opmerking: verificatie op basis van wachtwoord referenties is alleen vatbaar voo
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
-## <a name="im-5-monitor-and-alert-on-account-anomalies"></a>IM-5: controleren en waarschuwen voor afwijkingen van het account
+## <a name="im-5-monitor-and-alert-on-account-anomalies"></a>IM-5: Bewaken van accounts op afwijkingen en waarschuwingenbeheer
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-5 | 4,8, 4,9, 16,12, 16,13 | AC-2, AC-3, AC-7, AU-6 |
 
 Azure AD biedt de volgende gegevens bronnen: 
--   Aanmeldingen: het rapport met aanmeldingen bevat informatie over het gebruik van beheerde toepassingen en aanmeldings activiteiten voor gebruikers.
+-   Aanmeldingen: het rapport voor aanmeldingsactiviteit bevat informatie over het gebruik van beheerde toepassingen en aanmeldingsactiviteiten van gebruikers
 
 -   Audit logboeken: voorziet in traceer baarheid via Logboeken voor alle wijzigingen die zijn aangebracht via verschillende functies in azure AD. Voor beelden van audit Logboeken in vastgelegde wijzigingen zijn het toevoegen of verwijderen van gebruikers, apps, groepen, rollen en beleids regels.
 
@@ -155,7 +155,7 @@ Azure AD biedt de volgende gegevens bronnen:
 
 -   Gebruikers voor wie wordt aangegeven dat ze risico lopen - Een riskante gebruiker is een indicator van een gebruikersaccount dat mogelijk is aangetast.
 
-Deze gegevens bronnen kunnen worden geïntegreerd met Azure Monitor, Azure Sentinel of SIEM Systems van derden.
+Deze gegevensbronnen kunnen worden geïntegreerd met Azure Monitor, Azure Sentinel of SIEM-systemen van derden.
 
 Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activiteiten, zoals een uitzonderlijk aantal mislukte verificatie pogingen en afgeschafte accounts in het abonnement. 
 
@@ -163,13 +163,13 @@ Azure Advanced Threat Protection (ATP) is een beveiligings oplossing die on-prem
 
 - [Activiteiten rapporten controleren in azure AD](../../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Risk ante aanmeldingen voor Azure AD weer geven](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Riskante Azure AD-aanmeldingen weergeven](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor Risk ante activiteiten](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../../security-center/security-center-identity-access.md)
+- [Identiteits- en toegangsactiviteiten van gebruikers controleren in Azure Security Center](../../security-center/security-center-identity-access.md)
 
-- [Waarschuwingen in de module Threat Intelligence-beveiliging van Azure Security Center](../../security-center/alerts-reference.md)
+- [Waarschuwingen in de module Threat Intelligence Protection van Azure Security Center](../../security-center/alerts-reference.md)
 
 - [Azure-activiteiten logboeken integreren in Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -177,17 +177,17 @@ Azure Advanced Threat Protection (ATP) is een beveiligings oplossing die on-prem
 
 - [Azure Advanced Threat Protection](/azure-advanced-threat-protection/what-is-atp)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)
 
-## <a name="im-6-restrict-azure-resource-access-based-on-conditions"></a>Chat-6: toegang tot Azure-bronnen beperken op basis van voor waarden
+## <a name="im-6-restrict-azure-resource-access-based-on-conditions"></a>IM-6: Toegang tot Azure-resource beperken op basis van voorwaarden
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-6 | N.v.t. | AC-2, AC-3 |
 
@@ -199,9 +199,9 @@ Gebruik voorwaardelijke toegang voor Azure AD voor meer gedetailleerd toegangs b
 
 - [Beheer van verificatiesessies met voorwaardelijke toegang configureren](../../active-directory/conditional-access/howto-conditional-access-session-lifetime.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Identiteits-en sleutel beheer](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
 
@@ -211,23 +211,23 @@ Gebruik voorwaardelijke toegang voor Azure AD voor meer gedetailleerd toegangs b
 
 - [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="im-7-eliminate-unintended-credential-exposure"></a>Chat-7: onbedoelde referentie blootstelling elimineren
+## <a name="im-7-eliminate-unintended-credential-exposure"></a>IM-7: Onbedoelde blootstelling van referenties elimineren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-7 | 18,1, 18,7 | IA-5 |
 
 Implementeer de Azure DevOps-referentie scanner om referenties in de code te identificeren. Credential scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault.
 
-Voor GitHub kunt u de systeem eigen functie voor het scannen van geheime gegevens gebruiken om referenties of een andere vorm van geheimen binnen de code te identificeren.
+Voor GitHub kunt u de systeemeigen functie voor het scannen op geheimen gebruiken om referenties of een andere vormen van geheimen binnen de code te identificeren.
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-- [GitHub Secret Scanning](https://docs.github.com/github/administering-a-repository/about-secret-scanning)
+- [Scannen op geheimen in GitHub](https://docs.github.com/github/administering-a-repository/about-secret-scanning)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Toepassingsbeveiliging en DevSecOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
@@ -235,7 +235,7 @@ Voor GitHub kunt u de systeem eigen functie voor het scannen van geheime gegeven
 
 ## <a name="im-8-secure-user-access-to-legacy-applications"></a>IM-8: beveiligde gebruikers toegang tot verouderde toepassingen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | CHAT-8 | 14,6 | AC-2, AC-3, SC-11 |
 
@@ -249,9 +249,9 @@ Microsoft Cloud App Security is ook een CASB-service (Cloud Access Security Brok
 
 - [Aanbevolen procedures Microsoft Cloud App Security](/cloud-app-security/best-practices)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture) 
 

@@ -121,5 +121,7 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Prijscalculator
       href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Regionale beschikbaarheid
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-lighthouse&regions=all'
     - name: Productfeedback
       href: 'https://feedback.azure.com/forums/922753'

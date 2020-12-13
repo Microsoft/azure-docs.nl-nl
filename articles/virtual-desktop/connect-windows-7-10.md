@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c9da2acac0957d7fe06d0249775fbed73b5f458d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 59379dd9c3a41729466de269b52dfd3fb206eea9
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287335"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368712"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Verbinding maken met de Windows Desktop-client
 
@@ -57,7 +57,7 @@ Er zijn twee manieren waarop u zich kunt abonneren op een werk ruimte. De client
 
 1. Selecteer op de hoofd pagina van de client **abonneren met URL**.
 2. Voer de URL van de werk ruimte of uw e-mail adres in:
-   - Als u de **werk ruimte-URL**gebruikt, gebruikt u de beheerder die u hebt ontvangen. Als u toegang hebt tot resources van virtueel bureau blad van Windows, kunt u een van de volgende Url's gebruiken:
+   - Als u de **werk ruimte-URL** gebruikt, gebruikt u de beheerder die u hebt ontvangen. Als u toegang hebt tot resources van virtueel bureau blad van Windows, kunt u een van de volgende Url's gebruiken:
      - Virtueel bureau blad van Windows (klassiek): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
      - Virtueel bureau blad van Windows: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
      - Virtueel bureau blad van Windows (US Gov): `https://rdweb.wvd.azure.us/api/arm/feeddiscovery`
@@ -69,3 +69,5 @@ Er zijn twee manieren waarop u zich kunt abonneren op een werk ruimte. De client
 ## <a name="next-steps"></a>Volgende stappen
 
 Ga voor meer informatie over het gebruik van de Windows-desktop-client naar [aan de slag met de Windows desktop-client](/windows-server/remote/remote-desktop-services/clients/windowsdesktop/).
+
+Als u een beheerder bent die graag meer gedetailleerde informatie over het gebruik van Windows Desktop, raadpleegt u [Windows desktop client voor beheerders](/windows-server/remote/remote-desktop-services/clients/windowsdesktop-admin).

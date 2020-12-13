@@ -3,12 +3,12 @@ title: Gebeurtenis levering, beheerde service-identiteit en persoonlijke koppeli
 description: In dit artikel wordt beschreven hoe u de beheerde service-identiteit voor een Azure Event grid-onderwerp inschakelt. Gebruik dit om gebeurtenissen door te sturen naar ondersteunde bestemmingen.
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: d16310ac61121af0cc9d76664bfeeeb14e1bc243
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: edb3e5ac8257a29ecd3835e1dfd4c116c3cc7164
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491712"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368610"
 ---
 # <a name="event-delivery-with-a-managed-identity"></a>Gebeurtenis levering met een beheerde identiteit
 In dit artikel wordt beschreven hoe u een [beheerde service-identiteit](../active-directory/managed-identities-azure-resources/overview.md) voor Azure Event grid-onderwerpen of-domeinen inschakelt. Gebruik dit om gebeurtenissen door te sturen naar ondersteunde bestemmingen, zoals Service Bus-wacht rijen en-onderwerpen, Event hubs en opslag accounts.
@@ -45,7 +45,7 @@ In de vorige sectie hebt u geleerd hoe u een door het systeem beheerde identitei
 ### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
 De volgende procedure laat zien hoe u een door het systeem beheerde identiteit voor een onderwerp inschakelt. De stappen voor het inschakelen van een identiteit voor een domein zijn vergelijkbaar. 
 
-1. Ga naar de [Azure Portal](https://portal.azure.com).
+1. Ga naar [Azure Portal](https://portal.azure.com).
 2. Zoek naar **Event grid-onderwerpen** in de zoek balk aan de bovenkant.
 3. Selecteer het **onderwerp** waarvoor u de beheerde identiteit wilt inschakelen. 
 4. Ga naar het tabblad **identiteit** . 

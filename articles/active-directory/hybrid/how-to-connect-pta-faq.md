@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bb9d9e7c60344a2a4c538c6d3bf59e337e4569c
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 75f797c40a276323cea9983c5340d2d854160c83
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836322"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368474"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Pass-Through-verificatie Azure Active Directory: veelgestelde vragen
 
@@ -137,10 +137,6 @@ Voor de meeste klanten zijn twee of drie verificatie agenten in totaal voldoende
 
 >[!NOTE]
 >Er is een systeem limiet van 40-verificatie agenten per Tenant.
-
-## <a name="can-i-install-the-first-pass-through-authentication-agent-on-a-server-other-than-the-one-that-runs-azure-ad-connect"></a>Kan ik de eerste pass-through-verificatie agent installeren op een andere server dan die waarop Azure AD Connect wordt uitgevoerd?
-
-Nee, dit scenario wordt _niet_ ondersteund.
 
 ## <a name="why-do-i-need-a-cloud-only-global-administrator-account-to-enable-pass-through-authentication"></a>Waarom heb ik een globale beheerders account voor de Cloud nodig om Pass-Through-verificatie in te scha kelen?
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: e74994847608b7fb59a1bf507691f02cf02b714a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 937d0b379c4f669e5b57e5053d5e3bffeb091e78
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408870"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368950"
 ---
 # <a name="security-control-v2-endpoint-security"></a>Beveiligings controle v2: Endpoint Security
 
@@ -20,7 +20,7 @@ Endpoint Security heeft betrekking op besturings elementen in eindpunt detectie 
 
 ## <a name="es-1-use-endpoint-detection-and-response-edr"></a>ES-1: eindpunt detectie en-antwoord gebruiken (EDR)
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | ES-1 | 8.1 | SI-2, SI-3, SC-3 |
 
@@ -34,9 +34,9 @@ Micro soft Defender Advanced Threat Protection biedt een EDR-mogelijkheid als on
 
 - [Micro soft Defender ATP-service voor niet-Windows-servers](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-non-windows)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -48,7 +48,7 @@ Micro soft Defender Advanced Threat Protection biedt een EDR-mogelijkheid als on
 
 ## <a name="es-2-use-centrally-managed-modern-anti-malware-software"></a>ES-2: centraal beheerde moderne anti-malware-software gebruiken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | ES-2 | 8.1 | SI-2, SI-3, SC-3 |
 
@@ -62,9 +62,9 @@ Micro soft antimalware voor Azure Cloud Services is de standaard anti-malware vo
 
 - [Ondersteunde Endpoint Protection-oplossingen](../../security-center/security-center-services.md?tabs=features-windows#supported-endpoint-protection-solutions-)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security)
 
@@ -76,7 +76,7 @@ Micro soft antimalware voor Azure Cloud Services is de standaard anti-malware vo
 
 ## <a name="es-3-ensure-anti-malware-software-and-signatures-are-updated"></a>ES-3: controleren of anti-malware-software en hand tekeningen zijn bijgewerkt
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | ES-3 | 8,2 | SI-2, SI-3 |
 
@@ -86,9 +86,9 @@ Volg de aanbevelingen in Azure Security Center: "COMPUTE &amp; apps" om ervoor t
 
 - [Micro soft antimalware implementeren voor Azure Cloud Services en Virtual Machines](../fundamentals/antimalware.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security)
 

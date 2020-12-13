@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 610ab649d64351b0897ef7358cdaf9280fe3ba55
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: c18ee43eefe9c6cf9cba7f4e8f6c3fd3f55bba5a
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684915"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368695"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -396,9 +396,9 @@ Zie [FILESTREAM](/sql/relational-databases/blob/filestream-sql-server) en [FileT
 
 Gekoppelde servers in SQL Managed instance ondersteunen een beperkt aantal doelen:
 
-- Ondersteunde doelen zijn SQL Managed instance, SQL Database, Azure Synapse SQL en SQL Server instances. 
+- Ondersteunde doelen zijn SQL Managed instance, SQL Database, Azure Synapse SQL [serverloze](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/) en dedicated pools en SQL Server exemplaren. 
 - Gekoppelde servers ondersteunen geen gedistribueerde Beschrijf bare trans acties (MS DTC).
-- Doelen die niet worden ondersteund zijn bestanden, Analysis Services en andere RDBMS. Gebruik `BULK INSERT` of `OPENROWSET` als alternatief voor het importeren van bestanden met behulp van een systeem eigen csv-import bewerking vanuit Azure Blob Storage.
+- Doelen die niet worden ondersteund zijn bestanden, Analysis Services en andere RDBMS. Gebruik een systeem eigen CSV-Import van Azure Blob Storage met `BULK INSERT` of `OPENROWSET` als alternatief voor het importeren van bestanden of het laden van bestand met een [serverloze SQL-groep in azure Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/).
 
 Bewerkingen: 
 
@@ -406,11 +406,12 @@ Bewerkingen:
 - `sp_dropserver` wordt ondersteund voor het verwijderen van een gekoppelde server. Zie [sp_dropserver](/sql/relational-databases/system-stored-procedures/sp-dropserver-transact-sql).
 - De `OPENROWSET` functie kan worden gebruikt om alleen query's uit te voeren op SQL Server exemplaren. Ze kunnen worden beheerd, on-premises of in virtuele machines. Zie [OPENrowset](/sql/t-sql/functions/openrowset-transact-sql).
 - De `OPENDATASOURCE` functie kan worden gebruikt om alleen query's uit te voeren op SQL Server exemplaren. Ze kunnen worden beheerd, on-premises of in virtuele machines. Alleen de `SQLNCLI` `SQLNCLI11` waarden, en `SQLOLEDB` worden ondersteund als een provider. Een voorbeeld is `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. Zie [OPENDATA source](/sql/t-sql/functions/opendatasource-transact-sql).
-- Gekoppelde servers kunnen niet worden gebruikt voor het lezen van bestanden (Excel, CSV) van de netwerk shares. Probeer [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file) of [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) te gebruiken waarmee CSV-bestanden van Azure Blob Storage worden gelezen. Deze aanvragen volgen voor het feedback-item van een [SQL Managed instance](https://feedback.azure.com/forums/915676-sql-managed-instance/suggestions/35657887-linked-server-to-non-sql-sources)|
+- Gekoppelde servers kunnen niet worden gebruikt voor het lezen van bestanden (Excel, CSV) van de netwerk shares. Probeer [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file), [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) , te gebruiken voor het lezen van CSV-bestanden van Azure Blob Storage of een [gekoppelde server die verwijst naar een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/). Deze aanvragen volgen voor het feedback-item van een [SQL Managed instance](https://feedback.azure.com/forums/915676-sql-managed-instance/suggestions/35657887-linked-server-to-non-sql-sources)|
 
 ### <a name="polybase"></a>PolyBase
 
-Het enige ondersteunde type externe bron is RDBMS, naar Azure SQL Database en andere Azure SQL Managed instance. Zie [poly base](/sql/relational-databases/polybase/polybase-guide)voor meer informatie over poly base.
+De enige beschik bare typen externe bronnen zijn RDBMS (in open bare preview) tot Azure SQL database, Azure SQL Managed instance en Azure Synapse pool. U kunt [een externe tabel gebruiken die verwijst naar een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/read-azure-storage-files-using-synapse-sql-external-tables/) als tijdelijke oplossing voor poly base externe tabellen die rechtstreeks vanuit de Azure-opslag worden gelezen. In Azure SQL Managed Instance kunt u gekoppelde servers gebruiken voor [een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/) of SQL Server voor het lezen van Azure Storage-gegevens.
+Zie [poly base](/sql/relational-databases/polybase/polybase-guide)voor meer informatie over poly base.
 
 ### <a name="replication"></a>Replicatie
 

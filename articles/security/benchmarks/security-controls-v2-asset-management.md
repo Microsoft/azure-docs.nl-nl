@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 8602450ef7df7f728fc5bdcda4f46ae30058fc94
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f0c2fe78c32357798e1f9acb43f5867df9148b38
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487793"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368899"
 ---
 # <a name="security-control-v2-asset-management"></a>Beveiligings controle v2: beheer van middelen
 
@@ -20,7 +20,7 @@ Asset Management bestrijkt de controles om de zicht baarheid van de beveiliging 
 
 ## <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: Zorg ervoor dat het beveiligingsteam inzicht heeft in risico's voor assets
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-1 | 1,1, 1,2 | CM-8, PM-5 |
 
@@ -46,7 +46,7 @@ Opmerking: Er zijn mogelijk extra machtigingen vereist om inzicht te krijgen in 
 
 ## <a name="am-2-ensure-security-team-has-access-to-asset-inventory-and-metadata"></a>AM-2: Controleer of het beveiligingsteam toegang heeft tot de asset-inventaris en metagegevens
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-2 | 1,1, 1,2, 1,4, 1,5, 9,1, 12,1 | CM-8, PM-5 |
 
@@ -72,7 +72,7 @@ Organiseer op logische wijze assets op basis van de taxonomie van uw organisatie
 
 ## <a name="am-3-use-only-approved-azure-services"></a>AM-3: Gebruik alleen goedgekeurde Azure-Services
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-3 | 2,3, 2,4 | CM-7, CM-8 |
 
@@ -94,7 +94,7 @@ Gebruik Azure Policy om te controleren welke services gebruikers in uw omgeving 
 
 ## <a name="am-4-ensure-security-of-asset-lifecycle-management"></a>AM-4: Beveiliging van levenscyclusbeheer van assets garanderen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-4 | 2,3, 2,4, 2,5 | CM-7, CM-8, CM-10, CM-11 |
 
@@ -116,7 +116,7 @@ Verwijder Azure-resources wanneer deze ze niet meer nodig zijn.
 
 ## <a name="am-5-limit-users-ability-to-interact-with-azure-resource-manager"></a>AM-5: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-5 | 2.9 | AC-3 |
 
@@ -134,7 +134,7 @@ Gebruik voorwaardelijke toegang van Azure AD om de interactie van gebruikers met
 
 ## <a name="am-6-use-only-approved-applications-in-compute-resources"></a>AM-6: alleen goedgekeurde toepassingen in reken bronnen gebruiken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | AM-6 | 2,6, 2,7 | AC-3, CM-7, CM-8, CM-10, CM-11 |
 

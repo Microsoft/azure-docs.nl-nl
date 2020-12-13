@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2471aaad4ef10b611ab4ad812c5b1566cc7c4a07
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3bc97a932e622838315f717cc7b036a559787805
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412677"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369154"
 ---
 # <a name="overview-of-the-azure-security-benchmark-v2"></a>Overzicht van de Azure Security Bench Mark (v2)
 
@@ -25,10 +25,10 @@ Deze bench Mark maakt deel uit van een aantal holistische beveiligings richtlijn
 - **Azure Well-Architected Framework** : richt lijnen voor [het beveiligen van uw workloads](/assessments/?mode=pre-assessment&session=local) in Azure.
 - **Aanbevolen procedures voor micro soft-beveiliging** : [aanbevelingen](/security/compass/microsoft-security-compass-introduction) met voor beelden op Azure.
 
- De Azure Security-Bench Mark is gericht op Cloud gerichte controle gebieden. Deze besturings elementen zijn consistent met bekende beveiligings benchmarks, zoals die worden beschreven in het Center for Internet Security (CIS) Controls versie 7,1 en National Institute of Standards and Technology (NIST) SP800-53.
+ De Azure Security-Bench Mark is gericht op Cloud gerichte controle gebieden. Deze besturings elementen zijn consistent met bekende beveiligings benchmarks, zoals die worden beschreven in het Center for Internet Security (CIS) Controls versie 7,1 en National Institute of Standards and Technology (NIST) SP 800-53.
 De volgende besturings elementen zijn opgenomen in de Azure Security-Bench Mark:
 
-| Beheer domeinen ASB | Beschrijving 
+| Beheer domeinen ASB | Description 
 |--|--|
 | [Netwerk &nbsp; beveiliging &nbsp; (NS)](security-controls-v2-network-security.md) | Netwerk beveiliging heeft betrekking op besturings elementen voor het beveiligen en beveiligen van Azure-netwerken, waaronder het beveiligen van virtuele netwerken, het tot stand brengen van particuliere verbindingen, het voor komen en beperken van externe aanvallen en het beveiligen van DNS. |
 | [Identiteits &nbsp; beheer &nbsp; (IM)](security-controls-v2-identity-management.md) | Identiteits beheer heeft betrekking op besturings elementen voor het instellen van een beveiligde identiteits-en toegangs beheer met behulp van Azure Active Directory, waaronder het gebruik van eenmalige aanmelding, sterke verificaties, beheerde identiteiten (en service principes) voor toepassingen, voorwaardelijke toegang en het controleren van afwijkingen van accounts. |
@@ -46,11 +46,11 @@ De volgende besturings elementen zijn opgenomen in de Azure Security-Bench Mark:
 
 Elke aanbeveling bevat de volgende informatie:
 
-- **Azure-id** : de Azure Security Bench Mark-id die overeenkomt met de aanbeveling.
-- **CIS controleert v 7.1-id ('s)** : het CIS besturings element (en) die overeenkomen met deze aanbeveling.
-- **NIST SP800-53 R4-id ('s)** : de (gematige) SP800-(gemiddeld) besturings element (en) die overeenkomt met deze aanbeveling.
-- **Details** : de motivering van de aanbeveling en koppelingen naar richt lijnen voor het implementeren ervan. Als de aanbeveling wordt ondersteund door Azure Security Center, wordt die informatie ook weer gegeven.
-- **Verantwoordelijkheid** : of de klant, de service provider of beide verantwoordelijk zijn voor de implementatie van deze aanbeveling. Beveiligings verantwoordelijkheden worden gedeeld in de open bare Cloud. Sommige beveiligings mechanismen zijn alleen beschikbaar voor de Cloud serviceprovider en daarom is de provider verantwoordelijk voor het adresseren van deze. Dit zijn algemene waarnemingen: voor sommige afzonderlijke services is de verantwoordelijkheid afwijkend van wat wordt vermeld in de Azure Security-benchmark waarde. Deze verschillen worden beschreven in de aanbevelingen van de basis lijn voor de afzonderlijke service.
+- **Azure-id**: de Azure Security Bench Mark-id die overeenkomt met de aanbeveling.
+- **CIS controleert v 7.1-id ('s)**: het CIS besturings element (en) die overeenkomen met deze aanbeveling.
+- **NIST sp 800-53 R4-id ('s)**: de Control (s) van het nist SP 800-53 R4 (gemiddeld) die overeenkomen met deze aanbeveling.
+- **Details**: de motivering van de aanbeveling en koppelingen naar richt lijnen voor het implementeren ervan. Als de aanbeveling wordt ondersteund door Azure Security Center, wordt die informatie ook weer gegeven.
+- **Verantwoordelijkheid**: of de klant, de service provider of beide verantwoordelijk zijn voor de implementatie van deze aanbeveling. Beveiligings verantwoordelijkheden worden gedeeld in de open bare Cloud. Sommige beveiligings mechanismen zijn alleen beschikbaar voor de Cloud serviceprovider en daarom is de provider verantwoordelijk voor het adresseren van deze. Dit zijn algemene waarnemingen: voor sommige afzonderlijke services is de verantwoordelijkheid afwijkend van wat wordt vermeld in de Azure Security-benchmark waarde. Deze verschillen worden beschreven in de aanbevelingen van de basis lijn voor de afzonderlijke service.
 - **Beveiligings belanghebbenden** van de klant: [de beveiligings functies](/azure/cloud-adoption-framework/organize/cloud-security#security-functions) bij de organisatie van de klant die kunnen worden beheerbaar, verantwoordelijk of geraadpleegd voor de respectieve controle. Het kan afwijken van de organisatie naar de organisatie, afhankelijk van de organisatie structuur van uw bedrijf en de rollen en verantwoordelijkheden die u hebt ingesteld voor de beveiliging van Azure.
 
 > [!NOTE]

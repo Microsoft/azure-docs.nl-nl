@@ -6,18 +6,16 @@ documentationcenter: ''
 author: rolyon
 manager: mtillman
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/13/2020
+ms.date: 12/11/2020
 ms.author: rolyon
-ms.openlocfilehash: 9ab6561b1dc0e8b977fc69d259c5f26366f355ce
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: ecda0edcd34999e8cbb6c7ab9039953d17c119e5
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92481326"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369223"
 ---
 # <a name="create-or-update-azure-custom-roles-using-the-azure-portal"></a>Aangepaste Azure-rollen maken of bijwerken met behulp van Azure Portal
 
@@ -31,14 +29,12 @@ Als u aangepaste rollen wilt maken, hebt u het volgende nodig:
 
 ## <a name="step-1-determine-the-permissions-you-need"></a>Stap 1: de machtigingen bepalen die u nodig hebt
 
-Azure heeft duizenden machtigingen die u mogelijk in uw aangepaste rol kunt gebruiken. Hier volgen vier manieren waarop u de machtigingen kunt bepalen die u wilt toevoegen aan uw aangepaste rol:
+Azure heeft duizenden machtigingen die u mogelijk in uw aangepaste rol kunt gebruiken. Hier volgen enkele methoden die u kunnen helpen bij het bepalen van de machtigingen die u wilt toevoegen aan uw aangepaste rol:
 
-| Methode | Beschrijving |
-| --- | --- |
-| De bestaande rollen bekijken | U kunt de bestaande rollen bekijken om te zien welke machtigingen er worden gebruikt. Zie [Ingebouwde rollen in Azure](built-in-roles.md) voor meer informatie. |
-| Zoeken naar machtigingen op tref woord | Wanneer u een aangepaste rol maakt met behulp van de Azure Portal, kunt u zoeken naar machtigingen op sleutel woord. U kunt bijvoorbeeld zoeken naar machtigingen voor de *virtuele machine* of *facturering* . Deze zoek functie wordt verderop beschreven in [stap 4: machtigingen](#step-4-permissions). |
-| Alle machtigingen downloaden | Wanneer u een aangepaste rol maakt met behulp van de Azure Portal, kunt u alle machtigingen als een CSV-bestand downloaden en dit bestand vervolgens doorzoeken. Klik in het deel venster **machtigingen toevoegen** op de knop **alle machtigingen downloaden** om alle machtigingen te downloaden. Zie voor meer informatie over het deel venster machtigingen toevoegen [stap 4: machtigingen](#step-4-permissions). |
-| De machtigingen in de docs weer geven | U kunt de beschik bare machtigingen weer geven in [Azure Resource Manager bewerkingen van de resource provider](resource-provider-operations.md). |
+- Bekijk de bestaande [ingebouwde rollen](built-in-roles.md).
+- Vermeld de Azure-Services waaraan u toegang wilt verlenen.
+- Bepaal de [resource providers die zijn toegewezen aan de Azure-Services](../azure-resource-manager/management/azure-services-resource-providers.md). Een zoek methode wordt verderop in [stap 4: machtigingen](#step-4-permissions)beschreven.
+- Zoek de [beschik bare machtigingen](resource-provider-operations.md) om de machtigingen te vinden die u wilt toevoegen. Een zoek methode wordt verderop in [stap 4: machtigingen](#step-4-permissions)beschreven.
 
 ## <a name="step-2-choose-how-to-start"></a>Stap 2: kiezen hoe u begint
 
@@ -142,7 +138,7 @@ Als u wilt, kunt u het meren deel van uw aangepaste Rolinstellingen opgeven in e
 
     Hiermee opent u de editor voor aangepaste rollen.
 
-1. Selecteer op het tabblad basis beginselen in **basislijn machtigingen**de optie **starten vanuit JSON**.
+1. Selecteer op het tabblad basis beginselen in **basislijn machtigingen** de optie **starten vanuit JSON**.
 
 1. Klik naast het vak een bestand selecteren op de knop map om het dialoog venster openen te openen.
 
@@ -261,7 +257,7 @@ Op het tabblad **toewijs bare bereiken** geeft u op waar uw aangepaste rol besch
 
 Op het tabblad **JSON** ziet u de aangepaste rol die is ingedeeld in JSON. Als u wilt, kunt u de JSON rechtstreeks bewerken. Als u een Joker teken ()- `*` machtiging wilt toevoegen, moet u dit tabblad gebruiken.
 
-1. Klik op **bewerken**om de JSON te bewerken.
+1. Klik op **bewerken** om de JSON te bewerken.
 
     ![Tabblad JSON met aangepaste rol](./media/custom-roles-portal/json.png)
 
@@ -339,4 +335,4 @@ Volg deze stappen om uw aangepaste rollen weer te geven.
 
 - [Zelfstudie: Een aangepaste Azure-rol maken met Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
-- [Bewerkingen voor Azure Resource Manager-resourceproviders](resource-provider-operations.md)
+- [Azure-resource provider bewerkingen](resource-provider-operations.md)

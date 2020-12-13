@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 99e7a8fcb34c963cfab366f1913508a7ff3f4a51
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c5a855ffe06a17d8ec1bfe249dbe7bc41d1166af
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408699"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369069"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Beveiligings controle v2: logboek registratie en detectie van bedreigingen
 
@@ -20,7 +20,7 @@ Logboek registratie en detectie van bedreigingen omvatten besturings elementen v
 
 ## <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-1 | 6.7 | AU-3, AU-6, AU-12, SI-4 |
 
@@ -38,13 +38,13 @@ Daarnaast kunt u Azure Sentinel gebruiken om analyse regels te bouwen, die de be
 
 - [Cyber Threat Intelligence met Azure Sentinel](/azure/architecture/example-scenario/data/sentinel-threat-intelligence)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -52,16 +52,16 @@ Daarnaast kunt u Azure Sentinel gebruiken om analyse regels te bouwen, die de be
 
 - [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: detectie van bedreigingen inschakelen voor Azure-identiteits-en toegangs beheer
+## <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: Detectie van bedreigingen inschakelen voor Azure identiteits- en toegangsbeheer
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-2 | 6.8 | AU-3, AU-6, AU-12, SI-4 |
 
 Azure AD biedt de volgende gebruikers logboeken die kunnen worden weer gegeven in azure AD Reporting of geïntegreerd met Azure Monitor, Azure Sentinel of andere hulpprogram ma's voor SIEM/controle voor geavanceerde bewakings-en analyse cases: 
--   Aanmeldingen: het rapport met aanmeldingen bevat informatie over het gebruik van beheerde toepassingen en aanmeldings activiteiten voor gebruikers.
+-   Aanmeldingen: het rapport voor aanmeldingsactiviteit bevat informatie over het gebruik van beheerde toepassingen en aanmeldingsactiviteiten van gebruikers
 
--   Auditlogboeken: traceerbaarheid via logboeken voor alle door diverse functies binnen Azure AD uitgevoerde wijzigingen. Voor beelden van audit logboeken zijn wijzigingen die zijn aangebracht in resources binnen Azure AD, zoals het toevoegen of verwijderen van gebruikers, apps, groepen, rollen en beleid.
+-   Auditlogboeken: traceerbaarheid via logboeken voor alle door diverse functies binnen Azure AD uitgevoerde wijzigingen. Voorbeelden van vermeldingen in auditlogboeken zijn wijzigingen die worden aangebracht in resources binnen Azure AD, zoals het toevoegen of verwijderen van gebruikers, apps, groepen, rollen en beleidsregels.
 
 -   Riskante aanmeldingen - Een riskante aanmelding is een indicator van een aanmeldingspoging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikersaccount is.
 
@@ -71,17 +71,17 @@ Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activi
 
 - [Activiteiten rapporten controleren in azure AD](../../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Azure Identity Protection inschakelen](../../active-directory/identity-protection/overview-identity-protection.md)
+- [Azure AD Identity Protection inschakelen](../../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Bescherming tegen bedreiging in Azure Security Center](../../security-center/azure-defender.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -89,9 +89,9 @@ Azure Security Center kan ook worden gewaarschuwd voor bepaalde verdachte activi
 
 - [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: logboek registratie inschakelen voor Azure-netwerk activiteiten
+## <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: Logboekregistratie inschakelen voor Azure-netwerkactiviteiten
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-3 | 9,3, 12,2, 12,5, 12,8 | AU-3, AU-6, AU-12, SI-4 |
 
@@ -109,13 +109,13 @@ NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Fir
 
 - [Verzamel inzichten over uw DNS-infra structuur met de DNS-analyse oplossing](../../azure-monitor/insights/dns-analytics.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-- [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 - [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)   
 
@@ -123,9 +123,9 @@ NSG-bron Logboeken (netwerk beveiligings groep), NSG-stroom logboeken, Azure Fir
 
 - [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: logboek registratie inschakelen voor Azure-resources
+## <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: Logboekregistratie inschakelen voor Azure-resources
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-4 | 6,2, 6,3, 8,8 | AU-3, AU-12 |
 
@@ -137,11 +137,11 @@ U kunt Azure Security Center en Azure Policy gebruiken om resource Logboeken in 
 
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../../security-center/security-center-enable-data-collection.md)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-- [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center)
 
 Infrastructuur- en eindpuntbeveiliging 
 
@@ -149,9 +149,9 @@ Infrastructuur- en eindpuntbeveiliging
 
 - [Informatie over bedreigingen](/azure/cloud-adoption-framework/organize/cloud-security-threat-intelligence)
 
-## <a name="lt-5-centralize-security-log-management-and-analysis"></a>LT-5: beveiligings logboek beheer en-analyse centraliseren
+## <a name="lt-5-centralize-security-log-management-and-analysis"></a>LT-5: Beheer en analyse van beveiligingslogboek centraliseren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-5 | 6,5, 6,6 | AU-3, SI-4 |
 
@@ -167,9 +167,9 @@ Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegeve
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
@@ -177,9 +177,9 @@ Veel organisaties kiezen voor het gebruik van Azure Sentinel voor ' hot ' gegeve
 
 - [Infrastructuur- en eindpuntbeveiliging](/azure/cloud-adoption-framework/organize/cloud-security-infrastructure-endpoint)
 
-## <a name="lt-6-configure-log-storage-retention"></a>LT-6: Bewaar periode voor logboek opslag configureren
+## <a name="lt-6-configure-log-storage-retention"></a>LT-6: Bewaarperiode voor logboek configureren
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-6 | 6.4 | AU-3, AU-11 |
 
@@ -193,21 +193,21 @@ In Azure Monitor kunt u de Bewaar periode voor uw Log Analytics werk ruimte inst
 
 - [Azure Security Center-waarschuwingen en aanbevelingen exporteren](../../security-center/continuous-export.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
 
 - [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops) 
 
-- [Beveiligings bewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center) 
+- [Beveiligingsbewerkingen](/azure/cloud-adoption-framework/organize/cloud-security-operations-center) 
 
 - [Beveiligingsnalevingsbeheer](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
 ## <a name="lt-7-use-approved-time-synchronization-sources"></a>LT-7: goedgekeurde tijd synchronisatie bronnen gebruiken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | LT-7 | 6.1 | AU-8 |
 
@@ -221,9 +221,9 @@ Alle logboeken die zijn gegenereerd door resources binnen Azure bieden tijds tem
 
 - [Binnenkomende UDP voor Azure-Services uitschakelen](https://support.microsoft.com/help/4558520/how-to-disable-inbound-udp-for-azure-services)
 
-**Verantwoordelijkheid** : gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Beleid en standaarden](/azure/cloud-adoption-framework/organize/cloud-security-policy-standards)
 

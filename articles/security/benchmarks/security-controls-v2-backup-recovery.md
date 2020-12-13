@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 1ed477c6cf069dbb402e5bda9c1f48f7bc208f18
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 089cf521a7c5428833be340001c88b870c568a8f
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698798"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368882"
 ---
 # <a name="security-control-v2-backup-and-recovery"></a>Beveiligings controle v2: back-up en herstel
 
@@ -20,7 +20,7 @@ Back-up en herstel bestrijkt de controles om ervoor te zorgen dat de gegevens en
 
 ## <a name="br-1-ensure-regular-automated-backups"></a>BR-1: controleren op regel matige automatische back-ups
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | BR-1 | 10.1 | CP-2, CP4, CP-6, CP-9 |
 
@@ -34,9 +34,9 @@ Voor een hoger beveiligings niveau kunt u geografisch redundante opslag optie in
 
 - [Azure Backup inschakelen](../../backup/index.yml)
 
-- [Het terugzetten van meerdere regio's inschakelen](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
+- [Hoe kan ik herstellen naar een andere regio instellen?](../../backup/backup-azure-arm-restore-vms.md#cross-region-restore)
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -50,7 +50,7 @@ Voor een hoger beveiligings niveau kunt u geografisch redundante opslag optie in
 
 ## <a name="br-2-encrypt-backup-data"></a>BR-2: back-upgegevens versleutelen
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | BR-2 | 10,2 | CP-9 |
 
@@ -68,7 +68,7 @@ Gebruik Azure op rollen gebaseerd toegangs beheer in Azure Backup, Azure Key Vau
 
 - [Beveiligings functies voor het beveiligen van hybride back-ups van aanvallen](../../backup/backup-azure-security-feature.md#prevent-attacks)
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -78,9 +78,9 @@ Gebruik Azure op rollen gebaseerd toegangs beheer in Azure Backup, Azure Key Vau
 
 - [Incidentvoorbereiding](/azure/cloud-adoption-framework/organize/cloud-security-incident-preparation)
 
-## <a name="br-3-validate-all-backups-including-customer-managed-keys"></a>BR-3: alle back-ups valideren, inclusief door de klant beheerde sleutels
+## <a name="br-3-validate-all-backups-including-customer-managed-keys"></a>BR-3: Valideer alle back-ups, inclusief door de klant beheerde sleutels
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | BR-3 | 10,3 | CP-4, CP-9 |
 
@@ -90,7 +90,7 @@ Maak regel matig gegevens herstel van uw back-up. Zorg ervoor dat u een back-up 
 
 - [Key Vault sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
@@ -98,17 +98,17 @@ Maak regel matig gegevens herstel van uw back-up. Zorg ervoor dat u een back-up 
 
 - [Beheer van beveiligings naleving](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management)
 
-## <a name="br-4-mitigate-risk-of-lost-keys"></a>BR-4: risico op verloren sleutels beperken
+## <a name="br-4-mitigate-risk-of-lost-keys"></a>BR-4: Het risico op verloren sleutels beperken
 
-| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
+| Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP 800-53 R4-ID ('s) |
 |--|--|--|--|
 | BR-4 | 10.4 | CP-9 |
 
-Zorg ervoor dat u maat regelen hebt om te voor komen en te herstellen van het verlies van sleutels. Schakel de beveiliging van zacht verwijderen en opschonen in Azure Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.  
+Zorg ervoor dat u maat regelen hebt om te voor komen en te herstellen van het verlies van sleutels. Schakel voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault in om sleutels te beschermen tegen onbedoelde of kwaadwillige verwijdering.  
 
-- [Zacht verwijderen en beveiliging opschonen inschakelen in Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
+- [Voorlopig verwijderen en bescherming tegen opschonen in Azure Key Vault inschakelen](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 

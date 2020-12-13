@@ -4,12 +4,12 @@ description: Meer informatie over het beheren en bewaken van back-ups van agents
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: b3b648ca27a407640b42932fe2ed7c32f5109114
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25f0c41b535f9403d0a7027687cc5261cd437275
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89145566"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368593"
 ---
 # <a name="manage-microsoft-azure-recovery-services-mars-agent-backups-by-using-the-azure-backup-service"></a>Back-ups van de agent voor Microsoft Azure Recovery Services (MARS) beheren met behulp van de Azure Backup-Service
 
@@ -29,7 +29,7 @@ Wanneer u het back-upbeleid wijzigt, kunt u nieuwe items toevoegen, bestaande it
 
 ### <a name="add-new-items-to-existing-policy"></a>Nieuwe items toevoegen aan het bestaande beleid
 
-1. Selecteer in **acties**de optie **back-up plannen**.
+1. Selecteer in **acties** de optie **back-up plannen**.
 
     ![Een back-up van de Windows Server plannen](./media/backup-configure-vault/schedule-first-backup.png)
 
@@ -59,15 +59,15 @@ U kunt uitsluitings regels toevoegen om bestanden en mappen over te slaan waarva
 
     ![Uitsluitings instellingen](./media/backup-azure-manage-mars/select-exclusion-settings.png)
 
-2. Selecteer in **uitsluitings instellingen**de optie **uitsluiting toevoegen**.
+2. Selecteer in **uitsluitings instellingen** de optie **uitsluiting toevoegen**.
 
     ![Uitsluiting toevoegen](./media/backup-azure-manage-mars/add-exclusion.png)
 
-3. In **items selecteren**die u wilt uitsluiten, bladert u naar de bestanden en mappen en selecteert u de items die u wilt uitsluiten en selecteert u **OK**.
+3. In **items selecteren** die u wilt uitsluiten, bladert u naar de bestanden en mappen en selecteert u de items die u wilt uitsluiten en selecteert u **OK**.
 
     ![Selecteer de items die u wilt uitsluiten](./media/backup-azure-manage-mars/select-items-exclude.png)
 
-4. Standaard worden alle **submappen** in de geselecteerde mappen uitgesloten. U kunt dit wijzigen door **Ja** of **Nee**te selecteren. U kunt de bestands typen die moeten worden uitgesloten, bewerken en opgeven, zoals hieronder wordt weer gegeven:
+4. Standaard worden alle **submappen** in de geselecteerde mappen uitgesloten. U kunt dit wijzigen door **Ja** of **Nee** te selecteren. U kunt de bestands typen die moeten worden uitgesloten, bewerken en opgeven, zoals hieronder wordt weer gegeven:
 
     ![Selecteer typen submappen](./media/backup-azure-manage-mars/subfolders-type.png)
 
@@ -100,7 +100,7 @@ Er zijn twee manieren om het maken van back-ups van bestanden en mappen te stopp
 
 ### <a name="stop-protection-and-retain-backup-data"></a>Beveiliging stoppen en back-upgegevens behouden
 
-1. Open de MARS-beheer console, ga naar het **deel venster acties**en **Selecteer back-up plannen**.
+1. Open de MARS-beheer console, ga naar het **deel venster acties** en **Selecteer back-up plannen**.
 
     ![Back-up plannen selecteren](./media/backup-azure-manage-mars/mars-actions.png)
 1. Selecteer op de pagina **beleids item selecteren** de optie **een back-upschema voor uw bestanden en mappen wijzigen** en selecteer **volgende**.
@@ -109,10 +109,10 @@ Er zijn twee manieren om het maken van back-ups van bestanden en mappen te stopp
 1. Op de pagina **een geplande back-up wijzigen of stoppen** selecteert **u stoppen met het gebruik van dit back-upschema, maar behoud de opgeslagen back-ups totdat een schema opnieuw wordt geactiveerd**. Selecteer vervolgens **Volgende**.
 
     ![Een geplande back-up stoppen.](./media/backup-azure-manage-mars/stop-schedule-backup.png)
-1. Controleer de gegevens in **geplande back-ups onderbreken**en selecteer **volt ooien**.
+1. Controleer de gegevens in **geplande back-ups onderbreken** en selecteer **volt ooien**.
 
     ![Een geplande back-up onderbreken.](./media/backup-azure-manage-mars/pause-schedule-backup.png)
-1. Controleer in voortgang van het maken van de **back-up**de optie voor het plannen van back-ups met de status geslaagd en selecteer **sluiten** om te volt ooien.
+1. Controleer in voortgang van het maken van de **back-up** de optie voor het plannen van back-ups met de status geslaagd en selecteer **sluiten** om te volt ooien.
 
 ### <a name="stop-protection-and-delete-backup-data"></a>Beveiliging stoppen en back-upgegevens verwijderen
 
@@ -121,12 +121,12 @@ Er zijn twee manieren om het maken van back-ups van bestanden en mappen te stopp
 
     ![Een geplande back-up wijzigen of stoppen.](./media/backup-azure-delete-vault/modify-schedule-backup.png)
 
-3. Selecteer **volt ooien**op de pagina **een geplande back-up stoppen** .
+3. Selecteer **volt ooien** op de pagina **een geplande back-up stoppen** .
 
     ![Een geplande back-up stoppen en volt ooien selecteren](./media/backup-azure-delete-vault/stop-schedule-backup.png)
 4. U wordt gevraagd om een beveiligings pincode (persoonlijk identificatie nummer) in te voeren, die u hand matig moet genereren. Als u dit wilt doen, meldt u zich eerst aan bij de Azure Portal.
-5. Ga naar **Recovery Services**eigenschappen van de kluis  >  **instellingen**  >  **Properties**.
-6. Onder **BEVEILIGINGS pincode**selecteert u **genereren**. Deze pincode kopiëren. De pincode is slechts vijf minuten geldig.
+5. Ga naar **Recovery Services** eigenschappen van de kluis  >  **instellingen**  >  .
+6. Onder **BEVEILIGINGS pincode** selecteert u **genereren**. Deze pincode kopiëren. De pincode is slechts vijf minuten geldig.
 7. Plak de pincode in de beheer console en selecteer **OK**.
 
     ![Een beveiligings pincode genereren.](./media/backup-azure-delete-vault/security-pin.png)
@@ -142,21 +142,21 @@ Nadat u de on-premises back-upitems hebt verwijderd, voert u de volgende stappen
 Als u de beveiliging hebt gestopt terwijl u de gegevens behoudt en hebt besloten om de beveiliging te hervatten, kunt u het back-upschema opnieuw inschakelen met behulp van het back-upbeleid wijzigen.
 
 1. Selecteer bij **acties** de optie **back-up plannen**.
-1. Selecteer **back-upschema opnieuw inschakelen. U kunt ook back-upitems of tijden wijzigen** en **volgende**selecteren.<br>
+1. Selecteer **back-upschema opnieuw inschakelen. U kunt ook back-upitems of tijden wijzigen** en **volgende** selecteren.<br>
 
     ![Back-upschema opnieuw inschakelen](./media/backup-azure-manage-mars/re-enable-policy-next.png)
-1. Selecteer **volgende**in **items selecteren waarvan u een back-up wilt maken**.
+1. Selecteer **volgende** in **items selecteren waarvan u een back-up wilt maken**.
 
     ![Items selecteren waarvan een back-up moet worden gemaakt](./media/backup-azure-manage-mars/re-enable-next.png)
-1. In **back-upschema opgeven**geeft u het back-upschema op en selecteert u **volgende**.
-1. Geef in **Bewaar beleid selecteren**de Bewaar duur op en selecteer **volgende**.
+1. In **back-upschema opgeven** geeft u het back-upschema op en selecteert u **volgende**.
+1. Geef in **Bewaar beleid selecteren** de Bewaar duur op en selecteer **volgende**.
 1. Controleer ten slotte de details van het beleid in het **bevestigings** scherm en selecteer **volt ooien**.
 
 ## <a name="re-generate-passphrase"></a>Wachtwoordzin opnieuw genereren
 
 Een wachtwoordzin wordt gebruikt voor het versleutelen en ontsleutelen van gegevens tijdens het maken van een back-up of het herstellen van uw on-premises of lokale computer met de MARS-agent naar of van Azure. Als u de wachtwoordzin kwijtraakt of verg eten bent, kunt u de wachtwoordzin opnieuw genereren (mits uw computer nog steeds is geregistreerd bij de Recovery Services kluis en de back-up is geconfigureerd) door de volgende stappen te volgen:
 
-1. Ga in de Mars agent-console naar het **deel venster acties**en  >  **Wijzig de eigenschappen** >. Ga vervolgens naar het **tabblad versleuteling**.<br>
+1. Ga in de Mars agent-console naar het **deel venster acties** en  >  **Wijzig de eigenschappen** >. Ga vervolgens naar het **tabblad versleuteling**.<br>
 1. Selecteer selectie vakje **wachtwoordzin wijzigen** .<br>
 1. Voer een nieuwe wachtwoordzin in of selecteer **wachtwoordzin genereren**.
 1. Selecteer **Bladeren** om de nieuwe wachtwoordzin op te slaan.
@@ -189,6 +189,19 @@ Het beheer van het back-upbeleid voor MARS wordt uitgevoerd via de MARS-console 
   1. De agent installeren en opnieuw registreren bij dezelfde kluis en met dezelfde wachtwoordzin
   1. Start de MARS-client om de Bewaar periode uit te breiden volgens uw vereisten
 - De zojuist herstelde computer die wordt beveiligd met MARS, blijft back-ups maken.  
+
+## <a name="configuring-antivirus-for-the-mars-agent"></a>Anti virus configureren voor de MARS-agent
+
+We raden u aan de volgende configuratie voor uw antivirus software te configureren om conflicten te voor komen met de werking van de MARS-agent.
+
+1. **Uitsluitingen van paden toevoegen**: als u de prestaties en mogelijke conflicten wilt voor komen, moet u de volgende paden uitsluiten van realtime-bewaking door de antivirus software:
+    1. `%ProgramFiles%\Microsoft Azure Recovery Services Agent` en submappen
+    1. **Scratch map**: als de Scratch map zich niet op de standaard locatie bevindt, voegt u die ook toe aan de uitsluitingen.  [Zie hier voor de stappen](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible) om de locatie van de Scratch map te bepalen.
+1. **Binaire uitsluitingen toevoegen**: als u wilt voor komen dat back-up-en console-activiteiten worden verminderd, moet u processen uitsluiten voor de volgende binaire bestanden in realtime-bewaking door de antivirus software:
+    1. `%ProgramFiles%\Microsoft Azure Recovery Services Agent\bin\cbengine.exe`
+
+>[!NOTE]
+>Ondanks dat deze paden voldoende zijn voor de meeste antivirus software, kunnen er nog steeds problemen met de MARS-agent optreden. Als er onverwachte fouten optreden, verwijdert u de antivirus software tijdelijk en controleert u of het probleem zich blijft voordoen. Als het probleem hiermee is opgelost, neemt u contact op met de leverancier van uw antivirus software voor hulp met de juiste configuratie van het product.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: f5421efc96b957f5ae96515bbcf17c8a773397c9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 9dad8ffc9971894a2777e8bda9bcf6d78eee00a9
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368244"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369273"
 ---
 # <a name="list-azure-role-definitions"></a>Definities van Azure-rollen weer geven
 
@@ -33,11 +33,11 @@ Zie [beheerders rollen in azure Active Directory](../active-directory/roles/perm
 
 Volg deze stappen om alle rollen in de Azure Portal weer te geven.
 
-1. Klik in de Azure Portal op **alle services** en selecteer vervolgens een bereik. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen**of een resource selecteren.
+1. Klik in de Azure Portal op **alle services** en selecteer vervolgens een bereik. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen** of een resource selecteren.
 
 1. Klik op de specifieke resource.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op het tabblad **rollen** om een lijst met alle ingebouwde en aangepaste rollen weer te geven.
 
@@ -351,12 +351,12 @@ Als u roldefinities wilt weer geven, gebruikt u de [functie definities-lijst](/r
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Resourcegroep |
     > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Resource |
 
-    In het vorige voor beeld is micro soft. web een resource provider die verwijst naar een App Service-exemplaar. U kunt ook andere resource providers gebruiken en het bereik opgeven. Zie voor meer informatie [Azure-resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md) en ondersteunde Azure Resource Manager van de [resource provider](resource-provider-operations.md).  
+    In het vorige voor beeld is micro soft. web een resource provider die verwijst naar een App Service-exemplaar. U kunt ook andere resource providers gebruiken en het bereik opgeven. Zie [Azure-resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md) en ondersteunde [Azure resource provider-bewerkingen](resource-provider-operations.md)voor meer informatie.  
      
 1. Vervang *{filter}* door de voor waarde die u wilt Toep assen om de lijst met functie definities te filteren.
 
     > [!div class="mx-tableFixed"]
-    > | Filteren | Beschrijving |
+    > | Filter | Description |
     > | --- | --- |
     > | `$filter=atScopeAndBelow()` | Hiermee worden roldefinities voor het opgegeven bereik en eventuele subbereiken weer gegeven. |
     > | `$filter=type+eq+'{type}'` | Hiermee wordt een lijst met roldefinities van het opgegeven type weer gegeven. Type rol kan of zijn `CustomRole` `BuiltInRole` . |

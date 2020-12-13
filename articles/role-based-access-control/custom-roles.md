@@ -2,36 +2,76 @@
 title: Aangepaste Azure-rollen-Azure RBAC
 description: Meer informatie over het maken van aangepaste Azure-rollen met Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor een nauw keurig toegangs beheer van Azure-resources.
 services: active-directory
-documentationcenter: ''
 author: rolyon
 manager: mtillman
-ms.assetid: e4206ea9-52c3-47ee-af29-f6eef7566fa5
 ms.service: role-based-access-control
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/13/2020
+ms.date: 12/11/2020
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fd737a22a37d6edc47c2769a470af00537d720eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eddbd9cb695f3ff7eabd9f2549d0a868d8826eb9
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87124150"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369120"
 ---
 # <a name="azure-custom-roles"></a>Aangepaste Azure-rollen
 
 > [!IMPORTANT]
-> Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+> Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Als de [ingebouwde rollen van Azure](built-in-roles.md) niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen aangepaste rollen maken. Net als bij ingebouwde rollen kunt u aangepaste rollen toewijzen aan gebruikers, groepen en service-principals in de beheer groep, het abonnement en het bereik van de resource groep.
 
 Aangepaste rollen kunnen worden gedeeld tussen abonnementen die dezelfde Azure AD-Directory vertrouwen. Er geldt een limiet van **5.000** aangepaste rollen per map. (Voor Azure Duitsland en Azure China 21Vianet is de limiet 2.000 aangepaste rollen.) Aangepaste rollen kunnen worden gemaakt met behulp van de Azure Portal, Azure PowerShell, Azure CLI of de REST API.
+
+## <a name="steps-to-create-a-custom-role"></a>Stappen voor het maken van een aangepaste rol
+
+Hier volgen de basis stappen voor het maken van een aangepaste rol.
+
+1. Bepaal de benodigde machtigingen.
+
+    Wanneer u een aangepaste rol maakt, moet u weten welke bewerkingen beschikbaar zijn voor het definiëren van uw machtigingen. Normaal gesp roken begint u met een bestaande ingebouwde rol en wijzigt u deze voor uw behoeften. U voegt de bewerkingen toe aan de `Actions` `NotActions` Eigenschappen of van de [roldefinitie](role-definitions.md). Als u gegevens bewerkingen hebt, voegt u deze toe aan de `DataActions` `NotDataActions` Eigenschappen of.
+
+    Zie de volgende sectie [hoe u de benodigde machtigingen kunt bepalen](#how-to-determine-the-permissions-you-need)voor meer informatie.
+
+1. Bepaal hoe u de aangepaste rol wilt maken.
+
+    U kunt aangepaste rollen maken met behulp van [Azure Portal](custom-roles-portal.md), [Azure POWERSHELL](custom-roles-powershell.md), [Azure cli](custom-roles-cli.md)of de [rest API](custom-roles-rest.md).
+
+1. Maak de aangepaste rol.
+
+    De eenvoudigste manier is om de Azure Portal te gebruiken. Zie [aangepaste Azure-rollen maken of bijwerken met behulp](custom-roles-portal.md)van de Azure portal voor stappen voor het maken van een aangepaste rol met behulp van de Azure Portal.
+
+1. De aangepaste rol testen.
+
+    Wanneer u uw aangepaste rol hebt, moet u deze testen om te controleren of deze werkt zoals verwacht. Als u later aanpassingen wilt aanbrengen, kunt u de aangepaste rol bijwerken.
+
+## <a name="how-to-determine-the-permissions-you-need"></a>De machtigingen bepalen die u nodig hebt
+
+Azure heeft duizenden machtigingen die u mogelijk in uw aangepaste rol kunt gebruiken. Hier volgen enkele methoden die u kunnen helpen bij het bepalen van de machtigingen die u wilt toevoegen aan uw aangepaste rol:
+
+- Bekijk de bestaande [ingebouwde rollen](built-in-roles.md).
+
+    Mogelijk wilt u een bestaande rol wijzigen of de machtigingen combi neren die worden gebruikt in meerdere rollen.
+
+- Vermeld de Azure-Services waaraan u toegang wilt verlenen.
+
+- Bepaal de [resource providers die zijn toegewezen aan de Azure-Services](../azure-resource-manager/management/azure-services-resource-providers.md).
+
+    De functionaliteit en machtigingen van Azure-Services zijn beschikbaar via [resource providers](../azure-resource-manager/management/overview.md). De resource provider micro soft. Compute levert bijvoorbeeld virtuele-machine bronnen en de resource provider micro soft. Bill levert abonnements-en facturerings bronnen op. Als u de resource providers kent, kunt u de benodigde machtigingen voor uw aangepaste rol beperken en bepalen.
+
+    Wanneer u een aangepaste rol maakt met behulp van de Azure Portal, kunt u ook de resource providers bepalen door te zoeken naar tref woorden. Deze zoek functie wordt beschreven in [aangepaste Azure-rollen maken of bijwerken met behulp van de Azure Portal](custom-roles-portal.md#step-4-permissions).
+
+    ![Deel venster machtigingen toevoegen met resource provider](./media/custom-roles-portal/add-permissions-provider.png)
+
+- Zoek de [beschik bare machtigingen](resource-provider-operations.md) om de machtigingen te vinden die u wilt toevoegen.
+
+    Wanneer u een aangepaste rol maakt met behulp van de Azure Portal, kunt u zoeken naar machtigingen op sleutel woord. U kunt bijvoorbeeld zoeken naar machtigingen voor de *virtuele machine* of *facturering* . U kunt ook alle machtigingen downloaden als een CSV-bestand en dit bestand vervolgens doorzoeken. Deze zoek functie wordt beschreven in [aangepaste Azure-rollen maken of bijwerken met behulp van de Azure Portal](custom-roles-portal.md#step-4-permissions).
+
+    ![Lijst met machtigingen toevoegen](./media/custom-roles-portal/add-permissions-list.png)
 
 ## <a name="custom-role-example"></a>Voor beeld van aangepaste rol
 
@@ -121,11 +161,11 @@ In de volgende tabel wordt beschreven wat de eigenschappen van de aangepaste rol
 | `Id`</br>`name` | Ja | Tekenreeks | De unieke ID van de aangepaste rol. Voor Azure PowerShell en Azure CLI wordt deze ID automatisch gegenereerd wanneer u een nieuwe rol maakt. |
 | `IsCustom`</br>`roleType` | Ja | Tekenreeks | Hiermee wordt aangegeven of dit een aangepaste rol is. Ingesteld op `true` of `CustomRole` voor aangepaste rollen. Ingesteld op `false` of `BuiltInRole` voor ingebouwde rollen. |
 | `Description`</br>`description` | Ja | Tekenreeks | De beschrijving van de aangepaste rol. Kan letters, cijfers, spaties en speciale tekens bevatten. Het maximum aantal tekens is 1024. |
-| `Actions`</br>`actions` | Ja | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die de rol kan uitvoeren. Zie [acties](role-definitions.md#actions)voor meer informatie. |
-| `NotActions`</br>`notActions` | Nee | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die zijn uitgesloten van de toegestane `Actions` . Zie voor meer informatie [intact](role-definitions.md#notactions). |
-| `DataActions`</br>`dataActions` | Nee | Teken reeks [] | Een matrix met teken reeksen waarmee de gegevens bewerkingen worden opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als u een aangepaste rol maakt met `DataActions` , kan deze rol niet worden toegewezen in het bereik van de beheer groep. Zie [DataActions](role-definitions.md#dataactions)voor meer informatie. |
-| `NotDataActions`</br>`notDataActions` | Nee | Teken reeks [] | Een matrix met teken reeksen die de gegevens bewerkingen specificeert die worden uitgesloten van de toegestane waarde `DataActions` . Zie [NotDataActions](role-definitions.md#notdataactions)voor meer informatie. |
-| `AssignableScopes`</br>`assignableScopes` | Ja | Teken reeks [] | Een matrix met teken reeksen die de bereiken aangeeft waarvoor de aangepaste rol beschikbaar is voor toewijzing. U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie. Zie [AssignableScopes](role-definitions.md#assignablescopes)voor meer informatie. |
+| `Actions`</br>`actions` | Yes | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die de rol kan uitvoeren. Zie [acties](role-definitions.md#actions)voor meer informatie. |
+| `NotActions`</br>`notActions` | No | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die zijn uitgesloten van de toegestane `Actions` . Zie voor meer informatie [intact](role-definitions.md#notactions). |
+| `DataActions`</br>`dataActions` | No | Teken reeks [] | Een matrix met teken reeksen waarmee de gegevens bewerkingen worden opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als u een aangepaste rol maakt met `DataActions` , kan deze rol niet worden toegewezen in het bereik van de beheer groep. Zie [DataActions](role-definitions.md#dataactions)voor meer informatie. |
+| `NotDataActions`</br>`notDataActions` | No | Teken reeks [] | Een matrix met teken reeksen die de gegevens bewerkingen specificeert die worden uitgesloten van de toegestane waarde `DataActions` . Zie [NotDataActions](role-definitions.md#notdataactions)voor meer informatie. |
+| `AssignableScopes`</br>`assignableScopes` | Yes | Teken reeks [] | Een matrix met teken reeksen die de bereiken aangeeft waarvoor de aangepaste rol beschikbaar is voor toewijzing. U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase. Zie [AssignableScopes](role-definitions.md#assignablescopes)voor meer informatie. |
 
 ## <a name="wildcard-permissions"></a>Machtigingen voor joker tekens
 
@@ -151,26 +191,6 @@ U kunt ook meerdere joker tekens in een teken reeks hebben. De volgende teken re
 Microsoft.CostManagement/*/query/*
 ```
 
-## <a name="steps-to-create-a-custom-role"></a>Stappen voor het maken van een aangepaste rol
-
-Als u een aangepaste rol wilt maken, kunt u het beste de volgende basis stappen volgen.
-
-1. Bepaal hoe u de aangepaste rol wilt maken.
-
-    U kunt aangepaste rollen maken met behulp van Azure Portal, Azure PowerShell, Azure CLI of de REST API.
-
-1. Bepaal de benodigde machtigingen.
-
-    Wanneer u een aangepaste rol maakt, moet u weten welke bewerkingen beschikbaar zijn voor het definiëren van uw machtigingen. Als u de lijst met bewerkingen wilt weer geven, raadpleegt u de bewerkingen van de [resource provider van Azure Resource Manager](resource-provider-operations.md). U voegt de bewerkingen toe aan de `Actions` `NotActions` Eigenschappen of van de [roldefinitie](role-definitions.md). Als u gegevens bewerkingen hebt, voegt u deze toe aan de `DataActions` `NotDataActions` Eigenschappen of.
-
-1. Maak de aangepaste rol.
-
-    Normaal gesp roken begint u met een bestaande ingebouwde rol en wijzigt u deze voor uw behoeften. De eenvoudigste manier is om de Azure Portal te gebruiken. Zie [aangepaste Azure-rollen maken of bijwerken met behulp](custom-roles-portal.md)van de Azure portal voor stappen voor het maken van een aangepaste rol met behulp van de Azure Portal.
-
-1. De aangepaste rol testen.
-
-    Wanneer u uw aangepaste rol hebt, moet u deze testen om te controleren of deze werkt zoals verwacht. Als u later aanpassingen wilt aanbrengen, kunt u de aangepaste rol bijwerken.
-
 ## <a name="who-can-create-delete-update-or-view-a-custom-role"></a>Wie kan een aangepaste rol maken, verwijderen, bijwerken of weer geven
 
 Net als bij ingebouwde rollen `AssignableScopes` geeft de eigenschap de bereiken op die de rol beschikbaar is voor toewijzing. De `AssignableScopes` eigenschap voor een aangepaste rol bepaalt ook wie de aangepaste rol kan maken, verwijderen, bijwerken of weer geven.
@@ -188,7 +208,7 @@ In de volgende lijst worden de limieten voor aangepaste rollen beschreven.
 - Elke directory kan Maxi maal **5000** aangepaste rollen hebben.
 - Azure Duitsland en Azure China 21Vianet kunnen Maxi maal 2000 aangepaste rollen hebben voor elke directory.
 - U kunt niet instellen `AssignableScopes` op het hoofd bereik ( `"/"` ).
-- U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+- U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 - Aangepaste rollen met `DataActions` kunnen niet worden toegewezen in het bereik van de beheer groep.
 - Azure Resource Manager valideert niet het bestaan van de beheer groep in het toewijs bare bereik van de roldefinitie.
 

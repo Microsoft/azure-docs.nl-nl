@@ -14,17 +14,17 @@ ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 5cd518828668ed20a4fa7be0cd6c9798a013055a
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 799475db567c88f067192d027589e9185ee1782b
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909570"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369171"
 ---
 # <a name="create-or-update-azure-custom-roles-using-azure-powershell"></a>Aangepaste Azure-rollen maken of bijwerken met behulp van Azure PowerShell
 
 > [!IMPORTANT]
-> Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+> Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
@@ -163,7 +163,7 @@ Start Virtual Machine                          Microsoft.Compute/virtualMachines
 
 Wanneer u Power shell gebruikt om een aangepaste rol te maken, kunt u een van de [ingebouwde rollen](built-in-roles.md) gebruiken als uitgangs punt of u kunt beginnen met het begin. Het eerste voor beeld in deze sectie begint met een ingebouwde rol en past deze vervolgens aan met meer machtigingen. Bewerk de kenmerken om de gewenste, of toe te voegen `Actions` `NotActions` `AssignableScopes` en sla de wijzigingen vervolgens op als een nieuwe rol.
 
-Het volgende voor beeld begint met de ingebouwde rol Inzender voor de [virtuele machine](built-in-roles.md#virtual-machine-contributor) voor het maken van een aangepaste rol met de naam *virtuele-machine operator* . De nieuwe rol verleent toegang tot alle Lees bewerkingen van *micro soft. Compute* -, *micro soft. Storage* -en *micro soft. Network* resource providers en verleent toegang om virtuele machines te starten, opnieuw op te starten en te bewaken. De aangepaste rol kan in twee abonnementen worden gebruikt.
+Het volgende voor beeld begint met de ingebouwde rol Inzender voor de [virtuele machine](built-in-roles.md#virtual-machine-contributor) voor het maken van een aangepaste rol met de naam *virtuele-machine operator*. De nieuwe rol verleent toegang tot alle Lees bewerkingen van *micro soft. Compute*-, *micro soft. Storage*-en *micro soft. Network* resource providers en verleent toegang om virtuele machines te starten, opnieuw op te starten en te bewaken. De aangepaste rol kan in twee abonnementen worden gebruikt.
 
 ```azurepowershell
 $role = Get-AzRoleDefinition "Virtual Machine Contributor"
@@ -302,7 +302,7 @@ AssignableScopes : {/subscriptions/00000000-0000-0000-0000-000000000000,
                    /subscriptions/22222222-2222-2222-2222-222222222222}
 ```
 
-In het volgende voor beeld wordt een beheer groep toegevoegd aan `AssignableScopes` de aangepaste rol van de operator van de *virtuele machine* . Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+In het volgende voor beeld wordt een beheer groep toegevoegd aan `AssignableScopes` de aangepaste rol van de operator van de *virtuele machine* . Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 
 ```azurepowershell
 Get-AzManagementGroup
@@ -403,4 +403,4 @@ Are you sure you want to remove role definition with name 'Virtual Machine Opera
 
 - [Zelfstudie: Een aangepaste Azure-rol maken met Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
-- [Bewerkingen voor Azure Resource Manager-resourceproviders](resource-provider-operations.md)
+- [Azure-resource provider bewerkingen](resource-provider-operations.md)

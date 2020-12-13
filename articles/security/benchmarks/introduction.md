@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f3b492534bedde50d2413b88fa38cd6325ed5df7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32aa64a9343a8e3c62af4322b3320b28ce805064
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328255"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369188"
 ---
 # <a name="azure-security-benchmark-introduction"></a>Inleiding tot Azure Security Bench Mark
 
@@ -27,7 +27,7 @@ De Azure Security Bench Mark bevat een verzameling essentiële aanbevelingen voo
 - **Service basislijnen**: Hiermee worden de besturings elementen toegepast op afzonderlijke Azure-Services om aanbevelingen te geven over de beveiligings configuratie van die service.
 
 ## <a name="implement-the-azure-security-benchmark"></a>De Azure Security-Bench Mark implementeren
-- **Plan** de implementatie van uw Azure Security-benchmark procedure door de [documentatie](overview.md) te bekijken voor de Enter prise-besturings elementen en servicespecifieke basislijnen om uw beheer raamwerk te plannen en te bepalen hoe IT wordt toegewezen aan richt lijnen zoals CIS (Controls v 7.1) en het NIST (SP800-53)-Framework.
+- **Plan** de implementatie van uw Azure Security-benchmark procedure door de [documentatie](overview.md) te bekijken voor de Enter prise-besturings elementen en servicespecifieke basislijnen om uw beheer raamwerk te plannen en te bepalen hoe IT wordt toegewezen aan richt lijnen zoals CIS (Controls v 7.1) en het NIST (SP 800-53)-Framework.
 - **Bewaak** uw naleving met de Azure Security Bench Mark-status (en andere controle sets) met behulp van het [dash board voor nalevings vereisten](../../security-center/security-center-compliance-dashboard.md)van Azure Security Center.
 - **Stel Guardrails** in voor het automatiseren van beveiligde configuraties en het afdwingen van naleving met Azure Security Bench Mark (en andere vereisten in uw organisatie) met Azure blauw drukken en Azure Policy.
  
@@ -46,7 +46,7 @@ Azure Security Bench Mark wordt vaak gebruikt om deze veelvoorkomende uitdaginge
 De termen "besturings element", "bench Mark" en "baseline" worden vaak gebruikt in de documentatie over Azure Security Bench Mark. het is belang rijk om te begrijpen hoe Azure deze voor waarden gebruikt.
 
 
-| Termijn | Beschrijving | Voorbeeld |
+| Term | Beschrijving | Voorbeeld |
 |--|--|--|
 | Beheer | Een besturings element is een hoog niveau van een functie of activiteit die moet worden geadresseerd en niet specifiek is voor een technologie of implementatie. | Gegevens beveiliging is een van de beveiligings besturings elementen. Dit besturings element bevat specifieke acties die moeten worden geadresseerd om ervoor te zorgen dat gegevens beveiligd zijn. |
 | Benchmark | Een bench Mark bevat beveiligings aanbevelingen voor een specifieke technologie, zoals Azure. De aanbevelingen worden gecategoriseerd door het besturings element waarvan ze deel uitmaken. | De Security Bench Mark van Azure bestaat uit de beveiligings aanbevelingen die specifiek zijn voor het Azure-platform |

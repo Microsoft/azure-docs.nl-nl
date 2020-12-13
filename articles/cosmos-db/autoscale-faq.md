@@ -5,13 +5,13 @@ author: deborahc
 ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/10/2020
-ms.openlocfilehash: 58e7d54750da86b8a700a4f2195bc4cfa012ae4b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.date: 12/11/2020
+ms.openlocfilehash: a740ad62dacc9a29cab1cc144f1789e125ec2e89
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092684"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368576"
 ---
 # <a name="frequently-asked-questions-about-autoscale-provisioned-throughput-in-azure-cosmos-db"></a>Veelgestelde vragen over het automatisch schalen van ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -43,7 +43,7 @@ In de accounts voor enkele schrijf regio's is het automatisch schalen per 100 RU
 In accounts met meerdere schrijf regio's is het automatisch schalen per 100 RU/s hetzelfde als het gemiddelde voor de Provisioning van de standaard (hand matig) beschik bare meerdere schrijf regio's. Op uw factuur ziet u de bestaande meter meerdere schrijf regio's. Aangezien de tarieven hetzelfde zijn, ziet u als u automatisch schalen gebruikt, dezelfde hoeveelheid als bij standaard doorvoer.
 
 ### <a name="does-autoscale-work-with-reserved-capacity"></a>Werkt automatisch schalen met gereserveerde capaciteit?
-Ja. Wanneer u gereserveerde capaciteit aanschaft voor accounts met meerdere schrijf regio's, wordt de reserverings korting voor resources automatisch schalen toegepast op het gebruik van de meter tegen een verhouding van 1,5 * de [verhouding van de specifieke regio](../cost-management-billing/reservations/understand-cosmosdb-reservation-charges.md#reservation-discount-per-region). 
+Ja. Wanneer u gereserveerde capaciteit aanschaft voor accounts met enkelvoudige schrijf regio's, wordt de reserverings korting voor resources automatisch schalen toegepast op het gebruik van de meter tegen een verhouding van 1,5 * de [verhouding van de specifieke regio](../cost-management-billing/reservations/understand-cosmosdb-reservation-charges.md#reservation-discount-per-region). 
 
 Gereserveerde capaciteit van regio voor meerdere schrijf bewerkingen werkt hetzelfde voor de ingerichte door Voer van automatisch schalen en standaard (hand matig). Zie [Azure Cosmos DB gereserveerde capaciteit](cosmos-db-reserved-capacity.md)
 
@@ -109,9 +109,9 @@ Wanneer u een aanvraag verzendt om het maximum aantal RU/s te verhogen `Tmax` , 
 #### <a name="lowering-the-max-rus"></a>Het maximum aantal RU/s verlagen
 Wanneer u het maximum aantal RU/s verlaagt, kunt u de minimum waarde instellen op: `MAX(4000, highest max RU/s ever provisioned / 10, current storage in GB * 100)` , afgerond op de dichtstbijzijnde 1000 ru/s. 
 
-Voor beeld #1: Stel dat u een container voor automatisch schalen hebt met een maximum van RU/s 20.000 RU/s (schaalt tussen 2000-20.000 RU/s) en 50 GB aan opslag ruimte. De laagste, minimale waarde waarmee u het maximum aantal RU/s kunt instellen: MAX (4000, 20.000/10, **50 * 100** ) = 5000 ru/s (schaalbaar tussen 500-5000 ru/s).
+Voor beeld #1: Stel dat u een container voor automatisch schalen hebt met een maximum van RU/s 20.000 RU/s (schaalt tussen 2000-20.000 RU/s) en 50 GB aan opslag ruimte. De laagste, minimale waarde waarmee u het maximum aantal RU/s kunt instellen: MAX (4000, 20.000/10, **50 * 100**) = 5000 ru/s (schaalbaar tussen 500-5000 ru/s).
 
-Voor beeld #2: Stel dat u een container voor automatisch schalen hebt met Maxi maal RU/s 100.000 RU/s en 100 GB aan opslag ruimte. Nu kunt u Max. RU/s tot 150.000 RU/s schalen (schalen tussen 15.000-150.000 RU/s). De laagste, minimale waarde waarmee u het maximum aantal RU/s kunt instellen: MAX (4000, **150.000/10** , 100 * 100) = 15.000 ru/s (schalen tussen 1500-15.000 ru/s). 
+Voor beeld #2: Stel dat u een container voor automatisch schalen hebt met Maxi maal RU/s 100.000 RU/s en 100 GB aan opslag ruimte. Nu kunt u Max. RU/s tot 150.000 RU/s schalen (schalen tussen 15.000-150.000 RU/s). De laagste, minimale waarde waarmee u het maximum aantal RU/s kunt instellen: MAX (4000, **150.000/10**, 100 * 100) = 15.000 ru/s (schalen tussen 1500-15.000 ru/s). 
 
 Wanneer u het maximum aantal RU/s verlaagt, kunt u voor een gedeelde doorvoer database de minimum waarde instellen op: `MAX(4000, highest max RU/s ever provisioned / 10, current storage in GB * 100,  4000 + (MAX(Container count - 25, 0) * 1000))` , afgerond op de dichtstbijzijnde 1000 ru/s.  
 

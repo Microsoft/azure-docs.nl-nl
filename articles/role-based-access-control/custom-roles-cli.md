@@ -14,17 +14,17 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8fa77f13b99564246c048e7b7a8129f9fc141c47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31dabcf77f0db76047919fa76d00f1c5ed3c96d6
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84984173"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369137"
 ---
 # <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Aangepaste Azure-rollen maken of bijwerken met behulp van Azure CLI
 
 > [!IMPORTANT]
-> Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+> Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
@@ -146,7 +146,7 @@ Gebruik [AZ Role definition Create](/cli/azure/role/definition#az-role-definitio
 az role definition create --role-definition {roleDefinition}
 ```
 
-In het volgende voor beeld wordt een aangepaste rol met de naam *virtuele-machine operator*gemaakt. Met deze aangepaste rol krijgt u toegang tot alle Lees bewerkingen van *micro soft. Compute*-, *micro soft. Storage*-en *micro soft. Network* resource providers en wordt er toegang toegewezen om virtuele machines te starten, opnieuw op te starten en te bewaken. Deze aangepaste rol kan in twee abonnementen worden gebruikt. In dit voor beeld wordt een JSON-bestand gebruikt als invoer.
+In het volgende voor beeld wordt een aangepaste rol met de naam *virtuele-machine operator* gemaakt. Met deze aangepaste rol krijgt u toegang tot alle Lees bewerkingen van *micro soft. Compute*-, *micro soft. Storage*-en *micro soft. Network* resource providers en wordt er toegang toegewezen om virtuele machines te starten, opnieuw op te starten en te bewaken. Deze aangepaste rol kan in twee abonnementen worden gebruikt. In dit voor beeld wordt een JSON-bestand gebruikt als invoer.
 
 vmoperator.jsop
 
@@ -189,7 +189,7 @@ Als u een aangepaste rol wilt bijwerken, gebruikt u eerst de [lijst AZ Role defi
 az role definition update --role-definition {roleDefinition}
 ```
 
-In het volgende voor beeld wordt de *micro soft. Insights-diagnosticSettings/-* bewerking toegevoegd aan `Actions` en wordt een beheer groep toegevoegd aan `AssignableScopes` voor de aangepaste rol van de operator voor de *virtuele machine* . Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+In het volgende voor beeld wordt de *micro soft. Insights-diagnosticSettings/-* bewerking toegevoegd aan `Actions` en wordt een beheer groep toegevoegd aan `AssignableScopes` voor de aangepaste rol van de operator voor de *virtuele machine* . Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 
 vmoperator.jsop
 
@@ -244,4 +244,4 @@ az role definition delete --name "Virtual Machine Operator"
 
 - [Zelfstudie: Een aangepaste Azure-rol maken met Azure CLI](tutorial-custom-role-cli.md)
 - [Aangepaste Azure-rollen](custom-roles.md)
-- [Bewerkingen voor Azure Resource Manager-resourceproviders](resource-provider-operations.md)
+- [Azure-resource provider bewerkingen](resource-provider-operations.md)

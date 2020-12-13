@@ -87,8 +87,6 @@
     - name: Diagnostische logboeken bewaken
       href: firewall-diagnostics.md
       displayName: 'Azure CLI, az monitor diagnostic-settings create, monitor diagnostic settings'
-    - name: Azure Monitor-logboeken
-      href: log-analytics-samples.md
     - name: Azure Firewall Workbook
       href: firewall-workbook.md
 - name: Naslaginformatie

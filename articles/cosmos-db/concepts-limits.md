@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: f591a9781cb81ec735d22f4f687f8d413923dc93
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9d351bc945c08c82e96791059b00dc94eb94b918
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349126"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368734"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -70,7 +70,7 @@ Als u een schatting wilt maken van de minimale door Voer die vereist is voor een
 * De hoogste RU/s die zijn ingericht voor de data base/100
 * 400 + MAX (aantal containers-25, 0) * 100 RU/s
 
-Voor beeld: Stel dat u een Data Base hebt ingericht met 400 RU/s, 15 GB aan opslag ruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 5, 0) * 100 RU/s` = 900 ru/s zijn. 
+Voor beeld: Stel dat u een Data Base hebt ingericht met 400 RU/s, 15 GB aan opslag ruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 25, 0) * 100 RU/s` = 900 ru/s zijn. 
 
 **Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
 

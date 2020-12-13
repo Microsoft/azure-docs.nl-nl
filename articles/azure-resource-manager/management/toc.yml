@@ -180,6 +180,8 @@
       href: ./policy-reference.md
 - name: Resources
   items:
+    - name: Uw vaardigheden ontwikkelen met Microsoft Learn
+      href: /learn/browse/?products=azure-resource-manager
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
     - name: Prijscalculator

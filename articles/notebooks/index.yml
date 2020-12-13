@@ -9,12 +9,12 @@ metadata:
   author: JoshuaPartlow
   ms.author: joshuapa
   ms.date: 06/17/2020
-  ms.openlocfilehash: 3f89d249e126cfeb65b141e39d6a6a998e4d1758
-  ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+  ms.openlocfilehash: c729e93f48a0b3ef382edd32a9322ec5c0174b3b
+  ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/19/2020
-  ms.locfileid: "92207747"
+  ms.lasthandoff: 12/11/2020
+  ms.locfileid: "97109399"
 landingContent:
 - title: Over Azure Notebooks
   linkLists:
@@ -22,49 +22,15 @@ landingContent:
     links:
     - text: Wat is de Azure Notebooks-service?
       url: azure-notebooks-overview.md
-  - linkListType: deploy
-    links:
-    - text: Voorbeelden van Azure Notebooks
-      url: azure-notebooks-samples.md
   - linkListType: get-started
     links:
     - text: Uw Azure Notebooks-bestanden openen
       url: https://notebooks.azure.com/
 - title: Aan de slag met Azure Notebooks
   linkLists:
-  - linkListType: learn
-    links:
-    - text: Klimaatgegevens analyseren met Azure Notebooks
-      url: /learn/modules/analyze-climate-data-with-azure-notebooks/
-  - linkListType: tutorial
-    links:
-    - text: Een Jupyter-notebook maken en uitvoeren met Python
-      url: tutorial-create-run-jupyter-notebook.md
   - linkListType: quickstart
     links:
     - text: Aanmelden en een gebruikers-id instellen
       url: quickstart-sign-in-azure-notebooks.md
-    - text: Een notebook maken en delen
-      url: quickstart-create-share-jupyter-notebook.md
-    - text: Een notebook klonen
-      url: quickstart-clone-jupyter-notebook.md
-    - text: Een lokaal Jupyter-notebook migreren
-      url: quickstart-migrate-local-jupyter-notebook.md
-    - text: Een project met een aangepaste omgeving maken
-      url: quickstart-create-jupyter-notebook-project-environment.md
     - text: Uw project exporteren
       url: quickstart-export-jupyter-notebook-project.md
-- title: Belangrijkste taken voor Azure Notebooks
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Projecten beheren en configureren
-      url: configure-manage-azure-notebooks-projects.md
-    - text: Werken met gegevensbestanden
-      url: work-with-project-data-files.md
-    - text: Projecten maken en klonen
-      url: create-clone-jupyter-notebooks.md
-    - text: Toegang tot cloudgegevens in een notebook
-      url: access-data-resources-jupyter-notebooks.md
-    - text: Pakketten in een notebook installeren
-      url: install-packages-jupyter-notebook.md

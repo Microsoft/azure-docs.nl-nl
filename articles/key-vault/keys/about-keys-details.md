@@ -9,14 +9,14 @@ ms.subservice: keys
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.author: ambapat
-ms.openlocfilehash: 76eedaabf52cf2d56b2feaa6dc2748c25bf7696c
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: b483ffc480f9ad750f8d9901d6bec382db2378c2
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424302"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368916"
 ---
-# <a name="key-types-algorithms-and-operations"></a>Sleutel typen, algoritmen en bewerkingen
+# <a name="key-types-algorithms-and-operations"></a>Sleuteltypen, algoritmen en bewerkingen
 
 Key Vault ondersteunt twee resource typen: kluizen en beheerde Hsm's. Beide typen resources ondersteunen verschillende versleutelings sleutels. Zie [over sleutels](about-keys.md)voor een overzicht van de ondersteunde sleutel typen, beveiligings typen per resource type.
 
@@ -34,41 +34,41 @@ De volgende tabel toont een samen vatting van sleutel typen en ondersteunde algo
 
 ### <a name="curve-types"></a>Curvetypen
 
--   **P-256** : de NIST-curve P-256, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
--   **P-256K** : de SEC-curve SECP256K1, gedefinieerd op [SEC 2: Recommended Elliptic Curve Domain Parameters](https://www.secg.org/sec2-v2.pdf) (Engelstalig).
--   **P-384** : de NIST-curve P-384, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
--   **P-521** : de NIST-curve P-521, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+-   **P-256**: de NIST-curve P-256, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+-   **P-256K**: de SEC-curve SECP256K1, gedefinieerd op [SEC 2: Recommended Elliptic Curve Domain Parameters](https://www.secg.org/sec2-v2.pdf) (Engelstalig).
+-   **P-384**: de NIST-curve P-384, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
+-   **P-521**: de NIST-curve P-521, gedefinieerd op [DSS FIPS PUB 186-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### <a name="signverify"></a>SIGN/VERIFY
 
--   **ES256** : ECDSA voor SHA-256-hashes en -sleutels die zijn gemaakt met curve P-256. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
--   **ES256K** : ECDSA voor SHA-256-hashes en -sleutels die zijn gemaakt met curve P-256K. Dit algoritme is in afwachting van standaardisatie.
--   **ES384** : ECDSA voor SHA-384-hashes en -sleutels die zijn gemaakt met curve P-384. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
--   **ES512** : ECDSA voor SHA-512-hashes en -sleutels die zijn gemaakt met curve P-512. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **ES256**: ECDSA voor SHA-256-hashes en -sleutels die zijn gemaakt met curve P-256. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **ES256K**: ECDSA voor SHA-256-hashes en -sleutels die zijn gemaakt met curve P-256K. Dit algoritme is in afwachting van standaardisatie.
+-   **ES384**: ECDSA voor SHA-384-hashes en -sleutels die zijn gemaakt met curve P-384. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **ES512**: ECDSA voor SHA-512-hashes en -sleutels die zijn gemaakt met curve P-512. Dit algoritme wordt beschreven op [RFC7518](https://tools.ietf.org/html/rfc7518).
 
 ##  <a name="rsa-algorithms"></a>RSA-algoritmen  
  De volgende algoritme-id's worden ondersteund met RSA- en RSA-HSM-sleutels  
 
 ### <a name="wrapkeyunwrapkey-encryptdecrypt"></a>WRAPKEY/UNWRAPKEY, ENCRYPT/DECRYPT
 
--   **RSA1_5** : RSAES-PKCS1-V1_5 [RFC3447] sleutelversleuteling  
--   **RSA-OAEP** : RSAES met behulp van Optimal Asymmetric Encryption Padding (OAEP) [RFC3447], met de standaardparameters die worden beschreven bij RFC 3447 in sectie A.2.1. Deze standaardparameters maken gebruik van een hash-functie van SHA-1 en een maskergenereerfunctie van MGF1 met SHA-1.  
+-   **RSA1_5**: RSAES-PKCS1-V1_5 [RFC3447] sleutelversleuteling  
+-   **RSA-OAEP**: RSAES met behulp van Optimal Asymmetric Encryption Padding (OAEP) [RFC3447], met de standaardparameters die worden beschreven bij RFC 3447 in sectie A.2.1. Deze standaardparameters maken gebruik van een hash-functie van SHA-1 en een maskergenereerfunctie van MGF1 met SHA-1.  
 -  **RSA-OAEP-256** – RSAES met behulp van optimale asymmetrische versleutelingsopvulling met een hashfunctie van SHA-256 en een maskergeneratiefunctie van MGF1 met SHA-256
 
 ### <a name="signverify"></a>SIGN/VERIFY
 
--   **PS256** : RSASSA-PSS met behulp van SHA-256 en MGF1 met SHA-256, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
--   **PS384** : RSASSA-PSS met behulp van SHA-384 en MGF1 met SHA-384, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
--   **PS512** : RSASSA-PSS met behulp van SHA-512 en MGF1 met SHA-512, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
--   **RS256** : RSASSA-PKCS-v1_5 met behulp van SHA-256. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-256 en moet 32 bytes lang zijn.  
--   **RS384** : RSASSA-PKCS-v1_5 met behulp van SHA-384. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-384 en moet 48 bytes lang zijn.  
--   **RS512** : RSASSA-PKCS-v1_5 met behulp van SHA-512. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-512 en moet 64 bytes lang zijn.  
--   **RSNULL** : zie [RFC2437](https://tools.ietf.org/html/rfc2437), een gespecialiseerde use-case om bepaalde TLS-scenario's in te schakelen.  
+-   **PS256**: RSASSA-PSS met behulp van SHA-256 en MGF1 met SHA-256, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **PS384**: RSASSA-PSS met behulp van SHA-384 en MGF1 met SHA-384, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **PS512**: RSASSA-PSS met behulp van SHA-512 en MGF1 met SHA-512, zoals wordt beschreven in [RFC7518](https://tools.ietf.org/html/rfc7518).
+-   **RS256**: RSASSA-PKCS-v1_5 met behulp van SHA-256. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-256 en moet 32 bytes lang zijn.  
+-   **RS384**: RSASSA-PKCS-v1_5 met behulp van SHA-384. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-384 en moet 48 bytes lang zijn.  
+-   **RS512**: RSASSA-PKCS-v1_5 met behulp van SHA-512. De door de toepassing geleverde hash-waarde moet worden berekend met SHA-512 en moet 64 bytes lang zijn.  
+-   **RSNULL**: zie [RFC2437](https://tools.ietf.org/html/rfc2437), een gespecialiseerde use-case om bepaalde TLS-scenario's in te schakelen.  
 
 ##  <a name="symmetric-key-algorithms"></a>Symmetrische sleutelalgoritmen
-- **AES-KW** - AES Key Wrap ( [RFC3394](https://tools.ietf.org/html/rfc3394)).
-- **AES-GCM** -AES-versleuteling in de Galois Counter-modus ( [NIST SP800-38d](https://csrc.nist.gov/publications/sp800))
-- **AES-GCM** -AES-versleuteling in blokversleutingsmodus ( [NIST SP800-38d](https://csrc.nist.gov/publications/sp800))
+- **AES-KW** - AES Key Wrap ([RFC3394](https://tools.ietf.org/html/rfc3394)).
+- **AES-GCM** -AES-versleuteling in de Galois-tellers modus ([NIST SP 800-38d](https://csrc.nist.gov/publications/sp800))
+- **AES-CBC** -AES-versleuteling in de coderings modus Cipher Block ([NIST SP 800-38A](https://csrc.nist.gov/publications/sp800))
 
 > [!NOTE] 
 > Huidige AES-GCM-implementatie en de bijbehorende API's zijn experimenteel. De implementatie en de API's kunnen aanzienlijk veranderen in de toekomstige iteraties. 
@@ -77,23 +77,23 @@ De volgende tabel toont een samen vatting van sleutel typen en ondersteunde algo
 
 Beheerd HSM ondersteunt de volgende bewerkingen op sleutelobjecten:  
 
--   **Maken** : Hiermee kan een client een sleutel maken in Key Vault. De waarde van de sleutel wordt gegenereerd en opgeslagen in Key Vault, en wordt niet vrijgegeven aan de client. Er kunnen asymmetrische sleutels worden gemaakt in Key Vault.  
--   **Importeren** : Hiermee kan een client een bestaande sleutel importeren in Key Vault. Er kunnen asymmetrische sleutels worden geïmporteerd in Key Vault met behulp van een aantal verschillende pakketmethoden in een JWK-constructie. 
--   **Bijwerken** : Hiermee kan een client met voldoende machtigingen de metagegevens (sleutelkenmerken) van een sleutel die eerder is opgeslagen in Key Vault wijzigen.  
--   **Verwijderen** : Hiermee kan een client met voldoende machtigingen een sleutel uit Key Vault verwijderen.  
--   **Weergeven** : Hiermee kan een client een lijst met alle sleutels in een bepaalde Key Vault weergeven.  
--   **Versies weergeven** : Hiermee kan een client een lijst met alle versies van een bepaalde sleutel in een bepaalde Key Vault weergeven.  
--   **Ophalen** : Hiermee kan een client de openbare onderdelen van een bepaalde sleutel in een Key Vault ophalen.  
--   **Back-ups maken** : Hiermee wordt een sleutel in een beveiligde vorm geëxporteerd.  
--   **Herstellen** : Hiermee wordt een eerder gemaakte back-up van een sleutel geïmporteerd.  
+-   **Maken**: Hiermee kan een client een sleutel maken in Key Vault. De waarde van de sleutel wordt gegenereerd en opgeslagen in Key Vault, en wordt niet vrijgegeven aan de client. Er kunnen asymmetrische sleutels worden gemaakt in Key Vault.  
+-   **Importeren**: Hiermee kan een client een bestaande sleutel importeren in Key Vault. Er kunnen asymmetrische sleutels worden geïmporteerd in Key Vault met behulp van een aantal verschillende pakketmethoden in een JWK-constructie. 
+-   **Bijwerken**: Hiermee kan een client met voldoende machtigingen de metagegevens (sleutelkenmerken) van een sleutel die eerder is opgeslagen in Key Vault wijzigen.  
+-   **Verwijderen**: Hiermee kan een client met voldoende machtigingen een sleutel uit Key Vault verwijderen.  
+-   **Weergeven**: Hiermee kan een client een lijst met alle sleutels in een bepaalde Key Vault weergeven.  
+-   **Versies weergeven**: Hiermee kan een client een lijst met alle versies van een bepaalde sleutel in een bepaalde Key Vault weergeven.  
+-   **Ophalen**: Hiermee kan een client de openbare onderdelen van een bepaalde sleutel in een Key Vault ophalen.  
+-   **Back-ups maken**: Hiermee wordt een sleutel in een beveiligde vorm geëxporteerd.  
+-   **Herstellen**: Hiermee wordt een eerder gemaakte back-up van een sleutel geïmporteerd.  
 
 Raadpleeg de [Sleutelbewerkingen in de REST API-naslag voor Key Vault](/rest/api/keyvault) voor meer informatie.  
 
 Zodra een sleutel is gemaakt in Key Vault, kunnen de volgende cryptografische bewerkingen worden uitgevoerd met behulp van de sleutel:  
 
--   **Ondertekenen en controleren** : Strikt genomen is deze bewerking 'hash ondertekenen' of 'hash controleren', omdat Key Vault geen ondersteuning biedt voor hashing van inhoud als onderdeel van het maken van een handtekening. Toepassingen moeten de te ondertekenen gegevens lokaal hashen en vervolgens een aanvraag bij Key Vault indienen om de hash te laten ondertekenen. Verificatie van ondertekende hashes wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten verificatiebewerkingen (VERIFY) lokaal worden uitgevoerd.  
--   **Sleutels versleutelen/verpakken** : Een sleutel die is opgeslagen in Key Vault, kan worden gebruikt om een andere sleutel te beveiligen. Meestal is dat een symmetrische sleutel voor het versleutelen van inhoud (CEK). Als de sleutel in Key Vault asymmetrisch is, wordt 'sleutel versleutelen' gebruikt. RSA-OAEP en de bewerkingen WRAPKEY/UNWRAPKEY (sleutel verpakken/uitpakken) zijn bijvoorbeeld gelijk aan de bewerkingen ENCRYPT/DECRYPT (versleutelen/ontsleutelen). Als de sleutel in Key Vault symmetrisch is, wordt 'sleutel verpakken' gebruikt. Bijvoorbeeld: AES-KW. WRAPKEY wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten sleutelverpakkingsbewerkingen (WRAPKEY) lokaal worden uitgevoerd.  
--   **Versleutelen en ontsleutelen** : Een sleutel die is opgeslagen in Key Vault, kan worden gebruikt voor het versleutelen of ontsleutelen van één blok gegevens. De grootte van het blok wordt bepaald door het sleuteltype en het geselecteerde versleutelingsalgoritme. ENCRYPT (versleutelen) wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten versleutelingsbewerkingen (ENCRYPT) lokaal worden uitgevoerd.  
+-   **Ondertekenen en controleren**: Strikt genomen is deze bewerking 'hash ondertekenen' of 'hash controleren', omdat Key Vault geen ondersteuning biedt voor hashing van inhoud als onderdeel van het maken van een handtekening. Toepassingen moeten de te ondertekenen gegevens lokaal hashen en vervolgens een aanvraag bij Key Vault indienen om de hash te laten ondertekenen. Verificatie van ondertekende hashes wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten verificatiebewerkingen (VERIFY) lokaal worden uitgevoerd.  
+-   **Sleutels versleutelen/verpakken**: Een sleutel die is opgeslagen in Key Vault, kan worden gebruikt om een andere sleutel te beveiligen. Meestal is dat een symmetrische sleutel voor het versleutelen van inhoud (CEK). Als de sleutel in Key Vault asymmetrisch is, wordt 'sleutel versleutelen' gebruikt. RSA-OAEP en de bewerkingen WRAPKEY/UNWRAPKEY (sleutel verpakken/uitpakken) zijn bijvoorbeeld gelijk aan de bewerkingen ENCRYPT/DECRYPT (versleutelen/ontsleutelen). Als de sleutel in Key Vault symmetrisch is, wordt 'sleutel verpakken' gebruikt. Bijvoorbeeld: AES-KW. WRAPKEY wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten sleutelverpakkingsbewerkingen (WRAPKEY) lokaal worden uitgevoerd.  
+-   **Versleutelen en ontsleutelen**: Een sleutel die is opgeslagen in Key Vault, kan worden gebruikt voor het versleutelen of ontsleutelen van één blok gegevens. De grootte van het blok wordt bepaald door het sleuteltype en het geselecteerde versleutelingsalgoritme. ENCRYPT (versleutelen) wordt ondersteund als een gebruiksvriendelijke bewerking voor toepassingen die mogelijk geen toegang hebben tot [openbaar] sleutelmateriaal. Voor de beste prestaties van toepassingen moeten versleutelingsbewerkingen (ENCRYPT) lokaal worden uitgevoerd.  
 
 Hoewel WRAPKEY/UNWRAPKEY (sleutels verpakken/uitpakken) met behulp van asymmetrische sleutels wellicht overbodig lijkt omdat de bewerking gelijk is aan ENCRYPT/DECRYPY (versleutelen/ontsleutelen), is het gebruik van afzonderlijke bewerkingen belangrijk. Het onderscheid biedt semantische scheiding en autorisatiescheiding van deze bewerkingen, en consistentie wanneer andere sleuteltypen door de service worden ondersteund.  
 
@@ -107,20 +107,20 @@ Zie [JSON Web Key (JWK)](https://tools.ietf.org/html/draft-ietf-jose-json-web-ke
 
 Naast het sleutelmateriaal kunnen de volgende kenmerken worden opgegeven. In een JSON-aanvraag zijn een sleutelwoord en accolades ({}) om kenmerken vereist, zelfs als er geen kenmerken zijn opgegeven.  
 
-- *enabled* : boolean, optioneel; standaardwaarde is **true**. Hiermee geeft u op of de sleutel is ingeschakeld en kan worden gebruikt voor cryptografische bewerkingen. Het kenmerk *enabled* (ingeschakeld) wordt gebruikt in combinatie met *nbf* en *exp*. Bewerkingen tussen *nbf* en *exp* worden alleen toegestaan *enabled* is ingesteld op **true**. Bewerkingen buiten het venster *nbf* / *exp* worden automatisch geweigerd, met uitzondering van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations).
-- *nbf* : IntDate, optioneel; standaardwaarde is 'now' (nu). Het kenmerk *nbf* (niet vóór) geeft de tijd aan waarvoor de sleutel NIET mag worden gebruikt voor cryptografische bewerkingen, met uitzonderingen van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations). Voor de verwerking van het kenmerk *nbf* MOET de huidige datum/tijd later of gelijk zijn aan de niet-vóór-datum/tijd die wordt vermeld in het kenmerk *nbf*. Door Key Vault kan enig tijdsverschil (van hooguit enkele minuten) worden toegestaan, om rekening te houden met ongelijke kloktijden. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
-- *exp* : IntDate, optioneel; standaardwaarde is 'forever' (permanent). Het kenmerk *exp* (vervaltijd) geeft de vervaltijd aan waarop of waarna de sleutel NIET mag worden gebruikt voor cryptografische bewerkingen, met uitzondering van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations). Voor de verwerking van het kenmerk *exp* MOET de huidige datum/tijd eerder zijn dan de vervaldatum/-tijd die wordt vermeld in het kenmerk *exp*. Door Key Vault kan enig tijdsverschil (van hooguit enkele minuten) worden toegestaan, om rekening te houden met ongelijke kloktijden. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
+- *enabled*: boolean, optioneel; standaardwaarde is **true**. Hiermee geeft u op of de sleutel is ingeschakeld en kan worden gebruikt voor cryptografische bewerkingen. Het kenmerk *enabled* (ingeschakeld) wordt gebruikt in combinatie met *nbf* en *exp*. Bewerkingen tussen *nbf* en *exp* worden alleen toegestaan *enabled* is ingesteld op **true**. Bewerkingen buiten het venster *nbf* / *exp* worden automatisch geweigerd, met uitzondering van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations).
+- *nbf*: IntDate, optioneel; standaardwaarde is 'now' (nu). Het kenmerk *nbf* (niet vóór) geeft de tijd aan waarvoor de sleutel NIET mag worden gebruikt voor cryptografische bewerkingen, met uitzonderingen van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations). Voor de verwerking van het kenmerk *nbf* MOET de huidige datum/tijd later of gelijk zijn aan de niet-vóór-datum/tijd die wordt vermeld in het kenmerk *nbf*. Door Key Vault kan enig tijdsverschil (van hooguit enkele minuten) worden toegestaan, om rekening te houden met ongelijke kloktijden. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
+- *exp*: IntDate, optioneel; standaardwaarde is 'forever' (permanent). Het kenmerk *exp* (vervaltijd) geeft de vervaltijd aan waarop of waarna de sleutel NIET mag worden gebruikt voor cryptografische bewerkingen, met uitzondering van bepaalde typen bewerkingen onder [bepaalde voorwaarden](#date-time-controlled-operations). Voor de verwerking van het kenmerk *exp* MOET de huidige datum/tijd eerder zijn dan de vervaldatum/-tijd die wordt vermeld in het kenmerk *exp*. Door Key Vault kan enig tijdsverschil (van hooguit enkele minuten) worden toegestaan, om rekening te houden met ongelijke kloktijden. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
 
 Er zijn aanvullende alleen-lezen kenmerken die zijn opgenomen in elk antwoord dat sleutelkenmerken bevat:  
 
-- *created* : IntDate, optioneel. Het kenmerk *created* geeft aan wanneer deze versie van de sleutel is gemaakt. De waarde is null voor sleutels die zijn gemaakt vóór het toevoegen van dit kenmerk. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
-- *updated* : IntDate, optioneel. Het kenmerk *updated* geeft aan wanneer deze versie van de sleutel is bijgewerkt. De waarde is null voor sleutels die voor het laatst zijn bijgewerkt vóór het toevoegen van dit kenmerk. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
+- *created*: IntDate, optioneel. Het kenmerk *created* geeft aan wanneer deze versie van de sleutel is gemaakt. De waarde is null voor sleutels die zijn gemaakt vóór het toevoegen van dit kenmerk. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
+- *updated*: IntDate, optioneel. Het kenmerk *updated* geeft aan wanneer deze versie van de sleutel is bijgewerkt. De waarde is null voor sleutels die voor het laatst zijn bijgewerkt vóór het toevoegen van dit kenmerk. De waarde MOET een getal zijn dat een IntDate-waarde bevat.  
 
 Zie [Over sleutels, geheimen en certificaten: [Gegevenstypen](../general/about-keys-secrets-certificates.md#data-types) voor meer informatie over IntDate.
 
 ### <a name="date-time-controlled-operations"></a>Bewerkingen met datum-/tijdcontrole
 
-Nog-niet-geldige en vervallen sleutels, buiten het venster *nbf* / *exp* , zijn te gebruiken voor **decrypt** -, **unwrap** - en **verify** -bewerkingen (zonder 403, Verboden te retourneren). De nog-niet-geldig-status maakt het mogelijk om een sleutel te testen vóór gebruik in een productieomgeving. De vervallen-status maakt het mogelijk om herstelbewerkingen uit te voeren voor gegevens die zijn gemaakt toen de sleutel geldig was. U kunt ook de toegang tot een sleutel uitschakelen met behulp van Key Vault-beleid of door het kenmerk *enabled* te wijzigen in **false**.
+Nog-niet-geldige en vervallen sleutels, buiten het venster *nbf* / *exp*, zijn te gebruiken voor **decrypt**-, **unwrap**- en **verify**-bewerkingen (zonder 403, Verboden te retourneren). De nog-niet-geldig-status maakt het mogelijk om een sleutel te testen vóór gebruik in een productieomgeving. De vervallen-status maakt het mogelijk om herstelbewerkingen uit te voeren voor gegevens die zijn gemaakt toen de sleutel geldig was. U kunt ook de toegang tot een sleutel uitschakelen met behulp van Key Vault-beleid of door het kenmerk *enabled* te wijzigen in **false**.
 
 Zie [Gegevenstypen](../general/about-keys-secrets-certificates.md#data-types) voor meer informatie over gegevenstypen.
 
@@ -140,26 +140,26 @@ Toegangsbeheer voor sleutels die door Key Vault worden beheerd, wordt geboden op
 De volgende machtigingen kunnen worden toegekend per gebruiker of service-principal, in de ACE-vermelding voor sleutels in een kluis. Deze machtigingen zijn een nauwkeurige afspiegeling van de bewerkingen die zijn toegestaan voor een sleutelobject.  Het verlenen van toegang aan een Service-Principal in de sleutel kluis is een eenmalige-bewerking. deze blijft hetzelfde voor alle Azure-abonnementen. U kunt deze gebruiken om zoveel certificaten te implementeren als u wilt. 
 
 - Machtigingen voor sleutelbeheerbewerkingen
-  - *get* : Het openbare gedeelte van een sleutel lezen, plus de kenmerken van die sleutel
-  - *list* : De sleutels of de versies van sleutels die zijn opgeslagen in een sleutelkluis weergeven
-  - *update* : De kenmerken voor een sleutel bijwerken
-  - *create* : Nieuwe sleutels maken
-  - *import* : Een sleutel importeren in een sleutelkluis
-  - *delete* : Het sleutelobject verwijderen
-  - *recover* : Een verwijderde sleutel herstellen
-  - *backup* : Een back-up van een sleutel in een sleutelkluis maken
-  - *restore* : Een back-up van een sleutel terugzetten naar een sleutelkluis
+  - *get*: Het openbare gedeelte van een sleutel lezen, plus de kenmerken van die sleutel
+  - *list*: De sleutels of de versies van sleutels die zijn opgeslagen in een sleutelkluis weergeven
+  - *update*: De kenmerken voor een sleutel bijwerken
+  - *create*: Nieuwe sleutels maken
+  - *import*: Een sleutel importeren in een sleutelkluis
+  - *delete*: Het sleutelobject verwijderen
+  - *recover*: Een verwijderde sleutel herstellen
+  - *backup*: Een back-up van een sleutel in een sleutelkluis maken
+  - *restore*: Een back-up van een sleutel terugzetten naar een sleutelkluis
 
 - Machtigingen voor cryptografische bewerkingen
-  - *decrypt* : De sleutel gebruiken voor het ontsleutelen van een reeks bytes
-  - *encrypt* : De sleutel gebruiken voor het versleutelen van een reeks bytes
-  - *unwrapKey* : De sleutel gebruiken voor het ontsleutelen van verpakte symmetrische sleutels
-  - *wrapKey* : De sleutel gebruiken voor het versleutelen van een symmetrische sleutel
-  - *verify* : De sleutel gebruiken om hashes te controleren  
-  - *sign* : De sleutel gebruiken om hashes te ondertekenen
+  - *decrypt*: De sleutel gebruiken voor het ontsleutelen van een reeks bytes
+  - *encrypt*: De sleutel gebruiken voor het versleutelen van een reeks bytes
+  - *unwrapKey*: De sleutel gebruiken voor het ontsleutelen van verpakte symmetrische sleutels
+  - *wrapKey*: De sleutel gebruiken voor het versleutelen van een symmetrische sleutel
+  - *verify*: De sleutel gebruiken om hashes te controleren  
+  - *sign*: De sleutel gebruiken om hashes te ondertekenen
     
 - Machtigingen voor bevoorrechte bewerkingen
-  - *purge* : Een verwijderde sleutel opschonen (permanent verwijderen)
+  - *purge*: Een verwijderde sleutel opschonen (permanent verwijderen)
 
 Raadpleeg de [Sleutelbewerkingen in de REST API-naslag voor Key Vault](/rest/api/keyvault) voor meer informatie over het werken met sleutels. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen. 
 

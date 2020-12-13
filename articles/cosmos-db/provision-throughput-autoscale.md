@@ -5,14 +5,14 @@ author: kirillg
 ms.author: kirillg
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/04/2020
+ms.date: 12/11/2020
 ms.custom: seo-nov-2020
-ms.openlocfilehash: aaedca5acf7861db05f0ec724e05449316379829
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: ba0dd347c4ee2cb41b34c2fc34f1848a7295dc3a
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337539"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368661"
 ---
 # <a name="create-azure-cosmos-containers-and-databases-with-autoscale-throughput"></a>Azure Cosmos-containers en-data bases maken met de door Voer van automatisch schalen
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -59,7 +59,7 @@ Het ingangs punt voor automatisch schalen maximale door Voer `Tmax` wordt gestar
 
 ## <a name="enable-autoscale-on-existing-resources"></a>Automatisch schalen op bestaande resources inschakelen
 
-Gebruik de [Azure Portal](how-to-provision-autoscale-throughput.md#enable-autoscale-on-existing-database-or-container) om automatisch schalen in te scha kelen op een bestaande data base of container. U kunt op elk gewenst moment scha kelen tussen de ingerichte door Voer van automatisch schalen en standaard (hand matig). Raadpleeg deze [documentatie](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) voor meer informatie. Voor alle Api's kunt u op dit moment alleen de Azure Portal gebruiken om automatisch schalen in te scha kelen op bestaande resources.
+Gebruik de [Azure Portal](how-to-provision-autoscale-throughput.md#enable-autoscale-on-existing-database-or-container), [Azure Resource Manager sjabloon](how-to-provision-autoscale-throughput.md#azure-resource-manager), [cli](how-to-provision-autoscale-throughput.md#azure-cli) of [Power shell](how-to-provision-autoscale-throughput.md#azure-powershell) om automatisch schalen in te scha kelen voor een bestaande data base of container. U kunt op elk gewenst moment scha kelen tussen de ingerichte door Voer van automatisch schalen en standaard (hand matig). Raadpleeg deze [documentatie](autoscale-faq.md#how-does-the-migration-between-autoscale-and-standard-manual-provisioned-throughput-work) voor meer informatie.
 
 ## <a name="throughput-and-storage-limits-for-autoscale"></a><a id="autoscale-limits"></a> Doorvoer-en opslag limieten voor automatisch schalen
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp, mqtt, devx-track-csharp
-ms.openlocfilehash: 133be436853ee8c2b04df2f943368513108b226b
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: c0c3a452c93b88483ac7027405665c26ceab8183
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444281"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368499"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Inzicht in de runtime van Azure IoT Edge en de architectuur ervan
 
@@ -81,7 +81,7 @@ De IoT Edge hub is geen volledige versie van IoT Hub die lokaal wordt uitgevoerd
 
 Om de band breedte te verminderen die uw IoT Edge oplossing gebruikt, optimaliseert de IoT Edge hub het aantal werkelijke verbindingen dat in de Cloud wordt gemaakt. IoT Edge hub maakt logische verbindingen van modules of downstream-apparaten en combineert deze voor één fysieke verbinding met de Cloud. De details van dit proces zijn transparant voor de rest van de oplossing. Clients denken dat ze hun eigen verbinding met de Cloud hebben, zelfs als ze allemaal via dezelfde verbinding worden verzonden. De IoT Edge hub kan de AMQP of het MQTT-protocol gebruiken om upstream te communiceren met de Cloud, onafhankelijk van protocollen die worden gebruikt door downstream-apparaten. De IoT Edge hub ondersteunt echter alleen het combi neren van logische verbindingen in één fysieke verbinding door AMQP als het upstream-protocol en de bijbehorende multiplexing-mogelijkheden te gebruiken. AMQP is het standaard upstream-protocol.
 
-![IoT Edge hub is een gateway tussen fysieke apparaten en IoT Hub](./media/iot-edge-runtime/Gateway.png)
+![IoT Edge hub is een gateway tussen fysieke apparaten en IoT Hub](./media/iot-edge-runtime/gateway-communication.png)
 
 IoT Edge hub kunt bepalen of deze is verbonden met IoT Hub. Als de verbinding is verbroken, slaat IoT Edge hub berichten of dubbele updates lokaal op. Zodra een verbinding tot stand is gebracht, worden alle gegevens gesynchroniseerd. De locatie die wordt gebruikt voor deze tijdelijke cache wordt bepaald door een eigenschap van de module van de IoT Edge hub. De grootte van de cache wordt niet afgetopt en zal groeien zolang het apparaat opslag capaciteit heeft. Zie [offline mogelijkheden](offline-capabilities.md)voor meer informatie.
 
@@ -94,7 +94,7 @@ IoT Edge-hub vereenvoudigt de communicatie tussen modules. Als u IoT Edge hub al
 
 ![IoT Edge hub vereenvoudigt de communicatie van module-naar-module](./media/iot-edge-runtime/module-endpoints.png)
 
-Als u gegevens naar de IoT Edge hub wilt verzenden, roept een module de SendEventAsync-methode aan. Het eerste argument geeft aan op welke uitvoer het bericht moet worden verzonden. De volgende pseudocode verzendt een bericht op **output1** :
+Als u gegevens naar de IoT Edge hub wilt verzenden, roept een module de SendEventAsync-methode aan. Het eerste argument geeft aan op welke uitvoer het bericht moet worden verzonden. De volgende pseudocode verzendt een bericht op **output1**:
 
    ```csharp
    ModuleClient client = await ModuleClient.CreateFromEnvironmentAsync(transportSettings);
@@ -112,7 +112,7 @@ Voor meer informatie over de ModuleClient-klasse en de communicatie methoden raa
 
 De oplossings ontwikkelaar is verantwoordelijk voor het opgeven van de regels die bepalen hoe IoT Edge hub berichten tussen modules doorgeeft. Routerings regels worden gedefinieerd in de Cloud en naar IoT Edge hub gepusht in de module dubbele. Dezelfde syntaxis voor IoT Hub routes wordt gebruikt voor het definiëren van routes tussen modules in Azure IoT Edge. Zie [informatie over het implementeren van modules en het tot stand brengen van routes in IOT Edge](module-composition.md)voor meer informatie.
 
-![Routes tussen modules worden IoT Edge hub door lopen](./media/iot-edge-runtime/module-endpoints-with-routes.png)
+![Routes tussen modules worden IoT Edge hub door lopen](./media/iot-edge-runtime/module-endpoints-routing.png)
 ::: moniker-end
 
 <!-- <1.2> -->
@@ -134,7 +134,7 @@ De IoT Edge hub ondersteunt twee Broker mechanismen:
 
 Het eerste Broker-mechanisme maakt gebruik van dezelfde routerings functies als IoT Hub om op te geven hoe berichten tussen apparaten of modules worden door gegeven. Bij de eerste apparaten of modules worden de invoer gegevens van berichten en de uitvoer waarnaar ze berichten schrijven, opgegeven. Vervolgens kan een oplossings ontwikkelaar berichten tussen een bron, zoals uitvoer, en een doel, bijvoorbeeld invoer, met mogelijke filters routeren.
 
-![Routes tussen modules worden IoT Edge hub door lopen](./media/iot-edge-runtime/module-endpoints-with-routes.png)
+![Routes tussen modules worden IoT Edge hub door lopen](./media/iot-edge-runtime/module-endpoints-routing.png)
 
 Route ring kan worden gebruikt door apparaten of modules die zijn gebouwd met de Sdk's van het Azure IoT-apparaat via de AMQP of het MQTT-protocol. Alle Messa ging IoT Hub primitieven, zoals telemetrie, direct methods, C2D, apparaatdubbels, worden ondersteund, maar communicatie over door de gebruiker gedefinieerde onderwerpen wordt niet ondersteund.
 

@@ -3,12 +3,12 @@ title: Bewaking en logboek registratie-Azure
 description: Dit artikel bevat een overzicht van live video analyses op IoT Edge bewaking en logboek registratie.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: ef00517fc61ac532bdd99c1e887dfd93d56a8c4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ae455a4157cd649f610620e486323ac2c0a5744
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89567551"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401046"
 ---
 # <a name="monitoring-and-logging"></a>Bewaking en registratie
 
@@ -21,7 +21,7 @@ U leert ook hoe u de logboeken kunt beheren die door de module worden gegenereer
 Live video Analytics op IoT Edge verzendt gebeurtenissen of telemetriegegevens op basis van de volgende taxonomie.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Taxonomie van gebeurtenissen&quot;:::
+> :::image type="content" source="./media/telemetry-schema/taxonomy.png" alt-text="Taxonomie van gebeurtenissen":::
 
 * Operationeel: gebeurtenissen die worden gegenereerd als onderdeel van acties die worden uitgevoerd door een gebruiker of tijdens de uitvoering van een [Media grafiek](media-graph-concept.md).
    
@@ -32,16 +32,16 @@ Live video Analytics op IoT Edge verzendt gebeurtenissen of telemetriegegevens o
       
       ```
       {
-        &quot;body&quot;: {
-          &quot;outputType&quot;: &quot;assetName&quot;,
-          &quot;outputLocation&quot;: &quot;sampleAssetFromEVR-LVAEdge-20200512T233309Z&quot;
+        "body": {
+          "outputType": "assetName",
+          "outputLocation": "sampleAssetFromEVR-LVAEdge-20200512T233309Z"
         },
-        &quot;applicationProperties&quot;: {
-          &quot;topic&quot;: &quot;/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>&quot;,
-          &quot;subject&quot;: &quot;/graphInstances/Sample-Graph-2/sinks/assetSink&quot;,
-          &quot;eventType&quot;: &quot;Microsoft.Media.Graph.Operational.RecordingStarted&quot;,
-          &quot;eventTime&quot;: &quot;2020-05-12T23:33:10.392Z&quot;,
-          &quot;dataVersion&quot;: &quot;1.0"
+        "applicationProperties": {
+          "topic": "/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/<my-resource-group>/providers/microsoft.media/mediaservices/<ams-account-name>",
+          "subject": "/graphInstances/Sample-Graph-2/sinks/assetSink",
+          "eventType": "Microsoft.Media.Graph.Operational.RecordingStarted",
+          "eventTime": "2020-05-12T23:33:10.392Z",
+          "dataVersion": "1.0"
         }
       }
       ```
@@ -170,7 +170,7 @@ Bij elke gebeurtenis, wanneer deze via de IoT Hub wordt waargenomen, wordt een a
 |onderwerp| applicationProperty |tekenreeks|    Azure Resource Manager pad voor het Media Services-account.|
 |Onderwerp|   applicationProperty |tekenreeks|    Subpad van de entiteit die de gebeurtenis verstuurt.|
 |eventTime| applicationProperty|    tekenreeks| Tijdstip waarop de gebeurtenis is gegenereerd.|
-|Type| applicationProperty |tekenreeks|    Gebeurtenis type-id (zie hieronder).|
+|eventType| applicationProperty |tekenreeks|    Gebeurtenis type-id (zie hieronder).|
 |body|body  |object|    Bepaalde gebeurtenis gegevens.|
 |dataVersion    |applicationProperty|   tekenreeks  |{Major}. Secundair|
 
@@ -223,6 +223,85 @@ Voorbeelden:
 
 De tijd van de gebeurtenis wordt beschreven in de ISO8601-teken reeks en het tijdstip waarop de gebeurtenis heeft plaatsgevonden.
 
+### <a name="azure-monitor-collection-using-telegraf"></a>Azure Monitor verzameling met telegrafie
+
+Deze metrische gegevens worden gerapporteerd als live video Analytics op IoT Edge module:  
+
+|Naam meetwaarde|Type|Label|Beschrijving|
+|-----------|----|-----|-----------|
+|lva_active_graph_instances|Meter|iothub, edge_device, module_name, graph_topology|Totaal aantal actieve grafieken per topologie.|
+|lva_received_bytes_total|Prestatiemeteritem|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node|Het totale aantal bytes dat door een knoop punt is ontvangen. Alleen ondersteund voor RTSP-bronnen|
+|lva_data_dropped_total|Prestatiemeteritem|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node, data_kind|Teller van verwijderde gegevens (gebeurtenissen, media, enzovoort)|
+
+> [!NOTE]
+> Een [Prometheus-eind punt](https://prometheus.io/docs/practices/naming/) wordt weer gegeven op poort **9600** van de container. Als u uw live video-analyse op IoT Edge module ' lvaEdge ' benoemen, hebben ze toegang tot metrische gegevens door een GET-aanvraag te verzenden naar http://lvaEdge:9600/metrics .   
+
+Volg deze stappen om het verzamelen van metrische gegevens in te scha kelen op de module live video Analytics op IoT Edge:
+
+1. Maak een map op uw ontwikkel computer en navigeer naar die map
+
+1. Maak in die map `telegraf.toml` een bestand met de volgende inhoud
+    ```
+    [agent]
+        interval = "30s"
+        omit_hostname = true
+
+    [[inputs.prometheus]]
+      metric_version = 2
+      urls = ["http://edgeHub:9600/metrics", "http://edgeAgent:9600/metrics", "http://{LVA_EDGE_MODULE_NAME}:9600/metrics"]
+
+    [[outputs.azure_monitor]]
+      namespace_prefix = ""
+      region = "westus"
+      resource_id = "/subscriptions/{SUBSCRIPTON_ID}/resourceGroups/{RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/{IOT_HUB_NAME}"
+    ```
+    > [!IMPORTANT]
+    > Zorg ervoor dat u de variabelen vervangt (gemarkeerd door de `{ }` ) in het inhouds bestand
+
+1. Maak een `.dockerfile` met de volgende inhoud in deze map
+    ```
+        FROM telegraf:1.15.3-alpine
+        COPY telegraf.toml /etc/telegraf/telegraf.conf
+    ```
+
+1. Nu gebruikt u docker CLI-opdracht om **het docker-bestand te maken** en de installatie kopie naar uw Azure container Registry te publiceren.
+    1. Meer informatie over het [pushen en ophalen van docker-installatie kopieën-Azure container Registry](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli).  Meer informatie over Azure Container Registry (ACR) vindt u [hier](https://docs.microsoft.com/azure/container-registry/).
+
+
+1. Wanneer de push naar ACR is voltooid, voegt u in het manifest bestand van de implementatie het volgende knoop punt toe:
+    ```
+    "telegraf": 
+    {
+      "settings": 
+        {
+            "image": "{ACR_LINK_TO_YOUR_TELEGRAF_IMAGE}"
+        },
+      "type": "docker",
+      "version": "1.0",
+      "status": "running",
+      "restartPolicy": "always",
+      "env": 
+        {
+            "AZURE_TENANT_ID": { "value": "{YOUR_TENANT_ID}" },
+            "AZURE_CLIENT_ID": { "value": "{YOUR CLIENT_ID}" },
+            "AZURE_CLIENT_SECRET": { "value": "{YOUR_CLIENT_SECRET}" }
+        }
+    ``` 
+    > [!IMPORTANT]
+    > Zorg ervoor dat u de variabelen vervangt (gemarkeerd door de `{ }` ) in het inhouds bestand
+
+
+1. **Verificatie**
+    1. Azure Monitor kunnen worden [geverifieerd door de Service-Principal](https://github.com/influxdata/telegraf/blob/master/plugins/outputs/azure_monitor/README.md#azure-authentication).
+        1. De Azure Monitor-telegrafe-invoeg toepassing bevat [verschillende verificatie methoden](https://github.com/influxdata/telegraf/blob/master/plugins/outputs/azure_monitor/README.md#azure-authentication). De volgende omgevings variabelen moeten worden ingesteld op het gebruik van Service-Principal-verificatie.  
+            • AZURE_TENANT_ID: Hiermee geeft u de Tenant op waarnaar moet worden geverifieerd.  
+            • AZURE_CLIENT_ID: Hiermee geeft u de ID van de app-client op die moet worden gebruikt.  
+            • AZURE_CLIENT_SECRET: Hiermee geeft u het app-geheim op dat moet worden gebruikt.  
+    >[!TIP]
+    > De service-principal kan de rol '**bewaking metrische gegevens Uitgever**' krijgen.
+
+1. Zodra de modules zijn geïmplementeerd, worden metrische gegevens weer gegeven in Azure Monitor onder één naam ruimte met metrische namen die overeenkomen met de waarden die zijn gegenereerd door Prometheus. 
+    1. In dit geval navigeert u in uw Azure Portal naar de IoT Hub en klikt u op de koppeling **metrische gegevens** in het navigatie deel venster aan de linkerkant. Hier ziet u de metrische gegevens.
 ## <a name="logging"></a>Logboekregistratie
 
 Net als bij andere IoT Edge modules kunt u ook [de container logboeken](../../iot-edge/troubleshoot.md#check-container-logs-for-issues) op het apparaat Edge bekijken. De informatie die naar de logboeken wordt geschreven, kan worden beheerd met de [volgende module dubbele](module-twin-configuration-schema.md) eigenschappen:

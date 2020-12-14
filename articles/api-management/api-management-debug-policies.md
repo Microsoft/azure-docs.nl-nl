@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 4eb32243df219d721d7baae80984c45d0fc4cf25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8ed834c9ab093ae063e386978bca4d73fa46543
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91343018"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400723"
 ---
 # <a name="debug-azure-api-management-policies-in-visual-studio-code"></a>Fouten opsporen in azure API Management-beleid in Visual Studio code
 
@@ -30,9 +30,11 @@ In dit artikel wordt beschreven hoe u fouten opspoort in API Management-beleid m
 
 ## <a name="prerequisites"></a>Vereisten
 
-Maak eerst een API Management ontwikkel aars-tier door deze [zelf studie](get-started-create-service-instance.md) te volgen.
+* Maak eerst een API Management ontwikkelaars-tier door deze [Quick](get-started-create-service-instance.md) start te volgen.
 
-Installeer [Visual Studio code](https://code.visualstudio.com/) en de nieuwste versie van de [Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
+* Installeer [Visual Studio code](https://code.visualstudio.com/) en de nieuwste versie van de [Azure API Management-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement). 
+
+* Importeer een API naar uw API Management-exemplaar. Zie voor beelden van [de stappen zelf studie: de API Management extensie voor Visual Studio code gebruiken om api's te importeren en te beheren](visual-studio-code-tutorial.md).
 
 ## <a name="restrictions-and-limitations"></a>Beperkingen en beperkingen
 

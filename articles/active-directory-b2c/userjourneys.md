@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/13/2020
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5b89126b837f9c197a8babf81abb17bfd98002e4
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ce41edd2c0048a20368dd02c2dd6101248e26c14
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344994"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400010"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -43,7 +43,38 @@ Het **UserJourney** -element bevat de volgende elementen:
 
 | Element | Instanties | Beschrijving |
 | ------- | ----------- | ----------- |
+| AuthorizationTechnicalProfiles | 0:1 | Lijst met technische profielen voor autorisatie. | 
 | OrchestrationSteps | 1: n | Een indelings reeks die moet worden gevolgd voor een geslaagde trans actie. Elke gebruikers traject bestaat uit een geordende lijst met Orchestration-stappen die in volg orde worden uitgevoerd. Als er een stap mislukt, mislukt de trans actie. |
+
+## <a name="authorizationtechnicalprofiles"></a>AuthorizationTechnicalProfiles
+
+Stel dat een gebruiker een UserJourney heeft voltooid en een toegangs-of ID-token heeft verkregen. Voor het beheren van aanvullende resources, zoals het [User info-eind punt](userinfo-endpoint.md), moet de gebruiker worden geïdentificeerd. Om dit proces te starten, moet de gebruiker het toegangs token aanbieden dat eerder is uitgegeven als bewijs dat ze oorspronkelijk zijn geverifieerd door een geldig Azure AD B2C-beleid. Een geldig token voor de gebruiker moet altijd aanwezig zijn tijdens dit proces om ervoor te zorgen dat de gebruiker deze aanvraag mag doen. De technische profielen voor autorisatie valideren het inkomende token en halen claims uit het token op.
+
+Het element **AuthorizationTechnicalProfiles** bevat het volgende element:
+
+| Element | Instanties | Beschrijving |
+| ------- | ----------- | ----------- |
+| AuthorizationTechnicalProfile | 0:1 | Lijst met technische profielen voor autorisatie. | 
+
+Het element **AuthorizationTechnicalProfile** bevat het volgende kenmerk:
+
+| Kenmerk | Vereist | Beschrijving |
+| --------- | -------- | ----------- |
+| TechnicalProfileReferenceId | Ja | De id van het technische profiel dat moet worden uitgevoerd. |
+
+In het volgende voor beeld wordt een reis element van de gebruiker met autorisatie technische profielen weer gegeven:
+
+```xml
+<UserJourney Id="UserInfoJourney" DefaultCpimIssuerTechnicalProfileReferenceId="UserInfoIssuer">
+  <Authorization>
+    <AuthorizationTechnicalProfiles>
+      <AuthorizationTechnicalProfile ReferenceId="UserInfoAuthorization" />
+    </AuthorizationTechnicalProfiles>
+  </Authorization>
+  <OrchestrationSteps>
+    <OrchestrationStep Order="1" Type="ClaimsExchange">
+     ...
+```
 
 ## <a name="orchestrationsteps"></a>OrchestrationSteps
 
@@ -100,7 +131,7 @@ De elementen in de **voor waarde** bevatten de volgende elementen:
 | Element | Instanties | Beschrijving |
 | ------- | ----------- | ----------- |
 | Waarde | 1: n | Er wordt een ClaimTypeReferenceId waarvoor een query moet worden uitgevoerd. Een ander value-element bevat de waarde die moet worden gecontroleerd.</li></ul>|
-| Bewerking | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een indelings stap waar. Als de waarde `Action` is ingesteld op `SkipThisOrchestrationStep` , moet de gekoppelde `OrchestrationStep` niet worden uitgevoerd. |
+| Actie | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een indelings stap waar. Als de waarde `Action` is ingesteld op `SkipThisOrchestrationStep` , moet de gekoppelde `OrchestrationStep` niet worden uitgevoerd. |
 
 #### <a name="preconditions-examples"></a>Voor beelden van voor waarden
 
@@ -143,7 +174,7 @@ Voor waarden kunnen meerdere voor waarden controleren. In het volgende voor beel
 ```xml
 <OrchestrationStep Order="4" Type="ClaimsExchange">
   <Preconditions>
-  <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
+    <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
       <Value>objectId</Value>
       <Action>SkipThisOrchestrationStep</Action>
     </Precondition>
@@ -187,17 +218,17 @@ In de volgende indelings stap kan de gebruiker kiezen om u aan te melden met Fac
 
 ```xml
 <OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
-    <ClaimsProviderSelections>
+  <ClaimsProviderSelections>
     <ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="LinkedInExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="TwitterExchange" />
     <ClaimsProviderSelection TargetClaimsExchangeId="GoogleExchange" />
     <ClaimsProviderSelection ValidationClaimsExchangeId="LocalAccountSigninEmailExchange" />
-    </ClaimsProviderSelections>
-    <ClaimsExchanges>
-    <ClaimsExchange Id="LocalAccountSigninEmailExchange"
-                    TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
-    </ClaimsExchanges>
+  </ClaimsProviderSelections>
+  <ClaimsExchanges>
+  <ClaimsExchange Id="LocalAccountSigninEmailExchange"
+        TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
+  </ClaimsExchanges>
 </OrchestrationStep>
 
 
@@ -211,7 +242,7 @@ In de volgende indelings stap kan de gebruiker kiezen om u aan te melden met Fac
   <ClaimsExchanges>
     <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
     <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
-    <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
+  <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAUTH" />
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
   </ClaimsExchanges>

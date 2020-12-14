@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 12/02/2020
+ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 396d6f69673f8758d8d1302f8d10b8a92e5f50b4
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 37d9c24d58e0dd9fb10db607ef1b96de0a44eb78
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530746"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399363"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -95,8 +95,8 @@ De volgende tabel vergelijkt de belangrijkste standaarden: open verificatie 2,0 
 | Op het web gebaseerde eenmalige afmelding| √| √ |
 | Eenmalige aanmelding op basis van mobiel| √| √* |
 | Op mobiele apparaten gebaseerde eenmalige afmelding| √| √* |
-| Beleid voor voorwaardelijke toegang voor mobiele toepassingen| √| X |
-| Naadloze MFA-ervaring voor mobiele toepassingen| √| X |
+| Beleid voor voorwaardelijke toegang voor mobiele toepassingen| √| √* |
+| Naadloze MFA-ervaring voor mobiele toepassingen| √| √* |
 | SCIM-inrichting| √| √ |
 | Toegang tot Microsoft Graph krijgen| √| X |
 
@@ -178,7 +178,7 @@ Zie voor meer informatie over de SCIM-standaarden en-voor delen voor uw klanten 
 Zie [een scim-eind punt bouwen en gebruikers inrichten met Azure AD configureren](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)voor meer informatie over de implementatie van Azure AD scim.
 
 ### <a name="implement-scim"></a>SCIM implementeren
-Azure AD bevat [referentie code](https://aka.ms/scimoverview) om u te helpen bij het bouwen van een scim-eind punt. Er zijn ook bibliotheken van derden/verwijzingen die u kunt vinden op github.  
+Azure AD bevat [referentie code](https://aka.ms/scimoverview) om u te helpen bij het bouwen van een scim-eind punt. Er zijn ook bibliotheken van derden/verwijzingen die u kunt vinden op GitHub.  
 
 ## <a name="step-4---create-your-azure-tenant-and-test-your-app"></a>Stap 4: uw Azure-Tenant maken en uw app testen
 

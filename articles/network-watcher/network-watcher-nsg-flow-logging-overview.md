@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 03ef75f43d8c8c854c3803ceb30f31b292d566c3
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 79f442c5ab7db92e69f5396f3f9205212bdf4d4d
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033422"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399244"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
@@ -317,7 +317,7 @@ Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen v
 
 ## <a name="updating-parameters"></a>Para meters bijwerken
 
-**Azure-portal**
+**Azure Portal**
 
 Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
 
@@ -371,9 +371,11 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **Inschakelen op kritieke VNETs/subnetten**: stroom logboeken moeten worden ingeschakeld op alle kritieke VNETs/subnetten in uw abonnement als controle bare en beveiligings best practice. 
 
-**Schakel logboek registratie van de NSG-stroom in op alle nsg's die zijn gekoppeld aan een resource**: stroom logboek registratie in Azure is geconfigureerd op de NSG-resource. Een stroom wordt alleen gekoppeld aan één NSG-regel. In scenario's waarin meerdere Nsg's worden gebruikt, wordt aangeraden om NSG-stroom Logboeken in te scha kelen op alle Nsg's het subnet of de netwerk interface van een resource heeft toegepast om ervoor te zorgen dat alle verkeer wordt geregistreerd. Zie [hoe verkeer wordt geëvalueerd](../virtual-network/network-security-group-how-it-works.md) in netwerk beveiligings groepen voor meer informatie.
+**Schakel logboek registratie van de NSG-stroom in op alle nsg's die zijn gekoppeld aan een resource**: stroom logboek registratie in Azure is geconfigureerd op de NSG-resource. Een stroom wordt alleen gekoppeld aan één NSG-regel. In scenario's waarin meerdere Nsg's worden gebruikt, wordt aangeraden om NSG flow-Logboeken in te scha kelen op alle Nsg's die zijn toegepast op het subnet of de netwerk interface van de resource om ervoor te zorgen dat alle verkeer wordt geregistreerd. Zie [hoe verkeer wordt geëvalueerd](../virtual-network/network-security-group-how-it-works.md) in netwerk beveiligings groepen voor meer informatie. 
 
-**Met NSG op NIC-en subnetniveau**: als NSG is geconfigureerd op de NIC en op het subnet-niveau, moet de stroom logboek registratie worden ingeschakeld op beide nsg's. 
+Enkele veelvoorkomende scenario's:
+1. **Meerdere NSG bij een NIC**: als er meerdere nsg's zijn gekoppeld aan een NIC, moet de stroom logboek registratie worden ingeschakeld
+1. **Met NSG op NIC-en subnetniveau**: als NSG is geconfigureerd op de NIC en op het subnet-niveau, moet de stroom logboek registratie worden ingeschakeld op beide nsg's. 
 
 **Opslag inrichten**: opslag moet worden ingericht in afstemming met het verwachte flow-logboek volume.
 

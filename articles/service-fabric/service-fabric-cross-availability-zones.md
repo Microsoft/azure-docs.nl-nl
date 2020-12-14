@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: d8e4a9201c14e71520bd58ff1017b700ca47fa21
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 73a3be62e57991b63525372f008e15d8e4f36a74
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109811"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401726"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -407,12 +407,12 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 >[!NOTE]
 > * Open bare IP-en Load Balancer-resources moeten gebruikmaken van de standaard-SKU zoals eerder in het artikel is beschreven.
 > * de eigenschap multipleAvailabilityZones van het nodeType kan alleen worden gedefinieerd op het moment dat het nodeType wordt gemaakt en kan later niet worden gewijzigd. Bestaande nodeTypes kan daarom niet worden geconfigureerd met deze eigenschap.
-> * Als "hierarchicalUpgradeDomain" wordt wegge laten of is ingesteld op True, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen.
+> * Als "sfZonalUpgradeMode" wordt wegge laten of is ingesteld op hiërarchisch, worden de cluster-en toepassings implementaties langzamer naarmate er meer upgrade domeinen in het cluster zijn. Het is belang rijk dat u de time-outs voor upgrade beleid op de juiste wijze bijwerkt voor de upgrade tijd voor 15-upgrade domeinen.
 > * Het is raadzaam om het niveau van de cluster betrouwbaarheid in te stellen op Platinum om ervoor te zorgen dat het cluster het scenario van één zone in het vervolg houdt.
 
 >[!NOTE]
-> Voor best practice wordt aanbevolen hierarchicalUpgradeDomain ingesteld op True of worden wegge laten. De implementatie volgt de zonegebonden-distributie van Vm's die van invloed zijn op een kleinere hoeveelheid replica's en/of exemplaren waardoor ze veiliger zijn.
-> Gebruik hierarchicalUpgradeDomain ingesteld op False als de implementatie snelheid een prioriteit is of alleen stateless werk belasting wordt uitgevoerd op het knooppunt type met meerdere AZ. Dit leidt ertoe dat de UDe Walk parallel in alle AZ-activiteiten plaatsvindt.
+> Voor best practice wordt aangeraden sfZonalUpgradeMode ingesteld op hiërarchisch of worden wegge laten. De implementatie volgt de zonegebonden-distributie van Vm's die van invloed zijn op een kleinere hoeveelheid replica's en/of exemplaren waardoor ze veiliger zijn.
+> Gebruik sfZonalUpgradeMode ingesteld op parallel als de implementatie snelheid een prioriteit heeft of alleen stateless werk belasting wordt uitgevoerd op het knooppunt type met meerdere AZ. Dit leidt ertoe dat de UDe Walk parallel in alle AZ-activiteiten plaatsvindt.
 
 ### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Migratie naar het knooppunt type met meerdere Beschikbaarheidszones
 Voor alle migratie scenario's moet een nieuw nodeType worden toegevoegd waarvoor meerdere beschikbaarheids zones worden ondersteund. Een bestaande nodeType kan niet worden gemigreerd om meerdere zones te ondersteunen.

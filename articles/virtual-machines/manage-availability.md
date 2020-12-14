@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cynthn
-ms.openlocfilehash: 4dd15df0e745a5c6e3130233e693bbdb22655775
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b2f50ba910e3e47c55a63f58bc9f5e978e80e95a
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500441"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401182"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>De beschikbaarheid van virtuele Linux-machines beheren
 
@@ -70,7 +70,7 @@ Foutdomeinen duiden de groep virtuele machines aan die een gemeenschappelijke vo
    ![Concepttekening van een configuratie met een updatedomein en een foutdomein](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
 
 ## <a name="use-managed-disks-for-vms-in-an-availability-set"></a>Beheerde schijven voor VM's in een beschikbaarheidsset gebruiken
-Als u momenteel Vm's met niet-beheerde schijven gebruikt, raden we u ten zeerste aan om te converteren van onbeheerd naar beheerde schijven voor [Linux](./linux/convert-unmanaged-to-managed-disks.md) en [Windows](./windows/convert-unmanaged-to-managed-disks.md).
+Als u momenteel Vm's met niet-beheerde schijven gebruikt, raden wij u ten zeerste aan om te converteren van onbeheerd naar beheerde schijven voor [Linux](./linux/convert-unmanaged-to-managed-disks.md) en [Windows](./windows/convert-unmanaged-to-managed-disks.md).
 
 [Beheerde schijven](./managed-disks-overview.md) bieden een betere betrouwbaarheid voor beschikbaarheidssets door ervoor te zorgen dat de schijven van VM's in een beschikbaarheidsset voldoende van elkaar zijn verwijderd, waardoor een SPOF (Single Point Of Failure) wordt voorkomen. Dit doet u door automatisch de schijven in verschillende opslagfoutdomeinen (opslagclusters) te plaatsen en ze te uit te lijnen met het domein van de VM-fout. Wanneer een hardware- of softwarefout optreedt in een foutdomein, wordt alleen het VM-exemplaar met schijven in dit opslagfoutdomein beïnvloed.
 ![Foutdomeinen van beheerde schijven](./media/virtual-machines-common-manage-availability/md-fd-updated.png)

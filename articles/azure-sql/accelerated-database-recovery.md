@@ -11,19 +11,19 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/19/2020
-ms.openlocfilehash: c9f29a891061dc0e6dcfe8c8f6a65f0f190c6afc
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: bd1b33b2f6b1b0e0bf94639b3991b6507a89f5a9
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593583"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400791"
 ---
 # <a name="accelerated-database-recovery-in-azure-sql"></a>Versneld database herstel in Azure SQL 
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
 
 **Versneld database herstel (ADR)** is een functie van SQL server data base-engine waarmee de beschik baarheid van de data base aanzienlijk wordt verbeterd, met name als er langlopende trans acties worden uitgevoerd, door het herstel proces van de SQL server data base-engine opnieuw te ontwerpen. 
 
-ADR is momenteel beschikbaar voor Azure SQL Database, Azure SQL Managed instance, data bases in azure Synapse Analytics (momenteel in Preview) en SQL Server op Azure Vm's vanaf SQL Server 2019. 
+ADR is momenteel beschikbaar voor Azure SQL Database, Azure SQL Managed instance, data bases in azure Synapse Analytics en SQL Server op Azure Vm's vanaf SQL Server 2019. 
 
 > [!NOTE] 
 > ADR is standaard ingeschakeld in Azure SQL Database en Azure SQL Managed instance en het uitschakelen van ADR voor een van beide producten wordt niet ondersteund. 

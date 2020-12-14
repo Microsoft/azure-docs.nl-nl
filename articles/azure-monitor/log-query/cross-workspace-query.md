@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2020
-ms.openlocfilehash: 8eb163c95fb1426ebae8956d50f6d8f6aec6fd7f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1a6b328bc076ffa619921a8698549e95e6f15c60
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013646"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400757"
 ---
 # <a name="perform-log-query-in-azure-monitor-that-span-across-workspaces-and-apps"></a>Een logboek query uitvoeren in Azure Monitor die betrekking hebben op alle werk ruimten en apps
 
@@ -22,7 +22,7 @@ Er zijn twee methoden voor het opvragen van gegevens die zijn opgeslagen in meer
 2. Impliciet met behulp van [resource context query's](../platform/design-logs-deployment.md#access-mode). Wanneer u een query uitvoert in de context van een specifieke resource, resource groep of abonnement, worden de relevante gegevens opgehaald uit alle werk ruimten die gegevens voor deze resources bevatten. Application Insights gegevens die zijn opgeslagen in apps, worden niet opgehaald.
 
 > [!IMPORTANT]
-> Als u een [Application Insights resource-](../app/create-workspace-resource.md) telemetrie op basis van een werk ruimte gebruikt, wordt deze opgeslagen in een log Analytics werk ruimte met alle andere logboek gegevens. Gebruik de log ()-expressie voor het schrijven van een query die toepassing bevat in meerdere werk ruimten. Voor meerdere toepassingen in dezelfde werk ruimte hebt u geen query op meerdere werk ruimten nodig.
+> Als u een [Application Insights resource-](../app/create-workspace-resource.md) telemetrie op basis van een werk ruimte gebruikt, wordt deze opgeslagen in een log Analytics werk ruimte met alle andere logboek gegevens. Gebruik de werk ruimte ()-expressie voor het schrijven van een query die toepassing bevat in meerdere werk ruimten. Voor meerdere toepassingen in dezelfde werk ruimte hebt u geen query op meerdere werk ruimten nodig.
 
 
 ## <a name="cross-resource-query-limits"></a>Limieten voor meerdere bron query's 

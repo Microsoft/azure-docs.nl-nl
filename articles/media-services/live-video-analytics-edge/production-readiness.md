@@ -3,12 +3,12 @@ title: Gereedheid van productie en aanbevolen procedures-Azure
 description: Dit artikel bevat richt lijnen voor het configureren en implementeren van de live video-analyse op IoT Edge module in productie omgevingen.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 215427e3524861a842349b197668d92167960e5c
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 56982d84b7ffac718072683076657d56a2691d6c
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906332"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400553"
 ---
 # <a name="production-readiness-and-best-practices"></a>Productiegereedheid en best practices
 
@@ -109,7 +109,11 @@ Als u de voor beeld-media grafieken voor de Snelstartgids en zelf studies bekijk
 
 ### <a name="naming-video-assets-or-files"></a>Video-assets of -bestanden een naam geven
 
-Met media grafieken kunt u activa maken in de Cloud-of MP4-bestanden aan de rand. Media-assets kunnen worden gegenereerd door [continue video-opnamen](continuous-video-recording-tutorial.md) of op [gebeurtenissen gebaseerde video-opname](event-based-video-recording-tutorial.md). Hoewel deze assets en bestanden als gewenst kunnen worden genoemd, is de aanbevolen naamgevings structuur voor het doorlopend video-opname op basis van media " &lt; AnyText &gt; -$ {System. GraphTopologyName}-$ {System. GraphInstanceName}". Zo kunt u de assetNamePattern op de Asset Sink als volgt instellen:
+Met media grafieken kunt u activa maken in de Cloud-of MP4-bestanden aan de rand. Media-assets kunnen worden gegenereerd door [continue video-opnamen](continuous-video-recording-tutorial.md) of op [gebeurtenissen gebaseerde video-opname](event-based-video-recording-tutorial.md). Hoewel deze assets en bestanden als gewenst kunnen worden genoemd, is de aanbevolen naamgevings structuur voor het doorlopend video-opname op basis van media " &lt; AnyText &gt; -$ {System. GraphTopologyName}-$ {System. GraphInstanceName}".   
+
+Vervangings patroon wordt gedefinieerd door het $-teken gevolgd door accolades: **$ {variabelenaam}**.  
+
+Zo kunt u de assetNamePattern op de Asset Sink als volgt instellen:
 
 ```
 "assetNamePattern": "sampleAsset-${System.GraphTopologyName}-${System.GraphInstanceName}
@@ -130,15 +134,29 @@ Als u meerdere exemplaren van dezelfde grafiek uitvoert, kunt u de naam van de g
 Voor op gebeurtenissen gebaseerde video-opnames gegenereerde MP4 video clips aan de rand moet het aanbevolen naamgevings patroon DateTime bevatten en voor meerdere exemplaren van dezelfde grafiek wordt aanbevolen de systeem variabelen GraphTopologyName en GraphInstanceName te gebruiken. U kunt bijvoorbeeld filePathPattern op bestands Sink als volgt instellen: 
 
 ```
-"filePathPattern": "/var/media/sampleFilesFromEVR-${fileSinkOutputName}-${System.DateTime}"
+"fileNamePattern": "/var/media/sampleFilesFromEVR-${fileSinkOutputName}-${System.DateTime}"
 ```
 
 of 
 
 ```
-"filePathPattern": "/var/media/sampleFilesFromEVR-${fileSinkOutputName}--${System.GraphTopologyName}-${System.GraphInstanceName} ${System.DateTime}"
+"fileNamePattern": "/var/media/sampleFilesFromEVR-${fileSinkOutputName}--${System.GraphTopologyName}-${System.GraphInstanceName} ${System.DateTime}"
 ```
+>[!NOTE]
+> In het bovenstaande voor beeld is de variabele **fileSinkOutputName** de naam van een voorbeeld variabele die u in de grafiek topologie definieert. Dit is **geen** systeem variabele. 
 
+#### <a name="system-variables"></a>Systeem variabelen
+Sommige door het systeem gedefinieerde variabelen die u kunt gebruiken zijn:
+
+|Systeem variabele|Beschrijving|Voorbeeld|
+|-----------|-----------|-----------|
+|System. DateTime|De UTC-datum tijd in de ISO8601-bestands indeling (Basic-weer gave-YYYYMMDDThhmmss).|20200222T173200Z|
+|System. PreciseDateTime|UTC-datum en-tijd in ISO8601 bestands indeling met milliseconden (Basic-weer gave YYYYMMDDThhmmss. SSS).|20200222T 173200.123 Z|
+|System. GraphTopologyName|Door de gebruiker ingevoerde naam van de uitgevoerde grafiek topologie.|IngestAndRecord|
+|System. GraphInstanceName|Door de gebruiker ingevoerde naam van het exemplaar van de uitvoering van Graph.|camera001|
+
+>[!TIP]
+> System. PreciseDateTime kan niet worden gebruikt bij het benoemen van assets vanwege het '. ' in de naam
 ### <a name="keeping-your-vm-clean"></a>Uw VM opschonen
 
 De Linux-VM die u als een edge-apparaat gebruikt, kan niet meer reageren als deze niet periodiek wordt beheerd. Het is essentieel om de caches leeg te laten, overbodige pakketten te elimineren en ongebruikte containers van de virtuele machine te verwijderen. Hier volgt een aantal aanbevolen opdrachten die u kunt gebruiken op uw Edge-VM.
@@ -153,7 +171,7 @@ De Linux-VM die u als een edge-apparaat gebruikt, kan niet meer reageren als dez
 
     Met de optie voor automatisch verwijderen worden de pakketten verwijderd die automatisch zijn geïnstalleerd, omdat een ander pakket dat vereist, maar met de andere pakketten die worden verwijderd, zijn ze niet meer nodig
 1. `sudo docker image ls` – Bevat een lijst met docker-installatie kopieën op uw rand systeem
-1. `sudo docker system prune `
+1. `sudo docker system prune`
 
     Docker gebruikt een conservatieve benadering voor het opschonen van ongebruikte objecten (ook wel garbagecollection genoemd), zoals installatie kopieën, containers, volumes en netwerken: deze objecten worden doorgaans niet verwijderd, tenzij u hiervoor expliciet een docker vraagt. Dit kan ervoor zorgen dat docker extra schijf ruimte gebruikt. Voor elk type object biedt docker een opdracht voor het weghalen. Daarnaast kunt u docker-systeem weghalen gebruiken om meerdere typen objecten tegelijk op te schonen. Raadpleeg [ongebruikte docker-objecten](https://docs.docker.com/config/pruning/)weghalen voor meer informatie.
 1. `sudo docker rmi REPOSITORY:TAG`

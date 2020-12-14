@@ -11,12 +11,12 @@ ms.date: 09/29/2020
 ms.custom:
 - mqtt
 - 'Role: Cloud Development'
-ms.openlocfilehash: ef1d6787ab3d4083ee6418694d1965ea0f90f730
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: b83faecb16ac09a47a0ade25474f7a5b3ecd4296
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996117"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400925"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Apparaat-apparaatdubbels in IoT Hub begrijpen en gebruiken
 
@@ -61,7 +61,7 @@ Een apparaat dubbele is een JSON-document met de volgende opties:
 
 * **Gerapporteerde eigenschappen**. Wordt samen met de gewenste eigenschappen gebruikt voor het synchroniseren van apparaatconfiguratie of voor waarden. De apparaat-app kan gerapporteerde eigenschappen instellen en de back-end van de oplossing kan deze lezen en er query's op uitvoeren.
 
-* **Eigenschappen**van de apparaat-id. De hoofdmap van het apparaatonafhankelijke JSON-document van het apparaat bevat de alleen-lezen eigenschappen van de overeenkomende apparaat-id die is opgeslagen in het [identiteits register](iot-hub-devguide-identity-registry.md). Eigenschappen `connectionStateUpdatedTime` en worden `generationId` niet opgenomen.
+* **Eigenschappen** van de apparaat-id. De hoofdmap van het apparaatonafhankelijke JSON-document van het apparaat bevat de alleen-lezen eigenschappen van de overeenkomende apparaat-id die is opgeslagen in het [identiteits register](iot-hub-devguide-identity-registry.md). Eigenschappen `connectionStateUpdatedTime` en worden `generationId` niet opgenomen.
 
 ![Scherm afbeelding van dubbele eigenschappen van het apparaat](./media/iot-hub-devguide-device-twins/twin.png)
 
@@ -339,7 +339,9 @@ Bijvoorbeeld:
             "batteryLevel": "55%",
             "$metadata": {
                 "telemetryConfig": {
-                    "sendFrequency": "5m",
+                    "sendFrequency": {
+                        "$lastUpdated": "2016-03-31T16:35:48.789Z"
+                    },
                     "status": {
                         "$lastUpdated": "2016-03-31T16:35:48.789Z"
                     },

@@ -3,12 +3,12 @@ title: Media Graph-concept-Azure
 description: Met een media grafiek kunt u definiëren waar media moeten worden vastgelegd, hoe deze moeten worden verwerkt en waar de resultaten moeten worden bezorgd. Dit artikel bevat een gedetailleerde beschrijving van het concept van media Graph.
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 5efb62440b52d6219373d15ba3d19ddac1a2a834
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 6f23e7db8cecb46106a63fdecdb6ba04dbd99682
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007837"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401097"
 ---
 # <a name="media-graph"></a>Mediagrafiek
 
@@ -87,6 +87,8 @@ Met het knoop punt bewegings detectie processor kunt u bewegingen in live video 
 #### <a name="frame-rate-filter-processor"></a>Processor voor frame frequentie filter  
 
 Met het knoop punt filter voor frame snelheid kunt u frames uit de inkomende video stroom met een opgegeven snelheid bemonsteren. Op deze manier kunt u het aantal frames dat wordt verzonden naar onderdelen met een lagere stroom (zoals een HTTP extension-processor knooppunt) beperken voor verdere verwerking.
+>[!WARNING]
+> Deze processor is **afgeschaft** in de nieuwste versie van live video Analytics op IOT Edge module. Het beheer van de frame frequentie wordt nu ondersteund in de grafische uitbrei ding van de processor zelf.
 
 #### <a name="http-extension-processor"></a>HTTP-extensieprocessor
 
@@ -108,8 +110,9 @@ Met een Asset Sink-knoop punt kunt u media gegevens (video en/of audio) schrijve
 
 #### <a name="file-sink"></a>Bestands Sink  
 
-Met het knoop punt bestands sink kunt u media gegevens (video en/of audio) schrijven naar een locatie op het lokale bestands systeem van het IoT Edge apparaat. Er kan slechts één bestand Sink-knoop punt in een media grafiek zijn en het moet downstream van een signaal poort-processor knooppunt zijn. Hiermee wordt de duur van de uitvoer bestanden beperkt tot waarden die zijn opgegeven in de knooppunt eigenschappen van de signaal Gate-processor.
-
+Met het knoop punt bestands sink kunt u media gegevens (video en/of audio) schrijven naar een locatie op het lokale bestands systeem van het IoT Edge apparaat. Er kan slechts één bestand Sink-knoop punt in een media grafiek zijn en het moet downstream van een signaal poort-processor knooppunt zijn. Hiermee wordt de duur van de uitvoer bestanden beperkt tot waarden die zijn opgegeven in de knooppunt eigenschappen van de signaal Gate-processor. Om ervoor te zorgen dat uw edge-apparaat geen schijf ruimte meer heeft, kunt u ook de maximale grootte instellen die door de module live video Analytics op IoT Edge kan worden gebruikt om gegevens op te slaan.  
+> [!NOTE]
+Als de bestands Sink vol is, wordt de oudste gegevens door de module live video Analytics op IoT Edge te verwijderen en vervangen door de nieuwe.
 #### <a name="iot-hub-message-sink"></a>Bericht Sink IoT Hub  
 
 Met een IoT Hub Message Sink-knoop punt kunt u gebeurtenissen publiceren naar IoT Edge hub. De IoT Edge hub kan de gegevens vervolgens door sturen naar andere modules of apps op het edge-apparaat of naar IoT Hub in de Cloud (per routes die zijn opgegeven in het implementatie manifest). Het knoop punt voor de IoT Hub Message Sink kan gebeurtenissen van upstream-processors, zoals een knoop punt voor bewegings detectie of van een externe service voor het afwijzen van een processor, accepteren via een knoop punt van de HTTP-extensie.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/06/2020
 ms.author: yelevin
-ms.openlocfilehash: b685f716688cfbe732fa7d3566e1af97cc81272a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 390d2c8488fd2b35c775eabe43677b9349b547a1
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652107"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401641"
 ---
 # <a name="tutorial-create-custom-analytics-rules-to-detect-threats"></a>Zelf studie: aangepaste analyse regels maken voor het detecteren van bedreigingen
 
@@ -114,7 +114,7 @@ U kunt aangepaste analyse regels maken om u te helpen bij het zoeken naar de typ
     1. In de sectie **incident instellingen** worden **incidenten gemaakt op basis van waarschuwingen die door deze analyse regel worden geactiveerd** , standaard ingesteld op **ingeschakeld**, wat betekent dat Azure Sentinel één afzonderlijk incident maakt van elke waarschuwing die wordt geactiveerd door de regel.
        - Als u niet wilt dat deze regel resulteert in het maken van incidenten (als deze regel bijvoorbeeld alleen gegevens voor de volgende analyse verzamelt), stelt u deze in op **uitgeschakeld**.
 
-    1. Als u **Alert grouping** een enkel incident wilt genereren op basis van een groep van maxi maal 150 vergelijk bare of terugkerende waarschuwingen (zie opmerking), stelt u **gerelateerde waarschuwingen in, die door deze analyse regel worden geactiveerd, naar incidenten** op **ingeschakeld** en stelt u de volgende para meters in.
+    1. Als u  een enkel incident wilt genereren op basis van een groep van maxi maal 150 vergelijk bare of terugkerende waarschuwingen (zie opmerking), stelt u **gerelateerde waarschuwingen in, die door deze analyse regel worden geactiveerd, naar incidenten** op **ingeschakeld** en stelt u de volgende para meters in.
 
     - **De groep beperken tot waarschuwingen die zijn gemaakt in het geselecteerde tijds bestek**: Bepaal het tijds bestek waarbinnen de vergelijk bare of terugkerende waarschuwingen samen worden gegroepeerd. Alle bijbehorende waarschuwingen binnen deze tijds periode genereren gezamenlijk een incident of een reeks incidenten (afhankelijk van de groeperings instellingen hieronder). Waarschuwingen buiten deze tijds periode genereren een afzonderlijk incident of een reeks incidenten.
 
@@ -145,7 +145,13 @@ U kunt aangepaste analyse regels maken om u te helpen bij het zoeken naar de typ
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-### <a name="a-scheduled-rule-failed-to-execute-or-appears-with-auto-disabled-added-to-the-name"></a>Een geplande regel kan niet worden uitgevoerd, of wordt weer gegeven wanneer automatisch uitgeschakeld is toegevoegd aan de naam
+### <a name="issue-no-events-appear-in-query-results"></a>Probleem: er worden geen gebeurtenissen weer gegeven in de query resultaten
+
+Als **gebeurtenis groepering** is ingesteld om **een waarschuwing voor elke gebeurtenis te activeren**, dan in bepaalde scenario's, wanneer de query resultaten op een later tijdstip worden weer gegeven (bijvoorbeeld wanneer u terugdraait op waarschuwingen van een incident), is het mogelijk dat er geen query resultaten worden weer gegeven. Dit komt doordat de verbinding van de gebeurtenis met de waarschuwing wordt bereikt door het hashen van de gegevens van de betreffende gebeurtenis en het opnemen van de hash in de query. Als de query resultaten zijn gewijzigd nadat de waarschuwing is gegenereerd, is de hash niet langer geldig en worden er geen resultaten weer gegeven. 
+
+Als u de gebeurtenissen wilt zien, verwijdert u de regel hand matig met de hash uit de query van de regel en voert u de query uit.
+
+### <a name="issue-a-scheduled-rule-failed-to-execute-or-appears-with-auto-disabled-added-to-the-name"></a>Probleem: een geplande regel kan niet worden uitgevoerd of wordt weer gegeven wanneer automatisch uitgeschakeld is toegevoegd aan de naam
 
 Het is een zeldzame voorval dat een geplande query regel niet kan worden uitgevoerd, maar dit kan gebeuren. Azure Sentinel classificeert fouten vooraf als tijdelijk of permanent, op basis van het specifieke type fout en de omstandigheden die ernaar hebben geleid.
 

@@ -3,12 +3,12 @@ title: Service Bus-wacht rijen en-onderwerpen als gebeurtenis-handlers voor Azur
 description: Hierin wordt beschreven hoe u Service Bus-wacht rijen en-onderwerpen kunt gebruiken als gebeurtenis-handlers voor Azure Event Grid-gebeurtenissen.
 ms.topic: conceptual
 ms.date: 09/03/2020
-ms.openlocfilehash: 2b18009f8fb31f1a5f057c7395781f63f182847f
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 12b72420e3475b46a4cd61ce5032b478af740dde
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96024211"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399856"
 ---
 # <a name="service-bus-queues-and-topics-as-event-handlers-for-azure-event-grid-events"></a>Service Bus-wacht rijen en-onderwerpen als gebeurtenis-handlers voor Azure Event Grid gebeurtenissen
 Een gebeurtenis-handler is de plaats waar de gebeurtenis wordt verzonden. De handler heeft een aantal verdere acties nodig om de gebeurtenis te verwerken. Verschillende Azure-Services worden automatisch geconfigureerd voor het afhandelen van gebeurtenissen en **Azure service bus** is een hiervan. 
@@ -40,7 +40,7 @@ Selecteer in de Azure Portal tijdens het maken van een gebeurtenis abonnement **
 
 ### <a name="using-cli-to-add-a-service-bus-topic-handler"></a>CLI gebruiken om een Service Bus-onderwerpassistent toe te voegen
 
-Voor Azure CLI wordt het volgende voor beeld geabonneerd en wordt een event grid-onderwerp verbonden met een Service Bus wachtrij:
+Voor Azure CLI wordt het volgende voor beeld geabonneerd en wordt een event grid-onderwerp verbonden met een Service Bus onderwerp:
 
 ```azurecli-interactive
 az eventgrid event-subscription create \

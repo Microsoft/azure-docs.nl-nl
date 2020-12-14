@@ -12,12 +12,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, jovanpop, sachinp
 ms.date: 09/14/2020
-ms.openlocfilehash: 11c3de703a4b37318b7b99f60d74190fe8ec8610
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 47c837e7a2ee859c7805d6b2e11058bcc02e6c22
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077367"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400570"
 ---
 # <a name="overview-of-azure-sql-managed-instance-resource-limits"></a>Overzicht van resourcelimieten voor Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -108,7 +108,7 @@ In het Algemeen servicelaag worden elk database bestand toegewezen IOPS en door 
 
 Als u een hoge IO-latentie krijgt bij een bepaald database bestand of als u ziet dat IOPS/door Voer de limiet bereikt, kunt u de prestaties verbeteren door [de bestands grootte te verg Roten](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Increase-data-file-size-to-improve-HammerDB-workload-performance/ba-p/823337).
 
-Er is ook een limiet op exemplaar niveau voor de maximale schrijf doorvoer in het logboek (22 MB/s), zodat u het Maxi maal toegestane bestand niet in het logboek bestand kunt bereiken omdat u de limiet voor de door Voer van het exemplaar bereikt.
+Er is ook een limiet op exemplaar niveau voor de maximale schrijf doorvoer in het logboek (zie hierboven voor waarden, bijvoorbeeld 22 MB/s), zodat u het Maxi maal toegestane bestand niet in het logboek bestand kunt bereiken omdat u de limiet voor het aantal door Voer van het exemplaar bereikt.
 
 ## <a name="supported-regions"></a>Ondersteunde regio’s
 
@@ -132,8 +132,8 @@ SQL Managed instance biedt momenteel alleen ondersteuning voor de implementatie 
 
 Ondersteunde abonnements typen kunnen een beperkt aantal resources per regio bevatten. SQL Managed instance heeft twee standaard limieten per Azure-regio (die op aanvraag kan worden verhoogd door een speciale [ondersteunings aanvraag in de Azure Portal](../database/quota-increase-request.md) te maken, afhankelijk van een type abonnements type:
 
-- **Subnet limiet** : het maximum aantal subnetten waar exemplaren van een door SQL beheerd exemplaar worden geïmplementeerd in een enkele regio.
-- **limiet vCore** : het maximum aantal vCore-eenheden dat kan worden geïmplementeerd in alle instanties in één regio. Eén GP-vCore maakt gebruik van één vCore-eenheid en één BC vCore neemt vier vCore eenheden in beslag. Het totale aantal exemplaren is niet beperkt zolang het zich binnen de limiet van de vCore-eenheid bevindt.
+- **Subnet limiet**: het maximum aantal subnetten waar exemplaren van een door SQL beheerd exemplaar worden geïmplementeerd in een enkele regio.
+- **limiet vCore**: het maximum aantal vCore-eenheden dat kan worden geïmplementeerd in alle instanties in één regio. Eén GP-vCore maakt gebruik van één vCore-eenheid en één BC vCore neemt vier vCore eenheden in beslag. Het totale aantal exemplaren is niet beperkt zolang het zich binnen de limiet van de vCore-eenheid bevindt.
 
 > [!Note]
 > Deze limieten zijn standaard instellingen en niet van technische beperkingen. De limieten kunnen op aanvraag worden verhoogd door een speciale [ondersteunings aanvraag te maken in de Azure Portal](../database/quota-increase-request.md) als u meer exemplaren in de huidige regio nodig hebt. Als alternatief kunt u nieuwe exemplaren van SQL Managed instance in een andere Azure-regio maken zonder ondersteunings aanvragen te verzenden.
@@ -142,7 +142,7 @@ De volgende tabel bevat de **standaard regionale limieten** voor ondersteunde ab
 
 |Abonnementstype| Maximum aantal subnetten voor SQL-beheerde exemplaren | Maximum aantal vCore-eenheden * |
 | :---| :--- | :--- |
-|Betalen per gebruik|3|320|
+|Betalen naar gebruik|3|320|
 |CSP |8 (15 inch in sommige regio's * *)|960 (1440 in sommige regio's * *)|
 |Dev/test met betalen per gebruik|3|320|
 |Enterprise Dev/Test|3|320|
@@ -150,7 +150,7 @@ De volgende tabel bevat de **standaard regionale limieten** voor ondersteunde ab
 |Visual Studio Enterprise|2 |64|
 |Visual Studio Professional en MSDN Platforms|2|32|
 
-\* In het plannen van implementaties moet u rekening houden dat de service tier van Bedrijfskritiek (BC) vier (4) keer zoveel vCore capaciteit nodig heeft dan de servicelaag van Algemeen (GP). Bijvoorbeeld: 1 GP vCore = 1 vCore-eenheid en 1 BC vCore = 4 vCore-eenheden. Als u de verbruiks analyse wilt vereenvoudigen met de standaard limieten, samenvatten we de vCore-eenheden in alle subnetten in de regio waar SQL Managed instance wordt geïmplementeerd en vergelijkt u de resultaten met de limieten van de exemplaar eenheid voor uw abonnements type. De limiet voor het **maximum aantal vCore-eenheden** is van toepassing op elk abonnement in een regio. Er is geen limiet per afzonderlijke subnetten, behalve dat de som van alle vCores die in meerdere subnetten zijn geïmplementeerd, kleiner of gelijk moet zijn aan het **maximum aantal vCore-eenheden** .
+\* In het plannen van implementaties moet u rekening houden dat de service tier van Bedrijfskritiek (BC) vier (4) keer zoveel vCore capaciteit nodig heeft dan de servicelaag van Algemeen (GP). Bijvoorbeeld: 1 GP vCore = 1 vCore-eenheid en 1 BC vCore = 4 vCore-eenheden. Als u de verbruiks analyse wilt vereenvoudigen met de standaard limieten, samenvatten we de vCore-eenheden in alle subnetten in de regio waar SQL Managed instance wordt geïmplementeerd en vergelijkt u de resultaten met de limieten van de exemplaar eenheid voor uw abonnements type. De limiet voor het **maximum aantal vCore-eenheden** is van toepassing op elk abonnement in een regio. Er is geen limiet per afzonderlijke subnetten, behalve dat de som van alle vCores die in meerdere subnetten zijn geïmplementeerd, kleiner of gelijk moet zijn aan het **maximum aantal vCore-eenheden**.
 
 \*\* Grotere subnet-en vCore-limieten zijn beschikbaar in de volgende regio's: Australië-oost, VS-Oost, VS-Oost 2, Europa-noord, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, Europa-west, VS-West 2.
 

@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.date: 05/03/2020
 ms.author: kaib
 ms.custom: seodec18
-ms.openlocfilehash: 3565b165c669af3566667d9bdfa401d15fcce101
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 76aa18c9724d85b1dd3fb8de3d7d033d40ff95ce
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544153"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400230"
 ---
 # <a name="resize-an-os-disk-that-has-a-gpt-partition"></a>Het formaat van een besturingssysteem schijf met een GPT-partitie wijzigen
 
@@ -292,13 +292,13 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
    1. Verhoog de grootte van de besturingssysteem schijf van de portal.
    1. Start de virtuele machine.
 
-1. Wanneer de virtuele machine opnieuw is opgestart, installeert u het pakket **Cloud-utils-growpart** om de opdracht te verkrijgen `growpart` , die u nodig hebt om de grootte van de besturingssysteem schijf te verg Roten.
+1. Wanneer de VM opnieuw is opgestart, voert u de volgende stap uit:
 
-      Dit pakket is vooraf geïnstalleerd op de meeste installatie kopieën van Azure Marketplace.
+   - Installeer het pakket **Cloud-hulppr-growpart** om de **growpart** -opdracht op te geven. Dit is vereist om de besturingssysteem schijf en de GDISK-handler voor GPT-schijf indelingen te verg Roten. Deze pakketten zijn vooraf geïnstalleerd op de meeste installatie kopieën van Marketplace.
 
-      ```bash
-      [root@dd-rhel7vm ~]# yum install cloud-utils-growpart
-      ```
+   ```bash
+   [root@dd-rhel7vm ~]# yum install cloud-utils-growpart gdisk
+   ```
 
 1. Bepaal op welke schijf en partitie LVM fysieke volume of volumes (HW) in de volume groep met de naam **rootvg** met behulp van de `pvscan` opdracht. Let op de grootte en vrije ruimte tussen de vier Kante haken (**[** en **]**).
 
@@ -400,8 +400,6 @@ Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 > Als u dezelfde procedure wilt gebruiken om de grootte van een ander logisch volume te wijzigen, wijzigt u de LV-naam in stap 12.
 
 ### <a name="rhel-raw"></a>RHEL RAW
->[!NOTE]
->Maak altijd een moment opname van de virtuele machine voordat u de schijf grootte van het besturings systeem verg root.
 
 De besturingssysteem schijf in een RHEL RAW-partitie verg Roten:
 
@@ -411,119 +409,125 @@ De besturingssysteem schijf in een RHEL RAW-partitie verg Roten:
 
 Wanneer de VM opnieuw is opgestart, voert u de volgende stappen uit:
 
-1. Gebruik deze opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
- 
-   ```
-   sudo su
+1. Gebruik de volgende opdracht om toegang te krijgen tot uw VM als een **hoofd** gebruiker:
+
+   ```bash
+   [root@dd-rhel7vm ~]# sudo -i
    ```
 
-1. Installeer het **gptfdisk** -pakket, dat u nodig hebt om de schijf grootte van het besturings systeem te verg Roten:
+1. Wanneer de VM opnieuw is opgestart, voert u de volgende stap uit:
 
-   ```
-   yum install gdisk -y
-   ```
+   - Installeer het pakket **Cloud-hulppr-growpart** om de **growpart** -opdracht op te geven. Dit is vereist om de besturingssysteem schijf en de GDISK-handler voor GPT-schijf indelingen te verg Roten. Dit pakket is vooraf geïnstalleerd op de meeste installatie kopieën van Marketplace.
 
-1.  Als u alle beschik bare sectoren op de schijf wilt zien, voert u de volgende opdracht uit:
-    ```
-    gdisk -l /dev/sda
-    ```
-
-1. U ziet de details van het partitie type. Zorg ervoor dat het GPT is. De basis partitie identificeren. Wijzig of verwijder de opstart partitie (BIOS-opstart partitie) of de systeem partitie (EFI-systeem partitie) niet.
-
-1. Gebruik deze opdracht om het partitioneren voor de eerste keer te starten: 
-    ```
-    gdisk /dev/sda
-    ```
-
-1. Er wordt een bericht weer gegeven waarin u wordt gevraagd om de volgende opdracht: `Command: ? for help` . Selecteer de toets **w** :
-
-   ```
-   w
+   ```bash
+   [root@dd-rhel7vm ~]# yum install cloud-utils-growpart gdisk
    ```
 
-1. U ontvangt dit bericht: `Warning! Secondary header is placed too early on the disk! Do you want to
-correct this problem? (Y/N)` . Selecteer de **Y** -toets: 
+1. Gebruik de **lsblk-f** opdracht om te controleren of de partitie en het bestandssysteem type de root ()-partitie bezitten **/** :
 
-   ```
-   Y
-   ```
-
-1. Er wordt een bericht weer gegeven met de mede deling dat de eind controles zijn voltooid en er wordt gevraagd om bevestiging. Selecteer de **Y** -toets:
-
-   ```
-   Y
-   ```
-
-1. Gebruik de `partprobe` opdracht om te controleren of alles juist is opgetreden:
-
-   ```
-   partprobe
+   ```bash
+   [root@vm-dd-cent7 ~]# lsblk -f
+   NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+   sda
+   ├─sda1  xfs          2a7bb59d-6a71-4841-a3c6-cba23413a5d2 /boot
+   ├─sda2  xfs          148be922-e3ec-43b5-8705-69786b522b05 /
+   ├─sda14
+   └─sda15 vfat         788D-DC65                            /boot/efi
+   sdb
+   └─sdb1  ext4         923f51ff-acbd-4b91-b01b-c56140920098 /mnt/resource
    ```
 
-1. U hebt de vorige stappen voltooid om ervoor te zorgen dat de secundaire GPT-header aan het einde wordt geplaatst. Start vervolgens het proces van het wijzigen van het formaat met het `gdisk` hulp programma opnieuw. Gebruik de volgende opdracht:
+1. Voor verificatie begint u met het weer geven van de partitie tabel van de SDA-schijf met **gdisk**. In dit voor beeld wordt een schijf van 48 GB weer geven met partitie 2 van 29,0 GiB. De schijf is uitgevouwen van 30 GB naar 48 GB in het Azure Portal.
 
-   ```
-   gdisk /dev/sda
-   ```
-1. Selecteer in het menu opdracht de **p** -toets om een lijst met partities weer te geven. De basis partitie identificeren. (In deze stappen wordt **sda2** beschouwd als de hoofd partitie.) De opstart partitie identificeren. (In deze stappen wordt **sda3** beschouwd als de opstart partitie.) 
+   ```bash
+   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
+   GPT fdisk (gdisk) version 0.8.10
 
-   ```
-   p
-   ```
-    ![Scherm opname van de hoofd partitie en de opstart partitie.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw1.png)
+   Partition table scan:
+   MBR: protective
+   BSD: not present
+   APM: not present
+   GPT: present
 
-1. Selecteer de **d** -sleutel om de partitie te verwijderen. Selecteer vervolgens het partitie nummer dat is toegewezen aan de opstart partitie. (In dit voor beeld is dit **3**.)
-   ```
-   d
-   3
-   ```
-1. Selecteer de **d** -sleutel om de partitie te verwijderen. Selecteer het partitie nummer dat is toegewezen aan de opstart partitie. (In dit voor beeld is dit **2**.)
-   ```
-   d
-   2
-   ```
-    ![Scherm afbeelding met de stappen voor het verwijderen van de basis-en opstart partities.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw2.png)
+   Found valid GPT with protective MBR; using GPT.
+   Disk /dev/sda: 100663296 sectors, 48.0 GiB
+   Logical sector size: 512 bytes
+   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
+   Partition table holds up to 128 entries
+   First usable sector is 34, last usable sector is 62914526
+   Partitions will be aligned on 2048-sector boundaries
+   Total free space is 6076 sectors (3.0 MiB)
 
-1. Als u de hoofd partitie opnieuw wilt maken met een grotere grootte, selecteert u de **n** -sleutel en voert u vervolgens het partitie nummer in dat u eerder voor de hoofdmap hebt verwijderd (**2** in dit voor beeld). Kies `Default Value` voor de eerste sector. Kies `Last sector value -  boot size sector` voor de laatste sector ( `4096` in dit geval bij een installatie van 2 MB). Kies `8300` voor de hex-code.
-   ```
-   n
-   2
-   (Enter default)
-   (Calculated value of Last sector value - 4096)
-   8300
-   ```
-1. Als u de opstart partitie opnieuw wilt maken, selecteert u de **n** -sleutel en voert u vervolgens het partitie nummer in dat u eerder voor het opstarten hebt verwijderd (**3** in dit voor beeld). Kies `Default Value` voor de eerste sector en de laatste sector. Kies `EF02` voor de hex-code.
-   ```
-   n
-   3
-   (Enter default)
-   (Enter default)
-   EF02
+   Number  Start (sector)    End (sector)  Size       Code  Name
+      1         1026048         2050047   500.0 MiB   0700
+      2         2050048        62912511   29.0 GiB    0700
+   14            2048           10239   4.0 MiB     EF02
+   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
    ```
 
-1. Schrijf de wijzigingen met behulp van de `w` opdracht en selecteer vervolgens `Y` om de wijzigingen te bevestigen:
-   ```
-   w
-   Y
-   ```
-1. Voer de `partprobe` opdracht uit om te controleren op schijf stabiliteit:
-   ```
-   partprobe
-   ```
-1. Start de VM opnieuw op. De grootte van de hoofd partitie moet worden verhoogd.
-   ```
-   reboot
+1. Vouw de partitie voor root uit, in dit geval sda2 met behulp van de opdracht **growpart** . Met deze opdracht wordt de partitie uitgebreid om alle aaneengesloten ruimte op de schijf te gebruiken.
+
+   ```bash
+   [root@vm-dd-cent7 ~]# growpart /dev/sda 2
+   CHANGED: partition=2 start=2050048 old: size=60862464 end=62912512 new: size=98613214 end=100663262
    ```
 
-   ![Scherm opname van de stappen voor het opnieuw maken van de opstart partitie.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw3.png)
+1. Druk de nieuwe partitie tabel nu opnieuw af met **gdisk** .  U ziet dat partitie 2 is uitgebreid tot 47,0 GiB:
 
-1. Voer de `xfs_growfs` opdracht op de partitie uit om de grootte ervan te wijzigen:
+   ```bash
+   [root@vm-dd-cent7 ~]# gdisk -l /dev/sda
+   GPT fdisk (gdisk) version 0.8.10
+
+   Partition table scan:
+   MBR: protective
+   BSD: not present
+   APM: not present
+   GPT: present
+
+   Found valid GPT with protective MBR; using GPT.
+   Disk /dev/sda: 100663296 sectors, 48.0 GiB
+   Logical sector size: 512 bytes
+   Disk identifier (GUID): 78CDF84D-9C8E-4B9F-8978-8C496A1BEC83
+   Partition table holds up to 128 entries
+   First usable sector is 34, last usable sector is 100663262
+   Partitions will be aligned on 2048-sector boundaries
+   Total free space is 4062 sectors (2.0 MiB)
+
+   Number  Start (sector)    End (sector)  Size       Code  Name
+      1         1026048         2050047   500.0 MiB   0700
+      2         2050048       100663261   47.0 GiB    0700
+   14            2048           10239   4.0 MiB     EF02
+   15           10240         1024000   495.0 MiB   EF00  EFI System Partition
    ```
-   xfs_growfs /dev/sda2
+
+1. Breid het bestands systeem uit op de partitie met **xfs_growfs**, dat geschikt is voor een standaard systeem met Marketplace-generatie RedHat:
+
+   ```bash
+   [root@vm-dd-cent7 ~]# xfs_growfs /
+   meta-data=/dev/sda2              isize=512    agcount=4, agsize=1901952 blks
+            =                       sectsz=4096  attr=2, projid32bit=1
+            =                       crc=1        finobt=0 spinodes=0
+   data     =                       bsize=4096   blocks=7607808, imaxpct=25
+            =                       sunit=0      swidth=0 blks
+   naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+   log      =internal               bsize=4096   blocks=3714, version=2
+            =                       sectsz=4096  sunit=1 blks, lazy-count=1
+   realtime =none                   extsz=4096   blocks=0, rtextents=0
+   data blocks changed from 7607808 to 12326651
    ```
 
-   ![Scherm afbeelding met het resultaat van het uitvoeren van xfs_growfs.](./media/resize-os-disk-rhelraw/resize-os-disk-rhelraw4.png)
+1. Controleer of de nieuwe grootte wordt weer gegeven met behulp van de **DF** -opdracht:
 
-## <a name="next-steps"></a>Volgende stappen
-
-- [Grootte van schijf wijzigen](expand-disks.md)
+   ```bash
+   [root@vm-dd-cent7 ~]# df -hl
+   Filesystem      Size  Used Avail Use% Mounted on
+   devtmpfs        452M     0  452M   0% /dev
+   tmpfs           464M     0  464M   0% /dev/shm
+   tmpfs           464M  6.8M  457M   2% /run
+   tmpfs           464M     0  464M   0% /sys/fs/cgroup
+   /dev/sda2        48G  2.1G   46G   5% /
+   /dev/sda1       494M   65M  430M  13% /boot
+   /dev/sda15      495M   12M  484M   3% /boot/efi
+   /dev/sdb1       3.9G   16M  3.7G   1% /mnt/resource
+   tmpfs            93M     0   93M   0% /run/user/1000
+   ```

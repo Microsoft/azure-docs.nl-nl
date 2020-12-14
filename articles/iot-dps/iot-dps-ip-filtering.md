@@ -6,13 +6,13 @@ ms.author: wesmc
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
-ms.date: 03/12/2020
-ms.openlocfilehash: 4067d157a13618b008e2cb1a5fee31259bfd43a9
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.date: 12/14/2020
+ms.openlocfilehash: 6ff5731e7d346c954253ec4186357595461b7678
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094349"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400250"
 ---
 # <a name="use-azure-iot-dps-ip-connection-filters"></a>IP-verbindingsfilters van Azure IoT DPS gebruiken
 
@@ -58,7 +58,7 @@ Nadat u de velden hebt ingevuld, selecteert u **Opslaan** om de regel op te slaa
 
 ![Melding over het opslaan van een IP-filterregel](./media/iot-dps-ip-filtering/ip-filter-save-new-rule.png)
 
-De optie **Toevoegen** wordt uitgeschakeld wanneer u het maximum van 10 IP-filterregels bereikt.
+De optie **toevoegen** is uitgeschakeld wanneer u het maximum van 100 IP-filter regels bereikt.
 
 Als u een bestaande regel wilt bewerken, selecteert u de gegevens die u wilt wijzigen, brengt u de wijziging aan en selecteert u **Opslaan** om uw bewerking op te slaan.
 

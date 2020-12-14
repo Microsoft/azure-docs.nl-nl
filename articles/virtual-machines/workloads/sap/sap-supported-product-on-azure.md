@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 04/21/2020
+ms.date: 12/12/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a02c30423ab3c6de87eac7d34b5f0004e54a8d5d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 28d47b61bce7e154da6c6adb4b74e2b5cf1f3f3d
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957806"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371846"
 ---
 # <a name="what-sap-software-is-supported-for-azure-deployments"></a>Welke SAP-software wordt ondersteund voor Azure-implementaties
 In dit artikel wordt beschreven hoe u kunt zien welke SAP-software wordt ondersteund voor Azure-implementaties en wat de nood zakelijke releases van het besturings systeem of DBMS-releases zijn.
@@ -82,6 +82,12 @@ Het besturings systeem, Oracle DBMS-releases en Oracle-functionaliteit die wordt
 - Niet-Unicode SAP-systemen worden alleen ondersteund met toepassings servers die worden uitgevoerd met het Windows-gast besturingssysteem. Het gast besturingssysteem van het DBMS kan worden Oracle Linux of Windows. De reden voor deze beperking is duidelijk wanneer de SAP-product beschikbaarheids matrix (PAM) wordt gecontroleerd. SAP heeft voor Oracle Linux nooit niet-Unicode SAP-kernels vrijgegeven
 
 Als u de DBMS-releases wilt weten die worden ondersteund met de beoogde Azure-infra structuur, moet u de SAP-product beschikbaarheids matrix controleren op basis van het feit of de vereiste besturingssysteem versies en DBMS worden ondersteund met uw SAP-product releases die u wilt uitvoeren. 
+
+## <a name="oracle-linux"></a>Oracle Linux
+De meest prominente vraag rond Oracle Linux is of SAP de Red Hat-kernel ondersteunt die ook integraal deel uitmaakt van Oracle Linux. Raadpleeg voor meer informatie [SAP-ondersteuning opmerking #1565179](https://launchpad.support.sap.com/#/notes/1565179).
+
+## <a name="other-database-than-sap-hana"></a>Andere data base dan SAP HANA
+Ondersteuning van niet-HANA-data bases voor SAP-workload wordt beschreven in [SAP-ondersteunings opmerking #1928533](https://launchpad.support.sap.com/#/notes/1928533).
 
 
 ## <a name="sap-hana-support"></a>Ondersteuning voor SAP HANA

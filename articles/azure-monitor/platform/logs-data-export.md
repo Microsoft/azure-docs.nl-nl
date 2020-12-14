@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: d2e93ccfaf3ff2c5b74ceef1f6a274f71ee52c4e
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: 4155cda1e1de6f15aefa6d5fc960988eba15068d
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "96309831"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371965"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -48,7 +48,7 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 > [!NOTE]
 > Log Analytics gegevens export schrijft gegevens als een toevoeg-blob die momenteel als preview-versie beschikbaar is voor Azure Data Lake Storage Gen2. U moet een ondersteunings aanvraag openen voordat u exporteren naar deze opslag configureert. Gebruik de volgende Details voor deze aanvraag.
 > - Type probleem: Technisch
-> - Abonnement: uw abonnement
+> - Abonnement: Uw abonnement
 > - Service: Data Lake Storage Gen2
 > - Resource: de resource naam
 > - Samen vatting: abonnements registratie aanvragen om gegevens van Log Analytics gegevens export te accepteren.
@@ -122,7 +122,11 @@ Een regel voor gegevens export definieert gegevens die moeten worden geëxportee
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik de volgende CLI-opdracht om tabellen in uw werk ruimte weer te geven. Het kan helpen de gewenste tabellen te kopiëren en op te geven in de regel voor het exporteren van gegevens.
 
@@ -133,13 +137,22 @@ az monitor log-analytics workspace table list -resource-group resourceGroupName 
 Gebruik de volgende opdracht voor het maken van een regel voor het exporteren van gegevens naar een opslag account met behulp van CLI.
 
 ```azurecli
-az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $storageAccountId
+$storageAccountResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.Storage/storageAccounts/storage-account-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $storageAccountResourceId
 ```
 
-Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te maken naar een Event Hub met behulp van CLI.
+Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te maken naar een Event Hub met behulp van CLI. Voor elke tabel wordt een afzonderlijke Event Hub gemaakt.
 
 ```azurecli
-az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesId
+$eventHubsNamespacesResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.EventHub/namespaces/namespaces-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubsNamespacesResourceId
+```
+
+Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te maken voor een specifieke Event Hub met behulp van CLI. Alle tabellen worden geëxporteerd naar de gegeven Event Hub naam. 
+
+```azurecli
+$eventHubResourceId = '/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.EventHub/namespaces/namespaces-name/eventHubName/eventhub-name'
+az monitor log-analytics workspace data-export create --resource-group resourceGroupName --workspace-name workspaceName --name ruleName --tables SecurityEvent Heartbeat --destination $eventHubResourceId
 ```
 
 # <a name="rest"></a>[REST](#tab/rest)
@@ -205,13 +218,17 @@ Hier volgt een voor beeld van een hoofd tekst voor de REST-aanvraag voor een Eve
 ```
 ---
 
-## <a name="view-data-export-configuration"></a>Configuratie van gegevens export weer geven
+## <a name="view-data-export-rule-configuration"></a>Configuratie van regel voor gegevens export weer geven
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om de configuratie van een regel voor het exporteren van gegevens weer te geven met behulp van CLI.
 
@@ -234,7 +251,11 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 U kunt regels voor exporteren uitschakelen om het exporteren te stoppen wanneer u geen gegevens voor een bepaalde periode hoeft te bewaren, bijvoorbeeld wanneer het testen wordt uitgevoerd. Gebruik de volgende opdracht om een regel voor het exporteren van gegevens uit te scha kelen met behulp van CLI.
 
@@ -272,7 +293,11 @@ Content-type: application/json
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te verwijderen met behulp van CLI.
 
@@ -295,7 +320,11 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om alle regels voor gegevens export in een werk ruimte weer te geven met behulp van CLI.
 
@@ -315,7 +344,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 ## <a name="unsupported-tables"></a>Niet-ondersteunde tabellen
 Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de configuratie voltooid, maar worden er geen gegevens geëxporteerd voor die tabel. Als de tabel later wordt ondersteund, worden de bijbehorende gegevens op dat moment geëxporteerd.
 
-Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout ```Table <tableName> does not exist in the workspace.```
+Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout en wordt de tabel <tableName> niet in de werk ruimte opgenomen.
 
 
 ## <a name="supported-tables"></a>Ondersteunde tabellen

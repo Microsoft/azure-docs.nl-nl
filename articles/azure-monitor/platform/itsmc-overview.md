@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 917eb52a7255527b55aacd488f33125ad853e894
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 6c9e2ae420e56c5ef99ff79cdcb49592bc7e049e
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932265"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371982"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -42,9 +42,12 @@ Zie de [privacyverklaring van micro soft](https://go.microsoft.com/fwLink/?LinkI
 U kunt ITSMC gaan gebruiken door de volgende stappen uit te voeren:
 
 1.  [Voeg ITSMC toe.](#add-it-service-management-connector)
-2.  [Maak een ITSM-verbinding.](#create-an-itsm-connection)
-3.  [Gebruik de verbinding.](#use-itsmc)
-
+2. [ITSM-producten/-services verbinden met IT-servicebeheerconnector](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-connections)
+3.  [Maak een ITSM-verbinding.](#create-an-itsm-connection)
+4.  [Gebruik de verbinding.](#use-itsmc)
+   
+   >[!NOTE]
+> U moet de stappen in deze volg orde volgen, anders krijgt u een fout melding.
 
 ##  <a name="add-it-service-management-connector"></a>IT Service Management-connector toevoegen
 
@@ -272,7 +275,7 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 | AssignedTo_s | Toegewezen aan  |
 | Category_s | Categorie |
 | Title_s|  Korte beschrijving |
-| Description_s|  Opmerkingen |
+| Description_s|  Notities |
 | CreatedDate_t|  Had |
 | ClosedDate_t| gesloten|
 | ResolvedDate_t|Opgelost|

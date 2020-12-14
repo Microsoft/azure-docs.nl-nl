@@ -8,14 +8,16 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 10/30/2020
 ms.topic: include
-ms.openlocfilehash: e592c11062e81d48014a90895a0e42b460d4b77c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e006f804b8ab6411f4949424147acf567dc2ed24
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128168"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97371305"
 ---
 ## <a name="sign-in-to-luis-portal"></a>Aanmelden bij de LUIS-portal
+
+[!INCLUDE [Note about portal deprecation](luis-portal-note.md)]
 
 Een nieuwe gebruiker van LUIS moet deze procedure volgen:
 
@@ -30,10 +32,10 @@ Een nieuwe gebruiker van LUIS moet deze procedure volgen:
     :::image type="content" source="../media/luis-how-to-azure-subscription/choose-authoring-resource.png" alt-text="Kies een type Language Understanding-creatieresource.":::
     
     Geef bij het maken van een nieuwe ontwerpresource de volgende informatie op:
-    * **Tenantnaam** : de tenant waaraan uw Azure-abonnement is gekoppeld.
-    * **Azure-abonnementsnaam** : het abonnement dat wordt gefactureerd voor de resource.
-    * **Azure-resourcegroepsnaam** : een aangepaste resourcegroepnaam die u kiest of maakt. Met resourcegroepen kunt u Azure-resources groeperen voor toegang en beheer.
-    * **Azure-resourcenaam** : een door u gekozen aangepaste naam die wordt gebruikt als onderdeel van de URL voor uw ontwerp- en voorspellingseindpuntquery's.
-    * **Prijscategorie** : de prijscategorie bepaalt de maximale transactie per seconde en maand.
+    * **Tenantnaam**: de tenant waaraan uw Azure-abonnement is gekoppeld.
+    * **Azure-abonnementsnaam**: het abonnement dat wordt gefactureerd voor de resource.
+    * **Azure-resourcegroepsnaam**: een aangepaste resourcegroepnaam die u kiest of maakt. Met resourcegroepen kunt u Azure-resources groeperen voor toegang en beheer.
+    * **Azure-resourcenaam**: een door u gekozen aangepaste naam die wordt gebruikt als onderdeel van de URL voor uw ontwerp- en voorspellingseindpuntquery's.
+    * **Prijscategorie**: de prijscategorie bepaalt de maximale transactie per seconde en maand.
 
 

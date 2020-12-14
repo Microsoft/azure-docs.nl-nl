@@ -39,6 +39,8 @@
       href: template-samples.md
 - name: Concepten
   items:
+    - name: Concepten en best practices
+      href: concepts-and-best-practices.md
     - name: Bedrijfscontinuïteit
       href: virtual-network-disaster-recovery-guidance.md
     - name: Connectiviteit

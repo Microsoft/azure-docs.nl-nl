@@ -12,6 +12,10 @@
           href: concepts-certificate-rotation.md
 - name: Gedeelde documentatie
   items:
+    - name: Database-implementatie
+      items:
+        - name: GitHub Actions
+          href: quickstart-mysql-github-actions.md
     - name: Migratie
       items:
         - name: Gegevens migreren met mysqldump of phpmyadmin
@@ -88,8 +92,6 @@
               href: connect-cpp.md
             - name: Aan de slag
               href: connect-go.md
-            - name: GitHub Actions
-              href: quickstart-mysql-github-actions.md
     - name: Zelfstudies
       items:
         - name: Een database ontwerpen

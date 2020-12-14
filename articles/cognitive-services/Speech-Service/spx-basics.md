@@ -10,16 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: bead348e64fcee4cc5b790f975c9da5200ee796b
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: acc19d9a04909dcf0e79c93e0c8a3fb8225ee1b4
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422396"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546898"
 ---
 # <a name="learn-the-basics-of-the-speech-cli"></a>Meer informatie over de basisbeginselen van de Speech CLI
 
-In dit artikel leert u de basisgebruikspatronen van de Speech CLI, een opdrachtregelprogramma om de Spraakservice te gebruiken zonder code te schrijven. U kunt snel de belangrijkste functies van de Spraakservice testen zonder ontwikkelomgevingen te maken of code te schrijven om te controleren of op passende wijze aan uw gebruiksgevallen kan worden voldaan. Daarnaast is de Speech CLI gereed voor productie en kan deze worden gebruikt voor het automatiseren van eenvoudige werkstromen in de Spraakservice, met behulp van `.bat` of shell-scripts.
+In dit artikel leert u de basisgebruikspatronen van de Speech CLI, een opdrachtregelprogramma om de Spraakservice te gebruiken zonder code te schrijven. U kunt snel de belangrijkste functies van de Spraakservice testen zonder ontwikkelomgevingen te maken of code te schrijven om te controleren of op passende wijze aan uw gebruiksgevallen kan worden voldaan. De Speech CLI is gereed voor productie en kan deze worden gebruikt voor het automatiseren van eenvoudige werkstromen in de Spraakservice, met behulp van `.bat` of shell-scripts.
+
+In dit artikel wordt ervan uitgegaan dat u kennis hebt van de opdrachtprompt, terminal of PowerShell.
 
 [!INCLUDE [](includes/spx-setup.md)]
 
@@ -45,11 +47,24 @@ Voer de volgende opdracht in om de opties voor de opdracht 'herkennen' te bekijk
 spx help recognize
 ```
 
-Gebruik nu de spraak-service om de volgende opdracht uit te voeren om te beginnen met spraakherkenning met behulp van de standaardmicrofoon.
+Nu gaan we de Speech CLI gebruiken om spraakherkenning uit te voeren met de standaardmicrofoon van uw systeem. 
+
+>[!WARNING]
+> Als u een Docker-container gebruikt, werkt deze opdracht niet.
+
+Voer deze opdracht uit:
 
 ```shell
 spx recognize --microphone
 ```
+
+Met de Speech CLI kunt u ook spraak herkennen vanuit een audiobestand.
+
+```shell
+spx recognize --file /path/to/file.wav
+```
+> [!TIP]
+> Als u spraak vanuit een audiobestand in een Docker-container wilt herkennen, moet u ervoor zorgen dat het audiobestand zich in de map bevindt die u in de vorige stap hebt gekoppeld.
 
 Nadat u de opdracht hebt ingevoerd, luistert SPX op het huidige actieve invoerapparaat naar de audio en stopt wanneer u op `ENTER` drukt. De opgenomen spraak wordt vervolgens herkend en geconverteerd naar tekst in de console-uitvoer. Tekst-naar-spraak-synthese is ook eenvoudig met de Speech CLI. 
 
@@ -100,7 +115,7 @@ spx csr model status --model @my.model.txt --wait
 ```
 
 In het volgende voorbeeld worden twee URL's naar het configuratiebestand `@my.datasets.txt` geschreven.
-In dit scenario kan `--output` een optioneel **toevoegen** -trefwoord bevatten om een configuratiebestand te maken of toe te voegen aan de bestaande.
+In dit scenario kan `--output` een optioneel **toevoegen**-trefwoord bevatten om een configuratiebestand te maken of toe te voegen aan de bestaande.
 
 
 ```shell

@@ -10,14 +10,19 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 4eb92e499a1381516ae6bbc33383963155df371f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 996ffdeb56d41e2c05fd402714876cb16e126021
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95095413"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96912332"
 ---
 <a name="HOLTop"></a>
+
+Gebruik de Computer Vision-clientbibliotheek voor het volgende:
+
+* Een afbeelding analyseren op tags, tekstbeschrijvingen, gezichten, inhoud voor volwassenen, en meer.
+* Afgedrukte en handgeschreven tekst lezen met de Read-API.
 
 [Referentiedocumentatie](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.1/computervision) | [Pakket](https://github.com/Azure/azure-sdk-for-go)
 
@@ -64,7 +69,7 @@ of, als u dep gebruikt, binnen de uitvoer van de opslagplaats:
 dep ensure -add https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.1/computervision
 ```
 
-### <a name="create-a-go-application"></a>Een Go-toepassing maken
+### <a name="create-a-go-application"></a>Een Go-toepassing maken 
 
 Maak vervolgens een bestand in de map **src** met de naam `sample-app.go`:
 
@@ -82,6 +87,9 @@ Declareer ook een context in de hoofdsectie van uw script. U hebt dit object nod
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_context)]
 
 Vervolgens begint u met het toevoegen van code voor het uitvoeren van verschillende Computer Vision-servicebewerkingen.
+
+> [!div class="nextstepaction"]
+> [Ik heb de client ingesteld](?success=set-up-client#object-model) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=set-up-client)
 
 ## <a name="object-model"></a>Objectmodel
 
@@ -110,6 +118,9 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Com
 Maak een `main`-functie en voeg de volgende code toe om een client te instantiëren met uw eindpunt en sleutel.
 
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_client)]
+
+> [!div class="nextstepaction"]
+> [Ik heb de client geverifieerd](?success=authenticate-client#analyze-an-image) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=authenticate-client)
 
 ## <a name="analyze-an-image"></a>Een afbeelding analyseren
 
@@ -202,6 +213,9 @@ Met de volgende functie wordt informatie over het type afbeelding afgedrukt&mdas
 
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_type)]
 
+> [!div class="nextstepaction"]
+> [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=analyze-image)
+
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 
 Computer Vision kan zichtbare tekst in een afbeelding lezen en deze converteren naar een tekenstroom. De code in deze sectie definieert een functie, `RecognizeTextReadAPIRemoteImage`, die gebruikmaakt van het clientobject om gedrukte of handgeschreven tekst in de afbeelding te detecteren en extraheren.
@@ -231,6 +245,9 @@ Voeg de volgende code toe om de opgehaalde tekstgegevens te parseren en weer te 
 
 [!code-go[](~/cognitive-services-quickstart-code/go/ComputerVision/ComputerVisionQuickstart.go?name=snippet_read_display)]
 
+> [!div class="nextstepaction"]
+> [Ik heb tekst gelezen](?success=read-printed-handwritten-text#run-the-application) [Er is een fout opgetreden](https://www.research.net/r/7QYZKHL?issue=read-printed-handwritten-text)
+
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `go run`.
@@ -239,6 +256,9 @@ Voer de toepassing op vanuit uw toepassingsmap met de opdracht `go run`.
 go run sample-app.go
 ```
 
+> [!div class="nextstepaction"]
+> [Ik heb de toepassing uitgevoerd](?success=run-the-application#clean-up-resources) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=run-the-application)
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de resource of resourcegroep verwijderen. Als u de resourcegroep verwijdert, worden ook alle bijbehorende resources verwijderd.
@@ -246,10 +266,14 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 * [Portal](../../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [Azure-CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
+> [!div class="nextstepaction"]
+> [Ik heb resources opgeschoond](?success=clean-up-resources#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7QYZKHL?issue=clean-up-resources)
+
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
 > [Referentie voor de Computer Vision-API (Go)](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision)
+
 
 * [Wat is Computer Vision?](../../overview.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/go/ComputerVision/ComputerVisionQuickstart.go).

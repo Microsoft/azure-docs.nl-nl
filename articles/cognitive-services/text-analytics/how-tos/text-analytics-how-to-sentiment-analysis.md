@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 11/11/2020
+ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 2c592a959dfb9d4e93f97488a9ac1b1f6683c23e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0437704709e863cdbc62321c8a4b79015564e362
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968265"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558756"
 ---
 # <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Procedure: Sentimentanalyse en meninganalyse
 
-De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om positieve en negatieve sentiment te detecteren. Nadat u een aanvraag voor Sentimentanalyse verzendt, retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau. U kunt ook aanvragen voor Meninganalyse verzenden met het eindpunt Sentimentanalyse. Dit biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
+De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om positieve en negatieve sentiment te detecteren. Nadat u een aanvraag voor Sentimentanalyse verzendt, retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau. U kunt ook aanvragen voor Meninganalyse verzenden met het eindpunt Sentimentanalyse. Dit biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst. 
 
 De AI-modellen die door de API worden gebruikt, worden door de service verschaft. U hoeft alleen maar inhoud voor analyse te verzenden.
 
@@ -51,13 +51,14 @@ Betrouwbaarheidsscores kunnen variëren van 1 tot 0. Scores die dichter bij 1 li
 
 ## <a name="opinion-mining"></a>Meninganalyse
 
-Meninganalyse is een functie van Sentimentanalyse vanaf versie 3.1-preview.1. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
+Meninganalyse is een functie van Sentimentanalyse vanaf versie 3.1-preview.1. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst. 
 
 Als een klant bijvoorbeeld als feedback over een hotel 'De kamer was geweldig, maar het personeel was onvriendelijk' geeft, worden in de Meninganalyse aspecten van de tekst en de bijbehorende meningen en sentimenten gevonden. Sentimentanalyse kan alleen een negatief sentiment melden.
 
 :::image type="content" source="../media/how-tos/opinion-mining.png" alt-text="Een diagram van het Meninganalyse-voorbeeld" lightbox="../media/how-tos/opinion-mining.png":::
 
-Voor een Meninganalyse moet u de vlag `opinionMining=true` opnemen in een sentimentanalyse-aanvraag. De resultaten van de Meninganalyse worden opgenomen in het antwoord van de sentimentanalyse.
+Voor een Meninganalyse moet u de vlag `opinionMining=true` opnemen in een sentimentanalyse-aanvraag. De resultaten van de Meninganalyse worden opgenomen in het antwoord van de sentimentanalyse. Meninganalyse is een extensie van Sentimentanalyse en is bij uw huidige [prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) inbegrepen.
+
 
 ## <a name="sending-a-rest-api-request"></a>Een REST API-aanvraag verzenden 
 

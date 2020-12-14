@@ -141,6 +141,8 @@
           href: howto-firewall.md
         - name: Private Link-connectiviteit configureren
           href: howto-private-link.md
+        - name: Toegang tot resources beheren - Spoke VNet P2S
+          href: manage-secure-access-resources-spoke-p2s.md
     - name: Bewaking
       items:
         - name: Logboeken en metrische gegevens

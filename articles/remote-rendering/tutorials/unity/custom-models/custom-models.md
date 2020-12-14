@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ebadaf51a7dfbb286dac0bbdb0c3c8437ae2356f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5793e2958edce0a4c97660a75d0ecefa914c12d2
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022221"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559079"
 ---
 # <a name="tutorial-interfaces-and-custom-models"></a>Zelfstudie: Interfaces en aangepaste modellen
 
@@ -30,23 +30,23 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="get-started-with-the-mixed-reality-toolkit-mrtk"></a>Aan de slag met Mixed Reality Toolkit (MRTK)
 
-MRTK is een platformoverschrijdende toolkit voor het bouwen van Mixed Reality-ervaringen. We gebruiken MRTK 2.3 voor de interactie- en visualisatiefuncties.
+MRTK is een platformoverschrijdende toolkit voor het bouwen van Mixed Reality-ervaringen. We gebruiken MRTK 2.5.1 voor de interactie- en visualisatiefuncties.
 
-Volg de [Vereiste stappen](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html#required) die worden vermeld in [Aan de slag met MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html) om MRTK toe te voegen.
+Volg de [Vereiste stappen](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html#required) die worden vermeld in de [MRTK-installatiehandleiding](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html) om MRTK toe te voegen.
 
 Die stappen zijn:
- - [De nieuwste MRTK Unity-pakketten ophalen](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html#get-the-latest-mrtk-unity-packages)
-     - Hoewel er 'nieuwste' staat, geldt dit voor versie 2.3.
-     - In deze zelfstudie gebruiken we alleen het *Basis*pakket. De pakketten *Uitbreidingen*, *Hulpmiddelen* en *Voorbeelden* zijn niet vereist.
- - [MRTK-pakketten importeren in uw Unity-project](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html#import-mrtk-packages-into-your-unity-project)
- - [Uw Unity-project overschakelen naar het doelplatform](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html#switch-your-unity-project-to-the-target-platform)
+ - [De nieuwste MRTK Unity-pakketten ophalen](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html#1-get-the-latest-mrtk-unity-packages)
+     - Hoewel er 'meest recent' staat, moet u versie 2.5.1 gebruiken van de pagina met MRTK-releases.
+     - In deze zelfstudie gebruiken we alleen het *Basis* pakket. De pakketten *Uitbreidingen*, *Hulpmiddelen* en *Voorbeelden* zijn niet vereist.
+ - [MRTK-pakketten importeren in uw Unity-project](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html#2-import-mrtk-packages-into-your-unity-project)
+ - [Uw Unity-project overschakelen naar het doelplatform](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html#3-switch-your-unity-project-to-the-target-platform)
      - U hebt deze stap in het eerste hoofdstuk al uitgevoerd, maar dit is het moment om dat nog eens te controleren.
- - [MRTK toevoegen aan een nieuwe scène of nieuw project](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/Documentation/GettingStartedWithTheMRTK.html#add-mrtk-to-a-new-scene-or-new-project)
+ - [MRTK toevoegen aan een nieuwe scène of nieuw project](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/Documentation/Installation.html#4-add-and-configure-mrtk-with-a-new-scene)
      - U kunt MRTK toevoegen aan een nieuwe scène en uw coördinator en modelobjecten/-scripts opnieuw toevoegen of u kunt MRTK toevoegen aan uw bestaande scène met de menuopdracht *Mixed Reality Toolkit -> Aan scène toevoegen en configureren*.
 
 ## <a name="import-assets-used-by-this-tutorial"></a>Assets importeren voor deze zelfstudie
 
-In dit hoofdstuk beginnen we met het implementeren van een eenvoudig [patroon voor besturingselementen voor weergave](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) voor veel van het materiaal dat wordt behandeld. Het *model*deel van het patroon is de specifieke code van Azure Remote Rendering en het statusbeheer voor Azure Remote Rendering. De onderdelen *weergave* en *besturingselementen* van het patroon worden geïmplementeerd met MRTK-assets en een aantal aangepaste scripts. Het is mogelijk het *model* te gebruiken in deze zelfstudie zonder implementatie van *weergavebesturingselementen*. Door deze scheiding kunt u eenvoudig de code uit deze zelfstudie integreren in uw eigen toepassing waar het het deel *weergavebesturingselementen* van het ontwerppatroon overneemt.
+In dit hoofdstuk beginnen we met het implementeren van een eenvoudig [patroon voor besturingselementen voor weergave](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) voor veel van het materiaal dat wordt behandeld. Het *model* deel van het patroon is de specifieke code van Azure Remote Rendering en het statusbeheer voor Azure Remote Rendering. De onderdelen *weergave* en *besturingselementen* van het patroon worden geïmplementeerd met MRTK-assets en een aantal aangepaste scripts. Het is mogelijk het *model* te gebruiken in deze zelfstudie zonder implementatie van *weergavebesturingselementen*. Door deze scheiding kunt u eenvoudig de code uit deze zelfstudie integreren in uw eigen toepassing waar het het deel *weergavebesturingselementen* van het ontwerppatroon overneemt.
 
 Door de introductie van MRTK zijn er een aantal scripts, prefabs en assets die nu kunnen worden toegevoegd aan het project om interacties en visuele feedback te ondersteunen. Deze assets, **Zelfstudie-assets** genoemd, zijn gebundeld in een [Unity Asset Package](https://docs.unity3d.com/Manual/AssetPackages.html), dat is inbegrepen in de [Azure Remote Rendering GitHub](https://github.com/Azure/azure-remote-rendering) in '\Unity\TutorialAssets\TutorialAssets.unitypackage'.
 

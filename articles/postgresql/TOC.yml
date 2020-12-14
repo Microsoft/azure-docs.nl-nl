@@ -12,6 +12,10 @@
           href: concepts-certificate-rotation.md
 - name: Gedeelde documentatie
   items:
+    - name: Database-implementatie
+      items:
+        - name: GitHub-acties
+          href: how-to-deploy-github-action.md
     - name: Migratie
       items:
         - name: Gegevens migreren met pg_dump en pg_restore
@@ -202,6 +206,8 @@
               displayName: 'query store, performance, optimize, recommendations'
         - name: Ontwikkeling van apps
           items:
+            - name: Aanbevolen procedures
+              href: application-best-practices.md
             - name: Verbindingsbibliotheken
               href: concepts-connection-libraries.md
               displayName: 'libraries, drivers'
@@ -416,10 +422,16 @@
               href: flexible-server/connect-python.md
     - name: Zelfstudies
       items:
-        - name: Een web-app maken in een virtueel netwerk
-          href: flexible-server/tutorial-webapp-server-vnet.md
-        - name: Een Django-app implementeren
-          href: flexible-server/tutorial-django-app-service-postgres.md
+        - name: Compileren met AKS
+          items:
+            - name: Een Python-app implementeren op Kubernetes
+              href: flexible-server/tutorial-django-aks-database.md
+        - name: Compileren met App Services
+          items:
+            - name: Een web-app maken in een virtueel netwerk
+              href: flexible-server/tutorial-webapp-server-vnet.md
+            - name: Een Django-app implementeren op App Service
+              href: flexible-server/tutorial-django-app-service-postgres.md
     - name: Concepten
       items:
         - name: Servers
@@ -466,6 +478,8 @@
               href: flexible-server/how-to-manage-server-portal.md
             - name: Azure CLI
               href: flexible-server/how-to-manage-server-cli.md
+            - name: Handleiding voor verbinding maken en query uitvoeren
+              href: flexible-server/how-to-connect-query-guide.md
         - name: Gepland onderhoud
           items:
             - name: Azure Portal

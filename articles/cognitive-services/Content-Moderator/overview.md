@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: content moderator, azure content moderator, online moderator, content filtering software, content moderation service, content moderation
-ms.openlocfilehash: aa1f4c1fab9b3d8a1b5db0e965f1608e694646b2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c7c996ae49bdf7aa72873322f11af754843fd835
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91596862"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905244"
 ---
 # <a name="what-is-azure-content-moderator"></a>Wat is Azure Content Moderator?
 
@@ -81,4 +81,4 @@ Zoals geldt voor alle services van Cognitive Services, dienen ontwikkelaars die 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Om aan de slag te gaan met Content Moderator in het webportaal, gaat u naar [Content Moderator op het web uitproberen](quick-start.md). U kunt ook een [snelstartgids voor de clientbibliotheek](client-libraries.md) doorlopen om het basisscenario met code te implementeren.
+Om aan de slag te gaan met Content Moderator in het webportaal, gaat u naar [Content Moderator op het web uitproberen](quick-start.md). U kunt ook een [quickstart voor de clientbibliotheek of REST API](client-libraries.md) doorlopen om het basisscenario met code te implementeren.

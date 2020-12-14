@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 12/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 0f668f3a9ec4e158dfddd15f9c5d744fb0a5a847
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: be942f73ee0a3d5a8850141c937754bad330db90
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763644"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912337"
 ---
 Aan de slag met gezichtsherkenning met behulp van de Face-REST API. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -22,6 +22,9 @@ Gebruik de Face-REST API voor het volgende:
 
 * [Gezichten in een afbeelding detecteren](#detect-faces-in-an-image)
 * [Vergelijkbare gezichten zoeken](#find-similar-faces)
+
+> [!NOTE]
+> In deze quickstart wordt gebruik gemaakt van cURL-opdrachten om de REST API aan te roepen. U kunt de REST API ook aanroepen met behulp van een programmeertaal. Bekijk de GitHub-voorbeeldbestanden voor voorbeelden in [C#](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/Face/rest), [Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/Face/rest), [Java](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/java/Face/rest), [JavaScript](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/Face/rest) en [Go](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/go/Face/rest).
 
 ## <a name="prerequisites"></a>Vereisten
 

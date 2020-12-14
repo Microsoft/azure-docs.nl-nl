@@ -9,6 +9,25 @@
       href: text-analytics-user-scenarios.md
     - name: Nieuwe functies
       href: whats-new.md
+- name: Verantwoordelijk gebruik van AI
+  items:
+    - name: Transparantienotities
+      items:
+        - name: Voor tekstanalyse
+          href: /legal/cognitive-services/text-analytics/transparency-note?context=/azure/cognitive-services/text-analytics/context/context
+          displayName: 'Transparency note for Text Analytics, Text Analytics Transparency, Responsible AI, Responsible use of AI'
+        - name: Voor status
+          href: /legal/cognitive-services/text-analytics/transparency-note-health?context=/azure/cognitive-services/text-analytics/context/context
+          displayName: 'Transparency note for Text Analytics for Health, Text Analytics Transparency for Health, Responsible AI, Responsible use of AI, Text Analytics Health'
+        - name: Voor persoonsgegevens
+          href: /legal/cognitive-services/text-analytics/transparency-note-personally-identifiable-information?context=/azure/cognitive-services/text-analytics/context/context
+          displayName: 'Transparency note for Text Analytics PII, Transparency note for Text Analytics Personally Identifiable Information, Text Analytics Transparency for PII, Responsible AI, Responsible use of AI, Text Analytics PII'
+        - name: Voor sentimentanalyse
+          href: /legal/cognitive-services/text-analytics/transparency-note-sentiment-analysis?context=/azure/cognitive-services/text-analytics/context/context
+          displayName: 'Transparency note for Text Analytics Sentiment Analysis, Text Analytics Transparency for Sentiment Analysis, Responsible AI, Responsible use of AI, Text Analytics Sentiment Analysis, Sentiment Analysis Transparency Note'
+    - name: Integratie en verantwoordelijk gebruik
+      href: /legal/cognitive-services/text-analytics/guidance-integration-responsible-use?context=/azure/cognitive-services/text-analytics/context/context
+      displayName: 'Responsible deployment, Responsible use, Responsible integration, AI deployment, AI use'
 - name: Snelstartgidsen
   expanded: true
   items:

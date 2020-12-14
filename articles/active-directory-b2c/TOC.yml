@@ -155,6 +155,25 @@
           href: identity-provider-wechat.md
         - name: Weibo
           href: identity-provider-weibo.md
+    - name: UX-aanpassing
+      items:
+        - name: Gebruikersinvoer configureren
+          href: configure-user-input.md
+        - name: De UI aanpassen met branding van het bedrijf
+          href: company-branding.md
+        - name: De UI aanpassen met een HTML-sjabloon
+          href: customize-ui-with-html.md
+        - name: JavaScript en pagina-indelingen
+          href: javascript-and-page-layout.md
+        - name: Taal aanpassen
+          href: language-customization.md
+        - name: Wachtwoordcomplexiteit
+          href: password-complexity.md
+        - name: E-mailverificatie uitschakelen
+          href: disable-email-verification.md
+        - name: MFA inschakelen
+          href: multi-factor-authentication.md
+          displayName: multi-factor auth
     - name: Gebruikersstroom
       items:
         - name: Stroom maken
@@ -167,21 +186,6 @@
               href: user-flow-self-service-password-reset.md
         - name: Voorwaardelijke toegang toevoegen
           href: conditional-access-user-flow.md
-        - name: UX-aanpassing
-          items:
-            - name: De gebruikersinterface aanpassen
-              href: customize-ui-overview.md
-            - name: JavaScript en pagina-indelingen
-              href: user-flow-javascript-overview.md
-            - name: Taal aanpassen
-              href: user-flow-language-customization.md
-            - name: Wachtwoordcomplexiteit
-              href: user-flow-password-complexity.md
-            - name: E-mailverificatie uitschakelen
-              href: user-flow-disable-email-verification.md
-            - name: MFA inschakelen
-              href: custom-policy-multi-factor-authentication.md
-              displayName: multi-factor auth
         - name: Tokens en sessiebeheer
           items:
             - name: Tokens configureren
@@ -219,29 +223,13 @@
             - name: Telefonisch registreren en aanmelden
               href: phone-authentication.md
               displayName: 'otp, passwordless, phone number'
-        - name: UX-aanpassing
+        - name: Aangepaste e-mailverificatie
           items:
-            - name: Gebruikersinvoer configureren
-              href: custom-policy-configure-user-input.md
-              displayName: 'ui, ux'
-            - name: De gebruikersinterface aanpassen
-              href: custom-policy-ui-customization.md
-              displayName: 'ux, input, cors, html, css'
-            - name: Taal aanpassen
-              href: custom-policy-localization.md
-            - name: Aangepaste e-mailverificatie
-              items:
-                - name: Mailjet
-                  href: custom-email-mailjet.md
-                - name: SendGrid
-                  href: custom-email-sendgrid.md
-              displayName: verification
-            - name: E-mailverificatie uitschakelen
-              href: custom-policy-disable-email-verification.md
-            - name: JavaScript inschakelen
-              href: javascript-samples.md
-            - name: Wachtwoordcomplexiteit
-              href: custom-policy-password-complexity.md
+            - name: Mailjet
+              href: custom-email-mailjet.md
+            - name: SendGrid
+              href: custom-email-sendgrid.md
+          displayName: verification
         - name: Tokens en sessiebeheer
           items:
             - name: Tokens aanpassen

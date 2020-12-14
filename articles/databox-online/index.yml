@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Documentatie voor Azure Stack Edge - Online overdracht
-summary: Azure Stack Edge-apparaten gebruiken voor gegevensoverdracht met hoge prestaties over het netwerk. Gebruik Compute Acceleration Hardware die is uitgerust Azure Stack Edge Pro-apparaten om uw gegevens te filteren, te analyseren en te transformeren voordat deze wordt verplaatst naar Azure.
+title: Documentatie over Azure Stack Edge
+summary: Met Azure Stack Edge-apparaten kunt u Azure-functionaliteit als berekening, opslag, netwerk en door hardware versnelde machine learning beschikbaar maken voor alle edge-locaties.
 metadata:
-  title: Documentatie voor Azure Stack Edge - Online overdracht
+  title: Documentatie over Azure Stack Edge
   description: Documentatie voor Azure Stack Edge voor gegevensoverdracht met hoge prestaties via het netwerk naar Azure.
   services: databox
   ms.service: databox
@@ -12,12 +12,12 @@ metadata:
   author: alkohli
   ms.author: alkohli
   ms.date: 10/27/2020
-  ms.openlocfilehash: 2ee9153bc500c7d5184e32712e0707d1c0f2507e
-  ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+  ms.openlocfilehash: e0b1c488635314a8583f216d966a75095ac5e279
+  ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/03/2020
-  ms.locfileid: "96574187"
+  ms.lasthandoff: 12/12/2020
+  ms.locfileid: "97356086"
 landingContent:
 - title: Over Azure Stack Edge
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
       url: azure-stack-edge-overview.md
     - text: Wat is Azure Stack Edge R?
       url: azure-stack-edge-j-series-overview.md
-    - text: Wat is Azure Stack Edge Mini?
+    - text: Wat is Azure Stack Edge Mini R?
       url: azure-stack-edge-k-series-overview.md
   - linkListType: architecture
     links:
@@ -39,8 +39,8 @@ landingContent:
       url: ../storage/common/storage-solution-large-dataset-low-network.md#offline-transfer-or-network-transfer
   - linkListType: whats-new
     links:
-    - text: 2011-releaseopmerkingen
-      url: azure-stack-edge-gpu-2011-release-notes.md
+    - text: Opmerkingen bij de release voor 2012
+      url: azure-stack-edge-gpu-2012-release-notes.md
 - title: Vereisten en limieten
   linkLists:
   - linkListType: concept

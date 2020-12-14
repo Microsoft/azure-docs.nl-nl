@@ -504,6 +504,8 @@
       href: how-to-use-logging.md
     - name: Geheugenverbruik bijhouden
       href: how-to-track-speech-sdk-memory-usage.md
+    - name: Privé-eindpunt inschakelen
+      href: speech-services-private-link.md
     - name: OpenSSL voor Linux configureren
       displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
       href: how-to-configure-openssl-linux.md

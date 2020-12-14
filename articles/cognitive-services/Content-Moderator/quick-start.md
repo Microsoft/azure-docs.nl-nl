@@ -12,12 +12,12 @@ ms.date: 09/29/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: content moderator, inhoudsbeheer
-ms.openlocfilehash: d1d9315986f7a6c57c1da012b9034e4f1a3730bc
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: c026c42fe3c7a7f3f0d6b80e3123904077c104cf
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143684"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905210"
 ---
 # <a name="quickstart-try-content-moderator-on-the-web"></a>Snelstart: Content Moderator op internet proberen
 
@@ -49,7 +49,7 @@ Als u ervoor kiest om gegevens te versleutelen met behulp van een door klant beh
 
 ## <a name="upload-sample-content"></a>Voorbeeldinhoud uploaden
 
-U bent nu klaar om voorbeeldinhoud te uploaden. Selecteer **Try > Image** , **Try > Text** of **Try > Video**.
+U bent nu klaar om voorbeeldinhoud te uploaden. Selecteer **Try > Image**, **Try > Text** of **Try > Video**.
 
 > [!div class="mx-imgBorder"]
 > ![Beheer van afbeeldingen of tekst uitproberen](images/tryimagesortext.png)
@@ -88,6 +88,6 @@ U kunt ook doorgaan met de volgende stappen om aan de slag te gaan met de beheer
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het gebruik van de beheer-API's in uw app.
-- Beheer van afbeeldingen implementeren. Gebruik de [API-console](try-image-api.md) of volg de [quickstart voor de clientbibliotheek](client-libraries.md) om afbeeldingen te scannen en potentiële inhoud voor volwassenen en potentiële ongepaste inhoud te detecteren met behulp van tags, betrouwbaarheidsscores en andere geëxtraheerde informatie.
-- Beheer van tekst implementeren. Gebruik de [API-console](try-text-api.md) of gebruik de [quickstart voor de clientbibliotheek](client-libraries.md) om tekstinhoud te scannen op mogelijk grof taalgebruik, door de machine ondersteunde classificatie van ongepaste tekst (preview) en persoonlijke gegevens.
+- Beheer van afbeeldingen implementeren. Gebruik de [API-console](try-image-api.md) of volg de [quickstart voor de clientbibliotheek of REST API](client-libraries.md) om afbeeldingen te scannen en potentiële inhoud voor volwassenen en potentiële ongepaste inhoud te detecteren met behulp van tags, betrouwbaarheidsscores en andere geëxtraheerde informatie.
+- Beheer van tekst implementeren. Gebruik de [API-console](try-text-api.md) of gebruik de [quickstart voor de clientbibliotheek of REST API](client-libraries.md) om tekstinhoud te scannen op mogelijk grof taalgebruik, door de machine ondersteunde classificatie van ongepaste tekst (preview) en persoonlijke gegevens.
 - Beheer van video's implementeren. Volg de [instructiegids voor het beheer van video's voor C#](video-moderation-api.md) om video's te scannen en potentiële inhoud voor volwassenen en ongepast inhoud te detecteren. 

@@ -285,8 +285,8 @@
               href: azure-stack-edge-contact-microsoft-support.md
     - name: Gedeelde releaseopmerkingen
       items:
-        - name: 2011 - Huidig
-          href: azure-stack-edge-gpu-2011-release-notes.md
+        - name: 2012 - nu
+          href: azure-stack-edge-gpu-2012-release-notes.md
         - name: 2010
           href: azure-stack-edge-gpu-2009-release-notes.md
         - name: 2008

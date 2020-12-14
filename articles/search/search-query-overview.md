@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/11/2020
-ms.openlocfilehash: 9cac0a0026a7007e227607e04e03a77e4df99ecd
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 9ce0ab34aac1a3dda823c9270f4eacebfb99166f
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368117"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387663"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
-Azure Cognitive Search biedt een expansieve,-query taal voor het ondersteunen van een breed scala aan scenario's, van het doorzoeken van vrije formulieren tot zeer specifieke query patronen. Dit artikel bevat een overzicht van de soorten query's die u kunt maken.
+Azure Cognitive Search biedt een uitgebreide query taal ter ondersteuning van een breed scala aan scenario's, van zoeken in vrije tekst tot zeer specifieke query patronen. Dit artikel bevat een overzicht van de soorten query's die u kunt maken.
 
 In Cognitive Search is een query een volledige specificatie van een round-trip- **`search`** bewerking, met para meters waarmee de uitvoering van query's kan worden gewaarschuwd en het antwoord wordt weer gegeven. Para meters en parsers bepalen het type query aanvraag. In het volgende query voorbeeld wordt gebruikgemaakt van de [Zoek documenten (rest API)](/rest/api/searchservice/search-documents), gericht op de [demo-index van hotels](search-get-started-portal.md).
 
@@ -38,7 +38,7 @@ Para meters die worden gebruikt tijdens het uitvoeren van query's:
 
 + **`queryType`** Hiermee stelt u de parser in, ofwel de [standaard-query-parser](search-query-simple-examples.md) (optimaal voor zoeken in volledige tekst), of de [volledige lucene-query-parser](search-query-lucene-examples.md) die wordt gebruikt voor geavanceerde query constructies, zoals reguliere expressies, proximity Search, fuzzy en Joker tekens zoeken.
 
-+ **`search`** biedt de match criteria, meestal hele termen of zinsdelen, met of zonder Opera tors. Elk veld waarvoor een *zoekbaar* kenmerk is in het index schema, is een kandidaat voor deze para meter. 
++ **`search`** biedt de match criteria, meestal hele termen of zinsdelen, met of zonder Opera tors. Elk veld waarvoor een *zoekbaar* kenmerk is in het index schema, is een kandidaat voor deze para meter.
 
 + **`searchFields`** beperkt de uitvoering van query's naar specifieke Doorzoek bare velden.
 
@@ -82,7 +82,7 @@ Filters worden veel gebruikt in apps die Cognitive Search bevatten. Op toepassin
 
 U hebt mogelijk ook filters nodig om een speciaal query formulier aan te roepen, zoals wordt beschreven in de volgende tabel. U kunt een filter gebruiken met een niet-opgegeven zoek opdracht ( **`search=*`** ) of met een query reeks die termen, zinsdelen, Opera tors en patronen bevat.
 
-| Filter scenario | Description |
+| Filter scenario | Beschrijving |
 |-----------------|-------------|
 | Bereik filters | In azure Cognitive Search worden bereik query's gemaakt met behulp van de filter parameter. Zie voor meer informatie en voor beelden [Range filter voor beeld](search-query-simple-examples.md#example-4-range-filters). |
 | Geolocatie zoeken | Als een doorzoekbaar veld van het [type EDM. GeographyPoint](/rest/api/searchservice/supported-data-types)is, kunt u een filter expressie maken voor de besturings elementen "dichtbij zoeken" of op basis van een kaart. Velden die geografische zoek acties hebben, bevatten coördinaten. Zie voor meer informatie en een voor beeld een voor beeld van [geo-zoeken](search-query-simple-examples.md#example-5-geo-search). |
@@ -110,10 +110,8 @@ Een geavanceerd query formulier is afhankelijk van de volledige lucene-parser en
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Gebruik de portal of een ander hulp programma zoals postman of Visual Studio code of een van de Sdk's om query's gedetailleerder te verkennen. Met de volgende koppelingen kunt u aan de slag.
+Raadpleeg de voor beelden voor elke syntaxis voor een beter overzicht van de implementatie van query's. Als u niet bekend bent met zoeken in volledige tekst, bekijkt u wat de query-engine kan hebben.
 
-+ [Zoek Verkenner](search-explorer.md)
-+ [Query's uitvoeren in REST](search-get-started-rest.md)
-+ [Query's uitvoeren in .NET](search-get-started-dotnet.md)
-+ [Query's uitvoeren in python](search-get-started-python.md)
-+ [Query's uitvoeren in Java script](search-get-started-javascript.md)
++ [Voorbeelden van eenvoudige query's](search-query-simple-examples.md)
++ [Voor beelden van Lucene-syntaxis query's voor het maken van geavanceerde query's](search-query-lucene-examples.md)
++ [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)

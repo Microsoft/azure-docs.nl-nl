@@ -7,43 +7,61 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/12/2020
-ms.openlocfilehash: ace887396bacf264f0ffbd186ef1349e96496786
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.date: 12/14/2020
+ms.openlocfilehash: ad572905d9864083466049fd602e24d9f3632ea3
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97371124"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387425"
 ---
-# <a name="create-a-basic-query-in-azure-cognitive-search"></a>Een eenvoudige query maken in azure Cognitive Search
+# <a name="create-a-query-in-azure-cognitive-search"></a>Een query maken in azure Cognitive Search
 
-In dit artikel wordt stapsgewijs uitgelegd hoe u een query uitvoert. Voor beelden zijn in REST, zodat u teken reeksen kunt kopiëren naar **Search Explorer** in de portal of query's interactief bouwt met behulp van Postman of Visual Studio code. U kunt elke laag of versie van Cognitive Search gebruiken voor de voor beelden in dit artikel.
+Meer informatie over de hulpprogram ma's en Api's voor het bouwen van een query, welke methoden worden gebruikt voor het maken van een query en hoe index structuur en inhoud van invloed kunnen zijn op de resultaten van query's. Voor een inleiding op hoe een query-aanvraag eruitziet, begint u met [query typen en-samen stellingen](search-query-overview.md).
 
-## <a name="choose-a-tool-or-api"></a>Kies een hulp programma of API
+## <a name="choose-tools-and-apis"></a>Kies hulp middelen en Api's
 
-Kies uit de volgende hulpprogram ma's en Api's om query's te maken voor het testen of produceren van werk belastingen.
+U kunt een van de volgende hulpprogram ma's en Api's gebruiken om query's te maken voor het testen of produceren van werk belastingen.
 
-| Methodologie | Description |
+| Methodologie | Beschrijving |
 |-------------|-------------|
-| Portal| [Search Explorer (Portal)](search-explorer.md) bevat een zoek balk en opties voor selecties van index en API-versie. Resultaten worden geretourneerd als JSON-documenten. Wordt aanbevolen voor vroegtijdig onderzoek, testen en validatie. <br/>[Meer informatie.](search-explorer.md) |
-| Hulpprogram ma's voor webtest| [Postman of Visual Studio code](search-get-started-rest.md) is een goede keuze voor het formuleren van [Zoek documenten](/rest/api/searchservice/search-documents) rest-aanroepen. De REST API ondersteunt elke programmatische bewerking in azure Cognitive Search, zodat u aanvragen interactief kunt verlenen om te begrijpen hoe het werkt voordat u in code investeert.  |
-| Azure SDK | [SearchClient (.net)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in C#.  [Meer informatie.](search-howto-dotnet-sdk.md) <br/><br/>[SearchClient (python)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt om een zoek index in python op te vragen. [Meer informatie.](search-get-started-python.md) <br/><br/> [SearchClient (Java script)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in Java script. [Meer informatie.](search-get-started-javascript.md)  |
+| Portal| [Search Explorer (Portal)](search-explorer.md) is een query interface in de Azure portal die kan worden gebruikt om query's uit te voeren op indexen voor de onderliggende zoek service. De portal maakt REST API aanroepen achter de schermen. U kunt een wille keurige index selecteren en alle ondersteunde REST API versie, inclusief Preview-versies. Een query reeks kan de eenvoudige en volledige syntaxis hebben en kan filter expressies, facetten, Select-en searchField-instructies en Search mode bevatten. Wanneer u in de portal een index opent, kunt u met Search Explorer naast de definitie van de index-JSON in tabbladen naast elkaar werken voor eenvoudige toegang tot veld kenmerken. U kunt controleren welke velden doorzoekbaar, sorteerbaar, filterbaar en bruikbaar zijn tijdens het testen van query's. Wordt aanbevolen voor vroegtijdig onderzoek, testen en validatie. <br/>[Meer informatie.](search-explorer.md) |
+| Hulpprogram ma's voor webtest| [Postman of Visual Studio code](search-get-started-rest.md) is een goede keuze voor het formuleren van een aanvraag voor [Zoek documenten](/rest/api/searchservice/search-documents) in rest. De REST API ondersteunt elke programmatische bewerking in azure Cognitive Search en wanneer u een hulp programma zoals postman of Visual Studio code gebruikt, kunt u aanvragen interactief verlenen om te begrijpen hoe het werkt voordat u in code investeert. Een hulp programma voor het testen van webtoepassingen is een goede keuze als u geen Inzender of beheerders rechten hebt in de Azure Portal. Als u een zoek-URL en een query-API-sleutel hebt, kunt u de hulpprogram ma's gebruiken om query's uit te voeren op basis van een bestaande index. |
+| Azure SDK | Wanneer u klaar bent voor het schrijven van code, kunt u de Azure.Search.Document-client bibliotheken gebruiken in de Azure-Sdk's voor .NET, Python, java script of Java. Elke SDK bevindt zich op een eigen release schema, maar u kunt al indexen maken en er query's op uitvoeren. <br/><br/>[SearchClient (.net)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in C#.  [Meer informatie.](search-howto-dotnet-sdk.md)<br/><br/>[SearchClient (python)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt om een zoek index in python op te vragen. [Meer informatie.](search-get-started-python.md) <br/><br/> [SearchClient (Java script)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in Java script. [Meer informatie.](search-get-started-javascript.md) |
 
 ## <a name="set-up-a-search-client"></a>Een Search-client instellen
 
-Een zoek-client verifieert de zoek service, verzendt aanvragen en verwerkt reacties. Query's worden altijd door gestuurd bij de verzameling documenten van één index. U kunt geen indexen samen voegen of aangepaste of tijdelijke gegevens structuren maken als een query doel.
+Een zoek-client verifieert de zoek service, verzendt aanvragen en verwerkt reacties. Ongeacht welk hulp programma of welke API u gebruikt, moet een zoek client het volgende hebben:
+
+| Eigenschappen | Beschrijving |
+|------------|-------------|
+| Eindpunt | Een zoek service is URL-adresseerbaar in deze indeling: `https://[service-name].search.windows.net` . |
+| API-toegangs sleutel (beheerder of query) | Verifieert de aanvraag bij de zoek service. |
+| Index naam | Query's worden altijd door gestuurd bij de verzameling documenten van één index. U kunt geen indexen samen voegen of aangepaste of tijdelijke gegevens structuren maken als een query doel. |
+| API-versie | Voor REST-aanroepen is de aanvraag expliciet vereist `api-version` . Client bibliotheken in de Azure SDK zijn daarentegen geversied op basis van een specifieke REST API versie. Voor Sdk's is de `api-version` impliciet. |
 
 ### <a name="in-the-portal"></a>In de portal
 
-Search Explorer en andere portal-hulpprogram ma's hebben een ingebouwde client verbinding met de service, met directe toegangs indexen en andere objecten van portal-pagina's. Als u toegang hebt tot hulpprogram ma's, wizards en objecten, wordt ervan uitgegaan dat u over beheerders rechten voor de service beschikt. Met Search Explorer kunt u zich richten op het opgeven van de zoek reeks en andere para meters. 
+Search Explorer en andere portal-hulpprogram ma's hebben een ingebouwde client verbinding met de service, met directe toegangs indexen en andere objecten van portal-pagina's. Voor toegang tot hulpprogram ma's, wizards en objecten moet u lid zijn van de rol Inzender of hoger voor de service. 
 
 ### <a name="using-rest"></a>REST gebruiken
 
-Voor REST-aanroepen kunt u [postman of soort gelijke hulp middelen](search-get-started-rest.md) gebruiken als de client om een aanvraag voor [Zoek documenten](/rest/api/searchservice/search-documents) op te geven. Elke aanvraag is zelfstandig, dus u moet het eind punt (URL naar de service) en een beheerder-of query-API-sleutel voor toegang opgeven. Afhankelijk van de aanvraag, kan de URL ook de index naam, de verzameling documenten en andere eigenschappen bevatten. Er worden een paar eigenschappen, zoals het inhouds type en de API-sleutel, door gegeven in de aanvraag header. Andere para meters kunnen worden door gegeven aan de URL of in de hoofd tekst van de aanvraag. Voor alle REST-aanroepen is een API-sleutel voor verificatie en een API-versie vereist.
+Voor REST-aanroepen kunt u [postman of soort gelijke hulp middelen](search-get-started-rest.md) gebruiken als de client om een aanvraag voor [Zoek documenten](/rest/api/searchservice/search-documents) op te geven. Elke aanvraag is zelfstandig, dus u moet het eind punt, de index naam en de API-versie op elke aanvraag opgeven. Andere eigenschappen, het inhouds type en de API-sleutel worden door gegeven aan de aanvraag header. 
+
+U kunt POST gebruiken of ophalen om een index op te vragen. POST, met para meters die zijn opgegeven in de hoofd tekst van de aanvraag, is gemakkelijker te gebruiken. Als u POST gebruikt, zorg er dan voor dat u `docs/search` in de URL opgeeft:
+
+```http
+POST https://myservice.search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
+{
+    "count": true,
+    "queryType": "simple",
+    "search": "*"
+}
+```
 
 ### <a name="using-azure-sdks"></a>Azure Sdk's gebruiken
 
-De Azure-Sdk's bieden Zoek clients die de status kunnen behouden, waardoor verbinding opnieuw kan worden gebruikt. Voor query bewerkingen maakt u een instantie van een SearchClient en geeft u waarden op voor de volgende eigenschappen: eind punt, sleutel, index. Vervolgens kunt u de Zoek methode aanroepen om de query teken reeks op te geven. 
+Als u een Azure SDK gebruikt, maakt u de-client in code. Alle Sdk's bieden Zoek clients die de status kunnen behouden, waardoor verbinding opnieuw kan worden gemaakt. Voor query bewerkingen maakt u een instantie **`SearchClient`** en geeft u waarden op voor de volgende eigenschappen: eind punt, sleutel, index. Vervolgens kunt u de **`Search method`** door geven aanroepen in de query reeks. 
 
 | Taal | Client | Voorbeeld |
 |----------|--------|---------|
@@ -54,11 +72,11 @@ De Azure-Sdk's bieden Zoek clients die de status kunnen behouden, waardoor verbi
 
 ## <a name="choose-a-parser-simple--full"></a>Kies een parser: eenvoudig | waard
 
-Azure Cognitive Search biedt u een keuze tussen twee query-parsers voor het verwerken van normale en gespecialiseerde query's. Aanvragen die gebruikmaken van de eenvoudige parser zijn doorgaans Zoek opdrachten in de volledige tekst, geformuleerd met de [eenvoudige query syntaxis](query-simple-syntax.md), geselecteerd als de standaard waarde voor de snelheid en effectiviteit in vrije-tekst query's. Deze syntaxis ondersteunt een aantal veelgebruikte Zoek operatoren, waaronder de Opera tors en, of, niet, frase, achtervoegsel en voor rang.
+Als uw query zoeken in volledige tekst is, wordt er een parser gebruikt om de inhoud van de zoek parameter te verwerken. Azure Cognitive Search biedt twee query-parsers. De eenvoudige parser begrijpt de [eenvoudige query syntaxis](query-simple-syntax.md). Deze parser is geselecteerd als de standaard waarde voor de snelheid en effectiviteit in vrije-tekst query's. De syntaxis ondersteunt algemene zoek operatoren (en, of niet) voor Zoek opdrachten voor termen en zinsdelen, en voor voegsel ( `*` ) zoeken (zoals in "zee *" voor Seattle en Seaside). Een algemene aanbeveling is om eerst de eenvoudige parser te proberen en vervolgens over te stappen op volledige parser als aan toepassings vereisten wordt voldaan voor krachtigere query's.
 
-De [volledige lucene-query syntaxis](query-Lucene-syntax.md#bkmk_syntax), ingeschakeld wanneer u `queryType=full` aan de aanvraag toevoegt, geeft de uitgebreide en duidelijke query taal weer die is ontwikkeld als onderdeel van [Apache Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). De volledige syntaxis breidt de eenvoudige syntaxis uit. Alle query's die u voor de eenvoudige syntaxis schrijft, worden uitgevoerd onder de volledige lucene-parser. 
+De [volledige lucene-query syntaxis](query-Lucene-syntax.md#bkmk_syntax), ingeschakeld wanneer u `queryType=full` aan de aanvraag toevoegt, is gebaseerd op de [Apache Lucene-parser](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html).
 
-De volgende voor beelden illustreren het punt: dezelfde query, maar met verschillende **`queryType`** instellingen, waardoor verschillende resultaten worden verkregen. In de eerste query wordt de `^3` After `historic` beschouwd als onderdeel van de zoek term. Het hoogste geclassificeerde resultaat voor deze query is "Marquis Plaza & Suites", die *Oceaan* in de beschrijving heeft.
+De volledige syntaxis is een uitbrei ding van de eenvoudige syntaxis met meer Opera Tors, zodat u geavanceerde query's kunt maken, zoals fuzzy zoeken, joker tekens voor zoeken, proximity Search en reguliere expressies. De volgende voor beelden illustreren het punt: dezelfde query, maar met verschillende **`queryType`** instellingen, waardoor verschillende resultaten worden verkregen. In de eerste eenvoudige query wordt de `^3` After `historic` beschouwd als onderdeel van de zoek term. Het hoogste geclassificeerde resultaat voor deze query is "Marquis Plaza & Suites", die *Oceaan* in de beschrijving heeft.
 
 ```http
 POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
@@ -84,20 +102,40 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 }
 ```
 
-## <a name="enable-query-behaviors-in-an-index"></a>Query gedrag in een index inschakelen
+## <a name="choose-query-methods"></a>Query methoden kiezen
 
-Het ontwerp van de index en het query ontwerp zijn nauw verbonden met Azure Cognitive Search. Het *index schema*, met kenmerken voor elk veld, bepaalt het type query dat u kunt maken.
+Zoeken is fundamenteel een door de gebruiker opgestuurde oefening, waarbij de termen of zinsdelen worden verzameld uit een zoekvak, of vanuit klikken op gebeurtenissen op een pagina. De volgende tabel bevat een overzicht van de mechanismen waarmee u gebruikers invoer kunt verzamelen, samen met de verwachte Zoek ervaring.
 
-Index kenmerken voor een veld stel de toegestane bewerkingen in: Hiermee stelt u in dat een veld in de index kan worden *doorzocht* en kan worden *opgehaald* , *gesorteerd*, *gefilterd*, enzovoort. In de voorbeeld query's `"$orderby": "Rating desc"` werkt alleen, omdat het veld classificatie is gemarkeerd als *sorteerbaar* in het index schema.
+| Invoer | Ervaring |
+|-------|---------|
+| [Zoek methode](/rest/api/searchservice/search-documents) | Een gebruiker typt termen of zinsdelen in een zoekvak, met of zonder Opera Tors, en klikt op zoeken om de aanvraag te verzenden. Search kan worden gebruikt met filters voor dezelfde aanvraag, maar niet met automatisch aanvullen of suggesties. |
+| [Methode voor automatisch aanvullen](/rest/api/searchservice/autocomplete) | Een gebruiker kan een paar tekens typen en er worden query's gestart nadat elk nieuw teken is getypt. Het antwoord is een voltooide teken reeks uit de index. Als de gegeven teken reeks geldig is, klikt de gebruiker op zoeken om die query naar de service te verzenden. |
+| [Suggesties, methode](/rest/api/searchservice/suggestions) | Net als bij automatisch aanvullen worden een aantal tekens en incrementele query's gegenereerd. Het antwoord is een vervolg keuzelijst met overeenkomende documenten, meestal vertegenwoordigd door een paar unieke of beschrijvende velden. Als een van de selecties geldig is, klikt de gebruiker op één en wordt het bijbehorende document geretourneerd. |
+| [Facetnavigatie](/rest/api/searchservice/search-documents#query-parameters) | Een pagina bevat klik bare navigatie koppelingen of brood kruimels waarmee het bereik van de zoek opdracht wordt beperkt. Een facet navigatie structuur is dynamisch samengesteld op basis van een eerste query. `search=*`Als u bijvoorbeeld een facet navigatie structuur wilt vullen die bestaat uit elke mogelijke categorie. Een facet navigatie structuur wordt gemaakt op basis van een query-antwoord, maar is ook een mechanisme voor het uitdrukken van de volgende query. n REST API verwijzing, `facets` wordt gedocumenteerd als een query parameter van een zoek bewerking naar een document, maar kan zonder de `search` para meter worden gebruikt.|
+| [Filter methode](/rest/api/searchservice/search-documents#query-parameters) | Filters worden gebruikt met facetten om de resultaten te beperken. U kunt ook een filter achter de pagina implementeren, bijvoorbeeld om de pagina te initialiseren met taalspecifieke velden. In REST API verwijzing `$filter` wordt beschreven als een query parameter van een zoek bewerking naar een document, maar kan zonder de `search` para meter worden gebruikt.|
+
+## <a name="know-your-field-attributes"></a>Ken uw veld kenmerken
+
+Als u de [grond beginselen van een query aanvraag](search-query-overview.md)eerder hebt bekeken, is het mogelijk dat de para meters in de query aanvraag afhankelijk zijn van de manier waarop velden in een index worden toegeschreven. Als u bijvoorbeeld wilt gebruiken in een query, filter of sorteer volgorde, moet een veld *doorzoekbaar*, *filterbaar* en *sorteerbaar* zijn. Op dezelfde manier kunnen alleen in de resultaten gemarkeerde *velden worden weer* gegeven. Wanneer u begint met het opgeven `search` `filter` `orderby` van de para meters,, en in uw aanvraag, moet u de kenmerken controleren terwijl u gaat om onverwachte resultaten te voor komen.
+
+In de scherm afbeelding van de portal onder in de voor [beeld-index](search-get-started-portal.md)van de hotels kunnen alleen de laatste twee velden "LastRenovationDate" en "rating" worden gebruikt in een `"$orderby"` alleen-component.
 
 ![Index definitie voor het voor beeld van een hotel](./media/search-query-overview/hotel-sample-index-definition.png "Index definitie voor het voor beeld van een hotel")
 
-De bovenstaande scherm afbeelding is een gedeeltelijke lijst met index kenmerken voor de voor [beeld-index](search-get-started-portal.md)van de hotels. U kunt het volledige index schema maken en weer geven in de portal. Zie [Create Index (rest API) (Engelstalig)](/rest/api/searchservice/create-index)voor meer informatie over index kenmerken.
+Zie [Create Index (rest API)](/rest/api/searchservice/create-index)voor een beschrijving van veld kenmerken.
+
+## <a name="know-your-tokens"></a>Ken uw tokens
+
+Tijdens het indexeren gebruikt de query-engine een analyse programma voor het uitvoeren van tekst analyse op teken reeksen, waardoor het mogelijk is om op de query tijd te zoeken. Teken reeksen zijn mini maal in kleine letters, maar kunnen ook lemmatisering en het verwijderen van woorden worden gestopt. Grotere teken reeksen of samengestelde woorden worden meestal gesplitst door witruimte, afbreek streepjes of streepjes, en geïndexeerd als afzonderlijke tokens. 
+
+Het punt om dit te doen, is dat uw index er als volgt uitziet: wat u in werkelijkheid vindt, en wat u erin kunt onderscheiden. Als query's geen verwachte resultaten retour neren, kunt u de tokens die door de analyse zijn gemaakt, inspecteren via de [analyse tekst (rest API)](/rest/api/searchservice/test-analyzer). Zie voor meer informatie over het door geven van de tokens en de invloed op query's [gedeeltelijke term zoeken en patronen met speciale tekens](search-query-partial-matching.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u begrijpt hoe de aanvraag is gemaakt, probeert u voor beelden om de eenvoudige en volledige syntaxis te gebruiken.
+Nu u een beter inzicht hebt in de manier waarop een query aanvraag is samengesteld, kunt u de volgende Snelstartgids volgen voor een praktijk ervaring.
 
-+ [Voorbeelden van eenvoudige query's](search-query-simple-examples.md)
-+ [Voor beelden van Lucene-syntaxis query's voor het maken van geavanceerde query's](search-query-lucene-examples.md)
-+ [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)
++ [Zoek Verkenner](search-explorer.md)
++ [Query's uitvoeren in REST](search-get-started-rest.md)
++ [Query's uitvoeren in .NET](search-get-started-dotnet.md)
++ [Query's uitvoeren in python](search-get-started-python.md)
++ [Query's uitvoeren in Java script](search-get-started-javascript.md)

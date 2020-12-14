@@ -1,5 +1,5 @@
 ---
-title: Referentie-vertrouwens raamwerken in Azure Active Directory B2C | Microsoft Docs
+title: Overzicht van Azure AD B2C aangepaste beleid | Microsoft Docs
 description: Een onderwerp over Azure Active Directory B2C aangepast beleid en het Framework voor identiteits ervaring.
 services: active-directory-b2c
 author: msmimart
@@ -7,121 +7,170 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 08/04/2017
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d3d29bd05f67d00047499dc256e5e1a82f98693a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ed477a931ed63c0db378ff84f85544072492ef96
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95990980"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387034"
 ---
-# <a name="define-trust-frameworks-with-azure-ad-b2c-identity-experience-framework"></a>Vertrouwens raamwerken definiëren met Azure AD B2C Identity experience Framework
+# <a name="azure-ad-b2c-custom-policy-overview"></a>Overzicht van Azure AD B2C aangepaste beleids regels
 
-Azure Active Directory B2C (Azure AD B2C) aangepaste beleids regels die gebruikmaken van het Framework voor identiteits ervaring, bieden uw organisatie een gecentraliseerde service. Deze service vermindert de complexiteit van identiteits Federatie in een grote community van belang. De complexiteit is beperkt tot één vertrouwens relatie en één uitwisseling van meta gegevens.
+Aangepaste beleids regels zijn configuratie bestanden waarmee het gedrag van uw Azure Active Directory B2C (Azure AD B2C)-Tenant wordt gedefinieerd. Terwijl de [gebruikers stromen](user-flow-overview.md) vooraf zijn gedefinieerd in de Azure AD B2C portal voor de meest voorkomende identiteits taken. Aangepaste beleids regels kunnen volledig worden bewerkt door een identiteits ontwikkelaar om veel verschillende taken uit te voeren.
 
-Azure AD B2C aangepaste beleids regels maken gebruik van het Framework voor identiteits ervaring zodat u de volgende vragen kunt beantwoorden:
+Een aangepast beleid is volledig configureerbaar, beleid dat is gebaseerd op de vertrouwens relatie tussen entiteiten in standaard-protocol indelingen, zoals OpenID Connect Connect, OAuth, SAML en een aantal niet-standaard, bijvoorbeeld REST API systeem claims uitwisselingen. Het Framework maakt gebruikers vriendelijke, met wit gelabeld ervaring.
 
-- Wat zijn de juridische, beveiligings-, privacy-en gegevens beveiligings beleidsregels waaraan moet worden voldaan?
-- Wie zijn de contact personen en wat zijn de processen om een geaccrediteerde deel nemer te worden?
-- Wie zijn de geaccrediteerde identiteits gegevens providers (ook wel ' claim providers ' genoemd) en wat doen ze?
-- Wie zijn de erkende relying party's (en optioneel, wat zijn ze nodig)?
-- Wat zijn de technische interoperabiliteits vereisten voor deel nemers?
-- Wat zijn de operationele runtime-regels die moeten worden afgedwongen voor het uitwisselen van gegevens van digitale identiteiten?
+Een aangepast beleid wordt weer gegeven als een of meer XML-indelings bestanden die naar elkaar in een hiërarchische keten verwijzen. De XML-elementen definiëren het gebouw blokes, de interactie met de gebruiker en andere partijen en de bedrijfs logica. 
 
-Azure AD B2C aangepaste beleids regels die gebruikmaken van het Framework voor identiteits ervaring, gebruiken we de retrust Framework (TF)-Construct om al deze vragen te beantwoorden. Laten we eens kijken naar deze constructie en wat deze biedt.
+## <a name="custom-policy-starter-pack"></a>Aangepast beleids Starter Pack
 
-## <a name="understand-the-trust-framework-and-federation-management-foundation"></a>Meer informatie over het vertrouwens raamwerk en Federatie beheer Foundation
+Azure AD B2C aangepast beleids [Starter Pack](custom-policy-get-started.md#get-the-starter-pack) wordt geleverd met verschillende vooraf gemaakte beleids regels om snel aan de slag te gaan. Elk van deze Starter Packs bevat het kleinste aantal technische profielen en gebruikers ritten dat nodig is voor het uitvoeren van de beschreven scenario's:
 
-Het vertrouwens raamwerk is een schriftelijke specificatie van het identiteits-, beveiligings-, privacy-en gegevens beveiligings beleid waaraan deel nemers in een community van belang moeten voldoen.
+- **LocalAccounts** : Hiermee schakelt u het gebruik van alleen lokale accounts in.
+- **SocialAccounts** : Hiermee schakelt u het gebruik van sociale (of federatieve) accounts in.
+- **SocialAndLocalAccounts** : Hiermee schakelt u het gebruik van zowel lokale als sociale accounts in. De meeste van onze voor beelden verwijzen naar dit beleid.
+- **SocialAndLocalAccountsWithMFA** : Hiermee schakelt u de opties sociale, lokale en multi-factor Authentication in.
 
-Federatieve identiteiten bieden een basis voor het realiseren van identiteits garantie voor eind gebruikers op internet. Door identiteits beheer te delegeren aan derden, kan één digitale identiteit voor een eind gebruiker opnieuw worden gebruikt met meerdere relying party's.
+## <a name="understanding-the-basics"></a>Informatie over de basis beginselen 
 
-Identiteits controle vereist dat id-providers (id) en kenmerk providers (AtPs) zich houden aan specifieke beveiligings-, privacy-en operationeel beleid en-procedures.  Als ze geen rechtstreekse controles kunnen uitvoeren, moeten relying party's (RPs) vertrouwens relaties ontwikkelen met de id en AtPs waarmee ze werken.
+### <a name="claims"></a>Claims
 
-Naarmate het aantal consumenten en providers van digitale identiteits gegevens groeit, is het lastig om het Pairwise-beheer van deze vertrouwens relaties te voortzetten, of zelfs de Pairwise-uitwisseling van de technische meta gegevens die vereist zijn voor de netwerk verbinding.  Bij het oplossen van deze problemen hebben Federatie hubs slechts een beperkt aantal geslaagd.
+Een claim biedt tijdelijke opslag van gegevens tijdens het uitvoeren van een Azure AD B2C beleid. Hiermee kan informatie over de gebruiker worden opgeslagen, zoals de voor naam, achternaam of een andere claim die is verkregen van de gebruiker of andere systemen (claim uitwisselingen). Het [claim schema](claimsschema.md) is de plaats waar u uw claims declareert. 
 
-### <a name="what-a-trust-framework-specification-defines"></a>Wat een trust Framework-specificatie definieert
-TFs zijn de linchpins van het OIX-vertrouwens raamwerk model (Open Identity Exchange), waarbij elke community van belang is onderworpen aan een bepaalde TF-specificatie. Een dergelijke TF-specificatie definieert:
+Wanneer het beleid wordt uitgevoerd, wordt door Azure AD B2C claims verzonden naar en ontvangen van interne en externe partijen en wordt vervolgens een subset van deze claims naar uw Relying Party-toepassing verzonden als onderdeel van het token. Claims worden op de volgende manieren gebruikt: 
 
-- **De metrische gegevens over beveiliging en privacy voor de community van belang voor de definitie van:**
-    - De mate van zekerheid (LOA) die door deel nemers worden aangeboden/vereist; bijvoorbeeld een geordende set betrouwbaarheids classificaties voor de echtheid van digitale identiteits gegevens.
-    - De beveiligings niveaus (LOP) die door deel nemers worden aangeboden/vereist; bijvoorbeeld een geordende set betrouwbaarheids classificaties voor de beveiliging van digitale identiteits gegevens die worden verwerkt door deel nemers in de community van belang.
+- Een claim wordt opgeslagen, gelezen of bijgewerkt op basis van het gebruikers object van de Directory.
+- Er wordt een claim ontvangen van een externe ID-provider.
+- Claims worden verzonden of ontvangen met behulp van een aangepaste REST API service.
+- Gegevens worden verzameld als claims van de gebruiker tijdens de registratie-of Bewerk profiel stromen.
 
-- **De beschrijving van de digitale identiteits gegevens die door deel nemers worden aangeboden/vereist**.
+### <a name="manipulating-your-claims"></a>Uw claims bewerken
 
-- **Het technische beleid voor de productie en het gebruik van digitale identiteits gegevens, en dus voor het meten van LOA en LOP. Deze schriftelijke beleids regels bevatten doorgaans de volgende beleids regels:**
-    - Beleids regels voor identiteits controle: *hoe sterk is de identiteits gegevens van een persoon gecontroleerd?*
-    - Beveiligings beleid, bijvoorbeeld *hoe sterk de integriteit en vertrouwelijkheid van gegevens zijn beveiligd?*
-    - Privacybeleid, bijvoorbeeld: *welk besturings element heeft een gebruiker over persoonlijke Identificeer bare informatie (PII)*?
-    - Beleid voor overlevings vermogen, bijvoorbeeld: *als een provider geen bewerkingen meer kan uitvoeren, hoe is de continuïteit en beveiliging van de PII-functie niet langer van toepassing?*
+De [claim transformaties](claimstransformations.md) zijn vooraf gedefinieerde functies die kunnen worden gebruikt om een gegeven claim te converteren naar een andere aanvraag, een claim te evalueren of een claim waarde in te stellen. U kunt bijvoorbeeld een item toevoegen aan een teken reeks verzameling, het hoofdletter gebruik van een teken reeks wijzigen of een gegevens-en tijd claim evalueren. Een claim transformatie geeft een transformatie methode aan. 
 
-- **De technische profielen voor de productie en het gebruik van digitale identiteits gegevens. Deze profielen zijn onder andere:**
-    - Scope-interfaces waarvoor informatie over digitale identiteiten beschikbaar is op een opgegeven LOA.
-    - Technische vereisten voor on-the-Wire-interoperabiliteit.
+### <a name="customize-and-localize-your-ui"></a>Uw gebruikers interface aanpassen en lokaliseren
 
-- **De beschrijvingen van de verschillende rollen die deel nemers in de community kunnen uitvoeren en de kwalificaties die nodig zijn om aan deze rollen te voldoen.**
+Als u informatie van uw gebruikers wilt verzamelen door een pagina in hun webbrowser te presen teren, gebruikt u het [zelfondertekende technische profiel](self-asserted-technical-profile.md). U kunt uw door uzelf bevestigde technische profiel bewerken om [claims toe te voegen en gebruikers invoer](custom-policy-configure-user-input.md)aan te passen.
 
-Daarom bepaalt een TF-specificatie hoe identiteits gegevens worden uitgewisseld tussen de deel nemers van de community van belang: relying party's, identiteits-en kenmerk providers en controle Programma's voor kenmerken.
+Als u [de gebruikers interface](customize-ui-with-html.md) voor uw zelfondertekende technische profiel wilt aanpassen, geeft u een URL op in het [inhouds definitie](contentdefinitions.md) -element met aangepaste HTML-inhoud. In het zelf-beweringen technische profiel wijst u deze inhouds definitie-ID aan.
 
-Een TF-specificatie is een of meer documenten die dienen als referentie voor het governance van de community van belang voor het bepalen van de beweringen en het gebruik van digitale identiteits gegevens in de community. Het is een gedocumenteerde set beleids regels en procedures die zijn ontworpen om vertrouwen in de digitale identiteiten in te richten die worden gebruikt voor online trans acties tussen leden van een community van belang.
+Gebruik het [lokalisatie](localization.md) -element om taalspecifieke teken reeksen aan te passen. Een inhouds definitie kan een [lokalisatie](localization.md) verwijzing bevatten die een lijst met gelokaliseerde resources opgeeft die moeten worden geladen. Azure AD B2C combineert elementen van de gebruikersinterface met de HTML-inhoud die vanaf de URL wordt geladen en presenteert vervolgens de pagina aan de gebruiker. 
 
-Met andere woorden, een TF-specificatie definieert de regels voor het maken van een levensvatbaar federatieve identiteits ecosysteem voor een community.
+## <a name="relying-party-policy-overview"></a>Overzicht van het beleid voor Relying Party
 
-Er is momenteel een wijde overeenkomst tussen de voor delen van een dergelijke benadering. Er is geen twijfel dat de specificaties van het vertrouwens raamwerk de ontwikkeling van digitale identiteits ecosystemen met Controleer bare kenmerken van veiligheid, verzekeringen en privacy vergemakkelijken, wat betekent dat ze opnieuw kunnen worden gebruikt in meerdere community's van belang.
+Een Relying Party toepassing of in het SAML-protocol bekend als service provider roept het [Relying Party-beleid](relyingparty.md) aan om een specifieke gebruikers traject uit te voeren. Het Relying Party beleid specificeert de gebruikers traject die moet worden uitgevoerd en de lijst met claims die het token bevat. 
 
-Daarom gebruikt Azure AD B2C aangepast beleid dat het Framework voor identiteits ervaring gebruikt, de specificatie als basis voor de gegevens representatie van een TF om interoperabiliteit te vergemakkelijken.
+![Diagram waarin de stroom voor het uitvoeren van beleid wordt weer gegeven](./media/custom-policy-trust-frameworks/custom-policy-execution.png)
 
-Azure AD B2C aangepaste beleids regels die gebruikmaken van het Framework voor identiteits ervaring, vertegenwoordigen een TF-specificatie als een mengeling van menselijk en machine-Lees bare gegevens. Sommige secties van dit model (doorgaans secties die meer gericht zijn op governance) worden weer gegeven als verwijzingen naar gepubliceerde documentatie over beveiligings-en privacybeleid, samen met de bijbehorende procedures (indien van toepassing). In andere secties worden de meta gegevens van de configuratie en runtime regels beschreven die de operationele automatisering vergemakkelijken.
+Alle Relying Party toepassingen die gebruikmaken van hetzelfde beleid, ontvangen dezelfde token claims en de gebruiker verloopt via dezelfde gebruikers traject.
 
-## <a name="understand-trust-framework-policies"></a>Vertrouwens raamwerk beleid begrijpen
+### <a name="user-journeys"></a>Gebruikersbelevingen
 
-In termen van de implementatie bestaat de TF-specificatie uit een set beleids regels waarmee het gedrag van identiteiten en ervaringen kan worden beheerd.  Azure AD B2C aangepaste beleids regels die gebruikmaken van het Framework voor identiteits ervaring, kunt u uw eigen TF ontwerpen en maken met behulp van de volgende declaratieve beleids regels die kunnen worden gedefinieerd en geconfigureerd:
+Met [gebruikers ritten](userjourneys.md) kunt u de bedrijfs logica definiëren met het pad waarmee de gebruiker toegang krijgt tot uw toepassing. De gebruiker wordt door de gebruikers reis geleid om de claims op te halen die aan uw toepassing moeten worden gepresenteerd. Een gebruikers traject is gebaseerd op een reeks [Orchestration-stappen](userjourneys.md#orchestrationsteps). Een gebruiker moet de laatste stap bereiken om een token op te halen. 
 
-- De document verwijzing of verwijzingen die het federatieve identiteits ecosysteem van de Community bepalen, gerelateerd aan de TF. Ze zijn koppelingen naar de TF-documentatie. De (vooraf gedefinieerde) operationele runtime regels of de gebruikers ritten waarmee de uitwisseling en het gebruik van de claims worden geautomatiseerd en/of beheerd. Deze gebruikers ritten zijn gekoppeld aan een LOA (en een LOP). Een beleid kan daarom gebruikers ritten hebben met verschillende LOAs (en LOPs).
+Hieronder wordt beschreven hoe u Orchestration-stappen kunt toevoegen aan het [Starter Pack-beleid voor sociale en lokale accounts](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/SocialAndLocalAccounts) . Hier volgt een voor beeld van een REST API-aanroep die is toegevoegd.
 
-- De identiteits-en kenmerk providers, of de claim providers, in de community van belang en de technische profielen die worden ondersteund samen met de (out-of-band) LOA/LOP-accreditering die aan hen is gekoppeld.
+![aangepaste gebruikers traject](media/custom-policy-trust-frameworks/user-journey-flow.png)
 
-- De integratie met kenmerk controleprogramma's of claim providers.
 
-- De relying party's in de Community (door middel van interferentie).
+### <a name="orchestration-steps"></a>Orchestration-stappen
 
-- De meta gegevens voor het tot stand brengen van netwerk communicatie tussen deel nemers. Deze meta gegevens, samen met de technische profielen, worden gebruikt tijdens een trans actie voor het vastmaken van de Wire-interoperabiliteit tussen de Relying Party en andere deel nemers van de community.
+De Orchestration-stap verwijst naar een methode die het beoogde doel of de functionaliteit implementeert. Deze methode wordt een [technisch profiel](technicalprofiles.md)genoemd. Wanneer uw gebruikers traject vertakkingen nodig heeft om de bedrijfs logica beter weer te geven, verwijst de Orchestration-stap naar [subtraject](subjourneys.md). Een subtraject bevat een eigen set indelings stappen.
 
-- De Protocol conversie, indien aanwezig (bijvoorbeeld SAML 2,0, OAuth2, WS-Federation en OpenID Connect Connect).
+Een gebruiker moet de laatste Orchestration-stap in de gebruikers tocht bereiken om een token te verkrijgen. Het is echter mogelijk dat gebruikers niet alle Orchestration-stappen hoeven uit te voeren. Orchestration-stappen kunnen voorwaardelijk worden uitgevoerd op basis van voor [waarden](userjourneys.md#preconditions) die in de Orchestration-stap zijn gedefinieerd. 
 
-- De verificatie vereisten.
+Nadat een indelings stap is voltooid, worden in Azure AD B2C de verwerkte claims opgeslagen in de **verzameling claims**. De claims in de claim Bag kunnen worden gebruikt door alle verdere Orchestration-stappen in de gebruikers reis.
 
-- De multi factor-indeling, indien aanwezig.
+In het volgende diagram ziet u hoe de Orchestration-stappen van de gebruiker toegang hebben tot de claim Bag.
 
-- Een gedeeld schema voor alle claims die beschikbaar zijn en toewijzingen aan deel nemers van een community van belang.
+![Gebruikers traject Azure AD B2C](media/custom-policy-trust-frameworks/user-journey-diagram.png)
 
-- Alle claim transformaties, samen met de gegevens die in deze context kunnen worden geminimaliseerd, om de uitwisseling en het gebruik van de claims te hand haven.
+### <a name="technical-profile"></a>Technisch profiel
 
-- De binding en versleuteling.
+Een technisch profiel biedt een interface voor communicatie met verschillende soorten partijen. Een gebruikers traject combineert technische profielen aan de hand van Orchestration-stappen om uw bedrijfs logica te definiëren.
 
-- De claim opslag.
+Alle typen technische profielen delen hetzelfde concept. U verzendt invoer claims, voert claims-trans formatie uit en communiceert met de geconfigureerde partij. Nadat het proces is voltooid, retourneert het technische profiel de uitvoer claims om een Bag-claim in te dienen. Zie [technische profielen-overzicht](technicalprofiles.md) voor meer informatie
 
-### <a name="understand-claims"></a>Informatie over claims
+### <a name="validation-technical-profile"></a>Validatie technische profiel
 
-> [!NOTE]
-> We verwijzen gezamenlijk naar alle mogelijke soorten identiteits gegevens die kunnen worden uitgewisseld als ' claims ': claims over de authenticatie referenties van een eind gebruiker, identiteits hebben, communicatie apparaat, fysieke locatie, persoonlijke identificatie kenmerken, enzovoort.
->
-> We gebruiken de term ' claims '--in plaats van ' Attributes '--omdat deze gegevens artefacten in online trans acties geen feiten zijn die rechtstreeks kunnen worden geverifieerd door de Relying Party. In plaats daarvan zijn er beweringen of claims over feiten waarvoor de Relying Party voldoende vertrouwen moet ontwikkelen om de aangevraagde trans actie van de eind gebruiker te verlenen.
->
-> We gebruiken ook de term ' claims ' omdat Azure AD B2C aangepaste beleids regels die gebruikmaken van het Framework voor identiteits ervaring, zijn ontworpen om de uitwisseling van alle typen digitale identiteits gegevens op een consistente manier te vereenvoudigen, ongeacht of het onderliggende protocol is gedefinieerd voor gebruikers verificatie of het ophalen van kenmerken.  We gebruiken ook de term ' claim providers ' om gezamenlijk te verwijzen naar id-providers, kenmerk providers en controle Programma's voor kenmerken wanneer we niet willen onderscheiden van hun specifieke functies.
+Wanneer een gebruiker met de gebruikers interface communiceert, wilt u mogelijk de verzamelde gegevens valideren. Als u wilt communiceren met de gebruiker, moet u een [zelf-bevestigd technisch profiel](self-asserted-technical-profile.md) gebruiken.
 
-Daarom bepalen ze hoe identiteits gegevens worden uitgewisseld tussen een Relying Party, identiteit en kenmerk providers en controle Programma's voor kenmerken. Ze bepalen welke identiteits-en kenmerk providers vereist zijn voor de verificatie van een Relying Party. Ze moeten worden beschouwd als een domein-specifieke taal (DSL), dat wil zeggen, een computer taal die speciaal is bedoeld voor een bepaald toepassings domein met overname, *indien* -instructies, polymorfisme.
+Om de invoer van de gebruiker te valideren, worden [technische profielen voor validatie](validation-technical-profile.md) van het zelfondertekende technische profiel genoemd. 
 
-Deze beleids regels vormen het door de machine Lees bare deel van de TF-construct in Azure AD B2C aangepaste beleids regels maken gebruik van het Framework voor identiteits ervaring. Ze omvatten alle operationele gegevens, waaronder meta gegevens en technische profielen van claim providers, claim schema definities, claim transformatie functies en gebruikers trajecten die zijn ingevuld om operationele integratie en automatisering te vergemakkelijken.
+Een technische validatie profiel is een methode om een niet-interactief technisch profiel aan te roepen. In dit geval kan het technische profiel uitvoer claims of een fout bericht retour neren. Het fout bericht wordt weer gegeven aan de gebruiker op het scherm, zodat de gebruiker het opnieuw kan proberen.
 
-Er wordt van uitgegaan dat er sprake is van *levende documenten* , omdat er een goede kans bestaat dat de inhoud gedurende een periode wordt gewijzigd met betrekking tot de actieve deel nemers die in het beleid zijn gedeclareerd. Het is ook mogelijk dat de voor waarden van een deel nemer worden gewijzigd.
+In het volgende diagram ziet u hoe Azure AD B2C een validatie technische profiel gebruikt om de gebruikers referenties te valideren.
 
-De Federatie-instellingen en-onderhoud worden uitgebreid vereenvoudigd door relying party's te gebruiken voor het afschermen van vertrouwens relaties en het opnieuw configureren van connectiviteit als verschillende claim providers/controle Programma's die worden toegevoegd aan of verlaten (de Community vertegenwoordigd door) de set beleids regels.
+![Diagram voor validatie van technische profielen](media/custom-policy-trust-frameworks/validation-technical-profile.png)
 
-Interoperabiliteit is een andere belang rijke uitdaging. Aanvullende claim providers/controle Programma's moeten worden geïntegreerd, omdat relying party's waarschijnlijk niet alle benodigde protocollen ondersteunen. Azure AD B2C aangepast beleid lost dit probleem op door de industrie standaard protocollen te ondersteunen en door specifieke gebruikers ritten toe te passen om aanvragen te transponeren wanneer relying party's en kenmerk providers niet hetzelfde protocol ondersteunen.
+## <a name="inheritance-model"></a>Overname model
 
-Gebruikers trajecten zijn protocol profielen en meta gegevens die worden gebruikt voor het vastmaken van de Wire-interoperabiliteit tussen de Relying Party en andere deel nemers. Er zijn ook operationele runtime regels die worden toegepast op identiteits informatie Exchange-aanvraag/antwoord berichten voor het afdwingen van naleving van het gepubliceerde beleid als onderdeel van de TF-specificatie. Het idee van gebruikers ritten is essentieel voor de aanpassing van de klant ervaring. Ook wordt het lampje uitgescheiden van de werking van het systeem op protocol niveau.
+Elk Starter Pack bevat de volgende bestanden:
 
-Op basis hiervan kunnen Relying Party toepassingen en portals, afhankelijk van hun context, Azure AD B2C aangepaste beleids regels aanroepen die gebruikmaken van het Framework voor identiteits ervaring waarbij de naam van een specifiek beleid wordt door gegeven en precies het gedrag en de uitwisseling van informatie te verkrijgen die ze nodig hebben zonder muss, Fuss of risico.
+- Een **basis** bestand dat de meeste definities bevat. Als u hulp nodig hebt bij het oplossen van problemen en het onderhoud op lange termijn van uw beleid, kunt u het beste een minimum aantal wijzigingen aanbrengen in dit bestand.
+- Een **extensie** bestand dat de unieke configuratie wijzigingen voor uw Tenant bevat. Dit beleids bestand is afgeleid van het basis bestand. Gebruik dit bestand om nieuwe functionaliteit toe te voegen of bestaande functionaliteit te overschrijven. Gebruik dit bestand bijvoorbeeld om met nieuwe id-providers te communiceren.
+- Een **RP-bestand (Relying Party)** dat het bestand met de taak focus is dat rechtstreeks wordt aangeroepen door de Relying Party toepassing, zoals uw web-, mobiele of bureaublad toepassingen. Voor elke unieke taak, zoals aanmelden, aanmelden, wacht woord opnieuw instellen of profiel bewerken, is een eigen Relying Party-beleids bestand vereist. Dit beleids bestand is afgeleid van het extensies-bestand.
+
+Het overname model is als volgt:
+
+- Het onderliggende beleid op elk niveau kan overnemen van het bovenliggende beleid en het uitbreiden door nieuwe elementen toe te voegen.
+- Voor complexere scenario's kunt u meer instap niveau toevoegen (Maxi maal 5 in totaal)
+- U kunt meer Relying Party-beleid toevoegen. U kunt bijvoorbeeld mijn account verwijderen, een telefoon nummer wijzigen, het SAML-Relying Party beleid en nog veel meer.
+
+In het volgende diagram ziet u de relatie tussen de beleids bestanden en de Relying Party toepassingen.
+
+![Diagram van het overname model voor het vertrouwens raamwerk beleid](media/custom-policy-trust-frameworks/policies.png)
+
+
+## <a name="guidance-and-best-practices"></a>Richtlijnen en aanbevolen procedures
+
+### <a name="best-practices"></a>Aanbevolen procedures
+
+Binnen een Azure AD B2C aangepast beleid kunt u uw eigen bedrijfs logica integreren om de gebruikers ervaring te bouwen die u nodig hebt en de functionaliteit van de service te verlengen. We hebben een aantal aanbevolen procedures en aanbevelingen om aan de slag te gaan.
+
+- Maak uw logica in het **uitbrei ding beleid** of het door geven van **partij beleid**. U kunt nieuwe elementen toevoegen, waardoor het basis beleid wordt overschreven door naar dezelfde ID te verwijzen. Op deze manier kunt u uw project uitschalen terwijl u het basis beleid later gemakkelijker kunt upgraden als micro soft nieuwe Starter Packs vrijgeeft.
+- Binnen het **basis beleid** raden wij u ten zeerste aan om te voor komen dat u wijzigingen aanbrengt.  Indien nodig, opmerkingen maken waar de wijzigingen worden aangebracht.
+- Wanneer u een element overschrijft, zoals technische profiel meta gegevens, moet u voor komen dat het hele technische profiel wordt gekopieerd uit het basis beleid. Kopieer in plaats daarvan alleen de vereiste sectie van het element. Zie [e-mail verificatie uitschakelen](custom-policy-disable-email-verification.md) voor een voor beeld van hoe u de wijziging aanbrengt.
+- Als u het dupliceren van technische profielen wilt reduceren, waarbij de kern functionaliteit wordt gedeeld, gebruikt u [technisch profiel opnemen](technicalprofiles.md#include-technical-profile).
+- Vermijd het schrijven naar de Azure AD-Directory tijdens het aanmelden, wat kan leiden tot het beperken van problemen.
+- Als uw beleid externe afhankelijkheden heeft, zoals REST API ervoor zorgt dat deze Maxi maal beschikbaar zijn.
+- Voor een betere gebruikers ervaring zorgt u ervoor dat uw aangepaste HTML-sjablonen wereld wijd worden geïmplementeerd met behulp van [online content delivery](https://docs.microsoft.com/azure/cdn/). Met Azure Content Delivery Network (CDN) kunt u de laad tijden verminderen, band breedte besparen en de reactie tijd van de snelheid verhogen.
+- Als u een wijziging wilt aanbrengen in de gebruikers reis. Kopieer de volledige gebruikers reis van het basis beleid naar het extensie beleid. Geef een unieke reis-ID voor de gebruiker op die u hebt gekopieerd. Wijzig vervolgens in het [Relying Party beleid](relyingparty.md)het [standaard gebruikers traject](relyingparty.md#defaultuserjourney) -element dat naar de nieuwe gebruikers traject wijst.
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Bij het ontwikkelen met Azure AD B2C-beleid, kunt u fouten of uitzonde ringen uitvoeren tijdens het uitvoeren van uw gebruikers traject. De kan worden onderzocht met behulp van Application Insights.
+
+- Integreer Application Insights met Azure AD B2C om [uitzonde ringen](troubleshoot-with-application-insights.md)op te sporen.
+- Met de [uitbrei ding voor de Azure AD B2C van VS code](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c) kunt u [de logboeken openen en visualiseren](https://github.com/azure-ad-b2c/vscode-extension/blob/master/src/help/app-insights.md) op basis van een beleids naam en-tijd.
+- De meest voorkomende fout bij het instellen van aangepast beleid is XML met een onjuiste indeling. Gebruik [XML-schema validatie](troubleshoot-custom-policies.md) om fouten te identificeren voordat u het XML-bestand uploadt.
+
+## <a name="continuous-integration"></a>Continue integratie
+
+Door gebruik te maken van een continue integratie-en leverings pijplijn (CI/CD) die u in azure-pijp lijnen hebt ingesteld, kunt u [uw Azure AD B2C aangepaste beleids regels in uw software-levering](deploy-custom-policies-devops.md) en code beheer automatisering toevoegen. Wanneer u implementeert in verschillende Azure AD B2C omgevingen, bijvoorbeeld dev, test en productie, wordt u aangeraden hand matige processen te verwijderen en geautomatiseerd testen uit te voeren met behulp van Azure-pijp lijnen.
+
+## <a name="prepare-your-environment"></a>Uw omgeving voorbereiden
+
+Aan de slag met Azure AD B2C aangepast beleid:
+
+1. [Een Azure AD B2C-tenant maken](tutorial-create-tenant.md)
+1. [Registreer een webtoepassing](tutorial-register-applications.md) met behulp van de Azure Portal. U kunt uw beleid dus testen.
+1. De benodigde [beleids sleutels](custom-policy-get-started.md#add-signing-and-encryption-keys) toevoegen en [Framework-toepassingen voor identiteits ervaring registreren](custom-policy-get-started.md#register-identity-experience-framework-applications)
+1. [Down load het Azure AD B2C Policy Starter Pack](custom-policy-get-started.md#get-the-starter-pack) en upload het naar uw Tenant. 
+1. Nadat u het Starter Pack hebt geüpload, moet u [uw registratie-of aanmeldings beleid testen](custom-policy-get-started.md#test-the-custom-policy)
+1. U wordt aangeraden [Visual Studio code](https://code.visualstudio.com/) (VS code) te downloaden en te installeren. Visual Studio Code is een toegankelijke, krachtige broncode-editor voor Windows, macOS en Linux die u kunt uitvoeren op uw computer. Met VS code kunt u uw Azure AD B2C aangepaste beleids-XML-bestanden bewerken.
+1. Als u snel wilt navigeren door Azure AD B2C aangepast beleid, raden we u aan om [Azure AD B2C extensie voor VS code](https://marketplace.visualstudio.com/items?itemName=AzureADB2CTools.aadb2c) te installeren
+ 
+## <a name="next-steps"></a>Volgende stappen
+
+Nadat u uw Azure AD B2C-beleid hebt ingesteld en getest, kunt u beginnen met het aanpassen van uw beleid. Ga door de volgende artikelen voor meer informatie over:
+
+- [Claims toevoegen en gebruikers invoer aanpassen](custom-policy-configure-user-input.md) met aangepast beleid. Meer informatie over het definiëren van een claim, het toevoegen van een claim aan de gebruikers interface door een aantal van de technische profielen van het Start pakket aan te passen.
+- [Pas de gebruikers interface](customize-ui-with-html.md) van uw toepassing aan met behulp van een aangepast beleid. Meer informatie over het maken van uw eigen HTML-inhoud en het aanpassen van de inhouds definitie.
+- [Lokalisatie van de gebruikers interface](custom-policy-localization.md) van uw toepassing met behulp van een aangepast beleid. Meer informatie over het instellen van de lijst met ondersteunde talen en het bieden van taalspecifieke labels door het element gelokaliseerde resources toe te voegen.
+- Tijdens het ontwikkelen en testen van uw beleid kunt u [e-mail verificatie uitschakelen](custom-policy-disable-email-verification.md). Meer informatie over het overschrijven van een technische profiel meta gegevens.
+- [Stel aanmelden met een Google-account](identity-provider-google-custom.md) in met behulp van aangepast beleid. Meer informatie over het maken van een nieuwe claim provider met het technische profiel OAuth2. Pas vervolgens de reis van de gebruiker aan, zodat deze de Google-aanmeldings optie bevat.
+- Als u problemen met uw aangepaste beleid wilt vaststellen, kunt u [Azure Active Directory B2C-logboeken verzamelen met Application Insights](troubleshoot-with-application-insights.md). Meer informatie over het toevoegen van nieuwe technische profielen en het configureren van het beleid voor de relay-partij.

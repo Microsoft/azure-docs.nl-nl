@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/1/2020
-ms.openlocfilehash: 38c006bd1cda1494b284f742459aaf539ed4a2d1
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: b4f828c675df9625d6d4889dbc31bbc4b9f887ed
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539704"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97386711"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Beperkingen in Azure Database for MySQL
 In de volgende secties worden capaciteit, ondersteuning voor opslag-engine, ondersteuning van bevoegdheden, ondersteuning voor gegevens manipulatie en functionele limieten in de database service beschreven. Zie ook [algemene beperkingen](https://dev.mysql.com/doc/mysql-reslimits-excerpt/5.6/en/limits.html) die van toepassing zijn op de MySQL-data base-engine.
@@ -55,6 +55,7 @@ Het volgende wordt niet ondersteund:
 - DEFINE: vereist Super privileges om te maken en beperkt. Als u gegevens importeert met behulp van een back-up, verwijdert u de `CREATE DEFINER` opdrachten hand matig of gebruikt u de `--skip-definer` opdracht bij het uitvoeren van een mysqldump.
 - Systeem databases: de [MySQL-systeem database](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html) is alleen-lezen en wordt gebruikt ter ondersteuning van verschillende PaaS-functionaliteit. U kunt geen wijzigingen aanbrengen in de `mysql` systeem database.
 - `SELECT ... INTO OUTFILE`: Wordt niet ondersteund in de service.
+- `LOAD_FILE(file_name)`: Wordt niet ondersteund in de service.
 
 ### <a name="supported"></a>Ondersteund
 - `LOAD DATA INFILE` wordt ondersteund, maar de `[LOCAL]` para meter moet worden opgegeven en worden omgeleid naar een UNC-pad (Azure-opslag gekoppeld aan SMB).

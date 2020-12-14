@@ -7,17 +7,18 @@ author: MashaMSFT
 editor: monicar
 tags: azure-service-management
 ms.service: virtual-machines-sql
+ms.subservice: hadr
 ms.topic: overview
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: d5bd2fc150ee1d35127eeb9dbf3dc1eeffdc9659
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 33be57832d9364b859042cd38349c2437bcfcb18
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685933"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97358143"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Exemplaren van failoverclusters met SQL Server op virtuele Azure-machines (VM's).
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -50,7 +51,7 @@ SQL Server op Azure-VM's biedt verschillende opties als een oplossing voor gedee
 |---------|---------|---------|---------|
 |**Minimale versie van het besturingssysteem**| Alles |Windows Server 2012|Windows Server 2016|
 |**Minimale versie van SQL Server**|Alles|SQL Server 2012|SQL Server 2016|
-|**Ondersteunde VM-beschikbaarheid** |Beschikbaarheidssets met nabijheidsplaatsingsgroepen |Beschikbaarheidssets en beschikbaarheidszones|Beschikbaarheidssets |
+|**Ondersteunde VM-beschikbaarheid** |Beschikbaarheidssets met nabijheidsplaatsingsgroepen (voor Premium - SSD) </br> Dezelfde beschikbaarheidszone (voor Ultra - SSD) |Beschikbaarheidssets en beschikbaarheidszones|Beschikbaarheidssets |
 |**Ondersteunt FileStream**|Ja|Nee|Ja |
 |**Azure blob-cache**|Nee|Nee|Ja|
 
@@ -69,12 +70,16 @@ In de rest van deze sectie vindt u een overzicht van de voordelen en beperkingen
 - Biedt ondersteuning voor opslag met Azure Premium SSD en Azure Ultra Disk-opslag.
 - Met behulp van één gedeelde schijf of meerdere gedeelde schijven met striping kan een gedeelde opslaggroep worden gemaakt. 
 - Ondersteunt FileStream.
+- Premium SSD's-beschikbaarheidssets voor ondersteuning. 
 
 
 **Beperkingen**: 
-- Virtuele machines moeten in dezelfde beschikbaarheidsset en dezelfde nabijheidsplaatsingsgroep worden geplaatst.
-- Beschikbaarheidszones worden niet ondersteund.
+- We raden aan om virtuele machines in dezelfde beschikbaarheidsset en dezelfde nabijheidsplaatsingsgroep te plaatsen.
+- Ultra Disks bieden geen ondersteuning voor beschikbaarheidssets. 
+- Beschikbaarheidszones worden ondersteund voor Ultra Disks, maar de VM's moeten zich in dezelfde beschikbaarheidszone bevinden, waardoor de beschikbaarheid van de virtuele machine wordt verminderd. 
+- Ongeacht de gekozen oplossing voor hardwarebeschikbaarheid is de beschikbaarheid van het failovercluster altijd 99,9% bij het gebruik van gedeelde Azure-schijven. 
 - Caching op Premium SSD-schijven wordt niet ondersteund.
+
  
 Zie [Create an FCI with Azure shared disks (SQL Server on Azure VMs)](failover-cluster-instance-azure-shared-disks-manually-configure.md) (Een FCI maken met gedeelde Azure-schijven (SQL Server op Azure-VM's)) om aan de slag te gaan. 
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/25/2020
+ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e5aca04a649dfa5228d12737b21ef2ee2b14013b
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 891991fa938ad3dcfacae6d02e40efd6d6e9689e
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750427"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97386847"
 ---
 # <a name="define-a-restful-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een onderliggend technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -114,16 +114,16 @@ Het technische profiel retourneert ook claims die niet worden geretourneerd door
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ServiceUrl | Ja | De URL van het REST API-eind punt. |
-| AuthenticationType | Ja | Het type verificatie dat wordt uitgevoerd door de claim provider voor de REST. Mogelijke waarden: `None` , `Basic` , `Bearer` ,  `ClientCertificate` of `ApiKeyHeader` . <br /><ul><li>De `None` waarde geeft aan dat de rest API anoniem is. </li><li>De `Basic` waarde geeft aan dat de rest API is beveiligd met HTTP Basic-verificatie. Alleen geverifieerde gebruikers, met inbegrip van Azure AD B2C, hebben toegang tot uw API. </li><li>De `ClientCertificate` waarde (aanbevolen) geeft aan dat de rest API de toegang beperkt met behulp van verificatie op basis van client certificaten. Alleen services die de juiste certificaten hebben, bijvoorbeeld Azure AD B2C, hebben toegang tot uw API. </li><li>De `Bearer` waarde geeft aan dat de rest API de toegang beperkt met behulp van client OAuth2 Bearer-token. </li><li>De `ApiKeyHeader` waarde geeft aan dat de rest API is beveiligd met de http-header van de API-sleutel, zoals *x-functions Key*. </li></ul> |
-| AllowInsecureAuthInProduction| Nee| Hiermee wordt aangegeven of de `AuthenticationType` kan worden ingesteld op `none` in productie omgeving ( `DeploymentMode` van de [TrustFrameworkPolicy](trustframeworkpolicy.md) is ingesteld op `Production` of niet is opgegeven). Mogelijke waarden: True of False (standaard). |
-| SendClaimsIn | Nee | Hiermee wordt aangegeven hoe de invoer claims worden verzonden naar de claim provider voor de REST. Mogelijke waarden: `Body` (standaard), `Form` , `Header` `Url` of `QueryString` . De `Body` waarde is de invoer claim die in de hoofd tekst van de aanvraag wordt verzonden in de JSON-indeling. De `Form` waarde is de invoer claim die in de hoofd tekst van de aanvraag wordt verzonden in een ampersand ' & ' gescheiden sleutel waarde-indeling. De `Header` waarde is de invoer claim die in de aanvraag header wordt verzonden. De `Url` waarde is de invoer claim die wordt verzonden in de URL, bijvoorbeeld https://{claim1}. example. com/{claim2}/{claim3}? { claim4} = {claim5}. De `QueryString` waarde is de invoer claim die wordt verzonden in de query teken reeks van de aanvraag. De HTTP-woorden die door elk van beide worden aangeroepen, zijn als volgt:<br /><ul><li>`Body`: POST</li><li>`Form`: POST</li><li>`Header`: Ophalen</li><li>`Url`: Ophalen</li><li>`QueryString`: Ophalen</li></ul> |
-| ClaimsFormat | Nee | Momenteel niet gebruikt, kan worden genegeerd. |
-| ClaimUsedForRequestPayload| Nee | Naam van een teken reeks claim die de payload bevat die naar de REST API moet worden verzonden. |
-| DebugMode | Nee | Voert het technische profiel in de foutopsporingsmodus. Mogelijke waarden: `true` , of `false` (standaard). In de foutopsporingsmodus kan de REST API meer informatie retour neren. Zie de sectie [fout bericht over het retour neren](#returning-validation-error-message) . |
-| IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
-| ResolveJsonPathsInJsonTokens  | Nee | Hiermee wordt aangegeven of het technische profiel JSON-paden oplost. Mogelijke waarden: `true` , of `false` (standaard). Gebruik deze meta gegevens om gegevens van een genest JSON-element te lezen. Stel in een [output claim](technicalprofiles.md#outputclaims)de in `PartnerClaimType` op het JSON-pad-element dat u wilt uitvoeren. Bijvoorbeeld: `firstName.localized` , of `data.0.to.0.email` .|
-| UseClaimAsBearerToken| Nee| De naam van de claim die het Bearer-token bevat.|
+| ServiceUrl | Yes | De URL van het REST API-eind punt. |
+| AuthenticationType | Yes | Het type verificatie dat wordt uitgevoerd door de claim provider voor de REST. Mogelijke waarden: `None` , `Basic` , `Bearer` ,  `ClientCertificate` of `ApiKeyHeader` . <br /><ul><li>De `None` waarde geeft aan dat de rest API anoniem is. </li><li>De `Basic` waarde geeft aan dat de rest API is beveiligd met HTTP Basic-verificatie. Alleen geverifieerde gebruikers, met inbegrip van Azure AD B2C, hebben toegang tot uw API. </li><li>De `ClientCertificate` waarde (aanbevolen) geeft aan dat de rest API de toegang beperkt met behulp van verificatie op basis van client certificaten. Alleen services die de juiste certificaten hebben, bijvoorbeeld Azure AD B2C, hebben toegang tot uw API. </li><li>De `Bearer` waarde geeft aan dat de rest API de toegang beperkt met behulp van client OAuth2 Bearer-token. </li><li>De `ApiKeyHeader` waarde geeft aan dat de rest API is beveiligd met de http-header van de API-sleutel, zoals *x-functions Key*. </li></ul> |
+| AllowInsecureAuthInProduction| No| Hiermee wordt aangegeven of de `AuthenticationType` kan worden ingesteld op `none` in productie omgeving ( `DeploymentMode` van de [TrustFrameworkPolicy](trustframeworkpolicy.md) is ingesteld op `Production` of niet is opgegeven). Mogelijke waarden: True of False (standaard). |
+| SendClaimsIn | No | Hiermee wordt aangegeven hoe de invoer claims worden verzonden naar de claim provider voor de REST. Mogelijke waarden: `Body` (standaard), `Form` , `Header` `Url` of `QueryString` . De `Body` waarde is de invoer claim die in de hoofd tekst van de aanvraag wordt verzonden in de JSON-indeling. De `Form` waarde is de invoer claim die in de hoofd tekst van de aanvraag wordt verzonden in een ampersand ' & ' gescheiden sleutel waarde-indeling. De `Header` waarde is de invoer claim die in de aanvraag header wordt verzonden. De `Url` waarde is de invoer claim die wordt verzonden in de URL, bijvoorbeeld https://{claim1}. example. com/{claim2}/{claim3}? { claim4} = {claim5}. De `QueryString` waarde is de invoer claim die wordt verzonden in de query teken reeks van de aanvraag. De HTTP-woorden die door elk van beide worden aangeroepen, zijn als volgt:<br /><ul><li>`Body`: POST</li><li>`Form`: POST</li><li>`Header`: Ophalen</li><li>`Url`: Ophalen</li><li>`QueryString`: Ophalen</li></ul> |
+| ClaimsFormat | No | Momenteel niet gebruikt, kan worden genegeerd. |
+| ClaimUsedForRequestPayload| No | Naam van een teken reeks claim die de payload bevat die naar de REST API moet worden verzonden. |
+| DebugMode | No | Voert het technische profiel in de foutopsporingsmodus. Mogelijke waarden: `true` , of `false` (standaard). In de foutopsporingsmodus kan de REST API meer informatie retour neren. Zie de sectie [fout bericht over het retour neren](#returning-validation-error-message) . |
+| IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
+| ResolveJsonPathsInJsonTokens  | No | Hiermee wordt aangegeven of het technische profiel JSON-paden oplost. Mogelijke waarden: `true` , of `false` (standaard). Gebruik deze meta gegevens om gegevens van een genest JSON-element te lezen. Stel in een [output claim](technicalprofiles.md#output-claims)de in `PartnerClaimType` op het JSON-pad-element dat u wilt uitvoeren. Bijvoorbeeld: `firstName.localized` , of `data.0.to.0.email` .|
+| UseClaimAsBearerToken| No| De naam van de claim die het Bearer-token bevat.|
 
 ## <a name="error-handling"></a>Foutafhandeling
 
@@ -131,10 +131,10 @@ De volgende meta gegevens kunnen worden gebruikt voor het configureren van de fo
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| DefaultUserMessageIfRequestFailed | Nee | Een standaard aangepast fout bericht voor alle uitzonde ringen van REST API.|
-| UserMessageIfCircuitOpen | Nee | Fout bericht wanneer de REST API niet bereikbaar is. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. |
-| UserMessageIfDnsResolutionFailed | Nee | Fout bericht voor de uitzonde ring van de DNS-omzetting. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. | 
-| UserMessageIfRequestTimeout | Nee | Fout bericht wanneer er een time-out optreedt voor de verbinding. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. | 
+| DefaultUserMessageIfRequestFailed | No | Een standaard aangepast fout bericht voor alle uitzonde ringen van REST API.|
+| UserMessageIfCircuitOpen | No | Fout bericht wanneer de REST API niet bereikbaar is. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. |
+| UserMessageIfDnsResolutionFailed | No | Fout bericht voor de uitzonde ring van de DNS-omzetting. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. | 
+| UserMessageIfRequestTimeout | No | Fout bericht wanneer er een time-out optreedt voor de verbinding. Als u niets opgeeft, wordt de DefaultUserMessageIfRequestFailed geretourneerd. | 
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 
@@ -156,8 +156,8 @@ Als het type verificatie is ingesteld op `Basic` , bevat het **CryptographicKeys
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| BasicAuthenticationUsername | Ja | De gebruikers naam die wordt gebruikt voor verificatie. |
-| BasicAuthenticationPassword | Ja | Het wacht woord dat wordt gebruikt voor verificatie. |
+| BasicAuthenticationUsername | Yes | De gebruikers naam die wordt gebruikt voor verificatie. |
+| BasicAuthenticationPassword | Yes | Het wacht woord dat wordt gebruikt voor verificatie. |
 
 In het volgende voor beeld ziet u een technisch profiel met basis verificatie:
 
@@ -181,7 +181,7 @@ Als het type verificatie is ingesteld op `ClientCertificate` , bevat het **Crypt
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClientCertificate | Ja | Het x509-certificaat (RSA key set) dat moet worden gebruikt voor verificatie. |
+| ClientCertificate | Yes | Het x509-certificaat (RSA key set) dat moet worden gebruikt voor verificatie. |
 
 ```xml
 <TechnicalProfile Id="REST-API-SignUp">
@@ -202,7 +202,7 @@ Als het type verificatie is ingesteld op `Bearer` , bevat het **CryptographicKey
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| BearerAuthenticationToken | Nee | Het OAuth 2,0 Bearer-token. |
+| BearerAuthenticationToken | No | Het OAuth 2,0 Bearer-token. |
 
 ```xml
 <TechnicalProfile Id="REST-API-SignUp">
@@ -223,7 +223,7 @@ Als het type verificatie is ingesteld op `ApiKeyHeader` , bevat het **Cryptograp
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| De naam van de HTTP-header, zoals `x-functions-key` of `x-api-key` . | Ja | De sleutel die wordt gebruikt om te verifiëren. |
+| De naam van de HTTP-header, zoals `x-functions-key` of `x-api-key` . | Yes | De sleutel die wordt gebruikt om te verifiëren. |
 
 ```xml
 <TechnicalProfile Id="REST-API-SignUp">
@@ -258,13 +258,13 @@ Uw REST API moet mogelijk een fout bericht retour neren, zoals ' de gebruiker is
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| versie | Ja | Uw REST API-versie. Bijvoorbeeld: 1.0.1 |
-| status | Ja | Moet 409 zijn |
-| code | Nee | Een fout code van de REST-eindpunt provider, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
-| requestId | Nee | Een aanvraag-id van de REST-eindpunt provider, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
-| userMessage | Ja | Een fout bericht dat wordt weer gegeven aan de gebruiker. |
-| developerMessage | Nee | De uitgebreide beschrijving van het probleem en hoe het kan worden opgelost, dat wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
-| moreInfo | Nee | Een URI die verwijst naar extra informatie, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
+| versie | Yes | Uw REST API-versie. Bijvoorbeeld: 1.0.1 |
+| status | Yes | Moet 409 zijn |
+| code | No | Een fout code van de REST-eindpunt provider, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
+| requestId | No | Een aanvraag-id van de REST-eindpunt provider, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
+| userMessage | Yes | Een fout bericht dat wordt weer gegeven aan de gebruiker. |
+| developerMessage | No | De uitgebreide beschrijving van het probleem en hoe het kan worden opgelost, dat wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
+| moreInfo | No | Een URI die verwijst naar extra informatie, die wordt weer gegeven wanneer `DebugMode` is ingeschakeld. |
 
 
 Het volgende voor beeld toont een C#-klasse die een fout bericht retourneert:

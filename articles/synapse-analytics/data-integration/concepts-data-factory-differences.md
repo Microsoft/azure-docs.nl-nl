@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: makromer
 ms.reviewer: jrasnick
-ms.openlocfilehash: a8fd0ef006b246e30c02cfb321c72b4e070f54de
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 8818d4db489cef8203ae515c18c61e215d577033
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109144"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387612"
 ---
 # <a name="data-integration-in-azure-synapse-analytics-versus-azure-data-factory"></a>Gegevens integratie in azure Synapse Analytics versus Azure Data Factory
 
 In azure Synapse Analytics zijn de mogelijkheden voor gegevens integratie, zoals Synapse-pijp lijnen en gegevens stromen, gebaseerd op die van Azure Data Factory. Zie [Wat is Azure Data Factory](../../data-factory/introduction.md)voor meer informatie.
 
 
-## <a name="available-features-in-azure-data-factory-and-azure-synapse-analytics"></a>Beschik bare functies in Azure Data Factory en Azure Synapse Analytics
+## <a name="available-features-in-adf--azure-synapse-analytics"></a>Beschik bare functies in ADF & Azure Synapse Analytics
 
 Raadpleeg de onderstaande tabel voor Beschik baarheid van functies:
 

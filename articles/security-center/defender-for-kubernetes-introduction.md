@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a815295c4f2ab78cbd3aff82949d7c28197afd82
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a0dd00709dbe8a1b0e037fe22750adea7e071162
+ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791916"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97371999"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Inleiding tot Azure Defender for Kubernetes
 
@@ -31,7 +31,7 @@ Detectie van bedreigingen op hostniveau voor uw Linux AKS-knooppunten is beschik
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|Voor **Azure Defender for Kubernetes** gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)|
 |Vereiste rollen en machtigingen:|**Beveiligingsbeheerder** kan waarschuwingen negeren.<br>**Beveiligingslezer** kan bevindingen bekijken.|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) China Gov<br>![No](./media/icons/no-icon.png) US Gov, andere overheden|
 |||
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-kubernetes"></a>Wat zijn de voordelen van Azure Defender voor Kubernetes?
@@ -72,7 +72,7 @@ In de door Security Center ontvangen en geanalyseerde items ziet u:
 - auditlogboeken van de API-server
 - onbewerkte beveiligingsgebeurtenissen van de Log Analytics-agent
 - clusterconfiguratiegegevens van het AKS-cluster
-- werkbelastingconfiguratie van Azure Policy (via de **Azure Policy-invoegtoepassing voor Kubernetes** ). [Lees meer over aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
+- werkbelastingconfiguratie van Azure Policy (via de **Azure Policy-invoegtoepassing voor Kubernetes**). [Lees meer over aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
 :::image type="content" source="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png" alt-text="Architectuur op hoog niveau van de interactie tussen Azure Security Center, Azure Kubernetes Service en Azure Policy" lightbox="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png":::
 
@@ -83,7 +83,7 @@ In de door Security Center ontvangen en geanalyseerde items ziet u:
 
 ### <a name="can-i-still-get-aks-protections-without-the-log-analytics-agent"></a>Kan ik nog wel AKS-beveiligingen krijgen zonder de Log Analytics-agent?
 
-Zoals hierboven vermeld, biedt het optionele **Azure Defender for Kubernetes** -abonnement beveiliging op clusterniveau. De Log Analytics-agent van **Azure Defender voor servers** beveiligt uw knooppunten. 
+Zoals hierboven vermeld, biedt het optionele **Azure Defender for Kubernetes**-abonnement beveiliging op clusterniveau. De Log Analytics-agent van **Azure Defender voor servers** beveiligt uw knooppunten. 
 
 We raden u aan beide te implementeren voor de meest volledige beveiliging.
 

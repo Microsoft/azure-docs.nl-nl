@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/26/2020
+ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 49d8e83c158cd14357a74b9dde4af1daba26dc36
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: c8f4c91070d87e9e6e3cdbb5534b988063eaba14
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109110"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387173"
 ---
 # <a name="define-an-azure-active-directory-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een Azure Active Directory technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -64,13 +64,13 @@ Als u een bestaand gebruikers account wilt lezen, bijwerken of verwijderen, is d
 
 Als u een nieuw gebruikers account wilt maken, is de invoer claim een sleutel waarmee een lokaal of federatief account op unieke wijze wordt geïdentificeerd. Bijvoorbeeld lokale account: **signInNames. emailAddress** of **signInNames. username**. Voor een federatief account: **alternativeSecurityId**.
 
-Het [InputClaimsTransformations](technicalprofiles.md#inputclaimstransformations) -element kan een verzameling trans formatie-elementen voor invoer claims bevatten die worden gebruikt voor het wijzigen van de invoer claim of het genereren van een nieuwe.
+Het [InputClaimsTransformations](technicalprofiles.md#input-claims-transformations) -element kan een verzameling trans formatie-elementen voor invoer claims bevatten die worden gebruikt voor het wijzigen van de invoer claim of het genereren van een nieuwe.
 
 ## <a name="outputclaims"></a>OutputClaims
 
 Het **OutputClaims** -element bevat een lijst met claims die worden geretourneerd door het technische profiel van Azure AD. Mogelijk moet u de naam van de claim die in uw beleid is gedefinieerd, toewijzen aan de naam die is gedefinieerd in Azure Active Directory. U kunt ook claims toevoegen die niet worden geretourneerd door de Azure Active Directory, zolang u het kenmerk hebt ingesteld `DefaultValue` .
 
-Het [OutputClaimsTransformations](technicalprofiles.md#outputclaimstransformations) -element kan een verzameling **OutputClaimsTransformation** -elementen bevatten die worden gebruikt voor het wijzigen van de uitvoer claims of voor het genereren van nieuwe.
+Het [OutputClaimsTransformations](technicalprofiles.md#output-claims-transformations) -element kan een verzameling **OutputClaimsTransformation** -elementen bevatten die worden gebruikt voor het wijzigen van de uitvoer claims of voor het genereren van nieuwe.
 
 Het **Aad-UserWriteUsingLogonEmail-** technische profiel maakt bijvoorbeeld een lokaal account en retourneert de volgende claims:
 

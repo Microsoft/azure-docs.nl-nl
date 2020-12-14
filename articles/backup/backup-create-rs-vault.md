@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het maken en configureren va
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.custom: references_regions
-ms.openlocfilehash: ef3d464c051f15d656a4a60937bb05ac496ee52d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 3ba9f47da4a4c9719c313ba196ca121f8cde54ad
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548423"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387731"
 ---
 # <a name="create-and-configure-a-recovery-services-vault"></a>Een Recovery Services kluis maken en configureren
 
@@ -77,8 +77,9 @@ Een kluis die is gemaakt met GRS-redundantie bevat de optie voor het configurere
 
  ![Banner back-upconfiguratie](./media/backup-azure-arm-restore-vms/banner.png)
 
-1. Ga in de portal naar Recovery Services kluis > instellingen > eigenschappen.
-2. Selecteer de optie **voor het terugzetten van meerdere regio's in deze kluis inschakelen** om de functionaliteit in te scha kelen.
+1. Ga in de portal naar uw Recovery Services kluis > **Eigenschappen** (onder **instellingen**).
+1. Selecteer **Update** onder **back-upconfiguratie**.
+1. Selecteer de optie **voor het terugzetten van meerdere regio's in deze kluis inschakelen** om de functionaliteit in te scha kelen.
 
    ![Het terugzetten van meerdere regio's inschakelen](./media/backup-azure-arm-restore-vms/backup-configuration.png)
 

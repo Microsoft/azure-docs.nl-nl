@@ -8,18 +8,18 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: b05ed6e1239721bcf3c1cf33d3ee63a992fd9843
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 5a088cb07fa74b65e497de54be8c97bd51d31c16
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853221"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387833"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>De azureiotsolutions.com-site gebruiken voor het implementeren van uw oplossings versneller
 
 U kunt Azure IoT-oplossings Accelerators implementeren voor uw Azure-abonnement vanuit [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators). AzureIoTSolutions.com fungeert als host voor de micro soft open source-en Partner Solution Accelerators. Deze oplossings versnellers worden uitgelijnd met de [Azure IOT-referentie architectuur](/azure/architecture/reference-architectures/iot). U kunt de site gebruiken om snel een oplossings versneller te implementeren als een demo-of productie omgeving.
 
-![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
+:::image type="content" source="media/iot-accelerators-permissions/iotsolutionscom.png" alt-text="Start pagina van IoT-oplossingen":::
 
 > [!TIP]
 > Als u meer controle over het implementatie proces nodig hebt, kunt u de CLI gebruiken voor het implementeren van een oplossings versneller.

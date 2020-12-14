@@ -7,19 +7,19 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: ce23119e568347fff2ad270cfea7f8b563cae529
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 1f08bfd6b7c0439dd08a3091b5ea927781af9b84
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904989"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387578"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
 In dit artikel wordt beschreven hoe u Azure controle sfeer liggen Portal kunt gebruiken om een Power BI-Tenant te registreren en te scannen.
 
 > [!Note]
-> Als het controle sfeer liggen-exemplaar en de Power BI Tenant zich in dezelfde Azure-Tenant bevinden, kunt u alleen beheerde identiteits verificatie (MSI) gebruiken om een scan van een Power BI Tenant in te stellen. Als het controle sfeer liggen-exemplaar en Power BI Tenant zich in verschillende Azure-tenants bevinden, moet u zich verifiëren met gedelegeerde verificatie en moet u Power shell gebruiken om uw scans in te stellen. Zie [Power shell gebruiken om Power bi te registreren en te scannen](powershell-register-scan-power-bi.md).
+> Als het controle sfeer liggen-exemplaar en de Power BI Tenant zich in dezelfde Azure-Tenant bevinden, kunt u alleen beheerde identiteits verificatie (MSI) gebruiken om een scan van een Power BI Tenant in te stellen. 
 
 ## <a name="create-a-security-group-for-permissions"></a>Een beveiligings groep maken voor machtigingen
 

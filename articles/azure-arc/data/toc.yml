@@ -42,13 +42,13 @@
               href: /sql/azdata/install/deploy-install-azdata-pip?toc=/azure/azure-arc/data/toc.json&bc=/azure/azure-arc/data/breadcrumb/toc.json
     - name: Een gegevenscontroller maken
       items:
-        - name: Een gegevenscontroller maken (Azure Data Studio)
+        - name: Azure Data Studio
           href: create-data-controller-azure-data-studio.md
-        - name: Een gegevenscontrollerresource maken (portal)
+        - name: Azure Portal
           href: create-data-controller-resource-in-azure-portal.md
-        - name: Een gegevenscontroller maken (Azure Data CLI)
+        - name: Azure Data CLI (azdata)
           href: create-data-controller-using-azdata.md
-        - name: Een gegevens controller maken met behulp van Kubernetes
+        - name: Kubernetes-hulpprogramma's
           href: create-data-controller-using-kubernetes-native-tools.md
     - name: Algemene ervaringen met gegevensservices met Azure Arc
       items:
@@ -80,6 +80,8 @@
           href: view-arc-data-services-inventory-in-azure-portal.md
         - name: Gebruikersnaam en wachtwoord voor gegevenscontroller ophalen
           href: retrieve-the-username-password-for-data-controller.md
+        - name: Referenties voor service-principal bijwerken
+          href: update-service-principal-credentials.md
     - name: Problemen oplossen
       items:
         - name: Gids

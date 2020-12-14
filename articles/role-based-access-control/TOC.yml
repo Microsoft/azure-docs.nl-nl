@@ -9,7 +9,7 @@
       href: rbac-and-directory-admin-roles.md
 - name: Snelstartgidsen
   items:
-    - name: Toegang voor een gebruiker bekijken
+    - name: Toegang voor een gebruiker controleren
       href: check-access.md
     - name: ARM-sjabloon
       displayName: Resource Manager

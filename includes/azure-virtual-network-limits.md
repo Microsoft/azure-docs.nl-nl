@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 0d5c9c4a0191c6d5effd8f6067cb6602ed239125
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 9751bd082947e66b3fc5ea47448857558301a1e7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329547"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366348"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Netwerklimieten - Azure Resource Manager
 De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd via **Azure Resource Manager**. De beperkingen gelden per regio en per abonnement. Meer informatie over het [bekijken van uw huidige resourcegebruik op basis van uw abonnementslimieten](../articles/networking/check-usage-against-limits.md).
@@ -73,7 +73,7 @@ De volgende beperkingen gelden alleen voor netwerkresources die worden beheerd v
 | Regels per NIC (voor alle IP-adressen op een NIC) | 300                           |
 | Frontend-IP-configuraties              | 600                           |
 | Grootte van back-end-pool                       | 1000 IP-configuraties, één virtueel netwerk |
-| Backend-resources per load balancer <sup>1<sup> | 150                   |
+| Backend-resources per load balancer <sup>1<sup> | 250                   |
 | Poorten met een hoge beschikbaarheid                 | 1 per interne frontend       |
 | Uitgaande regels per load balancer        | 600                           |
 | Load balancers per VM                   | 2 (1 openbaar en 1 intern)   |

@@ -1095,9 +1095,9 @@
         - name: Wizard voor scoren gebruiken voor toegewezen SQL-pools
           href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
           displayname: machine learning
-        - name: Een codevrij model trainen met Azure AutoML
+        - name: Een codevrij model trainen met geautomatiseerde ML
           href: ./machine-learning/tutorial-automl.md
-        - name: Een model in Python trainen met Azure AutoML
+        - name: Een model trainen in Python met geautomatiseerde ML
           href: ./spark/apache-spark-azure-machine-learning-tutorial.md
           displayname: machine learning
         - name: Een model maken met Apache Spark MLlib

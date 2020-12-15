@@ -2,13 +2,13 @@
 title: Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 description: Dit artikel bevat opmerkingen bij de release voor servers agent voor Azure Arc ingeschakeld. Voor veel van de samen vattingen vindt u koppelingen naar aanvullende informatie.
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: 5322a92bfc67d9f80c2271a3ef9b5626455e9ad7
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.date: 12/14/2020
+ms.openlocfilehash: 3a01113d0d6416fb050f5c66191d5c420b7ac137
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445282"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505644"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 
@@ -17,6 +17,16 @@ De Azure-servers die zijn verbonden met de computer agent, ontvangen voortdurend
 - De nieuwste releases
 - Bekende problemen
 - Opgeloste fouten
+
+## <a name="december-2020"></a>December 2020
+
+### <a name="new-feature"></a>Nieuwe functie
+
+Ondersteuning toegevoegd voor Windows Server 2008 R2
+
+### <a name="fixed"></a>Opgelost
+
+Er is een probleem opgelost waardoor de aangepaste script extensie op Linux niet kan worden geïnstalleerd.
 
 ## <a name="november-2020"></a>November 2020
 
@@ -71,7 +81,7 @@ Versie: 0,11
 
 ### <a name="known-issues"></a>Bekende problemen
 
-Als u een oudere versie van de Linux-agent gebruikt en deze hebt geconfigureerd voor het gebruik van een proxy server, moet u na de upgrade de instelling van de proxy server opnieuw configureren. U kunt dit doen `sudo azcmagent_proxy add http://proxyserver.local:83`.
+Als u een oudere versie van de Linux-agent gebruikt en deze is geconfigureerd voor het gebruik van een proxy server, moet u na de upgrade de instelling van de proxy server opnieuw configureren. U kunt dit doen `sudo azcmagent_proxy add http://proxyserver.local:83`.
 
 ## <a name="next-steps"></a>Volgende stappen
 

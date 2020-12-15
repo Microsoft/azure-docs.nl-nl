@@ -12,12 +12,12 @@ ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 358a551908a7263f3258f47dfe1cceeffe2307b1
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: b255f64547c3bae56d31415dc94a751989ca1f45
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860487"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504896"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Groeps eigenaren toevoegen aan of verwijderen uit Azure Active Directory
 Azure Active Directory-groepen (Azure AD) zijn eigendom van en worden beheerd door groeps eigenaren. Groeps eigenaren kunnen gebruikers of service-principals zijn en kunnen de groep met inbegrip van lidmaatschap beheren. Alleen bestaande groeps eigenaren of groep-Beheerders kunnen groeps eigenaren toewijzen. Groeps eigenaren hoeven geen lid te zijn van de groep.

@@ -5,16 +5,16 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 232a1ae5d125a2ea1d5723e85073fb3dd02420cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a7f21410bb97db0a7974870efb812c9954ac241
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87294073"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503553"
 ---
-# <a name="configure-development-environment-for-deployment-scripts-in-templates-preview"></a>Ontwikkel omgeving configureren voor implementatie scripts in sjablonen (preview-versie)
+# <a name="configure-development-environment-for-deployment-scripts-in-templates"></a>Ontwikkel omgeving configureren voor implementatie scripts in sjablonen
 
 Meer informatie over het maken van een ontwikkel omgeving voor het ontwikkelen en testen van implementatie scripts met een implementatie script installatie kopie. U kunt een [exemplaar van Azure container](../../container-instances/container-instances-overview.md) maken of [docker](https://docs.docker.com/get-docker/)gebruiken. Beide zijn opgenomen in dit artikel.
 
@@ -197,7 +197,7 @@ U kunt het bestand ook uploaden met behulp van de Azure Portal en Azure CLI.
 
     ![implementatie script Connect-container exemplaar](./media/deployment-script-template-configure-dev/deployment-script-container-instance-connect.png)
 
-1. Selecteer **verbinding maken**en selecteer vervolgens **verbinding maken**. Als u geen verbinding kunt maken met het container exemplaar, start u de container groep opnieuw en probeert u het opnieuw.
+1. Selecteer **verbinding maken** en selecteer vervolgens **verbinding maken**. Als u geen verbinding kunt maken met het container exemplaar, start u de container groep opnieuw en probeert u het opnieuw.
 1. Voer de volgende opdrachten uit in het console venster:
 
     ```
@@ -237,7 +237,7 @@ U moet ook het delen van bestanden configureren om de map te koppelen. Deze beva
     docker run -v <host drive letter>:/<host directory name>:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3
     ```
 
-    Vervang de stationsletter van de ** &lt; host>** en de naam van de ** &lt; Host Directory>** door een bestaande map op het gedeelde station.  De map wordt toegewezen aan de map **/Data** in de container. Voor voor beelden, om D:\docker toe te wijzen:
+    Vervang de stationsletter van de **&lt; host>** en de naam van de **&lt; Host Directory>** door een bestaande map op het gedeelde station.  De map wordt toegewezen aan de map **/Data** in de container. Voor voor beelden, om D:\docker toe te wijzen:
 
     ```command
     docker run -v d:/docker:/data -it mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3

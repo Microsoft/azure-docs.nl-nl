@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/06/2020
 ms.author: b-juche
-ms.openlocfilehash: c6194469837997108964feda82d406c9108641b9
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: a07898692c8af70fab0d2634ed1513f0f3666a4d
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369236"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505457"
 ---
 # <a name="troubleshoot-capacity-pool-issues"></a>Problemen met capaciteitspools oplossen
 
@@ -33,7 +33,7 @@ In dit artikel worden oplossingen beschreven voor problemen die u mogelijk hebt 
 | Problemen met het verwijderen van een capaciteits pool  |  Zorg ervoor dat u alle Azure NetApp Files volumes en moment opnamen verwijdert in het abonnement waarin u de capaciteits groep probeert te verwijderen. <br> Als u alle volumes en moment opnamen al hebt verwijderd en u de capaciteits groep nog steeds niet kunt verwijderen, kunnen er mogelijk nog verwijzingen naar resources bestaan zonder dat ze in de portal worden weer gegeven. In dit geval moet u een ondersteunings ticket indienen en opgeven dat u de hierboven aanbevolen stappen hebt uitgevoerd. |
 | Het maken of wijzigen van een volume mislukt met `Requested throughput not available` fout | Beschik bare door Voer voor een volume wordt bepaald door de grootte van de capaciteits groep en het service niveau. Als u onvoldoende door Voer hebt, moet u de pool grootte verg Roten of de bestaande volume doorvoer aanpassen. | 
 
-## <a name="issues-moving-a-capacity-pool"></a>Problemen met het verplaatsen van een capaciteits pool 
+## <a name="issues-when-changing-the-capacity-pool-of-a-volume"></a>Problemen bij het wijzigen van de capaciteits pool van een volume 
 
 > [!IMPORTANT] 
 > Het [dynamisch wijzigen van het service niveau van een](dynamic-change-volume-service-level.md) open bare Preview-Registratie voor een volume is in de wacht stand gezet tot verdere kennisgeving.

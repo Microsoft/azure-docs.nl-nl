@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: 68da6a134f2410ca81ae16b8e00c40d0a9c8f22c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 39823792a438e533134f38c04e72f2c314c57678
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965014"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505185"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Voor beeld: sleutel zinnen extra heren met behulp van Text Analytics
 
@@ -177,5 +177,5 @@ In dit artikel hebt u concepten en werk stromen geleerd voor het uitpakken van s
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Overzicht van Text Analytics](../overview.md)
-* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/text-analytics-sdk.md)
+* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/client-libraries-rest-api.md)
 * [Nieuwe functies](../whats-new.md)

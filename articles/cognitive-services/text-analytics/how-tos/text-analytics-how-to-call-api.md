@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 3d3c452dd883316520e0c28f01c241af74d597c8
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 7b035af85e250d97fb05625bf386bec8dc94a74c
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602781"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505253"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -346,5 +346,5 @@ Zie het volgende artikel voor meer informatie over de Text Analytics voor status
 * [Overzicht van Text Analytics](../overview.md)
 * [Veelgestelde vragen](../text-analytics-resource-faq.md)</br>
 * [Text Analytics-productpagina](//go.microsoft.com/fwlink/?LinkID=759712)
-* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/text-analytics-sdk.md)
+* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/client-libraries-rest-api.md)
 * [Nieuwe functies](../whats-new.md)

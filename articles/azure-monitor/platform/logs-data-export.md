@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 4155cda1e1de6f15aefa6d5fc960988eba15068d
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 8fa823620d6d1306260d719cbabaa3d815cc0d09
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97371965"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505440"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -118,7 +118,7 @@ Als u uw opslag account hebt geconfigureerd om toegang vanaf geselecteerde netwe
 Een regel voor gegevens export definieert gegevens die moeten worden geëxporteerd voor een set tabellen naar één bestemming. U kunt voor elke bestemming een regel maken.
 
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -126,12 +126,12 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende CLI-opdracht om tabellen in uw werk ruimte weer te geven. Het kan helpen de gewenste tabellen te kopiëren en op te geven in de regel voor het exporteren van gegevens.
 
 ```azurecli
-az monitor log-analytics workspace table list -resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
+az monitor log-analytics workspace table list --resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
 ```
 
 Gebruik de volgende opdracht voor het maken van een regel voor het exporteren van gegevens naar een opslag account met behulp van CLI.
@@ -220,7 +220,7 @@ Hier volgt een voor beeld van een hoofd tekst voor de REST-aanvraag voor een Eve
 
 ## <a name="view-data-export-rule-configuration"></a>Configuratie van regel voor gegevens export weer geven
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -228,7 +228,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om de configuratie van een regel voor het exporteren van gegevens weer te geven met behulp van CLI.
 
@@ -247,7 +247,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 ## <a name="disable-an-export-rule"></a>Een export regel uitschakelen
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -255,7 +255,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt regels voor exporteren uitschakelen om het exporteren te stoppen wanneer u geen gegevens voor een bepaalde periode hoeft te bewaren, bijvoorbeeld wanneer het testen wordt uitgevoerd. Gebruik de volgende opdracht om een regel voor het exporteren van gegevens uit te scha kelen met behulp van CLI.
 
@@ -289,7 +289,7 @@ Content-type: application/json
 
 ## <a name="delete-an-export-rule"></a>Een export regel verwijderen
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -297,7 +297,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te verwijderen met behulp van CLI.
 
@@ -316,7 +316,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 ## <a name="view-all-data-export-rules-in-a-workspace"></a>Alle regels voor het exporteren van gegevens in een werk ruimte weer geven
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -324,7 +324,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om alle regels voor gegevens export in een werk ruimte weer te geven met behulp van CLI.
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/14/2020
-ms.openlocfilehash: d94a4858b4c4fa99a09acc2bec88f94a64686c2d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7fa3355ff7e61d624d57da68d0f835faa7ca3736
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539136"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505423"
 ---
 # <a name="use-microsoft-cognitive-toolkit-deep-learning-model-with-azure-hdinsight-spark-cluster"></a>Microsoft Cognitive Toolkit diepe leer model gebruiken met Azure HDInsight Spark cluster
 
@@ -31,12 +31,12 @@ In dit artikel voert u de volgende stappen uit.
 
 ## <a name="how-does-this-solution-flow"></a>Hoe gaat deze oplossing stroom?
 
-Deze oplossing is verdeeld over dit artikel en een Jupyter-notebook die u als onderdeel van dit artikel uploadt. In dit artikel voert u de volgende stappen uit:
+Deze oplossing is verdeeld over dit artikel en een Jupyter Notebook die u als onderdeel van dit artikel uploadt. In dit artikel voert u de volgende stappen uit:
 
 * Voer een script actie uit op een HDInsight Spark-cluster om Microsoft Cognitive Toolkit-en Python-pakketten te installeren.
-* Upload de Jupyter-notebook waarmee de oplossing wordt uitgevoerd naar het HDInsight Spark-cluster.
+* Upload de Jupyter Notebook waarmee de oplossing wordt uitgevoerd naar het HDInsight Spark-cluster.
 
-De volgende resterende stappen worden behandeld in de Jupyter-notebook.
+De volgende resterende stappen worden behandeld in de Jupyter Notebook.
 
 * Laad voorbeeld afbeeldingen in een met Spark omgezette gegevensset of RDD.
   * Modules laden en voor instellingen definiëren.
@@ -66,17 +66,17 @@ Zie [HDInsight-clusters aanpassen met script actie](../hdinsight-hadoop-customiz
 |Knooppunt type (n):|Hoofd, werk nemer|
 |Parameters|Geen|
 
-## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>De Jupyter-notebook uploaden naar Azure HDInsight Spark-cluster
+## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>De Jupyter Notebook uploaden naar Azure HDInsight Spark cluster
 
-Als u de Microsoft Cognitive Toolkit met het Azure HDInsight Spark cluster wilt gebruiken, moet u de Jupyter notebook **CNTK_model_scoring_on_Spark_walkthrough. ipynb** naar het Azure HDInsight Spark cluster laden. Dit notitie blok is beschikbaar op GitHub op [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
+Als u de Microsoft Cognitive Toolkit met het Azure HDInsight Spark cluster wilt gebruiken, moet u de Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough. ipynb** naar het Azure HDInsight Spark-cluster laden. Dit notitie blok is beschikbaar op GitHub op [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
 1. Downloaden en uitpakken [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/jupyter`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-1. Selecteer in de Jupyter-notebook **uploaden** in de rechter bovenhoek en navigeer vervolgens naar het bestand downloaden en selecteren `CNTK_model_scoring_on_Spark_walkthrough.ipynb` .
+1. Selecteer in de Jupyter Notebook in de rechter bovenhoek de optie **uploaden** en navigeer vervolgens naar het bestand downloaden en selecteren `CNTK_model_scoring_on_Spark_walkthrough.ipynb` .
 
-    ![Jupyter-notebook uploaden naar Azure HDInsight Spark-cluster](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Jupyter-notebook uploaden naar Azure HDInsight Spark-cluster")
+    ![Jupyter Notebook uploaden naar Azure HDInsight Spark cluster](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Jupyter Notebook uploaden naar Azure HDInsight Spark cluster")
 
 1. Selecteer **uploaden** opnieuw.
 
@@ -104,7 +104,7 @@ Als u de Microsoft Cognitive Toolkit met het Azure HDInsight Spark cluster wilt 
 * [De invoegtoepassing HDInsight Tools for IntelliJ IDEA gebruiken om Spark Scala-toepassingen te maken en in te dienen](apache-spark-intellij-tool-plugin.md)
 * [De invoeg toepassing HDInsight tools for IntelliJ-idee gebruiken om op afstand fouten in Apache Spark toepassingen op te sporen](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Apache Zeppelin-notebooks gebruiken met een Apache Spark-cluster in HDInsight](apache-spark-zeppelin-notebook.md)
-* [Kernels die beschikbaar zijn voor Jupyter notebook in Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Kernels die beschikbaar zijn voor Jupyter Notebook in Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Externe pakketten gebruiken met Jupyter-notebooks](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Jupyter op uw computer installeren en verbinding maken met een HDInsight Spark-cluster](apache-spark-jupyter-notebook-install-locally.md)
 

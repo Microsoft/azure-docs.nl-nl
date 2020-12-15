@@ -2,32 +2,32 @@
 author: wolfma61
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 02/12/2020
+ms.date: 12/10/2020
 ms.author: wolfma
-ms.openlocfilehash: c8e6c11771ae4cd216b3b1e43f3db7924dca81cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 329241c2660ff7828f57fb21daeb6de20caedc43
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77168162"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504454"
 ---
 | Geografie | Regio | Regio-id |
 | ----- | ----- | ----- |
-| Noord- en Zuid-Amerika | Central US | `centralus` |
+| Noord- en Zuid-Amerika | VS - centraal | `centralus` |
 | Noord- en Zuid-Amerika | VS - oost | `eastus` |
 | Noord- en Zuid-Amerika | VS - oost 2 | `eastus2` |
 | Noord- en Zuid-Amerika | VS - noord-centraal | `northcentralus` |
-| Noord- en Zuid-Amerika | South Central US | `southcentralus` |
+| Noord- en Zuid-Amerika | VS - zuid-centraal | `southcentralus` |
 | Noord- en Zuid-Amerika | VS - west-centraal | `westcentralus` |
 | Noord- en Zuid-Amerika | VS - west | `westus` |
-| Noord- en Zuid-Amerika | West US 2 | `westus2` |
+| Noord- en Zuid-Amerika | VS - west 2 | `westus2` |
 | Noord- en Zuid-Amerika | Canada - midden | `canadacentral` |
 | Noord- en Zuid-Amerika | Brazil South | `brazilsouth` |
 | Azië en Stille Oceaan | Azië - oost | `eastasia` |
 | Azië en Stille Oceaan | Azië - zuidoost | `southeastasia` |
 | Azië en Stille Oceaan | Australië - oost | `australiaeast` |
 | Azië en Stille Oceaan | India - centraal | `centralindia` |
-| Azië en Stille Oceaan | Japan East | `japaneast` |
+| Azië en Stille Oceaan | Japan - oost | `japaneast` |
 | Azië en Stille Oceaan | Japan - west | `japanwest` |
 | Azië en Stille Oceaan | Korea - centraal | `koreacentral` |
 | Europa | Europa - noord | `northeurope` |

@@ -11,12 +11,12 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbb4298d0d9a9d7589c4a2055b4d55a0b852f951
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: e163ea34948906060996ee952f45ec0cdb467557
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518206"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504352"
 ---
 # <a name="hybrid-identity-considerations-for-the-azure-government-cloud"></a>Overwegingen voor hybride identiteit voor de Azure Government Cloud
 
@@ -24,6 +24,9 @@ In dit artikel worden overwegingen beschreven voor het integreren van een hybrid
 
 > [!NOTE]
 > Als u een micro soft Active Directory-omgeving (on-premises of gehost in een IaaS die deel uitmaakt van dezelfde Cloud instantie) wilt integreren met de Azure Government Cloud, moet u een upgrade uitvoeren naar de nieuwste versie van [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 Raadpleeg de [documentatie](/office365/enterprise/office-365-u-s-government-dod-endpoints)voor een volledige lijst van Verenigde Staten overheids-eind punten.
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 9ea29c47349fd7ccee469188f8929a864cf7bbef
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 6cabc340c0be347165a3e506703a6277f7eb1cea
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905788"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503930"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Openbaar IP-adres upgraden
 
@@ -32,9 +32,6 @@ De volgende scenario's worden in dit artikel gecontroleerd:
 * Een klassieke Azure-Gereserveerd IP migreren naar een Azure Resource Manager Basic SKU open bare IP
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Het open bare IP-adres van de Basic-naar de standaard-SKU bijwerken
-
->[!NOTE]
->De mogelijkheid om open bare Ip's te upgraden van Basic naar Standard is niet beschikbaar in alle regio's.  Zie de [**beperkingen**](#limitations) voor meer informatie.
 
 Als u een upgrade van een openbaar IP-adres wilt uitvoeren, moet dit niet aan een resource zijn gekoppeld (Zie [Deze pagina](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's).
 
@@ -147,15 +144,6 @@ Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp 
 ---
 
 ## <a name="limitations"></a>Beperkingen
-
-* Deze functie is momenteel niet beschikbaar in de volgende regio's:<br>
-VS (overheid) - Virginia<br>
-US DoD East<br>
-US DoD Central<br>
-China East<br>
-China - oost 2<br>
-China - noord<br>
-China - noord 2
 
 * Als u een standaard open bare IP-adres wilt bijwerken, kan deze niet worden gekoppeld aan een Azure-resource.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's.  En als u een Gereserveerd IP wilt migreren, kan het niet worden gekoppeld aan een Cloud service.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) voor meer informatie over het ontkoppelen van gereserveerde ip's.  
 * Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU blijven geen [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) en kunnen daarom niet worden gekoppeld aan een Azure-resource die een zone-redundante of zonegebonden is.  Opmerking: dit is alleen van toepassing op regio's die beschikbaarheids zones bieden.

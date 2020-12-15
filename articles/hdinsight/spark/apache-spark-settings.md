@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 231ab5cc93d98d7356d47472b7e160ddd3ade790
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c2e2daf6d8c9afa6ffef03b088ec9a7dc144cf47
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545936"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504930"
 ---
 # <a name="configure-apache-spark-settings"></a>Apache Spark-instellingen configureren
 
@@ -60,7 +60,7 @@ Controleer de huidige configuratie-instellingen voor het HDInsight-cluster voord
 
 De Apache Ambari-webgebruikersinterface wordt weer gegeven, met een dash board met belang rijke gegevens over het resource gebruik van het cluster.  Het Ambari-dash board toont u de Apache Spark configuratie en andere geïnstalleerde services. Het dash board bevat een tabblad van de **configuratie geschiedenis** , waar u informatie bekijkt voor geïnstalleerde services, waaronder Spark.
 
-Als u de configuratie waarden voor Apache Spark wilt bekijken, selecteert u **configuratie geschiedenis** en selecteert u **Spark2** .  Selecteer het tabblad **configuraties** en selecteer vervolgens de `Spark` koppeling (of `Spark2` , afhankelijk van uw versie) in de lijst met Services.  U ziet een lijst met configuratie waarden voor het cluster:
+Als u de configuratie waarden voor Apache Spark wilt bekijken, selecteert u **configuratie geschiedenis** en selecteert u **Spark2**.  Selecteer het tabblad **configuraties** en selecteer vervolgens de `Spark` koppeling (of `Spark2` , afhankelijk van uw versie) in de lijst met Services.  U ziet een lijst met configuratie waarden voor het cluster:
 
 ![Spark-configuraties](./media/apache-spark-settings/spark-configurations.png)
 
@@ -121,7 +121,7 @@ GAREN beheert de maximale hoeveelheid geheugen die wordt gebruikt door de contai
 
 ![Geheugenbeheer met YARN Spark](./media/apache-spark-settings/hdi-yarn-spark-memory.png)
 
-## <a name="change-parameters-for-an-application-running-in-jupyter-notebook"></a>Para meters wijzigen voor een toepassing die wordt uitgevoerd in Jupyter notebook
+## <a name="change-parameters-for-an-application-running-in-jupyter-notebook"></a>Para meters wijzigen voor een toepassing die wordt uitgevoerd in Jupyter Notebook
 
 Spark-clusters in HDInsight bevatten standaard een aantal onderdelen. Elk van deze onderdelen bevat standaard configuratie waarden, die als nodig kunnen worden overschreven.
 
@@ -133,12 +133,12 @@ Spark-clusters in HDInsight bevatten standaard een aantal onderdelen. Elk van de
 |Jupyter-en Apache Zeppelin-notebooks|Interactieve gebruikers interface voor interactie met uw Spark-cluster.|
 |ODBC-stuurprogramma|Verbindt Spark-clusters in HDInsight-naar-business intelligence-hulpprogram ma's (BI), zoals micro soft Power BI en tableau.|
 
-Voor toepassingen die worden uitgevoerd in de Jupyter-notebook, gebruikt u de `%%configure` opdracht om configuratie wijzigingen aan te brengen in het notitie blok zelf. Deze configuratie wijzigingen worden toegepast op de Spark-taken die worden uitgevoerd vanuit uw notebook-exemplaar. Breng deze wijzigingen aan het begin van de toepassing aan voordat u de eerste code-cel uitvoert. De gewijzigde configuratie wordt toegepast op de livy-sessie wanneer deze wordt gemaakt.
+Voor toepassingen die in de Jupyter Notebook worden uitgevoerd, gebruikt u de `%%configure` opdracht om configuratie wijzigingen in het notitie blok zelf aan te brengen. Deze configuratie wijzigingen worden toegepast op de Spark-taken die worden uitgevoerd vanuit uw notebook-exemplaar. Breng deze wijzigingen aan het begin van de toepassing aan voordat u de eerste code-cel uitvoert. De gewijzigde configuratie wordt toegepast op de livy-sessie wanneer deze wordt gemaakt.
 
 > [!NOTE]  
 > Als u de configuratie in een later stadium in de toepassing wilt wijzigen, gebruikt u de `-f` para meter (Force). De voortgang van de toepassing gaat echter verloren.
 
-De volgende code laat zien hoe u de configuratie wijzigt voor een toepassing die wordt uitgevoerd in een Jupyter-notebook.
+De volgende code laat zien hoe u de configuratie wijzigt voor een toepassing die wordt uitgevoerd in een Jupyter Notebook.
 
 ```
 %%configure

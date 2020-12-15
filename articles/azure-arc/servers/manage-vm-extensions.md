@@ -1,20 +1,20 @@
 ---
 title: VM-extensie beheer met servers die geschikt zijn voor Azure-Arc
 description: Servers met Azure-Arc kunnen de implementatie van virtuele-machine uitbreidingen beheren die configuratie van de na de implementatie en Automation-taken bieden met niet-Azure Vm's.
-ms.date: 11/06/2020
+ms.date: 12/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7682f6c8631bbaf2310d501d7cee6aecb2311226
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 55e21f9c6bcd2dfe5f995093034773f2a87d9b03
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358028"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504505"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Extensie beheer voor virtuele machines met servers die geschikt zijn voor Azure-Arc
 
-Virtuele-machine-uitbrei dingen zijn kleine toepassingen die configuratie-en automatiserings taken na de implementatie leveren op Azure-Vm's. Als op een virtuele machine bijvoorbeeld software of antivirusbeveiliging moet worden geïnstalleerd of een script moet worden uitgevoerd, kan hiervoor een VM-extensie worden gebruikt.
+Virtuele-machine-uitbrei dingen zijn kleine toepassingen die configuratie-en automatiserings taken na de implementatie leveren op Azure-Vm's. Als een virtuele machine bijvoorbeeld software-installatie, anti-virus beveiliging of een script kan uitvoeren, kan er een VM-extensie worden gebruikt.
 
-Met Azure Arc-servers kunt u Azure-VM-extensies implementeren op niet-Azure Windows-en Linux-Vm's, waardoor het beheer van uw hybride machine on-premises, Edge en andere Cloud omgevingen via hun levens cyclus wordt vereenvoudigd. VM-extensies kunnen worden beheerd met behulp van de volgende methoden op uw hybride computers of servers die worden beheerd door servers met Arc-functionaliteit:
+Met Azure Arc enabled servers kunt u Azure VM-extensies implementeren op niet-Azure Windows-en Linux-Vm's, waardoor het beheer van uw hybride machine wordt vereenvoudigd door hun levens cyclus. VM-extensies kunnen worden beheerd met behulp van de volgende methoden op uw hybride computers of servers die worden beheerd door servers met Arc-functionaliteit:
 
 - De [Azure Portal](manage-vm-extensions-portal.md)
 - De [Azure cli](manage-vm-extensions-cli.md)
@@ -27,7 +27,7 @@ Ondersteuning voor VM-extensies voor Azure Arc ingeschakelde servers biedt de vo
 
 - Gebruik [Azure Automation status configuratie](../../automation/automation-dsc-overview.md) om configuraties centraal op te slaan en de gewenste status van hybride verbonden computers te onderhouden die zijn ingeschakeld via de DSC-extensie voor vm's.
 
-- Verzamel logboek gegevens voor analyse met [Logboeken in azure monitor](../../azure-monitor/platform/data-platform-logs.md) ingeschakeld via de VM-extensie van de log Analytics agent. Dit is handig voor het uitvoeren van complexe analyses op basis van gegevens uit verschillende bronnen.
+- Verzamel logboek gegevens voor analyse met [Logboeken in azure monitor](../../azure-monitor/platform/data-platform-logs.md) ingeschakeld via de VM-extensie van de log Analytics agent. Dit is handig voor het uitvoeren van complexe analyses op gegevens uit verschillende soorten bronnen.
 
 - Met [Azure monitor voor VM's](../../azure-monitor/insights/vminsights-overview.md)kunt u de prestaties van uw Windows-en Linux-vm's analyseren en de processen en afhankelijkheden van andere bronnen en externe processen controleren. Dit wordt bereikt door zowel de Log Analytics agent als de VM-extensies voor de afhankelijkheids agent in te scha kelen.
 
@@ -67,9 +67,11 @@ Deze functie is afhankelijk van de volgende Azure-resource providers in uw abonn
 
 Als ze nog niet zijn geregistreerd, volgt u de stappen onder [Azure-resource providers registreren](agent-overview.md#register-azure-resource-providers).
 
+Raadpleeg de documentatie voor elke VM-extensie waarnaar wordt verwezen in de vorige tabel om te begrijpen of er netwerk-of systeem vereisten gelden. Dit kan u helpen bij het voor komen van problemen met de connectiviteit met een Azure-service of-functie die afhankelijk is van die VM-extensie.
+
 ### <a name="log-analytics-vm-extension"></a>VM-extensie Log Analytics
 
-Voor de VM-extensie van de Log Analytics-agent voor Linux is Python 2. x geïnstalleerd op de doel computer.
+Voor de VM-extensie van de Log Analytics-agent voor Linux is Python 2. x geïnstalleerd op de doel computer. 
 
 ### <a name="azure-key-vault-vm-extension-preview"></a>VM-extensie Azure Key Vault (preview-versie)
 

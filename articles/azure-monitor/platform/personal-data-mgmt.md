@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2018
-ms.openlocfilehash: 64c461c5d3e1bb34f480e5173621f8753eadbbd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2bb1e667758a1430e34d222b9a5c537381c07624
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318314"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505270"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Richtlijnen voor persoonsgegevens die zijn opgeslagen in Logboekanalyse en Application Insights
 
@@ -81,7 +81,7 @@ Zoals vermeld in de sectie [strategie voor het afhandelen van persoonlijke gegev
 Voor beide gegevens aanvragen weer geven en exporteren moet de [log Analytics query-API](https://dev.loganalytics.io/) of de  [Application INSIGHTS query-API](https://dev.applicationinsights.io/quickstart) worden gebruikt. Logica voor het converteren van de vorm van de gegevens naar een geschikte shape om aan uw gebruikers te leveren, is aan u toe te passen. [Azure functions](https://azure.microsoft.com/services/functions/) is een goede plaats om deze logica te hosten.
 
 > [!IMPORTANT]
->  Hoewel het meren deel van de opschoon bewerkingen veel sneller kan worden uitgevoerd dan de SLA, **wordt de formele sla voor het volt ooien van de opschoon bewerking 30 dagen ingesteld** als gevolg van de zware impact van het gebruikte gegevens platform. Dit is een geautomatiseerd proces. u kunt niet aanvragen dat een bewerking sneller wordt verwerkt.
+>  Hoewel het meren deel van de opschoon bewerkingen veel sneller kan worden uitgevoerd dan de SLA, **wordt de formele sla voor het volt ooien van de opschoon bewerking 30 dagen ingesteld** als gevolg van de zware impact van het gebruikte gegevens platform. Deze SLA voldoet aan de vereisten voor AVG. Het is een geautomatiseerd proces dat er geen manier is om aan te vragen dat een bewerking sneller wordt verwerkt. 
 
 ### <a name="delete"></a>Verwijderen
 
@@ -89,6 +89,9 @@ Voor beide gegevens aanvragen weer geven en exporteren moet de [log Analytics qu
 > Verwijderingen in Log Analytics zijn destructief en niet-omkeerbaar. Wees uiterst voorzichtig bij de uitvoering ervan.
 
 We zijn beschikbaar gesteld als onderdeel van een privacy-verwerkings *-API-* pad. Dit pad moet spaarzaam worden gebruikt vanwege het risico dat eraan is gekoppeld, de potentiële invloed op de prestaties en de kans om alle aggregaties, metingen en andere aspecten van uw Log Analytics gegevens te scheef trekken. Zie de sectie [strategie voor het verwerken van persoonlijke gegevens](#strategy-for-personal-data-handling) voor alternatieve benaderingen voor het afhandelen van persoonlijke gegevens.
+
+> [!NOTE]
+> Zodra de bewerking leegmaken is uitgevoerd, zijn de gegevens niet toegankelijk wanneer de status van de [opschoon bewerking](https://docs.microsoft.com/rest/api/loganalytics/workspacepurge/getpurgestatus) *in behandeling* is. 
 
 Opschonen is een zeer beschermde bewerking die geen enkele app of gebruiker in azure (inclusief zelfs de resource-eigenaar) toestemming heeft om uit te voeren zonder expliciet een rol in Azure Resource Manager te krijgen. Deze rol is _gegevens verzamelaar_ en moet voorzichtig worden gedelegeerd vanwege het mogelijke verlies van gegevens. 
 

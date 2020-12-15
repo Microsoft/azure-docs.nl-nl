@@ -8,35 +8,66 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/13/2020
+ms.date: 12/10/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dff7ff0afd6c236645731dc7edd936b0b808716b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c746666d58e21c2705a2ef1d6a17d0d1196f7590
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483917"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504471"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
-Als alternatief voor de [Speech-SDK](speech-sdk.md)kunt u met de speech-service spraak-naar-tekst converteren met behulp van een rest API. Elk toegankelijk eind punt is gekoppeld aan een regio. Voor uw toepassing is een abonnements sleutel vereist voor het eind punt dat u wilt gebruiken. De REST API is zeer beperkt en mag alleen worden gebruikt in gevallen van de spraak- [SDK](speech-sdk.md) .
+Spraak-naar-tekst heeft twee verschillende REST-Api's. Elke API heeft een speciaal doel en maakt gebruik van verschillende sets van eind punten.
 
-Houd rekening met het volgende voordat u de spraak-naar-tekst REST API gebruikt:
+De REST-to-text-Api's zijn:
+- [Spraak-naar-tekst rest API v 3.0](#speech-to-text-rest-api-v30) wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3).
+- [Spraak-naar-tekst rest API voor korte audio](#speech-to-text-rest-api-for-short-audio) wordt gebruikt voor online transcriptie als alternatief voor de [spraak-SDK](speech-sdk.md). Aanvragen via deze API kunnen Maxi maal 60 seconden audio per aanvraag verzenden. 
 
-* Aanvragen die de REST API gebruiken en audio rechtstreeks verzenden, kunnen Maxi maal 60 seconden aan audio bevatten.
-* De REST API voor spraak naar tekst retourneert alleen eind resultaten. Er zijn geen gedeeltelijke resultaten gegeven.
+## <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
 
-Als het verzenden van meer audio een vereiste is voor uw toepassing, kunt u overwegen om de [spraak-SDK](speech-sdk.md) of een rest API op basis van een bestand te gebruiken, zoals [batch transcriptie](batch-transcription.md).
+Spraak-naar-tekst REST API v 3.0 wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). Als u via REST met de OnLine-transcriptie wilt communiceren, gebruikt u [spraak-naar-tekst rest API voor korte audio](#speech-to-text-rest-api-for-short-audio).
+
+Gebruik REST API v 3.0 voor het volgende:
+- Modellen kopiëren naar andere abonnementen voor het geval u wilt dat collega's toegang hebben tot een model dat u hebt gemaakt, of in gevallen waarin u een model wilt implementeren in meer dan één regio
+- Gegevens uit een container (bulk transcriptie) transcriberen en meerdere Url's voor audio bestanden opgeven
+- Gegevens uploaden van Azure Storage accounts via het gebruik van een SAS-URI
+- Logboeken per eind punt ophalen als er voor dat eind punt logboeken zijn aangevraagd
+- Vraag het manifest van de modellen die u maakt aan voor het instellen van on-premises containers
+
+REST API v 3.0 bevat de volgende functies:
+- **Meldingen-webhooks**: alle actieve processen van de service bieden nu ondersteuning voor webhook-meldingen. REST API v 3.0 biedt de aanroepen zodat u uw webhooks kunt registreren waar meldingen worden verzonden
+- **Modellen achter eind punten bijwerken** 
+- **Model aanpassing met meerdere gegevens sets**: een model aanpassen met behulp van meerdere combi Naties van gegevens sets van akoestische, taal en uitspraak gegevens
+- **Uw eigen opslag ruimte** gebruiken: gebruik uw eigen opslag accounts voor logboeken, transcriptie-bestanden en andere gegevens
+
+Bekijk de voor beelden over het gebruik van REST API v 3.0 met de batch transcriptie is [dit artikel](batch-transcription.md).
+
+Zie How to Migrate to v 3.0 (Engelstalig) in [deze hand leiding](/azure/cognitive-services/speech-service/migrate-v2-to-v3)als u gebruikmaakt van spraak-naar-tekst rest API v 2.0.
+
+Zie de [volledige naslag informatie](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0)over spraak-naar-tekst rest API v 3.0.
+
+## <a name="speech-to-text-rest-api-for-short-audio"></a>Spraak-naar-tekst REST API voor korte audio
+
+Als alternatief voor de [Speech-SDK](speech-sdk.md)kunt u met de speech-service spraak-naar-tekst converteren met behulp van een rest API. Elk toegankelijk eind punt is gekoppeld aan een regio. Voor uw toepassing is een abonnements sleutel vereist voor het eind punt dat u wilt gebruiken. De REST API voor korte audio is zeer beperkt en mag alleen worden gebruikt in gevallen van de spraak- [SDK](speech-sdk.md) .
+
+Houd rekening met het volgende voordat u de spraak-naar-tekst REST API voor korte audio gebruikt:
+
+* Aanvragen die gebruikmaken van de REST API voor korte audio en het rechtstreeks verzenden van audio, kunnen slechts 60 seconden aan audio bevatten.
+* De spraak-naar-tekst REST API voor korte audio retourneert alleen eind resultaten. Er zijn geen gedeeltelijke resultaten gegeven.
+
+Als het verzenden van meer audio een vereiste is voor uw toepassing, kunt u overwegen de [spraak-SDK](speech-sdk.md) of [spraak-naar-tekst rest API v 3.0](#speech-to-text-rest-api-v30)te gebruiken.
 
 > [!TIP]
 > Zie de [documentatie](../../azure-government/compare-azure-government-global-azure.md) van Azure Government voor Government Cloud (FairFax)-eind punten.
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
-## <a name="regions-and-endpoints"></a>Regio's en eind punten
+### <a name="regions-and-endpoints"></a>Regio's en eind punten
 
-Het eind punt voor de REST API heeft de volgende indeling:
+Het eind punt voor de REST API voor korte audio heeft de volgende indeling:
 
 ```
 https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
@@ -49,7 +80,7 @@ Vervang door `<REGION_IDENTIFIER>` de id die overeenkomt met de regio van uw abo
 > [!NOTE]
 > De para meter language moet worden toegevoegd aan de URL om te voor komen dat er een 4xx HTTP-fout wordt ontvangen. Bijvoorbeeld, de taal die is ingesteld op Amerikaans-Engels met het eind punt vs West is: `https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US` .
 
-## <a name="query-parameters"></a>Queryparameters
+### <a name="query-parameters"></a>Queryparameters
 
 Deze para meters kunnen worden opgenomen in de query reeks van de REST-aanvraag.
 
@@ -60,7 +91,7 @@ Deze para meters kunnen worden opgenomen in de query reeks van de REST-aanvraag.
 | `profanity` | Hiermee geeft u op hoe scheld woorden in de herkennings resultaten moet worden afgehandeld. Geaccepteerde waarden zijn `masked` , waarbij de woorden met sterretjes worden vervangen, `removed` waardoor alle woorden van het resultaat worden verwijderd of `raw` , waarbij de scheld woorden in het resultaat wordt opgenomen. De standaardinstelling is `masked`. | Optioneel |
 | `cid` | Wanneer u de [Custom speech Portal](./custom-speech-overview.md) gebruikt om aangepaste modellen te maken, kunt u aangepaste modellen gebruiken via hun **eind punt-id** op de pagina **implementatie** . Gebruik de **eind punt-id** als argument voor de `cid` query teken reeks parameter. | Optioneel |
 
-## <a name="request-headers"></a>Aanvraagheaders
+### <a name="request-headers"></a>Aanvraagheaders
 
 Deze tabel bevat de vereiste en optionele kopteksten voor aanvragen voor spraak naar tekst.
 
@@ -74,7 +105,7 @@ Deze tabel bevat de vereiste en optionele kopteksten voor aanvragen voor spraak 
 | `Expect` | Als u gesegmenteerde overdracht gebruikt, verzendt u deze `Expect: 100-continue` . De speech-service erkent de eerste aanvraag en wacht op aanvullende gegevens.| Vereist als gesegmenteerde audio gegevens worden verzonden. |
 | `Accept` | Indien aanwezig, moet dit zijn `application/json` . De speech-service biedt resultaten in JSON. Sommige aanvraag raamwerken bieden een incompatibele standaard waarde. Het is raadzaam altijd in te voegen `Accept` . | Optioneel, maar aanbevolen. |
 
-## <a name="audio-formats"></a>Audio-indelingen
+### <a name="audio-formats"></a>Audio-indelingen
 
 Audio wordt verzonden in de hoofd tekst van de HTTP- `POST` aanvraag. Deze moet een van de volgende indelingen hebben:
 
@@ -84,9 +115,9 @@ Audio wordt verzonden in de hoofd tekst van de HTTP- `POST` aanvraag. Deze moet 
 | OGG    | OPUS  | 256 kpbs | 16 kHz, mono |
 
 >[!NOTE]
->De bovenstaande indelingen worden ondersteund via REST API en WebSocket in de speech-service. De [Speech SDK](speech-sdk.md) ondersteunt momenteel de WAV-indeling met PCM-codec en [andere indelingen](how-to-use-codec-compressed-audio-input-streams.md).
+>De bovenstaande indelingen worden ondersteund via REST API voor korte audio en websockets in de speech-service. De [Speech SDK](speech-sdk.md) ondersteunt momenteel de WAV-indeling met PCM-codec en [andere indelingen](how-to-use-codec-compressed-audio-input-streams.md).
 
-## <a name="pronunciation-assessment-parameters"></a>Beoordelings parameters voor uitspraak
+### <a name="pronunciation-assessment-parameters"></a>Beoordelings parameters voor uitspraak
 
 In deze tabel worden de vereiste en optionele para meters voor de uitspraak beoordeling weer gegeven.
 
@@ -123,7 +154,7 @@ Het is raadzaam streaming (gesegmenteerd) te uploaden tijdens het boeken van de 
 >[!NOTE]
 >De functie voor het beoordelen van uitspraak is momenteel alleen beschikbaar voor `westus` `eastasia` en `centralindia` regio's. Deze functie is momenteel alleen beschikbaar in de `en-US` taal.
 
-## <a name="sample-request"></a>Voorbeeld aanvraag
+### <a name="sample-request"></a>Voorbeeld aanvraag
 
 In het onderstaande voor beeld zijn de hostname en de vereiste headers opgenomen. Het is belang rijk te weten dat de service ook audio gegevens verwacht, die niet is opgenomen in dit voor beeld. Zoals eerder vermeld, wordt Chunking aanbevolen, maar dit is niet vereist.
 
@@ -143,7 +174,7 @@ Als u de uitspraak beoordeling wilt inschakelen, kunt u onder koptekst toevoegen
 Pronunciation-Assessment: eyJSZWZlcm...
 ```
 
-## <a name="http-status-codes"></a>HTTP-statuscode
+### <a name="http-status-codes"></a>HTTP-statuscode
 
 De HTTP-status code voor elke reactie wijst op geslaagde of veelvoorkomende fouten.
 
@@ -155,9 +186,9 @@ De HTTP-status code voor elke reactie wijst op geslaagde of veelvoorkomende fout
 | `401` | Niet geautoriseerd | De abonnements sleutel of het autorisatie token is ongeldig in de opgegeven regio of het ongeldige eind punt. |
 | `403` | Verboden | De abonnements sleutel of het autorisatie token ontbreekt. |
 
-## <a name="chunked-transfer"></a>Gesegmenteerde overdracht
+### <a name="chunked-transfer"></a>Gesegmenteerde overdracht
 
-Gesegmenteerde overdracht ( `Transfer-Encoding: chunked` ) kan helpen de latentie van herkenning te verminderen. Hiermee kan de spraak service de verwerking van het audio bestand starten tijdens de verzen ding. De REST API biedt geen gedeeltelijke of tussentijdse resultaten.
+Gesegmenteerde overdracht ( `Transfer-Encoding: chunked` ) kan helpen de latentie van herkenning te verminderen. Hiermee kan de spraak service de verwerking van het audio bestand starten tijdens de verzen ding. De REST API voor korte audio biedt geen gedeeltelijke of tussentijdse resultaten.
 
 Dit code voorbeeld laat zien hoe u audio kunt verzenden in segmenten. Alleen de eerste chunk moet de header van het audio bestand bevatten. `request` is een `HttpWebRequest` object dat is verbonden met het juiste rest-eind punt. `audioFile` het pad is naar een audio bestand op schijf.
 
@@ -191,7 +222,7 @@ using (var fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 }
 ```
 
-## <a name="response-parameters"></a>Antwoord parameters
+### <a name="response-parameters"></a>Antwoord parameters
 
 De resultaten worden als JSON geleverd. De `simple` notatie bevat deze velden op het hoogste niveau.
 
@@ -233,7 +264,7 @@ Het object in de `NBest` lijst kan het volgende bevatten:
 | `PronScore` | Algemene score die de uitspraak kwaliteit van de opgegeven spraak aangeeft. Deze wordt samengesteld op basis `AccuracyScore` van `FluencyScore` en `CompletenessScore` met gewicht. |
 | `ErrorType` | Deze waarde geeft aan of een woord wordt wegge laten, wordt ingevoegd of verkeerd is uitgesp roken, vergeleken met `ReferenceText` . Mogelijke waarden zijn `None` (wat betekent dat er geen fout is in dit woord), `Omission` `Insertion` en `Mispronunciation` . |
 
-## <a name="sample-responses"></a>Voorbeeld reacties
+### <a name="sample-responses"></a>Voorbeeld reacties
 
 Een typisch antwoord voor `simple` herkenning:
 
@@ -309,3 +340,4 @@ Een typische reactie op erkenning met beoordeling van de uitspraak:
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
 - [Akoestische modellen aanpassen](./how-to-custom-speech-train-model.md)
 - [Taalmodellen aanpassen](./how-to-custom-speech-train-model.md)
+- [Vertrouwd raken met batch transcriptie](batch-transcription.md)

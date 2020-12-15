@@ -14,13 +14,13 @@ ms.workload: iaas-sql-server
 ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: bb7331747db301be5db00d550eec211f75257e29
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.custom: devx-track-azurecli, devx-track-azurepowershell, contperf-fy21q2
+ms.openlocfilehash: e7a8f54abbadb63c870c4d92843699c67f59752c
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360030"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505627"
 ---
 # <a name="register-sql-server-vm-with-sql-iaas-agent-extension"></a>SQL Server VM registreren met de SQL IaaS agent-extensie
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -69,7 +69,7 @@ Als u uw SQL Server-VM wilt registreren met de SQL IaaS agent-extensie, moet u u
 
 Registreer uw Azure-abonnement bij de **micro soft. SqlVirtualMachine** -provider met behulp van Azure CLI of Azure PowerShell. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
 ```azurecli-interactive
 # Register the SQL IaaS Agent extension to your subscription 
@@ -99,7 +99,7 @@ Geef het SQL Server-licentie type op als betalen per gebruik () als u `PAYG` een
 
 Failover-cluster exemplaren en implementaties met meerdere exemplaren kunnen alleen worden geregistreerd met de SQL IaaS agent-extensie in de Lightweight-modus. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
 Registreer een SQL Server-VM in de licht gewicht modus met de Azure CLI: 
 
@@ -149,7 +149,7 @@ Geef voor het **licentie type** ofwel: `AHUB` , `PAYG` , of op `DR` . Voor de **
 Als u uw SQL Server 2008 ( `SQL2008-WS2008` ) of 2008 R2 ( `SQL2008R2-WS2008` ) wilt registreren op Windows Server 2008-exemplaar, gebruikt u het volgende Azure CLI-of Azure PowerShell code fragment: 
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
 Registreer uw SQL Server virtuele machine in de modus niet-agent met de Azure CLI: 
 
@@ -207,7 +207,7 @@ Voer de volgende stappen uit om de extensie bij te werken naar de volledige modu
 
 ### <a name="command-line"></a>Opdrachtregel
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
 Als u de uitbrei ding naar de volledige modus wilt bijwerken, voert u het volgende Azure CLI-code fragment uit:
 
@@ -248,7 +248,7 @@ Voer de volgende stappen uit om de registratie status te verifiëren met behulp 
 
 Controleer de huidige SQL Server VM-registratie status met behulp van Azure CLI of Azure PowerShell. `ProvisioningState` geeft aan `Succeeded` of de registratie is geslaagd. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/bash)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/bash)
 
 Voer het volgende code fragment uit om de registratie status te verifiëren met behulp van de Azure CLI:  
 
@@ -299,7 +299,7 @@ Voer de volgende stappen uit om de registratie van uw SQL Server-VM bij de uitbr
 
 ### <a name="command-line"></a>Opdrachtregel
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de registratie van uw SQL Server virtuele machine bij de uitbrei ding met Azure CLI ongedaan wilt maken, gebruikt u de opdracht [AZ SQL VM delete](/cli/azure/sql/vm?view=azure-cli-latest&preserve-view=true#az-sql-vm-delete) . Hiermee wordt de SQL Server VM- *resource* verwijderd, maar wordt de virtuele machine niet verwijderd. 
 

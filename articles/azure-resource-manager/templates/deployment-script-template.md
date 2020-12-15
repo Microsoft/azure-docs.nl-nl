@@ -5,16 +5,16 @@ services: azure-resource-manager
 author: mumian
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 12/10/2020
+ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 7566235cf92965d5d3de1ec7f40353430ec7e0c6
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: c6d171717865fe4bdf3dfb30a6d24badd4fe29ca
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107138"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505559"
 ---
-# <a name="use-deployment-scripts-in-arm-templates-preview"></a>Implementatie scripts gebruiken in ARM-sjablonen (preview-versie)
+# <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
 Meer informatie over het gebruik van implementatie scripts in azure-resource sjablonen (ARM-sjablonen). Met een nieuw resource type `Microsoft.Resources/deploymentScripts` , kunnen gebruikers scripts uitvoeren in sjabloon implementaties en uitvoerings resultaten controleren. Deze scripts kunnen worden gebruikt voor het uitvoeren van aangepaste stappen zoals:
 
@@ -88,7 +88,7 @@ De volgende JSON is een voor beeld.  Het meest recente sjabloon schema kunt u [h
 ```json
 {
   "type": "Microsoft.Resources/deploymentScripts",
-  "apiVersion": "2019-10-01-preview",
+  "apiVersion": "2020-10-01",
   "name": "runPowerShellInline",
   "location": "[resourceGroup().location]",
   "kind": "AzurePowerShell", // or "AzureCLI"
@@ -441,18 +441,18 @@ De uitvoer van de lijst opdracht ziet er ongeveer als volgt uit:
 U kunt de informatie over de implementatie script bron implementeren op het niveau van de resource groep en het abonnements niveau door gebruik te maken van REST API:
 
 ```rest
-/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>?api-version=2020-10-01
 ```
 
 ```rest
-/subscriptions/<SubscriptionID>/providers/microsoft.resources/deploymentScripts?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/providers/microsoft.resources/deploymentScripts?api-version=2020-10-01
 ```
 
 In het volgende voor beeld wordt [ARMClient](https://github.com/projectkudu/ARMClient)gebruikt:
 
 ```azurepowershell
 armclient login
-armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups/myrg/providers/microsoft.resources/deploymentScripts/myDeployementScript?api-version=2019-10-01-preview
+armclient get /subscriptions/01234567-89AB-CDEF-0123-456789ABCDEF/resourcegroups/myrg/providers/microsoft.resources/deploymentScripts/myDeployementScript?api-version=2020-10-01
 ```
 
 De uitvoer is vergelijkbaar met:
@@ -510,7 +510,7 @@ De uitvoer is vergelijkbaar met:
 De volgende REST API retourneert het logboek:
 
 ```rest
-/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>/logs?api-version=2019-10-01-preview
+/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.resources/deploymentScripts/<DeploymentScriptResourceName>/logs?api-version=2020-10-01
 ```
 
 Het werkt alleen als de implementatie script bronnen worden verwijderd.
@@ -560,7 +560,7 @@ Nadat het script is getest, kunt u dit als een implementatie script in uw sjablo
 
 ## <a name="deployment-script-error-codes"></a>Fout codes voor implementatie scripts
 
-| Foutcode | Description |
+| Foutcode | Beschrijving |
 |------------|-------------|
 | DeploymentScriptInvalidOperation | De resource definitie van het implementatie script in de sjabloon bevat ongeldige eigenschaps namen. |
 | DeploymentScriptResourceConflict | Kan geen resource voor een implementatie script verwijderen die zich in de niet-Terminal status bevindt en de uitvoering niet langer dan 1 uur is overschreden. Het is ook niet mogelijk om hetzelfde implementatie script opnieuw uit te voeren met dezelfde resource-id (hetzelfde abonnement, dezelfde resource groepsnaam en resource naam), maar met verschillende script hoofdtekst op hetzelfde moment. |

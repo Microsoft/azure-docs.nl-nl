@@ -2,21 +2,21 @@
 title: Primaire, refererende en unieke sleutels
 description: Tabel beperkingen bieden ondersteuning voor het gebruik van een toegewezen SQL-groep in azure Synapse Analytics
 services: synapse-analytics
-author: XiaoyuMSFT
+author: mstehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 09/05/2019
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: dd1d92dd6be47b2bdf6b8ca2f9a99c62e35eb12a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bdb27c5c9f5ec8a7be433ab6e421ecabf5c8c254
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313067"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505576"
 ---
 # <a name="primary-key-foreign-key-and-unique-key-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Primaire sleutel, refererende sleutel en unieke sleutel met behulp van een toegewezen SQL-groep in azure Synapse Analytics
 

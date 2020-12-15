@@ -7,17 +7,20 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/18/2018
+ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a9e7c537e85039675f27fa3e276b6b964ce1679b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: f3b918fdf753cef75782a47ef157c282ef47e1ed
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388592"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503638"
 ---
 # <a name="set-up-direct-sign-in-using-azure-active-directory-b2c"></a>Direct aanmelden instellen met behulp van Azure Active Directory B2C
+
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
 Wanneer u aanmelden voor uw toepassing instelt met behulp van Azure Active Directory (AD) B2C, kunt u de aanmeldings naam of de directe aanmelding vooraf invullen bij een specifieke ID-provider voor sociale netwerken, zoals Facebook, LinkedIn of een Microsoft-account.
 
@@ -29,7 +32,9 @@ Tijdens een traject voor aanmeldings gebruikers kan een Relying Party toepassing
 
 De gebruiker kan de waarde in het tekstvak voor aanmelden wijzigen.
 
-Als u een aangepast beleid gebruikt, moet u het `SelfAsserted-LocalAccountSignin-Email` technische profiel overschrijven. Stel in de `<InputClaims>` sectie de DefaultValue van de signInName-claim in op `{OIDC:LoginHint}` . De `{OIDC:LoginHint}` variabele bevat de waarde van de `login_hint` para meter. Azure AD B2C leest de waarde van de claim signInName en vult het tekstvak signInName vooraf in.
+::: zone pivot="b2c-custom-policy"
+
+U kunt het technische profiel overschrijven om de hint voor het aanmelden te ondersteunen `SelfAsserted-LocalAccountSignin-Email` . Stel in de `<InputClaims>` sectie de DefaultValue van de signInName-claim in op `{OIDC:LoginHint}` . De `{OIDC:LoginHint}` variabele bevat de waarde van de `login_hint` para meter. Azure AD B2C leest de waarde van de claim signInName en vult het tekstvak signInName vooraf in.
 
 ```xml
 <ClaimsProvider>
@@ -45,13 +50,35 @@ Als u een aangepast beleid gebruikt, moet u het `SelfAsserted-LocalAccountSignin
 </ClaimsProvider>
 ```
 
+::: zone-end
+
 ## <a name="redirect-sign-in-to-a-social-provider"></a>Aanmelding door sturen naar een sociale provider
 
 Als u de aanmeldings traject hebt geconfigureerd zodat uw toepassing sociale accounts kan bevatten, zoals Facebook, LinkedIn of Google, kunt u de `domain_hint` para meter opgeven. Deze query parameter biedt een hint voor het Azure AD B2C over de ID-provider voor sociale netwerken die moet worden gebruikt voor aanmelding. Als de toepassing bijvoorbeeld `domain_hint=facebook.com` is opgegeven, wordt de aanmelding direct naar de aanmeldings pagina van Facebook verzonden.
 
 ![Aanmeldings pagina voor aanmelding met domain_hint query parameter gemarkeerd in URL](./media/direct-signin/domain-hint.png)
 
-Als u een aangepast beleid gebruikt, kunt u de domein naam configureren met behulp `<Domain>domain name</Domain>` van het XML-element van elke `<ClaimsProvider>` .
+::: zone pivot="b2c-user-flow"
+
+De query teken reeks parameter domein hint kan worden ingesteld op een van de volgende domeinen:
+
+- amazon.com
+- facebook.com
+- github.com
+- google.com
+- linkedin.com
+- microsoft.com
+- qq.com
+- twitter.com
+- wechat.com
+- weibo.com 
+- Zie [domein Hint](identity-provider-generic-openid-connect.md#response-mode)voor [generic OpenID Connect Connect](identity-provider-generic-openid-connect.md).
+
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+Ter ondersteuning van de para meter domein scharnier kunt u de domein naam configureren met behulp `<Domain>domain name</Domain>` van het XML-element van elke `<ClaimsProvider>` .
 
 ```xml
 <ClaimsProvider>
@@ -62,4 +89,5 @@ Als u een aangepast beleid gebruikt, kunt u de domein naam configureren met behu
     ...
 ```
 
+::: zone-end
 

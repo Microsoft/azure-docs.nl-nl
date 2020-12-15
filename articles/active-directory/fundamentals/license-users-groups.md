@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/06/2018
+ms.date: 12/14/2020
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50e0fe1cf3bb628c40e774423e45ea88d6ab78a5
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b6900647acf7182529f34c8cc065dbb039de38be
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359710"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504403"
 ---
 # <a name="assign-or-remove-licenses-in-the-azure-active-directory-portal"></a>Licenties toewijzen of verwijderen in de Azure Active Directory Portal
 
@@ -37,7 +37,7 @@ Er zijn verschillende licentie abonnementen beschikbaar voor de Azure AD-service
 
 Zie [welke licentie heb ik nodig](https://azure.microsoft.com/pricing/details/active-directory/)voor specifieke informatie over elk licentie plan en de bijbehorende licentie gegevens?. Zie [hier](./active-directory-get-started-premium.md)voor meer informatie over het registreren van Azure AD Premium-licentie plannen.
 
-Niet alle micro soft-Services zijn beschikbaar op alle locaties. Voordat een licentie kan worden toegewezen aan een groep, moet u de **gebruiks locatie** opgeven voor alle leden. U kunt deze waarde instellen in het gebied **instellingen van Azure Active Directory &gt; gebruikers &gt; profiel &gt; ** in azure AD. Alle gebruikers waarvan de gebruiks locatie niet is opgegeven, nemen de locatie van de Azure AD-organisatie over.
+Niet alle micro soft-Services zijn beschikbaar op alle locaties. Voordat een licentie kan worden toegewezen aan een groep, moet u de **gebruiks locatie** opgeven voor alle leden. U kunt deze waarde instellen in het gebied **instellingen van Azure Active Directory &gt; gebruikers &gt; profiel &gt;** in azure AD. Alle gebruikers waarvan de gebruiks locatie niet is opgegeven, nemen de locatie van de Azure AD-organisatie over.
 
 ## <a name="view-license-plans-and-plan-details"></a>Licentie plannen en plan gegevens weer geven
 
@@ -47,13 +47,20 @@ U kunt uw beschik bare service abonnementen, inclusief de afzonderlijke licentie
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) met een licentie beheerders account in uw Azure AD-organisatie.
 
-1. Selecteer **Azure Active Directory**en selecteer vervolgens **licenties**.
+1. Selecteer **Azure Active Directory** en selecteer vervolgens **licenties**.
 
-    ![De pagina licenties, met het aantal aangeschafte Services en toegewezen licenties](media/license-users-groups/license-details-blade.png)
+    :::image type="content" source="media/license-users-groups/license-details-blade.png" alt-text="De pagina licenties, met het aantal aangeschafte Services en toegewezen licenties":::
 
-1. Selecteer de **aangeschafte** koppeling om de pagina **producten** weer te geven en om de **toegewezen**, **beschik bare**en **verlopende binnenkort** cijfers voor uw licentie plannen te bekijken.
+1. Selecteer **alle producten** om de pagina alle producten weer te geven en om het **totale**, **toegewezen**, **beschik bare** en **verlopen binnenkort** nummer voor uw licentie plannen te bekijken.
 
-    ![Services-pagina, met Service licentie plannen en bijbehorende licentie gegevens](media/license-users-groups/license-products-blade-with-products.png)
+    :::image type="content" source="media/license-users-groups/license-products-blade-with-products.png" alt-text="pagina Services-met Service licentie plannen-bijbehorende licentie gegevens":::
+
+    > [!NOTE]
+    > De getallen worden als volgt gedefinieerd: 
+    > - Totaal: totaal aantal aangeschafte licenties
+    > - Toegewezen: aantal licenties toegewezen aan gebruikers
+    > - Beschikbaar: aantal beschik bare licenties voor toewijzing, inclusief binnenkort verlopen
+    > - Binnenkort verlopen: het aantal licenties dat binnenkort verloopt
 
 1. Selecteer een naam voor het abonnement om de gelicentieerde gebruikers en groepen weer te geven.
 
@@ -82,7 +89,7 @@ Zorg ervoor dat iedereen die een gelicentieerde Azure AD-service moet gebruiken,
     De pagina **licentie toewijzen** wordt bijgewerkt om aan te geven dat een gebruiker is geselecteerd en dat de toewijzingen zijn geconfigureerd.
 
     > [!NOTE]
-    > Niet alle micro soft-Services zijn beschikbaar op alle locaties. Voordat een licentie aan een gebruiker kan worden toegewezen, moet u de **gebruiks locatie**opgeven. U kunt deze waarde instellen in het gebied **instellingen van Azure Active Directory &gt; gebruikers &gt; profiel &gt; ** in azure AD. Alle gebruikers waarvan de gebruiks locatie niet is opgegeven, nemen de locatie van de Azure AD-organisatie over.
+    > Niet alle micro soft-Services zijn beschikbaar op alle locaties. Voordat een licentie aan een gebruiker kan worden toegewezen, moet u de **gebruiks locatie** opgeven. U kunt deze waarde instellen in het gebied **instellingen van Azure Active Directory &gt; gebruikers &gt; profiel &gt;** in azure AD. Alle gebruikers waarvan de gebruiks locatie niet is opgegeven, nemen de locatie van de Azure AD-organisatie over.
 
 1. Selecteer **Toewijzen**.
 
@@ -100,7 +107,7 @@ Zorg ervoor dat iedereen die een gelicentieerde Azure AD-service moet gebruiken,
 
     ![Pagina producten, met gemarkeerde toewijzings optie](media/license-users-groups/license-products-blade-with-assign-option-highlight.png)
 
-1. Selecteer op de pagina **toewijzen** de optie **gebruikers en groepen**en zoek vervolgens naar de groep waaraan u de licentie wilt toewijzen en selecteer deze.
+1. Selecteer op de pagina **toewijzen** de optie **gebruikers en groepen** en zoek vervolgens naar de groep waaraan u de licentie wilt toewijzen en selecteer deze.
 
     ![Wijs de pagina licentie toe, met gemarkeerde zoek opdracht en selecteer opties 2](media/license-users-groups/assign-group-license-blade-with-highlight.png)
 

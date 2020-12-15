@@ -1,80 +1,121 @@
 ---
 title: Benoemde waarden gebruiken in azure API Management-beleid
-description: Meer informatie over het gebruik van benoemde waarden in azure API Management-beleid. Benoemde waarden kunnen letterlijke teken reeksen en beleids expressies bevatten.
+description: Meer informatie over het gebruik van benoemde waarden in azure API Management-beleid. Benoemde waarden kunnen letterlijke teken reeksen, beleids expressies en geheimen bevatten die zijn opgeslagen in Azure Key Vault.
 services: api-management
 documentationcenter: ''
 author: vladvino
-manager: erikre
-editor: ''
 ms.service: api-management
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/08/2020
+ms.date: 12/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 3f317276ae92e6121d519553b7883677dab89705
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cde4dadee33ec1c3f91ab4770dbfe697289cef3
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852188"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504729"
 ---
-# <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Benoemde waarden gebruiken in azure API Management-beleid
+# <a name="use-named-values-in-azure-api-management-policies"></a>Benoemde waarden gebruiken in azure API Management-beleid
 
-API Management-beleid is een krachtige mogelijkheid van het systeem waarmee de Azure Portal het gedrag van de API via configuratie kan wijzigen. Beleidsregels zijn een verzameling instructies die sequentieel worden uitgevoerd op de aanvraag of het antwoord van een API. Beleids instructies kunnen worden samengesteld met behulp van letterlijke tekst waarden, beleids expressies en benoemde waarden.
+[API management-beleid](api-management-howto-policies.md) is een krachtige mogelijkheid van het systeem waarmee de uitgever het gedrag van de API via configuratie kan wijzigen. Beleidsregels zijn een verzameling instructies die sequentieel worden uitgevoerd op de aanvraag of het antwoord van een API. Beleids instructies kunnen worden samengesteld met behulp van letterlijke tekst waarden, beleids expressies en benoemde waarden.
 
-Elk API Management service-exemplaar heeft een verzameling sleutel-waardeparen, die een benoemde waarde wordt genoemd en die globaal zijn voor het service-exemplaar. Er is geen limiet ingesteld voor het aantal items in de verzameling. Benoemde waarden kunnen worden gebruikt voor het beheren van constante teken reeks waarden voor alle API-configuraties en-beleid. Elke benoemde waarde kan de volgende kenmerken hebben:
+*Benoemde waarden* zijn een globale verzameling naam/waarde-paren in elk API Management-exemplaar. Er is geen limiet ingesteld voor het aantal items in de verzameling. Benoemde waarden kunnen worden gebruikt voor het beheren van constante teken reeks waarden en geheimen over alle API-configuraties en-beleids regels. 
 
-| Kenmerk      | Type            | Description                                                                                                                            |
-| -------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `Display name` | tekenreeks          | Gebruikt voor het verwijzen naar de benoemde waarde in beleids regels. Een teken reeks van 1 tot 256 tekens. Alleen letters, cijfers, punten en streepjes zijn toegestaan. |
-| `Value`        | tekenreeks          | Werkelijke waarde. Mag niet leeg zijn of alleen uit spaties bestaan. Maxi maal 4096 tekens lang.                                        |
-| `Secret`       | booleaans         | Hiermee wordt bepaald of de waarde een geheim is en moet worden versleuteld of niet.                                                               |
-| `Tags`         | tekenreeksmatrix | Hiermee wordt de lijst met benoemde waarden gefilterd. Maxi maal 32 tags.                                                                                    |
+:::image type="content" source="media/api-management-howto-properties/named-values.png" alt-text="Benoemde waarden in de Azure Portal":::
 
-![Benoemde waarden](./media/api-management-howto-properties/named-values.png)
+## <a name="value-types"></a>Waardetypen
 
-Benoemde waarden kunnen letterlijke teken reeksen en [beleids expressies](./api-management-policy-expressions.md)bevatten. De waarde van `Expression` is bijvoorbeeld een beleids expressie die een teken reeks retourneert met de huidige datum en tijd. De benoemde waarde `Credential` is gemarkeerd als geheim, waardoor de waarde ervan niet standaard wordt weer gegeven.
+|Type  |Beschrijving  |
+|---------|---------|
+|Spoor     |  Expressie voor letterlijke teken reeks of beleid     |
+|Geheim     |   Letterlijke teken reeks of beleids expressie die is versleuteld met API Management      |
+|[Sleutel kluis](#key-vault-secrets)     |  Id van een geheim dat is opgeslagen in een Azure-sleutel kluis.      |
 
-| Naam       | Waarde                      | Geheim | Tags          |
-| ---------- | -------------------------- | ------ | ------------- |
-| Waarde      | 42                         | False  | cruciale cijfers |
-| Referentie | ••••••••••••••••••••••     | True   | security      |
-| Expression | @ (DateTime. Now. ToString ()) | False  |               |
+Onbewerkte waarden of geheimen kunnen [beleids expressies](./api-management-policy-expressions.md)bevatten. De expressie `@(DateTime.Now.ToString())` retourneert bijvoorbeeld een teken reeks met de huidige datum en tijd.
 
-> [!NOTE]
-> In plaats van benoemde waarden die zijn opgeslagen in een API Management-service, kunt u waarden gebruiken die zijn opgeslagen in de [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) -service, zoals wordt geïllustreerd door dit [voor beeld](https://github.com/Azure/api-management-policy-snippets/blob/master/examples/Look%20up%20Key%20Vault%20secret%20using%20Managed%20Service%20Identity.policy.xml).
+Zie de naslag informatie over het API Management [rest API](/rest/api/apimanagement/2020-06-01-preview/namedvalue/createorupdate)voor meer informatie over de kenmerken van benoemde waarden.
 
-## <a name="to-add-and-edit-a-named-value"></a>Een benoemde waarde toevoegen en bewerken
+## <a name="key-vault-secrets"></a>Sleutel kluis geheimen
 
-![Een benoemde waarde toevoegen](./media/api-management-howto-properties/add-property.png)
+Geheime waarden kunnen worden opgeslagen als versleutelde teken reeksen in API Management (aangepaste geheimen) of door te verwijzen naar geheimen in [Azure Key Vault](../key-vault/general/overview.md). 
 
-1. Selecteer **API's** bij **API MANAGEMENT**.
-2. Selecteer **benoemde waarden**.
-3. Druk op **+ toevoegen**.
+Het gebruik van sleutel kluis geheimen wordt aanbevolen omdat hiermee API Management beveiliging kan worden verbeterd:
 
-    Naam en waarde zijn vereiste waarden. Als de waarde een geheim is, schakelt u het selectie vakje _Dit is een geheim_ in. Voer een of meer optionele Tags in om u te helpen bij het ordenen van uw benoemde waarden en klik op opslaan.
+* Geheimen die zijn opgeslagen in sleutel kluizen, kunnen opnieuw worden gebruikt in verschillende services
+* Gedetailleerd [toegangs beleid](../key-vault/general/secure-your-key-vault.md#data-plane-and-access-policies) kan worden toegepast op geheimen
+* Geheimen die in de sleutel kluis zijn bijgewerkt, worden automatisch geroteerd in API Management. Na de update in de sleutel kluis wordt een benoemde waarde in API Management bijgewerkt binnen vier uur. 
 
-4. Klik op **Maken**.
+### <a name="prerequisites-for-key-vault-integration"></a>Vereisten voor sleutel kluis integratie
 
-Zodra de benoemde waarde is gemaakt, kunt u deze bewerken door erop te klikken. Als u de naam van de benoemde waarde wijzigt, worden alle beleids regels die verwijzen naar deze benoemde waarde, automatisch bijgewerkt voor gebruik van de nieuwe naam.
+1. Voor stappen voor het maken van een sleutel kluis raadpleegt u [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md).
+1. Een door het systeem toegewezen of door de gebruiker toegewezen [beheerde identiteit](api-management-howto-use-managed-service-identity.md) inschakelen in het API Management-exemplaar.
+1. Wijs een [sleutel kluis toegangs beleid](../key-vault/general/assign-access-policy-portal.md) toe aan de beheerde identiteit met machtigingen om geheimen van de kluis op te halen en weer te geven. Het beleid toevoegen:
+    1. Navigeer in de portal naar uw sleutel kluis.
+    1. Selecteer **instellingen > toegangs beleid > + toegangs beleid toe te voegen**.
+    1. Selecteer **geheime machtigingen** en selecteer **ophalen** en **lijst**.
+    1. Selecteer in **Principal selecteren** de resource naam van uw beheerde identiteit. Als u een door het systeem toegewezen identiteit gebruikt, is de principal de naam van uw API Management-exemplaar.
+1. Maak of importeer een geheim in de sleutel kluis. Zie [Quick Start: een geheim instellen en ophalen uit Azure Key Vault met behulp van de Azure Portal](../key-vault/secrets/quick-create-portal.md).
 
-## <a name="to-delete-a-named-value"></a>Een benoemde waarde verwijderen
+Als u het sleutel kluis geheim wilt gebruiken, moet u [een benoemde waarde toevoegen of bewerken](#add-or-edit-a-named-value)en een type **sleutel kluis** opgeven. Selecteer het geheim in de sleutel kluis.
 
-Als u een benoemde waarde wilt verwijderen, klikt u op **verwijderen** naast de naam waarde die u wilt verwijderen.
+> [!CAUTION]
+> Wanneer u een sleutel kluis geheim in API Management gebruikt, moet u ervoor zorgen dat u het geheim, de sleutel kluis of de beheerde identiteit die wordt gebruikt voor toegang tot de sleutel kluis niet verwijdert.
 
-> [!IMPORTANT]
-> Als er wordt verwezen naar de genoemde waarde, kunt u deze pas verwijderen als u de genoemde waarde verwijdert uit alle beleids regels die deze gebruiken.
+Als [Key Vault firewall](../key-vault/general/network-security.md) is ingeschakeld in uw sleutel kluis, zijn de volgende aanvullende vereisten voor het gebruik van sleutel kluis geheimen:
 
-## <a name="to-search-and-filter-named-values"></a>Benoemde waarden zoeken en filteren
+* U moet de door het **systeem toegewezen** beheerde identiteit van het API Management exemplaar gebruiken voor toegang tot de sleutel kluis.
+* Schakel in Key Vault firewall de optie **vertrouwde micro soft-services mogen deze firewall overs Laan** in.
 
-Het tabblad **benoemde waarden** bevat Zoek-en filter functies waarmee u uw benoemde waarden kunt beheren. Als u de lijst met benoemde waarden op naam wilt filteren, voert u een zoek term in het tekstvak **Zoek eigenschap** in. Als u alle benoemde waarden wilt weer geven, schakelt u het tekstvak **Zoek eigenschap** uit en drukt u op ENTER.
+Als het API Management-exemplaar in een virtueel netwerk is geïmplementeerd, moet u ook de volgende netwerk instellingen configureren:
+* Schakel een [service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md) in om te Azure Key Vault op het API Management subnet.
+* Configureer een regel voor een netwerk beveiligings groep (NSG) om uitgaand verkeer naar de AzureKeyVault-en AzureActiveDirectory- [service Tags](../virtual-network/service-tags-overview.md)toe te staan. 
 
-Als u de lijst op label wilt filteren, voert u een of meer tags in het tekstvak **filteren op labels** in. Als u alle benoemde waarden wilt weer geven, schakelt u het tekstvak **filteren op labels** uit en drukt u op ENTER.
+Zie netwerk configuratie details in [verbinding maken met een virtueel netwerk](api-management-using-with-vnet.md#-common-network-configuration-issues)voor meer informatie.
 
-## <a name="to-use-a-named-value"></a>Een benoemde waarde gebruiken
+## <a name="add-or-edit-a-named-value"></a>Een benoemde waarde toevoegen of bewerken
 
-Als u een benoemde waarde in een beleid wilt gebruiken, plaatst u de naam ervan in een dubbel paar accolades `{{ContosoHeader}}` , zoals in het volgende voor beeld wordt weer gegeven:
+### <a name="add-a-key-vault-secret"></a>Een sleutel kluis geheim toevoegen
+
+Zie [vereisten voor de integratie van sleutel kluis](#prerequisites-for-key-vault-integration).
+
+1. Blader in [Azure Portal](https://portal.azure.com) naar uw API Management-exemplaar.
+1. Selecteer onder **api's** de optie **benoemde waarden**  >  **+ toevoegen**.
+1. Voer een **naam** -id in en voer een **weergave naam** in die wordt gebruikt om naar de eigenschap in beleids regels te verwijzen.
+1. Selecteer in **waardetype** **sleutel kluis**.
+1. Voer de id van een geheim voor sleutel kluis in (zonder versie) of kies **selecteren** om een geheim te selecteren in een sleutel kluis.
+    > [!IMPORTANT]
+    > Als u zelf een geheime geheim-ID invoert, moet u ervoor zorgen dat deze geen versie gegevens bevat. Anders wordt het geheim niet automatisch gedraaid in API Management na een update in de sleutel kluis.
+1. Selecteer in **client identiteit** een door het systeem toegewezen of een bestaande door de gebruiker toegewezen beheerde identiteit. Meer informatie over het [toevoegen of wijzigen van beheerde identiteiten in uw API Management-service](api-management-howto-use-managed-service-identity.md).
+    > [!NOTE]
+    > De identiteit moet machtigingen hebben om geheimen van de sleutel kluis op te halen en weer te geven. Als u de toegang tot de sleutel kluis nog niet hebt geconfigureerd, API Management u gevraagd om de identiteit automatisch te configureren met de benodigde machtigingen.
+1. Voeg een of meer optionele tags toe om uw benoemde waarden te ordenen en vervolgens op te **slaan**.
+1. Selecteer **Maken**.
+
+    :::image type="content" source="media/api-management-howto-properties/add-property.png" alt-text="Geheime waarde voor sleutel kluis toevoegen":::
+
+### <a name="add-a-plain-or-secret-value"></a>Een normale of geheime waarde toevoegen
+
+1. Blader in [Azure Portal](https://portal.azure.com) naar uw API Management-exemplaar.
+1. Selecteer onder **api's** de optie **benoemde waarden**  >  **+ toevoegen**.
+1. Voer een **naam** -id in en voer een **weergave naam** in die wordt gebruikt om naar de eigenschap in beleids regels te verwijzen.
+1. Selecteer bij **waardetype** de optie **Plain** of **geheim**.
+1. Voer in **waarde** een teken reeks-of beleids expressie in.
+1. Voeg een of meer optionele tags toe om uw benoemde waarden te ordenen en vervolgens op te **slaan**.
+1. Selecteer **Maken**.
+
+Zodra de benoemde waarde is gemaakt, kunt u deze bewerken door de naam te selecteren. Als u de weergave naam wijzigt, worden alle beleids regels die verwijzen naar deze benoemde waarde, automatisch bijgewerkt voor gebruik van de nieuwe weergave naam.
+
+## <a name="use-a-named-value"></a>Een benoemde waarde gebruiken
+
+In de voor beelden in deze sectie worden de genoemde waarden gebruikt die in de volgende tabel worden weer gegeven.
+
+| Naam               | Waarde                      | Geheim | 
+|--------------------|----------------------------|--------|---------|
+| ContosoHeader      | `TrackingId`                 | Niet waar  | 
+| ContosoHeaderValue | ••••••••••••••••••••••     | Waar   | 
+| ExpressionProperty | `@(DateTime.Now.ToString())` | Niet waar  | 
+
+Als u een benoemde waarde in een beleid wilt gebruiken, plaatst u de weergave naam ervan binnen een dubbel paar accolades `{{ContosoHeader}}` , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```xml
 <set-header name="{{ContosoHeader}}" exists-action="override">
@@ -84,9 +125,13 @@ Als u een benoemde waarde in een beleid wilt gebruiken, plaatst u de naam ervan 
 
 In dit voor beeld `ContosoHeader` wordt gebruikt als de naam van een koptekst in een `set-header` beleid en `ContosoHeaderValue` wordt gebruikt als de waarde van die koptekst. Wanneer dit beleid wordt geëvalueerd tijdens een aanvraag of reactie op de API Management Gateway, `{{ContosoHeader}}` en `{{ContosoHeaderValue}}` worden vervangen door hun respectievelijke waarden.
 
-Benoemde waarden kunnen worden gebruikt als volledige kenmerk-of element waarden, zoals wordt weer gegeven in het vorige voor beeld, maar ze kunnen ook worden ingevoegd in of gecombineerd met een letterlijke tekst expressie, zoals wordt weer gegeven in het volgende voor beeld: `<set-header name = "CustomHeader{{ContosoHeader}}" ...>`
+Benoemde waarden kunnen worden gebruikt als volledige kenmerk-of element waarden, zoals wordt weer gegeven in het vorige voor beeld, maar ze kunnen ook worden ingevoegd in of gecombineerd met een letterlijke tekst expressie, zoals wordt weer gegeven in het volgende voor beeld: 
 
-Benoemde waarden kunnen ook beleids expressies bevatten. In het volgende voor beeld `ExpressionProperty` wordt de gebruikt.
+```xml
+<set-header name = "CustomHeader{{ContosoHeader}}" ...>
+```
+
+Benoemde waarden kunnen ook beleids expressies bevatten. In het volgende voor beeld `ExpressionProperty` wordt de expressie gebruikt.
 
 ```xml
 <set-header name="CustomHeader" exists-action="override">
@@ -94,17 +139,27 @@ Benoemde waarden kunnen ook beleids expressies bevatten. In het volgende voor be
 </set-header>
 ```
 
-Wanneer dit beleid wordt geëvalueerd, `{{ExpressionProperty}}` wordt vervangen door de waarde: `@(DateTime.Now.ToString())` . Omdat de waarde een beleids expressie is, wordt de expressie geëvalueerd en wordt het beleid voortgezet met de uitvoering ervan.
+Wanneer dit beleid wordt geëvalueerd, `{{ExpressionProperty}}` wordt vervangen door de waarde ervan `@(DateTime.Now.ToString())` . Omdat de waarde een beleids expressie is, wordt de expressie geëvalueerd en wordt het beleid voortgezet met de uitvoering ervan.
 
-U kunt dit testen in de ontwikkelaars portal door een bewerking aan te roepen die een beleid bevat met benoemde waarden binnen het bereik. In het volgende voor beeld wordt een bewerking aangeroepen met de twee voor gaande voorbeeld `set-header` beleidsregels met benoemde waarden. Houd er rekening mee dat het antwoord twee aangepaste kopteksten bevat die zijn geconfigureerd met behulp van beleids regels met benoemde waarden.
+U kunt dit testen in de Azure Portal of de [ontwikkelaars Portal](api-management-howto-developer-portal.md) door een bewerking aan te roepen die een beleid met benoemde waarden in het bereik heeft. In het volgende voor beeld wordt een bewerking aangeroepen met de twee voor gaande voorbeeld `set-header` beleidsregels met benoemde waarden. U ziet dat het antwoord twee aangepaste kopteksten bevat die zijn geconfigureerd met behulp van beleids regels met benoemde waarden.
 
-![ontwikkelaarsportal][api-management-send-results]
+:::image type="content" source="media/api-management-howto-properties/api-management-send-results.png" alt-text="API-antwoord testen":::
 
-Als u de [API Inspector-tracering](api-management-howto-api-inspector.md) voor een aanroep met de twee voor gaande voorbeeld beleidsregels met benoemde waarden bekijkt, ziet u de twee `set-header` beleids regels met de naam waarden ingevoegd en de evaluatie van de beleids expressie voor de naam waarde die de beleids expressie bevat.
+Als u de uitgaande API- [tracering](api-management-howto-api-inspector.md) bekijkt voor een aanroep met de twee voor gaande voorbeeld beleidsregels met benoemde waarden, ziet u de twee `set-header` beleids regels met de naam waarden ingevoegd en de evaluatie van de beleids expressie voor de naam waarde die de beleids expressie bevat.
 
-![API Inspector-tracering][api-management-api-inspector-trace]
+:::image type="content" source="media/api-management-howto-properties/api-management-api-inspector-trace.png" alt-text="API Inspector-tracering":::
+
+> [!CAUTION]
+> Als een beleid verwijst naar een geheim in Azure Key Vault, is de waarde van de sleutel kluis zichtbaar voor gebruikers die toegang hebben tot abonnementen die zijn ingeschakeld voor het [traceren](api-management-howto-api-inspector.md)van de API-aanvraag.
 
 Hoewel benoemde waarden beleids expressies kunnen bevatten, kunnen ze geen andere benoemde waarden bevatten. Als tekst met een verwijzing naar een benoemde waarde wordt gebruikt voor een waarde, zoals `Text: {{MyProperty}}` , wordt die verwijzing niet opgelost en vervangen.
+
+## <a name="delete-a-named-value"></a>Een benoemde waarde verwijderen
+
+Als u een benoemde waarde wilt verwijderen, selecteert u de naam en selecteert u vervolgens **verwijderen** in het context menu (**...**).
+
+> [!IMPORTANT]
+> Als er door een API Management beleid naar de benoemde waarde wordt verwezen, kunt u deze pas verwijderen als u de genoemde waarde verwijdert uit alle beleids regels die er gebruik van maken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -114,5 +169,4 @@ Hoewel benoemde waarden beleids expressies kunnen bevatten, kunnen ze geen ander
     -   [Beleidsexpressies](./api-management-policy-expressions.md)
 
 [api-management-send-results]: ./media/api-management-howto-properties/api-management-send-results.png
-[api-management-properties-filter]: ./media/api-management-howto-properties/api-management-properties-filter.png
-[api-management-api-inspector-trace]: ./media/api-management-howto-properties/api-management-api-inspector-trace.png
+

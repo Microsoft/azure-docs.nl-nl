@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: 46c219a82d45129ed0856d22d88be819938e5240
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fefa16a39545c0c4094db8dbd18b46fb94ef5025
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87325301"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504029"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Service Manager web-app maken met behulp van het geautomatiseerde script
 
@@ -26,9 +26,12 @@ Voer het script uit door de volgende vereiste gegevens op te geven:
 - Het voor voegsel van de site naam voor uw web-app
 - Naam ruimte ServiceBus.
 
-Met het script wordt de web-app gemaakt met de naam die u hebt opgegeven (samen met enkele extra teken reeksen om deze uniek te maken). De web- **app-URL**, de **client-id**en het **client geheim**worden gegenereerd.
+Met het script wordt de web-app gemaakt met de naam die u hebt opgegeven (samen met enkele extra teken reeksen om deze uniek te maken). De web- **app-URL**, de **client-id** en het **client geheim** worden gegenereerd.
 
 Sla deze waarden op. u hebt deze waarden nodig wanneer u een verbinding maakt met IT Service Management-connector.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

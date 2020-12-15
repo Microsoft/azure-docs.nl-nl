@@ -16,18 +16,21 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40d77f4ebb897884f03377e6d9f1243a6d436766
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: eadb20bc570545356508d82c05e1746424a14b71
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500203"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504386"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory naadloze eenmalige aanmelding: Quick Start
 
 ## <a name="deploy-seamless-single-sign-on"></a>Naadloze single Sign-On implementeren
 
 Azure Active Directory (Azure AD) naadloze single Sign-On (naadloze SSO) worden automatisch ondertekend door gebruikers wanneer ze zich op hun bedrijfs Desk tops bevinden die zijn verbonden met uw bedrijfs netwerk. Naadloze SSO biedt uw gebruikers eenvoudige toegang tot uw Cloud toepassingen zonder dat hiervoor extra on-premises onderdelen nodig zijn.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 Voer de volgende stappen uit om naadloze SSO te implementeren.
 
@@ -144,7 +147,7 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
     ![Scherm opname van het venster inhoud weer geven met een zone toewijzing geselecteerd.](./media/how-to-connect-sso-quick-start/sso7.png)
 
-6. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer** Internet-  >  **configuratie scherm**  >  **Security Page**  >  **intranet zone** van beveiligings pagina. Selecteer vervolgens **updates toestaan voor status balk via script**.
+6. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer** Internet-  >  **configuratie scherm**  >    >  **intranet zone** van beveiligings pagina. Selecteer vervolgens **updates toestaan voor status balk via script**.
 
     ![Scherm opname van de pagina ' intranet zone ' met ' updates toestaan voor status balk via script ' geselecteerd.](./media/how-to-connect-sso-quick-start/sso11.png)
 
@@ -156,7 +159,7 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
 1. Open het Groepsbeleidsbeheer-editor-hulp programma.
 2. Bewerk het groeps beleid dat is toegepast op enkele of al uw gebruikers. In dit voor beeld wordt het **standaard domein beleid** gebruikt.
-3. Bladeren naar **gebruikers configuratie**  >  **voor keuren** het  >  **Windows Settings**  >  **REGI ster**  >  **Nieuw**  >  **register item**.
+3. Bladeren naar **gebruikers configuratie**  >  **voor keuren** het  >    >  **REGI ster**  >  **Nieuw**  >  **register item**.
 
     ![Scherm opname van het geselecteerde "REGI ster" en "register item" geselecteerd.](./media/how-to-connect-sso-quick-start/sso15.png)
 

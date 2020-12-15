@@ -1,0 +1,326 @@
+---
+title: RabbitMQ uitvoer bindingen voor Azure Functions
+description: Meer informatie over het verzenden van RabbitMQ-berichten van Azure Functions.
+author: cachai2
+ms.assetid: ''
+ms.topic: reference
+ms.date: 12/13/2020
+ms.author: cachai
+ms.custom: ''
+ms.openlocfilehash: 212bfcee09cd63b6ff09faaba4d99e4b4c583fe8
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505732"
+---
+# <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>RabbitMQ-uitvoer binding voor Azure Functions-overzicht
+
+> [!NOTE]
+> De RabbitMQ-bindingen worden alleen volledig ondersteund in **Windows Premium** -abonnementen. Verbruik en Linux worden momenteel niet ondersteund.
+
+Gebruik de RabbitMQ-uitvoer binding om berichten te verzenden naar een RabbitMQ-wachtrij.
+
+Zie het [overzicht](functions-bindings-rabbitmq-output.md)voor meer informatie over de installatie-en configuratie details.
+
+## <a name="example"></a>Voorbeeld
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-library.md) waarmee een RabbitMQ-bericht wordt verzonden wanneer een timer trigger om de 5 minuten wordt geactiveerd met de retour waarde van de methode als uitvoer:
+
+```cs
+[FunctionName("RabbitMQOutput")]
+[return: RabbitMQ("outputQueue", ConnectionStringSetting = "ConnectionStringSetting")]
+public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
+{
+    log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+    return $"{DateTime.Now}";
+}
+```
+
+In het volgende voor beeld ziet u hoe u de IAsyncCollector-interface gebruikt voor het verzenden van berichten.
+
+```cs
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] string rabbitMQEvent,
+[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<string> outputEvents,
+ILogger log)
+{
+    // processing:
+    var myProcessedEvent = DoSomething(rabbitMQEvent);
+    
+     // send the message
+    await outputEvents.AddAsync(JsonConvert.SerializeObject(myProcessedEvent));
+}
+```
+
+In het volgende voor beeld ziet u hoe u de berichten verzendt als POCOs.
+
+```cs
+public class TestClass
+{
+    public string x { get; set; }
+}
+
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("sourceQueue", ConnectionStringSetting = "TriggerConnectionString")] TestClass rabbitMQEvent,
+[RabbitMQ("destinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<TestClass> outputPocObj,
+ILogger log)
+{
+    // send the message
+    await outputPocObj.Add(rabbitMQEvent);
+}
+```
+
+# <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+In het volgende voor beeld ziet u een RabbitMQ-uitvoer binding in eenfunction.jsin een bestand en een [C#-script functie](functions-reference-csharp.md) die gebruikmaakt *van* de binding. De functie leest in het bericht van een HTTP-trigger en voert deze uit naar de RabbitMQ-wachtrij.
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+    "bindings": [
+        {
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "function",
+            "name": "input",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+Dit is de C# Script-code:
+
+```csx
+using System;
+using Microsoft.Extensions.Logging;
+
+public static void Run(string input, out string outputMessage, ILogger log)
+{
+    log.LogInformation(input);
+    outputMessage = input;
+}
+```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+In het volgende voor beeld ziet u een RabbitMQ-uitvoer binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie leest in het bericht van een HTTP-trigger en voert deze uit naar de RabbitMQ-wachtrij.
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+    "bindings": [
+        {
+            "type": "httpTrigger",
+            "direction": "in",
+            "authLevel": "function",
+            "name": "input",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+Dit is de Java script-code:
+
+```javascript
+module.exports = function (context, input) {
+    context.bindings.myQueueItem = input.body;
+    context.done();
+};
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+In het volgende voor beeld ziet u een RabbitMQ-uitvoer binding in een *function.jsin* het bestand en een python-functie die gebruikmaakt van de binding. De functie leest in het bericht van een HTTP-trigger en voert deze uit naar de RabbitMQ-wachtrij.
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+        },
+        {
+            "type": "rabbitMQ",
+            "name": "outputMessage",
+            "queueName": "outputQueue",
+            "connectionStringSetting": "connectionStringAppSetting",
+            "direction": "out"
+        }
+    ]
+}
+```
+
+In *_\_ init_ \_ . py* kunt u een bericht naar de wachtrij schrijven door een waarde door te geven aan de- `set` methode.
+
+```python
+import azure.functions as func
+
+def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
+    input_msg = req.params.get('message')
+    msg.set(input_msg)
+    return 'OK'
+```
+
+# <a name="java"></a>[Java](#tab/java)
+
+In het volgende voor beeld ziet u een Java-functie die een bericht verzendt naar de RabbitMQ-wachtrij wanneer deze elke 5 minuten wordt geactiveerd door een timer trigger.
+
+```java
+@FunctionName("RabbitMQOutputExample")
+public void run(
+@TimerTrigger(name = "keepAliveTrigger", schedule = "0 */5 * * * *") String timerInfo,
+@RabbitMQOutput(connectionStringSetting = "rabbitMQ", queueName = "hello") OutputBinding<String> output,
+final ExecutionContext context) {
+    output.setValue("Some string");
+}
+```
+
+---
+
+## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+Gebruik in [C# class libraries](functions-dotnet-class-library.md)het [RabbitMQAttribute](https://github.com/Azure/azure-functions-rabbitmq-extension/blob/dev/src/RabbitMQAttribute.cs).
+
+Dit is een `RabbitMQAttribute` kenmerk in een methode handtekening:
+
+```csharp
+[FunctionName("RabbitMQOutput")]
+public static async Task Run(
+[RabbitMQTrigger("SourceQueue", ConnectionStringSetting = "TriggerConnectionString")] string rabbitMQEvent,
+[RabbitMQ("DestinationQueue", ConnectionStringSetting = "OutputConnectionString")]IAsyncCollector<string> outputEvents,
+ILogger log)
+{
+    ...
+}
+```
+
+Zie C#-voor [beeld](#example)voor een volledig voor beeld.
+
+# <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+Kenmerken worden niet ondersteund door C# Script.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Kenmerken worden niet ondersteund door JavaScript.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Kenmerken worden niet ondersteund door Python.
+
+# <a name="java"></a>[Java](#tab/java)
+
+`RabbitMQOutput`Met de aantekening kunt u een functie maken die wordt uitgevoerd wanneer een RabbitMQ-bericht wordt verzonden. Beschik bare configuratie opties zijn wachtrij naam en connection string naam. Ga naar de [RabbitMQOutput Java-aantekeningen](https://github.com/Azure/azure-functions-rabbitmq-extension/blob/dev/binding-library/java/src/main/java/com/microsoft/azure/functions/rabbitmq/annotation/RabbitMQOutput.java)voor meer informatie over de para meters.
+
+Zie het [voor beeld](#example) van een uitvoer binding voor meer details.
+
+---
+
+## <a name="configuration"></a>Configuratie
+
+De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen die u instelt in het bestand *function.json* en het kenmerk `RabbitMQ`.
+
+|function.json-eigenschap | Kenmerkeigenschap |Beschrijving|
+|---------|---------|----------------------|
+|**type** | N.v.t. | Moet worden ingesteld op ' RabbitMQ '.|
+|**direction** | N.v.t. | Moet worden ingesteld op 'out'. |
+|**name** | N.v.t. | De naam van de variabele die de wachtrij in functie code vertegenwoordigt. |
+|**queueName**|**QueueName**| De naam van de wachtrij waarnaar berichten moeten worden verzonden. |
+|**Hostnaam**|**Hostnaam**|(optioneel als u ConnectStringSetting gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
+|**userNameSetting**|**UserNameSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Naam voor toegang tot de wachtrij |
+|**passwordSetting**|**PasswordSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+|**connectionStringSetting**|**ConnectionStringSetting**|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt. (Bijvoorbeeld: in *function.jsop*: connectionStringSetting: "rabbitMQConnection" <br> In *local.settings.jsop*: "rabbitMQConnection": "< ActualConnectionstring >")|
+|**Importeer**|**Poort**|Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+
+## <a name="usage"></a>Gebruik
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+Gebruik de volgende parameter typen voor de uitvoer binding:
+
+* `byte[]` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `string` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `POCO` -Als de waarde van de para meter niet is opgemaakt als een C#-object, wordt er een fout melding ontvangen. Zie C#-voor [beeld](#example)voor een volledig voor beeld.
+
+Wanneer u werkt met C#-functies:
+
+* Asynchrone functies hebben een retour waarde nodig of `IAsyncCollector` in plaats van een `out` para meter.
+
+# <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+Gebruik de volgende parameter typen voor de uitvoer binding:
+
+* `byte[]` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `string` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `POCO` -Als de waarde van de para meter niet is opgemaakt als een C#-object, wordt er een fout melding ontvangen.
+
+Bij het werken met C#-script functies:
+
+* Asynchrone functies hebben een retour waarde nodig of `IAsyncCollector` in plaats van een `out` para meter.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Het RabbitMQ-bericht wordt verzonden via een teken reeks.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Het RabbitMQ-bericht wordt verzonden via een teken reeks.
+
+# <a name="java"></a>[Java](#tab/java)
+
+Gebruik de volgende parameter typen voor de uitvoer binding:
+
+* `byte[]` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `string` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
+* `POJO` -Als de waarde van de para meter niet is opgemaakt als een Java-object, wordt er een fout melding ontvangen.
+
+---
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Een functie uitvoeren wanneer een RabbitMQ-bericht wordt gemaakt (trigger)](./functions-bindings-rabbitmq-trigger.md)

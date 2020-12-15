@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/14/2019
 ms.author: apimpm
-ms.openlocfilehash: 5e995d008b441e122f9e93e5f7c29f0bb9bf9c53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8c6fce5b22d67dd1022fbaac763ea5df3b0930f
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254687"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505372"
 ---
 # <a name="use-azure-api-management-with-microservices-deployed-in-azure-kubernetes-service"></a>Azure API Management gebruiken met micro services die zijn geïmplementeerd in azure Kubernetes service
 
@@ -39,7 +39,7 @@ In een Kubernetes-cluster worden containers in een [peul](https://kubernetes.io/
 
 Kubernetes heeft het concept van [Services](https://kubernetes.io/docs/concepts/services-networking/service/)geïntroduceerd om dit probleem op te lossen. Een Kubernetes-service is een Abstraction Layer waarmee een logische groep van peulen wordt gedefinieerd en die de bloot stelling van externe verkeer, taak verdeling en service detectie voor die peulen mogelijk maakt. 
 
-Wanneer we onze micro Services als Api's met API Management kunnen publiceren, moeten we nadenken over het toewijzen van onze services in Kubernetes aan Api's in API Management. Er zijn geen set-regels. Het is afhankelijk van hoe u uw zakelijke mogelijkheden of domeinen in micro services aan het begin hebt ontworpen en gepartitioneerd. Als bijvoorbeeld het verschil achter een service verantwoordelijk is voor alle bewerkingen op een bepaalde resource (bijvoorbeeld klant), kan de service worden toegewezen aan één API. Als bewerkingen op een resource zijn gepartitioneerd in meerdere micro Services (bijvoorbeeld GetOrder, PlaceOrder), kunnen meerdere services logisch worden geaggregeerd in één API in API Management (zie figuur 1). 
+Wanneer we onze micro Services als Api's met API Management kunnen publiceren, moeten we nadenken over het toewijzen van onze services in Kubernetes aan Api's in API Management. Er zijn geen set-regels. Het is afhankelijk van hoe u uw zakelijke mogelijkheden of domeinen in micro services aan het begin hebt ontworpen en gepartitioneerd. Als bijvoorbeeld de peul achter een service verantwoordelijk is voor alle bewerkingen op een bepaalde resource (bijvoorbeeld klant), kan de service worden toegewezen aan één API. Als bewerkingen op een resource zijn gepartitioneerd in meerdere micro Services (bijvoorbeeld GetOrder, PlaceOrder), kunnen meerdere services logisch worden geaggregeerd in één API in API Management (zie figuur 1). 
 
 De toewijzingen kunnen ook worden ontwikkeld. Omdat API Management een gevel voor de micro Services maakt, kunnen we de micro Services in de loop van de tijd op relateren en rechts de juiste grootte hebben. 
 
@@ -60,11 +60,11 @@ Dit kan de eenvoudigste optie zijn voor het implementeren van API Management voo
 
 ![Services rechtstreeks publiceren](./media/api-management-aks/direct.png)
 
-Voordelen:
+-Professionals
 * Eenvoudige configuratie aan de API Management zijde omdat deze niet in het cluster-VNet hoeft te worden geïnjecteerd
 * Er is geen wijziging aan de AKS-zijde als Services al openbaar zijn en verificatie logica al aanwezig is in micro Services
 
-Nadelen:
+Nadelen
 * Mogelijk beveiligings risico vanwege open bare zicht baarheid van service-eind punten
 * Geen enkel invoer punt voor binnenkomend cluster verkeer
 * Bemoeilijkt micro Services met dubbele verificatie logica
@@ -79,12 +79,12 @@ Wederzijdse TLS-verificatie wordt standaard [ondersteund](./api-management-howto
 ![Publiceren via een ingangs controller](./media/api-management-aks/ingress-controller.png)
 
 
-Voordelen:
+-Professionals
 * Eenvoudige configuratie aan de API Management-zijde omdat deze niet hoeft te worden geïnjecteerd in het cluster-VNet en mTLS systeem eigen wordt ondersteund
 * Centraliseert de beveiliging voor binnenkomend cluster verkeer op de ingangs controller-laag
 * Vermindert het beveiligings risico door de open bare cluster eindpunten te minimaliseren
 
-Nadelen:
+Nadelen
 * Verhoogt de complexiteit van de cluster configuratie vanwege extra werk voor het installeren, configureren en onderhouden van de ingangs controller en het beheren van certificaten die worden gebruikt voor mTLS
 * Beveiligings risico vanwege open bare zicht baarheid van de ingangs-endpoint (s)
 
@@ -109,13 +109,13 @@ Als alle API-gebruikers zich in het cluster-VNet bevinden, kan de interne modus 
 
  In beide gevallen is het AKS-cluster niet openbaar zichtbaar. Vergeleken met optie 2 is de ingangs controller mogelijk niet nodig. Afhankelijk van uw scenario en configuratie is er mogelijk nog steeds verificatie vereist tussen API Management en uw micro Services. Als er bijvoorbeeld een service-net wordt aangenomen, is hiervoor altijd wederzijdse TLS-verificatie vereist. 
 
-Voordelen:
+-Professionals
 * De veiligste optie omdat het AKS-cluster geen openbaar eind punt heeft
 * Vereenvoudigt de cluster configuratie omdat er geen openbaar eind punt is
 * De mogelijkheid om zowel API Management als AKS in het VNet te verbergen met de interne modus
 * Mogelijkheid om netwerk verkeer te beheren met Azure-netwerk mogelijkheden zoals netwerk beveiligings groepen (NSG)
 
-Nadelen:
+Nadelen
 * Verhoogt de complexiteit van het implementeren en configureren van API Management voor werken binnen het VNet
 
 ## <a name="next-steps"></a>Volgende stappen

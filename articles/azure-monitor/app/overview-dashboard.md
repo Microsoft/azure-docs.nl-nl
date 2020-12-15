@@ -3,12 +3,12 @@ title: Overzichts dashboard voor Azure-toepassing Insights | Microsoft Docs
 description: Bewaak toepassingen met Azure-toepassing inzicht en overzicht dashboard functionaliteit.
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 714488d88b269f252dfd6677f847db315969a270
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b0708fa70d3a3ecb406f1d974bb1f2b47e55b40
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90970606"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504097"
 ---
 # <a name="application-insights-overview-dashboard"></a>Application Insights-overzichts dashboard
 
@@ -53,7 +53,7 @@ Als u terug wilt gaan naar de overzichts ervaring, selecteert u:
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Als u **tegel instellingen configureren** selecteert en een aangepast tijds bereik van meer dan 31 dagen instelt, wordt uw dash board niet meer dan 31 dagen aan gegevens weer gegeven, zelfs met de standaard Bewaar periode van 90 dagen. Er is momenteel geen oplossing voor dit gedrag.
+Er is momenteel een limiet van 30 dagen aan gegevens voor gegevens die worden weer gegeven in een dash board. Als u een tijd filter wilt selecteren dat groter is dan 30 dagen, of als u **tegel instellingen configureren** selecteert en een aangepast tijds bereik hebt ingesteld dat langer is dan 30 dagen, zal uw dash board niet meer dan 30 dagen aan gegevens worden weer gegeven, zelfs met de standaard gegevens retentie van 90 dagen. Er is momenteel geen oplossing voor dit gedrag.
 
 ## <a name="next-steps"></a>Volgende stappen
 

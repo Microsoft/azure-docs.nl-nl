@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: b5a3ec1d6e33c08b460088c9aeb4fd18f6bf29ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 410b73d3f9011f9384fafa18394d9318e3eafa67
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88864677"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504488"
 ---
 ## <a name="authentication"></a>Verificatie
 
@@ -151,7 +151,7 @@ def get_token(subscription_key):
 
 Het toegangs token moet worden verzonden naar de service als de `Authorization: Bearer <TOKEN>` header. Elk toegangs token is 10 minuten geldig. U kunt op elk gewenst moment een nieuw token verkrijgen, maar om het netwerk verkeer en de latentie te minimaliseren, raden we u aan hetzelfde token gedurende negen minuten te gebruiken.
 
-Hier volgt een voor beeld van een HTTP-aanvraag voor tekst naar spraak REST API:
+Hier volgt een voor beeld van een HTTP-aanvraag voor de spraak-naar-tekst REST API voor korte audio:
 
 ```http
 POST /cognitiveservices/v1 HTTP/1.1

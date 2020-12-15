@@ -1,5 +1,5 @@
 ---
-title: Controle sfeer liggen Studio gebruiken
+title: Purview Studio gebruiken
 description: In dit conceptuele artikel wordt beschreven hoe u Azure controle sfeer liggen Studio kunt gebruiken.
 author: nayenama
 ms.author: nayenama
@@ -7,14 +7,14 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: 1b2d371153d6612f454e1bf51b78c6b6189a08b2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: d8e6c4b2addf9745b2ddabe8f6fdad9d82dce59f
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552624"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503947"
 ---
-# <a name="use-purview-studio"></a>Controle sfeer liggen Studio gebruiken
+# <a name="use-purview-studio"></a>Purview Studio gebruiken
 
 Dit artikel geeft een overzicht van enkele van de belangrijkste functies van Azure controle sfeer liggen.
 
@@ -44,21 +44,22 @@ De volgende lijst bevat een overzicht van de belangrijkste functies van de **Sta
     - Gebruikers, groepen en toepassingen
     - Gegevensbronnen
     - Assets
-    - Termen van woorden lijst
+    - Woordenlijsttermen
 
 3. Met het zoekvak kunt u zoeken naar gegevensassets in de gegevens catalogus.
 
 4. Met de knoppen voor snelle toegang krijgt u toegang tot veelgebruikte functies van de toepassing. Welke knoppen worden weer gegeven, is afhankelijk van de rol die is toegewezen aan uw gebruikers account.
 
-    - Voor de *gegevens bron beheerder* zijn de knoppen voor snelle toegang: **gegevens bronnen** en **kennis centrum** registreren.
     - Voor *Data curator* zijn de knoppen **kennis centrum**, **Bladeren door assets**, de **woorden lijst beheren** en **inzichten weer geven**.
     - Voor de *gegevens lezer* zijn de aanbevolen knoppen **kennis centrum**, **Bladeren door assets**, **woorden lijst weer geven** en **inzichten weer geven**.
+    - Voor *gegevens bron beheer*  +  *gegevens curator* zijn de aanbevolen knoppen **kennis centrum**, **gegevens bronnen registreren**, **Bladeren door assets** en **woorden lijst beheren**.
+    - Voor de gegevens lezer van de *gegevensbron beheerder*  +  zijn de aanbevolen knoppen **kennis centrum**, **gegevens bronnen registreren**, **Bladeren door assets** en **woorden lijst weer geven**.
 
 5. De linkernavigatiebalk helpt u bij het zoeken naar de hoofd pagina's van de toepassing. Welke knoppen worden weer gegeven, is afhankelijk van de rol die is toegewezen aan uw gebruikers account.
 
-    - Voor de *gegevens bron beheerder* zijn de knoppen  **Home**, **Sources** en **Management Center**.
     - Voor *Data curator* zijn de knoppen **Home**, **Glossary**, **Insights** en **Management Center**.
     - Voor de *gegevens lezer* zijn de knoppen **Home**, **Glossary**, **Insights** en **Management Center**.
+    - Voor *gegevens bron beheer*  +  *gegevens curator/lezer* zijn de knoppen **Home**, **bronnen**, **terminologie**, **inzichten** en **Management Center**.
   
 6. Op het tabblad **recent geopend** ziet u een lijst met recent geopende gegevensassets. Zie voor meer informatie over het openen van assets [de Data Catalog zoeken](how-to-search-catalog.md) en [Bladeren per activum type](how-to-browse-catalog.md#browse-experience).  Tabblad **mijn items** is een lijst met gegevens assets die eigendom zijn van de aangemelde gebruiker.
 7. **Handige koppelingen** bevatten koppelingen naar status van regio's, Documentatie, prijzen, overzicht en controle sfeer liggen status
@@ -73,6 +74,9 @@ In het kennis centrum vindt u alle Video's en zelf studies die betrekking hebben
 Elke UX in azure controle sfeer liggen Studio bevat rond leidingen om een overzicht van de pagina te geven. Als u de rond leiding wilt starten, selecteert u **Help** op de bovenste balk en selecteert u **begeleide rond leidingen**.
 
 :::image type="content" source="./media/use-purview-studio/guided-tour.png" alt-text="Scherm afbeelding van de rond leiding.":::
+
+> [!Important]
+   > De beheerder van de gegevens bron heeft geen toegang tot controle sfeer liggen Studio.
 
 ## <a name="next-steps"></a>Volgende stappen
 

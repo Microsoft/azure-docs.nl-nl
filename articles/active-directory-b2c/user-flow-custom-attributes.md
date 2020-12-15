@@ -7,42 +7,50 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/30/2018
+ms.date: 12/14/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2233dbd7b0e669c23397b4bc6a84f2bfdc208391
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: 9759c1109c7be279520fa187bd3366bcac505d46
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952808"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503740"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Aangepaste kenmerken definiëren in Azure Active Directory B2C
 
- Elke klant gerichte toepassing heeft unieke vereisten voor de gegevens die moeten worden verzameld. De Tenant van uw Azure Active Directory B2C (Azure AD B2C) wordt geleverd met een ingebouwde set informatie die is opgeslagen in kenmerken, zoals de naam, de voor waarde, de plaats en de post code. Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk klant account uitbreiden.
+[!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
- U kunt aangepaste kenmerken in de [Azure Portal](https://portal.azure.com/) maken en gebruiken in uw registratie gebruikers stromen, registraties of aanmeldings stromen van gebruikers of profiel bewerkings gebruikers stromen. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](manage-user-accounts-graph-api.md).
+In het artikel [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid](configure-user-input.md) leert u hoe u ingebouwde [kenmerken van gebruikers profielen](user-profile-attributes.md)gebruikt. In dit artikel schakelt u een aangepast kenmerk in de map Azure Active Directory B2C (Azure AD B2C) in. Later kunt u het nieuwe kenmerk gebruiken als aangepaste claim in [gebruikers stromen](user-flow-overview.md) of [aangepaste beleids regels](custom-policy-get-started.md) tegelijk.
+
+Uw Azure AD B2C Directory wordt geleverd met een [ingebouwde set kenmerken](user-profile-attributes.md). Het is echter vaak nodig om uw eigen kenmerken te maken voor het beheren van uw specifieke scenario, bijvoorbeeld wanneer:
+
+* Een klant gerichte toepassing moet een **LoyaltyId** -kenmerk persistent maken.
+* Een id-provider heeft een unieke gebruikers-id, **uniqueUserGUID**, die persistent moet zijn.
+* Voor een aangepaste gebruikers traject moet de status van de gebruiker, **migrationStatus**, worden behouden, zodat er een andere logica kan worden uitgevoerd.
+
+Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk gebruikers account uitbreiden. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](manage-user-accounts-graph-api.md).
+
+## <a name="prerequisites"></a>Vereisten
+
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-custom-attribute"></a>Een aangepast kenmerk maken
 
 1. Meld u als globale beheerder van de Azure AD B2C-tenant aan bij [Azure Portal](https://portal.azure.com/).
-2. Zorg ervoor dat u de map met uw Azure AD B2C-tenant gebruikt door hiernaar over te schakelen rechtsboven in de Azure Portal. Selecteer de abonnementsgegevens en selecteer vervolgens **Schakelen tussen mappen**.
-
-    ![Overschakelen naar de Azure AD B2C-tenant](./media/user-flow-custom-attributes/switch-directories.png)
-
-    Kies de map met uw tenant.
-
-    ![B2C-Tenant gemarkeerd in Directory-en abonnements filter](./media/user-flow-custom-attributes/select-directory.PNG)
-
-3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
-4. Selecteer **gebruikers kenmerken** en selecteer vervolgens **toevoegen**.
-5. Geef een **naam** op voor het aangepaste kenmerk (bijvoorbeeld ' ShoeSize ')
-6. Kies een **gegevens type**. Alleen **String**, **Boolean** en **int** zijn beschikbaar.
-7. Voer desgewenst een **Beschrijving** in voor informatieve doel einden.
-8. Klik op **Create**.
+1. Zorg ervoor dat u de map met uw Azure AD B2C-tenant gebruikt door hiernaar over te schakelen rechtsboven in de Azure Portal. Selecteer de abonnementsgegevens en selecteer vervolgens **Schakelen tussen mappen**.
+1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
+1. Selecteer **gebruikers kenmerken** en selecteer vervolgens **toevoegen**.
+1. Geef een **naam** op voor het aangepaste kenmerk (bijvoorbeeld ' ShoeSize ')
+1. Kies een **gegevens type**. Alleen **String**, **Boolean** en **int** zijn beschikbaar.
+1. Voer desgewenst een **Beschrijving** in voor informatieve doel einden.
+1. Klik op **Create**.
 
 Het aangepaste kenmerk is nu beschikbaar in de lijst met **gebruikers kenmerken** en voor gebruik in uw gebruikers stromen. Een aangepast kenmerk wordt alleen gemaakt wanneer het voor de eerste keer wordt gebruikt in een gebruikers stroom en niet wanneer u het toevoegt aan de lijst met **gebruikers kenmerken**.
+
+::: zone pivot="b2c-user-flow"
 
 ## <a name="use-a-custom-attribute-in-your-user-flow"></a>Een aangepast kenmerk gebruiken in uw gebruikers stroom
 
@@ -53,3 +61,113 @@ Het aangepaste kenmerk is nu beschikbaar in de lijst met **gebruikers kenmerken*
 1. Klik op **Opslaan**.
 
 Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom die gebruikmaakt van het zojuist gemaakte aangepaste kenmerk, kan het object in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)worden opgevraagd. U kunt ook de functie [gebruikers stroom uitvoeren](./tutorial-create-user-flows.md) op de gebruikers stroom gebruiken om de klant ervaring te controleren. Nu ziet u **ShoeSize** in de lijst met kenmerken die tijdens de registratie worden verzameld en wordt deze weer gegeven in het token dat wordt teruggestuurd naar uw toepassing.
+
+::: zone-end
+
+## <a name="azure-ad-b2c-extensions-app"></a>App voor Azure AD B2C extensies
+
+Extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing met de naam B2C-Extensions-app. Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure AD B2C, app-registraties.
+
+De *extensie-eigenschap*, het *aangepaste kenmerk* en de *aangepaste claim* verwijzen naar hetzelfde item in de context van dit artikel. De naam kan variëren, afhankelijk van de context, zoals toepassing, object of beleid.
+
+## <a name="get-the-application-properties"></a>De toepassings eigenschappen ophalen
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
+1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
+1. Selecteer **app-registraties** en selecteer vervolgens **alle toepassingen**.
+1. Selecteer de `b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.`-toepassing.
+1. Kopieer de volgende id's naar het klem bord en sla ze op:
+    * **Toepassings-id**. Bijvoorbeeld: `11111111-1111-1111-1111-111111111111`.
+    * **Object-id**. Bijvoorbeeld: `22222222-2222-2222-2222-222222222222`.
+
+## <a name="using-custom-attribute-with-ms-graph-api"></a>Aangepast kenmerk gebruiken met MS Graph API
+
+Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de Conventie `extension_ApplicationClientID_attributename` , waarbij de de `ApplicationClientID` toepassing is van de **toepassings-id (client)** van de `b2c-extensions-app` toepassing. Houd er rekening mee dat de ID van de **toepassing (client)** zoals deze wordt weer gegeven in de naam van het uitbreidings kenmerk geen afbreek streepjes bevat. Bijvoorbeeld:
+
+```json
+"extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
+``` 
+
+::: zone pivot="b2c-custom-policy"
+
+## <a name="modify-your-custom-policy"></a>Aangepast beleid wijzigen
+
+Als u aangepaste kenmerken in uw beleid wilt inschakelen, geeft u de **toepassings-id** en toepassings **object-id** op in de AAD-Common technische profiel meta gegevens. Het *Aad-algemene* technische profiel is te vinden in het basis [Azure Active Directory](active-directory-technical-profile.md) technische profiel en biedt ondersteuning voor Azure AD-gebruikers beheer. Andere technische profielen van Azure AD bevatten de AAD-Common om de configuratie te benutten. Overschrijf het AAD-Common technische profiel in het extensie bestand.
+
+1. Open het bestand extensies van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkExtensions.xml`**</em> .
+1. Zoek het element ClaimsProviders. Voeg een nieuwe ClaimsProvider toe aan het ClaimsProviders-element.
+1. Vervang door `ApplicationObjectId` de object-id die u eerder hebt vastgelegd. Vervang vervolgens door `ClientId` de toepassings-id die u eerder in het onderstaande fragment hebt vastgelegd.
+
+    ```xml
+    <ClaimsProvider>
+      <DisplayName>Azure Active Directory</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="AAD-Common">
+          <Metadata>
+            <!--Insert b2c-extensions-app application ID here, for example: 11111111-1111-1111-1111-111111111111-->  
+            <Item Key="ClientId"></Item>
+            <!--Insert b2c-extensions-app application ObjectId here, for example: 22222222-2222-2222-2222-222222222222-->
+            <Item Key="ApplicationObjectId"></Item>
+          </Metadata>
+        </TechnicalProfile>
+      </TechnicalProfiles> 
+    </ClaimsProvider>
+    ```
+
+## <a name="upload-your-custom-policy"></a>Uw aangepaste beleid uploaden
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+2. Zorg ervoor dat u de map met uw Azure AD-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C-Tenant bevat.
+3. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
+4. Selecteer een **Framework voor identiteits ervaring**.
+5. Selecteer **aangepast beleid uploaden** en upload de TrustFrameworkExtensions.xml-beleids bestanden die u hebt gewijzigd.
+
+> [!NOTE]
+> De eerste keer dat het technische profiel van Azure AD de claim naar de map persistent maakt, wordt gecontroleerd of het aangepaste kenmerk bestaat. Als dat niet het geval is, wordt het aangepaste kenmerk gemaakt.  
+
+## <a name="create-a-custom-attribute-through-azure-portal"></a>Een aangepast kenmerk maken via Azure Portal
+
+Dezelfde extensie kenmerken worden gedeeld door ingebouwde en aangepaste beleids regels. Wanneer u aangepaste kenmerken toevoegt via de portal-ervaring, worden deze kenmerken geregistreerd met behulp van de **B2C-extensies-app** die aanwezig zijn in elke B2C-Tenant.
+
+U kunt deze kenmerken maken met behulp van de portal-gebruikers interface voor of nadat u ze in uw aangepaste beleids regels gebruikt. Wanneer u een kenmerk **loyaltyId** in de portal maakt, moet u dit als volgt:
+
+|Naam     |Gebruikt in |
+|---------|---------|
+|`extension_loyaltyId`  | Aangepast beleid|
+|`extension_<b2c-extensions-app-guid>_loyaltyId`  | [Microsoft Graph API](manage-user-accounts-graph-api.md)|
+
+In het volgende voor beeld ziet u hoe aangepaste kenmerken in een Azure AD B2C aangepaste beleids claim definitie worden gebruikt.
+
+```xml
+<BuildingBlocks>
+  <ClaimsSchema>
+    <ClaimType Id="extension_loyaltyId">
+      <DisplayName>Loyalty Identification</DisplayName>
+      <DataType>string</DataType>
+      <UserHelpText>Your loyalty number from your membership card</UserHelpText>
+      <UserInputType>TextBox</UserInputType>
+    </ClaimType>
+  </ClaimsSchema>
+</BuildingBlocks>
+```
+
+In het volgende voor beeld ziet u het gebruik van een aangepast kenmerk in Azure AD B2C aangepast beleid in een technisch profiel, invoer, uitvoer en persistente claims.
+
+```xml
+<InputClaims>
+  <InputClaim ClaimTypeReferenceId="extension_loyaltyId"  />
+</InputClaims>
+<PersistedClaims>
+  <PersistedClaim ClaimTypeReferenceId="extension_loyaltyId" />
+</PersistedClaims>
+<OutputClaims>
+  <OutputClaim ClaimTypeReferenceId="extension_loyaltyId" />
+</OutputClaims>
+```
+
+::: zone-end
+
+## <a name="next-steps"></a>Volgende stappen
+
+Volg de richt lijnen voor het [toevoegen van claims en het aanpassen van gebruikers invoer met aangepast beleid](configure-user-input.md). In dit voor beeld wordt een ingebouwde claim ' City ' gebruikt. Als u een aangepast kenmerk wilt gebruiken, vervangt u ' City ' door uw eigen aangepaste kenmerken.

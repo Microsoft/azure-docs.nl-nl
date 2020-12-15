@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u ondersteunings aanvragen weergeeft, b
 tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.topic: how-to
-ms.date: 06/30/2020
-ms.openlocfilehash: 882dfaa802638efd98eaf6f12a33a77a9727adc2
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.date: 12/14/2020
+ms.openlocfilehash: 8110f87401da1352309fb55615093d49981c754d
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359061"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504811"
 ---
 # <a name="manage-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag beheren
 
@@ -119,9 +119,17 @@ Volg deze richt lijnen wanneer u de optie voor het uploaden van bestanden gebrui
 | -           | -     | -           | -     | -        | -          | .zix    |
 | -           | -     | -           | -     | -        | -          | . zzz    |
 
+## <a name="close-a-support-request"></a>Een ondersteunings aanvraag sluiten
+
+Als u een ondersteunings aanvraag wilt sluiten, [verzendt u een bericht](#send-a-message) waarin wordt gevraagd of de aanvraag moet worden gesloten.
+
 ## <a name="reopen-a-closed-request"></a>Een gesloten aanvraag opnieuw openen
 
 Als u een gesloten ondersteunings aanvraag opnieuw wilt openen, maakt u een [Nieuw bericht](#send-a-message), waarmee de aanvraag automatisch opnieuw wordt geopend.
+
+## <a name="cancel-a-support-plan"></a>Een ondersteunings plan annuleren
+
+Zie [een ondersteunings plan annuleren](../../cost-management-billing/manage/cancel-azure-subscription.md#cancel-a-support-plan)als u een ondersteunings plan wilt annuleren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

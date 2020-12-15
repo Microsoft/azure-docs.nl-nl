@@ -7,19 +7,19 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/11/2020
-ms.openlocfilehash: 9ce0ab34aac1a3dda823c9270f4eacebfb99166f
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.date: 12/14/2020
+ms.openlocfilehash: 7277ad060c57b44d633054c4fc4d29d151bd7192
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387663"
+ms.locfileid: "97400808"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
-Azure Cognitive Search biedt een uitgebreide query taal ter ondersteuning van een breed scala aan scenario's, van zoeken in vrije tekst tot zeer specifieke query patronen. Dit artikel bevat een overzicht van de soorten query's die u kunt maken.
+Azure Cognitive Search biedt een uitgebreide query taal ter ondersteuning van een breed scala aan scenario's, van zoeken in vrije tekst tot zeer specifieke query patronen. In dit artikel worden query aanvragen beschreven, en wat voor soort query's u kunt maken.
 
-In Cognitive Search is een query een volledige specificatie van een round-trip- **`search`** bewerking, met para meters waarmee de uitvoering van query's kan worden gewaarschuwd en het antwoord wordt weer gegeven. Para meters en parsers bepalen het type query aanvraag. In het volgende query voorbeeld wordt gebruikgemaakt van de [Zoek documenten (rest API)](/rest/api/searchservice/search-documents), gericht op de [demo-index van hotels](search-get-started-portal.md).
+In Cognitive Search is een query een volledige specificatie van een round-trip- **`search`** bewerking, met para meters waarmee de uitvoering van query's kan worden gewaarschuwd en het antwoord wordt weer gegeven. Para meters en parsers bepalen het type query aanvraag. Het volgende query voorbeeld is een vrije-tekst query met een Booleaanse operator, met behulp van de [Zoek documenten (rest API)](/rest/api/searchservice/search-documents), gericht op de verzameling [hotels-voor beeld-index](search-get-started-portal.md) documenten.
 
 ```http
 POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
@@ -34,7 +34,7 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 }
 ```
 
-Para meters die worden gebruikt tijdens het uitvoeren van query's:
+De para meters die worden gebruikt tijdens het uitvoeren van query's zijn:
 
 + **`queryType`** Hiermee stelt u de parser in, ofwel de [standaard-query-parser](search-query-simple-examples.md) (optimaal voor zoeken in volledige tekst), of de [volledige lucene-query-parser](search-query-lucene-examples.md) die wordt gebruikt voor geavanceerde query constructies, zoals reguliere expressies, proximity Search, fuzzy en Joker tekens zoeken.
 
@@ -66,7 +66,7 @@ Als uw zoek toepassing een zoekvak bevat waarmee term invoer wordt verzameld, is
 
 In Cognitive Search is zoeken in volledige tekst gebaseerd op de Apache Lucene-query-engine. Query reeksen in zoeken in volledige tekst worden lexicale analyse om scans efficiënter te maken. Analyse omvat alle voor waarden voor alle termen, waarbij stop woorden zoals "de" en de voor waarden voor primitieve hoofd formulieren worden verminderd. De standaard-Analyzer is standaard-lucene.
 
-Wanneer overeenkomende voor waarden worden gevonden, wordt in de query-engine een zoek document met de overeenkomst weer gegeven, worden de documenten gerangschikt op basis van relevantie en wordt de bovenste 50 (standaard) in het antwoord geretourneerd.
+Wanneer overeenkomende voor waarden worden gevonden, wordt in de query-engine een zoek document met de overeenkomst met de document sleutel of ID voor het verzamelen van veld waarden weer gegeven, worden de documenten gerangschikt op basis van relevantie en wordt de bovenste 50 (standaard) geretourneerd in het antwoord of een ander nummer als u hebt opgegeven **`top`** .
 
 Als u Zoek opdrachten in volledige tekst implementeert, kunt u zien hoe u met de tokens van uw inhoud fouten oplost bij het opsporen van problemen met query's. Query's over teken reeksen met afbreek streepjes of speciale tekens kunnen nood zakelijk een andere analysator dan de standaard-lucene gebruiken om ervoor te zorgen dat de index de juiste tokens bevat. U kunt de standaard instelling vervangen door [taal analysen](index-add-language-analyzers.md#language-analyzer-list) of [gespecialiseerde](index-add-custom-analyzers.md#AnalyzerTable) analyse functies waarmee de lexicale analyse wordt gewijzigd. Een voor beeld is een [tref woord](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) dat de volledige inhoud van een veld als één token behandelt. Dit is handig voor gegevens zoals post codes, Id's en sommige product namen. Zie voor meer informatie zoeken op de [gedeeltelijke term en patronen met speciale tekens](search-query-partial-matching.md).
 
@@ -78,7 +78,7 @@ Als u een intensief gebruik van Booleaanse Opera tors verwacht, wat waarschijnli
 
 ## <a name="filter-search"></a>Zoek filter
 
-Filters worden veel gebruikt in apps die Cognitive Search bevatten. Op toepassings pagina's worden filters vaak gevisualiseerd als facetten in navigatie structuren voor koppelingen voor gebruikers gerichte filters. Filters worden ook intern gebruikt om segmenten van geïndexeerde inhoud beschikbaar te maken. U kunt bijvoorbeeld filteren op een taal als een index velden bevat in het Engels en het Frans. 
+Filters worden veel gebruikt in apps die Cognitive Search bevatten. Op toepassings pagina's worden filters vaak gevisualiseerd als facetten in navigatie structuren voor koppelingen voor gebruikers gerichte filters. Filters worden ook intern gebruikt om segmenten van geïndexeerde inhoud beschikbaar te maken. U kunt bijvoorbeeld een zoek pagina initialiseren met een filter voor een product categorie of een taal als een index velden bevat in het Engels en het Frans.
 
 U hebt mogelijk ook filters nodig om een speciaal query formulier aan te roepen, zoals wordt beschreven in de volgende tabel. U kunt een filter gebruiken met een niet-opgegeven zoek opdracht ( **`search=*`** ) of met een query reeks die termen, zinsdelen, Opera tors en patronen bevat.
 

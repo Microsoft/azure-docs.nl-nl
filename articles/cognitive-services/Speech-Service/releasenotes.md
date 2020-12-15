@@ -11,14 +11,57 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: c6cc033e4814553020957310224a8ed4cdacbc8e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 2db93ec6806d4b9cc8c8ac17cfb2c15458bf4dc9
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483951"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401148"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
+
+## <a name="text-to-speech-2020-december-release"></a>Tekst-naar-spraak 2020-december release
+
+**Nieuwe Neural stemmen in GA en preview**
+
+51 nieuwe stemmen uitgebracht voor een totaal van 129 Neural stemmen tussen 54 talen/land instellingen:
+
+- **46 nieuwe stemmen in ga land instellingen**: Shakir in het `ar-EG` Arabisch (Egypte), Hamed in het `ar-SA` Arabisch (Saoedi-Arabië), Borislav in `bg-BG` Bulgaars (Bulgarije), Joana in `ca-ES` Catalaans (Spanje), Antonin in `cs-CZ` Tsjechië, Jeppe in het `da-DK` Deens (Denemarken), Jonas in het `de-AT` Duits (Oosten rijk), Jan in het `de-CH` Duits (Zwitser land), Nestoras in het `el-GR` Grieks (Grieken land), Liam in het `en-CA` Engels (Canada), Connor in het `en-IE` Engels (Ierland), Madhur in `en-IN` Hindi (India), Mohan in Telugu (India), Prabhat in het Engels (India), `en-IN` `en-IN` Valluvar in `en-IN` Tamil (India), Enric in `es-ES` Catalaans (Spanje), Kert in `et-EE` Estlands (Estland), Harri in `fi-FI` Fins (Finland), Selma in `fi-FI` Fins (Finland), Fabrice in `fr-CH` Frans (Zwitser land), Colm in `ga-IE` Ierland (Ierland), AVRI in het `he-IL` Hebreeuws (Israël), Srecko in `hr-HR` Kroatisch (Kroatië), Tamas in `hu-HU` Hong aars (Hongarije), Gadis in `id-ID` Indonesisch (Indonesië), Leonas in `lt-LT` Litouws (Litouwen), Nils in `lv-LV` Lets (Letland), Osman in `ms-MY` Maleis (Maleisië), Joseph in `mt-MT` Maltees (Malta) , Finn in `nb-NO` Noors, Bokmål (Noor wegen), Pernille in `nb-NO` Noors, Bokmål (Noor wegen), Fenna in het `nl-NL` Nederlands (Nederland), Maarten `nl-NL` Nederlands (Nederland), Agnieszka in `pl-PL` Pools (Polen), Marek in `pl-PL` Pools (Polen), Duarte in het Portugees (Brazilië), Raquel in het `pt-BR` Portugees ( `pt-PT` Potugal), Emil in `ro-RO` Roemeens (Roemenië), Dmitry in `ru-RU` Russisch (Rusland) Svetlana in `ru-RU` Russisch (Rusland), Lukas in `sk-SK` Slowaaks (Slowakije), rok in `sl-SI` Sloveens (Slovenië), Mattias in `sv-SE` Zweeds (Zweden), Sofie in `sv-SE` Zweeds (Zweden), niwat in het `th-TH` Thais (Thai land), Ahmet in `tr-TR` Turks (Turkije), NamMinh in `vi-VN` Vietnamees (Vietnam), HsiaoChen in `zh-TW` Taiwan Mandarijn (Taiwan), YunJhe in `zh-TW` Taiwan Mandarijn (Taiwan), HiuMaan in het `zh-HK` Chinees Kantonees (Hongkong), WanLung in het `zh-HK` Chinees Kantonees (Hong Kong).
+
+- **5 nieuwe stemmen in Preview-land instellingen**: Kert in `et-EE` Estlands (Estland), Colm in Ierland `ga-IE` (Ierland), Nils in `lv-LV` Lets (Letland), Leonas in `lt-LT` Litouws (Litouwen), Joseph in `mt-MT` Maltees (Malta).
+
+In deze release ondersteunen we nu een totaal van 129 Neural stemmen op 54 talen/land instellingen. Daarnaast zijn meer dan 70 standaard stemmen beschikbaar in 49 talen/land instellingen. Ga naar [taal ondersteuning](language-support.md#text-to-speech) voor de volledige lijst.
+
+**Updates voor het maken van audio-inhoud**
+- Verbeterde gebruikers interface voor spraak selectie met spraak categorieën en gedetailleerde gesp roken beschrijvingen. 
+- Intonation tuning is ingeschakeld voor alle Neural stemmen in verschillende talen.
+- De localizaiton van de gebruikers interface is geautomatiseerd op basis van de taal van de browser.
+- Ingeschakelde `StyleDegree` besturings elementen voor alle `zh-CN` Neural stemmen.
+Ga naar het [hulp programma](https://speech.microsoft.com/audiocontentcreation) voor het maken van een audio-inhoud om de nieuwe functies te bekijken. 
+
+**Updates voor zh-CN-stemmen**
+- Alle `zh-CN` Neural stemmen zijn bijgewerkt ter ondersteuning van Engels spreken.
+- Alle `zh-CN` Neural stemmen in te scha kelen ter ondersteuning van de intonation-aanpassing. SSML of het hulp programma voor het maken van audio-inhoud kan worden gebruikt om aan te passen voor de beste intonation.
+- Alle `zh-CN` Neural stemmen met meerdere stijlen bijgewerkt om `StyleDegree` het besturings element te ondersteunen. Emotion-intensiteit (zacht of sterk) is aanpasbaar.
+- Bijgewerkt `zh-CN-YunyeNeural` om meerdere stijlen te ondersteunen die verschillende emoties kunnen uitvoeren.
+
+## <a name="text-to-speech-2020-november-release"></a>Tekst-naar-spraak 2020-november release
+
+**Nieuwe land instellingen en stemmen in Preview**
+- Er zijn **vijf nieuwe stemmen en talen** geïntroduceerd in de Neural TTS-Port Folio. Dit zijn: respijt in Maltees (Malta), één in Litouws (Litouwen), Anu in Estlands (Estland), Orla in het Ierse (Ierland) en Everita in Lets (Letland).
+- **Vijf nieuwe `zh-CN` stemmen met meerdere stijlen en rollen ondersteunen**: Xiaohan, Xiaomo, Xiaorui, xiaoxuan en Yunxi.
+
+> Deze stemmen zijn beschikbaar in de open bare preview in drie Azure-regio's: Oost-, SouthEastAsia-en Europa West.
+
+**Neural TTS-container GA**
+- Met Neural TTS-container kunnen ontwikkel aars spraak synthese uitvoeren met de meest natuurlijke digitale stemmen in hun eigen omgeving voor specifieke vereisten op het gebied van beveiliging en gegevens beheer. Lees [hoe u spraak containers installeert](speech-container-howto.md). 
+
+**Nieuwe functies**
+- **Aangepaste stem**: enabed gebruikers een spraak model van de ene regio naar de andere kopiëren; ondersteunde eind punten worden geblokkeerd en worden hervat. Ga hier naar de [Portal](https://speech.microsoft.com/customvoice) .
+- Ondersteuning voor [SSML stilte-tag](speech-synthesis-markup.md#add-silence) . 
+- Algemene verbeteringen in de TTS-stem kwaliteit: verbeterde nauw keurigheid van de uitspraak op woord niveau in nb-NO. Gereduceerde fout van 53%.
+
+> Meer informatie vindt u in [deze technische blog](https://techcommunity.microsoft.com/t5/azure-ai/neural-text-to-speech-previews-five-new-languages-with/ba-p/1907604).
 
 ## <a name="text-to-speech-2020-october-release"></a>Tekst-naar-spraak 2020-oktober release
 
@@ -51,7 +94,7 @@ ms.locfileid: "96483951"
 **Laatste wijziging**
 - **Java script**: PullAudioOutputStream. Read () heeft een wijziging van het retour type van een interne belofte naar een systeem eigen Java script-belofte.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 - **Alle**: vaste 1,13-regressie in `SetServiceProperty` waar waarden met bepaalde speciale tekens worden genegeerd.
 - **C#**: voor beelden van vaste Windows-consoles in Visual Studio 2019 kan geen systeem eigen dll's vinden.
 - **C#**: vaste crash met geheugen beheer als de stroom wordt gebruikt als `KeywordRecognizer` invoer.
@@ -194,7 +237,7 @@ Spraak-naar-tekst vrijgegeven 26 nieuwe land instellingen in augustus: 2 Europes
 - **Doel-C**: er is ondersteuning toegevoegd voor conversaties en [conversaties](./conversation-transcription.md)voor [meerdere apparaten](./multi-device-conversation.md) transcriptie. 
 - **Python**: er is ondersteuning toegevoegd voor gecomprimeerde audio voor python in Windows en Linux. Raadpleeg [hier](./how-to-use-codec-compressed-audio-input-streams.md)de documentatie. 
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 - **Alle**: er is een probleem opgelost waardoor de KeywordRecognizer de streams na een herkenning niet meer heeft door gestuurd.
 - **Alle**: er is een probleem opgelost waardoor de stroom die is verkregen van een KeywordRecognitionResult niet het sleutel woord bevat.
 - **Alle**: er is een probleem opgelost dat de SendMessageAsync het bericht niet echt via de kabel verzendt nadat de gebruikers hun wacht tijd voor het gesprek hebben opgedaan.
@@ -291,7 +334,7 @@ Blijf op de hoogte.
 **Nieuwe functies**
 -   **C \# , C++**: Speaker Recognition Preview: met deze functie kunt u de identificatie van de spreker (die spreekt?) en de verificatie van de spreker (de spreker die hij/zij beweert te zijn). Begin met een [overzicht](./speaker-recognition-overview.md), lees het [artikel](./get-started-speaker-recognition.md)over de speaker Recognition-basis of de [API-documentatie](/rest/api/speakerrecognition/).
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 -   **C \# , C++**: de opname van een vaste microfoon werkt niet in 1,12 in de luidspreker herkenning.
 -   **Java script**: oplossingen voor tekst naar spraak in Firefox en Safari in MacOS en IOS.
 -   Correctie voor de toegangs schending van Windows Application Verifier bij gesprek transcriptie bij gebruik van acht kanalen stroom.
@@ -323,7 +366,7 @@ Blijf op de hoogte.
 - Verbeterde verbindings logica om meerdere keren te proberen verbinding te maken wanneer er service-en netwerk fouten optreden.
 - De pagina [Portal.Azure.com](https://portal.azure.com) speech Quick start is bijgewerkt, zodat ontwikkel aars de volgende stap in de Azure-spraak traject kunnen volgen.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 - **C#, Java**: er is een [probleem](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/587) opgelost met het laden van SDK-bibliotheken op Linux arm (zowel 32-bits als 64-bits).
 - **C#**: verholpen expliciete verwijdering van systeem eigen ingangen voor TranslationRecognizer-, IntentRecognizer-en Connection-objecten.
 - **C#**: vast beheer van de levens duur van audio-invoer voor het object ConversationTranscriber.
@@ -350,7 +393,7 @@ Blijf op de hoogte.
 - Java script: ondersteuning voor spraak synthese (tekst-naar-spraak) in NodeJS. Klik [hier](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech) voor meer informatie. 
 - Java script: Voeg nieuwe API'S toe om inspectie van alle berichten over verzenden en ontvangen in te scha kelen. Klik [hier](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript) voor meer informatie. 
         
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 - C#, C++: er is een probleem opgelost waardoor `SendMessageAsync` nu een binair bericht wordt verzonden als binair type. Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](/cpp/cognitive-services/speech/connection).
 - C#, C++: er is een probleem opgelost waarbij het gebruik van een `Connection MessageReceived` gebeurtenis vastloopt als dat `Recognizer` voor object is verwijderd `Connection` . Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?preserve-view=true&view=azure-dotnet), [C++](/cpp/cognitive-services/speech/connection#messagereceived).
 - Android: de grootte van de audio buffer van de microfoon is afgenomen van 800ms naar 100 MS om de latentie te verbeteren.
@@ -379,7 +422,7 @@ Blijf op de hoogte.
  - TTS maakt nu gebruik van abonnements sleutel voor verificatie en vermindert de eerste byte latentie van het eerste synthese resultaat nadat een synthesizer is gemaakt.
  - Bijgewerkte modellen voor spraak herkenning voor 19 land instellingen voor een gemiddelde reductie van een woord fout van 18,6% (es-ES, es-MX, FR-CA, fr-FR, it-IT, ja-JP, ko-KR, punt-k, zh-CN, zh-HK, nb-NO, fi-FL, ru-RU, pl-PL, CA-ES, zh-TW, th-TH, pt-PT, tr-TR). De nieuwe modellen bieden aanzienlijke verbeteringen in meerdere domeinen, inclusief dicteren, Call-Center transcriptie-en video indexerings scenario's.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
  - Er is een probleem opgelost waarbij conversatie transcriber niet correct heeft gewacht in JAVA-Api's 
  - Android x86-emulator reparatie voor Xamarin [github-probleem](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/363)
@@ -415,7 +458,7 @@ Blijf op de hoogte.
 - Het geretourneerde gegevens type voor C# is gewijzigd in om `WordLevelTimingResult.Offset` `int` `long` toegang te krijgen tot `WordLevelTimingResults` wanneer spraak gegevens langer dan twee minuten zijn.
 - `PushAudioInputStream` en `PullAudioInputStream` verzenden nu WAV-header gegevens naar de spraak service op basis van `AudioStreamFormat` , eventueel opgegeven wanneer ze zijn gemaakt. Klanten moeten nu de [ondersteunde audio-invoer indeling](how-to-use-audio-input-streams.md)gebruiken. Andere indelingen krijgen de meest optimale herkennings resultaten of kunnen andere problemen veroorzaken. 
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Zie de `OpenSSL` Update onder belang rijke wijzigingen hierboven. We hebben een crash en een prestatie probleem opgelost (conflicten met hoge belasting vergren delen) in Linux en Java. 
 - Java: verbeteringen aangebracht in het sluiten van objecten in gelijktijdige scenario's.
@@ -456,7 +499,7 @@ Blijf op de hoogte.
 - Delen van de audio transcriber-methoden worden verplaatst naar een nieuwe `Conversation` klasse.
 - Ondersteuning voor verloren voor 32-bits (ARMv7 en x86) iOS
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Herstel voor crash als lokaal `KeywordRecognizer` zonder geldige abonnements sleutel van een spraak service wordt gebruikt
 
@@ -479,7 +522,7 @@ Blijf op de hoogte.
 - TTS heeft ondersteuning voor afspelen toegevoegd voor macOS, iOS en Android.
 - Informatie over woord grens toegevoegd voor TTS.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Probleem met vast IL2CPP-Build op unit 2019 voor Android
 - Probleem opgelost met onjuiste headers in WAV-bestand invoer wordt onjuist verwerkt
@@ -519,7 +562,7 @@ Blijf op de hoogte.
   - Verbeterde fout rapportage: methoden die kunnen resulteren in een fout, zijn nu beschikbaar in twee versies: een die een `NSError` object beschrijft voor fout afhandeling en één waarmee een uitzonde ring wordt gegenereerd. De voormalige worden weer gegeven aan SWIFT. Deze wijziging vereist aanpassingen in bestaande SWIFT-code.
   - Verbeterde verwerking van gebeurtenissen
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Fix voor TTS: waar wordt de `SpeakTextAsync` toekomst teruggestuurd zonder te wachten totdat de rendering van audio is voltooid
 - Correctie voor het samen stellen van teken reeksen in C# om ondersteuning voor volledige taal in te scha kelen
@@ -534,7 +577,7 @@ Blijf op de hoogte.
 
 Dit is een release van de oplossing voor fouten en alleen van invloed op de systeem eigen/beheerde SDK. Dit heeft geen invloed op de Java script-versie van de SDK.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Herstel FromSubscription wanneer het wordt gebruikt met de conversatie-transcriptie.
 - Los de fout op in trefwoord herkennen voor spraak assistenten.
@@ -559,7 +602,7 @@ Dit is een release van de oplossing voor fouten en alleen van invloed op de syst
 - Eigenschap doel-C: `OutputFormat` is toegevoegd aan `SPXSpeechConfiguration` .
 - De SDK ondersteunt nu Debian 9 als een Linux-distributie.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Er is een probleem opgelost waarbij de resource van de spreker te vroeg is afgezet in tekst-naar-spraak.
 
@@ -595,7 +638,7 @@ Dit is een alleen-Java script-versie. Er zijn geen functies toegevoegd. De volge
 - Voor aanvullende ontwikkel-en probleemoplossings ondersteuning kunt u informatie over de SDK-logboek registratie en diagnostische gegevens omleiden naar een logboek bestand (meer informatie [hierover).](how-to-use-logging.md)
 - Java script: Verbeter de prestaties van de audio verwerking.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Mac/iOS: een fout die heeft geleid tot een lange wacht tijd wanneer een verbinding met de spraak service niet tot stand kan worden gebracht, is opgelost.
 - Python: de fout afhandeling voor argumenten in python-retour aanroepen wordt verbeterd.
@@ -646,7 +689,7 @@ De volgende nieuwe inhoud is beschikbaar in onze [voorbeeld opslagplaats](https:
 - Windows-Dll's bevatten nu een versie bron.
 - Als u een herkenner maakt, `FromEndpoint` kunt u de para meters rechtstreeks aan de eind punt-URL toevoegen. `FromEndpoint`U kunt de herkenner niet configureren via de standaard configuratie-eigenschappen.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - De lege proxy-gebruikers naam en het proxy wachtwoord zijn niet goed afgehandeld. Als u met deze versie proxy gebruikersnaam en proxy wachtwoord instelt op een lege teken reeks, worden ze niet verzonden wanneer er verbinding wordt gemaakt met de proxy.
 - SessionId die door de SDK is gemaakt, is niet altijd echt wille keurig voor sommige talen &nbsp; /omgevingen. De initialisatie van de wille keurige Generator is toegevoegd om dit probleem op te lossen.
@@ -687,7 +730,7 @@ Dit is een alleen-Java script-versie. Er zijn geen functies toegevoegd. De volge
 - Verbeterde fout rapportage/-informatie. In verschillende gevallen zijn fout berichten niet helemaal door gegeven.
 - Bijgewerkte ontwikkelings afhankelijkheden in Java script voor het gebruik van up-to-date-modules.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Er zijn problemen met het geheugen vastgesteld vanwege een niet-overeenkomend type in `RecognizeAsync` .
 - In sommige gevallen werden uitzonde ringen gelekt.
@@ -719,7 +762,7 @@ Dit is een alleen-Java script-versie. Er zijn geen functies toegevoegd. De volge
 - Verbeterde verwerking van langdurige stilte tijd in het midden van een audio bestand.
 - NuGet-pakket: voor .NET Framework projecten kan het niet worden gebouwd met AnyCPU-configuratie.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Er zijn verschillende uitzonde ringen gevonden in recognizers. Daarnaast worden uitzonde ringen gedetecteerd en omgezet in een `Canceled` gebeurtenis.
 - Los een geheugenlek op in eigenschaps beheer.
@@ -781,7 +824,7 @@ In onze [voorbeeld opslagplaats](https://aka.ms/csspeech/samples)is een nieuw vo
 - Op Java (Android) heeft de `SpeechFactory.configureNativePlatformBindingWithDefaultCertificate` functie geen para meter Path meer nodig. Nu wordt het pad automatisch gedetecteerd op alle ondersteunde platforms.
 - De Get-accessor van de eigenschap `EndpointUrl` in Java en C# is verwijderd.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - In Java wordt het resultaat van de audio synthese op de vertalings herkenning nu geïmplementeerd.
 - Er is een fout opgelost die kan leiden tot inactieve threads en een groter aantal open en ongebruikte sockets.
@@ -815,7 +858,7 @@ In onze [voorbeeld opslagplaats](https://aka.ms/csspeech/samples)is een nieuw vo
   - In C++ `Read` retour neren de and- `GetFormat` methoden nu `size_t` in plaats van `int` .
 - C++: exemplaren van audio-invoer stromen kunnen nu alleen worden door gegeven als een `shared_ptr` .
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Onjuist geretourneerde retour waarden in het resultaat wanneer er een `RecognizeAsync()` time-out optreedt.
 - De afhankelijkheid van Media Foundation-bibliotheken in Windows is verwijderd. De SDK gebruikt nu kern audio-Api's.
@@ -841,7 +884,7 @@ In onze [voorbeeld opslagplaats](https://aka.ms/csspeech/samples)is een nieuw vo
 
 - Gewijzigd in `SpeechRecognitionResult.Text` van `SpeechRecognitionResult.RecognizedText` in C#.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 
 - Er is een mogelijk probleem met een retour aanroep in de USP-laag opgelost tijdens het afsluiten.
 - Als een herkenner een audio-invoer bestand heeft gebruikt, houdt het de bestands ingang langer dan nodig aan.

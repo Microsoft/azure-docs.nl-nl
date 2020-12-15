@@ -4,12 +4,12 @@ description: Dit artikel bevat een overzicht van het maken van een .NET Core-toe
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1f626eb6cc21fdf9097a49381de8c973ad290392
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 36551a52bc095a37aa5176ab945dd5d27c640954
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401352"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504607"
 ---
 # <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-azuremessagingeventhubs"></a>Gebeurtenissen verzenden naar en ontvangen van Azure Event Hubs - .NET (Azure.Messaging.EventHubs) 
 In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van de .NET-bibliotheek **Azure.Messaging.EventHubs**. 

@@ -3,17 +3,17 @@ title: Azure Defender voor SQL - de voordelen en functies
 description: Meer informatie over de voordelen en functies van Azure Defender voor SQL.
 author: memildin
 ms.author: memildin
-ms.date: 11/30/2020
+ms.date: 12/13/2020
 ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: c2fc1bf065bce3ca844c5284168d8ff96fa065bf
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: e9a2259f1e15a94ad1f2a9eabf7d3a2f3ed419f1
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512236"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387799"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -28,7 +28,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 |Releasestatus:|**Azure Defender voor Azure SQL-databaseservers** - algemeen beschikbaar<br>**Azure Defender voor SQL-servers op computers** - algemeen beschikbaar |
 |Prijzen:|De twee abonnementen die **Azure Defender voor SQL** vormen, worden gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
 |Beveiligde SQL-versies:|[SQL op virtuele Azure-machines](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)<br>[SQL-servers met Azure Arc](https://docs.microsoft.com/sql/sql-server/azure-arc/overview)<br>On-premises SQL-servers op Windows-computers zonder Azure Arc<br>Azure SQL [individuele databases](../azure-sql/database/single-database-overview.md) en [elastische pools](../azure-sql/database/elastic-pool-overview.md)<br>[Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Azure Synapse Analytics (voorheen SQL DW) toegewezen SQL-pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Ja](./media/icons/yes-icon.png) China Gov (**Gedeeltelijk**: Subset van waarschuwingen en evaluatie van beveiligingsproblemen voor SQL-servers. Er is geen gedragsbedreigingsbeveiliging beschikbaar.)|
 |||
 
 ## <a name="what-does-azure-defender-for-sql-protect"></a>Wat beveiligt Azure Defender voor SQL?

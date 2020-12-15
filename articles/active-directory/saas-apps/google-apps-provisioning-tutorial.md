@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 2ce5ac43af57b82f912b10eeacf285a688888e9d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4851dfb4a96ab2ca19ba6ea67139772f9c091a69
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180877"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97504573"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Zelfstudie: G Suite configureren voor automatische gebruikersinrichting
 
@@ -31,6 +31,9 @@ In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel G 
 > * Ondersteuning toegevoegd voor aanvullende gebruikers -en groepskenmerken van G Suite.
 > * Bijgewerkte namen van G Suite-doelkenmerken zodat deze overeenkomen met wat [hier](https://developers.google.com/admin-sdk/directory) is gedefinieerd.
 > * Bijgewerkte standaard kenmerktoewijzingen.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
@@ -133,7 +136,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**. Klik op **Aan de slag**.
 
-    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
       ![Blade Aan de slag](./media/google-apps-provisioning-tutorial/get-started.png)
 

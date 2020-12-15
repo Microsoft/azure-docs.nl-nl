@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/04/2020
 ms.author: allensu
-ms.openlocfilehash: bf7a35e8cedbe62aafb29aa6d9dc8fcb42e90b2e
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 6ddfe581bb3f2f584fdec0229981321297c9a77f
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693763"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399188"
 ---
 # <a name="azure-load-balancer-components"></a>Azure Load Balancer-componenten
 
@@ -44,7 +44,7 @@ De aard van het IP-adres bepaalt het **type** van de gemaakte load balancer. Met
 
 ![Voorbeeld van een gelaagde load balancer](./media/load-balancer-overview/load-balancer.png)
 
-Load Balancer kan meerdere frontend-IP's hebben. Meer informatie over [meerdere frontends](load-balancer-multivip-overview.md).
+Load balancer kan meerdere front-end-IP's hebben. Meer informatie over [meerdere frontends](load-balancer-multivip-overview.md).
 
 ## <a name="backend-pool"></a>Back-end-pool
 
@@ -58,25 +58,23 @@ Wanneer u nadenkt over het ontwerp van uw back-end-pool, kunt u het beste ontwer
 
 Een statuscontrole wordt gebruikt om de status van de instanties in de back-end-pool te bepalen. Configureer tijdens het maken van uw load balancer een statuscontrole voor de load balancer die u wilt gebruiken.  Deze status test bepaalt of een exemplaar in orde is en verkeer kan ontvangen.
 
-U kunt de drempelwaarde onjuiste status voor de statuscontroles definiëren. Wanneer een controle niet reageert, stopt de load balancer met het verzenden van nieuwe verbindingen naar de instanties met een onjuiste status. Een controlefout heeft geen invloed op bestaande verbindingen. De verbinding wordt vervolgd totdat de toepassing:
+U kunt de drempelwaarde onjuiste status voor de statuscontroles definiëren. Wanneer een test niet reageert, stopt de load balancer met het verzenden van nieuwe verbindingen naar de slechte instanties. Een controlefout heeft geen invloed op bestaande verbindingen. De verbinding wordt vervolgd totdat de toepassing:
 
 - De stroom beëindigt
 - Time-out voor inactiviteit optreedt
 - De VM wordt afgesloten
 
-Load balancer biedt verschillende typen statuscontroles voor eindpunten: TCP, HTTP en HTTPS. [Meer informatie over statustests van Load Balancer](load-balancer-custom-probe-overview.md).
+Load balancer biedt verschillende typen statustests voor eindpunten: TCP, HTTP en HTTPS. [Meer informatie over statustests van Load Balancer](load-balancer-custom-probe-overview.md).
 
-Basic Load Balancer biedt geen ondersteuning voor HTTPS-controles. Basic Load Balancer sluit alle TCP-verbindingen (inclusief tot stand gebrachte verbindingen).
+Basic-load balancer biedt geen ondersteuning voor HTTPS-tests. Basic-load balancer sluit alle TCP-verbindingen (inclusief tot stand gebrachte verbindingen).
 
 ## <a name="load-balancing-rules"></a>Taakverdelingsregels
 
-Een taakverdelingsregel wordt gebruikt om te bepalen hoe inkomend verkeer wordt gedistribueerd naar **alle** instanties binnen de back-end-pool. Een taakverdelingsregel wijst een gegeven front-end-IP-configuratie en -poort toe aan meerdere back-end-IP-adressen en -poorten.
+Een taakverdelingsregel wordt gebruikt om te bepalen hoe inkomend verkeer wordt gedistribueerd naar **alle** instanties binnen de back-endpool. Een taakverdelingsregel wijst een gegeven front-end-IP-configuratie en -poort toe aan meerdere back-end-IP-adressen en -poorten.
 
-Gebruik bijvoorbeeld een taakverdelingsregel voor poort 80 om verkeer door te sturen van uw frontend-IP-adres naar poort 80 van uw back-end-exemplaren.
+Gebruik bijvoorbeeld een taakverdelingsregel voor poort 80 om verkeer door te sturen van uw front-end-IP-adres naar poort 80 van uw back-endexemplaren.
 
-<p align="center">
-  <img src="./media/load-balancer-components/lbrules.svg" alt= "Figure depicts how Azure Load Balancer directs frontend port 80 to three instances of backend port 80." width="512" title="Taakverdelingsregels">
-</p>
+:::image type="content" source="./media/load-balancer-components/lbrules.png" alt-text="Referentiediagram voor taakverdelingsregel" border="false":::
 
 *Afbeelding: Taakverdelingsregels*
 
@@ -106,13 +104,9 @@ Meer informatie over [HA-poorten](load-balancer-ha-ports-overview.md).
 
 ## <a name="inbound-nat-rules"></a>Inkomende NAT-regels
 
-Via een inkomende NAT-regel wordt binnenkomend verkeer naar een combinatie van een frontend-IP-adres en geselecteerde poort doorgestuurd. Het verkeer wordt verzonden naar een **specifieke** virtuele machine of exemplaar in de back-end-pool. Port forwarding wordt gedaan door de dezelfde hash-distributie als taakverdeling.
+Via een inkomende NAT-regel wordt binnenkomend verkeer doorgestuurd naar een combinatie van een front-end-IP-adres en een geselecteerde poort. Het verkeer wordt verzonden naar een **specifieke** virtuele machine of exemplaar in de back-end-pool. Port forwarding wordt gedaan door de dezelfde hash-distributie als taakverdeling.
 
-Als u bijvoorbeeld wilt dat Remote Desktop Protocol (RDP) of SSH-sessies (Secure Shell) VM-instanties in een back-end-pool scheidt. Meerdere interne eindpunten kunnen worden toegewezen aan de verschillende poorten op hetzelfde front-end-IP-adres. De front-end-IP-adressen kunnen worden gebruikt voor het extern beheren van uw VM's zonder een extra jump box.
-
-<p align="center">
-  <img src="./media/load-balancer-components/inboundnatrules.svg" alt="Figure depicts how Azure Load Balancer directs frontend ports 3389, 443, and 80 to backend ports with the same values on separate servers." width="512" title="Inkomende NAT-regels">
-</p>
+:::image type="content" source="./media/load-balancer-components/inboundnatrules.png" alt-text="Referentiediagram voor inkomende NAT-regel" border="false":::
 
 *Afbeelding: Inkomende NAT-regels*
 
@@ -124,11 +118,15 @@ Met een regel voor uitgaand verkeer wordt de uitgaande netwerkadresomzetting (NA
 
 Meer informatie over [uitgaande verbindingen en regels](load-balancer-outbound-connections.md).
 
-De Basic Load Balancer biedt geen ondersteuning voor regels voor uitgaand verkeer.
+Basic Load Balancer biedt geen ondersteuning voor uitgaande regels.
+
+:::image type="content" source="./media/load-balancer-components/outbound-rules.png" alt-text="Referentiediagram voor uitgaande regel" border="false":::
+
+*Afbeelding: Uitgaande regels*
 
 ## <a name="limitations"></a>Beperkingen
 
-- Meer informatie over [limieten](../azure-resource-manager/management/azure-subscription-service-limits.md) met betrekking tot Load Balancer 
+- Meer informatie over load balancer-[limieten](../azure-resource-manager/management/azure-subscription-service-limits.md) 
 - Voor deze specifieke TCP- of UDP-protocollen biedt Load Balancer taakverdeling en port forwarding. Taakverdelingsregels en inkomende NAT-regels bieden ondersteuning voor TCP en UDP, maar niet voor andere IP-protocollen, waaronder ICMP.
 - Uitgaande stroom van een back-end-VM naar een front-end van een interne Load Balancer mislukt.
 - Een regel voor een load balancer kan niet twee virtuele netwerken omvatten.  Front-ends en de bijbehorende back-endinstanties moeten zich in hetzelfde virtuele netwerk bevinden.  
@@ -136,11 +134,11 @@ De Basic Load Balancer biedt geen ondersteuning voor regels voor uitgaand verkee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Een openbare Standard Load Balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een Load Balancer.
+- Zie [Een openbare Standard Load Balancer maken](quickstart-load-balancer-standard-public-portal.md) om aan de slag te gaan met een load balancer.
 - Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
 - Meer informatie over [Openbaar IP-adres](../virtual-network/virtual-network-public-ip-address.md)
 - Meer informatie over [Privé-IP-adres](../virtual-network/private-ip-addresses.md)
-- Meer informatie over [Load Balancer van het type Standard en beschikbaarheidszones](load-balancer-standard-availability-zones.md).
+- Meer informatie over [Standard Load Balancer en beschikbaarheidszones](load-balancer-standard-availability-zones.md).
 - Meer informatie over [Diagnostische tests van Standard Load Balancer](load-balancer-standard-diagnostics.md).
 - Meer informatie over [TCP opnieuw instellen bij inactiviteit](load-balancer-tcp-reset.md).
 - Meer informatie over [Standard Load Balancer met taakverdelingsregels voor poorten met hoge beschikbaarheid](load-balancer-ha-ports-overview.md).

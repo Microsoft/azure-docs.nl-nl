@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/06/2020
+ms.date: 12/13/2020
 ms.author: memildin
-ms.openlocfilehash: d92047a5b24f04ee7e0d08454867ec9e1a52a8b1
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: d3492685efbf70b69e5bafba919d38a4f06fb666
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754369"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387467"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
@@ -68,12 +68,24 @@ Hieronder volgt de prijspagina voor een voorbeeldabonnement. U ziet dat elk abon
 
 ## <a name="faq---pricing-and-billing"></a>Veelgestelde vragen - Prijzen en facturering 
 
-### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-azure-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Azure Security Center heeft ingeschakeld?
+- [Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Azure Security Center heeft ingeschakeld?](#how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center)
+- [Welke abonnementen worden aangeboden in Security Center?](#what-are-the-plans-offered-by-security-center)
+- [Hoe schakel ik Azure Defender in voor mijn abonnement?](#how-do-i-enable-azure-defender-for-my-subscription)
+- [Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
+- [Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
+- [Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
+- [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
+- [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
+- [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
+
+### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?
 Azure-abonnementen kunnen meerdere beheerders met machtigingen voor het wijzigen van prijsinstellingen hebben. Als u wilt weten welke gebruiker een wijziging heeft aangebracht, gebruikt u het Azure-activiteitenlogboek.
 
-Als de gegevens van de gebruiker niet worden weergegeven in de kolom **Gebeurtenis gestart door**, zoekt u de relevante gegevens van de gebeurtenis.
+:::image type="content" source="media/security-center-pricing/logged-change-to-pricing.png" alt-text="Azure-activiteitenlogboek met een prijswijzigingsgebeurtenis":::
 
-:::image type="content" source="media/security-center-pricing/logged-change-to-pricing.png" alt-text="Azure-gebeurtenislogboek met een prijswijzigingsgebeurtenis":::
+Als de gegevens van de gebruiker niet worden weergegeven in de kolom **Gebeurtenis gestart door**, zoekt u de relevante gegevens in de JSON van de gebeurtenis.
+
+:::image type="content" source="media/security-center-pricing/tracking-pricing-changes-in-activity-log.png" alt-text="Verkenner met JSON voor Azure-activiteitenlogboek":::
 
 
 ### <a name="what-are-the-plans-offered-by-security-center"></a>Welke abonnementen worden aangeboden in Security Center? 
@@ -115,6 +127,10 @@ Ja. Als uw Log Analytics-agent is geconfigureerd voor het verzenden van gegevens
 ### <a name="if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them"></a>Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?
 Ja. Als u de Log Analytics-agent hebt geconfigureerd voor het verzenden van gegevens naar twee of meer verschillende Log Analytics-werkruimten (multi-homing), ontvangt u 500 MB gratis gegevensopname. Dit wordt berekend per knooppunt, per gerapporteerde werkruimte, per dag en is beschikbaar voor elke werkruimte waarop de oplossing Security of AntiMalware is geïnstalleerd. Er worden kosten in rekening gebracht voor gegevensopname van meer dan 500 MB.
 
+### <a name="is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine"></a>Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?
+U krijgt 500 MB gratis gegevensopname per dag, voor elke machine die is verbonden met de werkruimte. Dit geldt met name voor beveiligingsgegevenstypen die rechtstreeks door Azure Security Center worden verzameld.
+
+Deze hoeveelheid gegevens is een dagelijks gemiddelde voor alle knooppunten. Er worden dus geen extra kosten in rekening gebracht als sommige machines 100 MB en andere 800 MB verzenden, mits het totaal de gratis limiet van **[aantal machines] x 500 MB** niet overschrijdt.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel worden de prijsopties voor Security Center beschreven. Zie voor gerelateerd materiaal:

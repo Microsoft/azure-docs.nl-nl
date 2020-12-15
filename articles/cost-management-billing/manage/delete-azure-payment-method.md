@@ -36,13 +36,13 @@ Voer de volgende stappen uit om een betalingswijze voor een Microsoft-klantovere
 1. Meld u aan bij Azure Portal op https://portal.azure.com/.
 1. Navigeer naar **Cost Management en facturering**.
 1. Selecteer zo nodig een factureringsbereik.
-1. Selecteer**Factureringsprofielen** onder **Facturering** in de menulijst aan de linkerkant.  
+1. Selecteer **Factureringsprofielen** onder **Facturering** in de menulijst aan de linkerkant.  
     :::image type="content" source="./media/delete-azure-payment-method/billing-profiles.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" lightbox="./media/delete-azure-payment-method/billing-profiles.png" :::
 1. Selecteer in de lijst met factureringsprofielen het factureringprofiel waarvoor de betalingswijze wordt gebruikt.  
-    :::image type="content" source="./media/delete-azure-payment-method/select-billing-profile.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+    :::image type="content" source="./media/delete-azure-payment-method/select-billing-profile.png" alt-text="Voorbeeldafbeelding van de lijst met factureringsprofielen" :::
 1. Selecteer **Betalingswijzen** onder **Instellingen** in de menulijst aan de linkerkant.
 1. Op de pagina met betalingswijzen voor uw factureringsprofiel wordt een tabel met betalingswijzen weergegeven in de sectie **Uw creditcards** . Zoek de creditcard die u wilt verwijderen, selecteer het weglatingsteken ( **...** ) en selecteer vervolgens **Verwijderen**.  
-    :::image type="content" source="./media/delete-azure-payment-method/delete-credit-card.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+    :::image type="content" source="./media/delete-azure-payment-method/delete-credit-card.png" alt-text="Voorbeeld van het verwijderen van een creditcard" :::
 1. De pagina Betalingswijze verwijderen wordt weergegeven. Er wordt gecontroleerd of de betalingswijze in gebruik is.
     - Wanneer de betalingswijze niet wordt gebruikt, is de optie **Verwijderen** ingeschakeld. Selecteer deze optie om de creditcardgegevens te verwijderen.
     - Als de betalingswijze wel wordt gebruikt, moet deze worden vervangen of losgekoppeld. Ga door met het lezen van de volgende secties. Daarin wordt uitgelegd hoe u de betalingswijze die wordt gebruikt door uw abonnement, kunt **loskoppelen**.
@@ -51,7 +51,7 @@ Voer de volgende stappen uit om een betalingswijze voor een Microsoft-klantovere
 
 Als uw betalingswijze wordt gebruikt door een MCA-factureringsprofiel, ziet u een bericht dat er ongeveer als volgt uitziet.
 
-:::image type="content" source="./media/delete-azure-payment-method/payment-method-in-use-microsoft-customer-agreement.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+:::image type="content" source="./media/delete-azure-payment-method/payment-method-in-use-microsoft-customer-agreement.png" alt-text="Voorbeeldafbeelding van een betalingswijze die wordt gebruikt door een Microsoft-klantovereenkomst" :::
 
 Als u een betalingsmethode wilt loskoppelen, moet aan een lijst met voorwaarden worden voldaan. Als niet aan de voorwaarden wordt voldaan, worden instructies weergegeven waarin wordt uitgelegd wat u moet doen om wel aan de voorwaarde te voldoen. Er wordt ook een koppeling weergegeven waarmee u naar de locatie gaat waar u de voorwaarde kunt oplossen.
 
@@ -65,7 +65,7 @@ Wanneer aan alle voorwaarden wordt voldaan, kunt u de betalingswijze loskoppelen
 1. Selecteer de koppeling **De huidige betalingswijze loskoppelen** in het gebied Betalingswijze verwijderen.
 1. Als aan alle voorwaarden wordt voldaan, selecteert u **Loskoppelen**. Anders gaat u verder met de volgende stap.
 1. Als de optie Loskoppelen niet beschikbaar is, wordt er een lijst met voorwaarden weergegeven. Voer de weergegeven acties uit. Selecteer de koppeling die wordt weergegeven in het gebied De standaardbetalingswijze loskoppelen. Hier volgt een voorbeeld van een herstelactie waarin wordt uitgelegd wat u moet doen.  
-    :::image type="content" source="./media/delete-azure-payment-method/azure-subscriptions.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+    :::image type="content" source="./media/delete-azure-payment-method/azure-subscriptions.png" alt-text="Voorbeeld van een herstelactie die nodig is om een betalingswijze voor MCA los te koppelen" :::
 1. Wanneer u op de koppeling naar de hestelactie klikt, wordt u omgeleid naar de Azure-pagina waar u de actie moet uitvoeren. Voer de benodigde herstelactie(s) uit.
 1. Voer alle overige herstelacties uit, indien aanwezig.
 1. Ga terug naar **Cost Management + Billing** > **Factureringsprofielen** > **Betalingswijzen**. Selecteer **Loskoppelen**. Selecteer **Loskoppelen** onder aan de pagina De standaardbetalingswijze loskoppelen.
@@ -86,10 +86,10 @@ Als uw betalingswijze wordt gebruikt door een MOSP-abonnement, voert u de volgen
 1. Selecteer **Betalingswijzen** onder **Facturering** in de menulijst aan de linkerkant.
 1. Selecteer in het gedeelte Betalingswijzen de _regel_ waarop uw betalingswijze wordt weergegeven. Selecteer niet de koppeling naar de betalingswijze. Er is mogelijk geen visuele indicatie dat u de betalingswijze hebt geselecteerd.
 1. Selecteer **Verwijderen**.  
-    :::image type="content" source="./media/delete-azure-payment-method/delete-mosp-payment-method.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+    :::image type="content" source="./media/delete-azure-payment-method/delete-mosp-payment-method.png" alt-text="Voorbeeld van een herstelactie die nodig is om een betalingswijze voor MOSP los te koppelen" :::
 1. Selecteer **Verwijderen** in het gebied Betalingswijze verwijderen als aan alle voorwaarden wordt voldaan. Als de optie Verwijderen niet beschikbaar is, gaat u verder met de volgende stap.
 1. Er wordt een lijst met voorwaarden weergegeven. Voer de weergegeven acties uit. Selecteer de koppeling die wordt weergegeven in het gebied Betalingswijze loskoppelen.  
-    :::image type="content" source="./media/delete-azure-payment-method/payment-method-in-use-mosp.png" alt-text="Voorbeeld van een schermopname met factureringsprofielen in Azure Portal" :::
+    :::image type="content" source="./media/delete-azure-payment-method/payment-method-in-use-mosp.png" alt-text="Voorbeeldafbeelding van een betalingswijze die wordt gebruikt door een MOSP-abonnement" :::
 1. Wanneer u op de koppeling naar de hestelactie klikt, wordt u omgeleid naar de Azure-pagina waar u de actie moet uitvoeren. Voer de benodigde herstelactie(s) uit.
 1. Voer alle overige herstelacties uit, indien aanwezig.
 1. Ga terug naar **Cost Management + Billing** > **Factureringsprofielen** > **Betalingswijzen** en verwijder de betalingswijze.

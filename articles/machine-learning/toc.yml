@@ -503,7 +503,7 @@
       displayName: pipelines
       items:
         - name: Machine Learning-pijplijnen maken (Python)
-          href: how-to-create-your-first-pipeline.md
+          href: how-to-create-machine-learning-pipelines.md
         - name: Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
           href: how-to-move-data-in-out-of-pipelines.md
         - name: ML-pijplijnen implementeren (Python)

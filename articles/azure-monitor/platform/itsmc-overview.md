@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 6c9e2ae420e56c5ef99ff79cdcb49592bc7e049e
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 3d4e5ad0b24b7163072d7e3110a523dad9608923
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97371982"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507368"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -152,12 +152,12 @@ Gebruik de volgende procedure om werk items te maken:
 
 9. Als u **afzonderlijke werk items maken voor elk configuratie-item** selecteert, heeft elk configuratie-item een eigen werk item. Er wordt één werk item per configuratie-item weer. Het wordt bijgewerkt op basis van de waarschuwingen die worden gemaakt.
 
-   * In het geval dat u in de vervolg keuzelijst werk item of waarschuwing klikt: als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, wordt er door elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één waarschuwing per configuratie-item zijn.
+    * In het geval dat u in de vervolg keuzelijst werk item of waarschuwing klikt: als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, wordt er door elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één waarschuwing per configuratie-item zijn.
 
-   ![Scherm opname van het ITSM-ticket venster.](media/itsmc-overview/itsm-action-configuration.png)
-   
-   * In het geval dat u in de vervolg keuzelijst voor werk items selecteert: als u **afzonderlijke werk items maken voor elke logboek vermelding** in de keuze rondjes selecteert, wordt er met elke waarschuwing een nieuw werk item gemaakt. Als u **afzonderlijke werk items maken selecteert voor elk configuratie-item** in de keuze rondjes selectie, heeft elk configuratie-item een eigen werk item.
-   ![Scherm opname van het ITSM-ticket venster.](media/itsmc-overview/itsm-action-configuration-event.png)
+       ![Scherm opname van het ITSM-incident venster.](media/itsmc-overview/itsm-action-configuration.png)
+
+    * In het geval dat u in de vervolg keuzelijst voor werk items selecteert: als u **afzonderlijke werk items maken voor elke logboek vermelding** in de keuze rondjes selecteert, wordt er met elke waarschuwing een nieuw werk item gemaakt. Als u **afzonderlijke werk items maken selecteert voor elk configuratie-item** in de keuze rondjes selectie, heeft elk configuratie-item een eigen werk item.
+   ![Scherm opname van het ITSM-gebeurtenis venster.](media/itsmc-overview/itsm-action-configuration-event.png)
 
 10. Selecteer **OK**.
 
@@ -169,26 +169,6 @@ Wanneer u een Azure-waarschuwings regel maakt of bewerkt, gebruikt u een actie g
 >
 >
 >- Het veld korte beschrijving in de definitie van de waarschuwings regel is beperkt tot 40 tekens wanneer u het verzendt met behulp van de actie ITSM.
-
-
-## <a name="visualize-and-analyze-the-incident-and-change-request-data"></a>Het incident en de gegevens van de wijzigings aanvraag visualiseren en analyseren
-
-Afhankelijk van uw configuratie wanneer u een verbinding instelt, kan ITSMC tot 120 dagen aan incidenten en wijzigings aanvraag gegevens worden gesynchroniseerd. Het logboek record schema voor deze gegevens vindt u in de [volgende sectie](#additional-information) van dit artikel.
-
-U kunt het incident visualiseren en gegevens wijzigen met behulp van het ITSMC-dash board:
-
-![Scherm opname van het ITSMC-dash board.](media/itsmc-overview/itsmc-overview-sample-log-analytics.png)
-
-Het dash board bevat ook informatie over de status van de connector, die u als uitgangs punt kunt gebruiken om problemen met de verbindingen te analyseren.
-
-U kunt ook visualiseren van de incidenten die zijn gesynchroniseerd met de betrokken computers in Servicetoewijzing.
-
-Servicetoewijzing detecteert automatisch de toepassings onderdelen op Windows-en Linux-systemen en wijst de communicatie tussen services toe. Zo kunt u uw servers bekijken zoals u dat wilt: als onderling verbonden systemen die essentiële services leveren. Servicetoewijzing toont verbindingen tussen servers, processen en poorten via elke met TCP verbonden architectuur. Met uitzonde ring van de installatie van een agent is geen configuratie vereist. Zie [servicetoewijzing gebruiken](../insights/service-map.md)voor meer informatie.
-
-Als u Servicetoewijzing gebruikt, kunt u de Service Desk-items weer geven die zijn gemaakt in ITSM-oplossingen, zoals hier wordt weer gegeven:
-
-![Scherm opname van de Log Analytics scherm.](media/itsmc-overview/itsmc-overview-integrated-solutions.png)
-
 
 ## <a name="additional-information"></a>Aanvullende informatie
 
@@ -256,14 +236,14 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 - Geplande eind datum
 - Begin datum van werk
 - Eind datum van werk
-- Description
+- Beschrijving
 - Computer
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Uitvoer gegevens voor een ServiceNow-incident
 
 | Log Analytics veld | Het veld ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Getal |
+| ServiceDeskId_s| Aantal |
 | IncidentState_s | Staat |
 | Urgency_s |Urgentie |
 | Impact_s |Impact|
@@ -285,7 +265,7 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 
 | Log Analytics | Het veld ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Getal |
+| ServiceDeskId_s| Aantal |
 | CreatedBy_s | Aangevraagd door |
 | ClosedBy_s | Gesloten door |
 | AssignedTo_s | Toegewezen aan  |
@@ -299,32 +279,12 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 | Impact_s| Impact|
 | RequestedDate_t  | Aangevraagd door datum |
 | ClosedDate_t | Gesloten datum |
-| PlannedStartDate_t  |     Geplande begin datum |
-| PlannedEndDate_t  |   Geplande eind datum |
+| PlannedStartDate_t  | Geplande begin datum |
+| PlannedEndDate_t  | Geplande eind datum |
 | WorkStartDate_t  | Werkelijke begin datum |
 | WorkEndDate_t | Werkelijke eind datum|
-| Description_s | Description |
+| Description_s | Beschrijving |
 | Computer  | Configuratie-item |
-
-
-## <a name="troubleshoot-itsm-connections"></a>Problemen met ITSM-verbindingen oplossen
-- Voer de volgende stappen uit als er een **fout optreedt bij het opslaan** van een verbindings bericht in de gebruikers interface van de verbonden Bron:
-   - Voor ServiceNow-, Cher well-en Provance-verbindingen:  
-     - Zorg ervoor dat u de gebruikers naam, het wacht woord, de client-ID en het client geheim juist hebt ingevoerd voor elk van de verbindingen.  
-     - Zorg ervoor dat u voldoende bevoegdheden hebt in het bijbehorende ITSM-product om de verbinding tot stand te brengen.  
-   - Voor Service Manager verbindingen:  
-     - Zorg ervoor dat de web-app is geïmplementeerd en dat de hybride verbinding is gemaakt. Als u wilt controleren of de verbinding tot stand is gebracht met de on-premises Service Manager computer, gaat u naar de URL van de web-app zoals beschreven in de documentatie voor het maken van de [hybride verbinding](./itsmc-connections.md#configure-the-hybrid-connection).  
-
-- Als gegevens van ServiceNow niet worden gesynchroniseerd met Log Analytics, moet u ervoor zorgen dat het ServiceNow-exemplaar niet in de slaap stand staat. ServiceNow dev-instanties gaan soms naar de slaap stand wanneer ze gedurende een lange periode niet actief zijn. Als dat niet het geval is, meldt u het probleem.
-- Als Log Analytics waarschuwingen geactiveerd, maar er worden geen werk items gemaakt in het ITSM-product, als configuratie-items niet zijn gemaakt/gekoppeld aan werk items, of als u andere informatie wilt, raadpleegt u deze bronnen:
-   -  ITSMC: de oplossing toont een samen vatting van verbindingen, werk items, computers en meer. Selecteer de tegel met het label **status** van de connector. Hiermee gaat u zoeken naar **Logboeken** met de relevante query. Bekijk logboek records met een `LogType_S` van `ERROR` voor meer informatie.
-   - **Zoek pagina voor logboeken** : de fouten en gerelateerde informatie rechtstreeks weer geven met behulp van de query `*ServiceDeskLog_CL*` .
-
-## <a name="troubleshoot-service-manager-web-app-deployment"></a>Problemen met de implementatie van Service Manager web-app oplossen
--   Als u problemen ondervindt met het implementeren van web-apps, moet u ervoor zorgen dat u gemachtigd bent om resources in het abonnement te maken of te implementeren.
--   Als u een **object verwijzing krijgt die niet is ingesteld op een object** fout wanneer u het [script](itsmc-service-manager-script.md)uitvoert, moet u ervoor zorgen dat u geldige waarden hebt opgegeven in de sectie **gebruikers configuratie** .
--   Als u de service bus relay-naam ruimte niet hebt gemaakt, moet u ervoor zorgen dat de vereiste resource provider is geregistreerd in het abonnement. Als het niet is geregistreerd, maakt u de service bus relay-naam ruimte hand matig via de Azure Portal. U kunt deze ook maken wanneer u [de hybride verbinding maakt](./itsmc-connections.md#configure-the-hybrid-connection) in de Azure Portal.
-
 
 ## <a name="contact-us"></a>Contact opnemen
 

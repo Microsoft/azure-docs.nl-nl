@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ccfd583b58d129268af2a94e3072200e58308cd
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 14644f76b7de53b2b6ee3f04131daaf59267a5ff
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347827"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507639"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -34,6 +34,14 @@ Deze wijzigingen zijn onder andere:
 -  De naam van het configuratie bestand is gewijzigd van `ApplicationInsights.json` in `applicationinsights.json` .
 -  Het `instrumentationSettings` knoop punt is niet meer aanwezig. Alle inhoud in `instrumentationSettings` wordt verplaatst naar het hoofd niveau. 
 -  Configuratie knooppunten zoals `sampling` , `jmxMetrics` , `instrumentation` en `heartbeat` worden `preview` naar het hoofd niveau verplaatst.
+
+## <a name="some-logging-is-not-auto-collected"></a>Een deel van de logboek registratie wordt niet automatisch verzameld
+
+Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfigureerde drempel waarde voor logboek registratie raamwerken en de tweede ook voldoet aan de Application Insights geconfigureerde drempel waarde.
+
+De beste manier om te bepalen of een bepaalde logboek registratie-instructie voldoet aan de geconfigureerde drempel waarde voor registratie raamwerken is om te bevestigen dat deze wordt weer gegeven in uw normale toepassings logboek (bijvoorbeeld bestand of console).
+
+Zie de [configuratie voor automatisch verzamelde logboek registratie](./java-standalone-config.md#auto-collected-logging) voor meer informatie.
 
 ## <a name="import-ssl-certificates"></a>SSL-certificaten importeren
 

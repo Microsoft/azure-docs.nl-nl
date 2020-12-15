@@ -9,22 +9,22 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/23/2020
+ms.date: 12/14/2020
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 2815041f32ebd7c2dae235229d1ca19aad253f7d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: e663cdd3846e804d1dcf96076c07b9a3db84272c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503618"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507741"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Levens duur van token beleid configureren (preview-versie)
 Er zijn veel scenario's mogelijk in azure AD wanneer u de levens duur van tokens voor apps, service-principals en uw hele organisatie kunt maken en beheren.  
 
 > [!IMPORTANT]
-> Na 30 januari 2021 kunnen tenants geen vernieuwings-en sessie token levensduur meer configureren en Azure AD stopt de configuratie van het bestaande vernieuwings-en sessie token in beleids regels na die datum. U kunt de levens duur van toegangs tokens na de afschaffing nog steeds configureren.  Lees de [levens duur van Configureer bare tokens in micro soft Identity platform](active-directory-configurable-token-lifetimes.md)voor meer informatie.
+> Na mei 2020 kunnen tenants geen vernieuwings-en sessie token levensduur meer configureren.  Azure Active Directory zal na 30 januari 2021 niet langer de configuratie van bestaande vernieuwings-en sessie tokens in het beleid naleven. U kunt de levens duur van toegangs tokens na de afschaffing nog steeds configureren.  Lees de [levens duur van Configureer bare tokens in micro soft Identity platform](active-directory-configurable-token-lifetimes.md)voor meer informatie.
 > Er zijn [mogelijkheden voor verificatie sessie beheer](../conditional-access/howto-conditional-access-session-lifetime.md)geïmplementeerd   in voorwaardelijke toegang tot Azure AD. Met deze nieuwe functie kunt u de levens duur van het vernieuwings token configureren door de aanmeldings frequentie in te stellen.
 
 
@@ -88,7 +88,7 @@ In dit voor beeld maakt u een beleid waarmee uw gebruikers zich minder vaak kunn
         Get-AzureADPolicy -id | set-azureadpolicy -Definition @($((Get-AzureADPolicy -id ).Replace(" ","")))
         ```
 
-    1. Voer de volgende opdracht uit om het nieuwe beleid te bekijken en de **ObjectId**van het beleid op te halen:
+    1. Voer de volgende opdracht uit om het nieuwe beleid te bekijken en de **ObjectId** van het beleid op te halen:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
@@ -116,7 +116,7 @@ In dit voor beeld maakt u een beleid waarmee gebruikers vaker moeten worden geve
         $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"02:00:00","MaxAgeSessionSingleFactor":"02:00:00"}}') -DisplayName "WebPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    1. Voer de cmdlet [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) uit om het nieuwe beleid weer te geven en de beleids- **ObjectId**op te halen:
+    1. Voer de cmdlet [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) uit om het nieuwe beleid weer te geven en de beleids- **ObjectId** op te halen:
 
         ```powershell
         Get-AzureADPolicy -Id $policy.Id
@@ -153,7 +153,7 @@ In dit voor beeld maakt u een beleid dat vereist dat gebruikers minder vaak veri
         Get-AzureADPolicy -Id $policy.Id
         ```
 
-1. Wijs het beleid toe aan uw web-API. U moet ook de **ObjectId** van uw toepassing ophalen. Gebruik de cmdlet [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) om de **ObjectId**van uw app te vinden, of gebruik de [Azure Portal](https://portal.azure.com/).
+1. Wijs het beleid toe aan uw web-API. U moet ook de **ObjectId** van uw toepassing ophalen. Gebruik de cmdlet [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) om de **ObjectId** van uw app te vinden, of gebruik de [Azure Portal](https://portal.azure.com/).
 
     Haal de **ObjectId** van uw app op en wijs het beleid toe:
 

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8644040565bd46800b888a32653b6c8bbf89f096
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3c42495ceab7108d20b0f0dedbf0cf94f5f9352d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347435"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509305"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -158,7 +158,7 @@ Er zijn meerdere manieren waarop u roltoewijzingen voor virtuele machines kunt c
 - De Azure Cloud Shell-ervaring gebruiken
 
 > [!NOTE]
-> De beheerders aanmelding van de virtuele machine en de aanmeld rollen van de virtuele-machine gebruiker gebruiken dataActions en kunnen daarom niet worden toegewezen in het bereik van de beheer groep. Momenteel kunnen deze rollen alleen worden toegewezen in het abonnements bereik.
+> De beheerders aanmelding van de virtuele machine en de aanmeld rollen van de virtuele-machine gebruiker gebruiken dataActions en kunnen daarom niet worden toegewezen in het bereik van de beheer groep. Momenteel kunnen deze rollen alleen worden toegewezen aan het abonnement, de resource groep of het resource bereik.
 
 ### <a name="using-azure-ad-portal-experience"></a>Azure AD Portal-ervaring gebruiken
 

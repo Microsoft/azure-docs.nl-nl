@@ -12,12 +12,12 @@ ms.date: 08/03/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a5fcbf80850fd9de77e6f9a431afea6d48cb14d1
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6abc3316e18fc70a2969bc220fd75e10e10f0e6e
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949408"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507775"
 ---
 # <a name="manage-azure-ad-b2c-user-accounts-with-microsoft-graph"></a>Azure AD B2C gebruikers accounts beheren met Microsoft Graph
 
@@ -115,7 +115,7 @@ Als de accounts die u wilt migreren, een zwakkere wachtwoord sterkte hebben dan 
 
 ### <a name="extension-properties"></a>Extensie-eigenschappen
 
-Elke klant gerichte toepassing heeft unieke vereisten voor het verzamelen van de gegevens. Uw Azure AD B2C-Tenant wordt geleverd met een ingebouwde set met gegevens die zijn opgeslagen in eigenschappen, zoals de naam, de voor-en de post code. Met Azure AD B2C kunt u de set eigenschappen die is opgeslagen in elk klant account uitbreiden. Zie [aangepaste kenmerken (gebruikers stromen)](user-flow-custom-attributes.md) en [aangepaste kenmerken (aangepast beleid)](custom-policy-custom-attributes.md)voor meer informatie over het definiëren van aangepaste kenmerken.
+Elke klant gerichte toepassing heeft unieke vereisten voor het verzamelen van de gegevens. Uw Azure AD B2C-Tenant wordt geleverd met een ingebouwde set met gegevens die zijn opgeslagen in eigenschappen, zoals de naam, de voor-en de post code. Met Azure AD B2C kunt u de set eigenschappen die is opgeslagen in elk klant account uitbreiden. Zie [aangepaste kenmerken](user-flow-custom-attributes.md)voor meer informatie over het definiëren van aangepaste kenmerken.
 
 Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de `extension_ApplicationClientID_attributename` -Conventie, waarbij de de `ApplicationClientID` **toepassing (client) ID** van de `b2c-extensions-app` toepassing (in **app-registraties**  >  **alle toepassingen** in de Azure Portal). Houd er rekening mee dat de ID van de **toepassing (client)** zoals deze wordt weer gegeven in de naam van het uitbreidings kenmerk geen afbreek streepjes bevat. Bijvoorbeeld:
 

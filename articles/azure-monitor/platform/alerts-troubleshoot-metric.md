@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: troubleshooting
 ms.date: 11/25/2020
 ms.subservice: alerts
-ms.openlocfilehash: 5a57e8b7f3bf2c3e820a3befee0ee69c48a2afa9
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: ef8a07f0360338aeb659942967169b0605b08e51
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029873"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507214"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -122,17 +122,17 @@ Als u wilt voor komen dat de implementatie mislukt wanneer u probeert de definit
     "odata.type": "Microsoft.Azure.Monitor.SingleResourceMultipleMetricCriteria",
         "allOf": [
             {
-                    "name" : "condition1",
-                        "metricName": "myCustomMetric",
+                "name" : "condition1",
+                "metricName": "myCustomMetric",
                 "metricNamespace": "myCustomMetricNamespace",
-                        "dimensions":[],
-                        "operator": "GreaterThan",
-                        "threshold" : 10,
-                        "timeAggregation": "Average",
-                    "skipMetricValidation": true
-        }
-              ]
-        }
+                "dimensions":[],
+                "operator": "GreaterThan",
+                "threshold" : 10,
+                "timeAggregation": "Average",
+                "skipMetricValidation": true
+            }
+        ]
+    }
 ```
 
 ## <a name="export-the-azure-resource-manager-template-of-a-metric-alert-rule-via-the-azure-portal"></a>De Azure Resource Manager sjabloon van een metrische waarschuwings regel exporteren via de Azure Portal

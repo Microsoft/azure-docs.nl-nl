@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c8f4c91070d87e9e6e3cdbb5534b988063eaba14
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 3f92bfe98a45117264c957481a75493de652abc9
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387173"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508098"
 ---
 # <a name="define-an-azure-active-directory-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een Azure Active Directory technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -251,8 +251,8 @@ Met het volgende technische profiel wordt een sociaal gebruikers account verwijd
 | Bewerking | Yes | De bewerking die moet worden uitgevoerd. Mogelijke waarden: `Read` , `Write` , `DeleteClaims` of `DeleteClaimsPrincipal` . |
 | RaiseErrorIfClaimsPrincipalDoesNotExist | No | Een fout veroorzaken als het gebruikers object niet in de map bestaat. Mogelijke waarden: `true` of `false` . |
 | RaiseErrorIfClaimsPrincipalAlreadyExists | No | Er wordt een fout gegenereerd als het gebruikers object al bestaat. Mogelijke waarden: `true` of `false` .|
-| ApplicationObjectId | No | De object-id van de toepassing voor extensie kenmerken. Waarde: ObjectId van een toepassing. Zie voor meer informatie [aangepaste kenmerken gebruiken in een aangepast profiel beleid bewerken](custom-policy-custom-attributes.md). |
-| ClientId | No | De client-id voor toegang tot de Tenant als derde partij. Zie voor meer informatie [aangepaste kenmerken gebruiken in een aangepast profiel beleid bewerken](custom-policy-custom-attributes.md) |
+| ApplicationObjectId | No | De object-id van de toepassing voor extensie kenmerken. Waarde: ObjectId van een toepassing. Zie [aangepaste kenmerken gebruiken](user-flow-custom-attributes.md?pivots=b2c-custom-policy)voor meer informatie. |
+| ClientId | No | De client-id voor toegang tot de Tenant als derde partij. Zie voor meer informatie [aangepaste kenmerken gebruiken in een aangepast profiel beleid bewerken](user-flow-custom-attributes.md?pivots=b2c-custom-policy) |
 | IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
 
 ### <a name="ui-elements"></a>UI-elementen

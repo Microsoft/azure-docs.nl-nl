@@ -12,12 +12,12 @@ ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 3fd91bb86b32a958344dc366cfcd142bff369c1f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e0185cc8786dc101375262ddfd187c5d8e7e054f
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108141"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509560"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -93,7 +93,7 @@ Sommige optionele claims kunnen worden geconfigureerd om de manier waarop de cla
 
 **Tabel 4: waarden voor het configureren van optionele claims**
 
-| Naam van eigenschap  | Aanvullende naam van eigenschap | Description |
+| Naam van eigenschap  | Aanvullende naam van eigenschap | Beschrijving |
 |----------------|--------------------------|-------------|
 | `upn`          |                          | Kan worden gebruikt voor SAML-en JWT-antwoorden, en voor de tokens v 1.0 en v 2.0. |
 |                | `include_externally_authenticated_upn`  | Bevat de gast-UPN zoals deze is opgeslagen in de resource-Tenant. Bijvoorbeeld: `foo_hometenant.com#EXT#@resourcetenant.com` |
@@ -124,15 +124,16 @@ Dit OptionalClaims-object zorgt ervoor dat het ID-token dat naar de client wordt
 
 U kunt optionele claims voor uw toepassing configureren via de gebruikers interface of het toepassings manifest.
 
-1. Ga naar [Azure Portal](https://portal.azure.com). Zoek en selecteer de optie **Azure Active Directory**.
-1. Selecteer in de sectie **beheren** de optie **app-registraties**.
+1. Ga naar [Azure Portal](https://portal.azure.com). 
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer **App-registraties** onder **Beheren**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
 
 **Optionele claims configureren via de gebruikers interface:**
 
 [![Optionele claims configureren in de gebruikers interface](./media/active-directory-optional-claims/token-configuration.png)](./media/active-directory-optional-claims/token-configuration.png)
 
-1. Selecteer in de sectie **beheren** de optie **token configuratie**.
+1. Selecteer onder **beheren** de optie **token configuratie**.
 1. Selecteer **optionele claim toevoegen**.
 1. Selecteer het token type dat u wilt configureren.
 1. Selecteer de optionele claims die u wilt toevoegen.
@@ -145,7 +146,7 @@ U kunt optionele claims voor uw toepassing configureren via de gebruikers interf
 
 [![Laat zien hoe u optionele claims configureert met het app-manifest](./media/active-directory-optional-claims/app-manifest.png)](./media/active-directory-optional-claims/app-manifest.png)
 
-1. Selecteer in de sectie **beheren** de optie **manifest**. Een manifest editor op het web wordt geopend, zodat u het manifest kunt bewerken. U kunt optioneel ook op **Downloaden** klikken en het manifest lokaal bewerken. Gebruik vervolgens **Uploaden** om het opnieuw toe te passen op de toepassing. Meer informatie over het toepassings manifest vindt u in het [artikel over het Azure AD-manifest](reference-app-manifest.md)van de toepassing.
+1. Onder **beheren** selecteert u **manifest**. Een manifest editor op het web wordt geopend, zodat u het manifest kunt bewerken. U kunt optioneel ook op **Downloaden** klikken en het manifest lokaal bewerken. Gebruik vervolgens **Uploaden** om het opnieuw toe te passen op de toepassing. Meer informatie over het toepassings manifest vindt u in het [artikel over het Azure AD-manifest](reference-app-manifest.md)van de toepassing.
 
     De volgende vermelding in het toepassings manifest voegt de auth_time, ipaddr en UPN-optionele claims toe aan de ID, toegang en SAML-tokens.
 
@@ -186,7 +187,7 @@ Declareert de optionele claims die worden aangevraagd door een toepassing. Een t
 
 **Tabel 5: eigenschappen van OptionalClaims-type**
 
-| Naam          | Type                       | Description                                           |
+| Naam          | Type                       | Beschrijving                                           |
 |---------------|----------------------------|-------------------------------------------------------|
 | `idToken`     | Verzameling (OptionalClaim) | De optionele claims die zijn geretourneerd in het JWT-ID-token.     |
 | `accessToken` | Verzameling (OptionalClaim) | De optionele claims die worden geretourneerd in het JWT-toegangs token. |
@@ -199,7 +200,7 @@ Als dit wordt ondersteund door een specifieke claim, kunt u ook het gedrag van d
 
 **Tabel 6: eigenschappen van OptionalClaim-type**
 
-| Naam                   | Type                    | Description                                                                                                                                                                                                                                                                                                   |
+| Naam                   | Type                    | Beschrijving                                                                                                                                                                                                                                                                                                   |
 |------------------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                 | Edm.String              | De naam van de optionele claim.                                                                                                                                                                                                                                                                               |
 | `source`               | Edm.String              | De bron (Directory-object) van de claim. Er zijn vooraf gedefinieerde claims en door de gebruiker gedefinieerde claims van extensie-eigenschappen. Als de bron waarde Null is, is de claim een vooraf gedefinieerde optionele claim. Als de bron waarde gebruiker is, is de waarde in de eigenschap naam de extensie-eigenschap van het gebruikers object. |
@@ -225,22 +226,19 @@ Binnen de SAML-tokens worden deze claims verzonden met de volgende URI-indeling:
 
 ## <a name="configuring-groups-optional-claims"></a>Groepen optionele claims configureren
 
-   > [!NOTE]
-   > De mogelijkheid om groeps namen te verzenden voor gebruikers en groepen die vanaf on-premises zijn gesynchroniseerd, is open bare preview.
-
 In deze sectie worden de configuratie opties beschreven onder optionele claims voor het wijzigen van de groeps kenmerken die worden gebruikt in groeps claims van de standaard groep-objectID tot kenmerken die worden gesynchroniseerd vanuit on-premises Windows-Active Directory. U kunt groepen optionele claims voor uw toepassing configureren via de gebruikers interface of het toepassings manifest.
 
 > [!IMPORTANT]
-> Zie [groeps claims configureren voor toepassingen met Azure AD](../hybrid/how-to-connect-fed-group-claims.md)voor meer informatie, inclusief belang rijke aanvullende opmerkingen voor de open bare preview van groeps claims van on-premises kenmerken.
+> Zie [groeps claims configureren voor toepassingen met Azure AD](../hybrid/how-to-connect-fed-group-claims.md)voor meer informatie, inclusief belang rijke aanvullende opmerkingen voor groeps claims van on-premises kenmerken.
 
 **Groepen optionele claims configureren via de gebruikers interface:**
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
-1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
-1. Selecteer **app-registraties** in het gedeelte **beheren** .
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer **App-registraties** onder **Beheren**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
-1. Selecteer in de sectie **beheren** de optie **token configuratie**.
+1. Selecteer onder **beheren** de optie **token configuratie**.
 1. Selecteer **claim voor groepen toevoegen**.
 1. Selecteer de groeps typen die moeten worden geretourneerd (**beveiligings groepen**, of **Directory rollen**, **alle groepen** en/of **groepen die zijn toegewezen aan de toepassing**). De **groepen die zijn toegewezen aan de toepassings** optie omvatten alleen groepen die zijn toegewezen aan de toepassing. De optie **alle groepen** omvat **beveiligings groep**, **DirectoryRole** en **DistributionList**, maar niet **voor groepen die zijn toegewezen aan de toepassing**. 
 1. Optioneel: Selecteer de specifieke eigenschappen van het token type om de claim waarde voor groepen te wijzigen zodat deze lokale groeps kenmerken bevat of om het claim type te wijzigen in een rol.
@@ -250,9 +248,9 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
-1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
+1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
-1. Selecteer in de sectie **beheren** de optie **manifest**.
+1. Onder **beheren** selecteert u **manifest**.
 1. Voeg de volgende vermelding toe met behulp van de manifest editor:
 
    Geldige waarden zijn:
@@ -382,13 +380,13 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 
-1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
+1. Zoek en selecteer de optie **Azure Active Directory**.
 
-1. Selecteer **app-registraties** in het gedeelte **beheren** .
+1. Selecteer **App-registraties** onder **Beheren**.
 
 1. Zoek de toepassing waarvoor u de optionele claims wilt configureren in de lijst en selecteer deze.
 
-1. Selecteer in de sectie **beheren** de optie **token configuratie**.
+1. Selecteer onder **beheren** de optie **token configuratie**.
 
 1. Selecteer **optionele claim toevoegen**, selecteer het **id-** token type, selecteer **UPN** in de lijst met claims en selecteer vervolgens **toevoegen**.
 
@@ -404,9 +402,9 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
-1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
+1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Zoek de toepassing waarvoor u de optionele claims wilt configureren in de lijst en selecteer deze.
-1. Selecteer in de sectie **beheren** de optie **manifest** om de editor in het manifest te openen.
+1. Selecteer in het gedeelte **beheren** de optie **manifest** om de editor voor inline manifesten te openen.
 1. U kunt het manifest rechtstreeks bewerken met deze editor. Het manifest volgt het schema voor de [toepassings entiteit](./reference-app-manifest.md)en maakt het manifest automatisch op wanneer het is opgeslagen. Nieuwe elementen worden toegevoegd aan de `OptionalClaims` eigenschap.
 
     ```json

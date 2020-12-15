@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e17c390dddcb2af9fdc83b45ae812ef1fff7f1c3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 14195ad4638c724cf0c8dd46945a0da79ec0e4ec
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345079"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509697"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een zelf-bevestigd technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -199,19 +199,19 @@ U kunt ook een REST API technisch profiel aanroepen met uw bedrijfs logica, invo
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| setting. operatingMode <sup>1</sup>| Nee | Voor een aanmeldings pagina bepaalt deze eigenschap het gedrag van het veld gebruikers naam, zoals invoer validatie en fout berichten. Verwachte waarden: `Username` of `Email` .  |
-| AllowGenerationOfClaimsWithNullValues| Nee| Er kan een claim met een null-waarde worden gegenereerd. Zo wordt in een case-gebruiker geen selectie vakje geselecteerd.|
-| ContentDefinitionReferenceId | Ja | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
-| EnforceEmailVerification | Nee | Voor de registratie of het profiel bewerken, wordt een e-mail verificatie afgedwongen. Mogelijke waarden: `true` (standaard) of `false` . |
-| setting. retryLimit | Nee | Hiermee bepaalt u het aantal keren dat een gebruiker de gegevens kan opgeven die worden gecontroleerd op basis van het technische profiel voor validatie. Bijvoorbeeld: een gebruiker probeert zich aan te melden met een account dat al bestaat en het probeert tot de limiet is bereikt.
-| SignUpTarget <sup>1</sup>| Nee | De Exchange-doel-id voor de aanmelding. Wanneer de gebruiker op de knop registratie klikt, wordt Azure AD B2C de opgegeven Exchange-id uitgevoerd. |
-| setting. showCancelButton | Nee | Hiermee wordt de knop Annuleren weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. showContinueButton | Nee | Hiermee wordt de knop door gaan weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. showSignupLink <sup>2</sup>| Nee | Hiermee wordt de knop registratie weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
-| setting. forgotPasswordLinkLocation <sup>2</sup>| Nee| Hiermee wordt de verg eten wachtwoord koppeling weer gegeven. Mogelijke waarden: `AfterInput` (standaard) de koppeling wordt weer gegeven aan de onderkant van de pagina of `None` de koppeling met verg eten wacht woord wordt verwijderd.|
-| setting. enableRememberMe <sup>2</sup>| Nee| Hiermee wordt het selectie vakje [aangemeld blijven](custom-policy-keep-me-signed-in.md) weer gegeven. Mogelijke waarden: `true` , of `false` (standaard). |
-| setting. inputVerificationDelayTimeInMilliseconds <sup>3</sup>| Nee| Verbetert de gebruikers ervaring door te wachten tot de gebruiker stopt met typen en vervolgens de waarde te valideren. Standaard waarde 2000 milliseconden. |
-| IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
+| setting. operatingMode <sup>1</sup>| No | Voor een aanmeldings pagina bepaalt deze eigenschap het gedrag van het veld gebruikers naam, zoals invoer validatie en fout berichten. Verwachte waarden: `Username` of `Email` .  |
+| AllowGenerationOfClaimsWithNullValues| No| Er kan een claim met een null-waarde worden gegenereerd. Zo wordt in een case-gebruiker geen selectie vakje geselecteerd.|
+| ContentDefinitionReferenceId | Yes | De id van de [inhouds definitie](contentdefinitions.md) die aan dit technische profiel is gekoppeld. |
+| EnforceEmailVerification | No | Voor de registratie of het profiel bewerken, wordt een e-mail verificatie afgedwongen. Mogelijke waarden: `true` (standaard) of `false` . |
+| setting. retryLimit | No | Hiermee bepaalt u het aantal keren dat een gebruiker de gegevens kan opgeven die worden gecontroleerd op basis van het technische profiel voor validatie. Bijvoorbeeld: een gebruiker probeert zich aan te melden met een account dat al bestaat en het probeert tot de limiet is bereikt.
+| SignUpTarget <sup>1</sup>| No | De Exchange-doel-id voor de aanmelding. Wanneer de gebruiker op de knop registratie klikt, wordt Azure AD B2C de opgegeven Exchange-id uitgevoerd. |
+| setting. showCancelButton | No | Hiermee wordt de knop Annuleren weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. showContinueButton | No | Hiermee wordt de knop door gaan weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. showSignupLink <sup>2</sup>| No | Hiermee wordt de knop registratie weer gegeven. Mogelijke waarden: `true` (standaard) of `false` |
+| setting. forgotPasswordLinkLocation <sup>2</sup>| No| Hiermee wordt de verg eten wachtwoord koppeling weer gegeven. Mogelijke waarden: `AfterInput` (standaard) de koppeling wordt weer gegeven aan de onderkant van de pagina of `None` de koppeling met verg eten wacht woord wordt verwijderd.|
+| setting. enableRememberMe <sup>2</sup>| No| Hiermee wordt het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) weer gegeven. Mogelijke waarden: `true` , of `false` (standaard). |
+| setting. inputVerificationDelayTimeInMilliseconds <sup>3</sup>| No| Verbetert de gebruikers ervaring door te wachten tot de gebruiker stopt met typen en vervolgens de waarde te valideren. Standaard waarde 2000 milliseconden. |
+| IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
 
 Opmerkingen:
 1. Beschikbaar voor inhouds definitie [DataUri](contentdefinitions.md#datauri) type van `unifiedssp` of `unifiedssd` .

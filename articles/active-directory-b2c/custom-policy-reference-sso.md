@@ -11,18 +11,18 @@ ms.topic: reference
 ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3e47eda29b0ad1c47edad08195b2ffd0fe3835af
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 453042766c427b05ec1ee1090a0702f64065542d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750472"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508047"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Sessie beheer voor eenmalige aanmelding in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-[Sessie beheer voor eenmalige aanmelding (SSO)](session-overview.md) maakt gebruik van dezelfde semantiek als andere technische profielen in aangepast beleid. Wanneer een Orchestration-stap wordt uitgevoerd, wordt het technische profiel dat is gekoppeld aan de stap, opgevraagd voor een `UseTechnicalProfileForSessionManagement` verwijzing. Als dat het geval is, wordt de SSO-sessie provider waarnaar wordt verwezen, gecontroleerd om te zien of de gebruiker een deel nemer voor de sessie is. Als dit het geval is, wordt de SSO-sessie provider gebruikt om de sessie opnieuw in te vullen. Op dezelfde manier wordt de provider gebruikt voor het opslaan van gegevens in de sessie als er een SSO-sessie provider is opgegeven, wanneer de uitvoering van een Orchestration-stap is voltooid.
+[Sessie beheer voor eenmalige aanmelding (SSO)](session-behavior.md) maakt gebruik van dezelfde semantiek als andere technische profielen in aangepast beleid. Wanneer een Orchestration-stap wordt uitgevoerd, wordt het technische profiel dat is gekoppeld aan de stap, opgevraagd voor een `UseTechnicalProfileForSessionManagement` verwijzing. Als dat het geval is, wordt de SSO-sessie provider waarnaar wordt verwezen, gecontroleerd om te zien of de gebruiker een deel nemer voor de sessie is. Als dit het geval is, wordt de SSO-sessie provider gebruikt om de sessie opnieuw in te vullen. Op dezelfde manier wordt de provider gebruikt voor het opslaan van gegevens in de sessie als er een SSO-sessie provider is opgegeven, wanneer de uitvoering van een Orchestration-stap is voltooid.
 
 Azure AD B2C heeft een aantal SSO-sessie providers gedefinieerd die kunnen worden gebruikt:
 
@@ -120,7 +120,7 @@ Deze provider wordt gebruikt om het scherm ' ID-provider kiezen ' te onderdrukke
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| AlwaysFetchClaimsFromProvider | Nee | Momenteel niet gebruikt, kan worden genegeerd. |
+| AlwaysFetchClaimsFromProvider | No | Momenteel niet gebruikt, kan worden genegeerd. |
 
 ### <a name="oauthssosessionprovider"></a>OAuthSSOSessionProvider
 
@@ -162,11 +162,10 @@ Het volgende `SM-Saml-issuer` technische profiel wordt gebruikt door een [SAML-U
 
 | Kenmerk | Vereist | Beschrijving|
 | --- | --- | --- |
-| IncludeSessionIndex | Nee | Momenteel niet gebruikt, kan worden genegeerd.|
-| RegisterServiceProviders | Nee | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
+| IncludeSessionIndex | No | Momenteel niet gebruikt, kan worden genegeerd.|
+| RegisterServiceProviders | No | Geeft aan dat de provider alle SAML-service providers moet registreren waarvoor een bevestiging is verleend. Mogelijke waarden: `true` (standaard) of `false` .|
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [Azure AD B2C sessie](session-overview.md).
-- Meer informatie over het [configureren van het gedrag van sessies in aangepaste beleids regels](session-behavior-custom-policy.md).
+Meer informatie over het configureren van het [gedrag van sessies](session-behavior.md).

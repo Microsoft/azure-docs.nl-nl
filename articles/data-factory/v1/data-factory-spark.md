@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 6c9e5b6466d3da675975dbf2c532602561e820c9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 417306e09a9424b302bb226aea5dd2c1debe96f5
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495069"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508421"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Spark-Program ma's aanroepen vanuit Azure Data Factory pijp lijnen
 
@@ -60,7 +60,7 @@ Hier volgen de typische stappen voor het maken van een data factory pijp lijn me
 
 1. Upload **test.py** naar de map **pyFiles** in de container **adfspark** in uw Blob-opslag. Maak de container en de map als deze nog niet bestaan.
 
-### <a name="create-a-data-factory"></a>Een data factory maken
+### <a name="create-a-data-factory"></a>Een gegevensfactory maken
 Volg deze stappen om een data factory te maken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
@@ -118,13 +118,13 @@ In deze stap maakt u een gekoppelde HDInsight-service om uw HDInsight Spark-clus
 
 1. Kopieer het onderstaande codefragment en plak het in het venster Draft-1. Voer de volgende stappen uit in de JSON-editor:
 
-    a. Geef de URI voor het HDInsight Spark-cluster op. Bijvoorbeeld: `https://<sparkclustername>.azurehdinsight.net/`.
+    1. Geef de URI voor het HDInsight Spark-cluster op. Bijvoorbeeld: `https://<sparkclustername>.azurehdinsight.net/`.
 
-    b. Geef de naam op van de gebruiker die toegang heeft tot het Spark-cluster.
+    1. Geef de naam op van de gebruiker die toegang heeft tot het Spark-cluster.
 
-    c. Geef het wachtwoord voor de gebruiker op.
+    1. Geef het wachtwoord voor de gebruiker op.
 
-    d. Geef de gekoppelde opslag service op die is gekoppeld aan het HDInsight Spark-cluster. In dit voor beeld is het AzureStorageLinkedService.
+    1. Geef de gekoppelde opslag service op die is gekoppeld aan het HDInsight Spark-cluster. In dit voor beeld is het AzureStorageLinkedService.
 
     ```json
     {
@@ -213,20 +213,21 @@ In deze stap maakt u een pijp lijn met een HDInsightSpark-activiteit. Op dit mom
         }
     }
     ```
+
     Houd rekening met de volgende punten:
 
-    a. De eigenschap **type** wordt ingesteld op **HDInsightSpark**.
+    1. De eigenschap **type** wordt ingesteld op **HDInsightSpark**.
 
-    b. De eigenschap **rootPath** is ingesteld op **adfspark \\ pyFiles** , waarbij adfspark de BLOB-container is en pyFiles is bestandsmap in die container. In dit voor beeld is de Blob-opslag het account dat is gekoppeld aan het Spark-cluster. U kunt het bestand uploaden naar een ander opslag account. Als u dit doet, maakt u een gekoppelde opslag service om het opslag account te koppelen aan de data factory. Geef vervolgens de naam van de gekoppelde service op als waarde voor de eigenschap **sparkJobLinkedService** . Zie [Eigenschappen van Spark-activiteit](#spark-activity-properties)voor meer informatie over deze eigenschap en andere eigenschappen die door de Spark-activiteit worden ondersteund.
+    1. De eigenschap **rootPath** is ingesteld op **adfspark \\ pyFiles** , waarbij adfspark de BLOB-container is en pyFiles is bestandsmap in die container. In dit voor beeld is de Blob-opslag het account dat is gekoppeld aan het Spark-cluster. U kunt het bestand uploaden naar een ander opslag account. Als u dit doet, maakt u een gekoppelde opslag service om het opslag account te koppelen aan de data factory. Geef vervolgens de naam van de gekoppelde service op als waarde voor de eigenschap **sparkJobLinkedService** . Zie [Eigenschappen van Spark-activiteit](#spark-activity-properties)voor meer informatie over deze eigenschap en andere eigenschappen die door de Spark-activiteit worden ondersteund.
 
-    c. De eigenschap **entryFilePath** is ingesteld op **test.py**, het python-bestand.
+    1. De eigenschap **entryFilePath** is ingesteld op **test.py**, het python-bestand.
 
-    d. De eigenschap **getDebugInfo** is ingesteld op **Always**, wat betekent dat de logboek bestanden altijd worden gegenereerd (geslaagd of mislukt).
+    1. De eigenschap **getDebugInfo** is ingesteld op **Always**, wat betekent dat de logboek bestanden altijd worden gegenereerd (geslaagd of mislukt).
 
-    > [!IMPORTANT]
-    > U wordt aangeraden deze eigenschap niet in te stellen `Always` in een productie omgeving, tenzij u een probleem wilt oplossen.
+       > [!IMPORTANT]
+       > U wordt aangeraden deze eigenschap niet `Always` in te stellen in een productie omgeving, tenzij u een probleem wilt oplossen.
 
-    e. De sectie **outputs** heeft één uitvoer gegevensset. U moet een uitvoer gegevensset opgeven, zelfs als het Spark-programma geen uitvoer produceert. De uitvoer gegevensset stuurt de planning voor de pijp lijn (per uur, dagelijks).
+    1. De sectie **outputs** heeft één uitvoer gegevensset. U moet een uitvoer gegevensset opgeven, zelfs als het Spark-programma geen uitvoer produceert. De uitvoer gegevensset stuurt de planning voor de pijp lijn (per uur, dagelijks).
 
     Zie de sectie [Eigenschappen van Spark-activiteit](#spark-activity-properties)voor meer informatie over de eigenschappen die door de Spark-activiteit worden ondersteund.
 
@@ -326,18 +327,18 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| naam | De naam van de activiteit in de pijp lijn. | Ja |
-| beschrijving | Tekst die beschrijft wat de activiteit doet. | Nee |
-| type | Deze eigenschap moet worden ingesteld op HDInsightSpark. | Ja |
-| linkedServiceName | De naam van de gekoppelde HDInsight-service waarop het Spark-programma wordt uitgevoerd. | Ja |
-| rootPath | De BLOB-container en de map waarin het Spark-bestand zich bevindt. De bestands naam is hoofdletter gevoelig. | Ja |
-| entryFilePath | Relatief pad naar de hoofdmap van de Spark-code/-pakket. | Ja |
-| className | De hoofd klasse java/Spark van de toepassing. | Nee |
-| opmerkingen | Een lijst met opdracht regel argumenten voor het Spark-programma. | Nee |
-| proxyUser | Het gebruikers account dat moet worden geïmiteerd voor het uitvoeren van het Spark-programma. | Nee |
-| sparkConfig | Geef waarden op voor de Spark-configuratie-eigenschappen die worden vermeld in [Spark-configuratie: toepassings eigenschappen](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Nee |
-| getDebugInfo | Hiermee geeft u op wanneer de Spark-logboek bestanden worden gekopieerd naar de opslag die wordt gebruikt door het HDInsight-cluster (of) dat is opgegeven door sparkJobLinkedService. Toegestane waarden zijn geen, altijd of mislukt. De standaard waarde is geen. | Nee |
-| sparkJobLinkedService | De gekoppelde opslag service die het Spark-taak bestand, de afhankelijkheden en de logboeken bevat. Als u geen waarde voor deze eigenschap opgeeft, wordt de opslag gebruikt die aan het HDInsight-cluster is gekoppeld. | Nee |
+| naam | De naam van de activiteit in de pijp lijn. | Yes |
+| beschrijving | Tekst die beschrijft wat de activiteit doet. | No |
+| type | Deze eigenschap moet worden ingesteld op HDInsightSpark. | Yes |
+| linkedServiceName | De naam van de gekoppelde HDInsight-service waarop het Spark-programma wordt uitgevoerd. | Yes |
+| rootPath | De BLOB-container en de map waarin het Spark-bestand zich bevindt. De bestands naam is hoofdletter gevoelig. | Yes |
+| entryFilePath | Relatief pad naar de hoofdmap van de Spark-code/-pakket. | Yes |
+| className | De hoofd klasse java/Spark van de toepassing. | No |
+| opmerkingen | Een lijst met opdracht regel argumenten voor het Spark-programma. | No |
+| proxyUser | Het gebruikers account dat moet worden geïmiteerd voor het uitvoeren van het Spark-programma. | No |
+| sparkConfig | Geef waarden op voor de Spark-configuratie-eigenschappen die worden vermeld in [Spark-configuratie: toepassings eigenschappen](https://spark.apache.org/docs/latest/configuration.html#available-properties). | No |
+| getDebugInfo | Hiermee geeft u op wanneer de Spark-logboek bestanden worden gekopieerd naar de opslag die wordt gebruikt door het HDInsight-cluster (of) dat is opgegeven door sparkJobLinkedService. Toegestane waarden zijn geen, altijd of mislukt. De standaard waarde is geen. | No |
+| sparkJobLinkedService | De gekoppelde opslag service die het Spark-taak bestand, de afhankelijkheden en de logboeken bevat. Als u geen waarde voor deze eigenschap opgeeft, wordt de opslag gebruikt die aan het HDInsight-cluster is gekoppeld. | No |
 
 ## <a name="folder-structure"></a>Mapstructuur
 De Spark-activiteit biedt geen ondersteuning voor een inline-script als Pig en Hive-activiteiten. Spark-taken zijn ook uitbreidbaarer dan Pig/Hive-taken. U kunt voor Spark-taken meerdere afhankelijkheden opgeven, zoals jar-pakketten (die in het Java-KLASSENPAD zijn geplaatst), python-bestanden (die zijn geplaatst op de PYTHONPATH) en andere bestanden.
@@ -347,7 +348,7 @@ Maak de volgende mapstructuur in de Blob-opslag waarnaar wordt verwezen door de 
 | Pad | Beschrijving | Vereist | Type |
 | ---- | ----------- | -------- | ---- |
 | . | Het pad naar de hoofdmap van de Spark-taak in de gekoppelde Storage-service. | Ja | Map |
-| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Ja | File |
+| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Yes | Bestand |
 | ./jars | Alle bestanden in deze map worden geüpload en geplaatst op het Java-klassenpad van het cluster. | Nee | Map |
 | ./pyFiles | Alle bestanden in deze map worden geüpload en geplaatst op de PYTHONPATH van het cluster. | Nee | Map |
 | ./files | Alle bestanden in deze map worden geüpload en geplaatst op de werk directory van de uitvoerder. | Nee | Map |

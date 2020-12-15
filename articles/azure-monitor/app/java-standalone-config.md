@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: b5c1ab7db818daa91497728299d2247f612fe21b
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 73e3d8834fcb41f863fe2e3d686b812bb6174e70
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387748"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507656"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -184,9 +184,9 @@ Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-teleme
 
 Log4j, logback en Java. util. logging zijn automatisch instrumenteel en logboek registratie die via deze logboek registratie raamwerken wordt uitgevoerd, wordt automatisch verzameld.
 
-Logboek registratie wordt standaard alleen verzameld wanneer de logboek registratie wordt uitgevoerd op het `INFO` niveau of hoger.
+Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfigureerde drempel waarde voor logboek registratie raamwerken en de tweede ook voldoet aan de Application Insights geconfigureerde drempel waarde.
 
-Als u dit verzamelings niveau wilt wijzigen:
+De standaard drempel voor Application Insights is `INFO` . Als u dit niveau wilt wijzigen:
 
 ```json
 {

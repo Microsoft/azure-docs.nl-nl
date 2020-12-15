@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 60dff717fbd86fa83821575ac90c9dac36dbc4d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d680da7a5f09a55bec5d791642b80fd76c6088e
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85383968"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509611"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Gebruikers migreren naar Azure AD B2C
 
@@ -50,7 +50,7 @@ De naadloze migratie stroom heeft daarom twee fasen: *pre-migratie* en *Referent
 ### <a name="phase-1-pre-migration"></a>Fase 1: vooraf migreren
 
 1. Uw migratie toepassing leest de gebruikers accounts van de oude ID-provider.
-1. De migratie toepassing maakt corresponderende gebruikers accounts in uw Azure AD B2C Directory, maar *stelt geen wacht woorden*in.
+1. De migratie toepassing maakt corresponderende gebruikers accounts in uw Azure AD B2C Directory, maar *stelt geen wacht woorden* in.
 
 ### <a name="phase-2-set-credentials"></a>Fase 2: Referenties instellen
 
@@ -90,7 +90,7 @@ Niet alle informatie in de ID-provider moet worden gemigreerd naar uw Azure AD B
 
 Voordat u met het migratie proces begint, kunt u de mogelijkheid om uw directory op te schonen.
 
-- Bepaal de set gebruikers kenmerken die moeten worden opgeslagen in Azure AD B2C en migreer alleen wat u nodig hebt. Indien nodig kunt u [aangepaste kenmerken](custom-policy-custom-attributes.md) maken om meer gegevens over een gebruiker op te slaan.
+- Bepaal de set gebruikers kenmerken die moeten worden opgeslagen in Azure AD B2C en migreer alleen wat u nodig hebt. Indien nodig kunt u [aangepaste kenmerken](user-flow-custom-attributes.md) maken om meer gegevens over een gebruiker op te slaan.
 - Als u migreert van een omgeving met meerdere verificatie bronnen (bijvoorbeeld elke toepassing heeft een eigen gebruikers Directory), migreert u naar een uniform account in Azure AD B2C.
 - Als meerdere toepassingen verschillende gebruikers namen hebben, kunt u deze allemaal opslaan in een Azure AD B2C gebruikers account met behulp van de verzameling Identities. Laat de gebruiker met betrekking tot het wacht woord één kiezen en stel deze in de map in. Met de naadloze migratie wordt alleen het gekozen wacht woord opgeslagen in het Azure AD B2C-account.
 - Verwijder ongebruikte gebruikers accounts vóór de migratie of Migreer geen verlopen accounts.

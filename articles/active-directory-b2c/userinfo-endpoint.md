@@ -11,12 +11,12 @@ ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 62f2869bfe1110dd5bf8459c9f6f6b21701dc934
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 95f41283b78c39ed2cf3b4abb75275902d8cf7bd
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97425836"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509577"
 ---
 # <a name="userinfo-endpoint"></a>Eindpunt voor gebruikersinfo
 
@@ -103,7 +103,7 @@ De gebruikers gegevens UserJourney geeft het volgende aan:
 
 1. De sectie outputClaims binnen het technische profiel UserInfoIssuer geeft de kenmerken op die u wilt retour neren. Het technische profiel UserInfoIssuer wordt aan het einde van de gebruikers reis aangeroepen. 
 1. Het technische profiel UserInfoAuthorization valideert de hand tekening, naam van de verlener en de token doelgroep en extraheert de claim van het inkomende token. Wijzig de volgende meta gegevens zodat deze overeenkomen met uw omgeving:
-    1. **verlener** : deze waarde moet gelijk zijn aan de `iss` claim binnen de claim van het toegangs token. Tokens die zijn uitgegeven door Azure AD B2C gebruiken een uitgever in de indeling `https://yourtenant.b2clogin.com/your-tenant-id/v2.0/` . Meer informatie over het [aanpassen van tokens](configure-tokens-custom-policy.md).
+    1. **verlener** : deze waarde moet gelijk zijn aan de `iss` claim binnen de claim van het toegangs token. Tokens die zijn uitgegeven door Azure AD B2C gebruiken een uitgever in de indeling `https://yourtenant.b2clogin.com/your-tenant-id/v2.0/` . Meer informatie over het [aanpassen van tokens](configure-tokens.md).
     1. **IdTokenAudience** -moet identiek zijn aan de `aud` claim binnen de claim van het toegangs token. In Azure AD B2C `aud` is de claim de id van uw Relying Party toepassing. Deze waarde is een verzameling en ondersteunt meerdere waarden met behulp van een komma als scheidings teken.
 
 In het volgende toegangs token is de `iss` claim waarde `https://contoso.b2clogin.com/11111111-1111-1111-1111-111111111111/v2.0/` . De `aud` claim waarde is `22222222-2222-2222-2222-222222222222` .

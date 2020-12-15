@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/04/2018
-ms.openlocfilehash: 650d55ede8e6099252858c9118c8705f59ab6780
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 2026bdd1898df460bfed2ae9d5544f90c532308f
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498537"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507435"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Activiteit in Azure Data Factory filteren
 U kunt een filter activiteit in een pijp lijn gebruiken om een filter expressie toe te passen op een invoer matrix. 
@@ -41,8 +41,8 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de `Filter` activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **filter**. | Tekenreeks | Ja
-regeling | De voor waarde die moet worden gebruikt voor het filteren van de invoer. | Expressie | Ja
-vermeldingen | Invoer matrix waarop het filter moet worden toegepast. | Expressie | Ja
+regeling | De voor waarde die moet worden gebruikt voor het filteren van de invoer. | Expression | Yes
+vermeldingen | Invoer matrix waarop het filter moet worden toegepast. | Expression | Yes
 
 ## <a name="example"></a>Voorbeeld
 

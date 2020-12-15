@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/24/2020
-ms.openlocfilehash: 3eb43c98ae2697ece5ded8ae0df451a6cf5f272d
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: c7e8f96e7917173aaec308b8ae5218684a722483
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96007202"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507469"
 ---
 # <a name="copy-data-to-and-from-azure-databricks-delta-lake-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Databricks Delta Lake met behulp van Azure Data Factory
 

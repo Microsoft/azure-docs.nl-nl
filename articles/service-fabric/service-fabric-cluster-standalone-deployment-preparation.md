@@ -3,12 +3,12 @@ title: Voor bereiding van zelfstandige cluster implementatie
 description: Documentatie met betrekking tot het voorbereiden van de omgeving en het maken van de cluster configuratie, moet worden overwogen voordat een cluster wordt geïmplementeerd dat is bedoeld voor het verwerken van een productiewerk belasting.
 ms.topic: conceptual
 ms.date: 9/11/2018
-ms.openlocfilehash: 9e5ad37d803b2042fd57b0a325570e69d7b73038
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 277c7e047815b3b4171f7cced203ecbe5b68b155
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842951"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509169"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>De implementatie van uw Service Fabric zelfstandige cluster plannen en voorbereiden
 
@@ -60,7 +60,7 @@ Hier vindt u de aanbevolen specificaties voor computers in een Service Fabric cl
 * [Windows PowerShell 3.0](/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7)
 * De [RemoteRegistry-service](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754820(v=ws.11)) moet op alle computers worden uitgevoerd
 * **Service Fabric installatie station moet een NTFS-bestands systeem zijn**
-* ** *Prestatie logboeken* voor windows-Services & waarschuwingen en *Windows-gebeurtenis logboek* moet [zijn ingeschakeld](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755249(v=ws.11))**.
+* ***Prestatie logboeken* voor windows-Services & waarschuwingen en *Windows-gebeurtenis logboek* moet [zijn ingeschakeld](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755249(v=ws.11))**.
 
 > [!IMPORTANT]
 > De Cluster beheerder die het cluster implementeert en configureert, moet over [beheerders bevoegdheden](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) beschikken voor elk van de computers. U kunt Service Fabric niet installeren op een domeincontroller.
@@ -103,7 +103,7 @@ Wanneer een cluster beheerder een Service Fabric zelfstandige cluster configuree
 5. Als de cluster machines niet via internet toegankelijk zijn, stelt u het volgende in de cluster configuratie in:
    * Telemetrie uitschakelen: onder *Eigenschappen* set *"enableTelemetry": False*
    * Schakel de automatische infrastructuur versie voor het downloaden van & meldingen uit dat de huidige cluster versie bijna de ondersteuning ondervindt: Klik onder *Eigenschappen* instellen op *' fabricClusterAutoupgradeEnabled ': False*
-   * Als het netwerk Internet toegang is beperkt tot in wit vermelde domeinen, zijn de onderstaande domeinen vereist voor automatische upgrade: go.microsoft.com download.microsoft.com
+   * Als het netwerk Internet toegang is beperkt tot allowlisted-domeinen, zijn de onderstaande domeinen vereist voor automatische upgrade: go.microsoft.com download.microsoft.com
 
 6. Stel de juiste Service Fabric anti virus-uitsluitingen in:
 

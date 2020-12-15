@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 6b522f234343cc6a50d76607d1629c46cd180b7d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: df6a4053eb70c02e27599bbd9086dfa32b0bcc65
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95894011"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508829"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -200,6 +200,7 @@ Op dit moment worden de volgende Neural stemmen ondersteund:
 * `en-US-GuyNeural`
 * `zh-CN-XiaoxiaoNeural`
 * `zh-CN-YunyangNeural`
+* `zh-CN-YunyeNeural`
 * `zh-CN-YunxiNeural` Evaluatie
 * `zh-CN-XiaohanNeural` Evaluatie
 * `zh-CN-XiaomoNeural` Evaluatie
@@ -243,7 +244,7 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
-| Spraak                   | Stijl                     | Description                                                 |
+| Spraak                   | Stijl                     | Beschrijving                                                 |
 |-------------------------|---------------------------|-------------------------------------------------------------|
 | `en-US-AriaNeural`      | `style="newscast-formal"` | Een formele, vertrouwende en bindende Toon voor nieuws levering |
 |                         | `style="newscast-casual"` | Een veelzijdige en informe Toon voor algemene nieuws levering        |
@@ -271,7 +272,14 @@ Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor el
 |                         | `style="gentle"`          | Hiermee wordt een milde, versterkte en prettige Toon, met lagere Toon hoogte en vocaal-energie         |   
 |                         | `style="lyrical"`         | Drukt op emoties op een melodic-en Sentimental manier         |   
 | `zh-CN-YunyangNeural`   | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  | 
-| `zh-CN-YunxiNeural`    | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+| `zh-CN-YunyeNeural`     | `style="calm"`            | Een fraaie, verzamelde en opgebouwde stand voor het praten. Tint, Pitch, prosody is veel meer uniform vergeleken met andere soorten spraak.    | 
+|                         | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
+|                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
+|                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
+|                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
+|                         | `style="disgruntled"`     | Een disdainful-en-klagende Toon. De spraak van deze Emotion toont het aantal plezier en de bewaarde.              |
+|                         | `style="serious"`         | Hiermee wordt een strikte en een inschakeling van een Toon. De spreker klinkt vaak stijfer en veel minder geforceerd met uitgebracht.          |
+| `zh-CN-YunxiNeural`     | `style="cheerful"`        | Een opvallende en enthousiaste Toon, met hogere Pitch-en gespreks energie                         |
 |                         | `style="sad"`             | Hiermee wordt een Sorrowful-Toon met hogere hoogte, minder intensiteit en lagere vocaal-energie. Algemene indica toren van deze Emotion worden whimpers of huilend tijdens de spraak.            |
 |                         | `style="angry"`           | Hiermee wordt een boos en geergerte Toon, met een lagere hoogte, hogere intensiteit en hogere stem-energie. De spreker heeft de status Irate, gereageerd en is niet in orde.       |
 |                         | `style="fearful"`         | Een Scared-en zenuw Toon, met een hogere hoogte, hogere vocaal-energie en een snellere snelheid. De spreker heeft de status tenseness en Uneasiness.                          |
@@ -383,7 +391,7 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 | `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
 | `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
-| Hoger                      | Description |
+| Hoger                      | Beschrijving |
 |-------------------------------|-------------|
 | Geen, of als er geen waarde wordt gegeven | 0 MS        |
 | x-zwak                        | 250 MS      |

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e55bb9ba49cfcaf07e8d3dc17dc13e30036e100f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 682b83d7016a89b27b5c936853abda1438f59c28
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109042"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508013"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Over claim resolvers in Azure Active Directory B2C aangepast beleid
 
@@ -88,7 +88,7 @@ De volgende secties bevatten een lijst met beschik bare claim resolvers.
 | {Context: DateTimeInUtc} |De datum en tijd in UTC.  | 10/10/2018 12:00:00 UUR |
 | {Context: als Deployment mode} |De implementatie modus voor beleid.  | Productie |
 | {Context: IPAddress} | Het IP-adres van de gebruiker. | 11.111.111.11 |
-| {Context: KMSI} | Hiermee wordt aangegeven of het selectie vakje [aangemeld blijven](custom-policy-keep-me-signed-in.md) is geselecteerd. |  true |
+| {Context: KMSI} | Hiermee wordt aangegeven of het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) is geselecteerd. |  true |
 
 ### <a name="claims"></a>Claims 
 

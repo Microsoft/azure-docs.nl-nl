@@ -12,12 +12,12 @@ ms.date: 12/10/2020
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 698864a4dc1081cb8cad9036ff1cfc737a17473c
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 53f5346030e3c5a247d1ad2a73b23882e83ed41a
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111292"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508115"
 ---
 #  <a name="add-user-attributes-and-customize-user-input-in-azure-active-directory-b2c"></a>Gebruikers kenmerken toevoegen en gebruikers invoer aanpassen in Azure Active Directory B2C
 
@@ -129,7 +129,7 @@ De `LocalizedCollections` is een matrix van `Name` en- `Value` paren. De volg or
 ::: zone pivot="b2c-custom-policy"
 
 > [!NOTE]
-> In dit voor beeld wordt het ingebouwde claim ' City ' gebruikt. In plaats daarvan kunt u een van de ondersteunde [Azure AD B2C ingebouwde kenmerken](user-profile-attributes.md) of een aangepast kenmerk kiezen. Als u een aangepast kenmerk wilt gebruiken, [schakelt u aangepaste kenmerken in het beleid in](custom-policy-custom-attributes.md). Als u een ander ingebouwd of aangepast kenmerk wilt gebruiken, vervangt u ' City ' door het gewenste kenmerk, bijvoorbeeld het ingebouwde kenmerk *jobTitle* of een aangepast kenmerk zoals *extension_loyaltyId*.  
+> In dit voor beeld wordt het ingebouwde claim ' City ' gebruikt. In plaats daarvan kunt u een van de ondersteunde [Azure AD B2C ingebouwde kenmerken](user-profile-attributes.md) of een aangepast kenmerk kiezen. Als u een aangepast kenmerk wilt gebruiken, [schakelt u aangepaste kenmerken in](user-flow-custom-attributes.md). Als u een ander ingebouwd of aangepast kenmerk wilt gebruiken, vervangt u ' City ' door het gewenste kenmerk, bijvoorbeeld het ingebouwde kenmerk *jobTitle* of een aangepast kenmerk zoals *extension_loyaltyId*.  
 
 U kunt initiële gegevens van uw gebruikers verzamelen door gebruik te maken van de traject registratie of aanmeldings gebruiker. Aanvullende claims kunnen later worden verzameld met behulp van een gebruikers traject voor het bewerken van profielen. Elke keer dat Azure AD B2C informatie rechtstreeks van de gebruiker verzamelt, gebruikt het Framework voor identiteits ervaring het [zelfondertekende technische profiel](self-asserted-technical-profile.md). In dit voor beeld hebt u het volgende:
 
@@ -342,6 +342,6 @@ Het token dat teruggestuurd naar uw toepassing bevat de `city` claim.
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het element [ClaimsSchema](claimsschema.md) vindt u in de IEF-verwijzing.
-- Meer informatie over het [gebruik van aangepaste kenmerken in een aangepast profiel bewerkings beleid](custom-policy-custom-attributes.md).
+- Meer informatie over het [gebruik van aangepaste kenmerken in azure AD B2C](user-flow-custom-attributes.md).
 
 ::: zone-end

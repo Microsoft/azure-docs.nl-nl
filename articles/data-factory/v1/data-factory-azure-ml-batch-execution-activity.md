@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: 481b801d481f32ef84279be2d8bd6089670a01b1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c65ef2eb25f330f645048cdc73371d98d8c2ce91
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496516"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508469"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-studio-classic-and-azure-data-factory"></a>Maak voorspellende pijp lijnen met behulp van Azure Machine Learning Studio (klassiek) en Azure Data Factory
 
@@ -35,7 +35,6 @@ ms.locfileid: "96496516"
 ## <a name="introduction"></a>Inleiding
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens transformeren met behulp van machine learning in Data Factory](../transform-data-using-machine-learning.md).
-
 
 ### <a name="azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio (klassiek)
 Met [Azure machine learning Studio (klassiek)](https://azure.microsoft.com/documentation/services/machine-learning/) kunt u Predictive Analytics oplossingen bouwen, testen en implementeren. Vanuit een weergave punt op hoog niveau, wordt deze in drie stappen uitgevoerd:
@@ -86,7 +85,7 @@ In dit scenario maakt de Studio-webservice voor Spellings voorspelling met behul
 >
 >
 
-```JSON
+```json
 {
   "name": "PredictivePipeline",
   "properties": {
@@ -127,6 +126,7 @@ In dit scenario maakt de Studio-webservice voor Spellings voorspelling met behul
   }
 }
 ```
+
 > [!NOTE]
 > Alleen invoer en uitvoer van de AzureMLBatchExecution-activiteit kunnen worden door gegeven als para meters voor de webservice. In het bovenstaande JSON-fragment is DecisionTreeInputBlob bijvoorbeeld een invoer van de AzureMLBatchExecution-activiteit, die wordt door gegeven als invoer voor de webservice via de Webserviceinputactivity-para meter.
 >
@@ -139,115 +139,119 @@ We raden u aan om door te gaan [met het bouwen van uw eerste pijp lijn met Data 
 
 1. Maak een **gekoppelde service** voor uw **Azure Storage**. Als de invoer-en uitvoer bestanden zich in verschillende opslag accounts bevinden, hebt u twee gekoppelde services nodig. Hier volgt een voor beeld van een JSON:
 
-    ```JSON
-    {
-      "name": "StorageLinkedService",
-      "properties": {
-        "type": "AzureStorage",
-        "typeProperties": {
-          "connectionString": "DefaultEndpointsProtocol=https;AccountName=[acctName];AccountKey=[acctKey]"
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "StorageLinkedService",
+     "properties": {
+       "type": "AzureStorage",
+       "typeProperties": {
+         "connectionString": "DefaultEndpointsProtocol=https;AccountName= [acctName];AccountKey=[acctKey]"
+       }
+     }
+   }
+   ```
+
 2. De **invoer** Azure Data Factory **gegevensset** maken. In tegens telling tot andere Data Factory gegevens sets, moeten deze gegevens sets zowel **FolderPath** -als **filename** -waarden bevatten. U kunt partitioneren gebruiken om de uitvoering van elke batch (elk gegevens segment) te laten verwerken of unieke invoer-en uitvoer bestanden te maken. Mogelijk moet u enige upstream-activiteit toevoegen om de invoer te transformeren naar de CSV-bestands indeling en deze in het opslag account voor elk segment te plaatsen. In dat geval neemt u niet de instellingen voor **externe** en **externalData** op die in het volgende voor beeld worden weer gegeven. uw DecisionTreeInputBlob zou de uitvoer gegevensset van een andere activiteit zijn.
 
-    ```JSON
-    {
-      "name": "DecisionTreeInputBlob",
-      "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "StorageLinkedService",
-        "typeProperties": {
-          "folderPath": "azuremltesting/input",
-          "fileName": "in.csv",
-          "format": {
-            "type": "TextFormat",
-            "columnDelimiter": ","
-          }
-        },
-        "external": true,
-        "availability": {
-          "frequency": "Day",
-          "interval": 1
-        },
-        "policy": {
-          "externalData": {
-            "retryInterval": "00:01:00",
-            "retryTimeout": "00:10:00",
-            "maximumRetry": 3
-          }
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "DecisionTreeInputBlob",
+     "properties": {
+       "type": "AzureBlob",
+       "linkedServiceName": "StorageLinkedService",
+       "typeProperties": {
+         "folderPath": "azuremltesting/input",
+         "fileName": "in.csv",
+         "format": {
+           "type": "TextFormat",
+           "columnDelimiter": ","
+         }
+       },
+       "external": true,
+       "availability": {
+         "frequency": "Day",
+         "interval": 1
+       },
+       "policy": {
+         "externalData": {
+           "retryInterval": "00:01:00",
+           "retryTimeout": "00:10:00",
+           "maximumRetry": 3
+         }
+       }
+     }
+   }
+   ```
 
-    Het CSV-bestand van de invoer moet de rij met kolom koppen bevatten. Als u de **Kopieer activiteit** gebruikt om het CSV-bestand te maken of te verplaatsen naar de Blob-opslag, moet u de Sink-eigenschap **blobWriterAddHeader** instellen op **True**. Bijvoorbeeld:
+   Het CSV-bestand van de invoer moet de rij met kolom koppen bevatten. Als u de **Kopieer activiteit** gebruikt om het CSV-bestand te maken of te verplaatsen naar de Blob-opslag, moet u de Sink-eigenschap **blobWriterAddHeader** instellen op **True**. Bijvoorbeeld:
 
-    ```JSON
-    sink:
-    {
-        "type": "BlobSink",
-        "blobWriterAddHeader": true
-    }
-    ```
+   ```json
+   sink:
+   {
+     "type": "BlobSink",
+     "blobWriterAddHeader": true
+     }
+   ```
 
-    Als het CSV-bestand niet de veldnamenrij bevat, ziet u mogelijk de volgende fout: **fout in activiteit: fout bij het lezen van de teken reeks. Onverwacht token: start object. Pad, regel 1, positie 1**.
+   Als het CSV-bestand niet de veldnamenrij bevat, ziet u mogelijk de volgende fout: **fout in activiteit: fout bij het lezen van de teken reeks. Onverwacht token: start object. Pad, regel 1, positie 1**.
+
 3. De **uitvoer** Azure Data Factory **gegevensset** maken. In dit voor beeld wordt gepartitioneerd voor het maken van een uniek uitvoerpad voor elke uitvoering van een segment. Zonder partitioneren zou de activiteit het bestand overschrijven.
 
-    ```JSON
-    {
-      "name": "DecisionTreeResultBlob",
-      "properties": {
-        "type": "AzureBlob",
-        "linkedServiceName": "StorageLinkedService",
-        "typeProperties": {
-          "folderPath": "azuremltesting/scored/{folderpart}/",
-          "fileName": "{filepart}result.csv",
-          "partitionedBy": [
-            {
-              "name": "folderpart",
-              "value": {
-                "type": "DateTime",
-                "date": "SliceStart",
-                "format": "yyyyMMdd"
-              }
-            },
-            {
-              "name": "filepart",
-              "value": {
-                "type": "DateTime",
-                "date": "SliceStart",
-                "format": "HHmmss"
-              }
-            }
-          ],
-          "format": {
-            "type": "TextFormat",
-            "columnDelimiter": ","
-          }
-        },
-        "availability": {
-          "frequency": "Day",
-          "interval": 15
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "DecisionTreeResultBlob",
+     "properties": {
+       "type": "AzureBlob",
+       "linkedServiceName": "StorageLinkedService",
+       "typeProperties": {
+         "folderPath": "azuremltesting/scored/{folderpart}/",
+         "fileName": "{filepart}result.csv",
+         "partitionedBy": [
+           {
+             "name": "folderpart",
+             "value": {
+               "type": "DateTime",
+               "date": "SliceStart",
+               "format": "yyyyMMdd"
+             }
+           },
+           {
+             "name": "filepart",
+             "value": {
+               "type": "DateTime",
+               "date": "SliceStart",
+               "format": "HHmmss"
+             }
+           }
+         ],
+         "format": {
+           "type": "TextFormat",
+           "columnDelimiter": ","
+         }
+       },
+       "availability": {
+         "frequency": "Day",
+         "interval": 15
+       }
+     }
+   }
+   ```
+
 4. Maak een **gekoppelde service** van het type: **AzureMLLinkedService**, die de API-sleutel en de URL voor de model batch uitvoering levert.
 
-    ```JSON
-    {
-      "name": "MyAzureMLLinkedService",
-      "properties": {
-        "type": "AzureML",
-        "typeProperties": {
-          "mlEndpoint": "https://[batch execution endpoint]/jobs",
-          "apiKey": "[apikey]"
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "name": "MyAzureMLLinkedService",
+     "properties": {
+       "type": "AzureML",
+       "typeProperties": {
+         "mlEndpoint": "https://[batch execution endpoint]/jobs",
+         "apiKey": "[apikey]"
+       }
+     }
+   }
+   ```
+
 5. Ontwerp tot slot een pijp lijn met een **AzureMLBatchExecution** -activiteit. Tijdens runtime voert de pijp lijn de volgende stappen uit:
 
    1. Hiermee wordt de locatie van het invoer bestand opgehaald uit de invoer gegevens sets.
@@ -259,45 +263,45 @@ We raden u aan om door te gaan [met het bouwen van uw eerste pijp lijn met Data 
       >
       >
 
-      ```JSON
+      ```json
       {
         "name": "PredictivePipeline",
         "properties": {
-            "description": "use AzureML model",
-            "activities": [
-            {
-                "name": "MLActivity",
-                "type": "AzureMLBatchExecution",
-                "description": "prediction analysis on batch input",
-                "inputs": [
+          "description": "use AzureML model",
+          "activities": [
+              {
+              "name": "MLActivity",
+              "type": "AzureMLBatchExecution",
+              "description": "prediction analysis on batch input",
+              "inputs": [
                 {
-                    "name": "DecisionTreeInputBlob"
+                  "name": "DecisionTreeInputBlob"
                 }
                 ],
-                "outputs": [
+              "outputs": [
                 {
-                    "name": "DecisionTreeResultBlob"
+                  "name": "DecisionTreeResultBlob"
                 }
                 ],
-                "linkedServiceName": "MyAzureMLLinkedService",
-                "typeProperties":
+              "linkedServiceName": "MyAzureMLLinkedService",
+              "typeProperties":
                 {
-                    "webServiceInput": "DecisionTreeInputBlob",
-                    "webServiceOutputs": {
-                        "output1": "DecisionTreeResultBlob"
-                    }
+                "webServiceInput": "DecisionTreeInputBlob",
+                "webServiceOutputs": {
+                  "output1": "DecisionTreeResultBlob"
+                }
                 },
-                "policy": {
-                    "concurrency": 3,
-                    "executionPriorityOrder": "NewestFirst",
-                    "retry": 1,
-                    "timeout": "02:00:00"
-                }
+              "policy": {
+                "concurrency": 3,
+                "executionPriorityOrder": "NewestFirst",
+                "retry": 1,
+                "timeout": "02:00:00"
+              }
             }
-            ],
-            "start": "2016-02-13T00:00:00Z",
-            "end": "2016-02-14T00:00:00Z"
-        }
+          ],
+          "start": "2016-02-13T00:00:00Z",
+          "end": "2016-02-14T00:00:00Z"
+          }
       }
       ```
 
@@ -320,7 +324,7 @@ Wanneer u de modules lezer en Writer gebruikt, is het verstandig om een para met
 
 Laten we eens kijken naar een scenario voor het gebruik van web service-para meters. U hebt een geïmplementeerde Studio-webservice die gebruikmaakt van een lees module voor het lezen van gegevens uit een van de gegevens bronnen die worden ondersteund door Studio (klassiek) (bijvoorbeeld: Azure SQL Database). Nadat de batch uitvoering is uitgevoerd, worden de resultaten geschreven met behulp van een schrijf module (Azure SQL Database).  Er zijn geen ingangen en uitvoer van de webservice gedefinieerd in de experimenten. In dit geval kunt u het beste relevante webservice-para meters configureren voor de modules lezer en Writer. Met deze configuratie kunnen de modules van lezer/Writer worden geconfigureerd wanneer de AzureMLBatchExecution-activiteit wordt gebruikt. U geeft de webservice-para meters op in de sectie **globalParameters** van de JSON van de activiteit als volgt.
 
-```JSON
+```json
 "typeProperties": {
     "globalParameters": {
         "Param 1": "Value 1",
@@ -331,7 +335,7 @@ Laten we eens kijken naar een scenario voor het gebruik van web service-para met
 
 U kunt ook [Data Factory-functies](data-factory-functions-variables.md) gebruiken bij het door geven van waarden voor de para meters van de webservice, zoals wordt weer gegeven in het volgende voor beeld:
 
-```JSON
+```json
 "typeProperties": {
     "globalParameters": {
        "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(WindowStart, 0))"

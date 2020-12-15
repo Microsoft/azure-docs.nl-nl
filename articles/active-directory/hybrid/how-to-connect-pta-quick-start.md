@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bdfb1ca21860f1dc338f85a82caf643f9f7be6d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 31bdfc7e3eca2a2678b75b80973a1680448737d1
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973198"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507673"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Pass-Through-verificatie Azure Active Directory: Quick Start
 
@@ -72,7 +72,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan.
      | **8080** (optioneel) | Verificatie agenten rapporteren hun status elke tien minuten via poort 8080 als poort 443 niet beschikbaar is. Deze status wordt weergegeven in de Azure AD-portal. Poort 8080 wordt _niet_ gebruikt voor gebruikers aanmeldingen. |
      
      Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
-   - Als uw firewall of Proxy DNS-White List toestaat, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net**. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
+   - Als uw firewall of proxy u in staat stelt om DNS-vermeldingen toe te voegen aan een allowlist, voegt u verbindingen toe aan **\* . msappproxy.net** en **\* . servicebus.Windows.net**. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
    - Uw verificatie agenten hebben toegang tot **login.Windows.net** en **login.microsoftonline.com** nodig voor de eerste registratie. Open uw firewall ook voor deze URL's.
     - Voor validatie van het certificaat kunt u de volgende Url's blok keren: **crl3.Digicert.com:80**, **crl4.Digicert.com:80**, **ocsp.digicert.com:80**, **www \. d-trust.net:80**, **root-C3-Ca2-2009.OCSP.d-Trust.net:80**, **CRL.Microsoft.com:80**, **oneocsp.Microsoft.com:80** en **OCSP.msocsp.com:80**. Omdat deze URL's worden gebruikt voor certificaatvalidatie met andere Microsoft-producten, is het mogelijk dat u deze URL's al hebt gedeblokkeerd.
 

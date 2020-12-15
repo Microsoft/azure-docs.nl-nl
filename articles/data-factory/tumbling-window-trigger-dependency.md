@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/03/2020
-ms.openlocfilehash: 4a99865e13e029dcea478cf6085d71c465918b14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 221f8bd7908613812a728d420a68b747051e095b
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89421785"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508795"
 ---
 # <a name="create-a-tumbling-window-trigger-dependency"></a>Een afhankelijkheid voor een tumblingvenstertrigger maken
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -31,7 +31,7 @@ Bekijk de volgende video voor een demonstratie van het maken van afhankelijke pi
 
 ## <a name="create-a-dependency-in-the-data-factory-ui"></a>Een afhankelijkheid maken in de Data Factory-gebruikers interface
 
-Als u afhankelijkheid wilt maken voor een trigger, selecteert u **trigger > geavanceerd > nieuw**en kiest u vervolgens de trigger die afhankelijk is van de juiste offset en grootte. Selecteer **volt ooien** en publiceer de Data Factory wijzigingen voordat de afhankelijkheden van kracht worden.
+Als u afhankelijkheid wilt maken voor een trigger, selecteert u **trigger > geavanceerd > nieuw** en kiest u vervolgens de trigger die afhankelijk is van de juiste offset en grootte. Selecteer **volt ooien** en publiceer de Data Factory wijzigingen voordat de afhankelijkheden van kracht worden.
 
 ![Afhankelijkheid maken](media/tumbling-window-trigger-dependency/tumbling-window-dependency-01.png "Afhankelijkheid maken")
 
@@ -81,9 +81,9 @@ De volgende tabel bevat de lijst met kenmerken die nodig zijn voor het definiër
 
 | **Eigenschaps naam** | **Beschrijving**  | **Type** | **Vereist** |
 |---|---|---|---|
-| type  | Alle bestaande tumblingvenstertriggers-venster triggers worden weer gegeven in deze vervolg keuzelijst. Kies de trigger voor het maken van afhankelijkheden.  | TumblingWindowTriggerDependencyReference of SelfDependencyTumblingWindowTriggerReference | Ja |
+| type  | Alle bestaande tumblingvenstertriggers-venster triggers worden weer gegeven in deze vervolg keuzelijst. Kies de trigger voor het maken van afhankelijkheden.  | TumblingWindowTriggerDependencyReference of SelfDependencyTumblingWindowTriggerReference | Yes |
 | offset | Verschuiving van de afhankelijkheids trigger. Geef een waarde op in de indeling van de tijd en zowel negatieve als positieve verschuivingen zijn toegestaan. Deze eigenschap is verplicht als de trigger afhankelijk is van zichzelf en in alle andere gevallen optioneel is. De Self-afhankelijkheid moet altijd een negatieve verschuiving zijn. Als er geen waarde is opgegeven, is het venster hetzelfde als de trigger. | Periode<br/>(UU: mm: SS) | Zelf afhankelijkheid: Ja<br/>Overige: Nee |
-| grootte | Grootte van het tumblingvenstertriggers-venster van de afhankelijkheid. Geef een positieve time span-waarde op. Deze eigenschap is optioneel. | Periode<br/>(UU: mm: SS) | Nee  |
+| grootte | Grootte van het tumblingvenstertriggers-venster van de afhankelijkheid. Geef een positieve time span-waarde op. Deze eigenschap is optioneel. | Periode<br/>(UU: mm: SS) | No  |
 
 > [!NOTE]
 > Een trigger voor een tumblingvenstertriggers-venster kan afhankelijk zijn van een maximum van vijf andere triggers.

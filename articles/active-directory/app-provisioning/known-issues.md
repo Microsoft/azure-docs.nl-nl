@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 11/19/2020
+ms.date: 12/14/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: b8bdb216cbe8d359f35c758ae89f4267ab223483
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 78e9d7355b8c96295456f8aa9cb80b1d3bdd2fab
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928746"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509543"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 
@@ -68,7 +68,8 @@ Directory-extensies, appRoleAssignments, User type en accountExpires worden niet
 
 - Het inrichten van wacht woorden wordt niet ondersteund. 
 - Het inrichten van geneste groepen wordt niet ondersteund. 
-- Het inrichten van B2C-tenants wordt niet ondersteund vanwege de grootte van de tenants. 
+- Het inrichten van B2C-tenants wordt niet ondersteund vanwege de grootte van de tenants.
+- Niet alle inrichtings-apps zijn beschikbaar in alle Clouds. Bijvoorbeeld, Atlassian is nog niet beschikbaar in de Government Cloud. We werken samen met app-ontwikkel aars om hun apps te gebruiken voor alle Clouds.
 
 **Automatische inrichting is niet beschikbaar op mijn op OIDC gebaseerde toepassing**
 

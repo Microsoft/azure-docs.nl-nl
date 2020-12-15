@@ -1,14 +1,14 @@
 ---
 title: Gedelegeerde resources op schaal controleren
 description: Meer informatie over het effectief gebruiken van Azure Monitor-logboeken op schaal bare wijze over de tenants van de klant die u beheert.
-ms.date: 10/26/2020
+ms.date: 12/14/2020
 ms.topic: how-to
-ms.openlocfilehash: 96ca05faf2b3da8f214c14ae57eb186c7b71e1b3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6c1cbde696ccf9131797a05db33553b8505216a4
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461524"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509271"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren
 
@@ -40,7 +40,25 @@ Wanneer u hebt vastgesteld welk beleid u wilt implementeren, kunt u [ze op schaa
 
 ## <a name="analyze-the-gathered-data"></a>De verzamelde gegevens analyseren
 
-Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log Analytics werk ruimten die u hebt gemaakt in elke Tenant van de klant. Als u inzicht wilt krijgen in alle beheerde klanten, kunt u gebruikmaken van hulpprogram ma's zoals [Azure monitor werkmappen](../../azure-monitor/platform/workbooks-overview.md) voor het verzamelen en analyseren van gegevens uit meerdere gegevens bronnen. 
+Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log Analytics werk ruimten die u hebt gemaakt in elke Tenant van de klant. Als u inzicht wilt krijgen in alle beheerde klanten, kunt u gebruikmaken van hulpprogram ma's zoals [Azure monitor werkmappen](../../azure-monitor/platform/workbooks-overview.md) voor het verzamelen en analyseren van gegevens uit meerdere gegevens bronnen.
+
+## <a name="view-alerts-across-customers"></a>Waarschuwingen over klanten weer geven
+
+U kunt [waarschuwingen](../../azure-monitor/platform/alerts-overview.md) weer geven voor de gedelegeerde abonnementen in de tenants van de klant die u beheert.
+
+Als u waarschuwingen automatisch over meerdere klanten wilt vernieuwen, gebruikt u een [Azure resource Graph](../../governance/resource-graph/overview.md) -query om te filteren op waarschuwingen. U kunt de query aan uw dash board vastmaken en alle relevante klanten en abonnementen selecteren.
+
+In de volgende voorbeeld query worden de waarschuwingen Ernst 0 en 1 weer gegeven, die elke 60 minuten worden vernieuwd.
+
+```kusto
+alertsmanagementresources
+| where type == "microsoft.alertsmanagement/alerts"
+| where properties.essentials.severity =~ "Sev0" or properties.essentials.severity =~ "Sev1"
+| where properties.essentials.monitorCondition == "Fired"
+| where properties.essentials.startDateTime > ago(60m)
+| project StartTime=properties.essentials.startDateTime,name,Description=properties.essentials.description, Severity=properties.essentials.severity, subscriptionId
+| sort by tostring(StartTime)
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

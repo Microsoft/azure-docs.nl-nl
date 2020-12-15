@@ -11,12 +11,12 @@ author: jhirono
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: c67dcbbe2ca6dea533260f59831556c4338374ba
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 07ff656c5eacbbcdc16c6c7cf098478ca6baf745
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95013004"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509288"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Werkruimte gebruiken met een aangepaste DNS-server
 
@@ -41,6 +41,7 @@ Wanneer u een Azure Machine Learning-werk ruimte met een persoonlijk eind punt g
 
 De volgende lijst bevat de volledig gekwalificeerde domein namen (FQDN) die worden gebruikt door uw werk ruimte en persoonlijk eind punt:
 
+* `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.api.azureml.ms`
 * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
@@ -90,6 +91,7 @@ De informatie die door alle methoden wordt geretourneerd, is hetzelfde. een lijs
 > [!IMPORTANT]
 > Sommige FQDN-vormen worden niet weer gegeven in de lijst die wordt weer gegeven door het persoonlijke eind punt, maar zijn vereist voor de werk ruimte. Deze FQDN-namen worden weer gegeven in de volgende tabel en moeten ook worden toegevoegd aan uw DNS-server:
 >
+> * `<workspace-GUID>.workspace.<region>.cert.api.azureml.ms`
 > * `<workspace-GUID>.workspace.<region>.experiments.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.modelmanagement.azureml.net`
 > * `<workspace-GUID>.workspace.<region>.aether.ms`

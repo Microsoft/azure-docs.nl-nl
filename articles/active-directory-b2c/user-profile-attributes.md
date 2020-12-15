@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 85030285810433dc77d1f466d160c50d1f89770e
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 31926653950594b986aca19e2db2877cd655ca24
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750404"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509594"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -46,7 +46,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |country         |Tekenreeks|Het land/de regio waarin de gebruiker zich bevindt. Voor beeld: "US" of "UK". Maximale lengte van 128.|Ja|Ja|Persistent gemaakt, uitvoer|
 |createdDateTime|DateTime|De datum waarop het gebruikers object is gemaakt. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
 |creationType    |Tekenreeks|Als het gebruikers account is gemaakt als een lokaal account voor een Azure Active Directory B2C Tenant, is de waarde LocalAccount of nameCoexistence. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
-|dateOfBirth     |Date|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
+|dateOfBirth     |Datum|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
 |department      |Tekenreeks|De naam van de afdeling waarin de gebruiker werkt. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |displayName     |Tekenreeks|De weergave naam voor de gebruiker. Maximale lengte van 256.|Ja|Ja|Persistent gemaakt, uitvoer|
 |facsimileTelephoneNumber<sup>1</sup>|Tekenreeks|Het telefoon nummer van de zakelijke faxmachine van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -59,18 +59,18 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |mailNickName    |Tekenreeks|De e-mail alias voor de gebruiker. Maximale lengte van 64.|Nee|Nee|Persistent gemaakt, uitvoer|
 |mobiel (mobilePhone) |Tekenreeks|Het primaire mobiele telefoon nummer voor de gebruiker. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |netId           |Tekenreeks|Net-ID.|Nee|Nee|Persistent gemaakt, uitvoer|
-|objectId        |Tekenreeks|Een Globally Unique Identifier (GUID) die de unieke id voor de gebruiker is. Voor beeld: 12345678-9abc-def0-1234-56789abcde. Alleen-lezen, onveranderbaar.|Alleen-lezen|Ja|Invoer, persistent, uitvoer|
-|otherMails      |Tekenreeksverzameling|Een lijst met aanvullende e-mail adressen voor de gebruiker. Voor beeld: [" bob@contoso.com ", " Robert@fabrikam.com "].|Ja (alternatief e-mail adres)|Nee|Persistent gemaakt, uitvoer|
+|objectId        |Tekenreeks|Een Globally Unique Identifier (GUID) die de unieke id voor de gebruiker is. Voor beeld: 12345678-9abc-def0-1234-56789abcde. Alleen-lezen, onveranderbaar.|Alleen-lezen|Yes|Invoer, persistent, uitvoer|
+|otherMails      |Tekenreeksverzameling|Een lijst met aanvullende e-mail adressen voor de gebruiker. Voor beeld: [" bob@contoso.com ", " Robert@fabrikam.com "].|Ja (alternatief e-mail adres)|No|Persistent gemaakt, uitvoer|
 |wachtwoord        |Tekenreeks|Het wacht woord voor het lokale account tijdens het maken van de gebruiker.|Nee|Nee|Persistente|
-|passwordPolicies     |Tekenreeks|Het beleid van het wacht woord. Het is een teken reeks die bestaat uit een andere beleids naam, gescheiden door komma's. dat wil zeggen "DisablePasswordExpiration, DisableStrongPassword".|Nee|Nee|Persistent gemaakt, uitvoer|
+|passwordPolicies     |Tekenreeks|Het beleid van het wacht woord. Het is een teken reeks die bestaat uit een andere beleids naam, gescheiden door komma's. Bijvoorbeeld, DisablePasswordExpiration, DisableStrongPassword.|Nee|Nee|Persistent gemaakt, uitvoer|
 |physicalDeliveryOfficeName (officeLocation)|Tekenreeks|De kantoor locatie in de bedrijfs plaats van de gebruiker. Maximale lengte van 128.|Ja|Nee|Persistent gemaakt, uitvoer|
 |postalCode      |Tekenreeks|De post code voor het post adres van de gebruiker. De post code is specifiek voor het land/de regio van de gebruiker. In de Verenigde Staten van America bevat dit kenmerk de post code. Maximale lengte van 40.|Ja|Nee|Persistent gemaakt, uitvoer|
 |preferredLanguage    |Tekenreeks|De voorkeurs taal voor de gebruiker. De ISO 639-1-code moet volgen. Voor beeld: nl-nl.|Nee|Nee|Persistent gemaakt, uitvoer|
 |refreshTokensValidFromDateTime|DateTime|Vernieuwings tokens die vóór deze tijd zijn uitgegeven, zijn ongeldig en er wordt een fout melding weer gegeven wanneer toepassingen een ongeldig vernieuwings token gebruiken om een nieuw toegangs token op te halen. Als dit het geval is, moet de toepassing een nieuw vernieuwings token verkrijgen door een aanvraag naar het toestemming eind punt te maken. Alleen-lezen.|Nee|Nee|Uitvoer|
-|signInNames ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|De unieke aanmeldings naam van de gebruiker van het lokale account van een wille keurig type in de Directory. Gebruik deze om een gebruiker op te halen met een aanmeldings waarde zonder het lokale account type op te geven.|Nee|Nee|Invoer|
-|signInNames. userName ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|De unieke gebruikers naam van de lokale account gebruiker in de Directory. Gebruik deze om een gebruiker te maken of op te halen met een specifieke gebruikers naam voor aanmelden. Als u deze para meter in PersistedClaims opgeeft, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
-|signInNames. phoneNumber ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|Het unieke telefoon nummer van de lokale account gebruiker in de Directory. Gebruik deze om een gebruiker met een specifiek aanmeldings nummer te maken of op te halen. Als u deze para meter in PersistedClaims opgeeft, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
-|signInNames. emailAddress ([identiteiten](manage-user-accounts-graph-api.md#identities-property))|Tekenreeks|Het unieke e-mail adres van de lokale account gebruiker in de Directory. Gebruik deze om een gebruiker met een specifiek e-mail adres voor aanmelden te maken of op te halen. Als u deze para meter in PersistedClaims opgeeft, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
+|signInNames ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|De unieke aanmeldings naam van de gebruiker van het lokale account van een wille keurig type in de Directory. Gebruik dit kenmerk om een gebruiker op te halen met een aanmeldings waarde zonder het lokale account type op te geven.|Nee|Nee|Invoer|
+|signInNames. userName ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|De unieke gebruikers naam van de lokale account gebruiker in de Directory. Gebruik dit kenmerk om een gebruiker te maken of op te halen met een specifieke gebruikers naam voor aanmelden. Als u deze para meter in PersistedClaims opgeeft, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
+|signInNames. phoneNumber ([identiteiten](manage-user-accounts-graph-api.md#identities-property)) |Tekenreeks|Het unieke telefoon nummer van de lokale account gebruiker in de Directory. Gebruik dit kenmerk om een gebruiker met een specifiek aanmeldings nummer te maken of op te halen. Als u dit kenmerk opgeeft in PersistedClaims tijdens een patch bewerking, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
+|signInNames. emailAddress ([identiteiten](manage-user-accounts-graph-api.md#identities-property))|Tekenreeks|Het unieke e-mail adres van de lokale account gebruiker in de Directory. Gebruik deze om een gebruiker met een specifiek e-mail adres voor aanmelden te maken of op te halen. Als u dit kenmerk opgeeft in PersistedClaims tijdens een patch bewerking, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
 |staat           |Tekenreeks|De staat of provincie in het adres van de gebruiker. Maximale lengte van 128.|Ja|Ja|Persistent gemaakt, uitvoer|
 |streetAddress   |Tekenreeks|Het adres van de bedrijfs locatie van de gebruiker. Maximale lengte van 1024.|Ja|Ja|Persistent gemaakt, uitvoer|
 |strongAuthentication AlternativePhoneNumber<sup>1</sup>|Tekenreeks|Het secundaire telefoon nummer van de gebruiker die wordt gebruikt voor multi-factor Authentication.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -80,7 +80,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |telephoneNumber (eerste vermelding van businessPhones)|Tekenreeks|Het primaire telefoon nummer van de bedrijfs plaats van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
 |userPrincipalName    |Tekenreeks|De UPN (user Principal name) van de gebruiker. De UPN is een aanmeldings naam voor Internet-stijl voor de gebruiker op basis van Internet Standard RFC 822. Het domein moet aanwezig zijn in de verzameling van geverifieerde domeinen van de Tenant. Deze eigenschap is vereist wanneer een account wordt gemaakt. Onveranderbare.|Nee|Nee|Invoer, persistent, uitvoer|
 |usageLocation   |Tekenreeks|Vereist voor gebruikers aan wie licenties moeten worden toegewezen als gevolg van wettelijke vereisten om te controleren of de services beschikbaar zijn in landen/regio's. Geen Null-waarden. Een land/regio code van twee letters (ISO-standaard 3166). Voor beelden: "US", "JP" en "GB".|Ja|Nee|Persistent gemaakt, uitvoer|
-|userType        |Tekenreeks|Een teken reeks waarde die kan worden gebruikt voor het classificeren van gebruikers typen in uw Directory. Waarde moet lid zijn. Alleen-lezen.|Alleen-lezen|Nee|Persistent gemaakt, uitvoer|
+|userType        |Tekenreeks|Een teken reeks waarde die kan worden gebruikt voor het classificeren van gebruikers typen in uw Directory. Waarde moet lid zijn. Alleen-lezen.|Alleen-lezen|No|Persistent gemaakt, uitvoer|
 |userState (externalUserState)<sup>3</sup>|Tekenreeks|Alleen voor Azure AD B2B-account geeft aan of de uitnodiging wordt PendingAcceptance of geaccepteerd.|Nee|Nee|Persistent gemaakt, uitvoer|
 |userStateChangedOn (externalUserStateChangeDateTime)<sup>2</sup>|DateTime|Toont de tijds tempel voor de laatste wijziging van de eigenschap UserState.|Nee|Nee|Persistent gemaakt, uitvoer|
 
@@ -120,5 +120,4 @@ De volgende gegevens typen worden ondersteund bij het definiëren van een eigens
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over extensie kenmerken:
 - [Schema-uitbreidingen](/graph/extensibility-overview#schema-extensions)
-- [Aangepaste kenmerken definiëren met gebruikers stroom](user-flow-custom-attributes.md)
-- [Aangepaste kenmerken definiëren met aangepast beleid](custom-policy-custom-attributes.md)
+- [Aangepaste kenmerken definiëren](user-flow-custom-attributes.md)

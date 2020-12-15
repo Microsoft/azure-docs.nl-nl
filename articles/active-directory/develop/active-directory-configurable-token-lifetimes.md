@@ -9,23 +9,23 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/29/2020
+ms.date: 12/14/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 12d74e2f21678fdbb02719c29a31c0fcdc4fa132
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: f73186612fe79af88e84956bb4d0f0b374f4c986
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030142"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507792"
 ---
 # <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)
 
 > [!IMPORTANT]
-> Na 30 januari 2021 kunnen tenants geen vernieuwings-en sessie token levensduur meer configureren en Azure Active Directory wordt de configuratie van het vernieuwings-en sessie token na die datum niet meer gehonoreerd.
+> Na mei 2020 kunnen tenants geen vernieuwings-en sessie token levensduur meer configureren.  Azure Active Directory zal na 30 januari 2021 niet langer de configuratie van bestaande vernieuwings-en sessie tokens in het beleid naleven. U kunt de levens duur van toegangs tokens na de afschaffing nog steeds configureren.
 >
-> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Ga naar de [Azure AD-pagina met prijzen](https://azure.microsoft.com/en-us/pricing/details/active-directory/)voor meer informatie over voorwaardelijke toegang.
+> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Ga voor meer informatie over voorwaardelijke toegang naar [verificatie sessie beheer configureren met voorwaardelijke toegang](/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime).
 >
 > Voor tenants die geen gebruik hoeven te maken van voorwaardelijke toegang na de datum van beëindiging, kunnen ze verwachten dat Azure AD voldoet aan de standaard configuratie die wordt beschreven in de volgende sectie.
 

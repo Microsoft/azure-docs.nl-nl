@@ -30,6 +30,8 @@
   items:
     - name: Afwijkingen in uw gegevens identificeren
       href: how-to/identify-anomalies.md
+    - name: Implementeren naar IoT Edge
+      href: how-to/deploy-anomaly-detection-on-iot-edge.md
     - name: Containers gebruiken
       items:
         - name: Containers installeren en uitvoeren

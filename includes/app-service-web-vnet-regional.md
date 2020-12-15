@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: ccompy
-ms.openlocfilehash: 86d4eb68866e35300738a15cbd3549485c3cbafb
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 57b2955f8cec059cd20d353eba31dc39ad992d50
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97096406"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97506256"
 ---
 Door gebruik te maken van regionale VNet-integratie kan uw app toegang tot:
 
@@ -99,8 +99,8 @@ Border Gateway Protocol (BGP)-routes hebben ook invloed op uw app-verkeer. Als u
 Nadat uw app met uw VNet is geïntegreerd, maakt deze gebruik van dezelfde DNS-server die is geconfigureerd voor uw VNet. Uw app werkt standaard niet met Azure DNS Private Zones. Als u met Azure DNS Private Zones wilt werken, moet u de volgende app-instellingen toevoegen:
 
 
-1. WEBSITE_DNS_SERVER met waarde 168.63.129.16 1. WEBSITE_DNS_SERVER met waarde 168.63.129.16
-1. WEBSITE_VNET_ROUTE_ALL met waarde 1 1. WEBSITE_VNET_ROUTE_ALL met waarde 1
+1. WEBSITE_DNS_SERVER met waarde 168.63.129.16
+1. WEBSITE_VNET_ROUTE_ALL met waarde 1
 
 
 Met deze instellingen worden al uw uitgaande oproepen vanuit uw app naar uw VNet verzonden en kan uw app Azure DNS privé zones gebruiken.   Met deze instellingen worden alle uitgaande oproepen vanuit uw app naar uw VNet verzonden. Daarnaast wordt de app in staat stellen om Azure DNS te gebruiken door de Privé-DNS zone op werk niveau te doorzoeken. Deze functionaliteit moet worden gebruikt wanneer een actieve app toegang tot een Privé-DNS zone heeft.

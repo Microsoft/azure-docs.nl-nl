@@ -96,8 +96,6 @@
           href: ./cicd/continuous-integration-deployment.md
         - name: Beveiliging
           items:
-            - name: Beveiligingsbasislijn
-              href: security-baseline.md
             - name: Versleuteling
               href: ./security/workspaces-encryption.md
             - name: Netwerkbeveiliging
@@ -566,7 +564,7 @@
           href: ./spark/apache-spark-delta-lake-overview.md
         - name: Bibliotheken beheren
           href: ./spark/apache-spark-azure-portal-add-libraries.md
-        - name: Notebooks gebruiken
+        - name: Notebooks en IDE-hulpprogramma's gebruiken
           items:
             - name: Notebooks beheren
               href: ./spark/apache-spark-development-using-notebooks.md

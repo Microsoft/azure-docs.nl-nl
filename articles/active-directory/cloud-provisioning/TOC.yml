@@ -48,6 +48,8 @@
       items:
         - name: Automatische upgrade voor agent
           href: how-to-automatic-upgrade.md
+        - name: Agent-registeropties
+          href: how-to-manage-registry-options.md
     - name: Ontwikkelen
       items:
         - name: Transformaties

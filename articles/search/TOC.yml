@@ -256,9 +256,11 @@
       items:
         - name: Querytypen en querysamenstelling
           href: search-query-overview.md
-        - name: Een eenvoudige query maken
+        - name: Een basisquery maken
+          href: search-query-create.md
+        - name: Eenvoudige syntaxis gebruiken (voorbeelden)
           href: search-query-simple-examples.md
-        - name: Volledige Lucene-syntaxis gebruiken
+        - name: Volledige Lucene-syntaxis gebruiken (voorbeelden)
           href: search-query-lucene-examples.md
         - name: Gedeeltelijk uitgevoerde coderegels en speciale tekens
           href: search-query-partial-matching.md
@@ -536,6 +538,8 @@
           href: 'https://wolterskluwereap.azurewebsites.net/'
         - name: Demo met JFK-bestanden
           href: 'https://www.microsoft.com/en-us/ai/ai-lab-jfk-files'
+        - name: Demo met NYC-taken
+          href: 'https://azjobsdemo.azurewebsites.net/'
     - name: Training
       items:
         - name: Inleiding (Microsoft Learn)

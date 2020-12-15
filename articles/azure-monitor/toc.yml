@@ -1175,6 +1175,8 @@
               href: platform/workbooks-automate.md
             - name: Groepen
               href: platform/workbooks-groups.md
+            - name: Uw eigen opslag meenemen
+              href: platform/workbooks-bring-your-own-storage.md
             - name: JSON-gegevens transformeren met JSONPath
               href: platform/workbooks-jsonpath.md
             - name: Werkmappen verplaatsen naar een andere regio

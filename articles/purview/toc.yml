@@ -54,6 +54,8 @@ items:
         href: concept-business-glossary.md
       - name: Gegevensinzichten
         href: concept-insights.md
+      - name: Ondersteunde browsers
+        href: supported-browsers.md
       - name: Veelgestelde vragen
         href: frequently-asked-questions.md
   - name: Instructiegidsen
@@ -110,6 +112,8 @@ items:
             href: how-to-create-import-export-glossary.md
           - name: Termsjablonen beheren
             href: how-to-manage-term-templates.md
+          - name: Assets bulksgewijs bewerken om de termen van een woordenlijst toe te wijzen
+            href: how-to-bulk-edit-assets.md
       - name: Classificeren
         items:
           - name: Aangepaste classificatie en classificatieregel maken

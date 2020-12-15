@@ -3,17 +3,17 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 11/11/2020
+ms.date: 12/02/2020
 ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: c82312b40955b392243bf616ee991c0108a13fb5
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: e267de136271991446444a47a470dd52789b3613
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537387"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533958"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -25,6 +25,31 @@ Windows Virtual Desktop wordt regelmatig bijgewerkt. In dit artikel vindt u meer
 - Opgeloste fouten
 
 Dit artikel wordt maandelijks bijgewerkt. Controleer hier regelmatig of er nieuwe updates beschikbaar zijn.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="azure-portal-experience"></a>Ervaring met Azure Portal
+
+Er zijn twee bugs in de gebruikerservaring van Azure Portal opgelost:
+
+- De beschrijvende naam van de Desktop-toepassing wordt niet meer overschreven in de werkstroom 'VM toevoegen'.
+- Het tabblad sessie-host wordt nu geladen als de sessie-hosts deel uitmaken van schaalsets.
+
+### <a name="fslogix-client-version-2009"></a>FSLogix-client, versie 2009 
+
+We hebben een nieuwe versie van de FSLogix-client uitgebracht met veel oplossingen en verbeteringen. Lees voor meer informatie [onze blogpost](https://social.msdn.microsoft.com/Forums/en-US/defe5828-fba4-4715-a68c-0e4d83eefa6b/release-notes-for-fslogix-apps-release-2009-29762130127?forum=FSLogix).
+
+### <a name="rdp-shortpath-public-preview"></a>Openbare preview van RDP Shortpath
+
+RDP Shortpath introduceert een directe verbinding met uw Windows Virtual Desktop-sessie-host met behulp van punt-naar-site- en site-naar-site-VPN's en ExpressRoute. Ook wordt het URCP-transportprotocol geïntroduceerd. RDP Shortpath is ontworpen om latentie en netwerk-hops te verlagen om de gebruikerservaring te verbeteren. Meer informatie vindt u op [Windows Virtual Desktop RDP Shortpath](shortpath.md).
+
+### <a name="azdesktopvirtualization-version-201"></a>Az.DesktopVirtualization, versie 2.0.1
+
+Versie 2.0.1 van de Windows Virtual Desktop-cmdlets is uitgebracht. Deze update bevat cmdlets waarmee u een MSIX App Attach kunt beheren. U kunt de nieuwe versie downloaden op [de PowerShell-galerie](https://www.powershellgallery.com/packages/Az.DesktopVirtualization/2.0.1).
+
+### <a name="azure-advisor-updates"></a>Updates voor Azure Advisor
+
+Azure Advisor heeft nu een nieuwe aanbeveling voor nabijheidsrichtlijnen in Windows Virtual Desktop. Meer informatie vindt u op [de website van Azure](https://azure.microsoft.com/updates/new-recommendations-from-azure-advisor/).
 
 ## <a name="october-2020"></a>Oktober 2020
 
@@ -174,7 +199,6 @@ Dit is wat deze wijziging betekent voor u:
 - Bewakingsfuncties die voorheen werden uitgevoerd via PowerShell of met de web-app voor de Diagnostische service, zijn nu verplaatst naar Log Analytics in de Azure-portal. U hebt nu ook twee opties om uw rapporten te visualiseren. U kunt Kusto-query's uitvoeren en werkmappen gebruiken om visuele rapporten te maken.
 
 - U hebt geen Azure AD-toestemming (Azure Active Directory) meer nodig om Windows Virtual Desktop te gebruiken. In deze update worden met de Azure AD-tenant in uw Azure-abonnement uw gebruikers geverifieerd en wordt Azure RBAC geboden voor de beheerders.
-
 
 ### <a name="powershell-support"></a>PowerShell-ondersteuning
 

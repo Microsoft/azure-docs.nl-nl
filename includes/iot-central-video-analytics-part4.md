@@ -1,5 +1,5 @@
 ---
-title: Include-bestand
+title: bestand opnemen
 description: Include-bestand
 services: iot-central
 author: dominicbetts
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: de916fcbe0623185821e2f5da15a8f9cf71dfd4e
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 0b3ccc31c9159b5d7b1615add89e8fdc308bf8df
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426739"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763411"
 ---
 ### <a name="publish-the-device-template"></a>De apparaatsjabloon publiceren
 
@@ -40,6 +40,12 @@ Om het apparaat **gateway-001** te migreren:
 1. Selecteer in de lijst in het dialoogvenster **Migreren** **LVA Edge Gateway v2** en vervolgens **Migreren**.
 
 Na enkele seconden is de migratie voltooid. Uw apparaat gebruikt nu het apparaatsjabloon **LVA Edge Gateway v2** met uw aangepaste implementatiemanifest.
+
+Er zijn geen apparaten die gebruikmaken van de oorspronkelijke apparaatsjabloon **LVA Edge Gateway**. Deze apparaatsjabloon verwijderen:
+
+1. Navigeer naar de pagina **Apparaatsjablonen** en selecteer de apparaatsjabloon **LVA Edge Gateway**.
+
+1. Selecteer **Verwijderen** om de apparaatsjabloon te verwijderen.
 
 ### <a name="get-the-device-credentials"></a>De apparaatreferenties ophalen
 

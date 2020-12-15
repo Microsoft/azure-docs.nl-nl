@@ -4,18 +4,18 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager kunt gebruiken
 ms.topic: overview
 ms.date: 09/01/2020
 ms.custom: contperfq1
-ms.openlocfilehash: f78b6015846253d79020752522c10af96839a854
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 317d7cae9c0febcc99831b20525b9d9d2cc96651
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91372269"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903187"
 ---
 # <a name="what-is-azure-resource-manager"></a>Wat is Azure Resource Manager?
 
 Azure Resource Manager is de implementatie- en beheersservice voor Azure. Het biedt een beheerlaag waarmee u resources in uw Azure-account kunt maken, bijwerken en verwijderen. U kunt beheerfuncties gebruiken, zoals toegangscontrole, vergrendelingen en tags, om uw resources te beveiligen en te organiseren na de implementatie.
 
-Zie [Overzicht van sjabloonimplementatie](../templates/overview.md) voor meer informatie over Azure Resource Manager-sjablonen.
+Bekijk het [overzicht van sjabloonimplementatie](../templates/overview.md) voor meer informatie over ARM-sjablonen (Azure Resource Manager).
 
 ## <a name="consistent-management-layer"></a>Consistente beheerlaag
 
@@ -95,7 +95,7 @@ Er zijn een aantal belangrijke factoren waarmee u rekening moet houden bij het d
 
 * Sommige resources kunnen buiten een resourcegroep bestaan. Deze resources worden geïmplementeerd in het [abonnement](../templates/deploy-to-subscription.md), de [beheergroep](../templates/deploy-to-management-group.md) of de [tenant](../templates/deploy-to-tenant.md). In deze bereiken worden alleen specifieke resourcetypen ondersteund.
 
-* Als u een resourcegroep wilt maken, kunt u de [Portal](manage-resource-groups-portal.md#create-resource-groups), [PowerShell](manage-resource-groups-powershell.md#create-resource-groups), [Azure CLI](manage-resource-groups-cli.md#create-resource-groups)of een [Azure Resource Manager-sjabloon (ARM) gebruiken](../templates/deploy-to-subscription.md#resource-groups).
+* Als u een resourcegroep wilt maken, kunt u de [portal](manage-resource-groups-portal.md#create-resource-groups), [PowerShell](manage-resource-groups-powershell.md#create-resource-groups), [Azure CLI](manage-resource-groups-cli.md#create-resource-groups) of een [ARM-sjabloon](../templates/deploy-to-subscription.md#resource-groups) gebruiken.
 
 ## <a name="resiliency-of-azure-resource-manager"></a>Tolerantie van Azure Resource Manager
 

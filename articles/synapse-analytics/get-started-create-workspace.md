@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/21/2020
-ms.openlocfilehash: 949992418cb19c5c69ed8da92e9c2f0fc5f2f791
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c9b7d796612981f0e8194be84b0ed141721f644d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445418"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862374"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -45,7 +45,7 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
 
 Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
 
-* Open de Synapse-werkruimte in de [Azure-portal](https://portal.azure.com). Selecteer bovenaan de sectie **Overzicht** de optie **Synapse Studio starten**.
+* Open de Synapse-werkruimte in de [Azure-portal](https://portal.azure.com). Selecteer bovenaan de sectie **Overzicht** de optie **Synapse Studio openen**.
 * Ga naar `https://web.azuresynapse.net` en meld u aan bij uw werkruimte.
 
 ## <a name="create-a-dedicated-sql-pool"></a>Een toegewezen SQL-pool maken

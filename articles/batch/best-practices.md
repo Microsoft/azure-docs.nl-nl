@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6aaed76ad398b5278850dd66ce1da6d5bd33807f
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 1eaa34e02a4c505691662e9fc29334cb823a3185
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95254660"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511209"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -140,6 +140,10 @@ Een [reken knooppunt](nodes-and-pools.md#nodes) is een virtuele machine (VM) of 
 ### <a name="idempotent-start-tasks"></a>Idempotent Start taken
 
 Net als bij andere taken moet de [begin taak](jobs-and-tasks.md#start-task) van het knoop punt idempotent zijn, omdat deze elke keer dat het knoop punt wordt opgestart opnieuw wordt uitgevoerd. Een idempotent-taak is slechts een, wat een consistent resultaat oplevert wanneer er meerdere keren worden uitgevoerd.
+
+### <a name="isolated-nodes"></a>Geïsoleerde knoop punten
+
+U kunt de geïsoleerde VM-grootte gebruiken voor workloads met nalevings-of regelgevings vereisten. Ondersteunde, geïsoleerde grootten in de configuratie van de virtuele machine zijn onder andere,,,, `Standard_E64i_v3` `Standard_E80ids_v4` `Standard_F72s_v2` `Standard_G5` `Standard_GS5` en `Standard_M128ms` . Zie [Virtual machine-isolatie in azure](https://docs.microsoft.com/azure/virtual-machines/isolation)voor meer informatie over geïsoleerde VM-grootten.
 
 ### <a name="manage-long-running-services-via-the-operating-system-services-interface"></a>Langlopende Services beheren via de interface van het besturings systeem-services
 

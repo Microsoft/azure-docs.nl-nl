@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/03/2020
+ms.date: 11/25/2020
 ms.author: jeedes
-ms.openlocfilehash: 557d2eb636e51f4259bc525fe39f8c95303774cd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9a2c52674bafeb170efd41afa9c395aeecda9df8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181026"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602118"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-clientvpn"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AWS ClientVPN
 
@@ -80,7 +80,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<LOCALHOST>`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<LOCALHOST>`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met één van de volgende patronen:
+
+    | Antwoord-URL |
+    |------------|
+    | `https://<LOCALHOST>` |
+    | `https://self-service.clientvpn.amazonaws.com/api/auth/sso/saml` |
+    |
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL. Neem contact op met het [klantondersteuningsteam van AWS ClientVPN](https://aws.amazon.com/contact-us/) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -146,11 +152,11 @@ In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in AWS Clien
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AWS ClientVPN, waar u de aanmeldingsstroom kunt initiëren. 
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AWS ClientVPN, waar u de aanmeldingsstroom kunt initiëren. 
 
-2. Ga rechtstreeks naar de aanmeldings-URL van AWS ClientVPN en initieer de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de aanmeldings-URL van AWS ClientVPN en initieer de aanmeldingsstroom daar.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in het toegangsvenster op de tegel AWS ClientVPN klikt, wordt u omgeleid naar de aanmeldings-URL van AWS ClientVPN. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel AWS ClientVPN klikt, wordt u omgeleid naar de aanmeldings-URL van AWS ClientVPN. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

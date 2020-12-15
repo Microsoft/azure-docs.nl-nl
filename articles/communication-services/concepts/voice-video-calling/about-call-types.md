@@ -9,18 +9,18 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 97a90284ad8d195751eb5dd90675822d00243ea8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 11c20f3f79a4fceafaca9b1a948f1b4a425dad87
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91665205"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572708"
 ---
 # <a name="voice-and-video-concepts"></a>Voice- en videoconcepten
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
-U kunt Azure Communication Services gebruiken om audio- en video-oproepen te doen en te ontvangen, metagegevens van oproepen te analyseren, oproepen op te nemen en zelfs oproepstructuren te bouwen. U kunt bellen naar andere met internet verbonden apparaten en naar gewone telefoons. U kunt de JavaScript-, Android- of iOS-clientbibliotheken van Communication Services gebruiken om toepassingen te bouwen waarmee uw gebruikers met elkaar kunnen praten in privégesprekken of in groepsdiscussies. Azure Communication Services ondersteunt oproepen van en naar services of bots.
+U kunt Azure Communication Services gebruiken om één-op-één of met een groep spraak- en video-oproepen te plaatsen en te ontvangen. U kunt bellen naar andere met internet verbonden apparaten en naar gewone telefoons. U kunt de JavaScript-, Android- of iOS-clientbibliotheken van Communication Services gebruiken om toepassingen te bouwen waarmee uw gebruikers met elkaar kunnen praten in privégesprekken of in groepsdiscussies. Azure Communication Services ondersteunt oproepen van en naar services of bots.
 
 ## <a name="call-types-in-azure-communication-services"></a>Oproeptypen in Azure Communication Services
 

@@ -11,12 +11,13 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9f9abf9105da773ec5f8321c0f8e70e20516618c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 166bdb7a2cf15a84e1b826a9a798042c568bb227
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87922146"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608228"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Zelfstudie: Id-providers toevoegen aan uw toepassingen in Azure Active Directory B2C
 
@@ -99,19 +100,21 @@ Nadat u de toepassing hebt gemaakt voor de id-provider die u wilt toevoegen, voe
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **Id-providers** en selecteer vervolgens **Nieuwe OpenID Connect-provider**.
 1. Voer een **naam** in. Voer bijvoorbeeld *Contoso Azure AD* in.
-1. Voor **URL voor metagegevens** voert u de volgende URL in, waarbij `your-AD-tenant-domain` wordt vervangen door de domeinnaam van uw Azure AD-tenant:
+1. Voor **URL voor metagegevens** voert u de volgende URL in, waarbij `{tenant}` wordt vervangen door de domeinnaam van uw Azure AD-tenant:
 
     ```
-    https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
+    https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
     ```
 
-    Bijvoorbeeld `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+    Bijvoorbeeld `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
+    Bijvoorbeeld `https://login.microsoftonline.com/contoso.com/v2.0/.well-known/openid-configuration`.
 
 1. Voor **Client-id** voert u de toepassings-id in die u eerder hebt genoteerd.
 1. Voor **Clientgeheim** voert u het clientgeheim in dat u eerder hebt genoteerd.
-1. Behoud de standaardwaarden voor **Bereik**, **Responstype** en **Responsmodus**.
-1. Voer een waarde in voor **Domain_hint** (optioneel). Bijvoorbeeld *ContosoAD*. [Domeinhints](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) zijn instructies die zijn opgenomen in de verificatieaanvraag van een toepassing. Ze kunnen worden gebruikt om de gebruiker versneld naar hun federatieve IdP-aanmeldingspagina te sturen. Ze kunnen ook door een toepassing met meerdere tenants worden gebruikt om de gebruiker rechtstreeks en versneld naar de gemerkte Azure AD-aanmeldingspagina voor hun tenant te sturen.
-1. Voer onder **Claimstoewijzing voor id-provider** de volgende waarden van de claimtoewijzing in:
+1. Voer de `openid profile` in voor **Bereik**.
+1. Behoud de standaardwaarden voor **Antwoordtype** en **Antwoordmodus**.
+1. Voer `contoso.com` in voor **Domeinhint** (optioneel). Raadpleeg [Direct aanmelden met behulp van Azure Active Directory B2C instellen](direct-signin.md#redirect-sign-in-to-a-social-provider).
+1. Selecteer onder **Claimstoewijzing voor id-provider** de volgende claims:
 
     * **Gebruikers-id**: *oid*
     * **Weergavenaam**: *name*

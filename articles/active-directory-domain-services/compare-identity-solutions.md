@@ -2,20 +2,20 @@
 title: Op Active Directory gebaseerde services in Azure vergelijken | Microsoft Docs
 description: In dit overzicht kunt u de verschillende identiteitsaanbiedingen voor Active Directory Domain Services, Azure Active Directory en Azure Active Directory Domain Services vergelijken.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: overview
 ms.date: 06/08/2020
-ms.author: joflore
-ms.openlocfilehash: 0576fdaa9bdcc90636c3cd2bc90ba2818f1e69e7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 479cc036ed3231d970d46eef9d89daa39a0b0876
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962663"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620185"
 ---
 # <a name="compare-self-managed-active-directory-domain-services-azure-active-directory-and-managed-azure-active-directory-domain-services"></a>Zelfbeheerde Active Directory Domain Services, Azure Active Directory en beheerde Azure Active Directory Domain Services vergelijken
 
@@ -114,6 +114,9 @@ Met apparaten die deelnemen aan Azure AD DS kunnen toepassingen gebruikmaken van
 | Beheer                      | MDM-software (Mobile Device Management), zoals Intune | Groepsbeleid                                                              |
 | Netwerken                      | Werkt via internet                             | Moet zijn verbonden met of gekoppeld aan het virtuele netwerk waarop het beheerde domein is geïmplementeerd |
 | Ideaal voor...                    | Mobiele of desktopapparaten voor eindgebruikers                  | Server-VM's die zijn geïmplementeerd in Azure                                              |
+
+
+Als on-premises AD DS en Azure AD zijn geconfigureerd voor federatieve verificatie met ADFS, is er geen (huidige/geldige) wachtwoord-hash beschikbaar in Azure DS. Azure AD-gebruikersaccounts die zijn gemaakt voordat federatieve verificatie werd uitgevoerd, hebben mogelijk een oude wachtwoord-hash, die waarschijnlijk niet overeenkomt met een hash van het on-premises wachtwoord. Om die reden kan Azure AD DS de gebruikersreferenties niet valideren
 
 ## <a name="next-steps"></a>Volgende stappen
 

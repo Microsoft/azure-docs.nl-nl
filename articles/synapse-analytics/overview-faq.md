@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/25/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 838276c47085a3c7ad0f7c0a35a2578b13eb5026
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: a427c77ec23bb933f96d8aec54ca33169aee84d4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511264"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576023"
 ---
 # <a name="azure-synapse-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics
 
@@ -22,7 +22,7 @@ In deze handleiding vindt u de veelgestelde vragen over Azure Synapse Analytics.
 
 ## <a name="general"></a>Algemeen
 
-### <a name="q-what-rbac-roles-exist-and-how-do-i-use-them-to-secure-a-synapse-workspace"></a>V: Welke RBAC-rollen bestaan er en hoe kan ik deze gebruiken voor het beveiligen van een Synapse-werkruimte?
+### <a name="q-how-can-i-use-rbac-roles-to-secure-my-workspace"></a>V: Hoe kan ik RBAC-rollen gebruiken voor het beveiligen van mijn werkruimte?
 
 A: Azure Synapse introduceert een aantal rollen en bereiken waarmee ze kunnen worden toegewezen, waardoor de beveiliging van uw werkruimte wordt vereenvoudigd.
 
@@ -36,16 +36,16 @@ Synapse RBAC-rollen:
 * Synapse-compute-operator (preview-versie)
 * Synapse-referentiegebruiker (preview-versie)
 
-Synapse RBAC-bereiken:
-* Werkruimte 
-* Spark-pool
-* Integratie-runtime
-* Gekoppelde service
-* Referentie
+Als u uw Synapse-werkruimte wilt beveiligen, wijst u de RBAC-rollen toe aan deze RBAC-bereiken:
+* Workspaces
+* Spark-pools
+* Integration Runtimes
+* Gekoppelde services
+* Referenties
 
 Daarnaast beschikt u met toegewezen SQL-pools over alle beveiligingsfuncties die u kent en waardeert.
 
-### <a name="q-how-can-i-cost-control-for-the-capabilities-inside-a-synapse-workspace-such-as-dedicated-sql-pools-serverless-spark-pools-and-serverless-sql-pools"></a>V: Hoe kan ik de kosten beheren voor de mogelijkheden binnen een Synapse-werkruimte, zoals toegewezen SQL-pools, serverloze Spark-pools en serverloze SQL-pools?
+### <a name="q-how-do-i-control-cont-dedicated-sql-pools-serverless-sql-pools-and-serverless-spark-pools"></a>V: Hoe kan ik toegewezen SQL-groepen, serverloze SQL-groepen en serverloze Spark-pools beheren?
 
 A: Om te beginnen werkt Azure Synapse samen met de ingebouwde kostenanalyse en kostenwaarschuwingen die beschikbaar zijn op het niveau van het Azure-abonnement.
 
@@ -83,7 +83,7 @@ A: Momenteel niet.
 
 ### <a name="q-how-do-i-migrate-existing-pipelines-from-azure-data-factory-to-an-azure-synapse-workspace"></a>V: Hoe kan ik bestaande pijplijnen van Azure Data Factory naar een Azure Synapse-werkruimte migreren?
 
-A: Op dit moment moet u uw Azure Data Factory-pijplijnen en gerelateerde artefacten handmatig opnieuw maken. 
+A: Op dit moment moet u uw Azure Data Factory-pijplijnen en gerelateerde artefacten handmatig opnieuw maken door de JSON uit de oorspronkelijke pijplijn te exporteren en deze te importeren in uw Synapse-werkruimte.
 
 ## <a name="apache-spark"></a>Apache Spark
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f0695af6922182aa8be7acfb4b0a931bed35ef7d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 50df3424892594a6817d481aa4a3d540a342854f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959302"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932316"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Zelfstudie: Gegevens verzenden via een transparante gateway
 
@@ -23,6 +23,14 @@ In dit artikel gebruiken we nogmaals de ontwikkel-VM als een gesimuleerd apparaa
 We controleren de werking van het IoT Edge apparaat terwijl het gesimuleerde apparaat gegevens verzendt. Zodra de uitvoering van het apparaat is voltooid, bekijken we de gegevens in het opslagaccount om te valideren of alles naar verwachting heeft gewerkt.
 
 Deze stap wordt doorgaans uitgevoerd door een cloud- of apparaatontwikkelaar.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Een leaf-apparaat bouwen en uitvoeren.
+> * Controleren of de gegenereerde gegevens worden opgeslagen in uw Azure Blob-opslag.
+> * Valideren dat het machine learning-model de apparaatgegevens heeft geclassificeerd.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -237,10 +245,7 @@ Als u van plan bent om de resources te bekijken die in deze end-to-endzelfstudie
 
 In dit artikel hebben we onze ontwikkel-VM gebruikt voor het simuleren van een leaf-apparaat dat sensor- en operationele gegevens naar ons IoT Edge-apparaat stuurt. We hebben gevalideerd dat de modules op het apparaat de gegevens hebben gerouteerd, geclassificeerd, bewaard en de geüpload door de realtime-bewerking van het edge-apparaat te controleren en door te kijken naar de bestanden die zijn geüpload naar het opslagaccount.
 
-Meer informatie is te vinden op de volgende pagina's:
+Als u meer wilt leren over de mogelijkheden van IoT Edge, gaat u naar deze zelfstudie:
 
 > [!div class="nextstepaction"]
-> [Een downstreamapparaat verbinden met een Azure IoT Edge-gateway](how-to-connect-downstream-device.md)
-
-> [!div class="nextstepaction"]
-> [Gegevens aan de rand opslaan met Azure Blob Storage in IoT Edge (preview)](how-to-store-data-blob.md)
+> [Een hiërarchie van IoT Edge-apparaten maken (preview)](tutorial-nested-iot-edge.md?view=iotedge-2020-11&preserve-view=true)

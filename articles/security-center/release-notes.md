@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2020
 ms.author: memildin
-ms.openlocfilehash: d8b690201ea4349f9577377ff24c91bd75ecd58b
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 3272212a857f24916acce7da5a4ee31561ec0c5a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751866"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922932"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -37,6 +37,7 @@ Updates in december omvatten:
 
 - [Azure Defender voor SQL-servers op computers is algemeen beschikbaar](#azure-defender-for-sql-servers-on-machines-is-generally-available)
 - [Azure Defender voor SQL-ondersteuning voor een toegewezen SQL-pool in Azure Synapse Analytics is algemeen beschikbaar](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
+- [Globale beheerders kunnen nu machtigingen op tenantniveau aan zichzelf verlenen](#global-administrators-can-now-grant-themselves-tenant-level-permissions)
 - [Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Azure Defender voor SQL-servers op computers is algemeen beschikbaar
@@ -69,6 +70,13 @@ Azure Defender voor SQL beveiligt uw toegewezen SQL-pools met:
 Azure Defender voor SQL-ondersteuning voor SQL-pools in Azure Synapse Analytics wordt automatisch toegevoegd aan de bundel Azure SQL-databases in Azure Security Center. Op de pagina met de Synapse-werkruimte in Azure Portal ziet u een nieuw tabblad Azure Defender voor SQL.
 
 Lees meer informatie over [Azure Defender voor SQL](defender-for-sql-introduction.md).
+
+
+### <a name="global-administrators-can-now-grant-themselves-tenant-level-permissions"></a>Globale beheerders kunnen nu machtigingen op tenantniveau aan zichzelf verlenen
+
+Een gebruiker met de Azure Active Directory-rol **Globale beheerder** kan verantwoordelijkheden hebben voor de hele tenant, maar geen Azure-machtigingen om deze organisatiebrede informatie te bekijken in Azure Security Center. 
+
+Volg de instructies in [Tenantbrede machtigingen toewijzen aan uzelf](security-center-management-groups.md#grant-tenant-wide-permissions-to-yourself) om machtigingen op tenantniveau toe te wijzen aan uzelf.
 
 
 ### <a name="two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview"></a>Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)

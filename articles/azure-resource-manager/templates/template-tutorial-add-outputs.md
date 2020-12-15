@@ -1,17 +1,17 @@
 ---
 title: 'Zelfstudie: uitvoer aan een sjabloon toevoegen'
-description: Voeg uitvoer toe aan uw Azure Resource Manager-sjabloon om de syntaxis te vereenvoudigen.
+description: Voeg uitvoer toe aan uw ARM-sjabloon (Azure Resource Manager) om de syntaxis te vereenvoudigen.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: abd5fbed4ab19135fb30ec5adda387d839df3ab6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e55638e20bceb6df4b8e74375d67836123167162
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613863"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931738"
 ---
 # <a name="tutorial-add-outputs-to-your-arm-template"></a>Zelfstudie: Uitvoer aan uw ARM-sjabloon toevoegen
 

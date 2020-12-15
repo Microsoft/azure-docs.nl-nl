@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code gebruiken om verbinding te maken met Azure Blockchain Service
 description: Verbinding maken met een Azure Block Chain Service-consortiumnetwerk met behulp van de Azure Block Chain Development Kit for Ethereum-extensie in Visual Studio Code
-ms.date: 04/22/2020
+ms.date: 12/04/2020
 ms.topic: quickstart
 ms.reviewer: caleteet
-ms.openlocfilehash: 8b502966317c5d07e89de4ae70ff72b899e963e6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 6e94d93d91f25c15743c4c467e31de49fd9da41d
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82084835"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763295"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-to-an-azure-blockchain-service-consortium-network"></a>Snelstart: Visual Studio Code gebruiken om verbinding te maken met een Azure Blockchain Service-consortiumnetwerk
 
@@ -24,7 +24,6 @@ In deze quickstart installeert en gebruikt u de extensie Azure Block Chain Devel
 * [Azure Blockchain Development Kit voor Ethereum-extensie](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain)
 * [Node.js 10.15.x of hoger](https://nodejs.org)
 * [Git 2.10.x of hoger](https://git-scm.com)
-* [Python 2.7.15](https://www.python.org/downloads/release/python-2715/) Voeg python.exe toe aan uw pad. Python-versie 2.7.15 in uw pad is vereist voor Azure Block Chain Development Kit.
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
 * [Ganache CLI 6.0.0](https://github.com/trufflesuite/ganache-cli)
 
@@ -40,7 +39,7 @@ Zie de [opslagplaats node-gyp op GitHub](https://github.com/nodejs/node-gyp) voo
 
 De Azure Block Chain Development Kit controleert of uw ontwikkelomgevind aan de vereisten voldoet. De ontwikkelomgeving controleren:
 
-Kies in het opdrachtpalet van Visual Studio Code **Azure Block chain: Welkomstpagina weergeven**.
+Kies in het opdrachtpalet van VS Code **Blockchain: Welkomstpagina weergeven**.
 
 Azure Block Chain Development Kit voert een validatiescript uit dat ongeveer een minuut in beslag neemt. U kunt de uitvoer weergeven door **Terminal > Nieuwe terminal** te selecteren. Selecteer in de menubalk van de Terminal het tabblad **Uitvoer** en **Azure Block Chain** in de vervolgkeuzelijst. In de volgende afbeelding ziet u hoe een geslaagde validatie eruit ziet:
 

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 9cf503f374cd2fd1ca04aad6650b2c07abebbc46
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a52188dc5058dbc74d3b03fba860b98540cd4a41
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519350"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608500"
 ---
 # <a name="communication-services-notifications"></a>Communication Services-meldingen
 
@@ -48,13 +48,10 @@ Communication Services maakt gebruik van Azure Notification Hub als een doorgeef
 Als u pushmeldingen wilt aanbieden met behulp van Notification Hubs, [maak dan een Notification Hub aan](../../notification-hubs/create-notification-hub-portal.md) in hetzelfde abonnement als uw Communication Services-resource. Azure Notification Hubs moet worden geconfigureerd voor de Platform Notifications Service die u wilt gebruiken. Zie [Aan de slag met Notification Hubs](../../notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started.md) en selecteer uw doelclientplatform in de vervolgkeuzelijst aan de bovenkant van de pagina voor meer informatie over het ophalen van pushmeldingen in uw client-app van Notification Hubs.
 
 > [!NOTE]
-> Momenteel worden de APNs- en FCM-platforms ondersteund.
+> Momenteel worden de APNs- en FCM-platforms ondersteund.  
+Het APNs-platform moet zijn geconfigureerd met de modus voor tokenverificatie. De verificatiemodus voor certificaten wordt momenteel niet ondersteund. 
 
 Zodra uw Notification Hub is geconfigureerd, kunt u deze koppelen met uw Communication Services-resource door een verbindingsreeks voor de hub op te geven met behulp van de Azure Resource Manager-client of via de Azure-portal. De verbindingsreeks moet machtigingen voor 'Verzenden' bevatten. We raden u aan om een ander toegangsbeleid te maken met machtigingen voor 'Verzenden' specifiek voor uw hub. Meer informatie over het [beveiligings- en toegangsbeleid van Notification Hubs](../../notification-hubs/notification-hubs-push-notification-security.md)
-
-> [!IMPORTANT]
-> Dit is alleen toepasbaar in de verificatiemodus voor tokens. De verificatiemodus voor certificaten wordt momenteel niet ondersteund.  
-Als u APNS VOIP-meldingen wilt inschakelen, moet u de waarde van de bundel-id instellen wanneer u de Notification Hub configureert als de bundel-id voor de toepassing met het achtervoegsel `.voip`. Raadpleeg [APNS VOIP gebruiken via Notification Hubs](../../notification-hubs/voip-apns.md) voor meer details.
 
 #### <a name="using-the-azure-resource-manager-client-to-configure-the-notification-hub"></a>De Azure Resource Manager-client gebruiken om de Notification Hub te configureren
 

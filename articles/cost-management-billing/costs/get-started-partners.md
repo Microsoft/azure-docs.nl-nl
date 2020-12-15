@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: d2b90db18a31fff4190be4f84625ad52fcaae578
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: cd3ca4d3ddf73469cd1f1fc065eccb369cf765af
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657309"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905671"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Aan de slag met Azure Cost Management voor partners
 
@@ -262,7 +262,7 @@ U kunt ook groeperen en filteren op de eigenschap **PartnerEarnedCreditApplied**
 
 ## <a name="export-cost-data-to-azure-storage"></a>Kostengegevens exporteren naar Azure Storage
 
-Partners met toegang tot de factureringsbereiken in een partner-tenant kunnen hun kosten- en gebruiksgegevens exporteren naar een Azure Storage-blob. De BLOB moet zich in de partner-tenant in een abonnement bevinden dat geen gedeeld serviceabonnement of een klantabonnement is. Om het exporteren van kostengegevens in te schakelen, raden wij u aan een onafhankelijk Betalen per gebruik-abonnement in de partner-tenant in te stellen om de geëxporteerde kostengegevens te hosten. Het export-opslagaccount wordt gemaakt op de Azure Storage-blob die wordt gehost in het abonnement voor Betalen naar gebruik. Op basis van het bereik waarin de partner de export maakt, worden de bijbehorende gegevens automatisch op regelmatige basis geëxporteerd naar het opslagaccount.
+Partners met toegang tot de factureringsbereiken in een partner-tenant kunnen hun kosten- en gebruiksgegevens exporteren naar een Azure Storage-blob. De blob moet zich in een abonnement op de partnertenant bevinden, dat geen [gedeeld serviceabonnement](/partner-center/shared-services) en geen klantabonnement is. Om het exporteren van kostengegevens in te schakelen, raden wij u aan een onafhankelijk Betalen per gebruik-abonnement in de partner-tenant in te stellen om de geëxporteerde kostengegevens te hosten. Het export-opslagaccount wordt gemaakt op de Azure Storage-blob die wordt gehost in het abonnement voor Betalen naar gebruik. Op basis van het bereik waarin de partner de export maakt, worden de bijbehorende gegevens automatisch op regelmatige basis geëxporteerd naar het opslagaccount.
 
 Gebruikers met Azure RBAC-toegang tot het abonnement kunnen de kostengegevens ook exporteren naar een Azure Storage-blob die wordt gehost in een abonnement in de tenant van de klant.
 

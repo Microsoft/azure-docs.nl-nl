@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 68cb738ae6e4689a0356ea56c1de2d383ea83ad6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31ff3620bcab6b10b59582daa255ff1f259ab0d3
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449944"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852639"
 ---
 # <a name="supported-platforms"></a>Ondersteunde platforms 
 
@@ -44,8 +44,10 @@ Security Center is afhankelijk van de [Log Analytics-agent](../azure-monitor/pla
 
 Zorg er ook voor dat uw Log Analytics-agent correct [is geconfigureerd voor het verzenden van gegevens naar Security Center](security-center-enable-data-collection.md#manual-agent)
 
-> [!TIP]
-> Zie [Functiedekking voor computers](security-center-services.md) voor meer informatie over de specifieke Security Center-functies die beschikbaar zijn in Windows en Linux.
+Zie [Functiedekking voor computers](security-center-services.md) voor meer informatie over de specifieke Security Center-functies die beschikbaar zijn in Windows en Linux.
+
+> [!NOTE]
+> Azure Defender is weliswaar ontworpen om servers te beveiligen, maar de meeste mogelijkheden van **Azure Defender voor servers** worden ook ondersteund voor Windows 10-machines. Een functie die momenteel niet wordt ondersteund is [de EDR-oplossing die is geïntegreerd in Security Center: Microsoft Defender voor Eindpunt](security-center-wdatp.md).
 
 ## <a name="managed-virtual-machine-services"></a>Beheerde services voor virtuele machines <a name="virtual-machine"></a>
 

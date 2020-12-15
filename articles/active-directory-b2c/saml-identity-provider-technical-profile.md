@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 572d6964384c711a7d2b98b0fa27852a7d28951f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 3f8ba563345f5aa4f35bcf07546abdad05c3b6ed
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936706"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509781"
 ---
 # <a name="define-a-saml-identity-provider-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor een SAML-identiteits provider definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -168,7 +168,7 @@ Het **OutputClaimsTransformations** -element kan een verzameling **OutputClaimsT
 | IncludeAuthnContextClassReferences | No | Hiermee geeft u een of meer URI-verwijzingen op die verificatie context klassen identificeren. Als u bijvoorbeeld een gebruiker wilt toestaan zich aan te melden met gebruikers naam en wacht woord, stelt u de waarde in op `urn:oasis:names:tc:SAML:2.0:ac:classes:Password` . Als u het aanmelden via de gebruikers naam en het wacht woord via een beveiligde sessie (SSL/TLS) wilt toestaan, geeft u op `PasswordProtectedTransport` . Raadpleeg de documentatie van uw identiteits provider voor meer informatie over de **AuthnContextClassRef** -uri's die worden ondersteund. Geef meerdere Uri's op als een door komma's gescheiden lijst. |
 | IncludeKeyInfo | No | Geeft aan of de SAML-verificatie aanvraag de open bare sleutel van het certificaat bevat wanneer de binding is ingesteld op `HTTP-POST` . Mogelijke waarden: `true` of `false` . |
 | IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
-|SingleLogoutEnabled| No| Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-overview.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` .|
+|SingleLogoutEnabled| No| Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-behavior.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` .|
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 

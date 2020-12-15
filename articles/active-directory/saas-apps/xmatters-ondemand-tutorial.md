@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/29/2019
+ms.date: 11/19/2020
 ms.author: jeedes
-ms.openlocfilehash: 648bb5eb5daab20248e16f2d1606f61a3fc52d17
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: cbadf2e072cdd9bfdf64cb2b799355aada8ec4b0
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520391"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621161"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Zelfstudie: Azure Active Directory-integratie met xMatters OnDemand
 
@@ -26,9 +26,6 @@ xMatters OnDemand integreren met Azure AD biedt u de volgende voordelen:
 * U kunt in Azure AD beheren wie toegang heeft tot xMatters OnDemand.
 * U kunt inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij xMatters OnDemand (eenmalige aanmelding).
 * U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -47,74 +44,57 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het configureren van de integratie van xMatters OnDemand in Azure AD moet u xMatters OnDemand vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Voer de volgende stappen uit om xMatters OnDemand toe te voegen vanuit de galerie:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **xMatters OnDemand**.
+1. Selecteer  **OnDemand** in het resultatenvenster en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-sso-for-xmatters-ondemand"></a>Eenmalige aanmelding van Azure AD voor XMatters OnDemand configureren en testen
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+Configureer en test eenmalige aanmelding van Azure AD met XMatters OnDemand met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in xMatters OnDemand.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory bij xMatters OnDemand te configureren en te testen:
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    2. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+2. **[Eenmalige aanmelding voor xMatters OnDemand configureren](#configure-xmatters-ondemand-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+    1. **[Een xMatters OnDemand-testgebruiker maken](#create-xmatters-ondemand-test-user)** : als u een equivalent van Britta Simon in xMatters OnDemand wilt dat is gekoppeld aan de Azure AD-versie van die gebruiker.
+3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Typ in het zoekvak **xMatters OnDemand** , selecteer in het resultatenvenster **xMatters OnDemand** en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-     ![xMatters OnDemand in de resultatenlijst](common/search-new-app.png)
+1. Zoek in Azure Portal op de integratiepagina van de toepassing **xMatters OnDemand** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-In deze sectie configureert en test u Azure AD-eenmalige aanmelding met xMatters OnDemand op basis van een testgebruiker met de naam **Britta Simon** .
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in xMatters OnDemand tot stand is gebracht.
+1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-Als u Azure AD-eenmalige aanmelding wilt testen met xMatters OnDemand hebt u de volgende bouwstenen nodig:
+    a. In het tekstvak **Id** typt u een URL met een van de volgende notaties:
 
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor xMatters OnDemand configureren](#configure-xmatters-ondemand-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Een xMatters OnDemand-testgebruiker maken](#create-xmatters-ondemand-test-user)** : als u een equivalent van Britta Simon in xMatters OnDemand wilt dat is gekoppeld aan de Azure AD-versie van die gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
+    | Id |
+    | ---------- |
+    | `https://<companyname>.au1.xmatters.com.au/` |
+    | `https://<companyname>.cs1.xmatters.com/` |
+    | `https://<companyname>.xmatters.com/` |
+    | `https://www.xmatters.com` |
+    | `https://<companyname>.xmatters.com.au/` |
 
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
+    b. In het tekstvak **Antwoord-URL** typt u een URL met één van de volgende patronen:
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met xMatters OnDemand te configureren:
-
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de toepassing **xMatters OnDemand** de optie **Eenmalige aanmelding** .
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
-
-4. Op de pagina **Eenmalige aanmelding instellen met SAML** voert u de volgende stappen uit:
-
-    ![Informatie over eenmalige aanmelding bij het xMatters OnDemand-domein en xMatters OnDemand-URL's](common/idp-intiated.png)
-
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon:
-
-    - `https://<companyname>.au1.xmatters.com.au/`
-    - `https://<companyname>.cs1.xmatters.com/`
-    - `https://<companyname>.xmatters.com/`
-    - `https://www.xmatters.com`
-    - `https://<companyname>.xmatters.com.au/`
-
-    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
-
-    - `https://<companyname>.au1.xmatters.com.au`
-    - `https://<companyname>.xmatters.com/sp/<instancename>`
-    - `https://<companyname>.cs1.xmatters.com/sp/<instancename>`
-    - `https://<companyname>.au1.xmatters.com.au/<instancename>`
+    | Antwoord-URL |
+    | ---------- |
+    |  `https://<companyname>.au1.xmatters.com.au` |
+    | `https://<companyname>.xmatters.com/sp/<instancename>` |
+    | `https://<companyname>.cs1.xmatters.com/sp/<instancename>` |
+    | `https://<companyname>.au1.xmatters.com.au/<instancename>` |
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [xMatters OnDemand Client-ondersteuningsteam](https://www.xmatters.com/company/contact-us/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -130,124 +110,79 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met xMatters OnDem
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    b. Azure AD-id
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-    c. Afmeldings-URL
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="configure-xmatters-ondemand-single-sign-on"></a>xMatters OnDemand-eenmalige aanmelding configureren
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie gaat u het gebruik van eenmalige aanmelding van Azure mogelijk maken voor B.Simon door haar toegang te geven tot xMatters OnDemand.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen **xMatters OnDemand**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+
+## <a name="configure-xmatters-ondemand-sso"></a>Eenmalige aanmelding voor xMatters OnDemand configureren
 
 1. Meld u in een andere browser als beheerder aan bij uw bedrijfssite in xMatters OnDemand.
 
-2. Klik in de werkbalk bovenaan op **Beheerder** en klik vervolgens op **Bedrijfsgegevens** in de navigatiebalk aan de linkerkant.
+2. Klik op **Beheerder** en klik vervolgens op **Bedrijfsgegevens**.
 
-    ![Beheerder](./media/xmatters-ondemand-tutorial/IC776795.png "Beheerder")
+    ![Pagina Beheerder](./media/xmatters-ondemand-tutorial/admin.png "Beheerder")
 
-3. Voer de volgende stappen uit op de pagina **SAML Configuration** :
+3. Voer de volgende stappen uit op de pagina **SAML Configuration**:
 
-    ![SAML-configuratie](./media/xmatters-ondemand-tutorial/IC776796.png "SAML-configuratie")
+    ![Sectie SAML-configuratie ](./media/xmatters-ondemand-tutorial/saml-configuration.png "SAML-configuratie")
 
-    a. Selecteer **SAML inschakelen** .
+    a. Selecteer **SAML inschakelen**.
 
     b. Plak in het tekstvak **Id van id-provider** de waarde van de **Azure AD-id** die u hebt gekopieerd uit de Azure Portal.
 
     c. Plak in het tekstvak **Eenmalige aanmeldings-URL** de waarde van de **aanmeldings-URL** die u uit de Azure Portal hebt gekopieerd.
 
-    d. Plak in het tekstvak **Eenmalige afmeldings-URL** de waarde van **Afmeldings-URL** die u uit de Azure Portal hebt gekopieerd.
+    d. Plak in het tekstvak **Omleiding afmeldings-URL** de waarde van **Afmeldings-URL** die u uit Azure Portal hebt gekopieerd.
 
-    e. Klik op de pagina Bedrijfsgegevens bovenaan op **Wijzigingen opslaan** .
+    e. Klik op **Kies bestand** om het **certificaat (base64)** te uploaden dat u uit Azure Portal hebt gedownload. 
 
-    ![Bedrijfsgegevens](./media/xmatters-ondemand-tutorial/IC776797.png "Bedrijfsgegevens")
+    f. Klik op de pagina Bedrijfsgegevens bovenaan op **Wijzigingen opslaan**.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u brittasimon@yourcompanydomain.extension. Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create** .
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In deze sectie gaat u het gebruik van eenmalige aanmelding van Azure mogelijk maken voor Britta Simon door haar toegang te geven tot xMatters OnDemand.
-
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **xMatters OnDemand** .
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Selecteer in de lijst toepassingen **xMatters OnDemand** .
-
-    ![De xMatters OnDemand-koppeling in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+    ![Bedrijfsgegevens](./media/xmatters-ondemand-tutorial/save-button.png "Bedrijfsgegevens")
 
 ### <a name="create-xmatters-ondemand-test-user"></a>xMatters OnDemand testgebruiker maken
 
-Het doel van deze sectie is om in xMatters OnDemand een gebruiker te maken met de naam Britta Simon.
-
-**Als u de gebruiker handmatig moet maken, voert u de volgende stappen uit:**
-
 1. Meld u aan bij uw **xMatters OnDemand** tenant.
 
-2. Klik op het tabblad **Gebruikers** en klik vervolgens op **Gebruiker toevoegen** .
+2. Ga naar het pictogram **Gebruikers** > **Gebruikers** en klik op **Gebruikers toevoegen**.
 
-    ![Gebruikers](./media/xmatters-ondemand-tutorial/IC781048.png "Gebruikers")
+    ![Gebruikers](./media/xmatters-ondemand-tutorial/add-user.png "Gebruikers")
 
-3. Voer in de sectie **Gebruiker toevoegen** de volgende stappen uit:
+3. Vul in de sectie **Gebruikers toevoegen** de vereiste velden in en klik op de knop **Gebruiker toevoegen** .
 
-    ![Een gebruiker toevoegen](./media/xmatters-ondemand-tutorial/IC781049.png "Een gebruiker toevoegen")
+    ![Een gebruiker toevoegen](./media/xmatters-ondemand-tutorial/add-user-2.png "Een gebruiker toevoegen")
 
-    a. Selecteer **Active** .
 
-    b. Typ in het tekstvak **Gebruikers-id** de gebruikers-id in van de gebruiker, bijvoorbeeld Brittasimon@contoso.com.
 
-    c. Typ in het tekstvak **First Name** de voornaam van de gebruiker, bijvoorbeeld Britta.
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
-    d. Typ in het tekstvak **Last Name** de achternaam van de gebruiker, bijvoorbeeld Simon.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-    e. Voer in het tekstvak **Site** de geldige site in van een geldige Azure AD-account die u wilt inrichten.
+* Klik in Azure Portal op Deze toepassing testen. U wordt automatisch aangemeld bij het exemplaar van xMatters OnDemand waarvoor u eenmalige aanmelding hebt ingesteld
 
-    f. Klik op **Opslaan** .
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel xMatters OnDemand in Mijn apps klikt, wordt u automatisch aangemeld bij de instantie van xMatters OnDemand waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+## <a name="next-steps"></a>Volgende stappen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
-
-Wanneer u op de tegel xMatters OnDemand in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van xMatters OnDemand waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
-
-## <a name="additional-resources"></a>Aanvullende resources
-
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u xMatters Ondemand hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor uw organisatie in real time wordt beveiligd tegen exfiltratie en infiltratie van gevoelige gegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 83b8755ea8e629e0f5c3f16d2a38e62882373a7f
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 78ce6466521c7903187798d902056948c659653c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97386899"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509849"
 ---
 # <a name="define-an-oauth2-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een OAuth2 technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -100,7 +100,7 @@ Het technische profiel retourneert ook claims die niet worden geretourneerd door
 | IncludeClaimResolvingInClaimsHandling  | No | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
 | ResolveJsonPathsInJsonTokens  | No | Hiermee wordt aangegeven of het technische profiel JSON-paden oplost. Mogelijke waarden: `true` , of `false` (standaard). Gebruik deze meta gegevens om gegevens van een genest JSON-element te lezen. Stel in een [output claim](technicalprofiles.md#output-claims)de in `PartnerClaimType` op het JSON-pad-element dat u wilt uitvoeren. Bijvoorbeeld: `firstName.localized` , of `data.0.to.0.email` .|
 |token_endpoint_auth_method| No| Hiermee geeft u op hoe Azure AD B2C de Authentication-Header naar het eind punt van het token verzendt. Mogelijke waarden: `client_secret_post` (standaard) en `client_secret_basic` (open bare preview). Zie [OpenID Connect Connect client Authentication sectie](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)(Engelstalig) voor meer informatie. |
-|SingleLogoutEnabled| No| Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-overview.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` .|
+|SingleLogoutEnabled| No| Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-behavior.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` .|
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 

@@ -9,18 +9,26 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp, devx-track-azurecli
-ms.openlocfilehash: f57e809373a8bd06c4b4afbb9b193464315e788f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bc62590b9517b2c6d16fdf2637990b845248d2ec
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959574"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932350"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Zelfstudie: een IoT Edge-apparaat configureren
 
 In dit artikel gaan we een virtuele Azure-machine waarop Linux wordt uitgevoerd, configureren als een IoT Edge-apparaat dat als een transparante gateway fungeert. Met een dergelijke configuratie kunnen apparaten via de gateway verbinding maken met Azure IoT Hub zonder dat ze van het bestaan van de gateway af weten. Een gebruiker die interactie heeft met de apparaten in Azure IoT Hub is evenmin op de hoogte van het tussenliggende gatewayapparaat. Als laatste gaan we edge-analytics toevoegen aan ons systeem door IoT Edge-modules toe te voegen aan de transparante gateway.
 
 De stappen in dit artikel worden doorgaans uitgevoerd door een cloud-ontwikkelaar.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Certificaten maken om uw gateway-apparaat veilig verbinding te laten maken met uw downstream-apparaten.
+> * Een IoT Edge-apparaat maken.
+> * Een virtuele Azure-machine maken om uw IoT Edge-apparaat te simuleren.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -295,6 +303,10 @@ Vervolgens gaan we de certificaten en de hostnaam bijwerken door het bestand con
     ```bash
     journalctl -u iotedge --no-pager --no-full
     ```
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd op het werk dat in de voorgaande artikelen is uitgevoerd. Wacht met het opschonen van resources totdat u de laatste zelfstudie hebt uitgevoerd.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 We hebben een Azure-VM geconfigureerd als een transparante gateway van Azure IoT Edge. We hebben eerst testcertificaten gegenereerd die we daarna hebben geüpload naar Azure Key Vault. Vervolgens hebben we een script en een Resource Manager-sjabloon gebruikt om de VM te implementeren met de installatiekopie Ubuntu Server 16.04 LTS + Azure IoT Edge runtime van Azure Marketplace. Met de VM actief hebben we via SSH verbinding gemaakt, ons aangemeld bij Azure en certificaten gedownload uit Key Vault. De configuratie van de IoT Edge-runtime hebben we hier en daar aangepast door het bestand config.yaml bij te werken.

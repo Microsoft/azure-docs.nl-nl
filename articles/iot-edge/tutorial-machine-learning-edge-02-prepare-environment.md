@@ -8,16 +8,23 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f261db8d40e1a1cc1737ff6a3f5c50da661b73e6
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: d86a273a69203a92a9b437f021486feb3bcb31da
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433481"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932367"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Zelfstudie: Een omgeving instellen voor machine learning op IoT Edge
 
 In dit artikel leert u hoe u uw omgeving voorbereidt voor ontwikkeling en implementatie. Stel eerst een ontwikkelingsmachine in met alle hulpprogramma's die u nodig hebt. Maak vervolgens de benodigde cloudresources in Azure.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Een virtuele machine instellen voor ontwikkeling.
+> * Een IoT Hub- en cloudopslag instellen voor de ontwikkelomgeving die u wilt gebruiken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -210,15 +217,13 @@ Als onderdeel van het maken van de IoT-hub worden ook een aangepast eindpunt en 
 
 1. U kunt deze pagina gewoon sluiten omdat er geen bewerkingen zijn uitgevoerd.
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd op het werk dat in de voorgaande artikelen is uitgevoerd. Wacht met het opschonen van resources totdat u de laatste zelfstudie hebt uitgevoerd.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 In dit artikel hebben we een IoT-hub gemaakt en hebben we een route geconfigureerd naar een Azure Storage-account. Hierna verzenden we gegevens van een set gesimuleerde apparaten via de IoT-hub naar het opslagaccount. Later in de zelfstudie nadat we onze IoT Edge-apparaat en modules hebben geconfigureerd, kijken we opnieuw naar routes en besteden we meer aandacht aan de routeringsquery.
-
-Voor meer informatie over de stappen die in dit deel van de zelfstudie Machine learning op IoT Edge worden behandeld, raadpleegt u:
-
-* [Basisprincipes van Azure IoT](../iot-fundamentals/index.yml)
-* [Berichtroutering configureren met IoT Hub](../iot-hub/tutorial-routing.md)
-* [Een IoT-hub maken met behulp van Azure Portal](../iot-hub/iot-hub-create-through-portal.md)
 
 Ga verder naar het volgende artikel om een gesimuleerd apparaat dat u wilt bewaken, te maken.
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: compliance
 ms.topic: how-to
-ms.date: 10/16/2020
+ms.date: 12/02/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c1b07534c702e509b2b664fbee585aa2cff69f6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b1829c69510568b0f9a8cec7fb7d2d57be8515d3
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837597"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509985"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Gebruiks voorwaarden van Azure Active Directory
 
@@ -92,7 +92,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
 1. Gebruik de instellingen **verloopt op basis van begin datum** en **frequentie** om de planning op te geven voor de gebruiks voorwaarden. In de volgende tabel ziet u het resultaat voor enkele voor beelden van instellingen:
 
-   | Verloopt vanaf | Frequency | Resultaat |
+   | Verloopt vanaf | Frequentie | Resultaat |
    | --- | --- | --- |
    | De datum van vandaag  | Maandelijks | Vanaf vandaag moeten gebruikers de gebruiks voorwaarden accepteren en vervolgens elke maand opnieuw accepteren. |
    | Datum in de toekomst  | Maandelijks | Gebruikers moeten de gebruiks voorwaarden accepteren om vandaag nog te beginnen. Wanneer de datum in de toekomst plaatsvindt, verloopt de toestemmingen en worden de gebruikers elke maand opnieuw geaccepteerd.  |
@@ -104,14 +104,14 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
    | Alice | 1 jan | 1 februari | 1 maart | Apr 1 |
    | Bob | 15 jan | 1 februari | 1 maart | Apr 1 |
 
-1. Gebruik de waarde **voor de duur voordat u voor opnieuw accepteren (dagen)** de instelling opgeeft om het aantal dagen op te geven waarna de gebruiker de gebruiks voorwaarden opnieuw moet accepteren. Hiermee kunnen gebruikers hun eigen schema volgen. Als u bijvoorbeeld de duur instelt op **30** dagen, ziet u hier hoe verloop tijd voor twee gebruikers kan optreden:
+1. Gebruik de instelling **duur vóór opnieuw accepteren (dagen)** om het aantal dagen op te geven waarna de gebruiker de gebruiks voorwaarden opnieuw moet accepteren. Hiermee kunnen gebruikers hun eigen schema volgen. Als u bijvoorbeeld de duur instelt op **30** dagen, ziet u hier hoe verloop tijd voor twee gebruikers kan optreden:
 
    | Gebruiker | Eerste acceptatie datum | Datum eerste verloop | Datum van de tweede verloopt | Datum van derde verloop |
    | --- | --- | --- | --- | --- |
    | Alice | 1 jan | 31 januari | 2 maart | Apr 1 |
    | Bob | 15 jan | 14 februari | 16 mrt | Apr 15 |
 
-   Het is mogelijk om de **verlopende** en duur te gebruiken **voordat de nieuwe acceptatie (dagen)** instellingen samen houdt, maar u kunt er ook voor gebruiken.
+   Het is mogelijk om de instellingen voor **verlopende** en duur te gebruiken **voordat de heracceptatie (dagen)** wordt ingesteld op samen, maar normaal gesp roken gebruikt u een van beide.
 
 1. Gebruik onder **voorwaardelijke toegang** de lijst **afdwingen met beleids sjablonen voor voorwaardelijke toegang** om de sjabloon te selecteren voor het afdwingen van de gebruiks voorwaarden.
 
@@ -119,7 +119,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
    | Template | Beschrijving |
    | --- | --- |
-   | **Toegang tot Cloud-apps voor alle gasten** | Er wordt een beleid voor voorwaardelijke toegang gemaakt voor alle gasten en alle Cloud-apps. Dit beleid is van invloed op de Azure Portal. Zodra dit is gemaakt, moet u zich mogelijk afmelden en aanmelden. |
+   | **Toegang tot Cloud-apps voor alle gasten** | Er wordt een beleid voor voorwaardelijke toegang gemaakt voor alle gasten en alle Cloud-apps. Dit beleid is van invloed op de Azure Portal. Nadat deze is gemaakt, moet u zich mogelijk afmelden en aanmelden. |
    | **Toegang tot Cloud-apps voor alle gebruikers** | Er wordt een beleid voor voorwaardelijke toegang gemaakt voor alle gebruikers en alle Cloud-apps. Dit beleid is van invloed op de Azure Portal. Zodra deze is gemaakt, moet u zich afmelden en aanmelden. |
    | **Aangepast beleid** | Selecteer de gebruikers, groepen en apps waarop deze gebruiks voorwaarden worden toegepast. |
    | **Beleid voor voorwaardelijke toegang later maken** | Deze gebruiks voorwaarden worden weer gegeven in de lijst granting Control bij het maken van beleid voor voorwaardelijke toegang. |
@@ -219,15 +219,55 @@ U kunt enkele details van de gebruiks voorwaarden bewerken, maar niet wijzigen v
 1. Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecteer de gebruiks voorwaarden die u wilt bewerken.
 1. Klik op **voor waarden bewerken**.
-1. In het deel venster gebruiks voorwaarden bewerken wijzigt u de naam, weergave naam of vereisen gebruikers dat waarden worden uitgevouwen.
+1. In het deel venster gebruiks voorwaarden bewerken kunt u het volgende wijzigen:
+     - **Naam** : dit is de interne naam van de gebruiks voorwaarden die niet worden gedeeld met eind gebruikers
+     - **Weergave naam** : dit is de naam die eind gebruikers kunnen zien bij het bekijken van de gebruiks voorwaarden
+     - **Gebruikers moeten de gebruiks voorwaarden uitvouwen** : als u deze optie instelt **op aan** , wordt het einde van het document uitgevouwen voordat het wordt geaccepteerd.
+     - Evaluatie U kunt **een bestaand gebruiks document bijwerken**
+     - U kunt een taal toevoegen aan een bestaande gebruiks voorwaarden
 
    Als er andere instellingen zijn die u wilt wijzigen, zoals een PDF-document, moet u gebruikers toestemming geven op elk apparaat, verlopend en verlopen, duur vóór heracceptatie of beleid voor voorwaardelijke toegang. u kunt ook een nieuwe gebruiks voorwaarden maken.
 
-   ![Deel venster met gebruiks voorwaarden bewerken naam en Uitvouw opties weer geven](./media/terms-of-use/edit-tou.png)
+    ![Bewerken met andere taal opties ](./media/terms-of-use/edit-terms-use.png)
 
-1. Klik op **Opslaan** om uw wijzigingen op te slaan.
+1. Wanneer u klaar bent, klikt u op **Opslaan** om uw wijzigingen op te slaan.
 
-   Zodra u de wijzigingen hebt opgeslagen, hoeven gebruikers deze bewerkingen niet opnieuw te accepteren.
+## <a name="update-the-version-or-pdf-of-an-existing-terms-of-use"></a>De versie of het PDF-bestand van een bestaande gebruiks voorwaarden bijwerken
+
+1.  Meld u aan bij Azure en ga naar [Gebruiksvoorwaarden](https://aka.ms/catou)
+2.  Selecteer de gebruiks voorwaarden die u wilt bewerken.
+3.  Klik op **voor waarden bewerken**.
+4.  Voor de taal waarin u een nieuwe versie wilt bijwerken, klikt u op **bijwerken** onder de kolom actie
+ 
+     ![Deel venster met gebruiks voorwaarden bewerken naam en Uitvouw opties weer geven](./media/terms-of-use/edit-terms-use.png)
+
+5.  Upload in het deel venster aan de rechter kant het PDF-bestand voor de nieuwe versie
+6.  Er is ook een wissel optie nodig om opnieuw te **accepteren** als u wilt dat uw gebruikers deze nieuwe versie de volgende keer aanmelden. Als u wilt dat uw gebruikers de volgende keer proberen om toegang te krijgen tot de resource die is gedefinieerd in het beleid voor voorwaardelijke toegang, wordt u gevraagd deze nieuwe versie te accepteren. Als uw gebruikers niet opnieuw moeten worden geaccepteerd, blijven de voor gaande toestemming actueel en worden alleen nieuwe gebruikers die nog niet hebben gereageerd of waarvan de toestemming verloopt, de nieuwe versie weer gegeven.
+
+    ![De optie voor het gebruik van de gebruiksrecht overeenkomst bewerken gemarkeerd](./media/terms-of-use/re-accept.png)
+
+7.  Wanneer u de nieuwe PDF hebt geüpload en u hebt besloten op opnieuw accepteren, klikt u onder aan het deel venster op toevoegen.
+8.  U ziet nu de meest recente versie in de kolom document.
+
+## <a name="view-previous-versions-of-a-terms-of-use"></a>Eerdere versies van de gebruiks voorwaarden weer geven
+
+1.  Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op https://aka.ms/catou.
+2.  Selecteer de gebruiks voorwaarden waarvoor u een versie geschiedenis wilt weer geven.
+3.  Klik op **talen en versie geschiedenis**
+4.  Klik op **vorige versies weer geven.**
+
+    ![document gegevens inclusief taal versies](./media/terms-of-use/document-details.png)
+
+5.  U kunt op de naam van het document klikken om die versie te downloaden
+
+## <a name="see-who-has-accepted-each-version"></a>Zien wie elke versie heeft geaccepteerd
+
+1.  Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op https://aka.ms/catou.
+2.  Als u wilt zien wie de gebruiks voorwaarden momenteel heeft geaccepteerd, klikt u op het nummer in de kolom **geaccepteerd** voor de gewenste gebruiks voorwaarden.
+3.  Op de volgende pagina wordt standaard de huidige status weer gegeven van elke gebruiker die de gebruiksrecht overeenkomst aanvaardt
+4.  Als u de vorige evenementen voor toestemming wilt zien, kunt u **alle** selecteren in de vervolg keuzelijst **huidige status** . Nu kunt u de gebeurtenissen van elke gebruiker zien in details over elke versie en wat er is gebeurd.
+5.  U kunt ook een specifieke versie selecteren in de vervolg keuzelijst **versie**  om te zien wie de specifieke versie heeft geaccepteerd.
+
 
 ## <a name="add-a-terms-of-use-language"></a>Een taal voor de gebruiks voorwaarden toevoegen
 
@@ -235,14 +275,14 @@ In de volgende procedure wordt beschreven hoe u een taal voor de gebruiks voorwa
 
 1. Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecteer de gebruiks voorwaarden die u wilt bewerken.
-1. Klik in het detail venster op het tabblad **talen** .
-
-   ![Gebruiksvoorwaarden geselecteerd en toont het tabblad talen in het detail venster](./media/terms-of-use/languages-tou.png)
-
-1. Klik op **taal toevoegen**.
+1. Klik op **voor waarden bewerken**
+1. Klik onder aan de pagina op **taal toevoegen** .
 1. Upload uw gelokaliseerde PDF in het deel venster taal voor de gebruiks voorwaarden toevoegen en selecteer de taal.
 
-   ![Het deel venster taal van gebruiks voorwaarden toevoegen met opties voor het uploaden van gelokaliseerde Pdf's](./media/terms-of-use/language-add-tou.png)
+   ![Gebruiksvoorwaarden geselecteerd en toont het tabblad talen in het detail venster](./media/terms-of-use/select-language.png)
+
+1. Klik op **taal toevoegen**.
+1. Klik op **Opslaan**.
 
 1. Klik op **toevoegen** om de taal toe te voegen.
 
@@ -253,7 +293,7 @@ Met de optie gebruikers moeten toestemming geven voor **elke Apparaatinstellinge
 Hier volgt een lijst met de ondersteunde platforms en software.
 
 > [!div class="mx-tableFixed"]
-> |  | iOS | Android | Windows 10 | Overige |
+> |  | iOS | Android | Windows 10 | Anders |
 > | --- | --- | --- | --- | --- |
 > | **Systeemeigen app** | Ja | Ja | Ja |  |
 > | **Microsoft Edge** | Ja | Ja | Ja |  |
@@ -318,7 +358,7 @@ Beleids regels voor voorwaardelijke toegang worden direct van kracht. Als dit ge
 > - een beleid voor voorwaardelijke toegang is ingeschakeld voor de gebruiks voorwaarden
 > - of als er een tweede gebruiksrechtovereenkomst is gemaakt
 
-## <a name="b2b-guests-preview"></a>B2B-gasten (preview-versie)
+## <a name="b2b-guests"></a>B2B-gasten
 
 De meeste organisaties beschikken over een proces voor hun werk nemers om toestemming te geven voor de gebruiks voorwaarden en privacyverklaringen van de organisatie. Maar hoe kunt u dezelfde toestemmingen afdwingen voor gasten van Azure AD Business-to-Business (B2B) wanneer ze worden toegevoegd via share point of teams? Door gebruik te maken van voorwaardelijke toegang en gebruiks voorwaarden, kunt u een beleid rechtstreeks afdwingen voor B2B-gast gebruikers. Tijdens de inwissel van de uitnodiging krijgt de gebruiker de gebruiks voorwaarden te zien. Deze ondersteuning is momenteel beschikbaar als preview-versie.
 
@@ -326,7 +366,7 @@ Gebruiksvoorwaarden wordt alleen weer gegeven wanneer de gebruiker een gast acco
 
 ![Het deel venster gebruikers en groepen-tabblad includes met alle gast gebruikers opties ingeschakeld](./media/terms-of-use/b2b-guests.png)
 
-## <a name="support-for-cloud-apps-preview"></a>Ondersteuning voor Cloud-apps (preview-versie)
+## <a name="support-for-cloud-apps"></a>Ondersteuning voor Cloud-apps
 
 Gebruiksvoorwaarden kunnen worden gebruikt voor verschillende Cloud-apps, zoals Azure Information Protection en Microsoft Intune. Deze ondersteuning is momenteel beschikbaar als preview-versie.
 

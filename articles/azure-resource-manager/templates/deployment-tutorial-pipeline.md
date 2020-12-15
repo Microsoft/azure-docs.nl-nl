@@ -1,19 +1,19 @@
 ---
 title: Continue integratie met Azure-pijplijnen
-description: Meer informatie over het continu bouwen, testen en implementeren van Azure Resource Manager-sjablonen.
+description: Meer informatie over het continu bouwen, testen en implementeren van ARM-sjablonen (Azure Resource Manager).
 ms.date: 08/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 433811cb632aae0d7370fc8e401c01fe36621a5b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d7688a4e4838cb591bcd3ac0045a5ed22180c063
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91333234"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906349"
 ---
-# <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van Azure Resource Manager-sjablonen met Azure-pijplijnen
+# <a name="tutorial-continuous-integration-of-arm-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van ARM-sjablonen met Azure Pipelines
 
-In de [vorige zelfstudie](./deployment-tutorial-linked-template.md) hebt u een gekoppelde sjabloon geïmplementeerd.  In deze zelfstudie leert u hoe u Azure-pijplijnen kunt gebruiken om voortdurend Azure Resource Manager-sjabloonprojecten te bouwen en implementeren.
+In de [vorige zelfstudie](./deployment-tutorial-linked-template.md) hebt u een gekoppelde sjabloon geïmplementeerd.  In deze zelfstudie leert u hoe u Azure Pipelines kunt gebruiken om voortdurend ARM-sjabloonprojecten (Azure Resource Manager) te bouwen en implementeren.
 
 Azure DevOps biedt ontwikkelaars services om teams te ondersteunen bij het plannen van werk, het samenwerken aan de ontwikkeling van code en het bouwen en implementeren van toepassingen. Ontwikkelaars kunnen werken in de cloud met behulp van Azure DevOps-services. Azure DevOps biedt een geïntegreerde set functies die u via uw webbrowser of IDE-client kunt openen. Azure-pijplijnen is een van deze functies. Azure-pijplijnen is een volledig uitgeruste service voor continue integratie (CI) en continue levering (CD). Het werkt met uw favoriete Git-provider en kan worden geïmplementeerd in de meeste belangrijke cloudservices. Vervolgens kunt u het bouwen, testen en implementeren van uw code automatiseren naar Microsoft Azure, Google Cloud Platform of Amazon Web Services.
 
@@ -40,7 +40,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 * **Een GitHub-account**, dat u gebruikt om een opslagplaats voor uw sjablonen te maken. Als u nog geen account hebt, kunt u [gratis een account maken](https://github.com). Zie [GitHub-opslagplaatsen maken](/azure/devops/pipelines/repos/github) voor meer informatie over het gebruik van GitHub-opslagplaatsen.
 * **Installeer Git**. In deze zelfstudie-instructie gebruikt u *Git Bash* of *Git Shell*. Zie [Install Git]( https://www.atlassian.com/git/tutorials/install-git) (Engelstalig) voor instructies.
 * **Een Azure DevOps-organisatie**. Als u nog geen account hebt, kunt u gratis een account maken. Zie [Een organisatie-of projectverzameling maken](/azure/devops/organizations/accounts/create-organization?view=azure-devops).
-* (optioneel) **Visual Studio Code met de extensie Resource Manager Tools**. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* (optioneel) **Visual Studio Code met de extensie Resource Manager Tools**. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="prepare-a-github-repository"></a>Een GitHub-opslagplaats voorbereiden
 
@@ -59,7 +59,7 @@ Als u geen GitHub-account hebt, raadpleegt u [Vereisten](#prerequisites).
 1. Geef een naam voor de opslagplaats op in **Repository name**.  Bijvoorbeeld: **AzureRmPipeline-repo**. Vergeet niet om **AzureRmPipeline** overal te vervangen door de naam van uw project. U kunt **Public** (Openbaar) of **Private** (Privé) selecteren voor deze zelfstudie. Selecteer vervolgens **Create repository** (Opslagplaats maken).
 1. Noteer de URL. De URL van de opslagplaats heeft de volgende indeling: **`https://github.com/[YourAccountName]/[YourRepositoryName]`** .
 
-Deze opslagplaats wordt een *externe opslagplaats*genoemd. Alle ontwikkelaars van hetzelfde project kunnen hun eigen *lokale opslagplaats* klonen en de wijzigingen samenvoegen in de externe opslagplaats.
+Deze opslagplaats wordt een *externe opslagplaats* genoemd. Alle ontwikkelaars van hetzelfde project kunnen hun eigen *lokale opslagplaats* klonen en de wijzigingen samenvoegen in de externe opslagplaats.
 
 ### <a name="clone-the-remote-repository"></a>De externe opslagplaats klonen
 

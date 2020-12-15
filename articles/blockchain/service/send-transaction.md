@@ -1,17 +1,17 @@
 ---
 title: Slimme contracten maken, bouwen en implementeren - Azure Blockchain Service
 description: Zelfstudie over het gebruik van de Azure Block Chain Development Kit voor Ethereum-extensie in Visual Studio Code voor het maken, bouwen en implementeren van een slim contract in Azure Blockchain Service.
-ms.date: 04/22/2020
+ms.date: 11/30/2020
 ms.topic: tutorial
 ms.reviewer: caleteet
-ms.openlocfilehash: dc23c680dfb2ed33cae2a251af16e1b1f25c6ac7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7605a0c118a40e52210582d2411569795fb25ee
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82086654"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763686"
 ---
-# <a name="tutorial-create-buildanddeploysmartcontracts-on-azure-blockchain-service"></a>Zelfstudie: Slimme contracten maken, bouwen en implementeren in Azure Blockchain Service
+# <a name="tutorial-create-build-and-deploy-smart-contracts-on-azure-blockchain-service"></a>Zelfstudie: Slimme contracten maken, bouwen en implementeren in Azure Blockchain Service
 
 In deze zelfstudie gebruikt u de Azure Block Chain Development Kit voor Ethereum-extensie in Visual Studio Code voor het maken, bouwen en implementeren van een slim contract in Azure Blockchain Service. U kunt ook de Development Kit gebruiken om een slim-contractfunctie uit te voeren via een transactie.
 
@@ -31,7 +31,6 @@ U gebruikt Azure Blockchain Development Kit voor Ethereum voor het volgende:
 * [Azure Blockchain Development Kit voor Ethereum-extensie](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain)
 * [Node.js 10.15.x of hoger](https://nodejs.org/download)
 * [Git 2.10.x of hoger](https://git-scm.com)
-* [Python 2.7.15](https://www.python.org/downloads/release/python-2715/) Voeg python.exe toe aan uw pad. Python-versie 2.7.15 in uw pad is vereist voor Azure Block Chain Development Kit.
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
 * [Ganache CLI 6.0.0](https://github.com/trufflesuite/ganache-cli)
 
@@ -47,7 +46,7 @@ Zie de [opslagplaats node-gyp op GitHub](https://github.com/nodejs/node-gyp) voo
 
 De Azure Block Chain Development Kit voor Ethereum maakt gebruik van projectsjablonen en Truffle-hulpprogramma's voor het ontwerpen, maken en implementeren van contracten. Voordat u begint, moet u deze vereiste quickstart voltooien: [Quickstart: Visual Studio Code gebruiken om verbinding te maken met een Azure Blockchain Service-consortiumnetwerk](connect-vscode.md). De quickstart begeleidt u bij het installeren en configureren van de Azure Block Chain Development Kit voor Ethereum.
 
-1. Kies in het opdrachtpalet van Visual Studio Code **Azure Block chain: New Solidity Project** (Nieuw Solidity-project).
+1. Kies in het opdrachtpalet van VS Code **Blockchain: New Solidity Project** (Nieuw Solidity-project).
 1. Kies **Create basic project** (Basisproject maken).
 1. Maak een nieuwe map met de naam `HelloBlockchain` en kies **Select New project path** (Nieuw projectpad selecteren).
 
@@ -94,7 +93,7 @@ Met de functie **SendRequest** van het **HelloBlockchain**-contract wordt de **R
 
     ![Voorbeeld van pagina voor interactie met slimme contracten](./media/send-transaction/interaction-page.png)
 
-1. Als u een functie voor een slim contract wilt aanroepen, selecteert u de actie voor het contract en geeft u uw argumenten door. Kies de actie **SendRequest** (Aanvraag verzenden) voor het contract en voer **Hello, Blockchain!** in voor de parameter **requestMessage** (aanvraagbericht). Selecteer **Execute** (Uitvoeren) om de functie **SendRequest** aan te roepen via een transactie.
+1. Als u een functie voor een slim contract wilt aanroepen, selecteert u de actie voor het contract en geeft u uw argumenten door. Kies de actie **SendRequest** (Aanvraag verzenden) voor het contract en voer **Hello, Blockchain!** in als de parameter **requestMessage**. Selecteer **Uitvoeren** om de functie **SendRequest** aan te roepen via een transactie.
 
     ![SendRequest-actie uitvoeren](./media/send-transaction/sendrequest-action.png)
 

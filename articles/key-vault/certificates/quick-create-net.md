@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 49f244ea8e602f3b5e6499b8e14db2be15bfc8f7
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: b40a13b84a0191b5c454d7edac2226f8f06fadcd
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317074"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780158"
 ---
 # <a name="quickstart-azure-key-vault-certificate-client-library-for-net-sdk-v4"></a>Quickstart: Azure Key Vault-clientbibliotheek met certificaten voor .NET (SDK v4)
 
@@ -54,6 +54,13 @@ Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om
 
 2. Meldt u zich in de browser aan met uw accountreferenties.
 
+#### <a name="grant-access-to-your-key-vault"></a>Toegang verlenen tot uw sleutelkluis
+
+Maak toegangsbeleid voor de sleutelkluis waarmee certificaatmachtigingen worden verleend aan uw gebruikersaccount
+
+```console
+az keyvault set-policy --name <your-key-vault-name> --upn user@domain.com --certificate-permissions delete get list create purge
+```
 
 ### <a name="create-new-net-console-app"></a>Nieuwe .NET-console-app maken
 
@@ -89,14 +96,6 @@ Voor deze quickstart moet u ook de Azure SDK-clientbibliotheek voor Azure Identi
 
 ```dotnetcli
 dotnet add package Azure.Identity
-```
-
-#### <a name="grant-access-to-your-key-vault"></a>Toegang verlenen tot uw sleutelkluis
-
-Maak een toegangsbeleid voor de sleutelkluis waarmee certificaatmachtigingen aan uw gebruikersaccount worden verleend
-
-```console
-az keyvault set-policy --name <your-key-vault-name> --upn user@domain.com --certificate-permissions delete get list create purge
 ```
 
 #### <a name="set-environment-variables"></a>Omgevingsvariabelen instellen
@@ -137,7 +136,7 @@ using Azure.Security.KeyVault.Certificates;
 
 In deze quickstart wordt de aangemelde gebruiker gebruikt voor de verificatie bij de sleutelkluis. Dit is de voorkeursmethode voor lokale ontwikkeling. Voor toepassingen die zijn geïmplementeerd in Azure, moet beheerde identiteit worden toegewezen aan App Service of aan Virtuele machine. Zie [Overzicht van beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.
 
-In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse ['DefaultAzureCredential()'](/dotnet/api/azure.identity.defaultazurecredential) gebruikt, waarmee u dezelfde code kunt gebruiken in verschillende omgevingen met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
+In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential) uit [Azure Identity Library](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme) gebruikt. Hiermee kunt u dezelfde code gebruiken in verschillende omgevingen, met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
 
 ```csharp
 string keyVaultName = Environment.GetEnvironmentVariable("KEY_VAULT_NAME");
@@ -228,61 +227,20 @@ Voer de volgende stappen uit om de .NET Core-console-app aan te passen voor inte
     ```
 ### <a name="test-and-verify"></a>Testen en verifiëren
 
-1.  Voer de volgende opdracht uit om het project te bouwen
+Voer de volgende opdracht uit om het project te bouwen
 
-    ```dotnetcli
-    dotnet build
-    ```
-
-1. Voer de volgende opdracht uit om de app uit te voeren.
-
-    ```dotnetcli
-    dotnet run
-    ```
-
-1. Voer een geheime waarde in wanneer u hierom wordt gevraagd. Bijvoorbeeld mySecretPassword (mijn geheime wachtwoord).
-
-    Er verschijnt een variant van de volgende uitvoer:
-
-    ```console
-    Creating a certificate in mykeyvault called 'myCertificate' ... done.
-    Retrieving your certificate from mykeyvault.
-    Your certificate version is '8532359bced24e4bb2525f2d2050738a'.
-    Deleting your certificate from jl-kv ... done
-    ```
-
-## <a name="clean-up-resources"></a>Resources opschonen
-
-Wanneer u de sleutelkluis en de bijbehorende resourcegroep niet meer nodig hebt, kunt u Azure CLI of Azure PowerShell gebruiken om ze te verwijderen.
-
-### <a name="delete-a-key-vault"></a>Een sleutelkluis verwijderen
-
-```azurecli
-az keyvault delete --name <your-unique-keyvault-name>
+```dotnetcli
+dotnet build
 ```
 
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name>
-```
+Er verschijnt een variant van de volgende uitvoer:
 
-### <a name="purge-a-key-vault"></a>Een sleutelkluis opschonen
-
-```azurecli
-az keyvault purge --location eastus --name <your-unique-keyvault-name>
-```
-
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name> -InRemovedState -Location eastus
-```
-
-### <a name="delete-a-resource-group"></a>Een resourcegroep verwijderen
-
-```azurecli
-az group delete -g "myResourceGroup"
-```
-
-```azurepowershell
-Remove-AzResourceGroup -Name "myResourceGroup"
+```console
+Creating a certificate in mykeyvault called 'myCertificate' ... done.
+Retrieving your certificate from mykeyvault.
+Your certificate version is '8532359bced24e4bb2525f2d2050738a'.
+Deleting your certificate from mykeyvault ... done
+Purging your certificate from mykeyvault ... done
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

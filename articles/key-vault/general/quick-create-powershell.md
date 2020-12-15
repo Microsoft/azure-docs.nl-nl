@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
-ms.date: 11/08/2019
+ms.date: 12/08/2020
 ms.author: mbaldwin
-ms.openlocfilehash: ace6d21d2928eac1fb91903c5e395f1e3479a3ff
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: c3407b9539047b5c683f304549977eace7b57341
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91823458"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779002"
 ---
 # <a name="quickstart-create-a-key-vault-using-powershell"></a>Quickstart: een sleutelkluis maken met behulp van PowerShell
 
@@ -74,7 +74,7 @@ Remove-AzResourceGroup -Name "myResourceGroup"
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een sleutelkluis gemaakt en daar een geheim in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
+In deze quickstart hebt u een sleutelkluis gemaakt met behulp van Azure PowerShell. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](overview.md)
 - Zie de referentie voor de [Azure PowerShell Key Vault-cmdlets](/powershell/module/az.keyvault/)

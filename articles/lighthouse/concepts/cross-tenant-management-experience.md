@@ -3,12 +3,12 @@ title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
 ms.date: 11/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: 95b9bcf6bb9530afc9f6a23c323b6931e8975ad1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4550921fdefdca440b6757e7a3b7a03337599d16
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95905120"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510648"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -90,7 +90,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 
 [Azure monitor](../../azure-monitor/index.yml):
 
-- Waarschuwingen voor gedelegeerde abonnementen weer geven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven
+- Waarschuwingen voor gedelegeerde abonnementen weer geven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven en te vernieuwen
 - Details van het activiteiten logboek voor gedelegeerde abonnementen weer geven
 - Log Analytics: gegevens opvragen uit externe werk ruimten in meerdere tenants
 - Maak waarschuwingen in klant tenants die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de Tenant beheren via webhooks

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 5f6d768e3d863d52cfc91beb799d86fcd854af16
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 547bf111e73813c939caa917c0117dac6c8989e9
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517594"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922462"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Quickstart: Uw eerste IoT Edge-module implementeren in een virtueel Windows-apparaat
 
@@ -33,23 +33,21 @@ In deze quickstart leert u hoe u een Windows VM maakt die is geconfigureerd als 
 
 Als u nog geen actief abonnement op Azure hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free) aan voordat u begint.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-U kunt de Azure CLI gebruiken om veel van de stappen in deze quickstart uit te voeren. Azure IoT heeft een extensie om extra functionaliteit in te schakelen.
-
-Voeg de Azure IoT-extensie toe aan het exemplaar van Cloud Shell.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 ## <a name="prerequisites"></a>Vereisten
+
+Bereid uw omgeving voor op Azure CLI.
+
+- Gebruik [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell) met behulp van de PowerShell-environment.
+
+   [![Starten insluiten](https://shell.azure.com/images/launchcloudshell.png "Azure Cloud Shell starten")](https://shell.azure.com)   
+- [Installeer](/cli/azure/install-azure-cli) de Azure CLI, indien gewenst, om CLI-referentieopdrachten uit te voeren.
+   - Als u een lokale installatie gebruikt, meldt u zich aan bij Azure CLI met behulp van de opdracht [AZ login](/cli/azure/reference-index#az-login).  Volg de stappen die worden weergegeven in de terminal, om het verificatieproces te voltooien.  Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor aanvullende aanmeldingsopties.
+  - Installeer de Azure CLI-extensie bij het eerste gebruik, wanneer u hierom wordt gevraagd.  Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie over extensies.
+  - Voer [az version](/cli/azure/reference-index?#az_version) uit om de geïnstalleerde versie en afhankelijke bibliotheken te vinden. Voer [az upgrade](/cli/azure/reference-index?#az_upgrade) uit om te upgraden naar de nieuwste versie.
 
 Cloudresources:
 
-* Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt.
+- Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt.
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus2
@@ -57,7 +55,7 @@ Cloudresources:
 
 IoT Edge-apparaat:
 
-* Een Windows VM die fungeert als uw IoT Edge-apparaat. U kunt deze virtuele machine maken met behulp van de volgende opdracht, waarbij `{password}` wordt vervangen door een beveiligd wachtwoord:
+- Een Windows VM die fungeert als uw IoT Edge-apparaat. U kunt deze virtuele machine maken met behulp van de volgende opdracht, waarbij `{password}` wordt vervangen door een beveiligd wachtwoord:
 
   ```azurecli-interactive
   az vm create --resource-group IoTEdgeResources --name EdgeVM --image MicrosoftWindowsDesktop:Windows-10:rs5-pro:latest --admin-username azureuser --admin-password {password} --size Standard_DS1_v2
@@ -116,7 +114,7 @@ Omdat IoT Edge-apparaten zich anders gedragen en anders kunnen worden beheerd da
 2. Bekijk de verbindingsreeks voor uw apparaat. Hiermee wordt uw fysieke apparaat aan de bijbehorende identiteit in IoT Hub gekoppeld. De verbindingsreeks bevat de naam van uw IoT-hub, de naam van uw apparaat en vervolgens een gedeelde sleutel waarmee verbindingen tussen de twee worden geverifieerd.
 
    ```azurecli-interactive
-   az iot hub device-identity show-connection-string --device-id myEdgeDevice --hub-name {hub_name}
+   az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name {hub_name}
    ```
 
 3. Kopieer de waarde van de sleutel `connectionString` uit de JSON-uitvoer en sla deze op. Deze waarde is de verbindingsreeks van het apparaat. In de volgende sectie gaat u deze verbindingsreeks gebruiken om de IoT Edge-runtime te configureren.

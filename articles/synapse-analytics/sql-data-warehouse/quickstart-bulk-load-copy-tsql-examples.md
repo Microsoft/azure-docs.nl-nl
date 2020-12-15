@@ -9,12 +9,12 @@ ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9ed3a4b0827e81b3f779d95a6eab1dc341e69bb1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: de446209104c113b10346645f79b461239c3efab
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019375"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901268"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Gegevens veilig laden met Synapse SQL
 
@@ -23,11 +23,14 @@ In dit artikel vindt u voorbeelden over de veilige verificatiemechanismen voor d
 
 De volgende matrix beschrijft de ondersteunde verificatiemethoden voor elk bestandstype en opslagaccount. Dit geldt voor de bronopslaglocatie en de locatie van het foutbestand.
 
-|                          |                CSV                |              Parquet               |                ORC                 |
-| :----------------------: | :-------------------------------: | :-------------------------------:  | :-------------------------------:  |
-|  **Azure Blob Storage**  | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |              SAS/KEY               |              SAS/KEY               |
-| **Azure Data Lake Gen2** | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS (blob endpoint)/MSI (dfs endpoint)/SERVICE PRINCIPAL/KEY/AAD | SAS (blob endpoint)/MSI (dfs endpoint)/SERVICE PRINCIPAL/KEY/AAD |
+|                          |                CSV                |                      Parquet                       |                        ORC                         |
+| :----------------------: | :-------------------------------: | :------------------------------------------------: | :------------------------------------------------: |
+|  **Azure Blob Storage**  | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD |                      SAS/KEY                       |                      SAS/KEY                       |
+| **Azure Data Lake Gen2** | SAS/MSI/SERVICE PRINCIPAL/KEY/AAD | SAS (blob<sup>1</sup>)/MSI (dfs<sup>2</sup>)/SERVICE PRINCIPAL/KEY/AAD | SAS (blob<sup>1</sup>)/MSI (dfs<sup>2</sup>)/SERVICE PRINCIPAL/KEY/AAD |
 
+1: Het. blob-eindpunt ( **.blob**.core.windows.net) in het pad van uw externe locatie is vereist voor deze verificatiemethode.
+
+2: Het .dfs-eindpunt ( **.dfs**.core.windows.net) in het pad van uw externe locatie is vereist voor deze verificatiemethode.
 
 ## <a name="a-storage-account-key-with-lf-as-the-row-terminator-unix-style-new-line"></a>A. Opslagaccountsleutel met LF als het rij-eindpunt (nieuwe regel voor UNIX-stijl)
 
@@ -74,22 +77,35 @@ Beheerde identiteitsverificatie is vereist wanneer uw opslagaccount is gekoppeld
 1. Installeer Azure PowerShell met behulp van deze [gids](/powershell/azure/install-az-ps?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Als u een v1-of blob-opslagaccount voor algemeen gebruik hebt, moet u eerst een upgrade uitvoeren naar de v2 voor algemeen gebruik met behulp van deze [gids](../../storage/common/storage-account-upgrade.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 3. U moet **vertrouwde Microsoft-services toegang geven tot dit opslagaccount** ingeschakeld onder het instellingenmenu van uw Azure Storage-account **Firewalls en virtuele netwerken**. Raadpleeg deze [gids](../../storage/common/storage-network-security.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#exceptions) voor meer informatie.
+
 #### <a name="steps"></a>Stappen
 
-1. **Registreer uw SQL Server-** in PowerShell bij Azure Active Directory:
+1. Als u een zelfstandige toegewezen SQL-groep hebt, registreert u uw SQL-server met Azure Active Directory (AAD) met behulp van PowerShell: 
 
    ```powershell
    Connect-AzAccount
-   Select-AzSubscription -SubscriptionId your-subscriptionId
-   Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
+   Select-AzSubscription -SubscriptionId <subscriptionId>
+   Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-SQL-servername -AssignIdentity
    ```
 
-2. **Een opslagaccount voor algemeen gebruik v2 maken** met deze [gids](../../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+   Deze stap is niet nodig voor toegewezen SQL-groepen in een Synapse-werkruimte.
+
+1. Als u een Synapse-werkruimte hebt, registreert u de door het systeem beheerde identiteit van uw werkruimte:
+
+   1. Ga naar uw Synapse-werkruimte in Azure Portal
+   2. Ga naar de blade Beheerde identiteiten 
+   3. Zorg ervoor dat de optie 'Pijplijnen toestaan' is ingeschakeld
+   
+   ![Systeem-msi van werkruimte registreren](./media/quickstart-bulk-load-copy-tsql-examples/msi-register-example.png)
+
+1. **Een opslagaccount voor algemeen gebruik v2 maken** met deze [gids](../../storage/common/storage-account-create.md).
 
    > [!NOTE]
-   > Als u een v1-of blob-opslagaccount voor algemeen gebruik hebt, moet u **eerst een upgrade uitvoeren naar de v2** voor algemeen gebruik met behulp van deze [gids](../../storage/common/storage-account-upgrade.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+   >
+   > - Als u een v1-of blob-opslagaccount voor algemeen gebruik hebt, moet u **eerst een upgrade uitvoeren naar de v2** voor algemeen gebruik met behulp van deze [gids](../../storage/common/storage-account-upgrade.md).
+   > - Raadpleeg deze [gids](../../storage/blobs/data-lake-storage-known-issues.md) voor bekende problemen met Azure Data Lake Storage Gen2.
 
-3. Navigeer onder uw opslagaccount naar **Access Control (IAM)** en selecteer **Roltoewijzing toevoegen**. Wijs de Azure-rol **Eigenaar, Inzender of Lezer van Storage Blob-gegevens** toe aan uw SQL Server.
+1. Navigeer onder uw opslagaccount naar **Access Control (IAM)** en selecteer **Roltoewijzing toevoegen**. Wijs de Azure-rol **Inzender voor opslagblob-gegevens** toe aan de server of werkruimte die als host fungeert voor de toegewezen SQL-groep die u hebt geregistreerd bij Azure Active Directory (AAD).
 
    > [!NOTE]
    > Alleen leden met de bevoegdheid Eigenaar kunnen deze stap uitvoeren. Raadpleeg deze [gids](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) voor verschillende ingebouwde Azure-rollen.

@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: 348721304970a5d1d697ecf546a8c5039e81afc1
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: b106b403022f3407a3838b7f65222baf41cbfff5
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506104"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852962"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Zelfstudie: Een Django-web-app implementeren met PostgreSQL in Azure App Service
 
@@ -35,7 +35,7 @@ In deze zelfstudie gebruikt u de Azure CLI om de volgende taken te voltooien:
 U kunt ook de [versie voor de Azure-portal van deze zelfstudie](/azure/developer/python/tutorial-python-postgresql-app-portal) gebruiken.
 
 
-## <a name="set-up-your-initial-environment"></a>Uw eerste omgeving instellen
+## <a name="1-set-up-your-initial-environment"></a>1. Uw eerste omgeving instellen
 
 1. U moet beschikken over een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 1. Installeer <a href="https://www.python.org/downloads/" target="_blank">Python 3.6 of hoger</a>.
@@ -81,7 +81,7 @@ Zodra u bent aangemeld, kunt u Azure-opdrachten uitvoeren met de Azure CLI om te
 
 Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-## <a name="clone-or-download-the-sample-app"></a>De voorbeeld-app klonen of downloaden
+## <a name="2-clone-or-download-the-sample-app"></a>2. De voorbeeld-app klonen of downloaden
 
 # <a name="git-clone"></a>[Git-kloon](#tab/clone)
 
@@ -118,7 +118,7 @@ Deze productie-instellingen dienen specifiek om Django uit te voeren in een prod
 
 Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-## <a name="create-postgres-database-in-azure"></a>Een Postgres-database maken in Azure
+## <a name="3-create-postgres-database-in-azure"></a>3. Een Postgres-database maken in Azure
 
 <!-- > [!NOTE]
 > Before you create an Azure Database for PostgreSQL server, check which [compute generation](../postgresql/concepts-pricing-tiers.md#compute-generations-and-vcores) is available in your region. -->
@@ -129,7 +129,7 @@ De `db-up`-extensie installeren voor de Azure CLI:
 az extension add --name db-up
 ```
 
-Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).
+Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#1-set-up-your-initial-environment).
 
 Maak vervolgens de Postgres-database in Azure met de opdracht [`az postgres up`](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up):
 
@@ -137,8 +137,9 @@ Maak vervolgens de Postgres-database in Azure met de opdracht [`az postgres up`]
 az postgres up --resource-group DjangoPostgres-tutorial-rg --location westus2 --sku-name B_Gen5_1 --server-name <postgres-server-name> --database-name pollsdb --admin-user <admin-username> --admin-password <admin-password> --ssl-enforcement Enabled
 ```
 
-- Vervang *\<postgres-server-name>* door een naam die overal in Azure uniek is (het servereindpunt wordt `https://<postgres-server-name>.postgres.database.azure.com`). Het is handig om een combinatie van uw bedrijfsnaam en een andere unieke waarde te gebruiken.
-- Geef voor *\<admin-username>* en *\<admin-password>* referenties op om een gebruiker met beheerdersrechten te maken voor deze Postgres-server. Gebruik het `$`-teken niet in de gebruikersnaam of het wachtwoord. Later maakt u omgevingsvariabelen met deze waarden, waarbij het `$`-teken een speciale betekenis heeft in de Linux-container die wordt gebruikt om Python-apps uit te voeren.
+- **Vervang** *\<postgres-server-name>* door een naam die **overal in Azure uniek is** (het servereindpunt wordt `https://<postgres-server-name>.postgres.database.azure.com`). Het is handig om een combinatie van uw bedrijfsnaam en een andere unieke waarde te gebruiken.
+- Geef voor *\<admin-username>* en *\<admin-password>* referenties op om een gebruiker met beheerdersrechten te maken voor deze Postgres-server. De gebruikersnaam van de beheerder mag niet *azure_superuser,* *azure_pg_admin,* *admin,* *administrator,* *root,* *guest* of *public* zijn. De naam mag niet met *pg_* beginnen. Het wachtwoord moet **8 tot 128 tekens** bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers (0 t/m 9) en niet-alfanumerieke tekens (bijvoorbeeld !, #, %). Het wachtwoord mag geen gebruikersnaam bevatten.
+- Gebruik het `$`-teken niet in de gebruikersnaam of het wachtwoord. Later maakt u omgevingsvariabelen met deze waarden, waarbij het `$`-teken een speciale betekenis heeft in de Linux-container die wordt gebruikt om Python-apps uit te voeren.
 - De [prijscategorie](../postgresql/concepts-pricing-tiers.md) B_Gen5_1 (Basic, Gen5, 1 kern) die hier wordt gebruikt, is de voordeligste. Laat voor productiedatabases het argument `--sku-name` weg om de prijscategorie GP_Gen5_2 (Algemeen gebruik, Gen 5, 2 kernen) te gebruiken.
 
 Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
@@ -153,7 +154,7 @@ Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
 
 U kunt alle stappen afzonderlijk uitvoeren met `az postgres`- en `psql`-opdrachten, maar `az postgres up` combineert alle stappen.
 
-Wanneer de opdracht voltooid is, wordt een JSON-object uitgevoerd dat verschillende verbindingsreeksen voor de database bevat, samen met de URL van de server, een gegenereerde gebruikersnaam (zoals 'joyfulKoala@msdocs-djangodb-12345') en een GUID-wachtwoord. Kopieer de korte gebruikersnaam (voor de @) en het wachtwoord naar een tijdelijk bestand. U hebt deze verderop in deze zelfstudie nodig.
+Wanneer de opdracht voltooid is, wordt een JSON-object uitgevoerd dat verschillende verbindingsreeksen voor de database bevat, samen met de URL van de server, een gegenereerde gebruikersnaam (zoals 'joyfulKoala@msdocs-djangodb-12345') en een GUID-wachtwoord. **Kopieer de gebruikersnaam en het wachtwoord naar een tijdelijk bestand**, u heeft deze verderop in deze zelfstudie nodig.
 
 <!-- not all locations support az postgres up -->
 > [!TIP]
@@ -161,11 +162,11 @@ Wanneer de opdracht voltooid is, wordt een JSON-object uitgevoerd dat verschille
 
 Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-## <a name="deploy-the-code-to-azure-app-service"></a>De code implementeren naar Azure App Service
+## <a name="4-deploy-the-code-to-azure-app-service"></a>4. De code implementeren naar Azure App Service
 
 In deze sectie maakt u een app-host in de App Service-app, koppelt u deze app aan de Postgres-database en implementeert u vervolgens uw code naar die host.
 
-### <a name="create-the-app-service-app"></a>De App Service-app maken
+### <a name="41-create-the-app-service-app"></a>4.1 De App Service-app maken
 
 Controleer in de terminal of u zich in de opslagmap *djangoapp* die de code van de app bevat bevindt.
 
@@ -177,7 +178,7 @@ az webapp up --resource-group DjangoPostgres-tutorial-rg --location westus2 --pl
 <!-- without --sku creates PremiumV2 plan -->
 
 - Gebruik voor het argument `--location` dezelfde locatie als voor de database in het vorige onderdeel.
-- Vervang *\<app-name>* door een naam die overal in Azure uniek is (het servereindpunt is `https://<app-name>.azurewebsites.net`). De tekens die voor *\<app-name>* zijn toegestaan, zijn `A`-`Z`, `0`-`9` en `-`. Het is handig om een een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
+- **Vervang** *\<app-name>* door een naam die overal in Azure uniek is (het servereindpunt is `https://<app-name>.azurewebsites.net`). De tekens die voor *\<app-name>* zijn toegestaan, zijn `A`-`Z`, `0`-`9` en `-`. Het is handig om een een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
 
 Deze opdracht voert de volgende acties uit, dit kan enkele minuten duren:
 
@@ -196,7 +197,7 @@ Na een geslaagde implementatie genereert de opdracht JSON-uitvoer, zoals in het 
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="configure-environment-variables-to-connect-the-database"></a>De omgevingsvariabelen configureren om de database te verbinden
+### <a name="42-configure-environment-variables-to-connect-the-database"></a>4.2 De omgevingsvariabelen configureren om de database te verbinden
 
 Nu de code is geïmplementeerd naar App Service, is de volgende stap om de app te verbinden met de Postgres-database in Azure.
 
@@ -216,11 +217,11 @@ In uw Python-code opent u deze instellingen als omgevingsvariabelen met instruct
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="run-django-database-migrations"></a>Django-databasemigraties uitvoeren
+### <a name="43-run-django-database-migrations"></a>4.3 Django-databasemigraties uitvoeren
 
 Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Azure-database overeenkomt met de schema's die in uw code beschreven worden.
 
-1. Open een SSH-sessie in de browser door naar de volgende URL te gaan en u aan te melden met de referenties van uw Azure-account (niet de referenties van de databaseserver).
+1. Open een SSH-sessie **in de browser** door naar de volgende URL te gaan en u aan te melden met de referenties van uw Azure-account (niet de referenties van de databaseserver).
 
     ```
     https://<app-name>.scm.azurewebsites.net/webssh/host
@@ -230,7 +231,7 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
     U kunt in macOS en Linux ook verbinding maken met een SSH-sessie met de opdracht [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh).
 
-    Als u geen verbinding kunt maken met de SSH-sessie, kan de app zelf niet worden gestart. [Raadpleeg de diagnostische logboeken](#stream-diagnostic-logs) voor meer informatie. Als u de benodigde app-instellingen in de vorige sectie bijvoorbeeld niet hebt gemaakt, wordt in de logboeken `KeyError: 'DBNAME'` aangegeven.
+    Als u geen verbinding kunt maken met de SSH-sessie, kan de app zelf niet worden gestart. [Raadpleeg de diagnostische logboeken](#6-stream-diagnostic-logs) voor meer informatie. Als u de benodigde app-instellingen in de vorige sectie bijvoorbeeld niet hebt gemaakt, wordt in de logboeken `KeyError: 'DBNAME'` aangegeven.
 
 1. Voer in de SSH-sessie de volgende opdrachten uit (u kunt opdrachten plakken met **CTRL**+**Shift**+**V**):
 
@@ -257,11 +258,11 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
     
-### <a name="create-a-poll-question-in-the-app"></a>Een poll-vraag maken in de app
+### <a name="44-create-a-poll-question-in-the-app"></a>4.4 Een poll-vraag maken in de app
 
 1. Open de URL `http://<app-name>.azurewebsites.net` in een browser. De app zou het bericht 'Er zijn geen polls beschikbaar' moeten weergeven, omdat er nog geen specifieke polls in de database zitten.
 
-    Als u 'Toepassingsfout' ziet, is het waarschijnlijk dat u de vereiste instellingen niet hebt gemaakt in de vorige stap, [Omgevingsvariabelen configureren om verbinding te maken met de database](#configure-environment-variables-to-connect-the-database), of dat deze waarde fouten bevat. Voer de opdracht `az webapp config appsettings list` uit om de instellingen te controleren. U kunt ook [de diagnostische logboeken controleren](#stream-diagnostic-logs) om specifieke fouten te bekijken tijdens het opstarten van de app. Als u de instellingen bijvoorbeeld niet hebt gemaakt, wordt de fout `KeyError: 'DBNAME'` weergegeven in de logboeken.
+    Als u 'Toepassingsfout' ziet, is het waarschijnlijk dat u de vereiste instellingen niet hebt gemaakt in de vorige stap, [Omgevingsvariabelen configureren om verbinding te maken met de database](#42-configure-environment-variables-to-connect-the-database), of dat deze waarde fouten bevat. Voer de opdracht `az webapp config appsettings list` uit om de instellingen te controleren. U kunt ook [de diagnostische logboeken controleren](#6-stream-diagnostic-logs) om specifieke fouten te bekijken tijdens het opstarten van de app. Als u de instellingen bijvoorbeeld niet hebt gemaakt, wordt de fout `KeyError: 'DBNAME'` weergegeven in de logboeken.
 
     Nadat u de instellingen hebt bijgewerkt om eventuele fouten te corrigeren, geeft u de app een minuut om opnieuw op te starten en vernieuwt u vervolgens de browser.
 
@@ -276,11 +277,11 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHel
 > [!NOTE]
 > In App Service wordt een Django-project gedetecteerd door in elke submap naar een *wsgi.py*-bestand te zoeken dat standaard wordt gemaakt met `manage.py startproject`. Wanneer App Service dat bestand heeft gevonden, wordt de Django web-app geladen. Zie [Ingebouwde Python-installatiekopie configureren](configure-language-python.md) voor meer informatie.
 
-## <a name="make-code-changes-and-redeploy"></a>Wijzigingen aanbrengen in code en opnieuw implementeren
+## <a name="5-make-code-changes-and-redeploy"></a>5. Wijzigingen aanbrengen in code en opnieuw implementeren
 
 In dit onderdeel maakt u lokale wijzigingen in de app en implementeert u de code opnieuw naar App Service. Tijdens dat proces stelt u een virtuele Python-omgeving in die ondersteuning biedt bij doorlopend werk.
 
-### <a name="run-the-app-locally"></a>De app lokaal uitvoeren
+### <a name="51-run-the-app-locally"></a>5.1 De app lokaal uitvoeren
 
 Voer in een terminalvenster de volgende opdrachten uit. Volg de aanwijzingen wanneer u de supergebruiker aanmaakt:
 
@@ -355,7 +356,7 @@ Wanneer de app lokaal wordt uitgevoerd, wordt er een lokale Sqlite3-database geb
 
 Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="update-the-app"></a>De app bijwerken
+### <a name="52-update-the-app"></a>5.2 De app bijwerken
 
 Zoek in `polls/models.py` naar de regel die begint met `choice_text` en verander de parameter `max_length` naar 100:
 
@@ -377,7 +378,7 @@ Stop de Django-webserver opnieuw met **CTRL**+**C**.
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="redeploy-the-code-to-azure"></a>De code opnieuw implementeren naar Azure
+### <a name="53-redeploy-the-code-to-azure"></a>5.3 De code opnieuw implementeren naar Azure
 
 Voer vanuit de hoofdmap van de opslagplaats de volgende opdrachten uit:
 
@@ -389,7 +390,7 @@ Deze opdracht maakt gebruik van de parameters in de cache van het bestand *.azur
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="rerun-migrations-in-azure"></a>Migraties opnieuw uitvoeren in Azure
+### <a name="54-rerun-migrations-in-azure"></a>5.4 Migraties opnieuw uitvoeren in Azure
 
 Omdat u wijzigingen hebt aangebracht in het gegevensmodel, moet u databasemigraties opnieuw uitvoeren in App Service.
 
@@ -406,13 +407,13 @@ python manage.py migrate
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-### <a name="review-app-in-production"></a>Apps in productie controleren
+### <a name="55-review-app-in-production"></a>5.5 Apps in productie controleren
 
 Ga naar `http://<app-name>.azurewebsites.net` en test de app opnieuw in productie. (Aangezien u enkel de lengte van een databaseveld hebt gewijzigd, wordt de wijziging pas zichtbaar wanneer u een langer antwoord invoert tijdens het maken van een vraag.)
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-## <a name="stream-diagnostic-logs"></a>Diagnostische logboeken streamen
+## <a name="6-stream-diagnostic-logs"></a>6. Diagnostische logboeken streamen
 
 U hebt toegang tot de consolelogboeken die zijn gegenereerd vanuit de container die de app host in Azure.
 
@@ -437,7 +438,7 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/DjangoCLITutorialHel
 > az webapp log config --docker-container-logging filesystem
 > ```
 
-## <a name="manage-your-app-in-the-azure-portal"></a>De app beheren in Azure Portal
+## <a name="7-manage-your-app-in-the-azure-portal"></a>7. De app beheren in Azure Portal
 
 Zoek in het [Azure-portal](https://portal.azure.com) naar de appnaam en selecteer de app in de resultaten.
 
@@ -449,7 +450,7 @@ Het portal laat standaard de pagina **Overzicht** van uw app zien; hier vindt u 
 
 Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/DjangoCLITutorialHelp).
 
-## <a name="clean-up-resources"></a>Resources opschonen
+## <a name="8-clean-up-resources"></a>8. Resources opschonen
 
 Als u de app wilt behouden of wilt doorgaan naar de extra zelfstudies, sla dit dan over en ga naar [Volgende stappen](#next-steps). Zo niet, dan kunt u de resourcegroep die u gemaakt hebt voor deze zelfstudie verwijderen om doorlopende kosten te vermijden:
 

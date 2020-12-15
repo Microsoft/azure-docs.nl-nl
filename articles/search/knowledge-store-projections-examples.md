@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: f40841887b8116ad1384dc2b827d8215ea659490
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3985564d49ce8a5c62b15f9537364418c0a8f5da
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537494"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509917"
 ---
 # <a name="how-to-shape-and-export-enrichments"></a>Verrijkingen vorm geven en exporteren
 
@@ -31,7 +31,7 @@ Er zijn drie soorten [projecties](knowledge-store-projection-overview.md):
 
 + Tabellen
 + Objecten
-+ Files
++ Bestanden
 
 Tabel prognoses worden opgeslagen in azure-tabel opslag. Object-en bestands projecties worden geschreven naar de Blob-opslag, waarbij object projecties worden opgeslagen als JSON-bestanden, en kan inhoud bevatten uit het bron document en eventuele vaardigheids uitvoer of verrijkingen. De verrijkings pijplijn kan ook binaire bestanden zoals afbeeldingen extra heren, maar deze binaire bestanden worden geprojecteerd als bestands projecties. Wanneer een binair object wordt geprojecteerd als een object projectie, worden alleen de meta gegevens die eraan zijn gekoppeld, opgeslagen als een JSON-blob. 
 
@@ -576,13 +576,12 @@ In het geconsolideerde crossProjection-object kunt u het object in meerdere tabe
                     }
                 ],
                 "files": [
-                     {
+                    {
                         "storageContainer": "crossimages",
                         "generatedKeyName": "crossimages",
                         "source": "/document/crossProjection/images/*/image"
                     }
-                    ]
-                
+                ]
             }
         ]
     }
@@ -654,7 +653,7 @@ Bij het opbouwen van projecties van verschillende typen worden eerst bestands-en
     }
 ```
 
-## <a name="common-issues"></a>Algemene problemen
+## <a name="common-issues"></a>Veelvoorkomende problemen
 
 Bij het definiëren van een projectie zijn er enkele veelvoorkomende problemen die kunnen leiden tot onverwachte resultaten. Controleer deze problemen als de uitvoer in het kennis archief niet de verwachte resultaten heeft.
 

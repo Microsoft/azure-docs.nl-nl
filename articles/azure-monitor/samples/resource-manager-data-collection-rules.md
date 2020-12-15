@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 1c059edb1422a572011f167f7f1c02d5e87e5da2
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 12e6aa85f7d8c2c4aebe80efc92f771917e6a1d5
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95324821"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746009"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -19,7 +19,7 @@ Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manage
 [!INCLUDE [azure-monitor-samples](../../../includes/azure-monitor-resource-manager-samples.md)]
 
 
-## <a name="create-association-between-azure-vm-and-rule"></a>Koppeling maken tussen Azure-VM en regel
+## <a name="create-association-with-azure-vm"></a>Koppeling maken met Azure VM
 
 In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows Azure-machine geïnstalleerd. Er wordt een koppeling gemaakt tussen een virtuele machine van Azure en een gegevensverzamelingsregel.
 
@@ -80,7 +80,7 @@ In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows A
 }
 ```
 
-## <a name="create-association-between-azure-arc-and-rule"></a>Koppeling maken tussen Azure Arc en regel
+## <a name="create-association-ith-azure-arc"></a>Koppeling maken met Azure Arc
 
 In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows Azure-machine geïnstalleerd. Er wordt een koppeling gemaakt tussen een Azure Arc-servermachine en een gegevensverzamelingsregel.
 

@@ -8,12 +8,12 @@ ms.date: 1/20/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ef6e86bbb55a2c51779f2dcf60f802ce549516cb
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: eef5e60b06eedb1fb07c57aa2e369dd3830fcad5
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959676"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932401"
 ---
 # <a name="tutorial-generate-simulated-device-data"></a>Zelfstudie: Gesimuleerde apparaatgegevens genereren
 
@@ -42,6 +42,14 @@ Het DeviceHarness-project is een .NET core-project dat is geschreven in C# en be
 Het uitvoeren van de taken die in dit artikel worden beschreven, zou ongeveer 20 minuten moeten duren.
 
 In werkelijkheid zou het equivalent van het werk in deze stap waarschijnlijk worden gedaan door apparaatontwikkelings en cloudontwikkelaars.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Een extern project opnemen in uw ontwikkelomgeving.
+> * Het voorbeeldproject DeviceHarness gebruiken om gesimuleerde IoT-apparaatgegevens te genereren.
+> * Gegenereerde gegevens in uw IoT Hub bekijken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -157,6 +165,10 @@ De gegevens die we zojuist naar uw IoT-hub hebben verzonden, zijn doorgestuurd n
 1. De bestanden zijn geschreven in [Avro](https://avro.apache.org/)-indeling. Dubbelklik op een van deze bestanden om een ander browsertabblad te openen en de gegevens gedeeltelijk weer te geven. Als u wordt gevraagd om het bestand in een programma te openen, kunt u VS Code kiezen en wordt het bestand correct weergegeven.
 
 1. U hoeft de gegevens nu niet te lezen of te interpreteren; dit gaan we in het volgende artikel doen.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd op het werk dat in de voorgaande artikelen is uitgevoerd. Wacht met het opschonen van resources totdat u de laatste zelfstudie hebt uitgevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

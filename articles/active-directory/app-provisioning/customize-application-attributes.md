@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.author: kenwith
-ms.openlocfilehash: 5f6e5de61c9f43d5958e68c545105c4373996f7c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 012038399796a0f2dc87acfb350043542268379a
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175063"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96936978"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
@@ -115,7 +115,7 @@ Enkele voorbeelden van toepassingen en systemen die ondersteuning bieden voor aa
 
 
 > [!NOTE]
-> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die weten hoe hun aangepaste kenmerken zijn gedefinieerd. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem.
+> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die weten hoe hun aangepaste kenmerken zijn gedefinieerd. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem. De mogelijkheid om de lijst met ondersteunde kenmerken te bewerken is standaard vergrendeld, maar klanten kunnen deze mogelijkheid inschakelen door naar de volgende URL te gaan: https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true. U kunt vervolgens naar uw toepassing navigeren om de kenmerkenlijst weer te geven, zoals [hierboven](https://docs.microsoft.com/azure/active-directory/app-provisioning/customize-application-attributes#editing-the-list-of-supported-attributes) wordt beschreven. 
 
 Bij het bewerken van de lijst met ondersteunde kenmerken zijn de volgende eigenschappen beschikbaar:
 

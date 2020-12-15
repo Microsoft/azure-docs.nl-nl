@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: f4803cc9871b71e65e4d94ed37d3f9771be1cae0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: adc08e978be699ea6ea3dd00beae1762d48644c0
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454955"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781059"
 ---
 # <a name="what-is-azure-private-link"></a>Wat is Azure Private Link? 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners.
@@ -70,6 +70,7 @@ Azure Private Link biedt de volgende voordelen:
 | Azure Monitor <br/>(Log Analytics en Application Insights) | Alle openbare regio's      |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Monitor.](../azure-monitor/platform/private-link-security.md)   | 
 | Azure Batch | Alle openbare regio's, behalve: Duitsland CENTRAAL, Duitsland NOORDOOST <br/> Alle Government-regio's  | | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Batch.](../batch/private-connectivity.md) |
 |Azure Data Factory | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | Referenties moeten worden bewaard in een Azure-sleutelkluis| Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Data Factory.](../data-factory/data-factory-private-link.md)   |
+|Azure Managed Disks | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | [Klik hier voor bekende beperkingen](https://docs.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal#limitations) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Managed Disks.](https://docs.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal)   |
 
 
 

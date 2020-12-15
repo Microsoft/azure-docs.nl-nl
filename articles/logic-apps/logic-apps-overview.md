@@ -1,20 +1,20 @@
 ---
-title: Taken automatiseren voor bedrijfsintegratie
-description: Leer meer over het automatiseren van werkstromen waarmee apps, gegevens, services en systemen worden geïntegreerd met minimale code voor bedrijfsintegratie, met behulp van Azure Logic Apps.
+title: Overzicht voor Azure Logic Apps
+description: Azure Logic Apps is een cloudoplossing voor het bouwen en organiseren van geautomatiseerde werkstromen die apps, gegevens, services en systemen integreren met minimale code, voor scenario's op ondernemingsniveau.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: overview
 ms.custom: mvc
 ms.date: 03/11/2020
-ms.openlocfilehash: 3496dfd7813818ced8963175d73ec0f8ef6892d4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4c4e8c8f809452286fee493e20dbef2cc538c8bd
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86536229"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921540"
 ---
-# <a name="overview---what-is-azure-logic-apps"></a>Overzicht - Wat is Azure Logic Apps?
+# <a name="what-is-azure-logic-apps"></a>Wat is Azure Logic Apps?
 
 [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps) is een cloudservice waarmee u taken, bedrijfsprocessen en [werkstromen](#logic-app-concepts) kunt plannen, automatiseren en organiseren wanneer u apps, gegevens, systemen en services in bedrijven of organisaties moet integreren. Logic Apps vereenvoudigt het ontwerpen en maken van schaalbare oplossingen voor [app-integratie](https://azure.microsoft.com/product-categories/integration/), gegevensintegratie, systeemintegratie, Enterprise Application Integration (EAI) en communicatie voor business-to-business (B2B), in de cloud, on-premises of beide.
 

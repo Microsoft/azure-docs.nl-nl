@@ -8,15 +8,15 @@ ms.service: internet-peering
 ms.topic: conceptual
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: a683ad71f5e80c91728262dc7bbabf36e9d68deb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20f25e0add5d05bb2dcf7f3ebdc86ccd5ae889d0
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75775223"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510784"
 ---
 # <a name="peering-policy"></a>Peeringbeleid
-De algemene vereisten van micro soft van uw netwerk worden uitgelegd in de volgende secties. Deze zijn van toepassing op aanvragen voor directe peering en uitwisseling van peering.
+Micro soft onderhoudt een selectief beleid voor peering dat is ontworpen om te zorgen voor de best mogelijke klant ervaring die wordt ondersteund door de industrie normen en aanbevolen procedures, schalen voor toekomstige vraag en strategische plaatsing van peering. Micro soft behoudt zich het recht voor om uitzonde ringen op het beleid te maken als dat nodig is. De algemene vereisten van micro soft van uw netwerk worden uitgelegd in de volgende secties. Deze zijn van toepassing op aanvragen voor directe peering en uitwisseling van peering. 
 
 ## <a name="technical-requirements"></a>Technische vereisten
 
@@ -25,18 +25,20 @@ De algemene vereisten van micro soft van uw netwerk worden uitgelegd in de volge
 * Zowel IPv4 als IPv6 worden ondersteund en micro soft verwacht sessies van beide typen op elke peering-locatie te maken.
 * MD5 wordt niet ondersteund.
 * **ASN-Details:**
+
     * Micro soft beheert AS8075 samen met de volgende Asn's: AS8068, AS8069, AS12076. Voor een volledige lijst met Asn's met AS8075-peering, verwijzen naar micro soft.
     * Alle partijen die met micro soft overeenkomen, accepteren geen routes van AS12076 (Express route) onder geen enkele omstandigheden en moeten AS12076 op alle peers uitfilteren.
+
 * **Routerings beleid:**
     * De peer heeft ten minste één openbaar routeerbaar/24.
     * Micro soft overschrijft ontvangen multi-exit Discriminators (MED).
     * Micro soft geeft de voor keur aan het ontvangen van BGP Community-Tags van peers om de route oorsprong aan te geven.
-    * Peers wordt verwacht hun routes te registreren in een IR-data base (open bare Internet Routing REGI ster) voor het filteren en maakt het goeder om deze informatie up-to-date te houden.
-    * We suggereren dat peers een max. voor voegsel van 1000 (IPv4) en 100 (IPv6)-routes instellen voor peering-sessies met micro soft.
+    * Het is aan te raden peers een max-prefix van 2000 (IPv4) en 500 (IPv6)-routes in te stellen op peering-sessies met micro soft.
     * Tenzij specifiek vooraf overeengekomen, moeten peers naar verwachting consistente routes aankondigen op alle locaties waar ze met micro soft worden gepeerd.
-    * Over het algemeen worden peering-sessies met AS8075 alle routes van micro soft aangekondigd. AS8075-verbindingen in Afrika en Azië kunnen worden beperkt tot routes die relevant zijn voor de betreffende regio.
+    * Over het algemeen worden peering-sessies met AS8075 alle routes van micro soft aangekondigd. Micro soft kan sommige regionale specifieke regio's aankondigen.
     * Geen van beide partijen stelt een statische route, een route van de laatste redmiddel of het verzenden van verkeer naar de andere partij in voor een route die niet via BGP is aangekondigd.
-    * Peers wordt verwacht te voldoen aan de [MANRS](https://www.manrs.org/) industrie normen voor route beveiliging.
+    * Peer is verplicht hun routes te registreren in een IR-data base (open bare Internet Routing) voor het filteren van het doel en deze gegevens actueel te houden.      
+    * Peers voldoen aan de MANRS industrie normen voor route beveiliging.  Micro soft kan op zijn eigen wijze kiezen voor: 1.) geen peering tot stand brengen met bedrijven die geen routes hebben ondertekend en geregistreerd. 2.) als u ongeldige RPKI-routes wilt verwijderen; 3.) geen routes accepteren van gevestigde peers die niet zijn geregistreerd en ondertekend. 
 
 ## <a name="operational-requirements"></a>Operationele vereisten
 * Een volledig personeel van 24x7 netwerk Operations Center (NOC), dat kan helpen bij de oplossing van alle technische en prestatie problemen, beveiligings schendingen, denial of service-aanvallen of andere misbruik die afkomstig is van de peer of hun klanten.
@@ -44,32 +46,23 @@ De algemene vereisten van micro soft van uw netwerk worden uitgelegd in de volge
 
 ## <a name="physical-connection-requirements"></a>Vereisten voor fysieke verbinding
 * De locaties waar u verbinding kunt maken met micro soft voor directe peering of Exchange-peering, worden weer gegeven in [PeeringDB](https://www.peeringdb.com/net/694)
+
 * **Exchange-peering:**
-    * InterConnect moet groter zijn dan de enkelvoudige modus, met behulp van de juiste 10 Gbps-glasvezels.
+    * Voor peers wordt verwacht dat ze mini maal een 10 GB-verbinding met de Exchange hebben.
     * Bij peers wordt verwacht dat hun poorten worden bijgewerkt wanneer het piek gebruik 50% overschrijdt.
+    * Micro soft moedigt peers aan om verschillende connectiviteit met Exchange te onderhouden om failover-scenario's te ondersteunen.
+
 * **Directe peering:**
-    * InterConnect moet groter zijn dan de enkelvoudige modus, met behulp van de juiste 10 Gbps of 100Gbps-glasvezel.
+    * Interconnectie moet groter zijn dan 1-glas vezel met 100 Gbps optische modus.
     * Micro soft brengt alleen directe peering tot stand met ISP-of netwerk serviceproviders.
     * Bij peers wordt verwacht dat hun poorten worden bijgewerkt wanneer het piek gebruik 50% overschrijdt en de diverse capaciteit in elke metro lijn op één locatie of op verschillende locaties in een metro punt wordt gehandhaafd.
     * Elke directe peering bestaat uit twee verbindingen met twee micro soft Edge-routers van de routers van de peer die zich in de rand van de peer bevinden. Micro soft vereist twee BGP-sessies over deze verbindingen. De peer kan ervoor kiezen om geen redundante apparaten te implementeren.
 
+
 ## <a name="traffic-requirements"></a>Verkeers vereisten
-* Peers via Exchange-peering moeten mini maal 200 MB verkeer hebben en minder dan 2 GB.  Voor verkeer van meer dan 2 GB direct peering moet worden gecontroleerd.
-* Voor directe peering moet het verkeer van uw netwerk naar micro soft voldoen aan de onderstaande minimum vereiste.
 
-    | Geo                      | Mini maal verkeer naar micro soft   |
-    | :----------------------- |:-------------------------------|
-    | Afrika                   | 500 Mbps                       |
-    | APAC (met uitzonde ring van India)      |   2 Gbps                       |
-    | APAC (alleen India)        | 500 Mbps                       |
-    | Europa                   |   2 Gbps                       |
-    | LATAM                    |   2 Gbps                       |
-    | Midden-Oosten              | 500 Mbps                       |
-    | NA                       |   2 Gbps                       |
-
-* **Situaties**
-    * In NA, Europa, APAC en LATAM, Interconnect in ten minste drie geografische locaties, indien mogelijk, en het onderhoud van diverse capaciteit zodat verkeer binnen elke metro lijn kan worden gefailoverd.
-    * In Afrika, Midden-Oosten en India, Interconnect zo veel mogelijk verschillende locaties. Moeten voldoende uiteenlopende capaciteit hebben om ervoor te zorgen dat verkeer in de regio blijft.
+* Peers via Exchange peering moeten mini maal 500 MB aan verkeer hebben en minder dan 2 GB. Voor verkeer van meer dan 2 GB moet direct gelijkwaardig worden gemaakt.
+* Micro soft vereist mini maal 2 GB voor directe peering. Elke onderling overeengekomen locatie van peering moet failover ondersteunen die ervoor zorgt dat peering tijdens een failover-scenario lokaal blijft. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

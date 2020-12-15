@@ -7,23 +7,23 @@ ms.date: 10/21/2019
 ms.topic: quickstart
 ms.custom: devx-track-csharp
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: b3d9e2e275b4c0d000759878557e5e14f7dfc04f
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 360da015f012822593dbb6390cb7df0017ba85b1
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925744"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745074"
 ---
 # <a name="run-a-custom-container-in-azure"></a>Een aangepaste container uitvoeren in Azure
 
 ::: zone pivot="container-windows"
-[Azure App Service](overview.md) biedt vooraf gedefinieerde toepassingsstacks in Windows, zoals ASP.NET of Node.js, die worden uitgevoerd in IIS. Met de vooraf geconfigureerde Windows-container (preview) wordt het besturingssysteem vergrendeld voor beheerderstoegang, software-installaties, wijzigingen aan de Global Assembly Cache, enzovoort. Zie [Functionaliteit van besturingssystemen in Azure App Service](operating-system-functionality.md) voor meer informatie. Als voor uw toepassing meer toegang is vereist dan is toegestaan in de vooraf geconfigureerde omgeving, kunt u in plaats hiervan een aangepaste Windows-container implementeren.
+[Azure App Service](overview.md) biedt vooraf gedefinieerde toepassingsstacks in Windows, zoals ASP.NET of Node.js, die worden uitgevoerd in IIS. Met de vooraf geconfigureerde Windows-container wordt het besturingssysteem vergrendeld voor beheerderstoegang, software-installaties, wijzigingen aan de Global Assembly Cache, enzovoort. Zie [Functionaliteit van besturingssystemen in Azure App Service](operating-system-functionality.md) voor meer informatie. Als voor uw toepassing meer toegang is vereist dan is toegestaan in de vooraf geconfigureerde omgeving, kunt u in plaats hiervan een aangepaste Windows-container implementeren.
 
 Deze quickstart laat zien hoe u een ASP.NET-app in een Windows-installatiekopie implementeert in [Docker Hub](https://hub.docker.com/) vanuit Visual Studio. U voert de app uit in een aangepaste container in Azure App Service.
 
 > [!NOTE]
-> App Service op Windows-containers is beschikbaar als preview-versie.
->
+> Windows-containers is beperkt tot Azure Files en biedt momenteel geen ondersteuning voor Azure Blob.
+
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -99,13 +99,13 @@ Maak een ASP.NET-web-app door de volgende stappen uit te voeren:
 
    ![Een web-app voor containers maken](media/quickstart-custom-container/create-web-app-continer.png)
 
-1. Kies **Docker Hub** als **Broninstallatiekopie** , en voer voor **Installatiekopie en tag** , de opslagplaatsnaam in die u hebt gekopieerd in [Publiceren in Docker Hub](#publish-to-docker-hub).
+1. Kies **Docker Hub** als **Broninstallatiekopie**, en voer voor **Installatiekopie en tag**, de opslagplaatsnaam in die u hebt gekopieerd in [Publiceren in Docker Hub](#publish-to-docker-hub).
 
    ![Een web-app voor containers configureren](media/quickstart-custom-container/configure-web-app-continer.png)
 
     Als u elders een aangepaste installatiekopie voor de webtoepassing hebt, bijvoorbeeld in [Azure Container Registry](../container-registry/index.yml) of in een andere privéopslagplaats, kunt u deze hier configureren.
 
-1. Selecteer **Controleren en maken** en vervolgens **Maken** , en wacht tot de vereiste resources zijn gemaakt in Azure.
+1. Selecteer **Controleren en maken** en vervolgens **Maken**, en wacht tot de vereiste resources zijn gemaakt in Azure.
 
 ## <a name="browse-to-the-container-app"></a>Naar de container-app bladeren
 
@@ -146,7 +146,7 @@ De gestreamde logboeken zien er ongeveer als volgt uit:
 
 ## <a name="update-locally-and-redeploy"></a>Lokaal bijwerken en opnieuw implementeren
 
-1. Open in Visual Studio, in **Solution Explorer** , achtereenvolgens **Weergaven** > **Start** > **Index.cshtml**.
+1. Open in Visual Studio, in **Solution Explorer**, achtereenvolgens **Weergaven** > **Start** > **Index.cshtml**.
 
 1. Zoek ergens bovenaan de HTML-tag `<div class="jumbotron">` en vervang het volledige element door de volgende code:
 
@@ -157,7 +157,7 @@ De gestreamde logboeken zien er ongeveer als volgt uit:
    </div>
    ```
 
-1. Als u opnieuw wilt implementeren in Azure, klikt u in **Solution Explorer** met de rechtermuisknop op het project **myfirstazurewebapp** , en kiest u **Publiceren**.
+1. Als u opnieuw wilt implementeren in Azure, klikt u in **Solution Explorer** met de rechtermuisknop op het project **myfirstazurewebapp**, en kiest u **Publiceren**.
 
 1. Selecteer op de pagina Publiceren de knop **Publiceren** en wacht tot het publiceren is voltooit.
 
@@ -233,11 +233,11 @@ Na de implementatie is uw app beschikbaar op `http://<app name>.azurewebsites.ne
 
 Een **resourcegroep** is een benoemde verzameling van alle resources van uw toepassing in Azure. Een resourcegroep kan bijvoorbeeld een verwijzing naar een website, een database en een Azure-functie bevatten.
 
-Een **App Service-plan** definieert de fysieke resources die worden gebruikt voor het hosten van uw website. In deze quickstart wordt gebruikgemaakt van een **Basic** -hostingsabonnement op **Linux** -infrastructuur, wat betekent dat de site wordt gehost op een Linux-computer naast andere websites. Als u begint met het **Basic** -abonnement, kunt u omhoog schalen met behulp van Azure Portal zodat u de enige site bent die op een computer wordt uitgevoerd.
+Een **App Service-plan** definieert de fysieke resources die worden gebruikt voor het hosten van uw website. In deze quickstart wordt gebruikgemaakt van een **Basic**-hostingsabonnement op **Linux**-infrastructuur, wat betekent dat de site wordt gehost op een Linux-computer naast andere websites. Als u begint met het **Basic**-abonnement, kunt u omhoog schalen met behulp van Azure Portal zodat u de enige site bent die op een computer wordt uitgevoerd.
 
 ## <a name="browse-the-website"></a>Door de website bladeren
 
-Het venster **Uitvoer** wordt geopend tijdens de implementatie om de status van de bewerking aan te geven. Wanneer de bewerking is voltooid, zoekt u de app die u hebt gemaakt in de verkenner van **APP SERVICE** , klikt u erop met de rechtermuisknop en selecteert u **Door website bladeren** om de site in uw browser te openen.
+Het venster **Uitvoer** wordt geopend tijdens de implementatie om de status van de bewerking aan te geven. Wanneer de bewerking is voltooid, zoekt u de app die u hebt gemaakt in de verkenner van **APP SERVICE**, klikt u erop met de rechtermuisknop en selecteert u **Door website bladeren** om de site in uw browser te openen.
 
 > [!div class="nextstepaction"]
 > [Er is een fout opgetreden](https://www.research.net/r/PWZWZ52?tutorial=quickstart-docker&step=deploy-app)

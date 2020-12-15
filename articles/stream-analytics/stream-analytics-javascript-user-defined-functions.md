@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.reviewer: mamccrea
 ms.custom: mvc, devx-track-js
 ms.date: 06/16/2020
-ms.openlocfilehash: aac85fdab157d581285af91c4c818258a5f1790b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 092e07ed01fb870cdcd9a3fd63d46d30cef96007
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124778"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780838"
 ---
 # <a name="javascript-user-defined-functions-in-azure-stream-analytics"></a>Door gebruiker gedefinieerde JavaScript-functies in Stream Analytics
  
-Azure Stream Analytics ondersteunt door de gebruiker gedefinieerde functies die zijn geschreven in JavaScript. Met de uitgebreide set van **String** -, **RegExp** -, **Math** -, **Array** - en **Date** -methoden van JavaScript kunt u gemakkelijker complexe gegevenstransformaties maken met Stream Analytics-taken.
+Azure Stream Analytics ondersteunt door de gebruiker gedefinieerde functies die zijn geschreven in JavaScript. Met de uitgebreide set van **String**-, **RegExp**-, **Math**-, **Array**- en **Date**-methoden van JavaScript kunt u gemakkelijker complexe gegevenstransformaties maken met Stream Analytics-taken.
 
 ## <a name="overview"></a>Overzicht
 
@@ -26,7 +26,7 @@ Door de gebruiker gedefinieerde JavaScript-functies ondersteunen staatloze, scal
 Hier volgen enkele scenario's waarin door de gebruiker gedefinieerde JavaScript-functies mogelijk interessant kunnen zijn:
 * Het parseren en manipuleren van tekenreeksen die functies met reguliere expressies bevatten, bijvoorbeeld **Regexp_Replace()** en **Regexp_Extract()**
 * Het (de)coderen van gegevens, bijvoorbeeld bij een conversie van binair naar hexadecimaal
-* Het maken van rekenkundige berekeningen met **Math** -functies van JavaScript
+* Het maken van rekenkundige berekeningen met **Math**-functies van JavaScript
 * Het maken van matrixbewerkingen zoals sorteren, samenvoegen, zoeken en vullen
 
 Hier volgen enkele dingen die u met een door de gebruiker gedefinieerde JavaScript-functie niet kunt doen in Stream Analytics:
@@ -184,6 +184,35 @@ INTO
     output
 FROM
     input A
+```
+
+### <a name="tolocalestring"></a>toLocaleString()
+De **toLocaleString**-methode in JavaScript kan worden gebruikt om een taalgevoelige tekenreeks te retourneren die de datum- en tijdgegevens vertegenwoordigt vanwaaruit deze methode wordt aangeroepen.
+Hoewel Azure Stream Analytics alleen UTC-datums en -tijden accepteert als tijdstempel van het systeem, kan deze methode worden gebruikt om de systeemtijdstempel te converteren naar een andere landinstelling en tijdzone.
+Deze methode volgt hetzelfde implementatiegedrag als in Internet Explorer.
+
+**Definitie van een door de gebruiker gedefinieerde JavaScript-functie:**
+
+```javascript
+function main(datetime){
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return event.toLocaleDateString('de-DE', options);
+}
+```
+
+**Voorbeeldquery: Een datum/tijd als invoerwaarde doorgeven**
+```SQL
+SELECT
+    udf.toLocaleString(input.datetime) as localeString
+INTO
+    output
+FROM
+    input
+```
+
+De uitvoer van deze query is de invoer-datum/tijd in **de-DE** met de opgegeven opties.
+```
+Samstag, 28. Dezember 2019
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

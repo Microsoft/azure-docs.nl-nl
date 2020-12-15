@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa4b625afb641209d3920c8663ed810ee27e1ad
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 427cf2614f81a086dcb174db06cd636df4876c7e
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89228644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778492"
 ---
 # <a name="what-is-azure-active-directory-monitoring"></a>Wat is bewaking van Azure Active Directory?
 
@@ -39,6 +39,22 @@ Op dit moment kunt u de logboeken routeren naar:
 > [!VIDEO https://www.youtube.com/embed/syT-9KNfug8]
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
+
+## <a name="licensing-and-prerequisites-for-azure-ad-reporting-and-monitoring"></a>Licenties en vereisten voor Azure AD-rapportage en-bewaking
+
+U hebt een premium-licentie van Azure AD nodig om toegang te krijgen tot de logboeken voor Azure AD-aanmelding.
+
+Gedetailleerde informatie over functies en licenties vindt u in de [prijsgids voor Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+
+Als u Azure AD-bewaking en-rapportage wilt implementeren, hebt u een gebruiker nodig met de rol van globale beheerder of beveiligingsbeheerder voor de Azure AD-tenant.
+
+Afhankelijk van de uiteindelijke bestemming van uw logboekgegevens, hebt u een van de volgende opties nodig:
+
+* Een Azure-opslagaccount waarop u ListKeys-machtigingen hebt. We raden u aan om een algemeen opslagaccount te gebruiken en geen Blob Storage-account. Zie de [Prijscalculator voor Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage) voor prijsinformatie over opslag.
+
+* Een Azure Event Hubs-naamruimte om te integreren met SIEM-oplossingen van derden.
+
+* Een Azure Log Analytics-werkruimte om logboeken naar Azure Monitor-logboeken te verzenden.
 
 ## <a name="diagnostic-settings-configuration"></a>Configuratie voor diagnostische instellingen
 

@@ -8,12 +8,12 @@ ms.date: 3/24/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b9a29e890553d15d19853ec836f8c4296869e143
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 757e34fd45b7d3d9703aa09daa7f040c5f605637
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959625"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932384"
 ---
 # <a name="tutorial-train-and-deploy-an-azure-machine-learning-model"></a>Zelfstudie: Een Azure Machine Learning-model trainen en implementeren
 
@@ -26,6 +26,14 @@ In dit artikel voeren we de volgende taken uit:
 De Azure Notebooks profiteren van een Azure Machine Learning-werkruimte, een basisblok dat u gebruikt voor het experimenteren, trainen en implementeren van machine learning-modellen.
 
 De stappen in dit artikel worden doorgaans uitgevoerd door gegevenswetenschappers.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Een Azure Notebooks-project maken om een machine learning-model te trainen.
+> * Het getrainde model in een container plaatsen.
+> * Maak een Azure IoT Edge-module vanuit het machine learning-model in de container.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -179,6 +187,10 @@ Controleer of er enkele items zijn gemaakt om te controleren of de notebooks zij
 U kunt een Python-instructie invoegen in het notebook voor foutopsporing, zoals de opdracht `print()` om waarden weer te geven. Als er variabelen of objecten worden weergeven die niet zijn gedefinieerd, voert u de cellen uit waar ze voor het eerst zijn gedeclareerd of geïnstantieerd.
 
 Mogelijk moet u eerder gemaakte bestanden en Azure-resources verwijderen als u de notebooks opnieuw moet uitvoeren.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd op het werk dat in de voorgaande artikelen is uitgevoerd. Wacht met het opschonen van resources totdat u de laatste zelfstudie hebt uitgevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

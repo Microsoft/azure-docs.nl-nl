@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: KishorIoT
 ms.author: nandab
 ms.date: 10/06/2020
-ms.openlocfilehash: af967c58cdeb2c750178141193a711a66af7477c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: fbe1e84525eed47127a08abc9fb7ec5d1144d02f
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426720"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763605"
 ---
 # <a name="tutorial-create-a-video-analytics---object-and-motion-detection-application-in-azure-iot-central-openvinotrade"></a>Zelfstudie: Een toepassing Videoanalyse: object- en bewegingsdetectie maken in Azure IoT Central (OpenVINO&trade;)
 
@@ -24,10 +24,10 @@ Als ontwikkelaar van oplossingen leert u hoe u een videoanalysetoepassing maakt 
 
 [!INCLUDE [iot-central-video-analytics-part1](../../../includes/iot-central-video-analytics-part1.md)]
 
-- [Scratchpad.txt](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt)
+- [Scratchpad.txt](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt): dit bestand helpt u bij het vastleggen van de verschillende configuratieopties die u nodig hebt tijdens deze zelfstudies.
 - [deployment.openvino.amd64.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/deployment.openvino.amd64.json)
 - [LvaEdgeGatewayDcm.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/LvaEdgeGatewayDcm.json)
-- [state.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/state.json)
+- [state.json](https://raw.githubusercontent.com/Azure/live-video-analytics/master/ref-apps/lva-edge-iot-central-gateway/setup/state.json): u hoeft alleen dit bestand te downloaden als u het Intel NUC-apparaat in de tweede zelfstudie wilt gebruiken.
 
 [!INCLUDE [iot-central-video-analytics-part2](../../../includes/iot-central-video-analytics-part2.md)]
 
@@ -39,7 +39,7 @@ Het implementatiemanifest voorbereiden:
 
 1. Open het bestand *deployment.openvino.amd64.json*, dat u in de map *lva-configuration* hebt opgeslagen, in een teksteditor.
 
-1. Zoek de `LvaEdgeGatewayModule`-instellingen en wijzig de afbeeldingsnaam zoals weergegeven in het volgende fragment:
+1. Zoek de instellingen voor `LvaEdgeGatewayModule` en controleer of de afbeeldingsnaam gelijk is aan de naam in het volgende fragment:
 
     ```json
     "LvaEdgeGatewayModule": {
@@ -47,7 +47,7 @@ Het implementatiemanifest voorbereiden:
             "image": "mcr.microsoft.com/lva-utilities/lva-edge-iotc-gateway:1.0-amd64",
     ```
 
-1. Voeg de naam van uw Media Services-account toe aan het `env`-knooppunt in de sectie `LvaEdgeGatewayModule`. U hebt deze accountnaam genoteerd in het bestand *scratchpad.txt*.
+1. Voeg de naam van uw Media Services-account toe aan het `env`-knooppunt in de sectie `LvaEdgeGatewayModule`. U hebt de naam van uw Media Services-account in het bestand *scratchpad.txt* opgeschreven:
 
     ```json
     "env": {
@@ -55,7 +55,7 @@ Het implementatiemanifest voorbereiden:
             "value": "lvaEdge"
         },
         "amsAccountName": {
-            "value": "<YOUR_AZURE_MEDIA_ACCOUNT_NAME>"
+            "value": "<YOUR_AZURE_MEDIA_SERVICES_ACCOUNT_NAME>"
         }
     }
     ```
@@ -64,7 +64,16 @@ Het implementatiemanifest voorbereiden:
 
     De `azureMediaServicesArmId` is de **Resource-id** die u in het bestand *scratchpad.txt* had genoteerd toen u het Media Services-account maakte.
 
-    U had de `aadTenantId`, `aadServicePrincipalAppId` en `aadServicePrincipalSecret` in het bestand *scratchpad.txt* genoteerd toen u de service-principal voor uw Media Services-account maakte:
+    In de volgende tabel ziet u de waarden uit de **Verbinding maken met Media Services API (JSON)** in het bestand *scratchpad.txt* dat u moet gebruiken in het implementatiemanifest:
+
+    | Distributiemanifest       | Scratchpad  |
+    | ------------------------- | ----------- |
+    | aadTenantId               | AadTenantId |
+    | aadServicePrincipalAppId  | AadClientId |
+    | aadServicePrincipalSecret | AadSecret   |
+
+    > [!CAUTION]
+    > Gebruik de vorige tabel om ervoor te zorgen dat u de juiste waarden toevoegt in het implementatiemanifest, anders werkt het apparaat niet.
 
     ```json
     {

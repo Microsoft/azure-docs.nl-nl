@@ -6,15 +6,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 11/24/2020
+ms.date: 12/08/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 904456de527e8d0acb1319059c18f9a3c6b0a1a3
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 42701fbcee9833fd31fff3ace55d48079015dbcd
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95992962"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906400"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Quickstart: Webverkeer omleiden met Azure Application Gateway - Azure Portal
 
@@ -153,8 +153,9 @@ Hiervoor moet u het volgende doen:
     - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
     - **Naam van virtuele machine**: Typ *myVM* als naam voor de virtuele machine.
     - **Regio**: Selecteer dezelfde regio als waarin u de toepassingsgateway hebt gemaakt.
-    - **Gebruikersnaam**: Typ *azureuser* als gebruikersnaam van de beheerder.
+    - **Gebruikersnaam**: Typ een naam voor de gebruikersnaam van de beheerder.
     - **Wachtwoord**: Typ een wachtwoord.
+    - **Openbare binnenkomende poorten**: Geen.
 4. Accepteer de overige standaardwaarden en klik op **Volgende: Schijven**.  
 5. Accepteer de standaardwaarden op het tabblad **Schijven** en selecteer **Volgende: Netwerken**.
 6. Zorg ervoor dat, op het tabblad **Netwerken**, **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.<br>Toepassingsgateway kan communiceren met instanties die zich buiten het virtuele netwerk van de gateway bevinden, maar u moet ervoor zorgen dat er een IP-verbinding is.

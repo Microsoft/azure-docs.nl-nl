@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 981697211cf8ee0aff1ac0e3d0db6000c1089c00
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 398e964ad773e4c015129c6dd3d4784f1300e16b
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896846"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905771"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Zelfstudie: Een winkelzoeker maken met behulp van Azure Maps
 
@@ -81,13 +81,13 @@ Als we de schermopname van de gegevens bekijken, zien we het volgende:
 * Enkele extra kolommen bevatten metagegevens met betrekking tot de koffiebars: een telefoonnummer, booleaanse kolommen en winkelopenings- en sluitingstijden in 24-uurs notatie. De Booleaanse kolommen zijn voor WiFi-beschikbaarheid en toegankelijkheid voor rolstoelgebruikers. U kunt uw eigen kolommen maken met metagegevens die relevanter zijn voor uw locatiegegevens.
 
 > [!NOTE]
-> In Azure Maps worden gegevens weergegeven in de sferische Mercator-projectie EPSG:3857, maar worden de gegevens gelezen in EPSG:4325 dat gebruikmaakt van de datum WGS84.
+> In Azure Maps worden gegevens weergegeven in de sferische Mercator-projectie EPSG:3857, maar worden de gegevens gelezen in EPSG:4326 dat gebruikmaakt van de datum WGS84.
 
 Er zijn veel manieren om de gegevensset in de toepassing beschikbaar te maken. Eén aanpak is om de gegevens in een database te laden en een webservice beschikbaar te maken die de gegevens opvraagt. U kunt de resultaten vervolgens naar de browser van de gebruiker verzenden. Deze optie is ideaal voor grote gegevenssets of voor gegevenssets die regelmatig worden bijgewerkt. Voor deze optie is echter meer ontwikkelingswerk vereist en heeft hogere kosten.
 
 Een andere benadering is om deze dataset om te zetten in een bestand met platte tekst dat de browser gemakkelijk kan parseren. Het bestand zelf kan worden gehost bij de rest van de toepassing. Deze optie houdt het eenvoudig, maar het is alleen een goede optie voor kleinere gegevenssets, omdat de gebruiker alle gegevens downloadt. We gebruiken het platte-tekstbestand voor deze gegevensset, omdat de bestandsgrootte kleiner is dan 1 MB.  
 
-Als u de werkmap wilt converteren naar een platte-tekstbestand, slaat u de werkmap op als een door tabs gescheiden bestand. De kolommen worden gescheiden door tabtekens, zodat de kolommen gemakkelijk te parseren zijn in onze code. U zou de CSV-indeling kunnen gebruiken (bestand met door komma's gescheiden waarden), maar voor die optie is meer parseringslogica nodig. Elk veld dat door komma's wordt gescheiden, zou dan worden omgeven door aanhalingstekens. Om deze gegevens in Excel te exporteren als een door tabs gescheiden bestand, selecteert u **Opslaan als** . Selecteer in de vervolgkeuzelijst **Opslaan als** de optie **Tekst (tab is scheidingsteken) (*.txt)** . Noem het bestand *ContosoCoffee.txt* .
+Als u de werkmap wilt converteren naar een platte-tekstbestand, slaat u de werkmap op als een door tabs gescheiden bestand. De kolommen worden gescheiden door tabtekens, zodat de kolommen gemakkelijk te parseren zijn in onze code. U zou de CSV-indeling kunnen gebruiken (bestand met door komma's gescheiden waarden), maar voor die optie is meer parseringslogica nodig. Elk veld dat door komma's wordt gescheiden, zou dan worden omgeven door aanhalingstekens. Om deze gegevens in Excel te exporteren als een door tabs gescheiden bestand, selecteert u **Opslaan als**. Selecteer in de vervolgkeuzelijst **Opslaan als** de optie **Tekst (tab is scheidingsteken) (*.txt)** . Noem het bestand *ContosoCoffee.txt*.
 
 ![Schermopname van het dialoogvenster Opslaan als](./media/tutorial-create-store-locator/SaveStoreDataAsTab.png)
 
@@ -97,15 +97,15 @@ Als u het bestand in Kladblok opent, ziet dit eruit als in de volgende afbeeldin
 
 ## <a name="set-up-the-project"></a>Het project instellen
 
-Voor het maken van het project kunt u [Visual Studio](https://visualstudio.microsoft.com) of de code-editor van uw keuze gebruiken. Maak in de projectmap drie bestanden: *index.html* , *index.css* en *index.js* . Deze bestanden definiëren de lay-out, stijl en logica voor de toepassing. Maak een map met de naam *data* en voeg *ContosoCoffee.txt* toe aan deze map. Maak een andere map met de naam *images* (afbeeldingen). We gebruiken 10 afbeeldingen in deze toepassing, voor pictogrammen, knoppen en markeringen op de kaart. U kunt [deze afbeeldingen downloaden](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator/data). Uw projectmap zou er nu uit moeten zien als in de volgende afbeelding:
+Voor het maken van het project kunt u [Visual Studio](https://visualstudio.microsoft.com) of de code-editor van uw keuze gebruiken. Maak in de projectmap drie bestanden: *index.html*, *index.css* en *index.js*. Deze bestanden definiëren de lay-out, stijl en logica voor de toepassing. Maak een map met de naam *data* en voeg *ContosoCoffee.txt* toe aan deze map. Maak een andere map met de naam *images* (afbeeldingen). We gebruiken 10 afbeeldingen in deze toepassing, voor pictogrammen, knoppen en markeringen op de kaart. U kunt [deze afbeeldingen downloaden](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator/data). Uw projectmap zou er nu uit moeten zien als in de volgende afbeelding:
 
 ![Schermafbeelding van de projectmap Simple Store Locator](./media/tutorial-create-store-locator/StoreLocatorVSProject.png)
 
 ## <a name="create-the-user-interface"></a>De gebruikersinterface maken
 
-Voor het maken van de gebruikersinterface voegt u code toe aan *index.html* :
+Voor het maken van de gebruikersinterface voegt u code toe aan *index.html*:
 
-1. Voeg de volgende `meta`-tags toe aan de `head` van *index.html* . Met de `charset`-tag wordt de tekenset (UTF-8) gedefinieerd. Met de waarde van `http-equiv` verplicht u de gebruiker om de nieuwste browserversies van Internet Explorer en Microsoft Edge te gebruiken. En met de laatste `meta`-tag geeft u een viewport op die geschikt is voor responsieve indelingen.
+1. Voeg de volgende `meta`-tags toe aan de `head` van *index.html*. Met de `charset`-tag wordt de tekenset (UTF-8) gedefinieerd. Met de waarde van `http-equiv` verplicht u de gebruiker om de nieuwste browserversies van Internet Explorer en Microsoft Edge te gebruiken. En met de laatste `meta`-tag geeft u een viewport op die geschikt is voor responsieve indelingen.
 
     ```HTML
     <meta charset="utf-8">
@@ -126,7 +126,7 @@ Voor het maken van de gebruikersinterface voegt u code toe aan *index.html* :
     <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
     ```
 
-1. Voeg verwijzingen toe naar *index.js* en *index.css* :
+1. Voeg verwijzingen toe naar *index.js* en *index.css*:
 
     ```HTML
     <link rel="stylesheet" href="index.css" type="text/css">
@@ -385,7 +385,7 @@ Nu is alles ingesteld in de gebruikersinterface. We moeten nog steeds JavaScript
     var map, popup, datasource, iconLayer, centerMarker, searchURL;
     ```
 
-1. Voeg code toe aan *index.js* . Met de volgende code wordt de kaart geïnitialiseerd. Er is een [gebeurtenislistener](/javascript/api/azure-maps-control/atlas.map#events) toegevoegd om te wachten tot de pagina is geladen. Vervolgens zijn er gebeurtenissen samengesteld voor het bewaken van het laden van de kaart, waarbij de zoekknop en de knop Mijn locatie in werking wordt gesteld.
+1. Voeg code toe aan *index.js*. Met de volgende code wordt de kaart geïnitialiseerd. Er is een [gebeurtenislistener](/javascript/api/azure-maps-control/atlas.map#events) toegevoegd om te wachten tot de pagina is geladen. Vervolgens zijn er gebeurtenissen samengesteld voor het bewaken van het laden van de kaart, waarbij de zoekknop en de knop Mijn locatie in werking wordt gesteld.
 
    Wanneer de gebruiker de zoekknop selecteert, of een locatie intypt in het zoekvak en op Enter drukt, wordt een fuzzy zoekopdracht gestart met de zoekopdracht van de gebruiker. Geef een matrix met ISO 2-land-/regiowaarden door aan de `countrySet`-optie om de zoekresultaten te beperken tot die landen/regio's. Het beperken van de te doorzoeken landen/regio's helpt de nauwkeurigheid van de geretourneerde zoekresultaten te verhogen. 
   
@@ -432,7 +432,7 @@ Nu is alles ingesteld in de gebruikersinterface. We moeten nog steeds JavaScript
             }
         };
 
-        //If the user selects the My Location button, use the Geolocation API to get the user's location. Center and zoom the map on that location.
+        //If the user selects the My Location button, use the Geolocation API (Preview) to get the user's location. Center and zoom the map on that location.
         document.getElementById('myLocationBtn').onclick = setMapToUserLocation;
 
         //Wait until the map resources are ready.
@@ -472,7 +472,7 @@ Nu is alles ingesteld in de gebruikersinterface. We moeten nog steeds JavaScript
     function setMapToUserLocation() {
         //Request the user's location.
         navigator.geolocation.getCurrentPosition(function(position) {
-            //Convert the Geolocation API position to a longitude and latitude position value that the map can interpret and center the map over it.
+            //Convert the Geolocation API (Preview) position to a longitude and latitude position value that the map can interpret and center the map over it.
             map.setCamera({
                 center: [position.coords.longitude, position.coords.latitude],
                 zoom: maxClusterZoomLevel + 1
@@ -910,7 +910,7 @@ Nu is alles ingesteld in de gebruikersinterface. We moeten nog steeds JavaScript
     }
     ```
 
-Nu hebt u een volledig functionele winkelzoeker. Open het *index.html* -bestand van de winkelzoeker in een webbrowser. Wanneer de clusters op de kaart worden weergegeven, kunt u naar een locatie zoeken met behulp van het zoekvak, door de knop Mijn locatie te selecteren, door een cluster te selecteren of door in te zoomen op de kaart om afzonderlijke locaties te bekijken.
+Nu hebt u een volledig functionele winkelzoeker. Open het *index.html*-bestand van de winkelzoeker in een webbrowser. Wanneer de clusters op de kaart worden weergegeven, kunt u naar een locatie zoeken met behulp van het zoekvak, door de knop Mijn locatie te selecteren, door een cluster te selecteren of door in te zoomen op de kaart om afzonderlijke locaties te bekijken.
 
 De eerste keer dat een gebruiker de knop Mijn locatie selecteert, geeft de browser een beveiligingswaarschuwing weer die om toestemming vraagt ​​voor toegang tot de locatie van de gebruiker. Als de gebruiker ermee instemt om zijn/haar locatie te delen, zoomt de kaart in op de locatie van de gebruiker en worden nabijgelegen koffiebars getoond.
 

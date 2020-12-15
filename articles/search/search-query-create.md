@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: a02d51d66b9d2b8bf3c08d4515713ecb062e0c8e
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: db36a77d93735b151ad893b7e25ba86f104e7b90
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400213"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510461"
 ---
 # <a name="create-a-query-in-azure-cognitive-search"></a>Een query maken in azure Cognitive Search
 
@@ -76,31 +76,7 @@ Als uw query zoeken in volledige tekst is, wordt er een parser gebruikt om de in
 
 De [volledige lucene-query syntaxis](query-Lucene-syntax.md#bkmk_syntax), ingeschakeld wanneer u `queryType=full` aan de aanvraag toevoegt, is gebaseerd op de [Apache Lucene-parser](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html).
 
-De volledige syntaxis is een uitbrei ding van de eenvoudige syntaxis met meer Opera Tors, zodat u geavanceerde query's kunt maken, zoals fuzzy zoeken, joker tekens voor zoeken, proximity Search en reguliere expressies. De volgende voor beelden illustreren het punt: dezelfde query, maar met verschillende **`queryType`** instellingen, waardoor verschillende resultaten worden verkregen. In de eerste eenvoudige query wordt de `^3` After `historic` beschouwd als onderdeel van de zoek term. Het hoogste geclassificeerde resultaat voor deze query is "Marquis Plaza & Suites", die *Oceaan* in de beschrijving heeft.
-
-```http
-POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
-{
-    "count": true,
-    "queryType": "simple",
-    "search": "ocean historic^3",
-    "searchFields": "Description",
-    "select": "HotelId, HotelName, Tags, Description",
-}
-```
-
-Dezelfde query die gebruikmaakt van de volledige lucene-parser, interpreteert `^3` als een in-Field Booster. Switch parsers wijzigen de positie, met de resultaten met de term *historisch* naar boven.
-
-```http
-POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
-{
-    "count": true,
-    "queryType": "full",
-    "search": "ocean historic^3",
-    "searchFields": "Description",
-    "select": "HotelId, HotelName, Tags, Description",
-}
-```
+De volledige syntaxis en eenvoudige syntaxis overlappen elkaar in zoverre beide dezelfde voor voegsel-en Booleaanse bewerkingen ondersteunen, maar de volledige syntaxis biedt meer Opera tors. Volledig zijn er meer Opera tors voor Boole-expressies en meer Opera tors voor geavanceerde query's, zoals fuzzy zoeken, joker tekens zoeken, Zoek opdrachten op nabijheid en reguliere expressies.
 
 ## <a name="choose-query-methods"></a>Query methoden kiezen
 

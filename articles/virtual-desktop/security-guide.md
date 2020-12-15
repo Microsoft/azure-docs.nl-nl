@@ -3,15 +3,15 @@ title: Aanbevolen procedures voor de beveiliging van virtuele Windows-Bureau bla
 description: Aanbevolen procedures voor het beveiligen van uw virtuele Windows-bureau blad-omgeving.
 author: heidilohr
 ms.topic: conceptual
-ms.date: 05/07/2020
+ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d3033af32229be238831740c11a1112513259a43
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8cf5504e44239fed6a4a4b82d0064d49f5c5a99f
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023153"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511532"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -98,6 +98,25 @@ Controleer het gebruik en de beschik baarheid van uw Windows Virtual Desktop-ser
 ## <a name="session-host-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van sessies
 
 Sessie-hosts zijn virtuele machines die worden uitgevoerd binnen een Azure-abonnement en een virtueel netwerk. De algehele beveiliging van uw Windows-Desktop implementatie is afhankelijk van de beveiligings opties die u op uw sessie-hosts hebt geplaatst. In deze sectie worden aanbevolen procedures beschreven voor het beveiligen van uw sessie-hosts.
+
+### <a name="enable-screen-capture-protection-preview"></a>Scherm opname beveiliging inschakelen (preview-versie)
+
+De functie voor het vastleggen van scherm beveiliging voor komt dat gevoelige informatie wordt vastgelegd op de client eindpunten. Wanneer u deze functie inschakelt, wordt externe inhoud automatisch geblokkeerd of verborgen in scherm afbeeldingen en shares. Het wordt ook verborgen voor schadelijke software, waardoor de inhoud van het scherm continu kan worden vastgelegd.
+
+Dit beleid wordt afgedwongen op hostniveau door een register sleutel te configureren. Als u dit beleid wilt inschakelen, opent u Power shell en stelt u de register sleutel **fEnableScreenCaptureProtection** in door deze cmdlet uit te voeren:
+
+```powershell
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fEnableScreenCaptureProtection /t REG_DWORD /d 1
+```
+
+U kunt deze nieuwe functie als volgt testen:
+
+- Zorg ervoor dat uw hostgroepen zijn ingericht in de validatie omgeving.
+- Zorg ervoor dat u de Windows-desktop-client versie 1.2.1526 of hoger hebt gedownload en geïnstalleerd.
+
+>[!NOTE]
+>Tijdens de preview-periode ondersteunen alleen volledige bureaublad verbindingen van Windows 10-eind punten deze functie.
+
 
 ### <a name="enable-endpoint-protection"></a>Endpoint Protection inschakelen
 

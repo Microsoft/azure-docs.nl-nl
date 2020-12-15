@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 7246375468b3419c3d52ee3d5a51a95aa20050a9
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 2f3e4bf640b8da31a7fa4d818b94b0372d3026b8
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876625"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763409"
 ---
 De voorbeeldtoepassing bevat twee gesimuleerde apparaten en één IoT Edge-gateway. De volgende zelfstudies bieden twee benaderingen om te experimenteren met de mogelijkheden van de gateway en deze te begrijpen:
 
@@ -36,6 +36,6 @@ Voor het voltooien van deze zelfstudiereeks hebt u het volgende nodig:
 
 ## <a name="initial-setup"></a>Eerste configuratie
 
-In deze zelfstudies gaat u een aantal configuratiebestanden bijwerken en gebruiken. Eerste versies van deze bestanden zijn beschikbaar in de GitHub-opslagplaats [LVA-gateway](https://github.com/Azure/live-video-analytics/tree/master/ref-apps/lva-edge-iot-central-gateway). De opslagplaats bevat ook een kladblokbestand dat u kunt downloaden en gebruiken om configuratiewaarden vast te leggen van de services die u implementeert.
+In deze zelfstudies gaat u een aantal configuratiebestanden bijwerken en gebruiken. Eerste versies van deze bestanden zijn beschikbaar in de GitHub-opslagplaats [LVA-gateway](https://github.com/Azure/live-video-analytics/tree/master/ref-apps/lva-edge-iot-central-gateway). De opslagplaats bevat een [kladblokbestand](https://github.com/Azure/live-video-analytics/blob/master/ref-apps/lva-edge-iot-central-gateway/setup/Scratchpad.txt) dat u kunt downloaden en gebruiken om configuratiewaarden vast te leggen van de services die u implementeert. Met dit bestand kunt u latere stappen in de zelfstudies voltooien.
 
 Maak een map genaamd *lva-configuration* op uw lokale computer om exemplaren van deze bestanden op te slaan. Klik vervolgens met de rechtermuisknop op elk van de volgende koppelingen en kies **Opslaan als** om het bestand op te slaan in de map *lva-configuration*:

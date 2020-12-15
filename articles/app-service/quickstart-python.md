@@ -6,12 +6,12 @@ ms.date: 11/10/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 adobe-target: true
-ms.openlocfilehash: b32977ac1c8cfe0c461bcd1628c08a0ca215ba93
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 7eebbe5605c0b4d70ea15c1605cff5416965e535
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506189"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780770"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken in Azure App Service op Linux
 
@@ -74,23 +74,11 @@ Kloon de opslagplaats met voorbeelden met de volgende opdracht en ga dan naar de
 ```terminal
 git clone https://github.com/Azure-Samples/python-docs-hello-world
 ```
-
-Open vervolgens die map:
-
-```terminal
-cd python-docs-hello-world
-```
 ::: zone-end
 
 ::: zone pivot="python-framework-django"
 ```terminal
 git clone https://github.com/Azure-Samples/python-docs-hello-django
-```
-
-Open vervolgens die map:
-
-```terminal
-cd python-docs-hello-django
 ```
 ::: zone-end
 
@@ -101,7 +89,11 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/FlaskCLIQuickstartHe
 ## <a name="run-the-sample"></a>De voorbeeldtoepassing uitvoeren
 
 ::: zone pivot="python-framework-flask"
-1. Zorg ervoor dat u zich in de map *python-docs-hello-world* bevindt. 
+1. Open de map *python-docs-hello-world*:
+
+    ```terminal
+    cd python-docs-hello-world
+    ```
 
 1. Maak een virtuele omgeving en installeer afhankelijkheden:
 
@@ -115,7 +107,11 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/FlaskCLIQuickstartHe
     flask run
     ```
     
-    De server gaat er standaard vanuit dat de invoermodule van de app zich in *app.py* bevindt, zoals in het voorbeeld wordt gebruikt. (Als u een andere modulenaam gebruikt, stelt u omgevingsvariabele `FLASK_APP` in op die naam.)
+    De server gaat er standaard vanuit dat de invoermodule van de app zich in *app.py* bevindt, zoals in het voorbeeld wordt gebruikt.
+
+    Als u een andere modulenaam gebruikt, stelt u omgevingsvariabele `FLASK_APP` in op die naam.
+
+    Als de fout 'Kan geen Flask-toepassing vinden. U hebt niet de omgevingsvariabele 'FLASK_APP' opgegeven en er is geen 'wsgi.py'- of 'app.py'-module gevonden in de huidige map.' optreedt, controleert u of u zich in de map `python-docs-hello-world` bevindt waarin het voorbeeld is opgenomen.
 
 1. Open een webbrowser en ga naar de voorbeeld-app op `http://localhost:5000/`. In de app wordt het bericht **Hallo wereld** weergegeven.
 
@@ -125,7 +121,11 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/FlaskCLIQuickstartHe
 ::: zone-end
 
 ::: zone pivot="python-framework-django"
-1. Controleer of u zich in de map *python-docs-hello-django* bevindt. 
+1. Open de map *python-docs-hello-django*:
+
+    ```terminal
+    cd python-docs-hello-django
+    ```
 
 1. Maak een virtuele omgeving en installeer afhankelijkheden:
 

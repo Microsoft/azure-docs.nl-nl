@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 6ca0513f95bc490087f3c84eeecc4ea623f64604
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 421fb7b0c91171756f55ad25c918955870054e3e
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517084"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511277"
 ---
 # <a name="develop-secure-applications-on-azure"></a>Beveiligde toepassingen ontwikkelen in Azure
 In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwikkelen van toepassingen voor de Cloud. Beveiligings vragen en-concepten waarmee u rekening moet houden tijdens de implementatie-en verificatie fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) vallen onder de dekking. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwikkelen.
@@ -38,7 +38,7 @@ Voordat u code incheckt, voert u [code beoordelingen](/azure/devops/learn/devops
 
 ### <a name="perform-static-code-analysis"></a>Statische codeanalyse uitvoeren
 
-[Statische code analyse](https://owasp.org/www-community/controls/Static_Code_Analysis) (ook wel bekend als *broncode analyse* ) wordt gewoonlijk uitgevoerd als onderdeel van een code controle. Statische code analyse verwijst doorgaans naar het uitvoeren van hulpprogram ma's voor statische code analyse om mogelijke beveiligings problemen in niet-actieve code te vinden met behulp van technieken als [Taint-controle](https://en.wikipedia.org/wiki/Taint_checking) en [gegevens stroom analyse](https://en.wikipedia.org/wiki/Data-flow_analysis).
+[Statische code analyse](https://owasp.org/www-community/controls/Static_Code_Analysis) (ook wel bekend als *broncode analyse*) wordt gewoonlijk uitgevoerd als onderdeel van een code controle. Statische code analyse verwijst doorgaans naar het uitvoeren van hulpprogram ma's voor statische code analyse om mogelijke beveiligings problemen in niet-actieve code te vinden met behulp van technieken als [Taint-controle](https://en.wikipedia.org/wiki/Taint_checking) en [gegevens stroom analyse](https://en.wikipedia.org/wiki/Data-flow_analysis).
 
 Azure Marketplace biedt [ontwikkel hulpprogramma's](https://azuremarketplace.microsoft.com/marketplace/apps/category/developer-tools?page=1&search=code%20review) voor het uitvoeren van een statische code analyse en hulp bij het evalueren van code.
 
@@ -48,21 +48,21 @@ Behandel alle invoer als niet-vertrouwd om uw toepassing te beschermen tegen de 
 
 Valideer invoer vroegtijdig in de gegevens stroom om ervoor te zorgen dat alleen goed gevormde gegevens de werk stroom binnenkomen. U wilt niet dat er misvormde gegevens in uw data base worden bewaard of een storing in een downstream-onderdeel wordt geactiveerd.
 
-Black listing en white list zijn twee algemene benaderingen voor het uitvoeren van validatie van invoer syntaxis:
+Blocklisting en allowlisting zijn twee algemene benaderingen voor het uitvoeren van validatie van invoer syntaxis:
 
-  - Bij het in de lijst opnemen wordt geprobeerd te controleren of een bepaalde gebruikers invoer niet de inhoud ' bekend als schadelijk ' bevat.
+  - Blocklisting probeert te controleren of een bepaalde gebruikers invoer niet de inhoud ' bekend als schadelijk is ' bevat.
 
-  - White list probeert te controleren of een bepaalde gebruikers invoer overeenkomt met een aantal "bekende goede" invoer. Op tekens gebaseerd white list is een vorm van white list waarbij een toepassing controleert of gebruikers invoer alleen ' bekende goede ' tekens bevat of dat de invoer overeenkomt met een bekende indeling.
+  - Allowlisting probeert te controleren of een bepaalde gebruikers invoer overeenkomt met een aantal "bekende goede" invoer. Op tekens gebaseerd allowlisting is een vorm van allowlisting waarbij een toepassing controleert of gebruikers invoer alleen ' bekende goede ' tekens bevat of dat de invoer overeenkomt met een bekende indeling.
     Dit kan bijvoorbeeld nodig zijn om te controleren of een gebruikers naam alleen alfanumerieke tekens bevat of dat deze precies twee getallen bevat.
 
-White List is de aanbevolen benadering voor het bouwen van beveiligde software.
-Het is gevoelig voor een fout omdat het niet mogelijk is om een volledige lijst met mogelijk onjuiste invoer te bedenken.
+Allowlisting is de aanbevolen benadering voor het bouwen van beveiligde software.
+Blocklisting is gevoelig voor fouten, omdat het onmogelijk is om een volledige lijst met mogelijk onjuiste invoer te bedenken.
 
 Doe dit op de-server, niet aan de client zijde (of op de-server en aan de client zijde).
 
 ### <a name="verify-your-applications-outputs"></a>De uitvoer van uw toepassing controleren
 
-Een uitvoer die u visueel of in een document bevindt, moet altijd worden gecodeerd en ontsnapeerd. [Escapes](https://owasp.org/www-community/Injection_Theory#Escaping_.28aka_Output_Encoding.29), ook wel bekend als *uitvoer codering* , wordt gebruikt om ervoor te zorgen dat niet-vertrouwde gegevens geen voer tuig zijn voor een injectie aanval. Escapes, gecombineerd met gegevens validatie, bieden gelaagde beveiligingen voor een betere beveiliging van het systeem als geheel.
+Een uitvoer die u visueel of in een document bevindt, moet altijd worden gecodeerd en ontsnapeerd. [Escapes](https://owasp.org/www-community/Injection_Theory#Escaping_.28aka_Output_Encoding.29), ook wel bekend als *uitvoer codering*, wordt gebruikt om ervoor te zorgen dat niet-vertrouwde gegevens geen voer tuig zijn voor een injectie aanval. Escapes, gecombineerd met gegevens validatie, bieden gelaagde beveiligingen voor een betere beveiliging van het systeem als geheel.
 
 Bij het maken van een Escape wordt gecontroleerd of alles wordt weer gegeven als *uitvoer.* Bij het maken van een Escape kan de interpreter ook weten dat de gegevens niet zijn bedoeld om te worden uitgevoerd. dit voor komt dat aanvallen werken. Dit is een andere veelvoorkomende aanvals techniek die *cross-site scripting* (XSS) wordt genoemd.
 

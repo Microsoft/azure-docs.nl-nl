@@ -1,6 +1,6 @@
 ---
 title: Sjabloonimplementatiescripts gebruiken | Microsoft Docs
-description: Meer informatie over het gebruik van implementatiescripts in Azure Resource Manager-sjablonen.
+description: Meer informatie over het gebruik van implementatiescripts in ARM-sjablonen (Azure Resource Manager).
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 08/25/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e1094befcc6b3a6e9d56ba3b603dc45fcb91ba13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc19222cf1e610c6c65d7c721a54f9949bed70ae
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88825491"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931432"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Zelfstudie: Implementatiescripts gebruiken om een zelfondertekend certificaat te maken (preview)
 
@@ -40,7 +40,7 @@ Deze zelfstudie bestaat uit de volgende taken:
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* **[Visual Studio Code](https://code.visualstudio.com/) met de Resource Manager Tools-extensie**. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
+* **[Visual Studio Code](https://code.visualstudio.com/) met de Resource Manager Tools-extensie**. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 
 * **Een door de gebruiker toegewezen beheerde identiteit met de rol van de inzender op abonnementsniveau maken**. Deze identiteit wordt gebruikt om implementatiescripts uit te voeren. Zie [Een door een gebruiker toegewezen beheerde identiteit maken](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) als u wilt weten hoe u er een maakt. U hebt de identiteits-id nodig wanneer u de sjabloon implementeert. De indeling van de identiteit is als volgt:
 

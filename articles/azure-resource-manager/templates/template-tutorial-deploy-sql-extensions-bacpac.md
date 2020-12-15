@@ -1,20 +1,20 @@
 ---
 title: SQL BACPAC-bestanden met sjablonen importeren
-description: Meer informatie over het gebruik van Azure SQL Database-extensies om SQL BACPAC-bestanden te importeren met Azure Resource Manager-sjablonen.
+description: Meer informatie over het gebruik van Azure SQL Database-extensies om SQL BACPAC-bestanden te importeren met ARM-sjablonen (Azure Resource Manager).
 author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6a56602ad5217af07d9e35872a26ddb478146d0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b798e5ceb72ece3989fb81014555f2bc0fea5926
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86101882"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931398"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Zelfstudie: SQL BACPAC-bestanden met ARM-sjablonen importeren
 
-Meer informatie over het gebruik van Azure SQL Database-extensies om een BACPAC-bestand te importeren met Azure Resource Manager-sjablonen (ARM). Implementatieartefacten zijn, naast de hoofdsjabloonbestanden, bestanden die vereist zijn om een implementatie te voltooien. Het BACPAC-bestand is een artefact.
+Meer informatie over het gebruik van Azure SQL Database-extensies om een BACPAC-bestand te importeren met ARM-sjablonen (Azure Resource Manager). Implementatieartefacten zijn, naast de hoofdsjabloonbestanden, bestanden die vereist zijn om een implementatie te voltooien. Het BACPAC-bestand is een artefact.
 
 In deze zelfstudie maakt u een sjabloon voor het implementeren van een [logische SQL-server](../../azure-sql/database/logical-servers.md) en één database, en importeert u een BACPAC-bestand. Voor informatie over het implementeren van extensies van virtuele Azure-machines met behulp van ARM-sjablonen, raadpleegt u [Zelfstudie: Extensies van virtuele machines implementeren met ARM-sjablonen](./template-tutorial-deploy-vm-extensions.md).
 
@@ -34,7 +34,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 * Gebruik een gegenereerd wachtwoord voor het serverbeheerdersaccount om de beveiliging te verbeteren. Hierna volgt een voorbeeld dat u kunt gebruiken om een wachtwoord te genereren:
 
     ```console

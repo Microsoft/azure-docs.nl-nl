@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Een toegewezen SQL-pool maken en bevragen (Azure-portal)'
-description: Een toegewezen SQL-pool maken en bevragen met de Azure-portal
+title: 'Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken en bevragen (Azure Portal)'
+description: Een toegewezen SQL-pool (voorheen SQL DW) maken en bevragen met Azure Portal
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3d4884fd64c773647f78a98dc7aeb1063d539edf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 78a0982081b8e34461fb2910cc7ce21be622cb6a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456736"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922770"
 ---
-# <a name="quickstart-create-and-query-a-dedicated-sql-pool-in-azure-synapse-analytics-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool maken en een query uitvoeren in Azure Synapse Analytics met behulp van de Azure-portal
+# <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken en een query uitvoeren in Azure Synapse Analytics met behulp van Azure Portal
 
-Maak en zoek snel een Synapse SQL-pool (Data Warehouse) in Azure Synapse Analytics met behulp van de Azure-portal.
+Snel een toegewezen SQL-pool (voorheen SQL DW) maken en een query uitvoeren in Azure Synapse Analytics met behulp van Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
 1. Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
    > [!NOTE]
-   > Het maken van een SQL-pool in Azure Synapse kan leiden tot een nieuwe factureerbare service. Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/) voor meer informatie.
+   > Het maken van een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse kan resulteren in een nieuwe factureerbare service. Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/) voor meer informatie.
 
 2. Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio).
 
@@ -37,25 +37,25 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-a-sql-pool"></a>Een SQL-pool maken
 
-Datawarehouses worden gemaakt met behulp van SQL-pool in Azure Synapse Analytics. Een Azure SQL-pool wordt gemaakt met een gedefinieerde set [compute-resources](memory-concurrency-limits.md). De database wordt gemaakt in een [Azure-resourcegroep](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) en in een [logische SQL-server](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Datawarehouses worden gemaakt met een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics. Een toegewezen Azure SQL-pool (voorheen SQL DW) wordt gemaakt met een gedefinieerde set [compute-resources](memory-concurrency-limits.md). De database wordt gemaakt in een [Azure-resourcegroep](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) en in een [logische SQL-server](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
-Volg de stappen om een SQL-pool te maken die de voorbeelddatabase **AdventureWorksDW** bevat.
+Volg deze stappen voor het maken van een toegewezen SQL-groep (voorheen SQL DW) die de voorbeeldgegevens van **AdventureWorksDW** bevat.
 
-1. selecteer in de linkerbovenhoek van de Azure-portal **Een resource maken**.
+1. Selecteer in de linkerbovenhoek van Azure Portal **Een resource maken**.
 
    ![een resource maken in de Azure-portal](./media/create-data-warehouse-portal/create-a-resource.png)
 
-2. Selecteer **Databases** op de pagina **Nieuw** en selecteer **Azure Synapse Analytics (voorheen SQL DW)** in de lijst **Aanbevolen**.
+2. Typ 'toegewezen SQL-pool' in de zoekbalk en selecteer toegewezen SQL-groep (voorheen SQL DW). Selecteer **Maken** op de pagina die wordt geopend.
 
    ![leeg datawarehouse maken](./media/create-data-warehouse-portal/create-a-data-warehouse.png)
 
-3. Geef uw abonnement, de resourcegroep, de naam van de SQL-pool en de servernaam op in **Basisinstellingen**:
+3. Geef in **Basisinstellingen** uw abonnement, de resourcegroep, de naam van de toegewezen SQL-pool (voorheen SQL DW) en de servernaam op:
 
    | Instelling | Voorgestelde waarde | Beschrijving |
    | :------ | :-------------- | :---------- |
    | **Abonnement** | Uw abonnement | Zie [Abonnementen](https://account.windowsazure.com/Subscriptions) voor meer informatie over uw abonnementen. |
    | **Resourcegroep** | myResourceGroup | Zie [Naming conventions](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (Naamgevingsconventies) voor geldige resourcegroepnamen. |
-   | **Naam van SQL-pool** | Een wereldwijd unieke naam (een voorbeeld is *mySampleDataWarehouse*) | Zie [Database-id's](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor geldige databasenamen. Opmerking: een SQL-pool is een type database. |
+   | **Naam van SQL-pool** | Een wereldwijd unieke naam (een voorbeeld is *mySampleDataWarehouse*) | Zie [Database-id's](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor geldige databasenamen.  |
    | **Server** | Een wereldwijd unieke naam | Selecteer bestaande server of maak een nieuwe servernaam, selecteer **Nieuwe maken**. Zie [Naming conventions](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (Naamgevingsconventies) voor geldige servernamen. |
 
    ![Basisgegevens van een datawarehouse maken](./media/create-data-warehouse-portal/create-sql-pool-basics.png)
@@ -68,7 +68,7 @@ Volg de stappen om een SQL-pool te maken die de voorbeelddatabase **AdventureWor
 
 5. Selecteer **Extra instellingen**, onder **Bestaande gegevens gebruiken**, **Voorbeeld**, zodat AdventureWorksDW als de voorbeelddatabase wordt gemaakt.
 
-    ![selecteer Bestaande gegevens gebruiken](./media/create-data-warehouse-portal/create-sql-pool-additional-1.png) 
+    ![selecteer Bestaande gegevens gebruiken](./media/create-data-warehouse-portal/create-sql-pool-additional-1.png)
 
 6. Nu u het tabblad Basisinstellingen van het formulier Azure Synapse Analytics hebt voltooid, selecteert u **Controleren + maken** en vervolgens **Maken** om de SQL-pool te maken. De inrichting duurt een paar minuten.
 
@@ -124,7 +124,7 @@ Haal de volledig gekwalificeerde servernaam van uw server op uit de Azure-portal
 
 3. In het deelvenster **Essentials** van de Azure Portal-pagina van uw database kopieert u de **servernaam**. In dit voorbeeld is de volledig gekwalificeerde servernaam sqlpoolservername.database.windows.net.
 
-    ![verbindingsgegevens](./media/create-data-warehouse-portal/find-server-name-copy.png)
+    ![verbindingsgegevens](./media/create-data-warehouse-portal/find-server-name.png)
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Als serverbeheerder verbinding maken met de server
 
@@ -180,21 +180,21 @@ Azure Synapse Analytics gebruikt T-SQL als de querytaal. Gebruik de volgende sta
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw SQL-pool. Deze compute- en opslagresources worden apart in rekening gebracht.
+Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw toegewezen SQL-pool (voorheen SQL DW). Deze compute- en opslagresources worden apart in rekening gebracht.
 
-- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u de SQL-pool niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. U kunt het berekenen hervatten wanneer u klaar bent om de gegevens te verwerken.
+- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u de toegewezen SQL-pool (voorheen SQL DW) niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. U kunt het berekenen hervatten wanneer u klaar bent om de gegevens te verwerken.
 
-- Als u in de toekomst geen kosten meer wilt hebben, kunt u de SQL-pool verwijderen.
+- Als u in de toekomst geen kosten meer wilt maken, kunt u de toegewezen SQL-pool (voorheen SQL DW) verwijderen.
 
 Volg deze stappen om de resources op te schonen die u niet meer nodig hebt.
 
-1. Aanmelden bij de [Azure-portal](https://portal.azure.com) en de SQL-pool selecteren.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer uw toegewezen SQL-pool (voorheen SQL DW).
 
    ![Resources opschonen](./media/create-data-warehouse-portal/clean-up-resources.png)
 
-2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Wanneer de SQL-pool is onderbroken, ziet u een **Hervatten**-knop. Als u de berekening wilt hervatten, selecteert u **Hervatten**.
+2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Wanneer de toegewezen SQL-pool (voorheen SQL DW) is onderbroken, ziet u de knop **Hervatten**. Als u de berekening wilt hervatten, selecteert u **Hervatten**.
 
-3. Als u de SQL-pool wilt verwijderen zodat er geen kosten in rekening worden gebracht voor berekenen of opslaan, selecteert u **Verwijderen**.
+3. Als u de toegewezen SQL-pool (voorheen SQL DW) wilt verwijderen zodat er geen kosten in rekening worden gebracht voor berekenen of opslaan, selecteert u **Verwijderen**.
 
 4. Als u de door u gemaakte server wilt verwijderen, klikt u op **select sqlpoolservername.database.windows.net** in de vorige afbeelding. Selecteer vervolgens **Verwijderen**. Wees voorzichtig met verwijderen. Als u de server verwijdert, worden ook alle databases verwijderd die zijn toegewezen aan de server.
 
@@ -206,4 +206,4 @@ Wilt u uw clouduitgaven optimaliseren en geld besparen?
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer informatie over het laden van gegevens in uw SQL-pool, gaat u door naar het artikel [Gegevens in SQL-pool laden](load-data-from-azure-blob-storage-using-polybase.md).
+Voor meer informatie over het laden van gegevens in uw toegewezen SQL-pool (voorheen SQL DW), gaat u door naar het artikel [Gegevens in een toegewezen SQL-pool laden](load-data-from-azure-blob-storage-using-copy.md).

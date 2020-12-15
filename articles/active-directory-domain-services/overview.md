@@ -2,21 +2,21 @@
 title: Overzicht van Azure Active Directory Domain Services | Microsoft Docs
 description: In dit overzicht leert u wat Azure Active Directory Domain Services biedt en hoe u dit in uw organisatie kunt gebruiken om identiteitsservices te bieden voor toepassingen en services in de cloud.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: overview
-ms.date: 08/14/2020
-ms.author: joflore
+ms.date: 12/03/2020
+ms.author: justinha
 ms.custom: contperfq1
-ms.openlocfilehash: 988119c34ab0a8ef0e20ec86a7552fb7b4643cd1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 141b59e400154ef40ebced25c69eaf162ac1787a
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967984"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619110"
 ---
 # <a name="what-is-azure-active-directory-domain-services"></a>Wat is Azure Active Directory Domain Services?
 
@@ -33,7 +33,7 @@ Azure AD DS kan met uw bestaande Azure AD-tenant worden geïntegreerd. Dankzij d
 
 Wanneer u een beheerd Azure AD DS-domein maakt, definieert u een unieke naamruimte. Deze naamruimte is de domeinnaam, bijvoorbeeld *aaddscontoso.com*. Er worden vervolgens twee Windows Server-domeincontrollers (DC's) geïmplementeerd in uw geselecteerde Azure-regio. Deze implementatie van DC's wordt een replicaset genoemd.
 
-U hoeft deze DC’s niet te beheren, te configureren of bij te werken. Het Azure-platform verwerkt de DC's als onderdeel van het beheerde domein, met inbegrip van back-ups.
+U hoeft deze DC’s niet te beheren, te configureren of bij te werken. Op het Azure-platform worden de DC's verwerkt als onderdeel van het beheerde domein, inclusief back-ups en versleuteling van data-at-rest, met behulp van Azure Disk Encryption.
 
 Een beheerd domein wordt geconfigureerd voor het uitvoeren van synchronisatie van Azure AD in één richting om toegang te bieden tot een centrale set gebruikers, groepen en referenties. U kunt resources rechtstreeks in het beheerde domein maken, maar ze worden niet terug gesynchroniseerd naar Azure AD. Voor toepassingen, services en virtuele machines in Azure die verbinding maken met het beheerde domein kunnen vervolgens algemene AD DS-functies worden gebruikt, zoals domeindeelname, groepsbeleid, LDAP en Kerberos/NTLM-verificatie.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 70b60d340e3af8d726915db513e30eaff26ed217
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 203af02841e6d17546d254ed83868c859ba3ac0d
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96347579"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938933"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers
 
@@ -37,8 +37,8 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
 * Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
-* Een Oracle Cloud Infrastructure Control-[ tenant](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton).
-* Een gebruikersaccount in Oracle Cloud Infrastructure Control met beheerdersmachtigingen.
+* Een [tenant](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton) voor de Oracle Cloud Infrastructure-console.
+* Een gebruikersaccount in de Oracle Cloud Infrastructure-console met beheerdersmachtigingen.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).

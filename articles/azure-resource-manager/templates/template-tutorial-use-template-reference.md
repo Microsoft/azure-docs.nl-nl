@@ -1,21 +1,21 @@
 ---
 title: Sjabloonverwijzing gebruiken
-description: Gebruik de verwijzing voor Azure Resource Manager-sjablonen om een sjabloon te maken.
+description: Gebruik de verwijzing voor ARM-sjablonen (Azure Resource Manager) om een sjabloon te maken.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 3709511fa8da0a40f4faf4ab2dac9505d69003ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dfd6311fab8d9c65fa7c82d2f707ac96549a32a9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86118508"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931415"
 ---
-# <a name="tutorial-utilize-the-resource-manager-template-reference"></a>Zelfstudie: De verwijzing voor Resource Manager-sjablonen gebruiken
+# <a name="tutorial-utilize-the-arm-template-reference"></a>Zelfstudie: De ARM-sjabloonverwijzing gebruiken
 
-Meer informatie over het zoeken van de sjabloonschema-informatie en het gebruiken van deze informatie om Azure Resource Manager-sjablonen (ARM-sjablonen) te maken.
+Meer informatie over het zoeken van de sjabloonschema-informatie en het gebruiken van deze informatie om ARM-sjablonen (Azure Resource Manager) te maken.
 
 In deze zelfstudie gebruikt u een basissjabloon uit Azure-snelstartsjablonen. Met behulp van het referentiemateriaal voor sjablonen kunt u de sjabloon aanpassen.
 
@@ -36,7 +36,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="open-a-quickstart-template"></a>Een snelstartsjabloon openen
 

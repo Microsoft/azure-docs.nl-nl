@@ -2,15 +2,15 @@
 title: Sjabloonspecificatie maken en implementeren
 description: Meer informatie over het maken van ene sjabloonspecificatie op basis van een ARM-sjabloon. Implementeer de sjabloonspecificatie vervolgens naar een resourcegroep in uw abonnement.
 author: tfitzmac
-ms.date: 11/17/2020
+ms.date: 12/01/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: 8439b1de5a69b3e5bfc22e10f089938da921c1cb
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 03cf2013f1cec9722af5d7e72285d9f11d8a6bc1
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94747499"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518954"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>Quickstart: Sjabloonspecificatie maken en implementeren (preview)
 
@@ -21,15 +21,37 @@ In deze quickstart wordt uitgelegd hoe u een Azure Resource Manager-sjabloon (AR
 Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 
 > [!NOTE]
-> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken, moet u de nieuwste versie van PowerShell of Azure CLI installeren. Gebruik voor Azure PowerShell de [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI de [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
+> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Voor gebruik met Azure PowerShell moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps) installeren. Voor gebruik met Azure CLI hebt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli) nodig.
 
 ## <a name="create-template-spec"></a>Sjabloonspecificatie maken
 
-De sjabloonspecificatie is een resourcetype met de naam **Microsoft.Resources/templateSpecs**. U kunt Azure PowerShell, Azure CLI of een ARM-sjabloon gebruiken om uw sjabloonspecificatie te maken. Voor alle opties hebt u een ARM-sjabloon nodig die is verpakt in de sjabloonspecificatie.
+De sjabloonspecificatie is een resourcetype met de naam **Microsoft.Resources/templateSpecs**. U kunt Azure Portal, Azure PowerShell, Azure CLI of een ARM-sjabloon gebruiken om uw sjabloonspecificatie te maken. Voor alle opties hebt u een ARM-sjabloon nodig die is verpakt in de sjabloonspecificatie.
 
 Voor PowerShell en de CLI wordt de ARM-sjabloon als parameter aan de opdracht doorgegeven. De ARM-sjabloon die in de sjabloonspecificatie wordt opgenomen, wordt ingesloten in de definitie van de sjabloonspecificatie.
 
 Deze opties worden hieronder weergegeven.
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Voer boven in het scherm bij **Resources, services en docs zoeken** **sjabloonspecificaties** in en selecteer **Sjabloonspecificaties** in.
+1. Selecteer **Sjabloonspecificatie maken**.
+1. Typ of selecteer de volgende waarden:
+
+    - **Naam**: voer een naam in voor de sjabloonspecificatie.  Bijvoorbeeld **storageSpec**
+    - **Abonnement**: selecteer een Azure-abonnement om de sjabloonspecificatie te maken.
+    - **Resourcegroep**: selecteer **Nieuwe maken** en voer een naam voor de nieuwe resourcegroep in.  Bijvoorbeeld **templateSpecRG**.
+    - **Locatie**: selecteer een locatie voor de resourcegroep. Bijvoorbeeld **West US 2**.
+    - **Versie**: voer een versie in voor de sjabloonspecificatie. Bijvoorbeeld **1.0** of **v1.0**.
+
+1. Selecteer **Volgende: Sjabloon bewerken**.
+1. Vervang de sjablooninhoud door de volgende JSON:
+
+    :::code language="json" source="~/quickstart-templates/101-storage-account-create/azuredeploy.json":::
+
+    Dit is de sjabloon die in de sjabloonspecificatie wordt verpakt.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -203,7 +225,23 @@ Deze opties worden hieronder weergegeven.
 
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 
-U kunt nu de sjabloonspecificatie implementeren. De sjabloonspecificatie wordt op dezelfde manier geïmplementeerd als de sjabloon in de sjabloonspecificatie. Het enige verschil is dat u de resource-id van de sjabloonspecificatie doorgeeft. U gebruikt dezelfde implementatieopdrachten en geeft indien nodig de parameterwaarden voor de sjabloonspecificatie door.
+U kunt nu de sjabloonspecificatie implementeren. De sjabloonspecificatie wordt op dezelfde manier geïmplementeerd als de sjabloon in de sjabloonspecificatie. Het enige verschil is dat u de resource-id van de sjabloonspecificatie in Azure PowerShell of Azure CLI doorgeeft. U gebruikt dezelfde implementatieopdrachten en geeft indien nodig de parameterwaarden voor de sjabloonspecificatie door.
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
+
+1. Open vanuit Azure Portal de resourcegroep die u in de laatste procedure hebt gemaakt.  Bijvoorbeeld **templateSpecRG**.
+1. Selecteer de sjabloonspecificatie die u hebt gemaakt. Bijvoorbeeld **storageSpec**.
+1. Selecteer **Implementeren**.
+1. Typ of selecteer de volgende waarden:
+
+    - **Abonnement**: selecteer een Azure-abonnement om de resource te maken.
+    - **Resourcegroep**: selecteer **Nieuwe maken** en typ **storageRG**.
+    - **Type opslagaccount**: selecteer **Standard_GRS**.
+
+    U maakt een nieuwe resourcegroep en implementeert de sjabloon in de sjabloonspecificatie voor de nieuwe resourcegroep.
+
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

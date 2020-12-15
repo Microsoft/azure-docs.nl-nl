@@ -4,12 +4,12 @@ description: In deze zelfstudie stelt u herstel na noodgevallen van Azure-VM's n
 ms.topic: tutorial
 ms.date: 11/03/2020
 ms.custom: mvc
-ms.openlocfilehash: 90527ad39055e438e4970ad4686f204f72d20cd2
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 6d07082b4a9c18461d5cc74de8844be803da7168
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394051"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922490"
 ---
 # <a name="tutorial-set-up-disaster-recovery-for-azure-vms"></a>Zelfstudie: Herstel na noodgevallen instellen voor Azure-VM's
 
@@ -92,7 +92,7 @@ Als u netwerkbeveiligingsgroepen (NSG's) gebruikt om connectiviteit te beheren, 
 --- | ---
 Opslagtag  |Hiermee kunnen gegevens van de VM naar het cache-opslagaccount worden geschreven.   
 Azure AD-tag | Hiermee hebt u toegang tot alle IP-adressen die overeenkomen met Azure AD.   
-EventsHub-tag | Hiermee hebt u toegang tot Site Recovery-bewaking.  
+EventsHub-tag | Hiermee wordt toegang tot Site Recovery-bewaking toegestaan.  
 AzureSiteRecovery-tag | Hiermee hebt u toegang tot de Site Recovery-service in een willekeurige regio.   
 GuestAndHybridManagement-tag | Gebruik deze optie als u de Site Recovery Mobility-agent automatisch wilt upgraden die wordt uitgevoerd op VM's die zijn ingeschakeld voor replicatie.
 

@@ -1,20 +1,20 @@
 ---
 title: Sjabloon met afhankelijke resources
-description: Leer hoe u een Azure Resource Manager-sjabloon maakt met meerdere resources en hoe u deze via Azure Portal implementeert
+description: Leer hoe u een ARM-sjabloon (Azure Resource Manager) maakt met meerdere resources en hoe u deze via Azure Portal implementeert
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 3ed653c511dbd775d124e1abd6f4bb02923edb25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a43fa12e72484e97b828648cd7d610f5cf15ea4e
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86102069"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931585"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Zelfstudie: ARM-sjablonen met afhankelijke resources maken
 
-Leer hoe u een ARM-sjabloon (ARM = Azure Resource Manager) voor het implementeren van meerdere resources kunt maken en de implementatievolgorde configureren. Nadat u de sjabloon hebt gemaakt, kunt u de sjabloon met behulp van de Cloud Shell implementeren vanuit de Azure-portal.
+Leer hoe u een ARM-sjabloon (Azure Resource Manager) maakt voor het implementeren van meerdere resources en de implementatievolgorde configureert. Nadat u de sjabloon hebt gemaakt, kunt u de sjabloon met behulp van de Cloud Shell implementeren vanuit de Azure-portal.
 
 In deze zelfstudie hebt u een opslagaccount, een virtuele machine, een virtueel netwerk en enkele andere afhankelijke resources gemaakt. Sommige resources kunnen niet worden geïmplementeerd totdat er een andere resource bestaat. U kunt bijvoorbeeld niet een virtuele machine maken totdat het bijbehorende opslagaccount en de bijbehorende netwerkinterface bestaan. U definieert deze relatie door een resource afhankelijk van de andere resources te maken. Resource Manager evalueert de afhankelijkheden tussen resources en implementeert ze in de volgorde van afhankelijkheid. Als resources niet van elkaar afhankelijk zijn, worden deze door Resource Manager parallel geïmplementeerd. Zie [Define the order for deploying resources in ARM templates](./define-resource-dependency.md) (De volgorde voor het implementeren van resources definiëren in ARM-sjablonen) voor meer informatie.
 
@@ -33,7 +33,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Gebruik een gegenereerd wachtwoord voor het beheerdersaccount van de virtuele machine om de beveiliging te verhogen. Hier volgt een voorbeeld voor het genereren van een wachtwoord:
 
     ```console
@@ -67,7 +67,7 @@ Wanneer u de sjabloon in deze sectie verkent, probeert u om deze vragen te beant
 
 1. Vouw in Visual Studio Code de elementen samen totdat u alleen de elementen op het eerste niveau en tweede niveau binnen **resources** ziet:
 
-    ![Azure Resource Manager-sjablonen in Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
+    ![ARM-sjablonen in Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
     Er worden zes resources gedefinieerd met de sjabloon:
 
@@ -82,19 +82,19 @@ Wanneer u de sjabloon in deze sectie verkent, probeert u om deze vragen te beant
 
 1. Vouw de eerste resource uit. Dit is een opslagaccount. Vergelijk de resourcedefinitie met de [sjabloonverwijzing](/azure/templates/Microsoft.Storage/storageAccounts).
 
-    ![Azure Resource Manager-sjablonen in Visual Studio Code: definitie van opslagaccount](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
+    ![ARM-sjablonen in Visual Studio Code: definitie van opslagaccount](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
 
 1. Vouw de tweede resource uit. Het resourcetype is `Microsoft.Network/publicIPAddresses`. Vergelijk de resourcedefinitie met de [sjabloonverwijzing](/azure/templates/microsoft.network/publicipaddresses).
 
-    ![Azure Resource Manager-sjablonen in Visual Studio Code: definitie van openbaar IP-adres](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
+    ![ARM-sjablonen in Visual Studio Code: definitie van openbaar IP-adres](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
 
 1. Vouw de derde resource uit. Het resourcetype is `Microsoft.Network/networkSecurityGroups`. Vergelijk de resourcedefinitie met de [sjabloonverwijzing](/azure/templates/microsoft.network/networksecuritygroups).
 
-    ![Azure Resource Manager-sjablonen in Visual Studio Code: definitie van netwerkbeveiligingsgroep](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-network-security-group-definition.png)
+    ![ARM-sjablonen in Visual Studio Code: definitie van netwerkbeveiligingsgroep](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-network-security-group-definition.png)
 
 1. Vouw de vierde resource uit. Het resourcetype is `Microsoft.Network/virtualNetworks`:
 
-    ![Azure Resource Manager-sjablonen in Visual Studio Code: virtueel netwerk dependsOn](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
+    ![ARM-sjablonen in Visual Studio Code: virtueel netwerk dependsOn](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
 
     Met het element dependsOn kunt u één resource als afhankelijk van een of meer resources definiëren. Deze resource is afhankelijk van één andere resource:
 
@@ -112,7 +112,7 @@ Wanneer u de sjabloon in deze sectie verkent, probeert u om deze vragen te beant
 
 Het volgende diagram illustreert de resources en de afhankelijkheidsgegevens voor deze sjabloon:
 
-![Azure Resource Manager-sjablonen in Visual Studio Code: afhankelijkheidsdiagram](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependency-diagram.png)
+![ARM-sjablonen in Visual Studio Code: afhankelijkheidsdiagram](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependency-diagram.png)
 
 Door de afhankelijkheden op te geven, kan Resource Manager de oplossing efficiënt implementeren. Het implementeert tegelijk het opslagaccount, een openbaar IP-adres en een virtueel netwerk omdat ze geen afhankelijkheden hebben. Nadat het openbare IP-adres en het virtuele netwerk zijn geïmplementeerd, wordt de netwerkinterface gemaakt. Wanneer alle andere resources zijn geïmplementeerd, implementeert Resource Manager de virtuele machine.
 

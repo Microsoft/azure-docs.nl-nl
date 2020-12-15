@@ -2,16 +2,16 @@
 title: Bestanden en mappen herstellen vanuit een back-up van Azure VM
 description: In dit artikel vindt u informatie over het herstellen van bestanden en mappen vanaf een herstel punt van een virtuele Azure-machine.
 ms.topic: conceptual
-ms.date: 03/01/2019
+ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: b9d5c90634dac3229e756ad93c10db91b268080c
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4d34fc48e5d16275d0225a1cef4b5fa63f0b66d6
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841156"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511651"
 ---
-# <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit back-up van virtuele Azure-machine
+# <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
 Azure Backup biedt de mogelijkheid om [Azure virtual machines (vm's) en schijven](./backup-azure-arm-restore-vms.md) van back-ups van Azure-vm's, ook wel herstel punten genoemd, te herstellen. In dit artikel wordt uitgelegd hoe u bestanden en mappen kunt herstellen vanuit een back-up van een Azure-VM. Het terugzetten van bestanden en mappen is alleen beschikbaar voor virtuele Azure-machines die zijn geïmplementeerd met het Resource Manager-model en die zijn beveiligd met een Recovery Services kluis.
 
@@ -156,7 +156,7 @@ Wanneer u het uitvoer bare bestand uitvoert, koppelt het besturings systeem de n
 
    ![Gekoppelde herstel volumes](./media/backup-azure-restore-files-from-vm/volumes-attached.png)
 
-**Voor back-ups van Vm's met grote schijven (Windows)**
+#### <a name="for-backed-up-vms-with-large-disks-windows"></a>Voor back-ups van Vm's met grote schijven (Windows)
 
 Als het bestands herstel proces vastloopt nadat u het script voor bestands herstel hebt uitgevoerd (bijvoorbeeld als de schijven nooit zijn gekoppeld, of als ze zijn gekoppeld, maar de volumes niet worden weer gegeven), voert u de volgende stappen uit:
   
@@ -182,7 +182,7 @@ In Linux worden de volumes van het herstel punt gekoppeld aan de map waarin het 
   ![Menu Linux-bestands herstel](./media/backup-azure-restore-files-from-vm/linux-mount-paths.png)
 
 
-**Voor back-ups van Vm's met grote schijven (Linux)**
+#### <a name="for-backed-up-vms-with-large-disks-linux"></a>Voor back-ups van Vm's met grote schijven (Linux) * *
 
 Als het bestands herstel proces vastloopt nadat u het script voor bestands herstel hebt uitgevoerd (bijvoorbeeld als de schijven nooit zijn gekoppeld, of als ze zijn gekoppeld, maar de volumes niet worden weer gegeven), voert u de volgende stappen uit:
 

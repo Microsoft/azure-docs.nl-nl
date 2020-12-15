@@ -1,17 +1,17 @@
 ---
 title: 'Zelfstudie: tags toevoegen aan resources in een sjabloon'
-description: Leer hoe u tags toevoegt aan resources die u in uw Azure Resource Manager-sjabloon implementeert. Gebruik tags om resources logisch te ordenen.
+description: Leer hoe u tags toevoegt aan resources die u in uw ARM-sjabloon (Azure Resource Manager) implementeert. Gebruik tags om resources logisch te ordenen.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 16fc294784d9d6ff3c2fdd920d053eae5cd4b56d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4084508202fc7db5280d34c157552fe723b1dfba
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613200"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930939"
 ---
 # <a name="tutorial-add-tags-in-your-arm-template"></a>Zelfstudie: tags toevoegen in uw ARM-sjabloon
 

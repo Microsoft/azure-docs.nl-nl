@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 448707ab84ccca03dc0572d2ebed1b4bd1b6325f
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: a1732f42ea95c16cdec7a1d7569c954667e52cb4
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505288"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750897"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -140,7 +140,7 @@ Maak in Visual Studio een ASP.NET Core-webtoepassing met de naam ‘hello-world�
    }
    ```
    
-1. Voeg afhankelijkheden en een `Zip`-taak toe aan het bestand *.csproj* :
+1. Voeg afhankelijkheden en een `Zip`-taak toe aan het bestand *.csproj*:
 
    ```xml
    <ItemGroup>
@@ -152,7 +152,7 @@ Maak in Visual Studio een ASP.NET Core-webtoepassing met de naam ‘hello-world�
    </Target>
    ```
 
-   De pakketten zijn voor Steeltoe Service Discovery en de Azure Spring Cloud-clientbibliotheek. De `Zip`-taak is voor implementatie in Azure. Wanneer u de opdracht `dotnet publish` uitvoert, worden de binaire bestanden in de map *publish* gegenereerd, en met deze taak wordt de map *publish* gezipt in een *ZIP* -bestand dat u naar Azure uploadt.
+   De pakketten zijn voor Steeltoe Service Discovery en de Azure Spring Cloud-clientbibliotheek. De `Zip`-taak is voor implementatie in Azure. Wanneer u de opdracht `dotnet publish` uitvoert, worden de binaire bestanden in de map *publish* gegenereerd, en met deze taak wordt de map *publish* gezipt in een *ZIP*-bestand dat u naar Azure uploadt.
 
 3. In het bestand *Program.cs* voegt u een `using`-instructie en code die gebruikmaakt van de Azure Spring Cloud-clientbibliotheek toe:
 
@@ -218,10 +218,10 @@ Met de volgende procedure maakt u een exemplaar van Azure Spring Cloud met behul
 
 1. Vul het formulier in op de Azure Spring Cloud-pagina **Maken**.  Houd rekening met de volgende richtlijnen:
 
-   * **Abonnement** : Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
-   * **Resourcegroep** : Maak een nieuwe resourcegroep. De naam die u hier invoert, wordt in latere stappen gebruikt als **\<resource group name\>** .
-   * **Servicedetails/naam** : Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
-   * **Regio** : Selecteer de regio voor uw service-exemplaar.
+   * **Abonnement**: Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
+   * **Resourcegroep**: Maak een nieuwe resourcegroep. De naam die u hier invoert, wordt in latere stappen gebruikt als **\<resource group name\>** .
+   * **Servicedetails/naam**: Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
+   * **Regio**: Selecteer de regio voor uw service-exemplaar.
 
    ![ASC-portal starten](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 
@@ -233,7 +233,7 @@ Met de volgende procedure wordt het project gebouwd en geïmplementeerd dat u ee
 
 1. Zorg ervoor dat de opdrachtprompt nog steeds in de projectmap staat.
 
-1. Voer de volgende opdracht uit om het project te bouwen, de binaire bestanden te publiceren en de binaire bestanden op te slaan in een *ZIP* -bestand in de projectmap.
+1. Voer de volgende opdracht uit om het project te bouwen, de binaire bestanden te publiceren en de binaire bestanden op te slaan in een *ZIP*-bestand in de projectmap.
 
    ```dotnetcorecli
    dotnet publish -c release -o ./publish
@@ -245,13 +245,13 @@ Met de volgende procedure wordt het project gebouwd en geïmplementeerd dat u ee
    az spring-cloud app create -n hello-world -s <service instance name> -g <resource group name> --is-public --runtime-version NetCore_31
    ```
 
-1. Implementeer het *ZIP* -bestand in de app.
+1. Implementeer het *ZIP*-bestand in de app.
 
    ```azurecli
    az spring-cloud app deploy -n hello-world -s <service instance name> -g <resource group name> --runtime-version NetCore_31 --main-entry hello-world.dll --artifact-path ./deploy.zip
    ```
 
-   De optie `--main-entry` identificeert het *DLL* -bestand dat het beginpunt van de toepassing bevat. Nadat het *ZIP-bestand* is geüpload, worden alle bestanden en mappen geëxtraheerd en wordt geprobeerd het beginpunt in het *DLL* -bestand opgegeven door `--main-entry` uit te voeren.
+   De optie `--main-entry` identificeert het *DLL*-bestand dat het beginpunt van de toepassing bevat. Nadat het *ZIP-bestand* is geüpload, worden alle bestanden en mappen geëxtraheerd en wordt geprobeerd het beginpunt in het *DLL*-bestand opgegeven door `--main-entry` uit te voeren.
 
    Het duurt enkele minuten om de implementatie van de toepassing te voltooien. Als u wilt controleren of de implementatie is geslaagd, gaat u naar de blade **Apps** in de Azure-portal.
 
@@ -352,6 +352,9 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4
 
   ![Initializr-pagina](media/spring-cloud-quickstart-java/initializr-page.png)
 
+> [!NOTE]
+> We hebben een probleem geïdentificeerd met Spring Boot 2.4 in TLS-verificatie tussen uw apps en Eureka, en werken momenteel samen met de Spring-community om dit op te lossen. Raadpleeg onze [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) voor de tijdelijke oplossing.
+
 1. Klik op **Genereren** wanneer alle afhankelijkheden zijn ingesteld. Download het pakket en pak het uit. Maak vervolgens een webcontroller voor een eenvoudige webtoepassing door `src/main/java/com/example/hellospring/HelloController.java` als volgt toe te voegen:
 
     ```java
@@ -387,10 +390,10 @@ Met de volgende procedure maakt u een exemplaar van Azure Spring Cloud met behul
     ![ASC-pictogram: toevoegen](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
 
 5. Vul het formulier in op de Azure Spring Cloud-pagina **Maken**.  Houd rekening met de volgende richtlijnen:
-    - **Abonnement** : Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
-    - **Resourcegroep** : Het is een best practice om nieuwe resourcegroepen te maken voor nieuwe resources. Dit wordt in latere stappen gebruikt als **\<resource group name\>** .
-    - **Servicedetails/naam** : Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
-    - **Locatie** : Selecteer de regio voor uw service-exemplaar.
+    - **Abonnement**: Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
+    - **Resourcegroep**: Het is een best practice om nieuwe resourcegroepen te maken voor nieuwe resources. Dit wordt in latere stappen gebruikt als **\<resource group name\>** .
+    - **Servicedetails/naam**: Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
+    - **Locatie**: Selecteer de regio voor uw service-exemplaar.
 
     ![ASC-portal starten](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 

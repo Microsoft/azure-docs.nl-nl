@@ -1,21 +1,21 @@
 ---
 title: Extensies voor virtuele machines implementeren met sjablonen
-description: Informatie over het implementeren van extensies voor virtuele machines met Azure Resource Manager-sjablonen
+description: Informatie over het implementeren van extensies voor virtuele machines met ARM-sjablonen (Azure Resource Manager).
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f82e0eb45f4bc7c3260554b1b1120025029336bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 49bc1a77e2e25cb069a89812603ff562b8a4c1cd
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89073639"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931449"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Zelfstudie: Extensies voor virtuele machines implementeren met ARM-sjablonen
 
-Meer informatie over het gebruik van [extensies voor virtuele Azure-machines](../../virtual-machines/extensions/features-windows.md) voor het uitvoeren van configuratie- en automatiseringstaken na de implementatie op virtuele Azure-machines. Er zijn veel verschillende VM-extensies beschikbaar voor gebruik met Azure-VM's. In deze zelfstudie implementeert u een aangepaste scriptextensie van een Azure Resource Manager-sjabloon (ARM) om een PowerShell-script uit te voeren op een Windows-VM.  Met het script wordt een webserver op de virtuele machine geïnstalleerd.
+Meer informatie over het gebruik van [extensies voor virtuele Azure-machines](../../virtual-machines/extensions/features-windows.md) voor het uitvoeren van configuratie- en automatiseringstaken na de implementatie op virtuele Azure-machines. Er zijn veel verschillende VM-extensies beschikbaar voor gebruik met Azure-VM's. In deze zelfstudie implementeert u een aangepaste scriptextensie van een ARM-sjabloon (Azure Resource Manager) om een PowerShell-script uit te voeren op een Windows-VM. Met het script wordt een webserver op de virtuele machine geïnstalleerd.
 
 Deze zelfstudie bestaat uit de volgende taken:
 
@@ -31,7 +31,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Gebruik een gegenereerd wachtwoord voor het beheerdersaccount van de virtuele machine om de beveiliging te verhogen. Hier volgt een voorbeeld voor het genereren van een wachtwoord:
 
     ```console

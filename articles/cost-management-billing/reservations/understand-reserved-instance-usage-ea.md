@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 12/02/2020
 ms.author: banders
-ms.openlocfilehash: 070d105785ee3ab9811188406bda56dbe6ceb558
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 874d5cb022a38b172bb37009bd86b5e6988f3204
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350888"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545601"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Reserveringskosten en gebruiksgegevens voor Enterprise Agreement opvragen
 
@@ -140,6 +140,8 @@ Vraag gegevens van afgeschreven kosten op en filter de gegevens op een gereserve
 2. De reserveringskosten opvragen. Bereken de som van de waarden voor _Cost_ om de monetaire waarde te bepalen van wat u hebt betaald voor de gereserveerde instantie. De berekende waarde omvat de gebruikte en ongebruikte kosten van de reservering.
 3. Reserveringskosten aftrekken van de geschatte kosten voor betalen naar gebruik om de geschatte besparingen te bepalen.
 
+Let op: als u een reservering hebt die te weinig wordt gebruikt, is de vermelding _UnusedReservation_ voor _ChargeType_ een factor om rekening mee te houden. Als u een reservering hebt die volledig wordt gebruikt, bespaart u maximaal. Elke hoeveelheid _UnusedReservation_ vermindert wat u bespaart.
+
 ## <a name="reservation-purchases-and-amortization-in-cost-analysis"></a>Reserveringsaankopen en afschrijving in kostenanalyse
 
 Reserveringskosten zijn beschikbaar in [Kostenanalyse](https://aka.ms/costanalysis). In Kostenanalyse worden standaard de **werkelijke kosten** weergegeven. Dit zijn de kosten die op uw factuur worden vermeld. Als u de reserveringsaankopen wilt uitsplitsen naar de resources die het voordeel hebben gebruikt, schakelt u over naar **Afgeschreven kosten**:
@@ -148,7 +150,7 @@ Reserveringskosten zijn beschikbaar in [Kostenanalyse](https://aka.ms/costanalys
 
 Groepeer op kostensoort om een uitsplitsing te zien naar gebruik, aankopen en restituties. Groepeer op reservering voor een uitsplitsing van de kosten voor reserveringen en on-demand. Vergeet niet dat als u naar de werkelijke kosten kijkt, alleen de reserveringskosten voor aankopen worden weergegeven. De kosten worden echter wel toegerekend aan de afzonderlijke resources die het voordeel hebben gebruikt, als u naar de afgeschreven kosten kijkt. U ziet ook een nieuwe kostensoort **UnusedReservation** wanneer u de afgeschreven kosten bekijkt.
 
-## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://go.microsoft.com/fwlink/?linkid=2083458).
 
@@ -162,4 +164,4 @@ Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
 - [Azure-reserveringen beheren](manage-reserved-vm-instance.md)
 - [Begrijpen hoe de reserveringskorting wordt toegepast](../manage/understand-vm-reservation-charges.md)
 - [Inzicht in het gebruik van reserveringen voor uw abonnement met betalen per gebruik](understand-reserved-instance-usage.md)
-- [Kosten van Windows-software die niet zijn inbegrepen bij reserveringen](reserved-instance-windows-software-costs.md)
+- [Kosten van Windows-software zijn niet inbegrepen bij reserveringen](reserved-instance-windows-software-costs.md)

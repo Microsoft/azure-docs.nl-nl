@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: ecd5fd4f5af883d26f904181796a78f61669b37a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: dcf7c8db955b2e85ad7d1c047c714eb2c5968455
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187354"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780804"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-net-sdk-v4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor .NET (SDK v4)
 
@@ -32,7 +32,7 @@ Zie deze artikelen voor meer informatie over Key Vault en geheimen:
 * Een Azure-abonnement - [Een gratis abonnement maken](https://azure.microsoft.com/free/dotnet)
 * [.NET Core 3.1 SDK of hoger](https://dotnet.microsoft.com/download/dotnet-core)
 * [Azure-CLI](/cli/azure/install-azure-cli)
-* Een Key Vault - U kunt er een maken met [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md).
+* Een sleutelkluis: u kunt er een maken met behulp van [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md)
 
 Deze quickstart maakt gebruik van `dotnet` en Azure CLI
 
@@ -54,6 +54,13 @@ Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om
 
 2. Meldt u zich in de browser aan met uw accountreferenties.
 
+### <a name="grant-access-to-your-key-vault"></a>Toegang verlenen tot uw sleutelkluis
+
+Maak toegangsbeleid voor de sleutelkluis waarmee geheimmachtigingen worden verleend aan uw gebruikersaccount
+
+```console
+az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set purge
+```
 
 ### <a name="create-new-net-console-app"></a>Nieuwe .NET-console-app maken
 
@@ -90,15 +97,6 @@ Voor deze quickstart moet u ook de Azure SDK-clientbibliotheek voor Azure Identi
 ```dotnetcli
 dotnet add package Azure.Identity
 ```
-
-#### <a name="grant-access-to-your-key-vault"></a>Toegang verlenen tot uw sleutelkluis
-
-Een toegangsbeleid maken voor de sleutelkluis waarmee geheime machtigingen aan uw gebruikersaccount worden verleend
-
-```console
-az keyvault set-policy --name <YourKeyVaultName> --upn user@domain.com --secret-permissions delete get list set purge
-```
-
 #### <a name="set-environment-variables"></a>Omgevingsvariabelen instellen
 
 In deze applicatie wordt de naam van de sleutelkluis gebruikt als een omgevingsvariabele met de naam `KEY_VAULT_NAME`.
@@ -133,7 +131,7 @@ Voeg de volgende instructies toe aan het begin van *Program.cs*:
 
 In deze quickstart wordt de aangemelde gebruiker gebruikt voor de verificatie bij de sleutelkluis. Dit is de voorkeursmethode voor lokale ontwikkeling. Voor toepassingen die zijn geïmplementeerd in Azure, moet beheerde identiteit worden toegewezen aan App Service of aan Virtuele machine. Zie [Overzicht van beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.
 
-In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse ['DefaultAzureCredential()'](/dotnet/api/azure.identity.defaultazurecredential) gebruikt, waarmee u dezelfde code kunt gebruiken in verschillende omgevingen met verschillende opties om identiteiten te bieden. Zie het artikel over [standaardverificatie van Azure-referenties](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme?#defaultazurecredential) (Engelstalig) voor meer informatie. 
+In het onderstaande voorbeeld wordt de naam van de sleutelkluis uitgebreid naar de sleutelkluis-URI, met de indeling https://\<your-key-vault-name\>.vault.azure.net. In dit voorbeeld wordt de klasse [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential) uit [Azure Identity Library](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme) gebruikt. Hiermee kunt u dezelfde code gebruiken in verschillende omgevingen, met verschillende opties om identiteiten te bieden. Zie [Gids voor ontwikkelaars](https://docs.microsoft.com/azure/key-vault/general/developers-guide#authenticate-to-key-vault-in-code) voor meer informatie over het verifiëren van een sleutelkluis.
 
 [!code-csharp[](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=authenticate)]
 
@@ -155,16 +153,20 @@ U kunt nu de eerder ingestelde waarde ophalen met de methode [GetSecretAsync](/d
 
 ```csharp
 var secret = await client.GetSecretAsync(secretName);
-``````
+```
 
 Uw geheim wordt nu opgeslagen als `secret.Value`.
 
 ### <a name="delete-a-secret"></a>Een geheim verwijderen
 
-Ten slotte gaan we het geheim uit uw sleutelkluis verwijderen met de methode [StartDeleteSecretAsync](/dotnet/api/azure.security.keyvault.secrets.secretclient.startdeletesecretasync).
+Ten slotte gaan we het geheim uit de sleutelkluis verwijderen met de methoden [StartDeleteSecretAsync](/dotnet/api/azure.security.keyvault.secrets.secretclient.startdeletesecretasync) en [PurgeDeletedSecretAsync](/dotnet/api/azure.security.keyvault.keys.keyclient.purgedeletedsecretasync).
 
 ```csharp
-await client.StartDeleteSecretAsync(secretName);
+var operation = await client.StartDeleteSecretAsync("mySecret");
+// You only need to wait for completion if you want to purge or recover the key.
+await operation.WaitForCompletionAsync();
+
+await client.PurgeDeletedKeyAsync("mySecret");
 ```
 
 ## <a name="sample-code"></a>Voorbeeldcode
@@ -229,52 +231,18 @@ Voer de volgende stappen uit om de .NET Core-console-app aan te passen voor inte
 
 1. Voer een geheime waarde in wanneer u hierom wordt gevraagd. Bijvoorbeeld mySecretPassword (mijn geheime wachtwoord).
 
-    Er verschijnt een variant van de volgende uitvoer:
+Er verschijnt een variant van de volgende uitvoer:
 
-    ```console
-    Input the value of your secret > mySecretPassword
-    Creating a secret in <your-unique-keyvault-name> called 'mySecret' with the value 'mySecretPassword' ... done.
-    Forgetting your secret.
-    Your secret is ''.
-    Retrieving your secret from <your-unique-keyvault-name>.
-    Your secret is 'mySecretPassword'.
-    Deleting your secret from <your-unique-keyvault-name> ... done.    
-    ```
-
-## <a name="clean-up-resources"></a>Resources opschonen
-
-Wanneer u de sleutelkluis en de bijbehorende resourcegroep niet meer nodig hebt, kunt u Azure CLI of Azure PowerShell gebruiken om ze te verwijderen.
-
-### <a name="delete-a-key-vault"></a>Een sleutelkluis verwijderen
-
-```azurecli
-az keyvault delete --name <your-unique-keyvault-name>
+```console
+Input the value of your secret > mySecretPassword
+Creating a secret in <your-unique-keyvault-name> called 'mySecret' with the value 'mySecretPassword' ... done.
+Forgetting your secret.
+Your secret is ''.
+Retrieving your secret from <your-unique-keyvault-name>.
+Your secret is 'mySecretPassword'.
+Deleting your secret from <your-unique-keyvault-name> ... done.    
+Purging your secret from <your-unique-keyvault-name> ... done.
 ```
-
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name>
-```
-
-### <a name="purge-a-key-vault"></a>Een sleutelkluis opschonen
-
-```azurecli
-az keyvault purge --location eastus --name <your-unique-keyvault-name>
-```
-
-```azurepowershell
-Remove-AzKeyVault -VaultName <your-unique-keyvault-name> -InRemovedState -Location eastus
-```
-
-### <a name="delete-a-resource-group"></a>Een resourcegroep verwijderen
-
-```azurecli
-az group delete -g "myResourceGroup"
-```
-
-```azurepowershell
-Remove-AzResourceGroup -Name "myResourceGroup"
-```
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

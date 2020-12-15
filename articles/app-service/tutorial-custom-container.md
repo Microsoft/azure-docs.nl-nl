@@ -7,12 +7,12 @@ ms.author: msangapu
 keywords: azure-app-service, web-app, linux, windows, docker, container
 ms.custom: devx-track-csharp, mvc, seodec18, devx-track-python, devx-track-azurecli
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: b5682275a9e5f3993de715ab5f23a708d5df47ae
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 68fe49ff201ead89d846a0676e81dda9fc9b75b9
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130116"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558603"
 ---
 # <a name="migrate-custom-software-to-azure-app-service-using-a-custom-container"></a>Aangepaste software naar Azure App Service migreren met een aangepaste container
 
@@ -228,31 +228,16 @@ Voor het voltooien van deze zelfstudie kan een klein bedrag in rekening worden g
 
 ## <a name="set-up-your-initial-environment"></a>Uw eerste omgeving instellen
 
-* U moet beschikken over een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
-* Installeer [Docker](https://docs.docker.com/get-started/#setup). Dit gebruikt u om Docker-installatiekopieën te bouwen. Voor het installeren van Docker moet de computer mogelijk opnieuw worden opgestart.
-* Installeer de <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> 2.0.80 of hoger, waarmee u opdrachten kunt uitvoeren in elke willekeurige shell voor het inrichten en configureren van Azure-resources.
+- U moet beschikken over een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
+- Installeer [Docker](https://docs.docker.com/get-started/#setup). Dit gebruikt u om Docker-installatiekopieën te bouwen. Voor het installeren van Docker moet de computer mogelijk opnieuw worden opgestart.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+- Voor deze zelfstudie is versie 2.0.80 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-Nadat u Docker en Azure CLI hebt geïnstalleerd, opent u een terminalvenster en controleert u of Docker is geïnstalleerd:
+Nadat u Docker hebt geïnstalleerd of Azure Cloud Shell hebt uitgevoerd, opent u een terminalvenster en controleert u of Docker is geïnstalleerd:
 
 ```bash
 docker --version
 ```
-
-Controleer ook of de Azure CLI-versie 2.0.80 of hoger is:
-
-```azurecli
-az --version
-```
-
-Meld u vervolgens aan bij Azure via de CLI:
-
-```azurecli
-az login
-```
-
-Met de opdracht `az login` wordt een browser geopend waar u uw referenties moet invoeren. Wanneer de opdracht is voltooid, wordt JSON-uitvoer weergegeven met informatie over uw abonnementen.
-
-Zodra u bent aangemeld, kunt u Azure-opdrachten uitvoeren met de Azure CLI om te werken met resources in uw abonnement.
 
 ## <a name="clone-or-download-the-sample-app"></a>De voorbeeld-app klonen of downloaden
 
@@ -343,8 +328,6 @@ ENTRYPOINT ["init.sh"]
 1. Blader naar `http://localhost:8000` om te controleren of de web-app en de container goed werken.
 
     ![Web-app lokaal testen](./media/app-service-linux-using-custom-docker-image/app-service-linux-browse-local.png)
-
-[!INCLUDE [Try Cloud Shell](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 

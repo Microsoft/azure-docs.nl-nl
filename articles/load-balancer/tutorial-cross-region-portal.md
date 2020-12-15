@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 11/24/2020
-ms.openlocfilehash: fe335b00df23ff132ad61b27efd733d195ee3bfb
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 7ee203595a796529ae0aefe8b0c52a689ac29968
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030932"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762326"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Zelfstudie: Een Azure Load Balancer voor meerdere regio's maken met behulp van Azure Portal
 
@@ -28,6 +28,10 @@ In deze zelfstudie leert u het volgende:
 
 Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
+> [!IMPORTANT]
+> Azure Load Balancer voor meerdere regio's is momenteel in de openbare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement.
@@ -37,8 +41,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 ## <a name="sign-in-to-azure-portal"></a>Meld u aan bij Azure Portal
 
-> [!IMPORTANT]
-> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is verborgen in de preview-portal.  Meld u aan bij **https://preview.portal.azure.com/?feature.globallb=true** om de functie weer te geven en te implementeren.
+[Meld u aan](https://preview.portal.azure.com) bij de Azure Preview-portal.
 
 ## <a name="create-cross-region-load-balancer"></a>Een load balancer voor meerdere regio's maken
 

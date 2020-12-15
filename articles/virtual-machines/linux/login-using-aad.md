@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 11/17/2020
 ms.author: sandeo
-ms.openlocfilehash: 4c11e8c9cbd767bb95e094535a8a6cd7c8fe84fc
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b4fc6b9facc79db109c5ce5be09576b16a2abdc7
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340880"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510886"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Voor beeld: Meld u aan bij een virtuele Linux-machine in azure met Azure Active Directory-verificatie
 
@@ -119,7 +119,7 @@ Op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure bepaalt wie zich kan 
 - **Gebruikers aanmelding van de virtuele machine**: gebruikers met deze rol die is toegewezen, kunnen zich aanmelden bij een virtuele Azure-machine met gewone gebruikers bevoegdheden.
 
 > [!NOTE]
-> Als u een gebruiker wilt toestaan zich via SSH aan te melden bij de VM, moet u zich aanmelden voor de beheerder van de *virtuele machine* of de gebruiker aanmeldt voor de *virtuele machine* . Een Azure-gebruiker met de rol *eigenaar* of *Inzender* die is toegewezen aan een virtuele machine, is niet automatisch gemachtigd om zich via SSH aan te melden bij de VM.
+> Als u een gebruiker wilt toestaan zich via SSH aan te melden bij de VM, moet u zich aanmelden voor de beheerder van de *virtuele machine* of de gebruiker aanmeldt voor de *virtuele machine* . De beheerders aanmelding van de virtuele machine en de aanmeld rollen van de virtuele-machine gebruiker gebruiken dataActions en kunnen daarom niet worden toegewezen in het bereik van de beheer groep. Momenteel kunnen deze rollen alleen worden toegewezen aan het abonnement, de resource groep of het resource bereik. Een Azure-gebruiker met de rol *eigenaar* of *Inzender* die is toegewezen aan een virtuele machine, is niet automatisch gemachtigd om zich via SSH aan te melden bij de VM. 
 
 In het volgende voor beeld wordt [AZ roltoewijzing Create](/cli/azure/role/assignment#az-role-assignment-create) gebruikt om de rol van de beheerder van de *virtuele machine* toe te wijzen aan de VM voor uw huidige Azure-gebruiker. De gebruikers naam van uw actieve Azure-account wordt verkregen met [AZ account show](/cli/azure/account#az-account-show)en de *Scope* wordt ingesteld op de virtuele machine die in een vorige stap is gemaakt met [AZ VM show](/cli/azure/vm#az-vm-show). Het bereik kan ook worden toegewezen aan een resource groep of abonnement, en normale machtigingen voor Azure RBAC-overname zijn van toepassing. Zie voor meer informatie [Azure RBAC](../../role-based-access-control/overview.md)
 
@@ -138,7 +138,12 @@ az role assignment create \
 
 Zie Using the [Azure cli](../../role-based-access-control/role-assignments-cli.md), [Azure Portal](../../role-based-access-control/role-assignments-portal.md)of [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)voor meer informatie over het gebruik van Azure RBAC om de toegang tot uw Azure-abonnements resources te beheren.
 
-U kunt Azure AD ook zo configureren dat multi-factor Authentication is vereist voor een specifieke gebruiker om zich aan te melden bij de virtuele Linux-machine. Zie [aan de slag met Azure AD-multi-factor Authentication in de Cloud](../../active-directory/authentication/howto-mfa-getstarted.md)voor meer informatie.
+## <a name="using-conditional-access"></a>Voorwaardelijke toegang gebruiken
+
+U kunt beleid voor voorwaardelijke toegang afdwingen, zoals multi-factor Authentication of aanmeldings risico voor gebruikers, voordat u toegang verleent tot virtuele Linux-machines in azure die zijn ingeschakeld met aanmelden bij Azure AD. Als u beleid voor voorwaardelijke toegang wilt Toep assen, moet u de app Azure Linux VM Sign-in van de optie voor de toewijzing van Cloud-apps of acties selecteren en vervolgens aanmeldings risico als voor waarde gebruiken en/of multi-factor Authentication vereisen als Grant Access Control. 
+
+> [!WARNING]
+> Door gebruiker ingeschakeld/afgedwongen Azure AD-Multi-Factor Authentication wordt niet ondersteund voor het aanmelden bij een virtuele machine.
 
 ## <a name="log-in-to-the-linux-virtual-machine"></a>Meld u aan bij de virtuele Linux-machine
 
@@ -195,6 +200,8 @@ Using keyboard-interactive authentication.
 Access denied:  to sign-in you be assigned a role with action 'Microsoft.Compute/virtualMachines/login/action', for example 'Virtual Machine User Login'
 Access denied
 ```
+> [!NOTE]
+> Als u problemen ondervindt met Azure-roltoewijzingen, raadpleegt u [problemen met Azure RBAC oplossen](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#azure-role-assignments-limit).
 
 ### <a name="continued-ssh-sign-in-prompts"></a>Voortdurende aanmeldings prompts voor SSH
 

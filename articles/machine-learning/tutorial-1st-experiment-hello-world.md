@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 20173c4ba02f53a526167a5a8e22bd0cedc85594
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 971bac8a0b0951d4e07e139aea6c465a9159b8db
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393215"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96570957"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Zelfstudie: Een Python-script voor 'Hallo wereld' uitvoeren (deel 2 van 4)
 
@@ -61,7 +61,8 @@ tutorial
 └──02-create-compute.py
 ```
 
-### <a name="test-your-script-locally"></a>Uw script lokaal testen
+
+### <a name="test-your-script-locally"></a><a name="test"></a>Uw script lokaal testen
 
 U kunt uw code lokaal uitvoeren met behulp van uw favoriete IDE of een terminal. Code lokaal uitvoeren biedt het voordeel van interactieve foutopsporing.
 
@@ -70,7 +71,10 @@ cd <path/to/tutorial>
 python ./src/hello.py
 ```
 
-## <a name="create-a-control-script"></a>Een besturingsscript maken
+> [!div class="nextstepaction"]
+> [Ik heb het script lokaal uitgevoerd](?success=run-local#control-script) [Er is een probleem opgetreden](https://www.research.net/r/7C2NTH7?issue=run-local)
+
+## <a name="create-a-control-script"></a><a name="control-script"></a> Een besturingsscript maken
 
 Met een *besturingsscript* kunt u uw `hello.py`-script uitvoeren in de cloud. Met het besturingsscript kunt u bepalen hoe en waar uw machine learning-code wordt uitgevoerd.  
 
@@ -89,6 +93,8 @@ run = experiment.submit(config)
 aml_url = run.get_portal_url()
 print(aml_url)
 ```
+
+
 
 ### <a name="understand-the-code"></a>De code begrijpen
 
@@ -135,7 +141,10 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
    :::column-end:::
 :::row-end:::
 
-## <a name="submit-and-run-your-code-in-the-cloud"></a>Uw code in de cloud verzenden en uitvoeren
+> [!div class="nextstepaction"]
+> [Ik heb het besturingsscript gemaakt](?success=create-control-script#submit) [Er is een probleem opgetreden](https://www.research.net/r/7C2NTH7?issue=create-control-script)
+
+## <a name="submit-and-run-your-code-in-the-cloud"></a><a name="submit"></a> Uw code verzenden en uitvoeren in de cloud
 
 Voer uw besturingsscript uit, dat op zijn beurt `hello.py` uitvoert op het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
 
@@ -154,7 +163,10 @@ python 03-run-hello.py
 > [!TIP]
 > Als er bij het uitvoeren van deze code de foutmelding optreedt dat u geen toegang hebt tot het abonnement, gaat u naar [Verbinding maken met een werkruimte](how-to-manage-workspace.md?tab=python#connect-multi-tenant) voor informatie over verificatieopties.
 
-## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a>Uw code in de cloud bewaken met de studio
+> [!div class="nextstepaction"]
+> [Ik heb code verzonden in de cloud](?success=submit-to-cloud#monitor) [Er is een probleem opgetreden](https://www.research.net/r/7C2NTH7?issue=submit-to-cloud)
+
+## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a><a name="monitor"></a>Uw code in de cloud bewaken met de studio
 
 De uitvoer bevat een link naar de studio die er ongeveer als volgt uitziet: `https://ml.azure.com/experiments/hello-world/runs/<run-id>?wsid=/subscriptions/<subscription-id>/resourcegroups/<resource-group>/workspaces/<workspace-name>`.
 
@@ -185,6 +197,9 @@ Volg de link en navigeer naar het tabblad **Uitvoer en logboeken**. Hier ziet u 
 Op regel 8 ziet u de 'Hallo wereld!' uitvoer.
 
 Het `70_driver_log.txt`-bestand bevat de standaarduitvoer van een uitvoering. Dit bestand kan handig zijn bij het opsporen van fouten op externe uitvoeringen in de cloud.
+
+> [!div class="nextstepaction"]
+> [Ik hebt het logboek gezien in Studio](?success=monitor-in-studio#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7C2NTH7?issue=monitor-in-studio)
 
 ## <a name="next-steps"></a>Volgende stappen
 

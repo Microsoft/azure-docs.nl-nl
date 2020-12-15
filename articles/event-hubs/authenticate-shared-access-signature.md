@@ -4,12 +4,12 @@ description: Dit artikel laat u zien hoe u de toegang tot Event Hubs-resources k
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e5d52b82ad6bbcb8dc7c028d3eba25a584590840
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 26c921213168e1028f311eabaa417efdb76f5c97
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332430"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510087"
 ---
 # <a name="authenticate-access-to-event-hubs-resources-using-shared-access-signatures-sas"></a>Toegang tot Event Hubs resources verifiëren met behulp van Shared Access signatures (SAS)
 Shared Access Signature (SAS) biedt u gedetailleerde controle over het type toegang dat u verleent aan de clients die de Shared Access Signature hebben. Hier volgen enkele van de besturings elementen die u in een SAS kunt instellen: 
@@ -212,7 +212,7 @@ U moet bijvoorbeeld een regel voor het verzenden van een autorisatie definiëren
 >
 > Wanneer de client gegevens naar een Event Hub verzendt, wordt de aanvraag met het token gecodeerd. De communicatie tussen de client en het Event Hub moet plaatsvinden via een versleuteld kanaal om te voor komen dat een aanvaller het token tegenluistert en stelen.
 > 
-> Als een token door een aanvaller wordt gestolen, kan de aanvaller de client imiteren waarvan het token is gestolen. Als u een Publisher op de zwarte lijst maakt, wordt die client onbruikbaar weer gegeven totdat er een nieuw token wordt ontvangen dat gebruikmaakt van een andere uitgever.
+> Als een token door een aanvaller wordt gestolen, kan de aanvaller de client imiteren waarvan het token is gestolen. Blocklisting een uitgever, rendert die client onbruikbaar totdat er een nieuw token wordt ontvangen dat gebruikmaakt van een andere uitgever.
 
 
 ## <a name="authenticating-event-hubs-consumers-with-sas"></a>Event Hubs consumenten verifiëren met SAS 

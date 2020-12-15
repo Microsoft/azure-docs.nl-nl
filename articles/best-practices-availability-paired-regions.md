@@ -1,19 +1,19 @@
 ---
 title: Zorg voor bedrijfs continuïteit & herstel na nood geval met behulp van gekoppelde Azure-regio's
 description: Toepassings tolerantie garanderen met Azure regionale koppeling
-author: barbkess
-manager: barbkess
+author: martinekuan
+manager: martinekuan
 ms.service: multiple
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.author: barbkess
+ms.author: martinek
 ms.custom: references_regions
-ms.openlocfilehash: d42eabe3afeb738b0cbb011881678839fe0ba2d7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 3310d4a7d86db9dee7d5f71fc9410545817886f3
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95539053"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511226"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Bedrijfscontinuïteit en herstel na noodgeval (BCDR): gekoppelde Azure-regio's
 
@@ -64,7 +64,7 @@ Nee. Klanten kunnen Azure-Services gebruiken voor het ontwikkelen van een flexib
 | Japan |Japan - oost |Japan - west |
 | Korea |Korea - centraal |Korea - zuid |
 | Noord-Amerika |VS - oost |VS - west |
-| Noord-Amerika |VS - oost 2 |Central US |
+| Noord-Amerika |VS - oost 2 |VS - centraal |
 | Noord-Amerika |VS - noord-centraal |VS - zuid-centraal |
 | Noord-Amerika |VS - west 2 |VS - west-centraal |
 | Noorwegen | Noorwegen - oost | Noorwegen - west |

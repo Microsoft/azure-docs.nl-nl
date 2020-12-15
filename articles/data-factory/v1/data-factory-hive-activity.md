@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 6a337ad4d623ef73657d473974248cbefd016ba3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8a44838076b80c1b745937cf44f241c40ce6e5c2
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495545"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510155"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Gegevens transformeren met behulp van Hive-activiteit in Azure Data Factory 
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]
@@ -74,15 +74,15 @@ De HDInsight Hive-activiteit in een Data Factory [pijp lijn](data-factory-create
 ## <a name="syntax-details"></a>Syntaxis Details
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| naam |Naam van de activiteit |Ja |
-| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |Nee |
-| type |HDinsightHive |Ja |
-| invoer |Invoer die wordt gebruikt door de Hive-activiteit |Nee |
-| uitvoer |Uitvoer geproduceerd door de Hive-activiteit |Ja |
-| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Ja |
-| script |Het Hive-script inline opgeven |Nee |
-| scriptPath |Sla het Hive-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |Nee |
-| compliant |Geef para meters op als sleutel/waarde-paren voor het verwijzen in het Hive-script met behulp van ' hiveconf ' |Nee |
+| naam |Naam van de activiteit |Yes |
+| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |No |
+| type |HDinsightHive |Yes |
+| invoer |Invoer die wordt gebruikt door de Hive-activiteit |No |
+| uitvoer |Uitvoer geproduceerd door de Hive-activiteit |Yes |
+| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Yes |
+| script |Het Hive-script inline opgeven |No |
+| scriptPath |Sla het Hive-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |No |
+| compliant |Geef para meters op als sleutel/waarde-paren voor het verwijzen in het Hive-script met behulp van ' hiveconf ' |No |
 
 ## <a name="example"></a>Voorbeeld
 Laten we eens kijken naar een voor beeld van een spel logboek analyse waarin u de tijd wilt identificeren die gebruikers spelen die door uw bedrijf worden gestart. 
@@ -137,38 +137,39 @@ Als u dit Hive-script in een Data Factory-pijp lijn wilt uitvoeren, moet u het v
    > 
 5. Maak een pijp lijn met de activiteit HDInsightHive. Met de activiteit worden de gegevens verwerkt/getransformeerd.
 
-    ```JSON   
-    {   
-        "name": "HiveActivitySamplePipeline",
-        "properties": {
-        "activities": [
-            {
-                "name": "HiveActivitySample",
-                "type": "HDInsightHive",
-                "inputs": [
-                {
-                    "name": "HiveSampleIn"
-                }
-                ],
-                "outputs": [
-                {
-                    "name": "HiveSampleOut"
-                }
-                ],
-                "linkedServiceName": "HDInsightLinkedService",
-                "typeproperties": {
-                    "scriptPath": "adfwalkthrough\\scripts\\samplehive.hql",
-                    "scriptLinkedService": "StorageLinkedService"
-                },
-                "scheduler": {
-                    "frequency": "Hour",
-                    "interval": 1
-                }
-            }
-            ]
+  ```json
+  {
+    "name": "HiveActivitySamplePipeline",
+       "properties": {
+    "activities": [
+      {
+        "name": "HiveActivitySample",
+        "type": "HDInsightHive",
+        "inputs": [
+        {
+          "name": "HiveSampleIn"
         }
+        ],
+             "outputs": [
+               {
+                "name": "HiveSampleOut"
+               }
+             ],
+             "linkedServiceName": "HDInsightLinkedService",
+             "typeproperties": {
+                 "scriptPath": "adfwalkthrough\\scripts\\samplehive.hql",
+                 "scriptLinkedService": "StorageLinkedService"
+             },
+              "scheduler": {
+          "frequency": "Hour",
+                   "interval": 1
+             }
+           }
+      ]
     }
-    ```
+  }
+  ```
+
 6. Implementeer de pijp lijn. Zie [het artikel pijp lijnen maken](data-factory-create-pipelines.md) voor meer informatie. 
 7. Bewaak de pijp lijn met behulp van de data factory controle-en beheer weergaven. Zie het artikel [Data Factory pipelines controleren en beheren](data-factory-monitor-manage-pipelines.md) voor meer informatie. 
 
@@ -179,7 +180,7 @@ Ga als volgt te werk om het Hive-script met para meters te gebruiken
 
 * Definieer de para meters in **definieert**.
 
-    ```JSON  
+  ```JSON  
     {
         "name": "HiveActivitySamplePipeline",
           "properties": {

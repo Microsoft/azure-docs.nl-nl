@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 18b62e34ab57d1d7e937eb21b9ed2a7feffa758c
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: f7bd3822a0acaffe98c1a86eda5e10fe97ab4361
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95758945"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762581"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA met behulp van de verificatiecodestroom
 
@@ -52,10 +52,10 @@ Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raad
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 >
 > 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-> 1. Als u via uw account toegang hebt tot meerdere tenants, selecteert u uw account rechts bovenin en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
-> 1. Selecteer [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908).
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** wordt weergegeven, voert u een naam in voor de toepassing.
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 > 1. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.

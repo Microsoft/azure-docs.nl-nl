@@ -3,19 +3,19 @@ title: Eigen aren en gebruikers toevoegen in Azure DevTest Labs | Microsoft Docs
 description: Eigen aren en gebruikers toevoegen in Azure DevTest Labs met behulp van de Azure Portal of Power shell
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 6d6af68cd663e88af90d690375a4d45c538aad1d
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 2ca6a1ffa66ab294e34a1b4866953a393aba4d6d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92330186"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511974"
 ---
 # <a name="add-owners-and-users-in-azure-devtest-labs"></a>Eigen aren en gebruikers toevoegen in Azure DevTest Labs
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/How-to-set-security-in-your-DevTest-Lab/player]
 > 
 > 
 
-Toegang in Azure DevTest Labs wordt beheerd door [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../role-based-access-control/overview.md). Met behulp van Azure RBAC kunt u de taken binnen uw team scheiden in *rollen* , waar u alleen de benodigde toegangs rechten voor gebruikers hebt voor het uitvoeren van hun taken. Drie van deze Azure-rollen zijn *eigenaar*, *DevTest Labs-gebruiker*en *Inzender*. In dit artikel vindt u informatie over de acties die kunnen worden uitgevoerd in elk van de drie belangrijkste Azure-rollen. Van daaruit leert u hoe u gebruikers kunt toevoegen aan een Lab: zowel via de portal als via een Power shell-script, en hoe u gebruikers toevoegt op abonnements niveau.
+Toegang in Azure DevTest Labs wordt beheerd door [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../role-based-access-control/overview.md). Met behulp van Azure RBAC kunt u de taken binnen uw team scheiden in *rollen* , waar u alleen de benodigde toegangs rechten voor gebruikers hebt voor het uitvoeren van hun taken. Drie van deze Azure-rollen zijn *eigenaar*, *DevTest Labs-gebruiker* en *Inzender*. In dit artikel vindt u informatie over de acties die kunnen worden uitgevoerd in elk van de drie belangrijkste Azure-rollen. Van daaruit leert u hoe u gebruikers kunt toevoegen aan een Lab: zowel via de portal als via een Power shell-script, en hoe u gebruikers toevoegt op abonnements niveau.
 
 ## <a name="actions-that-can-be-performed-in-each-role"></a>Acties die kunnen worden uitgevoerd in elke rol
 Er zijn drie belang rijke rollen die u kunt toewijzen aan een gebruiker:
@@ -34,7 +34,7 @@ In de volgende tabel ziet u de acties die kunnen worden uitgevoerd door gebruike
 | **VM-basis taken** | | | |
 | Aangepaste installatie kopieën toevoegen en verwijderen |Nee |Ja |Ja |
 | Formules toevoegen, bijwerken en verwijderen |Ja |Ja |Ja |
-| White list Azure Marketplace-installatie kopieën |Nee |Ja |Ja |
+| Marketplace-installatie kopieën inschakelen |Nee |Ja |Ja |
 | **VM-taken** | | | |
 | Virtuele machines maken |Ja |Ja |Ja |
 | Vm's starten, stoppen en verwijderen |Alleen Vm's die door de gebruiker zijn gemaakt |Ja |Ja |
@@ -54,7 +54,7 @@ U kunt eigen aren en gebruikers toevoegen op het niveau van de test omgeving via
 De volgende stappen leiden u door het proces van het toevoegen van een eigenaar of gebruiker aan een lab in Azure DevTest Labs:
 
 1. Meld u aan bij de [Azure-portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het gewenste Lab.
 4. Selecteer op de Blade van het lab de optie **configuratie en beleid**. 
 5. Selecteer **toegangs beheer (IAM)** in het menu aan de linkerkant op de pagina **configuratie en beleid** . 
@@ -111,12 +111,12 @@ U kunt extra eigen aren toevoegen aan een lab via de Blade van het lab in de [Az
 Voer de volgende stappen uit om een eigenaar aan een Azure-abonnement toe te voegen:
 
 1. Meld u aan bij de [Azure-portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **abonnementen** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **abonnementen** in de lijst.
 3. Selecteer het gewenste abonnement.
 4. Selecteer het pictogram **toegang** . 
    
     ![Gebruikers toegang](./media/devtest-lab-add-devtest-user/access-users.png)
-5. Selecteer **toevoegen**op de Blade **gebruikers** .
+5. Selecteer **toevoegen** op de Blade **gebruikers** .
    
     ![Gebruiker toevoegen](./media/devtest-lab-add-devtest-user/devtest-users-blade.png)
 6. Selecteer op de Blade **een rol selecteren** de optie **eigenaar**.

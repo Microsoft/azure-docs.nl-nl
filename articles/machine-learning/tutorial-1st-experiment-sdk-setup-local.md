@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1b4ee9f06e8ed8bd47be1075070dea71b42b1cef
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 05ac0f78345e1c1d7643f24410d53b209ab7c375
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349066"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574153"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -52,7 +52,10 @@ U kunt de hulpprogramma's die u het beste kent gebruiken (bijvoorbeeld Conda en 
 pip install azureml-sdk
 ```
 
-## <a name="create-a-directory-structure-for-code"></a>Mapstructuur voor code maken
+> [!div class="nextstepaction"]
+> [Ik heb de SDK geïnstalleerd](?success=install-sdk#dir) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=install-sdk)
+
+## <a name="create-a-directory-structure-for-code"></a><a name="dir"></a>Mapstructuur voor code maken
 We raden aan dat u de volgende eenvoudige mapstructuur instelt voor deze zelfstudie:
 
 ```markdown
@@ -63,7 +66,11 @@ tutorial
 - `tutorial`: Map op het hoogste niveau van het project.
 - `.azureml`: Verborgen submap om Azure Machine Learning-configuratiebestanden op te slaan.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Een Azure Machine Learning-werkruimte maken
+
+> [!div class="nextstepaction"]
+> [Ik heb een map gemaakt](?success=create-dir#workspace) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-dir)
+
+## <a name="create-an-azure-machine-learning-workspace"></a><a name="workspace"></a>Een Azure Machine Learning-werkruimte maken
 
 Een werkruimte is een resource op het hoogste niveau voor Azure Machine Learning en is een centrale locatie voor het volgende:
 
@@ -119,7 +126,10 @@ Het bestand `.azureml/config.json` bevat de metagegevens die nodig zijn om verbi
 >
 > Verificatie is wel nog vereist om te communiceren met uw Azure Machine Learning-werkruimte.
 
-## <a name="create-an-azure-machine-learning-compute-cluster"></a>Een Azure Machine Learning-rekencluster maken
+> [!div class="nextstepaction"]
+> [Ik heb een werkruimte gemaakt](?success=create-workspace#cluster) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-workspace)
+
+## <a name="create-an-azure-machine-learning-compute-cluster"></a><a name="cluster"></a> Een Azure Machine Learning-rekencluster maken
 
 Maak een Python-script in de map `tutorial` op het hoogste niveau en geef deze de naam `02-create-compute.py`. Vul dit met de volgende code in om een Azure Machine Learning-rekencluster te maken dat automatisch wordt geschaald tussen nul en vier knooppunten:
 
@@ -167,6 +177,9 @@ tutorial
 └──01-create-workspace.py
 └──02-create-compute.py
 ```
+
+> [!div class="nextstepaction"]
+> [Ik heb een rekencluster gemaakt](?success=create-compute-cluster#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-compute-cluster)
 
 ## <a name="next-steps"></a>Volgende stappen
 

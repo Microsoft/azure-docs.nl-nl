@@ -3,12 +3,12 @@ title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 1ef83a568e41fe99f1e8e385a599de9c5ab7c0ca
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1d1deebd56717c63a745500198eb8df9e3687b49
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95529724"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558688"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -25,7 +25,7 @@ De processen van deze quickstart zorgen voor een omgeving die gereed is om virtu
 Kies het abonnement dat u wilt gebruiken om Azure VMware Solution te implementeren.  U kunt een nieuw abonnement maken of een bestaand gebruiken.
 
 >[!NOTE]
->Het abonnement moet gekoppeld zijn aan een Microsoft Enterprise Agreement.
+>Het abonnement moet zijn gekoppeld aan een Microsoft Enterprise Agreement of een Cloud Solution Provider Azure-abonnement. Zie [Een Azure VMware Solution-resource inschakelen](enable-azure-vmware-solution.md) voor meer informatie.
 
 ## <a name="resource-group"></a>Resourcegroep
 

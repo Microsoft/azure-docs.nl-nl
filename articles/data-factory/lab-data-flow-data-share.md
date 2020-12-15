@@ -6,13 +6,13 @@ ms.author: weetok
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 01/08/2020
-ms.openlocfilehash: 0a578f1edb51efd5f0905e663d42bf5a6fbfc783
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/09/2020
+ms.openlocfilehash: bdf9cbfef7dfdcf80976641b527ddeb61368d50b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489034"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921027"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Gegevensintegratie met behulp van Azure Data Factory en Azure Data Share
 
@@ -34,7 +34,7 @@ De gegevens die in dit lab worden gebruikt, zijn gegevens van New York City-taxi
 
 * **Azure Data Lake Storage Gen2-opslagaccount**: Als u geen ADLS Gen2-opslagaccount hebt, leert u hoe u [een ADLS Gen2-opslagaccount kunt maken](../storage/common/storage-account-create.md).
 
-* **Azure Synapse Analytics (voorheen SQL DW)** : Als u geen Azure Synapse Analytics (voorheen SQL DW) hebt, leert u hoe u [een Azure Synapse Analytics-instantie kunt maken](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
+* **Azure Synapse Analytics**: Als u geen Azure Synapse Analytics hebt, leert u hoe u [een Azure Synapse Analytics-instantie kunt maken](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
 * **Azure Data Factory**: Als u nog geen data factory hebt gemaakt, ziet u hoe u [een data factory kunt maken](./quickstart-create-data-factory-portal.md).
 
@@ -79,7 +79,7 @@ Met gekoppelde services van Azure Data Factory wordt de verbindingsinformatie na
 
 ### <a name="create-an-azure-synapse-analytics-linked-service"></a>Een gekoppelde Azure Synapse Analytics-service maken
 
-1. Herhaal hetzelfde proces om een gekoppelde Azure Synapse Analytics-service toe te voegen. Klik op het tabblad verbindingen op **Nieuw**. Selecteer de tegel **Azure Synapse Analytics (voorheen SQL DW)** en klik op doorgaan.
+1. Herhaal hetzelfde proces om een gekoppelde Azure Synapse Analytics-service toe te voegen. Klik op het tabblad verbindingen op **Nieuw**. Selecteer de tegel **Azure Synapse Analytics** en klik op doorgaan.
 
     ![Portal configureren 6](media/lab-data-flow-data-share/configure6.png)
 1. Voer in het deelvenster Configuratie van gekoppelde service 'SQLDW' in als de naam van de gekoppelde service. Voer uw aanmeldingsgegevens in om data factory verbinding te laten maken met uw database. Als u SQL-verificatie gebruikt, voert u de servernaam, de database, uw gebruikersnaam en wachtwoord in. U kunt controleren of de verbindingsgegevens juist zijn door te klikken op **Verbinding testen**. Klik op **Maken** als u klaar bent.
@@ -274,7 +274,7 @@ De gegevensstroom die in deze stap wordt gemaakt, wordt gekoppeld aan de gegeven
 
     ![Portalsink 2](media/lab-data-flow-data-share/sink2.png)
 
-1. Selecteer de tegel **Azure Synapse Analytics (voorheen SQL DW)** en klik op doorgaan.
+1. Selecteer de tegel **Azure Synapse Analytics** en klik op doorgaan.
 
     ![Portalsink 3](media/lab-data-flow-data-share/sink3.png)
 1. Roep de gegevensset 'AggregatedTaxiData' aan. Selecteer 'SQLDW' als uw gekoppelde service. Selecteer **Nieuwe tabel maken** en geef de nieuwe tabel de naam dbo.AggregateTaxiData. Als u klaar bent, klikt u op OK

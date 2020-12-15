@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: designer
-ms.openlocfilehash: 28358db2e538867957fcc8d4984cf1c028f9ab2c
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 14be695f2f58b9738af11a3d2ca3f06592a1cc6e
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030358"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575955"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 
@@ -123,7 +123,7 @@ Zie [Een Azure Machine Learning-model gebruiken dat als een webservice is geïmp
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u de belangrijkste stappen geleerd voor het maken, implementeren en gebruiken van een machine learning-model in de ontwerpfunctie. Zie de andere voorbeeldpijplijnen voor meer informatie over hoe u de ontwerpfunctie kunt gebruiken om andere soorten problemen op te lossen.
+In deze zelfstudie hebt u de belangrijkste stappen geleerd voor het maken, implementeren en gebruiken van een machine learning-model in de ontwerpfunctie. Bekijk de volgende koppelingen voor meer informatie over hoe u de ontwerpfunctie kunt gebruiken:
 
-> [!div class="nextstepaction"]
-> [Voorbeelden ontwerpfunctie](samples-designer.md)
++ [Voorbeelden van ontwerpfunctie](samples-designer.md): Meer informatie over het gebruik van de ontwerpfunctie om andere typen problemen op te lossen.
++ [Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk](how-to-enable-studio-virtual-network.md).

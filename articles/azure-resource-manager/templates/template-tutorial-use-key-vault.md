@@ -1,21 +1,21 @@
 ---
 title: Azure Key Vault gebruiken in sjablonen
-description: Ontdek hoe u Azure Key Vault gebruikt om veilig parameterwaarden door te geven tijdens het implementeren van Resource Manager-sjablonen
+description: Ontdek hoe u Azure Key Vault gebruikt om veilig parameterwaarden door te geven tijdens het implementeren van ARM-sjablonen (Azure Resource Manager).
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 73a50c282eee023bff525bc737bd2170938de1dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75eb977559573b72883de3ddbc27391c7e299a6f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86119273"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929313"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Zelfstudie: Azure Key Vault integreren in ARM-sjabloonimplementatie
 
-Ontdek hoe u geheime waarden uit Azure Key Vault ophaalt en deze als parameters doorgeeft tijdens de implementatie van een Azure Resource Manager-sjabloon. De parameterwaarde wordt nooit weergegeven, omdat u alleen naar de sleutelkluis-ID verwijst. U kunt een statische of dynamische ID gebruiken om naar de geheime waarden in de sleutelkluis te verwijzen. In deze zelfstudie wordt een statische ID gebruikt. Met de statische ID verwijst u naar de sleutelkluis in het parameterbestand van de sjabloon, niet het sjabloonbestand. Zie [Azure Key Vault gebruiken om veilige parameterwaarden door te geven tijdens de implementatie](./key-vault-parameter.md) voor meer informatie over beide methoden.
+Ontdek hoe u geheime waarden uit Azure Key Vault ophaalt en deze als parameters doorgeeft tijdens de implementatie van een ARM-sjabloon (Azure Resource Manager). De parameterwaarde wordt nooit weergegeven, omdat u alleen naar de sleutelkluis-ID verwijst. U kunt een statische of dynamische ID gebruiken om naar de geheime waarden in de sleutelkluis te verwijzen. In deze zelfstudie wordt een statische ID gebruikt. Met de statische ID verwijst u naar de sleutelkluis in het parameterbestand van de sjabloon, niet het sjabloonbestand. Zie [Azure Key Vault gebruiken om veilige parameterwaarden door te geven tijdens de implementatie](./key-vault-parameter.md) voor meer informatie over beide methoden.
 
 In de zelfstudie[Implementatievolgorde van resources instellen](./template-tutorial-create-templates-with-dependent-resources.md) maakt u een virtuele machine. U moet de gebruikersnaam en het wachtwoord voor de VM-beheerder opgeven. In plaats van het wachtwoord op te geven, kunt u het wachtwoord vooraf opslaan in een Azure-sleutelkluis en vervolgens de sjabloon aanpassen om het wachtwoord van de sleutelkluis tijdens de implementatie op te halen.
 
@@ -37,7 +37,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Gebruik een gegenereerd wachtwoord voor het beheerdersaccount van de virtuele machine om de beveiliging te verbeteren. Hier volgt een voorbeeld voor het genereren van een wachtwoord:
 
     ```console

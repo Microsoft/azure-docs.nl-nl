@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 44365dec247b9f3135a090cee397cad32598fd29
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f621d11553101c2c0bcfce804b26c218ae58670c
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977864"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576465"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
 
@@ -64,12 +64,32 @@ De volgende tabel bevat de set van ondersteunde browsers en versies die momentee
 
 |                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    |
 | -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ |
-| **De aanroepende clientbibliotheek gebruiken** | Chrome *, nieuwe Microsoft Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
+| **De aanroepende clientbibliotheek gebruiken** | Chrome *, nieuwe Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
 
 
 \* Let wel dat naast de vorige twee releases ook de meest recente versie van Chrome wordt ondersteund.<br/>
 
 \* * Let wel dat Safari-versies 13.1 + worden ondersteund. Uitgaande video voor Safari macOS wordt nog niet ondersteund, maar wordt wel ondersteund op iOS. Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop iOS.
+
+## <a name="calling-client---browser-security-model"></a>Aanroepende client - beveiligingsmodel voor browsers
+
+### <a name="user-webrtc-over-https"></a>Gebruikers-WebRTC via HTTPS
+
+WebRTC-API's zoals `getUserMedia` vereisen dat de app die deze API's aanroept, geleverd wordt via HTTPS.
+
+Voor lokale ontwikkeling kunt u `http://localhost` gebruiken.
+
+### <a name="embed-the-communication-services-calling-sdk-in-an-iframe"></a>De aanroepende SDK voor communicatieservices insluiten in een iframe
+
+Er wordt een nieuw [machtigingsbeleid (ook wel functiebeleid genoemd)](https://www.w3.org/TR/permissions-policy-1/#iframe-allow-attribute) door verschillende browsers toegepast. Dit beleid is van invloed op het aanroepen van scenario's door te bepalen hoe toepassingen toegang hebben tot de camera en microfoon van een apparaat via een cross-origin iframe-element.
+
+Als u een iframe wilt gebruiken om een deel van de app te hosten vanuit een ander domein, moet u het `allow`-kenmerk met de juiste waarde toevoegen aan uw iframe.
+
+Met deze iframe kunt u bijvoorbeeld toegang tot de camera en microfoon toestaan:
+
+```html
+<iframe allow="camera *; microphone *">
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

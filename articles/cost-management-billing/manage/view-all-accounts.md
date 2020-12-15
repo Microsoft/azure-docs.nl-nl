@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.author: banders
-ms.openlocfilehash: 3df6b694f3a40cef17c6e0114464ad4aa2fa30ce
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a9e3297ad055157d552424ecc48db6801f43b220
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344331"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929952"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Factureringsaccounts en -bereiken in de Azure-portal
 
@@ -25,7 +25,7 @@ De Azure-portal biedt momenteel ondersteuning voor de volgende typen facturering
 
 - **Enterprise Overeenkomst**: Er wordt een factureringsaccount voor een Enterprise-overeenkomst gemaakt wanneer uw organisatie een [Enterprise-overeenkomst (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) ondertekent om Azure te gebruiken. Een Enterprise-overeenkomst mag maximaal 2000 abonnementen bevatten.
 
-- **Microsoft-klantovereenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst aangemaakt, wanneer uw organisatie samenwerkt met een Microsoft-vertegenwoordiger om een Microsoft-klantovereenkomst te ondertekenen. Sommige klanten in bepaalde regio's, die zich via de Azure-website aanmelden voor een [account met betalen-naar-gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/) of een [gratis Azure-account](https://azure.microsoft.com/offers/ms-azr-0044p/), hebben mogelijk ook een factureringsaccount voor een Microsoft-klantovereenkomst. Een Microsoft-klantovereenkomst mag maximaal 20 abonnementen bevatten. Voor meer informatie, zie [Aan de slag met uw factureringsaccount voor een Microsoft-klantovereenkomst](../understand/mca-overview.md).
+- **Microsoft-klantovereenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst aangemaakt, wanneer uw organisatie samenwerkt met een Microsoft-vertegenwoordiger om een Microsoft-klantovereenkomst te ondertekenen. Sommige klanten in bepaalde regio's, die zich via de Azure-website aanmelden voor een [account met betalen-naar-gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/) of een [gratis Azure-account](https://azure.microsoft.com/offers/ms-azr-0044p/), hebben mogelijk ook een factureringsaccount voor een Microsoft-klantovereenkomst. Een Microsoft-klantovereenkomst voor één persoon mag maximaal 20 abonnementen bevatten. Voor een Microsoft-klantovereenkomst voor een onderneming geldt geen limiet voor het aantal abonnementen. Voor meer informatie, zie [Aan de slag met uw factureringsaccount voor een Microsoft-klantovereenkomst](../understand/mca-overview.md).
 
 - **Microsoft Partner-overeenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst gemaakt voor CSP-partners (Cloud Solution Provider) om klanten te beheren in de nieuwe Commerce-versie. Partners moeten minstens één klant met een [Azure-abonnement](/partner-center/purchase-azure-plan) hebben om hun factureringsaccount te kunnen beheren in de Azure-portal. Raadpleeg [Aan de slag met uw factureringsaccount voor een Microsoft-klantovereenkomst](../understand/mpa-overview.md) voor meer informatie.
 

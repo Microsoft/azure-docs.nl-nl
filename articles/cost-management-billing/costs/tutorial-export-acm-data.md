@@ -3,18 +3,18 @@ title: 'Zelfstudie: Gegevensexports uit Azure Cost Management instellen en beher
 description: In dit artikel leest u hoe u gegevensexports uit Azure Cost Management instelt en beheert, zodat u deze kunt gebruiken in externe systemen.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/20/2020
+ms.date: 12/7/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.custom: seodec18
-ms.openlocfilehash: dcf9b925e7f0ce691a5a50850a30f723d48ec50b
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.custom: seodec18, devx-track-azurepowershell
+ms.openlocfilehash: 32989b4d5c595416f82fc9d3f1cec2eddec1d6ee
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96007219"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96929256"
 ---
 # <a name="tutorial-create-and-manage-exported-data"></a>Zelfstudie: Geëxporteerde gegevens maken en beheren
 
@@ -58,20 +58,20 @@ Als u een gegevensexport wilt maken of weergeven, of een export wilt plannen, op
 > - Naast abonnementen kunt u exports maken voor resourcegroepen, beheergroepen, afdelingen en registraties. Zie [Understand and work with scopes](understand-work-scopes.md) (Engelstalig) voor meer informatie over bereiken.
 >- Wanneer u als partner bent aangemeld bij het bereik van het factureringsaccount of bij de tenant van een klant, kunt u gegevens exporteren naar een Azure Storage-account dat is gekoppeld aan uw partneropslagaccount. U moet hiervoor wel een actief abonnement hebben in uw CSP-tenant.
 
-1. Selecteer **Toevoegen** en typ een naam voor de export. 
+1. Selecteer **Toevoegen** en typ een naam voor de export.
 1. Maak een selectie voor de **Metrische gegevens**:
     - **Werkelijke kosten (gebruik en aankopen)** : selecteer dit om standaardgebruik en -aankopen te exporteren
     - **Afgeschreven kosten (gebruik en aankopen)** : selecteer dit om de afgeschreven kosten te exporteren voor aankopen zoals Azure-reserveringen
 1. Maak een selectie voor **Exporttype**:
     - **Dagelijkse export van kosten voor maand tot heden**: biedt dagelijks een nieuw exportbestand voor uw kosten van maand tot heden. De meest recente gegevens worden uit de vorige dagelijkse exports samengevoegd.
-    - **Wekelijkse export van de kosten voor de afgelopen zeven dagen**: maakt een wekelijkse export van uw kosten in de afgelopen zeven dagen, vanaf de geselecteerde startdatum van de export.  
-    - **Maandelijkse export van de kosten van de afgelopen maand**: biedt een export van uw kosten van de afgelopen maand, vergeleken met de maand waarin u de export maakt. Vanaf dit moment voert de planning een export uit op de vijfde dag van elke nieuwe maand, met hierin uw kosten voor de vorige maand.  
-    - **Eenmalige export**: stelt u in staat een datumbereik te kiezen voor historische gegevens om te exporteren naar Azure-blobopslag. U kunt de historische kosten voor maximaal 90 dagen exporteren, vanaf de door u gekozen dag. Deze export wordt onmiddellijk uitgevoerd en is binnen twee uur beschikbaar in uw opslagaccount.  
+    - **Wekelijkse export van de kosten voor de afgelopen zeven dagen**: maakt een wekelijkse export van uw kosten in de afgelopen zeven dagen, vanaf de geselecteerde startdatum van de export.
+    - **Maandelijkse export van de kosten van de afgelopen maand**: biedt een export van uw kosten van de afgelopen maand, vergeleken met de maand waarin u de export maakt. Vanaf dit moment voert de planning een export uit op de vijfde dag van elke nieuwe maand, met hierin uw kosten voor de vorige maand.
+    - **Eenmalige export**: stelt u in staat een datumbereik te kiezen voor historische gegevens om te exporteren naar Azure-blobopslag. U kunt de historische kosten voor maximaal 90 dagen exporteren, vanaf de door u gekozen dag. Deze export wordt onmiddellijk uitgevoerd en is binnen twee uur beschikbaar in uw opslagaccount.
         Afhankelijk van uw exporttype kiest u een begindatum of een datum **Van** - **Tot en met**.
-1. Geef het abonnement voor uw Azure opslagaccount op, en selecteer vervolgens een resourcegroep of maak een nieuwe. 
-1. Selecteer de naam van het opslagaccount of maak een nieuwe. 
+1. Geef het abonnement voor uw Azure opslagaccount op, en selecteer vervolgens een resourcegroep of maak een nieuwe.
+1. Selecteer de naam van het opslagaccount of maak een nieuwe.
 1. Selecteer de locatie (Azure-regio).
-1. Geef de opslagcontainer en het pad naar de map op waar u het exportbestand wilt opslaan. 
+1. Geef de opslagcontainer en het pad naar de map op waar u het exportbestand wilt opslaan.
     :::image type="content" source="./media/tutorial-export-acm-data/basics_exports.png" alt-text="Voorbeeld van nieuwe export" lightbox="./media/tutorial-export-acm-data/basics_exports.png":::
 1. Controleer de details van uw export en selecteer **Maken**.
 
@@ -132,7 +132,7 @@ Begin door de omgeving voor te bereiden op de Azure CLI:
 1. Een export bijwerken met behulp van de opdracht [az costmanagement export update](/cli/azure/ext/costmanagement/costmanagement/export#ext_costmanagement_az_costmanagement_export_update):
 
    ```azurecli
-   az costmanagement export update --name DemoExport 
+   az costmanagement export update --name DemoExport
       --scope "subscriptions/00000000-0000-0000-0000-000000000000" --storage-directory demodirectory02
    ```
 
@@ -145,6 +145,89 @@ U kunt een export verwijderen met de opdracht [az costmanagement export delete](
 
 ```azurecli
 az costmanagement export delete --name DemoExport --scope "subscriptions/00000000-0000-0000-0000-000000000000"
+```
+
+### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+Begin door de omgeving voor te bereiden op Azure PowerShell:
+
+[!INCLUDE [azure-powershell-requirements-no-header.md](../../../includes/azure-powershell-requirements-no-header.md)]
+
+* > [!IMPORTANT]
+  > Zo lang de PowerShell-module **Az.CostManagement** in de preview-fase is, moet u deze afzonderlijk installeren met behulp van de cmdlet `Install-Module`. Nadat de PowerShell-module algemeen beschikbaar is geworden, wordt deze onderdeel van toekomstige releases van de Az PowerShell-module en is deze standaard beschikbaar vanuit Azure Cloud Shell.
+
+  ```azurepowershell-interactive
+  Install-Module -Name Az.CostManagement
+  ```
+
+1. Nadat u zich hebt aangemeld, gebruikt u de opdracht [Get-AzCostManagementExport](/powershell/module/Az.CostManagement/get-azcostmanagementexport) om uw huidige exports te bekijken:
+
+   ```azurepowershell-interactive
+   Get-AzCostManagementExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
+   ```
+
+   >[!NOTE]
+   >
+   >* Naast abonnementen kunt u exports maken voor resourcegroepen en beheergroepen. Zie [Understand and work with scopes](understand-work-scopes.md) (Engelstalig) voor meer informatie over bereiken.
+   >* Wanneer u als partner bent aangemeld bij het bereik van het factureringsaccount of bij de tenant van een klant, kunt u gegevens exporteren naar een Azure Storage-account dat is gekoppeld aan uw partneropslagaccount. U moet hiervoor wel een actief abonnement hebben in uw CSP-tenant.
+
+1. Maak een resourcegroep of gebruik een bestaande resourcegroep. Maak een resourcegroep met de cdmlet [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup):
+
+   ```azurepowershell-interactive
+   New-AzResourceGroup -Name TreyNetwork -Location eastus
+   ```
+
+1. Maak een opslagaccount om de exports te ontvangen of gebruik een bestaand opslagaccount. Maak een opslagaccount met de cmdlet [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount):
+
+   ```azurepowershell-interactive
+   New-AzStorageAccount -ResourceGroupName TreyNetwork -AccountName cmdemo -SkuName Standard_RAGRS -Location eastus
+   ```
+
+1. Voer de cmdlet [New-AzCostManagementExport](/powershell/module/Az.CostManagement/new-azcostmanagementexport) uit om de export te maken:
+
+   ```azurepowershell-interactive
+   $Params = @{
+     Name = 'DemoExport'
+     DefinitionType = 'ActualCost'
+     Scope = 'subscriptions/00000000-0000-0000-0000-000000000000'
+     DestinationResourceId = '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/treynetwork/providers/Microsoft.Storage/storageAccounts/cmdemo'
+     DestinationContainer = 'democontainer'
+     DefinitionTimeframe = 'MonthToDate'
+     ScheduleRecurrence = 'Daily'
+     RecurrencePeriodFrom = '2020-06-01T00:00:00Z'
+     RecurrencePeriodTo = '2020-10-31T00:00:00Z'
+     ScheduleStatus = 'Active'
+     DestinationRootFolderPath = 'demodirectory'
+     Format = 'Csv'
+   }
+   New-AzCostManagementExport @Params
+   ```
+
+   Voor de parameter **DefinitionType** kunt u `ActualCost`, `AmortizedCost` of `Usage` kiezen.
+
+   In dit voorbeeld wordt `MonthToDate` gebruikt. De export maakt dagelijks een exportbestand voor de kosten van de maand tot heden. De meest recente gegevens worden uit de vorige dagelijkse exports samengevoegd van deze maand.
+
+1. Gebruik de cmdlet `Get-AzCostManagementExport` om de details van uw exportbewerking te bekijken:
+
+   ```azurepowershell-interactive
+   Get-AzCostManagementExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
+   ```
+
+1. Gebruik de cmdlet [Update-AzCostManagementExport](/powershell/module/Az.CostManagement/update-azcostmanagementexport) op een export bij te werken:
+
+   ```azurepowershell-interactive
+   Update-AzCostManagementExport -Name DemoExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000' -DestinationRootFolderPath demodirectory02
+   ```
+
+   In dit voorbeeld wordt de uitvoermap gewijzigd.
+
+>[!NOTE]
+>Het kan 12 tot 24 uur duren voordat de export voor het eerst wordt uitgevoerd. Het kan echter langer duren voordat er in het exportbestand gegevens worden weergegeven.
+
+Gebruik de cmdlet [Remove-AzCostManagementExport](/powershell/module/Az.CostManagement/remove-azcostmanagementexport) op een export te verwijderen:
+
+```azurepowershell-interactive
+Remove-AzCostManagementExport -Name DemoExport -Scope 'subscriptions/00000000-0000-0000-0000-000000000000'
 ```
 
 ---
@@ -162,9 +245,9 @@ Als u een Enterprise Agreement hebt, kunt u een beheergroep gebruiken om gegeven
 Exports voor beheergroepen van andere typen abonnementen worden niet ondersteund.
 
 1. Als u nog geen beheergroep hebt gemaakt, maakt u een groep en wijst u er abonnementen aan toe.
-1. Stel in kostenanalyse het bereik in op uw beheergroep, en selecteer **Deze beheergroep selecteren**.  
+1. Stel in kostenanalyse het bereik in op uw beheergroep, en selecteer **Deze beheergroep selecteren**.
     :::image type="content" source="./media/tutorial-export-acm-data/management-group-scope.png" alt-text="Voorbeeld van de optie Deze beheergroep selecteren" lightbox="./media/tutorial-export-acm-data/management-group-scope.png":::
-1. Maak een export in het bereik om gegevens over kostenbeheer op te halen voor de abonnementen in de beheergroep.  
+1. Maak een export in het bereik om gegevens over kostenbeheer op te halen voor de abonnementen in de beheergroep.
     :::image type="content" source="./media/tutorial-export-acm-data/new-export-management-group-scope.png" alt-text="Voorbeeld van de optie Nieuwe export maken, met het bereik van een beheergroep":::
 
 ## <a name="verify-that-data-is-collected"></a>Controleren of de gegevens zijn geëxporteerd
@@ -196,7 +279,7 @@ U kunt het geëxporteerde CSV-bestand ook downloaden in de Azure-portal. In de v
 
 [![Voorbeeld van download met exportgegevens](./media/tutorial-export-acm-data/download-export.png)](./media/tutorial-export-acm-data/download-export.png#lightbox)
 
-## <a name="view-export-run-history"></a>Bekijk export uitvoeringsgeschiedenis  
+## <a name="view-export-run-history"></a>Bekijk export uitvoeringsgeschiedenis
 
 U kunt de uitvoeringsgeschiedenis van uw geplande export bekijken door een individuele export te selecteren op de exportlijstpagina. De exportlijstpagina biedt u ook snelle toegang om de looptijd van uw vorige exporten te bekijken en de volgende keer dat de export wordt uitgevoerd. Hier is een voorbeeld dat de uitvoeringsgeschiedenis laat zien.
 

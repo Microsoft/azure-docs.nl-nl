@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cd4c70354920655507f987f43a542e4b474803e1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e4463b932c95e224981b74093effbb355de24f6b
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170936"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509815"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph bewerkingen die beschikbaar zijn voor Azure AD B2C
 
@@ -107,7 +107,7 @@ De resource op het hoogste niveau voor beleids sleutels in de Microsoft Graph-AP
 
 - [Uitbrei ding-eigenschappen weer geven](/graph/api/application-list-extensionproperty)
 
-Azure AD B2C biedt een directory die 100 aangepaste kenmerken per gebruiker kan bevatten. Voor gebruikers stromen worden deze extensie-eigenschappen [beheerd met behulp van de Azure Portal](custom-policy-custom-attributes.md). Azure AD B2C maakt voor aangepaste beleids regels de eigenschap voor u, de eerste keer dat het beleid een waarde naar de extensie-eigenschap schrijft.
+Azure AD B2C biedt een directory die 100 aangepaste kenmerken per gebruiker kan bevatten. Voor gebruikers stromen worden deze extensie-eigenschappen [beheerd met behulp van de Azure Portal](user-flow-custom-attributes.md). Azure AD B2C maakt voor aangepaste beleids regels de eigenschap voor u, de eerste keer dat het beleid een waarde naar de extensie-eigenschap schrijft.
 
 ## <a name="audit-logs"></a>Auditlogboeken
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: b52bfc14906d8e47c804ae15ee898f6ca00784af
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8642f4284770df54704a4e7066054d3bb4640486
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503841"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545865"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Azure Active Directory B2C: codevoorbeelden
 
@@ -68,15 +68,25 @@ De volgende tabellen bieden koppelingen naar codevoorbeelden voor het gebruik va
 | [Node.js](https://github.com/Azure-Samples/active-directory-nodejs-external-identities-api-connector-azure-function-validate)   | Dit Azure Function-voorbeeld voor Node.js laat zien hoe u aanmeldingen kunt beperken tot specifieke e-maildomeinen en door de gebruiker verstrekte informatie kunt valideren.  |
 | [Python](https://github.com/Azure-Samples/active-directory-python-external-identities-api-connector-azure-function-validate)    | Dit Azure Function-voorbeeld voor Python laat zien hoe u aanmeldingen kunt beperken tot specifieke e-maildomeinen en door de gebruiker verstrekte informatie kunt valideren.    |
 
-### <a name="identity-verification-with-api-connectors"></a>Identiteitsverificatie met API-connectors
+
+### <a name="automated-fraud-protection-services--captcha"></a>Automatische fraudebeschermingsservices & CAPTCHA
+| Voorbeeld                                                                                                            | Beschrijving                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Fraude- en misbruikbescherming van Arkose Labs](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) | In dit voorbeeld ziet u hoe u de aanmeldingen van uw gebruikers kunt beveiligen met behulp van de Arkose Labs-service voor fraude- en misbruikbescherming. |
+| [reCAPTCHA](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-captcha) | Dit voorbeeld laat zien hoe u de aanmeldingen van uw gebruikers kunt beveiligen met behulp van een reCAPTCHA-test om geautomatiseerd misbruik te voorkomen. |
+
+
+### <a name="identity-verification"></a>Identiteitverificatie
 
 | Voorbeeld                                                                                                            | Beschrijving                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [IDology](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-idology-identity-verification) | In dit voorbeeld ziet u hoe u een gebruikersidentiteit kunt verifiëren als onderdeel van uw aanmelding via zelfservice, door een API-connector te gebruiken om te integreren met IDology. |
-| [Experian](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-experian-identity-verification) | In dit voorbeeld ziet u hoe u een gebruikersidentiteit kunt verifiëren als onderdeel van uw aanmelding via zelfservice, door een API-connector te gebruiken om te integreren met Experian. |
+| [IDology](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-idology-identity-verification) | In dit voorbeeld ziet u hoe u een gebruikersidentiteit kunt verifiëren als onderdeel van uw aanmeldingsstromen, door een API-connector te gebruiken om te integreren met IDology. |
+| [Experian](https://github.com/Azure-Samples/active-directory-dotnet-external-identities-experian-identity-verification) | In dit voorbeeld ziet u hoe u een gebruikersidentiteit kunt verifiëren als onderdeel van uw aanmeldingsstromen, door een API-connector te gebruiken om te integreren met Experian. |
 
-### <a name="community-samples"></a>Communityvoorbeelden
+
+### <a name="other"></a>Anders
 
 | Voorbeeld                                                                                                            | Beschrijving                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [Uitnodigingscode](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-invitation-code) | In dit voorbeeld ziet u hoe u de registratie van specifieke doelgroepen kunt beperken met behulp van uitnodigingscodes.|
 | [Communityvoorbeelden van API-connector](https://github.com/azure-ad-b2c/api-connector-samples) | Deze opslagplaats bevat door de community onderhouden voorbeelden van scenario's die door API-connectors worden ingeschakeld.|

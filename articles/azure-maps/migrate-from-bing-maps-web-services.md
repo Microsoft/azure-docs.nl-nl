@@ -3,18 +3,18 @@ title: 'Zelfstudie: Webservices migreren vanuit Bing Maps | Microsoft Azure Maps
 description: Zelfstudie over het migreren van webservices vanuit Bing Kaarten naar Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 9/10/2020
+ms.date: 12/07/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: c6e63f67aca279b64829e67e1aa06a69d312fd58
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d257c66de8fb62fb57c573d91966f3e7d8d1b123
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897021"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904955"
 ---
 # <a name="tutorial---migrate-web-service-from-bing-maps"></a>Zelfstudie: webservice migreren vanuit Bing Kaarten
 
@@ -37,21 +37,21 @@ De volgende tabel bevat de API’s van de Azure Maps-service die vergelijkbare f
 | Services voor ruimtelijke gegevens (SDS)           | [Route](/rest/api/maps/search) + [zoeken](/rest/api/maps/route) + andere Azure-services |
 | Tijdzone                             | [Tijdzone](/rest/api/maps/timezone)  |
 | Verkeersincidenten                     | [Details van verkeersincidenten](/rest/api/maps/traffic/gettrafficincidentdetail)                     |
+| Terrein                             | [Terrein (preview)](/rest/api/maps/elevation)
 
 De volgende service-API's zijn momenteel niet beschikbaar in Azure Maps:
 
--   Hoogtetoename - Gepland
 -   Geoptimaliseerde reisroutes - Gepland. De route-API van Azure Maps ondersteunt geen optimalisatie voor één voertuig voor verkopers in de buitendienst.
 -   Metagegevens van afbeeldingen: voornamelijk gebruikt voor het ophalen van tegel-Url's in Bing Maps. Azure Maps heeft een zelfstandige service voor het rechtstreeks openen van kaarttegels.
 
 Azure Maps heeft verschillende aanvullende REST-webservices die interessant kunnen zijn;
 
--   [Azure Maps Creator](./creator-indoor-maps.md) – Maak een aangepaste digitale dubbel van gebouwen en spaties.
+-   [Azure Maps Creator (preview)](./creator-indoor-maps.md) – Maak een aangepaste digitale dubbel van gebouwen en ruimten.
 -   [Ruimtelijke bewerkingen ](/rest/api/maps/spatial) – Besteed complexe ruimtelijke berekeningen en bewerkingen, zoals geofencing, uit aan een service.
 -   [Kaarttegels](/rest/api/maps/render/getmaptile) – Krijg toegang tot weg- en afbeeldingstegels vanuit Azure Maps als raster- en vectortegels.
 -   [Batchroutering](/rest/api/maps/route/postroutedirectionsbatchpreview) – Hiermee kunnen maximaal 1.000 routeaanvragen in één batch worden gemaakt gedurende een bepaalde periode. Routes worden parallel op de server berekend voor een snellere verwerking.
 -   [Verkeers](/rest/api/maps/traffic)doorstroming – Krijg toegang tot realtime gegevens over verkeerstromen op raster- en vectortegels.
--   [Geolocatie-API](/rest/api/maps/geolocation/getiptolocationpreview) – Haal de locatie van een IP-adres op.
+-   [Geolocatie-API (preview)](/rest/api/maps/geolocation/getiptolocationpreview) – Haal de locatie van een IP-adres op.
 -   [Weerdiensten](/rest/api/maps/weather) – Krijg toegang tot realtime weersgegevens en weersvoorspellingen.
 
 Controleer ook de volgende handleidingen voor aanbevolen procedures:
@@ -87,7 +87,7 @@ De volgende tabellen bevatten kruisverwijzingen naar de API-parameters van Bing 
 | `include` (`incl`)               | N.v.t. – De ISO2-code van het land wordt altijd geretourneerd door Azure Maps. |
 | `key`                              | `subscription-key` - zie ook de documentatie [Verificatie met Azure Maps](./azure-maps-authentication.md). |
 | `culture` (`c`)                  | `language` - zie de documentatie [Ondersteunde talen](./supported-languages.md). |
-| `userRegion` (`ur`)              | `view` -Zie de documentatie over [ondersteunde weergaven](./supported-languages.md#azure-maps-supported-views). |
+| `userRegion` (`ur`)              | `view` – Zie de documentatie over [ondersteunde weergaven](./supported-languages.md#azure-maps-supported-views). |
 
 Azure Maps ondersteunt ook;
 
@@ -186,7 +186,7 @@ De routeringsservice van Azure Maps biedt de volgende API's voor het berekenen v
 
 -   [Route berekenen](/rest/api/maps/route/getroutedirections): Een route berekenen en de aanvraag direct laten verwerken. Deze API biedt ondersteuning voor zowel GET- als POST-aanvragen. POST-aanvragen worden aanbevolen als er een groot aantal routepunten wordt opgegeven of als er veel routeopties worden gebruikt, om te voorkomen dat de URL-aanvraag te lang wordt en problemen veroorzaakt.
 -   [Batchroute](/rest/api/maps/route/postroutedirectionsbatchpreview): Een aanvraag met maximaal 1.000 routeaanvragen maken en deze in de loop van de tijd laten verwerken. Alle gegevens worden parallel op de server verwerkt en als dit proces is voltooid, kan de volledige resultatenset worden gedownload.
--   [Mobility-services](/rest/api/maps/mobility): Routes en routebeschrijvingen berekenen op basis van het openbaar vervoer.
+-   [Mobility-service (preview)](/rest/api/maps/mobility): Routes en routebeschrijvingen berekenen op basis van het openbaar vervoer.
 
 De volgende tabel bevat de API-parameters in Bing Maps en de vergelijkbare API-parameters in Azure Maps.
 
@@ -614,7 +614,7 @@ Met Bing Maps kunnen maximaal 200.000 adressen worden doorgegeven in één aanvr
 
 Azure Maps heeft een service voor batchgewijze geocodering, maar daarmee kunnen maximaal 10.000 adressen worden doorgegeven in één aanvraag. Afhankelijk van de grootte van de gegevensset en de belasting van de service wordt de aanvraag in enkele seconden tot minuten verwerkt. Elk adres in de aanvraag heeft een transactie gegenereerd. De service voor batchgewijze geocodering in Azure Maps is alleen beschikbaar vanaf categorie S1.
 
-Een andere optie voor het geocoderen van een groot aantal adressen met Azure Maps is door parallelle aanvragen te maken voor de standaard zoek-API's. Deze services accepteren slechts één adres per aanvraag, maar kunnen worden gebruikt in combinatie met de S0-categorie, die ook limieten voor vrij gebruik biedt. Met de categorie S0 kunnen vanuit één account maximaal 50 aanvragen per seconde naar het Azure Maps-platform worden verzonden. Tijdens de verwerking moeten de aanvragen dus binnen die limiet vallen. In dat geval is het mogelijk om een uur meer dan 180.000 adressen te verwerken. Categorie S1 heeft geen gedocumenteerde limiet voor het aantal query's per seconde dat met één account kan worden gemaakt, waardoor veel meer gegevens sneller kunnen worden verwerkt. Het gebruik van de service voor batchgewijze geocodering helpt echter de totale hoeveelheid gegevens die wordt overgedragen te verminderen, waardoor het netwerkverkeer drastisch afneemt.
+Een andere optie voor het geocoderen van een groot aantal adressen met Azure Maps is door parallelle aanvragen te maken voor de standaard zoek-API's. Deze services accepteren slechts één adres per aanvraag, maar kunnen worden gebruikt in combinatie met de S0-categorie, die ook limieten voor vrij gebruik biedt. Met de categorie S0 kunnen vanuit één account maximaal 50 aanvragen per seconde naar het Azure Maps-platform worden verzonden. Tijdens de verwerking moeten de aanvragen dus binnen deze limiet vallen. In dat geval is het mogelijk om een uur meer dan 180.000 adressen te verwerken. Categorie S1 heeft geen gedocumenteerde limiet voor het aantal query's per seconde dat met één account kan worden gemaakt, waardoor veel meer gegevens sneller kunnen worden verwerkt. Het gebruik van de service voor batchgewijze geocodering helpt echter de totale hoeveelheid gegevens die wordt overgedragen te verminderen, waardoor het netwerkverkeer drastisch afneemt.
 
 -   [Vrije adresgeocodering](/rest/api/maps/search/getsearchaddress): Een enkele adrestekenreeks (zoals `"1 Microsoft way, Redmond, WA"`) opgeven en de aanvraag direct verwerken. Deze service wordt aanbevolen voor snelle geocodering van afzonderlijke adressen.
 -   [Gestructureerde adresgeocodering](/rest/api/maps/search/getsearchaddressstructured): De onderdelen van een enkel adres opgeven, zoals straatnaam, plaats, land en postcode en de aanvraag direct verwerken. Deze service wordt aanbevolen voor snelle geocodering van afzonderlijke adressen die al zijn geparseerd in afzonderlijke adresonderdelen.

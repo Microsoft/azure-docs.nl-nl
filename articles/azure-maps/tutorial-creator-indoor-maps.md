@@ -1,21 +1,27 @@
 ---
-title: 'Zelfstudie: Creator gebruiken om gegevens van indoorplattegronden te maken'
-description: Zelfstudie over het gebruik van Azure Maps Creator voor het maken van indoorplattegronden
+title: 'Zelfstudie: Microsoft Azure Maps Creator (preview) gebruiken voor het maken van indoorplattegronden'
+description: Zelfstudie over het gebruik van Azure Maps Creator (preview) voor het maken van indoorplattegronden
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 09/22/2020
+ms.date: 12/07/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 80d61e69b5e8d666406c378c2d3fece28c822491
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: eab8a2729209bb0023662b652f862b4fa678470e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896776"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905720"
 ---
-# <a name="tutorial-use-creator-to-create-indoor-maps"></a>Zelfstudie: Creator gebruiken om gegevens van indoorplattegronden te maken
+# <a name="tutorial-use-creator-preview-to-create-indoor-maps"></a>Zelfstudie: Creator (preview) gebruiken om indoorplattegronden te maken
+
+> [!IMPORTANT]
+> Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+
 
 In deze zelfstudie leert u hoe u indoorplattegronden kunt maken. In deze zelfstudie leert u hoe u de API gebruikt voor het volgende:
 
@@ -34,7 +40,7 @@ Voor het maken van indoorplattegronden:
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
-3. [Een Creator-resource maken](how-to-manage-creator.md)
+3. [Een resource voor Creator (preview) maken](how-to-manage-creator.md)
 4. Download het [voorbeeldtekenpakket](https://github.com/Azure-Samples/am-creator-indoor-data-examples/blob/master/Sample%20-%20Contoso%20Drawing%20Package.zip).
 
 In deze zelfstudie wordt gebruikgemaakt van de [Postman](https://www.postman.com/)-toepassing, maar u kunt ook een andere API-ontwikkelomgeving kiezen.
@@ -58,13 +64,13 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
     https://atlas.microsoft.com/mapData/upload?api-version=1.0&dataFormat=zip&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-4. Geef op het tabblad **Headers** een waarde op voor de `Content-Type`-sleutel. Het tekenpakket is een gezipte map. Gebruik daarom de waarde `application/octet-stream`. Selecteer op het tabblad **Body** de optie **binary** . Klik op **Select File** en kies een tekenpakket.
+4. Geef op het tabblad **Headers** een waarde op voor de `Content-Type`-sleutel. Het tekenpakket is een gezipte map. Gebruik daarom de waarde `application/octet-stream`. Selecteer op het tabblad **Body** de optie **binary**. Klik op **Select File** en kies een tekenpakket.
 
      ![gegevensbeheer](./media/tutorial-creator-indoor-maps/enter-content-type-dialog.png)
 
-5. Klik op de blauwe **Send** -knop (Verzenden) en wacht tot de aanvraag is verwerkt. Zodra de aanvraag is voltooid, gaat u naar het tabblad **Headers** (Kopteksten) van het antwoord. Kopieer de waarde van de **Location** -sleutel (Locatie), de `status URL`.
+5. Klik op de blauwe **Send**-knop (Verzenden) en wacht tot de aanvraag is verwerkt. Zodra de aanvraag is voltooid, gaat u naar het tabblad **Headers** (Kopteksten) van het antwoord. Kopieer de waarde van de **Location**-sleutel (Locatie), de `status URL`.
 
-6. Maak een **GET** HTTP-aanvraag op de `status URL` om de status van de API-aanroep te controleren. U moet uw primaire abonnementssleutel toevoegen aan de URL voor authenticatie. De **GET** -aanvraag moet lijken op de volgende URL:
+6. Maak een **GET** HTTP-aanvraag op de `status URL` om de status van de API-aanroep te controleren. U moet uw primaire abonnementssleutel toevoegen aan de URL voor authenticatie. De **GET**-aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/mapData/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -79,7 +85,7 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
     }
     ```
 
-8. Als u metagegevens van inhoud wilt ophalen, maakt u een **GET** HTTP-aanvraag op de `resourceLocation` URL die is opgehaald in stap 7. Zorg ervoor dat u uw primaire abonnementssleutel toevoegt aan de URL voor authenticatie. De **GET** -aanvraag moet lijken op de volgende URL:
+8. Als u metagegevens van inhoud wilt ophalen, maakt u een **GET** HTTP-aanvraag op de `resourceLocation` URL die is opgehaald in stap 7. Zorg ervoor dat u uw primaire abonnementssleutel toevoegt aan de URL voor authenticatie. De **GET**-aanvraag moet lijken op de volgende URL:
 
     ```http
    https://atlas.microsoft.com/mapData/metadata/{udid}?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -102,7 +108,7 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
 
  Als het tekenpakket is geüpload, wordt de `udid` voor het geüploade pakket gebruikt om het pakket te converteren naar plattegrondgegevens. De conversie-API gebruikt een langdurige transactie die het [hier](creator-long-running-operation.md) gedefinieerde patroon implementeert. Zodra de bewerking is voltooid, wordt de `conversionId` gebruikt om de geconverteerde gegevens te openen. Volg de onderstaande stappen voor het verkrijgen van de `conversionId`.
 
-1. Selecteer **Nieuw** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer **Nieuw**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
 2. Selecteer de HTTP-methode **POST** op het tabblad Builder en voer de volgende URL in om het geüploade tekenpakket naar plattegrondgegevens te converteren. Gebruik de `udid` voor het geüploade pakket.
 
@@ -111,13 +117,13 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
     ```
 
     >[!IMPORTANT]
-    > De API-URL's in dit document moeten mogelijk worden aangepast op basis van de locatie van de Creator-resource. Zie [Toegang tot Creator-services](how-to-manage-creator.md#access-to-creator-services) voor meer informatie.
+    > De API-URL's in dit document moeten mogelijk worden aangepast op basis van de locatie van de Creator-resource. Zie [Toegang tot Creator-services (preview)](how-to-manage-creator.md#access-to-creator-services) voor meer informatie.
 
-3. Klik op de knop **Send** en wacht tot de aanvraag is verwerkt. Zodra de aanvraag is voltooid, gaat u naar het tabblad **Headers** van het antwoord en zoekt u de **Location** -sleutel. Kopieer de waarde van de **Location** -sleutel; dit is de `status URL` voor de aanvraag van de conversie. U gebruikt deze in de volgende stap.
+3. Klik op de knop **Send** en wacht tot de aanvraag is verwerkt. Zodra de aanvraag is voltooid, gaat u naar het tabblad **Headers** van het antwoord en zoekt u de **Location**-sleutel. Kopieer de waarde van de **Location**-sleutel; dit is de `status URL` voor de aanvraag van de conversie. U gebruikt deze in de volgende stap.
 
     :::image type="content" source="./media/tutorial-creator-indoor-maps/copy-location-uri-dialog.png" border="true" alt-text="De waarde van de locatiesleutel kopiëren":::
 
-4. Start op het tabblad Builder een nieuwe HTTP-methode van het type **GET** . Voeg de primaire Azure Maps-abonnementssleutel aan de `status URL` toe. Voer een **GET** -aanvraag uit bij de `status URL` die u in stap 3 hebt gekopieerd. De `status URL` lijkt op de volgende URL:
+4. Start op het tabblad Builder een nieuwe HTTP-methode van het type **GET**. Voeg de primaire Azure Maps-abonnementssleutel aan de `status URL` toe. Voer een **GET**-aanvraag uit bij de `status URL` die u in stap 3 hebt gekopieerd. De `status URL` lijkt op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/conversion/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -146,7 +152,7 @@ De API voor het uploaden van gegevens is een langdurige transactie die het hier 
     ```
 
 >[!NOTE]
->De Postman-toepassing biedt geen systeemeigen ondersteuning voor langdurige HTTP-aanvragen. Als gevolg hiervan kan er een lange vertraging optreden tijdens het uitvoeren van een **GET** -aanvraag voor de status-URL.  Wacht ongeveer dertig seconden en klik op de knop **Send** totdat u een antwoord krijgt dat de aanvraag al dan niet is geslaagd.
+>De Postman-toepassing biedt geen systeemeigen ondersteuning voor langdurige HTTP-aanvragen. Als gevolg hiervan kan er een lange vertraging optreden tijdens het uitvoeren van een **GET**-aanvraag voor de status-URL.  Wacht ongeveer dertig seconden en klik op de knop **Send** totdat u een antwoord krijgt dat de aanvraag al dan niet is geslaagd.
 
 Het voorbeeldtekeningpakket moet zonder fouten of waarschuwingen worden geconverteerd. Als u echter fouten of waarschuwingen van uw eigen tekenpakket ontvangt, krijgt u in het JSON-antwoord een koppeling naar de [visualisator van tekenfouten](drawing-error-visualizer.md). Met de visualisator van tekenfouten kunt u de details in de fouten en waarschuwingen inspecteren. Als u aanbevelingen wilt ontvangen over het oplossen van conversiefouten en -waarschuwingen, raadpleegt u [Fouten en waarschuwingen over tekenconversies](drawing-conversion-error-codes.md).
 
@@ -166,17 +172,17 @@ Het voorbeeldtekeningpakket moet zonder fouten of waarschuwingen worden geconver
 
 De gegevensset is een verzameling plattegrondfuncties, zoals gebouwen, niveaus en kamers. Als u een gegevensset wilt maken, gebruikt u de [API voor het maken van gegevenssets](/rest/api/maps/dataset/createpreview). De API voor het maken van gegevenssets gebruikt de `conversionId` voor het geconverteerde tekenpakket en retourneert een `datasetId` van de gemaakte gegevensset. In de volgende stappen kunt u zien hoe u een gegevensset kunt maken.
 
-1. Selecteer in de Postman-toepassing de optie **New** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer in de Postman-toepassing de optie **New**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
-2. Voer een **POST** -aanvraag uit bij de [API voor het maken van gegevenssets](/rest/api/maps/dataset/createpreview) om een nieuwe gegevensset te maken. Voordat u de aanvraag indient, voegt u de abonnementssleutel en de `conversionId` toe met de `conversionId` die u tijdens het conversieproces in stap 5 hebt gekregen.  De aanvraag moet lijken op de volgende URL:
+2. Voer een **POST**-aanvraag uit bij de [API voor het maken van gegevenssets](/rest/api/maps/dataset/createpreview) om een nieuwe gegevensset te maken. Voordat u de aanvraag indient, voegt u de abonnementssleutel en de `conversionId` toe met de `conversionId` die u tijdens het conversieproces in stap 5 hebt gekregen.  De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/dataset/create?api-version=1.0&conversionID={conversionId}&type=facility&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Haal de `statusURL` op in de **Location** -sleutel van de **antwoordheaders** .
+3. Haal de `statusURL` op in de **Location**-sleutel van de **antwoordheaders**.
 
-4. Voer een **GET** -aanvraag uit bij de `statusURL` om de `datasetId` te verkrijgen. Voeg de primaire Azure Maps-abonnementssleutel toe voor verificatie. De aanvraag moet lijken op de volgende URL:
+4. Voer een **GET**-aanvraag uit bij de `statusURL` om de `datasetId` te verkrijgen. Voeg de primaire Azure Maps-abonnementssleutel toe voor verificatie. De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/dataset/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -197,15 +203,15 @@ De gegevensset is een verzameling plattegrondfuncties, zoals gebouwen, niveaus e
 
 Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelsets worden gemaakt op basis van bestaande gegevenssets. Een tegelset is echter onafhankelijk van de gegevensset die als bron heeft gediend. Als de gegevensset wordt verwijderd, blijft de tegelset bestaan. Volg de onderstaande stappen om een tegelset te maken:
 
-1. Selecteer in de Postman-toepassing de optie **New** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer in de Postman-toepassing de optie **New**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
-2. Voer een **POST** -aanvraag uit op het tabblad Builder. De aanvraag-URL moet lijken op de volgende URL:
+2. Voer een **POST**-aanvraag uit op het tabblad Builder. De aanvraag-URL moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/tileset/create/vector?api-version=1.0&datasetID={datasetId}&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Voer een **GET** -aanvraag uit bij de `statusURL` voor de tegelset. Voeg de primaire Azure Maps-abonnementssleutel toe voor verificatie. De aanvraag moet lijken op de volgende URL:
+3. Voer een **GET**-aanvraag uit bij de `statusURL` voor de tegelset. Voeg de primaire Azure Maps-abonnementssleutel toe voor verificatie. De aanvraag moet lijken op de volgende URL:
 
    ```http
     https://atlas.microsoft.com/tileset/operations/<operationId>?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
@@ -224,11 +230,11 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
 
 ## <a name="query-datasets-with-wfs-api"></a>Query's uitvoeren op gegevenssets met de WFS-API
 
- Op gegevenssets kunnen query's worden uitgevoerd met de [WFS-API](/rest/api/maps/wfs). Met de WFS-API kunt u een query uitvoeren voor het opvragen van functieverzamelingen, een specifieke verzameling of een specifieke functie met een **functie-id** . De functie wordt door middel van de **functie -id** uniek geïdentificeerd binnen de gegevensset. Deze wordt bijvoorbeeld gebruikt om te bepalen welke functiestatus in een bepaalde statusset moet worden bijgewerkt.
+ Op gegevenssets kunnen query's worden uitgevoerd met de [WFS-API](/rest/api/maps/wfs). Met de WFS-API kunt u een query uitvoeren voor het opvragen van functieverzamelingen, een specifieke verzameling of een specifieke functie met een **functie-id**. De functie wordt door middel van de **functie -id** uniek geïdentificeerd binnen de gegevensset. Deze wordt bijvoorbeeld gebruikt om te bepalen welke functiestatus in een bepaalde statusset moet worden bijgewerkt.
 
-1. Selecteer in de Postman-toepassing de optie **New** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer in de Postman-toepassing de optie **New**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
-2. Voer een **GET** -aanvraag uit om een lijst met de verzamelingen in uw gegevensset te bekijken. Vervang `<dataset-id>` door uw `datasetId`. Gebruik de primaire sleutel van Azure Maps in plaats van de tijdelijke aanduiding. De aanvraag moet lijken op de volgende URL:
+2. Voer een **GET**-aanvraag uit om een lijst met de verzamelingen in uw gegevensset te bekijken. Vervang `<dataset-id>` door uw `datasetId`. Gebruik de primaire sleutel van Azure Maps in plaats van de tijdelijke aanduiding. De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
@@ -262,7 +268,7 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
         },
     ```
 
-4. Voer een **GET** -aanvraag uit voor de functieverzamelingen van het type `unit`.  Vervang `{datasetId}` door uw `datasetId`. Gebruik de primaire sleutel van Azure Maps in plaats van de tijdelijke aanduiding. De hoofdtekst van het antwoord bevat alle functies van de `unit`-verzameling. De aanvraag moet lijken op de volgende URL:
+4. Voer een **GET**-aanvraag uit voor de functieverzamelingen van het type `unit`.  Vervang `{datasetId}` door uw `datasetId`. Gebruik de primaire sleutel van Azure Maps in plaats van de tijdelijke aanduiding. De hoofdtekst van het antwoord bevat alle functies van de `unit`-verzameling. De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections/unit/items?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
@@ -302,15 +308,15 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
 
 ## <a name="create-a-feature-stateset"></a>Functiestatusset maken
 
-1. Selecteer in de Postman-toepassing de optie **New** . Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan** .
+1. Selecteer in de Postman-toepassing de optie **New**. Selecteer **Request** (Aanvraag) in het venster **Create New** (Nieuwe maken). Voer een **aanvraagnaam** in en selecteer een verzameling. Klik op **Opslaan**.
 
-2. Voer een **POST** -aanvraag uit voor de [API voor het maken van statussets](/rest/api/maps/featurestate/createstatesetpreview). Gebruik de `datasetId` van de gegevensset die de status bevat die u wilt wijzigen. De aanvraag moet lijken op de volgende URL:
+2. Voer een **POST**-aanvraag uit voor de [API voor het maken van statussets](/rest/api/maps/featurestate/createstatesetpreview). Gebruik de `datasetId` van de gegevensset die de status bevat die u wilt wijzigen. De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/featureState/stateset?api-version=1.0&datasetId={datasetId}&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-3. Stel in de **headers** van de **POST** -aanvraag `Content-Type` in op `application/json`. Geef in de **hoofdtekst** de onderstaande stijlen op om wijzigingen in de *statussen* `occupied` en `temperature` van kracht te laten worden. Wanneer u klaar bent, klikt u op **Send** .
+3. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. Geef in de **hoofdtekst** de onderstaande stijlen op om wijzigingen in de *statussen* `occupied` en `temperature` van kracht te laten worden. Wanneer u klaar bent, klikt u op **Send**.
 
     ```json
     {
@@ -377,13 +383,13 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
 
 4. Kopieer de `statesetId` vanuit hoofdtekst van het antwoord.
 
-5. Voer een **POST** -aanvraag uit om de status bij te werken: Geef de statesetId en de `ID` van de functie door met uw Azure Maps-abonnementssleutel. De aanvraag moet lijken op de volgende URL:
+5. Voer een **POST**-aanvraag uit om de status bij te werken: Geef de statesetId en de `ID` van de functie door met uw Azure Maps-abonnementssleutel. De aanvraag moet lijken op de volgende URL:
 
     ```http
     https://atlas.microsoft.com/featureState/state?api-version=1.0&statesetID={statesetId}&featureID={featureId}&subscription-key={Azure-Maps-Primary-Subscription-key}
     ```
 
-6. Stel in de **headers** van de **POST** -aanvraag `Content-Type` in op `application/json`. Kopieer en plak de JSON uit het onderstaande voorbeeld in de **hoofdtekst** van de **POST** -aanvraag.
+6. Stel in de **headers** van de **POST**-aanvraag `Content-Type` in op `application/json`. Kopieer en plak de JSON uit het onderstaande voorbeeld in de **hoofdtekst** van de **POST**-aanvraag.
 
     ```json
     {
@@ -404,7 +410,7 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
 
 Met de [API voor het ophalen van functiestatussen](/rest/api/maps/featurestate/getstatespreview) kunt u de status van een functie ophalen met behulp van de `ID` van de functie. U kunt de statusset en de bijbehorende resources ook verwijderen. Dit doet u met behulp van de [API voor het verwijderen van functiestatussen](/rest/api/maps/featurestate/deletestatesetpreview).
 
-Zie [Creator Indoor Maps](creator-indoor-maps.md) voor meer informatie over de verschillende Azure Maps Creator-services die in dit artikel zijn besproken.
+Zie [Creator Indoor Maps](creator-indoor-maps.md) voor meer informatie over de verschillende Azure Maps Creator-services (preview) die in dit artikel zijn besproken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

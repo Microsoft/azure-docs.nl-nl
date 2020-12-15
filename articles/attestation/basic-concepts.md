@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: a4ab8372e23e3621f7d73f8dbc38957c809acc9c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8ae5bcf103bbb2d2b952fa647ba591e49002f2ff
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89236855"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921622"
 ---
 # <a name="basic-concepts"></a>Basisbegrippen
 
@@ -30,7 +30,7 @@ Hieronder vindt u enkele basisbegrippen met betrekking tot Microsoft Azure Attes
 
 Attestation-provider behoort tot de Azure-resourceprovider met de naam Microsoft.Attestation. De resourceprovider is een service-eindpunt dat Azure Attestation REST-contract voorziet en wordt geïmplementeerd met behulp van [Azure Resource Manager](../azure-resource-manager/management/overview.md). Elke Attestation-provider respecteert een specifiek, detecteerbaar beleid. 
 
-Attestation-providers worden gemaakt met een standaardbeleid voor elk type TEE (Houd er rekening mee dat VBS-enclave geen standaardbeleid heeft). Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor meer informatie over het standaardbeleid voor SGX.
+Attestation-providers worden gemaakt met een standaardbeleid voor elk type Attestation (houd er rekening mee dat VBS-enclave geen standaardbeleid heeft). Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor meer informatie over het standaardbeleid voor SGX.
 
 ### <a name="regional-default-provider"></a>Regionale standaard provider
 
@@ -38,11 +38,11 @@ Azure Attestation biedt een standaard provider in elke regio. Klanten kunnen erv
 
 | Regio | Attestation-URI | 
 |--|--|
-| Verenigd Koninkrijk Zuid | https://shareduks.uks.attest.azure.net | 
-| US - oost 2 | https://sharedeus2.eus2.attest.azure.net | 
-| Central US | https://sharedcus.cus.attest.azure.net | 
-| VS - oost| https://sharedeus.eus.attest.azure.net | 
-| Canada - midden | https://sharedcac.cac.attest.azure.net | 
+| Verenigd Koninkrijk Zuid | `https://shareduks.uks.attest.azure.net` | 
+| US - oost 2 | `https://sharedeus2.eus2.attest.azure.net` | 
+| Central US | `https://sharedcus.cus.attest.azure.net` | 
+| VS - oost| `https://sharedeus.eus.attest.azure.net` | 
+| Canada - midden | `https://sharedcac.cac.attest.azure.net` | 
 
 ## <a name="attestation-request"></a>Attestation-aanvraag
 
@@ -50,13 +50,13 @@ Attestation-aanvraag is een geserialiseerd JSON-object dat is verzonden door de 
 - "Quote" - de waarde van de eigenschap "quote" is een tekenreeks met een Base64URL-gecodeerde representatie van de Attestation-offerte
 - "EnclaveHeldData" - de waarde van de eigenschap "EnclaveHeldData" is een tekenreeks met een Base64URL-gecodeerde representatie van de enclave-gegevens.
 
-Azure Attestation valideert de opgegeven "Prijsopgave" van TEE en zorgt er vervolgens voor dat de SHA256-hash van de opgegeven enclavegegevens wordt weergegeven in de eerste 32 bytes van het veld reportData in de prijsopgave. 
+Azure Attestation valideert de opgegeven "Prijsopgave" en zorgt er vervolgens voor dat de SHA256-hash van de opgegeven enclavegegevens wordt weergegeven in de eerste 32 bytes van het veld reportData in de prijsopgave. 
 
 ## <a name="attestation-policy"></a>Attestation-beleid
 
 Attestation-beleid wordt gebruikt voor het verwerken van het Attestation-bewijs en kan worden geconfigureerd door klanten. De kern van Azure Attestation is een beleidsengine die claims verwerkt die het bewijs vormen. Beleid wordt gebruikt om te bepalen of Azure Attestation een Attestation-token afgeeft op basis van een bewijs (of niet) en de Attester ondersteund (of niet). Als gevolg hiervan is het niet mogelijk om alle beleidsregels door te geven, waardoor er geen JWT-token wordt uitgegeven.
 
-Als het TEE-beleid van de Attestation-provider niet voldoet aan de behoeften, kunnen klanten aangepaste beleidsregels maken in een van de regio's die worden ondersteund door Azure Attestation. Beleidsbeheer is een belangrijke functie de aan klanten door Azure Attestation wordt geleverd. Beleidsregels zijn TEE-specifiek en kunnen worden gebruikt om enclaves te identificeren of claims toe te voegen aan het uitvoertoken of claims te wijzigen in een uitvoertoken. 
+Als het standaardbeleid van de Attestation-provider niet voldoet aan de behoeften, kunnen klanten aangepaste beleidsregels maken in een van de regio's die worden ondersteund door Azure Attestation. Beleidsbeheer is een belangrijke functie de aan klanten door Azure Attestation wordt geleverd. Beleidsregels zijn specifiek voor het type Attestation en kunnen worden gebruikt om enclaves te identificeren of claims toe te voegen aan het uitvoertoken of claims te wijzigen in een uitvoertoken. 
 
 Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor het standaardbeleid en voorbeelden.
 
@@ -99,6 +99,15 @@ Voorbeeld van een JWT-generatie voor een SGX-enclave:
 }.[Signature]
 ```
 Claims zoals “exp”, “iat”, “iss”, “nbf” worden gedefinieerd door de [JWT RFC](https://tools.ietf.org/html/rfc7517) en resterende worden gegenereerd door Azure Attestation. Zie [Claims die zijn uitgegeven door Azure Attestation](claim-sets.md) voor meer informatie.
+
+## <a name="encryption-of-data-at-rest"></a>Versleuteling van data-at-rest
+
+Om klantgegevens te beschermen, blijven de gegevens van Azure Attestation in Azure Storage. Azure Storage biedt versleuteling van data-at-rest die naar datacentra worden geschreven, en ontsleutelt deze voor klanten om toegang te krijgen. Deze versleuteling vindt plaats met behulp van een door Microsoft beheerde versleutelingssleutel. 
+
+Naast het beveiligen van gegevens in Azure Storage, maakt Azure Attestation ook gebruik van Azure Disk Encryption (ADE) voor het versleutelen van service-VM's. Voor Azure Attestation dat wordt uitgevoerd in een enclave in Azure-omgevingen met vertrouwelijke computing, wordt de ADE-extensie momenteel niet ondersteund. In dergelijke scenario's wordt het wisselbestand uitgeschakeld om te voorkomen dat gegevens worden opgeslagen in het geheugen. 
+
+Er worden geen klantgegevens bewaard op de lokale harde schijven van het Azure Attestation-exemplaar.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

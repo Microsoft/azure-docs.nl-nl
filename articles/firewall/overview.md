@@ -6,15 +6,15 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc, contperfq1
-ms.date: 11/10/2020
+ms.date: 12/03/2020
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
-ms.openlocfilehash: e714e88e47ec20adec44a104c659d03e62d8010a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fc68170a89a3d9a359ae9cb2c0d5543af301e738
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658380"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573031"
 ---
 # <a name="what-is-azure-firewall"></a>Wat is Azure Firewall?
 
@@ -70,7 +70,8 @@ Netwerkfilterregels voor niet-TCP/UDP-protocollen (bijvoorbeeld ICMP) werken nie
 |Aangepaste DNS werkt niet met geforceerde tunneling|Als geforceerde tunneling is ingeschakeld, werkt aangepaste DNS niet.|Er wordt een oplossing onderzocht.|
 |Ondersteuning voor nieuwe openbare IP-adressen voor meerdere beschikbaarheidszones|U kunt geen nieuw openbaar IP-adres toevoegen wanneer u een firewall met twee beschikbaarheidszones implementeert (1 en 2, 2 en 3, of 1 en 3)|Dit is een beperking voor het openbare IP-adres.|
 |Starten/stoppen werkt niet met een firewall die is geconfigureerd in de modus geforceerde tunnel|Starten/stoppen werkt niet met een Azure-firewall die is geconfigureerd in de modus geforceerde tunnel. Eem poging om Azure Firewall te starten met geconfigureerde geforceerde tunneling resulteert in de volgende fout:<br><br>*Set-AzFirewall: De IP-configuratie van AzureFirewall FW-xx-beheer kan niet worden toegevoegd aan een bestaande firewall. Implementeer opnieuw met een beheer-IP-configuratie als u ondersteuning voor geforceerde tunneling wilt gebruiken.<br>Statuscode: 400<br>ReasonPhrase: Onjuiste aanvraag*|Wordt onderzocht.<br><br>Als tijdelijke oplossing kunt u de bestaande firewall verwijderen en een nieuwe maken met dezelfde parameters.|
-|Kan geen firewallbeleidtags toevoegen via de portal|Azure Firewall-beleid heeft een beperking voor patchondersteuning, zodat u geen tags kunt toevoegen via Azure Portal. De volgende fout wordt gegenereerd: *Kan de tags voor de resource niet opslaan*.|Er wordt een oplossing onderzocht. U kunt ook de Azure PowerShell-cmdlet `Set-AzFirewallPolicy` gebruiken om tags bij te werken.
+|Kan geen firewallbeleidtags toevoegen via de portal|Azure Firewall-beleid heeft een beperking voor patchondersteuning, zodat u geen tags kunt toevoegen via Azure Portal. De volgende fout wordt gegenereerd: *Kan de tags voor de resource niet opslaan*.|Er wordt een oplossing onderzocht. U kunt ook de Azure PowerShell-cmdlet `Set-AzFirewallPolicy` gebruiken om tags bij te werken.|
+|IPv6 wordt nog niet ondersteund|Als u een IPv6-adres toevoegt aan een regel, mislukt de firewall.|Gebruik alleen iPv4-adressen. Ondersteuning voor IPv6 wordt onderzocht.|
 
 
 ## <a name="next-steps"></a>Volgende stappen

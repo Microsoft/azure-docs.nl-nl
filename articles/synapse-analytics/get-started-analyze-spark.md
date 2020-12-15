@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: d7b198790b1ecc884321ad42c97eb5cf0c239b7e
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: ee4dc945f63180fd06f13287b22949d0ac1e3873
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95241978"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862017"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
@@ -23,7 +23,7 @@ ms.locfileid: "95241978"
 
 In deze zelfstudie leert u de basisstappen voor het laden en analyseren van gegevens met Apache Spark voor Azure Synapse.
 
-1. Klik in de hub **Gegevens** op **Een nieuwe resource toevoegen**(plusteken boven **Gekoppeld**) >> **Bladeren in samples**. 
+1. Klik in de hub **Gegevens** op **Een nieuwe resource toevoegen**(plusteken boven **Gekoppeld**) >> **Bladeren in galerie**. 
 1. Zoek **NYC Taxi & Limousine Commission - records van Yellow Taxi-ritten** en klik erop. 
 1. Druk onderaan de pagina op **Doorgaan** en daarna op **Gegevensset toevoegen**. 
 1. Klik nu in de hub **Gegevens** onder **Gekoppeld** met de rechtermuisknop op **Azure Blob Storage >> Voorbeeldgegevenssets >> nyc_tlc_yellow** en selecteer **Nieuw notebook**

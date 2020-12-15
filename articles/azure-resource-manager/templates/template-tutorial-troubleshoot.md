@@ -1,20 +1,20 @@
 ---
 title: Problemen met implementaties oplossen
-description: Leer implementaties van Azure Resource Manager-sjablonen bewaken en problemen ermee oplossen. Hiermee worden activiteitenlogboeken en implementatiegeschiedenis weergegeven.
+description: Leer hoe u implementaties van ARM-sjablonen (Azure Resource Manager) bewaakt en problemen ermee oplost. Hiermee worden activiteitenlogboeken en implementatiegeschiedenis weergegeven.
 author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0da6c614572e73a00db1087621eaca3bd790aad6
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 7a44edc7cd09709f14415fa0a92e63558001d46d
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891802"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928525"
 ---
 # <a name="tutorial-troubleshoot-arm-template-deployments"></a>Zelfstudie: Problemen met ARM-sjabloonimplementatie oplossen
 
-Leer problemen met de implementatie van ARM-sjablonen (ARM = Azure Resource Manager) oplossen. In deze zelfstudie stelt u twee fouten in een sjabloon in en leert u hoe u de activiteitenlogboeken en de implementatiegeschiedenis kunt gebruiken om de problemen op te lossen.
+Leer hoe u problemen met implementaties van ARM-sjablonen (Azure Resource Manager) oplost. In deze zelfstudie stelt u twee fouten in een sjabloon in en leert u hoe u de activiteitenlogboeken en de implementatiegeschiedenis kunt gebruiken om de problemen op te lossen.
 
 Er zijn twee typen fouten die gerelateerd zijn aan de implementatie van sjablonen:
 
@@ -37,21 +37,21 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-- Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+- Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="create-a-problematic-template"></a>Een sjabloon met problemen maken
 
 Open een sjabloon met de naam [Een standaardopslagaccount maken](https://azure.microsoft.com/resources/templates/101-storage-account-create/) vanuit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/) en stel twee sjabloonproblemen in.
 
 1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
-2. Plak de volgende URL in **Bestandsnaam** :
+2. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
     ```
 
 3. Selecteer **Openen** om het bestand te openen.
-4. Wijzig de **apiVersion** -regel in de volgende regel:
+4. Wijzig de **apiVersion**-regel in de volgende regel:
 
     ```json
     "apiVersion1": "2018-07-02",

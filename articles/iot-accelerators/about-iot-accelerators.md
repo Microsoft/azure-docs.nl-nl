@@ -9,18 +9,18 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: f976bf4260e4a677aee5b5ccc4287db3d0b2e40d
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 193ceab0b2df1ab833a86eb748c18271a8e33b71
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074291"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852911"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Wat zijn Azure IoT-oplossingsversnellers?
 
 Een IoT-cloudoplossing maakt doorgaans gebruik van aangepaste code en cloudservices om connectiviteit, gegevensverwerking en analyses en presentatie van apparaten te beheren.
 
-De IoT-oplossingsverbeteringen zijn complete, eenvoudig te implementeren IoT-oplossingen waarmee veelvoorkomende IoT-scenario's kunnen worden geïmplementeerd. De scenario's zijn onder meer externe bewaking, verbonden factory, predictief onderhoud en apparaatsimulatie. Wanneer u een oplossingsversneller implementeert, bevat de implementatie alle vereiste cloudservices samen met de vereiste toepassingscode.
+De IoT-oplossingsverbeteringen zijn complete, eenvoudig te implementeren IoT-oplossingen waarmee veelvoorkomende IoT-scenario's kunnen worden geïmplementeerd. De scenario's omvatten een verbonden factory en apparaatsimulatie. Wanneer u een oplossingsversneller implementeert, bevat de implementatie alle vereiste cloudservices samen met de vereiste toepassingscode.
 
 De oplossingsversnellers vormen het startpunt voor uw eigen IoT-oplossingen. De broncode voor alle oplossingsversnellers is open-source en beschikbaar in GitHub. U wordt aangeraden om de oplossingsverbeteringen te downloaden en aan te passen zodat ze voldoen aan uw vereisten.
 
@@ -28,17 +28,12 @@ U kunt de oplossingsversnellers ook gebruiken als leermiddelen voordat u helemaa
 
 De toepassingscode in elke oplossingsverbetering bevat een web-app waarmee u de oplossingsverbetering beheren.
 
+> [!NOTE]
+> De oplossingen voor controle op afstand en voorspellend onderhoud zijn verwijderd van de site [Azure IoT-oplossingsversnellers](https://www.azureiotsolutions.com/Accelerators). Zie [Wat zijn Azure IoT-oplossingsversnellers? (vorige versie)](/previous-versions/azure/iot-accelerators/about-iot-accelerators.md) voor meer informatie.
+
 ## <a name="supported-iot-scenarios"></a>Ondersteunde IoT-scenario's
 
-Er zijn momenteel vier oplossingsversnellers beschikbaar die u kunt implementeren:
-
-### <a name="remote-monitoring"></a>Externe bewaking
-
-Gebruik de [verbetering voor de externe bewakingsoplossing](iot-accelerators-remote-monitoring-sample-walkthrough.md) voor het verzamelen van telemetriegegevens van externe apparaten en om deze te beheren. Voorbeelden zijn koelingssystemen die zijn geïnstalleerd op de locatie van uw klanten of kleppen die zijn geïnstalleerd in externe pompstations.
-
-U kunt het dashboard voor externe controle gebruiken om de telemetrie van verbonden apparaten te bekijken, nieuwe apparaten in te richten of de firmware op verbonden apparaten bij te werken:
-
-[![Dashboard van externe bewakingsoplossing](./media/about-iot-accelerators/rm-dashboard-inline.png)](./media/about-iot-accelerators/rm-dashboard-expanded.png#lightbox)
+Er zijn momenteel twee oplossingsversnellers beschikbaar die u kunt implementeren:
 
 ### <a name="connected-factory"></a>Verbonden factory
 
@@ -48,21 +43,13 @@ U kunt de verbonden factory gebruiken om industriële apparaten te controleren e
 
 :::image type="content" source="./media/about-iot-accelerators/cf-dashboard-inline.png" alt-text="Schermopname van het dashboard van de oplossing voor verbonden factory." lightbox="./media/about-iot-accelerators/cf-dashboard-expanded.png":::
 
-### <a name="predictive-maintenance"></a>Predictief onderhoud
-
-Gebruik de [Predictive Maintenance-oplossingsversneller](iot-accelerators-predictive-walkthrough.md) om te voorspellen wanneer een extern apparaat naar verwachting defect raakt, zodat u onderhoud kunt plegen voordat het apparaat uitvalt. De oplossingsversneller maakt gebruik van machine learning-algoritmen om fouten op basis van telemetriegegevens van apparaten te voorspellen. Voorbeelden van dergelijke apparaten zijn vliegtuigmotoren en liften.
-
-U kunt het dashboard voor predictief onderhoud gebruiken om de analyse voor predictief onderhoud te bekijken:
-
-:::image type="content" source="./media/about-iot-accelerators/pm-dashboard-inline.png" alt-text="Schermopname van het dashboard van de oplossing voor verbonden factory." lightbox="./media/about-iot-accelerators/pm-dashboard-expanded.png":::
-
 ### <a name="device-simulation"></a>Apparaatsimulatie
 
 Gebruik de [Device Simulation-oplossingsversneller](iot-accelerators-device-simulation-overview.md) voor het laten draaien van gesimuleerde apparaten die realistische telemetriegegevens genereren. U kunt deze oplossingsversneller gebruiken voor het testen van het gedrag van de andere oplossingsversnellers of voor het testen van uw eigen aangepaste IoT-oplossingen.
 
 U kunt de web-app voor apparaatsimulatie gebruiken om simulaties te configureren en uit te voeren:
 
-[![Dashboard van oplossing voor verbonden factory](./media/about-iot-accelerators/ds-dashboard-inline.png)](./media/about-iot-accelerators/ds-dashboard-expanded.png#lightbox)
+:::image type="content" source="./media/about-iot-accelerators/ds-dashboard-inline.png" alt-text="Schermopname van het dashboard voor de oplossing voor apparaatsimulatie." lightbox="./media/about-iot-accelerators/ds-dashboard-expanded.png":::
 
 ## <a name="design-principles"></a>Ontwerpprincipes
 
@@ -80,8 +67,6 @@ De oorspronkelijke oplossingsversnellers werden geschreven met behulp van .NET e
 
 | Oplossingsverbetering   | Architectuur  | Talen     |
 | ---------------------- | ------------- | ------------- |
-| Externe bewaking      | Microservices | [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java) en [.NET](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) |
-| Predictief onderhoud | MVC           | [.NET](https://github.com/Azure/azure-iot-predictive-maintenance)          |
 | Verbonden factory      | MVC           | [.NET](https://github.com/Azure/azure-iot-connected-factory)          |
 | Apparaatsimulatie      | Microservices | [.NET](https://github.com/Azure/device-simulation-dotnet)          |
 
@@ -91,19 +76,8 @@ Zie [Inleiding tot de Azure IoT-referentiearchitectuur](/azure/architecture/refe
 
 U kunt de oplossingsverbeteringen implementeren op de site [Microsoft Azure IoT-oplossingsverbeteringen](https://www.azureiotsolutions.com/Accelerators#) of door gebruik te maken van de opdrachtregel.
 
-U kunt de verbetering voor de externe bewakingsoplossing implementeren in de volgende configuraties:
-
-* **Standard:** uitgebreide infrastructuurimplementatie voor het ontwikkelen van een productie-implementatie. De Azure Container Service implementeert de microservices in diverse virtuele Azure-machines. Kubernetes deelt de Docker-containers in die de afzonderlijke microservices hosten.
-* **Basic:** voordelige versie voor een demonstratie of het testen van een implementatie. Alle microservices worden geïmplementeerd op een enkele virtuele Azure-machine.
-* **Local:** implementatie op lokale computer voor testen en ontwikkeling. Bij deze aanpak worden de microservices geïmplementeerd op een lokale Docker-container die verbinding maakt met IoT Hub, Azure Cosmos DB en Azure-opslagservices in de cloud.
-
 De kosten voor het uitvoeren van een oplossingsversneller zijn de gecombineerde [kosten van de onderliggende Azure-services](https://azure.microsoft.com/pricing). U ziet details van de gebruikte Azure-services wanneer u uw implementatieopties kiest.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de quickstarts om een van de oplossingsverbeteringen uit te proberen:
-
-* [Een externe bewakingsoplossing uitproberen](quickstart-remote-monitoring-deploy.md)
-* [Een oplossing voor een verbonden fabriek uitproberen](quickstart-connected-factory-deploy.md)
-* [Een oplossing voor voorspellend onderhoud uitproberen](quickstart-predictive-maintenance-deploy.md)
-* [Een apparaatsimulatieoplossing uitproberen](quickstart-device-simulation-deploy.md)
+Raadpleeg de quickstart [Een oplossing voor verbonden factory uitproberen](quickstart-connected-factory-deploy.md) om een van de oplossingsverbeteringen uit te proberen.

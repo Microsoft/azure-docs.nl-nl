@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: mvc, seodec18, devx-track-azurecli
-ms.openlocfilehash: c67d4dbb68048d273b1f9acd83a8460447e5abe4
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 2920aad07ac54a19962f552debb8cfa809e17294
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748910"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558348"
 ---
 # <a name="create-a-multi-container-preview-app-using-a-docker-compose-configuration"></a>Een app met meerdere containers (preview) maken met behulp van een configuratie van Docker Compose
 
@@ -21,13 +21,13 @@ ms.locfileid: "92748910"
 
 Met behulp van [Web App for Containers](overview.md#app-service-on-linux) kunt u op een flexibele manier Docker-installatiekopieën gebruiken. Deze quickstart laat zien hoe u een app met meerdere containers (preview-versie) implementeert in Web App for Containers in [Cloud Shell](../cloud-shell/overview.md) met behulp van een configuratie van Docker Compose.
 
-U gaat deze snelstart in Cloud Shell doen, maar u kunt deze opdrachten ook lokaal uitvoeren met [Azure CLI](/cli/azure/install-azure-cli) (2.0.32 of hoger). 
-
 ![Voorbeeld-app met meerdere containers in Web App for Containers][1]
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+
+Voor dit artikel is versie 2.0.32 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="download-the-sample"></a>Het voorbeeld downloaden
 
@@ -55,7 +55,7 @@ cd multicontainerwordpress
 
 [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
 
-Maak een resourcegroep in Cloud Shell met de opdracht [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *VS - zuid-centraal* . Als u alle ondersteunde locaties voor App Service op Linux in prijscategorie **Standard** wilt zien, voert u de opdracht [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations) uit.
+Maak een resourcegroep in Cloud Shell met de opdracht [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *VS - zuid-centraal*. Als u alle ondersteunde locaties voor App Service op Linux in prijscategorie **Standard** wilt zien, voert u de opdracht [`az appservice list-locations --sku S1 --linux-workers-enabled`](/cli/azure/appservice?view=azure-cli-latest#az-appservice-list-locations) uit.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "South Central US"
@@ -129,7 +129,7 @@ Blader naar de geïmplementeerde app in (`http://<app_name>.azurewebsites.net`).
 
 ![Voorbeeld-app met meerdere containers in Web App for Containers][1]
 
-**Gefeliciteerd** , u hebt een app met meerdere containers gemaakt in Web App for Containers.
+**Gefeliciteerd**, u hebt een app met meerdere containers gemaakt in Web App for Containers.
 
 [!INCLUDE [Clean-up section](../../includes/cli-script-clean-up.md)]
 

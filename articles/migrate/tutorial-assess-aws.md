@@ -1,15 +1,18 @@
 ---
 title: AWS-exemplaren beoordelen voor migratie naar Azure met Azure Migrate-serverevaluatie
-description: Beschrijft hoe u AWS-exemplaren kunt beoordelen voor migratie naar Azure met Azure Migrate-serverevaluatie.
+description: Meer informatie over het beoordelen van AWS-exemplaren voor migratie naar Azure met Azure Migrate-serverevaluatie.
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: 14928c8a3249cca172ad088f290b54a22a125ae7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f7d64d239eeb3be5bf94830a425c6e097a69a64b
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90108092"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753348"
 ---
 # <a name="tutorial-assess-aws-instances-for-migration-to-azure"></a>Zelfstudie: AWS-instanties beoordelen voor migratie naar Azure
 

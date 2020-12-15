@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: f6026680dd566bf7a13c83b37883341bff8b4570
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6845923d65b5fbe5a9f010474330ce2bbed948e1
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96354751"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780090"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Zelfstudie: X.509-apparaten inrichten met behulp van inschrijvingsgroepen
 
@@ -26,7 +26,7 @@ Azure IoT Device Provisioning Service ondersteunt twee typen inschrijvingen:
 
 Deze zelfstudie is vergelijkbaar met de vorige zelfstudies waarin wordt uitgelegd hoe u inschrijvingsgroepen kunt gebruiken om apparaten in te richten. In deze zelfstudie worden echter X.509-certificaten gebruikt in plaats van symmetrische sleutels. Bekijk de vorige zelfstudies in deze sectie voor een eenvoudige benadering met behulp van [symmetrische sleutels](./concepts-symmetric-key-attestation.md).
 
-In deze zelfstudie wordt het [aangepaste HSM-voorbeeld](https://github.com/Azure/azure-iot-sdk-c/tree/master/provisioning_client/samples/custom_hsm_example) gedemonstreerd dat een stub-implementatie biedt voor communicatie met beveiligde opslag op basis van hardware. Een [HSM (Hardware Security Module)](./concepts-service.md#hardware-security-module) wordt gebruikt voor beveiligde, op hardware gebaseerde opslag van apparaatgeheimen. Een HSM kan worden gebruikt met symmetrische sleutels, X.509-certificaten of TPM-attestation om beveiligde opslag voor geheimen te bieden. Op hardware gebaseerde opslag van apparaatgeheimen wordt sterk aanbevolen.
+In deze zelfstudie wordt het [aangepaste HSM-voorbeeld](https://github.com/Azure/azure-iot-sdk-c/tree/master/provisioning_client/samples/custom_hsm_example) gedemonstreerd dat een stub-implementatie biedt voor communicatie met beveiligde opslag op basis van hardware. Een [HSM (Hardware Security Module)](./concepts-service.md#hardware-security-module) wordt gebruikt voor beveiligde, op hardware gebaseerde opslag van apparaatgeheimen. Een HSM kan worden gebruikt met symmetrische sleutels, X.509-certificaten of TPM-attestation om beveiligde opslag voor geheimen te bieden. Hardwarematige opslag van geheimen is niet vereist, maar wordt nadrukkelijk aanbevolen om gevoelige informatie te beschermen, zoals de persoonlijke sleutel van uw apparaat.
 
 Raadpleeg het overzicht [Inrichten](about-iot-dps.md#provisioning-process) als u niet bekend bent met het proces van automatisch inrichten. Controleer ook of u de stappen in [IoT Hub Device Provisioning Service instellen met Azure Portal](quick-setup-auto-provision.md) hebt voltooid voordat u verdergaat met deze zelfstudie. 
 
@@ -225,7 +225,9 @@ Het certificaat maken:
 
 ## <a name="configure-the-custom-hsm-stub-code"></a>De stub-code voor de aangepaste HSM configureren
 
-De bijzonderheden van de interactie met de daadwerkelijke beveiligde opslag op basis van hardware is afhankelijk van de hardware. Als gevolg hiervan wordt de certificaatketen die door het apparaat in deze zelfstudie wordt gebruikt, in de stub-code voor de aangepaste HSM vastgelegd. In de praktijk zou de certificaatketen worden opgeslagen in de daadwerkelijke HSM-hardware om een betere beveiliging te kunnen bieden voor gevoelige informatie. Methoden die vergelijkbaar zijn met de stub-methoden uit dit voorbeeld worden vervolgens geïmplementeerd om de geheimen van die op hardware gebaseerde opslag te lezen.
+De bijzonderheden van de interactie met de daadwerkelijke beveiligde opslag op basis van hardware is afhankelijk van de hardware. Als gevolg hiervan wordt de certificaatketen die door het apparaat in deze zelfstudie wordt gebruikt, in de stub-code voor de aangepaste HSM vastgelegd. In de praktijk zou de certificaatketen worden opgeslagen in de daadwerkelijke HSM-hardware om een betere beveiliging te kunnen bieden voor gevoelige informatie. Methoden die vergelijkbaar zijn met de stub-methoden uit dit voorbeeld worden vervolgens geïmplementeerd om de geheimen van die op hardware gebaseerde opslag te lezen. 
+
+Hoewel HSM-hardware niet is vereist, is het niet raadzaam om gevoelige informatie, zoals de persoonlijke sleutel van het certificaat, in de broncode te hebben. Hiermee wordt de sleutel voor iedereen beschikbaar die de code kan zien. Dat wordt in dit artikel alleen gedaan om te helpen bij het leren.
 
 De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
 
@@ -287,7 +289,7 @@ De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
 
 ## <a name="verify-ownership-of-the-root-certificate"></a>Eigendom van het basiscertificaat verifiëren
 
-1. Gebruik de instructies in [Het openbare deel van een X.509-certificaat registreren en een verificatiecode ophalen](how-to-verify-certificates.md#register-the-public-part-of-an-x509-certificate-and-get-a-verification-code), upload het basiscertificaat en haal een verificatiecode op basis van DPS op.
+1. Gebruik de instructies in [Het openbare deel van een X.509-certificaat registreren en een verificatiecode ophalen](how-to-verify-certificates.md#register-the-public-part-of-an-x509-certificate-and-get-a-verification-code), upload het basiscertificaat (`./certs/azure-iot-test-only.root.ca.cert.pem`) en haal een verificatiecode op basis van DPS op.
 
 2. Zodra u een verificatiecode op basis van DPS voor het basiscertificaat hebt, voert u de volgende opdracht uit vanuit de werkmap met het certificaatscript om een verificatiecertificaat te genereren.
  
@@ -297,7 +299,7 @@ De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
     ./certGen.sh create_verification_certificate 1B1F84DE79B9BD5F16D71E92709917C2A1CA19D5A156CB9F    
     ```    
 
-    Met dit script wordt een certificaat gemaakt dat is ondertekend door het basiscertificaat waarvan de onderwerpnaam is ingesteld op de verificatiecode. Met dit certificaat kan DPS controleren of u toegang hebt tot de persoonlijke sleutel van het basiscertificaat. De locatie van het verificatiecertificaat bevindt zich in de uitvoer van het script.
+    Met dit script wordt een certificaat gemaakt dat is ondertekend door het basiscertificaat waarvan de onderwerpnaam is ingesteld op de verificatiecode. Met dit certificaat kan DPS controleren of u toegang hebt tot de persoonlijke sleutel van het basiscertificaat. De locatie van het verificatiecertificaat bevindt zich in de uitvoer van het script. Dit certificaat wordt gegenereerd in `.pfx`-indeling.
 
     ```output
     Leaf Device PFX Certificate Generated At:

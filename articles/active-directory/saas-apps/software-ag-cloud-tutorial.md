@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/23/2020
+ms.date: 11/20/2020
 ms.author: jeedes
-ms.openlocfilehash: ccf945f8bfec85a18493d515dce48f4cb3e3b612
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4acc4c0cec530b8f83648042cd7a417992257543
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182335"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602016"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-software-ag-cloud"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Software AG Cloud
 
@@ -77,9 +77,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`
+    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://*.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.softwareag.cloud/auth/realms/TENANT-NAME`
+    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://*.softwareag.cloud/auth/realms/TENANT-NAME`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [klantondersteuningsteam van Software AG Cloud](mailto:support@softwareag.com) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -121,19 +121,19 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1.  Klik op **Beheer**
 
-    ![Software AG Cloud configureren1](./media/software-ag-cloud-tutorial/admin.png)
+    ![Software AG Cloud-beheer configureren](./media/software-ag-cloud-tutorial/admin.png)
 
 1. Ga naar **Eenmalige aanmelding > Id-provider toevoegen**
 
-    ![Software AG Cloud configureren2](./media/software-ag-cloud-tutorial/add-identity-provider.png)
+    ![Software AG Cloud-identiteitsprovider configureren](./media/software-ag-cloud-tutorial/add-identity-provider.png)
 
 1. Voer de volgende stappen uit op de volgende pagina.
 
-    ![Software AG Cloud configureren3](./media/software-ag-cloud-tutorial/saml-1.png)
+    ![Software AG Cloud configureren - volg de stappen](./media/software-ag-cloud-tutorial/saml-1.png)
 
     a. Geef in het tekstvak **Weergavenaam id-provider** een naam op, zoals `azure ad`.
 
-    b. Plak in het tekstvak **Omleidings-URI voor unieke id van id-provider voor gebruik in Software AG Cloud** de waarde van de **Entiteits-id** die u hebt gekopieerd in de Azure-portal.
+    b. Voer een unieke naam in voor de identiteitsprovider in het tekstvak **Unieke id van identiteitsprovider voor gebruik in de omleidings-URI voor Software AG Cloud**. Het veld **Omleidings-URI voor Software AG Cloud** wordt vernieuwd en ingevuld met de URI. Kopieer deze URI en gebruik deze om de **Entiteit-id** en andere informatie in Azure Portal in te stellen volgens de gedefinieerde patronen.
 
     c. Importeer het **XML-bestand met federatieve metagegevens** in **Configuratie id-provider** en klik op **Volgende**.
 
@@ -147,11 +147,12 @@ In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in Software 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Software AG Cloud, waar u de aanmeldingsstroom kunt initiëren. 
+* Ervan uitgaande dat Microsoft Azure is geconfigureerd als provider in Software AG Cloud, gaat u naar `www.softwareag.cloud`, klikt u op de knop Aanmelden en voert u de naam van de omgeving in. Klik in het volgende scherm op 'Aanmelden met <IDP NAME>' en voer de aanmeldingsgegevens in. Nadat u bent geverifieerd, wordt u aangemeld en wordt de startpagina van Software AG Cloud geopend.
 
-2. Ga rechtstreeks naar de aanmeldings-URL van Software AG Cloud en initieer de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de aanmeldings-URL van Software AG Cloud en initieer de aanmeldingsstroom daar.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in het toegangsvenster op de tegel Software AG Cloud klikt, wordt u omgeleid naar de aanmeldings-URL voor Software AG Cloud. Zie [Inleiding tot het toegangsvenster](../user-help/my-apps-portal-end-user-access.md) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in het toegangsvenster op de tegel Software AG Cloud in Mijn apps klikt, wordt u omgeleid naar de aanmeldings-URL voor Software AG Cloud. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

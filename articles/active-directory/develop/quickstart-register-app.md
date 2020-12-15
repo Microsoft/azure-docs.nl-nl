@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperfq1, contentperfq2
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: ed4e3c54bd4aa6be314fe7ec12d6ba6e7cf949d9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 860cd24c623cb6db407c82aa81e2c3662da289ed
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083317"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762972"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform
 
@@ -37,15 +37,15 @@ Het registreren van uw toepassing brengt een vertrouwensrelatie tot stand tussen
 Volg deze stappen om de app-registratie te maken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/quickstart-register-app/portal-01-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
-1. Selecteer onder **Beheren** de optie **App-registraties** en vervolgens **Nieuwe registratie**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 1. Geef op wie de toepassing kan gebruiken, ook wel aangeduid als de *doelgroep voor aanmelden*.
 
     | Ondersteunde accounttypen | Beschrijving |
     |-------------------------|-------------|
-    | **Alleen accounts in deze organisatiemap** | Selecteer deze optie als u een toepassing bouwt die alleen is bedoeld voor gebruikers (of gasten) in *uw* tenant.<br><br>Dit wordt vaak een *LOB* -toepassing (Line-of-Business) genoemd. Dit is een toepassing met **één tenant** in het Microsoft Identity Platform. |
+    | **Alleen accounts in deze organisatiemap** | Selecteer deze optie als u een toepassing bouwt die alleen is bedoeld voor gebruikers (of gasten) in *uw* tenant.<br><br>Dit wordt vaak een *LOB*-toepassing (Line-of-Business) genoemd. Dit is een toepassing met **één tenant** in het Microsoft Identity Platform. |
     | **Accounts in elke organisatiemap** | Selecteer deze optie als u wilt dat gebruikers in *een willekeurige* Azure AD-tenant uw toepassing kunnen gebruiken. Deze optie is geschikt als u bijvoorbeeld een SaaS-toepassing (Software-as-a-Service) bouwt die u aan meerdere organisaties wilt leveren.<br><br>Dit wordt een toepassing met **meerdere tenants** genoemd in het Microsoft Identity Platform. |
     | **Accounts in elke organisatiemap en persoonlijke Microsoft-accounts** | Selecteer deze optie om de breedste groep klanten te bereiken.<br><br>Als u deze optie selecteert registreert u een toepassing met **meerdere tenants** die ook ondersteuning kan bieden voor gebruikers met een persoonlijk **Microsoft-account** (MSA). |
     | **Persoonlijk Microsoft-account** | Selecteer deze optie als u een toepassing bouwt die alleen is bedoeld voor gebruikers met een persoonlijk Microsoft-account. Persoonlijke Microsoft-accounts inclusief Skype-, Xbox-, Live- en Hotmail-accounts. |
@@ -71,7 +71,7 @@ U kunt omleidings-URI's voor uw geregistreerde toepassingen toevoegen en wijzige
 
 ### <a name="configure-platform-settings"></a>Platforminstellingen configureren
 
-Instellingen voor elk toepassingstype, waaronder omleidings-URI's, worden geconfigureerd in **Platformconfiguraties** in de Azure-portal. Voor sommige platformen, zoals **Webtoepassingen** en **Toepassingen met één pagina** , moet u handmatig een omleidings-URI opgeven. Voor andere platformen, zoals mobiele toepassingen en desktoptoepassingen, kunt u kiezen uit omleidings-URI's die voor u zijn gegenereerd tijdens het configureren van de andere bijbehorende instellingen.
+Instellingen voor elk toepassingstype, waaronder omleidings-URI's, worden geconfigureerd in **Platformconfiguraties** in de Azure-portal. Voor sommige platformen, zoals **Webtoepassingen** en **Toepassingen met één pagina**, moet u handmatig een omleidings-URI opgeven. Voor andere platformen, zoals mobiele toepassingen en desktoptoepassingen, kunt u kiezen uit omleidings-URI's die voor u zijn gegenereerd tijdens het configureren van de andere bijbehorende instellingen.
 
 Als u toepassingsinstellingen wilt configureren op basis van het platform of apparaat, doet u het volgende:
 
@@ -86,7 +86,7 @@ Als u toepassingsinstellingen wilt configureren op basis van het platform of app
     | -------- | ---------------------- |
     | **Web** | Voer een **Omleidings-URI** voor de app in, de locatie waar het Microsoft Identity Platform een client van de gebruiker naartoe omleidt en beveiligingstokens naartoe stuurt na de verificatie.<br/><br/>Selecteer dit platform voor standaardwebtoepassingen die worden uitgevoerd op een server. |
     | **Toepassing met één pagina** | Voer een **Omleidings-URI** voor de app in, de locatie waar het Microsoft Identity Platform een client van de gebruiker naartoe omleidt en beveiligingstokens naartoe stuurt na de verificatie.<br/><br/>Selecteer dit platform als u een web-app aan de clientzijde bouwt in JavaScript of met een framework zoals Angular, Vue.js, React.js of Blazor WebAssembly. |
-    | **iOS / macOS** | Voer de **Bundel-id** van de app in. Deze vindt u in XCode in *Info.plist* , of in de instellingen voor de build.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u een bundel-id opgeeft. |
+    | **iOS / macOS** | Voer de **Bundel-id** van de app in. Deze vindt u in XCode in *Info.plist*, of in de instellingen voor de build.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u een bundel-id opgeeft. |
     | **Android** | Voer de **Pakketnaam** van de app in. Deze vindt u in het bestand *AndroidManifest.xml*. Genereer vervolgens de **Hash voor ondertekening** en voer deze in.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u deze instellingen opgeeft. |
     | **Mobiele toepassingen en desktoptoepassingen** | Selecteer een van de **Voorgestelde omleidings-URI's** of geef een **Aangepaste omleidings-URI** op.<br/>Voor desktoptoepassingen kunt u het beste het volgende doen:<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>Selecteer dit platform voor mobiele toepassingen die niet gebruikmaken van de nieuwste MSAL-versie (Microsoft Authentication Library) of die geen broker gebruiken. Selecteer dit platform ook voor desktoptoepassingen. |
 1. Selecteer **Configureren** om de platformconfiguratie te voltooien.

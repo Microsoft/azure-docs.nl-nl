@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 12/04/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 41955475f32fe674bcb3ef2d1b6e59c71a008b6b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5d0b2df551c73e8c9b24d80280bbc993d9b361b7
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656442"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928464"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
@@ -51,8 +51,12 @@ Om een hoge beschikbaarheid in uw productieomgeving te realiseren wordt aangerad
 > ```
 > Windows Registry Editor Version 5.00
 > 
-> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp] "EnableDefaultHttp2"=dword:00000000
+> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 Value: 0
 > ```
+>
+> De sleutel kan worden ingesteld via PowerShell met de volgende opdracht.
+> ```
+> Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\' -Name EnableDefaultHTTP2 -Value 0
 >
 
 #### <a name="recommendations-for-the-connector-server"></a>Aanbevelingen voor de connectorserver
@@ -87,6 +91,9 @@ TLS 1.2 inschakelen:
 
 1. Start de server opnieuw.
 
+> [!Note]
+> Microsoft werkt Azure-services bij om TLS-certificaten te gebruiken van een andere set basis-CA's (certificeringsinstanties). Deze wijziging wordt doorgevoerd omdat de huidige CA-certificaten niet voldoen aan een van de forumbasislijnvereisten voor CA's/browsers. Raadpleeg [Wijzigingen in Azure TLS-certificaten](https://docs.microsoft.com/azure/security/fundamentals/tls-certificate-changes) voor meer informatie.
+
 ## <a name="prepare-your-on-premises-environment"></a>Bereid uw on-premises omgeving voor
 
 Begin door communicatie met Azure-datacenters in te schakelen om uw omgeving voor te bereiden voor Azure AD Application Proxy. Als het pad een firewall bevat, zorg dan dat deze openstaat. Dankzij een open firewall kan de connector HTTPS-aanvragen (TCP) versturen naar Application Proxy.
@@ -113,7 +120,7 @@ Sta toegang tot de volgende URL's toe:
 | --- | --- | --- |
 | &ast;.msappproxy.net<br>&ast;.servicebus.windows.net | 443/HTTPS | Communicatie tussen de connector en de Application Proxy-cloudservice |
 | crl3.digicert.com<br>crl4.digicert.com<br>ocsp.digicert.com<br>crl.microsoft.com<br>oneocsp.microsoft.com<br>ocsp.msocsp.com<br> | 80/HTTP |De connector gebruikt deze URL's om certificaten te verifiëren. |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com | 443/HTTPS |De connector gebruikt deze URL's tijdens het registratieproces. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com<br>www.microsoft.com/pkiops | 443/HTTPS |De connector gebruikt deze URL's tijdens het registratieproces. |
 | ctldl.windowsupdate.com | 80/HTTP |De connector gebruikt deze URL tijdens het registratieproces. |
 
 U kunt verbindingen met &ast;.msappproxy.net, &ast;.servicebus.windows.net en andere URL's hierboven toestaan, als de firewall of proxy toestaat dat u DNS-acceptatielijsten configureert. Zo niet, dan moet u toegang tot de [Azure IP-bereiken en -servicetags – Openbare cloud](https://www.microsoft.com/download/details.aspx?id=56519) toestaan. die overigens elke week worden bijgewerkt.
@@ -184,7 +191,7 @@ Nu u uw omgeving hebt voorbereid en een connector hebt geïnstalleerd, kunt u on
 1. Meld u aan als beheerder in de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Azure Active Directory** in het navigatiepaneel aan de linkerkant.
 3. Selecteer **Ondernemingstoepassingen** en selecteer vervolgens **Nieuwe toepassing**.
-4. Selecteer in de sectie **On-premises toepassingen** de optie **Een on-premises toepassing toevoegen**.
+4. Selecteer **Toepassingsproxy configureren voor veilige externe toegang tot een on-premises toepassing** in de sectie **Uw eigen toepassing maken**.
 5. Geef in de sectie **Uw eigen on-premises toepassing toevoegen** de volgende informatie over uw toepassing op:
 
     | Veld | Beschrijving |

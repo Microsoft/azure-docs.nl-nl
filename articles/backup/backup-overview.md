@@ -4,12 +4,12 @@ description: Geeft een overzicht van de Azure Backup-service en hoe deze bijdraa
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 537605498fe166b24bd4e24673cfa1542bc449ea
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 805fa81362b9f90c1d6ba468caaf4b6745e42c62
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172477"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746111"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Wat is de Azure Backup-service?
 
@@ -43,7 +43,7 @@ Azure Backup biedt deze belangrijke voordelen:
 - **App-consistente back-ups**: Een app-consistente back-up betekent dat een herstelpunt alle vereiste gegevens heeft om de back-up te kunnen herstellen. Azure Backup biedt toepassingsconsistente back-ups, om ervoor te zorgen dat er geen aanvullende correcties nodig zijn om de gegevens te herstellen. Herstellen van toepassingsconsistente gegevens verkort de hersteltijd, zodat u snel weer normaal aan het werk kunt.
 - **Korte- en langetermijngegevens bewaren**: U kunt [Recovery Services-kluizen](backup-azure-recovery-services-vault-overview.md) gebruiken voor het bewaren van gegevens voor de korte en de lange termijn.
 - **Automatisch opslagbeheer**: voor hybride omgevingen is vaak heterogene opslag vereist, soms on-premises en soms in de cloud. Met Azure Backup zijn er geen kosten voor het gebruik van on-premises opslagapparaten. De back-upopslag wordt automatisch door Azure Backup toegewezen en beheerd en u betaalt naar gebruik. U betaalt dus alleen voor de opslag die u gebruikt. [Lees meer](https://azure.microsoft.com/pricing/details/backup) over prijzen.
-- **Meerdere opslagopties**: Azure Backup biedt twee typen replicatie om uw opslag/gegevens maximaal beschikbaar te houden.
+- **Meerdere opslagopties**: Azure Backup biedt drie typen replicatie om opslag/gegevens maximaal beschikbaar te houden.
   - Met [lokaal redundante opslag LRS](../storage/common/storage-redundancy.md#locally-redundant-storage) worden uw gegevens drie keer gerepliceerd (er worden drie kopieën gemaakt van uw gegevens) in een opslagschaaleenheid in een datacenter. Alle kopieën van de gegevens komen binnen dezelfde regio voor. LRS is een goedkope optie voor het beschermen van uw gegevens tegen lokale hardwarefouten.
   - [Geografisch redundante opslag (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage) is de standaardinstelling en is de replicatieoptie die wordt aanbevolen. Met GRS worden uw gegevens gerepliceerd naar een secundaire regio (honderden kilometers verwijderd van de primaire locatie van de brongegevens). GRS is duurder dan LRS, maar biedt een hoger duurzaamheidsniveau voor uw gegevens, zelfs in geval van een regionale onderbreking.
   - [Zone-redundante opslag (ZRS)](../storage/common/storage-redundancy.md#zone-redundant-storage) repliceert uw gegevens in [beschikbaarheidszones](../availability-zones/az-overview.md#availability-zones), waarbij gegevenslocatie en gegevenstolerantie in dezelfde regio worden gegarandeerd. ZRS heeft geen downtime. Zodat er in ZRS een back-up gemaakt kan worden van uw kritieke werkbelastingen, waarvoor [gegevenslocatie](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) vereist is en waarbij geen sprake van downtime mag zijn.

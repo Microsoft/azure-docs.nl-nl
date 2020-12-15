@@ -1,20 +1,26 @@
 ---
 title: Overzicht van Azure Functions
-description: Ontdek hoe Azure Functions u kan helpen schaalbare serverloze apps te bouwen.
+description: Ontdek hoe Azure Functions u kan helpen robuuste serverloze apps te bouwen.
 author: craigshoemaker
 ms.assetid: 01d6ca9f-ca3f-44fa-b0b9-7ffee115acd4
 ms.topic: overview
 ms.date: 11/20/2020
 ms.author: cshoe
 ms.custom: contperfq2
-ms.openlocfilehash: 514f2e9a82a50f95f9c054c6a54e7b5af3c0af15
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 269d911c13cbc59a054c5548e106780d630c8e2b
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96167774"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620865"
 ---
 # <a name="introduction-to-azure-functions"></a>Een inleiding tot Azure Functions
+
+Azure Functions is een serverloze oplossing waarmee u minder code hoeft te schrijven, minder infrastructuur hoeft te onderhouden en kunt besparen op kosten. In plaats van u zorgen te maken over het implementeren en onderhouden van servers, biedt de cloudinfrastructuur alle servers om uw toepassingen uit te voeren.
+
+U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest.<br /><br />
+
+> [!VIDEO https://www.youtube.com/embed/8-jz5f_JyEQ]
 
 We bouwen vaak systemen om te reageren op een reeks kritieke gebeurtenissen. Of u nu een web-API bouwt, reageert op wijzigingen in de database, IoT-gegevensstromen verwerkt of berichtenwachtrijen beheert, elke toepassing heeft een methode nodig om code uit te voeren wanneer deze gebeurtenissen optreden.
 

@@ -10,16 +10,18 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 9ea4ec748ca37f93e9711970b10746a009543d00
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c0253dc3c9dc029cd964fb32b148be1405e7fbad
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780175"
 ---
 # <a name="quickstart-set-up-oidc-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Eenmalige aanmelding (SSO) op basis van OIDC instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)
 
 Ga aan de slag met vereenvoudigde gebruikersaanmeldingen door eenmalige aanmelding (SSO) in te stellen voor een toepassing die u hebt toegevoegd aan uw Azure Active Directory-tenant (Azure AD). Nadat u SSO hebt ingesteld, kunnen uw gebruikers zich aanmelden bij een toepassing met behulp van hun Azure AD-referenties. SSO is opgenomen in de gratis versie van Azure AD.
+
+Raadpleeg [Eenmalige aanmelding op basis van OIDC begrijpen](configure-oidc-single-sign-on.md) voor meer informatie over SSO op basis van OIDC.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -52,7 +54,7 @@ Eenmalige aanmelding voor een toepassing instellen:
    > [!IMPORTANT]
     > Als u al een abonnement voor de toepassing hebt, worden de gebruikersgegevens en tenant/directory-gegevens gevalideerd. Als de toepassing de gebruiker niet kan verifiëren, wordt u omgeleid naar de registratiepagina van de toepassingsservice of krijgt u een foutpagina te zien.
 
-3. Na een geslaagde verificatie wordt een dialoogvenster weer gegeven waarin u wordt gevraagd om toestemming van de beheerder. Selecteer **Toestemming namens uw organisatie** en selecteer **Accepteren**. 
+3. Na een geslaagde verificatie wordt een dialoogvenster weer gegeven waarin u wordt gevraagd om toestemming van de beheerder. Selecteer **Toestemming namens uw organisatie** en selecteer **Accepteren**. Raadpleeg [Gebruikers- en beheerderstoestemming begrijpen](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent) voor meer informatie over gebruikers- of beheerderstoestemming.
 
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/consent.png" alt-text="Schermopname toont het toestemmingsscherm voor een app." lightbox="media/add-application-portal-setup-oidc-sso/consent.png":::
 
@@ -62,6 +64,11 @@ Eenmalige aanmelding voor een toepassing instellen:
 > [!TIP]
 > U kunt het beheer van apps automatiseren met behulp van de Graph API. Zie [App-beheer automatiseren met de Microsoft Graph API](/graph/application-saml-sso-configure-api).
 
+Hier is een video die u stapsgewijs meeneemt door wat aanvullende details over het toevoegen van een OIDC-app aan Azure AD.
+
+Een OIDC-app toevoegen in Azure Active Directory
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

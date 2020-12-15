@@ -7,48 +7,64 @@ ms.topic: overview
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 74ebdafb835aff75f282b9d6ac02d8ccf672a2be
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 041ef9950300129d54c9374939e13a2f99035bc1
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501087"
+ms.locfileid: "96532840"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Wat is Azure Spring Cloud?
 
-Met Azure Spring Cloud kunt u eenvoudig microservicetoepassingen op basis van Spring Boot implementeren in Azure zonder codewijzigingen.  Azure Spring Cloud beheert de infrastructuur van Spring Cloud-toepassingen, zodat ontwikkelaars zich kunnen richten op hun code.  Spring Cloud biedt levenscyclusbeheer met uitgebreide bewaking en diagnose, configuratiebeheer, servicedetectie, CI/CD-integratie, blue-green implementaties, en meer.
+Met Azure Spring Cloud kunt u eenvoudig microservicetoepassingen van Spring Boot implementeren in Azure zonder codewijzigingen.  De service beheert de infrastructuur van Spring Cloud-toepassingen, zodat ontwikkelaars zich kunnen richten op hun code.  Azure Spring Cloud biedt levenscyclusbeheer met uitgebreide bewaking en diagnose, configuratiebeheer, servicedetectie, CI/CD-integratie, blauw-groen-implementaties, en meer.
 
-Azure Spring Cloud ondersteunt [Spring Boot](https://spring.io/projects/spring-boot)-apps van Java en [Steeltoe](https://steeltoe.io/)-apps van ASP.NET Core. Ondersteuning van Steeltoe wordt momenteel aangeboden als openbare preview. Met openbare preview-aanbiedingen kunt u voorafgaand aan de officiële release met nieuwe functies experimenteren.  Openbare preview-functies en -services zijn niet bedoeld voor gebruik in productie.  Zie de [Veelgestelde vragen](https://azure.microsoft.com/support/faq/) of een dien een [ondersteuningsaanvraag](../azure-portal/supportability/how-to-create-azure-support-request.md) in voor meer informatie.
+## <a name="why-use-azure-spring-cloud"></a>Waarom zou u Azure Spring Cloud gebruiken?
 
-Als onderdeel van het Azure-ecosysteem kan Azure Spring Cloud eenvoudig worden verbonden met Azure-services, waaronder opslag, databases, bewaking en meer.
+De implementatie van toepassingen op Azure Spring Cloud heeft veel voordelen.  U kunt het volgende doen:
+* Bestaande Spring-apps efficiënt migreren en de schaalbaarheid en kosten voor de cloud beheren.
+* Apps moderniseren met Spring Cloud-patronen om de flexibiliteit en snelheid van de levering te verbeteren.
+* Java uitvoeren op cloudschaalbaarheid en hoger gebruik aansturen zonder ingewikkelde infrastructuur.
+* Snel ontwikkelen en implementeren zonder containerisatie-afhankelijkheden.
+* Productiewerkbelastingen efficiënt en moeiteloos bewaken.
 
-In deze inleiding worden de volgende mogelijkheden van Azure Spring Cloud beschreven:
+Azure Spring Cloud ondersteunt [Spring Boot](https://spring.io/projects/spring-boot)-apps van Java en [Steeltoe](https://steeltoe.io/)-apps van ASP.NET Core. Ondersteuning van Steeltoe wordt momenteel aangeboden als openbare preview. Met openbare preview-aanbiedingen kunt u voorafgaand aan de officiële release met nieuwe functies experimenteren. Openbare preview-functies en -services zijn niet bedoeld voor gebruik in productie. Zie de [Veelgestelde vragen](https://azure.microsoft.com/support/faq/) of een dien een [ondersteuningsaanvraag](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) in voor meer informatie.
 
-* Configuratieserver
-* Blauwe of groene implementaties
-* Schalen van toepassingen
-* Integratie met Azure DevOps
-* Toepassingsbewaking
+## <a name="service-overview"></a>Overzicht van services
 
-## <a name="spring-cloud-config-server"></a>Spring Cloud-configuratieserver
+Als onderdeel van het Azure-ecosysteem kan Azure Spring Cloud eenvoudig worden verbonden met Azure-services, waaronder opslag, databases, bewaking en meer.  
 
-Azure Spring Cloud-configuratieserver biedt ondersteuning voor een geëxternaliseerde configuratie in een gedistribueerd systeem aan server- en clientzijde.  De Azure Spring Cloud-configuratieserver is een centrale locatie voor het beheren van toepassingseigenschappen in alle omgevingen. Raadpleeg de [Spring Cloud Config Server-referentie](https://spring.io/projects/spring-cloud-config) voor meer informatie. 
+  ![Overzicht van Azure Spring Cloud](media/spring-cloud-principles/azure-spring-cloud-overview.png)
 
-## <a name="bluegreen-deployments"></a>Blauwe of groene implementaties
+* Azure Spring Cloud is een volledig beheerde service voor Spring Boot-apps waarmee u zich kunt richten op het bouwen en uitvoeren van apps zonder dat u de infrastructuur hoeft te beheren.
 
-Azure Spring Cloud ondersteunt blue-green implementaties voor het vrijgeven en bijwerken van code naar productieomgevingen.  Door dit patroon voor wijzigingsbeheer kunnen ontwikkelaars functie- en codewijzigingen implementeren met de zekerheid van een directe fallback wanneer dat nodig is.  Ontwikkelaars kunnen zich concentreren op het schrijven van code met meerdere productieomgevingen om codewijzigingen bij te werken of terug te draaien zonder de toepassing te onderbreken.  Zie dit [artikel met instructies](spring-cloud-howto-staging-environment.md) voor meer informatie over faseringsomgevingen en blue-green implementaties.
+* U hoeft alleen maar uw JAR’s of code te implementeren en Azure Spring Cloud zorgt er automatisch voor dat uw apps worden uitgerust met Spring-serviceruntime en ingebouwde levenscyclus van de app.
 
-## <a name="cicd-pipeline-automation"></a>Automatisering van CI/CD-pijplijnen
+* Bewaken is eenvoudig. Na de implementatie kunt u de prestaties van de app bewaken, fouten corrigeren en toepassingen snel verbeteren. 
 
-Azure Spring Cloud biedt integratie met Azure DevOps met behulp van de Azure CLI.  Met Azure DevOps kunt u code-integratie en -implementatie automatiseren in uw Spring-toepassing.  Lees [dit artikel](spring-cloud-howto-cicd.md) voor meer informatie.
+* Volledige integratie met de ecosystemen en services van Azure.
 
-## <a name="application-scaling"></a>Schalen van toepassingen
+* Azure Spring Cloud is geschikt voor gebruik door bedrijven met een volledige beheerde infrastructuur, ingebouwd levenscyclusbeheer en eenvoudige bewaking.
 
-Met Azure Spring Cloud kunt u eenvoudig de microservices in uw Azure Spring Cloud-dashboard schalen.  Het aantal Vcpu's en de hoeveelheid geheugen die beschikbaar is voor uw microservices kunnen omhoog of omlaag worden geschaald op basis van uw vereisten.  Schalen gaat binnen enkele seconden van kracht en vereist geen codewijzigingen of herimplementatie.  Volg deze [zelfstudie](spring-cloud-tutorial-scale-manual.md) voor meer informatie.
+## <a name="documentation-overview"></a>Overzicht van documentatie
+Deze documentatie bevat secties waarin wordt uitgelegd hoe u aan de slag kunt gaan en Azure Spring Cloud-services kunt gebruiken.
 
-## <a name="application-monitoring"></a>Toepassingsbewaking
-
-Met de gedistribueerde traceringshulpprogramma's in Spring Cloud kunnen ontwikkelaars de complexe verbindingen tussen microservices in een toepassing bewaken en er fouten in opsporen.  Dankzij de integratie van [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) met [Application Insights](../azure-monitor/monitor-reference.md) van Azure biedt Azure krachtige functies voor gedistribueerde tracering rechtstreeks vanuit de Azure-portal.  Volg deze [zelfstudie](spring-cloud-tutorial-distributed-tracing.md) voor meer informatie.
+* Aan de slag
+    * [Uw eerste app lanceren](spring-cloud-quickstart.md)
+    * [Een Azure Spring Cloud-service inrichten](spring-cloud-quickstart-provision-service-instance.md)
+    * [De configuratieserver instellen]()
+    * [Apps bouwen en implementeren](spring-cloud-quickstart-deploy-apps.md)
+    * [Logboeken, metrische gegevens en tracering gebruiken](spring-cloud-quickstart-logs-metrics-tracing.md)
+* Uitleg
+    * [Ontwikkelen](spring-cloud-tutorial-prepare-app-deployment.md): Een bestaande Java Spring-toepassing voorbereiden voor implementatie in Azure Spring Cloud. Wanneer Azure Spring Cloud op de juiste wijze is geconfigureerd, beschikt u over krachtige services voor het bewaken, schalen en bijwerken van Java Spring Cloud-toepassingen.
+    * [Implementeren](spring-cloud-howto-staging-environment.md): Een faseringsimplementatie instellen met behulp van het blauw-groen-implementatiepatroon in Azure Spring Cloud. Blauw/groen-implementatie is een Azure DevOps-patroon voor continue levering dat erop vertrouwt een bestaande (blauwe) versie live te houden terwijl een nieuwe (groene) wordt geïmplementeerd.
+    * [Apps configureren](spring-cloud-howto-start-stop-delete.md):  Uw Azure Spring Cloud-toepassingen starten, stoppen en verwijderen. De status van een toepassing in Azure Spring Cloud wijzigen met behulp van de Azure Portal of de Azure CLI.
+    * [Schalen](spring-cloud-tutorial-scale-manual.md): Elke microservicetoepassing schalen met behulp van het Azure Spring Cloud-dashboard in de Azure Portal of de instellingen voor automatische schaalaanpassing gebruiken. Openbare IP's zijn beschikbaar om te communiceren met externe resources, zoals databases, opslag en sleutelkluizen.
+    * [Apps bewaken](spring-cloud-tutorial-distributed-tracing.md): Hulpprogramma's voor gedistribueerde tracering om ingewikkelde problemen eenvoudig op te sporen en te bewaken. Azure Spring Cloud integreert Spring Cloud Sleuth met Application Insights van Azure. Deze integratie biedt krachtige functies voor gedistribueerde tracering via de Azure-portal.
+    * [Beveiligde apps](spring-cloud-howto-enable-system-assigned-managed-identity.md): Azure-resources bieden een automatisch beheerde identiteit in Azure Active Directory. U kunt deze identiteit gebruiken voor verificatie bij alle services die Microsoft Azure AD-verificatie ondersteunen, zonder dat u aanmeldingsgegevens in uw code hoeft te hebben.
+    * [Integratie met andere Azure-services](spring-cloud-tutorial-bind-cosmos.md): In plaats van uw Spring Boot-toepassingen handmatig te configureren, kunt u bepaalde Azure-services automatisch met uw toepassingen verbinden; u kunt uw toepassing bijvoorbeeld verbinden aan een Azure Cosmos DB-database.
+    * [Automatiseren](spring-cloud-howto-cicd.md): Met de hulpprogramma's voor continue integratie en continue levering kunt u snel updates implementeren voor bestaande toepassingen met minimale inspanning en risico. Azure DevOps helpt bij het organiseren en beheren van deze belangrijke taken. 
+    * [Problemen oplossen](spring-cloud-howto-self-diagnose-solve.md): Azure Spring Cloud-diagnose biedt een interactieve ervaring bij het oplossen van problemen met apps. Er is geen configuratie vereist. Wanneer u problemen ondervindt, identificeert de Azure Spring Cloud-diagnose problemen en begeleidt u bij het oplossen van problemen.
+    * [Migreren](https://docs.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud): Een bestaande Spring Cloud-toepassing of Spring Boot-toepassing migreren om uit te voeren in Azure Spring Cloud.
 
 ## <a name="next-steps"></a>Volgende stappen
 

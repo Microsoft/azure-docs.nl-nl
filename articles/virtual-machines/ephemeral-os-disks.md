@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/23/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: f915652110524aac06d641d636155bc6a5fcd256
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 52071b964412071d820745b173e8835c6f9e7d0e
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927920"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510988"
 ---
 # <a name="ephemeral-os-disks-for-azure-vms"></a>Tijdelijke besturingssysteem schijven voor virtuele Azure-machines
 
@@ -38,7 +38,7 @@ Belangrijkste verschillen tussen permanente en tijdelijke besturingssysteem schi
 | **VM-grootten worden ondersteund**          | Alles                                                                                          | VM-grootten die ondersteuning bieden voor Premium-opslag, zoals DSv1, DSv2, DSv3, Esv3, FS, FsV2, GS, M                                               |
 | **Ondersteuning voor schijf type**           | Beheerde en onbeheerde besturingssysteem schijf                                                                | Alleen beheerde besturingssysteem schijf                                                               |
 | **Ondersteuning voor regio**              | Alle regio's                                                                                  | Alle regio's                              |
-| **Gegevens persistentie**            | De schijf gegevens van het besturings systeem die naar de besturingssysteem schijf zijn geschreven, worden opgeslagen in Azure Storage                                  | Gegevens die naar de besturingssysteem schijf zijn geschreven, worden opgeslagen in de lokale VM-opslag en worden niet bewaard om Azure Storage. |
+| **Gegevenspersistentie**            | De schijf gegevens van het besturings systeem die naar de besturingssysteem schijf zijn geschreven, worden opgeslagen in Azure Storage                                  | Gegevens die naar de besturingssysteem schijf zijn geschreven, worden opgeslagen in de lokale VM-opslag en worden niet bewaard om Azure Storage. |
 | **Status voor stoppen-toewijzing ongedaan gemaakt**      | Vm's en schaal sets instanties kunnen stoppen en opnieuw worden toegewezen en opnieuw worden gestart vanaf de status voor het ongedaan maken van de toewijzing | Vm's en instanties van schaal sets kunnen niet stoppen-toewijzing opheffen                                  |
 | **Ondersteuning van gespecialiseerde besturingssysteem schijf** | Ja                                                                                          | Nee                                                                                 |
 | **Grootte van besturingssysteem schijf**              | Ondersteund tijdens het maken van de virtuele machine en nadat de virtuele machine is onttoewijzing gestopt                                | Alleen ondersteund tijdens het maken van VM'S                                                  |
@@ -86,9 +86,9 @@ az vm create \
 
 Voor schaal sets gebruikt u dezelfde `--ephemeral-os-disk true` para meter voor [AZ-vmss-Create](/cli/azure/vmss#az-vmss-create) en stelt u de `--os-disk-caching` para meter in op `ReadOnly` .
 
-## <a name="portal"></a>Portal   
+## <a name="portal"></a>Portal
 
-In de Azure Portal kunt u ervoor kiezen om tijdelijke schijven te gebruiken bij het implementeren van een VM door de sectie **Advanced** van het tabblad **schijven** te openen. Voor het **gebruik van kortstondige besturingssysteem schijf** selecteert u **Ja** .
+In de Azure Portal kunt u ervoor kiezen om tijdelijke schijven te gebruiken bij het implementeren van een VM door de sectie **Advanced** van het tabblad **schijven** te openen. Voor het **gebruik van kortstondige besturingssysteem schijf** selecteert u **Ja**.
 
 ![Scherm opname van het keuze rondje voor het kiezen van een kortstondige besturingssysteem schijf](./media/virtual-machines-common-ephemeral/ephemeral-portal.png)
 
@@ -120,7 +120,7 @@ Het proces voor het maken van een schaalset die gebruikmaakt van een kortstondig
        "storageProfile": { 
         "osDisk": { 
           "diffDiskSettings": { 
-                "option": "Local" 
+            "option": "Local" 
           }, 
           "caching": "ReadOnly", 
           "createOption": "FromImage" 

@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 34fe909c7fca3c91845c58b41abb0d8885e156e6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0cdd25b2937dd1fb2cc70ef7b1c5a9e9ddaef375
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94850901"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780600"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
 
@@ -89,7 +89,7 @@ De API-respons vermeldt alle inschrijvingsaccounts waartoe u toegang hebt:
 
 ```
 
-Noteer de `id` van een van uw `enrollmentAccounts`. Dit is het factureringsbereik waaronder een aanvraag voor het maken van een abonnement wordt gestart. 
+De waarde voor een factureringsbereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
 
 <!-- 
 ### [PowerShell](#tab/azure-powershell-getEnrollments)
@@ -130,6 +130,8 @@ Geef in de hoofdtekst van de aanvraag de `id` van een van uw `enrollmentAccounts
   }
 }
 ```
+
+Toegestane waarden voor `Workload` zijn `Production` en `DevTest`.
 
 #### <a name="response"></a>Antwoord
 

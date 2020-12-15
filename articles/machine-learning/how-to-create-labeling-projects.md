@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 450d471beebbcc554a6d534fb2d5361778f158bc
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 74e9224b30ccee274eaf52ba47a0ec05573c2e9d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992315"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558722"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -109,7 +109,7 @@ Als u van plan bent nieuwe afbeeldingen toe te voegen aan uw gegevensset, gebrui
 
 Als u meer afbeeldingen aan uw project wilt toevoegen, gebruikt u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) om te uploaden naar de juiste map in de Blob-opslag. 
 
-Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag.
+Schakel het selectievakje voor **Incrementele vernieuwing inschakelen** in wanneer u wilt dat het project doorlopend controleert op nieuwe gegevens in de gegevensopslag. Deze gegevens worden één keer per dag naar uw project gehaald als dit is ingeschakeld.
 
 Schakel dit selectievakje uit als u niet wilt dat nieuwe afbeeldingen die worden weergegeven in de gegevensopslag, worden toegevoegd aan het project.
 

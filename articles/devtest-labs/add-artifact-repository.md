@@ -3,12 +3,12 @@ title: Een opslag plaats voor artefacten toevoegen aan uw Lab in Azure DevTest L
 description: Meer informatie over het opgeven van uw eigen artefact opslagplaats voor uw Lab in Azure DevTest Labs om hulpprogram ma's op te slaan die niet beschikbaar zijn in de open bare artefact opslagplaats.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7553f6b1afa416a5428577a8313bdadb669e32c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dd7d89020bf077e29b177f6871f43b52467b0d8
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88270968"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512008"
 ---
 # <a name="add-an-artifact-repository-to-your-lab-in-devtest-labs"></a>Een opslag plaats voor artefacten toevoegen aan uw Lab in DevTest Labs
 Met DevTest Labs kunt u een artefact opgeven die moet worden toegevoegd aan een virtuele machine op het moment dat de virtuele machine wordt gemaakt of nadat de virtuele machine is aangemaakt. Dit artefact kan een hulp programma of een toepassing zijn die u wilt installeren op de VM. Artefacten worden gedefinieerd in een JSON-bestand dat is geladen vanuit een GitHub-of Azure DevOps Git-opslag plaats.
@@ -31,7 +31,7 @@ Als u een opslag plaats aan uw Lab wilt toevoegen, moet u eerst belang rijke inf
 5. Selecteer in het menu **persoonlijke instellingen** aan de linkerkant **instellingen voor ontwikkel aars**.
 6. Selecteer **persoonlijke toegangs tokens** in het menu links.
 7. Selecteer **nieuw token genereren**.
-8. Voer op de pagina **nieuw persoonlijk toegangs token** onder **Beschrijving van token**een beschrijving in. Accepteer de standaard items onder **scopes selecteren**en selecteer vervolgens **token genereren**.
+8. Voer op de pagina **nieuw persoonlijk toegangs token** onder **Beschrijving van token** een beschrijving in. Accepteer de standaard items onder **scopes selecteren** en selecteer vervolgens **token genereren**.
 9. Sla het gegenereerde token op. U kunt het token later gebruiken.
 10. Sluit GitHub.   
 
@@ -42,21 +42,21 @@ Als u een opslag plaats aan uw Lab wilt toevoegen, moet u eerst belang rijke inf
 4. Sla de URL op. U kunt de URL later gebruiken.
 5. Als u een persoonlijk toegangs token wilt maken, selecteert u in de vervolg keuzelijst gebruikers account **Mijn profiel**.
 6. Selecteer op de pagina profiel informatie **beveiliging**.
-7. Selecteer **+ nieuw token**op het tabblad **beveiliging > persoonlijke toegangs tokens** .
+7. Selecteer **+ nieuw token** op het tabblad **beveiliging > persoonlijke toegangs tokens** .
 8. Op de pagina **een nieuw persoonlijk toegangs token maken** :
    1. Voer een **naam** in voor het token.
    2. Selecteer in de lijst **organisatie** **alle toegankelijke organisaties**.
-   3. In de lijst **verloop tijd (UTC)** selecteert u **90 dagen**of een aangepaste gedefinieerde verval periode.
+   3. In de lijst **verloop tijd (UTC)** selecteert u **90 dagen** of een aangepaste gedefinieerde verval periode.
    4. Selecteer de optie **volledige toegang** voor bereiken.
    5. Selecteer **Maken**.
-9. Het nieuwe token wordt weer gegeven in de lijst met **persoonlijke toegangs tokens** . Selecteer **token kopiëren**en sla de token waarde op voor later gebruik.
+9. Het nieuwe token wordt weer gegeven in de lijst met **persoonlijke toegangs tokens** . Selecteer **token kopiëren** en sla de token waarde op voor later gebruik.
 10. Ga door naar de sectie uw Lab verbinden met de opslag plaats.
 
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken
 In deze sectie worden de stappen beschreven voor het toevoegen van een artefact opslagplaats aan een lab in de Azure Portal.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **meer services**en selecteer vervolgens **DevTest Labs** in de lijst met Services.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+2. Selecteer **meer services** en selecteer vervolgens **DevTest Labs** in de lijst met Services.
 3. Selecteer in de lijst met Labs uw Lab.
 4. Selecteer **configuratie en beleid** in het menu links.
 5. Selecteer **opslag** plaatsen onder **externe resources** in het menu aan de linkerkant.
@@ -78,7 +78,7 @@ Azure Resource Management (Azure Resource Manager)-Sjablonen zijn JSON-bestanden
 
 Deze sectie bevat stappen voor het toevoegen van een artefact opslagplaats aan een Lab met behulp van een Azure Resource Manager sjabloon.  De sjabloon maakt de Lab als deze nog niet bestaat.
 
-### <a name="template"></a>Template
+### <a name="template"></a>Sjabloon
 De voorbeeld sjabloon die in dit artikel wordt gebruikt, verzamelt de volgende informatie via para meters. De meeste para meters hebben slimme standaard waarden, maar er zijn een paar waarden die moeten worden opgegeven. U moet de naam van het lab, de URI voor de artefact opslagplaats en het beveiligings token voor de opslag plaats opgeven.
 
 - Naam van Lab.

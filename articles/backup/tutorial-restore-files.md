@@ -4,12 +4,12 @@ description: Informatie over hoe u herstelacties op bestandsniveau uitvoert op e
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 236b2c2c7799ef6a0df1da2ddded0e689349e222
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d977919b806be32b84001a9b91dc9e396fbd63ce
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842206"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96557906"
 ---
 # <a name="restore-files-to-a-virtual-machine-in-azure"></a>Bestanden herstellen naar een virtuele machine in Azure
 
@@ -21,13 +21,15 @@ Azure Backup maakt herstelpunten die worden opgeslagen in geografisch redundante
 > * Een herstelpunt met een VM verbinden
 > * Bestanden herstellen vanaf een herstelpunt
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Als u ervoor kiest om CLI lokaal te installeren en gebruiken, moet u Azure CLI versie 2.0.18 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
-
 ## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie vereist een Linux-VM die met Azure Backup is beschermd. U verwijdert een pagina van een webserver om een onbedoelde bestandsverwijdering en het daaropvolgende herstelproces te simuleren. Bekijk [Een back-up van een virtuele machine maken in Azure met de CLI](quick-backup-vm-cli.md) als u een Linux-VM nodig hebt die een webserver uitvoert en is beschermd met Azure Backup.
+
+Uw omgeving voorbereiden:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Voor dit artikel is versie 2.0.18 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="backup-overview"></a>Overzicht van Backup
 

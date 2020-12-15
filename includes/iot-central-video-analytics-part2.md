@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 383cd286f89bde13f5e557792e980f0455e00917
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 472c1770e2793d8da4e8fc76fafbf3b9073b746d
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876644"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763408"
 ---
 ## <a name="deploy-and-configure-azure-media-services"></a>Azure Media Services implementeren en configureren
 
@@ -34,7 +34,15 @@ Maak het [Media Services-account in de Azure-portal](https://portal.azure.com/?r
 
 Noteer de naam van uw **Media Services**-account in het bestand *scratchpad.txt*.
 
-Wanneer de implementatie is voltooid, navigeert u naar de pagina **Eigenschappen** voor uw **Media Services**-account. Noteer de **Resource-id** in het bestand *scratchpad.txt*. U gebruikt deze waarde later wanneer u de IoT Edge-module configureert.
+Wanneer de implementatie is voltooid, opent u Cloud Shell en voert u de volgende opdracht uit om de **Resource-id** voor uw Media Services-account op te halen:
+
+```azurecli
+az resource list --resource-group lva-rg --resource-type microsoft.media/mediaservices --output table --query "[].{ResourceID:id}"
+```
+
+:::image type="content" source="media/iot-central-video-analytics-part2/get-resource-id.png" alt-text="Cloud Shell gebruiken om de resource-id op te halen":::
+
+Noteer de **Resource-id** in het bestand *scratchpad.txt*. U gebruikt deze waarde later wanneer u de IoT Edge-module configureert.
 
 Configureer vervolgens een Azure Active Directory-service-principal voor uw Media Services-resource. Selecteer **API-toegang** en vervolgens **Verificatie van service-principal**. Maak een nieuwe Azure Active Directory-app met dezelfde naam als uw Media Services-resource, en maak een geheim met de beschrijving *IoT Edge-toegang*.
 
@@ -74,7 +82,7 @@ Een nieuwe toepassing voor videoanalyse maken:
 
 1. Selecteer **Maken**.
 
-    :::image type="content" source="./media/iot-central-video-analytics-part2/new-application.png" alt-text="Azure Active Directory-app configureren voor Azure Media Services":::
+    :::image type="content" source="./media/iot-central-video-analytics-part2/new-application.png" alt-text="Pagina Toepassing maken van Azure IoT Central":::
 
 ### <a name="retrieve-the-configuration-data"></a>De configuratiegegevens ophalen
 
@@ -82,11 +90,11 @@ Later in deze zelfstudie, wanneer u de IoT Edge-gateway configureert, hebt u enk
 
 Selecteer in de sectie **Beheer** de optie **Uw toepassing** en noteer de **Toepassings-URL** en de **Toepassings-id** in het bestand *scratchpad.txt*:
 
-:::image type="content" source="./media/iot-central-video-analytics-part2/administration.png" alt-text="Azure Active Directory-app configureren voor Azure Media Services":::
+:::image type="content" source="./media/iot-central-video-analytics-part2/administration.png" alt-text="Schermafbeelding met het venster Beheer van pagina videoanalyse met toepassings-URL en toepassings-ID gemarkeerd.":::
 
 Selecteer **API-tokens** en genereer een nieuw token genaamd **LVAEdgeToken** voor de rol **Operator**:
 
-:::image type="content" source="./media/iot-central-video-analytics-part2/token.png" alt-text="Azure Active Directory-app configureren voor Azure Media Services":::
+:::image type="content" source="./media/iot-central-video-analytics-part2/token.png" alt-text="Token genereren":::
 
 Noteer het token in het bestand *scratchpad.txt* voor later. Nadat het dialoogvenster is gesloten, kunt u het token niet meer bekijken.
 

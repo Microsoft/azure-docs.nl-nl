@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 123e55202de8a33bca88afcfd1f0dc0c7edeae77
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 52b46d67d745017237a8c648abed66e2693d9d6a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320097"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573014"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Zelfstudie: Uw eigen gegevens gebruiken (Deel 4 van 4)
 
@@ -26,7 +26,7 @@ Deze zelfstudie is *deel 4 van een vierdelige zelfstudiereeks* waarin u de grond
 
 In [Deel 3: Een model trainen](tutorial-1st-experiment-sdk-train.md) zijn gegevens gedownload met behulp van de ingebouwde `torchvision.datasets.CIFAR10`-methode in de PyTorch-API. In veel gevallen wilt u echter uw eigen gegevens gebruiken in een externe trainingsuitvoering. In dit artikel ziet u welke werkstroom u kunt gebruiken om met uw eigen gegevens te werken in Azure Machine Learning.
 
-In deze zelfstudie gaat u:
+In deze zelfstudie hebt u:
 
 > [!div class="checklist"]
 > * Een trainingsscript configureren voor het gebruik van gegevens in een lokale map.
@@ -45,6 +45,7 @@ In deze zelfstudie gaat u:
 * Python (versie 3.5 tot 3.7).
 
 ## <a name="adjust-the-training-script"></a>Het trainingsscript aanpassen
+
 U hebt nu uw trainingsscript (tutorial/src/train.py) aangezet in Azure Machine Learning en kunt de modelprestaties bewaken. We gaan de parameters van het trainingsscript bepalen door argumenten te introduceren. Door argumenten te gebruiken, kunt u eenvoudig verschillende hyperparameters vergelijken.
 
 Het trainingsscript is nu ingesteld op het downloaden van de CIFAR10-gegevensset voor elke uitvoering. De volgende Python-code is zo aangepast dat de gegevens uit een map worden gelezen.
@@ -52,81 +53,7 @@ Het trainingsscript is nu ingesteld op het downloaden van de CIFAR10-gegevensset
 >[!NOTE] 
 > Als u `argparse` gebruikt, worden parameters bepaald voor het script.
 
-```python
-# tutorial/src/train.py
-import os
-import argparse
-import torch
-import torch.optim as optim
-import torchvision
-import torchvision.transforms as transforms
-
-from model import Net
-from azureml.core import Run
-
-run = Run.get_context()
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, help='Path to the training data')
-    parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate for SGD')
-    parser.add_argument('--momentum', type=float, default=0.9, help='Momentum for SGD')
-    args = parser.parse_args()
-    
-    print("===== DATA =====")
-    print("DATA PATH: " + args.data_path)
-    print("LIST FILES IN DATA PATH...")
-    print(os.listdir(args.data_path))
-    print("================")
-    
-    # prepare DataLoader for CIFAR10 data
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-    trainset = torchvision.datasets.CIFAR10(
-        root=args.data_path,
-        train=True,
-        download=False,
-        transform=transform,
-    )
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
-
-    # define convolutional network
-    net = Net()
-
-    # set up pytorch loss /  optimizer
-    criterion = torch.nn.CrossEntropyLoss()
-    optimizer = optim.SGD(
-        net.parameters(),
-        lr=args.learning_rate,
-        momentum=args.momentum,
-    )
-
-    # train the network
-    for epoch in range(2):
-
-        running_loss = 0.0
-        for i, data in enumerate(trainloader, 0):
-            # unpack the data
-            inputs, labels = data
-
-            # zero the parameter gradients
-            optimizer.zero_grad()
-
-            # forward + backward + optimize
-            outputs = net(inputs)
-            loss = criterion(outputs, labels)
-            loss.backward()
-            optimizer.step()
-
-            # print statistics
-            running_loss += loss.item()
-            if i % 2000 == 1999:
-                loss = running_loss / 2000
-                run.log('loss', loss) # log loss metric to AML
-                print(f'epoch={epoch + 1}, batch={i + 1:5}: loss {loss:.2f}')
-                running_loss = 0.0
-
-    print('Finished Training')
-```
+:::code language="python" source="~/MachineLearningNotebooks/tutorials/get-started-day1/code/pytorch-cifar10-your-data/train.py":::
 
 ### <a name="understanding-the-code-changes"></a>De codewijzigingen begrijpen
 
@@ -151,8 +78,10 @@ optimizer = optim.SGD(
     momentum=args.momentum,    # get momentum from command-line argument
 )
 ```
+> [!div class="nextstepaction"]
+> [Ik heb het trainingsscript aangepast](?success=adjust-training-script#test-locally) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=adjust-training-script)
 
-## <a name="test-the-script-locally"></a>Het script lokaal testen
+## <a name="test-the-script-locally"></a><a name="test-locally"></a> Het script lokaal testen
 
 Uw script accepteert nu _gegevenspad_ als een argument. U moet het als eerste lokaal testen. Voeg een map met de naam `data` toe aan de mapstructuur van uw zelfstudie. De mapstructuur moet er als volgt uitzien:
 
@@ -182,7 +111,10 @@ python src/train.py --data_path ./data --learning_rate 0.003 --momentum 0.92
 
 U moet voorkomen dat u de CIFAR10-gegevensset downloadt door een lokaal pad naar de gegevens op te geven. U kunt ook experimenteren met verschillende waarden voor de hyperparameters voor _leersnelheid_ en _momentum_ zonder ze in het trainingsscript te hoeven coderen.
 
-## <a name="upload-the-data-to-azure"></a>De gegevens uploaden naar Azure
+> [!div class="nextstepaction"]
+> [Ik heb het script lokaal getest](?success=test-locally#upload) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=test-locally)
+
+## <a name="upload-the-data-to-azure"></a><a name="upload"></a> De gegevens uploaden naar Azure
 
 Als u dit script in Azure Machine Learning wilt uitvoeren, moet u uw trainingsgegevens beschikbaar maken in Azure. Uw Azure Machine Learning-werkruimte is voorzien van een _standaard_ gegevensopslag. Dit is een Azure Blob Storage-account waarin u uw trainingsgegevens kunt opslaan.
 
@@ -191,13 +123,7 @@ Als u dit script in Azure Machine Learning wilt uitvoeren, moet u uw trainingsge
 
 Maak een nieuw Python-besturingsscript met de naam `05-upload-data.py` in de `tutorial`-map:
 
-```python
-# tutorial/05-upload-data.py
-from azureml.core import Workspace
-ws = Workspace.from_config()
-datastore = ws.get_default_datastore()
-datastore.upload(src_dir='./data', target_path='datasets/cifar10', overwrite=True)
-```
+:::code language="python" source="~/MachineLearningNotebooks/tutorials/get-started-day1/IDE-users/05-upload-data.py":::
 
 De waarde `target_path` geeft het pad op naar het gegevensarchief waarnaar de CIFAR10-gegevens worden geüpload.
 
@@ -209,7 +135,9 @@ Voer het Python-bestand uit om de gegevens te uploaden. (De upload zou minder da
 ```bash
 python 05-upload-data.py
 ```
+
 U ziet de volgende standaarduitvoer:
+
 ```txt
 Uploading ./data\cifar-10-batches-py\data_batch_2
 Uploaded ./data\cifar-10-batches-py\data_batch_2, 4 files out of an estimated total of 9
@@ -220,47 +148,14 @@ Uploaded ./data\cifar-10-batches-py\data_batch_5, 9 files out of an estimated to
 Uploaded 9 files
 ```
 
+> [!div class="nextstepaction"]
+> [Ik heb de gegevens geüpload](?success=upload-data#control-script) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=upload-data)
 
-## <a name="create-a-control-script"></a>Een besturingsscript maken
+## <a name="create-a-control-script"></a><a name="control-script"></a> Een besturingsscript maken
 
 Net zoals u eerder hebt gedaan, maakt u een nieuw Python-besturingsscript met de naam `06-run-pytorch-data.py`:
 
-```python
-# tutorial/06-run-pytorch-data.py
-from azureml.core import Workspace
-from azureml.core import Experiment
-from azureml.core import Environment
-from azureml.core import ScriptRunConfig
-from azureml.core import Dataset
-
-if __name__ == "__main__":
-    ws = Workspace.from_config()
-    
-    datastore = ws.get_default_datastore()
-    dataset = Dataset.File.from_files(path=(datastore, 'datasets/cifar10'))
-
-    experiment = Experiment(workspace=ws, name='day1-experiment-data')
-
-    config = ScriptRunConfig(
-        source_directory='./src',
-        script='train.py',
-        compute_target='cpu-cluster',
-        arguments=[
-            '--data_path', dataset.as_named_input('input').as_mount(),
-            '--learning_rate', 0.003,
-            '--momentum', 0.92],
-        )
-    
-    # set up pytorch environment
-    env = Environment.from_conda_specification(name='pytorch-env',file_path='.azureml/pytorch-env.yml')
-    config.run_config.environment = env
-
-    run = experiment.submit(config)
-    aml_url = run.get_portal_url()
-    print("Submitted to an Azure Machine Learning compute cluster. Click on the link below")
-    print("")
-    print(aml_url)
-```
+:::code language="python" source="~/MachineLearningNotebooks/tutorials/get-started-day1/IDE-users/06-run-pytorch-data.py":::
 
 ### <a name="understand-the-code-changes"></a>De codewijzigingen begrijpen
 
@@ -283,7 +178,10 @@ Het besturingsscript is vergelijkbaar met dat van [Deel 3 van deze serie](tutori
    :::column-end:::
 :::row-end:::
 
-## <a name="submit-the-run-to-azure-machine-learning"></a>De uitvoering versturen naar Microsoft Azure Machine Learning
+> [!div class="nextstepaction"]
+> [Ik heb het besturingsscript gemaakt](?success=control-script#submit-to-cloud) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=control-script)
+
+## <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit-to-cloud"></a> De uitvoering versturen naar Microsoft Azure Machine Learning
 
 Verzend de uitvoering nu opnieuw om de nieuwe configuratie te gebruiken:
 
@@ -293,7 +191,10 @@ python 06-run-pytorch-data.py
 
 Met deze code wordt een URL naar het experiment afgedrukt in Azure Machine Learning Studio. Als u naar deze link gaat, kunt u zien dat de code wordt uitgevoerd.
 
-### <a name="inspect-the-log-file"></a>Het logboekbestand controleren
+> [!div class="nextstepaction"]
+> [Ik heb de uitvoering opnieuw verzonden](?success=submit-to-cloud#inspect-log) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=submit-to-cloud)
+
+### <a name="inspect-the-log-file"></a><a name="inspect-log"></a> Het logboekbestand controleren
 
 Ga in Studio naar de experimentuitvoering (door de vorige URL-uitvoer te selecteren), gevolgd door **Uitvoer en logboeken**. Selecteer het bestand `70_driver_log.txt`. U moet de volgende uitvoer zien:
 
@@ -333,6 +234,9 @@ Kennisgeving:
 
 - Azure Machine Learning heeft Blob Storage automatisch gekoppeld aan het rekencluster.
 - De ``dataset.as_named_input('input').as_mount()`` die wordt gebruikt in het besturingsscript, wordt omgezet naar het koppelpunt.
+
+> [!div class="nextstepaction"]
+> [Ik heb het logboekbestand gecontroleerd](?success=inspect-log#clean-up-resources) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=inspect-log)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

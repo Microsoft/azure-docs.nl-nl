@@ -7,16 +7,16 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 240b27f897d8e7a34026701cf7fdc844eb9d4086
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 09d793f3d8ed544a386a362677f24be6d18673d7
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89236963"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748723"
 ---
 # <a name="workflow"></a>Werkstroom
 
-Microsoft Azure Attestation ontvangt bewijs van enclavess en evalueert de gegevens op basis van de basislijn van de Azure-beveiliging en configureerbaar beleid. Bij een geslaagde verificatie genereert Azure Attestation een Attestation-token om de betrouwbaarheid van de enclave te bevestigen.
+Microsoft Azure Attestation ontvangt bewijs van enclaves en evalueert de gegevens op basis van de basislijn van de Azure-beveiliging en configureerbaar beleid. Bij een geslaagde verificatie genereert Azure Attestation een Attestation-token om de betrouwbaarheid van de enclave te bevestigen.
 
 De volgende actoren zijn betrokken bij een Azure Attestation-werkstroom:
 
@@ -25,18 +25,19 @@ De volgende actoren zijn betrokken bij een Azure Attestation-werkstroom:
 - **Azure Attestation**: Het onderdeel dat enclavebewijs van de client accepteert, valideert en het Attestation-token naar de client retourneert
 
 
-## <a name="enclave-validation-work-flow"></a>Werkstroom voor enclave-validatie
+## <a name="intel-software-guard-extensions-sgx-enclave-validation-work-flow"></a>Validatiewerkstroom voor de Intel® SGX-enclave (Software Guard Extensions)
 
 Dit zijn de algemene stappen in een typische attestation-werkstroom voor een SGX-enclave (met Azure Attestation):
 
 1. Client verzamelt bewijs van een enclave. Bewijs is informatie over de enclave-omgeving en de clientbibliotheek die in de enclave wordt uitgevoerd.
-1. De client heeft een URL die verwijst naar een exemplaar van Azure Attestation. De client wordt geverifieerd bij Azure AD en krijgt een toegangstoken.
-1. De client verzendt bewijs naar Azure Attestation samen met het toegangstoken. De exacte gegevens die naar de provider worden verzonden, zijn afhankelijk van het type enclave.
+1. De client heeft een URL die verwijst naar een exemplaar van Azure Attestation. De client verzendt bewijs naar Azure Attestation. De exacte gegevens die naar de provider worden verzonden, zijn afhankelijk van het type enclave.
 1. Azure Attestation valideert de verzonden informatie en evalueert deze op basis van het geconfigureerde beleid. Als de verificatie slaagt, wordt door Azure Attestation een Attestation-token uitgegeven en geretourneerd naar de client. Als deze stap mislukt, meldt Azure Attestation een fout aan de client. 
 1. De client verzendt het Attestation-token naar Relying Party. Relying Party roept het eindpunt van de metagegevens van de openbare sleutel aan om handtekeningcertificaten op te halen. Relying Party verifieert vervolgens de handtekening van het Attestation-token en controleert de betrouwbaarheid van de enclave. 
 
-![Validatiestroom voor enclave](./media/validation-flow.png)
+![Validatiestroom voor SGX-enclave](./media/sgx-validation-flow.png)
 
+> [!Note]
+> Wanneer u Attestation-aanvragen verzendt in de API-versie [2018-09-01-preview](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/attestation/data-plane/Microsoft.Attestation/stable/2018-09-01-preview), moet de client bewijzen verzenden naar Azure Attestation samen met het Azure AD-toegangstoken.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Een Attestation-beleid ontwerpen en ondertekenen](author-sign-policy.md)

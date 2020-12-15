@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: troyhop
-ms.openlocfilehash: 09a6920e0d3a50da1bdacbf2bc7a80396c885897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e0d7310c4863c8dd431b991a2c249f2d8e257aeb
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61448522"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852350"
 ---
 # <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Zelfstudie: Een nieuwe IoT-apparaatsimulatie maken en uitvoeren
 
@@ -34,15 +34,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Als u deze zelfstudie wilt volgen, hebt u een geïmplementeerde instantie van Apparaatsimulatie in uw Azure-abonnement nodig.
 
-Als u Apparaatsimulatie nog niet hebt geïmplementeerd, moet u de snelstart [Een IoT-apparaatsimulatie in Azure implementeren en uitvoeren](quickstart-device-simulation-deploy.md) voltooien.
-
-## <a name="open-device-simulation"></a>Apparaatsimulatie openen
-
-Als u Apparaatsimulatie in uw browser wilt uitvoeren, gaat u eerst naar [Oplossingsverbeteringen van Microsoft Azure IoT](https://www.azureiotsolutions.com). 
-
-Mogelijk wordt u gevraagd u aan te melden met de referenties van uw Azure-abonnement.
-
-Klik vervolgens op **Start** op de tegel voor Apparaatsimulatie dat u hebt geïmplementeerd in de [snelstart](quickstart-device-simulation-deploy.md).
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
 
 ## <a name="view-simulations"></a>Simulaties weergeven
 

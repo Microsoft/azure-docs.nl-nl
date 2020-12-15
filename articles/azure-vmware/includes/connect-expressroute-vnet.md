@@ -2,17 +2,17 @@
 title: ExpressRoute verbinden met de gateway voor het virtuele netwerk
 description: Stappen om ExpressRoute te verbinden met de gateway voor het virtuele netwerk.
 ms.topic: include
-ms.date: 09/28/2020
-ms.openlocfilehash: 214ef9c01193b238c8e456ef2809f7a2edbdb6c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/08/2020
+ms.openlocfilehash: 5f9a565a7662041dbd85e61388129496fa376962
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91598171"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861511"
 ---
 <!-- Used in deploy-azure-vmware-solution.md and tutorial-configure-networking.md -->
 
-1. Ga naar de privécloud die u hebt gemaakt in de vorige zelfstudie en selecteer **Connectiviteit** onder **Beheren**, selecteer het tabblad **ExpressRoute**.
+1. Ga naar de privécloud die u hebt gemaakt in de zelfstudie [vSphere-cluster implementeren in Azure](../tutorial-create-private-cloud.md). Selecteer bij **Beheren** de optie **Connectiviteit** en selecteer het tabblad **ExpressRoute** .
 
 1. Kopieer de autorisatiesleutel. Als er geen autorisatiesleutel is, moet u er een maken door **+ Een autorisatiesleutel aanvragen** te selecteren.
 
@@ -31,6 +31,6 @@ ms.locfileid: "91598171"
    | **Autorisatiesleutel**  | Kopieer en plak de autorisatiesleutel vanuit het tabblad ExpressRoute voor de resourcegroep. |
    | **URI van peercircuit**  | Kopieer en plak de ExpressRoute-id vanuit het tabblad ExpressRoute voor uw resourcegroep.  |
 
-   :::image type="content" source="../media/expressroute-global-reach/open-cloud-shell.png" alt-text="Kopieer de autorisatiesleutel. Als er geen autorisatiesleutel is, moet u er een maken door + Een autorisatiesleutel aanvragen" border="true" lightbox="../media/expressroute-global-reach/open-cloud-shell.png":::
+   :::image type="content" source="../media/expressroute-global-reach/open-cloud-shell.png" alt-text="Geef op de pagina Verbinding toevoegen waarden op voor de velden en selecteer OK." border="true" lightbox="../media/expressroute-global-reach/open-cloud-shell.png":::
 
 De verbinding tussen het ExpressRoute-circuit en uw virtuele netwerk wordt gemaakt.

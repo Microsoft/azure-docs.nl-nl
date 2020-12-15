@@ -5,35 +5,35 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: article
-ms.date: 11/1/2018
+ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: fd1cad4031d83fd0e17286bfaabb77aa746b646a
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 254f5909e7ed8db4dc18ade2677a3213b268cf41
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202324"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511260"
 ---
 # <a name="configure-bfd-over-expressroute"></a>BFD configureren via ExpressRoute
 
-ExpressRoute biedt ondersteuning voor bidirectionele forwarding-detectie (BFD) via persoonlijke en micro soft-peering. Door BFD in te scha kelen via ExpressRoute, kunt u de detectie van koppelings fouten tussen de micro soft Enter prise Edge (MSEE)-apparaten verkorten en de routers waarop u het ExpressRoute circuit (CE/PE) beëindigt. U kunt ExpressRoute beëindigen via routerings apparaten van klanten of partner Edge-routerings apparaten (als u met Managed Layer 3 Connection service hebt gewerkt). In dit document wordt uitgelegd hoe u BFD nodig hebt en hoe u BFD inschakelt via ExpressRoute.
+ExpressRoute biedt ondersteuning voor bidirectionele forwarding-detectie (BFD) via persoonlijke en micro soft-peering. Wanneer u BFD via ExpressRoute inschakelt, kunt u de detectie van verbindings fouten tussen de micro soft Enter prise Edge (MSEE)-apparaten en de routers die uw ExpressRoute-circuit configureert configureren (CE/PE) versnellen. U kunt ExpressRoute configureren via uw rand routering apparaten of uw partner Edge-routerings apparaten (als u met de Managed Layer 3 Connection-service bent gegaan). In dit document wordt uitgelegd hoe u BFD nodig hebt en hoe u BFD inschakelt via ExpressRoute.
 
 ## <a name="need-for-bfd"></a>Benodigde BFD
 
 In het volgende diagram ziet u het voor deel van het inschakelen van BFD over ExpressRoute-circuit: [![1]][1]
 
-U kunt het ExpressRoute-circuit inschakelen via laag-2-verbindingen of beheerde laag-3-verbindingen. Als er sprake is van een of meer laag-2-apparaten in het pad van de ExpressRoute-verbinding, is de verantwoordelijkheid van het detecteren van eventuele koppelings fouten in het pad ook de bovenliggende BGP.
+U kunt het ExpressRoute-circuit inschakelen via laag-2-verbindingen of beheerde laag-3-verbindingen. Als er in beide gevallen meer dan één laag-2-apparaat aanwezig zijn in het ExpressRoute, is de verantwoordelijkheid voor het detecteren van eventuele koppelings fouten in het pad ook de bovenliggende BGP-sessie.
 
-Op de MSEE-apparaten worden BGP keepalive en hold-time doorgaans geconfigureerd als 60 en 180 seconden. Als gevolg van het mislukken van een koppeling kan het drie minuten duren voordat een koppelings fout is gedetecteerd en verkeer naar een andere verbinding wordt geswitcheerd.
+Op de MSEE-apparaten worden BGP Keep-Alive en hold-time doorgaans geconfigureerd als 60 en 180 seconden. Om die reden kan het tot drie minuten duren om een koppelings fout te detecteren en verkeer naar een andere verbinding te scha kelen.
 
-U kunt de BGP-timers beheren door lagere BGP-keepalive en-wacht tijd op het peering-apparaat van de klant te configureren. Als de BGP-timers niet overeenkomen tussen de twee peering-apparaten, zou de BGP-sessie tussen de peers de lagere timer waarde gebruiken. De BGP-keepalive kan worden ingesteld op Maxi maal drie seconden en de wacht tijd in de volg orde van tien seconden. Het instellen van BGP-timers is echter minder wenselijk, omdat het protocol proces intensief is.
+U kunt de BGP-timers beheren door een lagere BGP-Keep-Alive en wacht tijd op uw edge-apparaat te configureren. Als de BGP-timers niet hetzelfde zijn tussen de twee peering-apparaten, wordt de BGP-sessie tot stand gebracht met de laagste tijd waarde. BGP Keep-Alive kan worden ingesteld op Maxi maal drie seconden en de wacht tijd is 10 seconden lang. Het instellen van een zeer agressieve BGP-timer wordt echter niet aanbevolen, omdat het protocol proces intensief is.
 
 In dit scenario kan BFD u helpen. BFD biedt de detectie van een lage overhead van een koppeling in een subseconde tijd interval. 
 
 
 ## <a name="enabling-bfd"></a>BFD inschakelen
 
-BFD wordt standaard geconfigureerd onder alle zojuist gemaakte ExpressRoute-particuliere peering-interfaces op de Msee's. Om BFD in te scha kelen, moet u daarom BFD op uw CEs/PEs (op uw primaire en secundaire apparaten) configureren. Het configureren van BFD is een proces dat uit twee stappen bestaat: u moet de BFD op de interface configureren en vervolgens koppelen aan de BGP-sessie.
+BFD wordt standaard geconfigureerd onder alle zojuist gemaakte ExpressRoute-particuliere peering-interfaces op de Msee's. Om BFD in te scha kelen, hoeft u BFD alleen op uw primaire en secundaire apparaten te configureren. Het configureren van BFD is een proces dat uit twee stappen bestaat. U configureert de BFD op de interface en koppelt deze vervolgens aan de BGP-sessie.
 
 Hieronder ziet u een voor beeld van een CE/PE-configuratie (met Cisco IOS XE). 
 
@@ -62,10 +62,10 @@ router bgp 65020
 
 ## <a name="bfd-timer-negotiation"></a>BFD timer-onderhandeling
 
-Tussen BFD-peers wordt de verzend frequentie bepaald door de langzamere van de twee peers. Msee's BFD-verzen ding/ontvangst intervallen worden ingesteld op 300 milliseconden. In bepaalde scenario's kan het interval worden ingesteld op een hogere waarde van 750 milliseconden. Door hogere waarden te configureren, kunt u deze intervallen langer laten afdwingen. maar niet korter.
+Tussen BFD-peers wordt de verzend frequentie bepaald door de langzamere van de twee peers. Msee's BFD-verzen ding/ontvangst intervallen worden ingesteld op 300 milliseconden. In bepaalde scenario's kan het interval worden ingesteld op een hogere waarde van 750 milliseconden. Als u een hogere waarde configureert, kunt u ervoor zorgen dat deze intervallen langer zijn, maar het is niet mogelijk om ze korter te maken.
 
 >[!NOTE]
->Als u geografisch redundante ExpressRoute-circuits hebt geconfigureerd of VPN-verbinding tussen sites als back-up gebruikt. door BFD in te scha kelen, kunt u de failover sneller volgen door een ExpressRoute-verbindings fout. 
+>Als u geografisch redundante ExpressRoute-circuits hebt geconfigureerd of VPN-verbinding tussen sites als back-up gebruikt. Door BFD in te scha kelen, kunt u de failover sneller volgen door een ExpressRoute-verbindings fout. 
 >
 
 ## <a name="next-steps"></a>Volgende stappen

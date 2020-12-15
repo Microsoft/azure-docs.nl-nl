@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: af38f68a9709b21989ba787fb5b2c623e07dc440
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 85080c018749f9aab716eff0a4527363da987007
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541280"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620474"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -49,7 +49,7 @@ Azure Machine Learning biedt alle hulpprogramma's die ontwikkelaars en gegevensw
 
 + + De [Many Models Solution Accelerator](https://aka.ms/many-models) (preview) heeft Azure Machine Learning als basis en stelt u in staat om honderden, of zelfs duizenden machine Learning-modellen, te trainen, te gebruiken en te beheren.
 
-+ [Visual Studio Code-extensie](tutorial-setup-vscode-extension.md)
++ [Machine Learning-extensie voor Visual Studio Code-gebruikers](tutorial-setup-vscode-extension.md)
 
 + [Machine learning-CLI](reference-azure-machine-learning-cli.md)
 

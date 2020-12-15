@@ -4,23 +4,22 @@ titleSuffix: Azure App Configuration
 description: In deze zelfstudie leert u hoe u de configuratiegegevens voor ASP.NET Core-apps dynamisch bijwerkt
 services: azure-app-configuration
 documentationcenter: ''
-author: lisaguthrie
-manager: maiye
+author: AlexandraKemperMS
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.workload: tbd
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 02/24/2019
-ms.author: lcozzens
+ms.date: 09/1/2020
+ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: f98ec384876da1d30952d1c4edc1d00049e44682
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 1fd495083f5f9be367dd0f125883b181e3bed27b
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076994"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930548"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Zelfstudie: Dynamische configuratie in een ASP.NET Core-app gebruiken
 
@@ -57,7 +56,7 @@ Een *Sentinel-sleutel* is een speciale sleutel die wordt gebruikt om te signaler
 1. Selecteer **Toepassen**.
 
 > [!NOTE]
-> Als u geen Sentinel-sleutel gebruikt, moet u elke sleutel die u wilt bekijken, handmatig registreren.
+> Als u geen Sentinel-sleutel gebruikt, moet u elke sleutel die u wilt bekijken, handmatig registreren.
 
 ## <a name="reload-data-from-app-configuration"></a>Gegevens opnieuw laden vanuit app-configuratie
 
@@ -161,7 +160,7 @@ Een *Sentinel-sleutel* is een speciale sleutel die wordt gebruikt om te signaler
     ```
     ---
     > [!Tip]
-    > Zie  [Optiepatronen in ASP.NET Core](/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1) voor meer informatie over het optiepatroon bij het lezen van configuratiewaarden.
+    > Zie [Optiepatronen in ASP.NET Core](/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1) voor meer informatie over het optiepatroon bij het lezen van configuratiewaarden.
 
 4. Werk de methode `Configure` bij, waarbij de middleware `UseAzureAppConfiguration` wordt toegevoegd zodat de configuratie-instellingen die voor vernieuwing zijn geregistreerd, kunnen worden bijgewerkt terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
 
@@ -221,6 +220,9 @@ Een *Sentinel-sleutel* is een speciale sleutel die wordt gebruikt om te signaler
     ---
     
     De middleware maakt gebruik van de vernieuwingsconfiguratie die is opgegeven in de methode `AddAzureAppConfiguration` in `Program.cs` om een vernieuwing te activeren voor elke aanvraag die wordt ontvangen door de ASP.NET Core-web-app. Voor elke aanvraag wordt een vernieuwingsbewerking geactiveerd en de clientbibliotheek controleert of de in de cache opgeslagen waarde voor de geregistreerde configuratie-instelling is verlopen. Als de configuratie-instelling is verlopen, wordt deze vernieuwd.
+
+    > [!NOTE]
+    > Als u wilt controleren of de configuratie is vernieuwd, voegt u de middleware zp vroeg als kan toe aan de aanvraagpijplijn. Op die manier ontstaat er geen kortsluiting met andere middleware in de toepassing.
 
 ## <a name="use-the-latest-configuration-data"></a>De meest recente configuratiegegevens gebruiken
 

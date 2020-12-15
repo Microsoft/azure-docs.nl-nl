@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 003056ae9d3f236d37ddc10764812c15a3c6c695
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d1dbe51dd095290c296699bbb4bc6bd3a8caf7bf
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321284"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862425"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Zelfstudie: Modellen voor de classificatie van afbeeldingen trainen met MNIST-gegevens en scikit-learn 
 
@@ -368,15 +368,15 @@ In totaal duurt de eerste run **ongeveer tien minuten**. Voor latere runs wordt 
 
 Terwijl u wacht, gebeurt het volgende:
 
-- **Afbeelding maken** : Er wordt een Docker-afbeelding gemaakt die overeenkomt met de Python-omgeving die is opgegeven in de Azure ML-omgeving. De afbeelding wordt naar de werkruimte geüpload. Het maken en uploaden van de afbeelding duurt **circa vijf minuten**.
+- **Afbeelding maken**: Er wordt een Docker-afbeelding gemaakt die overeenkomt met de Python-omgeving die is opgegeven in de Azure ML-omgeving. De afbeelding wordt naar de werkruimte geüpload. Het maken en uploaden van de afbeelding duurt **circa vijf minuten**.
 
   Deze fase vindt eenmaal plaats voor elke Python-omgeving, aangezien de container voor volgende runs in de cache wordt opgeslagen. Tijdens het maken van de afbeelding, worden er logboeken gestreamd naar de uitvoeringsgeschiedenis. U kunt de voortgang van het maken van afbeeldingen volgen aan de hand van deze logboeken.
 
-- **Schalen** : Als voor het externe cluster meer knooppunten zijn vereist voor het uitvoeren van de run dan er momenteel beschikbaar zijn, worden er automatisch extra knooppunten toegevoegd. Het schalen duurt meestal **ongeveer vijf minuten.**
+- **Schalen**: Als voor het externe cluster meer knooppunten zijn vereist voor het uitvoeren van de run dan er momenteel beschikbaar zijn, worden er automatisch extra knooppunten toegevoegd. Het schalen duurt meestal **ongeveer vijf minuten.**
 
-- **Uitvoeren** : In deze fase worden de noodzakelijke scripts en bestanden verzonden naar het rekendoel. Vervolgens worden gegevensarchieven gekoppeld of gekopieerd. Ten slotte wordt het **entry_script** uitgevoerd. Terwijl de taak wordt uitgevoerd, worden **stdout** en de map **./logs** naar de uitvoeringsgeschiedenis gestreamd. U kunt de voortgang van de run volgen aan de hand van deze logboeken.
+- **Uitvoeren**: In deze fase worden de noodzakelijke scripts en bestanden verzonden naar het rekendoel. Vervolgens worden gegevensarchieven gekoppeld of gekopieerd. Ten slotte wordt het **entry_script** uitgevoerd. Terwijl de taak wordt uitgevoerd, worden **stdout** en de map **./logs** naar de uitvoeringsgeschiedenis gestreamd. U kunt de voortgang van de run volgen aan de hand van deze logboeken.
 
-- **Nabewerken** : De map **./outputs** van de run wordt naar de uitvoeringsgeschiedenis in uw werkruimte gekopieerd, zodat u deze resultaten kunt bekijken.
+- **Nabewerken**: De map **./outputs** van de run wordt naar de uitvoeringsgeschiedenis in uw werkruimte gekopieerd, zodat u deze resultaten kunt bekijken.
 
 U kunt de voortgang van een actieve taak op verschillende manieren controleren. In deze zelfstudie wordt gebruikgemaakt van een Jupyter-widget en de methode `wait_for_completion`.
 

@@ -4,17 +4,17 @@ description: In deze quickstart leert u hoe u een IoT Edge-apparaat op Linux maa
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/30/2020
+ms.date: 12/02/2020
 ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 720a4d14a73350d98b3f9054f748b93d296be11b
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: ff9ba73e71e4525fe56a3cbb54626030f57e990b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579263"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920806"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Quickstart: Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat
 
@@ -33,23 +33,15 @@ In deze quickstart leert u hoe u een virtuele Linux-machine maakt die is geconfi
 
 Als u nog geen actief abonnement op Azure hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free) aan voordat u begint.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-U gebruikt de Azure CLI om veel van de stappen in deze snelstart uit te voeren, en Azure IoT heeft een extensie om extra functionaliteit in te schakelen.
-
-Voeg de Azure IoT-extensie toe aan het exemplaar van Cloud Shell.
-
-   ```azurecli-interactive
-   az extension add --name azure-iot
-   ```
-
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
-
 ## <a name="prerequisites"></a>Vereisten
+
+Bereid uw omgeving voor op Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Cloudresources:
 
-* Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt. We gebruiken de voorbeeldnaam van de resourcegroep **IoTEdgeResources** in deze quickstart en de volgende zelfstudies.
+- Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt. We gebruiken de voorbeeldnaam van de resourcegroep **IoTEdgeResources** in deze quickstart en de volgende zelfstudies.
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus2
@@ -119,11 +111,11 @@ Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van d
    az deployment group create \
    --resource-group IoTEdgeResources \
    --template-uri "https://aka.ms/iotedge-vm-deploy" \
-   --parameters dnsLabelPrefix='my-edge-vm' \
+   --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' \
    --parameters adminUsername='azureUser' \
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name
    <REPLACE_WITH_HUB_NAME> -o tsv) \
-   --parameters authenticationType='password'
+   --parameters authenticationType='password' \
    --parameters adminPasswordOrKey="<REPLACE_WITH_PASSWORD>"
    ```
 
@@ -133,7 +125,7 @@ Gebruik de volgende CLI-opdracht om uw IoT Edge-apparaat te maken op basis van d
    az deployment group create `
    --resource-group IoTEdgeResources `
    --template-uri "https://aka.ms/iotedge-vm-deploy" `
-   --parameters dnsLabelPrefix='my-edge-vm1' `
+   --parameters dnsLabelPrefix='<REPLACE_WITH_VM_NAME>' `
    --parameters adminUsername='azureUser' `
    --parameters deviceConnectionString=$(az iot hub device-identity connection-string show --device-id myEdgeDevice --hub-name <REPLACE_WITH_HUB_NAME> -o tsv) `
    --parameters authenticationType='password' `
@@ -146,7 +138,7 @@ Voor deze sjabloon worden de volgende parameters gebruikt:
 | --------- | ----------- |
 | **resource-group** | De resourcegroep waarin de resources worden gemaakt. Gebruik de standaardinstelling **IoTEdgeResources** die in dit artikel is gebruikt of geef de naam op van een bestaande resourcegroep in uw abonnement. |
 | **template-uri** | Een verwijzing naar de Resource Manager-sjabloon die we gebruiken. |
-| **dnsLabelPrefix** | Een tekenreeks die wordt gebruikt om de hostnaam van de virtuele machine te maken. Gebruik het voorbeeld **my-edge-vm** of geef een nieuwe tekenreeks op. |
+| **dnsLabelPrefix** | Een tekenreeks die wordt gebruikt om de hostnaam van de virtuele machine te maken. Vervang de tijdelijke aanduiding voor tekst door een naam voor uw virtuele machine. |
 | **adminUsername** | Een gebruikersnaam voor het beheerdersaccount van de virtuele machine. Gebruik het voorbeeld **azureUser** of geef een nieuwe gebruikersnaam op. |
 | **deviceConnectionString** | De verbindingsreeks van de apparaat-id in IoT Hub, die wordt gebruikt om de IoT Edge-runtime op de virtuele machine te configureren. De CLI-opdracht in deze parameter haalt de verbindingsreeks voor u op. Vervang de tekst van de tijdelijke aanduiding door de naam van uw IoT-hub. |
 | **authenticationType** | De verificatiemethode voor het beheerdersaccount. Deze quickstart maakt gebruik van **wachtwoordverificatie**, maar u kunt deze parameter ook instellen op **sshPublicKey**. |

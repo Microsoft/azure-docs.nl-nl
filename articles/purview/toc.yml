@@ -104,8 +104,6 @@ items:
                 href: register-scan-on-premises-sql-server.md
               - name: Power BI-tenant - Portal
                 href: register-scan-power-bi-tenant.md
-              - name: Power BI-tenant - PowerShell
-                href: powershell-register-scan-power-bi.md
       - name: Zakelijke woordenlijst
         items:
           - name: 'Woordenlijsttermen maken, importeren en exporteren'

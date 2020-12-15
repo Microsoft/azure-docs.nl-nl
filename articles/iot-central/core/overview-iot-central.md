@@ -7,13 +7,13 @@ ms.date: 11/23/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
-ms.custom: mvc
-ms.openlocfilehash: 55f187781a0f11417b0c918034dcfe3362be4468
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: mvc, contperfq2
+ms.openlocfilehash: 847fc5345708dc313f706fcb0d370b0d1761aa41
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763703"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -34,7 +34,7 @@ In dit artikel worden de volgende onderwerpen besproken voor IoT Central:
 
 In de documentatie over IoT Central wordt verwezen naar vier persona's die interactie hebben met een IoT Central-toepassing:
 
-- Een _bouwer van oplossingen_ is verantwoordelijk voor het [definiëren van de typen apparaten](howto-set-up-template.md) die verbinding maken met de toepassing en voor het aanpassen van de toepassing voor de operator.
+- Een _bouwer van oplossingen_ is verantwoordelijk voor [het maken van een toepassing](quick-deploy-iot-central.md), [het configureren van regels en acties](quick-configure-rules.md), [het definiëren van integraties met andere services](howto-export-data.md), en het verder aanpassen van de toepassing voor operators en apparaatontwikkelaars.
 - Een _operator_ [beheert de apparaten](howto-manage-devices.md) die met de toepassing zijn verbonden.
 - Een _beheerder_ is verantwoordelijk voor beheertaken zoals het beheer van [gebruikersrollen en -machtigingen](howto-administer.md) binnen de toepassing.
 - Een _apparaatontwikkelaar_ [maakt de code die wordt uitgevoerd op een apparaat](concepts-telemetry-properties-commands.md) of in een [IoT Edge-module](concepts-iot-edge.md) die met uw toepassing is verbonden.

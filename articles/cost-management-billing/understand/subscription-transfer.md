@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: f4dd6d67d60603ed6cad7056cff4bb07dcb1c2e5
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 82b33a7a9403993ec883090559884a45d04b7aa2
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149376"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932197"
 ---
 # <a name="about-transferring-billing-ownership-for-an-azure-subscription"></a>De eigendom van facturering voor een Azure-abonnement overdragen
 
@@ -36,7 +36,7 @@ Alleen de factureringsbeheerder van een account kan het eigendom van een abonnem
 
 De factureringsbeheerder is de persoon die gemachtigd is om de facturering voor een account te beheren. Ze hebben toegang tot de facturering in de [Azure-portal](https://portal.azure.com) en kunnen diverse factureringstaken uitvoeren. Ze kunnen bijvoorbeeld abonnementen maken, facturen weergeven en betalen van facturen of betalingswijzen bijwerken.
 
-Ga naar de pagina [Kostenbeheer en facturering in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview) om accounts te identificeren waarvoor u een factureringsbeheerder bent. Selecteer in het linkerdeelvenster **Alle factureringsbereiken**. De pagina met abonnementen toont alle abonnementen waarvoor u factureringsbeheerder bent.
+Ga naar de pagina [Kostenbeheer en facturering in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview) om accounts te identificeren waarvoor u een factureringsbeheerder bent. Selecteer in het linkerdeelvenster **Alle factureringsbereiken**. Op de pagina met abonnementen worden alle abonnementen weergegeven waarvoor u factureringsbeheerder bent.
 
 Als u niet zeker weet wie de accountbeheerder is voor een abonnement, gaat u naar de [Abonnementenpagina in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Selecteer het abonnement dat u wilt controleren en kijk vervolgens bij **Instellingen**. Selecteer **Eigenschappen**. De accountbeheerder van het abonnement wordt weergegeven in het vak **Accountbeheerder**.
 

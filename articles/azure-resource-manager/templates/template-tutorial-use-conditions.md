@@ -5,16 +5,16 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 64767f83dfad2b0c2909e8a89b55c849d5c5a9a9
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 1f4e8c0bc6a066e0d82d393474bfc804be5e3fb3
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896987"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931364"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Zelfstudie: Voorwaarden gebruiken in ARM-sjablonen
 
-Leer hoe u Azure-resources kunt implementeren op basis van voorwaarden in een ARM-sjabloon (ARM = Azure Resource Manager).
+Leer hoe u Azure-resources kunt implementeren op basis van voorwaarden in een ARM-sjabloon (Azure Resource Manager).
 
 In de zelfstudie [Resource-implementatievolgorde instellen](./template-tutorial-create-templates-with-dependent-resources.md) maakt u een virtuele machine, een virtueel netwerk en enkele andere afhankelijke resources, waaronder een opslagaccount. In plaats van elke keer een nieuw opslagaccount te maken, laat u gebruikers kiezen of ze een nieuw opslagaccount willen maken of een bestaand opslagaccount willen gebruiken. Om dit doel te bereiken, definieert u een extra parameter. Als de waarde van de parameter 'new' is, wordt er een nieuw opslagaccount gemaakt. Anders wordt een bestaand opslagaccount met de gegeven naam gebruikt.
 
@@ -41,7 +41,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Gebruik een gegenereerd wachtwoord voor het beheerdersaccount van de virtuele machine om de beveiliging te verhogen. Hier volgt een voorbeeld voor het genereren van een wachtwoord:
 
     ```console
@@ -55,7 +55,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De sjabloon die in deze zelfstudie wordt gebruikt, heet [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Een eenvoudige Windows-VM implementeren).
 
 1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
-1. Plak de volgende URL in **Bestandsnaam** :
+1. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
@@ -140,7 +140,7 @@ Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
 
     ![Bestand uploaden in Cloud Shell in de Azure-portal](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Na het uploaden van het bestand kunt u de **ls** -opdracht en de **cat** -opdracht uitvoeren om te controleren of het bestand is geüpload.
+1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Na het uploaden van het bestand kunt u de **ls**-opdracht en de **cat**-opdracht uitvoeren om te controleren of het bestand is geüpload.
 
 1. Gebruik het volgende PowerShell-script om de sjabloon te implementeren.
 

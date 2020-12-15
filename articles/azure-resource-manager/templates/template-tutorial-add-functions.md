@@ -1,17 +1,17 @@
 ---
 title: 'Zelfstudie: sjabloonfuncties toevoegen'
-description: Voeg sjabloonfuncties toe aan uw Azure Resource Manager-sjabloon om waarden samen te stellen.
+description: Voeg sjabloonfuncties toe aan uw ARM-sjabloon (Azure Resource Manager) om waarden samen te stellen.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: c6ced832cad6809e7cd016eee132713c6b266480
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67c88e98d966a21163aafefcad8363086d5b3bf4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613846"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931041"
 ---
 # <a name="tutorial-add-template-functions-to-your-arm-template"></a>Zelfstudie: Sjabloonfuncties toevoegen aan uw ARM-sjabloon
 
@@ -33,7 +33,7 @@ De locatie van het opslagaccount is in code vastgelegd als **US - oost**. Het is
 
 ## <a name="use-function"></a>Functie gebruiken
 
-Als u de vorige zelfstudie in deze serie hebt voltooid, hebt u al een functie gebruikt. Toen u **"[parameters('storageName')]"** toevoegde, hebt u de functie [parameters](template-functions-deployment.md#parameters) gebruikt. De vierkante haken geven aan dat de syntaxis tussen de haken een [sjabloonexpressie](template-expressions.md) is. In Resource Manager wordt de syntaxis opgelost in plaats van dat deze wordt behandeld als een letterlijke waarde.
+Als u de vorige zelfstudie in deze serie hebt voltooid, hebt u al een functie gebruikt. Toen u `"[parameters('storageName')]"` toevoegde, hebt u de functie [parameters](template-functions-deployment.md#parameters) gebruikt. De vierkante haken geven aan dat de syntaxis tussen de haken een [sjabloonexpressie](template-expressions.md) is. In Resource Manager wordt de syntaxis opgelost in plaats van dat deze wordt behandeld als een letterlijke waarde.
 
 Met functies kunt u flexibiliteit aan uw sjabloon toevoegen door dynamische waarden op te halen tijdens de implementatie. In deze zelfstudie gebruikt u een functie om de locatie op te halen van de resourcegroep die u voor de implementatie gebruikt.
 

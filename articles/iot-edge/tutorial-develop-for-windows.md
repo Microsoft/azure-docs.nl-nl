@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 0728e5d12b13164d127941a49603836ff92fd515
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: e46105f5889f4925be9873fd8613021fe5e8ac2d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045785"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920767"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Zelfstudie: IoT Edge-modules ontwikkelen voor Windows-apparaten
 
@@ -33,24 +33,6 @@ In deze zelfstudie leert u het volgende:
 > * Uw project bouwen als een container en het opslaan in een Azure-containerregister.
 > * Uw code implementeren op een IoT Edge-apparaat.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-## <a name="key-concepts"></a>Belangrijkste concepten
-
-In deze zelfstudie doorloopt u de ontwikkeling van een IoT Edge-module. Een *IoT Edge-module*, of soms kortweg *module* genoemd, is een container die uitvoerbare code bevat. U kunt een of meer modules implementeren op een IoT Edge-apparaat. Modules voeren specifieke taken uit, zoals het opnemen van gegevens van sensoren, het uitvoeren van gegevensanalyses of gegevensopschoning, of het verzenden van berichten naar een IoT-hub. Zie [Informatie over Azure IoT Edge-modules](iot-edge-modules.md) voor meer informatie.
-
-Bij het ontwikkelen van IoT Edge-modules is het belangrijk dat u begrijpt wat het verschil is tussen de ontwikkelcomputer en het IoT Edge doelapparaat waarop de module uiteindelijk zal worden geïmplementeerd. De container die u voor de modulecode bouwt, moet overeenkomen met het besturingssysteem van het *doelapparaat*. Voor de ontwikkeling van Windows-containers is dit concept eenvoudiger omdat Windows-containers alleen worden uitgevoerd op Windows-besturingssystemen. Maar u kunt bijvoorbeeld uw Windows-ontwikkelcomputer gebruiken om modules voor Linux IoT Edge-apparaten te bouwen. In dat scenario moet u ervoor zorgen dat er Linux-containers op uw ontwikkelcomputer werden uitgevoerd. Als u deze zelfstudie doorloopt, moet u rekening houden met het verschil tussen het *besturingssysteem van de ontwikkelcomputer* en het *besturingssysteem van de container*.
-
-Deze zelfstudie richt zich op Windows-apparaten met IoT Edge. Windows-IoT Edge-apparaten gebruiken Windows-containers. We raden u aan om Visual Studio te gebruiken voor het ontwikkelen voor Windows-apparaten, en dat wordt dan ook in deze zelfstudie gebruikt. U kunt ook Visual Studio Code gebruiken, maar er zijn wel verschillen in ondersteuning tussen de twee hulpprogramma's.
-
-De volgende tabel bevat een overzicht van de ondersteunde ontwikkelscenario's voor **Windows-containers** in Visual Studio Code en Visual Studio.
-
-|   | Visual Studio Code | Visual Studio 2017/2019 |
-| - | ------------------ | ------------------ |
-| **Azure-services** | Azure Functions <br> Azure Stream Analytics |   |
-| **Talen** | C# (foutopsporing wordt niet ondersteund) | C <br> C# |
-| **Meer informatie** | [Azure IoT Edge voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Azure IoT Edge Tools voor Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)<br>[Azure IoT Edge Tools voor Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
-
 ## <a name="prerequisites"></a>Vereisten
 
 Een ontwikkelcomputer:
@@ -68,6 +50,24 @@ Een Azure IoT Edge-apparaat op Windows:
 Cloudresources:
 
 * Een gratis of standaard [IoT-hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="key-concepts"></a>Belangrijkste concepten
+
+In deze zelfstudie doorloopt u de ontwikkeling van een IoT Edge-module. Een *IoT Edge-module*, of soms kortweg *module* genoemd, is een container die uitvoerbare code bevat. U kunt een of meer modules implementeren op een IoT Edge-apparaat. Modules voeren specifieke taken uit, zoals het opnemen van gegevens van sensoren, het uitvoeren van gegevensanalyses of gegevensopschoning, of het verzenden van berichten naar een IoT-hub. Zie [Informatie over Azure IoT Edge-modules](iot-edge-modules.md) voor meer informatie.
+
+Bij het ontwikkelen van IoT Edge-modules is het belangrijk dat u begrijpt wat het verschil is tussen de ontwikkelcomputer en het IoT Edge doelapparaat waarop de module uiteindelijk zal worden geïmplementeerd. De container die u voor de modulecode bouwt, moet overeenkomen met het besturingssysteem van het *doelapparaat*. Voor de ontwikkeling van Windows-containers is dit concept eenvoudiger omdat Windows-containers alleen worden uitgevoerd op Windows-besturingssystemen. Maar u kunt bijvoorbeeld uw Windows-ontwikkelcomputer gebruiken om modules voor Linux IoT Edge-apparaten te bouwen. In dat scenario moet u ervoor zorgen dat er Linux-containers op uw ontwikkelcomputer werden uitgevoerd. Als u deze zelfstudie doorloopt, moet u rekening houden met het verschil tussen het *besturingssysteem van de ontwikkelcomputer* en het *besturingssysteem van de container*.
+
+Deze zelfstudie richt zich op Windows-apparaten met IoT Edge. Windows-IoT Edge-apparaten gebruiken Windows-containers. We raden u aan om Visual Studio te gebruiken voor het ontwikkelen voor Windows-apparaten, en dat wordt dan ook in deze zelfstudie gebruikt. U kunt ook Visual Studio Code gebruiken, maar er zijn wel verschillen in ondersteuning tussen de twee hulpprogramma's.
+
+De volgende tabel bevat een overzicht van de ondersteunde ontwikkelscenario's voor **Windows-containers** in Visual Studio Code en Visual Studio.
+
+|   | Visual Studio Code | Visual Studio 2017/2019 |
+| - | ------------------ | ------------------ |
+| **Azure-services** | Azure Functions <br> Azure Stream Analytics |   |
+| **Talen** | C# (foutopsporing wordt niet ondersteund) | C <br> C# |
+| **Meer informatie** | [Azure IoT Edge voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Azure IoT Edge Tools voor Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)<br>[Azure IoT Edge Tools voor Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
 
 ## <a name="install-container-engine"></a>Container-engine installeren
 
@@ -179,7 +179,7 @@ De IoT Edge-runtime heeft uw registerreferenties nodig om uw containerinstallati
 
 De oplossingssjabloon die u hebt gemaakt, bevat voorbeeldcode voor een IoT Edge-module. In deze voorbeeldmodule worden berichten eenvoudigweg ontvangen en vervolgens doorgegeven. Met de pijplijnfunctionaliteit wordt een belangrijk concept in IoT Edge gedemonstreerd, waarmee modules met elkaar communiceren.
 
-Elke module kan meerdere *invoer*- en *uitvoer*wachtrijen hebben die in hun code zijn gedeclareerd. Met de IoT Edge-hub die op het apparaat wordt uitgevoerd, worden berichten van de uitvoer van een module naar de invoer van een of meer modules gerouteerd. De specifieke code voor het declareren van invoer en uitvoer verschilt per taal, maar het concept is voor alle modules hetzelfde. Zie [Routes declareren](module-composition.md#declare-routes) voor meer informatie over routering tussen modules.
+Elke module kan meerdere *invoer*- en *uitvoer* wachtrijen hebben die in hun code zijn gedeclareerd. Met de IoT Edge-hub die op het apparaat wordt uitgevoerd, worden berichten van de uitvoer van een module naar de invoer van een of meer modules gerouteerd. De specifieke code voor het declareren van invoer en uitvoer verschilt per taal, maar het concept is voor alle modules hetzelfde. Zie [Routes declareren](module-composition.md#declare-routes) voor meer informatie over routering tussen modules.
 
 De C#-voorbeeldcode die bij de projectsjabloon hoort, maakt gebruik van de [ModuleClient-klasse](/dotnet/api/microsoft.azure.devices.client.moduleclient) van de IoT Hub SDK voor .NET.
 
@@ -205,7 +205,7 @@ De C#-voorbeeldcode die bij de projectsjabloon hoort, maakt gebruik van de [Modu
 
 7. Zoek de eigenschap **routes** van de gewenste eigenschappen van $edgeHub.
 
-   Een van de functies van de IoT Edge hub-module bestaat uit het routeren van berichten tussen alle modules in een implementatie. Bekijk de waarden in de eigenschap routes. Eén route, **IotEdgeModule1ToIoTHub**, gebruikt een jokerteken ( **\*** ) om elk bericht op te nemen dat afkomstig is van een uitvoerwachtrij in de IotEdgeModule1-module. Deze berichten gaan naar *$upstream*, een gereserveerde naam die IoT Hub aangeeft. De tweede route, **sensorToIotEdgeModule1**, neemt berichten over van de SimulatedTemperatureSensor-module en stuurt deze door naar de invoerwachtrij *input1* van de IotEdgeModule1-module.
+   Een van de functies van de IoT Edge hub-module bestaat uit het routeren van berichten tussen alle modules in een implementatie. Bekijk de waarden in de eigenschap routes. Eén route, **IotEdgeModule1ToIoTHub**, gebruikt een jokerteken (* *\** _) om elk bericht op te nemen dat afkomstig is van een uitvoerwachtrij in de IotEdgeModule1-module. Deze berichten gaan naar _$upstream*, een gereserveerde naam die IoT Hub aangeeft. De tweede route, **sensorToIotEdgeModule1**, neemt berichten over van de SimulatedTemperatureSensor-module en stuurt deze door naar de invoerwachtrij *input1* van de IotEdgeModule1-module.
 
    ![Routes bekijken in deployment.template.json](./media/tutorial-develop-for-windows/deployment-routes.png)
 

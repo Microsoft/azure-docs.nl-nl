@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 01/27/2020
-ms.openlocfilehash: 291586bc2e34784a7bbf29016ea1da35d51e844b
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: bb2eb36e4116c17efb20946b0da4586678838f3b
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489944"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862000"
 ---
 # <a name="tutorial-run-azure-functions-from-azure-stream-analytics-jobs"></a>Zelfstudie: Azure Functions uitvoeren vanuit Azure Stream Analytics-taken 
 
@@ -195,7 +195,9 @@ Volg de zelfstudie [Realtime fraudedetectie](stream-analytics-real-time-fraud-de
 Als tijdens het verzenden van gebeurtenissen naar Azure Functions een fout optreedt, worden de meeste bewerkingen opnieuw geprobeerd in Stream Analytics. Alle HTTP-uitzonderingen worden opnieuw geprobeerd totdat de bewerking is geslaagd, met uitzondering van HTTP-fout 413 (entiteit te groot). Een fout over een entiteit die te groot is, wordt beschouwd als een gegevensfout die onderhevig is aan het [beleid voor opnieuw proberen of verwijderen](stream-analytics-output-error-policy.md).
 
 > [!NOTE]
-> De time-out voor HTTP-aanvragen van Stream Analytics naar Azure Functions is ingesteld op 100 seconden. Als het verwerken van een batch in de Azure Functions-app meer dan 100 seconden duurt, geeft Stream Analytics een foutmelding.
+> De time-out voor HTTP-aanvragen van Stream Analytics naar Azure Functions is ingesteld op 100 seconden. Als het verwerken van een batch in de Azure Functions-app meer dan 100 seconden duurt, geeft Stream Analytics een foutmelding en probeert de batch vervolgens opnieuw te verwerken.
+
+Een nieuwe poging voor time-outs kan leiden tot dubbele gebeurtenissen die zijn geschreven naar de outputsink. Als Stream Analytics een mislukte batch opnieuw probeert te verwerken, gebeurt dat voor alle gebeurtenissen in de batch. Neem bijvoorbeeld een batch van 20 gebeurtenissen die naar Azure Functions worden verzonden vanuit Stream Analytics. Stel dat Azure Functions 100 seconden nodig heeft om de eerste 10 gebeurtenissen in die batch te verwerken. Nadat 100 seconden zijn verstreken, wordt de aanvraag door Stream Analytics opgeschort omdat er geen positief antwoord van Azure Functions is ontvangen. Er wordt dan een andere aanvraag voor dezelfde batch verzonden. De eerste tien gebeurtenissen in de batch worden opnieuw verwerkt door Azure Functions, waardoor een duplicaat ontstaat. 
 
 ## <a name="known-issues"></a>Bekende problemen
 

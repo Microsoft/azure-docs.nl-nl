@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: tutorial
-ms.date: 08/20/2020
+ms.date: 12/02/2020
 ms.author: banders
-ms.openlocfilehash: 619dec1b2246b7e74b058e570df4021888196b0c
-ms.sourcegitcommit: 3792cf7efc12e357f0e3b65638ea7673651db6e1
+ms.openlocfilehash: b5de81f5eaf76c16c1ea8fc78075c4567c77aeee
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91447546"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531973"
 ---
 # <a name="tutorial-review-your-microsoft-customer-agreement-invoice"></a>Zelfstudie: Uw factuur voor uw Microsoft-klantovereenkomst controleren
 
@@ -54,6 +54,8 @@ Als u toegang hebt tot slechts één factureringsbereik, selecteert u **Eigensch
 ![Schermopname van de Microsoft-klantovereenkomst op de pagina Eigenschappen](./media/review-customer-agreement-bill/billing-mca-property.png)
 
 Als u toegang hebt tot meerdere factureringsbereiken, controleert u het type in de kolom voor de factureringsrekening. U hebt toegang tot een factureringsaccount voor een Microsoft-klantovereenkomst als het type factureringsaccount voor een of meer van de bereiken **Microsoft-klantovereenkomst** is.
+
+Selecteer op de pagina met factureringsbereiken de optie **Factureringsbereiken** en selecteer daarna het factureringsaccount dat zou worden gebruikt om het gebruik van de abonnementen te betalen. Het factureringsaccount moet van het type **Microsoft-klantovereenkomst** zijn.
 
 ![Schermopname met Microsoft-klantovereenkomst op de pagina met een lijst van factureringsaccounts](./media/review-customer-agreement-bill/billing-mca-in-the-list.png)
 
@@ -146,7 +148,7 @@ Gebruik het CSV-bestand voor Azure-gebruik en -kosten om uw kosten op gebruiksba
 
 ### <a name="download-your-invoice-and-usage-details"></a>Factuur en gebruiksgegevens downloaden
 
-Afhankelijk van uw toegang moet u mogelijk een factureringsaccount of factureringsprofiel selecteren in Kostenbeheer en facturering. Selecteer **Facturen** onder **Facturering** in het menu aan de linkerkant. Zoek in het factuurraster de rij van de factuur die u wilt downloaden. Klik op het downloadpictogram of het beletselteken (...) aan het einde van de rij. Download in het venster **Downloaden** het bestand met gebruiksgegevens en de factuur.
+Afhankelijk van uw toegang moet u mogelijk een factureringsaccount of factureringsprofiel selecteren in Kostenbeheer en facturering. Selecteer **Facturen** onder **Facturering** in het menu aan de linkerkant. Zoek in het factuurraster de rij van de factuur die u wilt downloaden. Selecteer het downloadsymbool of het beletselteken (...) aan het einde van de rij. Download in het venster **Downloaden** het bestand met gebruiksgegevens en de factuur.
 
 ### <a name="view-detailed-usage-by-invoice-section"></a>Gedetailleerd gebruik per factuursectie weergeven
 

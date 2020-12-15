@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 28b34ecaf51406b35c67d3838714691390f5adf7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c1dba383f259e35b143688b2db68f05f1a67def6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453063"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938191"
 ---
 # <a name="tutorial-create-a-hierarchy-of-iot-edge-devices-preview"></a>Zelfstudie: Een hiërarchie van IoT Edge-apparaten maken (preview)
 
@@ -50,10 +50,19 @@ In deze zelfstudie wordt voor het gemak een hiërarchie van twee apparaten gebru
 Als u een hiërarchie van IoT Edge-apparaten wilt maken, hebt u het volgende nodig:
 
 * Een computer (Windows of Linux) met internetverbinding.
-* Twee Linux-apparaten om te configureren als IoT Edge-apparaten. Als u geen apparaten beschikbaar hebt, kunt u [virtuele machines van Azure](../virtual-machines/linux/index.yml) gebruiken.
 * Een Azure-account met een geldig abonnement. Als u geen [Azure-abonnement](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing) hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 * Een gratis of standaard [IoT-hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Azure CLI v2.3.1 met de Azure IoT-uitbreiding v0.10.6 of hoger geïnstalleerd. Deze zelfstudie maakt gebruik van de [Azure Cloud Shell](../cloud-shell/overview.md). Als u niet bekend bent met de Azure Cloud Shell kunt u [een Snelstartgids bekijken voor meer informatie](./quickstart-linux.md#use-azure-cloud-shell).
+* Azure CLI v2.3.1 met de Azure IoT-uitbreiding v0.10.6 of hoger geïnstalleerd. Deze zelfstudie maakt gebruik van de [Azure Cloud Shell](../cloud-shell/overview.md). Als u niet bekend bent met de Azure Cloud Shell kunt u [een Snelstartgids bekijken voor meer informatie](./quickstart-linux.md#prerequisites).
+* Twee Linux-apparaten om te configureren als IoT Edge-apparaten. Als u geen apparaten beschikbaar hebt, kunt u twee virtuele Azure-machines maken door de tijdelijke aanduiding voor tekst in de volgende opdracht te vervangen en twee keer uit te voeren:
+
+   ```azurecli-interactive
+   az vm create \
+    --resource-group <REPLACE_WITH_RESOURCE_GROUP> \
+    --name <REPLACE_WITH_UNIQUE_NAMES_FOR_EACH_VM> \
+    --image UbuntuLTS \
+    --admin-username azureuser \
+    --admin-password <REPLACE_WITH_PASSWORD>
+   ```
 
 U kunt dit scenario ook proberen door het script [Azure IoT Edge voor Industrial IoT-voorbeeld](https://aka.ms/iotedge-nested-sample) te volgen, waarmee virtuele Azure-machines worden geïmplementeerd als vooraf geconfigureerde apparaten om een ​​fabrieksomgeving te simuleren.
 
@@ -185,11 +194,11 @@ Installeer IoT Edge door deze stappen op beide apparaten te volgen.
    sudo apt-get install moby-engine
    ```
 
-1. De hsmlib-en IoT Edge-daemon installeren <!-- Update with proper image links on release -->
+1. Installeer de hsmlib- en IoT Edge-daemon. Als u de activa voor andere Linux-distributies wilt bekijken, [gaat u naar de GitHub-release](https://github.com/Azure/azure-iotedge/releases/tag/1.2.0-rc1). <!-- Update with proper image links on release -->
 
    ```bash
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/libiothsm-std_1.2.0.rc2-1-1_debian9_amd64.deb -o libiothsm-std.deb
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/iotedge_1.2.0_rc2-1_debian9_amd64.deb -o iotedge.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/libiothsm-std_1.2.0.rc1-1-1_debian9_amd64.deb -o libiothsm-std.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/iotedge_1.2.0_rc1-1_debian9_amd64.deb -o iotedge.deb
    sudo dpkg -i ./libiothsm-std.deb
    sudo dpkg -i ./iotedge.deb
    ```
@@ -611,7 +620,7 @@ Om de resources te verwijderen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u twee IoT Edge-apparaten geconfigureerd als gateways, en het ene ingesteld als bovenliggend apparaat van het andere. Vervolgens hebt u een containerinstallatiekopie naar het onderliggende apparaat gebracht via een gateway. U kunt dit scenario ook proberen door het script [Azure IoT Edge voor Industrial IoT-voorbeeld](https://aka.ms/iotedge-nested-sample) te volgen, waarmee virtuele Azure-machines worden geïmplementeerd als vooraf geconfigureerde apparaten om een ​​fabrieksomgeving te simuleren.
+In deze zelfstudie hebt u twee IoT Edge-apparaten geconfigureerd als gateways, en het ene ingesteld als bovenliggend apparaat van het andere. Vervolgens hebt u een containerinstallatiekopie naar het onderliggende apparaat gebracht via een gateway.
 
 Ga verder met de andere zelfstudies om te zien hoe u met Azure IoT Edge meer oplossingen voor uw bedrijf kunt maken.
 

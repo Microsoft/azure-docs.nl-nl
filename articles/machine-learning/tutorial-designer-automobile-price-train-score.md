@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: 0475e7a7b9bb40e77fe23362ff098350037bdd30
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: ca812fc7548e3c70f1faa1e1ed6a34afda3872af
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555254"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575972"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie
 
@@ -48,7 +48,10 @@ Als u een Azure Machine Learning-pijplijn wilt maken, hebt u een Azure Machine L
 
 ### <a name="create-a-new-workspace"></a>Een nieuwe werkruimte maken
 
-Als u de ontwerpfunctie wilt gebruiken, hebt u eerst een Azure Machine Learning-werkruimte nodig. De werkruimte is de resource op het hoogste niveau voor Azure Machine Learning en biedt een gecentraliseerde werkplek met alle artefacten die u in Azure Machine Learning maakt.
+Als u de ontwerpfunctie wilt gebruiken, hebt u een Azure Machine Learning-werkruimte nodig. De werkruimte is de resource op het hoogste niveau voor Azure Machine Learning en biedt een gecentraliseerde werkplek met alle artefacten die u in Azure Machine Learning maakt. Zie [Azure Machine Learning-werkruimten maken en beheren](how-to-manage-workspace.md) voor instructies over het maken van een werkruimte.
+
+> [!NOTE]
+> Als uw werkruimte gebruikmaakt van een virtueel netwerk, zijn er aanvullende configuratiestappen om de ontwerpfunctie te kunnen gebruiken. Zie [Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk](how-to-enable-studio-virtual-network.md) voor meer informatie
 
 ### <a name="create-the-pipeline"></a>Maak de pijplijn
 
@@ -275,7 +278,7 @@ Nu uw pijplijn helemaal is ingesteld, kunt u een uitvoering van de pijplijn indi
     
     U kunt de uitvoeringsstatus en details rechtsboven in het canvas zien.
     
-    Als dit de eerste keer is dat u de pijplijn uitvoert, kan het maximaal 20 minuten duren voor uw pijplijn helemaal is uitgevoerd. De standaard rekeninstellingen hebben een minimale knooppuntgrootte van 0, wat betekent dat de ontwerpfunctie na inactiviteit resources moet toewijzen. Herhaalde pijplijnuitvoeringen kosten minder tijd, omdat de rekenresources al zijn toegewezen. Bovendien gebruikt de ontwerpfunctie in de cache opgeslagen resultaten voor elke module om de efficiëntie verder te verbeteren.
+    Als dit de eerste keer is dat u de pijplijn uitvoert, kan het maximaal 20 minuten duren voor uw pijplijn helemaal is uitgevoerd. De standaardrekeninstellingen hebben een minimale knooppuntgrootte van 0, wat betekent dat de ontwerpfunctie na inactiviteit resources moet toewijzen. Herhaalde pijplijnuitvoeringen kosten minder tijd, omdat de rekenresources al zijn toegewezen. Bovendien gebruikt de ontwerpfunctie in de cache opgeslagen resultaten voor elke module om de efficiëntie verder te verbeteren.
 
 ### <a name="view-scored-labels"></a>Gescoorde labels weergeven
 

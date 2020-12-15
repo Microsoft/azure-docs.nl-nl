@@ -5,17 +5,81 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 11/11/2020
-ms.openlocfilehash: bf15e380eb1a88acc39ca63165d18d04a260b35d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 12/04/2020
+ms.openlocfilehash: 91aa76fd3d9dbb54316f32fdb319e92ca2283b1d
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185892"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745771"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
 In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzienlijk bijgewerkt zijn. Elke eerste week van de maand wordt de lijst bijgewerkt met artikelupdates van de vorige maand.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="general"></a>Algemeen
+- [Azure Monitor-servicelimieten](service-limits.md): bijgewerkt voor Azure Arc-ondersteuning.
+
+### <a name="agents"></a>Agents
+- [Overzicht van de Azure-bewakingsagents](platform/agents-overview.md): bijgewerkt voor Azure Arc-ondersteuning.
+- [De Azure Monitor-agent installeren](platform/azure-monitor-agent-install.md): nieuw artikel.
+- [Overzicht Azure Monitor-agent](platform/azure-monitor-agent-overview.md): bijgewerkt voor Azure Arc-ondersteuning.
+- [Resource Manager-voorbeeldsjablonen voor agents](samples/resource-manager-agent.md): bijgewerkt voor Azure Arc-ondersteuning.
+
+### <a name="alerts"></a>Waarschuwingen
+- [Actiegroepen maken en beheren in Azure Portal](platform/action-groups.md): IP-bronadressen voor webhooks toegevoegd.
+
+### <a name="application-insights"></a>Application Insights
+- [Bewaken van Java-toepassingen zonder code - Azure Monitor Application Insights](app/java-in-process-agent.md): configuratievoorbeeld toegevoegd.
+- [React-invoegtoepassing voor Application Insights JavaScript SDK](app/javascript-react-plugin.md): sectie over het gebruik van React-hooks toegevoegd.
+- [Upgraden van Application Insights Java 2.x SDK](app/java-standalone-upgrade-from-2x.md): nieuw artikel.
+- [Opmerkingen bij de release voor Microsoft.ApplicationInsights.SnapshotCollector](app/snapshot-collector-release-notes.md): nieuw artikel.
+
+### <a name="autoscale"></a>Automatisch schalen
+- [Aan de slag met automatische schaalaanpassing in Azure](platform/autoscale-get-started.md): sectie over het verplaatsen van Automatisch schaalaanpassing naar een andere regio toegevoegd.
+
+### <a name="data-collection"></a>Gegevens verzamelen
+- [Gegevensverzameling configureren voor de Azure Monitor-agent (preview)](platform/data-collection-rule-azure-monitor-agent.md): bijgewerkt voor Azure Arc-ondersteuning.
+- [Gegevensverzamelingsregels in Azure Monitor (preview)](platform/data-collection-rule-overview.md): bijgewerkt voor Azure Arc-ondersteuning.
+- [Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels](samples/resource-manager-data-collection-rules.md): nieuw artikel.
+
+### <a name="insights-and-solutions"></a>Inzicht en oplossingen
+- [Azure verbinden met ITSM-hulpprogramma's met behulp van beveiligde export](platform/it-service-management-connector-secure-webhook-connections.md): sectie over verbinding maken met ServiceNow toegevoegd.
+
+### <a name="logs"></a>Logboeken
+- [Log Analytics en Excel integreren](log-query/log-excel.md): nieuw artikel.
+- [Log Analytics-gegevensbeveiliging](platform/data-security.md): sectie over aanvullende beveiligingsfuncties toegevoegd.
+- [Integratie van Log Analytics met Power BI](log-query/log-powerbi.md): nieuw artikel.
+- [Standaardkolommen in Azure Monitor-logboekrecords](platform/log-standard-columns.md): kolom _SubscriptionId toegevoegd.
+
+Nieuwe en bijgewerkte artikelen na opnieuw indelen van de inhoud van logboekquery's.
+
+- [Log Analytics-zelfstudie](log-query/log-analytics-tutorial.md)
+- [Logboekquery's in Azure Monitor](log-query/log-query-overview.md)
+- [Overzicht van Log Analytics in Azure Monitor](log-query/log-analytics-overview.md)
+- [Voorbeelden voor query's voor Azure Data Explorer en Azure Monitor](/azure/data-explorer/kusto/query/samples?pivots=azuremonitor)
+- [Zelfstudie: Kusto-query's gebruiken in Azure Data Explorer en Azure Monitor](/azure/data-explorer/kusto/query/tutorial?pivots=azuremonitor)
+
+
+
+### <a name="virtual-machines"></a>Virtuele machines
+
+- [Overzicht Azure Monitor voor VM's inschakelen](insights/vminsights-enable-overview.md): ondersteunde regio's toegevoegd.
+
+Nieuwe artikelen voor gaststatus van Azure Monitor voor VM's (preview)
+
+- [Gaststatus van Azure Monitor voor VM's (preview)](insights/vminsights-health-overview.md)
+- [Gaststatuswaarschuwingen van Azure Monitor voor VM's (preview)](insights/vminsights-health-alerts.md)
+- [Bewaking configureren in gaststatus van Azure Monitor voor VM's (preview)](insights/vminsights-health-configure.md)
+- [Bewaking configureren in gaststatus van Azure Monitor voor VM's met behulp van gegevensverzamelingsregels (preview)](insights/vminsights-health-configure-dcr.md)
+- [Gaststatus van Azure Monitor voor VM's inschakelen (preview)](insights/vminsights-health-enable.md)
+- [Problemen met gaststatus van Azure Monitor voor VM's oplossen (preview)](insights/vminsights-health-troubleshoot.md)
+
+
+
+
 
 ## <a name="october-2020"></a>Oktober 2020
 

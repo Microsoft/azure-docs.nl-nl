@@ -6,16 +6,16 @@ ms.author: cherylmc
 ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: e2df34b7897ee2543d967d147317859ab26971e9
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 933b71d75eacdca015a38524870f25a345e76d22
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510473"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746162"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-azure-portal"></a>Zelfstudie: Een VPN-gateway maken en beheren met behulp van Azure Portal
 
-Azure VPN-gateways bieden veilige, cross-premises connectiviteit tussen de klanten-premises en Azure. Deze zelfstudie bevat informatie over implementatie-basiselementen voor Azure VPN-gateways, zoals het maken en beheren van een VPN-gateway.
+Azure VPN-gateways bieden veilige, cross-premises connectiviteit tussen de klanten-premises en Azure. Deze zelfstudie bevat informatie over implementatie-basiselementen voor Azure VPN-gateways, zoals het maken en beheren van een VPN-gateway. U kunt ook een gateway maken met behulp van [Azure CLI](create-routebased-vpn-gateway-cli.md) of [Azure PowerShell](create-routebased-vpn-gateway-powershell.md).
 
 In deze zelfstudie leert u het volgende:
 

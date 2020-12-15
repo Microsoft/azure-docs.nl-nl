@@ -7,19 +7,22 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/24/2020
+ms.date: 12/03/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c15b3a64b4a0017c5c352e08cebc796537255479
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5229175af618f897caeae7310338cbe51966a48d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447040"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859585"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Zelfstudie: Een Azure Active Directory B2C-tenant maken
 
-Voordat uw toepassingen kunnen communiceren met Azure Active Directory B2C (Azure AD B2C), moeten deze worden geregistreerd in een tenant die u beheert.
+Voordat uw toepassingen kunnen communiceren met Azure Active Directory B2C (Azure AD B2C), moeten deze worden geregistreerd in een tenant die u beheert. 
+
+> [!NOTE]
+> U kunt maximaal 20 tenants per abonnement maken. Deze limiet biedt beveiliging tegen bedreigingen voor uw resources, zoals denial-of-service-aanvallen, en wordt afgedwongen in zowel Azure Portal als de onderliggende API voor het maken van tenants. Als u meer dan 20 tenants wilt maken, neemt u contact op met [Microsoft Ondersteuning](support-options.md).
 
 In dit artikel leert u het volgende:
 
@@ -46,8 +49,11 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     ![Tenant van het abonnement, filter van map en abonnement waarbij de tenant van het abonnement is geselecteerd](media/tutorial-create-tenant/portal-01-pick-directory.png)
 
 1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
+
+   ![Selecteer de knop Een resource maken](media/tutorial-create-tenant/create-a-resource.png)
+
 1. Zoek naar **Azure Active Directory B2C** en selecteer vervolgens **Maken**.
-1. Selecteer **Een nieuwe Azure AD B2C-tenant maken**.
+2. Selecteer **Een nieuwe Azure AD B2C-tenant maken**.
 
     ![Een nieuwe Azure AD B2C-tenant maken die is geselecteerd in Azure Portal](media/tutorial-create-tenant/portal-02-create-tenant.png)
 
@@ -57,7 +63,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
    - **Initiële domeinnaam**: voer een domeinnaam in voor uw Azure AD B2C-tenant.
    - **Land-of regio**: selecteer uw land of regio in de lijst. Deze selectie kan later niet meer worden gewijzigd.
    - **Abonnement**: selecteer uw abonnement in de lijst.
-   - **Resourcegroep**: selecteer een resourcegroep die de tenant zal bevatten. Of selecteer **Nieuwe maken**, geef een **naam** op voor de resourcegroep en selecteer de **locatie van de resourcegroep** en daarna **OK**.
+   - **Resourcegroep**: selecteer of zoek de resourcegroep die de tenant gaat bevatten.
 
     ![Een tenantformulier maken met voorbeeldwaarden in Azure Portal](media/tutorial-create-tenant/review-and-create-tenant.png)
 

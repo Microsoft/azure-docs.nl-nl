@@ -1,21 +1,21 @@
 ---
 title: Meerdere resource-exemplaren maken
-description: Leer hoe u een Azure Resource Manager-sjabloon maakt om meerdere resource-instanties te maken.
+description: Leer hoe u een ARM-sjabloon (Azure Resource Manager) maakt om meerdere Azure-resource-instanties te maken.
 author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: dac1e9429965607aea1490f0ec3b540d7b441d09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94509ba209e95eb9199ddd760529d47eb48bda10
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614390"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930795"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Zelfstudie: Meerdere resource-instanties maken met ARM-sjablonen
 
-Leer hoe u een ARM-sjabloon (ARM = Azure Resource Manager) herhaaldelijk gebruikt om meerdere instanties van een Azure-resource te maken. In deze zelfstudie wijzigt u een sjabloon om drie instanties van het opslagaccount te maken.
+Leer hoe u een ARM-sjabloon (Azure Resource Manager) herhaaldelijk gebruikt om meerdere instanties van een Azure-resource te maken. In deze zelfstudie wijzigt u een sjabloon om drie instanties van het opslagaccount te maken.
 
 ![Diagram: Azure Resource Manager maakt meerdere instanties](./media/template-tutorial-create-multiple-instances/resource-manager-template-create-multiple-instances-diagram.png)
 
@@ -32,7 +32,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
-* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+* Visual Studio Code met de extensie Resource Manager Tools. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="open-a-quickstart-template"></a>Een snelstartsjabloon openen
 

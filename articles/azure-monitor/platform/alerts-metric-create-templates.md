@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 10/7/2020
 ms.subservice: alerts
-ms.openlocfilehash: e5f78c8b58cc3100d746957094ddfd9bab2b29fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51ae97567e9c3720c7e36a81bfa7bff44935aac6
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91813216"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511617"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Een waarschuwing voor metrische gegevens maken met een Resource Manager-sjabloon
 
@@ -270,7 +270,7 @@ az login
 
 az deployment group create \
     --name AlertDeployment \
-    --resource-group ResourceGroupofTargetResource \
+    --resource-group ResourceGroupOfTargetResource \
     --template-file simplestaticmetricalert.json \
     --parameters @simplestaticmetricalert.parameters.json
 ```
@@ -377,7 +377,7 @@ Sla de onderstaande json op als simpledynamicmetricalert.json voor deze stapsgew
                 "description": "The number of unhealthy periods to alert on (must be lower or equal to numberOfEvaluationPeriods)."
             }
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
@@ -518,7 +518,7 @@ Sla de JSON hieronder op als simpledynamicmetricalert.parameters.jsen wijzig dez
         "minFailingPeriodsToAlert": {
             "value": "3"
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "value": ""
         },
         "timeAggregation": {
@@ -570,7 +570,6 @@ Houd rekening met de volgende beperkingen bij het gebruik van dimensies in een w
 - U kunt '\*' niet als dimensiewaarde gebruiken.
 - Wanneer de metrische gegevens die in verschillende criteria zijn geconfigureerd, dezelfde dimensie ondersteunen, moet een geconfigureerde dimensie waarde expliciet op dezelfde manier worden ingesteld voor al deze metrische gegevens (in de relevante criteria).
     - In het onderstaande voorbeeld hebben zowel de metrische waarden **Transactions** en **SuccessE2ELatency** een dimensie **ApiName** en geeft *criterion1* de waarde *"GetBlob"* voor de dimensie **ApiName**. Daarom moet *criterion2* ook een waarde *"GetBlob"* hebben voor de dimensie **ApiName**.
-
 
 Sla de JSON hieronder op als advancedstaticmetricalert.jsvoor het doel van deze procedure.
 
@@ -976,7 +975,7 @@ Sla de JSON hieronder op en wijzig deze als multidimensionalstaticmetricalert.pa
                             "values": ["*"]
                         },
                         {
-                "name":"ApiName",
+                            "name":"ApiName",
                             "operator": "Include",
                             "values": ["GetBlob", "PutBlob"]    
                         }

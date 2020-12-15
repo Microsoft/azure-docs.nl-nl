@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
-ms.date: 01/30/2020
-ms.openlocfilehash: 33c63ffc4220da6d98c462039897067e4ba69491
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 12/14/2020
+ms.openlocfilehash: 9ee7440b10bc348d3ba87a4779208791a7b0e9ac
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793157"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97512025"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-service-tiers"></a>Service lagen van Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -54,7 +54,7 @@ In de volgende tabel worden de belangrijkste verschillen tussen service lagen vo
 | **Schrijf doorvoer vastleggen in logboek** | SQL Database | [1,875 MB/s per vCore (Maxi maal 30 MB/s)](resource-limits-vcore-single-databases.md#general-purpose---provisioned-compute---gen4) | 100 MB/s | [6 MB/s per vCore (max. 96 MB/s)](resource-limits-vcore-single-databases.md#business-critical---provisioned-compute---gen4) |
 | | SQL Managed Instance | [3 MB/s per vCore (Maxi maal 22 MB/s)](../managed-instance/resource-limits.md#service-tier-characteristics) | N.v.t. | [4 MB/s per VCore (max. 48 MB/s)](../managed-instance/resource-limits.md#service-tier-characteristics) |
 |**Beschikbaarheid**|Alles| 99,99% |  [99,95% met één secundaire replica, 99,99% met meer replica's](service-tier-hyperscale-frequently-asked-questions-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99% <br/> [99,995% met zone redundante single data base](https://azure.microsoft.com/blog/understanding-and-leveraging-azure-sql-database-sla/) |
-|**Back-ups**|Alles|RA-GRS, 7-35 dagen (standaard 7 dagen)| RA-GRS, 7 dagen, constant tijdstip herstel (PITR) | RA-GRS, 7-35 dagen (standaard 7 dagen) |
+|**Back-ups**|Alles|RA-GRS, 7-35 dagen (standaard zeven dagen). De maximale Bewaar periode voor de Basic-laag is 7 dagen. | RA-GRS, 7 dagen, constant tijdstip herstel (PITR) | RA-GRS, 7-35 dagen (standaard 7 dagen) |
 |**OLTP in het geheugen** | | N.v.t. | N.v.t. | Beschikbaar |
 |**Alleen-lezen replica's**| | 0 ingebouwde <br> 0-4 met [geo-replicatie](active-geo-replication-overview.md) | 0-4-ingebouwde | 1 ingebouwde, inclusief prijs <br> 0-4 met [geo-replicatie](active-geo-replication-overview.md) |
 |**Prijzen/facturering** | SQL Database | [vCore, gereserveerde opslag en back-upopslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>Voor IOPS worden geen kosten in rekening gebracht. | [vCore voor elke replica en gebruikte opslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>IOPS nog niet gefactureerd. | [vCore, gereserveerde opslag en back-upopslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>Voor IOPS worden geen kosten in rekening gebracht. |
@@ -93,8 +93,8 @@ Gebruik [sp_spaceused](/sql/relational-databases/system-stored-procedures/sp-spa
 
 Opslag voor back-ups van data bases wordt toegewezen ter ondersteuning van de mogelijkheden voor PITR (Point-in-time Restore) en [ltr (Long-term retention)](long-term-retention-overview.md) van SQL database en SQL Managed instance. Deze opslag wordt afzonderlijk voor elke Data Base toegewezen en gefactureerd als twee afzonderlijke kosten per data base.
 
-- **PITR** : afzonderlijke database back-ups worden automatisch naar [geografisch redundante opslag met lees toegang (RA-GRS)](../../storage/common/geo-redundant-design.md) gekopieerd. De opslag grootte neemt dynamisch toe wanneer er nieuwe back-ups worden gemaakt. De opslag wordt gebruikt door wekelijkse volledige back-ups, dagelijkse differentiële back-ups en back-ups van transactie logboeken, die elke vijf minuten worden gekopieerd. Het opslag verbruik is afhankelijk van de frequentie waarmee de data base wordt gewijzigd en de retentie periode voor back-ups. U kunt tussen 7 en 35 dagen een afzonderlijke Bewaar periode configureren voor elke Data Base. Er wordt geen extra kosten in rekening gebracht voor een minimale opslag hoeveelheid die gelijk is aan 100 procent (1x) van de grootte van de data base. Voor de meeste data bases is deze hoeveelheid voldoende om zeven dagen back-ups op te slaan.
-- **LTR** : u hebt ook de mogelijkheid om lange termijn retentie van volledige back-ups te configureren voor Maxi maal tien jaar (deze functie is in [beperkte open bare preview-versie van SQL Managed instance](long-term-retention-overview.md#sql-managed-instance-support). Als u een LTR-beleid instelt, worden deze back-ups automatisch opgeslagen in RA-GRS-opslag, maar u kunt bepalen hoe vaak de back-ups worden gekopieerd. Als u wilt voldoen aan verschillende nalevings vereisten, kunt u verschillende Bewaar perioden selecteren voor wekelijkse, maandelijkse en/of jaarlijkse back-ups. De configuratie die u kiest, bepaalt hoeveel opslag ruimte wordt gebruikt voor V.L.N.R.-back-ups. U kunt de LTR-prijs calculator gebruiken om de kosten van V.L.N.R.-opslag te schatten. Zie [SQL database lange termijn retentie](long-term-retention-overview.md)voor meer informatie.
+- **PITR**: afzonderlijke database back-ups worden automatisch naar [geografisch redundante opslag met lees toegang (RA-GRS)](../../storage/common/geo-redundant-design.md) gekopieerd. De opslag grootte neemt dynamisch toe wanneer er nieuwe back-ups worden gemaakt. De opslag wordt gebruikt door wekelijkse volledige back-ups, dagelijkse differentiële back-ups en back-ups van transactie logboeken, die elke vijf minuten worden gekopieerd. Het opslag verbruik is afhankelijk van de frequentie waarmee de data base wordt gewijzigd en de retentie periode voor back-ups. U kunt tussen 7 en 35 dagen een afzonderlijke Bewaar periode configureren voor elke Data Base. Er wordt geen extra kosten in rekening gebracht voor een minimale opslag hoeveelheid die gelijk is aan 100 procent (1x) van de grootte van de data base. Voor de meeste data bases is deze hoeveelheid voldoende om zeven dagen back-ups op te slaan.
+- **LTR**: u hebt ook de mogelijkheid om lange termijn retentie van volledige back-ups te configureren voor Maxi maal tien jaar (deze functie is in [beperkte open bare preview-versie van SQL Managed instance](long-term-retention-overview.md#sql-managed-instance-support). Als u een LTR-beleid instelt, worden deze back-ups automatisch opgeslagen in RA-GRS-opslag, maar u kunt bepalen hoe vaak de back-ups worden gekopieerd. Als u wilt voldoen aan verschillende nalevings vereisten, kunt u verschillende Bewaar perioden selecteren voor wekelijkse, maandelijkse en/of jaarlijkse back-ups. De configuratie die u kiest, bepaalt hoeveel opslag ruimte wordt gebruikt voor V.L.N.R.-back-ups. U kunt de LTR-prijs calculator gebruiken om de kosten van V.L.N.R.-opslag te schatten. Zie [SQL database lange termijn retentie](long-term-retention-overview.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

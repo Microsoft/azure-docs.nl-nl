@@ -16,12 +16,12 @@ ms.custom:
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: cf1c558474cfde85dd2c9ba8c85dc553fe5d9b56
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 1eead9bb93fe8b753ace518cde18b240ab1a3cd4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547500"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572674"
 ---
 # <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Zelfstudie: Een gesimuleerd apparaat gebruiken om connectiviteit met uw IoT-hub te testen
 
@@ -36,15 +36,7 @@ In deze zelfstudie leert u het volgende:
 > * De cloud-naar-apparaat-verbinding controleren
 > * Synchronisatie van apparaatdubbel controleren
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="prerequisites"></a>Vereisten
-
-De CLI-scripts die u in deze zelfstudie uitvoert, gebruiken de [Microsoft Azure IoT Extensie voor Azure CLI](https://github.com/Azure/azure-iot-cli-extension/blob/master/README.md). Voer de volgende CLI-opdracht uit om deze extensie te installeren:
-
-```azurecli-interactive
-az extension add --name azure-iot
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -72,21 +64,21 @@ Als u een gratis of IoT Hub met standaardlagen in een eerdere zelfstudie of snel
 
 Een apparaat moet door uw hub worden geverifieerd voordat het gegevens kan uitwisselen met de hub. U kunt het hulpprogramma **IoT-apparaten** gebruiken in de sectie **Apparaatbeheer** van de portal om uw apparaten te beheren en de verificatiesleutels die ze gebruiken te controleren. In deze sectie van de zelfstudie voegt u een nieuw testapparaat toe, haalt u de sleutel op en controleert u dat het testapparaat verbinding kan maken met de hub. Later stelt u de verificatiesleutel opnieuw in om te zien wat er gebeurt wanneer een apparaat een verouderde sleutel probeert te gebruiken. Deze sectie van de zelfstudie gebruikt de Azure Portal om een apparaat te maken, beheren en te controleren en de Node.js-apparaatsimulator.
 
-Meld u aan bij de portal en ga naar uw IoT Hub. Ga vervolgens naar het hulpprogramma **IoT-apparaten** :
+Meld u aan bij de portal en ga naar uw IoT Hub. Ga vervolgens naar het hulpprogramma **IoT-apparaten**:
 
 ![Hulpprogramma IoT-apparaten](media/tutorial-connectivity/iot-devices-tool.png)
 
-Om een nieuw apparaat te registreren, klikt u op **+ Toevoegen** , stelt u het **Apparaat-id** in op **MyTestDevice** en klikt u op **Opslaan** :
+Om een nieuw apparaat te registreren, klikt u op **+ Toevoegen**, stelt u het **Apparaat-id** in op **MyTestDevice** en klikt u op **Opslaan**:
 
 ![Een nieuw apparaat toevoegen](media/tutorial-connectivity/add-device.png)
 
-Klik op de verbindingsreeks voor **MyTestDevice** in de lijst van apparaten om die op te halen en kopieer vervolgens de waarde van de **Primaire sleutel van de verbindingsreeks** . De verbindingsreeks bevat de *gedeelde toegangssleutel* voor het apparaat.
+Klik op de verbindingsreeks voor **MyTestDevice** in de lijst van apparaten om die op te halen en kopieer vervolgens de waarde van de **Primaire sleutel van de verbindingsreeks**. De verbindingsreeks bevat de *gedeelde toegangssleutel* voor het apparaat.
 
 ![De apparaatverbindingsreeks ophalen](media/tutorial-connectivity/copy-connection-string.png)
 
 Voer de Node.js-toepassing Gesimuleerd apparaat uit dat u eerder hebt gedownload om te simuleren dat **MyTestDevice** telemetriegegevens naar uw IoT Hub verzendt.
 
-Navigeer in een terminalvenster op uw ontwikkelcomputer naar de hoofdmap van het voorbeeldproject in Node.js dat u hebt gedownload. Navigeer vervolgens naar de map **iot-hub\Tutorials\ConnectivityTests** .
+Navigeer in een terminalvenster op uw ontwikkelcomputer naar de hoofdmap van het voorbeeldproject in Node.js dat u hebt gedownload. Navigeer vervolgens naar de map **iot-hub\Tutorials\ConnectivityTests**.
 
 Voer in het terminalvenster de volgende opdrachten uit om de vereiste bibliotheken te installeren en de toepassing voor het gesimuleerde apparaat uit te voeren. Gebruik de apparaatverbindingsreeks die u hebt genoteerd toen u het apparaat in de portal toevoegde.
 
@@ -146,7 +138,7 @@ az iot hub generate-sas-token --device-id MyTestDevice --hub-name {YourIoTHubNam
 
 Noteer de volledige tekst van het gegenereerde SAS-token. Een SAS-token ziet er als volgt uit: `SharedAccessSignature sr=tutorials-iot-hub.azure-devices.net%2Fdevices%2FMyTestDevice&sig=....&se=1524155307`
 
-Navigeer in een terminalvenster op uw ontwikkelcomputer naar de hoofdmap van het voorbeeldproject in Node.js dat u hebt gedownload. Navigeer vervolgens naar de map **iot-hub\Tutorials\ConnectivityTests** .
+Navigeer in een terminalvenster op uw ontwikkelcomputer naar de hoofdmap van het voorbeeldproject in Node.js dat u hebt gedownload. Navigeer vervolgens naar de map **iot-hub\Tutorials\ConnectivityTests**.
 
 Voer in het terminalvenster de volgende opdrachten uit om de vereiste bibliotheken te installeren en de toepassing voor het gesimuleerde apparaat uit te voeren:
 
@@ -200,7 +192,7 @@ Het terminalvenster geeft gegevens weer terwijl het telemetrie naar uw hub verze
 
 ![Gesimuleerd apparaat dat berichten verzendt](media/tutorial-connectivity/sim-3-sending.png)
 
-U kunt **Metrische gegevens** in de portal gebruiken om te verifiëren dat de telemetrieberichten uw IoT hub bereiken. Selecteer in de vervolgkeuzelijst **Resource** uw IoT hub, selecteer **Verzonden telemetrieberichten** als metriek en stel het tijdsbereik in op **Afgelopen uur** . De kaart toont het totaal aantal berichten dat is verzonden door het gesimuleerd apparaat:
+U kunt **Metrische gegevens** in de portal gebruiken om te verifiëren dat de telemetrieberichten uw IoT hub bereiken. Selecteer in de vervolgkeuzelijst **Resource** uw IoT hub, selecteer **Verzonden telemetrieberichten** als metriek en stel het tijdsbereik in op **Afgelopen uur**. De kaart toont het totaal aantal berichten dat is verzonden door het gesimuleerd apparaat:
 
 ![Metrische gegevens voor IoT Hub weergeven](media/tutorial-connectivity/metrics-portal.png)
 

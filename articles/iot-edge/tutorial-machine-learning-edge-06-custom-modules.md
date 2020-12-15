@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 199da0586a061bccdf8a6ff8a1f53df2f703512f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 25db7104e565a987f3be9e2d6f3b239cf1884ae4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959438"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932333"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Zelfstudie: Aangepaste IoT Edge-modules maken en implementeren
 
@@ -51,6 +51,15 @@ Het volgende diagram toont de module, invoer, uitvoer en de IoT Edge-hubroutes v
 ![Architectuurdiagram van drie modules IoT Edge](media/tutorial-machine-learning-edge-06-custom-modules/modules-diagram.png)
 
 De stappen in dit artikel worden doorgaans uitgevoerd door een cloud-ontwikkelaar.
+
+In dit deel van de zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+>
+> * Een IoT Edge-module maken met behulp van aangepaste code.
+> * Een Docker-installatiekopie maken vanuit de aangepaste module.
+> * IoT Hub-routering opnieuw configureren om ondersteuning te bieden voor uw aangepaste modules.
+> * Aangepaste modules bouwen, publiceren en implementeren.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -804,6 +813,10 @@ Als u zich aanmeldt bij het IoT Edge-apparaat (de Linux-VM in ons geval), kunt u
    ```bash
    sudo docker exec -it avroFileWriter bash
    ```
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd op het werk dat in de voorgaande artikelen is uitgevoerd. Wacht met het opschonen van resources totdat u de laatste zelfstudie hebt uitgevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

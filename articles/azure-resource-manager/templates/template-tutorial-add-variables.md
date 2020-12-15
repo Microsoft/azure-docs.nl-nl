@@ -1,17 +1,17 @@
 ---
 title: 'Zelfstudie: een variabele aan een sjabloon toevoegen'
-description: Voeg variabelen toe aan uw Azure Resource Manager-sjabloon om de syntaxis te vereenvoudigen.
+description: Voeg variabelen toe aan uw ARM-sjabloon (Azure Resource Manager) om de syntaxis te vereenvoudigen.
 author: mumian
 ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 482608172ac9e6e2b9765f236a4b6d655e2455fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d259510d880cbfc60e9ae80b533af6792cc95536
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613149"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930725"
 ---
 # <a name="tutorial-add-variables-to-your-arm-template"></a>Zelfstudie: variabelen aan uw ARM-sjabloon toevoegen
 

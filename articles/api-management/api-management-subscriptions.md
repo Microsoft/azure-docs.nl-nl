@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: d1ab8990d0e5c389e0454c23a31989a71b0cd9a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cdc7668b06308bd5532f4885d0e1365fc34ae989
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87843773"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511243"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Abonnementen maken in Azure API Management
 
@@ -33,7 +33,7 @@ Als u een abonnements sleutel voor toegang tot Api's wilt ophalen, is een abonne
 > API Management ondersteunt ook andere mechanismen voor het beveiligen van de toegang tot Api's, met inbegrip van de volgende voor beelden:
 > - [OAuth 2.0](api-management-howto-protect-backend-with-aad.md)
 > - [Client certificaten](api-management-howto-mutual-certificates-for-clients.md)
-> - [IP-white list](./api-management-access-restriction-policies.md#RestrictCallerIPs)
+> - [IP-adressen van beller beperken](./api-management-access-restriction-policies.md#RestrictCallerIPs)
 
 ## <a name="scope-of-subscriptions"></a>Bereik van abonnementen
 
@@ -43,7 +43,7 @@ Abonnementen kunnen worden gekoppeld aan verschillende bereiken: product, alle A
 
 Normaal gesp roken zijn abonnementen in API Management altijd gekoppeld aan één [API-product](api-management-terminology.md) bereik. Ontwikkel aars hebben een lijst met producten gevonden op de ontwikkelaars Portal. Daarna verzenden ze abonnements aanvragen voor de producten die ze willen gebruiken. Nadat een abonnements aanvraag is goedgekeurd, hetzij automatisch of door API-uitgevers, kan de ontwikkelaar de sleutels erin gebruiken om toegang te krijgen tot alle Api's in het product. Op dit moment toont de ontwikkelaars Portal alleen de product Scope abonnementen onder het gebruikers profiel gedeelte. 
 
-![Product abonnementen](./media/api-management-subscriptions/product-subscription.png)
+![Productabonnementen](./media/api-management-subscriptions/product-subscription.png)
 
 > [!TIP]
 > Onder bepaalde scenario's is het mogelijk dat API-uitgevers een API-product willen publiceren naar het openbaar zonder dat er abonnementen zijn vereist. Ze kunnen de selectie van de optie **abonnement vereisen** op de pagina **instellingen** van het product in de Azure Portal opheffen. Als gevolg hiervan kunnen alle Api's onder het product worden geopend zonder een API-sleutel.

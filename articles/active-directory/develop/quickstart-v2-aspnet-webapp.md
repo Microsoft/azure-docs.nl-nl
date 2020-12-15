@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperfq1
-ms.openlocfilehash: d356674819304897aef353d161ddf236e19db1f5
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 3fed5fa53af9bd69f828eaf40db5d2ac441ffa08
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592240"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762768"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Quickstart: Aanmelding voor Microsoft Identity Platform toevoegen aan een ASP.NET-web-app
 
@@ -39,7 +39,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
 > 1. Ga naar het nieuwe deelvenster [Azure-portal, App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs).
-> 1. Voer een naam in voor de toepassing en klik op **Registreren**.
+> 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >
 > ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Optie 2: registreer de toepassing en configureer handmatig de toepassing en het codevoorbeeld
@@ -47,16 +47,15 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
-> 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-> 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.
-> 1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft-identiteitsplatform voor ontwikkelaars.
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
->      - Voer in de sectie **Naam** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app. Bijvoorbeeld: `ASPNET-Quickstart`.
->      - Voeg `https://localhost:44368/` toe aan **omleidings-URI** en klik op **Registreren**.
->      - Selecteer in het navigatiedeelvenster links onder de sectie Beheren de optie **Verificatie**
->          - Selecteer **ID-tokens** in de subsectie **Impliciete toekenning**.
->          - En selecteer vervolgens **Opslaan**.
+> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+> 1. Voeg `https://localhost:44368/` toe bij **Omleidings-URI**, en selecteer **Registreren**.
+> 1. Selecteer in het navigatiedeelvenster links onder de sectie Beheren de optie **Verificatie**
+> 1. Selecteer **ID-tokens** in de subsectie **Impliciete toekenning**.
+> 1. Selecteer **Opslaan**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal

@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: 951dbb6c1a44e3c081f682db49458be165e9e930
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: f102a5dd5b7dccba6643176d06d17a2a65171c90
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95557907"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904063"
 ---
 ## <a name="configure-your-local-environment"></a>Uw lokale omgeving configureren
 
@@ -17,8 +17,8 @@ Voordat u begint, moet u het volgende hebben:
 
 + Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-java"  
-+ De [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) versie 2.7.1846 of een latere 2.x-versie.
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-java,programming-language-other"  
++ [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2), versie 2.7.1846 of hoger.
 ::: zone-end  
 ::: zone pivot="programming-language-python"
 + De Azure Functions Core Tools-versie die overeenkomt met de geïnstalleerde Python-versie:
@@ -46,4 +46,7 @@ Voordat u begint, moet u het volgende hebben:
 
 + [Apache Maven](https://maven.apache.org), versie 3.0 of hoger.
 
+::: zone-end
+::: zone pivot="programming-language-other"
++ Ontwikkelhulpprogramma's voor de taal die u gebruikt. In deze zelfstudie wordt de [R-programmeertaal](https://www.r-project.org/) gebruikt als voorbeeld.
 ::: zone-end

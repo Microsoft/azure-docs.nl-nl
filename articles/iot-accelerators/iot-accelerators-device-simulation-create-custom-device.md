@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/25/2018
 ms.author: troyhop
-ms.openlocfilehash: 7ddd1aa9865cb4061212ce77b31efc82ad339283
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 1fe86aef832223a7485036343b4b12d8bb526e06
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165567"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96852384"
 ---
 # <a name="tutorial-create-a-custom-simulated-device"></a>Zelfstudie: Een aangepast gesimuleerd apparaat maken
 
@@ -34,15 +34,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Als u deze zelfstudie wilt volgen, hebt u een geïmplementeerd exemplaar van Apparaatsimulatie in uw Azure-abonnement nodig.
 
-Als u Apparaatsimulatie nog niet hebt geïmplementeerd, moet u de snelstart [Een IoT-apparaatsimulatie in Azure implementeren en uitvoeren](quickstart-device-simulation-deploy.md) voltooien.
-
-## <a name="open-device-simulation"></a>Apparaatsimulatie openen
-
-Als u Apparaatsimulatie in uw browser wilt uitvoeren, gaat u eerst naar [Oplossingsverbeteringen van Microsoft Azure IoT](https://www.azureiotsolutions.com).
-
-Mogelijk wordt u gevraagd u aan te melden met de referenties van uw Azure-abonnement.
-
-Klik vervolgens op **Starten** op de tegel voor Apparaatsimulatie die u hebt geïmplementeerd in de zelfstudie [Een cloudoplossing voor apparaatsimulatie implementeren en uitvoeren](quickstart-device-simulation-deploy.md).
+Als u nog geen apparaatsimulatie hebt geïmplementeerd, raadpleegt u [Apparaatsimulatie implementeren](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) in GitHub.
 
 ## <a name="view-your-device-models"></a>Uw apparaatmodellen weergeven
 
@@ -86,13 +78,13 @@ Uw koelkast is nu opgenomen in de lijst met apparaatmodellen. Misschien moet u o
 
 Door een apparaatmodel te klonen, maakt u een kopie van een bestaand apparaatmodel. Vervolgens kunt u de kopie bewerken zodat deze voldoet aan uw specifieke behoeften. Klonen bespaart tijd wanneer u vergelijkbare apparaatmodellen moet maken.
 
-Als u een apparaatmodel wilt klonen, schakelt u het selectievakje naast het model in en klikt u in de actiebalk op **Klonen** :
+Als u een apparaatmodel wilt klonen, schakelt u het selectievakje naast het model in en klikt u in de actiebalk op **Klonen**:
 
 ![Schermopname waarin het geselecteerde model en de knop Klonen zijn gemarkeerd.](media/iot-accelerators-device-simulation-create-custom-device/clonedevice.png)
 
 ## <a name="delete-a-device-model"></a>Een apparaatmodel verwijderen
 
-U kunt elk aangepast apparaatmodel verwijderen. Als u een apparaatmodel wilt verwijderen, schakelt u het selectievakje naast het model in en klikt u in de actiebalk op **Verwijderen** :
+U kunt elk aangepast apparaatmodel verwijderen. Als u een apparaatmodel wilt verwijderen, schakelt u het selectievakje naast het model in en klikt u in de actiebalk op **Verwijderen**:
 
 ![Apparaatmodel verwijderen](media/iot-accelerators-device-simulation-create-custom-device/deletedevice.png)
 

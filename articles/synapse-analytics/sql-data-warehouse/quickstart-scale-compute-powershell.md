@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Rekenkracht opschalen voor Synapse SQL-pool (Azure PowerShell)'
-description: U kunt rekenkracht opschalen voor Synapse SQL-pool (datawarehouse) met behulp van Azure PowerShell.
+title: 'Quickstart: Rekenkracht schalen voor toegewezen SQL-pool (voorheen SQL DW) (Azure PowerShell)'
+description: U kunt rekenkracht schalen voor toegewezen SQL-pool (voorheen SQL DW) met behulp van Azure PowerShell.
 services: synapse-analytics
 author: Antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, devx-track-azurepowershell
-ms.openlocfilehash: 8077b1a52e44ce3a5160309c92288f756bed1014
-ms.sourcegitcommit: f796e1b7b46eb9a9b5c104348a673ad41422ea97
+ms.openlocfilehash: 87e10740e6081431bad96daa930f61238ca495bd
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91566139"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921905"
 ---
-# <a name="quickstart-scale-compute-for-synapse-sql-pool-with-azure-powershell"></a>Quickstart: Rekenkracht opschalen voor Synapse SQL-pool met Azure PowerShell
+# <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-with-azure-powershell"></a>Quickstart: Rekenkracht schalen voor toegewezen SQL-pool (voorheen SQL DW) met Azure PowerShell
 
-U kunt rekenkracht opschalen voor Synapse SQL-pool (datawarehouse) met behulp van Azure PowerShell. [Vergroot de schaal van Compute](sql-data-warehouse-manage-compute-overview.md) voor betere prestaties of verklein de schaal juist om kosten te besparen.
+U kunt rekenkracht schalen voor toegewezen SQL-pool (voorheen SQL DW) met behulp van Azure PowerShell. [Vergroot de schaal van Compute](sql-data-warehouse-manage-compute-overview.md) voor betere prestaties of verklein de schaal juist om kosten te besparen.
 
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
@@ -28,7 +28,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-In deze snelstart wordt ervan uitgegaan dat u al een SQL-pool hebt die u kunt opschalen. Gebruik [Maken en koppelen - portal](create-data-warehouse-portal.md) om een SQL-pool met de naam **mySampleDataWarehouse** te maken als dat nodig is.
+In deze quickstart wordt ervan uitgegaan dat u al een toegewezen SQL-pool (voorheen SQL DW) hebt die u kunt opschalen. Gebruik [Maken en koppelen - portal](create-data-warehouse-portal.md) om een toegewezen SQL-pool (voorheen SQL DW) met de naam **mySampleDataWarehouse** te maken als dat nodig is.
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 
@@ -67,7 +67,7 @@ Volg deze stappen om de locatiegegevens voor uw datawarehouse op te zoeken.
 
 ## <a name="scale-compute"></a>De schaal van Compute aanpassen
 
-In de SQL-pool kunt u het aantal rekenresources verhogen of verlagen door de DWU's aan te passen. Met behulp van [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met 400 DWU's. In de volgende stappen wordt het aantal DWU's voor **mySampleDataWarehouse** aangepast.
+In de toegewezen SQL-pool (voorheen SQL DW) kunt u het aantal rekenresources verhogen of verlagen door de datawarehouse-eenheden aan te passen. Met behulp van [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met 400 DWU's. In de volgende stappen wordt het aantal DWU's voor **mySampleDataWarehouse** aangepast.
 
 Als u datawarehouse-eenheden wilt wijzigen, gebruikt u de PowerShell-cmdlet [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). In het volgende voorbeeld worden de datawarehouse-eenheden ingesteld op DW300c voor de database **mySampleDataWarehouse** die wordt gehost in de resourcegroep **resourcegroupname** op server **sqlpoolservername**.
 
@@ -121,7 +121,7 @@ $database | Select-Object DatabaseName,Status
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu geleerd hoe u de rekenkracht van uw SQL-pool kunt opschalen. Ga verder met de zelfstudie voor het laden van gegevens voor meer informatie over SQL-pool.
+U hebt nu geleerd hoe u de rekenkracht voor een toegewezen SQL-pool (voorheen SQL DW) kunt schalen. Ga verder met de zelfstudie voor het laden van gegevens voor meer informatie over toegewezen SQL-pool (voorheen SQL DW).
 
 > [!div class="nextstepaction"]
->[Gegevens laden in een SQL-pool](load-data-from-azure-blob-storage-using-polybase.md)
+>[Gegevens laden in een toegewezen SQL-pool](load-data-from-azure-blob-storage-using-copy.md)

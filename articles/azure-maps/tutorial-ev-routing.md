@@ -1,20 +1,20 @@
 ---
-title: 'Zelfstudie: Elektrische voertuigen routeren met behulp van Azure Notebooks (Python) | Microsoft Azure Maps'
+title: 'Zelfstudie: Elektrische voertuigen routeren met behulp van Azure Notebooks (Python) met Microsoft Azure Maps'
 description: Zelfstudie over hoe u elektrische voertuigen kunt routeren met behulp van routerings-API's van Microsoft Azure Maps en Azure Notebooks
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 11/12/2019
+ms.date: 12/07/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 6dde7abef1769b9441c037f3727e7fd9d83ab172
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: f30b99a1d9c8303d5b2ed4b02819d0ca837946d2
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896815"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905737"
 ---
 # <a name="tutorial-route-electric-vehicles-by-using-azure-notebooks-python"></a>Zelfstudie: Elektrische voertuigen routeren met behulp van Azure Notebooks (Python)
 
@@ -50,11 +50,11 @@ Zie [Verificatie beheren in Azure Maps](./how-to-manage-authentication.md) voor 
 Voor deze zelfstudie moet u een Azure Notebooks-project maken en het Jupyter Notebook-bestand downloaden en uitvoeren. Het Jupyter Notebook-bestand bevat Python-code waarmee het scenario in deze zelfstudie wordt geïmplementeerd. Voer de volgende stappen uit om een Azure Notebooks-project te maken en het Jupyter Notebook-document te uploaden naar dat project:
 
 1. Ga naar [Azure Notebooks](https://notebooks.azure.com) en meld u aan. Zie voor meer informatie [Snelstart: Aanmelden en een gebruikers-id instellen](../notebooks/quickstart-sign-in-azure-notebooks.md).
-1. Selecteer bovenaan de openbare profielpagina **Mijn projecten** .
+1. Selecteer bovenaan de openbare profielpagina **Mijn projecten**.
 
     ![De knop Mijn projecten](./media/tutorial-ev-routing/myproject.png)
 
-1. Selecteer op de pagina **Mijn projecten** de optie **Nieuw project** .
+1. Selecteer op de pagina **Mijn projecten** de optie **Nieuw project**.
  
    ![De knop Nieuw project](./media/tutorial-ev-routing/create-project.png)
 
@@ -62,7 +62,7 @@ Voor deze zelfstudie moet u een Azure Notebooks-project maken en het Jupyter Not
  
     ![Het deelvenster Nieuw Project maken](./media/tutorial-ev-routing/create-project-window.png)
 
-1. Selecteer **Maken** .
+1. Selecteer **Maken**.
 
 1. Nadat uw project is gemaakt, downloadt u dit [Jupyter Notebook-documentbestand](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook/blob/master/AzureMapsJupyterSamples/Tutorials/EV%20Routing%20and%20Reachable%20Range/EVrouting.ipynb) uit de [Jupyter Notebook-opslagplaats van Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook).
 
@@ -70,7 +70,7 @@ Voor deze zelfstudie moet u een Azure Notebooks-project maken en het Jupyter Not
 
     ![Jupyter Notebook uploaden](./media/tutorial-ev-routing/upload-notebook.png)
 
-1. Upload het bestand vanaf uw computer en selecteer vervolgens **Gereed** .
+1. Upload het bestand vanaf uw computer en selecteer vervolgens **Gereed**.
 
 1. Nadat het uploaden is voltooid, wordt uw bestand weergegeven op uw projectpagina. Dubbelklik op het bestand om het te openen als een Jupyter Notebook.
 
@@ -84,12 +84,12 @@ Voer de volgende stappen uit om de code in het Jupyter Notebook uit te voeren om
 
 1. Download het bestand [*requirements.txt*](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook/blob/master/AzureMapsJupyterSamples/Tutorials/EV%20Routing%20and%20Reachable%20Range/requirements.txt) vanuit de [Jupyter Notebook-opslagplaats van Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) en upload het vervolgens naar uw project.
 1. Selecteer **Projectinstellingen** op het projectdashboard. 
-1. Selecteer in het deelvenster **Projectinstellingen** het tabblad **Omgeving** en selecteer vervolgens **Toevoegen** .
-1. Ga als volgt te werk onder **Stappen voor het instellen van de omgeving** :   
-    a. Selecteer in de eerste vervolgkeuzelijst **Requirements.txt** .  
-    b. Selecteer in de tweede vervolgkeuzelijst uw bestand *requirements.txt* .  
+1. Selecteer in het deelvenster **Projectinstellingen** het tabblad **Omgeving** en selecteer vervolgens **Toevoegen**.
+1. Ga als volgt te werk onder **Stappen voor het instellen van de omgeving**:   
+    a. Selecteer in de eerste vervolgkeuzelijst **Requirements.txt**.  
+    b. Selecteer in de tweede vervolgkeuzelijst uw bestand *requirements.txt*.  
     c. Selecteer in de derde vervolgkeuzelijst **Python-versie 3.6** als uw versie.
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
     ![Pakketten installeren](./media/tutorial-ev-routing/install-packages.png)
 
@@ -108,7 +108,7 @@ from IPython.display import Image, display
 
 Een pakketdienst beschikt over enkele elektrische voertuigen. Overdag moeten de elektrische voertuigen opnieuw worden opgeladen zonder terug te keren naar het magazijn. Telkens wanneer de resterende lading onder een uur komt, zoekt u naar een set laadstations die zich binnen het bereik bevinden. U zoekt dus naar een laadstation wanneer de accu bijna leeg is. En u krijgt de grensinformatie voor het laadstationbereik terug. 
 
-Omdat het bedrijf bij voorkeur een balans tussen zuinigheid en snelheid hanteert bij het kiezen van routes, is het aangevraagde routeType *eco* . Met het volgende script wordt de [API Routebereik ophalen](/rest/api/maps/route/getrouterange) van de routeringsservice van Azure Maps aangeroepen. Het maakt gebruik van parameters voor het verbruiksmodel van het voertuig. Met het script wordt het antwoord geparseerd om een veelhoekobject in de GeoJSON-indeling te maken, waarmee het maximumbereik van de auto wordt aangegeven.
+Omdat het bedrijf bij voorkeur een balans tussen zuinigheid en snelheid hanteert bij het kiezen van routes, is het aangevraagde routeType *eco*. Met het volgende script wordt de [API Routebereik ophalen](/rest/api/maps/route/getrouterange) van de routeringsservice van Azure Maps aangeroepen. Het maakt gebruik van parameters voor het verbruiksmodel van het voertuig. Met het script wordt het antwoord geparseerd om een veelhoekobject in de GeoJSON-indeling te maken, waarmee het maximumbereik van de auto wordt aangegeven.
 
 U kunt de grenzen voor het bereik van het elektrische voertuig bepalen door het script in de volgende cel uit te voeren:
 
@@ -171,11 +171,11 @@ for loc in range(len(searchPolyResponse["results"])):
                 reachableLocations.append(location)
 ```
 
-## <a name="upload-the-reachable-range-and-charging-points-to-azure-maps-data-service"></a>Het bereik en de laadpunten uploaden naar Azure Maps Data Service
+## <a name="upload-the-reachable-range-and-charging-points-to-azure-maps-data-service-preview"></a>Het bereik en de laadpunten uploaden naar Azure Maps Data Service (preview)
 
-Op een kaart wilt u de laadstations en de grens van het maximale bereik van het elektrische voertuig visualiseren. Hiertoe uploadt u de grensgegevens en laadstationgegevens als geoJSON-objecten naar Azure Maps Data Service. Gebruik de [API Gegevens uploaden](/rest/api/maps/data/uploadpreview). 
+Op een kaart wilt u de laadstations en de grens van het maximale bereik van het elektrische voertuig visualiseren. Hiervoor uploadt u de grensgegevens en laadstationgegevens als geoJSON-objecten naar Azure Maps Data Service (preview). Gebruik de [API Gegevens uploaden](/rest/api/maps/data/uploadpreview). 
 
-Voer de volgende twee cellen uit om de grens- en laadpuntgegevens te uploaden naar Azure Maps Data Service:
+Voer de volgende twee cellen uit om de grens- en laadpuntgegevens te uploaden naar de Azure Maps Data-service:
 
 ```python
 rangeData = {
@@ -194,7 +194,7 @@ rangeData = {
   ]
 }
 
-# Upload the range data to Azure Maps Data Service.
+# Upload the range data to Azure Maps Data service (Preview).
 uploadRangeResponse = await session.post("https://atlas.microsoft.com/mapData/upload?subscription-key={}&api-version=1.0&dataFormat=geojson".format(subscriptionKey), json = rangeData)
 
 rangeUdidRequest = uploadRangeResponse.headers["Location"]+"&subscription-key={}".format(subscriptionKey)
@@ -223,7 +223,7 @@ poiData = {
   ]
 }
 
-# Upload the electric vehicle charging station data to Azure Maps Data Service.
+# Upload the electric vehicle charging station data to Azure Maps Data service (Preview).
 uploadPOIsResponse = await session.post("https://atlas.microsoft.com/mapData/upload?subscription-key={}&api-version=1.0&dataFormat=geojson".format(subscriptionKey), json = poiData)
 
 poiUdidRequest = uploadPOIsResponse.headers["Location"]+"&subscription-key={}".format(subscriptionKey)
@@ -336,12 +336,12 @@ routeData = {
 
 ## <a name="visualize-the-route"></a>De route visualiseren
 
-Als u de route wilt visualiseren moet u eerst de routegegevens als een geoJSON-object uploaden naar Azure Maps Data Service. Gebruik hiervoor de [API Gegevens uploaden](/rest/api/maps/data/uploadpreview) van Azure Maps. Vervolgens roept u de renderingservice, de [API Kaartafbeeldingen ophalen](/rest/api/maps/render/getmapimage), aan om de route op de kaart weer te geven en te visualiseren.
+Als u de route wilt visualiseren moet u eerst de routegegevens als een geoJSON-object uploaden naar de Azure Maps Data-service (preview). Gebruik hiervoor de [API Gegevens uploaden](/rest/api/maps/data/uploadpreview) van Azure Maps. Vervolgens roept u de renderingservice, de [API Kaartafbeeldingen ophalen](/rest/api/maps/render/getmapimage), aan om de route op de kaart weer te geven en te visualiseren.
 
 Voer het volgende script uit om een afbeelding voor de weergegeven route op de kaart op te halen:
 
 ```python
-# Upload the route data to Azure Maps Data Service.
+# Upload the route data to Azure Maps Data service (Preview).
 routeUploadRequest = await session.post("https://atlas.microsoft.com/mapData/upload?subscription-key={}&api-version=1.0&dataFormat=geojson".format(subscriptionKey), json = routeData)
 
 udidRequestURI = routeUploadRequest.headers["Location"]+"&subscription-key={}".format(subscriptionKey)

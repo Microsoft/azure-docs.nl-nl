@@ -1,20 +1,20 @@
 ---
-title: 'Zelfstudie: Een web-app migreren vanuit Google Maps | Microsoft Azure Maps'
+title: 'Zelfstudie: Een web-app migreren vanuit Google Maps naar Microsoft Azure Maps'
 description: Zelfstudie over hoe u een web-app migreert vanuit Google Maps naar Microsoft Azure Maps
 author: rbrundritt
 ms.author: richbrun
-ms.date: 08/18/2020
+ms.date: 12/07/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: b95800bea4bceffabad56aa29b68a57b310c5518
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 4dee8de8f42b78ecdab9d9e15bb277d58fa8ba70
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896443"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905057"
 ---
 # <a name="tutorial---migrate-a-web-app-from-google-maps"></a>Zelfstudie - Een web-app migreren uit Google Maps
 
@@ -75,7 +75,7 @@ De tabel bevat een overzicht van de belangrijkste API-functies in de Google Maps
 | Service voor geocodering        | ✓                          |
 | Service voor aanwijzingen      | ✓                          |
 | Service voor afstandsmatrix | ✓                          |
-| Service voor hoogte-indicatie       | Gepland                     |
+| Service voor hoogte-indicatie       | ✓                          |
 
 ## <a name="notable-differences-in-the-web-sdks"></a>Belangrijke verschillen tussen de web-SDK's
 
@@ -255,7 +255,7 @@ Hier ziet u een voorbeeld van Google Maps waarbij de taal is ingesteld op 'fr-FR
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
 
-Azure Maps biedt twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de algemene naamruimte *atlas* . Hierdoor worden in alle exemplaren van kaartbesturingselementen in uw app standaard deze instellingen gebruikt. Met de volgende code stelt u de taal in op Frans ('fr-FR') en de regionale weergave op 'auto':
+Azure Maps biedt twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de algemene naamruimte *atlas*. Hierdoor worden in alle exemplaren van kaartbesturingselementen in uw app standaard deze instellingen gebruikt. Met de volgende code stelt u de taal in op Frans ('fr-FR') en de regionale weergave op 'auto':
 
 ```javascript
 atlas.setLanguage('fr-FR');
@@ -332,9 +332,9 @@ map.setStyle({
 
 In Azure Maps kunt u op verschillende manieren puntgegevens weergeven op de kaart:
 
-- **HTML-markeringen** : punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
-- **Symboollaag** : punten weergeven met een pictogram of tekst binnen de WebGL-context.
-- **Bellenlaag** : punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
+- **HTML-markeringen**: punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
+- **Symboollaag**: punten weergeven met een pictogram of tekst binnen de WebGL-context.
+- **Bellenlaag**: punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
 
 Symbool en bellenlagen moet u renderen in de WebGL-context. Op beide lagen kunnen grote sets met punten op de kaart worden weergegeven. Voor deze lagen moeten gegevens worden opgeslagen in een gegevensbron. Gegevensbronnen en renderinglagen moeten worden toegevoegd aan de kaart nadat de gebeurtenis `ready` is geactiveerd. HTML-markeringen worden op de pagina weergegeven als DOM-elementen en maken geen gebruik van een gegevensbron. Hoe meer DOM-elementen er op een pagina staan, des te langzamer de pagina wordt. Als er meer dan een paar honderd punten moeten worden weergegeven op een kaart, is het beter om een van de renderinglagen te gebruiken.
 

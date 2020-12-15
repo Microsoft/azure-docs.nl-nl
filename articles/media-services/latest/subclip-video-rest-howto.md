@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: how-to
 ms.date: 06/10/2019
 ms.author: inhenkel
-ms.openlocfilehash: 2a78e8c8c204e5cedeb8bdd2a25cff40a3e5cc44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 524da91d55bad29a5f7c6dcec0eecc245b9954fd
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89296546"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511906"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Een video bijsnijden bij het coderen met Media Services-REST
 
@@ -49,7 +49,7 @@ Voor het uitvoeren van de stappen die in dit onderwerp worden beschreven, moet u
 1. Werk de waarde van de omgevings variabele "transformator" bij met de naam van uw trans formatie. 
 1. Selecteer het tabblad **hoofd tekst** en werk de myOutputAsset bij met de naam van uw uitvoer activum.
 
-    ```
+    ```json
     {
       "properties": {
         "description": "A Job with transform cb9599fb-03b3-40eb-a2ff-7ea909f53735 and single clip.",
@@ -58,8 +58,8 @@ Voor het uitvoeren van de stappen die in dit onderwerp worden beschreven, moet u
           "@odata.type": "#Microsoft.Media.JobInputHttp",
           "baseUri": "https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/",
           "files": [
-                "Ignite-short.mp4"
-            ],
+            "Ignite-short.mp4"
+          ],
           "start": {
             "@odata.type": "#Microsoft.Media.AbsoluteClipTime",
             "time": "PT10S"

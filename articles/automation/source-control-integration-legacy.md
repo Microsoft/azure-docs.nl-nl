@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: f1e4e288b5b95f355221188a45f1e6c764fde77c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dedbcf58e76b8c969f8607db6922e87a85f08e5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187333"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591870"
 ---
 # <a name="use-source-control-integration-in-azure-automation---legacy"></a>Broncode beheer integratie gebruiken in Azure Automation-verouderd
 
@@ -47,13 +47,13 @@ Als u al een GitHub-account en een opslag plaats hebt die u wilt koppelen aan Az
    | Pad naar runbookmap |Het pad naar de runbookmap specificeert het pad in de GitHub-opslag plaats van waaruit u de code wilt pushen of ophalen. De waarde moet worden opgegeven in de notatie **/FolderName/subfoldername**. Alleen runbooks in het pad naar de runbookmap worden gesynchroniseerd met uw Automation-account. Runbooks in de submappen van het pad naar de runbookmap worden **niet** gesynchroniseerd. Gebruiken **/** voor het synchroniseren van alle runbooks in de opslag plaats. |
 3. Bijvoorbeeld als u een opslag plaats hebt met de naam **PowerShellScripts** die een map bevat met de naam **root folder**, die een map met de **naam submap bevat.** U kunt de volgende teken reeksen gebruiken om elk mapniveau te synchroniseren:
 
-   1. Om runbooks vanuit de **opslag plaats**te synchroniseren, is het pad naar de runbookmap **/** .
+   1. Om runbooks vanuit de **opslag plaats** te synchroniseren, is het pad naar de runbookmap **/** .
    2. Als u runbooks wilt synchroniseren vanuit **root folder**, is het pad naar de runbookmap **/RootFolder**.
    3. Als u runbooks wilt **synchroniseren vanuit een submap,** is het pad naar de runbookmap **/RootFolder/subfolder**.
 4. Nadat u de para meters hebt geconfigureerd, worden deze weer gegeven op de pagina broncode beheer instellen.  
 
     ![De bron beheer pagina met de instellingen](media/source-control-integration-legacy/automation-SourceControlConfigure.png)
-5. Nadat u op **OK**hebt geklikt, wordt broncode beheer integratie nu geconfigureerd voor uw Automation-account en moet deze worden bijgewerkt met uw github-gegevens. U kunt nu op dit onderdeel klikken om al uw bron beheer synchronisatie taak geschiedenis weer te geven.  
+5. Nadat u op **OK** hebt geklikt, wordt broncode beheer integratie nu geconfigureerd voor uw Automation-account en moet deze worden bijgewerkt met uw github-gegevens. U kunt nu op dit onderdeel klikken om al uw bron beheer synchronisatie taak geschiedenis weer te geven.  
 
     ![Waarden voor de huidige geconfigureerde broncode beheer configuratie](media/source-control-integration-legacy/automation-RepoValues.png)
 6. Nadat u broncode beheer hebt ingesteld, worden er twee [variabele assets](./shared-resources/variables.md) in uw Automation-account gemaakt. Daarnaast wordt een geautoriseerde toepassing toegevoegd aan uw GitHub-account.
@@ -92,7 +92,7 @@ Met het inchecken van een runbook kunt u de wijzigingen die u hebt aangebracht i
      > [!NOTE] 
      > Als u incheckt vanuit Azure Automation, wordt de code die momenteel in uw broncode beheer bestaat, overschreven. De Git-equivalente opdracht regel instructie voor het inchecken is **git add + git commit + git push**  
 
-3. Wanneer u op **check-in**klikt, wordt u gevraagd een bevestigings bericht te klikken. Klik op **Ja** om door te gaan.  
+3. Wanneer u op **check-in** klikt, wordt u gevraagd een bevestigings bericht te klikken. Klik op **Ja** om door te gaan.  
 
     ![Een dialoog venster waarin de checkin wordt bevestigd voor broncode beheer](media/source-control-integration-legacy/automation-CheckinMessage.png)
 4. Als u inschakelt, wordt het broncode beheer-runbook gestart: **Sync-MicrosoftAzureAutomationAccountToGitHubV1**. Met dit runbook maakt u verbinding met GitHub en worden wijzigingen van Azure Automation naar uw opslag plaats gepusht. Als u de ingecheckte taak geschiedenis wilt weer geven, gaat u terug naar het tabblad **bron beheer integratie** en klikt u op de pagina bibliotheek synchronisatie openen. Op deze pagina worden al uw resource beheer taken weer gegeven. Selecteer de taak die u wilt weer geven en klik om de details weer te geven.  

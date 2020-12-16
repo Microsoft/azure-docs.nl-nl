@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
-ms.date: 09/22/2020
-ms.custom: contperf-fy21q1
-ms.openlocfilehash: 0379fd186c499e19d949d9494b0eb5dec4f2bb50
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.date: 12/15/2020
+ms.custom: contperf-fy21q1,contperfq1
+ms.openlocfilehash: f7c4529c68f79c6ad19f22054fd0b7d2ba5116db
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032538"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562834"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Diep gaande informatie versus machine learning in Azure Machine Learning
 
@@ -57,6 +57,16 @@ De volgende tabel vergelijkt de twee technieken in meer detail:
 |  **Uitvoeringstijd** | Neemt relatief weinig tijd in beslag om te trainen, variërend van een paar seconden tot enkele uren. | Het duurt doorgaans lang om te trainen omdat een diepe leer algoritme veel lagen omvat. |
 |  **Uitvoer** | De uitvoer is doorgaans een numerieke waarde, zoals een score of classificatie. | De uitvoer kan meerdere indelingen hebben, zoals een tekst, een score of een geluid. |
 
+## <a name="transfer-learning"></a>Learning overdragen
+
+Voor het trainen van diepe leer modellen zijn vaak grote hoeveel heden trainings gegevens, high-end Compute-resources (GPU, TPU) en een langere training tijd vereist. Wanneer u geen van deze voor u beschikbaar hebt, kunt u een snelkoppeling maken naar het trainings proces met behulp van een techniek die bekend staat als overboeking learning.
+
+Overboeking learning is een techniek waarbij kennis wordt toegepast op basis van het oplossen van een probleem naar een ander, maar verwant probleem.
+
+Vanwege de structuur van Neural-netwerken bevatten de eerste set lagen meestal functies van een lager niveau, terwijl de laatste set lagen de functie op een hoger niveau bevat die dichter bij het betrokken domein ligt. Door de laatste lagen te nemen voor gebruik in een nieuw domein of probleem, kunt u de hoeveelheid tijd, gegevens en reken resources die nodig zijn om het nieuwe model te trainen aanzienlijk reduceren. Als u bijvoorbeeld al een model hebt dat auto's herkent, kunt u dit model met behulp van overboeking Learning ook herkennen aan vracht wagens, motor rijwielen en andere soorten voer tuigen.
+
+Meer informatie over het Toep assen van overboeking learning voor installatie kopie classificatie met behulp van een open source-framework in Azure Machine Learning: [Classificeer afbeeldingen met behulp van een Pytorch-model](./how-to-train-pytorch.md?WT.mc_id=docs-article-lazzeri).
+
 ## <a name="deep-learning-use-cases"></a>Uitgebreide leer cases
 
 Vanwege de kunst matige Neural-netwerk structuur worden er diep gaande kennissen van Excel bij het identificeren van patronen in ongestructureerde gegevens, zoals afbeeldingen, geluid, video en tekst. Om die reden is het snel om veel branches te transformeren, met inbegrip van gezondheids zorg, energie, financiën en Trans Port. Deze branches zijn nu bezig met het herzien van traditionele bedrijfs processen. 
@@ -72,8 +82,6 @@ Benoemde entiteits herkenning is een diepe leer methode die een stuk tekst als i
 Grondige kennis is toegepast in veel object detectie-use cases. Object detectie bestaat uit twee onderdelen: afbeeldings classificatie en vervolgens afbeeldings lokalisatie. Met afbeeldings _classificatie_ worden de objecten van de afbeelding, zoals auto's of personen, geïdentificeerd. _Lokalisatie_ van de installatie kopie biedt de specifieke locatie van deze objecten. 
 
 Object detectie wordt al gebruikt in branches zoals gaming, handels verkeer, toer isme en zelf gerichte auto's.
-
-Meer informatie over het gebruik van een afbeeldings classificatie model van een open source-framework in Azure Machine Learning: [classificeren van afbeeldingen met behulp van een Pytorch-model](./how-to-train-pytorch.md?WT.mc_id=docs-article-lazzeri)
 
 ### <a name="image-caption-generation"></a>Bijschrift bij afbeelding genereren
 
@@ -107,7 +115,7 @@ Het Feedforward Neural-netwerk is het meest eenvoudige type kunst matig Neural n
 
 Recurrente Neural Networks is een veelgebruikt Neural netwerk. In deze netwerken wordt de uitvoer van een laag opgeslagen en weer gegeven in de invoer laag om te helpen bij het voors pellen van het resultaat van de laag. Rehuidige Neural-netwerken hebben fantastische leer mogelijkheden. Ze worden veel gebruikt voor complexe taken, zoals het maken van een time series-prognose, het leren van hand schrift en het herkennen van de taal.
 
-### <a name="convolutional-neural-networks"></a>Convolutional Neural-netwerken
+### <a name="convolutional-neural-network"></a>Convolutional Neural-netwerk
 
 Een convolutional Neural-netwerk is een bijzonder effectief Neural netwerk en biedt een unieke architectuur. Lagen zijn ingedeeld in drie dimensies: breedte, hoogte en diepte. De neurons in de ene laag worden niet verbonden met alle neurons in de volgende laag, maar alleen voor een kleine regio van de neurons van de laag. De uiteindelijke uitvoer wordt gereduceerd tot één vector met waarschijnlijkheids scores, geordend op de diepte dimensie. 
 

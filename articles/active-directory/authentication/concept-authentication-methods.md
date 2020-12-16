@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2020
+ms.date: 12/14/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: e239d9da4a083b50460ef746f9c538aa3081a577
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 24b29cfb1f58a61193f67ba924e583d4264dfc51
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027319"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562120"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
 
@@ -26,9 +26,11 @@ Als onderdeel van de aanmeldings ervaring voor accounts in Azure Active Director
 
 Verificatie methoden zonder wacht woord zoals Windows Hello, FIDO2-beveiligings sleutels en de Microsoft Authenticator-app bieden de veiligste aanmeldings gebeurtenissen.
 
-Azure AD Multi-Factor Authentication voegt extra beveiliging alleen toe met behulp van een wacht woord wanneer een gebruiker zich aanmeldt. De gebruiker kan worden gevraagd om aanvullende verificatie vormen, zoals om te reageren op een push melding, een code van een software-of hardware-token in te voeren, of om te reageren op een SMS-of telefoon gesprek.
+Azure AD Multi-Factor Authentication (MFA) voegt extra beveiliging toe via het gebruik van een wacht woord wanneer een gebruiker zich aanmeldt. De gebruiker kan worden gevraagd om aanvullende verificatie vormen, zoals om te reageren op een push melding, een code van een software-of hardware-token in te voeren, of om te reageren op een SMS-of telefoon gesprek.
 
-Voor het vereenvoudigen van de gebruikers ervaring en registratie voor MFA en SSPR, raden we u aan om de [registratie van gecombineerde beveiligings gegevens in te scha kelen](howto-registration-mfa-sspr-combined.md). Voor tolerantie raden wij aan dat gebruikers meerdere verificatie methoden moeten registreren. Wanneer een methode niet beschikbaar is voor een gebruiker tijdens het aanmelden of SSPR, kan deze een andere methode verifiëren. Zie [een flexibele toegangs beheer strategie maken in azure AD](concept-resilient-controls.md)voor meer informatie.
+Voor het vereenvoudigen van de gebruikers ervaring en registratie voor MFA en self-service voor wachtwoord herstel (SSPR), raden we u aan om [gecombineerde beveiligings gegevens](howto-registration-mfa-sspr-combined.md)te registreren. Voor tolerantie raden wij aan dat gebruikers meerdere verificatie methoden moeten registreren. Wanneer een methode niet beschikbaar is voor een gebruiker tijdens het aanmelden of SSPR, kan deze een andere methode verifiëren. Zie [een flexibele toegangs beheer strategie maken in azure AD](concept-resilient-controls.md)voor meer informatie.
+
+Hier volgt een [video](https://www.youtube.com/watch?v=LB2yj4HSptc&feature=youtu.be) die we hebben gemaakt om u te helpen bij het kiezen van de beste verificatie methode om uw organisatie veilig te houden.
 
 ## <a name="authentication-method-strength-and-security"></a>De sterkte en beveiliging van de verificatie methode
 
@@ -47,7 +49,10 @@ De volgende tabel bevat een overzicht van de beveiligings overwegingen voor de b
 | Spraak                          | Gemiddeld   | Gemiddeld    | Gemiddeld       |
 | Wachtwoord                       | Laag      | Hoog      | Hoog         |
 
-Zie voor meer informatie over beveiliging [verificatie beveiligings problemen en aanvals vectoren](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124).
+Bekijk onze blog berichten voor de meest recente informatie over beveiliging:
+
+- [Het is tijd om op telefoon transporten te hangen voor verificatie](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752)
+- [Verificatie beveiligings problemen en aanvals vectoren](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/all-your-creds-are-belong-to-us/ba-p/855124)
 
 > [!TIP]
 > Voor flexibiliteit en bruikbaarheid raden we u aan de Microsoft Authenticator-app te gebruiken. Deze verificatie methode biedt de beste gebruikers ervaring en meerdere modi, zoals wacht woorden, MFA-push meldingen en OATH-codes.
@@ -73,7 +78,7 @@ Al deze verificatie methoden kunnen worden geconfigureerd in de Azure Portal en 
 
 Raadpleeg de volgende afzonderlijke conceptuele artikelen voor meer informatie over de werking van elke verificatie methode:
 
-* [Windows Hello voor Bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview)
+* [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator-app](concept-authentication-authenticator-app.md)
 * [FIDO2-beveiligings sleutel (preview-versie)](concept-authentication-passwordless.md#fido2-security-keys)
 * [OATH-hardware-tokens (preview-versie)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)

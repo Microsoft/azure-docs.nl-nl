@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 12/15/2020
 ms.author: memildin
-ms.openlocfilehash: 999888b12f10c07f7d42f14289e88030f9542a36
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 598c13b0434a364e73471b53c82663b94fb42f4e
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340815"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560098"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Validatie van waarschuwingen in Azure Security Center
 In dit document leest u hoe u kunt controleren of uw systeem op de juiste manier is geconfigureerd voor waarschuwingen van Azure Security Center.
@@ -27,7 +27,42 @@ In dit document leest u hoe u kunt controleren of uw systeem op de juiste manier
 Waarschuwingen zijn de meldingen die Security Center genereert wanneer het bedreigingen op uw resources detecteert. Er worden prioriteiten gegeven en de waarschuwingen worden vermeld samen met de informatie die nodig is om snel het probleem te onderzoeken. Security Center geeft ook aanbevelingen voor hoe u een aanval kunt oplossen.
 Zie [beveiligings waarschuwingen in Security Center](security-center-alerts-overview.md) en [beheren en reageren op beveiligings waarschuwingen](security-center-managing-and-responding-alerts.md) voor meer informatie.
 
-## <a name="validate-alerts-on-windows-vms"></a>Waarschuwingen op Windows-Vm's valideren <a name="validate-windows"></a>
+
+## <a name="generate-sample-azure-defender-alerts"></a>Voor beeld van Azure Defender-waarschuwingen genereren
+
+Als u de nieuwe preview-versie van waarschuwingen gebruikt, zoals beschreven in [beveiligings waarschuwingen beheren en erop reageren in azure Security Center](security-center-managing-and-responding-alerts.md), kunt u in een paar klikken voorbeeld waarschuwingen maken via de pagina beveiligings waarschuwingen in de Azure Portal.
+
+Gebruik voorbeeld waarschuwingen voor het volgende:
+
+- de waarde en mogelijkheden van Azure Defender evalueren
+- Controleer alle configuraties die u hebt gemaakt voor uw beveiligings waarschuwingen (zoals SIEM-integraties, werk stroom automatisering en e-mail meldingen)
+
+> [!NOTE]
+> Voor deze procedure is de melding nieuwe (preview-versie) beschikbaar in de banner aan de bovenkant van de pagina **beveiligings waarschuwingen** .
+>
+> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar de nieuwe preview-waarschuwingen":::
+
+Voorbeeld waarschuwingen maken:
+
+1. Selecteer in de werk balk op de pagina waarschuwingen de optie **voorbeeld waarschuwingen maken**. 
+1. Selecteer het abonnement.
+1. Selecteer de relevante Azure Defender-plannen/s waarvoor u waarschuwingen wilt weer geven. 
+1. Selecteer **voorbeeld waarschuwingen maken**.
+
+    :::image type="content" source="media/security-center-alert-validation/create-sample-alerts-procedures.png" alt-text="Stappen voor het maken van voorbeeld waarschuwingen in Azure Security Center":::
+    
+    Er wordt een melding weer gegeven dat u weet dat de voorbeeld waarschuwingen worden gemaakt:
+
+    :::image type="content" source="media/security-center-alert-validation/notification-sample-alerts-creation.png" alt-text="Melding dat de voorbeeld waarschuwingen worden gegenereerd.":::
+
+    Na enkele minuten worden de waarschuwingen weer gegeven op de pagina beveiligings waarschuwingen. Ze worden ook ergens anders weer gegeven die u hebt geconfigureerd voor het ontvangen van uw Azure Security Center beveiligings waarschuwingen (verbonden Siem's, e-mail meldingen, enzovoort).
+
+    :::image type="content" source="media/security-center-alert-validation/sample-alerts.png" alt-text="Voorbeeld waarschuwingen in de lijst met beveiligings waarschuwingen":::
+
+    > [!TIP]
+    > De waarschuwingen zijn voor gesimuleerde resources.
+
+## <a name="simulate-alerts-on-your-azure-vms-windows"></a>Waarschuwingen op uw virtuele Azure-machines simuleren (Windows) <a name="validate-windows"></a>
 
 Nadat Security Center agent op uw computer is geïnstalleerd, voert u de volgende stappen uit vanaf de computer waar u de aangevallen bron van de waarschuwing wilt ontvangen:
 
@@ -36,11 +71,11 @@ Nadat Security Center agent op uw computer is geïnstalleerd, voert u de volgend
 1. Wacht 5 tot 10 minuten en open Security Center. Er moet een waarschuwing worden weer gegeven.
 
 > [!NOTE]
-> Wanneer u deze test waarschuwing voor Windows bekijkt **, moet u**controleren of de controle van de veld **argumenten is ingeschakeld** . Als deze **False**is, moet u controle van opdracht regel argumenten inschakelen. Gebruik de volgende opdracht om dit in te schakelen: 
+> Wanneer u deze test waarschuwing voor Windows bekijkt **, moet u** controleren of de controle van de veld **argumenten is ingeschakeld** . Als deze **False** is, moet u controle van opdracht regel argumenten inschakelen. Gebruik de volgende opdracht om dit in te schakelen: 
 >
 >```reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"```
 
-## <a name="validate-alerts-on-linux-vms"></a>Waarschuwingen valideren op virtuele Linux-machines <a name="validate-linux"></a>
+## <a name="simulate-alerts-on-your-azure-vms-linux"></a>Waarschuwingen op uw virtuele Azure-machines simuleren (Linux) <a name="validate-linux"></a>
 
 Nadat Security Center agent op uw computer is geïnstalleerd, voert u de volgende stappen uit vanaf de computer waar u de aangevallen bron van de waarschuwing wilt ontvangen:
 1. Kopieer een uitvoerbaar bestand naar een handige locatie en wijzig de naam in **./asc_alerttest_662jfi039n**, bijvoorbeeld:
@@ -54,7 +89,7 @@ Nadat Security Center agent op uw computer is geïnstalleerd, voert u de volgend
 1. Wacht 5 tot 10 minuten en open Security Center. Er moet een waarschuwing worden weer gegeven.
 
 
-## <a name="validate-alerts-on-kubernetes"></a>Waarschuwingen valideren op Kubernetes <a name="validate-kubernetes"></a>
+## <a name="simulate-alerts-on-kubernetes"></a>Waarschuwingen simuleren op Kubernetes <a name="validate-kubernetes"></a>
 
 Als u Azure Kubernetes service hebt geïntegreerd met Security Center, kunt u testen of uw waarschuwingen werken met de volgende kubectl-opdracht:
 

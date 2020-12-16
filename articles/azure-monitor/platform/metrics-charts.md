@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 1150cdb64c5fe7d1b2241cdc0ad1a6eb0a36f47f
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: be3d3f11e90c17bd8c4792418500da651039e480
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168559"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562800"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Geavanceerde functies van Azure Metrics Explorer
 
@@ -46,7 +46,7 @@ Klik op de **grafiek toevoegen** en maak een andere grafiek met een andere metri
 
 ### <a name="order-or-delete-multiple-charts"></a>Meerdere grafieken best Ellen of verwijderen
 
-Als u meerdere grafieken wilt best Ellen of verwijderen, klikt u op het symbool met weglatings tekens ( **...** ) om het menu grafiek te openen en kiest u de juiste menu **opdracht van omhoog**, **omlaag**of **verwijderen**.
+Als u meerdere grafieken wilt best Ellen of verwijderen, klikt u op het symbool met weglatings tekens ( **...** ) om het menu grafiek te openen en kiest u de juiste menu **opdracht van omhoog**, **omlaag** of **verwijderen**.
 
 ## <a name="changing-aggregation"></a>Aggregatie wijzigen
 
@@ -59,7 +59,7 @@ Stel bijvoorbeeld dat in de grafiek de waarde voor de **reactie tijd** van de se
 - Als de tijd granulatie is ingesteld op 30 minuten, wordt de grafiek getekend vanuit 48 geaggregeerde data Points (het lijn diagram verbindt bijvoorbeeld 48 punten in het teken gebied van de grafiek). Dat wil zeggen 24 uur x 2 data Points per uur. Elk data Point vertegenwoordigt het *gemiddelde* van alle vastgelegde reactie tijden voor server aanvragen die zijn opgetreden tijdens elk van de relevante 30 minuten.
 - Als u de tijd granulatie naar 15 minuten overschakelt, krijgt u 96 geaggregeerde data Points.  Dat wil zeggen 24 uur x 4 Data Points per uur.
 
-Er zijn vijf aggregatie typen voor basis statistieken beschikbaar in de metrische gegevens Verkenner: **som**, **aantal**, **min**, **Max**en **gemiddeld**. De **som** aggregatie wordt soms ook wel de **totale** aggregatie genoemd. Voor veel metrische gegevens worden in Metrics Explorer de aggregaties die volledig irrelevant zijn, verborgen en kunnen ze niet worden gebruikt.
+Er zijn vijf aggregatie typen voor basis statistieken beschikbaar in de metrische gegevens Verkenner: **som**, **aantal**, **min**, **Max** en **gemiddeld**. De **som** aggregatie wordt soms ook wel de **totale** aggregatie genoemd. Voor veel metrische gegevens worden in Metrics Explorer de aggregaties die volledig irrelevant zijn, verborgen en kunnen ze niet worden gebruikt.
 
 - **Sum** : de som van alle waarden die zijn vastgelegd in het aggregatie-interval
 - **Count** : het aantal metingen dat over het aggregatie-interval is vastgelegd. Houd er rekening mee dat **Count** gelijk is aan **Sum** in gevallen waarin de metrische gegevens altijd worden vastgelegd met de waarde 1. Dit is gebruikelijk wanneer de metrische gegevens het aantal afzonderlijke gebeurtenissen bijhouden, en elke meting vertegenwoordigt één gebeurtenis (dat wil zeggen dat de code een metrische record afrondt wanneer een nieuwe aanvraag binnenkomt)
@@ -77,15 +77,15 @@ U kunt filters toep assen op de grafieken waarin metrische gegevens met dimensie
 
 2. Selecteer welke dimensie (eigenschap) u wilt filteren
 
-   ![Scherm opname van de afmetingen (eigenschappen) die u kunt filteren.](./media/metrics-charts/00006.png)
+   ![Scherm opname van de afmetingen (eigenschappen) die u kunt filteren.](./media/metrics-charts/028.png)
 
 3. Selecteer welke dimensie waarden u wilt gebruiken bij het tekenen van de grafiek (in dit voor beeld ziet u hoe de geslaagde opslag transacties worden gefilterd):
 
-   ![Scherm opname van het filteren van de geslaagde opslag transacties.](./media/metrics-charts/00007.png)
+   ![Scherm opname van het filteren van de geslaagde opslag transacties.](./media/metrics-charts/029.png)
 
 4. Nadat u de filter waarden hebt geselecteerd, klikt u op een van de filter selectie vakjes om deze te sluiten. De grafiek toont nu hoeveel opslag transacties zijn mislukt:
 
-   ![Scherm afbeelding die laat zien hoeveel opslag transacties zijn mislukt](./media/metrics-charts/00008.png)
+   ![Scherm afbeelding die laat zien hoeveel opslag transacties zijn mislukt](./media/metrics-charts/030.png)
 
 5. U kunt stap 1-4 herhalen om meerdere filters op dezelfde grafieken toe te passen.
 
@@ -104,11 +104,11 @@ U kunt een metriek per dimensie splitsen om te visualiseren hoe verschillende se
 
 2. Kies een dimensie waarop u de grafiek wilt segmenteren:
 
-   ![Scherm afbeelding met de geselecteerde dimensie waarop u de grafiek wilt segmenteren.](./media/metrics-charts/00010.png)
+   ![Scherm afbeelding met de geselecteerde dimensie waarop u de grafiek wilt segmenteren.](./media/metrics-charts/031.png)
 
    Nu toont de grafiek nu meerdere regels, één voor elk segment van de dimensie:
 
-   ![Scherm opname waarin meerdere lijnen worden weer gegeven, één voor elk segment van de dimensie.](./media/metrics-charts/00012.png)
+   ![Scherm opname waarin meerdere lijnen worden weer gegeven, één voor elk segment van de dimensie.](./media/metrics-charts/032.png)
 
 3. Klik ergens buiten de **groeperings kiezer** om het venster te sluiten.
 
@@ -123,9 +123,13 @@ Wanneer het volume van geslaagde aanvragen bijvoorbeeld van 99,99% tot 99,5% daa
 
 Een ander voor beeld is een schommeling in het beschik bare geheugen, waarbij de waarde technisch nooit 0 is. Als u het bereik naar een hogere waarde herstelt, kan dit het beschik bare geheugen gemakkelijker maken. 
 
-Als u het bereik van de y-as wilt beheren, gebruikt u de '... ' menu grafiek en selecteer **grafiek bewerken** om toegang te krijgen tot geavanceerde grafiek instellingen. Wijzig de waarden in de sectie bereik van de Y-as of gebruik de knop **automatisch** om de standaard waarden te herstellen.
+Als u het bereik van de y-as wilt beheren, gebruikt u de '... ' menu grafiek en selecteer **grafiek instellingen** om toegang te krijgen tot geavanceerde grafiek instellingen.
 
-![Scherm afbeelding die de optie grafiek bewerken markeert.](./media/metrics-charts/00014-manually-set-granularity.png)
+![Scherm afbeelding die de optie grafiek instellingen markeert.](./media/metrics-charts/033.png)
+
+ Wijzig de waarden in de sectie bereik van de Y-as of gebruik de knop **automatisch** om de standaard waarden te herstellen.
+ 
+ ![Scherm afbeelding die de sectie voor het bereik van de Y-as markeert.](./media/metrics-charts/034.png)
 
 > [!WARNING]
 > Het vergren delen van de grenzen van de y-as voor de grafieken die verschillende aantallen of sommen gedurende een bepaalde periode bijhouden (en dus gebruik van Count, Sum, minimum of maximum aggregaties), is het meestal nodig om een vaste tijd granulatie op te geven in plaats van de automatische standaard waarden te gebruiken. Dit is nodig omdat de waarden in grafieken worden gewijzigd wanneer de granulatie van de tijd automatisch wordt gewijzigd door het browser venster van de gebruiker opnieuw te wijzigen of door de ene scherm resolutie naar de andere te gaan. De resulterende wijziging van de tijd granulatie heeft gevolgen voor het uiterlijk van de grafiek, waarbij de huidige selectie van het bereik van de y-as ongeldig is.
@@ -136,9 +140,9 @@ Nadat u de grafieken hebt geconfigureerd, krijgen de grafiek lijnen automatisch 
 
 Als u de kleur van een grafiek lijn wilt wijzigen, klikt u op de gekleurde balk in de legenda die overeenkomt met de grafiek. Het dialoog venster Kleuren kiezer wordt geopend. Gebruik de kleur kiezer om de kleur voor de regel te configureren.
 
-Nadat de grafiek kleuren zijn geconfigureerd, blijven ze die manier behouden wanneer u de grafiek vastmaakt aan een dash board. In de volgende sectie ziet u hoe u een grafiek vastmaakt.
+![Scherm afbeelding die laat zien hoe u de kleur wijzigt](./media/metrics-charts/035.png)
 
-![Scherm afbeelding die laat zien hoe u een grafiek vastmaakt.](./media/metrics-charts/018.png)
+Nadat de grafiek kleuren zijn geconfigureerd, blijven ze die manier behouden wanneer u de grafiek vastmaakt aan een dash board. In de volgende sectie ziet u hoe u een grafiek vastmaakt.
 
 ## <a name="pin-charts-to-dashboards"></a>Grafieken vastmaken aan dash boards
 
@@ -146,9 +150,9 @@ Nadat u de grafieken hebt geconfigureerd, kunt u deze toevoegen aan de Dash boar
 
 Een geconfigureerde grafiek vastmaken aan een dash board:
 
-Nadat u uw grafiek hebt geconfigureerd, klikt u op het menu **grafiek acties** in de rechter bovenhoek van de grafiek en klikt **u op vastmaken aan dash board**.
+Nadat u uw grafiek hebt geconfigureerd, klikt **u op vastmaken aan dash board** in de rechter bovenhoek van de grafiek.
 
-![afbeelding van metrische gegevens](./media/metrics-charts/00013.png)
+![Scherm opname van het vastmaken aan de grafiek](./media/metrics-charts/036.png)
 
 ## <a name="create-alert-rules"></a>Waarschuwingsregels maken
 
@@ -156,11 +160,11 @@ U kunt de criteria die u hebt ingesteld voor het visualiseren van uw metrische g
 
 ### <a name="to-create-a-new-alert-rule-click-new-alert-rule"></a>Als u een nieuwe waarschuwings regel wilt maken, klikt u op **nieuwe waarschuwings regel**
 
-![Knop nieuwe waarschuwings regel gemarkeerd in rood](./media/metrics-charts/015.png)
+![Knop nieuwe waarschuwings regel gemarkeerd in rood](./media/metrics-charts/042.png)
 
 U wordt naar het deel venster waarschuwings regels maken geleid met de onderliggende metrische dimensies van uw grafiek die vooraf zijn ingevuld om het eenvoudiger te maken om aangepaste waarschuwings regels te genereren.
 
-![Waarschuwingsregel maken](./media/metrics-charts/016.png)
+![Waarschuwingsregel maken](./media/metrics-charts/041.png)
 
 Raadpleeg dit [artikel](alerts-metric.md) voor meer informatie over het instellen van metrische waarschuwingen.
 

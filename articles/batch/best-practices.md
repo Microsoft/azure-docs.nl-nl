@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1eaa34e02a4c505691662e9fc29334cb823a3185
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0f19fceca0212bd0a05d7caa311403b173c19de5
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511209"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563174"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -143,7 +143,7 @@ Net als bij andere taken moet de [begin taak](jobs-and-tasks.md#start-task) van 
 
 ### <a name="isolated-nodes"></a>Geïsoleerde knoop punten
 
-U kunt de geïsoleerde VM-grootte gebruiken voor workloads met nalevings-of regelgevings vereisten. Ondersteunde, geïsoleerde grootten in de configuratie van de virtuele machine zijn onder andere,,,, `Standard_E64i_v3` `Standard_E80ids_v4` `Standard_F72s_v2` `Standard_G5` `Standard_GS5` en `Standard_M128ms` . Zie [Virtual machine-isolatie in azure](https://docs.microsoft.com/azure/virtual-machines/isolation)voor meer informatie over geïsoleerde VM-grootten.
+Overweeg het gebruik van geïsoleerde VM-grootten voor workloads met nalevings-of regelgevings vereisten. Ondersteunde, geïsoleerde grootten in de configuratie van de virtuele machine zijn onder andere,,,, `Standard_E80ids_v4` `Standard_M128ms` `Standard_F72s_v2` `Standard_G5` `Standard_GS5` en `Standard_E64i_v3` . Zie [Virtual machine-isolatie in azure](https://docs.microsoft.com/azure/virtual-machines/isolation)voor meer informatie over geïsoleerde VM-grootten.
 
 ### <a name="manage-long-running-services-via-the-operating-system-services-interface"></a>Langlopende Services beheren via de interface van het besturings systeem-services
 

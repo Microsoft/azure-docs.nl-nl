@@ -1,26 +1,26 @@
 ---
 title: 'Azure-ExpressRoute: een circuit peering opnieuw instellen'
-description: Meer informatie over het uitschakelen en inschakelen van peerings van een Azure ExpressRoute-circuit met behulp van Azure PowerShell. Wanneer u peerings configureert, worden deze standaard ingeschakeld.
+description: Meer informatie over het inschakelen en uitschakelen van peerings voor een Azure ExpressRoute-circuit met Azure PowerShell.
 services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 01/13/2018
+ms.date: 12/15/2020
 ms.author: duau
-ms.openlocfilehash: f3b34966aa46ca8d663f83ab2aceafa4b0dda2eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0bde96ae5f4a9aff6f4a16a4f1544d9b39e5cb66
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89395737"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559570"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>ExpressRoute-circuit-peerings opnieuw instellen
 
-In dit artikel wordt beschreven hoe u peerings van een ExpressRoute-circuit kunt uitschakelen en inschakelen met behulp van Power shell. Wanneer u een peering uitschakelt, wordt de BGP-sessie op de primaire verbinding en de secundaire verbinding van het ExpressRoute-circuit afgesloten. De connectiviteit met deze peering naar micro soft gaat verloren. Wanneer u een peering inschakelt, wordt de BGP-sessie op zowel de primaire verbinding als de secundaire verbinding van het ExpressRoute-circuit actief. U kunt de verbinding met deze peering met micro soft herstellen. U kunt micro soft-peering en persoonlijke Azure-peering op een ExpressRoute-circuit onafhankelijk van elkaar in-en uitschakelen. Wanneer u de peerings op uw ExpressRoute-circuit voor het eerst configureert, worden de peerings standaard ingeschakeld.
+In dit artikel wordt beschreven hoe u peerings van een ExpressRoute-circuit in-en uitschakelt met behulp van Power shell. Peerings zijn standaard ingeschakeld wanneer u ze maakt. Wanneer u een peering uitschakelt, wordt de BGP-sessie op zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit afgesloten. U verliest de connectiviteit voor deze peering voor micro soft. Wanneer u een peering inschakelt, wordt de BGP-sessie op zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit tot stand gebracht. De verbinding met micro soft wordt hersteld voor deze peering. U kunt peering voor micro soft-peering en persoonlijke Azure-peering onafhankelijk van het ExpressRoute-circuit in-en uitschakelen.
 
-Er zijn een paar scenario's waarin het handig is om uw ExpressRoute-peerings te herstellen.
-* Het ontwerp en de implementatie van herstel na nood gevallen testen. U hebt bijvoorbeeld twee ExpressRoute-circuits. U kunt de peerings van één circuit uitschakelen en uw netwerk verkeer afdwingen naar het andere circuit.
-* Schakel de detectie van bidirectionele door sturing (BFD) in op persoonlijke Azure-peering of micro soft-peering van uw ExpressRoute-circuit. BFD is standaard ingeschakeld voor persoonlijke Azure-peering als uw ExpressRoute-circuit wordt gemaakt na 1 2018 augustus en op micro soft-peering als uw ExpressRoute-circuit na januari 10 2020 is gemaakt. Als uw circuit eerder is gemaakt, is BFD niet ingeschakeld. U kunt BFD inschakelen door de peering uit te scha kelen en opnieuw in te scha kelen. 
+Er zijn twee scenario's waarin het handig is om uw ExpressRoute-peerings opnieuw in te stellen.
+* Als u het ontwerp en de implementatie van herstel na nood gevallen wilt testen. U hebt bijvoorbeeld twee ExpressRoute-circuits. U kunt de peerings op één circuit uitschakelen en uw netwerk verkeer afdwingen naar het andere circuit.
+* Schakel de detectie van bidirectionele door sturing (BFD) in op persoonlijke Azure-peering of micro soft-peering van uw ExpressRoute-circuit. BFD wordt standaard ingeschakeld op persoonlijke Azure-peering als u uw ExpressRoute-circuit hebt gemaakt na 1 augustus 2018 en voor micro soft-peering na 10 januari 2020. Als uw circuit is gemaakt vóór de opgegeven datum, moet u de peering opnieuw instellen om BFD in te scha kelen. 
 
 ### <a name="working-with-azure-powershell"></a>Werken met Azure PowerShell
 

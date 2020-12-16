@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8d982d06bd100313d643033294b6d14e6383d5df
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7a2b2344bbb110cd4b35cc1f6428f61e48552b01
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424710"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563004"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>DNS configureren voor naam omzetting voor Private Cloud vCenter-toegang vanaf on-premises werk stations
 
@@ -23,9 +23,9 @@ Om toegang te krijgen tot de vCenter-Server op een CloudSimple Privécloud vanui
 
 1. Meld u aan bij de [CloudSimple-Portal](access-cloudsimple-portal.md).
 
-2. Navigeer naar **Resources**  >  **persoonlijke Clouds** van resources en selecteer de privécloud waarmee u verbinding wilt maken.
+2. Navigeer naar   >  **persoonlijke Clouds** van resources en selecteer de privécloud waarmee u verbinding wilt maken.
 
-3. Kopieer op de pagina **samen vatting** van de Privécloud onder **basis informatie**het IP-adres van de DNS-server van de privécloud.
+3. Kopieer op de pagina **samen vatting** van de Privécloud onder **basis informatie** het IP-adres van de DNS-server van de privécloud.
 
     ![DNS-servers in privécloud](media/private-cloud-dns-server.png)
 
@@ -44,6 +44,9 @@ U kunt een zone instellen als stub-zone en verwijzen naar de DNS-servers in de P
 Het specifieke bestand en de para meters die moeten worden geconfigureerd, kunnen variëren op basis van de afzonderlijke DNS-instellingen.
 
 Voor de standaard configuratie van de BIND-server bewerkt u bijvoorbeeld/etc/named.conf-bestand op uw DNS-server en voegt u de volgende zone gegevens toe.
+
+> [!NOTE]
+>Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ```
 zone "az.cloudsimple.io"

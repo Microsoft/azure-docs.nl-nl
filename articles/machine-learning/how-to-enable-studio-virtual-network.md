@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 10/21/2020
 ms.custom: contperf-fy20q4, tracking-python
-ms.openlocfilehash: 8dc8446ecbc203622ce7c2163136c1c26aac1cc7
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 3f128b7ee7fa8f690c2097a5d27e274ec1eb2a8a
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032725"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559536"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk
 
@@ -71,7 +71,7 @@ De Studio ondersteunt het lezen van gegevens uit de volgende gegevensopslag type
 
 ### <a name="configure-datastores-to-use-workspace-managed-identity"></a>Data stores configureren voor het gebruik van door werk ruimte beheerde identiteit
 
-Nadat u een Azure Storage-account aan uw virtuele netwerk hebt toegevoegd met een [service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints), moet u uw gegevens opslag configureren voor het gebruik van [beheerde identiteits](../active-directory/managed-identities-azure-resources/overview.md) verificatie. Hierdoor kunnen de Studio-gegevens in uw opslag account worden geopend.
+Nadat u een Azure-opslag account hebt toegevoegd aan uw virtuele netwerk met een [service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints), moet u uw gegevens opslag configureren voor het gebruik van [beheerde identiteits](../active-directory/managed-identities-azure-resources/overview.md) verificatie. Hierdoor kunnen de Studio-gegevens in uw opslag account worden geopend.
 
 Azure Machine Learning maakt gebruik van [data stores](concept-data.md#datastores) om verbinding te maken met opslag accounts. Gebruik de volgende stappen om een gegevens opslag te configureren voor het gebruik van beheerde identiteiten:
 
@@ -89,17 +89,23 @@ Met deze stappen wordt de door de werk ruimte beheerde identiteit als __lezer__ 
 
 ### <a name="enable-managed-identity-authentication-for-default-storage-accounts"></a>Beheerde identiteits verificatie inschakelen voor standaard opslag accounts
 
-Elke Azure Machine Learning-werk ruimte wordt geleverd met twee standaard-opslag accounts die worden gedefinieerd wanneer u uw werk ruimte maakt. De Studio gebruikt de standaard opslag accounts voor het opslaan van experiment-en model artefacten, die van belang zijn voor bepaalde functies in de Studio.
+Elke Azure Machine Learning werk ruimte heeft twee standaard opslag accounts, een standaard-Blob Storage-account en een standaard account voor het opslaan van bestanden die worden gedefinieerd wanneer u uw werk ruimte maakt. U kunt ook nieuwe standaard instellingen instellen op de pagina **Data Store** -beheer.
+
+![Scherm afbeelding die laat zien waar standaard-gegevens opslag kan worden gevonden](./media/how-to-enable-studio-virtual-network/default-datastores.png)
 
 In de volgende tabel wordt beschreven waarom u beheerde identiteits verificatie moet inschakelen voor de standaard opslag accounts voor uw werk ruimte.
 
-|Storage-account  | Opmerkingen  |
+|Storage-account  | Notities  |
 |---------|---------|
 |Standaard-Blob-opslag voor werk ruimte| Hierin worden model assets van de ontwerp functie opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om modellen te implementeren in de ontwerp functie. <br> <br> U kunt een designer-pijp lijn visualiseren en uitvoeren als er een niet-standaard gegevens opslag wordt gebruikt die is geconfigureerd voor het gebruik van beheerde identiteit. Als u echter probeert een getraind model te implementeren zonder beheerde identiteit in te scha kelen op de standaard gegevens opslag, mislukt de implementatie ongeacht andere gegevens opslag die in gebruik zijn.|
 |Standaard bestands Archief voor de werk ruimte| Hiermee worden AutoML-experiment-assets opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om AutoML experimenten in te dienen. |
 
-
-![Scherm afbeelding die laat zien waar standaard-gegevens opslag kan worden gevonden](./media/how-to-enable-studio-virtual-network/default-datastores.png)
+> [!WARNING]
+> Er is een bekend probleem waarbij de standaard bestands opslag niet automatisch de map maakt `azureml-filestore` , die vereist is voor het verzenden van AutoML experimenten. Dit gebeurt wanneer gebruikers tijdens het maken van de werk ruimte een bestaande File Store instellen als de standaard File Store.
+> 
+> Om dit probleem te voor komen, hebt u twee opties: 1) gebruik de standaard File Store die automatisch wordt gemaakt voor het maken van werk ruimten. 2) als u uw eigen File Store wilt maken, moet u ervoor zorgen dat de File Store zich buiten het VNet bevindt tijdens het maken van de werk ruimte. Nadat de werk ruimte is gemaakt, voegt u het opslag account toe aan het virtuele netwerk.
+>
+> U kunt dit probleem oplossen door het File Store-account uit het virtuele netwerk te verwijderen en vervolgens weer toe te voegen aan het virtuele netwerk.
 
 
 ### <a name="grant-workspace-managed-identity-__reader__-access-to-storage-private-link"></a>Toegang tot de beheerde __identiteit van__ de werk ruimte verlenen aan de persoonlijke opslag koppeling

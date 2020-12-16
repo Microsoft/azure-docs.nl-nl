@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory externe identiteiten
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory externe identiteiten.
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,16 +9,32 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 35fa6909160ca707035ee9fc599e4035c2ae7981
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e614507fbcfce5fc006983e0be7963223bb0b7ed
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573898"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562375"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Externe identiteiten Azure Active Directory: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor externe identiteiten. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de externe identiteits service.
+
+## <a name="december-2020"></a>December 2020
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Veelgestelde vragen over Azure Active Directory B2B-samen werking](faq.md)
+- [Google toevoegen als een id-provider voor B2B-gast gebruikers](google-federation.md)
+- [Id-providers voor externe identiteiten](identity-providers.md)
+- [Inwisseling uitnodiging Azure Active Directory B2B-samen werking](redemption-experience.md)
+- [Een API-connector toevoegen aan een gebruikers stroom](self-service-sign-up-add-api-connector.md)
+- [Een aangepaste goedkeurings werk stroom toevoegen aan self-service registratie](self-service-sign-up-add-approvals.md)
+- [Problemen oplossen Azure Active Directory B2B-samen werking](troubleshoot.md)
+- [Wat is toegang van gastgebruikers in Azure Active Directory B2B?](what-is-b2b.md)
+- [Best practices voor Azure Active Directory B2B](b2b-fundamentals.md)
+- [Externe B2B-samenwerking inschakelen en beheren wie gasten kan uitnodigen](delegate-invitations.md)
+- [Verificatie met eenmalige e-mail wachtwoord code](one-time-passcode.md)
 
 ## <a name="november-2020"></a>November 2020
 

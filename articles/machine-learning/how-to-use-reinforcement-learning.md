@@ -9,13 +9,13 @@ ms.author: peterlu
 author: peterclu
 ms.date: 05/05/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: a7fdb370847e72657829d53df019203b0a5b211b
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.custom: how-to, devx-track-python, contperf-fy21q2
+ms.openlocfilehash: 7144d576694b6694f426533451717cef58c2da87
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302571"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562443"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Educatief leren (preview) met Azure Machine Learning
 
@@ -24,7 +24,7 @@ ms.locfileid: "96302571"
 > [!NOTE]
 > Azure Machine Learning versterking van het onderwijs is momenteel een preview-functie. Op dit moment worden alleen Ray-en RLlib-Frameworks ondersteund.
 
-In dit artikel leert u hoe u een RL-agent (versterking leren) kunt trainen om de Pong van het video spel af te spelen. U maakt gebruik van de open-source python-bibliotheek van de [RLlib](https://ray.readthedocs.io/en/master/rllib.html) met Azure machine learning om de complexiteit van gedistribueerde RL-taken te beheren.
+In dit artikel leert u hoe u een RL-agent (versterking leren) kunt trainen om de Pong van het video spel af te spelen. Gebruik de open-source python-bibliotheek van de [RLlib](https://ray.readthedocs.io/en/master/rllib.html) met Azure machine learning om de complexiteit van gedistribueerde RL te beheren.
 
 In dit artikel leert u het volgende:
 > [!div class="checklist"]
@@ -38,7 +38,7 @@ Dit artikel is gebaseerd op het [RLlib Pong-voor beeld](https://aka.ms/azureml-r
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voer deze code uit in een van de volgende omgevingen. U wordt aangeraden om Azure Machine Learning Reken instantie uit te voeren voor de snelste opstart ervaring. De beproefde voorbeeld notitieblokken zijn beschikbaar om snel te klonen en uit te voeren op Azure Machine Learning Compute-instantie.
+Voer deze code uit in een van deze omgevingen. U wordt aangeraden Azure Machine Learning Reken instantie uit te voeren voor de snelste opstart ervaring. U kunt de voorbeeld notitieblokken voor de versterking van een Azure Machine Learning Reken instantie snel klonen en uitvoeren.
 
  - Azure Machine Learning-rekeninstantie
 
@@ -61,19 +61,21 @@ RL (versterking leren) is een benadering van machine learning die u kunt leren. 
 
 Uw trainings medewerkers leren Pong in een **gesimuleerde omgeving** te spelen. Trainings medewerkers maken elk frame van het spel een beslissing om de verwerker omhoog, omlaag of blijvend te verplaatsen. Er wordt gekeken naar de status van het spel (een RGB-afbeelding van het scherm) om een beslissing te nemen.
 
-RL maakt gebruik van **beloningen** om de agent te informeren als de beslissingen succesvol zijn. In deze omgeving krijgt de agent een positieve beloning wanneer hij een punt en een negatieve beloning afgeeft wanneer er een punt wordt gescoord. De trainings agent leert veel herhalingen om de actie te kiezen op basis van de huidige status, die de som van de verwachte toekomstige beloningen optimaliseert.
-
-Het is gebruikelijk om een DNN-model ( **diepe Neural Network** ) te gebruiken om deze optimalisatie uit te voeren in RL. In eerste instantie wordt de learning-agent slecht uitgevoerd, maar elk spel genereert extra voor beelden om het model verder te verbeteren.
+RL maakt gebruik van **beloningen** om de agent te informeren als de beslissingen succesvol zijn. In dit voor beeld krijgt de agent een positieve beloning wanneer deze een punt vergelijkt en een negatieve beloning wanneer er een punt wordt gescoord. De trainings agent leert veel herhalingen om de actie te kiezen op basis van de huidige status, die de som van de verwachte toekomstige beloningen optimaliseert. Het is gebruikelijk om **Neural-netwerken** (DNN) te gebruiken om deze optimalisatie uit te voeren in RL. 
 
 De training loopt af wanneer de agent een gemiddelde belonings Score van 18 in een trainings-epoche bereikt. Dit betekent dat de onderdoen zijn opruiming met een gemiddelde van ten minste 18 punten in overeenkomsten van Maxi maal 21.
 
-Het proces voor het door lopen van simulatie en het opnieuw trainen van een DNN is rekenbaar kostbaar en vereist grote hoeveel heden gegevens. Een van de manieren om de prestaties van RL-taken te verbeteren, is door **gelijktijdig werk** , zodat meerdere mede werkers gelijktijdig kunnen handelen en leren. Het beheer van een gedistribueerde RL-omgeving kan echter een ingewikkelde onderneming zijn.
+Het proces voor het door lopen van simulatie en het opnieuw trainen van een DNN is rekenbaar kostbaar en vereist veel gegevens. Een van de manieren om de prestaties van RL-taken te verbeteren, is door **gelijktijdig werk** , zodat meerdere mede werkers gelijktijdig kunnen handelen en leren. Het beheer van een gedistribueerde RL-omgeving kan echter een ingewikkelde onderneming zijn.
 
 Azure Machine Learning biedt het Framework voor het beheren van deze gecompliceerdies om uw RL-workloads uit te schalen.
 
 ## <a name="set-up-the-environment"></a>De omgeving instellen
 
-Stel de lokale RL-omgeving in door de vereiste Python-pakketten te laden, uw werk ruimte te initialiseren, een experiment te maken en een geconfigureerd virtueel netwerk op te geven.
+Stel de lokale RL-omgeving in op:
+1. De vereiste Python-pakketten laden
+1. Uw werk ruimte initialiseren
+1. Een experiment maken
+1. Een geconfigureerd virtueel netwerk opgeven.
 
 ### <a name="import-libraries"></a>Bibliotheken importeren
 
@@ -97,9 +99,7 @@ from azureml.contrib.train.rl import WorkerConfiguration
 
 ### <a name="initialize-a-workspace"></a>Een werk ruimte initialiseren
 
-De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor Azure machine learning. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt.
-
-Initialiseer een werkruimte object uit het `config.json` bestand dat in de [sectie vereisten](#prerequisites)is gemaakt. Als u deze code uitvoert in een Azure Machine Learning Compute-exemplaar, is het configuratie bestand al voor u gemaakt.
+Initialiseer een [werkruimte](concept-workspace.md) object uit het `config.json` bestand dat in de [sectie vereisten](#prerequisites)is gemaakt. Als u deze code uitvoert in een Azure Machine Learning Compute-exemplaar, is het configuratie bestand al voor u gemaakt.
 
 ```Python
 ws = Workspace.from_config()
@@ -117,7 +117,9 @@ exp = Experiment(workspace=ws, name=experiment_name)
 
 ### <a name="specify-a-virtual-network"></a>Een virtueel netwerk opgeven
 
-Voor RL-taken die gebruikmaken van meerdere Compute-doelen moet u een virtueel netwerk met open poorten opgeven waarmee werk knooppunten en hoofd knooppunten met elkaar kunnen communiceren. Het virtuele netwerk kan zich in elke resource groep bevinden, maar moet zich in dezelfde regio bevinden als uw werk ruimte. Zie voor meer informatie over het instellen van uw virtuele netwerk het notitie blok voor het instellen van de werk ruimte die u kunt vinden in de sectie vereisten. Hier geeft u de naam op van het virtuele netwerk in de resource groep.
+Voor RL-taken die gebruikmaken van meerdere Compute-doelen moet u een virtueel netwerk met open poorten opgeven waarmee werk knooppunten en hoofd knooppunten met elkaar kunnen communiceren.
+
+Het virtuele netwerk kan zich in elke resource groep bevinden, maar moet zich in dezelfde regio bevinden als uw werk ruimte. Zie voor meer informatie over het instellen van uw virtuele netwerk het notitie blok voor het instellen van de werk ruimte in de sectie vereisten. Hier geeft u de naam op van het virtuele netwerk in de resource groep.
 
 ```python
 vnet = 'your_vnet'
@@ -125,13 +127,13 @@ vnet = 'your_vnet'
 
 ## <a name="define-head-and-worker-compute-targets"></a>Doelen voor hoofd-en werk nemers definiëren
 
-In dit voor beeld worden afzonderlijke reken doelen gebruikt voor de knoop punten Ray Head en Workers. Met deze instellingen kunt u uw reken resources omhoog en omlaag schalen, afhankelijk van de verwachte werk belasting. Stel het aantal knoop punten en de grootte van elk knoop punt in op basis van de behoeften van uw experiment.
+In dit voor beeld worden afzonderlijke reken doelen gebruikt voor de knoop punten Ray Head en Workers. Met deze instellingen kunt u uw reken resources omhoog en omlaag schalen, afhankelijk van uw werk belasting. Stel het aantal knoop punten en de grootte van elk knoop punt in op basis van uw behoeften.
 
 ### <a name="head-computing-target"></a>Doel computing
 
-In dit voor beeld wordt een met GPU uitgeruste hoofd cluster gebruikt om de prestaties van diepe learning te optimaliseren. Het hoofd knooppunt traint het Neural-netwerk dat de agent gebruikt om beslissingen te nemen. Het hoofd knooppunt verzamelt ook gegevens punten van de worker-knoop punten om het Neural-netwerk verder te trainen.
+U kunt een met GPU uitgeruste hoofd cluster gebruiken om de prestaties van diepe learning te verbeteren. Het hoofd knooppunt traint het Neural-netwerk dat de agent gebruikt om beslissingen te nemen. Het hoofd knooppunt verzamelt ook gegevens punten van de worker-knoop punten om het Neural-netwerk te trainen.
 
-De Head Compute maakt gebruik van één [ `STANDARD_NC6` virtuele machine](../virtual-machines/nc-series.md) (VM). Het heeft zes virtuele Cpu's, wat betekent dat IT werk kan verdelen over 6 werk Cpu's.
+De Head Compute maakt gebruik van één [ `STANDARD_NC6` virtuele machine](../virtual-machines/nc-series.md) (VM). Het heeft zes virtuele Cpu's voor het distribueren van werk over.
 
 
 ```python
@@ -173,7 +175,7 @@ else:
 
 ### <a name="worker-computing-cluster"></a>Worker Computing Cluster
 
-In dit voor beeld worden vier [ `STANDARD_D2_V2` virtuele machines](../virtual-machines/nc-series.md) gebruikt voor het reken doel van de werk nemer. Elk worker-knoop punt heeft twee beschik bare Cpu's voor een totaal van 8 beschik bare Cpu's om parallelliseren te kunnen gebruiken.
+In dit voor beeld worden vier [ `STANDARD_D2_V2` virtuele machines](../virtual-machines/nc-series.md) gebruikt voor het reken doel van de werk nemer. Elk worker-knoop punt heeft twee beschik bare Cpu's voor een totaal van 8 beschik bare Cpu's.
 
 Er zijn geen Gpu's nodig voor de worker-knoop punten, omdat ze geen diep gaande training uitvoeren. De werk nemers voeren Game simulaties uit en verzamelen gegevens.
 
@@ -212,14 +214,13 @@ else:
 ```
 
 ## <a name="create-a-reinforcement-learning-estimator"></a>Een Estimator voor versterking leren maken
+Gebruik de [ReinforcementLearningEstimator](/python/api/azureml-contrib-reinforcementlearning/azureml.contrib.train.rl.reinforcementlearningestimator?preserve-view=true&view=azure-ml-py) om een trainings taak naar Azure machine learning te verzenden.
 
-In deze sectie leert u hoe u [ReinforcementLearningEstimator](/python/api/azureml-contrib-reinforcementlearning/azureml.contrib.train.rl.reinforcementlearningestimator?preserve-view=true&view=azure-ml-py) kunt gebruiken om een trainings taak naar Azure machine learning te verzenden.
-
-Azure Machine Learning maakt gebruik van Estimator-klassen voor het inkapselen van configuratie-informatie over de uitvoering. Zo kunt u eenvoudig opgeven hoe u een script uitvoering wilt configureren. 
+Azure Machine Learning maakt gebruik van Estimator-klassen voor het inkapselen van configuratie-informatie over de uitvoering. Hiermee kunt u opgeven hoe de uitvoering van een script moet worden geconfigureerd. 
 
 ### <a name="define-a-worker-configuration"></a>Een werknemers configuratie definiëren
 
-Het WorkerConfiguration-object vertelt Azure Machine Learning hoe u het worker-cluster initialiseert waarmee het invoer script wordt uitgevoerd.
+Het WorkerConfiguration-object vertelt Azure Machine Learning hoe u het worker-cluster initialiseert dat het entry-script uitvoert.
 
 ```python
 # Pip packages we will use for both head and worker
@@ -246,9 +247,11 @@ worker_conf = WorkerConfiguration(
 
 Het invoer script `pong_rllib.py` accepteert een lijst met para meters die definiëren hoe de trainings taak moet worden uitgevoerd. Door deze para meters door de Estimator als een laag van inkapseling door te geven, kunt u eenvoudig script parameters wijzigen en configuraties onafhankelijk van elkaar uitvoeren.
 
-Als u het juiste type opgeeft `num_workers` , worden uw parallel Lise ring-inspanningen optimaal. Stel het aantal werk nemers in op dezelfde waarde als het aantal beschik bare Cpu's. Voor dit voor beeld kunt u dit als volgt berekenen:
+Als u het juiste type opgeeft, worden `num_workers` uw parallel Lise ring-inspanningen optimaal. Stel het aantal werk nemers in op dezelfde waarde als het aantal beschik bare Cpu's. Voor dit voor beeld kunt u de volgende berekening gebruiken:
 
-Het hoofd knooppunt is een [Standard_NC6](../virtual-machines/nc-series.md) met 6 vcpu's. Het worker-cluster is 4 [Standard_D2_V2 vm's](../cloud-services/cloud-services-sizes-specs.md#dv2-series) met twee cpu's elk, voor een totaal van 8 cpu's. U moet echter 1 CPU aftrekken van het aantal werk nemers sinds 1 moet worden toegewezen aan de rol van het hoofd knooppunt. 6 Cpu's + 8 Cpu's-1 Head-CPU = 13 gelijktijdige werk nemers. Azure Machine Learning maakt gebruik van hoofd-en work-clusters om reken resources te onderscheiden. Ray maakt echter geen onderscheid tussen hoofd-en werk nemers en alle Cpu's beschik bare Cpu's voor het uitvoeren van werk threads.
+Het hoofd knooppunt is een [Standard_NC6](../virtual-machines/nc-series.md) met 6 vcpu's. Het worker-cluster is 4 [Standard_D2_V2 vm's](../cloud-services/cloud-services-sizes-specs.md#dv2-series) met twee cpu's elk, voor een totaal van 8 cpu's. U moet echter 1 CPU aftrekken van het aantal werk nemers sinds 1 moet worden toegewezen aan de rol van het hoofd knooppunt.
+
+6 Cpu's + 8 Cpu's-1 Head-CPU = 13 gelijktijdige werk nemers. Azure Machine Learning maakt gebruik van hoofd-en work-clusters om reken resources te onderscheiden. Ray maakt echter geen onderscheid tussen hoofd-en werk nemers en alle Cpu's zijn beschikbaar als worker-threads.
 
 
 ```python
@@ -409,7 +412,7 @@ run = exp.submit(config=rl_estimator)
 
 ## <a name="monitor-and-view-results"></a>Resultaten controleren en weer geven
 
-Gebruik de Azure Machine Learning Jupyter-widget om de status van uw uitvoeringen in realtime te bekijken. In dit voor beeld toont de widget twee onderliggende uitvoeringen: één voor kop en één voor werk nemers. 
+Gebruik de Azure Machine Learning Jupyter-widget om de status van uw uitvoeringen in realtime te bekijken. De widget bevat twee onderliggende uitvoeringen: één voor kop en één voor werk nemers. 
 
 ```python
 from azureml.widgets import RunDetails
@@ -429,7 +432,7 @@ Het **episode_reward_mean** plot toont het gemiddelde aantal punten per training
 
 Als u door de logboeken van de onderliggende uitvoering bladert, ziet u de evaluatie resultaten die in driver_log.txt bestand zijn vastgelegd. Mogelijk moet u enkele minuten wachten voordat deze metrische gegevens beschikbaar zijn op de pagina uitvoeren.
 
-Kortom, u hebt geleerd hoe u meerdere reken resources kunt configureren om een versterking van een Learning-agent te trainen om Pong heel goed af te spelen.
+In korte werkzaamheden hebt u geleerd hoe u meerdere reken resources kunt configureren om een Pong te trainen om het zeer goed af te spelen op een computer oppponent.
 
 ## <a name="next-steps"></a>Volgende stappen
 

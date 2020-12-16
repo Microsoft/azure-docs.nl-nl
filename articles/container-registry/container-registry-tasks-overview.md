@@ -3,12 +3,12 @@ title: Overzicht van ACR-taken
 description: Een inleiding tot ACR-taken, een reeks functies in Azure Container Registry die beveiligde, geautomatiseerde build van container installatie kopieën biedt, beheer en patches in de Cloud.
 ms.topic: article
 ms.date: 08/12/2020
-ms.openlocfilehash: 14758e363e74450a10f1a2cbfc889f3e24782771
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: b6df415bd55979ef00f6921321dbc254ef7a7e59
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027663"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562851"
 ---
 # <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Bouw en onderhoud van container installatie kopieën automatiseren met ACR-taken
 
@@ -105,7 +105,7 @@ De volgende tabel bevat voor beelden van ondersteunde context locaties voor ACR-
 | Context locatie | Beschrijving | Voorbeeld |
 | ---------------- | ----------- | ------- |
 | Lokaal bestands systeem | Bestanden in een map op het lokale bestands systeem. | `/home/user/projects/myapp` |
-| Hoofd vertakking GitHub | Bestanden in de hoofd vertakking (of een andere standaard) van een open bare of persoonlijke GitHub-opslag plaats.  | `https://github.com/gituser/myapp-repo.git` |
+| Hoofd vertakking GitHub | Bestanden in de hoofd vertakking (of een andere standaard) van een open bare of particuliere GitHub-opslag plaats.  | `https://github.com/gituser/myapp-repo.git` |
 | GitHub-vertakking | Specifieke vertakking van een open bare of particuliere GitHub-opslag plaats.| `https://github.com/gituser/myapp-repo.git#mybranch` |
 | Submap GitHub | Bestanden in een submap van een open bare of persoonlijke GitHub-opslag plaats. Voor beeld wordt een combi natie van een vertakking en submap opgegeven. | `https://github.com/gituser/myapp-repo.git#mybranch:myfolder` |
 | GitHub door voeren | Specifieke door Voer in een open bare of persoonlijke GitHub-opslag plaats. Voor beeld toont een combi natie van een commit hash (SHA) en een specificatie van een submap. | `https://github.com/gituser/myapp-repo.git#git-commit-hash:myfolder` |

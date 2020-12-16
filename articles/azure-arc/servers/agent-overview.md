@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 277e6616ce1bf90ada83516cb71f9cb55de1b7b0
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 531041b7d7439dd2a48fa9e06eb82796f470e9ed
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516802"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563021"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -80,9 +80,9 @@ Om te zorgen voor de beveiliging van gegevens die onderweg zijn naar Azure, rade
 
 ### <a name="networking-configuration"></a>Netwerkconfiguratie
 
-De verbonden machine agent voor Linux en Windows communiceert veilig uitgaande naar Azure Arc via TCP-poort 443. Als de computer verbinding maakt via een firewall of proxy server om via internet te communiceren, raadpleegt u de vereisten hieronder om inzicht te krijgen in de vereisten voor de netwerk configuratie.
+De verbonden machine agent voor Linux en Windows communiceert veilig uitgaande naar Azure Arc via TCP-poort 443. Als de computer verbinding maakt via een firewall of proxy server om via internet te communiceren, raadpleegt u het volgende om inzicht te krijgen in de vereisten voor de netwerk configuratie.
 
-Als de uitgaande connectiviteit wordt beperkt door uw firewall of proxy server, controleert u of de Url's die hieronder worden weer gegeven niet zijn geblokkeerd. Als u alleen de IP-bereiken of domein namen toestaat die vereist zijn om de agent te laten communiceren met de-service, moet u ook toegang tot de volgende service tags en Url's toestaan.
+Als de uitgaande connectiviteit wordt beperkt door uw firewall of proxy server, controleert u of de Url's die hieronder worden weer gegeven niet zijn geblokkeerd. Wanneer u alleen de IP-bereiken of domein namen toestaat die vereist zijn om de agent te laten communiceren met de-service, moet u toegang tot de volgende service tags en Url's toestaan.
 
 Service Tags:
 
@@ -181,8 +181,9 @@ Na de installatie van de verbonden machine-agent voor Windows, worden de volgend
 
     |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
     |-------------|-------------|-------------|------------|
-    |himds |Azure Hybrid Instance Metadata Service |himds.exe |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
-    |DscService |Gast configuratie service |dsc_service.exe |De code basis die voor desired state Configuration (DSC v2) in azure wordt gebruikt om In-Guest beleid te implementeren.|
+    |himds |Azure Hybrid Instance Metadata Service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
+    |GCArcService |Gast configuratie Arc-service |gc_service |Bewaakt de gewenste status configuratie van de machine.|
+    |ExtensionService |Gast configuratie-extensie service | gc_service |Installeert de vereiste extensies die gericht zijn op de machine.|
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt.
 
@@ -232,8 +233,9 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende a
 
     |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
     |-------------|-------------|-------------|------------|
-    |himdsd. service |Azure Hybrid Instance Metadata Service |/opt/azcmagent/bin/himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
-    |dscd. service |Gast configuratie service |/opt/DSC/dsc_linux_service |Dit is de configuratie code van de desired state Configuration (DSC v2) die in azure wordt gebruikt om In-Guest beleid te implementeren.|
+    |himdsd. service |Azure Connected machine Agent-service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
+    |gcad.servce |GC-Arc-service |gc_linux_service |Bewaakt de gewenste status configuratie van de machine. |
+    |extd. service |Extensie service |gc_linux_service | Installeert de vereiste extensies die gericht zijn op de machine.|
 
 * Er zijn verschillende logboek bestanden beschikbaar voor het oplossen van problemen. Deze worden beschreven in de volgende tabel.
 

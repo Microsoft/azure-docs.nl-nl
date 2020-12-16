@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 8340712e10721374bb2f0a35ac2e2e9a6abf181c
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: deb05083ca45c24a58cabf9e923b706575ef093b
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743034"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562137"
 ---
 # <a name="integrate-your-existing-network-policy-server-nps-infrastructure-with-azure-ad-multi-factor-authentication"></a>Uw bestaande Network Policy Server (NPS)-infra structuur integreren met Azure AD Multi-Factor Authentication
 
@@ -225,6 +225,10 @@ Als u de mogelijkheden voor taak verdeling of redundantie wilt bieden, herhaalt 
 
 1. Voer het Power shell-script uit dat is gemaakt door het installatie programma.
 
+   Mogelijk moet u eerst TLS 1,2 inschakelen voor Power shell om pakketten op de juiste wijze te kunnen verbinden en downloaden:
+   
+   `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+
    > [!IMPORTANT]
    > Voor klanten die gebruikmaken van de Clouds van Azure Government of Azure China 21Vianet, bewerkt u eerst de `Connect-MsolService` cmdlets in het *AzureMfaNpsExtnConfigSetup.ps1* script om de *AzureEnvironment* -para meters voor de vereiste Cloud op te neemt. Geef bijvoorbeeld *-AzureEnvironment USGovernment* of *-AzureEnvironment AzureChinaCloud* op.
    >
@@ -388,7 +392,7 @@ Zie voor meer informatie over het weer geven van verwijderde pakketten in de NPS
 
 Het is raadzaam oudere en zwakkere coderings suites uit te scha kelen of te verwijderen, tenzij uw organisatie dit vereist. Informatie over het uitvoeren van deze taak vindt u in het artikel, het [beheren van SSL/TLS-protocollen en coderings suites voor AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs)
 
-### <a name="additional-troubleshooting"></a>Extra probleem oplossing
+### <a name="additional-troubleshooting"></a>Andere problemen oplossen
 
 Aanvullende richt lijnen voor probleem oplossing en mogelijke oplossingen vindt u in het artikel, [los fout berichten op uit de NPS-extensie voor Azure AD multi-factor Authentication](howto-mfa-nps-extension-errors.md).
 

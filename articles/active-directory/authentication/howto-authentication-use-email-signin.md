@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: calui
-ms.openlocfilehash: ff6ae6ea6812397e737deb4b97bf1cd15e022c03
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 0ca5f6a853852acbb4ef97adfce2364592bae270
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743170"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559837"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Meld u aan Azure Active Directory gebruik te maken van een e-mail adres als een alternatieve aanmeldings-ID (preview-versie)
 
@@ -36,6 +36,9 @@ In dit artikel leest u hoe u e-mail kunt inschakelen en gebruiken als een altern
 
 > [!NOTE]
 > Deze functie is alleen voor door de Cloud geverifieerde Azure AD-gebruikers.
+
+> [!NOTE]
+> Deze functie wordt momenteel niet ondersteund op Windows 10-apparaten die zijn toegevoegd aan Azure AD voor tenants met Cloud verificatie. Deze functie is niet van toepassing op hybride apparaten die deel uitmaken van Azure AD.
 
 ## <a name="overview-of-azure-ad-sign-in-approaches"></a>Overzicht van de benaderingen van Azure AD-aanmelding
 

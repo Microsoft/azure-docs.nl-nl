@@ -1,19 +1,21 @@
 ---
 title: Problemen met Azure-toepassing Insights oplossen Snapshot Debugger
-description: Dit artikel bevat probleemoplossings stappen en informatie om ontwikkel aars te helpen bij het inschakelen of gebruiken van Application Insights Snapshot Debugger.
+description: In dit artikel worden de stappen voor probleem oplossing en informatie gegeven om ontwikkel aars te helpen Application Insights Snapshot Debugger in te scha kelen en te gebruiken.
 ms.topic: conceptual
 author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 49a4ab0315dad539a594a20e53eae9fd2890e551
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 5dd1f799634fac223670db5c38effbe7fc29cf6f
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504965"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560896"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Problemen oplossen met het inschakelen van Application Insights Snapshot Debugger of het weer geven van moment opnamen
-Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen. Er kunnen veel verschillende redenen zijn waarom momentopnamen niet worden gegenereerd. U kunt de status controle van de moment opname uitvoeren om enkele van de mogelijke veelvoorkomende oorzaken te identificeren.
+Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen.
+
+Er kunnen verschillende redenen zijn waarom moment opnamen niet worden gegenereerd. U kunt beginnen met het uitvoeren van de status controle van de moment opname om enkele van de mogelijke veelvoorkomende oorzaken te identificeren.
 
 ## <a name="use-the-snapshot-health-check"></a>De status controle van de moment opname gebruiken
 Enkele veelvoorkomende problemen leiden ertoe dat de moment opname van de geopende fout opsporing niet wordt weer gegeven. Met een verouderde Snapshot Collector, bijvoorbeeld; de dagelijkse upload limiet bereikt; of de moment opname neemt gewoon veel tijd in beslag om te uploaden. Gebruik de status controle van de moment opname om veelvoorkomende problemen op te lossen.
@@ -57,12 +59,34 @@ Als u de instelling wilt controleren, opent u het web.config-bestand en gaat u n
 > Als de targetFramework 4,7 of hoger is, worden de beschik bare protocollen door Windows bepaald. In Azure App Service is TLS 1,2 beschikbaar. Als u echter uw eigen virtuele machine gebruikt, moet u mogelijk TLS 1,2 inschakelen in het besturings systeem.
 
 ## <a name="preview-versions-of-net-core"></a>Preview-versies van .NET core
-Als de toepassing gebruikmaakt van een preview-versie van .NET core en Snapshot Debugger is ingeschakeld via het [deel venster Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) in de portal, wordt Snapshot debugger mogelijk niet gestart. Volg de instructies op [enable snapshot debugger voor andere omgevingen](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) eerst om het [micro soft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet-pakket op te laten voegen met de toepassing * naast het inschakelen **van** het [Application Insights deel venster](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
+Als u een preview-versie van .NET Core gebruikt of als uw toepassing verwijst naar Application Insights SDK, direct of indirect via een afhankelijke assembly, volgt u de instructies voor het [inschakelen van Snapshot debugger voor andere omgevingen](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json).
 
+## <a name="check-the-diagnostic-services-site-extension-status-page"></a>De status pagina van de site-uitbrei ding voor diagnostische services controleren
+Als Snapshot Debugger via het [deel venster Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) in de portal is ingeschakeld, is het ingeschakeld door de site-extensie van de diagnostische services.
+
+U kunt de pagina status van deze uitbrei ding controleren door naar de volgende URL te gaan: `https://{site-name}.scm.azurewebsites.net/DiagnosticServices`
+
+> [!NOTE]
+> Het domein van de koppeling status pagina is afhankelijk van de Cloud.
+Dit domein is hetzelfde als de kudu-beheer site voor App Service.
+
+Op deze status pagina wordt de installatie status van de Profiler-en Snapshot Collector-agents weer gegeven. Als er een onverwachte fout is opgetreden, wordt deze weer gegeven en wordt aangegeven hoe u deze kunt oplossen.
+
+U kunt de kudu-beheer site voor App Service gebruiken om de basis-URL van deze status pagina op te halen:
+1. Open uw App Service-toepassing in de Azure Portal.
+2. Selecteer **geavanceerde hulp middelen** of zoek naar **kudu**.
+3. Selecteer **Go**.
+4. Zodra u zich op de kudu-beheer site bevindt, **voegt u het volgende toe aan de URL `/DiagnosticServices` en drukt u op ENTER**.
+ Deze wordt als volgt beëindigd: `https://<kudu-url>/DiagnosticServices`
+
+Er wordt een status pagina weer gegeven zoals hieronder: ![ status pagina voor diagnostische services](./media/diagnostic-services-site-extension/status-page.png)
 
 ## <a name="upgrade-to-the-latest-version-of-the-nuget-package"></a>Upgrade uitvoeren naar de nieuwste versie van het NuGet-pakket
+Op basis van de manier waarop Snapshot Debugger is ingeschakeld, raadpleegt u de volgende opties:
 
-Als Snapshot Debugger is ingeschakeld via het [deel venster Application Insights in de portal](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), moet uw toepassing al het meest recente NuGet-pakket uitvoeren. Als Snapshot Debugger is ingeschakeld door het pakket [micro soft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet op te nemen, gebruikt u Visual Studio NuGet Package Manager om te controleren of u de nieuwste versie van micro soft. ApplicationInsights. SnapshotCollector gebruikt.
+* Als Snapshot Debugger is ingeschakeld via het [deel venster Application Insights in de portal](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json), moet uw toepassing al het meest recente NuGet-pakket uitvoeren.
+
+* Als Snapshot Debugger is ingeschakeld door het pakket [micro soft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet op te nemen, gebruikt u Visual Studio NuGet Package Manager om te controleren of u de nieuwste versie van micro soft. ApplicationInsights. SnapshotCollector gebruikt.
 
 [Raadpleeg de opmerkingen bij de release](./snapshot-collector-release-notes.md)voor de nieuwste updates en oplossingen voor problemen.
 
@@ -71,12 +95,12 @@ Als Snapshot Debugger is ingeschakeld via het [deel venster Application Insights
 Nadat een moment opname is gemaakt, wordt er een mini dump bestand (. dmp) gemaakt op de schijf. Met een afzonderlijk Uploader-proces wordt dit bestand met de mini dump gemaakt en geüpload, samen met eventuele gekoppelde PDBs, om Snapshot Debugger opslag te Application Insights. Nadat het mini maal is geüpload, wordt het verwijderd van de schijf. De logboek bestanden voor het Uploader-proces worden op schijf bewaard. In een App Service omgeving kunt u deze logboeken vinden in `D:\Home\LogFiles` . Gebruik de kudu-beheer site voor App Service om deze logboek bestanden te vinden.
 
 1. Open uw App Service-toepassing in de Azure Portal.
-2. Klik op _ * geavanceerde hulp middelen * * of zoek naar **kudu**.
-3. Klik op **Go**.
+2. Selecteer **geavanceerde hulp middelen** of zoek naar **kudu**.
+3. Selecteer **Go**.
 4. Selecteer in de vervolg keuzelijst **debug-console** de optie **cmd**.
-5. Klik op **logboek bestanden**.
+5. Selecteer **Logboeken**.
 
-U ziet ten minste één bestand met een naam die begint met `Uploader_` of `SnapshotUploader_` en een `.log` uitbrei ding. Klik op het juiste pictogram om eventuele logboek bestanden te downloaden of open ze in een browser.
+U ziet ten minste één bestand met een naam die begint met `Uploader_` of `SnapshotUploader_` en een `.log` uitbrei ding. Selecteer het juiste pictogram om eventuele logboek bestanden te downloaden of open deze in een browser.
 De bestands naam bevat een uniek achtervoegsel dat de App Service instantie aanduidt. Als uw App Service-exemplaar op meer dan één computer wordt gehost, zijn er afzonderlijke logboek bestanden voor elke computer. Wanneer de uploader een nieuw bestand met een mini dump detecteert, wordt het vastgelegd in het logboek bestand. Hier volgt een voor beeld van een geslaagde moment opname en upload:
 
 ```
@@ -108,7 +132,7 @@ SnapshotUploader.exe Information: 0 : Deleted D:\local\Temp\Dumps\c12a605e73c443
 > Het bovenstaande voor beeld is van versie 1.2.0 van het pakket micro soft. ApplicationInsights. SnapshotCollector NuGet. In eerdere versies wordt het Uploader-proces aangeroepen `MinidumpUploader.exe` en wordt het logboek minder gedetailleerd beschreven.
 
 In het vorige voor beeld is de instrumentatie sleutel `c12a605e73c44346a984e00000000000` . Deze waarde moet overeenkomen met de instrumentatie sleutel voor uw toepassing.
-Het mini dump is gekoppeld aan een moment opname met de ID `139e411a23934dc0b9ea08a626db16c5` . U kunt deze ID later gebruiken om de bijbehorende telemetrie voor uitzonde ringen in Application Insights Analytics te vinden.
+Het mini dump is gekoppeld aan een moment opname met de ID `139e411a23934dc0b9ea08a626db16c5` . U kunt deze ID later gebruiken om de bijbehorende uitzonderings record te vinden in Application Insights Analytics.
 
 De uploader scant elke 15 minuten op nieuwe PDBs. Hier volgt een voorbeeld:
 
@@ -126,11 +150,14 @@ SnapshotUploader.exe Information: 0 : Deleted PDB scan marker : D:\local\Temp\Du
 Voor toepassingen die _niet_ in app service worden gehost, bevinden de uploader-logboeken zich in dezelfde map als de minidumps: `%TEMP%\Dumps\<ikey>` (waarbij `<ikey>` de instrumentatie sleutel is).
 
 ## <a name="troubleshooting-cloud-services"></a>Problemen met Cloud Services oplossen
-Voor rollen in Cloud Services is de tijdelijke standaardmap mogelijk te klein voor de mini dump bestanden, waardoor moment opnamen verloren zijn gegaan.
+In Cloud Services kan de tijdelijke standaardmap te klein zijn voor de mini dump bestanden, waardoor de moment opnamen verloren zijn gegaan.
+
 Welke ruimte u nodig hebt, is afhankelijk van de totale werkset van uw toepassing en het aantal gelijktijdige moment opnamen.
-De werkset van een 32-bits ASP.NET-webrol is doorgaans tussen 200 MB en 500 MB.
-Maxi maal twee gelijktijdige moment opnamen toestaan.
-Als uw toepassing bijvoorbeeld gebruikmaakt van 1 GB van het totale aantal werk sets, moet u ervoor zorgen dat er ten minste 2 GB schijf ruimte is om moment opnamen op te slaan.
+
+De werkset van een 32-bits ASP.NET-webrol is doorgaans tussen 200 MB en 500 MB. Maxi maal twee gelijktijdige moment opnamen toestaan.
+
+Als uw toepassing bijvoorbeeld gebruikmaakt van 1 GB van de totale werkset, moet u ervoor zorgen dat er ten minste 2 GB schijf ruimte is om moment opnamen op te slaan.
+
 Volg deze stappen om de functie van de Cloud service te configureren met een toegewezen lokale resource voor moment opnamen.
 
 1. Voeg een nieuwe lokale resource aan uw Cloud service toe door het bestand met de Cloud service definition (. csdef) te bewerken. In het volgende voor beeld wordt een resource met de naam `SnapshotStore` 5 GB gedefinieerd.
@@ -187,7 +214,7 @@ De Snapshot Collector controleert een aantal bekende locaties en controleert of 
 - APPDATA
 - RATUUR
 
-Als een geschikte map niet kan worden gevonden, wordt door Snapshot Collector een fout gemeld met _de melding ' kan geen geschikte schaduw kopie map vinden '._
+Als een geschikte map niet kan worden gevonden, Snapshot Collector een fout melding met de melding _' kan geen geschikte schaduw kopie map vinden '._
 
 Als het kopiëren mislukt, Snapshot Collector een `ShadowCopyFailed` fout gemeld.
 
@@ -222,24 +249,26 @@ Of, als u gebruikmaakt van appsettings.jsmet een .NET core-toepassing:
 
 ## <a name="use-application-insights-search-to-find-exceptions-with-snapshots"></a>Application Insights zoeken gebruiken om uitzonde ringen te vinden met moment opnamen
 
-Wanneer een moment opname wordt gemaakt, wordt de uitzonde ring gegenereerd met een moment opname-ID. Die moment opname-ID is opgenomen als een aangepaste eigenschap wanneer de telemetrie van de uitzonde ring wordt gerapporteerd aan Application Insights. Met **Search** in Application Insights kunt u alle telemetrie met de `ai.snapshot.id` aangepaste eigenschap zoeken.
+Wanneer een moment opname wordt gemaakt, wordt de uitzonde ring gegenereerd met een moment opname-ID. De moment opname-ID is opgenomen als een aangepaste eigenschap wanneer de uitzonde ring wordt gerapporteerd aan Application Insights. Met **Search** in Application Insights kunt u alle records vinden met de `ai.snapshot.id` aangepaste eigenschap.
 
 1. Blader naar uw Application Insights-resource in de Azure Portal.
-2. Klik op **Zoeken**.
+2. Selecteer **zoeken**.
 3. Typ `ai.snapshot.id` in het tekstvak zoeken en druk op ENTER.
 
 ![Telemetrie zoeken met een moment opname-ID in de portal](./media/snapshot-debugger/search-snapshot-portal.png)
 
-Als deze zoek opdracht geen resultaten oplevert, worden er geen moment opnamen gerapporteerd aan Application Insights voor uw toepassing in het geselecteerde tijds bereik.
+Als deze zoek opdracht geen resultaten oplevert, worden er geen moment opnamen gerapporteerd aan Application Insights in het geselecteerde tijds bereik.
 
-Als u wilt zoeken naar een specifieke moment opname-ID uit de uploader-logboeken, typt u die ID in het zoekvak. Als u geen telemetrie kunt vinden voor een moment opname die u weet, voert u de volgende stappen uit:
+Als u wilt zoeken naar een specifieke moment opname-ID uit de uploader-logboeken, typt u die ID in het zoekvak. Als u geen records kunt vinden voor een moment opname die u weet, voert u de volgende stappen uit:
 
 1. Controleer of u de juiste Application Insights resource bekijkt door de instrumentatie sleutel te verifiëren.
 
 2. Gebruik het tijds tempel in het Uploader-logboek om het tijds bereik filter van de zoek opdracht aan te passen.
 
-Als u nog steeds geen uitzonde ring ziet met die moment opname-ID, wordt de telemetrie van de uitzonde ring niet gerapporteerd aan Application Insights. Deze situatie kan zich voordoen als uw toepassing is vastgelopen nadat de moment opname is gemaakt, maar voordat de telemetrie van de uitzonde ring werd gerapporteerd. In dit geval raadpleegt u de App Service Logboeken onder `Diagnose and solve problems` om te zien of er onverwachte herstartingen of onverwerkte uitzonde ringen zijn.
+Als er nog steeds geen uitzonde ring wordt weer gegeven met die moment opname-ID, wordt de uitzonderings record niet gerapporteerd aan Application Insights. Deze situatie kan zich voordoen als uw toepassing is vastgelopen nadat de moment opname is gemaakt, maar voordat de uitzonderings record werd gerapporteerd. In dit geval raadpleegt u de App Service Logboeken onder `Diagnose and solve problems` om te zien of er onverwachte herstartingen of onverwerkte uitzonde ringen zijn.
 
 ## <a name="edit-network-proxy-or-firewall-rules"></a>Netwerk proxy-of firewall regels bewerken
 
-Als uw toepassing verbinding maakt met Internet via een proxy of een firewall, moet u mogelijk de regels bewerken zodat uw toepassing kan communiceren met de Snapshot Debugger-service. De IP-adressen die door Snapshot Debugger worden gebruikt, zijn opgenomen in de code van de Azure Monitor-service.
+Als uw toepassing verbinding maakt met Internet via een proxy of een firewall, moet u mogelijk de regels bijwerken om te communiceren met de Snapshot Debugger-service.
+
+De IP-adressen die worden gebruikt door Application Insights Snapshot Debugger zijn opgenomen in de code van de Azure Monitor-service. Zie [service Tags-documentatie](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)voor meer informatie.

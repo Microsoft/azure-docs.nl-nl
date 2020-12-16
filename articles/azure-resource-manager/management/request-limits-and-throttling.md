@@ -2,14 +2,14 @@
 title: Limieten en beperking aanvragen
 description: Hierin wordt beschreven hoe u bandbreedte beperking gebruikt met Azure Resource Manager-aanvragen wanneer de abonnements limieten zijn bereikt.
 ms.topic: conceptual
-ms.date: 03/24/2020
+ms.date: 12/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4d387749261747eb9ea1ea26629ade4fe8729856
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 181ed1a3059d86f78e40a9949448af77a551efbc
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80239367"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563123"
 ---
 # <a name="throttling-resource-manager-requests"></a>Resource Manager-aanvragen beperken
 
@@ -25,7 +25,7 @@ Voor elke bewerking op abonnements niveau en op Tenant niveau gelden beperkingen
 
 De standaard limieten voor beperking per uur worden weer gegeven in de volgende tabel.
 
-| Bereik | Bewerkingen | Limiet |
+| Bereik | Operations | Limiet |
 | ----- | ---------- | ------- |
 | Abonnement | titel | 12000 |
 | Abonnement | Delete | 15.000 |
@@ -66,6 +66,13 @@ Voor het controleren van exemplaren van virtuele machines in een schaalset voor 
 
 [Azure-resource grafiek](../../governance/resource-graph/overview.md) beperkt het aantal aanvragen voor de bewerkingen. De stappen in dit artikel om de resterende aanvragen te bepalen en te reageren wanneer de limiet is bereikt, geldt ook voor de resource grafiek. Resource grafiek stelt echter een eigen limiet en opnieuw ingestelde frequentie in. Zie [resource Graph Throttle headers](../../governance/resource-graph/concepts/guidance-for-throttled-requests.md#understand-throttling-headers)(Engelstalig) voor meer informatie.
 
+### <a name="other-resource-providers"></a>Andere resource providers
+
+Zie voor informatie over het beperken van beperkingen in andere resource providers:
+
+* [Richtlijnen voor beperkingen in Azure Key Vault](../../key-vault/general/overview-throttling.md)
+* [AKS-problemen oplossen](../../aks/troubleshooting.md#im-receiving-429---too-many-requests-errors)
+
 ## <a name="error-code"></a>Foutcode
 
 Wanneer u de limiet bereikt, ontvangt u de HTTP-status code **429 te veel aanvragen**. Het antwoord bevat een **nieuwe waarde voor opnieuw proberen** , waarmee het aantal seconden wordt aangegeven dat de toepassing moet wachten (of slaap stand) voordat de volgende aanvraag wordt verzonden. Als u een aanvraag verzendt voordat de waarde voor opnieuw proberen is verstreken, wordt uw aanvraag niet verwerkt en wordt er een nieuwe waarde voor opnieuw proberen geretourneerd.
@@ -103,7 +110,7 @@ In **C#** haalt u bijvoorbeeld de waarde header op uit een **HttpWebResponse** -
 response.Headers.GetValues("x-ms-ratelimit-remaining-subscription-reads").GetValue(0)
 ```
 
-In **Power shell**haalt u de waarde van de header op uit een Invoke-WebRequest bewerking.
+In **Power shell** haalt u de waarde van de header op uit een Invoke-WebRequest bewerking.
 
 ```powershell
 $r = Invoke-WebRequest -Uri https://management.azure.com/subscriptions/{guid}/resourcegroups?api-version=2016-09-01 -Method GET -Headers $authHeaders
@@ -150,7 +157,7 @@ Pragma                        : no-cache
 x-ms-ratelimit-remaining-subscription-writes: 1199
 ```
 
-In **Azure cli**haalt u de waarde van de header op met behulp van de uitgebreidere optie.
+In **Azure cli** haalt u de waarde van de header op met behulp van de uitgebreidere optie.
 
 ```azurecli
 az group list --verbose --debug

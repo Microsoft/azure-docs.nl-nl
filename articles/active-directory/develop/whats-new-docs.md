@@ -5,22 +5,43 @@ description: Nieuwe en bijgewerkte documentatie voor het micro soft Identity-pla
 services: active-directory
 author: mmacy
 manager: CelesteDG
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 108cd5f74b7b560534baf8f55f7d07ebb6557e7f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4813a71a0bdd14e747aa4cfe51ab5a4191df62a4
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457160"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563038"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
 Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
+
+## <a name="december-2020"></a>December 2020
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Snelstartgids: ASP.NET Core web-app die gebruikers aantekent en Microsoft Graph namens u aanroept](quickstart-v2-aspnet-core-webapp-calls-graph.md)
+- [Fouten en uitzonderingen verwerken in MSAL.NET](msal-error-handling-dotnet.md)
+- [Fouten en uitzonderingen verwerken in MSAL voor iOS/macOS](msal-error-handling-ios.md)
+- [Fouten en uitzonderingen verwerken in MSAL voor Java](msal-error-handling-java.md)
+- [Fouten en uitzonderingen verwerken in MSAL.js](msal-error-handling-js.md)
+- [Fouten en uitzonderingen verwerken in MSAL voor Python](msal-error-handling-python.md)
+- [Scenario's voor uitwisseling van micro soft Identity platform-tokens met SAML en OIDC/OAuth](scenario-token-exchange-saml-oauth.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt](tutorial-v2-aspnet-daemon-web-app.md)
+- [Web-app die zich aanmeldt bij gebruikers: app-registratie](scenario-web-app-sign-user-app-registration.md)
+- [Micro soft Identity-platform en impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)
+- [Toegangs tokens van micro soft Identity platform](access-tokens.md)
+- [Een web-API die web-Api's aanroept: een Token ophalen voor de app](scenario-web-api-call-api-acquire-token.md)
+
 
 ## <a name="november-2020"></a>November 2020
 

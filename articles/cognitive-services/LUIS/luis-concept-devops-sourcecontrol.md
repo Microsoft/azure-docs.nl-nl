@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: cf5c88df4e2ac6b95e99a3a78b1bf1e45bf534ed
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 1f5c0c7a877964eeb480fa958c7e76eb5706122f
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95535551"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561270"
 ---
 # <a name="devops-practices-for-luis"></a>DevOps-procedures voor LUIS
 
@@ -62,7 +62,7 @@ Als u een LUIS-app wilt *bouwen op basis van bron* , betekent dit dat u [een nie
 
 - Gebruik de LUIS-Portal om [de `.lu` versie](./luis-how-to-manage-versions.md#import-version) van de app te importeren vanuit broncode beheer en de app te [trainen](./luis-how-to-train.md) en te [publiceren](./luis-how-to-publish-app.md) .
 
-- Gebruik de [bot Framework opdracht regel interface voor Luis](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) op de opdracht regel of in een CI/cd-werk [import](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisversionimport) stroom om de `.lu` versie van de app te importeren vanuit broncode beheer in een Luis-toepassing, en de app te [trainen](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luistrainrun) en te [publiceren](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) .
+- Gebruik de [bot Framework opdracht regel interface voor Luis](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) op de opdracht regel of in een CI/cd-werk [](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisversionimport) stroom om de `.lu` versie van de app te importeren vanuit broncode beheer in een Luis-toepassing, en de app te [trainen](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luistrainrun) en te [publiceren](https://github.com/microsoft/botframework-cli/blob/master/packages/luis/README.md#bf-luisapplicationpublish) .
 
 ### <a name="files-to-maintain-under-source-control"></a>Te onderhouden bestanden onder broncode beheer
 
@@ -98,7 +98,7 @@ Welke vertakkings strategie u ook neemt, een belang rijk principe van de IT-afde
 
 Voor het ondersteunen van onafhankelijke werk in filialen met een LUIS-project:
 
-- **De hoofd vertakking heeft een eigen LUIS-app.** Deze app vertegenwoordigt de huidige status van uw oplossing voor uw project en de huidige actieve versie moet altijd worden toegewezen aan de `.lu` bron die zich in de hoofd vertakking bevindt. Alle updates voor de `.lu` bron voor deze app moeten worden gecontroleerd en getest, zodat deze app kan worden geïmplementeerd om omgevingen zoals productie op elk gewenst moment te bouwen. Wanneer updates van de `.lu` worden samengevoegd in de hoofd sectie van een functie vertakking, moet u een nieuwe versie maken in de Luis-app en [het versie nummer van de](#versioning)rand laten dalen.
+- **De hoofd vertakking heeft een eigen LUIS-app.** Deze app vertegenwoordigt de huidige status van uw oplossing voor uw project en de huidige actieve versie moet altijd worden toegewezen aan de `.lu` bron die zich in de hoofd vertakking bevindt. Alle updates voor de `.lu` bron voor deze app moeten worden gecontroleerd en getest, zodat deze app kan worden geïmplementeerd om omgevingen zoals productie op elk gewenst moment te bouwen. Wanneer updates van de `.lu` worden samengevoegd in het hoofd onderdeel van een functie vertakking, moet u een nieuwe versie maken in de Luis-app en [het versie nummer van de](#versioning)rand laten dalen.
 
 - **Elke functie vertakking moet een eigen exemplaar van een Luis-app gebruiken**. Ontwikkel aars werken met deze app in een functie vertakking zonder dat dit van invloed is op ontwikkel aars die in andere branches werken. Deze app dev Branch is een werk kopie die moet worden verwijderd wanneer de functie vertakking wordt verwijderd.
 
@@ -108,13 +108,13 @@ Voor het ondersteunen van onafhankelijke werk in filialen met een LUIS-project:
 
 Ontwikkel aars kunnen voor een LUIS-app onafhankelijk van andere vertakkingen werken door:
 
-1. Het maken van een functie vertakking van de hoofd vertakking (afhankelijk van uw branche strategie, meestal Master of ontwikkeling).
+1. Het maken van een functie vertakking van de hoofd vertakking (afhankelijk van uw branche strategie, meestal hoofd of ontwikkeling).
 
 1. [Maak een nieuwe Luis-app in de Luis-Portal](./luis-how-to-start-new-app.md) (de '*dev Branch-app*'), uitsluitend ter ondersteuning van het werk in de functie vertakking.
 
    * Als de `.lu` bron voor uw oplossing al in uw vertakking bestaat, omdat deze is opgeslagen nadat het werk in een andere vertakking eerder in het project is uitgevoerd, maakt u de Luis-app voor ontwikkel aars door het bestand te importeren `.lu` .
 
-   * Als u aan het werk bent van een nieuw project, hebt u de `.lu` bron voor uw hoofd Luis-app nog niet in de opslag plaats. U maakt het `.lu` bestand door uw dev Branch-app vanuit de portal te exporteren wanneer u uw functie vertakking hebt voltooid en deze als onderdeel van uw PR te verzenden.
+   * Als u aan het werk bent van een nieuw project, hebt u nog niet de `.lu` bron voor uw belangrijkste Luis-app in de opslag plaats. U maakt het `.lu` bestand door uw dev Branch-app vanuit de portal te exporteren wanneer u uw functie vertakking hebt voltooid en deze als onderdeel van uw PR te verzenden.
 
 1. Werk aan de actieve versie van uw dev Branch-app om de vereiste wijzigingen te implementeren. Het is raadzaam dat u alleen werkt in één versie van uw dev Branch-app voor al het functie vertakkings werk. Als u meer dan één versie in de app dev Branch maakt, moet u controleren welke versie de wijzigingen bevat die u wilt inchecken wanneer u uw PR verhoogt.
 
@@ -124,7 +124,7 @@ Ontwikkel aars kunnen voor een LUIS-app onafhankelijk van andere vertakkingen we
 
 1. Controleer uw updates en bestudeer de peer beoordeling van uw updates. Als u GitHub gebruikt, verhoogt u een pull- [aanvraag](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
 
-1. Wanneer de wijzigingen zijn goedgekeurd, voegt u de updates samen in de hoofd vertakking. Op dit moment maakt u een nieuwe [versie](./luis-how-to-manage-versions.md) van de *hoofd* -Luis-app met behulp van de bijgewerkte `.lu` in-Master. Zie [versie beheer](#versioning) voor overwegingen bij het instellen van de versie naam.
+1. Wanneer de wijzigingen zijn goedgekeurd, voegt u de updates samen in de hoofd vertakking. Op dit moment maakt u een nieuwe [versie](./luis-how-to-manage-versions.md) van de *hoofd* -Luis-app met behulp van de update `.lu` in Main. Zie [versie beheer](#versioning) voor overwegingen bij het instellen van de versie naam.
 
 1. Wanneer de functie vertakking wordt verwijderd, is het een goed idee om de LUIS-app voor ontwikkel aars te verwijderen die u hebt gemaakt voor het functie-Branch-werk.
 
@@ -150,7 +150,7 @@ U kunt op hetzelfde moment meerdere ontwikkel aars ondersteunen die aan dezelfde
 
 ### <a name="incorporating-changes-from-one-branch-to-another-with-rebase-or-merge"></a>Wijzigingen van de ene vertakking in de andere opnemen met opnieuw baseren of samen voegen
 
-Sommige andere ontwikkel aars van uw team die in een andere vertakking werken, hebben mogelijk updates aangebracht in de `.lu` bron en deze samengevoegd met de hoofd vertakking nadat u uw functie vertakking hebt gemaakt. Mogelijk wilt u de wijzigingen in uw werk versie opnemen voordat u wijzigingen aanbrengt in uw functie vertakking. U kunt dit doen door het project op dezelfde manier als andere code activa [te baseren of samen te voegen](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) . Omdat de LUIS-app in de LUDown-indeling van humaners leesbaar is, ondersteunt het samen voegen met behulp van standaard-merge tools.
+Sommige andere ontwikkel aars van uw team die in een andere vertakking werken, hebben mogelijk updates aangebracht in de `.lu` bron en deze samengevoegd met de hoofd vertakking nadat u uw functie vertakking hebt gemaakt. Mogelijk wilt u de wijzigingen in uw werk versie opnemen voordat u wijzigingen aanbrengt in uw functie vertakking. U kunt dit doen door de gegevens op dezelfde manier als andere code activa [te baseren of samen te voegen](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) . Omdat de LUIS-app in de LUDown-indeling van humaners leesbaar is, ondersteunt het samen voegen met behulp van standaard-merge tools.
 
 Volg deze tips als u uw LUIS-app opnieuw wilt baseren in een functie vertakking:
 
@@ -173,7 +173,7 @@ Nadat uw PR is samengevoegd, is het raadzaam om het volgende op te schonen:
 Op dezelfde manier als bij de activa van de toepassings code moet u eenheids tests schrijven voor LUIS-app-updates. U moet continue integratie werk stromen gebruiken om te testen:
 
 - Updates in een PR voordat de PR wordt samengevoegd
-- De LUIS-app van de hoofd vertakking nadat een PR is goedgekeurd en de wijzigingen zijn samengevoegd in de Master.
+- De LUIS-app van de hoofd vertakking nadat een PR is goedgekeurd en de wijzigingen zijn samengevoegd in de hoofd toepassing.
 
 Zie voor meer informatie over testen voor LUIS DevOps [testen op DevOps voor Luis](luis-concept-devops-testing.md). Zie [Automation-werk stromen voor Luis DevOps](luis-concept-devops-automation.md)voor meer informatie over het implementeren van werk stromen.
 
@@ -185,7 +185,7 @@ Een LUIS-app in de LUDown-indeling is leesbaar voor mensen, die ondersteuning bi
 
 Een toepassing bestaat uit meerdere onderdelen, zoals een bot die wordt uitgevoerd in [Azure bot service](/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [Azure Speech Service](../speech-service/overview.md), enzovoort. Als u het doel van het lossen van toepassingen wilt benutten, gebruikt u [versie beheer](/azure/devops/learn/git/what-is-version-control) , zodat elk onderdeel van een toepassing afzonderlijk wordt bijgewerkt, waardoor ontwikkel aars alleen op het versie nummer kijken of updates kunnen detecteren. Het is eenvoudiger om uw LUIS-app onafhankelijk van andere onderdelen te maken als u deze in een eigen opslag plaats behoudt.
 
-Voor de LUIS-app voor de hoofd vertakking moet een versie beheer schema worden toegepast. Wanneer u updates samenvoegt naar de `.lu` Luis-app in de Master, importeert u die bijgewerkte bron vervolgens in een nieuwe versie in de Luis-app voor de hoofd vertakking.
+Voor de LUIS-app voor de hoofd vertakking moet een versie beheer schema worden toegepast. Wanneer u updates samenvoegt naar de `.lu` Luis-app, importeert u die bijgewerkte bron vervolgens in een nieuwe versie in de Luis-app voor de hoofd vertakking.
 
 Het is raadzaam een numeriek versie schema te gebruiken voor de hoofd versie van de LUIS-app, bijvoorbeeld:
 
@@ -199,7 +199,7 @@ De primaire/secundaire versie kan worden gebruikt om het bereik van de wijziging
 * Secundaire versie: een kleine wijziging die compatibel is met eerdere versies, zoals na aanzienlijke nieuwe training
 * Bouwen: er is geen functionaliteits wijziging, alleen een andere build.
 
-Zodra u het versie nummer voor de laatste revisie van uw LUIS-app hebt vastgesteld, moet u de nieuwe app-versie bouwen en testen en deze publiceren naar een eind punt waar deze kan worden gebruikt in verschillende build-omgevingen, zoals kwaliteits garantie of productie. Het wordt ten zeerste aanbevolen om al deze stappen in een CI-werk stroom (continue Integration) te automatiseren.
+Zodra u het versie nummer voor de laatste revisie van uw belangrijkste LUIS-app hebt vastgesteld, moet u de nieuwe app-versie bouwen en testen en deze publiceren naar een eind punt waar deze kan worden gebruikt in verschillende build-omgevingen, zoals kwaliteits garantie of productie. Het wordt ten zeerste aanbevolen om al deze stappen in een CI-werk stroom (continue Integration) te automatiseren.
 
 Zie:
 - [Automatiserings werk stromen](luis-concept-devops-automation.md) voor meer informatie over het implementeren van een CI-werk stroom voor het testen en vrijgeven van een Luis-app.
@@ -207,9 +207,9 @@ Zie:
 
 ### <a name="versioning-the-feature-branch-luis-app"></a>Versie beheer van de LUIS-app feature Branch
 
-Wanneer u werkt met een ' dev Branch ' LUIS-app die u hebt gemaakt om het werk in een functie vertakking te ondersteunen, exporteert u uw app wanneer uw werk is voltooid en neemt u de bijgewerkte versie `'lu` op in uw PR. De vertakking in uw opslag plaats en de LUIS-app ' dev Branch ' moet worden verwijderd nadat de pull-in-Master is samengevoegd. Omdat deze app alleen bestaat om het werk in de functie vertakking te ondersteunen, is er geen specifiek versie beheer schema dat u in deze app moet Toep assen.
+Wanneer u werkt met een ' dev Branch ' LUIS-app die u hebt gemaakt om het werk in een functie vertakking te ondersteunen, exporteert u uw app wanneer uw werk is voltooid en neemt u de bijgewerkte versie `'lu` op in uw PR. De vertakking in uw opslag plaats en de LUIS-app ' dev Branch ' moet worden verwijderd nadat de pull-in-Main is samengevoegd. Omdat deze app alleen bestaat om het werk in de functie vertakking te ondersteunen, is er geen specifiek versie beheer schema dat u in deze app moet Toep assen.
 
-Wanneer uw wijzigingen in uw PR worden samengevoegd in de hoofd server, dat wil zeggen wanneer de versie beheer moet worden toegepast, zodat alle updates voor de hoofd server onafhankelijk van een versie worden gemaakt.
+Wanneer uw wijzigingen in uw PR worden samengevoegd in de hoofd toepassing, wordt de versie beheer toegepast, zodat alle updates voor de hoofd versie onafhankelijk zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 

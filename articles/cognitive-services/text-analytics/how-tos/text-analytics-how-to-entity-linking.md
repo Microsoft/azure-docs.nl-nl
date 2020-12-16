@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 11/19/2020
+ms.date: 12/15/2020
 ms.author: aahi
-ms.openlocfilehash: 5b064365a6f0bd8a544f57d67cd6e4beb98bb404
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 9b90f177432de11f8281d03021b38bae647dadf2
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505236"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562528"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Benoemde entiteits herkenning gebruiken in Text Analytics
 
@@ -99,6 +99,14 @@ Vanaf `v3.1-preview.3` is het JSON-antwoord een `redactedText` eigenschap die de
 
 [Named entity Recognition versie 3,1-Preview-verwijzing voor `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionPii)
 
+**Asynchrone bewerking**
+
+Vanaf `v3.1-preview.3` kunt u ner aanvragen asynchroon verzenden met behulp van het `/analyze` eind punt.
+
+* Asynchrone bewerking- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/analyze`
+
+Zie [de Text Analytics-API aanroepen](text-analytics-how-to-call-api.md) voor informatie over het verzenden van asynchrone aanvragen.
+
 #### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
 Met named entity Recognition v3 worden afzonderlijke eind punten gebruikt voor NER en aanvragen voor entiteits koppelingen. Gebruik een URL-indeling hieronder op basis van uw aanvraag:
@@ -117,7 +125,11 @@ Met named entity Recognition v3 worden afzonderlijke eind punten gebruikt voor N
 
 Stel een hoofdtekst in om uw Text Analytics-API-sleutel in de aanvraag op te nemen. Geef in de hoofd tekst van de aanvraag de JSON-documenten op die u hebt voor bereid.
 
-### <a name="example-ner-request"></a>Voor beeld van NER-aanvraag 
+## <a name="example-requests"></a>Voorbeeld aanvragen
+
+#### <a name="version-31-preview"></a>[Versie 3.1-preview](#tab/version-3-preview)
+
+### <a name="example-synchronous-ner-request"></a>Voor beeld van synchrone NER-aanvraag 
 
 De volgende JSON is een voor beeld van inhoud die u naar de API zou kunnen verzenden. De aanvraag indeling is hetzelfde voor beide versies van de API.
 
@@ -131,8 +143,64 @@ De volgende JSON is een voor beeld van inhoud die u naar de API zou kunnen verze
     }
   ]
 }
-
 ```
+
+### <a name="example-asynchronous-ner-request"></a>Voor beeld van een asynchrone NER-aanvraag
+
+Als u het `/analyze` eind punt gebruikt voor [asynchrone bewerking](text-analytics-how-to-call-api.md), ontvangt u een antwoord met de taken die u naar de API hebt verzonden.
+
+```json
+{
+    "displayName": "My Job",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "doc1",
+                "text": "It's incredibly sunny outside! I'm so happy"
+            },
+            {
+                "id": "doc2",
+                "text": "Pike place market is my favorite Seattle attraction."
+            }
+        ]
+    },
+    "tasks": {
+        "entityRecognitionTasks": [
+            {
+                "parameters": {
+                    "model-version": "latest",
+                    "stringIndexType": "TextElements_v8"
+                }
+            }
+        ],
+        "entityRecognitionPiiTasks": [{
+            "parameters": {
+                "model-version": "latest"
+            }
+        }]
+    }
+}
+```
+
+#### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
+
+### <a name="example-synchronous-ner-request"></a>Voor beeld van synchrone NER-aanvraag 
+
+Versie 3,0 bevat alleen synchrone bewerkingen. De volgende JSON is een voor beeld van inhoud die u naar de API zou kunnen verzenden. De aanvraag indeling is hetzelfde voor beide versies van de API.
+
+```json
+{
+  "documents": [
+    {
+        "id": "1",
+        "language": "en",
+        "text": "Our tour guide took us up the Space Needle during our trip to Seattle last week."
+    }
+  ]
+}
+```
+
+---
 
 ## <a name="post-the-request"></a>Plaats de aanvraag
 
@@ -148,11 +216,68 @@ Uitvoer wordt onmiddellijk geretourneerd. U kunt de resultaten streamen naar een
 
 ### <a name="example-responses"></a>Voorbeeld reacties
 
-Versie 3 biedt afzonderlijke eind punten voor algemene NER, PII en het koppelen van entiteiten. De antwoorden voor beide bewerkingen vindt u hieronder. 
+Versie 3 biedt afzonderlijke eind punten voor algemene NER, PII en het koppelen van entiteiten. Versie 3,1-pareview bevat een asynchrone analyse modus. De antwoorden voor deze bewerkingen vindt u hieronder. 
 
 #### <a name="version-31-preview"></a>[Versie 3.1-preview](#tab/version-3-preview)
 
+### <a name="synchronous-example-results"></a>Synchrone voorbeeld resultaten
+
+Voor beeld van een algemeen NER-antwoord:
+
+```json
+{
+  "documents": [
+    {
+      "id": "1",
+      "entities": [
+        {
+          "text": "tour guide",
+          "category": "PersonType",
+          "offset": 4,
+          "length": 10,
+          "confidenceScore": 0.45
+        },
+        {
+          "text": "Space Needle",
+          "category": "Location",
+          "offset": 30,
+          "length": 12,
+          "confidenceScore": 0.38
+        },
+        {
+          "text": "trip",
+          "category": "Event",
+          "offset": 54,
+          "length": 4,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "Seattle",
+          "category": "Location",
+          "subcategory": "GPE",
+          "offset": 62,
+          "length": 7,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "last week",
+          "category": "DateTime",
+          "subcategory": "DateRange",
+          "offset": 70,
+          "length": 9,
+          "confidenceScore": 0.8
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "modelVersion": "2020-04-01"
+}
+```
+
 Voor beeld van een PII-antwoord:
+
 ```json
 {
   "documents": [
@@ -236,6 +361,58 @@ Voor beeld van een entiteit koppelings reactie:
   ],
   "errors": [],
   "modelVersion": "2020-02-01"
+}
+```
+
+### <a name="example-asynchronous-result"></a>Voor beeld van asynchroon resultaat
+
+```json
+{
+  "displayName": "My Analyze Job",
+  "jobId": "dbec96a8-ea22-4ad1-8c99-280b211eb59e_637408224000000000",
+  "lastUpdateDateTime": "2020-11-13T04:01:14Z",
+  "createdDateTime": "2020-11-13T04:01:13Z",
+  "expirationDateTime": "2020-11-14T04:01:13Z",
+  "status": "running",
+  "errors": [],
+  "tasks": {
+      "details": {
+          "name": "My Analyze Job",
+          "lastUpdateDateTime": "2020-11-13T04:01:14Z"
+      },
+      "completed": 1,
+      "failed": 0,
+      "inProgress": 2,
+      "total": 3,
+      "keyPhraseExtractionTasks": [
+          {
+              "name": "My Analyze Job",
+              "lastUpdateDateTime": "2020-11-13T04:01:14.3763516Z",
+              "results": {
+                  "inTerminalState": true,
+                  "documents": [
+                      {
+                          "id": "doc1",
+                          "keyPhrases": [
+                              "sunny outside"
+                          ],
+                          "warnings": []
+                      },
+                      {
+                          "id": "doc2",
+                          "keyPhrases": [
+                              "favorite Seattle attraction",
+                              "Pike place market"
+                          ],
+                          "warnings": []
+                      }
+                  ],
+                  "errors": [],
+                  "modelVersion": "2020-07-01"
+              }
+          }
+      ]
+  }
 }
 ```
 

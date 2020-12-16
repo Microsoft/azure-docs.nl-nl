@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 8637b33ebc4b697ee6f498acb84ee33718c53f6d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 82b786f3c90a7ef482ccbcd6e66fb9abfc4eea5f
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448856"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561933"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Een niet-beschik bare-gastenboek toepassing met redis implementeren op een Kubernetes-cluster op basis van Azure Stack Edge Pro GPU
 
@@ -31,6 +31,9 @@ Deze procedure is bedoeld voor gebruikers die de Kubernetes- [workloads op Azure
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u de stateless toepassing kunt implementeren, moet u ervoor zorgen dat u de volgende vereisten hebt voltooid op uw apparaat en de client die u gaat gebruiken voor toegang tot het apparaat:
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ### <a name="for-device"></a>Voor het apparaat
 
@@ -107,7 +110,7 @@ Volg deze stappen om de Azure Arc-resource te configureren voor het implementere
     ![Scherm afbeelding toont het Azure Arc enabled Kubernetes-cluster met een geïnstalleerde status.](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
 
 
-## <a name="verify-deployment"></a>Implementatie controleren
+## <a name="verify-deployment"></a>Implementatie verifiëren
 
 De implementatie via de GitOps-configuratie maakt een `demotestguestbook` naam ruimte zoals opgegeven in de implementatie `yaml` bestanden die zich bevinden in de Git opslag plaats.
 

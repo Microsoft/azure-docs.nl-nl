@@ -11,12 +11,12 @@ ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: 404fc887cf40ee5d88b2824e8d2324d103226973
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: a875c036c79419357f1134c32f62fdb060fec7c6
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164360"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562290"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Aan de slag met Azure Cloud Services en ASP.NET
 
@@ -125,7 +125,7 @@ Een Azure-cloudservice is de omgeving waarin de toepassing wordt uitgevoerd.
 5. Kies de regio waarin u de toepassing wilt implementeren.
 
     Dit veld geeft aan in welk datacenter uw cloudservice zal worden gehost. Voor een productietoepassing kiest u de regio die het dichtst bij uw klanten ligt. Voor deze zelfstudie kiest u de regio die het dichtst bij u ligt.
-5. Klik op **Maken**.
+5. Klik op **Create**.
 
     Op de volgende afbeelding ziet u een cloudservice met de URL CSvccontosoads.cloudapp.net.
 
@@ -154,7 +154,7 @@ Wanneer de app wordt uitgevoerd in de cloud, gebruikt deze een cloudgebaseerde d
 9. Klik op **Selecteren** voor de nieuwe server.
 
     ![Nieuwe server](./media/cloud-services-dotnet-get-started/newdbserver.png)
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ### <a name="create-an-azure-storage-account"></a>Een Azure-opslagaccount maken
 Een Azure-opslagaccount biedt resources voor het opslaan van wachtrij- en blobgegevens in de cloud.
@@ -177,7 +177,7 @@ In een echte toepassing maakt u meestal afzonderlijke accounts voor toepassingsg
     Wanneer de cloudservice en het opslagaccount zich in verschillende datacenters (verschillende regio's) bevinden, neemt de latentie toe en wordt de bandbreedte buiten het datacenter aan u in rekening gebracht. Bandbreedte binnen een datacenter is gratis.
 
     Azure-affiniteitsgroepen bieden een mechanisme om de afstand tussen resources in een datacenter te minimaliseren, waardoor ze de latentie kunnen verminderen. In deze zelfstudie worden geen affiniteitsgroepen gebruikt. Zie [Een affiniteitsgroep maken in Azure](/previous-versions/azure/reference/gg715317(v=azure.100)) voor meer informatie.
-7. Klik op **Maken**.
+7. Klik op **Create**.
 
     ![Nieuw opslagaccount](./media/cloud-services-dotnet-get-started/newstorage.png)
 
@@ -231,7 +231,7 @@ Azure-opslagaccountverbindingsreeksen voor het webrolroject en het werkrolprojec
 1. Klik in **Solution Explorer** met de rechtermuisknop op **ContosoAdsWeb** (onder **Roles** in het **ContosoAdsCloudService**-project) en klik vervolgens op **Properties**.
 
     ![Roleigenschappen](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Klik op het tabblad **instellingen** . Kies **Cloud**in de vervolg keuzelijst **Service configuratie** .
+2. Klik op het tabblad **instellingen** . Kies **Cloud** in de vervolg keuzelijst **Service configuratie** .
 
     ![Cloudconfiguratie](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Selecteer de vermelding **StorageConnectionString**. Aan de rechterkant van de regel ziet u nu een knop met weglatingstekens (**...**). Klik op deze knop om het dialoogvenster **Create Storage Account Connection String** te openen.
@@ -400,7 +400,7 @@ In deze sectie configureert u Azure Storage- en SQL-verbindingsreeksen om lokaal
 ### <a name="add-code-files"></a>Codebestanden toevoegen
 In deze sectie kopieert u codebestanden vanuit de gedownloade oplossing naar de nieuwe oplossing. In de volgende secties worden belangrijke onderdelen van deze code weergegeven en uitgelegd.
 
-Als u bestanden wilt toevoegen aan een project of een map, klikt u met de rechter muisknop op **Add**het project of de map en klikt u op  -  **bestaand item**toevoegen. Selecteer de gewenste bestanden en klik op **Add**. Als u wordt gevraagd of u de bestaande bestanden wilt vervangen, klikt u op **Yes**.
+Als u bestanden wilt toevoegen aan een project of een map, klikt u met de rechter muisknop op het project of de map en klikt u op  -  **bestaand item** toevoegen. Selecteer de gewenste bestanden en klik op **Add**. Als u wordt gevraagd of u de bestaande bestanden wilt vervangen, klikt u op **Yes**.
 
 1. Verwijder in het project ContosoAdsCommon het bestand *Class1.cs* en voeg in plaats hiervan de bestanden *Ad.cs* en *ContosoAdscontext.cs* uit het gedownloade project toe.
 2. Voeg in het project ContosoAdsWeb de volgende bestanden uit het gedownloade project toe.
@@ -744,7 +744,7 @@ Deze code leest de database om de afbeeldings-URL op te halen, converteert de af
 Voor het geval u tegen problemen aanloopt terwijl u de instructies in deze zelfstudie volgt, vindt u hier een aantal veelvoorkomende fouten en aanwijzingen om deze op te lossen.
 
 ### <a name="serviceruntimeroleenvironmentexception"></a>ServiceRuntime.RoleEnvironmentException
-Het `RoleEnvironment`-object wordt verstrekt door Azure wanneer u een toepassing in Azure uitvoert of wanneer u deze lokaal uitvoert met behulp van de Azure-rekenemulator.  Als deze fout bij lokale uitvoering optreedt, controleert u of het project ContosoAdsCloudService is ingesteld als opstartproject. Zo zorgt u ervoor dat het project wordt uitgevoerd met behulp van de Azure-rekenemulator.
+Het `RoleEnvironment` object wordt door Azure verschaft wanneer u een toepassing in azure uitvoert of wanneer u lokaal uitvoert met behulp van de Azure Compute-emulator.  Als deze fout bij lokale uitvoering optreedt, controleert u of het project ContosoAdsCloudService is ingesteld als opstartproject. Hiermee stelt u in dat het project moet worden uitgevoerd met behulp van de Azure Compute-emulator.
 
 De toepassing gebruikt de Azure RoleEnvironment onder meer voor het ophalen van verbindingsreekswaarden die zijn opgeslagen in de *.cscfg*-bestanden. Een andere oorzaak van deze uitzondering kan dan ook te maken hebben met een ontbrekende verbindingsreeks. Controleer of u de instelling StorageConnectionString in het project ContosoAdsWeb voor zowel de cloudconfiguratie als de lokale configuratie hebt gemaakt en of u ook in het project ContosoAdsWorker beide verbindingsreeksen voor beide configuraties hebt gemaakt. Als u in de hele oplossing een zoekopdracht **Find All** uitvoert voor StorageConnectionString, moet u deze in 6 bestanden 9 maal vinden.
 
@@ -754,7 +754,7 @@ Wijzig het poortnummer dat door het webproject wordt gebruikt. Klik met de recht
 Raadpleeg de volgende sectie voor een alternatieve oplossing voor dit probleem.
 
 ### <a name="other-errors-when-running-locally"></a>Andere fouten bij lokale uitvoering
-Standaard maken nieuwe cloudserviceprojecten gebruik van de expresversie van de Azure-rekenemulator om de Azure-omgeving te simuleren. Dit is een basisversie van de volledige rekenemulator. Onder bepaalde omstandigheden werkt de volledige emulator wel, maar de expresversie niet.  
+Nieuwe Cloud service projecten gebruiken standaard de Azure Compute emulator Express om de Azure-omgeving te simuleren. Dit is een basisversie van de volledige rekenemulator. Onder bepaalde omstandigheden werkt de volledige emulator wel, maar de expresversie niet.  
 
 Als u het project wilt wijzigen voor gebruik van de volledige emulator, klikt u met de rechtermuisknop op het project ContosoAdsCloudService en klikt u vervolgens op **Properties**. Klik in het venster **Properties** op het tabblad **Web** en schakel vervolgens het keuzerondje **Use Full Emulator** in.
 
@@ -772,7 +772,7 @@ Zie [Echte cloud-apps ontwikkelen met Azure](https://www.asp.net/aspnet/overview
 
 Zie [Microsoft Azure Storage - nieuwe functies, aanbevolen procedures en patronen](https://channel9.msdn.com/Events/Build/2014/3-628) voor een video-inleiding in aanbevolen procedures en patronen voor Azure Storage.
 
-Zie de volgende bronnen voor meer informatie:
+Zie de volgende resources voor meer informatie:
 
 * [Deel 1 Azure Cloud Services: Inleiding](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Cloud Services beheren](cloud-services-how-to-manage-portal.md)

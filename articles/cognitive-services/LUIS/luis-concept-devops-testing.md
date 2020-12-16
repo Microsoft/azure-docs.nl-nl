@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/3/2020
-ms.openlocfilehash: 3017d0dec5acd3494600c42bef410ed346fead1a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f002bfdd5aeb784b5b10b549389e663216fa0361
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025939"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561219"
 ---
 # <a name="testing-for-luis-devops"></a>Testen op LUIS DevOps
 
@@ -123,7 +123,7 @@ U kunt de [NLU gebruiken. DevOps](https://github.com/microsoft/NLU.DevOps) -pakk
 U kunt ook de NLU gebruiken. DevOps-pakket om batch tests uit te voeren op de opdracht regel.
 
 * Gebruik het NLU. DevOps [test opdracht](https://github.com/microsoft/NLU.DevOps/blob/master/docs/Test.md) voor het verzenden van tests van een test bestand naar een eind punt en voor het vastleggen van de werkelijke Voorspellings resultaten in een bestand, net als bij eenheids testen.
-* Gebruik het NLU. DevOps [compare (opdracht](https://github.com/microsoft/NLU.DevOps/blob/master/docs/Analyze.md) ) in de [prestatie test modus](https://github.com/microsoft/NLU.DevOps/blob/master/docs/Analyze.md#performance-test-mode) om de prestaties van uw app te meten, kunt u de prestaties van uw app ook vergelijken met een basislijn prestatie-benchmark, bijvoorbeeld de resultaten van de laatste door voering naar de hoofd server of de huidige release. In de prestatie test modus wordt met de `compare` opdracht nunit test output en [batch test resultaten](./luis-glossary.md#batch-test) gegenereerd in JSON-indeling.
+* Gebruik het NLU. DevOps [compare (opdracht](https://github.com/microsoft/NLU.DevOps/blob/master/docs/Analyze.md) ) in de [prestatie test modus](https://github.com/microsoft/NLU.DevOps/blob/master/docs/Analyze.md#performance-test-mode) om de prestaties van uw app te meten, kunt u de prestaties van uw app ook vergelijken met een basislijn prestatie-benchmark, bijvoorbeeld de resultaten van de laatste door voering naar de hoofd-of de huidige release. In de prestatie test modus wordt met de `compare` opdracht nunit test output en [batch test resultaten](./luis-glossary.md#batch-test) gegenereerd in JSON-indeling.
 
 ## <a name="luis-non-deterministic-training-and-the-effect-on-testing"></a>LUIS niet-deterministische training en het effect op tests
 

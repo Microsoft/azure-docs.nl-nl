@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/5/2020
-ms.openlocfilehash: 370dade1b74634649c9de44864a0fd9f5cac988f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1ce78e02c652777b524964559b579530f3e022fa
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025973"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561304"
 ---
 # <a name="continuous-integration-and-continuous-delivery-workflows-for-luis-devops"></a>Werkstromen voor continue integratie en continue levering voor LUIS DevOps
 
@@ -23,7 +23,7 @@ Software-engineers die een Language Understanding-app (LUIS) ontwikkelen, kunnen
 Configureer in het systeem voor broncode beheer (SCM) automatische build pijp lijnen om uit te voeren met de volgende gebeurtenissen:
 
 1. **PR-werk stroom** wordt geactiveerd wanneer een [pull-aanvraag](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) wordt gegenereerd. Met deze werk stroom wordt de inhoud van de PR gevalideerd *voordat* de updates worden samengevoegd in de hoofd vertakking.
-1. **CI/cd-werk stroom** die wordt geactiveerd wanneer updates worden gepusht naar de hoofd vertakking, bijvoorbeeld bij het samen voegen van de wijzigingen van een PR. Deze werk stroom garandeert de kwaliteit van alle updates voor de hoofd vertakking.
+1. **CI/cd-werk stroom** die wordt geactiveerd wanneer updates worden gepusht naar de hoofd vertakking, bijvoorbeeld bij het samen voegen van de wijzigingen van een PR. Met deze werk stroom wordt de kwaliteit van alle updates voor de hoofd vertakking gegarandeerd.
 
 De **CI/cd-werk stroom** combineert twee complementaire ontwikkelings processen:
 
@@ -31,7 +31,7 @@ De **CI/cd-werk stroom** combineert twee complementaire ontwikkelings processen:
 
 * [Continue levering](/azure/devops/learn/what-is-continuous-delivery) (cd) zorgt voor een continue integratie concept om de toepassing automatisch te implementeren in een omgeving waarin u meer gedetailleerde tests kunt uitvoeren. Met de CD kunnen we tijdig ontdekken wat er onvoorziene problemen zijn die zich voordoen als gevolg van onze wijzigingen, en ook om meer te weten te komen over hiaten in onze test dekking.
 
-Het doel van continue integratie en continue levering is ervoor te zorgen dat ' Master is altijd shippable, '. Voor een LUIS-app betekent dit dat we, indien nodig, een wille keurige versie van de master branch LUIS-app kunnen nemen en deze op productie kan leveren.
+Het doel van continue integratie en continue levering is om ervoor te zorgen dat ' hoofd is altijd shippable, '. Voor een LUIS-app betekent dit dat we, indien nodig, een wille keurige versie van de hoofd vertakkings-LUIS-app kunnen nemen en deze op productie kan leveren.
 
 ### <a name="tools-for-building-automation-workflows-for-luis"></a>Hulpprogram ma's voor het maken van Automation-werk stromen voor LUIS
 
@@ -59,9 +59,9 @@ Deze werk stroom moet:
 
 Configureer regels voor vertakkings beveiliging als deze door uw SCM worden ondersteund, zodat deze werk stroom moet worden voltooid voordat de pull-bewerking kan worden voltooid.
 
-### <a name="the-master-branch-cicd-workflow"></a>De master branch CI/CD-werk stroom
+### <a name="the-main-branch-cicd-workflow"></a>De hoofd vertakking CI/CD-werk stroom
 
-Deze werk stroom configureren om uit te voeren nadat de updates in de PR zijn samengevoegd in de hoofd vertakking. Het doel is om de kwaliteits balk voor uw hoofd vertakking hoog te hand haven door de updates te testen. Als de updates voldoen aan de kwaliteits balk, implementeert deze werk stroom de nieuwe LUIS-App-versie naar een omgeving waarin u meer gedetailleerde tests kunt uitvoeren.
+Deze werk stroom zo configureren dat deze wordt uitgevoerd nadat de updates in de PR zijn samengevoegd in de hoofd vertakking. Het doel is om de kwaliteits balk voor uw hoofd vertakking hoog te hand haven door de updates te testen. Als de updates voldoen aan de kwaliteits balk, implementeert deze werk stroom de nieuwe LUIS-App-versie naar een omgeving waarin u meer gedetailleerde tests kunt uitvoeren.
 
 Deze werk stroom moet:
 

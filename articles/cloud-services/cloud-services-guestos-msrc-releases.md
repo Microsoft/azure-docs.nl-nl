@@ -10,22 +10,78 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 11/20/2020
+ms.date: 12/15/2020
 ms.author: yohaddad
-ms.openlocfilehash: 9cc86167b9d92289aa2edb605d8037a1bf6a9dcb
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: adaea28d105b72152e1af28cc9d79da19c548c2c
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96338721"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561406"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
 
+## <a name="december-2020-guest-os"></a>December 2020-gast besturingssysteem
+>[!NOTE] 
+
+>Het besturings systeem december gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem december gast. Deze lijst is onderhevig aan wijzigingen. 
+
+| Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
+| --- | --- | --- | --- | --- |
+|  Rel 20-12 |  [4592440]  |  Meest recente cumulatieve update | 6,26 | 8 december 2020 |
+|  Rel 20-12 |  [4580325]  |  Flash-Update | 3,92, 4,85, 5,50, 6,26 | 13 oktober 2020 |
+|  Rel 20-12 |  [4586768]  |  Cumulatieve updates voor Internet Explorer | 2,105, 3,92, 4,85 | 10 november 2020 |
+|  Rel 20-12 |  [4593226]  |  Meest recente cumulatieve update | 5,50 | 8 december 2020 |
+|  Rel 20-12 |  [4052623]  |  Defender | 5,50, 6,26 | 13 december 2020 |
+|  Rel 20-12 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,105 | 10 november 2020 |
+|  Rel 20-12 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,105 | 10 november 2020 |
+|  Rel 20-12 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,85 | 10 november 2020 |
+|  Rel 20-12 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,85 | 10 november 2020 |
+|  Rel 20-12 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,92 | 10 november 2020 |
+|  Rel 20-12 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 3,92 | 10 november 2020 |
+|  Rel 20-12 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | 6,26 | 13 oktober 2020 |
+|  Rel 20-12 |  [4592471]  |  Maandelijks samen vouwen | 2,105 | 8 december 2020 |
+|  Rel 20-12 |  [4592468]  |  Maandelijks samen vouwen | 3,92 | 8 december 2020 |
+|  Rel 20-12 |  [4592484]  |  Maandelijks samen vouwen | 4,85 | 8 december 2020 |
+|  Rel 20-12 |  [4566426]  |  Onderhouds stack-update | 3,92 | Jul 14, 2020 |
+|  Rel 20-12 |  [4566425]  |  Onderhouds stack-update | 4,85 | Jul 14, 2020 |
+|  OOB rel 20-12 |  [4578013]  |  Zelfstandige beveiligings update | 4,85 | 19 augustus 2020 |
+|  Rel 20-12 |  [4576750]  |  Onderhouds stack-update | 5,50 | 8 sep 2020 |
+|  Rel 20-12 |  [4592510]  |  Onderhouds stack-update | 2,105 | 8 december 2020 |
+|  Rel 20-12 |  [4587735]  |  Onderhouds stack-update | 6,26 | 10 november 2020 |
+|  Rel 20-12 |  [4494175]  |  Micro | 5,50 | 1 sep, 2020 |
+|  Rel 20-12 |  [4494174]  |  Micro | 6,26 | 3 sep, 2020 |
+
+[4592440]: https://support.microsoft.com/kb/4592440
+[4580325]: https://support.microsoft.com/kb/4580325
+[4586768]: https://support.microsoft.com/kb/4586768
+[4593226]: https://support.microsoft.com/kb/4593226
+[4052623]: https://support.microsoft.com/kb/4052623
+[4578952]: https://support.microsoft.com/kb/4578952
+[4578955]: https://support.microsoft.com/kb/4578955
+[4578953]: https://support.microsoft.com/kb/4578953
+[4578956]: https://support.microsoft.com/kb/4578956
+[4578950]: https://support.microsoft.com/kb/4578950
+[4578954]: https://support.microsoft.com/kb/4578954
+[4578966]: https://support.microsoft.com/kb/4578966
+[4592471]: https://support.microsoft.com/kb/4592471
+[4592468]: https://support.microsoft.com/kb/4592468
+[4592484]: https://support.microsoft.com/kb/4592484
+[4566426]: https://support.microsoft.com/kb/4566426
+[4566425]: https://support.microsoft.com/kb/4566425
+[4578013]: https://support.microsoft.com/kb/4578013
+[4576750]: https://support.microsoft.com/kb/4576750
+[4592510]: https://support.microsoft.com/kb/4592510
+[4587735]: https://support.microsoft.com/kb/4587735
+[4494175]: https://support.microsoft.com/kb/4494175
+[4494174]: https://support.microsoft.com/kb/4494174
+
+
 ## <a name="november-2020-guest-os"></a>November 2020-gast besturingssysteem
 >[!NOTE] 
 
->Het besturings systeem november gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het gast besturingssysteem van oktober. Deze lijst is onderhevig aan wijzigingen. 
+>Het besturings systeem november gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem november gast. Deze lijst is onderhevig aan wijzigingen. 
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |

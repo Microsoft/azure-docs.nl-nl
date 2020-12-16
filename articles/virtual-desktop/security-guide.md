@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8cf5504e44239fed6a4a4b82d0064d49f5c5a99f
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: a106455ea9d7b7a64fecd7c4255c294d0bd62db8
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511532"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562613"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -29,16 +29,16 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 
 | Beveiligings behoeften | Is de klant hiervoor verantwoordelijk? |
 |---------------|:-------------------------:|
-|Identiteit|Yes|
-|Gebruikers apparaten (Mobile en PC)|Yes|
-|App-beveiliging|Yes|
-|Session Host-besturings systeem|Yes|
-|Implementatie configuratie|Yes|
-|Netwerk besturings elementen|Yes|
-|Besturings vlak voor virtualisatie|No|
-|Fysieke hosts|No|
-|Fysiek netwerk|No|
-|Fysiek Data Center|No|
+|Identiteit|Ja|
+|Gebruikers apparaten (Mobile en PC)|Ja|
+|App-beveiliging|Ja|
+|Session Host-besturings systeem|Ja|
+|Implementatie configuratie|Ja|
+|Netwerk besturings elementen|Ja|
+|Besturings vlak voor virtualisatie|Nee|
+|Fysieke hosts|Nee|
+|Fysiek netwerk|Nee|
+|Fysiek Data Center|Nee|
 
 De beveiligings behoeften die de klant niet verantwoordelijk is voor worden verwerkt door micro soft.
 
@@ -101,7 +101,7 @@ Sessie-hosts zijn virtuele machines die worden uitgevoerd binnen een Azure-abonn
 
 ### <a name="enable-screen-capture-protection-preview"></a>Scherm opname beveiliging inschakelen (preview-versie)
 
-De functie voor het vastleggen van scherm beveiliging voor komt dat gevoelige informatie wordt vastgelegd op de client eindpunten. Wanneer u deze functie inschakelt, wordt externe inhoud automatisch geblokkeerd of verborgen in scherm afbeeldingen en shares. Het wordt ook verborgen voor schadelijke software, waardoor de inhoud van het scherm continu kan worden vastgelegd.
+De functie voor het vastleggen van scherm beveiliging voor komt dat gevoelige informatie wordt vastgelegd op de client eindpunten. Wanneer u deze functie inschakelt, wordt externe inhoud automatisch geblokkeerd of verborgen in scherm afbeeldingen en shares. Het wordt ook verborgen voor schadelijke software, waardoor de inhoud van het scherm continu kan worden vastgelegd. U kunt het beste Klembord omleiding uitschakelen om te voor komen dat externe inhoud naar eind punten wordt gekopieerd wanneer u deze functie gebruikt.
 
 Dit beleid wordt afgedwongen op hostniveau door een register sleutel te configureren. Als u dit beleid wilt inschakelen, opent u Power shell en stelt u de register sleutel **fEnableScreenCaptureProtection** in door deze cmdlet uit te voeren:
 

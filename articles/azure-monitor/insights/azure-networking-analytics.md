@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 9e2210cdbcc2916723c8c2e2ed1ef514d427c9d6
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: c304354f378708c43c25ef8b92b7b80b37ac03af
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032181"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563106"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Azure-netwerk bewakings oplossingen in Azure Monitor
 
@@ -107,19 +107,31 @@ Op het tabblad gedetailleerde meet gegevens weer geven wordt de vooraf ingevulde
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Migreren van Azure gateway Analytics-oplossing naar Azure Monitor-werkmappen
 
 > [!NOTE]
-> De oplossing voor de analyse van de Azure-toepassing gateway is verouderd en de aanbevolen manier om analyses te gebruiken is via werkmappen die worden weer gegeven via Azure Monitor Network Insights voor de Application Gateway resource.
+> Azure Monitor netwerk Insights-werkmap is de aanbevolen oplossing voor het openen van metrische gegevens en log Analytics voor uw Application Gateway resources.
 
-* Als de diagnostische instelling al is ingeschakeld om logboeken op te slaan in een Log Analytics-werk ruimte, kan Azure Monitor netwerk Insights-werkmap gegevens van dezelfde locatie gebruiken. Er is geen nieuwe configuratie vereist.
+1. Controleer of de [Diagnostische instellingen zijn ingeschakeld](#enable-azure-application-gateway-diagnostics-in-the-portal) voor het opslaan van Logboeken in een log Analytics-werk ruimte. Als deze al is geconfigureerd, kan Azure Monitor netwerk Insights-werkmap gegevens gebruiken vanaf dezelfde locatie en hoeven er geen aanvullende wijzigingen te worden aangebracht.
 
-* Alle gegevens in het verleden zijn al beschikbaar in de werkmap en de diagnostische instellingen voor het punt zijn ingeschakeld. Er is geen gegevens overdracht vereist.
+> [!NOTE]
+> Alle gegevens in het verleden zijn al beschikbaar in de werkmap en de diagnostische instellingen voor het punt zijn oorspronkelijk ingeschakeld. Er is geen gegevens overdracht vereist.
 
-* Er is geen actieve wissel knop vereist om over te scha kelen naar werkmappen. Zowel de analyse oplossing als de netwerk Insight-werkmap kunnen parallel werken.
+2. Open de [standaard-Insights-werkmap](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) voor uw Application Gateway-resource. Alle bestaande inzichten die worden ondersteund door de Application Gateway Analytics-oplossing, zijn al aanwezig in de werkmap. U kunt dit uitbreiden door aangepaste [Visualisaties](../platform/workbooks-overview.md#visualizations) toe te voegen op basis van de metriek & logboek gegevens.
 
-* Er zijn geen extra kosten verbonden aan Azure Monitor werkmappen. Log Analytics-werk ruimte worden nog steeds gefactureerd volgens het gebruik.
-
-* Als u de Azure gateway Analytics-oplossing wilt opschonen vanuit uw werk ruimte, kunt u de oplossing verwijderen van de resource pagina van de oplossing.
+3. Wanneer u al uw metrische gegevens en logboek inzichten kunt zien, kunt u de oplossing voor Azure gateway Analytics verwijderen uit uw werk ruimte, maar u hebt de oplossingen ook van de pagina Solution resource.
 
 [![Scherm afbeelding van de optie voor het verwijderen van Azure-toepassing gateway Analytics-oplossing.](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
+
+### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Nieuwe mogelijkheden met Azure Monitor Network Insights-werkmap
+
+> [!NOTE]
+> Er zijn geen extra kosten verbonden aan Azure Monitor Insights-werkmap. Log Analytics-werk ruimte worden nog steeds gefactureerd volgens het gebruik.
+
+Met de netwerk Insights-werkmap kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics, zoals:
+
+* Gecentraliseerde console voor bewaking en probleem oplossing met zowel [metrische](../insights/network-insights-overview.md#resource-health-and-metrics) als logboek gegevens.
+
+* Flexibel canvas ter ondersteuning van het maken van aangepaste, uitgebreide [Visualisaties](../platform/workbooks-overview.md#visualizations).
+
+* De mogelijkheid om [werkmap sjablonen](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) te gebruiken en te delen met bredere community.
 
 Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../platform/workbooks-overview.md)
 

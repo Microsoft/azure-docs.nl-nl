@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2403e3a4bfe7824659a9c34c407e55e6c56e6046
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 708478f50078276245a7dfab7d185dd50d597407
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994652"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589794"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>De implementatie van resources voor uw functie-app in Azure Functions automatiseren
 
@@ -137,7 +137,7 @@ De functie-app resource wordt gedefinieerd met behulp van een resource van het t
 
 Een functie-app moet deze toepassings instellingen bevatten:
 
-| Naam van de instelling                 | Description                                                                               | Voorbeeldwaarden                        |
+| Naam van de instelling                 | Beschrijving                                                                               | Voorbeeldwaarden                        |
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Een connection string naar een opslag account dat door de functions-runtime wordt gebruikt voor interne wachtrij gebruik | Zie [Storage-account](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | De versie van de Azure Functions runtime                                                | `~2`                                  |
@@ -299,8 +299,6 @@ Op Linux moet de functie-app zijn `kind` ingesteld op `functionapp,linux` en moe
 }
 ```
 
-
-
 <a name="premium"></a>
 
 ## <a name="deploy-on-premium-plan"></a>Implementeren in Premium-abonnement
@@ -380,7 +378,6 @@ Voor een functie-app voor een Premium-abonnement moet de `serverFarmId` eigensch
     }
 }
 ```
-
 
 <a name="app-service-plan"></a>
 
@@ -649,7 +646,7 @@ U kunt een van de volgende manieren gebruiken om uw sjabloon te implementeren:
 
 * [PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
 * [Azure-CLI](../azure-resource-manager/templates/deploy-cli.md)
-* [Azure Portal](../azure-resource-manager/templates/deploy-portal.md)
+* [Azure-portal](../azure-resource-manager/templates/deploy-portal.md)
 * [REST API](../azure-resource-manager/templates/deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>De knop Implementeren in Azure

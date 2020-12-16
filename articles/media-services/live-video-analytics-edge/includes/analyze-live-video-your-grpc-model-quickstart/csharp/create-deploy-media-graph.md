@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: df409af61556dfa113327302be9c1464e1427a14
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: ebefd5ccec321e8c3d580109c3b3c9dc8ba310c3
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91829297"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97531809"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>De voorbeeld bestanden bekijken en bewerken
 
@@ -26,7 +26,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 1. Bewerk het bestand *operations.json*:
  
     * Wijzig de link naar de graaftopologie:
-    * `"topologyUrl"` : `"https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/grpcExtension/topology.json"`
+    * `"topologyUrl"` : `"https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/grpcExtension/2.0/topology.json"`
     * Bewerk onder GraphInstanceSet de naam van de grafiektopologie zodat deze overeenkomt met de waarde in de voorgaande koppeling:
     * `"topologyName"` : `"InferencingWithGrpcExtension"`
     * Bewerk de naam onder GraphTopologyDelete:
@@ -119,7 +119,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Extensie-instellingen":::
+    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
 1. Klik met de rechtermuisknop op het Live Video Analytics-apparaat en selecteer **Bewaking van ingebouwd gebeurteniseindpunt starten**. Deze stap is nodig om de IoT Hub-gebeurtenissen te controleren in het venster **UITVOER** van Visual Studio Code.
 
    ![Bewaking starten](../../../media/quickstarts/start-monitoring-built-event-endpoint-grpc.png)
@@ -133,7 +133,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
     -------------------------------Executing operation GraphTopologyList-----------------------  
     Request: GraphTopologyList  --------------------------------------------------
     {
-    "@apiVersion": "1.0"
+    "@apiVersion": "2.0"
     }
     ---------------  
     Response: GraphTopologyList - Status: 200  ---------------
@@ -152,7 +152,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
     
     ```
     {
-      "@apiVersion": "1.0",
+      "@apiVersion": "2.0",
       "name": "Sample-Graph-1",
       "properties": {
         "topologyName": "InferencingWithGrpcExtension",

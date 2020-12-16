@@ -6,14 +6,14 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: overview
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
-ms.openlocfilehash: 34d340881e4f612544f4b3d68d3c1f3da598cab3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8f960e58d47963cbb239d498af52e7adfc77caa9
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023425"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586863"
 ---
 # <a name="internet-peering-overview"></a>Overzicht van internetpeering
 

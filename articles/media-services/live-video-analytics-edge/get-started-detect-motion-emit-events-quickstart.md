@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: e67c717a4476ab9191471483d9aa8e8f222cd750
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: db48183e918fcb1096734f912f02c091ddac1d74
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498265"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511872"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -115,7 +115,7 @@ Om alle [grafiektopologieën](media-graph-concept.md#media-graph-topologies-and-
 
     ```
     {
-        "@apiVersion" : "1.0"
+        "@apiVersion" : "2.0"
     }
     ```
 
@@ -141,7 +141,7 @@ Met behulp van de stappen voor het aanroepen van `GraphTopologyList` kunt u `Gra
 
 ```
 {
-    "@apiVersion": "1.0",
+    "@apiVersion": "2.0",
     "name": "MotionDetection",
     "properties": {
         "description": "Analyzing live video to detect motion and emit events",
@@ -304,7 +304,7 @@ Roep `GraphTopologyGet` aan met behulp van de volgende nettolading.
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "MotionDetection"
 }
 ```
@@ -402,7 +402,7 @@ Roep de directe methode `GraphInstanceSet` aan met de volgende nettolading.
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1",
     "properties" : {
         "topologyName" : "MotionDetection",
@@ -462,7 +462,7 @@ Activeer nu het grafiekexemplaar om de stroom van live-video via de module te st
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -486,7 +486,7 @@ Roep nu de directe methode `GraphInstanceGet` aan met de volgende nettolading.
 
 ```
  {
-     "@apiVersion" : "1.0",
+     "@apiVersion" : "2.0",
      "name" : "Sample-Graph-1"
  }
  ```
@@ -619,7 +619,7 @@ Roep de directe methode `GraphInstanceDeactivate` aan met de volgende nettoladin
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -645,7 +645,7 @@ Roep de directe methode `GraphInstanceDelete` aan met de volgende nettolading.
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-1"
 }
 ```
@@ -669,7 +669,7 @@ Roep de directe methode `GraphTopologyDelete` aan met de volgende nettolading.
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "MotionDetection"
 }
 ```

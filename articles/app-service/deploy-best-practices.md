@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: 37c1854aeb1a1fa3d9283c00b07c665b213b306c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74bd7bc159f7f5974452adf6b2f51148d869b4ed
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708149"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589233"
 ---
 # <a name="deployment-best-practices"></a>Aanbevolen procedures voor implementatie
 
@@ -45,9 +45,9 @@ Gebruik waar mogelijk [implementatie sleuven](deploy-staging-slots.md) bij het i
 
 Als uw project vertakkingen heeft aangewezen voor testen, QA en fase ring, moeten alle vertakkingen continu worden geïmplementeerd in een staging-sleuf. (Dit staat bekend als het [Gitflow-ontwerp](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).) Zo kunnen uw belanghebbenden de geïmplementeerde vertakking eenvoudig beoordelen en testen. 
 
-Continue implementatie moet nooit worden ingeschakeld voor uw productie sleuf. In plaats daarvan moet uw productie vertakking (vaak Master) worden geïmplementeerd op een niet-productie sleuf. Wanneer u klaar bent om de basis vertakking uit te geven, wisselt u deze naar de productie site. Wisselen in productie: in plaats van implementatie naar productie: voor komt downtime en kunt u de wijzigingen terugdraaien door opnieuw te wisselen. 
+Continue implementatie moet nooit worden ingeschakeld voor uw productie sleuf. In plaats daarvan moet uw productie vertakking (vaak hoofd) worden geïmplementeerd op een niet-productie sleuf. Wanneer u klaar bent om de basis vertakking uit te geven, wisselt u deze naar de productie site. Wisselen in productie: in plaats van implementatie naar productie: voor komt downtime en kunt u de wijzigingen terugdraaien door opnieuw te wisselen. 
 
-![Diagram waarin de stroom tussen de ontwikkelings-, fase ring-en hoofd vertakkingen en de sleuven waarmee ze zijn geïmplementeerd, worden weer gegeven.](media/app-service-deploy-best-practices/slot_flow_code_diagam.png)
+![Diagram waarin de stroom tussen de ontwikkel-, staging-en hoofd vertakkingen en de sleuven waarmee ze worden geïmplementeerd, worden weer gegeven.](media/app-service-deploy-best-practices/slot_flow_code_diagam.png)
 
 ### <a name="continuously-deploy-containers"></a>Containers continu implementeren
 
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
 
     -name: Authenticate using a Service Principal
       uses: azure/actions/login@v1

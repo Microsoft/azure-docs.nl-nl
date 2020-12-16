@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfe3d995cef888d2f0e973a6a6b2a06e0dd6cb54
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: b26c24149d422021dcb86f75c915ade89cbccdec
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563208"
+ms.locfileid: "97589872"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Een SAML 2.0-id-provider (IdP) gebruiken voor eenmalige aanmelding
 
@@ -60,19 +60,19 @@ Azure AD kan worden geconfigureerd om te werken met id-providers die gebruikmake
 In het SAML-antwoord bericht bevat het handtekening knooppunt informatie over de digitale hand tekening voor het bericht zelf. Het handtekening blok heeft de volgende vereisten:
 
 1. Het bevestigings knooppunt zelf moet zijn ondertekend
-2.  Het algoritme RSA-SHA1 moet worden gebruikt als de DigestMethod. Andere algoritmen voor digitale hand tekeningen worden niet geaccepteerd.
+2. Het algoritme RSA-SHA1 moet worden gebruikt als de DigestMethod. Andere algoritmen voor digitale hand tekeningen worden niet geaccepteerd.
    `<ds:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1"/>`
-3.  U kunt ook het XML-document ondertekenen. 
-4.  Het transformatie algoritme moet overeenkomen met de waarden in het volgende voor beeld:    `<ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+3. U kunt ook het XML-document ondertekenen. 
+4. Het transformatie algoritme moet overeenkomen met de waarden in het volgende voor beeld:     `<ds:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
        <ds:Transform Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#"/>`
-9.  Het SignatureMethod-algoritme moet overeenkomen met het volgende voor beeld:   `<ds:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"/>`
+9. Het SignatureMethod-algoritme moet overeenkomen met het volgende voor beeld:    `<ds:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"/>`
 
 ## <a name="supported-bindings"></a>Ondersteunde bindingen
 Bindingen zijn de Trans Port-gerelateerde communicatie parameters die vereist zijn. De volgende vereisten zijn van toepassing op de bindingen
 
 1. HTTPS is het vereiste Trans Port.
-2.  Voor Azure AD is HTTP POST vereist voor het verzenden van tokens tijdens het aanmelden.
-3.  Azure AD gebruikt HTTP POST voor de verificatie aanvraag bij de ID-provider en leidt het afmeldings bericht naar de ID-provider.
+2. Voor Azure AD is HTTP POST vereist voor het verzenden van tokens tijdens het aanmelden.
+3. Azure AD gebruikt HTTP POST voor de verificatie aanvraag bij de ID-provider en leidt het afmeldings bericht naar de ID-provider.
 
 ## <a name="required-attributes"></a>Vereiste kenmerken
 In deze tabel worden de vereisten voor specifieke kenmerken in het SAML 2,0-bericht weer gegeven.
@@ -91,16 +91,16 @@ Er wordt een aanvraag-en antwoord bericht paar weer gegeven voor de uitwisseling
 Hier volgt een voor beeld van een aanvraag bericht dat vanuit Azure AD wordt verzonden naar een SAML 2,0-ID-provider. De voor beeld-ID-provider van SAML 2,0 is Active Directory Federation Services (AD FS) geconfigureerd voor het gebruik van het SAML-P-protocol. Het testen van de interoperabiliteit is ook voltooid met andere SAML 2,0-id-providers.
 
 ```xml
-    <samlp:AuthnRequest 
-        xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
-        xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
-        ID="_7171b0b2-19f2-4ba2-8f94-24b5e56b7f1e" 
-        IssueInstant="2014-01-30T16:18:35Z" 
-        Version="2.0" 
-        AssertionConsumerServiceIndex="0" >
-            <saml:Issuer>urn:federation:MicrosoftOnline</saml:Issuer>
-            <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
-    </samlp:AuthnRequest>
+  <samlp:AuthnRequest 
+    xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" 
+    xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
+    ID="_7171b0b2-19f2-4ba2-8f94-24b5e56b7f1e" 
+    IssueInstant="2014-01-30T16:18:35Z" 
+    Version="2.0" 
+    AssertionConsumerServiceIndex="0" >
+        <saml:Issuer>urn:federation:MicrosoftOnline</saml:Issuer>
+        <samlp:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"/>
+  </samlp:AuthnRequest>
 ```
 
 Hier volgt een voor beeld van een antwoord bericht dat wordt verzonden vanuit de voor beeld-ID-provider van SAML 2,0-compatibel naar Azure AD/Microsoft 365.
@@ -196,47 +196,47 @@ De volgende procedure helpt u bij het converteren van een bestaand standaard dom
 
 1. Maak verbinding met uw Azure AD-Directory als een Tenant beheerder:
 
-    ```powershell
-    Connect-MsolService
-    ```
-    
+  ```powershell
+  Connect-MsolService
+  ```
+  
 2. Configureer uw gewenste Microsoft 365 domein om Federatie te gebruiken met SAML 2,0:
 
-    ```powershell
-    $dom = "contoso.com" 
-    $BrandName - "Sample SAML 2.0 IDP" 
-    $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
-    $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
-    $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
-    $MyURI = "urn:uri:MySamlp2IDP" 
-    $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
-    $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" 
-    $Protocol = "SAMLP" 
-    Set-MsolDomainAuthentication `
-        -DomainName $dom `
-        -FederationBrandName $BrandName `
-        -Authentication Federated `
-        -PassiveLogOnUri $LogOnUrl `
-        -ActiveLogOnUri $ecpUrl `
-        -SigningCertificate $MySigningCert `
-        -IssuerUri $MyURI `
-        -LogOffUri $LogOffUrl `
-        -PreferredAuthenticationProtocol $Protocol
-    ``` 
+  ```powershell
+  $dom = "contoso.com" 
+  $BrandName - "Sample SAML 2.0 IDP" 
+  $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" 
+  $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" 
+  $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" 
+  $MyURI = "urn:uri:MySamlp2IDP" 
+  $MySigningCert = "MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" 
+  $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" 
+  $Protocol = "SAMLP" 
+  Set-MsolDomainAuthentication `
+    -DomainName $dom `
+    -FederationBrandName $BrandName `
+    -Authentication Federated `
+    -PassiveLogOnUri $LogOnUrl `
+    -ActiveLogOnUri $ecpUrl `
+    -SigningCertificate $MySigningCert `
+    -IssuerUri $MyURI `
+    -LogOffUri $LogOffUrl `
+    -PreferredAuthenticationProtocol $Protocol
+  ``` 
 
 3.  U kunt de door base64 gecodeerde handtekening certificaat reeks verkrijgen uit uw IDP-meta gegevensbestand. Er is een voor beeld van deze locatie gegeven, maar dit kan enigszins verschillen op basis van uw implementatie.
 
-    ```xml
-    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-        <KeyDescriptor use="signing">
-          <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
-             <X509Data>
-                 <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
-              </X509Data>
-            </KeyInfo>
-        </KeyDescriptor>
-    </IDPSSODescriptor>
-    ``` 
+  ```xml
+  <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <KeyDescriptor use="signing">
+      <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
+       <X509Data>
+         <X509Certificate> MIIC5jCCAc6gAwIBAgIQLnaxUPzay6ZJsC8HVv/QfTANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwHhcNMTMxMTA0MTgxMzMyWhcNMTQxMTA0MTgxMzMyWjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBmcy50ZWNobGFiY2VudHJhbC5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwMdVLTr5YTSRp+ccbSpuuFeXMfABD9mVCi2wtkRwC30TIyPdORz642MkurdxdPCWjwgJ0HW6TvXwcO9afH3OC5V//wEGDoNcI8PV4enCzTYFe/h//w51uqyv48Fbb3lEXs+aVl8155OAj2sO9IX64OJWKey82GQWK3g7LfhWWpp17j5bKpSd9DBH5pvrV+Q1ESU3mx71TEOvikHGCZYitEPywNeVMLRKrevdWI3FAhFjcCSO6nWDiMqCqiTDYOURXIcHVYTSof1YotkJ4tG6mP5Kpjzd4VQvnR7Pjb47nhIYG6iZ3mR1F85Ns9+hBWukQWNN2hcD/uGdPXhpdMVpBAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAK7h7jF7wPzhZ1dPl4e+XMAr8I7TNbhgEU3+oxKyW/IioQbvZVw1mYVCbGq9Rsw4KE06eSMybqHln3w5EeBbLS0MEkApqHY+p68iRpguqa+W7UHKXXQVgPMCpqxMFKonX6VlSQOR64FgpBme2uG+LJ8reTgypEKspQIN0WvtPWmiq4zAwBp08hAacgv868c0MM4WbOYU0rzMIR6Q+ceGVRImlCwZ5b7XKp4mJZ9hlaRjeuyVrDuzBkzROSurX1OXoci08yJvhbtiBJLf3uPOJHrhjKRwIt2TnzS9ElgFZlJiDIA26Athe73n43CT0af2IG6yC7e6sK4L3NEXJrwwUZk=</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </KeyDescriptor>
+  </IDPSSODescriptor>
+  ``` 
 
 Zie voor meer informatie over ' set-MsolDomainAuthentication ': [/previous-versions/Azure/dn194112 (v = Azure. 100)](/previous-versions/azure/dn194112(v=azure.100)).
 
@@ -278,13 +278,12 @@ Voor meer informatie over de afhandeling van ' New-MsolUser ', [/previous-versio
 ## <a name="verify-single-sign-on-with-your-saml-20-idp"></a>Eenmalige aanmelding controleren met uw SAML 2,0 IDP
 Lees, voordat u eenmalige aanmelding verifieert en beheert (ook identiteits Federatie genoemd), de informatie en voer de stappen uit in de volgende artikelen om eenmalige aanmelding in te stellen met uw SAML 2,0 SP-Lite gebaseerde ID-provider:
 
-
-1.  U hebt de vereisten voor het Azure AD SAML 2,0-protocol beoordeeld
-2.  U hebt uw SAML 2,0-ID-provider geconfigureerd
-3.  Windows Power Shell installeren voor eenmalige aanmelding met SAML 2,0-ID-provider
-4.  Een vertrouwens relatie instellen tussen de SAML 2,0-ID-provider en Azure AD
-5.  Een bekende test gebruiker-principal is ingericht voor Azure Active Directory (Microsoft 365) via Windows Power shell of Azure AD Connect.
-6.  Configureer adreslijst synchronisatie met behulp van [Azure AD Connect](whatis-hybrid-identity.md).
+1. U hebt de vereisten voor het Azure AD SAML 2,0-protocol beoordeeld
+2. U hebt uw SAML 2,0-ID-provider geconfigureerd
+3. Windows Power Shell installeren voor eenmalige aanmelding met SAML 2,0-ID-provider
+4. Een vertrouwens relatie instellen tussen de SAML 2,0-ID-provider en Azure AD
+5. Een bekende test gebruiker-principal is ingericht voor Azure Active Directory (Microsoft 365) via Windows Power shell of Azure AD Connect.
+6. Configureer adreslijst synchronisatie met behulp van [Azure AD Connect](whatis-hybrid-identity.md).
 
 Na het instellen van eenmalige aanmelding met uw SAML 2,0 SP-Lite-ID-provider, moet u controleren of deze goed werkt.
 
@@ -302,29 +301,33 @@ Micro soft heeft een hulp programma meegeleverd dat u kunt gebruiken om uw ID-pr
 
 
 
-1. Down load de Connectivity Analyzer vanuit, [https://testconnectivity.microsoft.com/?tabid=Client](https://testconnectivity.microsoft.com/?tabid=Client) .
-2.  Klik op nu installeren om te beginnen met het downloaden en installeren van het hulp programma.
-3.  Selecteer Ik kan Federatie niet instellen met Office 365, Azure of andere services die gebruikmaken van Azure Active Directory.
-4.  Wanneer het hulp programma is gedownload en uitgevoerd, ziet u het venster connectiviteits diagnostiek. Het hulp programma gaat u stapsgewijs door uw Federatie verbinding te testen.
-5.  De connectiviteits analyse opent uw SAML 2,0 IDP om u aan te melden, voert u de referenties in voor de gebruikers-principal die u wilt testen: ![ scherm opname van het aanmeld venster voor uw SAML 2,0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
+1. De [Connectivity Analyzer](https://testconnectivity.microsoft.com/?tabid=Client)downloaden.
+2. Klik op nu installeren om te beginnen met het downloaden en installeren van het hulp programma.
+3. Selecteer Ik kan Federatie niet instellen met Office 365, Azure of andere services die gebruikmaken van Azure Active Directory.
+4. Wanneer het hulp programma is gedownload en uitgevoerd, ziet u het venster connectiviteits diagnostiek. Het hulp programma gaat u stapsgewijs door uw Federatie verbinding te testen.
+5. De connectiviteits analyse opent uw SAML 2,0 IDP om u aan te melden, voert u de referenties in voor de gebruikers-principal die u wilt testen:
+
+    ![Scherm opname van het aanmeldings venster voor uw SAML 2,0 IDP.](./media/how-to-connect-fed-saml-idp/saml1.png)
+
 6.  In het venster voor de Federatie test aanmelding voert u een account naam en wacht woord in voor de Azure AD-Tenant die is geconfigureerd voor federatief met uw SAML 2,0-ID-provider. Het hulp programma probeert zich aan te melden met die referenties en gedetailleerde resultaten van tests die tijdens de aanmeldings poging worden uitgevoerd, worden als uitvoer geleverd.
-![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
+
+    ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
+
 7. Dit venster toont een mislukt resultaat van testen. Als u op gedetailleerde resultaten bekijken klikt, wordt informatie weer gegeven over de resultaten voor elke test die is uitgevoerd. U kunt de resultaten ook opslaan op schijf om ze te delen.
  
->[!NOTE]
->De connectiviteits analyse test ook actieve Federatie met behulp van de WS *-en ECP/PAOS-protocollen. Als u deze niet gebruikt, kunt u de volgende fout negeren: de actieve aanmeldings stroom testen met het actieve Federatie-eind punt van uw identiteits provider.
+> [!NOTE]
+> De connectiviteits analyse test ook actieve Federatie met behulp van de WS *-en ECP/PAOS-protocollen. Als u deze niet gebruikt, kunt u de volgende fout negeren: de actieve aanmeldings stroom testen met het actieve Federatie-eind punt van uw identiteits provider.
 
 ### <a name="manually-verify-that-single-sign-on-has-been-set-up-correctly"></a>Hand matig controleren of eenmalige aanmelding juist is ingesteld
+
 Hand matige verificatie biedt extra stappen die u kunt nemen om ervoor te zorgen dat uw SAML 2,0-ID-provider in veel scenario's goed werkt.
 Voer de volgende stappen uit om te controleren of eenmalige aanmelding juist is ingesteld:
 
-
 1. Meld u op een computer die lid is van een domein aan bij uw Cloud service met dezelfde aanmeldings naam die u gebruikt voor uw bedrijfs referenties.
-2.  Klik in het vak wacht woord. Als eenmalige aanmelding is ingesteld, wordt het vak wacht woord grijs weer gegeven en ziet u het volgende bericht: "u bent nu verplicht om u aan te melden bij &lt; uw bedrijf &gt; ."
-3.  Klik op de koppeling aanmelden op &lt; uw bedrijf &gt; . Als u zich kunt aanmelden, is de eenmalige aanmelding ingesteld.
+2. Klik in het vak wacht woord. Als eenmalige aanmelding is ingesteld, wordt het vak wacht woord grijs weer gegeven en ziet u het volgende bericht: "u bent nu verplicht om u aan te melden bij &lt; uw bedrijf &gt; ."
+3. Klik op de koppeling aanmelden op &lt; uw bedrijf &gt; . Als u zich kunt aanmelden, is de eenmalige aanmelding ingesteld.
 
 ## <a name="next-steps"></a>Volgende stappen
-
 
 - [Active Directory Federation Services beheer en aanpassingen met Azure AD Connect](how-to-connect-fed-management.md)
 - [Azure AD-federation compatibiliteitslijst](how-to-connect-fed-compatibility.md)

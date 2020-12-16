@@ -3,12 +3,12 @@ title: Beweging detecteren, video opnemen in Azure Media Services
 description: In deze quickstart ziet u hoe u Live Video Analytics kunt gebruiken in IoT Edge om beweging in een live-videostream te detecteren en videoclips op te nemen in Azure Media Services.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 861351e16120c3f46612ba35518135fbfaf4c81b
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: 8872c9aefa0ed748cbed93d0f7376586859be9df
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91776473"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511889"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Quickstart: Beweging detecteren, video opnemen in Media Services
 
@@ -44,11 +44,11 @@ U kunt de module gebruiken om live-videostreams te analyseren door directe metho
 1. Klik met de rechtermuisknop en selecteer **Extensie-instellingen**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Op gebeurtenissen gebaseerde video-opname naar assets op basis van bewegingsgebeurtenissen":::
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Extensie-instellingen":::
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Op gebeurtenissen gebaseerde video-opname naar assets op basis van bewegingsgebeurtenissen":::
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
 
 ### <a name="invoke-graphtopologylist"></a>GraphTopologyList aanroepen
 In deze stap worden alle [graaftopologieën](media-graph-concept.md#media-graph-topologies-and-instances) in de module opgesomd.
@@ -59,7 +59,7 @@ In deze stap worden alle [graaftopologieën](media-graph-concept.md#media-graph-
     
 ```
 {
-    "@apiVersion" : "1.0"
+    "@apiVersion" : "2.0"
 }
 ```
 
@@ -84,7 +84,7 @@ Als u dezelfde stappen gebruikt als voor het aanroepen van GraphTopologyList, ku
 
 ```
 {
-    "@apiVersion": "1.0",
+    "@apiVersion": "2.0",
     "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
@@ -331,7 +331,7 @@ Roep nu GraphTopologyGet aan met de volgende nettolading
 ```
 
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
@@ -474,7 +474,7 @@ Roep nu de directe methode voor GraphInstanceSet aan met de volgende nettolading
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2",
     "properties" : {
         "topologyName" : "EVRtoAssetsOnMotionDetection",
@@ -556,7 +556,7 @@ Activeer nu het graafexemplaar, waarmee de stroom van livevideo via de module wo
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -580,7 +580,7 @@ Roep nu de directe methode voor GraphInstanceGet aan met de volgende nettolading
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -759,7 +759,7 @@ Roep de directe methode voor GraphInstanceDeactivate aan met de volgende nettola
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -787,7 +787,7 @@ Roep de directe methode voor GraphInstanceDelete aan met de volgende nettolading
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "Sample-Graph-2"
 }
 ```
@@ -811,7 +811,7 @@ Roep de directe methode voor GraphTopologyDelete aan met de volgende nettolading
 
 ```
 {
-    "@apiVersion" : "1.0",
+    "@apiVersion" : "2.0",
     "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```

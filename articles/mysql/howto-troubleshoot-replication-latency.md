@@ -7,12 +7,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 10/25/2020
-ms.openlocfilehash: a6ada3557350cd3f2f67dad54152eafded6639ec
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 30ac28ef996c42e99ebece27ec156777f0d033d2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93087023"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587873"
 ---
 # <a name="troubleshoot-replication-latency-in-azure-database-for-mysql"></a>Troubleshoot replication latency in Azure Database for MySQL (Problemen vanwege replicavertraging oplossen in Azure Database for MySQL)
 
@@ -31,9 +31,12 @@ De replicatie vertraging op de secundaire Lees replica's is afhankelijk van vers
 
 In dit artikel leert u hoe u de replicatie latentie in Azure Database for MySQL kunt oplossen. U begrijpt ook enkele veelvoorkomende oorzaken van verhoogde replicatie latentie op replica servers.
 
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+
 ## <a name="replication-concepts"></a>Concepten voor replicatie
 
-Wanneer een binair logboek is ingeschakeld, schrijft de bron server doorgevoerde trans acties naar het binaire logboek. Het binaire logboek wordt gebruikt voor replicatie. Het is standaard ingeschakeld voor alle nieuw ingerichte servers die ondersteuning bieden voor Maxi maal 16 TB aan opslag ruimte. Op replica servers worden twee threads uitgevoerd op elke replica-server. De ene thread is de *i/o-thread* en de andere is de *SQL-thread* :
+Wanneer een binair logboek is ingeschakeld, schrijft de bron server doorgevoerde trans acties naar het binaire logboek. Het binaire logboek wordt gebruikt voor replicatie. Het is standaard ingeschakeld voor alle nieuw ingerichte servers die ondersteuning bieden voor Maxi maal 16 TB aan opslag ruimte. Op replica servers worden twee threads uitgevoerd op elke replica-server. De ene thread is de *i/o-thread* en de andere is de *SQL-thread*:
 
 - De IO-thread maakt verbinding met de bron server en vraagt bijgewerkte binaire logboeken aan. Deze thread ontvangt de binaire logboek updates. Deze updates worden opgeslagen op een replica server in een lokaal logboek dat het *Relay-logboek* wordt genoemd.
 - De SQL-thread leest het relay-logboek en past vervolgens de gegevens wijzigingen op replica servers toe.

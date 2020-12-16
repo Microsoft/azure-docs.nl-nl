@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 7f56ff94c4dcf276accc56e8d1076266099d635d
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 10c06f5b36de880302f17dc17c1d47d5209dd902
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780702"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588468"
 ---
 # <a name="how-to-plan-a-consulting-service-offer-in-the-commercial-marketplace"></a>Een advies service-aanbieding plannen in de commerciële Marketplace
 
@@ -29,17 +29,42 @@ Aanbiedingen voor advies services worden gepubliceerd als **contact** gegevens. 
 
 Elke consulting-service moet zich richten op een van deze micro soft-producten, het **primaire product** van de aanbieding.
 
-|Primair product                               |                   |
-|-------------------------------|-------------------|
-|Azure                          |Dynamics 365 project Service Automation |
-|Dynamics 365 Business Central  |Dynamics 365 Sales |
-|Dynamics 365 commerce          |Dynamics 365 Supply Chain Management |
-|Dynamics 365 Customer Insights |Microsoft 365 |
-|Dynamics 365-klanten service  |Power Apps |
-|Dynamics 365-veld Service     |Power Automate |
-|Dynamics 365-Financiën           |Power BI |
-|Dynamics 365-marketing         |Power Virtual Agents |
-|    |    |
+:::row:::
+    :::column:::
+        Azure
+
+        Dynamics 365 Business Central
+
+        Dynamics 365 commerce
+
+        Dynamics 365 Customer Insights
+
+        Dynamics 365-klanten service
+
+        Dynamics 365-veld Service
+
+        Dynamics 365-Financiën
+
+        Dynamics 365-marketing
+    :::column-end:::
+    :::column:::
+        Dynamics 365 project Service Automation
+
+        Dynamics 365 Sales
+
+        Dynamics 365 Supply Chain Management
+
+        Microsoft 365
+
+        Power Apps
+
+        Power Automate
+
+        Power BI
+
+        Power Virtual Agents
+    :::column-end:::
+:::row-end:::
 
 Het primaire product dat u in Partner Center selecteert, bepaalt of uw aanbieding wordt gepubliceerd naar Microsoft AppSource of Azure Marketplace.
 

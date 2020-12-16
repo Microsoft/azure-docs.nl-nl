@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: deli, jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 03/25/2020
-ms.openlocfilehash: a5f01e81564561fe43ef6e55e6e9b3b67d6e1d77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27763536b859b7bc3e9aa0a7c490cb510c0fda41
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84945610"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588451"
 ---
 # <a name="schedule-and-run-recurring-automated-tasks-processes-and-workflows-with-azure-logic-apps"></a>Terugkerende en geautomatiseerde taken, processen en werkstromen plannen en uitvoeren met Azure Logic Apps
 
@@ -95,7 +95,7 @@ Stel dat de huidige datum en tijd 8 september 2017 om 1:00 uur is. U geeft de be
 
 | Begintijd | Huidige tijd | Terugkeerpatroon | Schema |
 |------------|--------------|------------|----------|
-| 2017-09-**07**T14:00:00Z <br>(2017-09-**07** om 2:00 uur) | 2017-09-**08**T13:00:00Z <br>(2017-09-**08** om 1:00 uur) | Elke twee dagen | geen |
+| 2017-09-**07** T14:00:00Z <br>(2017-09-**07** om 2:00 uur) | 2017-09-**08** T13:00:00Z <br>(2017-09-**08** om 1:00 uur) | Elke twee dagen | geen |
 |||||
 
 Voor de terugkeer patroon berekent de Logic Apps-Engine uitvoerings tijden op basis van de begin tijd, de eerdere uitvoerings tijden, waarna de volgende begin tijd voor de eerste uitvoering wordt gebruikt en de toekomstige uitvoeringen worden berekend op basis van de tijd van de laatste uitvoering.
@@ -115,7 +115,7 @@ Dit terugkeer patroon ziet er als volgt uit:
 
 | Begintijd | Eerste uitvoerings tijd | Toekomstige uitvoerings tijden |
 |------------|----------------|------------------|
-| 2017-09-**07** om 2:00 uur | 2017-09-**07** om 2:00 uur | 2017-09-**09** om 2:00 uur </br>2017-09-**11** om 2:00 uur </br>2017-09-**13** om 2:00 uur </br>2017-09-**15** om 2:00 uur </br>enzovoort... |
+| 2017-09-**07** om 2:00 uur | 2017-09-**08** om 1:00 uur (huidige tijd) | 2017-09-**09** om 2:00 uur </br>2017-09-**11** om 2:00 uur </br>2017-09-**13** om 2:00 uur </br>2017-09-**15** om 2:00 uur </br>enzovoort... |
 ||||
 
 Dus hoe ver in het verleden u de start tijd opgeeft, bijvoorbeeld 2017-09-**05** om 2:00 uur of 2017-09-**01** om 2:00 uur, gebruikt uw eerste run altijd de opgegeven begin tijd.
@@ -126,13 +126,13 @@ Dus hoe ver in het verleden u de start tijd opgeeft, bijvoorbeeld 2017-09-**05**
 
 Hier volgen enkele voor beelden van herhalingen die u kunt instellen voor de triggers die ondersteuning bieden voor de opties:
 
-| Trigger | Terugkeerpatroon | Interval | Frequency | Begintijd | Deze dagen | Deze uren | Deze minuten | Notitie |
+| Trigger | Terugkeerpatroon | Interval | Frequentie | Begintijd | Deze dagen | Deze uren | Deze minuten | Notitie |
 |---------|------------|----------|-----------|------------|---------------|----------------|------------------|------|
 | Optreden <br>Sliding window | Wordt elke 15 minuten uitgevoerd (geen begin datum en-tijd) | 15 | Minuut | geen | niet beschikbaar | geen | geen | Dit schema wordt onmiddellijk gestart, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. |
-| Optreden <br>Sliding window | Wordt elke 15 minuten uitgevoerd (met begin datum en-tijd) | 15 | Minuut | *start date* T*Start*tijd Z | niet beschikbaar | geen | geen | Dit schema wordt niet *eerder* gestart dan de opgegeven begin datum en-tijd, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. |
+| Optreden <br>Sliding window | Wordt elke 15 minuten uitgevoerd (met begin datum en-tijd) | 15 | Minuut | *start date* T *Start* tijd Z | niet beschikbaar | geen | geen | Dit schema wordt niet *eerder* gestart dan de opgegeven begin datum en-tijd, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. |
 | Optreden <br>Sliding window | Elk uur uitgevoerd, op het uur (met begin datum en-tijd) | 1 | Uur | *start date* Thh: 00:00Z | niet beschikbaar | geen | geen | Dit schema start niet *eerder* dan de opgegeven begin datum en-tijd. Toekomstige herhalingen worden elk uur uitgevoerd op het ' 00 ' minuut teken, dat wordt berekend op basis van de begin tijd. <p>Als de frequentie ' week ' of ' maand ' is, wordt in deze planning slechts één dag per week of één dag per maand uitgevoerd. |
 | Optreden <br>Sliding window | Elk uur wordt elke dag uitgevoerd (geen begin datum en-tijd) | 1 | Uur | geen | niet beschikbaar | geen | geen | Dit schema wordt onmiddellijk gestart en berekent toekomstige terugkeer patronen op basis van de tijd van de laatste uitvoering. <p>Als de frequentie ' week ' of ' maand ' is, wordt in deze planning slechts één dag per week of één dag per maand uitgevoerd. |
-| Optreden <br>Sliding window | Elk uur wordt elke dag uitgevoerd (met begin datum en-tijd) | 1 | Uur | *start date* T*Start*tijd Z | niet beschikbaar | geen | geen | Dit schema wordt niet *eerder* gestart dan de opgegeven begin datum en-tijd, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. <p>Als de frequentie ' week ' of ' maand ' is, wordt in deze planning slechts één dag per week of één dag per maand uitgevoerd. |
+| Optreden <br>Sliding window | Elk uur wordt elke dag uitgevoerd (met begin datum en-tijd) | 1 | Uur | *start date* T *Start* tijd Z | niet beschikbaar | geen | geen | Dit schema wordt niet *eerder* gestart dan de opgegeven begin datum en-tijd, waarna toekomstige terugkeer patronen worden berekend op basis van de laatste uitvoerings tijd. <p>Als de frequentie ' week ' of ' maand ' is, wordt in deze planning slechts één dag per week of één dag per maand uitgevoerd. |
 | Optreden <br>Sliding window | Wordt elke 15 minuten na het hele uur uitgevoerd, elk uur (met de begin datum en-tijd) | 1 | Uur | *start date* T00:15:00Z | niet beschikbaar | geen | geen | Dit schema start niet *eerder* dan de opgegeven begin datum en-tijd. Toekomstige herhalingen worden uitgevoerd met de ' 15 ' minuut markering, die wordt berekend op basis van de begin tijd, dus om 00:15 uur, 1:15 uur, 2:15 uur, enzovoort. |
 | Terugkeerpatroon | Wordt elke 15 minuten na het hele uur uitgevoerd, elk uur (geen begin datum en-tijd) | 1 | Dag | geen | niet beschikbaar | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 | 15 | Deze planning wordt uitgevoerd om 00:15 uur, 1:15 uur, 2:15 uur, enzovoort. Dit schema is ook gelijk aan de frequentie ' hour ' en een begin tijd met ' 15 ' minuten. |
 | Terugkeerpatroon | Wordt elke 15 minuten uitgevoerd bij de opgegeven minuut tekens (geen begin datum en-tijd). | 1 | Dag | geen | niet beschikbaar | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 | 0, 15, 30, 45 | Dit schema wordt pas gestart als de volgende opgegeven markering van 15 minuten. |
@@ -147,7 +147,7 @@ Hier volgen enkele voor beelden van herhalingen die u kunt instellen voor de tri
 | Terugkeerpatroon | Wordt elk uur uitgevoerd tijdens werk uren. | 1 | Week | geen | Selecteer alle dagen behalve zaterdag en zondag. | Selecteer de uren van de dag die u wilt. | Selecteer een wille keurig aantal minuten van het gewenste uur. | Als uw werk uren bijvoorbeeld 8:00 AM tot 5:00 uur zijn, selecteert u "8, 9, 10, 11, 12, 13, 14, 15, 16, 17" als de uren van de dag *plus* "0" als minuten van het uur. |
 | Terugkeerpatroon | Eenmaal per dag uitvoeren in weekends | 1 | Week | geen | ' Zaterdag ', ' zondag ' | Selecteer de uren van de dag die u wilt. | Selecteer eventueel een wille keurig aantal minuten van het uur. | Deze planning wordt elke zaterdag en zondag op het opgegeven schema uitgevoerd. |
 | Terugkeerpatroon | Elke 15 minuten twee wekelijks alleen op elke maandag uitvoeren | 2 | Week | geen | Bedraagt | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 | 0, 15, 30, 45 | Deze planning wordt elke maandag om de 15 minuten uitgevoerd. |
-| Terugkeerpatroon | Elke maand uitvoeren | 1 | Maand | *start date* T*Start*tijd Z | niet beschikbaar | niet beschikbaar | niet beschikbaar | Dit schema start niet *eerder* dan de opgegeven begin datum en-tijd en berekent toekomstige terugkeer patronen op de begin datum en-tijd. Als u geen start datum en-tijd opgeeft, gebruikt dit schema de aanmaak datum en-tijd. |
+| Terugkeerpatroon | Elke maand uitvoeren | 1 | Maand | *start date* T *Start* tijd Z | niet beschikbaar | niet beschikbaar | niet beschikbaar | Dit schema start niet *eerder* dan de opgegeven begin datum en-tijd en berekent toekomstige terugkeer patronen op de begin datum en-tijd. Als u geen start datum en-tijd opgeeft, gebruikt dit schema de aanmaak datum en-tijd. |
 | Terugkeerpatroon | Elk uur uitvoeren voor één dag per maand | 1 | Maand | {Zie opmerking} | niet beschikbaar | 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 | {Zie opmerking} | Als u geen start datum en-tijd opgeeft, gebruikt dit schema de aanmaak datum en-tijd. Als u de minuten voor de terugkeer planning wilt beheren, geeft u het aantal minuten van het uur, een begin tijd op of gebruikt u de aanmaak tijd. Als de begin tijd of aanmaak tijd 8:25 uur is, wordt deze planning bijvoorbeeld uitgevoerd om 8:25 uur, 9:25 uur, 10:25 uur, enzovoort. |
 |||||||||
 
@@ -155,7 +155,7 @@ Hier volgen enkele voor beelden van herhalingen die u kunt instellen voor de tri
 
 ## <a name="run-one-time-only"></a>Eén keer uitvoeren
 
-Als u uw logische app in de toekomst alleen in één keer wilt uitvoeren, kunt u de **scheduler-sjabloon Run Once-taken** gebruiken. Nadat u een nieuwe logische app hebt gemaakt, maar voordat u de ontwerp functie van Logic Apps hebt geopend, selecteert u in de lijst **categorie** van het gedeelte met **sjablonen** de optie **planning**en selecteert u vervolgens deze sjabloon:
+Als u uw logische app in de toekomst alleen in één keer wilt uitvoeren, kunt u de **scheduler-sjabloon Run Once-taken** gebruiken. Nadat u een nieuwe logische app hebt gemaakt, maar voordat u de ontwerp functie van Logic Apps hebt geopend, selecteert u in de lijst **categorie** van het gedeelte met **sjablonen** de optie **planning** en selecteert u vervolgens deze sjabloon:
 
 ![Selecteer de sjabloon scheduler: Once-taken uitvoeren](./media/concepts-schedule-automated-recurring-tasks-workflows/choose-run-once-template.png)
 

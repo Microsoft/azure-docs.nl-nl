@@ -7,12 +7,12 @@ services: web-application-firewall
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: rimansdo
-ms.openlocfilehash: fd474a32b4a517230a82615065d7815c04140045
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 7798d7e960286d4f8aa971eb2eb0b03d24bd6360
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96432965"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589454"
 ---
 # <a name="azure-web-application-firewall-and-azure-policy"></a>Azure Web Application firewall en Azure Policy
 
@@ -47,7 +47,7 @@ Er zijn verschillende ingebouwde Azure Policy definities voor het beheren van WA
     2.  **Uitsluitingen**: Selecteer alle resources uit het bereik die u wilt uitsluiten van de beleids toewijzing.
     3.  **Beleids definitie**: Selecteer de beleids definitie die moet worden toegepast op het bereik met uitsluitingen. Typ ' Web Application Firewall ' in de zoek balk om de relevante Web Application firewall-Azure Policy te kiezen.
 
-:::image type="content" source="../media/waf-azure-policy/policy-listing.png" alt-text="Tabblad basis informatie op de pagina beleid toewijzen":::
+:::image type="content" source="../media/waf-azure-policy/policy-listing.png" alt-text="Scherm opname van het tabblad beleids definities op de pagina beschik bare definities.":::
 
 5.  Selecteer het tabblad **para meters** en werk de para meters voor beleids toewijzing bij. Als u verder wilt verduidelijken wat de para meter doet, houdt u de muis aanwijzer boven het info pictogram naast de parameter naam voor verdere uitleg.
 

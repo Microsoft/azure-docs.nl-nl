@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 99f2c690360167626566b2ea45aef172e1e832ab
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: 6aeded077c20e59b3f9b3863a9956596382d3a82
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91828822"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97532084"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>De voorbeeld bestanden bekijken en bewerken
 
@@ -16,11 +16,11 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 
 1. Ga naar de map *src/cloud-to-device-console-app*. Hier ziet u het bestand *appsettings.json* en enkele andere bestanden:
 
-    * ***c2d-console-app.csproj***: het projectbestand voor Visual Studio Code.
-    * ***operations.json***: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
-    * ***Program.cs***: de voorbeeldcode van het programma. Deze code:
+    * ***c2d-console-app.csproj** _: het projectbestand voor Visual Studio Code.
+    _ ***operations.json** _: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
+    _ ***Program.cs** _: de voorbeeldprogrammacode. Deze code:
 
-        * De app-instellingen laden.
+        _ laadt de app-instellingen.
         * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om livevideostreams te analyseren door de bijbehorende [directe methoden](../../../direct-methods.md) aan te roepen.
         * Pauzeert, zodat u de uitvoer van het programma kunt controleren in het **TERMINAL**-venster en de gebeurtenissen die zijn gegenereerd door de module kunt controleren in het **UITVOER**-venster.
         * Roept directe methoden aan voor het opschonen van resources.
@@ -29,7 +29,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 1. Bewerk het bestand *operations.json*:
     * Wijzig de link naar de graaftopologie:
 
-        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/topology.json"`
+        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/2.0/topology.json"`
 
     * Bewerk onder `GraphInstanceSet` de naam van de graaftopologie zodat deze overeenkomt met de waarde in de voorgaande link:
 
@@ -76,7 +76,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Extensie-instellingen":::
+    > :::image type="content" source="../../../media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
 1. Klik met de rechtermuisknop op het Live Video Analytics-apparaat en selecteer **Bewaking van ingebouwd gebeurteniseindpunt starten**. Deze stap is nodig om de IoT Hub-gebeurtenissen te controleren in het venster **UITVOER** van Visual Studio Code. 
 
    ![Bewaking starten](../../../media/quickstarts/start-monitoring-iothub-events.png) 
@@ -91,7 +91,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
    Executing operation GraphTopologyList
    -----------------------  Request: GraphTopologyList  --------------------------------------------------
    {
-   "@apiVersion": "1.0"
+   "@apiVersion": "2.0"
    }
    ---------------  Response: GraphTopologyList - Status: 200  ---------------
    {
@@ -109,7 +109,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 
          ```
          {
-           "@apiVersion": "1.0",
+           "@apiVersion": "2.0",
            "name": "Sample-Graph-1",
            "properties": {
              "topologyName": "InferencingWithHttpExtension",

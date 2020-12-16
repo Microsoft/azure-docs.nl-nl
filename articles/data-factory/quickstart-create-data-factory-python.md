@@ -13,12 +13,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: 1ebeae8e16acf4ca2b82270cc6ec40151794ad58
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cc25ce4aa51535bbfd03d99ed413afa66a184fdb
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497330"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508778"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-python"></a>Quickstart: Een data factory en pijplijn maken met behulp van Python
 
@@ -421,7 +421,7 @@ In de console wordt de voortgang weergegeven van het maken van een data factory,
 
 Hier volgt een voorbeeld van uitvoer:
 
-```json
+```console
 Name: <data factory name>
 Id: /subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.DataFactory/factories/<data factory name>
 Location: eastus

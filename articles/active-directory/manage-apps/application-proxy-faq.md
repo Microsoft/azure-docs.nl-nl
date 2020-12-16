@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: c40a0cb362f8c43541194cd1ca0c57abbf8fa974
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 49388ee75fa3e5570a906998fdeaa579208fd636
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033099"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588587"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -80,10 +80,12 @@ Er zijn prestatie meter items die samen met de connector worden geïnstalleerd. 
 De connector hoeft zich niet in hetzelfde subnet bevinden. Er is echter een naam omzetting (DNS, hosts-bestand) nodig voor de bron en de benodigde netwerk verbinding (route ring naar de resource, poorten die zijn geopend op de bron, enzovoort). Zie [overwegingen met betrekking tot netwerk topologie bij het gebruik van Azure Active Directory-toepassingsproxy](application-proxy-network-topology.md)voor aanbevelingen.
 
 ### <a name="what-versions-of-windows-server-can-i-install-a-connector-on"></a>Met welke versies van Windows Server kan ik een connector installeren?
+
 Toepassings proxy vereist Windows Server 2012 R2 of hoger. Er is momenteel een beperking op HTTP2 voor Windows Server 2019. Als u de connector op Windows Server 2019 wilt gebruiken, moet u de volgende register sleutel toevoegen en de server opnieuw opstarten:
-    ```
-    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
-    ```
+
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
+```
 
 ## <a name="application-configuration"></a>Toepassingsconfiguratie
 

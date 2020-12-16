@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 35f503e7214fa91962c91c35611fc9447302f9fc
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9f2bbc39b9c9c4770775bf49a7775ab8980a1f3b
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462813"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589896"
 ---
 # <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Continue integratie en implementatie voor een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -42,7 +42,7 @@ In deze eenvoudige zelf studie wordt uitgelegd hoe u het SSDT-data base project 
 
       ![YAML](./media/sql-data-warehouse-continuous-integration-and-deployment/3-yaml-file.png "YAML")
 
-Op dit moment hebt u een eenvoudige omgeving waar elke check-in voor de hoofd vertakking van de opslag plaats van de bron beheer automatisch een succes volle Visual Studio-build van uw database project moet activeren. Controleer of de automatisering aan het einde van het project wordt uitgevoerd door een wijziging aan te brengen in uw lokale data base en de wijzigingen in uw hoofd vertakking in te scha kelen.
+Op dit moment hebt u een eenvoudige omgeving waarin elke check-in voor uw bron beheer-hoofd vertakking automatisch een succes volle Visual Studio-build van uw database project moet activeren. Valideer of de automatisering aan het einde van het project wordt uitgevoerd door een wijziging aan te brengen in uw lokale data base en de hoofd vertakking in te scha kelen.
 
 ## <a name="continuous-deployment-with-the-azure-synapse-analytics-or-database-deployment-task"></a>Continue implementatie met de implementatie taak van Azure Synapse Analytics (of data base)
 

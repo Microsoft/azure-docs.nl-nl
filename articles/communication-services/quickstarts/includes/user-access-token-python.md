@@ -10,12 +10,12 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: e307265cc95815f426317cee69d64b210bcd67a9
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 472129be5baa865365b49894b705d84c23e9cd04
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506233"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97506296"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -85,7 +85,7 @@ Gebruik de methode `issue_token` om een toegangstoken voor de al bestaande Commu
 
 ```python
 # Issue an access token with the "voip" scope for an identity
-token_result = client.issue_token(user, ["voip"])
+token_result = client.issue_token(identity, ["voip"])
 expires_on = token_result.expires_on.strftime('%d/%m/%y %I:%M %S %p')
 print("\nIssued an access token with 'voip' scope that expires at " + expires_on + ":")
 print(token_result.token)

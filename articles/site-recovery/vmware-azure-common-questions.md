@@ -3,12 +3,12 @@ title: Veelgestelde vragen over VMware-nood herstel met Azure Site Recovery
 description: Krijg antwoorden op veelgestelde vragen over herstel na nood gevallen van on-premises virtuele VMware-machines naar Azure met behulp van Azure Site Recovery.
 ms.date: 11/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8f292e7f624b80e8e13514a714c5759d88fbe57c
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: a272486eea111ab8c8e489556986f12f382e3f65
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379987"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587789"
 ---
 # <a name="common-questions-about-vmware-to-azure-replication"></a>Algemene vragen over replicatie van VMware naar Azure
 
@@ -146,6 +146,10 @@ Replicatie is doorlopend bij het repliceren van virtuele VMware-machines naar Az
 ### <a name="can-i-extend-replication"></a>Kan ik replicatie uitbreiden?
 
 Uitgebreide of gekoppelde replicatie wordt niet ondersteund. Vraag deze functie aan in het [Feedback forum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).
+
+### <a name="how-can-i-track-progress-of-initial-replicationsynchronization"></a>Hoe kan ik de voortgang van de initiële replicatie/synchronisatie volgen?
+
+Deze mogelijkheid is onlangs Site Recovery Services. Werk uw Site Recovery-infra structuur (configuratie servers, scale-out proces servers) en de Mobility-agent bij naar versie 9,36 of hoger om nauw keurige details te krijgen. Meer informatie over hoe u [de voortgang kunt volgen.](vmware-azure-enable-replication.md#monitor-initial-replication)
 
 ### <a name="can-i-do-an-offline-initial-replication"></a>Kan ik een offline initiële replicatie uitvoeren?
 

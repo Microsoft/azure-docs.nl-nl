@@ -4,20 +4,20 @@ description: Met zacht-verwijderen in Azure Key Vault kunt u verwijderde sleutel
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-author: msmbaldwin
-ms.author: mbaldwin
-ms.date: 09/30/2020
-ms.openlocfilehash: 184003e42a14e786cc52c4f585c6781f7b9fe0e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+author: ShaneBala-keyvault
+ms.author: sudbalas
+ms.date: 12/15/2020
+ms.openlocfilehash: 0f428954ac6ef74253e6e6e430977a85a3943f99
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452191"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589981"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Azure Key Vault: overzicht van voorlopig verwijderen
 
 > [!IMPORTANT]
-> U moet voorlopig verwijderen direct inschakelen voor uw sleutel kluizen. De mogelijkheid om te voor komen dat de Soft-software wordt verwijderd, wordt aan het einde van het jaar afgeschaft en er wordt voor alle sleutel kluizen automatisch de beveiliging van tijdelijke verwijdering ingeschakeld.  Bekijk [hier](soft-delete-change.md) de volledige Details
+> U moet voorlopig verwijderen direct inschakelen voor uw sleutel kluizen. De mogelijkheid om te voor komen dat de Soft-software wordt verwijderd, zal binnenkort worden afgeschaft. Bekijk [hier](soft-delete-change.md) de volledige Details
 
 Met de functie voor het tijdelijk verwijderen van Key Vault kunt u de verwijderde kluizen en verwijderde sleutel kluis objecten (bijvoorbeeld sleutels, geheimen, certificaten), ook wel zacht verwijderen genoemd. We behandelen de volgende scenario's: deze beveiliging biedt de volgende beveiligings problemen:
 

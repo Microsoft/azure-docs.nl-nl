@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 739be373992fcd994f085f8571675779e450bfee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca24a781f4f3ad5c210813dabbb896de35056ed6
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87090209"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588706"
 ---
 # <a name="collaborative-coding-with-git"></a>Samenwerken aan code met Git
 
@@ -39,7 +39,7 @@ U kunt ook een nieuwe vertakking maken met behulp van de volgende Git Bash-opdra
 git checkout -b <new branch name> <base branch name>
 
 ```
-Als u geen opgeeft \<base branch name> , wordt de nieuwe vertakking gebaseerd op `master` . 
+Als u geen opgeeft \<base branch name> , wordt de nieuwe vertakking gebaseerd op `main` . 
 
 Als u wilt overschakelen naar uw werk vertakking, voert u de volgende opdracht uit: 
 
@@ -47,7 +47,7 @@ Als u wilt overschakelen naar uw werk vertakking, voert u de volgende opdracht u
 git checkout <working branch name>
 ```
 
-Nadat u bent overgeschakeld naar de werk vertakking, kunt u beginnen met het ontwikkelen van code of documentatie artefacten om het werk item te volt ooien. Hiermee `git checkout master` schakelt u terug naar de `master` vertakking.
+Nadat u bent overgeschakeld naar de werk vertakking, kunt u beginnen met het ontwikkelen van code of documentatie artefacten om het werk item te volt ooien. Hiermee `git checkout main` schakelt u terug naar de `main` vertakking.
 
 Het is een goed idee om een Git-vertakking te maken voor elk werk item van de gebruikers hoofdtekst. Voor elk taak werk item kunt u vervolgens een vertakking maken op basis van de vertakking van de gebruikers verhaal. Organiseer de vertakkingen in een hiërarchie die overeenkomt met de gebruikers Story-Task relatie wanneer u meerdere personen hebt die aan verschillende gebruikers hoofdtekst werken voor hetzelfde project of op verschillende taken voor hetzelfde gebruikers verhaal. U kunt conflicten minimaliseren door ervoor te zorgen dat elk teamlid aan een andere vertakking werkt of op verschillende code of andere artefacten wanneer een vertakking wordt gedeeld. 
 
@@ -55,7 +55,7 @@ In het volgende diagram ziet u de aanbevolen strategie voor vertakkingen voor TD
 
 ![3](./media/collaborative-coding-with-git/3-git-branches.png)
 
-U kunt ook een werk item aan een bestaande vertakking koppelen. Selecteer **koppeling toevoegen**op de **detail** pagina van een werk item. Selecteer vervolgens een bestaande vertakking waaraan u het werk item wilt koppelen en selecteer **OK**. 
+U kunt ook een werk item aan een bestaande vertakking koppelen. Selecteer **koppeling toevoegen** op de **detail** pagina van een werk item. Selecteer vervolgens een bestaande vertakking waaraan u het werk item wilt koppelen en selecteer **OK**. 
 
 ![4](./media/collaborative-coding-with-git/4-link-to-an-existing-branch.png)
 
@@ -80,7 +80,7 @@ Ga op de hoofd pagina van uw Azure DevOps-project naar **opslag plaatsen**  >  *
 
 ![6](./media/collaborative-coding-with-git/6-spring-create-pull-request.png)
 
-Ga, indien nodig, in het scherm **nieuwe pull-aanvraag** naar de Git-opslag plaats en de vertakking waarnaar u uw wijzigingen wilt samen voegen. U kunt andere informatie toevoegen of wijzigen. Voeg onder **revisoren**de namen van de revisoren toe en selecteer vervolgens **maken**. 
+Ga, indien nodig, in het scherm **nieuwe pull-aanvraag** naar de Git-opslag plaats en de vertakking waarnaar u uw wijzigingen wilt samen voegen. U kunt andere informatie toevoegen of wijzigen. Voeg onder **revisoren** de namen van de revisoren toe en selecteer vervolgens **maken**. 
 
 ![7](./media/collaborative-coding-with-git/7-spring-send-pull-request.png)
 
@@ -90,7 +90,7 @@ Wanneer u de pull-aanvraag hebt gemaakt, krijgen uw revisoren een e-mail melding
 
 ![8](./media/collaborative-coding-with-git/8-add_comments.png)
 
-Nadat de revisoren de wijzigingen hebben goedgekeurd, kan u of iemand anders met de machtigingen voor samen voegen de werk vertakking samen voegen met de basis vertakking. Selecteer **volledig**en selecteer vervolgens **volledig samen voegen** in het dialoog venster **pull-aanvraag volt** ooien. U kunt ervoor kiezen om de werk vertakking te verwijderen nadat deze is samengevoegd. 
+Nadat de revisoren de wijzigingen hebben goedgekeurd, kan u of iemand anders met de machtigingen voor samen voegen de werk vertakking samen voegen met de basis vertakking. Selecteer **volledig** en selecteer vervolgens **volledig samen voegen** in het dialoog venster **pull-aanvraag volt** ooien. U kunt ervoor kiezen om de werk vertakking te verwijderen nadat deze is samengevoegd. 
 
 ![10](./media/collaborative-coding-with-git/10-spring-complete-pullrequest.png)
 
@@ -105,7 +105,7 @@ Wanneer u teruggaat naar **opslag plaatsen** in de linkernavigatiebalk, kunt u z
 U kunt ook de volgende Git Bash-opdrachten gebruiken om de `script` werk vertakking samen te voegen met de basis vertakking en de werk vertakking na het samen voegen te verwijderen:
 
 ```bash
-git checkout master
+git checkout main
 git merge script
 git branch -d script
 ```

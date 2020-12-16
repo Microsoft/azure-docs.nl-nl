@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 36592151385a08d75b9b34e85bfa9d62342fc8cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddf8236dbbc9714c705e442bb65eb2ac3d293cc7
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80991566"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589573"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Gegevens verplaatsen van een HTTP-bron met behulp van Azure Data Factory
 
@@ -34,7 +34,7 @@ Data Factory ondersteunt momenteel alleen het verplaatsen van gegevens van een H
 
 ## <a name="supported-scenarios-and-authentication-types"></a>Ondersteunde scenario's en verificatie typen
 
-U kunt deze HTTP-connector gebruiken om gegevens op te halen uit *een Cloud en een on-premises http/S-eind punt* met behulp van de HTTP **Get** -of **post** -methoden. De volgende verificatie typen worden ondersteund: **Anonymous**, **Basic**, **Digest**, **Windows**en **ClientCertificate**. Let op het verschil tussen deze connector en de [Web Table-connector](data-factory-web-table-connector.md). De Web Table-connector extraheert tabel inhoud van een HTML-webpagina.
+U kunt deze HTTP-connector gebruiken om gegevens op te halen uit *een Cloud en een on-premises http/S-eind punt* met behulp van de HTTP **Get** -of **post** -methoden. De volgende verificatie typen worden ondersteund: **Anonymous**, **Basic**, **Digest**, **Windows** en **ClientCertificate**. Let op het verschil tussen deze connector en de [Web Table-connector](data-factory-web-table-connector.md). De Web Table-connector extraheert tabel inhoud van een HTML-webpagina.
 
 Wanneer u gegevens van een on-premises HTTP-eind punt kopieert, moet u Data Management Gateway installeren in de on-premises omgeving of in een Azure VM. Zie [gegevens verplaatsen tussen on-premises locaties en de Cloud](data-factory-move-data-between-onprem-and-cloud.md)voor meer informatie over Data Management Gateway en voor stapsgewijze instructies voor het instellen van de gateway.
 
@@ -44,7 +44,7 @@ U kunt een pijp lijn met een Kopieer activiteit maken om gegevens te verplaatsen
 
 - De eenvoudigste manier om een pijp lijn te maken, is door de Gegevens kopiëren wizard te gebruiken. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md)voor een snelle walkthrough bij het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, een **Azure Resource Manager sjabloon**, de **.net API**of de **rest API**. Zie de [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. Zie [JSON-voor beelden](#json-examples)voor json-voor beelden waarmee gegevens worden gekopieerd van een HTTP-bron naar Azure Blob-opslag.
+- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, een **Azure Resource Manager sjabloon**, de **.net API** of de **rest API**. Zie de [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. Zie [JSON-voor beelden](#json-examples)voor json-voor beelden waarmee gegevens worden gekopieerd van een HTTP-bron naar Azure Blob-opslag.
 
 ## <a name="linked-service-properties"></a>Eigenschappen van gekoppelde service
 
@@ -53,9 +53,9 @@ De volgende tabel beschrijft de JSON-elementen die specifiek zijn voor de HTTP-g
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | type | De eigenschap **type** moet worden ingesteld op **http**. | Ja |
-| url | De basis-URL naar de webserver. | Ja |
-| authenticationType | Hiermee geeft u het verificatie type op. Toegestane waarden zijn **anoniem**, **basis**, **Digest**, **Windows**en **ClientCertificate**. <br><br> Raadpleeg latere secties in dit artikel voor meer informatie over de eigenschappen en JSON-voor beelden voor deze verificatie typen. | Ja |
-| enableServerCertificateValidation | Hiermee geeft u op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld als de bron een HTTPS-webserver is. Stel dit in op **False**als uw HTTPS-server een zelfondertekend certificaat gebruikt. | Nee<br /> (de standaard waarde is **True**) |
+| URL | De basis-URL naar de webserver. | Ja |
+| authenticationType | Hiermee geeft u het verificatie type op. Toegestane waarden zijn **anoniem**, **basis**, **Digest**, **Windows** en **ClientCertificate**. <br><br> Raadpleeg latere secties in dit artikel voor meer informatie over de eigenschappen en JSON-voor beelden voor deze verificatie typen. | Ja |
+| enableServerCertificateValidation | Hiermee geeft u op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld als de bron een HTTPS-webserver is. Stel dit in op **False** als uw HTTPS-server een zelfondertekend certificaat gebruikt. | Nee<br /> (de standaard waarde is **True**) |
 | gatewayName | De naam van het Data Management Gateway exemplaar dat moet worden gebruikt om verbinding te maken met een on-premises HTTP-bron. | Ja, als u gegevens kopieert van een on-premises HTTP-bron |
 | encryptedCredential | De versleutelde referentie voor toegang tot het HTTP-eind punt. De waarde wordt automatisch gegenereerd wanneer u de verificatie gegevens configureert in de wizard kopiëren of via het dialoog venster **ClickOnce** . | Nee<br /> (alleen Toep assen wanneer u gegevens kopieert van een on-premises HTTP-server) |
 
@@ -63,7 +63,7 @@ Zie [gegevens verplaatsen tussen on-premises bronnen en de Cloud met behulp van 
 
 ### <a name="using-basic-digest-or-windows-authentication"></a>Basis verificatie, verificatie samenvatting of Windows-authenticatie gebruiken
 
-Stel **authenticationType** in op **Basic**, **Digest**of **Windows**. Naast de algemene HTTP-connector eigenschappen die in de voor gaande secties worden beschreven, stelt u de volgende eigenschappen in:
+Stel **authenticationType** in op **Basic**, **Digest** of **Windows**. Naast de algemene HTTP-connector eigenschappen die in de voor gaande secties worden beschreven, stelt u de volgende eigenschappen in:
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ Als u basis verificatie wilt gebruiken, stelt u **authenticationType** in op **C
 Als u **certThumbprint** gebruikt voor verificatie en het certificaat is geïnstalleerd in het persoonlijke archief van de lokale computer, verleent u lees machtigingen voor de Gateway Service:
 
 1. Open de micro soft Management Console (MMC). Voeg de module **certificaten** toe die gericht is op de **lokale computer**.
-2. Vouw **certificaten**  >  **persoonlijk**uit en selecteer vervolgens **certificaten**.
+2. Vouw **certificaten**  >  **persoonlijk** uit en selecteer vervolgens **certificaten**.
 3. Klik met de rechter muisknop op het certificaat in het persoonlijke archief en selecteer vervolgens **alle taken**  > **persoonlijke sleutels beheren**.
 3. Voeg op het tabblad **beveiliging** het gebruikers account toe waaronder de Data Management gateway host-service wordt uitgevoerd, met lees toegang tot het certificaat.  
 
@@ -120,8 +120,8 @@ Deze gekoppelde service koppelt uw data factory aan een on-premises HTTP-webserv
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-            "certThumbprint": "thumbprint of certificate",
-            "gatewayName": "gateway name"
+        "certThumbprint": "thumbprint of certificate",
+        "gatewayName": "gateway name"
 
         }
     }
@@ -142,8 +142,8 @@ Deze gekoppelde service koppelt uw data factory aan een on-premises HTTP-webserv
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-            "embeddedCertData": "Base64-encoded cert data",
-            "password": "password of cert"
+        "embeddedCertData": "Base64-encoded cert data",
+        "password": "password of cert"
         }
     }
 }
@@ -164,21 +164,21 @@ De sectie **typeProperties** verschilt voor elk type gegevensset. De sectie **ty
 | requestMethod | De HTTP-methode. Toegestane waarden zijn **Get** en **post**. | Nee <br />(de standaard waarde is **Get**) |
 | additionalHeaders | Aanvullende HTTP-aanvraag headers. | Nee |
 | requestBody | De hoofd tekst van de HTTP-aanvraag. | Nee |
-| indeling | Als u *de gegevens wilt ophalen van een HTTP-eind punt alsof-is* zonder te parseren, slaat u de instelling van de **indeling** over. <br><br> Als u de inhoud van het HTTP-antwoord tijdens het kopiëren wilt parseren, worden de volgende indelings typen ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**en **ParquetFormat**. Zie [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, Orc- [indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format)voor meer informatie. |Nee |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen: **gzip**, **Deflate**, **bzip2**en **ZipDeflate**. Ondersteunde niveaus: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
+| indeling | Als u *de gegevens wilt ophalen van een HTTP-eind punt alsof-is* zonder te parseren, slaat u de instelling van de **indeling** over. <br><br> Als u de inhoud van het HTTP-antwoord tijdens het kopiëren wilt parseren, worden de volgende indelings typen ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat** en **ParquetFormat**. Zie [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, Orc- [indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format)voor meer informatie. |Nee |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
 
 **Voor beeld: de methode GET (standaard) gebruiken**
 
 ```json
 {
-    "name": "HttpSourceDataInput",
+  "name": "HttpSourceDataInput",
     "properties": {
-        "type": "Http",
+    "type": "Http",
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
-            "relativeUrl": "XXX/test.xml",
-            "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
-        },
+      "relativeUrl": "XXX/test.xml",
+        "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
+    },
         "external": true,
         "availability": {
             "frequency": "Hour",
@@ -198,7 +198,7 @@ De sectie **typeProperties** verschilt voor elk type gegevensset. De sectie **ty
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
             "relativeUrl": "/XXX/test.xml",
-           "requestMethod": "Post",
+       "requestMethod": "Post",
             "requestBody": "body for POST HTTP request"
         },
         "external": true,
@@ -283,14 +283,14 @@ Als u **extern** instelt op **True** , informeert de Data Factory-service dat de
 
 ```json
 {
-    "name": "HttpSourceDataInput",
+  "name": "HttpSourceDataInput",
     "properties": {
-        "type": "Http",
+    "type": "Http",
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
             "relativeUrl": "$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)",
-            "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
-        },
+        "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
+    },
         "external": true,
         "availability": {
             "frequency": "Hour",

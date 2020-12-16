@@ -4,15 +4,15 @@ description: Ontdek de functies en voordelen van Azure Spring Cloud voor het imp
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: overview
-ms.date: 09/08/2020
+ms.date: 12/02/2020
 ms.author: brendm
-ms.custom: devx-track-java
-ms.openlocfilehash: 041ef9950300129d54c9374939e13a2f99035bc1
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.custom: devx-track-java, contperf-fy21q2
+ms.openlocfilehash: fc3f78131518b4d8740c25ab37c48d4444deef10
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532840"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563140"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Wat is Azure Spring Cloud?
 

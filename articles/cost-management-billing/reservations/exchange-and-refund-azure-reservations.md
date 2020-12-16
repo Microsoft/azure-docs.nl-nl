@@ -5,14 +5,14 @@ author: yashesvi
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 12/15/2020
 ms.author: banders
-ms.openlocfilehash: 89b01205c08216b3ce1ec2d36cce48335b49eb47
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b0f17149eb646b6108dc6a81922e6e5b00f143d6
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344280"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560539"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Selfserviceopties voor inruilen en retourneren voor Azure Reservations
 
@@ -21,7 +21,7 @@ Azure-reserveringen bieden flexibiliteit om te voldoen aan uw evoluerende behoef
 De selfserviceoptie voor inwisselen en annuleren is niet beschikbaar voor Enterprise Agreement-klanten van de Amerikaanse overheid. Andere abonnementstypen voor de Amerikaanse overheid, zoals Betalen per gebruik en CSP, (Cloud Solution Provider) worden wel ondersteund.
 
 > [!NOTE]
-> - **U moet eigenaarsrechten voor de reserveringsorder hebben om een bestaande reservering in te wisselen of er een restitutie voor te krijgen.** U kunt [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](./manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
+> - **U moet eigenaarsrechten voor de reserveringsorder hebben om een bestaande reservering in te wisselen of er een restitutie voor te krijgen.** U kunt [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](./manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
 > - Microsoft brengt momenteel geen kosten in rekening voor vroegtijdige beëindiging voor restitutie van reserveringen. Mogelijk worden in de toekomst wel kosten voor restituties in rekening gebracht. Momenteel staat er geen datum voor het inschakelen van de kosten gepland.
 
 ## <a name="how-to-exchange-or-refund-an-existing-reservation"></a>Een bestaande reservering inwisselen of restitueren
@@ -66,7 +66,7 @@ Azure heeft de volgende beleidsregels voor annuleringen, inwisselingen en restit
 **Beleid voor inwisselen**
 
 - U kunt meerdere bestaande reserveringen retourneren om één nieuwe reservering van hetzelfde type aan te schaffen. U kunt geen reserveringen van het ene type inwisselen voor een andere. U kunt bijvoorbeeld geen VM-reservering retourneren om een SQL-reservering aan te schaffen. U kunt reserveringseigenschappen wijzigen zoals familie, serie, versie, SKU, regio, hoeveelheid en periode wijzigen met een inwisseling.
-- Alleen eigenaars van reserveringen kunnen een inwisseling verwerken. [Meer informatie over het toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
+- Alleen eigenaars van reserveringen kunnen een inwisseling verwerken. [Meer informatie over het toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
 - Een inwisseling wordt verwerkt als een restitutie en een nieuwe aankoop: er worden verschillende transacties gemaakt voor de annulering en de aankoop van de nieuwe reservering. Het reserveringsbedrag naar rato wordt gerestitueerd voor de reserveringen die zijn ingeruild. De kosten voor de nieuwe aankoop worden volledig in rekening gebracht. Het reserveringsbedrag naar rato is de dagelijkse restwaarde naar rato van de reservering die wordt geretourneerd.
 - U kunt reserveringen inwisselen of hier restitutie voor aanvragen zelfs als de Enterprise Agreement die is gebruikt om de reservering aan te schaffen is verlopen en is vernieuwd als een nieuwe overeenkomst.
 - De levenslange toezegging van de nieuwe reservering moet gelijk zijn aan of groter zijn dan de resterende toezegging van de geretourneerde reservering. Bijvoorbeeld: voor een reservering van drie jaar à USD 100 per maand, die na de 18e betaling is geretourneerd, moet de toezegging voor de levensduur van de nieuwe reservering USD 1800 zijn of hoger (maandelijks of vooruit betaald).
@@ -79,7 +79,7 @@ Azure heeft de volgende beleidsregels voor annuleringen, inwisselingen en restit
 - De totale geannuleerde toezegging mag niet groter zijn dan 50.000 USD in een doorlopende periode van 12 maanden voor een factureringsprofiel of één inschrijving. Bijvoorbeeld: voor een reservering van drie jaar à USD 100 per maand en die in de 18e maand is terugbetaald, bedraagt de geannuleerde toezegging USD 1800. Na de terugbetaling is uw nieuwe beschikbare limiet voor restitutie USD 48.200. Binnen 365 dagen na de restitutie wordt de limiet van USD 48.200 met USD 1800 verhoogd en heeft uw nieuwe pool een waarde van USD 50.000. Elke andere annulering van een reservering voor het factureringsprofiel of de EA-inschrijving wordt van dezelfde pool afgetrokken en dezelfde aanvullingslogica wordt toegepast.
 - In Azure wordt geen terugbetaling verwerkt die de limiet van 50.000 USD overschrijdt in een periode van twaalf maanden voor een factureringsprofiel of EA-inschrijving.
 - Restituties worden berekend op basis van de laagste prijs, zijnde de aankoopprijs of de huidige prijs van de reservering, welke het laagste is.
-- Alleen eigenaren van reserveringsorders kunnen een restitutie verwerken. [Meer informatie over het toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation).
+- Alleen eigenaren van reserveringsorders kunnen een restitutie verwerken. [Meer informatie over het toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default).
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
 

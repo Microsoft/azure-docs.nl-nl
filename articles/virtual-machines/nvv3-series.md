@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dc6056653fc50976439d4b16594e6d554e62f061
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65107b0924351ca6debf37201e8849ffe8dd1eab
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652819"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589423"
 ---
 # <a name="nvv3-series"></a>NVv3-serie
 
@@ -26,6 +26,7 @@ Elke GPU in NVv3-exemplaren wordt geleverd met een GRID-licentie. Deze licentie 
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+Versneld netwerken: ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) | Virtuele werk stations | Virtuele toepassingen |
@@ -35,8 +36,6 @@ Elke GPU in NVv3-exemplaren wordt geleverd met een GRID-licentie. Deze licentie 
 | Standard_NV48s_v3 |48 | 448 | 1280 | 4 | 32 | 32 | 80000/800 | 8 / 24000 | 4 | 100 |
 
 <sup>1</sup> 1 GPU = One-halve M60-kaart.
-
-<sup>2</sup> op dit moment wordt versneld netwerken niet ondersteund in deze VM-familie, waardoor de netwerk prestaties van de werkelijke wereld mogelijk lager zijn dan de maximale theoretische getallen die hier worden vastgelegd.
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 

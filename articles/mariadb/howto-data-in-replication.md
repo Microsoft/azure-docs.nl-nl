@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 9/29/2020
-ms.openlocfilehash: fe7e02cc34dc9c97e540d7b8d96c48ee8d5cfe09
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3ed0fea4846b969c2af80aa525f7da64e7700bb5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535364"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587924"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Replicatie van inkomende gegevens configureren in Azure Database for MariaDB
 
@@ -52,7 +52,7 @@ Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations
 
 In de volgende stappen wordt de MariaDB-server die on-premises, in een VM of in een Cloud database service voor Replicatie van inkomende gegevens wordt gehost, voor bereid en geconfigureerd. De MariaDB-server is de bron in Replicatie van inkomende gegevens.
 
-1. Controleer de [vereisten van de hoofd server](concepts-data-in-replication.md#requirements) voordat u doorgaat. 
+1. Controleer de [vereisten van de primaire server](concepts-data-in-replication.md#requirements) voordat u doorgaat. 
 
 2. Zorg ervoor dat de bron server zowel binnenkomend als uitgaand verkeer op poort 3306 toestaat en dat de bron server een **openbaar IP-adres** heeft, de DNS openbaar toegankelijk is of een Fully QUALIFIED domain name (FQDN) heeft. 
    
@@ -284,7 +284,7 @@ In de volgende stappen wordt de MariaDB-server die on-premises, in een VM of in 
     
     Vanwege een systeem eigen replicatie beperking in MariaDB moet u voor-  [`sync_master_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) en- [`sync_relay_log_info`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) variabelen instellen voor replicatie zonder het GTID-scenario.
 
-    Controleer de en de variabelen van uw slave `sync_master_info` `sync_relay_log_info` -server om er zeker van te zijn dat de replicatie van de gegevens stabiel is en stel de variabelen in op `1` .
+    Controleer de gegevens van de replica server `sync_master_info` en de `sync_relay_log_info` variabelen om er zeker van te zijn dat de replicatie stabiel is en stel de variabelen in op `1` .
     
 ## <a name="other-stored-procedures"></a>Andere opgeslagen procedures
 

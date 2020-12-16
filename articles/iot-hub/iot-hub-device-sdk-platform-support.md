@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.author: robinsh
-ms.openlocfilehash: 5df36cdb3c02fd4c813625c4869c21581f009b02
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b8f8403617a5fc8b442e8a3f74ab9226fe1479fe
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152221"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588757"
 ---
 # <a name="azure-iot-device-sdks-platform-support"></a>Ondersteuning voor Azure IoT Device Sdk's-platform
 
@@ -34,7 +34,7 @@ Micro soft publiceert open-source Sdk's op GitHub voor de volgende talen: C, .NE
 
 Voor elk van de vermelde Sdk's, micro soft:
 
-* Bouwt en voert voortdurend end-to-end-tests uit op basis van de hoofd vertakking van de relevante SDK in GitHub op verschillende populaire platforms.  Om een test dekking te bieden in verschillende compiler versies, testen we doorgaans op de nieuwste LTS-versie en de meest populaire versie.
+* Bouwt en voert voortdurend end-to-end-tests uit op basis van de belangrijkste vertakking van de relevante SDK in GitHub op verschillende populaire platforms.  Om een test dekking te bieden in verschillende compiler versies, testen we doorgaans op de nieuwste LTS-versie en de meest populaire versie.
 
 * Biedt installatie richtlijnen of installatie pakketten, indien van toepassing.
 

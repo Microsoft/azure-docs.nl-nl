@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 3218df4601ef7a5e1b1e04c20c89eefc367b720b
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 7753c6c118d763163e6bc8f69f5b4eee13fe2393
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746451"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588791"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Real-time sensor gegevens visualiseren vanuit uw Azure IoT hub in een webtoepassing
 
@@ -205,7 +205,7 @@ In deze sectie maakt u een web-app in App Service en implementeert u uw code hie
 8. Als u de code wilt implementeren in App Service, voert u de volgende opdracht in het opdracht venster in. Als u wordt gevraagd om referenties, voert u de referenties voor implementatie op gebruikers niveau in die u in stap 5 hebt gemaakt. Zorg ervoor dat u pusht naar de hoofd vertakking van de App Service extern.
 
     ```cmd
-    git push webapp master:master
+    git push webapp main:main
     ```
 
 9. De voortgang van de implementatie wordt bijgewerkt in uw opdracht venster. Een geslaagde implementatie eindigt met regels die vergelijkbaar zijn met de volgende uitvoer:
@@ -216,7 +216,7 @@ In deze sectie maakt u een web-app in App Service en implementeert u uw code hie
     remote: Running post deployment command(s)...
     remote: Deployment successful.
     To https://contoso-web-app-3.scm.azurewebsites.net/contoso-web-app-3.git
-    6b132dd..7cbc994  master -> master
+    6b132dd..7cbc994  main -> main
     ```
 
 10. Voer de volgende opdracht uit om een query uit te voeren op de status van uw web-app en controleer of deze wordt uitgevoerd:

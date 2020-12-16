@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4b0be672c0768b4facb6518c777d4fe56eb28aa9
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: c816fbad05831c83c891c70849986b38cb7fdbeb
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515673"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589539"
 ---
 # <a name="security-frame-input-validation--mitigations"></a>Beveiligings frame: invoer validatie | Oplossingen 
 | Product/service | Artikel |

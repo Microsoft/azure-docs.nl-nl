@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 810a08d2f72359b385d2a7567b796aa222c6ab14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c42acb69e13cc1eb0fbba3fcafaec1451bc4d77
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936794"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589216"
 ---
 # <a name="features-and-capabilities-of-azure-arc-enabled-sql-managed-instance"></a>Functies en mogelijkheden van Azure Arc enabled SQL Managed instance
 
@@ -59,78 +59,78 @@ Azure Arc enabled SQL Managed instance deelt een algemene code basis met de nieu
 
 ###  <a name="rdbms-scalability-and-performance"></a><a name="RDBMSSP"></a> Schaal baarheid en prestaties van RDBMS  
 
-|Functie|SQL Managed Instance met Azure Arc|
-|-------------|----------------|
-|Column|   Ja|
-|Binaire bestanden voor grote objecten in geclusterde column Store-indexen|    Ja|
-|Online niet-geclusterde column store-index opnieuw samen stellen| Ja|
-|In-Memory OLTP|    Ja|
-|Permanent hoofd geheugen|    Ja|
-|Partitioneren van tabellen en indexen|  Ja
-|Gegevenscompressie|  Ja|
-|Resource Governor| Ja|
-|Gepartitioneerde tabel parallellisme| Ja|
-|De toewijzing van geheugen en buffer matrix voor NUMA-bewuste en grote pagina's|  Ja|
-|IO-resource beheer|    Ja|
-|Uitgestelde duurzaamheid|    Ja|
-|Automatisch afstemmen|  Ja|
-|Adaptieve samen voegingen in batch modus| Ja|
-|Feedback over geheugen toekenning in batch modus|  Ja|
-|Interleaved uitvoering voor tabel gewaardeerde functies met meerdere instructies|  Ja|
-|Verbeteringen voor bulksgewijs invoegen   |Ja|
+| Functie | SQL Managed Instance met Azure Arc |
+|--|--|
+| Column | Ja |
+| Binaire bestanden voor grote objecten in geclusterde column Store-indexen | Ja |
+| Online niet-geclusterde column store-index opnieuw samen stellen | Ja |
+| In-Memory OLTP | Ja |
+| Permanent hoofd geheugen | Ja |
+| Partitioneren van tabellen en indexen | Ja |
+| Gegevenscompressie | Ja |
+| Resource Governor | Ja |
+| Gepartitioneerde tabel parallellisme | Ja |
+| De toewijzing van geheugen en buffer matrix voor NUMA-bewuste en grote pagina's | Ja |
+| IO-resource beheer | Ja |
+| Uitgestelde duurzaamheid | Ja |
+| Automatisch afstemmen | Ja |
+| Adaptieve samen voegingen in batch modus | Ja |
+| Feedback over geheugen toekenning in batch modus | Ja |
+| Interleaved uitvoering voor tabel gewaardeerde functies met meerdere instructies | Ja |
+| Verbeteringen voor bulksgewijs invoegen | Ja |
 
-###  <a name="rdbms-security"></a><a name="RDBMSS"></a> RDBMS beveiliging  
-|Functie|SQL Managed Instance met Azure Arc|
-|-------------|----------------|
-|Beveiliging op rijniveau|    Ja|
-|Altijd versleuteld|  Ja|
-|Always Encrypted met beveiligde enclaves| Nee|
-|Dynamische gegevensmaskering|  Ja|
-|Basis controle|    Ja|
-|Nauw keurige controle| Ja|
-|Transparante database versleuteling|   Ja|
-|Door de gebruiker gedefinieerde rollen|    Ja|
-|Ingesloten databases|   Ja|
-|Versleuteling voor back-ups|    Ja|
+###  <a name="rdbms-security"></a><a name="RDBMSS"></a> RDBMS beveiliging
+
+| Functie | SQL Managed Instance met Azure Arc |
+|--|--|
+| Beveiliging op rijniveau | Ja |
+| Always Encrypted | Ja |
+| Always Encrypted met beveiligde enclaves | Nee |
+| Dynamische gegevensmaskering | Ja |
+| Basis controle | Ja |
+| Nauw keurige controle | Ja |
+| Transparante database versleuteling | Ja |
+| Door de gebruiker gedefinieerde rollen | Ja |
+| Ingesloten databases | Ja |
+| Versleuteling voor back-ups | Ja |
 
 ###  <a name="rdbms-manageability"></a><a name="RDBMSM"></a> RDBMS-beheer baarheid  
 
-|Functie|SQL Managed Instance met Azure Arc|
-|-------------|----------------|
-|Exclusieve beheerders verbinding|    Ja|
-|Ondersteuning voor Power shell-scripts|  Ja|
-|Ondersteuning voor Operations-tier toepassings onderdeel bewerkingen-uitpakken, implementeren, upgraden, verwijderen| Ja
-|Beleids automatisering (controleren op schema en wijziging)   |Ja|
-|Prestatie gegevens verzamelaar|    Ja|
-|Rapporten met standaard prestaties   |Ja|
-|Plan gidsen plannen en bevriezen plannen voor plan richtlijnen| Ja|
-|Directe query van geïndexeerde weer gaven (met de hint voor het uitvouwen)|   Ja|
-|Onderhoud van automatische geïndexeerde weer gaven    |Ja|
-|Gedistribueerde gepartitioneerde weer gaven| Ja|
-|Parallelle geïndexeerde bewerkingen    |Ja|
-|Automatisch gebruik van geïndexeerde weer gave door query optimalisatie|  Ja|
-|Parallelle consistentie controle |Ja|
-
+| Functie | SQL Managed Instance met Azure Arc |
+|--|--|
+| Exclusieve beheerders verbinding | Ja |
+| Ondersteuning voor Power shell-scripts | Ja |
+| Ondersteuning voor Operations-tier toepassings onderdeel bewerkingen-uitpakken, implementeren, upgraden, verwijderen | Ja |
+| Beleids automatisering (controleren op schema en wijziging) | Ja |
+| Prestatie gegevens verzamelaar | Ja |
+| Rapporten met standaard prestaties | Ja |
+| Plan gidsen plannen en bevriezen plannen voor plan richtlijnen | Ja |
+| Directe query van geïndexeerde weer gaven (met de hint voor het uitvouwen) | Ja |
+| Onderhoud van automatische geïndexeerde weer gaven | Ja |
+| Gedistribueerde gepartitioneerde weer gaven | Ja |
+| Parallelle geïndexeerde bewerkingen | Ja |
+| Automatisch gebruik van geïndexeerde weer gave door query optimalisatie | Ja |
+| Parallelle consistentie controle | Ja |
 
 ### <a name="programmability"></a><a name="Programmability"></a> Programmeer baarheid  
 
-|Functie|SQL Managed Instance met Azure Arc|
-|-------------|----------------|
-|JSON|  Ja |       |
-|Query Store    |Ja    |       
-|Tijdelijke|  Ja |       
-|Systeem eigen XML-ondersteuning|    Ja |       
-|XML-indexering   |Ja    |       
-|& UPSERT-mogelijkheden samen VOEGen|   Ja |       
-|Gegevens typen voor datum en tijd    |Ja    |       
-|Ondersteuning voor meerdere talen|  Ja |       
-|Volledige tekst en semantische zoek opdracht |    Nee      |
-|Specificatie van taal in query |Ja        |   
-|Service Broker (berichten)|    Ja     |   
-|Transact-SQL-eind punten|    Ja |       
-|Graph| Ja |   
-|Machine Learning Services| Nee  |   
-|PolyBase| Nee   |
+| Functie | SQL Managed Instance met Azure Arc |
+|--|--|
+| JSON | Ja |
+| Query Store | Ja |  |
+| Tijdelijke | Ja |  |
+| Systeem eigen XML-ondersteuning | Ja |  |
+| XML-indexering | Ja |  |
+| & UPSERT-mogelijkheden samen VOEGen | Ja |  |
+| Gegevens typen voor datum en tijd | Ja |  |
+| Ondersteuning voor meerdere talen | Ja |  |
+| Volledige tekst en semantische zoek opdracht | Nee |
+| Specificatie van taal in query | Ja |  |
+| Service Broker (berichten) | Ja |  |
+| Transact-SQL-eind punten | Ja |  |
+| Graph | Ja |  |
+| Machine Learning Services | Nee |  |
+| PolyBase | Nee |
 
 
 ### <a name="tools"></a>Hulpprogramma's

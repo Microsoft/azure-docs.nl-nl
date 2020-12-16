@@ -12,18 +12,18 @@ ms.date: 11/17/2020
 ms.author: aahi
 keywords: tekstanalyse, sentimentanalyse, tekst analytics
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 0f5e6a2327f5d952f92009b0c9e408ab8188d6d7
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 6cef9dc65a72134e0aa70db5f89f4934263c48b4
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558773"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563225"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Wat is Text Analytics-API?
 
 De Text Analytics-API is een op de cloud gebaseerde service die NLP-functies (natuurlijke taalverwerking) biedt voor tekstanalyse, waaronder: sentimentanalyse, meninganalyse, sleuteltermextractie, taaldetectie en herkenning van benoemde entiteiten.
 
-De API maakt deel uit van [Azure Cognitive Services](../index.yml), een verzameling van machine learning- en AI-algoritmen in de cloud, die kunnen worden gebruikt in uw ontwikkelprojecten. U kunt deze functies gebruiken met de [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) of met de [clientbibliotheek](quickstarts/text-analytics-sdk.md).
+De API maakt deel uit van [Azure Cognitive Services](../index.yml), een verzameling van machine learning- en AI-algoritmen in de cloud, die kunnen worden gebruikt in uw ontwikkelprojecten. U kunt deze functies gebruiken met de [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) of met de [clientbibliotheek](quickstarts/client-libraries-rest-api.md).
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Whats-New-in-Text-Analytics-Opinion-Mining-and-Async-API/player]
 
@@ -64,7 +64,7 @@ Het eindpunt `/analyze` stelt u in staat om geselecteerde functies van de Text A
 
 De werkstroom is eenvoudig: u dient gegevens in die u wilt analyseren en verwerkt de uitvoer in uw code. Analyseprogramma's worden in de huidige staat gebruikt, zonder extra configuratie of aanpassing.
 
-1. [Maak een Azure-resource](../cognitive-services-apis-create-account.md) voor Text Analytics. Daarna kunt u [de sleutel ophalen](../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) die voor u is gegenereerd om uw aanvragen te verifiëren.
+1. [Maak een Azure-resource](how-tos/text-analytics-how-to-call-api.md) voor Text Analytics. Daarna kunt u [de sleutel ophalen](how-tos/text-analytics-how-to-call-api.md) die voor u is gegenereerd om uw aanvragen te verifiëren.
 
 2. [Formuleer een aanvraag](how-tos/text-analytics-how-to-call-api.md#json-schema) in JSON, die uw gegevens bevat als onbewerkte tekst.
 
@@ -109,7 +109,7 @@ De Text Analytics-API maakt gebruik van Unicode-codering voor tekstweergave en h
 
 + [Maak een Azure-resource](../cognitive-services-apis-create-account.md) voor Text Analytics om een sleutel en eindpunt voor uw toepassingen te krijgen.
 
-+ Gebruik de [quickstart](quickstarts/text-analytics-sdk.md) om API-aanroepen te verzenden. Informatie over het indienen van tekst, het kiezen van een analyse en het bekijken van de resultaten met minimale code.
++ Gebruik de [quickstart](quickstarts/client-libraries-rest-api.md) om API-aanroepen te verzenden. Informatie over het indienen van tekst, het kiezen van een analyse en het bekijken van de resultaten met minimale code.
 
 + Zie [wat er nieuw is in de Text Analytics-API](whats-new.md) voor meer informatie over nieuwe releases en functies.
 

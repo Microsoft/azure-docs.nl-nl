@@ -4,7 +4,7 @@
   items:
     - name: Wat zijn schaalsets voor virtuele machines?
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Maken in Azure Portal
       href: quick-create-portal.md
@@ -118,31 +118,31 @@
       items:
         - name: Algemeen doel
           href: ../virtual-machines/sizes-general.md
-          maintainContext: true
           items:
             - name: B-serie 'burstable'
               href: ../virtual-machines/sizes-b-series-burstable.md
               maintainContext: true
+          maintainContext: true
         - name: Geoptimaliseerde rekenkracht
           href: ../virtual-machines/sizes-compute.md
           maintainContext: true
         - name: Geoptimaliseerd geheugen
           href: ../virtual-machines/sizes-memory.md
-          maintainContext: true
           items:
             - name: Beperkte vCPU's
               href: ../virtual-machines/constrained-vcpu.md
               maintainContext: true
+          maintainContext: true
         - name: Geoptimaliseerde opslag
           href: ../virtual-machines/sizes-storage.md
           maintainContext: true
         - name: Geoptimaliseerde GPU
           href: ../virtual-machines/sizes-gpu.md
-          maintainContext: true
           items:
             - name: NVIDIA GPU-stuurprogramma's instellen
               href: ../virtual-machines/windows/n-series-driver-setup.md
               maintainContext: true
+          maintainContext: true
         - name: Krachtig rekenvermogen
           href: ../virtual-machines/sizes-hpc.md
           maintainContext: true
@@ -165,8 +165,6 @@
     - name: Onderhoud en updates
       href: ../virtual-machines/maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json
       maintainContext: true
-    - name: Indelingsmodi
-      href: orchestration-modes.md
     - name: File Storage
       items:
         - name: Beheerde schijven

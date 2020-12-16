@@ -978,6 +978,8 @@
           href: find-request-unit-charge-cassandra.md
         - name: Spring-gegevens opslaan en beheren
           href: /azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db?context=%2fazure%2fcosmos-db%2fcontext%2fcontext
+        - name: Algemene problemen
+          href: cassandra-troubleshoot.md
         - name: Cassandra en Spark
           items:
             - name: Inleiding

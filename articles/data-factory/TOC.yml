@@ -758,6 +758,8 @@
           href: data-factory-troubleshoot-guide.md
         - name: Connectors
           href: connector-troubleshoot-guide.md
+        - name: Pijplijntriggers
+          href: pipeline-trigger-troubleshoot-guide.md
         - name: Gegevensstromen
           href: data-flow-troubleshoot-guide.md
         - name: Continue integratie en implementatie

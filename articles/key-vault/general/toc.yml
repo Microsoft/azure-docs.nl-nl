@@ -114,10 +114,6 @@
           href: developers-guide.md
         - name: Azure Resource Manager gebruiken om Key Vault te implementeren
           href: vault-create-template.md
-        - name: Web-app-geheimen opslaan
-          href: /previous-versions/azure/key-vault/vs-secure-secret-appsettings?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
-        - name: Verificatie van service-tot-service met .NET
-          href: service-to-service-authentication.md
         - name: Verbonden Key Vault-service gebruiken
           href: vs-key-vault-add-connected-service.md
     - name: Bewaken en beheren

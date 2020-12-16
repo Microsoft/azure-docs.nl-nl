@@ -5,6 +5,8 @@
   items:
     - name: Wat is de Face-service?
       href: Overview.md
+    - name: Nieuwe functies
+      href: releasenotes.md
 - name: Snelstartgidsen
   items:
     - name: De clientbibliotheek of REST API gebruiken
@@ -73,7 +75,7 @@
           href: /java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable
         - name: Node.js
           href: /javascript/api/@azure/cognitiveservices-face
-        - name: Go
+        - name: Aan de slag
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face'
 - name: Resources
   items:
@@ -97,5 +99,3 @@
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Versleuteling
       href: face-encryption-of-data-at-rest.md
-    - name: Releaseopmerkingen
-      href: ReleaseNotes.md

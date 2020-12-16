@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 9312094d1d86ea25ebd573e5d14b6d5bd0619cfc
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: a3f423a144738fdaa4462606de6ad4a4e34d6775
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108232"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563412"
 ---
 # <a name="continuous-delivery-by-using-azure-devops"></a>Continue levering met behulp van Azure DevOps
 
@@ -26,7 +26,7 @@ U hebt twee opties voor het definiëren van uw pijp lijn:
 
 Als u een YAML-pijp lijn wilt maken, bouwt u eerst uw app en implementeert u vervolgens de app.
 
-### <a name="build-your-app"></a>Uw app maken
+### <a name="build-your-app"></a>Uw app compileren
 
 Hoe u uw app in azure-pijp lijnen bouwt, is afhankelijk van de programmeer taal van uw app. Elke taal heeft specifieke build-stappen voor het maken van een implementatie-artefact. Een implementatie artefact wordt gebruikt om uw functie-app in azure te implementeren.
 
@@ -216,7 +216,7 @@ steps:
 
 Sjablonen in azure DevOps zijn vooraf gedefinieerde groepen taken die een app bouwen of implementeren.
 
-### <a name="build-your-app"></a>Uw app maken
+### <a name="build-your-app"></a>Uw app compileren
 
 Hoe u uw app in azure-pijp lijnen bouwt, is afhankelijk van de programmeer taal van uw app. Elke taal heeft specifieke build-stappen voor het maken van een implementatie-artefact. Een implementatie artefact wordt gebruikt om de functie-app in azure bij te werken.
 
@@ -258,7 +258,7 @@ Als u een build-pijp lijn in azure wilt maken, gebruikt u de `az functionapp dev
 
     - U moet gemachtigd zijn om een GitHub-persoonlijk toegangs token (PAT) te maken dat voldoende machtigingen heeft. Zie [GITHUB Pat permission requirements](/azure/devops/pipelines/repos/github#repository-permissions-for-personal-access-token-pat-authentication) (Engelstalig) voor meer informatie.
 
-    - U moet gemachtigd zijn om de hoofd vertakking in uw GitHub-opslag plaats in te voeren, zodat u het automatisch gegenereerde YAML-bestand kunt door voeren.
+    - U moet over machtigingen voor het door voeren van de hoofd vertakking in uw GitHub-opslag plaats, zodat u het automatisch gegenereerde YAML-bestand kunt door voeren.
 
 - Als uw code zich in azure opslag plaatsen bevindt:
 

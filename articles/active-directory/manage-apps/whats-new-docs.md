@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassings beheer
 description: Nieuwe en bijgewerkte documentatie voor het Azure Active Directory toepassings beheer.
-ms.date: 12/03/2020
+ms.date: 12/15/2020
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,30 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 38602482f1a25f212829342fe691d7bb75666d31
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: bad312b777c57a48c3205de588325d477b5773af
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571008"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563395"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassings beheer. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [Wat is er nieuw in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de Application Management-service.
+
+## <a name="december-2020"></a>December 2020
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Quickstart: Eenmalige aanmelding (SSO) op basis van OIDC instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-setup-oidc-sso.md)
+- [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [Informatie over eenmalige aanmelding op basis van OIDC](configure-oidc-single-sign-on.md)
+- [Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory](migrate-adfs-apps-to-azure.md)
+- [Werken met bestaande on-premises proxyservers](application-proxy-configure-connectors-with-proxy-servers.md)
+- [Azure Active Directory toepassings beheer: wat is er nieuw](whats-new-docs.md)
+- [Het rapport AD FS toepassings activiteit (preview) gebruiken voor het migreren van toepassingen naar Azure AD](migrate-adfs-application-activity.md)
+- [Remote Desktop publiceren met Azure AD-toepassingsproxy](application-proxy-integrate-with-remote-desktop-services.md)
+
 
 ## <a name="november-2020"></a>November 2020
 

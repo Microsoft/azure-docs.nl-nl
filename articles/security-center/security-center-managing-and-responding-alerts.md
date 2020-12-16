@@ -11,52 +11,61 @@ ms.topic: how-to
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/15/2020
+ms.date: 12/15/2020
 ms.author: memildin
-ms.openlocfilehash: 75ca0438336825bf8d4bbdc6e08eca109f430fde
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3f319c35631f8c85cab4613df0f1c14f98356caa
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785915"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563344"
 ---
-# <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center
+# <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Beveiligings waarschuwingen beheren en erop reageren in Azure Security Center
 
-In dit onderwerp wordt beschreven hoe u de waarschuwingen die u hebt ontvangen, kunt weer geven en verwerken om uw resources te beveiligen. 
+> [!TIP]
+> De informatie op deze pagina verwijst naar de nieuwe meldings ervaring (preview) die beschikbaar is via de banner aan de bovenkant van de pagina beveiligings waarschuwingen. 
+>
+> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar de nieuwe preview-waarschuwingen":::
 
-* Zie [beveiligings waarschuwings typen](alerts-reference.md)voor meer informatie over de verschillende typen waarschuwingen.
-* Zie [how Azure Security Center detecteert en reageert op bedreigingen](security-center-alerts-overview.md)voor een overzicht van de manier waarop Security Center waarschuwingen genereert.
+In dit onderwerp wordt beschreven hoe u de waarschuwingen van Security Center kunt weer geven en verwerken en uw resources kunt beveiligen.
 
-> [!NOTE]
-> Als u geavanceerde detectie wilt inschakelen, schakelt u Azure Defender in. Er is een gratis proefversie beschikbaar. Als u een upgrade wilt uitvoeren, selecteert u de prijscategorie in het [beveiligingsbeleid](tutorial-security-policy.md). Zie [Prijsinformatie over Azure Security Center](security-center-pricing.md) voor meer informatie.
+Geavanceerde detecties die beveiligings waarschuwingen activeren, zijn alleen beschikbaar met Azure Defender. Er is een gratis proefversie beschikbaar. Zie [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)als u een upgrade wilt uitvoeren.
 
 ## <a name="what-are-security-alerts"></a>Wat zijn beveiligingswaarschuwingen?
 Security Center verzamelt, analyseert en integreert automatisch logboekgegevens van uw Azure-resources, het netwerk en verbonden partneroplossingen, zoals firewall- en eindpuntbeveiligingsoplossingen om werkelijke dreigingen te detecteren en fout-positieven te reduceren. In Security Center wordt een lijst met beveiligingswaarschuwingen met prioriteiten weergegeven samen met de informatie die u nodig hebt om snel onderzoek te doen naar het probleem en aanbevelingen voor het herstellen van een aanval.
 
-> [!NOTE]
-> Zie [how Azure Security Center detecteert en reageert op bedreigingen](security-center-alerts-overview.md#detect-threats)voor meer informatie over de werking van Security Center detectie mogelijkheden.
+Zie [beveiligings waarschuwingen-een referentie gids](alerts-reference.md)voor meer informatie over de verschillende typen waarschuwingen.
+
+Zie [how Azure Security Center detecteert en reageert op bedreigingen](security-center-alerts-overview.md)voor een overzicht van de manier waarop Security Center waarschuwingen genereert.
+
 
 ## <a name="manage-your-security-alerts"></a>Beveiligings waarschuwingen beheren
 
-1. Ga in het Security Center-dash board naar de tegel  **bedreigings beveiliging** om de waarschuwingen weer te geven en te bekijken.
+1. Selecteer op de pagina overzicht van Security Center de tegel **beveiligings waarschuwingen** boven aan de pagina of de koppeling vanuit de zijbalk...
 
-    ![De tegel Beveiligingswaarschuwingen in Security Center](./media/security-center-managing-and-responding-alerts/security-center-dashboard-alert.png)
+    :::image type="content" source="media/security-center-managing-and-responding-alerts/overview-page-alerts-links.png" alt-text="Ophalen van de pagina beveiligings waarschuwingen op de pagina overzicht van Azure Security Center":::
 
-1. Klik op de tegel om meer informatie over de waarschuwingen weer te geven.
+    De pagina beveiligings waarschuwingen wordt geopend.
 
-   ![Beveiligingswaarschuwingen in Security Center](./media/security-center-managing-and-responding-alerts/security-center-manage-alerts.png)
+    :::image type="content" source="media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
 
-1. Als u de weer gegeven waarschuwingen wilt filteren, klikt u op **filter** en selecteert u op de Blade **filter** die wordt geopend de filter opties die u wilt Toep assen. De lijst wordt bijgewerkt op basis van het geselecteerde filter. Filteren kan zeer nuttig zijn. U kunt u bijvoorbeeld concentreren op de beveiligingswaarschuwingen van de afgelopen 24 uur, omdat u een mogelijke inbreuk in het systeem onderzoekt.
+1. Als u de lijst met waarschuwingen wilt filteren, selecteert u een van de relevante filters. U kunt eventueel ook extra filters toevoegen met de optie **filter toevoegen** .
 
-    ![Waarschuwingen filteren in Security Center](./media/security-center-managing-and-responding-alerts/security-center-filter-alerts.png)
+    :::image type="content" source="./media/security-center-managing-and-responding-alerts/alerts-adding-filters-small.png" alt-text="Filters toevoegen aan de weer gave waarschuwingen" lightbox="./media/security-center-managing-and-responding-alerts/alerts-adding-filters-large.png":::
+
+    De lijst wordt bijgewerkt op basis van de filter opties die u hebt geselecteerd. Filteren kan zeer nuttig zijn. U kunt u bijvoorbeeld concentreren op de beveiligingswaarschuwingen van de afgelopen 24 uur, omdat u een mogelijke inbreuk in het systeem onderzoekt.
+
 
 ## <a name="respond-to-security-alerts"></a>Reageren op beveiligingswaarschuwingen
 
-1. Klik in de lijst **beveiligings waarschuwingen** op een beveiligings waarschuwing. De betrokken resources en de stappen die u moet nemen om een aanval te herstellen, worden weer gegeven.
+1. Selecteer een waarschuwing in de lijst **beveiligings waarschuwingen** . Er wordt een zijvenster geopend met een beschrijving van de waarschuwing en alle betrokken resources. 
 
-    ![Reageren op beveiligingswaarschuwingen](./media/security-center-managing-and-responding-alerts/security-center-alert.png)
+    :::image type="content" source="./media/security-center-managing-and-responding-alerts/alerts-details-pane.png" alt-text="Weer gave van Mini Details van een beveiligings waarschuwing":::
 
-1. Nadat u de informatie hebt bekeken, klikt u op een bron die is aangevallen.
+    > [!TIP]
+    > Als dit zijvenster is geopend, kunt u de lijst met waarschuwingen snel bekijken met de pijl omhoog en omlaag op het toetsen bord.
+
+1. Selecteer **volledige details weer geven** voor meer informatie.
 
     In het linkerdeel venster van de pagina beveiligings waarschuwing wordt informatie op hoog niveau weer gegeven met betrekking tot de beveiligings waarschuwing: titel, Ernst, status, activiteit tijd, beschrijving van de verdachte activiteit en de betrokken resource. Naast de betreffende resource bevinden de Azure-Tags die relevant zijn voor de resource. Gebruik deze om de organisatie context van de resource af te leiden bij het onderzoeken van de waarschuwing.
 
@@ -81,3 +90,4 @@ In dit document hebt u geleerd hoe u beveiligings waarschuwingen kunt weer geven
 
 - [Regels voor het onderdrukken van waarschuwingen configureren](alerts-suppression-rules.md)
 - [Reacties op Security Center triggers automatiseren](workflow-automation.md)
+- [Referentiegids met beveiligingswaarschuwingen](alerts-reference.md)

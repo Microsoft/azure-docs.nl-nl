@@ -1,7 +1,7 @@
 ---
 title: Beveiligingsoverzicht
 titleSuffix: Azure Cognitive Search
-description: Azure Cognitive Search voldoet aan SOC 2, HIPAA en andere certificeringen. Verbinding en gegevens versleuteling, authenticatie en identiteits toegang via beveiligings-id's van gebruikers en groepen in filter expressies.
+description: Meer informatie over de beveiligings functies in azure Cognitive Search voor het beveiligen van eind punten, inhoud en bewerkingen.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: references_regions
-ms.openlocfilehash: 118ee6ffb189b7a5558477912bd6b27ea739afde
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: ffb5a78c13413a46565a9c57c87dc8273742fd24
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516157"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563446"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Beveiliging in azure Cognitive Search-overzicht
 

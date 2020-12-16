@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ff828024610ce498d40a4039d8116e28366aebb9
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: dcfbacb788225d936b236c901e9477a9bbb23b94
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494428"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585289"
 ---
 # <a name="updated-ndv2-series"></a>Bijgewerkte NDv2-serie
 
@@ -39,6 +39,7 @@ De NDv2 is in de praktijk opgebouwd voor zowel reken kundige, intense schaling (
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 2<br>
 InfiniBand: ondersteund<br>
+NVIDIA NVLink Interconnect: ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD): GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Max. doorvoer voor schijf zonder caching: IOPS/MBps | Maximale netwerk bandbreedte | Max. aantal NIC's |

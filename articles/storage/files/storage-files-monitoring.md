@@ -10,12 +10,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: d756567e471fe4b29590f8a3efbaf49b56edd4f4
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 2af4f5467cb0f604f16d1faf841618a14d292806
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853047"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585731"
 ---
 # <a name="monitoring-azure-files"></a>Bewakings Azure Files
 
@@ -69,9 +69,9 @@ U kunt een diagnostische instelling maken met behulp van de Azure Portal, Power 
 
 Zie voor algemene instructies de [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../../azure-monitor/platform/diagnostic-settings.md).
 
-### <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
+### <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 
 2. Ga naar uw opslagaccount.
 
@@ -149,7 +149,7 @@ Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt 
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) samen met de `StorageAccountId` para meter.
 
 ```powershell
-Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccountId <storage-account-resource-id> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
+Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccountId <storage-account-resource-id> -Enabled $true -Category <operations-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
 ```
 
 Vervang de `<storage-service-resource--id>` tijdelijke aanduiding in dit code fragment door de resource-id van de Azure-bestands service. U kunt de resource-ID vinden in de Azure Portal door de pagina **Eigenschappen** van uw opslag account te openen.
@@ -169,7 +169,7 @@ Als u ervoor kiest om uw logboeken naar een Event Hub te streamen, betaalt u voo
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) met de `EventHubAuthorizationRuleId` para meter.
 
 ```powershell
-Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -EventHubAuthorizationRuleId <event-hub-namespace-and-key-name> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
+Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -EventHubAuthorizationRuleId <event-hub-namespace-and-key-name> -Enabled $true -Category <operations-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
 ```
 
 Hier volgt een voorbeeld:
@@ -183,7 +183,7 @@ Zie voor een beschrijving van elke para meter de [Stream-gegevens naar Event hub
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) met de `WorkspaceId` para meter.
 
 ```powershell
-Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <log-analytics-workspace-resource-id> -Enabled $true -Category <operatons-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
+Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <log-analytics-workspace-resource-id> -Enabled $true -Category <operations-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
 ```
 
 Hier volgt een voorbeeld:
@@ -266,7 +266,7 @@ U kunt metrische gegevens analyseren voor Azure Storage met metrische gegevens u
 
 Voor metrische gegevens die dimensies ondersteunen, kunt u de metriek filteren met de gewenste dimensie waarde.  Zie [metrische dimensies](storage-files-monitoring-reference.md#metrics-dimensions)voor een volledige lijst met de dimensies die Azure Storage ondersteunt. De metrische gegevens voor Azure Files bevinden zich in de volgende naam ruimten: 
 
-- Microsoft.Storage/storageAccounts
+- Micro soft. Storage/Storage accounts
 - Micro soft. Storage/Storage accounts/fileServices
 
 Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure files.

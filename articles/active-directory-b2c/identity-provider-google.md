@@ -9,15 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
+ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 5b04613a74755f8515d967b8dd28397b36816fec
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: c8b942e66a76bcc3a095f9bd3d40b44bf4217e50
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516220"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584881"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C
 

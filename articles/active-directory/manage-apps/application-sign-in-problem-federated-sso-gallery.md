@@ -12,12 +12,12 @@ ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e6d3674aaa4c89f42c2e7b87a6be6cdc8ecabf64
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 596af29fe72a41b5a86a09e4e6d5072d63b6ac71
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028271"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586343"
 ---
 # <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML
 Voor het oplossen van de onderstaande aanmeldings problemen raden we het volgende aan om de oplossings stappen beter te diagnosticeren en te automatiseren:
@@ -33,7 +33,9 @@ Ga als volgt te werk om de configuratiepagina voor eenmalige aanmelding op basis
 1.  Typ **' Azure Active Directory '** in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
 1.  Selecteer **Bedrijfstoepassingen** in het linkernavigatiemenu van Azure Active Directory.
 1.  Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+
     Als u de gewenste toepassing niet ziet, gebruikt u het besturingselement **Filter** bovenaan de **lijst Alle toepassingen**, en stelt u de optie **Weergeven** in op **Alle toepassingen**.
+
 1.  Selecteer de toepassing die u wilt configureren voor eenmalige aanmelding.
 1. Zodra de toepassing is geladen, selecteert u **eenmalige aanmelding** in het navigatie menu aan de linkerkant van de toepassing.
 1. Selecteer Eenmalige aanmelding op basis van SAML.
@@ -63,7 +65,7 @@ De `AssertionConsumerServiceURL` waarde in de SAML-aanvraag komt niet overeen me
 Zorg ervoor dat de `AssertionConsumerServiceURL` waarde in de SAML-aanvraag overeenkomt met de antwoord-URL-waarde die is geconfigureerd in azure AD. 
 
 Controleer of werk de waarde in het tekstvak antwoord-URL in op overeenkomst met de `AssertionConsumerServiceURL` waarde in de SAML-aanvraag.   
-    
+
 Nadat u de waarde voor de antwoord-URL in azure AD hebt bijgewerkt en deze overeenkomt met de waarde die door de toepassing in de SAML-aanvraag is verzonden, moet u zich kunnen aanmelden bij de toepassing.
 
 ## <a name="user-not-assigned-a-role"></a>Gebruiker heeft geen rol toegewezen

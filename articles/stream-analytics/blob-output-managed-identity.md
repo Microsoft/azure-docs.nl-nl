@@ -5,15 +5,15 @@ author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 03/11/2020
-ms.openlocfilehash: f1aad2464e4979ecbf35deceaad4de70e05b3004
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 12/15/2020
+ms.openlocfilehash: 62651e9ea4e1b02b276e7870163453bfa55c3909
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573660"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587567"
 ---
-# <a name="use-managed-identity-preview-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Beheerde identiteit (preview) gebruiken om uw Azure Stream Analytics-taak te verifiëren bij Azure Blob Storage-uitvoer
+# <a name="use-managed-identity-preview-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage"></a>Beheerde identiteit (preview) gebruiken om uw Azure Stream Analytics-taak te verifiëren bij Azure Blob Storage
 
 Met [beheerde identiteits verificatie](../active-directory/managed-identities-azure-resources/overview.md) (preview) voor uitvoer naar Azure Blob-opslag kunt u Stream Analytics Jobs direct toegang tot een opslag account geven in plaats van een Connection String te gebruiken. Naast verbeterde beveiliging kunt u met deze functie ook gegevens schrijven naar een opslag account in een Virtual Network (VNET) in Azure.
 

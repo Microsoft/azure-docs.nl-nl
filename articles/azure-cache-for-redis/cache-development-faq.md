@@ -7,12 +7,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 08/06/2020
-ms.openlocfilehash: be2e4a002d1daf4da7d042f1fd7d5bf0e9a01377
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: bafd8a9752d2587ec52fe586e442e3bfc86d7537
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544508"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585765"
 ---
 # <a name="azure-cache-for-redis-development-faqs"></a>Veelgestelde vragen over Azure cache voor redis-ontwikkeling
 
@@ -55,7 +55,7 @@ Meestal zijn de standaard waarden van de client voldoende. U kunt de opties aanp
 
 * **Nieuwe pogingen**
   * De algemene richt lijnen voor ConnectRetry en ConnectTimeout zijn snel en opnieuw proberen. Deze richt lijnen zijn gebaseerd op uw werk belasting en hoe lang het duurt voordat uw client een redis-opdracht verzendt en een antwoord ontvangt.
-  * Laat stack Exchange. redis automatisch opnieuw verbinding maken in plaats van de verbindings status te controleren en zelf verbinding te maken. **Vermijd het gebruik van de eigenschap ConnectionMultiplexer. IsConnected** .
+  * Laat stack Exchange. redis automatisch opnieuw verbinding maken in plaats van de verbindings status te controleren en zelf verbinding te maken. **Vermijd het gebruik van de eigenschap ConnectionMultiplexer. IsConnected**.
   * Snowballing: soms is het mogelijk dat u een probleem ondervindt waarbij u het opnieuw probeert en de nieuwe pogingen Snowball en nooit herstellen. Als snowballing zich voordoet, kunt u het beste een exponentiële uitstel-algoritme gebruiken, zoals beschreven in [algemene richt lijnen voor opnieuw proberen](/azure/architecture/best-practices/transient-faults) die worden gepubliceerd door de micro soft-patronen & practices-groep.
   
 * **Time-outwaarden**
@@ -64,12 +64,12 @@ Meestal zijn de standaard waarden van de client voldoende. U kunt de opties aanp
   * Gebruik één ConnectionMultiplexer-exemplaar voor de toepassing. U kunt een LazyConnection gebruiken om één exemplaar te maken dat wordt geretourneerd door een eigenschap Connection, zoals wordt weer gegeven in [verbinding maken met de cache met behulp van de klasse ConnectionMultiplexer](cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-the-cache).
   * Stel de `ConnectionMultiplexer.ClientName` eigenschap in op een unieke naam voor het app-exemplaar voor diagnostische doel einden.
   * Gebruik meerdere `ConnectionMultiplexer` instanties voor aangepaste werk belastingen.
-      * U kunt dit model volgen als uw toepassing variërend wordt geladen. Bijvoorbeeld:
-      * U kunt één multiplexer voor het omgaan met grote sleutels.
-      * U kunt één multiplexer voor het omgaan met kleine sleutels hebben.
-      * U kunt verschillende waarden instellen voor verbindingstime-outs en pogings logica voor elke ConnectionMultiplexer die u gebruikt.
-      * Stel de `ClientName` eigenschap in op elke multiplexer om te helpen met diagnostische gegevens.
-      * Deze richt lijnen kunnen leiden tot meer gestroomlijnde latentie per `ConnectionMultiplexer` .
+    * U kunt dit model volgen als uw toepassing variërend wordt geladen. Bijvoorbeeld:
+    * U kunt één multiplexer voor het omgaan met grote sleutels.
+    * U kunt één multiplexer voor het omgaan met kleine sleutels hebben.
+    * U kunt verschillende waarden instellen voor verbindingstime-outs en pogings logica voor elke ConnectionMultiplexer die u gebruikt.
+    * Stel de `ClientName` eigenschap in op elke multiplexer om te helpen met diagnostische gegevens.
+    * Deze richt lijnen kunnen leiden tot meer gestroomlijnde latentie per `ConnectionMultiplexer` .
 
 ### <a name="what-azure-cache-for-redis-clients-can-i-use"></a>Welke Azure-cache voor redis-clients kan ik gebruiken?
 Een van de fantastische dingen over redis is dat er veel clients zijn die veel verschillende ontwikkelings talen ondersteunen. Zie [redis-clients](https://redis.io/clients)voor een actuele lijst met clients. Zie [Azure cache gebruiken voor redis](cache-dotnet-how-to-use-azure-redis-cache.md) en de artikelen in de inhouds opgave voor meer zelf studies over verschillende talen en clients.

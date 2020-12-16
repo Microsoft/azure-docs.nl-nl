@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 87d0b740ec4f7ffb8966b386c273c023f69c42d8
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 1cc2cd1a7c5c16b1f9d1542e3f2d14dc030bb090
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008296"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586547"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure File Sync bewaken
 
@@ -161,7 +161,7 @@ Status van Cloud lagen
   - Gebeurtenis-ID 9003 biedt fout distributie voor een server eindpunt. Bijvoorbeeld: totale aantal fouten en fout code. Er wordt één gebeurtenis per fout code in het logboek geregistreerd.
   - Gebeurtenis-ID 9016 bevat spook resultaten voor een volume. Bijvoorbeeld: percentage beschik bare ruimte is het aantal bestanden dat in de sessie is gedupliceerd en het aantal bestanden dat niet kan worden Ghost.
   - Gebeurtenis-ID 9029 bevat informatie over ghost-sessies voor een server eindpunt. Bijvoorbeeld: het aantal bestanden dat is geprobeerd in de sessie, het aantal bestanden dat in de sessie is gelaag en het aantal bestanden dat al is gelaagd.
-  
+
 - Gebruik gebeurtenis-ID 9005, 9006, 9009, 9059 en 9071 in het logboek voor telemetrie, dat zich bevindt in Logboeken onder *toepassingen en Services\Microsoft\FileSync\Agent* om de intrek activiteit op een server te controleren.
 
   - Gebeurtenis-ID 9005 biedt betrouw baarheid van een server eindpunt. Bijvoorbeeld: totale aantal bezochte unieke bestanden en totale aantal unieke bestanden met mislukte toegang.
@@ -192,7 +192,7 @@ Deze sectie bevat enkele voor beelden van waarschuwingen voor Azure File Sync.
 
   > [!Note]  
   > Als u een waarschuwing maakt en er te veel ruis is, past u de drempel waarde en de logica van de waarschuwing aan.
-  
+
 ### <a name="how-to-create-an-alert-if-the-server-endpoint-health-shows-an-error-in-the-portal"></a>Een waarschuwing maken als de eindpunt status van de server een fout in de portal weergeeft
 
 1. Ga in het **Azure Portal** naar de betreffende **opslag synchronisatie service**. 
@@ -201,16 +201,16 @@ Deze sectie bevat enkele voor beelden van waarschuwingen voor Azure File Sync.
 4. Configureer de voor waarde door te klikken op **voor waarde selecteren**.
 5. Klik in de Blade **signaal logica configureren** op **synchronisatie sessie resultaat** onder signaal naam.  
 6. Selecteer de volgende dimensie configuratie: 
-    - Dimensie naam: **naam van server eindpunt**  
-    - And **=** 
-    - Dimensie waarden: **alle huidige en toekomstige waarden**  
+     - Dimensie naam: **naam van server eindpunt**  
+     - And **=** 
+     - Dimensie waarden: **alle huidige en toekomstige waarden**  
 7. Navigeer naar **waarschuwings logica** en voer de volgende handelingen uit: 
-    - Drempel ingesteld op **statisch** 
-    - Operator: **kleiner dan** 
-    - Aggregatie type: **maximum**  
-    - Drempel waarde: **1** 
-    - Geëvalueerd op basis van: aggregatie granulatie = **24 uur** | Frequentie van evaluatie = **elk uur** 
-    - Klik op **gereed.** 
+     - Drempel ingesteld op **statisch** 
+     - Operator: **kleiner dan** 
+     - Aggregatie type: **maximum**  
+     - Drempel waarde: **1** 
+     - Geëvalueerd op basis van: aggregatie granulatie = **24 uur** | Frequentie van evaluatie = **elk uur** 
+     - Klik op **gereed.** 
 8. Klik op **actie groep selecteren** om een actie groep (E-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 9. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 10. Klik op **Waarschuwingsregel maken**. 
@@ -254,7 +254,7 @@ Deze sectie bevat enkele voor beelden van waarschuwingen voor Azure File Sync.
      - Aggregatie type: **maximum**  
      - Drempel waarde (in bytes): **1** 
      - Geëvalueerd op basis van: aggregatie granulatie = **1 uur** | Evaluatie frequentie = **elke 30 minuten** 
-        - Houd er rekening mee dat de metrische gegevens elke 15 tot 20 minuten naar Azure Monitor worden verzonden. Stel de **frequentie van de evaluatie** periode in op minder dan 30 minuten (er worden onwaar waarschuwingen gegenereerd).
+         - Houd er rekening mee dat de metrische gegevens elke 15 tot 20 minuten naar Azure Monitor worden verzonden. Stel de **frequentie van de evaluatie** periode in op minder dan 30 minuten (er worden onwaar waarschuwingen gegenereerd).
      - Klik op **gereed.** 
 8. Klik op **actie groep selecteren** om een actie groep (E-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 9. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
@@ -277,7 +277,7 @@ Deze sectie bevat enkele voor beelden van waarschuwingen voor Azure File Sync.
      - Aggregatie type: **totaal**  
      - Drempel waarde (in bytes): **67108864000** 
      - Geëvalueerd op basis van: aggregatie granulatie = **24 uur** | Frequentie van evaluatie = **elk uur** 
-    - Klik op **gereed.** 
+     - Klik op **gereed.** 
 8. Klik op **actie groep selecteren** om een actie groep (E-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 9. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 10. Klik op **Waarschuwingsregel maken**. 

@@ -17,12 +17,12 @@ ms.date: 04/09/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4253fe52346890eaa993a18e8e9bc9b270bffd7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8dbf14b1816d367f864cc3a2977497b34111df3f
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89229851"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586190"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Azure AD-activiteitenlogboeken in Azure Monitor
 
@@ -60,9 +60,9 @@ U hebt het volgende nodig om deze functie te gebruiken:
 
 Afhankelijk van waarnaar u uw auditlogboekgegevens wilt doorsturen, hebt u het volgende nodig:
 
-* Een Azure-opslagaccount waarop u *ListKeys*-machtigingen hebt. We raden u aan om een algemeen opslagaccount te gebruiken en geen Blob Storage-account. Zie de [Prijscalculator voor Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage) voor prijsinformatie over opslag. 
+* Een Azure-opslag account waarvoor u *listkeys ophalen* -machtigingen hebt. We raden u aan om een algemeen opslagaccount te gebruiken en geen Blob Storage-account. Zie de [Prijscalculator voor Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage) voor prijsinformatie over opslag. 
 * Een Azure Event Hubs-naamruimte om te integreren met oplossingen van derden.
-* Een Azure Log Analytics-werk ruimte om logboeken naar Azure Monitor-logboeken te verzenden.
+* Een Azure Log Analytics-werkruimte om logboeken naar Azure Monitor-logboeken te verzenden.
 
 ## <a name="cost-considerations"></a>Kostenoverwegingen
 
@@ -111,11 +111,11 @@ De volgende tabel bevat de geschatte kosten per maand voor een Basic-Event Hub i
 
 
 
-| Logboekcategorie       | Aantal gebruikers | Gebeurtenissen per dag | Gebeurtenissen per maand (30 dagen) | Kosten per maand in USD (EST.) |
-| :--                | ---             | ---            | ---                        | --:                          |
-| Controle en aanmeldingen | 100.000         | 16.500.000     | 495.000.000                |  $1093,00                       |
-| Controleren              | 100.000         | 1.500.000      | 45.000.000                 |  $246,66                     |
-| Aanmeldingen           | 100.000         | 15.000.000     | 450.000.000                |  $847,28                     |
+| Logboekcategorie | Aantal gebruikers | Gebeurtenissen per dag | Gebeurtenissen per maand (30 dagen) | Kosten per maand in USD (EST.) |
+|:-|--|--|--|-:|
+| Controle en aanmeldingen | 100.000 | 16.500.000 | 495.000.000 | $1093,00 |
+| Controleren | 100.000 | 1.500.000 | 45.000.000 | $246,66 |
+| Aanmeldingen | 100.000 | 15.000.000 | 450.000.000 | $847,28 |
 
 
 
@@ -180,7 +180,7 @@ Deze sectie bevat antwoorden op veelgestelde vragen en bekende problemen met bet
 
 **V: welke SIEM-hulpprogramma's worden momenteel ondersteund?** 
 
-**A**: **op**dit moment wordt Azure monitor ondersteund door [Splunk](./howto-integrate-activity-logs-with-splunk.md), IBM QRadar, [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory), [ArcSight](./howto-integrate-activity-logs-with-arcsight.md), LogRhythm en Logz.io. Raadpleeg [Azure-bewakingsgegevens streamen naar een Event Hub voor gebruik door een extern hulpprogramma](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md) voor meer informatie over hoe de connectors werken.
+**A**: **op** dit moment wordt Azure monitor ondersteund door [Splunk](./howto-integrate-activity-logs-with-splunk.md), IBM QRadar, [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory), [ArcSight](./howto-integrate-activity-logs-with-arcsight.md), LogRhythm en Logz.io. Raadpleeg [Azure-bewakingsgegevens streamen naar een Event Hub voor gebruik door een extern hulpprogramma](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md) voor meer informatie over hoe de connectors werken.
 
 ---
 

@@ -3,19 +3,19 @@ title: Een merk model aanpassen in Video Indexer-Azure
 titleSuffix: Azure Media Services
 description: Dit artikel geeft een overzicht van wat een merk model is in Video Indexer en hoe u het kunt aanpassen.
 services: media-services
-author: anikaz
-manager: johndeu
+author: Juliako
+manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
-ms.author: kumud
-ms.openlocfilehash: e0df698cb431e5e26c69047a9f464904f0546487
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/15/2019
+ms.author: juliako
+ms.openlocfilehash: 81d7dda854c6afcc9397289ff23ba45b02ed9fc4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294234"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586071"
 ---
 # <a name="customize-a-brands-model-in-video-indexer"></a>Een merk model aanpassen in Video Indexer
 
@@ -25,15 +25,15 @@ Merk detectie is handig voor een groot aantal bedrijfs scenario's, zoals het arc
 
 ## <a name="out-of-the-box-detection-example"></a>Voor beeld van de detectie van het vak
 
-In de [micro soft Build 2017 dag 2](https://www.videoindexer.ai/media/ed6ede78ad/) -presentatie wordt het merk "micro soft Windows" meerdere keren weer gegeven. Soms in het transcript, soms als visuele tekst en nooit als Verbatim. Video Indexer detecteert met zeer nauw keurigheid dat een term op basis van de context inderdaad is gebaseerd op het 90k Brands-merk en voortdurend wordt bijgewerkt. Bij 02:25 detecteert Video Indexer het merk van spraak en vervolgens opnieuw op 02:40 van visuele tekst, die deel uitmaakt van het Windows-logo.
+In de presentatie ' micro soft build 2017 Day 2 ' wordt het merk ' micro soft Windows ' meerdere keren weer gegeven. Soms in het transcript, soms als visuele tekst en nooit als Verbatim. Video Indexer detecteert met zeer nauw keurigheid dat een term op basis van de context inderdaad is gebaseerd op het 90k Brands-merk en voortdurend wordt bijgewerkt. Bij 02:25 detecteert Video Indexer het merk van spraak en vervolgens opnieuw op 02:40 van visuele tekst, die deel uitmaakt van het Windows-logo.
 
 ![Overzicht van Brands](./media/content-model-customization/brands-overview.png)
 
-Het praten over Windows in de context van de constructie detecteert het woord ' Windows ' niet als een merk en is hetzelfde voor box, Apple, Fox, etc., op basis van geavanceerde Machine Learning-algoritmen die weten hoe u dubbel zinnigheid van de context. Merk detectie werkt voor alle ondersteunde talen. Klik hier voor [volledige micro soft Build 2017 dag 2 Speech video en index](https://www.videoindexer.ai/media/ed6ede78ad/).
-
-Bekijk de volgende stappen om uw eigen Brands te maken.
+Het praten over Windows in de context van de constructie detecteert het woord ' Windows ' niet als een merk en is hetzelfde voor box, Apple, Fox, etc., op basis van geavanceerde Machine Learning-algoritmen die weten hoe u dubbel zinnigheid van de context. Merk detectie werkt voor alle ondersteunde talen.  
 
 ## <a name="next-steps"></a>Volgende stappen
+
+Bekijk de volgende onderwerpen om uw eigen merken te maken:
 
 [Het merk model aanpassen met behulp van Api's](customize-brands-model-with-api.md)
 

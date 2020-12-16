@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f76f4a3e5fc87420c242c693e3c48a91244641e0
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 51602e97a8424bade542eec6f88b673130fee8b5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560030"
+ms.locfileid: "97586020"
 ---
 # <a name="add-a-self-service-sign-up-user-flow-to-an-app-preview"></a>Een self-service-aanmeldings stroom voor gebruikers toevoegen aan een app (preview)
 > [!NOTE]
@@ -70,6 +70,9 @@ Vervolgens maakt u de gebruikers stroom voor de Self-Service-aanmelding en voegt
 7. Kies onder **gebruikers kenmerken** de kenmerken die u wilt verzamelen van de gebruiker. Voor aanvullende kenmerken selecteert u **meer weer geven**. Selecteer bijvoorbeeld **Meer weergeven** en kies vervolgens kenmerken en claims voor **Land/regio**, **Weergavenaam** en **Postcode**. Selecteer **OK**.
 
    ![Een nieuwe gebruikers stroom pagina maken](media/self-service-sign-up-user-flow/create-user-flow.png)
+
+> [!NOTE]
+> U kunt alleen kenmerken verzamelen wanneer een gebruiker zich voor de eerste keer aanmeldt. Wanneer een gebruiker zich heeft aangemeld, wordt niet langer gevraagd om kenmerk gegevens te verzamelen, zelfs niet als u de gebruikers stroom wijzigt.
 
 8. Selecteer **Maken**.
 9. De nieuwe gebruikers stroom wordt weer gegeven in de lijst **gebruikers stromen (preview)** . Vernieuw, indien nodig, de pagina.

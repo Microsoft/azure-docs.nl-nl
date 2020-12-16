@@ -7,13 +7,13 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 manager: ravijan
-ms.date: 09/30/2020
-ms.openlocfilehash: 86190fa307133360c411aafc070412e7d527039e
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.date: 12/15/2020
+ms.openlocfilehash: 485da2230de80150c9a5d13b262d1857c8c172fc
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324955"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587108"
 ---
 # <a name="how-to-enable-soft-delete-and-purge-protection"></a>Voorlopig verwijderen en leegmaken van beveiliging inschakelen
 
@@ -23,7 +23,7 @@ Dit artikel heeft betrekking op twee herstel functies van Azure Key Vault, zacht
 
 Zacht verwijderen en de beveiliging opschonen zijn twee verschillende herstel functies voor de sleutel kluis.
 > [!IMPORTANT]
-> Tijdelijke verwijderings beveiliging moet zijn ingeschakeld op alle sleutel kluizen. De mogelijkheid om de beveiliging tegen zacht verwijderen uit te scha kelen, wordt vóór december 2020 afgeschaft. Lees hier de volledige informatie [ **here**.](soft-delete-change.md)
+> Het inschakelen van zacht verwijderen is van cruciaal belang om ervoor te zorgen dat uw sleutel kluizen en referenties tegen onbedoeld verwijderen worden beschermd. Het inschakelen van voorlopig verwijderen wordt echter beschouwd als een belang rijke wijziging omdat u mogelijk uw toepassings logica moet wijzigen of extra machtigingen voor uw service-principals moet bieden. Voordat u voorlopig verwijderen inschakelt met behulp van de onderstaande instructies, moet u ervoor zorgen dat uw toepassing is compatibel met de wijziging die in dit document wordt beschreven [ .](soft-delete-change.md)
 
 **Zacht verwijderen** is ontworpen om onbedoelde verwijdering van uw sleutel kluis en sleutels, geheimen en certificaten die zijn opgeslagen in de sleutel kluis te voor komen. Denk na over zacht verwijderen, zoals een prullenbak. Wanneer u een sleutel kluis of een sleutel kluis-object verwijdert, kan het worden hersteld voor een door de gebruiker Configureer bare Bewaar periode of een standaard waarde van 90 dagen. Sleutel kluizen in de voorlopig verwijderde status kunnen ook worden **opgeschoond** , wat betekent dat ze permanent worden verwijderd. Zo kunt u de sleutel kluizen en sleutel kluis objecten opnieuw maken met dezelfde naam. Voor het herstellen en verwijderen van sleutel kluizen en objecten zijn machtigingen voor het verhoogde toegangs beleid vereist. **Zodra de functie voor voorlopig verwijderen is ingeschakeld, kan deze niet worden uitgeschakeld.**
 

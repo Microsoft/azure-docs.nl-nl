@@ -1,28 +1,28 @@
 ---
-title: Queue Storage gebruiken vanuit Java-Azure Storage
-description: Meer informatie over het gebruik van wachtrij opslag voor het maken en verwijderen van wacht rijen. Meer informatie over het invoegen, bekijken, ophalen en verwijderen van berichten met de Azure Storage-client bibliotheek voor Java.
+title: Queue Storage van Java Azure Storage gebruiken
+description: Meer informatie over het gebruik van Queue Storage voor het maken en verwijderen van wacht rijen. Meer informatie over het invoegen, bekijken, ophalen en verwijderen van berichten met de Azure Storage-client bibliotheek voor Java.
 author: mhopkins-msft
-ms.custom: devx-track-java
 ms.author: mhopkins
+ms.reviewer: dineshm
 ms.date: 08/19/2020
+ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
-ms.topic: how-to
-ms.reviewer: dineshm
-ms.openlocfilehash: c2ee32b3ced8fdcd5f9f889c4fd0183e46ad5d8d
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.custom: devx-track-java
+ms.openlocfilehash: 997a37ac4252813abf1b35877cd34e192ec3e2ae
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346006"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585714"
 ---
-# <a name="how-to-use-queue-storage-from-java"></a>Queue Storage gebruiken met Java
+# <a name="how-to-use-queue-storage-from-java"></a>Queue Storage van Java gebruiken
 
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 ## <a name="overview"></a>Overzicht
 
-In deze hand leiding wordt uitgelegd hoe u code kunt gebruiken voor algemene scenario's die gebruikmaken van de Azure Queue Storage-service. De voorbeelden zijn geschreven in Java en maken gebruik van de [Azure Storage SDK voor Java][Azure Storage SDK for Java]. Scenario's zijn het **Invoegen** , **inspecteren** , **ophalen** en **verwijderen** van wachtrij berichten. De code voor **het maken** en **verwijderen** van wacht rijen wordt ook behandeld. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over wacht rijen.
+In deze hand leiding wordt uitgelegd hoe u code kunt gebruiken voor algemene scenario's met behulp van de Azure Queue Storage-service. De voorbeelden zijn geschreven in Java en maken gebruik van de [Azure Storage SDK voor Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage). Scenario's zijn het **Invoegen**, **inspecteren**, **ophalen** en **verwijderen** van wachtrij berichten. De code voor **het maken** en **verwijderen** van wacht rijen wordt ook behandeld. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over wacht rijen.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -32,11 +32,11 @@ In deze hand leiding wordt uitgelegd hoe u code kunt gebruiken voor algemene sce
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Controleer eerst of uw ontwikkel systeem voldoet aan de vereisten die worden vermeld in de [Azure Queue Storage-client bibliotheek voor Java-V12](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue).
+Controleer eerst of uw ontwikkel systeem voldoet aan de vereisten die worden vermeld in [Azure Queue Storage-client bibliotheek V12 voor Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue).
 
-Een Java-toepassing maken met de naam *Queues-How-to-V12* :
+Een Java-toepassing maken met de naam `queues-how-to-v12` :
 
-1. In een console venster (zoals cmd, Power shell of bash), gebruikt u maven om een nieuwe console-app te maken met de naam *wachtrijen-How-to-V12*. Typ de volgende **mvn** -opdracht om een 'Hallo wereld!' te maken. Java-project.
+1. In een console venster (zoals cmd, Power shell of bash), gebruikt u maven om een nieuwe console-app met de naam te maken `queues-how-to-v12` . Typ de volgende `mvn` opdracht om een ' Hallo wereld ' Java-project te maken.
 
    ```bash
     mvn archetype:generate \
@@ -93,7 +93,7 @@ Een Java-toepassing maken met de naam *Queues-How-to-V12* :
     [INFO] ------------------------------------------------------------------------
         ```
 
-1. Switch to the newly created *queues-howto-v12* directory.
+1. Switch to the newly created `queues-howto-v12` directory.
 
    ```console
    cd queues-howto-v12
@@ -101,7 +101,7 @@ Een Java-toepassing maken met de naam *Queues-How-to-V12* :
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Open het bestand *pom.xml* in uw teksteditor. Voeg het volgende afhankelijkheidselement toe aan de groep met afhankelijkheden.
+Open het `pom.xml` bestand in de tekst editor. Voeg het volgende afhankelijkheidselement toe aan de groep met afhankelijkheden.
 
 ```xml
 <dependency>
@@ -117,7 +117,7 @@ Controleer eerst of uw ontwikkel systeem voldoet aan de vereisten die worden ver
 
 ---
 
-## <a name="configure-your-application-to-access-queue-storage"></a>Uw toepassing configureren voor toegang tot de wachtrij opslag
+## <a name="configure-your-application-to-access-queue-storage"></a>Uw toepassing configureren voor toegang tot Queue Storage
 
 Voeg de volgende import instructies toe aan de bovenkant van het Java-bestand waar u Azure Storage-Api's wilt gebruiken voor toegang tot wacht rijen:
 
@@ -135,9 +135,9 @@ import com.microsoft.azure.storage.queue.*;
 
 ---
 
-## <a name="set-up-an-azure-storage-connection-string"></a>Een Azure Storage-connection string instellen
+## <a name="set-up-an-azure-storage-connection-string"></a>Een Azure-opslagverbindingstekenreeks instellen
 
-Een Azure Storage-client maakt gebruik van een opslag connection string voor het openen van gegevens beheer Services. Haal de naam en de primaire toegangs sleutel voor uw opslag account op in de [Azure Portal](https://portal.azure.com). Gebruik deze als de waarden *AccountName* en *AccountKey* in de Connection String. In dit voorbeeld ziet u hoe u een statisch veld kunt declareren voor het opslaan van de verbindingstekenreeks:
+Een Azure Storage-client gebruikt een opslag connection string voor het openen van gegevens beheer Services. Haal de naam en de primaire toegangs sleutel voor uw opslag account op in de [Azure Portal](https://portal.azure.com). Gebruik deze als de `AccountName` `AccountKey` waarden en in de Connection String. In dit voorbeeld ziet u hoe u een statisch veld kunt declareren voor het opslaan van de verbindingstekenreeks:
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
@@ -153,7 +153,7 @@ final String storageConnectionString =
     "AccountKey=your_storage_account_key";
 ```
 
-U kunt deze teken reeks opslaan in het service configuratie bestand met de naam *ServiceConfiguration. cscfg*. Voor een app die binnen een Microsoft Azure-rol wordt uitgevoerd, opent u de connection string door **RoleEnvironment. getConfigurationSettings** aan te roepen. Hier volgt een voor beeld van het ophalen van de connection string van een **setting** -element met de naam *StorageConnectionString* :
+U kunt deze teken reeks opslaan in het service configuratie bestand met de naam `ServiceConfiguration.cscfg` . Voor een app die binnen een Microsoft Azure-rol wordt uitgevoerd, opent u de connection string door aan te roepen `RoleEnvironment.getConfigurationSettings` . Hier volgt een voor beeld van het ophalen van de connection string van een element met de `Setting` naam `StorageConnectionString` :
 
 ```java
 // Retrieve storage account from connection-string.
@@ -163,21 +163,22 @@ String storageConnectionString =
 
 ---
 
-In de volgende voor beelden wordt ervan uitgegaan dat u een **teken reeks** object hebt met de opslag Connection String.
+In de volgende voor beelden wordt ervan uitgegaan dat u een `String` object hebt met de opslag Connection String.
 
 ## <a name="how-to-create-a-queue"></a>Procedure: een wachtrij maken
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Een **QueueClient** -object bevat de bewerkingen voor interactie met een wachtrij. Met de volgende code wordt een **QueueClient** -object gemaakt. Gebruik het object **QueueClient** om de wachtrij te maken die u wilt gebruiken.
+Een `QueueClient` object bevat de bewerkingen voor interactie met een wachtrij. Met de volgende code wordt een- `QueueClient` object gemaakt. Gebruik het `QueueClient` object voor het maken van de wachtrij die u wilt gebruiken.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_CreateQueue":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Met een **CloudQueueClient** -object kunt u referentie objecten voor wacht rijen ophalen. Met de volgende code wordt een **CloudQueueClient** -object gemaakt. (Opmerking: er zijn meer manieren om **Cloud Storage account** -objecten te maken. Zie **Cloud Storage account** in de naslag informatie voor de [Azure Storage-client SDK]voor meer gegevens.
+Met een- `CloudQueueClient` object kunt u referentie objecten voor wacht rijen ophalen. Met de volgende code wordt een- `CloudQueueClient` object gemaakt dat een verwijzing bevat naar de wachtrij die u wilt gebruiken. U kunt de wachtrij maken als deze niet bestaat.
 
-Gebruik het object **CloudQueueClient** om een verwijzing naar de wachtrij die u wilt gebruiken op te halen. U kunt de wachtrij maken als deze niet bestaat.
+> [!NOTE]
+> Er zijn andere manieren om objecten te maken `CloudStorageAccount` . Zie `CloudStorageAccount` in de naslag informatie voor de [Azure Storage-client-SDK](https://azure.github.io/azure-sdk-for-java/storage.html).)
 
 ```java
 try
@@ -208,13 +209,13 @@ catch (Exception e)
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Als u een bericht wilt invoegen in een bestaande wachtrij, roept u de **SendMessage** -methode aan. Een bericht kan een teken reeks zijn (in UTF-8-indeling) of een byte matrix. Hier is code die een teken reeks bericht naar de wachtrij verzendt.
+Als u een bericht wilt invoegen in een bestaande wachtrij, roept u de- `sendMessage` methode aan. Een bericht kan een teken reeks zijn (in UTF-8-indeling) of een byte matrix. Hier is code die een teken reeks bericht naar de wachtrij verzendt.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_AddMessage":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Voor het invoegen van een bericht in een bestaande wachtrij maakt u eerst een nieuwe **CloudQueueMessage**. Vervolgens roept u de methode **addMessage** aan. Een **CloudQueueMessage** kan worden gemaakt vanuit een tekenreeks (in UTF-8-indeling) of een bytematrix. Hier is code waarmee een wachtrij wordt gemaakt (als deze niet bestaat) en het bericht ' Hello, World ' wordt ingevoegd.
+Als u een bericht wilt invoegen in een bestaande wachtrij, maakt u eerst een nieuw `CloudQueueMessage` . Vervolgens roept u de- `addMessage` methode aan. A `CloudQueueMessage` kan worden gemaakt op basis van een teken reeks (in UTF-8-indeling) of een byte matrix. Dit is de code waarmee een wachtrij wordt gemaakt (als deze niet bestaat) en het bericht wordt ingevoegd `Hello, World` .
 
 ```java
 try
@@ -247,7 +248,7 @@ catch (Exception e)
 
 ## <a name="how-to-peek-at-the-next-message"></a>Procedure: het volgende bericht bekijken
 
-U kunt het bericht aan de voor kant van een wachtrij bekijken zonder het uit de wachtrij te verwijderen door **peekMessage** aan te roepen.
+U kunt het bericht aan de voor kant van een wachtrij weer geven zonder het uit de wachtrij te verwijderen door te bellen `peekMessage` .
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
@@ -298,7 +299,7 @@ Met het volgende code voorbeeld wordt gezocht in de wachtrij met berichten, word
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Met de volgende voorbeeld code wordt gezocht in de wachtrij met berichten en wordt de eerste bericht inhoud gezocht die overeenkomt met ' Hello, World ', wordt de inhoud van het bericht gewijzigd en wordt het proces afgesloten.
+Met het volgende code voorbeeld wordt gezocht in de wachtrij met berichten, wordt de inhoud van het eerste bericht gevonden dat overeenkomt met `Hello, world` , wordt de inhoud van het bericht gewijzigd en wordt het proces afgesloten.
 
 ```java
 try
@@ -394,13 +395,13 @@ U kunt een schatting ophalen van het aantal berichten in de wachtrij.
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-De methode **getProperties** vraagt de Queue-service voor verschillende huidige waarden. Een van de waarden is een telling van het aantal berichten in een wachtrij. De telling is alleen geschatte omdat berichten kunnen worden toegevoegd of verwijderd na uw aanvraag. De methode **getApproximateMessageCount** retourneert de laatste waarde die is opgehaald door de aanroep van **getProperties** , zonder de Queue-service aan te roepen.
+De `getProperties` methode retourneert diverse waarden, inclusief het aantal berichten dat zich momenteel in een wachtrij bevindt. De telling is alleen geschatte omdat berichten kunnen worden toegevoegd of verwijderd na uw aanvraag. De `getApproximateMessageCount` methode retourneert de laatste waarde die is opgehaald door de aanroep naar `getProperties` , zonder Queue Storage aan te roepen.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_GetQueueLength":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-De methode **downloadAttributes** vraagt de Queue-service voor verschillende huidige waarden. Een van de waarden is een telling van het aantal berichten in een wachtrij. De telling is alleen geschatte omdat berichten kunnen worden toegevoegd of verwijderd na uw aanvraag. De methode **getApproximateMessageCount** retourneert de laatste waarde die is opgehaald door de aanroep van **downloadAttributes** , zonder de Queue-service aan te roepen.
+Met de- `downloadAttributes` methode worden verschillende waarden opgehaald, inclusief het aantal berichten dat zich momenteel in een wachtrij bevindt. De telling is alleen geschatte omdat berichten kunnen worden toegevoegd of verwijderd na uw aanvraag. De `getApproximateMessageCount` methode retourneert de laatste waarde die is opgehaald door de aanroep naar `downloadAttributes` , zonder Queue Storage aan te roepen.
 
 ```java
 try
@@ -437,13 +438,13 @@ catch (Exception e)
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Met uw code wordt een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderd. Wanneer u **receiveMessage** aanroept, wordt het volgende bericht in een wachtrij weer gegeven. Een bericht dat wordt geretourneerd door **receiveMessage** , wordt onzichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook **deleteMessage** aanroepen. Als uw code een bericht niet kan verwerken, zorgt dit proces met twee stappen ervoor dat u hetzelfde bericht kunt ophalen en het opnieuw probeert. Uw code aanroepen **deleteMessage** direct nadat het bericht is verwerkt.
+Met uw code wordt een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderd. Wanneer u aanroept `receiveMessage` , wordt het volgende bericht weer gegeven in een wachtrij. Een bericht dat wordt geretourneerd van is niet `receiveMessage` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook bellen `deleteMessage` . Als uw code een bericht niet kan verwerken, zorgt dit proces met twee stappen ervoor dat u hetzelfde bericht kunt ophalen en het opnieuw probeert. Uw code aanroepen `deleteMessage` direct nadat het bericht is verwerkt.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_DequeueMessage":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Met uw code wordt een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderd. Wanneer u **retrieveMessage** aanroept, wordt het volgende bericht in een wachtrij weer gegeven. Een bericht dat wordt geretourneerd door **retrieveMessage** , wordt onzichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook **deleteMessage** aanroepen. Als uw code een bericht niet kan verwerken, zorgt dit proces met twee stappen ervoor dat u hetzelfde bericht kunt ophalen en het opnieuw probeert. Uw code aanroepen **deleteMessage** direct nadat het bericht is verwerkt.
+Met uw code wordt een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderd. Wanneer u aanroept `retrieveMessage` , wordt het volgende bericht weer gegeven in een wachtrij. Een bericht dat wordt geretourneerd van is niet `retrieveMessage` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook bellen `deleteMessage` . Als uw code een bericht niet kan verwerken, zorgt dit proces met twee stappen ervoor dat u hetzelfde bericht kunt ophalen en het opnieuw probeert. Uw code aanroepen `deleteMessage` direct nadat het bericht is verwerkt.
 
 ```java
 try
@@ -482,13 +483,13 @@ Er zijn twee manieren om het ophalen van berichten aan te passen vanuit een wach
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-In het volgende code voorbeeld wordt de methode **receiveMessages** gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht verwerkt met behulp **van een for** -lus. Ook wordt de time-out voor onzichtbaar ingesteld op vijf minuten (300 seconden) voor elk bericht. De time-out begint voor alle berichten tegelijk. Wanneer vijf minuten zijn verstreken sinds de aanroep van **receiveMessages** , worden alle berichten die niet worden verwijderd, weer zichtbaar.
+In het volgende code voorbeeld wordt de `receiveMessages` methode gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `for` lus verwerkt. Ook wordt de time-out voor onzichtbaar ingesteld op vijf minuten (300 seconden) voor elk bericht. De time-out begint voor alle berichten tegelijk. Wanneer vijf minuten zijn verstreken sinds de aanroep naar `receiveMessages` , worden alle berichten die niet worden verwijderd, weer zichtbaar.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_DequeueMessages":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-In het volgende code voorbeeld wordt de methode **retrieveMessages** gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht verwerkt met behulp **van een for** -lus. Ook wordt de time-out voor onzichtbaar ingesteld op vijf minuten (300 seconden) voor elk bericht. De time-out begint voor alle berichten tegelijk. Wanneer vijf minuten zijn verstreken sinds de aanroep van **retrieveMessages** , worden alle berichten die niet worden verwijderd, weer zichtbaar.
+In het volgende code voorbeeld wordt de `retrieveMessages` methode gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `for` lus verwerkt. Ook wordt de time-out voor onzichtbaar ingesteld op vijf minuten (300 seconden) voor elk bericht. De time-out begint voor alle berichten tegelijk. Wanneer vijf minuten zijn verstreken sinds de aanroep naar `retrieveMessages` , worden alle berichten die niet worden verwijderd, weer zichtbaar.
 
 ```java
 try
@@ -523,13 +524,13 @@ catch (Exception e)
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Voor het verkrijgen van een lijst met de huidige wacht rijen roept u de methode **QueueServiceClient. list Queues ()** aan, die een verzameling **QueueItem** -objecten retourneert.
+Voor het verkrijgen van een lijst met de huidige wacht rijen roept u de `QueueServiceClient.listQueues()` methode aan, die een verzameling `QueueItem` objecten retourneert.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_ListQueues":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Voor het verkrijgen van een lijst met de huidige wacht rijen roept u de methode **CloudQueueClient. list Queues ()** aan, die een verzameling **CloudQueue** -objecten retourneert.
+Voor het verkrijgen van een lijst met de huidige wacht rijen roept u de `CloudQueueClient.listQueues()` methode aan, die een verzameling `CloudQueue` objecten retourneert.
 
 ```java
 try
@@ -562,13 +563,13 @@ catch (Exception e)
 
 # <a name="java-v12"></a>[Java-V12](#tab/java)
 
-Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de **Delete** -methode aan in het **QueueClient** -object.
+Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de- `delete` methode aan voor het `QueueClient` object.
 
 :::code language="java" source="~/azure-storage-snippets/queues/howto/java/java-v12/src/main/java/com/queues/howto/App.java" id="Snippet_DeleteMessageQueue":::
 
 # <a name="java-v8"></a>[Java-V8](#tab/java8)
 
-Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de methode **deleteIfExists** aan voor het object **CloudQueue** .
+Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de- `deleteIfExists` methode aan voor het `CloudQueue` object.
 
 ```java
 try
@@ -599,15 +600,9 @@ catch (Exception e)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u de basis principes van wachtrij opslag hebt geleerd, volgt u deze koppelingen voor meer informatie over complexere opslag taken.
+Nu u de basis principes van Queue Storage hebt geleerd, volgt u deze koppelingen voor meer informatie over complexere opslag taken.
 
-- [Azure Storage SDK voor Java][Azure Storage SDK for Java]
-- [Azure Storage Client SDK-referentie][Azure Storage Client SDK Reference]
-- [REST-API voor Azure Storage-services][Azure Storage Services REST API]
-- [Blog van het Azure Storage-team][Azure Storage Team Blog]
-
-[Azure SDK for Java]: https://github.com/azure/azure-sdk-for-java
-[Azure Storage SDK for Java]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage
-[Azure Storage Client SDK-referentie]: https://azure.github.io/azure-sdk-for-java/storage.html
-[Azure Storage Services REST API]: /rest/api/storageservices/
-[Azure Storage Team Blog]: https://techcommunity.microsoft.com/t5/azure-storage/bg-p/AzureStorageBlog
+- [Azure Storage SDK voor Java](https://github.com/Azure/Azure-SDK-for-Java)
+- [Naslag informatie voor Azure Storage client-SDK](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage)
+- [Azure Storage services REST API](/rest/api/storageservices/)
+- [Blog van Azure Storage team](https://techcommunity.Microsoft.com/t5/Azure-storage/bg-p/azurestorageblog)

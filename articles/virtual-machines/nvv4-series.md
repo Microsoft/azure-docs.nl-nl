@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 21d44044250bacc95c4dbb0dde147e87f2fed6a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0b7d200ef39a6b4da6af33a0a9b9314635c3db33
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652734"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586428"
 ---
 # <a name="nvv4-series"></a>NVv4-serie 
 
@@ -27,6 +27,7 @@ De virtuele machines uit de NVv4-serie worden aangedreven door [AMD Radeon insti
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
+Versneld netwerken: ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Maximum aantal Nic's/verwachte netwerk bandbreedte (MBps) |

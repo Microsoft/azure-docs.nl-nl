@@ -10,18 +10,19 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 01/14/2020
 ms.author: kumud
-ms.openlocfilehash: 5fc565ecc1b501f52e934784695594dcfef2a83a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c3056415d3432dbe64dd1f2bcf974a676bbf6c6b
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020463"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586054"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-api"></a>Een Brands model aanpassen met de Video Indexer-API
 
-Video Indexer ondersteunt merk detectie van spraak-en visuele tekst tijdens het indexeren en opnieuw indexeren van video-en audio-inhoud. De merk detectie functie identificeert vermeldingen van producten, services en bedrijven die worden voorgesteld door de merken database van Bing. Als micro soft bijvoorbeeld wordt vermeld in video-of audio-inhoud, of als het in visuele tekst in een video wordt weer gegeven, detecteert Video Indexer deze als een merk in de inhoud. Met een aangepast merk model kunt u bepaalde merken uitsluiten van detectie en merken opnemen die deel uitmaken van uw model en die zich mogelijk niet in de data base van Bing Brands bevinden.
+Video Indexer ondersteunt merk detectie van spraak-en visuele tekst tijdens het indexeren en opnieuw indexeren van video-en audio-inhoud. De merk detectie functie identificeert vermeldingen van producten, services en bedrijven die worden voorgesteld door de merken database van Bing. Als micro soft bijvoorbeeld wordt vermeld in video-of audio-inhoud, of als het in visuele tekst in een video wordt weer gegeven, detecteert Video Indexer deze als een merk in de inhoud. Met een aangepast merk model kunt u bepaalde merken uitsluiten van detectie en merken opnemen die deel uitmaken van uw model en die zich mogelijk niet in de data base van Bing Brands bevinden. Zie [Overzicht](customize-brands-model-overview.md) voor meer informatie.
 
-Zie [overzicht](customize-brands-model-overview.md)voor een gedetailleerd overzicht.
+> [!NOTE]
+> Als uw video is geïndexeerd voordat u een merk hebt toegevoegd, moet u deze opnieuw indexeren.
 
 U kunt de Video Indexer-Api's gebruiken om aangepaste Brands modellen te maken, te gebruiken en te bewerken die in een video zijn gedetecteerd, zoals beschreven in dit onderwerp. U kunt ook de Video Indexer website gebruiken, zoals beschreven in [het model Brands aanpassen met behulp van de video indexer-website](customize-brands-model-with-api.md).
 

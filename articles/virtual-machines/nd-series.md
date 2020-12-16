@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 1dfd4185f077806d6b84376e786cfe5de1a8ffc3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f37341233eec45a22fe92450e69d486e61f26eb4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653433"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585306"
 ---
 # <a name="nd-series"></a>ND-serie
 
@@ -23,6 +23,7 @@ De virtuele machines uit de ND-serie vormen een nieuwe toevoeging aan de GPU-fam
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+NVIDIA NVLink Interconnect: niet ondersteund<br>
 
 > [!IMPORTANT]
 > Voor deze VM-serie wordt het vCPU (kern quotum) per regio in uw abonnement in eerste instantie ingesteld op 0. [Vraag een toename van een vCPU-quotum](../azure-portal/supportability/resource-manager-core-quotas-request.md) aan voor deze reeks in een [beschik bare regio](https://azure.microsoft.com/regions/services/).

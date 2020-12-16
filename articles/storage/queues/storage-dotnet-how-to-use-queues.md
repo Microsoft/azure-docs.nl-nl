@@ -1,20 +1,20 @@
 ---
-title: Aan de slag met Azure Queue Storage met .NET-Azure Storage
-description: Azure Queues biedt betrouwbare, asynchrone uitwisseling van berichten tussen toepassingsonderdelen. Met Cloud Messaging kunnen onderdelen van uw toepassing onafhankelijk van elkaar worden opgeschaald.
+title: Aan de slag met Azure Queue Storage met behulp van .NET-Azure Storage
+description: Azure Queue Storage bieden betrouw bare, asynchrone berichten tussen toepassings onderdelen. Met Cloud Messaging kunnen onderdelen van uw toepassing onafhankelijk van elkaar worden opgeschaald.
 author: mhopkins-msft
 ms.author: mhopkins
+ms.reviewer: dineshm
 ms.date: 10/08/2020
+ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
-ms.topic: how-to
-ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b59c7d2af33efd82f27af9e13fc9c1f36ca788ee
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: d54b8f15c90aa8f6ffcc04453fee0349e501f47d
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348590"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585748"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Aan de slag met Azure Queue Storage met .NET
 
@@ -22,18 +22,18 @@ ms.locfileid: "93348590"
 
 ## <a name="overview"></a>Overzicht
 
-Azure Queue Storage biedt uitwisseling van berichten tussen toepassingsonderdelen in de cloud. Bij het ontwerpen van toepassingen voor schalen worden toepassings onderdelen vaak losgekoppeld zodat ze onafhankelijk kunnen worden geschaald. Queue Storage biedt asynchrone berichten tussen toepassings onderdelen, ongeacht of ze worden uitgevoerd in de Cloud, op het bureau blad, op een on-premises server of op een mobiel apparaat. Queue Storage biedt daarnaast ondersteuning voor het beheren van asynchrone taken en het samenstellen van proceswerkstromen.
+Azure Queue Storage biedt Cloud berichten tussen toepassings onderdelen. Bij het ontwerpen van toepassingen voor schalen worden toepassings onderdelen vaak losgekoppeld zodat ze onafhankelijk kunnen worden geschaald. Queue Storage biedt asynchrone berichten tussen toepassings onderdelen, ongeacht of ze worden uitgevoerd in de Cloud, op het bureau blad, op een on-premises server of op een mobiel apparaat. Queue Storage biedt ook ondersteuning voor het beheren van asynchrone taken en het bouwen van werk stromen voor het proces.
 
 ### <a name="about-this-tutorial"></a>Over deze zelfstudie
 
-Deze zelfstudie laat zien hoe u .NET-code kunt schrijven voor een aantal algemene scenario's die gebruikmaken van Azure Queue Storage. Scenario's die aan bod komen, zijn onder meer het maken en verwijderen van wachtrijen en het toevoegen, lezen en verwijderen van wachtrijberichten.
+Deze zelf studie laat zien hoe u .NET-code kunt schrijven voor een aantal algemene scenario's met Azure Queue Storage. Scenario's die aan bod komen, zijn onder meer het maken en verwijderen van wachtrijen en het toevoegen, lezen en verwijderen van wachtrijberichten.
 
 **Geschatte duur:** 45 minuten
 
 ### <a name="prerequisites"></a>Vereisten
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
-- Een [Azure-opslag account](../common/storage-account-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json)
+- Een [Azure Storage-account](../common/storage-account-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json)
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -54,42 +54,42 @@ Maak in Visual Studio een nieuwe Windows-consoletoepassing. In de volgende stapp
 5. Voer in het veld **project naam** een naam in voor uw toepassing
 6. Selecteer **Maken**
 
-Alle code voorbeelden in deze zelf studie kunnen worden toegevoegd aan de methode **Main ()** van het **Program.cs** -bestand van uw console toepassing.
+Alle codevoorbeelden in deze zelfstudie kunnen worden toegevoegd aan de methode `Main()` van het bestand `Program.cs` van de consoletoepassing.
 
 U kunt de Azure Storage-client bibliotheken gebruiken in elk type .NET-toepassing, waaronder een Azure-Cloud service of web-app, en desktop-en mobiele toepassingen. In deze gids gebruiken we een consoletoepassing voor de eenvoud.
 
 ### <a name="use-nuget-to-install-the-required-packages"></a>NuGet gebruiken om de vereiste pakketten te installeren
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
 U moet verwijzen naar de volgende vier pakketten in uw project om deze zelf studie te volt ooien:
 
-- [Azure core library voor .net](https://www.nuget.org/packages/Azure.Core/): dit pakket biedt gedeelde primitieven, abstracties en helpers voor moderne .net Azure SDK-client bibliotheken.
-- [Azure Storage algemene client bibliotheek voor .net](https://www.nuget.org/packages/Azure.Storage.Common/): dit pakket biedt een infra structuur die wordt gedeeld door de andere Azure Storage-client bibliotheken.
-- [Azure Storage wachtrij bibliotheek voor .net](https://www.nuget.org/packages/Azure.Storage.Queues/): met dit pakket kunt u werken met de Azure Storage Queue-service voor het opslaan van berichten die toegankelijk zijn voor een client.
-- [Configuration Manager-bibliotheek voor .net](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/): dit pakket biedt toegang tot configuratie bestanden voor client toepassingen.
+- [Azure. core-bibliotheek voor .net](https://www.nuget.org/packages/azure.core/): dit pakket biedt gedeelde primitieven, abstracties en helpers voor moderne .net Azure SDK-client bibliotheken.
+- [Azure. storage. algemene client bibliotheek voor .net](https://www.nuget.org/packages/azure.storage.common/): dit pakket biedt een infra structuur die wordt gedeeld door de andere Azure Storage-client bibliotheken.
+- [Azure. storage. queues-client bibliotheek voor .net](https://www.nuget.org/packages/azure.storage.queues/): dit pakket maakt het mogelijk om met Azure Queue Storage berichten op te slaan die toegankelijk zijn voor een client.
+- [System.Configuration.ConfigurationManager-bibliotheek voor .net](https://www.nuget.org/packages/system.configuration.configurationmanager/): dit pakket biedt toegang tot configuratie bestanden voor client toepassingen.
 
 U kunt NuGet gebruiken om deze pakketten te verkrijgen. Volg deze stappen:
 
 1. Klik met de rechter muisknop op uw project in **Solution Explorer** en kies **NuGet-pakketten beheren**.
 1. **Bladeren** selecteren
-1. Zoek online naar ' Azure. storage. queues ' en selecteer **installeren** om de Storage-client bibliotheek en de afhankelijkheden ervan te installeren. Hiermee worden ook de bibliotheken Azure. storage. common en Azure. core geïnstalleerd. Dit zijn afhankelijkheden van de wachtrij bibliotheek.
-1. Zoek online naar ' System.Configuration.ConfigurationManager ' en selecteer **installeren** om de Configuration Manager te installeren.
+1. Zoek online naar `Azure.Storage.Queues` en selecteer **installeren** om de Azure Storage-client bibliotheek en de afhankelijkheden ervan te installeren. Hiermee worden ook de bibliotheken Azure. storage. common en Azure. core geïnstalleerd. Dit zijn afhankelijkheden van de wachtrij bibliotheek.
+1. Zoek online naar `System.Configuration.ConfigurationManager` en selecteer **installeren** om de Configuration Manager te installeren.
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
 U moet verwijzen naar de volgende drie pakketten in uw project om deze zelf studie te volt ooien:
 
-- [Microsoft Azure Storage algemene client bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): dit pakket biedt programmatische toegang tot gegevens bronnen in uw opslag account.
-- [Microsoft Azure Storage wachtrij bibliotheek voor .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/): deze client bibliotheek biedt de mogelijkheid om te werken met de Microsoft Azure Storage Queue-service voor het opslaan van berichten die toegankelijk zijn voor een client.
-- [Configuration Manager-bibliotheek van Microsoft Azure voor .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/): dit pakket biedt een klasse voor het parseren van een verbindingsreeks in een configuratiebestand, ongeacht waar de toepassing wordt uitgevoerd.
+- [Micro soft. Azure. storage. algemene client bibliotheek voor .net](https://www.nuget.org/packages/microsoft.azure.storage.common/): dit pakket biedt programmatische toegang tot gegevens bronnen in uw opslag account.
+- [Microsoft Azure Queue Storage-client bibliotheek voor .net](https://www.nuget.org/packages/microsoft.azure.storage.queue/): met deze client bibliotheek kunt u met Azure Queue Storage werken om berichten op te slaan die toegankelijk zijn voor een client.
+- [Configuration Manager-bibliotheek van Microsoft Azure voor .NET](https://www.nuget.org/packages/microsoft.azure.configurationmanager/): dit pakket biedt een klasse voor het parseren van een verbindingsreeks in een configuratiebestand, ongeacht waar de toepassing wordt uitgevoerd.
 
 U kunt NuGet gebruiken om deze pakketten te verkrijgen. Volg deze stappen:
 
 1. Klik met de rechter muisknop op uw project in **Solution Explorer** en kies **NuGet-pakketten beheren**.
 1. **Bladeren** selecteren
-1. Zoek online naar ' micro soft. Azure. storage. Queue ' en selecteer **installeren** om de Storage-client bibliotheek en de afhankelijkheden ervan te installeren. Hiermee wordt ook de bibliotheek micro soft. Azure. storage. common geïnstalleerd. Dit is een afhankelijkheid van de wachtrij bibliotheek.
-1. Zoek online naar ' Microsoft.Azure.ConfigurationManager ' en selecteer **installeren** om de Azure-Configuration Manager te installeren.
+1. Zoek online naar `Microsoft.Azure.Storage.Queue` en selecteer **installeren** om de Azure Storage-client bibliotheek en de afhankelijkheden ervan te installeren. Hiermee wordt ook de bibliotheek micro soft. Azure. storage. common geïnstalleerd. Dit is een afhankelijkheid van de wachtrij bibliotheek.
+1. Zoek online naar `Microsoft.Azure.ConfigurationManager` en selecteer **installeren** om de Azure Configuration Manager te installeren.
 
 ---
 
@@ -101,7 +101,7 @@ U kunt de voorbeelden in deze gids in twee omgevingen uitvoeren:
 - U kunt uw code uitvoeren op basis van de Azurite-opslag emulator. Azurite is een lokale omgeving die een Azure Storage-account in de Cloud emuleert. Azurite is een gratis optie voor het testen en opsporen van fouten in uw code tijdens het ontwikkelen van uw toepassing. De emulator maakt gebruik van een bekend account en een bekende sleutel. Zie voor meer informatie [de Azurite-emulator gebruiken voor het ontwikkelen en testen van lokale Azure Storage](../common/storage-use-azurite.md).
 
 > [!NOTE]
-> Gebruik de opslagemulator als u mogelijke kosten in verband met Azure-opslag wilt vermijden. Als u er echter voor kiest om een Azure-opslagaccount in de cloud te gebruiken, zijn de kosten voor de uitvoering van deze zelfstudie te verwaarlozen.
+> Gebruik de opslagemulator als u mogelijke kosten in verband met Azure-opslag wilt vermijden. Als u echter een Azure Storage-account in de Cloud wilt richten, zullen de kosten voor het uitvoeren van deze zelf studie verwaarloosbaar zijn.
 
 ## <a name="get-your-storage-connection-string"></a>Uw opslag connection string ophalen
 
@@ -123,7 +123,7 @@ Zie [Azure Storage-verbindingsreeksen configureren](../common/storage-configure-
 > [!NOTE]
 > De sleutel van uw opslagaccount is vergelijkbaar met het hoofdwachtwoord voor uw opslagaccount. Zorg dat de sleutel van uw opslagaccount altijd is beveiligd. Geef deze niet aan andere gebruikers en bewaar of noteer de sleutel op een veilige manier en plaats. Genereer een nieuwe sleutel via de Azure-portal als er mogelijk inbreuk op de sleutel heeft plaatsgevonden.
 
-De beste manier om de opslagverbindingsreeks te onderhouden, is met een configuratiebestand. Als u uw connection string wilt configureren, opent u het *app.config* -bestand vanuit Solution Explorer in Visual Studio. Voeg de inhoud van het element `\<appSettings\>` hieronder toe. Vervang de *verbindings reeks* door de waarde die u hebt gekopieerd uit uw opslag account in de portal:
+De beste manier om de opslagverbindingsreeks te onderhouden, is met een configuratiebestand. U configureert de verbindingsreeks door het bestand `app.config` te openen vanuit Solution Explorer in Visual Studio. Voeg de inhoud toe van het `<appSettings>` element dat hier wordt weer gegeven. Vervang door `connection-string` de waarde die u hebt gekopieerd uit uw opslag account in de portal:
 
 ```xml
 <configuration>
@@ -152,11 +152,11 @@ Als u de Azurite-opslag emulator wilt richten, kunt u een snelkoppeling gebruike
 
 Voeg de volgende `Program.cs`-instructies aan het begin van het bestand `using` toe:
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_UsingStatements":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
 ```csharp
 using System; // Namespace for Console output
@@ -167,17 +167,17 @@ using Microsoft.Azure.Storage.Queue; // Namespace for Queue storage types
 
 ---
 
-### <a name="create-the-queue-service-client"></a>De Queue-serviceclient maken
+### <a name="create-the-queue-storage-client"></a>De Queue Storage-client maken
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-Met de [QueueClient](/dotnet/api/azure.storage.queues.queueclient) -klasse kunt u wacht rijen ophalen die zijn opgeslagen in wachtrij opslag. Hier volgt één manier om de serviceclient te maken:
+Met de- [`QueueClient`](/dotnet/api/azure.storage.queues.queueclient) klasse kunt u wacht rijen ophalen die zijn opgeslagen in Queue Storage. Hier volgt één manier om de serviceclient te maken:
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_CreateClient":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-Met de [CloudQueueClient](/dotnet/api/microsoft.azure.storage.queue.cloudqueueclient?view=azure-dotnet-legacy&preserve-view=true)-klasse kunt u wachtrijen ophalen die zijn opgeslagen in Queue Storage. Hier volgt één manier om de serviceclient te maken:
+Met de- [`CloudQueueClient`](/dotnet/api/microsoft.azure.storage.queue.cloudqueueclient?view=azure-dotnet-legacy&preserve-view=true) klasse kunt u wacht rijen ophalen die zijn opgeslagen in Queue Storage. Hier volgt één manier om de serviceclient te maken:
 
 ```csharp
 // Retrieve storage account from connection string
@@ -196,11 +196,11 @@ U bent nu klaar om code te schrijven die gegevens leest uit en schrijft naar Que
 
 In dit voor beeld ziet u hoe u een wachtrij maakt:
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_CreateQueue":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
 ```csharp
 // Retrieve storage account from connection string
@@ -221,15 +221,15 @@ queue.CreateIfNotExists();
 
 ## <a name="insert-a-message-into-a-queue"></a>Een bericht in een wachtrij invoegen
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-Als u een bericht wilt invoegen in een bestaande wachtrij, roept u de [SendMessage](/dotnet/api/azure.storage.queues.queueclient.sendmessage) -methode aan. Een bericht kan een `string` (in UTF-8-indeling) of een `byte` matrix zijn. Met de volgende code wordt een wachtrij gemaakt (als deze niet bestaat) en wordt er een bericht ingevoegd:
+Als u een bericht wilt invoegen in een bestaande wachtrij, roept u de- [`SendMessage`](/dotnet/api/azure.storage.queues.queueclient.sendmessage) methode aan. Een bericht kan een teken reeks zijn (in UTF-8-indeling) of een byte matrix. Met de volgende code wordt een wachtrij gemaakt (als deze niet bestaat) en wordt er een bericht ingevoegd:
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_InsertMessage":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-Voor het invoegen van een bericht in een bestaande wachtrij maakt u eerst een nieuwe [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet-legacy&preserve-view=true). Daarna roept u de methode [AddMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet-legacy&preserve-view=true) aan. `CloudQueueMessage`U kunt een maken van een `string` (in UTF-8-indeling) of een `byte` matrix. Hier is code die een wachtrij maakt (als deze niet bestaat) en het bericht ' Hallo, wereld ' invoegt:
+Als u een bericht wilt invoegen in een bestaande wachtrij, maakt u eerst een nieuw [`CloudQueueMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet-legacy&preserve-view=true) . Vervolgens roept u de- [`AddMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet-legacy&preserve-view=true) methode aan. A `CloudQueueMessage` kan worden gemaakt op basis van een teken reeks (in UTF-8-indeling) of een byte matrix. Dit is de code waarmee een wachtrij wordt gemaakt (als deze niet bestaat) en het volgende bericht wordt ingevoegd `Hello, World` : als u een bericht wilt invoegen in een bestaande wachtrij, maakt u eerst een nieuw [`CloudQueueMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage?view=azure-dotnet-legacy&preserve-view=true) . Vervolgens roept u de- [`AddMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessage?view=azure-dotnet-legacy&preserve-view=true) methode aan. A `CloudQueueMessage` kan worden gemaakt op basis van een teken reeks (in UTF-8-indeling) of een byte matrix. Hier is code waarmee een wachtrij wordt gemaakt (als deze niet bestaat) en het volgende bericht wordt ingevoegd `Hello, World` :
 
 ```csharp
 // Retrieve storage account from connection string
@@ -254,15 +254,15 @@ queue.AddMessage(message);
 
 ## <a name="peek-at-the-next-message"></a>Bekijken van het volgende bericht
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-U kunt de berichten in de wachtrij bekijken zonder ze uit de wachtrij te verwijderen door de [PeekMessages](/dotnet/api/azure.storage.queues.queueclient.peekmessages) -methode aan te roepen. Als u geen waarde doorgeeft voor de para meter *maxMessages* , is de standaard instelling om één bericht te bekijken.
+U kunt de berichten in de wachtrij bekijken zonder ze uit de wachtrij te verwijderen door de methode aan te roepen [`PeekMessages`](/dotnet/api/azure.storage.queues.queueclient.peekmessages) . Als u geen waarde voor de `maxMessages` para meter doorgeeft, is de standaard instelling om één bericht te bekijken.
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_PeekMessage":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-U kunt het bericht vooraan in een wachtrij bekijken zonder het uit de wachtrij te verwijderen, door de methode [PeekMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.peekmessage?view=azure-dotnet-legacy&preserve-view=true) aan te roepen.
+U kunt het bericht aan de voor kant van een wachtrij bekijken zonder het uit de wachtrij te verwijderen door de methode aan te roepen [`PeekMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.peekmessage?view=azure-dotnet-legacy&preserve-view=true) .
 
 ```csharp
 // Retrieve storage account from connection string
@@ -286,13 +286,13 @@ Console.WriteLine(peekedMessage.AsString);
 
 ## <a name="change-the-contents-of-a-queued-message"></a>De inhoud van een bericht in de wachtrij wijzigen
 
-U kunt de inhoud van een bericht in de wachtrij wijzigen. Als het bericht een werktaak vertegenwoordigt, kunt u deze functie gebruiken om de status van de werktaak bij te werken. Met de volgende code wordt het bericht in de wachtrij bijgewerkt met nieuwe inhoud en wordt de time-out voor de zichtbaarheid met 60 seconden verlengd. Hiermee wordt de status van de werkitems die aan het bericht zijn gekoppeld, opgeslagen en krijgt de client een extra minuut om aan het bericht te blijven werken. U kunt deze techniek gebruiken om uit meerdere stappen bestaande werkstromen in berichten in de wachtrij te volgen zonder dat u helemaal opnieuw hoeft te beginnen als een verwerkingsstap vanwege een hardware- of softwarefout is mislukt. Doorgaans houdt u ook het aantal nieuwe pogingen bij en als het bericht meer dan *n* keer opnieuw is geprobeerd, verwijdert u het. Dit biedt bescherming tegen berichten die een toepassingsfout activeren telkens wanneer ze worden verwerkt.
+U kunt de inhoud van een bericht in de wachtrij wijzigen. Als het bericht een werktaak vertegenwoordigt, kunt u deze functie gebruiken om de status van de werktaak bij te werken. Met de volgende code wordt het bericht in de wachtrij bijgewerkt met nieuwe inhoud en wordt de time-out voor de zichtbaarheid met 60 seconden verlengd. Hiermee wordt de status van de werkitems die aan het bericht zijn gekoppeld, opgeslagen en krijgt de client een extra minuut om aan het bericht te blijven werken. U kunt deze techniek gebruiken om werk stromen met meerdere stappen bij te houden in wachtrij berichten, zonder dat u vanaf het begin hoeft te beginnen als een verwerkings stap mislukt als gevolg van een hardware-of software fout. Doorgaans houdt u ook het aantal nieuwe pogingen bij en als het bericht meer dan *n* keer opnieuw is geprobeerd, verwijdert u het. Dit biedt bescherming tegen berichten die een toepassingsfout activeren telkens wanneer ze worden verwerkt.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_UpdateMessage":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -315,17 +315,17 @@ queue.UpdateMessage(message,
 
 ---
 
-## <a name="de-queue-the-next-message"></a>Het volgende bericht uit de wachtrij verwijderen
+## <a name="dequeue-the-next-message"></a>Het volgende bericht uit de wachtrij verwijderen
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-Een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderen. Wanneer u [ReceiveMessages](/dotnet/api/azure.storage.queues.queueclient.receivemessages)aanroept, wordt het volgende bericht in een wachtrij weer gegeven. Een bericht dat wordt geretourneerd van is niet `ReceiveMessages` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Om het bericht definitief uit de wachtrij te verwijderen, moet u ook [DeleteMessage](/dotnet/api/azure.storage.queues.queueclient.deletemessage) aanroepen. Dit proces in twee stappen voor het verwijderen van een bericht zorgt ervoor dat als de code er niet in slaagt een bericht te verwerken vanwege hardware- of softwareproblemen, een ander exemplaar van uw code hetzelfde bericht kan ophalen en het opnieuw kan proberen. Uw code aanroepen `DeleteMessage` direct nadat het bericht is verwerkt.
+Een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderen. Wanneer u aanroept [`ReceiveMessages`](/dotnet/api/azure.storage.queues.queueclient.receivemessages) , wordt het volgende bericht weer gegeven in een wachtrij. Een bericht dat wordt geretourneerd van is niet `ReceiveMessages` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook bellen [`DeleteMessage`](/dotnet/api/azure.storage.queues.queueclient.deletemessage) . Dit proces in twee stappen voor het verwijderen van een bericht zorgt ervoor dat als de code er niet in slaagt een bericht te verwerken vanwege hardware- of softwareproblemen, een ander exemplaar van uw code hetzelfde bericht kan ophalen en het opnieuw kan proberen. Uw code aanroepen `DeleteMessage` direct nadat het bericht is verwerkt.
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_DequeueMessage":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-Met uw code wordt een bericht in twee stappen uit de wachtrij verwijderd. Wanneer u [GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage?view=azure-dotnet-legacy&preserve-view=true) aanroept, wordt het volgende bericht in een wachtrij opgehaald. Een bericht dat wordt geretourneerd van is niet `GetMessage` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Om het bericht definitief uit de wachtrij te verwijderen, moet u ook [DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage?view=azure-dotnet-legacy&preserve-view=true) aanroepen. Dit proces in twee stappen voor het verwijderen van een bericht zorgt ervoor dat als de code er niet in slaagt een bericht te verwerken vanwege hardware- of softwareproblemen, een ander exemplaar van uw code hetzelfde bericht kan ophalen en het opnieuw kan proberen. Uw code aanroepen `DeleteMessage` direct nadat het bericht is verwerkt.
+Met uw code wordt een bericht uit een wachtrij in twee stappen uit de wachtrij verwijderd. Wanneer u aanroept [`GetMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage?view=azure-dotnet-legacy&preserve-view=true) , wordt het volgende bericht weer gegeven in een wachtrij. Een bericht dat wordt geretourneerd van is niet `GetMessage` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook bellen [`DeleteMessage`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage?view=azure-dotnet-legacy&preserve-view=true) . Dit proces in twee stappen voor het verwijderen van een bericht zorgt ervoor dat als de code er niet in slaagt een bericht te verwerken vanwege hardware- of softwareproblemen, een ander exemplaar van uw code hetzelfde bericht kan ophalen en het opnieuw kan proberen. Uw code aanroepen `DeleteMessage` direct nadat het bericht is verwerkt.
 
 ```csharp
 // Retrieve storage account from connection string
@@ -347,15 +347,17 @@ queue.DeleteMessage(retrievedMessage);
 
 ---
 
-## <a name="use-async-await-pattern-with-common-queue-storage-apis"></a>Het Async-Await-patroon gebruiken met algemene Queue Storage-API's
+<!-- docutune:casing "Async-Await pattern" "Async and Await" -->
 
-Dit voorbeeld laat zien hoe u het Async-Await-patroon gebruikt met algemene Queue Storage-API's. In het voorbeeld wordt de asynchrone versie aangeroepen van elk van de opgegeven methoden. Dit ziet u aan het achtervoegsel *Async* van elke methode. Wanneer er een asynchrone methode wordt gebruikt, schort het Async-Await-patroon lokale uitvoering uit totdat de aanroep is voltooid. Dit gedrag stelt de huidige thread in staat andere bewerkingen uit te voeren, zodat knelpunten in de prestaties worden voorkomen en de algehele respons van uw toepassing verbetert. Zie [Async en Await (C# en Visual Basic)](/previous-versions/hh191443(v=vs.140)) voor meer informatie over het gebruik van het Async-Await-patroon in .NET.
+## <a name="use-the-async-await-pattern-with-common-queue-storage-apis"></a>Het Async-Await patroon gebruiken met algemene Queue Storage-Api's
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+In dit voor beeld ziet u hoe u het Async-Await patroon kunt gebruiken met algemene Queue Storage-Api's. In het voor beeld wordt de asynchrone versie van elk van de opgegeven methoden aangeroepen, zoals aangegeven door het `Async` achtervoegsel van elke methode. Wanneer een asynchrone methode wordt gebruikt, wordt de lokale uitvoering door het Async-Await-patroon onderbroken totdat de aanroep is voltooid. Dit gedrag stelt de huidige thread in staat andere bewerkingen uit te voeren, zodat knelpunten in de prestaties worden voorkomen en de algehele respons van uw toepassing verbetert. Zie [async en await (C# en Visual Basic)](/previous-versions/hh191443(v=vs.140)) voor meer informatie over het gebruik van het Async-Await patroon in .net.
+
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_AsyncQueue":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
 ```csharp
 // Create the queue if it doesn't already exist
@@ -386,19 +388,19 @@ Console.WriteLine("Deleted message");
 
 ---
 
-## <a name="leverage-additional-options-for-de-queuing-messages"></a>Gebruikmaken van aanvullende opties voor het verwijderen van berichten uit de wachtrij
+## <a name="use-additional-options-for-dequeuing-messages"></a>Aanvullende opties voor het dewachtrijen van berichten gebruiken
 
 Er zijn twee manieren waarop u het ophalen van berichten uit een wachtrij kunt aanpassen. Ten eerste kunt u berichten batchgewijs (maximaal 32) ophalen. Ten tweede kunt u een langere of kortere time-out voor onzichtbaarheid instellen, zodat uw code meer of minder tijd krijgt voor het volledig verwerken van elk bericht.
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-In het volgende code voorbeeld wordt de methode [ReceiveMessages](/dotnet/api/azure.storage.queues.queueclient.receivemessages) gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `foreach` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht. Houd er rekening mee dat de 5 minuten voor alle berichten tegelijk worden gestart, dus na 5 minuten sinds de aanroep van `ReceiveMessages` , worden alle berichten die niet zijn verwijderd, weer zichtbaar.
+In het volgende code voorbeeld wordt de [`ReceiveMessages`](/dotnet/api/azure.storage.queues.queueclient.receivemessages) methode gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `foreach` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht. Houd er rekening mee dat de vijf minuten voor alle berichten tegelijk worden gestart, dus nadat vijf minuten zijn verstreken sinds de aanroep naar `ReceiveMessages` , worden alle berichten die niet zijn verwijderd, weer zichtbaar.
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_DequeueMessages":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-In het volgende codevoorbeeld wordt de methode [GetMessages](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessages?view=azure-dotnet-legacy&preserve-view=true) gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `foreach` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht. Houd er rekening mee dat de 5 minuten voor alle berichten tegelijk worden gestart, dus na 5 minuten sinds de aanroep van `GetMessages` , worden alle berichten die niet zijn verwijderd, weer zichtbaar.
+In het volgende code voorbeeld wordt de [`GetMessages`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessages?view=azure-dotnet-legacy&preserve-view=true) methode gebruikt om 20 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `foreach` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht. Houd er rekening mee dat de vijf minuten voor alle berichten tegelijk worden gestart, dus nadat vijf minuten zijn verstreken sinds de aanroep naar `GetMessages` , worden alle berichten die niet zijn verwijderd, weer zichtbaar.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -422,15 +424,15 @@ foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes
 
 ## <a name="get-the-queue-length"></a>Lengte van de wachtrij ophalen
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-U kunt een schatting ophalen van het aantal berichten in de wachtrij. De methode [GetProperties](/dotnet/api/azure.storage.queues.queueclient.getproperties) vraagt de Queue-service om de wachtrij-eigenschappen op te halen, met inbegrip van het aantal berichten. De eigenschap [ApproximateMessagesCount](/dotnet/api/azure.storage.queues.models.queueproperties.approximatemessagescount) bevat het geschatte aantal berichten in de wachtrij. Dit getal is niet lager dan het werkelijke aantal berichten in de wachtrij, maar dit kan hoger zijn.
+U kunt een schatting ophalen van het aantal berichten in de wachtrij. De [`GetProperties`](/dotnet/api/azure.storage.queues.queueclient.getproperties) methode retourneert wachtrij-eigenschappen met inbegrip van het aantal berichten. De [`ApproximateMessagesCount`](/dotnet/api/azure.storage.queues.models.queueproperties.approximatemessagescount) eigenschap bevat het geschatte aantal berichten in de wachtrij. Dit getal is niet lager dan het werkelijke aantal berichten in de wachtrij, maar dit kan hoger zijn.
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_GetQueueLength":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-U kunt een schatting ophalen van het aantal berichten in de wachtrij. De methode [FetchAttributes](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.fetchattributes?view=azure-dotnet-legacy&preserve-view=true) vraagt de Queue-service de wachtrij-kenmerken, zoals het aantal berichten, op te halen. De eigenschap [ApproximateMessageCount](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.approximatemessagecount?view=azure-dotnet-legacy&preserve-view=true) retourneert de laatste waarde die door de `FetchAttributes` methode is opgehaald, zonder de Queue-service aan te roepen.
+U kunt een schatting ophalen van het aantal berichten in de wachtrij. De [`FetchAttributes`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.fetchattributes?view=azure-dotnet-legacy&preserve-view=true) methode retourneert wachtrij kenmerken met inbegrip van het aantal berichten. De [`ApproximateMessageCount`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.approximatemessagecount?view=azure-dotnet-legacy&preserve-view=true) eigenschap retourneert de laatste waarde die door de `FetchAttributes` methode is opgehaald, zonder Queue Storage aan te roepen.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -457,15 +459,15 @@ Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
 
 ## <a name="delete-a-queue"></a>Een wachtrij verwijderen
 
-# <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-Als u een wachtrij en alle berichten hierin wilt verwijderen, roept u de methode [Delete](/dotnet/api/azure.storage.queues.queueclient.delete) aan in het wachtrijobject.
+Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de [`Delete`](/dotnet/api/azure.storage.queues.queueclient.delete) methode aan in het wachtrij object.
 
 :::code language="csharp" source="~/azure-storage-snippets/queues/howto/dotnet/dotnet-v12/QueueBasics.cs" id="snippet_DeleteQueue":::
 
-# <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
+# <a name="net-v11"></a>[.NET-V11](#tab/dotnetv11)
 
-Als u een wachtrij en alle berichten hierin wilt verwijderen, roept u de methode [Delete](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.delete?view=azure-dotnet-legacy&preserve-view=true) aan in het wachtrijobject.
+Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de [`Delete`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.delete?view=azure-dotnet-legacy&preserve-view=true) methode aan in het wachtrij object.
 
 ```csharp
 // Retrieve storage account from connection string.
@@ -486,13 +488,13 @@ queue.Delete();
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u de basisprincipes van Queue Storage hebt geleerd, volgt u deze koppelingen voor meer informatie over complexere opslagtaken.
+Nu u de basis principes van Queue Storage hebt geleerd, volgt u deze koppelingen voor meer informatie over complexere opslag taken.
 
-- Bekijk de naslagdocumentatie over de Queue-service voor meer informatie over beschikbare API's:
-  - [Naslaginformatie over de Storage-clientbibliotheek voor .NET](/dotnet/api/overview/azure/storage)
-  - [Naslaginformatie over REST API](/rest/api/storageservices/)
+- Bekijk de Queue Storage referentie documentatie voor volledige informatie over beschik bare Api's:
+  - [Azure Storage-client bibliotheek voor .NET-Naslag informatie](/dotnet/api/overview/azure/storage)
+  - [Naslag informatie over Azure Storage REST API](/rest/api/storageservices/)
 - Bekijk meer functiehandleidingen voor informatie over aanvullende mogelijkheden voor het opslaan van gegevens in Azure.
-  - [Aan de slag met Azure Table Storage met .NET](../../cosmos-db/tutorial-develop-table-dotnet.md) voor het opslaan van gestructureerde gegevens.
-  - [Aan de slag met Azure Blob Storage met .NET](../blobs/storage-quickstart-blobs-dotnet.md) voor het opslaan van niet-gestructureerde gegevens.
+  - Aan de [slag met Azure Table Storage met .net](../../cosmos-db/tutorial-develop-table-dotnet.md) voor het opslaan van gestructureerde gegevens.
+  - [Ga aan de slag met Azure Blob Storage met .net](../blobs/storage-quickstart-blobs-dotnet.md) voor het opslaan van ongestructureerde gegevens.
   - [Verbinding maken met SQL Database met behulp van .NET (C#)](../../azure-sql/database/connect-query-dotnet-core.md) voor het opslaan van relationele gegevens.
 - Leer hoe u de code die u schrijft om te werken met Azure Storage, kunt vereenvoudigen met behulp van de [Azure WebJobs SDK](https://github.com/Azure/azure-webjobs-sdk/wiki).

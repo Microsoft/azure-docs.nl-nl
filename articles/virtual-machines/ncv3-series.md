@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 854c988346bce9be06811d386b3798d2d0427dd7
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 0e3aa70a1a40e3878aea7b4f42f5aa167e4204c5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92095922"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585379"
 ---
 # <a name="ncv3-series"></a>NCv3-serie
 
@@ -23,6 +23,7 @@ Virtuele machines uit de NCv3-serie worden aangedreven door NVIDIA Tesla V100 Gp
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+NVIDIA NVLink Interconnect: niet ondersteund<br>
 
 > [!IMPORTANT]
 > Voor deze VM-serie wordt het vCPU-quotum (core) in uw abonnement in eerste instantie ingesteld op 0 in elke regio. [Vraag een toename van een vCPU-quotum](../azure-portal/supportability/resource-manager-core-quotas-request.md) aan voor deze reeks in een [beschik bare regio](https://azure.microsoft.com/regions/services/). Deze Sku's zijn niet beschikbaar voor proef versies van Azure-abonnementen of voor Visual Studio-abonnees. Uw abonnements niveau biedt mogelijk geen ondersteuning voor het selecteren of implementeren van deze Sku's. 

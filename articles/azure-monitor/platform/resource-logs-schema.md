@@ -4,12 +4,12 @@ description: Meer informatie over de ondersteunde services en het gebeurtenis sc
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: 6a76d642863a0baac8021a3da196ad5a2db48126
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: c1c5ed715527add4218378c05602ed3352e55461
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931160"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586938"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Algemeen en specifiek service schema voor Azure-resource logboeken
 
@@ -23,7 +23,7 @@ Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap
 
 ## <a name="top-level-common-schema"></a>Algemeen schema op het hoogste niveau
 
-| Name | Vereist/optioneel | Description |
+| Naam | Vereist/optioneel | Beschrijving |
 |---|---|---|
 | tijd | Vereist | De tijds tempel (UTC) van de gebeurtenis. |
 | resourceId | Vereist | De resource-ID van de resource die de gebeurtenis heeft verzonden. Voor Tenant Services is dit de vorm/tenants/Tenant-id/providers/provider-name. |
@@ -57,7 +57,7 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Azure Batch |[Azure Batch logboek registratie](../../batch/batch-diagnostics.md) |
 | Cognitive Services | [Logboek registratie voor Azure Cognitive Services](../../cognitive-services/diagnostic-logging.md) |
 | Container Registry | [Logboek registratie voor Azure Container Registry](../../container-registry/container-registry-diagnostics-audit-logs.md) |
-| Content Delivery Network | [Azure-logboeken voor CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
+| CDN (Content Delivery Network) | [Azure-logboeken voor CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Azure Cosmos DB logboek registratie](../../cosmos-db/monitor-cosmos-db.md) |
 | Data Factory | [Gegevens fabrieken bewaken met behulp van Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Toegang tot logboeken voor Azure Data Lake Analytics](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
@@ -77,10 +77,10 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Load Balancer |[Logboekanalyse voor Azure Load Balancer](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Aangepast Logic Apps B2B-volgschema](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | Netwerkbeveiligingsgroepen |[Logboekanalyses voor netwerkbeveiligingsgroepen (NSG's)](../../virtual-network/virtual-network-nsg-manage-log.md) |
-| DDoS Protection | [Azure DDoS Protection Standard beheren](../../ddos-protection/manage-ddos-protection.md) |
+| DDoS Protection | [Azure DDoS Protection Standard beheren](../../ddos-protection/reports-and-flow-logs.md#sample-log-outputs) |
 | Power BI Dedicated | [Logboek registratie voor Power BI Embedded in azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Recovery Services | [Gegevens model voor Azure Backup](../../backup/backup-azure-reports-data-model.md)|
-| Zoeken |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |
+| Search |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |
 | Service Bus |[Azure Service Bus logboeken](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | SQL Database | [Azure SQL Database logboek registratie](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md) |
 | Stream Analytics |[Taaklogboeken](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |

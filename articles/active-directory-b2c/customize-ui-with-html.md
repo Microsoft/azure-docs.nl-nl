@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 869cf5a47831844b04e0461a95fb7d16aa4d1569
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 520b2eff91faf2e333ab0a5df7bcc85e6a47c80a
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111300"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585187"
 ---
 # <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>De gebruikers interface in Azure Active Directory B2C aanpassen
 
@@ -29,9 +29,7 @@ De gebruikers interface die Azure Active Directory B2C (Azure AD B2C) aan uw kla
 > [!TIP]
 > Als u alleen het banner logo, de achtergrond afbeelding en de achtergrond kleur van de pagina's van uw gebruikers stroom wilt wijzigen, kunt u de [bedrijfs huisstijl](company-branding.md) functie proberen.
 
-
 ## <a name="custom-html-and-css-overview"></a>Overzicht van aangepaste HTML en CSS
-
 
 Azure AD B2C code wordt uitgevoerd in de browser van uw klant door gebruik te maken van [Cross-Origin Resource Sharing (CORS)](https://www.w3.org/TR/cors/). Tijdens runtime wordt inhoud geladen vanuit een URL die u opgeeft in uw gebruikers stroom of aangepast beleid. Elke pagina in de gebruikers ervaring laadt de inhoud van de URL die u voor die pagina opgeeft. Nadat de inhoud is geladen vanuit uw URL, wordt deze samengevoegd met een HTML-fragment dat is ingevoegd door Azure AD B2C, waarna de pagina wordt weer gegeven aan uw klant.
 
@@ -61,7 +59,7 @@ In plaats van uw aangepaste pagina-inhoud helemaal zelf te maken, kunt u de stan
 
 De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azure AD B2C. Down load de bestanden en gebruik deze als uitgangs punt voor het maken van uw eigen aangepaste pagina's.
 
-| Standaard pagina | Description | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
+| Standaard pagina | Beschrijving | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
 |:-----------------------|:--------|-------------|
 | [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina**. Deze pagina wordt weer gegeven wanneer er een uitzonde ring of een fout wordt aangetroffen. | *API. error* |
 | [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelfbevestigende pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldings pagina voor een sociaal account, een aanmeldings pagina voor een lokaal account, een aanmeldings pagina voor het lokale account, het opnieuw instellen van wacht woorden en meer. Het formulier kan verschillende invoer besturings elementen bevatten, zoals een tekstinvoervak, een vak voor het invoeren van een wacht woord, een keuze rondje, vervolg keuze vakjes en meervoudige selectie vakjes. | *API. localaccountsignin*, *API. localaccountsignup*, *API. localaccountpasswordreset*, *API. selfasserted* |
@@ -121,7 +119,6 @@ Hier volgt een overzicht van het proces:
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
-
 
 ### <a name="1-create-your-html-content"></a>1. uw HTML-inhoud maken
 
@@ -235,7 +232,6 @@ Controleer of u klaar bent door de volgende stappen uit te voeren:
 1. Selecteer **aanvraag verzenden**.
     Het resultaat moet zijn `XHR status: 200` . 
     Als u een fout bericht ontvangt, moet u ervoor zorgen dat de CORS-instellingen juist zijn. Mogelijk moet u ook de cache van de browser wissen of een persoonlijke browser sessie openen door op CTRL + SHIFT + P te drukken.
-
 
 ::: zone pivot="b2c-user-flow"
 
@@ -391,10 +387,7 @@ Het voor beeld gebruiken:
 1. Pas het beleid aan, zoals eerder is vermeld, naar uw HTML-bestand.
 1. Als u ontbrekende letter typen, afbeeldingen of CSS ziet, controleert u uw referenties in het uitbrei ding beleid en de \* . html-bestanden.
 
-
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het inschakelen van [Java script-code aan de client zijde](javascript-and-page-layout.md).
-
-
 

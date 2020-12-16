@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/25/2018
+ms.date: 12/15/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b159250e107fa73b9071eafe24fbe08ff1ea100b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f70229fabe4331adb7740cf09cf2bf8f3e3e4617
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006248"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587516"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-rest-api-calls"></a>Beheerde identiteiten voor Azure-resources op een Azure VM configureren met behulp van REST API-aanroepen
 

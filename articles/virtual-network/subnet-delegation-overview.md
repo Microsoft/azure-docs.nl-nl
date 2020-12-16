@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/20/2019
+ms.date: 12/15/2020
 ms.author: kumud
-ms.openlocfilehash: 1fbb683754aed5b2a2e6e9c022713b7e87ad9ba9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e30697fe93e2debaa68e12561f18be7f85d772a4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329204"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586411"
 ---
 # <a name="what-is-subnet-delegation"></a>Wat is subnet delegering?
 
@@ -52,6 +52,7 @@ Elke Azure-service definieert hun eigen implementatie model, waar ze kunnen bepa
 - bepaalt de IP-adres ruimte in het gedelegeerde subnet voor particuliere IP-adres ruimte (10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12).
 - bepaalt dat de aangepaste DNS-configuratie een Azure DNS vermelding heeft.
 - Hiervoor moet delegering worden verwijderd voordat het subnet of het virtuele netwerk kan worden verwijderd.
+- kan niet worden gebruikt met een persoonlijk eind punt als het subnet wordt overgedragen.
 
 De geïnjecteerde Services kunnen ook hun eigen beleid als volgt toevoegen:
 - **Beveiligings beleid**: het verzamelen van beveiligings regels die vereist zijn om een bepaalde service te kunnen gebruiken.

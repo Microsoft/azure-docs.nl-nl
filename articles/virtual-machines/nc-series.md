@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 38365cc144bbffbedfa1416112c5f8eca2b5fc13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97b5d6bc6f19e07ea7c980b98c1e7986c59dc546
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653516"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585408"
 ---
 # <a name="nc-series"></a>NC-serie
 
@@ -23,6 +23,7 @@ Virtuele machines in de NC-serie worden aangedreven door de [Nvidia Tesla K80](h
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
+NVIDIA NVLink Interconnect: niet ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Max. aantal NIC's |

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: aafdbe631426b4b0c8c762a81457369bc474f479
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a87a08db672c459138fc1efd865332dc0f19944e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181119"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586588"
 ---
 # <a name="tutorial-configure-adobe-identity-management-for-automatic-user-provisioning"></a>Zelf studie: Adobe Identity Management configureren voor het automatisch inrichten van gebruikers
 
@@ -61,7 +61,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 3. Selecteer **gebruikers synchroniseren van Microsoft Azure** en klik op **volgende**.
 
-      ![Synchroniseren](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
+      ![Scherm afbeelding met de selectie ' gebruikers synchroniseren van Microsoft Azure Active Directory ' geselecteerd.](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
 
 4. Kopieer de Tenant- **URL** en het **geheime token** en sla deze op. Deze waarden worden ingevoerd in de velden **Tenant-URL** en **geheim-token** op het tabblad inrichten van uw Adobe Identity Management-toepassing in de Azure Portal.
 
@@ -82,7 +82,7 @@ Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-adobe-identity-management"></a>Stap 5. Automatische gebruikers inrichting configureren voor Adobe Identity Management 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-adobe-identity-management-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor Adobe Identity Management in azure AD:
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-java
-ms.openlocfilehash: 8a95ee631797c4dcca87f3506a6cf29245328159
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c86689681aa99f60c4345e92f7f5c426795a69e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89263446"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586700"
 ---
 # <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Aan de slag met de SDK voor Java-clients voor Azure Media Services
 
@@ -51,7 +51,7 @@ Als uw build-hulpprogramma bijvoorbeeld `gradle` is, voegt u de volgende afhanke
 >De SDK voegt ondersteuning toe voor AAD-verificatie (Azure Active Directory) en verwijdert ondersteuning voor Azure ACS-verificatie (Access Control Service) vanaf de `azure-media`-pakketversie `0.9.8`. We raden u aan om zo snel mogelijk naar het Azure Active Directory-verificatiemodel te migreren. Lees het artikel [Access the Azure Media Services API with Azure AD authentication](media-services-use-aad-auth-to-access-ams-api.md) (Toegang tot de API van Azure Media Services met Azure Active Directory-verificatie) voor meer informatie over migratie.
 
 >[!NOTE]
->U vindt de broncode van de Azure Media Services Java SDK in onze [GitHub-opslagplaats](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Zorg ervoor dat u overschakelt naar de branch 0.9 en niet de master branch. 
+>U vindt de broncode van de Azure Media Services Java SDK in onze [GitHub-opslagplaats](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Zorg ervoor dat u overschakelt naar de vertakking 0,9 en niet de hoofd vertakking. 
 
 ## <a name="how-to-use-azure-media-services-with-java"></a>Procedure: Azure Media Services gebruiken met Java
 

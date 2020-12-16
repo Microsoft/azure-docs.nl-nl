@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.author: vikancha
-ms.openlocfilehash: edbd8b2fefb90bb95bfcd08c126a42c810ad081b
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 2de6cceb1e3b85060a146b18a689b57573bc932e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511595"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585425"
 ---
 # <a name="ncast4_v3-series-in-preview"></a>NCasT4_v3-serie (in preview-versie) 
 
@@ -30,6 +30,8 @@ De virtuele machines uit de NCasT4_v3-serie worden aangedreven door [Nvidia Tesl
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
+Versneld netwerken: ondersteund<br>
+NVIDIA NVLink Interconnect: niet ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) |

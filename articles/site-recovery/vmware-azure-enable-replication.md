@@ -3,15 +3,15 @@ title: Virtuele VMware-machines inschakelen voor herstel na nood geval met behul
 description: In dit artikel wordt beschreven hoe u VMware-VM-replicatie inschakelt voor nood herstel met behulp van de Azure Site Recovery-service
 author: Rajeswari-Mamilla
 ms.service: site-recovery
-ms.date: 04/01/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: 74870d10348421bf726b9bdc58504a74cf4105a9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a1f4759bc40c4074f0dd618be8ac66ad088e848c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004208"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587745"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Replicatie inschakelen naar Azure voor VMware-VM's
 
@@ -84,7 +84,7 @@ Voer de volgende stappen uit om replicatie in te scha kelen:
 
    :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication6.png" alt-text="Het venster Eigenschappen voor replicatie configureren inschakelen":::
 
-1. **Replication settings**  >  Controleer of het juiste replicatie beleid is geselecteerd in replicatie-instellingen **replicatie-instellingen configureren**. U kunt de instellingen voor het replicatie beleid wijzigen bij **instellingen**  >  **replicatie beleid**  >  _beleids naam_  >  **Instellingen bewerken**. Wijzigingen die worden toegepast op een beleid, zijn ook van toepassing op replicatie en nieuwe virtuele machines.
+1.   >  Controleer of het juiste replicatie beleid is geselecteerd in replicatie-instellingen **replicatie-instellingen configureren**. U kunt de instellingen voor het replicatie beleid wijzigen bij **instellingen**  >  **replicatie beleid**  >  _beleids naam_  >  **Instellingen bewerken**. Wijzigingen die worden toegepast op een beleid, zijn ook van toepassing op replicatie en nieuwe virtuele machines.
 1. Als u virtuele machines in een replicatie groep wilt verzamelen, schakelt u **consistentie tussen meerdere vm's** in. Geef een naam op voor de groep en selecteer **OK**.
 
    > [!NOTE]
@@ -94,6 +94,41 @@ Voer de volgende stappen uit om replicatie in te scha kelen:
    :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication7.png" alt-text="Replicatie venster inschakelen":::
 
 1. Selecteer **Replicatie inschakelen**. U kunt de voortgang van de taak **beveiliging inschakelen** bij **instellingen**  >  **taken**  >  **site Recovery taken** volgen. Nadat de taak **beveiliging volt ooien** is uitgevoerd, is de virtuele machine klaar voor failover.
+
+## <a name="monitor-initial-replication"></a>De initiële replicatie controleren
+
+Nadat ' replicatie inschakelen ' van het beveiligde item is voltooid, initieert Azure Site Recovery replicatie (synoniem voor synchronisatie) van gegevens van de bron machine naar de doel regio. Tijdens deze periode wordt de replica van de bron schijven gemaakt. Pas nadat de oorspronkelijke schijven zijn gekopieerd, worden de wijzigingen in de Delta kopie gekopieerd naar de doel regio. De tijd die nodig is om de oorspronkelijke schijven te kopiëren is afhankelijk van meerdere para meters, zoals:
+
+- grootte van de schijven van de bron machine
+- beschik bare band breedte voor de overdracht van gegevens naar Azure (u kunt de implementatie planner gebruiken om de optimale band breedte te bepalen)
+- Server bronnen verwerken, zoals geheugen, vrije schijf ruimte, beschik bare CPU voor cache & de gegevens die zijn ontvangen van beveiligde items verwerken (zorg ervoor dat de proces server [in orde](vmware-physical-azure-monitor-process-server.md#monitor-proactively)is)
+
+Als u de voortgang van de eerste replicatie wilt volgen, gaat u naar de Recovery Services-kluis in Azure Portal-> gerepliceerde items-> controle van de kolom Status van het gerepliceerde item. De status toont het percentage van de initiële replicatie. Als u de status aanwijst, is het aantal overgebrachte gegevens beschikbaar. Wanneer u op status klikt, wordt een contextuele pagina geopend en worden de volgende para meters weer gegeven:
+
+- Laatst vernieuwd om: geeft de laatste tijd aan waarop de replicatie gegevens van de hele machine door de service zijn vernieuwd.
+- Percentage voltooid: geeft het percentage van de initiële replicatie aan dat is voltooid voor de virtuele machine
+- Totaal aantal overgebrachte gegevens-hoeveelheid verzonden gegevens van VM naar Azure
+
+:::image type="content" source="media/vmware-azure-enable-replication/initial-replication-state.png" alt-text="status-van-replicatie" lightbox="media/vmware-azure-enable-replication/initial-replication-state.png":::
+
+- Synchronisatie voortgang (voor het bijhouden van Details op schijf niveau)
+    - Status van replicatie
+      - Als replicatie nog wordt gestart, wordt de status bijgewerkt als ' in wachtrij '. Tijdens de eerste replicatie worden slechts drie schijven tegelijk gerepliceerd. Dit mechanisme wordt gevolgd om beperking te voor komen op de proces server.
+      - Nadat de replicatie is gestart, wordt de status bijgewerkt als ' wordt uitgevoerd '.
+      - Nadat de initiële replicatie is voltooid, wordt de status als ' voltooid ' gemarkeerd.        
+   - Site Recovery leest de oorspronkelijke schijf, brengt gegevens over naar Azure en legt de voortgang vast op schijf niveau. Houd er rekening mee dat Site Recovery de replicatie van de niet-bezette grootte van de schijf overgeslagen en toevoegt aan de voltooide gegevens. De som van de gegevens die worden overgedragen over alle schijven, kan dus niet worden toegevoegd aan het ' totale aantal overgedragen gegevens ' op het VM-niveau.
+   - Wanneer u op de informatie ballon op een schijf klikt, kunt u Details verkrijgen over wanneer de replicatie (synoniemen voor synchronisatie) is geactiveerd voor de schijf, gegevens die in de afgelopen 15 minuten naar Azure zijn overgedragen, gevolgd door de laatste vernieuwde tijds tempel. Deze tijds tempel geeft de laatste tijd aan waarop gegevens zijn ontvangen door de Azure-service van de initiële replicatie van de bron machine :::image type="content" source="media/vmware-azure-enable-replication/initial-replication-info-balloon.png" alt-text="-info-gegevens ballon-Details" lightbox="media/vmware-azure-enable-replication/initial-replication-info-balloon.png":::
+   - De status van elke schijf wordt weer gegeven
+      - Als de replicatie langzamer is dan verwacht, verandert de schijf status in waarschuwing
+      - Als de replicatie niet wordt uitgevoerd, verandert de schijf status in kritiek
+
+Als de status kritiek/waarschuwing is, controleert u of de replicatie status van de computer en de [proces server](vmware-physical-azure-monitor-process-server.md) in orde zijn. 
+
+Zodra het inschakelen van de replicatie taak is voltooid, zou de voortgang van de replicatie 0% zijn en worden de totale overgedragen gegevens NA. Wanneer u op klikt, zijn de gegevens voor elke geïdentificeerde schijf als ' N.V.T. '. Dit geeft aan dat de replicatie nog moet worden gestart en dat Azure Site Recovery nog de meest recente statistieken moet ontvangen. De voortgang wordt vernieuwd met een interval van 30 minuten.
+
+> [!NOTE]
+> Zorg ervoor dat u configuratie servers, scale-out proces servers en mobiliteits agenten bijwerkt naar versie 9,36 of hoger om ervoor te zorgen dat nauw keurige voortgang wordt vastgelegd en verzonden naar Site Recovery Services.
+
 
 ## <a name="view-and-manage-vm-properties"></a>Eigenschappen van virtuele machines weergeven en beheren
 

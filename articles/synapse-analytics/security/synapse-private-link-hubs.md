@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2613a4fd931ad49a4f40a4221ea20e8c25f185fe
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d49868199d8f9f2da97f08dd06f29afd8f553bd9
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501474"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586972"
 ---
 # <a name="connect-to-azure-synapse-studio-using-azure-private-link-hubs"></a>Verbinding maken met Azure Synapse Studio met behulp van Azure private link hubs 
 
@@ -35,9 +35,9 @@ U kunt de hub van uw persoonlijke koppeling maken door te zoeken naar *Synapse-h
 ## <a name="azure-private-links-hubs-and-azure-virtual-network"></a>Azure persoonlijke koppelingen hubs en Azure Virtual Network
 U moet uw virtuele Azure-netwerk verbinden met de Synapse private link hub-resource om de end-to-end-verbinding met Synapse Studio te beveiligen. Hiervoor moet u een persoonlijk eind punt van uw virtuele netwerk maken naar de hub van de persoonlijke koppeling die u hebt gemaakt. U kunt de Azure Portal voor uw persoonlijke link-hub gebruiken en naar de sectie persoonlijk eind punt gaan. Selecteer ' + persoonlijk eind punt ' om een nieuw persoonlijk eind punt te maken dat verbinding maakt met de hub van uw persoonlijke koppeling.
 
-:::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-private-endpoint.png" alt-text="Een persoonlijk eind punt maken in een persoonlijke koppelings hub":::
+:::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-private-endpoint.png" alt-text="Scherm opname van de pagina verbindingen met privé-eind punten.":::
 
-Zorg ervoor dat u het resource type ' micro soft. Synapse/privateLinkHubs ' kiest op het tabblad ' resource '. :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="Maak een persoonlijk eind punt in de hub van een persoonlijke koppeling":::
+Zorg ervoor dat u het resource type ' micro soft. Synapse/privateLinkHubs ' kiest op het tabblad Resource. :::image type="content" source="./media/synapse-private-link-hubs/synapse-private-links-resource-type.png" alt-text="scherm opname van de pagina ' een persoonlijk eind punt maken ' met ' resource type ' gemarkeerd.":::
 
 Op het tabblad ' configuratie ' selecteert u ' privatelink.azuresynapse.net ' voor Privé-DNS zones bij het integreren met uw virtuele netwerk en particuliere DNS-zone.
 

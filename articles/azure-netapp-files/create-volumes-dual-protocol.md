@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/18/2020
+ms.date: 12/15/2020
 ms.author: b-juche
-ms.openlocfilehash: ee5e1230acd059d69648144b84a8fbfa652ef6e7
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: ceaf0209dd14c8d97088d7f8e8e6990429607089
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854050"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591819"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Een NFSv3-en SMB-volume (Dual-Protocol) maken voor Azure NetApp Files
 
@@ -49,8 +49,8 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
     
     | Beveiligings stijl    | Clients die machtigingen kunnen wijzigen   | Machtigingen die clients kunnen gebruiken  | Resulterende effectief beveiligings stijl    | Clients die toegang hebben tot bestanden     |
     |-  |-  |-  |-  |-  |
-    | UNIX  | NFS   | NFSv3 modus-bits   | UNIX  | NFS en Windows   |
-    | NTFS  | Windows   | NTFS-Acl's     | NTFS  |NFS en Windows|
+    | `Unix`    | NFS   | NFSv3 modus-bits   | UNIX  | NFS en Windows   |
+    | `Ntfs`    | Windows   | NTFS-Acl's     | NTFS  |NFS en Windows|
 * UNIX-gebruikers die het volume van de NTFS-beveiligings stijl koppelen met behulp van NFS, worden geverifieerd als Windows-gebruiker `root` voor UNIX `root` en `pcuser` voor alle andere gebruikers. Zorg ervoor dat deze gebruikers accounts aanwezig zijn in uw Active Directory voordat u het volume koppelt bij het gebruik van NFS. 
 
 

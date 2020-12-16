@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 84e156074d6db837556ba4ed9febdb43bcdf3318
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: cc95913b0ab815449a1cd56c0c9127410a64b600
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902297"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591893"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -41,7 +41,7 @@ Hieronder volgt een voor beeld van een overzicht van de CI/CD-levens cyclus in e
 
 1.  Een ontwikkelaar [maakt een functie vertakking](source-control.md#creating-feature-branches) om een wijziging aan te brengen. Ze kunnen fouten opsporen in hun pijplijn uitvoeringen met hun meest recente wijzigingen. Zie [iteratieve ontwikkeling en fout opsporing met Azure Data Factory](iterative-development-debugging.md)voor meer informatie over het opsporen van fouten in een pijplijn uitvoering.
 
-1.  Nadat de wijzigingen zijn aangebracht aan een ontwikkelaar, maken ze een pull-aanvraag van hun functie vertakking in de vertakking Master of collaboration om hun wijzigingen te verkrijgen die door peers worden gecontroleerd.
+1.  Nadat de wijzigingen zijn aangebracht aan een ontwikkelaar, maken ze een pull-aanvraag van hun functie vertakking in de vertakking Main of collaboration om hun wijzigingen te verkrijgen die door peers worden gecontroleerd.
 
 1.  Nadat een pull-aanvraag is goedgekeurd en wijzigingen zijn samengevoegd in de hoofd vertakking, worden de wijzigingen gepubliceerd in de ontwikkelings-Factory.
 
@@ -668,7 +668,7 @@ Als u gebruik wilt maken van Git-integratie met uw data factory en een CI/CD-pij
     - Data Factory-entiteiten zijn afhankelijk van elkaar. Triggers zijn bijvoorbeeld afhankelijk van pijp lijnen, en pijp lijnen zijn afhankelijk van gegevens sets en andere pijp lijnen. Selectief publiceren van een subset van bronnen kan leiden tot onverwacht gedrag en fouten.
     - In zeldzame gevallen wanneer u selectief publiceren nodig hebt, kunt u overwegen om een hotfix te gebruiken. Zie [hotfix production environment](#hotfix-production-environment)(Engelstalig) voor meer informatie.
 
-- Het Azure Data Factory team adviseert geen Azure RBAC-besturings elementen toe te wijzen aan afzonderlijke entiteiten (pijp lijnen, gegevens sets, enzovoort) in een data factory. Als een ontwikkelaar bijvoorbeeld toegang heeft tot een pijplijn of gegevensset, heeft deze toegang tot alle pijplijnen en gegevenssets in de data factory. Als u van mening bent dat u veel Azure-rollen moet implementeren in een data factory, raadpleegt u de implementatie van een tweede data factory.
+- Het Azure Data Factory team adviseert geen Azure RBAC-besturings elementen toe te wijzen aan afzonderlijke entiteiten (pijp lijnen, gegevens sets enz.) in een data factory. Als een ontwikkelaar bijvoorbeeld toegang heeft tot een pijplijn of gegevensset, heeft deze toegang tot alle pijplijnen en gegevenssets in de data factory. Als u van mening bent dat u veel Azure-rollen moet implementeren in een data factory, raadpleegt u de implementatie van een tweede data factory.
 
 -   U kunt niet publiceren vanuit privé-filialen.
 

@@ -9,12 +9,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/18/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6b05e8fbd2f688b4dd5611302c8df1b1deb16ab3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: b9e036df91eecadc701664a19905a92c142b7585
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099790"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591885"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-nodejs-sdk-and-azure-cosmos-db"></a>Quickstart: Een Cassandra-app bouwen met Node.js-SDK en Azure Cosmos DB
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -107,7 +107,7 @@ Deze stap is optioneel. Als u wilt weten hoe de databaseresources met de code wo
 
    ```javascript
    function createTable(next) {
-    var query = "CREATE TABLE IF NOT EXISTS uprofile.user (user_id int PRIMARY KEY, user_name text, user_bcity text)";
+       var query = "CREATE TABLE IF NOT EXISTS uprofile.user (user_id int PRIMARY KEY, user_name text, user_bcity text)";
         client.execute(query, next);
         console.log("created table");
    },
@@ -149,7 +149,7 @@ Deze stap is optioneel. Als u wilt weten hoe de databaseresources met de code wo
             });
         },
     ```  
-    
+
 * Voer een query uit om een sleutelwaarde op te halen.
 
     ```javascript
@@ -189,7 +189,7 @@ Ga nu terug naar Azure Portal om de verbindingsreeksinformatie op te halen en ko
     Regel 2 moet er nu ongeveer als volgt uitzien: 
 
     `config.username = 'cosmos-db-quickstart';`
-    
+
 1. Kopieer de waarde van PASSWORD uit de portal en plak deze over `<FillMEIN>` op regel 3.
 
     Regel 3 moet nu ongeveer als volgt uitzien:
@@ -197,12 +197,12 @@ Ga nu terug naar Azure Portal om de verbindingsreeksinformatie op te halen en ko
     `config.password = '2Ggkr662ifxz2Mg==';`
 
 1. Sla het bestand `config.js` op.
-    
+
 ## <a name="use-the-x509-certificate"></a>Het X509-certificaat gebruiken
 
 1. Download het Baltimore CyberTrust Root-certificaat lokaal van [https://cacert.omniroot.com/bc2025.crt](https://cacert.omniroot.com/bc2025.crt). Wijzig de naam van het bestand met de bestandsextensie `.cer`.
 
-   Het certificaat heeft serienummer `02:00:00:b9` en SHA1-vingerafdruk `d4🇩🇪20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`.
+   Het certificaat heeft serienummer `02:00:00:b9` en SHA1-vingerafdruk `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74`.
 
 2. Open `uprofile.js` en wijzig het `path\to\cert` zo dat het naar uw nieuwe certificaat verwijst.
 

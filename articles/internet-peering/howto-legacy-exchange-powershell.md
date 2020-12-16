@@ -6,15 +6,15 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: how-to
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 769522238939fe8ee786ae51a1b3b6051604451e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: acc32f4916f5f7f8fe22eebdd1e72db297cac94c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89071666"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590202"
 ---
 # <a name="convert-a-legacy-exchange-peering-to-an-azure-resource-by-using-powershell"></a>Een verouderde Exchange-peering converteren naar een Azure-resource met behulp van Power shell
 
@@ -30,7 +30,7 @@ Als u wilt, kunt u deze hand leiding volt ooien met behulp van Azure [Portal](ho
 
 ## <a name="convert-a-legacy-exchange-peering-to-an-azure-resource"></a>Een verouderde Exchange-peering converteren naar een Azure-resource
 
-### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Meld u aan bij uw Azure-account en selecteer uw abonnement
+### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Aanmelden bij uw Azure-account en uw abonnement selecteren
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
 ### <a name="get-legacy-exchange-peering-for-conversion"></a><a name= get></a>Oudere uitwisselings peering voor conversie ophalen
@@ -41,7 +41,7 @@ $legacyPeering = Get-AzLegacyPeering -Kind Exchange -PeeringLocation "Seattle"
 $legacyPeering
 ```
 
-Het antwoord ziet er ongeveer uit als in het volgende voor beeld:
+Het antwoord ziet er ongeveer uit als in het volgende voorbeeld:
 ```powershell
     Kind                     : Exchange
     PeeringLocation          : Seattle
@@ -93,7 +93,7 @@ In dit voor beeld wordt weer gegeven wanneer de end-to-end-inrichting is voltooi
     ConnectionState          : Active
 ```
 ## <a name="additional-resources"></a>Aanvullende bronnen
-U kunt gedetailleerde beschrijvingen van alle para meters verkrijgen door de volgende opdracht uit te voeren:
+U kunt gedetailleerde beschrijvingen van alle parameters opvragen door de volgende opdracht uit te voeren:
 
 ```powershell
 Get-Help Get-AzPeering -detailed

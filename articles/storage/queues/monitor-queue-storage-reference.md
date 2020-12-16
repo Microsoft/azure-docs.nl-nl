@@ -1,22 +1,22 @@
 ---
-title: Naslag informatie voor Azure Queue Storage-bewakings gegevens | Microsoft Docs
-description: Naslag informatie over Logboeken en metrieken voor het bewaken van gegevens van Azure Queue-opslag.
+title: Naslag informatie voor Azure Queue Storage monitoring-gegevens
+description: Naslag informatie over Logboeken en metrieken voor het bewaken van gegevens van Azure Queue Storage.
 author: normesta
 services: azure-monitor
-ms.service: azure-monitor
-ms.topic: reference
-ms.date: 10/02/2020
 ms.author: normesta
+ms.date: 10/02/2020
+ms.topic: reference
+ms.service: azure-monitor
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: a3a07f828bb8ef20da630e909e46f03e8556eb98
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: ba8a82ed1113bfb3e71560ca9a6c713602df21f2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780362"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590644"
 ---
-# <a name="azure-queue-storage-monitoring-data-reference"></a>Naslag informatie over bewakings gegevens van Azure Queue Storage
+# <a name="azure-queue-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Queue Storage monitoring-gegevens
 
 Zie [bewaking Azure Storage](monitor-queue-storage.md) voor meer informatie over het verzamelen en analyseren van bewakings gegevens voor Azure Storage.
 
@@ -30,23 +30,23 @@ Metrische waarden voor capaciteit worden dagelijks vernieuwd (Maxi maal 24 uur).
 
 Azure Storage biedt de volgende metrische gegevens over capaciteit in Azure Monitor.
 
-#### <a name="account-level"></a>Account niveau
+#### <a name="account-level-capacity-metrics"></a>Metrische capaciteit op account niveau
 
-[!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-account-capacity-metrics.md)]
+[!INCLUDE [Account-level capacity metrics](../../../includes/azure-storage-account-capacity-metrics.md)]
 
-#### <a name="queue-storage"></a>Queue Storage
+#### <a name="queue-storage-metrics"></a>Queue Storage metrische gegevens
 
-In deze tabel worden [metrische opslag gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)voor de wachtrij weer gegeven.
+In deze tabel worden [Queue Storage metrische gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices)weer gegeven.
 
 | Gegevens | Beschrijving |
 | ------------------- | ----------------- |
-| QueueCapacity | De hoeveelheid wachtrij opslag die door het opslag account wordt gebruikt. <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
-| QueueCount   | Het aantal wacht rijen in het opslag account. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
-| QueueMessageCount | Het geschatte aantal wachtrij berichten in de Queue-service van het opslag account. <br/><br/>Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
+| **QueueCapacity** | De hoeveelheid Queue Storage die wordt gebruikt door het opslag account. <br><br> Teleenheid `Bytes` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
+| **QueueCount** | Het aantal wacht rijen in het opslag account. <br><br> Teleenheid `Count` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
+| **QueueMessageCount** | Het geschatte aantal wachtrij berichten in het opslag account. <br><br> Teleenheid `Count` <br> Aggregatie type: `Average` <br> Waarde-voor beeld: `1024` |
 
 ### <a name="transaction-metrics"></a>Metrische gegevens voor transacties
 
-Metrische gegevens over trans acties worden verzonden voor elke aanvraag naar een opslag account van Azure Storage naar Azure Monitor. In het geval van geen activiteit in uw opslag account, worden er geen gegevens in de periode weer gegeven. Alle metrische gegevens over trans acties zijn beschikbaar op account-en wachtrij opslag service niveau. De tijd korrel definieert het tijds interval dat metrische waarden worden weer gegeven. De ondersteunde tijd korrels voor alle metrische gegevens van de trans actie zijn PT1H en PT1M.
+Metrische gegevens over trans acties worden verzonden voor elke aanvraag naar een opslag account van Azure Storage naar Azure Monitor. In het geval van geen activiteit in uw opslag account, worden er geen gegevens in de periode weer gegeven. Alle metrische gegevens over trans acties zijn beschikbaar op zowel account-als Queue Storage service niveau. De tijd korrel definieert het tijds interval dat metrische waarden worden weer gegeven. De ondersteunde tijd korrels voor alle metrische gegevens van de trans actie zijn PT1H en PT1M.
 
 [!INCLUDE [Transaction metrics](../../../includes/azure-storage-account-transaction-metrics.md)]
 
@@ -79,5 +79,5 @@ De volgende tabel geeft een lijst van de eigenschappen voor Azure Storage bron L
 
 ## <a name="see-also"></a>Zie ook
 
-- Zie [Azure Queue-opslag bewaken](monitor-queue-storage.md) voor een beschrijving van de bewakings Azure Storage.
+- Zie [azure Queue Storage bewaken](monitor-queue-storage.md) voor een beschrijving van het controleren van Azure Queue Storage.
 - Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

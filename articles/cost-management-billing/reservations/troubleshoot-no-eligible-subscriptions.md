@@ -7,13 +7,13 @@ ms.subservice: reservations
 ms.author: banders
 ms.reviewer: yashar
 ms.topic: troubleshooting
-ms.date: 11/16/2020
-ms.openlocfilehash: 1b36577c3c0940687f98394f8ea4faae83f371be
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.date: 12/15/2020
+ms.openlocfilehash: ad85bd278b5dff1532f218acc0b8e88515d96070
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887192"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97561202"
 ---
 # <a name="troubleshoot-no-eligible-subscriptions"></a>Problemen met niet in aanmerking komende abonnementen oplossen
 
@@ -94,8 +94,8 @@ De eigenaar van de huidige reserveringsorder of de eigenaar van de reservering k
 1. Typ het e-mailadres van de gebruiker die u als eigenaar wilt toevoegen.
 1. Selecteer de gebruiker en selecteer vervolgens **Opslaan**.
 
-Zie [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation) voor meer informatie.
+Zie [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk [Toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation) als een reserveringseigenaar u toegang moet verlenen.
+- Bekijk [Toevoegen of wijzigen van gebruikers die een reservering kunnen beheren](manage-reserved-vm-instance.md#who-can-manage-a-reservation-by-default) als een reserveringseigenaar u toegang moet verlenen.

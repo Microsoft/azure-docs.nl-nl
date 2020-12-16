@@ -7,12 +7,12 @@ ms.service: sql-db-mi
 ms.subservice: service
 ms.topic: conceptual
 ms.date: 09/13/2020
-ms.openlocfilehash: b0a10744d2b48fa620b48b731144222199f711c7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 96367b143711c4ec5f3f8d609f048c72c6fded16
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792528"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590848"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-sql-database--sql-managed-instance"></a>Informatie over de wijzigingen in de basis-CA-wijziging voor Azure SQL Database & SQL Managed instance
 
@@ -72,7 +72,7 @@ Voor servers die zijn gemaakt na 26 oktober 2020, kunt u het zojuist uitgegeven 
 ### <a name="how-often-does-microsoft-update-their-certificates-or-what-is-the-expiry-policy"></a>Hoe vaak werkt micro soft hun certificaten bij of wat is het verloop beleid?
 Deze certificaten die worden gebruikt door Azure SQL Database & SQL Managed instance worden door vertrouwde certificerings instanties (CA) verschaft. De ondersteuning van deze certificaten op Azure SQL Database & SQL Managed instance is dus gebonden aan de ondersteuning van deze certificaten per CA. In dit geval kunnen er echter onvoorziene fouten voor komen in deze vooraf gedefinieerde certificaten, die op het eerst moeten worden opgelost.
 
-### <a name="if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-master-server-or-all-the-read-replicas"></a>Als ik lees replica's gebruik, moet ik deze update alleen uitvoeren op de hoofd server of alle Lees replica's?
+### <a name="if-i-am-using-read-replicas-do-i-need-to-perform-this-update-only-on-primary-server-or-all-the-read-replicas"></a>Als ik lees replica's gebruik, moet ik deze update alleen op de primaire server of alle Lees replica's uitvoeren?
 Omdat deze update een wijziging aan de client zijde is, moeten we ook de wijzigingen voor deze clients Toep assen als de client gebruikt voor het lezen van gegevens van de replica server. 
 
 ### <a name="do-we-have-server-side-query-to-verify-if-ssl-is-being-used"></a>Hebben we query's aan de server zijde om te controleren of SSL wordt gebruikt?

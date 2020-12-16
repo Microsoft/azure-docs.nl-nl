@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8f11f104e8d3d0a4f3a004ebe9f149cb4132d910
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f8ebbdf70836f3f2613183268f03dc43da1f0671
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501425"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590557"
 ---
 # <a name="create-a-workspace-with-data-exfiltration-protection-enabled"></a>Een werk ruimte maken waarop data exfiltration Protection is ingeschakeld
 In dit artikel wordt beschreven hoe u een werk ruimte maakt waarop data exfiltration Protection is ingeschakeld en hoe u de goedgekeurde Azure AD-tenants voor deze werk ruimte beheert.
@@ -33,7 +33,7 @@ Volg de stappen die worden beschreven in [Quick Start: een Synapse-werk ruimte m
 1. Selecteer Ja voor de optie alleen uitgaand gegevens verkeer toestaan voor goedgekeurde doelen.
 1. Kies de goedgekeurde Azure AD-tenants voor deze werk ruimte.
 1. Controleer de configuratie en maak de werk ruimte.
-:::image type="content" source="./media/how-to-create-a-workspace-with-data-exfiltration-protection/workspace-creation-data-exfiltration-protection.png" alt-text="Een werk ruimte met gegevens exfiltration-beveiliging maken":::
+:::image type="content" source="./media/how-to-create-a-workspace-with-data-exfiltration-protection/workspace-creation-data-exfiltration-protection.png" alt-text="Scherm opname van een Synapse-werk ruimte maken met de optie virtueel netwerk beheren ingeschakeld.":::
 
 ## <a name="manage-approved-azure-active-directory-tenants-for-the-workspace"></a>Goedgekeurde Azure Active Directory tenants beheren voor de werk ruimte
 1. Ga vanuit de Azure Portal van de werk ruimte naar ' goedgekeurde Azure AD-tenants '. De lijst met goedgekeurde Azure AD-tenants voor de werk ruimte wordt hier weer gegeven. De Tenant van de werk ruimte is standaard opgenomen en wordt niet weer gegeven.

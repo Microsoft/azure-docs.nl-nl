@@ -6,15 +6,15 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: how-to
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: aed079c467139ac5819951c5895ba753ee38ae2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b463293899dc2586404d68145943caff3105e89
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89067736"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590185"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Peer-ASN koppelen aan een Azure-abonnement met behulp van Power shell
 
@@ -27,7 +27,7 @@ Als u wilt, kunt u deze hand leiding volt ooien met behulp van de [Portal](howto
 
 ## <a name="create-peerasn-to-associate-your-asn-with-azure-subscription"></a>PeerASN maken om uw ASN te koppelen aan een Azure-abonnement
 
-### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Meld u aan bij uw Azure-account en selecteer uw abonnement
+### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Aanmelden bij uw Azure-account en uw abonnement selecteren
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
 ### <a name="register-for-peering-resource-provider"></a>Registreren voor de resource provider voor peering

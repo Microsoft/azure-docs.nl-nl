@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: pimorano
 ms.reviewer: omafnan
-ms.openlocfilehash: 077815d117af0328a3466346727e135caaf8ff21
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8d4c1928ae1fac9b840245756c4bf5fe22a83f0f
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457994"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590508"
 ---
 # <a name="synapse-studio-sql-scripts-in-azure-synapse-analytics"></a>Synapse Studio SQL-scripts in azure Synapse Analytics 
 
@@ -79,7 +79,7 @@ Bekijk de beschik bare penbeweging door met de rechter muisknop te klikken op de
 Kies in het menu acties onder SQL-scripts ontwikkelen de optie nieuwe map in het menu acties onder SQL-scripts ontwikkelen. En typ de naam van de nieuwe map in het pop-upvenster. 
 
 > [!div class="mx-imgBorder"] 
-> ![newsqlscript](./media/author-sql-script/new-sql-script-create-folder.png)
+> ![Scherm afbeelding met een voor beeld van een SQL-script waarbij ' nieuwe map ' is geselecteerd.](./media/author-sql-script/new-sql-script-create-folder.png)
 
 Als u een SQL-script wilt verplaatsen naar een map, kunt u het SQL-script selecteren en ' verplaatsen naar ' kiezen in het menu acties. Zoek vervolgens de doelmap in het nieuwe venster en verplaats het SQL-script naar de geselecteerde map. U kunt het SQL-script ook snel slepen en neerzetten in een map.  
 

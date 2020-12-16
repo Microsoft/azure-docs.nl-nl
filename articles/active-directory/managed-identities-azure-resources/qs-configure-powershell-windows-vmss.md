@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/26/2019
+ms.date: 12/15/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d193637122cb388ea2c5012638526719d245f524
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd7ec1f6cdfc8ecfe32de04f5d06b42f9492b88c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997364"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590899"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-virtual-machine-scale-sets-using-powershell"></a>Beheerde identiteiten configureren voor Azure-resources op virtuele-machineschaalsets met PowerShell
 
@@ -29,6 +29,7 @@ ms.locfileid: "95997364"
 Beheerde identiteiten voor Azure-resources bieden Azure-services met een automatisch beheerde identiteit in Azure Active Directory. U kunt deze identiteit gebruiken voor verificatie bij alle services die Microsoft Azure AD-verificatie ondersteunen, zonder dat u aanmeldingsgegevens in uw code hoeft te hebben. 
 
 In dit artikel leert u om met behulp van PowerShell de beheerde identiteiten uit te voeren voor bewerkingen van Azure-resources op een virtuele-machineschaalset:
+
 - De door het systeem toegewezen beheerde identiteit inschakelen en uitschakelen op een virtuele-machineschaalset
 - Een door de gebruiker toegewezen beheerde identiteit toevoegen aan en verwijderen van een virtuele-machineschaalset
 

@@ -13,12 +13,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60f23efa4f46849e1fe8b0ebe05cdd83ec16f49e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5bc638eec174a52d501120d5e53bb2dc9e35b688
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997678"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591171"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Problemen met Azure Active Directory naadloze single Sign-On oplossen
 
@@ -94,11 +94,11 @@ Gebruik de volgende controle lijst om problemen met naadloze SSO op te lossen:
 Als u geslaagde controle op de domein controller inschakelt, wordt er telkens wanneer een gebruiker zich aanmeldt via naadloze SSO, een beveiligings vermelding vastgelegd in het gebeurtenis logboek. U kunt deze beveiligings gebeurtenissen vinden met behulp van de volgende query. (Zoek naar gebeurtenis **4769** die is gekoppeld aan het computer account **AzureADSSOAcc $**.)
 
 ```
-    <QueryList>
-      <Query Id="0" Path="Security">
-    <Select Path="Security">*[EventData[Data[@Name='ServiceName'] and (Data='AZUREADSSOACC$')]]</Select>
-      </Query>
-    </QueryList>
+  <QueryList>
+    <Query Id="0" Path="Security">
+      <Select Path="Security">*[EventData[Data[@Name='ServiceName'] and (Data='AZUREADSSOACC$')]]</Select>
+    </Query>
+  </QueryList>
 ```
 
 ## <a name="manual-reset-of-the-feature"></a>Hand matig opnieuw instellen van de functie

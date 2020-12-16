@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9bdd70baa906d9dc03a37eecb0388eee5638f153
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1e05ecd162ccb333c6ab29b0185f6ffcb04a6213
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184277"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591358"
 ---
 # <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Azure-roltoewijzingen toevoegen met behulp van Azure Resource Manager sjablonen
 
@@ -109,14 +109,14 @@ Als u de sjabloon wilt gebruiken, moet u het volgende doen:
 }
 ```
 
-Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Group Deployment opdrachten maken](/cli/azure/group/deployment#az-group-deployment-create) voor het starten van de implementatie in een resource groep met de naam ExampleGroup.
+Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een resource groep met de naam ExampleGroup.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json
 ```
 
 Hieronder ziet u een voor beeld van de toewijzing van de rol van lezers aan een gebruiker voor een resource groep na het implementeren van de sjabloon.
@@ -187,24 +187,24 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 > [!NOTE]
 > Deze sjabloon is niet idempotent tenzij dezelfde `roleNameGuid` waarde wordt gegeven als een para meter voor elke implementatie van de sjabloon. Als er geen `roleNameGuid` wordt geleverd, wordt er standaard een nieuwe GUID gegenereerd voor elke implementatie en mislukken volgende implementaties met een `Conflict: RoleAssignmentExists` fout.
 
-Het bereik van de roltoewijzing wordt bepaald op basis van het niveau van de implementatie. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Group Deployment opdrachten maken](/cli/azure/group/deployment#az-group-deployment-create) voor het starten van de implementatie in een bereik van een resource groep.
+Het bereik van de roltoewijzing wordt bepaald op basis van het niveau van de implementatie. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een bereik van een resource groep.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
-Hier vindt u een voor beeld van [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) en [AZ Deployment Create](/cli/azure/deployment#az-deployment-create) opdrachten voor het starten van de implementatie op een abonnements bereik en het opgeven van de locatie.
+Hier vindt u een voor beeld van [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) en [AZ Deployment sub Create](/cli/azure/deployment/sub#az_deployment_sub_create) opdrachten voor het starten van de implementatie op een abonnements bereik en het opgeven van de locatie.
 
 ```azurepowershell
 New-AzDeployment -Location centralus -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Reader
 ```
 
 ```azurecli
-az deployment create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
+az deployment sub create --location centralus --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Reader
 ```
 
 ### <a name="resource-scope"></a>Resourcebereik
@@ -290,14 +290,14 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 }
 ```
 
-Als u de vorige sjabloon wilt implementeren, gebruikt u de opdrachten van de resource groep. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Group Deployment opdrachten maken](/cli/azure/group/deployment#az-group-deployment-create) voor het starten van de implementatie in een resource bereik.
+Als u de vorige sjabloon wilt implementeren, gebruikt u de opdrachten van de resource groep. Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een resource bereik.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile rbac-test.json -principalId $objectid -builtInRoleType Contributor
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
+az deployment group create --resource-group ExampleGroup --template-file rbac-test.json --parameters principalId=$objectid builtInRoleType=Contributor
 ```
 
 Hieronder ziet u een voor beeld van de toewijzing van de rol Inzender aan een gebruiker van een opslag account na de implementatie van de sjabloon.
@@ -360,14 +360,14 @@ Als u de sjabloon wilt gebruiken, moet u de volgende invoer opgeven:
 }
 ```
 
-Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Group Deployment opdrachten maken](/cli/azure/group/deployment#az-group-deployment-create) voor het starten van de implementatie in een bereik van een resource groep.
+Hier vindt u een voor beeld van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create) opdrachten voor het starten van de implementatie in een bereik van een resource groep.
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup2 -TemplateFile rbac-test.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup2 --template-file rbac-test.json
+az deployment group create --resource-group ExampleGroup2 --template-file rbac-test.json
 ```
 
 Hieronder ziet u een voor beeld van de toewijzing van de rol Inzender aan een nieuwe beheerde ID service-principal na de implementatie van de sjabloon.
@@ -385,7 +385,7 @@ In azure RBAC kunt u de functie toewijzing verwijderen om de toegang tot een Azu
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Snelstart: Azure Resource Manager-sjablonen maken en implementeren via Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
-- [Inzicht in de structuur en syntaxis van Azure Resource Manager sjablonen](../azure-resource-manager/templates/template-syntax.md)
+- [Quickstart: ARM-sjablonen maken en implementeren met behulp van Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
+- [Informatie over de structuur en de syntaxis van ARM-sjablonen](../azure-resource-manager/templates/template-syntax.md)
 - [Resource groepen en-resources op abonnements niveau maken](../azure-resource-manager/templates/deploy-to-subscription.md)
 - [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/?term=rbac)

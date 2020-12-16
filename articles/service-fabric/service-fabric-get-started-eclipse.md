@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/06/2018
 ms.author: rapatchi
 ms.custom: devx-track-java
-ms.openlocfilehash: 004fb022847432a9739e79f7063b80636f8dcf2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c94f43b74edf5da18acd7e67417f3b7e10a07d5d
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87374232"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590865"
 ---
 # <a name="service-fabric-plug-in-for-eclipse-java-application-development"></a>Service Fabric-invoegtoepassing voor de ontwikkeling van Eclipse Java-toepassingen
 Eclipse is een van de meest gebruikte Integrated Development Environments (IDE's) voor Java-ontwikkelaars. In dit artikel wordt beschreven hoe u een Eclipse-ontwikkelomgeving instelt voor gebruik met Azure Service Fabric. Ontdek hoe u de Service Fabric-invoegtoepassing installeert en een Service Fabric-toepassing implementeert in een lokaal of extern Service Fabric-cluster in Eclipse. 
@@ -31,20 +31,20 @@ U kunt een Service Fabric-invoegtoepassing in Eclipse installeren. De invoegtoep
 > Voor Ubuntu wordt u aangeraden de installatie rechtstreeks vanaf de site van Eclipse uit te voeren en niet door middel van een installatieprogramma voor pakketten (`apt` of `apt-get`). Daardoor weet u zeker dat u de meest recente versie van Eclipse hebt. 
 
 Installeer Eclipse Neon of hoger vanaf de [Eclipse-site](https://www.eclipse.org).  Installeer ook versie 2.2.1 of hoger van Buildship (de Service Fabric-invoegtoepassing is niet compatibel met oudere versies van Buildship):
--   Als u de versies van geïnstalleerde onderdelen in eclips wilt controleren, gaat u naar **Help**  >  **over**de  >  **installatie Details**van de eclips.
+-   Als u de versies van geïnstalleerde onderdelen in eclips wilt controleren, gaat u naar **Help**  >  **over** de  >  **installatie Details** van de eclips.
 -   Zie [Eclipse Buildship: Eclipse Plug-ins for Gradle][buildship-update] (Eclipse Buildship: Eclipse-invoegtoepassingen voor Gradle) als u Buildship wilt bijwerken.
 -   Als u updates voor een eclips wilt controleren en installeren, gaat u naar **Help**  >  **controleren op updates**.
 
-Installeer de service Fabric-invoeg toepassing, in eclips, ga naar **hulp**bij de  >  **installatie van nieuwe software**.
+Installeer de service Fabric-invoeg toepassing, in eclips, ga naar **hulp** bij de  >  **installatie van nieuwe software**.
 1. Voer in het vak **werken met** https: \/ /DL.Microsoft.com/eclipse in.
 2. Klik op **Add**.
 
    ![De Service Fabric-invoegtoepassing voor Eclipse][sf-eclipse-plugin-install]
 3. Selecteer de Fabric Service-invoegtoepassing en klik op **Next**.
 4. Voer de installatiestappen uit en accepteer de licentievoorwaarden voor Microsoft-software.
-  
+
 Als u de Service Fabric-invoegtoepassing al hebt geïnstalleerd, zorgt u ervoor dat u de meest recente versie hebt geïnstalleerd. 
-1. Als u wilt controleren of er updates beschikbaar zijn, gaat u naar **Help**  >  **over**de  >  **installatie Details**van de eclips. 
+1. Als u wilt controleren of er updates beschikbaar zijn, gaat u naar **Help**  >  **over** de  >  **installatie Details** van de eclips. 
 2. Selecteer Service Fabric in de lijst met geïnstalleerde invoegtoepassingen en klik op **Update**. Beschikbare updates worden geïnstalleerd.
 3. Als u de Service Fabric-invoegtoepassing bijwerkt, moet u ook het Gradle-project vernieuwen.  Klik met de rechtermuisknop op **build.gradle** en selecteer vervolgens **Vernieuwen**.
 
@@ -57,7 +57,7 @@ Als u de Service Fabric-invoegtoepassing al hebt geïnstalleerd, zorgt u ervoor 
 
 ## <a name="create-a-service-fabric-application-in-eclipse"></a>Een Service Fabric-toepassing maken in Eclipse
 
-1.  Ga in eclips naar **bestand**  >  **Nieuw**  >  **Other**. Selecteer **Fabric Service Project** en klik op **Next**.
+1.  Ga in eclips naar **bestand**  >  **Nieuw**  >  . Selecteer **Fabric Service Project** en klik op **Next**.
 
     ![Nieuw Service Fabric-project pagina 1][create-application/p1]
 
@@ -91,7 +91,7 @@ Als u de Service Fabric-invoegtoepassing al hebt geïnstalleerd, zorgt u ervoor 
     -   Klik op **Build Application** als u de toepassing wilt maken zonder op te schonen.
     -   Klik op **Rebuild Application** als u een schone build van de toepassing wilt maken.
     -   Klik op **Clean Application** als u de gebouwde artefacts uit de toepassing wilt verwijderen.
-     
+
 ## <a name="deploy-a-service-fabric-application-to-the-local-cluster-with-eclipse"></a>Een Service Fabric-toepassing implementeren in het lokale cluster met eclips
 
 Nadat u uw Service Fabric-toepassing hebt gemaakt, volgt u deze stappen om deze te implementeren in het lokale cluster.
@@ -168,7 +168,7 @@ U kunt de Service Fabric-toepassing ook implementeren met behulp van Eclipse-uit
 
 1. Ga in eclips naar **Run**  >  **Run-configuraties**.
 2. Selecteer onder **Gradle Project** de uitvoerconfiguratie **ServiceFabricDeployer**.
-3. Controleer in het rechterdeel venster op het tabblad **argumenten** of de para meters **IP**, **Port**, **clientCert**en **clientKey** op de juiste wijze zijn ingesteld voor uw implementatie. Standaard worden de para meters zo ingesteld dat deze op het lokale cluster worden geïmplementeerd, zoals in de volgende scherm afbeelding. Als u uw app wilt publiceren in azure, kunt u de para meters wijzigen zodat deze de eindpunt gegevens en beveiligings referenties voor uw Azure-cluster bevatten. Zie de vorige sectie, [uw service Fabric-toepassing publiceren in azure met eclips](#publish-your-service-fabric-application-to-azure-with-eclipse)voor meer informatie.
+3. Controleer in het rechterdeel venster op het tabblad **argumenten** of de para meters **IP**, **Port**, **clientCert** en **clientKey** op de juiste wijze zijn ingesteld voor uw implementatie. Standaard worden de para meters zo ingesteld dat deze op het lokale cluster worden geïmplementeerd, zoals in de volgende scherm afbeelding. Als u uw app wilt publiceren in azure, kunt u de para meters wijzigen zodat deze de eindpunt gegevens en beveiligings referenties voor uw Azure-cluster bevatten. Zie de vorige sectie, [uw service Fabric-toepassing publiceren in azure met eclips](#publish-your-service-fabric-application-to-azure-with-eclipse)voor meer informatie.
 
     ![Configuratie dialoogvenster lokaal uitvoeren](./media/service-fabric-get-started-eclipse/run-config-local.png)
 
@@ -206,7 +206,7 @@ Als u de optie **Automatically update application and service versions** inschak
 
 ## <a name="upgrade-your-service-fabric-java-application"></a>Uw Service Fabric Java-toepassing upgraden
 
-Stel dat u voor een upgradescenario het project **App1** hebt gemaakt met behulp van de Service Fabric-invoegtoepassing in Eclipse. U hebt dit vervolgens met behulp van de invoegtoepassing geïmplementeerd om een toepassing met de naam **fabric:/App1Application** te maken. Het toepassings type is **App1ApplicationType**en de versie van de toepassing is 1,0. Nu wilt u een toepassingsupgrade uitvoeren zonder de beschikbaarheid van de toepassing te onderbreken.
+Stel dat u voor een upgradescenario het project **App1** hebt gemaakt met behulp van de Service Fabric-invoegtoepassing in Eclipse. U hebt dit vervolgens met behulp van de invoegtoepassing geïmplementeerd om een toepassing met de naam **fabric:/App1Application** te maken. Het toepassings type is **App1ApplicationType** en de versie van de toepassing is 1,0. Nu wilt u een toepassingsupgrade uitvoeren zonder de beschikbaarheid van de toepassing te onderbreken.
 
 Breng eerst eventuele wijzigingen aan in de toepassing en bouw vervolgens de gewijzigde service opnieuw op. Werk het manifestbestand van de gewijzigde service (ServiceManifest.xml) bij met de bijgewerkte versies voor de service (en code, configuratie of gegevens, indien van toepassing). Wijzig ook het toepassingsmanifest (ApplicationManifest.xml) met het bijgewerkte versienummer voor de toepassing en de gewijzigde service.  
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
-ms.openlocfilehash: f82ea154d5949f4d229ac76e7a7ce2a89d15ac13
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7e27c3dd6e70d9a532c326d8187d82e14bf7ddda
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025664"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591613"
 ---
 # <a name="cicd-for-custom-speech"></a>CI/CD voor Custom Speech
 
@@ -84,7 +84,7 @@ De [opslag plaats van de speech DevOps-sjabloon](https://github.com/Azure-Sample
 
 - Kopieer de sjabloon opslagplaats naar uw GitHub-account en maak vervolgens Azure-resources en een [Service-Principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) voor de GITHUB acties CI/cd-werk stromen.
 - Door loop de '[dev Inner-lus](https://mitchdenny.com/the-inner-loop/)'. Werk de training bij en test gegevens van een functie vertakking, test de wijzigingen met een tijdelijk ontwikkel model en verhoog een pull-aanvraag om de wijzigingen voor te stellen en te controleren.
-- Wanneer trainings gegevens worden bijgewerkt in een pull-aanvraag naar de *Master*, traint u modellen met de GitHub-acties CI-werk stroom.
+- Wanneer trainings gegevens worden bijgewerkt in een *pull-aanvraag*, traint u modellen met de GitHub-acties CI-werk stroom.
 - Voer automatische nauwkeurigheids tests uit om de [Word-fout frequentie](how-to-custom-speech-evaluate-data.md#evaluate-custom-speech-accuracy) (wer) van een model vast te leggen. Sla de test resultaten op in Azure Blob.
 - Voer de CD-werk stroom uit om een eind punt te maken wanneer de WER wordt verbeterd.
 

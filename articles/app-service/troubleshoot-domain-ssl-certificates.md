@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 1cefb5a7b554b9a477f6a51eab3b22b0e8f55378
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8d6f59f64aed2870494fa8697014e670e373337
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88958402"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590355"
 ---
 # <a name="troubleshoot-domain-and-tlsssl-certificate-problems-in-azure-app-service"></a>Problemen met domein-en TLS/SSL-certificaten in Azure App Service oplossen
 
@@ -88,9 +88,9 @@ Dit probleem kan om de volgende redenen optreden:
 
     **Oplossing**: als het certificaat is gemarkeerd als fraude en na 24 uur niet is opgelost, voert u de volgende stappen uit:
 
-    1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-    2. Ga naar **app service certificaten**en selecteer het certificaat.
-    3. Selecteer **certificaat configuratie**  >  **stap 2: Controleer**de verificatie van het  >  **domein**. Met deze stap verzendt u een e-mail bericht naar de Azure-certificaat provider om het probleem op te lossen.
+    1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+    2. Ga naar **app service certificaten** en selecteer het certificaat.
+    3. Selecteer **certificaat configuratie**  >  **stap 2: Controleer** de verificatie van het  >  **domein**. Met deze stap verzendt u een e-mail bericht naar de Azure-certificaat provider om het probleem op te lossen.
 
 ## <a name="custom-domain-problems"></a>Problemen met aangepaste domeinen
 
@@ -120,7 +120,7 @@ De Internet browser kan nog steeds het oude IP-adres in de cache opslaan voor uw
 
 **Oplossing voor oorzaak 2**
 
-Wis de browser. Voor Windows-apparaten kunt u de opdracht uitvoeren `ipconfig /flushdns` . Gebruik [WhatsmyDNS.net](https://www.whatsmydns.net/) om te controleren of uw domein verwijst naar het IP-adres van de app. 
+Wis de browser. Voor Windows-apparaten kunt u de opdracht uitvoeren `ipconfig /flushdns` . Gebruik [WhatsmyDNS.net](https://www.whatsmydns.net/) om te controleren of uw domein verwijst naar het IP-adres van de app.
 
 ### <a name="you-cant-add-a-subdomain"></a>U kunt geen subdomein toevoegen 
 
@@ -185,33 +185,33 @@ Het App Service certificaat is vernieuwd, maar de app die gebruikmaakt van het A
 
 #### <a name="cause"></a>Oorzaak 
 App Service synchroniseert uw certificaat automatisch binnen 48 uur. Wanneer u een certificaat roteert of bijwerkt, wordt de toepassing toch nog steeds het oude certificaat opgehaald en niet het zojuist bijgewerkte certificaat. De reden hiervoor is dat de taak voor het synchroniseren van de certificaat bron nog niet is uitgevoerd. Klik op synchroniseren. Met de synchronisatie bewerking worden de hostname-bindingen voor het certificaat in App Service automatisch bijgewerkt zonder dat er uitval tijd voor uw apps wordt veroorzaakt.
- 
+
 #### <a name="solution"></a>Oplossing
 
 U kunt de synchronisatie van het certificaat forceren:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer **app service certificaten**en selecteer vervolgens het certificaat.
-2. Selecteer opnieuw **genereren en synchroniseren**en selecteer vervolgens **synchroniseren**. Het kan enige tijd duren voordat de synchronisatie is voltooid. 
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **app service certificaten** en selecteer vervolgens het certificaat.
+2. Selecteer opnieuw **genereren en synchroniseren** en selecteer vervolgens **synchroniseren**. Het kan enige tijd duren voordat de synchronisatie is voltooid. 
 3. Wanneer de synchronisatie is voltooid, ziet u de volgende melding: alle resources zijn bijgewerkt met het nieuwste certificaat.
 
 ### <a name="domain-verification-is-not-working"></a>Domein verificatie werkt niet 
 
 #### <a name="symptom"></a>Symptoom 
-Het App Service certificaat vereist domein verificatie voordat het certificaat gereed is voor gebruik. Wanneer u **controleren**selecteert, mislukt het proces.
+Het App Service certificaat vereist domein verificatie voordat het certificaat gereed is voor gebruik. Wanneer u **controleren** selecteert, mislukt het proces.
 
 #### <a name="solution"></a>Oplossing
 Bevestig uw domein hand matig door een TXT-record toe te voegen:
- 
-1.  Ga naar de Domain Name Service (DNS)-provider die als host fungeert voor uw domein naam.
-2.  Voeg een TXT-record voor uw domein toe die gebruikmaakt van de waarde van het domein token dat wordt weer gegeven in de Azure Portal. 
+
+1. Ga naar de Domain Name Service (DNS)-provider die als host fungeert voor uw domein naam.
+1. Voeg een TXT-record voor uw domein toe die gebruikmaakt van de waarde van het domein token dat wordt weer gegeven in de Azure Portal. 
 
 Wacht enkele minuten totdat de DNS-doorgifte is uitgevoerd en selecteer vervolgens de knop **vernieuwen** om de verificatie te activeren. 
 
 Als alternatief kunt u de methode HTML-webpagina gebruiken om uw domein hand matig te verifiëren. Met deze methode kan de certificerings instantie het domein eigendom bevestigen van het domein waarvoor het certificaat is uitgegeven.
 
-1.  Maak een HTML-bestand met de naam {Domain verificatie token}. html. De inhoud van dit bestand moet de waarde zijn van het domein verificatie token.
-3.  Upload dit bestand in de hoofdmap van de webserver die als host fungeert voor uw domein.
-4.  Selecteer **vernieuwen** om de certificaat status te controleren. Het kan enkele minuten duren voordat de verificatie is voltooid.
+1. Maak een HTML-bestand met de naam {Domain verificatie token}. html. De inhoud van dit bestand moet de waarde zijn van het domein verificatie token.
+1. Upload dit bestand in de hoofdmap van de webserver die als host fungeert voor uw domein.
+1. Selecteer **vernieuwen** om de certificaat status te controleren. Het kan enkele minuten duren voordat de verificatie is voltooid.
 
 Als u bijvoorbeeld een standaard certificaat voor azure.com koopt met het domein verificatie token 1234abcd, moet er een webaanvraag worden ingediend om https://azure.com/1234abcd.html 1234abcd te retour neren. 
 

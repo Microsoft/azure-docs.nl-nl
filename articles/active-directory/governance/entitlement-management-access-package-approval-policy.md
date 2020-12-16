@@ -16,12 +16,12 @@ ms.date: 09/16/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e36b2d4576b43544bec89efd326363344b35be9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48b5260e883d85899953240f6ee4f83127681c9e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995478"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591294"
 ---
 # <a name="change-approval-and-requestor-information-preview-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Instellingen voor de goed keuring van wijzigingen en gegevens van de aanvrager (preview-versie) voor een toegangs pakket in het beheer van rechten van Azure AD
 
@@ -77,13 +77,13 @@ Gebruik de volgende stappen om goed keurders toe te voegen nadat u hebt gekozen 
 
 ### <a name="single-stage-approval"></a>Goed keuring in één fase
 
-1. De **eerste goed keurder**toevoegen:
+1. De **eerste goed keurder** toevoegen:
     
     Als het beleid is ingesteld op het bepalen van de toegang voor gebruikers in uw directory, kunt u **Manager selecteren als fiatteur**. U kunt ook een specifieke gebruiker toevoegen door te klikken op **goed keurders toevoegen** na selectie specifieke goed keurders selecteren in het vervolg keuzemenu.
     
     ![Toegang tot pakket aanvragen-voor gebruikers in Directory-First goed keurder](./media/entitlement-management-access-package-approval-policy/approval-single-stage-first-approver-manager.png)
 
-    Als dit beleid is ingesteld op het bepalen van de toegang voor gebruikers die zich niet in uw directory bevindt, kunt u **externe sponsor** of **interne sponsor**selecteren. U kunt ook een specifieke gebruiker toevoegen door te klikken op **fiatteurs** of groepen toevoegen onder specifieke goed keurders kiezen.
+    Als dit beleid is ingesteld op het bepalen van de toegang voor gebruikers die zich niet in uw directory bevindt, kunt u **externe sponsor** of **interne sponsor** selecteren. U kunt ook een specifieke gebruiker toevoegen door te klikken op **fiatteurs** of groepen toevoegen onder specifieke goed keurders kiezen.
     
     ![Toegang tot pakket aanvragen-voor gebruikers buiten de Directory-eerste goed keurder](./media/entitlement-management-access-package-approval-policy/out-directory-first-approver.png)
     
@@ -91,7 +91,7 @@ Gebruik de volgende stappen om goed keurders toe te voegen nadat u hebt gekozen 
 
     De Manager is gevonden door het beheer van rechten met behulp van het kenmerk **Manager** . Het kenmerk bevindt zich in het profiel van de gebruiker in azure AD. Zie [de profiel gegevens van een gebruiker toevoegen of bijwerken met behulp van Azure Active Directory](../fundamentals/active-directory-users-profile-azure-portal.md)voor meer informatie.
 
-1. Als u **specifieke goed keurders kiezen**hebt geselecteerd, klikt u op goed keurders **toevoegen** om een of meer gebruikers of groepen in uw directory te selecteren voor goed keurders.
+1. Als u **specifieke goed keurders kiezen** hebt geselecteerd, klikt u op goed keurders **toevoegen** om een of meer gebruikers of groepen in uw directory te selecteren voor goed keurders.
 
 1. In het vak onder **besluit moet worden aangegeven hoeveel dagen?**, geeft u het aantal dagen op dat een fiatteur een aanvraag voor dit toegangs pakket moet beoordelen.
 
@@ -105,7 +105,7 @@ Gebruik de volgende stappen om goed keurders toe te voegen nadat u hebt gekozen 
 
 Als u een 2-fase goedkeuring hebt geselecteerd, moet u een tweede goed keurder toevoegen.
 
-1. Voeg de **tweede goed keurder**toe: 
+1. Voeg de **tweede goed keurder** toe: 
     
     Als de gebruikers zich in uw directory bevinden, voegt u een specifieke gebruiker als de tweede goed keurder toe door te klikken op **fiatteurs toevoegen** onder specifieke goed keurders kiezen.
 
@@ -132,13 +132,15 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 
 1. Klik onder de eerste goed keurder, tweede goed keurder of beide op **Geavanceerde aanvraag instellingen weer geven**.
 
-    ![Toegangs pakket-beleid: Geavanceerde aanvraag instellingen weer geven](./media/entitlement-management-access-package-approval-policy/alternate-approvers-click-advanced-request.png)
+    :::image type="content" source="media/entitlement-management-access-package-approval-policy/alternate-approvers-click-advanced-request.png" alt-text="Toegangs pakket-beleid: Geavanceerde aanvraag instellingen weer geven":::
 
 1. Instellen **als er geen actie wordt ondernomen, door sturen naar alternatieve goed keurders? in-** of **uitschakelen.**
 
 1. Klik op **alternatieve goed keurders toevoegen** en selecteer de alternatieve fiatteur (s) in de lijst.
 
     ![Toegangs pakket-beleid-alternatieve goed keurders toevoegen](./media/entitlement-management-access-package-approval-policy/alternate-approvers-add.png)
+
+    Als u Manager als fiatteur selecteert voor de eerste goed keurder, hebt u een extra optie, **tweede niveau Manager als alternatieve goed keurder**, beschikbaar om te kiezen in het veld alternatieve goed keurder. Als u deze optie selecteert, moet u een terugval-fiatteur toevoegen om de aanvraag door te sturen naar wanneer het systeem de tweede niveau Manager niet kan vinden.
 
 1. Stel in het vak **door sturen naar alternatieve goed keurder (en) na hoeveel dagen** het aantal dagen in dat de goed keurders een aanvraag moeten goed keuren of weigeren. Als geen goed keurders de aanvraag hebben goedgekeurd of geweigerd vóór de duur van de aanvraag, is de aanvraag verloopt (time-out) en moet de gebruiker een andere aanvraag indienen voor het toegangs pakket. 
 
@@ -150,7 +152,7 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 
     U kunt deze altijd in de toekomst inschakelen nadat u klaar bent met het maken van het toegangs pakket.
 
-    Als u geen hebt geselecteerd **(alleen voor beheerders directe toewijzingen)** en u instellen op **Nee**instelt, kunnen beheerders dit toegangs pakket niet rechtstreeks toewijzen.
+    Als u geen hebt geselecteerd **(alleen voor beheerders directe toewijzingen)** en u instellen op **Nee** instelt, kunnen beheerders dit toegangs pakket niet rechtstreeks toewijzen.
 
     ![Toegangs pakket-beleids instelling beleid inschakelen](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
@@ -173,7 +175,7 @@ Om ervoor te zorgen dat gebruikers toegang krijgen tot de juiste toegangs pakket
 
     ![Toegangs pakket-beleid: gelokaliseerde tekst configureren](./media/entitlement-management-access-package-approval-policy/add-localization-question.png)
 
-1. Selecteer de **antwoord indeling** waarin aanvragers moeten reageren. Antwoord indelingen zijn: *korte tekst*, *meerdere keuzen*en *lange tekst*.
+1. Selecteer de **antwoord indeling** waarin aanvragers moeten reageren. Antwoord indelingen zijn: *korte tekst*, *meerdere keuzen* en *lange tekst*.
  
     ![Toegangs pakket-beleid: Selecteer weer geven en bewerken van de antwoord indeling voor meerdere keuzes](./media/entitlement-management-access-package-approval-policy/answer-format-view-edit.png)
  

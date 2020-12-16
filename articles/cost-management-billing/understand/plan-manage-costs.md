@@ -9,13 +9,13 @@ ms.subservice: common
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
-ms.custom: contperfq1
-ms.openlocfilehash: 50180984423b7c6d2921234a3502495016c4df5c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: c640478170049bd06e11f7f89b1e213b7b305642
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150106"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032810"
 ---
 # <a name="plan-to-manage-azure-costs"></a>Plannen om Azure-kosten te beheren
 
@@ -172,7 +172,7 @@ U kunt als volgt een tegoed aanvragen:
 
 Meld u aan bij de [Azure-portal](https://portal.azure.com/). Als u meerdere accounts hebt, controleert u of u het account gebruikt die door de uitvaltijd van Azure is beïnvloed. Maak vervolgens een nieuwe ondersteuningsaanvraag.
 
-Onder **Type probleem**selecteert u **Facturering** en vervolgens **Terugbetalingsaanvraag** onder **Probleemtype**.
+Onder **Type probleem** selecteert u **Facturering** en vervolgens **Terugbetalingsaanvraag** onder **Probleemtype**.
 
 Voeg details toe om op te geven dat u een aanvraag indient voor een SLA-tegoed, en noem zowel de datum/tijd/tijdzone als de betrokken services (virtuele machines, websites, enzovoort)
 

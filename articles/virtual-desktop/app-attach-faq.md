@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 73fb9bf436c043e903977fafbb5a502e2edc5488
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 78c21e9515965f1c15315967f6a19a0df2838dc2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518682"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591192"
 ---
 # <a name="msix-app-attach-faq"></a>Veelgestelde vragen over het koppelen van MSIX-apps
 
@@ -27,7 +27,7 @@ MSIX is een verpakkings indeling voor apps, terwijl MSIX app attach de functie i
 
 MSIX app attach maakt geen gebruik van FSLogix. MSIX app attach en FSLogix zijn echter ontworpen om samen te werken om een naadloze gebruikers ervaring te bieden.
 
-## <a name="can-i-use-msix-app-attach-outside-of-windows-virtual-desktop"></a>Kan ik MSIX app-koppeling buiten het virtuele bureau blad van Windows gebruiken?
+## <a name="can-i-use-the-msix-app-attach-outside-of-windows-virtual-desktop"></a>Kan ik de MSIX-app toevoegen buiten het virtuele bureau blad van Windows?
 
 De Api's die aan Power MSIX app attach zijn gekoppeld, zijn beschikbaar voor Windows 10 Enter prise. Deze Api's kunnen worden gebruikt buiten het virtuele bureau blad van Windows. Er is echter geen beheer vlak voor de MSIX-app die zich buiten het virtuele bureau blad van Windows bevindt.
 

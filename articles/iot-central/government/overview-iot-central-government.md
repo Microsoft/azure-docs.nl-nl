@@ -3,20 +3,18 @@ title: Oplossingen voor de overheid bouwen met Azure IoT Central
 description: Meer informatie over het bouwen van Smart City-oplossingen met behulp van Azure IoT Central-toepassingssjablonen.
 author: miriambrus
 ms.author: miriamb
-ms.date: 10/23/2019
+ms.date: 12/11/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 5f92750217dd0bcf5d7a5074a6187d994f19722a
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 72b0e3c3cee0ed9131fe6ee1f50cee10ec03a7b7
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126563"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590814"
 ---
 # <a name="building-government-solutions-with-azure-iot-central"></a>Oplossingen voor de overheid bouwen met Azure IoT Central
-
-
 
 Begin met het bouwen van Smart City-oplossingen met behulp van Azure IoT Central-toepassingssjablonen. Begin nu met **bewaking van waterkwaliteit**, **bewaking van waterverbruik** en **verbonden afvalbeheer**.
 
@@ -41,7 +39,6 @@ Aan de slag met [Zelfstudie over de app Bewaking van waterkwaliteit](./tutorial-
 ## <a name="what-is-water-consumption-monitoring-application-template"></a>Wat is de toepassingsjabloon 'Bewaking van waterverbruik'? 
 
 Normaalgesproken berust moet het waterverbruik handmatig worden afgelezen via meters op meetlocaties door wateroperators. Voor steeds meer steden worden traditionele meters vervangen door geavanceerde slimme meters die het op afstand mogelijk maken om het verbruik te meten en waterstroomkleppen te bedienen. Bewaking van het waterverbruik, gecombineerd met digitale feedback aan de inwoner, kan het bewustzijn verhogen en het waterverbruik verminderen. 
-
 
 De app 'Bewaking van waterverbruik' is een IoT Central toepassingssjabloon waarmee u de ontwikkeling van uw IoT-oplossing kunt kickstarten om nutsbedrijven en steden in staat te stellen om op afstand de waterstroom te bewaken en te beheren om het verbruik te verminderen. 
 

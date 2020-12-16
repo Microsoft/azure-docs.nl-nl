@@ -7,17 +7,17 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: f3763857af1df8f34f38b36835a667c6610e1909
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.date: 12/15/2020
+ms.openlocfilehash: 5d265fe02d801cf0d2d66be37a8dc2a220e19b34
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107824"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591341"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Servicelimieten in Azure Cognitive Search
 
-De maximum limieten voor opslag, werk belastingen en hoeveel heden indexen en andere objecten zijn afhankelijk van of u Azure-Cognitive Search in de **gratis**, **basis**, **standaard**of **geoptimaliseerde** prijs categorieën voor opslag [inricht](search-create-service-portal.md) .
+De maximum limieten voor opslag, werk belastingen en hoeveel heden indexen en andere objecten zijn afhankelijk van of u Azure-Cognitive Search in de **gratis**, **basis**, **standaard** of **geoptimaliseerde** prijs categorieën voor opslag [inricht](search-create-service-portal.md) .
 
 + **Gratis** is een multi tenant-gedeelde service die wordt geleverd bij uw Azure-abonnement. 
 
@@ -143,7 +143,7 @@ Zoek query's en indexerings aanvragen worden beperkt naarmate het systeem de pie
 
 Limieten voor statische frequentie aanvragen voor bewerkingen met betrekking tot een index:
 
-+ Lijst indexen (GET/Indexes): 5 per seconde per Zoek eenheid
++ Lijst indexen (GET/Indexes): 3 per seconde per Zoek eenheid
 + Index ophalen (GET/Indexes/MyIndex): 10 per seconde per Zoek eenheid
 + Create Index (POST/Indexes): 12 per minuut per Zoek eenheid
 + Index maken of bijwerken (PUT/Indexes/MyIndex): 6 per seconde per Zoek eenheid

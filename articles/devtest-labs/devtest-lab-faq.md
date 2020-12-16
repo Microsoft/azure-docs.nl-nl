@@ -3,12 +3,12 @@ title: Azure DevTest Labs Veelgestelde vragen | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over Azure DevTest Labs.
 ms.topic: article
 ms.date: 07/17/2020
-ms.openlocfilehash: 1cbea3628d6c8c1b43766140d201ce46964a60b5
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 9fcdc160754822d5c6f22b7349d0e72f0cf22633
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328382"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590270"
 ---
 # <a name="azure-devtest-labs-faq"></a>Veelgestelde vragen over Azure DevTest Labs
 Krijg antwoorden op enkele van de meest voorkomende vragen over Azure DevTest Labs.
@@ -98,7 +98,7 @@ Zie voor meer informatie [Azure Enter prise-steigers-documentatie over het behee
 
 
 ### <a name="how-do-i-create-a-role-to-allow-users-to-do-a-specific-task"></a>Hoe kan ik een rol maken om gebruikers toe te staan een specifieke taak uit te voeren?
-Zie [gebruikers machtigingen verlenen aan specifieke Lab-beleids regels](devtest-lab-grant-user-permissions-to-specific-lab-policies.md)voor een uitgebreid artikel over het maken van aangepaste rollen en het toewijzen van machtigingen aan een rol. Hier volgt een voor beeld van een script dat de functie **DevTest Labs Advanced User**maakt, die toestemming heeft om alle virtuele machines in het lab te starten en te stoppen:
+Zie [gebruikers machtigingen verlenen aan specifieke Lab-beleids regels](devtest-lab-grant-user-permissions-to-specific-lab-policies.md)voor een uitgebreid artikel over het maken van aangepaste rollen en het toewijzen van machtigingen aan een rol. Hier volgt een voor beeld van een script dat de functie **DevTest Labs Advanced User** maakt, die toestemming heeft om alle virtuele machines in het lab te starten en te stoppen:
 
 
 ```powershell
@@ -165,7 +165,7 @@ Mogelijk moet u ook geografische grenzen overwegen. Ontwikkel aars in het Noordo
 U kunt ook een Lab voor een specifiek project in Azure DevOps Projects gebruiken. Vervolgens past u beveiliging toe via een opgegeven Azure Active Directory groep, waarmee u toegang kunt krijgen tot beide sets resources. Het virtuele netwerk dat aan het lab is toegewezen, kan een andere grens zijn om gebruikers te consolideren.
 
 ### <a name="how-can-we-prevent-the-deletion-of-resources-within-a-lab"></a>Hoe kan ik voor komen dat resources binnen een Lab worden verwijderd?
-We raden u aan om de juiste machtigingen op het lab-niveau in te stellen, zodat alleen geautoriseerde gebruikers resources kunnen verwijderen of het lab-beleid wijzigen. Ontwikkel aars moeten worden geplaatst in de **DevTest Labs-gebruikers** groep. De lead ontwikkelaar of de lead van de infra structuur moet de eigenaar van de **DevTest Labs**zijn. We raden u aan slechts twee Lab-eigen aars te hebben. Dit beleid strekt zich naar de code opslagplaats om beschadiging te voor komen. Lab-gebruikers hebben rechten om resources te gebruiken, maar kunnen geen Lab-beleids regels bijwerken. Raadpleeg het volgende artikel waarin de rollen en rechten worden vermeld die elke ingebouwde groep binnen een Lab heeft: [eigen aren en gebruikers toevoegen in azure DevTest Labs](devtest-lab-add-devtest-user.md).
+We raden u aan om de juiste machtigingen op het lab-niveau in te stellen, zodat alleen geautoriseerde gebruikers resources kunnen verwijderen of het lab-beleid wijzigen. Ontwikkel aars moeten worden geplaatst in de **DevTest Labs-gebruikers** groep. De lead ontwikkelaar of de lead van de infra structuur moet de eigenaar van de **DevTest Labs** zijn. We raden u aan slechts twee Lab-eigen aars te hebben. Dit beleid strekt zich naar de code opslagplaats om beschadiging te voor komen. Lab-gebruikers hebben rechten om resources te gebruiken, maar kunnen geen Lab-beleids regels bijwerken. Raadpleeg het volgende artikel waarin de rollen en rechten worden vermeld die elke ingebouwde groep binnen een Lab heeft: [eigen aren en gebruikers toevoegen in azure DevTest Labs](devtest-lab-add-devtest-user.md).
 
 ### <a name="how-do-i-share-a-direct-link-to-my-lab"></a>Hoe kan ik een directe koppeling naar mijn lab delen?
 
@@ -278,7 +278,7 @@ Als u het uploaden van VHD-bestanden voor het maken van aangepaste installatie k
 Zoeken naar het doel-opslag account dat is gekoppeld aan uw Lab:
 
 1.  Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2.  Selecteer **resource groepen**in het menu links.
+2.  Selecteer **resource groepen** in het menu links.
 3.  Zoek en selecteer de resource groep die is gekoppeld aan uw Lab.
 4.  Selecteer een van de opslag accounts onder **overzicht**.
 5.  Selecteer **blobs**.

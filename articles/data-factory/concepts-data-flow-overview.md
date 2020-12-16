@@ -7,17 +7,17 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 09/02/2020
-ms.openlocfilehash: 32f1602c91d17ef2ad3283d4bc03d00d432641aa
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.date: 12/10/2020
+ms.openlocfilehash: f78cbaedea90a241efddd0eff9cb7503201528c5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027598"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590393"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 ## <a name="what-are-mapping-data-flows"></a>Wat zijn toewijzingsgegevensstromen?
 
@@ -27,9 +27,9 @@ Het toewijzen van gegevens stromen biedt een volledig visuele ervaring zonder co
 
 ## <a name="getting-started"></a>Aan de slag
 
-Gegevens stromen worden gemaakt op basis van het deel venster resources, zoals pijp lijnen en gegevens sets. Als u een gegevens stroom wilt maken, selecteert u het plus teken naast **Factory-resources** en selecteert u vervolgens **gegevens stroom** . 
+Gegevens stromen worden gemaakt op basis van het deel venster resources, zoals pijp lijnen en gegevens sets. Als u een gegevens stroom wilt maken, selecteert u het plus teken naast **Factory-resources** en selecteert u vervolgens **gegevens stroom**. 
 
-![Nieuwe gegevens stroom](media/data-flow/new-data-flow.png "nieuwe gegevens stroom")
+![Nieuwe gegevens stroom](media/data-flow/new-data-flow.png)
 
 Met deze actie gaat u naar het canvas voor gegevens stromen, waar u uw transformatie logica kunt maken. Selecteer **bron toevoegen** om het configureren van de bron transformatie te starten. Zie [bron transformatie](data-flow-source.md)voor meer informatie.
 
@@ -37,17 +37,17 @@ Met deze actie gaat u naar het canvas voor gegevens stromen, waar u uw transform
 
 De toewijzing van gegevens stroom heeft een uniek ontwerp teken dat is ontworpen om het maken van transformatie logica eenvoudig te maken. Het canvas voor de gegevens stroom is onderverdeeld in drie delen: de bovenste balk, de grafiek en het configuratie paneel. 
 
-![Scherm afbeelding toont het canvas gegevensstroom met de bovenste balk, het diagram en het configuratie venster met het label.](media/data-flow/canvas1.png "Canvas")
+![Scherm afbeelding toont het canvas gegevensstroom met de bovenste balk, het diagram en het configuratie venster met het label.](media/data-flow/canvas-1.png "Canvas")
 
 ### <a name="graph"></a>Graph
 
 In de grafiek wordt de transformatie stroom weer gegeven. De afkomst van de bron gegevens worden weer gegeven terwijl deze in een of meer sinks worden stromen. Selecteer **bron toevoegen** om een nieuwe bron toe te voegen. Als u een nieuwe trans formatie wilt toevoegen, selecteert u het plus teken aan de rechter benedenhoek van een bestaande trans formatie. Meer informatie over [het beheren van de gegevens stroom grafiek](concepts-data-flow-manage-graph.md).
 
-![Scherm afbeelding toont het grafiek gedeelte van het canvas met een zoekvak.](media/data-flow/canvas2.png "Canvas")
+![Scherm afbeelding toont het grafiek gedeelte van het canvas met een zoekvak.](media/data-flow/canvas-2.png)
 
 ### <a name="configuration-panel"></a>Configuratie paneel
 
-In het configuratie scherm worden de instellingen weer gegeven die specifiek zijn voor de momenteel geselecteerde trans formatie. Als er geen trans formatie is geselecteerd, wordt de gegevens stroom weer gegeven. In de algehele configuratie van de gegevens stroom kunt u de naam en beschrijving bewerken op het tabblad **Algemeen** of para meters toevoegen via het tabblad **para meters** . Zie [Data flow-para meters toewijzen](parameters-data-flow.md)voor meer informatie.
+In het configuratie scherm worden de instellingen weer gegeven die specifiek zijn voor de momenteel geselecteerde trans formatie. Als er geen trans formatie is geselecteerd, wordt de gegevens stroom weer gegeven. In de algehele configuratie van de gegevens stroom kunt u para meters toevoegen via het tabblad **para meters** . Zie [Data flow-para meters toewijzen](parameters-data-flow.md)voor meer informatie.
 
 Elke trans formatie bevat ten minste vier configuratie tabbladen.
 
@@ -99,63 +99,63 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 
 ## <a name="available-regions"></a>Beschikbare regio's
 
-Toewijzing van gegevens stromen is beschikbaar in de volgende regio's:
+Toewijzing van gegevens stromen is beschikbaar in de volgende regio's in ADF:
 
-| Azure-regio | Gegevens stromen in ADF | Gegevens stromen in Synapse Studio |
-| ------------ | ----------------- | ---------------------------- |
-|  Australië - centraal | | |  
-| Australië - centraal 2 | | |
-| Australië - oost | ✓ |  ✓ |
-| Australia Southeast   | ✓ | ✓ |
-| Brazil South  | ✓ |  |
-| Canada - midden | ✓ |  |
-| India - centraal | ✓ |   ✓ |
-| Central US    | ✓ |   ✓ |
-| China East |      | ✓ |
-| China - oost 2  |   |    |
-| China niet-regionaal | | |
-| China - noord |     | |
-| China - noord 2 | |  |
-| Azië - oost | ✓ | |
-| VS - oost   | ✓ | ✓ |
-| US - oost 2 | ✓ | ✓ |
-| Frankrijk - centraal | ✓ | ✓ |
-| Frankrijk - zuid  | | |
-| Duitsland-centraal (soeverein) | | |
-| Duitsland-niet-regionaal (soeverein) | | |
-| Duitsland-noord (openbaar) | | |
-| Duitsland-noordoost (soeverein) | | |
-| Duitsland-west-centraal (openbaar) |  | ✓ |
-| Japan East | ✓ |  |
-| Japan - west |  | |
-| Korea - centraal | ✓ |  |
-| Korea - zuid | | |
-| VS - noord-centraal  | ✓ | ✓ |
-| Europa - noord  | ✓ |    |
-| Noorwegen - oost | | |
-| Noorwegen - west | | |
-| Zuid-Afrika - noord    | ✓ | |
-| Zuid-Afrika - west |  |    |
-| South Central US  | | ✓ |
-| India - zuid | | |
-| Azië - zuidoost    | ✓ | ✓ |
-| Zwitserland - noord |   |  |
-| Zwitserland - west | | |
-| UAE - centraal | | |
-| VAE - noord |  |    |
-| Verenigd Koninkrijk Zuid  | ✓ |   | ✓ |
-| Verenigd Koninkrijk West |     | ✓ |
-| US DoD Central | |  |
-| US DoD East | |  |
-| VS (overheid) - Arizona |      |  |
-| US Gov - niet-regionaal | |  |
-| VS (overheid) - Texas | |  |
-| VS (overheid) - Virginia |     |  |
-| VS - west-centraal |     | ✓ |
-| Europa -west   | ✓ |   ✓ |
-| India - west | | |
-| VS - west   | ✓ |   |
-| West US 2 | ✓ |   ✓ | 
+| Azure-regio | Gegevens stromen in ADF |
+| ------------ | ----------------- |
+|  Australië - centraal | |
+| Australië - centraal 2 | |
+| Australië - oost | ✓ |
+| Australia Southeast   | ✓ |
+| Brazil South  | ✓ |
+| Canada - midden | ✓ |
+| India - centraal | ✓ |
+| US - centraal    | ✓ |
+| China East |      |
+| China - oost 2  |   |
+| China niet-regionaal | |
+| China - noord |     |
+| China - noord 2 | |
+| Azië - oost | ✓ |
+| VS - oost   | ✓ |
+| US - oost 2 | ✓ |
+| Frankrijk - centraal | ✓ |
+| Frankrijk - zuid  | |
+| Duitsland-centraal (soeverein) | |
+| Duitsland-niet-regionaal (soeverein) | |
+| Duitsland-noord (openbaar) | |
+| Duitsland-noordoost (soeverein) | |
+| Duitsland-west-centraal (openbaar) |  |
+| Japan East | ✓ |
+| Japan - west |  |
+| Korea - centraal | ✓ |
+| Korea - zuid | |
+| VS - noord-centraal  | ✓ |
+| Europa - noord  | ✓ |
+| Noorwegen - oost | |
+| Noorwegen - west | |
+| Zuid-Afrika - noord    | ✓ |
+| Zuid-Afrika - west |  |
+| South Central US  | |
+| India - zuid | |
+| Azië - zuidoost    | ✓ |
+| Zwitserland - noord |   |
+| Zwitserland - west | |
+| UAE - centraal | |
+| VAE - noord |  |
+| Verenigd Koninkrijk Zuid  | ✓ |
+| Verenigd Koninkrijk West |     |
+| US DoD Central | |
+| US DoD East | |
+| VS (overheid) - Arizona |      |
+| US Gov - niet-regionaal | |
+| VS (overheid) - Texas | |
+| VS (overheid) - Virginia |     |
+| VS - west-centraal |     |
+| Europa - west   | ✓ |
+| India - west | |
+| VS - west   | ✓ |
+| US - west 2 | ✓ |
 
 ## <a name="next-steps"></a>Volgende stappen
 

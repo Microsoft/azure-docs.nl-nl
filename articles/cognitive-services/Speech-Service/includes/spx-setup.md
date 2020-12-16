@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 6011bf90d5a97dcc027f8a9a0916c28226c5c354
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 327dce053c38fdb7b03e7ceb0d7a62ec8b8e7248
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96584538"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96993064"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -109,6 +109,12 @@ In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
 
 ```shell
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
+```
+
+Voor uitgebreidere interactie met het opdrachtregelprogramma kunt u een container starten met een interactieve bash shell door een beginpuntparameter toe te voegen.
+Voer in Windows deze opdracht in om een container te starten met een interactieve opdrachtregelinterface waarin u meerdere `spx`-opdrachten kunt invoeren:
+```shell
+docker run -it --entrypoint=/bin/bash -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
 > [!WARNING]

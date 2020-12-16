@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: include
 ms.custom: include file
 ms.author: roy-har
-ms.openlocfilehash: 9965e4c856fdef2af17b116264ad5344ebc97eb2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 081b9288d091e26d0e6d30aa849ced18a3c2ffb6
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "84466938"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938457"
 ---
 Maak de Pizza-app.
 
@@ -59,7 +59,7 @@ Uw Pizza-app is nu klaar voor gebruik.
 
 ## <a name="record-the-access-values-for-your-pizza-app"></a>De toegangswaarden voor uw Pizza-app vastleggen
 
-Als u uw nieuwe Pizza-app wilt gebruiken, hebt u de app-id, een ontwerpsleutel en een ontwerpeindpunt van uw Pizza-app nodig.
+Als u uw nieuwe Pizza-app wilt gebruiken, hebt u de app-id, een ontwerpsleutel en een ontwerpeindpunt van uw Pizza-app nodig. U hebt een afzonderlijk voorspellingseindpunt en een afzonderlijke voorspellingssleutel nodig om voorspellingen op te halen.
 
 Deze waarden zoeken:
 
@@ -67,5 +67,5 @@ Deze waarden zoeken:
 1. Noteer de **app-id** op de pagina **Toepassingsinstellingen**.
 1. Selecteer **Azure-resources**.
 1. Selecteer **Ontwerpresource**.
-1. Noteer de **primaire sleutel** op het tabblad **Ontwerpresource**. Deze waarde is uw ontwerpsleutel.
+1. Noteer de **Primaire sleutel** die u ziet op de tabbladen **Ontwerpresource** en **Voorspellingsresources**. Deze waarde is uw ontwerpsleutel.
 1. Noteer de **eindpunt-URL**. Deze waarde is uw ontwerpeindpunt.

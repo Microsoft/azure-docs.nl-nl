@@ -6,12 +6,12 @@ author: TimothyMothra
 ms.author: tilee
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 36c5fc93886327c0e3261418343d900ee66cb4eb
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: b44279f31aea8fc02130f1c3d7520f42c648bd4c
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168576"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607946"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights voor Azure Functions ondersteunde functies
 
@@ -23,37 +23,35 @@ Zie [afhankelijkheden](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Lo
 
 ## <a name="supported-features"></a>Ondersteunde functies
 
-| Azure Functions                       | V1                | V2 & V3   | 
-|-----------------------------------    |---------------    |------------------ |
+| Azure Functions                   | V1            | V2 & V3 | 
+|-----------------------------------|---------------|------------------|
 | | | | 
-| **Automatische verzameling van**        |                 |                   |               
-| &bull; Aanvragen                     | Ja             | Ja               | 
-| &bull; Uitzonderingen                   | Ja             | Ja               | 
-| &bull; Prestatie meter items         | Ja             | Ja               |
-| &bull; Elkaar                   |                   |                   |               
-| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Ja               | 
-| &nbsp;&nbsp;&nbsp;&mdash; ServiceBus|                 | Ja               | 
-| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | Ja               | 
-| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | Ja               | 
+| **Automatische verzameling van**        |               |                  |
+| &bull; Aanvragen                     | Ja           | Ja              |
+| &bull; Uitzonderingen                   | Ja           | Ja              |
+| &bull; Prestatie meter items         | Ja           | Ja              |
+| &bull; Elkaar                 |               |                  |
+| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |               | Ja              |
+| &nbsp;&nbsp;&nbsp;&mdash; ServiceBus|               | Ja              |
+| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |               | Ja              |
+| &nbsp;&nbsp;&nbsp;&mdash; SQL       |               | Ja              |
 | | | | 
-| **Ondersteunde functies**                |                   |                   |               
-| &bull; QuickPulse/LiveMetrics       | Ja             | Ja               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Kanaal voor beveiligde besturing|                 | Ja               | 
-| &bull; Proef                     | Ja             | Ja               | 
-| &bull; Heartbeats                   |                 | Ja               | 
+| **Ondersteunde functies**              |               |                  |
+| &bull; QuickPulse/LiveMetrics       | Ja           | Ja              | 
+| &nbsp;&nbsp;&nbsp;&mdash; Kanaal voor beveiligde besturing |               | Ja | 
+| &bull; Proef                     | Ja           | Ja              | 
+| &bull; Heartbeats                   | | Ja              | 
+| | | |
+| **Correlatie**                    |               |                  |
+| &bull; ServiceBus                  |               | Ja              |
+| &bull; EventHub                    |               | Ja              |
 | | | | 
-| **Correlatie**                       |                   |                   |               
-| &bull; ServiceBus                     |                   | Ja               | 
-| &bull; EventHub                       |                   | Ja               | 
-| | | | 
-| **Configureerbaar**                      |                   |                   |           
-| &bull;Volledig configureerbaar.<br/>Zie [Azure functions](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852) voor instructies.<br/>Zie [ASP.net core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) voor alle opties.               |                   | Ja                   | 
-
+| **Configureerbaar**                  |               |                  |           
+| &bull;Volledig configureerbaar.<br/>Zie [Azure functions](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852) voor instructies.<br/>Zie [ASP.net core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) voor alle opties.           |               | Ja                 | 
 
 ## <a name="performance-counters"></a>Prestatiemeteritems
 
 Het automatisch verzamelen van prestatie meter items werkt alleen op Windows-computers.
-
 
 ## <a name="live-metrics--secure-control-channel"></a>Live Metrics & kanaal voor beveiligd beheer
 
@@ -65,7 +63,7 @@ Met Azure Functions worden steek proeven standaard in hun configuratie ingeschak
 
 Als uw project afhankelijk is van de Application Insights SDK om hand matige telemetrie-tracering uit te voeren, kunnen er vreemde problemen optreden als uw sampling configuratie verschilt van de sampling configuratie van de functies. 
 
-We raden u aan dezelfde configuratie als-functies te gebruiken. Met **functions v2**kunt u dezelfde configuratie ophalen met behulp van afhankelijkheids injectie in uw constructor:
+We raden u aan dezelfde configuratie als-functies te gebruiken. Met **functions v2** kunt u dezelfde configuratie ophalen met behulp van afhankelijkheids injectie in uw constructor:
 
 ```csharp
 using Microsoft.ApplicationInsights;

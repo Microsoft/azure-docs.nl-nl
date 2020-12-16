@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 203af02841e6d17546d254ed83868c859ba3ac0d
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 94de0ca0a5393c891e567e558cbbadd0ca1f453b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938933"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607997"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers
 
@@ -120,40 +120,40 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met de Oracle Cloud Infrastructure-console worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in de Oracle Cloud Infrastructure-console te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van de Oracle Cloud Infrastructure-console het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-      |Kenmerk|Type|
-      |---|---|
-      |displayName|Tekenreeks|
-      |userName|Tekenreeks|
-      |actief|Booleaans|
-      |title|Tekenreeks|
-      |emails[type eq "work"].value|Tekenreeks|
-      |preferredLanguage|Tekenreeks|
-      |name.givenName|Tekenreeks|
-      |name.familyName|Tekenreeks|
-      |addresses[type eq "work"].formatted|Tekenreeks|
-      |addresses[type eq "work"].locality|Tekenreeks|
-      |addresses[type eq "work"].region|Tekenreeks|
-      |addresses[type eq "work"].postalCode|Tekenreeks|
-      |addresses[type eq "work"].country|Tekenreeks|
-      |addresses[type eq "work"].streetAddress|Tekenreeks|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
-      |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
-      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|Booleaans|
-      |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|Booleaans|
+    |Kenmerk|Type|
+    |---|---|
+    |displayName|Tekenreeks|
+    |userName|Tekenreeks|
+    |actief|Booleaans|
+    |title|Tekenreeks|
+    |emails[type eq "work"].value|Tekenreeks|
+    |preferredLanguage|Tekenreeks|
+    |name.givenName|Tekenreeks|
+    |name.familyName|Tekenreeks|
+    |addresses[type eq "work"].formatted|Tekenreeks|
+    |addresses[type eq "work"].locality|Tekenreeks|
+    |addresses[type eq "work"].region|Tekenreeks|
+    |addresses[type eq "work"].postalCode|Tekenreeks|
+    |addresses[type eq "work"].country|Tekenreeks|
+    |addresses[type eq "work"].streetAddress|Tekenreeks|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
+    |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:bypassNotification|Booleaans|
+    |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|Booleaans|
 
 10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met de Oracle Cloud Infrastructure-console**.
 
 11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met de Oracle Cloud Infrastructure-console worden gesynchroniseerd. De kenmerken die als **Overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in de Oracle Cloud Infrastructure-console te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-      |Kenmerk|Type|
-      |---|---|
-      |displayName|Tekenreeks|
-      |externalId|Tekenreeks|
-      |leden|Naslaginformatie|
+    | Kenmerk | Type |
+    |--|--|
+    | displayName | Tekenreeks |
+    | externalId | Tekenreeks |
+    | leden | Naslaginformatie |
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

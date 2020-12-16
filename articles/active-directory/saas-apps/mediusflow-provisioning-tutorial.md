@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4d3ee6df90424788c6f9b6bb4e2055023a5d56a6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 881309c040f6c1bdff758d17ab7f51e935437192
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182051"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607878"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Zelfstudie: MediusFlow configureren voor automatische gebruikersinrichting
 
@@ -172,11 +172,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met MediusFlow worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in MediusFlow te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-      |Kenmerk|Type|
-      |---|---|
-      |displayName|Tekenreeks|
-      |externalID|Tekenreeks|
-      |leden|Naslaginformatie|
+    | Kenmerk | Type |
+    |--|--|
+    | displayName | Tekenreeks |
+    | externalID | Tekenreeks |
+    | leden | Naslaginformatie |
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

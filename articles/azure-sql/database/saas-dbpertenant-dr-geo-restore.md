@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: daccbd9dfb3ed628d8a3e604cbb9af4045f1ebe6
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3fe6095595f5270b18536e6ef46afe4a0a5b3268
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780883"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607708"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Geo-herstel gebruiken om een multitenant-SaaS-toepassing te herstellen vanuit databaseback-ups
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -163,7 +163,7 @@ Het herstelproces doet het volgende:
 
     * Tenantdatabases kunnen worden geopend door de toepassing zodra ze in de catalogus als online worden aangeduid.
 
-    * De som van de rowversion-waarden in de tenantdatabase wordt opgeslagen in de catalogus. Deze som fungeert als een vingerafdruk waarmee het repatriëringsproces kan bepalen of de database in de herstelregio is bijgewerkt.       
+    * De som van de rowversion-waarden in de tenantdatabase wordt opgeslagen in de catalogus. Deze som fungeert als een vingerafdruk waarmee het repatriëringsproces kan bepalen of de database in de herstelregio is bijgewerkt.
 
 ## <a name="run-the-recovery-script"></a>Het herstelscript uitvoeren
 

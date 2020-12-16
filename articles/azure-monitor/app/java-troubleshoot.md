@@ -6,12 +6,12 @@ ms.date: 03/14/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: dbc9e48987f527c9579decc3db84091a432a17e5
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 6b578cd03daa6e996a69c03afd327097d6123045
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601013"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607895"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java-sdk"></a>Probleem oplossing en Q en A voor Application Insights voor Java SDK
 
@@ -63,7 +63,6 @@ U hebt uw app ingesteld voor het verzenden van telemetrie van de server. Nu kunt
 Als uw client een app is in een [telefoon of een ander apparaat][platforms], kunt u ook telemetrie verzenden.
 
 Gebruik dezelfde instrumentatie sleutel om de telemetrie van de client en de server in te stellen. De gegevens worden weer gegeven in dezelfde Application Insights resource en u kunt gebeurtenissen van client en server correleren.
-
 
 ## <a name="disabling-telemetry"></a>Telemetrie uitschakelen
 **Hoe kan ik telemetrie-verzameling uitschakelen?**
@@ -183,7 +182,6 @@ Application Insights gebruikt `org.apache.http` . Dit wordt verplaatst binnen Ap
 
 >[!NOTE]
 >Als u logboek registratie van fout opsporing inschakelt voor alle naam ruimten in de app, worden alle modules uitgevoerd, inclusief een andere `org.apache.http` naam `com.microsoft.applicationinsights.core.dependencies.http` . Application Insights kan geen filtering Toep assen op deze aanroepen omdat de logboek aanroep wordt gemaakt door de Apache-bibliotheek. Logboek registratie van fout opsporing produceert een aanzienlijke hoeveelheid logboek gegevens en wordt niet aanbevolen voor live productie-exemplaren.
-
 
 ## <a name="next-steps"></a>Volgende stappen
 **Ik heb Application Insights voor mijn Java-Server-app ingesteld. Wat kan ik nog meer doen?**

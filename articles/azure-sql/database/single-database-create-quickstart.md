@@ -4,23 +4,23 @@ description: Maak één database in Azure SQL Database met de Azure-portal, Powe
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
-ms.custom: contperfq1, devx-track-azurecli
+ms.custom: contperf-fy21q1, devx-track-azurecli
 ms.devlang: ''
 ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/03/2020
-ms.openlocfilehash: ab920a05f255e38905f9ff79f08f2bfa0c6540b6
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 21ccbc83c80e1b659dd240973a609d624f270835
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791508"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028509"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>Quickstart: Een individuele database maken in Azure SQL Database
 
-In deze quickstart maakt u [één database](single-database-overview.md) in Azure SQL Database met behulp van Azure Portal, een PowerShell-script of een Azure CLI-script. Voer daarna in de Azure Portal een query voor de database uit met de **Query-editor** .
+In deze quickstart maakt u [één database](single-database-overview.md) in Azure SQL Database met behulp van Azure Portal, een PowerShell-script of een Azure CLI-script. Voer daarna in de Azure Portal een query voor de database uit met de **Query-editor**.
 
 
 
@@ -37,24 +37,24 @@ In deze quickstart wordt één database gemaakt in de [laag voor serverloze comp
 Als u één database wilt maken in Azure Portal begint deze quickstart op de Azure SQL-pagina.
 
 1. Browse naar de pagina [SQL-implementatieoptie selecteren](https://portal.azure.com/#create/Microsoft.AzureSQL).
-1. Laat onder **SQL-databases** de optie **Resourcetype** ingesteld op **Eén database** en selecteer **Maken** .
+1. Laat onder **SQL-databases** de optie **Resourcetype** ingesteld op **Eén database** en selecteer **Maken**.
 
    ![Toevoegen aan Azure SQL](./media/single-database-create-quickstart/select-deployment.png)
 
-1. Selecteer op het tabblad **Basisinformatie** van het formulier **SQL-database maken** , onder **Projectgegevens** , het gewenste Azure- **abonnement** .
-1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken** , voer *myResourceGroup* in en selecteer **OK** .
+1. Selecteer op het tabblad **Basisinformatie** van het formulier **SQL-database maken**, onder **Projectgegevens**, het gewenste Azure-**abonnement**.
+1. Selecteer voor **Resourcegroep** de optie **Nieuwe maken**, voer *myResourceGroup* in en selecteer **OK**.
 1. Voer voor **Databasenaam** de tekst *mySampleDatabase* in.
 1. Selecteer voor **Server** de optie **Nieuwe maken** en vul het formulier **Nieuwe server** in met de volgende waarden:
-   - **Servernaam** : Voer *mysqlserverr* in en voeg tekens toe om de naam uniek te maken. We kunnen geen exacte servernaam geven die moet worden gebruikt omdat servernamen globaal uniek moeten zijn voor alle servers in Azure en niet alleen uniek moeten zijn binnen een abonnement. Voer daarom iets in als mysqlserver12345 en de portal laat u weten of de naam beschikbaar is of niet.
-   - **Aanmeldgegevens van serverbeheerder** : Voer *azureuser* in.
-   - **Wachtwoord** : Voer een wachtwoord in dat voldoet aan de vereisten en voer dit opnieuw in bij **Wachtwoord bevestigen** .
-   - **Locatie** : Selecteer een locatie in de vervolgkeuzelijst.
+   - **Servernaam**: Voer *mysqlserverr* in en voeg tekens toe om de naam uniek te maken. We kunnen geen exacte servernaam geven die moet worden gebruikt omdat servernamen globaal uniek moeten zijn voor alle servers in Azure en niet alleen uniek moeten zijn binnen een abonnement. Voer daarom iets in als mysqlserver12345 en de portal laat u weten of de naam beschikbaar is of niet.
+   - **Aanmeldgegevens van serverbeheerder**: Voer *azureuser* in.
+   - **Wachtwoord**: Voer een wachtwoord in dat voldoet aan de vereisten en voer dit opnieuw in bij **Wachtwoord bevestigen**.
+   - **Locatie**: Selecteer een locatie in de vervolgkeuzelijst.
 
-   Selecteer **OK** .
+   Selecteer **OK**.
 
-1. Laat de instelling voor **Wilt u een elastische SQL-pool gebruiken?** ongewijzigd op **Nee** .
-1. Selecteer onder **Computing en opslag** de optie **Database configureren** .
-1. Deze quickstart maakt gebruik van een serverloze database, dus selecteer **Serverloos** en vervolgens **Toepassen** . 
+1. Laat de instelling voor **Wilt u een elastische SQL-pool gebruiken?** ongewijzigd op **Nee**.
+1. Selecteer onder **Computing en opslag** de optie **Database configureren**.
+1. Deze quickstart maakt gebruik van een serverloze database, dus selecteer **Serverloos** en vervolgens **Toepassen**. 
 
       ![Serverloze database configureren](./media/single-database-create-quickstart/configure-database.png)
 
@@ -62,19 +62,19 @@ Als u één database wilt maken in Azure Portal begint deze quickstart op de Azu
 
    ![Nieuwe SQL-database - tabblad Basisinformatie](./media/single-database-create-quickstart/new-sql-database-basics.png)
 
-1. Selecteer op het tabblad **Netwerken** voor **Verbindingsmethode** de optie **Openbaar eindpunt** .
-1. Stel voor **Firewallregels** de optie **Huidig IP-adres van client toevoegen** in op **Ja** . Laat de instelling voor **Toestaan dat Azure-services en -resources toegang tot deze server krijgen** ongewijzigd op **Nee** .
+1. Selecteer op het tabblad **Netwerken** voor **Verbindingsmethode** de optie **Openbaar eindpunt**.
+1. Stel voor **Firewallregels** de optie **Huidig IP-adres van client toevoegen** in op **Ja**. Laat de instelling voor **Toestaan dat Azure-services en -resources toegang tot deze server krijgen** ongewijzigd op **Nee**.
 1. Selecteer **Volgende: Aanvullende instellingen** onderaan de pagina.
 
    ![Tabblad Netwerken](./media/single-database-create-quickstart/networking.png)
   
 
-1. Selecteer op het tabblad **Aanvullende instellingen** , in de sectie **Gegevensbron** , voor **Bestaande gegevens gebruiken** , de optie **Voorbeeld** . Hiermee maakt u een AdventureWorksLT-voorbeelddatabase, zodat er een aantal tabellen en gegevens zijn voor het uitvoeren van query's en het experimenteren hiermee, in tegenstelling tot een lege database.
+1. Selecteer op het tabblad **Aanvullende instellingen**, in de sectie **Gegevensbron**, voor **Bestaande gegevens gebruiken**, de optie **Voorbeeld**. Hiermee maakt u een AdventureWorksLT-voorbeelddatabase, zodat er een aantal tabellen en gegevens zijn voor het uitvoeren van query's en het experimenteren hiermee, in tegenstelling tot een lege database.
 1. Selecteer **Controleren en maken** onderaan de pagina:
 
    ![Tabblad Aanvullende instellingen](./media/single-database-create-quickstart/additional-settings.png)
 
-1. Selecteer op de pagina **Controleren en maken** na het controleren de optie **Maken** .
+1. Selecteer op de pagina **Controleren en maken** na het controleren de optie **Maken**.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -107,7 +107,7 @@ endip=0.0.0.0
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus* :
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 az group create --name $resourceGroupName --location $location
@@ -258,7 +258,7 @@ Wanneer de database is gemaakt, kunt u de **Query-editor(preview)** in Azure Por
 
 1. In de portal zoekt en selecteert u **SQL-databases** en selecteert u vervolgens uw database in de lijst.
 1. Selecteer op de pagina voor uw database in het linkermenu de optie **Query-editor (preview)** .
-1. Voer uw aanmeldgegevens als serverbeheerder in en selecteer **OK** .
+1. Voer uw aanmeldgegevens als serverbeheerder in en selecteer **OK**.
 
    ![Aanmelden bij query-editor](./media/single-database-create-quickstart/query-editor-login.png)
 
@@ -271,7 +271,7 @@ Wanneer de database is gemaakt, kunt u de **Query-editor(preview)** in Azure Por
    ON pc.productcategoryid = p.productcategoryid;
    ```
 
-1. Klik op **Uitvoeren** en bekijk de resultaten van de query in het deelvenster **Resultaten** .
+1. Klik op **Uitvoeren** en bekijk de resultaten van de query in het deelvenster **Resultaten**.
 
    ![Resultaten query-editor](./media/single-database-create-quickstart/query-editor-results.png)
 
@@ -289,7 +289,7 @@ Zo verwijdert u **myResourceGroup** en alle bijbehorende resources met behulp va
 
 1. Selecteer in de Azure Portal **Resourcegroepen** en selecteer **myResourceGroup** in de lijst.
 1. Selecteer **Resourcegroep verwijderen** op de pagina van de resourcegroep.
-1. Typ *myResourceGroup* onder **Typ de naam van de resourcegroep** en selecteer **Verwijderen** .
+1. Typ *myResourceGroup* onder **Typ de naam van de resourcegroep** en selecteer **Verwijderen**.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 

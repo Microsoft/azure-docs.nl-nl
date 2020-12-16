@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
-ms.openlocfilehash: b73d065b43aff5f9793e642a102ff8bb2a7be036
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b2e6993cd8dc77ccb9b43a3d5aef7b25fd9d7250
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81000446"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347112"
 ---
 # <a name="architecture-of-iot-central-digital-distribution-center-application-template"></a>Architectuur van toepassingssjabloon voor digitaal distributiecentrum voor IoT Central
 
@@ -26,7 +26,7 @@ Partners en klanten kunnen de app-sjabloon en de volgende richtlijnen gebruiken 
 1. Set IoT-sensoren die telemetriegegevens naar een gatewayapparaat verzenden
 2. Gatewayapparaten die telemetrie en geaggregeerde inzichten naar IoT Central verzenden
 3. Gegevens worden gerouteerd naar de gewenste Azure-service voor bewerking
-4. Azure-services zoals ASA of Azure Functions kunnen worden gebruikt om gegevensstromen te transformeren en te verzenden naar de gewenste opslagaccounts 
+4. Azure-services zoals ASA of Azure Functions kunnen worden gebruikt om gegevensstromen te transformeren en te verzenden naar de gewenste opslagaccounts
 5. Verwerkte gegevens worden opgeslagen in dynamische opslag voor bijna realtime acties of koude opslag voor aanvullende inzichtverbeteringen die zijn gebaseerd op ML of batchanalyse. 
 6. Logic Apps kan worden gebruikt om verschillende zakelijke werkstromen in zakelijke toepassingen voor eindgebruikers uit te schakelen
 

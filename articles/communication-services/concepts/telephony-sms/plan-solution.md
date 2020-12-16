@@ -10,21 +10,22 @@ ms.date: 10/05/2020
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 0420360b70485e49dc6cd06dbeb19400c0f73ef5
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 271d7ce38d50fd21975327eb1f21528aeacc485e
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070347"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937233"
 ---
 # <a name="plan-your-telephony-and-sms-solution"></a>Uw oplossing voor telefonie en sms plannen
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
-
+[!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Met Azure Communication Services kunt u telefoonnummers gebruiken om gesprekken te voeren en sms-berichten te verzenden met het openbare telefoonnetwerk (PSTN). In dit document bekijken we de typen telefoonnummers, configuratieopties en beschikbaarheid in regio's voor het plannen van uw telefoon- en sms-oplossing met behulp van Communication Services.
 
-[!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
+
+
 
 
 ## <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
@@ -52,6 +53,8 @@ In de volgende tabel vindt u een overzicht van deze typen telefoonnummers:
 
 
 ## <a name="phone-number-features-in-azure-communication-services"></a>Functies voor telefoonnummers in Azure Communication Services 
+
+[!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
 
 Voor de meeste telefoonnummers kunt u een reeks functies 'à la carte' configureren. Deze functies kunnen worden geselecteerd wanneer u uw telefoonnummers least in Azure Communication Services.
 

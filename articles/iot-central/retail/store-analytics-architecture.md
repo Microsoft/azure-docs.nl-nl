@@ -9,15 +9,14 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: f1f83fdd73816e6e30c5cac7d193719591bb8dc1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3486b636325393f9c8e96669ba3d21e7d489efee
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "80999027"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347979"
 ---
 # <a name="in-store-analytics-architecture"></a>Analysearchitectuur voor winkels
-
 
 
 Met analyseoplossingen voor winkels kunt u verschillende omstandigheden binnen de retailomgeving monitoren. Deze oplossingen kunnen worden gemaakt met behulp van een van de toepassingssjablonen in IoT Central en de onderstaande architectuur als leidraad.

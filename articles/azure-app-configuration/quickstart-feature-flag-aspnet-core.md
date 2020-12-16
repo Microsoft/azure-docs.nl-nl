@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: functievlaggen toevoegen aan ASP.NET Core'
 description: U kunt functievlaggen toevoegen aan ASP.NET Core-apps en deze beheren met Azure App Configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
-ms.author: lcozzens
-ms.openlocfilehash: 5179a619b1adba432910605c75fae0789efd3397
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.author: alkemper
+ms.openlocfilehash: d465f3c44ede8b4df56ef0da08c5bbbcd477d93f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182672"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932134"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Quickstart: functievlaggen toevoegen aan een ASP.NET Core-app
 

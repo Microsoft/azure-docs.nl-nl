@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
-ms.custom: identityplatformtop40, contperfq2
-ms.openlocfilehash: 3f18913bb0d05c45ae57152d438b229b8bcc1d48
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.custom: identityplatformtop40, contperf-fy21q2
+ms.openlocfilehash: e5a9292097933ff35eb8b77445f07f10def6e5c3
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94627911"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029614"
 ---
 # <a name="what-is-the-microsoft-identity-platform"></a>Wat is het Microsoft Identity Platform?
 

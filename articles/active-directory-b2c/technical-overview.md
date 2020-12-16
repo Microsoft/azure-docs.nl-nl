@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 05/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 519e2da902e1121220bcbb28c4cb18a68001293b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: fef192ab273a0e53958cda315932f91b427a5d7d
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840548"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108380"
 ---
 # <a name="technical-and-feature-overview-of-azure-active-directory-b2c"></a>Technisch overzicht en functieoverzicht van Azure Active Directory B2C
 
@@ -162,7 +162,7 @@ In Azure AD B2C kunt u de identiteitservaringen van uw gebruikers samenstellen, 
 
 ![Schermopnamen van aanmeldingspagina die is aangepast voor bepaald merk](media/technical-overview/seamless-ux.png)
 
-Zie [Customize the user interface in Azure Active Directory B2C](customize-ui-overview.md) (De gebruikersinterface aanpassen in Azure Active Directory B2C) voor meer informatie over het aanpassen van de UI.
+Zie [Customize the user interface in Azure Active Directory B2C](customize-ui-with-html.md) (De gebruikersinterface aanpassen in Azure Active Directory B2C) voor meer informatie over het aanpassen van de UI.
 
 ## <a name="localization"></a>Lokalisatie
 
@@ -170,7 +170,7 @@ Taalaanpassing in Azure AD B2C maakt het mogelijk om verschillende talen aan te 
 
 ![Drie aanmeldingspagina's met tekst van de gebruikersinterface in verschillende talen](media/technical-overview/localization.png)
 
-Meer informatie over lokalisatie vindt u in [Language customization in Azure Active Directory B2C](user-flow-language-customization.md) (Taalaanpassing in Azure Active Directory B2C).
+Meer informatie over lokalisatie vindt u in [Language customization in Azure Active Directory B2C](language-customization.md) (Taalaanpassing in Azure Active Directory B2C).
 
 ## <a name="add-your-own-business-logic"></a>Uw eigen bedrijfslogica toevoegen
 
@@ -221,7 +221,7 @@ Zie [Administrator role permissions in Azure Active Directory](../active-directo
 
 Meervoudige verificatie van Azure AD B2C helpt u bij het beveiligen van de toegang tot gegevens en toepassingen zonder dat uw gebruikers hier overdreven veel van merken. Er wordt extra beveiliging afgedwongen door een tweede vorm van verificatie te vereisen. Daarnaast wordt er sterke verificatie aangeboden met een keuze van verschillende gebruiksvriendelijke verificatiemethoden. Afhankelijk van de configuratiebeslissingen die u als beheerder neemt, moeten uw gebruikers al dan niet reageren op een verzoek van de functie voor meervoudige verificatie.
 
-Zie [Meervoudige verificatie inschakelen in Azure Active Directory B2C](custom-policy-multi-factor-authentication.md) om te lezen hoe u meervoudige verificatie inschakelt in gebruikersstromen.
+Zie [Meervoudige verificatie inschakelen in Azure Active Directory B2C](multi-factor-authentication.md) om te lezen hoe u meervoudige verificatie inschakelt in gebruikersstromen.
 
 ### <a name="smart-account-lockout"></a>Slimme accountvergrendeling
 
@@ -235,7 +235,7 @@ Zie [Manage threats to resources and data in Azure Active Directory B2C](threat-
 
 Tijdens registratie of het opnieuw instellen van het wachtwoord, moeten uw gebruikers een wachtwoord opgeven dat voldoet aan de complexiteitsregels. Azure AD B2C dwingt standaard een sterk wachtwoordbeleid af. Azure AD B2C biedt ook configuratieopties voor het opgeven van de complexiteitsvereisten waaraan de wachtwoorden van uw klanten moeten voldoen.
 
-U kunt vereisten voor wachtwoordcomplexiteit configureren in zowel [gebruikersstromen](user-flow-password-complexity.md) als [aangepaste beleidsregels](custom-policy-password-complexity.md).
+U kunt vereisten voor wachtwoordcomplexiteit configureren in zowel [gebruikersstromen](password-complexity.md) als [aangepaste beleidsregels](password-complexity.md).
 
 ## <a name="auditing-and-logs"></a>Controle en logboeken
 

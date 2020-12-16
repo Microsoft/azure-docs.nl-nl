@@ -6,18 +6,19 @@ documentationcenter: na
 author: MashaMSFT
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
+ms.subservice: deployment
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
 ms.date: 07/11/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 454dc593dca216d3805036ce78ec9986cf317d4e
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 335a63faa440e057c282f992b67b301289a7a4bb
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145851"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356953"
 ---
 # <a name="quickstart-create-sql-server-2017-on-a-windows-virtual-machine-in-the-azure-portal"></a>Quickstart: SQL Server 2017 maken op een virtuele Windows-machine in Azure Portal
 
@@ -70,7 +71,7 @@ Geef op het tabblad **Basisbeginselen** u de volgende gegevens op:
 
    ![Exemplaardetails](./media/sql-vm-create-portal-quickstart/basics-instance-details.png)
 
-1. Geef onder **Administrator-account** een gebruikersnaam op, bijvoorbeeld _azureuser_ , en een wachtwoord. Het wachtwoord moet minstens 12 tekens lang zijn en moet voldoen aan de [gedefinieerde complexiteitsvereisten](../../../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).
+1. Geef onder **Administrator-account** een gebruikersnaam op, bijvoorbeeld _azureuser_, en een wachtwoord. Het wachtwoord moet minstens 12 tekens lang zijn en moet voldoen aan de [gedefinieerde complexiteitsvereisten](../../../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).
 
    ![Administrator-account](./media/sql-vm-create-portal-quickstart/basics-administrator-account.png)
 
@@ -82,7 +83,7 @@ Geef op het tabblad **Basisbeginselen** u de volgende gegevens op:
 
 Op het tabblad **SQL Server-instellingen** configureert u de volgende opties:
 
-1. Selecteer onder **Netwerken en beveiliging** de optie _Openbaar (internet_ ) voor **SQL-connectiviteit** en wijzig de poort in `1401` om te voorkomen dat u in het openbare scenario een bekend poortnummer gebruikt. 
+1. Selecteer onder **Netwerken en beveiliging** de optie _Openbaar (internet_) voor **SQL-connectiviteit** en wijzig de poort in `1401` om te voorkomen dat u in het openbare scenario een bekend poortnummer gebruikt. 
 1. Selecteer onder **SQL-verificatie** de optie **Inschakelen**. De SQL-aanmeldingsgegevens zijn ingesteld op dezelfde combinatie van gebruikersnaam en wachtwoord als u voor de virtuele machine hebt geconfigureerd. Gebruik de standaardinstelling voor [**Azure Key Vault-integratie**](azure-key-vault-integration-configure.md). **Opslagconfiguratie** is niet beschikbaar voor de basisinstallatiekopie van de virtuele SQL Server-machine, maar in [Opslagconfiguratie](storage-configuration.md#new-vms) vindt u meer informatie over de beschikbare opties voor andere installatiekopieën.  
 
    ![Beveiligingsinstellingen voor SQL-server](./media/sql-vm-create-portal-quickstart/sql-server-settings.png)
@@ -106,7 +107,7 @@ U kunt de implementatie bewaken vanuit Azure Portal. Met de knop **Meldingen** b
 1. Open [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) op een andere computer die is verbonden met internet.
 
 
-1. Bewerk in het dialoogvenster **Verbinding maken met server** of **Verbinding maken met Database-engine** de waarde voor **Servernaam**. Typ het openbare IP-adres van de virtuele machine. Typ nu een komma en vervolgens de aangepaste poort ( **1401** ) die u hebt opgegeven tijdens de configuratie van de nieuwe virtuele machine. Bijvoorbeeld `11.22.33.444,1401`.
+1. Bewerk in het dialoogvenster **Verbinding maken met server** of **Verbinding maken met Database-engine** de waarde voor **Servernaam**. Typ het openbare IP-adres van de virtuele machine. Typ nu een komma en vervolgens de aangepaste poort (**1401**) die u hebt opgegeven tijdens de configuratie van de nieuwe virtuele machine. Bijvoorbeeld `11.22.33.444,1401`.
 
 1. Kies in het vak **Verificatie** **SQL Server-verificatie**.
 

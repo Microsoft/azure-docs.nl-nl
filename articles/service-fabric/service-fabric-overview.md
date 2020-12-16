@@ -3,13 +3,13 @@ title: Overzicht van Azure Service Fabric
 description: Service Fabric is een platform bestaande uit gedistribueerde systemen, dat wordt gebruikt voor het bouwen van schaalbare, betrouwbare en eenvoudig te beheren microservices.
 ms.topic: overview
 ms.date: 09/22/2020
-ms.custom: contentperfq1
-ms.openlocfilehash: 3c282178decc1a07b2c0acc102b279688c42d52e
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: b6a14ba3f905fbef3fc3796b616cd594941a3d60
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91300646"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028628"
 ---
 # <a name="overview-of-azure-service-fabric"></a>Overzicht van Azure Service Fabric
 

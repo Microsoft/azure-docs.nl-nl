@@ -28,13 +28,13 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 In dit artikel moet u Azure CLI-versie 2.0 of later lokaal uitvoeren. Voer de opdracht `az --version` uit om de geïnstalleerde versie te zien. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
-U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/authenticate-azure-cli). Let op de **id** -eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
+U moet zich aanmelden bij uw account met behulp van de opdracht [az login](/cli/azure/authenticate-azure-cli). Let op de **id**-eigenschap van de opdrachtuitvoer voor de naam van het desbetreffende abonnement.
 
 ```azurecli
 az login
 ```
 
-Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account). Gebruik de eigenschap **abonnement-id** uit de **az login** -uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
+Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account). Gebruik de eigenschap **abonnement-id** uit de **az login**-uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
 
 ```azurecli
 az account set --subscription <subscription id>
@@ -57,11 +57,11 @@ cd djangoapp
 
 # <a name="download"></a>[Downloaden](#tab/download)
 
-Ga naar [https://github.com/Azure-Samples/djangoapp](https://github.com/Azure-Samples/djangoapp), selecteer **Kloon** en vervolgens **ZIP-bestand downloaden** .
+Ga naar [https://github.com/Azure-Samples/djangoapp](https://github.com/Azure-Samples/djangoapp), selecteer **Kloon** en vervolgens **ZIP-bestand downloaden**.
 
-Pak het ZIP-bestand uit in een map met de naam *djangoapp* .
+Pak het ZIP-bestand uit in een map met de naam *djangoapp*.
 
-Open vervolgens een terminalvenster in die map *djangoapp* .
+Open vervolgens een terminalvenster in die map *djangoapp*.
 
 ---
 
@@ -69,7 +69,7 @@ Het voorbeeld van de djangoapp bevat de gegevensgestuurde Django-polls-app die u
 
 Het voorbeeld is ook aangepast om te worden uitgevoerd in een productie-omgeving, zoals App Service:
 
-- Productie-instellingen bevinden zich in het bestand *azuresite/production.py* . De ontwikkelingsgegevens bevinden zich in *azuresite/settings.py* .
+- Productie-instellingen bevinden zich in het bestand *azuresite/production.py*. De ontwikkelingsgegevens bevinden zich in *azuresite/settings.py*.
 - De app gebruikt productie-instellingen wanneer de `DJANGO_ENV`-omgevingsvariabele is ingesteld op 'productie'. Verderop in de zelfstudie maakt u deze omgevingsvariabele samen met andere die worden gebruikt voor de configuratie van de PostgreSQL-database.
 
 Deze wijzigingen dienen specifiek om Django uit te voeren in een productieomgeving en zijn niet uniek voor App Service. Zie de sectie [Controlelijst voor Django-implementatie](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/) voor meer informatie.
@@ -132,7 +132,7 @@ az webapp config appsettings set --settings DJANGO_ENV="production" DBHOST="<pos
 - De code van de app verwacht om database-informatie te vinden in een aantal omgevingsvariabelen. Om omgevingsvariabelen in te stellen in App Service, maakt u 'app-instellingen' met de opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
 
 > [!TIP]
-> Veel Azure CLI-opdrachten cachen dezelfde parameters, zoals de naam van de resourcegroep en het App Service-abonnement, in het bestand *.azure/config* . Bijgevolg hoeft u niet al diezelfde parameters op te geven met latere opdrachten. Om bijvoorbeeld de app opnieuw te implementeren na wijzigingen, kunt u `az webapp up` gewoon opnieuw uitvoeren zonder parameters.
+> Veel Azure CLI-opdrachten cachen dezelfde parameters, zoals de naam van de resourcegroep en het App Service-abonnement, in het bestand *.azure/config*. Bijgevolg hoeft u niet al diezelfde parameters op te geven met latere opdrachten. Om bijvoorbeeld de app opnieuw te implementeren na wijzigingen, kunt u `az webapp up` gewoon opnieuw uitvoeren zonder parameters.
 
 ### <a name="run-django-database-migrations"></a>Django-databasemigraties uitvoeren
 
@@ -140,7 +140,7 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
 1. Open een SSH-sessie in de browser door te navigeren naar *https://\<app-name>.scm.azurewebsites.net/webssh/host* en meld u aan met de referenties van uw Azure-account (niet de referenties van de databaseserver).
 
-1. Voer in de SSH-sessie de volgende opdrachten uit (u kunt opdrachten plakken met **CTRL**+**Shift**+**V** ):
+1. Voer in de SSH-sessie de volgende opdrachten uit (u kunt opdrachten plakken met **CTRL**+**Shift**+**V**):
 
     ```bash
     cd site/wwwroot
@@ -159,16 +159,16 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
 ### <a name="create-a-poll-question-in-the-app"></a>Een poll-vraag maken in de app
 
-1. Open in een browser de URL *http:\//\<app-name>.azurewebsites.net* . De app zou het bericht 'Er zijn geen polls beschikbaar' moeten weergeven, omdat er nog geen specifieke polls in de database zitten.
+1. Open in een browser de URL *http:\//\<app-name>.azurewebsites.net*. De app zou het bericht 'Er zijn geen polls beschikbaar' moeten weergeven, omdat er nog geen specifieke polls in de database zitten.
 
-1. Blader naar *http:\//\<app-name>.azurewebsites.net/admin* . Meld u aan met de beheerdersreferenties uit het vorige onderdeel (`root` en `postgres1`). Selecteer onder **Polls** **Toevoegen** naast **Vragen** en maak een poll-vraag met enkele antwoordmogelijkheden.
+1. Blader naar *http:\//\<app-name>.azurewebsites.net/admin*. Meld u aan met de beheerdersreferenties uit het vorige onderdeel (`root` en `postgres1`). Selecteer onder **Polls** **Toevoegen** naast **Vragen** en maak een poll-vraag met enkele antwoordmogelijkheden.
 
 1. Ga opnieuw naar *http:\//\<app-name>. azurewebsites.net/* om te controleren of de gebruiker nu de vragen te zien krijgt. Beantwoord vragen zoals u wilt om wat gegevens de genereren in de database.
 
 **Gefeliciteerd!** U voert een Python (Django) web-app uit in Azure App Service voor Linux met een actieve Postgres-database.
 
 > [!NOTE]
-> In App Service wordt een Django-project gedetecteerd door in elke submap naar een *wsgi.py* -bestand te zoeken dat standaard wordt gemaakt met `manage.py startproject`. Wanneer App Service dat bestand heeft gevonden, wordt de Django web-app geladen. Zie [Ingebouwde Python-installatiekopie configureren](../../app-service/configure-language-python.md) voor meer informatie.
+> In App Service wordt een Django-project gedetecteerd door in elke submap naar een *wsgi.py*-bestand te zoeken dat standaard wordt gemaakt met `manage.py startproject`. Wanneer App Service dat bestand heeft gevonden, wordt de Django web-app geladen. Zie [Ingebouwde Python-installatiekopie configureren](../../app-service/configure-language-python.md) voor meer informatie.
 
 ## <a name="make-code-changes-and-redeploy"></a>Wijzigingen aanbrengen in code en opnieuw implementeren
 
@@ -198,7 +198,7 @@ Zodra de web-app volledig geladen is, voorziet de ontwikkelingsserver voor Djang
 
 Test de app lokaal met de volgende stappen:
 
-1. Ga in een browser naar *http:\//localhost:8000* , waar het bericht 'Geen polls beschikbaar' zou moeten worden weergegeven.
+1. Ga in een browser naar *http:\//localhost:8000*, waar het bericht 'Geen polls beschikbaar' zou moeten worden weergegeven.
 
 1. Ga naar *http:\//localhost:8000/admin* en meld u aan als de gebruiker met beheerdersrechten die u voorheen hebt gemaakt. Selecteer onder **Polls** opnieuw **Toevoegen** naast **Vragen** en maak een poll-vraag met enkele antwoordmogelijkheden.
 
@@ -226,9 +226,9 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Voer de ontwikkelingsserver opnieuw uit met `python manage.py runserver` en test de app op *http:\//localhost: 8000/admin* :
+Voer de ontwikkelingsserver opnieuw uit met `python manage.py runserver` en test de app op *http:\//localhost: 8000/admin*:
 
-Stop de Django-webserver opnieuw met **CTRL**+**C** .
+Stop de Django-webserver opnieuw met **CTRL**+**C**.
 
 
 ### <a name="redeploy-the-code-to-azure"></a>De code opnieuw implementeren naar Azure
@@ -239,7 +239,7 @@ Voer vanuit de hoofdmap van de opslagplaats de volgende opdrachten uit:
 az webapp up
 ```
 
-Deze opdracht maakt gebruik van de parameters in de cache van het bestand *.azure/config* . Omdat App Service detecteert dat de app al bestaat, wordt de code gewoon opnieuw geïmplementeerd.
+Deze opdracht maakt gebruik van de parameters in de cache van het bestand *.azure/config*. Omdat App Service detecteert dat de app al bestaat, wordt de code gewoon opnieuw geïmplementeerd.
 
 
 
@@ -270,11 +270,11 @@ Ga naar *http:\//\<app-name>.azurewebsites.net* en test de app opnieuw in produc
 
 Zoek in het [Azure-portal](https://portal.azure.com) naar de appnaam en selecteer de app in de resultaten.
 
-:::image type="content" source="./media/tutorial-django-app-service-postgres/navigate-to-django-app-in-app-services-in-the-azure-portal.png" alt-text="Voorbeelduitvoer van Django-ontwikkelingsserver":::
+:::image type="content" source="./media/tutorial-django-app-service-postgres/navigate-to-django-app-in-app-services-in-the-azure-portal.png" alt-text="Naar uw Python Django-app navigeren in Azure Portal":::
 
 Het portal laat standaard de pagina **Overzicht** van uw app zien; hier vindt u een algemeen overzicht van de prestaties. Hier kunt u ook algemene beheertaken uitvoeren zoals bladeren, stoppen, opnieuw starten en verwijderen. De tabbladen aan de linkerkant van de pagina tonen de verschillende configuratiepagina's die u kunt openen.
 
-:::image type="content" source="./media/tutorial-django-app-service-postgres/manage-django-app-in-app-services-in-the-azure-portal.png" alt-text="Voorbeelduitvoer van Django-ontwikkelingsserver":::
+:::image type="content" source="./media/tutorial-django-app-service-postgres/manage-django-app-in-app-services-in-the-azure-portal.png" alt-text="Uw Python Django-app beheren op de overzichtspagina in Azure Portal":::
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

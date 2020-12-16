@@ -2,19 +2,19 @@
 title: Quickstart voor Azure-app-configuratie met ASP.NET Core | Microsoft Docs
 description: Maak een ASP.NET Core-toepassing met Azure App Configuration om de opslag en het beheer van toepassingsinstellingen te centraliseren een ASP.NET Core-toepassing.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.devlang: csharp
-ms.custom: devx-track-csharp, contperfq1
+ms.custom: devx-track-csharp, contperf-fy21q1
 ms.topic: quickstart
 ms.date: 09/25/2020
-ms.author: lcozzens
-ms.openlocfilehash: 13283a9531804502b8a8d72e615be955b413658c
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.author: alkemper
+ms.openlocfilehash: d1582cda4b083623daf7bb756d0bc8aa3e74eae8
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075838"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033643"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Quickstart: Een ASP.NET Core-app maken met Azure-app-configuratie
 

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 5109139c7168026c74a475128832fbb0733ce832
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7bc15b369bfa4964384d4f7910d6953bdfeaa664
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447117"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094162"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Azure Private Link voor Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -177,7 +177,7 @@ Als u verbinding wilt maken vanuit een on-premises omgeving met de database in S
 
 ## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase-and-the-copy-statement"></a>Verbinding maken vanaf Azure Synapse Analytics met Azure Storage met behulp van PolyBase en de COPY-instructie
 
-PolyBase en de COPY-instructie worden vaak gebruikt voor het laden van gegevens in Azure Synapse Analytics vanaf Azure Storage-accounts. Als het Azure Storage-account waarvan u gegevens wilt laden, alleen toegang heeft tot een set virtueel netwerk-subnetten via Privé-eindpunten, Service-eindpunten of op IP-gebaseerde firewalls, wordt de connectiviteit van PolyBase en de COPY-instructie naar het account verbroken. Voor het inschakelen van zowel import- als exportscenario's met Azure Synapse Analytics waarmee verbinding wordt gemaakt met Azure Storage dat is beveiligd met een virtueel netwerk, volgt u de stappen die [hier](vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage) worden weergegeven. 
+PolyBase en de COPY-instructie worden vaak gebruikt voor het laden van gegevens in Azure Synapse Analytics vanaf Azure Storage-accounts. Als het Azure Storage-account waarvan u gegevens wilt laden, alleen toegang heeft tot een set virtueel netwerk-subnetten via Privé-eindpunten, Service-eindpunten of op IP-gebaseerde firewalls, wordt de connectiviteit van PolyBase en de COPY-instructie naar het account verbroken. Voor het inschakelen van zowel import- als exportscenario's met Azure Synapse Analytics waarmee verbinding wordt gemaakt met Azure Storage dat is beveiligd met een virtueel netwerk, volgt u de stappen die [hier](vnet-service-endpoint-rule-overview.md#impact-of-using-virtual-network-service-endpoints-with-azure-storage) worden weergegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

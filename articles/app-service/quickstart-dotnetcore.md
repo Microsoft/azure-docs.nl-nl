@@ -4,14 +4,14 @@ description: Leer hoe u web-apps uitvoert in Azure App Service door uw eerste AS
 ms.assetid: b1e6bd58-48d1-4007-9d6c-53fd6db061e3
 ms.topic: quickstart
 ms.date: 11/23/2020
-ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperfq1
+ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperf-fy21q1
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: bf7d911c6f9d90e400e589828c093877875e7d97
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: d7b7d8845eda87132cbfa7981c20c39bb210aa5c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96015629"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97032691"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Quickstart: Een ASP.NET Core-web-app maken in Azure
 
@@ -322,7 +322,7 @@ await context.Response.WriteAsync("Hello Azure!");
 Sla de wijzigingen op en implementeer de app opnieuw met de opdracht `az webapp up`:
 
 ```azurecli
-az webapp up
+az webapp up --os-type linux
 ```
 
 Met deze opdracht worden waarden gebruikt die lokaal in de cache worden opgeslagen in het bestand *.azure/config*, met inbegrip van de app-naam, de resourcegroep en het App Service-plan.

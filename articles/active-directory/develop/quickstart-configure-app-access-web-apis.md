@@ -11,14 +11,14 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 09/03/2020
 ms.author: marsma
-ms.custom: aaddev, contperfq1
+ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: fc2f3202ac88e3ee6c24db21dd9072a13a8deef9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2630984d54134ca8fca94fdc1960265ba71935a6
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89442261"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031297"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Quickstart: Een clienttoepassing configureren voor toegang tot een web-API
 
@@ -59,7 +59,7 @@ Wanneer u zowel de clienttoepassing als de Web-API hebt geregistreerd en u de AP
 
 Nadat u machtigingen voor uw API hebt toegevoegd, ziet u de geselecteerde machtigingen onder **Geconfigureerde machtigingen**. In de volgende afbeelding ziet u dat het voorbeeld *Employees.Read.All* als gedelegeerde machtiging is toegevoegd aan de registratie van de clienttoepassing.
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-02-configured-permissions-pane.png" alt-text="Lijndiagram van een web-API met weergegeven bereiken aan de rechterkant en een clienttoepassing aan de linkerkant met de bereiken die zijn geselecteerd als machtigingen":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-02-configured-permissions-pane.png" alt-text="Deelvenster Geconfigureerde machtigingen in de Azure-portal met de zojuist toegevoegde machtiging":::
 
 Mogelijk ziet u ook de machtiging *User.Read* voor de Microsoft Graph-API. Deze machtiging wordt automatisch toegevoegd wanneer u een app registreert in de Azure-portal.
 
@@ -136,11 +136,11 @@ U kunt de volledige set API-machtigingen of afzonderlijke machtigingen die u in 
 
 Met de knop **Toestemming beheerder verlenen voor {uw tenant}** kan een beheerder beheerderstoestemming verlenen voor de machtigingen die zijn geconfigureerd voor de toepassing. Wanneer u de knop selecteert, wordt er een dialoogvenster weergegeven waarin u wordt gevraagd om de actie voor de toestemming te bevestigen.
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-03-grant-admin-consent-button.png" alt-text="Lijndiagram van een web-API met weergegeven bereiken aan de rechterkant en een clienttoepassing aan de linkerkant met de bereiken die zijn geselecteerd als machtigingen":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-03-grant-admin-consent-button.png" alt-text="Knop Toestemming beheerder verlenen gemarkeerd in het deelvenster Geconfigureerde machtigingen van de Azure-portal":::
 
 Nadat toestemming is verleend, worden de machtigingen waarvoor beheerderstoestemming nodig was, weergegeven als machtigingen waarvoor toestemming is verleend:
 
-:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="Lijndiagram van een web-API met weergegeven bereiken aan de rechterkant en een clienttoepassing aan de linkerkant met de bereiken die zijn geselecteerd als machtigingen":::
+:::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="Tabel Machtigingen configureren in de Azure-portal met beheerderstoestemming verleend voor de machtiging Files.Read.All":::
 
 De knop **Toestemming beheerder verlenen** is *uitgeschakeld* als u geen beheerder bent, of als er geen machtigingen zijn geconfigureerd voor de toepassing. Als u machtigingen hebt die zijn verleend maar nog niet zijn geconfigureerd, wordt u via de knop Beheerderstoestemming gevraagd om deze machtigingen af te handelen. U kunt deze toevoegen aan Geconfigureerde machtigingen, of u kunt ze verwijderen.
 

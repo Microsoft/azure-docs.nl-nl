@@ -10,14 +10,14 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74cc5bb2b434e757e090bac45202704eb934a522
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 242e0e4614994c30d0a14b8fe3d7a5c2b217bb5a
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835744"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033337"
 ---
 # <a name="what-is-identity-protection"></a>Wat is Identity Protection?
 

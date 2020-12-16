@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 0206c111be7cd6441d9de32af498e961833d214f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 398441123d5ad309d9c2d506a75b80b58a6d56d0
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980687"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346211"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-connected-logistics-application-template"></a>Zelfstudie: Een toepassingssjabloon voor verbonden logistiek implementeren en doorlopen
 
@@ -41,9 +41,9 @@ Voer de volgende stappen uit om de app te maken:
 
     :::image type="content" source="media/tutorial-iot-central-connected-logistics/iotc-retail-homepage.png" alt-text="Sjabloon voor verbonden logistiek":::
 
-2. Selecteer **App maken** onder **App voor verbonden logistiek**.
+1. Selecteer **App maken** onder **App voor verbonden logistiek**.
 
-3. Met **App maken** wordt het formulier **Nieuwe app** geopend. Voer de volgende details in:
+1. Met **App maken** wordt het formulier **Nieuwe app** geopend. Voer de volgende details in:
 
 
     * **Naam van de app**: u kunt de voorgestelde standaardnaam gebruiken of een beschrijvende naam invoeren voor uw app.
@@ -51,9 +51,9 @@ Voer de volgende stappen uit om de app te maken:
     * **Factureringsgegevens**: De map, het Azure-abonnement en de locatiegegevens zijn vereist voor het inrichten van de resources.
     * **Maken**: Selecteer Maken onderin de pagina om uw app te implementeren.
 
-    :::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-app-create.png" alt-text="Sjabloon voor verbonden logistiek":::
+    :::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-app-create.png" alt-text="Toepassingssjabloon voor verbonden logistiek":::
 
-    :::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-app-create-billinginfo.png" alt-text="Sjabloon voor verbonden logistiek":::
+    :::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-app-create-billinginfo.png" alt-text="Factureringsinformatie over verbonden logistiek":::
 
 ## <a name="walk-through-the-application"></a>De app doorlopen
 
@@ -81,13 +81,13 @@ Met het dashboard kunnen twee verschillende beheerbewerkingen voor gatewayappara
 * De logistiekroutes voor vrachtverzendingen en de locatiegegevens van zeeverzendingen bekijken.
 * De status van de gateway en andere relevante informatie bekijken.
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-dashboard1.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-dashboard1.png" alt-text="Dashboard voor verbonden logistiek":::
 
 * U kunt het totale aantal gateways, actieve tags en onbekende tags volgen.
 * U kunt bewerkingen voor apparaatbeheer uitvoeren, zoals: firmware bijwerken, sensoren uitschakelen en inschakelen, een sensordrempel bijwerken, telemetrie-intervallen bijwerken en servicecontracten bijwerken.
 * Het accuverbruik van het apparaat weergeven.
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-dashboard2.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-dashboard2.png" alt-text="Dashboardstatus voor verbonden logistiek":::
 
 #### <a name="device-template"></a>Apparaatsjabloon
 
@@ -95,11 +95,11 @@ Selecteer **Apparaatsjablonen** om het model van de gatewaymogelijkheden weer te
 
 **Gatewaytelemetrie en -eigenschap** - Deze interface definieert alle telemetrie met betrekking tot sensoren, locatie en apparaatgegevens. De interface definieert ook de dubbele eigenschapsmogelijkheden van het apparaat, zoals drempelwaarden voor de sensor en update-intervallen.
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-devicetemplate1.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-devicetemplate1.png" alt-text="Interface van telemetrie en eigenschap":::
 
 **Gateway-opdrachten** - Deze interface organiseert alle mogelijkheden van de gatewayopdracht:
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-devicetemplate2.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-devicetemplate2.png" alt-text="Interface voor gatewayopdrachten":::
 
 ### <a name="rules"></a>Regels
 
@@ -109,13 +109,13 @@ Selecteer het tabblad **Regels** in deze toepassingssjabloon. Deze regels zijn g
 
 **Niet-reagerende gateway**: Deze regel wordt geactiveerd als de gateway voor langere tijd niet rapporteert aan de cloud. De gateway reageert mogelijk niet vanwege een laag accuniveau, een storing in de connectiviteit of een beschadiging aan het apparaat.
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-rules.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-rules.png" alt-text="Regeldefinities":::
 
 ### <a name="jobs"></a>Taken
 
 Selecteer het tabblad **Taken** om de taken in deze app weer te geven:
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-jobs.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-jobs.png" alt-text="Uit te voeren taken":::
 
 U kunt taken gebruiken om bewerkingen op de hele app uit te voeren. De taken in deze toepassing maken gebruik van apparaatopdrachten en dubbele mogelijkheden om taken uit te voeren, zoals het uitschakelen van specifieke sensoren in alle gateways of het wijzigen van de drempelwaarde voor de sensor, afhankelijk van de verzendmodus en route:
 
@@ -127,7 +127,7 @@ U kunt taken gebruiken om bewerkingen op de hele app uit te voeren. De taken in 
 
 Als u deze app niet meer wilt gebruiken, verwijdert u de app door **Beheer** > **App-instellingen** te bezoeken en te klikken op **Verwijderen**.
 
-:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-cleanup.png" alt-text="Sjabloon voor verbonden logistiek":::
+:::image type="content" source="media/tutorial-iot-central-connected-logistics/connected-logistics-cleanup.png" alt-text="Sjabloon opschonen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over 

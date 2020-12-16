@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: d19310dbd54c8bd5f9854ff86af051b68c5cd378
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 59b688803260220866fc331506429a5990c8760a
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463313"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346194"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Zelfstudie: Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen
 
@@ -35,10 +35,9 @@ U kunt een toepassing maken met behulp van de volgende stappen
 1. Navigeer naar de website Azure IoT Central-toepassingsbeheer. Selecteer **Bouwen** in de navigatiebalk aan de linkerkant en klik vervolgens op het tabblad **Detailhandel**.
 
     :::image type="content" source="media/tutorial-iot-central-ddc/iotc-retail-homepage.png" alt-text="Een toepassingssjabloon voor een digitaal distributiecentrum":::
+1. Selecteer het tabblad **Detailhandel** en selecteer **App maken** onder de toepassing **Digital Distribution Center** (Digitaal distributiecentrum)
 
-2. Selecteer het tabblad **Detailhandel** en selecteer **App maken** onder de toepassing **Digital Distribution Center** (Digitaal distributiecentrum)
-
-3. Met **App maken** wordt het formulier Nieuwe toepassing geopend en worden de aangevraagde gegevens ingevuld zoals hieronder wordt weergegeven.
+1. Met **App maken** wordt het formulier Nieuwe toepassing geopend en worden de aangevraagde gegevens ingevuld zoals hieronder wordt weergegeven.
    **Naam van de app**: u kunt de voorgestelde standaardnaam gebruiken of een beschrijvende naam invoeren voor uw app.
    **URL**: u kunt de aanbevolen standaard-URL gebruiken of een beschrijvende en unieke URL opgeven die u goed kunt onthouden. Als u al een Azure-abonnement hebt, wordt vervolgens de standaardinstelling aanbevolen. U kunt beginnen met een gratis proefabonnement van 7 dagen en ervoor kiezen om dit op elk gewenst moment om te zetten naar een Standard-prijsplan voordat het gratis proefabonnement verloopt.
    **Factureringsgegevens**: De map, het Azure-abonnement en de locatiegegevens zijn vereist voor het inrichten van de resources.

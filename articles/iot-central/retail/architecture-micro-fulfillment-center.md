@@ -9,12 +9,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: b0d030240ebe22886826b7a25bd5ca7b8f54e358
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9a0d91677770e89f3e249fc699057332cccaa323
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81000425"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97347469"
 ---
 # <a name="micro-fulfillment-center-architecture"></a>Architectuur voor het micro-uitvoeringscentrum
 
@@ -22,11 +22,11 @@ Met de oplossingen van het micro-uitvoeringscentrum kunt u digitaal verbinding m
 
 ![Azure IoT Central-winkelanalyses](./media/architecture/micro-fulfillment-center-architecture-frame.png)
 
-- Set IoT-sensoren die telemetriegegevens naar een gatewayapparaat verzenden
-- Gatewayapparaten die telemetrie en geaggregeerde inzichten naar IoT Central verzenden
-- Continue gegevensexport naar de gewenste Azure-service voor bewerking
-- Gegevens kunnen worden gestructureerd in de gewenste indeling en naar een opslagservice worden verzonden
-- Bedrijfstoepassingen kunnen gegevens opvragen en inzichten genereren voor het aansturen van retailbewerkingen
+1. Set IoT-sensoren die telemetriegegevens naar een gatewayapparaat verzenden
+2. Gatewayapparaten die telemetrie en geaggregeerde inzichten naar IoT Central verzenden
+3. Continue gegevensexport naar de gewenste Azure-service voor bewerking
+4. Gegevens kunnen worden gestructureerd in de gewenste indeling en naar een opslagservice worden verzonden
+5. Bedrijfstoepassingen kunnen gegevens opvragen en inzichten genereren voor het aansturen van retailbewerkingen
  
 Laten we eens kijken naar de belangrijkste onderdelen die in het algemeen een rol spelen in een oplossing voor het micro-uitvoeringscentrum.
 

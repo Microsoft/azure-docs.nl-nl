@@ -2,18 +2,18 @@
 title: Quickstart voor Azure-app-configuratie met Azure Functions | Microsoft Docs
 description: Maak in deze quickstart een Azure Functions-app met Azure App Configuration en C#. Maak een App Configuration-archief en maak er verbinding mee. Test de functie lokaal.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
-ms.author: lcozzens
-ms.openlocfilehash: 24620351cdd831ec5079e1f37726b2aa65339205
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.author: alkemper
+ms.openlocfilehash: 4197891949062123042736e578cfbcc5def4e1f9
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075855"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96930786"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Quickstart: Een Azure Functions-app maken met Azure App Configuration
 

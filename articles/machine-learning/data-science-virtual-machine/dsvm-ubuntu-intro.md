@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: quickstart
 ms.date: 03/10/2020
-ms.openlocfilehash: 97283a096d1b1549b2c7fa8f34a32b4bb4dca1eb
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 4a414b706dffae76eaa9841ee7b1fe6bcc1ac0d3
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349049"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109841"
 ---
 # <a name="quickstart-set-up-the-data-science-virtual-machine-for-linux-ubuntu"></a>Quickstart: De Data Science Virtual Machine instellen voor Linux (Ubuntu)
 
@@ -73,8 +73,6 @@ U kunt op een van de volgende drie manieren toegang krijgen tot de Ubuntu DSVM:
   * SSH voor terminalsessies
   * X2Go voor grafische sessies
   * JupyterHub en JupyterLab voor Jupyter-notebooks
-
-U kunt ook een Data Science Virtual Machine aan Azure Notebooks koppelen om Jupyter-notebooks op de virtuele machine uit te voeren en de beperkingen van de gratis servicelaag te omzeilen. Zie [Azure Notebooks-projecten beheren en configureren](../../notebooks/configure-manage-azure-notebooks-projects.md#compute-tier)voor meer informatie.
 
 ### <a name="ssh"></a>SSH
 

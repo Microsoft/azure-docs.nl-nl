@@ -13,12 +13,12 @@ ms.date: 11/11/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 2d41b48613ef7ba883a6a51b0fa67407fb730719
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b53a12db9203121d12a69c10aaa81bceab5c1754
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87846221"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584252"
 ---
 # <a name="logging-in-msal-applications"></a>Logboek registratie in MSAL-toepassingen
 
@@ -41,7 +41,7 @@ Voor meer informatie over het MSAL van logboek registratie in een bepaalde taal,
 
 ## <a name="net"></a>[.NET](#tab/dotnet)
 
-## <a name="logging-in-msalnet"></a>Aanmelden MSAL.NET
+## <a name="logging-in-msalnet"></a>Logboekregistratie in MSAL.NET
 
  > [!NOTE]
  > Zie de [MSAL.net-wiki](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki) voor voor beelden van MSAL.net-logboek registratie en meer.
@@ -142,15 +142,15 @@ var msalConfig = {
     auth: {
         clientId: "<Enter your client id>",
     },
-     system: {
-             logger: new Msal.Logger(
-                                loggerCallback ,{
-                                     level: Msal.LogLevel.Verbose,
-                                     piiLoggingEnabled: false,
-                                     correlationId: '1234'
-                                }
-                        )
-     }
+    system: {
+        logger: new Msal.Logger(
+            loggerCallback , {
+                level: Msal.LogLevel.Verbose,
+                piiLoggingEnabled: false,
+                correlationId: '1234'
+            }
+        )
+    }
 }
 
 var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);

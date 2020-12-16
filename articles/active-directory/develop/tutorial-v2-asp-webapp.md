@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 0dad7add63102d462a2111f1ecf12ae43dae123c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4dca1fa0e823b482044d35f98412187af2fa72ed
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996182"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507758"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Zelfstudie: Aanmelding bij Microsoft toevoegen aan een ASP.NET-web-app
 
@@ -373,15 +373,16 @@ Volg deze stappen om de toepassing te registreren en de registratiegegevens van 
    1. Selecteer het project in Solution Explorer en bekijk het venster Eigenschappen (druk op F4 als u het venster Eigenschappen niet ziet).
    1. Wijzig SSL ingeschakeld in `True`.
    1. Klik met de rechtermuisknop op het project in Visual Studio, selecteer **Eigenschappen** en selecteer vervolgens het tabblad **Web**. Wijzig in het onderdeel **Servers** de instelling **Project-URL** instelling voor de **SSL-URL**.
-   1. Kopieer de SSL-URL. In de volgende stap gaat u deze URL toevoegen aan de lijst met omleidings-URL's van het registratieportaal.<br/><br/>![Projecteigenschappen](media/active-directory-develop-guidedsetup-aspnetwebapp-configure/vsprojectproperties.png)<br />
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of met een persoonlijk Microsoft-account.
-1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de door u gewenste Azure Active Directory-tenant.
-1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft identity platform voor ontwikkelaars.
-1. Selecteer **Nieuwe registratie**.
-1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
-   1. Voer in de *sectie **Naam**** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app, zoals **ASPNET-Tutorial**.
-   1. Voeg de SSL-URL die u hebt gekopieerd uit Visual Studio in stap 1 (bijvoorbeeld `https://localhost:44368/`) toe aan **Antwoord-URL** en selecteer **Registreren**.
-1. Selecteer het menu **Verificatie**, selecteer **ID-tokens** in onder **Impliciete toekenning** en selecteer vervolgens **Opslaan**.
+   1. Kopieer de SSL-URL. In de volgende stap voegt u deze URL toe aan de lijst met omleidings-URI's in de registratieportal.<br/><br/>![Projecteigenschappen](media/active-directory-develop-guidedsetup-aspnetwebapp-configure/vsprojectproperties.png)<br />
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Voeg de SSL-URL die u in stap 1 in Visual Studio hebt gekopieerd (bijvoorbeeld `https://localhost:44368/`) toe aan **Omleidings-URI**.
+1. Selecteer **Registreren**.
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Selecteer in de sectie **Impliciete toekenning** de optie **Id-tokens** en selecteer vervolgens **Opslaan**.
 1. Voeg het volgende toe aan het bestand web.config, dat zich bevindt in de hoofdmap in het onderdeel `configuration\appSettings`:
 
     ```xml

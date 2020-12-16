@@ -16,6 +16,8 @@
       items:
         - name: Chat toevoegen aan uw app
           href: quickstarts/chat/get-started.md
+        - name: Voeg u chat-app toe aan een Teams-meeting
+          href: quickstarts/chat/meeting-interop.md
     - name: Telefonie en sms
       items:
         - name: Een telefoonnummer ophalen

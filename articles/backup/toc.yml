@@ -423,6 +423,8 @@
       items:
         - name: Azure VM
           href: backup-azure-vms-troubleshoot.md
+        - name: Azure VM-bestandsherstel
+          href: backup-azure-vm-file-recovery-troubleshoot.md
         - name: Time-out opgetreden bij agent voor Azure Backup of VM-extensie
           href: backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md
         - name: Azure Backup-agent

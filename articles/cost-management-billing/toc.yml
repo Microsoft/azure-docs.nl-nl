@@ -4,7 +4,7 @@
   items:
     - name: Wat is Kostenbeheer en facturering?
       href: cost-management-billing-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Beginnen met analyseren van kosten
@@ -384,6 +384,8 @@
       href: /azure/templates/microsoft.consumption/budgets
     - name: Voorbeelden van Azure Cost Management REST API
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
+    - name: Cost Management - Azure PowerShell
+      href: /powershell/module/Az.CostManagement
     - name: Automatiseringsscenario's voor facturering
       href: manage/cost-management-automation-scenarios.md
     - name: Overzicht van Azure Billing-API

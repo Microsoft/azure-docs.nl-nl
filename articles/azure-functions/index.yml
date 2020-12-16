@@ -1,20 +1,20 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Functions
-summary: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren.
+summary: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren. Door de mogelijkheden voor 'Compute on demand' zijn lichtgewicht-integraties en functionaliteit voor eenmalige ondersteuning mogelijk. U kunt dit ook gebruiken om web-API's aan te bieden, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken en berichtenwachtrijen te beheren.
 metadata:
   title: Documentatie voor Azure Functions
-  description: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren.
+  description: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren. Door de mogelijkheden voor 'Compute on demand' zijn lichtgewicht-integraties en functionaliteit voor eenmalige ondersteuning mogelijk. U kunt dit ook gebruiken om web-API's aan te bieden, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken en berichtenwachtrijen te beheren.
   ms.service: azure-functions
   ms.topic: landing-page
   author: ggailey777
   ms.author: azfundocs
   ms.date: 09/17/2019
-  ms.openlocfilehash: c2271970fb9a8b500e78687547030d39c5f241e3
-  ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+  ms.openlocfilehash: e6c3cb1a9d536ed898c48c45f57434dc4bf66970
+  ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96751705"
+  ms.lasthandoff: 12/15/2020
+  ms.locfileid: "97505287"
 landingContent:
 - title: Over Azure Functions
   linkLists:

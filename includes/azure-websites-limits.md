@@ -4,19 +4,19 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: jroth
-ms.openlocfilehash: 800dc50f82fa47228f1a88a143c5b515168812a6
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 6265a7cde8e276570409238cadfd5ebc777b4527
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755377"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97532003"
 ---
-| Resource | Gratis | Gedeeld | Basic | Standard | Premium (v3) | Geïsoleerd </th> |
+| Resource | Gratis | Gedeeld | Basic | Standard | Premium (v1-v3) | Geïsoleerd </th> |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Web-, mobiele of API-apps](https://azure.microsoft.com/services/app-service/) per [Azure App Service-abonnement](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Onbeperkt<sup>2</sup> |Onbeperkt<sup>2</sup> |Onbeperkt<sup>2</sup> |Onbeperkt<sup>2</sup>|
 | [App Service-plan](../articles/app-service/overview-hosting-plans.md) |10 per regio |10 per resourcegroep |100 per resourcegroep |100 per resourcegroep |100 per resourcegroep |100 per resourcegroep|
 | Type rekenproces |Gedeeld |Gedeeld |Toegewezen<sup>3</sup> |Toegewezen<sup>3</sup> |Toegewezen<sup>3</sup></p> |Toegewezen<sup>3</sup>|
-| [Uitbreiden](../articles/app-service/manage-scale-up.md) (maximum aantal exemplaren) |1 gedeeld |1 gedeeld |3 toegewezen<sup>3</sup> |10 toegewezen<sup>3</sup> |30 toegewezen<sup>3</sup>|100 toegewezen<sup>4</sup>|
+| [Uitbreiden](../articles/app-service/manage-scale-up.md) (maximum aantal exemplaren) |1 gedeeld |1 gedeeld |3 toegewezen<sup>3</sup> |10 toegewezen<sup>3</sup> | 20 toegewezen voor v1 en v2; 30 toegewezen voor v3.<sup>3</sup>|100 toegewezen<sup>4</sup>|
 | Opslag<sup>5</sup> |1 GB<sup>5</sup> |1 GB<sup>5</sup> |10 GB<sup>5</sup> |50 GB<sup>5</sup> |250 GB<sup>5</sup> <br/><br/> Voor meer dan 250 GB moet u een ondersteuningsaanvraag indienen. |1 TB<sup>5</sup> <br/><br/> De maximaal beschikbare opslag is 999 GB. |
 | CPU-tijd (5 minuten)<sup>6</sup> |3 minuten |3 minuten |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a>|
 | CPU-tijd (dag)<sup>6</sup> |60 minuten |240 minuten |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |Onbeperkt, tegen [standaardtarieven](https://azure.microsoft.com/pricing/details/app-service/)</a> |

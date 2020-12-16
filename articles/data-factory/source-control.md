@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 75073cd2f0dae9cac12175677427671101813a90
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: e839b8a22da50ce172043f57a4467219a1771175
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355219"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584198"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -103,7 +103,7 @@ In het deel venster configuratie worden de volgende instellingen voor Azure opsl
 | **Azure opslag plaatsen-organisatie** | De naam van uw Azure opslag plaatsen-organisatie. U kunt de naam van uw Azure opslag plaatsen-organisatie vinden op `https://{organization name}.visualstudio.com` . U kunt [zich aanmelden bij uw Azure opslag plaatsen-organisatie](https://www.visualstudio.com/team-services/git/) om toegang te krijgen tot uw Visual Studio-profiel en uw opslag plaatsen en projecten te bekijken. | `<your organization name>` |
 | **ProjectName** | De naam van uw Azure opslag plaatsen-project. U kunt de naam van uw Azure opslag plaatsen-project vinden op `https://{organization name}.visualstudio.com/{project name}` . | `<your Azure Repos project name>` |
 | **Opslagplaats** | De naam van de opslag plaats van uw Azure opslag plaatsen-code. Azure opslag plaatsen-projecten bevatten Git-opslag plaatsen om uw bron code te beheren naarmate uw project groeit. U kunt een nieuwe opslag plaats maken of een bestaande opslag plaats gebruiken die al in uw project voor komt. | `<your Azure Repos code repository name>` |
-| **Collaboration Branch** | Uw Azure opslag plaatsen Collaboration-vertakking die wordt gebruikt voor het publiceren. Standaard zijn dit `master` . Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch name>` |
+| **Collaboration Branch** | Uw Azure opslag plaatsen Collaboration-vertakking die wordt gebruikt voor het publiceren. Standaard is dit `main` . Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch name>` |
 | **Hoofdmap** | Uw hoofdmap in uw Azure opslag plaatsen Collaboration-vertakking. | `<your root folder name>` |
 | **Bestaande Data Factory-resources importeren in opslag plaats** | Hiermee geeft u op of bestaande data factory resources van het UX- **ontwerp canvas** in een Azure opslag plaatsen Git-opslag plaats moeten worden geïmporteerd. Schakel het selectie vakje in om uw data factory-resources te importeren in de bijbehorende Git-opslag plaats in JSON-indeling. Deze actie exporteert elke resource afzonderlijk (dat wil zeggen, de gekoppelde services en gegevens sets worden geëxporteerd naar afzonderlijke JSONs). Als dit selectie vakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Geselecteerd (standaard) |
 | **Vertakking waarvoor de resource moet worden geïmporteerd** | Hiermee wordt aangegeven in welke vertakking de data factory resources (pijp lijnen, gegevens sets, gekoppelde services, enzovoort) worden geïmporteerd. U kunt resources importeren in een van de volgende vertakkingen: a. Samen werking b. Nieuwe c maken. Bestaande gebruiken |  |
@@ -153,7 +153,7 @@ In het deel venster configuratie worden de volgende instellingen voor de GitHub-
 | **GitHub Enter prise-URL** | De GitHub van de Enter prise-basis-URL (moet HTTPS zijn voor lokale GitHub Enter prise-server). Bijvoorbeeld: `https://github.mydomain.com`. Alleen vereist als **use github Enter prise** is geselecteerd | `<your GitHub enterprise url>` |                                                           
 | **GitHub-account** | De naam van uw GitHub-account. Deze naam kan worden gevonden vanuit https: \/ /github.com/{account name}/{repository name}. Als u naar deze pagina navigeert, wordt u gevraagd om GitHub OAuth-referenties in te voeren voor uw GitHub-account. | `<your GitHub account name>` |
 | **Naam van opslag plaats**  | De naam van de opslag plaats van uw GitHub-code. GitHub-accounts bevatten Git-opslag plaatsen voor het beheren van de bron code. U kunt een nieuwe opslag plaats maken of een bestaande opslag plaats gebruiken die al in uw account is. | `<your repository name>` |
-| **Collaboration Branch** | Uw GitHub-samenwerkings vertakking die wordt gebruikt voor het publiceren. Standaard is dit het hoofd. Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch>` |
+| **Collaboration Branch** | Uw GitHub-samenwerkings vertakking die wordt gebruikt voor het publiceren. Het is standaard het hoofd. Wijzig deze instelling als u resources wilt publiceren vanuit een andere vertakking. | `<your collaboration branch>` |
 | **Hoofdmap** | Uw hoofdmap in uw GitHub-samenwerkings vertakking. |`<your root folder name>` |
 | **Bestaande Data Factory-resources importeren in opslag plaats** | Hiermee geeft u op of bestaande data factory resources van het UX-ontwerp canvas in een GitHub-opslag plaats moeten worden geïmporteerd. Schakel het selectie vakje in om uw data factory-resources te importeren in de bijbehorende Git-opslag plaats in JSON-indeling. Deze actie exporteert elke resource afzonderlijk (dat wil zeggen, de gekoppelde services en gegevens sets worden geëxporteerd naar afzonderlijke JSONs). Als dit selectie vakje niet is ingeschakeld, worden de bestaande resources niet geïmporteerd. | Geselecteerd (standaard) |
 | **Vertakking waarvoor de resource moet worden geïmporteerd** | Hiermee wordt aangegeven in welke vertakking de data factory resources (pijp lijnen, gegevens sets, gekoppelde services, enzovoort) worden geïmporteerd. U kunt resources importeren in een van de volgende vertakkingen: a. Samen werking b. Nieuwe c maken. Bestaande gebruiken |  |
@@ -207,11 +207,11 @@ Met versie besturings systemen (ook wel bekend als _broncode beheer_) kunnen ont
 
 ### <a name="creating-feature-branches"></a>Functie vertakkingen maken
 
-Elke Azure opslag plaatsen Git-opslag plaats die is gekoppeld aan een data factory heeft een Collaboration Branch. ( `main` is de standaard-Collaboration Branch). Gebruikers kunnen ook onderdeel vertakkingen maken door op **+ nieuwe vertakking** in de vervolg keuzelijst vertakking te klikken. Zodra het deel venster nieuwe vertakking wordt weer gegeven, voert u de naam van uw functie vertakking in.
+Elke Azure opslag plaatsen Git-opslag plaats die is gekoppeld aan een data factory heeft een Collaboration Branch. ( `main` ) is de standaard-Collaboration Branch). Gebruikers kunnen ook onderdeel vertakkingen maken door op **+ nieuwe vertakking** in de vervolg keuzelijst vertakking te klikken. Zodra het deel venster nieuwe vertakking wordt weer gegeven, voert u de naam van uw functie vertakking in.
 
 ![Een nieuwe vertakking maken](media/author-visually/new-branch.png)
 
-Wanneer u klaar bent om de wijzigingen van uw functie vertakking samen te voegen met uw vertakking voor samen werking, klikt u op de vervolg keuzelijst vertakking en selecteert u **pull-aanvraag maken**. Met deze actie gaat u naar Azure opslag plaatsen Git waar u pull-aanvragen kunt genereren, code beoordelingen moet uitvoeren en wijzigingen kunt samen voegen in uw samenwerkings vertakking. ( `master` is de standaard instelling). U mag alleen publiceren naar de Data Factory-service vanuit uw vertakking voor samen werking. 
+Wanneer u klaar bent om de wijzigingen van uw functie vertakking samen te voegen met uw vertakking voor samen werking, klikt u op de vervolg keuzelijst vertakking en selecteert u **pull-aanvraag maken**. Met deze actie gaat u naar Azure opslag plaatsen Git waar u pull-aanvragen kunt genereren, code beoordelingen moet uitvoeren en wijzigingen kunt samen voegen in uw samenwerkings vertakking. ( `main` is de standaard instelling). U mag alleen publiceren naar de Data Factory-service vanuit uw vertakking voor samen werking. 
 
 ![Een nieuwe pull-aanvraag maken](media/author-visually/create-pull-request.png)
 
@@ -232,7 +232,7 @@ Azure Data Factory kan slechts één Publiceer vertakking tegelijk hebben. Wanne
 
 ### <a name="publish-code-changes"></a>Code wijzigingen publiceren
 
-Nadat u de wijzigingen hebt samengevoegd in de collaboration Branch ( `master` is de standaard instelling), klikt u op **publiceren** om de wijzigingen in de code in de hoofd vertakking hand matig naar de Data Factory-service te publiceren.
+Nadat u de wijzigingen hebt samengevoegd in de collaboration Branch ( `main` is de standaard instelling), klikt u op **publiceren** om de wijzigingen in de code in de hoofd vertakking hand matig naar de Data Factory-service te publiceren.
 
 ![Wijzigingen publiceren in de Data Factory-Service](media/author-visually/publish-changes.png)
 
@@ -241,7 +241,7 @@ Er wordt een deel venster geopend waarin u bevestigt dat de publicatie vertakkin
 ![De juiste publicatie vertakking bevestigen](media/author-visually/configure-publish-branch.png)
 
 > [!IMPORTANT]
-> De hoofd vertakking is niet representatief voor wat er in de Data Factory-service is geïmplementeerd. De master branch *moet* hand matig worden gepubliceerd naar de Data Factory-service.
+> De hoofd vertakking is niet representatief voor wat er in de Data Factory-service is geïmplementeerd. De hoofd vertakking *moet* hand matig naar de Data Factory-service worden gepubliceerd.
 
 ## <a name="best-practices-for-git-integration"></a>Aanbevolen procedures voor git-integratie
 
@@ -264,7 +264,7 @@ Het gebruik van Key Vault-of MSI-verificatie zorgt ook voor continue integratie 
 
 ### <a name="stale-publish-branch"></a>Verouderde publicatie vertakking
 
-Als de publicatie vertakking niet is gesynchroniseerd met de Master vertakking en verouderde bronnen bevat ondanks een recente publicatie, voert u de volgende stappen uit:
+Als de publicatie vertakking niet is gesynchroniseerd met de hoofd vertakking en verouderde bronnen bevat ondanks een recente publicatie, voert u de volgende stappen uit:
 
 1. Uw huidige Git-opslag plaats verwijderen
 1. Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat **bestaande Data Factory resources importeren in opslag plaats** is geselecteerd en kies **nieuwe vertakking**

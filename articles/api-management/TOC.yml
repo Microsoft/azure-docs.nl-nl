@@ -42,6 +42,8 @@
       href: api-management-get-started-publish-versions.md
     - name: 9 - Ontwikkelaarsportal aanpassen
       href: api-management-howto-developer-portal-customize.md
+    - name: '10: API''s beheren in Visual Studio Code'
+      href: visual-studio-code-tutorial.md
 - name: Voorbeelden
   items:
     - name: Beleidsregels
@@ -216,7 +218,7 @@
           href: api-management-sample-flexible-throttling.md
         - name: Externe services gebruiken
           href: api-management-sample-send-request.md
-        - name: Geheimen beheren met behulp van eigenschappen
+        - name: Geheimen beheren met behulp van benoemde waarden
           href: api-management-howto-properties.md
         - name: Beleid voor toegangsbeperking
           href: api-management-access-restriction-policies.md

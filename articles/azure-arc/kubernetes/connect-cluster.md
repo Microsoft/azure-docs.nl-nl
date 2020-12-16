@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Een Azure Arc-Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 0166ac0b19208a60f360792fb67ccc050a014ce1
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 7f402d86ac1287753bc2deab53b24bb796644992
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833245"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97583929"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een Azure Arc-Kubernetes-cluster verbinden (preview-versie)
 
@@ -100,7 +100,7 @@ Maak eerst een resource groep om de verbonden cluster bron te bewaren.
 az group create --name AzureArcTest -l EastUS -o table
 ```
 
-**Uitvoer:**
+**Uitvoer**
 
 ```console
 Location    Name
@@ -119,7 +119,7 @@ We gaan ons Kubernetes-cluster nu koppelen aan Azure. De werk stroom voor `az co
 az connectedk8s connect --name AzureArcTest1 --resource-group AzureArcTest
 ```
 
-**Uitvoer:**
+**Uitvoer**
 
 ```console
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
@@ -157,7 +157,7 @@ Uw verbonden clusters weer geven:
 az connectedk8s list -g AzureArcTest -o table
 ```
 
-**Uitvoer:**
+**Uitvoer**
 
 ```console
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
@@ -220,19 +220,19 @@ Azure Arc enabled Kubernetes implementeert enkele opera tors in de `azure-arc` n
 kubectl -n azure-arc get deployments,pods
 ```
 
-**Uitvoer:**
+**Uitvoer**
 
 ```console
-NAME                                        READY   UP-TO-DATE AVAILABLE AGE
-deployment.apps/cluster-metadata-operator   1/1     1           1        16h
-deployment.apps/clusteridentityoperator     1/1     1           1        16h
-deployment.apps/config-agent                1/1     1           1        16h
-deployment.apps/controller-manager          1/1     1           1        16h
-deployment.apps/flux-logs-agent             1/1     1           1        16h
-deployment.apps/metrics-agent               1/1     1           1        16h
-deployment.apps/resource-sync-agent         1/1     1           1        16h
+NAME                                        READY      UP-TO-DATE  AVAILABLE  AGE
+deployment.apps/cluster-metadata-operator     1/1             1        1      16h
+deployment.apps/clusteridentityoperator       1/1             1        1      16h
+deployment.apps/config-agent                  1/1             1        1      16h
+deployment.apps/controller-manager            1/1             1        1      16h
+deployment.apps/flux-logs-agent               1/1             1        1      16h
+deployment.apps/metrics-agent                 1/1             1        1      16h
+deployment.apps/resource-sync-agent           1/1             1        1      16h
 
-NAME                                            READY   STATUS   RESTART AGE
+NAME                                           READY    STATUS   RESTART AGE
 pod/cluster-metadata-operator-7fb54d9986-g785b  2/2     Running  0       16h
 pod/clusteridentityoperator-6d6678ffd4-tx8hr    3/3     Running  0       16h
 pod/config-agent-544c4669f9-4th92               3/3     Running  0       16h

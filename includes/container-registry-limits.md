@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/18/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 3f68ca0fc577e6cf3f896ede0418f11f59756701
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f4d8f8783e9f6eece4de8dc1c35740fa7aaf03f8
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86512607"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97531923"
 ---
 | Resource | Basic | Standard | Premium |
 |---|---|---|---|
@@ -22,8 +22,8 @@ ms.locfileid: "86512607"
 | Maximale grootte van de installatiekopielaag (GiB) | 200 | 200 | 200 |
 | ReadOps per minuut<sup>2, 3</sup> | 1000 | 3000 | 10.000 |
 | WriteOps per minuut<sup>2, 4</sup> | 100 | 500 | 2.000 |
-| Downloadbandbreedte MBps<sup>2</sup> | 30 | 60 | 100 |
-| Uploadbandbreedte MBps<sup>2</sup> | 10 | 20 | 50 |
+| Downloadbandbreedte Mbps<sup>2</sup> | 30 | 60 | 100 |
+| Uploadbandbreedte Mbps<sup>2</sup> | 10 | 20 | 50 |
 | Webhooks | 2 | 10 | 500 |
 | Geo-replicatie | N.v.t. | N.v.t. | [Ondersteund][geo-replication] |
 | Inhoud vertrouwen | N.v.t. | N.v.t. | [Ondersteund][content-trust] |

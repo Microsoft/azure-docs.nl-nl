@@ -7,18 +7,19 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 9b2855f82927b6f1707fd748f097dd357818ac4b
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 8979e315f188a5c21cce206c24f195f72096d438
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341971"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516510"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Inleiding tot Azure Defender for Storage
 
-**Azure Defender for Storage** detecteert potentieel schadelijke activiteiten in uw Azure Storage-accounts. Uw gegevens kunnen worden beschermd, ongeacht of deze zijn opgeslagen als blobcontainers, bestandsshares of data lakes.
 
-Deze beschermingslaag stelt u in staat om bedreigingen te verhelpen *zonder* dat u een beveiligingsexpert hoeft te zijn, en helpt u bij het beheren van uw beveiligingsbewakingssystemen.
+**Azure Defender voor opslag** is een beveiligingsintelligentielaag van Azure voor de detectie van ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of misbruik te maken van uw opslagaccounts. Er wordt gebruikgemaakt van de geavanceerde mogelijkheden van beveiligings-AI en [Microsoft-bedreigingsinformatie](https://go.microsoft.com/fwlink/?linkid=2128684) om contextuele beveiligingswaarschuwingen en aanbevelingen te bieden.
+
+Beveiligingswaarschuwingen worden geactiveerd wanneer zich afwijkingen in de activiteit voordoen. Deze waarschuwingen zijn geïntegreerd met Azure Security Center en worden ook via e-mail verzonden naar abonnementsbeheerders. Ze bevatten informatie over verdachte activiteiten en aanbevelingen voor het onderzoeken en oplossen van bedreigingen.
 
 
 ## <a name="availability"></a>Beschikbaarheid
@@ -36,14 +37,14 @@ Deze beschermingslaag stelt u in staat om bedreigingen te verhelpen *zonder* dat
 
 Beveiligingswaarschuwingen worden geactiveerd in het geval van:
 
-- **Verdachte activiteiten** - het opslagaccount is bijvoorbeeld geopend vanuit een IP-adres dat bekendstaat als een actief afsluitknooppunt of Tor
-- **Afwijkend gedrag** - bijvoorbeeld wijzigingen in het toegangspatroon voor een opslagaccount
-- **Mogelijk geüploade malware** - hashreputatieanalyse geeft aan dat een geüpload bestand malware bevat
+- **Patronen in verdachte toegang**, zoals toegang vanaf een Tor-afsluitknooppunt of een IP-adres dat door Microsoft-bedreigingsinformatie als verdacht wordt beschouwd
+- **Verdachte activiteiten**, zoals afwijkende gegevensextractie of een ongebruikelijke wijziging van toegangsmachtigingen
+- **Uploaden van schadelijke inhoud**, zoals mogelijke malware-bestanden (op basis van hashreputatieanalyse) of het hosten van phishing-inhoud
 
-Waarschuwingen bevatten details over het incident waardoor ze zijn geactiveerd evenals aanbevelingen voor het onderzoeken en oplossen van bedreigingen.
+Waarschuwingen bevatten details over het incident waardoor ze zijn geactiveerd evenals aanbevelingen voor het onderzoeken en oplossen van bedreigingen. Waarschuwingen kunnen worden geëxporteerd naar Azure Sentinel, een SIEM-hulpprogramma van derden of een ander extern hulpprogramma.
 
 > [!TIP]
-> U kunt opslagwaarschuwingen simuleren door de instructies in [dit blogbericht](https://techcommunity.microsoft.com/t5/azure-security-center/validating-atp-for-azure-storage-detections-in-azure-security/ba-p/1068131) te volgen.
+> Het is een best practice om [Azure Defender voor opslag te configureren](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-security-center) op abonnementsniveau, maar u kunt het ook [configureren voor afzonderlijke opslagaccounts](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-portal).
 
 
 ## <a name="what-is-hash-reputation-analysis-for-malware"></a>Wat is hashreputatieanalyse voor malware?

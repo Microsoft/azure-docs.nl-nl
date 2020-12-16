@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1755404a06d8586968801aa22f2af532da278802
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: fbddd2eb52414827561d8896dfc8bc9ff705f41b
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96742320"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584388"
 ---
 # <a name="upgrade-to-the-latest-azure-multi-factor-authentication-server"></a>Upgraden naar de nieuwste versie van Azure Multi-Factor Authentication Server
 
@@ -33,16 +33,16 @@ Als u een upgrade uitvoert van v6. x of ouder naar v7. x of hoger, worden alle o
 
 Upgrade stappen in een oogopslag:
 
-* Azure MFA-servers upgraden (onderliggende niveaus, vervolgens hoofd niveau)
+* Azure MFA-servers upgraden (onderliggende niveaus, vervolgens primair)
 * De exemplaren van de gebruikers Portal bijwerken
 * Upgrade van de exemplaren van de AD FS-adapter
 
 ## <a name="upgrade-azure-mfa-server"></a>Azure MFA-Server upgraden
 
 1. Volg de instructies in [de Azure-multi-factor Authentication-server downloaden](howto-mfaserver-deploy.md#download-the-mfa-server) om de nieuwste versie van het installatie programma van de Azure MFA-server op te halen.
-2. Maak een back-up van het MFA-server gegevensbestand dat zich bevindt in de C:\Program Files\Multi-Factor Authentication Server\Data\PhoneFactor.pfdata (uitgaande van de standaard installatie locatie) op de Master MFA-server.
+2. Maak een back-up van het MFA-server gegevensbestand dat zich bevindt in de C:\Program Files\Multi-Factor Authentication Server\Data\PhoneFactor.pfdata (uitgaande van de standaard installatie locatie) op uw primaire MFA-server.
 3. Als u meerdere servers voor hoge Beschik baarheid uitvoert, wijzigt u de client systemen die worden geverifieerd bij de MFA-server, zodat deze geen verkeer meer verzenden naar de servers die worden bijgewerkt. Als u een load balancer gebruikt, verwijdert u een ondergeschikte MFA-server uit de load balancer, voert u de upgrade uit en voegt u de server vervolgens weer toe aan de farm.
-4. Voer het nieuwe installatie programma uit op elke MFA-server. Voer eerst onderliggende servers bij, omdat deze het oude gegevens bestand dat door de Master wordt gerepliceerd, kan lezen.
+4. Voer het nieuwe installatie programma uit op elke MFA-server. Werk eerst onderliggende servers bij omdat ze het oude gegevens bestand kunnen lezen dat door de primaire server wordt gerepliceerd.
 
    > [!NOTE]
    > Wanneer u een server bijwerkt, moet deze worden verwijderd uit de taak verdeling of het delen van verkeer met andere MFA-servers.
@@ -51,7 +51,7 @@ Upgrade stappen in een oogopslag:
   
 5. Als u wordt gevraagd een herdistribueerbaar update pakket voor micro soft Visual C++ 2015 te installeren, accepteert u de prompt. Zowel de x86-als de x64-versie van het pakket zijn geïnstalleerd.
 6. Als u de Web Service SDK gebruikt, wordt u gevraagd de nieuwe webservice-SDK te installeren. Wanneer u de nieuwe Web Service SDK installeert, moet u ervoor zorgen dat de naam van de virtuele map overeenkomt met de eerder geïnstalleerde virtuele map (bijvoorbeeld MultiFactorAuthWebServiceSdk).
-7. Herhaal de stappen op alle onderliggende servers. Promoot een van de onderliggende items als het nieuwe model en voer vervolgens een upgrade uit voor de oude hoofd server.
+7. Herhaal de stappen op alle onderliggende servers. Stimuleer een van de onderliggende niveaus als de nieuwe primaire server en voer vervolgens een upgrade uit voor de oude primaire.
 
 ## <a name="upgrade-the-user-portal"></a>De gebruikers Portal bijwerken
 

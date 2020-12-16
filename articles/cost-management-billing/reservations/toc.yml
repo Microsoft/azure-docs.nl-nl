@@ -126,7 +126,7 @@
           href: troubleshoot-reservation-utilization.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Problemen met reserveringsaanbevelingen oplossen
           href: troubleshoot-reservation-recommendation.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Problemen met niet-beschikbare reservering oplossen
+        - name: Problemen met reservering SKU uitgeschakeld oplossen
           href: troubleshoot-product-not-available.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Problemen met downloaden van gebruiksgegevens oplossen
           href: troubleshoot-download-usage.md?toc=/azure/cost-management-billing/reservations/toc.json

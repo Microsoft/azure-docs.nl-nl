@@ -66,6 +66,7 @@
     - name: Mediagrafiek
       href: media-graph-concept.md
     - name: Media Graph-extensie
+      displayName: AI
       href: media-graph-extension-concept.md
     - name: Video-opname
       href: video-recording-concept.md
@@ -99,6 +100,10 @@
       href: configure-signal-gate-how-to.md
     - name: Problemen oplossen
       href: troubleshoot-how-to.md
+    - name: Upgrade uitvoeren
+      href: upgrading-lva-module.md
+    - name: Een gRPC-afleidingsserver ontwikkelen en implementeren
+      href: develop-deploy-grpc-inference-srv-how-to.md
 - name: Naslaginformatie
   items:
     - name: HTTP-extensieprotocol

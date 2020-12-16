@@ -92,8 +92,18 @@
           href: diagnostics-log-analytics.md
     - name: Ingebouwde apps publiceren
       href: publish-apps.md
-    - name: MSIX-app-koppeling instellen
-      href: app-attach.md
+    - name: MSIX-app-koppeling gebruiken
+      items:
+        - name: MSIX-app-koppeling instellen met de Azure-portal
+          href: app-attach-azure-portal.md
+        - name: MSIX-app-koppeling instellen met PowerShell
+          href: app-attach-powershell.md
+        - name: PowerShell-scripts maken
+          href: app-attach.md
+        - name: Een MSIX-installatiekopie voorbereiden
+          href: app-attach-image-prep.md
+        - name: Een bestandsshare instellen
+          href: app-attach-file-share.md
     - name: Microsoft Teams gebruiken
       href: teams-on-wvd.md
     - name: Azure AD Multi-Factor Authentication instellen
@@ -112,6 +122,8 @@
       href: disaster-recovery.md
 - name: Concepten
   items:
+    - name: Ingebouwde rollen
+      href: rbac.md
     - name: Verificatie
       href: authentication.md
     - name: Windows Virtual Desktop-omgeving

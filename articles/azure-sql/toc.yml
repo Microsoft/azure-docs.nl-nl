@@ -69,6 +69,8 @@
                   href: database/sql-vulnerability-assessment.md
                 - name: Evaluatieregels van beveiligingsproblemen
                   href: database/sql-database-vulnerability-assessment-rules.md
+                - name: Wijzigingenlogboek voor evaluatieregels van beveiligingsproblemen
+                  href: database/sql-database-vulnerability-assessment-rules-changelog.md
                 - name: Scans van beveiligingsproblemen bewaren in de opslag
                   href: database/sql-database-vulnerability-assessment-storage.md
             - name: 'Aanmeldingen, gebruikersaccounts, rollen en machtigingen'

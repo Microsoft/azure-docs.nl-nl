@@ -6,7 +6,7 @@
       href: service-fabric-overview.md
     - name: Beheerde Service Fabric-clusters
       href: overview-managed-cluster.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: ARM-sjabloon
@@ -663,6 +663,8 @@
                   href: service-fabric-cluster-creation-via-portal.md
                 - name: Een Azure Service Fabric-cluster implementeren in meerdere beschikbaarheidszones
                   href: service-fabric-cross-availability-zones.md
+                - name: Een Azure Service Fabric-cluster met staatloze knooppunttypen implementeren
+                  href: service-fabric-stateless-node-types.md
                 - name: Verificatie via Azure Active Directory instellen
                   href: service-fabric-cluster-creation-setup-aad.md
                 - name: Een aangepaste clustersjabloon maken

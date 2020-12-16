@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cf0437b985865248393e9f68da264fcae5af7f12
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 2c7eea87101a36edb0d77026489ea351b601158b
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108549"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584592"
 ---
 # <a name="tutorial-for-configuring-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van arkose Labs met Azure Active Directory B2C
 
@@ -120,7 +120,7 @@ Down load Git Bash en voer de volgende stappen uit:
 
    ``git commit -am "updated output"``
 
-   ``git push azure master``  
+   ``git push azure main``  
 
 ### <a name="part-3---final-setup"></a>Deel 3 – laatste installatie
 
@@ -166,7 +166,7 @@ Deze URL voor de aangepaste pagina wordt opgehaald uit de locatie van het index.
 
    b. **Antwoord-URL** : Selecteer de omleidings-URL.
 
-   c. Selecteer **gebruikers stroom uitvoeren**.
+   c. Selecteer **Gebruikersstroom uitvoeren**.
 
 4. Ga door naar de registratie stroom en maak een account.
 

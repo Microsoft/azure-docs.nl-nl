@@ -306,10 +306,12 @@
       items:
         - name: Een laag kiezen
           href: search-sku-tier.md
-        - name: Servicelimieten
-          href: search-limits-quotas-capacity.md
+        - name: Capaciteit en kosten inschatten
+          href: search-sku-manage-costs.md
         - name: Capaciteit aanpassen
           href: search-capacity-planning.md
+        - name: Servicelimieten
+          href: search-limits-quotas-capacity.md
         - name: Schalen voor prestaties
           href: search-performance-optimization.md
         - name: Multitenant-architectuur
@@ -362,12 +364,6 @@
               href: service-configure-firewall.md
             - name: Een privé-eindpunt maken
               href: service-create-private-endpoint.md
-        - name: Toegang op basis van identiteit
-          items:
-            - name: Beveiligingsfilters
-              href: search-security-trimming-for-azure-search.md
-            - name: Filteren op gebruikersidentiteiten
-              href: search-security-trimming-for-azure-search-with-aad.md
         - name: Uitgaande beveiliging (indexeerfuncties)
           items:
             - name: Toegang via een IP-bereik
@@ -376,6 +372,12 @@
               href: search-indexer-howto-access-trusted-service-exception.md
             - name: Toegang via privé-eindpunten
               href: search-indexer-howto-access-private.md
+        - name: Toegang op basis van identiteit
+          items:
+            - name: Beveiligingsfilters
+              href: search-security-trimming-for-azure-search.md
+            - name: Filteren op gebruikersidentiteiten
+              href: search-security-trimming-for-azure-search-with-aad.md
     - name: Beheren
       items:
         - name: Portal

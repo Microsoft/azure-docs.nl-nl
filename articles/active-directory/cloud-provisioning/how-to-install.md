@@ -1,6 +1,6 @@
 ---
 title: De agent voor Azure AD Connect-cloudinrichting installeren
-description: In dit artikel wordt beschreven hoe u de Azure AD Connect Cloud-inrichtings Agent installeert.
+description: Meer informatie over het installeren van de Azure AD Connect Cloud inrichtings agent en hoe u deze kunt configureren in de Azure Portal.
 services: active-directory
 author: billmath
 manager: daveba
@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c4ba11dabc8e805f3604afc2fc4388840ac67cf
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9553608fdd72d4dec4c1572e0d38cd460018a469
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348531"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584337"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>De agent voor Azure AD Connect-cloudinrichting installeren
 Dit document helpt u bij het installatie proces voor de Azure Active Directory (Azure AD) Connect inrichtings agent en hoe u deze in eerste instantie kunt configureren in de Azure Portal.
@@ -73,7 +73,7 @@ Verificatie van de agent vindt plaats in de Azure Portal en op de lokale server 
 ### <a name="azure-portal-agent-verification"></a>Verificatie van Azure Portal-agent
 Voer de volgende stappen uit om te controleren of de agent wordt gezien door Azure.
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. Selecteer in het midden de optie **inrichting beheren (preview)**.
 
    ![Azure Portal](media/how-to-install/install-6.png)</br>

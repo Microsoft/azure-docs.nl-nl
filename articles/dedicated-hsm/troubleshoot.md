@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.custom: mvc, seodec18
 ms.date: 12/07/2018
 ms.author: mbaldwin
-ms.openlocfilehash: b911181abea06894873e64da51afbb8799f1066a
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 42bfa52721160a469db2aa0507dadfa85ff41389
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927835"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508268"
 ---
 # <a name="troubleshooting-the-azure-dedicated-hsm-service"></a>Problemen met de Azure Toegewezen HSM-service oplossen
 
@@ -29,7 +29,7 @@ De Azure Toegewezen HSM-service heeft twee afzonderlijke facetten. Ten eerste, d
 
 ## <a name="hsm-registration"></a>HSM-registratie
 
-Toegewezen HSM is niet vrij beschikbaar voor gebruik omdat het hardwareresources in de cloud levert en daarom een kostbare resource is, die moet worden beveiligd. We gebruiken daarom een whitelist-procedure via e-mail, met behulp van HSMrequest@microsoft.com. 
+Toegewezen HSM is niet vrij beschikbaar voor gebruik omdat het hardwareresources in de cloud levert en daarom een kostbare resource is, die moet worden beveiligd. Er wordt dus een proces met een acceptatielijst via e-mail gebruikt met behulp van HSMrequest@microsoft.com. 
 
 ### <a name="getting-access-to-dedicated-hsm"></a>Toegang krijgen tot Toegewezen HSM
 
@@ -69,7 +69,7 @@ Implementaties kunnen mislukken als u de limiet van 2 HSM's per stempel en 4 HSM
 Wanneer een bepaalde stempel of regio vol raakt - wanneer bijna alle beschikbare HSM’s zijn ingericht - kan dit leiden tot implementatiefouten. Elk stempel heeft 11 HSM’s beschikbaar voor klanten. Dat is 22 per regio. Elke stempel bevat ook 3 reserves en één testapparaat. Als u denkt dat u de limiet hebt bereikt, stuurt u een e-mail naar HSMrequest@microsoft.com voor informatie over het vulniveau van specifieke stempels.
 
 ###  <a name="how-do-i-see-hsms-when-provisioned"></a>Hoe kan ik HSM’s zien wanneer ze zijn ingericht?
-De Toegewezen HSM-service is op een whitelist geplaatst. Dit wil zeggen dat de service wordt beschouwd als een Verborgen type in de Azure-portal. Als u de HSM-resources wilt bekijken, moet u het selectievakje Verborgen typen weergeven inschakelen, zoals hieronder wordt weergegeven. De NIC-resource volgt altijd de HSM en is een goede plek om het IP-adres van de HSM te achterhalen vóórdat u SSH gaat gebruiken om verbinding te maken.
+Aangezien Dedicated HSM een service op de acceptatielijst is, wordt de service in Azure Portal beschouwd als een Verborgen type. Als u de HSM-resources wilt bekijken, moet u het selectievakje Verborgen typen weergeven inschakelen, zoals hieronder wordt weergegeven. De NIC-resource volgt altijd de HSM en is een goede plek om het IP-adres van de HSM te achterhalen vóórdat u SSH gaat gebruiken om verbinding te maken.
 
 ![Schermopname waarin het selectievakje Verborgen typen weergeven is gemarkeerd](./media/troubleshoot/hsm-provisioned.png)
 

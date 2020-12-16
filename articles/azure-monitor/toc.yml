@@ -190,6 +190,8 @@
               href: platform/metrics-getting-started.md
             - name: Geavanceerde functies van Metrics Explorer
               href: platform/metrics-charts.md
+            - name: Meerdere resources weergeven in Metrics Explorer
+              href: platform/metrics-dynamic-scope.md
             - name: Voorbeelden van grafieken met metrische gegevens
               href: platform/metric-chart-samples.md
             - name: Problemen met grafieken met metrische gegevens oplossen
@@ -546,12 +548,12 @@
               href: platform/itsmc-overview.md
             - name: IT Service Management-verbindingen
               href: platform/itsmc-connections.md
-            - name: Integreren met beveiligde export
-              href: platform/it-service-management-connector-secure-webhook-connections.md
             - name: Service Manager-web-app maken
               href: platform/itsmc-service-manager-script.md
             - name: Problemen oplossen in ITSM-connector
               href: platform/itsmc-resync-servicenow.md
+            - name: Integreren met beveiligde export
+              href: platform/it-service-management-connector-secure-webhook-connections.md
         - name: Klassieke waarschuwingsregels migreren
           items:
             - name: Over klassieke waarschuwingen
@@ -752,6 +754,8 @@
               href: app/pre-aggregated-metrics-log-metrics.md
             - name: Definities van metrische gegevens op basis van logboeken
               href: platform/app-insights-metrics.md
+            - name: Metrische standaardgegevens
+              href: app/standard-metrics.md
         - name: Search
           href: app/diagnostic-search.md
         - name: Profiler

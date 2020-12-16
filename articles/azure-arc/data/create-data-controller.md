@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 6830bdd38e8e1f1d649673cfdaf48e8c50ba6c3e
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: b9a41f4d4bb10599d50e58ad6f08d61aaba7ecfc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413221"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608779"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>De Azure Arc-gegevens controller maken
 
@@ -36,7 +36,7 @@ Momenteel zijn de ondersteunde lijst met Kubernetes-Services en-distributies de 
 - Open source, upstream Kubernetes, doorgaans geïmplementeerd met kubeadm
 
 > [!IMPORTANT]
-> * De mini maal ondersteunde versie van Kubernetes is v 1.17.
+> * De mini maal ondersteunde versie van Kubernetes is v 1.17. Zie [bekende problemen](./release-notes.md#known-issues) voor meer informatie. 
 > * De mini maal ondersteunde versie van OCP is 4,3.
 > * Bekijk de [connectiviteits vereisten](connectivity.md) om te begrijpen welke connectiviteit vereist is tussen uw omgeving en Azure.
 > * Zie de [richt lijnen voor opslag configuratie](storage-configuration.md) voor meer informatie over het configureren van uw permanente opslag.
@@ -46,7 +46,7 @@ Momenteel zijn de ondersteunde lijst met Kubernetes-Services en-distributies de 
 > [!NOTE]
 > Als u het Red Hat open Shift container platform gebruikt in azure, is het raadzaam om de meest recente beschik bare versie te gebruiken.
 
-Afhankelijk van de optie die u kiest, zijn bepaalde hulpprogram ma's _vereist_ , maar u wordt aangeraden [alle client hulpprogramma's te installeren](./install-client-tools.md) voordat u begint met het maken van de Azure Arc-gegevens controller.
+Afhankelijk van de optie die u kiest, zijn bepaalde hulpprogram ma's _vereist_, maar u wordt aangeraden [alle client hulpprogramma's te installeren](./install-client-tools.md) voordat u begint met het maken van de Azure Arc-gegevens controller.
 
 Ongeacht de optie die u kiest, moet u tijdens het aanmaak proces de volgende informatie opgeven:
 
@@ -64,10 +64,10 @@ Ongeacht de optie die u kiest, moet u tijdens het aanmaak proces de volgende inf
 Er zijn meerdere opties voor het maken van de Azure Arc-gegevens controller:
 
 > **Wilt u gewoon iets uitproberen?**  
-> Ga snel aan de slag met [Azure Arc](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) direct op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of een virtuele machine van Azure.
+> Ga snel aan de slag met [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) direct op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of een virtuele machine van Azure.
 > 
 - [Een gegevens controller maken met [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]](create-data-controller-using-azdata.md)
 - [Een gegevens controller maken met Azure Data Studio](create-data-controller-azure-data-studio.md)
 - [Een gegevens controller maken van de Azure Portal via een Jupyter-notebook in Azure Data Studio](create-data-controller-resource-in-azure-portal.md)
 - [Een gegevens controller maken met Kubernetes-hulpprogram ma's zoals kubectl of OC](create-data-controller-using-kubernetes-native-tools.md)
-- [Een gegevens controller maken met Azure Arc aan de slag voor een versnelde ervaring van een test implementatie](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services)
+- [Een gegevens controller maken met Azure Arc aan de slag voor een versnelde ervaring van een test implementatie](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/)

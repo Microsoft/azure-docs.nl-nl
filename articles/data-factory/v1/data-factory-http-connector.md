@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ddf8236dbbc9714c705e442bb65eb2ac3d293cc7
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 653a53d6bb5c69cd95fd5e9a2483b51de8293b40
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589573"
+ms.locfileid: "97608575"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Gegevens verplaatsen van een HTTP-bron met behulp van Azure Data Factory
 
@@ -26,7 +26,6 @@ ms.locfileid: "97589573"
 
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Azure Data Factory-service gebruikt, raadpleegt u [http-connector in v2](../connector-http.md).
-
 
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens te verplaatsen van een on-premises of een HTTP-eind punt in de Cloud naar een ondersteund Sink-gegevens archief. In dit artikel vindt [u informatie over het verplaatsen van gegevens met behulp van de Kopieer activiteit](data-factory-data-movement-activities.md). Dit geeft een algemeen overzicht van de verplaatsing van gegevens met behulp van Kopieer activiteit. Het artikel bevat ook een lijst met de gegevens archieven die door de Kopieer activiteit worden ondersteund als bronnen en Sinks.
 
@@ -120,9 +119,8 @@ Deze gekoppelde service koppelt uw data factory aan een on-premises HTTP-webserv
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-        "certThumbprint": "thumbprint of certificate",
-        "gatewayName": "gateway name"
-
+            "certThumbprint": "thumbprint of certificate",
+            "gatewayName": "gateway name"
         }
     }
 }
@@ -142,8 +140,8 @@ Deze gekoppelde service koppelt uw data factory aan een on-premises HTTP-webserv
         {
             "authenticationType": "ClientCertificate",
             "url": "https://en.wikipedia.org/wiki/",
-        "embeddedCertData": "Base64-encoded cert data",
-        "password": "password of cert"
+            "embeddedCertData": "Base64-encoded cert data",
+            "password": "password of cert"
         }
     }
 }
@@ -176,9 +174,9 @@ De sectie **typeProperties** verschilt voor elk type gegevensset. De sectie **ty
     "type": "Http",
         "linkedServiceName": "HttpLinkedService",
         "typeProperties": {
-      "relativeUrl": "XXX/test.xml",
-        "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
-    },
+          "relativeUrl": "XXX/test.xml",
+          "additionalHeaders": "Connection: keep-alive\nUser-Agent: Mozilla/5.0\n"
+        },
         "external": true,
         "availability": {
             "frequency": "Hour",

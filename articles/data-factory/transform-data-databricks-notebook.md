@@ -11,12 +11,12 @@ manager: shwang
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 6d3c9f0df0d834ffe75d0b56e3c80a432c27ea38
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4679d06e877679f0a56ee782b9a43a5a8147d7a5
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018542"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608116"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Gegevens transformeren door een Databricks-notebook uit te voeren
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -59,13 +59,13 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 
 |Eigenschap|Beschrijving|Vereist|
 |---|---|---|
-|naam|De naam van de activiteit in de pijp lijn.|Yes|
-|beschrijving|Tekst die beschrijft wat de activiteit doet.|No|
-|type|Voor Databricks notebook-activiteit is het type activiteit DatabricksNotebook.|Yes|
-|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de Databricks-notebook wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Yes|
-|notebookPath|Het absolute pad van de notebook dat moet worden uitgevoerd in de Databricks-werk ruimte. Dit pad moet beginnen met een slash.|Yes|
-|baseParameters|Een matrix met Key-Value paren. Basis parameters kunnen worden gebruikt voor elke uitvoering van de activiteit. Als het notitie blok een para meter accepteert die niet is opgegeven, wordt de standaard waarde van het notitie blok gebruikt. Meer informatie over para meters in [Databricks-notebooks](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|No|
-|bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix van zijn \<string, object> .|No|
+|naam|De naam van de activiteit in de pijp lijn.|Ja|
+|beschrijving|Tekst die beschrijft wat de activiteit doet.|Nee|
+|type|Voor Databricks notebook-activiteit is het type activiteit DatabricksNotebook.|Ja|
+|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de Databricks-notebook wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Ja|
+|notebookPath|Het absolute pad van de notebook dat moet worden uitgevoerd in de Databricks-werk ruimte. Dit pad moet beginnen met een slash.|Ja|
+|baseParameters|Een matrix met Key-Value paren. Basis parameters kunnen worden gebruikt voor elke uitvoering van de activiteit. Als het notitie blok een para meter accepteert die niet is opgegeven, wordt de standaard waarde van het notitie blok gebruikt. Meer informatie over para meters in [Databricks-notebooks](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Nee|
+|bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix van zijn \<string, object> .|Nee|
 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Ondersteunde bibliotheken voor Databricks-activiteiten
@@ -81,7 +81,7 @@ In de bovenstaande definitie van de Databricks-activiteit geeft u deze typen tap
         {
             "egg": "dbfs:/mnt/libraries/library.egg"
         },
-    {
+        {
             "whl": "dbfs:/mnt/libraries/mlflow-0.0.1.dev0-py2-none-any.whl"
         },
         {

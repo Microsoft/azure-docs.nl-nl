@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: 6a000daa7d9e2aa93e68844e8aec5aa168c9fa60
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: becf9f8c7f6a967ed63cfd3040de90de76e32fff
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97592412"
+ms.locfileid: "97607266"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Een FCI maken met gedeelde Azure-schijven (SQL Server op virtuele machines van Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -26,7 +26,6 @@ ms.locfileid: "97592412"
 In dit artikel wordt uitgelegd hoe u een FCI (failover cluster instance) maakt met behulp van gedeelde Azure-schijven met SQL Server op Azure Virtual Machines (Vm's). 
 
 Zie voor meer informatie een overzicht van [FCI met SQL Server op Azure vm's](failover-cluster-instance-overview.md) en [Aanbevolen procedures voor clusters](hadr-cluster-best-practices.md). 
-
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -37,12 +36,10 @@ Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig
 - Een account met machtigingen voor het maken van objecten op zowel virtuele Azure-machines als in Active Directory.
 - De meest recente versie van [Power shell](/powershell/azure/install-az-ps). 
 
-
 ## <a name="add-azure-shared-disk"></a>Gedeelde Azure-schijf toevoegen
 Implementeer een beheerde Premium-SSD schijf met de functie gedeelde schijf ingeschakeld. Stel `maxShares` in dat er moet worden **uitgelijnd met het aantal cluster knooppunten** om de schijf te delen op alle FCI-knoop punten. 
 
 Als u een gedeelde Azure-schijf wilt toevoegen, gaat u als volgt te werk: 
-
 
 1. Sla het volgende script *op alsSharedDiskConfig.jsop*: 
 
@@ -85,7 +82,6 @@ Als u een gedeelde Azure-schijf wilt toevoegen, gaat u als volgt te werk:
    }
    ```
 
-
 2. Voer *SharedDiskConfig.js* uit met behulp van Power shell: 
 
    ```powershell
@@ -119,7 +115,6 @@ Als u het failovercluster wilt maken, hebt u het volgende nodig:
 - Een naam voor het failovercluster.
 - Een IP-adres voor het failovercluster. U kunt een IP-adres gebruiken dat niet wordt gebruikt in hetzelfde virtuele Azure-netwerk en subnet als de cluster knooppunten.
 
-
 # <a name="windows-server-2012-2016"></a>[Windows Server 2012-2016](#tab/windows2012)
 
 Met het volgende Power shell-script maakt u een failovercluster. Werk het script bij met de namen van de knoop punten (de namen van de virtuele machines) en een beschikbaar IP-adres van het virtuele Azure-netwerk.
@@ -140,7 +135,6 @@ Zie voor meer informatie [failover cluster: Cluster Network object](https://blog
 
 ---
 
-
 ## <a name="configure-quorum"></a>Quorum configureren
 
 Configureer de quorum oplossing die het beste past bij uw bedrijfs behoeften. U kunt een schijfwitness [, een](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum) [Cloudwitness](/windows-server/failover-clustering/deploy-cloud-witness)of een [Bestands share-Witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)configureren. Zie voor meer informatie [quorum met SQL Server vm's](hadr-cluster-best-practices.md#quorum). 
@@ -152,10 +146,10 @@ Als u het cluster wilt valideren met behulp van de gebruikers interface, gaat u 
 
 1. Klik onder **Serverbeheer** op **extra** en selecteer vervolgens **Failoverclusterbeheer**.
 1. Selecteer onder **Failoverclusterbeheer** **actie** en selecteer vervolgens **configuratie valideren**.
-1. Selecteer **Next**.
+1. Selecteer **Volgende**.
 1. Voer onder **servers of een cluster selecteren** de namen van beide virtuele machines in.
 1. Onder **test opties** selecteert u **alleen geselecteerde tests uitvoeren**. 
-1. Selecteer **Next**.
+1. Selecteer **Volgende**.
 1. Selecteer onder **selectie testen** alle tests *behalve* **opslag**
 
 ## <a name="test-cluster-failover"></a>Cluster-Failover testen
@@ -198,7 +192,6 @@ De FCI-gegevens directory's moeten op de gedeelde Azure-schijven staan.
 
 Als u uw SQL Server-VM vanuit de portal wilt beheren, moet u deze registreren bij de SQL IaaS agent extension (RP) in de [modus voor licht gewicht beheer](sql-agent-extension-manually-register-single-vm.md#lightweight-management-mode), momenteel de enige modus die wordt ondersteund door FCI en SQL Server op Azure-vm's. 
 
-
 Een SQL Server VM registreren in de licht gewicht modus met Power shell:  
 
 ```powershell-interactive
@@ -221,7 +214,6 @@ Als u verkeer op de juiste manier wilt door sturen naar het huidige primaire kno
 ## <a name="next-steps"></a>Volgende stappen
 
 Als u dit nog niet hebt gedaan, configureert u de connectiviteit met uw FCI met de naam van een [virtueel netwerk en een Azure Load Balancer](failover-cluster-instance-vnn-azure-load-balancer-configure.md) of [gedistribueerde netwerk naam (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
-
 
 Als gedeelde Azure-schijven niet de juiste FCI-opslag oplossing voor u zijn, kunt u overwegen om uw FCI te maken met behulp van [Premium-bestands shares](failover-cluster-instance-premium-file-share-manually-configure.md) of [opslagruimten direct](failover-cluster-instance-storage-spaces-direct-manually-configure.md) in plaats daarvan. 
 

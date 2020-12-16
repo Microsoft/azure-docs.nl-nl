@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: b90fe6b7e0937a9ac3b300e904085122610d5645
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3e74098d368b6aef3a9f12d8b1369132b29e7a0f
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957075"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608949"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Ondersteuning voor Text Analytics-API v3-taal 
 
@@ -123,105 +123,103 @@ De Text Analytics-API kan een breed scala aan talen, varianten, dialecten en bep
 
 Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taaldetectie proberen om te zien of er een code wordt geretourneerd. Het antwoord op talen dat niet kan worden gedetecteerd is `unknown` .
 
-| Taal | Taalcode |  v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |
-|:---------|:-------------:|:----------:|:-----------------------------------------:|
-|Afrikaans|`af`|✓|    |
-|Albanees|`sq`|✓|    |
-|Arabisch|`ar`|✓|    |
-|Armeens|`hy`|✓|    |
-|Baskisch|`eu`|✓|    |
-|Wit-Russisch|`be`|✓|    |
-|Bengaals|`bn`|✓|    |
-|Bosnisch|`bs`|✓|2020-09-01|
-|Bulgaars|`bg`|✓|    |
-|Birmaans|`my`|✓|    |
-|Catalaans, Valenciaans|`ca`|✓|    |
-|Centraal-Khmer|`km`|✓|    |
-|Chinees|`zh`|✓|    |
-|Chinees (vereenvoudigd)|`zh_chs`|✓|    |
-|Chinees (traditioneel)|`zh_cht`|✓|    |
-|Kroatisch|`hr`|✓|    |
-|Tsjechisch|`cs`|✓|    |
-|Deens|`da`|✓|    |
-|Dari|`prs`|✓|2020-09-01|
-|Divehi, Dhivehi, Maldivian|`dv`|✓|    |
-|Nederlands, Vlaams|`nl`|✓|    |
-|Engels|`en`|✓|    |
-|Esperanto|`eo`|✓|    |
-|Ests|`et`|✓|    |
-|Fijisch|`fj`|✓|2020-09-01|
-|Fins|`fi`|✓|    |
-|Frans|`fr`|✓|    |
-|Galicisch|`gl`|✓|    |
-|Georgisch|`ka`|✓|    |
-|Duits|`de`|✓|    |
-|Grieks|`el`|✓|    |
-|Gujarati|`gu`|✓|    |
-|Haitian, Haitian Creole|`ht`|✓|    |
-|Hebreeuws|`he`|✓|    |
-|Hindi|`hi`|✓|    |
-|Hmong Daw|`mww`|✓|2020-09-01|
-|Hongaars|`hu`|✓|    |
-|IJslands|`is`|✓|    |
-|Indonesisch|`id`|✓|    |
-|Inuktitut|`iu`|✓|    |
-|Iers|`ga`|✓|    |
-|Italiaans|`it`|✓|    |
-|Japans|`ja`|✓|    |
-|Kannada|`kn`|✓|    |
-|Kazachs|`kk`|✓|2020-09-01|
-|Koreaans|`ko`|✓|    |
-|Koerdisch|`ku`|✓|    |
-|Democratische|`lo`|✓|    |
-|Latijnse|`la`|✓|    |
-|Lets|`lv`|✓|    |
-|Litouws|`lt`|✓|    |
-|Macedonisch|`mk`|✓|    |
-|Malagassisch|`mg`|✓|2020-09-01|
-|Maleisisch|`ms`|✓|    |
-|Malayalam|`ml`|✓|    |
-|Maltees|`mt`|✓|    |
-|Maori|`mi`|✓|2020-09-01|
-|Mahrati|`mr`|✓|2020-09-01|
-|Noors|`no`|✓|    |
-|Noors (Nynorsk)|`nn`|✓|    |
-|Odia|`or`|✓|    |
-|Pashto, Pushto|`ps`|✓|    |
-|Perzisch|`fa`|✓|    |
-|Pools|`pl`|✓|    |
-|Portugees|`pt`|✓|    |
-|Punjabi, Panjabi|`pa`|✓|    |
-|Queretaro Otomi|`otq`|✓|2020-09-01|
-|Roemeens, Moldavian, Moldavië|`ro`|✓|    |
-|Russisch|`ru`|✓|    |
-|Samoaans|`sm`|✓|2020-09-01|
-|Servisch|`sr`|✓|    |
-|Sinhala, Sinhalese|`si`|✓|    |
-|Slowaaks|`sk`|✓|    |
-|Sloveens|`sl`|✓|    |
-|Somalisch|`so`|✓|    |
-|Spaans, Castilië|`es`|✓|    |
-|Swahili|`sw`|✓|    |
-|Zweeds|`sv`|✓|    |
-|Tagalog|`tl`|✓|    |
-|Tahitiaans|`ty`|✓|2020-09-01|
-|Tamil|`ta`|✓|    |
-|Telugu|`te`|✓|    |
-|Thai|`th`|✓|    |
-|Tongaans|`to`|✓|2020-09-01|
-|Turks|`tr`|✓|    |
-|Oekraïens|`uk`|✓|    |
-|Urdu|`ur`|✓|    |
-|Oezbeeks|`uz`|✓|    |
-|Vietnamees|`vi`|✓|    |
-|Welsh|`cy`|✓|    |
-|Jiddisch|`yi`|✓|    |
-|Yucateeks Maya|`yua`|✓|    |
-
+| Taal | Taalcode | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |
+|:-|:-:|:-:|:-:|
+| Afrikaans | `af` | ✓ |  |
+| Albanees | `sq` | ✓ |  |
+| Arabisch | `ar` | ✓ |  |
+| Armeens | `hy` | ✓ |  |
+| Baskisch | `eu` | ✓ |  |
+| Wit-Russisch | `be` | ✓ |  |
+| Bengaals | `bn` | ✓ |  |
+| Bosnisch | `bs` | ✓ | 2020-09-01 |
+| Bulgaars | `bg` | ✓ |  |
+| Birmaans | `my` | ✓ |  |
+| Catalaans, Valenciaans | `ca` | ✓ |  |
+| Centraal-Khmer | `km` | ✓ |  |
+| Chinees | `zh` | ✓ |  |
+| Chinees (vereenvoudigd) | `zh_chs` | ✓ |  |
+| Chinees (traditioneel) | `zh_cht` | ✓ |  |
+| Kroatisch | `hr` | ✓ |  |
+| Tsjechisch | `cs` | ✓ |  |
+| Deens | `da` | ✓ |  |
+| Dari | `prs` | ✓ | 2020-09-01 |
+| Divehi, Dhivehi, Maldivian | `dv` | ✓ |  |
+| Nederlands, Vlaams | `nl` | ✓ |  |
+| Engels | `en` | ✓ |  |
+| Esperanto | `eo` | ✓ |  |
+| Ests | `et` | ✓ |  |
+| Fijisch | `fj` | ✓ | 2020-09-01 |
+| Fins | `fi` | ✓ |  |
+| Frans | `fr` | ✓ |  |
+| Galicisch | `gl` | ✓ |  |
+| Georgisch | `ka` | ✓ |  |
+| Duits | `de` | ✓ |  |
+| Grieks | `el` | ✓ |  |
+| Gujarati | `gu` | ✓ |  |
+| Haitian, Haitian Creole | `ht` | ✓ |  |
+| Hebreeuws | `he` | ✓ |  |
+| Hindi | `hi` | ✓ |  |
+| Hmong Daw | `mww` | ✓ | 2020-09-01 |
+| Hongaars | `hu` | ✓ |  |
+| IJslands | `is` | ✓ |  |
+| Indonesisch | `id` | ✓ |  |
+| Inuktitut | `iu` | ✓ |  |
+| Iers | `ga` | ✓ |  |
+| Italiaans | `it` | ✓ |  |
+| Japans | `ja` | ✓ |  |
+| Kannada | `kn` | ✓ |  |
+| Kazachs | `kk` | ✓ | 2020-09-01 |
+| Koreaans | `ko` | ✓ |  |
+| Koerdisch | `ku` | ✓ |  |
+| Democratische | `lo` | ✓ |  |
+| Latijnse | `la` | ✓ |  |
+| Lets | `lv` | ✓ |  |
+| Litouws | `lt` | ✓ |  |
+| Macedonisch | `mk` | ✓ |  |
+| Malagassisch | `mg` | ✓ | 2020-09-01 |
+| Maleisisch | `ms` | ✓ |  |
+| Malayalam | `ml` | ✓ |  |
+| Maltees | `mt` | ✓ |  |
+| Maori | `mi` | ✓ | 2020-09-01 |
+| Mahrati | `mr` | ✓ | 2020-09-01 |
+| Noors | `no` | ✓ |  |
+| Noors (Nynorsk) | `nn` | ✓ |  |
+| Odia | `or` | ✓ |  |
+| Pashto, Pushto | `ps` | ✓ |  |
+| Perzisch | `fa` | ✓ |  |
+| Pools | `pl` | ✓ |  |
+| Portugees | `pt` | ✓ |  |
+| Punjabi, Panjabi | `pa` | ✓ |  |
+| Queretaro Otomi | `otq` | ✓ | 2020-09-01 |
+| Roemeens, Moldavian, Moldavië | `ro` | ✓ |  |
+| Russisch | `ru` | ✓ |  |
+| Samoaans | `sm` | ✓ | 2020-09-01 |
+| Servisch | `sr` | ✓ |  |
+| Sinhala, Sinhalese | `si` | ✓ |  |
+| Slowaaks | `sk` | ✓ |  |
+| Sloveens | `sl` | ✓ |  |
+| Somalisch | `so` | ✓ |  |
+| Spaans, Castilië | `es` | ✓ |  |
+| Swahili | `sw` | ✓ |  |
+| Zweeds | `sv` | ✓ |  |
+| Tagalog | `tl` | ✓ |  |
+| Tahitiaans | `ty` | ✓ | 2020-09-01 |
+| Tamil | `ta` | ✓ |  |
+| Telugu | `te` | ✓ |  |
+| Thai | `th` | ✓ |  |
+| Tongaans | `to` | ✓ | 2020-09-01 |
+| Turks | `tr` | ✓ |  |
+| Oekraïens | `uk` | ✓ |  |
+| Urdu | `ur` | ✓ |  |
+| Oezbeeks | `uz` | ✓ |  |
+| Vietnamees | `vi` | ✓ |  |
+| Welsh | `cy` | ✓ |  |
+| Jiddisch | `yi` | ✓ |  |
+| Yucateeks Maya | `yua` | ✓ |  |
 
 ---
 
-
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Wat is de Text Analytics-API?](overview.md)   

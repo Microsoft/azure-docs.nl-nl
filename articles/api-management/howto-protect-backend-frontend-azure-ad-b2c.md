@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/20/2020
 ms.author: wieastbu
 ms.custom: fasttrack-new, devx-track-js
-ms.openlocfilehash: aa3bce73d2a91538dff0fdeb9e0eb814d878459a
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: b157200b03bdc89e00bfa5c8264d78baf24875c1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676019"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609119"
 ---
 # <a name="protect-spa-backend-with-oauth-20-azure-active-directory-b2c-and-azure-api-management"></a>Beveiligd-wachtwoord verificatie beveiligen met OAuth 2,0, Azure Active Directory B2C en Azure API Management
 
@@ -180,7 +180,7 @@ U moet de met CIDR opgemaakte blokken met adressen toevoegen aan het paneel IP-b
    > De functie-API kan nu niet worden aangeroepen vanaf elke andere locatie dan via API Management of uw adres.
    
 ## <a name="import-the-function-app-definition"></a>De definitie van de functie-app importeren
-1. Open de *blade API Management* en open vervolgens *uw exemplaar* .
+1. Open de *blade API Management* en open vervolgens *uw exemplaar*.
 1. Selecteer de Blade Api's in het gedeelte API Management van uw exemplaar.
 1. Kies in het deel venster een nieuwe API toevoegen de optie functie-app en selecteer vervolgens ' volledig ' boven aan de pop-up.
 1. Klik op Bladeren, kies de functie-app die u als host voor de API in en klik op selecteren.
@@ -396,7 +396,8 @@ U moet de met CIDR opgemaakte blokken met adressen toevoegen aan het paneel IP-b
                     // Make the api call here
                 $.ajax({
                     type: "get",
-                    headers: {'Authorization': 'Bearer ' + token, 'Ocp-Apim-Subscription-Key': applicationConfig.subKey},                   url: applicationConfig.webApi
+                    headers: {'Authorization': 'Bearer ' + token, 'Ocp-Apim-Subscription-Key': applicationConfig.subKey},
+                    url: applicationConfig.webApi
                 }
                 ).done(function (body) {
                     document.getElementById("message").innerHTML = "The API Said " + body;
@@ -431,7 +432,7 @@ U moet de met CIDR opgemaakte blokken met adressen toevoegen aan het paneel IP-b
    };
    ```
 
-1. Klik op Opslaan
+1. Op Opslaan klikken
 
 ## <a name="set-the-redirect-uris-for-the-azure-ad-b2c-frontend-app"></a>De omleidings-Uri's voor de Azure AD B2C frontend-app instellen
 1. Open de Blade Azure AD B2C en ga naar de registratie van de toepassing voor de Java script-frontend toepassing

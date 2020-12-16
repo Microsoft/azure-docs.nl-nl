@@ -4,16 +4,16 @@ description: Configureer een GitHub-actie waarmee de stappen voor het maken, pus
 ms.topic: article
 ms.date: 08/20/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 270aa69e74045a48a3567ca74b722ca48a030654
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7dfa2a66851db760049e7c3dc3446223c7dffad1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591630"
+ms.locfileid: "97609153"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Een GitHub-actie configureren voor het maken van een containerinstantie
 
-[Github-acties](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
+[Github-acties](https://docs.github.com/en/free-pro-team@latest/actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
 
 Gebruik de actie [implementeren naar Azure container instances](https://github.com/azure/aci-deploy) github voor het automatiseren van de implementatie van één Container naar Azure container instances. Met deze actie kunt u eigenschappen instellen voor een container exemplaar dat vergelijkbaar is met die in de opdracht [AZ container Create][az-container-create] .
 
@@ -177,7 +177,7 @@ Nadat u het werk stroom bestand hebt doorgevoerd, wordt de werk stroom geactivee
 
 ![Werk stroom voortgang weer geven](./media/container-instances-github-action/github-action-progress.png)
 
-Zie [een werk stroom uitvoeren beheren](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) voor informatie over het weer geven van de status en de resultaten van elke stap in de werk stroom. Als de werk stroom niet is voltooid, raadpleegt [u logboeken weer geven om fouten te onderzoeken](https://docs.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-logs-to-diagnose-failures).
+Zie de [uitvoerings geschiedenis van de werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history) bekijken voor informatie over het weer geven van de status en de resultaten van elke stap in de werk stroom. Als de werk stroom niet is voltooid, raadpleegt [u logboeken weer geven om fouten te onderzoeken](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures).
 
 Wanneer de werk stroom is voltooid, haalt u informatie op over het container exemplaar met de naam *ACI-SampleApp* door de opdracht [AZ container show][az-container-show] uit te voeren. Vervang de naam van uw resource groep: 
 
@@ -237,7 +237,7 @@ az container app up \
 
 ### <a name="command-progress"></a>Opdracht voortgang
 
-* Geef desgevraagd uw GitHub-referenties op of geef een [github Personal Access token](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) (Pat) op die *opslag plaats* en *beveiligingsbereiken heeft om te verifiëren* met uw github-account. Als u GitHub-referenties opgeeft, maakt de opdracht een PAT voor u. Volg de extra prompts om de werk stroom te configureren.
+* Geef desgevraagd uw GitHub-referenties op of geef een [github Personal Access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) (Pat) op die *opslag plaats* en *beveiligingsbereiken heeft om te verifiëren* met uw github-account. Als u GitHub-referenties opgeeft, maakt de opdracht een PAT voor u. Volg de extra prompts om de werk stroom te configureren.
 
 * Met deze opdracht maakt u opslag plaats geheimen voor de werk stroom:
 
@@ -258,7 +258,7 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
-Als u de werk stroom status en resultaten van elke stap in de GitHub-gebruikers interface wilt weer geven, raadpleegt u [een werk stroom uitvoering beheren](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run).
+Als u de werk stroom status en resultaten van elke stap in de GitHub-gebruikers interface wilt weer geven, raadpleegt u de [werk stroom uitvoerings geschiedenis weer geven](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history).
 
 ### <a name="validate-workflow"></a>Werk stroom valideren
 

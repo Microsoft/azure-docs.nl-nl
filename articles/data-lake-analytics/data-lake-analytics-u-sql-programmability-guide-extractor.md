@@ -5,14 +5,14 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/30/2017
-ms.openlocfilehash: a3613c2b95f13e6bbaaf570f522ad1f7b7edd756
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: ad7f6336753903533771033de21aec8262425a61
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512588"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608014"
 ---
-# <a name="use-user-defined-extractor"></a>Door de gebruiker gedefinieerde Extractor gebruiken
+# <a name="use-user-defined-extractor"></a>Door de gebruiker gedefinieerde extractor gebruiken
 
 ## <a name="u-sql-udo-user-defined-extractor"></a>U-SQL UDO: door de gebruiker gedefinieerde Extractor
 U kunt met behulp van een extractie-instructie externe gegevens importeren met u-SQL. Een instructie EXTRACT kan ingebouwde UDO-extracten gebruiken:  
@@ -157,10 +157,10 @@ DECLARE @output_file string = @"\usql-programmability\output_file.tsv";
 
 @rs0 =
     EXTRACT
-            guid Guid,
+        guid Guid,
         dt String,
-            user String,
-            des String
+        user String,
+        des String
     FROM @input_file
         USING new USQL_Programmability.FullDescriptionExtractor(Encoding.UTF8);
 

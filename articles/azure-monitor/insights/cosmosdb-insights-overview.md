@@ -5,12 +5,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: dcd64cf779b931dbf3b4f743844071835e0b8c91
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 5e40f91945f83af7880f272f1578370f2ee1ec42
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932053"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608490"
 ---
 # <a name="explore-azure-monitor-for-azure-cosmos-db"></a>Azure Monitor verkennen voor Azure Cosmos DB
 
@@ -37,7 +37,7 @@ Voor deze functie hoeft u niets in te scha kelen of te configureren. deze Azure 
 
 Voer de volgende stappen uit om het gebruik en de prestaties van uw opslag accounts in al uw abonnementen weer te geven.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 2. Zoek naar **monitor** en selecteer **monitor**.
 
@@ -49,7 +49,7 @@ Voer de volgende stappen uit om het gebruik en de prestaties van uw opslag accou
 
 ### <a name="overview"></a>Overzicht
 
-In **overzicht**bevat de tabel interactieve Azure Cosmos DB metrische gegevens. U kunt de resultaten filteren op basis van de opties die u selecteert in de volgende vervolg keuzelijsten:
+In **overzicht** bevat de tabel interactieve Azure Cosmos DB metrische gegevens. U kunt de resultaten filteren op basis van de opties die u selecteert in de volgende vervolg keuzelijsten:
 
 * **Abonnementen** : alleen abonnementen met een Azure Cosmos DB resource worden weer gegeven.  
 
@@ -71,7 +71,7 @@ Selecteer **fouten** aan de bovenkant van de pagina en het gedeelte **storingen*
 
 ![Scherm opname van fouten met uitsplitsing op basis van het type HTTP-aanvraag](./media/cosmosdb-insights-overview/failures.png)
 
-| Code      |  Beschrijving       | 
+| Code |  Beschrijving       | 
 |-----------|:--------------------|
 | `200 OK`  | Een van de volgende REST-bewerkingen is geslaagd: </br>-Een resource ophalen. </br> : In een resource plaatsen. </br> -POST op een resource. </br> -POST op een opgeslagen procedure resource om de opgeslagen procedure uit te voeren.|
 | `201 Created` | Er is een POST-bewerking voor het maken van een resource geslaagd. |
@@ -87,7 +87,7 @@ Selecteer de optie **capaciteit** boven aan de pagina en het gedeelte **capacite
 
 Net als bij de overzichts werkmap selecteert de vervolg keuzelijst naast een Azure Cosmos DB resource in de kolom **abonnement** een uitsplitsing van de afzonderlijke containers waaruit de data base is opgebouwd.
 
-### <a name="operations"></a>Operations 
+### <a name="operations"></a>Bewerkingen 
 
 Selecteer **bewerkingen** boven aan de pagina en het gedeelte **bewerkingen** van de werkmap sjabloon wordt geopend. Het biedt u de mogelijkheid om uw aanvragen weer te geven die zijn gesplitst op basis van het type aanvragen. 
 
@@ -111,7 +111,7 @@ Als u alle vervolg keuzelijsten in de werkmap wilt uitvouwen of samen vouwen, se
 
 ## <a name="customize-azure-monitor-for-azure-cosmos-db"></a>Azure Monitor voor Azure Cosmos DB aanpassen
 
-Omdat deze ervaring is gebaseerd op Azure monitor werkmap sjablonen, kunt u **Customize**  >  **bewerken** en een kopie van uw gewijzigde versie in een aangepaste werkmap **Opslaan** . 
+Omdat deze ervaring is gebaseerd op Azure monitor werkmap sjablonen, kunt u   >  **bewerken** en een kopie van uw gewijzigde versie in een aangepaste werkmap **Opslaan** . 
 
 ![Balk aanpassen](./media/cosmosdb-insights-overview/customize.png)
 

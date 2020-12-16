@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: ae3ffb9dc387129153b684a849ba4e58274ad80c
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 0018b7bafa8ff2ecd328a150df752082c85484e2
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563276"
+ms.locfileid: "97608507"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Continue levering met behulp van GitHub-actie
 
 Gebruik [github-acties](https://github.com/features/actions) om een werk stroom te definiëren om automatisch code te bouwen en te implementeren in uw Azure-functie-app. 
 
-In GitHub acties is een [werk stroom](https://help.github.com/articles/about-github-actions#workflow) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functions-app-project bouwt en implementeert op GitHub. 
+In GitHub acties is een [werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functions-app-project bouwt en implementeert op GitHub. 
 
 Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom. 
 
@@ -40,7 +40,7 @@ Voor een Azure Functions werk stroom heeft het bestand drie secties:
 
 De aanbevolen manier om te verifiëren met Azure Functions voor GitHub-acties is door gebruik te maken van een publicatie profiel. U kunt ook verifiëren met een service-principal. Zie [deze github-opslag plaats](https://github.com/Azure/functions-action)voor meer informatie. 
 
-Nadat u de referentie voor het publicatie profiel hebt opgeslagen als een [github-geheim](https://docs.github.com/en/actions/reference/encrypted-secrets), gebruikt u dit geheim in uw werk stroom om te verifiëren met Azure. 
+Nadat u de referentie voor het publicatie profiel hebt opgeslagen als een [github-geheim](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets), gebruikt u dit geheim in uw werk stroom om te verifiëren met Azure. 
 
 #### <a name="download-your-publish-profile"></a>Uw publicatie profiel downloaden
 

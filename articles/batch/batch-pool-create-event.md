@@ -3,12 +3,12 @@ title: Gebeurtenis Azure Batch groep maken
 description: Verwijzing voor de gebeurtenis batch-pool Create die wordt verzonden zodra een pool is gemaakt. De inhoud van het logboek bevat algemene informatie over de groep.
 ms.topic: reference
 ms.date: 10/08/2020
-ms.openlocfilehash: 03c656ea2698ee0e61c1ddb903fcc10df9d3044b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: f8b020401443b2a9e80837599d6fd4b2a3001d27
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352385"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609000"
 ---
 # <a name="pool-create-event"></a>Gebeurtenis pool maken
 
@@ -95,7 +95,7 @@ ms.locfileid: "96352385"
 
 |Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
-|`enableAutomaticUpdates`|Booleaans|Hiermee wordt aangegeven of de virtuele machine is ingeschakeld voor automatische updates. Als deze eigenschap niet is opgegeven, is de standaard waarde True.|
+|`enableAutomaticUpdates`|Boolean-waarde|Hiermee wordt aangegeven of de virtuele machine is ingeschakeld voor automatische updates. Als deze eigenschap niet is opgegeven, is de standaard waarde True.|
 
 ###  <a name="networkconfiguration"></a><a name="bk_netconf"></a> networkConfiguration
 

@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d2eef20b4c5648b1b11f16d8e46b956fc1497181
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: d432f29e91097491fc4719ec59a11cb96948f431
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364419"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609051"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
 
@@ -32,7 +32,7 @@ Er zijn belang rijke onderwerpen die u mogelijk wilt lezen voordat u doorgaat me
 - [Opslag configuraties en Kubernetes opslag concepten](storage-configuration.md)
 - [Kubernetes-resource model](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)
 
-Als u liever zonder zelf een volledige omgeving hoeft in te richten, kunt u snel aan de slag met [Azure Arc](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
+Als u liever zonder zelf een volledige omgeving hoeft in te richten, kunt u snel aan de slag met [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
 
 
 ## <a name="login-to-the-azure-arc-data-controller"></a>Meld u aan bij de Azure-Arc-gegevens controller

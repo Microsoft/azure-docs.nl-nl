@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/28/2019
 ms.author: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: d0eef49ea82afe50c5e178de9ad5e82bcb0db0eb
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: e7b75c71d64054e38630677ecd38f8e3e2483c12
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342161"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606331"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Azure Cosmos DB Change feed gebruiken om real-time gegevens analyse te visualiseren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -35,14 +35,14 @@ Het volgende diagram geeft de gegevens stroom en onderdelen die bij de oplossing
  
 1. **Gegevens genereren:** Data Simulator wordt gebruikt voor het genereren van Retail gegevens die gebeurtenissen vertegenwoordigen, zoals een gebruiker die een item bekijkt, een item toevoegt aan hun mandje en een item koopt. U kunt een grote set voorbeeld gegevens genereren met behulp van de gegevens generator. De gegenereerde voorbeeld gegevens bevatten documenten met de volgende indeling:
    
-   ```json
-   {      
-     "CartID": 2486,
-     "Action": "Viewed",
-     "Item": "Women's Denim Jacket",
-     "Price": 31.99
-   }
-   ```
+    ```json
+    {
+      "CartID": 2486,
+      "Action": "Viewed",
+      "Item": "Women's Denim Jacket",
+      "Price": 31.99
+    }
+    ```
 
 2. **Cosmos DB:** De gegenereerde gegevens worden opgeslagen in een Azure Cosmos-container.  
 
@@ -180,7 +180,7 @@ Als u wilt zien hoe wijzigingen in de feed nieuwe acties op een e-commerce-site 
  
 6. Wacht totdat het programma is uitgevoerd. Het sterretje betekent dat de gegevens beschikbaar zijn. Laat het programma actief. het is belang rijk dat er veel gegevens worden verzameld.  
 
-7. Als u naar [Azure Portal](https://portal.azure.com/) navigeert, vervolgens naar het Cosmos DB-account in de resource groep en vervolgens naar **Data Explorer** , ziet u de wille keurige gegevens die in uw **changefeedlabcollection** zijn geïmporteerd.
+7. Als u naar [Azure Portal](https://portal.azure.com/) navigeert, vervolgens naar het Cosmos DB-account in de resource groep en vervolgens naar **Data Explorer**, ziet u de wille keurige gegevens die in uw **changefeedlabcollection** zijn geïmporteerd.
  
    :::image type="content" source="./media/changefeed-ecommerce-solution/data-generated-in-portal.png" alt-text="Gegevens die in de portal worden gegenereerd":::
 
@@ -253,7 +253,7 @@ Power BI is een pakket business analytics-hulpprogramma's waarmee u gegevens kun
  
 5. Selecteer **averagePrice** in **de gegevens sets** en selecteer vervolgens **volgende**.  
 
-6. Kies in het veld **type visualisatie** de optie **gegroepeerd staaf diagram** in de vervolg keuzelijst. Voeg onder **as** actie toe. **Legenda** overs laan zonder iets toe te voegen. Voeg vervolgens in de volgende sectie de naam **Value** toe: **Gem**. Selecteer **volgende** , geef een titel op voor de grafiek en selecteer **Toep assen**. Er wordt nu een nieuwe grafiek op het dash board weer geven.  
+6. Kies in het veld **type visualisatie** de optie **gegroepeerd staaf diagram** in de vervolg keuzelijst. Voeg onder **as** actie toe. **Legenda** overs laan zonder iets toe te voegen. Voeg vervolgens in de volgende sectie de naam **Value** toe: **Gem**. Selecteer **volgende**, geef een titel op voor de grafiek en selecteer **Toep assen**. Er wordt nu een nieuwe grafiek op het dash board weer geven.  
 
 7. Als u nu meer metrische gegevens wilt visualiseren, kunt u teruggaan naar **streamjob1** en drie meer uitvoer maken met de volgende velden.
 
@@ -325,7 +325,7 @@ U ziet nu hoe u het nieuwe hulp programma voor gegevens analyse kunt gebruiken o
 
 1. Ga terug naar de [Azure Portal](https://portal.azure.com/), vervolgens naar uw **Cosmos DB account** en vervolgens naar **Data Explorer**.  
 
-   Voeg twee verzamelingen onder **changefeedlabdatabase** -  -  **producten** en- **Categorieën** met vaste opslag capaciteit toe.
+   Voeg twee verzamelingen onder **changefeedlabdatabase**-  -  **producten** en- **Categorieën** met vaste opslag capaciteit toe.
 
    Voeg een andere verzameling toe onder **changefeedlabdatabase** met de naam **topItems** en **/item** als de partitie sleutel.
 
@@ -381,7 +381,7 @@ U ziet nu hoe u het nieuwe hulp programma voor gegevens analyse kunt gebruiken o
 
 7. Voeg binnen het `<appSettings>` blok de **URI** en **primaire sleutel** toe die u eerder hebt opgeslagen, waarbij **uw URI hier** en **uw primaire sleutel** worden vermeld. Voeg vervolgens de naam van uw **Data Base** en **verzamelings naam** toe zoals aangegeven. (Deze namen moeten **changefeedlabdatabase** en **changefeedlabcollection** zijn, tenzij u ervoor hebt gekozen om een andere naam te noemen.)
 
-   Vul de naam van uw **producten verzameling** , de **verzamelings naam** van de categorie en de **verzamelings naam van de bovenste items** in zoals aangegeven. (Deze namen moeten **producten, categorieën en topItems** zijn, tenzij u een andere naam hebt gekozen.)  
+   Vul de naam van uw **producten verzameling**, de **verzamelings naam** van de categorie en de **verzamelings naam van de bovenste items** in zoals aangegeven. (Deze namen moeten **producten, categorieën en topItems** zijn, tenzij u een andere naam hebt gekozen.)  
 
 8. Navigeer naar en open de **map Checkout** in **EcommerceWebApp. SLN.** Open vervolgens het **Web.config** -bestand in die map.  
 

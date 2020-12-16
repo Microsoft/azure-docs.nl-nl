@@ -3,13 +3,13 @@ title: Beheerde identiteiten gebruiken in azure Kubernetes service
 description: Meer informatie over het gebruik van beheerde identiteiten in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 12/06/2020
-ms.openlocfilehash: 68d8111da5ec10f23d14b375a18229bca075da84
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.date: 12/16/2020
+ms.openlocfilehash: 948a189e1c6e03efca046b6d43dddcaf3d141957
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97026826"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607283"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -36,7 +36,7 @@ AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde servic
 
 | Identiteit                       | Naam    | Gebruiksvoorbeeld | Standaard machtigingen | Uw eigen identiteit meenemen
 |----------------------------|-----------|----------|
-| Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Preview
+| Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Ondersteund
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
 | Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | Nee
 | Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | Nee

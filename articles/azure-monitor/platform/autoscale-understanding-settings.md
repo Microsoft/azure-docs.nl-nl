@@ -4,12 +4,12 @@ description: Een gedetailleerde uitsplitsing van instellingen voor automatisch s
 ms.topic: conceptual
 ms.date: 12/18/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 6d6b868f745803263339e6b27e2610aaca8f63fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a914f6d71c013acea8dfde0f6578985bc009bb26
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87317464"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605236"
 ---
 # <a name="understand-autoscale-settings"></a>Inzicht in instellingen voor automatisch schalen
 Met instellingen voor automatisch schalen kunt u ervoor zorgen dat u over de juiste hoeveelheid resources beschikt voor het afhandelen van de schommeling van uw toepassing. U kunt instellingen voor automatisch schalen configureren om te worden geactiveerd op basis van metrische gegevens die belasting of prestaties aangeven, of op een geplande datum en tijd. In dit artikel vindt u gedetailleerde informatie over de anatomie van een instelling voor automatisch schalen. Het artikel begint met het schema en de eigenschappen van een instelling en gaat vervolgens door met de verschillende profiel typen die kunnen worden geconfigureerd. Ten slotte wordt in het artikel beschreven hoe de functie voor automatisch schalen in azure evalueert welk profiel op een bepaald moment moet worden uitgevoerd.
@@ -60,7 +60,7 @@ Ter illustratie van het instellings schema voor automatisch schalen wordt de vol
               "cooldown": "PT5M"
             }
           },
-    {
+          {
             "metricTrigger": {
               "metricName": "Percentage CPU",
               "metricResourceUri": "/subscriptions/s1/resourceGroups/rg1/providers/Microsoft.Compute/virtualMachineScaleSets/vmss1",
@@ -119,34 +119,41 @@ Er zijn drie soorten profielen voor automatisch schalen:
 
 - **Profiel voor vaste datum:** Dit profiel is voor speciale gevallen. Stel dat u een belang rijke gebeurtenis hebt die op 26 december 2017 (PST) wordt weer geven. U wilt dat de minimale en maximale capaciteit van uw resource op die dag verschillend zijn, maar nog steeds op dezelfde metrische waarden worden geschaald. In dit geval moet u een vast datum profiel toevoegen aan de lijst met profielen van uw instelling. Het profiel is geconfigureerd om alleen op de dag van de gebeurtenis te worden uitgevoerd. Voor elke andere dag maakt automatisch schalen gebruik van het reguliere profiel.
 
-    ``` JSON
-    "profiles": [{
-    "name": " regularProfile",
-    "capacity": {
-    ...
-    },
-    "rules": [{
-    ...
-    },
-    {
-    ...
-    }]
-    },
-    {
-    "name": "eventProfile",
-    "capacity": {
-    ...
-    },
-    "rules": [{
-    ...
-    }, {
-    ...
-    }],
-    "fixedDate": {
-        "timeZone": "Pacific Standard Time",
-               "start": "2017-12-26T00:00:00",
-               "end": "2017-12-26T23:59:00"
-    }}
+    ```json
+    "profiles": [
+        {
+            "name": " regularProfile",
+            "capacity": {
+                ...
+            },
+            "rules": [
+                {
+                ...
+                },
+                {
+                ...
+                }
+            ]
+        },
+        {
+            "name": "eventProfile",
+            "capacity": {
+            ...
+            },
+            "rules": [
+                {
+                ...
+                }, 
+                {
+                ...
+                }
+            ],
+            "fixedDate": {
+                "timeZone": "Pacific Standard Time",
+                "start": "2017-12-26T00:00:00",
+                "end": "2017-12-26T23:59:00"
+            }
+        }
     ]
     ```
     

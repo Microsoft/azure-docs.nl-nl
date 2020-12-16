@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 12/10/2020
-ms.openlocfilehash: f78cbaedea90a241efddd0eff9cb7503201528c5
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 01ee890fe77abebfdec8d3d643773b42cb54187e
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590393"
+ms.locfileid: "97606178"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
 
@@ -99,7 +99,7 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 
 ## <a name="available-regions"></a>Beschikbare regio's
 
-Toewijzing van gegevens stromen is beschikbaar in de volgende regio's in ADF:
+= = = = = = De toewijzing van gegevens stromen zijn beschikbaar in de volgende regio's in ADF:
 
 | Azure-regio | Gegevens stromen in ADF |
 | ------------ | ----------------- |
@@ -110,7 +110,7 @@ Toewijzing van gegevens stromen is beschikbaar in de volgende regio's in ADF:
 | Brazil South  | ✓ |
 | Canada - midden | ✓ |
 | India - centraal | ✓ |
-| US - centraal    | ✓ |
+| Central US    | ✓ |
 | China East |      |
 | China - oost 2  |   |
 | China niet-regionaal | |
@@ -152,10 +152,10 @@ Toewijzing van gegevens stromen is beschikbaar in de volgende regio's in ADF:
 | VS (overheid) - Texas | |
 | VS (overheid) - Virginia |     |
 | VS - west-centraal |     |
-| Europa - west   | ✓ |
+| Europa -west   | ✓ |
 | India - west | |
 | VS - west   | ✓ |
-| US - west 2 | ✓ |
+| West US 2 | ✓ |
 
 ## <a name="next-steps"></a>Volgende stappen
 

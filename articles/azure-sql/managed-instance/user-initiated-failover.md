@@ -9,15 +9,15 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
-ms.date: 08/31/2020
-ms.openlocfilehash: 51e9e66e2fd8ff60dd20c275a66fd13c047cc629
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.date: 12/16/2020
+ms.openlocfilehash: 7f30ff70e0219a803051b0f8e1208740c359863a
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985515"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605391"
 ---
-# <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>Door de gebruiker geïnitieerde hand matige failover op een SQL-beheerd exemplaar
+# <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>User-initiated manual failover on SQL Managed Instance (Door gebruiker geïnitieerde handmatige failover op een SQL Managed Instance)
 
 In dit artikel wordt uitgelegd hoe u hand matig een primair knoop punt doorstuurt op de service lagen van SQL Managed instance Algemeen (GP) en Bedrijfskritiek (BC) en hoe u een secundair alleen-lezen replica knooppunt hand matig doorstuurt op de service tier BC.
 
@@ -140,7 +140,7 @@ Het is niet mogelijk om dezelfde uitvoer te zien met de categorie GP als hierbov
 
 > [!IMPORTANT]
 > Functionele beperkingen van door de gebruiker gestarte hand matige failover zijn:
-> - Er kan één (1) failover worden gestart op hetzelfde beheerde exemplaar om de **30 minuten**.
+> - Er kan één (1) failover worden gestart op hetzelfde beheerde exemplaar om de **15 minuten**.
 > - Voor BC-instanties moet er een quorum van replica's bestaan voor het accepteren van de failover-aanvraag.
 > - Voor BC-instanties is het niet mogelijk om op te geven welke secundaire replica moet worden gelezen om de failover te initiëren.
 

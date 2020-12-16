@@ -13,12 +13,12 @@ ms.author: abnarain
 ms.custom: devx-track-csharp
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: b3391727b19e9e8e88646f72667545f1df7fe5a7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0ef6c97f7924c890bb6665100259970372f1cd26
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012864"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606943"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-version-1-pipeline"></a>Aangepaste activiteiten gebruiken in een Azure Data Factory versie 1-pijp lijn
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -98,8 +98,10 @@ De methode heeft vier para meters:
 De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste activiteiten in de toekomst te koppelen. Deze functie is nog niet geïmplementeerd, dus retour neren een lege woorden lijst van de methode.
 
 ### <a name="procedure"></a>Procedure
+
 1. Een **.net Class Library** -project maken.
-   <ol type="a">
+   
+    <ol type="a">
      <li>Start Visual Studio.</li>
      <li>Klik op <b>File</b>, houd de muisaanwijzer op <b>New</b> en klik op <b>Project</b>.</li>
      <li>Vouw <b>Templates</b> uit en selecteer <b>Visual C#</b> . In dit scenario gebruikt u C#, maar u kunt een .NET-taal gebruiken om de aangepaste activiteit te ontwikkelen.</li>
@@ -116,6 +118,7 @@ De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste a
     ```powershell
     Install-Package Microsoft.Azure.Management.DataFactories
     ```
+
 4. Importeer het **Azure Storage** NuGet-pakket in het project.
 
     ```powershell
@@ -149,16 +152,19 @@ De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste a
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
     ```
+
 6. Wijzig de naam van de naam **ruimte** in **MyDotNetActivityNS**.
 
     ```csharp
     namespace MyDotNetActivityNS
     ```
+
 7. Wijzig de naam van de klasse in **MyDotNetActivity** en afleiden van de **IDotNetActivity** -interface, zoals wordt weer gegeven in het volgende code fragment:
 
     ```csharp
     public class MyDotNetActivity : IDotNetActivity
     ```
+
 8. Implementeer (toevoegen) de **Execute** -methode van de **IDotNetActivity** -interface aan de klasse **MyDotNetActivity** en kopieer de volgende voorbeeld code naar de-methode.
 
     In het volgende voor beeld wordt het aantal exemplaren van de zoek term geteld (' micro soft ') in elke blob die aan een gegevens segment is gekoppeld.
@@ -279,6 +285,7 @@ De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste a
         return new Dictionary<string, string>();
     }
     ```
+
 9. Voeg de volgende helper-methoden toe:
 
     ```csharp
@@ -367,25 +374,30 @@ De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste a
     ```
 
     De methode Calculate berekent het aantal exemplaren van het sleutel woord micro soft in de invoer bestanden (blobs in de map). De zoek term (' micro soft ') is vastgelegd in de code.
+
 10. Het project compileren. Klik op **Build** in het menu en klik op **Build Solution**.
 
     > [!IMPORTANT]
     > Stel 4.5.2-versie van .NET Framework in als het doel raamwerk voor uw project: Klik met de rechter muisknop op het project en klik op **Eigenschappen** om het doel raamwerk in te stellen. Data Factory biedt geen ondersteuning voor aangepaste activiteiten die zijn gecompileerd op .NET Framework-versies later dan 4.5.2.
 
 11. Start **Windows Verkenner** en navigeer naar de map **bin\debug** of **bin\release** , afhankelijk van het type Build.
+
 12. Maak een zip-bestand **MyDotNetActivity.zip** dat alle binaire bestanden in de \<project folder\> map \bin\Debug bevat. Neem het bestand **MyDotNetActivity. pdb** op zodat u aanvullende details krijgt, zoals regel nummer in de bron code die het probleem heeft veroorzaakt als er een fout is opgetreden.
 
     > [!IMPORTANT]
     > Alle bestanden in het zip-bestand voor de aangepaste activiteit moeten zich op het **hoogste niveau** bevinden, zonder submappen.
 
     ![Binaire uitvoer bestanden](./media/data-factory-use-custom-activities/Binaries.png)
-14. Maak een BLOB-container met de naam **customactivitycontainer** als deze nog niet bestaat.
-15. Upload MyDotNetActivity.zip als een BLOB naar de customactivitycontainer in een **Algemeen** Azure Blob-opslag (geen warme/cool Blob Storage) die wordt verwezen door AzureStorageLinkedService.
+
+13. Maak een BLOB-container met de naam **customactivitycontainer** als deze nog niet bestaat.
+
+14. Upload MyDotNetActivity.zip als een BLOB naar de customactivitycontainer in een **Algemeen** Azure Blob-opslag (geen warme/cool Blob Storage) die wordt verwezen door AzureStorageLinkedService.
 
 > [!IMPORTANT]
 > Als u dit .NET-activiteiten project toevoegt aan een oplossing in Visual Studio met een Data Factory project en een verwijzing naar een .NET-activiteits project toevoegt vanuit het Data Factory-toepassings project, hoeft u de laatste twee stappen voor het hand matig maken van het zip-bestand niet uit te voeren en het te uploaden naar de Azure Blob-opslag voor algemeen gebruik. Wanneer u Data Factory entiteiten publiceert met Visual Studio, worden deze stappen automatisch uitgevoerd door het publicatie proces. Zie [Data Factory project in Visual Studio](#data-factory-project-in-visual-studio) voor meer informatie.
 
 ## <a name="create-a-pipeline-with-custom-activity"></a>Een pijp lijn met aangepaste activiteit maken
+
 U hebt een aangepaste activiteit gemaakt en het zip-bestand met binaire bestanden geüpload naar een BLOB-container in een Azure Storage account voor **algemeen gebruik** . In deze sectie maakt u een Azure-data factory met een pijp lijn die gebruikmaakt van de aangepaste activiteit.
 
 De invoer gegevensset voor de aangepaste activiteit vertegenwoordigt blobs (bestanden) in de map customactivityinput van de container adftutorial in de Blob-opslag. De uitvoer gegevensset voor de activiteit vertegenwoordigt uitvoer-blobs in de map customactivityoutput van de adftutorial-container in de Blob-opslag.

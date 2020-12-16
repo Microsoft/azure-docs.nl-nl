@@ -3,12 +3,12 @@ title: Gedistribueerde samenwerkings ontwikkeling van Azure DevTest Labs resourc
 description: Voorziet in Aanbevolen procedures voor het instellen van een gedistribueerde en samenwerkings omgeving voor het ontwikkelen van DevTest Labs-resources.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: c18bbbfd3ad727811cc28c424381e5caf32b1cfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ef6d7aa7d3cfd4fcc64eaa45259684dfcb9ccee
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85483802"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592361"
 ---
 # <a name="best-practices-for-distributed-and-collaborative-development-of-azure-devtest-labs-resources"></a>Aanbevolen procedures voor gedistribueerde en samen werkende ontwikkeling van Azure DevTest Labs bronnen
 Dankzij gedistribueerde samenwerkings ontwikkeling kunnen verschillende teams of mensen een code basis ontwikkelen en onderhouden. Om te slagen, is het ontwikkel proces afhankelijk van de mogelijkheid om informatie te maken, te delen en te integreren. Deze methode voor het ontwikkelen van sleutels kan worden gebruikt in Azure DevTest Labs. Er zijn verschillende soorten resources binnen een lab die vaak tussen verschillende Labs binnen een onderneming worden gedistribueerd. De verschillende typen resources zijn gericht op twee gebieden:
@@ -45,7 +45,7 @@ In het volgende diagram ziet u twee opslag plaatsen: een bedrijfs opslagplaats d
 
 ![Een voor beeld van distributie en samen werkende ontwikkel omgeving](./media/best-practices-distributive-collaborative-dev-env/distributive-collaborative-dev-env.png)
    
-Deze gelaagde structuur maakt het mogelijk om te ontwikkelen met een hoger niveau van kwaliteit bij de Master vertakking, terwijl meerdere opslag plaatsen zijn verbonden met een lab, meer flexibiliteit biedt.
+Deze gelaagde structuur maakt het mogelijk om te ontwikkelen met een hoger niveau van kwaliteit bij de hoofd vertakking, terwijl meerdere opslag plaatsen zijn verbonden met een lab, meer flexibiliteit biedt.
 
 ## <a name="next-steps"></a>Volgende stappen    
 Zie de volgende artikelen:

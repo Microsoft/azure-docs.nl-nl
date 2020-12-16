@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: bdd12b5c866ee723547513e35a5adcfabb59dab9
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: c7e859b05450b95cf9c75421599dd9c54a639cdc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364416"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606841"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Ondersteuning van talen en regio's voor tekst-en spraak omzetting
 
@@ -34,88 +34,88 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 
 [Naslag documentatie voor de Vertaal bewerking weer geven](reference/v3-0-translate.md)
 
-|Taal|  Taalcode|
-|:-----|:-----:|
-|Afrikaans| `af`|
-|Arabisch|    `ar`    |
-|Assamees|  `as`    |
-|Bengaals|    `bn`    |
-|Bosnisch (Latijns)|   `bs`    |
-|Bulgaars| `bg`    |
-|Kantonees (traditioneel)|   `yue`|
-|Catalaans|   `ca`    |
-|Chinees (vereenvoudigd)|    `zh-Hans`|
-|Chinees (traditioneel)|   `zh-Hant`       |
-|Kroatisch|  `hr`    |
-|Tsjechisch| `cs`    |
-|Dari|  `prs`   |
-|Deens|    `da`        |
-|Nederlands| `nl`|
-|Engels|   `en`    |
-|Ests|  `et`    |
-|Fijisch|    `fj`    |
-|Filipino|  `fil`   |
-|Fins|   `fi`    |
-|Frans|    `fr`    |
-|Frans (Canada)|   `fr-ca` |
-|Duits|    `de`    |
-|Grieks| `el`    |
-|Gujarati|  `gu`    |
-|Haïtiaans|    `ht`        |
-|Hebreeuws |`he`   |
-|Hindi| `hi`    |
-|Hmong Daw| `mww`   |
-|Hongaars| `hu`    |
-|IJslands| `is`    |
-|Indonesisch|    `id`    |
-|Iers | `ga`|
-|Italiaans|   `it`    |
-|Japans|  `ja`    |
-|Kannada|`kn`|
-|Kazachs|`kk`|
-|Klingon|   `tlh-Latn`  |
-|Klingon (plqaD)|   `tlh-Piqd`  |
-|Koreaans |`ko`   |
-|Koerdisch (centraal)  |`ku`   |
-|Koerdisch (noordelijk) |`kmr`  |
-|Lets|   `lv`    |
-|Litouws|    `lt`    |
-|Malagassisch|  `mg`    |
-|Maleisisch| `ms`        |
-|Malayalam| `ml` |
-|Maltees|   `mt`    |
-|Maori| `mi`  |
-|Mahrati| `mr`  |
-|Noors| `nb`    |
-|Odia|  `or`    |
-|Pashto|    `ps`    |
-|Perzisch|   `fa`    |
-|Pools|    `pl`    |
-|Portugees (Brazilië)|   `pt-br` |
-|Portugees (Portugal)| `pt-pt` |
-|Punjabi|`pa`|
-|Queretaro Otomi|   `otq`   |
-|Roemeens|  `ro`    |
-|Russisch|   `ru`    |
-|Samoaans|    `sm`    |
-|Servisch (Cyrillisch)|    `sr-Cyrl`|
-|Servisch (Latijns)|   `sr-Latn`       |
-|Slowaaks|    `sk`    |
-|Sloveens| `sl`    |
-|Spaans|   `es`    |
-|Swahili|   `sw`    |
-|Zweeds|   `sv`    |
-|Tahitiaans|  `ty`    |
-|Tamil| `ta`    |
-|Telugu|    `te`    |
-|Thai|  `th`    |
-|Tongaans|    `to`    |
-|Turks|   `tr`        |
-|Oekraïens| `uk`    |
-|Urdu|  `ur`    |
-|Vietnamees|    `vi`    |
-|Welsh| `cy`    |
-|Yucateeks Maya|  `yua`   |
+| Taal | Taalcode |
+|:-|:-:|
+| Afrikaans | `af` |
+| Arabisch | `ar` |
+| Assamees | `as` |
+| Bengaals | `bn` |
+| Bosnisch (Latijns) | `bs` |
+| Bulgaars | `bg` |
+| Kantonees (traditioneel) | `yue` |
+| Catalaans | `ca` |
+| Chinees (vereenvoudigd) | `zh-Hans` |
+| Chinees (traditioneel) | `zh-Hant` |
+| Kroatisch | `hr` |
+| Tsjechisch | `cs` |
+| Dari | `prs` |
+| Deens | `da` |
+| Nederlands | `nl` |
+| Engels | `en` |
+| Ests | `et` |
+| Fijisch | `fj` |
+| Filipino | `fil` |
+| Fins | `fi` |
+| Frans | `fr` |
+| Frans (Canada) | `fr-ca` |
+| Duits | `de` |
+| Grieks | `el` |
+| Gujarati | `gu` |
+| Haïtiaans | `ht` |
+| Hebreeuws | `he` |
+| Hindi | `hi` |
+| Hmong Daw | `mww` |
+| Hongaars | `hu` |
+| IJslands | `is` |
+| Indonesisch | `id` |
+| Iers | `ga` |
+| Italiaans | `it` |
+| Japans | `ja` |
+| Kannada | `kn` |
+| Kazachs | `kk` |
+| Klingon | `tlh-Latn` |
+| Klingon (plqaD) | `tlh-Piqd` |
+| Koreaans | `ko` |
+| Koerdisch (centraal) | `ku` |
+| Koerdisch (noordelijk) | `kmr` |
+| Lets | `lv` |
+| Litouws | `lt` |
+| Malagassisch | `mg` |
+| Maleisisch | `ms` |
+| Malayalam | `ml` |
+| Maltees | `mt` |
+| Maori | `mi` |
+| Mahrati | `mr` |
+| Noors | `nb` |
+| Odia | `or` |
+| Pashto | `ps` |
+| Perzisch | `fa` |
+| Pools | `pl` |
+| Portugees (Brazilië) | `pt-br` |
+| Portugees (Portugal) | `pt-pt` |
+| Punjabi | `pa` |
+| Queretaro Otomi | `otq` |
+| Roemeens | `ro` |
+| Russisch | `ru` |
+| Samoaans | `sm` |
+| Servisch (Cyrillisch) | `sr-Cyrl` |
+| Servisch (Latijns) | `sr-Latn` |
+| Slowaaks | `sk` |
+| Sloveens | `sl` |
+| Spaans | `es` |
+| Swahili | `sw` |
+| Zweeds | `sv` |
+| Tahitiaans | `ty` |
+| Tamil | `ta` |
+| Telugu | `te` |
+| Thai | `th` |
+| Tongaans | `to` |
+| Turks | `tr` |
+| Oekraïens | `uk` |
+| Urdu | `ur` |
+| Vietnamees | `vi` |
+| Welsh | `cy` |
+| Yucateeks Maya | `yua` |
 
 > [!NOTE]
 > Taal code `pt` wordt standaard ingesteld op `pt-br` Portugees (Brazilië).
@@ -126,63 +126,63 @@ Translator detecteert de volgende talen voor vertaal-en vele.
 
 [Referentie documentatie voor detectie bewerkingen weer geven](reference/v3-0-detect.md)
 
-|Taal|  Taalcode|
-|:-----|:-----:|
-|Afrikaans| `af`|
-|Arabisch|    `ar`    |
-|Bulgaars| `bg`    |
-|Catalaans|   `ca`    |
-|Chinees (vereenvoudigd)|    `zh-Hans`|
-|Chinees (traditioneel)|   `zh-Hant`       |
-|Kroatisch|  `hr`    |
-|Tsjechisch| `cs`    |
-|Deens|    `da`        |
-|Nederlands| `nl`|
-|Engels|   `en`    |
-|Ests|  `et`    |
-|Fins|   `fi`    |
-|Frans|    `fr`    |
-|Duits|    `de`    |
-|Grieks| `el`    |
-|Gujarati|  `gu`    |
-|Haïtiaans|    `ht`        |
-|Hebreeuws |`he`   |
-|Hindi| `hi`    |
-|Hongaars| `hu`    |
-|IJslands| `is`    |
-|Indonesisch|    `id`    |
-|Iers | `ga`|
-|Italiaans|   `it`    |
-|Japans|  `ja`    |
-|Klingon|   `tlh-Latn`  |
-|Koreaans |`ko`   |
-|Koerdisch (centraal)  |`ku-Arab`  |
-|Lets|   `lv`    |
-|Litouws|    `lt`    |
-|Maleisisch| `ms`        |
-|Maltees|   `mt`    |
-|Noors| `nb`    |
-|Pashto|    `ps`    |
-|Perzisch|   `fa`    |
-|Pools|    `pl`    |
-|Portugees|    `pt`    |
-|Roemeens|  `ro`    |
-|Russisch|   `ru`    |
-|Servisch (Cyrillisch)|    `sr-Cyrl`|
-|Servisch (Latijns)|   `sr-Latn`       |
-|Slowaaks|    `sk`    |
-|Sloveens| `sl`    |
-|Spaans|   `es`    |
-|Swahili|   `sw`    |
-|Zweeds|   `sv`    |
-|Tahitiaans|  `ty`    |
-|Thai|  `th`    |
-|Turks|   `tr`        |
-|Oekraïens| `uk`    |
-|Urdu|  `ur`    |
-|Vietnamees|    `vi`    |
-|Welsh| `cy`    |
-|Yucateeks Maya|  `yua`   |
+| Taal | Taalcode |
+|:-|:-:|
+| Afrikaans | `af` |
+| Arabisch | `ar` |
+| Bulgaars | `bg` |
+| Catalaans | `ca` |
+| Chinees (vereenvoudigd) | `zh-Hans` |
+| Chinees (traditioneel) | `zh-Hant` |
+| Kroatisch | `hr` |
+| Tsjechisch | `cs` |
+| Deens | `da` |
+| Nederlands | `nl` |
+| Engels | `en` |
+| Ests | `et` |
+| Fins | `fi` |
+| Frans | `fr` |
+| Duits | `de` |
+| Grieks | `el` |
+| Gujarati | `gu` |
+| Haïtiaans | `ht` |
+| Hebreeuws | `he` |
+| Hindi | `hi` |
+| Hongaars | `hu` |
+| IJslands | `is` |
+| Indonesisch | `id` |
+| Iers | `ga` |
+| Italiaans | `it` |
+| Japans | `ja` |
+| Klingon | `tlh-Latn` |
+| Koreaans | `ko` |
+| Koerdisch (centraal) | `ku-Arab` |
+| Lets | `lv` |
+| Litouws | `lt` |
+| Maleisisch | `ms` |
+| Maltees | `mt` |
+| Noors | `nb` |
+| Pashto | `ps` |
+| Perzisch | `fa` |
+| Pools | `pl` |
+| Portugees | `pt` |
+| Roemeens | `ro` |
+| Russisch | `ru` |
+| Servisch (Cyrillisch) | `sr-Cyrl` |
+| Servisch (Latijns) | `sr-Latn` |
+| Slowaaks | `sk` |
+| Sloveens | `sl` |
+| Spaans | `es` |
+| Swahili | `sw` |
+| Zweeds | `sv` |
+| Tahitiaans | `ty` |
+| Thai | `th` |
+| Turks | `tr` |
+| Oekraïens | `uk` |
+| Urdu | `ur` |
+| Vietnamees | `vi` |
+| Welsh | `cy` |
+| Yucateeks Maya | `yua` |
 
 ### <a name="transliterate"></a>Transcriberen
 
@@ -319,7 +319,7 @@ De volgende talen zijn beschikbaar voor aanpassing in of vanuit het Engels met [
 | Lets      | `lv`          |
 | Litouws      | `lt`          |
 | Malagassisch| `mg`    |
-| Maleisisch|    `ms`        |
+| Maleisisch|    `ms` |
 |Maltees|   `mt`    |
 | Maori| `mi`  |
 | Mahrati| `mr`  |
@@ -387,47 +387,47 @@ Converteer spraak naar tekst om om te zetten naar de tekst taal van uw keuze. Sp
 ### <a name="text-to-speech"></a>Tekst naar spraak
 Zet tekst om in spraak. Tekst-naar-spraak wordt gebruikt om hoorbare uitvoer van Vertaal resultaten toe te voegen, of voor conversie van spraak naar spraak bij gebruik met spraak-naar-tekst. 
 
-| Taal    |
-|:----------- |
-|Arabisch|
-|Bulgaars|
-|Kantonees (traditioneel)|
-|Catalaans|
-|Chinees (vereenvoudigd)|
-|Chinees (traditioneel)|
-|Kroatisch|
-|Tsjechisch|
-|Deens|
-|Nederlands|
-|Engels|
-|Fins|
-|Frans|
-|Frans (Canada)|
-|Duits|
-|Grieks|
-|Hebreeuws|
-|Hindi|
-|Hongaars|
-|Indonesisch|
-|Italiaans|
-|Japans|
-|Koreaans|
-|Maleisisch|
-|Noors|
-|Pools|
-|Portugees (Brazilië)|
-|Portugees (Portugal)|
-|Roemeens|
-|Russisch|
-|Slowaaks|
-|Sloveens|
-|Spaans|
-|Zweeds|
-|Tamil|
-|Telugu|
-|Thai|
-|Turks|
-|Vietnamees|
+| Taal |
+|:-|
+| Arabisch |
+| Bulgaars |
+| Kantonees (traditioneel) |
+| Catalaans |
+| Chinees (vereenvoudigd) |
+| Chinees (traditioneel) |
+| Kroatisch |
+| Tsjechisch |
+| Deens |
+| Nederlands |
+| Engels |
+| Fins |
+| Frans |
+| Frans (Canada) |
+| Duits |
+| Grieks |
+| Hebreeuws |
+| Hindi |
+| Hongaars |
+| Indonesisch |
+| Italiaans |
+| Japans |
+| Koreaans |
+| Maleisisch |
+| Noors |
+| Pools |
+| Portugees (Brazilië) |
+| Portugees (Portugal) |
+| Roemeens |
+| Russisch |
+| Slowaaks |
+| Sloveens |
+| Spaans |
+| Zweeds |
+| Tamil |
+| Telugu |
+| Thai |
+| Turks |
+| Vietnamees |
 
 ## <a name="view-the-language-list-on-the-microsoft-translator-website"></a>De taal lijst op de micro soft Translator-website weer geven
 

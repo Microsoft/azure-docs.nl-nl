@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 12c9777449d3f360b8f08d99aca7b916856139d4
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 0c8e13449a66c5eba055c64e072db3140b0cdc1c
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400179"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606875"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -36,94 +36,94 @@ To get pronunciation bits:
 https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronunciation Datasets" -> Click on Import -> Locale: the list of locales there correspond to the supported locales
 -->
 
-| Taal                          | Land instelling (BCP-47) | Aanpassingen                                   |
-|-----------------------------------|--------|--------------------------------------------------|
-|Arabisch (Bahrein), modern, standaard  |`ar-BH` | Taalmodel                                   |
-|Arabisch (Egypte)                     |`ar-EG` | Taalmodel                                   |
-|Arabisch (Irak)                      |`ar-IQ` | Taalmodel                                   |
-|Arabisch (Israël)                              |`ar-IL` | Taalmodel                                                   |
-|Arabisch (Jordanië)                    |`ar-JO` | Taalmodel                                   |
-|Arabisch (Koeweit)                    |`ar-KW` | Taalmodel                                   |
-|Arabisch (Libanon)                   |`ar-LB` | Taalmodel                                   |
-|Arabisch (Oman)                      |`ar-OM` | Taalmodel                                   |
-|Arabisch (Qatar)                     |`ar-QA` | Taalmodel                                   |
-|Arabisch (Saoedi-Arabië)              |`ar-SA` | Taalmodel                                   |
-|Arabisch (status van Palestijnse)            |`ar-PS` | Taalmodel                                   |
-|Arabisch (Syrië)                     |`ar-SY` | Taalmodel                                   |
-|Arabisch (Verenigde Arabische Emiraten)      |`ar-AE` | Taalmodel                                   |
-|Bulgaars (Bulgarije)               |`bg-BG` | Taalmodel                                   |
-|Catalaans (Spanje)                    |`ca-ES` | Taalmodel                                   |
-|Chinees (Kantonees, traditioneel)   |`zh-HK` | Taalmodel                                   |
-|Chinees (Mandarijn, vereenvoudigd)     |`zh-CN` | Akoestisch model<br>Taalmodel                 |
-|Chinees (Taiwan Mandarijn)       |`zh-TW` | Taalmodel                                   |
-|Kroatisch (Kroatië)                 |`hr-HR` | Taalmodel                                   |
-|Tsjechisch (Tsjechische Republiek)             |`cs-CZ` | Taal model                                   |
-|Deens (Denemarken)                   |`da-DK` | Taalmodel                                   |
-|Nederlands (Nederland)                |`nl-NL` | Taalmodel                                   |
-|Engels (Australië)                |`en-AU` | Akoestisch model<br>Taalmodel                 |
-|Engels (Canada)                   |`en-CA` | Akoestisch model<br>Taalmodel                 |
-|Engels (Hongkong)                |`en-HK` | Taal model                                   |
-|Engels (India)                    |`en-IN` | Akoestisch model<br>Taalmodel                 |
-|Engels (Ierland)                  |`en-IE` | Taal model                                   |
-|Engels (Nieuw-Zeeland)              |`en-NZ` | Akoestisch model<br>Taalmodel                 |
-|Engels (Nigeria)                          |`en-NG` | Taal model                                                     |
-|Engels (Filipijnen)              |`en-PH` | Taal model                                   |
-|Engels (Singapore)                |`en-SG` | Taal model                                   |
-|Engels (Zuid-Afrika)             |`en-ZA` | Taal model                                   |
-|Engels (Verenigd Koninkrijk)           |`en-GB` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Engels (Verenigde Staten)            |`en-US` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Estisch (Estland)                  |`et-EE` | Taal model                                   |
-|Fins (Finland)                  |`fi-FI` | Taalmodel                                   |
-|Frans (Canada)                    |`fr-CA` | Akoestisch model<br>Taalmodel                 |
-|Frans (Frankrijk)                    |`fr-FR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Duits (Duitsland)                   |`de-DE` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Grieks (Griekenland)                     |`el-GR` | Taalmodel                                   |
-|Gujarati (Indiase)                  |`gu-IN` | Taalmodel                                   |
-|Hindi (India)                      |`hi-IN` | Akoestisch model<br>Taalmodel                 |
-|Hongaars (Hongarije)                |`hu-HU` | Taal model                                   |
-|Ierse (Ierland)                     |`ga-IE` | Taalmodel                                   |
-|Italiaans (Italië)                    |`it-IT` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Japans (Japan)                   |`ja-JP` | Taalmodel                                   |
-|Koreaans (Korea)                     |`ko-KR` | Taalmodel                                   |
-|Lets (Letland)                   |`lv-LV` | Taalmodel                                   |
-|Litouws (Litouwen)             |`lt-LT` | Taalmodel                                   |
-|Maltees (Malta)                     |`mt-MT` | Taalmodel                                   |
-|Marathi (India)                    |`mr-IN` | Taalmodel                                   |
-|Noors (Bokmål, Noorwegen)         |`nb-NO` | Taalmodel                                   |
-|Pools (Polen)                    |`pl-PL` | Taalmodel                                   |
-|Portugees (Brazilië)                |`pt-BR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-|Portugees (Portugal)              |`pt-PT` | Taalmodel                                   |
-|Roemeens (Roemenië)                 |`ro-RO` | Taalmodel                                   |
-|Russisch (Rusland)                   |`ru-RU` | Akoestisch model<br>Taalmodel                 |
-|Slowaaks (Slowakije)                  |`sk-SK` | Taalmodel                                   |
-|Sloveens (Slovenië)               |`sl-SI` | Taalmodel                                   |
-|Spaans (Argentinië)                |`es-AR` | Taal model                                   |
-|Spaans (Bolivia)                  |`es-BO` | Taal model                                   |
-|Spaans (Chili)                    |`es-CL` | Taal model                                   |
-|Spaans (Colombia)                 |`es-CO` | Taal model                                   |
-|Spaans (Costa Rica)               |`es-CR` | Taal model                                   |
-|Spaans (Cuba)                     |`es-CU` | Taal model                                   |
-|Spaans (Dominicaanse Republiek)       |`es-DO` | Taal model                                   |
-|Spaans (Ecuador)                  |`es-EC` | Taal model                                   |
-|Spaans (El Salvador)              |`es-SV` | Taal model                                   |
-|Spaans (Equatoriaal-Guinea)            |`es-GQ` | Taal model                                   |
-|Spaans (Guatemala)                |`es-GT` | Taal model                                   |
-|Spaans (Honduras)                 |`es-HN` | Taal model                                   |
-|Spaans (Mexico)                   |`es-MX` | Akoestisch model<br>Taalmodel                 |
-|Spaans (Nicaragua)                |`es-NI` | Taal model                                   |
-|Spaans (Panama)                   |`es-PA` | Taal model                                   |
-|Spaans (Paraguay)                 |`es-PY` | Taal model                                   |
-|Spaans (Peru)                     |`es-PE` | Taal model                                   |
-|Spaans (Puerto Rico)              |`es-PR` | Taal model                                   |
-|Spaans (Spanje)                    |`es-ES` | Akoestisch model<br>Taalmodel                 |
-|Spaans (Uruguay)                  |`es-UY` | Taal model                                   |
-|Spaans (Verenigde Staten)                      |`es-US` | Taal model                                   |
-|Spaans (Venezuela)                |`es-VE` | Taal model                                   |
-|Zweeds (Zweden)                   |`sv-SE` | Taalmodel                                   |
-|Tamil (India)                      |`ta-IN` | Taalmodel                                   |
-|Telugu (India)                     |`te-IN` | Taalmodel                                   |
-|Thai (Thailand)                    |`th-TH` | Taalmodel                                   |
-|Turks (Turkije)                   |`tr-TR` | Taalmodel                                   |
+| Taal                           | Land instelling (BCP-47) | Aanpassingen                                   |
+|------------------------------------|--------|--------------------------------------------------|
+| Arabisch (Bahrein), modern, standaard  | `ar-BH` | Taalmodel                                   |
+| Arabisch (Egypte)                     | `ar-EG` | Taalmodel                                   |
+| Arabisch (Irak)                      | `ar-IQ` | Taalmodel                                   |
+| Arabisch (Israël)                    | `ar-IL` | Taalmodel                                   |
+| Arabisch (Jordanië)                    | `ar-JO` | Taalmodel                                   |
+| Arabisch (Koeweit)                    | `ar-KW` | Taalmodel                                   |
+| Arabisch (Libanon)                   | `ar-LB` | Taalmodel                                   |
+| Arabisch (Oman)                      | `ar-OM` | Taalmodel                                   |
+| Arabisch (Qatar)                     | `ar-QA` | Taalmodel                                   |
+| Arabisch (Saoedi-Arabië)              | `ar-SA` | Taalmodel                                   |
+| Arabisch (status van Palestijnse)        | `ar-PS` | Taalmodel                                   |
+| Arabisch (Syrië)                     | `ar-SY` | Taalmodel                                   |
+| Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Taalmodel                                   |
+| Bulgaars (Bulgarije)               | `bg-BG` | Taalmodel                                   |
+| Catalaans (Spanje)                    | `ca-ES` | Taalmodel                                   |
+| Chinees (Kantonees, traditioneel)   | `zh-HK` | Taalmodel                                   |
+| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Akoestisch model<br>Taalmodel                 |
+| Chinees (Taiwan Mandarijn)       | `zh-TW` | Taalmodel                                   |
+| Kroatisch (Kroatië)                 | `hr-HR` | Taalmodel                                   |
+| Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Taal model                                   |
+| Deens (Denemarken)                   | `da-DK` | Taalmodel                                   |
+| Nederlands (Nederland)                | `nl-NL` | Taalmodel                                   |
+| Engels (Australië)                | `en-AU` | Akoestisch model<br>Taalmodel                 |
+| Engels (Canada)                   | `en-CA` | Akoestisch model<br>Taalmodel                 |
+| Engels (Hongkong)                | `en-HK` | Taal model                                   |
+| Engels (India)                    | `en-IN` | Akoestisch model<br>Taalmodel                 |
+| Engels (Ierland)                  | `en-IE` | Taal model                                   |
+| Engels (Nieuw-Zeeland)              | `en-NZ` | Akoestisch model<br>Taalmodel                 |
+| Engels (Nigeria)                  | `en-NG` | Taal model                                   |
+| Engels (Filipijnen)              | `en-PH` | Taal model                                   |
+| Engels (Singapore)                | `en-SG` | Taal model                                   |
+| Engels (Zuid-Afrika)             | `en-ZA` | Taal model                                   |
+| Engels (Verenigd Koninkrijk)           | `en-GB` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Engels (Verenigde Staten)            | `en-US` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Estisch (Estland)                  | `et-EE` | Taal model                                   |
+| Fins (Finland)                  | `fi-FI` | Taalmodel                                   |
+| Frans (Canada)                    | `fr-CA` | Akoestisch model<br>Taalmodel                 |
+| Frans (Frankrijk)                    | `fr-FR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Duits (Duitsland)                   | `de-DE` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Grieks (Griekenland)                     | `el-GR` | Taalmodel                                   |
+| Gujarati (Indiase)                  | `gu-IN` | Taalmodel                                   |
+| Hindi (India)                      | `hi-IN` | Akoestisch model<br>Taalmodel                 |
+| Hongaars (Hongarije)                | `hu-HU` | Taal model                                   |
+| Ierse (Ierland)                     | `ga-IE` | Taalmodel                                   |
+| Italiaans (Italië)                    | `it-IT` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Japans (Japan)                   | `ja-JP` | Taalmodel                                   |
+| Koreaans (Korea)                     | `ko-KR` | Taalmodel                                   |
+| Lets (Letland)                   | `lv-LV` | Taalmodel                                   |
+| Litouws (Litouwen)             | `lt-LT` | Taalmodel                                   |
+| Maltees (Malta)                     | `mt-MT` | Taalmodel                                   |
+| Marathi (India)                    | `mr-IN` | Taalmodel                                   |
+| Noors (Bokmål, Noorwegen)         | `nb-NO` | Taalmodel                                   |
+| Pools (Polen)                    | `pl-PL` | Taalmodel                                   |
+| Portugees (Brazilië)                | `pt-BR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
+| Portugees (Portugal)              | `pt-PT` | Taalmodel                                   |
+| Roemeens (Roemenië)                 | `ro-RO` | Taalmodel                                   |
+| Russisch (Rusland)                   | `ru-RU` | Akoestisch model<br>Taalmodel                 |
+| Slowaaks (Slowakije)                  | `sk-SK` | Taalmodel                                   |
+| Sloveens (Slovenië)               | `sl-SI` | Taalmodel                                   |
+| Spaans (Argentinië)                | `es-AR` | Taal model                                   |
+| Spaans (Bolivia)                  | `es-BO` | Taal model                                   |
+| Spaans (Chili)                    | `es-CL` | Taal model                                   |
+| Spaans (Colombia)                 | `es-CO` | Taal model                                   |
+| Spaans (Costa Rica)               | `es-CR` | Taal model                                   |
+| Spaans (Cuba)                     | `es-CU` | Taal model                                   |
+| Spaans (Dominicaanse Republiek)       | `es-DO` | Taal model                                   |
+| Spaans (Ecuador)                  | `es-EC` | Taal model                                   |
+| Spaans (El Salvador)              | `es-SV` | Taal model                                   |
+| Spaans (Equatoriaal-Guinea)        | `es-GQ` | Taal model                                   |
+| Spaans (Guatemala)                | `es-GT` | Taal model                                   |
+| Spaans (Honduras)                 | `es-HN` | Taal model                                   |
+| Spaans (Mexico)                   | `es-MX` | Akoestisch model<br>Taalmodel                 |
+| Spaans (Nicaragua)                | `es-NI` | Taal model                                   |
+| Spaans (Panama)                   | `es-PA` | Taal model                                   |
+| Spaans (Paraguay)                 | `es-PY` | Taal model                                   |
+| Spaans (Peru)                     | `es-PE` | Taal model                                   |
+| Spaans (Puerto Rico)              | `es-PR` | Taal model                                   |
+| Spaans (Spanje)                    | `es-ES` | Akoestisch model<br>Taalmodel                 |
+| Spaans (Uruguay)                  | `es-UY` | Taal model                                   |
+| Spaans (Verenigde Staten)                      | `es-US` | Taal model                                   |
+| Spaans (Venezuela)                | `es-VE` | Taal model                                   |
+| Zweeds (Zweden)                   | `sv-SE` | Taalmodel                                   |
+| Tamil (India)                      | `ta-IN` | Taalmodel                                   |
+| Telugu (India)                     | `te-IN` | Taalmodel                                   |
+| Thai (Thailand)                    | `th-TH` | Taalmodel                                   |
+| Turks (Turkije)                   | `tr-TR` | Taalmodel                                   |
 
 ## <a name="text-to-speech"></a>Tekst naar spraak
 

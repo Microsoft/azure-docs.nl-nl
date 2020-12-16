@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: cc17dcef7a554bee2715c79ba7d0c2356db2c6b3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 55ad9c90129a5d732f377ac1b6c905c14de319dc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185654"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607420"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -144,11 +144,17 @@ Wanneer de [client verbinding](#client_connection_drop)wordt verbroken, maakt de
 
 ## <a name="429-too-many-requests-returned-for-client-requests"></a>429 (te veel aanvragen) geretourneerd voor client aanvragen
 
-429 retourneert het aantal **gelijktijdige** verbindingen dat de limiet overschrijdt.
+Er zijn twee mogelijke situaties.
+
+### <a name="concurrent-connection-count-exceeds-limit"></a>Aantal **gelijktijdige** verbindingen overschrijdt de limiet.
 
 Voor **gratis** instanties is de limiet voor het aantal **gelijktijdige** verbindingen voor **standaard** instanties 20. de limiet voor het aantal **gelijktijdige** verbindingen **per eenheid** is 1 K, wat betekent dat Unit100 100-K gelijktijdige verbindingen toestaat.
 
 De verbindingen zijn zowel client-als server verbindingen. [hier](./signalr-concept-messages-and-connections.md#how-connections-are-counted) kunt u controleren hoe de verbindingen worden geteld.
+
+### <a name="too-many-negotiate-requests-at-the-same-time"></a>Er zijn te veel onderhandelen over aanvragen op hetzelfde moment.
+
+Er wordt een wille keurige vertraging weer gegeven voordat u opnieuw verbinding kunt maken. Controleer [hier](#restart_connection) de voor beelden voor nieuwe pogingen.
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500-fout tijdens de onderhandeling: de Azure signalerings service is nog niet verbonden. Probeer het later opnieuw.
 

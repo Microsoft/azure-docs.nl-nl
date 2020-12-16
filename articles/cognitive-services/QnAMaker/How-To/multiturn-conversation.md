@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: b04a5535ada9532d62d395f7070d9bcd8aa4380c
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: cef2e2ca9c7ad4640014d9b5a9a7da42d308ef7c
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591775"
+ms.locfileid: "97605141"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Opvolgprompts gebruiken om meerdere beurten in een gesprek te maken
 
@@ -38,7 +38,6 @@ Met multi-bocht beheert een chat-bot een conversatie met een gebruiker om het la
 Een gebruiker heeft in de voor gaande afbeelding een gesprek gestart door **Mijn account** in te voeren. De Knowledge Base heeft drie gekoppelde vraag-en antwoord paren. Om het antwoord te verfijnen, selecteert de gebruiker een van de drie opties in de Knowledge Base. De vraag (#1) heeft drie opvolgings prompts die in de chat-bot worden weer gegeven als drie opties (#2).
 
 Wanneer de gebruiker een optie (#3) selecteert, wordt de volgende lijst met verfijnings opties (#4) weer gegeven. Deze reeks blijft (#5) totdat de gebruiker het juiste, laatste antwoord (#6) bepaalt.
-
 
 ### <a name="use-multi-turn-in-a-bot"></a>Meerdere zetten gebruiken in een bot
 
@@ -79,7 +78,6 @@ Wanneer u een hiërarchisch document toevoegt, bepaalt QnA Maker opvolgings aanw
 > [!Caution]
 > Ondersteuning voor het gebruik van een geëxporteerd TSV-of XLS-Knowledge Base-bestand als gegevens bron voor een nieuwe of lege kennis database wordt niet ondersteund. U moet dit bestands type **importeren** op de pagina **instellingen** van de QnA Maker-Portal om de prompts voor het exporteren van meerdere zetten toe te voegen aan een kennis database.
 
-
 ## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Maak een kennis database met de prompts in meerdere richtingen met de API maken
 
 U kunt met behulp van de [QnA Maker Create API](/rest/api/cognitiveservices/qnamaker/knowledgebase/create)een kennis Case maken met vragen over meerdere schakelingen. De prompts worden toegevoegd in de `context` matrix van de eigenschap `prompts` .
@@ -116,7 +114,6 @@ Voeg een opvolgings prompt toe aan een bestaand vraag-en antwoord paar dat momen
     |Alleen context| Schakel dit selectievakje in. Er wordt alleen een antwoord geretourneerd als de vraag context aangeeft.|
     |Aan antwoord koppelen|Voer **het aanmeldings scherm gebruiken** in om het bestaande vraag-en antwoord paar te vinden.|
 
-
 1.  Er wordt één overeenkomst geretourneerd. Selecteer dit antwoord als opvolging en selecteer vervolgens **Opslaan**.
 
     ![De pagina opvolgings prompt (PREVIEW-versie)](../media/conversational-context/search-follow-up-prompt-for-existing-answer.png)
@@ -137,7 +134,6 @@ Wanneer er een opvolgings prompt wordt gemaakt en een bestaand vraag-en-antwoord
 1. Wanneer u klaar bent met het bewerken van de weergave tekst, selecteert u **Opslaan**.
 1. In de bovenste navigatie balk kunt u **opslaan en trainen**.
 
-
 ## <a name="add-a-new-question-and-answer-pair-as-a-follow-up-prompt"></a>Een nieuw vraag-en-antwoord paar toevoegen als vervolg prompt
 
 Wanneer u een nieuw vraag-en-antwoord paar toevoegt aan de Knowledge Base, moet elk paar worden gekoppeld aan een bestaande vraag als vervolg prompt.
@@ -155,7 +151,6 @@ Wanneer u een nieuw vraag-en-antwoord paar toevoegt aan de Knowledge Base, moet 
     |||
 
     ![Een nieuwe vraag en antwoord op vragen stellen](../media/conversational-context/create-child-prompt-from-parent.png)
-
 
 1. Selecteer **nieuwe maken** en selecteer vervolgens **Opslaan**.
 
@@ -353,7 +348,6 @@ Het _GenerateAnswer_ JSON-antwoord QnA Maker bevat de vervolg prompts in de `con
 ## <a name="query-the-knowledge-base-with-the-qna-maker-id"></a>De Knowledge Base doorzoeken met de QnA Maker-ID
 
 Als u een aangepaste toepassing bouwt met behulp van de functie voor meerdere zetten. In het antwoord van de eerste vraag worden eventuele vervolg vragen en de bijbehorende koppeling `qnaId` geretourneerd. Nu u de ID hebt, kunt u deze door geven in de aanvraag tekst van de opvolgings prompt. Als de aanvraag tekst de bevat `qnaId` en het context object (dat de vorige QnA Maker eigenschappen bevat), retourneert GenerateAnswer de exacte vraag op id, in plaats van het classificatie algoritme te gebruiken om het antwoord te vinden op basis van de vraag tekst.
-
 
 ## <a name="display-order-is-supported-in-the-update-api"></a>Weergave volgorde wordt ondersteund in de API update
 

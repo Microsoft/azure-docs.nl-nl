@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 05/15/2018
 ms.author: swmachan
-ms.openlocfilehash: fd0dbe5912b7c4df3c666c648dbf9a92d5398cf1
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 25dda63c6450040e396de9ee0d3fb0a459416343
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369508"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606824"
 ---
 # <a name="translator-v20"></a>Translator v 2.0
 
@@ -49,11 +49,11 @@ Normaal gesp roken behoudt de Translator-service dat aanwezig is in de bron. De 
 Als u wilt voor komen dat de vertaling ongebruik maakt, zelfs als deze zich in de bron tekst bevindt, kunt u de filter optie voor scheld woorden gebruiken voor de methoden die deze ondersteunen. Met deze optie kunt u kiezen of u wilt zien of de woordenset is verwijderd of gemarkeerd met de juiste Tags, of dat u de scheld woorden in het doel wilt toestaan. De geaccepteerde waarden van `ProfanityAction` zijn `NoAction` (standaard), `Marked` en `Deleted` .
 
 
-|ProfanityAction    |Actie |Voorbeeld bron (Japans)  |Voor beeld van vertaling (Engels)  |
+|ProfanityAction    |Bewerking |Voorbeeld bron (Japans)  |Voor beeld van vertaling (Engels)  |
 |:--|:--|:--|:--|
-|Geen actie   |Standaard. Hetzelfde als de optie niet instellen. Scheld is van bron naar doel.        |彼はジャッカスです Marketplace.     |Hij is een Jackass.   |
-|Duidelijke     |Ongepaste woorden worden omgeven door XML-tags \<profanity> en \</profanity> .       |彼はジャッカスです Marketplace. |Hij is een \<profanity> Jackass \</profanity> .  |
-|Verwijderd    |Ongepaste woorden worden verwijderd uit de uitvoer zonder vervanging.     |彼はジャッカスです Marketplace. |Hij is een.   |
+|Geen actie   |Standaard. Hetzelfde als de optie niet instellen. Scheld is van bron naar doel. |彼はジャッカスです Marketplace. |Hij is een Jackass.  |
+|Duidelijke |Ongepaste woorden worden omgeven door XML-tags \<profanity> en \</profanity> . |彼はジャッカスです Marketplace.   |Hij is een \<profanity> Jackass \</profanity> .  |
+|Verwijderd    |Ongepaste woorden worden verwijderd uit de uitvoer zonder vervanging. |彼はジャッカスです Marketplace. |Hij is een.   |
 
     
 ## <a name="excluding-content-from-translation"></a>Inhoud uitsluiten van vertaling
@@ -88,7 +88,7 @@ Type antwoord inhoud: Application/XML
 |AppID  |gelaten    |Vereist. Als de `Authorization` of `Ocp-Apim-Subscription-Key` -header wordt gebruikt, laat u het `appid` veld leeg. Als dat niet het geval is, voegt u een teken reeks met `"Bearer" + " " + "access_token"` .|query|tekenreeks|
 |tekst|gelaten   |Vereist. Een teken reeks die de tekst vertegenwoordigt die moet worden vertaald. De tekst mag niet meer dan 10.000 tekens bevatten.|query|tekenreeks|
 |from|gelaten   |Optioneel. Een teken reeks die de taal code vertegenwoordigt van de tekst die wordt vertaald. Bijvoorbeeld, en voor Engels.|query|tekenreeks|
-|in op|gelaten |Vereist. Een teken reeks die de code van de taal voor de omzetting van de tekst in aangeeft.|query|tekenreeks|
+|tot|gelaten |Vereist. Een teken reeks die de code van de taal voor de omzetting van de tekst in aangeeft.|query|tekenreeks|
 |Invoer|gelaten    |Optioneel. De indeling van de tekst die wordt vertaald. Ondersteunde indelingen zijn `text/plain` (standaard) en  `text/html` . HTML-elementen moeten goed opgemaakte, volledige elementen zijn.|query|tekenreeks|
 |category|gelaten   |Optioneel. Een teken reeks die de categorie (het domein) van de vertaling bevat. De standaardwaarde is `general`.|query|tekenreeks|
 |Autorisatie|gelaten  |Vereist als zowel het `appid` veld als de `Ocp-Apim-Subscription-Key` kop leeg blijven. Autorisatie token:  `"Bearer" + " " + "access_token"` .|koptekst|tekenreeks|
@@ -460,7 +460,7 @@ Type antwoord inhoud: toepassing: XML
 |originalText|gelaten|Vereist. Een teken reeks die de tekst bevat die moet worden vertaald. De maximale lengte van de teken reeks is 1.000 tekens.|query|tekenreeks|
 |translatedText|gelaten |Vereist. Een teken reeks met tekst die in de doel taal is vertaald. De maximale lengte van de teken reeks is 2.000 tekens.|query|tekenreeks|
 |from|gelaten   |Vereist. Een teken reeks die de taal code van de oorspronkelijke taal van de tekst aangeeft. Bijvoorbeeld, en voor Engels en de Duitse versie.|query|tekenreeks|
-|in op|gelaten|Vereist. Een teken reeks die de taal code vertegenwoordigt van de taal waarin de tekst moet worden vertaald.|query|tekenreeks|
+|tot|gelaten|Vereist. Een teken reeks die de taal code vertegenwoordigt van de taal waarin de tekst moet worden vertaald.|query|tekenreeks|
 |rating|gelaten |Optioneel. Een geheel getal dat de kwaliteits classificatie voor de teken reeks vertegenwoordigt. De waarde ligt tussen-10 en 10. De standaardwaarde is 1.|query|geheel getal|
 |Invoer|gelaten    |Optioneel. De indeling van de tekst die wordt vertaald. De ondersteunde indelingen zijn `text/plain` en `text/html` . HTML-elementen moeten goed opgemaakte, volledige elementen zijn.    |query|tekenreeks|
 |category|gelaten|Optioneel. Een teken reeks die de categorie (het domein) van de vertaling bevat. De standaardwaarde is `general`.|query|tekenreeks|
@@ -607,11 +607,11 @@ Het `TranslateOptions` object bevat de waarden in de volgende lijst. Ze zijn all
 
 * `Category`: Een teken reeks die de categorie (het domein) van de vertaling bevat. De standaardwaarde is `general`.
 * `ContentType`: De enige optie die wordt ondersteund en de standaard waarde is `text/plain` .
-* `IncludeMultipleMTAlternatives`: Een Booleaanse vlag die aangeeft of er meer dan één alternatief moet worden geretourneerd door de MT-engine. Geldige waarden zijn `true` en `false` (hoofdletter gevoelig). De standaard waarde is `false` , waarmee slechts één alternatief wordt geretourneerd. Door de vlag in te stellen `true` , kunt u kunst matige alternatieven maken, volledig geïntegreerd met het samen werkende Vertaal raamwerk (Collaborative). De functie maakt het mogelijk om alternatieven te retour neren voor zinnen die geen vertalingen hebben in COLLABORATIVE door kunst matige alternatieven toe te voegen uit de *n* -beste lijst van de decoder.
+* `IncludeMultipleMTAlternatives`: Een Booleaanse vlag die aangeeft of er meer dan één alternatief moet worden geretourneerd door de MT-engine. Geldige waarden zijn `true` en `false` (hoofdletter gevoelig). De standaard waarde is `false` , waarmee slechts één alternatief wordt geretourneerd. Door de vlag in te stellen `true` , kunt u kunst matige alternatieven maken, volledig geïntegreerd met het samen werkende Vertaal raamwerk (Collaborative). De functie maakt het mogelijk om alternatieven te retour neren voor zinnen die geen vertalingen hebben in COLLABORATIVE door kunst matige alternatieven toe te voegen uit de *n*-beste lijst van de decoder.
     - Inhoudrestricties. De classificaties worden als volgt toegepast: 
          - De beste automatische vertaling heeft de classificatie 5.
        - De alternatieven van COLLABORATIVE weer spie gelen de instantie van de revisor. Ze variëren van-10 tot + 10.
-       - De automatisch gegenereerde Vertaal alternatieven ( *n* -best) hebben een classificatie van 0 en een overeenkomst met een afwijkings graad van 100.
+       - De automatisch gegenereerde Vertaal alternatieven (*n*-best) hebben een classificatie van 0 en een overeenkomst met een afwijkings graad van 100.
     - Aantal alternatieven. Het aantal geretourneerde alternatieven kan net zo hoog zijn als de waarde die is opgegeven in `maxTranslations` , maar kan lager zijn.
     - Taal paren. Deze functionaliteit is niet beschikbaar voor vertalingen tussen vereenvoudigd Chinees en traditioneel Chinees, in beide richtingen. Het is beschikbaar voor alle andere taal paren die door micro soft Translator worden ondersteund.
 * `State`: De gebruikers status die helpt bij het correleren van de aanvraag en het antwoord. Dezelfde inhoud wordt in het antwoord geretourneerd.
@@ -668,7 +668,7 @@ Type antwoord inhoud: Application/XML
 |AppID|gelaten|Vereist. Als de `Authorization` of `Ocp-Apim-Subscription-Key` -header wordt gebruikt, laat u het `appid` veld leeg. Als dat niet het geval is, voegt u een teken reeks met `"Bearer" + " " + "access_token"` .|query|tekenreeks|
 |tekst|gelaten|Vereist. Een teken reeks die de tekst vertegenwoordigt die moet worden vertaald. De maximum grootte van de tekst is 10.000 tekens.|query|tekenreeks|
 |from|gelaten|Vereist. Een teken reeks die de taal code vertegenwoordigt van de tekst die wordt vertaald.|query|tekenreeks|
-|in op |gelaten    |Vereist. Een teken reeks die de taal code vertegenwoordigt van de taal waarin de tekst moet worden vertaald.|query|tekenreeks|
+|tot |gelaten    |Vereist. Een teken reeks die de taal code vertegenwoordigt van de taal waarin de tekst moet worden vertaald.|query|tekenreeks|
 |maxTranslations|gelaten|Vereist. Een geheel getal dat het maximum aantal vertalingen vertegenwoordigt dat moet worden geretourneerd.|query|geheel getal|
 |Autorisatie| gelaten|Vereist als zowel het `appid` veld als de `Ocp-Apim-Subscription-Key` kop leeg blijven. Autorisatie token:  `"Bearer" + " " + "access_token"` .|tekenreeks|  koptekst|
 |Ocp-Apim-Subscription-Key|gelaten  |Vereist als zowel het `appid` veld als de `Authorization` kop leeg blijven.|koptekst|tekenreeks|
@@ -719,11 +719,11 @@ Dit is de indeling van de hoofd tekst van de aanvraag:
 * `Options`Beschrijving. Een `Options` object dat de volgende waarden bevat. Ze zijn allemaal optioneel en standaard ingesteld op de meest voorkomende instellingen. Opgegeven elementen moeten in alfabetische volg orde worden weer gegeven.
     - `Category`: Een teken reeks die de categorie (het domein) van de vertaling bevat. De standaardwaarde is `general`.
     - `ContentType`: De enige optie die wordt ondersteund en de standaard waarde is `text/plain` .
-    - `IncludeMultipleMTAlternatives`: Een Booleaanse vlag die aangeeft of er meer dan één alternatief moet worden geretourneerd door de MT-engine. Geldige waarden zijn `true` en `false` (hoofdletter gevoelig). De standaard waarde is `false` , waarmee slechts één alternatief wordt geretourneerd. Het instellen van de vlag voor het `true` genereren van kunst matige alternatieven in de vertaling is volledig geïntegreerd met het Framework voor samen werking van het samenwerkings verband (Collaborative). De functie maakt het mogelijk om alternatieven te retour neren voor zinnen die geen alternatieven hebben in COLLABORATIVE door kunst matige alternatieven toe te voegen uit de *n* -beste lijst van de decoder.
+    - `IncludeMultipleMTAlternatives`: Een Booleaanse vlag die aangeeft of er meer dan één alternatief moet worden geretourneerd door de MT-engine. Geldige waarden zijn `true` en `false` (hoofdletter gevoelig). De standaard waarde is `false` , waarmee slechts één alternatief wordt geretourneerd. Het instellen van de vlag voor het `true` genereren van kunst matige alternatieven in de vertaling is volledig geïntegreerd met het Framework voor samen werking van het samenwerkings verband (Collaborative). De functie maakt het mogelijk om alternatieven te retour neren voor zinnen die geen alternatieven hebben in COLLABORATIVE door kunst matige alternatieven toe te voegen uit de *n*-beste lijst van de decoder.
         - Beoordelingen de classificaties worden als volgt toegepast:
           - De beste automatische vertaling heeft de classificatie 5.
           - De alternatieven van COLLABORATIVE weer spie gelen de instantie van de revisor. Ze variëren van-10 tot + 10.
-          - De automatisch gegenereerde Vertaal alternatieven ( *n* -best) hebben een classificatie van 0 en een overeenkomst met een afwijkings graad van 100.
+          - De automatisch gegenereerde Vertaal alternatieven (*n*-best) hebben een classificatie van 0 en een overeenkomst met een afwijkings graad van 100.
         - Aantal alternatieven. Het aantal geretourneerde alternatieven kan net zo hoog zijn als de waarde die is opgegeven in `maxTranslations` , maar kan lager zijn.
         - Taal paren. Deze functionaliteit is niet beschikbaar voor vertalingen tussen vereenvoudigd Chinees en traditioneel Chinees, in beide richtingen. Het is beschikbaar voor alle andere taal paren die door micro soft Translator worden ondersteund.
 * `State`: De gebruikers status die helpt bij het correleren van de aanvraag en het antwoord. Dezelfde inhoud wordt in het antwoord geretourneerd.

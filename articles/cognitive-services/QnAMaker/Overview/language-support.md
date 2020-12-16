@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/09/2019
-ms.openlocfilehash: 5035a81838ace0678f0cbb68ad2b9325de498003
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 1edd5ffc2578a27a53c7e9a46a4a5f1cf61331ff
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353116"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605056"
 ---
 # <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Taal ondersteuning voor een QnA Maker resource en kennis bases
 
@@ -83,61 +83,61 @@ Als u een Knowledge Base-systeem moet ondersteunen dat verschillende talen bevat
 
 De volgende lijst bevat de talen die worden ondersteund voor een QnA Maker bron. 
 
-|Taal|
+| Taal |
 |--|
-|Arabisch|
-|Armeens|
-|Bengaals|
-|Baskisch|
-|Bulgaars|
-|Catalaans|
-|Chinese_Simplified|
-|Chinese_Traditional|
-|Kroatisch|
-|Tsjechisch|
-|Deens|
-|Nederlands|
-|Engels|
-|Ests|
-|Fins|
-|Frans|
-|Galicisch|
-|Duits|
-|Grieks|
-|Gujarati|
-|Hebreeuws|
-|Hindi|
-|Hongaars|
-|IJslands|
-|Indonesisch|
-|Iers|
-|Italiaans|
-|Japans|
-|Kannada|
-|Koreaans|
-|Lets|
-|Litouws|
-|Malayalam|
-|Maleisisch|
-|Noors|
-|Pools|
-|Portugees|
-|Punjabi|
-|Roemeens|
-|Russisch|
-|Serbian_Cyrillic|
-|Serbian_Latin|
-|Slowaaks|
-|Sloveens|
-|Spaans|
-|Zweeds|
-|Tamil|
-|Telugu|
-|Thai|
-|Turks|
-|Oekraïens|
-|Urdu|
-|Vietnamees|
+| Arabisch |
+| Armeens |
+| Bengaals |
+| Baskisch |
+| Bulgaars |
+| Catalaans |
+| Chinese_Simplified |
+| Chinese_Traditional |
+| Kroatisch |
+| Tsjechisch |
+| Deens |
+| Nederlands |
+| Engels |
+| Ests |
+| Fins |
+| Frans |
+| Galicisch |
+| Duits |
+| Grieks |
+| Gujarati |
+| Hebreeuws |
+| Hindi |
+| Hongaars |
+| IJslands |
+| Indonesisch |
+| Iers |
+| Italiaans |
+| Japans |
+| Kannada |
+| Koreaans |
+| Lets |
+| Litouws |
+| Malayalam |
+| Maleisisch |
+| Noors |
+| Pools |
+| Portugees |
+| Punjabi |
+| Roemeens |
+| Russisch |
+| Serbian_Cyrillic |
+| Serbian_Latin |
+| Slowaaks |
+| Sloveens |
+| Spaans |
+| Zweeds |
+| Tamil |
+| Telugu |
+| Thai |
+| Turks |
+| Oekraïens |
+| Urdu |
+| Vietnamees |
 
 ## <a name="query-matching-and-relevance"></a>Overeenkomende treffers en relevantie van query's
 QnA Maker is afhankelijk van de [taal analyse functies van Azure Cognitive Search](/rest/api/searchservice/language-support) voor het leveren van resultaten.

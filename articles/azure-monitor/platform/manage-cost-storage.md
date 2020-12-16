@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: b84d24174771e8395677874c9dac863fa6f27a54
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a6b92d1b7f36b73d91b8e0e8e519981b936d8735
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185909"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592429"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -150,11 +150,11 @@ De retentie kan ook [via Azure Resource Manager worden ingesteld](../samples/res
 
 Werk ruimten met een Bewaar periode van 30 dagen kunnen de gegevens gedurende 31 dagen werkelijk bewaren. Als het van cruciaal belang is dat gegevens slechts gedurende 30 dagen worden bewaard, gebruikt u de Azure Resource Manager om de Bewaar periode in te stellen op 30 dagen en met de `immediatePurgeDataOn30Days` para meter.  
 
-Twee gegevens typen- `Usage` en `AzureActivity` --worden standaard gedurende een minimum van 90 dagen bewaard en er worden geen kosten in rekening gebracht voor deze Bewaar periode van 90 dagen. Als de retentie van de werk ruimte groter is dan 90 dagen, wordt de Bewaar periode van deze gegevens typen ook verhoogd.  Deze gegevens typen zijn ook gratis van de kosten voor gegevens opname. 
+Twee gegevens typen- `Usage` en `AzureActivity` --worden standaard gedurende 90 dagen bewaard en er worden geen kosten in rekening gebracht voor deze Bewaar periode van 90 dagen. Als de retentie van de werk ruimte groter is dan 90 dagen, wordt de Bewaar periode van deze gegevens typen ook verhoogd.  Deze gegevens typen zijn ook gratis van de kosten voor gegevens opname. 
 
 Gegevens typen van Application Insights resources (,,,,,,,, en) op basis van een werk ruimte `AppAvailabilityResults` `AppBrowserTimings` `AppDependencies` `AppExceptions` `AppEvents` `AppMetrics` `AppPageViews` `AppPerformanceCounters` `AppRequests` `AppSystemEvents` `AppTraces` worden ook standaard 90 dagen bewaard en er worden geen kosten in rekening gebracht voor de Bewaar periode van 90 dagen. De retentie kan worden aangepast met de functionaliteit voor het bewaren van gegevens typen. 
 
-Houd er rekening mee dat de API voor Log Analytics [leegmaken](/rest/api/loganalytics/workspacepurge/purge) geen invloed heeft op de facturering van retentie en is bedoeld om te worden gebruikt voor zeer beperkte gevallen. Om uw retentie factuur te verminderen, moet de Bewaar periode voor de werk ruimte of voor specifieke gegevens typen worden verminderd. 
+Opmerking: De [API voor opschonen](/rest/api/loganalytics/workspacepurge/purge) van Log Analytics heeft geen invloed op de facturering van retentie en is bedoeld om voor een zeer beperkt aantal gevallen te worden gebruikt. Om uw retentie factuur te verminderen, moet de Bewaar periode voor de werk ruimte of voor specifieke gegevens typen worden verminderd. 
 
 ### <a name="retention-by-data-type"></a>Bewaren op gegevens type
 

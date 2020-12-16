@@ -4,16 +4,16 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager sjablonen (ARM
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 4cda8307d417880469e6043b84c3ac55ed30071c
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: f8c669393d38d7af2af4f63f251740d8ad72edf7
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905839"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607300"
 ---
 # <a name="deploy-arm-templates-by-using-github-actions"></a>ARM-sjablonen implementeren met behulp van GitHub-acties
 
-[Github-acties](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
+[Github-acties](https://docs.github.com/en/free-pro-team@latest/actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
 
 Gebruik de [actie Azure Resource Manager sjabloon implementeren](https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template) om de implementatie van een Azure Resource Manager sjabloon (arm-sjabloon) naar Azure te automatiseren.
 
@@ -21,7 +21,7 @@ Gebruik de [actie Azure Resource Manager sjabloon implementeren](https://github.
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.
-    - Een GitHub-opslag plaats voor het opslaan van uw Resource Manager-sjablonen en uw werk stroom bestanden. Zie [een nieuwe opslag plaats maken](https://help.github.com/en/enterprise/2.14/user/articles/creating-a-new-repository)om er een te maken.
+    - Een GitHub-opslag plaats voor het opslaan van uw Resource Manager-sjablonen en uw werk stroom bestanden. Zie [een nieuwe opslag plaats maken](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-new-repository)om er een te maken.
 
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand

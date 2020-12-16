@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 12/15/2020
 ms.author: yohaddad
-ms.openlocfilehash: adaea28d105b72152e1af28cc9d79da19c548c2c
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 2fb1ae2bbda55a04f4e76505a55b28372af00f33
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561406"
+ms.locfileid: "97606671"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
@@ -1171,8 +1171,8 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 | Rel 18-12 | [4470199] | Internet Explorer  | 2,81, 3,68, 4,61 | 11 december 2018 |
 | N.v.t. | [4468323] | Time zone-update    | 2,81, 3,68, 4,61 | 13 december 2018 |
 | N.v.t. | [4467107] | November niet-beveiligings update   | 2,81 | 13 november 2018 |
-| N.v.t. | [4467701] | November niet-beveiligings update     | 3,68 | 13 november 2018 |
-| N.v.t. | [4467697] | November niet-beveiligings update     | 4,61 | 13 november 2018 |
+| N.v.t. | [4467701] | November niet-beveiligings update | 3,68 | 13 november 2018 |
+| N.v.t. | [4467697] | November niet-beveiligings update | 4,61 | 13 november 2018 |
 
 [4471321]: https://support.microsoft.com/kb/4471321
 [4471328]: https://support.microsoft.com/kb/4471328

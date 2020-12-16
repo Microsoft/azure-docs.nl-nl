@@ -3,12 +3,12 @@ title: Zelf studie-een groep met meerdere containers implementeren-YAML
 description: In deze zelf studie leert u hoe u een container groep met meerdere containers in Azure Container Instances kunt implementeren met behulp van een YAML-bestand met de Azure CLI.
 ms.topic: article
 ms.date: 07/01/2020
-ms.openlocfilehash: 8f1f13d4fa7e32b76988cdf356d5d1bb0528f824
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6f9dda7735587dfee1dde86c85375efcf057daa7
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091290"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605158"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-yaml-file"></a>Zelf studie: een groep met meerdere containers implementeren met behulp van een YAML-bestand
 
@@ -37,7 +37,7 @@ In deze zelf studie voert u de stappen uit voor het uitvoeren van een eenvoudige
 
 Als u een groep met meerdere containers wilt implementeren met de opdracht [AZ container Create][az-container-create] in de Azure CLI, moet u de configuratie van de container groep opgeven in een yaml-bestand. Geef het YAML-bestand vervolgens als een para meter aan de opdracht door.
 
-Begin door de volgende YAML te kopiëren naar een nieuw bestand met de naam **Deploy-ACI. yaml** . In Azure Cloud Shell kunt u Visual Studio code gebruiken om het bestand in uw werkmap te maken:
+Begin door de volgende YAML te kopiëren naar een nieuw bestand met de naam **Deploy-ACI. yaml**. In Azure Cloud Shell kunt u Visual Studio code gebruiken om het bestand in uw werkmap te maken:
 
 ```
 code deploy-aci.yaml
@@ -178,7 +178,6 @@ In deze zelf studie hebt u een YAML-bestand gebruikt voor het implementeren van 
 U kunt ook een groep met meerdere containers opgeven met behulp van een [Resource Manager-sjabloon](container-instances-multi-container-group.md). Een resource manager-sjabloon kan gemakkelijk worden aangepast voor scenario's waarin u aanvullende Azure-service resources met de container groep moet implementeren.
 
 <!-- LINKS - External -->
-
 
 <!-- LINKS - Internal -->
 [aci-tutorial]: ./container-instances-tutorial-prepare-app.md

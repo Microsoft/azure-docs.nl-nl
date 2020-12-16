@@ -10,16 +10,16 @@ ms.author: jukullam
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.custom: github-actions-azure
-ms.openlocfilehash: 4336827dc7f8cb45f04e4cef94d79d1e6409d5c0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e7f6066cb7ed5c166d3e2bdc3f895073b05b92b9
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92795209"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605022"
 ---
 # <a name="use-github-actions-with-azure-machine-learning"></a>GitHub-acties gebruiken met Azure Machine Learning
 
-Aan de slag met [github-acties](https://help.github.com/en/articles/about-github-actions) voor het trainen van een model op Azure machine learning. 
+Aan de slag met [github-acties](https://docs.github.com/en/free-pro-team@latest/actions) voor het trainen van een model op Azure machine learning. 
 
 > [!NOTE]
 > GitHub-acties voor Azure Machine Learning worden meegeleverd als-is en worden niet volledig ondersteund door micro soft. Als u problemen ondervindt met een specifieke actie, opent u een probleem in de opslag plaats voor de actie. Als u bijvoorbeeld een probleem ondervindt met de actie AML-Deploy, meldt u het probleem in de [https://github.com/Azure/aml-deploy]( https://github.com/Azure/aml-deploy) opslag plaats.
@@ -27,11 +27,11 @@ Aan de slag met [github-acties](https://help.github.com/en/articles/about-github
 ## <a name="prerequisites"></a>Vereisten 
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een GitHub-account. Als u er nog geen hebt, kunt u zich [gratis](https://github.com/join)aanmelden.  
+- Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.  
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand
 
-Een werk stroom wordt gedefinieerd door een YAML-bestand (. yml) in het `/.github/workflows/` pad in uw opslag plaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
+Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
 
 Het bestand heeft vier secties:
 
@@ -39,7 +39,7 @@ Het bestand heeft vier secties:
 |---------|---------|
 |**Verificatie** | 1. Definieer een service-principal. <br /> 2. Maak een GitHub-opslagplaats. |
 |**Verbinding maken** | 1. Maak verbinding met de machine learning-werk ruimte. <br /> 2. Maak verbinding met een compute-doel. |
-|**Uitvoeringsrun** | 1. Voer een training uit. |
+|**Uitvoeren** | 1. Voer een training uit. |
 |**Implementeren** | 1. Registreer model in Azure Machine Learning REGI ster. 1. Het model implementeren. |
 
 ## <a name="create-repository"></a>Opslag plaats maken
@@ -47,7 +47,7 @@ Het bestand heeft vier secties:
 Maak een nieuwe opslag plaats [met behulp van github-acties en Azure machine learning sjabloon](https://github.com/machine-learning-apps/ml-template-azure). 
 
 1. Open de [sjabloon](https://github.com/machine-learning-apps/ml-template-azure) op github. 
-2. Selecteer **deze sjabloon gebruiken** . 
+2. Selecteer **deze sjabloon gebruiken**. 
 
     :::image type="content" source="media/how-to-github-actions-machine-learning/gh-actions-use-template.png" alt-text="Selecteer deze sjabloon gebruiken":::
 3. Maak een nieuwe opslag plaats op basis van de sjabloon. Stel de naam van de opslag plaats in op `ml-learning` of een naam van uw keuze. 
@@ -63,7 +63,7 @@ az ad sp create-for-rbac --name "myML" --role contributor \
                             --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later.
+In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {
@@ -77,7 +77,7 @@ In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abo
 
 ## <a name="configure-the-github-secret"></a>Het GitHub-geheim configureren
 
-1. In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen** .
+1. In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
 
 2. Plak de volledige JSON-uitvoer van de Azure CLI-opdracht in het waardeveld van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
 

@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: cd644ed4a3edb1110f2cef60c2bb9170a81fe8d7
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 588efd692119c9e2831e16c1ce26c2759898a1e5
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584065"
+ms.locfileid: "97607361"
 ---
 # <a name="sync-your-github-repository-to-app-configuration"></a>Uw GitHub-opslag plaats synchroniseren met de app-configuratie
 
@@ -20,9 +20,9 @@ Teams die hun bestaande broncode beheer procedures willen blijven gebruiken, kun
 &nbsp;&nbsp;&nbsp;&nbsp;• Het bijwerken van de configuratie zonder uw volledige app opnieuw te implementeren <br>
 &nbsp;&nbsp;&nbsp;&nbsp;• Integratie met Services als Azure App Service en functions. 
 
-Een GitHub actions- [werk stroom](https://help.github.com/articles/about-github-actions#workflow) definieert een geautomatiseerd proces in een github-opslag plaats. Met de actie voor het *synchroniseren van Azure-app-configuratie* worden updates voor een app-configuratie-exemplaar geactiveerd wanneer er wijzigingen in de bron opslagplaats worden aangebracht. Er wordt een YAML-bestand (. yml) gebruikt dat is gevonden in het `/.github/workflows/` pad van uw opslag plaats om de stappen en para meters te definiëren. U kunt configuratie-updates activeren tijdens het pushen, reviseren of vertakking van app-configuratie bestanden, net als bij app-code.
+Een GitHub actions- [werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) definieert een geautomatiseerd proces in een github-opslag plaats. Met de actie voor het *synchroniseren van Azure-app-configuratie* worden updates voor een app-configuratie-exemplaar geactiveerd wanneer er wijzigingen in de bron opslagplaats worden aangebracht. Er wordt een YAML-bestand (. yml) gebruikt dat is gevonden in het `/.github/workflows/` pad van uw opslag plaats om de stappen en para meters te definiëren. U kunt configuratie-updates activeren tijdens het pushen, reviseren of vertakking van app-configuratie bestanden, net als bij app-code.
 
-De GitHub- [documentatie](https://help.github.com/actions/automating-your-workflow-with-github-actions/configuring-a-workflow) biedt uitgebreide weer gave van github-werk stromen en-acties. 
+De GitHub- [documentatie](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions) biedt uitgebreide weer gave van github-werk stromen en-acties. 
 
 ## <a name="enable-github-actions-in-your-repository"></a>GitHub-acties inschakelen in uw opslag plaats
 Als u deze GitHub actie wilt gaan gebruiken, gaat u naar uw opslag plaats en selecteert u het tabblad **acties** . Selecteer **nieuwe werk stroom** en **Stel zelf een werk stroom** in. Ga ten slotte naar de Marketplace voor ' Azure-app-configuratie synchronisatie '.
@@ -35,7 +35,7 @@ Als u deze GitHub actie wilt gaan gebruiken, gaat u naar uw opslag plaats en sel
 ## <a name="sync-configuration-files-after-a-push"></a>Configuratie bestanden na een push synchroniseren
 Met deze actie worden Azure-app configuratie bestanden gesynchroniseerd wanneer een wijziging naar wordt gepusht `appsettings.json` . Wanneer een ontwikkelaar een wijziging doorstuurt `appsettings.json` , wordt het app-configuratie-exemplaar met de nieuwe waarden bijgewerkt met de synchronisatie actie van de app-configuratie.
 
-In de eerste sectie van deze werk stroom wordt aangegeven dat de actie wordt geactiveerd *op* een *Push* die `appsettings.json` naar de *hoofd* vertakking bevat. De tweede sectie bevat een lijst met de taken die worden uitgevoerd zodra de actie wordt geactiveerd. Met deze actie worden de relevante bestanden gecontroleerd en wordt het app-configuratie-exemplaar bijgewerkt met behulp van de connection string opgeslagen als een geheim in de opslag plaats.  Zie [het artikel van github](https://help.github.com/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) over het maken en gebruiken van versleutelde geheimen voor meer informatie over het gebruik van geheimen in github.
+In de eerste sectie van deze werk stroom wordt aangegeven dat de actie wordt geactiveerd *op* een *Push* die `appsettings.json` naar de *hoofd* vertakking bevat. De tweede sectie bevat een lijst met de taken die worden uitgevoerd zodra de actie wordt geactiveerd. Met deze actie worden de relevante bestanden gecontroleerd en wordt het app-configuratie-exemplaar bijgewerkt met behulp van de connection string opgeslagen als een geheim in de opslag plaats.  Zie [het artikel van github](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) over het maken en gebruiken van versleutelde geheimen voor meer informatie over het gebruik van geheimen in github.
 
 ```json
 on: 
@@ -300,7 +300,7 @@ Met het bovenstaande voor beeld wordt nu het volgende sleutel/waarde-paar als re
 | Object: binnenste | {"InnerKey":"InnerValue"} |
 
 ## <a name="understand-action-inputs"></a>Informatie over actie-invoer
-Invoer parameters geven gegevens op die worden gebruikt door de actie tijdens runtime.  De volgende tabel bevat de invoer parameters die worden geaccepteerd door de synchronisatie van de app-configuratie en de verwachte waarden voor elke.  Zie de [documentatie](https://help.github.com/actions/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions#inputs)van github voor meer informatie over actie-invoer voor github-acties.
+Invoer parameters geven gegevens op die worden gebruikt door de actie tijdens runtime.  De volgende tabel bevat de invoer parameters die worden geaccepteerd door de synchronisatie van de app-configuratie en de verwachte waarden voor elke.  Zie de [documentatie](https://docs.github.com/en/free-pro-team@latest/actions/creating-actions/metadata-syntax-for-github-actions#inputs)van github voor meer informatie over actie-invoer voor github-acties.
 
 > [!Note]
 > Invoer-Id's zijn niet hoofdletter gevoelig.

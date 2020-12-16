@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: aahi
-ms.openlocfilehash: 2f03746a6a5afc388db2beeff84b3ab4cbd393b5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f41e513ee0f2755c446a9cb95465c1f636fe5a7a
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014591"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606263"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -111,9 +111,9 @@ Navigeer in het [Azure Portal](https://portal.azure.com/)naar uw Azure stack Edg
 
 Kies op de pagina **rand berekening configureren**   een bestaand IOT hub of kies ervoor om een nieuw item te maken. Standaard wordt een standaard prijs categorie (S1) gebruikt voor het maken van een IoT Hub bron. Als u een gratis laag IoT Hub resource wilt gebruiken, maakt u er een en selecteert u deze. De IoT Hub resource gebruikt hetzelfde abonnement en dezelfde resource groep die wordt gebruikt door de resource Azure Stack Edge 
 
-Klik op **Create**. Het maken van IoT Hub bronnen kan een paar minuten duren. Nadat de IoT Hub resource is gemaakt, wordt de tegel **Edge Compute** bijgewerkt om de nieuwe configuratie weer te geven. Als u wilt bevestigen dat de rol Edge Compute is geconfigureerd, selecteert u **configuratie weer geven** op de tegel **Compute configureren**   .
+Klik op **Maken**. Het maken van IoT Hub bronnen kan een paar minuten duren. Nadat de IoT Hub resource is gemaakt, wordt de tegel **Edge Compute** bijgewerkt om de nieuwe configuratie weer te geven. Als u wilt bevestigen dat de rol Edge Compute is geconfigureerd, selecteert u **configuratie weer geven** op de tegel **Compute configureren**   .
 
-Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. De Azure IoT Edge runtime wordt al uitgevoerd op het IoT Edge apparaat.            
+Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. De Azure IoT Edge runtime wordt al uitgevoerd op het IoT Edge apparaat.
 
 > [!NOTE]
 > * Momenteel wordt alleen het Linux-platform ondersteund voor IoT Edge apparaten. Zie het artikel [logboek registratie en probleem oplossing](spatial-analysis-logging.md) voor hulp bij het oplossen van problemen met het Azure stack edge-apparaat.

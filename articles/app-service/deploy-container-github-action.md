@@ -7,16 +7,16 @@ ms.date: 12/04/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: ae587b9501c9c68600ff880744d311ba966923ed
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 4f5deb33218c336da7a477b4f39cd45f7386debf
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008024"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97604971"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Een aangepaste container implementeren op App Service met behulp van GitHub-acties
 
-[Github-acties](https://help.github.com/en/articles/about-github-actions) bieden u de flexibiliteit om een geautomatiseerde werk stroom voor het ontwikkelen van software te bouwen. Met de [actie Azure Web Deploy](https://github.com/Azure/webapps-deploy)kunt u uw werk stroom automatiseren om aangepaste containers te implementeren op [app service](overview.md) met behulp van github-acties.
+[Github-acties](https://docs.github.com/en/free-pro-team@latest/actions) bieden u de flexibiliteit om een geautomatiseerde werk stroom voor het ontwikkelen van software te bouwen. Met de [actie Azure Web Deploy](https://github.com/Azure/webapps-deploy)kunt u uw werk stroom automatiseren om aangepaste containers te implementeren op [app service](overview.md) met behulp van github-acties.
 
 Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en para meters in de werk stroom.
 
@@ -39,7 +39,7 @@ Voor een Azure App Service container werk stroom heeft het bestand drie secties:
 
 De aanbevolen manier om te verifiëren met Azure-app Services voor GitHub-acties is met een publicatie profiel. U kunt ook verifiëren met een Service-Principal, maar voor het proces zijn meer stappen vereist. 
 
-Sla de referentie of service-principal voor het publicatie profiel op als een [github-geheim](https://docs.github.com/en/actions/reference/encrypted-secrets) voor verificatie bij Azure. U hebt toegang tot het geheim in uw werk stroom. 
+Sla de referentie of service-principal voor het publicatie profiel op als een [github-geheim](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) voor verificatie bij Azure. U hebt toegang tot het geheim in uw werk stroom. 
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/publish-profile)
 
@@ -273,7 +273,7 @@ U vindt onze set acties die zijn gegroepeerd in verschillende opslag plaatsen op
 
 - [Aanmelden/afmelden bij docker](https://github.com/Azure/docker-login)
 
-- [Gebeurtenissen die workflows activeren](https://help.github.com/en/articles/events-that-trigger-workflows)
+- [Gebeurtenissen die workflows activeren](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows)
 
 - [K8s implementeren](https://github.com/Azure/k8s-deploy)
 

@@ -5,12 +5,12 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/30/2017
-ms.openlocfilehash: bf2e1e1bc30aeb3306d0a643eca4725d8765edac
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 10fcce9a667d9a08318f5adab804f482387052ff
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512612"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606654"
 ---
 # <a name="u-sql-programmability-guide---udt-and-udagg"></a>Programmeer handleiding voor U-SQL-UDT en UDAGG
 
@@ -307,12 +307,12 @@ DECLARE @output_file string = @"c:\work\cosmos\usql-programmability\output_file.
 
 @rs2 =
     SELECT 
-           start_id,
-           dt,
-           DateTime.Now.ToString("M/d/yyyy") AS Nowdate,
-           fiscalquarter,
-           fiscalmonth,
-           USQL_Programmability.CustomFunctions.GetFiscalPeriodWithCustomType(dt).ToString() AS fiscalperiod,
+        start_id,
+        dt,
+        DateTime.Now.ToString("M/d/yyyy") AS Nowdate,
+        fiscalquarter,
+        fiscalmonth,
+        USQL_Programmability.CustomFunctions.GetFiscalPeriodWithCustomType(dt).ToString() AS fiscalperiod,
 
        // This user-defined type was created in the prior SELECT.  Passing the UDT to this subsequent SELECT would have failed if the UDT was not annotated with an IFormatter.
            fiscalperiod_adjusted.ToString() AS fiscalperiod_adjusted,

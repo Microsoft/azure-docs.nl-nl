@@ -7,19 +7,19 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: af8d768ceeaacdf1c8a0f6cdc8be0041e4ae4ed1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fb0d3e3c57a26f7ca14b74edc42cb657ba6074c3
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099076"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97604993"
 ---
 # <a name="what-is-the-new-azure-digital-twins-how-is-it-different-from-the-previous-version-2018"></a>Wat is het nieuwe Azure Digital Twins? Wat is het verschil met de vorige versie (2018)?
 
 De eerste openbare preview van Azure Digital Twins is uitgebracht in oktober 2018. Hoewel de basis concepten van die eerste versie naar de nieuwe service zijn uitgevoerd, zijn veel van de interfaces en implementatie gegevens gewijzigd om de service flexibeler en toegankelijker te maken. Deze wijzigingen zijn gebaseerd op de feedback van klanten.
 
 > [!IMPORTANT]
-> In het licht van de uitgebreide mogelijkheden van de nieuwe service, wordt de vorige Azure Digital Twins-service eind 2020 beëindigd.
+> In het licht van de uitgebreide mogelijkheden van de nieuwe service wordt de vorige Azure Digital Apparaatdubbels-service buiten gebruik gesteld, met de Api's en de bijbehorende gegevens die niet meer beschikbaar zijn vanaf januari 18, 2021.
 
 Als u de eerste versie van Azure Digital Apparaatdubbels hebt gebruikt tijdens de eerste open bare preview, gebruikt u de informatie en best practices in dit artikel om te leren hoe u met de nieuwe service kunt werken en kunt u profiteren van de functies.
 
@@ -38,7 +38,7 @@ In de onderstaande grafiek ziet u een weergave van concepten naast elkaar die zi
 
 ## <a name="service-limits"></a>Servicelimieten
 
-Zie [*Naslag informatie: Service limieten*](reference-service-limits.md)voor een lijst met Azure Digital apparaatdubbels-limieten.
+Voor een lijst met beperkingen van Azure Digital Twins, raadpleegt u [*Referentie: servicelimieten*](reference-service-limits.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

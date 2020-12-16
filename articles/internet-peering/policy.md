@@ -6,14 +6,14 @@ services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: conceptual
-ms.date: 11/27/2019
+ms.date: 12/15/2020
 ms.author: prmitiki
-ms.openlocfilehash: 20f25e0add5d05bb2dcf7f3ebdc86ccd5ae889d0
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: bee41bb8e5beb4df3086ab50499cb185a83e4efe
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510784"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592326"
 ---
 # <a name="peering-policy"></a>Peeringbeleid
 Micro soft onderhoudt een selectief beleid voor peering dat is ontworpen om te zorgen voor de best mogelijke klant ervaring die wordt ondersteund door de industrie normen en aanbevolen procedures, schalen voor toekomstige vraag en strategische plaatsing van peering. Micro soft behoudt zich het recht voor om uitzonde ringen op het beleid te maken als dat nodig is. De algemene vereisten van micro soft van uw netwerk worden uitgelegd in de volgende secties. Deze zijn van toepassing op aanvragen voor directe peering en uitwisseling van peering. 

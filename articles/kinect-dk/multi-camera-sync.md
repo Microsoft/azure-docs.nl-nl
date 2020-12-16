@@ -7,12 +7,12 @@ ms.prod: kinect-dk
 ms.date: 02/20/2020
 ms.topic: article
 keywords: Azure, kinect, specs, hardware, DK, mogelijkheden, diepte, kleur, RGB, IMU, matrix, diepte, multi, synchronisatie
-ms.openlocfilehash: 7c79101de5e5455ae2ff9fd8b5d8369a3832631c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 30961152b31a659cb27e91a99d6806490998d18d
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361157"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592276"
 ---
 # <a name="synchronize-multiple-azure-kinect-dk-devices"></a>Meerdere Azure Kinect DK-apparaten synchroniseren
 
@@ -41,7 +41,7 @@ Voordat u begint, moet u ervoor zorgen dat u de [Azure KINECT DK-hardwarespecifi
 
 U kunt een van de volgende benaderingen gebruiken voor de apparaatconfiguratie:
 
-- **Configuratie**van een ringnet werk. Eén Master apparaat synchroniseren en Maxi maal acht onderliggende apparaten.  
+- **Configuratie** van een ringnet werk. Eén Master apparaat synchroniseren en Maxi maal acht onderliggende apparaten.  
    ![Diagram dat laat zien hoe u met Azure Kinect DK-apparaten verbinding maakt in een configuratie met een keten van een ringnet werk.](./media/multicam-sync-daisychain.png)
 - **Ster configuratie**. Eén Master apparaat synchroniseren en Maxi maal twee onderliggende apparaten.  
    ![Diagram dat laat zien hoe u meerdere Azure DK-apparaten kunt instellen in een ster configuratie.](./media/multicam-sync-star.png)
@@ -83,11 +83,14 @@ Voor elke diepte van de camera wordt er negen keer op de laser gezet en is er sl
 
 Daarnaast verhogen verschillen tussen de camera klok en de firmware klok van het apparaat de minimale offset tot 160 &mu; s. Als u een nauw keurigere offset voor uw configuratie wilt berekenen, noteert u de diepte modus die u gebruikt en raadpleegt u de [tabel diepte sensor RAW time](hardware-specification.md#depth-sensor-raw-timing)-out. Met behulp van de gegevens uit deze tabel kunt u de minimale offset (de belichtings tijd van elke camera) berekenen met behulp van de volgende vergelijking:
 
-> *Blootstellings tijd* = (*IR Pulses* &times; *pulsische breedte*) + (tijd niet-actieve*Peri Oden* &times; *Idle Time*)
+> *Blootstellings tijd* = (*IR Pulses* &times; *pulsische breedte*) + (tijd niet-actieve *Peri Oden* &times; )
 
 Wanneer u een offset van 160 &mu; s gebruikt, kunt u Maxi maal negen extra diepte camera's configureren zodat elke laser wordt ingeschakeld terwijl de andere lasers inactief zijn.
 
 Gebruik in uw software ```depth_delay_off_color_usec``` of ```subordinate_delay_off_master_usec``` om ervoor te zorgen dat elke IR-laser wordt geactiveerd in het eigen &mu; venster van 160 s of een ander veld van de weer gave heeft.
+
+> [!NOTE]  
+> De werkelijke Pulse-breedte is 125us maar de 160us voor sommige Leeway. Wanneer u NFOV UNBINNED als voor beeld neemt, wordt elke 125us puls gevolgd door 1450us inactief. Totaal van deze up-(9 x 125) + (8 x 1450): levert de blootstellings tijd van 12,8 ms. De behuizing waarmee twee apparaten kunnen worden blootgesteld, is de eerste puls van de tweede camera in de eerste niet-actieve periode van de eerste camera. De vertraging tussen de eerste en tweede camera's kan net zo weinig zijn als 125us (de breedte van een puls), maar we raden u aan een aantal Leeway mogelijk te maken. Op basis van 160us kunt u de blootstellings perioden van Maxi maal 10 camera's Interleaved.
 
 ## <a name="prepare-your-devices-and-other-hardware"></a>Uw apparaten en andere hardware voorbereiden
 
@@ -122,7 +125,7 @@ Op Linux gebaseerde hostcomputers wijzen standaard de USB-controller slechts 16 
    ```
    > [!NOTE]  
    > Met deze opdrachten wordt het USB-geheugen ingesteld op 32 MB. Dit is een voor beeld van een instelling op twee keer de standaard waarde. U kunt een veel grotere waarde instellen, afhankelijk van wat u nodig hebt voor uw oplossing.
-1. Voer **sudo-update-grub**uit.
+1. Voer **sudo-update-grub** uit.
 1. Start de computer opnieuw op.
 
 ### <a name="cables"></a>Kabels
@@ -160,17 +163,17 @@ Gebruik [Azure Kinect Viewer](azure-kinect-viewer.md)om te controleren of de app
 > Voor deze procedure moet u het serie nummer van elk Azure Kinect DK weten.
 
 1. Open twee exemplaren van Azure Kinect viewer.
-1. Onder **apparaat openen**selecteert u het serie nummer van het onderliggende apparaat dat u wilt testen.  
+1. Onder **apparaat openen** selecteert u het serie nummer van het onderliggende apparaat dat u wilt testen.  
    ![Apparaat openen](./media/open-devices.png)
    > [!IMPORTANT]  
    > Als u een nauw keurige vastleg uitlijning wilt maken tussen alle apparaten, moet u het hoofd apparaat het laatst starten.  
-1. Onder **externe synchronisatie**selecteert u **Sub**.  
+1. Onder **externe synchronisatie** selecteert u **Sub**.  
    ![Start van onderliggende camera](./media/sub-device-start.png)
 1.  Selecteer **Starten**.  
     > [!NOTE]  
     > Omdat dit een onderliggend apparaat is, wordt in azure Kinect Viewer geen installatie kopie weer gegeven nadat het apparaat is gestart. Er wordt geen afbeelding weer gegeven totdat het onderliggende apparaat een synchronisatie signaal van het hoofd apparaat ontvangt.
 1. Nadat het onderliggende apparaat is gestart, gebruikt u het andere exemplaar van Azure Kinect viewer om het hoofd apparaat te openen.
-1. Onder **externe synchronisatie**selecteert u **Master**.
+1. Onder **externe synchronisatie** selecteert u **Master**.
 1. Selecteer **Starten**.
 
 Wanneer het hoofd-Azure Kinect-apparaat wordt gestart, moeten beide exemplaren van de Azure Kinect-Viewer installatie kopieën weer geven.

@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 09/18/2020
 ms.author: sajaya
-ms.openlocfilehash: a2cddc9bbe868a2d18ee8111aabf6db7dc8643cf
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 055f039d5bba0dba2906e1d3b8410af00c5600ef
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346992"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606280"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Veelgestelde vragen over Azure Container Registry
 
@@ -111,6 +111,7 @@ Het duurt enige tijd om firewall regel wijzigingen door te geven. Nadat u de fir
 - [Hoe kan ik toegang tot pull-of push-installatie kopieën verlenen zonder toestemming om de register bron te beheren?](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
 - [Hoe kan ik automatische installatie kopie quarantaine inschakelen voor een REGI ster?](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
 - [Anonieme pull-toegang Hoe kan ik inschakelen?](#how-do-i-enable-anonymous-pull-access)
+- [Hoe kan ik niet-distribueer bare lagen pushen naar een REGI ster?](#how-do-i-push-non-distributable-layers-to-a-registry)
 
 ### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Hoe kan ik Access docker Registry HTTP API v2?
 
@@ -264,6 +265,33 @@ Het instellen van een Azure container Registry voor anonieme toegang (openbaar) 
 > [!NOTE]
 > * Alleen de Api's die zijn vereist voor het ophalen van een bekende installatie kopie, kunnen anoniem worden geopend. Geen andere Api's voor bewerkingen als label lijst of opslagplaats lijst zijn anoniem toegankelijk.
 > * Voordat u een anonieme pull-bewerking probeert `docker logout` uit te voeren, moet u uitvoeren om ervoor te zorgen dat u alle bestaande docker-referenties wist.
+
+### <a name="how-do-i-push-non-distributable-layers-to-a-registry"></a>Hoe kan ik niet-distribueer bare lagen pushen naar een REGI ster?
+
+Een niet-distribueer bare laag in een manifest bevat een URL-para meter waaruit inhoud kan worden opgehaald. Enkele mogelijke gebruiks cases voor het inschakelen van niet-distribueer bare laag pushes zijn voor netwerk met beperkte registers, gapped registers met beperkte toegang of voor registers zonder Internet verbinding.
+
+Als u bijvoorbeeld NSG-regels hebt ingesteld zodat een virtuele machine alleen installatie kopieën uit uw Azure container Registry kan halen, haalt docker fouten op voor vreemde/niet-distribueer bare lagen. Een Windows Server Core-installatie kopie zou bijvoorbeeld refererende laag verwijzingen naar het Azure container Registry bevatten in het manifest en die dit scenario niet kan ophalen.
+
+Het pushen van niet-distribueer bare lagen inschakelen:
+
+1. Bewerk het `daemon.json` bestand, dat zich bevindt in `/etc/docker/` op Linux-hosts en op `C:\ProgramData\docker\config\daemon.json` Windows Server. Als het bestand eerder leeg was, voegt u de volgende inhoud toe:
+
+   ```json
+   {
+     "allow-nondistributable-artifacts": ["myregistry.azurecr.io"]
+   }
+   ```
+   > [!NOTE]
+   > De waarde is een matrix met register adressen, gescheiden door komma's.
+
+2. Sla het bestand op en sluit het af.
+
+3. Start docker opnieuw.
+
+Wanneer u installatie kopieën naar de registers in de lijst pusht, worden de niet-distribueer bare lagen naar het REGI ster gepusht.
+
+> [!WARNING]
+> Niet-distribueer bare artefacten hebben doorgaans beperkingen voor hoe en waar ze kunnen worden gedistribueerd en gedeeld. Gebruik deze functie alleen om artefacten naar persoonlijke registers te pushen. Zorg ervoor dat u voldoet aan de voor waarden die betrekking hebben op het opnieuw distribueren van niet-distribueer bare artefacten.
 
 ## <a name="diagnostics-and-health-checks"></a>Diagnose-en status controles
 

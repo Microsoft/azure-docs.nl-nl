@@ -7,16 +7,16 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 3c2f90403afbc581f80312be2271d802f4d719a8
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 0c10cc683d8c8c2496ca8fdbd00f0e5065e2db35
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584235"
+ms.locfileid: "97604920"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Implementeren in App Service met behulp van GitHub Actions
 
-Aan de slag met [github-acties](https://help.github.com/en/articles/about-github-actions) om uw werk stroom te automatiseren en te implementeren in [Azure app service](overview.md) van github. 
+Aan de slag met [github-acties](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions) om uw werk stroom te automatiseren en te implementeren in [Azure app service](overview.md) van github. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -63,7 +63,7 @@ U kunt ook een werk stroom implementeren zonder het implementatie centrum te geb
 
 De aanbevolen manier om te verifiëren met Azure-app Services voor GitHub-acties is met een publicatie profiel. U kunt ook verifiëren met een Service-Principal, maar voor het proces zijn meer stappen vereist. 
 
-Sla de referentie of service-principal voor het publicatie profiel op als een [github-geheim](https://docs.github.com/en/actions/reference/encrypted-secrets) voor verificatie bij Azure. U hebt toegang tot het geheim in uw werk stroom. 
+Sla de referentie of service-principal voor het publicatie profiel op als een [github-geheim](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) voor verificatie bij Azure. U hebt toegang tot het geheim in uw werk stroom. 
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/applevel)
 
@@ -746,7 +746,7 @@ U vindt onze set acties die zijn gegroepeerd in verschillende opslag plaatsen op
 
 - [Aanmelden/afmelden bij docker](https://github.com/Azure/docker-login)
 
-- [Gebeurtenissen die workflows activeren](https://help.github.com/en/articles/events-that-trigger-workflows)
+- [Gebeurtenissen die workflows activeren](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows)
 
 - [K8s implementeren](https://github.com/Azure/k8s-deploy)
 

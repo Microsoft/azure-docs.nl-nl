@@ -9,16 +9,16 @@ ms.reviewer: dineshm
 ms.date: 09/11/2020
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 799c0dbc3ddb673cafe0fe4962f7346a841bd4b7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 544b22e3395cacf0cc2e7a21e4b86325a8f4d236
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95543099"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605255"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Stel een GitHub actions-werk stroom in om uw statische website te implementeren in Azure Storage
 
-Aan de slag met [github-acties](https://docs.github.com/en/actions) met behulp van een werk stroom voor het implementeren van een statische site naar een Azure Storage-account. Zodra u een werk stroom voor GitHub-acties hebt ingesteld, kunt u uw site automatisch implementeren in azure vanaf GitHub wanneer u wijzigingen aanbrengt in de code van uw site.
+Aan de slag met [github-acties](https://docs.github.com/en/free-pro-team@latest/actions) met behulp van een werk stroom voor het implementeren van een statische site naar een Azure Storage-account. Zodra u een werk stroom voor GitHub-acties hebt ingesteld, kunt u uw site automatisch implementeren in azure vanaf GitHub wanneer u wijzigingen aanbrengt in de code van uw site.
 
 > [!NOTE]
 > Als u [statische web apps van Azure](../../static-web-apps/index.yml)gebruikt, hoeft u de werk stroom voor github-acties niet hand matig in te stellen.
@@ -45,7 +45,7 @@ Vervang de tijdelijke aanduiding door `myStaticSite` de naam van uw site die wor
    az ad sp create-for-rbac --name {myStaticSite} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID en de naam van de resource groep. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw opslag account zoals hieronder wordt beschreven. Kopieer dit JSON-object voor later.
+In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnements-id en resourcegroepsnaam. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw opslag account zoals hieronder wordt beschreven. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {

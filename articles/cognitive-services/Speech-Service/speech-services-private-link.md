@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: alexeyo
-ms.openlocfilehash: c88a7820518d0a73bfb0e93d3b364190207b8f90
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 01a0171ed2b660fbabebf4276a74f8a3ea631bde
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97051208"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516528"
 ---
 # <a name="using-speech-services-with-private-endpoints-provided-by-azure-private-link"></a>Spraak Services gebruiken met privé-eind punten van de persoonlijke Azure-koppeling
 
@@ -53,11 +53,11 @@ Privé-eind punten vereisen het gebruik van [Cognitive Services aangepaste subdo
 - Er wordt een nieuw paneel weer gegeven met instructies voor het maken van een uniek aangepast subdomein voor uw resource
 > [!WARNING]
 > Nadat u een aangepaste domein naam hebt gemaakt, **kan deze niet meer** worden gewijzigd. Zie de bovenstaande waarschuwing voor meer informatie.
-- Wanneer de bewerking is voltooid, kunt u de *sleutels en het eind punt* (*resource beheer* groep) selecteren en de nieuwe naam van het eind punt van uw resource verifiëren in de indeling van `{your custom name}.cognitiveservices.azure.com`
+- Wanneer de bewerking is voltooid, kunt u de *sleutels en het eind punt* (*resource beheer* groep) selecteren en de nieuwe naam van het eind punt van uw resource verifiëren in de indeling van <p />`{your custom name}.cognitiveservices.azure.com`
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Voor deze sectie moet u lokaal Power shell versie 7. x of hoger met de Azure PowerShell module versie 5.1.0 of hoger uitvoeren. Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u wilt installeren of upgraden, raadpleegt u [Azure PowerShell-module installeren](/powershell/azure/install-Az-ps) .
+Voor deze sectie moet u lokaal Power shell versie 7. x of hoger met de Azure PowerShell module versie 5.1.0 of hoger uitvoeren. Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt installeren of upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps).
 
 Voordat u verder gaat met uitvoeren, `Connect-AzAccount` kunt u een verbinding maken met Azure.
 
@@ -272,13 +272,13 @@ We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor b
 
 Spraak Services heeft REST API voor [spraak naar tekst](rest-speech-to-text.md) en [tekst naar spraak](rest-text-to-speech.md). Het volgende moet worden overwogen voor het scenario met het persoonlijke eind punt dat is ingeschakeld.
 
-Spraak-naar-tekst heeft de twee verschillende REST-Api's. Elke API heeft een ander doel, maakt gebruik van verschillende eind punten en vereist een andere benadering wanneer een combi natie van een persoonlijk eind punt is ingeschakeld.
+Spraak-naar-tekst heeft twee verschillende REST-Api's. Elke API heeft een ander doel, maakt gebruik van verschillende eind punten en vereist een andere benadering wanneer een combi natie van een persoonlijk eind punt is ingeschakeld.
 
 De REST-to-text-Api's zijn:
-- [v 1.0](rest-speech-to-text.md) wordt gebruikt voor on-line transcriptie
-- v 3.0 wordt gebruikt voor [batch transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). (Zie [volledige referentie](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0))
+- [Spraak-naar-tekst rest API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30) wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3).
+- [Spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) wordt gebruikt voor online-transcriptie. 
 
-Het gebruik van spraak-naar-tekst v 1.0 en tekst-naar-spraak-REST API in het scenario met het persoonlijke eind punt is hetzelfde en gelijkwaardig aan de [Speech SDK-situatie](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk) die verderop in dit artikel wordt beschreven. 
+Het gebruik van spraak-naar-tekst REST API voor korte audio-en tekst-naar-spraak-REST API in het scenario met het persoonlijke eind punt is dezelfde en gelijkwaardig aan de [Speech SDK-situatie](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk) die verderop in dit artikel wordt beschreven. 
 
 Spraak-naar-tekst REST API v 3.0 gebruikt een andere set eind punten en vereist daarom een andere benadering voor het scenario met het persoonlijke eind punt dat is ingeschakeld.
 
@@ -287,7 +287,7 @@ Beide gevallen worden beschreven in de volgende subsecties.
 
 ##### <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
 
-Doorgaans gebruiken spraak resources [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor communicatie met de [spraak-naar-tekst rest API v 3.0](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0). Deze resources hebben de volgende naamgevings indeling: <p/>`{region}.api.cognitive.microsoft.com`
+Doorgaans gebruiken spraak resources [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor communicatie met de [spraak-naar-tekst rest API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30). Deze resources hebben de volgende naamgevings indeling: <p/>`{region}.api.cognitive.microsoft.com`
 
 Dit is een voor beeld van een aanvraag-URL:
 
@@ -311,15 +311,18 @@ Over het algemeen moet u na het inschakelen van een aangepaste domein naam voor 
 >
 > De aangepaste domein naam van de spraak resource bevat **geen** informatie over de regio waarin de resource is geïmplementeerd. De hierboven beschreven toepassings logica werkt dus **niet** en moet worden gewijzigd.
 
-##### <a name="speech-to-text-rest-api-v10-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API v 1.0 en tekst-naar-spraak-REST API
+##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
 
-[Spraak-naar-tekst rest API v 1.0](rest-speech-to-text.md) en [tekst-naar-spraak rest API](rest-text-to-speech.md) twee typen eind punten gebruiken:
+[Spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en [tekst naar spraak rest API](rest-text-to-speech.md) twee typen eind punten gebruiken:
 - [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor de communicatie met de Cognitive Services rest API voor het verkrijgen van een autorisatie token
 - Speciale eind punten voor alle andere bewerkingen
 
 De gedetailleerde beschrijving van de speciale eind punten en hoe hun URL moet worden getransformeerd voor een privé-eind punt waarvoor een spraak resource is ingeschakeld, wordt in [Deze subsectie van het](#general-principle) gedeelte gebruik met Speech SDK beschreven. Hetzelfde principe dat wordt beschreven voor SDK, is van toepassing op de REST API voor spraak naar tekst v 1.0 en tekst naar spraak.
 
-Raadpleeg het volgende voor beeld om vertrouwd te raken met het materiaal in de Subsectie in de vorige alinea. (In het voor beeld wordt tekst naar spraak REST API beschreven; het gebruik van spraak naar tekst v 1.0 REST API is volledig gelijkwaardig)
+Raadpleeg het volgende voor beeld om vertrouwd te raken met het materiaal in de Subsectie in de vorige alinea. (In het voor beeld wordt tekst naar spraak REST API beschreven; het gebruik van spraak naar tekst REST API voor korte audio is volledig gelijkwaardig)
+
+> [!NOTE]
+> Bij het gebruik **van spraak-naar-tekst rest API voor korte audio** in scenario's met persoonlijke eind punten moet u een verificatie token gebruiken dat is [door gegeven via](rest-speech-to-text.md#request-headers) `Authorization` de [header](rest-speech-to-text.md#request-headers); het door sturen van een spraak abonnement op het speciale eind punt via de `Ocp-Apim-Subscription-Key` koptekst wordt **niet** uitgevoerd en er wordt een fout 401 gegenereerd.
 
 **Voor beeld van het gebruik van tekst naar spraak REST API.**
 
@@ -368,8 +371,8 @@ Alle mogelijke waarden voor de regio (het eerste element van de DNS-naam) worden
 | `commands`     | [Aangepaste opdrachten](custom-commands.md)                       |
 | `convai`       | [Gesprekstranscriptie](conversation-transcription.md) |
 | `s2s`          | [Speech Translation](speech-translation.md)                 |
-| `stt`          | [Spraak-naar-tekst](speech-to-text.md)                         |
-| `tts`          | [Tekst naar spraak](text-to-speech.md)                         |
+| `stt`          | [Spraak naar tekst](speech-to-text.md)                         |
+| `tts`          | [Tekst-naar-spraak](text-to-speech.md)                         |
 | `voice`        | [Aangepaste stem](how-to-custom-voice.md)                      |
 
 Het bovenstaande voor beeld ( `westeurope.stt.speech.microsoft.com` ) staat voor het spraak-naar-tekst-eind punt in Europa-West.
@@ -497,14 +500,16 @@ Vergelijk het met de uitvoer van [deze sectie](#optional-check-dns-resolution-fr
 
 Het gebruik van spraak-naar-tekst REST API v 3.0 is volledig gelijk aan het geval van [spraak bronnen die zijn ingeschakeld voor privé-eind punten](#speech-to-text-rest-api-v30).
 
-##### <a name="speech-to-text-rest-api-v10-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API v 1.0 en tekst-naar-spraak-REST API
+##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
 
-In dit geval is spraak-naar-tekst REST API v 1.0 en tekst-naar-spraak-REST API gebruik geen verschillen in het algemene geval en moet worden gebruikt zoals beschreven in de documentatie over [spraak naar tekst rest API v 1.0](rest-speech-to-text.md) en [tekst naar spraak rest API](rest-text-to-speech.md) .
+In dit geval worden spraak-naar-tekst REST API voor korte audio-en tekst-naar-spraak-REST API gebruik geen verschillen met het algemene geval met één uitzonde ring voor spraak-naar-tekst REST API voor korte audio (zie opmerking hieronder). Beide Api's moeten worden gebruikt, zoals beschreven in [spraak naar tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en [tekst naar spraak rest API](rest-text-to-speech.md) documentatie.
 
+> [!NOTE]
+> Bij het gebruik van **spraak-naar-tekst rest API voor korte audio** in scenario's met aangepaste domeinen moet u een verificatie token gebruiken dat is [door gegeven via](rest-speech-to-text.md#request-headers) `Authorization` de [header](rest-speech-to-text.md#request-headers); het door sturen van een spraak abonnement op het speciale eind punt via `Ocp-Apim-Subscription-Key` koptekst wordt **niet** gebruikt en er wordt een fout 401 gegenereerd.
 
 #### <a name="speech-resource-with-custom-domain-name-without-private-endpoints-usage-with-speech-sdk"></a>Een spraak bron met een aangepaste domein naam zonder persoonlijke eind punten. Gebruik met Speech SDK
 
-Voor het gebruik van Speech SDK met aangepaste domein naam ingeschakelde spraak bronnen **zonder** persoonlijke eind punten zijn de controle en waarschijnlijke wijzigingen van de toepassings code vereist. Houd er rekening mee dat deze wijzigingen **verschillen** met het geval van een spraak resource die is ingeschakeld voor een [persoonlijk eind punt](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk). We werken aan de naadloze ondersteuning van privé-eind punten/aangepast domein.
+Voor het gebruik van Speech SDK met aangepaste domein naam ingeschakelde spraak bronnen **zonder** persoonlijke eind punten zijn de controle en waarschijnlijke wijzigingen van de toepassings code vereist. Houd er rekening mee dat deze wijzigingen **verschillen** met het geval van een spraak resource die is ingeschakeld voor een [persoonlijk eind punt](#speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-speech-sdk). We werken aan een naadloze ondersteuning van het scenario voor persoonlijk eind punt/aangepast domein.
 
 We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein) voor deze sectie.
 

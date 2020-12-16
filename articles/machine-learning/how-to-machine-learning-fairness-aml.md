@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 3fbd4990fd330960bb8dbce2e2a8d1bcb578cf2a
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 17b0564b4b73f5a5032343dcb78669cbf4cabd5a
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701181"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516144"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning met het open-source pakket Fairlearn om de verdeling van ML-modellen te beoordelen (preview-versie)
 
@@ -38,80 +38,99 @@ Gebruik de volgende opdrachten om de- `azureml-contrib-fairness` en-pakketten te
 pip install azureml-contrib-fairness
 pip install fairlearn==0.4.6
 ```
+Latere versies van Fairlearn moeten ook in de volgende voorbeeld code werken.
 
 
 
 ## <a name="upload-fairness-insights-for-a-single-model"></a>Verdeling Insights voor één model uploaden
 
-In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt om model verdeling Insights te uploaden naar Azure Machine Learning en het dash board voor de verdeling-evaluatie in Azure Machine Learning Studio te bekijken.
+In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We uploaden model verdeling Insights in Azure Machine Learning en bekijken het verdeling Assessment dash board in Azure Machine Learning Studio.
 
 1. Train een voorbeeld model in een Jupyter-notebook. 
 
-    Voor de gegevensset wordt gebruikgemaakt van de bekende verzamelings gegevens voor volwassenen die worden geladen met `shap` (voor het gemak). Voor de doel einden van dit voor beeld behandelen we deze gegevensset als een probleem met een lenings beslissing en Pretend dat het label aangeeft of elke persoon een lening in het verleden opnieuw heeft betaald. We gebruiken de gegevens om een voor spelling te trainen om te voors pellen of voorheen ongeziene personen een lening zullen terugbetalen of niet. De veronderstelling is dat de model voorspellingen worden gebruikt om te bepalen of een individu een lening moet worden aangeboden.
+    Voor de gegevensset wordt gebruikgemaakt van de bekende verzamelings gegevens voor volwassenen die worden opgehaald uit OpenML. We pretenden een probleem met de lenings beslissing met het label dat aangeeft of een individu een eerdere lening opnieuw heeft betaald. We gaan een model trainen om te voors pellen of voorheen onschuldlijke personen een lening zullen terugbetalen. Een dergelijk model kan worden gebruikt bij het nemen van uitbetalings beslissingen.
 
     ```python
-    from sklearn.model_selection import train_test_split
-    from fairlearn.widget import FairlearnDashboard
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.preprocessing import LabelEncoder, StandardScaler
+    import copy
+    import numpy as np
     import pandas as pd
-    import shap
+
+    from sklearn.compose import ColumnTransformer
+    from sklearn.datasets import fetch_openml
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler, OneHotEncoder
+    from sklearn.compose import make_column_selector as selector
+    from sklearn.pipeline import Pipeline
+    
+    from fairlearn.widget import FairlearnDashboard
 
     # Load the census dataset
-    X_raw, Y = shap.datasets.adult()
-    X_raw["Race"].value_counts().to_dict()
+    data = fetch_openml(data_id=1590, as_frame=True)
+    X_raw = data.data
+    y = (data.target == ">50K") * 1
     
-
     # (Optional) Separate the "sex" and "race" sensitive features out and drop them from the main data prior to training your model
-    A = X_raw[['Sex','Race']]
-    X = X_raw.drop(labels=['Sex', 'Race'],axis = 1)
-    X = pd.get_dummies(X)
+    X_raw = data.data
+    y = (data.target == ">50K") * 1
+    A = X_raw[["race", "sex"]]
+    X = X_raw.drop(labels=['sex', 'race'],axis = 1)
     
-    sc = StandardScaler()
-    X_scaled = sc.fit_transform(X)
-    X_scaled = pd.DataFrame(X_scaled, columns=X.columns)
+    # Split the data in "train" and "test" sets
+    (X_train, X_test, y_train, y_test, A_train, A_test) = train_test_split(
+        X_raw, y, A, test_size=0.3, random_state=12345, stratify=y
+    )
 
-    # Perform some standard data preprocessing steps to convert the data into a format suitable for the ML algorithms
-    le = LabelEncoder()
-    Y = le.fit_transform(Y)
-
-    # Split data into train and test
-    from sklearn.model_selection import train_test_split
-    from sklearn.model_selection import train_test_split
-    X_train, X_test, Y_train, Y_test, A_train, A_test = train_test_split(X_scaled, 
-                                                        Y, 
-                                                        A,
-                                                        test_size = 0.2,
-                                                        random_state=0,
-                                                        stratify=Y)
-
-    # Work around indexing issue
+    # Ensure indices are aligned between X, y and A,
+    # after all the slicing and splitting of DataFrames
+    # and Series
     X_train = X_train.reset_index(drop=True)
-    A_train = A_train.reset_index(drop=True)
     X_test = X_test.reset_index(drop=True)
+    y_train = y_train.reset_index(drop=True)
+    y_test = y_test.reset_index(drop=True)
+    A_train = A_train.reset_index(drop=True)
     A_test = A_test.reset_index(drop=True)
 
-    # Improve labels
-    A_test.Sex.loc[(A_test['Sex'] == 0)] = 'female'
-    A_test.Sex.loc[(A_test['Sex'] == 1)] = 'male'
+    # Define a processing pipeline. This happens after the split to avoid data leakage
+    numeric_transformer = Pipeline(
+        steps=[
+            ("impute", SimpleImputer()),
+            ("scaler", StandardScaler()),
+        ]
+    )
+    categorical_transformer = Pipeline(
+        [
+            ("impute", SimpleImputer(strategy="most_frequent")),
+            ("ohe", OneHotEncoder(handle_unknown="ignore")),
+        ]
+    )
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ("num", numeric_transformer, selector(dtype_exclude="category")),
+            ("cat", categorical_transformer, selector(dtype_include="category")),
+        ]
+    )
 
+    # Put an estimator onto the end of the pipeline
+    lr_predictor = Pipeline(
+        steps=[
+            ("preprocessor", copy.deepcopy(preprocessor)),
+            (
+                "classifier",
+                LogisticRegression(solver="liblinear", fit_intercept=True),
+            ),
+        ]
+    )
 
-    A_test.Race.loc[(A_test['Race'] == 0)] = 'Amer-Indian-Eskimo'
-    A_test.Race.loc[(A_test['Race'] == 1)] = 'Asian-Pac-Islander'
-    A_test.Race.loc[(A_test['Race'] == 2)] = 'Black'
-    A_test.Race.loc[(A_test['Race'] == 3)] = 'Other'
-    A_test.Race.loc[(A_test['Race'] == 4)] = 'White'
-
-
-    # Train a classification model
-    lr_predictor = LogisticRegression(solver='liblinear', fit_intercept=True)
-    lr_predictor.fit(X_train, Y_train)
+    # Train the model on the test data
+    lr_predictor.fit(X_train, y_train)
 
     # (Optional) View this model in Fairlearn's fairness dashboard, and see the disparities which appear:
     from fairlearn.widget import FairlearnDashboard
     FairlearnDashboard(sensitive_features=A_test, 
-                       sensitive_feature_names=['Sex', 'Race'],
-                       y_true=Y_test,
+                       sensitive_feature_names=['Race', 'Sex'],
+                       y_true=y_test,
                        y_pred={"lr_model": lr_predictor.predict(X_test)})
     ```
 
@@ -149,11 +168,11 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt om model v
 
     ```python
     #  Create a dictionary of model(s) you want to assess for fairness 
-    sf = { 'Race': A_test.Race, 'Sex': A_test.Sex}
+    sf = { 'Race': A_test.race, 'Sex': A_test.sex}
     ys_pred = { lr_reg_id:lr_predictor.predict(X_test) }
     from fairlearn.metrics._group_metric_set import _create_group_metric_set
 
-    dash_dict = _create_group_metric_set(y_true=Y_test,
+    dash_dict = _create_group_metric_set(y_true=y_test,
                                         predictions=ys_pred,
                                         sensitive_features=sf,
                                         prediction_type='binary_classification')
@@ -207,28 +226,33 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt om model v
 
 ## <a name="upload-fairness-insights-for-multiple-models"></a>Verdeling Insights voor meerdere modellen uploaden
 
-Als u geïnteresseerd bent in het vergelijken van meerdere modellen en u wilt zien hoe de verdeling-evaluaties verschillen, kunt u meer dan één model door geven aan het visualisatie dashboard en de prestaties van verdeling traden door lopen.
+Als u meerdere modellen wilt vergelijken en wilt zien hoe hun verdeling-evaluaties verschillen, kunt u meer dan één model door geven aan het visualisatie dashboard en de prestaties van de verdeling-afwegingen vergelijken.
 
 1. Uw modellen trainen:
     
-    Naast het vorige logistiek regressie model maken we nu een tweede classificatie op basis van een ondersteunings vector machine Estimator en uploaden we een verdeling-dash board-woorden lijst met behulp van het pakket van Fairlearn `metrics` . Hier worden de stappen voor het laden en voorverwerken van gegevens overs Laan en direct naar de model trainings fase gereageerd.
+    We gaan nu een tweede classificatie maken op basis van een ondersteunings vector machine Estimator en een verdeling dashboard woordenlijst uploaden met behulp van het pakket van Fairlearn `metrics` . We gaan ervan uit dat het eerder getrainde model nog steeds beschikbaar is.
 
 
     ```python
-    # Train your first classification model
-    from sklearn.linear_model import LogisticRegression
-    lr_predictor = LogisticRegression(solver='liblinear', fit_intercept=True)
-    lr_predictor.fit(X_train, Y_train)
+    # Put an SVM predictor onto the preprocessing pipeline
+    from sklearn import svm
+    svm_predictor = Pipeline(
+        steps=[
+            ("preprocessor", copy.deepcopy(preprocessor)),
+            (
+                "classifier",
+                svm.SVC(),
+            ),
+        ]
+    )
 
     # Train your second classification model
-    from sklearn import svm
-    svm_predictor = svm.SVC()
-    svm_predictor.fit(X_train, Y_train)
+    svm_predictor.fit(X_train, y_train)
     ```
 
 2. Uw modellen registreren
 
-    Registreer beide modellen in Azure Machine Learning. Voor het gemak van de volgende methode worden de resultaten opgeslagen in een woorden lijst, waarmee het `id` geregistreerde model (een teken reeks in `name:version` indeling) wordt toegewezen aan de voor spelling zelf:
+    Registreer beide modellen in Azure Machine Learning. Voor het gemak slaat u de resultaten op in een woorden lijst, waarmee het `id` geregistreerde model (een teken reeks in `name:version` indeling) wordt toegewezen aan de voor spelling zelf:
 
     ```python
     model_dict = {}
@@ -255,8 +279,8 @@ Als u geïnteresseerd bent in het vergelijken van meerdere modellen en u wilt zi
     from fairlearn.widget import FairlearnDashboard
 
     FairlearnDashboard(sensitive_features=A_test, 
-                    sensitive_feature_names=['Sex', 'Race'],
-                    y_true=Y_test.tolist(),
+                    sensitive_feature_names=['Race', 'Sex'],
+                    y_true=y_test.tolist(),
                     y_pred=ys_pred)
     ```
 
@@ -265,7 +289,7 @@ Als u geïnteresseerd bent in het vergelijken van meerdere modellen en u wilt zi
     Maak een dash board-woorden lijst met behulp van het `metrics` pakket Fairlearn.
 
     ```python
-    sf = { 'Race': A_test.Race, 'Sex': A_test.Sex }
+    sf = { 'Race': A_test.race, 'Sex': A_test.sex }
 
     from fairlearn.metrics._group_metric_set import _create_group_metric_set
 
@@ -311,9 +335,9 @@ Als u geïnteresseerd bent in het vergelijken van meerdere modellen en u wilt zi
 
 U kunt de [beperkende algoritmen](https://fairlearn.github.io/master/user_guide/mitigation.html)van Fairlearn gebruiken, de gegenereerde gereduceerde model (s) vergelijken met het oorspronkelijke ongebruikte model en door de Verwissel bare prestaties/verdeling te navigeren tussen de vergeleken modellen.
 
-Bekijk dit [voorbeeld notitieblok](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb)om een voor beeld te zien van het gebruik van het risico voor het beperken van de [raster zoek actie](https://fairlearn.github.io/master/user_guide/mitigation.html#grid-search) (waarmee een verzameling verlaagde modellen met verschillende verdeling en prestaties wordt gemaakt). 
+Bekijk dit [voorbeeld notitieblok](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/fairness/fairlearn-azureml-mitigation.ipynb)voor een voor beeld van het gebruik van het risico voor het beperken van de [raster zoek actie](https://fairlearn.github.io/master/user_guide/mitigation.html#grid-search) (waarmee een verzameling verlaagde modellen met verschillende verdeling en prestaties wordt gemaakt). 
 
-Bij het uploaden van meerdere modellen verdeling Insights in één keer worden modellen met betrekking tot verdeling en prestaties toegestaan. U kunt verder klikken op een van de modellen die worden weer gegeven in de model vergelijkings grafiek om de gedetailleerde verdeling inzichten van het desbetreffende model te bekijken.
+Als u meerdere modellen uploadt met behulp van ' verdeling Insights in één keer uitvoeren, kunt u modellen vergelijken met betrekking tot verdeling en prestaties. U kunt klikken op een van de modellen die worden weer gegeven in de model vergelijkings grafiek om de gedetailleerde verdeling inzichten van het desbetreffende model te bekijken.
 
 
 [![Fairlearn-dash board voor model vergelijking](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)

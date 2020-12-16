@@ -7,20 +7,20 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 08/01/2020
+ms.date: 12/15/2020
 ms.custom: references_regions
-ms.openlocfilehash: f314394d3a0ac453d525079e096162d8739f67cf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 118ee6ffb189b7a5558477912bd6b27ea739afde
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011792"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516157"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Beveiliging in azure Cognitive Search-overzicht
 
 In dit artikel worden de belangrijkste beveiligings functies in azure Cognitive Search beschreven waarmee u inhoud en bewerkingen kunt beveiligen.
 
-+ Op het niveau van de opslaglaag is encryption-at-rest ingebouwd voor alle door service beheerde inhoud die op schijf wordt opgeslagen, inclusief indexen, synoniemen en de definities van Indexeer functies, gegevens bronnen en vaardig heden. Azure Cognitive Search biedt ook ondersteuning voor het toevoegen van door de klant beheerde sleutels (CMK) voor een bijkomende versleuteling van geïndexeerde inhoud. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.
++ In de opslaglaag is encryption-at-rest ingebouwd voor alle service-beheerde inhoud die op schijf wordt opgeslagen, inclusief indexen, synoniemen en de definities van Indexeer functies, gegevens bronnen en vaardig heden. Azure Cognitive Search biedt ook ondersteuning voor het toevoegen van door de klant beheerde sleutels (CMK) voor een bijkomende versleuteling van geïndexeerde inhoud. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.
 
 + Inkomende beveiliging beveiligt het eind punt van de zoek service op toenemende niveaus van beveiliging: van API-sleutels op de aanvraag, tot binnenkomende regels in de firewall, tot privé-eind punten die uw service volledig kunnen afschermen via het open bare Internet.
 
@@ -40,7 +40,7 @@ In azure Cognitive Search begint versleuteling met verbindingen en verzen dingen
 
 Voor gegevens die intern door de zoek service worden verwerkt, worden de [gegevens versleutelings modellen](../security/fundamentals/encryption-models.md)beschreven in de volgende tabel. Sommige functies, zoals kennis opslag, incrementele verrijking en indexering gebaseerd indexering, lezen van of schrijven naar gegevens structuren in andere Azure-Services. Deze services hebben hun eigen coderings niveaus gescheiden van Azure Cognitive Search.
 
-| Modelleren | Subknooppuntsleutels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Vereiste&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Beperkingen | Van toepassing op |
+| Model | Subknooppuntsleutels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Vereiste&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Beperkingen | Van toepassing op |
 |------------------|-------|-------------|--------------|------------|
 | versleuteling aan de server zijde | Door Microsoft beheerde sleutels | Geen (ingebouwd) | Geen, beschikbaar op alle lagen, in alle regio's, voor inhoud die is gemaakt na januari 24 2018. | Inhoud (indices en synoniemen kaarten) en definities (Indexeer functies, gegevens bronnen, vaardig heden) |
 | versleuteling aan de server zijde | door de klant beheerde sleutels | Azure Key Vault | Beschikbaar op factureer bare lagen, in alle regio's, voor inhoud die is gemaakt na januari 2019. | Inhoud (indices en synoniemen toewijzingen) op gegevens schijven |
@@ -62,7 +62,7 @@ In azure Cognitive Search is dubbele versleuteling een uitbrei ding van CMK. Het
 
 Dubbele versleuteling is momenteel beschikbaar op nieuwe services die na 1 augustus zijn gemaakt in deze regio's:
 
-+ VS - west 2
++ West US 2
 + VS - oost
 + VS - zuid-centraal
 + VS (overheid) - Virginia
@@ -76,7 +76,7 @@ Binnenkomende beveiligings functies beveiligen het eind punt van de zoek service
 
 ### <a name="public-access-using-api-keys"></a>Open bare toegang met API-sleutels
 
-Een zoek service is standaard toegankelijk via de open bare Cloud, met behulp van verificatie op basis van sleutels voor beheer of toegang tot het eind punt van de zoek service. Een API-sleutel is een teken reeks die bestaat uit wille keurig gegenereerde cijfers en letters. Het type sleutel (beheerder of query) bepaalt het toegangs niveau. Het verzenden van een geldige sleutel wordt beschouwd als een bewijs dat de aanvraag afkomstig is van een vertrouwde entiteit.
+Een zoek service is standaard toegankelijk via de open bare Cloud, met behulp van verificatie op basis van sleutels voor beheer of toegang tot het eind punt van de zoek service. Een [API-sleutel](search-security-rbac.md) is een teken reeks die bestaat uit wille keurig gegenereerde cijfers en letters. Het type sleutel (beheerder of query) bepaalt het toegangs niveau. Het verzenden van een geldige sleutel wordt beschouwd als een bewijs dat de aanvraag afkomstig is van een vertrouwde entiteit.
 
 Er zijn twee toegangs niveaus voor uw zoek service, ingeschakeld door de volgende API-sleutels:
 
@@ -114,19 +114,19 @@ Hoewel deze oplossing het veiligst is, is het gebruik van aanvullende services e
 
 In azure Cognitive Search is een afzonderlijke index geen beveiligbaar object. In plaats daarvan wordt de toegang tot een index bepaald op basis van de service laag (lees-of schrijf toegang tot de service), samen met de context van een bewerking.
 
-Voor toegang door eind gebruikers kunt u query aanvragen structureren om verbinding te maken met behulp van een query sleutel, waardoor elke aanvraag alleen-lezen is, en de specifieke index die door uw app wordt gebruikt. In een query aanvraag is er geen idee van het samen voegen van indexen of het tegelijkertijd openen van meerdere indexen, zodat alle aanvragen een enkele index per definitie doel hebben. Als zodanig definieert de constructie van de query aanvraag zelf (een sleutel plus een enkele doel index) de beveiligings grens.
+Voor toegang door eind gebruikers kunt u query aanvragen structureren om verbinding te maken met behulp van een [query sleutel](search-security-rbac.md), waardoor elke aanvraag alleen-lezen is, en de specifieke index die door uw app wordt gebruikt. In een query aanvraag is er geen idee van het samen voegen van indexen of het tegelijkertijd openen van meerdere indexen, zodat alle aanvragen een enkele index per definitie doel hebben. Als zodanig definieert de constructie van de query aanvraag zelf (een sleutel plus een enkele doel index) de beveiligings grens.
 
-De beheerder en ontwikkelaars toegang tot indexen zijn niet-gedifferentieerd: beide moeten schrijf toegang hebben voor het maken, verwijderen en bijwerken van objecten die worden beheerd door de service. Iedereen met een beheerders sleutel voor uw service kan elke index in dezelfde service lezen, wijzigen of verwijderen. Voor beveiliging tegen onbedoelde of schadelijke verwijdering van indexen is uw interne broncode beheer voor code assets de oplossing voor het terugdraaien van een ongewenste index verwijderen of wijzigen. Azure Cognitive Search heeft een failover in het cluster om Beschik baarheid te garanderen, maar de code van uw eigen programma wordt niet opgeslagen of uitgevoerd voor het maken of laden van indexen.
+De beheerder en ontwikkelaars toegang tot indexen zijn niet-gedifferentieerd: beide moeten schrijf toegang hebben voor het maken, verwijderen en bijwerken van objecten die worden beheerd door de service. Iedereen met een [beheerders sleutel](search-security-rbac.md) voor uw service kan elke index in dezelfde service lezen, wijzigen of verwijderen. Voor beveiliging tegen onbedoelde of schadelijke verwijdering van indexen is uw interne broncode beheer voor code assets de oplossing voor het terugdraaien van een ongewenste index verwijderen of wijzigen. Azure Cognitive Search heeft een failover in het cluster om Beschik baarheid te garanderen, maar de code van uw eigen programma wordt niet opgeslagen of uitgevoerd voor het maken of laden van indexen.
 
 Voor multitenancy-oplossingen die beveiligings grenzen vereisen op index niveau, bevatten dergelijke oplossingen doorgaans een middelste laag, die klanten gebruiken voor het verwerken van index isolatie. Zie [ontwerp patronen voor SaaS-toepassingen met meerdere tenants en Azure Cognitive Search](search-modeling-multitenant-saas-applications.md)voor meer informatie over de multi tenant-use-case.
 
 ## <a name="user-access"></a>Gebruikerstoegang
 
-Hoe een gebruiker toegang heeft tot een index en andere objecten, wordt bepaald door het type API-sleutel voor de aanvraag. De meeste ontwikkel aars maken en toewijzen [*query sleutels*](search-security-api-keys.md) voor Zoek opdrachten aan client zijde. Een query sleutel geeft alleen-lezen toegang tot Doorzoek bare inhoud in de index.
+Hoe een gebruiker toegang heeft tot een index en andere objecten, wordt bepaald door het type API-sleutel voor de aanvraag. De meeste ontwikkel aars maken en toewijzen [query sleutels](search-security-api-keys.md) voor Zoek opdrachten aan client zijde. Een query sleutel geeft alleen-lezen toegang tot Doorzoek bare inhoud in de index.
 
 Als u nauw keuriger controle per gebruiker met de zoek resultaten nodig hebt, kunt u beveiligings filters voor uw query's maken en documenten retour neren die zijn gekoppeld aan een bepaalde beveiligings identiteit. In plaats van vooraf gedefinieerde rollen en roltoewijzingen, wordt toegangs beheer op basis van een id geïmplementeerd als een *filter* waarmee Zoek resultaten van documenten en inhoud worden verkleind op basis van identiteiten. In de volgende tabel worden twee benaderingen beschreven waarmee Zoek resultaten van niet-geautoriseerde inhoud worden bijgesneden.
 
-| Methode | Description |
+| Methode | Beschrijving |
 |----------|-------------|
 |[Beveiligings beperking op basis van identiteits filters](search-security-trimming-for-azure-search.md)  | Documenteert de basis werk stroom voor het implementeren van toegangs beheer voor gebruikers identiteit. Het onderwerp bevat het toevoegen van beveiligings-id's aan een index en legt vervolgens een overzicht van de filtering uit voor dat veld om de resultaten van verboden inhoud te kunnen knippen. |
 |[Beveiligings beperking op basis van Azure Active Directory-identiteiten](search-security-trimming-for-azure-search-with-aad.md)  | In dit artikel wordt het vorige artikel uitgebreid met stappen voor het ophalen van identiteiten van Azure Active Directory (Azure AD), een van de [gratis services](https://azure.microsoft.com/free/) in het Azure-Cloud platform. |

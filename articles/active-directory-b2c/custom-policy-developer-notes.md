@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 68526fd542d8bc891358a36d031af3314edab4c2
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 68e282f192b87b9f2217e0727753e7d37ff1aeb1
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507979"
+ms.locfileid: "97516097"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Opmerkingen voor ontwikkel aars voor aangepast beleid in Azure Active Directory B2C
 
@@ -116,7 +116,7 @@ Mogelijkheden voor aangepast beleid/identiteits ervaring zijn onder constante en
 | Query teken reeks parameter `login_hint` |  |  | X | Beschikbaar als claim kan worden door gegeven aan IDP. |
 | JSON invoegen in gebruikers traject via `client_assertion` | X |  |  | Wordt afgeschaft. |
 | JSON invoegen in de gebruikers reis als `id_token_hint` |  | X |  | Go-Forward-benadering voor het door geven van JSON. |
-| [ID-provider token door geven aan de toepassing](idp-pass-through-custom.md) |  | X |  | Bijvoorbeeld van Facebook naar app. |
+| [ID-provider token door geven aan de toepassing](idp-pass-through-user-flow.md) |  | X |  | Bijvoorbeeld van Facebook naar app. |
 
 
 ### <a name="session-management"></a>Sessie beheer

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: c991559d550b351ce70bcc5834f96f313f856a82
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 30004306d9ff44df04a26640a2bd7a09256fce25
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552400"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516684"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u in azure controle sfeer liggen referenties
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Azure-sleutel kluis. Als u er nog geen hebt, kunt u een koppeling naar het artikel KV Creation invoegen om er een te maken.
+* Een Azure-sleutelkluis. Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van deze.
 
 ## <a name="introduction"></a>Inleiding
 Een referentie is verificatie-informatie die Azure controle sfeer liggen kan gebruiken voor verificatie bij uw geregistreerde gegevens bronnen. Een referentie object kan worden gemaakt voor diverse typen verificatie scenario's (zoals basis verificatie waarvoor gebruikers naam en wacht woord zijn vereist) en legt de specifieke informatie vast op basis van het gekozen type verificatie methode. Referenties gebruiken uw bestaande Azure-sleutel kluizen geheimen om gevoelige verificatie gegevens op te halen tijdens het proces voor het maken van de referenties.
@@ -32,7 +32,7 @@ Als u de beheerde identiteit controle sfeer liggen gebruikt om scans in te stell
 - [Azure Data Lake Storage Gen1](register-scan-adls-gen1.md#setting-up-authentication-for-a-scan)
 - [Azure Data Lake Storage Gen2](register-scan-adls-gen2.md#setting-up-authentication-for-a-scan)
 - [Azure SQL Database](register-scan-azure-sql-database.md)
-- [Beheerde instantie Azure SQL Database](register-scan-azure-sql-database-managed-instance.md#setting-up-authentication-for-a-scan)
+- [Beheerd exemplaar van Azure SQL Database](register-scan-azure-sql-database-managed-instance.md#setting-up-authentication-for-a-scan)
 - [Azure Synapse Analytics](register-scan-azure-synapse-analytics.md#setting-up-authentication-for-a-scan)
 
 ## <a name="create-azure-key-vaults-connections-in-your-azure-purview-account"></a>Azure Key kluizen-verbindingen maken in uw Azure controle sfeer liggen-account
@@ -60,7 +60,7 @@ Navigeer naar uw sleutel kluis-> toegangs beleid-> beleid voor toegang toevoegen
 :::image type="content" source="media/manage-credentials/add-msi-to-akv.png" alt-text="Controle sfeer liggen MSI toevoegen aan Azure":::
 
 
-:::image type="content" source="media/manage-credentials/add-access-policy.png" alt-text="Toegangs beleid toevoegen":::
+:::image type="content" source="media/manage-credentials/add-access-policy.png" alt-text="Toegangsbeleid toevoegen":::
 
 
 :::image type="content" source="media/manage-credentials/save-access-policy.png" alt-text="Toegangs beleid opslaan":::

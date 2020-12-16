@@ -7,67 +7,40 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/23/2020
-translation.priority.mt:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pt-br
-- ru-ru
-- zh-cn
-- zh-tw
-ms.openlocfilehash: 6ea8bc2551df4f85e4b856dc9cf1c06a9bd571fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/14/2020
+ms.openlocfilehash: 0dbf418d0a673dd0799f0f638e454c484f837fd7
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88923446"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516599"
 ---
 # <a name="lucene-query-syntax-in-azure-cognitive-search"></a>De Lucene-query syntaxis in azure Cognitive Search
 
-U kunt query's schrijven op Azure Cognitive Search op basis van de syntaxis van de Rich [lucene query-parser](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) voor gespecialiseerde query formulieren: Joker teken, fuzzy zoeken, proximity Search, reguliere expressies zijn enkele voor beelden. Veel van de eigenschappen van de Lucene-query-parser zijn [geïmplementeerd in azure Cognitive Search](search-lucene-query-architecture.md), met uitzonde ring van *Zoek opdrachten voor bereiken* die zijn gemaakt in azure Cognitive Search door middel van `$filter` expressies. 
+Bij het maken van query's kunt u kiezen voor de syntaxis van de [lucene-query-parser](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) voor gespecialiseerde query formulieren: Joker teken, fuzzy zoeken, proximity Search, reguliere expressies. Een deel van de syntaxis van de Lucene-query-parser is [in Azure Cognitive Search geïmplementeerd](search-lucene-query-architecture.md), met uitzonde ring van *Zoek opdrachten* in het bereik die zijn gemaakt via **`$filter`** expressies. 
 
-> [!NOTE]
-> De syntaxis Full lucene wordt gebruikt voor query-expressies die zijn door gegeven in de **Zoek** parameter van de [Search Documents](/rest/api/searchservice/search-documents) -API, en niet om te verwarren met de [OData-syntaxis](query-odata-filter-orderby-syntax.md) die wordt gebruikt voor de para meter [$filter](search-filters.md) van die API. Deze verschillende syntaxis hebben hun eigen regels voor het maken van query's, teken reeksen, enzovoort.
+De syntaxis Full lucene wordt gebruikt voor query-expressies die zijn door gegeven in de **`search`** para meter van een aanvraag van een [Zoek document (rest API)](/rest/api/searchservice/search-documents) , niet voor Verwar ring met de [OData-syntaxis](query-odata-filter-orderby-syntax.md) die wordt gebruikt voor de [**`$filter`**](search-filters.md) and- [**`$orderby`**](search-query-odata-orderby.md) expressies in dezelfde aanvraag. OData-para meters hebben een andere syntaxis en regels voor het maken van query's, teken reeksen, enzovoort.
 
-## <a name="invoke-full-parsing"></a>Volledige parsering aanroepen
+## <a name="example-full-syntax"></a>Voor beeld (volledige syntaxis)
 
-Stel de `queryType` Zoek parameter in om op te geven welke parser moet worden gebruikt. Geldige waarden zijn onder andere `simple|full` `simple` de standaard waarde en `full` voor lucene. 
+Stel de **`queryType`** para meter in op volledige lucene opgeven. In het volgende voor beeld wordt zoeken in veld en term versterking geactiveerd. Deze query zoekt naar hotels waar het veld categorie de term ' budget ' bevat. Documenten met de zin ' recent renovated ' worden hoger geclassificeerd als resultaat van de term Boost waarde (3).  
 
-<a name="bkmk_example"></a> 
-
-### <a name="example-showing-full-syntax"></a>Voor beeld met volledige syntaxis
-
-In het volgende voor beeld wordt gezocht naar documenten in de index met behulp van de Lucene-query syntaxis, duidelijk in de `queryType=full` para meter. Deze query retourneert hotels waar het veld categorie de term ' budget ' bevat en alle Doorzoek bare velden met de zin ' recent renovated '. Documenten met de zin ' recent renovated ' worden hoger als resultaat van de term Boost waarde (3).  
-
-De `searchMode=all` para meter is relevant in dit voor beeld. Wanneer Opera tors zich op de query bevinden, moet u in het algemeen instellen `searchMode=all` dat *alle* criteria overeenkomen.
-
-```
-GET /indexes/hotels/docs?search=category:budget AND \"recently renovated\"^3&searchMode=all&api-version=2020-06-30&querytype=full
-```
-
- U kunt ook POST gebruiken:  
-
-```
-POST /indexes/hotels/docs/search?api-version=2020-06-30
+```http
+POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 {
-  "search": "category:budget AND \"recently renovated\"^3",
   "queryType": "full",
+  "search": "category:budget AND \"recently renovated\"^3",
   "searchMode": "all"
 }
 ```
 
-Zie voor meer voor beelden de voor [beelden van Lucene-query syntaxis voor het maken van query's in Azure Cognitive Search](search-query-lucene-examples.md). Zie [zoeken naar documenten &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/Search-Documents)voor meer informatie over het opgeven van de volledige afhankelijkheid van query parameters.
+De **`searchMode`** para meter is relevant in dit voor beeld. Wanneer Opera tors zich op de query bevinden, moet u in het algemeen instellen `searchMode=all` dat *alle* criteria overeenkomen.  
 
-> [!NOTE]  
->  Azure Cognitive Search biedt ook ondersteuning voor [eenvoudige query syntaxis](query-simple-syntax.md), een eenvoudige en krachtige query taal die kan worden gebruikt voor het zoeken naar eenvoudige tref woorden.  
+Zie voor meer voor beelden de voor [beelden van Lucene-query syntaxis](search-query-lucene-examples.md). Zie [documenten zoeken (rest API)](/rest/api/searchservice/Search-Documents)voor meer informatie over de query aanvraag en-para meters.
 
-##  <a name="syntax-fundamentals"></a><a name="bkmk_syntax"></a> Syntaxis basis  
+## <a name="syntax-fundamentals"></a><a name="bkmk_syntax"></a> Syntaxis basis  
 
-de volgende syntaxis basis is van toepassing op alle query's die gebruikmaken van de Lucene-syntaxis.  
+De volgende syntaxis basis is van toepassing op alle query's die gebruikmaken van de Lucene-syntaxis.  
 
 ### <a name="operator-evaluation-in-context"></a>Operator evaluatie in de context
 
@@ -95,39 +68,15 @@ Zorg ervoor dat alle onveilige en gereserveerde tekens worden gecodeerd in een U
 
 Onveilige tekens zijn ``" ` < > # % { } | \ ^ ~ [ ]`` . Gereserveerde tekens zijn `; / ? : @ = + &` .
 
-###  <a name="query-size-limits"></a><a name="bkmk_querysizelimits"></a> Limieten voor query grootte
+## <a name="boolean-operators"></a><a name="bkmk_boolean"></a> Booleaanse Opera tors
 
- Er is een limiet voor de grootte van query's die u kunt verzenden naar Azure Cognitive Search. U kunt met name de meeste 1024-componenten hebben (expressies gescheiden door en, of, enzovoort). Er is ook een limiet van ongeveer 32 KB op de grootte van een afzonderlijke term in een query. Als uw toepassing Zoek query's programmatisch genereert, raden we u aan om deze zodanig te ontwerpen dat er geen query's van een ongebonden grootte worden gegenereerd.  
+U kunt Booleaanse Opera tors insluiten in een query reeks om de nauw keurigheid van een overeenkomst te verbeteren. De volledige syntaxis ondersteunt naast teken operatoren ook tekst operators. Geef altijd tekst Booleaanse Opera tors (en, of, niet) op in hoofd letters.
 
-### <a name="precedence-operators-grouping"></a>Prioriteits operatoren (groepering)
-
- U kunt haakjes gebruiken om subquery's te maken, inclusief Opera tors in de instructie van de haak. Zoekt bijvoorbeeld naar `motel+(wifi||luxury)` documenten met de term ' Motel ' en ' WiFi ' of ' luxe ' (of beide).
-
-Veld groepering is vergelijkbaar, maar bereiken de groepering op één veld. `hotelAmenities:(gym+(wifi||pool))`Zoekt bijvoorbeeld naar het veld "hotelAmenities" voor "Gym" en "WiFi" of "Gym" en "pool".  
-
-##  <a name="boolean-search"></a><a name="bkmk_boolean"></a> Booleaanse zoek actie
-
- Geef altijd tekst Booleaanse Opera tors (en, of, niet) op in hoofd letters.  
-
-### <a name="or-operator-or-or-"></a>OF operator `OR` of `||`
-
-De operator OR is een verticale streep of een sluis teken. Bijvoorbeeld: `wifi || luxury` zoekt naar documenten met ofwel ' WiFi ' of ' luxe ' of beide. Omdat of de standaard operator voor samen voegen is, kunt u dit ook laten verlopen, zodat `wifi luxury` het equivalent is van  `wifi || luxury` .
-
-### <a name="and-operator-and--or-"></a>EN operator `AND` , `&&` of `+`
-
-De operator AND is een ampersand of een plus teken. Bijvoorbeeld: `wifi && luxury` zoekt naar documenten die zowel "WiFi" als "luxe" bevatten. Het plus teken (+) wordt gebruikt voor de vereiste voor waarden. Voor beeld: `+wifi +luxury` bepaalt dat beide termen ergens in het veld van één document moeten worden weer gegeven.
-
-### <a name="not-operator-not--or--"></a>GEEN operator `NOT` , `!` of `-`
-
-De operator NOT is een minteken. U kunt bijvoorbeeld `wifi –luxury` zoeken naar documenten die de `wifi` term en/of niet hebben `luxury` .
-
-De para meter **Search mode** voor een query-aanvraag bepaalt of een term met de operator Not ANDed of ORed is met andere voor waarden in de query (ervan uitgaande dat er geen `+` operator is of `|` de andere voor waarden). Geldige waarden zijn `any` of `all` .
-
-`searchMode=any` Hiermee verg root u het intrekken van query's door meer resultaten op te nemen `-` . deze worden standaard geïnterpreteerd als "of niet". Komt bijvoorbeeld `wifi -luxury` overeen met documenten die de voor waarden bevatten of die de `wifi` term niet bevatten `luxury` .
-
-`searchMode=all` verhoogt de nauw keurigheid van query's door minder resultaten op te nemen en wordt standaard geïnterpreteerd als "en niet". Komt bijvoorbeeld `wifi -luxury` overeen met documenten die de term bevatten `wifi` en niet de term ' luxe ' bevatten. Dit is weliswaar een meer intuïtief gedrag voor de `-` operator. Daarom kunt u overwegen `searchMode=all` in plaats van te gebruiken `searchMode=any` Als u zoek acties wilt optimaliseren in plaats van intrekken, *en* uw gebruikers vaak de `-` operator gebruiken in Zoek opdrachten.
-
-Houd bij het kiezen van een **Search mode** -instelling rekening met de gebruikers interactie patronen voor query's in verschillende toepassingen. Gebruikers die op zoek zijn naar informatie, hebben waarschijnlijk vaker een operator in een query opgenomen, in tegens telling tot e-commerce sites met meer ingebouwde navigatie structuren.
+|Tekstoperator | Teken | Voorbeeld | Gebruik |
+|--------------|----------- |--------|-------|
+| AND | `&`, `+` | `wifi + luxury` | Hiermee geeft u de voor waarden die een overeenkomst moet bevatten. In het voor beeld zoekt de query-engine naar documenten die beide `wifi` en bevatten `luxury` . Het plus teken ( `+` ) wordt gebruikt voor de vereiste voor waarden. Voor beeld: `+wifi +luxury` bepaalt dat beide termen ergens in het veld van één document moeten worden weer gegeven.|
+| OF | `|` | `wifi | luxury` | Zoekt een overeenkomst wanneer een van beide termen wordt gevonden. In het voor beeld retourneert de query-engine een overeenkomst op documenten met `wifi` of `luxury` of beide. Omdat of de standaard operator voor samen voegen is, kunt u dit ook laten verlopen, zodat `wifi luxury` het equivalent is van  `wifi | luxury` .|
+| NOT | `!`, `-` | `wifi –luxury` | Hiermee worden overeenkomsten geretourneerd voor documenten die de voor waarde uitsluiten. Bijvoorbeeld, `wifi –luxury` wordt gezocht naar documenten die de `wifi` term maar niet hebben `luxury` . <br/><br/>De `searchMode` para meter voor een query aanvraag bepaalt of een term met de operator Not ANDed of ORed is met andere voor waarden in de query (ervan uitgaande dat er geen `+` operator is of `|` de andere voor waarden). Geldige waarden zijn `any` of `all` .  <br/><br/>`searchMode=any` Hiermee verg root u het intrekken van query's door meer resultaten op te nemen `-` . deze worden standaard geïnterpreteerd als "of niet". Komt bijvoorbeeld `wifi -luxury` overeen met documenten die de voor waarden bevatten of die de `wifi` term niet bevatten `luxury` .  <br/><br/>`searchMode=all` verhoogt de nauw keurigheid van query's door minder resultaten op te nemen en wordt standaard geïnterpreteerd als "en niet". Komt bijvoorbeeld `wifi -luxury` overeen met documenten die de term bevatten `wifi` en niet de term ' luxe ' bevatten. Dit is weliswaar een meer intuïtief gedrag voor de `-` operator. Daarom kunt u overwegen `searchMode=all` in plaats van te gebruiken `searchMode=any` Als u zoek acties wilt optimaliseren in plaats van intrekken, *en* uw gebruikers vaak de `-` operator gebruiken in Zoek opdrachten.<br/><br/>Houd bij het bepalen van een `searchMode` instelling rekening met de gebruikers interactie patronen voor query's in verschillende toepassingen. Gebruikers die op zoek zijn naar informatie, hebben waarschijnlijk vaker een operator in een query opgenomen, in tegens telling tot e-commerce sites met meer ingebouwde navigatie structuren. |
 
 ##  <a name="fielded-search"></a><a name="bkmk_fields"></a> Zoek opdracht in veld
 
@@ -148,14 +97,13 @@ Het opgegeven veld in `fieldName:searchExpression` moet een `searchable` veld zi
 
 Een fuzzy zoek opdracht zoekt naar overeenkomsten met een vergelijk bare constructie, waardoor een term wordt uitgebreid tot het maximum van 50 voor waarden die voldoen aan de afstands criteria van twee of minder. Zie [fuzzy Search](search-query-fuzzy.md)voor meer informatie.
 
- Als u een fuzzy zoek opdracht wilt uitvoeren, gebruikt u het tilde ' ~ ' aan het einde van één woord met een optionele para meter, een getal tussen 0 en 2 (standaard) waarmee de bewerkings afstand wordt opgegeven. Bijvoorbeeld: ' Blue ~ ' of ' Blue ~ 1 ' retourneert ' Blue ', ' blauw ' en ' lijm '.
+Als u een fuzzy zoek opdracht wilt uitvoeren, gebruikt u het tilde ' ~ ' aan het einde van één woord met een optionele para meter, een getal tussen 0 en 2 (standaard) waarmee de bewerkings afstand wordt opgegeven. Bijvoorbeeld: ' Blue ~ ' of ' Blue ~ 1 ' retourneert ' Blue ', ' blauw ' en ' lijm '.
 
- Fuzzy Search kan alleen worden toegepast op termen, geen zinsdelen, maar u kunt de tilde aan elke afzonderlijke term afzonderlijk toevoegen in een naam of woord groep met meerdere delen. Zo komt ' Unviersty ~ van ~ ' Wshington ~ ' overeen met ' University of Washington '.
+Fuzzy Search kan alleen worden toegepast op termen, geen zinsdelen, maar u kunt de tilde aan elke afzonderlijke term afzonderlijk toevoegen in een naam of woord groep met meerdere delen. Zo komt ' Unviersty ~ van ~ ' Wshington ~ ' overeen met ' University of Washington '.
  
 ##  <a name="proximity-search"></a><a name="bkmk_proximity"></a> Proximity Search
 
 Proximity-Zoek opdrachten worden gebruikt om termen te vinden die zich in een document nabij elkaar bevinden. Voeg een tilde ' ~ ' aan het einde van een woord groep toe, gevolgd door het aantal woorden dat de grens van de nabijheid heeft gemaakt. `"hotel airport"~5`De termen ' Hotel ' en ' lucht haven ' worden bijvoorbeeld binnen vijf woorden van elkaar in een document weer te vinden.  
-
 
 ##  <a name="term-boosting"></a><a name="bkmk_termboost"></a> Term versterking
 
@@ -194,9 +142,27 @@ Als u de analyse functie en. lucene (Engels lucene) zou gebruiken, zou dit een a
 
 Aan de andere kant, de micro soft-analyse functies (in dit geval de en. micro soft Analyzer) zijn nog een beetje Geavanceerd en gebruiken lemmatisering in plaats van de ontleding. Dit betekent dat alle gegenereerde tokens geldige Engelse woorden moeten zijn. Bijvoorbeeld ' Terminate ', ' terminates ' en ' Terminate ' blijven meestal geheel in de index staan en zouden een wille keurige keuze zijn voor scenario's die afhankelijk zijn van een groot aantal joker tekens en zoek acties op fuzzy.
 
-##  <a name="scoring-wildcard-and-regex-queries"></a><a name="bkmk_searchscoreforwildcardandregexqueries"></a> Score Joker teken en regex-query's
+## <a name="scoring-wildcard-and-regex-queries"></a>Score Joker teken en regex-query's
 
 Azure Cognitive Search maakt gebruik van scores op basis van frequentie ([TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)) voor tekst query's. Voor joker tekens en regex-query's waarbij de reik wijdte van termen mogelijk breed kan zijn, wordt de frequentie factor genegeerd om te voor komen dat de rang schikking overeenkomt met overeenkomsten van rarer-voor waarden. Alle overeenkomsten worden op dezelfde manier behandeld voor Zoek opdrachten met Joker tekens en regex.
+
+## <a name="special-characters"></a>Speciale tekens
+
+In sommige gevallen wilt u mogelijk zoeken naar een speciaal teken, zoals een ' ❤ ' Emoji of het teken ' € '. Zorg er in dat geval voor dat de analyse die u gebruikt, deze tekens niet filtert. Met de Standard Analyzer worden veel speciale tekens omzeild, met uitzonde ring van de index.
+
+Analyse functies die Tokenize speciale tekens bevatten, zijn onder andere de ' White '-analyse functie, waarbij alle teken reeksen die worden gescheiden door spaties, worden behandeld als tokens (dus de teken reeks "❤" wordt beschouwd als een token). Daarnaast zou een taal analyse zoals micro soft English Analyzer (en micro soft) de teken reeks "€" als een token. U kunt [een analyse programma testen](/rest/api/searchservice/test-analyzer) om te zien welke tokens worden gegenereerd voor een bepaalde query.
+
+Wanneer u Unicode-tekens gebruikt, moet u ervoor zorgen dat symbolen op de juiste wijze in de query-URL staan (bijvoorbeeld voor ' ❤ ' zou de escape-reeks gebruiken `%E2%9D%A4+` ). Postman doet deze vertaling automatisch.  
+
+## <a name="precedence-grouping"></a>Prioriteit (groepering)
+
+U kunt haakjes gebruiken om subquery's te maken, inclusief Opera tors in de instructie van de haak. Zoekt bijvoorbeeld naar `motel+(wifi|luxury)` documenten met de term ' Motel ' en ' WiFi ' of ' luxe ' (of beide).
+
+Veld groepering is vergelijkbaar, maar bereiken de groepering op één veld. `hotelAmenities:(gym+(wifi|pool))`Zoekt bijvoorbeeld naar het veld "hotelAmenities" voor "Gym" en "WiFi" of "Gym" en "pool".  
+
+## <a name="query-size-limits"></a>Limieten voor query grootte
+
+Er is een limiet voor de grootte van query's die u kunt verzenden naar Azure Cognitive Search. U kunt met name de meeste 1024-componenten hebben (expressies gescheiden door en, of, enzovoort). Er is ook een limiet van ongeveer 32 KB op de grootte van een afzonderlijke term in een query. Als uw toepassing Zoek query's programmatisch genereert, raden we u aan om deze zodanig te ontwerpen dat er geen query's van een ongebonden grootte worden gegenereerd.  
 
 ## <a name="see-also"></a>Zie ook
 

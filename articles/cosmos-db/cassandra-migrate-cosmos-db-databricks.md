@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: thvankra
 ms.reviewer: thvankra
-ms.openlocfilehash: 827abcdb9eb2eb8b7328eb3e3a78f49d51e87e6b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 74088d749279ab72851e714a50b558dc2adbc0d7
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349177"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516552"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-azure-databricks"></a>Gegevens migreren van Cassandra naar Azure Cosmos DB Cassandra-API-account met behulp van Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -42,7 +42,7 @@ Er zijn verschillende manieren om de data base-workloads van het ene platform na
 
 ## <a name="provision-an-azure-databricks-cluster"></a>Een Azure Databricks cluster inrichten
 
-U kunt instructies volgen om [een Azure Databricks cluster](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal)in te richten. Let echter op dat Apache Spark 3. x momenteel niet wordt ondersteund voor de Apache Cassandra-connector. U moet een Databricks-runtime inrichten met een ondersteunde versie van v2. x van Apache Spark. U wordt aangeraden versie 6,6 van Databricks runtime:
+U kunt instructies volgen om [een Azure Databricks cluster](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal)in te richten. Let echter op dat Apache Spark 3. x momenteel niet wordt ondersteund voor de Apache Cassandra-connector. U moet een Databricks-runtime inrichten met een ondersteunde versie van v2. x van Apache Spark. U kunt het beste een versie van de Databricks-runtime selecteren die de meest recente versie van Spark 2. x ondersteunt, met niet meer dan scala versie 2,11:
 
 :::image type="content" source="./media/cassandra-migrate-cosmos-db-databricks/databricks-runtime.png" alt-text="Databricks-runtime":::
 

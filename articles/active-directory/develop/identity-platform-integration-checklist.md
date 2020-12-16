@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 94da22fbb2940bddaad1324bedc8759706eca37b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 47c3c091e767cac63bb814469397ef1a0aeca3a4
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173563"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516494"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Best practices en aanbevelingen voor het Microsoft-identiteitsplatform
 
@@ -28,7 +28,7 @@ Als u net aan de slag gaat, raadpleegt u de [documentatie voor micro soft Identi
 Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effectief wordt geïntegreerd met het [micro soft Identity-platform](./index.yml).
 
 > [!TIP]
-> De *integratie-assistent* in de Azure Portal kan u helpen bij het Toep assen van veel van deze aanbevolen procedures en aanbevelingen. Selecteer een van de [app-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) in de Azure Portal en selecteer vervolgens het menu **-item voor de integratie-assistent (preview)** om aan de slag te gaan met de-assistent.
+> De *integratie-assistent* in de Azure Portal kan u helpen bij het Toep assen van veel van deze aanbevolen procedures en aanbevelingen. Selecteer een van de [app-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) in de Azure Portal en selecteer vervolgens het menu-item van de **integratie-assistent** om aan de slag te gaan met de-assistent.
 
 ## <a name="basics"></a>Basisbeginselen
 
@@ -100,7 +100,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Test uw toepassing met alle mogelijke accounts die u wilt ondersteunen (bijvoorbeeld werk-of school accounts, persoonlijke micro soft-accounts, onderliggende accounts en soevereine accounts).
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 Gedetailleerde informatie over v2.0 verkennen:
 

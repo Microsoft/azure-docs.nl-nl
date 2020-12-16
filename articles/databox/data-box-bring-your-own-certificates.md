@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/08/2020
+ms.date: 12/11/2020
 ms.author: alkohli
-ms.openlocfilehash: dab34b26d8237d743e22149ed0da2dd9471d7431
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: deb52c8716f97874beae4accbf6f34f72e20ca04
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97096006"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516472"
 ---
 # <a name="use-your-own-certificates-with-data-box-and-data-box-heavy-devices"></a>Uw eigen certificaten gebruiken met Data Box en Data Box Heavy apparaten
 
@@ -95,11 +95,12 @@ Voer de volgende stappen uit om uw eigen certificaat toe te voegen aan uw appara
 
    ![Error after a new Local web UI certificate is added to a Data Box device](media/data-box-bring-your-own-certificates/certificates-unable-to-communicate-error.png) TEST. RESTORE IF ERROR IS REPRODUCED.-->
 
-6. Installeer het nieuwe certificaat op de client computer die u gebruikt voor toegang tot de lokale webgebruikersinterface. Zie [certificaten naar client importeren](#import-certificates-to-client)hieronder voor instructies.
-
-7. Als u het certificaat voor de lokale web-UI hebt gewijzigd, moet u de browser opnieuw opstarten en vervolgens de lokale webgebruikersinterface. Deze stap is nodig om problemen met de SSL-cache te voor komen.
+6. Als u het certificaat voor de lokale web-UI hebt gewijzigd, moet u de browser opnieuw opstarten en vervolgens de lokale webgebruikersinterface. Deze stap is nodig om problemen met de SSL-cache te voor komen.
 
   <!-- TESTING THIS - The communication error should be gone from the **Certificates** screen.-->
+
+7. Installeer het nieuwe certificaat op de client computer die u gebruikt voor toegang tot de lokale webgebruikersinterface. Zie [certificaten naar client importeren](#import-certificates-to-client)hieronder voor instructies.
+
 
 ## <a name="import-certificates-to-client"></a>Certificaten importeren naar client
 

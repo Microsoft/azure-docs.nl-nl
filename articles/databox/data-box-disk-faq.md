@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 12/14/2020
 ms.author: alkohli
-ms.openlocfilehash: 483ae81f22358e41f252dd8090c01d5b4cad7fb1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: acaa0fdb1fa0e9a338f4e249622cad0115c6b58e
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344161"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516443"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: veelgestelde vragen
 
@@ -62,27 +62,56 @@ A. Data Box Disk wordt ondersteund voor alle regio's binnen de Verenigde Staten,
 ### <a name="q-how-can-i-import-source-data-present-at-my-location-in-one-countryregion-to-an-azure-region-in-a-different-country"></a>V. Hoe kan ik bron gegevens op mijn locatie in een land/regio importeren naar een Azure-regio in een ander land?
 A. Data Box Disk ondersteunt alleen gegevens opname binnen hetzelfde land/dezelfde regio als de bestemming en snijdt geen internationale grenzen. De enige uitzonde ring hierop is voor orders in de Europese Unie (EU), waar Data Box schijven kunnen worden verzonden naar en van een EU-land/regio.
 
-Als u bijvoorbeeld gegevens op uw locatie in Canada wilt verplaatsen naar een Azure Westus-opslag account, kunt u deze op de volgende manier belopen:
+Als u bijvoorbeeld gegevens op uw locatie in Canada wilt verplaatsen naar een Azure West US-opslag account, kunt u deze op de volgende manier bereiken:
 
 ### <a name="option-1"></a>Optie 1: 
 
-Een [ondersteunde schijf](../storage/common/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) met gegevens verzenden met de [Azure import/export-service](../storage/common/storage-import-export-service.md) van de bron locatie in Canada naar het Azure westus Data Center.
+Verzend een [ondersteunde schijf](../storage/common/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) met gegevens met de [Azure import/export-service](../storage/common/storage-import-export-service.md) van de bron locatie in Canada naar het Azure West US-Data Center.
 
 ### <a name="option-2"></a>Optie 2:
 
-1. Volg Data Box Disk in Canada door een opslag account te kiezen in Cananda Central. De SSD-schijven worden verzonden vanuit het Azure-Data Center in Canada-centraal naar het verzend adres (in Canada) dat wordt gegeven tijdens het maken van de order.
+1. Volg Data Box Disk in Canada door een opslag account te kiezen in Canada-centraal. De SSD-schijven worden verzonden vanuit het Azure-Data Center in Canada-centraal naar het verzend adres (in Canada) dat wordt gegeven tijdens het maken van de order.
 
 2. Nadat de gegevens van uw on-premises server naar de schijven zijn gekopieerd, gaat u terug naar het Azure-Data Center in Canada met behulp van de micro soft-retour labels. De gegevens die aanwezig zijn op de Data Box Disk, worden vervolgens geüpload naar het doel-opslag account in de Canada Azure-regio die u hebt gekozen tijdens het maken van de order.
 
-3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in Westus te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data Box disk.
+3. U kunt vervolgens een hulp programma als AzCopy gebruiken om de gegevens naar een opslag account in VS-West te kopiëren. Met deze stap worden [standaard](https://azure.microsoft.com/pricing/details/storage/) kosten voor opslag en [band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) in rekening gebracht die niet zijn opgenomen in de facturering van data Box disk.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>V. Met wie moet ik contact opnemen als ik een probleem krijg met Data Box-schijven?
-A. Neem bij problemen met Data Box-schijven contact op met [Microsoft Ondersteuning](./data-box-disk-contact-microsoft-support.md).
+A. Als u problemen ondervindt met Data Box schijven, [neemt u contact op met Microsoft ondersteuning](./data-box-disk-contact-microsoft-support.md).
+
+## <a name="order-device"></a>Apparaat bestellen
+
+### <a name="q-how-do-i-get-data-box-disk"></a>V. Hoe kan ik Data Box Disk ophalen? 
+A.  Als u Azure Data Box Disk wilt ontvangen, meldt u zich aan bij de Azure Portal en maakt u een Data Box Disk order. Geef uw contactgegevens en overige informatie op. Wanneer u een bestelling op basis van de beschik baarheid plaatst, wordt Data Box Disk binnen 10 dagen naar u verzonden. Ga voor meer informatie naar [Een Data Box bestellen](data-box-disk-deploy-ordered.md).
+
+### <a name="q-i-couldnt-create-a-data-box-disk-order-in-the-azure-portal-why"></a>V. Ik kan geen Data Box Disk volgorde maken in de Azure Portal. Waarom?
+A. Als u geen Data Box Disk order kunt maken, is er een probleem met het type abonnement of de toegang.
+
+Raadpleeg uw abonnement. Data Box Disk is alleen beschikbaar voor de aanbiedingen Enterprise Agreement (EA) en Cloud Solution Provider (CSP). Als u niet een van deze typen abonnementen hebt, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken.
+
+Controleer het toegangsniveau van uw abonnement als u een ondersteund type aanbieding voor het abonnement hebt. U moet inzender of eigenaar van een abonnement zijn om een bestelling te kunnen maken.
+
+### <a name="q-how-long-will-my-order-take-from-order-creation-to-data-uploaded-to-azure"></a>V. Hoe lang duurt mijn bestelling uit het maken van een order naar gegevens die zijn geüpload naar Azure?
+
+A. Met de volgende geschatte lever tijden voor elke fase van de order verwerking krijgt u een goed beeld van wat u kunt verwachten.  
+
+Deze lever tijden zijn *schattingen*. De tijd voor elke fase van de order verwerking wordt beïnvloed door de belasting van het Data Center, gelijktijdige orders en andere omgevings omstandigheden.
+
+**Geschatte lever tijden voor een Data Box Disk order:**
+
+1. Volg orde Data Box Disk: een paar minuten, vanuit de portal
+2. Schijf toewijzing en-voor bereiding: 1-2 werk dagen
+3. Verzending: 2-3 werkdagen
+4. Gegevens kopie op de site van de klant: is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden
+5. Retourzending: 2-3 werkdagen
+6. Verwerkings schijf in Data Center: 1-2 werk dagen
+7. Gegevens uploaden naar Azure: begint zodra de verwerking is voltooid en de schijf is verbonden. De upload tijd is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
+
 
 ## <a name="configure-and-connect"></a>Configureren en verbinding maken
  
 ### <a name="q-can-i-specify-the-number-of-data-box-disks-in-the-order"></a>V. Kan ik het aantal Data Box-schijven in de bestelling opgeven?
-A.  Nee. Het aantal schijven van 8 TB (maximaal vijf) dat u ontvangt, is afhankelijk van uw gegevensgrootte en de beschikbaarheid van de schijven.  
+A.  Nee. U krijgt 8 TB schijven (Maxi maal 5 schijven), afhankelijk van de grootte van de gegevens en de beschik baarheid van de schijven.  
 
 ### <a name="q-how-do-i-unlock-the-data-box-disks"></a>V. Hoe ontgrendel ik de Data Box-schijven? 
 A.  Ga in Azure Portal naar uw Data Box Disk-bestelling en vervolgens naar **Apparaatdetails**. Kopieer de wachtwoordsleutel. Download in de Azure-portal het ontgrendelingsprogramma van Data Box Disk voor uw besturingssysteem en pak het programma uit. Voer het hulpprogramma uit op de computer waarop de gegevens staan die u wilt kopiëren naar de schijven. Geef de wachtwoordsleutel op om de schijven te ontgrendelen. U kunt alle schijven met dezelfde wachtwoordsleutel ontgrendelen. 
@@ -116,7 +145,7 @@ A. Ja. Micro soft biedt ook zelf-beheerde verzen ding in US Gov regio. Wanneer u
 Wanneer het kopiëren en valideren van de gegevens is voltooid, voert u de volgende stappen uit om uw schijf te retour neren:
 
 1. Koppel de schijven los, nadat de gegevensvalidatie is voltooid. Verwijder de verbindingskabels.
-2. Verpak alle schijven en de verbindingskabels in bubbelplastic en plaats deze in de verzenddoos. Er kunnen kosten in rekening worden gebracht als er accessoires ontbreken.
+2. Pak alle schijven en de verbindings kabels met een ballon terugloop in en plaats ze in het vak verzen ding. Er kunnen kosten in rekening worden gebracht als er accessoires ontbreken.
 
     - Gebruik de verpakking waarin u het pakket hebt gekregen. U wordt aangeraden schijven te verpakken in stevig bubbelplastic.
     - Zorg ervoor dat alles goed past zodat het product niet in de doos kan gaan schuiven.
@@ -139,16 +168,16 @@ A. Bij een test met schijven die verbonden waren via USB 3.0 was de prestatie va
 A.  Data Box-schijven zijn versleuteld met BitLocker AES-128-bitsversleuteling; de wachtwoordsleutel is alleen beschikbaar via Azure Portal. Meld u aan bij Azure Portal met uw accountreferenties om de wachtwoordsleutel op te halen. Geef deze wachtwoordsleutel op als u het Data Box Disk-ontgrendelingsprogramma wilt uitvoeren.
 
 ### <a name="q-how-do-i-copy-the-data-to-the-data-box-disks"></a>V. Hoe kan ik de gegevens naar de Data Box-schijven kopiëren? 
-A.  Gebruik een SMB-kopieerprogramma als Robocopy of Diskboss als u gegevens naar schijven wilt kopiëren. U kunt ook slepen vanuit Windows Verkenner.
+A.  Gebruik een hulp programma voor het kopiëren van SMB zoals `Robocopy` , `Diskboss` of zelfs Windows bestanden verkenner slepen en neerzetten om gegevens naar schijven te kopiëren.
 
 ### <a name="q-are-there-any-tips-to-speed-up-the-data-copy"></a>V. Zijn er tips om het kopiëren van gegevens te versnellen?
 A.  U kunt het kopieerproces als volgt versnellen:
 
-- Gebruik meerdere gegevensstromen. In bijvoorbeeld Robocopy kunt u de optie voor meerdere threads gebruiken. Ga naar [Tutorial: Copy data to Azure Data Box Disk and verify](data-box-disk-deploy-copy-data.md#copy-data-to-disks) (Zelfstudie: Gegevens naar Azure Data Box kopiëren en verifiëren) voor meer informatie over de opdracht die u moet gebruiken.
+- Gebruik meerdere gegevensstromen. `Robocopy`Gebruik bijvoorbeeld de multi-threaded optie. Ga naar [Tutorial: Copy data to Azure Data Box Disk and verify](data-box-disk-deploy-copy-data.md#copy-data-to-disks) (Zelfstudie: Gegevens naar Azure Data Box kopiëren en verifiëren) voor meer informatie over de opdracht die u moet gebruiken.
 - Gebruik meerdere sessies.
 - In plaats van te kopiëren via een netwerkshare (waarbij de netwerksnelheid beperkend kan zijn), zorgt u ervoor dat de gegevens lokaal aanwezig zijn op de computer waarmee de schijven zijn verbonden.
-- Zorg ervoor dat u USB 3.0 of hoger gebruikt gedurende het hele kopieerproces. Download en gebruik het hulpprogramma [USBView](/windows-hardware/drivers/debugger/usbview) om de USB-controllers en de USB-apparaten te identificeren die met de computer zijn verbonden.
-- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Download en gebruik het hulpprogramma [Bluestop FIO](https://ci.appveyor.com/project/axboe/fio) om een benchmark-test uit te voeren van de prestaties van de serverhardware. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
+- Zorg ervoor dat u USB 3.0 of hoger gebruikt gedurende het hele kopieerproces. Down load en gebruik het [ `USBView` hulp programma](/windows-hardware/drivers/debugger/usbview) om de USB-controllers en USB-apparaten te identificeren die zijn verbonden met de computer.
+- Voer een benchmark-test uit van de prestaties van de computer die wordt gebruikt om de gegevens te kopiëren. Down load en gebruik het [Bluestop- `FIO` hulp programma](https://ci.appveyor.com/project/axboe/fio) om de prestaties van de serverhardware te benchmarkren. Selecteer de nieuwste versie van x86 of x64, selecteer het tabblad **artefacten** en down load het MSI-bestand.
 
 ### <a name="q-how-to-speed-up-the-data-if-the-source-data-has-small-files-kbs-or-few-mbs"></a>V. Hoe kan ik het kopiëren van de gegevens versnellen als de brongegevens uit kleine bestanden (kB's of enkele MB's) bestaan?
 A.  U kunt het kopieerproces als volgt versnellen:
@@ -163,7 +192,7 @@ A.  Nee. Er wordt momenteel slechts één (algemeen of klassiek) opslagaccount o
 ### <a name="q-what-is-the-toolset-available-for-my-data-with-data-box-disks"></a>V. Welke hulpprogramma's zijn er beschikbaar voor mijn gegevens op Data Box-schijven?
 A. Er zijn drie hulpprogramma's beschikbaar voor Data Box Disk:
  - **Data Box Disk hulp programma voor ontgrendelen**: gebruik dit hulp programma om de versleutelde schijven te ontgrendelen die van micro soft worden geleverd. Wanneer u schijven ontgrendelt met het hulpprogramma moet u een wachtwoordsleutel opgeven. Deze vindt u in de gegevens van de Data Box Disk-bestelling in de Azure-portal. 
- - **Data Box Disk validatie hulpprogramma**: gebruik dit hulp programma om de grootte, indeling en BLOB-namen te valideren volgens de Azure-naamgevings conventies. Hiermee worden ook controlesommen voor de gekopieerde gegevens gemaakt. Deze worden vervolgens gebruikt voor het verifiëren van de gegevens die naar Azure worden geüpload.
+ - **Data Box Disk validatie hulpprogramma**: gebruik dit hulp programma om de grootte, indeling en BLOB-namen te valideren volgens de Azure-naamgevings conventies. Er worden ook controle sommen gegenereerd voor de gekopieerde gegevens, die vervolgens worden gebruikt om te controleren of de gegevens zijn geüpload naar Azure.
  - **Data Box Disk Splits-hulp programma voor kopiëren**: gebruik dit hulp programma wanneer u meerdere schijven gebruikt en een grote gegevensset hebt die moet worden gesplitst en op alle schijven moeten worden gekopieerd. Dit hulpprogramma is momenteel beschikbaar voor Windows. Dit hulp programma wordt niet ondersteund met Managed disks. Dit hulp programma valideert ook bij het kopiëren van de gegevens. Daarom kunt u de validatie stap overs Laan wanneer u dit hulp programma gebruikt.
 
 De set hulpprogramma's is beschikbaar voor zowel Windows als Linux. U kunt de set hulpprogramma's hier downloaden:
@@ -180,10 +209,10 @@ A. Azure Files worden ondersteund met Data Box Disk, maar werken niet goed met A
 A.  Zodra de bestellingsstatus voor Gegevens kopiëren als voltooid is aangemerkt, hebt u weer toegang tot uw gegevens.
 
 ### <a name="q-where-is-my-data-located-in-azure-after-the-upload"></a>V. Waar bevinden zich mijn gegevens in Azure na het uploaden?
-A.  Als u de gegevens onder de bestanden *BlockBlob* en *PageBlob* op uw schijf kopieert, wordt er voor elke submap onder de mappen *BlockBlob* en *PageBlob* een container gemaakt in het Azure Storage-account. Als u de bestanden onder de mappen *BlockBlob* en *PageBlob* rechtstreeks hebt gekopieerd, bevinden deze zich in de standaardcontainer *$root* onder het Azure Storage-account. Wanneer u de gegevens naar een map onder *AzureFile* map kopieert, wordt een file share gemaakt.
+A.  Als u de gegevens onder de bestanden *BlockBlob* en *PageBlob* op uw schijf kopieert, wordt er voor elke submap onder de mappen *BlockBlob* en *PageBlob* een container gemaakt in het Azure Storage-account. Als u de bestanden in de *BlockBlob* -en *PageBlob* -mappen rechtstreeks hebt gekopieerd, bevinden de bestanden zich in een standaard container *$root* onder het Azure Storage-account. Wanneer u de gegevens naar een map onder *AzureFile* map kopieert, wordt een file share gemaakt.
 
 ### <a name="q-i-just-noticed-that-i-did-not-follow-the-azure-naming-requirements-for-my-containers-will-my-data-fail-to-upload-to-azure"></a>V. Ik heb gemerkt dat ik de naamgevingsvereisten voor Azure niet voor mijn containers heb gevolgd. Worden mijn gegevens niet naar Azure geüpload?
-A. Als de containernamen hoofdletters bevatten, worden deze automatisch naar kleine letters omgezet. Als de namen anderszins niet aan de vereisten voldoen (speciale tekens, andere taal, enzovoort), dan worden er geen gegevens geüpload. Ga voor meer informatie naar [Naamconventies](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions).
+A. Hoofd letters in de naam van de container worden automatisch omgezet in kleine letters. Als de namen niet op andere manieren voldoen: ze bevatten bijvoorbeeld speciale tekens of andere talen. het uploaden mislukt. Ga voor meer informatie naar [Naamconventies](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions).
 
 ### <a name="q-how-do-i-verify-the-data-i-copied-onto-multiple-data-box-disks"></a>V. Hoe controleer ik de gegevens die ik naar meerdere Data Box-schijven heb gekopieerd?
 A.  Als het kopiëren van de gegevens is voltooid, kunt u `DataBoxDiskValidation.cmd` uitvoeren in de map *DataBoxDiskImport* om controlesommen te genereren voor validatie. Als u meerdere schijven hebt, moet u per schijf een opdrachtvenster openen en deze opdracht uitvoeren. Houd er rekening mee dat deze bewerking lang kan duren (uren), afhankelijk van de grootte van de gegevens.
@@ -192,7 +221,7 @@ A.  Als het kopiëren van de gegevens is voltooid, kunt u `DataBoxDiskValidation
 A.  Als de gegevens naar Azure zijn gekopieerd, worden de gegevens van de schijven veilig gewist volgens de richtlijnen van NIST SP 800-88 Revision 1.  
 
 ### <a name="q-how-is-my-data-protected-during-transit"></a>V. Hoe worden mijn gegevens tijdens het verzenden beveiligd? 
-A.  De Data Box-schijven zijn versleuteld met AES-128 Microsoft BitLocker-stationsversleuteling. Hiervoor is één wachtwoordsleutel vereist om alle schijven en toegangsgegevens te ontgrendelen.
+A.  De Data Box schijven worden versleuteld met AES-128 micro soft BitLocker-versleuteling en er is één sleutel vereist om alle schijven te ontgrendelen en toegang te krijgen tot gegevens.
 
 ### <a name="q-do-i-need-to-rerun-checksum-validation-if-i-add-more-data-to-the-data-box-disks"></a>V. Moet ik de controlesom opnieuw valideren als ik meer gegevens aan de Data Box-schijven toevoeg?
 A. Ja. Als u besluit uw gegevens te valideren (aanbevolen), dan dient u de validatie opnieuw uit te voeren als u meer gegevens aan de schijven hebt toegevoegd.
@@ -200,10 +229,10 @@ A. Ja. Als u besluit uw gegevens te valideren (aanbevolen), dan dient u de valid
 ### <a name="q-i-used-all-my-disks-to-transfer-data-and-need-to-order-more-disks-is-there-a-way-to-quickly-place-the-order"></a>V. Ik heb al mijn schijven gebruikt om gegevens over te dragen. Ik wil meer schijven bestellen. Kan ik dat op een snelle manier doen?
 A. U kunt een kloon maken van uw vorige bestelling. Hierdoor maakt u dezelfde bestelling als eerst en kunt u de details van de bestelling bewerken zonder dat u opnieuw uw adres, contactgegevens en meldingsinformatie hoeft te typen.
 
-### <a name="q-i-copied-data-to-manageddisk-folder-i-dont-see-any-managed-disks-with-the-resource-group-specified-for-managed-disks-was-my-data-uploaded-to-azure-and-how-can-i-locate-it"></a>V. Ik heb gegevens gekopieerd naar de map ManagedDisk. Ik zie geen Managed disks met de resource groep die is opgegeven voor beheerde schijven. Zijn mijn gegevens geüpload naar Azure en hoe kan ik deze vinden?
-A. Ja. Uw gegevens zijn geüpload naar Azure, maar als u geen beheerde schijven met de opgegeven resource groepen ziet, is het waarschijnlijk dat de gegevens ongeldig zijn. Als de pagina-blobs, blok-blobs, Azure Files en Managed disks niet geldig zijn, gaan ze naar de volgende mappen:
- - Pagina-blobs gaan naar een blok-BLOB-container die begint met *databoxdisk-ongeldig-PB*-.
- - Azure Files gaat naar een blok-BLOB-container die begint met *databoxdisk-ongeldig-af-*.
+### <a name="q-i-copied-data-to-the-manageddisk-folder-i-dont-see-any-managed-disks-with-the-resource-group-specified-for-managed-disks-was-my-data-uploaded-to-azure-how-can-i-locate-it"></a>V. Ik heb gegevens gekopieerd naar de map ManagedDisk. Ik zie geen Managed disks met de resource groep die is opgegeven voor beheerde schijven. Zijn mijn gegevens geüpload naar Azure? Hoe kan ik het vinden?
+A. Ja. Uw gegevens zijn geüpload naar Azure, maar als u geen beheerde schijven met de opgegeven resource groepen ziet, is het waarschijnlijk dat de gegevens ongeldig zijn. Als pagina-blobs, blok-blobs, Azure Files of Managed disks niet geldig zijn, worden ze naar de volgende mappen geleid:
+ - Pagina-blobs gaan naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-PB*-.
+ - Azure Files gaat naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-af-*.
  - Beheerde schijven gaan naar een blok-BLOB-container, te beginnen met *databoxdisk-ongeldig-MD-*.
 
 ## <a name="next-steps"></a>Volgende stappen

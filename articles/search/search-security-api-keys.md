@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 0e209e8114d8f1791a00e87894fa12206edcf34e
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 29a314553584843ed6241b9311e9d72b42ec8705
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700219"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516407"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-cognitive-search-service"></a>API-sleutels voor een Azure Cognitive Search-service maken en beheren
 
@@ -27,7 +27,7 @@ Sleutels worden tijdens het inrichten van de service gemaakt met uw zoek service
 
 :::image type="content" source="media/search-manage/azure-search-view-keys.png" alt-text="Portal-pagina, instellingen ophalen, sectie sleutels" border="false":::
 
-## <a name="what-is-an-api-key"></a>Wat is een API-sleutel
+## <a name="what-is-an-api-key"></a>Wat is een API-sleutel?
 
 Een API-sleutel is een teken reeks die bestaat uit wille keurig gegenereerde cijfers en letters. Via [op rollen gebaseerde machtigingen](search-security-rbac.md)kunt u de sleutels verwijderen of lezen, maar u kunt geen sleutel vervangen door een door de gebruiker gedefinieerd wacht woord of Active Directory gebruiken als de primaire verificatie methode voor het openen van zoek bewerkingen. 
 
@@ -88,6 +88,7 @@ U kunt nog steeds toegang krijgen tot de service via de portal of de Management 
 Nadat u nieuwe sleutels via de portal of de Management-laag hebt gemaakt, wordt de toegang tot uw inhoud (indexen, Indexeer functies, gegevens bronnen, synoniemen kaarten) hersteld zodra u de nieuwe sleutels hebt en deze sleutels op aanvragen hebt ingesteld.
 
 ## <a name="secure-api-keys"></a>Beveiligde API-sleutels
+
 De belangrijkste beveiliging wordt gewaarborgd door de toegang te beperken via de portal of de Resource Manager-interfaces (Power shell of de opdracht regel Interface). Zoals aangegeven, kunnen abonnements beheerders alle API-sleutels weer geven en opnieuw genereren. Raadpleeg de roltoewijzingen voor meer informatie over wie toegang heeft tot de beheer sleutels.
 
 + Klik in het service dashboard op **toegangs beheer (IAM)** en vervolgens op **het tabblad roltoewijzingen om** roltoewijzingen voor uw service weer te geven.

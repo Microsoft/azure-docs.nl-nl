@@ -1,18 +1,18 @@
 ---
 title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
-ms.date: 12/04/2020
+ms.date: 12/15/2020
 ms.topic: how-to
-ms.openlocfilehash: b353a8194b9f5dd48b315340435669531359e8d5
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 023b44a77cb38a14df8aa6a885ff137c02942061
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608466"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516127"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
-In dit artikel wordt uitgelegd hoe u, als service provider, een klant kan onboarden naar Azure Lighthouse. Als u dit doet, kunnen de gedelegeerde resources (abonnementen en/of resource groepen) van de klant worden benaderd en beheerd via uw eigen Azure Active Directory (Azure AD)-Tenant met behulp van [Azure delegated resource management](../concepts/azure-delegated-resource-management.md).
+In dit artikel wordt uitgelegd hoe u, als service provider, een klant kan onboarden naar Azure Lighthouse. Als u dit doet, kunnen gedelegeerde resources (abonnementen en/of resource groepen) in de Tenant van de Azure Active Directory van de klant (Azure AD) worden beheerd via uw eigen Tenant met behulp van [Azure delegated resource management](../concepts/azure-delegated-resource-management.md).
 
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, kunnen [bedrijven die meerdere tenants beheren](../concepts/enterprise.md) , hetzelfde proces gebruiken voor het instellen van Azure Lighthouse en het samen voegen van hun beheer ervaring.
@@ -22,7 +22,7 @@ U kunt het onboarding-proces voor meerdere klanten herhalen. Wanneer een gebruik
 Als u de gevolgen voor klant afspraken wilt bijhouden en de herkenning wilt ontvangen, koppelt u uw Microsoft Partner Network-ID (MPN) aan ten minste één gebruikers account dat toegang heeft tot elk van de kant-en-Board abonnementen. U moet deze koppeling uitvoeren in de Tenant van de service provider. We raden u aan een Service-Principal-account te maken in uw Tenant die is gekoppeld aan uw MPN-ID, waarna die Service-Principal elke keer dat u een klant opneemt. Zie [uw partner-id koppelen om het tegoed van de partner in te scha kelen op gedelegeerde resources](partner-earned-credit.md)voor meer informatie.
 
 > [!NOTE]
-> Klanten kunnen ook worden vrijgemaakt naar Azure Lighthouse wanneer ze een beheerde service aanbieding (openbaar of privé) aanschaffen die u [naar Azure Marketplace publiceert](publish-managed-services-offers.md). U kunt ook het voorbereidings proces gebruiken dat hier wordt beschreven, naast aanbiedingen die naar Azure Marketplace worden gepubliceerd.
+> Klanten kunnen naar Azure Lighthouse worden gewisseld wanneer ze een beheerde service aanbieding (openbaar of privé) aanschaffen die u [naar Azure Marketplace publiceert](publish-managed-services-offers.md). U kunt ook het voorbereidings proces gebruiken dat hier wordt beschreven, samen met aanbiedingen die naar Azure Marketplace worden gepubliceerd.
 
 Voor het voorbereidings proces moeten acties worden uitgevoerd vanuit zowel de Tenant van de service provider als van de Tenant van de klant. Al deze stappen worden in dit artikel beschreven.
 
@@ -303,7 +303,19 @@ az account list
 
 Als u na de onboarding van de klant wijzigingen wilt aanbrengen, kunt u [de overdracht bijwerken](update-delegation.md). U kunt ook [de toegang tot de overdracht volledig verwijderen](remove-delegation.md) .
 
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Als uw klant niet kan worden uitgevoerd of als uw gebruikers problemen hebben met het openen van de gedelegeerde resources, raadpleegt u de volgende tips en vereisten en probeert u het opnieuw.
+
+- De `managedbyTenantId` waarde mag niet gelijk zijn aan de Tenant-id voor het abonnement dat wordt uitgevoerd.
+- U kunt niet meerdere toewijzingen met hetzelfde bereik hebben `mspOfferName` . 
+- De resource provider **micro soft. ManagedServices** moet zijn geregistreerd voor het gedelegeerde abonnement. Dit gebeurt automatisch tijdens de implementatie, maar als dat niet het geval is, kunt u [het hand matig registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
+- Autorisaties mogen geen gebruikers met de ingebouwde rol van [eigenaar](../../role-based-access-control/built-in-roles.md#owner) of ingebouwde rollen met [DataActions](../../role-based-access-control/role-definitions.md#dataactions)bevatten.
+- Groepen moeten worden gemaakt met [**groeps type**](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md#group-types) ingesteld op **beveiliging** en niet **Microsoft 365**.
+- Gebruikers die resources moeten weer geven in de Azure Portal, moeten beschikken over de rol van [lezer](../../role-based-access-control/built-in-roles.md#reader) (of een andere ingebouwde rol, waaronder lezers toegang).
+
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [beheerervaring in meerdere tenants](../concepts/cross-tenant-management-experience.md).
 - [Bekijk en beheer klanten](view-manage-customers.md) door naar **mijn klanten** te gaan in de Azure Portal.
+- Meer informatie over het [bijwerken](update-delegation.md) of [verwijderen](remove-delegation.md) van een delegering.

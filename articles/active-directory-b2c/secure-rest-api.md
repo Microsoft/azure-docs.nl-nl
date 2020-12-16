@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3e3245053fcc9943814268835fa5ac0f40a6f94c
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: f6907db7f6e53247a8f2fc0042e8c8e6b081dbd3
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750506"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516370"
 ---
 # <a name="secure-your-restful-services"></a>Uw REST-services beveiligen 
 
@@ -230,7 +230,7 @@ Een claim biedt tijdelijke opslag van gegevens tijdens het uitvoeren van een Azu
 
 ### <a name="acquiring-an-access-token"></a>Een toegangs token verkrijgen 
 
-U kunt op een van de volgende manieren een toegangs token verkrijgen: door het te verkrijgen [bij een federatieve id-provider](idp-pass-through-custom.md), door een rest API aan te roepen dat een toegangs token retourneert, door gebruik te maken van een [ROPC-stroom](../active-directory/develop/v2-oauth-ropc.md)of door gebruik te maken van de [client referentie stroom](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
+U kunt op een van de volgende manieren een toegangs token verkrijgen: door het te verkrijgen [bij een federatieve id-provider](idp-pass-through-user-flow.md), door een rest API aan te roepen dat een toegangs token retourneert, door gebruik te maken van een [ROPC-stroom](../active-directory/develop/v2-oauth-ropc.md)of door gebruik te maken van de [client referentie stroom](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md).  
 
 In het volgende voor beeld wordt een REST API technisch profiel gebruikt om een aanvraag naar het Azure AD-token eindpunt te maken met behulp van de client referenties die zijn door gegeven als HTTP-basis verificatie. Als u dit wilt configureren in azure AD, raadpleegt u [micro soft Identity platform en de OAuth 2,0 client credentials flow](../active-directory/develop/v2-oauth2-client-creds-grant-flow.md). Mogelijk moet u dit wijzigen in de interface met uw ID-provider. 
 

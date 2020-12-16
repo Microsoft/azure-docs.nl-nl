@@ -3,25 +3,20 @@ title: Het diagnostische hulp programma voor Windows virtueel bureau blad (klass
 description: Het hulp programma Diagnostics UX implementeren voor het virtuele bureau blad van Windows (klassiek).
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 729e22f8ad94d2119d0f3f3e9fc474cc83a493a8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 9672d18fe99d8baae3c73fa3782531eb84114713
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023068"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97515641"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Het Windows-hulp programma voor virtueel bureau blad (klassiek) implementeren
 
 >[!IMPORTANT]
 >Deze inhoud is van toepassing op Windows Virtual Desktop (klassiek), dat geen ondersteuning biedt voor Azure Resource Manager Windows Virtual Desktop-objecten.
-
->[!IMPORTANT]
->Vanaf 16 maart 2020 hebben we de diagnostische query's die van invloed zijn op de gebruikers ervaring tijdelijk uitgeschakeld vanwege een verhoogde vraag naar de service. Dit zorgt ervoor dat het hulp programma niet meer werkt omdat het afhankelijk is van deze query's. Dit artikel wordt bijgewerkt wanneer diagnostische query's weer beschikbaar zijn.
->
->Tot slot raden wij u ten zeerste aan om [log Analytics te gebruiken](diagnostics-log-analytics-2019.md) voor voortdurende bewaking.
 
 Het hulp programma voor diagnostische gegevens voor Windows Virtual Desktop kan voor u worden uitgevoerd:
 
@@ -43,8 +38,8 @@ U moet een Azure Active Directory app-registratie en een Log Analytics-werk ruim
 
 U moet deze twee Power shell-modules ook installeren voordat u aan de slag gaat:
 
-- [Azure PowerShell-module](/powershell/azure/install-az-ps?view=azps-2.4.0/)
-- [Azure AD-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/)
+- [Azure PowerShell-module](/powershell/azure/install-az-ps?view=azps-2.4.0/&preserve-view=true)
+- [Azure AD-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/&preserve-view=true)
 
 Zorg ervoor dat uw abonnement-ID gereed is voor wanneer u zich aanmeldt.
 

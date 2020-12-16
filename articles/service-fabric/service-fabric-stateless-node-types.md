@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: d3ce6e888c937676027f2b71578c38b56f3bd6af
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 266c04a049cab574576f781c397aee566efe5372
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97388019"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516621"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen (preview-versie)
 Service Fabric knooppunt typen worden geleverd met inherente veronderstelling dat op een bepaald moment stateful Services kunnen worden geplaatst op de knoop punten. Stateless knooppunt typen versoepelen deze veronderstelling voor een knooppunt type, waardoor het knooppunt type ook andere functies kan gebruiken, zoals het snel uitbreiden van bewerkingen, ondersteuning voor automatische upgrades van besturings systemen op Bronze duurzaamheid en uitschalen naar meer dan 100 knoop punten in één virtuele-machine schaalset.
@@ -24,6 +24,8 @@ Er zijn voorbeeld sjablonen beschikbaar: [service Fabric sjabloon voor stateless
 
 ## <a name="enabling-stateless-node-types-in-service-fabric-cluster"></a>Stateless knooppunt typen in Service Fabric cluster inschakelen
 Als u een of meer knooppunt typen als stateless wilt instellen in een cluster bron, stelt u de eigenschap **isStateless** in op ' True '. Als u een Service Fabric cluster met stateless knooppunt typen implementeert, moet u Mini maal één primair knooppunt type hebben in de cluster bron.
+
+* De Service Fabric cluster resource apiVersion moet 2020-12-01-preview of hoger zijn.
 
 ```json
 {
@@ -238,6 +240,8 @@ Standard Load Balancer en standaard open bare IP introduceren nieuwe mogelijkhed
 
 
 ### <a name="migrate-to-using-stateless-node-types-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip"></a>Migreer naar met stateless knooppunt typen vanuit een cluster met behulp van een basis SKU Load Balancer en een basis-SKU-IP
+Voor alle migratie scenario's moet een nieuw stateless knoop punt type worden toegevoegd. Bestaande knooppunt typen kunnen niet worden gemigreerd als alleen stateless.
+
 Als u een cluster wilt migreren dat gebruikmaakt van een Load Balancer en IP met een basis-SKU, moet u eerst een volledig nieuwe Load Balancer en IP-bron maken met behulp van de standaard-SKU. Het is niet mogelijk om deze resources in-place bij te werken.
 
 Naar de nieuwe LB en IP moet worden verwezen in de nieuwe stateless knooppunt typen die u wilt gebruiken. In het bovenstaande voor beeld wordt een nieuwe resource voor virtuele-machine schaal sets toegevoegd om te worden gebruikt voor stateless knooppunt typen. Deze schaal sets voor virtuele machines verwijzen naar de nieuw gemaakte LB en IP en worden gemarkeerd als stateless knooppunt typen in de Service Fabric cluster bron.
@@ -247,28 +251,8 @@ U moet de nieuwe resources toevoegen aan uw bestaande resource manager-sjabloon 
 * Een Load Balancer resource met standaard-SKU.
 * Een NSG waarnaar wordt verwezen door het subnet waarin u de schaal sets voor virtuele machines implementeert.
 
-
-Een voor beeld van deze resources vindt u in de [voorbeeld sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/10-VM-2-NodeTypes-Windows-Stateless-Secure).
-
-```powershell
-New-AzureRmResourceGroupDeployment `
-    -ResourceGroupName $ResourceGroupName `
-    -TemplateFile $Template `
-    -TemplateParameterFile $Parameters
-```
-
 Zodra de implementatie van de resources is voltooid, kunt u beginnen met het uitschakelen van de knoop punten in het knooppunt type dat u uit het oorspronkelijke cluster wilt verwijderen.
 
-```powershell
-Connect-ServiceFabricCluster -ConnectionEndpoint $ClusterName `
-    -KeepAliveIntervalInSec 10 `
-    -X509Credential `
-    -ServerCertThumbprint $thumb  `
-    -FindType FindByThumbprint `
-    -FindValue $thumb `
-    -StoreLocation CurrentUser `
-    -StoreName My 
-```
 
 ## <a name="next-steps"></a>Volgende stappen 
 * [Reliable Services](service-fabric-reliable-services-introduction.md)

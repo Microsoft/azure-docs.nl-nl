@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 09/18/2019
 ms.author: cephalin
-ms.openlocfilehash: 70ab0b5c70e94c4784a7ab260b3304107bcb1175
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 7458f6868d7fbee72b55ad002148691a113c269d
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97096296"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97531834"
 ---
 Wanneer u de configuratie kloont vanuit een andere implementatie site, kan de gekloonde configuratie bewerkbaar zijn. Sommige configuratie-elementen volgen de inhoud in een wissel (niet sleuf specifiek), terwijl andere configuratie-elementen zich in dezelfde sleuf bevinden na een wissel (sleuf specifiek). In de volgende lijsten ziet u de instellingen die veranderen wanneer u sleuven verwisselt.
 
@@ -41,5 +41,7 @@ Functies die zijn gemarkeerd met een sterretje (*) zijn gepland om ongewisseld t
 * Integratie van virtueel netwerk
 
 > [!NOTE]
+> Als u deze instellingen wilt verwisselen, voegt u de app-instelling `WEBSITE_OVERRIDE_PRESERVE_DEFAULT_STICKY_SLOT_SETTINGS` in elke sleuf van de app toe en stelt u de waarde in op `0` of `false` . Deze instellingen zijn allemaal verwisselbaar of helemaal niet. U kunt niet alleen enkele instellingen wisselen en niet de andere wijzigen.
+
 > Bepaalde app-instellingen die van toepassing zijn op niet-Verwissel bare instellingen, worden ook niet omgewisseld. Omdat de diagnostische instellingen bijvoorbeeld niet worden gewisseld, worden gerelateerde app-instellingen, zoals `WEBSITE_HTTPLOGGING_RETENTION_DAYS` en `DIAGNOSTICS_AZUREBLOBRETENTIONDAYS` ook niet omgewisseld, zelfs niet weer gegeven als sleuf instellingen.
 >

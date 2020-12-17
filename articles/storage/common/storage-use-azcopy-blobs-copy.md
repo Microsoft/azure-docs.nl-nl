@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f536e163e3d19d91c150506ab44fdd9cbc02c693
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 524e3f70f9588cfae2c739722fc1a44e683f9a7f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907508"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617286"
 ---
 # <a name="copy-blobs-between-azure-storage-accounts-by-using-azcopy-v10"></a>Blobs kopiëren tussen Azure-opslag accounts met behulp van AzCopy V10 toevoegen
 
@@ -28,6 +28,8 @@ Zie aan de [slag met AzCopy](storage-use-azcopy-v10.md)om AzCopy te downloaden e
 ## <a name="guidelines"></a>Richtlijnen
 
 Pas de volgende richt lijnen toe op uw AzCopy-opdrachten. 
+
+- Uw client moet netwerk toegang hebben tot de bron-en doel opslag accounts. Zie [Azure Storage firewalls en virtuele netwerken configureren](storage-network-security.md?toc=/azure/storage/blobs/toc.json)voor meer informatie over het configureren van de netwerk instellingen voor elk opslag account.
 
 - Voeg een SAS-token toe aan elke bron-URL. 
 
@@ -146,10 +148,10 @@ Zie [Opties](storage-ref-azcopy-copy.md#options)voor een volledige lijst.
 
 Meer voor beelden vindt u in deze artikelen:
 
-- [Voor beelden: uploaden](storage-use-azcopy-blobs-upload.md)
-- [Voor beelden: downloaden](storage-use-azcopy-blobs-download.md)
-- [Voor beelden: synchroniseren](storage-use-azcopy-blobs-synchronize.md)
-- [Voor beelden: Amazon S3-buckets](storage-use-azcopy-s3.md)
+- [Voorbeelden: Uploaden](storage-use-azcopy-blobs-upload.md)
+- [Voorbeelden: Downloaden](storage-use-azcopy-blobs-download.md)
+- [Voorbeelden: Synchroniseren](storage-use-azcopy-blobs-synchronize.md)
+- [Voorbeelden: Amazon S3-bucket](storage-use-azcopy-s3.md)
 - [Voor beelden: Azure Files](storage-use-azcopy-files.md)
 - [Zelfstudie: on-premises gegevens migreren naar cloudopslag met behulp van AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

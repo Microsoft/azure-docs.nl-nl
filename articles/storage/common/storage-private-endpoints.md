@@ -10,12 +10,12 @@ ms.date: 03/12/2020
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 0da970724a5d6f0ad42ba64939f316ec1ada855b
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 7af2e6794d0d2f37c342a86b2f36b94c9601cc7e
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905550"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617252"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Privé-eind punten voor Azure Storage gebruiken
 
@@ -45,6 +45,9 @@ Eigen aren van opslag accounts kunnen toestemmings aanvragen en de persoonlijke 
 > Als u de toegang tot uw opslag account wilt beperken via het persoonlijke eind punt, configureert u de firewall voor opslag om toegang via het open bare eind punt te weigeren of te beheren.
 
 U kunt uw opslag account beveiligen, zodat alleen verbindingen van uw VNet worden geaccepteerd door [de opslag firewall te configureren om de](storage-network-security.md#change-the-default-network-access-rule) toegang tot het open bare eind punt standaard te weigeren. U hebt geen firewall regel nodig om verkeer van een VNet met een persoonlijk eind punt toe te staan, omdat de opslag firewall alleen de toegang via het open bare eind punt beheert. In plaats daarvan wordt gebruikgemaakt van de toestemming stroom voor het verlenen van toegang tot de opslag service aan persoonlijke eind punten.
+
+> [!NOTE]
+> Bij het kopiëren van blobs tussen opslag accounts moet uw client netwerk toegang hebben tot beide accounts. Als u er dus voor kiest om een persoonlijke koppeling voor slechts één account (de bron of de bestemming) te gebruiken, moet u ervoor zorgen dat uw client netwerk toegang heeft tot het andere account. Zie [Azure Storage firewalls en virtuele netwerken configureren](storage-network-security.md?toc=/azure/storage/blobs/toc.json)voor meer informatie over andere manieren om netwerk toegang te configureren. 
 
 ### <a name="private-endpoints-for-azure-storage"></a>Privé-eind punten voor Azure Storage
 

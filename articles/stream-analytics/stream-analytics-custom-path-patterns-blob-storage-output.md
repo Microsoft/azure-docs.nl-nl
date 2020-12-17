@@ -6,14 +6,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 12/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9763a0ac3cba15dcfd66b8fad83230e2b0eb356b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 7239c2e3cb42cb17b01904e8fc226ae2408dbb47
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96491669"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617422"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Aangepaste BLOB-uitvoer partitioneren Azure Stream Analytics
 
@@ -25,7 +25,13 @@ Aangepaste veld-of invoer kenmerken verbeteren stroomafwaartse werk stromen voor
 
 ### <a name="partition-key-options"></a>Opties voor partitie sleutels
 
-De partitie sleutel of kolom naam die wordt gebruikt voor het partitioneren van invoer gegevens mag alfanumerieke tekens bevatten met afbreek streepjes, onderstrepingen en spaties. Het is niet mogelijk om geneste velden te gebruiken als partitie sleutel, tenzij u deze gebruikt in combi natie met aliassen. De partitie sleutel moet NVARCHAR (MAX), BIGINT, FLOAT of BIT (1,2 compatibiliteits niveau of hoger) zijn. Zie [Azure stream Analytics gegevens typen](/stream-analytics-query/data-types-azure-stream-analytics)voor meer informatie.
+De partitie sleutel of kolom naam die wordt gebruikt voor het partitioneren van invoer gegevens kan elk teken bevatten dat wordt geaccepteerd voor [BLOB-namen](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata). Het is niet mogelijk om geneste velden als partitie sleutel te gebruiken, tenzij u deze gebruikt in combi natie met aliassen, maar u kunt bepaalde tekens gebruiken om een hiërarchie van bestanden te maken. U kunt bijvoorbeeld de volgende query gebruiken om een kolom te maken die gegevens uit twee andere kolommen combineert om een unieke partitie sleutel te maken.
+
+```sql
+SELECT name, id, CONCAT(name, "/", id) AS nameid
+```
+
+De partitie sleutel moet NVARCHAR (MAX), BIGINT, FLOAT of BIT (1,2 compatibiliteits niveau of hoger) zijn. DateTime-, matrix-en record typen worden niet ondersteund, maar kunnen worden gebruikt als partitie sleutels als ze worden geconverteerd naar teken reeksen. Zie [Azure stream Analytics gegevens typen](/stream-analytics-query/data-types-azure-stream-analytics)voor meer informatie.
 
 ### <a name="example"></a>Voorbeeld
 

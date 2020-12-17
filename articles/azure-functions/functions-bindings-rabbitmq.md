@@ -4,15 +4,15 @@ description: Meer informatie over het verzenden van Azure RabbitMQ-triggers en-b
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/11/2020
+ms.date: 12/15/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: cd6c8de0d9290aab273e25403bb1cb2d8fe07e27
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 72c31d0eebc19a926805976ed637168a00fa9495
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505725"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617184"
 ---
 # <a name="rabbitmq-bindings-for-azure-functions-overview"></a>RabbitMQ-bindingen voor Azure Functions-overzicht
 
@@ -21,7 +21,7 @@ ms.locfileid: "97505725"
 
 Azure Functions integreert met [RabbitMQ](https://www.rabbitmq.com/) via [Triggers en bindingen](./functions-triggers-bindings.md). Met de RabbitMQ-bindings extensies van de Azure Functions kunt u berichten verzenden en ontvangen met behulp van de RabbitMQ-API met functies.
 
-| Actie | Type |
+| Bewerking | Type |
 |---------|---------|
 | Een functie uitvoeren wanneer een RabbitMQ-bericht door de wachtrij wordt opgehaald | [Trigger](./functions-bindings-rabbitmq-trigger.md) |
 | RabbitMQ-berichten verzenden |[Uitvoer binding](./functions-bindings-rabbitmq-output.md) |
@@ -30,7 +30,7 @@ Azure Functions integreert met [RabbitMQ](https://www.rabbitmq.com/) via [Trigge
 
 Om aan de slag te gaan met het ontwikkelen met deze uitbrei ding, moet u eerst [een RabbitMQ-eind punt instellen](https://github.com/Azure/azure-functions-rabbitmq-extension/wiki/Setting-up-a-RabbitMQ-Endpoint). Bekijk de [pagina aan](https://www.rabbitmq.com/getstarted.html)de slag voor meer informatie over RabbitMQ.
 
-### <a name="functions-2x-and-higher"></a>Functions 2.x en hoger
+### <a name="functions-3x-and-higher"></a>Functies 3. x en hoger
 
 Voor het werken met de trigger en bindingen moet u verwijzen naar het juiste pakket. Het NuGet-pakket wordt gebruikt voor .NET-klassen bibliotheken terwijl de uitbreidings bundel wordt gebruikt voor alle andere toepassings typen.
 
@@ -46,9 +46,9 @@ Voor het werken met de trigger en bindingen moet u verwijzen naar het juiste pak
 [Uw extensies bijwerken]: ./functions-bindings-register.md
 [Extensie van Azure-Hulpprogram Ma's]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack
 
-### <a name="functions-1x"></a>Functions 1.x
+### <a name="functions-1x-and-2x"></a>Functions 1. x en 2. x
 
-RabbitMQ-bindings extensies worden niet ondersteund voor functions 1. x. Gebruik de functies 2. x en hoger.
+RabbitMQ-bindings extensies worden niet ondersteund voor functions 1. x en 2. x. Gebruik de functies 3. x en hoger.
 
 ## <a name="next-steps"></a>Volgende stappen
 

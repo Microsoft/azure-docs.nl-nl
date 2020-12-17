@@ -1,23 +1,23 @@
 ---
 title: Serviceproviders weergeven en beheren
 description: Klanten kunnen de pagina service providers in het Azure Portal gebruiken om informatie over service providers, aanbiedingen van providers en gedelegeerde resources weer te geven.
-ms.date: 10/12/2020
+ms.date: 12/16/2020
 ms.topic: how-to
-ms.openlocfilehash: e94a9fd6562a9fa8bc0f2d84cce477e7907a1e48
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5ee897503c997ab10fdb489f7921c9d2d001e472
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371100"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617201"
 ---
 # <a name="view-and-manage-service-providers"></a>Serviceproviders weergeven en beheren
 
-Klanten kunnen de pagina **service providers** in het [Azure Portal](https://portal.azure.com) gebruiken om details over service providers en service providers te bekijken, specifieke resources te delegeren aan [Azure Lighthouse](../overview.md)en te winkelen naar nieuwe aanbiedingen voor service providers.
+De pagina **service providers** in de [Azure Portal](https://portal.azure.com) biedt klanten controle en zicht baarheid voor hun service providers die [Azure Lighthouse](../overview.md)gebruiken. Klanten kunnen Details over service providers weer geven, specifieke resources delegeren, een nieuwe service provider aanbieden, de toegang tot de service provider verwijderen en nog veel meer.
 
 > [!TIP]
 > Hoewel we hier naar service providers en klanten verwijzen, kunnen [bedrijven die meerdere tenants beheren](../concepts/enterprise.md) , hetzelfde proces gebruiken om hun beheer ervaring te consolideren.
 
-Om toegang te krijgen tot de pagina **service providers** in de Azure Portal, kan de klant **alle services**selecteren en vervolgens zoeken naar **service providers** en selecteren. Ze kunnen het ook vinden door ' service providers ' of ' Azure Lighthouse ' in te voeren in het zoekvak boven aan de Azure Portal.
+Om toegang te krijgen tot de pagina **service providers** in de Azure Portal, kan de klant **alle services** selecteren en vervolgens zoeken naar **service providers** en selecteren. Ze kunnen het ook vinden door ' service providers ' of ' Azure Lighthouse ' in te voeren in het zoekvak boven aan de Azure Portal.
 
 > [!NOTE]
 > Als u de pagina **service providers** wilt weer geven, moet een gebruiker in de Tenant van de klant beschikken over de [ingebouwde rol](../../role-based-access-control/built-in-roles.md#reader) van de lezer (of een andere ingebouwde rol die lees toegang heeft).
@@ -39,9 +39,9 @@ In de kolom **delegaties** ziet de klant hoeveel abonnementen en/of resource gro
 
 ## <a name="add-or-remove-service-provider-offers"></a>Aanbiedingen voor service providers toevoegen of verwijderen
 
-Een klant kan een nieuwe aanbieding voor service providers toevoegen via de pagina aanbiedingen van de **service provider** door **aanbieding toevoegen**te selecteren. De service provider moet een aanbieding hebben gepubliceerd voor deze klant. De klant kan vervolgens die aanbieding selecteren in het scherm **persoonlijke aanbiedingen** en vervolgens **maken**selecteren.
+Een klant kan een nieuwe aanbieding voor service providers toevoegen via de pagina aanbiedingen van de **service provider** door **aanbieding toevoegen** te selecteren. De service provider moet een aanbieding hebben gepubliceerd voor deze klant. De klant kan vervolgens die aanbieding selecteren in het scherm **persoonlijke aanbiedingen** en vervolgens **maken** selecteren.
 
-Als de klant een service provider-aanbieding wil verwijderen, kunnen ze het prullenbak pictogram in de rij voor die aanbieding selecteren. Nadat de verwijdering is bevestigd, heeft die service provider geen toegang meer tot de resources van de klant die voorheen zijn gedelegeerd voor die aanbieding.
+Als de klant een service provider-aanbieding wil verwijderen, kunnen ze dit op elk gewenst moment doen door het prullenbak pictogram te selecteren in de rij voor die aanbieding. Nadat de verwijdering is bevestigd, heeft die service provider geen toegang meer tot de resources van de klant die voorheen zijn gedelegeerd voor die aanbieding.
 
 ## <a name="delegate-resources"></a>Resources delegeren
 
@@ -85,4 +85,5 @@ Zie [Quick Start: een beleids toewijzing maken](../../governance/policy/assign-p
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [Azure Lighthouse](../overview.md).
+- Meer informatie over het controleren van de activiteit van de [service provider](view-service-provider-activity.md).
 - Meer informatie over hoe service providers [klanten kunnen bekijken en beheren](view-manage-customers.md) op de pagina **mijn klanten** in de Azure Portal.

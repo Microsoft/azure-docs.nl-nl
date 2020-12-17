@@ -13,12 +13,12 @@ ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/01/2020
 ms.author: juergent
-ms.openlocfilehash: 522af4bf6cc711bbfdfd30d0443ee58dad56b87e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 340ce84ebe662b976f32048a47fd98d793083065
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950020"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617099"
 ---
 # <a name="backup-guide-for-sap-hana-on-azure-virtual-machines"></a>Back-upgids voor SAP HANA op Azure Virtual Machines
 
@@ -103,7 +103,7 @@ Informatie over de consistentie controle van de tabel vindt u ook op de SAP-webs
 
 ### <a name="pros-and-cons-of-hana-backup-versus-storage-snapshot"></a>Voor-en nadelen van HANA-back-ups versus opslag momentopname
 
-SAP heeft&#39;t de voor keur geven aan HANA-back-ups versus een moment opname van de opslag. De lijst bevat de voor-en nadelen, waardoor er een kan worden bepaald welke gegevens moeten worden gebruikt, afhankelijk van de situatie en de beschik bare opslag technologie (Zie [uw strategie voor back-up en herstel plannen](https://help.sap.com/saphelp_hanaplatform/helpdata/en/ef/085cd5949c40b788bba8fd3c65743e/content.htm)).
+SAP heeft&#39;t de voor keur geven aan HANA-back-ups versus een moment opname van de opslag. De lijst bevat de voor-en nadelen, waardoor er een kan worden bepaald welke gegevens moeten worden gebruikt, afhankelijk van de situatie en de beschik bare opslag technologie (Zie [uw strategie voor back-up en herstel plannen](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.05/en-US/ef085cd5949c40b788bba8fd3c65743e.html)).
 
 Zorg er in azure voor dat de functie voor moment opnamen van Azure Blob&#39;t bestandssysteem consistentie biedt op meerdere schijven (Zie [voor het gebruik van BLOB-moment opnamen met Power shell](/archive/blogs/cie/using-blob-snapshots-with-powershell)). 
 

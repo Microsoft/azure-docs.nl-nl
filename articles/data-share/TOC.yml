@@ -27,6 +27,8 @@
   items:
     - name: Beveiliging
       items:
+        - name: Beveiligingsoverzicht
+          href: security.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
     - name: Azure Data Share-terminologie
@@ -62,8 +64,6 @@
       href: how-to-revoke-share-subscription.md
     - name: Controleren
       href: how-to-monitor.md
-    - name: Beveiliging
-      href: security.md
     - name: Herstel na noodgeval
       href: disaster-recovery.md
     - name: Problemen oplossen

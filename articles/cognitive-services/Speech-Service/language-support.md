@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 0c8e13449a66c5eba055c64e072db3140b0cdc1c
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 1b73b018432e5fb9a8af90fc141d009d1bb7b799
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606875"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617048"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -144,8 +144,8 @@ Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitb
 | Arabisch (Egypte) | `ar-EG` | Man | `ar-EG-ShakirNeural` <sup>Nieuw</sup> | Algemeen |
 | Arabisch (Saoedi-Arabië) | `ar-SA` | Vrouw | `ar-SA-ZariyahNeural` | Algemeen |
 | Arabisch (Saoedi-Arabië) | `ar-SA` | Man | `ar-SA-HamedNeural` <sup>Nieuw</sup> | Algemeen |
-| Bulgaars (Bulgary) | `bg-BG` | Vrouw | `bg-BG-KalinaNeural` | Algemeen |
-| Bulgaars (Bulgary) | `bg-BG` | Man | `bg-BG-BorislavNeural` <sup>Nieuw</sup> | Algemeen |
+| Bulgaars (Bulgarije) | `bg-BG` | Vrouw | `bg-BG-KalinaNeural` | Algemeen |
+| Bulgaars (Bulgarije) | `bg-BG` | Man | `bg-BG-BorislavNeural` <sup>Nieuw</sup> | Algemeen |
 | Catalaans (Spanje) | `ca-ES` | Vrouw | `ca-ES-AlbaNeural` | Algemeen |
 | Catalaans (Spanje) | `ca-ES` | Vrouw | `ca-ES-JoanaNeural` <sup>Nieuw</sup> | Algemeen |
 | Catalaans (Spanje) | `ca-ES` | Man | `ca-ES-EnricNeural` <sup>Nieuw</sup> | Algemeen |

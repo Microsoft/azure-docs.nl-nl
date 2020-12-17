@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 43002fdfbdce146b52774aa4182445bf34dd7199
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 46a5c941822dd258b420b51c710734dc3152f30f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360285"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617405"
 ---
 # <a name="authorize-access-to-blobs-with-azcopy-and-azure-active-directory-azure-ad"></a>Toegang verlenen tot blobs met AzCopy en Azure Active Directory (Azure AD)
 
@@ -183,9 +183,9 @@ Vervang de `<path-to-certificate-file>` tijdelijke aanduiding door het relatieve
 > [!NOTE]
 > U kunt een prompt gebruiken zoals in dit voor beeld wordt weer gegeven. Op die manier wordt uw wacht woord niet weer gegeven in de opdracht geschiedenis van de console. 
 
-## <a name="authorize-without-a-keyring-linux"></a>Autoriseren zonder sleutel hanger (Linux)
+## <a name="authorize-without-a-secret-store"></a>Autoriseren zonder geheime opslag
 
-Als uw besturings systeem geen geheim archief heeft, zoals een *sleutel hanger*, werkt de `azcopy login` opdracht niet. In plaats daarvan kunt u omgevings variabelen in het geheugen instellen voordat u elke bewerking uitvoert. Deze waarden verdwijnen uit het geheugen nadat de bewerking is voltooid, dus moet u deze variabelen telkens instellen wanneer u een azcopy-opdracht uitvoert.
+Als uw besturings systeem geen geheim archief heeft, zoals een Linux- *sleutel hanger*, `azcopy login` werkt de opdracht niet. In plaats daarvan kunt u omgevings variabelen in het geheugen instellen voordat u elke bewerking uitvoert. 
 
 ### <a name="authorize-a-user-identity"></a>Een gebruikers identiteit autoriseren
 

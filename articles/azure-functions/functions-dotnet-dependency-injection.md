@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.date: 08/15/2020
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: ee2e7dc577e000878884655c0ed5f4bcb1aabab5
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: f87ed9b7455bed870cf25a6920cc6295811d94c8
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167692"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617065"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Afhankelijkheidsinjectie gebruiken in .NET Azure Functions
 
@@ -118,8 +118,8 @@ In dit voor beeld wordt het pakket [micro soft. Extensions. http](https://www.nu
 
 Azure Functions-apps bieden dezelfde levens duur van de service als [ASP.net-afhankelijkheids injectie](/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Voor een functions-app gedragen de verschillende levens duur van de service er als volgt uit:
 
-- **Tijdelijk**: tijdelijke services worden op elke aanvraag van de service gemaakt.
-- **Bereik**: de levens duur van het bereik van de service komt overeen met de levens duur van een functie. Services met een bereik worden eenmaal per uitvoering gemaakt. Latere aanvragen voor die service tijdens het uitvoeren van het bestaande service-exemplaar opnieuw gebruiken.
+- **Tijdelijk**: tijdelijke services worden bij elke oplossing van de service gemaakt.
+- **Bereik**: de levens duur van het bereik van de service komt overeen met de levens duur van een functie. Services met een bereik worden eenmaal per functie-uitvoering gemaakt. Latere aanvragen voor die service tijdens het uitvoeren van het bestaande service-exemplaar opnieuw gebruiken.
 - **Singleton**: de levens duur van de singleton-service komt overeen met de levens duur van de host en wordt opnieuw gebruikt voor het uitvoeren van functies voor dat exemplaar. Services voor de singleton-levens duur worden aanbevolen voor verbindingen en clients, bijvoorbeeld `DocumentClient` of `HttpClient` exemplaren.
 
 Bekijk of down load een voor [beeld van de verschillende levens duur](https://github.com/Azure/azure-functions-dotnet-extensions/tree/main/src/samples/DependencyInjection/Scopes) van de service op github.
@@ -181,6 +181,8 @@ Het volgende voorbeeld `host.json` bestand voegt het logboek filter toe.
     }
 }
 ```
+
+Zie [logboek niveaus configureren](configure-monitoring.md#configure-log-levels)voor meer informatie over logboek niveaus.
 
 ## <a name="function-app-provided-services"></a>Services die door de functie-app worden meegeleverd
 
@@ -308,7 +310,7 @@ Standaard worden configuratie bestanden zoals *appsettings.jsop* niet automatisc
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de volgende bronnen voor meer informatie:
+Zie de volgende resources voor meer informatie:
 
 - [Uw functie-app bewaken](functions-monitoring.md)
 - [Aanbevolen procedures voor functies](functions-best-practices.md)

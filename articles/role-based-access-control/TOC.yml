@@ -82,7 +82,7 @@
           href: deny-assignments-powershell.md
         - name: REST-API
           href: deny-assignments-rest.md
-    - name: Aangepaste rollen maken of bijwerken
+    - name: Aangepaste rollen maken
       items:
         - name: Overzicht
           href: custom-roles.md

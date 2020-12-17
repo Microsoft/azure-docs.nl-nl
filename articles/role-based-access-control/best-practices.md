@@ -7,14 +7,14 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 09/30/2020
+ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 4cb3e1fe0275c676e2ce54ff9201502fc3595937
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 00fd00112dad9efc31cea83f69bb458a8e1ca935
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91595484"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617371"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Aanbevolen procedures voor Azure RBAC
 
@@ -24,7 +24,7 @@ In dit artikel worden enkele aanbevolen procedures beschreven voor het gebruik v
 
 Met op rollen gebaseerd toegangsbeheer van Azure kunt u taken scheiden binnen uw team en alleen de mate van toegang verlenen aan gebruikers die nodig is om de taken uit te voeren. In plaats van iedereen onbeperkte machtigingen te verlenen in uw Azure-abonnement of -resources, kunt u zelf bepalen welke acties er met een bepaalde bereik zijn toegestaan.
 
-Het is een aanbevolen procedure om tijdens het plannen van een strategie voor toegangsbeheer gebruikers minimale bevoegdheden te verlenen om hun werk gedaan te krijgen. Vermijd het toewijzen van bredere rollen in bredere bereiken, zelfs als deze in eerste instantie handiger lijkt te zijn. Door de rollen en bereiken te beperken, beperken we welke bronnen risico lopen als de beveiligings-principal ooit is aangetast.
+Het is een aanbevolen procedure om tijdens het plannen van een strategie voor toegangsbeheer gebruikers minimale bevoegdheden te verlenen om hun werk gedaan te krijgen. Vermijd het toewijzen van bredere rollen in bredere bereiken, zelfs als deze in eerste instantie handiger lijkt te zijn. Wanneer u aangepaste rollen maakt, moet u alleen de benodigde machtigingen voor gebruikers bevatten. Door de rollen en bereiken te beperken, beperkt u de resources die risico lopen als de beveiligings-principal ooit is aangetast.
 
 Het volgende diagram toont een voorgesteld patroon voor het gebruik van Azure RBAC.
 

@@ -13,12 +13,12 @@ ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/01/2020
 ms.author: juergent
-ms.openlocfilehash: 13bdf4b10ec586bf83a70434f003cc1573aca469
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 70b0f8178a94735a6ef37a225044984508cc2233
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950258"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617133"
 ---
 # <a name="sap-hana-azure-backup-on-file-level"></a>Azure Backup op bestands niveau SAP HANA
 
@@ -28,7 +28,7 @@ Dit artikel is een verwant artikel voor het maken van een [back-upgids voor SAP 
 
 Verschillende VM-typen in azure staan een ander aantal aangesloten Vhd's toe. De exacte details worden gedocumenteerd in [grootten voor virtuele Linux-machines in azure](../../sizes.md). Voor de tests waarnaar in deze documentatie wordt verwezen, hebben we een Azure VM GS5 gebruikt, waarmee 64 gekoppelde gegevens schijven kunnen worden gekoppeld. Voor grotere SAP HANA systemen is er mogelijk al een groot aantal schijven gemaakt voor gegevens-en logboek bestanden, mogelijk in combi natie met software striping voor optimale IO-door Voer van de schijf. Lees het artikel [SAP Hana opslag configuraties van virtuele Azure-machines](./hana-vm-operations-storage.md)voor meer informatie over aanbevolen schijf configuraties voor SAP Hana implementaties op Azure-vm's. De aanbevelingen die worden gedaan, zijn ook inclusief schijf ruimte aanbevelingen voor lokale back-ups.
 
-De standaard methode voor het beheren van back-ups/herstellen op bestands niveau is een back-up op basis van bestanden via SAP HANA Studio of via SAP HANA SQL-instructies. Lees voor meer informatie het artikel [SAP Hana verwijzing naar SQL-en systeem weergaven](https://help.sap.com/hana/SAP_HANA_SQL_and_System_Views_Reference_en.pdf).
+De standaard methode voor het beheren van back-ups/herstellen op bestands niveau is een back-up op basis van bestanden via SAP HANA Studio of via SAP HANA SQL-instructies. Lees voor meer informatie het artikel [SAP Hana verwijzing naar SQL-en systeem weergaven](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.05/en-US/3859e48180bb4cf8a207e15cf25a7e57.html).
 
 ![In deze afbeelding ziet u het dialoog venster van het menu-item back-up in SAP HANA Studio](media/sap-hana-backup-file-level/backup-menue-dialog.png)
 

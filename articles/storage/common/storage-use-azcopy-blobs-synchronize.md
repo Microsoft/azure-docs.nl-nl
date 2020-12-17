@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 6d1e9e8eeddaaa2ce8c891888935faad12d40295
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: f8210428e772241134b57ac4fccb5b1549e04483
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907515"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617269"
 ---
 # <a name="synchronize-with-azure-blob-storage-by-using-azcopy-v10"></a>Synchroniseren met Azure Blob Storage met behulp van AzCopy V10 toevoegen
 
@@ -79,7 +79,7 @@ De eerste container die wordt weer gegeven in deze opdracht is de bron. De tweed
 | **Syntaxis** | `azcopy sync 'https://<source-storage-account-name>.blob.core.windows.net/<container-name>' 'https://<destination-storage-account-name>.blob.core.windows.net/<container-name>' --recursive` |
 | **Voorbeeld** | `azcopy sync 'https://mysourceaccount.blob.core.windows.net/mycontainer' 'https://mydestinationaccount.blob.core.windows.net/mycontainer' --recursive` |
 
-## <a name="update-a-directory-with-changes-to-a-directory-in-another-file-share"></a>Een Directory bijwerken met wijzigingen in een map in een andere bestands share
+## <a name="update-a-directory-with-changes-to-a-directory-in-another-container"></a>Een Directory bijwerken met wijzigingen in een map in een andere container
 
 De eerste map die wordt weer gegeven in deze opdracht is de bron. De tweede is de bestemming.
 
@@ -107,10 +107,10 @@ Zie [Opties](storage-ref-azcopy-sync.md#options)voor een volledige lijst.
 
 Meer voor beelden vindt u in deze artikelen:
 
-- [Voor beelden: uploaden](storage-use-azcopy-blobs-upload.md)
-- [Voor beelden: downloaden](storage-use-azcopy-blobs-download.md)
-- [Voor beelden: kopiëren tussen accounts](storage-use-azcopy-blobs-copy.md)
-- [Voor beelden: Amazon S3-buckets](storage-use-azcopy-s3.md)
+- [Voorbeelden: Uploaden](storage-use-azcopy-blobs-upload.md)
+- [Voorbeelden: Downloaden](storage-use-azcopy-blobs-download.md)
+- [Voorbeelden: Kopiëren tussen accounts](storage-use-azcopy-blobs-copy.md)
+- [Voorbeelden: Amazon S3-bucket](storage-use-azcopy-s3.md)
 - [Voor beelden: Azure Files](storage-use-azcopy-files.md)
 - [Zelfstudie: on-premises gegevens migreren naar cloudopslag met behulp van AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

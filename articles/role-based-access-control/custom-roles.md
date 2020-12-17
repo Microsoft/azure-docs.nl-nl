@@ -7,14 +7,14 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/11/2020
+ms.date: 12/15/2020
 ms.author: rolyon
-ms.openlocfilehash: eddbd9cb695f3ff7eabd9f2549d0a868d8826eb9
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 79aaeee942a6d46243ee1c72d5904484b8698ebe
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369120"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617320"
 ---
 # <a name="azure-custom-roles"></a>Aangepaste Azure-rollen
 
@@ -161,11 +161,11 @@ In de volgende tabel wordt beschreven wat de eigenschappen van de aangepaste rol
 | `Id`</br>`name` | Ja | Tekenreeks | De unieke ID van de aangepaste rol. Voor Azure PowerShell en Azure CLI wordt deze ID automatisch gegenereerd wanneer u een nieuwe rol maakt. |
 | `IsCustom`</br>`roleType` | Ja | Tekenreeks | Hiermee wordt aangegeven of dit een aangepaste rol is. Ingesteld op `true` of `CustomRole` voor aangepaste rollen. Ingesteld op `false` of `BuiltInRole` voor ingebouwde rollen. |
 | `Description`</br>`description` | Ja | Tekenreeks | De beschrijving van de aangepaste rol. Kan letters, cijfers, spaties en speciale tekens bevatten. Het maximum aantal tekens is 1024. |
-| `Actions`</br>`actions` | Yes | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die de rol kan uitvoeren. Zie [acties](role-definitions.md#actions)voor meer informatie. |
-| `NotActions`</br>`notActions` | No | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die zijn uitgesloten van de toegestane `Actions` . Zie voor meer informatie [intact](role-definitions.md#notactions). |
-| `DataActions`</br>`dataActions` | No | Teken reeks [] | Een matrix met teken reeksen waarmee de gegevens bewerkingen worden opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als u een aangepaste rol maakt met `DataActions` , kan deze rol niet worden toegewezen in het bereik van de beheer groep. Zie [DataActions](role-definitions.md#dataactions)voor meer informatie. |
-| `NotDataActions`</br>`notDataActions` | No | Teken reeks [] | Een matrix met teken reeksen die de gegevens bewerkingen specificeert die worden uitgesloten van de toegestane waarde `DataActions` . Zie [NotDataActions](role-definitions.md#notdataactions)voor meer informatie. |
-| `AssignableScopes`</br>`assignableScopes` | Yes | Teken reeks [] | Een matrix met teken reeksen die de bereiken aangeeft waarvoor de aangepaste rol beschikbaar is voor toewijzing. U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase. Zie [AssignableScopes](role-definitions.md#assignablescopes)voor meer informatie. |
+| `Actions`</br>`actions` | Ja | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die de rol kan uitvoeren. Zie [acties](role-definitions.md#actions)voor meer informatie. |
+| `NotActions`</br>`notActions` | Nee | Teken reeks [] | Een matrix met teken reeksen die de beheer bewerkingen specificeert die zijn uitgesloten van de toegestane `Actions` . Zie voor meer informatie [intact](role-definitions.md#notactions). |
+| `DataActions`</br>`dataActions` | Nee | Teken reeks [] | Een matrix met teken reeksen waarmee de gegevens bewerkingen worden opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als u een aangepaste rol maakt met `DataActions` , kan deze rol niet worden toegewezen in het bereik van de beheer groep. Zie [DataActions](role-definitions.md#dataactions)voor meer informatie. |
+| `NotDataActions`</br>`notDataActions` | Nee | Teken reeks [] | Een matrix met teken reeksen die de gegevens bewerkingen specificeert die worden uitgesloten van de toegestane waarde `DataActions` . Zie [NotDataActions](role-definitions.md#notdataactions)voor meer informatie. |
+| `AssignableScopes`</br>`assignableScopes` | Ja | Teken reeks [] | Een matrix met teken reeksen die de bereiken aangeeft waarvoor de aangepaste rol beschikbaar is voor toewijzing. U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase. Zie [AssignableScopes](role-definitions.md#assignablescopes)voor meer informatie. |
 
 ## <a name="wildcard-permissions"></a>Machtigingen voor joker tekens
 
@@ -208,6 +208,7 @@ In de volgende lijst worden de limieten voor aangepaste rollen beschreven.
 - Elke directory kan Maxi maal **5000** aangepaste rollen hebben.
 - Azure Duitsland en Azure China 21Vianet kunnen Maxi maal 2000 aangepaste rollen hebben voor elke directory.
 - U kunt niet instellen `AssignableScopes` op het hoofd bereik ( `"/"` ).
+- U kunt geen joker tekens ( `*` ) gebruiken in `AssignableScopes` . Deze beperking voor joker tekens helpt ervoor te zorgen dat een gebruiker geen toegang kan krijgen tot een bereik door de roldefinitie bij te werken.
 - U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 - Aangepaste rollen met `DataActions` kunnen niet worden toegewezen in het bereik van de beheer groep.
 - Azure Resource Manager valideert niet het bestaan van de beheer groep in het toewijs bare bereik van de roldefinitie.

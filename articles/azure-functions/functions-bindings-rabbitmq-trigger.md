@@ -4,15 +4,15 @@ description: Meer informatie over het uitvoeren van een Azure-functie wanneer ee
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/13/2020
+ms.date: 12/15/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: e7095c08c385457bddf6d70d345c4f47073b4adb
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 26dee5200a60f4900ed20c2fd49a874552272776
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505731"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617218"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>RabbitMQ-trigger voor Azure Functions-overzicht
 
@@ -133,14 +133,12 @@ Er wordt een RabbitMQ-binding gedefinieerd in *function.js* waarvoor *type* is i
             "name": "myQueueItem",
             "type": "rabbitMQTrigger",
             "direction": "in",
-            "queueName": "",
-            "connectionStringSetting": ""
+            "queueName": "queue",
+            "connectionStringSetting": "rabbitMQConnection"
         }
     ]
 }
 ```
-
-De code in *_\_ init_ \_ . py* declareert een para meter zoals `func.RabbitMQMessage` , waarmee u het bericht in uw functie kunt lezen.
 
 ```python
 import logging
@@ -214,11 +212,11 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**direction** | N.v.t. | Moet worden ingesteld op in.|
 |**name** | N.v.t. | De naam van de variabele die de wachtrij in functie code vertegenwoordigt. |
 |**queueName**|**QueueName**| De naam van de wachtrij waaruit berichten moeten worden ontvangen. |
-|**Hostnaam**|**Hostnaam**|(optioneel als u ConnectStringSetting gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
-|**userNameSetting**|**UserNameSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Naam voor toegang tot de wachtrij |
-|**passwordSetting**|**PasswordSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+|**Hostnaam**|**Hostnaam**|(wordt genegeerd als ConnectStringSetting wordt gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
+|**userNameSetting**|**UserNameSetting**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die de gebruikers naam bevat voor toegang tot de wachtrij. Bijvoorbeeld UserNameSetting:% < UserNameFromSettings >%|
+|**passwordSetting**|**PasswordSetting**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die het wacht woord bevat voor toegang tot de wachtrij. Bijvoorbeeld PasswordSetting:% < PasswordFromSettings >%|
 |**connectionStringSetting**|**ConnectionStringSetting**|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt. (Bijvoorbeeld: in *function.jsop*: connectionStringSetting: "rabbitMQConnection" <br> In *local.settings.jsop*: "rabbitMQConnection": "< ActualConnectionstring >")|
-|**Importeer**|**Poort**|Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+|**Importeer**|**Poort**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -226,31 +224,29 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-De volgende parameter typen zijn beschikbaar voor het bericht:
+Het standaard bericht type is [RabbitMQ gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
 
-* [RabbitMQ-gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html) : de standaard indeling voor RabbitMQ-berichten.
-  * `byte[]`-Door de eigenschap Body van de gebeurtenis RabbitMQ.
-* `string` -Het bericht is tekst.
 * `An object serializable as JSON` -Het bericht wordt geleverd als een geldige JSON-teken reeks.
+* `string`
+* `byte[]`
 * `POCO` -Het bericht wordt opgemaakt als een C#-object. Zie C#-voor [beeld](#example)voor een volledig voor beeld.
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
-De volgende parameter typen zijn beschikbaar voor het bericht:
+Het standaard bericht type is [RabbitMQ gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
 
-* [RabbitMQ-gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html) : de standaard indeling voor RabbitMQ-berichten.
-  * `byte[]`-Door de eigenschap Body van de gebeurtenis RabbitMQ.
-* `string` -Het bericht is tekst.
 * `An object serializable as JSON` -Het bericht wordt geleverd als een geldige JSON-teken reeks.
-* `POCO` -Het bericht wordt opgemaakt als een C#-object.
+* `string`
+* `byte[]`
+* `POCO` -Het bericht wordt opgemaakt als een C#-object. Zie voor een volledig voor beeld C# script- [voor beeld](#example).
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Het RabbitMQ-bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
+Het bericht in de wachtrij is beschikbaar via context. bindingen.<NAME> waar <NAME> komt overeen met de naam die is gedefinieerd in function.jsop. Als de payload JSON is, wordt de waarde in een object gedeserialiseerd.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Het RabbitMQ-bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
+Raadpleeg het python- [voor beeld](#example).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -284,14 +280,14 @@ In deze sectie worden de algemene configuratie-instellingen beschreven die besch
 |prefetchCount|30|Hiermee wordt het aantal berichten opgehaald of ingesteld dat de ontvanger van het bericht tegelijk kan aanvragen en in de cache wordt geplaatst.|
 |queueName|n.v.t.| De naam van de wachtrij waaruit berichten moeten worden ontvangen. |
 |connectionString|n.v.t.|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt.|
-|poort|0|Het maximum aantal sessies dat gelijktijdig kan worden verwerkt per geschaald exemplaar.|
+|poort|0|(wordt genegeerd als u connections Tring gebruikt) Het maximum aantal sessies dat gelijktijdig kan worden verwerkt per geschaald exemplaar.|
 
 ## <a name="local-testing"></a>Lokaal testen
 
 > [!NOTE]
 > De Connections Tring heeft voor rang op ' hostName ', ' userName ' en ' password '. Als deze allemaal zijn ingesteld, overschrijven de Connections Tring de andere twee.
 
-Als u lokaal test zonder een connection string, moet u de instelling hostName en "username" en "Password" instellen, indien van toepassing in de sectie "rabbitMQ" van *host.jsop*:
+Als u lokaal test zonder een connection string, moet u de instelling hostName en "userName" en "Password" instellen, indien van toepassing in de sectie "rabbitMQ" van *host.jsop*:
 
 ```json
 {
@@ -300,8 +296,8 @@ Als u lokaal test zonder een connection string, moet u de instelling hostName en
         "rabbitMQ": {
             ...
             "hostName": "localhost",
-            "username": "<your username>",
-            "password": "<your password>"
+            "username": "userNameSetting",
+            "password": "passwordSetting"
         }
     }
 }
@@ -309,9 +305,9 @@ Als u lokaal test zonder een connection string, moet u de instelling hostName en
 
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------|
-|Hostnaam|n.v.t.|(optioneel als u ConnectStringSetting gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
-|userName|n.v.t.|(optioneel als u ConnectionStringSetting gebruikt) <br>Naam voor toegang tot de wachtrij |
-|wachtwoord|n.v.t.|(optioneel als u ConnectionStringSetting gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+|Hostnaam|n.v.t.|(wordt genegeerd als ConnectStringSetting wordt gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
+|userName|n.v.t.|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>Naam voor toegang tot de wachtrij |
+|wachtwoord|n.v.t.|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
 
 ## <a name="monitoring-rabbitmq-endpoint"></a>RabbitMQ-eind punt bewaken
 Uw wacht rijen en uitwisselingen voor een bepaald RabbitMQ-eind punt controleren:

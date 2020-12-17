@@ -1,7 +1,7 @@
 ---
-title: Analyseren en controleren op gegevens drift op data sets (preview-versie)
+title: Gegevens drift detecteren in gegevens sets (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Maak Azure Machine Learning gegevens sets-monitors (preview), Controleer of het data kan worden geschaald en stel waarschuwingen in.
+description: Meer informatie over het instellen van de detectie van gegevens drift in azure learning. Maak de monitors voor gegevens sets (preview), Controleer of er gegevensdrift zijn en stel waarschuwingen in.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,18 +11,18 @@ author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to, data4ml
-ms.openlocfilehash: 04882c71a2d80e01029dd0a8b476f21a658e632b
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 1622f8ce988c5592ac96cec798617ca6ac37aa8d
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359592"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617167"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Gegevens drift (preview) detecteren in gegevens sets
 
 
 > [!IMPORTANT]
-> Het detecteren van gegevens drift in gegevens sets is momenteel beschikbaar als open bare preview.
+> De gegevensdrijf detectie voor gegevens sets is momenteel beschikbaar als open bare preview.
 > De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Meer informatie over het bewaken van gegevens drift en het instellen van waarschuwingen wanneer de drift hoog is.  
@@ -227,7 +227,7 @@ Zie voor een volledig voor beeld van het instellen van een `timeseries` gegevens
     | Functies | Lijst met functies die gedurende een bepaalde periode worden geanalyseerd voor gegevens opslag. | Ingesteld op de uitvoer functie (s) van een model om concept drift te meten. Neem geen functies op die in de loop van de tijd (maand, jaar, index enz.) natuurlijk zijn. U kunt backfill en een bestaande gegevensdrijf monitor na het aanpassen van de lijst met functies. | Ja | 
     | Rekendoel | Azure Machine Learning Compute-doel voor het uitvoeren van de controle taken voor de gegevensset. | | Ja | 
     | Inschakelen | Het schema in-of uitschakelen voor de monitor pijplijn van de gegevensset | Schakel het schema uit om historische gegevens te analyseren met de instelling backfill. De functie kan worden ingeschakeld nadat de monitor voor de gegevensset is gemaakt. | Ja | 
-    | Frequency | De frequentie die wordt gebruikt om de pijplijn taak te plannen en historische gegevens te analyseren als er een backfill wordt uitgevoerd. Opties zijn dagelijks, wekelijks of maandelijks. | Bij elke uitvoering worden de gegevens in de doel gegevensset vergeleken op basis van de frequentie: <li>Dagelijks: de meest recente volledige dag in de doel gegevensset vergelijken met de basis lijn <li>Wekelijks: de meest recente volledige week (maandag-zondag) in de doel gegevensset vergelijken met de basis lijn <li>Maandelijks: de meest recente volledige maand in de doel gegevensset vergelijken met de basis lijn | Nee | 
+    | Frequentie | De frequentie die wordt gebruikt om de pijplijn taak te plannen en historische gegevens te analyseren als er een backfill wordt uitgevoerd. Opties zijn dagelijks, wekelijks of maandelijks. | Bij elke uitvoering worden de gegevens in de doel gegevensset vergeleken op basis van de frequentie: <li>Dagelijks: de meest recente volledige dag in de doel gegevensset vergelijken met de basis lijn <li>Wekelijks: de meest recente volledige week (maandag-zondag) in de doel gegevensset vergelijken met de basis lijn <li>Maandelijks: de meest recente volledige maand in de doel gegevensset vergelijken met de basis lijn | Nee | 
     | Latentie | Tijd, in uren, duurt het om gegevens in de gegevensset te ontvangen. Als het bijvoorbeeld drie dagen duurt voordat de gegevens in de SQL-Data Base worden inge kapseld, stelt u de gegevensset in op 72. | Kan niet worden gewijzigd nadat de monitor voor de gegevensset is gemaakt | Nee | 
     | E-mailadressen | E-mail adressen voor waarschuwingen op basis van schending van de drempel waarde voor het percentage gegevens drift. | E-mail berichten worden verzonden via Azure Monitor. | Ja | 
     | Drempelwaarde | Drempel waarde voor het percentage gegevens drift voor e-mail waarschuwingen. | Verdere waarschuwingen en gebeurtenissen kunnen worden ingesteld op veel andere metrische gegevens in de gekoppelde Application Insights resource van de werk ruimte. | Ja |
@@ -301,7 +301,7 @@ U kunt de metrische gegevens opvragen in de [Azure-toepassing Insights](../azure
 
 Om aan de slag te gaan, gaat u naar de [Azure Portal](https://portal.azure.com) en selecteert u de **overzichts** pagina van uw werk ruimte.  De gekoppelde Application Insights resource bevindt zich uiterst rechts:
 
-[![Overzicht van Azure Portal](./media/how-to-monitor-datasets/ap-overview.png)](media/how-to-monitor-datasets/ap-overview-expanded.png)
+[![Overzicht van de Azure Portal](./media/how-to-monitor-datasets/ap-overview.png)](media/how-to-monitor-datasets/ap-overview-expanded.png)
 
 Selecteer Logboeken (analyse) onder bewaking in het linkerdeel venster:
 

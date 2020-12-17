@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 09/23/2020
 ms.author: alkohli
-ms.openlocfilehash: 3fb4085ba275bda1fe784f368eb5d92ac0c668f0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 059aad8b45aa449f5cd28c97f4ba55e2204c04ce
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448519"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937063"
 ---
 # <a name="what-is-azure-stack-edge-pro-with-gpu"></a>Wat is Azure Stack Edge Pro met GPU?
 
@@ -51,7 +51,7 @@ Azure Stack Edge Pro biedt de volgende mogelijkheden:
 |Gegevensvernieuwing     | Mogelijkheid om lokale bestanden te vernieuwen met de meest recente uit de cloud.|
 |Versleuteling    | BitLocker-ondersteuning om gegevens lokaal te versleutelen en de gegevensoverdracht naar de cloud via *HTTPS* te beveiligen.|
 |Bandbreedtebeperking| Beperking om het bandbreedtegebruik tijdens piekuren te verminderen.|
-<!--|ExpressRoute | Extra beveiliging via ExpressRoute. Gebruik peering-configuratie waarbij verkeer van lokale apparaten naar de cloudopslageindpunten via ExpressRoute wordt geleid. Zie [Overzicht van ExpressRoute](../expressroute/expressroute-introduction.md) voor meer informatie.-->
+<!--|ExpressRoute | Extra beveiliging via ExpressRoute. Gebruik peering-configuratie waarbij verkeer van lokale apparaten naar de cloudopslageindpunten via ExpressRoute wordt geleid. Raadpleeg [Overzicht van ExpressRoute](../expressroute/expressroute-introduction.md) voor meer informatie.|-->
 
 ## <a name="components"></a>Onderdelen
 

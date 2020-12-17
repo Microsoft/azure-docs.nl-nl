@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 12/02/2020
+ms.date: 12/04/2020
 ms.author: aahi
-ms.openlocfilehash: 0437704709e863cdbc62321c8a4b79015564e362
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 4f5c47000355a004f8d76d8b740b705618748380
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558756"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505219"
 ---
 # <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Procedure: Sentimentanalyse en meninganalyse
 
@@ -51,7 +51,7 @@ Betrouwbaarheidsscores kunnen variëren van 1 tot 0. Scores die dichter bij 1 li
 
 ## <a name="opinion-mining"></a>Meninganalyse
 
-Meninganalyse is een functie van Sentimentanalyse vanaf versie 3.1-preview.1. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst. 
+Meninganalyse is een functie van Sentimentanalyse. Deze is aanwezig vanaf de preview van versie 3.1. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
 
 Als een klant bijvoorbeeld als feedback over een hotel 'De kamer was geweldig, maar het personeel was onvriendelijk' geeft, worden in de Meninganalyse aspecten van de tekst en de bijbehorende meningen en sentimenten gevonden. Sentimentanalyse kan alleen een negatief sentiment melden.
 
@@ -74,7 +74,7 @@ De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het ar
 
 Maak een POST-aanvraag. Gebruik [Postman](text-analytics-how-to-call-api.md) of de **API-testconsole** in de volgende referentiekoppelingen om snel een aanvraag te structureren en verzenden. 
 
-#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
+#### <a name="version-31-preview3"></a>[Versie 3.1-preview.3](#tab/version-3-1)
 
 [Referentie voor Sentimentanalyse v3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Sentiment)
 
@@ -91,17 +91,17 @@ Stel het HTTPS-eindpunt voor sentimentanalyse in met behulp van een Text Analyti
 > [!NOTE]
 > U vindt de sleutel en het eindpunt voor uw Text Analytics-resource in Azure Portal. U vindt deze op de **Quickstart**-pagina van de resource, onder **Resourcebeheer**. 
 
-#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
+#### <a name="version-31-preview3"></a>[Versie 3.1-preview.3](#tab/version-3-1)
 
 **Sentimentanalyse**
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/sentiment`
 
 **Meninganalyse**
 
 Als u Meninganalyseresultaten wenst, moet u de parameter `opinionMining=true` toevoegen. Bijvoorbeeld:
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment?opinionMining=true`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/sentiment?opinionMining=true`
 
 Deze parameter is standaard ingesteld op `false`. 
 
@@ -144,7 +144,7 @@ De Text Analytics-API is stateless (staatloos). Er worden geen gegevens in uw ac
 
 Uitvoer wordt onmiddellijk geretourneerd. U kunt de resultaten streamen naar een toepassing die JSON accepteert of de uitvoer op het lokale systeem opslaan als een bestand. Vervolgens importeert u de uitvoerput in een toepassing waarin u de gegevens kunt sorteren, doorzoeken en bewerken. Vanwege meertalige en Emoji-ondersteuning kan het antwoord tekstverschuivingen bevatten. Zie [Verschuivingen verwerken](../concepts/text-offsets.md) voor meer informatie.
 
-#### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
+#### <a name="version-31-preview3"></a>[Versie 3.1-preview.3](#tab/version-3-1)
 
 ### <a name="sentiment-analysis-and-opinion-mining-example-response"></a>Voorbeeld van reactie Sentimentanalyse en Meninganalyse
 
@@ -302,5 +302,5 @@ In dit artikel hebt u concepten en de werkstroom geleerd voor sentimentanalyse m
 ## <a name="see-also"></a>Zie ook
 
 * [Overzicht van Text Analytics](../overview.md)
-* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/text-analytics-sdk.md)
+* [De Text Analytics-clientbibliotheek gebruiken](../quickstarts/client-libraries-rest-api.md)
 * [Nieuwe functies](../whats-new.md)

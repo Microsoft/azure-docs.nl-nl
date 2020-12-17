@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 6874794dcf33d77d0b03f2a5713bdf42a40d6891
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: fe82b03c4a8c71f84de02245b075ff30da31b45b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560907"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031094"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 
@@ -54,26 +54,24 @@ Als u uw apps handmatig wilt registreren, kiest u de Azure AD-tenant (Active Dir
 
 ### <a name="register-the-todolistservice-app"></a>De TodoListService-app registreren
 
-1. Ga naar [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) op het Microsoft Identity Platform voor ontwikkelaars.
-1. Selecteer **Nieuwe registratie**.
-1. Wanneer de pagina **Een toepassing registreren** wordt geopend, voert u de registratiegegevens van de toepassing in:
-
-    1. Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt weergegeven voor gebruikers van de app. Voer bijvoorbeeld **AppModelv2-NativeClient-DotNet-TodoListService** in.
-    1. Bij **Ondersteunde accounttypen** selecteert u **Accounts in een organisatieadreslijst**.
-    1. Selecteer **Registreren** om de toepassing te maken.
-
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Bij **Ondersteunde accounttypen** selecteert u **Accounts in een organisatieadreslijst**.
+1. Selecteer **Registreren** om de toepassing te maken.
 1. Zoek de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** en noteer deze voor gebruik later. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren (dat is `ClientId` in het bestand *TodoListService\Web.config*).
+1. Selecteer onder **Beheren** **Een API beschikbaar maken** > **Een bereik toevoegen**. Accepteer de voorgestelde URI voor de toepassings-id (`api://{clientId}`) door **Opslaan en doorgaan** te selecteren en de volgende informatie op te geven:
 
-1. Selecteer in de sectie **Een API beschikbaar maken** de optie **Een bereik toevoegen**, accepteer de voorgestelde URI voor de toepassings-id (`api://{clientId}`) door **Opslaan en doorgaan** te selecteren en de volgende informatie op te geven:
-
-    1. Voer **access_as_user** in bij **Bereiknaam**.
+    1. Voer `access_as_user` in bij **Bereiknaam**.
     1. Zorg ervoor dat de optie **Beheerders en gebruikers** is geselecteerd voor **Wie kan toestemming verlenen?**
-    1. Voer in het vak **Weergavenaam van de beheerderstoestemming** als naam **TodoListService openen als gebruiker** in.
-    1. Voer in het vak **Beschrijving van de beheerderstoestemming** de tekst **TodoListService-web-API openen als gebruiker** in.
-    1. Voer in het vak **Weergavenaam van de gebruikerstoestemming** als naam **TodoListService openen als gebruiker** in.
-    1. Voer in het vak Beschrijving van **toestemming van de gebruiker** **de TodoListService-Web-API in als een gebruikers**.
+    1. Voer in het vak **Weergavenaam van de beheerderstoestemming** als naam `Access TodoListService as a user` in.
+    1. Voer in het vak **Beschrijving van de beheerderstoestemming** de tekst `Accesses the TodoListService web API as a user` in.
+    1. Voer in het vak **Weergavenaam van de gebruikerstoestemming** als naam `Access TodoListService as a user` in.
+    1. Voer in het vak Beschrijving van **toestemming van de gebruiker** `Accesses the TodoListService web API as a user`.
     1. Laat **Status** op **Ingeschakeld** staan.
-    1. Selecteer **Bereik toevoegen**.
+1. Selecteer **Bereik toevoegen**.
 
 ### <a name="configure-the-service-project"></a>Het serviceproject configureren
 

@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/16/2020
+ms.date: 12/17/2020
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 4da0fccf10d387e7496a8b0ecc7623a22df58c93
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: a42cb97d123d0943dab02bf1f70fcf306d6bcd96
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618746"
+ms.locfileid: "97629120"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Wachtwoord wijzigingen configureren met aangepast beleid in Azure Active Directory B2C
 
@@ -33,7 +33,12 @@ ms.locfileid: "97618746"
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemeld met een lokaal account, hun wacht woord wijzigen zonder dat ze hun authenticiteit moeten bewijzen via e-mail verificatie. Als de sessie verloopt op het moment dat de gebruiker het wacht woord wijzigt, wordt deze gevraagd om u opnieuw aan te melden. In dit artikel leest u hoe u wachtwoord wijzigingen in [aangepaste beleids regels](custom-policy-overview.md)kunt configureren. Het is ook mogelijk om [selfservice voor wachtwoord herstel](user-flow-self-service-password-reset.md) voor gebruikers stromen te configureren.
+In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemeld met een lokaal account, hun wacht woord wijzigen zonder dat ze hun authenticiteit moeten bewijzen via e-mail verificatie. De stroom voor het wijzigen van het wacht woord bestaat uit de volgende stappen:
+
+1. Meld u aan met een lokaal account. Als de sessie nog steeds actief is, wordt de gebruiker door Azure AD B2C geautoriseerd en wordt de volgende stap overs Laan.
+1. Gebruikers moeten het **oude wacht woord** controleren, maken en het **nieuwe wacht woord** bevestigen.
+
+![Wachtwoord wijzigings stroom](./media/add-password-change-policy/password-change-flow.png)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -66,41 +71,10 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
         <TechnicalProfiles>
           <TechnicalProfile Id="login-NonInteractive-PasswordChange">
             <DisplayName>Local Account SignIn</DisplayName>
-            <Protocol Name="OpenIdConnect" />
-            <Metadata>
-              <Item Key="UserMessageIfClaimsPrincipalDoesNotExist">We can't seem to find your account</Item>
-              <Item Key="UserMessageIfInvalidPassword">Your password is incorrect</Item>
-              <Item Key="UserMessageIfOldPasswordUsed">Looks like you used an old password</Item>
-              <Item Key="ProviderName">https://sts.windows.net/</Item>
-              <Item Key="METADATA">https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration</Item>
-              <Item Key="authorization_endpoint">https://login.microsoftonline.com/{tenant}/oauth2/token</Item>
-              <Item Key="response_types">id_token</Item>
-              <Item Key="response_mode">query</Item>
-              <Item Key="scope">email openid</Item>
-              <Item Key="grant_type">password</Item>
-              <Item Key="UsePolicyInRedirectUri">false</Item>
-              <Item Key="HttpBinding">POST</Item>
-              <Item Key="client_id">ProxyIdentityExperienceFrameworkAppId</Item>
-              <Item Key="IdTokenAudience">IdentityExperienceFrameworkAppId</Item>
-            </Metadata>
             <InputClaims>
-              <InputClaim ClaimTypeReferenceId="signInName" PartnerClaimType="username" Required="true" />
               <InputClaim ClaimTypeReferenceId="oldPassword" PartnerClaimType="password" Required="true" />
-              <InputClaim ClaimTypeReferenceId="grant_type" DefaultValue="password" />
-              <InputClaim ClaimTypeReferenceId="scope" DefaultValue="openid" />
-              <InputClaim ClaimTypeReferenceId="nca" PartnerClaimType="nca" DefaultValue="1" />
-              <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="ProxyIdentityExperienceFrameworkAppID" />
-              <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="IdentityExperienceFrameworkAppID" />
-            </InputClaims>
-            <OutputClaims>
-              <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="oid" />
-              <OutputClaim ClaimTypeReferenceId="tenantId" PartnerClaimType="tid" />
-              <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="given_name" />
-              <OutputClaim ClaimTypeReferenceId="surName" PartnerClaimType="family_name" />
-              <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
-              <OutputClaim ClaimTypeReferenceId="userPrincipalName" PartnerClaimType="upn" />
-              <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="localAccountAuthentication" />
-            </OutputClaims>
+              </InputClaims>
+            <IncludeTechnicalProfile ReferenceId="login-NonInteractive" />
           </TechnicalProfile>
         </TechnicalProfiles>
       </ClaimsProvider>
@@ -113,9 +87,6 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
             <Metadata>
               <Item Key="ContentDefinitionReferenceId">api.selfasserted</Item>
             </Metadata>
-            <CryptographicKeys>
-              <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
-            </CryptographicKeys>
             <InputClaims>
               <InputClaim ClaimTypeReferenceId="objectId" />
             </InputClaims>
@@ -134,15 +105,13 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
     </ClaimsProviders>
     ```
 
-    Vervang door `IdentityExperienceFrameworkAppId` de toepassings-id van de IdentityExperienceFramework-toepassing die u hebt gemaakt in de hand leiding voor vereisten. Vervang door `ProxyIdentityExperienceFrameworkAppId` de toepassings-id van de ProxyIdentityExperienceFramework-toepassing die u eerder hebt gemaakt.
-
 3. Het [UserJourney](userjourneys.md) -element definieert het pad dat de gebruiker nodig heeft bij interactie met uw toepassing. Voeg het **UserJourneys** -element toe als het niet bestaat met de **UserJourney** geïdentificeerd als `PasswordChange` :
 
     ```xml
     <UserJourneys>
       <UserJourney Id="PasswordChange">
         <OrchestrationSteps>
-          <OrchestrationStep Order="1" Type="ClaimsProviderSelection" ContentDefinitionReferenceId="api.idpselections">
+          <OrchestrationStep Order="1" Type="ClaimsProviderSelection" ContentDefinitionReferenceId="api.signuporsignin">
             <ClaimsProviderSelections>
               <ClaimsProviderSelection TargetClaimsExchangeId="LocalAccountSigninEmailExchange" />
             </ClaimsProviderSelections>
@@ -157,7 +126,12 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
               <ClaimsExchange Id="NewCredentials" TechnicalProfileReferenceId="LocalAccountWritePasswordChangeUsingObjectId" />
             </ClaimsExchanges>
           </OrchestrationStep>
-          <OrchestrationStep Order="4" Type="SendClaims" CpimIssuerTechnicalProfileReferenceId="JwtIssuer" />
+          <OrchestrationStep Order="4" Type="ClaimsExchange">
+            <ClaimsExchanges>
+              <ClaimsExchange Id="AADUserReadWithObjectId" TechnicalProfileReferenceId="AAD-UserReadUsingObjectId" />
+            </ClaimsExchanges>
+          </OrchestrationStep>
+          <OrchestrationStep Order="5" Type="SendClaims" CpimIssuerTechnicalProfileReferenceId="JwtIssuer" />
         </OrchestrationSteps>
         <ClientDefinition ReferenceId="DefaultWeb" />
       </UserJourney>
@@ -170,13 +144,7 @@ In Azure Active Directory B2C (Azure AD B2C) kunt u gebruikers die zijn aangemel
 7. Wijzig het kenmerk **ReferenceId** in `<DefaultUserJourney>` zodat dit overeenkomt met de id van de nieuwe gebruikers traject die u hebt gemaakt. Bijvoorbeeld *PasswordChange*.
 8. Sla uw wijzigingen op.
 
-U kunt [hier](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/password-change)het voorbeeld beleid vinden.
-
-## <a name="test-your-policy"></a>Uw beleid testen
-
-Bij het testen van uw toepassingen in Azure AD B2C kan het nuttig zijn om het Azure AD B2C-token te retour neren om `https://jwt.ms` de claims daarin te kunnen bekijken.
-
-### <a name="upload-the-files"></a>De bestanden uploaden
+## <a name="upload-and-test-the-policy"></a>Het beleid uploaden en testen
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-tenant bevat door in het bovenste menu te klikken op het filter **Map en abonnement** en de map te kiezen waarin de tenant zich bevindt.
@@ -195,6 +163,8 @@ Bij het testen van uw toepassingen in Azure AD B2C kan het nuttig zijn om het Az
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Zoek het voorbeeld beleid op [github](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/password-change).
 - Meer informatie over hoe u [wachtwoord complexiteit kunt configureren in azure AD B2C](password-complexity.md).
+- Stel een [wachtwoord herstel stroom](add-password-reset-policy.md)in.
 
 ::: zone-end

@@ -1,28 +1,28 @@
 ---
 title: Beveiligings filters voor het afkappen van resultaten met behulp van Active Directory
 titleSuffix: Azure Cognitive Search
-description: Beveiligings bevoegdheden op document niveau voor Azure Cognitive Search Zoek resultaten, met behulp van beveiligings filters en de identiteit van Azure Active Directory (AAD).
+description: Meer informatie over het implementeren van beveiligings bevoegdheden op document niveau voor Azure Cognitive Search Zoek resultaten, met behulp van beveiligings filters en Azure Active Directory van AD-identiteiten.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/04/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 87337cf22bdb388c5873a2811bb9913c3e7f4d4e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5788585b2365b12a90a508e5a972b61f73e48c15
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994958"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629507"
 ---
 # <a name="security-filters-for-trimming-azure-cognitive-search-results-using-active-directory-identities"></a>Beveiligings filters voor het verkleinen van Azure Cognitive Search-resultaten met behulp van Active Directory-identiteiten
 
-In dit artikel wordt beschreven hoe u met behulp van Azure Active Directory (AAD)-beveiligings identiteiten samen met filters in azure Cognitive Search Zoek resultaten kunt knippen op basis van het lidmaatschap van de gebruikers groep.
+In dit artikel wordt beschreven hoe u met behulp van Azure Active Directory (AD)-beveiligings identiteiten samen met filters in azure Cognitive Search Zoek resultaten kunt bijsnijden op basis van lidmaatschap van de gebruikers groep.
 
 Dit artikel behandelt de volgende taken:
 > [!div class="checklist"]
-> - AAD-groepen en-gebruikers maken
+> - Azure AD-groepen en-gebruikers maken
 > - De gebruiker koppelen aan de groep die u hebt gemaakt
 > - De nieuwe groepen in de cache opslaan
 > - Documenten indexeren met gekoppelde groepen
@@ -35,71 +35,87 @@ Dit artikel behandelt de volgende taken:
 
 Uw index in azure Cognitive Search moet een [beveiligings veld](search-security-trimming-for-azure-search.md) bevatten voor het opslaan van de lijst met groeps-id's met lees toegang tot het document. In dit voor beeld wordt uitgegaan van een een-op-een-correspondentie tussen een beveiligbaar item (zoals een college van een persoon) en een beveiligings veld dat bepaalt wie toegang heeft tot dat item (Admissions).
 
-U moet beschikken over AAD-beheerders machtigingen die zijn vereist in dit overzicht voor het maken van gebruikers, groepen en koppelingen in AAD.
+U moet beschikken over Azure AD-beheerders machtigingen die zijn vereist in dit overzicht voor het maken van gebruikers, groepen en koppelingen. 
 
-Uw toepassing moet ook zijn geregistreerd bij AAD, zoals beschreven in de volgende procedure.
+Uw toepassing moet ook worden geregistreerd bij Azure AD als een multi tenant-app, zoals beschreven in de volgende procedure.
 
-### <a name="register-your-application-with-aad"></a>Uw toepassing registreren bij AAD
+### <a name="register-your-application-with-azure-active-directory"></a>Uw toepassing registreren bij Azure Active Directory
 
-Deze stap integreert uw toepassing met AAD voor het accepteren van aanmeldingen van gebruikers-en groeps accounts. Als u geen AAD-beheerder bent in uw organisatie, moet u mogelijk [een nieuwe Tenant maken](../active-directory/develop/quickstart-create-new-tenant.md) om de volgende stappen uit te voeren.
+Deze stap integreert uw toepassing met Azure AD voor het accepteren van aanmeldingen van gebruikers-en groeps accounts. Als u geen Tenant beheerder bent in uw organisatie, moet u mogelijk [een nieuwe Tenant maken](../active-directory/develop/quickstart-create-new-tenant.md) om de volgende stappen uit te voeren.
 
-1. Ga naar de app voor het registreren van de [**toepassings registratie Portal**](https://apps.dev.microsoft.com)  >   **Converged app**  >  **een app toevoegen**.
-2. Voer een naam in voor uw toepassing en klik vervolgens op **maken**. 
-3. Selecteer de zojuist geregistreerde toepassing op de pagina mijn toepassingen.
-4. Kies op de pagina Toepassings registratie > **platforms**  >  **platform toevoegen** de optie **Web-API**.
-5. Ga nog steeds op de pagina Toepassings registratie naar > **Microsoft Graph machtigingen**  >  **toevoegen**.
-6. Voeg in machtigingen selecteren de volgende gedelegeerde machtigingen toe en klik vervolgens op **OK**:
+1. Zoek in [Azure Portal](https://portal.azure.com)de Azure Active Directory resource voor uw abonnement.
 
-   + **Map. ReadWrite. all**
-   + **Group.ReadWrite.All**
-   + **User. ReadWrite. all**
+1. Selecteer aan de linkerkant onder **beheren** de optie **app-registraties** en selecteer vervolgens **nieuwe registratie**.
 
-Microsoft Graph biedt een API die programmatische toegang tot AAD via een REST API mogelijk maakt. In het code voorbeeld voor deze walkthrough worden de machtigingen gebruikt voor het aanroepen van de Microsoft Graph-API voor het maken van groepen, gebruikers en koppelingen. De Api's worden ook gebruikt om groeps-id's in de cache op te slaan voor snellere filtering.
+1. Geef de registratie een naam, mogelijk een naam die overeenkomt met de naam van de zoek toepassing. Selecteer **Registreren**.
+
+1. Wanneer de app-registratie is gemaakt, kopieert u de toepassings-ID. U moet deze teken reeks opgeven voor uw toepassing.
+
+   Als u de [DotNetHowToSecurityTrimming](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToEncryptionUsingCMK)stapsgewijs doorloopt, plakt u deze waarde in het **app.config** -bestand.
+
+   Herhaal dit voor de Tenant-ID.
+
+   :::image type="content" source="media/search-manage-encryption-keys/cmk-application-id.png" alt-text="Toepassings-ID in de sectie Essentials":::
+
+1. Selecteer aan de linkerkant **API-machtigingen** en selecteer vervolgens **een machtiging toevoegen**. 
+
+1. Selecteer **Microsoft Graph** en selecteer vervolgens **gedelegeerde machtigingen**.
+
+1. Zoek de volgende gedelegeerde machtigingen en voeg deze toe:
+
+   - **Map. ReadWrite. all**
+   - **Group.ReadWrite.All**
+   - **User. ReadWrite. all**
+
+Microsoft Graph biedt een API die programmatische toegang tot Azure AD via een REST API mogelijk maakt. In het code voorbeeld voor deze walkthrough worden de machtigingen gebruikt voor het aanroepen van de Microsoft Graph-API voor het maken van groepen, gebruikers en koppelingen. De Api's worden ook gebruikt om groeps-id's in de cache op te slaan voor snellere filtering.
 
 ## <a name="create-users-and-groups"></a>Gebruikers en groepen maken
 
-Als u een zoek opdracht toevoegt aan een vastgelegde toepassing, hebt u mogelijk bestaande gebruikers-en groeps-id's in AAD. In dit geval kunt u de volgende drie stappen overs Laan. 
+Als u een zoek opdracht toevoegt aan een vastgelegde toepassing, hebt u mogelijk bestaande gebruikers-en groeps-id's in azure AD. In dit geval kunt u de volgende drie stappen overs Laan. 
 
 Als u echter geen bestaande gebruikers hebt, kunt u Microsoft Graph-Api's gebruiken om de beveiligings-principals te maken. De volgende code fragmenten laten zien hoe u id's kunt genereren, die gegevens waarden worden voor het veld beveiliging in uw Azure Cognitive Search index. In onze hypothetische toepassing voor colleges is dit de beveiligings-id's voor admission medewerkers.
 
 Gebruikers-en groepslid maatschappen kunnen zeer onvoorzichtig zijn, met name voor grote organisaties. Code die gebruikers-en groeps-id's bouwt, moet vaak genoeg worden uitgevoerd om wijzigingen in het lidmaatschap van de organisatie op te halen. Op dezelfde manier moet uw Azure Cognitive Search-index een vergelijk bare update planning hebben om de huidige status van toegestane gebruikers en resources weer te geven.
 
-### <a name="step-1-create-aad-group"></a>Stap 1: [Aad-groep](/graph/api/group-post-groups?view=graph-rest-1.0) maken 
+### <a name="step-1-create-group"></a>Stap 1: [groep maken](/graph/api/group-post-groups) 
+
 ```csharp
-// Instantiate graph client 
-GraphServiceClient graph = new GraphServiceClient(new DelegateAuthenticationProvider(...));
-Group group = new Group()
+private static Dictionary<Group, List<User>> CreateGroupsWithUsers(string tenant)
 {
-    DisplayName = "My First Prog Group",
-    SecurityEnabled = true,
-    MailEnabled = false,
-    MailNickname = "group1"
-}; 
-Group newGroup = await graph.Groups.Request().AddAsync(group);
+    Group group = new Group()
+    {
+        DisplayName = "My First Prog Group",
+        SecurityEnabled = true,
+        MailEnabled = false,
+        MailNickname = "group1"
+    };
 ```
-   
-### <a name="step-2-create-aad-user"></a>Stap 2: [Aad-gebruiker](/graph/api/user-post-users?view=graph-rest-1.0) maken
+
+### <a name="step-2-create-user"></a>Stap 2: [gebruiker maken](/graph/api/user-post-users)
+
 ```csharp
-User user = new User()
+User user1 = new User()
 {
     GivenName = "First User",
     Surname = "User1",
     MailNickname = "User1",
     DisplayName = "First User",
-    UserPrincipalName = "User1@FirstUser.com",
+    UserPrincipalName = String.Format("user1@{0}", tenant),
     PasswordProfile = new PasswordProfile() { Password = "********" },
     AccountEnabled = true
 };
-User newUser = await graph.Users.Request().AddAsync(user);
 ```
 
 ### <a name="step-3-associate-user-and-group"></a>Stap 3: een gebruiker en groep koppelen
+
 ```csharp
-await graph.Groups[newGroup.Id].Members.References.Request().AddAsync(newUser);
+List<User> users = new List<User>() { user1, user2 };
+Dictionary<Group, List<User>> groups = new Dictionary<Group, List<User>>() { { group, users } };
 ```
 
 ### <a name="step-4-cache-the-groups-identifiers"></a>Stap 4: de groeps-id's in de cache opslaan
-Als u de netwerk latentie wilt beperken, kunt u de groeps beleidsobjecten van de gebruiker in de cache opslaan zodat er groepen worden geretourneerd uit de cache, waarbij een retour naar AAD wordt opgeslagen. U kunt [Aad batch API](/graph/json-batching) gebruiken om één HTTP-aanvraag met meerdere gebruikers te verzenden en de cache te bouwen.
+
+Als u de netwerk latentie wilt beperken, kunt u de groeps associaties van de gebruiker in de cache opslaan, zodat er groepen worden geretourneerd uit de cache, waarbij een retour naar Azure AD wordt opgeslagen. U kunt [Azure AD batch-API](/graph/json-batching) gebruiken om één HTTP-aanvraag met meerdere gebruikers te verzenden en de cache te bouwen.
 
 Microsoft Graph is ontworpen om een groot aantal aanvragen af te handelen. Als er sprake is van een overweldigend aantal aanvragen, mislukt de aanvraag met de HTTP-status code 429 van Microsoft Graph. Zie [Microsoft Graph beperking](/graph/throttling)voor meer informatie.
 
@@ -114,21 +130,20 @@ In het hypothetische voor beeld bevat de hoofd tekst van de PUT-aanvraag in een 
 In het algemene voor beeld dat in het code voorbeeld voor dit scenario wordt gebruikt, kan de index actie er als volgt uitzien:
 
 ```csharp
-var actions = new IndexAction<SecuredFiles>[]
-              {
-                  IndexAction.Upload(
-                  new SecuredFiles()
-                  {
-                      FileId = "1",
-                      Name = "secured_file_a",
-                      GroupIds = new[] { groups[0] }
-                  }),
+private static void IndexDocuments(string indexName, List<string> groups)
+{
+    IndexDocumentsBatch<SecuredFiles> batch = IndexDocumentsBatch.Create(
+        IndexDocumentsAction.Upload(
+            new SecuredFiles()
+            {
+                FileId = "1",
+                Name = "secured_file_a",
+                GroupIds = new[] { groups[0] }
+            }),
               ...
-             };
+            };
 
-var batch = IndexBatch.New(actions);
-
-_indexClient.Documents.Index(batch);  
+IndexDocumentsResult result = searchClient.IndexDocuments(batch);
 ```
 
 ## <a name="issue-a-search-request"></a>Een zoek opdracht uitgeven
@@ -139,56 +154,47 @@ Als u documenten wilt filteren die zijn geretourneerd in de zoek resultaten op b
 
 ### <a name="step-1-retrieve-users-group-identifiers"></a>Stap 1: de groeps-id's van de gebruiker ophalen
 
-Als de gebruikers groepen nog niet in de cache zijn opgeslagen of de cache is verlopen, geeft u de aanvraag voor de [groep](/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0) op
+Als de groepen van de gebruiker niet al zijn opgeslagen in de cache of als de cache is verlopen, geeft u de aanvraag voor de [groep](/graph/api/directoryobject-getmembergroups) op.
+
 ```csharp
-private static void RefreshCacheIfRequired(string user)
+private static async void RefreshCache(IEnumerable<User> users)
 {
-    if (!_groupsCache.ContainsKey(user))
-    {
-        var groups = GetGroupIdsForUser(user).Result;
-        _groupsCache[user] = groups;
-    }
+    HttpClient client = new HttpClient();
+    var userGroups = await _microsoftGraphHelper.GetGroupsForUsers(client, users);
+    _groupsCache = new ConcurrentDictionary<string, List<string>>(userGroups);
 }
-
-private static async Task<List<string>> GetGroupIdsForUser(string userPrincipalName)
-{
-    List<string> groups = new List<string>();
-    var allUserGroupsRequest = graph.Users[userPrincipalName].GetMemberGroups(true).Request();
-
-    while (allUserGroupsRequest != null) 
-    {
-        IDirectoryObjectGetMemberGroupsRequestBuilder allUserGroups = await allUserGroupsRequest.PostAsync();
-        groups = allUserGroups.ToList();
-        allUserGroupsRequest = allUserGroups.NextPageRequest;
-    }
-    return groups;
-}
-``` 
+```
 
 ### <a name="step-2-compose-the-search-request"></a>Stap 2: de zoek opdracht opstellen
 
 Ervan uitgaande dat u het lidmaatschap van de groep van de gebruiker hebt, kunt u de zoek opdracht uitgeven met de juiste filter waarden.
 
 ```csharp
-string filter = String.Format("groupIds/any(p:search.in(p, '{0}'))", string.Join(",", groups.Select(g => g.ToString())));
-SearchParameters parameters = new SearchParameters()
-             {
-                 Filter = filter,
-                 Select = new[] { "application essays" }
-             };
+private static void SearchQueryWithFilter(string user)
+{
+    // Using the filter below, the search result will contain all documents that their GroupIds field   
+    // contain any one of the Ids in the groups list
+    string filter = String.Format("groupIds/any(p:search.in(p, '{0}'))", string.Join(",", String.Join(",", _groupsCache[user])));
+    SearchOptions searchOptions =
+        new SearchOptions()
+        {
+            Filter = filter
+        };
+    searchOptions.Select.Add("name");
 
-DocumentSearchResult<SecuredFiles> results = _indexClient.Documents.Search<SecuredFiles>("*", parameters);
+    SearchResults<SecuredFiles> results = searchClient.Search<SecuredFiles>("*", searchOptions);
+
+    Console.WriteLine("Results for groups '{0}' : {1}", _groupsCache[user], results.GetResults().Select(r => r.Document.Name));
+}
 ```
+
 ### <a name="step-3-handle-the-results"></a>Stap 3: de resultaten verwerken
 
 Het antwoord bevat een gefilterde lijst met documenten, die bestaan uit degene die de gebruiker mag bekijken. Afhankelijk van hoe u de pagina met zoek resultaten bouwt, wilt u mogelijk visuele aanwijzingen toevoegen aan de gefilterde resultatenset.
 
-## <a name="conclusion"></a>Conclusie
+## <a name="next-steps"></a>Volgende stappen
 
-In dit overzicht hebt u technieken geleerd voor het gebruik van AAD-aanmeldingen om documenten te filteren in azure Cognitive Search resultaten, waardoor de resultaten van documenten die niet overeenkomen met het filter dat is opgegeven in de aanvraag, worden afgekapt.
+In dit scenario hebt u een patroon geleerd voor het gebruik van Azure AD-aanmeldingen voor het filteren van documenten in azure Cognitive Search resultaten, waardoor de resultaten van documenten die niet overeenkomen met het filter dat is opgegeven in de aanvraag, worden afgekapt. Raadpleeg de volgende koppelingen voor een ander patroon dat eenvoudiger kan zijn of om andere beveiligings functies opnieuw te bezoeken.
 
-## <a name="see-also"></a>Zie ook
-
-+ [Toegangs beheer op basis van identiteiten met behulp van Azure Cognitive Search filters](search-security-trimming-for-azure-search.md)
-+ [Filters in azure Cognitive Search](search-filters.md)
-+ [Gegevens beveiliging en toegangs beheer in azure Cognitive Search bewerkingen](search-security-overview.md)
+- [Beveiligings filters voor het verkleinen van resultaten](search-security-trimming-for-azure-search.md)
+- [Beveiliging in azure Cognitive Search](search-security-overview.md)

@@ -6,21 +6,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 10/07/2020
+ms.date: 12/11/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 35d5940fbc001d1806711afb14aa4a549bcb1826
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 8ed768d7bb47db6f102dbb48b438f9f4a2987f1e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96615876"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97366332"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
-[v3.1-referentiedocumentatie](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-previews) | [Broncode voor v3.1-bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [v3.1-pakket (NuGet)](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.1) | [v3.1-voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
+[v3.1-referentiedocumentatie](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-previews) | [Broncode voor v3.1-bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [v3.1-pakket (NuGet)](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.3) | [v3.1-voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -39,6 +39,7 @@ ms.locfileid: "96615876"
 * Zodra u een Azure-abonnement hebt, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="Een Text Analytics-resource maken"  target="_blank">maakt u een Text Analytics-resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> in de Azure-portal om uw sleutel en eindpunt op te halen.  Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Text Analytics-API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
+* Als u de functie Analyseren wilt gebruiken, hebt u een Text Analytics-resource in de prijscategorie Standard (S) nodig.
 
 ## <a name="setting-up"></a>Instellen
 
@@ -48,7 +49,7 @@ Maak een nieuwe console-app in .NET Core met behulp van de Visual Studio IDE. Hi
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
-Installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te klikken in **Solution Explorer** en **NuGet-pakketten beheren** te selecteren. Selecteer in Package Manager dat wordt geopend de optie **Bladeren** en zoek naar `Azure.AI.TextAnalytics`. Schakel het vakje **prerelease toevoegen** in, selecteer versie `5.1.0-beta.1` en selecteer **Installeren**. U kunt ook de [Package Manager-console](/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package) gebruiken.
+Installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te klikken in **Solution Explorer** en **NuGet-pakketten beheren** te selecteren. Selecteer in Package Manager dat wordt geopend de optie **Bladeren** en zoek naar `Azure.AI.TextAnalytics`. Schakel het vakje **prerelease toevoegen** in, selecteer versie `5.1.0-beta.3` en selecteer **Installeren**. U kunt ook de [Package Manager-console](/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package) gebruiken.
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -804,5 +805,103 @@ Key phrases:
     cat
     veterinarian
 ```
+
+---
+
+## <a name="use-the-api-asynchronously-with-the-analyze-operation"></a>De API asynchroon gebruiken met de bewerking Analyseren
+
+# <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
+
+> [!CAUTION]
+> Als u de bewerking Analyseren wilt gebruiken, moet uw Azure-resource gebruikmaken van een Standard-prijscategorie.
+
+Maak een nieuwe functie met de naam `AnalyzeOperationExample()` waarvoor de client wordt gebruikt die u eerder hebt gemaakt en roep de bijbehorende functie `StartAnalyzeOperationBatch()` aan. Het geretourneerde object `AnalyzeOperation` bevat het interfaceobject `Operation` voor `AnalyzeOperationResult`. Aangezien het een langdurige bewerking is, moet `await` op `operation.WaitForCompletionAsync()` voor de waarde worden bijgewerkt. Zodra `WaitForCompletionAsync()` is voltooid, moet de verzameling worden bijgewerkt in `operation.Value`. Als er een fout optreedt, wordt er een `RequestFailedException` gegenereerd.
+
+
+```csharp
+static async Task AnalyzeOperationExample(TextAnalyticsClient client)
+{
+    string inputText = "Microsoft was founded by Bill Gates and Paul Allen.";
+
+    var batchDocuments = new List<string> { inputText };
+
+    AnalyzeOperationOptions operationOptions = new AnalyzeOperationOptions()
+    {
+        EntitiesTaskParameters = new EntitiesTaskParameters(),
+        DisplayName = "Analyze Operation Quick Start Example"
+    };
+
+    AnalyzeOperation operation = client.StartAnalyzeOperationBatch(batchDocuments, operationOptions, "en");
+
+    await operation.WaitForCompletionAsync();
+
+    AnalyzeOperationResult resultCollection = operation.Value;
+
+    RecognizeEntitiesResultCollection entitiesResult = resultCollection.Tasks.EntityRecognitionTasks[0].Results;
+
+    Console.WriteLine("Analyze Operation Request Details");
+    Console.WriteLine($"    Status: {resultCollection.Status}");
+    Console.WriteLine($"    DisplayName: {resultCollection.DisplayName}");
+    Console.WriteLine("");
+
+    Console.WriteLine("Recognized Entities");
+
+    foreach (RecognizeEntitiesResult result in entitiesResult)
+    {
+        Console.WriteLine($"    Recognized the following {result.Entities.Count} entities:");
+
+        foreach (CategorizedEntity entity in result.Entities)
+        {
+            Console.WriteLine($"    Entity: {entity.Text}");
+            Console.WriteLine($"    Category: {entity.Category}");
+            Console.WriteLine($"    Offset: {entity.Offset}");
+            Console.WriteLine($"    ConfidenceScore: {entity.ConfidenceScore}");
+            Console.WriteLine($"    SubCategory: {entity.SubCategory}");
+        }
+        Console.WriteLine("");
+    }
+}
+```
+
+Nadat u dit voorbeeld aan uw toepassing hebt toegevoegd, roept u de methode `main()` aan met behulp van `await`.
+
+```csharp
+await AnalyzeOperationExample(client).ConfigureAwait(false);
+```
+### <a name="output"></a>Uitvoer
+
+```console
+Analyze Operation Request Details
+    Status: succeeded
+    DisplayName: Analyze Operation Quick Start Example
+
+Recognized Entities
+    Recognized the following 3 entities:
+    Entity: Microsoft
+    Category: Organization
+    Offset: 0
+    ConfidenceScore: 0.83
+    SubCategory: 
+    Entity: Bill Gates
+    Category: Person
+    Offset: 25
+    ConfidenceScore: 0.85
+    SubCategory: 
+    Entity: Paul Allen
+    Category: Person
+    Offset: 40
+    ConfidenceScore: 0.9
+    SubCategory: 
+```
+
+U kunt ook de bewerking Analyseren ook gebruiken om persoonsgegevens en extractie van sleutelwoorden te detecteren. Zie het [analysevoorbeeld](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples/Sample_AnalyzeOperation.md) (Engelstalig) op GitHub.
+
+# <a name="version-30"></a>[Versie 3.0](#tab/version-3)
+
+Deze functie is niet beschikbaar in versie 3.0.
+
+# <a name="version-21"></a>[Versie 2.1](#tab/version-2)
+
+Deze functie is niet beschikbaar in versie 2.1.
 
 ---

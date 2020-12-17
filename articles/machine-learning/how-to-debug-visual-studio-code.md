@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/30/2020
-ms.openlocfilehash: 12163419ad779acfa116f1dee66284623e2d45fb
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: a9d20732c3ae08718c400faff44137000e98fffd
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616107"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629425"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Interactieve fout opsporing met Visual Studio code
 
@@ -58,7 +58,7 @@ Gebruik de Azure Machine Learning-extensie om uw machine learning experimenten t
     1. Geef de naam op van het script dat u wilt uitvoeren. Het pad is relatief ten opzichte van de map die in VS code is geopend.
     1. Kies of u een Azure Machine Learning gegevensset wilt gebruiken of niet. U kunt [Azure machine learning gegevens sets](how-to-manage-resources-vscode.md#create-dataset) maken met behulp van de extensie.
     1. Debugpy is vereist om het fout opsporingsprogramma te koppelen aan de container die uw experiment uitvoert. Als u debugpy wilt toevoegen als een afhankelijkheid, selecteert u **Debugpy toevoegen**. Anders selecteert u **overs Laan**. Als u debugpy niet toevoegt als afhankelijkheid, wordt uw experiment uitgevoerd zonder dat het fout opsporingsprogramma is gekoppeld.
-    1. Een configuratie bestand met de instellingen voor het uitvoeren van de configuratie wordt geopend in de editor. Als u tevreden bent met de instellingen, selecteert u **experiment verzenden**. U kunt ook het opdracht palet openen ( **> opdracht palet weer geven** ) in de menu balk en de `Azure ML: Submit experiment` opdracht invoeren in het tekstvak.
+    1. Een configuratie bestand met de instellingen voor het uitvoeren van de configuratie wordt geopend in de editor. Als u tevreden bent met de instellingen, selecteert u **experiment verzenden**. U kunt ook het opdracht palet openen (**> opdracht palet weer geven**) in de menu balk en de `Azure ML: Submit experiment` opdracht invoeren in het tekstvak.
 1. Zodra het experiment is verzonden, wordt een docker-installatie kopie met uw script en de configuraties die zijn opgegeven in de configuratie van de uitvoering, gemaakt.
 
     Wanneer het proces voor het bouwen van de docker-installatie kopie wordt gestart, wordt de inhoud van de `60_control_log.txt` Bestands stroom naar de uitvoer console in VS code.
@@ -355,9 +355,9 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
 
 1. Als u VS code wilt configureren om met de docker-installatie kopie te communiceren, maakt u een nieuwe configuratie voor fout opsporing:
 
-    1. Selecteer in VS code het menu __fout opsporing__ en selecteer vervolgens __Open configuraties__. Er wordt een bestand met de naam __launch.js__ geopend.
+    1. Selecteer in VS code het menu __fout opsporing__ in de uitbrei ding van de __uitvoering__ en selecteer vervolgens __Open configuraties__. Er wordt een bestand met de naam __launch.js__ geopend.
 
-    1. Zoek in het bestand __launch.jsop__ de regel die bevat `"configurations": [` en voeg de volgende tekst toe:
+    1. Zoek in het bestand __launch.jsop__ het item __' configuraties '__ (de regel die bevat `"configurations": [` ) en voeg de volgende tekst toe. 
 
         ```json
         {
@@ -376,11 +376,44 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
             ]
         }
         ```
+        Na het invoegen moet de __launch.jsop__ het bestand er ongeveer als volgt uitzien:
+        ```json
+        {
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit: https://go.microsoft.com/fwlink/linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Python: Current File",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal"
+            },
+            {
+                "name": "Azure Machine Learning Deployment: Docker Debug",
+                "type": "python",
+                "request": "attach",
+                "connect": {
+                    "port": 5678,
+                    "host": "0.0.0.0"
+                    },
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/var/azureml-app"
+                    }
+                ]
+            }
+            ]
+        }
+        ```
 
         > [!IMPORTANT]
-        > Als er al andere vermeldingen in de sectie configuraties staan, voegt u een komma (,) toe na de code die u hebt ingevoegd.
+        > Als er al andere vermeldingen in de sectie configuraties staan, voegt u een komma ( __,__ ) toe na de code die u hebt ingevoegd.
 
-        Deze sectie wordt gekoppeld aan de docker-container via poort 5678.
+        Deze sectie wordt gekoppeld aan de docker-container via poort __5678__.
 
     1. Sla de __launch.jsop in__ het bestand.
 
@@ -433,13 +466,13 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
     package.pull()
     ```
 
-    Zodra de installatie kopie is gemaakt en gedownload, wordt het pad naar de afbeelding (inclusief opslag plaats, naam en label, in dit geval ook de samen vatting) weer gegeven in een bericht dat er ongeveer als volgt uitziet:
+    Nadat de installatie kopie is gemaakt en gedownload (dit proces kan meer dan tien minuten duren, dus wacht een ogen blik), het pad naar de installatie kopie (inclusief opslag plaats, naam en tag, in dit geval ook wel de samen vatting) wordt weer gegeven in een bericht dat lijkt op het volgende:
 
     ```text
     Status: Downloaded newer image for myregistry.azurecr.io/package@sha256:<image-digest>
     ```
 
-1. Gebruik de volgende opdracht om een tag toe te voegen om het gemakkelijker te maken om met de afbeelding te werken. Vervang door `myimagepath` de locatie waarde uit de vorige stap.
+1. Om het gemakkelijker te maken met de installatie kopie, kunt u de volgende opdracht gebruiken om een tag voor deze installatie kopie toe te voegen. Vervang `myimagepath` in de volgende opdracht door de locatie waarde uit de vorige stap.
 
     ```bash
     docker tag myimagepath debug:1
@@ -457,22 +490,37 @@ Voor lokale web service-implementaties is een werkende docker-installatie op uw 
 1. Gebruik de volgende opdracht om een docker-container met behulp van de installatie kopie te starten:
 
     ```bash
-    docker run -it --name debug -p 8000:5001 -p 5678:5678 -v <my_path_to_score.py>:/var/azureml-apps/score.py debug:1 /bin/bash
+    docker run -it --name debug -p 8000:5001 -p 5678:5678 -v <my_local_path_to_score.py>:/var/azureml-app/score.py debug:1 /bin/bash
     ```
 
-    Hiermee koppelt `score.py` u uw lokale map aan de container. Wijzigingen die in de editor zijn aangebracht, worden daarom automatisch doorgevoerd in de container.
+    Hiermee koppelt `score.py` u uw lokale map aan de container. Wijzigingen die in de editor zijn aangebracht, worden daarom automatisch weer gegeven in de container
 
-1. Voer in de container de volgende opdracht uit in de shell
+2. Voor een betere ervaring kunt u met een nieuwe VS code-interface naar de container gaan. Selecteer de `Docker` uitbrei ding van de VS-code balk, zoek de lokale container die u hebt gemaakt, in deze documentatie `debug:1` . Klik met de rechter muisknop op deze container en selecteer en `"Attach Visual Studio Code"` vervolgens wordt er automatisch een nieuwe VS code-interface geopend. deze interface toont de binnenkant van de gemaakte container.
+
+    ![De container VS code interface](./media/how-to-troubleshoot-deployment/container-interface.png)
+
+3. Voer in de container de volgende opdracht uit in de shell
 
     ```bash
     runsvdir /var/runit
     ```
+    Vervolgens ziet u de volgende uitvoer in de shell in uw container:
 
-1. Als u VS code aan debugpy in de container wilt koppelen, opent u VS code en gebruikt u de toets F5 of selecteert u __fout opsporing__. Wanneer u hierom wordt gevraagd, selecteert u de __Azure machine learning implementatie: docker debug__ -configuratie. U kunt ook het debug-pictogram selecteren in de zijbalk, de __Azure machine learning implementatie: docker debug__ -vermelding in het vervolg keuzemenu voor fout opsporing en vervolgens de groene pijl gebruiken om het fout opsporingsprogramma te koppelen.
+    ![De container uitvoer console uitvoeren](./media/how-to-troubleshoot-deployment/container-run.png)
+
+4. Als u VS code aan debugpy in de container wilt koppelen, opent u VS code en gebruikt u de toets F5 of selecteert u __fout opsporing__. Wanneer u hierom wordt gevraagd, selecteert u de __Azure machine learning implementatie: docker debug__ -configuratie. U kunt ook het pictogram uitbrei ding van __uitvoer__ in de zijbalk selecteren, de __Azure machine learning implementatie: docker debug__ -vermelding in het vervolg keuzemenu voor fout opsporing en vervolgens de groene pijl gebruiken om het fout opsporingsprogramma te koppelen.
 
     ![Het pictogram fout opsporing, de knop fout opsporing starten en de configuratie kiezer](./media/how-to-troubleshoot-deployment/start-debugging.png)
+    
+    Nadat u op de groene pijl hebt geklikt en de debugger hebt gekoppeld, kunt u in de container VS code-interface enkele nieuwe gegevens zien:
+    
+    ![Er is informatie toegevoegd aan het fout opsporingsprogramma voor containers](./media/how-to-troubleshoot-deployment/debugger-attached.png)
+    
+    Wat u kunt zien, vindt u in uw belangrijkste VS-code Interface:
 
-Op dit punt verbindt de VS code met debugpy in de docker-container en stopt dit met het onderbrekings punt dat u eerder hebt ingesteld. U kunt nu de code door lopen terwijl deze wordt uitgevoerd, variabelen weer geven, enzovoort.
+    ![Het VS-code-onderbrekings punt in score.py](./media/how-to-troubleshoot-deployment/local-debugger.png)
+
+En nu is het lokale onderdeel `score.py` dat is gekoppeld aan de container, al gestopt op het onderbrekings punt waar u instelt. Op dit punt verbindt de VS code met debugpy in de docker-container en stopt de docker-container met het onderbrekings punt dat u eerder hebt ingesteld. U kunt nu de code door lopen terwijl deze wordt uitgevoerd, variabelen weer geven, enzovoort.
 
 Zie [fouten opsporen in uw Python-code](https://code.visualstudio.com/docs/python/debugging)voor meer informatie over het gebruik van VS code voor het opsporen van problemen met python.
 

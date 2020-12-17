@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: acc19d9a04909dcf0e79c93e0c8a3fb8225ee1b4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 1b92d1b5853d6b794ebdcf0e2052b8f15081d608
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546898"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507571"
 ---
 # <a name="learn-the-basics-of-the-speech-cli"></a>Meer informatie over de basisbeginselen van de Speech CLI
 
@@ -87,7 +87,7 @@ In deze opdracht geeft u zowel de brontaal (taal om **vanaf** om te zetten) op a
 
 ### <a name="configuration-files-in-the-datastore"></a>Configuratiebestanden in het gegevensarchief
 
-Het gedrag van de Speech CLI kan afhankelijk zijn van instellingen in configuratiebestanden, waarnaar u binnen Speech CLI-aanroepen kunt verwijzen met een @-teken.
+Het gedrag van de Speech CLI kan afhankelijk zijn van instellingen in configuratiebestanden, waarnaar u binnen Speech CLI-aanroepen kunt verwijzen met een \@-teken.
 De Speech CLI slaat een nieuwe instelling op in een nieuwe `./spx/data`-submap die wordt gemaakt in de huidige werkmap.
 Bij het zoeken naar een configuratiewaarde zoekt de Speech CLI in uw huidige werkmap en vervolgens in het gegevensarchief in `./spx/data`, en vervolgens in andere gegevensarchieven, waaronder een gegevensarchief voor definitieve alleen-lezen versies in het binaire bestand `spx`.
 U hebt eerder het gegevensarchief gebruikt om uw `@key` en `@region`-waarden op te slaan, zodat u deze niet hoeft op te geven bij elke opdrachtregelaanroep.

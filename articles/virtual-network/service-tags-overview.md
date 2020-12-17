@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: d01136ea4377bd7d35a2e11b4bcf654bcf677fbe
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: e357667e650e9feeb8dceeffe71c287cde9fe8a0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401556"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631598"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -53,6 +53,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureActiveDirectory** | Azure Active Directory. | Uitgaand | Nee | Ja |
 | **AzureActiveDirectoryDomainServices** | Beheer verkeer voor implementaties die zijn toegewezen aan Azure Active Directory Domain Services. | Beide | Nee | Ja |
 | **AzureAdvancedThreatProtection** | Azure Advanced Threat Protection. | Uitgaand | Nee | Nee |
+| **AzureArcInfrastructure** | Servers met Azure-Arc, ingeschakelde Kubernetes en gast configuratie verkeer.<br/><br/>*Opmerking:* Deze tag heeft een afhankelijkheid van de **AzureActiveDirectory**-,**AzureTrafficManager**-en **AzureResourceManager** -Tags. *Deze tag kan momenteel niet worden geconfigureerd via Azure Portal*.| Uitgaand | Nee | Ja |
 | **AzureBackup** |Azure Backup.<br/><br/>*Opmerking:* Deze tag bevat een afhankelijkheid van de **opslag** -en **AzureActiveDirectory** -Tags. | Uitgaand | Nee | Ja |
 | **AzureBotService** | Azure Bot Service. | Uitgaand | Nee | Nee |
 | **AzureCloud** | Alle [open bare IP-adressen van data centers](https://www.microsoft.com/download/details.aspx?id=56519). | Uitgaand | Ja | Ja |

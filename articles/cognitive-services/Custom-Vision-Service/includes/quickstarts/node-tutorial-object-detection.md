@@ -4,12 +4,12 @@ ms.author: areddish
 ms.service: cognitive-services
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0c6c80849f48cb4f859bcbaaeb4f072eb575ba74
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 21f05363ed3d3aa3e9c1f1156425a6026eb21b71
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021262"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97582476"
 ---
 Deze handleiding biedt informatie en voorbeeldcode om u op weg te helpen met de Custom Vision-clientbibliotheek voor Node.js om een objectdetectiemodel te maken. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -75,7 +75,7 @@ Maak variabelen voor het Azure-eindpunt en de Azure-sleutels voor uw resource.
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js?name=snippet_creds)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de [productnaam]-resource die u in de sectie **Vereisten** hebt gemaakt, is geïmplementeerd, klikt u op de knop **Naar de resource gaan** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Ga naar Azure Portal. Als de Custom Vision-resources die u in de sectie **Vereisten** hebt gemaakt, zijn geïmplementeerd, klikt u onder **Volgende stappen** op de knop **Ga naar resource**. U vindt de sleutels en het eindpunt op de pagina's over **sleutel en eindpunt** van de resources, onder **Resourcebeheer**. U moet uw trainings- en voorspellingssleutel samen met het eindpunt van de trainingsresources ophalen.
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../../cognitive-services/cognitive-services-security.md) voor meer informatie.
 
@@ -118,14 +118,6 @@ Voeg de volgende functie toe om meerdere asynchrone aanroepen te maken. U kunt d
 ## <a name="create-a-new-custom-vision-project"></a>Een nieuw project maken in de Custom Vision-service
 
 Start een nieuwe functie die al uw Custom Vision-functieaanroepen omvat. Als u een nieuw Custom Vision Service-project wilt maken, voegt u de volgende code toe.
-
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js?name=snippet_create)]
-
-## <a name="create-a-new-custom-vision-project"></a>Een nieuw project maken in de Custom Vision-service
-
-Start een nieuwe functie die al uw Custom Vision-functieaanroepen omvat. Als u een nieuw Custom Vision Service-project wilt maken, voegt u de volgende code toe.
-
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js?name=snippet_create)]
 
@@ -179,6 +171,7 @@ node index.js
 
 De uitvoer van de toepassing moet in de console worden weergegeven. Vervolgens kunt u controleren of de testafbeelding (gevonden in **<sampleDataRoot>/Test/** ) op de juiste wijze wordt gelabeld en of de detectieregio juist is. U kunt altijd teruggaan naar de [Custom Vision-website](https://customvision.ai) en de huidige status bekijken van het nieuwe project dat u hebt gemaakt.
 
+## <a name="clean-up-resources"></a>Resources opschonen
 
 [!INCLUDE [clean-od-project](../../includes/clean-od-project.md)]
 

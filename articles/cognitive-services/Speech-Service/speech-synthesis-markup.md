@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: df6a4053eb70c02e27599bbd9086dfa32b0bcc65
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 5d11f343a55d30e5d14d6f4ae0ddb1a74d9c61fa
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508829"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631972"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -32,6 +32,11 @@ De implementatie van de speech-service van SSML is gebaseerd op de [opmaak taal 
 Kies uit standaard-en Neural stemmen of maak uw eigen aangepaste spraak die uniek is voor uw product of merk. 75 + standaard stemmen zijn verkrijgbaar in meer dan 45 talen en land instellingen en vijf Neural stemmen zijn beschikbaar in vier talen en land instellingen. Zie [taal ondersteuning](language-support.md)voor een volledige lijst met ondersteunde talen, land instellingen en stemmen (Neural en Standard).
 
 Zie [tekst-naar-spraak-overzicht](text-to-speech.md)voor meer informatie over standaard-, Neural-en aangepaste stemmen.
+
+
+> [!NOTE]
+> U kunt stemmen in verschillende stijlen horen en lees voorbeeld tekst met behulp van [de pagina Text to speech](https://azure.microsoft.com/services/cognitive-services/text-to-speech/#features).
+
 
 ## <a name="special-characters"></a>Speciale tekens
 
@@ -198,6 +203,7 @@ Op dit moment worden de volgende Neural stemmen ondersteund:
 * `en-US-AriaNeural`
 * `en-US-JennyNeural`
 * `en-US-GuyNeural`
+* `pt-BR-FranciscaNeural`
 * `zh-CN-XiaoxiaoNeural`
 * `zh-CN-YunyangNeural`
 * `zh-CN-YunyeNeural`
@@ -257,6 +263,7 @@ Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor el
 |                         | `style="assistant"`       | Een warme en beperkte Toon voor digitale assistenten    |
 |                         | `style="newscast"`        | Een veelzijdige en informe Toon voor algemene nieuws levering   |
 | `en-US-GuyNeural`       | `style="newscast"`        | Een formele en professionele Toon voor gesp roken nieuws |
+| `pt-BR-FranciscaNeural` | `style="calm"`            | Een fraaie, verzamelde en opgebouwde stand voor het praten. Tint, Pitch, prosody is veel meer uniform vergeleken met andere soorten spraak.                                |
 | `zh-CN-XiaoxiaoNeural`  | `style="newscast"`        | Een formele en professionele Toon voor gesp roken nieuws |
 |                         | `style="customerservice"` | Een beschrijvende en handige Toon voor klant ondersteuning  |
 |                         | `style="assistant"`       | Een warme en beperkte Toon voor digitale assistenten    |

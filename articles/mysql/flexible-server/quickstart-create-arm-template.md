@@ -242,7 +242,7 @@ echo "Press [ENTER] to continue ..."
 Zie voor een stapsgewijze zelfstudie die u door het proces van het maken van een ARM-sjabloon leidt:
 
 > [!div class="nextstepaction"]
-> Uw eerste ARM-sjabloon maken en implementeren[
+> [Uw eerste ARM-sjabloon maken en implementeren](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)
 
 Zie voor een stapsgewijze zelfstudie voor het bouwen van een app met App Service met behulp van MySQL:
 

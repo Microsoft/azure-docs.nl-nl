@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: f1712a51fcd35c348f6177b670a7686898a0c78b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 1fe1ad14dc1cc8f5ff5171ef517d23363969be4d
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96346135"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387782"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Quickstart: Uw QnA Maker-knowledge base maken, trainen en publiceren
 
@@ -48,7 +48,7 @@ U kunt een QnA Maker-knowledge base (KB) maken van uw eigen inhoud, zoals veelge
     |--|--|
     |**Schakel uitpakken van meerdere paden in vanuit URL's, .pdf- of .docx-bestanden.**|Ingeschakeld|
     |**Standaardtekst met meerdere paden**| Selecteer een optie|
-    |**+ URL toevoegen**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**+ URL toevoegen**|`https://www.microsoft.com/en-us/software-download/faq`|
     |**Chit-chat**|**Professional** selecteren|
 
 7. Selecteer in **stap 5**, **Uw KB maken**.
@@ -83,7 +83,7 @@ U kunt een QnA Maker-knowledge base (KB) maken van uw eigen inhoud, zoals veelge
     |--|--|
     |**Schakel uitpakken van meerdere paden in vanuit URL's, .pdf- of .docx-bestanden.**|Ingeschakeld|
     |**Standaardtekst met meerdere paden**| Selecteer een optie|
-    |**+ URL toevoegen**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
+    |**+ Bestand toevoegen**| Download de handleiding voor de Surface-laptop op: https://download.microsoft.com/download/7/B/1/7B10C82E-F520-4080-8516-5CF0D803EEE0/surface-book-user-guide-EN.pdf 
     |**Chit-chat**|**Professional** selecteren|
 
 8. Selecteer in **stap 5**, **Uw KB maken**.
@@ -122,9 +122,9 @@ Selecteer in de rechterbovenhoek **Save and train** (Opslaan en trainen) om de w
 1. Selecteer in de rechterbovenhoek van de QnA Maker-portal **Testen** om te testen of de wijzigingen worden toegepast.
 2. Voer in het tekstvak een voorbeeld van een gebruikersquery in.
 
-    `How many Azure services are used by a knowledge base?`
+    `I want to know the difference between 32 bit and 64 bit Windows`
 
-    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="Voer in het tekstvak een voorbeeld van een gebruikersquery in.":::
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/query-dialogue.png" alt-text="Voer in het tekstvak een voorbeeld van een gebruikersquery in.":::
 
 3. Selecteer **Inspect** (Inspecteren) om het antwoord gedetailleerder te onderzoeken. Het testvenster wordt gebruikt om uw wijzigingen in de knowledge base te testen voordat u uw knowledge base publiceert.
 

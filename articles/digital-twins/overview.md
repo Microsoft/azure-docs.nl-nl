@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: f0c19130312db4e6ef500a0750f40359931d48d2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 49b7bae1a0cc224b92f292b891fae210f2cffa4e
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099110"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400604"
 ---
 # <a name="what-is-azure-digital-twins"></a>Wat is Azure Digital Twins?
 
@@ -96,9 +96,6 @@ Voor een lijst met beperkingen van Azure Digital Twins, raadpleegt u [*Referenti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u met de eerste preview-versie van Azure Digital Twins (oktober 2018) hebt gewerkt, leest u hier wat er is gewijzigd:
-* [*Overzicht: verschillen met de eerste release*](overview-differences.md)
+Als u met de eerste preview-versie van Azure Digital Twins (oktober 2018) hebt gewerkt, leest u hier wat er is gewijzigd: [*Overzicht: verschillen met de eerste release*](overview-differences.md).
 
-U kunt ook direct aan de slag met Azure Digital Twins door de eerste zelfstudie te volgen:
-
-[*Zelfstudie: Een client-app coderen*](tutorial-code.md)
+Met deze quickstart kunt u ook direct aan de slag met Azure Digital Twins: [*Snelstart: kennismaken met een voorbeeldscenario*](quickstart-adt-explorer.md).

@@ -7,12 +7,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: raynew
-ms.openlocfilehash: 45baee286fede0ab16da62b7c2e84008d58690b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cf4dc5123040fd2af8efe54153867a8709fe1ef
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91626493"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652225"
 ---
 # <a name="vmware-to-azure-disaster-recovery-architecture"></a>Architectuur voor herstel na noodgeval van VMware naar Azure
 
@@ -45,7 +45,7 @@ Als u een URL-firewallproxy gebruikt om de uitgaande connectiviteit te beheren, 
 
 | **Naam**                  | **Commercieel**                               | **Overheid**                                 | **Beschrijving** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
-| Storage                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | Hiermee kunnen gegevens van de VM naar het cache-opslagaccount in de bronregio worden geschreven. |
+| Storage                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net` | Hiermee kunnen gegevens van de VM naar het cache-opslagaccount in de bronregio worden geschreven. |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Verzorgt autorisatie en authenticatie voor de URL’s van Site Recovery. |
 | Replicatie               | `*.hypervrecoverymanager.windowsazure.com` | `*.hypervrecoverymanager.windowsazure.com`   | Maakt het de VM mogelijk te communiceren met de Site Recovery-service. |
 | Service Bus               | `*.servicebus.windows.net`                 | `*.servicebus.usgovcloudapi.net`             | Maakt het de VM mogelijk bewakings- en diagnosegegevens van Site Recovery te schrijven. |
@@ -54,7 +54,7 @@ Raadpleeg [de sectie netwerk vereisten in het artikel](vmware-azure-deploy-confi
 
 ## <a name="replication-process"></a>Replicatieproces
 
-1. Wanneer u replicatie voor een virtuele machine inschakelt, begint de initiële replicatie naar Azure Storage met behulp van het opgegeven replicatie beleid. Houd rekening met het volgende:
+1. Wanneer u replicatie voor een virtuele machine inschakelt, begint de initiële replicatie naar Azure Storage met behulp van het opgegeven replicatie beleid. en let op het volgende:
     - Voor virtuele VMware-machines is de replicatie op blok niveau, bijna continu, met behulp van de Mobility Service-agent die op de virtuele machine wordt uitgevoerd.
     - Alle instellingen voor het replicatie beleid worden toegepast:
         - **RPO-drempel waarde**. Deze instelling heeft geen invloed op replicatie. Het helpt bij de bewaking. Er wordt een gebeurtenis gegenereerd en optioneel een e-mail verzonden als de huidige RPO de drempel waarde overschrijdt die u opgeeft.
@@ -89,7 +89,7 @@ Raadpleeg [de sectie netwerk vereisten in het artikel](vmware-azure-deploy-confi
 
 Wanneer u Azure VM-replicatie inschakelt, Site Recovery standaard een nieuw replicatie beleid maken met de standaard instellingen in de tabel.
 
-**Beleidsinstelling** | **Details** | **Prijs**
+**Beleidsinstelling** | **Details** | **Standaard**
 --- | --- | ---
 **Bewaarperiode van herstelpunt** | Hiermee geeft u op hoelang Site Recovery herstel punten bewaard | 24 uur
 **Frequentie van de app-consistente momentopname** | Hoe vaak Site Recovery een app-consistente moment opname gebruikt. | Elke vier uur

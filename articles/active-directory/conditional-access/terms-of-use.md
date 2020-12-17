@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1829c69510568b0f9a8cec7fb7d2d57be8515d3
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 6e8731312ee43930e0f2abcf81228c21bebfdb1f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509985"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653721"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Gebruiks voorwaarden van Azure Active Directory
 
@@ -129,7 +129,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
     Met het aangepaste beleid voor voorwaardelijke toegang worden nauw keurige gebruiks voorwaarden ingeschakeld, tot een bepaalde Cloud toepassing of groep gebruikers. Voor meer informatie raadpleegt [u Quick Start: vereisen dat de gebruiks voorwaarden worden geaccepteerd voor toegang tot Cloud-apps](require-tou.md).
 
-1. Klik op **Create**.
+1. Klik op **Maken**.
 
    Als u een aangepaste sjabloon voor voorwaardelijke toegang hebt geselecteerd, wordt er een nieuw scherm weer gegeven waarin u het aangepaste beleid voor voorwaardelijke toegang kunt maken.
 
@@ -238,8 +238,8 @@ U kunt enkele details van de gebruiks voorwaarden bewerken, maar niet wijzigen v
 2.  Selecteer de gebruiks voorwaarden die u wilt bewerken.
 3.  Klik op **voor waarden bewerken**.
 4.  Voor de taal waarin u een nieuwe versie wilt bijwerken, klikt u op **bijwerken** onder de kolom actie
- 
-     ![Deel venster met gebruiks voorwaarden bewerken naam en Uitvouw opties weer geven](./media/terms-of-use/edit-terms-use.png)
+
+    ![Deel venster met gebruiks voorwaarden bewerken naam en Uitvouw opties weer geven](./media/terms-of-use/edit-terms-use.png)
 
 5.  Upload in het deel venster aan de rechter kant het PDF-bestand voor de nieuwe versie
 6.  Er is ook een wissel optie nodig om opnieuw te **accepteren** als u wilt dat uw gebruikers deze nieuwe versie de volgende keer aanmelden. Als u wilt dat uw gebruikers de volgende keer proberen om toegang te krijgen tot de resource die is gedefinieerd in het beleid voor voorwaardelijke toegang, wordt u gevraagd deze nieuwe versie te accepteren. Als uw gebruikers niet opnieuw moeten worden geaccepteerd, blijven de voor gaande toestemming actueel en worden alleen nieuwe gebruikers die nog niet hebben gereageerd of waarvan de toestemming verloopt, de nieuwe versie weer gegeven.

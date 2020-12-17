@@ -1,7 +1,7 @@
 ---
 title: VM-extensie voor Azure-prestatie diagnostiek voor Windows | Microsoft Docs
 description: Introduceert de Azure performance diagnostische VM-extensie voor Windows.
-services: virtual-machines-windows'
+services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
 manager: dcscontentpm
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 16af8b8c1258ef7945e88a7af42e86a7bba2003b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9edba575b35613abb8bc3081964a37b838bb358b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963258"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656592"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>VM-extensie voor Windows voor diagnostische gegevens over Azure-prestaties
 
@@ -54,16 +54,16 @@ De volgende JSON toont het schema voor de VM-extensie Azure prestatie diagnostie
         "typeHandlerVersion": "1.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "storageAccountName": "[parameters('storageAccountName')]",
-            "performanceScenario": "[parameters('performanceScenario')]",
-            "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
-            "perfCounterTrace": "[parameters('perfCounterTrace')]",
-            "networkTrace": "[parameters('networkTrace')]",
-            "xperfTrace": "[parameters('xperfTrace')]",
-            "storPortTrace": "[parameters('storPortTrace')]",
-            "srNumber": "[parameters('srNumber')]",
-            "requestTimeUtc":  "[parameters('requestTimeUtc')]",
-            "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+          "storageAccountName": "[parameters('storageAccountName')]",
+          "performanceScenario": "[parameters('performanceScenario')]",
+          "traceDurationInSeconds": "[parameter('traceDurationInSeconds')]",
+          "perfCounterTrace": "[parameters('perfCounterTrace')]",
+          "networkTrace": "[parameters('networkTrace')]",
+          "xperfTrace": "[parameters('xperfTrace')]",
+          "storPortTrace": "[parameters('storPortTrace')]",
+          "srNumber": "[parameters('srNumber')]",
+          "requestTimeUtc":  "[parameters('requestTimeUtc')]",
+          "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
         },
         "protectedSettings": {
             "storageAccountKey": "[parameters('storageAccountKey')]"        
@@ -74,23 +74,23 @@ De volgende JSON toont het schema voor de VM-extensie Azure prestatie diagnostie
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-|   **Naam**   |**Waarde/voor beeld**|       **Beschrijving**      |
-|--------------|-------------------|----------------------------|
-|apiVersion|2015-06-15|De versie van de API.
-|publisher|Micro soft. Azure. performance. Diagnostics|De naam ruimte van de uitgever voor de extensie.
-|type|AzurePerformanceDiagnostics|Het type van de VM-extensie.
-|typeHandlerVersion|1.0|De versie van de extensie-handler.
-|performanceScenario|hoofd|Het prestatie scenario waarvoor gegevens moeten worden vastgelegd. Geldige waarden zijn: **Basic**, **vmslow**, **Azure files**en **Custom**.
-|traceDurationInSeconds|300|De duur van de traceringen, als een van de tracerings opties is geselecteerd.
-|perfCounterTrace|p|Optie voor het inschakelen van tracering van prestatie meter items. Geldige waarden zijn **p** of empty. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg.
-|networkTrace|n|Optie om netwerk tracering in te scha kelen. Geldige waarden zijn **n** of een lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg.
-|xperfTrace|x|Optie voor het inschakelen van XPerf-tracering. Geldige waarden zijn **x** of een lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg.
-|storPortTrace|s|Optie om StorPort-tracering in te scha kelen. Geldige waarden zijn **s** of lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg.
-|srNumber|123452016365929|Het nummer van het ondersteunings ticket, indien beschikbaar. Laat de waarde leeg als u deze niet hebt.
-|requestTimeUtc|2017-09-28T22:08:53.736 Z|Huidige datum en tijd in UTC. Als u de portal gebruikt om deze uitbrei ding te installeren, hoeft u deze waarde niet op te geven.
-|resourceId|/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}|De unieke id van een virtuele machine.
-|storageAccountName|mystorageaccount|De naam van het opslag account voor het opslaan van de diagnostische logboeken en resultaten.
-|storageAccountKey|lDuVvxuZB28NNP... hAiRF3voADxLBTcc = =|De sleutel voor het opslag account.
+| Naam | Waarde/voor beeld | Beschrijving |
+|--|--|--|
+| apiVersion | 2015-06-15 | De versie van de API. |
+| publisher | Micro soft. Azure. performance. Diagnostics | De naam ruimte van de uitgever voor de extensie. |
+| type | AzurePerformanceDiagnostics | Het type van de VM-extensie. |
+| typeHandlerVersion | 1.0 | De versie van de extensie-handler. |
+| performanceScenario | hoofd | Het prestatie scenario waarvoor gegevens moeten worden vastgelegd. Geldige waarden zijn: **Basic**, **vmslow**, **Azure files** en **Custom**. |
+| traceDurationInSeconds | 300 | De duur van de traceringen, als een van de tracerings opties is geselecteerd. |
+| perfCounterTrace | p | Optie voor het inschakelen van tracering van prestatie meter items. Geldige waarden zijn **p** of empty. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg. |
+| networkTrace | n | Optie om netwerk tracering in te scha kelen. Geldige waarden zijn **n** of een lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg. |
+| xperfTrace | x | Optie voor het inschakelen van XPerf-tracering. Geldige waarden zijn **x** of een lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg. |
+| storPortTrace | s | Optie om StorPort-tracering in te scha kelen. Geldige waarden zijn **s** of lege waarde. Als u deze tracering niet wilt vastleggen, laat u de waarde leeg. |
+| srNumber | 123452016365929 | Het nummer van het ondersteunings ticket, indien beschikbaar. Laat de waarde leeg als u deze niet hebt. |
+| requestTimeUtc | 2017-09-28T22:08:53.736 Z | Huidige datum en tijd in UTC. Als u de portal gebruikt om deze uitbrei ding te installeren, hoeft u deze waarde niet op te geven. |
+| resourceId | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName} | De unieke id van een virtuele machine. |
+| storageAccountName | mystorageaccount | De naam van het opslag account voor het opslaan van de diagnostische logboeken en resultaten. |
+| storageAccountKey | lDuVvxuZB28NNP... hAiRF3voADxLBTcc = = | De sleutel voor het opslag account. |
 
 ## <a name="install-the-extension"></a>De extensie installeren
 
@@ -117,6 +117,7 @@ Volg deze instructies voor het installeren van de uitbrei ding op virtuele Windo
     > De uitbrei ding wordt uitgevoerd wanneer het inrichten is geslaagd. Het duurt twee minuten of minder om het basis scenario te volt ooien. Voor andere scenario's wordt de duur uitgevoerd die is opgegeven tijdens de installatie.
 
 ## <a name="remove-the-extension"></a>De extensie verwijderen
+
 Voer de volgende stappen uit om de extensie van een virtuele machine te verwijderen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com), selecteer de virtuele machine waarvan u deze extensie wilt verwijderen en selecteer vervolgens de Blade **uitbrei dingen** . 
@@ -128,9 +129,10 @@ Voer de volgende stappen uit om de extensie van een virtuele machine te verwijde
     > U kunt ook de vermelding van de extensie selecteren en de optie **verwijderen** selecteren.
 
 ## <a name="template-deployment"></a>Sjabloonimplementatie
+
 Extensies voor virtuele Azure-machines kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. Het JSON-schema dat in de vorige sectie wordt beschreven, kan worden gebruikt in een Azure Resource Manager sjabloon. Hiermee wordt de VM-extensie Azure prestatie diagnostiek uitgevoerd tijdens de implementatie van een Azure Resource Manager sjabloon. Hier volgt een voorbeeld sjabloon:
 
-```
+```json
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
@@ -144,11 +146,11 @@ Extensies voor virtuele Azure-machines kunnen worden geïmplementeerd met Azure 
       "defaultValue": "southcentralus"
     },
     "storageAccountName": {
-      "type": "securestring"
+      "type": "securestring",
       "defaultValue": "yourStorageAccount"
     },
     "storageAccountKey": {
-      "type": "securestring"
+      "type": "securestring",
       "defaultValue": "yourStorageAccountKey"
     },
     "performanceScenario": {
@@ -159,10 +161,10 @@ Extensies voor virtuele Azure-machines kunnen worden geïmplementeerd met Azure 
       "type": "string",
       "defaultValue": ""
     },
-    "traceDurationInSeconds": {
-      "type": "int",
+  "traceDurationInSeconds": {
+    "type": "int",
     "defaultValue": 300
-    },
+  },
     "perfCounterTrace": {
       "type": "string",
       "defaultValue": "p"
@@ -196,16 +198,16 @@ Extensies voor virtuele Azure-machines kunnen worden geïmplementeerd met Azure 
         "typeHandlerVersion": "1.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "storageAccountName": "[parameters('storageAccountName')]",
-            "performanceScenario": "[parameters('performanceScenario')]",
-            "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
-            "perfCounterTrace": "[parameters('perfCounterTrace')]",
-            "networkTrace": "[parameters('networkTrace')]",
-            "xperfTrace": "[parameters('xperfTrace')]",
-            "storPortTrace": "[parameters('storPortTrace')]",
-            "srNumber": "[parameters('srNumber')]",
-            "requestTimeUtc":  "[parameters('requestTimeUtc')]",
-            "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+          "storageAccountName": "[parameters('storageAccountName')]",
+          "performanceScenario": "[parameters('performanceScenario')]",
+          "traceDurationInSeconds": "[parameters('traceDurationInSeconds')]",
+          "perfCounterTrace": "[parameters('perfCounterTrace')]",
+          "networkTrace": "[parameters('networkTrace')]",
+          "xperfTrace": "[parameters('xperfTrace')]",
+          "storPortTrace": "[parameters('storPortTrace')]",
+          "srNumber": "[parameters('srNumber')]",
+          "requestTimeUtc":  "[parameters('requestTimeUtc')]",
+          "resourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
         },
         "protectedSettings": {
             "storageAccountKey": "[parameters('storageAccountKey')]"
@@ -217,6 +219,7 @@ Extensies voor virtuele Azure-machines kunnen worden geïmplementeerd met Azure 
 ```
 
 ## <a name="powershell-deployment"></a>PowerShell-implementatie
+
 De `Set-AzVMExtension` opdracht kan worden gebruikt voor het implementeren van de VM-extensie Azure-prestatie diagnostiek op een bestaande virtuele machine.
 
 PowerShell
@@ -241,7 +244,7 @@ Het hulp programma PerfInsights verzamelt diverse logboeken, configuratie en dia
 
 ## <a name="view-and-share-the-results"></a>De resultaten weer geven en delen
 
-Uitvoer van de uitbrei ding kan worden gevonden in een zip-bestand dat is geüpload naar het opslag account dat is opgegeven tijdens de installatie en wordt 30 dagen gedeeld met behulp van [Shared Access signatures (SAS)](../../storage/common/storage-sas-overview.md). Dit zip-bestand bevat Diagnostische logboeken en een rapport met bevindingen en aanbevelingen. Een SAS-koppeling naar het zip-uitvoer bestand kan worden gevonden in een tekst bestand met de naam *zipfilename*_saslink.txt onder de map **C:\Packages\Plugins\Microsoft.Azure.performance.Diagnostics.AzurePerformanceDiagnostics \\ \<version> **. Iedereen met deze koppeling kan het zip-bestand downloaden.
+Uitvoer van de uitbrei ding kan worden gevonden in een zip-bestand dat is geüpload naar het opslag account dat is opgegeven tijdens de installatie en wordt 30 dagen gedeeld met behulp van [Shared Access signatures (SAS)](../../storage/common/storage-sas-overview.md). Dit zip-bestand bevat Diagnostische logboeken en een rapport met bevindingen en aanbevelingen. Een SAS-koppeling naar het zip-uitvoer bestand kan worden gevonden in een tekst bestand met de naam *zipfilename* _saslink.txt onder de map **C:\Packages\Plugins\Microsoft.Azure.performance.Diagnostics.AzurePerformanceDiagnostics \\ \<version>**. Iedereen met deze koppeling kan het zip-bestand downloaden.
 
 Micro soft kan deze SAS-koppeling gebruiken om de diagnostische gegevens te downloaden om de ondersteunings technicus te helpen werken aan uw ondersteunings ticket.
 

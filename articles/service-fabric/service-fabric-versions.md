@@ -3,12 +3,12 @@ title: Ondersteunde cluster versies in azure Service Fabric
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 46b1a7845a0da1ede30ed450f1e673f40e450105
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 4407ddb80b00c847e14643be816bc681718dcb8b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905380"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652208"
 ---
 # <a name="supported-service-fabric-versions"></a>Ondersteunde Service Fabric versies
 
@@ -85,7 +85,7 @@ De volgende tabel bevat de versie namen van Service Fabric en de bijbehorende ve
 | 5,5 CU1 | 5.5.216.0    | NA |
 | 5,5 CU2 | 5.5.219.0    | NA |
 | 5,5 CU3 | 5.5.227.0    | NA |
-| 5,5 CU4 | 5.5.232.0    | NA |
+| 5,5 CU4 | 5.5.232.0 | NA |
 | 5,6 RTO | 5.6.204.9494 | NA |
 | 5,6 CU2 | 5.6.210.9494 | NA |
 | 5,6 CU3 | 5.6.220.9494 | NA |

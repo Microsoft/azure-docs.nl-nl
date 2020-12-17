@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 2011fa8e85f10f12ae914b02710bbd65f5700403
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 834672274ade1f8551e86e7c636c4625368d997c
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913042"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652191"
 ---
 # <a name="optimize-azure-data-lake-storage-gen2-for-performance"></a>Azure Data Lake Storage Gen2 optimaliseren voor prestaties
 
@@ -43,7 +43,7 @@ De netwerk verbinding tussen de bron gegevens en Data Lake Storage Gen2 kan soms
 
 Als u de bovenstaande knel punten voor de bron-en netwerk connectiviteit hebt opgelost, kunt u de opname hulpprogramma's configureren. De volgende tabel bevat een overzicht van de belangrijkste instellingen voor verschillende veelgebruikte hulpprogram ma's voor opname en biedt gedetailleerde artikelen voor het afstemmen van de prestaties.  Ga naar dit [artikel](data-lake-storage-data-scenarios.md)voor meer informatie over welk hulp programma u moet gebruiken voor uw scenario.
 
-| Hulpprogramma               | Instellingen     | Meer Details                                                                 |
+| Hulpprogramma               | Instellingen | Meer Details                                                                 |
 |--------------------|------------------------------------------------------|------------------------------|
 | DistCp            | -m (Mapper)   | [Koppeling](data-lake-storage-use-distcp.md#performance-considerations-while-using-distcp)                             |
 | Azure Data Factory| parallelCopies    | [Koppeling](../../data-factory/copy-activity-performance.md)                          |

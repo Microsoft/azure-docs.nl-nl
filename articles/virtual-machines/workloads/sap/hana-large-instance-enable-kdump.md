@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2020
 ms.author: prtyag
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b6afcfe7684102b451860d9916d849842489cace
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a799242ecaae7b7152d79b7d341a9cb5cc18d7fe
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967700"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654469"
 ---
 # <a name="kdump-for-sap-hana-on-azure-large-instances-hli"></a>Kdump voor SAP HANA on Azure Large Instances (HLI)
 
@@ -33,7 +33,7 @@ Dit document bevat informatie over het inschakelen van de kdump-service op Azure
 
 ## <a name="supported-skus"></a>Ondersteunde Sku's
 
-|  Type van de grote hoeveelheid Hana-exemplaren   |  BESTURINGSSYSTEEM leverancier   |  Versie van besturingssysteem pakket   |  SKU        |
+|  Type van de grote hoeveelheid Hana-exemplaren   |  BESTURINGSSYSTEEM leverancier   |  Versie van besturingssysteem pakket   |  SKU |
 |-----------------------------|--------------|-----------------------|-------------|
 |   Type I                    |  SuSE        |   SLES 12 SP3         |  S224m      |
 |   Type I                    |  SuSE        |   SLES 12 SP4         |  S224m      |

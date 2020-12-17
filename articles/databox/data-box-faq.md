@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/14/2020
+ms.date: 12/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 18a1fc7f42884dcc194256e1f51ddecb62d2708c
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 87ec1f03a1f2294a4423e26129644eafcf7c915c
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516401"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655472"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: veelgestelde vragen
 
@@ -97,11 +97,11 @@ Deze lever tijden zijn *schattingen*. De tijd voor elke fase van de order verwer
 **Geschatte lever tijden voor een Data Box order:**
 
 1. Volg orde Data Box: een paar minuten, vanuit de portal
-2. Toewijzing en voorbereiding van apparaten: 1-2 werkdagen
+2. Toewijzing en voor bereiding van apparaten: 1-2 werk dagen, afhankelijk van de beschik baarheid van de voor Raad en andere bestellingen die in behandeling zijn
 3. Verzending: 2-3 werkdagen
 4. Gegevens kopie op de site van de klant: is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden
 5. Retourzending: 2-3 werkdagen
-6. Apparaat verwerken bij Data Center: 1-2 werk dagen
+6. Apparaat verwerken bij Data Center: 1-2 werk dagen, afhankelijk van andere orders die in behandeling zijn
 7. Gegevens uploaden naar Azure: begint zodra de verwerking is voltooid en het apparaat is verbonden. De upload tijd is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
 
 ### <a name="q-i-ordered-a-couple-of-data-box-devices-i-cant-create-any-additional-orders-why"></a>V. Ik heb een aantal Data Box-apparaten besteld. Ik kan geen verdere orders maken. Waarom?

@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: ea812df825288eae3822cce01b24ebc82534c541
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 5ba5c6799db6a32bce64a730f4888f59080300dd
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928814"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657172"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Grootte van de B-serie bebreekbaar virtuele machines
 
@@ -112,7 +112,7 @@ Voor meer informatie over het verkrijgen van toegang tot de metrische gegevens v
 
 **Voor beeld**: Ik implementeer een virtuele machine met behulp van de B1ms-grootte voor mijn kleine tijd-en aanwezigheids Database toepassing. Met deze grootte kan mijn toepassing Maxi maal 20% van een vCPU gebruiken als mijn basis lijn. Dit is 0,2 tegoed per minuut die ik kan gebruiken of bank.
 
-Mijn toepassing is aan het begin en einde van mijn werkdag, tussen 7:00-9:00 uur en 4:00-6:13:00. Gedurende de andere 20 uur van de dag is mijn toepassing meestal niet actief, maar alleen met 10% van de vCPU. Voor de niet-piek uren kan ik 0,2 tegoed per minuut verdienen, maar alleen 0. l tegoeden per minuut verbruiken, dus mijn VM zal Bank 0,1 x 60 = 6 tegoed per uur.  Voor de 20 uur dat ik buiten de piek ben, Bank 120 tegoed.  
+Mijn toepassing is aan het begin en einde van mijn werkdag, tussen 7:00-9:00 uur en 4:00-6:13:00. Gedurende de andere 20 uur van de dag is mijn toepassing meestal niet actief, maar alleen met 10% van de vCPU. Voor de niet-piek uren verdienen we 0,2 tegoeden per minuut, maar verbruiken we slechts 0,1 tegoed per minuut, dus mijn virtuele machine Bank 0,1 x 60 = 6 tegoed per uur.  Voor de 20 uur dat ik buiten de piek ben, Bank 120 tegoed.  
 
 Tijdens piek uren heeft mijn toepassing een gemiddelde van 60% vCPU-gebruik, ik krijg nog steeds 0,2 tegoed per minuut, maar ik gebruik meer dan 0,6 tegoed per minuut, voor een nettokosten van 0,4 Credit van een minuut of 0,4 x 60 = 24 tegoed per uur. Ik heb vier uur per dag voor piek gebruik, dus kosten 4 x 24 = 96 tegoed voor mijn piek gebruik.
 

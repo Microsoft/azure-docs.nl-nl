@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 07/08/2016
-ms.openlocfilehash: da583a1c884ddcae0815849c43dc0eb335005e53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 038c1d4c0f0b5ffd7b9aabea2de32e3a44e3b221
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87832736"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654129"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Kaarten maken die XML transformeren tussen indelingen in Azure Logic Apps met Enterprise Integration Pack
 
@@ -44,7 +44,7 @@ Nu u de vereiste onderdelen hebt gemaakt, is het tijd om uw logische app te make
 4. Voer de woord *transformatie* in het zoekvak in om alle acties die u wilt gebruiken, te filteren.  
    ![Scherm afbeelding die laat zien hoe u kunt zoeken naar de trans formatie-XML in de vervolg keuzelijst ' micro soft Managed Api's weer geven ' zodat deze kan worden toegevoegd aan de aanvraag trigger.](./media/logic-apps-enterprise-integration-transforms/transform-3.png)  
 5. De actie **XML-trans formatie** selecteren   
-6. Voeg de XML- **inhoud** toe die u transformeert. U kunt alle XML-gegevens die u in de HTTP-aanvraag ontvangt als de **inhoud**gebruiken. Selecteer in dit voor beeld de hoofd tekst van de HTTP-aanvraag die de logische app heeft geactiveerd.
+6. Voeg de XML- **inhoud** toe die u transformeert. U kunt alle XML-gegevens die u in de HTTP-aanvraag ontvangt als de **inhoud** gebruiken. Selecteer in dit voor beeld de hoofd tekst van de HTTP-aanvraag die de logische app heeft geactiveerd.
 
    > [!NOTE]
    > Zorg ervoor dat de inhoud voor de **trans formatie XML** XML is. Als de inhoud zich niet in XML of Base64-gecodeerd bevindt, moet u een expressie opgeven waarmee de inhoud wordt verwerkt. U kunt bijvoorbeeld [functies](logic-apps-workflow-definition-language.md#functions)gebruiken, zoals ```@base64ToBinary``` voor het decoderen van inhoud of ```@xml``` voor het verwerken van de inhoud als XML.
@@ -95,17 +95,17 @@ De trans formatie-actie ondersteunt ook kaarten of trans formaties met verwijzin
     <![CDATA[public double circumference(int radius){ XsltHelper helper = new XsltHelper(); return helper.circumference(radius); }]]>
   </msxsl:script>
   <xsl:template match="data">
-     <circles>
-        <xsl:for-each select="circle">
-            <circle>
-                <xsl:copy-of select="node()"/>
-                    <circumference>
-                        <xsl:value-of select="user:circumference(radius)"/>
-                    </circumference>
-            </circle>
-        </xsl:for-each>
-     </circles>
-    </xsl:template>
+   <circles>
+    <xsl:for-each select="circle">
+      <circle>
+        <xsl:copy-of select="node()"/>
+          <circumference>
+            <xsl:value-of select="user:circumference(radius)"/>
+          </circumference>
+      </circle>
+    </xsl:for-each>
+   </circles>
+  </xsl:template>
     </xsl:stylesheet>
   ```
 

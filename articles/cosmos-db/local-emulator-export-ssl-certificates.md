@@ -7,17 +7,17 @@ ms.date: 09/17/2020
 author: deborahc
 ms.author: dech
 ms.custom: devx-track-python, devx-track-java, contperf-fy21q1
-ms.openlocfilehash: 1c111ca23ce7cf749dc4a7d5ad2ad39756236ab1
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 6c144f33f32422e27916e1987e0b2e8693f97945
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028203"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656441"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs-apps"></a>De Azure Cosmos DB-emulator certificaten exporteren voor gebruik met Java-, python-en Node.js-apps
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-De Azure Cosmos DB Emulator is een lokale omgeving waarin de Azure Cosmos DB-service wordt geëmuleerd voor ontwikkelingsdoeleinden. De Azure Cosmos-emulator ondersteunt alleen beveiligde communicatie via TLS-verbindingen.
+De Azure Cosmos DB Emulator is een lokale omgeving waarin de Azure Cosmos DB-service wordt geëmuleerd voor ontwikkelingsdoeleinden. Azure Cosmos DB-emulator ondersteunt alleen beveiligde communicatie via TLS-verbindingen.
 
 Certificaten in de Azure Cosmos DB lokale emulator worden gegenereerd wanneer u de emulator voor het eerst uitvoert. Er zijn twee certificaten. Een van deze wordt gebruikt om verbinding te maken met de lokale emulator en de andere wordt gebruikt voor het beheren van de standaard versleuteling van de emulator gegevens binnen de emulator. Het certificaat dat u wilt exporteren, is het verbindingscertificaat met de beschrijvende naam DocumentDBEmulatorCertificate.
 

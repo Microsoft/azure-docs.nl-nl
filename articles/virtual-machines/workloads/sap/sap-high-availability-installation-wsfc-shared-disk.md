@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 08/12/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 81721cb52035a51cffa2667568914c780b4c397b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 1324afb38560afeb43b5be9191b6e2e7afc5c81d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588655"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654894"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>SAP NetWeaver HA installeren op een Windows-failovercluster en gedeelde schijf voor een SAP ASCS/SCS-exemplaar in azure
 
@@ -66,8 +66,6 @@ ms.locfileid: "97588655"
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f
 
 [sap-high-availability-infrastructure-wsfc-shared-disk]:sap-high-availability-infrastructure-wsfc-shared-disk.md
-
-
 
 [sap-ha-guide-figure-1000]:./media/virtual-machines-shared-sap-high-availability-guide/1000-wsfc-for-sap-ascs-on-azure.png
 [sap-ha-guide-figure-1001]:./media/virtual-machines-shared-sap-high-availability-guide/1001-wsfc-on-azure-ilb.png
@@ -173,7 +171,6 @@ Er zijn geen speciale overwegingen wanneer verschillende DBMS-services communice
 > [!IMPORTANT]
 > Als u met SIOS een gedeelde schijf wilt presen teren, plaatst u uw pagina bestand niet op de volumes SIOS data keeper mirrored. U kunt uw wissel bestand op het tijdelijke station D van een virtuele machine van Azure laten staan. Dit is de standaard instelling. Als dit nog niet het geval is, verplaatst u het Windows-pagina bestand naar station D van uw virtuele Azure-machine.  
 
-
 Het installeren van SAP met een ASCS/SCS-exemplaar met hoge Beschik baarheid omvat de volgende taken:
 
 * Maak een naam voor de virtuele host voor het geclusterde SAP ASCS/SCS-exemplaar.
@@ -189,7 +186,6 @@ Het installeren van SAP met een ASCS/SCS-exemplaar met hoge Beschik baarheid omv
    > [!IMPORTANT]
    > Het IP-adres dat u toewijst aan de naam van de virtuele host van het ASCS/SCS-exemplaar moet hetzelfde zijn als het IP-adres dat u hebt toegewezen aan Azure Load Balancer.  
 
-
    ![Afbeelding 1: Definieer de DNS-vermelding voor de virtuele naam en het TCP/IP-adres van het SAP ASCS/SCS-cluster][sap-ha-guide-figure-3046]
 
    _Definieer de DNS-vermelding voor de virtuele naam en het TCP/IP-adres van het SAP ASCS/SCS-cluster_
@@ -199,11 +195,9 @@ Het installeren van SAP met een ASCS/SCS-exemplaar met hoge Beschik baarheid omv
    > [!IMPORTANT]
    > Het IP-adres dat u toewijst aan de naam van de virtuele host van het ERS2-exemplaar moet het tweede IP-adres zijn dat u hebt toegewezen aan Azure Load Balancer.    
 
-
    ![Afbeelding 1A: Definieer de DNS-vermelding voor de virtuele naam en het TCP/IP-adres van het SAP ASCS/SCS-cluster][sap-ha-guide-figure-3046-ers2]
 
    _Definieer de DNS-vermelding voor de virtuele naam van het SAP ERS2-cluster en het TCP/IP-adres_
-
 
 3. Als u het IP-adres wilt definiëren dat is toegewezen aan de naam van de virtuele host, selecteert u **DNS-beheer**  >  **domein**.
 
@@ -219,7 +213,6 @@ Het installeren van SAP met een ASCS/SCS-exemplaar met hoge Beschik baarheid omv
    * **Java-systeem**: **SCS** -exemplaar nummer **01**
    * **ABAP + Java-systeem**: **ASCS** -exemplaar nummer **00** en **SCS** -exemplaar nummer **01**
 
-
    > [!IMPORTANT]
    > Houd er rekening mee dat de configuratie in de Azure interne load balancer taakverdelings regels (als u de basis-SKU gebruikt) en de geselecteerde SAP-instantie nummers moeten overeenkomen.
 
@@ -227,8 +220,6 @@ Het installeren van SAP met een ASCS/SCS-exemplaar met hoge Beschik baarheid omv
 
 > [!TIP]
 > In de SAP-installatie documentatie wordt beschreven hoe u het eerste ASCS/SCS-cluster knooppunt installeert.
-
-
 
 ### <a name="modify-the-sap-profile-of-the-ascsscs-instance"></a><a name="e4caaab2-e90f-4f2c-bc84-2cd2e12a9556"></a> Het SAP-Profiel van het ASCS/SCS-exemplaar wijzigen
 
@@ -295,7 +286,6 @@ Als u een test poort wilt toevoegen, voert u deze Power shell-module uit op een 
     .PARAMETER IsSAPERSClusteredInstance 
     Optional parameter.Default value is '$False'.
     If set to $True , then handle clsutered new SAP ERS2 instance.
-
 
     .EXAMPLE 
     # Set probe port to 62000, on SAP cluster resource 'SAP AB1 IP', and restart the SAP cluster group 'SAP AB1', to activate the changes.

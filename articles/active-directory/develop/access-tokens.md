@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: hirsin
 ms.reviewer: mmacy, hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 909c8910a86734b0a34787f75c233975cd3503c3
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: ceb5acbee2e572b1859a5577b58dd586fc924b3b
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518240"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653279"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Toegangs tokens van micro soft Identity platform
 
@@ -140,8 +140,8 @@ Om ervoor te zorgen dat de token grootte niet groter is dan de grootte limieten 
        }
      }
   ...
- }
- ```
+}
+```
 
 U kunt de `BulkCreateGroups.ps1` gegeven in de map [scripts](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/5-WebApp-AuthZ/5-2-Groups/AppCreationScripts) voor het maken van apps gebruiken om overschrijding-scenario's te testen.
 
@@ -186,7 +186,7 @@ Niet alle apps moeten tokens valideren. In specifieke scenario's moeten apps een
 
 Als geen van de bovenstaande scenario's van toepassing is, kan uw toepassing niet profiteren van het valideren van het token en kan dit een beveiligings-en betrouwbaarheids risico opleveren als er beslissingen worden genomen op basis van de geldigheid van het token.  Open bare clients, zoals systeem eigen apps of SPAs, profiteren niet van het valideren van tokens: de app communiceert rechtstreeks met de IDP, dus SSL-beveiliging zorgt ervoor dat de tokens geldig zijn.
 
- Api's en web apps moeten alleen tokens valideren die een `aud` claim hebben die overeenkomen met hun toepassing; andere resources kunnen aangepaste token validatie regels hebben. Tokens voor Microsoft Graph worden bijvoorbeeld niet volgens deze regels gevalideerd vanwege hun eigen indeling. Het valideren en accepteren van tokens die zijn bedoeld voor een andere resource is een voor beeld van het probleem met [verwarde adjunct](https://cwe.mitre.org/data/definitions/441.html) .
+Api's en web apps moeten alleen tokens valideren die een `aud` claim hebben die overeenkomen met hun toepassing; andere resources kunnen aangepaste token validatie regels hebben. Tokens voor Microsoft Graph worden bijvoorbeeld niet volgens deze regels gevalideerd vanwege hun eigen indeling. Het valideren en accepteren van tokens die zijn bedoeld voor een andere resource is een voor beeld van het probleem met [verwarde adjunct](https://cwe.mitre.org/data/definitions/441.html) .
 
 Als uw toepassing een id_token of een access_token moet valideren volgens het bovenstaande, moet uw app eerst de hand tekening van het token valideren en de uitgever van de waarden in het detectie document voor OpenID Connect. De Tenant-onafhankelijke versie van het document bevindt zich bijvoorbeeld in [https://login.microsoftonline.com/common/.well-known/openid-configuration](https://login.microsoftonline.com/common/.well-known/openid-configuration) .
 

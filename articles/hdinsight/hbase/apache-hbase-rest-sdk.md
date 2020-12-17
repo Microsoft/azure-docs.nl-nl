@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 12/02/2019
-ms.openlocfilehash: 17c3f07fe553e363d1eb2a997287feb77296a621
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 9b5693ddef5e512b0a95c87a700fd12acd4b5fae
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540309"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654639"
 ---
 # <a name="use-the-net-sdk-for-apache-hbase"></a>De .NET-SDK gebruiken voor Apache HBase
 
@@ -38,13 +38,13 @@ var credentials = new ClusterCredentials(new Uri("https://CLUSTERNAME.azurehdins
 client = new HBaseClient(credentials);
 ```
 
-Vervang CLUSTERNAME door de naam van uw HDInsight HBase-cluster en de gebruikers naam en het wacht woord met de Apache Hadoop referenties die zijn opgegeven bij het maken van het cluster. De standaard Hadoop-gebruikers naam is **beheerder** .
+Vervang CLUSTERNAME door de naam van uw HDInsight HBase-cluster en de gebruikers naam en het wacht woord met de Apache Hadoop referenties die zijn opgegeven bij het maken van het cluster. De standaard Hadoop-gebruikers naam is **beheerder**.
 
 ## <a name="create-a-new-table"></a>Een nieuwe tabel maken
 
-HBase slaat gegevens op in tabellen. Een tabel bestaat uit een *Rowkey* , de primaire sleutel en een of meer groepen kolommen met de naam *kolom families* . De gegevens in elke tabel worden horizon taal gedistribueerd met een Rowkey bereik in *regio's* . Elke regio heeft een begin-en een end-sleutel. Een tabel kan een of meer regio's bevatten. Wanneer de gegevens in de tabel groeit, splitst HBase grote regio's op in kleinere regio's. Regio's worden opgeslagen in *regio servers* , waarbij één regio server meerdere regio's kan opslaan.
+HBase slaat gegevens op in tabellen. Een tabel bestaat uit een *Rowkey*, de primaire sleutel en een of meer groepen kolommen met de naam *kolom families*. De gegevens in elke tabel worden horizon taal gedistribueerd met een Rowkey bereik in *regio's*. Elke regio heeft een begin-en een end-sleutel. Een tabel kan een of meer regio's bevatten. Wanneer de gegevens in de tabel groeit, splitst HBase grote regio's op in kleinere regio's. Regio's worden opgeslagen in *regio servers*, waarbij één regio server meerdere regio's kan opslaan.
 
-De gegevens worden fysiek opgeslagen in *HFiles* . Eén HFile bevat gegevens voor één tabel, één regio en één kolom familie. Rijen in HFile worden opgeslagen in Rowkey. Elke HFile heeft een *B +-structuur* index voor het snel ophalen van de rijen.
+De gegevens worden fysiek opgeslagen in *HFiles*. Eén HFile bevat gegevens voor één tabel, één regio en één kolom familie. Rijen in HFile worden opgeslagen in Rowkey. Elke HFile heeft een *B +-structuur* index voor het snel ophalen van de rijen.
 
 Als u een nieuwe tabel wilt maken, geeft u een `TableSchema` en kolommen op. Met de volgende code wordt gecontroleerd of de tabel RestSDKTable al bestaat. als dat niet het geval is, wordt de tabel gemaakt.
 

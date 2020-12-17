@@ -11,18 +11,18 @@ ms.topic: reference
 ms.date: 12/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0ee5b6784885476c93a93f05c9225dfd11c53a9a
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: db99fbdea38dd30401a8aeedb7ebc23c71c5236c
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584575"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655183"
 ---
 # <a name="define-a-saml-identity-provider-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor een SAML-identiteits provider definiëren in een Azure Active Directory B2C aangepast beleid
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C) biedt ondersteuning voor de SAML 2,0-ID-provider. In dit artikel worden de specifieke specificaties beschreven van een technisch profiel voor interactie met een claim provider die ondersteuning biedt voor dit gestandaardiseerde protocol. Met een SAML-technische profiel kunt u met een id-provider op basis van SAML communiceren, zoals [ADFS](identity-provider-adfs2016-custom.md) en [Sales Force](identity-provider-salesforce.md). Met deze Federatie kunnen uw gebruikers zich aanmelden met hun bestaande sociale of bedrijfs identiteiten.
+Azure Active Directory B2C (Azure AD B2C) biedt ondersteuning voor de SAML 2,0-ID-provider. In dit artikel worden de specifieke specificaties beschreven van een technisch profiel voor interactie met een claim provider die ondersteuning biedt voor dit gestandaardiseerde protocol. Met een SAML-technische profiel kunt u met een id-provider op basis van SAML communiceren, zoals [ADFS](identity-provider-adfs2016-custom.md) en [Sales Force](identity-provider-salesforce-saml.md). Met deze Federatie kunnen uw gebruikers zich aanmelden met hun bestaande sociale of bedrijfs identiteiten.
 
 ## <a name="metadata-exchange"></a>Uitwisseling van meta gegevens
 
@@ -217,4 +217,4 @@ Voorbeeld:
 Raadpleeg de volgende artikelen voor voor beelden van het werken met SAML-id-providers in Azure AD B2C:
 
 - [ADFS toevoegen als een SAML-ID-provider met behulp van aangepast beleid](identity-provider-adfs.md)
-- [Meld u aan met Sales Force-accounts via SAML](identity-provider-salesforce.md)
+- [Meld u aan met Sales Force-accounts via SAML](identity-provider-salesforce-saml.md)

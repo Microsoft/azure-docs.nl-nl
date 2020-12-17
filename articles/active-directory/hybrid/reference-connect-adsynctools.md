@@ -11,12 +11,12 @@ ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2dd16f89851b9376557e544b86dc5e088891e63b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 03cd612e5a48d6f17eb28c0c1503335e33bebcdf
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446989"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654096"
 ---
 # <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: ADSyncTools Power shell-referentie
 De volgende documentatie bevat referentie-informatie voor de Power shell-module ADSyncTools. psm1, die deel uitmaakt van Azure AD Connect.
@@ -557,7 +557,7 @@ Functie query's AAD Connect run geschiedenis en exporteert alle gebruikers die d
 ```
 
 $sourcePath = Read-Host-prompt Geef het pad naar het logboek bestand op met de bestands naam "#" \<Source_Path\> "$outputPath = Read-Host-prompt" Voer het pad naar het bestand in met de bestands naam "#" \<Out_Path\> "
- 
+
  Get-ADSyncToolsUsersSourceAnchorChanged-bronpad $sourcePath-outputPath $outputPath
 
 #### <a name="example-2"></a>VOOR BEELD 2
@@ -1295,7 +1295,7 @@ Accept wildcard characters: False
 ```
 
 #### <a name="-action"></a>-Actie
-Actie
+Bewerking
 
 ```yaml
 Type: String

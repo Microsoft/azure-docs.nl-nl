@@ -3,12 +3,12 @@ title: host.jsbij verwijzing voor Azure Functions 2. x
 description: Referentie documentatie voor de Azure Functions host.jsin het bestand met v2 runtime.
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 96d6b884e9e2c835316af01140c6fc7208ee5ab9
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 735c92720f4a3f871499ad3a0565446a02b438eb
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746077"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654809"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Referentie naar host.json voor Azure Functions 2.x en hoger 
 
@@ -129,7 +129,8 @@ In het volgende voor beeld *host.js* bestand voor versie 2. x + zijn alle mogeli
       "lockAcquisitionTimeout": "00:01:00",
       "lockAcquisitionPollingInterval": "00:00:03"
     },
-    "watchDirectories": [ "Shared", "Test" ]
+    "watchDirectories": [ "Shared", "Test" ],
+    "watchFiles": [ "myFile.txt" ]
 }
 ```
 
@@ -273,7 +274,7 @@ Een lijst met functies die de taak host uitvoert. Een lege matrix houdt in dat a
 
 Hiermee wordt de duur van de time-out voor alle functies aangegeven. Het volgt de teken reeks notatie time span. 
 
-| Type abonnement | Standaard (min.) | Maximum (min.) |
+| Plantype | Standaard (min.) | Maximum (min.) |
 | -- | -- | -- |
 | Verbruik | 5 | 10 |
 | Premium<sup>1</sup> | 30 | -1 (niet-gebonden)<sup>2</sup> |
@@ -444,6 +445,16 @@ Een set [gedeelde code mappen](functions-reference-csharp.md#watched-directories
 ```json
 {
     "watchDirectories": [ "Shared" ]
+}
+```
+
+## <a name="watchfiles"></a>watchFiles
+
+Een matrix van een of meer namen van bestanden die worden gecontroleerd op wijzigingen waarvoor uw app opnieuw moet worden opgestart.  Dit garandeert dat wanneer de code in deze bestanden wordt gewijzigd, de updates worden opgehaald door uw functies.
+
+```json
+{
+    "watchFiles": [ "myFile.txt" ]
 }
 ```
 

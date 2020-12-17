@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen en testen van Azure Functions 
 ms.custom: vs-azure, devx-track-csharp
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: c5164d0757de5011c112a9506979da19d9585790
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 877c82e375b0ea469071402b83fadbd634177f3f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167794"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655812"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Azure Functions ontwikkelen met Visual Studio  
 
@@ -42,7 +42,7 @@ Tenzij anders aangegeven, worden de procedures en voor beelden weer gegeven voor
 
 ### <a name="check-your-tools-version-in-visual-studio-2017"></a><a name="check-your-tools-version"></a>Controleer de versie van uw hulpprogram ma's in Visual Studio 2017
 
-1. Kies in het menu **extra** de optie **extensies en updates**. Vouw **geïnstalleerde**  >  **hulpprogram ma's**uit en kies **Azure functions en hulpprogram ma's voor webjobs**.
+1. Kies in het menu **extra** de optie **extensies en updates**. Vouw **geïnstalleerde**  >  **hulpprogram ma's** uit en kies **Azure functions en hulpprogram ma's voor webjobs**.
 
     ![De versie van de functie hulpprogramma's controleren](./media/functions-develop-vs/functions-vstools-check-functions-tools.png)
 
@@ -52,15 +52,15 @@ Tenzij anders aangegeven, worden de procedures en voor beelden weer gegeven voor
 
 ### <a name="update-your-tools-in-visual-studio-2017"></a>Werk uw hulpprogram ma's bij in Visual Studio 2017
 
-1. Vouw in het dialoog venster **extensies en updates** het onderdeel **updates**  >  **Visual Studio Marketplace**uit, kies **Azure functions en hulpprogram ma's voor webjobs** en selecteer **bijwerken**.
+1. Vouw in het dialoog venster **extensies en updates** het onderdeel **updates**  >  **Visual Studio Marketplace** uit, kies **Azure functions en hulpprogram ma's voor webjobs** en selecteer **bijwerken**.
 
     ![De functie hulpprogram ma's-versie bijwerken](./media/functions-develop-vs/functions-vstools-update-functions-tools.png)   
 
-1. Nadat de hulpprogram ma's update is gedownload, selecteert u **sluiten**en sluit u Visual Studio om de hulpprogram ma's bijwerken met VSIX Installer te activeren.
+1. Nadat de hulpprogram ma's update is gedownload, selecteert u **sluiten** en sluit u Visual Studio om de hulpprogram ma's bijwerken met VSIX Installer te activeren.
 
 1. Kies in VSIX Installer **wijzigen** om de hulpprogram ma's bij te werken. 
 
-1. Nadat de update is voltooid, kiest u **sluiten**en start u Visual Studio opnieuw.
+1. Nadat de update is voltooid, kiest u **sluiten** en start u Visual Studio opnieuw.
 
 > [!NOTE]  
 > In Visual Studio 2019 en hoger wordt de uitbrei ding Azure Functions tools bijgewerkt als onderdeel van Visual Studio.  
@@ -86,15 +86,27 @@ Visual Studio uploadt de instellingen in local.settings.jsniet automatisch wanne
 
 Uw code kan ook de waarden van de functie-app-instellingen lezen als omgevings variabelen. Zie [omgevings variabelen](functions-dotnet-class-library.md#environment-variables)voor meer informatie.
 
+## <a name="configure-your-build-output-settings"></a>De instellingen voor de build-uitvoer configureren
+
+Bij het bouwen van een Azure Functions project optimaliseert de build-hulpprogram ma's de uitvoer zo dat slechts één exemplaar van de assembly's die worden gedeeld met de functions-runtime, behouden blijft. Het resultaat is een geoptimaliseerde build waarmee zo veel mogelijk ruimte wordt bespaard. Wanneer u echter naar een recentere versie van een van uw project assembly's gaat, is het mogelijk dat de build-hulpprogram ma's niet weten dat deze assembly's bewaard moeten blijven. Om ervoor te zorgen dat deze assembly's tijdens het optimalisatie proces behouden blijven, kunt u ze opgeven met behulp `FunctionsPreservedDependencies` van elementen in het project bestand (. csproj):
+
+```xml
+  <ItemGroup>
+    <FunctionsPreservedDependencies Include="Microsoft.AspNetCore.Http.dll" />
+    <FunctionsPreservedDependencies Include="Microsoft.AspNetCore.Http.Extensions.dll" />
+    <FunctionsPreservedDependencies Include="Microsoft.AspNetCore.Http.Features.dll" />
+  </ItemGroup>
+```
+
 ## <a name="configure-the-project-for-local-development"></a>Het project voor lokale ontwikkeling configureren
 
 De functions runtime maakt intern gebruik van een Azure Storage-account. Voor alle trigger typen behalve HTTP en webhooks, stelt u de `Values.AzureWebJobsStorage` sleutel in op een geldige Azure Storage-account Connection String. De functie-app kan ook de [Azure Storage-emulator](../storage/common/storage-use-emulator.md) gebruiken voor de `AzureWebJobsStorage` verbindings instelling die door het project wordt vereist. Als u de emulator wilt gebruiken, stelt u de waarde `AzureWebJobsStorage` in op `UseDevelopmentStorage=true` . Wijzig deze instelling in een werkelijk opslag account connection string vóór de implementatie.
 
 Het opslag account connection string instellen:
 
-1. Selecteer in Visual Studio **View**  >  **Cloud Explorer**weer geven.
+1. Selecteer in Visual Studio   >  **Cloud Explorer** weer geven.
 
-2. Vouw in **Cloud Explorer** **opslag accounts**uit en selecteer vervolgens uw opslag account. Op het tabblad **Eigenschappen** kopieert u de waarde van de **primaire verbindings reeks** .
+2. Vouw in **Cloud Explorer** **opslag accounts** uit en selecteer vervolgens uw opslag account. Op het tabblad **Eigenschappen** kopieert u de waarde van de **primaire verbindings reeks** .
 
 2. Open in uw project de local.settings.jsin het bestand en stel de waarde van de `AzureWebJobsStorage` sleutel in op de Connection String die u hebt gekopieerd.
 
@@ -104,7 +116,7 @@ Het opslag account connection string instellen:
 
 In C#-klassen bibliotheek functies worden de bindingen die worden gebruikt door de functie gedefinieerd door het Toep assen van kenmerken in de code. Wanneer u de functie triggers maakt op basis van de beschik bare sjablonen, worden de trigger kenmerken voor u toegepast. 
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project knooppunt en selecteer **Add**  >  **Nieuw item**toevoegen. 
+1. Klik in **Solution Explorer** met de rechter muisknop op het project knooppunt en selecteer   >  **Nieuw item** toevoegen. 
 
 2. Selecteer **Azure function**, voer een **naam** in voor de klasse en selecteer vervolgens **toevoegen**.
 
@@ -216,7 +228,7 @@ Als u deze koppeling selecteert, wordt het dialoog venster **Toepassings instell
 
 ![Toepassingsinstellingen](./media/functions-develop-vs/functions-vstools-app-settings2.png)
 
-**Lokale** geeft een instellings waarde in de local.settings.jsop bestand, en op **afstand** wordt een huidige instellings waarde weer gegeven in de functie-app in Azure. Kies **instelling toevoegen** om een nieuwe app-instelling te maken. Gebruik de **waarde invoegen uit lokale** koppeling om een instellings waarde naar het **externe** veld te kopiëren. Wijzigingen in behandeling worden naar het lokale instellingen bestand en de functie-app geschreven wanneer u **OK**selecteert.
+**Lokale** geeft een instellings waarde in de local.settings.jsop bestand, en op **afstand** wordt een huidige instellings waarde weer gegeven in de functie-app in Azure. Kies **instelling toevoegen** om een nieuwe app-instelling te maken. Gebruik de **waarde invoegen uit lokale** koppeling om een instellings waarde naar het **externe** veld te kopiëren. Wijzigingen in behandeling worden naar het lokale instellingen bestand en de functie-app geschreven wanneer u **OK** selecteert.
 
 > [!NOTE]
 > De local.settings.jsin het bestand is standaard niet ingecheckt in broncode beheer. Dit betekent dat als u een project van een lokale functie kloont van broncode beheer, het project geen local.settings.jsheeft voor het bestand. In dit geval moet u de local.settings.jsin het bestand hand matig maken in de hoofdmap van het project, zodat het dialoog venster **Toepassings instellingen** werkt zoals verwacht. 

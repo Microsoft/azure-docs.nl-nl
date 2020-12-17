@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: reference
 ms.date: 08/10/2020
-ms.openlocfilehash: 888f8c96e8c1aa596c76cf09cd95a104821740ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74403365fe48584fa5d1db0e349c9dfc3772d874
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320452"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652845"
 ---
 # <a name="system-tables-and-views"></a>Systeem tabellen en-weer gaven
 
@@ -208,7 +208,7 @@ colocationid                |
 
 ### <a name="colocation-group-table"></a>Tabel met co-locatie groep
 
-De \_ tabel pag dist co \_ -locatie bevat informatie over welke tabellen \' Shards moeten worden geplaatst of moeten [colocated](concepts-hyperscale-colocation.md)worden gecombineerd.
+De \_ tabel pag dist co \_ -locatie bevat informatie over welke tabellen \' Shards moeten worden geplaatst of moeten [](concepts-hyperscale-colocation.md)worden gecombineerd.
 Wanneer twee tabellen zich in dezelfde groep grootschalige (Citus) bevinden, zorgt u ervoor dat Shards met dezelfde partitie waarden op dezelfde worker-knoop punten wordt geplaatst.
 Met co-locatie kunt u deel nemen aan optimalisaties, bepaalde gedistribueerde rollups en ondersteuning voor refererende sleutels. De Shard-co-locatie wordt afgeleid wanneer het Shard telt, replicatie factoren en partitie kolom typen allemaal overeenkomen tussen twee tabellen; u kunt echter een aangepaste groep voor samen stellen opgeven wanneer u een gedistribueerde tabel wilt maken, indien gewenst.
 
@@ -396,7 +396,7 @@ Grootschalige (Citus) biedt speciale weer gaven voor het bekijken van query's en
 
 -   **Citus \_ dist \_ stat- \_ activiteit**: toont de gedistribueerde query's die op alle knoop punten worden uitgevoerd. Een superset van `pg_stat_activity` , bruikbare waar de laatste is.
 -   **Citus \_ worker- \_ \_ activiteit**: toont query's op werk rollen, inclusief fragment query's voor afzonderlijke Shards.
--   ** \_ \_ wacht tijden voor Citus-vergren deling**: geblokkeerde query's in het cluster.
+-   **\_ \_ wacht tijden voor Citus-vergren deling**: geblokkeerde query's in het cluster.
 
 De eerste twee weer gaven bevatten alle kolommen met de [PG \_ stat- \_ activiteit](https://www.postgresql.org/docs/current/static/monitoring-stats.html#PG-STAT-ACTIVITY-VIEW) plus de host/poort van de werk nemer die de query heeft gestart en de host/poort van het coördinator knooppunt van het cluster.
 

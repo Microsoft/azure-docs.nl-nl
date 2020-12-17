@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: chalton
-ms.openlocfilehash: f209be383e445e3b0c011e0bfb4266a191a8d931
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3c77da8252fb3dcb2672a50ec75f676e18dd31da
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85080865"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652327"
 ---
 # <a name="document-extraction-cognitive-skill"></a>Cognitieve vaardigheid van document extractie
 
@@ -34,7 +34,7 @@ Microsoft.Skills.Util.DocumentExtractionSkill
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoerwaarden            | Toegestane waarden | Beschrijving |
+| Invoer | Toegestane waarden | Beschrijving |
 |-----------------|----------------|-------------|
 | `parsingMode`   | `default` <br/> `text` <br/> `json`  | Is ingesteld op `default` voor document extractie van bestanden die geen zuivere tekst of JSON zijn. Ingesteld op `text` om de prestaties van tekst bestanden te verbeteren. Stel in om `json` gestructureerde inhoud op te halen uit json-bestanden. Als `parsingMode` niet expliciet is gedefinieerd, wordt deze ingesteld op `default` . |
 | `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Stel in op `contentAndMetadata` om alle meta gegevens en tekst inhoud van elk bestand uit te pakken. Stel deze waarde in op `allMetadata` alleen de [meta gegevens](search-howto-indexing-azure-blob-storage.md#ContentSpecificMetadata) van het inhoudtype extra heren (bijvoorbeeld meta gegevens die uniek zijn voor PNG-bestanden). Als `dataToExtract` niet expliciet is gedefinieerd, wordt deze ingesteld op `contentAndMetadata` . |

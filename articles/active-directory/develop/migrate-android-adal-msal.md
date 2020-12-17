@@ -14,12 +14,12 @@ ms.date: 10/14/2020
 ms.author: marsma
 ms.reviewer: shoatman
 ms.custom: aaddev
-ms.openlocfilehash: 752e7dae9040059c662a93d9a9d668bac0e8e2d8
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 178d3896fe8d063855a734f3f0fe6c489b0ec1fc
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074665"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97651970"
 ---
 # <a name="adal-to-msal-migration-guide-for-android"></a>Migratie handleiding voor ADAL naar MSAL voor Android
 
@@ -89,7 +89,7 @@ Als u momenteel ADAL gebruikt en niet incrementele toestemming hoeft te gebruike
 > [!CAUTION]
 > Het is niet mogelijk om beide bereiken en een resource-id in te stellen. Als u beide probeert in te stellen, resulteert dit in een `IllegalArgumentException` .
 
- Dit leidt tot hetzelfde v1-gedrag dat u gebruikt. Alle machtigingen die in de app-registratie zijn aangevraagd, worden door de gebruiker aangevraagd tijdens de eerste interactie.
+Dit leidt tot hetzelfde v1-gedrag dat u gebruikt. Alle machtigingen die in de app-registratie zijn aangevraagd, worden door de gebruiker aangevraagd tijdens de eerste interactie.
 
 ### <a name="authenticate-and-request-permissions-only-as-needed"></a>Machtigingen alleen verifiëren en aanvragen indien nodig
 
@@ -131,13 +131,13 @@ Als u een instantie probeert te gebruiken die niet bekend is bij micro soft en n
 ### <a name="logging"></a>Logboekregistratie
 U kunt logboek registratie nu als onderdeel van uw configuratie declaratief configureren, zoals:
 
- ```
- "logging": {
-    "pii_enabled": false,
-    "log_level": "WARNING",
-    "logcat_enabled": true
-  }
-  ```
+```json
+"logging": {
+  "pii_enabled": false,
+  "log_level": "WARNING",
+  "logcat_enabled": true
+}
+```
 
 ## <a name="migrate-from-userinfo-to-account"></a>Migreren van user info naar account
 

@@ -3,19 +3,19 @@ title: Een persoonlijk model aanpassen met Video Indexer website
 titleSuffix: Azure Media Services
 description: Meer informatie over het aanpassen van een persoons model met de Video Indexer-website.
 services: media-services
-author: anikaz
-manager: johndeu
+author: Juliako
+manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 08/06/2020
-ms.author: kumud
-ms.openlocfilehash: 9f5a18cc51aa92b53a5391404b1e9d3fc800bb47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/16/2020
+ms.author: juliako
+ms.openlocfilehash: 890f8c159c3e8e8d0b4164cf218f320551ea63ec
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91356618"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97628928"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-website"></a>Een persoonlijk model aanpassen met de Video Indexer website
 
@@ -26,34 +26,27 @@ U kunt de Video Indexer-website gebruiken om gezichten te bewerken die in een vi
 ## <a name="central-management-of-person-models-in-your-account"></a>Centraal beheer van persoons modellen in uw account
 
 1. Als u de persoons modellen in uw account wilt weer geven, bewerken en verwijderen, bladert u naar de Video Indexer-website en meldt u zich aan.
+1. Selecteer de knop aanpassing van inhouds model aan de linkerkant van de pagina.
 
-2. Selecteer de knop aanpassing inhouds model in de rechter bovenhoek van de pagina.
-
-    ![Scherm afbeelding toont de Video Indexer waarvoor de knop voor het aanpassen van het inhouds model is geselecteerd.](./media/customize-face-model/content-model-customization.png)
-
-3. Selecteer het tabblad personen.
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/content-model-customization/content-model-customization.png" alt-text="Inhouds model aanpassen":::
+1. Selecteer het tabblad personen.
 
     U ziet het standaard persoons model in uw account. Het model met standaard personen bevat alle gezichten die u mogelijk hebt bewerkt of gewijzigd in de inzichten van uw Video's waarvoor u tijdens het indexeren geen aangepast persoons model hebt opgegeven.
 
     Als u andere persoons modellen hebt gemaakt, worden deze ook weer gegeven op deze pagina.
 
-    ![Scherm afbeelding toont het dialoog venster aanpassing van inhouds model.](./media/customize-face-model/content-model-customization-people-tab.png)
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/customize-face-model/content-model-customization-people-tab.png" alt-text="Personen aanpassen":::
 
 ## <a name="create-a-new-person-model"></a>Een nieuw persoons model maken
 
-1. Selecteer de knop **model toevoegen** .
+1. Selecteer de **plus knop model toevoegen** aan de rechter kant.
+1. Voer de naam van het model in. U kunt nu nieuwe personen en gezichten toevoegen aan het nieuwe persoons model.
+1. Selecteer de knop lijst menu en kies **+ persoon toevoegen**.
 
-    ![Scherm afbeelding toont het dialoog venster aanpassing van inhouds model met het tabblad personen geselecteerd.](./media/customize-face-model/add-new-person.png)
-
-2. Voer de naam van het model in en selecteer de knop controleren naast de naam.
-
-    ![Scherm afbeelding toont het dialoog venster aanpassing van inhouds model met een naam die is ingevoerd voor het model.](./media/customize-face-model/add-new-person2.png)
-
-    U hebt een nieuw persoons model gemaakt. U kunt nu gezichten toevoegen aan het nieuwe persoons model.
-
-3. Selecteer de knop lijst menu en kies **+ persoon toevoegen**.
-
-    ![Scherm afbeelding toont het dialoog venster aanpassing van het inhouds model met een context menu voor uw nieuwe model met de optie om persoon toe te voegen.](./media/customize-face-model/add-new-person3.png)
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/customize-face-model/add-new-person.png" alt-text="Een Peron toevoegen":::
 
 ## <a name="add-a-new-person-to-a-person-model"></a>Een nieuwe persoon toevoegen aan een persoons model
 
@@ -61,14 +54,9 @@ U kunt de Video Indexer-website gebruiken om gezichten te bewerken die in een vi
 > Met Video Indexer kunt u meerdere personen met dezelfde naam toevoegen aan een persoons model. Het is echter raadzaam dat elke persoon in uw model unieke namen krijgt voor bruikbaarheid en duidelijkheid.
 
 1. Als u een nieuw gezicht wilt toevoegen aan een persoons model, selecteert u de menu knop lijst naast het persoons model waaraan u het gezicht wilt toevoegen.
-
 1. Selecteer **+ persoon toevoegen** in het menu.
 
-    ![Scherm afbeelding toont het dialoog venster voor het aanpassen van inhouds modellen dat gereed is om een persoon toe te voegen in het context menu.](./media/customize-face-model/add-new-face.png)
-
     In een pop-upvenster wordt u gevraagd om de details van de persoon in te vullen. Typ de naam van de persoon en selecteer de knop controleren.
-
-    ![Scherm afbeelding toont de details van een persoon.](./media/customize-face-model/add-new-face2.png)
 
     Vervolgens kunt u kiezen uit uw Verkenner of de gezichts afbeeldingen van het gezicht slepen en neerzetten. Video Indexer worden alle standaard afbeeldings bestands typen (bijvoorbeeld: JPG, PNG en meer).
 
@@ -79,15 +67,9 @@ U kunt de Video Indexer-website gebruiken om gezichten te bewerken die in een vi
 U kunt de naam van elk persoons model in uw account wijzigen, inclusief het standaard persoons model. Zelfs als u de naam van het standaard model van de persoon wijzigt, blijft deze toch hetzelfde als het standaard persoons model in uw account.
 
 1. Selecteer de lijst menu knop naast het model van de persoon waarvan u de naam wilt wijzigen.
-2. Selecteer **naam wijzigen** in het menu.
-
-    ![Scherm afbeelding toont het dialoog venster aanpassing van inhouds model met een context menu met de optie voor het wijzigen van de naam van een persoons model. ](./media/customize-face-model/rename-person.png)
-
-3. Selecteer de huidige naam van het model en typ de nieuwe naam.
-
-    ![Scherm afbeelding toont het hernoemde persoons model.](./media/customize-face-model/rename-person2.png)
-
-4. Selecteer de knop met het selectie vakje voor uw model waarvan u de naam wilt wijzigen.
+1. Selecteer **naam wijzigen** in het menu.
+1. Selecteer de huidige naam van het model en typ de nieuwe naam.
+1. Selecteer de knop met het selectie vakje voor uw model waarvan u de naam wilt wijzigen.
 
 ## <a name="delete-a-person-model"></a>Een persoons model verwijderen
 
@@ -95,12 +77,7 @@ U kunt alle persoons modellen verwijderen die u in uw account hebt gemaakt. U ku
 
 1. Selecteer **verwijderen** in het menu.
 
-    ![Scherm afbeelding toont het dialoog venster aanpassing van inhouds model met een context menu met de optie voor het verwijderen van een persoons model.](./media/customize-face-model/delete-person.png)
-
     Er wordt een pop-upvenster weer gegeven waarin u wordt gewaarschuwd dat met deze actie het persoons model en alle personen en bestanden erin worden verwijderd. Deze actie kan niet ongedaan worden gemaakt.
-
-    ![In de scherm afbeelding wordt een bevestigings venster weer gegeven voor het verwijderen van het model van de persoon.](./media/customize-face-model/delete-person2.png)
-
 1. Als u zeker weet, selecteert u opnieuw verwijderen.
 
 > [!NOTE]
@@ -126,14 +103,14 @@ Als u de inhoud van een van uw persoons modellen wilt bekijken, selecteert u de 
 
 ### <a name="manage-a-person"></a>Een persoon beheren
 
-Als u **beheren**selecteert, wordt het venster **Details** van de persoon weer geven met alle gezichten waaruit dit persoons model wordt getraind. Deze gezichten zijn afkomstig van instanties van deze persoon in Video's die gebruikmaken van dit persoons model of van installatie kopieën die u hand matig hebt geüpload.
+Als u **beheren** selecteert, wordt het venster **Details** van de persoon weer geven met alle gezichten waaruit dit persoons model wordt getraind. Deze gezichten zijn afkomstig van instanties van deze persoon in Video's die gebruikmaken van dit persoons model of van installatie kopieën die u hand matig hebt geüpload.
 
 > [!TIP]
 > U kunt het detail venster **van de persoon** openen door te klikken op de naam van de persoon of door te klikken op **beheren**, zoals hierboven wordt weer gegeven.
 
 #### <a name="add-a-face"></a>Een gezicht toevoegen
 
-U kunt meer gezichten toevoegen aan de persoon door **installatie kopieën toevoegen**te selecteren.
+U kunt meer gezichten toevoegen aan de persoon door **installatie kopieën toevoegen** te selecteren.
 
 #### <a name="delete-a-face"></a>Een gezicht verwijderen
 
@@ -149,19 +126,10 @@ U kunt een persoons model gebruiken om uw nieuwe video te indexeren door het per
 
 Voer de volgende stappen uit om uw persoons model te gebruiken in een nieuwe video:
 
-1. Selecteer de knop **uploaden** boven aan de pagina.
-
-    ![Scherm afbeelding toont de knop uploaden.](./media/customize-face-model/upload.png)
-
-1. Zet uw video bestand neer in de cirkel of blader naar het bestand.
+1. Selecteer de knop **uploaden** aan de rechter kant van de pagina.
+1. Verwijder uw video bestand of blader naar het bestand.
 1. Selecteer de pijl **Geavanceerde opties** .
-
-    ![Scherm afbeelding toont het dialoog venster uw media bestand uploaden.](./media/customize-face-model/upload2.png)
-
 1. Selecteer de vervolg keuzelijst en selecteer het persoons model dat u hebt gemaakt.
-
-    ![Scherm afbeelding toont het dialoog venster uw media bestand uploaden met standaard geselecteerd voor personen model in de geavanceerde opties.](./media/customize-face-model/upload3.png)
-
 1. Selecteer de optie **uploaden** onder aan de pagina en uw nieuwe video wordt geïndexeerd met uw persoons model.
 
 Als u tijdens het uploaden geen persoonlijk model opgeeft, indexeert Video Indexer de video met het standaard persoons model in uw account.
@@ -178,9 +146,6 @@ U ziet opties om uw video te bewerken, te verwijderen en opnieuw te indexeren.
 
     U kunt nu het persoons model selecteren waarmee u uw video opnieuw wilt indexeren.
 1. Selecteer de vervolg keuzelijst en selecteer het persoons model dat u wilt gebruiken.
-
-    ![Scherm afbeelding toont opties voor een video, inclusief het selecteren van een model van een persoon.](./media/customize-face-model/reindex2.png)
-
 1. Selecteer de knop **index** opnieuw maken en uw video wordt opnieuw geïndexeerd met uw persoons model.
 
 Nieuwe wijzigingen die u aanbrengt aan de gezichten die u hebt gedetecteerd en herkend in de video die u zojuist hebt geïndexeerd, worden opgeslagen in het persoons model dat u hebt gebruikt om de video opnieuw te indexeren.
@@ -211,15 +176,11 @@ Als u tijdens het uploaden geen persoonlijk model aan de video toewijst, wordt u
 
 Als u een gezicht een naam geeft met de naam van een bestaande persoon in het persoons model dat de video gebruikt, worden de gedetecteerde gezichts afbeeldingen uit deze video van die persoon samengevoegd met wat al in het model voor komt. Als u een gezicht met een nieuwe naam een naam krijgt, wordt er een nieuwe persoons vermelding gemaakt in het persoons model dat de video gebruikt.
 
-![Scherm afbeelding toont een gezicht waaraan een naam is toegevoegd.](./media/customize-face-model/edit-face2.png)
-
 ### <a name="delete-a-face"></a>Een gezicht verwijderen
 
 Als u een gedetecteerd gezicht in uw video wilt verwijderen, gaat u naar het deel venster inzichten en selecteert u het potlood pictogram in de rechter bovenhoek van het deel venster. Selecteer de optie **verwijderen** onder de naam van het gezicht. Met deze actie wordt het gedetecteerde gezicht verwijderd uit de video. Het gezicht van de gebruiker wordt nog steeds gedetecteerd in de andere Video's waarin het wordt weer gegeven, maar u kunt het gezicht van die Video's ook verwijderen nadat ze zijn geïndexeerd.
 
 De persoon, als deze is benoemd, blijft ook bestaan in het persoons model dat is gebruikt voor het indexeren van de video van waaruit u het gezicht hebt verwijderd, tenzij u de persoon expliciet uit het persoons model verwijdert.
-
-![Een gezicht in uw video verwijderen](./media/customize-face-model/delete-face.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

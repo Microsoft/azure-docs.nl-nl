@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/23/2017
 ms.custom: devx-track-java
 ms.author: rapatchi
-ms.openlocfilehash: f65194cde25deac8c03d6ddc3a7c0b928aaca171
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3efa51f5632dd5cdc274ea39df5178aa0351a01f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327307"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652293"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Bestaande Java Service Fabric-toepassingen bijwerken voor het ophalen van Java-bibliotheken van Maven
 Service Fabric Java binaire bestanden zijn verplaatst van de Service Fabric Java SDK naar maven hosting. U kunt **mavencentral** gebruiken om de meest recente service Fabric Java-afhankelijkheden op te halen. Deze hand leiding helpt u bij het bijwerken van bestaande Java-toepassingen die zijn gemaakt voor de Service Fabric Java-SDK met behulp van een Yeoman-sjabloon of-eclips om compatibel te zijn met de op maven gebaseerde build.
@@ -165,7 +165,7 @@ task copyDeps <<{
 }
 ```
 
-Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand ** ``build.gradle`` de volgende onderdelen bevatten:
+Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand** ``build.gradle`` de volgende onderdelen bevatten:
 
 ```gradle
 repositories {
@@ -244,7 +244,7 @@ dependencies {
 .
 ```
 
-Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand ** ``build.gradle`` de volgende onderdelen bevatten:
+Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand** ``build.gradle`` de volgende onderdelen bevatten:
 
 ```gradle
 repositories {
@@ -319,7 +319,7 @@ task copyDeps<< {
 }
 ```
 
-Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand ** ``build.gradle`` de volgende onderdelen bevatten:
+Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand** ``build.gradle`` de volgende onderdelen bevatten:
 
 ```gradle
 repositories {
@@ -385,7 +385,7 @@ De wijzigingen hier zijn vergelijkbaar met de wijzigingen uit de vorige sectie, 
 ```gradle
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
-      compile project(':MyactorInterface')
+    compile project(':MyactorInterface')
 }
 .
 .
@@ -398,7 +398,7 @@ jar
         "Class-Path": configurations.compile.collect { 'lib/' + it.getName() }.join(' '))
     }
     baseName "myactor-test"
-  destinationDir = file('out/lib')
+    destinationDir = file('out/lib')
 }
 .
 .
@@ -422,7 +422,7 @@ task copyDeps<< {
 }
 ```
 
-Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand ** ``build.gradle`` de volgende onderdelen bevatten:
+Om nu afhankelijkheden op te halen van Maven, moet het **bijgewerkte bestand** ``build.gradle`` de volgende onderdelen bevatten:
 
 ```gradle
 repositories {

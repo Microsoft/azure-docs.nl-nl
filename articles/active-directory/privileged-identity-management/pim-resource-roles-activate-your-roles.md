@@ -15,12 +15,12 @@ ms.date: 07/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f38ef7db114705392bd1d3dc6f9a4562a809e20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4e3fe72492ef92fe65572c75bf9f88b5f9ffda3
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86023862"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653415"
 ---
 # <a name="activate-my-azure-resource-roles-in-privileged-identity-management"></a>Mijn Azure-resource rollen in Privileged Identity Management activeren
 
@@ -32,7 +32,7 @@ Dit artikel is voor leden die hun Azure-resource functie moeten activeren in Pri
 
 Wanneer u een Azure-resource functie moet uitvoeren, kunt u de activering aanvragen met de navigatie optie **mijn rollen** in privileged Identity Management.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 1. Open **Azure AD privileged Identity Management**. Zie voor meer informatie over het toevoegen van de Privileged Identity Management tegel aan uw dash board [beginnen met privileged Identity Management](pim-getting-started.md).
 
@@ -50,7 +50,7 @@ Wanneer u een Azure-resource functie moet uitvoeren, kunt u de activering aanvra
 
 1. Selecteer **activeren** om de pagina activeren te openen.
 
-     ![Het deel venster openen met het bereik, de begin tijd, de duur en de reden](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
+    ![Het deel venster openen met het bereik, de begin tijd, de duur en de reden](./media/pim-resource-roles-activate-your-roles/azure-role-eligible-activate.png)
 
 1. Als voor uw rol multi-factor Authentication is vereist, selecteert u **uw identiteit verifiëren voordat u doorgaat**. U hoeft slechts één keer per sessie te authenticeren.
 

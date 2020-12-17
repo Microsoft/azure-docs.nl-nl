@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a890a72773392ec179c3565954c3136d47db1dc4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 68ffde11059de4809e519c1ac4f79503f25b0004
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584915"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653738"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een GitHub-account met behulp van Azure Active Directory B2C
 
@@ -34,19 +34,7 @@ ms.locfileid: "97584915"
 
 ## <a name="prerequisites"></a>Vereisten
 
-::: zone pivot="b2c-user-flow"
-
-* [Maak een gebruikersstroom](tutorial-create-user-flows.md) zodat gebruikers zich bij uw toepassing kunnen registreren en aanmelden.
-* [Een web-API-toepassing toevoegen aan uw Azure Active Directory B2C-tenant](add-web-api-application.md), als u dit nog niet hebt gedaan.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-* Voer de stappen uit in het [Active Directory B2C aan de slag met aangepaste beleids regels](custom-policy-get-started.md).
-* [Een web-API-toepassing toevoegen aan uw Azure Active Directory B2C-tenant](add-web-api-application.md), als u dit nog niet hebt gedaan.
-
-::: zone-end
+[!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-github-oauth-application"></a>Een GitHub OAuth-toepassing maken
 
@@ -89,7 +77,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `GitHubSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 1. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** `Signature` .
-1. Klik op **Create**.
+1. Klik op **Maken**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 

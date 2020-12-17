@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 11/18/2020
 ms.author: alzam
-ms.openlocfilehash: 1f10799ab32b6cb26a8b3b5b343f65b960d71357
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 70cac6ef566ef52409cd9667708c2fc297e046f7
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006998"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656611"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Waarschuwingen instellen voor resource logboek gebeurtenissen van VPN Gateway
 
@@ -20,8 +20,8 @@ Dit artikel helpt u bij het instellen van waarschuwingen op basis van bron logbo
 
 De volgende bron logboeken zijn beschikbaar in Azure:
 
-|***Naam** _ | _*_Description_*_ |
-|---        | ---               |
+|***Naam** _ | _*_Beschrijving_*_ |
+|--- | --- |
 |GatewayDiagnosticLog | Bevat bron logboeken voor gateway configuratie gebeurtenissen, primaire wijzigingen en onderhouds gebeurtenissen |
 |TunnelDiagnosticLog | Bevat status wijzigings gebeurtenissen voor de tunnel. Tunnel Connect/Disconnect-gebeurtenissen hebben een samenvattings reden voor de status wijziging, indien van toepassing |
 |RouteDiagnosticLog | Registreert wijzigingen aan statische routes en BGP-gebeurtenissen die optreden op de gateway |
@@ -45,7 +45,7 @@ In de volgende voorbeeld stappen wordt een waarschuwing gemaakt voor een verbind
 
    ![Details voor het maken van een Log Analytics-werk ruimte](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Selecteer")
 
-4. Zoek uw VPN-gateway op **Monitor** de  >  Blade **Diagnostische instellingen** controleren.
+4. Zoek uw VPN-gateway op de  >  Blade **Diagnostische instellingen** controleren.
 
    ![Selecties voor het zoeken naar de VPN-gateway in Diagnostische instellingen](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert3.png  "Selecteer")
 

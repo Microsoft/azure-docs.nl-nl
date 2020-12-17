@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: conceptual
-ms.date: 12/14/2020
+ms.date: 12/17/2020
 ms.author: alkohli
-ms.openlocfilehash: acaa0fdb1fa0e9a338f4e249622cad0115c6b58e
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 3df8f75a726639e87157a1aa7fd9ff4d35c0ef4f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516443"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654622"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: veelgestelde vragen
 
@@ -100,13 +100,11 @@ Deze lever tijden zijn *schattingen*. De tijd voor elke fase van de order verwer
 **Geschatte lever tijden voor een Data Box Disk order:**
 
 1. Volg orde Data Box Disk: een paar minuten, vanuit de portal
-2. Schijf toewijzing en-voor bereiding: 1-2 werk dagen
+2. Schijf toewijzing en-voor bereiding: Maxi maal 5 werk dagen, afhankelijk van de beschik baarheid van de voor Raad en het aantal in behandeling zijnde orders dat moet worden verwerkt
 3. Verzending: 2-3 werkdagen
-4. Gegevens kopie op de site van de klant: is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden
+4. Gegevens kopie op de site van de klant: is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
 5. Retourzending: 2-3 werkdagen
-6. Verwerkings schijf in Data Center: 1-2 werk dagen
-7. Gegevens uploaden naar Azure: begint zodra de verwerking is voltooid en de schijf is verbonden. De upload tijd is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
-
+6. Verwerken op het Data Center en uploaden naar Azure: het uploaden van gegevens begint bij het Data Center zodra de operationele verwerking is voltooid en de schijf is verbonden. De upload tijd is afhankelijk van de aard van de gegevens, de grootte en het aantal bestanden.
 
 ## <a name="configure-and-connect"></a>Configureren en verbinding maken
  

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: 3677d67f55cfccdc80245b2ec870ffa76b0a1940
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff7d5a4e1181dccedc3584d958038a1d695c57ca
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088662"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657121"
 ---
 # <a name="troubleshoot-windows-boot-manager-error----0xc0000225-status-not-found"></a>Problemen met de Windows-opstart beheer fout oplossen-0xC0000225 ' status niet gevonden '
  
@@ -105,12 +105,12 @@ Een beschadiging van een register component kan de volgende oorzaken hebben:
 ### <a name="repair-the-system-file"></a>Het systeem bestand herstellen
 
 1. Ga met de gekoppelde VHD naar de locatie van het binaire bestand dat wordt weer gegeven in de scherm afbeelding van de virtuele machine (VM).
-1. Klik met de rechter muisknop op het bestand, selecteer **Eigenschappen**en selecteer vervolgens het tabblad **Details** om informatie over het bestand weer te geven.
+1. Klik met de rechter muisknop op het bestand, selecteer **Eigenschappen** en selecteer vervolgens het tabblad **Details** om informatie over het bestand weer te geven.
    1. Noteer de versie van het bestand, zoals wordt weer gegeven in de onderstaande afbeelding:
 
       ![Het venster Eigenschappen voor het bestand ' cng.sys ', waarbij de bestands versie is gemarkeerd.](./media/troubleshoot-boot-error-status-not-found/5.png)
 
-1. Wijzig de naam van het bestand in **< BINARY.SYS >. old**, waarbij u **< BINARY.SYS ** >vervangt door het bestand.
+1. Wijzig de naam van het bestand in **< BINARY.SYS >. old**, waarbij u **< BINARY.SYS** >vervangt door het bestand.
 
    Voor de afbeelding in de bovenstaande stap wordt de naam van het bestand **cng.sys** gewijzigd in **cng.sys. old**
 
@@ -126,7 +126,7 @@ Een beschadiging van een register component kan de volgende oorzaken hebben:
       `dir <BINARY WITH ".SYS" EXTENSION>  /s`
 
       Met deze opdracht worden alle versies van het bestand dat de machine heeft, weer geven, waarmee u de padgegevens van het onderdeel krijgt.
-      
+
       **Dir cng.sys** zou bijvoorbeeld de naam **dir cng.sys/s**
 
    1. Kies de meest recente versie van het bestand in de lijst (of een wille keurige voor keur) en kopieer het bestand naar de map **Windows\System32** met het voor gaande pad en de volgende opdracht:
@@ -136,7 +136,7 @@ Een beschadiging van een register component kan de volgende oorzaken hebben:
       > [!NOTE]
       > Als het meest recente binaire bestand niet werkt, probeert u een versie vóór dat item, of een van de versies waarvan u weet dat er sprake is van een stabiel, zoals een versie vóór een patch.
 
-      Als bijvoorbeeld het binaire bestand dat u zoekt **cmimcext.sys**is, de defecte schijf is station **F:**, en u een zoek opdracht hebt uitgevoerd naar de nieuwste versie, ziet u de volgende afbeelding, waarbij een query in de opdracht prompt van de `dir cmim* /s` meest recente versie van het cmimcext.sys-bestand zoekt.
+      Als bijvoorbeeld het binaire bestand dat u zoekt **cmimcext.sys** is, de defecte schijf is station **F:**, en u een zoek opdracht hebt uitgevoerd naar de nieuwste versie, ziet u de volgende afbeelding, waarbij een query in de opdracht prompt van de `dir cmim* /s` meest recente versie van het cmimcext.sys-bestand zoekt.
 
       ![Een query in de opdracht prompt van dir cmim */s om de meest recente versie van het cmimcext.sys-bestand te zoeken.](./media/troubleshoot-boot-error-status-not-found/6.png)
 
@@ -163,7 +163,7 @@ Als deze informatie verzameling een fout retourneert waarin zich geen **\boot\bc
    Noteer de id van het Windows-opstart laad programma waarvan het pad is **\windows\system32\winload.exe**.
 
 1. Controleer voor virtuele machines van de 2e generatie of de besturingssysteem schijf online is en of de stationsletters zijn toegewezen. Wanneer dit is geverifieerd, moet u de informatie over de opstart installatie verzamelen.
-   1. Typ **schijf beheer** in **Windows Search**en open de schijf beheer console. Gebruik deze console om het schijf nummer te identificeren dat is gekoppeld aan de herstel-VM en de EFI-partitie (Extensible Firmware Interface) die het BCD-archief bevat.
+   1. Typ **schijf beheer** in **Windows Search** en open de schijf beheer console. Gebruik deze console om het schijf nummer te identificeren dat is gekoppeld aan de herstel-VM en de EFI-partitie (Extensible Firmware Interface) die het BCD-archief bevat.
 
    In de volgende afbeelding is schijf 2 het schijf nummer dat is gekoppeld aan de reparatie-VM. De afbeelding toont ook de EFI-systeem partitie op schijf 2, 100 MB groot en heeft geen toegewezen letter.
 
@@ -207,7 +207,7 @@ Als deze informatie verzameling een fout retourneert waarin zich geen **\boot\bc
 
          ![Windows boot loader wordt weer gegeven in een VM van de tweede generatie met het kenmerk id gemarkeerd. Het kenmerk identifier is gemarkeerd als waarde.](./media/troubleshoot-boot-error-status-not-found/12.png)
 
-         Noteer de id van de Windows-opstart lader, waarvan het pad **\windows\system32\winload.efi**is.
+         Noteer de id van de Windows-opstart lader, waarvan het pad **\windows\system32\winload.efi** is.
 
 1. U ziet dat de variabele OSDEVICE op de actieve partitie ontbreekt:
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 6e9d0e9d78f58807a05784e1606670e3a97fd600
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 98a75cee88a7d30161fc3166bce0eaec855d347c
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97583912"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656713"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Connectiviteits architectuur in Azure Database for MariaDB
 In dit artikel wordt uitgelegd wat de Azure Database for MariaDB connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for MariaDB exemplaar van clients, zowel binnen als buiten Azure.
@@ -50,7 +50,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Brazil South |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
 | Canada - midden |40.85.224.249  | | |
 | Canada - oost | 40.86.226.166    | | |
-| US - centraal | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38     | | |
+| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
 | China East | 139.219.130.35    | | |
 | China - oost 2 | 40.73.82.1  | | |
 | China - noord | 139.219.15.17    | | |
@@ -80,9 +80,9 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Verenigd Koninkrijk Zuid | 51.140.184.11   | | |
 | Verenigd Koninkrijk West | 51.141.8.11  | | |
 | VS - west-centraal | 13.78.145.25     | | |
-| Europa - west |13.69.105.208,104.40.169.187 |40.68.37.158 | 191.237.232.75|
+| Europa -west |13.69.105.208,104.40.169.187 |40.68.37.158 | 191.237.232.75|
 | VS - west |13.86.216.212, 13.86.217.212 |104.42.238.205  | 23.99.34.75|
-| US - west 2 | 13.66.226.202  | | |
+| West US 2 | 13.66.226.202  | | |
 ||||
 
 ## <a name="connection-redirection"></a>Verbindings omleiding

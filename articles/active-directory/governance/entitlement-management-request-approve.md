@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfbd5e6f190e0600c31aa17e9b1a75f08e213df4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fddb3b171e5a26273cb2e0045f11e3a4dbb48c5f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973572"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655098"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Toegangs aanvragen goed keuren of weigeren in azure AD-rechts beheer
 
@@ -57,11 +57,11 @@ Als u het e-mail bericht niet hebt, kunt u de toegangs aanvragen vinden die in b
 
 1. Klik op **aanvraag gegevens**.
 
-     ![Mijn toegangs Portal-toegangs aanvraag-Klik op aanvraag Details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
+    ![Mijn toegangs Portal-toegangs aanvraag-Klik op aanvraag Details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
 
 1. De gegevens die door de aanvrager worden verstrekt, staan onder aan het deel venster.
 
-     ![Scherm afbeelding toont de details van de aanvraag](./media/entitlement-management-request-approve/requestor-information-requestor-answers.png)
+    ![Scherm afbeelding toont de details van de aanvraag](./media/entitlement-management-request-approve/requestor-information-requestor-answers.png)
 
 1. Op basis van de informatie die de aanvrager heeft verstrekt, kunt u de aanvraag vervolgens goed keuren of weigeren. Zie de stappen in een aanvraag voor hulp goed keuren of weigeren.
 

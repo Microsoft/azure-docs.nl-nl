@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.openlocfilehash: dd125860aab8e64d316a91ec8876a3678c646d52
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: d5476bf1bfe2e222e115146c13f46e776d4bb497
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591466"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657189"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Connectiviteits architectuur in Azure Database for PostgreSQL
 In dit artikel wordt uitgelegd wat de Azure Database for PostgreSQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for PostgreSQL data base-exemplaar van clients, zowel binnen als buiten Azure.
@@ -49,7 +49,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Brazil South |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
 | Canada - midden |40.85.224.249  | | |
 | Canada - oost | 40.86.226.166    | | |
-| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38     | | |
+| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
 | China East | 139.219.130.35    | | |
 | China - oost 2 | 40.73.82.1  | | |
 | China - noord | 139.219.15.17    | | |

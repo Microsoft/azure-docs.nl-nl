@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 9b097b561ef6b91ae648a950247d1a88b99e7e64
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 86fd136cdf03c9bdd6bd1f610cccc339512f8fbc
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614809"
+ms.locfileid: "97657104"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>ITSM-producten/-services verbinden met IT-servicebeheerconnector
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw ITSM-product/-service en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren. Zie [overzicht](./itsmc-overview.md)voor meer informatie over ITSMC.
@@ -25,7 +25,7 @@ De volgende ITSM-producten/-services worden ondersteund. Selecteer het product o
 
 > [!NOTE]
 > 
-> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
+> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](./action-groups.md#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
 
 ## <a name="connect-system-center-service-manager-to-it-service-management-connector-in-azure"></a>System Center Service Manager verbinding maken met IT Service Management-connector in azure
 
@@ -35,7 +35,7 @@ De volgende secties bevatten informatie over het aansluiten van uw System Center
 
 Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 
-- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview).
+- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](./itsmc-definition.md).
 - De Service Manager-webtoepassing (Web-app) wordt geïmplementeerd en geconfigureerd. [Hier](#create-and-deploy-service-manager-web-app-service)vindt u informatie over de web-app.
 - Hybride verbinding is gemaakt en geconfigureerd. Meer informatie: [de hybride verbinding configureren](#configure-the-hybrid-connection).
 - Ondersteunde versies van Service Manager: 2012 R2 of 2016.
@@ -45,7 +45,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 > [!NOTE]
 > 
 > - ITSM-connector kan alleen verbinding maken met ServiceNow-exemplaren op basis van de Cloud. On-premises ServiceNow-instanties worden momenteel niet ondersteund.
-> - Als u aangepaste [sjablonen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
+> - Als u aangepaste [sjablonen](./itsmc-definition.md#template-definitions) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
 
 ### <a name="connection-procedure"></a>Verbindings procedure
 
@@ -85,7 +85,7 @@ Gebruik de volgende procedure om uw System Center Service Manager-exemplaar te v
 - U kunt incidenten maken op basis van Log Analytics waarschuwingen of logboek records of vanuit Azure-waarschuwingen in dit Service Manager exemplaar.
 
 
-Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts).
+Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="create-and-deploy-service-manager-web-app-service"></a>Service Manager web app-service maken en implementeren
 
@@ -184,7 +184,7 @@ De volgende secties bevatten informatie over het aansluiten van uw ServiceNow-pr
 
 ### <a name="prerequisites"></a>Vereisten
 Zorg ervoor dat aan de volgende vereisten wordt voldaan:
-- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector).
+- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](./itsmc-definition.md#add-it-service-management-connector).
 - ServiceNow ondersteunde versies: Orlando, New York, Madrid, Londen, Kingston, Jakarta, Istanboel, Helsinki, Genève.
 - De waarschuwingen die via Azure Monitor worden verzonden, kunnen nu worden gemaakt in ServiceNow een van de volgende elementen: gebeurtenissen, incidenten of waarschuwingen.
 > [!NOTE]
@@ -257,7 +257,7 @@ Gebruik de volgende procedure om een ServiceNow-verbinding te maken:
 
 - U kunt incidenten maken op basis van Log Analytics waarschuwingen of logboek records of vanuit Azure-waarschuwingen in dit ServiceNow-exemplaar.
 
-Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts).
+Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
 
 
 > [!NOTE]
@@ -309,14 +309,14 @@ De volgende secties bevatten informatie over het aansluiten van uw Provance-prod
 
 > [!NOTE]
 > 
-> We stellen onze Provance-klanten voor om [webhook-actie](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
+> We stellen onze Provance-klanten voor om [webhook-actie](./action-groups.md#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
 
 ### <a name="prerequisites"></a>Vereisten
 
 Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 
 
-- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector).
+- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](./itsmc-definition.md#add-it-service-management-connector).
 - De Provance-app moet worden geregistreerd met Azure AD-en client-ID beschikbaar worden gesteld. Zie [Active Directory-verificatie configureren](../../app-service/configure-authentication-provider-aad.md)voor gedetailleerde informatie.
 
 - Gebruikersrol: beheerder.
@@ -358,7 +358,7 @@ Gebruik de volgende procedure om een Provance-verbinding te maken:
 
 - U kunt incidenten maken op basis van Log Analytics waarschuwingen of logboek records of vanuit Azure-waarschuwingen in dit Provance-exemplaar.
 
-Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts).
+Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
 
 ## <a name="connect-cherwell-to-it-service-management-connector-in-azure"></a>Cher well verbinden met IT Service Management-connector in azure
 
@@ -366,13 +366,13 @@ De volgende secties bevatten informatie over het aansluiten van uw Cher well-pro
 
 > [!NOTE]
 > 
-> We stellen onze Cher well-klanten voor om [webhook-actie](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
+> We stellen onze Cher well-klanten voor om [webhook-actie](./action-groups.md#webhook) te gebruiken voor Cher well en Provance-eind punt als een andere oplossing voor de integratie.
 
 ### <a name="prerequisites"></a>Vereisten
 
 Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 
-- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector).
+- ITSMC is geïnstalleerd. Meer informatie: [het toevoegen van de IT Service Management-connector-oplossing](./itsmc-definition.md#add-it-service-management-connector).
 - De client-ID is gegenereerd. Meer informatie: [client-id genereren voor Cher well](#generate-client-id-for-cherwell).
 - Gebruikersrol: beheerder.
 
@@ -414,7 +414,7 @@ Gebruik de volgende procedure om een Cher well-verbinding te maken:
 
 - U kunt incidenten maken op basis van Log Analytics waarschuwingen of logboek records of vanuit Azure-waarschuwingen in dit Cher well-exemplaar.
 
-Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts).
+Meer informatie: [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="generate-client-id-for-cherwell"></a>Client-ID genereren voor Cher well
 
@@ -426,6 +426,7 @@ Als u de client-ID/sleutel voor Cher well wilt genereren, gebruikt u de volgende
 
     ![Cher well-gebruikers-id](media/itsmc-connections/itsmc-cherwell-client-id.png)
 
-
 ## <a name="next-steps"></a>Volgende stappen
- - [ITSM-werk items maken op basis van Azure-waarschuwingen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts)
+
+[ITSM-connector Overview](itsmc-overview.md) [ITSM-werk items maken op basis van](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts) 
+ [problemen met de probleem oplossing voor](./itsmc-resync-servicenow.md) Azure-ITSM-connector

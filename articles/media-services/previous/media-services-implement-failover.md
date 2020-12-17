@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 10976c91e781763264d73adcc54ba88ec8d07f54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68cd107b2606643d712c4de94b6d1a82e8ee614a
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256528"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657257"
 ---
 # <a name="implement-failover-streaming-with-media-services-v2"></a>Het streamen van failover met Media Services versie 2 implementeren
 
@@ -66,7 +66,7 @@ In deze sectie maakt en definieert u een C#-console toepassings project.
 
 1. Gebruik Visual Studio om een nieuwe oplossing te maken die het toepassings project van de C#-console bevat. Voer **HandleRedundancyForOnDemandStreaming** in als naam en klik vervolgens op **OK**.
 2. Maak de map **SupportFiles** op hetzelfde niveau als het project bestand **HandleRedundancyForOnDemandStreaming. csproj** . Maak in de map **SupportFiles** de mappen **OutputFiles** en **MP4Files** . Kopieer een MP4-bestand naar de map **MP4Files** . (In dit voor beeld wordt het **ignite.mp4** -bestand gebruikt.) 
-3. Gebruik **NuGet** om verwijzingen toe te voegen aan dll-bestanden met betrekking tot Media Services. Selecteer in **Visual Studio main-menu**de optie **tools**  >  **NuGet package manager**  >  **Package Manager console**. Typ in het console venster **installeren-package windowsazure. Media Services**en druk op ENTER.
+3. Gebruik **NuGet** om verwijzingen toe te voegen aan dll-bestanden met betrekking tot Media Services. Selecteer in **Visual Studio main-menu** de optie **tools**  >  **NuGet package manager**  >  **Package Manager console**. Typ in het console venster **installeren-package windowsazure. Media Services** en druk op ENTER.
 4. Voeg andere verwijzingen toe die vereist zijn voor dit project: System. runtime. serialisatie en System. Web.
 5. Vervang met **behulp** van-instructies die zijn toegevoegd aan het **programs.cs** -bestand standaard met de volgende:
 

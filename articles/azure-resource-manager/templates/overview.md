@@ -2,13 +2,13 @@
 title: Overzicht van sjablonen
 description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
-ms.date: 12/01/2020
-ms.openlocfilehash: da091d09f6d242d4b98903a8dcd76fe305e578b8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/17/2020
+ms.openlocfilehash: c4995791b784351219458c546442d082e2396315
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497993"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657308"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -129,6 +129,7 @@ Zie [Using linked templates with Azure Resource Manager](linked-templates.md) (G
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [zelf studie: uw eerste arm-sjabloon maken en implementeren](template-tutorial-create-first-template.md)voor een stapsgewijze zelf studie waarin u door het proces van het maken van een sjabloon wordt geleid.
+* Zie [resources implementeren en beheren in azure met behulp van arm-sjablonen](/learn/paths/deploy-manage-resource-manager-templates/)voor meer informatie over arm-sjablonen via een begeleide set modules op Microsoft learn.
 * Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de eigenschappen in sjabloon bestanden.
 * Voor meer informatie over het exporteren van sjablonen raadpleegt u [Quick Start: arm-sjablonen maken en implementeren met behulp van de Azure Portal](quickstart-create-templates-use-the-portal.md).
 * Zie [Veelgestelde vragen over arm-sjablonen](frequently-asked-questions.md)voor antwoorden op veelgestelde vragen.

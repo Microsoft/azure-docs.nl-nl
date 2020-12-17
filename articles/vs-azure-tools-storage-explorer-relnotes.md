@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/12/2018
 ms.author: cawa
-ms.openlocfilehash: 7c250f1351d83d213c5c7af5b00d7a648c5d8bc6
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 56654f09d3a92eec5b86d8c8e4cd76fec0639394
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499659"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653041"
 ---
 # <a name="microsoft-azure-storage-explorer-release-notes"></a>Opmerkingen bij de release Microsoft Azure Storage Explorer
 
@@ -168,7 +168,7 @@ Als u vorige versies van Storage Explorer wilt downloaden, gaat u naar de [pagin
   * #1526 automatisch vernieuwen
   * AzCopy inschakelen
   * AzCopy SAS-duur als er andere instellingen zijn die u wilt toevoegen, opent u [een probleem op github](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=) met een beschrijving van de instelling die u wilt weer geven.
-* Storage Explorer ondersteunt nu Managed Disks. U kunt:
+* Storage Explorer ondersteunt nu Managed Disks. U kunt het volgende doen:
   * Een on-premises VHD uploaden naar een nieuwe schijf
   * Een schijf downloaden
   * Schijven kopiëren en plakken in resource groepen en regio's
@@ -242,7 +242,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
     * SAS-duur AzCopy
 
     Als er andere instellingen zijn die u wilt toevoegen, [opent u een probleem op github met een beschrijving van de instelling die u wilt zien](https://github.com/microsoft/AzureStorageExplorer/issues/new?assignees=&labels=%3Abulb%3A%20setting%20candidate&template=feature_request.md&title=).
-* Storage Explorer ondersteunt nu Managed Disks. U kunt:
+* Storage Explorer ondersteunt nu Managed Disks. U kunt het volgende doen:
     * Een on-premises VHD uploaden naar een nieuwe schijf
     * Een schijf downloaden
     * Schijven kopiëren en plakken in resource groepen en regio's
@@ -567,7 +567,7 @@ Het uploaden, downloaden en cross-Region kopiëren van schijven wordt mogelijk g
   * Nieuwe mappen maken
   * Bestanden en mappen uploaden, downloaden, verwijderen en de naam ervan wijzigen
   * Eigenschappen en machtigingen voor bestanden en mappen beheren (aan de rechter kant).
-    
+
     Andere typische BLOB-functies, zoals zacht verwijderen en moment opnamen, zijn momenteel niet beschikbaar. Het beheren van machtigingen is ook alleen beschikbaar wanneer u bent aangemeld. Wanneer u in een ADLS Gen2 Storage-account werkt Storage Explorer, wordt er bovendien AzCopy gebruikt voor alle uploads en down loads, en wordt de standaard instelling gebruikt voor het gebruik van naam-en sleutel referenties voor alle bewerkingen, indien beschikbaar.
 * Na sterke feedback van de gebruiker kan de afbreek lease opnieuw worden gebruikt om leases op meerdere blobs tegelijk te verstoren.
 
@@ -810,7 +810,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
    * Pas de weergave naam aan van de resource die u wilt koppelen. [#31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Verbinden met meerdere lokale emulators met behulp van verschillende poorten. [#193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Voeg gekoppelde resources toe aan snelle toegang. [#392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt:
+* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt het volgende doen:
    * Configureer een beleid voor voorlopig verwijderen door met de rechter muisknop te klikken op het knoop punt BLOB containers voor uw opslag account.
    * Bekijk de voorlopig verwijderde blobs in de BLOB-editor door actieve en verwijderde blobs te selecteren in de vervolg keuzelijst naast de navigatie balk.
    * Verwijder tijdelijke verwijderde blobs.
@@ -866,7 +866,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
    * Pas de weergave naam aan van de resource die u wilt koppelen. [#31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Verbinden met meerdere lokale emulators met behulp van verschillende poorten. [#193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Voeg gekoppelde resources toe aan snelle toegang. [#392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt:
+* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt het volgende doen:
    * Configureer een beleid voor voorlopig verwijderen door met de rechter muisknop te klikken op het knoop punt BLOB containers voor uw opslag account.
    * Bekijk de voorlopig verwijderde blobs in de BLOB-editor door actieve en verwijderde blobs te selecteren in de vervolg keuzelijst naast de navigatie balk.
    * Verwijder tijdelijke verwijderde blobs.
@@ -921,7 +921,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
    * Pas de weergave naam aan van de resource die u wilt koppelen. [#31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Verbinden met meerdere lokale emulators met behulp van verschillende poorten. [#193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Voeg gekoppelde resources toe aan snelle toegang. [#392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt:
+* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt het volgende doen:
    * Configureer een beleid voor voorlopig verwijderen door met de rechter muisknop te klikken op het knoop punt BLOB containers voor uw opslag account.
    * Bekijk de voorlopig verwijderde blobs in de BLOB-editor door actieve en verwijderde blobs te selecteren in de vervolg keuzelijst naast de navigatie balk.
    * Verwijder tijdelijke verwijderde blobs.
@@ -981,7 +981,7 @@ Ten slotte wordt de ondersteuning voor het gebruik van AzCopy met bestands share
    * Pas de weergave naam aan van de resource die u wilt koppelen. [#31](https://github.com/Microsoft/AzureStorageExplorer/issues/31)
    * Verbinden met meerdere lokale emulators met behulp van verschillende poorten. [#193](https://github.com/Microsoft/AzureStorageExplorer/issues/193)
    * Voeg gekoppelde resources toe aan snelle toegang. [#392](https://github.com/Microsoft/AzureStorageExplorer/issues/392)
-* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt:
+* Storage Explorer ondersteunt nu het voorlopig verwijderen. U kunt het volgende doen:
    * Configureer een beleid voor voorlopig verwijderen door met de rechter muisknop te klikken op het knoop punt BLOB containers voor uw opslag account.
    * Bekijk de voorlopig verwijderde blobs in de BLOB-editor door actieve en verwijderde blobs te selecteren in de vervolg keuzelijst naast de navigatie balk.
    * Verwijder tijdelijke verwijderde blobs.

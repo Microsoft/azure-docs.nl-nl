@@ -3,42 +3,115 @@ title: Meer informatie over IoT Plug en Play digitale apparaatdubbels
 description: Meer informatie over hoe IoT Plug en Play gebruikmaakt van digitale apparaatdubbels
 author: prashmo
 ms.author: prashmo
-ms.date: 07/17/2020
+ms.date: 12/14/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: f13230c7bd88a9c3cf043fc1881a34f6b7ce6fe7
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 99c957e5bf6ffe69c94e109796590f5ab975c3cf
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495318"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656883"
 ---
 # <a name="understand-iot-plug-and-play-digital-twins"></a>Meer informatie over IoT Plug en Play digitale apparaatdubbels
 
-Een IoT Plug en Play-apparaat implementeert een model dat wordt beschreven door het [DTDL-schema (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) . Een model beschrijft de set onderdelen, eigenschappen, opdrachten en telemetriegegevens die een bepaald apparaat kan hebben. De eerste keer dat een IoT-Plug en Play apparaat verbinding maakt met een IoT-hub, wordt een apparaat met een dubbele en een digitale dubbele initialisatie.
+Een IoT Plug en Play-apparaat implementeert een model dat wordt beschreven door het [DTDL-schema (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) . Een model beschrijft de set onderdelen, eigenschappen, opdrachten en telemetriegegevens die een bepaald apparaat kan hebben.
 
 IoT Plug en Play maakt gebruik van DTDL versie 2. Zie [Digital Apparaatdubbels Definition Language (DTDL)-versie 2 Specification (Engelstalig)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md) op github voor meer informatie over deze versie.
 
-DTDL is niet exclusief voor IoT-Plug en Play. Andere IoT-Services, zoals [Azure Digital apparaatdubbels](../digital-twins/overview.md), gebruiken deze om hele omgevingen, zoals gebouwen en energie netwerken, weer te geven. Zie voor meer informatie over [dubbele modellen in azure Digital apparaatdubbels](../digital-twins/concepts-models.md).
+> [!NOTE]
+> DTDL is niet exclusief voor IoT-Plug en Play. Andere IoT-Services, zoals [Azure Digital apparaatdubbels](../digital-twins/overview.md), gebruiken deze om hele omgevingen, zoals gebouwen en energie netwerken, weer te geven.
 
-In dit artikel wordt beschreven hoe onderdelen en eigenschappen worden weer gegeven in de *gewenste* en *gerapporteerde* secties van een bepaald apparaat. Ook wordt beschreven hoe deze concepten worden toegewezen aan de bijbehorende digitale dubbel.
+De Sdk's van de Azure IoT-service bevatten Api's waarmee een service de digitale twee apparaten van een apparaat kan communiceren. Een service kan bijvoorbeeld eigenschappen van een apparaat van de digitale twee gelezen of de digitale twee gebruiken om een opdracht op een apparaat aan te roepen. Zie [IOT hub digitale dubbele voor beelden](concepts-developer-guide-service.md#iot-hub-digital-twin-examples)voor meer informatie.
 
-Het IoT-Plug en Play-apparaat in dit artikel dat het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) implementeert met het onderdeel [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat.
+In het voor beeld IoT-Plug en Play apparaat in dit artikel wordt een [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) geïmplementeerd met de onderdelen van de [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat.
 
 ## <a name="device-twins-and-digital-twins"></a>Apparaat apparaatdubbels en Digital apparaatdubbels
 
-Apparaatdubbels zijn JSON-documenten die status informatie van een apparaat opslaan, inclusief meta gegevens, configuraties en voor waarden. Zie voor meer informatie [apparaat Apparaatdubbels begrijpen en gebruiken in IOT hub](../iot-hub/iot-hub-devguide-device-twins.md). Ontwikkelers van apparaten en oplossingen kunnen dezelfde set van Device-dubbele Api's en Sdk's blijven gebruiken om apparaten en oplossingen te implementeren met behulp van IoT Plug en Play-conventies.
+Daarnaast onderhoudt Azure-IoT Hub ook een *apparaat* voor elk aangesloten apparaat. Een apparaat dat vergelijkbaar is met een digitale dubbele waarde, is dat het een weer gave van de eigenschappen van een apparaat is. De Sdk's van de Azure IoT-service bevatten Api's voor interactie met Device apparaatdubbels.
 
-Digitale dubbele Api's worden toegepast op hoogwaardige constructies in de Digital Apparaatdubbels Definition Language (DTDL), zoals onderdelen, eigenschappen en opdrachten. De digitale twee Api's maken het gemakkelijker voor oplossingen bouwers om IoT-Plug en Play oplossingen te maken.
+Een IoT-hub initialiseert een digitale dubbele en een apparaat, naar de eerste keer dat een IoT-Plug en Play apparaat wordt aangesloten.
 
-In een dubbele apparaat wordt de status van een Beschrijf bare eigenschap gesplitst over de gewenste en gerapporteerde secties. Alle alleen-lezen eigenschappen zijn beschikbaar in de gerapporteerde sectie.
+Apparaatdubbels zijn JSON-documenten die status informatie van een apparaat opslaan, inclusief meta gegevens, configuraties en voor waarden. Zie [IOT hub service client-voor beelden](concepts-developer-guide-service.md#iot-hub-service-client-examples)voor meer informatie. Ontwikkelers van apparaten en oplossingen kunnen dezelfde set van Device-dubbele Api's en Sdk's blijven gebruiken om apparaten en oplossingen te implementeren met behulp van IoT Plug en Play-conventies.
+
+De digitale dubbele Api's worden toegepast op DTDL-constructies op hoog niveau, zoals onderdelen, eigenschappen en opdrachten. De digitale twee Api's maken het gemakkelijker voor oplossingen bouwers om IoT-Plug en Play oplossingen te maken.
+
+In een dubbele apparaat wordt de status van een Beschrijf bare eigenschap gesplitst in de secties *gewenste eigenschappen* en *gerapporteerde eigenschappen* . Alle alleen-lezen eigenschappen zijn beschikbaar in de sectie gerapporteerde eigenschappen.
 
 In een digitale twee, een uniforme weer gave van de huidige en gewenste status van de eigenschap. De synchronisatie status voor een bepaalde eigenschap wordt opgeslagen in de sectie met de bijbehorende standaard onderdelen `$metadata` .
 
-### <a name="digital-twin-json-format"></a>Digitale dubbele JSON-indeling
+### <a name="device-twin-json-example"></a>Voor beeld van een dubbele JSON van een apparaat
 
-Wanneer het wordt weer gegeven als een JSON-object, bevat een digitaal twee de volgende velden:
+Het volgende code fragment toont een IoT-Plug en Play als een JSON-object.
+
+```json
+{
+  "deviceId": "sample-device",
+  "modelId": "dtmi:com:example:TemperatureController;1",
+  "version": 15,
+  "properties": {
+    "desired": {
+      "thermostat1": {
+        "__t": "c",
+        "targetTemperature": 21.8
+      },
+      "$metadata": {...},
+      "$version": 4
+    },
+    "reported": {
+      "serialNumber": "alwinexlepaho8329",
+      "thermostat1": {
+        "maxTempSinceLastReboot": 25.3,
+        "__t": "c",
+        "targetTemperature": {
+          "value": 21.8,
+          "ac": 200,
+          "ad": "Successfully executed patch",
+        }
+      },
+      "$metadata": {...},
+      "$version": 11
+    }
+  }
+}
+```
+
+### <a name="digital-twin-example"></a>Digitaal dubbel voor beeld
+
+In het volgende code fragment ziet u de digitale dubbele indeling als een JSON-object:
+
+```json
+{
+  "$dtId": "sample-device",
+  "serialNumber": "alwinexlepaho8329",
+  "thermostat1": {
+    "maxTempSinceLastReboot": 25.3,
+    "targetTemperature": 21.8,
+    "$metadata": {
+      "targetTemperature": {
+        "desiredValue": 21.8,
+        "desiredVersion": 4,
+        "ackVersion": 4,
+        "ackCode": 200,
+        "ackDescription": "Successfully executed patch",
+        "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
+      },
+      "maxTempSinceLastReboot": {
+         "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
+      }
+    }
+  },
+  "$metadata": {
+    "$model": "dtmi:com:example:TemperatureController;1",
+    "serialNumber": {
+      "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
+    }
+  }
+}
+```
+
+De volgende tabel beschrijft de velden in het digitale dubbele JSON-object:
 
 | Veldnaam | Beschrijving |
 | --- | --- |
@@ -55,83 +128,13 @@ Wanneer het wordt weer gegeven als een JSON-object, bevat een digitaal twee de v
 | `{componentName}.{propertyName}` | De waarde van de eigenschap van het onderdeel in JSON |
 | `{componentName}.$metadata` | De meta gegevens voor het onderdeel. |
 
-#### <a name="device-twin-sample"></a>Dubbele voor beeld van apparaat
-
-Het volgende code fragment toont een IoT-Plug en Play als een JSON-object.
-
-```json
-{
-    "deviceId": "sample-device",
-    "modelId": "dtmi:com:example:TemperatureController;1",
-    "version": 15,
-    "properties": {
-        "desired": {
-            "thermostat1": {
-                "__t": "c",
-                "targetTemperature": 21.8
-            },
-            "$metadata": {...},
-            "$version": 4
-        },
-        "reported": {
-            "serialNumber": "alwinexlepaho8329",
-            "thermostat1": {
-                "maxTempSinceLastReboot": 25.3,
-                "__t": "c",
-                "targetTemperature": {
-                    "value": 21.8,
-                    "ac": 200,
-                    "ad": "Successfully executed patch",
-                }
-            },
-            "$metadata": {...},
-            "$version": 11
-        }
-    }
-}
-```
-
-#### <a name="digital-twin-sample"></a>Digitaal dubbele steek proef
-
-In het volgende code fragment ziet u de digitale dubbele indeling als een JSON-object:
-
-```json
-{
-    "$dtId": "sample-device",
-    "serialNumber": "alwinexlepaho8329",
-    "thermostat1": {
-        "maxTempSinceLastReboot": 25.3,
-        "targetTemperature": 21.8,
-        "$metadata": {
-            "targetTemperature": {
-                "desiredValue": 21.8,
-                "desiredVersion": 4,
-                "ackVersion": 4,
-                "ackCode": 200,
-                "ackDescription": "Successfully executed patch",
-                "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
-            },
-            "maxTempSinceLastReboot": {
-                "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-            }
-        }
-    },
-    "$metadata": {
-        "$model": "dtmi:com:example:TemperatureController;1",
-        "serialNumber": {
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
-    }
-}
-```
-
 ### <a name="properties"></a>Eigenschappen
 
 Eigenschappen zijn gegevens velden die de status van een entiteit vertegenwoordigen (zoals de eigenschappen in veel object-georiënteerde programmeer talen).
 
 #### <a name="read-only-property"></a>Alleen-lezen eigenschap
 
-Schema
+DTDL-schema:
 
 ```json
 {
@@ -152,9 +155,9 @@ De volgende fragmenten tonen de side-by-side JSON-weer gave van de `serialNumber
 
 ```json
 "properties": {
-    "reported": {
-        "serialNumber": "alwinexlepaho8329"
-    }
+  "reported": {
+    "serialNumber": "alwinexlepaho8329"
+  }
 }
 ```
 
@@ -171,15 +174,17 @@ De volgende fragmenten tonen de side-by-side JSON-weer gave van de `serialNumber
 
 #### <a name="writable-property"></a>Beschrijf bare eigenschap
 
-Het is ook mogelijk dat het apparaat de volgende Beschrijf bare eigenschap in het standaard onderdeel heeft:
+In de volgende voor beelden ziet u een Beschrijf bare eigenschap in het standaard onderdeel.
+
+DTDL:
 
 ```json
 {
-    "@type": "Property",
-    "name": "fanSpeed",
-    "displayName": "Fan Speed",
-    "writable": true,
-    "schema": "double"
+  "@type": "Property",
+  "name": "fanSpeed",
+  "displayName": "Fan Speed",
+  "writable": true,
+  "schema": "double"
 }
 ```
 
@@ -189,19 +194,19 @@ Het is ook mogelijk dat het apparaat de volgende Beschrijf bare eigenschap in he
 
 ```json
 {
-    "properties": {
-        "desired": {
-            "fanSpeed": 2.0,
-        },
-        "reported": {
-            "fanSpeed": {
-                "value": 3.0,
-                "ac": 200,
-                "av": 1,
-                "ad": "Successfully executed patch version 1"
-            }
-        }
+  "properties": {
+    "desired": {
+      "fanSpeed": 2.0,
     },
+    "reported": {
+      "fanSpeed": {
+        "value": 3.0,
+        "ac": 200,
+        "av": 1,
+        "ad": "Successfully executed patch version 1"
+      }
+    }
+  },
 }
 ```
 
@@ -211,17 +216,17 @@ Het is ook mogelijk dat het apparaat de volgende Beschrijf bare eigenschap in he
 
 ```json
 {
-    "fanSpeed": 3.0,
-    "$metadata": {
-        "fanSpeed": {
-            "desiredValue": 2.0,
-            "desiredVersion": 2,
-            "ackVersion": 1,
-            "ackCode": 200,
-            "ackDescription": "Successfully executed patch version 1",
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
+  "fanSpeed": 3.0,
+  "$metadata": {
+    "fanSpeed": {
+      "desiredValue": 2.0,
+      "desiredVersion": 2,
+      "ackVersion": 1,
+      "ackCode": 200,
+      "ackDescription": "Successfully executed patch version 1",
+      "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
     }
+  }
 }
 ```
 
@@ -233,8 +238,7 @@ In dit voor beeld `3.0` is de huidige waarde van de `fanSpeed` eigenschap die wo
 ### <a name="components"></a>Onderdelen
 
 Onderdelen maken model interface samen als een assembly van andere interfaces.
-Beschouw de [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-interface, die als model is gedefinieerd.
-Deze interface kan nu worden opgenomen als onderdeel thermostat1 (en een ander onderdeel thermostat2) bij het definiëren van het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json).
+De [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-interface kan bijvoorbeeld worden opgenomen als onderdelen `thermostat1` en  `thermostat2` in het model model van de [temperatuur regelaar](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) .
 
 In een dubbele apparaat wordt een onderdeel aangeduid met de `{ "__t": "c"}` markering. In een digitale dubbele, de aanwezigheid van `$metadata` een onderdeel.
 
@@ -251,30 +255,30 @@ De volgende fragmenten tonen de side-by-side JSON-weer gave van het `thermostat1
 
 ```json
 "properties": {
-    "desired": {
-        "thermostat1": {
-            "__t": "c",
-            "targetTemperature": 21.8
-        },
-        "$metadata": {
-        },
-        "$version": 4
+  "desired": {
+    "thermostat1": {
+      "__t": "c",
+      "targetTemperature": 21.8
     },
-    "reported": {
-        "thermostat1": {
-            "maxTempSinceLastReboot": 25.3,
-            "__t": "c",
-            "targetTemperature": {
-                "value": 21.8,
-                "ac": 200,
-                "ad": "Successfully executed patch",
-                "av": 4
-            }
-        },
-        "$metadata": {
-        },
-        "$version": 11
-    }
+    "$metadata": {
+    },
+    "$version": 4
+  },
+  "reported": {
+    "thermostat1": {
+      "maxTempSinceLastReboot": 25.3,
+      "__t": "c",
+      "targetTemperature": {
+        "value": 21.8,
+        "ac": 200,
+        "ad": "Successfully executed patch",
+        "av": 4
+      }
+    },
+    "$metadata": {
+    },
+    "$version": 11
+  }
 }
 ```
 
@@ -284,21 +288,21 @@ De volgende fragmenten tonen de side-by-side JSON-weer gave van het `thermostat1
 
 ```json
 "thermostat1": {
-    "maxTempSinceLastReboot": 25.3,
-    "targetTemperature": 21.8,
-    "$metadata": {
-        "targetTemperature": {
-            "desiredValue": 21.8,
-            "desiredVersion": 4,
-            "ackVersion": 4,
-            "ackCode": 200,
-            "ackDescription": "Successfully executed patch",
-            "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
-        },
-        "maxTempSinceLastReboot": {
-            "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
-        }
+  "maxTempSinceLastReboot": 25.3,
+  "targetTemperature": 21.8,
+  "$metadata": {
+    "targetTemperature": {
+      "desiredValue": 21.8,
+      "desiredVersion": 4,
+      "ackVersion": 4,
+      "ackCode": 200,
+      "ackDescription": "Successfully executed patch",
+      "lastUpdateTime": "2020-07-17T06:11:04.9309159Z"
+    },
+    "maxTempSinceLastReboot": {
+       "lastUpdateTime": "2020-07-17T06:10:31.9609233Z"
     }
+  }
 }
 ```
 
@@ -307,7 +311,7 @@ De volgende fragmenten tonen de side-by-side JSON-weer gave van het `thermostat1
 
 ## <a name="digital-twin-apis"></a>Digitale dubbele Api's
 
-Azure Digital Apparaatdubbels is uitgerust met het **ophalen van digitale dubbele**, **update digitale dubbele**, **onderdeel opdracht aanroepen** en **opdracht aanroepen** voor het digitaal beheren van apparaten. U kunt de rest- [api's](/rest/api/iothub/service/digitaltwin) rechtstreeks of via een [Service-SDK](../iot-pnp/libraries-sdks.md)gebruiken.
+De digitale twee-Api's zijn onder andere het **ophalen van digitale dubbele**, **bijwerkende digitale dubbele**, **onderdeel opdracht aanroepen** en het **aanroepen van opdracht** bewerkingen om een digitaal dubbel element te beheren. U kunt de rest- [api's](/rest/api/iothub/service/digitaltwin) rechtstreeks of via een [Service-SDK](../iot-pnp/libraries-sdks.md)gebruiken.
 
 ## <a name="digital-twin-change-events"></a>Gebeurtenissen met wijziging van dubbel
 

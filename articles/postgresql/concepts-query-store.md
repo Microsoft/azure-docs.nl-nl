@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/01/2020
-ms.openlocfilehash: 7b6c8faafac34ada664ddfadebf8d71a16c73fa7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dff78989eef17f95d8b8dd108baafc53a3f761a
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710529"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657019"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Prestaties bewaken met de query Store
 
@@ -29,11 +29,11 @@ Query Store is een opt-in-functie, waardoor deze niet standaard actief is op een
 1. Meld u aan bij de Azure Portal en selecteer uw Azure Database for PostgreSQL-server.
 2. Selecteer **server parameters** in de sectie **instellingen** van het menu.
 3. Zoek de `pg_qs.query_capture_mode` para meter.
-4. Stel de waarde in op `TOP` en **Sla**deze op.
+4. Stel de waarde in op `TOP` en **Sla** deze op.
 
 Wachtende statistieken in het query archief inschakelen: 
 1. Zoek de `pgms_wait_sampling.query_capture_mode` para meter.
-1. Stel de waarde in op `ALL` en **Sla**deze op.
+1. Stel de waarde in op `ALL` en **Sla** deze op.
 
 
 U kunt deze para meters ook instellen met behulp van de Azure CLI.
@@ -88,7 +88,7 @@ Wanneer query Store is ingeschakeld, worden gegevens opgeslagen in een periode v
 
 De volgende opties zijn beschikbaar voor het configureren van query Store-para meters.
 
-| **Parameter** | **Beschrijving** | **Prijs** | **Bereik**|
+| **Parameter** | **Beschrijving** | **Standaard** | **Bereik**|
 |---|---|---|---|
 | pg_qs pg_qs.query_capture_mode | Hiermee stelt u in welke instructies worden bijgehouden. | geen | geen, boven, alle |
 | pg_qs pg_qs.max_query_text_length | Hiermee stelt u de maximale query lengte in die kan worden opgeslagen. Langere query's worden afgekapt. | 6000 | 100-10K |
@@ -97,7 +97,7 @@ De volgende opties zijn beschikbaar voor het configureren van query Store-para m
 
 De volgende opties zijn specifiek van toepassing op wacht statistieken.
 
-| **Parameter** | **Beschrijving** | **Prijs** | **Bereik**|
+| **Parameter** | **Beschrijving** | **Standaard** | **Bereik**|
 |---|---|---|---|
 | pgms_wait_sampling pgms_wait_sampling.query_capture_mode | Hiermee wordt ingesteld welke instructies worden bijgehouden voor wachtende statistieken. | geen | geen, alle|
 | Pgms_wait_sampling Pgms_wait_sampling.history_period | Stel de frequentie in milliseconden in waarop wacht gebeurtenissen worden bemonsterd. | 100 | 1-600000 |
@@ -149,25 +149,25 @@ In deze weer gave worden alle gegevens in query Store geretourneerd. Er is één
 ### <a name="query_storequery_texts_view"></a>query_store query_store.query_texts_view
 Deze weer gave retourneert query tekst gegevens in query Store. Er is één rij voor elke afzonderlijke query_text.
 
-|**Naam**|  **Type**|   **Beschrijving**|
-|---|---|---|
-|query_text_id  |bigint     |ID voor de query_texts tabel|
-|query_sql_text |Varchar (10000)     |De tekst van een representatieve verklaring. Verschillende query's met dezelfde structuur worden samen geclusterd. deze tekst is de tekst voor de eerste van de query's in het cluster.|
+| **Naam** | **Type** | **Beschrijving** |
+|--|--|--|
+| query_text_id | bigint | ID voor de query_texts tabel |
+| query_sql_text | Varchar (10000) | De tekst van een representatieve verklaring. Verschillende query's met dezelfde structuur worden samen geclusterd. deze tekst is de tekst voor de eerste van de query's in het cluster. |
 
 ### <a name="query_storepgms_wait_sampling_view"></a>query_store query_store.pgms_wait_sampling_view
 Met deze weer gave worden wachtende gebeurtenis gegevens in query Store geretourneerd. Er is één rij voor elke afzonderlijke data base-ID, gebruikers-ID, query-ID en gebeurtenis.
 
-|**Naam**|  **Type**|   **Referenties**| **Beschrijving**|
-|---|---|---|---|
-|user_id    |nogmaals    |pg_authid. OID  |OID van de gebruiker die de instructie heeft uitgevoerd|
-|db_id  |nogmaals    |pg_database. OID    |De OID van de Data Base waarin de instructie is uitgevoerd|
-|query_id   |bigint     ||Interne hash-code, berekend op basis van de ontledings structuur van de instructie|
-|event_type |tekst       ||Het type gebeurtenis waarvoor de back-end wacht|
-|gebeurtenislog  |tekst       ||De wacht gebeurtenis naam als de back-end momenteel wacht|
-|rpc's  |Geheel getal        ||Nummer van dezelfde gebeurtenis vastgelegd|
+| **Naam** | **Type** | **Referenties** | **Beschrijving** |
+|--|--|--|--|
+| user_id | nogmaals | pg_authid. OID | OID van de gebruiker die de instructie heeft uitgevoerd |
+| db_id | nogmaals | pg_database. OID | De OID van de Data Base waarin de instructie is uitgevoerd |
+| query_id | bigint |  | Interne hash-code, berekend op basis van de ontledings structuur van de instructie |
+| event_type | tekst |  | Het type gebeurtenis waarvoor de back-end wacht |
+| gebeurtenislog | tekst |  | De wacht gebeurtenis naam als de back-end momenteel wacht |
+| rpc's | Geheel getal |  | Nummer van dezelfde gebeurtenis vastgelegd |
 
+### <a name="functions"></a>Functions
 
-### <a name="functions"></a>Functies
 Query_store Query_store.qs_reset () retourneert void
 
 `qs_reset` Hiermee worden alle statistische gegevens verwijderd die tot nu toe zijn verzameld door de query Store. Deze functie kan alleen worden uitgevoerd door de rol Server beheerder.

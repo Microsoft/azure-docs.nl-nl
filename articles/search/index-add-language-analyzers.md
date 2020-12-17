@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: e763dbd15ea443ad3c8f6295b37999c748db7e6c
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: ca5f237585f74225a04091b5694dbfad12864332
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422328"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656033"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Taal analyse functies toevoegen aan teken reeks velden in een Azure Cognitive Search-index
 
@@ -68,64 +68,64 @@ Zie [Create index &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchser
 ## <a name="language-analyzer-list"></a>Language Analyzer-lijst 
  Hieronder ziet u de lijst met ondersteunde talen in combi natie met de namen van Lucene en micro soft Analyzer.  
 
-|Taal|Naam van micro soft Analyzer|Naam van Lucene Analyzer|  
-|--------------|-----------------------------|--------------------------|  
-|Arabisch|AR. micro soft|AR. lucene|  
-|Armeens||HY. lucene|  
-|Bengaals|bn. micro soft||  
-|Baskisch||EU. lucene|  
-|Bulgaars|bg. micro soft|bg. lucene|  
-|Catalaans|ca. micro soft|ca. lucene|  
-|Chinees (vereenvoudigd)|zh-Hans. micro soft|zh-Hans. lucene|  
-|Chinees (traditioneel)|zh-hant. micro soft|zh-hant. lucene|  
-|Kroatisch|HR. micro soft||  
-|Tsjechisch|CS. micro soft|CS. lucene|  
-|Deens|da. micro soft|da. lucene|  
-|Nederlands|nl. micro soft|nl. lucene|  
-|Engels|en. micro soft|en. lucene|  
-|Ests|et. micro soft||  
-|Fins|fi. micro soft|fi. lucene|  
-|Frans|fr. micro soft|fr. lucene|  
-|Galicisch||gl. lucene|  
-|Duits|de. micro soft|de. lucene|  
-|Grieks|El. micro soft|El. lucene|  
-|Gujarati|Gu. micro soft||  
-|Hebreeuws|he. micro soft||  
-|Hindi|Hallo. micro soft|Hallo. lucene|  
-|Hongaars|hu. micro soft|hu. lucene|  
-|IJslands|is. micro soft||  
-|Indonesisch (Bahasa)|id. micro soft|id. lucene|  
-|Iers||Ga. lucene|  
-|Italiaans|it. micro soft|it. lucene|  
-|Japans|Ja. micro soft|Ja. lucene|  
-|Kannada|kn. micro soft||  
-|Koreaans|ko. micro soft|ko. lucene|  
-|Lets|LV. micro soft|LV. lucene|  
-|Litouws|lt. micro soft||  
-|Malayalam|ml. micro soft||  
-|Maleis (Latijns)|MS. micro soft||  
-|Mahrati|Mr. micro soft||  
-|Noors|NB. micro soft|No. lucene|  
-|Perzisch||FA. lucene|  
-|Pools|pl. micro soft|pl. lucene|  
-|Portugees (Brazilië)|pt-br. micro soft|pt-br. lucene|  
-|Portugees (Portugal)|pt-pt. micro soft|pt-pt. lucene|  
-|Punjabi|pa. micro soft||  
-|Roemeens|ro. micro soft|ro. lucene|  
-|Russisch|ru. micro soft|ru. lucene|  
-|Servisch (Cyrillisch)|SR-Cyrillisch. micro soft||  
-|Servisch (Latijns)|SR-Latijn. micro soft||  
-|Slowaaks|SK. micro soft||  
-|Sloveens|SL. micro soft||  
-|Spaans|es. micro soft|es. lucene|  
-|Zweeds|SV. micro soft|SV. lucene|  
-|Tamil|ta. micro soft||  
-|Telugu|te. micro soft||  
-|Thai|th. micro soft|th. lucene|  
-|Turks|tr. micro soft|tr. lucene|  
-|Oekraïens|UK. micro soft||  
-|Urdu|uw. micro soft||  
-|Vietnamees|VI. micro soft||  
+| Taal | Naam van micro soft Analyzer | Naam van Lucene Analyzer |  |
+|--|--|--|--|
+| Arabisch | AR. micro soft | AR. lucene |  |
+| Armeens |  | HY. lucene |  |
+| Bengaals | bn. micro soft |  |  |
+| Baskisch |  | EU. lucene |  |
+| Bulgaars | bg. micro soft | bg. lucene |  |
+| Catalaans | ca. micro soft | ca. lucene |  |
+| Chinees (vereenvoudigd) | zh-Hans. micro soft | zh-Hans. lucene |  |
+| Chinees (traditioneel) | zh-hant. micro soft | zh-hant. lucene |  |
+| Kroatisch | HR. micro soft |  |  |
+| Tsjechisch | CS. micro soft | CS. lucene |  |
+| Deens | da. micro soft | da. lucene |  |
+| Nederlands | nl. micro soft | nl. lucene |  |
+| Engels | en. micro soft | en. lucene |  |
+| Ests | et. micro soft |  |  |
+| Fins | fi. micro soft | fi. lucene |  |
+| Frans | fr. micro soft | fr. lucene |  |
+| Galicisch |  | gl. lucene |  |
+| Duits | de. micro soft | de. lucene |  |
+| Grieks | El. micro soft | El. lucene |  |
+| Gujarati | Gu. micro soft |  |  |
+| Hebreeuws | he. micro soft |  |  |
+| Hindi | Hallo. micro soft | Hallo. lucene |  |
+| Hongaars | hu. micro soft | hu. lucene |  |
+| IJslands | is. micro soft |  |  |
+| Indonesisch (Bahasa) | id. micro soft | id. lucene |  |
+| Iers |  | Ga. lucene |  |
+| Italiaans | it. micro soft | it. lucene |  |
+| Japans | Ja. micro soft | Ja. lucene |  |
+| Kannada | kn. micro soft |  |  |
+| Koreaans | ko. micro soft | ko. lucene |  |
+| Lets | LV. micro soft | LV. lucene |  |
+| Litouws | lt. micro soft |  |  |
+| Malayalam | ml. micro soft |  |  |
+| Maleis (Latijns) | MS. micro soft |  |  |
+| Mahrati | Mr. micro soft |  |  |
+| Noors | NB. micro soft | No. lucene |  |
+| Perzisch |  | FA. lucene |  |
+| Pools | pl. micro soft | pl. lucene |  |
+| Portugees (Brazilië) | pt-br. micro soft | pt-br. lucene |  |
+| Portugees (Portugal) | pt-pt. micro soft | pt-pt. lucene |  |
+| Punjabi | pa. micro soft |  |  |
+| Roemeens | ro. micro soft | ro. lucene |  |
+| Russisch | ru. micro soft | ru. lucene |  |
+| Servisch (Cyrillisch) | SR-Cyrillisch. micro soft |  |  |
+| Servisch (Latijns) | SR-Latijn. micro soft |  |  |
+| Slowaaks | SK. micro soft |  |  |
+| Sloveens | SL. micro soft |  |  |
+| Spaans | es. micro soft | es. lucene |  |
+| Zweeds | SV. micro soft | SV. lucene |  |
+| Tamil | ta. micro soft |  |  |
+| Telugu | te. micro soft |  |  |
+| Thai | th. micro soft | th. lucene |  |
+| Turks | tr. micro soft | tr. lucene |  |
+| Oekraïens | UK. micro soft |  |  |
+| Urdu | uw. micro soft |  |  |
+| Vietnamees | VI. micro soft |  |  |
 
  Alle analyse functies met namen die zijn gekoppeld aan **lucene** , worden aangedreven door [de taal Analyseers van Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 

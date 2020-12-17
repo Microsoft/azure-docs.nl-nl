@@ -3,16 +3,16 @@ title: Gebruik directe methoden in live video Analytics op IoT Edge-Azure
 description: Met live video Analytics op IoT Edge worden verschillende directe methoden getoond. De directe methoden zijn gebaseerd op de conventies die in dit onderwerp worden beschreven.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: ed7cec7b8513044c2bf9b24600b8d9f42a485aae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b5c16dc72beed4ec757e48461a2fc194c113f8d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87091824"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656237"
 ---
 # <a name="direct-methods"></a>Directe methoden
 
-Live video Analytics op IoT Edge biedt verschillende directe methoden die kunnen worden aangeroepen vanuit IoT Hub. Directe methoden vertegenwoordigen een aanvraag/antwoord-interactie met een apparaat dat vergelijkbaar is met een HTTP-aanroep wanneer deze slagen of direct mislukken (na een door de gebruiker opgegeven time-out). Deze aanpak is nuttig voor scenario's waarbij de uitvoering van directe actie afwijkt, afhankelijk van of het apparaat kan reageren. Zie voor meer informatie [direct methoden begrijpen en aanroepen vanuit IOT hub](../../iot-hub/iot-hub-devguide-direct-methods.md).
+Live video Analytics op IoT Edge biedt verschillende directe methoden die kunnen worden aangeroepen vanuit IoT Hub. Directe methoden vertegenwoordigen een aanvraag/antwoord-interactie met een apparaat dat vergelijkbaar is met een HTTP-aanroep wanneer deze slagen of direct mislukken (na een door de gebruiker opgegeven time-out). Deze aanpak is nuttig voor scenario's waarbij het verloop van de onmiddellijke actie verschillend is, afhankelijk van het feit of het apparaat in staat was om te reageren. Zie voor meer informatie [direct methoden begrijpen en aanroepen vanuit IOT hub](../../iot-hub/iot-hub-devguide-direct-methods.md).
 
 In dit onderwerp worden deze methoden en conventies beschreven.
 
@@ -140,12 +140,12 @@ Deze directe methode haalt een topologie met één grafiek op.
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Entiteit gevonden|  200 |N.v.t.
-|Algemene gebruikersfouten    |400-bereik  ||
-|Kan de entiteit niet vinden   |404        ||
-|Algemene serverfouten| 500-bereik       ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Entiteit gevonden | 200 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Kan de entiteit niet vinden | 404 |  |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphtopologyset"></a>GraphTopologySet
 
@@ -191,7 +191,7 @@ Belangrijkste aspecten:
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
+|Voorwaarde  |Statuscode    |Gedetailleerde fout code|
 |---|---|---|
 Bestaande entiteit bijgewerkt |200|   N.v.t.|
 Nieuwe entiteit gemaakt  |201|   N.v.t.|
@@ -227,13 +227,13 @@ Hiermee verwijdert u een topologie met één grafiek.
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Entiteit verwijderd|    200|    N.v.t.|
-|Kan de entiteit niet vinden|  204|    N.v.t.|
-|Algemene gebruikersfouten|   400-bereik   ||
-|Er wordt naar de grafiek topologie verwezen door een of meer grafiek exemplaren| 409 |GraphTopologyInUse|
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Entiteit verwijderd | 200 | N.v.t. |
+| Kan de entiteit niet vinden | 204 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Er wordt naar de grafiek topologie verwezen door een of meer grafiek exemplaren | 409 | GraphTopologyInUse |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphtopologylist"></a>GraphTopologyList
 
@@ -278,18 +278,18 @@ Hiermee wordt een lijst opgehaald met alle grafiek-topologieën die overeenkomen
 
 #### <a name="filter-support"></a>Ondersteuning voor filters
 
-|Bewerking      |Veld (en)   |Operators|
+|Bewerking |Veld (en)    |Operators|
 |---|---|---|
 |$orderby|naam  |ASC|
 
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Geslaagd|   200 |N.v.t.|
-|Algemene gebruikersfouten|   400-bereik   ||
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Geslaagd | 200 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphinstanceget"></a>GraphInstanceGet
 
@@ -323,12 +323,12 @@ Hiermee wordt één exemplaar van een grafiek opgehaald:
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Entiteit gevonden   |200|   N.v.t.|
-|Algemene gebruikersfouten|   400-bereik   ||
-|Kan de entiteit niet vinden|  404 ||
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Entiteit gevonden | 200 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Kan de entiteit niet vinden | 404 |  |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphinstanceset"></a>GraphInstanceSet
 
@@ -373,15 +373,15 @@ Belangrijkste aspecten:
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Bestaande entiteit bijgewerkt    |200    |N.v.t.|
-|Nieuwe entiteit gemaakt|    201 |N.v.t.|
-|Algemene gebruikersfouten|   400-bereik   ||
-|Grafiek validatie fouten    |400|   GraphValidationError|
-|Module validatie fouten|  400 |ModuleValidationError|
-|Bron validatie fouten |409    |ResourceValidationError|
-|Algemene serverfouten  |500-bereik||    
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Bestaande entiteit bijgewerkt | 200 | N.v.t. |
+| Nieuwe entiteit gemaakt | 201 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Grafiek validatie fouten | 400 | GraphValidationError |
+| Module validatie fouten | 400 | ModuleValidationError |
+| Bron validatie fouten | 409 | ResourceValidationError |
+| Algemene serverfouten | 500-bereik |  |  |
 
 ### <a name="graphinstancedelete"></a>GraphInstanceDelete
 
@@ -414,13 +414,13 @@ Belangrijkste aspecten:
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|De grafiek is verwijderd|    200|    N.v.t.|
-|De grafiek is niet gevonden|   204|    N.v.t.|
-|Algemene gebruikersfouten    |400-bereik  ||
-|De grafiek heeft niet de status ' Stopped '    |409    |OperationNotAllowedInState|
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| De grafiek is verwijderd | 200 | N.v.t. |
+| De grafiek is niet gevonden | 204 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| De grafiek heeft niet de status ' Stopped ' | 409 | OperationNotAllowedInState |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphinstancelist"></a>GraphInstanceList
 
@@ -472,11 +472,11 @@ Hiermee wordt een lijst opgehaald met alle grafiek exemplaren die overeenkomen m
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|Geslaagd    |200    |N.v.t.|
-|Algemene gebruikersfouten|   400-bereik   ||
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| Geslaagd | 200 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphinstanceactivate"></a>GraphInstanceActivate
 
@@ -516,15 +516,15 @@ Belang rijke aspecten
 
 #### <a name="status-codes"></a>Statuscodes
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|De grafiek is geactiveerd   |200    |N.v.t.|
-|Nieuwe entiteit gemaakt |201|   N.v.t.|
-|Algemene gebruikersfouten    |400-bereik  ||
-|Module validatie fouten   |400|   ModuleValidationError|
-|Bron validatie fouten|    409|    ResourceValidationError|
-|De grafiek wordt gedeactiveerd |409    |OperationNotAllowedInState|
-|Algemene serverfouten| 500-bereik   ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| De grafiek is geactiveerd | 200 | N.v.t. |
+| Nieuwe entiteit gemaakt | 201 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| Module validatie fouten | 400 | ModuleValidationError |
+| Bron validatie fouten | 409 | ResourceValidationError |
+| De grafiek wordt gedeactiveerd | 409 | OperationNotAllowedInState |
+| Algemene serverfouten | 500-bereik |  |
 
 ### <a name="graphinstancedeactivate"></a>GraphInstanceDeactivate
 
@@ -565,13 +565,13 @@ Belangrijkste aspecten:
 }
 ```
 
-|Conditie  |Statuscode    |Gedetailleerde fout code|
-|---|---|---|
-|De grafiek is geactiveerd   |200|   N.v.t.|
-|Nieuwe entiteit gemaakt |201|   N.v.t.|
-|Algemene gebruikersfouten    |400-bereik  ||
-|De status van de grafiek wordt geactiveerd   |409|   OperationNotAllowedInState|
-|Algemene serverfouten  |500-bereik  ||
+| Voorwaarde | Statuscode | Gedetailleerde fout code |
+|--|--|--|
+| De grafiek is geactiveerd | 200 | N.v.t. |
+| Nieuwe entiteit gemaakt | 201 | N.v.t. |
+| Algemene gebruikersfouten | 400-bereik |  |
+| De status van de grafiek wordt geactiveerd | 409 | OperationNotAllowedInState |
+| Algemene serverfouten | 500-bereik |  |
 
 ## <a name="next-steps"></a>Volgende stappen
 

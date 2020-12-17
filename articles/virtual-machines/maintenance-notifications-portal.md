@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: 09693a09e35503a2a221f8de1903b4218b8766f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 318095e6cf68ec100dc9ea5221ecd93cba8f7c1e
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082440"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656815"
 ---
 # <a name="handling-planned-maintenance-notifications-using-the-portal"></a>Geplande onderhouds meldingen verwerken met behulp van de portal
 
@@ -22,7 +22,7 @@ Zodra een [geplande onderhouds](maintenance-notifications.md) Golf is gepland, k
 
 U kunt de Azure Portal gebruiken en zoeken naar Vm's die zijn gepland voor onderhoud.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 2. Klik in de linkernavigatiebalk op **virtual machines**.
 
@@ -32,15 +32,14 @@ U kunt de Azure Portal gebruiken en zoeken naar Vm's die zijn gepland voor onder
 
    **Onderhouds status**: hier wordt de onderhouds status voor de virtuele machine weer gegeven. Hier volgen de mogelijke waarden:
       
-      | Waarde | Beschrijving |
-      |-------|-------------|
-      | Nu opstarten | De virtuele machine bevindt zich in het self-service-onderhouds venster waarmee u het onderhoud zelf kunt initiëren. Hieronder vindt u informatie over het starten van onderhoud op uw virtuele machine. | 
-      | Gepland | Er is onderhoud gepland voor uw virtuele machine, zonder mogelijkheid dit onderhoud zelf te starten. U kunt het onderhouds venster leren door het venster onderhoud gepland te selecteren in deze weer gave of door te klikken op de virtuele machine. | 
-      | Al bijgewerkt | De virtuele machine is al bijgewerkt en er is op dit moment geen verdere actie vereist. | 
-      | Later opnieuw proberen | U hebt onderhoud gestart zonder slagen. U kunt de optie voor selfservice onderhoud op een later tijdstip gebruiken. | 
-      | Nu opnieuw proberen | U kunt een eerder geslaagde, zelf-onderhouds werkzaamheden opnieuw proberen. | 
-      | - | Uw VM maakt geen deel uit van een geplande onderhouds Golf. |
-      
+    | Waarde | Beschrijving |
+    |-------|-------------|
+    | Nu opstarten | De virtuele machine bevindt zich in het self-service-onderhouds venster waarmee u het onderhoud zelf kunt initiëren. Hieronder vindt u informatie over het starten van onderhoud op uw virtuele machine. | 
+    | Gepland | De virtuele machine is gepland voor onderhoud zonder optie om onderhoud te initiëren. U kunt het onderhouds venster leren door het venster onderhoud gepland te selecteren in deze weer gave of door te klikken op de virtuele machine. | 
+    | Al bijgewerkt | De virtuele machine is al bijgewerkt en er is op dit moment geen verdere actie vereist. | 
+    | Later opnieuw proberen | U hebt onderhoud gestart zonder slagen. U kunt de optie voor selfservice onderhoud op een later tijdstip gebruiken. | 
+    | Nu opnieuw proberen | U kunt een eerder geslaagde, zelf-onderhouds werkzaamheden opnieuw proberen. | 
+    | - | Uw VM maakt geen deel uit van een geplande onderhouds Golf. |
 
    **Onderhoud-self-service**: hier wordt het tijd venster weer gegeven wanneer u het onderhoud op uw virtuele machines zelf kunt starten.
    
@@ -52,7 +51,7 @@ U kunt de Azure Portal gebruiken en zoeken naar Vm's die zijn gepland voor onder
 
 Azure communiceert een planning voor gepland onderhoud door een e-mail bericht te verzenden naar de eigenaar van het abonnement en de groep mede-eigen aars. U kunt extra ontvangers en kanalen aan deze communicatie toevoegen door Azure-activiteiten logboek waarschuwingen te maken. Zie [waarschuwingen voor activiteiten logboek maken op service meldingen](../service-health/alerts-activity-log-service-notifications-portal.md)voor meer informatie.
 
-Zorg ervoor dat u het **gebeurtenis type** instelt als **gepland onderhoud**en **Services** als **Virtual Machine Scale sets** en/of **virtual machines**.
+Zorg ervoor dat u het **gebeurtenis type** instelt als **gepland onderhoud** en **Services** als **Virtual Machine Scale sets** en/of **virtual machines**.
 
 ## <a name="start-maintenance-on-your-vm-from-the-portal"></a>Onderhoud starten op uw virtuele machine vanuit de portal
 

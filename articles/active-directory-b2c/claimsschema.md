@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 03/05/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: aadb75d7257470cf4288c6123263f3d2dfe14d21
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2ff43408cfa6d95dbd5a235a950269c47d57a416
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781716"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654027"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
 
@@ -109,7 +109,7 @@ In het volgende voor beeld, wanneer het Framework voor identiteits ervaring comm
 </ClaimType>
 ```
 
-Als gevolg hiervan levert het JWT-token dat is uitgegeven door Azure AD B2C, het `family_name` in plaats **surname** van de naam van claim type name.
+Als gevolg hiervan levert het JWT-token dat is uitgegeven door Azure AD B2C, het `family_name` in plaats van de naam van claim type name.
 
 ```json
 {
@@ -223,14 +223,14 @@ In het volgende voor beeld wordt een **e-mail** claim geconfigureerd met de regu
   <DisplayName>Email Address</DisplayName>
   <DataType>string</DataType>
   <DefaultPartnerClaimTypes>
-    <Protocol Name="OpenIdConnect" PartnerClaimType="email" />
+  <Protocol Name="OpenIdConnect" PartnerClaimType="email" />
   </DefaultPartnerClaimTypes>
   <UserHelpText>Email address that can be used to contact you.</UserHelpText>
   <UserInputType>TextBox</UserInputType>
   <Restriction>
     <Pattern RegularExpression="^[a-zA-Z0-9.+!#$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" HelpText="Please enter a valid email address." />
-    </Restriction>
- </ClaimType>
+  </Restriction>
+</ClaimType>
 ```
 
 In het Framework voor identiteits ervaring wordt de e-mailadres claim met invoer validatie voor de e-mail indeling weer gegeven:

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: 0d0d92c41ec15f4b4cf2307ac686b299cc5fb1ff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cca17aacc914412d34f613adfeba31617c60c455
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89262108"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652939"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Services-API met .NET
 
@@ -61,9 +61,9 @@ U kunt ook de standaard implementatie van de **AzureAdTokenProvider** vervangen 
 >Als u Azure AD-verificatie wilt gebruiken met de Media Services .NET SDK, hebt u het meest recente [NuGet](https://www.nuget.org/packages/windowsazure.mediaservices) -pakket nodig. Voeg ook een verwijzing naar de assembly **micro soft. Identity model. clients. ActiveDirectory** toe. Als u een bestaande app gebruikt, neemt u de **Microsoft.WindowsAzure.MediaServices.Client.Common.Authentication.dll** -assembly op.
 
 1. Maak in Visual Studio een nieuwe C#-consoletoepassing.
-2. Gebruik het [windowsazure. Media Services](https://www.nuget.org/packages/windowsazure.mediaservices) NuGet-pakket om **Azure Media Services .NET SDK**te installeren.
+2. Gebruik het [windowsazure. Media Services](https://www.nuget.org/packages/windowsazure.mediaservices) NuGet-pakket om **Azure Media Services .NET SDK** te installeren.
 
-    Als u referenties wilt toevoegen met behulp van NuGet, voert u de volgende stappen uit: Klik in **Solution Explorer**met de rechter muisknop op de project naam en selecteer vervolgens **NuGet-pakketten beheren**. Zoek vervolgens naar **windowsazure. Media Services** en selecteer **installeren**.
+    Als u referenties wilt toevoegen met behulp van NuGet, voert u de volgende stappen uit: Klik in **Solution Explorer** met de rechter muisknop op de project naam en selecteer vervolgens **NuGet-pakketten beheren**. Zoek vervolgens naar **windowsazure. Media Services** en selecteer **installeren**.
 
     -of-
 
@@ -90,7 +90,7 @@ Als u verbinding wilt maken met de Azure media service-API met de optie voor geb
 
 De waarden voor deze para meters vindt u in **AzureEnvironments. AzureCloudEnvironment**. De constante **AzureEnvironments. AzureCloudEnvironment** is een helper in de .NET SDK voor het verkrijgen van de juiste omgevings variabele-instellingen voor een openbaar Azure-Data Center.
 
-Het bevat vooraf gedefinieerde omgevings instellingen voor het openen van Media Services in de open bare data centers. Voor soevereine of overheids Cloud regio's kunt u respectievelijk **AzureChinaCloudEnvironment**, **AzureUsGovernmentEnvironment**of **AzureGermanCloudEnvironment** gebruiken.
+Het bevat vooraf gedefinieerde omgevings instellingen voor het openen van Media Services in de open bare data centers. Voor soevereine of overheids Cloud regio's kunt u respectievelijk **AzureChinaCloudEnvironment**, **AzureUsGovernmentEnvironment** of **AzureGermanCloudEnvironment** gebruiken.
 
 In het volgende code voorbeeld wordt een token gemaakt:
 
@@ -101,7 +101,7 @@ var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
 
 Als u wilt beginnen met het Program meren op Media Services, moet u een **cloudmediacontext maakt** -exemplaar maken dat de server context vertegenwoordigt. De **cloudmediacontext maakt** bevat verwijzingen naar belang rijke verzamelingen, waaronder taken, assets, bestanden, toegangs beleid en Locators.
 
-U moet ook de resource- **URI voor media rest-Services** door geven aan de **cloudmediacontext maakt** -constructor. Als u de resource-URI voor media REST-services wilt ophalen, meldt u zich aan bij de Azure Portal, selecteert u uw Azure Media Services account, selecteert u **API-toegang**en selecteert **u verbinding maken met Azure Media Services met gebruikers verificatie**.
+U moet ook de resource- **URI voor media rest-Services** door geven aan de **cloudmediacontext maakt** -constructor. Als u de resource-URI voor media REST-services wilt ophalen, meldt u zich aan bij de Azure Portal, selecteert u uw Azure Media Services account, selecteert u **API-toegang** en selecteert **u verbinding maken met Azure Media Services met gebruikers verificatie**.
 
 In het volgende code voorbeeld wordt een **cloudmediacontext maakt** -exemplaar gemaakt:
 
@@ -153,8 +153,8 @@ In het volgende code voorbeeld wordt een token gemaakt met behulp van de **Azure
 
 ```csharp
 var tokenCredentials = new AzureAdTokenCredentials("{YOUR Azure AD TENANT DOMAIN HERE}",
-                            new AzureAdClientSymmetricKey("{YOUR CLIENT ID HERE}", "{YOUR CLIENT SECRET}"),
-                            AzureEnvironments.AzureCloudEnvironment);
+                        new AzureAdClientSymmetricKey("{YOUR CLIENT ID HERE}", "{YOUR CLIENT SECRET}"),
+                        AzureEnvironments.AzureCloudEnvironment);
 
 var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
 ```
@@ -165,8 +165,8 @@ Voor instructies over het maken en configureren van een certificaat in een formu
 
 ```csharp
 var tokenCredentials = new AzureAdTokenCredentials("{YOUR Azure AD TENANT DOMAIN HERE}",
-                            new AzureAdClientCertificate("{YOUR CLIENT ID HERE}", "{YOUR CLIENT CERTIFICATE THUMBPRINT}"),
-                            AzureEnvironments.AzureCloudEnvironment);
+                        new AzureAdClientCertificate("{YOUR CLIENT ID HERE}", "{YOUR CLIENT CERTIFICATE THUMBPRINT}"),
+                        AzureEnvironments.AzureCloudEnvironment);
 ```
 
 Als u wilt beginnen met het Program meren op Media Services, moet u een **cloudmediacontext maakt** -exemplaar maken dat de server context vertegenwoordigt. U moet ook de resource- **URI voor media rest-Services** door geven aan de **cloudmediacontext maakt** -constructor. U kunt de **resource-URI voor de media rest Services** -waarde ook ophalen uit het Azure Portal.

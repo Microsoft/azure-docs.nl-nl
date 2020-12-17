@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 11/18/2020
+ms.date: 12/16/2020
 ms.custom: generated
-ms.openlocfilehash: e18dc7e16eb0b114bd279d53b7dcc895bd62f338
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f22b74b16594419b0eff33f0c73d6e9c3a62ac15
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002728"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655030"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -30,7 +30,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | Ingebouwde rol | Beschrijving | Id |
 > | --- | --- | --- |
 > | **Algemeen** |  |  |
-> | [Inzender](#contributor) | Hiermee wordt volledige toegang verleend voor het beheren van alle resources, maar u kunt geen rollen toewijzen in azure RBAC. | b24988ac-6180-42a0-ab88-20f7382dd24c |
+> | [Inzender](#contributor) | Verleent volledige toegang om alle resources te beheren, maar biedt geen ondersteuning voor het toewijzen van rollen in azure RBAC, het beheren van toewijzingen in azure-blauw drukken of het delen van afbeeldings galerieën. | b24988ac-6180-42a0-ab88-20f7382dd24c |
 > | [Eigenaar](#owner) | Hiermee wordt volledige toegang verleend voor het beheren van alle resources, inclusief de mogelijkheid om rollen toe te wijzen in azure RBAC. | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | [Lezer](#reader) | Bekijk alle resources, maar u kunt geen wijzigingen aanbrengen. | acdd72a7-3385-48ef-bd42-f606fba81ae7 |
 > | [Beheerder van gebruikerstoegang](#user-access-administrator) | Hiermee beheert u de gebruikers toegang tot Azure-resources. | 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9 |
@@ -123,11 +123,11 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer van schemaregisters (preview)](#schema-registry-reader-preview) | Schemaregistergroepen en schema's lezen en weergeven. | 2c56ea50-c6b3-40a6-83c0-9d98858bc7d2 |
 > | **Blockchain** |  |  |
 > | [Toegang tot Block Chain-leden knooppunt (preview-versie)](#blockchain-member-node-access-preview) | Hiermee wordt toegang tot Block Chain-leden knooppunten toegestaan | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
-> | **AI en machine learning** |  |  |
+> | **AI + machine learning** |  |  |
 > | [Inzender Cognitive Services](#cognitive-services-contributor) | Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijderen en beheren. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services gegevens lezer (preview-versie)](#cognitive-services-data-reader-preview) | Hiermee kunt u Cognitive Services gegevens lezen. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
-> | **Mixed reality** |  |  |
+> | **Gemengde realiteit** |  |  |
 > | [Externe rendering-beheerder](#remote-rendering-administrator) | Biedt gebruikers de mogelijkheid om de mogelijkheden voor het omzetten van sessies, rendering en diagnose te beheren voor externe rendering in azure | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
 > | [Client voor externe Rendering](#remote-rendering-client) | Biedt gebruikers de mogelijkheid om sessie, rendering en diagnose te beheren voor de externe rendering van Azure. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
 > | [Inzender voor ruimtelijke ankers](#spatial-anchors-account-contributor) | Hiermee kunt u ruimtelijke ankers in uw account beheren, maar niet verwijderen | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
@@ -165,7 +165,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Key Vaulte-certificerings instanties (preview-versie)](#key-vault-certificates-officer-preview) | Acties uitvoeren op de certificaten van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | a4417e6f-fecd-4de8-b567-7b0420556985 |
 > | [Inzender Key Vault](#key-vault-contributor) | Sleutel kluizen beheren, maar u kunt geen rollen toewijzen in azure RBAC en biedt geen toegang tot geheimen, sleutels of certificaten. | f25e0fa2-a7c8-4377-a976-54943a77a395 |
 > | [Key Vault crypto-functionaris (preview-versie)](#key-vault-crypto-officer-preview) | Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 14b46e9e-c2b7-41b4-b07b-48a6ebf60603 |
-> | [Versleuteling van crypto-service Key Vault (preview-versie)](#key-vault-crypto-service-encryption-preview) | Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
+> | [Versleuteling van gebruiker van crypto-service Key Vault (preview-versie)](#key-vault-crypto-service-encryption-user-preview) | Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | e147488a-f6f5-4113-8e2d-b22465e65bf6 |
 > | [Key Vault crypto grafie-gebruiker (preview-versie)](#key-vault-crypto-user-preview) | Voer cryptografische bewerkingen uit met behulp van sleutels. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 12338af0-0e69-4776-bea7-57ae8d297424 |
 > | [Key Vault lezer (preview-versie)](#key-vault-reader-preview) | Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleutels en geheimen. Kan geen gevoelige waarden lezen, zoals geheime inhoud of sleutel materiaal. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 21090545-7ca7-4776-b22c-e363652d74d2 |
 > | [Key Vaulte geheimen-auditeur (preview-versie)](#key-vault-secrets-officer-preview) | Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
@@ -225,7 +225,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 
 ### <a name="contributor"></a>Inzender
 
-Hiermee wordt volledige toegang verleend voor het beheren van alle resources, maar u kunt geen rollen toewijzen in azure RBAC. [Meer informatie](rbac-and-directory-admin-roles.md)
+Verleent volledige toegang om alle resources te beheren, maar biedt geen ondersteuning voor het toewijzen van rollen in azure RBAC, het beheren van toewijzingen in azure-blauw drukken of het delen van afbeeldings galerieën. [Meer informatie](rbac-and-directory-admin-roles.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -248,7 +248,7 @@ Hiermee wordt volledige toegang verleend voor het beheren van alle resources, ma
   "assignableScopes": [
     "/"
   ],
-  "description": "Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC.",
+  "description": "Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC, manage assignments in Azure Blueprints, or share image galleries.",
   "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
   "name": "b24988ac-6180-42a0-ab88-20f7382dd24c",
   "permissions": [
@@ -4265,6 +4265,7 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/servers/azureADOnlyAuthentications/* |  |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/managedInstances/Read | De lijst met beheerde exemplaren retour neren of de eigenschappen van het opgegeven beheerde exemplaar ophalen. |
 > | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/managedInstances/azureADOnlyAuthentications/* |  |
+> | [Micro soft. Security](resource-provider-operations.md#microsoftsecurity)/sqlVulnerabilityAssessments/* |  |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -4326,7 +4327,8 @@ Hiermee kunt u het beveiligings beleid van SQL-servers en-data bases beheren, ma
         "Microsoft.Support/*",
         "Microsoft.Sql/servers/azureADOnlyAuthentications/*",
         "Microsoft.Sql/managedInstances/read",
-        "Microsoft.Sql/managedInstances/azureADOnlyAuthentications/*"
+        "Microsoft.Sql/managedInstances/azureADOnlyAuthentications/*",
+        "Microsoft.Security/sqlVulnerabilityAssessments/*"
       ],
       "notActions": [],
       "dataActions": [],
@@ -6191,7 +6193,7 @@ Hiermee kunnen ontwikkel aars werk stromen, integratie accounts en API-verbindin
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
 > | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
 > | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/integrationServiceEnvironments/Read | Hiermee wordt de integratie service omgeving gelezen. |
-> | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/integrationServiceEnvironments/join/Action | Voegt de Integratieserviceomgeving toe. |
+> | [Micro soft. Logic](resource-provider-operations.md#microsoftlogic)/integrationServiceEnvironments/*/join/Action |  |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -6213,7 +6215,7 @@ Hiermee kunnen ontwikkel aars werk stromen, integratie accounts en API-verbindin
         "Microsoft.Authorization/*/read",
         "Microsoft.Support/*",
         "Microsoft.Logic/integrationServiceEnvironments/read",
-        "Microsoft.Logic/integrationServiceEnvironments/join/action"
+        "Microsoft.Logic/integrationServiceEnvironments/*/join/action"
       ],
       "notActions": [],
       "dataActions": [],
@@ -6688,6 +6690,7 @@ Azure Sentinel responder [meer informatie](../sentinel/roles.md)
 > | --- | --- |
 > | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/*/Read |  |
 > | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/dataConnectorsCheckRequirements/Action | Gebruikers autorisatie en licentie controleren |
+> | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/automationRules/* |  |
 > | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/cases/* |  |
 > | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/incidents/* |  |
 > | [Micro soft. SecurityInsights](resource-provider-operations.md#microsoftsecurityinsights)/threatIntelligence/indicators/appendTags/Action | Tags toevoegen aan de bedreigings informatie-indicator |
@@ -6732,6 +6735,7 @@ Azure Sentinel responder [meer informatie](../sentinel/roles.md)
       "actions": [
         "Microsoft.SecurityInsights/*/read",
         "Microsoft.SecurityInsights/dataConnectorsCheckRequirements/action",
+        "Microsoft.SecurityInsights/automationRules/*",
         "Microsoft.SecurityInsights/cases/*",
         "Microsoft.SecurityInsights/incidents/*",
         "Microsoft.SecurityInsights/threatIntelligence/indicators/appendTags/action",
@@ -7004,7 +7008,7 @@ Acties uitvoeren op de sleutels van een sleutel kluis, met uitzonde ring van mac
 }
 ```
 
-### <a name="key-vault-crypto-service-encryption-preview"></a>Versleuteling van crypto-service Key Vault (preview-versie)
+### <a name="key-vault-crypto-service-encryption-user-preview"></a>Versleuteling van gebruiker van crypto-service Key Vault (preview-versie)
 
 Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '.
 
@@ -7041,7 +7045,7 @@ Lees de meta gegevens van sleutels en voer terugloop/uitlopende bewerkingen uit.
       "notDataActions": []
     }
   ],
-  "roleName": "Key Vault Crypto Service Encryption (preview)",
+  "roleName": "Key Vault Crypto Service Encryption User (preview)",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -7630,7 +7634,7 @@ Met kunt u nieuwe Labs maken onder uw Azure Lab-accounts. [Meer informatie](../l
 }
 ```
 
-## <a name="monitor"></a>Monitor
+## <a name="monitor"></a>Controleren
 
 
 ### <a name="application-insights-component-contributor"></a>Inzender voor Application Insights onderdelen
@@ -8455,6 +8459,7 @@ Kan kosten bekijken en kosten configuratie beheren (bijvoorbeeld budgetten, expo
 > | [Micro soft. Advisor](resource-provider-operations.md#microsoftadvisor)/configurations/Read | Configuraties ophalen |
 > | [Micro soft. Advisor](resource-provider-operations.md#microsoftadvisor)/Recommendations/Read | Aanbevelingen voor lezen |
 > | [Micro soft. Management](resource-provider-operations.md#microsoftmanagement)/managementGroups/Read | Beheer groepen voor de geverifieerde gebruiker weer geven. |
+> | [Micro soft. Bill](resource-provider-operations.md#microsoftbilling)/billingProperty/Read |  |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -8481,7 +8486,8 @@ Kan kosten bekijken en kosten configuratie beheren (bijvoorbeeld budgetten, expo
         "Microsoft.Support/*",
         "Microsoft.Advisor/configurations/read",
         "Microsoft.Advisor/recommendations/read",
-        "Microsoft.Management/managementGroups/read"
+        "Microsoft.Management/managementGroups/read",
+        "Microsoft.Billing/billingProperty/read"
       ],
       "notActions": [],
       "dataActions": [],
@@ -8510,6 +8516,7 @@ Kan kosten gegevens en-configuratie weer geven (bijvoorbeeld budgetten, exporten
 > | [Micro soft. Advisor](resource-provider-operations.md#microsoftadvisor)/configurations/Read | Configuraties ophalen |
 > | [Micro soft. Advisor](resource-provider-operations.md#microsoftadvisor)/Recommendations/Read | Aanbevelingen voor lezen |
 > | [Micro soft. Management](resource-provider-operations.md#microsoftmanagement)/managementGroups/Read | Beheer groepen voor de geverifieerde gebruiker weer geven. |
+> | [Micro soft. Bill](resource-provider-operations.md#microsoftbilling)/billingProperty/Read |  |
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
@@ -8536,7 +8543,8 @@ Kan kosten gegevens en-configuratie weer geven (bijvoorbeeld budgetten, exporten
         "Microsoft.Support/*",
         "Microsoft.Advisor/configurations/read",
         "Microsoft.Advisor/recommendations/read",
-        "Microsoft.Management/managementGroups/read"
+        "Microsoft.Management/managementGroups/read",
+        "Microsoft.Billing/billingProperty/read"
       ],
       "notActions": [],
       "dataActions": [],
@@ -8603,8 +8611,8 @@ Roldefinitie voor het autoriseren van elke gebruiker/service voor het maken van 
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/operationresults/Read | De resultaten van de abonnements bewerking ophalen. |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
-> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/write | Schrijft connectedClusters |
-> | [Micro soft. Kubernetes](resource-provider-operations.md#microsoftkubernetes)/connectedClusters/Read | ConnectedClusters lezen |
+> | Micro soft. Kubernetes/connectedClusters/schrijven |  |
+> | Micro soft. Kubernetes/connectedClusters/lezen |  |
 > | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
 > | **NotActions** |  |
 > | *geen* |  |

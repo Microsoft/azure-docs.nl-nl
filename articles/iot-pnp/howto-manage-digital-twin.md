@@ -7,12 +7,12 @@ ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 51bd073b6f84f3378b91091e04f2f278ea2f49b6
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ddb8027c145f6a38bfcd953be66dae2943a20c3a
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495266"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654605"
 ---
 # <a name="manage-iot-plug-and-play-digital-twins"></a>IoT Plug en Play Digital apparaatdubbels beheren
 
@@ -26,7 +26,7 @@ Een IoT Plug en Play-apparaat implementeert een model dat wordt beschreven door 
 
 Het IoT-Plug en Play apparaat dat als voor beeld wordt gebruikt in dit artikel, implementeert het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json) met de [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-onderdelen.
 
-Het volgende code fragment toont het antwoord op een **Get Digital-dubbele** aanvraag die is opgemaakt als een JSON-object. Zie voor meer informatie over de Digital-dubbele indeling [begrijpen IoT Plug en Play Digital apparaatdubbels](./concepts-digital-twin.md#digital-twin-json-format):
+Het volgende code fragment toont het antwoord op een **Get Digital-dubbele** aanvraag die is opgemaakt als een JSON-object. Zie voor meer informatie over de Digital-dubbele indeling [begrijpen IoT Plug en Play Digital apparaatdubbels](./concepts-digital-twin.md#digital-twin-example):
 
 ```json
 {
@@ -130,7 +130,7 @@ In het volgende voor beeld van de JSON-patch ziet u hoe u een onderdeel kunt toe
 
 Met een toevoeg-of vervang bewerking stelt u de gewenste waarde van een eigenschap in. Het apparaat kan de status synchroniseren en een update van de waarde met een `ack` code, versie en beschrijving rapporteren.
 
-Als u een eigenschap verwijdert, wordt de gewenste waarde van de eigenschap gewist als deze is ingesteld. Het apparaat kan de rapportage van deze eigenschap vervolgens stoppen en het wordt verwijderd uit het onderdeel. Als deze eigenschap de laatste is in het onderdeel, wordt het onderdeel ook verwijderd.
+Als u een eigenschap verwijdert, wordt de gewenste waarde van de eigenschap gewist als deze is ingesteld. Het apparaat kan vervolgens deze eigenschap niet meer melden en wordt verwijderd uit het onderdeel. Als deze eigenschap de laatste is in het onderdeel, wordt het onderdeel ook verwijderd.
 
 In het volgende voor beeld van de JSON-patch ziet u hoe u een eigenschap binnen een onderdeel toevoegt, vervangt of verwijdert:
 

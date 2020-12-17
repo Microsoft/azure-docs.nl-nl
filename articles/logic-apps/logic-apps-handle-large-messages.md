@@ -7,12 +7,12 @@ author: DavidCBerry13
 ms.author: daberry
 ms.topic: article
 ms.date: 12/03/2019
-ms.openlocfilehash: 54828dded5196c86946d99a9cd8cec7a42533661
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b23c92ec70b80a6cd08fc42a05ffec1e5b43b31
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83117560"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656764"
 ---
 # <a name="handle-large-messages-with-chunking-in-azure-logic-apps"></a>Grote berichten verwerken met Chunking in Azure Logic Apps
 
@@ -41,7 +41,7 @@ Services die communiceren met Logic Apps kunnen hun eigen bericht grootte limiet
 Voor connectors die ondersteuning bieden voor Chunking, is het onderliggende Chunking-protocol onzichtbaar voor eind gebruikers. Niet alle connectors ondersteunen echter Chunking, dus genereren deze connectors fouten wanneer binnenkomende berichten de limieten voor de grootte van de connector overschrijden.
 
 > [!NOTE]
-> Voor acties die gebruikmaken van Chunking, kunt u de hoofd tekst van de trigger niet door geven of expressies gebruiken zoals `@triggerBody()?['Content']` in die acties. In plaats daarvan kunt u voor inhoud van tekst of JSON-bestand proberen de [actie **opstellen** ](../logic-apps/logic-apps-perform-data-operations.md#compose-action) te gebruiken of [een variabele te maken](../logic-apps/logic-apps-create-variables-store-values.md) om die inhoud af te handelen. Als de hoofd tekst van de trigger andere inhouds typen bevat, zoals media bestanden, moet u andere stappen uitvoeren om die inhoud af te handelen.
+> Voor acties die gebruikmaken van Chunking, kunt u de hoofd tekst van de trigger niet door geven of expressies gebruiken zoals `@triggerBody()?['Content']` in die acties. In plaats daarvan kunt u voor inhoud van tekst of JSON-bestand proberen de [actie **opstellen**](../logic-apps/logic-apps-perform-data-operations.md#compose-action) te gebruiken of [een variabele te maken](../logic-apps/logic-apps-create-variables-store-values.md) om die inhoud af te handelen. Als de hoofd tekst van de trigger andere inhouds typen bevat, zoals media bestanden, moet u andere stappen uitvoeren om die inhoud af te handelen.
 
 <a name="set-up-chunking"></a>
 

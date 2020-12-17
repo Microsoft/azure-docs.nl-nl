@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: 334cbef7460306ef2954881a1cab918573e1e371
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb2a8a7bb14758ab21eb2183a119f456b53c8562
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400635"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654946"
 ---
 # <a name="set-up-vmware-disaster-recovery-in-a-multi-tenancy-environment-with-the-cloud-solution-provider-csp-program"></a>VMware-nood herstel instellen in een omgeving met meerdere pacht met het provider programma voor cloud oplossingen
 
@@ -33,7 +33,7 @@ Als u VMware-replicatie wilt instellen, moet u het volgende doen:
 ## <a name="create-a-tenant-account"></a>Een Tenant account maken
 
 1. Meld u via het [micro soft Partner Center](https://partnercenter.microsoft.com/)aan bij uw CSP-account.
-2. Selecteer **klanten**in het menu **dash board** .
+2. Selecteer **klanten** in het menu **dash board** .
 3. Op de pagina die wordt geopend, klikt u op de knop **klant toevoegen** .
 4. Vul op de pagina **nieuwe klant** de details van de account gegevens voor de Tenant in.
 
@@ -65,24 +65,24 @@ U kunt nu alle Site Recovery bewerkingen voor de Tenant uitvoeren en beheren in 
 ## <a name="assign-tenant-access-to-the-subscription"></a>Tenant toegang toewijzen aan het abonnement
 
 1. Zorg ervoor dat de infra structuur voor herstel na nood gevallen is ingesteld. Partners hebben toegang tot Tenant abonnementen via de CSP-Portal, ongeacht of herstel na nood gevallen of self-service wordt beheerd. Stel de kluis in en registreer de infra structuur voor de Tenant abonnementen.
-2. Geef de Tenant op met het [account dat u hebt gemaakt](#create-a-tenant-account).
-3. U kunt als volgt een nieuwe gebruiker aan het Tenant abonnement toevoegen via de CSP-portal:
+1. Geef de Tenant op met het [account dat u hebt gemaakt](#create-a-tenant-account).
+1. U kunt als volgt een nieuwe gebruiker aan het Tenant abonnement toevoegen via de CSP-portal:
 
-    a) gaat u naar de pagina CSP-abonnement van de Tenant en selecteert u de optie **gebruikers en licenties** .
+    1. Ga naar de pagina CSP-abonnement van de Tenant en selecteer vervolgens de optie **gebruikers en licenties** .
 
-      ![De pagina CSP-abonnement van de Tenant](./media/vmware-azure-multi-tenant-csp-disaster-recovery/users-and-licences.png)
+       ![De pagina CSP-abonnement van de Tenant](./media/vmware-azure-multi-tenant-csp-disaster-recovery/users-and-licences.png)
 
-    b) Maak nu een nieuwe gebruiker door de relevante gegevens in te voeren en machtigingen te selecteren, of door de lijst met gebruikers in een CSV-bestand te uploaden.
-    
-    c) nadat u een nieuwe gebruiker hebt gemaakt, gaat u terug naar de Azure Portal. Selecteer op de pagina **abonnement** het relevante abonnement.
+    1. Maak nu een nieuwe gebruiker door de relevante gegevens in te voeren en machtigingen te selecteren, of door de lijst met gebruikers in een CSV-bestand te uploaden.
 
-    d) Selecteer **toegangs beheer (IAM)** en klik vervolgens op **roltoewijzingen**.
+    1. Nadat u een nieuwe gebruiker hebt gemaakt, gaat u terug naar de Azure Portal. Selecteer op de pagina **abonnement** het relevante abonnement.
 
-    e) Klik op **roltoewijzing toevoegen** om een gebruiker toe te voegen met het relevante toegangs niveau. De gebruikers die zijn gemaakt via de CSP-Portal, worden weer gegeven op het tabblad roltoewijzingen.
+    1. Selecteer **toegangs beheer (IAM)** en klik vervolgens op **roltoewijzingen**.
 
-      ![Een gebruiker toevoegen](./media/vmware-azure-multi-tenant-csp-disaster-recovery/add-user-subscription.png)
+    1. Klik op **roltoewijzing toevoegen** om een gebruiker toe te voegen met het relevante toegangs niveau. De gebruikers die zijn gemaakt via de CSP-Portal, worden weer gegeven op het tabblad roltoewijzingen.
 
-- Voor de meeste beheer bewerkingen is de rol *Inzender* voldoende. Gebruikers met dit toegangs niveau kunnen alles doen wat een abonnement heeft, met uitzonde ring van toegangs niveaus wijzigen (waarvoor toegang op *eigendoms*niveau is vereist).
+        ![Een gebruiker toevoegen](./media/vmware-azure-multi-tenant-csp-disaster-recovery/add-user-subscription.png)
+
+- Voor de meeste beheer bewerkingen is de rol *Inzender* voldoende. Gebruikers met dit toegangs niveau kunnen alles doen wat een abonnement heeft, met uitzonde ring van toegangs niveaus wijzigen (waarvoor toegang op *eigendoms* niveau is vereist).
 - Site Recovery heeft ook drie [vooraf gedefinieerde gebruikers rollen](site-recovery-role-based-linked-access-control.md), die kunnen worden gebruikt om de toegangs niveaus verder te beperken als dat nodig is.
 
 ## <a name="multi-tenant-environments"></a>Omgevingen met meerdere tenants

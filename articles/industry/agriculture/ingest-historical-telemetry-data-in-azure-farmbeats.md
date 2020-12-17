@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.custom: has-adal-ref
-ms.openlocfilehash: af1bee00261cd96f61a39389f31a52109f4e64b5
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 603f14d2076b5b74dde0b92a732f8fe816f6dd10
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675812"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656781"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Historische telemetriegegevens opnemen
 
@@ -42,17 +42,17 @@ Volg deze stappen:
 
 2. **Als u FarmBeats-versie 1.2.7 of hoger hebt, slaat u stap a, b en c over en gaat u naar stap 3.** U kunt de FarmBeats-versie controleren door het pictogram **instellingen** te selecteren in de rechter bovenhoek van de FarmBeats-gebruikers interface.
 
-      a.  Ga naar **Azure Active Directory**  >  **app-registraties** voor Azure Active Directory
+      a.  Ga naar   >  **app-registraties** voor Azure Active Directory
 
       b. Selecteer de **app-registratie** die is gemaakt als onderdeel van uw FarmBeats-implementatie. Deze heeft dezelfde naam als uw FarmBeats-datahub.
 
-      c. Selecteer **een API beschikbaar** maken > Selecteer **een client toepassing toevoegen** en voer **04B07795-8ddb-461A-bbee-02f9e1bf7b46** in en controleer de **Scope voor autoriseren** . Hiermee krijgt u toegang tot de Azure CLI (Cloud Shell) om de onderstaande stappen uit te voeren:
+      c. Selecteer **een API beschikbaar** maken > Selecteer **een client toepassing toevoegen** en voer **04B07795-8ddb-461A-bbee-02f9e1bf7b46** in en controleer de **Scope voor autoriseren**. Hiermee krijgt u toegang tot de Azure CLI (Cloud Shell) om de onderstaande stappen uit te voeren:
 
 3. Open Cloud Shell. Deze optie is beschikbaar op de werk balk in de rechter bovenhoek van de Azure Portal.
 
     ![Azure Portal werk balk](./media/get-drone-imagery-from-drone-partner/navigation-bar-1.png)
 
-4. Zorg ervoor dat de omgeving is ingesteld op **Power shell** . Standaard is deze ingesteld op bash.
+4. Zorg ervoor dat de omgeving is ingesteld op **Power shell**. Standaard is deze ingesteld op bash.
 
     ![Power shell-werkbalk instelling](./media/get-sensor-data-from-sensor-partner/power-shell-new-1.png)
 
@@ -84,7 +84,7 @@ Volg deze stappen:
 
     ```
 
-9. Volg de instructies op het scherm voor het vastleggen van de waarden voor het **API-eind punt** , **Tenant-ID** , **client-id** , **client geheim** en **EventHub-verbindings reeks** .
+9. Volg de instructies op het scherm voor het vastleggen van de waarden voor het **API-eind punt**, **Tenant-ID**, **client-id**, **client geheim** en **EventHub-verbindings reeks**.
 
 
 ## <a name="create-device-or-sensor-metadata"></a>Meta gegevens van het apparaat of de sensor maken
@@ -96,51 +96,50 @@ Volg deze stappen:
  > [!NOTE]
  > Als partner hebt u alleen toegang om de meta gegevens te lezen, te maken en bij te werken. **de optie voor verwijderen is beperkt tot de partner.**
 
-- /**DeviceModel** : DeviceModel komt overeen met de meta gegevens van het apparaat, zoals de fabrikant en het type apparaat, ofwel een gateway of een knoop punt.
-- /**Apparaat** : het apparaat komt overeen met een fysiek apparaat dat aanwezig is op de farm.
-- /**SensorModel** : SensorModel komt overeen met de meta gegevens van de sensor, zoals de fabrikant, het type sensor dat analoog of digitaal is en de sensor meting, zoals omgevings temperatuur en druk.
-- /**Sensor** : sensor komt overeen met een fysieke sensor waarmee waarden worden vastgelegd. Een sensor is doorgaans verbonden met een apparaat met een apparaat-ID.
+- /**DeviceModel**: DeviceModel komt overeen met de meta gegevens van het apparaat, zoals de fabrikant en het type apparaat, ofwel een gateway of een knoop punt.
+- /**Apparaat**: het apparaat komt overeen met een fysiek apparaat dat aanwezig is op de farm.
+- /**SensorModel**: SensorModel komt overeen met de meta gegevens van de sensor, zoals de fabrikant, het type sensor dat analoog of digitaal is en de sensor meting, zoals omgevings temperatuur en druk.
+- /**Sensor**: sensor komt overeen met een fysieke sensor waarmee waarden worden vastgelegd. Een sensor is doorgaans verbonden met een apparaat met een apparaat-ID.
 
-
-|        DeviceModel   |  Suggesties   |
-| ------- | -------             |
-|     Type (knoop punt, gateway)        |          Type van het apparaat of de gateway      |
-|          Fabrikant            |         De naam van de fabrikant    |
-|  Code                    |  Product code of model naam of-nummer van het apparaat. Bijvoorbeeld EnviroMonitor # 6800.  |
-|            Poorten          |     Poort naam en-type, digitaal of analoog.
-|     Naam                 |  Naam om de resource te identificeren. Bijvoorbeeld de naam van het model of de product naam.
-      Beschrijving     | Geef een zinvolle beschrijving van het model op.
-|    Eigenschappen          |    Aanvullende eigenschappen van de fabrikant.   |
-|    **Apparaat**             |                      |
-|   DeviceModelId     |     ID van het gekoppelde model.  |
-|  HardwareId          | De unieke ID voor het apparaat, zoals het MAC-adres.
-|  ReportingInterval        |   Rapportage-interval in seconden.
-|  Locatie            |  Apparaat Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters).
-|ParentDeviceId       |    De ID van het bovenliggende apparaat waarmee dit apparaat is verbonden. Bijvoorbeeld een knoop punt dat is verbonden met een gateway. Een knoop punt heeft parentDeviceId als de gateway.  |
-|    Naam            | Een naam om de resource te identificeren. Apparaat-partners moeten een naam verzenden die consistent is met de apparaatnaam aan de partner zijde. Als de naam van de partner apparaat door de gebruiker is gedefinieerd, moet dezelfde door de gebruiker gedefinieerde naam worden door gegeven aan FarmBeats.|
-|     Beschrijving       |      Geef een zinvolle beschrijving op. |
-|     Eigenschappen    |  Aanvullende eigenschappen van de fabrikant.
-|     **SensorModel**        |          |
-|       Type (analoog, digitaal)          |      Het type sensor, of het analoog of digitaal is.       |
-|          Fabrikant            |       De fabrikant van de sensor.     |
-|     Code| Product code of model naam of-nummer. Bijvoorbeeld RS-CO2-N01. |
-|       > naam SensorMeasures       | De naam van de sensor meting. Alleen kleine letters worden ondersteund. Geef voor metingen uit verschillende diepten de diepte op. Bijvoorbeeld soil_moisture_15cm. Deze naam moet consistent zijn met de telemetriegegevens.  |
-|          SensorMeasures > data type       |Het gegevens type telemetrie. Op dit moment wordt dubbele wordt ondersteund.|
-|    SensorMeasures > type    |Meet type van de telemetrie van de sensor. De door het systeem gedefinieerde typen zijn AmbientTemperature, CO2, depth, ElectricalConductivity, LeafWetness, length, LiquidLevel, nitraat, O2, PH, fosfaat, PointInTime, kalium, druk, RainGauge, RelativeHumidity, zout, SoilMoisture, SoilTemperature, SolarRadiation, State, TimeDuration, UVRadiation, UVIndex, volume, WindDirection, WindRun, WindSpeed, Evapotranspiration, PAR. Raadpleeg de/ExtendedType-API om meer toe te voegen.|
-|        SensorMeasures >-eenheid              | De gegevens eenheid van de sensor-telemetrie. De door het systeem gedefinieerde eenheden zijn geen eenheid, Celsius, Fahrenheit, Kelvin, Rankine, Pascal, kwik, PSI, MilliMeter, CentiMeter, meter, inch, meter, mijl, kilo meter, MilesPerHour, MilesPerSecond, KMPerHour, KMPerSecond, MetersPerHour, MetersPerSecond, degree, WattsPerSquareMeter, KiloWattsPerSquareMeter, MilliWattsPerSquareCentiMeter, MilliJoulesPerSquareCentiMeter, VolumetricWaterContent, het PartsPerMillion, MicroMol, MicroMolesPerLiter, SiemensPerSquareMeterPerMole, MilliSiemensPerCentiMeter, Centibar,,,, DeciSiemensPerMeter en KiloPascal. Als u meer wilt toevoegen, raadpleegt u de VolumetricIonContent-API.|
-|    SensorMeasures > AggregationType    |  De waarden kunnen none, Average, maximum, minimum of StandardDeviation zijn.  |
-|          Naam            | Naam voor het identificeren van een resource. Bijvoorbeeld de naam van het model of de product naam.  |
-|    Beschrijving        | Geef een zinvolle beschrijving van het model op.|
-|   Eigenschappen       |  Aanvullende eigenschappen van de fabrikant.|
-|    **Sensoren**      |          |
-| HardwareId          |   De unieke ID voor de sensor die door de fabrikant is ingesteld.|
-|  SensorModelId     |    ID van het gekoppelde sensor model.|
-| Locatie          |  Sensor Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters).|
-|   Naam van poort >        |  Naam en type van de poort waarop de sensor is aangesloten op het apparaat. Dit moet overeenkomen met de naam die is gedefinieerd in het model apparaat.|
-|    DeviceID  |    ID van het apparaat waarmee de sensor is verbonden. |
-| Naam            |   Naam voor het identificeren van de resource. Bijvoorbeeld de naam van de sensor of de product naam en het model nummer of de product code.|
-|    Beschrijving      | Geef een zinvolle beschrijving op.|
-|    Eigenschappen        |Aanvullende eigenschappen van de fabrikant.|
+| DeviceModel | Suggesties |
+|--|--|
+| Type (knoop punt, gateway) | Type van het apparaat of de gateway |
+| Fabrikant | De naam van de fabrikant |
+| Code | Product code of model naam of-nummer van het apparaat. Bijvoorbeeld EnviroMonitor # 6800. |
+| Poorten | Poort naam en-type, digitaal of analoog. |
+| Naam | Naam om de resource te identificeren. Bijvoorbeeld de naam van het model of de product naam. |
+| Beschrijving | Geef een zinvolle beschrijving van het model op. |
+| Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
+| **Apparaat** |  |
+| DeviceModelId | ID van het gekoppelde model. |
+| HardwareId | De unieke ID voor het apparaat, zoals het MAC-adres. |
+| ReportingInterval | Rapportage-interval in seconden. |
+| Locatie | Apparaat Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters). |
+| ParentDeviceId | De ID van het bovenliggende apparaat waarmee dit apparaat is verbonden. Bijvoorbeeld een knoop punt dat is verbonden met een gateway. Een knoop punt heeft parentDeviceId als de gateway. |
+| Naam | Een naam om de resource te identificeren. Apparaat-partners moeten een naam verzenden die consistent is met de apparaatnaam aan de partner zijde. Als de naam van de partner apparaat door de gebruiker is gedefinieerd, moet dezelfde door de gebruiker gedefinieerde naam worden door gegeven aan FarmBeats. |
+| Beschrijving | Geef een zinvolle beschrijving op. |
+| Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
+| **SensorModel** |  |
+| Type (analoog, digitaal) | Het type sensor, of het analoog of digitaal is. |
+| Fabrikant | De fabrikant van de sensor. |
+| Code | Product code of model naam of-nummer. Bijvoorbeeld RS-CO2-N01. |
+| > naam SensorMeasures | De naam van de sensor meting. Alleen kleine letters worden ondersteund. Geef voor metingen uit verschillende diepten de diepte op. Bijvoorbeeld soil_moisture_15cm. Deze naam moet consistent zijn met de telemetriegegevens. |
+| SensorMeasures > data type | Het gegevens type telemetrie. Op dit moment wordt dubbele wordt ondersteund. |
+| SensorMeasures > type | Meet type van de telemetrie van de sensor. De door het systeem gedefinieerde typen zijn AmbientTemperature, CO2, depth, ElectricalConductivity, LeafWetness, length, LiquidLevel, nitraat, O2, PH, fosfaat, PointInTime, kalium, druk, RainGauge, RelativeHumidity, zout, SoilMoisture, SoilTemperature, SolarRadiation, State, TimeDuration, UVRadiation, UVIndex, volume, WindDirection, WindRun, WindSpeed, Evapotranspiration, PAR. Raadpleeg de/ExtendedType-API om meer toe te voegen. |
+| SensorMeasures >-eenheid | De gegevens eenheid van de sensor-telemetrie. De door het systeem gedefinieerde eenheden zijn geen eenheid, Celsius, Fahrenheit, Kelvin, Rankine, Pascal, kwik, PSI, MilliMeter, CentiMeter, meter, inch, meter, mijl, kilo meter, MilesPerHour, MilesPerSecond, KMPerHour, KMPerSecond, MetersPerHour, MetersPerSecond, degree, WattsPerSquareMeter, KiloWattsPerSquareMeter, MilliWattsPerSquareCentiMeter, MilliJoulesPerSquareCentiMeter, VolumetricWaterContent, het PartsPerMillion, MicroMol, MicroMolesPerLiter, SiemensPerSquareMeterPerMole, MilliSiemensPerCentiMeter, Centibar,,,, DeciSiemensPerMeter en KiloPascal. Als u meer wilt toevoegen, raadpleegt u de VolumetricIonContent-API. |
+| SensorMeasures > AggregationType | De waarden kunnen none, Average, maximum, minimum of StandardDeviation zijn. |
+| Naam | Naam voor het identificeren van een resource. Bijvoorbeeld de naam van het model of de product naam. |
+| Beschrijving | Geef een zinvolle beschrijving van het model op. |
+| Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
+| **Sensoren** |  |
+| HardwareId | De unieke ID voor de sensor die door de fabrikant is ingesteld. |
+| SensorModelId | ID van het gekoppelde sensor model. |
+| Locatie | Sensor Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters). |
+| Naam van poort > | Naam en type van de poort waarop de sensor is aangesloten op het apparaat. Dit moet overeenkomen met de naam die is gedefinieerd in het model apparaat. |
+| DeviceID | ID van het apparaat waarmee de sensor is verbonden. |
+| Naam | Naam voor het identificeren van de resource. Bijvoorbeeld de naam van de sensor of de product naam en het model nummer of de product code. |
+| Beschrijving | Geef een zinvolle beschrijving op. |
+| Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
 
 Zie [Swagger](https://aka.ms/FarmBeatsDatahubSwagger)voor meer informatie over objecten.
 
@@ -192,9 +191,9 @@ access_token = token_response.get('access_token')
 
 Hier volgen de meest voorkomende aanvraag headers die moeten worden opgegeven wanneer u een API-aanroep maakt naar FarmBeats Datahub:
 
-- **Content-type** : Application/JSON
-- **Autorisatie** : bearer <Access-Token>
-- **Accepteren** : toepassing/JSON
+- **Content-type**: Application/JSON
+- **Autorisatie**: bearer <Access-Token>
+- **Accepteren**: toepassing/JSON
 
 ### <a name="input-payload-to-create-metadata"></a>Invoer lading voor het maken van meta gegevens
 
@@ -431,9 +430,9 @@ Hier volgt een voor beeld van een telemetrie-bericht:
 
 ### <a name="cant-view-telemetry-data-after-ingesting-historicalstreaming-data-from-your-sensors"></a>Er kunnen geen telemetriegegevens worden weer gegeven na het opnemen van historische/streaming-gegevens van uw Sens oren
 
-**Symptoom** : er zijn apparaten of Sens oren geïmplementeerd en u hebt de apparaten/Sens oren op FarmBeats en opgenomen telemetrie naar de EventHub gemaakt, maar u kunt geen telemetriegegevens ophalen of weer geven op FarmBeats.
+**Symptoom**: er zijn apparaten of Sens oren geïmplementeerd en u hebt de apparaten/Sens oren op FarmBeats en opgenomen telemetrie naar de EventHub gemaakt, maar u kunt geen telemetriegegevens ophalen of weer geven op FarmBeats.
 
-**Corrigerende actie** :
+**Corrigerende actie**:
 
 1. Zorg ervoor dat u de juiste partner registratie hebt uitgevoerd. u kunt dit controleren door naar de datahub Swagger te gaan, naar/partner API te gaan en te controleren of de partner is geregistreerd. Als dat niet het geval is, volgt u de [stappen hier](get-sensor-data-from-sensor-partner.md#enable-device-integration-with-farmbeats) om een partner toe te voegen.
 

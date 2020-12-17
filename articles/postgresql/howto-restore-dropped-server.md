@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 81764294cc29ad74d5a77f2055f10498d69b59e5
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 591f01004cfba247112f702625ab05ddc0aaede3
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93343114"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652922"
 ---
 # <a name="restore-a-dropped-azure-database-for-postgresql-server"></a>Een verwijderde Azure Database for PostgreSQL server herstellen
 
@@ -39,23 +39,26 @@ Als u een verwijderde Azure Database for PostgreSQL server wilt herstellen, moet
 
  4. Ga naar de [pagina postgresql maken Server rest API](/rest/api/PostgreSQL/servers/create) en selecteer het tabblad **try it is** gemarkeerd als groen. Meld u aan met uw Azure-account.
 
- 5. Geef de **resourceGroupName** , **servername** (verwijderde server naam), **subscriptionId** -eigenschappen op op basis van de waarde van het kenmerk resourceId die is vastgelegd in de voor gaande stap 3. De eigenschap API-Version is vooraf ingevuld en kan worden bijgewerkt, zoals wordt weer gegeven in de volgende afbeelding.
+ 5. Geef de **resourceGroupName**, **servername** (verwijderde server naam), **subscriptionId** -eigenschappen op op basis van de waarde van het kenmerk resourceId die is vastgelegd in de voor gaande stap 3. De eigenschap API-Version is vooraf ingevuld en kan worden bijgewerkt, zoals wordt weer gegeven in de volgende afbeelding.
 
     ![Een server maken met REST API](./media/howto-restore-dropped-server/create-server-from-rest-api-azure.png)
   
  6. Schuif hieronder op de sectie aanvraag hoofdtekst en plak de volgende Vervang de ' verwijderde server locatie ', ' submissionTimestamp ' en ' resourceId '. Geef voor ' restorePointInTime ' de waarde ' submissionTimestamp ' min **15 minuten** op om ervoor te zorgen dat de opdracht niet fout wordt uitgevoerd.
+    
     ```json
-        {
-          "location": "Dropped Server Location",  
-          "properties": 
-              {
-                  "restorePointInTime": "submissionTimestamp - 15 minutes",
-                  "createMode": "PointInTimeRestore",
-                  "sourceServerId": "resourceId"
-            }
-        }
+    {
+      "location": "Dropped Server Location",  
+      "properties": 
+      {
+        "restorePointInTime": "submissionTimestamp - 15 minutes",
+        "createMode": "PointInTimeRestore",
+        "sourceServerId": "resourceId"
+      }
+    }
     ```
+
     Als bijvoorbeeld de huidige tijd 2020-11-02T23:59:59.0000000 Z is, raden we u aan mini maal 15 minuten voorafgaand aan het herstel punt in de tijd 2020-11-02T23:44:59.0000000 Z.
+
     > [!Important]
     > Er is een tijds limiet van vijf dagen na het verwijderen van de server. Na vijf dagen wordt er een fout verwacht omdat het back-upbestand niet kan worden gevonden.
     

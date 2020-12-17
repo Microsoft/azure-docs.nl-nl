@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 93759cf239a2e7ef79c719c83299740ea3722130
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: aaaeb23ef24f0d8a0fa4b38139fed57cda6fa63d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614554"
+ms.locfileid: "97657036"
 ---
 # <a name="it-service-management-connector-overview"></a>Overzicht van IT Service Management-connector
 
@@ -43,11 +43,13 @@ Zie de [privacyverklaring van micro soft](https://go.microsoft.com/fwLink/?LinkI
 
 U kunt ITSMC gaan gebruiken door de volgende stappen uit te voeren:
 
-1. [Verbind ITSM-producten/-services met IT Service Management-connector.](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-connections)
-2. [Voeg ITSMC toe.](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#add-it-service-management-connector)
-3. [Maak een ITSM-verbinding.](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-an-itsm-connection)
-4. [Gebruik de verbinding.](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#use-itsmc)
+1. [Verbind ITSM-producten/-services met IT Service Management-connector.](./itsmc-connections.md)
+1. [Voeg ITSMC toe.](/.itsmc-definition.md#add-it-service-management-connector)
+1. [Maak een ITSM-verbinding.](./itsmc-definition.md#create-an-itsm-connection)
+1. [Gebruik de verbinding.](./itsmc-definition.md#use-itsmc)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[ITSM-producten/-services toevoegen aan IT Service Management-connector](./itsmc-connections.md)
+[ITSM-producten/-services toevoegen aan IT Service Management-connector](./itsmc-connections.md) 
+ [ITSM-connector toevoegen](./itsmc-definition.md) 
+ [Problemen met ITSM-connector oplossen](./itsmc-resync-servicenow.md)

@@ -11,12 +11,12 @@ ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a89a456b5d9ee36909d5d742a7880d72e5ed86fd
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 4956d11ea2a4b011a792827357c3f4627058ead9
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355853"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97651987"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Vereisten voor Azure AD Connect-cloudinrichting
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) verbinden met Cloud inrichting als uw identiteits oplossing.
@@ -51,33 +51,33 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 
 ### <a name="in-your-on-premises-environment"></a>In uw on-premises omgeving
 
- 1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2012 R2 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
+1. Identificeer een hostserver die lid is van een domein en waarop Windows Server 2012 R2 of hoger wordt uitgevoerd, met een minimum van 4 GB RAM en .NET 4.7.1 + runtime.
 
- >[!NOTE]
- > Houd er rekening mee dat het definiëren van een bereik filter een geheugen kosten op de hostserver kost.  Als er geen bereik filter wordt gebruikt, is er geen extra geheugen kosten. De minimale 4 GB biedt ondersteuning voor synchronisatie voor Maxi maal 12 organisatie-eenheden die zijn gedefinieerd in het filter bereik. Als u extra Ou's wilt synchroniseren, moet u de minimale hoeveelheid geheugen verhogen. Gebruik de volgende tabel als richt lijn:
- >
- >  
- >  | Aantal organisatie-eenheden in bereik filter| Mini maal vereist geheugen|
- >  | --- | --- |
- >  | 12| 4 GB|
- >  | 18|5,5 GB|
- >  | 28|10 + GB|
- >
- > 
+    >[!NOTE]
+    > Houd er rekening mee dat het definiëren van een bereik filter een geheugen kosten op de hostserver kost.  Als er geen bereik filter wordt gebruikt, is er geen extra geheugen kosten. De minimale 4 GB biedt ondersteuning voor synchronisatie voor Maxi maal 12 organisatie-eenheden die zijn gedefinieerd in het filter bereik. Als u extra Ou's wilt synchroniseren, moet u de minimale hoeveelheid geheugen verhogen. Gebruik de volgende tabel als richt lijn:
+    >
+    >
+    > | Aantal organisatie-eenheden in bereik filter| Mini maal vereist geheugen|
+    > | --- | --- |
+    > | 12 | 4 GB |
+    > | 18 | 5,5 GB|
+    > | 28 | 10 + GB|
+    >
+    > 
 
- 2. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
+2. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
 
- 3. Als er zich een firewall tussen uw servers en Azure AD bevindt, configureert u de volgende items:
+3. Als er zich een firewall tussen uw servers en Azure AD bevindt, configureert u de volgende items:
+
    - Zorg ervoor dat agenten *uitgaande* aanvragen voor Azure AD via de volgende poorten kunnen maken:
 
-        | Poortnummer | Hoe dat wordt gebruikt |
-        | --- | --- |
-        | **80** | Hiermee worden de certificaatintrekkingslijsten (Crl's) gedownload tijdens het valideren van het TLS/SSL-certificaat.  |
-        | **443** | Hiermee wordt alle uitgaande communicatie met de service verwerkt. |
-        |**8082**|Vereist voor de installatie en als u de beheer-API wilt configureren.  Deze poort kan worden verwijderd zodra de agent is geïnstalleerd en als u geen gebruik maakt van de API.   |
-        | **8080** (optioneel) | Agents rapporteren hun status elke 10 minuten via poort 8080, als poort 443 niet beschikbaar is. Deze status wordt weer gegeven in de Azure AD-Portal. |
-   
-     
+      | Poortnummer | Hoe dat wordt gebruikt |
+      | --- | --- |
+      | **80** | Hiermee worden de certificaatintrekkingslijsten (Crl's) gedownload tijdens het valideren van het TLS/SSL-certificaat.  |
+      | **443** | Hiermee wordt alle uitgaande communicatie met de service verwerkt. |
+      |**8082**|Vereist voor de installatie en als u de beheer-API wilt configureren.  Deze poort kan worden verwijderd zodra de agent is geïnstalleerd en als u geen gebruik maakt van de API.   |
+      | **8080** (optioneel) | Agents rapporteren hun status elke 10 minuten via poort 8080, als poort 443 niet beschikbaar is. Deze status wordt weer gegeven in de Azure AD-Portal. |
+
    - Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
    - Als u met uw firewall of proxy veilige achtervoegsels kunt opgeven, voegt u verbindingen toe aan \* . msappproxy.net en \* . servicebus.Windows.net. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
    - Uw agenten hebben voor de eerste registratie toegang nodig tot login.windows.net en login.microsoftonline.com. Open uw firewall ook voor deze URL's.
@@ -86,10 +86,8 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 >[!NOTE]
 > Het is niet mogelijk om de inrichtings agent voor Clouds te installeren op Windows Server Core.
 
-
-
-
 ### <a name="additional-requirements"></a>Aanvullende vereisten
+
 - [Microsoft .NET Framework 4.7.1](https://www.microsoft.com/download/details.aspx?id=56116) 
 
 #### <a name="tls-requirements"></a>TLS-vereisten
@@ -102,7 +100,7 @@ Op de Windows-Server die als host fungeert voor de Azure AD Connect Cloud-inrich
 Voer de volgende stappen uit om TLS 1,2 in te scha kelen.
 
 1. Stel de volgende registersleutels in:
-    
+
     ```
     [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
     [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001

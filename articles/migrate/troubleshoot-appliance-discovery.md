@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 90abe6bf680f6a186b970631dcd0a42d6d36bf94
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 647e07fe32beedbd54ca6c5bb95c1de9564df2fd
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511583"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654010"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 
@@ -203,58 +203,56 @@ Azure Migrate ondersteunt de detectie van toepassingen, functies en onderdelen m
 
 Veelvoorkomende fouten bij het detecteren van apps worden in de tabel samenvatten. 
 
-**Fout** | **Oorzaak** | **Actie**
---- | --- | ---
-9000: de status van het VMware-hulp programma kan niet worden gedetecteerd.     |   VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd.    |   Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM.
-9001: VMware-hulpprogram ma's zijn niet geïnstalleerd.     |   VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd.    |   Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM.
-9002: VMware-hulpprogram ma's worden niet uitgevoerd.   |   VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd.    |   Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM.
-9003: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S.    |   Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux.    |   Ondersteunde typen besturings systemen zijn alleen Windows en Linux. Als de server inderdaad Windows of Linux is, controleert u het type besturings systeem dat is opgegeven in vCenter Server.
-9004: de VM wordt niet uitgevoerd.     |   De VM is uitgeschakeld.  |   Zorg ervoor dat de virtuele machine is ingeschakeld.
-9005: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S.    |   Het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S.     |   Ondersteunde typen besturings systemen zijn alleen Windows en Linux.
-9006: de URL voor het downloaden van het meta gegevensbestand van de gast is leeg.     |   Dit kan gebeuren als de detectie agent niet naar behoren werkt.    |   Het probleem moet in24-uren automatisch oplossen. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-9007: kan het proces dat de detectie taak in de gast-VM uitvoert, niet vinden.   |   Dit kan gebeuren als de detectie agent niet goed werkt.   |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-9008: kan de status van het gast-VM-proces niet ophalen.   |   Het probleem kan optreden vanwege een interne fout.   |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-9009: het uitvoeren van detectie taken op de server is door Windows UAC verhinderd.  |   Instellingen voor Windows Gebruikersaccountbeheer (UAC) op de server zijn beperkend en verhinderen de detectie van geïnstalleerde toepassingen.  |   Configureer in de instellingen voor Gebruikersaccountbeheer op de server de UAC-instelling op een van de twee lagere niveaus.
-9010: de VM is uitgeschakeld.     |   De VM is uitgeschakeld.  |   Zorg ervoor dat de virtuele machine is ingeschakeld.
-9011: gedetecteerd meta gegevensbestand niet gevonden in het bestands systeem van de gast-VM.    |   Het probleem kan optreden vanwege een interne fout.   |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-9012: het bestand met gedetecteerde meta gegevens is leeg.     |   Het probleem kan optreden vanwege een interne fout.   |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-9013: voor elke aanmelding wordt een nieuw tijdelijk profiel gemaakt.    |   Voor elke aanmelding bij de VMware-VM wordt een nieuw tijdelijk profiel gemaakt.    |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9014: kan geen meta gegevens ophalen van het bestands systeem van de gast-VM.     |   Geen connectiviteit met ESXi-host    |   Zorg ervoor dat het apparaat verbinding kan maken met poort 443 op de ESXi-host waarop de VM wordt uitgevoerd
-9015: de rol gast bewerkingen is niet ingeschakeld op het vCenter-gebruikers account   |   De rol gast bewerkingen is niet ingeschakeld op het vCenter-gebruikers account.   |   Zorg ervoor dat de rol gast taken is ingeschakeld op het vCenter-gebruikers account.
-9016: kan niet detecteren omdat de gast Operations-agent verouderd is.   |   VMware-hulpprogram ma's zijn niet juist geïnstalleerd of zijn niet up-to-date.    |   Controleer of de VMware-hulpprogram ma's correct zijn geïnstalleerd en up-to-date zijn.
-9017: bestand met gedetecteerde meta gegevens is niet gevonden op de virtuele machine.  |   Het probleem kan optreden vanwege een interne fout.   |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9018: Power shell is niet geïnstalleerd in de gast-Vm's.  |   Power shell is niet beschikbaar in de gast-VM.    |   Installeer Power shell in de gast-VM.
-9019: kan niet detecteren vanwege mislukte bewerkingen van de gast-VM.     |   VMware-gast bewerking is mislukt op de virtuele machine.    |   Zorg ervoor dat de referenties van de virtuele machine geldig zijn en dat de gebruikers naam in de gast-VM-referenties in de UPN-indeling wordt vermeld.
-9020: de machtiging voor het maken van een bestand is geweigerd.    |   De rol die is gekoppeld aan de gebruiker of het groeps beleid, beperkt de gebruiker het bestand in de map te maken    |   Controleer of de gast gebruiker beschikt over de machtiging maken voor het bestand in de map. Zie **meldingen** in Server beoordeling voor de naam van de map.
-9021: kan het bestand niet maken in het tijdelijke pad van het systeem.     |   Het hulp programma VMware rapporteert tijdelijk het pad van het systeem in plaats van het tijdelijke pad van gebruikers.    |   Voer een upgrade uit van de versie van uw VMware-hulp programma boven 10287 (NGC/VI-client indeling).
-9022: toegang tot WMI-object is geweigerd.    |   De rol die aan de gebruiker of het groeps beleid is gekoppeld, beperkt de toegang van de gebruiker tot het WMI-object.  |   Neem contact op met Microsoft Ondersteuning.
-9023: Power shell kan niet worden uitgevoerd als de waarde van de omgevings variabele System root is leeg.    |   De waarde van de System root-omgevings variabele is leeg voor de gast-VM.     |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9024: kan niet detecteren als de waarde van de TEMP-omgevings variabele is leeg.    |   De waarde van de TEMP-omgevings variabele is leeg voor de gast-VM.   |   Neem contact op met Microsoft Ondersteuning.
-9025: Power shell is beschadigd in de gast-Vm's.  |   Power shell is beschadigd in de gast-VM.    |   Installeer Power shell opnieuw in de gast-VM en controleer of Power shell kan worden uitgevoerd op de gast-VM.
-9026: kan geen gast bewerkingen uitvoeren op de VM.  |   Met de VM-status mogen geen gast bewerkingen worden uitgevoerd op de VM.   |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9027: Guest Operations agent wordt niet uitgevoerd in de virtuele machine.   |   Kan geen verbinding maken met de gast Operations-agent die wordt uitgevoerd in de virtuele machine.    |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9028: het bestand kan niet worden gemaakt omdat er onvoldoende schijf ruimte is in de VM.     |   Er is onvoldoende ruimte op de schijf.   |   Zorg ervoor dat er voldoende ruimte beschikbaar is in de schijf opslag van de virtuele machine.
-9029: geen toegang tot Power shell op de gegeven gast-VM-referentie.   |   Toegang tot Power shell is niet beschikbaar voor de gebruiker.     |   Zorg ervoor dat de gebruiker die is toegevoegd op het apparaat toegang kan krijgen tot Power shell op de gast-VM.
-9030: kan geen gedetecteerde meta gegevens verzamelen omdat de verbinding van de ESXi-host is verbroken.     |   De ESXi-host heeft de status niet verbonden.   |   Zorg ervoor dat de ESXi-host met de virtuele machine is verbonden.
-9031: kan geen gedetecteerde meta gegevens verzamelen omdat de ESXi-host niet reageert.   |   De externe host heeft een ongeldige status.    |   Zorg ervoor dat de ESXi-host waarop de virtuele machine wordt uitgevoerd, actief is en is verbonden.
-9032: kan niet detecteren vanwege een interne fout.   |   Het probleem kan optreden vanwege een interne fout.   |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-9033: kan niet detecteren omdat de gebruikers naam van de virtuele machine ongeldige tekens bevat.     |   Er zijn ongeldige tekens aangetroffen in de gebruikers naam.   |   Geef de VM-referentie opnieuw op om ervoor te zorgen dat er geen ongeldige tekens zijn.
-9034: de gebruikers naam die is gegeven, heeft geen UPN-indeling.    |   De gebruikers naam heeft geen UPN-indeling.  |   Zorg ervoor dat de gebruikers naam de UPN-indeling (User Principal Name) heeft.
-9035: kan niet detecteren omdat de Power shell-taal modus niet is ingesteld op ' volledige taal '.  |   De taal modus voor Power shell in de gast-VM is niet ingesteld op de volledige taal.   |   Zorg ervoor dat de Power shell-taal modus is ingesteld op ' volledige taal '.
-9037: het verzamelen van gegevens is tijdelijk onderbroken omdat de VM-reactie tijd te hoog is.    |   Het duurt te lang voordat de gedetecteerde virtuele machine reageert     |   U hoeft geen actie te ondernemen. Er wordt binnen 24 uur een nieuwe poging gedaan voor toepassings detectie en 3 uur voor afhankelijkheids analyse (zonder agent).
-10000: het type besturings systeem wordt niet ondersteund.   |   Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux.    |   Ondersteunde typen besturings systemen zijn alleen Windows en Linux.
-10001: script voor Server detectie is niet gevonden op het apparaat.    |   De detectie werkt niet zoals verwacht.   |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-10002: de detectie taak is niet in de tijd voltooid.     |   De detectie agent werkt niet zoals verwacht.     |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-10003: het proces dat de detectie taak uitvoert, is afgesloten met een fout.    |   Het proces dat de detectie taak uitvoert, is afgesloten met een fout.  |   Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning.
-10004: er is geen referentie gegeven voor het type van het gast besturingssysteem.  |   Referenties voor toegang tot computers van dit type besturings systeem zijn niet opgenomen in het Azure Migrate apparaat.    |   Referenties toevoegen voor machines op het apparaat
-10005: de ingevoerde referenties zijn ongeldig.   |   De referenties voor toegang tot de server van het apparaat zijn onjuist.  |   Werk de referenties die zijn opgenomen in het apparaat bij en zorg ervoor dat de server toegankelijk is met behulp van de referenties.
-10006: het type gast besturingssysteem wordt niet ondersteund door het referentie archief.  |   Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux.    |   Ondersteunde typen besturings systemen zijn alleen Windows en Linux.
-10007: kan de gedetecteerde meta gegevens niet verwerken.    |   Er is een fout opgetreden tijdens het deserialiseren van de JSON.    |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-10008: kan geen bestand maken op de server.    |  Het probleem kan optreden vanwege een interne fout.    |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-10009: kan geen gedetecteerde meta gegevens schrijven naar een bestand op de server.  |   Het probleem kan optreden vanwege een interne fout.   |   Neem contact op met Microsoft Ondersteuning voor een oplossing.
-
-
-
+| **Fout** | **Oorzaak** | **Actie** |
+|--|--|--|
+| 9000: de status van het VMware-hulp programma kan niet worden gedetecteerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9001: VMware-hulpprogram ma's zijn niet geïnstalleerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9002: VMware-hulpprogram ma's worden niet uitgevoerd. | VMWare-hulpprogram ma's zijn mogelijk niet geïnstalleerd of beschadigd. | Zorg ervoor dat VMware-hulpprogram ma's zijn geïnstalleerd en worden uitgevoerd op de VM. |
+| 9003: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. Als de server inderdaad Windows of Linux is, controleert u het type besturings systeem dat is opgegeven in vCenter Server. |
+| 9004: de VM wordt niet uitgevoerd. | De VM is uitgeschakeld. | Zorg ervoor dat de virtuele machine is ingeschakeld. |
+| 9005: het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Het type besturings systeem wordt niet ondersteund voor de detectie van gast-VM'S. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. |
+| 9006: de URL voor het downloaden van het meta gegevensbestand van de gast is leeg. | Dit kan gebeuren als de detectie agent niet naar behoren werkt. | Het probleem moet in24-uren automatisch oplossen. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 9007: kan het proces dat de detectie taak in de gast-VM uitvoert, niet vinden. | Dit kan gebeuren als de detectie agent niet goed werkt. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 9008: kan de status van het gast-VM-proces niet ophalen. | Het probleem kan optreden vanwege een interne fout. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 9009: het uitvoeren van detectie taken op de server is door Windows UAC verhinderd. | Instellingen voor Windows Gebruikersaccountbeheer (UAC) op de server zijn beperkend en verhinderen de detectie van geïnstalleerde toepassingen. | Configureer in de instellingen voor Gebruikersaccountbeheer op de server de UAC-instelling op een van de twee lagere niveaus. |
+| 9010: de VM is uitgeschakeld. | De VM is uitgeschakeld. | Zorg ervoor dat de virtuele machine is ingeschakeld. |
+| 9011: gedetecteerd meta gegevensbestand niet gevonden in het bestands systeem van de gast-VM. | Het probleem kan optreden vanwege een interne fout. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 9012: het bestand met gedetecteerde meta gegevens is leeg. | Het probleem kan optreden vanwege een interne fout. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 9013: voor elke aanmelding wordt een nieuw tijdelijk profiel gemaakt. | Voor elke aanmelding bij de VMware-VM wordt een nieuw tijdelijk profiel gemaakt. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9014: kan geen meta gegevens ophalen van het bestands systeem van de gast-VM. | Geen connectiviteit met ESXi-host | Zorg ervoor dat het apparaat verbinding kan maken met poort 443 op de ESXi-host waarop de VM wordt uitgevoerd |
+| 9015: de rol gast bewerkingen is niet ingeschakeld op het vCenter-gebruikers account | De rol gast bewerkingen is niet ingeschakeld op het vCenter-gebruikers account. | Zorg ervoor dat de rol gast taken is ingeschakeld op het vCenter-gebruikers account. |
+| 9016: kan niet detecteren omdat de gast Operations-agent verouderd is. | VMware-hulpprogram ma's zijn niet juist geïnstalleerd of zijn niet up-to-date. | Controleer of de VMware-hulpprogram ma's correct zijn geïnstalleerd en up-to-date zijn. |
+| 9017: bestand met gedetecteerde meta gegevens is niet gevonden op de virtuele machine. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9018: Power shell is niet geïnstalleerd in de gast-Vm's. | Power shell is niet beschikbaar in de gast-VM. | Installeer Power shell in de gast-VM. |
+| 9019: kan niet detecteren vanwege mislukte bewerkingen van de gast-VM. | VMware-gast bewerking is mislukt op de virtuele machine. | Zorg ervoor dat de referenties van de virtuele machine geldig zijn en dat de gebruikers naam in de gast-VM-referenties in de UPN-indeling wordt vermeld. |
+| 9020: de machtiging voor het maken van een bestand is geweigerd. | De rol die is gekoppeld aan de gebruiker of het groeps beleid, beperkt de gebruiker het bestand in de map te maken | Controleer of de gast gebruiker beschikt over de machtiging maken voor het bestand in de map. Zie **meldingen** in Server beoordeling voor de naam van de map. |
+| 9021: kan het bestand niet maken in het tijdelijke pad van het systeem. | Het hulp programma VMware rapporteert tijdelijk het pad van het systeem in plaats van het tijdelijke pad van gebruikers. | Voer een upgrade uit van de versie van uw VMware-hulp programma boven 10287 (NGC/VI-client indeling). |
+| 9022: toegang tot WMI-object is geweigerd. | De rol die aan de gebruiker of het groeps beleid is gekoppeld, beperkt de toegang van de gebruiker tot het WMI-object. | Neem contact op met Microsoft Ondersteuning. |
+| 9023: Power shell kan niet worden uitgevoerd als de waarde van de omgevings variabele System root is leeg. | De waarde van de System root-omgevings variabele is leeg voor de gast-VM. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9024: kan niet detecteren als de waarde van de TEMP-omgevings variabele is leeg. | De waarde van de TEMP-omgevings variabele is leeg voor de gast-VM. | Neem contact op met Microsoft Ondersteuning. |
+| 9025: Power shell is beschadigd in de gast-Vm's. | Power shell is beschadigd in de gast-VM. | Installeer Power shell opnieuw in de gast-VM en controleer of Power shell kan worden uitgevoerd op de gast-VM. |
+| 9026: kan geen gast bewerkingen uitvoeren op de VM. | Met de VM-status mogen geen gast bewerkingen worden uitgevoerd op de VM. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9027: Guest Operations agent wordt niet uitgevoerd in de virtuele machine. | Kan geen verbinding maken met de gast Operations-agent die wordt uitgevoerd in de virtuele machine. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9028: het bestand kan niet worden gemaakt omdat er onvoldoende schijf ruimte is in de VM. | Er is onvoldoende ruimte op de schijf. | Zorg ervoor dat er voldoende ruimte beschikbaar is in de schijf opslag van de virtuele machine. |
+| 9029: geen toegang tot Power shell op de gegeven gast-VM-referentie. | Toegang tot Power shell is niet beschikbaar voor de gebruiker. | Zorg ervoor dat de gebruiker die is toegevoegd op het apparaat toegang kan krijgen tot Power shell op de gast-VM. |
+| 9030: kan geen gedetecteerde meta gegevens verzamelen omdat de verbinding van de ESXi-host is verbroken. | De ESXi-host heeft de status niet verbonden. | Zorg ervoor dat de ESXi-host met de virtuele machine is verbonden. |
+| 9031: kan geen gedetecteerde meta gegevens verzamelen omdat de ESXi-host niet reageert. | De externe host heeft een ongeldige status. | Zorg ervoor dat de ESXi-host waarop de virtuele machine wordt uitgevoerd, actief is en is verbonden. |
+| 9032: kan niet detecteren vanwege een interne fout. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 9033: kan niet detecteren omdat de gebruikers naam van de virtuele machine ongeldige tekens bevat. | Er zijn ongeldige tekens aangetroffen in de gebruikers naam. | Geef de VM-referentie opnieuw op om ervoor te zorgen dat er geen ongeldige tekens zijn. |
+| 9034: de gebruikers naam die is gegeven, heeft geen UPN-indeling. | De gebruikers naam heeft geen UPN-indeling. | Zorg ervoor dat de gebruikers naam de UPN-indeling (User Principal Name) heeft. |
+| 9035: kan niet detecteren omdat de Power shell-taal modus niet is ingesteld op ' volledige taal '. | De taal modus voor Power shell in de gast-VM is niet ingesteld op de volledige taal. | Zorg ervoor dat de Power shell-taal modus is ingesteld op ' volledige taal '. |
+| 9037: het verzamelen van gegevens is tijdelijk onderbroken omdat de VM-reactie tijd te hoog is. | Het duurt te lang voordat de gedetecteerde virtuele machine reageert | U hoeft geen actie te ondernemen. Er wordt binnen 24 uur een nieuwe poging gedaan voor toepassings detectie en 3 uur voor afhankelijkheids analyse (zonder agent). |
+| 10000: het type besturings systeem wordt niet ondersteund. | Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. |
+| 10001: script voor Server detectie is niet gevonden op het apparaat. | De detectie werkt niet zoals verwacht. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 10002: de detectie taak is niet in de tijd voltooid. | De detectie agent werkt niet zoals verwacht. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 10003: het proces dat de detectie taak uitvoert, is afgesloten met een fout. | Het proces dat de detectie taak uitvoert, is afgesloten met een fout. | Het probleem moet in 24 uur automatisch worden opgelost. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| 10004: er is geen referentie gegeven voor het type van het gast besturingssysteem. | Referenties voor toegang tot computers van dit type besturings systeem zijn niet opgenomen in het Azure Migrate apparaat. | Referenties toevoegen voor machines op het apparaat |
+| 10005: de ingevoerde referenties zijn ongeldig. | De referenties voor toegang tot de server van het apparaat zijn onjuist. | Werk de referenties die zijn opgenomen in het apparaat bij en zorg ervoor dat de server toegankelijk is met behulp van de referenties. |
+| 10006: het type gast besturingssysteem wordt niet ondersteund door het referentie archief. | Het besturings systeem dat op de server wordt uitgevoerd, is geen Windows of Linux. | Ondersteunde typen besturings systemen zijn alleen Windows en Linux. |
+| 10007: kan de gedetecteerde meta gegevens niet verwerken. | Er is een fout opgetreden tijdens het deserialiseren van de JSON. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 10008: kan geen bestand maken op de server. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
+| 10009: kan geen gedetecteerde meta gegevens schrijven naar een bestand op de server. | Het probleem kan optreden vanwege een interne fout. | Neem contact op met Microsoft Ondersteuning voor een oplossing. |
 
 ## <a name="next-steps"></a>Volgende stappen
+
 Stel een apparaat in voor [VMware](how-to-set-up-appliance-vmware.md)-, [Hyper-V-](how-to-set-up-appliance-hyper-v.md)of [fysieke servers](how-to-set-up-appliance-physical.md).

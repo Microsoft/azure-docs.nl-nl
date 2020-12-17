@@ -1,7 +1,7 @@
 ---
 title: Diagnostische gegevens over prestaties voor virtuele machines van Azure | Microsoft Docs
 description: Introduceert Azure-prestatie diagnostiek voor Windows.
-services: virtual-machines-windows'
+services: virtual-machines-windows
 documentationcenter: ''
 author: anandhms
 manager: cshepard
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 9/20/2018
 ms.author: anandh
-ms.openlocfilehash: fb0928c75b8fee567e9d0f03489794bd9f65e91e
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 70d1a52ff3326fcd3a628cc7f0f9d91edc9274e7
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109433"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655387"
 ---
 # <a name="performance-diagnostics-for-azure-virtual-machines"></a>Diagnostische gegevens over prestaties voor virtuele Azure-machines
 
@@ -191,7 +191,7 @@ Er zijn meerdere manieren om het diagnostische rapport te delen met micro soft.
 Wanneer u een ondersteunings ticket met micro soft opent, is het belang rijk om het rapport over prestatie diagnostiek te delen. Als u ervoor hebt gekozen deze informatie met micro soft te delen terwijl u de diagnostische gegevens uitvoert (door het selectie vakje **Ik ga akkoord met de diagnostische informatie te delen met micro** Soft), is micro soft in staat om met een SAS-koppeling naar het uitvoer zip-bestand tot 30 dagen na de uitvoerings datum toegang te krijgen tot het rapport. Alleen het meest recente rapport is beschikbaar voor de ondersteunings technicus.
 
 **Optie 2:** Een Shared Access Signature genereren voor het gecomprimeerde bestand van het diagnostische rapport  
-U kunt een koppeling naar het gecomprimeerde bestand in rapporten delen met behulp van hand tekeningen voor gedeelde toegang. Voer hiervoor de volgende stappen uit:
+U kunt een koppeling naar het gecomprimeerde bestand in rapporten delen met behulp van hand tekeningen voor gedeelde toegang. Voer de volgende stappen uit om dit te doen:
 
 1. Blader in het Azure Portal naar het opslag account waarin de diagnostische gegevens zijn opgeslagen.
 1. Selecteer **blobs** onder het gedeelte **BLOB service** .

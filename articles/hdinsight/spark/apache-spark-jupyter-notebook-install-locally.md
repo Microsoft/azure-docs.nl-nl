@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 16cb8a9c2a951c9f60640248ef74757d1e5ee200
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: de11e6f9fd9acc81f7be6d23bb1019f88f9e1322
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518920"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657206"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Jupyter Notebook op uw computer installeren en verbinding maken met Apache Spark op HDInsight
 
@@ -42,12 +42,7 @@ Down load het [Anaconda-installatie programma](https://www.anaconda.com/download
 
 ## <a name="install-spark-magic"></a>Spark Magic installeren
 
-1. Voer een van de volgende opdrachten in om Spark Magic te installeren. Zie ook [sparkmagic-documentatie](https://github.com/jupyter-incubator/sparkmagic#installation).
-
-    |Clusterversie | Installatie opdracht |
-    |---|---|
-    |v 3.6 en v 3.5 |`pip install sparkmagic==0.13.1`|
-    |v 3.4|`pip install sparkmagic==0.2.3`|
+1. Voer de opdracht `pip install sparkmagic==0.13.1` in om Spark Magic te installeren voor HDInsight-clusters versie 3,6 en 4,0. Zie ook [sparkmagic-documentatie](https://github.com/jupyter-incubator/sparkmagic#installation).
 
 1. Zorg ervoor dat `ipywidgets` correct is geïnstalleerd door de volgende opdracht uit te voeren:
 

@@ -11,12 +11,12 @@ ms.date: 09/22/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e272c402cac803d10d9998298ce6d3370d0e000
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7fabad618233e8866c545e1c5ccbcc8cb7508ebf
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348800"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652094"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-attribute-mapping"></a>Toewijzing van kenmerk van Cloud inrichting Azure AD Connect
 
@@ -52,45 +52,51 @@ Hier beschrijven we de kenmerken die u kunt gebruiken met kenmerktoewijzingen:
 > In dit document wordt beschreven hoe u de Azure Portal gebruikt om kenmerken toe te wijzen.  Zie trans [formaties](how-to-transformation.md) voor meer informatie over het gebruik van Graph
 
 ## <a name="using-attribute-mapping"></a>Kenmerk toewijzing gebruiken
+
 Volg de onderstaande stappen om de nieuwe functie te gebruiken.
-
- 1.  Selecteer in Azure Portal **Azure Active Directory**.
- 2.  Selecteer **Azure AD Connect**.
- 3.  Selecteer **inrichting beheren**.
-
-   ![Inrichting beheren](media/how-to-configure/manage1.png)
- 
- 4. Selecteer uw configuratie onder **configuratie**.
- 5. Selecteer **klikken om toewijzingen te bewerken**.  Hiermee wordt het scherm kenmerk toewijzing geopend.
-
- ![Kenmerken toevoegen](media/how-to-attribute-mapping/mapping6.png)
- 6.  Klik op **kenmerk toevoegen**.
-
- ![Toewijzings type](media/how-to-attribute-mapping/mapping1.png)
- 
- 7. Selecteer het **toewijzings type**.  In dit voor beeld gebruiken we Expression.
- 8.  Voer de expressie in het vak in.  Voor dit voor beeld gebruiken we: `Replace([mail], "@contoso.com", , ,"", ,).`
- 9.  Voer het doel kenmerk in.  In dit voor beeld gebruiken we ExtensionAttribute15.
- 10. Selecteer wanneer u dit wilt Toep assen en klik vervolgens op **Toep assen**
-   
-   ![Toewijzingen bewerken](media/how-to-attribute-mapping/mapping2a.png)
- 11. Terug in het scherm kenmerk toewijzing ziet u de nieuwe kenmerk toewijzing.  
- 12. Klik op **schema opslaan**.
-
- ![Schema opslaan](media/how-to-attribute-mapping/mapping3.png)
-
-## <a name="test-your-attribute-mapping"></a>De kenmerk toewijzing testen
-Als u de kenmerk toewijzing wilt testen, kunt u [inrichten op aanvraag](how-to-on-demand-provision.md)gebruiken.  Van de 
 
 1.  Selecteer in Azure Portal **Azure Active Directory**.
 2.  Selecteer **Azure AD Connect**.
 3.  Selecteer **inrichting beheren**.
+
+    ![Inrichting beheren](media/how-to-configure/manage1.png)
+
+4. Selecteer uw configuratie onder **configuratie**.
+5. Selecteer **klikken om toewijzingen te bewerken**.  Hiermee wordt het scherm kenmerk toewijzing geopend.
+
+    ![Kenmerken toevoegen](media/how-to-attribute-mapping/mapping6.png)
+
+6.  Klik op **kenmerk toevoegen**.
+
+    ![Toewijzings type](media/how-to-attribute-mapping/mapping1.png)
+
+7. Selecteer het **toewijzings type**.  In dit voor beeld gebruiken we Expression.
+8.  Voer de expressie in het vak in.  Voor dit voor beeld gebruiken we: `Replace([mail], "@contoso.com", , ,"", ,).`
+9.  Voer het doel kenmerk in.  In dit voor beeld gebruiken we ExtensionAttribute15.
+10. Selecteer wanneer u dit wilt Toep assen en klik vervolgens op **Toep assen**
+
+    ![Toewijzingen bewerken](media/how-to-attribute-mapping/mapping2a.png)
+
+11. Terug in het scherm kenmerk toewijzing ziet u de nieuwe kenmerk toewijzing.  
+12. Klik op **schema opslaan**.
+
+    ![Schema opslaan](media/how-to-attribute-mapping/mapping3.png)
+
+## <a name="test-your-attribute-mapping"></a>De kenmerk toewijzing testen
+
+Als u de kenmerk toewijzing wilt testen, kunt u [inrichten op aanvraag](how-to-on-demand-provision.md)gebruiken.  Van de 
+
+1. Selecteer in Azure Portal **Azure Active Directory**.
+2. Selecteer **Azure AD Connect**.
+3. Selecteer **inrichting beheren**.
 4. Selecteer uw configuratie onder **configuratie**.
 5. Klik onder **valideren** op de knop **een gebruiker inrichten** . 
 6. In het inrichtings scherm op aanvraag.  Voer de **DN-naam** van een gebruiker of groep in en klik op de knop **inrichten** .  
 7. Zodra het proces is voltooid, ziet u een geslaagd scherm en vier groene selectie vakjes die aangeven dat het is ingericht.  
-  ![Geslaagd voor inrichten](media/how-to-attribute-mapping/mapping4.png)
-1. Klik onder **actie uitvoeren** op **Details weer geven**.  Aan de rechter kant ziet u het nieuwe kenmerk syncrhonized en de toegepaste expressie.
+
+    ![Geslaagd voor inrichten](media/how-to-attribute-mapping/mapping4.png)
+
+8. Klik onder **actie uitvoeren** op **Details weer geven**.  Aan de rechter kant ziet u het nieuwe kenmerk syncrhonized en de toegepaste expressie.
 
   ![Actie uitvoeren](media/how-to-attribute-mapping/mapping5.png)
 

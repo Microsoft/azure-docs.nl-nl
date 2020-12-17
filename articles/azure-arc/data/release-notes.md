@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 935ba888352d2454a609a40866ef10ccf13a2dac
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 2c9b239269aa00255aa08d6c233cd7978b253d94
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605459"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653568"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Release opmerkingen-Azure Arc ingeschakelde Data Services (preview-versie)
 
@@ -29,7 +29,7 @@ Azure data CLI ( `azdata` )-versie nummer: 20.2.5. Downloaden op [https://aka.ms
 Bekijk eind punten voor SQL Managed instance en PostgreSQL grootschalige met behulp van de Azure data CLI ( `azdata` ) met `azdata arc sql endpoint list` en `azdata arc postgres endpoint list` opdrachten.
 
 Bewerk aanvragen en limieten voor SQL Managed Instance-bronnen (CPU-kernen en geheugen) met behulp van Azure Data Studio.
-     
+
 Azure Arc enabled PostgreSQL grootschalige ondersteunt nu het herstellen van Point-in-time naast volledige back-ups voor versie 11 en 12 van PostgreSQL. Met de functie voor herstel naar een bepaald tijdstip kunt u een specifieke datum en tijd voor de terugzet bewerking opgeven.
 
 De naam Conventie van het peul voor Azure Arc enabled PostgreSQL grootschalige is gewijzigd. Deze bevindt zich nu in de vorm: ServergroupName {r, s}-_n_. Bijvoorbeeld een server groep met drie knoop punten, een coördinator knooppunt en twee worker-knoop punten wordt weer gegeven als:
@@ -127,7 +127,7 @@ Data Services van Azure-Arc is beschikbaar voor open bare preview. Met Arc inges
 Zie [Wat zijn Azure Arc-gegevens Services?](overview.md) voor instructies.
 
 ## <a name="next-steps"></a>Volgende stappen
-  
+
 > **Wilt u gewoon iets uitproberen?**  
 > Ga snel aan de slag met [Azure Arc](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op AKS, AWS Elastic Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
 

@@ -1,5 +1,5 @@
 ---
-title: Voorlopig verwijderen wordt ingeschakeld voor alle Azure-sleutelkluizen | Microsoft Docs
+title: Voorlopig verwijderen inschakelen voor alle Azure-sleutelkluizen | Microsoft Docs
 description: Gebruik dit document om voorlopig verwijderen te implementeren voor alle sleutelkluizen.
 services: key-vault
 author: ShaneBala-keyvault
@@ -7,19 +7,19 @@ manager: ravijan
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 12/15/2020
 ms.author: sudbalas
-ms.openlocfilehash: 0e811cc219002c034afb968be760ce2c249b08f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e512cccdbfdc56500fa7c69372ca38f59d3195c2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825259"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590083"
 ---
 # <a name="soft-delete-will-be-enabled-on-all-key-vaults"></a>Voorlopig verwijderen wordt ingeschakeld voor alle sleutelkluizen
 
 > [!WARNING]
-> **Wijziging die fouten veroorzaakt**: De mogelijkheid om voorlopig verwijderen uit te schakelen wordt aan het einde van het jaar afgeschaft. Tegelijkertijd wordt de beveiliging door middel van voorlopig verwijderen automatisch ingeschakeld voor alle sleutelkluizen.  Het wordt aangeraden dat gebruikers en beheerders van Azure Key Vault voorlopig verwijderen direct inschakelen voor hun sleutelkluizen.
+> **Wijziging die fouten veroorzaakt**: De optie om geen gebruik te maken van Voorlopig verwijderen, wordt binnenkort afgeschaft. Het wordt aangeraden dat gebruikers en beheerders van Azure Key Vault voorlopig verwijderen direct inschakelen voor hun sleutelkluizen.
 >
 > Voor beheerde HSM is voorlopig verwijderen standaard ingeschakeld en kan deze functie niet worden uitgeschakeld.
 
@@ -29,9 +29,18 @@ Wanneer een geheim wordt verwijderd uit een sleutelkluis zonder dat voorlopig ve
 
 Zie [Azure Key Vault: overzicht van voorlopig verwijderen](soft-delete-overview.md) voor meer informatie over de functie voor voorlopig verwijderen.
 
-## <a name="how-do-i-respond-to-breaking-changes"></a>Hoe moet ik reageren op wijzigingen die fouten veroorzaken?
+## <a name="can-my-application-work-with-soft-delete-enabled"></a>Kan mijn toepassing werken terwijl Voorlopig verwijderen is ingeschakeld?
 
-Een object in een sleutelkluis kan niet worden gemaakt met dezelfde naam als een sleutelkluisobject dat voorlopig is verwijderd.  Als u bijvoorbeeld een sleutel met de naam `test key` verwijdert in sleutelkluis A, kunt u geen nieuwe sleutel met de naam `test key` maken in sleutelkluis A totdat het voorlopig verwijderde object `test key` permanent is verwijderd.
+> [!Important] 
+> **Lees de volgende informatie aandachtig door voordat u Voorlopig verwijderen voor uw sleutelkluizen inschakelt**
+
+Namen van sleutelkluizen zijn globaal uniek. De namen van geheimen die zijn opgeslagen in een sleutelkluis, zijn ook uniek. De naam van een sleutelkluis of sleutelkluisobject met de status Voorlopig verwijderd, kan niet opnieuw worden gebruikt. 
+
+**Voorbeeld 1** Als er programmatisch een sleutelkluis met de naam kluis A wordt gemaakt en kluis A later wordt verwijderd. De sleutelkluis gaat over in de status Voorlopig verwijderd. De toepassing kan pas een andere sleutelkluis met de naam Kluis A maken als de sleutelkluis uit de status Voorlopig verwijderd is gehaald. 
+
+**Voorbeeld 2** Als er een sleutel met de naam `test key` in sleutelkluis A wordt gemaakt en de sleutel later uit kluis A wordt verwijderd, kan de toepassing pas een nieuwe sleutel met de naam `test key` in sleutelkluis A maken als het `test key`-object uit de status Voorlopig verwijderd wordt gehaald. 
+
+Dit kan conflictfouten veroorzaken als u probeert een sleutelkluisobject te verwijderen en dit vervolgens opnieuw te maken met dezelfde naam zonder het object eerst permanent te verwijderen. Dit kan ertoe leiden dat uw toepassing of automatisering mislukt. Neem contact op met uw ontwikkelteam voordat u hieronder de vereiste wijzigingen aan de toepassing en het beheer aanbrengt. 
 
 ### <a name="application-changes"></a>Toepassingswijzigingen
 
@@ -59,13 +68,14 @@ Als uw organisatie onderhevig is aan wettelijke nalevingsvereisten en het niet i
 2. Zoek naar 'Azure Policy'.
 3. Selecteer Definities.
 4. Selecteer onder Categorie de optie Sleutelkluis in het filter.
-5. Selecteer het beleid Key Vault-objecten moeten herstelbaar zijn.
+5. Selecteer de beleidsregel Voorlopig verwijderen moet zijn ingeschakeld voor de sleutelkluis.
 6. Klik op Toewijzen.
 7. Stel het bereik in op uw abonnement.
-8. Selecteer Beoordelen en maken.
-9. Het kan tot 24 uur duren voordat een volledige scan van uw omgeving is voltooid.
-10. Klik op de blade Azure Policy op Naleving.
-11. Selecteer het beleid dat u hebt toegepast.
+8. Controleer of het effect van de beleidsregel is ingesteld op Controleren.
+9. Selecteer Beoordelen en maken.
+10. Het kan tot 24 uur duren voordat een volledige scan van uw omgeving is voltooid.
+11. Klik op de blade Azure Policy op Naleving.
+12. Selecteer het beleid dat u hebt toegepast.
 
 U moet nu kunnen filteren op welke sleutelkluizen voorlopig verwijderen hebben ingeschakeld (conforme resources) en voor welke sleutelkluizen voorlopig verwijderen is uitgeschakeld (niet-conforme resources).
 
@@ -106,15 +116,11 @@ Volg de bovenstaande stappen in de sectie 'Uw sleutelkluizen controleren om te k
 
 ### <a name="what-action-do-i-need-to-take"></a>Welke actie moet ik nemen?
 
-Zorg ervoor dat u geen wijzigingen hoeft aan te brengen in de toepassingslogica. Zodra u dat hebt bevestigd, schakelt u voorlopig verwijderen in voor al uw sleutelkluizen. Dit zorgt ervoor dat u niet wordt beïnvloed door een wijziging die fouten veroorzaakt wanneer aan het einde van het jaar voorlopig verwijderen wordt ingeschakeld voor alle sleutelkluizen.
+Zorg ervoor dat u geen wijzigingen hoeft aan te brengen in de toepassingslogica. Zodra u dat hebt bevestigd, schakelt u voorlopig verwijderen in voor al uw sleutelkluizen.
 
 ### <a name="by-when-do-i-need-to-take-action"></a>Tot wanneer heb ik de tijd om actie te ondernemen?
 
-'Voorlopig verwijderen' wordt aan het einde van het jaar ingeschakeld voor alle sleutelkluizen. Om ervoor te zorgen dat uw toepassingen niet worden beïnvloed, schakelt u de optie voor voorlopig verwijderen zo snel mogelijk in voor al uw sleutelkluizen.
-
-## <a name="what-will-happen-if-i-dont-take-any-action"></a>Wat gebeurt er als ik geen actie onderneem?
-
-Als u geen actie onderneemt, wordt voorlopig verwijderen aan het einde van het jaar automatisch ingeschakeld voor alle sleutelkluizen. Dit kan conflictfouten veroorzaken als u probeert een sleutelkluisobject te verwijderen en dit vervolgens opnieuw te maken met dezelfde naam zonder het object eerst permanent te verwijderen. Dit kan ertoe leiden dat uw toepassing of automatisering mislukt.
+Om ervoor te zorgen dat uw toepassingen niet worden beïnvloed, schakelt u de optie voor voorlopig verwijderen zo snel mogelijk in voor al uw sleutelkluizen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

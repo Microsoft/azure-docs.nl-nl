@@ -86,8 +86,8 @@
                 - name: SQL-script
                   href: ./sql/author-sql-script.md
                   displayname: author
-                - name: Toewijzingsgegevensstroom
-                  href: ../data-factory/concepts-data-flow-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: Gegevensstroom
+                  href: concepts-data-flow-overview.md
         - name: Onderhoudsplanning
           href: ./sql-data-warehouse/maintenance-scheduling.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Broncodebeheer
@@ -660,8 +660,8 @@
           href: ../data-factory/concepts-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Gegevensstromen
           items:
-            - name: Overzicht van toewijzingsgegevensstromen
-              href: ../data-factory/concepts-data-flow-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Overzicht van gegevensstroom
+              href: concepts-data-flow-overview.md
             - name: Foutopsporingsmodus
               href: ../data-factory/concepts-data-flow-debug-mode.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Schema-afwijking

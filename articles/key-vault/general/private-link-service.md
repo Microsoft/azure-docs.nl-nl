@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 570281e31c70b2f5f85a858f9dd424f93ee86029
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 75f06ae11d308028431202c22338ff4a589acf28
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460055"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97592293"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Sleutelkluis integreren met Azure Private Link
 
@@ -53,7 +53,7 @@ Nadat u de basisbeginselen van de sleutelkluis hebt geconfigureerd, selecteert u
 1. Selecteer het keuzerondje Privé-eindpunt op het tabblad Netwerken.
 1. Klik op de knop “+Toevoegen” om een privé-eindpunt toe te voegen.
 
-    ![Installatiekopie](../media/private-link-service-1.png)
+    ![Schermopname van het tabblad Netwerken op de pagina Sleutelkluis maken.](../media/private-link-service-1.png)
  
 1. Selecteer in het veld “Locatie” van de blade Privé-eindpunt maken de regio waarin uw virtueel netwerk zich bevindt. 
 1. Maak in het veld “Naam” een beschrijvende naam waarmee dit privé-eindpunt kan worden geïdentificeerd. 
@@ -61,7 +61,7 @@ Nadat u de basisbeginselen van de sleutelkluis hebt geconfigureerd, selecteert u
 1. Laat de optie “integreren met de privézone DNS” ongewijzigd.  
 1. Selecteer “OK”.
 
-    ![Installatiekopie](../media/private-link-service-8.png)
+    ![Schermopname van de pagina Privé-eindpunt maken, met geselecteerde instellingen.](../media/private-link-service-8.png)
  
 U kunt nu het geconfigureerde privé-eindpunt zien. U hebt nu de mogelijkheid om dit privé-eindpunt te verwijderen en te bewerken. Selecteer de knop “Beoordelen + maken” en maak de sleutelkluis. Het duurt 5-10 minuten voordat de implementatie is voltooid. 
 
@@ -76,12 +76,13 @@ Als u al een sleutelkluis hebt, kunt u een verbinding met een Private Link maken
 1. Selecteer het tabblad Verbindingen met privé-eindpunt boven aan de pagina
 1. Selecteer de knop “+ Privé-eindpunt” boven aan de pagina.
 
-    ![Afbeelding](../media/private-link-service-3.png) ![Afbeelding](../media/private-link-service-4.png)
+    ![Schermopname van de knop + Privé-eindpunt op de pagina Netwerken.](../media/private-link-service-3.png)
+    ![Schermopname van het tabblad Basisbeginselen op de pagina Een privé-eindpunt maken (preview).](../media/private-link-service-4.png)
 
 U kunt kiezen voor het maken van een privé-eindpunt voor elke Azure-resource in het gebruik van deze blade. U kunt de vervolgkeuzemenu's gebruiken om een resourcetype te selecteren en een resource in uw directory te selecteren, of u kunt verbinding maken met elke Azure-resource met een bron-id. Laat de optie “integreren met de privézone DNS” ongewijzigd.  
 
-![Afbeelding](../media/private-link-service-3.png)
-![Afbeelding](../media/private-link-service-4.png)
+![Schermopname van het toevoegen van een privé-eindpunt met behulp van de huidige blade.](../media/private-link-service-3.png)
+![Schermopname met een voorbeeld van de pagina Een privé-eindpunt maken (preview).](../media/private-link-service-4.png)
 
 Wanneer u een privé-eindpunt maakt, moet de verbinding worden goedgekeurd. Als de bron waarvoor u een privé-eindpunt maakt zich in uw directory bevindt, kunt u de verbindingsaanvraag goedkeuren op voorwaarde dat u voldoende machtigingen hebt. Als u verbinding maakt met een Azure-resource in een andere Directory, moet u wachten tot de eigenaar van die resource uw verbindingsaanvraag heeft goedgekeurd.
 

@@ -408,6 +408,9 @@
           href: how-to-configure-auto-train.md
         - name: Automatische ML gebruiken (interface)
           href: how-to-use-automated-ml-for-ml-models.md
+        - name: Geautomatiseerde ML gebruiken met Databricks
+          displayName: automl
+          href: how-to-configure-databricks-automl-environment.md
         - name: Externe compute-doelen gebruiken
           displayName: automl automated auto ml
           href: how-to-auto-train-remote.md
@@ -463,6 +466,8 @@
               href: how-to-deploy-fpga-web-service.md
         - name: Problemen oplossen en fouten opsporen
           href: how-to-troubleshoot-deployment.md
+        - name: Problemen oplossen en fouten opsporen (lokaal)
+          href: how-to-troubleshoot-deployment-local.md
         - name: Webservice gebruiken
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md

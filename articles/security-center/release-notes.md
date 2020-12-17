@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2020
+ms.date: 12/15/2020
 ms.author: memildin
-ms.openlocfilehash: 3272212a857f24916acce7da5a4ee31561ec0c5a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 484a8c7c230863f230719ddaf4e98a6248512bcc
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922932"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560250"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -39,6 +39,7 @@ Updates in december omvatten:
 - [Azure Defender voor SQL-ondersteuning voor een toegewezen SQL-pool in Azure Synapse Analytics is algemeen beschikbaar](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
 - [Globale beheerders kunnen nu machtigingen op tenantniveau aan zichzelf verlenen](#global-administrators-can-now-grant-themselves-tenant-level-permissions)
 - [Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
+- [Pagina Nieuwe beveiligingswaarschuwingen in Azure Portal (preview)](#new-security-alerts-page-in-the-azure-portal-preview)
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Azure Defender voor SQL-servers op computers is algemeen beschikbaar
 
@@ -95,6 +96,24 @@ Deze nieuwe beschermingen verbeteren uw tolerantie tegen aanvullen van bedreigen
     - [Reageren op Azure Defender voor DNS-waarschuwingen](defender-for-dns-usage.md)
     - [Lijst met waarschuwingen door Azure Defender voor DNS](alerts-reference.md#alerts-dns)
 
+
+### <a name="new-security-alerts-page-in-the-azure-portal-preview"></a>Pagina Nieuwe beveiligingswaarschuwingen in Azure Portal (preview)
+
+De pagina Beveiligingswaarschuwingen van Azure Security Center is opnieuw ontworpen en biedt nu het volgende:
+
+- **Verbeterde sorteerervaring voor waarschuwingen**: hiermee wordt de alertheid op waarschuwingen verbeterd en de focus meer gericht op de meest relevante bedreigingen; de lijst bevat aanpasbare opties voor filters en groeperingen
+- **Meer informatie in de lijst met waarschuwingen**, bijvoorbeeld MITRE ATT&ACK-tactieken
+- **Knop om voorbeeldwaarschuwingen te maken**: voor het evalueren van de mogelijkheden van Azure Defender en het testen van de configuratie van uw waarschuwingen (voor SIEM-integratie, e-mailmeldingen en werkstroomautomatisering), kunt u voorbeeldwaarschuwingen maken in alle Azure Defender-abonnementen
+- **Overeenstemming met de incidentervaring van Azure Sentinel**: klanten die beide producten gebruiken, kunnen deze nu eenvoudiger afwisselen en het ene leren op basis van het andere
+- **Betere prestaties** voor lange lijsten met waarschuwingen
+- **Toetsenbordnavigatie** via de lijst met waarschuwingen
+- **Waarschuwingen van Azure Resource Graph**: u kunt query's uitvoeren op waarschuwingen in Azure Resource Graph, de Kusto-achtige API voor al uw resources. Dit is ook handig als u uw eigen waarschuwingendashboards bouwt. [Meer informatie over Azure Resource Graph](../governance/resource-graph/index.yml).
+
+Als u toegang wilt krijgen tot de nieuwe ervaring, gebruikt u de koppeling Nu proberen in de banner boven aan de pagina met beveiligingswaarschuwingen.
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar het nieuwe waarschuwingenproces (preview)":::
+
+Zie [Azure Defender-voorbeeldwaarschuwingen genereren](security-center-alert-validation.md#generate-sample-azure-defender-alerts) als u voorbeeldwaarschuwingen wilt maken vanuit het nieuwe waarschuwingenproces.
 
 ## <a name="november-2020"></a>November 2020
 

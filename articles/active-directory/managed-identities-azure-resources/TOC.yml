@@ -4,7 +4,7 @@
   items:
     - name: Informatie over beheerde identiteiten voor Azure-resources
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Toegang krijgen tot Azure Resource Manager met een beheerde identiteit voor een VM
       items:
@@ -124,6 +124,10 @@
           href: how-to-view-managed-identity-service-principal-cli.md
         - name: PowerShell
           href: how-to-view-managed-identity-service-principal-powershell.md
+    - name: Een beheerde identiteit aan een app-rol toewijzen
+      items:
+        - name: PowerShell
+          href: how-to-assign-app-role-managed-identity-powershell.md
 - name: Naslaginformatie
   items:
     - name: .NET

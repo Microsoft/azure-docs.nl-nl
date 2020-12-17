@@ -553,6 +553,12 @@
               displayName: 'portal, create hyperscale'
     - name: Zelfstudies
       items:
+        - name: Een servergroep maken
+          href: tutorial-hyperscale-server-group.md
+        - name: Gegevens modelleren en laden
+          items:
+            - name: Shard-gegevens op werkknooppunten
+              href: tutorial-hyperscale-shard.md
         - name: Een multitenant-database ontwerpen
           href: tutorial-design-database-hyperscale-multi-tenant.md
           displayName: 'hyperscale, tutorial, multi-tenant'

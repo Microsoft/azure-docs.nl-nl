@@ -4,7 +4,7 @@
   items:
     - name: Wat is Kostenbeheer en facturering?
       href: cost-management-billing-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Beginnen met analyseren van kosten
@@ -188,15 +188,15 @@
               href: manage/pay-by-invoice.md
             - name: Extra abonnementen maken
               href: manage/create-subscription.md
-            - name: EA-abonnementen maken - REST
+            - name: Programmatisch EA-abonnementen maken
               href: manage/programmatically-create-subscription-enterprise-agreement.md
-            - name: MCA-abonnementen maken - REST
+            - name: Programmatisch MCA-abonnementen maken
               href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
-            - name: MPA-abonnementen maken - REST
+            - name: Programmatisch MPA-abonnementen maken
               href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
             - name: Abonnementen maken met ARM-sjablonen
               href: manage/create-subscription-template.md
-            - name: Abonnementen maken - preview van REST
+            - name: Programmatisch abonnementen maken - preview
               href: manage/programmatically-create-subscription-preview.md
             - name: Toegang verlenen om EA-abonnementen te maken
               href: manage/grant-access-to-create-subscription.md

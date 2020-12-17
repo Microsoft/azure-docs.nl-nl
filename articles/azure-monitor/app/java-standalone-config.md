@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 73e3d8834fcb41f863fe2e3d686b812bb6174e70
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 7c5cac0b52fb0a224595ca7e328b551fd48d6661
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507656"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614231"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -168,6 +168,9 @@ Als u aangepaste dimensies wilt toevoegen aan al uw telemetrie:
 ```
 
 `${...}` kan worden gebruikt om de waarde van de opgegeven omgevings variabele bij het opstarten te lezen.
+
+> [!NOTE]
+> Vanaf versie 3.0.1-BETA, als u een aangepaste dimensie met de naam toevoegt `service.version` , wordt de waarde opgeslagen in de `application_Version` kolom in de tabel Application Insights Logboeken in plaats van als aangepaste dimensie.
 
 ## <a name="telemetry-processors-preview"></a>Telemetrie-processors (preview-versie)
 

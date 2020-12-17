@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
-ms.openlocfilehash: d55e02bd981a220fee55a0abd540206a2701850a
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 3a9279189e3767b035256726a1da53b9edc8392f
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896834"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608983"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-one"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler One
 
@@ -43,7 +43,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Zscaler One ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
-* Zscaler One ondersteunt **Just-In-Time** -inrichting van gebruikers
+* Zscaler One ondersteunt **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-zscaler-one-from-the-gallery"></a>Zscaler One toevoegen vanuit de galerie
 
@@ -51,7 +51,7 @@ Om de integratie van Zscaler One in Azure AD te configureren, moet u Zscaler One
 
 **Voer de volgende stappen uit om Zscaler One toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Om de integratie van Zscaler One in Azure AD te configureren, moet u Zscaler One
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Zscaler One** , selecteer **Zscaler One** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Zscaler One**, selecteer **Zscaler One** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Zscaler One in de lijst met resultaten](common/search-new-app.png)
 
@@ -116,7 +116,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler On
     
     | Naam | Bronkenmerk |
     | ---------| ------------ |
-    | memberOf     | user.assignedroles |
+    | memberOf | user.assignedroles |
 
     a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
@@ -205,12 +205,12 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler On
 1. Start **Internet Explorer**.
 
 2. Selecteer **Internetopties** in het menu **Extra** om het dialoogvenster **Internetopties** te openen.   
-    
-     ![Internetopties](./media/zscaler-one-tutorial/ic769492.png "Internetopties")
+
+    ![Internetopties](./media/zscaler-one-tutorial/ic769492.png "Internetopties")
 
 3. Klik op het tabblad **Verbindingen**.   
-  
-     ![Verbindingen](./media/zscaler-one-tutorial/ic769493.png "Verbindingen")
+
+    ![Verbindingen](./media/zscaler-one-tutorial/ic769493.png "Verbindingen")
 
 4. Klik op **LAN-instellingen** om het dialoogvenster **LAN-instellingen** te openen.
 
@@ -234,7 +234,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler On
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -258,7 +258,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Zscaler One.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Zscaler One**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Zscaler One**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

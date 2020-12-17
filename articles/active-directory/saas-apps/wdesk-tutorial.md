@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/02/2020
 ms.author: jeedes
-ms.openlocfilehash: 7eac2ed58608ac5814e1f907b863a2977df830d4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 11539e7d6e685703810537cf69e0e7ed3ec0be4c
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636711"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609085"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Wdesk
 
@@ -120,7 +120,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Wdesk moet u de volg
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -170,11 +170,11 @@ In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure t
 
 1. Meld u in een ander browservenster als een beveiligingsbeheerder aan bij Wdesk.
 
-2. Klik linksonder op **Admin** en kies **Account Admin** :
+1. Klik linksonder op **Admin** en kies **Account Admin**:
  
-     ![Schermopname waarin Account Admin is geselecteerd in het menu Admin.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
+    ![Schermopname waarin Account Admin is geselecteerd in het menu Admin.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig1.png)
 
-3. Navigeer in Wdesk-beheer naar **Security** en **SAML** > **SAML Settings** :
+1. Navigeer in Wdesk-beheer naar **Security** en **SAML** > **SAML Settings**:
 
     ![Schermopname waarin SAML-instellingen is geselecteerd op het tabblad SAML.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
 
@@ -190,19 +190,19 @@ In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure t
 
     ![Schermopname waarin Service Provider Details wordt weergegeven, waar u de beschreven waarden kunt invoeren.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig4.png)
 
-      a. Kopieer de **aanmeldings-URL** en plak deze in het tekstvak **aanmeldings-URL** in Azure Portal.
-   
-      b. Kopieer de **URL van de metagegevens** en plak deze in het tekstvak **Id** van Azure Portal.
-       
-      c. Kopieer de **URL van de verbruiker** en plak deze in het tekstvak **Antwoord-URL** van Azure Portal.
-   
-      d. Klik in Azure Portal op **Opslaan** om de wijzigingen op te slaan.      
+    1. Kopieer de **aanmeldings-URL** en plak deze in het tekstvak **aanmeldings-URL** in Azure Portal.
 
-6. Klik op **Configure IdP Settings** om het dialoogvenster **Edit IdP Settings** te openen. Klik op **Choose File** om het bestand **Metadata.xml** te zoeken dat u vanuit Azure Portal hebt opgeslagen en upload het.
+    1. Kopieer de **URL van de metagegevens** en plak deze in het tekstvak **Id** van Azure Portal.
+
+    1. Kopieer de **URL van de verbruiker** en plak deze in het tekstvak **Antwoord-URL** van Azure Portal.
+
+    1. Klik in Azure Portal op **Opslaan** om de wijzigingen op te slaan.      
+
+1. Klik op **Configure IdP Settings** om het dialoogvenster **Edit IdP Settings** te openen. Klik op **Choose File** om het bestand **Metadata.xml** te zoeken dat u vanuit Azure Portal hebt opgeslagen en upload het.
     
     ![Schermopname waarin Edit IdP Settings wordt weergegeven, waar u metagegevens kunt uploaden.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig5.png)
   
-7. Klik op **Save changes** (Wijzigingen opslaan).
+1. Klik op **Save changes** (Wijzigingen opslaan).
 
     ![Schermopname waarin de knop Wijzigingen opslaan wordt weergegeven.](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
 

@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019, devx-track-azurepowershell
 ms.date: 01/22/2018
-ms.openlocfilehash: 9562c9fd590ea1234fb2378f03861141e58432ff
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: bed497dfdc25ec2815f51795a1f40847586ce798
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637527"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510308"
 ---
 # <a name="tutorial-copy-data-from-a-sql-server-database-to-azure-blob-storage"></a>Zelfstudie: Gegevens kopiëren van een SQL Server-database naar Azure Blob-opslag
 
@@ -43,22 +43,22 @@ In deze zelfstudie voert u de volgende stappen uit:
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 
 ### <a name="azure-roles"></a>Azure-rollen
-Als u data factory-exemplaren wilt maken, moet het gebruikersaccount waarmee u zich bij Azure aanmeldt, toegewezen zijn aan de rollen *Inzender* of *Eigenaar* , of moet dit een *beheerder* van het Azure-abonnement zijn.
+Als u data factory-exemplaren wilt maken, moet het gebruikersaccount waarmee u zich bij Azure aanmeldt, toegewezen zijn aan de rollen *Inzender* of *Eigenaar*, of moet dit een *beheerder* van het Azure-abonnement zijn.
 
-Als u de machtigingen die u hebt in het abonnement wilt bekijken, gaat u naar Azure Portal, selecteert u rechtsboven in de hoek uw gebruikersnaam en selecteert u vervolgens **Machtigingen** . Als u toegang tot meerdere abonnementen hebt, moet u het juiste abonnement selecteren. Zie het artikel [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure Portal](../role-based-access-control/role-assignments-portal.md) voor voorbeeldinstructies voor het toevoegen van een gebruiker aan een rol.
+Als u de machtigingen die u hebt in het abonnement wilt bekijken, gaat u naar Azure Portal, selecteert u rechtsboven in de hoek uw gebruikersnaam en selecteert u vervolgens **Machtigingen**. Als u toegang tot meerdere abonnementen hebt, moet u het juiste abonnement selecteren. Zie het artikel [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure Portal](../role-based-access-control/role-assignments-portal.md) voor voorbeeldinstructies voor het toevoegen van een gebruiker aan een rol.
 
 ### <a name="sql-server-2014-2016-and-2017"></a>SQL Server 2014, 2016 en 2017
-In deze zelfstudie gebruikt u een SQL Server-database als een *brongegevensopslag* . De pijplijn in de data factory die u in deze zelfstudie gaat maken, kopieert gegevens van deze SQL Server-database (bron) naar Azure Blob-opslag (sink). Maak een tabel met de naam **emp** in uw SQL Server-database en voeg een aantal voorbeeldgegevens toe aan de tabel.
+In deze zelfstudie gebruikt u een SQL Server-database als een *brongegevensopslag*. De pijplijn in de data factory die u in deze zelfstudie gaat maken, kopieert gegevens van deze SQL Server-database (bron) naar Azure Blob-opslag (sink). Maak een tabel met de naam **emp** in uw SQL Server-database en voeg een aantal voorbeeldgegevens toe aan de tabel.
 
 1. Start SQL Server Management Studio. Als dit niet al is geïnstalleerd op uw computer, gaat u naar [SQL Server Management Studio downloaden](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. Maak verbinding met SQL Server-exemplaar met behulp van uw referenties.
 
-1. Maak een voorbeelddatabase. Klik in de structuurweergave met de rechtermuisknop op **Databases** en selecteer **Nieuwe database** .
+1. Maak een voorbeelddatabase. Klik in de structuurweergave met de rechtermuisknop op **Databases** en selecteer **Nieuwe database**.
 
-1. Voer in het venster **Nieuwe database** een naam in voor de database en selecteer **OK** .
+1. Voer in het venster **Nieuwe database** een naam in voor de database en selecteer **OK**.
 
-1. Voer het volgende queryscript uit voor de database. Hiermee wordt de **emp** -tabel gemaakt en worden enkele voorbeeldgegevens ingevoegd in deze tabel. In de structuurweergave klikt u met de rechtermuisknop op de database die u hebt gemaakt en selecteert u **Nieuwe query** .
+1. Voer het volgende queryscript uit voor de database. Hiermee wordt de **emp**-tabel gemaakt en worden enkele voorbeeldgegevens ingevoegd in deze tabel. In de structuurweergave klikt u met de rechtermuisknop op de database die u hebt gemaakt en selecteert u **Nieuwe query**.
 
     ```sql
     CREATE TABLE dbo.emp
@@ -83,26 +83,26 @@ In deze QuickStart gaat u de naam en sleutel van uw Azure Storage-account gebrui
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) met uw Azure gebruikersnaam en wachtwoord.
 
-1. Selecteer in het linkerdeelvenster **Meer services** , filter met behulp van het sleutelwoord **Opslag** en selecteer vervolgens **Opslagaccounts** .
+1. Selecteer in het linkerdeelvenster **Meer services**, filter met behulp van het sleutelwoord **Opslag** en selecteer vervolgens **Opslagaccounts**.
 
     ![Zoeken naar een opslagaccount](media/doc-common-process/search-storage-account.png)
 
 1. Filter in de lijst met opslagaccounts op uw opslagaccount (indien nodig) en selecteer vervolgens uw opslagaccount.
 
-1. Selecteer in het venster **Opslagaccount** de optie **Toegangssleutels** .
+1. Selecteer in het venster **Opslagaccount** de optie **Toegangssleutels**.
 
 1. Kopieer de waarden in de vakken **opslagaccountnaam** en **key1** en plak deze in Kladblok of een andere editor voor later gebruik in de zelfstudie.
 
 #### <a name="create-the-adftutorial-container"></a>De container adftutorial maken
-In deze sectie maakt u in uw Azure Blob Storage een blobcontainer met de naam **adftutorial** .
+In deze sectie maakt u in uw Azure Blob Storage een blobcontainer met de naam **adftutorial**.
 
-1. Schakel in het venster **Opslagaccount** over naar **Overzicht** en klik vervolgens op **Blobs** .
+1. Schakel in het venster **Opslagaccount** over naar **Overzicht** en klik vervolgens op **Blobs**.
 
     ![De optie Blobs selecteren](media/tutorial-hybrid-copy-powershell/select-blobs.png)
 
-1. Selecteer in het venster **Blob-service** **Container** .
+1. Selecteer in het venster **Blob-service** **Container**.
 
-1. Voer in het venster **Nieuwe container** in het vak **Naam** **adftutorial** in en selecteer **OK** .
+1. Voer in het venster **Nieuwe container** in het vak **Naam** **adftutorial** in en selecteer **OK**.
 
     ![Naam van container invoeren](media/tutorial-hybrid-copy-powershell/new-container-dialog.png)
 
@@ -178,8 +178,8 @@ Installeer de nieuwste versie van Azure PowerShell als u deze niet al op uw comp
 >    ```
 >    The specified data factory name 'ADFv2TutorialDataFactory' is already in use. Data factory names must be globally unique.
 >    ```
-> * Als u Data Factory-exemplaren wilt maken, moet het gebruikersaccount waarmee u zich bij Azure aanmeldt, toegewezen zijn aan de rollen *Inzender* of *Eigenaar* , of moet dit een *beheerder* van het Azure-abonnement zijn.
-> * Voor een lijst met Azure-regio's waarin Data Factory momenteel beschikbaar is, selecteert u op de volgende pagina de regio's waarin u geïnteresseerd bent, vouwt u vervolgens **Analytics** uit en gaat u naar **Data Factory** : [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/). De gegevensopslagexemplaren (Azure Storage, Azure SQL Database enzovoort) en berekeningen (Azure HDInsight enzovoort) die worden gebruikt in Data Factory, kunnen zich in andere regio's bevinden.
+> * Als u Data Factory-exemplaren wilt maken, moet het gebruikersaccount waarmee u zich bij Azure aanmeldt, toegewezen zijn aan de rollen *Inzender* of *Eigenaar*, of moet dit een *beheerder* van het Azure-abonnement zijn.
+> * Voor een lijst met Azure-regio's waarin Data Factory momenteel beschikbaar is, selecteert u op de volgende pagina de regio's waarin u geïnteresseerd bent, vouwt u vervolgens **Analytics** uit en gaat u naar **Data Factory**: [Beschikbare producten per regio](https://azure.microsoft.com/global-infrastructure/services/). De gegevensopslagexemplaren (Azure Storage, Azure SQL Database enzovoort) en berekeningen (Azure HDInsight enzovoort) die worden gebruikt in Data Factory, kunnen zich in andere regio's bevinden.
 >
 >
 
@@ -201,7 +201,7 @@ In deze sectie kunt u een zelf-hostende Integration Runtime maken en deze koppel
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     Name              : ADFTutorialIR
     Type              : SelfHosted
     ResourceGroupName : <resourceGroupName>
@@ -218,7 +218,7 @@ In deze sectie kunt u een zelf-hostende Integration Runtime maken en deze koppel
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     State                     : NeedRegistration
     Version                   :
     CreateTime                : 9/10/2019 3:24:09 AM
@@ -257,21 +257,21 @@ In deze sectie kunt u een zelf-hostende Integration Runtime maken en deze koppel
 ## <a name="install-the-integration-runtime"></a>Integration Runtime installeren
 1. Download [Azure Data Factory Integration Runtime](https://www.microsoft.com/download/details.aspx?id=39717) op een lokale Windows-computer en voer de installatie uit.
 
-1. Klik bij **Welkom bij de installatiewizard van Microsoft Integration Runtime** op **Volgende** .  
+1. Klik bij **Welkom bij de installatiewizard van Microsoft Integration Runtime** op **Volgende**.  
 
-1. Ga in het venster **Gebruiksrechtovereenkomst** akkoord met de voorwaarden en de gebruiksrechtovereenkomst en selecteer **Volgende** .
+1. Ga in het venster **Gebruiksrechtovereenkomst** akkoord met de voorwaarden en de gebruiksrechtovereenkomst en selecteer **Volgende**.
 
-1. Selecteer in het venster **Doelmap** **Volgende** .
+1. Selecteer in het venster **Doelmap** **Volgende**.
 
-1. Selecteer in het venster **Gereed om Microsoft Integration Runtime te installeren** **Installeren** .
+1. Selecteer in het venster **Gereed om Microsoft Integration Runtime te installeren** **Installeren**.
 
-1. Klik in **De installatiewizard voor Microsoft Integration Runtime is voltooid**  op **Voltooien** .
+1. Klik in **De installatiewizard voor Microsoft Integration Runtime is voltooid**  op **Voltooien**.
 
-1. Plak de sleutel die u in de vorige sectie hebt opgeslagen in het venster **Integration Runtime (zelf-hostend) registreren** en selecteer **Registreren** .
+1. Plak de sleutel die u in de vorige sectie hebt opgeslagen in het venster **Integration Runtime (zelf-hostend) registreren** en selecteer **Registreren**.
 
     ![Integratieruntime registreren](media/tutorial-hybrid-copy-powershell/register-integration-runtime.png)
 
-1. Klik in het venster **Nieuw knooppunt voor Integration Runtime (zelf-hostend)** op **Voltooien** .
+1. Klik in het venster **Nieuw knooppunt voor Integration Runtime (zelf-hostend)** op **Voltooien**.
 
     ![Venster Nieuw knooppunt voor Integration Runtime](media/tutorial-hybrid-copy-powershell/new-integration-runtime-node-page.png)
 
@@ -279,7 +279,7 @@ In deze sectie kunt u een zelf-hostende Integration Runtime maken en deze koppel
 
     ![Registratie is voltooid](media/tutorial-hybrid-copy-powershell/registered-successfully.png)
 
-1. In het venster **Integration Runtime (zelf-hostend) registeren** selecteert u **Configuration Manager starten** .
+1. In het venster **Integration Runtime (zelf-hostend) registeren** selecteert u **Configuration Manager starten**.
 
 1. Wanneer het knooppunt is verbonden met de cloudservice, ziet u het volgende bericht:
 
@@ -287,9 +287,9 @@ In deze sectie kunt u een zelf-hostende Integration Runtime maken en deze koppel
 
 1. Test nu de verbinding met uw SQL Server-database door het volgende te doen:
 
-    a. Schakel in het venster **Configuratiebeheer** over naar het tabblad **Diagnostische gegevens** .
+    a. Schakel in het venster **Configuratiebeheer** over naar het tabblad **Diagnostische gegevens**.
 
-    b. Selecteer in het vak **Type gegevensbron** **SqlServer** .
+    b. Selecteer in het vak **Type gegevensbron** **SqlServer**.
 
     c. Voer de naam van de server in.
 
@@ -332,7 +332,7 @@ Tijdens deze stap koppelt u uw Azure Storage-account aan de data factory.
     }
    ```
 
-1. Schakel in PowerShell over naar de map *C:\ADFv2Tutorial* .
+1. Schakel in PowerShell over naar de map *C:\ADFv2Tutorial*.
    ```powershell
    Set-Location 'C:\ADFv2Tutorial'    
    ```
@@ -345,7 +345,7 @@ Tijdens deze stap koppelt u uw Azure Storage-account aan de data factory.
 
    Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     LinkedServiceName : AzureStorageLinkedService
     ResourceGroupName : <resourceGroup name>
     DataFactoryName   : <dataFactory name>
@@ -415,10 +415,10 @@ In deze stap gaat u uw SQL Server-exemplaar aan de data factory koppelen.
     > - Selecteer de sectie op basis van de verificatie die u gebruikt om verbinding te maken met uw SQL Server-exemplaar.
     > - Vervang **\<integration runtime name>** door de naam van uw integratieruntime.
     > - Vervang **\<servername>** , **\<databasename>** , **\<username>** en **\<password>** door de waarden van uw SQL Server-exemplaar voordat u het bestand opslaat.
-    > - Als u een backslash wilt gebruiken (\\) in de naam van uw gebruikersaccount of server, moet u er voor het escapeteken (\\) gebruiken. Gebruik bijvoorbeeld *mydomain\\\\myuser* .
+    > - Als u een backslash wilt gebruiken (\\) in de naam van uw gebruikersaccount of server, moet u er voor het escapeteken (\\) gebruiken. Gebruik bijvoorbeeld *mydomain\\\\myuser*.
 
 1. Voor het versleutelen van gevoelige gegevens (gebruikersnaam, wachtwoord, enz.), voer de `New-AzDataFactoryV2LinkedServiceEncryptedCredential` cmdlet uit.  
-    Deze versleuteling zorgt ervoor dat de referenties zijn versleuteld met behulp van DPAPI (Data Protection Application Programming Interface). De versleutelde referenties worden lokaal op het zelf-hostende Integration Runtime-knooppunt (lokale computer) opgeslagen. De uitvoerpayload kan worden omgeleid naar een ander JSON-bestand (in dit geval *encryptedLinkedService.json* ). Dit bestand bevat de versleutelde referenties.
+    Deze versleuteling zorgt ervoor dat de referenties zijn versleuteld met behulp van DPAPI (Data Protection Application Programming Interface). De versleutelde referenties worden lokaal op het zelf-hostende Integration Runtime-knooppunt (lokale computer) opgeslagen. De uitvoerpayload kan worden omgeleid naar een ander JSON-bestand (in dit geval *encryptedLinkedService.json*). Dit bestand bevat de versleutelde referenties.
 
    ```powershell
    New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -IntegrationRuntimeName $integrationRuntimeName -File ".\SQLServerLinkedService.json" > encryptedSQLServerLinkedService.json
@@ -469,7 +469,7 @@ Tijdens deze stap definieert u een gegevensset die gegevens in de SQL Server-dat
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     DatasetName       : SqlServerDataset
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -522,7 +522,7 @@ De gekoppelde service beschikt over de verbindingsgegevens die de Data Factory-s
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     DatasetName       : AzureBlobDataset
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -531,7 +531,7 @@ De gekoppelde service beschikt over de verbindingsgegevens die de Data Factory-s
     ```
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
-Tijdens deze stap maakt u een pijplijn met een kopieeractiviteit. Tijdens de kopieeractiviteit wordt de SqlServerDataset als invoergegevensset en AzureBlobDataset als de uitvoergegevensset gebruikt. Het brontype is ingesteld op *SqlSource* en het sinktype is ingesteld op *BlobSink* .
+Tijdens deze stap maakt u een pijplijn met een kopieeractiviteit. Tijdens de kopieeractiviteit wordt de SqlServerDataset als invoergegevensset en AzureBlobDataset als de uitvoergegevensset gebruikt. Het brontype is ingesteld op *SqlSource* en het sinktype is ingesteld op *BlobSink*.
 
 1. Maak een JSON-bestand met de naam *SqlServerToBlobPipeline.json* in de map *C:\ADFv2Tutorial* met de volgende code:
 
@@ -602,7 +602,7 @@ Tijdens deze stap maakt u een pijplijn met een kopieeractiviteit. Tijdens de kop
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     PipelineName      : SQLServerToBlobPipeline
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -639,7 +639,7 @@ $runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -Resou
 
     Hier volgt een voorbeeld van de voorbeelduitvoering:
 
-    ```JSON
+    ```console
     ResourceGroupName    : <resourceGroupName>
     DataFactoryName      : <dataFactoryName>
     ActivityRunId        : 24af7cf6-efca-4a95-931d-067c5c921c25
@@ -709,7 +709,7 @@ $runId = Invoke-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -Resou
 ## <a name="verify-the-output"></a>De uitvoer controleren
 De uitvoermap *fromonprem* wordt automatisch door de pijplijn gemaakt in de `adftutorial` blobcontainer. Controleer of u het bestand *dbo.emp.txt* in de uitvoermap ziet.
 
-1. Klik in Azure Portal op het venster met de **adftutorial** -container op **Vernieuwen** om de uitvoermap weer te geven.
+1. Klik in Azure Portal op het venster met de **adftutorial**-container op **Vernieuwen** om de uitvoermap weer te geven.
 1. Selecteer `fromonprem` in de lijst met mappen.
 1. Controleer of u een bestand met de naam `dbo.emp.txt` ziet.
 

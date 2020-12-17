@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 831da4153eebc798265493441ee72c041901904f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a007e64a7bd034397c2030c435a5ad349bd4acc7
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87053902"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608745"
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Zelfstudie: een Azure Resource Manager-sjabloon gebruiken voor het maken van een Data Factory-pijplijn om gegevens te kopiëren 
 > [!div class="op_single_selector"]
@@ -341,46 +341,58 @@ Maak een JSON-bestand met de naam **ADFCopyTutorialARM-Parameters.json** dat par
 ## <a name="monitor-pipeline"></a>De pijplijn bewaken
 
 1. Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com).
-2. Klik in het linkermenu op **Gegevensfabrieken**, (of) klik op **Alle services** en vervolgens op **Gegevensfabrieken** onder de categorie **Informatie en analytische gegevens**.
+
+1. Klik in het linkermenu op **Gegevensfabrieken**, (of) klik op **Alle services** en vervolgens op **Gegevensfabrieken** onder de categorie **Informatie en analytische gegevens**.
    
     ![Het menu voor gegevensfactory's](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factories-menu.png)
-3. Zoek uw gegevenfactory (AzureBlobToAzureSQLDatabaseDF) op de pagina **Gegevensfactory's** op. 
+
+1. Zoek uw gegevenfactory (AzureBlobToAzureSQLDatabaseDF) op de pagina **Gegevensfactory's** op. 
    
     ![Naar de gegevensfactory zoeken](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/search-for-data-factory.png)  
-4. Klik op uw Azure-gegevensfactory. De startpagina voor de gegevensfactory wordt weergegeven.
+
+1. Klik op uw Azure-gegevensfactory. De startpagina voor de gegevensfactory wordt weergegeven.
    
     ![De startpagina voor de gegevensfactory](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factory-home-page.png)  
-6. Volg de instructies in [Gegevenssets en pijplijn bewaken](data-factory-monitor-manage-pipelines.md) voor het bewaken van de pijplijn en gegevenssets die u tijdens deze zelfstudie hebt gemaakt. Visual Studio biedt momenteel geen ondersteuning voor het bewaken van Data Factory-pijplijnen.
-7. Wanneer een segment de status **Gereed** heeft, controleert u of de gegevens naar de tabel **emp** in de Azure SQL Database zijn gekopieerd.
 
+1. Volg de instructies in [Gegevenssets en pijplijn bewaken](data-factory-monitor-manage-pipelines.md) voor het bewaken van de pijplijn en gegevenssets die u tijdens deze zelfstudie hebt gemaakt. Visual Studio biedt momenteel geen ondersteuning voor het bewaken van Data Factory-pijplijnen.
+
+1. Wanneer een segment de status **Gereed** heeft, controleert u of de gegevens naar de tabel **emp** in de Azure SQL Database zijn gekopieerd.
 
 Zie [Gegevenssets en pijplijn bewaken](data-factory-monitor-manage-pipelines.md) voor meer informatie over het gebruik van Azure Portal voor het bewaken van de pijplijn en gegevenssets te bewaken die u tijdens deze zelfstudie hebt gemaakt.
 
 Zie [Azure Data Factory-pijplijnen bewaken en beheren met de Controle-app](data-factory-monitor-manage-app.md) voor meer informatie over het gebruik van de app Controleren en beheren voor het bewaken van uw gegevenspijplijnen.
 
 ## <a name="data-factory-entities-in-the-template"></a>Data Factory-entiteiten in de sjabloon
+
 ### <a name="define-data-factory"></a>Een gegevensfactory definiëren
-U definieert een gegevensfactory in de Resource Manager-sjabloon zoals in het volgende voorbeeld wordt weergegeven:  
+
+U definieert een gegevensfactory in de Resource Manager-sjabloon zoals in het volgende voorbeeld wordt weergegeven:
 
 ```json
-"resources": [
 {
-    "name": "[variables('dataFactoryName')]",
-    "apiVersion": "2015-10-01",
-    "type": "Microsoft.DataFactory/datafactories",
-    "location": "West US"
+  "resources": [
+    {
+      "name": "[variables('dataFactoryName')]",
+      "apiVersion": "2015-10-01",
+      "type": "Microsoft.DataFactory/datafactories",
+      "location": "West US"
+    }
+  ]
 }
 ```
 
 De variabele dataFactoryName wordt als volgt gedefinieerd: 
 
 ```json
-"dataFactoryName": "[concat('AzureBlobToAzureSQLDatabaseDF', uniqueString(resourceGroup().id))]"
+{
+    "dataFactoryName": "[concat('AzureBlobToAzureSQLDatabaseDF', uniqueString(resourceGroup().id))]"
+}
 ```
 
-Het is een unieke tekenreeks op basis van de resourcegroep-id.  
+Het is een unieke tekenreeks op basis van de resourcegroep-id.
 
 ### <a name="defining-data-factory-entities"></a>Data Factory-entiteiten definiëren
+
 De volgende Data Factory-entiteiten worden in de JSON-sjabloon gedefinieerd: 
 
 1. [Een gekoppelde Azure Storage-service](#azure-storage-linked-service)
@@ -390,6 +402,7 @@ De volgende Data Factory-entiteiten worden in de JSON-sjabloon gedefinieerd:
 5. [De gegevenspijplijn met een kopieerbewerking](#data-pipeline)
 
 #### <a name="azure-storage-linked-service"></a>Een gekoppelde Azure Storage-service
+
 De AzureStorageLinkedService koppelt uw Azure-opslagaccount aan de gegevensfactory. U hebt een container gemaakt en gegevens naar dit opslagaccount geüpload als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). In deze sectie geeft u de naam en sleutel van uw Azure Storage-account op. Zie [Een gekoppelde Azure Storage-service](data-factory-azure-blob-connector.md#azure-storage-linked-service) voor meer informatie over de JSON-eigenschappen die worden gebruikt voor het definiëren van een gekoppelde Azure Storage-service. 
 
 ```json
@@ -413,6 +426,7 @@ De AzureStorageLinkedService koppelt uw Azure-opslagaccount aan de gegevensfacto
 De tekenreeks connectionString maakt gebruik van de parameters storageAccountName en storageAccountKey. De waarden voor deze parameters worden doorgegeven met behulp van een configuratiebestand. De definitie maakt ook gebruik van de variabelen azureStorageLinkedService en dataFactoryName die zijn gedefinieerd in de sjabloon. 
 
 #### <a name="azure-sql-database-linked-service"></a>Een gekoppelde Azure SQL Database-service
+
 De AzureSqlLinkedService koppelt uw database in Azure SQL Database aan de gegevensfactory. De gegevens die worden gekopieerd uit de blobopslag worden opgeslagen in deze database. Als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) hebt u de emp-tabel in deze database gemaakt. U geeft in deze sectie de logische SQL-servernaam, -databasenaam, -gebruikersnaam en -wachtwoord op. Zie [Een gekoppelde Azure SQL-service](data-factory-azure-sql-connector.md#linked-service-properties) voor meer informatie over de JSON-eigenschappen die worden gebruikt voor het definiëren van een gekoppelde Azure SQL-service.  
 
 ```json
@@ -424,11 +438,11 @@ De AzureSqlLinkedService koppelt uw database in Azure SQL Database aan de gegeve
     ],
     "apiVersion": "2015-10-01",
     "properties": {
-          "type": "AzureSqlDatabase",
-          "description": "Azure SQL linked service",
-          "typeProperties": {
-            "connectionString": "[concat('Server=tcp:',parameters('sqlServerName'),'.database.windows.net,1433;Database=', parameters('databaseName'), ';User ID=',parameters('sqlServerUserName'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
-          }
+      "type": "AzureSqlDatabase",
+      "description": "Azure SQL linked service",
+      "typeProperties": {
+        "connectionString": "[concat('Server=tcp:',parameters('sqlServerName'),'.database.windows.net,1433;Database=', parameters('databaseName'), ';User ID=',parameters('sqlServerUserName'),';Password=',parameters('sqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
+      }
     }
 }
 ```

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: b647b5ee9dbd7a0447bbb69a47db76685daa1102
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 777fc60f76692734ea34ff3cdf8f6bc6e5e8316b
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030192"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615708"
 ---
 # <a name="using-the-location-condition-in-a-conditional-access-policy"></a>De locatie voorwaarde gebruiken in een beleid voor voorwaardelijke toegang 
 
@@ -195,6 +195,9 @@ Als er een Cloud proxy is ingesteld, kan een beleid dat wordt gebruikt om een hy
 ### <a name="api-support-and-powershell"></a>API-ondersteuning en Power shell
 
 Een preview-versie van de Graph API voor benoemde locaties is beschikbaar. Zie de NamedLocation- [API](/graph/api/resources/namedlocation?view=graph-rest-beta)voor meer informatie.
+
+> [!NOTE]
+> Benoemde locaties die u maakt met behulp van Power shell-weer gave in benoemde locaties (preview). U kunt geen benoemde locaties zien in de oude weer gave.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: cb3417cf765cd703d72d4a2db7a649400ab2d4de
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d74057e32b6f16bdb6dae3d96ac46c5cc93571aa
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896766"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609102"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Internet Access Administrator
 
@@ -52,7 +52,7 @@ Als u de integratie van Zscaler Internet Access Administrator met Azure AD wilt 
 
 **Als u Zscaler Internet Access Administrator vanuit de galerie wilt toevoegen, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -134,7 +134,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
     | Naam  | Bronkenmerk  |
     | ---------| ------------ |
-    | Rol     | user.assignedroles |
+    | Rol | user.assignedroles |
 
     a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
@@ -169,7 +169,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
 1. Meld u in een ander browservenster als beheerder aan bij de beheerinterface van Zscaler Internet Access Administrator.
 
-2. Ga naar **Administration > Administrator Management** , voer de volgende stappen uit en klik op Save:
+2. Ga naar **Administration > Administrator Management**, voer de volgende stappen uit en klik op Save:
 
     ![Schermopname van Administrator Management met opties voor het inschakelen van SAML-verificatie, het uploaden van een SSL-certificaat en het opgeven van een certificaatverlener.](./media/zscaler-internet-access-administrator-tutorial/AdminSSO.png "Beheer")
 
@@ -191,7 +191,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -216,7 +216,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie hebt u Britta Simon in staat gesteld gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Zscaler Internet Access Administrator.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Zscaler Internet Access Administrator**.
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Zscaler Internet Access Administrator**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

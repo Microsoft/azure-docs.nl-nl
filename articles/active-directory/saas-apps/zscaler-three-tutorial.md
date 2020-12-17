@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 12bc1de62217a598a478d8d7e4d71a4b60e000b9
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: ad88f2a469fb89145c39990fe55e92abf0f2a4c1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896630"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608881"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zscaler-three"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Zscaler Three
 
@@ -41,7 +41,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Zscaler Three ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
-* Zscaler Three ondersteunt **Just-In-Time** -inrichting van gebruikers
+* Zscaler Three ondersteunt **Just-In-Time**-inrichting van gebruikers
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -74,7 +74,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler Th
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Zscaler Three** -toepassing naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de **Zscaler Three**-toepassing naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -89,10 +89,10 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     ![Schermopname die Gebruikerskenmerken toont met het pictogram Bewerken geselecteerd.](common/edit-attribute.png)
 
 6. Bovendien worden in de Zscaler Three-toepassing nog enkele kenmerken verwacht die als SAML-antwoord moeten worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
-    
+
     | Naam | Bronkenmerk |
     | ---------| ------------ |
-    | memberOf     | user.assignedroles |
+    | memberOf | user.assignedroles |
 
     > [!NOTE]
     > Klik [hier](../develop/active-directory-enterprise-app-role-management.md) als u wilt weten hoe u rollen in Azure AD moet configureren
@@ -109,9 +109,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -148,7 +148,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding met Azure te 
 3. Als u Zscaler Three handmatig wilt instellen, opent u een nieuw browservenster en meldt u zich als beheerder aan bij de bedrijfssite van Zscaler Three. Voer hierna de volgende stappen uit:
 
 4. Ga naar **Beheer > Verificatie > Verificatie-instellingen** en voer de volgende stappen uit:
-   
+
     ![Schermopname van de Zscaler One-site met stappen als beschreven.](./media/zscaler-three-tutorial/ic800206.png "Beheer")
 
     a. Kies onder Verificatietype de optie **SAML**.
@@ -156,9 +156,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding met Azure te 
     b. Klik op **SAML configureren**.
 
 5. Voer in het venster **SAML bewerken** de volgende stappen uit en klik op Opslaan.  
-            
+
     ![Gebruikers en verificatie beheren](./media/zscaler-three-tutorial/ic800208.png "Gebruikers en verificatie beheren")
-    
+
     a. Plak in het tekstvak **SAML Portal URL** de **aanmeldings-URL** die u in de Azure-portal hebt gekopieerd.
 
     b. Voer in het tekstvak **Login Name Attribute****NameID** in.
@@ -189,17 +189,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding met Azure te 
 1. Start **Internet Explorer**.
 
 2. Selecteer **Internetopties** in het menu **Extra** om het dialoogvenster **Internetopties** te openen.   
-    
+
      ![Internetopties](./media/zscaler-three-tutorial/ic769492.png "Internetopties")
 
 3. Klik op het tabblad **Verbindingen**.   
-  
+
      ![Verbindingen](./media/zscaler-three-tutorial/ic769493.png "Verbindingen")
 
 4. Klik op **LAN-instellingen** om het dialoogvenster **LAN-instellingen** te openen.
 
 5. In het gedeelte Proxyserver voert u de volgende stappen uit:   
-   
+
     ![Proxyserver](./media/zscaler-three-tutorial/ic769494.png "Proxyserver")
 
     a. Selecteer **Een proxyserver voor uw LAN-netwerk gebruiken**.
@@ -229,9 +229,9 @@ Wanneer u in het toegangsvenster op de tegel Zscaler Three klikt, wordt u automa
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 0cd9f0d6cf9529439f7b5ce46b1a5807d0a68a7c
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 11a45adfda306b2ab843725b6aaa28a5e6c026a6
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111239"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614248"
 ---
 # <a name="configure-complexity-requirements-for-passwords-in-azure-active-directory-b2c"></a>Complexiteits vereisten configureren voor wacht woorden in Azure Active Directory B2C
 
@@ -56,7 +56,7 @@ Als u aangepast beleid gebruikt, kunt u[de complexiteit van het wacht woord conf
 
 ### <a name="comparison-chart"></a>Vergelijkings grafiek
 
-| Complexiteit | Description |
+| Complexiteit | Beschrijving |
 | --- | --- |
 | Eenvoudig | Een wacht woord van ten minste 8 tot 64 tekens. |
 | Sterk | Een wacht woord van ten minste 8 tot 64 tekens. Hiervoor zijn 3 van de 4 van kleine letters, hoofd letters, cijfers of symbolen vereist. |
@@ -218,7 +218,7 @@ Sla het beleids bestand op.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [configureren van wachtwoord wijzigingen met aangepaste beleids regels in azure Active Directory B2C](custom-policy-password-change.md).
+- Meer informatie over het [configureren van wachtwoord wijzigingen in azure Active Directory B2C](add-password-change-policy.md).
 - Meer informatie over de [predikaten](predicates.md) en [PredicateValidations](predicates.md#predicatevalidations) -elementen vindt u in de IEF-verwijzing.
 
 

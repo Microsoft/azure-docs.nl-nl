@@ -10,13 +10,13 @@ ms.topic: how-to
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 04/14/2020
-ms.openlocfilehash: 3cab3b262f9116903d0b423cd5e4a0ebd03c46fa
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.date: 12/16/2020
+ms.openlocfilehash: 49dfed7faac1e55a40bc7b7ddd5e9555519350a2
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984427"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617303"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Azure SQL Database lange termijn retentie van back-ups beheren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -203,6 +203,7 @@ Restore-AzSqlDatabase -FromLongTermRetentionBackup -ResourceId $ltrBackup.Resour
 
 ## <a name="limitations"></a>Beperkingen
 - Bij het herstellen van een LTR-back-up is de eigenschap Lees schaal uitgeschakeld. Als u de herstelde data base wilt inschakelen, moet u deze bijwerken door de data base bij te werken nadat deze is gemaakt.
+- U moet het doel doelstelling van het service niveau opgeven bij het herstellen van een LTR-back-up die is gemaakt toen de data base zich in een elastische pool bevond. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

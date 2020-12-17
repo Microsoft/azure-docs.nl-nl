@@ -6,13 +6,13 @@ author: jifems
 ms.author: jife
 ms.service: data-share
 ms.topic: troubleshooting
-ms.date: 10/15/2020
-ms.openlocfilehash: e29c640494a18bb3be2125a5b53b4f943521fe6c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 12/16/2020
+ms.openlocfilehash: c93ce9c81ada3c30128846b43041603e132abd88
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579144"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617235"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share"></a>Veelvoorkomende problemen in Azure Data Share oplossen 
 
@@ -67,6 +67,10 @@ De moment opname kan om verschillende redenen mislukken. U kunt een gedetailleer
 * De verbinding van de gegevens share met het bron-of doel gegevens archief wordt geblokkeerd door de firewall.
 * De gedeelde gegevensset of het bron-of doel gegevens archief wordt verwijderd.
 
+Voor het opslag account zijn de volgende extra oorzaken van fouten in de moment opname.
+
+* Het bestand wordt bijgewerkt in de bron terwijl er een moment opname wordt gemaakt. Dit kan leiden tot een 0-byte bestand bij het doel. Volgende moment opname nadat de update is voltooid op de bron moet slagen.
+
 Voor SQL-bronnen zijn de volgende extra oorzaken van momentopname fouten. 
 
 * Het bron-of doel-SQL-script om een gegevens share-machtiging te verlenen, wordt niet uitgevoerd. Of voor Azure SQL Database of Azure Synapse Analytics (voorheen Azure SQL DW), wordt het uitgevoerd met behulp van SQL-verificatie in plaats van Azure Active Directory-verificatie.  
@@ -75,6 +79,9 @@ Voor SQL-bronnen zijn de volgende extra oorzaken van momentopname fouten.
 * Het bron-of doel-SQL-gegevens archief is vergrendeld door andere processen. Azure-gegevens share is niet van toepassing op vergren delingen voor de bron-en doel-SQL-gegevens opslag. Bestaande vergren delingen op het bron-en doel-SQL-gegevens archief veroorzaken echter een moment opname.
 * Er wordt naar de doel-SQL-tabel verwezen door een foreign key-beperking. Als er tijdens de moment opname een doel tabel met dezelfde naam bestaat, wordt de Azure-gegevens share Table neergezet en wordt er een nieuwe tabel gemaakt. Als er wordt verwezen naar de doel-SQL-tabel met een foreign key-beperking, kan de tabel niet worden verwijderd.
 * Het CSV-doel bestand wordt gegenereerd, maar er kunnen geen gegevens in Excel worden gelezen. Dit kan gebeuren wanneer de bron SQL-tabel gegevens bevat met niet-Engelse tekens. Selecteer in Excel het tabblad gegevens ophalen en kies het CSV-bestand. Selecteer bestand oorsprong als 65001: Unicode (UTF-8) en laad gegevens.
+
+## <a name="snapshot-issue-after-updating-snapshot-schedule"></a>Momentopname probleem na het bijwerken van het momentopname schema
+Nadat de gegevens provider het momentopname schema voor de verzonden share heeft bijgewerkt, moet de gegevens verbruiker het vorige momentopname schema uitschakelen en het bijgewerkte schema opnieuw inschakelen voor de ontvangen share. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a9ca6d91be95bfb1a47f85b20f3775a57518ffcf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 036e9e6bf58d837c698a6092770ef581f77bc20c
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87922129"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97108243"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Zelfstudie: De gebruikersinterface in Azure Active Directory B2C aanpassen
 
-Voor veelvoorkomende gebruikersacties, zoals registreren, aanmelden en het profiel bewerken, kunt u in Azure Active Directory B2C (Azure AD B2C) [gebruikersstromen](user-flow-overview.md) toepassen. Aan de hand van de informatie in deze zelfstudie leert u hoe u [de gebruikersinterface (UI) voor dergelijke acties aanpast](customize-ui-overview.md) met behulp van uw eigen HTML- en CSS-bestanden.
+Voor veelvoorkomende gebruikersacties, zoals registreren, aanmelden en het profiel bewerken, kunt u in Azure Active Directory B2C (Azure AD B2C) [gebruikersstromen](user-flow-overview.md) toepassen. Aan de hand van de informatie in deze zelfstudie leert u hoe u [de gebruikersinterface (UI) voor dergelijke acties aanpast](customize-ui-with-html.md) met behulp van uw eigen HTML- en CSS-bestanden.
 
 In dit artikel leert u het volgende:
 
@@ -166,4 +166,4 @@ In dit artikel hebt u het volgende geleerd:
 > * De aangepaste gebruikersinterface testen
 
 > [!div class="nextstepaction"]
-> [De gebruikersinterface in Azure Active Directory B2C aanpassen](customize-ui-overview.md)
+> [De gebruikersinterface in Azure Active Directory B2C aanpassen](customize-ui-with-html.md)

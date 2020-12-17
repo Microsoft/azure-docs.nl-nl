@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
-ms.openlocfilehash: 156a2f41ec18ef5ce6689118c517ed182fe0bcc6
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: ecaf0c68f2234643d2036c67ae61d53f8763f204
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896647"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler ZSCloud
 
@@ -43,7 +43,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Zscaler ZSCloud ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
-* Zscaler ZSCloud ondersteunt **Just-In-Time** -inrichting van gebruikers
+* Zscaler ZSCloud ondersteunt **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-zscaler-zscloud-from-the-gallery"></a>Zscaler ZSCloud toevoegen vanuit de galerie
 
@@ -51,7 +51,7 @@ Om de integratie van Zscaler ZSCloud in Azure AD te configureren, moet u Zscaler
 
 **Voer de volgende stappen uit om Zscaler ZSCloud toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Om de integratie van Zscaler ZSCloud in Azure AD te configureren, moet u Zscaler
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Zscaler ZSCloud** , selecteer **Zscaler ZSCloud** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Zscaler ZSCloud**, selecteer **Zscaler ZSCloud** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Zscaler ZSCloud in de lijst met resultaten](common/search-new-app.png)
 
@@ -116,7 +116,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler ZS
     
     | Naam | Bronkenmerk |
     | ---------| ------------ |
-    | memberOf     | user.assignedroles |
+    | memberOf | user.assignedroles |
 
     a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
@@ -234,7 +234,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Zscaler ZS
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -258,7 +258,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Zscaler ZSCloud.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Zscaler ZSCloud**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Zscaler ZSCloud**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

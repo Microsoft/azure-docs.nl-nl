@@ -4,15 +4,15 @@ description: Meer informatie over het instellen van een persoonlijke Azure-koppe
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 09/18/2020
+ms.date: 12/16/2020
 ms.author: thweiss
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4ba4e5f462a3cc88de5b23b32a5e749f9363e93f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 9a6db0d25165059581d7ffafa5b8e7fd19330c87
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93081889"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629643"
 ---
 # <a name="configure-azure-private-link-for-an-azure-cosmos-account"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Cosmos-account
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -34,7 +34,7 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
 
 1. Kies in het deel venster **alle resources** een Azure Cosmos-account.
 
-1. Selecteer **particuliere endpoint-verbindingen** in de lijst met instellingen en selecteer vervolgens **persoonlijk eind punt** :
+1. Selecteer **particuliere endpoint-verbindingen** in de lijst met instellingen en selecteer vervolgens **persoonlijk eind punt**:
 
    :::image type="content" source="./media/how-to-configure-private-endpoints/create-private-endpoint-portal.png" alt-text="Selecties voor het maken van een persoonlijk eind punt in de Azure Portal":::
 
@@ -49,19 +49,19 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
     | Naam | Voer een naam in voor uw privé-eindpunt. Als deze naam wordt gebruikt, maakt u er een. |
     |Regio| Selecteer de regio waar u een persoonlijke koppeling wilt implementeren. Maak het persoonlijke eind punt op de locatie waar het virtuele netwerk zich bevindt.|
     |||
-1. Selecteer **Volgende: Resource** .
+1. Selecteer **Volgende: Resource**.
 1. Typ of selecteer in **Een privé-eindpunt maken – Resource** de volgende gegevens:
 
     | Instelling | Waarde |
     | ------- | ----- |
-    |Verbindingsmethode  | Selecteer **Verbinding maken met een Azure-resource in mijn directory** . <br/><br/> U kunt vervolgens een van uw resources kiezen om een persoonlijke koppeling in te stellen. U kunt ook verbinding maken met de resource van iemand anders door een resource-ID of alias te gebruiken die met u is gedeeld.|
+    |Verbindingsmethode  | Selecteer **Verbinding maken met een Azure-resource in mijn directory**. <br/><br/> U kunt vervolgens een van uw resources kiezen om een persoonlijke koppeling in te stellen. U kunt ook verbinding maken met de resource van iemand anders door een resource-ID of alias te gebruiken die met u is gedeeld.|
     | Abonnement| Selecteer uw abonnement. |
-    | Resourcetype | Selecteer **micro soft. AzureCosmosDB/databaseAccounts** . |
+    | Resourcetype | Selecteer **micro soft. AzureCosmosDB/databaseAccounts**. |
     | Resource |Selecteer uw Azure Cosmos-account. |
     |Stel subresource in |Selecteer het Azure Cosmos DB-API-type dat u wilt toewijzen. Dit wordt standaard ingesteld op slechts één keuze voor de Api's SQL, MongoDB en Cassandra. Voor de Gremlin-en Table-Api's kunt u ook **SQL** kiezen omdat deze api's compatibel zijn met de SQL-API. |
     |||
 
-1. Selecteer **Volgende: Configuratie** .
+1. Selecteer **Volgende: Configuratie**.
 1. Voer in **een persoonlijk eind punt maken-configuratie** de volgende gegevens in of Selecteer deze:
 
     | Instelling | Waarde |
@@ -70,12 +70,12 @@ Gebruik de volgende stappen om een persoonlijk eind punt te maken voor een besta
     | Virtueel netwerk| Selecteer uw virtuele netwerk. |
     | Subnet | Selecteer uw subnet. |
     |**Integratie van Privé-DNS**||
-    |Integreren met privé-DNS-zone |Selecteer **Ja** . <br><br/> Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines. |
-    |Privé-DNS-zone |Selecteer **privatelink.documents.Azure.com** . <br><br/> De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.|
+    |Integreren met privé-DNS-zone |Selecteer **Ja**. <br><br/> Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines. |
+    |Privé-DNS-zone |Selecteer **privatelink.documents.Azure.com**. <br><br/> De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.|
     |||
 
-1. Selecteer **Controleren + maken** . Op de pagina **controleren en maken** valideert Azure uw configuratie.
-1. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken** .
+1. Selecteer **Controleren en maken**. Op de pagina **controleren en maken** valideert Azure uw configuratie.
+1. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 
 Wanneer u een persoonlijke koppeling hebt goedgekeurd voor een Azure Cosmos-account, is de optie **alle netwerken** in het deel venster **firewall en virtuele netwerken** niet beschikbaar in de Azure Portal.
 
@@ -95,11 +95,11 @@ In de volgende tabel ziet u de toewijzing tussen de verschillende Azure Cosmos-a
 
 Nadat het persoonlijke eind punt is ingericht, kunt u een query uitvoeren op de IP-adressen. De IP-adressen van de Azure Portal weer geven:
 
-1. Selecteer **Alle resources** .
-1. Zoek naar het persoonlijke eind punt dat u eerder hebt gemaakt. In dit geval is het **cdbPrivateEndpoint3** .
+1. Selecteer **Alle resources**.
+1. Zoek naar het persoonlijke eind punt dat u eerder hebt gemaakt. In dit geval is het **cdbPrivateEndpoint3**.
 1. Selecteer het tabblad **overzicht** om de DNS-instellingen en IP-adressen te bekijken.
 
-:::image type="content" source="./media/how-to-configure-private-endpoints/private-ip-addresses-portal.png" alt-text="Selecties voor het maken van een persoonlijk eind punt in de Azure Portal":::
+:::image type="content" source="./media/how-to-configure-private-endpoints/private-ip-addresses-portal.png" alt-text="Privé-IP-adressen in de Azure Portal":::
 
 Er zijn meerdere IP-adressen gemaakt per particulier eind punt:
 
@@ -412,7 +412,7 @@ Voor deze accounts moet u één persoonlijk eind punt maken voor elk API-type. H
 
 Nadat de sjabloon is geïmplementeerd, kunt u een uitvoer zien die vergelijkbaar is met wat er in de volgende afbeelding wordt weer gegeven. De `provisioningState` waarde is `Succeeded` als de persoonlijke eind punten correct zijn ingesteld.
 
-:::image type="content" source="./media/how-to-configure-private-endpoints/resource-manager-template-deployment-output.png" alt-text="Selecties voor het maken van een persoonlijk eind punt in de Azure Portal":::
+:::image type="content" source="./media/how-to-configure-private-endpoints/resource-manager-template-deployment-output.png" alt-text="Implementatie-uitvoer voor de Resource Manager-sjabloon":::
 
 Nadat de sjabloon is geïmplementeerd, worden de privé-IP-adressen in het subnet gereserveerd. De firewall regel van het Azure Cosmos-account is geconfigureerd om alleen verbindingen van het privé-eind punt te accepteren.
 
@@ -616,6 +616,9 @@ foreach ($ipconfig in $networkInterface.properties.ipConfigurations) {
 U moet een privé-DNS-zone gebruiken in het subnet waar u het persoonlijke eind punt hebt gemaakt. Configureer de eind punten zodat elk privé-IP-adres wordt toegewezen aan een DNS-vermelding. (Zie de `fqdns` eigenschap in het antwoord dat eerder is weer gegeven.)
 
 Wanneer u het persoonlijke eind punt maakt, kunt u het integreren met een privé-DNS-zone in Azure. Als u in plaats daarvan een aangepaste DNS-zone wilt gebruiken, moet u deze configureren voor het toevoegen van DNS-records voor alle privé-IP-adressen die zijn gereserveerd voor het persoonlijke eind punt.
+
+> [!IMPORTANT]
+> Het is de DNS-omzetting van uw aanvragen die bepaalt of deze aanvragen worden verzonden via uw privé-eind punten of de standaard open bare route nemen. Zorg ervoor dat uw lokale DNS op de juiste wijze verwijst naar het privé IP-adres dat is toegewezen door uw persoonlijke eind punt.
 
 ## <a name="private-link-combined-with-firewall-rules"></a>Privé koppeling gecombineerd met firewall regels
 

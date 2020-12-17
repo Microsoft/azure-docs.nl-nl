@@ -3,13 +3,13 @@ title: Toegang tot Kubernetes-resources via de Azure Portal
 description: Meer informatie over hoe u met Kubernetes-resources een Azure Kubernetes service-cluster (AKS) kunt beheren vanuit de Azure Portal.
 services: container-service
 ms.topic: article
-ms.date: 12/09/2020
-ms.openlocfilehash: 8e31c41573ced403a034999de71a5595a54281df
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 12/16/2020
+ms.openlocfilehash: 4f34535f74de562c0a1b65c31f28476ca02e540f
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921578"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631865"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal"></a>Toegang tot Kubernetes-resources via de Azure Portal
 
@@ -19,15 +19,17 @@ De resource weergave Kubernetes van de Azure Portal vervangt de [AKS dashboard-i
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u Kubernetes-resources wilt weer geven in de Azure Portal, hebt u een AKS-cluster nodig. Elk cluster wordt ondersteund, maar als de integratie van Azure Active Directory (Azure AD) wordt gebruikt, moet uw cluster gebruikmaken van [Azure AD-integratie met AKS-beheer][aks-managed-aad]. Als uw cluster verouderde Azure AD gebruikt, kunt u uw cluster bijwerken in de portal of met de [Azure cli][cli-aad-upgrade].
+Als u Kubernetes-resources wilt weer geven in de Azure Portal, hebt u een AKS-cluster nodig. Elk cluster wordt ondersteund, maar als de integratie van Azure Active Directory (Azure AD) wordt gebruikt, moet uw cluster gebruikmaken van [Azure AD-integratie met AKS-beheer][aks-managed-aad]. Als uw cluster verouderde Azure AD gebruikt, kunt u uw cluster bijwerken in de portal of met de [Azure cli][cli-aad-upgrade]. U kunt ook [de Azure Portal gebruiken][portal-cluster] om een nieuw AKS-cluster te maken.
 
 ## <a name="view-kubernetes-resources"></a>Kubernetes-resources weer geven
 
 Als u de Kubernetes-resources wilt bekijken, gaat u naar uw AKS-cluster in de Azure Portal. Het navigatie deel venster aan de linkerkant wordt gebruikt om toegang te krijgen tot uw resources. De resources zijn onder andere:
 
 - In **naam ruimten** worden de naam ruimten van het cluster weer gegeven. Het filter aan de bovenkant van de lijst met naam ruimten biedt een snelle manier om uw naam ruimte bronnen te filteren en weer te geven.
-- **Werk belastingen** toont informatie over implementaties, peulen, replica sets en daemon-sets die zijn geïmplementeerd in uw cluster. In de onderstaande scherm afbeelding ziet u het standaard systeem-peul in een voor beeld van een AKS-cluster.
+- **Werk belastingen** toont informatie over implementaties, peulen, replica sets, stateful sets, daemon-sets, taken en cron-taken die zijn geïmplementeerd in uw cluster. In de onderstaande scherm afbeelding ziet u het standaard systeem-peul in een voor beeld van een AKS-cluster.
 - **Services en ingresses** toont alle service-en ingangs bronnen van uw cluster.
+- In **opslag** worden uw Azure Storage-klassen en permanente volume gegevens weer gegeven.
+- In de **configuratie** worden de configuratie kaarten en geheimen van uw cluster weer gegeven.
 
 :::image type="content" source="media/kubernetes-portal/workloads.png" alt-text="Kubernetes pod-informatie die wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/workloads.png":::
 
@@ -35,7 +37,7 @@ Als u de Kubernetes-resources wilt bekijken, gaat u naar uw AKS-cluster in de Az
 
 In dit voor beeld gebruiken we onze voor beeld-AKS-cluster om de Azure stem-toepassing te implementeren vanuit de [AKS Quick][portal-quickstart]start.
 
-1. Selecteer **toevoegen** uit de resource weergaven (naam ruimte, werk belasting of services en ingresses).
+1. Selecteer **toevoegen** vanuit een van de resource weergaven (naam ruimte, werk belastingen, services en Ingresses, opslag of configuratie).
 1. Plak het YAML voor de Azure stem-toepassing vanuit de [AKS Quick][portal-quickstart]start.
 1. Selecteer **toevoegen** aan de onderkant van de yaml-editor om de toepassing te implementeren. 
 
@@ -45,7 +47,7 @@ Zodra het YAML-bestand is toegevoegd, worden in de resource Viewer zowel Kuberne
 
 ### <a name="monitor-deployment-insights"></a>Implementatie inzichten bewaken
 
-AKS-clusters met [Azure monitor voor containers][enable-monitor] ingeschakeld kunnen snel implementatie inzichten weer geven. In de weer gave Kubernetes bronnen kunnen gebruikers de live status van afzonderlijke implementaties zien, met inbegrip van CPU-en geheugen gebruik, evenals overgang naar Azure monitor voor meer gedetailleerde informatie. Hier volgt een voor beeld van implementatie Insights van een voor beeld van een AKS-cluster:
+AKS-clusters met [Azure monitor voor][enable-monitor] ingeschakelde containers kunnen snel implementatie en andere inzichten weer geven. In de weer gave Kubernetes resources kunnen gebruikers de live status van afzonderlijke implementaties zien, met inbegrip van CPU-en geheugen gebruik, evenals overgang naar Azure monitor voor uitgebreidere informatie over specifieke knoop punten en containers. Hier volgt een voor beeld van implementatie Insights van een voor beeld van een AKS-cluster:
 
 :::image type="content" source="media/kubernetes-portal/deployment-insights.png" alt-text="Implementatie Insights wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/deployment-insights.png":::
 
@@ -75,8 +77,6 @@ Om toegang te krijgen tot de Kubernetes-resources, moet u toegang hebben tot het
 
 Voor bestaande clusters moet u mogelijk de resource weergave Kubernetes inschakelen. Als u de resource weergave wilt inschakelen, volgt u de aanwijzingen in de portal voor uw cluster.
 
-:::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Azure Portal bericht om de resource weergave Kubernetes in te scha kelen." lightbox="media/kubernetes-portal/enable-resource-view.png":::
-
 > [!TIP]
 > De AKS-functie voor door de [**API server geautoriseerde IP-adresbereiken**](api-server-authorized-ip-ranges.md) kan worden toegevoegd om de API-server toegang alleen te beperken tot het open bare eind punt van de firewall. Een andere optie voor dergelijke clusters is het bijwerken `--api-server-authorized-ip-ranges` om toegang te bieden voor een lokale client computer of een IP-adres bereik (van waaruit de portal wordt gebladerd). U hebt het open bare IPv4-adres van de computer nodig om deze toegang toe te staan. U kunt dit adres vinden met de onderstaande opdracht of door te zoeken in ' wat is mijn IP-adres ' in een Internet browser.
 ```bash
@@ -100,3 +100,4 @@ In dit artikel wordt uitgelegd hoe u toegang krijgt tot Kubernetes-resources voo
 [aks-managed-aad]: managed-aad.md
 [cli-aad-upgrade]: managed-aad.md#upgrading-to-aks-managed-azure-ad-integration
 [enable-monitor]: ../azure-monitor/insights/container-insights-enable-existing-clusters.md
+[portal-cluster]: kubernetes-walkthrough-portal.md

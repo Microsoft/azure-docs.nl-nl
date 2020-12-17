@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 324a2acbf069e8e23246b99a7d79a3195f737a56
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 836cf4600e353da61673ec8ee5df8f30fb4b9562
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492298"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629847"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -582,7 +582,7 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 **Hulp**: Azure database for PostgreSQL-grootschalige (Citus) biedt momenteel geen rechtstreekse ondersteuning voor beheerde identiteiten. Tijdens het maken van de Azure Database for PostgreSQL-server moet u referenties opgeven voor een beheerders gebruiker. U kunt aanvullende gebruikers rollen maken in de Azure Portal-interface.
 
-- [Een Azure Database for PostgreSQL maken - Hyperscale (Citus)](./quickstart-create-hyperscale-portal.md#create-an-azure-database-for-postgresql---hyperscale-citus)
+- [Een Azure Database for PostgreSQL maken - Hyperscale (Citus)](./quickstart-create-hyperscale-portal.md#create-a-hyperscale-citus-server-group)
 
 - [Aanvullende gebruikers rollen maken](./howto-hyperscale-create-users.md#how-to-create-additional-user-roles)
 

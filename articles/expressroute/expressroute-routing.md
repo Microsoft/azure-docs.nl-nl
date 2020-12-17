@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: duau
-ms.openlocfilehash: 208fe9c5bfa20bf5b2daab296af9f955db67a33d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 436e866969d620389818bcebca3c5c37b8805309
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007168"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629031"
 ---
 # <a name="expressroute-routing-requirements"></a>Routeringsvereisten voor ExpressRoute
 Als u ExpressRoute wilt gebruiken om verbinding te maken met Microsoft Cloud-services, moet u routering instellen en beheren. Sommige connecitiviteitsproviders bieden het instellen en beheren van routering aan als een beheerde service. Neem contact op met uw connectiviteitsprovider om na te gaan of ze deze service leveren. Als dat niet het geval is, moet u voldoen aan de volgende vereisten:
@@ -157,12 +157,12 @@ U kunt meer dan één ExpressRoute-circuit per geopolitieke regio aanschaffen. H
 | --- | --- | --- | --- | --- | --- |
 | **Noord-Amerika** | |
 | VS - oost | 12076:51004 | 12076:52004 | 12076:53004 | 12076:54004 | 12076:55004 |
-| VS - oost 2 | 12076:51005 | 12076:52005 | 12076:53005 | 12076:54005 | 12076:55005 |
+| US - oost 2 | 12076:51005 | 12076:52005 | 12076:53005 | 12076:54005 | 12076:55005 |
 | VS - west | 12076:51006 | 12076:52006 | 12076:53006 | 12076:54006 | 12076:55006 |
-| VS - west 2 | 12076:51026 | 12076:52026 | 12076:53026 | 12076:54026 | 12076:55026 |
+| West US 2 | 12076:51026 | 12076:52026 | 12076:53026 | 12076:54026 | 12076:55026 |
 | VS - west-centraal | 12076:51027 | 12076:52027 | 12076:53027 | 12076:54027 | 12076:55027 |
 | VS - noord-centraal | 12076:51007 | 12076:52007 | 12076:53007 | 12076:54007 | 12076:55007 |
-| VS - zuid-centraal | 12076:51008 | 12076:52008 | 12076:53008 | 12076:54008 | 12076:55008 |
+| South Central US | 12076:51008 | 12076:52008 | 12076:53008 | 12076:54008 | 12076:55008 |
 | Central US | 12076:51009 | 12076:52009 | 12076:53009 | 12076:54009 | 12076:55009 |
 | Canada - midden | 12076:51020 | 12076:52020 | 12076:53020 | 12076:54020 | 12076:55020 |
 | Canada - oost | 12076:51021 | 12076:52021 | 12076:53021 | 12076:54021 | 12076:55021 |
@@ -185,11 +185,11 @@ U kunt meer dan één ExpressRoute-circuit per geopolitieke regio aanschaffen. H
 | Azië - oost | 12076:51010 | 12076:52010 | 12076:53010 | 12076:54010 | 12076:55010 |
 | Azië - zuidoost | 12076:51011 | 12076:52011 | 12076:53011 | 12076:54011 | 12076:55011 |
 | **Japan** | |
-| Japan - oost | 12076:51012 | 12076:52012 | 12076:53012 | 12076:54012 | 12076:55012 |
+| Japan East | 12076:51012 | 12076:52012 | 12076:53012 | 12076:54012 | 12076:55012 |
 | Japan - west | 12076:51013 | 12076:52013 | 12076:53013 | 12076:54013 | 12076:55013 |
 | **Australië** | |
 | Australië - oost | 12076:51015 | 12076:52015 | 12076:53015 | 12076:54015 | 12076:55015 |
-| Australië - zuidoost | 12076:51016 | 12076:52016 | 12076:53016 | 12076:54016 | 12076:55016 |
+| Australia Southeast | 12076:51016 | 12076:52016 | 12076:53016 | 12076:54016 | 12076:55016 |
 | **Australië - overheid** | |
 | Australië - centraal | 12076:51032 | 12076:52032 | 12076:53032 | 12076:54032 | 12076:55032 |
 | Australië - centraal 2 | 12076:51033 | 12076:52033 | 12076:53033 | 12076:54033 | 12076:55033 |
@@ -229,9 +229,12 @@ Daarnaast worden voorvoegsels door Microsoft gemarkeerd op basis van de service 
 | Azure Resource Manager |12076:5070 |
 | Andere Office 365 Online Services * * | 12076:5100 |
 
-\* Azure Global Services omvat op dit moment alleen Azure DevOps. \
-\*\* Autorisatie vereist van micro soft; Raadpleeg [route filters configureren voor micro soft-peering](how-to-routefilter-portal.md)\
-\*\*\* Deze community publiceert ook de benodigde routes voor de micro soft teams-Services. \
+\* Azure Global Services omvat op dit moment alleen Azure-DevOps.
+
+\*\* Autorisatie vereist van micro soft; Raadpleeg [route filters configureren voor micro soft-peering](how-to-routefilter-portal.md)
+
+\*\*\* Deze community publiceert ook de benodigde routes voor de micro soft teams-Services.
+
 \*\*\*\* CRM Online ondersteunt Dynamics v 8.2 en lager. Voor hogere versies selecteert u de regionale Community voor uw Dynamics-implementaties.
 
 > [!NOTE]

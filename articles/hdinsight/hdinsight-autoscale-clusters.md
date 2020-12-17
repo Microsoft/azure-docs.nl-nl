@@ -1,30 +1,29 @@
 ---
-title: Schaal van Azure HDInsight-clusters automatisch schalen
-description: Gebruik de functie voor automatisch schalen van Azure HDInsight om Apache Hadoop clusters te schalen.
+title: Azure HDInsight-clusters automatisch schalen
+description: Gebruik de functie voor automatisch schalen om Azure HDInsight-clusters automatische te schalen op basis van een schema of prestatie gegevens.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: contperf-fy21q1
-ms.date: 09/14/2020
-ms.openlocfilehash: 09e4412128a3b13abfa91bf0c128372b30b3e686
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.custom: contperf-fy21q1, contperf-fy21q2
+ms.date: 12/14/2020
+ms.openlocfilehash: 2b23b4256e79723ce0b5edafd59186dc345eb791
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033133"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629252"
 ---
-# <a name="autoscale-azure-hdinsight-clusters"></a>Azure HDInsight-clusters automatisch schalen
+# <a name="automatically-scale-azure-hdinsight-clusters"></a>Azure HDInsight-clusters automatisch schalen
 
-Met de gratis functie voor automatisch schalen van Azure HDInsight kunt u het aantal worker-knoop punten in uw cluster, op basis van eerder ingestelde criteria, verg Roten of verkleinen. U stelt een minimum-en maximum aantal knoop punten in tijdens het maken van het cluster, waarbij u de schaal criteria instelt met behulp van een dag-tijd schema of specifieke prestatie gegevens en het HDInsight-platform de rest.
+Met de gratis functie voor automatisch schalen van Azure HDInsight kunt u het aantal worker-knoop punten in uw cluster, op basis van eerder ingestelde criteria, verg Roten of verkleinen. De functie voor automatisch schalen werkt door het aantal knoop punten binnen de vooraf ingestelde limieten te schalen op basis van de metrische gegevens over prestaties of een schema voor het omhoog en omlaag schalen van bewerkingen.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
-De functie voor automatisch schalen maakt gebruik van twee soorten voor waarden voor het activeren van schaal gebeurtenissen: drempel waarden voor diverse metrische gegevens voor cluster prestaties (zogenaamde *op belasting gebaseerd schalen*) en activering op basis van tijd (genoemd *op schema gebaseerd*). Schalen op basis van een belasting wijzigt het aantal knoop punten in het cluster, binnen een bereik dat u instelt, om ervoor te zorgen dat het CPU-gebruik optimaal werkt en de uitgevoerde kosten tot een minimum worden beperkt. Schalen op basis van een schema wijzigt het aantal knoop punten in uw cluster op basis van bewerkingen die u koppelt aan specifieke datums en tijden.
+De functie voor automatisch schalen maakt gebruik van twee soorten voor waarden voor het activeren van schaal gebeurtenissen: drempel waarden voor diverse metrische gegevens voor cluster prestaties (zogenaamde *op belasting gebaseerd schalen*) en activering op basis van tijd (genoemd *op schema gebaseerd*). Schalen op basis van een belasting wijzigt het aantal knoop punten in het cluster, binnen een bereik dat u instelt, om ervoor te zorgen dat het CPU-gebruik optimaal werkt en de uitgevoerde kosten tot een minimum worden beperkt. Schalen op basis van een schema wijzigt het aantal knoop punten in uw cluster op basis van een schema voor het omhoog schalen en schalen van bewerkingen.
 
 De volgende video biedt een overzicht van de uitdagingen die automatisch schalen en hoe u dit kunt helpen bij het beheren van kosten met HDInsight.
-
 
 > [!VIDEO https://www.youtube.com/embed/UlZcDGGFlZ0?WT.mc_id=dataexposed-c9-niner]
 
@@ -133,7 +132,7 @@ Zie op [Linux gebaseerde clusters maken in HDInsight met behulp van de Azure Por
 
 #### <a name="load-based-autoscaling"></a>Automatisch schalen op basis van een werk belasting
 
-U kunt een HDInsight-cluster maken met behulp van automatisch schalen op basis van een Azure Resource Manager sjabloon door een `autoscale` knoop punt toe te voegen aan de `computeProfile`  >  `workernode` sectie met de eigenschappen `minInstanceCount` en `maxInstanceCount` zoals wordt weer gegeven in het JSON-code fragment hieronder. Voor een volledige Resource Manager-sjabloon raadpleegt u [Quick Start sjabloon: een Spark-cluster implementeren met Loadbased AutoScale ingeschakeld](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-loadbased).
+U kunt een HDInsight-cluster maken met behulp van automatisch schalen op basis van een Azure Resource Manager sjabloon door een `autoscale` knoop punt toe te voegen aan de `computeProfile`  >  `workernode` sectie met de eigenschappen `minInstanceCount` en `maxInstanceCount` zoals wordt weer gegeven in het JSON-code fragment hieronder. Voor een volledige Resource Manager-sjabloon raadpleegt u [Quick Start-sjabloon: een Spark-cluster implementeren met automatisch schalen op basis van de taak ingeschakeld](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-loadbased).
 
 ```json
 {

@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 39c1972eba84f4f1990c87112c5801c386849640
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: aada418b4f74c38a2a35c793deb85b94b703fb89
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95545955"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629354"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Overzicht van Azure-pagina-blobs
 
@@ -57,7 +57,7 @@ In het volgende diagram worden de algemene relaties tussen accounts, containers 
 
 # <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
 
-Eerst moet u een verwijzing naar een container ophalen. Als u een pagina-BLOB wilt maken, roept u de methode [GetPageBlobClient](/dotnet/api/azure.storage.blobs.specialized.specializedblobextensions.getpageblobclient) aan en roept u de methode [PageBlobClient. Create](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.create) aan. Geef de maximale grootte door om de BLOB te maken. De grootte moet een meervoud van 512 bytes zijn.
+Eerst moet u een verwijzing naar een container ophalen. Als u een pagina-BLOB wilt maken, roept u de methode GetPageBlobClient aan en roept u de methode [PageBlobClient. Create](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.create) aan. Geef de maximale grootte door om de BLOB te maken. De grootte moet een meervoud van 512 bytes zijn.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_CreatePageBlob":::
 

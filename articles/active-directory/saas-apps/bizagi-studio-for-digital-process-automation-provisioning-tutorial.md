@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: Zhchia
-ms.openlocfilehash: 141dd37dff8403825df713de8f7176d4dd9d20f8
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: b739cd50c4d4477d3622350a9a9c96b600794c7d
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008041"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97632027"
 ---
 # <a name="tutorial-configure-bizagi-studio-for-digital-process-automation-for-automatic-user-provisioning"></a>Zelf studie: bizagi Studio configureren voor digitale proces automatisering voor automatische gebruikers inrichting
 
@@ -132,7 +132,14 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |name.familyName|Tekenreeks|
    |name.formatted|Tekenreeks|
    |phoneNumbers[type eq "mobile"].value|Tekenreeks|
+
+   Aangepaste extensie kenmerken kunnen worden toegevoegd door te navigeren om **Geavanceerde opties weer te geven > kenmerk lijst voor bizagi bewerken**. De aangepaste extensie kenmerken moeten worden voorafgegaan door **urn: IETF: params: scim: schemas: extension: bizagi: 2.0: UserProperties:**. Als aangepaste extensie kenmerk bijvoorbeeld **IdentificationNumber** is, moet het kenmerk worden toegevoegd als **urn: IETF: params: scim: schemas: extension: bizagi: 2.0: UserProperties: IdentificationNumber**. Selecteer **Opslaan** om eventuele wijzigingen toe te passen.
    
+    ![Kenmerk lijst bewerken.](media/bizagi-studio-for-digital-process-automation-provisioning-tutorial/edit.png)  
+
+   Meer informatie over het toevoegen van aangepaste kenmerken vindt u in [Customize Application Attributes](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
+
+
 10. Zie voor het configureren van bereik filters de [zelf studie](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
 
 11. Als u de Azure AD-inrichtings service voor bizagi Studio voor digitale proces automatisering wilt inschakelen, wijzigt u in de sectie **instellingen** de **inrichtings status** in **op aan**.

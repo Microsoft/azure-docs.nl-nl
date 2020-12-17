@@ -10,12 +10,12 @@ author: mx-iao
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 9b8d48139e6cbabfbc5bf63f85d2d03c64d7efd9
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c82b1ffbb005542822016a55346d9067e23050b2
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542283"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630867"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>Tensor flow-modellen op schaal trainen met Azure Machine Learning
 
@@ -216,7 +216,7 @@ src = ScriptRunConfig(source_directory=script_folder,
 Zie [trainings uitvoeringen configureren en verzenden](how-to-set-up-training-targets.md)voor meer informatie over het configureren van taken met ScriptRunConfig.
 
 > [!WARNING]
-> Als u eerder de tensor flow Estimator hebt gebruikt om uw tensor flow-trainings taken te configureren, moet u er rekening mee houden dat de schattingen worden afgeschaft in een toekomstige versie van de Azure ML SDK. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainings taken te configureren, met inbegrip van die van DL-frameworks.
+> Als u eerder de tensor flow Estimator hebt gebruikt voor het configureren van uw tensor flow-trainings taken, moet u er rekening mee houden dat de schattingen zijn afgeschaft vanaf de 1.19.0 SDK-release. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainings taken te configureren, inclusief de functies die gebruikmaken van diepe lessen. Zie voor algemene vragen over migratie de [migratie handleiding voor Estimator naar ScriptRunConfig](how-to-migrate-from-estimators-to-scriptrunconfig.md).
 
 ### <a name="submit-a-run"></a>Een run verzenden
 
@@ -229,13 +229,13 @@ run.wait_for_completion(show_output=True)
 ### <a name="what-happens-during-run-execution"></a>Wat er gebeurt tijdens de uitvoering van het programma
 Wanneer de uitvoering wordt uitgevoerd, worden de volgende fasen door lopen:
 
-- **Voorbereiden** : een docker-installatie kopie wordt gemaakt volgens de gedefinieerde omgeving. De afbeelding wordt geüpload naar het container register van de werk ruimte en opgeslagen in de cache voor latere uitvoeringen. Logboeken worden ook gestreamd naar de uitvoerings geschiedenis en kunnen worden weer gegeven om de voortgang te bewaken. Als er in plaats daarvan een gecuratorde omgeving wordt opgegeven, wordt er een back-up van de in de cache opgeslagen installatie kopie gebruikt.
+- **Voorbereiden**: een docker-installatie kopie wordt gemaakt volgens de gedefinieerde omgeving. De afbeelding wordt geüpload naar het container register van de werk ruimte en opgeslagen in de cache voor latere uitvoeringen. Logboeken worden ook gestreamd naar de uitvoerings geschiedenis en kunnen worden weer gegeven om de voortgang te bewaken. Als er in plaats daarvan een gecuratorde omgeving wordt opgegeven, wordt er een back-up van de in de cache opgeslagen installatie kopie gebruikt.
 
-- **Schalen** : het cluster probeert omhoog te schalen als het batch AI-cluster meer knoop punten nodig heeft om de uitvoering uit te voeren dan momenteel beschikbaar zijn.
+- **Schalen**: het cluster probeert omhoog te schalen als het batch AI-cluster meer knoop punten nodig heeft om de uitvoering uit te voeren dan momenteel beschikbaar zijn.
 
-- **Uitvoeren** : alle scripts in de map script worden geüpload naar het Compute-doel, gegevens archieven worden gekoppeld of gekopieerd en de `script` wordt uitgevoerd. Uitvoer van stdout en de map **./logs** worden gestreamd naar de uitvoerings geschiedenis en kunnen worden gebruikt om de uitvoering te bewaken.
+- **Uitvoeren**: alle scripts in de map script worden geüpload naar het Compute-doel, gegevens archieven worden gekoppeld of gekopieerd en de `script` wordt uitgevoerd. Uitvoer van stdout en de map **./logs** worden gestreamd naar de uitvoerings geschiedenis en kunnen worden gebruikt om de uitvoering te bewaken.
 
-- **Na de verwerking** : de map **./outputs** van de uitvoering wordt gekopieerd naar de uitvoerings geschiedenis.
+- **Na de verwerking**: de map **./outputs** van de uitvoering wordt gekopieerd naar de uitvoerings geschiedenis.
 
 ## <a name="register-or-download-a-model"></a>Een model registreren of downloaden
 

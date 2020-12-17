@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: cf8b6670817132c8c0c0a09194b9aca4bbc8073c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: a74244cc45e1a3d2116f98ac73290d184f4affc0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96923776"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97632057"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -114,7 +114,7 @@ Wanneer u later de ontwerp functie voor een werk stroom in uw logische app probe
 
     1. Selecteer in Visual Studio code op de werk balk links de optie **uitbrei dingen**.
 
-    1. Typ in het zoekvak voor extensies `azure logic apps preview` . Selecteer **Azure Logic apps (preview)** installeren in de lijst met resultaten **>** **Install**.
+    1. Typ in het zoekvak voor extensies `azure logic apps preview` . Selecteer **Azure Logic apps (preview)** installeren in de lijst met resultaten **>** .
 
        Nadat de installatie is voltooid, wordt de preview-uitbrei ding weer gegeven in de lijst **extensies: geïnstalleerd** .
 
@@ -598,7 +598,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    ![Scherm afbeelding van de overzichts pagina van de werk stroom met de status en geschiedenis van de uitvoering](./media/create-stateful-stateless-workflows-visual-studio-code/post-trigger-call.png)
 
-   | Uitvoerings status | Description |
+   | Uitvoerings status | Beschrijving |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -622,7 +622,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
-   | Actie status | Pictogram | Description |
+   | Actie status | Pictogram | Beschrijving |
    |---------------|------|-------------|
    | Aborted | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | Geannuleerd | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een annulerings aanvraag ontvangen. |
@@ -769,7 +769,7 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
 
       1. Selecteer een bestaande Application Insights resource of **Maak een nieuwe Application Insights resource**.
 
-      1. Ga in het [Azure Portal](htpps://portal.azure.com)naar uw Application Insights resource.
+      1. Ga in het [Azure Portal](https://portal.azure.com)naar uw Application Insights resource.
 
       1. Selecteer **overzicht** in het menu resource. Zoek en kopieer de waarde van de **instrumentatie sleutel** .
 
@@ -1011,7 +1011,7 @@ Als u een stateless werk stroom eenvoudiger wilt opsporen, kunt u de uitvoerings
    }
    ```
 
-   **macOS**
+   **MacOS**
 
    ```json
    {

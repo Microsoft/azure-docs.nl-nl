@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jodowns
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8890eb76e3f9521aa5070789f969ffeb8f3e4ec6
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 409ba7a954830bb2370ce83989b9e8b08b742fe7
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618804"
+ms.locfileid: "97631173"
 ---
 # <a name="assign-a-managed-identity-access-to-an-application-role-using-powershell"></a>Een beheerde identiteits toegang toewijzen aan een toepassingsrol met behulp van Power shell
 
@@ -35,10 +35,10 @@ In dit artikel leert u hoe u een beheerde identiteit kunt toewijzen aan een toep
 - Als u niet bekend bent met beheerde identiteiten voor Azure-resources, raadpleegt u de sectie [Overzicht](overview.md). **Let op dat u nagaat wat het [verschil is tussen een door het systeem toegewezen en door de gebruiker toegewezen beheerde identiteit](overview.md#managed-identity-types)** .
 - Als u nog geen Azure-account hebt, [registreer u dan voor een gratis account](https://azure.microsoft.com/free/) voordat u verdergaat.
 - Als u de voorbeeldscripts wilt uitvoeren, hebt u twee opties:
-    - Gebruik de [Azure Cloud Shell](../../cloud-shell/overview.md), die u kunt openen met behulp van de knop **Probeer het nu** in de rechterbovenhoek van Code::Blocks.
+    - Gebruik de [Azure Cloud shell](../../cloud-shell/overview.md), die u kunt openen met behulp van de knop **try it** in de rechter bovenhoek van code blokken.
     - Voer scripts lokaal uit door de nieuwste versie van [Azure AD Power shell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2)te installeren.
 
-## <a name="use-azure-ad-to-assign-a-managed-identity-access-to-another-applications-app-role"></a>Azure AD gebruiken voor het toewijzen van een beheerde identiteit toegang tot de app-rol van een andere toepassing
+## <a name="assign-a-managed-identity-access-to-another-applications-app-role"></a>Een beheerde identiteits toegang tot de app-rol van een andere toepassing toewijzen
 
 1. Beheerde identiteit inschakelen voor een Azure-resource, [zoals een Azure-VM](qs-configure-powershell-windows-vm.md).
 
@@ -86,14 +86,53 @@ In dit artikel leert u hoe u een beheerde identiteit kunt toewijzen aan een toep
 
 1. Wijs de app-rol toe aan de beheerde identiteit. U hebt de volgende informatie nodig om de app-rol toe te wijzen:
     * `managedIdentityObjectId`: de object-ID van de service-principal van de beheerde identiteit, die u in stap 2 hebt gevonden.
-    * `serverApplicationObjectId`: de object-ID van de service-principal van de server toepassing, die u in stap 4 hebt gevonden.
+    * `serverServicePrincipalObjectId`: de object-ID van de service-principal van de server toepassing, die u in stap 4 hebt gevonden.
     * `appRoleId`: de ID van de app-functie die wordt weer gegeven door de server-app, die u in stap 5 hebt gegenereerd, is de app-functie-ID `0566419e-bb95-4d9d-a4f8-ed9a0f147fa6` .
    
    Voer het volgende Power shell-script uit om de roltoewijzing toe te voegen:
 
     ```powershell
-    New-AzureADServiceAppRoleAssignment -ObjectId $managedIdentityObjectId -Id $appRoleId -PrincipalId $managedIdentityObjectId -ResourceId $serverApplicationObjectId
+    New-AzureADServiceAppRoleAssignment -ObjectId $managedIdentityObjectId -Id $appRoleId -PrincipalId $managedIdentityObjectId -ResourceId $serverServicePrincipalObjectId
     ```
+
+## <a name="complete-script"></a>Script voltooien
+
+In dit voorbeeld script ziet u hoe u de beheerde identiteit van een Azure-web-app toewijst aan een app-rol.
+
+```powershell
+# Install the module. (You need admin on the machine.)
+# Install-Module AzureAD
+
+# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
+$tenantID = '<tenant-id>'
+
+# The name of your web app, which has a managed identity that should be assigned to the server app's app role.
+$webAppName = '<web-app-name>'
+$resourceGroupName = '<resource-group-name-containing-web-app>'
+
+# The name of the server app that exposes the app role.
+$serverApplicationName = '<server-application-name>' # For example, MyApi
+
+# The name of the app role that the managed identity should be assigned to.
+$appRoleName = '<app-role-name>' # For example, MyApi.Read.All
+
+# Look up the web app's managed identity's object ID.
+$managedIdentityObjectId = (Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $webAppName).identity.principalid
+
+Connect-AzureAD -TenantId $tenantID
+
+# Look up the details about the server app's service principal and app role.
+$serverServicePrincipal = (Get-AzureADServicePrincipal -Filter "DisplayName eq '$serverApplicationName'")
+$serverServicePrincipalObjectId = $serverServicePrincipal.ObjectId
+$appRoleId = ($serverServicePrincipal.AppRoles | Where-Object {$_.Value -eq $appRoleName }).Id
+
+# Assign the managed identity access to the app role.
+New-AzureADServiceAppRoleAssignment `
+    -ObjectId $managedIdentityObjectId `
+    -Id $appRoleId `
+    -PrincipalId $managedIdentityObjectId `
+    -ResourceId $serverServicePrincipalObjectId
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

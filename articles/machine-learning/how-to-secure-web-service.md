@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 11/18/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: f7e16400f6460f7479cdffd1928126cdd70a8f0c
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 872958f87e7d75427d5939aed73314920cfaf3ea
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503995"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631088"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -75,34 +75,23 @@ Wanneer u een certificaat aanvraagt, moet u de FQDN-namen opgeven van het adres 
 
 Als u de service wilt implementeren (of opnieuw wilt implementeren) met TLS ingeschakeld, stelt u de para meter *ssl_enabled* in op ' True ', waar dit van toepassing is. Stel de para meter *ssl_certificate* in op de waarde van het *certificaat* bestand. Stel de *ssl_key* in op de waarde van het *sleutel* bestand.
 
-### <a name="deploy-on-aks-and-field-programmable-gate-array-fpga"></a>Implementeren op AKS en veld-Programmeer bare poort matrix (FPGA)
+### <a name="deploy-on-azure-kubernetes-service"></a>Implementeren in azure Kubernetes service
 
   > [!NOTE]
   > De informatie in deze sectie is ook van toepassing wanneer u een beveiligde webservice voor de ontwerp functie implementeert. Als u niet bekend bent met het gebruik van de python-SDK, raadpleegt u [Wat is de Azure machine learning SDK voor python?](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
-Wanneer u implementeert in AKS, kunt u een nieuw AKS-cluster maken of een bestaande toevoegen. Zie [een model implementeren in een Azure Kubernetes-service cluster](how-to-deploy-azure-kubernetes-service.md)voor meer informatie over het maken of koppelen van een cluster.
-  
--  Als u een nieuw cluster maakt, gebruikt u **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)**.
-- Als u een bestaand cluster koppelt, gebruikt u **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)**. Beide retour neren een configuratie object dat een **enable_ssl** methode heeft.
+Zowel **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** als **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** retour neren een configuratie object dat een **enable_ssl** -methode heeft, en u kunt **enable_ssl** methode gebruiken om TLS in te scha kelen.
 
-De **enable_ssl** -methode kan gebruikmaken van een certificaat dat door micro soft wordt verschaft of een certificaat dat u aanschaft.
+U kunt TLS inschakelen met behulp van micro soft-certificaat of een aangepast certificaat dat is gekocht bij de certificerings instantie. 
 
-> [!WARNING]
-> Als uw AKS-cluster is geconfigureerd met een interne load balancer, wordt het gebruik van een door micro soft opgegeven certificaat __niet ondersteund__. Voor het gebruik van een door micro soft opgegeven certificaat is een open bare IP-bron vereist in azure, die niet beschikbaar is voor AKS wanneer deze is geconfigureerd voor interne load balancer.
-
-  * Wanneer u een certificaat van micro soft gebruikt, moet u de para meter *leaf_domain_label* gebruiken. Met deze para meter wordt de DNS-naam voor de service gegenereerd. Bijvoorbeeld: de waarde ' Contoso ' maakt de domein naam ' contoso \<six-random-characters> . \<azureregion> . cloudapp.azure.com ', waarbij \<azureregion> is de regio waarin de service is opgenomen. U kunt desgewenst de para meter *overwrite_existing_domain* gebruiken om de bestaande *leaf_domain_label* te overschrijven.
-
-    Als u de service wilt implementeren (of opnieuw wilt implementeren) met TLS ingeschakeld, stelt u de para meter *ssl_enabled* in op ' True ', waar dit van toepassing is. Stel de para meter *ssl_certificate* in op de waarde van het *certificaat* bestand. Stel de *ssl_key* in op de waarde van het *sleutel* bestand.
-
-    > [!IMPORTANT]
-    > Wanneer u een certificaat van micro soft gebruikt, hoeft u geen eigen certificaat of domein naam aan te schaffen.
-
-    In het volgende voor beeld ziet u hoe u een configuratie maakt waarmee een TLS/SSL-certificaat van micro soft wordt ingeschakeld:
+* **Wanneer u een certificaat van micro soft gebruikt**, moet u de para meter *leaf_domain_label* gebruiken. Met deze para meter wordt de DNS-naam voor de service gegenereerd. Bijvoorbeeld: de waarde ' Contoso ' maakt de domein naam ' contoso \<six-random-characters> . \<azureregion> . cloudapp.azure.com ', waarbij \<azureregion> is de regio waarin de service is opgenomen. U kunt desgewenst de para meter *overwrite_existing_domain* gebruiken om de bestaande *leaf_domain_label* te overschrijven. In het volgende voor beeld ziet u hoe u een configuratie maakt waarmee een TLS met micro soft-certificaat wordt ingeschakeld:
 
     ```python
     from azureml.core.compute import AksCompute
+
     # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
+
     # Leaf domain label generates a name using the formula
     #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
     #  where "######" is a random series of characters
@@ -112,20 +101,28 @@ De **enable_ssl** -methode kan gebruikmaken van een certificaat dat door micro s
     # Config used to attach an existing AKS cluster to your workspace and enable TLS
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                           cluster_name = cluster_name)
+
     # Leaf domain label generates a name using the formula
     #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
     #  where "######" is a random series of characters
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
+    > [!IMPORTANT]
+    > Wanneer u een certificaat van micro soft gebruikt, hoeft u geen eigen certificaat of domein naam aan te schaffen.
 
-  * Wanneer u *een certificaat gebruikt dat u hebt aangeschaft*, gebruikt u de para meters *ssl_cert_pem_file*, *ssl_key_pem_file* en *ssl_cname* . In het volgende voor beeld ziet u hoe u *. pem* -bestanden kunt gebruiken om een configuratie te maken die gebruikmaakt van een TLS/SSL-certificaat dat u hebt aangeschaft:
+    > [!WARNING]
+    > Als uw AKS-cluster is geconfigureerd met een interne load balancer, wordt het gebruik van een door micro soft opgegeven certificaat __niet ondersteund__ en moet u aangepast certificaat gebruiken om TLS in te scha kelen.
 
+* **Wanneer u een aangepast certificaat gebruikt dat u hebt aangeschaft**, gebruikt u de para meters *ssl_cert_pem_file*, *ssl_key_pem_file* en *ssl_cname* . In het volgende voor beeld ziet u hoe u. pem-bestanden kunt gebruiken om een configuratie te maken die gebruikmaakt van een TLS/SSL-certificaat dat u hebt aangeschaft:
+ 
     ```python
     from azureml.core.compute import AksCompute
+
     # Config used to create a new AKS cluster and enable TLS
     provisioning_config = AksCompute.provisioning_configuration()
     provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
                                         ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+
     # Config used to attach an existing AKS cluster to your workspace and enable SSL
     attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                          cluster_name = cluster_name)
@@ -150,23 +147,17 @@ Zie [AciWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.cor
 
 ## <a name="update-your-dns"></a>Uw DNS bijwerken
 
-Vervolgens moet u uw DNS bijwerken zodat deze naar de webservice verwijst.
+Voor een AKS-implementatie met een aangepast certificaat of een ACI-implementatie moet u uw DNS-record bijwerken zodat deze verwijst naar het IP-adres van Score-eind punt.
 
-+ **Voor Container Instances:**
+  > [!IMPORTANT]
+  > Wanneer u een certificaat van micro soft gebruikt voor de implementatie van AKS, hoeft u de DNS-waarde voor het cluster niet hand matig bij te werken. De waarde moet automatisch worden ingesteld.
 
-  Gebruik de hulpprogram ma's uit uw domein naam REGI ster om de DNS-record voor uw domein naam bij te werken. De record moet verwijzen naar het IP-adres van de service.
+U kunt de volgende stappen volgen om een DNS-record bij te werken voor uw aangepaste domein naam:
+* Het IP-adres van het Score-eind punt ophalen van de Score endpoint URI, meestal in de indeling van *http://104.214.29.152:80/api/v1/service/<service-name>/score* . 
+* Gebruik de hulpprogram ma's uit uw domein naam REGI ster om de DNS-record voor uw domein naam bij te werken. De record moet verwijzen naar het IP-adres van Score-eind punt.
+* Nadat de DNS-record is bijgewerkt, kunt u de DNS-omzetting valideren met behulp van de opdracht *Custom-domain-name van Nslookup* . Als DNS-record correct wordt bijgewerkt, verwijst de aangepaste domein naam naar het IP-adres van Score-eind punt.
+* Er kan een vertraging van minuten of uren zijn voordat clients de domein naam kunnen omzetten, afhankelijk van de registratie en de TTL (time to Live) die is geconfigureerd voor de domein naam.
 
-  Er kan een vertraging van minuten of uren zijn voordat clients de domein naam kunnen omzetten, afhankelijk van de registratie en de TTL (time to Live) die is geconfigureerd voor de domein naam.
-
-+ **Voor AKS:**
-
-  > [!WARNING]
-  > Als u *leaf_domain_label* hebt gebruikt om de service te maken met behulp van een certificaat van micro soft, moet u de DNS-waarde voor het cluster niet hand matig bijwerken. De waarde moet automatisch worden ingesteld.
-  >
-  > Als uw AKS-cluster is geconfigureerd met een interne load balancer, wordt het gebruik van een door micro soft opgegeven certificaat (door *leaf_domain_label*) __niet ondersteund__. Voor het gebruik van een door micro soft opgegeven certificaat is een open bare IP-bron vereist in azure, die niet beschikbaar is voor AKS wanneer deze is geconfigureerd voor interne load balancer.
-  Werk de DNS van het open bare IP-adres van de AKS-cluster op het tabblad **configuratie** onder **instellingen** in het linkerdeel venster. (Zie de volgende afbeelding.) Het open bare IP-adres is een resource type dat wordt gemaakt onder de resource groep die de AKS-agent knooppunten en andere netwerk bronnen bevat.
-
-  [![Azure Machine Learning: webservices beveiligen met TLS](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
 
 ## <a name="update-the-tlsssl-certificate"></a>Het TLS/SSL-certificaat bijwerken
 

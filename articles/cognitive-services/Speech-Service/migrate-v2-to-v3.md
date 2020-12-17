@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: rbeckers
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c5bc00ecf5e4c8ae440ce6610e9be8c8f77ed666
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: e9e5db87f983c5db59715eb8b6a9561acf5fad14
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862204"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630612"
 ---
 # <a name="migrate-code-from-v20-to-v30-of-the-rest-api"></a>Code migreren van v 2.0 naar v 3.0 van de REST API
 
@@ -33,12 +33,16 @@ De lijst met belang rijke wijzigingen is gesorteerd op basis van de grootte van 
 ### <a name="host-name-changes"></a>Gewijzigde namen van hosts
 
 De hostnaam van het eind punt is gewijzigd van `{region}.cris.ai` in `{region}.api.cognitive.microsoft.com` . Paden naar de nieuwe eind punten bevatten niet meer `api/` , omdat deze deel uitmaakt van de hostnaam. In het [Swagger-document](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0) worden geldige regio's en paden weer gegeven.
+>[!IMPORTANT]
+>Wijzig de hostnaam in `{region}.cris.ai` `{region}.api.cognitive.microsoft.com` de regio van uw spraak abonnement. Verwijder ook `api/` uit elk pad in uw client code.
 
 ### <a name="identity-of-an-entity"></a>Identiteit van een entiteit
 
 De eigenschap `id` is nu `self` . In v2 moest een API-gebruiker weten hoe onze paden op de API worden gemaakt. Dit was niet-uitbreidbaar en vereist overbodig werk van de gebruiker. De eigenschap `id` (UUID) wordt vervangen door `self` (teken reeks), de locatie van de entiteit (URL). De waarde is nog uniek tussen alle entiteiten. Als een `id` teken reeks in uw code is opgeslagen, is een naamswijziging voldoende om het nieuwe schema te ondersteunen. U kunt nu de `self` inhoud gebruiken als de URL voor de `GET` -, `PATCH` -en `DELETE` rest-aanroepen voor uw entiteit.
 
 Als de entiteit extra functionaliteit beschikbaar heeft via andere paden, worden deze weer gegeven onder `links` . In het volgende voor beeld voor transcriptie wordt een afzonderlijke methode voor `GET` de inhoud van de transcriptie weer gegeven:
+>[!IMPORTANT]
+>Wijzig de naam van de eigenschap `id` `self` in in de client code. Wijzig het type van `uuid` in `string` indien nodig. 
 
 **v2 transcriptie:**
 
@@ -91,6 +95,9 @@ De `values` eigenschap bevat een subset van de beschik bare verzamelings entitei
 
 Voor deze wijziging moet het `GET` voor de verzameling in een lus worden aangeroepen totdat alle elementen zijn geretourneerd.
 
+>[!IMPORTANT]
+>Wanneer het antwoord op een GET to `speechtotext/v3.0/{collection}` bevat een waarde in `$.@nextLink` , blijft de uitgave `GETs` op `$.@nextLink` until `$.@nextLink` niet ingesteld op het ophalen van alle elementen van die verzameling.
+
 ### <a name="creating-transcriptions"></a>Transcripties maken
 
 Een gedetailleerde beschrijving van het maken van batches met transcripties vindt u in [batch transcriptie How-to](./batch-transcription.md).
@@ -134,6 +141,8 @@ Met de nieuwe eigenschap `timeToLive` onder `properties` kunt u de bestaande vol
   }
 }
 ```
+>[!IMPORTANT]
+>Wijzig de naam van de eigenschap `recordingsUrl` in `contentUrls` en geef een matrix met url's door in plaats van een enkele URL. Geef instellingen voor `diarizationEnabled` of `wordLevelTimestampsEnabled` op `bool` in plaats van `string` .
 
 ### <a name="format-of-v3-transcription-results"></a>Indeling van v3 transcriptie-resultaten
 
@@ -201,6 +210,9 @@ Voor beeld van een v3-transcriptie resultaat. De verschillen worden beschreven i
   ]
 }
 ```
+>[!IMPORTANT]
+>Deserialisatie van het transcriptie-resultaat in het nieuwe type zoals hierboven wordt weer gegeven. In plaats van één bestand per audio kanaal onderscheidt u kanalen door de waarde van de eigenschap `channel` voor elk-element in te controleren `recognizedPhrases` . Er is nu één resultaat bestand voor elk invoer bestand.
+
 
 ### <a name="getting-the-content-of-entities-and-the-results"></a>De inhoud van entiteiten en de resultaten ophalen
 
@@ -269,6 +281,9 @@ In v3 `links` neemt u een sub-eigenschap `files` op die wordt aangeroepen als de
 
 De `kind` eigenschap geeft de indeling van de inhoud van het bestand aan. Voor transcripties zijn de bestanden van de soort de `TranscriptionReport` samen vatting van de taak en de bestanden van de soort het `Transcription` resultaat van de taak zelf.
 
+>[!IMPORTANT]
+>Als u de resultaten van de bewerkingen wilt ophalen, gebruikt u a `GET` op `/speechtotext/v3.0/{collection}/{id}/files` . deze zijn niet langer opgenomen in de reacties van `GET` op `/speechtotext/v3.0/{collection}/{id}` of `/speechtotext/v3.0/{collection}` .
+
 ### <a name="customizing-models"></a>Modellen aanpassen
 
 Vóór v3 was er een verschil tussen een _akoestisch model_ en een _taal model_ toen een model werd getraind. Dit onderscheid heeft tot gevolg dat er meerdere modellen moeten worden opgegeven bij het maken van eind punten of transcripties. Om dit proces te vereenvoudigen voor een beller, zijn de verschillen verwijderd en zijn alle items afhankelijk van de inhoud van de gegevens sets die worden gebruikt voor model training. Met deze wijziging ondersteunt het maken van het model nu gemengde gegevens sets (taal gegevens en akoestische gegevens). Eind punten en transcripties vereisen nu slechts één model.
@@ -277,11 +292,17 @@ Met deze wijziging is de nood zaak van een `kind` in de `POST` bewerking verwijd
 
 Ter verbetering van de resultaten van een getraind model worden de akoestische gegevens automatisch intern gebruikt tijdens de taal training. Over het algemeen bieden modellen die zijn gemaakt via de V3 API meer nauw keurige resultaten dan modellen die met de v2 API zijn gemaakt.
 
+>[!IMPORTANT]
+>Als u zowel het akoestische als het taal model onderdeel wilt aanpassen, geeft u alle vereiste taal en akoestische gegevens sets in `datasets[]` het bericht door `/speechtotext/v3.0/models` . Hiermee maakt u één model waarin beide onderdelen zijn aangepast.
+
 ### <a name="retrieving-base-and-custom-models"></a>Basis-en aangepaste modellen ophalen
 
 Voor het vereenvoudigen van het ophalen van de beschik bare modellen heeft v3 de verzamelingen basis modellen gescheiden van de ' aangepaste modellen ' van de klant. De twee routes zijn nu `GET /speechtotext/v3.0/models/base` en `GET /speechtotext/v3.0/models/` .
 
 In v2 werden alle modellen samen in één antwoord geretourneerd.
+
+>[!IMPORTANT]
+>Als u een lijst met de meegeleverde basis modellen voor aanpassing wilt ophalen, gebruikt u `GET` op `/speechtotext/v3.0/models/base` . U kunt uw eigen aangepaste modellen vinden met een `GET` on `/speechtotext/v3.0/models` .
 
 ### <a name="name-of-an-entity"></a>Naam van een entiteit
 
@@ -302,6 +323,9 @@ De `name` eigenschap is nu `displayName` . Dit is consistent met andere Azure-Ap
     "displayName": "Transcription using locale en-US"
 }
 ```
+
+>[!IMPORTANT]
+>Wijzig de naam van de eigenschap `name` `displayName` in in de client code.
 
 ### <a name="accessing-referenced-entities"></a>Toegang tot entiteiten waarnaar wordt verwezen
 
@@ -351,6 +375,10 @@ In v2 werden entiteiten waarnaar wordt verwezen, altijd in het overzicht beschre
 
 Als u de details van een model waarnaar wordt verwezen wilt gebruiken, zoals wordt weer gegeven in het bovenstaande voor beeld, hoeft u alleen maar een GET on aan te geven `$.model.self` .
 
+>[!IMPORTANT]
+>Voor het ophalen van de meta gegevens van entiteiten waarnaar wordt verwezen, geeft u een GET aan `$.{referencedEntity}.self` , bijvoorbeeld om het model van een transcriptie op te halen `GET` `$.model.self` .
+
+
 ### <a name="retrieving-endpoint-logs"></a>Eindpunt logboeken ophalen
 
 Versie v2 van de service ondersteunt het eind punt resultaat van de logboek registratie. Als u de resultaten van een eind punt met v2 wilt ophalen, maakt u een ' gegevens export ', waarin een moment opname wordt weer gegeven van de resultaten die zijn gedefinieerd door een tijds bereik. Het proces voor het exporteren van batches met gegevens was inflexibeler. De V3 API biedt toegang tot elk afzonderlijk bestand en maakt herhalingen mogelijk.
@@ -392,6 +420,9 @@ De paginering voor eindpunt logboeken werkt op dezelfde manier als alle andere v
 
 In v3 kan elk eindpunt logboek afzonderlijk worden verwijderd door een bewerking uit te geven `DELETE` voor het `self` bestand of door gebruik te maken `DELETE` van `$.links.logs` . Als u een eind datum wilt opgeven, kunt u de query parameter `endDate` toevoegen aan de aanvraag.
 
+>[!IMPORTANT]
+>U hoeft geen logboeken te maken bij het `/api/speechtotext/v2.0/endpoints/{id}/data` Gebruik `/v3.0/endpoints/{id}/files/logs/` om afzonderlijke logboek bestanden te openen. 
+
 ### <a name="using-custom-properties"></a>Aangepaste eigenschappen gebruiken
 
 Voor het scheiden van aangepaste eigenschappen van de optionele configuratie-eigenschappen bevinden alle expliciet benoemde eigenschappen zich nu in de `properties` eigenschap en alle eigenschappen die door de aanroepers zijn gedefinieerd, bevinden zich nu in de `customProperties` eigenschap.
@@ -424,15 +455,26 @@ Voor het scheiden van aangepaste eigenschappen van de optionele configuratie-eig
 
 Met deze wijziging kunt u ook de juiste typen gebruiken voor alle expliciet benoemde eigenschappen onder `properties` (bijvoorbeeld Booleaans in plaats van een teken reeks).
 
+>[!IMPORTANT]
+>Geef alle aangepaste eigenschappen door in `customProperties` plaats van `properties` in uw `POST` aanvragen.
+
 ### <a name="response-headers"></a>Antwoordheaders
 
 V3 retourneert niet langer de `Operation-Location` header naast de `Location` koptekst op `POST` aanvragen. De waarde van beide headers in v2 is hetzelfde. Nu `Location` wordt alleen geretourneerd.
 
 Omdat de nieuwe API-versie nu wordt beheerd door Azure API Management (APIM), worden de gerelateerde headers `X-RateLimit-Limit` beperkt `X-RateLimit-Remaining` en `X-RateLimit-Reset` niet opgenomen in de antwoord headers.
 
+>[!IMPORTANT]
+>Lees de locatie van de antwoord header `Location` in plaats van `Operation-Location` . In het geval van een 429-respons code leest u de `Retry-After` waarde header in plaats van `X-RateLimit-Limit` , `X-RateLimit-Remaining` of `X-RateLimit-Reset` .
+
+
 ### <a name="accuracy-tests"></a>Nauw keurigheid testen
 
 De naam van nauw keurigheid tests is gewijzigd in evaluaties, omdat de nieuwe naam beter beschrijft wat ze vertegenwoordigen. De nieuwe paden zijn: `https://{region}.api.cognitive.microsoft.com/speechtotext/v3.0/evaluations` .
+
+>[!IMPORTANT]
+>Wijzig de naam van het padsegment `accuracytests` `evaluations` in uw client code.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 9c22e7cbc71c2b29c4b3e50319c6b6d256856bb3
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 7d43c128f0f587a32cc4b8673727579043f268eb
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855627"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629592"
 ---
 # <a name="set-up-logging-to-monitor-logic-apps-in-azure-security-center"></a>Logboek registratie instellen voor het bewaken van Logic apps in Azure Security Center
 
@@ -24,7 +24,7 @@ Wanneer u uw Logic Apps-resources in [Microsoft Azure Security Center](../securi
 
 * Een Azure-abonnement. Als u nog geen abonnement hebt, [maakt u een gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
 * Bestaande logische apps waarvoor [Diagnostische logboek registratie is ingeschakeld](#enable-diagnostic-logging).
-* Een Log Analytics-werk ruimte die is vereist om logboek registratie in te scha kelen voor uw logische app. Als u geen werk ruimte hebt, maakt u eerst [uw werk ruimte](/learn/quick-create-workspace.md).
+* Een Log Analytics-werk ruimte die is vereist om logboek registratie in te scha kelen voor uw logische app. Als u geen werk ruimte hebt, maakt u eerst [uw werk ruimte](/azure/azure-monitor/learn/quick-create-workspace).
 
 ## <a name="enable-diagnostic-logging"></a>registratie in het diagnoselogboek inschakelen
 

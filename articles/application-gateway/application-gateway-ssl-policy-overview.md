@@ -5,14 +5,14 @@ services: application gateway
 author: amsriva
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 11/16/2019
+ms.date: 12/17/2020
 ms.author: amsriva
-ms.openlocfilehash: 16c6dd28d47573c2ad5b0d5a331b0dc48e7aacef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77239cd8586b8fb07abf6862be436979541bdb99
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85253627"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631687"
 ---
 # <a name="application-gateway-tls-policy-overview"></a>Overzicht van Application Gateway TLS-beleid
 
@@ -23,6 +23,18 @@ Het TLS-beleid bevat controle over de TLS-protocol versie, evenals de coderings 
 ## <a name="predefined-tls-policy"></a>Vooraf gedefinieerd TLS-beleid
 
 Application Gateway heeft drie vooraf gedefinieerde beveiligings beleidsregels. U kunt uw gateway met een van deze beleids regels configureren om het juiste beveiligings niveau te verkrijgen. De beleids namen worden door het jaar en de maand waarin ze zijn geconfigureerd, gemarkeerd. Elk beleid biedt verschillende TLS-protocol versies en coderings suites. U wordt aangeraden het meest recente TLS-beleid te gebruiken om de beste TLS-beveiliging te garanderen.
+
+## <a name="known-issue"></a>Bekend probleem
+Application Gateway v2 biedt geen ondersteuning voor de volgende DHE-code ringen en deze worden niet gebruikt voor de TLS-verbindingen met clients, zelfs als ze worden vermeld in het vooraf gedefinieerde beleid. In plaats van DHE-code ringen worden veilige en snellere ECDHE-code ringen aanbevolen.
+
+- TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
+- TLS_DHE_RSA_WITH_AES_128_CBC_SHA
+- TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+- TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+- TLS_DHE_DSS_WITH_AES_128_CBC_SHA
+- TLS_DHE_DSS_WITH_AES_256_CBC_SHA256
+- TLS_DHE_DSS_WITH_AES_256_CBC_SHA
 
 ### <a name="appgwsslpolicy20150501"></a>AppGwSslPolicy20150501
 
@@ -39,7 +51,7 @@ Application Gateway heeft drie vooraf gedefinieerde beveiligings beleidsregels. 
 |   ---      |  ---       |
 |Naam     | AppGwSslPolicy20170401        |
 |MinProtocolVersion     | TLSv1_1        |
-|Standaard| False |
+|Standaard| Niet waar |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401s"></a>AppGwSslPolicy20170401S
@@ -48,12 +60,16 @@ Application Gateway heeft drie vooraf gedefinieerde beveiligings beleidsregels. 
 |---|---|
 |Naam     | AppGwSslPolicy20170401S        |
 |MinProtocolVersion     | TLSv1_2        |
-|Standaard| False |
+|Standaard| Niet waar |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 <br>    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 <br>    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br> |
 
 ## <a name="custom-tls-policy"></a>Aangepast TLS-beleid
 
 Als er een vooraf gedefinieerd TLS-beleid moet worden geconfigureerd voor uw vereisten, moet u uw eigen aangepaste TLS-beleid definiëren. Met een aangepast TLS-beleid hebt u volledige controle over de minimale versie van het TLS-protocol voor ondersteuning, evenals de ondersteunde coderings suites en hun prioriteits volgorde.
+
+> [!IMPORTANT]
+> Als u een aangepast SSL-beleid gebruikt in Application Gateway v1 SKU (Standard of WAF), moet u de verplichte code TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 toevoegen aan de lijst. Deze versleuteling is vereist voor het inschakelen van metrische gegevens en logboek registratie in de Application Gateway v1-SKU.
+> Dit is niet verplicht voor de SKU van Application Gateway v2 (Standard_v2 of WAF_v2).
  
 ### <a name="tlsssl-protocol-versions"></a>TLS/SSL-protocol versies
 
@@ -97,17 +113,6 @@ Application Gateway ondersteunt de volgende coderings suites van waaruit u uw aa
 
 > [!NOTE]
 > TLS-coderings suites die voor de verbinding worden gebruikt, zijn ook gebaseerd op het type certificaat dat wordt gebruikt. In client-naar-toepassings gateway-verbindingen worden de gebruikte coderings suites gebaseerd op het type server certificaten op de Application Gateway-listener. In Application Gateway naar back-end-pool verbindingen worden de gebruikte coderings suites gebaseerd op het type server certificaten op de back-endservers.
-
-## <a name="known-issue"></a>Bekend probleem
-Application Gateway v2 biedt momenteel geen ondersteuning voor de volgende code ringen:
-- DHE-RSA-AES128-GCM-SHA256
-- DHE-RSA-AES128-SHA
-- DHE-RSA-AES256-GCM-SHA384
-- DHE-RSA-AES256-SHA
-- DHE-DSS-AES128-SHA256
-- DHE-DSS-AES128-SHA
-- DHE-DSS-AES256-SHA256
-- DHE-DSS-AES256-SHA
 
 ## <a name="next-steps"></a>Volgende stappen
 

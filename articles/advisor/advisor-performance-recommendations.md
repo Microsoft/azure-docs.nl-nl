@@ -3,12 +3,12 @@ title: Verbeter de prestaties van Azure-apps met Advisor
 description: Gebruik aanbevelingen voor prestaties in Azure Advisor om de snelheid en reactie tijd van uw bedrijfskritische toepassingen te verbeteren.
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: 55f5ac6784bf613170fd10060799ab5ad1290a62
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 59de7ee14a3af2f8740d63a3cae19571469afd7f
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183342"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630340"
 ---
 # <a name="improve-the-performance-of-azure-applications-by-using-azure-advisor"></a>Verbeter de prestaties van Azure-toepassingen met behulp van Azure Advisor
 
@@ -175,6 +175,11 @@ We hebben vastgesteld dat uw VM's zich in een andere regio of op grote afstand b
 Er zijn voor dit abonnement resources gevonden die gebruikmaken van verouderde versies van de Insluitende lezer SDK De nieuwste versie van de Insluitende lezer SDK biedt u bijgewerkte beveiliging, prestaties en een uitgebreide set functies voor het aanpassen en uitbreiden van uw integratie-ervaring.
 Meer informatie over de [SDK voor insluitende lezer](../cognitive-services/immersive-reader/index.yml).
 
+## <a name="improve-vm-performance-by-changing-the-maximum-session-limit"></a>Verbeter de prestaties van de virtuele machine door de maximale sessie limiet te wijzigen
+
+Advisor detecteert dat u een hostgroep hebt waarvan de diepte eerst is ingesteld als het taakverdelings algoritme en dat de maximale sessie limiet van de hostgroep groter is dan of gelijk is aan 99999. Diepte-eerst-taakverdeling maakt gebruik van deze limiet om het maximum aantal gebruikers te bepalen dat gelijktijdig sessies kan hebben op één sessiehost. Als de limiet voor het maximum aantal sessies te hoog is, worden alle gebruikers sessies omgeleid naar dezelfde sessiehost, waardoor er problemen met prestaties en betrouw baarheid ontstaan. Daarom moet u bij het instellen van een hostgroep de diepte van de eerste taak verdeling instellen op basis van de configuratie van de implementatie en capaciteit van uw Vm's. 
+
+Zie voor meer informatie over taak verdeling in het virtuele bureau blad van Windows [de methode Configure Windows Virtual Desktop Load-Balancing](/virtual-desktop/troubleshoot-set-up-overview.md).
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Aanbevelingen voor toegang tot prestatie verbeteringen in Advisor
 

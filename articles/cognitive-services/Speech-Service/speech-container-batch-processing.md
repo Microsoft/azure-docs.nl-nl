@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/22/2020
 ms.author: aahi
-ms.openlocfilehash: 80e0de73bbeae2ee1a79199fde34a3c430959ac8
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: cc6bcef77ca1601b76468586aa6af202836f1438
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356702"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631989"
 ---
 # <a name="batch-processing-kit-for-speech-containers"></a>Batch processing Kit voor spraak containers
 
@@ -86,13 +86,13 @@ docker run --rm -ti -v  /mnt/my_nfs:/my_nfs --entrypoint /bin/bash /mn
 De batch-client uitvoeren:  
 
 ```Docker
-run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
+run-batch-client -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -file_log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
 
 De batch-client en-container uitvoeren in één opdracht:
 
 ```Docker
-docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
+docker run --rm -ti -v  /mnt/my_nfs:/my_nfs docker.io/batchkit/speech-batch-kit:latest  -config /my_nfs/config.yaml -input_folder /my_nfs/audio_files -output_folder /my_nfs/transcriptions -log_folder  /my_nfs/logs -file_log_level DEBUG -nbest 1 -m ONESHOT -diarization  None -language en-US -strict_config   
 ```
 
 
@@ -156,7 +156,7 @@ De batch verwerkings pakket biedt drie modi, met behulp van de `--run-mode` para
 > [!NOTE]
 > De batch-client kan het bestand *Run. log* periodiek overschrijven als het te groot wordt.
 
-De client maakt een *Run. log* -bestand in de map die is opgegeven door het `-log_folder` argument in de docker- `run` opdracht. Logboeken worden standaard vastgelegd op het niveau van de fout opsporing. Dezelfde logboeken worden verzonden naar de `stdout/stderr` en gefilterd, afhankelijk van het `-log_level` argument. Dit logboek is alleen nodig voor fout opsporing of als u een tracering wilt verzenden voor ondersteuning. De map logboek registratie bevat ook de spraak-SDK-logboeken voor elk audio bestand.
+De client maakt een *Run. log* -bestand in de map die is opgegeven door het `-log_folder` argument in de docker- `run` opdracht. Logboeken worden standaard vastgelegd op het niveau van de fout opsporing. Dezelfde logboeken worden verzonden naar `stdout/stderr` en gefilterd op basis van de `-file_log_level` `console_log_level` argumenten of. Dit logboek is alleen nodig voor fout opsporing of als u een tracering wilt verzenden voor ondersteuning. De map logboek registratie bevat ook de spraak-SDK-logboeken voor elk audio bestand.
 
 De opgegeven uitvoermap `-output_folder` bevat een *run_summary.jsin* het   bestand, dat periodiek elke 30 seconden wordt herschreven of wanneer nieuwe transcripties zijn voltooid. U kunt dit bestand gebruiken om de voortgang van de batch te controleren. Het bevat ook de laatste uitvoerings statistieken en de uiteindelijke status van elk bestand wanneer de batch is voltooid. De batch is voltooid wanneer het proces een schone afsluiting heeft. 
 

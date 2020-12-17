@@ -3,12 +3,12 @@ title: Uw Azure VMware-oplossings resource inschakelen
 description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: 8bcb61c07a3f0310754cd50931f4576e836deffb
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 6d614dffc4ab3127e1e6740b1a8773e5fd7c23ff
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346534"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630884"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
 Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
@@ -61,7 +61,7 @@ Voordat u uw Azure VMware-oplossings resource maakt, moet u een ondersteunings t
 
 ## <a name="enable-azure-vmware-solution-for-csp-customers"></a>Azure VMware-oplossing voor CSP-klanten inschakelen 
 
-Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruiken om de Azure VMware-oplossing voor hun klanten in te scha kelen. In dit artikel wordt [CSP Azure-abonnement](/partner-center/azure-plan-lp.md) gebruikt als voor beeld om de inkoop procedure voor partners te illustreren.
+Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruiken om de Azure VMware-oplossing voor hun klanten in te scha kelen. In dit artikel wordt [CSP Azure-abonnement](/partner-center/azure-plan-lp) gebruikt als voor beeld om de inkoop procedure voor partners te illustreren.
 
    >[!IMPORTANT] 
    >Azure VMware Solution service biedt geen multitenancy vereist. Hosting partners die dit vereisen, worden niet ondersteund. 
@@ -76,9 +76,9 @@ Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruike
 
 1. Selecteer **Azure-abonnement** en selecteer vervolgens **toevoegen aan winkel wagen**. 
 
-1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](/partner-center/azure-plan-manage.md)voor meer informatie.
+1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](/partner-center/azure-plan-manage)voor meer informatie.
 
-Nadat u het Azure-abonnement hebt geconfigureerd en de benodigde [Azure RBAC-machtigingen](/partner-center/azure-plan-manage.md) voor het abonnement zijn ingesteld, wordt micro soft aangeraden om het quotum voor een Azure-abonnement in te scha kelen. Krijg toegang tot Azure Portal van het [micro soft Partner Center](https://partner.microsoft.com) met behulp **van beheer namens** (administrate).
+Nadat u het Azure-abonnement hebt geconfigureerd en de benodigde [Azure RBAC-machtigingen](/partner-center/azure-plan-manage) voor het abonnement zijn ingesteld, wordt micro soft aangeraden om het quotum voor een Azure-abonnement in te scha kelen. Krijg toegang tot Azure Portal van het [micro soft Partner Center](https://partner.microsoft.com) met behulp **van beheer namens** (administrate).
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com).
 

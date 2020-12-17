@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 470dc146d1658b97a707be8cb7ad868d943a8e60
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 19aa847ce7ce1a6ba727a4733aefcdfad845e8c6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170890"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629388"
 ---
 # <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Zelf studie voor het configureren van Nevis met Azure Active Directory B2C voor verificatie zonder wacht woord
 
@@ -104,7 +104,7 @@ U ontvangt twee e-mail berichten:
 
 ### <a name="integrate-azure-ad-b2c-with-nevis"></a>Azure AD B2C integreren met Nevis
 
-1. Open de [Azure Portal](https://portal.azure.com/).
+1. Open [Azure Portal](https://portal.azure.com/).
 
 2. Schakel over naar uw Azure AD B2C-Tenant. Zorg ervoor dat u de juiste Tenant hebt geselecteerd, omdat de Azure AD B2C Tenant doorgaans zich in een afzonderlijke Tenant bevindt.
 
@@ -134,9 +134,9 @@ U ontvangt twee e-mail berichten:
 
 4. **Sla** de wijzigingen in het bestand op.
 
-5. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#2-create-an-azure-blob-storage-account) en upload het **nevis.html** -bestand naar uw Azure Blob-opslag.
+5. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#2-create-an-azure-blob-storage-account) en upload het **nevis.html** -bestand naar uw Azure Blob-opslag.
 
-6. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#3-configure-cors) om cross-Origin resource SHARING (CORS) voor dit bestand in te scha kelen.
+6. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#3-configure-cors) om cross-Origin resource SHARING (CORS) voor dit bestand in te scha kelen.
 
 7. Zodra het uploaden is voltooid en CORS is ingeschakeld, selecteert u het **nevis.html** -bestand in de lijst.
 

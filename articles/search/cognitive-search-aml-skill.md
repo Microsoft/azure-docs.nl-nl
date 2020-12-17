@@ -8,12 +8,12 @@ ms.author: magottei
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: d1e6f4e16e3eda8519913a9e2ae14f7cc909bf61
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 6cefe543ea8ba992b028448070bf041a77bfec64
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445452"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630272"
 ---
 # <a name="aml-skill-in-an-azure-cognitive-search-enrichment-pipeline"></a>AML-vaardigheid in een Azure Cognitive Search-verrijkings pijplijn
 
@@ -33,7 +33,7 @@ Net als bij ingebouwde vaardig heden bevat een **AML** -vaardigheid invoer en ui
 
 * Een [AML-werk ruimte](../machine-learning/concept-workspace.md)
 * Een [Azure Kubernetes service AML Compute target](../machine-learning/concept-compute-target.md) in deze werk ruimte met een [geïmplementeerd model](../machine-learning/how-to-deploy-azure-kubernetes-service.md)
-  * [SSL moet zijn ingeschakeld voor het Compute-doel](../machine-learning/how-to-secure-web-service.md#deploy-on-aks-and-field-programmable-gate-array-fpga). Azure Cognitive Search verleent alleen toegang tot **https** -eind punten
+  * [SSL moet zijn ingeschakeld voor het Compute-doel](../machine-learning/how-to-secure-web-service.md#deploy-on-azure-kubernetes-service). Azure Cognitive Search verleent alleen toegang tot **https** -eind punten
   * Zelfondertekende certificaten kunnen niet worden gebruikt.
 
 ## <a name="odatatype"></a>@odata.type  
@@ -168,7 +168,7 @@ Naast uw AML is niet beschikbaar of het verzenden van niet-geslaagde status code
 
 Als de AML-service niet beschikbaar is of een HTTP-fout retourneert, wordt een beschrijvende fout met alle beschik bare Details over de HTTP-fout toegevoegd aan de indexerings geschiedenis.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 + [Een vaardig heden definiëren](cognitive-search-defining-skillset.md)
 + [Problemen met de AML-service oplossen](../machine-learning/how-to-troubleshoot-deployment.md)

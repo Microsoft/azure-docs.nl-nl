@@ -3,12 +3,12 @@ title: Privé-eindpunten
 description: Meer informatie over het proces van het maken van privé-eind punten voor Azure Backup en de scenario's waarbij persoonlijke eind punten worden gebruikt om de beveiliging van uw resources te hand haven.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 0ca4e7a83e18ac72e25131d320737ce9578b1cf3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3ed71e49ebc550cb7bc2041e25aa6b9bde77b1ef
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184741"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629711"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup
 
@@ -26,6 +26,7 @@ In dit artikel vindt u informatie over het proces van het maken van privé-eind 
 - Azure Active Directory biedt momenteel geen ondersteuning voor persoonlijke eind punten. IP-adressen en FQDN-namen die vereist zijn voor de Azure Active Directory om in een regio te werken, moeten dus uitgaande toegang hebben tot het beveiligde netwerk wanneer ze back-ups maken van data bases in azure-Vm's en-back-ups met behulp van de MARS-agent. U kunt ook NSG Tags en Azure Firewall Tags gebruiken om toegang te verlenen tot Azure AD, zoals van toepassing.
 - Virtuele netwerken met netwerk beleidsregels worden niet ondersteund voor privé-eind punten. U moet netwerk beleid uitschakelen voordat u doorgaat.
 - U moet de Recovery Services resource provider bij het abonnement opnieuw registreren als u deze vóór 1 2020 mei hebt geregistreerd. Als u de provider opnieuw wilt registreren, gaat u naar uw abonnement in het Azure Portal, navigeert u naar **resource provider** in de linkernavigatiebalk en selecteert u vervolgens **micro soft. Recovery Services** en selecteert u **opnieuw registreren**.
+- Het [terugzetten van meerdere regio's](backup-create-rs-vault.md#set-cross-region-restore) voor SQL-en SAP Hana database back-ups wordt niet ondersteund als de kluis een persoonlijk eind punt heeft ingeschakeld.
 
 ## <a name="recommended-and-supported-scenarios"></a>Aanbevolen en ondersteunde scenario's
 

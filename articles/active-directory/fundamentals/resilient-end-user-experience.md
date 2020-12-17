@@ -13,12 +13,12 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 057599cc92e27e423d25d528d5d84b978ff4a911
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4c695466fbd50435a85c63842ceb50ce80765760
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919537"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630289"
 ---
 # <a name="resilient-end-user-experience"></a>Flexibele ervaring voor eind gebruikers
 
@@ -58,7 +58,7 @@ Als onderdeel van het registratie proces van de externe ID-provider, moet u een 
 
  2. Configureer een profiel beleid zodat gebruikers [de andere identiteit aan hun account kunnen koppelen](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/account-linking) nadat ze zich hebben aangemeld.
 
- 3. Waarschuw en sta gebruikers toe om [over te scha kelen naar een alternatieve IDP](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-ui-customization#configure-dynamic-custom-page-content-uri) tijdens een storing.
+ 3. Waarschuw en sta gebruikers toe om [over te scha kelen naar een alternatieve IDP](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#configure-dynamic-custom-page-content-uri) tijdens een storing.
 
 ## <a name="availability-of-multi-factor-authentication"></a>Beschik baarheid van multi-factor Authentication
 

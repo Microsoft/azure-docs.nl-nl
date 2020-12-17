@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 12/02/2020
 ms.author: yushwang
-ms.openlocfilehash: ae498b39a421db19f0d4e0a8daca58730321b58c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: fdb7b1964bf4b8e2dbf6afd541e4415c0345347c
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546808"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631462"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-apparaten en IPSec-/IKE-parameters voor site-naar-site-VPN-gateway-verbindingen
 
@@ -61,7 +61,7 @@ Raadpleeg de koppelingen die overeenkomen met de juiste familie voor meer inform
 | Microsoft |Routering en Remote Access-Service |Windows Server 2012 |Niet compatibel |Ondersteund |
 | Open Systems AG |Mission Control Security Gateway |N.v.t. |[Configuratie handleiding](https://open-systems.com/wp-content/uploads/2019/12/OpenSystems-AzureVPNSetup-Installation-Guide.pdf) |Niet compatibel |
 | Palo Alto Networks |Alle apparaten waarop PAN-OS wordt uitgevoerd |PAN-OS<br>PolicyBased: 6.1.5 of hoger<br>RouteBased: 7.1.4 |Ondersteund |[Configuratie handleiding](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
-| Sentrium (ontwikkel aars) | VyOS | VyOS 1.2.2 | (niet getest) | [Configuratie handleiding ](https://vyos.readthedocs.io/en/latest/appendix/examples/azure-vpn-bgp.html)|
+| Sentrium (ontwikkel aars) | VyOS | VyOS 1.2.2 | (niet getest) | [Configuratie handleiding ](https://docs.vyos.io/en/latest/configexamples/azure-vpn-bgp.html)|
 | ShareTech | Next Generation UTM (NU-serie) | 9.0.1.3 | Niet compatibel | [Configuratie handleiding](http://www.sharetech.com.tw/images/file/Solution/NU_UTM/S2S_VPN_with_Azure_Route_Based_en.pdf) |
 | SonicWall |TZ-serie, NSA-serie<br>SuperMassive-serie<br>E-Class NSA-serie |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |Niet compatibel |[Configuratie handleiding](https://www.sonicwall.com/support/knowledge-base/170505320011694) |
 | Sophos | XG Firewall van de volgende generatie | XG v17 | (niet getest) | [Configuratie handleiding](https://community.sophos.com/kb/127546)<br><br>[Configuratie handleiding-meerdere SAs](https://community.sophos.com/kb/en-us/133154) |

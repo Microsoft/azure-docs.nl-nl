@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 12/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: ed368615395614bc0d3e9a6f06727da8c64d8486
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: eec53570c542ceb60c937072135fcb70b59e80a6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559638"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631037"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>PyTorch-modellen op schaal trainen met Azure Machine Learning
 
@@ -199,7 +199,7 @@ src = ScriptRunConfig(source_directory=project_folder,
 Zie [trainings uitvoeringen configureren en verzenden](how-to-set-up-training-targets.md)voor meer informatie over het configureren van taken met ScriptRunConfig.
 
 > [!WARNING]
-> Als u eerder de PyTorch Estimator hebt gebruikt om uw PyTorch-trainings taken te configureren, moet u er rekening mee houden dat de schattingen worden afgeschaft in een toekomstige versie van de Azure ML SDK. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainings taken te configureren, met inbegrip van die van DL-frameworks.
+> Als u eerder de PyTorch Estimator hebt gebruikt voor het configureren van uw PyTorch-trainings taken, moet u er rekening mee houden dat de schattingen zijn afgeschaft vanaf de 1.19.0 SDK-release. Met Azure ML SDK >= 1.15.0 is ScriptRunConfig de aanbevolen manier om trainings taken te configureren, inclusief de functies die gebruikmaken van diepe lessen. Zie voor algemene vragen over migratie de [migratie handleiding voor Estimator naar ScriptRunConfig](how-to-migrate-from-estimators-to-scriptrunconfig.md).
 
 ## <a name="submit-your-run"></a>Uw uitvoering verzenden
 

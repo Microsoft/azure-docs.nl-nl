@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/30/2020
 ms.author: jeedes
-ms.openlocfilehash: 246eba24f42baacf264c1c6d39ea63a51c62c51f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 7e71058e1899cf83e712025b534e51a1be1f6bdb
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457432"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591766"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws-legacy-tutorial"></a>Zelfstudie: Azure Active Directory-integratie met Amazon Web Services (AWS) (verouderde zelfstudie)
 
@@ -90,7 +90,7 @@ Wijs in Amazon Web Services (AWS) de waarde van de **gebruikersnaam** in Azure A
 Voer de volgende stappen uit om eenmalige aanmelding met Azure AD te configureren en testen voor Amazon Web Services (AWS):
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Amazon Web Services (AWS) configureren](#configure-amazon-web-services-aws-single-sign-on)** : de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
+2. **[Eenmalige aanmelding voor Amazon Web Services (AWS) configureren](#configure-amazon-web-services-aws-single-sign-on)**: de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
 3. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -122,14 +122,14 @@ In dit gedeelte schakelt u eenmalige aanmelding van Azure AD in de Azure Portal 
     | Naam  | Bronkenmerk  | Naamruimte |
     | --------------- | --------------- | --------------- |
     | RoleSessionName | user.userprincipalname | `https://aws.amazon.com/SAML/Attributes` |
-    | Rol            | user.assignedroles |  `https://aws.amazon.com/SAML/Attributes`|
-    | SessionDuration             | "Geef een waarde op tussen 900 seconden (15 minuten) en 43200 seconden (12 uur)" |  `https://aws.amazon.com/SAML/Attributes` |
+    | Rol | user.assignedroles | `https://aws.amazon.com/SAML/Attributes`|
+    | SessionDuration | "Geef een waarde op tussen 900 seconden (15 minuten) en 43200 seconden (12 uur)" |  `https://aws.amazon.com/SAML/Attributes` |
 
-    a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
+    1. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
-    ![Schermopname met Gebruikersclaims met een bijschrift voor de opties Nieuwe claim toevoegen en Opslaan.](common/new-save-attribute.png)
+        ![Schermopname met Gebruikersclaims met een bijschrift voor de opties Nieuwe claim toevoegen en Opslaan.](common/new-save-attribute.png)
 
-    ![Schermopname met het dialoogvenster Gebruikersclaims beheren, waarin u de waarden kunt invoeren die worden beschreven in deze stap.](common/new-attribute-details.png)
+        ![Schermopname met het dialoogvenster Gebruikersclaims beheren, waarin u de waarden kunt invoeren die worden beschreven in deze stap.](common/new-attribute-details.png)
 
     b. In het tekstvak **Naam** typt u de naam van het kenmerk die voor die rij wordt weergegeven.
 
@@ -169,7 +169,7 @@ In dit gedeelte schakelt u eenmalige aanmelding van Azure AD in de Azure Portal 
 
     a. Selecteer **SAML** als **Provider Type**.
 
-    b. Typ in het tekstvak **Provider Name** de naam van een provider (bijvoorbeeld *WAAD* ).
+    b. Typ in het tekstvak **Provider Name** de naam van een provider (bijvoorbeeld *WAAD*).
 
     c. Klik op **Choose File** om het uit de Azure-portal gedownloade **metagegevensbestand** te uploaden.
 
@@ -192,10 +192,10 @@ In dit gedeelte schakelt u eenmalige aanmelding van Azure AD in de Azure Portal 
 
     a. Selecteer **SAML 2.0 federation** onder **Select type of trusted entity**.
 
-    b. Selecteer onder **Choose a SAML 2.0 Provider section** de **SAML-provider** die u eerder hebt gemaakt (bijvoorbeeld *WAAD* )
+    b. Selecteer onder **Choose a SAML 2.0 Provider section** de **SAML-provider** die u eerder hebt gemaakt (bijvoorbeeld *WAAD*)
 
     c. Selecteer **Allow programmatic and AWS Management Console access**.
-  
+
     d. Klik op **Next: Permissions**.
 
 1. Zoek **Beheerderstoegang** in de zoekbalk en selecteer het vakje **Beheerderstoegang**. Klik dan op **Volgende: Tags**.
@@ -253,39 +253,35 @@ In dit gedeelte schakelt u eenmalige aanmelding van Azure AD in de Azure Portal 
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in een ander venster.
 
-    a. Meld u aan bij de Microsoft Graph Explorer-site met de referenties voor uw tenant.
+    1. Meld u aan bij de Microsoft Graph Explorer-site met de referenties voor uw tenant.
 
-    b. U hebt de juiste machtigingen nodig om de rollen te maken. Klik op **machtigingen wijzigen** om de vereiste machtigingen op te halen.
+    1. U hebt de juiste machtigingen nodig om de rollen te maken. Klik op **machtigingen wijzigen** om de vereiste machtigingen op te halen.
 
-    ![Microsoft Graph Explorer-dialoogvenster1](./media/aws-multi-accounts-tutorial/graph-explorer-new9.png)
+        ![Microsoft Graph Explorer-dialoogvenster1](./media/aws-multi-accounts-tutorial/graph-explorer-new9.png)
 
-    c. Selecteer de volgende machtigingen uit de lijst (als u die nog niet hebt) en klik op 'Machtigingen wijzigen' 
+    1. Selecteer de volgende machtigingen uit de lijst (als u die nog niet hebt) en klik op 'Machtigingen wijzigen' 
 
-    ![Microsoft Graph Explorer-dialoogvenster2](./media/aws-multi-accounts-tutorial/graph-explorer-new10.png)
+        ![Microsoft Graph Explorer-dialoogvenster2](./media/aws-multi-accounts-tutorial/graph-explorer-new10.png)
 
-    d. U wordt gevraagd u opnieuw aan te melden en toestemming te geven. Nadat u de toestemming hebt gegeven, wordt u opnieuw aangemeld bij Microsoft Graph Explorer.
+    1. U wordt gevraagd u opnieuw aan te melden en toestemming te geven. Nadat u de toestemming hebt gegeven, wordt u opnieuw aangemeld bij Microsoft Graph Explorer.
 
-    e. Wijzig het verzievervolgkeuzemenu naar **bèta**. Gebruik de volgende query om alle service-principals van uw tenant op te halen:
+    1. Wijzig het verzievervolgkeuzemenu naar **bèta**. Gebruik de volgende query om alle service-principals van uw tenant op te halen: `https://graph.microsoft.com/beta/servicePrincipals`. Als u meerdere mappen gebruikt, kunt u gebruikmaken van het volgende patroon (dat het primaire domein bevat): `https://graph.microsoft.com/beta/contoso.com/servicePrincipals`.
 
-    `https://graph.microsoft.com/beta/servicePrincipals`
+        ![Microsoft Graph Explorer-dialoogvenster3](./media/aws-multi-accounts-tutorial/graph-explorer-new1.png)
 
-    Als u meerdere mappen gebruikt, dan kun u het volgende patroon gebruiken, dat het primaire domein bevat `https://graph.microsoft.com/beta/contoso.com/servicePrincipals`
+    1. In de lijst met opgehaalde service-principals, selecteert u de principal die u moet bewerken. U kunt ook met CtrL+F zoeken naar de toepassing in alle vermelde service-principals. U kunt de volgende query gebruiken door het **object-id van de service-principal** te gebruiken, die u hebt gekopieerd op de eigenschappenpagina van Azure AD, om de bijbehorende service-principal op te halen.
 
-    ![Microsoft Graph Explorer-dialoogvenster3](./media/aws-multi-accounts-tutorial/graph-explorer-new1.png)
-  
-    f. In de lijst met opgehaalde service-principals, selecteert u de principal die u moet bewerken. U kunt ook met CtrL+F zoeken naar de toepassing in alle vermelde service-principals. U kunt de volgende query gebruiken door het **object-id van de service-principal** te gebruiken, die u hebt gekopieerd op de eigenschappenpagina van Azure AD, om de bijbehorende service-principal op te halen.
+        `https://graph.microsoft.com/beta/servicePrincipals/<objectID>`.
 
-    `https://graph.microsoft.com/beta/servicePrincipals/<objectID>`.
+        ![Microsoft Graph Explorer-dialoogvenster4](./media/aws-multi-accounts-tutorial/graph-explorer-new2.png)
 
-    ![Microsoft Graph Explorer-dialoogvenster4](./media/aws-multi-accounts-tutorial/graph-explorer-new2.png)
+    1. Extraheer de eigenschap appRoles uit het service-principalobject.
 
-    g. Extraheer de eigenschap appRoles uit het service-principalobject.
+        ![Microsoft Graph Explorer-dialoogvenster5](./media/aws-multi-accounts-tutorial/graph-explorer-new3.png)
 
-    ![Microsoft Graph Explorer-dialoogvenster5](./media/aws-multi-accounts-tutorial/graph-explorer-new3.png)
+    1. Nu moet u nieuwe rollen genereren voor uw toepassing. 
 
-    h. Nu moet u nieuwe rollen genereren voor uw toepassing. 
-
-    i. De onderstaande JSON is een voorbeeld van het object appRoles. Maak een vergelijkbaar object om de rollen toe te voegen die u voor uw toepassing wilt.
+    1. De onderstaande JSON is een voorbeeld van het object appRoles. Maak een vergelijkbaar object om de rollen toe te voegen die u voor uw toepassing wilt.
 
     ```
     {
@@ -329,9 +325,9 @@ In dit gedeelte schakelt u eenmalige aanmelding van Azure AD in de Azure Portal 
     > [!Note]
     > U kunt alleen nieuwe rollen toevoegen na **msiam_acces** voor de patchbewerking. U kunt zoveel rollen toevoegen als u per organisatiebehoefte wilt. Azure AD verzendt de **waarde** van deze rollen als de claimwaarde in het SAML-antwoord.
 
-    j. Ga terug naar uw Microsoft Graph Explorer en wijzig de methode van **GET** naar **PATCH**. Patch het service-principal-object dat de gewenste rollen moet krijgen door de eigenschap appRoles bij te werken zoals in het bovenstaande voorbeeld is weergegeven. Klik op **Query uitvoeren** om de patchbewerking uit te voeren. Een slagingsbericht bevestigt het maken van de rol voor uw Amazon Web Services-toepassing.
+    1. Ga terug naar uw Microsoft Graph Explorer en wijzig de methode van **GET** naar **PATCH**. Patch het service-principal-object dat de gewenste rollen moet krijgen door de eigenschap appRoles bij te werken zoals in het bovenstaande voorbeeld is weergegeven. Klik op **Query uitvoeren** om de patchbewerking uit te voeren. Een slagingsbericht bevestigt het maken van de rol voor uw Amazon Web Services-toepassing.
 
-    ![Microsoft Graph Explorer-dialoogvenster6](./media/aws-multi-accounts-tutorial/graph-explorer-new11.png)
+        ![Microsoft Graph Explorer-dialoogvenster6](./media/aws-multi-accounts-tutorial/graph-explorer-new11.png)
 
 1. Wanneer de service-principal is bijgewerkt met meer rollen, kunt u gebruikers/groepen toevoegen aan de bijbehorende rollen. Dit doet u door naar de portal te gaan en vervolgens naar de Amazon Web Services-toepassing te navigeren. Klik boven op het tabblad **Gebruikers en groepen**.
 

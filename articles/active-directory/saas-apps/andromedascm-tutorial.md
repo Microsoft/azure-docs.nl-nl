@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 0d342f672f4e8a5fdf33afe0feb7c5051956e29f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: e8cb939b48f8cfe311ec10c0850cfb234de04fad
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318781"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589743"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Zelfstudie: Azure Active Directory-integratie met Andromeda
 
@@ -126,30 +126,30 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij Andromeda 
 
     | Naam | Bronkenmerk|
     | ------ | -----------|
-    | role        | App-specifieke rol |
-    | type        | App-type |
-    | bedrijf       | CompanyName |
+    | role | App-specifieke rol |
+    | type | App-type |
+    | bedrijf | CompanyName |
 
     > [!NOTE]
     > Dit zijn geen werkelijke waarden. Deze waarden zijn alleen bedoeld ter demonstratie. Gebruik uw organisatierollen.
 
-    a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
+    1. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
-    ![Schermopname met Gebruikersclaims met opties Nieuwe claim toevoegen en Opslaan.](common/new-save-attribute.png)
+        ![Schermopname met Gebruikersclaims met opties Nieuwe claim toevoegen en Opslaan.](common/new-save-attribute.png)
 
-    ![Schermopname met het dialoogvenster Gebruikersclaims beheren, waarin u de waarden kunt invoeren die worden beschreven in deze stap.](common/new-attribute-details.png)
+        ![Schermopname met het dialoogvenster Gebruikersclaims beheren, waarin u de waarden kunt invoeren die worden beschreven in deze stap.](common/new-attribute-details.png)
 
-    b. In het tekstvak **Naam** typt u de naam van het kenmerk die voor die rij wordt weergegeven.
+    1. In het tekstvak **Naam** typt u de naam van het kenmerk die voor die rij wordt weergegeven.
 
-    c. Laat **Naamruimte** leeg.
+    1. Laat **Naamruimte** leeg.
 
-    d. Selecteer Bron bij **Kenmerk**.
+    1. Selecteer Bron bij **Kenmerk**.
 
-    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken**.
+    1. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken**.
 
-    f. Klik op **OK**.
+    1. Klik op **OK**.
 
-    g. Klik op **Opslaan**.
+    1. Klik op **Opslaan**.
 
 8. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -159,11 +159,11 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij Andromeda 
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+    1. Aanmeldings-URL
 
-    b. Azure AD-id
+    1. Azure AD-id
 
-    c. Afmeldings-URL
+    1. Afmeldings-URL
 
 ### <a name="configure-andromeda-single-sign-on"></a>Eenmalige aanmelding bij Andromeda configureren
 
@@ -181,25 +181,25 @@ Voer de volgende stappen uit om eenmalige aanmelding met Azure AD bij Andromeda 
 
     ![Andromeda-configuratie](./media/andromedascm-tutorial/tutorial_andromedascm_config.png)
 
-    a. Schakel **Eenmalige aanmelding met SAML inschakelen** in.
+    1. Schakel **Eenmalige aanmelding met SAML inschakelen** in.
 
-    b. Kopieer onder de sectie **Andromeda-gegevens** waarde van de **SP-identiteit** en plak deze in het tekstvak **Id** in de sectie **Standaard SAML-configuratie**.
+    1. Kopieer onder de sectie **Andromeda-gegevens** waarde van de **SP-identiteit** en plak deze in het tekstvak **Id** in de sectie **Standaard SAML-configuratie**.
 
-    c. Kopieer de waarde **Consument-URL** en plak deze in het tekstvak **Antwoord-URL** van de sectie **Standaard SAML-configuratie**.
+    1. Kopieer de waarde **Consument-URL** en plak deze in het tekstvak **Antwoord-URL** van de sectie **Standaard SAML-configuratie**.
 
-    d. Kopieer de waarde **Aanmeldings-URL** en plak deze in het tekstvak **Aanmeldings-URL** van de sectie **Standaard SAML-configuratie**.
+    1. Kopieer de waarde **Aanmeldings-URL** en plak deze in het tekstvak **Aanmeldings-URL** van de sectie **Standaard SAML-configuratie**.
 
-    e. Typ uw IDP-naam onder **SAML-identiteitsprovider**.
+    1. Typ uw IDP-naam onder **SAML-identiteitsprovider**.
 
-    f. Plak in het tekstvak **Eindpunt met eenmalige aanmelding** de waarde van **Aanmeldings-URL** die u hebt gekopieerd vanuit de Azure-portal.
+    1. Plak in het tekstvak **Eindpunt met eenmalige aanmelding** de waarde van **Aanmeldings-URL** die u hebt gekopieerd vanuit de Azure-portal.
 
-    g. Open het **gecodeerde Base64-certificaat** dat u hebt gedownload uit de Microsoft Azure-portal in Kladblok en plak het in het tekstvak **X 509-certificaat**.
-    
-    h. Wijs de volgende kenmerken toe met de relevante waarde om eenmalige aanmelding vanuit Azure AD mogelijk te maken. Het kenmerk **Gebruikers-id** is vereist voor het aanmelden. Voor het inrichten zijn **E-mailadres**, **Bedrijf**, **Gebruikerstype** en **Rol** vereist. In deze sectie definiëren we de kenmerktoewijzingen (naam en waarden) die overeenkomen met de gedefinieerde items in de Azure-portal
+    1. Open het **gecodeerde Base64-certificaat** dat u hebt gedownload uit de Microsoft Azure-portal in Kladblok en plak het in het tekstvak **X 509-certificaat**.
 
-    ![Kenmerktoewijzing voor Andromeda](./media/andromedascm-tutorial/tutorial_andromedascm_attbmap.png)
+    1. Wijs de volgende kenmerken toe met de relevante waarde om eenmalige aanmelding vanuit Azure AD mogelijk te maken. Het kenmerk **Gebruikers-id** is vereist voor het aanmelden. Voor het inrichten zijn **E-mailadres**, **Bedrijf**, **Gebruikerstype** en **Rol** vereist. In deze sectie definiëren we de kenmerktoewijzingen (naam en waarden) die overeenkomen met de gedefinieerde items in de Azure-portal
 
-    i. Klik op **Opslaan**.
+        ![Kenmerktoewijzing voor Andromeda](./media/andromedascm-tutorial/tutorial_andromedascm_attbmap.png)
+
+    1. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
@@ -217,8 +217,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u `brittasimon@yourcompanydomain.extension`. Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
@@ -241,7 +241,7 @@ In deze sectie stelt u in dat Britta Simon eenmalige aanmelding van Azure kan ge
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 

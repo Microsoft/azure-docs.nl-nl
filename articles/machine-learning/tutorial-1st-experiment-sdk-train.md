@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 17bf7b3f457ff6046d92012ffd679ed4b9315530
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: a2f76df05878151405d56b1bff5e588f426d9d92
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574119"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093550"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Zelfstudie: Uw eerste machine learning-model trainen (deel 3 van 4)
 
@@ -133,7 +133,7 @@ Maak een nieuw Python-bestand in de `tutorial`-map met de naam `04-run-pytorch.p
 :::row-end:::
 
 > [!div class="nextstepaction"]
-> [Ik heb het besturingsscript gemaakt](?success=control-script#submit) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQ?issue=control-script)
+> [Ik heb het besturingsscript gemaakt](?success=control-script#submit) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=control-script)
 
 
 ## <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit"></a> De uitvoering versturen naar Microsoft Azure Machine Learning
@@ -186,7 +186,7 @@ Azure Machine Learning houdt ook een verzameling van de gegroepeerde omgevingen 
 Kortom, met behulp van geregistreerde omgevingen kunt u tijd besparen. Lees [Omgevingen gebruiken](./how-to-use-environments.md) voor meer informatie.
 
 > [!div class="nextstepaction"]
-> [Ik heb de uitvoering verzonden](?success=test-w-environment#log) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQ?issue=test-w-environment)
+> [Ik heb de uitvoering verzonden](?success=test-w-environment#log) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=test-w-environment)
 
 ## <a name="log-training-metrics"></a><a name="log"></a> Metrische gegevens van training registreren
 
@@ -221,7 +221,7 @@ De metrische gegevens in Azure Machine Learning zijn:
 - Ontworpen om te worden geschaald, dus u behoudt deze voordelen, zelfs als u honderden experimenten uitvoert.
 
 > [!div class="nextstepaction"]
-> [Ik heb train.py gewijzigd](?success=modify-train#log) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQ?issue=modify-train)
+> [Ik heb train.py gewijzigd](?success=modify-train#log) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=modify-train)
 
 ### <a name="update-the-conda-environment-file"></a>Het Conda-omgevingsbestand bijwerken
 
@@ -230,7 +230,7 @@ Het `train.py`-script heeft zojuist een nieuwe afhankelijkheid van `azureml.core
 :::code language="python" source="~/MachineLearningNotebooks/tutorials/get-started-day1/configuration/pytorch-aml-env.yml":::
 
 > [!div class="nextstepaction"]
-> [Ik heb het omgevingsbestand bijgewerkt](?success=update-environment#submit-again) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQ?issue=update-environment)
+> [Ik heb het omgevingsbestand bijgewerkt](?success=update-environment#submit-again) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=update-environment)
 
 ### <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit-again"></a> De uitvoering versturen naar Microsoft Azure Machine Learning
 Verstuur dit script nog een keer:
@@ -244,7 +244,7 @@ Wanneer u deze keer de studio bezoekt, gaat u naar het tabblad **Metrische gegev
 :::image type="content" source="media/tutorial-1st-experiment-sdk-train/logging-metrics.png" alt-text="Grafiek met trainingsverlies op het tabblad Metrische gegevens.":::
 
 > [!div class="nextstepaction"]
-> [Ik heb de uitvoering opnieuw verzonden](?success=resubmit-with-logging#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQ?issue=resubmit-with-logging)
+> [Ik heb de uitvoering opnieuw verzonden](?success=resubmit-with-logging#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=resubmit-with-logging)
 
 ## <a name="next-steps"></a>Volgende stappen
 

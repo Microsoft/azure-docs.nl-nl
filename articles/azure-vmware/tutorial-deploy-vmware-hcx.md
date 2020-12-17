@@ -3,12 +3,12 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 11/25/2020
-ms.openlocfilehash: e50454c2299ed0f7e249563eecac1935a29a9c47
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a792f8dbc646f61377cf0a88e1a6e386340f23e8
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352457"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357888"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -163,7 +163,7 @@ Nadat de services opnieuw zijn gestart, zult u zien dat vCenter groen wordt weer
 
 :::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Schermopname van het dashboard met de status groen voor vCenter." lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Activeer de video over HCX ](https://www.youtube.com/embed/jzQZawslF8w).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Activeer de video over HCX ](https://www.youtube.com/embed/PnVg6SZkQsY?rel=0&amp;vq=hd720).
 
    > [!IMPORTANT]
    > Of u nu VMware HCX Advanced of VMware HCX Enterprise gebruikt, u moet waarschijnlijk toch de patch installeren uit het [KB-artikel 81558](https://kb.vmware.com/s/article/81558) over VMware. 
@@ -192,7 +192,7 @@ U kunt de VMware HCX-cloudbeheerder in Azure VMware Solution verbinden met de VM
 
    :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Schermopname van de koppeling van HCX manager in Azure VMware Solution en de VMware HCX-connector.":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over HCX-sitekoppeling](https://www.youtube.com/embed/iTJtjbiwvsw).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over HCX-sitekoppeling](https://www.youtube.com/embed/jXOmYUnbWZY?rel=0&amp;vq=hd720).
 
 ### <a name="create-network-profiles"></a>Netwerkprofielen maken
 

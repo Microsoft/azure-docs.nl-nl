@@ -3,20 +3,18 @@ title: Referentiearchitectuur voor een oplossing voor verbonden afvalverwerking 
 description: Leer concepten voor een oplossing voor verbonden afvalverwerking die is gebouwd met Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
-ms.date: 10/23/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 93a5d17ce5ea5ec60c67604efe5081d2b3425a84
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 94098a1a2a9ac1b4889ad165a65c8b9d50d734dd
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873689"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586802"
 ---
 # <a name="connected-waste-monitoring-reference-architecture"></a>Referentiearchitectuur voor verbonden afvalverwerking 
-
-
 
 Een oplossing voor het beheer van verbonden afvalverwerking kan worden ontwikkeld met behulp van de **Azure IoT Central app-sjabloon** als uitgangspunt voor een IoT-toepassing. In dit artikel vindt u uitgebreide richtlijnen voor referentiearchitectuur voor het bouwen van een end-to-end-oplossing. 
 
@@ -27,8 +25,8 @@ Concepten:
 
 1. Apparaten en connectiviteit  
 1. IoT Central 
-2. Uitbreidbaarheid en integraties
-3. Zakelijke toepassingen
+1. Uitbreidbaarheid en integraties
+1. Zakelijke toepassingen
 
 Laten we eens kijken naar de belangrijkste onderdelen die in het algemeen een rol spelen in een oplossing voor het bewaken van waterverbruik.
 

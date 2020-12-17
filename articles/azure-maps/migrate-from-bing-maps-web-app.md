@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: be0b2a3a15c77ae0de303f02be078f115b283eb9
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 6037deb484ca966ab3a54cc60b0d53ac8299d500
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897140"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589998"
 ---
 # <a name="tutorial---migrate-a-web-app-from-bing-maps"></a>Zelfstudie: een web-app migreren vanuit Bing Kaarten
 
@@ -241,7 +241,7 @@ U vindt [hier](./how-to-use-map-control.md) uitgebreide informatie over het inst
 
 ### <a name="localizing-the-map"></a>Lokaliseren van de kaart
 
-Lokalisatie is belangrijk als uw doelgroep zich in meerdere landen/regio's bevindt of verschillende talen spreekt.
+Lokalisatie is belangrijk als uw doelgroep zich in meerdere landen bevindt of verschillende talen spreekt.
 
 **Vóór: Bing Kaarten**
 
@@ -506,7 +506,7 @@ map.layers.insert(layer);
 Als u een HTML-markering in Azure Maps wilt aanpassen, geeft u een HTML-`string` of `HTMLElement` door aan de optie `htmlContent` van de markering. In Azure Maps wordt een `anchor`-optie gebruikt om de relatieve positie van de markering ten opzichte van de positiecoördinaat op te geven met behulp van een van de negen gedefinieerde referentiepunten: center, top, bottom, left, right, top-left, top-right, bottom-left en bottom-right. De inhoud is verankerd en is standaard ingesteld op bottom (het midden aan de onderzijde aan de HTML-inhoud). Om het gemakkelijker te maken code te migreren vanuit Bing Kaarten, stelt u het anker in op top-left en gebruikt u vervolgens de optie `offset` met de offset die wordt gebruikt in Bing Kaarten. De offsets in Azure Maps worden in de tegenovergestelde richting verplaatst van de offsets in Bing Kaarten. Vermenigvuldig deze dus met -1.
 
 > [!TIP]
-> Voeg `pointer-events:none` als stijl toe aan de HTML-inhoud om het standaardgedrag voor slepen in Microsoft Edge uit te schakelen, waardoor een ongewenst pictogram wordt weergegeven.
+> Voeg `pointer-events:none` als stijl toe aan de HTML-inhoud om het standaardgedrag voor slepen in MS Edge uit te schakelen, waardoor een ongewenst pictogram wordt weergegeven.
 
 ```html
 map.markers.add(new atlas.HtmlMarker({
@@ -883,7 +883,7 @@ In Bing Kaarten kunnen GeoJSON-gegevens worden geladen met behulp van de GeoJSON
             var clusterSize = cluster.containedPushpins.length;
 
             var radius = 20;    //Default radius to 20 pixels.
-            var fillColor = 'lime';     //Default to lime green.
+            var fillColor = 'lime';   //Default to lime green.
 
             if (clusterSize >= 750) {
                 radius = 40;   //If point_count >= 750, radius is 40 pixels.

@@ -3,23 +3,19 @@ title: Referentiearchitectuur voor een oplossing voor het bewaken van de waterkw
 description: Leer concepten voor een oplossing voor het bewaken van de waterkwaliteit die is gebouwd met Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
-ms.date: 10/23/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 1c4cc7f5440aca27be085c238179cd0ab20b226a
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 229074ad97e6d066a358da19bbbd43158fe1d6fc
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874046"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586717"
 ---
 # <a name="water-quality-monitoring-reference-architecture"></a>Referentiearchitectuur voor de bewaking van waterkwaliteit 
-
-
-
 Een oplossing voor het bewaken van de waterkwaliteit kan worden ontwikkeld met behulp van de **Azure IoT Central app-sjabloon** als uitgangspunt voor een IoT-toepassing. In dit artikel vindt u uitgebreide richtlijnen voor referentiearchitectuur voor het bouwen van een end-to-end-oplossing. 
-
 
 ![Architectuur voor bewaking van de waterkwaliteit](./media/concepts-waterqualitymonitoring-architecture/concepts-waterqualitymonitoring-architecture1.png)
 
@@ -27,8 +23,8 @@ Concepten:
 
 1. Apparaten en connectiviteit  
 1. IoT Central 
-2. Uitbreidbaarheid en integraties
-3. Zakelijke toepassingen
+1. Uitbreidbaarheid en integraties
+1. Zakelijke toepassingen
 
 Laten we eens kijken naar de belangrijkste onderdelen die in het algemeen een rol spelen in een oplossing voor het bewaken van de waterkwaliteit.
 

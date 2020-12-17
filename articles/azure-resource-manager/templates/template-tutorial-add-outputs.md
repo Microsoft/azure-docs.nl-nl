@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: e55638e20bceb6df4b8e74375d67836123167162
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 7acfb168462354017168ee333ea0b1ecaea434c1
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931738"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107121"
 ---
 # <a name="tutorial-add-outputs-to-your-arm-template"></a>Zelfstudie: Uitvoer aan uw ARM-sjabloon toevoegen
 
@@ -41,17 +41,17 @@ In het volgende voorbeeld ziet u de wijziging in de sjabloon die nodig is om een
 
 Er zijn enkele belangrijke dingen die u moet weten over de uitvoerwaarde die u hebt toegevoegd.
 
-Het type van de geretourneerde waarde is ingesteld op **object**, wat betekent dat er een JSON-object wordt geretourneerd.
+Het type van de geretourneerde waarde is ingesteld op `object`, wat betekent dat er een JSON-object wordt geretourneerd.
 
 Er wordt gebruikgemaakt van de [reference](template-functions-resource.md#reference)-functie om de runtimestatus van het opslagaccount op te halen. Als u de runtimestatus van een resource wilt ophalen, geeft u de naam of id van een resource door. In dit geval gebruikt u de variabele die u hebt gebruikt voor het maken van de naam van het opslagaccount.
 
-Ten slotte wordt de eigenschap **primaryEndpoints** uit het opslagaccount geretourneerd
+Ten slotte wordt de eigenschap `primaryEndpoints` uit het opslagaccount geretourneerd
 
 ## <a name="deploy-template"></a>Sjabloon implementeren
 
 U bent klaar om de sjabloon te implementeren en de geretourneerde waarde te bekijken.
 
-Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele **templateFile** hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
+Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele `templateFile` hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -92,7 +92,7 @@ In de uitvoer van de implementatieopdracht ziet u een object dat alleen op het v
 ```
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 ## <a name="review-your-work"></a>Uw werk controleren
 

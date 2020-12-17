@@ -10,13 +10,13 @@ author: lobrien
 ms.author: laobri
 ms.reviewer: laobri
 ms.date: 10/13/2020
-ms.custom: contperfq4, devx-track-python
-ms.openlocfilehash: 8748d6e155eb84cf948966d768dda1a992207f7e
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.custom: contperf-fy20q4, devx-track-python
+ms.openlocfilehash: b0b415cce37e464abcba9fab5ad4c1196b1b2e1b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629628"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033473"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Zelfstudie: Een Azure Machine Learning-pijplijn bouwen voor batchgewijs scoren
 

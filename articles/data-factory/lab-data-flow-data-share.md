@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 12/09/2020
-ms.openlocfilehash: bdf9cbfef7dfdcf80976641b527ddeb61368d50b
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: fa424f7e1f5e1f885dd433b8abc8aae1dc1bc206
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921027"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97006154"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Gegevensintegratie met behulp van Azure Data Factory en Azure Data Share
 
@@ -72,7 +72,7 @@ Met gekoppelde services van Azure Data Factory wordt de verbindingsinformatie na
     ![Portal configureren 3](media/lab-data-flow-data-share/configure3.png)
 1. De eerste gekoppelde service die u configureert, is een Azure SQL-database. U kunt de zoekbalk gebruiken om de lijst met gegevensarchieven te filteren. Klik op de tegel **Azure SQL Database** en klik op doorgaan.
 
-    ![Portal configureren 4](media/lab-data-flow-data-share/configure4.png)
+    ![Portal configureren 4](media/lab-data-flow-data-share/configure-4.png)
 1. Voer in het deelvenster SQL DB-configuratie 'SQLDB' in als de naam van de gekoppelde service. Voer uw aanmeldingsgegevens in om data factory verbinding te laten maken met uw database. Als u SQL-verificatie gebruikt, voert u de servernaam, de database, uw gebruikersnaam en wachtwoord in. U kunt controleren of de verbindingsgegevens juist zijn door te klikken op **Verbinding testen**. Klik op **Maken** als u klaar bent.
 
     ![Portal configureren 5](media/lab-data-flow-data-share/configure5.png)
@@ -81,10 +81,10 @@ Met gekoppelde services van Azure Data Factory wordt de verbindingsinformatie na
 
 1. Herhaal hetzelfde proces om een gekoppelde Azure Synapse Analytics-service toe te voegen. Klik op het tabblad verbindingen op **Nieuw**. Selecteer de tegel **Azure Synapse Analytics** en klik op doorgaan.
 
-    ![Portal configureren 6](media/lab-data-flow-data-share/configure6.png)
+    ![Portal configureren 6](media/lab-data-flow-data-share/configure-6.png)
 1. Voer in het deelvenster Configuratie van gekoppelde service 'SQLDW' in als de naam van de gekoppelde service. Voer uw aanmeldingsgegevens in om data factory verbinding te laten maken met uw database. Als u SQL-verificatie gebruikt, voert u de servernaam, de database, uw gebruikersnaam en wachtwoord in. U kunt controleren of de verbindingsgegevens juist zijn door te klikken op **Verbinding testen**. Klik op **Maken** als u klaar bent.
 
-    ![Portal configureren 7](media/lab-data-flow-data-share/configure7.png)
+    ![Portal configureren 7](media/lab-data-flow-data-share/configure-7.png)
 
 ### <a name="create-an-azure-data-lake-storage-gen2-linked-service"></a>Een gekoppelde Azure Data Lake Storage Gen2-service maken
 
@@ -128,7 +128,7 @@ In Azure Data Factory is een pijplijn een logische groep activiteiten die samen 
     ![Portal kopiëren 4](media/lab-data-flow-data-share/copy4.png)
 1. Zoek naar **Azure SQL Database** en klik op doorgaan.
 
-    ![Portal kopiëren 5](media/lab-data-flow-data-share/copy5.png)
+    ![Portal kopiëren 5](media/lab-data-flow-data-share/copy-5.png)
 1. Roep de gegevensset 'TripData' aan. Selecteer 'SQLDB' als uw gekoppelde service. Selecteer tabelnaam 'dbo.TripData' uit de vervolgkeuzelijst voor de tabelnaam. Importeer het schema **Uit verbinding/archief**. Als u klaar bent, klikt u op OK.
 
     ![Portal kopiëren 6](media/lab-data-flow-data-share/copy6.png)
@@ -211,7 +211,7 @@ De gegevensstroom die in deze stap wordt gemaakt, wordt gekoppeld aan de gegeven
     ![Gegevensstroom portal 9](media/lab-data-flow-data-share/dataflow9.png)
 1. Selecteer de tegel **Azure SQL Database** en klik op doorgaan. *Opmerking: Het kan zijn dat veel van de connectors in data factory niet worden ondersteund in de toewijzingsgegevensstroom. Als u gegevens uit een van deze bronnen wilt transformeren, neemt u deze op in een ondersteunde bron met behulp van de kopieeractiviteit*.
 
-    ![Gegevensstroom portal 10](media/lab-data-flow-data-share/dataflow10.png)
+    ![Gegevensstroom portal 10](media/lab-data-flow-data-share/dataflow-10.png)
 1. Roep de gegevensset 'TripFares' aan. Selecteer 'SQLDB' als uw gekoppelde service. Selecteer tabelnaam 'dbo.TripFares' uit de vervolgkeuzelijst voor de tabelnaam. Importeer het schema **Uit verbinding/archief**. Als u klaar bent, klikt u op OK.
 
     ![Gegevensstroom portal 11](media/lab-data-flow-data-share/dataflow11.png)
@@ -276,7 +276,7 @@ De gegevensstroom die in deze stap wordt gemaakt, wordt gekoppeld aan de gegeven
 
 1. Selecteer de tegel **Azure Synapse Analytics** en klik op doorgaan.
 
-    ![Portalsink 3](media/lab-data-flow-data-share/sink3.png)
+    ![Portalsink 3](media/lab-data-flow-data-share/sink-3.png)
 1. Roep de gegevensset 'AggregatedTaxiData' aan. Selecteer 'SQLDW' als uw gekoppelde service. Selecteer **Nieuwe tabel maken** en geef de nieuwe tabel de naam dbo.AggregateTaxiData. Als u klaar bent, klikt u op OK
 
     ![Portalsink 4](media/lab-data-flow-data-share/sink4.png)

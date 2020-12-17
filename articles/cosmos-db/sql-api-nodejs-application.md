@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: sngun
 ms.custom: devx-track-js
-ms.openlocfilehash: f7b7b8c7b1106bd3c0a6732867946c42df8438c1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 49cf54bda985f7d97b2db6a3ada7859aee829cff
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097274"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359537"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Zelfstudie: Een Node.js-web-app bouwen met behulp van de JavaScript SDK voor het beheren van een SQL API-account in Azure Cosmos DB 
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -108,7 +108,7 @@ U hebt nu de initiële setup en configuratie voltooid. U gaat nu code schrijven 
 
 2. Maak in de map **models** een nieuw bestand met de naam **taskDao.js**. Dit bestand bevat code die vereist is voor het maken van de database en de container. Het definieert ook methoden om taken te lezen, bij te werken, te maken en te zoeken in Azure Cosmos DB. 
 
-3. Kopieer de volgende code naar het bestand **taskDao.js** :
+3. Kopieer de volgende code naar het bestand **taskDao.js**:
 
    ```javascript
     // @ts-check
@@ -191,7 +191,7 @@ U hebt nu de initiële setup en configuratie voltooid. U gaat nu code schrijven 
 
 1. Maak in de map **routes** van uw project een nieuw bestand met de naam **tasklist.js**.  
 
-2. Voeg de volgende code toe aan het bestand **tasklist.js**. Met deze code worden de CosmosClient- en async-modules geladen die worden gebruikt voor **tasklist.js**. Met deze code wordt ook de klasse **TaskList** gedefinieerd, die wordt doorgegeven als een exemplaar van het eerder gedefinieerde object **TaskDao** :
+2. Voeg de volgende code toe aan het bestand **tasklist.js**. Met deze code worden de CosmosClient- en async-modules geladen die worden gebruikt voor **tasklist.js**. Met deze code wordt ook de klasse **TaskList** gedefinieerd, die wordt doorgegeven als een exemplaar van het eerder gedefinieerde object **TaskDao**:
    
    ```javascript
     const TaskDao = require("../models/TaskDao");
@@ -362,7 +362,7 @@ U hebt nu de initiële setup en configuratie voltooid. U gaat nu code schrijven 
 
 Nu gaan we de gebruikersinterface bouwen zodat een gebruiker kan werken met de toepassing. De Express-toepassing die is gemaakt in de vorige secties, gebruikt **Jade** als de weergave-engine.
 
-1. Het bestand **layout.jade** in de map **views** wordt gebruikt als een algemeen sjabloon voor andere **.jade** -bestanden. In deze stap wordt het bestand aangepast voor het gebruik van Twitter Bootstrap. Dit is een werkset waarmee u een website kunt ontwerpen.  
+1. Het bestand **layout.jade** in de map **views** wordt gebruikt als een algemeen sjabloon voor andere **.jade**-bestanden. In deze stap wordt het bestand aangepast voor het gebruik van Twitter Bootstrap. Dit is een werkset waarmee u een website kunt ontwerpen.  
 
 2. Open het bestand **layout.jade** in de map **views** en vervang de inhoud door de volgende code:
 
@@ -382,9 +382,9 @@ Nu gaan we de gebruikersinterface bouwen zodat een gebruiker kan werken met de t
        script(src='//ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.min.js')
    ```
 
-    Door deze code weet de **Jade** -engine dat er bepaalde HTML-code voor onze toepassing moet worden weergegeven en wordt er een **blok** met de naam **content** gemaakt waar u lay-out kunt opgeven voor de inhoudspagina's. Sla het bestand **layout.jade** op en sluit het bestand.
+    Door deze code weet de **Jade**-engine dat er bepaalde HTML-code voor onze toepassing moet worden weergegeven en wordt er een **blok** met de naam **content** gemaakt waar u lay-out kunt opgeven voor de inhoudspagina's. Sla het bestand **layout.jade** op en sluit het bestand.
 
-3. Open nu het bestand **index.jade** , de weergave die door de toepassing wordt gebruikt, en vervang de inhoud van het bestand door de volgende code:
+3. Open nu het bestand **index.jade**, de weergave die door de toepassing wordt gebruikt, en vervang de inhoud van het bestand door de volgende code:
 
    ```html
    extends layout
@@ -470,7 +470,7 @@ Als uw toepassing lokaal goed werkt, kunt u deze implementeren naar Azure met be
 3. Implementeer de toepassing door deze naar de externe locatie te pushen.
    
    ```bash
-   git push azure master
+   git push azure main
    ```
 
 4. Uw webtoepassing wordt binnen enkele seconden gepubliceerd en gestart in een browser.

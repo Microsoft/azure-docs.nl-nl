@@ -3,17 +3,17 @@ title: 'Zelfstudie: Een app voor bewaking van waterverbruik maken met Azure IoT 
 description: 'Zelfstudie: Lees hier hoe u met behulp van toepassingssjablonen van Azure IoT Central een app kunt maken om waterverbruik te bewaken.'
 author: miriambrus
 ms.author: miriamb
-ms.date: 11/12/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 400585d3e5908268708d93ceeefd26a4a5efdd49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 476a0c2d75dcbee5c1ed4d758e0cbc9d4726ff95
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90972396"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587193"
 ---
 # <a name="tutorial-create-a-water-consumption-monitoring-application-with-azure-iot-central"></a>Zelfstudie: Een app voor bewaking van waterverbruik maken met Azure IoT Central
 
@@ -177,7 +177,7 @@ In Azure IoT Central kunt u gesimuleerde apparaten maken om uw apparaatsjabloon 
 
     ![Slimme klep 1](./media/tutorial-waterconsumptionmonitoring/waterconsumptionmonitor-device1.png)
 
-1. Op het tabblad **Opdrachten**, ziet u de drie opdrachten voor apparaten (**Klep sluiten**, **Klep openen**en **Kleppositie instellen**) die zijn gedefinieerd in de apparaatsjabloon **Slimme klep**.
+1. Op het tabblad **Opdrachten**, ziet u de drie opdrachten voor apparaten (**Klep sluiten**, **Klep openen** en **Kleppositie instellen**) die zijn gedefinieerd in de apparaatsjabloon **Slimme klep**.
 
 1. Verken het tabblad **Apparaateigenschappen** en het tabblad **Apparaatdashboard**.
 

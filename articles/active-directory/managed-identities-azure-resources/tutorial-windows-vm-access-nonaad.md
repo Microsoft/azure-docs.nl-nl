@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/03/2020
+ms.date: 12/10/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa17a18de8e71b099d6ed717974486203c4379f4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 668d3cb044512220ff7afbc165c77da704a9a5d7
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180503"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107512"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Zelfstudie: Een door het Windows-VM-systeem toegewezen beheerde identiteit gebruiken voor toegang tot Azure Key Vault 
 
@@ -61,6 +61,20 @@ Eerst moeten we een sleutelkluis maken en de door het systeem toegewezen beheerd
 1. Selecteer **Controleren en maken**
 1. Selecteer **Maken**
 
+### <a name="create-a-secret"></a>Een geheim maken
+
+Voeg vervolgens een geheim toe aan de sleutelkluis, zodat u het later kunt ophalen met behulp van code die wordt uitgevoerd op uw virtuele machine. In deze zelfstudie gebruiken we PowerShell, maar dezelfde concepten gelden voor elke andere code die wordt uitgevoerd op deze virtuele machine.
+
+1. Ga naar uw zojuist gemaakte sleutelkluis.
+1. Selecteer **Geheimen** en klik op **Toevoegen**.
+1. Selecteer **Genereren/importeren**
+1. In het scherm **Een geheim maken** laat u bij **Uploadopties** de optie **Handmatig** geselecteerd.
+1. Voer een naam en een waarde in voor de geheime sleutel.    De waarde mag elke gewenste waarde zijn. 
+1. Laat de activeringsdatum en vervaldatum leeg en laat **Ingeschakeld** ingesteld staan op **Ja**. 
+1. Klik op **Maken** om het geheim te maken.
+
+   ![Een geheim maken](./media/msi-tutorial-windows-vm-access-nonaad/create-secret.png)
+
 ## <a name="grant-access"></a>Toegang verlenen
 
 De beheerde identiteit die door de virtuele machine wordt gebruikt, moet toegang worden verleend om het geheim te lezen dat we in de sleutelkluis zullen opslaan.
@@ -76,19 +90,6 @@ De beheerde identiteit die door de virtuele machine wordt gebruikt, moet toegang
 1. Selecteer **Toevoegen**
 1. Selecteer **Opslaan**.
 
-## <a name="create-a-secret"></a>Een geheim maken
-
-Voeg vervolgens een geheim toe aan de sleutelkluis, zodat u het later kunt ophalen met behulp van code die wordt uitgevoerd op uw virtuele machine. In deze zelfstudie gebruiken we PowerShell, maar dezelfde concepten gelden voor elke andere code die wordt uitgevoerd op deze virtuele machine.
-
-1. Ga naar uw zojuist gemaakte sleutelkluis.
-1. Selecteer **Geheimen** en klik op **Toevoegen**.
-1. Selecteer **Genereren/importeren**
-1. In het scherm **Een geheim maken** laat u bij **Uploadopties** de optie **Handmatig** geselecteerd.
-1. Voer een naam en een waarde in voor de geheime sleutel.    De waarde mag elke gewenste waarde zijn. 
-1. Laat de activeringsdatum en vervaldatum leeg en laat **Ingeschakeld** ingesteld staan op **Ja**. 
-1. Klik op **Maken** om het geheim te maken.
-
-   ![Een geheim maken](./media/msi-tutorial-windows-vm-access-nonaad/create-secret.png)
 
 ## <a name="access-data"></a>Toegang tot gegevens  
 

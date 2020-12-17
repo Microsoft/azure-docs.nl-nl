@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 0abe13c7c6a9f26746278aeede199a0860a54c0d
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3f1dacb57931913edfb181f023bdf98717777d50
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779541"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562239"
 ---
 # <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Zelfstudie: Azure CDN toevoegen aan een Azure App Service-web-app
 
@@ -64,7 +64,7 @@ Selecteer in het navigatiedeelvenster links **App Services** en selecteer vervol
 
 ![Een App Service-app in de portal selecteren](media/cdn-add-to-web-app/portal-select-app-services.png)
 
-Selecteer op de pagina **App Service** in het gedeelte **Instellingen** de optie **Netwerken > Azure CDN configureren voor uw app** .
+Selecteer op de pagina **App Service** in het gedeelte **Instellingen** de optie **Netwerken > Azure CDN configureren voor uw app**.
 
 ![CDN selecteren in de portal](media/cdn-add-to-web-app/portal-select-cdn.png)
 
@@ -75,12 +75,12 @@ Geef op de pagina **Azure Content Delivery Network** de instellingen voor **Nieu
 | Instelling | Voorgestelde waarde | Beschrijving |
 | ------- | --------------- | ----------- |
 | **CDN-profiel** | myCDNProfile | Een CDN-profiel is een verzameling van CDN-eindpunten van dezelfde prijscategorie. |
-| **Prijscategorie** | Standard Akamai | De [prijscategorie](cdn-features.md) geeft de provider en de beschikbare functies aan. In deze zelfstudie wordt gebruikgemaakt van *Standard Akamai* . |
+| **Prijscategorie** | Standard Akamai | De [prijscategorie](cdn-features.md) geeft de provider en de beschikbare functies aan. In deze zelfstudie wordt gebruikgemaakt van *Standard Akamai*. |
 | **Naam van CDN-eindpunt** | Een unieke naam in het domein azureedge.net | U hebt toegang tot uw resources in de cache via het domein *&lt;naamvaneindpunt&gt;* .azureedge.net.
 
 Selecteer **Maken** om een CDN-profiel te maken.
 
-Azure maakt het profiel en het eindpunt. Het nieuwe eindpunt wordt weergegeven in de lijst **Eindpunten** , en wanneer het eindpunt is ingericht, heeft het de status **Actief** .
+Azure maakt het profiel en het eindpunt. Het nieuwe eindpunt wordt weergegeven in de lijst **Eindpunten**, en wanneer het eindpunt is ingericht, heeft het de status **Actief**.
 
 ![Nieuw eindpunt in lijst](media/cdn-add-to-web-app/portal-new-endpoint-in-list.png)
 
@@ -91,7 +91,7 @@ Azure maakt het profiel en het eindpunt. Het nieuwe eindpunt wordt weergegeven i
    - Profielen van **Azure CDN Standard van Akamai** worden doorgaans binnen één minuut doorgegeven. 
    - Profielen van **Azure CDN Standard van Verizon** en **Azure CDN Premium van Verizon** worden doorgaans binnen 90 minuten doorgegeven, maar in sommige gevallen kan dit langer duren. 
 
-De voorbeeld-app heeft een *index.html* -bestand en de mappen *css* , *img* en *js* met andere statische assets. De inhoudspaden voor al deze bestanden zijn op het CDN-eindpunt hetzelfde. De volgende URL's bieden bijvoorbeeld toegang tot het bestand *bootstrap.css* in de map *css* :
+De voorbeeld-app heeft een *index.html*-bestand en de mappen *css*, *img* en *js* met andere statische assets. De inhoudspaden voor al deze bestanden zijn op het CDN-eindpunt hetzelfde. De volgende URL's bieden bijvoorbeeld toegang tot het bestand *bootstrap.css* in de map *css*:
 
 ```
 http://<appname>.azurewebsites.net/css/bootstrap.css
@@ -125,7 +125,7 @@ In dit gedeelte van de zelfstudie implementeert u een wijziging in de web-app en
 
 ### <a name="deploy-a-change-to-the-web-app"></a>Een wijziging implementeren in de web-app
 
-Open het *index.html* -bestand en voeg *- V2* toe aan de kop H1, zoals wordt weergegeven in het volgende voorbeeld: 
+Open het *index.html*-bestand en voeg *- V2* toe aan de kop H1, zoals wordt weergegeven in het volgende voorbeeld: 
 
 ```
 <h1>Azure App Service - Sample Static HTML Site - V2</h1>
@@ -135,7 +135,7 @@ Voer uw wijziging door en implementeer deze naar de web-app.
 
 ```bash
 git commit -am "version 2"
-git push azure master
+git push azure main
 ```
 
 Als de implementatie is voltooid, ziet u de wijziging als u naar de URL van de web-app bladert.
@@ -166,13 +166,13 @@ Selecteer uw CDN-eindpunt in de lijst met resources.
 
 ![Eindpunt selecteren](media/cdn-add-to-web-app/portal-select-endpoint.png)
 
-Selecteer boven aan de pagina **Eindpunt** de optie **Leegmaken** .
+Selecteer boven aan de pagina **Eindpunt** de optie **Leegmaken**.
 
 ![Leegmaken selecteren](media/cdn-add-to-web-app/portal-select-purge.png)
 
 Voer de inhoudspaden in die u wilt leegmaken. Als u een afzonderlijk bestand wilt verwijderen, geeft u het volledige bestandspad door. Als u een map wilt leegmaken en vernieuwen, geeft u een padsegment door. Omdat u *index.html* hebt gewijzigd, moet u controleren of het bestand zich op een van de paden bevindt.
 
-Klik onder aan de pagina op **Leegmaken** .
+Klik onder aan de pagina op **Leegmaken**.
 
 ![Pagina leegmaken](media/cdn-add-to-web-app/app-service-web-purge-cdn.png)
 
@@ -206,11 +206,11 @@ In dit gedeelte van de zelfstudie wijzigt u het cachegedrag zodat elke unieke UR
 
 ### <a name="change-the-cache-behavior"></a>Het gedrag van de cache wijzigen
 
-Selecteer in de Azure Portal op de pagina **CDN-eindpunt** de optie **Cache** .
+Selecteer in de Azure Portal op de pagina **CDN-eindpunt** de optie **Cache**.
 
-Selecteer **Elke unieke URL in de cache opslaan** in de vervolgkeuzelijst **Cachegedrag van queryreeks** .
+Selecteer **Elke unieke URL in de cache opslaan** in de vervolgkeuzelijst **Cachegedrag van queryreeks**.
 
-Selecteer **Opslaan** .
+Selecteer **Opslaan**.
 
 ![Selecteer cachegedrag van queryreeks](media/cdn-add-to-web-app/portal-select-caching-behavior.png)
 
@@ -226,14 +226,14 @@ Met Azure CDN wordt de huidige inhoud van de web-app geretourneerd, met *V2* in 
 
 Vernieuw de pagina om ervoor te zorgen dat deze pagina is opgeslagen in de cache in het CDN. 
 
-Open *index.html* , wijzig *V2* in *V3* , en implementeer vervolgens de wijziging. 
+Open *index.html*, wijzig *V2* in *V3*, en implementeer vervolgens de wijziging. 
 
 ```bash
 git commit -am "version 3"
-git push azure master
+git push azure main
 ```
 
-Ga in een browser naar de URL van het CDN-eindpunt met een nieuwe queryreeks zoals `q=2`. Met Azure CDN wordt het huidige *index.html* -bestand opgehaald en *V3* weergegeven. Als u echter naar het CDN-eindpunt navigeert met de queryreeks `q=1`, ziet u *V2* .
+Ga in een browser naar de URL van het CDN-eindpunt met een nieuwe queryreeks zoals `q=2`. Met Azure CDN wordt het huidige *index.html*-bestand opgehaald en *V3* weergegeven. Als u echter naar het CDN-eindpunt navigeert met de queryreeks `q=1`, ziet u *V2*.
 
 ```
 http://<endpointname>.azureedge.net/index.html?q=2

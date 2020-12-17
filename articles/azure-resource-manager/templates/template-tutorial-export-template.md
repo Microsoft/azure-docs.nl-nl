@@ -6,12 +6,12 @@ ms.date: 09/09/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 310637ce099aca7b8b9057a674d6b2094b008a87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba1797da5a78eeebd25f5df1b6e37eb92470f584
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613608"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106917"
 ---
 # <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Zelfstudie: Uit de Azure-portal geëxporteerde sjabloon gebruiken
 
@@ -62,12 +62,12 @@ Deze sjabloon werkt goed voor het implementeren van opslagaccounts, maar mogelij
 
    Met de functie voor het exporteren van sjablonen wordt de huidige status van een resource opgehaald en een sjabloon gegenereerd om deze te implementeren. Het exporteren van een sjabloon kan een handige manier zijn om snel de JSON te verkrijgen die u nodig hebt om een resource te implementeren.
 
-1. Bekijk de definitie van **Microsoft.Web/serverfarms** en de parameterdefinitie in de geëxporteerde sjabloon. U hoeft deze secties niet te kopiëren. U kunt gewoon deze geëxporteerde sjabloon gebruiken als voorbeeld van de manier waarop u deze resource aan uw sjabloon wilt toevoegen.
+1. Bekijk de definitie van `Microsoft.Web/serverfarms` en de parameterdefinitie in de geëxporteerde sjabloon. U hoeft deze secties niet te kopiëren. U kunt gewoon deze geëxporteerde sjabloon gebruiken als voorbeeld van de manier waarop u deze resource aan uw sjabloon wilt toevoegen.
 
     ![Geëxporteerde Resource Manager-sjabloon](./media/template-tutorial-export-template/resource-manager-template-exported-template.png)
 
 > [!IMPORTANT]
-> De geëxporteerde sjabloon is doorgaans uitgebreider dan u wellicht wilt bij het maken van een sjabloon. Het SKU-object in de geëxporteerde sjabloon heeft bijvoorbeeld vijf eigenschappen. Deze sjabloon werkt, maar u kunt ook gewoon de eigenschap **name** (naam) gebruiken. U kunt beginnen met de geëxporteerde sjabloon en deze vervolgens aanpassen aan uw vereisten.
+> De geëxporteerde sjabloon is doorgaans uitgebreider dan u wellicht wilt bij het maken van een sjabloon. Het SKU-object in de geëxporteerde sjabloon heeft bijvoorbeeld vijf eigenschappen. Deze sjabloon werkt, maar u kunt ook gewoon de eigenschap `name` (naam) gebruiken. U kunt beginnen met de geëxporteerde sjabloon en deze vervolgens aanpassen aan uw vereisten.
 
 ## <a name="revise-existing-template"></a>Bestaande sjabloon herzien
 
@@ -83,7 +83,7 @@ Kopieer het hele bestand en vervang uw sjabloon door de inhoud ervan.
 
 U kunt Azure CLI of Azure PowerShell gebruiken om een sjabloon te implementeren.
 
-Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele **templateFile** hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
+Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele `templateFile` hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -111,7 +111,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 ## <a name="verify-deployment"></a>Implementatie verifiëren
 

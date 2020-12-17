@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 473ed1f14d77470e31c2f14665a12542a70a2a98
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 6bb1aafd942046faa77072d99af043ebd43b4a8a
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512295"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589964"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-in-net"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te verbinden met een Azure-web-app in .NET
 
@@ -180,7 +180,7 @@ git remote add azure <deploymentLocalGitUrl-from-create-step>
 Push naar de externe Azure-instantie om uw app te implementeren met behulp van de volgende opdracht. Wanneer Git Credential Manager u om referenties vraagt, gebruikt u de referenties die u hebt gemaakt in de sectie [De lokale Git-implementatie configureren](#configure-the-local-git-deployment).
 
 ```bash
-git push azure master
+git push azure main
 ```
 
 Het uitvoeren van deze opdracht kan enkele minuten duren. Terwijl deze wordt uitgevoerd, wordt er informatie weergegeven die vergelijkbaar is met wat u hier ziet:
@@ -191,7 +191,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 285 bytes | 95.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Deploy Async
-remote: Updating branch 'master'.
+remote: Updating branch 'main'.
 remote: Updating submodules.
 remote: Preparing deployment for commit id 'd6b54472f7'.
 remote: Repository path is /home/site/repository
@@ -208,7 +208,7 @@ remote: Repository Commit : d6b54472f7e8e9fd885ffafaa64522e74cf370e1
 remote: Deployment successful.
 remote: Deployment Logs : 'https://&lt;your-webapp-name&gt;.scm.azurewebsites.net/newui/jsonviewer?view_url=/api/deployments/d6b54472f7e8e9fd885ffafaa64522e74cf370e1/log'
 To https://&lt;your-webapp-name&gt;.scm.azurewebsites.net:443/&lt;your-webapp-name&gt;.git
-   d87e6ca..d6b5447  master -> master
+   d87e6ca..d6b5447  main -> main
 </pre>
 
 Ga naar (of vernieuw) de geïmplementeerde toepassing via uw webbrowser:
@@ -311,7 +311,7 @@ Nu u uw code hebt bijgewerkt, kunt u deze opnieuw implementeren in Azure met beh
 ```bash
 git add .
 git commit -m "Updated web app to access my key vault"
-git push azure master
+git push azure main
 ```
 
 ## <a name="go-to-your-completed-web-app"></a>Ga naar uw voltooide web-app

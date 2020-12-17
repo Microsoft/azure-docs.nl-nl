@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 2f2ad0cb67a41c0a5c59f6428a4912bd91a00e56
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 42da33fe874b6dea43bc16009dd27b70e6c3f535
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318807"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589891"
 ---
 # <a name="tutorial-integrate-amazon-business-with-azure-active-directory"></a>Zelfstudie: Amazon Business integreren met Azure Active Directory
 
@@ -109,19 +109,19 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Bovendien verwacht de Amazon Business-toepassing nog enkele kenmerken die als SAML-antwoord moeten worden doorgestuurd. Voer in het gedeelte **Gebruikerskenmerken en -claims** in het dialoogvenster **Groepsclaims** de volgende stappen uit:
 
-    a. Klik op de **pen** naast **Groepen die zijn geretourneerd in claim**.
+    1. Klik op de **pen** naast **Groepen die zijn geretourneerd in claim**.
 
-    ![Schermopname van User Attributes & Claims (Gebruikerskenmerken en claims) met pictogram voor Groups returned in claim (In claim geretourneerde groepen) geselecteerd.](./media/amazon-business-tutorial/config04.png)
+        ![Schermopname van User Attributes & Claims (Gebruikerskenmerken en claims) met pictogram voor Groups returned in claim (In claim geretourneerde groepen) geselecteerd.](./media/amazon-business-tutorial/config04.png)
 
-    ![Schermopname van Group Claims (Groepclaims) met waarden zoals beschreven in deze procedure.](./media/amazon-business-tutorial/config05.png)
+        ![Schermopname van Group Claims (Groepclaims) met waarden zoals beschreven in deze procedure.](./media/amazon-business-tutorial/config05.png)
 
-    b. Selecteer **Alle groepen** in de lijst met keuzerondjes.
+    1. Selecteer **Alle groepen** in de lijst met keuzerondjes.
 
-    c. Selecteer **Groeps-id** als **Bronkenmerk**.
+    1. Selecteer **Groeps-id** als **Bronkenmerk**.
 
-    d. Schakel het selectievakje **De naam van de groepsclaim aanpassen** in en voer de groepsnaam in overeenstemming met de vereisten van uw organisatie in.
+    1. Schakel het selectievakje **De naam van de groepsclaim aanpassen** in en voer de groepsnaam in overeenstemming met de vereisten van uw organisatie in.
 
-    e. Klik op **Opslaan**.
+    1. Klik op **Opslaan**.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 

@@ -1,18 +1,18 @@
 ---
 title: 'Zelfstudie: Door assets bladeren in Azure Purview en hun herkomst bekijken'
 description: In deze zelfstudie wordt beschreven hoe u naar assets kunt zoeken in de catalogus en hoe u de gegevensherkomst weergeeft.
-author: hophan
+author: hophanms
 ms.author: hophan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 8f548261f180209ff3a6f664f03163e6e7a5c523
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ab51e604412e79fb706190fef769ad76c694fd6c
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549686"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399431"
 ---
 # <a name="tutorial-browse-assets-in-azure-purview-preview-and-view-their-lineage"></a>Zelfstudie: Door assets bladeren in Azure Purview (preview) en hun herkomst bekijken
 

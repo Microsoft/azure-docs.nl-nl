@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4340bd0ffc4a060b1eb8884efa8078aaf18e1e28
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: c05f9a326fcbe75a3348e58987d57e106094cf56
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92893978"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510563"
 ---
 # <a name="resource-manager-template-samples-for-metric-alert-rules-in-azure-monitor"></a>Voorbeelden van Resource Manager-sjablonen voor metrische waarschuwingsregels in Azure Monitor
 
@@ -343,7 +343,7 @@ Sla de onderstaande json op als simpledynamicmetricalert.json voor deze stapsgew
                 "description": "The number of unhealthy periods to alert on (must be lower or equal to numberOfEvaluationPeriods)."
             }
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "type": "string",
             "defaultValue": "",
             "metadata": {
@@ -480,7 +480,7 @@ Sla de onderstaande json op als simpledynamicmetricalert.json voor deze stapsgew
         "minFailingPeriodsToAlert": {
             "value": "3"
         },
-    "ignoreDataBefore": {
+        "ignoreDataBefore": {
             "value": ""
         },
         "timeAggregation": {
@@ -707,15 +707,15 @@ De volgende beperkingen gelden bij het gebruik van dimensies in een waarschuwing
 ## <a name="multiple-dimensions-static-threshold"></a>Meerdere dimensies, statische drempelwaarde
 Eén waarschuwingsregel kan meerdere metrische tijdreeksen tegelijk controleren, waardoor er minder waarschuwingsregels beheerd moeten worden. Het volgende voorbeeld maakt een statische metrische waarschuwingsregel voor dimensionale metrische gegevens.
 
-In dit voorbeeld controleert de waarschuwingsregel de dimensiewaardecombinaties van de dimensies **ResponsType** en **ApiName** voor de meetwaarde **Transactions** :
-1. **ResponsType** : het gebruik van het jokerteken "\*" betekent dat er voor elke waarde van de dimensie **ResponseType** , inclusief toekomstige waarden, een andere tijdreeks individueel gecontroleerd wordt.
-2. **ApiName** : er wordt een andere tijdreeks gecontroleerd alleen voor de dimensiewaarden **GetBlob** en **PutBlob**.
+In dit voorbeeld controleert de waarschuwingsregel de dimensiewaardecombinaties van de dimensies **ResponsType** en **ApiName** voor de meetwaarde **Transactions**:
+1. **ResponsType**: het gebruik van het jokerteken "\*" betekent dat er voor elke waarde van de dimensie **ResponseType**, inclusief toekomstige waarden, een andere tijdreeks individueel gecontroleerd wordt.
+2. **ApiName**: er wordt een andere tijdreeks gecontroleerd alleen voor de dimensiewaarden **GetBlob** en **PutBlob**.
 
 Enkele mogelijke tijdreeksen die gecontroleerd worden door deze waarschuwingsregel zijn bijvoorbeeld:
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
 
 ### <a name="template-file"></a>Sjabloonbestand
 
@@ -875,7 +875,7 @@ Enkele mogelijke tijdreeksen die gecontroleerd worden door deze waarschuwingsreg
                             "values": ["*"]
                         },
                         {
-                "name":"ApiName",
+                            "name":"ApiName",
                             "operator": "Include",
                             "values": ["GetBlob", "PutBlob"]    
                         }
@@ -898,15 +898,15 @@ Enkele mogelijke tijdreeksen die gecontroleerd worden door deze waarschuwingsreg
 Eén waarschuwingsregel voor dynamische drempelwaarden kan aangepaste drempelwaarden maken voor honderden metrische tijdreeksen (zelfs verschillende typen) tegelijkertijd, waardoor er minder waarschuwingsregels beheerd moeten worden. Het volgende voorbeeld maakt een waarschuwingsregel voor dynamische drempelwaarden met dimensionale metrische gegevens.
 
 
-In dit voorbeeld controleert de waarschuwingsregel de dimensiewaardecombinaties van de dimensies **ResponsType** en **ApiName** voor de meetwaarde **Transactions** :
-1. **ResponsType** : voor elke waarde van de dimensie **ResponseType** , inclusief toekomstige waarden, wordt een andere tijdreeks individueel bewaakt.
-2. **ApiName** : er wordt een andere tijdreeks gecontroleerd alleen voor de dimensiewaarden **GetBlob** en **PutBlob**.
+In dit voorbeeld controleert de waarschuwingsregel de dimensiewaardecombinaties van de dimensies **ResponsType** en **ApiName** voor de meetwaarde **Transactions**:
+1. **ResponsType**: voor elke waarde van de dimensie **ResponseType**, inclusief toekomstige waarden, wordt een andere tijdreeks individueel bewaakt.
+2. **ApiName**: er wordt een andere tijdreeks gecontroleerd alleen voor de dimensiewaarden **GetBlob** en **PutBlob**.
 
 Enkele mogelijke tijdreeksen die gecontroleerd worden door deze waarschuwingsregel zijn bijvoorbeeld:
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Success* , ApiName = *PutBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *GetBlob*
-- Metric = *Transactions* , ResponseType = *Server Timeout* , ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Success*, ApiName = *PutBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *GetBlob*
+- Metric = *Transactions*, ResponseType = *Server Timeout*, ApiName = *PutBlob*
 
 >[!NOTE]
 > Meerdere criteria worden momenteel niet ondersteund voor metrische waarschuwingsregels die dynamische drempelwaarden gebruiken.

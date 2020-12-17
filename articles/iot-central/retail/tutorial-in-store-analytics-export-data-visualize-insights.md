@@ -11,15 +11,14 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: f00448f19cc0a2118477a9527005548fea25537e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: fca9a72fa237a11a02b6d4fbe30ebba5857384cf
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187269"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97346364"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Zelfstudie: Gegevens exporteren uit Azure IoT Central en inzichten visualiseren in Power BI
-
 
 
 In de twee vorige zelfstudies hebt u een IoT Central-toepassing gemaakt en aangepast met behulp van de toepassingssjabloon **In-Store Analytics: betaling**. In deze zelfstudie configureert u uw IoT Central-toepassing voor het exporteren van telemetriegegevens die van de apparaten zijn verzameld. Vervolgens gebruikt u Power BI om een aangepast dashboard te maken waarmee de winkelmanager de inzichten kan visualiseren die zijn afgeleid van de telemetrie.

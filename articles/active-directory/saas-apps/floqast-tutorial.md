@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 162c1341c792844dab27f98e67ebf7a48282bfc5
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: ed35a0b6e6f2ad620b528283a332507845e4f00d
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92452725"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588264"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-floqast"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met FloQast
 
@@ -52,7 +52,6 @@ Als u de integratie van FloQast in Azure AD wilt configureren, moet u FloQast va
 1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **FloQast**.
 1. Selecteer **FloQast** in het resultatenpaneel en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-floqast"></a>Eenmalige aanmelding van Azure AD configureren en testen voor FloQast
 
 Configureer en test eenmalige aanmelding van Azure AD met FloQast met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de gerelateerde gebruiker in FloQast.
@@ -70,7 +69,7 @@ Als u eenmalige aanmelding van Azure AD met FloQast wilt configureren en testen,
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **FloQast** naar de sectie **Beheren** , en selecteer **Eenmalige aanmelding**.
+1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **FloQast** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -92,9 +91,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     | Naam | Bronkenmerk|
     | ------------- | -------------- |
-    | FirstName           | user.givenname |
-    | LastName            | user.surname |
-    | Email               | user.mail    |
+    | FirstName | user.givenname |
+    | LastName | user.surname |
+    | Email | user.mail    |
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -104,11 +103,11 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![SAML-handtekeningcertificaat bewerken](common/edit-certificate.png)
 
-    a. Selecteer **SAML-antwoord en -bewering ondertekenen** in de **Optie voor ondertekening**.
-    
-    b. Klik op **Opslaan**.
+    1. Selecteer **SAML-antwoord en -bewering ondertekenen** in de **Optie voor ondertekening**.
 
-    ![Communifire-optie voor ondertekenen](./media/floqast-tutorial/tutorial-floqast-signing-option.png)
+    1. Klik op **Opslaan**.
+
+        ![Communifire-optie voor ondertekenen](./media/floqast-tutorial/tutorial-floqast-signing-option.png)
 
 1. Kopieer in de sectie **FloQast instellen** de juiste URL('s) op basis van uw behoeften.
 
@@ -118,9 +117,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -160,9 +159,9 @@ Wanneer u in het toegangsvenster op de tegel FloQast klikt, wordt u automatisch 
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

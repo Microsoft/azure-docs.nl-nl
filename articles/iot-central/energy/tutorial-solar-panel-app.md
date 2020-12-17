@@ -3,21 +3,19 @@ title: 'Zelfstudie: Een app maken met IoT Central om de werking van zonnepanelen
 description: 'Zelfstudie: Lees hier hoe u met behulp van toepassingssjablonen van Azure IoT Central een app kunt maken om de werking van zonnepanelen bij te houden.'
 author: op-ravi
 ms.author: omravi
-ms.date: 11/12/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 145aefbe5a31d71ae614826c63d285c37ac03571
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: d006bae8290c1f6ea564f9985727f4d6ff70bb04
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123922"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516745"
 ---
 # <a name="tutorial-create-and-walk-through-the-solar-panel-monitoring-app-template"></a>Zelfstudie: Een app maken met IoT Central om de werking van zonnepanelen bij te houden 
-
-
 
 In deze zelfstudie gaat u een app maken om de werking van zonnepanelen bij te houden. U maakt ook een apparaatmodel dat gesimuleerde gegevens bevat. In deze zelfstudie leert u:
 
@@ -31,8 +29,8 @@ In deze zelfstudie gaat u een app maken om de werking van zonnepanelen bij te ho
 Als u geen abonnement hebt, kunt u een [gratis proefaccount](https://azure.microsoft.com/free) maken.
 
 ## <a name="prerequisites"></a>Vereisten
-- Geen
-- Een Azure-abonnement wordt aanbevolen, maar is niet vereist voor de zelfstudie
+* Geen
+* Een Azure-abonnement wordt aanbevolen, maar is niet vereist voor de zelfstudie
 
 
 ## <a name="create-a-solar-panel-monitoring-app"></a>Een app maken om zonnepanelen te bewaken 
@@ -41,12 +39,12 @@ U kunt deze toepassing in drie eenvoudige stappen maken:
 
 1. Open de [startpagina van Azure IoT Central](https://apps.azureiotcentral.com) en klik op **Bouwen** om een nieuwe toepassing te maken. 
 
-2. Selecteer het tabblad **Energie** en klik op **App maken** onder de toepassingstegel **Bewaking van zonnepanelen**. 
+1. Selecteer het tabblad **Energie** en klik op **App maken** onder de toepassingstegel **Bewaking van zonnepanelen**. 
 
     > [!div class="mx-imgBorder"]
     > ![App maken](media/tutorial-iot-central-solar-panel/solar-panel-build.png)
   
-3. Met **App maken** wordt het formulier **Nieuwe toepassing** geopend. Vul de gevraagde gegevens in, zoals wordt weergegeven in de afbeelding hieronder:
+1. Met **App maken** wordt het formulier **Nieuwe toepassing** geopend. Vul de gevraagde gegevens in, zoals wordt weergegeven in de afbeelding hieronder:
     * **Toepassingsnaam**: Kies een naam voor uw IoT Central-toepassing. 
     * **URL**: Kies een IoT Central-URL, het platform controleert de uniekheid van de URL.
     * **Gratis**: Als u al een Azure-abonnement hebt, wordt de standaardinstelling aanbevolen. Als u nog geen Azure-abonnement hebt, maakt u een gratis proefaccount.
@@ -100,7 +98,7 @@ Klik op het tabblad **Apparaatsjablonen** om het apparaatmodel van het zonnepane
 Als u besluit deze toepassing niet te blijven gebruiken, verwijdert u de toepassing met de volgende stappen:
 
 1. Open het tabblad Beheer aan de linkerkant.
-2. Selecteer Uw toepassing en klik onder aan de pagina op de knop Verwijderen. 
+1. Selecteer Uw toepassing en klik onder aan de pagina op de knop Verwijderen. 
 
     > [!div class="mx-imgBorder"]
     > ![Toepassing verwijderen](media/tutorial-iot-central-solar-panel/solar-panel-delete-app.png)

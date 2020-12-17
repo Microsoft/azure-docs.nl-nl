@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 84a9a5f6a4644717227d0b659407e9ba0bc56675
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bf40353a8f29200ab2a33859473dbc504c29bf7d
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452409"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510431"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-using-powershell"></a>Meerdere tabellen bulksgewijs kopiëren met behulp van Azure Data Factory met PowerShell
 
@@ -146,7 +146,7 @@ In deze zelfstudie maakt u drie gekoppelde services maken voor respectievelijk d
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     LinkedServiceName : AzureSqlDatabaseLinkedService
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -180,7 +180,7 @@ In deze zelfstudie maakt u drie gekoppelde services maken voor respectievelijk d
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     LinkedServiceName : AzureSqlDWLinkedService
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -216,7 +216,7 @@ In deze zelfstudie gebruikt u Azure Blob-opslag als een tussentijds faseringsgeb
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     LinkedServiceName : AzureStorageLinkedService
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -255,7 +255,7 @@ In deze zelfstudie maakt u bron- en sinkgegevenssets, waarmee de locatie wordt o
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     DatasetName       : AzureSqlDatabaseDataset
     ResourceGroupName : <resourceGroupname>
     DataFactoryName   : <dataFactoryName>
@@ -299,7 +299,7 @@ In deze zelfstudie maakt u bron- en sinkgegevenssets, waarmee de locatie wordt o
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     DatasetName       : AzureSqlDWDataset
     ResourceGroupName : <resourceGroupname>
     DataFactoryName   : <dataFactoryName>
@@ -391,7 +391,7 @@ In deze pijplijn wordt een lijst met tabellen gebruikt als parameter. Voor elke 
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     PipelineName      : IterateAndCopySQLTables
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -467,7 +467,7 @@ Deze pijplijn voert twee stappen uit:
 
     Hier volgt een voorbeeld van uitvoer:
 
-    ```json
+    ```console
     PipelineName      : GetTableListAndTriggerCopyData
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
@@ -509,7 +509,7 @@ Deze pijplijn voert twee stappen uit:
 
     Hier volgt een voorbeeld van de voorbeelduitvoering:
 
-    ```json
+    ```console
     Pipeline run details:
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>

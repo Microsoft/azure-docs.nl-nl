@@ -3,21 +3,19 @@ title: 'Zelfstudie: Een app voor analyse van slimme meters maken met IoT Central
 description: 'Zelfstudie: Lees hier hoe u met behulp van toepassingssjablonen van Azure IoT Central een app kunt maken om slimme meters te bewaken.'
 author: op-ravi
 ms.author: omravi
-ms.date: 11/12/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: af4940ae6b0dc001667602b8729faaa3a10d19da
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: a95f1befcdc9b59293eb97330ba7ceae3034a74b
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127128"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516766"
 ---
 # <a name="tutorial-create-and-walk-through-the-smart-meter-monitoring-app-template"></a>Zelfstudie: Een app-sjabloon maken en leren kennen om de werking van slimme meters te bewaken 
-
-
 
 In deze zelfstudie gaat u een app maken om de werking van slimme meters te bewaken. U maakt ook een apparaatmodel dat gesimuleerde gegevens bevat. In deze zelfstudie leert u:
 
@@ -38,14 +36,13 @@ Als u geen abonnement hebt, kunt u een [gratis proefaccount](https://azure.micro
 U kunt deze toepassing in drie eenvoudige stappen maken:
 
 1. Open de [startpagina van Azure IoT Central](https://apps.azureiotcentral.com) en klik op **Bouwen** om een nieuwe toepassing te maken. 
-
-2. Selecteer het tabblad **Energie** en klik op **App maken** onder de toepassingstegel **Bewaken van slimme meters**.
+1. Selecteer het tabblad **Energie** en klik op **App maken** onder de toepassingstegel **Bewaken van slimme meters**.
 
     > [!div class="mx-imgBorder"]
     > ![App maken](media/tutorial-iot-central-smart-meter/smart-meter-build.png)
     
 
-3. Met **App maken** wordt het formulier **Nieuwe toepassing** geopend. Vul de gevraagde gegevens in, zoals wordt weergegeven in de afbeelding hieronder:
+1. Met **App maken** wordt het formulier **Nieuwe toepassing** geopend. Vul de gevraagde gegevens in, zoals wordt weergegeven in de afbeelding hieronder:
     * **Toepassingsnaam**: Kies een naam voor uw IoT Central-toepassing. 
     * **URL**: Kies een IoT Central-URL, het platform controleert de uniekheid van de URL.
     * **Gratis**: Als u al een Azure-abonnement hebt, wordt de standaardinstelling aanbevolen. Als u nog geen Azure-abonnement hebt, maakt u een gratis proefaccount.
@@ -55,7 +52,6 @@ U kunt deze toepassing in drie eenvoudige stappen maken:
         ![Formulier voor een nieuwe toepassing](media/tutorial-iot-central-smart-meter/smart-meter-create-new-app.png)
 
         ![Factureringsgegevens in formulier voor nieuwe toepassing](media/tutorial-iot-central-smart-meter/smart-meter-create-new-app-billinginfo.png)
-
 
 ### <a name="verify-the-application-and-simulated-data"></a>Toepassing en gesimuleerde gegevens controleren
 
@@ -99,7 +95,7 @@ Klik op het tabblad **Apparaatsjablonen** om het apparaatmodel van de slimme met
 Als u besluit deze toepassing niet te blijven gebruiken, verwijdert u de toepassing met de volgende stappen:
 
 1. Open het tabblad Beheer aan de linkerkant.
-2. Selecteer Uw toepassing en klik onder aan de pagina op de knop Verwijderen. 
+1. Selecteer Uw toepassing en klik onder aan de pagina op de knop Verwijderen. 
 
     > [!div class="mx-imgBorder"]
     > ![Toepassing verwijderen](media/tutorial-iot-central-smart-meter/smart-meter-delete-app.png)

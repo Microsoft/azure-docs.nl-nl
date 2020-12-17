@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/23/2020
-ms.openlocfilehash: 2d9169e836b5819756e716c64ed9d41094f08c5e
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 9cfe8c7e7d2484649bf458524032365b692c9243
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512359"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97093516"
 ---
 # <a name="network-concepts-for-azure-red-hat-openshift-aro"></a>Netwerkconcepten voor Azure Red Hat OpenShift (ARO)
 
@@ -76,7 +76,7 @@ De volgende netwerkfuncties zijn specifiek voor Azure Red Hat OpenShift:
 * Pod CIDR moet minimaal /18 groot zijn (het podnetwerk bestaat uit niet-routeerbare IP's en wordt alleen gebruikt in de OpenShift SDN).
 * Aan elk knooppunt wordt een /23-subnet (512 IP's) voor de pods toegewezen. Deze waarde kan niet worden gewijzigd.
 * U kunt geen pod aan meer dan één netwerk koppelen.
-* U kunt geen uitgaand statisch IP-adres configureren. (Dit is een OpenShift-functie. Zie [configuring egress IPs](https://docs.openshift.com/aro/4/networking/openshift_sdn/assigning-egress-ips.html)) (Uitgaande IP-adressen configureren) voor meer informatie).
+* U kunt geen uitgaand statisch IP-adres configureren. (Dit is een OpenShift-functie. Zie [configuring egress IPs](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/assigning-egress-ips.html)) (Uitgaande IP-adressen configureren) voor meer informatie).
 
 ## <a name="network-settings"></a>Netwerkinstellingen
 

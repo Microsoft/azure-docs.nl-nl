@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 12/15/2020
+ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 9b90f177432de11f8281d03021b38bae647dadf2
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 589f320f0099fdab829e9e707a86e3e77d51c21e
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562528"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656288"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Benoemde entiteits herkenning gebruiken in Text Analytics
 
@@ -34,8 +34,6 @@ Herkenning van benoemde entiteiten (NER) is de mogelijkheid om verschillende ent
 De PII-functie maakt deel uit van NER en kan gevoelige entiteiten identificeren en redigeren in tekst die is gekoppeld aan een individuele persoon, zoals: telefoon nummer, e-mail adres, e-mail adres, paspoort nummer.
 
 ## <a name="named-entity-recognition-features-and-versions"></a>Functies en versies van de benoemde entiteit herkenning
-
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 | Functie                                                         | NER v 3.0 | NER v 3.1-Preview. 3 |
 |-----------------------------------------------------------------|--------|----------|
@@ -74,7 +72,7 @@ Maak een POST-aanvraag. U kunt [postman](text-analytics-how-to-call-api.md) of d
 
 ### <a name="request-endpoints"></a>Eindpunten voor aanvragen
 
-#### <a name="version-31-preview3"></a>[Versie 3,1-Preview. 3](#tab/version-3-preview)
+#### <a name="version-31-preview3"></a>[Versie 3.1-preview.3](#tab/version-3-preview)
 
 Herkenning van benoemde entiteiten `v3.1-preview.3` maakt gebruik van afzonderlijke eind punten voor ner, PII en aanvragen voor het koppelen van entiteiten. Gebruik een URL-indeling hieronder op basis van uw aanvraag.
 

@@ -279,17 +279,17 @@
     - name: NuGet-pakketten (.NET)
       items:
         - name: Microsoft.Azure.Storage.Common (versie 11.x)
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
+          href: 'https://www.nuget.org/packages/microsoft.azure.storage.common/'
         - name: Azure.Storage.Common (versie 12.x)
           href: 'https://www.nuget.org/packages/Azure.Storage.Common/'
         - name: Microsoft.Azure.Storage.Queue (versie 11.x)
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/'
+          href: 'https://www.nuget.org/packages/microsoft.azure.storage.queue/'
         - name: Azure.Storage.Queue (versie 12.x)
-          href: 'https://www.nuget.org/packages/Azure.Storage.Queues/'
+          href: 'https://www.nuget.org/packages/azure.storage.queues/'
         - name: Azure Configuration Manager
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
+          href: 'https://www.nuget.org/packages/microsoft.azure.configurationmanager/'
         - name: Bibliotheek voor opslagresourceprovider
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/'
+          href: 'https://www.nuget.org/packages/microsoft.azure.management.storage/'
     - name: Broncode
       items:
         - name: .NET

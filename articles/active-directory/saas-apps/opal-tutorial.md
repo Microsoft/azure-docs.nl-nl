@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: jeedes
-ms.openlocfilehash: acd0206f45d714685cc3e01d968491049d3bb36f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 80c4b1998872c749228d7352484fd5af22b6d23d
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92522339"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608337"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-opal"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Opal
 
@@ -39,12 +39,10 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-
 * Opal biedt ondersteuning voor door **IDP** geïnitieerde eenmalige aanmelding
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
-
 
 ## <a name="adding-opal-from-the-gallery"></a>Opal toevoegen vanuit de galerie
 
@@ -56,7 +54,6 @@ Voor het configureren van de integratie van Opal in Azure AD moet u Opal vanuit 
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **Opal**.
 1. Selecteer **Opal** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
-
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-opal"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Opal
 
@@ -83,12 +80,14 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** voert u de waarden voor de volgende velden in:
 
-    a. In het tekstvak **Id** typt u een URL: `Opal`
+    1. In het tekstvak **Id** typt u een URL: `Opal`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<subdomain>.ouropal.com/auth/saml/callback`
+    1. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
 
-    > [!NOTE]
-    > De waarde van de antwoord-URL is niet de echte waarde. Werk de waarde bij met de werkelijke antwoord-URL. Neem contact op met het [ondersteuningsteam van Opal](mailto:support@workwithopal.com) om de waarde op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+        `https://<subdomain>.ouropal.com/auth/saml/callback`
+
+        > [!NOTE]
+        > De waarde van de antwoord-URL is niet de echte waarde. Werk de waarde bij met de werkelijke antwoord-URL. Neem contact op met het [ondersteuningsteam van Opal](mailto:support@workwithopal.com) om de waarde op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. In de Opal-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -98,8 +97,8 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     | Naam | Bronkenmerk|
     | ---------------| --------------- |
-    | firstname           | user.givenname |
-    | lastname        | user.surname |
+    | firstname | user.givenname |
+    | lastname | user.surname |
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -113,10 +112,10 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
-   1. Voer in het veld **Naam**`B.Simon` in.  
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Klik op **Create**.
@@ -155,9 +154,9 @@ Wanneer u op de tegel Opal in het toegangsvenster klikt, wordt u automatisch aan
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

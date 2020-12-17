@@ -2,14 +2,14 @@
 title: Servicequota en -limieten
 description: Meer informatie over standaard Azure Batch quota's, limieten en beperkingen, en het aanvragen van quotum verhogingen
 ms.topic: conceptual
-ms.date: 06/03/2020
+ms.date: 12/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: b2039794a0c8a13070c9d81b83869ca4097bd02e
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 9f529d388cb883f635b6225801af5ce41b8c997a
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325962"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614508"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Quota en limieten voor Batch-service
 
@@ -98,7 +98,7 @@ U kunt als volgt uw batch-account quota's weer geven in de [Azure Portal](https:
 U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met behulp van de [Azure Portal](https://portal.azure.com). Het type quotum toename is afhankelijk van de pool toewijzings modus van uw batch-account. Als u een quotum toename wilt aanvragen, moet u de VM-reeks toevoegen waarvoor u het quotum wilt verhogen. Wanneer de quota toename wordt toegepast, wordt deze toegepast op alle reeksen Vm's.
 
 1. Selecteer de tegel **Help + ondersteuning** in het dash board van de portal of het vraag teken (**?**) in de rechter bovenhoek van de portal.
-1. Selecteer basis principes **nieuwe ondersteunings aanvraag**  >  **Basics**.
+1. Selecteer basis principes **nieuwe ondersteunings aanvraag**  >  .
 1. In de **basis beginselen**:
    
     1. **Probleem type**  >  **Service-en abonnements limieten (quota's)**
@@ -107,7 +107,7 @@ U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met 
    
     1. **Quotum type**  >  **Batch**
       
-       Selecteer **Next**.
+       Selecteer **Volgende**.
     
 1. In **Details**:
       
@@ -127,7 +127,7 @@ U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met 
 
     1. Selecteer een **Ernst** op basis van uw [bedrijfs impact](https://aka.ms/supportseverity).
 
-       Selecteer **Next**.
+       Selecteer **Volgende**.
 
 1. Bij **contact gegevens**:
    

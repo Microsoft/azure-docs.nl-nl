@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8915ae349e33390ce5bb687d7c07a21665a0258
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 34f82fc060586e2df5acefa6b0836171e558aa4a
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029401"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615764"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -110,6 +110,7 @@ Deze instelling is van toepassing op de volgende iOS-en Android-apps:
    - Biedt alleen ondersteuning voor de voor waarde iOS en Android voor Device platform.
    - Er is een Broker-app vereist om het apparaat te registreren. De Broker-app kan de Microsoft Authenticator voor iOS of de Microsoft Authenticator of micro soft-bedrijfs portal voor Android-apparaten zijn.
 - Voorwaardelijke toegang kan niet worden beschouwd als micro soft Edge in de InPrivate-modus van een goedgekeurde client-app.
+- Azure AD-toepassingsproxy gebruiken om de Power BI mobiele app in te scha kelen om verbinding te maken met on-premises Power BI Report Server wordt niet ondersteund met beleids regels voor voorwaardelijke toegang waarvoor de micro soft Power BI-app als goedgekeurde client-app vereist is.
 
 Zie het artikel [How to: goedgekeurde client-apps vereisen voor toegang tot Cloud app met voorwaardelijke toegang](app-based-conditional-access.md) voor configuratie voorbeelden.
 

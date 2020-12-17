@@ -3,17 +3,17 @@ title: 'Zelfstudie: Een app voor het bewaken van de waterkwaliteit maken in Azur
 description: 'Zelfstudie: Lees hier hoe u met behulp van toepassingssjablonen van Azure IoT Central een app kunt maken om de waterkwaliteit te bewaken.'
 author: miriambrus
 ms.author: miriamb
-ms.date: 11/12/2019
+ms.date: 12/11/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 07f0e66888eaa909dfce14924e9186bcb9b876b4
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 6e8f9b8b33d391c4e13c6076a8589d336455d8c0
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014489"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590219"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Zelfstudie: Een toepassing voor het bewaken van de waterkwaliteit maken in Azure IoT Central
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 1376dcb76c22bcd70937f533d337ee9679e9dc59
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 832c08123904b9fb889231faa86c1308704a2581
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455845"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606416"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Zelfstudie: Azure Active Directory-integratie met LoginRadius
 
@@ -151,7 +151,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding inschakelen in de LoginRadiu
        - Opdracht voor het ophalen van de certificaatsleutel voor SP: `openssl genrsa -out lr.hub.loginradius.com.key 2048`
 
        - Opdracht voor het ophalen van het certificaat voor SP: `openssl req -new -x509 -key lr.hub.loginradius.com.key -out lr.hub.loginradius.com.cert -days 3650 -subj /CN=lr.hub.loginradius.com`
-     
+
        > [!NOTE]
        > Zorg ervoor dat u het certificaat en de waarden van de certificaatsleutel opgeeft met de kop- en voettekst:
        > - Voorbeeldindeling van certificaatwaarden: `-----BEGIN CERTIFICATE-----<certifciate value>-----END CERTIFICATE-----`

@@ -13,12 +13,12 @@ ms.date: 11/13/2020
 ms.author: kkrishna
 ms.reviewer: marsma, kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 96c52c46a75d6d5810dfddf91439c275d14e85f1
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: bae8f0955ef45e21d38797789bdea4f62bf5ea28
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616132"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614928"
 ---
 # <a name="how-to-add-app-roles-to-your-application-and-receive-them-in-the-token"></a>Procedure: app-rollen toevoegen aan uw toepassing en deze ontvangen in het token
 
@@ -30,7 +30,10 @@ Een andere benadering is het gebruik van Azure AD-groepen en groepclaims, zoals 
 
 ## <a name="declare-roles-for-an-application"></a>Rollen voor een toepassing declareren
 
-U kunt app-rollen definiëren met behulp van de [Azure Portal](https://portal.azure.com). Wanneer een gebruiker zich aanmeldt bij de toepassing, verzendt Azure AD een `roles` claim voor elke rol die de gebruiker afzonderlijk aan de gebruiker en aan het groepslid maatschap heeft verleend.
+U kunt app-rollen definiëren met behulp van de [Azure Portal](https://portal.azure.com). App-rollen worden meestal gedefinieerd voor een toepassings registratie die een service, app of API vertegenwoordigt. Wanneer een gebruiker zich aanmeldt bij de toepassing, verzendt Azure AD een `roles` claim voor elke rol dat de gebruiker of Service-Principal afzonderlijk is verleend aan de gebruiker en aan het groepslid maatschap. Dit kan worden gebruikt voor het implementeren van autorisatie op basis van claims. App-rollen kunnen worden toegewezen [aan een gebruiker of een groep gebruikers](../manage-apps/add-application-portal-assign-users.md#assign-users-to-an-app). App-rollen kunnen ook worden toegewezen aan de service-principal voor een andere toepassing, of [aan de service-principal voor een beheerde identiteit](../managed-identities-azure-resources/how-to-assign-app-role-managed-identity-powershell.md).
+
+> [!IMPORTANT]
+> Als u op dit moment een service-principal aan een groep toevoegt en vervolgens een app-rol aan die groep toewijst, voegt Azure AD de claim niet toe `roles` aan tokens die IT-problemen.
 
 Er zijn twee manieren om app-rollen te declareren met behulp van de Azure Portal:
 
@@ -59,7 +62,7 @@ Een app-rol maken met behulp van de gebruikers interface van de Azure Portal:
 
     | Veld | Beschrijving | Voorbeeld |
     |-------|-------------|---------|
-    | **Display name** (Weergavenaam) | Weergave naam voor de app-rol die wordt weer gegeven in de ervaringen beheerder en app-toewijzing. Deze waarde mag spaties bevatten. | `Survey Writer` |
+    | **Weergavenaam** | Weergave naam voor de app-rol die wordt weer gegeven in de ervaringen beheerder en app-toewijzing. Deze waarde mag spaties bevatten. | `Survey Writer` |
     | **Toegestane leden typen** | Hiermee geeft u op of deze app-rol kan worden toegewezen aan gebruikers, toepassingen of beide.<br/><br/>Wanneer `applications` de app-rollen beschikbaar zijn voor, worden deze als toepassings machtigingen weer gegeven in de sectie **beheren** van een app-registratie > **API-machtigingen > een machtiging > mijn API'S toevoegen > een API > toepassings machtigingen te kiezen**. | `Users/Groups` |
     | **Waarde** | Hiermee geeft u de waarde van de functie claim op die de toepassing moet verwachten in het token. De waarde moet exact overeenkomen met de teken reeks waarnaar wordt verwezen in de code van de toepassing. De waarde mag geen spaties bevatten. | `Survey.Create` |
     | **Beschrijving** | Een gedetailleerde beschrijving van de app-rol die wordt weer gegeven tijdens de toewijzing van de beheer-app en de toestemming. | `Writers can create surveys.` |

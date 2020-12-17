@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.openlocfilehash: c6b646688fb0c42091182cc7f94e019432b354fa
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: f1e6cd222c9ee8f40f81d4db3750956e8e698e3e
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92504589"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607666"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-textmagic"></a>Zelfstudie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met TextMagic
 
@@ -41,7 +41,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * TextMagic ondersteunt door **IDP** geïnitieerde eenmalige aanmelding
 
-* TextMagic biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* TextMagic biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -74,7 +74,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met TextMagic t
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de **TextMagic** -toepassing, naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de **TextMagic**-toepassing, naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -93,9 +93,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | Naam |   Bronkenmerk| Naamruimte  |
     | --------------- | --------------- | --------------- |
     | bedrijf | user.companyname | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | voornaam               | user.givenname |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | achternaam            | user.surname |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | telefoon               | user.telephonenumber |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | voornaam | user.givenname |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | achternaam | user.surname |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | telefoon | user.telephonenumber |  http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -109,9 +109,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.

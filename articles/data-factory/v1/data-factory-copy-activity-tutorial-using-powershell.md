@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 71b5b3f24b60796cf839b8920de8eae424ea3809
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa97fd2ac12ca73d1a317fb09e03e49d0056ceb1
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85254358"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608626"
 ---
 # <a name="tutorial-create-a-data-factory-pipeline-that-moves-data-by-using-azure-powershell"></a>Zelfstudie: Een Data Factory-pijplijn maken die gegevens verplaatst met Azure PowerShell
 > [!div class="op_single_selector"]
@@ -56,17 +56,17 @@ Hier volgen de stappen die u uitvoert als onderdeel van deze zelfstudie:
 
 1. Een Azure-**gegevensfactory** maken. In deze stap maakt u een gegevensfactory met de naam ADFTutorialDataFactoryPSH. 
 1. **Gekoppelde services** maken in de gegevensfactory. In deze stap maakt u twee gekoppelde services van de typen: Azure Storage en Azure SQL Database. 
-    
+
     De AzureStorageLinkedService koppelt uw Azure-opslagaccount aan de gegevensfactory. U hebt een container gemaakt en gegevens naar dit opslagaccount geüpload als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).   
 
     Met AzureSqlLinkedService wordt Azure SQL Database aan de data factory gekoppeld. De gegevens die worden gekopieerd uit de blobopslag worden opgeslagen in deze database. Als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) hebt u een SQL-tabel in deze database gemaakt.   
 1. Maak **invoer- en uitvoergegevenssets** in de gegevensfactory.  
-    
+
     De gekoppelde Azure Storage-service geeft de verbindingsreeks op die de Data Factory-service tijdens runtime gebruikt om verbinding te maken met uw Azure-opslagaccount. En de blobgegevensset voor invoer geeft de container en de map met de invoergegevens op.  
 
     Op dezelfde manier geeft de gekoppelde Azure SQL Database-service de verbindingsreeks op die de Data Factory-service in runtime gebruikt om verbinding te maken met uw database. En de uitvoergegevensset van de SQL-tabel geeft de tabel in de database op waarnaar de gegevens uit de blobopslag worden gekopieerd.
 1. Maak een **pijplijn** in de gegevensfactory. In deze stap maakt u een pijplijn met een kopieeractiviteit.   
-    
+
     Met de kopieeractiviteit worden gegevens uit een blob in de Azure-blobopslag naar een tabel in de Azure SQL Database gekopieerd. U kunt een kopieeractiviteit gebruiken in een pijplijn om gegevens uit ondersteunde bronnen te kopiëren naar een ondersteunde bestemming. Zie het artikel [Activiteiten voor gegevensverplaatsing](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor een lijst met ondersteunde gegevensarchieven. 
 1. Bewaak de pijplijn. In deze stap **bewaakt** u segmenten van de invoer- en uitvoergegevenssets met behulp van PowerShell.
 
@@ -83,7 +83,7 @@ Een gegevensfactory kan één of meer pijplijnen hebben. Een pijplijn kan één 
     ```powershell
     Connect-AzAccount
     ```   
-   
+
     Voer de volgende opdracht uit om alle abonnementen voor dit account weer te geven:
 
     ```powershell
@@ -100,7 +100,7 @@ Een gegevensfactory kan één of meer pijplijnen hebben. Een pijplijn kan één 
     ```powershell
     New-AzResourceGroup -Name ADFTutorialResourceGroup  -Location "West US"
     ```
-    
+
     Voor sommige van de stappen in deze zelfstudie wordt ervan uitgegaan dat u de resourcegroep met de naam **ADFTutorialResourceGroup** gebruikt. Als u een andere resourcegroep gebruikt, moet u voor deze zelfstudie die groep gebruiken in plaats van ADFTutorialResourceGroup.
 1. Voer de cmdlet **New-AzDataFactory** uit om een data factory met de naam **ADFTutorialDataFactoryPSH** te maken:  
 
@@ -190,7 +190,7 @@ In deze stap koppelt u Azure SQL Database aan uw data factory.
 
     > [!IMPORTANT]
     > Vervang &lt;servername&gt;, &lt;databasename&gt;, &lt;username@servername&gt; en &lt;password&gt; door de namen van uw server, database, gebruikersaccount en wachtwoord.
-    
+
     ```json
     {
         "name": "AzureSqlLinkedService",
@@ -207,7 +207,7 @@ In deze stap koppelt u Azure SQL Database aan uw data factory.
     ```powershell
     New-AzDataFactoryLinkedService $df -File .\AzureSqlLinkedService.json
     ```
-    
+
     Hier volgt een voorbeeld van uitvoer:
 
     ```
@@ -224,7 +224,7 @@ In deze stap koppelt u Azure SQL Database aan uw data factory.
     1. Klik op **Meer services >** aan de linkerzijde en klik op **SQL-servers** in de categorie **DATABASES**.
     1. Selecteer uw server in de lijst met SQL-servers.
     1. Klik op de blade SQL server op de koppeling **Firewall-instellingen weergeven**.
-    1. In de blade **Firewallinstellingen**schakelt u **Toegang tot Azure-services toestaan** **in**.
+    1. In de blade **Firewallinstellingen** schakelt u **Toegang tot Azure-services toestaan** **in**.
     1. Klik op **Opslaan** op de werkbalk. 
 
 ## <a name="create-datasets"></a>Gegevenssets maken
@@ -278,7 +278,7 @@ In deze stap maakt u een gegevensset met de naam InputDataset die verwijst naar 
     |:--- |:--- |
     | type | De eigenschap type wordt ingesteld op **AzureBlob**, omdat de gegevens zich in een Azure-blobopslag bevinden. |
     | linkedServiceName | Deze eigenschap verwijst naar de **AzureStorageLinkedService** die u eerder hebt gemaakt. |
-    | folderPath | Deze eigenschap verwijst naar de blob**container** en de **map** die de blobs voor invoer bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
+    | folderPath | Deze eigenschap verwijst naar de blob **container** en de **map** die de blobs voor invoer bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
     | fileName | Deze eigenschap is optioneel. Als u deze eigenschap niet opgeeft, worden alle bestanden uit folderPath gekozen. In deze zelfstudie wordt **emp.txt** opgegeven voor de fileName, zodat alleen dat bestand wordt opgehaald voor de verwerking. |
     | format -> type |Het invoerbestand is in de tekstindeling, zodat we **TextFormat** gebruiken. |
     | columnDelimiter | De kolommen in het invoerbestand worden gescheiden door een **komma (`,`)** . |
@@ -374,7 +374,6 @@ In deze stap maakt u een pijplijn met een **kopieeractiviteit** die gebruikmaakt
 
 Momenteel is de uitvoergegevensset dat wat de planning aanstuurt. In deze zelfstudie is de uitvoergegevensset geconfigureerd voor het produceren van een segment eenmaal per uur. De pijplijn heeft een begintijd en eindtijd die één dag uit elkaar liggen, ofwel 24 uur. Daarom worden 24 segmenten van de uitvoergegevensset door de pijplijn geproduceerd. 
 
-
 1. Maak een JSON-bestand met de naam **ADFTutorialPipeline.json** in de map **C:\ADFGetStartedPSH**. Geef dit bestand de volgende inhoud:
 
     ```json   
@@ -420,17 +419,17 @@ Momenteel is de uitvoergegevensset dat wat de planning aanstuurt. In deze zelfst
     } 
     ```
     Houd rekening met de volgende punten:
-   
+
    - In het gedeelte Activiteiten is er slechts één activiteit waarvan **type** is ingesteld op **Copy**. Zie het artikel [Activiteiten voor gegevensverplaatsing](data-factory-data-movement-activities.md) voor meer informatie over kopieeractiviteiten. In Data Factory-oplossingen kunt u ook [activiteiten voor gegevenstransformatie](data-factory-data-transformation-activities.md) gebruiken.
    - De invoer voor de activiteit is ingesteld op **InputDataset** en de uitvoer voor de activiteit is ingesteld op **OutputDataset**. 
    - In het gedeelte **typeProperties** is **BlobSource** opgegeven als het brontype en **SqlSink** als het sink-type. Zie [Ondersteunde gegevensarchieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor een volledige lijst van gegevensarchieven die worden ondersteund door kopieeractiviteiten als bronnen en sinks. Klik op de koppeling in de tabel voor informatie over het gebruik van een specifiek ondersteund gegevensarchief als een bron/sink.  
-     
+
      Vervang de waarde van de eigenschap **start** door de huidige dag en de waarde **end** door de volgende dag. U hoeft alleen de datum in te vullen en kunt de tijd overslaan. Dit wordt dan bijvoorbeeld 2016-02-03, wat gelijk staat aan 2016-02-03T00:00:00Z
-     
+
      Zowel de begin- als einddatum en -tijd moeten de [ISO-indeling](https://en.wikipedia.org/wiki/ISO_8601) hebben. Bijvoorbeeld: 2016-10-14T16:32:41Z. De **eindtijd** is optioneel, maar we gebruiken hem in deze zelfstudie. 
-     
+
      Als u geen waarde opgeeft voor de eigenschap **end**, wordt automatisch **start + 48 uur** gebruikt. Als u de pijplijn voor onbepaalde tijd wilt uitvoeren, geeft u **9999-09-09** op als waarde voor de eigenschap **end**.
-     
+
      In het voorgaande voorbeeld zijn er 24 gegevenssegmenten omdat er elk uur één gegevenssegment wordt gemaakt.
 
      Zie het artikel [Pijplijnen maken](data-factory-create-pipelines.md) voor beschrijvingen van JSON-eigenschappen in de definitie van een pijplijn. Zie [Gegevensverplaatsingsactiviteiten](data-factory-data-movement-activities.md) voor beschrijvingen van JSON-eigenschappen in de definitie van een kopieeractiviteit. Zie het [artikel over Azure Blob-connectoren](data-factory-azure-blob-connector.md) voor beschrijvingen van JSON-eigenschappen die worden ondersteund door BlobSource. Zie het [artikel over Azure SQL Database-connectoren](data-factory-azure-sql-connector.md) voor beschrijvingen van JSON-eigenschappen die worden ondersteund door SqlSink.
@@ -465,12 +464,12 @@ In deze stap gebruikt u Azure PowerShell om te bewaken wat er gebeurt in een Azu
     ```powershell
     $df=Get-AzDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name ADFTutorialDataFactoryPSH0516
     ```
-    
+
     Druk vervolgens de inhoud van $df af om de volgende uitvoer te bekijken: 
-    
+
     ```
     PS C:\ADFGetStartedPSH> $df
-    
+
     DataFactoryName   : ADFTutorialDataFactoryPSH0516
     DataFactoryId     : 6f194b34-03b3-49ab-8f03-9f8a7b9d3e30
     ResourceGroupName : ADFTutorialResourceGroup
@@ -510,7 +509,7 @@ In deze stap gebruikt u Azure PowerShell om te bewaken wat er gebeurt in een Azu
     State             : InProgress
     SubState          :
     LatencyStatus     :
-    LongRetryCount    : 0   
+    LongRetryCount    : 0
 
     ResourceGroupName : ADFTutorialResourceGroup
     DataFactoryName   : ADFTutorialDataFactoryPSH0516

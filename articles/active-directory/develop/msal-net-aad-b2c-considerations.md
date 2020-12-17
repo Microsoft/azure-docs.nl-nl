@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 8be41f3fcf4d32ee81d1290c6a50a27f2cd45ee7
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 15f65da83f14f43a7892d52c6a2ed4e08580d367
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860963"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614911"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>MSAL.NET gebruiken om gebruikers aan te melden met sociale identiteiten
 
@@ -134,7 +134,7 @@ Door gebruikers naam/wacht woord te gebruiken in een ROPC-stroom, worden er dive
 
 ### <a name="configure-the-ropc-flow-in-azure-ad-b2c"></a>De ROPC-stroom configureren in Azure AD B2C
 
-Maak in uw Azure AD B2C-Tenant een nieuwe gebruikers stroom en selecteer **Aanmelden met ROPC** om ROPC in te scha kelen voor de gebruikers stroom. Zie [Configure the resource owner password data flow](../../active-directory-b2c/configure-ropc.md)voor meer informatie.
+Maak in uw Azure AD B2C-Tenant een nieuwe gebruikers stroom en selecteer **Aanmelden met ROPC** om ROPC in te scha kelen voor de gebruikers stroom. Zie [Configure the resource owner password data flow](../../active-directory-b2c/add-ropc-policy.md)voor meer informatie.
 
 `IPublicClientApplication` bevat de- `AcquireTokenByUsernamePassword` methode:
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 3e5514c4a54083bcc6ef8187f2cd97515d2dd680
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 710de93a24037031784ca8d37a8ae0be76bff9e6
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88590180"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614583"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -29,15 +29,14 @@ Azure Monitor Metrics Explorer is een onderdeel van de Microsoft Azure-portal wa
 
 Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abonnement of Azure Monitor weer gave, opent u het tabblad **metrische gegevens** en volgt u deze stappen:
 
-1. Selecteer de resource waarvoor u de metrische gegevens wilt weer geven met behulp van de resource kiezer. (De resource wordt vooraf geselecteerd als u **metrische gegevens** in de context van een specifieke resource hebt geopend).
-
-    > ![Een resource selecteren](./media/metrics-getting-started/resource-picker.png)
+1. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. De resource moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van de resource. [Lees dit artikel](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-dynamic-scope)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
+    > ![Een resource selecteren](./media/metrics-getting-started/scope-picker.png)
 
 2. Voor sommige resources moet u een naam ruimte kiezen. De naamruimte is slechts een manier om metrische gegevens te organiseren, zodat u ze gemakkelijk kunt vinden. Zo hebben opslagaccounts afzonderlijke naamruimten voor het opslaan van bestanden, tabellen, blobs en wachtrijen. Veel resourcetypen hebben slechts één naamruimte.
 
 3. Selecteer een metrische waarde in een lijst met beschik bare metrische gegevens.
 
-    > ![Een metrische waarde selecteren](./media/metrics-getting-started/metric-picker.png)
+    > ![Een metrische waarde selecteren](./media/metrics-getting-started/metrics-dropdown.png)
 
 4. U kunt desgewenst [de metrische aggregatie wijzigen](metrics-charts.md#changing-aggregation). U kunt bijvoorbeeld aangeven dat de grafiek minimum-, maximum-of gemiddelde waarden van de metriek moet weer geven.
 
@@ -51,7 +50,7 @@ Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abon
 
 In de grafiek worden standaard de meest recente 24 uur aan metrische gegevens weergegeven. Gebruik het deel venster **tijd kiezer** om het tijds bereik te wijzigen, in te zoomen of uit te zoomen op de grafiek. 
 
-![Venster voor het wijzigen van het tijdsbereik](./media/metrics-getting-started/time-picker.png)
+![Venster voor het wijzigen van het tijdsbereik](./media/metrics-getting-started/time.png)
 
 > [!TIP]
 > Gebruik het **tijd penseel** om een interessant gebied van de grafiek (Prikker of een DIP) te onderzoeken. Plaats de muis aanwijzer aan het begin van het gebied, klik op de linkermuisknop en houd de muis knop ingedrukt, sleep naar de andere kant van het gebied en laat de knop los. In de grafiek wordt ingezoomd op dat tijdsbereik. 
@@ -62,7 +61,7 @@ In de grafiek worden standaard de meest recente 24 uur aan metrische gegevens we
 
 - Met **Filteren** kunt u kiezen welke dimensiewaarden in de grafiek worden opgenomen. U kunt bijvoorbeeld geslaagde aanvragen weer geven bij het grafieken van de waarde voor de *reactie tijd* van de server. U moet het filter Toep assen op het *succes van de aanvraag* dimensie. 
 
-- Met **Splitsen ** bepaalt u of in het diagram elke waarde van een dimensie wordt weergegeven op een afzonderlijke regel of dat de waarden worden geaggregeerd op één regel. U kunt bijvoorbeeld één regel weer geven voor een gemiddelde reactie tijd voor alle Server exemplaren, of afzonderlijke regels voor elke server weer geven. U moet splitsen Toep assen op de dimensie van het *Server exemplaar* om afzonderlijke regels te bekijken.
+- Met **Splitsen** bepaalt u of in het diagram elke waarde van een dimensie wordt weergegeven op een afzonderlijke regel of dat de waarden worden geaggregeerd op één regel. U kunt bijvoorbeeld één regel weer geven voor een gemiddelde reactie tijd voor alle Server exemplaren, of afzonderlijke regels voor elke server weer geven. U moet splitsen Toep assen op de dimensie van het *Server exemplaar* om afzonderlijke regels te bekijken.
 
 Zie [voorbeelden van grafieken](metric-chart-samples.md) waarin een filter of splitsing is toegepast. In het artikel worden de stappen beschreven die zijn gebruikt om de grafieken te configureren.
 
@@ -73,6 +72,7 @@ U kunt de stijl, titel en geavanceerde instellingen van de grafiek aanpassen. Wa
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Meer informatie over geavanceerde functies van Metrics Explorer](metrics-charts.md)
+* [Meerdere resources in Metrics Explorer weer geven](metrics-dynamic-scope.md)
 * [Problemen met Metrics Explorer oplossen](metrics-troubleshoot.md)
 * [Een lijst met beschikbare metrische gegevens voor Azure-services zien](metrics-supported.md)
 * [Voorbeelden van geconfigureerde grafieken zien](metric-chart-samples.md)

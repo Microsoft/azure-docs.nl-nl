@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c3188571e9188add7bc8f4f4d07ea5a562a79b3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 8d4515d6140123e8e8784fc2d828242d49c59fc4
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658108"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616895"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Externe toegang tot Power BI - Mobiel met Azure AD-toepassingsproxy inschakelen
 
@@ -133,7 +133,7 @@ Voordat de Power BI mobiele app verbinding kan maken en toegang kan krijgen tot 
 
    ![Mobiele app Power BI met externe URL](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
-2. Selecteer **Verbinding maken**. U wordt omgeleid naar de aanmeldings pagina van Azure Active Directory.
+2. Selecteer **Verbinden**. U wordt omgeleid naar de aanmeldings pagina van Azure Active Directory.
 
 3. Voer geldige referenties in voor uw gebruiker en selecteer **Aanmelden**. U ziet de elementen van de Reporting Services-server.
 
@@ -153,6 +153,8 @@ U kunt Microsoft Intune gebruiken om de client-apps te beheren die het personeel
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 Als de toepassing een fout pagina retourneert nadat u meer dan een paar minuten een rapport hebt geladen, moet u mogelijk de time-outinstelling wijzigen. Standaard ondersteunt toepassings proxy toepassingen die tot 85 seconden duren om op een aanvraag te reageren. Als u deze instelling wilt verlengen tot 180 seconden, selecteert u de time- **out voor de** back-end in de pagina app-proxy-instellingen voor de toepassing. Zie [Power bi aanbevolen procedures voor rapporten](/power-bi/power-bi-reports-performance)voor tips over het maken van snelle en betrouw bare rapporten.
+
+Azure AD-toepassingsproxy gebruiken om de Power BI mobiele app in te scha kelen om verbinding te maken met on-premises Power BI Report Server wordt niet ondersteund met beleids regels voor voorwaardelijke toegang waarvoor de micro soft Power BI-app als goedgekeurde client-app vereist is.
 
 ## <a name="next-steps"></a>Volgende stappen
 

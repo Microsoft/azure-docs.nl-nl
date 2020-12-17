@@ -6,12 +6,12 @@ ms.date: 03/29/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 3cab22c2271fd5874b4b094be65c36f5b5f3a22d
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 2011d013cce43eaf471d61936d5c34c318360381
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97371880"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616640"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
 
@@ -139,16 +139,16 @@ Application Insights Java 3,0 wordt de telemetrie die via deze Api's wordt verzo
 
 ### <a name="supported-custom-telemetry"></a>Ondersteunde aangepaste telemetrie
 
-De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u kunt inschakelen om de Java 3,0-agent aan te vullen. Om samen te vatten worden aangepaste metrische gegevens ondersteund via micrometer, aangepaste uitzonde ringen en traceringen kunnen worden ingeschakeld via logging frameworks, en elk type van de aangepaste telemetrie wordt ondersteund via de [Application Insights Java 2. x SDK](#send-custom-telemetry-using-application-insights-java-2x-sdk).
+De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u kunt inschakelen om de Java 3,0-agent aan te vullen. Om samen te vatten worden aangepaste metrische gegevens ondersteund via micrometer, aangepaste uitzonde ringen en traceringen kunnen worden ingeschakeld via logging frameworks, en elk type van de aangepaste telemetrie wordt ondersteund via de [Application Insights Java 2. x SDK](#send-custom-telemetry-using-the-2x-sdk).
 
 |                     | Micrometer | Log4j, logback, JUL | 2. x SDK |
 |---------------------|------------|---------------------|---------|
-| **Aangepaste gebeurtenissen**   |            |                     |  Yes    |
+| **Aangepaste gebeurtenissen**   |            |                     |  Ja    |
 | **Aangepaste metrische gegevens**  |  Ja       |                     |  Ja    |
-| **Afhankelijkheden**    |            |                     |  Yes    |
+| **Afhankelijkheden**    |            |                     |  Ja    |
 | **Uitzonderingen**      |            |  Ja                |  Ja    |
-| **Paginaweergaven**      |            |                     |  Yes    |
-| **Aanvragen**        |            |                     |  Yes    |
+| **Paginaweergaven**      |            |                     |  Ja    |
+| **Aanvragen**        |            |                     |  Ja    |
 | **Traceringen**          |            |  Ja                |  Ja    |
 
 Er is op dit moment geen planning voor het vrijgeven van een SDK met Application Insights 3,0.
@@ -188,7 +188,7 @@ Zie de [configuratie opties](./java-standalone-config.md#auto-collected-logging)
 
 Als u aangepaste dimensies aan uw logboeken wilt koppelen, kunt u [Log4j 1,2 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [Log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)of [Logback MDC](http://logback.qos.ch/manual/mdc.html)gebruiken, en Application Insights Java 3,0 worden deze MDC-eigenschappen automatisch vastgelegd als aangepaste dimensies op uw traceer-en uitzonderings-telemetrie.
 
-### <a name="send-custom-telemetry-using-application-insights-java-2x-sdk"></a>Aangepaste telemetrie verzenden met Application Insights Java 2. x SDK
+### <a name="send-custom-telemetry-using-the-2x-sdk"></a>Aangepaste telemetrie verzenden met behulp van de 2. x SDK
 
 Toevoegen `applicationinsights-core-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
 
@@ -251,3 +251,80 @@ try {
     telemetryClient.trackException(e);
 }
 ```
+
+### <a name="add-request-custom-dimensions-using-the-2x-sdk"></a>Aangepaste dimensies voor aanvragen toevoegen met behulp van de 2. x SDK
+
+> [!NOTE]
+> Deze functie is alleen in 3.0.1-BETA en hoger
+
+Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+
+```xml
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>applicationinsights-web</artifactId>
+  <version>2.6.2</version>
+</dependency>
+```
+
+en voeg aangepaste dimensies toe in uw code:
+
+```java
+import com.microsoft.applicationinsights.web.internal.ThreadContext;
+
+RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().getHttpRequestTelemetry();
+requestTelemetry.getProperties().put("mydimension", "myvalue");
+```
+
+### <a name="set-the-request-telemetry-user_id-using-the-2x-sdk"></a>De user_Id van de telemetrie aanvragen instellen met behulp van de 2. x SDK
+
+> [!NOTE]
+> Deze functie is alleen in 3.0.1-BETA en hoger
+
+Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+
+```xml
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>applicationinsights-web</artifactId>
+  <version>2.6.2</version>
+</dependency>
+```
+
+en stel de `user_Id` in uw code in:
+
+```java
+import com.microsoft.applicationinsights.web.internal.ThreadContext;
+
+RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().getHttpRequestTelemetry();
+requestTelemetry.getContext().getUser().setId("myuser");
+```
+
+### <a name="override-the-request-telemetry-name-using-the-2x-sdk"></a>De naam van de telemetrie van de aanvraag overschrijven met behulp van de 2. x SDK
+
+> [!NOTE]
+> Deze functie is alleen in 3.0.1-BETA en hoger
+
+Toevoegen `applicationinsights-web-2.6.2.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
+
+```xml
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>applicationinsights-web</artifactId>
+  <version>2.6.2</version>
+</dependency>
+```
+
+en stel de naam in uw code in:
+
+```java
+import com.microsoft.applicationinsights.web.internal.ThreadContext;
+
+RequestTelemetry requestTelemetry = ThreadContext.getRequestTelemetryContext().getHttpRequestTelemetry();
+requestTelemetry.setName("myname");
+```
+
+> [!NOTE]
+> Alle andere bewerkingen op een `RequestTelemetry` opgehaalde `ThreadContext.getRequestTelemetryContext().getHttpRequestTelemetry()` , naast de hierboven beschreven, mislukken snel en genereren een uitzonde ring om u te laten weten dat het gedrag niet is gedefinieerd in de 3,0-agent.
+>
+> Als u Interop voor andere methoden nodig hebt `RequestTelemetry` , laat het ons weten door een probleem te openen https://github.com/microsoft/ApplicationInsights-Java/issues .

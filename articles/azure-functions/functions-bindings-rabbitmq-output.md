@@ -4,15 +4,15 @@ description: Meer informatie over het verzenden van RabbitMQ-berichten van Azure
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/13/2020
+ms.date: 12/16/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 212bfcee09cd63b6ff09faaba4d99e4b4c583fe8
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: febcb3d2b6990d36a686dc4fab57a6bcbc96b080
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505732"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616657"
 ---
 # <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>RabbitMQ-uitvoer binding voor Azure Functions-overzicht
 
@@ -193,8 +193,6 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
 }
 ```
 
-In *_\_ init_ \_ . py* kunt u een bericht naar de wachtrij schrijven door een waarde door te geven aan de- `set` methode.
-
 ```python
 import azure.functions as func
 
@@ -271,11 +269,13 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**direction** | N.v.t. | Moet worden ingesteld op 'out'. |
 |**name** | N.v.t. | De naam van de variabele die de wachtrij in functie code vertegenwoordigt. |
 |**queueName**|**QueueName**| De naam van de wachtrij waarnaar berichten moeten worden verzonden. |
-|**Hostnaam**|**Hostnaam**|(optioneel als u ConnectStringSetting gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
-|**userNameSetting**|**UserNameSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Naam voor toegang tot de wachtrij |
-|**passwordSetting**|**PasswordSetting**|(optioneel als u ConnectionStringSetting gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+|**Hostnaam**|**Hostnaam**|(wordt genegeerd als ConnectStringSetting wordt gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
+|**userName**|**Gebruikers**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die de gebruikers naam bevat voor toegang tot de wachtrij. Bijvoorbeeld UserNameSetting: "< UserNameFromSettings >"|
+|**password**|**Wachtwoord**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die het wacht woord bevat voor toegang tot de wachtrij. Bijvoorbeeld UserNameSetting: "< UserNameFromSettings >"|
 |**connectionStringSetting**|**ConnectionStringSetting**|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt. (Bijvoorbeeld: in *function.jsop*: connectionStringSetting: "rabbitMQConnection" <br> In *local.settings.jsop*: "rabbitMQConnection": "< ActualConnectionstring >")|
-|**Importeer**|**Poort**|Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+|**Importeer**|**Poort**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+
+[!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Gebruik
 
@@ -297,7 +297,7 @@ Gebruik de volgende parameter typen voor de uitvoer binding:
 
 * `byte[]` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
 * `string` -Als de waarde van de para meter null is wanneer de functie wordt afgesloten, wordt door functies geen bericht gemaakt.
-* `POCO` -Als de waarde van de para meter niet is opgemaakt als een C#-object, wordt er een fout melding ontvangen.
+* `POCO` -Als de waarde van de para meter niet is opgemaakt als een C#-object, wordt er een fout melding ontvangen. Zie voor een volledig voor beeld C# script- [voor beeld](#example).
 
 Bij het werken met C#-script functies:
 
@@ -305,11 +305,11 @@ Bij het werken met C#-script functies:
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Het RabbitMQ-bericht wordt verzonden via een teken reeks.
+Het bericht in de wachtrij is beschikbaar via context. bindingen.<NAME> waar <NAME> komt overeen met de naam die is gedefinieerd in function.jsop. Als de payload JSON is, wordt de waarde in een object gedeserialiseerd.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Het RabbitMQ-bericht wordt verzonden via een teken reeks.
+Raadpleeg het python- [voor beeld](#example).
 
 # <a name="java"></a>[Java](#tab/java)
 

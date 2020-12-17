@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: riroloff
 ms.subservice: metrics
-ms.openlocfilehash: 724809dbce3ca1b5a36f4da0ba5c03d0f78897f5
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 9d1460a8bebe75a3ee471eb304fcf642d566b5dd
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577697"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614639"
 ---
 # <a name="viewing-multiple-resources-in-metrics-explorer"></a>Meerdere resources in Metrics Explorer weer geven
 
@@ -71,7 +71,7 @@ Hieronder ziet u bijvoorbeeld een grafiek van het percentage CPU over 9VMs. Door
 
 ![Scherm afbeelding die laat zien hoe u splitsen kunt gebruiken om het percentage CPU per VM te bekijken](./media/metrics-charts/026.png)
 
-Naast het splitsen kunt u de filter functie gebruiken om alleen de resource groepen weer te geven die u wilt zien.  Als u bijvoorbeeld het percentage CPU voor virtuele machines voor een bepaalde resource groep wilt weer geven, kunt u het hulp programma ' filter toevoegen ' gebruiken om te filteren op resource groep. In dit voor beeld filteren we op TailspinToys, waarmee metrische gegevens worden verwijderd die zijn gekoppeld aan resources in TailspinToysDemo. 
+Naast het splitsen kunt u de filter functie gebruiken om alleen de resource groepen weer te geven die u wilt zien.  Als u bijvoorbeeld het percentage CPU voor virtuele machines voor een bepaalde resource groep wilt weer geven, kunt u het hulp programma ' filter toevoegen ' gebruiken om te filteren op resource groep. In dit voor beeld filteren we op TailspinToysDemo, waarmee metrische gegevens worden verwijderd die zijn gekoppeld aan resources in TailspinToys. 
 
 ![Scherm afbeelding die laat zien hoe u kunt filteren op resource groep](./media/metrics-charts/027.png)
 
@@ -80,7 +80,7 @@ Naast het splitsen kunt u de filter functie gebruiken om alleen de resource groe
 > [!WARNING] 
 > U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Volg de instructies in [dit document](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)om dit te doen. 
 
-Volg [de instructies om](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#create-alert-rules)uw grafiek met meerdere resources vast te maken. 
+Volg [de instructies om](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#pin-charts-to-dashboards)uw grafiek met meerdere resources vast te maken. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

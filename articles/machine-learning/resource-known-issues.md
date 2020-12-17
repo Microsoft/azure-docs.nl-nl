@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: troubleshooting
 ms.custom: troubleshooting, contperf-fy20q4
 ms.date: 11/09/2020
-ms.openlocfilehash: 010d37baff76a046bef2da877262f6427cb3d5c9
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: aa0a14d57db932ef6cfb17df84b3204d3dec9e4d
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094434"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616997"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Bekende problemen en probleemoplossing in Azure Machine Learning
 
@@ -428,6 +428,16 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
   1. Start een opdracht shell, activeer de Conda-omgeving waar automatisch ml-pakketten worden geïnstalleerd.
   2. Voer `pip freeze` in en zoek naar `tensorflow` , indien gevonden, de weer gegeven versie moet < 1,13
   3. Als de vermelde versie een niet-ondersteunde versie is, `pip uninstall tensorflow` typt u in de opdracht shell en voert u y in voor bevestiging.
+
+## <a name="model-explanations"></a>Model uitleg
+
+* **Sparse gegevens niet ondersteund**: het model uitleg van het dash board wordt aanzienlijk vertraagd of langzamer met een groot aantal functies. Daarom bieden we momenteel geen ondersteuning voor sparse gegevens. Daarnaast ontstaan er algemene geheugen problemen met grote gegevens sets en een groot aantal functies. 
+
+* **Prognose modellen worden niet ondersteund met model verklaringen**: interpreteer baarheid, aanbevolen model uitleg is niet beschikbaar voor AutoML-prognose experimenten waarbij de volgende algoritmen worden aanbevolen als het beste model: TCNForecaster, AutoArima, ExponentialSmoothing, Average, Naive, seizoen Average en seizoen Naive. AutoML-prognose heeft regressie modellen die ondersteuning bieden voor uitleg. In de uitleg dashbord wordt echter het tabblad belang rijke functie urgentie alleen niet ondersteund voor prognoses vanwege de complexiteit van de gegevens pijplijnen.
+
+* **Lokale uitleg voor de gegevens index**: het uitleg-dash board biedt geen ondersteuning voor gerelateerde lokale urgentie waarden in een rij-id van de oorspronkelijke validatie gegevensset als die gegevensset groter is dan 5000 data Points als het dash board de gegevens wille keurig downsamplen. Het dash board toont echter de waarden van de onbewerkte gegevensset voor elk data Point dat wordt door gegeven aan het dash board onder het tabblad prioriteit van afzonderlijke functie. Gebruikers kunnen lokale belang rijke gegevens weer toewijzen aan de oorspronkelijke gegevensset door te voldoen aan de waarden van de onbewerkte gegevensset-onderdelen. Als de grootte van de validatie gegevensset kleiner is dan 5000 steek proeven, `index` komt de functie in AzureML Studio overeen met de index in de validatie-gegevensset.
+
+* **Wat-als/ijs-grafieken worden niet ondersteund in AML Studio**: What-If en afzonderlijke Runtimes voor voorwaardelijke verwachting (ijs) worden niet ondersteund in AzureML studio onder het tabblad uitleg, omdat de geüploade uitleg een actieve Compute nodig heeft om voor spellingen en kansen van perturbed-functies opnieuw te berekenen. De functie wordt momenteel ondersteund in Jupyter-notebooks wanneer deze wordt uitgevoerd als een widget met de SDK.
 
 ## <a name="deploy--serve-models"></a>Modellen implementeren & bedienen
 

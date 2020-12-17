@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: b7730558e2a660b0cf00a5b6962d1e2275dd472c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 799699662b738804790e3fe18ce9bd579027808d
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004336"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616312"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Continue implementatie naar Azure App Service
 
@@ -96,7 +96,7 @@ Als uw account over de benodigde machtigingen beschikt, kunt u Azure-pijp lijnen
 
 Om Azure App Service continue levering te maken met behulp van Azure-pijp lijnen, moet uw Azure DevOps-organisatie over de volgende machtigingen beschikken: 
 
-- Uw Azure-account moet machtigingen hebben om naar Azure Active Directory te schrijven en een service te maken. 
+- Uw Azure-account moet machtigingen hebben om te schrijven naar Azure Active Directory en een app-registratie te maken. 
   
 - Uw Azure-account moet de rol **eigenaar** hebben in uw Azure-abonnement.
 

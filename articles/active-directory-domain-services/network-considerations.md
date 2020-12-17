@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 12/16/2020
 ms.author: justinha
-ms.openlocfilehash: 246da3a35396430bbda86e5a5e927a456618ac05
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: d1a3ab5face03754bf84f442ac0fa73768b0fc80
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96619280"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615814"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-active-directory-domain-services"></a>Ontwerp overwegingen voor het virtuele netwerk en configuratie opties voor Azure Active Directory Domain Services
 
@@ -108,11 +108,10 @@ Een [netwerkbeveiligingsgroep](../virtual-network/network-security-groups-overvi
 
 De volgende regels voor de netwerk beveiligings groep zijn vereist voor het beheerde domein voor het leveren van verificatie-en beheer Services. Wijzig of verwijder deze regels voor netwerk beveiligings groepen niet voor het subnet van het virtuele netwerk waarop uw beheerde domein is geïmplementeerd.
 
-| Poortnummer | Protocol | Bron                             | Doel | Actie | Vereist | Doel |
+| Poortnummer | Protocol | Bron                             | Doel | Bewerking | Vereist | Doel |
 |:-----------:|:--------:|:----------------------------------:|:-----------:|:------:|:--------:|:--------|
-| 443         | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Ja      | Synchronisatie met uw Azure AD-Tenant. |
-| 3389        | TCP      | CorpNetSaw                         | Alle         | Toestaan  | Ja      | Beheer van uw domein. |
 | 5986        | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Ja      | Beheer van uw domein. |
+| 3389        | TCP      | CorpNetSaw                         | Alle         | Toestaan  | Optioneel      | Fout opsporing voor ondersteuning. |
 
 Er wordt een Standard Load Balancer van Azure gemaakt waarvoor deze regels moeten worden uitgevoerd. Deze netwerkbeveiligingsgroep beveiligt Azure AD DS en is vereist voor een juiste werking van het beheerde domein. Verwijder deze netwerk beveiligings groep niet. De load balancer werkt niet zonder problemen.
 
@@ -127,12 +126,17 @@ Als dat nodig is, kunt u [de vereiste netwerk beveiligings groep en-regels maken
 >
 > De Azure SLA is niet van toepassing op implementaties waarbij een onjuist geconfigureerde netwerk beveiligings groep en/of door de gebruiker gedefinieerde route tabellen zijn toegepast waardoor Azure AD DS het bijwerken en beheren van uw domein blokkeert.
 
-### <a name="port-443---synchronization-with-azure-ad"></a>Poort 443-synchronisatie met Azure AD
+### <a name="port-5986---management-using-powershell-remoting"></a>Poort 5986-beheer met externe communicatie van Power shell
 
-* Wordt gebruikt om uw Azure AD-Tenant te synchroniseren met uw beheerde domein.
-* Als u geen toegang hebt tot deze poort, kan uw beheerde domein niet worden gesynchroniseerd met uw Azure AD-Tenant. Gebruikers kunnen zich mogelijk niet aanmelden als wijzigingen in hun wacht woord niet worden gesynchroniseerd met uw beheerde domein.
-* Inkomende toegang tot deze poort voor IP-adressen wordt standaard beperkt met behulp van de **AzureActiveDirectoryDomainServices** -service label.
-* Beperk de uitgaande toegang niet vanaf deze poort.
+* Wordt gebruikt voor het uitvoeren van beheer taken met externe communicatie van Power shell in uw beheerde domein.
+* Als u geen toegang hebt tot deze poort, kan uw beheerde domein niet worden bijgewerkt, geconfigureerd, ondersteund of gecontroleerd.
+* Voor beheerde domeinen die gebruikmaken van een virtueel netwerk op basis van Resource Manager, kunt u de inkomende toegang tot deze poort beperken tot het *AzureActiveDirectoryDomainServices* -service label.
+    * Voor verouderde beheerde domeinen die gebruikmaken van een klassiek virtueel netwerk, kunt u de inkomende toegang tot deze poort beperken tot de volgende bron-IP-adressen: *52.180.183.8*, *23.101.0.70*, *52.225.184.198*, *52.179.126.223*, *13.74.249.156*, *52.187.117.83*, *52.161.13.95*, *104.40.156.18* en *104.40.87.209*.
+
+    > [!NOTE]
+    > In 2017 is Azure AD Domain Services beschikbaar voor de host in een Azure Resource Manager netwerk. Sindsdien hebben we een veiligere service met de moderne mogelijkheden van Azure Resource Manager kunnen bouwen. Omdat Azure Resource Manager implementaties volledig worden vervangen door klassieke implementaties, worden Azure AD DS-implementaties met een klassiek virtueel netwerk ingetrokken op 1 maart 2023.
+    >
+    > Zie voor meer informatie de [officiële afschaffing melding](https://azure.microsoft.com/updates/we-are-retiring-azure-ad-domain-services-classic-vnet-support-on-march-1-2023/)
 
 ### <a name="port-3389---management-using-remote-desktop"></a>Poort 3389-beheer met extern bureau blad
 
@@ -148,18 +152,6 @@ Als dat nodig is, kunt u [de vereiste netwerk beveiligings groep en-regels maken
 > U kunt bijvoorbeeld het volgende script gebruiken om een regel voor het maken van RDP toe te voegen: 
 >
 > `Get-AzureRmNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-name" | Add-AzureRmNetworkSecurityRuleConfig -Name "new-rule-name" -Access "Allow" -Protocol "TCP" -Direction "Inbound" -Priority "priority-number" -SourceAddressPrefix "CorpNetSaw" -SourcePortRange "" -DestinationPortRange "3389" -DestinationAddressPrefix "" | Set-AzureRmNetworkSecurityGroup`
-
-### <a name="port-5986---management-using-powershell-remoting"></a>Poort 5986-beheer met externe communicatie van Power shell
-
-* Wordt gebruikt voor het uitvoeren van beheer taken met externe communicatie van Power shell in uw beheerde domein.
-* Als u geen toegang hebt tot deze poort, kan uw beheerde domein niet worden bijgewerkt, geconfigureerd, ondersteund of gecontroleerd.
-* Voor beheerde domeinen die gebruikmaken van een virtueel netwerk op basis van Resource Manager, kunt u de inkomende toegang tot deze poort beperken tot het *AzureActiveDirectoryDomainServices* -service label.
-    * Voor verouderde beheerde domeinen die gebruikmaken van een klassiek virtueel netwerk, kunt u de inkomende toegang tot deze poort beperken tot de volgende bron-IP-adressen: *52.180.183.8*, *23.101.0.70*, *52.225.184.198*, *52.179.126.223*, *13.74.249.156*, *52.187.117.83*, *52.161.13.95*, *104.40.156.18* en *104.40.87.209*.
-
-    > [!NOTE]
-    > In 2017 is Azure AD Domain Services beschikbaar voor de host in een Azure Resource Manager netwerk. Sindsdien hebben we een veiligere service met de moderne mogelijkheden van Azure Resource Manager kunnen bouwen. Omdat Azure Resource Manager implementaties volledig worden vervangen door klassieke implementaties, worden Azure AD DS-implementaties met een klassiek virtueel netwerk ingetrokken op 1 maart 2023.
-    >
-    > Zie voor meer informatie de [officiële afschaffing melding](https://azure.microsoft.com/updates/we-are-retiring-azure-ad-domain-services-classic-vnet-support-on-march-1-2023/)
 
 ## <a name="user-defined-routes"></a>Door de gebruiker gedefinieerde routes
 

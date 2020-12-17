@@ -6,35 +6,78 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 983b1a5e024a44733fab418a67375f232e66cfe4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3c291d9a9d48b6f75148b673848b8451521bab91
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457174"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97615798"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Toegangs- en identiteitsopties voor Azure Kubernetes Service (AKS)
 
 Er zijn verschillende manieren om te verifiëren, toegang te beheren/te controleren en Kubernetes-clusters te beveiligen. Met Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) kunt u gebruikers, groepen en service accounts toegang verlenen tot de resources die ze nodig hebben. Met Azure Kubernetes service (AKS) kunt u de structuur van beveiliging en machtigingen verder verbeteren met behulp van Azure Active Directory en Azure RBAC. Op deze manier kunt u uw cluster toegang beveiligen en alleen de mini maal vereiste machtigingen geven aan ontwikkel aars en Opera tors.
 
-In dit artikel worden de belangrijkste concepten geïntroduceerd die u helpen bij het verifiëren en toewijzen van machtigingen in AKS:
+In dit artikel worden de belangrijkste concepten geïntroduceerd die u helpen bij het verifiëren en toewijzen van machtigingen in AKS.
 
-- [Op rollen gebaseerd toegangs beheer op basis van Kubernetes (Kubernetes RBAC)](#kubernetes-role-based-access-control-kubernetes-rbac)
-  - [Rollen en ClusterRoles](#roles-and-clusterroles)
-  - [RoleBindings en ClusterRoleBindings](#rolebindings-and-clusterrolebindings) 
-  - [Kubernetes-service accounts](#kubernetes-service-accounts)
-- [Integratie van Azure Active Directory](#azure-active-directory-integration)
-- [Azure RBAC](#azure-role-based-access-control-azure-rbac)
-  - [Azure RBAC voor het machtigen van toegang tot de AKS-resource](#azure-rbac-to-authorize-access-to-the-aks-resource)
-  - [Azure RBAC voor Kubernetes-autorisatie (preview-versie)](#azure-rbac-for-kubernetes-authorization-preview)
+## <a name="aks-service-permissions"></a>AKS-service machtigingen
 
+Wanneer u een cluster maakt, maakt AKS de resources die nodig zijn om het cluster te maken en uit te voeren, zoals Vm's en Nic's, namens de gebruiker die het cluster maakt. Deze identiteit is verschillend van de identiteits machtiging van het cluster, die wordt gemaakt tijdens het maken van het cluster.
+
+### <a name="identity-creating-and-operating-the-cluster-permissions"></a>Identiteit voor het maken en gebruiken van de cluster machtigingen
+
+De volgende machtigingen zijn vereist voor de identiteit die het cluster maakt en bewerkt.
+
+| Machtiging | Reden |
+|---|---|
+| Micro soft. Compute/diskEncryptionSets/lezen | Vereist voor het lezen van de set-ID van de schijf versleuteling. |
+| Micro soft. Compute/proximityPlacementGroups/schrijven | Vereist voor het bijwerken van proximity-plaatsings groepen. |
+| Micro soft. Network/applicationGateways/lezen <br/> Micro soft. Network/applicationGateways/schrijven <br/> Microsoft.Network/virtualNetworks/subnets/join/action | Vereist voor het configureren van toepassings gateways en lid worden van het subnet. |
+| Microsoft.Network/virtualNetworks/subnets/join/action | Vereist voor het configureren van de netwerk beveiligings groep voor het subnet wanneer u een aangepast VNET gebruikt.|
+| Microsoft.Network/publicIPAddresses/join/action <br/> Micro soft. Network/publicIPPrefixes/samen voegen/actie | Vereist voor het configureren van de uitgaande open bare Ip's op het Standard Load Balancer. |
+| Micro soft. OperationalInsights/werk ruimten/sharedkeys/lezen <br/> Micro soft. OperationalInsights/werk ruimten/lezen <br/> Micro soft. OperationsManagement/oplossingen/schrijven <br/> Micro soft. OperationsManagement/Solutions/lezen <br/> Micro soft. ManagedIdentity/userAssignedIdentities/Assign/Action | Vereist om Log Analytics-werk ruimten en Azure-bewaking voor containers te maken en bij te werken. |
+
+### <a name="aks-cluster-identity-permissions"></a>Machtigingen voor AKS-cluster identiteit
+
+De volgende machtigingen worden gebruikt door de AKS-cluster identiteit, die wordt gemaakt en gekoppeld aan het AKS-cluster wanneer het cluster wordt gemaakt. Elke machtiging wordt gebruikt om de volgende redenen:
+
+| Machtiging | Reden |
+|---|---|
+| Micro soft. Network/loadBalancers/verwijderen <br/> Micro soft. Network/loadBalancers/lezen <br/> Micro soft. Network/loadBalancers/schrijven | Vereist voor het configureren van de load balancer voor een Load Balancer-service. |
+| Micro soft. Network/publicIPAddresses/verwijderen <br/> Microsoft.Network/publicIPAddresses/read <br/> Microsoft.Network/publicIPAddresses/write | Vereist om open bare Ip's voor een Load Balancer-service te zoeken en te configureren. |
+| Microsoft.Network/publicIPAddresses/join/action | Vereist voor het configureren van open bare Ip's voor een Load Balancer-service. |
+| Micro soft. Network/networkSecurityGroups/lezen <br/> Micro soft. Network/networkSecurityGroups/schrijven | Vereist voor het maken of verwijderen van beveiligings regels voor een Load Balancer-service. |
+| Micro soft. Compute/schijven/verwijderen <br/> Microsoft.Compute/disks/read <br/> Microsoft.Compute/disks/write <br/> Micro soft. computes/locaties/onkoperen/lezen | Vereist om AzureDisks te configureren. |
+| Micro soft. Storage/Storage accounts/verwijderen <br/> Micro soft. Storage/Storage accounts/Listkeys ophalen/Action <br/> Micro soft. Storage/Storage accounts/lezen <br/> Micro soft. Storage/Storage accounts/schrijven <br/> Micro soft. Storage/Operations/lezen | Vereist voor het configureren van opslag accounts voor AzureFile of AzureDisk. |
+| Micro soft. Network/routeTables/lezen <br/> Micro soft. Network/routeTables/routes/verwijderen <br/> Micro soft. Network/routeTables/routes/lezen <br/> Micro soft. Network/routeTables/routes/schrijven <br/> Micro soft. Network/routeTables/schrijven | Vereist voor het configureren van route tabellen en routes voor knoop punten. |
+| Micro soft. Compute/informatie/lezen | Vereist voor het vinden van informatie voor virtuele machines in een VMAS, zoals zones, fout domein, grootte en gegevens schijven. |
+| Micro soft. Compute/informatie/schrijven | Vereist om AzureDisks te koppelen aan een virtuele machine in een VMAS. |
+| Micro soft. Compute/virtualMachineScaleSets/lezen <br/> Micro soft. Compute/virtualMachineScaleSets/informatie/lezen <br/> Micro soft. Compute/virtualMachineScaleSets/informatie/instanceView/lezen | Dit is vereist om informatie te vinden voor virtuele machines in een schaalset voor een virtuele machine, zoals zones, fout domein, grootte en gegevens schijven. |
+| Micro soft. Network/networkInterfaces/schrijven | Vereist om een virtuele machine in een VMAS toe te voegen aan een load balancer back-end-adres groep. |
+| Micro soft. Compute/virtualMachineScaleSets/schrijven | Vereist voor het toevoegen van een schaalset voor een virtuele machine aan een load balancer back-end-adres groepen en het uitschalen van knoop punten in een virtuele-machine schaalset. |
+| Micro soft. Compute/virtualMachineScaleSets/informatie/write | Vereist om AzureDisks te koppelen en een virtuele machine van een virtuele-machine schaalset toe te voegen aan de load balancer. |
+| Micro soft. Network/networkInterfaces/lezen | Vereist voor het zoeken naar interne Ip's en load balancer back-end-adres groepen voor virtuele machines in een VMAS. |
+| Micro soft. Compute/virtualMachineScaleSets/informatie/networkInterfaces/lezen | Vereist voor het zoeken naar interne Ip's en load balancer back-end-adres groepen voor een virtuele machine in een schaalset met virtuele machines. |
+| Micro soft. Compute/virtualMachineScaleSets/informatie/networkInterfaces/ipconfigurations/publicipaddresses/lezen | Vereist voor het vinden van open bare Ip's voor een virtuele machine in een schaalset voor virtuele machines. |
+| Micro soft. Network/virtualNetworks/lezen <br/> Microsoft.Network/virtualNetworks/subnets/read | Vereist om te controleren of er een subnet bestaat voor de interne load balancer in een andere resource groep. |
+| Micro soft. Compute/moment opnamen/verwijderen <br/> Micro soft. Compute/moment opnamen/lezen <br/> Micro soft. Compute/moment opnamen/schrijven | Vereist voor het configureren van moment opnamen voor AzureDisk. |
+| Micro soft. Compute/locaties/toegestane VM/lezen <br/> Micro soft. Compute/locaties/bewerkingen/lezen | Vereist voor het vinden van de grootte van virtuele machines voor het zoeken van AzureDisk-volume limieten. |
+
+### <a name="additional-cluster-identity-permissions"></a>Aanvullende machtigingen voor de cluster identiteit
+
+De volgende aanvullende machtigingen zijn vereist voor de cluster-id bij het maken van een cluster met specifieke kenmerken. Deze machtigingen worden niet automatisch toegewezen, dus u moet deze machtigingen toevoegen aan de cluster identiteit nadat deze is gemaakt.
+
+| Machtiging | Reden |
+|---|---|
+| Micro soft. Network/networkSecurityGroups/schrijven <br/> Micro soft. Network/networkSecurityGroups/lezen | Vereist als u een netwerk beveiligings groep gebruikt in een andere resource groep. Vereist voor het configureren van beveiligings regels voor een Load Balancer-service. |
+| Microsoft.Network/virtualNetworks/subnets/read <br/> Microsoft.Network/virtualNetworks/subnets/join/action | Vereist als u een subnet in een andere resource groep gebruikt, zoals een aangepast VNET. |
+| Micro soft. Network/routeTables/routes/lezen <br/> Micro soft. Network/routeTables/routes/schrijven | Vereist als u een subnet gebruikt dat is gekoppeld aan een route tabel in een andere resource groep, zoals een aangepast VNET met een aangepaste route tabel. Vereist om te controleren of er al een subnet bestaat voor het subnet in de andere resource groep. |
+| Microsoft.Network/virtualNetworks/subnets/read | Vereist als u een interne load balancer in een andere resource groep gebruikt. Vereist om te controleren of er al een subnet bestaat voor de interne load balancer in de resource groep. |
 
 ## <a name="kubernetes-role-based-access-control-kubernetes-rbac"></a>Op rollen gebaseerd toegangs beheer op basis van Kubernetes (Kubernetes RBAC)
 
 Kubernetes maakt gebruik van Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) om nauw keurige filters te bieden voor de acties die gebruikers kunnen uitvoeren. Met dit besturings systeem kunt u gebruikers of groepen gebruikers toewijzen, machtigingen geven om resources te maken of te wijzigen, of logboeken van actieve werk belastingen van toepassingen bekijken. Deze machtigingen kunnen worden ingesteld op een enkele naam ruimte of worden toegestaan in het hele AKS-cluster. Met Kubernetes RBAC maakt u *rollen* om machtigingen te definiëren en wijst u deze rollen vervolgens toe aan gebruikers met *functie bindingen*.
 
 Zie [using KUBERNETES RBAC Authorization][kubernetes-rbac](Engelstalig) voor meer informatie.
-
 
 ### <a name="roles-and-clusterroles"></a>Rollen en ClusterRoles
 
@@ -84,11 +127,11 @@ Zoals in de bovenstaande afbeelding wordt weer gegeven, roept de API-server de A
 1. De Azure AD-client toepassing wordt door kubectl gebruikt voor het aanmelden van gebruikers met [OAuth 2,0-autorisatie subsidie stroom](../active-directory/develop/v2-oauth2-device-code.md).
 2. Azure AD biedt een access_token, id_token en een refresh_token.
 3. De gebruiker doet een aanvraag om kubectl te maken met een access_token van kubeconfig.
-4. Kubectl stuurt de access_token naar APIServer.
+4. Kubectl verzendt het access_token naar de API-server.
 5. De API-server is geconfigureerd met de auth webhook-server om validatie uit te voeren.
 6. De webhookserver voor verificatie bevestigt dat de JSON Web Token hand tekening geldig is door de open bare Azure AD-ondertekeningssleutel te controleren.
 7. De server toepassing maakt gebruik van door de gebruiker ingevoerde referenties voor het opvragen van groepslid maatschappen van de aangemelde gebruiker vanuit de MS Graph API.
-8. Er wordt een antwoord verzonden naar de APIServer met gebruikers informatie, zoals de claim van de user principal name (UPN) van het toegangs token en het groepslid maatschap van de gebruiker op basis van de object-ID.
+8. Er wordt een antwoord verzonden naar de API-server met gebruikers gegevens zoals de claim van de user principal name (UPN) van het toegangs token en het groepslid maatschap van de gebruiker op basis van de object-ID.
 9. De API voert een autorisatie besluit uit op basis van de Kubernetes Role/RoleBinding.
 10. Na de autorisatie retourneert de API-server een reactie op kubectl.
 11. Kubectl geeft feedback aan de gebruiker.
@@ -192,3 +235,4 @@ Raadpleeg de volgende artikelen voor meer informatie over de belangrijkste Kuber
 [aks-concepts-storage]: concepts-storage.md
 [aks-concepts-network]: concepts-network.md
 [operator-best-practices-identity]: operator-best-practices-identity.md
+[upgrade-per-cluster]: ../azure-monitor/insights/container-insights-update-metrics.md#upgrade-per-cluster-using-azure-cli

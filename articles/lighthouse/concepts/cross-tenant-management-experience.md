@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 11/19/2020
+ms.date: 12/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4550921fdefdca440b6757e7a3b7a03337599d16
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: dca14781aac9db3cdd47ab4b66506f77f0b78c31
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510648"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616572"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -77,6 +77,11 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 [Azure Cost Management en facturering](../../cost-management-billing/index.yml):
 
 - Van de beheer-Tenant kunnen CSP-partners de kosten voor het gebruik van de belasting (niet inclusief aankopen) bekijken, beheren en analyseren voor klanten die zich onder het Azure-abonnement bevinden. De kosten zijn gebaseerd op de retail tarieven en de Azure RBAC-toegang (op rollen gebaseerd toegangs beheer) die de partner heeft voor het abonnement van de klant.
+
+[Azure Key Vault](../../key-vault/general/index.yml):
+
+- Sleutel kluizen maken in de tenants van de klant
+- Een beheerde identiteit gebruiken voor het maken van sleutel kluizen in de tenants van de klant
 
 [Azure Kubernetes service (AKS)](../../aks/index.yml):
 

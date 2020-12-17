@@ -5,13 +5,13 @@ ms.service: data-share
 author: jifems
 ms.author: jife
 ms.topic: conceptual
-ms.date: 12/7/2020
-ms.openlocfilehash: 566fd2c9c31933420769f7200a0434cc53f8c2f3
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.date: 12/16/2020
+ms.openlocfilehash: d45d9a29f671e66c6caba689f49e1748780545e0
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853136"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616742"
 ---
 # <a name="supported-data-stores-in-azure-data-share"></a>Ondersteunde gegevensarchieven in Azure Data Share
 
@@ -50,7 +50,7 @@ De onderstaande tabel bevat informatie over verschillende combi Naties en keuzen
 | Azure Data Explorer ||||||| ✓ |
 
 ## <a name="share-from-a-storage-account"></a>Delen vanuit een opslagaccount
-De Azure-gegevens share ondersteunt het delen van bestanden, mappen en bestands systemen van Azure Data Lake gen1 en Azure Data Lake Gen2. Het biedt ook ondersteuning voor het delen van blobs, mappen en containers vanuit Azure Blob Storage. Momenteel wordt alleen blok-BLOB ondersteund. Wanneer bestands systemen, containers of mappen worden gedeeld in delen op basis van moment opnamen, kan de gegevens consument ervoor kiezen om een volledige kopie van de share gegevens te maken of om alleen nieuwe of bijgewerkte bestanden te kopiëren. Incrementele moment opname is gebaseerd op de tijd van de laatste wijziging van de bestanden. Bestaande bestanden met dezelfde naam worden overschreven.
+De Azure-gegevens share ondersteunt het delen van bestanden, mappen en bestands systemen van Azure Data Lake gen1 en Azure Data Lake Gen2. Het biedt ook ondersteuning voor het delen van blobs, mappen en containers vanuit Azure Blob Storage. Momenteel wordt alleen blok-BLOB ondersteund. Wanneer bestands systemen, containers of mappen worden gedeeld in delen op basis van moment opnamen, kan de gegevens consument ervoor kiezen om een volledige kopie van de share gegevens te maken of om alleen nieuwe of bijgewerkte bestanden te kopiëren. Incrementele moment opname is gebaseerd op de tijd van de laatste wijziging van de bestanden. Bestaande bestanden met dezelfde naam worden overschreven tijdens de moment opname. Het bestand dat is verwijderd uit de bron, wordt niet verwijderd op het doel. 
 
 Raadpleeg [en ontvang gegevens van Azure Blob Storage en Azure data Lake Storage](how-to-share-from-storage.md) voor meer informatie.
 

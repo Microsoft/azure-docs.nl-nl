@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 35c1ffb370a158acc91e2378119055337e28580d
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 2af79efa2bd1685d0e7bd621e2ddb8930425dee1
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443089"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614894"
 ---
 # <a name="register-mobile-apps-that-call-web-apis"></a>Mobiele apps registreren die web-Api's aanroepen
 
@@ -72,16 +72,21 @@ Wanneer u de stappen hebt voltooid, wordt de omleidings-URI voor u berekend, zoa
 
 Als u de omleidings-URI liever hand matig wilt configureren, kunt u dit doen via het manifest van de toepassing. Dit is de aanbevolen indeling voor het manifest:
 
-- **IOS** : `msauth.<BUNDLE_ID>://auth`
+- **IOS**: `msauth.<BUNDLE_ID>://auth`
   - Voer bijvoorbeeld in: `msauth.com.yourcompany.appName://auth`
-- **Android** : `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
+- **Android**: `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
   - U kunt de Android-handtekening-hash genereren met behulp van de release sleutel of de debug-toets via de opdracht van het hulp programma.
 
 ### <a name="username-password-authentication"></a>Gebruikers naam-wachtwoord verificatie
 
 Als uw app alleen een gebruikers naam-wachtwoord verificatie gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stroom voert een retour ronding uit naar het micro soft Identity platform versie 2,0-eind punt. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.
 
-U moet uw toepassing echter identificeren als een open bare client toepassing. Hiertoe gaat u naar het gedeelte **verificatie** van uw toepassing. Selecteer in de Subsectie **Geavanceerde instellingen** in het **standaard-client type** voor de vraag **behandel toepassing als een open bare client** de optie **Ja**.
+U moet uw toepassing echter identificeren als een open bare client toepassing. Hiervoor doet u het volgende:
+
+1. Selecteer in de [Azure Portal](https://portal.azure.com)nog steeds uw app in **app-registraties** en selecteer vervolgens **verificatie**.
+1. In **Geavanceerde instellingen**  >  **kunnen open bare client stromen**  >  **de volgende mobiele en desktop stromen inschakelen:**, selecteer **Ja**.
+
+   :::image type="content" source="media/scenarios/default-client-type.png" alt-text="Instelling van open bare client inschakelen in het deel venster verificatie in Azure Portal":::
 
 ## <a name="api-permissions"></a>API-machtigingen
 

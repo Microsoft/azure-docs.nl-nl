@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/26/2019
 ms.author: jeedes
-ms.openlocfilehash: cf6973242e81cef53625a3b1eda4f2d92e1d5ffd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0d78f2c8da338a92ef88734371647a48ddb190c3
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998631"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591205"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adp"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met ADP
 
@@ -155,11 +155,11 @@ Nadat uw ADP-vertegenwoordiger de toewijzing heeft bevestigd, configureert u de 
 
     ![Gekoppelde eigenschappen van eenmalige aanmelding](./media/adpfederatedsso-tutorial/tutorial_adp_linkedproperties.png)
 
-    a.  Stel het veld **Ingeschakeld zodat gebruikers zich kunnen aanmelden** in op **Ja**.
+    1. Stel het veld **Ingeschakeld zodat gebruikers zich kunnen aanmelden** in op **Ja**.
 
-    b.  Stel de waarde van het veld **Gebruikerstoewijzing vereist** in op **Ja**.
+    1. Stel de waarde van het veld **Gebruikerstoewijzing vereist** in op **Ja**.
 
-    c.  Stel de waarde van het veld **Zichtbaar voor gebruikers** in op **Ja**.
+    1. Stel de waarde van het veld **Zichtbaar voor gebruikers** in op **Ja**.
 
 1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **ADP** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 
@@ -171,39 +171,39 @@ Nadat uw ADP-vertegenwoordiger de toewijzing heeft bevestigd, configureert u de 
 
     ![Aanmeldings-URL voor eenmalige aanmelding configureren](./media/adpfederatedsso-tutorial/tutorial_adp_linkedsignon.png)
 
-    a. Plak de **User access URL**, die u eerder hebt gekopieerd van het **tabblad Properties** van de ADP-app.
-                                                             
-    b. Hieronder ziet u de vijf apps die ondersteuning bieden voor verschillende **relaystate-URL's**. U moet de juiste **relaystate-URL** voor een bepaalde toepassing handmatig toevoegen aan de **User access URL**.
-    
-    * **ADP Workforce Now**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?WFN`
+    1. Plak de **User access URL**, die u eerder hebt gekopieerd van het **tabblad Properties** van de ADP-app.
 
-    * **ADP Workforce Now Enhanced Time**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?EETDC2`
-    
-    * **ADP Vantage HCM**
-        
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?ADPVANTAGE`
+    1. Hieronder ziet u de vijf apps die ondersteuning bieden voor verschillende **relaystate-URL's**. U moet de juiste **relaystate-URL** voor een bepaalde toepassing handmatig toevoegen aan de **User access URL**.
 
-    * **ADP Enterprise HR**
+        * **ADP Workforce Now**
 
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?PORTAL`
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?WFN`
 
-    * **MyADP**
+        * **ADP Workforce Now Enhanced Time**
 
-        `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?REDBOX`
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?EETDC2`
 
-9. U moet vervolgens de wijzigingen **Opslaan**.
+        * **ADP Vantage HCM**
 
-10. Nadat uw bevestiging heeft ontvangen van de ADP-vertegenwoordiger, begint u te testen met een of twee gebruikers.
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?ADPVANTAGE`
 
-    a. Wijs enkele gebruikers toe aan de ADP-service-app om federatieve toegang te testen.
+        * **ADP Enterprise HR**
 
-    b. De test is geslaagd wanneer gebruikers via de ADP service-app in de galerie toegang krijgen tot hun ADP-service.
- 
-11. Als u bericht krijgt dat de test is geslaagd, wijst u de federatieve ADP-service toe aan individuele gebruikers of gebruikersgroepen en implementeert u de service voor uw werknemers. Deze toewijzing wordt later in de zelfstudie uitgelegd.
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?PORTAL`
+
+        * **MyADP**
+
+            `<User access URL>&relaystate=https://fed.adp.com/saml/fedlanding.html?REDBOX`
+
+1. U moet vervolgens de wijzigingen **Opslaan**.
+
+1. Nadat uw bevestiging heeft ontvangen van de ADP-vertegenwoordiger, begint u te testen met een of twee gebruikers.
+
+    1. Wijs enkele gebruikers toe aan de ADP-service-app om federatieve toegang te testen.
+
+    1. De test is geslaagd wanneer gebruikers via de ADP service-app in de galerie toegang krijgen tot hun ADP-service.
+
+1. Als u bericht krijgt dat de test is geslaagd, wijst u de federatieve ADP-service toe aan individuele gebruikers of gebruikersgroepen en implementeert u de service voor uw werknemers. Deze toewijzing wordt later in de zelfstudie uitgelegd.
 
 ### <a name="create-adp-test-user"></a>ADP-testgebruiker maken
 
@@ -217,10 +217,8 @@ Wanneer u in het toegangsvenster op de tegel ADP klikt, wordt u automatisch aang
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [ADP proberen met Azure AD](https://aad.portal.azure.com)

@@ -195,8 +195,6 @@
           href: luis-how-to-azure-subscription.md
         - name: Instellingen voor app en versie
           href: how-to-application-settings-portal.md
-        - name: Naar ontwerpresource migreren
-          href: luis-migration-authoring.md
         - name: Auteurs en samenwerkers
           displayName: 'access, transfer, AAD, tenant, Azure AD, consent, RBAC, admin, role-based access control, ownership, import'
           href: luis-how-to-collaborate.md

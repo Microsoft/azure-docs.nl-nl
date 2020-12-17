@@ -4,12 +4,12 @@ description: Een Azure Active Directory-service-principal maken en beheren voor 
 services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: e95eae3ab8d992bc169e54700e7e31715e72102e
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: c6f50b152174cee1ee2cc37baa22432957107d2c
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607820"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614792"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Service-principals met AKS (Azure Kubernetes Service)
 
@@ -100,18 +100,7 @@ Als u Azure Container Registry (ACR) als container installatie kopie archief geb
 
 ### <a name="networking"></a>Netwerken
 
-U kunt gebruikmaken van geavanceerde netwerkmogelijkheden als het virtuele netwerk en het subnet of de openbare IP-adressen zich in een andere resourcegroep bevinden. Wijs een van de volgende sets rolmachtigingen toe:
-
-- Maak een [aangepaste rol][rbac-custom-role] en definieer de volgende rolmachtigingen:
-  - *Microsoft.Network/virtualNetworks/subnets/join/action*
-  - *Microsoft.Network/virtualNetworks/subnets/read*
-  - *Microsoft.Network/publicIPAddresses/join/action*
-  - *Microsoft.Network/publicIPAddresses/read*
-  - *Microsoft.Network/publicIPAddresses/write*
-  - Als u [aangepaste route tabellen gebruikt in Kubenet-clusters](configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) , voegt u de volgende extra machtigingen toe:
-    - *Micro soft. Network/routeTables/schrijven*
-    - *Micro soft. Network/routeTables/lezen*
-- U kunt ook de ingebouwde rol [Inzender voor netwerken][rbac-network-contributor] gebruiken in het subnet of in het virtuele netwerk
+U kunt gebruikmaken van geavanceerde netwerkmogelijkheden als het virtuele netwerk en het subnet of de openbare IP-adressen zich in een andere resourcegroep bevinden. Wijs de ingebouwde rol [netwerk bijdrager][rbac-network-contributor] toe aan het subnet binnen het virtuele netwerk. U kunt ook een [aangepaste rol][rbac-custom-role] maken met machtigingen voor toegang tot de netwerk bronnen in die resource groep. Zie [AKS service permissions][aks-permissions] voor meer informatie.
 
 ### <a name="storage"></a>Storage
 
@@ -188,3 +177,4 @@ Zie [de referenties voor een Service-Principal bijwerken of draaien in AKS][upda
 [aks-to-acr]: cluster-container-registry-integration.md
 [update-credentials]: update-credentials.md
 [azure-ad-permissions]: ../active-directory/fundamentals/users-default-permissions.md
+[aks-permissions]: concepts-identity.md#aks-service-permissions

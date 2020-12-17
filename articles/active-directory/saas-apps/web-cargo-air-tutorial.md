@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 9a62576b65be04414580b42377398e27c4aa389c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 3cca568245dfce01fb96d7a46590cb72349213ac
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353558"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97591919"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-web-cargo-air"></a>Zelfstudie: eenmalige aanmelding van Azure Active Directory integreren met Web Cargo Air
 
@@ -88,7 +88,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op de computer.
 
-    ![The Certificate download link](common/certificatebase64.png)
+    ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
 1. Kopieer in de sectie **Web Cargo Air instellen** de betreffende URL('s) op basis van uw behoeften.
 

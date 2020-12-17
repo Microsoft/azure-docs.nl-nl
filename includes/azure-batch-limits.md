@@ -5,15 +5,15 @@ services: batch
 author: JnHs
 ms.service: batch
 ms.topic: include
-ms.date: 06/03/2020
+ms.date: 12/16/2020
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 54a789aba793d9a6b44d5fe9a1e0f42023002b5a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0a94b122f1cdd598eeac553c8cc784d2a0a5369f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025709"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614507"
 ---
 | **Resource** | **Standaardlimiet** | **Maximumlimiet** |
 | --- | --- | --- |
@@ -24,9 +24,6 @@ ms.locfileid: "96025709"
 | Pools per Batch-account | 20-100 | 500<sup>1</sup> |
 
 <sup>1</sup>Neem contact op met de ondersteuning van Azure als u een grotere hoeveelheid wilt aanvragen.
-
-> [!IMPORTANT]
-> We veranderen de manier waarop u toegewezen quota aanvraagt en beheert.  Het totale toegewezen vCPU's is de momenteel afgedwongen waarde, maar binnenkort dwingen we toegewezen quota af per VM-serie. Quota met een lage prioriteit worden nog steeds afgedwongen op basis van het totale limiet, niet op basis van VM-serie.
 
 > [!NOTE]
 > De standaardlimieten variëren afhankelijk van het type abonnement dat u gebruikt voor het maken van een Batch-account. De weergegeven kerngeheugenquota zijn voor Batch-accounts in de modus Batch-service. [Bekijk de quota in uw Batch-account](../articles/batch/batch-quota-limit.md#view-batch-quotas).

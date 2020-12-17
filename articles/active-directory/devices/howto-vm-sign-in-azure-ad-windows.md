@@ -62,10 +62,10 @@ De volgende Azure-regio's worden momenteel ondersteund tijdens de preview-versie
 
 Als u Azure AD-verificatie wilt inschakelen voor uw Windows-Vm's in azure, moet u ervoor zorgen dat de netwerk configuratie van uw Vm's uitgaande toegang tot de volgende eind punten via TCP-poort 443 toestaat:
 
-- https: \/ /enterpriseregistration.Windows.net
+- https://enterpriseregistration.Windows.net
 - https:\//login.microsoftonline.com
-- https: \/ /device.login.microsoftonline.com
-- https: \/ /pas.Windows.net
+- https://device.login.microsoftonline.com
+- https://pas.Windows.net
 
 ## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Aanmelden bij Azure AD inschakelen voor Windows VM in azure
 
@@ -252,15 +252,15 @@ De AADLoginForWindows-extensie moet worden geïnstalleerd om de virtuele machine
 
 1. Zorg ervoor dat de vereiste eind punten toegankelijk zijn vanaf de virtuele machine met behulp van de opdracht regel:
    
-   - krul https: \/ /login.microsoftonline.com/-D –
-   - krul https: \/ /login.microsoftonline.com/ `<TenantID>` /-D –
+   - krul https://login.microsoftonline.com/-D –
+   - krul https://login.microsoftonline.com/ `<TenantID>` /-D –
 
    > [!NOTE]
    > Vervang door `<TenantID>` de id van de Azure AD-Tenant die is gekoppeld aan het Azure-abonnement.
 
-   - krul https: \/ /enterpriseregistration.Windows.net/-D-
-   - krul https: \/ /device.login.microsoftonline.com/-D-
-   - krul https: \/ /pas.Windows.net/-D-
+   - krul https://enterpriseregistration.Windows.net/-D-
+   - krul https://device.login.microsoftonline.com/-D-
+   - krul https://pas.Windows.net/-D-
 
 1. De apparaatstatus kan worden weer gegeven door uit te voeren `dsregcmd /status` . Het doel is om de status van het apparaat weer te geven `AzureAdJoined : YES` .
 
@@ -287,15 +287,15 @@ Deze afsluit code wordt omgezet naar DSREG_AUTOJOIN_DISC_FAILED omdat de extensi
 
 1. Controleer of de vereiste eind punten toegankelijk zijn vanaf de virtuele machine met behulp van de opdracht regel:
 
-   - krul https: \/ /login.microsoftonline.com/-D –
-   - krul https: \/ /login.microsoftonline.com/ `<TenantID>` /-D –
+   - krul https://login.microsoftonline.com/-D –
+   - krul https://login.microsoftonline.com/ `<TenantID>` /-D –
    
    > [!NOTE]
    > Vervang door `<TenantID>` de id van de Azure AD-Tenant die is gekoppeld aan het Azure-abonnement. Als u de Tenant-ID moet vinden, kunt u met de muis aanwijzer over uw account naam bewegen om de map/Tenant-ID op te halen, of Azure Active Directory > eigenschappen > Directory-ID selecteren in het Azure Portal.
 
-   - krul https: \/ /enterpriseregistration.Windows.net/-D-
-   - krul https: \/ /device.login.microsoftonline.com/-D-
-   - krul https: \/ /pas.Windows.net/-D-
+   - krul https://enterpriseregistration.Windows.net/-D-
+   - krul https://device.login.microsoftonline.com/-D-
+   - krul https://pas.Windows.net/-D-
 
 1. Als een van de opdrachten mislukt met de melding ' kan de host niet oplossen `<URL>` ', voert u deze opdracht uit om te bepalen welke DNS-server wordt gebruikt door de virtuele machine.
    

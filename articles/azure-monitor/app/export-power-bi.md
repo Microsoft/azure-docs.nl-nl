@@ -98,8 +98,8 @@ Als het verminderen van de gegevensset die afkomstig is uit de analyse query nie
 
 1. Maak een [API-sleutel](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID).
 2. Werk het Power BI M-script dat u hebt geëxporteerd uit Analytics bij door de Azure Resource Manager URL te vervangen door de Application Insights-API.
-   * **Https: \/ /Management.Azure.com/subscriptions/vervangen...**
-   * met, **https: \/ /API.applicationinsights.io/Beta/apps/...**
+   * **Https://Management.Azure.com/subscriptions/vervangen...**
+   * met, **https://API.applicationinsights.io/Beta/apps/...**
 3. Werk tot slot de referenties bij naar Basic en gebruik uw API-sleutel.
 
 **Bestaand script**

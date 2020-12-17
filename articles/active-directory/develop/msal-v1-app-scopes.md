@@ -37,7 +37,7 @@ var scopes = new [] {  ResourceId+"/user_impersonation"};
 var scopes = [ ResourceId + "/user_impersonation"];
 ```
 
-Als u wilt lezen en schrijven met MSAL.NET Azure AD met behulp van de Microsoft Graph-API (https: \/ /Graph.Microsoft.com/), moet u een lijst met bereiken maken, zoals wordt weer gegeven in de volgende voor beelden:
+Als u wilt lezen en schrijven met MSAL.NET Azure AD met behulp van de Microsoft Graph-API (https://Graph.Microsoft.com/), moet u een lijst met bereiken maken, zoals wordt weer gegeven in de volgende voor beelden:
 
 ```csharp
 string ResourceId = "https://graph.microsoft.com/";
@@ -49,7 +49,7 @@ var ResourceId = "https://graph.microsoft.com/";
 var scopes = [ ResourceId + "Directory.Read", ResourceID + "Directory.Write"];
 ```
 
-Als u het bereik wilt schrijven dat overeenkomt met de Azure Resource Manager-API (https: \/ /Management.core.Windows.net/), moet u het volgende bereik aanvragen (Let op de twee slashes):
+Als u het bereik wilt schrijven dat overeenkomt met de Azure Resource Manager-API (https://Management.core.Windows.net/), moet u het volgende bereik aanvragen (Let op de twee slashes):
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};
@@ -65,7 +65,7 @@ De logica die door Azure AD wordt gebruikt, is als volgt:
 
 - Voor ADAL (Azure AD v 1.0)-eind punt met een v 1.0-toegangs token (alleen mogelijk), AUD = resource
 - Voor MSAL (micro soft Identity platform (v 2.0))-eind punt dat een toegangs token vraagt voor een resource die v 2.0-tokens accepteert, `aud=resource.AppId`
-- Voor MSAL (v 2.0-eind punt) waarbij een toegangs token wordt gevraagd voor een resource die een v 1.0-toegangs token accepteert (dit is het geval hierboven), parseert Azure AD de gewenste doel groep uit het aangevraagde bereik door alles vóór de laatste slash te nemen en deze als de resource-id te gebruiken. Als https: \/ /database.Windows.net een doel groep van https: \/ /database.Windows.net/verwacht, moet u daarom een scope van ' https: \/ /database.Windows.net//.default ' aanvragen. Zie ook GitHub issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+- Voor MSAL (v 2.0-eind punt) waarbij een toegangs token wordt gevraagd voor een resource die een v 1.0-toegangs token accepteert (dit is het geval hierboven), parseert Azure AD de gewenste doel groep uit het aangevraagde bereik door alles vóór de laatste slash te nemen en deze als de resource-id te gebruiken. Als https://database.Windows.net een doel groep van https://database.Windows.net/verwacht, moet u daarom een scope van ' https://database.Windows.net//.default ' aanvragen. Zie ook GitHub issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Bereiken om toegang aan te vragen tot alle machtigingen van een v 1.0-toepassing
 

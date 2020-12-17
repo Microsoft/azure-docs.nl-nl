@@ -107,15 +107,15 @@ Wanneer u de uitbrei ding installeert, hebt u de *Tenant-id* en de beheerders re
 
 De NPS-server moet kunnen communiceren met de volgende Url's via de poorten 80 en 443:
 
-* *https: \/ /adnotifications.windowsazure.com*
-* *https: \/ /login.microsoftonline.com*
-* *https: \/ /credentials.Azure.com*
+* *https://adnotifications.windowsazure.com*
+* *https://login.microsoftonline.com*
+* *https://credentials.Azure.com*
 
 Daarnaast is connectiviteit met de volgende Url's vereist voor het volt ooien [van de installatie van de adapter met het opgegeven Power shell-script](#run-the-powershell-script):
 
-* *https: \/ /login.microsoftonline.com*
-* *https: \/ /provisioningapi.microsoftonline.com*
-* *https: \/ /aadcdn.msauth.net*
+* *https://login.microsoftonline.com*
+* *https://provisioningapi.microsoftonline.com*
+* *https://aadcdn.msauth.net*
 
 ## <a name="prepare-your-environment"></a>Uw omgeving voorbereiden
 

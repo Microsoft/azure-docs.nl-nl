@@ -40,7 +40,7 @@ Als u aan de slag wilt gaan, maakt u een gratis account in azure DevOps. Ga naar
 ## <a name="check-in-the-image-factory-to-git"></a>De image Factory in Git inchecken
 Alle Power shell-, sjablonen-en configuratie-instellingen voor de installatie kopie-Factory bevinden zich in de [open bare DevTest Labs github opslag plaats](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImageFactory). De snelste manier om de code op te halen in uw nieuwe team project is het importeren van een opslag plaats. Dit pull-in de hele DevTest Labs-opslag plaats (zodat u extra documenten en voor beelden krijgt).
 
-1. Ga naar het Azure DevOps-project dat u in de vorige stap hebt gemaakt (URL ziet eruit als **https: \/ / \<accountname> . VisualStudio.com/MyFirstProject**).
+1. Ga naar het Azure DevOps-project dat u in de vorige stap hebt gemaakt (URL ziet eruit als **https:// \<accountname> . VisualStudio.com/MyFirstProject**).
 2. Selecteer **een opslag plaats importeren**.
 3. Voer de **kloon-URL** in voor de DevTest Labs opslag plaats: `https://github.com/Azure/azure-devtestlab` .
 4. Selecteer **Importeren**.

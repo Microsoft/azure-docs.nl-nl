@@ -100,7 +100,7 @@ Gebruik de volgende stapsgewijze instructies voor het instellen en configureren 
    
     Op de pagina **webproxy** :
    
-   1. Geef de **URL van de webproxy** op in deze indeling: *http: \/ /host-IP-adres* of *FQDN: poort nummer*. Let op: HTTPS-Url's worden niet ondersteund.
+   1. Geef de **URL van de webproxy** op in deze indeling: *http://host-IP-adres* of *FQDN: poort nummer*. Let op: HTTPS-Url's worden niet ondersteund.
    2. Geef **verificatie** op als **basis** of **geen**.
    3. Als u verificatie gebruikt, moet u ook een **gebruikers naam** en **wacht woord** opgeven.
    4. Klik op **Toepassen**. Hiermee worden de geconfigureerde web proxy-instellingen gevalideerd en toegepast.

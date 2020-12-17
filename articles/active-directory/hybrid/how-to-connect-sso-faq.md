@@ -45,16 +45,16 @@ Hieronder vindt u een niet-limitatieve lijst met toepassingen die deze para mete
 
 | De naam van de toepassing | URL van de toepassing die moet worden gebruikt |
 | -- | -- |
-| Toegangsvenster | https: \/ /MyApps.Microsoft.com/contoso.com |
-| Outlook op Internet | https: \/ /Outlook.office365.com/contoso.com |
-| Office 365-portals | https: \/ /Portal.Office.com? domain_hint = contoso. com, https: \/ /www.office.com? domain_hint = contoso. com |
+| Toegangsvenster | https://MyApps.Microsoft.com/contoso.com |
+| Outlook op Internet | https://Outlook.office365.com/contoso.com |
+| Office 365-portals | https://Portal.Office.com? domain_hint = contoso. com, https://www.office.com? domain_hint = contoso. com |
 
-Daarnaast krijgen gebruikers een stille aanmeldings ervaring als een toepassing aanmeldings aanvragen verzendt naar de eind punten van Azure AD die als tenants zijn ingesteld, dat wil zeggen, https: \/ /login.microsoftonline.com/contoso.com/<.. > of https: \/ /login.microsoftonline.com/<tenant_ID>/<. >-in plaats van het gemeen schappelijke eind punt van Azure AD, dat wil zeggen, https: \/ /login.microsoftonline.com/common/<... >. Hieronder vindt u een niet-limitatieve lijst van toepassingen die deze typen aanmeldings aanvragen maken.
+Daarnaast krijgen gebruikers een stille aanmeldings ervaring als een toepassing aanmeldings aanvragen verzendt naar de eind punten van Azure AD die als tenants zijn ingesteld, dat wil zeggen, https://login.microsoftonline.com/contoso.com/<.. > of https://login.microsoftonline.com/<tenant_ID>/<. >-in plaats van het gemeen schappelijke eind punt van Azure AD, dat wil zeggen, https://login.microsoftonline.com/common/<... >. Hieronder vindt u een niet-limitatieve lijst van toepassingen die deze typen aanmeldings aanvragen maken.
 
 | De naam van de toepassing | URL van de toepassing die moet worden gebruikt |
 | -- | -- |
-| SharePoint Online | https: \/ /contoso.SharePoint.com |
-| Azure Portal | https: \/ /Portal.Azure.com/contoso.com |
+| SharePoint Online | https://contoso.SharePoint.com |
+| Azure Portal | https://Portal.Azure.com/contoso.com |
 
 Vervang in de bovenstaande tabellen ' contoso.com ' door de domein naam om naar de juiste toepassings-Url's voor uw Tenant te gaan.
 

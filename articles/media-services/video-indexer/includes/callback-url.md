@@ -20,7 +20,7 @@ Een URL die wordt gebruikt om de klant (met een POST-aanvraag) op de hoogte te s
         |---|---|
         |id|De video-ID|
         |staat|De videostatus|  
-    - Voor beeld: https: \/ /test.com/notifyme?projectName=MyProject&id = 1234abcd&status = verwerkt
+    - Voor beeld: https://test.com/notifyme?projectName=MyProject&id = 1234abcd&status = verwerkt
 - Personen geïdentificeerd in de video:
   - Eigenschappen
     
@@ -31,4 +31,4 @@ Een URL die wordt gebruikt om de klant (met een POST-aanvraag) op de hoogte te s
       |knownPersonId|De persoons-id die uniek is in een gezichtsmodel|
       |personName|De naam van de persoon|
         
-    - Voor beeld: https: \/ /test.com/notifyme?projectName=MyProject&id = 1234abcd&FaceId = 12&knownPersonId = CCA84350-89B7-4262-861C-3CAC796542A5&persoons naam = Inigo_Montoya 
+    - Voor beeld: https://test.com/notifyme?projectName=MyProject&id = 1234abcd&FaceId = 12&knownPersonId = CCA84350-89B7-4262-861C-3CAC796542A5&persoons naam = Inigo_Montoya 

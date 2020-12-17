@@ -55,7 +55,7 @@ Als u opslag plaatsen wilt klonen en inhoud wilt wijzigen op uw lokale machine o
 
 Als u lokaal wilt werken met opslag plaatsen en u uw wijzigingen naar het gedeelde team en project opslagplaatsen wilt pushen, kopieert of *kloont* u de opslag plaatsen eerst naar uw lokale machine. 
 
-1. Ga in azure DevOps naar de project samenvattings pagina van uw team op *https \/ / \<server name> / \<organization name> / \<team name> :* bijvoorbeeld **https: \/ /dev.Azure.com/DataScienceUnit/MyTeam**.
+1. Ga in azure DevOps naar de project samenvattings pagina van uw team op *https \/ / \<server name> / \<organization name> / \<team name> :* bijvoorbeeld **https://dev.Azure.com/DataScienceUnit/MyTeam**.
    
 1. Selecteer **opslag plaatsen** in de linkernavigatiebalk en selecteer boven aan de pagina de opslag plaats die u wilt klonen.
    

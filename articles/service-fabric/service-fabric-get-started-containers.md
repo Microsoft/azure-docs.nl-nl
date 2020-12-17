@@ -151,7 +151,7 @@ Als deze opdracht niets retourneert, voert u de volgende opdracht uit en inspect
 docker inspect my-web-site
 ```
 
-Maak verbinding met de actieve container. Open een webbrowser die verwijst naar het IP-adres dat wordt geretourneerd, bijvoorbeeld ' http: \/ /172.31.194.61 '. Als het goed is, ziet u de koptekst Hallo wereld! weergegeven in de browser.
+Maak verbinding met de actieve container. Open een webbrowser die verwijst naar het IP-adres dat wordt geretourneerd, bijvoorbeeld ' http://172.31.194.61 '. Als het goed is, ziet u de koptekst Hallo wereld! weergegeven in de browser.
 
 Als u de container wilt stoppen, voert u dit uit:
 

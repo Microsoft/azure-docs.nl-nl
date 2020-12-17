@@ -46,7 +46,7 @@ Als de standaard controle van de test voor Server A mislukt, stopt de toepassing
 | Time-out |30 |De hoeveelheid tijd in seconden die de toepassings gateway wacht op een test reactie voordat de test wordt gemarkeerd als beschadigd. Als een test wordt geretourneerd als in orde, wordt de bijbehorende back-end direct gemarkeerd als in orde.|
 | Drempelwaarde voor beschadigde status |3 |Bepaalt hoeveel tests er moeten worden verzonden als er een fout is opgetreden van de normale status test. In v1 SKU worden deze aanvullende Health-tests snel achter elkaar verzonden om de status van de back-end snel te bepalen en te wachten op het test interval. In het geval van v2 SKU wordt het interval gewacht op de status. De back-endserver is gemarkeerd wanneer het aantal opeenvolgende test fouten de drempel waarde voor de onjuiste status bereikt. |
 
-De standaard test zoekt alleen op \<protocol\> : \/ /127.0.0.1: \<port\> om de status te bepalen. Als u de status test moet configureren om naar een aangepaste URL te gaan of andere instellingen te wijzigen, moet u aangepaste tests gebruiken. Zie [overzicht van TLS-beëindiging en end-to-end-TLS met Application Gateway](ssl-overview.md#for-probe-traffic)voor meer informatie over HTTPS-tests.
+De standaard test zoekt alleen op \<protocol\> ://127.0.0.1: \<port\> om de status te bepalen. Als u de status test moet configureren om naar een aangepaste URL te gaan of andere instellingen te wijzigen, moet u aangepaste tests gebruiken. Zie [overzicht van TLS-beëindiging en end-to-end-TLS met Application Gateway](ssl-overview.md#for-probe-traffic)voor meer informatie over HTTPS-tests.
 
 ### <a name="probe-intervals"></a>Sonde-intervallen
 

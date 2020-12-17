@@ -25,7 +25,7 @@ In dit artikel wordt beschreven hoe u een dergelijk toegangs token maakt.
 
 ## <a name="token-service-rest-api"></a>Token Service REST API
 
-Voor het maken van toegangs tokens biedt de *Secure token service* een enkele rest API. De URL voor de ARR STS-service is https: \/ /STS.mixedreality.Azure.com.
+Voor het maken van toegangs tokens biedt de *Secure token service* een enkele rest API. De URL voor de ARR STS-service is https://STS.mixedreality.Azure.com.
 
 ### <a name="get-token-request"></a>Aanvraag voor Token ophalen
 

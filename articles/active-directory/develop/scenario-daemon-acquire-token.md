@@ -57,7 +57,7 @@ Het bereik dat wordt gebruikt voor client referenties moet altijd de resource-ID
 
 > [!IMPORTANT]
 > Wanneer MSAL een toegangs token aanvraagt voor een resource die een versie 1,0-toegangs token accepteert, parseert Azure AD de gewenste doel groep uit het aangevraagde bereik door alles vóór de laatste slash te nemen en deze als resource-id te gebruiken.
-> Als, als Azure SQL Database ( **https: \/ /database.Windows.net** ), de resource verwacht dat een doel groep eindigt met een slash (voor Azure SQL database `https://database.windows.net/` ), moet u een bereik van aanvragen `https://database.windows.net//.default` . (Let op de dubbele slash.) Zie ook MSAL.NET issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+> Als, als Azure SQL Database ( **https://database.Windows.net** ), de resource verwacht dat een doel groep eindigt met een slash (voor Azure SQL database `https://database.windows.net/` ), moet u een bereik van aanvragen `https://database.windows.net//.default` . (Let op de dubbele slash.) Zie ook MSAL.NET issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="acquiretokenforclient-api"></a>AcquireTokenForClient-API
 

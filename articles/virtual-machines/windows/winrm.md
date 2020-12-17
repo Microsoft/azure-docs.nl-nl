@@ -72,7 +72,7 @@ Set-AzKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValu
 De resource provider micro soft. Compute heeft een URL nodig voor het geheim in het Key Vault tijdens het inrichten van de virtuele machine. Hierdoor kan de resource provider micro soft. Compute het geheim downloaden en het gelijkwaardige certificaat maken op de VM.
 
 > [!NOTE]
-> De URL van het geheim moet ook de versie bevatten. Een voor beeld van een URL ziet er als volgt uit: \/ /contosovault.Vault.Azure.net:443/Secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
+> De URL van het geheim moet ook de versie bevatten. Een voor beeld van een URL ziet er als volgt uit://contosovault.Vault.Azure.net:443/Secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
 
 #### <a name="templates"></a>Sjablonen
 U kunt de koppeling naar de URL in de sjabloon ophalen met behulp van de onderstaande code

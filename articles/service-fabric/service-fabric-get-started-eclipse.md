@@ -36,7 +36,7 @@ Installeer Eclipse Neon of hoger vanaf de [Eclipse-site](https://www.eclipse.org
 -   Als u updates voor een eclips wilt controleren en installeren, gaat u naar **Help**  >  **controleren op updates**.
 
 Installeer de service Fabric-invoeg toepassing, in eclips, ga naar **hulp** bij de  >  **installatie van nieuwe software**.
-1. Voer in het vak **werken met** https: \/ /DL.Microsoft.com/eclipse in.
+1. Voer in het vak **werken met** https://DL.Microsoft.com/eclipse in.
 2. Klik op **Add**.
 
    ![De Service Fabric-invoegtoepassing voor Eclipse][sf-eclipse-plugin-install]
@@ -49,7 +49,7 @@ Als u de Service Fabric-invoegtoepassing al hebt geïnstalleerd, zorgt u ervoor 
 3. Als u de Service Fabric-invoegtoepassing bijwerkt, moet u ook het Gradle-project vernieuwen.  Klik met de rechtermuisknop op **build.gradle** en selecteer vervolgens **Vernieuwen**.
 
 > [!NOTE]
-> Als de installatie of update van de Service Fabric-invoegtoepassing traag verloopt, kan dit het gevolg zijn van een instelling in Eclipse. Eclipse verzamelt metagegevens over alle wijzigingen in updatesites die zijn geregistreerd bij uw exemplaar van Eclipse. Als u het proces voor het controleren op en installeren van updates van Service Fabric-invoegtoepassingen wilt versnellen, gaat u naar **Available Software Sites**. Schakel de selectie vakjes uit voor alle sites, behalve voor de site die verwijst naar de locatie van de Service Fabric-invoeg toepassing (https: \/ /DL.Microsoft.com/Eclipse/Azure/servicefabric).
+> Als de installatie of update van de Service Fabric-invoegtoepassing traag verloopt, kan dit het gevolg zijn van een instelling in Eclipse. Eclipse verzamelt metagegevens over alle wijzigingen in updatesites die zijn geregistreerd bij uw exemplaar van Eclipse. Als u het proces voor het controleren op en installeren van updates van Service Fabric-invoegtoepassingen wilt versnellen, gaat u naar **Available Software Sites**. Schakel de selectie vakjes uit voor alle sites, behalve voor de site die verwijst naar de locatie van de Service Fabric-invoeg toepassing (https://DL.Microsoft.com/Eclipse/Azure/servicefabric).
 
 > [!NOTE]
 >Als Eclipse op uw Mac niet werkt zoals u verwacht of als u het moet uitvoeren als supergebruiker), gaat u naar de map **ECLIPSE_INSTALLATION_PATH** en vervolgens naar de submap **Eclipse.app/Contents/MacOS**. Start Eclipse door `./eclipse` uit te voeren.

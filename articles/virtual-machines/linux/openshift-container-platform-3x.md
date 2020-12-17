@@ -245,7 +245,7 @@ Verschillende releases kunnen verschillende para meters hebben, dus controleer d
 
 | Eigenschap | Beschrijving | Geldige opties | Standaardwaarde |
 |----------|-------------|---------------|---------------|
-| `_artifactsLocation`  | URL voor artefacten (JSON, scripts, enzovoort) |  |  https: \/ /RAW.githubusercontent.com/Microsoft/openshift-container-platform/Master  |
+| `_artifactsLocation`  | URL voor artefacten (JSON, scripts, enzovoort) |  |  https://RAW.githubusercontent.com/Microsoft/openshift-container-platform/Master  |
 | `location` | Azure-regio voor het implementeren van resources voor |  |  |
 | `masterVmSize` | Grootte van de hoofd-VM. Selecteer een van de toegestane VM-grootten in de azuredeploy.jsvoor het bestand |  | Standard_E2s_v3 |
 | `infraVmSize` | Grootte van de infra structuur-VM. Selecteer een van de toegestane VM-grootten in de azuredeploy.jsvoor het bestand |  | Standard_D4s_v3 |

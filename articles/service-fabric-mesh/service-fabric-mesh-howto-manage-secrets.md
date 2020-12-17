@@ -203,7 +203,7 @@ Geef **template-file** of **template-uri** door (maar niet beide).
 
 Bijvoorbeeld:
 - az mesh deployment create --c:\MyMeshTemplates\SecretTemplate1.txt
-- AZ net Deployment Create--https: \/ /www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
+- AZ net Deployment Create--https://www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 
 ### <a name="show-a-secret"></a>Een geheim weergeven
 Retourneert de beschrijving van het geheim (maar niet de waarde).

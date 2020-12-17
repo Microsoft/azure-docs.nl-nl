@@ -144,7 +144,7 @@ De configuratie parameters zijn:
 |---|---|
 |**Naam** |Referentie naam voor aangepaste test. |
 | **Protocol** | Gebruikt protocol (mogelijke waarden zijn HTTP of HTTPS).|
-| **Host** en **pad** | Volledige URL-pad dat door de toepassings gateway wordt aangeroepen om de status van het exemplaar te bepalen. Als u bijvoorbeeld een website http: \/ /contoso.com/hebt, kan de aangepaste test worden geconfigureerd voor "http: \/ /contoso.com/Path/custompath.htm" voor test controles om een geslaagde http-reactie te krijgen.|
+| **Host** en **pad** | Volledige URL-pad dat door de toepassings gateway wordt aangeroepen om de status van het exemplaar te bepalen. Als u bijvoorbeeld een website http://contoso.com/hebt, kan de aangepaste test worden geconfigureerd voor "http://contoso.com/Path/custompath.htm" voor test controles om een geslaagde http-reactie te krijgen.|
 | **Interval** | Hiermee configureert u de controles van het test interval in seconden.|
 | **Out** | Hiermee wordt de time-out van de test voor een HTTP-antwoord controle gedefinieerd.|
 | **UnhealthyThreshold** | Het aantal mislukte HTTP-antwoorden dat nodig is voor het markeren van het back-end-exemplaar als *beschadigd*.|

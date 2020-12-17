@@ -67,7 +67,7 @@ Wanneer u de REST API-of Resource Manager-sjabloon gebruikt, neemt u het element
 | properties |ja |waarde moet leeg zijn {} of sleutel-waardeparen kunnen bevatten |
 
 ## <a name="authentication-in-webhooks"></a>Verificatie in webhooks
-De webhook kan worden geverifieerd met verificatie op basis van tokens, waarbij u de webhook-URI opslaat met een token-ID als een query parameter. Bijvoorbeeld https: \/ /mysamplealert/webcallback? tokenid = sometokenid&someparameter = eenwaarde
+De webhook kan worden geverifieerd met verificatie op basis van tokens, waarbij u de webhook-URI opslaat met een token-ID als een query parameter. Bijvoorbeeld https://mysamplealert/webcallback? tokenid = sometokenid&someparameter = eenwaarde
 
 ## <a name="autoscale-notification-webhook-payload-schema"></a>Automatische schaal melding webhook Payload schema
 Wanneer de melding over automatisch schalen wordt gegenereerd, worden de volgende meta gegevens opgenomen in de nettolading van de webhook:

@@ -59,9 +59,9 @@ In v 2.0 kunnen gebruikers zich met behulp van de `https://login.microsoftonline
 
     v 2.0: Scope = https \: //Graph.Microsoft.com/user.Read
 
-    U kunt bereiken voor elke resource-API aanvragen met behulp van de URI van de API in deze indeling: appidURI/Scope bijvoorbeeld: https: \/ /mytenant.onmicrosoft.com/myapi/API.Read
+    U kunt bereiken voor elke resource-API aanvragen met behulp van de URI van de API in deze indeling: appidURI/Scope bijvoorbeeld: https://mytenant.onmicrosoft.com/myapi/API.Read
 
-    Alleen voor de MS Graph API wordt een bereik waarde `user.read` toegewezen aan https: \/ /Graph.Microsoft.com/user.Read en kan door elkaar worden gebruikt.
+    Alleen voor de MS Graph API wordt een bereik waarde `user.read` toegewezen aan https://Graph.Microsoft.com/user.Read en kan door elkaar worden gebruikt.
 
     ```javascript
     var request = {

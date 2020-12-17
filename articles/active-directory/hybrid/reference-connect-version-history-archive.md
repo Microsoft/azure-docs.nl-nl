@@ -738,8 +738,8 @@ Het probleem dat zich voordoet, is dat de **optie alle domeinen en organisatie-e
 #### <a name="issues-fixed"></a>Problemen opgelost
 
 * De volgende Url's zijn nieuwe WS-Federation-eind punten die worden geïntroduceerd door Azure AD om de tolerantie te verbeteren ten opzichte van de onderbreking van de verificatie en worden toegevoegd aan de configuratie van een on-AD FS premises Relying Party vertrouwens relatie:
-  * https: \/ /Ests.login.microsoftonline.com/login.SRF
-  * https: \/ /stamp2.login.microsoftonline.com/login.SRF
+  * https://Ests.login.microsoftonline.com/login.SRF
+  * https://stamp2.login.microsoftonline.com/login.SRF
   * https://ccs.login.microsoftonline.com/login.srf
   * https://ccs-sdf.login.microsoftonline.com/login.srf
 

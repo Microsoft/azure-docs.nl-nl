@@ -69,10 +69,10 @@ Als u Azure AD-verificatie wilt inschakelen voor uw virtuele Linux-machines in a
 
 * https:\//login.microsoftonline.com
 * https:\//login.windows.net
-* https: \/ /device.login.microsoftonline.com
-* https: \/ /pas.Windows.net
+* https://device.login.microsoftonline.com
+* https://pas.Windows.net
 * https:\//management.azure.com
-* https: \/ /packages.Microsoft.com
+* https://packages.Microsoft.com
 
 > [!NOTE]
 > Momenteel kunnen Azure-netwerk beveiligings groepen niet worden geconfigureerd voor Vm's die zijn ingeschakeld met Azure AD-verificatie.

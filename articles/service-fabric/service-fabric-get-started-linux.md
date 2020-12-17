@@ -302,7 +302,7 @@ U kunt de Eclipse-invoegtoepassing voor Service Fabric installeren vanuit de Ecl
 
 2. Als u de service Fabric-invoeg toepassing wilt installeren, selecteert u **Help**  >  **nieuwe software installeren** .
 
-3. Voer in het vak **werken met** **https: \/ /DL.Microsoft.com/Eclipse** in.
+3. Voer in het vak **werken met** **https://DL.Microsoft.com/Eclipse** in.
 
 4. Selecteer **Toevoegen** .
 

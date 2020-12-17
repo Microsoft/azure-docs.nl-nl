@@ -41,8 +41,8 @@ De volgende stappen laten zien hoe u wachtwoord verificatie instelt voor een AD-
 3. Maak een nieuwe Azure Active Directory-toepassing met behulp van de volgende opdracht, waarbij de locatie houders worden vervangen:
    
    * **{Weergave naam}:** een weergave naam voor uw toepassing, zoals **MySampleApp**
-   * **{URL van start pagina}:** de URL van de start pagina van uw app, zoals **http: \/ /mysampleapp/Home**. Deze URL hoeft niet naar een echte toepassing te verwijzen.
-   * **{Toepassings-id}:** Een unieke id, zoals **http: \/ /mysampleapp**. Deze URL hoeft niet naar een echte toepassing te verwijzen.
+   * **{URL van start pagina}:** de URL van de start pagina van uw app, zoals **http://mysampleapp/Home**. Deze URL hoeft niet naar een echte toepassing te verwijzen.
+   * **{Toepassings-id}:** Een unieke id, zoals **http://mysampleapp**. Deze URL hoeft niet naar een echte toepassing te verwijzen.
    * **{Wacht woord}:** Een wacht woord dat u gebruikt voor verificatie bij uw app.
      
      ```powershell

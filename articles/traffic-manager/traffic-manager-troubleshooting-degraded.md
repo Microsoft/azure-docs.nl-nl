@@ -48,7 +48,7 @@ Als u een test fout wilt oplossen, hebt u een hulp programma nodig dat de HTTP-s
 
 U kunt ook het tabblad netwerk van de F12-Hulpprogram Ma's voor fout opsporing in Internet Explorer gebruiken om de HTTP-antwoorden te bekijken.
 
-Voor dit voor beeld willen we het antwoord zien van onze test-URL: http: \/ /watestsdp2008r2.cloudapp.net:80/probe. Het volgende Power shell-voor beeld illustreert het probleem.
+Voor dit voor beeld willen we het antwoord zien van onze test-URL: http://watestsdp2008r2.cloudapp.net:80/probe. Het volgende Power shell-voor beeld illustreert het probleem.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription

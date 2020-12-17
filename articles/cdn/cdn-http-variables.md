@@ -160,15 +160,15 @@ Belang rijke informatie:
 
 In het volgende voor beeld wordt gebruikgemaakt van de volgende voorbeeld aanvraag-URL:
 
-https: \/ /cdn.mydomain.com/folder/marketing/myconsultant/proposal.html
+https://cdn.mydomain.com/folder/marketing/myconsultant/proposal.html
 
 De volgende teken reeks demonstreert verschillende methoden voor het bewerken van variabelen:
 
-https: \/ /www%{HTTP_HOST: 3}/mobile/%{REQUEST_URI: 7:10}/% {REQUEST_URI:-5:-8}. htm
+https://www%{HTTP_HOST: 3}/mobile/%{REQUEST_URI: 7:10}/% {REQUEST_URI:-5:-8}. htm
 
 Op basis van de voor beeld-aanvraag-URL wordt met de bovenstaande variabele manipulatie de volgende waarde geproduceerd:
 
-https: \/ /www.mydomain.com/mobile/marketing/proposal.htm
+https://www.mydomain.com/mobile/marketing/proposal.htm
 
 
 ### <a name="pattern-removal"></a>Patroon verwijderen

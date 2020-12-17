@@ -208,11 +208,11 @@ az network public-ip show \
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-Voer uw domeinnaam in de adresbalk van de browser in. Zoals http: \/ /www.contoso.com.
+Voer uw domeinnaam in de adresbalk van de browser in. Zoals http://www.contoso.com.
 
 ![Contoso-site testen in toepassingsgateway](./media/redirect-internal-site-cli/application-gateway-nginxtest.png)
 
-Wijzig het adres in uw andere domein, bijvoorbeeld http: \/ /www.contoso.org, en u ziet dat het verkeer is omgeleid naar de listener voor www- \. contoso.com.
+Wijzig het adres in uw andere domein, bijvoorbeeld http://www.contoso.org, en u ziet dat het verkeer is omgeleid naar de listener voor www- \. contoso.com.
 
 ## <a name="next-steps"></a>Volgende stappen
 

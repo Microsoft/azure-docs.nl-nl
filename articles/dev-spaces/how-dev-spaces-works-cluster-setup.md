@@ -78,7 +78,7 @@ Met het hulp programma aan de client zijde kan de gebruiker het volgende doen:
 
 Terwijl uw toepassing wordt uitgevoerd, wordt het hulp programma voor de client ook gebruikt:
 * Hiermee worden stdout en stderr ontvangen en weer gegeven vanuit uw toepassing die wordt uitgevoerd in AKS.
-* Maakt gebruik van een [poort](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/) om webtoegang toe te staan voor uw toepassing via http: \/ /localhost.
+* Maakt gebruik van een [poort](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/) om webtoegang toe te staan voor uw toepassing via http://localhost.
 * Hiermee koppelt u een fout opsporingsprogramma aan uw actieve toepassing in AKS.
 * Synchroniseert de bron code naar uw ontwikkel ruimte wanneer een wijziging wordt gedetecteerd voor incrementele builds, waardoor snelle herhaling mogelijk is.
 * Hiermee kunt u uw ontwikkelaars computer rechtstreeks aansluiten op uw AKS-cluster.

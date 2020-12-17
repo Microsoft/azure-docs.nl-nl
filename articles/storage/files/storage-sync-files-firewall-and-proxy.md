@@ -112,35 +112,35 @@ Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-b
 
 | Cloud  | Regio | URL van het primaire eind punt | Gekoppelde regio | Detectie-URL |
 |--------|--------|----------------------|---------------|---------------|
-| Openbaar |Australië - oost | https: \/ /australiaeast01.AFS.Azure.net<br>https: \/ /kailani-Aue.One.Microsoft.com | Australië - zuidoost | https: \/ /TM-australiaeast01.AFS.Azure.net<br>https: \/ /TM-kailani-Aue.One.Microsoft.com |
-| Openbaar |Australië - zuidoost | https: \/ /australiasoutheast01.AFS.Azure.net<br>https: \/ /kailani-aus.One.Microsoft.com | Australië - oost | https: \/ /TM-australiasoutheast01.AFS.Azure.net<br>https: \/ /TM-kailani-aus.One.Microsoft.com |
-| Openbaar | Brazil South | https: \/ /brazilsouth01.AFS.Azure.net | VS - zuid-centraal | https: \/ /TM-brazilsouth01.AFS.Azure.net |
-| Openbaar | Canada - midden | https: \/ /canadacentral01.AFS.Azure.net<br>https: \/ /kailani-CAC.One.Microsoft.com | Canada - oost | https: \/ /TM-canadacentral01.AFS.Azure.net<br>https: \/ /TM-kailani-CAC.One.Microsoft.com |
-| Openbaar | Canada - oost | https: \/ /canadaeast01.AFS.Azure.net<br>https: \/ /kailani-CAE.One.Microsoft.com | Canada - midden | https: \/ /TM-canadaeast01.AFS.Azure.net<br>https: \/ /TM-kailani.CAE.One.Microsoft.com |
-| Openbaar | India - centraal | https: \/ /centralindia01.AFS.Azure.net<br>https: \/ /kailani-cin.One.Microsoft.com | India - zuid | https: \/ /TM-centralindia01.AFS.Azure.net<br>https: \/ /TM-kailani-cin.One.Microsoft.com |
-| Openbaar | VS - centraal | https: \/ /centralus01.AFS.Azure.net<br>https: \/ /kailani-cus.One.Microsoft.com | VS - oost 2 | https: \/ /TM-centralus01.AFS.Azure.net<br>https: \/ /TM-kailani-cus.One.Microsoft.com |
-| Openbaar | Azië - oost | https: \/ /eastasia01.AFS.Azure.net<br>https: \/ /kailani11.One.Microsoft.com | Azië - zuidoost | https: \/ /TM-eastasia01.AFS.Azure.net<br>https: \/ /TM-kailani11.One.Microsoft.com |
-| Openbaar | VS - oost | https: \/ /eastus01.AFS.Azure.net<br>https: \/ /kailani1.One.Microsoft.com | VS - west | https: \/ /TM-eastus01.AFS.Azure.net<br>https: \/ /TM-kailani1.One.Microsoft.com |
-| Openbaar | VS - oost 2 | https: \/ /eastus201.AFS.Azure.net<br>https: \/ /kailani-ESS.One.Microsoft.com | VS - centraal | https: \/ /TM-eastus201.AFS.Azure.net<br>https: \/ /TM-kailani-ESS.One.Microsoft.com |
-| Openbaar | Duitsland - noord | https: \/ /germanynorth01.AFS.Azure.net | Duitsland - west-centraal | https: \/ /TM-germanywestcentral01.AFS.Azure.net |
-| Openbaar | Duitsland - west-centraal | https: \/ /germanywestcentral01.AFS.Azure.net | Duitsland - noord | https: \/ /TM-germanynorth01.AFS.Azure.net |
-| Openbaar | Japan - oost | https: \/ /japaneast01.AFS.Azure.net | Japan - west | https: \/ /TM-japaneast01.AFS.Azure.net |
-| Openbaar | Japan - west | https: \/ /japanwest01.AFS.Azure.net | Japan - oost | https: \/ /TM-japanwest01.AFS.Azure.net |
-| Openbaar | Korea - centraal | https: \/ /koreacentral01.AFS.Azure.net/ | Korea - zuid | https: \/ /TM-koreacentral01.AFS.Azure.net/ |
-| Openbaar | Korea - zuid | https: \/ /koreasouth01.AFS.Azure.net/ | Korea - centraal | https: \/ /TM-koreasouth01.AFS.Azure.net/ |
-| Openbaar | VS - noord-centraal | https: \/ /northcentralus01.AFS.Azure.net | VS - zuid-centraal | https: \/ /TM-northcentralus01.AFS.Azure.net |
-| Openbaar | Europa - noord | https: \/ /northeurope01.AFS.Azure.net<br>https: \/ /kailani7.One.Microsoft.com | Europa -west | https: \/ /TM-northeurope01.AFS.Azure.net<br>https: \/ /TM-kailani7.One.Microsoft.com |
-| Openbaar | VS - zuid-centraal | https: \/ /southcentralus01.AFS.Azure.net | VS - noord-centraal | https: \/ /TM-southcentralus01.AFS.Azure.net |
-| Openbaar | India - zuid | https: \/ /southindia01.AFS.Azure.net<br>https: \/ /kailani-Sin.One.Microsoft.com | India - centraal | https: \/ /TM-southindia01.AFS.Azure.net<br>https: \/ /TM-kailani-Sin.One.Microsoft.com |
-| Openbaar | Azië - zuidoost | https: \/ /southeastasia01.AFS.Azure.net<br>https: \/ /kailani10.One.Microsoft.com | Azië - oost | https: \/ /TM-southeastasia01.AFS.Azure.net<br>https: \/ /TM-kailani10.One.Microsoft.com |
-| Openbaar | Verenigd Koninkrijk Zuid | https: \/ /uksouth01.AFS.Azure.net<br>https: \/ /kailani-UKs.One.Microsoft.com | Verenigd Koninkrijk West | https: \/ /TM-uksouth01.AFS.Azure.net<br>https: \/ /TM-kailani-UKs.One.Microsoft.com |
-| Openbaar | Verenigd Koninkrijk West | https: \/ /ukwest01.AFS.Azure.net<br>https: \/ /kailani-UKW.One.Microsoft.com | Verenigd Koninkrijk Zuid | https: \/ /TM-ukwest01.AFS.Azure.net<br>https: \/ /TM-kailani-UKW.One.Microsoft.com |
-| Openbaar | VS - west-centraal | https: \/ /westcentralus01.AFS.Azure.net | VS - west 2 | https: \/ /TM-westcentralus01.AFS.Azure.net |
-| Openbaar | Europa -west | https: \/ /westeurope01.AFS.Azure.net<br>https: \/ /kailani6.One.Microsoft.com | Europa - noord | https: \/ /TM-westeurope01.AFS.Azure.net<br>https: \/ /TM-kailani6.One.Microsoft.com |
-| Openbaar | VS - west | https: \/ /westus01.AFS.Azure.net<br>https: \/ /kailani.One.Microsoft.com | VS - oost | https: \/ /TM-westus01.AFS.Azure.net<br>https: \/ /TM-kailani.One.Microsoft.com |
-| Openbaar | VS - west 2 | https: \/ /westus201.AFS.Azure.net | VS - west-centraal | https: \/ /TM-westus201.AFS.Azure.net |
-| Overheid | VS (overheid) - Arizona | https: \/ /usgovarizona01.AFS.Azure.us | VS (overheid) - Texas | https: \/ /TM-usgovarizona01.AFS.Azure.us |
-| Overheid | VS (overheid) - Texas | https: \/ /usgovtexas01.AFS.Azure.us | VS (overheid) - Arizona | https: \/ /TM-usgovtexas01.AFS.Azure.us |
+| Openbaar |Australië - oost | https://australiaeast01.AFS.Azure.net<br>https://kailani-Aue.One.Microsoft.com | Australië - zuidoost | https://TM-australiaeast01.AFS.Azure.net<br>https://TM-kailani-Aue.One.Microsoft.com |
+| Openbaar |Australië - zuidoost | https://australiasoutheast01.AFS.Azure.net<br>https://kailani-aus.One.Microsoft.com | Australië - oost | https://TM-australiasoutheast01.AFS.Azure.net<br>https://TM-kailani-aus.One.Microsoft.com |
+| Openbaar | Brazil South | https://brazilsouth01.AFS.Azure.net | VS - zuid-centraal | https://TM-brazilsouth01.AFS.Azure.net |
+| Openbaar | Canada - midden | https://canadacentral01.AFS.Azure.net<br>https://kailani-CAC.One.Microsoft.com | Canada - oost | https://TM-canadacentral01.AFS.Azure.net<br>https://TM-kailani-CAC.One.Microsoft.com |
+| Openbaar | Canada - oost | https://canadaeast01.AFS.Azure.net<br>https://kailani-CAE.One.Microsoft.com | Canada - midden | https://TM-canadaeast01.AFS.Azure.net<br>https://TM-kailani.CAE.One.Microsoft.com |
+| Openbaar | India - centraal | https://centralindia01.AFS.Azure.net<br>https://kailani-cin.One.Microsoft.com | India - zuid | https://TM-centralindia01.AFS.Azure.net<br>https://TM-kailani-cin.One.Microsoft.com |
+| Openbaar | VS - centraal | https://centralus01.AFS.Azure.net<br>https://kailani-cus.One.Microsoft.com | VS - oost 2 | https://TM-centralus01.AFS.Azure.net<br>https://TM-kailani-cus.One.Microsoft.com |
+| Openbaar | Azië - oost | https://eastasia01.AFS.Azure.net<br>https://kailani11.One.Microsoft.com | Azië - zuidoost | https://TM-eastasia01.AFS.Azure.net<br>https://TM-kailani11.One.Microsoft.com |
+| Openbaar | VS - oost | https://eastus01.AFS.Azure.net<br>https://kailani1.One.Microsoft.com | VS - west | https://TM-eastus01.AFS.Azure.net<br>https://TM-kailani1.One.Microsoft.com |
+| Openbaar | VS - oost 2 | https://eastus201.AFS.Azure.net<br>https://kailani-ESS.One.Microsoft.com | VS - centraal | https://TM-eastus201.AFS.Azure.net<br>https://TM-kailani-ESS.One.Microsoft.com |
+| Openbaar | Duitsland - noord | https://germanynorth01.AFS.Azure.net | Duitsland - west-centraal | https://TM-germanywestcentral01.AFS.Azure.net |
+| Openbaar | Duitsland - west-centraal | https://germanywestcentral01.AFS.Azure.net | Duitsland - noord | https://TM-germanynorth01.AFS.Azure.net |
+| Openbaar | Japan - oost | https://japaneast01.AFS.Azure.net | Japan - west | https://TM-japaneast01.AFS.Azure.net |
+| Openbaar | Japan - west | https://japanwest01.AFS.Azure.net | Japan - oost | https://TM-japanwest01.AFS.Azure.net |
+| Openbaar | Korea - centraal | https://koreacentral01.AFS.Azure.net/ | Korea - zuid | https://TM-koreacentral01.AFS.Azure.net/ |
+| Openbaar | Korea - zuid | https://koreasouth01.AFS.Azure.net/ | Korea - centraal | https://TM-koreasouth01.AFS.Azure.net/ |
+| Openbaar | VS - noord-centraal | https://northcentralus01.AFS.Azure.net | VS - zuid-centraal | https://TM-northcentralus01.AFS.Azure.net |
+| Openbaar | Europa - noord | https://northeurope01.AFS.Azure.net<br>https://kailani7.One.Microsoft.com | Europa -west | https://TM-northeurope01.AFS.Azure.net<br>https://TM-kailani7.One.Microsoft.com |
+| Openbaar | VS - zuid-centraal | https://southcentralus01.AFS.Azure.net | VS - noord-centraal | https://TM-southcentralus01.AFS.Azure.net |
+| Openbaar | India - zuid | https://southindia01.AFS.Azure.net<br>https://kailani-Sin.One.Microsoft.com | India - centraal | https://TM-southindia01.AFS.Azure.net<br>https://TM-kailani-Sin.One.Microsoft.com |
+| Openbaar | Azië - zuidoost | https://southeastasia01.AFS.Azure.net<br>https://kailani10.One.Microsoft.com | Azië - oost | https://TM-southeastasia01.AFS.Azure.net<br>https://TM-kailani10.One.Microsoft.com |
+| Openbaar | Verenigd Koninkrijk Zuid | https://uksouth01.AFS.Azure.net<br>https://kailani-UKs.One.Microsoft.com | Verenigd Koninkrijk West | https://TM-uksouth01.AFS.Azure.net<br>https://TM-kailani-UKs.One.Microsoft.com |
+| Openbaar | Verenigd Koninkrijk West | https://ukwest01.AFS.Azure.net<br>https://kailani-UKW.One.Microsoft.com | Verenigd Koninkrijk Zuid | https://TM-ukwest01.AFS.Azure.net<br>https://TM-kailani-UKW.One.Microsoft.com |
+| Openbaar | VS - west-centraal | https://westcentralus01.AFS.Azure.net | VS - west 2 | https://TM-westcentralus01.AFS.Azure.net |
+| Openbaar | Europa -west | https://westeurope01.AFS.Azure.net<br>https://kailani6.One.Microsoft.com | Europa - noord | https://TM-westeurope01.AFS.Azure.net<br>https://TM-kailani6.One.Microsoft.com |
+| Openbaar | VS - west | https://westus01.AFS.Azure.net<br>https://kailani.One.Microsoft.com | VS - oost | https://TM-westus01.AFS.Azure.net<br>https://TM-kailani.One.Microsoft.com |
+| Openbaar | VS - west 2 | https://westus201.AFS.Azure.net | VS - west-centraal | https://TM-westus201.AFS.Azure.net |
+| Overheid | VS (overheid) - Arizona | https://usgovarizona01.AFS.Azure.us | VS (overheid) - Texas | https://TM-usgovarizona01.AFS.Azure.us |
+| Overheid | VS (overheid) - Texas | https://usgovtexas01.AFS.Azure.us | VS (overheid) - Arizona | https://TM-usgovtexas01.AFS.Azure.us |
 
 - Als u lokaal redundante (LRS) of zone redundante (ZRS) opslag accounts gebruikt, hoeft u alleen de URL in te scha kelen die wordt weer gegeven onder URL van het primaire eind punt.
 
@@ -148,9 +148,9 @@ Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-b
 
 **Voor beeld:** U implementeert een opslag synchronisatie service in `"West US"` en registreert deze bij de server. De Url's waarmee de server kan communiceren voor deze aanvraag:
 
-> - https: \/ /westus01.AFS.Azure.net (primair eind punt: VS-West)
-> - https: \/ /eastus01.AFS.Azure.net (gekoppelde failover-over regio: VS-Oost)
-> - https: \/ /TM-westus01.AFS.Azure.net (detectie-URL van de primaire regio)
+> - https://westus01.AFS.Azure.net (primair eind punt: VS-West)
+> - https://eastus01.AFS.Azure.net (gekoppelde failover-over regio: VS-Oost)
+> - https://TM-westus01.AFS.Azure.net (detectie-URL van de primaire regio)
 
 ### <a name="allow-list-for-azure-file-sync-ip-addresses"></a>Acceptatie lijst voor Azure File Sync IP-adressen
 Azure File Sync ondersteunt het gebruik van [service Tags](../../virtual-network/service-tags-overview.md)die een groep IP-adres voorvoegsels voor een bepaalde Azure-service vertegenwoordigen. U kunt service tags gebruiken om firewall regels te maken waarmee communicatie met de Azure File Sync-Service mogelijk wordt gemaakt. Het servicetag voor Azure File Sync is `StorageSyncService` .

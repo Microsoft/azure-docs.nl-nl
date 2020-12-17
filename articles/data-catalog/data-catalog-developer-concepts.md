@@ -271,7 +271,7 @@ Een geverifieerde gebruiker heeft standaard **Lees** rechten voor elk item in de
 ### <a name="examples"></a>Voorbeelden
 **Stel Inzender in op &lt; iedereen &gt; bij het publiceren van een item.**
 Speciale beveiligingsprincipal- &lt; iedereen &gt; heeft objectId ' 00000000-0000-0000-0000-000000000201 '.
-  **Post** https: \/ /API.azuredatacatalog.com/Catalogs/default/views/Tables/?API-Version=2016-03-30
+  **Post** https://API.azuredatacatalog.com/Catalogs/default/views/Tables/?API-Version=2016-03-30
 
 > [!NOTE]
 > Bij sommige HTTP-client implementaties worden aanvragen mogelijk automatisch opnieuw uitgegeven als reactie op een 302 van de server, maar doorgaans de header-autorisatie headers van de aanvraag. Aangezien de autorisatie-header vereist is om aanvragen voor Azure Data Catalog te maken, moet u ervoor zorgen dat de autorisatie-header nog steeds wordt opgegeven wanneer een aanvraag wordt verzonden naar een omleidings locatie die is opgegeven door Azure Data Catalog. De volgende voorbeeld code laat zien hoe u het .NET HttpWebRequest-object kunt gebruiken.
@@ -293,7 +293,7 @@ Speciale beveiligingsprincipal- &lt; iedereen &gt; heeft objectId ' 00000000-000
     }
 ```
 
-  **Eigen aren toewijzen en zicht baarheid beperken voor een bestaand hoofd item**: **put** https: \/ /API.azuredatacatalog.com/Catalogs/default/views/Tables/042297b0...1be45ecd462a?API-Version=2016-03-30
+  **Eigen aren toewijzen en zicht baarheid beperken voor een bestaand hoofd item**: **put** https://API.azuredatacatalog.com/Catalogs/default/views/Tables/042297b0...1be45ecd462a?API-Version=2016-03-30
 
 ```json
     {

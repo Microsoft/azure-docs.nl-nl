@@ -190,7 +190,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Gebruik nu het toegangs token om te verifiëren bij de sleutel kluis en lees een geheim. Zorg ervoor dat u de naam van de sleutel kluis in de URL (*https: \/ /mykeyvault.Vault.Azure.net/...*) vervangt:
+Gebruik nu het toegangs token om te verifiëren bij de sleutel kluis en lees een geheim. Zorg ervoor dat u de naam van de sleutel kluis in de URL (*https://mykeyvault.Vault.Azure.net/...*) vervangt:
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"

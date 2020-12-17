@@ -190,28 +190,28 @@ Tijdens de open bare preview-periode is de mogelijkheid om aangepaste metrische 
 |Azure-regio |Voor voegsel regionale eind punt|
 |---|---|
 | **VS en Canada** | |
-|VS - west-centraal | https: \/ /westcentralus.monitoring.Azure.com |
-|West US 2       | https: \/ /westus2.monitoring.Azure.com |
-|VS - noord-centraal | https: \/ /northcentralus.monitoring.Azure.com
-|South Central US| https: \/ /southcentralus.monitoring.Azure.com |
-|Central US      | https: \/ /centralus.monitoring.Azure.com |
-|Canada - midden | https: \/ /canadacentral.monitoring.Azure.com |
-|VS - oost| https: \/ /eastus.monitoring.Azure.com |
-|VS - oost 2 | https: \/ /eastus2.monitoring.Azure.com |
+|VS - west-centraal | https://westcentralus.monitoring.Azure.com |
+|West US 2       | https://westus2.monitoring.Azure.com |
+|VS - noord-centraal | https://northcentralus.monitoring.Azure.com
+|South Central US| https://southcentralus.monitoring.Azure.com |
+|Central US      | https://centralus.monitoring.Azure.com |
+|Canada - midden | https://canadacentral.monitoring.Azure.com |
+|VS - oost| https://eastus.monitoring.Azure.com |
+|VS - oost 2 | https://eastus2.monitoring.Azure.com |
 | **Europa** | |
-|Europa - noord    | https: \/ /northeurope.monitoring.Azure.com |
-|Europa -west     | https: \/ /westeurope.monitoring.Azure.com |
-|Verenigd Koninkrijk Zuid | https: \/ /uksouth.monitoring.Azure.com
-|Frankrijk - centraal | https: \/ /francecentral.monitoring.Azure.com |
+|Europa - noord    | https://northeurope.monitoring.Azure.com |
+|Europa -west     | https://westeurope.monitoring.Azure.com |
+|Verenigd Koninkrijk Zuid | https://uksouth.monitoring.Azure.com
+|Frankrijk - centraal | https://francecentral.monitoring.Azure.com |
 | **Afrika** | |
-|Zuid-Afrika - noord | https: \/ /southafricanorth.monitoring.Azure.com |
+|Zuid-Afrika - noord | https://southafricanorth.monitoring.Azure.com |
 | **Azië** | |
-|India - centraal | https: \/ /centralindia.monitoring.Azure.com |
-|Australië - oost | https: \/ /australiaeast.monitoring.Azure.com |
-|Japan East | https: \/ /japaneast.monitoring.Azure.com |
-|Azië - zuidoost  | https: \/ /southeastasia.monitoring.Azure.com |
-|Azië - oost | https: \/ /EastAsia.monitoring.Azure.com |
-|Korea - centraal   | https: \/ /koreacentral.monitoring.Azure.com |
+|India - centraal | https://centralindia.monitoring.Azure.com |
+|Australië - oost | https://australiaeast.monitoring.Azure.com |
+|Japan East | https://japaneast.monitoring.Azure.com |
+|Azië - zuidoost  | https://southeastasia.monitoring.Azure.com |
+|Azië - oost | https://EastAsia.monitoring.Azure.com |
+|Korea - centraal   | https://koreacentral.monitoring.Azure.com |
 
 ## <a name="latency-and-storage-retention"></a>Latentie en opslag bewaren
 

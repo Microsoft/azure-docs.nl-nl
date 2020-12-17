@@ -820,7 +820,7 @@ Als u Hive-query's wilt uitgeven in de module [gegevens importeren][import-data]
 
 Hier volgen enkele details over de module [gegevens importeren][import-data] en de para meters die moeten worden ingevoerd:
 
-**URI van HCatalog-server**: als de cluster naam **abc123** is, gebruikt u: https: \/ /abc123.azurehdinsight.net.
+**URI van HCatalog-server**: als de cluster naam **abc123** is, gebruikt u: https://abc123.azurehdinsight.net.
 
 **Hadoop-gebruikers accountnaam**: de gebruikers naam die voor het cluster is gekozen (niet de gebruikers naam voor externe toegang).
 

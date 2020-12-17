@@ -28,8 +28,8 @@ Met het micro soft Identity platform-eind punt kunt u geen token voor meerdere r
 
 Als u bijvoorbeeld twee resources hebt die elk 2 bereiken hebben:
 
-- https: \/ /mytenant.onmicrosoft.com/customerapi (met 2 bereiken `customer.read` en `customer.write` )
-- https: \/ /mytenant.onmicrosoft.com/vendorapi (met 2 bereiken `vendor.read` en `vendor.write` )
+- https://mytenant.onmicrosoft.com/customerapi (met 2 bereiken `customer.read` en `customer.write` )
+- https://mytenant.onmicrosoft.com/vendorapi (met 2 bereiken `vendor.read` en `vendor.write` )
 
 U moet de `.WithExtraScopeToConsent` modificator met de para meter *extraScopesToConsent* gebruiken, zoals wordt weer gegeven in het volgende voor beeld:
 

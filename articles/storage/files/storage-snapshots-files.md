@@ -42,7 +42,7 @@ Nadat een moment opname van een share is gemaakt, kan deze worden gelezen, gekop
 
 De functionaliteit van de moment opname van shares wordt op bestands share niveau gegeven. Ophalen wordt op afzonderlijke bestands niveau gegeven, zodat afzonderlijke bestanden kunnen worden teruggezet. U kunt een volledige bestands share herstellen met behulp van SMB, de REST API, de portal, de client bibliotheek of het Power shell/CLI-hulp programma.
 
-Een moment opname van een share van een bestands share is identiek aan de basis bestands share. Het enige verschil is dat een **datum/tijd** -waarde wordt toegevoegd aan de share-URI om het tijdstip aan te geven waarop de moment opname van de share is gemaakt. Als een bestands share-URI bijvoorbeeld http: \/ /storagesample.core.file.Windows.net/MyShare is, is de URI van de moment opname van de share gelijk aan:
+Een moment opname van een share van een bestands share is identiek aan de basis bestands share. Het enige verschil is dat een **datum/tijd** -waarde wordt toegevoegd aan de share-URI om het tijdstip aan te geven waarop de moment opname van de share is gemaakt. Als een bestands share-URI bijvoorbeeld http://storagesample.core.file.Windows.net/MyShare is, is de URI van de moment opname van de share gelijk aan:
 ```
 http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.9360000Z
 ```

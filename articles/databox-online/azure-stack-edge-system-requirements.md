@@ -82,7 +82,7 @@ We raden u aan de firewall regels voor uitgaand verkeer in te stellen, op basis 
 
 | URL-patroon                      | Onderdeel of functionaliteit                     |   
 |----------------------------------|---------------------------------------------|
-| https: \/ /MCR.Microsoft.com<br></br>https:// \* . CDN.mscr.io | Micro soft container Registry (vereist)               |
+| https://MCR.Microsoft.com<br></br>https:// \* . CDN.mscr.io | Micro soft container Registry (vereist)               |
 | https:// \* . azurecr.io                     | Persoonlijke en container registers van derden (optioneel) | 
 | https:// \* . Azure-devices.net              | IoT Hub toegang (vereist)                             | 
 
@@ -94,7 +94,7 @@ We raden u aan de firewall regels voor uitgaand verkeer in te stellen, op basis 
 
 | URL-patroon                      | Onderdeel of functionaliteit                     |  
 |----------------------------------|---------------------------------------------|
-| https: \/ /MCR.Microsoft.com<br></br>https:// \* . CDN.mscr.com | Micro soft container Registry (vereist)               |
+| https://MCR.Microsoft.com<br></br>https:// \* . CDN.mscr.com | Micro soft container Registry (vereist)               |
 | https:// \* . Azure-devices.us              | IoT Hub toegang (vereist)           |
 | https:// \* . azurecr.us                    | Persoonlijke en container registers van derden (optioneel) | 
 

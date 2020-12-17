@@ -134,7 +134,7 @@ Met [Microsoft.ApiManagement/service/apis](/azure/templates/microsoft.apimanagem
 
 * **displayName** kan elke naam zijn voor uw API. Gebruik voor dit artikel ' Service Fabric-app '.
 * **name** is een unieke en beschrijvende naam voor de API, zoals 'service-fabric-app'. Deze naam wordt weergegeven in de portals ontwikkelaars en de uitgever.
-* **serviceUrl** verwijst naar de HTTP-service die de API implementeert. API Management stuurt aanvragen door naar dit adres. De waarde van deze URL wordt niet gebruikt voor Service Fabric-back-ends. U kunt hier elke waarde invoeren. Voor dit artikel, bijvoorbeeld ' http: \/ /servicefabric '.
+* **serviceUrl** verwijst naar de HTTP-service die de API implementeert. API Management stuurt aanvragen door naar dit adres. De waarde van deze URL wordt niet gebruikt voor Service Fabric-back-ends. U kunt hier elke waarde invoeren. Voor dit artikel, bijvoorbeeld ' http://servicefabric '.
 * De waarde voor **path** wordt toegevoegd aan de basis-URL voor de API Management-service. De basis-URL is gemeenschappelijk voor alle API's die worden gehost door een exemplaar van API Management-service. In API Management worden API's herkend aan hun achtervoegsel en daarom moet het achtervoegsel uniek zijn voor elke API voor een bepaalde uitgever.
 * **protocols** bepaalt welke protocollen kunnen worden gebruikt om toegang te krijgen tot de API. Voor dit artikel, lijst **http** en **https**.
 * **path** is een achtervoegsel voor de API. Gebruik voor dit artikel ' Mijntoep '.

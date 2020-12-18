@@ -2,13 +2,13 @@
 title: Implementatie volgorde voor resources instellen
 description: Hierin wordt beschreven hoe u een resource instelt als afhankelijk van een andere resource tijdens de implementatie om ervoor te zorgen dat de resources in de juiste volg orde worden geïmplementeerd.
 ms.topic: conceptual
-ms.date: 12/03/2019
-ms.openlocfilehash: 84cea915565ec6ac9872681e1d4173abacb46ac4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/17/2020
+ms.openlocfilehash: 933764f1930bd6c9e21d4ccffbde1bb93bbc9613
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85255208"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672811"
 ---
 # <a name="define-the-order-for-deploying-resources-in-arm-templates"></a>Definieer de volg orde voor het implementeren van resources in ARM-sjablonen
 
@@ -150,6 +150,7 @@ Zie [problemen met algemene Azure-implementaties met Azure Resource Manager oplo
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [zelf studie: Azure Resource Manager sjablonen met afhankelijke resources maken](template-tutorial-create-templates-with-dependent-resources.md)om een zelf studie te door lopen.
+* Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die bron afhankelijkheden omvat.
 * Zie [Azure Resource Manager aanbevolen procedures voor sjablonen](template-best-practices.md)voor aanbevelingen bij het instellen van afhankelijkheden.
 * Zie [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor meer informatie over het oplossen van problemen met afhankelijkheden tijdens de implementatie.
 * Zie [ontwerp sjablonen](template-syntax.md)voor meer informatie over het maken van Azure Resource Manager sjablonen.

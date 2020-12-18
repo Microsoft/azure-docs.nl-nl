@@ -3,14 +3,15 @@ title: Problemen met Azure-toepassing Insights oplossen Snapshot Debugger
 description: In dit artikel worden de stappen voor probleem oplossing en informatie gegeven om ontwikkel aars te helpen Application Insights Snapshot Debugger in te scha kelen en te gebruiken.
 ms.topic: conceptual
 author: cweining
+ms.author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5dd1f799634fac223670db5c38effbe7fc29cf6f
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 3e45b5a48f9a7fb66d7539e83f385203ae371ad7
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560896"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673549"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Problemen oplossen met het inschakelen van Application Insights Snapshot Debugger of het weer geven van moment opnamen
 Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen.

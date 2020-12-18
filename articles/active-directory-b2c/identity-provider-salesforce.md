@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 0d8b90e18865afeb5cb0c171d21c89d7c6e932f0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 69c2bd96c7aa3bb3328784bb3b5027ade4902c43
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654282"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97669224"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Sales Force-account met behulp van Azure Active Directory B2C
 
@@ -39,7 +39,9 @@ ms.locfileid: "97654282"
 
 Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Sales Force- **App-Manager**. Zie voor meer informatie [basis instellingen voor verbonden apps configureren](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)en [OAuth-instellingen voor API-integratie inschakelen](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm)
 
-1. In **Setup** voert u in het vak **Snelzoeken** de optie **apps** in en selecteert u **app-beheer**.
+1. [Meld u aan bij Sales Force](https://login.salesforce.com/).
+1. Selecteer in het menu de optie **Setup**.
+1.  Vouw **apps** uit en selecteer vervolgens **app-beheer**.
 1. Selecteer **nieuwe verbonden app**.
 1. Onder de **basis informatie** voert u het volgende in:
     1. **Naam van verbonden app** : de naam van de verbonden app wordt weer gegeven in app manager en op de tegel voor het starten van de app. De naam moet uniek zijn binnen uw organisatie. 

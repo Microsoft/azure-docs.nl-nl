@@ -4,15 +4,15 @@ description: Meer informatie over het verzenden van RabbitMQ-berichten van Azure
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 8ea4b0c7c8df1ff7fe0e3ecb253b23d188681e80
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 8715fd3d71a5f65695b045f8a32a1b88bcfdd308
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629677"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672539"
 ---
 # <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>RabbitMQ-uitvoer binding voor Azure Functions-overzicht
 
@@ -31,7 +31,7 @@ In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-librar
 
 ```cs
 [FunctionName("RabbitMQOutput")]
-[return: RabbitMQ("outputQueue", ConnectionStringSetting = "ConnectionStringSetting")]
+[return: RabbitMQ("outputQueue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")]
 public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
 {
     log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
@@ -98,7 +98,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
             "type": "rabbitMQ",
             "name": "outputMessage",
             "queueName": "outputQueue",
-            "connectionStringSetting": "connectionStringAppSetting",
+            "connectionStringSetting": "rabbitMQConnectionAppSetting",
             "direction": "out"
         }
     ]
@@ -141,7 +141,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
             "type": "rabbitMQ",
             "name": "outputMessage",
             "queueName": "outputQueue",
-            "connectionStringSetting": "connectionStringAppSetting",
+            "connectionStringSetting": "rabbitMQConnectionAppSetting",
             "direction": "out"
         }
     ]
@@ -186,7 +186,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
             "type": "rabbitMQ",
             "name": "outputMessage",
             "queueName": "outputQueue",
-            "connectionStringSetting": "connectionStringAppSetting",
+            "connectionStringSetting": "rabbitMQConnectionAppSetting",
             "direction": "out"
         }
     ]
@@ -210,7 +210,7 @@ In het volgende voor beeld ziet u een Java-functie die een bericht verzendt naar
 @FunctionName("RabbitMQOutputExample")
 public void run(
 @TimerTrigger(name = "keepAliveTrigger", schedule = "0 */5 * * * *") String timerInfo,
-@RabbitMQOutput(connectionStringSetting = "rabbitMQ", queueName = "hello") OutputBinding<String> output,
+@RabbitMQOutput(connectionStringSetting = "rabbitMQConnectionAppSetting", queueName = "hello") OutputBinding<String> output,
 final ExecutionContext context) {
     output.setValue("Some string");
 }

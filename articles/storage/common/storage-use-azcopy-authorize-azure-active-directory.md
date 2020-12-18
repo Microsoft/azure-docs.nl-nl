@@ -4,15 +4,15 @@ description: U kunt autorisatie referenties opgeven voor AzCopy-bewerkingen met 
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/11/2020
+ms.date: 12/17/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 46a5c941822dd258b420b51c710734dc3152f30f
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 99e06a36c2afa66f2874c14990d50c6287623efd
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617405"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672488"
 ---
 # <a name="authorize-access-to-blobs-with-azcopy-and-azure-active-directory-azure-ad"></a>Toegang verlenen tot blobs met AzCopy en Azure Active Directory (Azure AD)
 
@@ -185,7 +185,9 @@ Vervang de `<path-to-certificate-file>` tijdelijke aanduiding door het relatieve
 
 ## <a name="authorize-without-a-secret-store"></a>Autoriseren zonder geheime opslag
 
-Als uw besturings systeem geen geheim archief heeft, zoals een Linux- *sleutel hanger*, `azcopy login` werkt de opdracht niet. In plaats daarvan kunt u omgevings variabelen in het geheugen instellen voordat u elke bewerking uitvoert. 
+De `azcopy login` opdracht haalt een OAuth-token op en plaatst dat token vervolgens in een geheim archief op uw systeem. Als uw besturings systeem geen geheim archief heeft, zoals een Linux- *sleutel hanger*, `azcopy login` werkt de opdracht niet omdat het token nergens kan worden geplaatst. 
+
+In plaats van de `azcopy login` opdracht te gebruiken, kunt u omgevings variabelen in het geheugen instellen. Voer vervolgens een AzCopy-opdracht uit. AzCopy haalt het verificatie token op dat vereist is om de bewerking te volt ooien. Nadat de bewerking is voltooid, verdwijnt het token uit het geheugen. 
 
 ### <a name="authorize-a-user-identity"></a>Een gebruikers identiteit autoriseren
 
@@ -248,8 +250,6 @@ Vervang de `<resource-id>` tijdelijke aanduiding door de resource-id van de door
 Nadat u deze variabelen hebt ingesteld, kunt u elke wille keurige azcopy-opdracht uitvoeren (bijvoorbeeld: `azcopy list https://contoso.blob.core.windows.net` ).
 
 ### <a name="authorize-a-service-principal"></a>Een Service-Principal autoriseren
-
-Voordat u een script uitvoert, moet u zich ten minste één keer interactief aanmelden zodat u AzCopy kunt opgeven met de referenties van de Service-Principal.  Deze referenties worden opgeslagen in een beveiligd en versleuteld bestand, zodat uw script geen gevoelige informatie hoeft op te geven.
 
 U kunt zich aanmelden bij uw account door gebruik te maken van een client geheim of door het wacht woord te gebruiken van een certificaat dat is gekoppeld aan de app-registratie van uw service-principal.
 

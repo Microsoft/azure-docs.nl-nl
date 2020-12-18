@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 29ebe2f0ec4d4c39154272bbbdf4d0c9ede9fd95
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: e5ad0b6dca7718166517b52148fbc6dd49f38869
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928185"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674009"
 ---
 # <a name="use-arm-template-test-toolkit"></a>ARM-sjabloon test Toolkit gebruiken
 
@@ -282,4 +282,5 @@ In het volgende voor beeld ziet u hoe u de tests uitvoert.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [standaard test cases voor arm-sjabloon test Toolkit](test-cases.md)voor meer informatie over de standaard tests.
+- Zie [standaard test cases voor arm-sjabloon test Toolkit](test-cases.md)voor meer informatie over de standaard tests.
+- Zie [Preview wijzigingen en Azure-resources valideren met behulp van wat als' en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die de test Toolkit gebruikt.

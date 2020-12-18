@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/21/2019
+ms.date: 12/17/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8633ae0d23650eb12ee2e1fdcd355864dfd8b6c3
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bfff8d450a6506cb37730838e4f70609080ca7b1
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743629"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670788"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Gebruik van de verificatie methoden & Insights (preview-versie)
 
@@ -31,7 +31,7 @@ De volgende rollen hebben toegang tot het gebruik en inzichten:
 - Beveiligingsbeheer
 - Rapportenlezer
 
-Er is geen aanvullende licentie vereist voor toegang tot gebruik en inzichten. De licentie gegevens voor Azure AD Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden (SSPR) zijn te vinden op de [Azure Active Directory-prijs site](https://azure.microsoft.com/pricing/details/active-directory/).
+ Een Azure AD Premium P1-of P2-licentie is vereist voor toegang tot het gebruik en inzichten. De licentie gegevens voor Azure AD Multi-Factor Authentication en self-service voor het opnieuw instellen van wacht woorden (SSPR) zijn te vinden op de [Azure Active Directory-prijs site](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="how-it-works"></a>Uitleg
 

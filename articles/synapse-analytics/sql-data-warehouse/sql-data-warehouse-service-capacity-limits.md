@@ -11,12 +11,12 @@ ms.date: 2/19/2020
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 7f0eff28533d8cf736d032aff61454a49bcf379e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e3daf89b80daf47049150b05ca392eede360bd3e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449722"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673413"
 ---
 # <a name="capacity-limits-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Capaciteits limieten voor exclusieve SQL-groep in azure Synapse Analytics
 
@@ -27,7 +27,7 @@ De maximum waarden die zijn toegestaan voor verschillende onderdelen van een toe
 | Categorie | Beschrijving | Maximum |
 |:--- |:--- |:--- |
 | [Data Warehouse-eenheden (DWU)](what-is-a-data-warehouse-unit-dwu-cdwu.md) |Maximum aantal DWU voor één exclusieve SQL-groep  | Gen1: DW6000<br></br>Gen2: DW30000c |
-| [Data Warehouse-eenheden (DWU)](what-is-a-data-warehouse-unit-dwu-cdwu.md) |Standaard-DTU per server |54.000<br></br>Elke SQL-Server (bijvoorbeeld myserver.database.windows.net) heeft standaard een DTU-quotum van 54.000, waarmee Maxi maal DW5000c kan worden toegestaan. Dit quotum is gewoon een veiligheidsbeperking. U kunt het quotum verhogen door [een ondersteunings ticket te maken](sql-data-warehouse-get-started-create-support-ticket.md) en *quotum* als aanvraag type te selecteren.  U kunt uw DTU-behoeften berekenen door de 7,5 te vermenigvuldigen met het totale DWU dat nodig is, of door 9,5 te vermenigvuldigen met het totale aantal cDWU dat nodig is. Bijvoorbeeld:<br></br>DW6000 x 7,5 = 45.000 Dtu's<br></br>DW5000c x 9,5 = 47.500 Dtu's.<br></br>U kunt uw huidige DTU-verbruik weer geven met de optie SQL Server in de portal. Zowel onderbroken als niet-onderbroken databases tellen mee voor het DTU-quotum. |
+| [Data Warehouse-eenheden (DWU)](what-is-a-data-warehouse-unit-dwu-cdwu.md) |Standaard-DTU per server |54.000<br></br>Elke SQL-Server (bijvoorbeeld myserver.database.windows.net) heeft standaard een DTU-quotum van 54.000, waarmee Maxi maal DW6000c kan worden toegestaan. Dit quotum is gewoon een veiligheidsbeperking. U kunt het quotum verhogen door [een ondersteunings ticket te maken](sql-data-warehouse-get-started-create-support-ticket.md) en *quotum* als aanvraag type te selecteren.  U kunt uw DTU-behoeften berekenen door de 7,5 te vermenigvuldigen met het totale DWU dat nodig is, of door 9 te vermenigvuldigen met het totale aantal cDWU dat nodig is. Bijvoorbeeld:<br></br>DW6000 x 7,5 = 45.000 Dtu's<br></br>DW7500c x 9 = 67.500 Dtu's.<br></br>U kunt uw huidige DTU-verbruik weer geven met de optie SQL Server in de portal. Zowel onderbroken als niet-onderbroken databases tellen mee voor het DTU-quotum. |
 | Database verbinding |Maximum aantal gelijktijdige open sessies |1024<br/><br/>Het aantal gelijktijdige open sessies varieert op basis van de geselecteerde DWU. DWU600c en hoger ondersteunen Maxi maal 1024 geopende sessies. DWU500c en lager ondersteunen een maximum aantal gelijktijdige open sessies van 512. Opmerking: er gelden limieten voor het aantal query's dat gelijktijdig kan worden uitgevoerd. Wanneer de limiet voor gelijktijdigheid wordt overschreden, wordt de aanvraag in een interne wachtrij geplaatst, waarin wordt gewacht om te worden verwerkt. |
 | Database verbinding |Maxi maal geheugen voor voor bereide instructies |20 MB |
 | [Werklastbeheer](resource-classes-for-workload-management.md) |Maximum aantal gelijktijdige query's |128<br/><br/>  Er worden Maxi maal 128 gelijktijdige query's uitgevoerd en er worden resterende query's in de wachtrij geplaatst.<br/><br/>Het aantal gelijktijdige query's kan afnemen wanneer gebruikers worden toegewezen aan hogere bron klassen of wanneer de instelling van de [Data Warehouse-eenheid](memory-concurrency-limits.md) wordt verlaagd. Sommige query's, zoals DMV-query's, mogen altijd worden uitgevoerd en hebben geen invloed op de limiet voor gelijktijdige query's. Zie het artikel [gelijktijdigheids limieten](memory-concurrency-limits.md) voor meer informatie over het gelijktijdig uitvoeren van query's. |

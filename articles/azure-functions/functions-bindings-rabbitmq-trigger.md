@@ -4,15 +4,15 @@ description: Meer informatie over het uitvoeren van een Azure-functie wanneer ee
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 1db27db97cdc1746b3392bd386ee6539980cd6d6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 5930219486de8704c777496bcaf293411c5fb7b1
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630731"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673984"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>RabbitMQ-trigger voor Azure Functions-overzicht
 
@@ -32,7 +32,7 @@ In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-librar
 ```cs
 [FunctionName("RabbitMQTriggerCSharp")]
 public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnection")] BasicDeliverEventArgs args,
+    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] BasicDeliverEventArgs args,
     ILogger logger
     )
 {
@@ -50,7 +50,7 @@ public class TestClass
 
 [FunctionName("RabbitMQTriggerCSharp")]
 public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnection")] TestClass pocObj,
+    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
     ILogger logger
     )
 {
@@ -74,7 +74,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -105,7 +105,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -134,7 +134,7 @@ Er wordt een RabbitMQ-binding gedefinieerd in *function.js* waarvoor *type* is i
             "type": "rabbitMQTrigger",
             "direction": "in",
             "queueName": "queue",
-            "connectionStringSetting": "rabbitMQConnection"
+            "connectionStringSetting": "rabbitMQConnectionAppSetting"
         }
     ]
 }
@@ -155,7 +155,7 @@ De volgende Java-functie maakt gebruik `@RabbitMQTrigger` van de annotatie van d
 ```java
 @FunctionName("RabbitMQTriggerExample")
 public void run(
-    @RabbitMQTrigger(connectionStringSetting = "rabbitMQConnection", queueName = "queue") String input,
+    @RabbitMQTrigger(connectionStringSetting = "rabbitMQConnectionAppSetting", queueName = "queue") String input,
     final ExecutionContext context)
 {
     context.getLogger().info("Java HTTP trigger processed a request." + input);
@@ -180,7 +180,7 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 }
 ```
 
-Zie C#-voor beeld voor een volledig voor beeld.
+Zie C#-voor [beeld](#example)voor een volledig voor beeld.
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
@@ -278,9 +278,9 @@ In deze sectie worden de algemene configuratie-instellingen beschreven die besch
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------|
 |prefetchCount|30|Hiermee wordt het aantal berichten opgehaald of ingesteld dat de ontvanger van het bericht tegelijk kan aanvragen en in de cache wordt geplaatst.|
-|queueName|n.v.t.| De naam van de wachtrij waaruit berichten moeten worden ontvangen. |
-|connectionString|n.v.t.|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt.|
-|poort|0|(wordt genegeerd als u connections Tring gebruikt) Het maximum aantal sessies dat gelijktijdig kan worden verwerkt per geschaald exemplaar.|
+|queueName|n.v.t.| De naam van de wachtrij waaruit berichten moeten worden ontvangen.|
+|connectionString|n.v.t.|De RabbitMQ-berichten wachtrij connection string. Houd er rekening mee dat de connection string hier direct wordt opgegeven en niet via een app-instelling.|
+|poort|0|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
 
 ## <a name="local-testing"></a>Lokaal testen
 

@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a0dd00709dbe8a1b0e037fe22750adea7e071162
-ms.sourcegitcommit: 287c20509c4cf21d20eea4619bbef0746a5cd46e
+ms.openlocfilehash: 04427a1eb2760e44086003a06ed4eb0d5cb473bf
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97371999"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673321"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Inleiding tot Azure Defender for Kubernetes
 
@@ -31,7 +31,7 @@ Detectie van bedreigingen op hostniveau voor uw Linux AKS-knooppunten is beschik
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|Voor **Azure Defender for Kubernetes** gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)|
 |Vereiste rollen en machtigingen:|**Beveiligingsbeheerder** kan waarschuwingen negeren.<br>**Beveiligingslezer** kan bevindingen bekijken.|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) China Gov<br>![No](./media/icons/no-icon.png) US Gov, andere overheden|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-kubernetes"></a>Wat zijn de voordelen van Azure Defender voor Kubernetes?

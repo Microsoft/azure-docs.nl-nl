@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/22/2020
+ms.date: 12/16/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 99375abbf8e9749712b878ea35c9bc034bedbc5e
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: a3a4c7a51f0d75b67465a83a2fbbf3ae8a141c4c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616141"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671162"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -78,7 +78,7 @@ Log Analytics kosten worden toegevoegd aan uw Azure-factuur. U kunt de details v
 
 ## <a name="viewing-log-analytics-usage-on-your-azure-bill"></a>Log Analytics gebruik op uw Azure-factuur weer geven 
 
-Azure biedt een groot aantal handige functies in de hub [Azure Cost Management en facturering](../../cost-management-billing/costs/quick-acm-cost-analysis.md?toc=%2fazure%2fbilling%2fTOC.json) . Zo kunt u met de functionaliteit ' cost analysis ' uw uitgaven voor Azure-resources weer geven. Voeg eerst een filter toe op resource type (aan micro soft. operationalinsights/Workspace voor Log Analytics en micro soft. operationalinsights/Workspace voor Log Analytics-clusters) zodat u uw Log Analytics uitgaven kunt volgen. Selecteer vervolgens ' groeperen op ' om ' meter categorie ' of ' meter ' te selecteren.  Houd er rekening mee dat andere services, zoals Azure Security Center en Azure-Sentinel, hun gebruik ook voor Log Analytics werkruimte resources kunnen factureren. Als u de toewijzing aan service naam wilt zien, kunt u de tabel weergave selecteren in plaats van een grafiek. 
+Azure biedt een groot aantal handige functies in de hub [Azure Cost Management en facturering](../../cost-management-billing/costs/quick-acm-cost-analysis.md?toc=%2fazure%2fbilling%2fTOC.json) . Zo kunt u met de functionaliteit ' cost analysis ' uw uitgaven voor Azure-resources weer geven. Voeg eerst een filter toe op resource type (aan micro soft. operationalinsights/Workspace voor Log Analytics en micro soft. operationalinsights/cluster for Log Analytics-clusters) zodat u uw Log Analytics uitgaven kunt volgen. Selecteer vervolgens ' groeperen op ' om ' meter categorie ' of ' meter ' te selecteren.  Houd er rekening mee dat andere services, zoals Azure Security Center en Azure-Sentinel, hun gebruik ook voor Log Analytics werkruimte resources kunnen factureren. Als u de toewijzing aan service naam wilt zien, kunt u de tabel weergave selecteren in plaats van een grafiek. 
 
 Meer informatie over uw gebruik kan worden verkregen door [uw gebruik te downloaden uit de Azure-portal](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md#download-usage-in-azure-portal). In de gedownloade spreadsheet kunt u het gebruik per Azure-resource (bijvoorbeeld Log Analytics-werkruimte) per dag zien. In dit Excel-werk blad kunt u het gebruik van uw Log Analytics-werk ruimten vinden door eerst te filteren op de kolom meter categorie om ' Log Analytics ' weer te geven. inzichten en analyses ' (gebruikt door enkele van de verouderde prijs categorieën) en ' Azure Monitor ' (gebruikt door prijs categorieën voor capaciteits reservering) en voegt vervolgens een filter toe aan de kolom ' instance ID ' die is ingesteld op ' bevat werk ruimte ' of ' contains cluster ' (de laatste voor het toevoegen van Log Analytics cluster gebruik). Het gebruik wordt weer gegeven in de kolom verbruikte hoeveelheid en de eenheid voor elk item wordt weer gegeven in de kolom eenheid.  Er is meer informatie beschikbaar om u te helpen [inzicht te krijgen in uw Microsoft Azure-factuur](../../cost-management-billing/understand/review-individual-bill.md). 
 
@@ -150,7 +150,7 @@ De retentie kan ook [via Azure Resource Manager worden ingesteld](../samples/res
 
 Werk ruimten met een Bewaar periode van 30 dagen kunnen de gegevens gedurende 31 dagen werkelijk bewaren. Als het van cruciaal belang is dat gegevens slechts gedurende 30 dagen worden bewaard, gebruikt u de Azure Resource Manager om de Bewaar periode in te stellen op 30 dagen en met de `immediatePurgeDataOn30Days` para meter.  
 
-Twee gegevens typen- `Usage` en `AzureActivity` --worden standaard gedurende 90 dagen bewaard en er worden geen kosten in rekening gebracht voor deze Bewaar periode van 90 dagen. Als de retentie van de werk ruimte groter is dan 90 dagen, wordt de Bewaar periode van deze gegevens typen ook verhoogd.  Deze gegevens typen zijn ook gratis van de kosten voor gegevens opname. 
+Twee gegevens typen- `Usage` en `AzureActivity` --worden standaard gedurende een minimum van 90 dagen bewaard en er worden geen kosten in rekening gebracht voor deze Bewaar periode van 90 dagen. Als de retentie van de werk ruimte groter is dan 90 dagen, wordt de Bewaar periode van deze gegevens typen ook verhoogd.  Deze gegevens typen zijn ook gratis van de kosten voor gegevens opname. 
 
 Gegevens typen van Application Insights resources (,,,,,,,, en) op basis van een werk ruimte `AppAvailabilityResults` `AppBrowserTimings` `AppDependencies` `AppExceptions` `AppEvents` `AppMetrics` `AppPageViews` `AppPerformanceCounters` `AppRequests` `AppSystemEvents` `AppTraces` worden ook standaard 90 dagen bewaard en er worden geen kosten in rekening gebracht voor de Bewaar periode van 90 dagen. De retentie kan worden aangepast met de functionaliteit voor het bewaren van gegevens typen. 
 
@@ -216,7 +216,7 @@ Zodra de dagelijkse limiet is bereikt, stopt het verzamelen van factureer bare g
 > Het dagelijks kapje kan het verzamelen van gegevens niet met precies het opgegeven Cap-niveau stoppen en er worden een aantal overtollige gegevens verwacht, met name als de werk ruimte grote hoeveel heden gegevens ontvangt. [Hieronder](#view-the-effect-of-the-daily-cap) vindt u een overzicht van de informatie die nuttig is voor het bestudeert van het dagelijkse Cap-gedrag. 
 
 > [!WARNING]
-> Het dagelijks kapje stopt niet het verzamelen van gegevens uit Azure Sentinal of Azure Security Center, met uitzonde ring van werk ruimten waarin Azure Security Center is geïnstalleerd vóór 19 juni 2017. 
+> Het dagelijks kapje stopt niet het verzamelen van gegevens typen die zijn opgenomen in de [Azure Security Center dagelijks per knoop punt](#log-analytics-and-security-center) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus, update en update Summary), met uitzonde ring van werk ruimten waarin Azure Security Center is geïnstalleerd vóór 19 juni 2017. 
 
 ### <a name="identify-what-daily-data-limit-to-define"></a>Identificeren welke dagelijkse gegevens limiet moet worden gedefinieerd
 
@@ -266,7 +266,7 @@ Om aan de slag te gaan, zijn hier de aanbevolen instellingen voor de waarschuwin
 - Naam van waarschuwings regel: dagelijkse gegevens limiet bereikt
 - Ernst: waarschuwing (Ernst 1)
 
-Zodra een waarschuwing is gedefinieerd en de limiet is bereikt, wordt er een waarschuwing geactiveerd en wordt de reactie uitgevoerd die is gedefinieerd in de actie groep. Dit kan uw team op de hoogte stellen via e-mail en SMS-berichten, of acties automatiseren met webhooks, Automation-runbooks of [integreren met een externe ITSM-oplossing](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#create-itsm-work-items-from-azure-alerts). 
+Zodra een waarschuwing is gedefinieerd en de limiet is bereikt, wordt er een waarschuwing geactiveerd en wordt de reactie uitgevoerd die is gedefinieerd in de actie groep. Dit kan uw team op de hoogte stellen via e-mail en SMS-berichten, of acties automatiseren met webhooks, Automation-runbooks of [integreren met een externe ITSM-oplossing](itsmc-definition.md#create-itsm-work-items-from-azure-alerts). 
 
 ## <a name="troubleshooting-why-usage-is-higher-than-expected"></a>Het oplossen van problemen met een hoger gebruik dan verwacht
 

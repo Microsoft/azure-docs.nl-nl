@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8bacb7a434cfa04dbdfdaf39d9fd3a0baab5f11a
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: b0a5547928bd7d19343c50e40ab9fcb2c335e893
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489809"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674528"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-postgresql-using-powershell"></a>Lees replica's maken en beheren in Azure Database for PostgreSQL met behulp van Power shell
 
@@ -60,7 +60,7 @@ Gebruik de **locatie** parameter om een lees replica te maken. In het volgende v
 
 ```azurepowershell-interactive
 Get-AzPostgreSqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
-  New-AzMariaDServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
+  New-AzPostgreSQLServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
 ```
 
 Ga naar het [artikel concepten van replica's lezen](concepts-read-replicas.md)voor meer informatie over de regio's die u kunt maken in de replica.
@@ -75,15 +75,23 @@ Lees replica's worden standaard gemaakt met dezelfde server configuratie als de 
 Voer de volgende opdracht uit om alle replica's voor een bepaalde primaire server weer te geven:
 
 ```azurepowershell-interactive
-Get-AzMariaDReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
+Get-AzPostgreSQLReplica -ResourceGroupName myresourcegroup -ServerName mydemoserver
 ```
 
-Voor de `Get-AzMariaDReplica` opdracht zijn de volgende para meters vereist:
+Voor de `Get-AzPostgreSQLReplica` opdracht zijn de volgende para meters vereist:
 
 | Instelling | Voorbeeldwaarde | Beschrijving  |
 | --- | --- | --- |
 | ResourceGroupName |  myResourceGroup |  De resource groep waar de replica-server wordt gemaakt.  |
 | ServerName | mydemoserver | De naam of ID van de primaire server. |
+
+### <a name="stop-a-replica-server"></a>Een replica server stoppen
+
+Als u een lees replica-server stopt, wordt de Lees replica gepromoot als onafhankelijke server. U kunt dit doen door de `Update-AzPostgreSqlServer` cmdlet uit te voeren en door de waarde ReplicationRole in te stellen op `None` .
+
+```azurepowershell-interactive
+Update-AzPostgreSqlServer -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -ReplicationRole None
+```
 
 ### <a name="delete-a-replica-server"></a>Een replica server verwijderen
 

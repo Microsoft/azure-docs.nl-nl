@@ -1,14 +1,14 @@
 ---
 title: Beleid implementeren dat kan worden hersteld
 description: Als u beleid wilt implementeren dat gebruikmaakt van een herstel taak via Azure Lighthouse, moet u een beheerde identiteit maken in de Tenant van de klant.
-ms.date: 08/12/2020
+ms.date: 12/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 998576d06d470c525a551463861f7a25d4ab9d8f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eb473fe2f589cf719e3944c887d46e75e9e7fdbf
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010092"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670488"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Een beleid implementeren dat kan worden hersteld binnen een gedelegeerd abonnement
 
@@ -41,7 +41,7 @@ In het onderstaande voor beeld ziet u een **principalId** die de rol beheerder v
 
 ## <a name="deploy-policies-that-can-be-remediated"></a>Beleid implementeren dat kan worden hersteld
 
-Nadat u de gebruiker met de vereiste machtigingen hebt gemaakt, zoals hierboven is beschreven, kan de gebruiker beleids regels implementeren die herstel taken gebruiken binnen de Tenant van de klant.
+Zodra u de gebruiker met de vereiste machtigingen hebt gemaakt, zoals hierboven wordt beschreven, kan die gebruiker beleids regels implementeren die gebruikmaken van herstel taken binnen gedelegeerde klant abonnementen.
 
 Stel bijvoorbeeld dat u Diagnostische gegevens wilt inschakelen op Azure Key Vault resources in de Tenant van de klant, zoals wordt geïllustreerd in dit voor [beeld](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/policy-enforce-keyvault-monitoring). Een gebruiker in de Tenant beheren met de juiste machtigingen (zoals hierboven beschreven) implementeert een [Azure Resource Manager sjabloon](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/policy-enforce-keyvault-monitoring/enforceAzureMonitoredKeyVault.json) om dit scenario in te scha kelen.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: Zhchia
-ms.openlocfilehash: b739cd50c4d4477d3622350a9a9c96b600794c7d
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 4eaac716d06b102a07872059af28da4986889caa
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632027"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673433"
 ---
 # <a name="tutorial-configure-bizagi-studio-for-digital-process-automation-for-automatic-user-provisioning"></a>Zelf studie: bizagi Studio configureren voor digitale proces automatisering voor automatische gebruikers inrichting
 
@@ -139,6 +139,8 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
    Meer informatie over het toevoegen van aangepaste kenmerken vindt u in [Customize Application Attributes](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
 
+> [!NOTE]
+> Alleen elementaire type-eigenschappen worden ondersteund (bijvoorbeeld String, integer, Boolean, DateTime, etc). De eigenschappen die zijn gekoppeld aan parametrische tabellen of meerdere typen, worden nog niet ondersteund.
 
 10. Zie voor het configureren van bereik filters de [zelf studie](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
 

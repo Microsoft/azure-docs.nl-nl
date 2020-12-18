@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 0435fe3946118d59d786dd3e6cec350a5ab4eee4
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 34af380d057ad47811e394da1e7a29198e102920
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046448"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672777"
 ---
 # <a name="iot-plug-and-play-bridge"></a>IoT Plug and Play-brug
 
@@ -29,63 +29,125 @@ IoT Plug en Play Bridge ondersteunt standaard de volgende typen rand apparatuur,
 
 |Rand apparatuur|Windows|Linux|
 |---------|---------|---------|
-|[Bluetooth LE](https://aka.ms/iot-pnp-bridge-bluetooth)       |Ja|Nee|
-|[Camera's](https://aka.ms/iot-pnp-bridge-camera)               |Ja|Nee|
-|[Modbus](https://aka.ms/iot-pnp-bridge-modbus)                |Ja|Ja|
-|[MQTT](https://aka.ms/iot-pnp-bridge-mqtt)                    |Ja|Ja|
-|[Wel](https://aka.ms/iot-pnp-bridge-serial)                |Ja|Ja|
-|[Windows USB-rand apparatuur](https://aka.ms/iot-pnp-bridge-usb)  |Ja|Niet van toepassing|
+|[Bluetooth-sensor adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/bluetooth_sensor_adapter.md) verbindt gedetecteerde Sens oren met Bluetooth-laag energie () ingeschakeld.       |Ja|Nee|
+|[Camera adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/camera_adapter.md) verbindt camera's met een Windows 10-apparaat.               |Ja|Nee|
+|[Modbus adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/modbus_adapters.md) verbindt Sens oren op een Modbus-apparaat.              |Ja|Ja|
+|[MQTT-adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/mqtt_adapter.md) verbindt apparaten die gebruikmaken van een MQTT-Broker.                  |Ja|Ja|
+|De [SerialPnP-adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/serialpnp/Readme.md) verbindt apparaten die communiceren via een seriële verbinding.               |Ja|Ja|
+|[Windows USB-rand apparatuur](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/coredevicehealth_adapter.md) maakt gebruik van een lijst met adapters die worden ondersteund door de adapter, om apparaten te verbinden die een specifieke hardware-id hebben.  |Ja|Niet van toepassing|
 
->[!Important]
->Ontwikkel aars kunnen de IoT Plug en Play-brug uitbreiden ter ondersteuning van aanvullende protocollen via de instructies in de **[documentatie voor IoT Plug en Play Bridge-ontwikkel aars](https://aka.ms/iot-pnp-bridge-dev-doc)**.
-
-## <a name="prerequisites"></a>Vereisten
-
-### <a name="os-platform"></a>OS-platform
-
-De volgende platformen en versies van het besturings systeem worden ondersteund:
-
-|Platform  |Ondersteunde versies  |
-|---------|---------|
-|Windows 10 |     Alle Windows Sku's worden ondersteund. Bijvoorbeeld: IoT Enter prise, Server, Desktop, IoT core. *Voor de functionaliteit voor camera status controle wordt 20H1 of hoger aanbevolen. Alle andere functies zijn beschikbaar op alle Windows 10-builds.*  |
-|Linux     |Getest en ondersteund op Ubuntu 18,04, de functionaliteit voor andere distributies is niet getest.         |
-||
-
-### <a name="hardware"></a>Hardware
-
-- Elk platform dat ondersteuning biedt voor de bovengenoemde Sku's en versies van het besturings systeem.
-- De rand apparaten en Sens oren van serie, USB, Bluetooth en camera worden standaard ondersteund. De IoT Plug en Play-brug kan worden uitgebreid ter ondersteuning van aangepaste rand apparatuur of sensors ([Zie de sectie rand apparatuur hierboven](#iot-plug-and-play-bridge)).
-
-### <a name="development-environment"></a>Ontwikkelomgeving
-
-U hebt het volgende nodig om de IoT Plug en Play-brug te bouwen, uit te breiden en te ontwikkelen:  
-
-- Een ontwikkel omgeving die ondersteuning biedt voor het compileren van C++, zoals [Visual Studio (Community, Professional of ENTER prise)](https://visualstudio.microsoft.com/downloads/). Zorg ervoor dat u de Desktop ontwikkeling met C++-werk belasting opneemt tijdens de installatie van Visual Studio.
-- [Cmake](https://cmake.org/download/) : als u cmake installeert, selecteert u de optie `Add CMake to the system PATH` .
-- Als u op Windows bouwt, moet u ook de Windows 17763 SDK downloaden: [https://developer.microsoft.com/windows/downloads/windows-10-sdk](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-- [Azure IOT hub apparaat C-SDK](https://github.com/Azure/azure-iot-sdk-c). Met de meegeleverde build-scripts in deze opslag plaats wordt automatisch de vereiste Azure IoT C-SDK voor u gekloond.
-
-### <a name="azure-iot-products-and-tools"></a>Azure IoT-producten en-Hulpprogram Ma's
-
-- **Azure IOT hub** : u hebt een [Azure IOT-hub](../iot-hub/index.yml) in uw Azure-abonnement nodig om uw apparaat te verbinden met. Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint. Als u geen IoT-hub hebt, [volgt u deze instructies om er een te maken](../iot-hub/iot-hub-create-using-cli.md).
-
-> [!Note]
-> IoT Plug en Play is momenteel beschikbaar in IoT-hubs die zijn gemaakt in de regio's VS - centraal, Europa - noord en Japan - oost. IoT Plug en Play-ondersteuning is niet opgenomen in de basislaag van IoT-hubs. Als u wilt communiceren met uw IoT Plug en Play-apparaat, kunt u het hulp programma Azure IoT Explorer gebruiken. [Download en installeer de nieuwste release van Azure IoT Explorer](./howto-use-iot-explorer.md) voor uw besturingssysteem.
+Zie voor meer informatie over het uitbreiden van de IoT Plug en Play-brug ter ondersteuning van extra protocollen voor apparaten [de iot Plug en Play-brug bouwen, implementeren en uitbreiden](howto-build-deploy-extend-pnp-bridge.md).
 
 ## <a name="iot-plug-and-play-bridge-architecture"></a>IoT Plug en Play Bridge-architectuur
 
-:::image type="content" source="media/concepts-iot-pnp-bridge/iot-pnp-bridge-components.png" alt-text="Aan de linkerkant zijn er een aantal bestaande Sens oren aangesloten (zowel bekabeld als draadloos) aan een Windows-of Linux-computer met IoT Plug en Play-brug. De IoT Plug en Play-brug maakt vervolgens verbinding met een IoT-hub aan de rechter kant":::
+:::image type="content" source="media/concepts-iot-pnp-bridge/iot-pnp-bridge-components.png" alt-text="Aan de linkerkant ziet u verschillende vakken met verschillende rand apparatuur die is gekoppeld aan een Windows-of Linux-PC met IoT Plug en Play-brug. Vanaf de bovenkant wordt een vak met configuratie punten in de richting van de brug aangeduid. De Bridge maakt vervolgens verbinding met een IoT-hub aan de rechter kant van het diagram.":::
+
+### <a name="iot-plug-and-play-bridge-adapters"></a>IoT Plug en Play-brug adapters
+
+IoT Plug en Play Bridge ondersteunt een set IoT Plug en Play Bridge-adapters voor verschillende typen apparaten. Een *adapter manifest* definieert de adapters statisch in een brug.
+
+Bridge-adapter beheer gebruikt het manifest om adapter functies te identificeren en aan te roepen. Adapter beheer roept alleen de functie Create aan op de brug adapters die vereist zijn voor de interface-onderdelen die worden vermeld in het configuratie bestand. Voor elk IoT-Plug en Play onderdeel wordt een adapter exemplaar gemaakt.
+
+Een brug adapter maakt en verkrijgt een digitale twee ledige interface-ingang. De adapter gebruikt deze ingang om de functionaliteit van het apparaat te binden aan de digitale twee.
+
+Met behulp van de informatie in het configuratie bestand gebruikt de brug adapter de volgende technieken om het volledige apparaat in te scha kelen voor digitale dubbele communicatie via de Bridge:
+
+- Hiermee wordt rechtstreeks een communicatie kanaal tot stand gebracht.
+- Hiermee maakt u een Watcher waarmee wordt gewacht tot een communicatie kanaal beschikbaar wordt.
+
+### <a name="configuration-file"></a>Configuratiebestand
+
+De IoT Plug en Play Bridge maakt gebruik van een JSON-configuratie bestand waarin het volgende wordt opgegeven:
+
+- Verbinding maken met een IoT hub of IoT Central toepassing: de opties zijn onder andere verbindings reeksen, verificatie parameters of Device Provisioning Service (DPS).
+- De locatie van de IoT Plug en Play-mogelijkheden modellen die de Bridge gebruikt. Het model definieert de mogelijkheden van een IoT Plug en Play-apparaat en is statisch en onveranderbaar.
+- Een lijst met IoT Plug en Play-interface onderdelen en de volgende informatie voor elk onderdeel:
+- De interface-ID en onderdeel naam.
+- De brug adapter die is vereist voor de interactie met het onderdeel.
+- Apparaatgegevens die de brug adapter nodig heeft om communicatie met het apparaat tot stand te brengen. Bijvoorbeeld hardware-ID of specifieke informatie voor een adapter, Interface of protocol.
+- Een optionele brug adapter subtype of interface configuratie als de adapter meerdere communicatie typen met vergelijk bare apparaten ondersteunt. In het voor beeld ziet u hoe een Bluetooth-sensor onderdeel kan worden geconfigureerd:
+
+    ```json
+    {
+      "_comment": "Component BLE sensor",
+      "pnp_bridge_component_name": "blesensor1",
+      "pnp_bridge_adapter_id": "bluetooth-sensor-pnp-adapter",
+      "pnp_bridge_adapter_config": {
+        "bluetooth_address": "267541100483311",
+        "blesensor_identity" : "Blesensor1"
+      }
+    }
+    ```
+
+- Een optionele lijst met para meters van de Global Bridge-adapter. De Bluetooth sensor Bridge-adapter heeft bijvoorbeeld een woorden lijst met ondersteunde configuraties. Een interface onderdeel dat de Bluetooth-sensor adapter vereist, kan een van de volgende configuraties kiezen als `blesensor_identity` :
+
+    ```json
+    {
+      "pnp_bridge_adapter_global_configs": {
+        "bluetooth-sensor-pnp-adapter": {
+          "Blesensor1" : {
+            "company_id": "0x499",
+            "endianness": "big",
+            "telemetry_descriptor": [
+              {
+                "telemetry_name": "humidity",
+                "data_parse_type": "uint8",
+                "data_offset": 1,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.5
+              },
+              {
+                "telemetry_name": "temperature",
+                "data_parse_type": "int8",
+                "data_offset": 2,
+                "conversion_bias": 0,
+                "conversion_coefficient": 1.0
+              },
+              {
+                "telemetry_name": "pressure",
+                "data_parse_type": "int16",
+                "data_offset": 4,
+                "conversion_bias": 0,
+                "conversion_coefficient": 1.0
+              },
+              {
+                "telemetry_name": "acceleration_x",
+                "data_parse_type": "int16",
+                "data_offset": 6,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              },
+              {
+                "telemetry_name": "acceleration_y",
+                "data_parse_type": "int16",
+                "data_offset": 8,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              },
+              {
+                "telemetry_name": "acceleration_z",
+                "data_parse_type": "int16",
+                "data_offset": 10,
+                "conversion_bias": 0,
+                "conversion_coefficient": 0.00980665
+              }
+            ]
+          }
+        }
+      }
+    }
+    ```
 
 ## <a name="download-iot-plug-and-play-bridge"></a>IoT Plug en Play-brug downloaden
 
-U kunt een vooraf ontwikkelde versie van de brug downloaden met ondersteunde adapters in [IoT Plug en Play Bridge-releases](https://aka.ms/iot-pnp-bridge-releases) en de lijst met assets voor de meest recente release uitvouwen. Down load de meest recente versie van de toepassing voor uw besturings systeem.
+U kunt een vooraf ontwikkelde versie van de brug downloaden met ondersteunde adapters in [IoT Plug en Play Bridge-releases](https://github.com/Azure/iot-plug-and-play-bridge/releases) en de lijst met assets voor de meest recente release uitvouwen. Down load de meest recente versie van de toepassing voor uw besturings systeem.
 
-U kunt ook de bron code van [IoT Plug en Play Bridge](https://aka.ms/bridge)downloaden en weer geven op github.
+U kunt ook de bron code van [IoT Plug en Play Bridge](https://github.com/Azure/iot-plug-and-play-bridge)downloaden en weer geven op github.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Nu u een overzicht hebt van de architectuur van IoT Plug en Play Bridge, moeten de volgende stappen worden uitgevoerd om meer te weten te komen over:
 
 - [IoT Plug en Play Bridge gebruiken](./howto-use-iot-pnp-bridge.md)
-- [Zie de naslag informatie voor GitHub-ontwikkel aars voor IoT Plug en Play-brug](https://aka.ms/iot-pnp-bridge-dev-doc)
-- [IoT Plug en Play-brug op GitHub](https://aka.ms/iotplugandplaybridge)
+- [IoT Plug en Play-brug bouwen, implementeren en uitbreiden](howto-build-deploy-extend-pnp-bridge.md)
+- [IoT Plug en Play-brug op GitHub](https://github.com/Azure/iot-plug-and-play-bridge)

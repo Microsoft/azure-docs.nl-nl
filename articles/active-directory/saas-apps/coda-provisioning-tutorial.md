@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: Zhchia
-ms.openlocfilehash: ea2f25d6b03f002448079b16bd261729807d8a03
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8df1588a78829252d55f82349d6889c754c989e6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96179692"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673222"
 ---
 # <a name="tutorial-configure-coda-for-automatic-user-provisioning"></a>Zelfstudie: Coda configureren voor automatische inrichting van gebruikers
 
@@ -93,7 +93,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 5. Voer in de sectie **Referenties voor beheerder** de tenant-URL voor Coda en het token voor geheim in die u in stap 2 hebt opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Coda. Als de verbinding mislukt, controleert u of het Coda-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
 
-    ![Schermopname met het dialoogvenster Beheerdersreferenties, waarin u uw Tenant U R L en Token voor geheim kunt invoeren.](./media/coda-provisioning-tutorial/provisioning.png)
+     ![Schermopname met het dialoogvenster Beheerdersreferenties, waarin u uw Tenant U R L en Token voor geheim kunt invoeren.](./media/coda-provisioning-tutorial/provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 

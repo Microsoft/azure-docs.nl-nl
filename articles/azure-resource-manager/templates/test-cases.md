@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 12/03/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: ff9ad659e15a88725e4c3905ab6c623fda7610fd
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 451323058ad743d6e26fc8bcea27d1b44c76f543
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600901"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674039"
 ---
 # <a name="default-test-cases-for-arm-template-test-toolkit"></a>Standaard test cases voor ARM-sjabloon test Toolkit
 
@@ -693,4 +693,5 @@ Het volgende voor beeld **mislukt** omdat er een [lijst *](template-functions-re
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie over het uitvoeren van de test Toolkit.
+- Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie over het uitvoeren van de test Toolkit.
+- Zie [Preview wijzigingen en Azure-resources valideren met behulp van wat als' en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die de test Toolkit gebruikt.

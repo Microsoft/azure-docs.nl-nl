@@ -12,12 +12,12 @@ ms.date: 12/01/2020
 ms.author: baselden
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 069cf348bb6d0432d02a8350bc0847c2b155f90a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0ca2ade1775d7224ce55ee1c51dfdd2ae417151e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498078"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672378"
 ---
 # <a name="azure-active-directory-deployment-plans"></a>Azure Active Directory-implementatieplannen
 Zoekt u end-to-end-richt lijnen voor het implementeren van Azure Active Directory (Azure AD)-mogelijkheden? Met Azure AD-implementatie plannen kunt u de bedrijfs waarde, plannings overwegingen en operationele procedures door lopen die nodig zijn om algemene Azure AD-mogelijkheden te implementeren.
@@ -29,7 +29,7 @@ Gebruik vanuit een van de plannings pagina's de afdruk functie van uw browser om
 
 | Mogelijkheid | Beschrijving|
 | -| -|
-| [Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)| Azure AD MFA (Multi-Factor Authentication) is een Microsoft-oplossing voor verificatie in twee stappen. Met behulp van door een beheerder goedgekeurde verificatiemethoden, helpt Azure AD MFA met het beveiligen van de toegang tot uw gegevens en toepassingen, terwijl tegelijkertijd aan de behoefte aan een eenvoudige aanmeldingsprocedure wordt voldaan. |
+| [Multi-Factor Authentication](../authentication/howto-mfa-getstarted.md)| Azure AD MFA (Multi-Factor Authentication) is een Microsoft-oplossing voor verificatie in twee stappen. Met behulp van door een beheerder goedgekeurde verificatiemethoden, helpt Azure AD MFA met het beveiligen van de toegang tot uw gegevens en toepassingen, terwijl tegelijkertijd aan de behoefte aan een eenvoudige aanmeldingsprocedure wordt voldaan. Bekijk deze video over [het configureren en afdwingen van multi-factor Authentication in uw Tenant](https://www.youtube.com/watch?v=qNndxl7gqVM)|
 | [Voorwaardelijke toegang](../conditional-access/plan-conditional-access.md)| Met voorwaardelijke toegang kunt u geautomatiseerde beslissingen voor toegangsbeheer implementeren voor wie toegang heeft tot uw cloud-apps op basis van voorwaarden. |
 | [Self-service voor wachtwoord opnieuw instellen](../authentication/howto-sspr-deployment.md)| Met selfservice voor wachtwoord herstel kunnen uw gebruikers hun wacht woord opnieuw instellen zonder tussen komst van de beheerder, wanneer en wanneer dat nodig is. |
 | [Zonder wachtwoord](../authentication/howto-authentication-passwordless-deployment.md) | Implementeer verificatie op basis van een wacht woord met behulp van de Microsoft Authenticator app-of FIDO2-beveiligings sleutels in uw organisatie |
@@ -39,7 +39,7 @@ Gebruik vanuit een van de plannings pagina's de afdruk functie van uw browser om
 | Mogelijkheid | Beschrijving|
 | -| - |
 | [Eenmalige aanmelding](../manage-apps/plan-sso-deployment.md)| Met eenmalige aanmelding kunnen uw gebruikers toegang krijgen tot de apps en bronnen die ze nodig hebben om zaken te doen terwijl ze zich slechts één keer aanmelden. Nadat ze zich hebben aangemeld, kunnen ze van Microsoft Office naar Sales Force naar interne toepassingen gaan zonder dat ze een tweede keer referenties hoeven in te voeren. |
-| [Toegangsvenster](../manage-apps/access-panel-deployment-plan.md)| Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen. |
+| [Toegangs venster](../manage-apps/access-panel-deployment-plan.md)| Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen. |
 | [Apparaten](../devices/plan-device-deployment.md) | Dit artikel helpt u bij het evalueren van de methoden om uw apparaat te integreren met Azure AD, het implementatie plan te kiezen en de belangrijkste koppelingen naar ondersteunde hulpprogram ma's voor Apparaatbeheer. |
 
 

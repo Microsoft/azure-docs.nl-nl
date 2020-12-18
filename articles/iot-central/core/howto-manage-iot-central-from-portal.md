@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 02/11/2020
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: 0802169898cad51e9a5d208e546a004f7ea7b3c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8cf8fdfe0c8eb557946baa95d0d8beb2b388baa5
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653329"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674443"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>IoT Central beheren via de Azure Portal
 
@@ -41,7 +41,7 @@ Vul alle velden in het formulier in. Dit formulier is vergelijkbaar met het form
 
 ![IoT Central formulier maken](media/howto-manage-iot-central-from-portal/image6a.png)
 
-De **locatie** is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Azure IoT Central is momenteel beschikbaar in de geografi **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk**en **Japan** . Wanneer u een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
+De **locatie** is de [geografie](https://azure.microsoft.com/global-infrastructure/geographies/) waar u de toepassing wilt maken. Gewoonlijk kiest u de locatie die zich het dichtst in de buurt van uw apparaten bevindt om de beste prestaties te verkrijgen. Azure IoT Central is momenteel beschikbaar in de geografi **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk** en **Japan** . Wanneer u een locatie hebt gekozen, kunt u de toepassing later niet meer naar een andere locatie verplaatsen.
 
 Nadat u alle velden hebt ingevuld, selecteert u **maken**.
 
@@ -50,7 +50,7 @@ Nadat u alle velden hebt ingevuld, selecteert u **maken**.
 Als u al een Azure IoT Central-toepassing hebt, kunt u deze verwijderen of verplaatsen naar een ander abonnement of een andere resource groep in de Azure Portal.
 
 > [!NOTE]
-> U kunt geen toepassingen zien die zijn gemaakt in het prijs plan gratis in de Azure Portal omdat deze niet zijn gekoppeld aan uw abonnement.
+> Voor toepassingen die zijn gemaakt met het *gratis* abonnement zijn geen Azure-abonnementen vereist en daarom vindt u deze niet in uw Azure-abonnement op de Azure Portal. U kunt alleen gratis apps uit de IoT Central Portal bekijken en beheren.
 
 Selecteer **alle resources** in de portal om aan de slag te gaan. Selecteer **verborgen typen weer geven** en typ de naam van uw toepassing in **filteren op naam** om deze te zoeken. Selecteer vervolgens de IoT Central toepassing die u wilt beheren.
 

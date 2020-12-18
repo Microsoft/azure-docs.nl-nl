@@ -2,23 +2,20 @@
 title: Live data (preview) weer geven met Azure Monitor voor containers | Microsoft Docs
 description: In dit artikel wordt een overzicht gegeven van de real-time weer gave van Kubernetes-logboeken, gebeurtenissen en pod-metrische gegevens zonder gebruik te maken van kubectl in Azure Monitor voor containers.
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 12/17/2020
 ms.custom: references_regions
-ms.openlocfilehash: 3bfc9aa0f0238d99d9336abe592fa721459f4220
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3655ff8e5879aa4113753b5529c1e484fb079401
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346803"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672865"
 ---
 # <a name="how-to-view-kubernetes-logs-events-and-pod-metrics-in-real-time"></a>Kubernetes-logboeken, gebeurtenissen en metrische gegevens over pod in realtime weer geven
 
 Azure Monitor voor containers bevat de functie Live data (preview). Dit is een geavanceerde diagnostische functie waarmee u toegang krijgt tot de AKS-container Logboeken (Kubernetes), gebeurtenissen en pod-metrische gegevens van de Azure-service. Hiermee wordt directe toegang tot `kubectl logs -c` , `kubectl get` gebeurtenissen en weer gegeven `kubectl top pods` . In een console venster worden de logboeken, gebeurtenissen en metrische gegevens weer gegeven die door de container-Engine zijn gegenereerd voor verdere hulp bij het oplossen van problemen in realtime.
 
 Dit artikel bevat een gedetailleerd overzicht en helpt u inzicht te krijgen in het gebruik van deze functie.
-
->[!NOTE]
->AKS-clusters die zijn ingeschakeld als [persoonlijke clusters](https://azure.microsoft.com/updates/aks-private-cluster/) , worden niet ondersteund met deze functie. Deze functie is afhankelijk van het rechtstreeks openen van de Kubernetes-API via een proxy server vanuit uw browser. Door netwerk beveiliging in te scha kelen, wordt dit verkeer geblokkeerd door de Kubernetes-API van deze proxy te blok keren.
 
 Lees onze [installatie handleiding](container-insights-livedata-setup.md)voor hulp bij het instellen of oplossen van problemen met de functie van live data (preview). Deze functie heeft rechtstreeks toegang tot de Kubernetes-API en aanvullende informatie over het verificatie model vindt u [hier](https://kubernetes.io/docs/concepts/overview/kubernetes-api/).
 

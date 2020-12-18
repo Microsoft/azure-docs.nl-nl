@@ -2,13 +2,13 @@
 title: Meerdere exemplaren van bronnen implementeren
 description: Gebruik kopieer bewerkingen en matrices in een Azure Resource Manager sjabloon (ARM-sjabloon) om het resource type meerdere keren te implementeren.
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: 47f3d693b84347973889a6003360d7113c427f4d
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.date: 12/17/2020
+ms.openlocfilehash: 7a894ee6a31a43dd8da3d84d88276824c6bbc9f7
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905907"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672828"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Resource iteratie in ARM-sjablonen
 
@@ -292,10 +292,9 @@ In de volgende voor beelden ziet u algemene scenario's voor het maken van meer d
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [zelf studie: meerdere resource-instanties maken met arm-sjablonen](template-tutorial-create-multiple-instances.md)om een zelf studie te door lopen.
+* Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die betrekking heeft op het kopiëren van de resource.
 * Zie voor andere toepassingen van het element copy:
   * [Eigenschaps herhaling in ARM-sjablonen](copy-properties.md)
   * [Variabele herhaling in ARM-sjablonen](copy-variables.md)
   * [Uitvoer herhaling in ARM-sjablonen](copy-outputs.md)
 * Zie [using Copy](linked-templates.md#using-copy)voor informatie over het gebruik van kopiëren met geneste sjablonen.
-* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
-* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/16/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 79a99d9f0ca117d8f47d56d76399210a72b91bb7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d77e145cabcef2931d5fe6e76599da7931e576e8
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951652"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97669156"
 ---
 # <a name="define-an-id-token-hint-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor ID-token hints definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -34,12 +34,12 @@ Met id_token_hint stelt de uitgever van het token (een Relying Party-app of een 
 
 De id_token_hint moet een geldig JWT-token zijn. De volgende tabel geeft een lijst van de claims die verplicht zijn. Aanvullende claims zijn optioneel.
 
-| Name | Claim | Voorbeeldwaarde | Beschrijving |
+| Naam | Claim | Voorbeeldwaarde | Beschrijving |
 | ---- | ----- | ------------- | ----------- |
-| Doelgroep | `aud` | `a489fc44-3cc0-4a78-92f6-e413cd853eae` | Identificeert de beoogde ontvanger van het token. Dit is een wille keurige teken reeks die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wordt het token geweigerd als het niet overeenkomt.  |
-| Verlener | `iss` |`https://localhost` | Identificeert de beveiligings token service (token uitgever). Dit is een wille keurige URI die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wordt het token geweigerd als het niet overeenkomt.  |
-| Verloop tijd | `exp` | `1600087315` | Het tijdstip waarop het token ongeldig wordt, uitgedrukt in de epoche-tijd. Azure AD B2C valideert deze claim niet. |
-| Niet voor | `nbf` | `1599482515` | Het tijdstip waarop het token geldig wordt, uitgedrukt in de epoche-tijd. Deze tijd is doorgaans hetzelfde als het tijdstip waarop het token is uitgegeven. Azure AD B2C valideert deze claim niet. |
+| Doelgroep | `aud` | `a489fc44-3cc0-4a78-92f6-e413cd853eae` | Identificeert de beoogde ontvanger van het token. De doel groep is een wille keurige teken reeks die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wijst het token af als het niet overeenkomt.  |
+| Verlener | `iss` |`https://localhost` | Identificeert de beveiligings token service (token uitgever). De uitgever is een wille keurige URI die is gedefinieerd door de uitgever van het token. Azure AD B2C valideert deze waarde en wijst het token af als het niet overeenkomt.  |
+| Verloop tijd | `exp` | `1600087315` | Het tijdstip waarop het token ongeldig wordt, uitgedrukt in de epoche-tijd. Azure AD B2C valideert deze waarde en wijst het token af als het token is verlopen.|
+| Niet voor | `nbf` | `1599482515` | Het tijdstip waarop het token geldig wordt, uitgedrukt in de epoche-tijd. Deze tijd is doorgaans hetzelfde als het tijdstip waarop het token is uitgegeven. Azure AD B2C valideert deze waarde en wijst het token af als de levens duur van het token ongeldig is. |
 
  Het volgende token is een voor beeld van een geldig ID-token:
 
@@ -85,7 +85,7 @@ De volgende meta gegevens zijn relevant voor het gebruik van symmetrische sleute
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
 | uitgever | Ja | Identificeert de beveiligings token service (token uitgever). Deze waarde moet gelijk zijn aan de `iss` claim binnen de claim van de JWT-token. | 
-| IdTokenAudience | Ja | Identificeert de beoogde ontvanger van het token. Moet gelijk zijn aan de `aud` claim met de JWT-token claim. | 
+| IdTokenAudience | Ja | Identificeert de beoogde ontvanger van het token. Moet gelijk zijn aan de `aud` claim binnen de JWT-token claim. | 
 
 De volgende meta gegevens zijn relevant voor het gebruik van een asymmetrische sleutel. 
 
@@ -93,7 +93,7 @@ De volgende meta gegevens zijn relevant voor het gebruik van een asymmetrische s
 | --------- | -------- | ----------- |
 | METAGEGEVENSARCHIEFMETHODE| Ja | Een URL die verwijst naar een configuratie document voor de certificaat Uitgever, dat ook wel een OpenID Connect goed bekend configuratie-eind punt wordt genoemd.   |
 | uitgever | Nee | Identificeert de beveiligings token service (token uitgever). Deze waarde kan worden gebruikt om de waarde die is geconfigureerd in de meta gegevens te overschrijven en moet identiek zijn aan de `iss` claim binnen de JWT-token claim. |  
-| IdTokenAudience | Nee | Identificeert de beoogde ontvanger van het token. Moet gelijk zijn aan de `aud` claim met de JWT-token claim. |  
+| IdTokenAudience | Nee | Identificeert de beoogde ontvanger van het token. Moet gelijk zijn aan de `aud` claim binnen de JWT-token claim. |  
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 
@@ -272,7 +272,7 @@ Voor zowel symmetrische als asymmetrische benaderingen `id_token_hint` wordt het
     </RelyingParty>
     ```
 
-Afhankelijk van uw bedrijfs vereisten moet u mogelijk token validaties toevoegen, bijvoorbeeld om het token verloop te controleren, de indeling van het e-mail adres en nog veel meer. Om dit te doen, moet u de indelings stappen voor het aanroepen van een [technische profiel voor claim transformatie](claims-transformation-technical-profile.md)toevoegen. Voeg ook een [zelf-bevestigd technisch profiel](self-asserted-technical-profile.md) toe om een fout bericht weer te geven. 
+Afhankelijk van uw bedrijfs vereisten moet u mogelijk token validaties toevoegen, bijvoorbeeld de indeling van het e-mail adres controleren. Om dit te doen, moet u de indelings stappen voor het aanroepen van een [technische profiel voor claim transformatie](claims-transformation-technical-profile.md)toevoegen. Voeg ook een [zelf-bevestigd technisch profiel](self-asserted-technical-profile.md) toe om een fout bericht weer te geven. 
 
 ### <a name="create-and-sign-a-token"></a>Een token maken en ondertekenen
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: a87a08db672c459138fc1efd865332dc0f19944e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7b4dd01b74f81318338196a40949d339f13d16da
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586588"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673296"
 ---
 # <a name="tutorial-configure-adobe-identity-management-for-automatic-user-provisioning"></a>Zelf studie: Adobe Identity Management configureren voor het automatisch inrichten van gebruikers
 
@@ -57,15 +57,15 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 2. Klik op **Sync toevoegen**.
 
-      ![Toevoegen](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
+    ![Toevoegen](media/adobe-identity-management-provisioning-tutorial/add-sync.png)
 
 3. Selecteer **gebruikers synchroniseren van Microsoft Azure** en klik op **volgende**.
 
-      ![Scherm afbeelding met de selectie ' gebruikers synchroniseren van Microsoft Azure Active Directory ' geselecteerd.](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
+    ![Scherm afbeelding met de selectie ' gebruikers synchroniseren van Microsoft Azure Active Directory ' geselecteerd.](media/adobe-identity-management-provisioning-tutorial/sync-users.png)
 
 4. Kopieer de Tenant- **URL** en het **geheime token** en sla deze op. Deze waarden worden ingevoerd in de velden **Tenant-URL** en **geheim-token** op het tabblad inrichten van uw Adobe Identity Management-toepassing in de Azure Portal.
 
-      ![Synchroniseren](media/adobe-identity-management-provisioning-tutorial/token.png)
+    ![Synchroniseren](media/adobe-identity-management-provisioning-tutorial/token.png)
 
 ## <a name="step-3-add-adobe-identity-management-from-the-azure-ad-application-gallery"></a>Stap 3. Adobe Identity Management toevoegen vanuit de Azure AD-toepassings galerie
 

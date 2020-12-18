@@ -12,12 +12,12 @@ ms.date: 8/11/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: c9fbf6990f789bdb0edb1cf45885003569d4f6a8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: a8c9a15761a4b37dfcf5ba7cc4cf046390092145
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653228"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672142"
 ---
 # <a name="signing-key-rollover-in-microsoft-identity-platform"></a>Rollover van de handtekening sleutel in het micro soft Identity-platform
 In dit artikel wordt beschreven wat u moet weten over de open bare sleutels die worden gebruikt door micro soft Identity platform voor het ondertekenen van beveiligings tokens. Het is belang rijk te weten dat deze sleutels periodiek worden doorgevoerd en kan in een nood geval direct worden doorgevoerd. Alle toepassingen die gebruikmaken van het micro soft-identiteits platform, moeten het proces voor sleutel rollover programmatisch kunnen afhandelen. Ga verder met lezen om te begrijpen hoe de sleutels werken, hoe u de invloed van de rollover op uw toepassing kunt beoordelen en hoe u uw toepassing kunt bijwerken of een periodiek hand matig rollover proces kunt instellen voor het afhandelen van Key rollover, indien nodig.
@@ -68,28 +68,30 @@ De functie voor verificatie/autorisatie van Azure-app Services (EasyAuth) heeft 
 ### <a name="web-applications--apis-protecting-resources-using-net-owin-openid-connect-ws-fed-or-windowsazureactivedirectorybearerauthentication-middleware"></a><a name="owin"></a>Webtoepassingen/Api's die resources beveiligen met behulp van .NET OWIN OpenID Connect Connect, WS-Fed of WindowsAzureActiveDirectoryBearerAuthentication middleware
 Als uw toepassing gebruikmaakt van de .NET OWIN OpenID Connect Connect, WS-Fed of WindowsAzureActiveDirectoryBearerAuthentication middleware, beschikt deze al over de benodigde logica om de sleutel rollover automatisch te verwerken.
 
-U kunt controleren of uw toepassing een van deze gebruikt door te zoeken naar een van de volgende fragmenten in de Startup.cs of Startup.Auth.cs van uw toepassing
+U kunt controleren of uw toepassing een van deze gebruikt door te zoeken naar een van de volgende fragmenten in de Startup.cs-of Startup.Auth.cs-bestanden van uw toepassing.
 
-```
+```csharp
 app.UseOpenIdConnectAuthentication(
-     new OpenIdConnectAuthenticationOptions
-     {
-         // ...
-     });
+    new OpenIdConnectAuthenticationOptions
+    {
+        // ...
+    });
 ```
-```
+
+```csharp
 app.UseWsFederationAuthentication(
     new WsFederationAuthenticationOptions
     {
-     // ...
-     });
+        // ...
+    });
 ```
-```
+
+```csharp
 app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-     new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-     {
-     // ...
-     });
+    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+    {
+        // ...
+    });
 ```
 
 ### <a name="web-applications--apis-protecting-resources-using-net-core-openid-connect-or--jwtbearerauthentication-middleware"></a><a name="owincore"></a>Webtoepassingen/Api's die resources beveiligen met behulp van .NET core OpenID Connect Connect of JwtBearerAuthentication middleware

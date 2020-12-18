@@ -5,12 +5,12 @@ ms.service: iot-pnp
 ms.topic: include
 ms.date: 03/17/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 3ac72360db5fb3d075b4caa3208f372f22441c7b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ea5d4ef26fb14e22b871bb4bfa1054cb749d38e8
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755734"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673019"
 ---
 ## <a name="prepare-an-iot-hub"></a>Een IoT-hub voorbereiden
 
@@ -34,9 +34,6 @@ az group create --name my-pnp-resourcegroup \
 az iot hub create --name <YourIoTHubName> \
     --resource-group my-pnp-resourcegroup --sku F1
 ```
-
-> [!NOTE]
-> IoT Plug en Play is momenteel beschikbaar in IoT-hubs die zijn gemaakt in de regio's VS - centraal, Europa - noord en Japan - oost. IoT Plug en Play-ondersteuning is niet opgenomen in de basislaag van IoT-hubs.
 
 Voer de volgende opdracht uit om de apparaat-id in uw IoT-hub te maken. Vervang de tijdelijke aanduidingen `<YourIoTHubName>` en `<YourDeviceID>` door uw eigen _IoT Hub-naam_ en een _apparaat-id_ van uw keuze.
 

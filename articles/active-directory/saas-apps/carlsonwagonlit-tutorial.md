@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 9c27139e2dca37c1ff8d963e1e8cdb5de682d39d
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 86c2d9585abd546acb3efb22256d3f3b70bfb972
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302943"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674392"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Zelfstudie: Azure Active Directory-integratie met Carlson Wagonlit Travel
 
@@ -63,7 +63,7 @@ Voor het configureren van de integratie van Carlson Wagonlit Travel in Azure Act
 
 4. Typ in het zoekvak **Carlson Wagonlit Travel**, selecteer **Carlson Wagonlit Travel** uit het resultatendeelvenster en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Carlson Wagonlit Travel in de lijst met resultaten](common/search-new-app.png)
+    ![Carlson Wagonlit Travel in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -138,7 +138,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 

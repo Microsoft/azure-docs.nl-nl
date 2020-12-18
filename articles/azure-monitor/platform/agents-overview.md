@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2020
-ms.openlocfilehash: 9c453219638b9586d4ad2cc2a89311b1f2bdeefe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8b9a79ee32d7a81fee64e40b85272877b7d87589
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450101"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674195"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Overzicht van Azure Monitor agents
 
@@ -32,7 +32,7 @@ De volgende tabellen bieden een snelle vergelijking van de Azure Monitor agents 
 
 ### <a name="windows-agents"></a>Windows-agents
 
-| | Azure Monitor-agent (preview-versie) | Diagnostiek<br>extensie (WAD) | Log Analytics<br>agent | Afhankelijkheid<br>agent |
+| | Azure Monitor-agent (preview) | Diagnostiek<br>extensie (WAD) | Log Analytics<br>agent | Afhankelijkheid<br>agent |
 |:---|:---|:---|:---|:---|
 | **Omgevingen worden ondersteund** | Azure<br>Andere Cloud (Azure-boog)<br>On-premises (Azure-boog)  | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | 
 | **Agent vereisten**  | Geen | Geen | Geen | Vereist Log Analytics-agent |
@@ -42,7 +42,7 @@ De volgende tabellen bieden een snelle vergelijking van de Azure Monitor agents 
 
 ### <a name="linux-agents"></a>Linux-agents
 
-| | Azure Monitor-agent (preview-versie) | Diagnostiek<br>extensie (LAD) | Telegrafie<br>agent | Log Analytics<br>agent | Afhankelijkheid<br>agent |
+| | Azure Monitor-agent (preview) | Diagnostiek<br>extensie (LAD) | Telegrafie<br>agent | Log Analytics<br>agent | Afhankelijkheid<br>agent |
 |:---|:---|:---|:---|:---|:---|
 | **Omgevingen worden ondersteund** | Azure<br>Andere Cloud (Azure-boog)<br>On-premises (Arc-boog) | Azure | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises | Azure<br>Andere Cloud<br>On-premises |
 | **Agent vereisten**  | Geen | Geen | Geen | Geen | Vereist Log Analytics-agent |
@@ -51,7 +51,7 @@ De volgende tabellen bieden een snelle vergelijking van de Azure Monitor agents 
 | **Services en**<br>**functies**<br>**geboden** | Log Analytics<br>Metrics-explorer | | Metrics-explorer | Azure Monitor voor virtuele machines<br>Log Analytics<br>Azure Automation<br>Azure Security Center<br>Azure Sentinel | Azure Monitor voor virtuele machines<br>Servicetoewijzing |
 
 
-## <a name="azure-monitor-agent-preview"></a>Azure Monitor-agent (preview-versie)
+## <a name="azure-monitor-agent-preview"></a>Azure Monitor-agent (preview)
 De [Azure monitor-agent](azure-monitor-agent-overview.md) bevindt zich momenteel in de preview-versie en vervangt de log Analytics agent en de telegrafie agent voor virtuele Windows-en Linux-machines. Het kan gegevens verzenden naar Azure Monitor logboeken en Azure Monitor metrische gegevens en gebruikt [gegevensverzamelings regels (DCR)](data-collection-rule-overview.md) die een meer schaal bare methode bieden voor het configureren van gegevens verzameling en-bestemmingen voor elke agent.
 
 Gebruik de Azure Monitor agent als u het volgende moet doen:
@@ -169,6 +169,7 @@ De volgende tabellen geven een lijst van de besturings systemen die worden onder
 | Debian 8                                                 |   | X | X | X |
 | Debian 7                                                 |   |   |   | X |
 | OpenSUSE 13.1 +                                           |   |   |   | X |
+| Oracle Linux 8                                           |   | X |   |   |
 | Oracle Linux 7                                           | X | X |   | X |
 | Oracle Linux 6                                           |   | X |   |   |
 | Oracle Linux 6.4 +                                        |   | X |   | X |

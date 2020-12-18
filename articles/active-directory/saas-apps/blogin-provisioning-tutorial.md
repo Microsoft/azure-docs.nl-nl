@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.author: Zhchia
-ms.openlocfilehash: 3d5becd92d78432873eb640ea6c4bbf588739e67
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5d75aeb4771d49266e6cb09286b026054319591b
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180163"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674239"
 ---
 # <a name="tutorial-configure-blogin-for-automatic-user-provisioning"></a>Zelfstudie: BlogIn configureren voor automatische gebruikersinrichting
 
@@ -39,7 +39,7 @@ In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Bl
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md). 
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
 * Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van de inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
 * Een gebruikersaccount in BlogIn met de rol van beheerder.
 

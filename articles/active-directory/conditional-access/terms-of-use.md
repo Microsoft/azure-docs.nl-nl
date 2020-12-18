@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e8731312ee43930e0f2abcf81228c21bebfdb1f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 399cbef4de91623ada1c38de7c6148d22fde94c7
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653721"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672397"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Gebruiks voorwaarden van Azure Active Directory
 
@@ -74,11 +74,11 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 1. Meld u aan bij Azure als globale beheerder, beveiligings beheerder of beheerder van de voorwaardelijke toegang.
 1. Navigeer naar **Gebruiksrechtovereenkomst** op [https://aka.ms/catou](https://aka.ms/catou).
 
-   ![Voorwaardelijke toegang-Blade Gebruiksvoorwaarden](./media/terms-of-use/tou-blade.png)
+    ![Voorwaardelijke toegang-Blade Gebruiksvoorwaarden](./media/terms-of-use/tou-blade.png)
 
 1. Klik op **Nieuwe voorwaarden**.
 
-   ![Het deel venster nieuwe gebruiks voorwaarden om uw gebruiksrecht overeenkomst op te geven](./media/terms-of-use/new-tou.png)
+    ![Het deel venster nieuwe gebruiks voorwaarden om uw gebruiksrecht overeenkomst op te geven](./media/terms-of-use/new-tou.png)
 
 1. Voer in het vak **naam** een naam in voor de gebruiks voorwaarden die worden gebruikt in de Azure Portal.
 1. Voer in het vak **weergave naam** een titel in die gebruikers zien wanneer ze zich aanmelden.
@@ -88,7 +88,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 1. Als eind gebruikers de gebruiks voorwaarden moeten accepteren op elk apparaat waartoe ze toegang hebben, stelt u **gebruikers verplicht om op elk apparaat** in te stemmen **.** Gebruikers kunnen verplicht zijn om extra toepassingen te installeren als deze optie is ingeschakeld. Zie [gebruiks voorwaarden per apparaat](#per-device-terms-of-use)voor meer informatie.
 1. Als u de voor waarden voor het gebruik van de gebruiksrecht overeenkomst volgens een planning wilt laten verlopen, stelt u **verlopende berichten** **in op aan.** Als deze functie is ingesteld op on, worden er twee aanvullende schema-instellingen weer gegeven.
 
-   ![Instellingen voor verlopen verloopt om de begin datum, frequentie en duur in te stellen](./media/terms-of-use/expire-consents.png)
+    ![Instellingen voor verlopen verloopt om de begin datum, frequentie en duur in te stellen](./media/terms-of-use/expire-consents.png)
 
 1. Gebruik de instellingen **verloopt op basis van begin datum** en **frequentie** om de planning op te geven voor de gebruiks voorwaarden. In de volgende tabel ziet u het resultaat voor enkele voor beelden van instellingen:
 
@@ -115,7 +115,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
 1. Gebruik onder **voorwaardelijke toegang** de lijst **afdwingen met beleids sjablonen voor voorwaardelijke toegang** om de sjabloon te selecteren voor het afdwingen van de gebruiks voorwaarden.
 
-   ![De vervolg keuzelijst voorwaardelijke toegang om een beleids sjabloon te selecteren](./media/terms-of-use/conditional-access-templates.png)
+    ![De vervolg keuzelijst voorwaardelijke toegang om een beleids sjabloon te selecteren](./media/terms-of-use/conditional-access-templates.png)
 
    | Template | Beschrijving |
    | --- | --- |
@@ -131,7 +131,7 @@ Wanneer u het document voor de gebruiks voorwaarden hebt voltooid, gebruikt u de
 
 1. Klik op **Maken**.
 
-   Als u een aangepaste sjabloon voor voorwaardelijke toegang hebt geselecteerd, wordt er een nieuw scherm weer gegeven waarin u het aangepaste beleid voor voorwaardelijke toegang kunt maken.
+    Als u een aangepaste sjabloon voor voorwaardelijke toegang hebt geselecteerd, wordt er een nieuw scherm weer gegeven waarin u het aangepaste beleid voor voorwaardelijke toegang kunt maken.
 
    ![Het deel venster nieuwe voorwaardelijke toegang als u de sjabloon voor het aangepaste beleid voor voorwaardelijke toegang hebt gekozen](./media/terms-of-use/custom-policy.png)
 
@@ -145,15 +145,15 @@ In de Gebruiksrechtovereenkomst-blade ziet u de aantallen gebruikers die al dan 
 
 1. Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op [https://aka.ms/catou](https://aka.ms/catou).
 
-   ![Gebruiksvoorwaarden Blade met vermelding van het aantal gebruikers weer geven dat is geaccepteerd en geweigerd](./media/terms-of-use/view-tou.png)
+    ![Gebruiksvoorwaarden Blade met vermelding van het aantal gebruikers weer geven dat is geaccepteerd en geweigerd](./media/terms-of-use/view-tou.png)
 
 1. Voor gebruiks voorwaarden klikt u op de nummers onder **geaccepteerd** of **geweigerd** om de huidige status voor gebruikers weer te geven.
 
-   ![Gebruiksvoorwaarden deel venster met toestemmingen worden de gebruikers weer gegeven die zijn geaccepteerd](./media/terms-of-use/accepted-tou.png)
+    ![Gebruiksvoorwaarden deel venster met toestemmingen worden de gebruikers weer gegeven die zijn geaccepteerd](./media/terms-of-use/accepted-tou.png)
 
 1. Als u de geschiedenis voor een afzonderlijke gebruiker wilt weer geven, klikt u op het weglatings teken (**...**) en bekijkt u de **geschiedenis**.
 
-   ![Context menu Geschiedenis voor een gebruiker weer geven](./media/terms-of-use/view-history-menu.png)
+    ![Context menu Geschiedenis voor een gebruiker weer geven](./media/terms-of-use/view-history-menu.png)
 
    In het deel venster geschiedenis weer geven ziet u een geschiedenis van alle geaccepteerde, geweigerde en verlopen.
 
@@ -169,11 +169,11 @@ Gebruik de volgende procedure om aan de slag te gaan met Azure AD-audit logboeke
 1. Selecteer een gebruiks voorwaarden.
 1. Klik op **Auditlogboeken weergeven**.
 
-   ![Gebruiksvoorwaarden Blade met de optie controle logboeken weer geven gemarkeerd](./media/terms-of-use/audit-tou.png)
+    ![Gebruiksvoorwaarden Blade met de optie controle logboeken weer geven gemarkeerd](./media/terms-of-use/audit-tou.png)
 
 1. In het scherm controle logboeken van Azure AD kunt u de gegevens filteren met behulp van de opgegeven lijsten om specifieke controle logboek gegevens te richten.
 
-   U kunt ook op **Downloaden** klikken om de informatie te downloaden naar een CSV-bestand voor lokaal gebruik.
+    U kunt ook op **Downloaden** klikken om de informatie te downloaden naar een CSV-bestand voor lokaal gebruik.
 
    ![Controle logboeken van Azure AD scherm datum, doel beleid, geïnitieerd door en activiteit](./media/terms-of-use/audit-logs-tou.png)
 
@@ -204,11 +204,11 @@ Gebruikers kunnen de gebruiks voorwaarden bekijken en bekijken die ze hebben gea
 1. Meld u aan bij [https://myapps.microsoft.com](https://myapps.microsoft.com).
 1. Klik in de rechter bovenhoek op uw naam en selecteer **profiel**.
 
-   ![MyApps-site met het deel venster van de gebruiker geopend](./media/terms-of-use/tou14.png)
+    ![MyApps-site met het deel venster van de gebruiker geopend](./media/terms-of-use/tou14.png)
 
 1. Klik in uw profielpagina op **Gebruiksvoorwaarden controleren**.
 
-   ![Profiel pagina voor een gebruiker met de koppeling beoordelings voorwaarden van gebruik](./media/terms-of-use/tou13a.png)
+    ![Profiel pagina voor een gebruiker met de koppeling beoordelings voorwaarden van gebruik](./media/terms-of-use/tou13a.png)
 
 1. Vanaf hier kunt u de gebruiksrechtovereenkomst bekijken die u hebt geaccepteerd.
 
@@ -220,11 +220,11 @@ U kunt enkele details van de gebruiks voorwaarden bewerken, maar niet wijzigen v
 1. Selecteer de gebruiks voorwaarden die u wilt bewerken.
 1. Klik op **voor waarden bewerken**.
 1. In het deel venster gebruiks voorwaarden bewerken kunt u het volgende wijzigen:
-     - **Naam** : dit is de interne naam van de gebruiks voorwaarden die niet worden gedeeld met eind gebruikers
-     - **Weergave naam** : dit is de naam die eind gebruikers kunnen zien bij het bekijken van de gebruiks voorwaarden
-     - **Gebruikers moeten de gebruiks voorwaarden uitvouwen** : als u deze optie instelt **op aan** , wordt het einde van het document uitgevouwen voordat het wordt geaccepteerd.
-     - Evaluatie U kunt **een bestaand gebruiks document bijwerken**
-     - U kunt een taal toevoegen aan een bestaande gebruiks voorwaarden
+    - **Naam** : dit is de interne naam van de gebruiks voorwaarden die niet worden gedeeld met eind gebruikers
+    - **Weergave naam** : dit is de naam die eind gebruikers kunnen zien bij het bekijken van de gebruiks voorwaarden
+    - **Gebruikers moeten de gebruiks voorwaarden uitvouwen** : als u deze optie instelt **op aan** , wordt het einde van het document uitgevouwen voordat het wordt geaccepteerd.
+    - Evaluatie U kunt **een bestaand gebruiks document bijwerken**
+    - U kunt een taal toevoegen aan een bestaande gebruiks voorwaarden
 
    Als er andere instellingen zijn die u wilt wijzigen, zoals een PDF-document, moet u gebruikers toestemming geven op elk apparaat, verlopend en verlopen, duur vóór heracceptatie of beleid voor voorwaardelijke toegang. u kunt ook een nieuwe gebruiks voorwaarden maken.
 
@@ -279,7 +279,7 @@ In de volgende procedure wordt beschreven hoe u een taal voor de gebruiks voorwa
 1. Klik onder aan de pagina op **taal toevoegen** .
 1. Upload uw gelokaliseerde PDF in het deel venster taal voor de gebruiks voorwaarden toevoegen en selecteer de taal.
 
-   ![Gebruiksvoorwaarden geselecteerd en toont het tabblad talen in het detail venster](./media/terms-of-use/select-language.png)
+    ![Gebruiksvoorwaarden geselecteerd en toont het tabblad talen in het detail venster](./media/terms-of-use/select-language.png)
 
 1. Klik op **taal toevoegen**.
 1. Klik op **Opslaan**.
@@ -340,7 +340,7 @@ U kunt oude gebruiks voorwaarden verwijderen met behulp van de volgende procedur
 1. Klik op **Gebruiksvoorwaarden verwijderen**.
 1. Klik in het bericht waarin u wordt gevraagd of u wilt doorgaan op **Ja**.
 
-   ![Bericht dat vraagt om bevestiging voor het verwijderen van de gebruiks voorwaarden](./media/terms-of-use/delete-tou.png)
+    ![Bericht dat vraagt om bevestiging voor het verwijderen van de gebruiks voorwaarden](./media/terms-of-use/delete-tou.png)
 
    Het is niet meer mogelijk om uw gebruiks voorwaarden te zien.
 

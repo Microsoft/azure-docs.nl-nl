@@ -11,12 +11,12 @@ ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4956d11ea2a4b011a792827357c3f4627058ead9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1f0c94ba6fb9ee5ab019458043095271123e325e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97651987"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671009"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Vereisten voor Azure AD Connect-cloudinrichting
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) verbinden met Cloud inrichting als uw identiteits oplossing.
@@ -62,14 +62,11 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
     > | 12 | 4 GB |
     > | 18 | 5,5 GB|
     > | 28 | 10 + GB|
-    >
-    > 
 
 2. Het Power shell-uitvoerings beleid op de lokale server moet worden ingesteld op niet-gedefinieerde of RemoteSigned.
 
 3. Als er zich een firewall tussen uw servers en Azure AD bevindt, configureert u de volgende items:
-
-   - Zorg ervoor dat agenten *uitgaande* aanvragen voor Azure AD via de volgende poorten kunnen maken:
+    - Zorg ervoor dat agenten *uitgaande* aanvragen voor Azure AD via de volgende poorten kunnen maken:
 
       | Poortnummer | Hoe dat wordt gebruikt |
       | --- | --- |
@@ -78,13 +75,13 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
       |**8082**|Vereist voor de installatie en als u de beheer-API wilt configureren.  Deze poort kan worden verwijderd zodra de agent is geïnstalleerd en als u geen gebruik maakt van de API.   |
       | **8080** (optioneel) | Agents rapporteren hun status elke 10 minuten via poort 8080, als poort 443 niet beschikbaar is. Deze status wordt weer gegeven in de Azure AD-Portal. |
 
-   - Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
-   - Als u met uw firewall of proxy veilige achtervoegsels kunt opgeven, voegt u verbindingen toe aan \* . msappproxy.net en \* . servicebus.Windows.net. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
-   - Uw agenten hebben voor de eerste registratie toegang nodig tot login.windows.net en login.microsoftonline.com. Open uw firewall ook voor deze URL's.
-   - Voor validatie van het certificaat kunt u de volgende Url's blok keren: mscrl.microsoft.com:80, crl.microsoft.com:80, ocsp.msocsp.com:80 en www \. Microsoft.com:80. Deze Url's worden gebruikt voor certificaat validatie met andere micro soft-producten, zodat u deze Url's mogelijk al hebt gedeblokkeerd.
+    - Als met uw firewall regels worden afgedwongen op basis van de herkomst van gebruikers, opent u deze poorten voor verkeer dat afkomstig is van Windows-services die als een netwerkservice worden uitgevoerd.
+    - Als u met uw firewall of proxy veilige achtervoegsels kunt opgeven, voegt u verbindingen toe aan \* . msappproxy.net en \* . servicebus.Windows.net. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt.
+    - Uw agenten hebben voor de eerste registratie toegang nodig tot login.windows.net en login.microsoftonline.com. Open uw firewall ook voor deze URL's.
+    - Voor validatie van het certificaat kunt u de volgende Url's blok keren: mscrl.microsoft.com:80, crl.microsoft.com:80, ocsp.msocsp.com:80 en www \. Microsoft.com:80. Deze Url's worden gebruikt voor certificaat validatie met andere micro soft-producten, zodat u deze Url's mogelijk al hebt gedeblokkeerd.
 
->[!NOTE]
-> Het is niet mogelijk om de inrichtings agent voor Clouds te installeren op Windows Server Core.
+    >[!NOTE]
+    > Het is niet mogelijk om de inrichtings agent voor Clouds te installeren op Windows Server Core.
 
 ### <a name="additional-requirements"></a>Aanvullende vereisten
 
@@ -92,8 +89,8 @@ Voer het [hulp programma IdFix](/office365/enterprise/prepare-directory-attribut
 
 #### <a name="tls-requirements"></a>TLS-vereisten
 
->[!NOTE]
->Transport Layer Security (TLS) is een protocol dat zorgt voor beveiligde communicatie. Het wijzigen van de TLS-instellingen is van invloed op het hele forest. Zie [Update voor het inschakelen van TLS 1,1 en tls 1,2 als standaard beveiligde protocollen in WinHTTP in Windows](https://support.microsoft.com/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi)voor meer informatie.
+> [!NOTE]
+> Transport Layer Security (TLS) is een protocol dat zorgt voor beveiligde communicatie. Het wijzigen van de TLS-instellingen is van invloed op het hele forest. Zie [Update voor het inschakelen van TLS 1,1 en tls 1,2 als standaard beveiligde protocollen in WinHTTP in Windows](https://support.microsoft.com/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi)voor meer informatie.
 
 Op de Windows-Server die als host fungeert voor de Azure AD Connect Cloud-inrichtings agent moet TLS 1,2 zijn ingeschakeld voordat u deze installeert.
 
@@ -111,6 +108,7 @@ Voer de volgende stappen uit om TLS 1,2 in te scha kelen.
 1. Start de server opnieuw.
 
 ## <a name="known-limitations"></a>Bekende beperkingen
+
 Hier volgen enkele bekende beperkingen:
 
 ### <a name="delta-synchronization"></a>Deltasynchronisatie

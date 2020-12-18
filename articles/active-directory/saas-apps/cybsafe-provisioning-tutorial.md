@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2020
 ms.author: Zhchia
-ms.openlocfilehash: 92329a3fa04d3cc685ba5068e9e5ae9932d1eb4d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 932a94c348c38902c68a6cf8108d8246cdc434ac
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96178939"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673373"
 ---
 # <a name="tutorial-configure-cybsafe-for-automatic-user-provisioning"></a>Zelf studie: CybSafe configureren voor automatische gebruikers inrichting
 
@@ -69,7 +69,7 @@ Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis 
 
 ## <a name="step-5-configure-automatic-user-provisioning-to-cybsafe"></a>Stap 5. Automatische gebruikers inrichting configureren voor CybSafe 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 ### <a name="to-configure-automatic-user-provisioning-for-cybsafe-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor CybSafe in azure AD:
 
@@ -135,15 +135,15 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 13. Als u de Azure AD-inrichtings service voor **CybSafe wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
 
-    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
+      ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
 14. Definieer de gebruikers en/of groepen die u wilt inrichten voor CybSafe door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
 
-    ![Inrichtingsbereik](common/provisioning-scope.png)
+      ![Inrichtingsbereik](common/provisioning-scope.png)
 
 15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
-    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
+      ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
 Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
 

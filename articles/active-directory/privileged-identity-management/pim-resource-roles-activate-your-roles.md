@@ -15,12 +15,12 @@ ms.date: 07/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4e3fe72492ef92fe65572c75bf9f88b5f9ffda3
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1a6ddde80ca554aea25d24694aff76e61e47d928
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653415"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672454"
 ---
 # <a name="activate-my-azure-resource-roles-in-privileged-identity-management"></a>Mijn Azure-resource rollen in Privileged Identity Management activeren
 
@@ -42,7 +42,7 @@ Wanneer u een Azure-resource functie moet uitvoeren, kunt u de activering aanvra
 
 1. Selecteer **Azure-resource rollen** om een lijst met uw in aanmerking komende Azure-resource rollen weer te geven.
 
-   ![Mijn rollen-pagina Azure-resource rollen](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
+    ![Mijn rollen-pagina Azure-resource rollen](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
 
 1. Zoek in de lijst met **Azure-resource rollen** de rol die u wilt activeren.
 

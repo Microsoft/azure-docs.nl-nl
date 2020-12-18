@@ -1,14 +1,14 @@
 ---
 title: Een beheerde service aanbieding naar Azure Marketplace publiceren
 description: Meer informatie over het publiceren van een Managed Service-aanbod waarmee klanten naar Azure Lighthouse worden geleid.
-ms.date: 08/18/2020
+ms.date: 12/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 033003d7e782ca0e99b1fc908c5261b6e31bf613
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a003e671631e9f23654eb524c7c2d937339a9588
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023922"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673151"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Een beheerde service aanbieding naar Azure Marketplace publiceren
 
@@ -18,7 +18,7 @@ In dit artikel leert u hoe u een aanbieding voor open bare of privé beheerde se
 
 U hebt een geldig [account in het partner centrum](../../marketplace/partner-center-portal/create-account.md) nodig om aanbiedingen te maken en te publiceren. Als u nog geen account hebt, wordt u door het [aanmeldings proces](https://aka.ms/joinmarketplace) geleid door de stappen voor het maken van een account in partner centrum en het inschrijven van het commerciële Marketplace-programma.
 
-Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#7004-business-requirements)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren.
+Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#7004-business-requirements)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#customer-leads) .
 
 Uw Microsoft Partner Network-ID (MPN) wordt [automatisch gekoppeld](../../cost-management-billing/manage/link-partner-id.md) aan de aanbiedingen die u publiceert voor het bijhouden van invloed op de klant afspraken.
 
@@ -31,10 +31,10 @@ Aan de hand van de volgende tabel kunt u bepalen of u klanten wilt vrijgeven doo
 |Vereist [partner centrum-account](../../marketplace/partner-center-portal/create-account.md)   |Ja         |Nee        |
 |Vereist [zilver of Gold-competentie niveau van het Cloud platform](/partner-center/learn-about-competencies) of [Azure expert msp](https://partner.microsoft.com/membership/azure-expert-msp)      |Ja         |Nee         |
 |Beschikbaar voor nieuwe klanten via Azure Marketplace     |Ja     |Nee       |
-|Aanbieding kan worden beperkt tot specifieke klanten     |Ja (alleen met privé aanbiedingen, die niet kan worden gebruikt met abonnementen die zijn vastgesteld via een wederverkoper van het programma voor Cloud Solution Provider (CSP))         |Yes         |
+|Aanbieding kan worden beperkt tot specifieke klanten     |Ja (alleen met privé aanbiedingen, die niet kan worden gebruikt met abonnementen die zijn vastgesteld via een wederverkoper van het programma voor Cloud Solution Provider (CSP))         |Ja         |
 |Vereist acceptatie van klant in Azure Portal     |Ja     |Nee   |
 |Kan Automation gebruiken om meerdere abonnementen, resource groepen of klanten uit te boarden |Nee     |Ja    |
-|Directe toegang tot nieuwe ingebouwde rollen en Azure Lighthouse-functies     |Niet altijd (algemeen beschikbaar na enige vertraging)         |Yes         |
+|Directe toegang tot nieuwe ingebouwde rollen en Azure Lighthouse-functies     |Niet altijd (algemeen beschikbaar na enige vertraging)         |Ja         |
 
 ## <a name="create-your-offer"></a>Uw aanbieding maken
 

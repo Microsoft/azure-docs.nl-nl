@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 631aaf3c6a99e093f6ed59089f7ce99803f3f054
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6eff662ac0140e7a64cc3bab28856178708cb9b2
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446627"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400672"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
 Bij een query van een serverloze SQL-pool worden bestanden rechtstreeks gelezen uit Azure Storage. Machtigingen voor toegang tot de bestanden in Azure Storage worden op twee niveaus bepaald:
 - **Opslagniveau**: de gebruiker moet toegang hebben tot onderliggende opslagbestanden. Uw opslagbeheerder moet de Azure AD-principal toestemming geven om bestanden te lezen/schrijven, of een SAS-sleutel genereren die wordt gebruikt voor toegang tot de opslag.
-- **Niveau van SQL-service**: de gebruiker moet de machtiging `SELECT` hebben om gegevens te lezen uit een [externe tabel](develop-tables-external-tables.md) of de machtiging `ADMINISTER BULK ADMIN` voor het uitvoeren van `OPENROWSET` evenals toestemming om referenties te gebruiken die worden gebruikt voor toegang tot de opslag.
+- **SQL-serviceniveau**: de gebruiker moet toestemming hebben gegeven om gegevens te lezen met behulp van een [externe tabel](develop-tables-external-tables.md) of het uitvoeren van de functie `OPENROWSET`. U vindt meer informatie over [de vereiste machtigingen in deze sectie](develop-storage-files-overview.md#permissions).
 
 In dit artikel worden de typen referenties beschreven die u kunt gebruiken en hoe het opzoeken van referenties voor SQL- en Azure AD-gebruikers in zijn werk gaat.
 

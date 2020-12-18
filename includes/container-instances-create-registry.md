@@ -19,7 +19,7 @@ ms.locfileid: "92746933"
 
 Voordat u het containerregister maakt, hebt u een *resourcegroep* nodig om dit in te implementeren. Een resourcegroep is een logische verzameling waarin alle Azure-resources worden geïmplementeerd en beheerd.
 
-Een resourcegroep maken met de opdracht [az group create][az-group-create]. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *eastus* :
+Een resourcegroep maken met de opdracht [az group create][az-group-create]. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *eastus*:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -31,7 +31,7 @@ Zodra u de resourcegroep hebt gemaakt, maakt u een Azure Container Registry met 
 az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 ```
 
-Hier volgt een gedeeltelijke uitvoer voor een nieuw Azure-containerregister met de naam *mycontainerregistry082* :
+Hier volgt een gedeeltelijke uitvoer voor een nieuw Azure-containerregister met de naam *mycontainerregistry082*:
 
 ```output
 {

@@ -284,8 +284,8 @@ U gebruikt persistente scripts om nieuwe worker-knoop punten die aan het cluster
 
 U kunt de volgende REST-eind punten gebruiken om de benodigde gegevens in JSON-indeling te halen. Basis verificatie headers gebruiken om de aanvragen uit te voeren.
 
-- `Tez Query View`: *https: \/ / \<cluster name> . azurehdinsight.net/WS/v1/Timeline/HIVE_QUERY_ID/*
-- `Tez Dag View`: *https: \/ / \<cluster name> . azurehdinsight.net/WS/v1/Timeline/TEZ_DAG_ID/*
+- `Tez Query View`: *https:// \<cluster name> . azurehdinsight.net/WS/v1/Timeline/HIVE_QUERY_ID/*
+- `Tez Dag View`: *https:// \<cluster name> . azurehdinsight.net/WS/v1/Timeline/TEZ_DAG_ID/*
 
 ### <a name="how-do-i-retrieve-the-configuration-details-from-hdi-cluster-by-using-an-azure-active-directory-user"></a>Hoe kan ik de configuratie gegevens uit het HDI-cluster op te halen met behulp van een Azure Active Directory gebruiker?
 

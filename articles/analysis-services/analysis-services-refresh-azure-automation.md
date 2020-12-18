@@ -146,7 +146,7 @@ De **hoofd tekst** is een JSON-document dat de volgende eigenschappen moet bevat
 |Eigenschap  |Waarde  |
 |---------|---------|
 |**AnalysisServicesDatabase**     |De naam van de Azure Analysis Services Data Base <br/> Voor beeld: AdventureWorksDB         |
-|**AnalysisServicesServer**     |De naam van de Azure Analysis Services-server. <br/> Voor beeld: https: \/ /westus.asazure.Windows.net/servers/MyServer/models/AdventureWorks/         |
+|**AnalysisServicesServer**     |De naam van de Azure Analysis Services-server. <br/> Voor beeld: https://westus.asazure.Windows.net/servers/MyServer/models/AdventureWorks/         |
 |**DatabaseRefreshType**     |Het type vernieuwing dat moet worden uitgevoerd. <br/> Voor beeld: volledig         |
 
 Voor beeld van JSON-hoofd tekst:

@@ -55,7 +55,7 @@ De header ' autorisatie ' is het toegangs token dat vereist is voor elke aanroep
 
 ### <a name="the-token-lacks-the-correct-resource-associated-with-it"></a>Het token heeft niet de juiste resource die eraan is gekoppeld. 
 
-Bij het aanvragen van een toegangs token van het Azure OAUTH-eind punt is een para meter met de naam ' resource ' verplicht. De waarde is belang rijk voor de token provider, omdat deze het token voor het beoogde gebruik van het bereik. De resource voor **alle** tokens voor toegang tot een Key Vault is *https: \/ /Vault.keyvault.net* (zonder afsluitende slash).
+Bij het aanvragen van een toegangs token van het Azure OAUTH-eind punt is een para meter met de naam ' resource ' verplicht. De waarde is belang rijk voor de token provider, omdat deze het token voor het beoogde gebruik van het bereik. De resource voor **alle** tokens voor toegang tot een Key Vault is *https://Vault.keyvault.net* (zonder afsluitende slash).
 
 ### <a name="the-token-is-expired"></a>Het token is verlopen
 

@@ -67,7 +67,7 @@ De sectie [Toepassings instellingen](media-services-dotnet-how-to-use-azure-func
 |Naam|Definitie|Voorbeeld| 
 |---|---|---|
 |SigningKey |Een handtekening sleutel.| j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt|
-|WebHookEndpoint | Een adres van een webhook-eind punt. Zodra de webhook-functie is gemaakt, kunt u de URL kopiëren van de koppeling **functie-URL ophalen** . | https: \/ /juliakofuncapp.azurewebsites.net/API/Notification_Webhook_Function?code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g = =.|
+|WebHookEndpoint | Een adres van een webhook-eind punt. Zodra de webhook-functie is gemaakt, kunt u de URL kopiëren van de koppeling **functie-URL ophalen** . | https://juliakofuncapp.azurewebsites.net/API/Notification_Webhook_Function?code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g = =.|
 
 ## <a name="create-a-function"></a>Een functie maken
 

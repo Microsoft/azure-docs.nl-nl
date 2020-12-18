@@ -85,7 +85,7 @@ In elk geval moeten team leiders hun team leden laten weten welke opslag plaatse
 
 Een apart project maken voor uw team:
 
-1. Ga in uw webbrowser naar de start pagina van de Azure DevOps-organisatie van uw groep op URL *https: \/ / \<server name> / \<organization name>* en selecteer **Nieuw project**. 
+1. Ga in uw webbrowser naar de start pagina van de Azure DevOps-organisatie van uw groep op URL *https:// \<server name> / \<organization name>* en selecteer **Nieuw project**. 
    
    ![Selecteer Nieuw project](./media/team-lead-tasks/team-leads-2-create-new-team.png)
    
@@ -95,7 +95,7 @@ Een apart project maken voor uw team:
    
    ![Project maken](./media/team-lead-tasks/team-leads-3-create-new-team-2.png)
    
-De pagina **samen vatting** team project wordt geopend met pagina-URL *https: \/ / \<server name> / \<organization name> / \<team name>*.
+De pagina **samen vatting** team project wordt geopend met pagina-URL *https:// \<server name> / \<organization name> / \<team name>*.
 
 ### <a name="rename-the-myteam-default-repository-to-teamutilities"></a>Wijzig de naam van de MyTeam-standaard opslagplaats in TeamUtilities
 
@@ -140,7 +140,7 @@ Als u uw team opslagplaatsen wilt vullen met de inhoud van de groep algemene ops
    
    ![Import selecteren](./media/team-lead-tasks/import-repo.png)
    
-1. In het dialoog venster **een Git-opslag plaats importeren** selecteert u **Git** als **bron type** en voert u de URL in voor de opslag plaats van de gemeen schappelijke sjabloon onder **kloon-URL**. De URL is *https: \/ / \<server name> / \<organization name> /_git/ \<repository name>*. Bijvoorbeeld: *https: \/ /dev.Azure.com/DataScienceUnit/GroupCommon/_git/GroupProjectTemplate*. 
+1. In het dialoog venster **een Git-opslag plaats importeren** selecteert u **Git** als **bron type** en voert u de URL in voor de opslag plaats van de gemeen schappelijke sjabloon onder **kloon-URL**. De URL is *https:// \<server name> / \<organization name> /_git/ \<repository name>*. Bijvoorbeeld: *https://dev.Azure.com/DataScienceUnit/GroupCommon/_git/GroupProjectTemplate*. 
    
 1. Selecteer **Importeren**. De inhoud van de opslag plaats van de groeps sjabloon wordt geïmporteerd in uw team sjabloon opslagplaats. 
    

@@ -48,7 +48,7 @@ U moet nu het **eind punt voor delegering** maken. Het moet een aantal acties ui
 
 1. Ontvang een aanvraag in de volgende vorm:
    
-   > *http: \/ /www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl = {URL van de bron pagina} &Salt = {string} &sig = {String}*
+   > *http://www.yourwebsite.com/apimdelegation?operation=SignIn&returnUrl = {URL van de bron pagina} &Salt = {string} &sig = {String}*
    
     Query parameters voor de case voor aanmelden/registreren:
    
@@ -103,7 +103,7 @@ Zorg er vervolgens voor dat het eind punt voor delegering de volgende acties uit
 
 1. Ontvang een aanvraag in de volgende vorm:
    
-   > *http: \/ /www.yourwebsite.com/apimdelegation? Operation = {Operation} &ProductID = {product to Subscriber to} &userId = {Request aanvraag} &Salt = {string} &sig = {String}*
+   > *http://www.yourwebsite.com/apimdelegation? Operation = {Operation} &ProductID = {product to Subscriber to} &userId = {Request aanvraag} &Salt = {string} &sig = {String}*
    >
    
     Query parameters voor het case-product abonnement:

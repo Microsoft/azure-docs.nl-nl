@@ -277,7 +277,7 @@ Gebruik de volgende opdracht voor het installeren van Microsoft IIS op de VM *my
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Nadat de installatie van IIS is voltooid, verbreekt u de verbinding met de VM *myVmWeb*, waarbij u de externe bureaubladverbinding met VM *myVmMgmt* behoudt. Als u het welkomst scherm van IIS wilt weer geven, opent u een Internet browser en gaat u naar http: \/ /myVmWeb.
+Nadat de installatie van IIS is voltooid, verbreekt u de verbinding met de VM *myVmWeb*, waarbij u de externe bureaubladverbinding met VM *myVmMgmt* behoudt. Als u het welkomst scherm van IIS wilt weer geven, opent u een Internet browser en gaat u naar http://myVmWeb.
 
 Verbreek de verbinding met de VM *myVmMgmt*.
 

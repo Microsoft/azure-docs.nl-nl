@@ -580,7 +580,7 @@ Het STONITH-apparaat gebruikt een Service-Principal om te autoriseren bij Micros
 1. Klik op App-registraties
 1. Klik op nieuwe registratie
 1. Voer een naam in, selecteer alleen accounts in deze organisatie Directory 
-2. Selecteer het toepassings type ' Web ', voer een aanmeldings-URL in (bijvoorbeeld http: \/ /localhost) en klik op toevoegen.  
+2. Selecteer het toepassings type ' Web ', voer een aanmeldings-URL in (bijvoorbeeld http://localhost) en klik op toevoegen.  
    De aanmeldings-URL wordt niet gebruikt en kan een geldige URL zijn
 1. Selecteer certificaten en geheimen en klik vervolgens op nieuw client geheim
 1. Voer een beschrijving in voor een nieuwe sleutel, selecteer nooit verloopt en klik op toevoegen

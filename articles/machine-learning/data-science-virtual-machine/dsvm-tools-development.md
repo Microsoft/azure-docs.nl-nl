@@ -63,7 +63,7 @@ De Data Science Virtual Machine (DSVM) bundelt verschillende populaire hulpprogr
 | Wat is het?   | IDE op basis van het web voor R    |
 | Ondersteunde DSVM-versies      | Linux      |
 | Typische toepassingen      |  R-ontwikkeling     |
-| Hoe gebruiken en uitvoeren      | Schakel de service in met _systemctl rstudio-server inschakelen_en start de service vervolgens met _systemctl start rstudio-server_. Meld u vervolgens aan bij de RStudio-server op http: \/ /your-VM-IP: 8787.       |
+| Hoe gebruiken en uitvoeren      | Schakel de service in met _systemctl rstudio-server inschakelen_en start de service vervolgens met _systemctl start rstudio-server_. Meld u vervolgens aan bij de RStudio-server op http://your-VM-IP: 8787.       |
 | Gerelateerde hulpprogram ma's op de DSVM      |   Visual Studio, Visual Studio code, RStudio Desktop      |
 
 ## <a name="juno"></a>Juno 

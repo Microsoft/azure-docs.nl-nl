@@ -110,7 +110,7 @@ Gebruik een korte en eenvoudige naam voor de resource groep. De naam wordt ook g
 
 ### <a name="website-name-already-in-use"></a>De naam van de website wordt al gebruikt
 
-Het is mogelijk dat de naam van de website al in gebruik is. U moet een andere naam voor de resource groep gebruiken. De hostnamen die worden gebruikt door het implementatie script zijn: https: \/ /resourcegroupname.azurewebsites.net en https: \/ /resourgroupname-service.azurewebsites.net.
+Het is mogelijk dat de naam van de website al in gebruik is. U moet een andere naam voor de resource groep gebruiken. De hostnamen die worden gebruikt door het implementatie script zijn: https://resourcegroupname.azurewebsites.net en https://resourgroupname-service.azurewebsites.net.
 Andere namen van services worden gebouwd op basis van de combi natie van korte naam-hashes en zijn waarschijnlijk niet strijdig met andere services.
 
 ### <a name="azure-ad-registration"></a>Azure AD-registratie 

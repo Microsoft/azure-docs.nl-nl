@@ -232,9 +232,9 @@ Net als bij on-premises systemen zijn er verschillende stappen vereist om alle S
 
 en de koppelingen die zijn gegenereerd in trans actie DBACockpit zien er ongeveer als volgt uit:
 
-> https: \/ / \<fullyqualifiedhostname> : 44300/SAP/BC/webdynpro/SAP/dba_cockpit
+> https:// \<fullyqualifiedhostname> : 44300/SAP/BC/webdynpro/SAP/dba_cockpit
 > 
-> http: \/ / \<fullyqualifiedhostname> : 8000/SAP/BC/webdynpro/SAP/dba_cockpit
+> http:// \<fullyqualifiedhostname> : 8000/SAP/BC/webdynpro/SAP/dba_cockpit
 > 
 > 
 
@@ -250,9 +250,9 @@ Meer informatie over de DNS-naam kan worden gevonden [hier] [virtual-machines-az
 
 De SAP-profiel parameter ICM/host_name_full instellen op de DNS-naam van de virtuele machine van Azure de koppeling kan er ongeveer als volgt uitzien:
 
-> https: \/ /mydomainlabel.westeurope.cloudapp.net:44300/SAP/BC/webdynpro/SAP/dba_cockpit
+> https://mydomainlabel.westeurope.cloudapp.net:44300/SAP/BC/webdynpro/SAP/dba_cockpit
 > 
-> http: \/ /mydomainlabel.westeurope.cloudapp.net:8000/SAP/BC/webdynpro/SAP/dba_cockpit
+> http://mydomainlabel.westeurope.cloudapp.net:8000/SAP/BC/webdynpro/SAP/dba_cockpit
 
 In dat geval moet u het volgende doen:
 

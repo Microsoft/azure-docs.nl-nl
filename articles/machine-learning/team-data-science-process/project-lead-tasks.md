@@ -57,7 +57,7 @@ Als u opslag plaatsen wilt klonen en inhoud wilt wijzigen op uw lokale machine o
 
 Een project opslagplaats maken in het **MyTeam** -project van uw team:
 
-1. Ga naar de project **samenvattings** pagina van uw team op *https: \/ / \<server name> / \<organization name> / \<team name>*, bijvoorbeeld **https: \/ /dev.Azure.com/DataScienceUnit/MyTeam**, en selecteer **opslag plaatsen** in de linkernavigatiebalk. 
+1. Ga naar de project **samenvattings** pagina van uw team op *https:// \<server name> / \<organization name> / \<team name>*, bijvoorbeeld **https://dev.Azure.com/DataScienceUnit/MyTeam**, en selecteer **opslag plaatsen** in de linkernavigatiebalk. 
    
 1. Selecteer de naam van de opslag plaats boven aan de pagina en selecteer vervolgens **nieuwe opslag plaats** in de vervolg keuzelijst.
    
@@ -83,7 +83,7 @@ Uw project opslagplaats vullen met de inhoud van de opslag plaats van uw team sj
    
    ![Import selecteren](./media/project-lead-tasks/project-leads-5-create-project-repo-4.png)
    
-1. Selecteer **Git** als **bron type** in het dialoog venster **een Git-opslag plaats importeren** en voer de URL voor uw **TeamTemplate** -opslag plaats in onder **kloon-URL**. De URL is *https: \/ / \<server name> / \<organization name> / \<team name> /_git/ \<team template repository name>*. Bijvoorbeeld: **https: \/ /dev.Azure.com/DataScienceUnit/MyTeam/_git/TeamTemplate**. 
+1. Selecteer **Git** als **bron type** in het dialoog venster **een Git-opslag plaats importeren** en voer de URL voor uw **TeamTemplate** -opslag plaats in onder **kloon-URL**. De URL is *https:// \<server name> / \<organization name> / \<team name> /_git/ \<team template repository name>*. Bijvoorbeeld: **https://dev.Azure.com/DataScienceUnit/MyTeam/_git/TeamTemplate**. 
    
 1. Selecteer **Importeren**. De inhoud van de opslag plaats van uw team sjabloon wordt in uw project opslagplaats geïmporteerd. 
    

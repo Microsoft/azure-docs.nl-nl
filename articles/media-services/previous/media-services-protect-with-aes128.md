@@ -163,7 +163,7 @@ De client moet de URL (die ook inhoud sleutel-ID [Kid] bevat) uit het manifest b
 
 In het geval van HLS wordt het basis manifest onderverdeeld in segment bestanden. 
 
-Het basis manifest is bijvoorbeeld: http: \/ /test001.Origin.mediaservices.Windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL). Het bevat een lijst met de bestands namen van het segment.
+Het basis manifest is bijvoorbeeld: http://test001.Origin.mediaservices.Windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL). Het bevat een lijst met de bestands namen van het segment.
 
 ```text
 . . . 
@@ -174,7 +174,7 @@ QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
 …
 ```
 
-Als u een van de segment bestanden in een tekst editor opent (bijvoorbeeld http: \/ /test001.Origin.mediaservices.Windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/QualityLevels (514369)/manifest (video, Format = M3U8-AAPL), bevat deze een #EXT-X-sleutel. Dit geeft aan dat het bestand is versleuteld.
+Als u een van de segment bestanden in een tekst editor opent (bijvoorbeeld http://test001.Origin.mediaservices.Windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/QualityLevels (514369)/manifest (video, Format = M3U8-AAPL), bevat deze een #EXT-X-sleutel. Dit geeft aan dat het bestand is versleuteld.
 
 ```text
 #EXTM3U

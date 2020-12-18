@@ -120,7 +120,7 @@ Als u de standaard container van het Hadoop-cluster met Azure Storage Explorer o
 ![Azure Storage Explorer de uitvoer van de Hive-query wordt weer gegeven](./media/move-hive-tables/output-hive-results-3.png)
 
 ### <a name="submit-hive-queries-with-the-hive-editor"></a><a name="hive-editor"></a>Hive-query's verzenden met de Hive-editor
-U kunt ook de query console (Hive-editor) gebruiken door een URL van het formulier *https: \/ / \<Hadoop cluster name> . azurehdinsight.net/Home/HiveEditor* in te voeren in een webbrowser. U moet zijn aangemeld met de informatie in deze console en daarom moet u uw Hadoop-cluster referenties hier opgeven.
+U kunt ook de query console (Hive-editor) gebruiken door een URL van het formulier *https:// \<Hadoop cluster name> . azurehdinsight.net/Home/HiveEditor* in te voeren in een webbrowser. U moet zijn aangemeld met de informatie in deze console en daarom moet u uw Hadoop-cluster referenties hier opgeven.
 
 ### <a name="submit-hive-queries-with-azure-powershell-commands"></a><a name="ps"></a>Hive-query's met Azure PowerShell-opdrachten verzenden
 U kunt ook Power shell gebruiken om Hive-query's te verzenden. Zie [Hive-taken verzenden met Power shell](../../hdinsight/hadoop/apache-hadoop-use-hive-powershell.md)voor instructies.

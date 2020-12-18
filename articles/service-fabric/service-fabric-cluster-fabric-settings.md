@@ -649,14 +649,14 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 ## <a name="security"></a>Beveiliging
 | **Parameter** | **Toegestane waarden** |**Upgrade beleid**| **Uitleg of korte beschrijving** |
 | --- | --- | --- | --- |
-|AADCertEndpointFormat|teken reeks, standaard instelling is|Statisch|AAD-certificaat eindpunt indeling, standaard-Azure-Commercial, opgegeven voor niet-standaard-omgeving, zoals Azure Government "https: \/ /login.microsoftonline.us/ {0} /federationmetadata/2007-06/federationmetadata.xml" |
+|AADCertEndpointFormat|teken reeks, standaard instelling is|Statisch|AAD-certificaat eindpunt indeling, standaard-Azure-Commercial, opgegeven voor niet-standaard-omgeving, zoals Azure Government "https://login.microsoftonline.us/ {0} /federationmetadata/2007-06/federationmetadata.xml" |
 |AADClientApplication|teken reeks, standaard instelling is|Statisch|Systeem eigen client toepassings naam of ID die infrastructuur clients vertegenwoordigt |
 |AADClusterApplication|teken reeks, standaard instelling is|Statisch|Web-API-toepassings naam of-ID die het cluster vertegenwoordigt |
-|AADLoginEndpoint|teken reeks, standaard instelling is|Statisch|AAD-aanmeldings eindpunt, standaard-Azure-Commercial, opgegeven voor niet-standaard omgevingen, zoals Azure Government ' https: \/ /login.microsoftonline.us ' |
+|AADLoginEndpoint|teken reeks, standaard instelling is|Statisch|AAD-aanmeldings eindpunt, standaard-Azure-Commercial, opgegeven voor niet-standaard omgevingen, zoals Azure Government ' https://login.microsoftonline.us ' |
 |AADTenantId|teken reeks, standaard instelling is|Statisch|Tenant-ID (GUID) |
 |AcceptExpiredPinnedClusterCertificate|BOOL, default is FALSE|Dynamisch|Vlag waarmee wordt aangegeven of verlopen cluster certificaten moeten worden geaccepteerd die zijn gedeclareerd door de vinger afdruk, alleen van toepassing is op cluster certificaten. zodat het cluster actief blijft. |
 |AdminClientCertThumbprints|teken reeks, standaard instelling is|Dynamisch|Vinger afdrukken van certificaten die worden gebruikt door clients in de rol Admin. Dit is een lijst met door komma's gescheiden namen. |
-|AADTokenEndpointFormat|teken reeks, standaard instelling is|Statisch|AAD-token-eind punt, standaard-Azure-Commercial, opgegeven voor niet-standaard omgevingen, zoals Azure Government ' https: \/ /login.microsoftonline.us/ {0} ' |
+|AADTokenEndpointFormat|teken reeks, standaard instelling is|Statisch|AAD-token-eind punt, standaard-Azure-Commercial, opgegeven voor niet-standaard omgevingen, zoals Azure Government ' https://login.microsoftonline.us/ {0} ' |
 |AdminClientClaims|teken reeks, standaard instelling is|Dynamisch|Alle mogelijke claims die worden verwacht door beheerclients; dezelfde indeling als ClientClaims; deze lijst wordt intern toegevoegd aan ClientClaims. u hoeft ook niet dezelfde vermeldingen aan ClientClaims toe te voegen. |
 |AdminClientIdentities|teken reeks, standaard instelling is|Dynamisch|Windows-identiteiten van Fabric-clients in beheerdersrol; wordt gebruikt voor het autoriseren van bevoegde infrastructuur bewerkingen. Het is een door komma's gescheiden lijst. elk item is een domein account naam of groeps naam. Voor het gemak; het account dat wordt uitgevoerd fabric.exe wordt automatisch toegewezen aan de rol Admin. Daarom is groep ServiceFabricAdministrators. |
 |AppRunAsAccountGroupX509Folder|teken reeks, standaard waarde is/Home/sfuser/sfusercerts |Statisch|Map waar AppRunAsAccountGroup x509-certificaten en persoonlijke sleutels zich bevinden |

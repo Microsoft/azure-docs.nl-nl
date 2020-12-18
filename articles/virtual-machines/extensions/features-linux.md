@@ -86,7 +86,7 @@ U kunt de volgende methoden gebruiken om een uitbrei ding uit te voeren op basis
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Azure VM-extensies kunnen worden uitgevoerd op basis van een bestaande virtuele machine met de opdracht [AZ VM extension set](/cli/azure/vm/extension#az-vm-extension-set) . In het volgende voor beeld wordt de aangepaste script extensie uitgevoerd op een virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*. Vervang de naam van de resource groep, de VM-naam en het script dat wordt uitgevoerd (https: \/ /RAW.githubusercontent.com/me/project/Hello.sh) door uw eigen gegevens. 
+Azure VM-extensies kunnen worden uitgevoerd op basis van een bestaande virtuele machine met de opdracht [AZ VM extension set](/cli/azure/vm/extension#az-vm-extension-set) . In het volgende voor beeld wordt de aangepaste script extensie uitgevoerd op een virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*. Vervang de naam van de resource groep, de VM-naam en het script dat wordt uitgevoerd (https://RAW.githubusercontent.com/me/project/Hello.sh) door uw eigen gegevens. 
 
 ```azurecli
 az vm extension set `

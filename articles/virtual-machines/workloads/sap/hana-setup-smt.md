@@ -84,7 +84,7 @@ U kunt ook het YAST-hulp programma gebruiken om de SMT-pakketten te installeren.
 ![Scherm opname van SMT in YAST](./media/hana-installation/image5_smt_in_yast.PNG)
 
 
-Accepteer de selectie voor installatie op de smtserver. Nadat de installatie is voltooid, gaat u naar de configuratie van de SMT-server. Voer de referenties van de organisatie in vanuit het SUSE-klanten centrum dat u eerder hebt opgehaald. Voer ook de hostnaam van uw virtuele Azure-machine in als de URL van de SMT-server. In deze demonstratie is het https: \/ /smtserver.
+Accepteer de selectie voor installatie op de smtserver. Nadat de installatie is voltooid, gaat u naar de configuratie van de SMT-server. Voer de referenties van de organisatie in vanuit het SUSE-klanten centrum dat u eerder hebt opgehaald. Voer ook de hostnaam van uw virtuele Azure-machine in als de URL van de SMT-server. In deze demonstratie is het https://smtserver.
 
 ![Scherm afbeelding van de configuratie van een SMT-server](./media/hana-installation/image6_configuration_of_smtserver1.png)
 

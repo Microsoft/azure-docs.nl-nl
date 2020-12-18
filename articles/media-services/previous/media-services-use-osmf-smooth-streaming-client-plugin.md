@@ -338,7 +338,7 @@ package
 De Smooth Streaming voor de dynamische invoeg toepassing OSMF is compatibel met het afspelen van een [stroboscopisch-media (SMP)](https://sourceforge.net/adobe/smp/home/Strobe%20Media%20Playback/). U kunt de OSMF-invoeg toepassing voor de SS gebruiken om Smooth Streaming inhoud af te spelen op SMP. Om dit te doen, kopieert u "MSAdaptiveStreamingPlugin-v 1.0.3-osmf 2.0. swf" onder een webserver voor HTTP-belasting door de volgende stappen uit te voeren:
 
 1. Blader door de [pagina afspelen van de modus van stroboscopisch media](http://osmf.org/dev/2.0gm/setup.html). 
-2. De src instellen op een Smooth Streaming bron, (bijvoorbeeld http: \/ /devplatem.vo.msecnd.net/sintel/Sintel_H264.ISM/manifest) 
+2. De src instellen op een Smooth Streaming bron, (bijvoorbeeld http://devplatem.vo.msecnd.net/sintel/Sintel_H264.ISM/manifest) 
 3. Breng de gewenste wijzigingen aan in de configuratie en klik op voor beeld en bijwerken.
    
    **Opmerking** De webserver voor inhoud moet een geldig crossdomain.xml hebben. 

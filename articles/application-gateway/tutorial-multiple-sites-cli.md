@@ -239,7 +239,7 @@ Het gebruik van A-records wordt niet aanbevolen, omdat het VIP kan worden gewijz
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-Voer uw domeinnaam in de adresbalk van de browser in. Zoals http: \/ /www.contoso.com.
+Voer uw domeinnaam in de adresbalk van de browser in. Zoals http://www.contoso.com.
 
 ![Contoso-site testen in toepassingsgateway](./media/tutorial-multiple-sites-cli/application-gateway-nginxtest1.png)
 

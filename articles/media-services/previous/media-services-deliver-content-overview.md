@@ -91,22 +91,22 @@ U kunt alleen streamen via TLS als het streaming-eind punt van waaruit u uw inho
 ### <a name="mpeg-dash-format"></a>MPEG-DASH-indeling
 {streaming-eindpuntnaam-media services-accountnaam}.streaming.mediaservices.windows.net/{locator-id}/{bestandsnaam}.ism/Manifest(format=mpd-time-csf)
 
-http: \/ /testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = mpd-time-KVP)
+http://testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = mpd-time-KVP)
 
 ### <a name="apple-http-live-streaming-hls-v4-format"></a>Apple HTTP Live Streaming (HLS) v4-indeling
 {streaming-eindpuntnaam-media services-accountnaam}.streaming.mediaservices.windows.net/{locator-id}/{bestandsnaam}.ism/Manifest(format=m3u8-aapl)
 
-http: \/ /testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL)
+http://testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL)
 
 ### <a name="apple-http-live-streaming-hls-v3-format"></a>Indeling van Apple HTTP Live Streaming (HLS) v3
 {streaming-eindpunt naam-Media Services-account naam}. streaming. Media Services. Windows. net/{Locator-ID} bestands (Format = M3U8-AAPL-v3)
 
-http: \/ /testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL-v3)
+http://testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL-v3)
 
 ### <a name="apple-http-live-streaming-hls-format-with-audio-only-filter"></a>Apple HTTP Live Streaming-indeling (HLS) met filter voor alleen audio
 Audio-alleen tracks worden standaard opgenomen in het HLS-manifest. Dit is vereist voor de Apple Store-certificering voor mobiele netwerken. Als een client niet voldoende band breedte heeft of verbinding heeft via een 2G-verbinding, worden de afspeel switches alleen naar audio gestuurd. Zo kunt u het streamen van inhoud zonder buffering houden, maar er is geen video. In sommige gevallen is het mogelijk dat het bufferen van spelers de voor keur heeft voor alleen audio. Als u het audio schema alleen wilt verwijderen, voegt u **alleen audio toe = False** aan de URL.
 
-http: \/ /testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL-v3, alleen audio = false)
+http://testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest (Format = M3U8-AAPL-v3, alleen audio = false)
 
 Zie voor meer informatie [dynamische manifest compositie ondersteuning en HLS uitvoer extra functies](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/).
 
@@ -115,7 +115,7 @@ Zie voor meer informatie [dynamische manifest compositie ondersteuning en HLS ui
 
 Voorbeeld:
 
-http: \/ /testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest
+http://testendpoint-testaccount.streaming.mediaservices.Windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ISM/manifest
 
 ### <a name="smooth-streaming-20-manifest-legacy-manifest"></a><a id="fmp4_v20"></a>Smooth Streaming 2,0-manifest (verouderd manifest)
 De Smooth Streaming manifest-indeling bevat standaard de herhalingstag (r-tag). Sommige spelers bieden echter geen ondersteuning voor de r-tag. Clients met deze spelers kunnen een indeling gebruiken waarmee de r-tag wordt uitgeschakeld:

@@ -99,7 +99,7 @@ De voorbeeld toepassing bevat [Azure Resource Manager sjablonen](https://github.
 | applicationTypeVersion | De versie van het toepassings type         | 1.0.0                                                        | Moet overeenkomen met ApplicationManifest.xml                 |
 | serviceName            | De naam van de service         | Stemmen ~ VotingWeb                                             | Moet de indeling ApplicationName ~ Service type hebben            |
 | serviceTypeName        | De type naam van de service                | VotingWeb                                                    | Moet overeenkomen met ServiceManifest.xml                 |
-| appPackageUrl          | De URL van de Blob-opslag van de toepassing     | https: \/ /servicefabricapps.blob.core.Windows.net/apps/voting.sfpkg | De URL van het toepassings pakket in Blob Storage (de procedure voor het instellen van de URL wordt verderop in het artikel beschreven) |
+| appPackageUrl          | De URL van de Blob-opslag van de toepassing     | https://servicefabricapps.blob.core.Windows.net/apps/voting.sfpkg | De URL van het toepassings pakket in Blob Storage (de procedure voor het instellen van de URL wordt verderop in het artikel beschreven) |
 
 ```json
 {

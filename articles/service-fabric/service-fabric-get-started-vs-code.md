@@ -99,7 +99,7 @@ Met de **service Fabric: opdracht publicatie toepassing** wordt uw service Fabri
 Met de **service Fabric: toepassings opdracht implementeren** wordt uw service Fabric toepassing geïmplementeerd op uw lokale cluster. Zorg ervoor dat het lokale cluster wordt uitgevoerd voordat u de opdracht gebruikt. 
 
 1. Selecteer de **service Fabric: toepassings opdracht implementeren**
-2. Bekijk het lokale cluster met Service Fabric Explorer (http: \/ /localhost: 19080/Explorer) om te bevestigen dat de toepassing is geïnstalleerd. Dit kan enige tijd duren. het is dus een ogen blik geduld.
+2. Bekijk het lokale cluster met Service Fabric Explorer (http://localhost: 19080/Explorer) om te bevestigen dat de toepassing is geïnstalleerd. Dit kan enige tijd duren. het is dus een ogen blik geduld.
 3. U kunt ook **service Fabric: opdracht toepassing publiceren** zonder para meters die zijn ingesteld in de Cloud.jsin het bestand om te implementeren in een lokaal cluster.
 
 > [!NOTE]

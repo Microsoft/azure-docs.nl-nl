@@ -81,7 +81,7 @@ In het voor gaande diagram vertegenwoordigt de getallen de stroom van de aanvrag
        De gegevens van de Tenant kunnen worden opgehaald uit de Azure Portal. Plaats de cursor op de naam van de aangemelde gebruiker in de rechter bovenhoek.
    * Media Services resource-URI. 
 
-       Deze URI is hetzelfde voor Media Services accounts die zich in dezelfde Azure-omgeving (bijvoorbeeld https: \/ /rest.media.Azure.net) bevinden.
+       Deze URI is hetzelfde voor Media Services accounts die zich in dezelfde Azure-omgeving (bijvoorbeeld https://rest.media.Azure.net) bevinden.
 
    * Media Services (systeem eigen) client-ID van toepassing.
    * Media Services (systeem eigen) URI voor omleiding van toepassing.
@@ -123,7 +123,7 @@ In de voor gaande afbeelding vertegenwoordigen de getallen de stroom van de aanv
        De gegevens van de Tenant kunnen worden opgehaald uit de Azure Portal. Plaats de cursor op de naam van de aangemelde gebruiker in de rechter bovenhoek.
    * Media Services resource-URI. 
 
-       Deze URI is hetzelfde voor Media Services accounts die zich in dezelfde Azure-omgeving bevinden (bijvoorbeeld https: \/ /rest.media.Azure.net).
+       Deze URI is hetzelfde voor Media Services accounts die zich in dezelfde Azure-omgeving bevinden (bijvoorbeeld https://rest.media.Azure.net).
 
    * Resource-URI voor REST-Media Services.
 

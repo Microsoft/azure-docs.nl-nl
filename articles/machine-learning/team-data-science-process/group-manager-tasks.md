@@ -57,7 +57,7 @@ In de volgende zelf studie worden de stappen in detail besproken.
    
    ![Project maken](./media/group-manager-tasks/create-project.png)
 
-De pagina **samen vatting** van **GroupCommon** -project wordt geopend. De URL van de pagina is *https: \/ / \<servername> / \<organization-name> /GroupCommon*.
+De pagina **samen vatting** van **GroupCommon** -project wordt geopend. De URL van de pagina is *https:// \<servername> / \<organization-name> /GroupCommon*.
 
 ![Pagina project overzicht](./media/group-manager-tasks/project-summary.png)
 
@@ -121,7 +121,7 @@ De TDSP-team opslagplaatsen importeren:
    
    ![Import selecteren](./media/group-manager-tasks/import-repo.png)
    
-1. In het dialoog venster **een Git-opslag plaats importeren** selecteert u **Git** als **bron type** en voert u *https: \/ /github.com/azure/Azure-TDSP-ProjectTemplate.git* in voor de **kloon-URL**. Selecteer vervolgens **importeren**. De inhoud van de ProjectTemplate-opslag plaats van micro soft TDSP team wordt geïmporteerd in uw GroupProjectTemplate-opslag plaats. 
+1. In het dialoog venster **een Git-opslag plaats importeren** selecteert u **Git** als **bron type** en voert u *https://github.com/azure/Azure-TDSP-ProjectTemplate.git* in voor de **kloon-URL**. Selecteer vervolgens **importeren**. De inhoud van de ProjectTemplate-opslag plaats van micro soft TDSP team wordt geïmporteerd in uw GroupProjectTemplate-opslag plaats. 
    
    ![Micro soft TDSP-team opslagplaats importeren](./media/group-manager-tasks/import-repo-2.png)
    

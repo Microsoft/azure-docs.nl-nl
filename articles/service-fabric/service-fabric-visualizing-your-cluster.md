@@ -35,7 +35,7 @@ Gebruik de volgende koppelingen om Service Fabric Explorer te downloaden als een
 
 ### <a name="running-service-fabric-explorer-from-the-cluster"></a>Service Fabric Explorer uitvoeren vanuit het cluster
 
-Service Fabric Explorer wordt ook gehost in het HTTP-beheer eindpunt van een Service Fabric cluster. Als u SFX in een webbrowser wilt starten, bladert u naar het HTTP-beheer eindpunt van het cluster vanuit een browser, bijvoorbeeld https: \/ /clusterFQDN: 19080.
+Service Fabric Explorer wordt ook gehost in het HTTP-beheer eindpunt van een Service Fabric cluster. Als u SFX in een webbrowser wilt starten, bladert u naar het HTTP-beheer eindpunt van het cluster vanuit een browser, bijvoorbeeld https://clusterFQDN: 19080.
 
 Voor het installatie programma voor ontwikkel aars kunt u Service Fabric Explorer op uw lokale cluster starten door naar te navigeren https://localhost:19080/Explorer . Bekijk dit artikel om [uw ontwikkel omgeving voor te bereiden](service-fabric-get-started.md).
 

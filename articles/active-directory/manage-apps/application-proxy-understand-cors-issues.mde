@@ -28,15 +28,15 @@ Browser beveiliging voor komt doorgaans dat een webpagina AJAX-aanvragen naar ee
 
 Twee Url's hebben dezelfde oorsprong als ze identieke schema's, hosts en poorten ([RFC 6454](https://tools.ietf.org/html/rfc6454)) hebben, zoals:
 
--   http://contoso.com/foo.html
--   http://contoso.com/bar.html
+-   http: \/ /contoso.com/foo.html
+-   http: \/ /contoso.com/bar.html
 
 De volgende Url's hebben verschillende oorsprongen dan de vorige twee:
 
--   http://contoso.net-ander domein
--   http://contoso.com:9000/foo.html-andere poort
--   https://contoso.com/foo.html-ander schema
--   http://www.contoso.com/foo.html-ander subdomein
+-   http: \/ /contoso.net-ander domein
+-   http: \/ /contoso.com:9000/foo.html-andere poort
+-   https: \/ /contoso.com/foo.html-ander schema
+-   http: \/ /www.contoso.com/foo.html-ander subdomein
 
 Met hetzelfde basis beleid voor komt u dat apps toegang hebben tot resources van andere oorsprong, tenzij ze de juiste toegangs beheer headers gebruiken. Als de CORS-headers ontbreken of onjuist zijn, mislukken de cross-Origin-aanvragen. 
 
@@ -82,8 +82,8 @@ Stel in plaats daarvan de **interne URL** in voor het publiceren van de bovenlig
 
 Met de resulterende app-Url's wordt het CORS-probleem effectief opgelost:
 
-- https://corswebclient-contoso.msappproxy.net/CORSWebService
-- https://corswebclient-contoso.msappproxy.net/CORSWebClient
+- https: \/ /corswebclient-contoso.msappproxy.net/CORSWebService
+- https: \/ /corswebclient-contoso.msappproxy.net/CORSWebClient
 
 ### <a name="option-3-update-http-headers"></a>Optie 3: HTTP-headers bijwerken
 

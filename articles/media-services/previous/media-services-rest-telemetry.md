@@ -36,7 +36,7 @@ De stappen die in dit onderwerp worden beschreven, zijn:
 - De meldings eindpunten ophalen
 - Een meldings eindpunt maken voor bewaking. 
 
-    Als u een meldings eindpunt wilt maken, stelt u de EndPointType in op AzureTable (2) en endPontAddress ingesteld op de opslag tabel (bijvoorbeeld https: \/ /telemetryvalidationstore.table.core.Windows.net/).
+    Als u een meldings eindpunt wilt maken, stelt u de EndPointType in op AzureTable (2) en endPontAddress ingesteld op de opslag tabel (bijvoorbeeld https://telemetryvalidationstore.table.core.Windows.net/).
   
 - De bewakings configuraties ophalen
 
@@ -137,7 +137,7 @@ Content-Length: 115
 ```
 
 > [!NOTE]
-> Vergeet niet om de waarde ' https: \/ /telemetryvalidationstore.table.core.Windows.net ' te wijzigen in uw opslag account.
+> Vergeet niet om de waarde ' https://telemetryvalidationstore.table.core.Windows.net ' te wijzigen in uw opslag account.
 
 ### <a name="response"></a>Antwoord
 

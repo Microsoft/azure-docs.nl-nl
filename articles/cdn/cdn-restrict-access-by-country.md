@@ -59,8 +59,8 @@ Selecteer in de lijst **actie** de optie **toestaan** of **blok keren**:
 - **Blok keren**: gebruikers uit de opgegeven landen/regio's hebben geen toegang tot de assets die zijn aangevraagd bij het recursieve pad. Als er geen andere opties voor het filteren van land/regio zijn geconfigureerd voor die locatie, worden alle andere gebruikers toegang verleend.
 
 Een geo-filter regel voor het blok keren van het pad */Photos/Strasbourg/* filtert bijvoorbeeld de volgende bestanden:     
-*http: \/ / \<endpoint> . azureedge.net/Photos/Strasbourg/1000.jpg* 
- *http: \/ / \<endpoint> . azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg*
+*http:// \<endpoint> . azureedge.net/Photos/Strasbourg/1000.jpg* 
+ *http:// \<endpoint> . azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg*
 
 ### <a name="define-the-countriesregions"></a>De landen/regio's definiëren
 Selecteer in de lijst **land codes** de landen/regio's die u wilt blok keren of toestaan van het pad. 

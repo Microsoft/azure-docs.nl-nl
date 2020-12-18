@@ -502,7 +502,7 @@ Voor de module **gegevens importeren** zijn de waarden van de para meters die in
 
 1. Kies Hive-query voor de **gegevens bron**
 2. In het **query vak Hive-data base** is dit een eenvoudige SELECT * van <de naam van uw \_ Data Base \_ . de \_ tabel \_ naam>-is voldoende.
-3. **URI van Hcatalog-server** : als uw cluster ' ABC ' is, is dit simpelweg: https: \/ /ABC.azurehdinsight.net
+3. **URI van Hcatalog-server** : als uw cluster ' ABC ' is, is dit simpelweg: https://ABC.azurehdinsight.net
 4. **Hadoop-gebruikers accountnaam** : de gebruikers naam die is gekozen op het moment van het cluster. (Niet de gebruikers naam voor externe toegang.)
 5. **Hadoop-gebruikers account wacht woord** : het wacht woord voor de gebruikers naam die is gekozen op het moment dat het cluster wordt ingesteld. (Niet het wacht woord voor externe toegang!)
 6. **Locatie van uitvoer gegevens** : Kies Azure

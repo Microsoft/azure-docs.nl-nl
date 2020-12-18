@@ -41,7 +41,7 @@ Voer de volgende instructies uit vanuit een REST-client:
 
 1. Zorg ervoor dat u een client certificaat hebt om verbinding te maken met de Azure Portal. Als u een client certificaat wilt verkrijgen, volgt u de stappen in [procedure: publicatie-instellingen en abonnements gegevens downloaden en importeren](https://msdn.microsoft.com/library/dn385850.aspx). 
 2. Stel een header-vermelding met de naam x-MS-version in met de waarde 2013-11-01.
-3. Een aanvraag verzenden in de volgende indeling: https: \/ /Management.core.Windows.net/ \<subscrition-id\> /Services/hostedservices/ \<service-name\> ? Embed-detail = True
+3. Een aanvraag verzenden in de volgende indeling: https://Management.core.Windows.net/ \<subscrition-id\> /Services/hostedservices/ \<service-name\> ? Embed-detail = True
 4. Zoek naar het **hostname** -element voor elk **RoleInstance** -element.
 
 > [!WARNING]

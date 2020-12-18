@@ -30,7 +30,7 @@ Deze upgrade handleiding bevat de wijzigingen tussen versie 5 en versie 7 van de
 
 ### <a name="endpoints"></a>Eindpunten
 
-- Het versie nummer van het eind punt is gewijzigd van v5 naar v7. Bijvoorbeeld https: \/ /API.Cognitive.Microsoft.com/Bing/ \* \* v 7.0 * */Suggestions.
+- Het versie nummer van het eind punt is gewijzigd van v5 naar v7. Bijvoorbeeld https://API.Cognitive.Microsoft.com/Bing/ \* \* v 7.0 * */Suggestions.
 
 ### <a name="error-response-objects-and-error-codes"></a>Fout bericht objecten en fout codes
 

@@ -61,11 +61,11 @@ Nadat u de toepassing hebt gemaakt, kunt u deze implementeren in het lokale clus
 
    ![Opdracht toepassing implementeren in VS code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
-4. Wanneer de implementatie is voltooid, start u een browser en opent u Service Fabric Explorer: http: \/ /localhost: 19080/Explorer. U ziet dat de toepassing wordt uitgevoerd. Dit kan enige tijd duren. het is dus een ogen blik geduld. 
+4. Wanneer de implementatie is voltooid, start u een browser en opent u Service Fabric Explorer: http://localhost: 19080/Explorer. U ziet dat de toepassing wordt uitgevoerd. Dit kan enige tijd duren. het is dus een ogen blik geduld. 
 
    ![Counter service-toepassing in Service Fabric Explorer](./media/service-fabric-develop-csharp-applications-with-vs-code/sfx-verify-deploy.png)
 
-4. Nadat u hebt gecontroleerd of de toepassing wordt uitgevoerd, start u een browser en opent u deze pagina: http: \/ /localhost: 31002. Dit is de web-front-end van de toepassing. Vernieuw de pagina om de huidige waarde van de teller te zien wanneer deze wordt verhoogd.
+4. Nadat u hebt gecontroleerd of de toepassing wordt uitgevoerd, start u een browser en opent u deze pagina: http://localhost: 31002. Dit is de web-front-end van de toepassing. Vernieuw de pagina om de huidige waarde van de teller te zien wanneer deze wordt verhoogd.
 
    ![Counter service-toepassing in browser](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-running.png)
 
@@ -93,7 +93,7 @@ Voer de volgende stappen uit om een onderbrekings punt en fout opsporing in te s
 
    ![Scherm opname van de weer gave .NET core koppelen geselecteerd in het menu Configuratie fouten opsporen.](./media/service-fabric-develop-csharp-applications-with-vs-code/debug-start.png)
 
-3. Open Service Fabric Explorer in een browser: http: \/ /localhost: 19080/Explorer. Klik op **toepassingen** en zoom in om het primaire knoop punt te bepalen waarop de CounterService wordt uitgevoerd. In de afbeelding onder het primaire knoop punt voor de CounterService is knoop punt 0.
+3. Open Service Fabric Explorer in een browser: http://localhost: 19080/Explorer. Klik op **toepassingen** en zoom in om het primaire knoop punt te bepalen waarop de CounterService wordt uitgevoerd. In de afbeelding onder het primaire knoop punt voor de CounterService is knoop punt 0.
 
    ![Primair knoop punt voor CounterService](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-primary-node.png)
 

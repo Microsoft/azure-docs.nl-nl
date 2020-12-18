@@ -65,7 +65,7 @@ Het mechanisme voor het opnieuw samen stellen van de initrd-of initramfs-install
 ### <a name="resizing-vhds"></a>Grootte van Vhd's wijzigen
 VHD-installatie kopieën in azure moeten een virtuele grootte hebben die is afgestemd op 1 MB.  Normaal gesp roken worden Vhd's die zijn gemaakt met Hyper-V correct uitgelijnd.  Als de VHD niet correct is uitgelijnd, wordt mogelijk een fout bericht van de volgende strekking weer gegeven wanneer u een installatie kopie probeert te maken op basis van uw VHD.
 
-* De VHD http: \/ / \<mystorageaccount> . blob.core.Windows.net/VHDs/MyLinuxVM.VHD heeft een niet-ondersteunde virtuele grootte van 21475270656 bytes. De grootte moet een geheel getal zijn (in MB).
+* De VHD http:// \<mystorageaccount> . blob.core.Windows.net/VHDs/MyLinuxVM.VHD heeft een niet-ondersteunde virtuele grootte van 21475270656 bytes. De grootte moet een geheel getal zijn (in MB).
 
 In dit geval kunt u de grootte van de virtuele machine wijzigen met de Hyper-V-beheer console of met de Power shell [-cmdlet resize-VHD](/powershell/module/hyper-v/resize-vhd?view=win10-ps) .  Als u niet in een Windows-omgeving wordt uitgevoerd, raden we u `qemu-img` aan om (indien nodig) te converteren en de grootte van de VHD te wijzigen.
 

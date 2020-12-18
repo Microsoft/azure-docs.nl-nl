@@ -210,7 +210,7 @@ Het schema voor de EventStream XML-nettolading van [MPEG-DASH] is gedefinieerd a
 ### <a name="built-in-supported-scheme-id-uris"></a>Ingebouwde ondersteunde combi natie van schema-id's
 | URI van schema-ID                 | Beschrijving                                                                                                                                                                                                                                          |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| https: \/ /aomedia.org/emsg/ID3 | Hierin wordt beschreven hoe [ID3v2] meta gegevens kunnen worden uitgevoerd als getimede meta gegevens in een CMAF [MPEGCMAF] gefragmenteerde MP4. Zie de [getimede meta gegevens in de indeling common Media Application (CMAF)](https://github.com/AOMediaCodec/id3-emsg) voor meer informatie. |
+| https://aomedia.org/emsg/ID3 | Hierin wordt beschreven hoe [ID3v2] meta gegevens kunnen worden uitgevoerd als getimede meta gegevens in een CMAF [MPEGCMAF] gefragmenteerde MP4. Zie de [getimede meta gegevens in de indeling common Media Application (CMAF)](https://github.com/AOMediaCodec/id3-emsg) voor meer informatie. |
 
 ### <a name="event-processing-and-manifest-signaling"></a>Gebeurtenis verwerking en manifest signalen
 

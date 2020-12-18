@@ -25,12 +25,12 @@ Wanneer u een virtuele machine (VM) maakt, opnieuw opstarten gestopt (toewijzing
 
 **Fout code** : AllocationFailed of ZonalAllocationFailed
 
-**Fout bericht** : ' toewijzing is mislukt. Er zijn onvoldoende capaciteit voor de aangevraagde VM-grootte in deze regio. Meer informatie over het verbeteren van de kans op een succes volle toewijzing op https: \/ /aka.MS/Allocation-guidance "
+**Fout bericht** : ' toewijzing is mislukt. Er zijn onvoldoende capaciteit voor de aangevraagde VM-grootte in deze regio. Meer informatie over het verbeteren van de kans op een succes volle toewijzing op https://aka.MS/Allocation-guidance "
 
 > [!NOTE]
 > Als u een virtuele-machine Scale set (VMSS) wilt oplossen, is het proces hetzelfde als een standaard-VM. Volg de instructies in dit artikel om het probleem op te lossen.
 > 
->**Fout bericht** : ' toewijzing is mislukt. Als u een nieuwe VM wilt toevoegen aan een Schaalset voor virtuele machines met één plaatsings groep of als u een bestaande virtuele machine in een Schaalset voor virtuele machines met één plaatsings groep wilt bijwerken, moet u er rekening mee houden dat een dergelijke toewijzing tot één cluster is beperkt en mogelijk is de capaciteit van het cluster niet meer beschikbaar. Lees meer informatie over het verbeteren van de kans op een succes volle toewijzing op http: \/ /aka.MS/Allocation-Guidance. "
+>**Fout bericht** : ' toewijzing is mislukt. Als u een nieuwe VM wilt toevoegen aan een Schaalset voor virtuele machines met één plaatsings groep of als u een bestaande virtuele machine in een Schaalset voor virtuele machines met één plaatsings groep wilt bijwerken, moet u er rekening mee houden dat een dergelijke toewijzing tot één cluster is beperkt en mogelijk is de capaciteit van het cluster niet meer beschikbaar. Lees meer informatie over het verbeteren van de kans op een succes volle toewijzing op http://aka.MS/Allocation-Guidance. "
 
 In dit artikel worden de oorzaken beschreven van enkele algemene toewijzings fouten en worden mogelijke oplossingen voorgesteld.
 

@@ -9,12 +9,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 10/07/2020
   ms.author: magoedte
-  ms.openlocfilehash: 25d70341fb96e6458a15770ab49c28f3e8248385
-  ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+  ms.openlocfilehash: 3bdb85eea2f1227a566041badf11539923e7df44
+  ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/17/2020
-  ms.locfileid: "97615627"
+  ms.lasthandoff: 12/18/2020
+  ms.locfileid: "97672471"
 landingContent:
 - title: Computers verbinden met Azure met behulp van Azure Arc voor ingeschakelde servers
   linkLists:
@@ -24,8 +24,6 @@ landingContent:
       url: overview.md
   - linkListType: get-started
     links:
-    - text: Quickstart
-      url: https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_servers/
     - text: Machines verbinden met Azure Arc vanuit de Azure-portal
       url: onboard-portal.md
     - text: Machines op schaal verbinden met een service-principal
@@ -38,6 +36,12 @@ landingContent:
     links:
     - text: Servers met Arc-agent implementeren
       url: ./learn/quick-enable-hybrid-vm.md
+- title: Werkbaar concept
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Quickstart
+      url: https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_servers/
 - title: Referentiearchitectuur
   linkLists:
   - linkListType: architecture

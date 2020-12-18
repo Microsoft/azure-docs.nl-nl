@@ -110,6 +110,8 @@
       items:
         - name: Metrische capaciteitswaarde
           href: api-management-capacity.md
+        - name: Kosten voorspellen en beheren
+          href: plan-manage-costs.md
         - name: Upgraden en de schaal aanpassen
           href: upgrade-and-scale.md
         - name: Automatische schaalaanpassing configureren

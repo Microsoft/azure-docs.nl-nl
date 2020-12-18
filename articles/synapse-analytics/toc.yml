@@ -658,6 +658,8 @@
           href: ../data-factory/concepts-pipeline-execution-triggers.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Integratie-runtime
           href: ../data-factory/concepts-integration-runtime.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Verschillen met Azure Data Factory
+          href: ./data-integration/concepts-data-factory-differences.md
         - name: Gegevensstromen
           items:
             - name: Overzicht van gegevensstroom
@@ -678,8 +680,6 @@
               href: ../data-factory/concepts-data-flow-expression-builder.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Expressietaal
               href: ../data-factory/data-flow-expression-functions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Verschillen met Azure Data Factory
-              href: ./data-integration/concepts-data-factory-differences.md
     - name: Instructiegidsen
       items:
         - name: Auteur

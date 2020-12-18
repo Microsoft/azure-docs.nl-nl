@@ -30,8 +30,6 @@
       href: azuread-join-sso.md
     - name: Primaire vernieuwingstokens
       href: concept-primary-refresh-token.md
-    - name: Beheerde Azure-werkstations
-      href: concept-azure-managed-workstation.md
 - name: Instructiegidsen
   expanded: false
   items:
@@ -55,8 +53,6 @@
       href: howto-vm-sign-in-azure-ad-windows.md
     - name: Infrastructuur van virtueel bureaublad
       href: howto-device-identity-virtual-desktop-infrastructure.md
-    - name: Beheerde Azure-werkstations implementeren
-      href: howto-azure-managed-workstation.md
     - name: Problemen met apparaatidentiteiten oplossen
       items:
         - name: Problemen oplossen met apparaten die deel uitmaken van een hybride Azure AD en werken met de huidige versie van Windows

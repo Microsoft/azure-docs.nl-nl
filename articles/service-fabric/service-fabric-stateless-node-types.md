@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: 6259de345b534bfb51ef6ba1a9c3895800546caf
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 0876891e42ce629a3b088d8068c74386d690492d
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605493"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683189"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen (preview-versie)
 Service Fabric knooppunt typen worden geleverd met inherente veronderstelling dat op een bepaald moment stateful Services kunnen worden geplaatst op de knoop punten. Stateless knooppunt typen versoepelen deze veronderstelling voor een knooppunt type, waardoor het knooppunt type ook andere functies kan gebruiken, zoals het snel uitbreiden van bewerkingen, ondersteuning voor automatische upgrades van besturings systemen op Bronze duurzaamheid en uitschalen naar meer dan 100 knoop punten in één virtuele-machine schaalset.
@@ -44,7 +44,7 @@ Als u een of meer knooppunt typen als stateless wilt instellen in een cluster br
         },
         "httpGatewayEndpointPort": "[parameters('nt0fabricHttpGatewayPort')]",
         "isPrimary": true,
-        "isStateles": false,
+        "isStateless": false,
         "vmInstanceCount": "[parameters('nt0InstanceCount')]"
     },
     {
@@ -71,9 +71,9 @@ Als u een of meer knooppunt typen als stateless wilt instellen in een cluster br
 ## <a name="configuring-virtual-machine-scale-set-for-stateless-node-types"></a>Schaalset voor virtuele machines configureren voor stateless knooppunt typen
 Als u stateless knooppunt typen wilt inschakelen, moet u de onderliggende resource van de virtuele-machine schaalset op de volgende manier configureren:
 
-* De waarde van de eigenschap  **singlePlacementGroup** , die moet worden ingesteld op waar/onwaar, afhankelijk van de vereiste om naar meer dan 100 vm's te schalen.
-* De **upgrade mode ingesteld** van de schaalset die moet worden ingesteld op Rolling.
-* Voor de modus voor rolling upgrades is een configuratie van een toepassings status of status controles vereist. Configureer de status test met de standaard configuratie voor stateless knooppunt typen, zoals hieronder wordt voorgesteld. Zodra toepassingen zijn geïmplementeerd op het NodeType, kunnen de poorten voor status controle/status worden gewijzigd om de status van de toepassing te bewaken.
+* De waarde van de eigenschap  **singlePlacementGroup** , die moet worden ingesteld op **False** als u wilt schalen naar meer dan 100 vm's.
+* De **upgrade Policy** van de schaalset **moet worden** ingesteld op **Rolling**.
+* Voor de modus voor rolling upgrades is een configuratie van een toepassings status of status controles vereist. Configureer de status test met de standaard configuratie voor stateless knooppunt typen, zoals hieronder wordt voorgesteld. Zodra toepassingen zijn geïmplementeerd naar het knooppunt type, kunnen de poorten voor status controle en status worden gewijzigd om de status van de toepassing te bewaken.
 
 ```json
 {

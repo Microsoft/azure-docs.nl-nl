@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/11/2019
-ms.openlocfilehash: ba63358347cf9722d2cafa35598b9b3b37f49dc3
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 67e28e8c5092f2b52a3a34053f81d8a00afb24ed
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129453"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683223"
 ---
 # <a name="copy-or-back-up-azure-stream-analytics-jobs"></a>Azure Stream Analytics-taken kopiëren of een back-up maken
 
@@ -37,8 +37,6 @@ U kunt uw geïmplementeerde Azure Stream Analytics-taken kopiëren of een back-u
 
     Het project wordt geëxporteerd naar de map die u hebt geselecteerd en toegevoegd aan uw huidige werk ruimte.
 
-    ![De taak ASA exporteren in Visual Studio code](./media/stream-analytics-manage-job/copy-backup-stream-analytics-jobs.png)
-
 3. Als u de taak wilt publiceren naar een andere regio of een back-up met een andere naam, selecteert u in **uw abonnementen selecteren om** deze te publiceren in de query-editor ( \* . asaql) en volgt u de instructies.
 
     ![Publiceren naar Azure in Visual Studio code](./media/quick-create-visual-studio-code/submit-job.png)
@@ -53,4 +51,3 @@ U kunt uw geïmplementeerde Azure Stream Analytics-taken kopiëren of een back-u
 
 * [Snelstartgids: een Stream Analytics-taak maken met behulp van Visual Studio code](quick-create-visual-studio-code.md)
 * [Snelstartgids: een Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
-* [Een Azure Stream Analytics-taak met CI/CD implementeren met behulp van Azure Pipelines](stream-analytics-tools-visual-studio-cicd-vsts.md)

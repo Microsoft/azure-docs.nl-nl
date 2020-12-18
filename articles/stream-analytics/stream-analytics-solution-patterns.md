@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: b82dd4ea8a74c51606b7a388b8d6ede07b1057c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02276ebf8e8a2289db2a1f6eac506443cea61c31
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89461541"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682723"
 ---
 # <a name="azure-stream-analytics-solution-patterns"></a>Azure Stream Analytics-oplossingspatronen
 
@@ -20,7 +20,7 @@ Net als bij veel andere services in azure kunt u Stream Analytics het beste met 
 
 ## <a name="create-a-stream-analytics-job-to-power-real-time-dashboarding-experience"></a>Een Stream Analytics taak maken om in realtime Dash boards te kunnen werken
 
-Met Azure Stream Analytics kunt u snel realtime-Dash boards en-waarschuwingen opschonen. Met een eenvoudige oplossing worden gebeurtenissen van Event hubs of IOT hub opgenomen, en wordt [het Power bi dash board met een gegevensverzamelinggegevens gevoed](/power-bi/service-real-time-streaming). Zie de gedetailleerde zelf studie [gegevens van telefoon gesprekken analyseren met Stream Analytics en resultaten visualiseren in Power bi dash board](stream-analytics-manage-job.md)voor meer informatie.
+Met Azure Stream Analytics kunt u snel realtime-Dash boards en-waarschuwingen opschonen. Met een eenvoudige oplossing worden gebeurtenissen van Event hubs of IOT hub opgenomen, en wordt [het Power bi dash board met een gegevensverzamelinggegevens gevoed](/power-bi/service-real-time-streaming). Zie voor meer informatie de gedetailleerde zelf studie voor het [analyseren van frauduleuze gegevens met Stream Analytics en het visualiseren van resultaten in Power bi dash board](stream-analytics-real-time-fraud-detection.md).
 
 ![ASA Power BI-dash board](media/stream-analytics-solution-patterns/power-bi-dashboard.png)
 
@@ -171,8 +171,8 @@ Voor backfilling is het nog steeds belang rijk om ten minste tijdelijk meer bron
 |**Dash boards**   |Maakt tussen ruimte    |OK voor korte onderbreking    |Gebruiken voor lange onderbreking |
 |**Waarschuwingen**   |Aanvaardbaar |OK voor korte onderbreking    |Niet nodig |
 |**App voor gebeurtenis bronnen** |Aanvaardbaar |OK voor korte onderbreking    |Gebruiken voor lange onderbreking |
-|**Gegevens opslag**   |Gegevens verlies  |Aanvaardbaar |Niet nodig |
-|**Offline analyse**  |Gegevens verlies  |Aanvaardbaar |Niet nodig|
+|**Gegevens opslag**   |Gegevensverlies  |Aanvaardbaar |Niet nodig |
+|**Offline analyse**  |Gegevensverlies  |Aanvaardbaar |Niet nodig|
 
 ## <a name="putting-it-all-together"></a>Alles samenvoegen
 

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: 649abf6d07a95c7f20f6416f7d3155f8d115782b
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: d2fb2ac40dfbe6e48fef5c98e21896575b298a94
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127566"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683468"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Gegevens streamen als invoer in Stream Analytics
 
@@ -31,7 +31,7 @@ Stream Analytics ondersteunt compressie voor alle invoer bronnen van de gegevens
 
 ## <a name="create-edit-or-test-inputs"></a>Invoer maken, bewerken of testen
 
-U kunt de [Azure Portal](stream-analytics-quick-create-portal.md), [Visual Studio](stream-analytics-quick-create-vs.md)en [Visual Studio code](quick-create-visual-studio-code.md) gebruiken om bestaande invoer in uw streaming-taak toe te voegen en weer te geven of te bewerken. U kunt ook invoer verbindingen testen en [query's testen](stream-analytics-manage-job.md#test-your-query) vanuit voorbeeld gegevens uit de Azure Portal, [Visual Studio](stream-analytics-vs-tools-local-run.md)en [Visual Studio code](visual-studio-code-local-run.md). Wanneer u een query schrijft, vermeldt u de invoer in de component FROM. U kunt de lijst met beschik bare invoer gegevens ophalen van de **query** pagina in de portal. Als u meerdere invoer wilt gebruiken, kunt u er `JOIN` meerdere query's mee of schrijven `SELECT` .
+U kunt de [Azure Portal](stream-analytics-quick-create-portal.md), [Visual Studio](stream-analytics-quick-create-vs.md)en [Visual Studio code](quick-create-visual-studio-code.md) gebruiken om bestaande invoer in uw streaming-taak toe te voegen en weer te geven of te bewerken. U kunt ook invoer verbindingen testen en query's testen vanuit voorbeeld gegevens uit de Azure Portal, [Visual Studio](stream-analytics-vs-tools-local-run.md)en [Visual Studio code](visual-studio-code-local-run.md). Wanneer u een query schrijft, vermeldt u de invoer in de component FROM. U kunt de lijst met beschik bare invoer gegevens ophalen van de **query** pagina in de portal. Als u meerdere invoer wilt gebruiken, kunt u er `JOIN` meerdere query's mee of schrijven `SELECT` .
 
 
 ## <a name="stream-data-from-event-hubs"></a>Gegevens streamen vanuit Event Hubs

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: 95abf403dfd4abd4c0533b6e8b4a2f83b33fa18b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43b145f5a37ea4209947e54cb276e16ff55c1da1
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045549"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682813"
 ---
 # <a name="use-visual-studio-to-view-azure-stream-analytics-jobs"></a>Visual Studio gebruiken om Azure Stream Analytics-taken weer te geven
 
@@ -56,7 +56,7 @@ Stream Analytics-hulpprogram ma's voor Visual Studio ondersteunen momenteel uitv
 
 Er zijn twee manieren waarop u een bestaande taak kunt exporteren naar een project.
 
-1. Klik in **Server Explorer**onder het knoop punt stream Analytics taken met de rechter muisknop op het knoop punt taak. Selecteer **exporteren naar nieuw stream Analytics project**.
+1. Klik in **Server Explorer** onder het knoop punt stream Analytics taken met de rechter muisknop op het knoop punt taak. Selecteer **exporteren naar nieuw stream Analytics project**.
     
    ![Taak exporteren naar project](./media/stream-analytics-vs-tools/stream-analytics-tools-for-vs-export-job-01.png)
     
@@ -82,5 +82,4 @@ De resultaten van de **Test verbinding** worden weer gegeven in het **uitvoer** 
 
 * [Azure Stream Analytics taken bewaken en beheren met Visual Studio](stream-analytics-monitor-jobs-use-vs.md)
 * [Snelstartgids: een Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
-* [Zelfstudie: Een Azure Stream Analytics-taak met CI/CD implementeren met behulp van Azure Pipelines](stream-analytics-tools-visual-studio-cicd-vsts.md)
 * [Continue integratie en ontwikkeling met Stream Analytics-hulpprogramma’s](stream-analytics-tools-for-visual-studio-cicd.md)

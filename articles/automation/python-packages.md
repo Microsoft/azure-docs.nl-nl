@@ -3,15 +3,15 @@ title: Python 2-pakketten beheren in Azure Automation
 description: In dit artikel leest u hoe u python 2-pakketten beheert in Azure Automation.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/25/2019
+ms.date: 12/17/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1ab0b2def1a22470c1d0b6339e1525cd683b4a0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd830afd5628591019902ca583f9cbc8e2a7ecad
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987558"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683387"
 ---
 # <a name="manage-python-2-packages-in-azure-automation"></a>Python 2-pakketten beheren in Azure Automation
 
@@ -25,11 +25,11 @@ Selecteer in uw Automation-account **python 2-pakketten** onder **gedeelde bronn
 
 Selecteer op de pagina python 2-pakket toevoegen een lokaal pakket dat u wilt uploaden. Het pakket kan een **. WHL** -of **. tar. gz** -bestand zijn. Wanneer het pakket is geselecteerd, klikt u op **OK** om het te uploaden.
 
-:::image type="content" source="media/python-packages/upload-package.png" alt-text="Scherm afbeelding van de python 2-pakketten pagina bevat python 2-pakketten in het linkermenu en voegt u een python 2-pakket toe dat is gemarkeerd.":::
+:::image type="content" source="media/python-packages/upload-package.png" alt-text="Scherm afbeelding toont de pagina python 2-pakket toevoegen met een geüpload tar. gz-bestand dat is geselecteerd.":::
 
 Wanneer een pakket is geïmporteerd, wordt dit weer gegeven op de pagina python 2-pakketten in uw Automation-account. Als u een pakket wilt verwijderen, selecteert u het pakket en klikt u op **verwijderen**.
 
-:::image type="content" source="media/python-packages/package-list.png" alt-text="Scherm afbeelding van de python 2-pakketten pagina bevat python 2-pakketten in het linkermenu en voegt u een python 2-pakket toe dat is gemarkeerd.":::
+:::image type="content" source="media/python-packages/package-list.png" alt-text="Scherm afbeelding toont de python 2-pakketten pagina nadat een pakket is geïmporteerd.":::
 
 ## <a name="import-packages-with-dependencies"></a>Pakketten met afhankelijkheden importeren
 
@@ -47,14 +47,14 @@ Zodra de pakketten zijn gedownload, kunt u deze importeren in uw Automation-acco
 
 ### <a name="runbook"></a>Runbook
 
- Als u een runbook wilt ophalen, [importeert u python 2-pakketten van pypi in azure Automation account](https://gallery.technet.microsoft.com/scriptcenter/Import-Python-2-packages-57f7d509) uit de galerie in uw Automation-account. Zorg ervoor dat de uitvoerings instellingen zijn ingesteld op **Azure** en start het runbook met de para meters. Het runbook vereist een uitvoeren als-account voor het werken met het Automation-account. Zorg er voor elke para meter voor dat u deze met de switch start, zoals in de volgende lijst en afbeelding wordt weer gegeven:
+ Als u een runbook wilt verkrijgen, [importeert u python 2-pakketten van pypi in azure Automation account](https://github.com/azureautomation/import-python-2-packages-from-pypi-into-azure-automation-account) van de Azure Automation github-organisatie in uw Automation-account. Zorg ervoor dat de uitvoerings instellingen zijn ingesteld op **Azure** en start het runbook met de para meters. Het runbook vereist een uitvoeren als-account voor het werken met het Automation-account. Zorg er voor elke para meter voor dat u deze met de switch start, zoals in de volgende lijst en afbeelding wordt weer gegeven:
 
 * -s \<subscriptionId\>
 * -g \<resourceGroup\>
 * -a \<automationAccount\>
 * -m \<modulePackage\>
 
-:::image type="content" source="media/python-packages/import-python-runbook.png" alt-text="Scherm afbeelding van de python 2-pakketten pagina bevat python 2-pakketten in het linkermenu en voegt u een python 2-pakket toe dat is gemarkeerd.":::
+:::image type="content" source="media/python-packages/import-python-runbook.png" alt-text="Scherm afbeelding toont de pagina overzicht voor import_py2package_from_pypi met het deel venster Runbook starten aan de rechter kant.":::
 
 Met het runbook kunt u opgeven welk pakket moet worden gedownload. Gebruik van de `Azure` para meter bijvoorbeeld downloadt alle Azure-modules en alle afhankelijkheden (ongeveer 105).
 

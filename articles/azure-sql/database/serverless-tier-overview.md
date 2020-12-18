@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein
 ms.date: 12/8/2020
-ms.openlocfilehash: bd8f5a28b709a45e99e846fb4e242f774aca80c5
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b0d599b7d52d8a0e93f16761d1983ad25fa45c61
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902507"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687408"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -180,7 +180,7 @@ Het maken van een nieuwe data base of het verplaatsen van een bestaande Data Bas
 
 In de volgende voor beelden wordt een nieuwe data base gemaakt in de serverloze Compute-laag.
 
-#### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+#### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Zie [Quick Start: een enkele data base maken in Azure SQL database met behulp van de Azure Portal](single-database-create-quickstart.md).
 
@@ -196,7 +196,7 @@ New-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $serverName 
 
 ```azurecli
 az sql db create -g $resourceGroupName -s $serverName -n $databaseName `
-  -e GeneralPurpose -f Gen5 -min-capacity 0.5 -c 2 --compute-model Serverless --auto-pause-delay 720
+  -e GeneralPurpose -f Gen5 --min-capacity 0.5 -c 2 --compute-model Serverless --auto-pause-delay 720
 ```
 
 
@@ -276,7 +276,7 @@ De resource groep van de gebruiker is de binnenste grenzen voor bron beheer voor
 
 De metrische gegevens voor het bewaken van het resource gebruik van het app-pakket en de gebruikers groep van een serverloze Data Base worden weer gegeven in de volgende tabel:
 
-|Entiteit|Gegevens|Beschrijving|Eenheden|
+|Entiteit|Metrisch|Beschrijving|Eenheden|
 |---|---|---|---|
 |App-pakket|app_cpu_percent|Het percentage vCores dat door de app wordt gebruikt ten opzichte van het maximale aantal vCores dat voor de app is toegestaan.|Percentage|
 |App-pakket|app_cpu_billed|De hoeveelheid reken kracht die tijdens de rapportage periode in rekening wordt gebracht voor de app. Het betaalde bedrag tijdens deze periode is het product van deze metrische waarde en de vCore eenheids prijs. <br><br>Waarden van deze metrische gegevens worden bepaald door het samen voegen van het maximum van CPU-gebruik en het geheugen dat elke seconde wordt gebruikt. Als de gebruikte hoeveelheid kleiner is dan de minimum hoeveelheid die is ingericht zoals ingesteld door de min-vCores en het minimale geheugen, wordt de ingerichte minimum hoeveelheid gefactureerd.Als u de CPU wilt vergelijken met geheugen voor facturerings doeleinden, wordt geheugen genormaliseerd in eenheden van vCores door de hoeveelheid geheugen in GB met 3 GB per vCore opnieuw te schalen.|vCore seconden|

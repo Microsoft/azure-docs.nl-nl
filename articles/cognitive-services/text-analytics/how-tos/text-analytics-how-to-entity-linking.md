@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 589f320f0099fdab829e9e707a86e3e77d51c21e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 0b57629f5c21d933fc898258263199b5fc713fdb
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656288"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683365"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Benoemde entiteits herkenning gebruiken in Text Analytics
 
@@ -52,7 +52,7 @@ Named entity Recognition v 3.1-Preview. 3 bevat de detectie mogelijkheden van v 
 * Een optionele `domain=phi` para meter voor het detecteren van vertrouwelijke status informatie ( `PHI` ).
 * [Asynchrone bewerking](text-analytics-how-to-call-api.md) met behulp van het `/analyze` eind punt.
 
-Zie voor meer informatie het artikel [entiteits categorieën](../named-entity-types.md) en de onderstaande sectie [aanvragen voor eind punten](#request-endpoints) . 
+Zie voor meer informatie het artikel [entiteits categorieën](../named-entity-types.md) en de onderstaande sectie [aanvragen voor eind punten](#request-endpoints) . Zie de [Opmerking over Text Analytics transparantie](/legal/cognitive-services/text-analytics/transparency-note?context=/azure/cognitive-services/text-analytics/context/context)voor meer informatie over betrouwbaarheids scores. 
 
 ## <a name="sending-a-rest-api-request"></a>Een REST API-aanvraag verzenden
 

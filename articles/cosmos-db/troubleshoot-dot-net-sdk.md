@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 68d9a64e388d24f2067f47282945b9561d807535
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6a78b38bd71a2822d94e58834ab17824c9ef6ec6
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545924"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683109"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Problemen vaststellen en oplossen bij het gebruik van Azure Cosmos DB .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -53,6 +53,13 @@ Raadpleeg de [sectie met github-problemen](https://github.com/Azure/azure-cosmos
 
 ### <a name="check-the-portal-metrics"></a>Controleer de metrische gegevens van de portal
 Door de [metrische gegevens](./monitor-cosmos-db.md) van de portal te controleren, kunt u bepalen of het een probleem aan de client zijde is of dat er een probleem is met de service. Als de metrische gegevens bijvoorbeeld een hoog aantal aanvragen met een rente beperking bevatten (HTTP-status code 429), wat betekent dat de aanvraag wordt beperkt, controleert u de sectie [aanvraag snelheid is te groot](troubleshoot-request-rate-too-large.md) . 
+
+## <a name="retry-logic"></a>Logica voor opnieuw proberen <a id="retry-logics"></a>
+Cosmos DB SDK bij een i/o-fout probeert de mislukte bewerking opnieuw uit te voeren als het probleem zich voordoet in de SDK. Als er een nieuwe poging wordt gedaan om fouten te voor komen, is het een goed idee. Het is raadzaam om de nieuwste SDK te gebruiken als de logica voor nieuwe pogingen voortdurend wordt verbeterd.
+
+1. Bij lees-en query-i/o-fouten wordt opnieuw geprobeerd door de SDK zonder de halen aan de eind gebruiker.
+2. Schrijf bewerkingen (maken, Upsert, vervangen, verwijderen) zijn ' not ' idempotent en daarom kan SDK niet altijd een blinde schrijf bewerking uitvoeren. De toepassings logica van de gebruiker is vereist voor het afhandelen van de fout en het opnieuw proberen.
+3. [Problemen met SDK-Beschik baarheid](troubleshoot-sdk-availability.md) legt nieuwe pogingen voor Cosmos DB accounts met meerdere regio's uit.
 
 ## <a name="common-error-status-codes"></a>Algemene fout status codes <a id="error-codes"></a>
 

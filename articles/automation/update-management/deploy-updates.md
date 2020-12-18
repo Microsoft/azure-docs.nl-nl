@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: ec0d6d618edad87b76861ea834adb2f29531e6f5
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 62793e0551c914b77310a0e9b72fea31ec621848
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929664"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683377"
 ---
 # <a name="how-to-deploy-updates-and-review-results"></a>Updates implementeren en resultaten bekijken
 
@@ -117,7 +117,7 @@ Als u een nieuwe update-implementatie wilt plannen, voert u de volgende stappen 
 
 Zie [Software Update Configurations - Create](/rest/api/automation/softwareupdateconfigurations/create) (software-updateconfiguraties: maken) als u wilt leren hoe u een update-implementatie kunt maken met de REST-API.
 
-U kunt een voor beeld-runbook gebruiken om een wekelijkse update-implementatie te maken. Zie voor meer informatie over dit runbook [Create a weekly update deployment for one or more VMs in a resource group](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1) (een wekelijkse update-implementatie maken voor een of meer VM's in een resourcegroep).
+U kunt een voor beeld-runbook gebruiken om een wekelijkse update-implementatie te maken. Zie voor meer informatie over dit runbook [Create a weekly update deployment for one or more VMs in a resource group](https://github.com/azureautomation/create-a-weekly-update-deployment-for-one-or-more-vms-in-a-resource-group) (een wekelijkse update-implementatie maken voor een of meer VM's in een resourcegroep).
 
 ## <a name="check-deployment-status"></a>Implementatie status controleren
 

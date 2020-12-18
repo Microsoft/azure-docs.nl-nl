@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: f016fd37efa2bd821b5ad2286a921bf29bbedfbd
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: a921e51a3c63828602e7e21bfc96f507649236a5
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92221261"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97682842"
 ---
 # <a name="test-stream-analytics-queries-locally-with-visual-studio"></a>Stream Analytics query's lokaal testen met Visual Studio
 
@@ -32,7 +32,7 @@ Als u uw query wilt valideren op basis van lokale statische gegevens, klikt u me
    
 ![Scherm afbeelding met de optie voor het toevoegen van een lokaal invoer menu.](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-add-local-input-01.png)
    
-Selecteer in het pop-upvenster voorbeeld gegevens uit het lokale pad en **Sla**het op.
+Selecteer in het pop-upvenster voorbeeld gegevens uit het lokale pad en **Sla** het op.
    
 ![Lokale invoer toevoegen](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-add-local-input-02.png)
    
@@ -75,5 +75,4 @@ U kunt de voortgang bekijken in het **uitvoer** venster.
 * [Snelstartgids: een Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
 * [Visual Studio gebruiken om Azure Stream Analytics-taken weer te geven](stream-analytics-vs-tools.md)
 * [Live-gegevens lokaal testen met Azure Stream Analytics-hulpprogram ma's voor Visual Studio (preview)](stream-analytics-live-data-local-testing.md)
-* [Zelf studie: een Azure Stream Analytics-taak implementeren met CI/CD met behulp van Azure DevOps](stream-analytics-tools-visual-studio-cicd-vsts.md)
 * [Continue integratie en ontwikkeling met Stream Analytics-hulpprogramma’s](stream-analytics-tools-for-visual-studio-cicd.md)

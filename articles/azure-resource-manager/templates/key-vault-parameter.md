@@ -2,13 +2,13 @@
 title: Geheim Key Vault met sjabloon
 description: Laat zien hoe u tijdens de implementatie een geheim kunt door geven van een sleutel kluis als een para meter.
 ms.topic: conceptual
-ms.date: 01/06/2020
-ms.openlocfilehash: eb57e680090a38a5be725daa7b3a118039aa35f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/17/2020
+ms.openlocfilehash: 8983d51d90e07e21ac4c9489c7ed553530278d3c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84677862"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672702"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Azure Key Vault gebruiken om een beveiligde parameter waarde door te geven tijdens de implementatie
 
@@ -377,3 +377,4 @@ Met de volgende sjabloon wordt de sleutel kluis-ID dynamisch gemaakt en door geg
 
 - Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor algemene informatie over sleutel kluizen.
 - Zie [Key Vault-voor beelden](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)voor volledige voor beelden van het verwijzen naar sleutel geheimen.
+- Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die betrekking heeft op het door geven van een beveiligde waarde van een sleutel kluis.

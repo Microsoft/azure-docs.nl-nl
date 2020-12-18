@@ -2,13 +2,13 @@
 title: Voorwaardelijke implementatie met sjablonen
 description: Hierin wordt beschreven hoe u een resource voorwaardelijk kunt implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
-ms.date: 06/01/2020
-ms.openlocfilehash: 0a31bd1fbf755046f331542b4d5952b27a793360
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.date: 12/17/2020
+ms.openlocfilehash: 1492e9f9f45f23628f9933628fd2740e08ad9eb0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905992"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672845"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Voorwaardelijke implementatie in ARM-sjablonen
 
@@ -90,5 +90,6 @@ Als u een sjabloon implementeert met de [modus volledig](deployment-modes.md) en
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die de voorwaardelijke implementatie bedekt.
 * Zie [Aanbevolen procedures voor arm](template-best-practices.md)-sjablonen voor aanbevelingen voor het maken van een sjabloon.
 * Zie [resource herhaling in arm-sjablonen](copy-resources.md)als u meerdere exemplaren van een resource wilt maken.

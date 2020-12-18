@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: Zhchia
-ms.openlocfilehash: 1658e6adf0c9de0cbd7412b963fb9a134f633430
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3754a56d1520118937a9d4aad406ae657b4dd23b
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96179691"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673661"
 ---
 # <a name="tutorial-configure-clarizen-one-for-automatic-user-provisioning"></a>Zelfstudie: Clarizen One configureren voor automatische inrichting van gebruikers
 
@@ -78,19 +78,19 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** > **Alle toepassingen**.
 
-    ![Schermopname van het deelvenster Ondernemingstoepassing.](common/enterprise-applications.png)
+      ![Schermopname van het deelvenster Ondernemingstoepassing.](common/enterprise-applications.png)
 
 1. Selecteer **Clarizen One** in de lijst met toepassingen.
 
-    ![Schermopname van de Clarizen One-link in de lijst Toepassingen.](common/all-applications.png)
+      ![Schermopname van de Clarizen One-link in de lijst Toepassingen.](common/all-applications.png)
 
 1. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van het tabblad Inrichten.](common/provisioning.png)
+      ![Schermopname van het tabblad Inrichten.](common/provisioning.png)
 
 1. Stel **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Schermopname van de optie Automatisch op het tabblad Inrichten.](common/provisioning-automatic.png)
+      ![Schermopname van de optie Automatisch op het tabblad Inrichten.](common/provisioning-automatic.png)
 
 1. Voer in de sectie **Beheerdersreferenties** de **Tenant-URL** en het **geheime token** van uw Clarizen One in. Selecteer **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Clarizen One. Als de verbinding mislukt, moet u controleren of uw Clarizen One-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
@@ -162,15 +162,15 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 1. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Clarizen One.
 
-    ![Schermopname van de Inrichtingsstatus ingeschakeld.](common/provisioning-toggle-on.png)
+      ![Schermopname van de Inrichtingsstatus ingeschakeld.](common/provisioning-toggle-on.png)
 
 1. Definieer de gebruikers of groepen die u aan Clarizen One wilt toevoegen door de gewenste waarden te selecteren in **Bereik** in de sectie **Instellingen**.
 
-    ![Schermopname van het inrichtingsbereik.](common/provisioning-scope.png)
+      ![Schermopname van het inrichtingsbereik.](common/provisioning-scope.png)
 
 1. Selecteer **Opslaan** als u klaar bent voor het inrichten.
 
-    ![Schermopname van het opslaan van de inrichtingsconfiguratie.](common/provisioning-configuration-save.png)
+      ![Schermopname van het opslaan van de inrichtingsconfiguratie.](common/provisioning-configuration-save.png)
 
 Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd.
 

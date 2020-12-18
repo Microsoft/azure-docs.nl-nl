@@ -5,14 +5,14 @@ author: sr-msft
 ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 12/17/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2fa8794066739302d2f32acb13c936c524dc89a8
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 7e74a58a14bdcc2a6fe1e9f86305aae415c6abf7
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422345"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674511"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Maak en beheer Lees replica's vanuit Azure CLI, REST API
 
@@ -189,7 +189,7 @@ U kunt de replicatie tussen een primaire server en een lees replica stoppen door
 Nadat u de replicatie naar een primaire server en een lees replica hebt gestopt, kunt u deze niet meer ongedaan maken. De Lees replica wordt een zelfstandige server die zowel lees-als schrijf bewerkingen ondersteunt. De zelfstandige server kan niet opnieuw in een replica worden gemaakt.
 
 ```http
-PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{masterServerName}?api-version=2017-12-01
+PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{replicaServerName}?api-version=2017-12-01
 ```
 
 ```json

@@ -4,22 +4,22 @@ description: Meer informatie over het verzenden van Azure RabbitMQ-triggers en-b
 author: cachai2
 ms.assetid: ''
 ms.topic: reference
-ms.date: 12/15/2020
+ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: ebf094ddfec19dac98238adf7d55af785b3df122
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: a38015d9f7560930d77d5d50ac70dca5bcdde6a6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629626"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672505"
 ---
 # <a name="rabbitmq-bindings-for-azure-functions-overview"></a>RabbitMQ-bindingen voor Azure Functions-overzicht
 
 > [!NOTE]
 > De RabbitMQ-bindingen worden alleen volledig ondersteund in **Windows Premium en speciale** abonnementen. Verbruik en Linux worden momenteel niet ondersteund.
 
-Azure Functions integreert met [RabbitMQ](https://www.rabbitmq.com/) via [Triggers en bindingen](./functions-triggers-bindings.md). Met de RabbitMQ-bindings extensies van de Azure Functions kunt u berichten verzenden en ontvangen met behulp van de RabbitMQ-API met functies.
+Azure Functions integreert met [RabbitMQ](https://www.rabbitmq.com/) via [Triggers en bindingen](./functions-triggers-bindings.md). Met de Azure Functions RabbitMQ-extensie kunt u berichten verzenden en ontvangen met behulp van de RabbitMQ-API met functies.
 
 | Bewerking | Type |
 |---------|---------|

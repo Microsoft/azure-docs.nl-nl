@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: tomfitz
-ms.openlocfilehash: a1ce7f8f718b364dc4b47593cf9ea37e8baf1e72
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: fa70d88b046cf38aa74582066d230c15580465b9
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563089"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673967"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>ARM template deployment what-if operation (Wat-als-bewerking bij het implementeren van ARM-sjablonen)
 
@@ -396,6 +396,7 @@ U kunt de What-if-bewerking gebruiken via de Azure Sdk's.
 ## <a name="next-steps"></a>Volgende stappen
 
 - Als u onjuiste resultaten van de What-if-bewerking ziet, meldt u de problemen op [https://aka.ms/whatifissues](https://aka.ms/whatifissues) .
+- Zie [Preview wijzigingen en Azure-resources valideren met behulp van What-if en de arm-sjabloon test Toolkit](/learn/modules/arm-template-test/)voor een Microsoft Learn module die betrekking heeft op het gebruik van wat als.
 - Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van sjablonen met Azure PowerShell.
 - Zie [resources implementeren met arm-sjablonen en Azure cli](deploy-cli.md)voor meer informatie over het implementeren van sjablonen met Azure cli.
 - Zie [resources implementeren met arm-sjablonen en Resource Manager rest API](deploy-rest.md)als u sjablonen wilt implementeren met rest.

@@ -3,12 +3,12 @@ title: Doorlopend exporteren van telemetrie uit Application Insights | Microsoft
 description: Exporteer diagnostische en gebruiks gegevens naar opslag in Microsoft Azure en down load deze vanaf daar.
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.openlocfilehash: f67a5c555c438298cee701ca065aaf8c01c6406e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a6f636ce9fe30c666f08935d5830eb0c12e6cb5e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324332"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674134"
 ---
 # <a name="export-telemetry-from-application-insights"></a>Telemetrie exporteren vanuit Application Insights
 Wilt u de telemetrie langer houden dan de standaard retentie periode? Of verwerk het op een specifieke manier? Continue export is ideaal voor dit. De gebeurtenissen die u in de Application Insights Portal ziet, kunnen worden geëxporteerd naar de opslag in Microsoft Azure in JSON-indeling. Van daaruit kunt u uw gegevens downloaden en de code schrijven die u nodig hebt om deze te verwerken.  
@@ -37,6 +37,9 @@ Continue export **biedt geen ondersteuning** voor de volgende functies/configura
 * [Azure data Lake Storage Gen2](../../storage/blobs/data-lake-storage-introduction.md).
 
 ## <a name="create-a-continuous-export"></a><a name="setup"></a> Een continue export maken
+
+> [!NOTE]
+> Een toepassing kan niet meer dan 3 TB aan gegevens per dag exporteren. Als er meer dan 3 TB per dag wordt geëxporteerd, wordt de export uitgeschakeld. Als u wilt exporteren zonder limiet, gebruikt u de functie voor het [exporteren van diagnostische instellingen](#diagnostic-settings-based-export).
 
 1. Open in de resource Application Insights voor uw app onder configureren aan de linkerkant de optie doorlopend exporteren en kies **toevoegen**:
 
@@ -120,7 +123,7 @@ Waar
 ## <a name="data-format"></a><a name="format"></a> Gegevens indeling
 * Elke blob is een tekst bestand dat meerdere \n-gescheiden rijen bevat. Het bevat de telemetrie die gedurende een periode van ongeveer een halve minuut is verwerkt.
 * Elke rij vertegenwoordigt een telemetrie-gegevens punt, zoals een aanvraag of pagina weergave.
-* Elke rij is een niet-opgemaakt JSON-document. Als u de rijen wilt weer geven, opent u de BLOB in Visual Studio en **Edit**kiest u  >  **Geavanceerde**  >  **indelings bestand**bewerken:
+* Elke rij is een niet-opgemaakt JSON-document. Als u de rijen wilt weer geven, opent u de BLOB in Visual Studio en kiest u  >  **Geavanceerde**  >  **indelings bestand** bewerken:
 
    ![De telemetrie weer geven met een geschikt hulp programma](./media/export-telemetry/06-json.png)
 
@@ -207,6 +210,19 @@ Overweeg op grotere schaal [HDInsight](https://azure.microsoft.com/services/hdin
 * [Stream Analytics-voor beeld](export-stream-analytics.md)
 * [Exporteren naar SQL met Stream Analytics][exportasa]
 * [Gedetailleerde gegevens model verwijzing voor de eigenschaps typen en-waarden.](export-data-model.md)
+
+## <a name="diagnostic-settings-based-export"></a>Op basis van de diagnostische instellingen exporteren
+
+Voor de diagnostische instellingen gebaseerd exporteren wordt een ander schema gebruikt dan doorlopende export. Het biedt ook ondersteuning voor functies die continue export niet bevalt:
+
+* Azure Storage-accounts met vnet, firewalls en persoonlijke koppelingen.
+* Exporteren naar Event Hub.
+
+Migreren naar Diagnostische instellingen op basis van de export:
+
+1. Huidige continue export uitschakelen.
+2. [Toepassing migreren naar een werk ruimte](convert-classic-resource.md).
+3. [Schakel de diagnostische instellingen exporteren in](create-workspace-resource.md#export-telemetry). Selecteer **Diagnostische instellingen > diagnostische instelling toevoegen** vanuit uw Application Insights resource.
 
 <!--Link references-->
 

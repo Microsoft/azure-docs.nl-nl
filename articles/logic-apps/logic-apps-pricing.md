@@ -1,6 +1,6 @@
 ---
 title: Facturerings model voor prijzen &
-description: Overzicht van de werking van de prijzen en het facturerings model voor Azure Logic Apps
+description: Overzicht van de manier waarop prijzen en facturering werken voor Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: jonfancey
@@ -8,12 +8,12 @@ ms.author: jonfan
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 520b4a0e87f27a90a604947ae0b558066b4ab82f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 9243d089b4a000066ec03dbeeccd046db374f558
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937590"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673107"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Prijs model voor Azure Logic Apps
 
@@ -65,11 +65,11 @@ Voor Logic apps die u in een ISE maakt en uitvoert, betaalt u voor deze mogelijk
 
   * **Ontwikkelaar** ISE SKU: Eén integratie account voor de [gratis laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)
 
-  Elk ISE kan een [beperkt aantal integratie accounts](logic-apps-limits-and-config.md#integration-account-limits)hebben, ongeacht de SKU. U kunt deze limiet verhogen voor extra kosten:
+  Voor extra kosten kunt u meer integratie accounts maken voor uw ISE [tot aan de totale limiet](logic-apps-limits-and-config.md#integration-account-limits). 
 
-  * **Premium** ISE SKU: Maxi maal vier standaard accounts. Geen vrije of basis accounts.
+  * **Premium** ISE SKU: Maxi maal 19 meer standaard accounts. Er zijn geen gratis of basis accounts toegestaan.
 
-  * **Ontwikkelaar** ISE SKU: Maxi maal vier standaard accounts, of Maxi maal vijf standaard accounts. Geen basis accounts.
+  * **Ontwikkelaar** ISE SKU: tot 19 extra standaard accounts als u al een gratis account of 20 totaal standaard accounts hebt als u nog geen gratis account hebt. Er zijn geen basis accounts toegestaan.
 
   Zie [limieten en configuratie voor Azure Logic apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)voor meer informatie over de limieten van het integratie account. Verderop in dit onderwerp vindt u meer informatie over [de integratie-account lagen en hun prijs model](#integration-accounts) .
 
@@ -118,7 +118,7 @@ Een [vast prijs model](https://azure.microsoft.com/pricing/details/logic-apps) i
 
 Azure Logic Apps biedt gratis, Basic-en Standard-integratie accounts. De lagen basis en standaard worden ondersteund door de Logic Apps Service Level Agreement (SLA), terwijl de laag gratis niet wordt ondersteund door een SLA en limieten heeft voor de beschik baarheid, door Voer en het gebruik van de regio. Met uitzonde ring van de integratie accounts voor de gratis laag kunt u in elke Azure-regio meer dan één integratie account hebben. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
 
-Als u een [ISE ( *Integration service Environment* )](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)hebt, ongeacht de [SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level), kan uw ISE een [beperkt aantal integratie accounts](logic-apps-limits-and-config.md#integration-account-limits)hebben, maar u kunt [deze limiet verhogen voor extra kosten](#fixed-pricing). Zie de sectie vorig [vast prijs model](#fixed-pricing) in dit onderwerp voor meer informatie over hoe het vaste prijs model werkt voor een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
+Als u een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)hebt, kan uw ISE één integratie account zonder extra kosten gebruiken, hoewel het opgenomen account type varieert per [ISE SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level). Voor [extra kosten](#fixed-pricing)kunt u meer integratie accounts maken voor uw ISE tot de [totale limiet voor integratie accounts](logic-apps-limits-and-config.md#integration-account-limits). Zie de sectie vorig [vast prijs model](#fixed-pricing) in dit onderwerp voor meer informatie over hoe het vaste prijs model werkt voor een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
 
 Als u wilt kiezen tussen een gratis, basis of standaard integratie account, raadpleegt u deze use-case-beschrijvingen:
 

@@ -4,12 +4,12 @@ description: Meer informatie over het afhandelen van fouten in de Durable Functi
 ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 6650322834d491d78470e2d8dbd24e2c6750ae39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 023f9dfcc421935c3f7515e847108925d5e5521e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081692"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673644"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Het afhandelen van fouten in Durable Functions (Azure Functions)
 
@@ -196,7 +196,11 @@ De functie aanroep van de activiteit in het vorige voor beeld neemt een para met
 * **Uitstel coëfficiënt**: de coëfficiënt die wordt gebruikt voor het bepalen van de mate van toename van uitstel. Standaardwaarde is 1.
 * Maximum **interval voor nieuwe pogingen**: de maximale tijds duur tussen nieuwe pogingen.
 * **Time-out voor opnieuw proberen**: de maximale hoeveelheid tijd die nodig is voor het uitvoeren van nieuwe pogingen. Het standaard gedrag is om voor onbepaalde tijd opnieuw te proberen.
-* **Ingang**: een door de gebruiker gedefinieerde retour aanroep kan worden opgegeven om te bepalen of een functie opnieuw moet worden uitgevoerd.
+* **Ingang**: een door de gebruiker gedefinieerde retour aanroep kan worden opgegeven om te bepalen of een functie opnieuw moet worden uitgevoerd. 
+
+> [!NOTE]
+> Door de gebruiker gedefinieerde retour aanroepen worden momenteel niet ondersteund door Durable Functions in Java script ( `context.df.RetryOptions` ).
+
 
 ## <a name="function-timeouts"></a>Time-outs van functies
 

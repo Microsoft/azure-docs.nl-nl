@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van Azure Functions met C#.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: dc08e378d68743ed7906f4dec7c8f31202959880
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 9e11d013b6e7473f290ba1ccb54857034491d116
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608279"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672662"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Naslaginformatie over Azure Functions C# voor ontwikkelaars
 
@@ -21,7 +21,7 @@ Als C#-ontwikkelaar bent u mogelijk ook geïnteresseerd in een van de volgende a
 
 | Aan de slag | Concepten| Begeleide training/voor beelden |
 | -- | -- | -- | 
-| <ul><li>[Visual Studio gebruiken](functions-create-your-first-function-visual-studio.md)</li><li>[Visual Studio code gebruiken](create-first-function-vs-code-csharp.md)</li><li>[Opdracht regel Programma's gebruiken](create-first-function-cli-csharp.md)</li></ul> | <ul><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li><li>[Ontwikkelen in Visual Studio](functions-develop-vs.md)</li><li>[Afhankelijkheidsinjectie](functions-dotnet-dependency-injection.md)</li></ul> | <ul><li>[Serverloze toepassingen maken](/learn/paths/create-serverless-applications/)</li><li>[C#-voorbeelden](/samples/browse/?products=azure-functions&languages=csharp)</li></ul> |
+| <ul><li>[Visual Studio gebruiken](functions-create-your-first-function-visual-studio.md)</li><li>[Visual Studio Code gebruiken](create-first-function-vs-code-csharp.md)</li><li>[Opdracht regel Programma's gebruiken](create-first-function-cli-csharp.md)</li></ul> | <ul><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li><li>[Ontwikkelen in Visual Studio](functions-develop-vs.md)</li><li>[Afhankelijkheidsinjectie](functions-dotnet-dependency-injection.md)</li></ul> | <ul><li>[Serverloze toepassingen maken](/learn/paths/create-serverless-applications/)</li><li>[C#-voorbeelden](/samples/browse/?products=azure-functions&languages=csharp)</li></ul> |
 
 Azure Functions ondersteunt programmeer talen voor C#-en C#-scripts. Zie [Naslag informatie over c#-script (. CSX) voor ontwikkel aars](functions-reference-csharp.md)voor meer informatie over [het gebruik van c# in de Azure Portal](functions-create-function-app-portal.md).
 
@@ -515,14 +515,14 @@ namespace functionapp0915
             
             // Track a Dependency
             var dependency = new DependencyTelemetry
-                {
-                    Name = "GET api/planets/1/",
-                    Target = "swapi.co",
-                    Data = "https://swapi.co/api/planets/1/",
-                    Timestamp = start,
-                    Duration = DateTime.UtcNow - start,
-                    Success = true
-                };
+            {
+                Name = "GET api/planets/1/",
+                Target = "swapi.co",
+                Data = "https://swapi.co/api/planets/1/",
+                Timestamp = start,
+                Duration = DateTime.UtcNow - start,
+                Success = true
+            };
             UpdateTelemetryContext(dependency.Context, context, name);
             telemetryClient.TrackDependency(dependency);
         }
@@ -560,7 +560,7 @@ public static class EnvironmentVariablesExample
         log.LogInformation(GetEnvironmentVariable("WEBSITE_SITE_NAME"));
     }
 
-    public static string GetEnvironmentVariable(string name)
+    private static string GetEnvironmentVariable(string name)
     {
         return name + ": " +
             System.Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.Process);

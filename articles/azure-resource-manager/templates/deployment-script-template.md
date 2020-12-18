@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: c6d171717865fe4bdf3dfb30a6d24badd4fe29ca
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: fbbccfb21f136d926ac0e3e701ad686d2a42e715
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505559"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674222"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -321,7 +321,7 @@ Het gebruikers script, de uitvoerings resultaten en het stdout-bestand worden op
 
 De output-map bevat een **executionresult.json** en het uitvoerbestand van het script. U kunt het fout bericht voor het uitvoeren van scripts zien in **executionresult.jsop**. Het uitvoer bestand wordt alleen gemaakt wanneer het script is uitgevoerd. De input-map bevat een scriptbestand voor het PowerShell-systeem en de scriptbestanden voor de gebruikersimplementatie. U kunt het script bestand voor de gebruikers implementatie vervangen door een herziene versie en het implementatie script opnieuw uitvoeren vanuit het Azure container-exemplaar.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Nadat u een implementatie script bron hebt geïmplementeerd, wordt de resource vermeld onder de resource groep in de Azure Portal. Op de volgende scherm afbeelding ziet u de pagina overzicht van een implementatie script Bron:
 
@@ -592,3 +592,7 @@ In dit artikel hebt u geleerd hoe u implementatie scripts gebruikt. Een zelf stu
 
 > [!div class="nextstepaction"]
 > [Zelf studie: implementatie scripts gebruiken in Azure Resource Manager sjablonen](./template-tutorial-deployment-script.md)
+
+> [!div class="nextstepaction"]
+> [Module leren: ARM-sjablonen uitbreiden met behulp van implementatie scripts](/learn/modules/extend-resource-manager-template-deployment-scripts/)
+

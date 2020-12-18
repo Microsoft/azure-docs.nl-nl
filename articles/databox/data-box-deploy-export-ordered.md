@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: how-to
-ms.date: 11/23/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: b132368982e0013bfe6f3ffd52e7aacb7b1274eb
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: e822a2be200f701d65ab2080804d252f99589680
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96003181"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680794"
 ---
-# <a name="tutorial-create-export-order-for-azure-data-box-preview"></a>Zelf studie: export volgorde voor Azure Data Box maken (preview)
+# <a name="tutorial-create-export-order-for-azure-data-box"></a>Zelf studie: export volgorde voor Azure Data Box maken
 
 Azure Data Box is een hybride oplossing waarmee u gegevens uit Azure kunt verplaatsen naar uw locatie. In deze zelf studie wordt beschreven hoe u een export volgorde voor Azure Data Box maakt. De belangrijkste reden voor het maken van een export volgorde is voor herstel na nood gevallen, in geval van een on-premises opslag, waardoor er een back-up moet worden hersteld.
 
@@ -27,8 +27,6 @@ In deze zelfstudie komen deze onderwerpen aan bod:
 > * Een Data Box voor het exporteren best Ellen
 > * De export volgorde bijhouden
 > * De export volgorde annuleren
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -125,73 +123,73 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
 
     ![Het scherm Beveiliging van de wizard Data Box-importorder](media/data-box-deploy-export-ordered/data-box-export-security-01.png)
 
-10. Als u uw eigen door de klant beheerde sleutel wilt gebruiken om de ontgrendelings sleutel voor uw nieuwe resource te beveiligen, vouwt u het **versleutelings type** uit.
+10. Als u uw eigen door de klant beheerde sleutel wilt gebruiken om de ontgrendelingswachtwoordsleutel voor uw nieuwe resource te beveiligen, vouwt u **Versleutelingstype** uit.
 
-    Het configureren van een door de klant beheerde sleutel voor uw Azure Data Box is optioneel. Data Box maakt standaard gebruik van een door micro soft beheerde sleutel om de ontgrendelings sleutel te beveiligen.
+    Het configureren van een door de klant beheerde sleutel voor uw Azure Data Box is optioneel. Data Box maakt standaard gebruik van een door Microsoft beheerde sleutel om de ontgrendelingswachtwoordsleutel te beveiligen.
 
-    Een door de klant beheerde sleutel is niet van invloed op hoe gegevens op het apparaat zijn versleuteld. De sleutel wordt alleen gebruikt voor het versleutelen van de ontgrendelings sleutel voor het apparaat.
+    Een door de klant beheerde sleutel is niet van invloed op hoe gegevens op het apparaat worden versleuteld. De sleutel wordt alleen gebruikt voor het versleutelen van de ontgrendelingswachtwoordsleutel voor het apparaat.
 
     Als u geen door de klant beheerde sleutel wilt gebruiken, gaat u verder met stap 16.
 
-    ![Beveiligings scherm met instellingen voor het versleutelings type](./media/data-box-deploy-export-ordered/customer-managed-key-01.png)
+    ![Beveiligingsscherm met instellingen voor het Versleutelingstype](./media/data-box-deploy-export-ordered/customer-managed-key-01.png)
 
-11. Selecteer door de **klant beheerde sleutel** als het sleutel type. Selecteer vervolgens **een sleutel kluis en sleutel selecteren**.
+11. Selecteer **Door de klant beheerde sleutel** als het sleuteltype. Selecteer vervolgens **Een sleutelkluis en sleutel selecteren**.
    
-    ![Beveiligings scherm, instellingen voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-02.png)
+    ![Beveiligingsscherm, instellingen voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-02.png)
 
 12. Het abonnement wordt automatisch ingevuld op het scherm **sleutel selecteren in azure Key Vault** .
 
-    - Voor **sleutel kluis** kunt u een bestaande sleutel kluis selecteren in de vervolg keuzelijst.
+    - Voor **Sleutelkluis** kunt u een bestaande sleutelkluis selecteren in de vervolgkeuzelijst.
 
-      ![Sleutel selecteren in Azure Key Vault scherm](./media/data-box-deploy-export-ordered/customer-managed-key-03.png)
+      ![Sleutel selecteren in het scherm van Azure Key Vault](./media/data-box-deploy-export-ordered/customer-managed-key-03.png)
 
-    - U kunt ook **nieuwe maken** selecteren om een nieuwe sleutel kluis te maken. Voer in het scherm **sleutel kluis maken** de resource groep en de naam van de sleutel kluis in. Zorg ervoor dat de beveiliging voor **voorlopig verwijderen** en **leegmaken** is ingeschakeld. Accepteer alle overige standaard waarden en selecteer **controleren + maken**.
+    - U kunt ook **Nieuwe maken** selecteren om een nieuwe sleutelkluis te maken. Voer de resourcegroep en de naam van een sleutelkluis in op het scherm **Sleutelkluis maken**. Zorg ervoor dat **Voorlopig verwijderen** en **Beveiliging tegen leegmaken** zijn ingeschakeld. Accepteer de overige standaardwaarden en selecteer **Beoordelen + Maken**.
 
-      ![Een nieuwe Azure Key Vault-instellingen maken](./media/data-box-deploy-export-ordered/customer-managed-key-04.png)
+      ![Nieuwe instellingen voor Azure Key Vault maken](./media/data-box-deploy-export-ordered/customer-managed-key-04.png)
 
-      Controleer de informatie voor uw sleutel kluis en selecteer **maken**. Wacht enkele minuten tot het maken van de sleutel kluis is voltooid.
+      Controleer de informatie voor uw sleutelkluis en selecteer **Maken**. Wacht enkele minuten tot het maken van de sleutelkluis is voltooid.
 
-      ![Nieuw Azure Key Vault controle scherm](./media/data-box-deploy-export-ordered/customer-managed-key-05.png)
+      ![Nieuw controlescherm voor Azure Key Vault](./media/data-box-deploy-export-ordered/customer-managed-key-05.png)
 
 13. U kunt in het scherm **sleutel selecteren van Azure Key Vault** een bestaande sleutel selecteren in de sleutel kluis.
 
-    ![Bestaande sleutel van Azure Key Vault selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-06.png)
+    ![Bestaande sleutel selecteren in Azure Key Vault](./media/data-box-deploy-export-ordered/customer-managed-key-06.png)
 
-    Als u een nieuwe sleutel wilt maken, selecteert u **nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of hoger zijn. Voer een naam in voor de nieuwe sleutel, accepteer de andere standaard waarden en selecteer **maken**.
+    Als u een nieuwe sleutel wilt maken, selecteert u **Nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of meer zijn. Voer een naam in voor de nieuwe sleutel, accepteer de andere standaardwaarden en selecteer **Maken**.
 
-      ![Een nieuwe sleutel optie maken](./media/data-box-deploy-export-ordered/customer-managed-key-07.png)
+      ![Een nieuwe sleuteloptie maken](./media/data-box-deploy-export-ordered/customer-managed-key-07.png)
 
-      U krijgt een melding wanneer de sleutel in uw sleutel kluis is gemaakt.
+      U krijgt een melding wanneer de sleutel in uw sleutelkluis is gemaakt.
 
-14. Selecteer de **versie** van de sleutel die u wilt gebruiken en kies vervolgens **selecteren**.
+14. Selecteer de **Versie** van de te gebruiken sleutel en kies vervolgens **Selecteren**.
 
-      ![Nieuwe sleutel gemaakt in sleutel kluis](./media/data-box-deploy-export-ordered/customer-managed-key-08.png)
+      ![Nieuwe sleutel gemaakt in sleutelkluis](./media/data-box-deploy-export-ordered/customer-managed-key-08.png)
 
-    Als u een nieuwe sleutel versie wilt maken, selecteert u **nieuwe maken**.
+    Als u een nieuwe sleutelversie wilt maken, selecteert u **Nieuwe maken**.
 
-    ![Een dialoog venster openen voor het maken van een nieuwe sleutel versie](./media/data-box-deploy-export-ordered/customer-managed-key-08-a.png)
+    ![Open een dialoogvenster voor het maken van een nieuwe sleutelversie](./media/data-box-deploy-export-ordered/customer-managed-key-08-a.png)
 
     Kies in het scherm **nieuwe sleutel maken** de optie instellingen voor de nieuwe sleutel versie en selecteer **maken**.
 
     ![Een nieuwe sleutel versie maken](./media/data-box-deploy-export-ordered/customer-managed-key-08-b.png)
 
-    De instellingen voor het **versleutelings type** in het **beveiligings** scherm tonen uw sleutel kluis en sleutel.
+    De instellingen van het **Versleutelingstype** in het scherm **Beveiliging** geven uw sleutelkluis en sleutel weer.
 
-    ![Sleutel en sleutel kluis voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-09.png)
+    ![Sleutel en sleutelkluis voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-09.png)
 
-15. Selecteer een gebruikers-id die u gaat gebruiken voor het beheren van de toegang tot deze bron. Kies **een gebruikers identiteit selecteren**. Selecteer in het deel venster aan de rechter kant het abonnement en de beheerde identiteit die u wilt gebruiken. Kies vervolgens **Selecteren**.
+15. Selecteer een gebruikersidentiteit die u gaat gebruiken voor het beheren van de toegang tot deze resource. Kies **Een gebruikersidentiteit selecteren**. Selecteer in het deelvenster aan de rechterkant het abonnement en de beheerde identiteit die u wilt gebruiken. Kies dan de optie **Selecteren**.
 
-    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [beheerde identiteits typen](/azure/active-directory/managed-identities-azure-resources/overview)voor meer informatie.  
+    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.  
 
-    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richt lijnen in [maken, lijst, verwijderen of een rol toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
+    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richtlijnen in [Een rol maken, weergeven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
-    ![Een gebruikers identiteit selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-10.png)
+    ![Een gebruikersidentiteit selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-10.png)
 
-    De gebruikers-id wordt weer gegeven in de instellingen van het **versleutelings type** .
+    De gebruikersidentiteit wordt weergegeven in de instellingen van **Versleutelingstype**.
 
     U kunt de instellingen voor het **versleutelings type** nu samen vouwen.
 
-    ![Een geselecteerde gebruikers-id die wordt weer gegeven in de instellingen voor versleutelings type](./media/data-box-deploy-export-ordered/customer-managed-key-11.png)
+    ![Een geselecteerde gebruikersidentiteit die wordt weergegeven in de instellingen van Versleutelingstype](./media/data-box-deploy-export-ordered/customer-managed-key-11.png)
 
 16. Als u dubbele versleuteling op basis van software wilt inschakelen, vouwt u **Double Encryption (voor omgevingen met een hoog beveiligings niveau)** en selecteert u **dubbele versleuteling inschakelen voor de order**. 
 
@@ -332,7 +330,7 @@ Enkele belang rijke punten ten opzichte van XML-bestanden:
 
 De volgende tabel bevat voor beelden van geldige BLOB-paden:
 
-   | Kiezer | BLOB-pad | Description |
+   | Kiezer | BLOB-pad | Beschrijving |
    | --- | --- | --- |
    | Begint met |/ |Exporteert alle blobs in het opslag account |
    | Begint met |/$root/ |Exporteert alle blobs in de basis container |

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 04/02/2020
-ms.openlocfilehash: af77f18771d8e18ee86b79360ac03307d3330cb0
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: b02c5bbf2e6accbea9c7a33dc26c4e89e46bb697
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131425"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679145"
 ---
 # <a name="power-bi-app-creation-overview"></a>Overzicht van het maken van Power BI-apps
 
@@ -33,7 +33,7 @@ Voor delen van het publiceren naar de commerciële Marketplace:
 
 Dit zijn de stappen voor het publiceren van sleutels:
 
-1. Maak uw toepassing in Power BI. U ontvangt een koppeling voor het installeren van pakketten. Dit is de belangrijkste technische Asset voor de aanbieding. Verzend het test pakket naar pre-productie voordat u de aanbieding maakt in het partner centrum. Zie [Wat zijn Power bi-apps?](/power-bi/service-template-apps-overview)voor meer informatie.
+1. Maak uw toepassing in Power BI. U ontvangt een koppeling voor het installeren van pakketten. Dit is de belangrijkste technische Asset voor de aanbieding. Verzend het test pakket naar pre-productie voordat u de aanbieding maakt in het partner centrum. Zie [Wat zijn Power bi-apps?](/power-bi/service-template-apps-overview) voor meer informatie.
 2. Voeg het marketing materiaal toe, zoals officiële naam, beschrijving en logo's.
 3. Neem de juridische en ondersteunende documenten van de aanbieding op, zoals gebruiks voorwaarden, privacybeleid, ondersteunings beleid en gebruikers hulp.
 4. De aanbieding maken: gebruik partner centrum om de details te bewerken, met inbegrip van de beschrijving van het aanbod, het marketing materiaal, de juridische informatie, de ondersteunings informatie en de specificaties van de Asset.

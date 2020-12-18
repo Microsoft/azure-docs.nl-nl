@@ -119,6 +119,22 @@
           href: signin-appauth-ios.md
         - name: Android met App Auth
           href: signin-appauth-android.md
+    - name: Stroom maken
+      items:
+        - name: Registratie- of aanmeldingsbeleid
+          href: add-sign-up-and-sign-in-policy.md
+        - name: Beleid voor het opnieuw instellen van het wachtwoord
+          href: add-password-reset-policy.md
+        - name: Beleid voor het wijzigen van het wachtwoord
+          href: add-password-change-policy.md
+        - name: Beleid voor profielbewerking
+          href: add-profile-editing-policy.md
+        - name: Beleid voor wachtwoordreferenties van resource-eigenaar
+          href: add-ropc-policy.md
+        - name: Zelf een wachtwoord opnieuw instellen configureren (afgeschaft)
+          href: user-flow-self-service-password-reset.md
+        - name: Telefonisch registreren en aanmelden
+          href: phone-authentication-user-flows.md
     - name: Id-providers
       items:
         - name: Een id-provider toevoegen
@@ -192,38 +208,18 @@
           href: conditional-access-user-flow.md
     - name: Leeftijdsbeperking configureren
       href: basic-age-gating.md
-    - name: Gebruikersstroom
+    - name: API-connectors (preview)
       items:
-        - name: Stroom maken
-          items:
-            - name: Registreren of aanmelden
-              href: tutorial-create-user-flows.md
-            - name: Referenties voor wachtwoord van resource-eigenaar
-              href: configure-ropc.md
-            - name: Zelf een wachtwoord opnieuw instellen configureren
-              href: user-flow-self-service-password-reset.md
-        - name: API-connectors (preview)
-          items:
-            - name: Overzicht
-              href: api-connectors-overview.md
-            - name: Een API-connector toevoegen
-              href: add-api-connector.md
+        - name: Overzicht
+          href: api-connectors-overview.md
+        - name: Een API-connector toevoegen
+          href: add-api-connector.md
     - name: Aangepast beleid
       items:
         - name: Overzicht van aangepast beleid
           href: custom-policy-trust-frameworks.md
         - name: Aan de slag met aangepaste beleidsregels
           href: custom-policy-get-started.md
-        - name: Beleid maken
-          items:
-            - name: Referenties voor wachtwoord van resource-eigenaar
-              href: ropc-custom.md
-              displayName: ropc
-            - name: Wachtwoord wijzigen
-              href: custom-policy-password-change.md
-            - name: Telefonisch registreren en aanmelden
-              href: phone-authentication.md
-              displayName: 'otp, passwordless, phone number'
         - name: Aangepaste e-mailverificatie
           items:
             - name: Mailjet

@@ -10,13 +10,13 @@ ms.author: weetok
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: cc95913b0ab815449a1cd56c0c9127410a64b600
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.date: 12/17/2020
+ms.openlocfilehash: b5b0f6dcef728f0597e7eac8ba57c8fd240d19c9
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591893"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680289"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -28,7 +28,7 @@ Continue integratie is de praktijk van het testen van elke wijziging die wordt a
 
 In Azure Data Factory wordt doorlopende integratie en levering (CI/CD) de mogelijkheid Data Factory pijp lijnen te verplaatsen van de ene omgeving (ontwikkeling, test, productie) naar de andere. Azure Data Factory gebruikt [Azure Resource Manager sjablonen](../azure-resource-manager/templates/overview.md) voor het opslaan van de configuratie van uw verschillende ADF-entiteiten (pijp lijnen, gegevens sets, data stromen, enzovoort). Er zijn twee aanbevolen methoden om een data factory te promo veren naar een andere omgeving:
 
--    Geautomatiseerde implementatie met de integratie van Data Factory met [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)
+-    Geautomatiseerde implementatie met de integratie van Data Factory met [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 -    Een resource manager-sjabloon hand matig uploaden met behulp van Data Factory UX-integratie met Azure Resource Manager.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -115,7 +115,7 @@ Hieronder vindt u een hand leiding voor het instellen van een Azure pijp lijnen 
 
 1.  Sla de release pijplijn op.
 
-1. Selecteer **vrijgave maken** om een release te activeren. Zie [Azure DevOps release triggers](/azure/devops/pipelines/release/triggers?view=azure-devops) voor het automatiseren van het maken van releases
+1. Selecteer **vrijgave maken** om een release te activeren. Zie [Azure DevOps release triggers](/azure/devops/pipelines/release/triggers) voor het automatiseren van het maken van releases
 
    ![Selecteer release maken](media/continuous-integration-deployment/continuous-integration-image10.png)
 
@@ -207,6 +207,12 @@ Als uw Development Factory een bijbehorende Git-opslag plaats heeft, kunt u de s
 
 * U gebruikt automatische CI/CD en u wilt enkele eigenschappen wijzigen tijdens de implementatie van Resource Manager, maar de eigenschappen zijn niet standaard ingesteld op para meters.
 * Uw fabriek is zo groot dat de standaard Resource Manager-sjabloon ongeldig is omdat deze meer dan de Maxi maal toegestane para meters (256) heeft.
+
+    Er zijn drie opties voor het afhandelen van de limiet voor aangepaste para meter 256:    
+  
+    * Gebruik het aangepaste parameter bestand en verwijder eigenschappen die geen parameterisering nodig hebben, d.w.z. eigenschappen die een standaard waarde kunnen hand haven en daarom het aantal para meters verlagen.
+    * De logica van een refactorion in de gegevens stroom om para meters te reduceren, bijvoorbeeld de pijplijn parameters hebben allemaal dezelfde waarde, maar u kunt in plaats daarvan globale para meters gebruiken.
+    * Een data factory op meerdere gegevens stromen splitsen.
 
 Als u de standaard sjabloon voor parameterisering wilt overschrijven, gaat u naar de beheer hub en selecteert u **parameterisering-sjabloon** in het gedeelte bron beheer. Selecteer **sjabloon bewerken** om de parameterisering-sjabloon code-editor te openen. 
 
@@ -639,7 +645,7 @@ Zie de video onder een gedetailleerde video zelf studie over het dynamisch oplos
 
 ## <a name="exposure-control-and-feature-flags"></a>Belichtings controle en functie vlaggen
 
-Wanneer u aan een team werkt, zijn er exemplaren waar u wijzigingen kunt samen voegen, maar niet wilt dat ze worden uitgevoerd in verhoogde omgevingen zoals PROD en QA. Voor het afhandelen van dit scenario beveelt het ADF-team [het DevOps-concept van het gebruik van functie vlaggen](/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops)aan. In ADF kunt u [globale para meters](author-global-parameters.md) combi neren en de [if-voorwaarde activiteit](control-flow-if-condition-activity.md) om sets van logica te verbergen op basis van deze omgevings vlaggen.
+Wanneer u aan een team werkt, zijn er exemplaren waar u wijzigingen kunt samen voegen, maar niet wilt dat ze worden uitgevoerd in verhoogde omgevingen zoals PROD en QA. Voor het afhandelen van dit scenario beveelt het ADF-team [het DevOps-concept van het gebruik van functie vlaggen](/azure/devops/migrate/phase-features-with-feature-flags)aan. In ADF kunt u [globale para meters](author-global-parameters.md) combi neren en de [if-voorwaarde activiteit](control-flow-if-condition-activity.md) om sets van logica te verbergen op basis van deze omgevings vlaggen.
 
 Zie de onderstaande video-zelf studie voor meer informatie over het instellen van een functie vlag:
 

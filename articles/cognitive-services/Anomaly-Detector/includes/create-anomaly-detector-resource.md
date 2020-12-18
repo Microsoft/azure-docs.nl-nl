@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/10/2020
 ms.author: mbullwin
-ms.openlocfilehash: d1add17c1c84d2a22d76aaa1f96aeca4db645ba7
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 037b9746571678e24e80bd76e7e2ed173ab8eb90
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97506340"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97677592"
 ---
 ## <a name="create-an-anomaly-detector-resource"></a>Een Anomaly Detector-resource maken
 
@@ -26,7 +26,7 @@ ms.locfileid: "97506340"
     |Naam|Gewenste naam (2-64 tekens)|
     |Abonnement|Selecteer het juiste abonnement|
     |Locatie|Selecteer een locatie in de buurt en beschik bare locaties|
-    |Prijscategorie|`F0` -100 aanroepen per seconde, 20.000 trans acties per maand. <br> Of<br> `S0` -80 aanroepen per seconde|
+    |Prijscategorie|`F0` -10 aanroepen per seconde, 20.000 trans acties per maand. <br> Of<br> `S0` -80 aanroepen per seconde|
     |Resourcegroep|Een beschik bare resource groep selecteren|
 
 1. Klik op **maken** en wacht tot de resource is gemaakt. Nadat deze is gemaakt, gaat u naar de pagina Resource

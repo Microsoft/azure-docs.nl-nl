@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: d09dddbceed773cd723897cc9730198b68be0ff7
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 9964c99ddfb59811fc67df634b41cede5847ede0
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903612"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678860"
 ---
 # <a name="create-a-data-source"></a>Een gegevensbron maken
 
 De Azure Maps Web-SDK slaat gegevens op in gegevens bronnen. Het gebruik van gegevens bronnen optimaliseert de gegevens bewerkingen voor het uitvoeren van query's en rendering. Er zijn momenteel twee soorten gegevens bronnen:
 
-- **GEOjson-bron**: Hiermee worden gegevens van onbewerkte locaties lokaal beheerd in geojson-indeling. Geschikt voor kleine tot middel grote gegevens sets (van honderden duizenden vormen).
-- **Vector tegel bron**: laadt gegevens die zijn opgemaakt als vector tegels voor de huidige kaart weergave, op basis van het Maps-systeem. Ideaal voor grote tot enorme gegevens sets (miljoenen of miljarden vormen).
+* **GEOjson-bron**: Hiermee worden gegevens van onbewerkte locaties lokaal beheerd in geojson-indeling. Geschikt voor kleine tot middel grote gegevens sets (van honderden duizenden vormen).
+* **Vector tegel bron**: laadt gegevens die zijn opgemaakt als vector tegels voor de huidige kaart weergave, op basis van het Maps-systeem. Ideaal voor grote tot enorme gegevens sets (miljoenen of miljarden vormen).
 
 ## <a name="geojson-data-source"></a>Geojson-gegevens bron
 
@@ -50,8 +50,8 @@ Zodra u deze hebt gemaakt, kunt u gegevens bronnen toevoegen aan de kaart via de
 
 ```javascript
 //Create a data source and add it to the map.
-var dataSource = new atlas.source.DataSource();
-map.sources.add(dataSource);
+var source = new atlas.source.DataSource();
+map.sources.add(source);
 ```
 
 De volgende code toont de verschillende manieren waarop geojson-gegevens kunnen worden toegevoegd aan een `DataSource` .
@@ -60,13 +60,13 @@ De volgende code toont de verschillende manieren waarop geojson-gegevens kunnen 
 //GeoJsonData in the following code can be a single or array of GeoJSON features or geometries, a GeoJSON feature colleciton, or a single or array of atlas.Shape objects.
 
 //Add geoJSON object to data source. 
-dataSource.add(geoJsonData);
+source.add(geoJsonData);
 
 //Load geoJSON data from URL. URL should be on a CORs enabled endpoint.
-dataSource.importDataFromUrl(geoJsonUrl);
+source.importDataFromUrl(geoJsonUrl);
 
 //Overwrite all data in data source.
-dataSource.setShapes(geoJsonData);
+source.setShapes(geoJsonData);
 ```
 
 > [!TIP]
@@ -76,16 +76,16 @@ dataSource.setShapes(geoJsonData);
 
 Een vector tegel bron beschrijft hoe een vector tegel laag kan worden geopend. Gebruik de [VectorTileSource](/javascript/api/azure-maps-control/atlas.source.vectortilesource) -klasse om een vector tegel bron te instantiëren. Vector tegel lagen zijn vergelijkbaar met de tegel lagen, maar ze zijn niet hetzelfde. Een tegel laag is een raster afbeelding. Vector tegel lagen zijn een gecomprimeerd bestand in de **PBF** -indeling. Dit gecomprimeerde bestand bevat gegevens van een vector kaart en een of meer lagen. Het bestand kan worden gerenderd en opgemaakt op de client, op basis van de stijl van elke laag. De gegevens in een vector tegel bevatten geografische functies in de vorm van punten, lijnen en veelhoeken. Er zijn verschillende voor delen van het gebruik van vector tegel lagen in plaats van raster tegel lagen:
 
- - Een bestands grootte van een vector tegel is doorgaans veel kleiner dan een gelijkwaardige raster tegel. Als zodanig wordt er minder band breedte gebruikt. Dit betekent een lagere latentie, een snellere kaart en een betere gebruikers ervaring.
- - Omdat vector tegels worden weer gegeven op de client, worden ze aangepast aan de resolutie van het apparaat waarop ze worden weer gegeven. Als gevolg hiervan worden de gerenderde kaarten meer duidelijk gedefinieerd, met kristalheldere labels.
- - Voor het wijzigen van de stijl van de gegevens in de vector kaarten hoeven de gegevens niet opnieuw te worden gedownload omdat de nieuwe stijl op de client kan worden toegepast. Als u daarentegen de stijl van een raster tegel laag wijzigt, moet meestal het laden van tegels van de server worden geladen en vervolgens de nieuwe stijl wordt toegepast.
- - Omdat de gegevens in een vector vorm worden geleverd, is er minder server-side verwerking vereist om de gegevens voor te bereiden. Als gevolg hiervan kunnen de nieuwere gegevens sneller beschikbaar worden gemaakt.
+* Een bestands grootte van een vector tegel is doorgaans veel kleiner dan een gelijkwaardige raster tegel. Als zodanig wordt er minder band breedte gebruikt. Dit betekent een lagere latentie, een snellere kaart en een betere gebruikers ervaring.
+* Omdat vector tegels worden weer gegeven op de client, worden ze aangepast aan de resolutie van het apparaat waarop ze worden weer gegeven. Als gevolg hiervan worden de gerenderde kaarten meer duidelijk gedefinieerd, met kristalheldere labels.
+* Voor het wijzigen van de stijl van de gegevens in de vector kaarten hoeven de gegevens niet opnieuw te worden gedownload omdat de nieuwe stijl op de client kan worden toegepast. Als u daarentegen de stijl van een raster tegel laag wijzigt, moet meestal het laden van tegels van de server worden geladen en vervolgens de nieuwe stijl wordt toegepast.
+* Omdat de gegevens in een vector vorm worden geleverd, is er minder server-side verwerking vereist om de gegevens voor te bereiden. Als gevolg hiervan kunnen de nieuwere gegevens sneller beschikbaar worden gemaakt.
 
 Azure Maps voldoet aan de [tegel specificatie Mapbox vector](https://github.com/mapbox/vector-tile-spec), een open standaard. Azure Maps biedt de volgende vector tegel Services als onderdeel van het platform:
 
-- Details van [documentation](/rest/api/maps/renderv2/getmaptilepreview)de  |  [gegevens indeling](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) voor wegtegels in de documentatie
+- Details van [](/rest/api/maps/renderv2/getmaptilepreview)de  |  [gegevens indeling](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) voor wegtegels in de documentatie
 - Details van [documentatie](/rest/api/maps/traffic/gettrafficincidenttile)voor verkeers incidenten  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles)
-- Details van [documentation](/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
+- Details van [](/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
 - Met Azure Maps Creator (preview) kunnen aangepaste vector tegels worden gemaakt en geopend via de [weer gave tegel ophalen v2](/rest/api/maps/renderv2/getmaptilepreview)
 
 > [!TIP]
@@ -95,14 +95,14 @@ Als u gegevens uit een vector tegel bron op de kaart wilt weer geven, verbindt u
 
 ```javascript
 //Create a vector tile source and add it to the map.
-var datasource = new atlas.source.VectorTileSource(null, {
+var source = new atlas.source.VectorTileSource(null, {
     tiles: ['https://{azMapsDomain}/traffic/flow/tile/pbf?api-version=1.0&style=relative&zoom={z}&x={x}&y={y}'],
     maxZoom: 22
 });
-map.sources.add(datasource);
+map.sources.add(source);
 
 //Create a layer for traffic flow lines.
-var flowLayer = new atlas.layer.LineLayer(datasource, null, {
+var flowLayer = new atlas.layer.LineLayer(source, null, {
     //The name of the data layer within the data source to pass into this rendering layer.
     sourceLayer: 'Traffic flow',
 
@@ -142,30 +142,30 @@ Zie de laag van de pen <a href='https://codepen.io/azuremaps/pen/wvMXJYJ'>Vector
 
 De gegevens worden weer gegeven op de kaart met behulp van lagen renderen. Naar één gegevens bron kan worden verwezen door een of meer rendering-lagen. Voor de volgende weergave lagen is een gegevens bron vereist:
 
-- [Bubble Layer](map-add-bubble-layer.md) : geeft punt gegevens weer als geschaalde cirkels op de kaart.
-- [Symbol-laag](map-add-pin.md) : geeft punt gegevens weer als pictogrammen of tekst.
-- [Heatmap voor hitte](map-add-heat-map-layer.md) : geeft punt gegevens weer als een hitte heatmap.
-- [Line Layer](map-add-shape.md) : een lijn weer geven en het overzicht van veelhoeken weer geven. 
-- [Veelhoek-laag](map-add-shape.md) : Hiermee wordt het gebied van een veelhoek gevuld met een effen kleur of een patroon voor een afbeelding.
+* [Bubble Layer](map-add-bubble-layer.md) : geeft punt gegevens weer als geschaalde cirkels op de kaart.
+* [Symbol-laag](map-add-pin.md) : geeft punt gegevens weer als pictogrammen of tekst.
+* [Heatmap voor hitte](map-add-heat-map-layer.md) : geeft punt gegevens weer als een hitte heatmap.
+* [Line Layer](map-add-shape.md) : een lijn weer geven en het overzicht van veelhoeken weer geven. 
+* [Veelhoek-laag](map-add-shape.md) : Hiermee wordt het gebied van een veelhoek gevuld met een effen kleur of een patroon voor een afbeelding.
 
 De volgende code laat zien hoe u een gegevens bron maakt, hoe u deze toevoegt aan de kaart en hoe u deze verbindt met een Bubble Layer. En importeer vervolgens geojson Point-gegevens vanaf een externe locatie naar de gegevens bron. 
 
 ```javascript
 //Create a data source and add it to the map.
-var datasource = new atlas.source.DataSource();
-map.sources.add(datasource);
+var source = new atlas.source.DataSource();
+map.sources.add(source);
 
 //Create a layer that defines how to render points in the data source and add it to the map.
-map.layers.add(new atlas.layer.BubbleLayer(datasource));
+map.layers.add(new atlas.layer.BubbleLayer(source));
 
 //Load the earthquake data.
-datasource.importDataFromUrl('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson');
+source.importDataFromUrl('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson');
 ```
 
 Er zijn extra rendering lagen die geen verbinding maken met deze gegevens bronnen, maar ze kunnen de gegevens rechtstreeks laden voor rendering. 
 
-- [Afbeelding slaag](map-add-image-layer.md) : bedekking één afbeelding boven op de kaart en koppelt de hoeken aan een set opgegeven coördinaten.
-- [Tegel laag](map-add-tile-layer.md) : er wordt een raster tegel laag boven op de kaart opgelegd.
+* [Afbeelding slaag](map-add-image-layer.md) : bedekking één afbeelding boven op de kaart en koppelt de hoeken aan een set opgegeven coördinaten.
+* [Tegel laag](map-add-tile-layer.md) : er wordt een raster tegel laag boven op de kaart opgelegd.
 
 ## <a name="one-data-source-with-multiple-layers"></a>Eén gegevens bron met meerdere lagen
 
@@ -179,34 +179,40 @@ Met Azure Maps hoeft u alleen maar één veelhoek in een gegevens bron te hebben
 
 ```javascript
 //Create a data source and add it to the map.
-var dataSource = new atlas.source.DataSource();
-map.sources.add(dataSource);
+var source = new atlas.source.DataSource();
+map.sources.add(source);
 
 //Create a polygon and add it to the data source.
-dataSource.add(new atlas.data.Polygon([[[/* Coordinates for polygon */]]]));
+source.add(new atlas.data.Polygon([[[/* Coordinates for polygon */]]]));
 
 //Create a polygon layer to render the filled in area of the polygon.
-var polygonLayer = new atlas.layer.PolygonLayer(dataSource, 'myPolygonLayer', {
+var polygonLayer = new atlas.layer.PolygonLayer(source, 'myPolygonLayer', {
      fillColor: 'rgba(255,165,0,0.2)'
 });
 
 //Create a line layer for greater control of rendering the outline of the polygon.
-var lineLayer = new atlas.layer.LineLayer(dataSource, 'myLineLayer', {
+var lineLayer = new atlas.layer.LineLayer(source, 'myLineLayer', {
      color: 'orange',
      width: 2
 });
 
 //Create a bubble layer to render the vertices of the polygon as scaled circles.
-var bubbleLayer = new atlas.layer.BubbleLayer(dataSource, 'myBubbleLayer', {
+var bubbleLayer = new atlas.layer.BubbleLayer(source, 'myBubbleLayer', {
      color: 'orange',
      radius: 5,
-     outlineColor: 'white',
-     outlineWidth: 2
+     strokeColor: 'white',
+     strokeWidth: 2
 });
 
 //Add all layers to the map.
 map.layers.add([polygonLayer, lineLayer, bubbleLayer]);
 ```
+
+> [!TIP]
+> Wanneer u met behulp van de functie lagen aan de kaart toevoegt `map.layers.add` , kan de id of het exemplaar van een bestaande laag worden door gegeven als een tweede para meter. Hiermee wordt aangegeven dat de toewijzing van de nieuwe laag onder de bestaande laag moet worden ingevoegd. Naast het door geven van een laag-ID, ondersteunt deze methode ook de volgende waarden.
+>
+> * `"labels"` -Hiermee wordt de nieuwe laag onder de kaart label lagen ingevoegd.
+> * `"transit"` -Voegt de nieuwe laag onder de lagen kaart en transit toe.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -233,10 +239,10 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 > [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Een symboollaag toevoegen](map-add-pin.md)
+> [Een symbool laag toevoegen](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Een bubbellaag toevoegen](map-add-bubble-layer.md)
+> [Een Bubble laag toevoegen](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
 > [Een lijnlaag toevoegen](map-add-line-layer.md)

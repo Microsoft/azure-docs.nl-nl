@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 32cd6c23e1fe465a801e56fad5dd3461df860503
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 485042c795fd94ef7daa8e00b9869190e9df61c8
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182730"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678548"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Regio's en Beschikbaarheidszones in azure
 
@@ -181,8 +181,9 @@ Er zijn geen extra kosten verbonden aan het implementeren van virtuele machines 
 - [Aan de slag met Azure cache voor redis Beschikbaarheidszones](https://aka.ms/redis/az/getstarted)
 - [Een Azure Active Directory Domain Services-instantie maken](../active-directory-domain-services/tutorial-create-instance.md)
 - [Een AKS-cluster (Azure Kubernetes service) maken dat gebruikmaakt van Beschikbaarheidszones](../aks/availability-zones.md)
+- [Zone redundantie inschakelen in Azure Container Registry](../container-registry/zone-redundancy.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Regio's die ondersteuning bieden voor Beschikbaarheidszones in azure](az-region.md)
-- [Snelstartsjablonen](https://aka.ms/azqs)
+- [Quick Start-sjablonen](https://aka.ms/azqs)

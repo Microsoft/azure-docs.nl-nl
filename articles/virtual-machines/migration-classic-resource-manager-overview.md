@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 219fe2d9d8ac46ba3dbeebe6aaae9dddc0883aa0
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: e7d013775861f290d532e0d7c132896ebeff8ae8
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500407"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680216"
 ---
 # <a name="platform-supported-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager in Linux
 
@@ -22,7 +22,7 @@ ms.locfileid: "96500407"
 
 
 
-In dit artikel wordt beschreven hoe u infrastructuur resources als een service (IaaS) migreert van het klassieke model naar Resource Manager-implementatie modellen en hoe u resources verbindt met de twee implementatie modellen die naast elkaar zijn opgenomen in uw abonnement met behulp van site-naar-site gateways van het virtuele netwerk. U kunt meer lezen over [Azure Resource Manager functies en voor delen](../azure-resource-manager/management/overview.md). 
+In dit artikel vindt u een overzicht van het door het platform ondersteunde migratie programma, over het migreren van resources van de implementatie modellen Azure Service Manager (ASM) ook wel Classic naar Resource Manager (ARM) en informatie over het verbinden van resources uit de twee implementatie modellen die naast elkaar worden gebruikt in uw abonnement met behulp van site-naar-site gateways van het virtuele netwerk. U kunt meer lezen over [Azure Resource Manager functies en voor delen](../azure-resource-manager/management/overview.md). 
 
 ## <a name="goal-for-migration"></a>Doel voor migratie
 Met Resource Manager kunt u complexe toepassingen implementeren via sjablonen, virtuele machines configureren met behulp van VM-extensies en toegangs beheer en tagging van het netwerk. Azure Resource Manager bevat schaal bare, parallelle implementatie voor virtuele machines in beschikbaarheids sets. Het nieuwe implementatie model biedt ook een levenscyclus beheer van compute, netwerk en opslag onafhankelijk. Ten slotte is er een focus op het inschakelen van beveiliging standaard met het afdwingen van virtuele machines in een virtueel netwerk.
@@ -37,7 +37,7 @@ Bijna alle functies van het klassieke implementatie model worden ondersteund voo
 * Storage Accounts
 * Virtuele netwerken
 * VPN-gateways
-* Express route-gateways _(in hetzelfde abonnement als alleen Virtual Network)_
+* [Express route-gateways](https://docs.microsoft.com/azure/expressroute/expressroute-howto-move-arm) _(in hetzelfde abonnement als alleen Virtual Network)_
 * Netwerkbeveiligingsgroepen
 * Routetabellen
 * Gereserveerde IP-adressen

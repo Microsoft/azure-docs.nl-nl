@@ -7,14 +7,14 @@ ms.date: 4/4/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: cpendleton
+manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 8f27f7532d074428fafe74e4a453628f5c61d2b8
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 41a117c9ea8b47afcedaa1714abc2031d3be6c21
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895967"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680063"
 ---
 # <a name="data-driven-style-expressions-web-sdk"></a>Gegevensgestuurde stijl expressies (Web SDK)
 
@@ -24,9 +24,9 @@ Gegevensgestuurde stijlen verminderen de hoeveelheid code die nodig is voor het 
 
 Deze video biedt een overzicht van gegevensgestuurde stijlen in de Azure Maps Web-SDK.
 
-<br/>
+</br>
 
-<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Data-Driven-Styling-with-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+>[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Data-Driven-Styling-with-Azure-Maps/player?format=ny]
 
 Expressies worden weer gegeven als JSON-matrices. Het eerste element van een expressie in de matrix is een teken reeks die de naam van de expressie operator opgeeft. Bijvoorbeeld, "+" of "case". De volgende elementen (indien aanwezig) zijn de argumenten voor de expressie. Elk argument is een letterlijke waarde (een teken reeks, getal, Booleaans of `null` ) of een andere expressie matrix. De volgende pseudocode definieert de basis structuur van een expressie. 
 
@@ -41,7 +41,7 @@ Expressies worden weer gegeven als JSON-matrices. Het eerste element van een exp
 
 De Azure Maps Web-SDK ondersteunt veel typen expressies. Expressies kunnen worden gebruikt in hun eigen of in combi natie met andere expressies.
 
-| Type expressies | Description |
+| Type expressies | Beschrijving |
 |---------------------|-------------|
 | [Statistische expressie](#aggregate-expression) | Een expressie die een berekening definieert die wordt verwerkt via een set gegevens en kan worden gebruikt met de `clusterProperties` optie van een `DataSource` . |
 | [Booleaanse expressies](#boolean-expressions) | Boole-expressies bieden een set Booleaanse Opera tors voor het evalueren van Boole-vergelijkingen. |
@@ -58,7 +58,7 @@ De Azure Maps Web-SDK ondersteunt veel typen expressies. Expressies kunnen worde
 
 Alle voor beelden in dit document gebruiken de volgende functie om verschillende manieren te demonstreren waarin de verschillende typen expressies kunnen worden gebruikt. 
 
-```javascript
+```json
 {
     "type": "Feature",
     "geometry": {
@@ -70,13 +70,13 @@ Alle voor beelden in dit document gebruiken de volgende functie om verschillende
         "entityType": "restaurant",
         "revenue": 12345,
         "subTitle": "Building 40", 
-        "temperature": 72,
+        "temperature": 64,
         "title": "Cafeteria", 
-        "zoneColor": "red",
-        "abcArray": ['a', 'b', 'c'],
-        "array2d": [['a', 'b'], ['x', 'y']],
+        "zoneColor": "purple",
+        "abcArray": ["a", "b", "c"],
+        "array2d": [["a", "b"], ["x", "y"]],
         "_style": {
-            "fillColor": 'red'
+            "fillColor": "red"
         }
     }
 }
@@ -88,22 +88,22 @@ Gegevens expressies bieden toegang tot de eigenschaps gegevens in een functie.
 
 | Expression | Retourtype | Beschrijving |
 |------------|-------------|-------------|
-| `['at', number, array]` | object | Hiermee wordt een item uit een matrix opgehaald. |
+| `['at', number, array]` | waarde | Hiermee wordt een item uit een matrix opgehaald. |
 | `['geometry-type']` | tekenreeks | Hiermee wordt het type geometrie van de functie opgehaald: Point, multi point, Lines Tring, multi line String, veelhoek, multiveelhoek. |
 | `['get', string]` | waarde | Hiermee wordt de eigenschaps waarde opgehaald uit de eigenschappen van de huidige functie. Retourneert null als de aangevraagde eigenschap ontbreekt. |
 | `['get', string, object]` | waarde | Hiermee wordt de eigenschaps waarde opgehaald uit de eigenschappen van het gegeven object. Retourneert null als de aangevraagde eigenschap ontbreekt. |
 | `['has', string]` | booleaans | Hiermee wordt bepaald of de eigenschappen van een functie de opgegeven eigenschap hebben. |
 | `['has', string, object]` | booleaans | Hiermee wordt bepaald of de eigenschappen van het object de opgegeven eigenschap hebben. |
 | `['id']` | waarde | Hiermee haalt u de ID van de functie op als deze een bevat. |
-| `['length', string | array]` | getal | Hiermee wordt de lengte van een teken reeks of een matrix opgehaald. |
 | `['in', boolean | string | number, array]` | booleaans | Hiermee wordt bepaald of een item in een matrix voor komt |
 | `['in', substring, string]` | booleaans | Hiermee wordt bepaald of een subtekenreeks voor komt in een teken reeks |
 | `['index-of', boolean | string | number, array | string]`<br/><br/>`['index-of', boolean | string | number, array | string, number]` | getal | Retourneert de eerste positie waarop een item kan worden gevonden in een matrix of een subtekenreeks kan worden gevonden in een teken reeks of `-1` als de invoer niet kan worden gevonden. Hiermee wordt een optionele index voor het starten van de zoek opdracht geaccepteerd. |
-| `['slice', array | string, number]`<br/><br/>`['slice', array | string, number, number]` | `string`\|matrix | Retourneert een item uit een matrix of een subtekenreeks uit een teken reeks uit een opgegeven start index of tussen een start-index en een end-index als deze is ingesteld. De geretourneerde waarde is inclusief de begin index, maar niet van de eind index. |
+| `['length', string | array]` | getal | Hiermee wordt de lengte van een teken reeks of een matrix opgehaald. |
+| `['slice', array | string, number]`<br/><br/>`['slice', array | string, number, number]` | teken reeks \| matrix | Retourneert een item uit een matrix of een subtekenreeks uit een teken reeks uit een opgegeven start index of tussen een start-index en een end-index als deze is ingesteld. De geretourneerde waarde is inclusief de begin index, maar niet van de eind index. |
 
 **Voorbeelden**
 
-Eigenschappen van een functie kunnen rechtstreeks in een expressie worden geopend met behulp van een `get` expressie. In dit voor beeld wordt de waarde ' zoneColor ' van de functie gebruikt om de eigenschap Color van een Bubble Layer op te geven. 
+Eigenschappen van een functie kunnen rechtstreeks in een expressie worden geopend met behulp van een `get` expressie. In dit voor beeld wordt de `zoneColor` waarde van de functie gebruikt om de eigenschap Color van een Bubble Layer op te geven. 
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -111,7 +111,7 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-Het bovenstaande voor beeld werkt prima, als alle punt functies de eigenschap hebben `zoneColor` . Als dat niet het geval is, wordt de kleur waarschijnlijk teruggevallen op Black. Als u de terugval kleur wilt wijzigen, gebruikt u een `case` expressie in combi natie met de `has` expressie om te controleren of de eigenschap bestaat. Als de eigenschap niet bestaat, retourneert u een terugval kleur.
+Het bovenstaande voor beeld werkt prima, als alle punt functies de eigenschap hebben `zoneColor` . Als dat niet het geval is, gaat de kleur waarschijnlijk terug naar zwart. Als u de terugval kleur wilt wijzigen, gebruikt u een `case` expressie in combi natie met de `has` expressie om te controleren of de eigenschap bestaat. Als de eigenschap niet bestaat, retourneert u een terugval kleur.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -203,7 +203,7 @@ Wiskundige expressies bieden wiskundige Opera tors voor het uitvoeren van gegeve
 | `['max', number, number, …]` | getal | Berekent het maximum aantal in de opgegeven reeks getallen. |
 | `['min', number, number, …]` | getal | Berekent het minimale getal in de opgegeven reeks getallen. |
 | `['pi']` | getal | Retourneert de wiskundige constante `PI` . |
-| `['round', number]` | getal | Rondt het getal af op het dichtstbijzijnde gehele getal. De helft waarden worden afgerond van nul. Bijvoorbeeld, `['round', -1.5]` evalueert naar-2. |
+| `['round', number]` | getal | Rondt het getal af op het dichtstbijzijnde gehele getal. De helft waarden worden afgerond van nul. Bijvoorbeeld, `['round', -1.5]` evalueert naar `-2` . |
 | `['sin', number]` | getal | Berekent de sinus van het opgegeven getal. |
 | `['sqrt', number]` | getal | Hiermee wordt de vierkantswortel van het opgegeven getal berekend. |
 | `['tan', number]` | getal | Berekent de tangens van het opgegeven getal. |
@@ -228,6 +228,16 @@ Een statistische expressie heeft drie waarden: een operator waarde, en begin waa
 
 Als alle functies in een gegevensset een eigenschap hebben `revenue` die een getal is. Vervolgens kan de totale omzet van alle punten in een cluster, die zijn gemaakt op basis van de gegevensset, worden berekend. Deze berekening wordt uitgevoerd met behulp van de volgende statistische expressie: `['+', 0, ['get', 'revenue']]`
 
+### <a name="accumulated-expression"></a>Samengevoegde expressie
+
+De `accumulated` expressie haalt de waarde van een cluster eigenschap op die tot nu toe is verzameld. Dit kan alleen worden gebruikt in de `clusterProperties` optie van een geclusterde `DataSource` bron.
+
+**Gebruik**
+
+```javascript
+["accumulated"]
+```
+
 ## <a name="boolean-expressions"></a>Booleaanse expressies
 
 Boole-expressies bieden een set Booleaanse Opera tors voor het evalueren van Boole-vergelijkingen.
@@ -245,6 +255,7 @@ Bij het vergelijken van waarden is de vergelijking strikt getypt. Waarden van ve
 | `['>=' value, value]` | booleaans | Retourneert `true` of de eerste invoer groter is dan of gelijk is aan de tweede, `false` anders. De argumenten moeten beide ofwel teken reeksen of beide getallen zijn. |
 | `['all', boolean, boolean, …]` | booleaans | Retourneert `true` of alle invoer waarden `true` , `false` anders. |
 | `['any', boolean, boolean, …]` | booleaans | Retourneert `true` of een van de invoer waarden `true` is `false` . |
+| `['within', Polygon | MultiPolygon | Feature<Polygon | MultiPolygon>]` | booleaans | Retourneert `true` of de geëvalueerde functie volledig is opgenomen in een grens van de invoer geometrie, anders false. De invoer waarde kan een geldige geojson zijn van het type `Polygon` , `MultiPolygon` , `Feature` of `FeatureCollection` . Ondersteunde functies voor evaluatie:<br/><br/>-Punt: retourneert `false` als een punt zich op de grens bevindt of buiten de grens valt.<br/>-Lines Tring: retourneert of een `false` deel van een regel buiten de grens valt, de lijn snijdt de grens of het eind punt van een lijn op de grens. |
 
 ## <a name="conditional-expressions"></a>Voorwaardelijke expressies
 
@@ -355,28 +366,6 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 });
 ```
 
-In het volgende voor beeld wordt een match-expressie gebruikt voor het uitvoeren van een ' in matrix ' of ' matrix bevat ' type filter. In dit geval filtert de expressie gegevens met een ID-waarde die zich in een lijst met toegestane Id's bevindt. Wanneer u expressies met filters gebruikt, moet het resultaat een Booleaanse waarde zijn.
-
-```javascript
-var layer = new atlas.layer.BubbleLayer(datasource, null, {
-    filter: [
-        'match',  
-
-        //Get the property to match.
-        ['get', 'id'],  
-
-         //List of values to match.
-        [24, 53, 98], 
-
-        //If there is a match, return true.
-        true,
-    
-        //Otherwise return false.
-        false
-    ]
-});
-```
-
 ### <a name="coalesce-expression"></a>Coalesce-expressie
 
 Een `coalesce` expressie wordt stapsgewijs door een reeks expressies uitgevoerd, totdat de eerste niet-null-waarde wordt opgehaald en deze waarde wordt geretourneerd. 
@@ -394,7 +383,7 @@ De volgende pseudocode definieert de structuur van de `coalesce` expressie.
 
 **Voorbeeld**
 
-In het volgende voor beeld wordt een `coalesce` expressie gebruikt om de `textField` optie van een symbool laag in te stellen. Als de `title` eigenschap ontbreekt in de-functie of is ingesteld op `null` , zoekt de expressie vervolgens naar de `subtitle` eigenschap, als deze ontbreekt of `null` , wordt deze terugvallen op een lege teken reeks. 
+In het volgende voor beeld wordt een `coalesce` expressie gebruikt om de `textField` optie van een symbool laag in te stellen. Als de `title` eigenschap ontbreekt in de-functie of is ingesteld op `null` , zoekt de expressie vervolgens naar de `subTitle` eigenschap, als deze ontbreekt of `null` , wordt deze terugvallen op een lege teken reeks. 
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -405,8 +394,8 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
             //Try getting the title property.
             ['get', 'title'],
 
-            //If there is no title, try getting the subtitle. 
-            ['get', 'subtitle'],
+            //If there is no title, try getting the subTitle. 
+            ['get', 'subTitle'],
 
             //Default to an empty string.
             ''
@@ -439,8 +428,14 @@ Type-expressies bieden hulpprogram ma's voor het testen en omzetten van verschil
 
 | Expression | Retourtype | Beschrijving |
 |------------|-------------|-------------|
+| `['array', value]` \| `['array', type: "string" | "number" | "boolean", value]` | Object [] | Hierbij wordt bevestigd dat de invoer een matrix is. |
+| `['boolean', value]` \| `["boolean", value, fallback: value, fallback: value, ...]` | booleaans | Er wordt bevestigd dat de invoer waarde een Boole is. Als er meerdere waarden worden gegeven, wordt elke waarde in de volg orde geëvalueerd totdat een Booleaanse waarde wordt verkregen. Als geen van de invoer Boole-waarden zijn, is de expressie een fout. |
+| `['collator', { 'case-sensitive': boolean, 'diacritic-sensitive': boolean, 'locale': string }]` | collatie | Retourneert een collatie voor gebruik in vergelijkings bewerkingen met land instellingen. De opties hoofdletter gevoelig en diakritische gevoelig worden standaard ingesteld op ONWAAR. Het argument locale specificeert de IETF-taal code van de land instelling die moet worden gebruikt. Als er geen wordt gegeven, wordt de standaard land instelling gebruikt. Als de aangevraagde land instelling niet beschikbaar is, gebruikt de collatie een door het systeem gedefinieerde terugval land instelling. Opgelost-land instellingen gebruiken om de resultaten van het terugval gedrag van de land instelling te testen. |
 | `['literal', array]`<br/><br/>`['literal', object]` | matrix \| object | Retourneert een letterlijke matrix of object waarde. Gebruik deze expressie om te voor komen dat een matrix of object als een expressie wordt geëvalueerd. Dit is nodig wanneer een matrix of object moet worden geretourneerd door een expressie. |
 | `['image', string]` | tekenreeks | Hiermee wordt gecontroleerd of een opgegeven afbeeldings-ID is geladen in de Maps-installatie kopie sprite. Als dat het geval is, wordt de ID geretourneerd, anders wordt Null geretourneerd. |
+| `['number', value]` \| `["number", value, fallback: value, fallback: value, ...]` | getal | Hierbij wordt bevestigd dat de invoer waarde een getal is. Als er meerdere waarden worden gegeven, wordt elke waarde in de volg orde geëvalueerd totdat er een nummer wordt verkregen. Als geen van de invoer getallen zijn, is de expressie een fout. |
+| `['object', value]`  \| `["object", value, fallback: value, fallback: value, ...]` | Object | Hierbij wordt bevestigd dat de invoer waarde een object is.  Als er meerdere waarden worden gegeven, wordt elke waarde in de volg orde geëvalueerd totdat een object is verkregen. Als geen van de invoer objecten zijn, is de expressie een fout. |
+| `['string', value]` \| `["string", value, fallback: value, fallback: value, ...]` | tekenreeks | Hierbij wordt bevestigd dat de invoer waarde een teken reeks is. Als er meerdere waarden worden gegeven, wordt elke waarde in de volg orde geëvalueerd totdat er een teken reeks wordt verkregen. Als geen van de invoer teken reeksen zijn, is de expressie een fout. |
 | `['to-boolean', value]` | booleaans | Hiermee wordt de invoer waarde geconverteerd naar een Boolean. Het resultaat is `false` wanneer de invoer een lege teken reeks,,, `0` `false` `null` of `NaN` ; anders is `true` . |
 | `['to-color', value]`<br/><br/>`['to-color', value1, value2…]` | color | Converteert de invoer waarde naar een kleur. Als er meerdere waarden worden gegeven, wordt elke waarde in de aangegeven volg orde geëvalueerd totdat de eerste geslaagde conversie is verkregen. Als geen van de invoer kan worden geconverteerd, is de expressie een fout. |
 | `['to-number', value]`<br/><br/>`['to-number', value1, value2, …]` | getal | Converteert de invoer waarde indien mogelijk naar een getal. Als de invoer is `null` of `false` , is het resultaat 0. Als de invoer is `true` , is het resultaat 1. Als de invoer een teken reeks is, wordt deze geconverteerd naar een getal met behulp van de [ToNumber](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) -teken reeks functie van de ECMAScript Language Specification. Als er meerdere waarden worden gegeven, wordt elke waarde in de aangegeven volg orde geëvalueerd totdat de eerste geslaagde conversie is verkregen. Als geen van de invoer kan worden geconverteerd, is de expressie een fout. |
@@ -475,13 +470,13 @@ Kleur expressies maken het gemakkelijker om kleur waarden te maken en te bewerke
 
 | Expression | Retourtype | Beschrijving |
 |------------|-------------|-------------|
-| `['rgb', number, number, number]` | color | Hiermee maakt u een kleur waarde van de onderdelen *rood* , *groen* en *blauw* die tussen `0` en moeten variëren `255` , en een alpha-onderdeel van `1` . Als een onderdeel zich buiten het bereik bevindt, is er een fout opgetreden in de expressie. |
-| `['rgba', number, number, number, number]` | color | Hiermee maakt u een kleur waarde van *rode* , *groene* en *blauwe* onderdelen die tussen en moeten liggen `0` `255` en een alpha-component binnen een bereik van `0` en `1` . Als een onderdeel zich buiten het bereik bevindt, is er een fout opgetreden in de expressie. |
-| `['to-rgba']` | \[getal, getal, getal, getal\] | Retourneert een matrix met vier elementen met de *rode* , *groene* , *blauwe* en *alpha* -onderdelen van de invoer kleur, in die volg orde. |
+| `['rgb', number, number, number]` | color | Hiermee maakt u een kleur waarde van de onderdelen *rood*, *groen* en *blauw* die tussen `0` en moeten variëren `255` , en een alpha-onderdeel van `1` . Als een onderdeel zich buiten het bereik bevindt, is er een fout opgetreden in de expressie. |
+| `['rgba', number, number, number, number]` | color | Hiermee maakt u een kleur waarde van *rode*, *groene* en *blauwe* onderdelen die tussen en moeten liggen `0` `255` en een alpha-component binnen een bereik van `0` en `1` . Als een onderdeel zich buiten het bereik bevindt, is er een fout opgetreden in de expressie. |
+| `['to-rgba']` | \[getal, getal, getal, getal\] | Retourneert een matrix met vier elementen met de *rode*, *groene*, *blauwe* en *alpha* -onderdelen van de invoer kleur, in die volg orde. |
 
 **Voorbeeld**
 
-In het volgende voor beeld wordt een RGB-kleur waarde gemaakt met een *rode* waarde van `255` en waarden voor *groen* en *blauw* die worden berekend door te vermenigvuldigen `2.5` met de waarde van de `temperature` eigenschap. Wanneer de Tempe ratuur wordt gewijzigd, verandert de kleur in verschillende tinten *rood* .
+In het volgende voor beeld wordt een RGB-kleur waarde gemaakt met een *rode* waarde van `255` en waarden voor *groen* en *blauw* die worden berekend door te vermenigvuldigen `2.5` met de waarde van de `temperature` eigenschap. Wanneer de Tempe ratuur wordt gewijzigd, verandert de kleur in verschillende tinten *rood*.
 
 ```javascript
 var layer = new atlas.layer.BubbleLayer(datasource, null, {
@@ -501,10 +496,12 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
 
 Teken reeks operator expressies voeren conversie bewerkingen uit op teken reeksen, zoals samen voegen en het converteren van de aanvraag. 
 
-| Expression | Retourtype | Description |
+| Expression | Retourtype | Beschrijving |
 |------------|-------------|-------------|
 | `['concat', string, string, …]` | tekenreeks | Meerdere teken reeksen samen voegen. Elke waarde moet een teken reeks zijn. Gebruik de `to-string` type-expressie om andere waardetypen zo nodig te converteren naar een teken reeks. |
 | `['downcase', string]` | tekenreeks | Hiermee wordt de opgegeven teken reeks geconverteerd naar kleine letters. |
+| `['is-supported-script', string]` \| `['is-supported-script', Expression]`| booleaans | Bepaalt of de invoer teken reeks een tekenset gebruikt die wordt ondersteund door de huidige lettertype verzameling. Bijvoorbeeld: `['is-supported-script', 'ಗೌರವಾರ್ಥವಾಗಿ']` |
+| `['resolved-locale', string]` | tekenreeks | Retourneert het IETF-taal label van de land instelling die wordt gebruikt door de beschik bare collatie. Dit kan worden gebruikt om de standaard land instelling van het systeem te bepalen of om te bepalen of een aangevraagde land instelling is geladen. |
 | `['upcase', string]` | tekenreeks | Converteert de opgegeven teken reeks naar hoofd letters. |
 
 **Voorbeeld**
@@ -575,14 +572,10 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
         'interpolate',
         ['linear'],
         ['get', 'temperature'],
-        50,        
-        'blue',
-        60,
-        'yellow',
-        70,
-        'orange',
-        80,
-        'red'
+        50, 'blue',
+        60, 'yellow',
+        70, 'orange',
+        80, 'red'
     ]
 });
 ```
@@ -624,12 +617,9 @@ var layer = new atlas.layer.BubbleLayer(datasource, null, {
         'step',
         ['get', 'temperature'],
         'blue',
-        60,
-        'yellow',
-        70,
-        'orange',
-        80,
-        'red'
+        60, 'yellow',
+        70, 'orange',
+        80, 'red'
     ]
 });
 ```
@@ -724,7 +714,6 @@ De expressie voor de tekst veld notatie kan worden gebruikt met de `textField` o
 
  * `'font-scale'` -Hiermee geeft u de schaal factor voor de teken grootte op. Als deze waarde wordt opgegeven, wordt de `size` eigenschap van de `textOptions` afzonderlijke teken reeks overschreven.
  * `'text-font'` -Hiermee geeft u een of meer lettertype families op die moeten worden gebruikt voor deze teken reeks. Als deze waarde wordt opgegeven, wordt de `font` eigenschap van de `textOptions` afzonderlijke teken reeks overschreven.
- * `'text-color'` -Hiermee geeft u een kleur op die moet worden toegepast op een tekst tijdens het renderen. 
 
 De volgende pseudocode definieert de structuur van de tekst veld indelings expressie. 
 
@@ -734,14 +723,12 @@ De volgende pseudocode definieert de structuur van de tekst veld indelings expre
     input1: string, 
     options1: { 
         'font-scale': number, 
-        'text-font': string[],
-        'text-color': color
+        'text-font': string[]
     },
     input2: string, 
     options2: { 
         'font-scale': number, 
-        'text-font': string[] ,
-        'text-color': color
+        'text-font': string[]
     },
     …
 ]
@@ -749,7 +736,7 @@ De volgende pseudocode definieert de structuur van de tekst veld indelings expre
 
 **Voorbeeld**
 
-In het volgende voor beeld wordt het tekst veld opgemaakt door een vet letter type toe te voegen en de teken grootte van de `title` eigenschap van de functie omhoog te schalen. In dit voor beeld wordt ook de `subtitle` eigenschap van de functie op een nieuwe regel toegevoegd, met een geschaalde teken grootte en gekleurde rood.
+In het volgende voor beeld wordt het tekst veld opgemaakt door een vet letter type toe te voegen en de teken grootte van de `title` eigenschap van de functie omhoog te schalen. In dit voor beeld wordt ook de `subTitle` eigenschap van de functie op een nieuwe regel toegevoegd, met een geschaalde teken grootte.
 
 ```javascript
 var layer = new atlas.layer.SymbolLayer(datasource, null, {
@@ -766,11 +753,10 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
 
             '\n', {},   //Add a new line without any formatting.
 
-            //Scale the font size down of the subtitle property. 
-            ['get', 'subtitle'],
+            //Scale the font size down of the subTitle property. 
+            ['get', 'subTitle'],
             { 
-                'font-scale': 0.75, 
-                'text-color': 'red' 
+                'font-scale': 0.75
             }
         ]
     }
@@ -817,7 +803,7 @@ var layer = new atlas.layer.SymbolLayer(datasource, null, {
         textField: [
             'number-format', 
             ['get', 'revenue'], 
-            { ‘currency': 'USD' }
+            { 'currency': 'USD' }
         ],
 
         offset: [0, 0.75]
@@ -885,7 +871,7 @@ var layer = new atlas.layer.HeatMapLayer(datasource, null, {
         ['zoom'],
         
         //For zoom level 1 set the radius to 2 pixels.
-        10, 2,
+        1, 2,
 
         //Between zoom level 1 and 19, exponentially scale the radius from 2 pixels to 2 * Math.pow(2, 19 - 1) pixels (524,288 pixels).
         19, 2 * Math.pow(2, 19 - 1)

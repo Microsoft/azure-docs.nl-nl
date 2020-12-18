@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 4f70978e7b7c2315aff4c51d8b019933df78e7e8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 01a5f600acf9542c5adabcdf2523a42ca44233af
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028798"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680508"
 ---
 # <a name="troubleshoot-model-deployment-locally"></a>Model implementatie lokaal oplossen
 
@@ -28,7 +28,7 @@ Meer informatie over het oplossen van problemen en het oplossen van veelvoorkome
 * De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
 * De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * De [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
-* Om lokaal fouten op te sporen, moet u een werkende docker-installatie op uw lokale systeem hebben.
+* Als u lokaal fouten wilt opsporen, kunt u model implementeren voor [Azure machine learning Compute-instantie](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-local-container-notebook-vm) of een werkende docker-installatie op uw lokale systeem.
 
     Als u de docker-installatie wilt controleren, gebruikt u de opdracht `docker run hello-world` vanaf een Terminal of opdracht prompt. Raadpleeg de [docker-documentatie](https://docs.docker.com/)voor meer informatie over het installeren van docker of het oplossen van problemen met docker-fouten.
 

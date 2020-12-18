@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/28/2020
 ms.author: sideeksh
-ms.openlocfilehash: 6a7d29d8487c6be6915ae4171b3759f0980f5448
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 21bdbecdbba31eae112053bf81411781245cc170
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874352"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678678"
 ---
 # <a name="enable-azure-vm-disaster-recovery-between-availability-zones"></a>Herstel na nood geval voor Azure VM tussen beschikbaarheids zones inschakelen
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u virtuele Azure-machines vanuit de ene besc
 
 >[!NOTE]
 >
->- Ondersteuning voor zone-naar-zone herstel na nood gevallen is momenteel beperkt tot twee regio's: Zuidoost-Azië en UK-zuid.  
+>- Ondersteuning voor zone-naar-zone herstel na nood gevallen is momenteel beperkt tot vijf regio's: Zuidoost-Azië, UK-zuid, Japan-Oost, Australië-oost en Europa-west.  
 >- Site Recovery verplaatst of slaat klant gegevens niet uit de regio waarin deze wordt geïmplementeerd wanneer de klant gebruikmaakt van zone om herstel na nood gevallen van een zone te maken. Klanten kunnen een Recovery Services kluis uit een andere regio selecteren als ze dat doen. De Recovery Services kluis bevat meta gegevens, maar geen werkelijke klant gegevens.
 
 Site Recovery-service draagt bij aan uw strategie voor bedrijfs continuïteit en herstel na nood gevallen door uw zakelijke apps tijdens geplande en ongeplande uitval te laten werken. Het is de aanbevolen optie voor nood herstel om ervoor te zorgen dat uw toepassingen actief blijven als er regionale storingen optreden.

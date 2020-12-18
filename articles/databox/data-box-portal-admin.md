@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 07/20/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: 7d2734d386f1e49e2227058b148ee6b591d14a42
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 46a18cb2b6e1682427d5674be28b240f35b120fe
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94336377"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678646"
 ---
 # <a name="use-the-azure-portal-to-administer-your-azure-data-box-and-azure-data-box-heavy"></a>Gebruik de Azure Portal om uw Azure Data Box en Azure Data Box Heavy te beheren
 
@@ -21,14 +21,11 @@ Dit artikel is van toepassing op zowel Azure Data Box als Azure Data Box Heavy. 
 
 Dit artikel richt zich op de taken die u kunt uitvoeren met behulp van de Azure-portal. Gebruik de Azure Portal om orders te beheren, Data Box-apparaat te beheren en de status van de order bij te houden terwijl deze wordt voltooid.
 
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
-
-
 ## <a name="cancel-an-order"></a>Een order annuleren
 
-Soms moet u een order om een bepaalde reden annuleren nadat u deze hebt geplaatst. 
+U moet mogelijk een bestelling om verschillende redenen annuleren nadat u deze hebt geplaatst.
 
-Voor import-en export orders kunt u alleen de order annuleren voordat de order wordt verwerkt. Wanneer de order wordt verwerkt en Data Box apparaat wordt voor bereid, is het niet mogelijk om de volg orde te annuleren.
+Voor zowel import-als export orders kunt u de order alleen annuleren voordat deze wordt verwerkt. Als uw bestelling is verwerkt en het Data Box apparaat is voor bereid, kunt u de volg orde niet annuleren.
 
 Voer de volgende stappen uit om een order te annuleren.
 
@@ -44,10 +41,7 @@ Voer de volgende stappen uit om een order te annuleren.
 
 ## <a name="clone-an-order"></a>Een order klonen
 
-Klonen is handig in bepaalde situaties. Een voorbeeld: Een gebruiker heeft Data Box gebruikt om wat gegevens over te dragen. Naarmate er meer gegevens worden gegenereerd, is er een andere Data Box apparaat nodig om die gegevens over te brengen naar Azure. In dit geval kan dezelfde order gewoon worden gekloond.
-
-> [!IMPORTANT]
-> Klonen is niet beschikbaar voor export orders. U kunt import orders alleen klonen.
+Klonen is handig in bepaalde situaties. U hebt bijvoorbeeld Data Box gebruikt voor het overdragen van gegevens. Naarmate er meer gegevens worden gegenereerd, moet u een ander Data Box apparaat gebruiken om die gegevens over te brengen naar Azure. In dit geval kunt u dezelfde volg orde klonen.
 
 Voer de volgende stappen uit om een import volgorde te klonen.
 
@@ -55,7 +49,7 @@ Voer de volgende stappen uit om een import volgorde te klonen.
 
     ![De opdracht Clone op het tabblad Overzicht voor een order](media/data-box-portal-admin/portal-admin-clone-command.png)
 
-2.  Alle details van de order blijven hetzelfde. De ordernaam is de oorspronkelijke ordernaam met *-Kloon* eraan toegevoegd. Schakel het selectievakje in om te bevestigen dat u de privacyinformatie hebt gelezen. Klik op **Create**.
+2.  Alle details van de order blijven hetzelfde. De ordernaam is de oorspronkelijke ordernaam met *-Kloon* eraan toegevoegd. Schakel het selectievakje in om te bevestigen dat u de privacyinformatie hebt gelezen. Klik op **Maken**.
 
 De kloon wordt binnen enkele minuten gemaakt en de portal wordt bijgewerkt met de nieuwe order.
 
@@ -76,7 +70,7 @@ U kunt alleen orders verwijderen die zijn voltooid of geannuleerd. Voer de volge
 
 ## <a name="download-shipping-label"></a>Verzendlabel downloaden
 
-Als het E-ink-scherm van uw Data Box niet werkt en het verzendlabel voor retourzending niet weergeeft, kunt u het verzendlabel downloaden. Er wordt geen E-inkt weer gegeven op het Data Box Heavy en daarom is deze werk stroom niet van toepassing op Data Box Heavy.
+Mogelijk moet u het verzend label downloaden als de E-inkt weergave van uw Data Box niet werkt en het retour verzendings label niet weergeeft. Er wordt geen E-inkt weer gegeven op Data Box Heavy, dus deze werk stroom is niet van toepassing op Data Box Heavy.
 
 Voer de volgende stappen uit om een verzendlabel te downloaden.
 
@@ -104,7 +98,7 @@ Voer de volgende stappen uit om de order te bewerken.
 
 ## <a name="edit-notification-details"></a>Meldingsdetails bewerken
 
-U moet wellicht wijzigen welke gebruikers de e-mails met de orderstatus ontvangen. Een voorbeeld: Een bepaalde gebruiker moet worden geïnformeerd wanneer het apparaat wordt afgeleverd of opgehaald. Een andere gebruiker moet mogelijk een melding ontvangen wanneer het kopiëren van de gegevens is voltooid, zodat de gegevens in het Azure Storage-account kunnen worden gecontroleerd voordat deze uit de bron worden verwijderd. In deze gevallen kunt u de meldingsdetails bewerken.
+Mogelijk moet u de gebruikers wijzigen die de e-mail met de status van de order ontvangen. Een voorbeeld: Een bepaalde gebruiker moet worden geïnformeerd wanneer het apparaat wordt afgeleverd of opgehaald. Een andere gebruiker moet mogelijk een melding ontvangen wanneer het kopiëren van de gegevens is voltooid, zodat de gegevens in het Azure Storage-account kunnen worden gecontroleerd voordat deze uit de bron worden verwijderd. In deze gevallen kunt u de meldingsdetails bewerken.
 
 Voer de volgende stappen uit om meldingsdetails te bewerken.
 
@@ -127,10 +121,10 @@ Voer de volgende stappen uit om de ordergeschiedenis te downloaden.
 
     ![Ordergeschiedenis downloaden](media/data-box-portal-admin/portal-admin-download-order-history.png)
 
-2. Klik op **Ordergeschiedenis downloaden**. In de downloadgeschiedenis ziet u een record met logboeken voor tracering van de koerier. Er worden twee sets logboeken die overeenkomen met de twee knoop punten op een Data Box Heavy. Als u naar de onderkant van dit logboek bladert, kunt u koppelingen zien naar:
+2. Klik op **Ordergeschiedenis downloaden**. De gedownloade geschiedenis bevat een record met tracerings logboeken voor draag signaal. Er worden twee sets logboeken die overeenkomen met de twee knoop punten op een Data Box Heavy apparaat. Als u naar de onderkant van dit logboek bladert, kunt u koppelingen zien naar:
     
-   - **Logboeken kopiëren** : laat de lijst met bestanden die zijn opgetreden tijdens het kopiëren van de gegevens van data box naar uw Azure Storage-account (import volgorde) of *vice versa* (export volgorde).
-   - **Audit logboeken** : bevatten informatie over het inschakelen en openen van shares op de data Box wanneer deze zich buiten het Azure-Data Center bevindt.
+   - **Logboeken kopiëren** : laat de lijst met bestanden die zijn opgetreden tijdens het kopiëren van de gegevens uit het data box naar uw Azure Storage-account (import volgorde) of van uw opslag account naar de data box (export volgorde).
+   - **Audit logboeken** : bevatten informatie over het inschakelen van de data box en het openen van toegang tot shares wanneer de data Box zich buiten het Azure-Data Center bevindt.
    - **Stuk lijst bestanden in import volgorde** : hebben de lijst met bestanden (ook wel het bestand manifest genoemd) die u tijdens **voorbereiding voor verzending** kunt downloaden en heeft bestands namen, bestands grootten en bestands controlesom.
    - **Uitgebreide Logboeken in export volgorde** : bevatten de lijst met bestanden met bestands namen, bestands grootten en reken kundige berekeningen wanneer de gegevens uit de Azure Storage accounts naar de data box zijn gekopieerd.
 
@@ -206,7 +200,7 @@ Voer de volgende stappen uit om de ordergeschiedenis te downloaden.
 
 ## <a name="view-order-status"></a>Orderstatus bekijken
 
-Wanneer de apparaatstatus in de portal verandert, wordt u per e-mail op de hoogte gesteld.
+Wanneer de apparaatstatus wordt gewijzigd in de portal, ontvangt u een melding via een e-mail bericht.
 
 ### <a name="statuses-for-import-order"></a>Statussen voor import order
 
@@ -214,7 +208,7 @@ Dit zijn de statussen voor een import volgorde.
 
 |Orderstatus |Beschrijving |
 |---------|---------|
-|Besteld     | De order is geplaatst. <br>Als het apparaat beschikbaar is, identificeert Microsoft het apparaat dat moet worden verzonden en bereidt Microsoft het apparaat voor. <br> Als het apparaat niet onmiddellijk beschikbaar is, wordt de order verwerkt zodra het apparaat beschikbaar is. Het kan enkele dagen tot een paar maanden duren voordat de order is verwerkt. Als de order niet binnen 90 dagen kan worden voltooid, wordt deze geannuleerd en wordt u op de hoogte gesteld.         |
+|Besteld     | De order is geplaatst. <br>Als het apparaat beschikbaar is, identificeert Microsoft het apparaat dat moet worden verzonden en bereidt Microsoft het apparaat voor. <br> Als het apparaat niet onmiddellijk beschikbaar is, wordt de volg orde verwerkt wanneer het apparaat weer beschikbaar wordt. Het kan enkele dagen tot een paar maanden duren voordat de order is verwerkt. Als de order niet binnen 90 dagen kan worden afgehandeld, wordt de order geannuleerd en wordt u hiervan op de hoogte gesteld.         |
 |Verwerkt     | De order is verwerkt. In overeenstemming met uw order wordt het apparaat in het datacenter voorbereid voor verzending.         |
 |Verzonden     | De order is verzonden. Gebruik het volgnummer dat in uw order in de portal wordt weergegeven om de verzending bij te houden.        |
 |Afgeleverd     | De verzending is afgeleverd op het adres dat in de order is opgegeven.        |
@@ -224,7 +218,7 @@ Dit zijn de statussen voor een import volgorde.
 |Voltooid       |De order is voltooid.<br> Verifieer dat uw gegevens zich in Azure bevinden voordat u de on-premises gegevens van servers verwijdert.         |
 |Voltooid met fouten| Het kopiëren van gegevens is voltooid, maar er zijn fouten opgetreden tijdens het kopiëren. <br> Bekijk de logboeken met kopieerbewerkingen via het pad in de Azure-portal. Zie [voor beelden van Kopieer Logboeken wanneer het uploaden is voltooid met fouten](./data-box-logs.md#upload-completed-with-errors).   |
 |Voltooid met waarschuwingen| De gegevens kopie is voltooid, maar de gegevens zijn gewijzigd. De gegevens bevatten niet-kritieke BLOB-of bestandsnaam fouten die zijn opgelost door het wijzigen van de naam van het bestand of de blob. <br> Bekijk de logboeken met kopieerbewerkingen via het pad in de Azure-portal. Noteer de wijzigingen in uw gegevens. Zie [voor beelden van Kopieer Logboeken wanneer het uploaden is voltooid met waarschuwingen](./data-box-logs.md#upload-completed-with-warnings).   |
-|Geannuleerd            |De order is geannuleerd. <br> U hebt de order zelf geannuleerd, of er is een fout opgetreden waardoor de service de order heeft geannuleerd. Als de order niet binnen 90 dagen kan worden voltooid, wordt deze ook geannuleerd en wordt u op de hoogte gesteld.     |
+|Geannuleerd            |De order is geannuleerd. <br> U hebt de volg orde geannuleerd of de service heeft de volg orde geannuleerd nadat er een fout is opgetreden. Als de order niet binnen 90 dagen kan worden afgehandeld, wordt de order ook geannuleerd en wordt u hiervan op de hoogte gesteld.     |
 |Opschonen | De gegevens op het apparaat worden gewist. Het opruimen van het apparaat wordt als voltooid beschouwd zodra de ordergeschiedenis beschikbaar is om te downloaden in de Azure-portal.|
 
 ### <a name="statuses-for-export-order"></a>Statussen voor export volgorde
@@ -237,10 +231,10 @@ Dit zijn de statussen voor een export volgorde.
 |Geannuleerd            |De order is geannuleerd. <br> U hebt de volg orde geannuleerd (u kunt alleen annuleren voordat de order wordt verwerkt) of er is een fout opgetreden. de order is geannuleerd door de service. Als de order niet binnen 90 dagen kan worden voltooid, wordt deze ook geannuleerd en wordt u op de hoogte gesteld.     |
 |Verwerkt     | De order is verwerkt. Op basis van uw bestelling wordt het apparaat voor bereid voor het kopiëren van gegevens in het Data Center. Er worden apparaat shares gemaakt.         |
 |De gegevens kopie wordt uitgevoerd     | Er wordt een gegevens kopie van de opgegeven Azure Storage accounts naar het apparaat uitgevoerd. Houd de kopieervoortgang voor uw order bij in de Azure-portal. <br> Wacht totdat het kopiëren van gegevens is voltooid. |
-|Kopiëren is voltooid     | De gegevens kopie van de opgegeven Azure Storage accounts naar het apparaat is voltooid. Een uitgebreid logboek bestand (als de optie in de volg orde is ingeschakeld) en er in uw opslag account een kopie logboek wordt gemaakt. Het uitgebreide logboek bevat de informatie over alle bestanden (naam, pad, reken controlesom) die naar het apparaat worden gekopieerd. Het Kopieer logboek bevat de samen vatting van het kopieer proces, met inbegrip van een lijst met bestanden die niet kunnen worden gekopieerd als gevolg van fouten.<br> De gegevens van het opslag account blijven ongewijzigd. |
+|Kopiëren is voltooid     | De gegevens kopie van de opgegeven Azure Storage accounts naar het apparaat is voltooid. Een uitgebreid logboek bestand (als de optie in de volg orde is ingeschakeld) en er in uw opslag account een kopie logboek wordt gemaakt. Het uitgebreide logboek bevat de informatie over alle bestanden (naam, pad, reken controlesom) die naar het apparaat worden gekopieerd. Het Kopieer logboek bevat de samen vatting van het kopieer proces, met inbegrip van een lijst met bestanden die niet kunnen worden gekopieerd vanwege fouten. <br> De gegevens van het opslag account blijven ongewijzigd. |
 |Kopiëren voltooid met fouten| Het kopiëren van gegevens is voltooid, maar er zijn fouten opgetreden tijdens het kopiëren. <br> Controleer de Kopieer Logboeken in het Azure Storage-account met behulp van het pad in de Azure Portal. Zie [voor beelden van Kopieer Logboeken wanneer het downloaden is voltooid met fouten](./data-box-logs.md#upload-completed-with-errors).   |
 |Kopiëren voltooid met waarschuwingen| De gegevens kopie van Azure Storage account is voltooid, maar de gegevens bevatten niet-kritieke fouten. <br> Bekijk de logboeken met kopieerbewerkingen via het pad in de Azure-portal. Noteer de niet-kritieke fouten. Zie [voor beelden van Kopieer Logboeken wanneer het downloaden is voltooid met waarschuwingen](./data-box-logs.md#upload-completed-with-warnings).   |
-|Kopiëren is mislukt met fouten| Het kopiëren van gegevens uit Azure Storage account is mislukt en de volg orde wordt beëindigd. Er wordt geen apparaat verzonden.<br> Controleer de Kopieer Logboeken in het Azure Storage-account met behulp van het pad in de Azure Portal. Zie [voor beelden van Kopieer Logboeken wanneer het downloaden is mislukt met fouten](./data-box-logs.md#upload-completed-with-errors).   |
+|Kopiëren is mislukt met fouten| Het kopiëren van gegevens uit Azure Storage account is mislukt en de volg orde wordt beëindigd. Er wordt geen apparaat verzonden. <br> Controleer de Kopieer Logboeken in het Azure Storage-account met behulp van het pad in de Azure Portal. Zie [voor beelden van Kopieer Logboeken wanneer het downloaden is mislukt met fouten](./data-box-logs.md#upload-completed-with-errors).   |
 |Verzonden     |De order is verzonden. Gebruik het volgnummer dat in uw order in de portal wordt weergegeven om de verzending bij te houden.        |
 |Afgeleverd     |De verzending is afgeleverd op het adres dat in de order is opgegeven.        |
 |Opgehaald     |Uw retourzending is opgehaald en gescand door de vervoerder.         |
@@ -252,14 +246,14 @@ Dit zijn de statussen voor een export volgorde.
 > Als de Kopieer taak voor het exporteren van gegevens van Azure Storage accounts naar Data Box is voltooid met fouten of waarschuwingen, wordt het apparaat nog steeds geleverd. Alleen als er een Kopieer fout is opgetreden, wordt de order beëindigd en wordt het apparaat niet verzonden.
 
 
-Als u een zelfbeheerde verzen ding gebruikt, ziet u nadat de kopie is voltooid en voordat u het apparaat ontvangt, de volgende statussen (in plaats van de bestanden die in de voor gaande tabel worden genoemd):
+Als u gebruikmaakt van zelf-beheerde verzen ding nadat de kopie is voltooid en voordat u het apparaat ontvangt, ziet u de volgende statussen (in plaats van de items die in de voor gaande tabel worden genoemd):
 
 |Orderstatus |Beschrijving |
 |---------|---------|
 |Gereed voor ophalen in azure Data Center      |Het apparaat kan worden opgenomen in het Azure-Data Center.        |
 |Opgehaald    |U hebt het apparaat geselecteerd.         |
 |Klaar om te ontvangen in azure Data Center     |Het apparaat kan worden ontvangen in het Azure-Data Center.        |
-|Ontvangen     |Het apparaat wordt ontvangen in het Azure-Data Center.      |
+|Ontvangen     |Het apparaat is ontvangen op het Azure-Data Center.      |
 
 
 

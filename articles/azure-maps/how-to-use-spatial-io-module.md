@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: e64df21b31d686b72b210d2c62956745350891f5
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: cd64c80acceb1542c080fc45efbce59f287d448a
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895389"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680684"
 ---
 # <a name="how-to-use-the-azure-maps-spatial-io-module"></a>De Azure Maps ruimtelijke IO-module gebruiken
 
-De Azure Maps Web-SDK biedt de **ruimtelijke IO-module** , die ruimtelijke gegevens integreert met de Azure Maps Web-SDK met behulp van Java script of type script. Met de krachtige functies in deze module kunnen ontwikkel aars het volgende doen:
+De Azure Maps Web-SDK biedt de **ruimtelijke IO-module**, die ruimtelijke gegevens integreert met de Azure Maps Web-SDK met behulp van Java script of type script. Met de krachtige functies in deze module kunnen ontwikkel aars het volgende doen:
 
 - [Algemene ruimtelijke gegevens bestanden lezen en schrijven](spatial-io-read-write-spatial-data.md). Ondersteunde bestands indelingen zijn: KML, KMZ, GPX, GeoRSS, GML, geojson en CSV-bestanden met kolommen met ruimtelijke gegevens. Ondersteunt ook Well-Known tekst (WKT).
 - [Maak verbinding met Open Geospatial Consortium-Services (OGC) en integreer met Azure Maps Web-SDK. Overlay van web map Services (WMS) en WMTS (web map tile Services) als lagen op de kaart](spatial-io-add-ogc-map-layer.md).
@@ -30,10 +30,9 @@ In deze hand leiding leert u hoe u de ruimtelijke IO-module kunt integreren en g
 
 In deze video vindt u een overzicht van de ruimtelijke IO-module in de Azure Maps Web-SDK.
 
-<br/>
+</br>
 
-<iframe src="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Easily-integrate-spatial-data-into-the-Azure-Maps/player" width="960" height="540" allowFullScreen frameBorder="0" title="U kunt ruimtelijke gegevens eenvoudig integreren in de Azure Maps-micro soft Channel 9-video"></iframe>
-
+> [!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Easily-integrate-spatial-data-into-the-Azure-Maps/player?format=ny]
 
 > [!WARNING]
 > Gebruik alleen gegevens en services die afkomstig zijn van een bron die u vertrouwt, met name als ernaar wordt verwezen vanuit een ander domein. De ruimtelijke IO-module onderneemt stappen om Risico's te minimaliseren, maar de veiligste benadering is dat er geen danagerous-gegevens in uw toepassing kunnen worden gebruikt om te beginnen. 

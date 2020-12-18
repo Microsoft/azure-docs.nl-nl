@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/19/2020
-ms.openlocfilehash: 94c926c555a4bc96ac3c6fbe773650e16554bcf2
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: d04fa25b9c953d151fc16d11f304c48b7046ab76
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95315699"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680393"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Gegevens verzameling configureren voor de Azure Monitor-agent (preview)
 
@@ -35,6 +35,9 @@ Denk bijvoorbeeld aan een omgeving met een set virtuele machines waarop een line
 
 U kunt de Azure Portal gebruiken om een regel voor het verzamelen van gegevens te maken en virtuele machines in uw abonnement aan die regel te koppelen. De Azure Monitor-agent wordt automatisch geïnstalleerd en een beheerde identiteit die is gemaakt voor een virtuele machine waarop deze nog niet is geïnstalleerd.
 
+> [!IMPORTANT]
+> Er is momenteel een bekend probleem waarbij de door de gebruiker toegewezen identiteit wordt uitgeschakeld als de regel voor het verzamelen van gegevens een beheerde identiteit maakt op een virtuele machine die al een door de gebruiker toegewezen beheerde identiteit heeft.
+
 Selecteer in het menu **Azure monitor** van de Azure Portal **gegevens verzamelings regels** uit de sectie **instellingen** . Klik op **toevoegen** om een nieuwe regel en toewijzing voor het verzamelen van gegevens toe te voegen.
 
 [![Regels voor gegevens verzameling](media/azure-monitor-agent/data-collection-rules.png)](media/azure-monitor-agent/data-collection-rules.png#lightbox)
@@ -52,7 +55,7 @@ Klik op het tabblad **verzamelen en leveren** op **gegevens bron toevoegen** om 
 [![Basis gegevens bron](media/azure-monitor-agent/data-collection-rule-data-source-basic.png)](media/azure-monitor-agent/data-collection-rule-data-source-basic.png#lightbox)
 
 
-Selecteer **aangepast** om andere logboeken en prestatie meter items op te geven. U kunt vervolgens een [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) opgeven voor alle specifieke waarden die moeten worden verzameld. Zie voor beelden van [DCR](data-collection-rule-overview.md#sample-data-collection-rule) voor.
+Als u andere logboeken en prestatie meter items van de [momenteel ondersteunde gegevens bronnen](azure-monitor-agent-overview.md#data-sources-and-destinations) wilt opgeven of als u gebeurtenissen wilt filteren met XPath-query's, selecteert u **aangepast**. U kunt vervolgens een [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) opgeven voor alle specifieke waarden die moeten worden verzameld. Zie voor beelden van [DCR](data-collection-rule-overview.md#sample-data-collection-rule) voor.
 
 [![Aangepaste gegevens bron](media/azure-monitor-agent/data-collection-rule-data-source-custom.png)](media/azure-monitor-agent/data-collection-rule-data-source-custom.png#lightbox)
 

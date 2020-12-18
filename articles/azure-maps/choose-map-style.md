@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: f2d7c9e39cb3eb14a2c2c6a7b13e37f3a526184b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 556e265cc0d1aae33823185ec98d23f191ed1694
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889796"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680021"
 ---
 # <a name="change-the-style-of-the-map"></a>Stijl van de kaart wijzigen
 
@@ -29,9 +29,9 @@ Stijl opties kunnen worden ingesteld tijdens de initialisatie van Webbe sturings
 var map = new atlas.Map('map', {
     renderWorldCopies: false,
     showBuildingModels: false,
-    showLogo = true,
-    showFeedbackLink = true,
-    style='road'
+    showLogo: true,
+    showFeedbackLink: true,
+    style: 'road'
 
     //Additional map options.
 };
@@ -40,8 +40,8 @@ var map = new atlas.Map('map', {
 map.setStyle({
     renderWorldCopies: true,
     showBuildingModels: true,
-    showLogo = false,
-    showFeedbackLink = false
+    showLogo: false,
+    showFeedbackLink: false
 });
 ```
 
@@ -101,7 +101,7 @@ In de onderstaande afbeelding ziet u het besturings element stijl kiezer dat wor
 
 In de onderstaande afbeelding ziet u het besturings element stijl kiezer dat wordt weer gegeven in de `list` indeling.
 
-:::image type="content" source="./media/choose-map-style/style-picker-list-layout.png" alt-text="Pictogram indeling stijl kiezer":::
+:::image type="content" source="./media/choose-map-style/style-picker-list-layout.png" alt-text="Indeling van lijst met stijl kiezer":::
 
 > [!IMPORTANT]
 > Standaard wordt in het besturings element stijl kiezer een lijst weer gegeven met alle stijlen die beschikbaar zijn in de prijs categorie S0 van Azure Maps. Als u het aantal stijlen in deze lijst wilt beperken, geeft u een matrix van de stijlen die u wilt weer geven in de lijst in de `mapStyle` optie van de stijl kiezer. Als u S1 gebruikt en alle beschik bare stijlen wilt weer geven, stelt u de `mapStyles` optie van de stijl kiezer in op `"all"` .
@@ -129,10 +129,13 @@ Voor meer informatie over de klassen en methoden die in dit artikel worden gebru
 > [!div class="nextstepaction"]
 > [StyleControlOptions](/javascript/api/azure-maps-control/atlas.stylecontroloptions)
 
-Besturings elementen toevoegen aan uw kaarten:
+Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan uw kaarten:
 
 > [!div class="nextstepaction"]
 > [Kaartbesturingselementen toevoegen](map-add-controls.md)
 
 > [!div class="nextstepaction"]
-> [Een speld toevoegen](map-add-pin.md)
+> [Een symbool laag toevoegen](map-add-pin.md)
+
+> [!div class="nextstepaction"]
+> [Een Bubble laag toevoegen](map-add-bubble-layer.md)

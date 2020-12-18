@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: een circuit peering opnieuw instellen met behulp van de Azure Portal'
+title: 'Azure ExpressRoute: circuit peerings opnieuw instellen met behulp van de Azure Portal'
 description: Meer informatie over het uitschakelen en inschakelen van peerings van een Azure ExpressRoute-circuit met behulp van de Azure Portal.
 services: expressroute
 author: duongau
@@ -7,42 +7,51 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: duau
-ms.openlocfilehash: d4d6b0b0cce4f5304f7c5790ef2bda05633be52f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 432ecedbbb8965926499380eb1165fdf43018426
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582302"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680277"
 ---
-# <a name="reset-expressroute-circuit-peerings-use-the-azure-portal"></a>ExpressRoute-circuit-peerings opnieuw instellen gebruik de Azure Portal
+# <a name="reset-expressroute-circuit-peerings-by-using-the-azure-portal"></a>ExpressRoute-circuit-peerings opnieuw instellen met behulp van de Azure Portal
 
-In dit artikel wordt beschreven hoe u peerings van een ExpressRoute-circuit kunt uitschakelen en inschakelen met behulp van de Azure Portal. Wanneer u een peering uitschakelt, wordt de BGP-sessie voor zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit afgesloten. U verliest de connectiviteit via deze peering naar micro soft. Wanneer u een peering inschakelt, wordt de BGP-sessie op zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit weer gebracht. U kunt de verbinding met deze peering met micro soft herstellen. U kunt micro soft-peering en persoonlijke Azure-peering op een ExpressRoute-circuit onafhankelijk van elkaar in-en uitschakelen. De eerste keer dat u de peerings op uw ExpressRoute-circuit configureert, worden de peerings standaard ingeschakeld.
+In dit artikel wordt beschreven hoe u peerings van een Azure ExpressRoute-circuit kunt in-en uitschakelen met behulp van de Azure Portal. Wanneer u een peering uitschakelt, wordt de Border Gateway Protocol (BGP)-sessie voor zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit afgesloten. Wanneer u een peering inschakelt, wordt de BGP-sessie op zowel de primaire als de secundaire verbinding van het ExpressRoute-circuit hersteld.
 
-Er zijn een paar scenario's waarin het handig is om uw ExpressRoute-peerings te herstellen.
-* Het ontwerp en de implementatie van herstel na nood gevallen testen. U hebt bijvoorbeeld twee ExpressRoute-circuits. U kunt de peerings van één circuit uitschakelen en uw netwerk verkeer afdwingen naar het andere circuit.
-* Schakel de detectie van bidirectionele door sturing (BFD) in op persoonlijke Azure-peering of micro soft-peering van uw ExpressRoute-circuit. BFD wordt standaard ingeschakeld op persoonlijke Azure-peering als uw ExpressRoute-circuit wordt gemaakt na augustus 1 2018 en micro soft-peering. Als uw ExpressRoute-circuit na januari 10 2020 wordt gemaakt. Als uw circuit eerder is gemaakt, is BFD niet ingeschakeld. U kunt BFD inschakelen door de peering uit te scha kelen en opnieuw in te scha kelen. 
+> [!Note]
+> De eerste keer dat u de peerings op uw ExpressRoute-circuit configureert, worden de peerings standaard ingeschakeld.
 
-### <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
+Het opnieuw instellen van uw ExpressRoute-peerings kan handig zijn in de volgende scenario's:
 
-Open een browser, ga naar [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account.
+* U test het ontwerp en de implementatie van herstel na nood gevallen. Stel dat u twee ExpressRoute-circuits hebt. U kunt de peerings van één circuit uitschakelen en uw netwerk verkeer afdwingen om het andere circuit te gebruiken.
+
+* U wilt de detectie van bidirectionele door sturing inschakelen (BFD) op persoonlijke Azure-peering of micro soft-peering. Als uw ExpressRoute-circuit vóór 1 augustus 2018, op persoonlijke Azure-peering of vóór 10 januari 2020, op micro soft-peering is gemaakt, is BFD niet standaard ingeschakeld. Stel de peering opnieuw in om BFD in te scha kelen.
+
+## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
+
+Ga in een browser naar de [Azure Portal](https://portal.azure.com)en meld u vervolgens aan met uw Azure-account.
 
 ## <a name="reset-a-peering"></a>Een peering opnieuw instellen
 
-1. Selecteer het circuit waarvan u wilt dat peering configuratie wijzigingen maakt.
+U kunt de micro soft-peering en de persoonlijke Azure-peering op een ExpressRoute-circuit onafhankelijk van elkaar resetten.
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit-list.png" alt-text="ExpressRoute-circuit lijst":::
+1. Kies het circuit dat u wilt wijzigen.
 
-1. Selecteer de peering-configuratie die u wilt in-of uitschakelen.
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit-list.png" alt-text="Scherm opname van het kiezen van een circuit in de ExpressRoute-circuit lijst.":::
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit.png" alt-text="Overzicht van ExpressRoute-circuits":::
+1. Kies de peering-configuratie die u opnieuw wilt instellen.
+
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/expressroute-circuit.png" alt-text="Scherm opname van het kiezen van een peering in het overzicht van het ExpressRoute-circuit.":::
 
 1. Schakel het selectie vakje **peering inschakelen** uit en selecteer **Opslaan** om de peering-configuratie uit te scha kelen.
 
-    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/disable-peering.png" alt-text="Privé-peering uitschakelen":::
+    :::image type="content" source="./media/expressroute-howto-reset-peering-portal/disable-peering.png" alt-text="Scherm opname die laat zien hoe het selectie vakje peering inschakelen wordt uitgeschakeld.":::
 
-1. U kunt de peering opnieuw inschakelen door **peering inschakelen** in te scha kelen en **Opslaan** te selecteren.
+1. Schakel het selectie vakje **peering inschakelen** in en selecteer **Opslaan** om de peering-configuratie opnieuw in te scha kelen.
 
 ## <a name="next-steps"></a>Volgende stappen
-Als u hulp nodig hebt bij het oplossen van een probleem met ExpressRoute, raadpleegt u de volgende artikelen:
+
+Raadpleeg de volgende artikelen voor het oplossen van problemen met ExpressRoute:
+
 * [Connectiviteit ExpressRoute controleren](expressroute-troubleshooting-expressroute-overview.md)
 * [Problemen met netwerk prestaties oplossen](expressroute-troubleshooting-network-performance.md)

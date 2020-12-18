@@ -10,12 +10,12 @@ ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
 ms.date: 12/02/2020
-ms.openlocfilehash: 360f0ce60a35bc96c6dd8e46d636f07124d01255
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: d1e4ffa525c5628d0b6c9a3ca67f3e069c44e823
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511913"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679197"
 ---
 # <a name="execute-python-script-module"></a>Python-script module uitvoeren
 
@@ -156,7 +156,7 @@ De script module python uitvoeren bevat een voor beeld van python-code die u als
     1. Het script en andere aangepaste resources bundelen naar een zip-bestand.
     1. Upload het zip-bestand als een **bestand gegevensset** naar de Studio. 
     1. Sleep de module gegevensset van de lijst *gegevens sets* in het deel venster met de linker module op de ontwerp pagina voor ontwerpen. 
-    1. Verbind de module gegevensset met de **script bundel** poort van de **script module Execute R** .
+    1. Verbind de module dataset met de script **bundel** poort van de script module voor het **uitvoeren van python** .
     
     Elk bestand in het geüploade gezipte archief kan worden gebruikt tijdens de uitvoering van de pijp lijn. Als het archief een mapstructuur bevat, blijft de structuur behouden.
  

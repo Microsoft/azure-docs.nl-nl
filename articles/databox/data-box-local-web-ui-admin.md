@@ -6,22 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/07/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: 859eb6abd138f0660407618bba4550daf9158ab9
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: e84f39fa5b9245d1874e60d651156e99c0885040
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855002"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678923"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Gebruik de lokale web-UI voor het beheren van uw Data Box en Data Box Heavy
 
 In dit artikel worden enkele van de configuratie-en beheer taken beschreven die op Data Box en Data Box Heavy apparaten worden uitgevoerd. U kunt de Data Box en Data Box Heavy apparaten beheren via de Azure Portal gebruikers interface en de lokale webgebruikersinterface voor het apparaat. Dit artikel is gericht op taken die worden uitgevoerd met behulp van de lokale webgebruikersinterface.
 
 De lokale web-UI voor de Data Box en voor Data Box Heavy wordt gebruikt voor de initiële configuratie van het apparaat. U kunt ook de lokale web-UI gebruiken om het apparaat af te sluiten of opnieuw op te starten, diagnostische tests uit te voeren, software bij te werken, de kopie logboeken te bekijken, lokale gegevens van het apparaat te wissen en een ondersteunings pakket voor Microsoft Ondersteuning te genereren. Op een Data Box Heavy apparaat met twee onafhankelijke knoop punten, hebt u toegang tot twee afzonderlijke lokale web-UIs die overeenkomen met elk knoop punt van het apparaat.
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="generate-support-package"></a>Ondersteuningspakket genereren
 

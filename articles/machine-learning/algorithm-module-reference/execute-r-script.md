@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 12/02/2020
-ms.openlocfilehash: 57b4b6f3f49e9b82ada4b37c8e2de0697781e063
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.date: 12/17/2020
+ms.openlocfilehash: 5d291ad745122d929c4b664e9da5e4649e463529
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510587"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679102"
 ---
 # <a name="execute-r-script-module"></a>R-script module uitvoeren
 
@@ -50,6 +50,9 @@ Als u extra R-pakketten wilt installeren, gebruikt u de- `install.packages()` me
 
 > [!NOTE]
 > Geef de KRANs opslagplaats op wanneer u pakketten installeert, zoals `install.packages("zoo",repos = "http://cran.us.r-project.org")` .
+
+> [!WARNING]
+> De excute R-script module biedt geen ondersteuning voor het installeren van pakketten waarvoor systeem eigen compilatie is vereist, zoals `qdap` pakket waarvoor Java en pakket vereist zijn `drc` waarvoor C++ vereist is. Dit komt doordat deze module wordt uitgevoerd in een vooraf geïnstalleerde omgeving met niet-beheerders machtigingen.
 
 In dit voor beeld ziet u hoe u Zoo installeert:
 ```R

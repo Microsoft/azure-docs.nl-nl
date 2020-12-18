@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/27/2020
-ms.openlocfilehash: d994df4d56f4958784256ff9cd92ce1e6f3b3e50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d866729d428e7667cd2225a5d37836b3fd75fa7
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88642160"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680335"
 ---
 # <a name="enable-azure-monitor-for-vms-for-a-hybrid-virtual-machine"></a>Azure Monitor voor VM's inschakelen voor een hybride virtuele machine
 In dit artikel wordt beschreven hoe u Azure Monitor voor VM's inschakelt voor een virtuele machine buiten Azure, met inbegrip van on-premises en andere Cloud omgevingen.
@@ -41,10 +41,10 @@ De firewall vereisten voor de Log Analytics-agent vindt u in [log Analytics Over
 
 U kunt de afhankelijkheids agent downloaden van de volgende locaties:
 
-| File | OS | Versie | SHA-256 |
+| File | Besturingssysteem | Versie | SHA-256 |
 |:--|:--|:--|:--|
-| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.10.5.10940 | C27A56D0BE9CF162DF73292DFBB2083F5FF749F2B80FCAD2545BC8B14B64A8D7  |
-| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.10.5.10940 | 71B4E1DA5116E61E03317C49C6702B5069F01A0C9A7CB860F6ACFAF5C198740E |
+| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.10.7.12710 | CA29CC328F991D7301FD0360F4F56DF78275545BB8CDA853679899CA885E96F0  |
+| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.10.7.12710 | 98380DBEB2E2A5848F2202BC22422C68B20B62090C1BFC1DECAB37ED5451ED8C |
 
 
 ## <a name="install-the-dependency-agent-on-windows"></a>De afhankelijkheids agent installeren in Windows
@@ -86,13 +86,13 @@ De afhankelijkheids agent is geïnstalleerd op Linux-servers vanuit *InstallDepe
 | -s | Een installatie op de achtergrond uitvoeren zonder gebruikersvragen. |
 | --Controleer | Controleer de machtigingen en het besturings systeem, maar installeer de agent niet. |
 
-`-help`Voer bijvoorbeeld **InstallDependencyAgent-Linux64. bin-Help**in om het installatie programma uit te voeren met de para meter. Installeer de Linux-afhankelijkheids agent als root door de opdracht uit te voeren `sh InstallDependencyAgent-Linux64.bin` .
+`-help`Voer bijvoorbeeld **InstallDependencyAgent-Linux64. bin-Help** in om het installatie programma uit te voeren met de para meter. Installeer de Linux-afhankelijkheids agent als root door de opdracht uit te voeren `sh InstallDependencyAgent-Linux64.bin` .
 
 Als de afhankelijkheids agent niet kan worden gestart, raadpleegt u de logboeken voor gedetailleerde informatie over de fout. Op Linux-agents is de logboekmap */var/opt/Microsoft/dependency-agent/log*.
 
 Bestanden voor de afhankelijkheids agent worden in de volgende directory's geplaatst:
 
-| Files | Locatie |
+| Bestanden | Locatie |
 |:--|:--|
 | Kernbestanden | /opt/microsoft/dependency-agent |
 | Logboekbestanden | /var/opt/microsoft/dependency-agent/log |

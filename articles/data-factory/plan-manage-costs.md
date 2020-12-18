@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: e2f61085d3dab6d4489aa190204be4169ea5c2fb
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 6271b83749c078b64c168a27f887ed7055e37d96
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638003"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97678905"
 ---
 # <a name="plan-and-manage-costs-for-azure-data-factory"></a>Kosten plannen en beheren voor Azure Data Factory
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Azure Data Factory is een serverloze en elastische gegevens integratie service die is gebouwd voor Cloud schaal.  Dit betekent dat er geen Compute met een vaste grootte is die u moet plannen voor piek belasting. in plaats daarvan geeft u op hoeveel resource u op aanvraag per bewerking wilt toewijzen, zodat u de ETL-processen op een veel meer schaal bare manier kunt ontwerpen. Daarnaast wordt ADF gefactureerd op basis van een op verbruik gebaseerd abonnement, wat betekent dat u alleen betaalt voor wat u gebruikt.
 
@@ -62,9 +62,9 @@ U kunt [budgetten](../cost-management-billing/costs/tutorial-acm-create-budgets.
 
 Als u begint met het gebruik van Azure Data Factory, ziet u de kosten die zijn gemaakt in het deel venster [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md) in de Azure Portal.
 
-1. Als u de [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md)wilt weer geven, opent u het venster **Cost Management en facturering** , selecteert u **kosten beheer** in het menu en selecteert u vervolgens **kosten analyse openen** .
+1. Als u de [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md)wilt weer geven, opent u het venster **Cost Management en facturering** , selecteert u **kosten beheer** in het menu en selecteert u vervolgens **kosten analyse openen**.
 2. In de standaard weergave worden de gecumuleerde kosten voor de huidige maand weer gegeven.  U kunt overschakelen naar een ander tijds bereik en een andere granulariteit, zoals dagelijks of maandelijks.
-3. Als u de kosten voor één service, zoals Azure Data Factory, wilt beperken, selecteert u **filter toevoegen** en selecteert u vervolgens **service naam** .  Kies vervolgens **Azure Data Factory v2** in de lijst.
+3. Als u de kosten voor één service, zoals Azure Data Factory, wilt beperken, selecteert u **filter toevoegen** en selecteert u vervolgens **service naam**.  Kies vervolgens **Azure Data Factory v2** in de lijst.
 4. U kunt extra filters toevoegen om de kosten voor een specifiek fabrieks exemplaar en de specifieke granulatie van de ADF-meter te analyseren.
 
    ![Kostenanalyse](media/plan-manage-costs/cost-analysis.png)

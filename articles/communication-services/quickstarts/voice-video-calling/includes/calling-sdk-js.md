@@ -4,17 +4,17 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: ff9eca855269597477bc42a319c99c886576d92c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: d50ce842a1b2bca26ef14dfbc81aab90d4ac2d8c
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94482777"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691975"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
-- Een geïmplementeerde Communication Services-resource. [Een Communication Services maken](../../create-communication-resource.md).
+- Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
 - Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
 
@@ -53,7 +53,7 @@ Om toegang te krijgen tot het `DeviceManager` callAgent-exemplaar moet eerst wor
 const userToken = '<user token>';
 callClient = new CallClient(options);
 const tokenCredential = new AzureCommunicationUserCredential(userToken);
-const callAgent = await callClient.createCallAgent(tokenCredential);
+const callAgent = await callClient.createCallAgent(tokenCredential, { displayName: 'optional ACS user name' });
 const deviceManager = await callClient.getDeviceManager()
 ```
 
@@ -89,7 +89,9 @@ const groupCall = callAgent.call([userCallee, pstnCallee], placeCallOptions);
 > Er kan momenteel niet meer dan één uitgaande lokale video stroom zijn.
 U moet lokale camera's opsommen met behulp van de deviceManager-API als u een video gesprek wilt plaatsen `getCameraList` .
 Wanneer u de gewenste camera hebt geselecteerd, gebruikt u deze om een exemplaar te maken `LocalVideoStream` en dit door te geven aan de hand van `videoOptions` een item in de `localVideoStream` matrix `call` .
-Zodra uw gesprek verbinding maakt, begint automatisch met het verzenden van een video stroom van de geselecteerde camera naar de andere deel nemer (s)
+Zodra uw gesprek verbinding maakt, begint automatisch met het verzenden van een video stroom van de geselecteerde camera naar de andere deel nemer (s).
+
+Dit geldt ook voor de video opties call. accept () en CallAgent. Add ().
 ```js
 const deviceManager = await callClient.getDeviceManager();
 const videoDeviceInfo = deviceManager.getCameraList()[0];
@@ -99,13 +101,41 @@ const call = callAgent.call(['acsUserId'], placeCallOptions);
 
 ```
 
+### <a name="receiving-an-incoming-call"></a>Een binnenkomend gesprek ontvangen
+```js
+callAgent.on('callsUpdated', e => {
+    e.added.forEach(addedCall => {
+        if(addedCall.isIncoming) {
+        addedCall.accept();
+    }
+    });
+})
+```
+
 ### <a name="join-a-group-call"></a>Deelnemen aan een groepsgesprek
 Als u een nieuwe groeps oproep wilt starten of lid wilt worden van een doorlopende groep, gebruikt u de methode ' samen voegen ' en geeft u een object door met een `groupId` eigenschap. De waarde moet een GUID zijn.
 ```js
 
-const context = { groupId: <GUID>}
-const call = callAgent.join(context);
+const locator = { groupId: <GUID>}
+const call = callAgent.join(locator);
 
+```
+
+### <a name="join-a-teams-meeting"></a>Deel nemen aan een team vergadering
+Als u lid wilt worden van een vergadering, gebruikt u de methode ' samen voegen ' en geeft u een koppeling naar de vergadering of de coördinaten van een vergadering door
+```js
+// Join using meeting link
+const locator = { meetingLink: <meeting link>}
+const call = callAgent.join(locator);
+
+// Join using meeting coordinates
+const locator = {
+    threadId: <thread id>,
+    organizerId: <organizer id>,
+    tenantId: <tenant id>,
+    messageId: <message id>
+}
+const call = callAgent.join(locator);
 ```
 
 ## <a name="call-management"></a>Oproep beheer
@@ -162,6 +192,11 @@ const callEndReason = call.callEndReason;
 * Als u wilt weten of de huidige aanroep een binnenkomende oproep is, inspecteert u de `isIncoming` eigenschap, wordt deze geretourneerd `Boolean` .
 ```js
 const isIncoming = call.isIncoming;
+```
+
+* Als u wilt controleren of de oproep wordt vastgelegd, inspecteert u de `isRecordingActive` eigenschap, wordt deze geretourneerd `Boolean` .
+```js
+const isResordingActive = call.isRecordingActive;
 ```
 
 *  Als u wilt controleren of de huidige microfoon is gedempt, inspecteert u de `muted` eigenschap `Boolean` .

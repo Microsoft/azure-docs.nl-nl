@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: a9af249aac18c847bf353f22b23ee67ab6e264c4
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: a8cfdc76694d52acee70cde0e3f1697cd8129d06
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915294"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691962"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -26,7 +26,7 @@ Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View-app**
 
 :::image type="content" source="../media/ios/xcode-new-ios-project.png" alt-text="Schermafbeelding dat het nieuw aangemaakte venster Nieuw Project in Xcode aantoont.":::
 
-### <a name="install-the-package-and-dependencies-with-cocoapods"></a>Het pakket en de afhankelijkheden met CocoaPods installeren
+### <a name="install-the-package-and-dependencies-with-cocoapods"></a>Installeer het pakket en de afhankelijkheden met CocoaPods
 
 1. Maak een Podfile voor uw toepassing, zoals:
 
@@ -106,12 +106,16 @@ public func fetchTokenSync(then onCompletion: TokenRefreshOnCompletion) {
 }
 ```
 
-Geef het CommunicationUserCredential-object dat hierboven is gemaakt door voor ACSCallClient
+Geef het CommunicationUserCredential-object dat hierboven is gemaakt door voor ACSCallClient en stel de weergave naam in.
 
 ```swift
 
 callClient = CallClient()
-callClient?.createCallAgent(with: userCredential!,
+let callAgentOptions:CallAgentOptions = CallAgentOptions()
+options.displayName = "ACS iOS User"
+
+callClient?.createCallAgent(userCredential: userCredential!,
+    options: callAgentOptions,
     completionHandler: { (callAgent, error) in
         if error == nil {
             print("Create agent succeeded")
@@ -174,6 +178,39 @@ let groupCallContext = GroupCallContext()
 groupCallContext?.groupId = UUID(uuidString: "uuid_string")!
 let call = self.callAgent?.join(with: groupCallContext, joinCallOptions: JoinCallOptions())
 
+```
+
+### <a name="accept-an-incoming-call"></a>Een binnenkomend gesprek accepteren
+Als u een aanroep wilt accepteren, roept u de methode accept aan voor een aanroep object.
+Een gemachtigde instellen op de CallAgent 
+```swift
+final class CallHandler: NSObject, CallAgentDelegate
+{
+    public var incomingCall: Call?
+ 
+    public func onCallsUpdated(_ callAgent: CallAgent!, args: CallsUpdatedEventArgs!) {
+        if let incomingCall = args.addedCalls?.first(where: { $0.isIncoming }) {
+            self.incomingCall = incomingCall
+        }
+    }
+}
+
+let firstCamera: VideoDeviceInfo? = self.deviceManager?.getCameraList()![0]
+let localVideoStream = LocalVideoStream(camera: firstCamera)
+let acceptCallOptions = AcceptCallOptions()
+acceptCallOptions!.videoOptions = VideoOptions(localVideoStream:localVideoStream!)
+if let incomingCall = CallHandler().incomingCall {
+   incomingCall.accept(options: acceptCallOptions,
+                          completionHandler: { (error) in
+                           if error == nil {
+                               print("Incoming call accepted")
+                           } else {
+                               print("Failed to accept incoming call")
+                           }
+                       })
+} else {
+   print("No incoming call found to accept")
+}
 ```
 
 ## <a name="push-notification"></a>Pushmelding

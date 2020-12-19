@@ -18,7 +18,7 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 11/17/2020
 ms.locfileid: "94651852"
 ---
-# <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Azure Active Directory-toepassingsproxy CORS-problemen begrijpen en oplossen
+# <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Problemen met CORS voor een Azure Active Directory-toepassingsproxy begrijpen en oplossen
 
 [Cross-Origin Resource Sharing (CORS)](https://www.w3.org/TR/cors/) kan soms uitdagingen opleveren voor de apps en api's die u via de Azure Active Directory-toepassingsproxy publiceert. In dit artikel worden de problemen met Azure AD-toepassingsproxy CORS en oplossingen besproken.
 
@@ -42,9 +42,9 @@ Met hetzelfde basis beleid voor komt u dat apps toegang hebben tot resources van
 
 U kunt CORS-problemen identificeren met behulp van hulpprogram ma's voor fout opsporing in de browser:
 
-1. Start de browser en blader naar de web-app.
-1. Druk op **F12** om de console fout opsporing weer te geven.
-1. Probeer de trans actie te reproduceren en Bekijk het console bericht. Een CORS-schending produceert een console fout over de oorsprong.
+1. Start de browser en ga naar de web-app.
+1. Druk op **F12** om de foutopsporingsconsole weer te geven.
+1. Probeer de transactie te reproduceren, en bekijk het consolebericht. Een CORS-schending produceert een consolefout over de oorsprong.
 
 Selecteer in de volgende scherm afbeelding de knop **Probeer het opnieuw** met een CORS-fout bericht dat https:/corswebclient-contoso.msappproxy.net niet is \/ gevonden in de header Access-Control-Allow-Origin.
 
@@ -112,7 +112,7 @@ U kunt de App wijzigen zodat CORS wordt ondersteund door de header Access-Contro
 
 ### <a name="option-5-extend-the-lifetime-of-the-access-token"></a>Optie 5: de levens duur van het toegangs token verlengen
 
-Enkele CORS-problemen kunnen niet worden opgelost, bijvoorbeeld wanneer uw app omleidt naar *login.microsoftonline.com* om te verifiëren en het toegangs token verloopt. De CORS-aanroep wordt vervolgens mislukt. Een tijdelijke oplossing voor dit scenario is om de levens duur van het toegangs token uit te breiden, om te voor komen dat deze wordt verloopt tijdens de sessie van een gebruiker. Zie [Configureer bare token levensduur in azure AD](../develop/active-directory-configurable-token-lifetimes.md)voor meer informatie over hoe u dit doet.
+Enkele CORS-problemen kunnen niet worden opgelost, bijvoorbeeld wanneer uw app omleidt naar *login.microsoftonline.com* om te verifiëren en het toegangs token verloopt. De CORS-aanroep mislukt dan. Een tijdelijke oplossing voor dit scenario is om de levensduur van het toegangstoken te verlengen, zodat het niet verloopt tijdens de sessie van een gebruiker. Zie [Configureer bare token levensduur in azure AD](../develop/active-directory-configurable-token-lifetimes.md)voor meer informatie over hoe u dit doet.
 
 ## <a name="see-also"></a>Zie ook
 - [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md) 

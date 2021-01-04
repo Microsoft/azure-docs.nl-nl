@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/22/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: aa0a001f9c35202939eeb4a7752803b998a3acf7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: e85e433e1b1b31470fc8d7dee24353fd719b64e2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94562012"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031178"
 ---
 # <a name="quickstart-protect-an-aspnet-core-web-api-with-microsoft-identity-platform"></a>Quickstart: Een ASP.NET Core Web-API beveiligen met het microsoft-identiteitsplatform
 
@@ -38,12 +38,10 @@ In deze quickstart downloadt u een ASP.NET Core-web-API-codevoorbeeld en bekijkt
 > 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 > 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
-> 1. Selecteer onder **Beheren** de optie **App-registraties** en vervolgens **Nieuwe registratie**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Selecteer **Registreren**.
-> 1. Selecteer onder **Beheren** **Een API beschikbaar maken**.
-> 1. Selecteer **Een scope toevoegen** en selecteer **Opslaan en doorgaan** om de standaard **Toepassings-ID-URI** te accepteren.
-> 1. Voer in het deelvenster **Een bereik toevoegen** de volgende waarden in:
+> 1. Selecteer onder **Beheren** **Een API beschikbaar maken** > **Een bereik toevoegen**. Accepteer de standaardinstelling voor **URI voor toepassings-id** door **Opslaan en doorgaan** te selecteren, en voer de volgende details in:
 >    - **Naam van bereik**: `access_as_user`
 >    - **Wie kan toestemming verlenen?** : **Beheerders en gebruikers**
 >    - **Weergavenaam van beheerderstoestemming**: `Access AspNetCoreWebApi-Quickstart`

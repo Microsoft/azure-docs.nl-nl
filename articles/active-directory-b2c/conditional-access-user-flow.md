@@ -5,17 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 09/01/2020
+ms.date: 12/14/2020
+ms.custom: project-no-code
 ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60bfac3b80e772e7b359b1e926d5fb84e447a8fb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+zone_pivot_groups: b2c-policy-type
+ms.openlocfilehash: d6d5ab13c8997dffee42a053ba498376ccbcb6d8
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89270735"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585255"
 ---
 # <a name="add-conditional-access-to-user-flows-in-azure-active-directory-b2c"></a>Voorwaardelijke toegang toevoegen aan gebruikersstromen in Azure Active Directory B2C
 
@@ -34,6 +36,22 @@ Voorwaardelijke toegang wordt ondersteund in de meest recente versies van gebrui
 - **Voorwaardelijke toegang**: Deze instelling moet altijd **Aan** zijn. Normaal gesproken schakelt u deze instelling alleen **Uit** tijdens het oplossen van problemen of migratie of voor verouderde implementaties.
 
 Meer informatie over [Identiteitsbeveiliging en voorwaardelijke toegang](conditional-access-identity-protection-overview.md) in Azure AD B2C, of kijk [Hoe u deze instelt](conditional-access-identity-protection-setup.md).
+
+## <a name="prerequisites"></a>Vereisten
+
+- Azure AD B2C Premium 2 is vereist voor het maken van beleidsregels voor riskante aanmelding. Premium P1-tenants kunnen locatie-, app-of groepsbeleidsregels maken.
+- Voor test doeleinden kunt u [de test-webtoepassing registreren](tutorial-register-applications.md) `https://jwt.ms`, dit is een webtoepassing die eigendom is van Microsoft die de gedecodeerde inhoud van een token weergeeft (de inhoud van het token verlaat nooit uw browser). 
+- Als u een riskante aanmelding wilt simuleren, downloadt u de TOR-browser en probeert u zich aan te melden bij het eindpunt van de gebruikersstroom.
+- Met behulp van de volgende instellingen [een beleid voor voorwaardelijke toegang maken](conditional-access-identity-protection-setup.md):
+   
+  - Voor **Gebruikers en groepen** selecteert u de testgebruiker (selecteer niet **Alle gebruikers** of kunt u zich niet meer aanmelden).
+  - Kies voor **Cloud-apps of -acties** **Apps selecteren** en kies vervolgens uw Relying Party-toepassing.
+  - Selecteer als voorwaarden **Aanmeldingsrisico** en **Hoge** **Medium** en **Lage** risiconiveaus.
+  - Kies **Toegang blokkeren** voor **Verlenen**.
+
+      ![Risicodetectie](media/conditional-access-identity-protection-setup/test-conditional-access-policy.png)
+
+::: zone pivot="b2c-user-flow"
 
 ## <a name="add-conditional-access-to-a-new-user-flow"></a>Voorwaardelijke toegang toevoegen aan een nieuwe gebruikersstroom
 
@@ -56,7 +74,7 @@ Meer informatie over [Identiteitsbeveiliging en voorwaardelijke toegang](conditi
 
    ![Instellingen voor voorwaardelijke toegang configureren](media/conditional-access-user-flow/configure-conditional-access.png)
 
-1. Kies in de sectie **Gebruikerskenmerken en claims** de claims en kenmerken van de gebruiker die u tijdens de registratie wilt verzamelen en verzenden. Selecteer bijvoorbeeld **Meer weergeven** en kies vervolgens kenmerken en claims voor **Land/regio**en **Weergavenaam**. Selecteer **OK**.
+1. Kies in de sectie **Gebruikerskenmerken en claims** de claims en kenmerken van de gebruiker die u tijdens de registratie wilt verzamelen en verzenden. Selecteer bijvoorbeeld **Meer weergeven** en kies vervolgens kenmerken en claims voor **Land/regio** en **Weergavenaam**. Selecteer **OK**.
 
     ![Selectiepagina voor gebruikerskenmerken en claims met drie claims geselecteerd](./media/conditional-access-user-flow/configure-user-attributes-claims.png)
 
@@ -89,23 +107,10 @@ Meer informatie over [Identiteitsbeveiliging en voorwaardelijke toegang](conditi
 
 Als u voorwaardelijke toegang in uw gebruikersstroom wilt testen, [maakt u een beleid voor voorwaardelijke toegang](conditional-access-identity-protection-setup.md) en schakelt u voorwaardelijke toegang in uw gebruikersstroom in zoals hierboven wordt beschreven. 
 
-### <a name="prerequisites"></a>Vereisten
-
-- Azure AD B2C Premium 2 is vereist voor het maken van beleidsregels voor riskante aanmelding. Premium P1-tenants kunnen locatie-, app-of groepsbeleidsregels maken.
-- Voor test doeleinden kunt u [de test-webtoepassing registreren](tutorial-register-applications.md) `https://jwt.ms`, dit is een webtoepassing die eigendom is van Microsoft die de gedecodeerde inhoud van een token weergeeft (de inhoud van het token verlaat nooit uw browser). 
-- Als u een riskante aanmelding wilt simuleren, downloadt u de TOR-browser en probeert u zich aan te melden bij het eindpunt van de gebruikersstroom.
-- Met behulp van de volgende instellingen [een beleid voor voorwaardelijke toegang maken](conditional-access-identity-protection-setup.md):
-   
-   - Voor **Gebruikers en groepen** selecteert u de testgebruiker (selecteer niet **Alle gebruikers** of kunt u zich niet meer aanmelden).
-   - Kies voor **Cloud-apps of -acties** **Apps selecteren** en kies vervolgens uw Relying Party-toepassing.
-   - Selecteer als voorwaarden **Aanmeldingsrisico** en **Hoge** **Medium** en **Lage** risiconiveaus.
-   - Kies **Toegang blokkeren** voor **Verlenen**.
-
-      ![Risicodetectie](media/conditional-access-identity-protection-setup/test-conditional-access-policy.png)
 
 ### <a name="run-the-user-flow"></a>De gebruikersstroom uitvoeren
 
-1. Selecteer de gebruikersstroom die u hebt gemaakt om de overzichtspagina te openen en selecteer **Gebruikersstroom uitvoeren**. Selecteer *webapp1*onder **Toepassing**. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer de gebruikersstroom die u hebt gemaakt om de overzichtspagina te openen en selecteer **Gebruikersstroom uitvoeren**. Selecteer *webapp1* onder **Toepassing**. De **antwoord-URL** moet `https://jwt.ms` weergeven.
 
    ![De pagina Gebruikersstroom uitvoeren in de portal met de knop Gebruikersstroom uitvoeren gemarkeerd](./media/tutorial-create-user-flows/signup-signin-run-now.PNG)
 
@@ -117,6 +122,16 @@ Als u voorwaardelijke toegang in uw gebruikersstroom wilt testen, [maakt u een b
 
    ![Een geblokkeerde aanmelding testen](media/conditional-access-identity-protection-setup/test-blocked-sign-in.png)
 
+::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+## <a name="add-conditional-access-to-your-policy"></a>Voorwaardelijke toegang toevoegen aan uw beleid
+
+In [GitHub](https://github.com/azure-ad-b2c/samples/tree/master/policies/conditional-access) vindt u een voorbeeld van beleid voor voorwaardelijke toegang.
+
+::: zone-end
+
 ## <a name="next-steps"></a>Volgende stappen
 
-[Pas de gebruikersinterface aan in een Azure AD B2C-gebruikersstroom](customize-ui-overview.md)
+[Pas de gebruikersinterface aan in een Azure AD B2C-gebruikersstroom](customize-ui-with-html.md)

@@ -4,12 +4,12 @@ description: Meer informatie over het continu bouwen, testen en implementeren va
 ms.date: 08/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d7688a4e4838cb591bcd3ac0045a5ed22180c063
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 8e9f047497f493752947d8115084dcfe86f5e040
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906349"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588128"
 ---
 # <a name="tutorial-continuous-integration-of-arm-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van ARM-sjablonen met Azure Pipelines
 
@@ -19,7 +19,7 @@ Azure DevOps biedt ontwikkelaars services om teams te ondersteunen bij het plann
 
 > [!NOTE]
 > Kies een projectnaam. Wanneer u de zelfstudie doorloopt, vervangt u **AzureRmPipeline** overal door de naam van uw project.
-> Deze projectnaam wordt gebruikt om resourcenamen te genereren.  Een van de resources is een opslagaccount. Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. In het sjabloon is de opslagaccountnaam de projectnaam met 'store' daaraan toegevoegd. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
+> Deze projectnaam wordt gebruikt om resourcenamen te genereren.  Een van de resources is een opslagaccount. Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. De opslagaccountnaam in de sjabloon is de projectnaam met achteraan toegevoegd: **store**. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
 
 Deze zelfstudie bestaat uit de volgende taken:
 
@@ -38,7 +38,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 * **Een GitHub-account**, dat u gebruikt om een opslagplaats voor uw sjablonen te maken. Als u nog geen account hebt, kunt u [gratis een account maken](https://github.com). Zie [GitHub-opslagplaatsen maken](/azure/devops/pipelines/repos/github) voor meer informatie over het gebruik van GitHub-opslagplaatsen.
-* **Installeer Git**. In deze zelfstudie-instructie gebruikt u *Git Bash* of *Git Shell*. Zie [Install Git]( https://www.atlassian.com/git/tutorials/install-git) (Engelstalig) voor instructies.
+* **Installeer Git**. In deze zelfstudie-instructie gebruikt u *Git Bash* of *Git Shell*. Zie [Install Git](https://www.atlassian.com/git/tutorials/install-git) (Engelstalig) voor instructies.
 * **Een Azure DevOps-organisatie**. Als u nog geen account hebt, kunt u gratis een account maken. Zie [Een organisatie-of projectverzameling maken](/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 * (optioneel) **Visual Studio Code met de extensie Resource Manager Tools**. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
@@ -57,13 +57,13 @@ Als u geen GitHub-account hebt, raadpleegt u [Vereisten](#prerequisites).
 
 1. Selecteer **New** (Nieuw), een groene knop.
 1. Geef een naam voor de opslagplaats op in **Repository name**.  Bijvoorbeeld: **AzureRmPipeline-repo**. Vergeet niet om **AzureRmPipeline** overal te vervangen door de naam van uw project. U kunt **Public** (Openbaar) of **Private** (Privé) selecteren voor deze zelfstudie. Selecteer vervolgens **Create repository** (Opslagplaats maken).
-1. Noteer de URL. De URL van de opslagplaats heeft de volgende indeling: **`https://github.com/[YourAccountName]/[YourRepositoryName]`** .
+1. Noteer de URL. De URL van de opslagplaats heeft de volgende indeling: `https://github.com/[YourAccountName]/[YourRepositoryName]` .
 
 Deze opslagplaats wordt een *externe opslagplaats* genoemd. Alle ontwikkelaars van hetzelfde project kunnen hun eigen *lokale opslagplaats* klonen en de wijzigingen samenvoegen in de externe opslagplaats.
 
 ### <a name="clone-the-remote-repository"></a>De externe opslagplaats klonen
 
-1. Open Git Shell of Git Bash.  Zie [Vereisten](#prerequisites).
+1. Open Git Shell of Git Bash. Zie [Vereisten](#prerequisites).
 1. Controleer of uw huidige map **GitHub** is.
 1. Voer de volgende opdracht uit:
 
@@ -75,45 +75,46 @@ Deze opslagplaats wordt een *externe opslagplaats* genoemd. Alle ontwikkelaars v
     pwd
     ```
 
-    Vervang **[YourAccountName]** door de naam van uw GitHub-account en vervang **[YourGitHubRepositoryName]** door de naam van uw opslagplaats die u in de vorige procedure hebt gemaakt.
+    Vervang `[YourAccountName]` door de naam van uw GitHub-account en vervang `[YourGitHubRepositoryName]` door de naam van uw opslagplaats die u in de vorige procedure hebt gemaakt.
 
-De map **CreateWebApp** is de map waarin de sjabloon is opgeslagen. Met de opdracht **pwd** wordt het mappad weergegeven. In de volgende procedure slaat u de sjabloon op in het pad.
+De map _CreateWebApp_ is de map waarin de sjabloon is opgeslagen. Met de opdracht `pwd` wordt het mappad weergegeven. In de volgende procedure slaat u de sjabloon op in het pad.
 
 ### <a name="download-a-quickstart-template"></a>Een quickstart-sjabloon downloaden
 
-In plaats van de sjablonen te maken, kunt u de sjablonen downloaden en opslaan in de map **CreateWebApp**.
+In plaats van de sjablonen te maken, kunt u de sjablonen downloaden en opslaan in de map _CreateWebApp_.
 
 * De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/azuredeploy.json
 * De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json
 
-Zowel de mapnaam als de bestandsnamen worden gebruikt zoals ze zijn in de pijplijn.  Als u deze namen wijzigt, moet u de namen die worden gebruikt in de pijplijn bijwerken.
+Zowel de mapnaam als de bestandsnamen worden gebruikt zoals ze zijn in de pijplijn. Als u deze namen wijzigt, moet u de namen die worden gebruikt in de pijplijn bijwerken.
 
 ### <a name="push-the-template-to-the-remote-repository"></a>De sjabloon naar de externe opslagplaats pushen
 
-Het bestand azuredeploy.json is toegevoegd aan de lokale opslagplaats. Vervolgens uploadt u de sjabloon naar de externe opslagplaats.
+Het bestand _azuredeploy.json_ is toegevoegd aan de lokale opslagplaats. Vervolgens uploadt u de sjabloon naar de externe opslagplaats.
 
 1. Open *Git Shell* of *Git Bash*, als u dat nog niet gedaan hebt.
-1. Wijzig de map in de map CreateWebApp in uw lokale opslagplaats.
-1. Controleer of het bestand **azuredeploy.json** zich in de map bevindt.
+1. Wijzig de map in de map _CreateWebApp_ in de lokale opslagplaats.
+1. Controleer of het bestand _azuredeploy.json_ zich in de map bevindt.
 1. Voer de volgende opdracht uit:
 
     ```bash
     git add .
     git commit -m "Add web app templates."
-    git push origin master
+    git push origin main
     ```
 
-    Er kan een waarschuwing over LF worden weergegeven. U kunt de waarschuwing negeren. **master** is de master branch.  Doorgaans maakt u een branch (vertakking) voor elke update. Om de zelfstudie te vereenvoudigen, gebruikt u de master branch rechtstreeks.
-1. Blader in een browser naar uw GitHub-opslagplaats.  De URL is **`https://github.com/[YourAccountName]/[YourGitHubRepository]`** . De map **CreateWebApp** en de drie bestanden in de map worden weergeven.
-1. Selecteer **linkedStorageAccount.json** om de sjabloon te openen.
-1. Selecteer de knop **Raw** (Onbewerkt). De URL begint met **raw.githubusercontent.com**.
-1. Maak een kopie van de URL.  U moet deze waarde opgeven wanneer u de pijplijn verderop in de zelfstudie configureert.
+    Er kan een waarschuwing over LF worden weergegeven. U kunt de waarschuwing negeren. **Hoofd** is de hoofdvertakking.  Doorgaans maakt u een branch (vertakking) voor elke update. Om de zelfstudie te vereenvoudigen gebruikt u de hoofdvertakking rechtstreeks.
+
+1. Blader in een browser naar uw GitHub-opslagplaats. De URL is `https://github.com/[YourAccountName]/[YourGitHubRepository]`. De map _CreateWebApp_ en de drie bestanden in de map worden weergeven.
+1. Selecteer _linkedStorageAccount.json_ om de sjabloon te openen.
+1. Selecteer de knop **Raw** (Onbewerkt). De URL begint met `https://raw.githubusercontent.com`.
+1. Maak een kopie van de URL. U moet deze waarde opgeven wanneer u de pijplijn verderop in de zelfstudie configureert.
 
 U hebt een GitHub-opslagplaats gemaakt en de sjablonen naar de opslagplaats geüpload.
 
 ## <a name="create-a-devops-project"></a>Een DevOps-project maken
 
-Er is een DevOps-organisatie vereist voordat u kunt doorgaan met de volgende procedure.  Als u er nog geen hebt, raadpleegt u [Vereisten](#prerequisites).
+Er is een DevOps-organisatie vereist voordat u kunt doorgaan met de volgende procedure. Als u er nog geen hebt, raadpleegt u [Vereisten](#prerequisites).
 
 1. Meld u aan bij [Azure DevOps](https://dev.azure.com).
 1. Selecteer een DevOps-organisatie aan de linkerkant.
@@ -148,7 +149,7 @@ Maak een serviceverbinding die wordt gebruikt voor het implementeren van project
 
 U hebt nu de volgende taken voltooid.  Als u de vorige secties hebt overgeslagen omdat u bekend bent met GitHub en DevOps, moet u deze taken voltooien voordat u verdergaat.
 
-* Maak een GitHub-opslagplaats en sla de sjablonen op in de map **CreateWebApp** in de opslagplaats.
+* Maak een GitHub-opslagplaats en sla de sjablonen op in de map _CreateWebApp_ in de opslagplaats.
 * Maak een DevOps-project en maak een Azure Resource Manager-serviceverbinding.
 
 Een pijplijn maken met een stap voor het implementeren van een sjabloon:
@@ -159,9 +160,9 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
 
     ![Azure Resource Manager - Azure DevOps - Azure Pipelines - Alleen opslagplaatsen selecteren](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-only-select-repositories.png)
 
-1. Selecteer uw opslagplaats op het tabblad **Selecteren**.  De standaardnaam is **[UwAccountnaam]/[UwGitHubOpslagplaatsnaam]** .
-1. Selecteer **Starter pipeline** (pijplijn Starter) op het tabblad **Configure** (Configureren). U ziet het pijplijnbestand **azure-pipelines.yml** met twee scriptstappen.
-1. Verwijder de twee scriptstappen uit het YML-bestand.
+1. Selecteer uw opslagplaats op het tabblad **Selecteren**. De standaardnaam is `[YourAccountName]/[YourGitHubRepositoryName]`.
+1. Selecteer **Starter pipeline** (pijplijn Starter) op het tabblad **Configure** (Configureren). U ziet het pijplijnbestand _azure-pipelines.yml_ met twee scriptstappen.
+1. Verwijder de twee scriptstappen uit het _.yml_-bestand.
 1. Verplaats de cursor naar de regel na **steps:** .
 1. Selecteer **Show Assistant** (Assistent weergeven) rechts in het scherm om het deelvenster **Tasks** (Taken) te openen.
 1. Selecteer **ARM template deployment** (ARM-implementatiesjabloon).
@@ -174,9 +175,9 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
     * **Resourcegroep**: Voer een nieuwe resourcegroepsnaam in. Bijvoorbeeld: **AzureRmPipeline-rg**.
     * **Locatie**: Selecteer een locatie voor de resourcegroep, bijvoorbeeld **VS - centraal**.
     * **Sjabloonlocatie**: Selecteer **Gekoppelde artefact**. Dit betekent dat er rechtstreeks naar het sjabloonbestand wordt gezocht in de verbonden opslagplaats.
-    * **Sjabloon**: Voer **CreateWebApp/azuredeploy.json** in. Als u de mapnaam en de bestandsnaam hebt gewijzigd, moet u deze waarde wijzigen.
+    * **Sjabloon**: Voer _CreateWebApp/azuredeploy.json_ in. Als u de mapnaam en de bestandsnaam hebt gewijzigd, moet u deze waarde wijzigen.
     * **Sjabloonparameters**: Laat dit veld leeg. U geeft de parameterwaarden op in de parameters voor het **Overschrijven van de sjabloon**.
-    * **Sjabloonparameters overschrijven**: Voer **-projectName [EnterAProjectName] -linkedTemplateUri [EnterTheLinkedTemplateURL]** in. Vervang de projectnaam en de URL van de gekoppelde sjabloon. De URL van de gekoppelde sjabloon is wat u hebt geschreven aan het einde van [Een GitHub-opslagplaats maken](#create-a-github-repository). Begint met **https://raw.githubusercontent.com** .
+    * **Sjabloonparameters overschrijven**: Voer `-projectName [EnterAProjectName] -linkedTemplateUri [EnterTheLinkedTemplateURL]` in. Vervang de projectnaam en de URL van de gekoppelde sjabloon. De URL van de gekoppelde sjabloon is wat u hebt geschreven aan het einde van [Een GitHub-opslagplaats maken](#create-a-github-repository). Begint met `https://raw.githubusercontent.com` .
     * **Implementatiemodus**: Selecteer **Incrementeel**.
     * **Naam van implementatie**: Voer **DeployPipelineTemplate** in. U moet **Geavanceerd** selecteren om **Naam van implementatie** weer te geven.
 
@@ -186,9 +187,9 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
 
     Zie de [implementatietaak voor de Azure-resourcegroep](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment) en de [implementatietaak voor de Azure Resource Manager-sjabloon](https://github.com/microsoft/azure-pipelines-tasks/blob/master/Tasks/AzureResourceManagerTemplateDeploymentV3/README.md) voor meer informatie over de taak
 
-    Het YML-bestand ziet er ongeveer als volgt uit:
+    Het _.yml_-bestand ziet er ongeveer als volgt uit:
 
-    ![Schermopname van de controlepagina met de nieuwe pijplijn met de naam Review your pipeline YAML (YAML voor uw pijplijn controleren).](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-yml.png)
+    ![Schermopname van de controlepagina met de nieuwe pijplijn met de naam YAML voor uw pijplijn controleren.](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-yml.png)
 
 1. Selecteer **Opslaan en uitvoeren**.
 1. Selecteer in het deelvenster **Opslaan en uitvoeren** nogmaals **Opslaan en uitvoeren**. Er wordt een kopie van het YAML-bestand opgeslagen in de verbonden opslagplaats. U kunt het YAML-bestand weergeven door naar uw opslagplaats te bladeren.
@@ -199,7 +200,7 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
 ## <a name="verify-the-deployment"></a>De implementatie controleren
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Open de resourcegroep. De naam is wat u hebt opgegeven in het YAML-bestand van de pijplijn.  U ziet dat er één opslagaccount is gemaakt.  De naam van het opslagaccount begint met **store**.
+1. Open de resourcegroep. De naam is wat u hebt opgegeven in het YAML-bestand van de pijplijn. U ziet dat er één opslagaccount is gemaakt. De naam van het opslagaccount begint met **store**.
 1. Selecteer het opslagaccount om het te openen.
 1. Selecteer **Eigenschappen**. Merk op dat **Replicatie** is ingesteld op **Lokaal redundante opslag (LRS)** .
 
@@ -207,7 +208,7 @@ Een pijplijn maken met een stap voor het implementeren van een sjabloon:
 
 Wanneer u de sjabloon bijwerkt en de wijzigingen naar de externe opslagplaats pusht, worden de resources (in dit geval het opslagaccount) automatisch bijgewerkt door de pijplijn.
 
-1. Open **linkedStorageAccount.json** vanuit uw lokale opslagplaats in Visual Studio Code of een andere teksteditor.
+1. Open _linkedStorageAccount.json_ vanuit uw lokale opslagplaats in Visual Studio Code of een andere teksteditor.
 1. Wijzig de **defaultValue** (standaardwaarde) van **storageAccountType** in **Standard_GRS**. Zie de volgende schermafbeelding:
 
     ![Azure Resource Manager - Azure DevOps - Azure Pipelines - yaml bijwerken](./media/deployment-tutorial-pipeline/azure-resource-manager-devops-pipelines-update-yml.png)
@@ -216,17 +217,17 @@ Wanneer u de sjabloon bijwerkt en de wijzigingen naar de externe opslagplaats pu
 1. Push de wijzigingen naar de externe opslagplaats door de volgende opdrachten in Git Bash/Shell uit te voeren.
 
     ```bash
-    git pull origin master
+    git pull origin main
     git add .
     git commit -m "Update the storage account type."
-    git push origin master
+    git push origin main
     ```
 
-    Met de eerste opdracht (pull) wordt de lokale opslagplaats gesynchroniseerd met de externe opslagplaats. Het YAML-bestand van de pijplijn is alleen toegevoegd aan de externe opslagplaats. Als u de pull-opdracht uitvoert, wordt een kopie van het YAML-bestand naar de lokale branch gedownload.
+    Met de eerste opdracht (`pull`) wordt de lokale opslagplaats gesynchroniseerd met de externe opslagplaats. Het YAML-bestand van de pijplijn is alleen toegevoegd aan de externe opslagplaats. Als u de opdracht `pull` uitvoert, wordt een kopie van het YAML-bestand naar de lokale vertakking gedownload.
 
-    Met de vierde opdracht (push) wordt het herziene bestand linkedStorageAccount.json geüpload naar de externe opslagplaats. Als de master branch van de externe opslagplaats is bijgewerkt, wordt de pijplijn opnieuw geactiveerd.
+    Met de vierde opdracht (`push`) wordt het herziene bestand _linkedStorageAccount.json_ geüpload naar de externe opslagplaats. Als de hoofdvertakking van de externe opslagplaats is bijgewerkt, wordt de pijplijn opnieuw geactiveerd.
 
-U kunt de wijzigingen controleren door de replicatie-eigenschap van het opslagaccount te controleren.  Zie [De implementatie controleren](#verify-the-deployment).
+U kunt de wijzigingen controleren door de replicatie-eigenschap van het opslagaccount te controleren. Zie [De implementatie controleren](#verify-the-deployment).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

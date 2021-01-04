@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: aahi
-ms.openlocfilehash: 247aea49d60c2d953d8b6dff37d22188a5442a1f
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: e051eca990ae0aa0b5a79c208a594e1b2332bcb2
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625249"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97612624"
 ---
 Gebruik deze quickstart om uw eerste afbeelding te zoeken met behulp van de Bing Image Search-clientbibliotheek. 
 
@@ -36,8 +36,6 @@ Zie ook [Prijsinformatie Cognitive Services - Bing Zoeken-API](https://azure.mic
 ## <a name="create-a-console-project"></a>Een consoleproject maken
 
 Maak een nieuwe C#-consoletoepassing.
-
-## <a name="create-a-console-project"></a>Een consoleproject maken
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 

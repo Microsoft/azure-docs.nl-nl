@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 79a5d61c9782d228f9f86d624c1373340ace9381
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d861f8a1befa0facb634615348fd61b1ae44dcb0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456068"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670094"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-cloud"></a>Zelfstudie: Azure Active Directory-integratie met Cisco Cloud
 
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Cisco Cloud in Azure Active Director
 
 **Voer de volgende stappen uit om Cisco Cloud vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,11 +63,11 @@ Voor het configureren van de integratie van Cisco Cloud in Azure Active Director
 
 4. Typ **Cisco Cloud** in het zoekvak, selecteer **Cisco Cloud** in het deelvenster met resultaten en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Cisco Cloud toevoegen vanuit de galerie](common/search-new-app.png)
+    ![Cisco Cloud toevoegen vanuit de galerie](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Cisco Cloud op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Cisco Cloud op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Cisco Cloud tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure AD met Cisco Cloud te configureren en testen, moet u de volgende procedures voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren met Cisco Cloud:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina van de integratie van **Cisco Cloud** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina van de integratie van **Cisco Cloud** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -136,13 +136,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     c. Laat **Naamruimte** leeg.
 
-    d. Selecteer Bron bij **Kenmerk** .
+    d. Selecteer Bron bij **Kenmerk**.
 
-    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken** .
+    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken**.
 
-    f. Klik op **OK** .
+    f. Klik op **OK**.
 
-    g. Klik op **Opslaan** .
+    g. Klik op **Opslaan**.
 
 8. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 
@@ -150,13 +150,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 ### <a name="configure-cisco-cloud-single-sign-on"></a>Eenmalige aanmelding configureren voor Cisco Cloud
 
-Als u eenmalige aanmelding aan de **Cisco Cloud** -zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [Cisco Cloud-ondersteuningsteam](mailto:cpr-ops@cisco.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Cisco Cloud**-zijde wilt configureren, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [Cisco Cloud-ondersteuningsteam](mailto:cpr-ops@cisco.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -169,19 +169,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Cisco Cloud.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Cisco Cloud** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Cisco Cloud**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -189,11 +189,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling naar Cisco Cloud in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -201,7 +201,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-cisco-cloud-test-user"></a>Een testgebruiker maken voor Cisco Cloud
 

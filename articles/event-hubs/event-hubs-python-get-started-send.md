@@ -1,17 +1,17 @@
 ---
 title: Gebeurtenissen verzenden naar of ontvangen van Azure Event Hubs met behulp van Python (meest recente versie)
-description: Dit artikel bevat een overzicht van het maken van een Python-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure-eventhub versie 5.
+description: Dit artikel bevat een overzicht van het maken van een Python-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure-eventhub.
 ms.topic: quickstart
 ms.date: 02/11/2020
-ms.openlocfilehash: bdcd85786afdf307fdc7043db7ed7651d41820a4
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 4850dc9119f6ef43e687f476f66928f13713f051
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729080"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97105948"
 ---
-# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-python-azure-eventhub-version-5"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van Python (azure-eventhub versie 5)
-In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het Python-pakket **azure-eventhub versie 5**.
+# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-python-azure-eventhub"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van Python (azure-eventhub)
+In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het Python-pakket **azure-eventhub**.
 
 ## <a name="prerequisites"></a>Vereisten
 Als u nog geen ervaring hebt met Azure Event Hubs, raadpleegt u het [Event Hubs-overzicht](event-hubs-about.md) voordat u deze quickstart uitvoert. 

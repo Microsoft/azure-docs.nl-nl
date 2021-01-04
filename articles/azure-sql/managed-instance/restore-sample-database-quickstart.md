@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: 413786cf8946c1ffbb76bd0e18eae7c7ba16a9c1
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9b2333e38415a2c0ad50ce36c213ead711c70ab4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790743"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96928797"
 ---
 # <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Quickstart: Een database terugzetten in Azure SQL Managed Instance met SQL Server Management Studio
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -51,6 +51,9 @@ Volg in SQL Server Management Studio deze stappen om de Wide World Importers-dat
 1. Open SQL Server Management Studio en maak verbinding met uw beheerde exemplaar.
 2. Klik in **Objectverkenner** met de rechtermuisknop op uw beheerde exemplaar en selecteer **Nieuwe query** om een nieuw queryvenster te openen.
 3. Voer het volgende SQL-script uit. Dit maakt gebruik van een vooraf geconfigureerd opslagaccount en SAS-sleutel om [een referentie te maken](/sql/t-sql/statements/create-credential-transact-sql) in uw beheerde exemplaar.
+ 
+   > [!IMPORTANT]
+   > `CREDENTIAL` moet overeenkomen met het containerpad, beginnen met `https`, en mag geen afsluitende slash bevatten. `IDENTITY` moet zijn: `SHARED ACCESS SIGNATURE`. `SECRET` moet het Shared Access Signature-token zijn, en mag niet beginnen met `?`.
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]

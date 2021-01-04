@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 25c7016f6639df46a9279ef9a9aab2736efd4f95
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 460cca051d743102e734971cf45069362e24c147
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888654"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106000"
 ---
 # <a name="metrics-overview"></a>Overzicht van metrische gegevens
 
@@ -76,6 +76,17 @@ De volgende bewerkingen zijn beschikbaar voor de metrische gegevens van de sms-A
 
 
 :::image type="content" source="./media/sms-metric.png" alt-text="Metrische gegevens van sms-API-aanvraag.":::
+
+### <a name="authentication-api-requests"></a>Verificatie-API-aanvragen
+
+De volgende bewerkingen zijn beschikbaar voor de metrische gegevens van de Verificatie-API-aanvraag:
+
+| Bewerking/route    | Beschrijving                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
+| CreateIdentity       | Hiermee wordt een identiteit gemaakt die één gebruiker vertegenwoordigt. |
+| DeleteIdentity       | Hiermee wordt een identiteit verwijderd. |
+| CreateToken          | Hiermee wordt een toegangstoken gemaakt. |
+| RevokeToken          | Hiermee worden alle toegangstokens ingetrokken die vóór een bepaald tijdstip zijn gemaakt voor een identiteit. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

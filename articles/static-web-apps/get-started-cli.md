@@ -1,20 +1,20 @@
 ---
-title: 'Quickstart: Uw eerste statische web-app bouwen met Azure Static Web Apps met behulp van de Azure CLI'
-description: Leer hoe u een Azure Static Web Apps-instantie bouwt met de Azure Static Web Apps CLI.
+title: 'Quickstart: Uw eerste statische site bouwen met Azure Static Web Apps met behulp van CLI.'
+description: Leer hoe u een statische site kunt implementeren in Azure Static Web Apps met behulp van Azure CLI.
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: ed49892284b53844c5c578b752a598cdbdd9b946
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ca05194c0d8e63290a9cab8d9f7903daa192069b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320331"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030345"
 ---
-# <a name="quickstart-building-your-first-static-web-app-using-the-azure-cli"></a>Quickstart: Uw eerste statische web-app bouwen met de Azure CLI
+# <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Quickstart: Uw eerste statische site bouwen met behulp van Azure CLI
 
 Met Azure Static Web Apps wordt een website gepubliceerd in een productieomgeving door apps te bouwen vanuit een GitHub-opslagplaats. In deze quickstart implementeert u een webtoepassing in Azure Static Web Apps met behulp van de Azure CLI.
 

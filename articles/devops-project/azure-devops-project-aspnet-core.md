@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 99be6dc42a9b644166054d61e88a1e0ac329d2ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 63d3ac356e4f2c1d17e1511227f5089b7ff4266f
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91854720"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589154"
 ---
 # <a name="create-a-cicd-pipeline-for-net-with-azure-devops-starter"></a>Een CI/CD-pijplijn voor .NET maken met Azure DevOps Starter
 
@@ -66,9 +66,9 @@ In DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure DevOps. U kunt een n
 
 Met DevOps Starter wordt een Git-opslagplaats gemaakt in Azure-opslagplaatsen of in GitHub. Ga als volgt te werk om de opslagplaats weer te geven en codewijzigingen aan de brengen in de toepassing:
 
-1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor uw **mastervertakking**. Met deze koppeling opent u een weergave in de zojuist gemaakte Git-opslagplaats.
+1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor de **hoofd** vertakking. Met deze koppeling opent u een weergave in de zojuist gemaakte Git-opslagplaats.
 
-2. In de volgende stappen kunt u de webbrowser gebruiken om codewijzigingen rechtstreeks aan te brengen en door te voeren in de **mastervertakking**. U kunt uw Git-opslagplaats ook klonen in uw favoriete IDE door **Klonen** te selecteren in de rechterbovenhoek van de pagina met de opslagplaats. 
+2. In de volgende stappen kunt u de webbrowser gebruiken om codewijzigingen rechtstreeks aan te brengen en door te voeren in de **hoofd** vertakking. U kunt uw Git-opslagplaats ook klonen in uw favoriete IDE door **Klonen** te selecteren in de rechterbovenhoek van de pagina met de opslagplaats. 
 
 3. Ga in de bestandsstructuur aan de linkerkant van de toepassing naar **Application/aspnet-core-dotnet-core/Pages/Index.cshtml**.
 

@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/24/2020
-ms.openlocfilehash: cd7d4d3653dc775a949da229e4005d297f7810aa
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 2eff30333362d461f196972fbaedbeac8f2ae7c9
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126075"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033864"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -27,7 +27,7 @@ Wanneer u het voorbeeld uitvoert om verbinding te maken met IoT Central, wordt d
 
 De functie `main` doet het volgende:
 
-* Gebruikt DPS om het apparaat in te richten. De inrichtingsgegevens bevatten de model-id.
+* Gebruikt DPS om het apparaat in te richten. De inrichtingsgegevens bevatten de model-id. IoT Central gebruikt de model-id om de apparaatsjabloon voor dit apparaat te identificeren of te genereren. Zie [Een apparaat koppelen met een apparaatsjabloon](../articles/iot-central/core/concepts-get-connected.md#associate-a-device-with-a-device-template) voor meer informatie.
 * Maakt een `Device_client`-object en stelt het model-id van `dtmi:com:example:Thermostat;1` in voordat de verbinding wordt geopend.
 * Hiermee wordt de eigenschap `maxTempSinceLastReboot` naar IoT Central verzonden.
 * Verzendt een listener voor de opdracht `getMaxMinReport`.
@@ -113,7 +113,7 @@ async def main():
     # ...
 ```
 
-De functie `provision_device` gebruikt DPS om het apparaat in te richten en te registreren bij IoT Central. De functie bevat de model-id van het apparaat in de inrichtingspayload:
+De functie `provision_device` gebruikt DPS om het apparaat in te richten en te registreren bij IoT Central. De functie bevat de apparaatmodel-id, die IoT Central gebruikt voor [Een apparaat koppelen met een apparaatsjabloon](../articles/iot-central/core/concepts-get-connected.md#associate-a-device-with-a-device-template), in de inrichtingspayload:
 
 ```python
 async def provision_device(provisioning_host, id_scope, registration_id, symmetric_key, model_id):

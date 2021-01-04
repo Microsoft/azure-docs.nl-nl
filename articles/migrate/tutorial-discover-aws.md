@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: dda6f6e37a42d4ee55a32fc8e1c05916c6be4367
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: ce86da7697341e769ada120dc7a941319b64fc18
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753124"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109535"
 ---
 # <a name="tutorial-discover-aws-instances-with-server-assessment"></a>Zelfstudie: AWS-exemplaren detecteren met Serverevaluatie
 
@@ -235,7 +235,15 @@ Het apparaat voor de eerste keer instellen.
 
 Maak nu verbinding vanaf het apparaat met de fysieke servers die moeten worden gedetecteerd en start de detectie.
 
-1. In **Stap 1: Geef referenties op voor de detectie van fysieke of virtuele Windows- en Linux-servers**, klik op **Referenties toevoegen** om een beschrijvende naam voor referenties op te geven, voeg een **gebruikersnaam** en **wachtwoord** toe voor een Windows- of Linux-server. Klik op **Opslaan**.
+1. In **Stap 1: Geef referenties op voor de detectie van fysieke of virtuele Windows- en Linux-servers**, en klik op **Referenties toevoegen**.
+1. Selecteer voor een Windows-server de optie **Windows-server** als brontype. Geef een beschrijvende naam op voor de referenties, en voeg de gebruikersnaam en het wachtwoord toe. Klik op **Opslaan**.
+1. Als u verificatie op basis van een wachtwoord gebruikt voor een Linux-server, selecteert u **Linux-server (op basis van wachtwoord)** als brontype. Geef een beschrijvende naam op voor de referenties, en voeg de gebruikersnaam en het wachtwoord toe. Klik op **Opslaan**.
+1. Als u gebruikmaakt van verificatie op basis van een SSH-sleutel voor een Linux-server, kunt u **Linux-server (op basis van SSH-sleutel)** selecteren. Geef een beschrijvende naam op voor de referenties, voeg de gebruikersnaam toe, ga naar de persoonlijke SSH-sleutel en selecteer deze. Klik op **Opslaan**.
+
+    - Azure Migrate biedt ondersteuning voor de persoonlijke SSH-sleutel die wordt gegenereerd met de opdracht ssh-keygen, met behulp van de algoritmen RSA, DSA, ECDSA en ed25519.
+    - Azure Migrate biedt momenteel geen ondersteuning voor SSH-sleutels op basis van een wachtwoordzin. Gebruik een SSH-sleutel zonder een wachtwoordzin.
+    - Azure Migrate biedt momenteel geen ondersteuning voor persoonlijke SSH-sleutelbestanden gegenereerd met PuTTY.
+
 1. Als u meerdere referenties tegelijk wilt toevoegen, klikt u op **Meer toevoegen** om meer referenties op te slaan en toe te voegen. Er worden meerdere referenties ondersteund voor detectie van fysieke servers.
 1. In **Stap 2: Geef de gegevens voor de fysieke of virtuele server op**, klik op **Detectiebron toevoegen** om het **IP-adres of de FQDN** van de server op te geven en tevens de beschrijvende naam voor de referenties waarmee verbinding wordt gemaakt met de server.
 1. U kunt **één item per keer toevoegen** of **meerdere items in één keer toevoegen**. Er is ook een optie om de gegevens van een server op te geven via **CSV importeren**.

@@ -6,19 +6,19 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2020
-ms.openlocfilehash: 012df825f38d292d0b0549701ad90334e3e30bb0
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 2dd60d1962734f7a4264587fd1b5b0d2a03c9ff0
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637010"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359741"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Welkom bij Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Van toepassingen wordt tegenwoordig vereist dat ze zeer responsief en altijd online zijn. Voor het bereiken van lage latentie en hoge beschikbaarheid moeten de instanties van deze toepassingen worden geïmplementeerd in datacenters die zich dicht bij de gebruikers ervan bevinden. Toepassingen moeten in realtime reageren op grote fluctuaties in het gebruik tijdens piekuren, moeten steeds toenemende gegevensvolumes kunnen opslaan en deze gegevens in milliseconden beschikbaar kunnen maken voor gebruikers.
 
-Azure Cosmos DB is een volledig beheerde NoSQL-database voor de ontwikkeling van moderne apps. Reactietijden van slechts enkele milliseconden, en automatische en directe schaalbaarheid, garanderen snelheid op elke schaal. De bedrijfscontinuïteit is gewaarborgd met [door SLA ondersteunde](https://azure.microsoft.com/support/legal/sla/cosmos-db) beschikbaarheid en beveiliging op bedrijfsniveau. App-ontwikkeling is sneller en productiever dankzij kant-en-klare gegevensdistributie voor meerdere masters, open source-API's en SDK's voor populaire talen. Als volledig beheerde service neemt Azure Cosmos DB u het databasebeheer volledig uit handen met automatisch beheer, updates en patches. Daarnaast wordt capaciteitsbeheer afgehandeld met rendabele opties voor serverloze en automatische schaling die inspelen op de behoeften van de toepassing om de capaciteit af te stemmen op de vraag.
+Azure Cosmos DB is een volledig beheerde NoSQL-database voor de ontwikkeling van moderne apps. Reactietijden van slechts enkele milliseconden, en automatische en directe schaalbaarheid, garanderen snelheid op elke schaal. De bedrijfscontinuïteit is gewaarborgd met [door SLA ondersteunde](https://azure.microsoft.com/support/legal/sla/cosmos-db) beschikbaarheid en beveiliging op bedrijfsniveau. App-ontwikkeling is sneller en productiever dankzij kant-en-klare gegevensdistributie voor meerdere regio's, opensource-API's en SDK's voor populaire talen. Als volledig beheerde service neemt Azure Cosmos DB u het databasebeheer volledig uit handen met automatisch beheer, updates en patches. Daarnaast wordt capaciteitsbeheer afgehandeld met rendabele opties voor serverloze en automatische schaling die inspelen op de behoeften van de toepassing om de capaciteit af te stemmen op de vraag.
 
 U kunt [Azure Cosmos DB gratis proberen](https://azure.microsoft.com/try/cosmosdb/) zonder een Azure-abonnement en geheel kosteloos en zonder verplichtingen, of de [gratis Azure Cosmos DB-laag](optimize-dev-test.md#azure-cosmos-db-free-tier) gebruiken om een account te maken waarbij de eerste 400 RU/s en 5 GB aan opslagruimte gratis zijn.
 

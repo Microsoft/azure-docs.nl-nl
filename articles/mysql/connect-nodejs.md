@@ -7,13 +7,13 @@ ms.service: mysql
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-js
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 5/26/2020
-ms.openlocfilehash: d1291b645e987f33bd2035580587650b843f1771
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 12/11/2020
+ms.openlocfilehash: 6a9134e13e3145daea1eed81c4aa8795a0a49950
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535653"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588230"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-mysql"></a>Quickstart: Node.js gebruiken om verbinding te maken en query's uit te voeren op gegevens in Azure Database for MySQL
 
@@ -53,7 +53,13 @@ Afhankelijk van uw platform volgt u de instructies in het bijbehorende gedeelte 
 1. Voer de volgende opdrachten uit om **Node.js** en **NPM**, het pakketbeheerprogramma voor Node.js, te installeren.
 
    ```bash
-   sudo apt-get install -y nodejs npm
+    # Using Ubuntu
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    # Using Debian, as root
+    curl -sL https://deb.nodesource.com/setup_14.x | bash -
+    apt-get install -y nodejs
    ```
 
 2. Voer de volgende opdrachten uit om een projectmap `mysqlnodejs` te maken en installeer het mysql-pakket in die map.
@@ -68,12 +74,8 @@ Afhankelijk van uw platform volgt u de instructies in het bijbehorende gedeelte 
 
 ### <a name="macos"></a>macOS
 
-1. Voer de volgende opdrachten in om **brew** te installeren, een gebruiksvriendelijk pakketbeheerprogramma voor macOS en **Node.js**.
+1. Ga naar de [downloadpagina van Node.js](https://nodejs.org/en/download/) en selecteer vervolgens het MacOS-installatieprogramma.
 
-   ```bash
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   brew install node
-   ```
 2. Voer de volgende opdrachten uit om een projectmap `mysqlnodejs` te maken en installeer het mysql-pakket in die map.
 
    ```bash
@@ -135,38 +137,38 @@ conn.connect(
     {
        console.log("Connection established.");
            queryDatabase();
-    }   
+    }
 });
 
 function queryDatabase(){
-       conn.query('DROP TABLE IF EXISTS inventory;', function (err, results, fields) { 
-            if (err) throw err; 
-            console.log('Dropped inventory table if existed.');
-        })
-       conn.query('CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);', 
+    conn.query('DROP TABLE IF EXISTS inventory;', function (err, results, fields) { 
+        if (err) throw err; 
+        console.log('Dropped inventory table if existed.');
+    })
+        conn.query('CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);', 
             function (err, results, fields) {
                 if (err) throw err;
-            console.log('Created inventory table.');
-        })
-       conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['banana', 150], 
+        console.log('Created inventory table.');
+    })
+    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['banana', 150], 
             function (err, results, fields) {
                 if (err) throw err;
-            else console.log('Inserted ' + results.affectedRows + ' row(s).');
+        else console.log('Inserted ' + results.affectedRows + ' row(s).');
         })
-       conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['orange', 154], 
+    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['orange', 154], 
             function (err, results, fields) {
                 if (err) throw err;
-            console.log('Inserted ' + results.affectedRows + ' row(s).');
+        console.log('Inserted ' + results.affectedRows + ' row(s).');
         })
-       conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['apple', 100], 
-        function (err, results, fields) {
+    conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['apple', 100], 
+    function (err, results, fields) {
                 if (err) throw err;
-            console.log('Inserted ' + results.affectedRows + ' row(s).');
+        console.log('Inserted ' + results.affectedRows + ' row(s).');
         })
-       conn.end(function (err) { 
-        if (err) throw err;
-        else  console.log('Done.') 
-        });
+    conn.end(function (err) { 
+    if (err) throw err;
+    else  console.log('Done.') 
+    });
 };
 ```
 
@@ -202,24 +204,24 @@ conn.connect(
         else {
             console.log("Connection established.");
             readData();
-        }   
+        }
     });
 
 function readData(){
-        conn.query('SELECT * FROM inventory', 
-            function (err, results, fields) {
-                if (err) throw err;
-                else console.log('Selected ' + results.length + ' row(s).');
-                for (i = 0; i < results.length; i++) {
-                    console.log('Row: ' + JSON.stringify(results[i]));
-                }
-                console.log('Done.');
-            })
-       conn.end(
-           function (err) { 
-                if (err) throw err;
-                else  console.log('Closing connection.') 
-        });
+    conn.query('SELECT * FROM inventory', 
+        function (err, results, fields) {
+            if (err) throw err;
+            else console.log('Selected ' + results.length + ' row(s).');
+            for (i = 0; i < results.length; i++) {
+                console.log('Row: ' + JSON.stringify(results[i]));
+            }
+            console.log('Done.');
+        })
+    conn.end(
+        function (err) { 
+            if (err) throw err;
+            else  console.log('Closing connection.') 
+    });
 };
 ```
 
@@ -255,7 +257,7 @@ conn.connect(
         else {
             console.log("Connection established.");
             updateData();
-        }   
+        }
     });
 
 function updateData(){
@@ -263,7 +265,7 @@ function updateData(){
             function (err, results, fields) {
                 if (err) throw err;
                 else console.log('Updated ' + results.affectedRows + ' row(s).');
-        })
+           })
        conn.end(
            function (err) { 
                 if (err) throw err;
@@ -304,7 +306,7 @@ conn.connect(
         else {
             console.log("Connection established.");
             deleteData();
-        }   
+        }
     });
 
 function deleteData(){
@@ -312,7 +314,7 @@ function deleteData(){
             function (err, results, fields) {
                 if (err) throw err;
                 else console.log('Deleted ' + results.affectedRows + ' row(s).');
-        })
+           })
        conn.end(
            function (err) { 
                 if (err) throw err;

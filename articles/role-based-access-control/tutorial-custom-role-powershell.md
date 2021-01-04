@@ -13,12 +13,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: 8aedc59fc34278bf84983d78bf0e9a31fe38ee93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b1815e7598410cd709572d93082d5dee5e0b0fb
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82735586"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97369239"
 ---
 # <a name="tutorial-create-an-azure-custom-role-using-azure-powershell"></a>Zelfstudie: Een aangepaste Azure-rol maken met Azure PowerShell
 
@@ -51,7 +51,7 @@ Meld u aan bij [Azure PowerShell](/powershell/azure/authenticate-azureps).
 
 De eenvoudigste manier om een aangepaste rol te maken, is door een ingebouwde rol als uitgangspunt te nemen, deze te bewerken en zo een nieuwe rol te maken.
 
-1. Gebruik in PowerShell de opdracht [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) om de lijst met bewerkingen voor de Microsoft.Support-resourceprovider op te vragen. Het is handig om te weten welke bewerkingen er beschikbaar zijn voor het maken van machtigingen. U kunt ook in [Bewerkingen van resourceprovider Azure Resource Manager](resource-provider-operations.md#microsoftsupport) een overzicht zien van alle bewerkingen.
+1. Gebruik in PowerShell de opdracht [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) om de lijst met bewerkingen voor de Microsoft.Support-resourceprovider op te vragen. Het is handig om te weten welke bewerkingen er beschikbaar zijn voor het maken van machtigingen. U kunt ook in [Bewerkingen van Azure-resourceprovider](resource-provider-operations.md#microsoftsupport) een overzicht zien van alle bewerkingen.
 
     ```azurepowershell
     Get-AzProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoSize

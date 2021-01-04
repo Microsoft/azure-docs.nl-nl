@@ -7,12 +7,12 @@ author: vladvino
 ms.author: apimpm
 ms.topic: quickstart
 ms.date: 09/14/2020
-ms.openlocfilehash: 19080679291b88b693c95bd71f8ddc0e59286356
-ms.sourcegitcommit: 814778c54b59169c5899199aeaa59158ab67cf44
+ms.openlocfilehash: fdf7e842959e09a8ec35017031f745cb16d13c6d
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/13/2020
-ms.locfileid: "90057321"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400400"
 ---
 # <a name="quickstart-create-a-new-azure-api-management-service-instance-using-visual-studio-code"></a>Quickstart: Een nieuw exemplaar van het Azure API Management-service-exemplaar maken met Visual Studio Code
 
@@ -55,7 +55,7 @@ Er wordt een nieuw API Management-exemplaar (en bovenliggende resourcegroep) met
 >
 > Terwijl het minder dan een minuut kost om de SKU *Verbruik* in te richten, duurt het meestal 30 tot 40 minuten om te maken.
 
-U bent nu klaar om uw eerste API te importeren en te publiceren. Daarnaast kunt u ook veelvoorkomende API Management-bewerkingen uitvoeren binnen de extensie voor Visual Studio Code. Zie de documentatie over [API Management Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-apimanagement&ssr=false#overview) (API Management-extensie voor Visual Studio Code) voor meer informatie.
+U bent nu klaar om uw eerste API te importeren en te publiceren. Daarnaast kunt u ook veelvoorkomende API Management-bewerkingen uitvoeren binnen de extensie voor Visual Studio Code. Raadpleeg [de zelfstudie](visual-studio-code-tutorial.md) voor meer.
 
 ![Nieuw gemaakt API Management-exemplaar in het deelvenster API Management-extensie in VS Code](./media/vscode-create-service-instance/vscode-apim-instance.png)
 
@@ -70,4 +70,4 @@ U kunt ook **API Management verwijderen** selecteren om alleen het API Managemen
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Uw eerste API importeren en publiceren](import-and-publish.md)
+> [API's importeren en beheren met de API Management-extensie](visual-studio-code-tutorial.md)

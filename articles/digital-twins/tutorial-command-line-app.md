@@ -169,7 +169,7 @@ De uitvoer van deze opdrachten zou moeten aangeven dat de tweelingen met succes 
 
 U kunt ook de opdracht `Query` uitvoeren om te verifiëren dat de tweelingen zijn gemaakt. Deze opdracht voert een query uit op uw Azure Digital Twins-instantie naar alle digitale tweelingen die deze bevat. Kijk in de resultaten naar de tweelingen *floor0*, *floor1*, *room0* en *room1*.
 
-#### <a name="modify-a-digital-twin"></a>Een digitale dubbel wijzigen
+#### <a name="modify-a-digital-twin"></a>Een digital twin wijzigen
 
 U kunt de eigenschappen van een digitale dubbel die u hebt gemaakt, ook wijzigen. Probeer deze opdracht uit te voeren om de RoomName van *room0* te wijzigen van *room0* in *PresidentialSuite*:
 

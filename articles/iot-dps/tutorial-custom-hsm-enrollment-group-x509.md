@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 6845923d65b5fbe5a9f010474330ce2bbed948e1
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 25d084b8af148707685b2cbb4368394a12d99db2
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780090"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005304"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Zelfstudie: X.509-apparaten inrichten met behulp van inschrijvingsgroepen
 
@@ -195,7 +195,7 @@ Het certificaat maken:
 3. Voer de volgende opdracht uit om een PEM-bestand met een volledige certificaatketen te maken dat het nieuwe apparaatcertificaat bevat.
 
     ```Bash
-    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-full-chain.cert.pem
+    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-full-chain.cert.pem && cd ..
     ```
 
     Gebruik een teksteditor en open het certificaatketenbestand, *./certs/new-device-full-chain.cert.pem*. De tekst van de certificaatketen bevat de volledige keten van alle drie de certificaten. Verderop in deze zelfstudie gebruikt u deze tekst als de certificaatketen met de aangepaste HSM-code.
@@ -241,48 +241,85 @@ De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
     static const char* const COMMON_NAME = "custom-hsm-device-01";
     ```
 
-4. Nadat u uw certificaten hebt gegenereerd, werkt u in hetzelfde bestand de tekenreekswaarde van de tekenreeksconstante `CERTIFICATE` bij met behlp van de tekst van de certificaatketen die u hebt opgeslagen in *./certs/new-device-full-chain.cert.pem*.
+4. Nadat u uw certificaten hebt gegenereerd, moet u in hetzelfde bestand de tekenreekswaarde van de tekenreeksconstante `CERTIFICATE` bijwerken met behulp van de tekst van de certificaatketen die u hebt opgeslagen in *./certs/new-device-full-chain.cert.pem*.
 
-    > [!IMPORTANT]
-    > Wanneer u de tekst naar Visual Studio kopieert, kunt u zien dat de tekst is geparseerd en bijgewerkt met spatiëring en dergelijke. Als dat zo is, moet u deze spatiëring en parsering verwijderen door eenmaal op **CTRL+Z** te drukken.
-
-    Werk de certificaattekst bij zonder de extra spaties of parsering die door Visual Studio wordt uitgevoerd, zodat de tekst het onderstaande patroon volgt:
+    De syntaxis van de certificaattekst moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
 
     ```c
     // <Device/leaf cert>
     // <intermediates>
     // <root>
     static const char* const CERTIFICATE = "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
         ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB"
-    "\n-----END CERTIFICATE-----\n"
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----\n"
     "-----BEGIN CERTIFICATE-----\n"
-    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy"
+    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy\n"
         ...
-    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh"
-    "\n-----END CERTIFICATE-----\n"
+    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh\n"
+    "-----END CERTIFICATE-----\n"
     "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
         ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB"
-    "\n-----END CERTIFICATE-----";        
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----";        
     ```
 
-5. Werk in hetzelfde bestand de tekenreekswaarde van de tekenreeksconstante `PRIVATE_KEY` bij met behulp van de persoonlijke sleutel voor apparaatcertificaat.
+    Het bijwerken van de tekenreekswaarde in deze stap kan vervelend zijn en kan snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten in uw Git Bash-opdrachtprompt, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `CERTIFICATE` gegenereerd.
 
-    > [!IMPORTANT]
-    > Wanneer u de tekst naar Visual Studio kopieert, kunt u zien dat de tekst is geparseerd en bijgewerkt met spatiëring en dergelijke. Als dat zo is, moet u deze spatiëring en parsering verwijderen door eenmaal op **CTRL+Z** te drukken.
+    ```Bash
+    input="./certs/new-device-full-chain.cert.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
 
-    Werk de tekst van de persoonlijke sleutel bij zonder de extra spaties of parsering die door Visual Studio wordt uitgevoerd, zodat de tekst het onderstaande patroon volgt:
+    Kopieer en plak de uitvoertekst van het certificaat voor de nieuwe constantewaarde. 
+
+
+5. In hetzelfde bestand moet de tekenreekswaarde van de constante `PRIVATE_KEY` ook worden bijgewerkt met behulp van de persoonlijke sleutel voor apparaatcertificaat.
+
+    De syntaxis van de persoonlijke sleutel moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
 
     ```c
     static const char* const PRIVATE_KEY = "-----BEGIN RSA PRIVATE KEY-----\n"
-    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U"
+    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U\n"
         ...
-    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij"
-    "\n-----END RSA PRIVATE KEY-----";
+    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij\n"
+    "-----END RSA PRIVATE KEY-----";
     ```
+
+    Het bijwerken van de tekenreekswaarde in deze stap kan ook vervelend zijn en snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `PRIVATE_KEY` gegenereerd.
+
+    ```Bash
+    input="./private/new-device.key.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
+
+    Kopieer en plak de uitvoertekst van de persoonlijke sleutel voor de nieuwe constantewaarde. 
 
 6. Sla *custom_hsm_example.c* op.
 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 ms.author: jingwang
-ms.openlocfilehash: ef9ac29735289d5c7a60ff0fca3b9e9f360f6e08
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 34eb34a86948a2b4c043d5d9b58b50958855e449
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005126"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508711"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-database-in-azure-sql-database-by-using-azure-data-factory"></a>Gegevens kopiëren van Azure Blob-opslag naar een database in Azure SQL Database met Azure Data Factory
 
@@ -26,7 +26,7 @@ ms.locfileid: "96005126"
 In deze zelfstudie maakt u een data factory met behulp van de Azure Data Factory-gebruikersinterface. Met de pijplijn in deze data factory worden gegevens gekopieerd van Azure Blob Storage naar een database in Azure SQL Database. Het configuratiepatroon in deze zelfstudie geldt voor het kopiëren van een gegevensarchief op basis van bestanden naar een relationeel gegevensarchief. Zie de tabel [Ondersteunde gegevensarchieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevensarchieven die worden ondersteund als bron en als sink.
 
 > [!NOTE]
-> - Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent met Azure Data Factory.
+> Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent met Azure Data Factory.
 
 In deze zelfstudie voert u de volgende stappen uit:
 
@@ -82,24 +82,26 @@ In deze stap maakt u een data factory en start u de Data Factory-gebruikersinter
 
 1. Open **Microsoft Edge** of **Google Chrome**. Op dit moment wordt de Data Factory-gebruikersinterface alleen ondersteund in de webbrowsers Microsoft Edge en Google Chrome.
 2. Selecteer in het linkermenu **Een resource maken** > **Integratie** > **Data Factory**.
-3. Voer op de pagina **Nieuwe data factory** **ADFTutorialDataFactory** in bij **Naam**.
+3. Selecteer op de pagina **Data factory maken** op het tabblad **Basisbeginselen** het Azure-**abonnement** waarin u de data factory wilt maken.
+4. Voer een van de volgende stappen uit voor **Resourcegroep**:
+
+    a. Selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
+
+    b. Selecteer **Nieuwe maken** en voer de naam van een nieuwe resourcegroep in.
+    
+    Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie. 
+5. Selecteer onder **Regio** een locatie voor de data factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevensarchieven (bijvoorbeeld Azure Storage en SQL Database) en berekenservices (bijvoorbeeld Azure HDInsight) die door de data factory worden gebruikt, kunnen zich in andere regio's bevinden.
+6. Voer bij **Naam** in: **ADFTutorialDataFactory**.
 
    De naam van de Azure-gegevensfactory moet *wereldwijd uniek* zijn. Als u een foutbericht ontvangt dat betrekking heeft op de waarde die bij de naam is ingevuld, voert u een andere naam in voor de data factory. (Gebruik dan bijvoorbeeld uwnaamADFTutorialDataFactory). Zie [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
      ![Nieuwe data factory](./media/doc-common-process/name-not-available-error.png)
-4. Selecteer het Azure-**abonnement** waarin u de data factory wilt maken.
-5. Voer een van de volgende stappen uit voor **Resourcegroep**:
 
-    a. Selecteer **Bestaande gebruiken** en selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
-
-    b. Selecteer **Nieuwe maken** en voer de naam van een resourcegroep in. 
-         
-    Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie. 
-6. Selecteer **V2** onder **Versie**.
-7. Selecteer onder **Locatie** een locatie voor de data factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevensarchieven (bijvoorbeeld Azure Storage en SQL Database) en berekenservices (bijvoorbeeld Azure HDInsight) die door de data factory worden gebruikt, kunnen zich in andere regio's bevinden.
-8. Selecteer **Maken**.
-9. Als het maken is voltooid, ziet u de melding in het meldingencentrum. Selecteer **Naar resource gaan** om naar de pagina Data factory te gaan.
-10. Selecteer de tegel **Maken en controleren** om de Data Factory-gebruikersinterface te openen op een afzonderlijk tabblad.
+7. Selecteer **V2** onder **Versie**.
+8. Selecteer het tabblad **Git-configuratie** bovenaan en selecteer het selectievakje **Git later configureren**.
+9. Selecteer **Controleren en maken**, en selecteer **Maken** nadat de validatie is voltooid.
+10. Als het maken is voltooid, ziet u de melding in het meldingencentrum. Selecteer **Naar resource gaan** om naar de pagina Data factory te gaan.
+11. Selecteer de tegel **Maken en controleren** om de Azure Data Factory-gebruikersinterface te openen op een afzonderlijk tabblad.
 
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
@@ -115,7 +117,7 @@ In deze zelfstudie begint u met het maken van de pijplijn. Vervolgens maakt u ge
 
    ![Pijplijn maken](./media/doc-common-process/get-started-page.png)
 
-1. 1. Geef bij **Eigenschappen** op het tabblad Algemeen **CopyPipeline** op als **Naam**. Vouw vervolgens het deelvenster samen door in de rechterbovenhoek op het pictogram Eigenschappen te klikken.
+1. Geef bij **Eigenschappen** op het tabblad Algemeen **CopyPipeline** op als **Naam**. Vouw vervolgens het deelvenster samen door in de rechterbovenhoek op het pictogram Eigenschappen te klikken.
 
 1. Breid in de werkset **Activiteiten** de categorie **Verplaatsen en transformeren** uit. Sleep de activiteit **Gegevens kopiëren** uit de werkset en zet deze neer op het ontwerpoppervlak voor pijplijnen. Geef **CopyFromBlobToSql** op bij **Naam**.
 

@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: 193ceab0b2df1ab833a86eb748c18271a8e33b71
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 5012383e64a85ee025273f5339b828f5338e1d4f
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852911"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97629065"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Wat zijn Azure IoT-oplossingsversnellers?
 
@@ -29,7 +29,7 @@ U kunt de oplossingsversnellers ook gebruiken als leermiddelen voordat u helemaa
 De toepassingscode in elke oplossingsverbetering bevat een web-app waarmee u de oplossingsverbetering beheren.
 
 > [!NOTE]
-> De oplossingen voor controle op afstand en voorspellend onderhoud zijn verwijderd van de site [Azure IoT-oplossingsversnellers](https://www.azureiotsolutions.com/Accelerators). Zie [Wat zijn Azure IoT-oplossingsversnellers? (vorige versie)](/previous-versions/azure/iot-accelerators/about-iot-accelerators.md) voor meer informatie.
+> De oplossingen voor controle op afstand en voorspellend onderhoud zijn verwijderd van de site [Azure IoT-oplossingsversnellers](https://www.azureiotsolutions.com/Accelerators). Zie [Wat zijn Azure IoT-oplossingsversnellers? (vorige versie)](/previous-versions/azure/iot-accelerators/about-iot-accelerators) voor meer informatie.
 
 ## <a name="supported-iot-scenarios"></a>Ondersteunde IoT-scenario's
 

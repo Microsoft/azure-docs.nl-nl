@@ -1,18 +1,18 @@
 ---
 title: Gebeurtenissen verzenden of ontvangen van Azure Event Hubs met behulp van JavaScript (meest recente versie)
-description: Dit artikel bevat een overzicht van het maken van een JavaScript-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure/event-hubs versie 5.
+description: Dit artikel bevat een overzicht van het maken van een JavaScript-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure/event-hubs.
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 01516f29e727b5be2a81d3d8dd473808b6ea60f7
-ms.sourcegitcommit: 638f326d02d108cf7e62e996adef32f2b2896fd5
+ms.openlocfilehash: 2e5f297d5edb9a271843db060f948209dd076074
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728944"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106084"
 ---
-# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs-version-5"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van JavaScript (azure/event-hubs versie 5)
-In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het JavaScript-pakket **azure/event-hubs versie 5**. 
+# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-javascript--azureevent-hubs"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van JavaScript (azure/event-hubs)
+In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het JavaScript-pakket **azure/event-hubs**. 
 
 
 ## <a name="prerequisites"></a>Vereisten

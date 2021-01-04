@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: De berekening in een toegewezen SQL-pool (voorheen SQL DW) onderbreken en hervatten via Azure Portal'
-description: Gebruik de Azure Portal om de berekening voor de SQL-groep te onderbreken om kosten te besparen. Hervat de rekenbewerking wanneer u klaar bent om het datawarehouse te gebruiken.
+title: 'Quickstart: Berekening in een toegewezen SQL-pool onderbreken en hervatten via de Azure-portal'
+description: Gebruik de Azure-portal om de berekening voor een toegewezen SQL-pool te onderbreken om kosten te besparen. Hervat de rekenbewerking wanneer u klaar bent om het datawarehouse te gebruiken.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 88f6782a0f81b94977b37bd8f87bf26a0d4c8a72
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7d258243dae06461d21e9b5f0346e419f034eea9
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457702"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109704"
 ---
-# <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-formerly-sql-dw-via-the-azure-portal"></a>Quickstart: De berekening in een toegewezen SQL-pool (voorheen SQL DW) onderbreken en hervatten via Azure Portal
+# <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-via-the-azure-portal"></a>Quickstart: Berekening in een toegewezen SQL-pool onderbreken en hervatten via de Azure-portal
 
-U kunt Azure Portal gebruiken om de rekenresources in een toegewezen SQL-pool (voorheen SQL DW) te onderbreken en weer te hervatten. Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+U kunt de Azure-portal gebruiken om de rekenresources in een toegewezen SQL-pool te onderbreken en weer te hervatten. Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -40,9 +40,8 @@ Als u kosten wilt besparen, kunt u de rekenresources op aanvraag onderbreken en 
 Volg deze stappen om een toegewezen SQL-pool te onderbreken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-2. Klik op **Toegewezen SQL-pool (voorheen SQL DW)** op de linkernavigatiepagina van Azure Portal.
-2. Selecteer **mySampleDataWarehouse** op de pagina **Azure Toegewezen SQL-pool (voorheen SQL DW)** om de SQL-pool te openen. 
-3. U ziet op de pagina **mySampleDataWarehouse** dat de **Status** **Online** is.
+2. Ga naar pagina voor uw **toegewezen SQL-pool** om de SQL-pool te openen. 
+3. U ziet dat de **Status** is: **Online**.
 
     ![Online berekenen](././media/pause-and-resume-compute-portal/compute-online.png)
 
@@ -62,8 +61,7 @@ Volg deze stappen om een toegewezen SQL-pool te onderbreken:
 
 Volg deze stappen om een toegewezen SQL-pool te hervatten.
 
-1. Klik op **Toegewezen SQL-pool (voorheen SQL DW)** op de linkerpagina van Azure Portal.
-2. Selecteer **mySampleDataWarehouse** op de pagina **Toegewezen SQL-pool (voorheen SQL DW)** om de pagina SQL-pool te openen. 
+1. Ga naar pagina voor uw **toegewezen SQL-pool** om de SQL-pool te openen.
 3. U ziet op de pagina **mySampleDataWarehouse** dat de **Status** **Onderbroken** is.
 
     ![Offline berekenen](././media/pause-and-resume-compute-portal/compute-offline.png)

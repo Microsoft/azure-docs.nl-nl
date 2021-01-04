@@ -7,16 +7,19 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 57e740e6c47d9518c12a49473e103d0abe772618
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 1fb5396fae4676d85f67e98bb333cd58324d5a4e
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337010"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97357566"
 ---
 # <a name="quickstart-use-github-actions-to-connect-to-azure-mysql"></a>Quickstart: GitHub Actions gebruiken om verbinding te maken met Azure MySQL
 
-Aan de slag met [GitHub Actions](https://docs.github.com/en/actions) met behulp van een werkstroom voor het implementeren van database-updates voor [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/). 
+**VAN TOEPASSING OP**: :::image type="icon" source="./media/applies-to/yes.png" border="false":::Azure Database for PostgreSQL - Enkele server :::image type="icon" source="./media/applies-to/yes.png" border="false":::Azure Database for PostgreSQL - Flexibele server
+
+Aan de slag met [GitHub Actions](https://docs.github.com/en/actions) met behulp van een werkstroom voor het implementeren van database-updates voor [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/).
+
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -67,6 +70,11 @@ De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang biede
 ## <a name="copy-the-mysql-connection-string"></a>MySQL-verbindingsreeks kopiëren 
 
 Ga in het Azure Portal naar uw Azure Database for MySQL-server en open **Instellingen** > **Verbindingsreeksen**. Kopieer de verbindingsreeks voor **ADO.NET**. Vervang de plaatsaanduidingswaarden door `your_database` en `your_password`. De verbindingsreeks ziet er ongeveer als volgt uit. 
+
+> [!IMPORTANT]
+> - Gebruik voor Enkele server: **Uid=adminusername@servername** . Let op: **@servername** is vereist.
+> - Voor Flexibele server: gebruik **Uid= adminusername** zonder de @servername. Houd er rekening mee dat MySQL Flexibele server zich momenteel in de preview-fase bevindt. 
+
 
 ```output
    Server=my-mysql-server.mysql.database.azure.com; Port=3306; Database={your_database}; Uid=adminname@my-mysql-server; Pwd={your_password}; SslMode=Preferred;

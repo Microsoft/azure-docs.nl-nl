@@ -3,18 +3,18 @@ title: Overzicht van Azure Notebooks Preview
 description: Jupyter Notebooks in de cloud uitvoeren met behulp van de gratis Azure Notebooks Preview-service, waarvoor geen installatie of configuratie is vereist.
 ms.topic: overview
 ms.date: 04/05/2019
-ms.openlocfilehash: d59faaf85a1fdbad776e954e974bafa300f93d85
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 7e622bdef785085384395bb0c8ac3efba2b2053a
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94845132"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400254"
 ---
 # <a name="overview-of-azure-notebooks-preview"></a>Overzicht van Azure Notebooks Preview
 
 [!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
-Azure Notebooks is een gratis gehoste service om Jupyter-notebooks te ontwikkelen en uitvoeren in de cloud, zonder installatie. [Jupyter](https://jupyter.org/) (voorheen IPython) is een opensourceproject waarmee u eenvoudig Markdown-tekst, uitvoerbare code en permanente gegevens, afbeeldingen en visualisaties kunt combineren op één deelbaar canvas, het *notebook* genaamd (de afbeelding is ter beschikking gesteld door jupyter.org):
+Azure Notebooks is een gratis gehoste service om Jupyter Notebooks te ontwikkelen en uit te voeren in de cloud, zonder installatie. [Jupyter](https://jupyter.org/) (voorheen IPython) is een opensourceproject waarmee u eenvoudig Markdown-tekst, uitvoerbare code en permanente gegevens, afbeeldingen en visualisaties kunt combineren op één deelbaar canvas, het *notebook* genaamd (de afbeelding is ter beschikking gesteld door jupyter.org):
 
 [![Voorbeelden van Jupyter Notebooks](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
@@ -49,7 +49,7 @@ Kortom, met Azure Notebooks kunt u uw werk efficiënter uitvoeren en dus meer vo
 
 Azure Notebooks is een gratis service, maar om misbruik te voorkomen is elk project beperkt tot 4 GB geheugen en 1 GB gegevens. Legitieme gebruikers die deze quota overschrijden, krijgen een captcha aangeboden als ze notebooks willen blijven gebruiken.
 
-Als u alle beperkingen wilt opheffen, meld u zich met behulp van Azure Active Directory aan bij Azure Notebooks met een account (bijvoorbeeld een zakelijk account). Als dit account is gekoppeld aan een Azure-abonnement, kunt u elk Azure Data Science Virtual Machine-exemplaar binnen dat abonnement verbinden. Zie [Manage and configure projects - Compute tier](configure-manage-azure-notebooks-projects.md#compute-tier) (Projecten beheren en configureren - Compute-laag) voor meer informatie.
+Als u alle beperkingen wilt opheffen, meld u zich met behulp van Azure Active Directory aan bij Azure Notebooks met een account (bijvoorbeeld een zakelijk account). Als dit account is gekoppeld aan een Azure-abonnement, kunt u elk Azure Data Science Virtual Machine-exemplaar binnen dat abonnement verbinden. 
 
 Het bestaan van Notebook-servers is hoogstens 8 uur gegarandeerd. In de meeste gevallen is de container niet onderhevig aan deze limiet en blijft deze ook na deze tijd actief, maar langlopende sessies kunnen soms worden afgesloten ten behoeve van de stabiliteit van het systeem.
 
@@ -65,7 +65,7 @@ Voor elke notebook selecteert u de kernel (d.w.z. de runtime-omgeving) waarin de
 
 Azure Notebooks bevat naast de basisdistributies tevens extra pakketten. De Python-kernels bijvoorbeeld, omvatten de numpy-, pandas-, scikit-learn-, matplotlib- en bokeh-bibliotheken.
 
-U kunt een project ook aanpassen om een omgeving te maken voor alle notebooks in dat project. Zie voor meer informatie [Snelstart: Een project met een aangepaste omgeving maken](quickstart-create-jupyter-notebook-project-environment.md).
+U kunt een project ook aanpassen om een omgeving te maken voor alle notebooks in dat project.
 
 Naast de basisdistributies zijn in Azure Notebooks vele extra pakketten vooraf geïnstalleerd die handig zijn van datawetenschappers. U kunt ook uw eigen pakketten installeren met behulp van het voor elke taal eigen proces.
 
@@ -73,7 +73,7 @@ Naast de basisdistributies zijn in Azure Notebooks vele extra pakketten vooraf g
 
 Azure Notebooks is vooraf geconfigureerd met de volgende Jupyter-uitbreidingen:
 
-- [RISE](https://github.com/damianavila/RISE): Een Jupyter-uitbreiding voor diavoorstellingen (ook wel live_reveal genoemd). Zie [Een diavoorstelling uitvoeren](present-jupyter-notebooks-slideshow.md) voor meer informatie.
+- [RISE](https://github.com/damianavila/RISE): Een Jupyter-uitbreiding voor diavoorstellingen (ook wel live_reveal genoemd).
 - [Jupyterlab](https://github.com/jupyterlab/jupyterlab): Een volledige rekenomgeving om te werken met Jupyter Notebooks.
 - [Altair](https://github.com/ellisonbg/altair): Een declaratieve, statistische visualisatiebibliotheek voor Python.
 - [BQPlot](https://github.com/bloomberg/bqplot): Een interactief tekenframework voor Jupyter Notebooks.
@@ -89,26 +89,7 @@ Voor vragen over Azure Notebooks kunt u een vraag stellen op de [GitHub-opslagpl
 
 ## <a name="next-steps"></a>Volgende stappen  
 
-- [Voorbeelden van notebooks verkennen](azure-notebooks-samples.md)
-
 - Quickstarts:
 
-  - [Een notebook maken en delen](quickstart-create-share-jupyter-notebook.md)
-  - [Een notebook klonen](quickstart-clone-jupyter-notebook.md)
-  - [Een lokaal Jupyter-notebook migreren](quickstart-migrate-local-jupyter-notebook.md)
-  - [Een aangepaste omgeving gebruiken](quickstart-create-jupyter-notebook-project-environment.md)
   - [Aanmelden en een gebruikers-id instellen](quickstart-sign-in-azure-notebooks.md)
-
-- Zelfstudies:
-
-  - [Een notebook maken en uitvoeren](tutorial-create-run-jupyter-notebook.md  )
-
-- Artikelen met procedures:
-  
-  - [Projecten maken en klonen](create-clone-jupyter-notebooks.md)
-  - [Projecten configureren en beheren](configure-manage-azure-notebooks-projects.md)
-  - [Pakketten vanuit een notebook installeren](install-packages-jupyter-notebook.md)
-  - [Een diavoorstelling presenteren](present-jupyter-notebooks-slideshow.md)
-  - [Werken met gegevensbestanden](work-with-project-data-files.md)
-  - [Toegang tot gegevensbronnen](access-data-resources-jupyter-notebooks.md)
-  - [Azure Machine Learning gebruiken](../machine-learning/samples-notebooks.md)
+  - [Een Jupyter-notebook exporteren](quickstart-export-jupyter-notebook-project.md)

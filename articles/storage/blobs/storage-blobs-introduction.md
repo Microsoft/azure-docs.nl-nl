@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/24/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 1e289d094bba8d4336b83a7970e281247e9f4131
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8e3f0435d9856d2b602a4f2b6f604aee05e040ba
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007291"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505202"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Inleiding tot Azure Blob-opslag
 
@@ -57,7 +57,7 @@ Azure Storage ondersteunt drie soorten blobs:
 
 - **Blok-blobs** worden gebruikt voor het opslaan van tekst en binaire gegevens. Blok-blobs bestaan uit blokken met gegevens die afzonderlijk kunnen worden beheerd. Blok-blobs kunnen tot ongeveer 4,75 TiB gegevens opslagen. Grotere blok-blobs zijn beschikbaar in de preview-versie, ze kunnen tot ongeveer 190,7 TiB opslagen
 - **Toevoeg-blobs** bestaan uit blokken zoals blok-blobs, maar zijn geoptimaliseerd voor toevoegbewerkingen. Toevoeg-blobs zijn ideaal voor scenario's zoals het registreren van logboekgegevens van virtuele machines.
-- **Pagina-blobs** worden gebruikt voor het opslaan van bestanden voor willekeurige toegang tot maximaal 8 TB in grootte. Met pagina-blobs worden bestanden voor de virtuele harde schijf (VHD) opgeslagen en kunnen ze dienen als schijven voor Azure-VM's. Zie [Overzicht van Azure-pagina-blobs](storage-blob-pageblob-overview.md) voor meer informatie over pagina-blobs
+- **Pagina-blobs** worden gebruikt voor het opslaan van bestanden voor willekeurige toegang tot maximaal 8 TiB in grootte. Met pagina-blobs worden bestanden voor de virtuele harde schijf (VHD) opgeslagen en kunnen ze dienen als schijven voor Azure-VM's. Zie [Overzicht van Azure-pagina-blobs](storage-blob-pageblob-overview.md) voor meer informatie over pagina-blobs
 
 Zie [Blok-blobs, toevoeg-blobs en pagina-blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) voor meer informatie over de verschillende soorten blobs.
 

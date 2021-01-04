@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/03/2020
+ms.date: 12/10/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cfcaec38a939291090da7d2229c4a95f984bf28
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 5151f97386ebb6b06be2320505771dc8f47d59a0
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360437"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107529"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Zelfstudie: een door het Linux-VM-systeem toegewezen beheerde identiteit gebruiken voor toegang tot Azure Key Vault 
 
@@ -36,7 +36,7 @@ In deze zelfstudie leert u procedures om het volgende te doen:
  
 ## <a name="prerequisites"></a>Vereisten
 
-- Inzicht in beheerde identiteiten. Als u niet bekend bent met de functie voor beheerde identiteiten voor Azure-resources, raadpleegt u dit [overzicht](overview.md). 
+- Basiskennis van beheerde identiteiten. Als u niet bekend bent met de functie voor beheerde identiteiten voor Azure-resources, raadpleegt u dit [overzicht](overview.md). 
 - Een Azure-account, [meld u aan voor een gratis account](https://azure.microsoft.com/free/).
 - 'Eigenaar'-machtigingen voor het juiste bereik (uw abonnement of resourcegroep) om de vereiste stappen voor resource-aanmaak en rolbeheer uit te voeren. Voor hulp bij roltoewijzing gaat u naar [Op rollen gebaseerd toegangsbeheer gebruiken voor het beheer van de toegang tot de resources van uw Azure-abonnement](../../role-based-access-control/role-assignments-portal.md).
 - U hebt ook een virtuele Linux-machine nodig waarvoor door het systeem toegewezen beheerde identiteiten zijn ingeschakeld.
@@ -49,8 +49,8 @@ In deze sectie wordt uitgelegd hoe u uw VM toegang verleent tot een geheim dat i
 
 Eerst moeten we een sleutelkluis maken en de door het systeem toegewezen beheerde identiteit van onze VM toegang tot de sleutelkluis verlenen.
 
-1. Open de Azure-[portal](https://portal.azure.com/).
-1. Selecteer bovenaan de linkernavigatiebalk **Een resource maken**.  
+1. Open het Azure-[portaal](https://portal.azure.com/).
+1. Selecteer bovenaan de linkernavigatiebalk **Een resource maken**  
 1. In het vak **Marketplace doorzoeken** typt u **Key Vault** en drukt u op **Enter**.  
 1. Selecteer **Key Vault** in de resultaten.
 1. Selecteer **Maken**
@@ -59,16 +59,30 @@ Eerst moeten we een sleutelkluis maken en de door het systeem toegewezen beheerd
     ![scherm Een sleutelkluis maken](./media/tutorial-linux-vm-access-nonaad/create-key-vault.png)
 
 1. Vul alle vereiste gegevens in en zorg ervoor dat u het abonnement en de resourcegroep kiest waar u de virtuele machine hebt gemaakt die u voor deze zelfstudie gebruikt.
-1. Selecteer **Controleren en maken**.
+1. Selecteer **Controleren en maken**
 1. Selecteer **Maken**
+
+### <a name="create-a-secret"></a>Een geheim maken
+
+Voeg vervolgens een geheim toe aan de sleutelkluis, zodat u het later kunt ophalen met behulp van code die wordt uitgevoerd op uw virtuele machine. In deze zelfstudie gebruiken we PowerShell, maar dezelfde concepten gelden voor elke andere code die wordt uitgevoerd op deze virtuele machine.
+
+1. Ga naar uw zojuist gemaakte sleutelkluis.
+1. Selecteer **Geheimen** en klik op **Toevoegen**.
+1. Selecteer **Genereren/importeren**
+1. In het scherm **Een geheim maken** laat u bij **Uploadopties** de optie **Handmatig** geselecteerd.
+1. Voer een naam en een waarde in voor de geheime sleutel.    De waarde mag elke gewenste waarde zijn. 
+1. Laat de activeringsdatum en vervaldatum leeg en laat **Ingeschakeld** ingesteld staan op **Ja**. 
+1. Klik op **Maken** om het geheim te maken.
+
+   ![Een geheim maken](./media/tutorial-linux-vm-access-nonaad/create-secret.png)
 
 ## <a name="grant-access"></a>Toegang verlenen
 
 De beheerde identiteit die door de virtuele machine wordt gebruikt, moet toegang worden verleend om het geheim te lezen dat we in de sleutelkluis zullen opslaan.
 
-1. Ga naar uw zojuist gemaakte sleutelkluis.
+1. Ga naar uw zojuist aangemaakte sleutelkluis
 1. Selecteer **Toegangsbeleid** in het menu aan de linkerkant.
-1. Selecteer **Toegangsbeleid toevoegen**.
+1. Selecteer **Toegangsbeleid toevoegen**
 
    ![scherm 'Toegangsbeleid maken' in Key Vault](./media/tutorial-linux-vm-access-nonaad/key-vault-access-policy.png)
 
@@ -77,20 +91,6 @@ De beheerde identiteit die door de virtuele machine wordt gebruikt, moet toegang
 1. Selecteer **Toevoegen**
 1. Selecteer **Opslaan**.
 
-## <a name="create-a-secret"></a>Een geheim maken
-
-Voeg vervolgens een geheim toe aan de sleutelkluis, zodat u het later kunt ophalen met behulp van code die wordt uitgevoerd op uw virtuele machine. In deze zelfstudie gebruiken we PowerShell, maar dezelfde concepten gelden voor elke andere code die wordt uitgevoerd op deze virtuele machine.
-
-1. Ga naar uw zojuist gemaakte sleutelkluis.
-1. Selecteer **Geheimen** en klik op **Toevoegen**.
-1. Selecteer **Genereren/importeren**.
-1. In het scherm **Een geheim maken** laat u bij **Uploadopties** de optie **Handmatig** geselecteerd.
-1. Voer een naam en een waarde in voor de geheime sleutel.    De waarde mag elke gewenste waarde zijn. 
-1. Laat de activeringsdatum en vervaldatum leeg en laat **Ingeschakeld** ingesteld staan op **Ja**. 
-1. Klik op **Maken** om het geheim te maken.
-
-   ![Een geheim maken](./media/tutorial-linux-vm-access-nonaad/create-secret.png)
- 
 ## <a name="access-data"></a>Toegang tot gegevens
 
 U hebt een SSH-client nodig om deze stappen uit te voeren.  Als u Windows gebruikt, kunt u de SSH-client in het [Windows-subsysteem voor Linux](/windows/wsl/about) gebruiken. Zie [De sleutels van uw SSH-client gebruiken onder Windows in Azure](../../virtual-machines/linux/ssh-from-windows.md) of [Een sleutelpaar met een openbare SSH-sleutel en een privé-sleutel maken en gebruiken voor virtuele Linux-machines in Azure](../../virtual-machines/linux/mac-create-ssh-keys.md) als u hulp nodig hebt bij het configureren van de sleutels van uw SSH-client.
@@ -121,7 +121,7 @@ U hebt een SSH-client nodig om deze stappen uit te voeren.  Als u Windows gebrui
     U kunt dit toegangstoken gebruiken voor verificatie bij Azure Key Vault.  Met de volgende CURL-aanvraag wordt een geheim uit Key Vault gelezen met behulp van CURL en de REST-API van Key Vault.    U hebt de URL van uw sleutelkluis nodig. Deze vindt u in de sectie **Essentials** van de pagina **Overzicht** van de sleutelkluis.  U hebt ook het toegangstoken nodig dat u hebt verkregen in de vorige aanroep. 
         
     ```bash
-    curl https://<YOUR-KEY-VAULT-URL>/secrets/<secret-name>?api-version=2016-10-01 -H "Authorization: Bearer <ACCESS TOKEN>" 
+    curl 'https://<YOUR-KEY-VAULT-URL>/secrets/<secret-name>?api-version=2016-10-01' -H "Authorization: Bearer <ACCESS TOKEN>" 
     ```
     
     De reactie ziet er ongeveer als volgt uit: 
@@ -136,7 +136,7 @@ Zodra u het geheim hebt opgehaald uit de sleutelkluis, kunt u deze gebruiken om 
 
 Wanneer u de resources wilt opschonen, gaat u naar de [Azure-portal](https://portal.azure.com), selecteert u **Resourcegroepen**, zoekt en selecteert u de resourcegroep die in deze zelfstudie is gemaakt (zoals `mi-test`), en gebruikt u vervolgens de opdracht **Resourcegroep verwijderen**.
 
-U kunt dit ook doen via [PowerShell of CLI](../../azure-resource-manager/management/delete-resource-group.md).
+U kunt dit ook doen via [PowerShell of CLI](../../azure-resource-manager/management/delete-resource-group.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

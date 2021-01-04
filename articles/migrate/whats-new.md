@@ -1,22 +1,25 @@
 ---
 title: Nieuwe functies in Azure Migrate
 description: Meer informatie over nieuwe en recente updates in de Azure Migrate-service.
-author: bsiva
-ms.author: bsiva
-ms.manager: abhemraj
 ms.topic: overview
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: e39b8f7ee7b76a1955e02a7140524f812be086b5
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 7ff9d9c6624016d4b1ea94072d52de1c42d73913
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752444"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400468"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
 [Azure Migrate](migrate-services-overview.md) helpt u bij het detecteren, evalueren en migreren van on-premises servers, apps en gegevens naar de Microsoft Azure-cloud. In dit artikel vindt u een overzicht van nieuwe releases en functies in Azure Migrate.
+## <a name="update-december-2020"></a>Update (december 2020)
+- In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.
+- Migratie van VMware-VM's naar virtuele Azure-machines met schijven die zijn versleuteld met behulp van versleuteling aan de serverzijde (SSE) met door de klant beheerde sleutels (CMK), met behulp van Azure Migrate-servermigratie (replicatie zonder agent), is nu beschikbaar in de Azure-portal.
 
 ## <a name="update-september-2020"></a>Update (september 2020)
 - Servers migreren naar Beschikbaarheidszones wordt nu ondersteund.
@@ -25,7 +28,7 @@ ms.locfileid: "96752444"
 - Afhankelijkheidsanalyse (zonder agent) kan nu gelijktijdig worden uitgevoerd op 1000 VM's.
 - Afhankelijkheidsanalyse (zonder agent) kan nu worden ingeschakeld of uitgeschakeld op schaal met behulp van PowerShell-scripts. [Meer informatie.](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale)
 - Visualiseer netwerkverbindingen in Power BI met behulp van de gegevens die worden verzameld met behulp van afhankelijkheidsanalyse (zonder agent) [meer informatie.](https://github.com/Azure/azure-docs-powershell-samples/tree/master/azure-migrate/dependencies-at-scale)
-- Migratie van virtuele VMware-machines met een grootte van maximaal 32 TB voor de gegevensschijf wordt nu ondersteund met behulp van de Azure Migrate: agentloze VMware-migratiemethode voor servermigratie. 
+- Migratie van virtuele VMware-machines met een grootte van maximaal 32 TB voor de gegevensschijf wordt nu ondersteund met behulp van de Azure Migrate: agentloze VMware-migratiemethode voor servermigratie.
 
 ## <a name="update-august-2020"></a>Update (augustus 2020)
 

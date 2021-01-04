@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 774c17af88e45e25cf1e8edc0df60ab55fe53e0e
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: dce2cd0d77ff0a98d4d68e1c99edb472e61ce8a5
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95974324"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509458"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Zelfstudie: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
@@ -347,21 +347,23 @@ private async Task DisplayMessageAsync(string message)
 U moet uw toepassing nu registreren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Selecteer **Azure Active Directory** > **App-registraties**.
-1. Selecteer **Nieuwe registratie**. Voer een beschrijvende naam voor uw toepassing in, bijvoorbeeld *UWP-app-die-MSGraph-aanroept*. Deze wordt zichtbaar voor gebruikers van de app.
-1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account (bijvoorbeeld Skype, Xbox)** . Selecteer vervolgens **Registreren** om door te gaan.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatiemap (alle Azure AD-mappen - meerdere tenants) en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox).** 
+1. Selecteer **Registreren**.
 1. Zoek en kopieer de waarde van de **toepassings-id (client-id)** op de overzichtspagina. Ga terug naar Visual Studio, open *MainPage.xaml.cs* en vervang de waarde van `ClientId` door deze waarde.
 
 Verificatie configureren voor uw toepassing:
 
-1. Selecteer in de [Azure-portal](https://portal.azure.com), onder **Beheren**, de optie **Verificatie**.
-1. In de sectie **Omleidings-URI's** | **Voorgestelde omleidings-URI's voor openbare clients (mobiel, desktop)** raadpleegt u https://login.microsoftonline.com/common/oauth2/nativeclient.
-1. Selecteer **Opslaan**.
+1. Selecteer als u weer in de [Azure-portal](https://portal.azure.com) bent, onder **Beheren**, achtereenvolgens **Verificatie** > **Een platform toevoegen**, en selecteer vervolgens **Mobiele toepassingen en desktoptoepassingen**.
+1. Selecteer **https://login.microsoftonline.com/common/oauth2/nativeclient** in de sectie **Omleidings-URI's**.
+1. Selecteer **Configureren**.
 
 API-machtigingen voor uw toepassing configureren:
 
-1. Selecteer onder **Beheren** de optie **API-machtigingen**.
-1. Selecteer **Een machtiging toevoegen** en zorg ervoor dat u **Microsoft-API's** hebt geselecteerd.
+1. Selecteer onder **Beheren** achtereenvolgens **API-machtigingen** > **Een machtiging toevoegen**.
 1. Selecteer **Microsoft Graph**.
 1. Selecteer **Gedelegeerde machtigingen**, zoek naar *User.Read* en controleer of **User.Read** is geselecteerd.
 1. Als u wijzigingen hebt aangebracht, selecteert u **Machtigingen toevoegen** om ze op te slaan.

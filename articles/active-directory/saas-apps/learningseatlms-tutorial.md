@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: a9357f81c3b22f70af2a4a05de2de10e19acfbd9
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: edf9df1777c4ab1d204cfc8058ec22c2d4e3f663
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458646"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631700"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learning-seat-lms"></a>Zelfstudie: Azure Active Directory-integratie met Learning Seat LMS
 
@@ -49,7 +49,7 @@ Om de integratie van Learning Seat LMS in Azure AD te configureren, moet u Learn
 
 **Voer de volgende stappen uit om Learning Seat LMS toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u eenmalige aanmelding van Azure AD met Learning Seat LMS wilt configureren en testen, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding met Learning Seat LMS configureren](#configure-learning-seat-lms-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
+2. **[Eenmalige aanmelding met Learning Seat LMS configureren](#configure-learning-seat-lms-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker maken voor Learning Seat LMS](#create-learning-seat-lms-test-user)** : als u een tegenhanger van Britta Simon in Learning Seat LMS wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker maken voor Learning Seat LMS](#create-learning-seat-lms-test-user)**: als u een tegenhanger van Britta Simon in Learning Seat LMS wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -112,7 +112,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<subdomain>.learningseatlms.com`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van Learning Seat LMS](http://help.learningseatlms.com/help) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van Learning Seat LMS](https://azuremarketplace.microsoft.com/marketplace/apps/aad.learnconnect?tab=Overview) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 6. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -130,13 +130,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-learning-seat-lms-single-sign-on"></a>Eenmalige aanmelding configureren voor Learning Seat LMS
 
-Als u eenmalige aanmelding aan de zijde van **Learning Seat LMS** wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's verzenden naar het [Learning Seat LMS-ondersteuningsteam](http://help.learningseatlms.com/help). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de zijde van **Learning Seat LMS** wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's verzenden naar het [Learning Seat LMS-ondersteuningsteam](https://azuremarketplace.microsoft.com/marketplace/apps/aad.learnconnect?tab=Overview). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -185,7 +185,7 @@ In deze sectie zorgt u ervoor dat Britta Simon gebruik kan maken van eenmalige a
 
 ### <a name="create-learning-seat-lms-test-user"></a>Learning Seat LMS-testgebruiker maken
 
-In deze sectie maakt u een gebruiker met de naam Britta Simon in Learning Seat LMS. Neem contact op met het [ondersteuningsteam van Learning Seat LMS](http://help.learningseatlms.com/help) om de gebruikers toe te voegen in het Learning-Seat LMS-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie maakt u een gebruiker met de naam Britta Simon in Learning Seat LMS. Neem contact op met het [ondersteuningsteam van Learning Seat LMS](https://azuremarketplace.microsoft.com/marketplace/apps/aad.learnconnect?tab=Overview) om de gebruikers toe te voegen in het Learning-Seat LMS-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

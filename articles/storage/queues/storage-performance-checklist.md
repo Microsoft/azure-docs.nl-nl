@@ -1,21 +1,23 @@
 ---
 title: Controlelijst voor prestaties en schaalbaarheid van Queue Storage - Azure Storage
 description: Een controlelijst met bewezen procedures voor het gebruik van Queue Storage in het ontwikkelen van toepassingen met hoge prestaties.
-services: storage
 author: tamram
-ms.service: storage
-ms.topic: overview
-ms.date: 10/10/2019
+services: storage
 ms.author: tamram
+ms.date: 10/10/2019
+ms.topic: overview
+ms.service: storage
 ms.subservice: queues
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6e86950581255bd4e3a78b0b4a3f599a24a3cad0
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 4040a81d5b509ddbdd355953e28721a7c9fccfb8
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345751"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585663"
 ---
+<!-- docutune:casing "Timeout and Server Busy errors" -->
+
 # <a name="performance-and-scalability-checklist-for-queue-storage"></a>Controlelijst voor prestaties en schaalbaarheid van Queue Storage
 
 Microsoft heeft een aantal bewezen procedures ontwikkeld voor het ontwikkelen van hoogwaardige toepassingen met Queue Storage. Deze controlelijst vermeldt de belangrijkste procedures die ontwikkelaars kunnen volgen om de prestaties te optimaliseren. Neem bij het ontwerpen van uw toepassing en tijdens het gehele proces deze procedures in acht.
@@ -27,32 +29,32 @@ Azure Storage bevat schaalbaarheids- en prestatiedoelen voor capaciteit, transac
 In dit artikel worden bewezen procedures voor prestaties georganiseerd in een controlelijst die u kunt volgen tijdens het ontwikkelen van uw Queue Storage-toepassing.
 
 | Gereed | Categorie | Ontwerpoverwegingen |
-| --- | --- | --- |
-| &nbsp; |Schaalbaarheidsdoelen |[Kunt u uw toepassing zo ontwerpen dat deze niet meer dan het maximale aantal opslagaccounts gebruikt?](#maximum-number-of-storage-accounts) |
-| &nbsp; |Schaalbaarheidsdoelen |[Wilt u niet de capaciteits- en transactielimieten benaderen?](#capacity-and-transaction-targets) |
-| &nbsp; |Netwerken |[Hebben apparaten aan de clientzijde voldoende bandbreedte en lage latentie om de benodigde prestaties te verwezenlijken?](#throughput) |
-| &nbsp; |Netwerken |[Hebben apparaten aan de clientzijde een netwerkkoppeling van hoge kwaliteit?](#link-quality) |
-| &nbsp; |Netwerken |[Bevindt de clienttoepassing zich in dezelfde regio als de opslagaccount?](#location) |
-| &nbsp; |Directe clienttoegang |[Maakt u gebruik van Shared Access Signatures (SAS) en Cross-Origin Resource Sharing (CORS) om directe toegang tot Azure Storage te krijgen?](#sas-and-cors) |
-| &nbsp; |.NET-configuratie |[Gebruikt u .NET Core 2.1 of hoger voor optimale prestaties?](#use-net-core) |
-| &nbsp; |.NET-configuratie |[Hebt u uw client geconfigureerd voor het gebruik van een voldoende aantal gelijktijdige verbindingen?](#increase-default-connection-limit) |
-| &nbsp; |.NET-configuratie |[Hebt u voor .NET-toepassingen .NET geconfigureerd voor het gebruik van een voldoende aantal threads?](#increase-minimum-number-of-threads) |
-| &nbsp; |Parallelle uitvoering |[Hebt u ervoor gezorgd dat parallelle uitvoering op de juiste wijze is gebonden, zodat de functionaliteit van uw client niet wordt overbelast of de schaalbaarheidsdoelen worden genaderd?](#unbounded-parallelism) |
-| &nbsp; |Hulpprogramma's |[Gebruikt u de nieuwste versies van door Microsoft meegeleverde clientbibliotheken en hulpprogramma's?](#client-libraries-and-tools) |
-| &nbsp; |Nieuwe pogingen |[Gebruikt u een beleid voor opnieuw proberen met exponentieel uitstel voor het beperken van fouten en time-outs?](#timeout-and-server-busy-errors) |
-| &nbsp; |Nieuwe pogingen |[Voorkomt uw toepassing nieuwe pogingen voor fouten waarbij geen nieuwe pogingen mogelijk zijn?](#non-retryable-errors) |
-| &nbsp; |Configuratie |[Hebt u het Nagle-algoritme uitgeschakeld om de prestaties van kleine aanvragen te verbeteren?](#disable-nagle) |
-| &nbsp; |Berichtgrootte |[Zijn uw berichten compact om de prestaties van de wachtrij te verbeteren?](#message-size) |
-| &nbsp; |Bulksgewijs ophalen |[Haalt u meerdere berichten tegelijk op met één GET-bewerking?](#batch-retrieval) |
-| &nbsp; |Pollingfrequentie |[Voert u vaak genoeg polling uit om de waargenomen latentie van uw toepassing te verminderen?](#queue-polling-interval) |
-| &nbsp; |Bericht bijwerken |[Gebruikt u de bewerking Bericht bijwerken om de voortgang op te slaan bij de verwerking van berichten, zodat u kunt voorkomen dat u het hele bericht opnieuw moet verwerken wanneer een fout zich voordoet?](#use-update-message) |
-| &nbsp; |Architectuur |[Gebruikt u wachtrijen om uw hele toepassing schaalbaarder te maken, door workloads die lang duren buiten het kritieke pad te houden en vervolgens onafhankelijk te schalen?](#application-architecture) |
+|--|--|--|
+| &nbsp; | Schaalbaarheidsdoelen | [Kunt u uw toepassing zo ontwerpen dat deze niet meer dan het maximale aantal opslagaccounts gebruikt?](#maximum-number-of-storage-accounts) |
+| &nbsp; | Schaalbaarheidsdoelen | [Wilt u niet de capaciteits- en transactielimieten benaderen?](#capacity-and-transaction-targets) |
+| &nbsp; | Netwerken | [Hebben apparaten aan de clientzijde voldoende bandbreedte en lage latentie om de benodigde prestaties te verwezenlijken?](#throughput) |
+| &nbsp; | Netwerken | [Hebben apparaten aan de clientzijde een netwerkkoppeling van hoge kwaliteit?](#link-quality) |
+| &nbsp; | Netwerken | [Bevindt de clienttoepassing zich in dezelfde regio als de opslagaccount?](#location) |
+| &nbsp; | Directe clienttoegang | [Maakt u gebruik van Shared Access Signatures (SAS) en Cross-Origin Resource Sharing (CORS) om directe toegang tot Azure Storage te krijgen?](#sas-and-cors) |
+| &nbsp; | .NET-configuratie | [Gebruikt u .NET Core 2.1 of hoger voor optimale prestaties?](#use-net-core) |
+| &nbsp; | .NET-configuratie | [Hebt u uw client geconfigureerd voor het gebruik van een voldoende aantal gelijktijdige verbindingen?](#increase-default-connection-limit) |
+| &nbsp; | .NET-configuratie | [Hebt u voor .NET-toepassingen .NET geconfigureerd voor het gebruik van een voldoende aantal threads?](#increase-the-minimum-number-of-threads) |
+| &nbsp; | Parallelle uitvoering | [Hebt u ervoor gezorgd dat parallelle uitvoering op de juiste wijze is gebonden, zodat de functionaliteit van uw client niet wordt overbelast of de schaalbaarheidsdoelen worden genaderd?](#unbounded-parallelism) |
+| &nbsp; | Hulpprogramma's | [Gebruikt u de nieuwste versies van door Microsoft meegeleverde clientbibliotheken en hulpprogramma's?](#client-libraries-and-tools) |
+| &nbsp; | Nieuwe pogingen | [Gebruikt u een beleid voor opnieuw proberen met exponentieel uitstel voor het beperken van fouten en time-outs?](#timeout-and-server-busy-errors) |
+| &nbsp; | Nieuwe pogingen | [Voorkomt uw toepassing nieuwe pogingen voor fouten waarbij geen nieuwe pogingen mogelijk zijn?](#non-retryable-errors) |
+| &nbsp; | Configuratie | [Hebt u het algoritme van Nagle uitgeschakeld om de prestaties van kleine aanvragen te verbeteren?](#disable-nagles-algorithm) |
+| &nbsp; | Berichtgrootte | [Zijn uw berichten compact om de prestaties van de wachtrij te verbeteren?](#message-size) |
+| &nbsp; | Bulksgewijs ophalen | [Haalt u meerdere berichten tegelijk op met één GET-bewerking?](#batch-retrieval) |
+| &nbsp; | Pollingfrequentie | [Voert u vaak genoeg polling uit om de waargenomen latentie van uw toepassing te verminderen?](#queue-polling-interval) |
+| &nbsp; | Updatebericht | [Voert u een bewerking voor bericht bijwerken uit om de voortgang op te slaan bij de verwerking van berichten, zodat u kunt voorkomen dat u het hele bericht opnieuw moet verwerken wanneer een fout zich voordoet?](#perform-an-update-message-operation) |
+| &nbsp; | Architectuur | [Gebruikt u wachtrijen om uw hele toepassing schaalbaarder te maken, door workloads die lang duren buiten het kritieke pad te houden en vervolgens onafhankelijk te schalen?](#application-architecture) |
 
 ## <a name="scalability-targets"></a>Schaalbaarheidsdoelen
 
-Als uw toepassing een van de schaalbaarheidsdoelen benadert of overschrijdt, kunnen er meer latenties in of beperkingen voor transacties optreden. Wanneer Azure Storage uw toepassing beperkt, begint de service met het retourneren van de foutcodes 503 (server bezet) of 500 (time-out voor bewerking). Het vermijden van deze fouten door binnen de grenzen van de schaalbaarheidsdoelen te blijven vormt een belangrijk onderdeel van het verbeteren van de prestaties van uw toepassing.
+Als uw toepassing een van de schaalbaarheidsdoelen benadert of overschrijdt, kunnen er meer latenties in of beperkingen voor transacties optreden. Wanneer Azure Storage uw toepassing beperkt, begint de service met het retourneren van de foutcodes 503 (`Server Busy`) of 500 (`Operation Timeout`). Het vermijden van deze fouten door binnen de grenzen van de schaalbaarheidsdoelen te blijven vormt een belangrijk onderdeel van het verbeteren van de prestaties van uw toepassing.
 
-Zie [Schaalbaarheids- en prestatiedoelen voor Azure Storage](./scalability-targets.md#scale-targets-for-queue-storage) voor meer informatie over de schaalbaarheidsdoelen voor de Queue-service.
+Zie [Schaalbaarheids- en prestatiedoelen voor Azure Storage](./scalability-targets.md#scale-targets-for-queue-storage) voor meer informatie over de schaalbaarheidsdoelen voor Queue Storage.
 
 ### <a name="maximum-number-of-storage-accounts"></a>Maximumaantal opslagaccounts
 
@@ -66,7 +68,7 @@ Als uw toepassing de schaalbaarheidsdoelen voor één opslagaccount nadert, kunt
 - Bekijk de workload die ervoor zorgt dat uw toepassing het schaalbaarheidsdoel benadert of overschrijdt. Kunt u het op een andere manier ontwerpen waardoor u minder bandbreedte of capaciteit of minder transacties gebruikt?
 - Als uw toepassing een van de schaalbaarheidsdoelen moet overschrijden, maakt u meerdere opslagaccounts en partitioneert u uw toepassingsgegevens over deze meerdere opslagaccounts. Als u dit patroon gebruikt, moet u ervoor zorgen dat u uw toepassing zo ontwerpt, dat u in de toekomst meer opslagaccounts kunt toevoegen voor de taakverdeling. Opslagaccounts zelf hebben geen andere kosten dan uw gebruik in termen van opgeslagen gegevens, gemaakte transacties of overgedragen gegevens.
 - Als uw toepassing de bandbreedtedoelen nadert, kunt u de gegevens aan de clientzijde comprimeren om de bandbreedte te verminderen die nodig is om de gegevens naar Azure Storage te verzenden. Hoewel met het comprimeren van gegevens bandbreedte kan worden bespaard en de netwerkprestaties worden verbeterd, kan dit ook negatieve gevolgen voor de prestaties hebben. Evalueer de invloed op de prestaties van de extra verwerkingsvereisten voor de compressie en decompressie van gegevens aan de clientzijde. Houd er rekening mee dat het door het opslaan van gecomprimeerde gegevens lastiger wordt om problemen op te lossen, aangezien het lastiger kan zijn om de gegevens te bekijken met behulp van standaardhulpprogramma's.
-- Als uw toepassing de schaalbaarheidsdoelen nadert, moet u ervoor zorgen dat u een exponentieel uitstel gebruikt voor nieuwe pogingen. U kunt het beste voorkomen dat u de schaalbaarheidsdoelen bereikt door de aanbevelingen te implementeren die in dit artikel worden beschreven. Als u echter een exponentieel uitstel gebruikt voor nieuwe pogingen, voorkomt u dat uw toepassing snel opnieuw pogingen onderneemt, waarmee de beperkingen ernstiger kunnen worden. Zie de sectie met de titel [Time-out- en server-bezetfouten](#timeout-and-server-busy-errors) voor meer informatie.
+- Als uw toepassing de schaalbaarheidsdoelen nadert, moet u ervoor zorgen dat u een exponentieel uitstel gebruikt voor nieuwe pogingen. U kunt het beste voorkomen dat u de schaalbaarheidsdoelen bereikt door de aanbevelingen te implementeren die in dit artikel worden beschreven. Als u echter een exponentieel uitstel gebruikt voor nieuwe pogingen, voorkomt u dat uw toepassing snel opnieuw pogingen onderneemt, waarmee de beperkingen ernstiger kunnen worden. Raadpleeg de sectie [Time-out- en server-bezetfouten](#timeout-and-server-busy-errors) voor meer informatie.
 
 ## <a name="networking"></a>Netwerken
 
@@ -82,11 +84,11 @@ Voor bandbreedte is het probleem vaak de mogelijkheden van de client. Grotere Az
 
 #### <a name="link-quality"></a>Kwaliteit van de koppeling
 
-Net als bij elk netwerkgebruik moet u er rekening mee houden dat de netwerkomstandigheden die fouten en pakketverlies veroorzaken, ervoor zorgen dat de effectieve doorvoer wordt vertraagd. Het gebruik van WireShark of NetMon kan helpen bij het vaststellen van dit probleem.
+Net als bij elk netwerkgebruik moet u er rekening mee houden dat de netwerkomstandigheden die fouten en pakketverlies veroorzaken, ervoor zorgen dat de effectieve doorvoer wordt vertraagd. Het gebruik van WireShark of Network Monitor kan helpen bij het vaststellen van dit probleem.
 
 ### <a name="location"></a>Locatie
 
-Wanneer u de client dicht bij de server plaatst, levert dit in een gedistribueerde omgeving de beste prestaties op. Als u toegang wilt tot Azure Storage met de laagste latentie, bevindt de beste locatie voor uw client zich in dezelfde Azure-regio. Als u bijvoorbeeld een Azure-web-app hebt die gebruikmaakt van Azure Storage, plaatst u deze beide binnen één regio, zoals US - west of Azië - zuidoost. Wanneer u resources bij elkaar plaatst, vermindert u de latentie en de kosten, omdat het bandbreedtegebruik binnen één regio gratis is.
+Wanneer u de client dicht bij de server plaatst, levert dit in een gedistribueerde omgeving de beste prestaties op. Als u toegang wilt tot Azure Storage met de laagste latentie, bevindt de beste locatie voor uw client zich in dezelfde Azure-regio. Als u bijvoorbeeld een Azure-web-app hebt die gebruikmaakt van Azure Storage, plaatst u deze beide binnen één regio, zoals VS - west of Azië - zuidoost. Wanneer u resources bij elkaar plaatst, vermindert u de latentie en de kosten, omdat het bandbreedtegebruik binnen één regio gratis is.
 
 Als clienttoepassingen toegang krijgen tot Azure Storage, maar niet worden gehost in Azure, zoals apps voor mobiele apparaten of on-premises bedrijfsservices, kan de latentie worden verminderd door het opslagaccount in een regio in de buurt van die clients te plaatsen. Als uw clients breed worden gedistribueerd (bijvoorbeeld sommige in Noord-Amerika en sommige in Europa), kunt u een opslagaccount per regio gebruiken. Deze aanpak is eenvoudiger te implementeren als de gegevens die de app opslaat specifiek zijn voor afzonderlijke gebruikers en als er geen replicatie van gegevens nodig is tussen opslagaccounts.
 
@@ -129,7 +131,7 @@ Raadpleeg voor andere programmeertalen de documentatie van die taal om te bepale
 
 Zie voor meer informatie het blogbericht [Webservices: Gelijktijdige verbindingen](/archive/blogs/darrenj/web-services-concurrent-connections).
 
-### <a name="increase-minimum-number-of-threads"></a>Minimumaantal threads verhogen
+### <a name="increase-the-minimum-number-of-threads"></a>Minimum aantal threads verhogen
 
 Als u synchrone aanroepen gebruikt in combinatie met asynchrone taken, kunt u misschien beter het aantal threads in de threadpool verhogen:
 
@@ -137,7 +139,7 @@ Als u synchrone aanroepen gebruikt in combinatie met asynchrone taken, kunt u mi
 ThreadPool.SetMinThreads(100,100); //(Determine the right number for your application)  
 ```
 
-Zie de methode [ThreadPool.SetMinThreads](/dotnet/api/system.threading.threadpool.setminthreads) voor meer informatie.
+Zie de methode [`ThreadPool.SetMinThreads`](/dotnet/api/system.threading.threadpool.setminthreads) voor meer informatie.
 
 ## <a name="unbounded-parallelism"></a>Niet-gebonden parallelle uitvoering
 
@@ -153,19 +155,19 @@ Azure Storage retourneert een fout wanneer de service een aanvraag niet kan verw
 
 ### <a name="timeout-and-server-busy-errors"></a>Time-out- en server-bezetfouten
 
-Azure Storage kan uw toepassing beperken als deze de schaalbaarheidslimieten nadert. In sommige gevallen kan Azure Storage mogelijk geen aanvragen verwerken vanwege een tijdelijke omstandigheid. In beide gevallen kan de service de fout 503 (server bezet) of 500 (time-out) retourneren. Deze fouten kunnen zich ook voordoen als de service gegevenspartities opnieuw moet verdelen voor een hogere doorvoer. De clienttoepassing moet meestal de bewerking opnieuw uitvoeren die een van deze fouten heeft veroorzaakt. Als Azure Storage echter uw toepassing beperkt omdat deze de schaalbaarheidsdoelen overschrijdt of als de service om een andere reden zelfs niet aan de aanvraag kan voldoen, kunnen agressieve nieuwe pogingen het probleem erger maken. Het gebruik van een beleid voor opnieuw proberen met exponentieel uitstel wordt aanbevolen. De clientbibliotheken zijn standaard ingesteld op dit gedrag. Uw toepassing kan bijvoorbeeld na 2 seconden een nieuwe poging doen, daarna na 4 seconden, daarna na 10 seconden, daarna na 30 seconden, en vervolgens volledig opgeven. Op deze manier vermindert uw toepassing de belasting van de service aanzienlijk, in plaats van verergerend gedrag te vertonen dat kan leiden tot aanvraagbeperking.
+Azure Storage kan uw toepassing beperken als deze de schaalbaarheidslimieten nadert. In sommige gevallen kan Azure Storage mogelijk geen aanvragen verwerken vanwege een tijdelijke omstandigheid. In beide gevallen kan de service een fout 503 (`Server Busy`) of 500 (`Timeout`) retourneren. Deze fouten kunnen zich ook voordoen als de service gegevenspartities opnieuw moet verdelen voor een hogere doorvoer. De clienttoepassing moet meestal de bewerking opnieuw uitvoeren die een van deze fouten heeft veroorzaakt. Als Azure Storage echter uw toepassing beperkt omdat deze de schaalbaarheidsdoelen overschrijdt of als de service om een andere reden zelfs niet aan de aanvraag kan voldoen, kunnen agressieve nieuwe pogingen het probleem erger maken. Het gebruik van een beleid voor opnieuw proberen met exponentieel uitstel wordt aanbevolen. De clientbibliotheken zijn standaard ingesteld op dit gedrag. Uw toepassing kan bijvoorbeeld na 2 seconden een nieuwe poging doen, daarna na 4 seconden, daarna na 10 seconden, daarna na 30 seconden, en vervolgens volledig opgeven. Op deze manier vermindert uw toepassing de belasting van de service aanzienlijk, in plaats van verergerend gedrag te vertonen dat kan leiden tot aanvraagbeperking.
 
 Bij connectiviteitsfouten kunnen onmiddellijk nieuwe pogingen worden gedaan, omdat ze niet het gevolg zijn van een beperking en naar verwachting tijdelijk zijn.
 
 ### <a name="non-retryable-errors"></a>Fouten waarbij geen nieuwe pogingen mogelijk zijn
 
-Bij de clientbibliotheken is bij het afhandelen van nieuwe pogingen bekend bij welke fouten opnieuw kan worden geprobeerd en welke niet. Als u echter de Azure Storage REST API rechtstreeks aanroept, zijn er enkele fouten waarbij u geen nieuwe pogingen moet ondernemen. Bijvoorbeeld, de fout 400 (ongeldige aanvraag) geeft aan dat de clienttoepassing een aanvraag heeft verzonden die niet kan worden verwerkt omdat deze niet in de verwachte vorm is opgemaakt. Als deze aanvraag opnieuw wordt verzonden, resulteert dit steeds in hetzelfde antwoord, zodat het zinloos is om een nieuwe poging te ondernemen. Als u de REST API Azure Storage rechtstreeks aanroept, moet u rekening houden met mogelijke fouten en of er nieuwe pogingen moeten worden gedaan.
+Bij de clientbibliotheken is bij het afhandelen van nieuwe pogingen bekend bij welke fouten opnieuw kan worden geprobeerd en welke niet. Als u echter de Azure Storage REST API rechtstreeks aanroept, zijn er enkele fouten waarbij u geen nieuwe pogingen moet ondernemen. De fout 400 (`Bad Request`) geeft bijvoorbeeld aan dat de clienttoepassing een aanvraag heeft verzonden die niet kan worden verwerkt omdat deze niet in de verwachte vorm is opgemaakt. Als deze aanvraag opnieuw wordt verzonden, resulteert dit steeds in hetzelfde antwoord, zodat het zinloos is om een nieuwe poging te ondernemen. Als u de REST API Azure Storage rechtstreeks aanroept, moet u rekening houden met mogelijke fouten en of er nieuwe pogingen moeten worden gedaan.
 
 Zie [Status en foutcodes](/rest/api/storageservices/status-and-error-codes2) voor meer informatie over Azure Storage-foutcodes.
 
-## <a name="disable-nagle"></a>Nagle uitschakelen
+## <a name="disable-nagles-algorithm"></a>Algoritme van Nagle uitschakelen
 
-Het Nagle-algoritme is breed geïmplementeerd in TCP/IP-netwerken om de netwerkprestaties te verbeteren. Het is echter niet optimaal in alle omstandigheden (zoals in uiterst interactieve omgevingen). Het Nagle-algoritme heeft een negatieve invloed op de prestaties van aanvragen voor de Azure Table service, en moet zo mogelijk worden uitgeschakeld.
+Het Nagle-algoritme is breed geïmplementeerd in TCP/IP-netwerken om de netwerkprestaties te verbeteren. Het is echter niet optimaal in alle omstandigheden (zoals in uiterst interactieve omgevingen). Het algoritme van Nagle heeft een negatieve invloed op de prestaties van aanvragen voor Azure Table Storage, en moet zo mogelijk worden uitgeschakeld.
 
 ## <a name="message-size"></a>Berichtgrootte
 
@@ -181,9 +183,9 @@ Bij de meeste toepassingen wordt polling naar berichten in een wachtrij uitgevoe
 
 Zie [Prijzen voor Azure Storage](https://azure.microsoft.com/pricing/details/storage/) voor de actuele prijsgegevens.
 
-## <a name="use-update-message"></a>Bericht bijwerken gebruiken
+## <a name="perform-an-update-message-operation"></a>Een bewerking voor bericht bijwerken uitvoeren
 
-U kunt de bewerking **Bericht bijwerken** gebruiken om de onzichtbaarheidstime-out te verhogen of om de statusgegevens van een bericht bij te werken. Soms is het efficiënter om **Bericht bijwerken** te gebruiken dan een workflow te hebben die bij elke voltooide stap van de taak een taak van de ene aan de andere wachtrij doorgeeft. Uw toepassing kan de taakstatus bij het bericht opslaan en vervolgens doorwerken, in plaats van steeds het bericht voor de volgende stap opnieuw in de wachtrij te plaatsen wanneer er weer een stap is voltooid. Vergeet niet dat elke bewerking voor **Bericht bijwerken** meetelt voor het schaalbaarheidsdoel.
+U kunt een bewerking voor bericht bijwerken gebruiken om de onzichtbaarheidstime-out te verhogen of om de statusgegevens van een bericht bij te werken. Soms is deze benadering efficiënter dan een werkstroom die een taak van de ene aan de andere wachtrij doorgeeft bij elke voltooide stap van de taak. Uw toepassing kan de taakstatus bij het bericht opslaan en vervolgens doorwerken, in plaats van steeds het bericht voor de volgende stap opnieuw in de wachtrij te plaatsen wanneer er weer een stap is voltooid. Vergeet niet dat elke bewerking voor bericht bijwerken meetelt voor het schaalbaarheidsdoel.
 
 ## <a name="application-architecture"></a>Toepassingsarchitectuur
 

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 05/29/2018
 ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c8a4b6998d1471a79dd789ed6528e22b07f2015c
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 95a4d00a27a0da363561f469b4c5e9e2ad16463c
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540972"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510495"
 ---
 # <a name="configure-your-app-service-environment-with-forced-tunneling"></a>De Azure App Service-omgeving configureren met geforceerde tunnels
 
@@ -95,15 +95,15 @@ Voer de volgende stappen uit als u al het uitgaande verkeer vanuit uw ASE, behal
 
 3. Haal de adressen op die worden gebruikt voor al het uitgaande verkeer van uw App Service Environment naar het internet. Als u het verkeer on-premises omleidt, zijn deze adressen uw NAT's of gateway-IP-adressen. Als u het uitgaande verkeer van de App Service-omgeving wilt routeren via een NVA, is het uitgaande adres het openbare IP-adres van de NVA.
 
-4. _De uitgaande adressen in een bestaand App Service Environment instellen:_ Ga naar resources.azure.com en Subscription/\<subscription id>/resourceGroups/\<ase resource group>/providers/Microsoft.Web/hostingEnvironments/\<ase name>. Vervolgens ziet u de JSON die de App Service-omgeving beschrijft. Controleer of bovenaan **lezen/schrijven** staat. Selecteer **Bewerken** . Schuif naar beneden. Wijzig de waarde **userWhitelistedIpRanges** van **null** in een waarde die lijkt op het volgende. Gebruik de adressen die u wilt instellen als het bereik met uitgaande adressen. 
+4. _De uitgaande adressen in een bestaand App Service Environment instellen:_ Ga naar resources.azure.com en Subscription/\<subscription id>/resourceGroups/\<ase resource group>/providers/Microsoft.Web/hostingEnvironments/\<ase name>. Vervolgens ziet u de JSON die de App Service-omgeving beschrijft. Controleer of bovenaan **lezen/schrijven** staat. Selecteer **Bewerken**. Schuif naar beneden. Wijzig de waarde **userWhitelistedIpRanges** van **null** in een waarde die lijkt op het volgende. Gebruik de adressen die u wilt instellen als het bereik met uitgaande adressen. 
 
     ```json
     "userWhitelistedIpRanges": ["11.22.33.44/32", "55.66.77.0/24"]
     ```
 
-   Selecteer bovenaan **PUT** . Met deze optie wordt een schaalbewerking in de App Service-omgeving geactiveerd en de firewall aangepast.
+   Selecteer bovenaan **PUT**. Met deze optie wordt een schaalbewerking in de App Service-omgeving geactiveerd en de firewall aangepast.
 
-_Uw ASE maken met de uitgaande adressen_ : Volg de aanwijzingen in [Create an App Service Environment with a template][template] (Een App Service Environment maken met een sjabloon) en haal de geschikte sjabloon op.  Bewerk de sectie met bronnen in het bestand azuredeploy.json, maar niet in het blok 'properties' en neem voor **userWhitelistedIpRanges** een regel op die uw waarden bevat.
+_Uw ASE maken met de uitgaande adressen_: Volg de aanwijzingen in [Create an App Service Environment with a template][template] (Een App Service Environment maken met een sjabloon) en haal de geschikte sjabloon op.  Bewerk de sectie met bronnen in het bestand azuredeploy.json, maar niet in het blok 'properties' en neem voor **userWhitelistedIpRanges** een regel op die uw waarden bevat.
 
 ```json
 "resources": [
@@ -131,7 +131,7 @@ _Uw ASE maken met de uitgaande adressen_ : Volg de aanwijzingen in [Create an Ap
 
 Door deze wijzigingen wordt verkeer vanuit de ASE rechtstreeks naar Azure Storage gestuurd en is toegang tot de Azure SQL toegestaan vanaf andere adressen dan het VIP van de ASE.
 
-   ![Geforceerde tunnel met goedgekeurde SQL][3]
+   ![Geforceerde tunnel met goedgekeurde SQL-acceptatielijst][3]
 
 ## <a name="preventing-issues"></a>Problemen voorkomen ##
 

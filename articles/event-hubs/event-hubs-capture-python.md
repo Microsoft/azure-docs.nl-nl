@@ -3,14 +3,14 @@ title: Vastgelegde gegevens van Azure Event Hubs lezen vanuit een Python-app (ni
 description: In dit artikel leest u hoe u Python-code kunt schrijven om gegevens vast te leggen die naar een Event Hub worden verzonden en de vastgelegde gebeurtenisgegevens van een Azure-opslagaccount te lezen.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: cb7165565516136a8425c4c77748c2e13715edb7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f513b35e300141f16ee4c4880bc54aaf37945d65
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88927864"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109909"
 ---
-# <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Gegevens van Event Hubs vastleggen in Azure Storage en deze lezen met behulp van Python (azure-eventhub versie 5)
+# <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub"></a>Gegevens van Event Hubs vastleggen in Azure Storage en deze lezen met behulp van Python (azure-eventhub)
 
 U kunt een Event Hub zo configureren dat de gegevens die naar de Event Hub worden verzonden, worden vastgelegd in een Azure-opslagaccount of Azure Data Lake Storage Gen 1 of Gen 2. In dit artikel leest u hoe u Python-code kunt schrijven om gebeurtenissen te verzenden naar een Event Hub en de vastgelegde gegevens te lezen vanuit **Azure Blob Storage**. Zie [Overzicht van de functie Capture van Event Hubs](event-hubs-capture-overview.md) voor meer informatie over deze functie.
 

@@ -11,16 +11,18 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: 5b593add9c9d7be446798eecdd03b396c3fe513a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 486add54a6d41493c54bd7b0b0339804f6c31847
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174727"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399992"
 ---
 # <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Wat is geautomatiseerde gebruikersinrichting voor SaaS-toepassing in Azure AD?
 
 In Azure Active Directory (Azure AD) verwijst de term **app-inrichting** naar het automatisch maken van gebruikersidentiteiten en -rollen in de cloud-toepassingen ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) waartoe gebruikers toegang nodig hebben. Naast het maken van gebruikersidentiteiten omvat automatische inrichting het onderhoud en de verwijdering van gebruikersidentiteiten zoals gewijzigde status of rollen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen als [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Sales Force](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md) en meer.
+
+Raadpleeg [Inrichten met SCIM Tech Community](https://aka.ms/scimoverview) voor meer informatie over SCIM en om deel te nemen aan het Tech Community-gesprek.
 
 ![Overzichtsdiagram van inrichting](./media/user-provisioning/provisioning-overview.png)
 

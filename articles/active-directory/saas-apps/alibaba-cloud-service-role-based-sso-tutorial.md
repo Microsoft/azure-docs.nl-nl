@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 256685e035659cd0fac7fa5577d99f43f4761ea2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ef057b64fa04387d0ebec5a6e5c38f0e06c55a7d
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180576"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368967"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Zelfstudie: Eenmalige aanmelding via Azure Active Directory integreren met Alibaba Cloud Service (eenmalige aanmelding op basis van rollen)
 
@@ -72,7 +72,7 @@ Voer de volgende stappen uit om eenmalige aanmelding via Azure AD bij Alibaba Cl
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Alibaba Cloud Service (eenmalige aanmelding op basis van rollen)** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de Azure-portal op de integratiepagina van de toepassing **Alibaba Cloud Service (op rollen gebaseerde eenmalige aanmelding)** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -94,7 +94,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!Note]
     > Als de waarden voor **Id** en **Antwoord-URL** niet automatisch worden ingevuld, kunt u de waarden zelf invullen afhankelijk van uw behoeften.
 
-1. Alibaba Cloud Service (eenmalige aanmelding op basis van rollen) vereist dat rollen worden geconfigureerd in Azure AD. De rolclaim is vooraf geconfigureerd, zodat u deze niet hoeft te configureren, maar u moet deze wel in Azure AD maken. Lees daarvoor dit [artikel](../develop/active-directory-enterprise-app-role-management.md).
+1. Alibaba Cloud Service (eenmalige aanmelding op basis van rollen) vereist dat rollen worden geconfigureerd in Azure AD. De rolclaim is vooraf geconfigureerd, zodat u deze niet hoeft te configureren, maar u moet deze wel in Azure AD maken. Lees daarvoor dit [artikel](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui).
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 

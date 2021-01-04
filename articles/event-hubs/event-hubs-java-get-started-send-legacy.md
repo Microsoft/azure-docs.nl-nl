@@ -4,12 +4,12 @@ description: Dit artikel bevat een overzicht van het maken van een Java-toepassi
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e77ff762de11a9c8a723b162993db11efe715b66
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e86ca76f3eb661e1407a02b58e60b62b391f5702
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591545"
+ms.locfileid: "97607980"
 ---
 # <a name="use-java-to-send-events-to-or-receive-events-from-azure-event-hubs-azure-eventhubs"></a>Java gebruiken om gebeurtenissen te verzenden of gebeurtenissen te ontvangen uit Azure Event Hubs (azure-eventhubs)
 
@@ -17,7 +17,6 @@ In deze quickstart leert u hoe u gebeurtenissen kunt verzenden naar en ontvangen
 
 > [!WARNING]
 > In deze quickstart wordt gebruikgemaakt van de oude pakketten **azure-eventhubs** en **azure-eventhubs-eph**. Zie [Send and receive events using azure-messaging-eventhubs](event-hubs-java-get-started-send.md) (Gebeurtenissen verzenden en ontvangen met azure-messaging-eventhubs) voor een quickstart met de nieuwste **azure-messaging-eventhubs**. Als u uw toepassing van het oude naar een nieuw pakket wilt verplaatsen, raadpleegt u de [Guide to migrate from azure-eventhubs to azure-messaging-eventhubs](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md) (Handleiding voor het migreren van azure-eventhubs naar azure-messaging-eventhubs). 
-
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -75,7 +74,6 @@ public class SimpleSend {
     public static void main(String[] args)
             throws EventHubException, ExecutionException, InterruptedException, IOException {
 
-
     }
  }
 ```
@@ -109,7 +107,6 @@ Maak een enkele gebeurtenis door een tekenreeks te transformeren naar de UTF-8 b
         // Each EventHubClient instance spins up a new TCP/TLS connection, which is expensive.
         // It is always a best practice to reuse these instances. The following sample shows this.
         final EventHubClient ehClient = EventHubClient.createSync(connStr.toString(), executorService);
-
 
         try {
             for (int i = 0; i < 10; i++) {
@@ -418,7 +415,6 @@ Binnen uw implementatie kunt u het standaard mechanisme voor controlepunten over
 U kunt elke gegevensopslag gebruiken die beschikbaar is in uw omgeving.
 
 De klasse com.microsoft.azure.eventprocessorhost.EventProcessorHost biedt twee constructors waarmee u het controlepuntbeheer voor uw EventProcessorHost kunt overschrijven.
-
 
 ## <a name="next-steps"></a>Volgende stappen
 Lees de volgende artikelen: 

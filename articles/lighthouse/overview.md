@@ -1,14 +1,14 @@
 ---
 title: Wat is Azure Lighthouse?
 description: Met Azure Lighthouse kunnen serviceproviders beheerde services leveren voor hun klanten, met een grotere mate van automatisering en efficiëntie op schaal.
-ms.date: 11/12/2020
+ms.date: 12/10/2020
 ms.topic: overview
-ms.openlocfilehash: a8fd796218804a79c82a5723c0e5851af359cdea
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bef6107878f36e02a896b3c38b8913ebb50169a7
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95528819"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97356358"
 ---
 # <a name="what-is-azure-lighthouse"></a>Wat is Azure Lighthouse?
 
@@ -45,3 +45,4 @@ Azure Lighthouse biedt meerdere manieren om betrokkenheid en -beheer te stroomli
 - Meer informatie over [gedelegeerd Azure-resourcebeheer](concepts/azure-delegated-resource-management.md).
 - Verken [Beheerervaring in meerdere tenants](concepts/cross-tenant-management-experience.md).
 - Zie [Azure Lighthouse gebruiken in een bedrijf](concepts/enterprise.md).
+- Bekijk de details over [beschikbaarheid](https://azure.microsoft.com/global-infrastructure/services/?products=azure-lighthouse&regions=all) en [FedRAMP- en DoD CC SRG-controlebereik](../azure-government/compliance/azure-services-in-fedramp-auditscope.md) voor Azure Lighthouse.

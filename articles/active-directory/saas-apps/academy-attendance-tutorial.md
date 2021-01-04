@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/21/2019
+ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 2fd7425169ddc3ebed11ddaf513f0182dd397703
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 06b538f0f218beab2549b027a5da9dcc594969a4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313541"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586853"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-academy-attendance"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Academy Attendance
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Academy Attendance kunt integreren met Azure Ac
 * Bepalen in Azure AD wie toegang heeft tot Academy Attendance.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Academy Attendance.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,7 +39,6 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Academy Attendance biedt ondersteuning voor door **SP** geïnitieerde eenmalige aanmelding
 
-
 * Academy Attendance biedt ondersteuning voor het **Just In Time** inrichten van gebruikers
 
 
@@ -49,7 +46,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Om de integratie van Academy Attendance met Azure AD te configureren, moet u Academy Attendance vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
@@ -57,11 +54,11 @@ Om de integratie van Academy Attendance met Azure AD te configureren, moet u Aca
 1. Selecteer **Academy Attendance** in de resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-academy-attendance"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Academy Attendance
+## <a name="configure-and-test-azure-ad-sso-for-academy-attendance"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Academy Attendance
 
 Configureer en test eenmalige aanmelding van Azure AD met Academy Attendance met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Academy Attendance.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Academy Attendance te configureren en te testen:
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Academy Attendance te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -74,7 +71,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Academy Att
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Academy Attendance** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de Azure-portal op de integratiepagina van de toepassing **Academy Attendance** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -82,9 +79,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.aattendance.com/sso/saml2/login?idp=<IDP_NAME>`
+    1. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.aattendance.com/sso/saml2/login?idp=<IDP_NAME>`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.aattendance.com/sso/saml2/metadata?idp=<IDP_NAME>`
+    1. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.aattendance.com/sso/saml2/metadata?idp=<IDP_NAME>`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van Academy Attendance](mailto:support@yournextconcepts.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -93,14 +90,14 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![image](common/edit-attribute.png)
 
-    > [!NOTE]
-    > Academy Attendance ondersteunt twee rollen voor gebruikers: **Docent** en **Student**. Stel deze rollen in Azure AD in zodat gebruikers de juiste rollen kunnen toegewezen kunnen krijgen. Raadpleeg [dit](../develop/active-directory-enterprise-app-role-management.md) doc-bestand waarin wordt uitgelegd hoe u aangepaste rollen maakt in Azure AD.
-
 1. Bovendien verwacht de toepassing Academy Attendance nog enkele kenmerken die als SAML-antwoord moeten worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
 
     | Naam |  Bronkenmerk|
     | --------- | --------------- |
     | role      | user.assignedroles |
+
+    > [!NOTE]
+    > Academy Attendance ondersteunt twee rollen voor gebruikers: **Docent** en **Student**. Stel deze rollen in Azure AD in zodat gebruikers de juiste rollen kunnen toegewezen kunnen krijgen. Raadpleeg [dit](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) doc-bestand waarin wordt uitgelegd hoe u aangepaste rollen maakt in Azure AD.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -129,15 +126,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Academy Attendance** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-academy-attendance-sso"></a>Eenmalige aanmelding bij Academy Attendance configureren
@@ -150,16 +141,15 @@ In dit gedeelte maakt u in Academy Attendance een gebruiker met de naam Britta S
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Academy Attendance klikt, wordt u als het goed is automatisch aangemeld bij het exemplaar van Academy Attendance waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Academy Attendance, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van Academy Attendance en initieer de aanmeldingsstroom daar.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Academy Attendance klikt, wordt u omgeleid naar de aanmeldings-URL van Academy Attendance. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Academy Attendance met Azure AD proberen](https://aad.portal.azure.com/)
+Zodra u Academy Attendance hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

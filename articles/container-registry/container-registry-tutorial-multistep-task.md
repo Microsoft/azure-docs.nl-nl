@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Azure Container Registry-taak 
 ms.topic: tutorial
 ms.date: 11/24/2020
 ms.custom: seodec18, mvc, devx-track-azurecli
-ms.openlocfilehash: fac409e9acc14048068c0f46ffb2b64cc69582ef
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: c8d1179f1c31642b350ab8757a8d4abf71583bfc
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029984"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562885"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Zelfstudie: Een containerwerkstroom met meerdere stappen in de cloud uitvoeren bij het doorvoeren van broncode
 
@@ -83,7 +83,7 @@ az acr task create \
     --git-access-token $GIT_PAT
 ```
 
-Deze taak geeft aan dat elke keer dat code wordt doorgevoerd naar de *master*-vertakking in de opslagplaats zoals is opgegeven door `--context`, ACR-taken dan de taak met meerdere stappen van de code in die vertakking uitvoert. De stappen worden gedefinieerd in het YAML-bestand dat is opgegeven door `--file` vanuit de hoofdmap van de opslagplaats. 
+Deze taak geeft aan dat elke keer dat code wordt doorgevoerd naar de *hoofd* vertakking in de opslagplaats zoals is opgegeven door `--context`, ACR-taken dan de taak met meerdere stappen van de code in die vertakking uitvoert. De stappen worden gedefinieerd in het YAML-bestand dat is opgegeven door `--file` vanuit de hoofdmap van de opslagplaats. 
 
 De uitvoer van een geslaagde [az acr task create][az-acr-task-create]-opdracht is vergelijkbaar met het volgende:
 
@@ -126,7 +126,7 @@ De uitvoer van een geslaagde [az acr task create][az-acr-task-create]-opdracht i
       {
         "name": "defaultSourceTriggerName",
         "sourceRepository": {
-          "branch": "master",
+          "branch": "main",
           "repositoryUrl": "https://github.com/gituser/acr-build-helloworld-node.git",
           "sourceControlAuthProperties": null,
           "sourceControlType": "Github"
@@ -220,7 +220,7 @@ Voer vervolgens de volgende opdrachten uit om een nieuw bestand te maken, door t
 echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Testing ACR Tasks"
-git push origin master
+git push origin main
 ```
 
 U wordt mogelijk gevraagd om uw GitHub-referenties op te geven wanneer u de opdracht `git push` uitvoert. Geef uw GitHub-gebruikersnaam op en voer het persoonlijke toegangstoken (PAT) in dat u eerder hebt gemaakt voor het wachtwoord.

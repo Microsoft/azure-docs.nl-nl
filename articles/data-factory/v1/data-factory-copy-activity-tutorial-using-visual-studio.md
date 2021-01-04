@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 013f82c33b149d754e059bbc4c9933f917a2555a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5a4a6e896d0cee22424274d845ccc24463833cc
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85248622"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97608762"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-visual-studio"></a>Zelfstudie: Een pijplijn maken met de kopieeractiviteit in Visual Studio
 > [!div class="op_single_selector"]
@@ -56,33 +56,41 @@ Een pijplijn kan meer dan één activiteit hebben. Ook kunt u twee activiteiten 
    * Download de nieuwste Azure Data Factory-invoegtoepassing voor Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) of [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). U kunt de invoegtoepassing ook bijwerken door de volgende stappen uit te voeren: Klik in het menu op **Extra** -> **Extensies en updates** -> **Online** -> **Visual Studio-galerie** -> **Microsoft Azure Data Factory-hulpprogramma's voor Visual Studio** -> **Bijwerken**.
 
 ## <a name="steps"></a>Stappen
+
 Hier volgen de stappen die u uitvoert als onderdeel van deze zelfstudie:
 
 1. **Gekoppelde services** maken in de gegevensfactory. In deze stap maakt u twee gekoppelde services van de typen: Azure Storage en Azure SQL Database. 
-    
+
     De AzureStorageLinkedService koppelt uw Azure-opslagaccount aan de gegevensfactory. U hebt een container gemaakt en gegevens naar dit opslagaccount geüpload als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).   
 
     Met AzureSqlLinkedService wordt Azure SQL Database aan de data factory gekoppeld. De gegevens die worden gekopieerd uit de blobopslag worden opgeslagen in deze database. Als onderdeel van de [vereisten](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) hebt u een SQL-tabel in deze database gemaakt.     
+
 2. Maak **invoer- en uitvoergegevenssets** in de gegevensfactory.  
-    
+
     De gekoppelde Azure Storage-service geeft de verbindingsreeks op die de Data Factory-service tijdens runtime gebruikt om verbinding te maken met uw Azure-opslagaccount. En de blobgegevensset voor invoer geeft de container en de map met de invoergegevens op.  
 
     Op dezelfde manier geeft de gekoppelde Azure SQL Database-service de verbindingsreeks op die de Data Factory-service in runtime gebruikt om verbinding te maken met Azure SQL Database. En de uitvoergegevensset van de SQL-tabel geeft de tabel in de database op waarnaar de gegevens uit de blobopslag worden gekopieerd.
+
 3. Maak een **pijplijn** in de gegevensfactory. In deze stap maakt u een pijplijn met een kopieeractiviteit.   
-    
-    Met de kopieeractiviteit worden gegevens uit een blob in de Azure-blobopslag naar een tabel in de Azure SQL Database gekopieerd. U kunt een kopieeractiviteit gebruiken in een pijplijn om gegevens uit ondersteunde bronnen te kopiëren naar een ondersteunde bestemming. Zie het artikel [Activiteiten voor gegevensverplaatsing](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor een lijst met ondersteunde gegevensarchieven. 
+
+    Met de kopieeractiviteit worden gegevens uit een blob in de Azure-blobopslag naar een tabel in de Azure SQL Database gekopieerd. U kunt een kopieeractiviteit gebruiken in een pijplijn om gegevens uit ondersteunde bronnen te kopiëren naar een ondersteunde bestemming. Zie het artikel [Activiteiten voor gegevensverplaatsing](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor een lijst met ondersteunde gegevensarchieven.
+
 4. Maak een Azure-**gegevensfactory** tijdens het implementeren van de Data Factory-entiteiten (gekoppelde services, gegevenssets/tabellen en pijplijnen). 
 
 ## <a name="create-visual-studio-project"></a>Een Visual Studio-project maken
+
 1. Open **Visual Studio 2015**. Klik op **File**, houd de muisaanwijzer op **New** en klik op **Project**. Het dialoogvenster **New Project** wordt weergegeven.  
+
 2. Selecteer in het dialoogvenster **New Project** de sjabloon **DataFactory** en klik op **Empty Data Factory Project**.  
-   
+
     ![Het dialoogvenster New Project](./media/data-factory-copy-activity-tutorial-using-visual-studio/new-project-dialog.png)
+
 3. Geef de naam van het project, de locatie van de oplossing en de naam van de oplossing op en klik vervolgens op **OK**.
-   
+
     ![Solution Explorer](./media/data-factory-copy-activity-tutorial-using-visual-studio/solution-explorer.png)    
 
 ## <a name="create-linked-services"></a>Gekoppelde services maken
+
 U maakt gekoppelde services in een gegevensfactory om uw gegevensarchieven en compute-services aan de gegevensfactory te koppelen. In deze zelfstudie gebruikt u niet een willekeurige compute-service, zoals Azure HDInsight of Azure Data Lake Analytics. U gebruikt twee gegevensarchieven van het type Azure Storage (bron) en Azure SQL Database (doel). 
 
 Daarvoor maakt u twee gekoppelde services van de typen: AzureStorage en AzureSqlDatabase.  
@@ -94,27 +102,32 @@ Met de gekoppelde Azure SQL-service wordt Azure SQL Database aan de data factory
 Met gekoppelde services worden gegevensarchieven of compute-services gekoppeld aan een Azure Data Factory. Zie [Ondersteunde gegevensarchieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) voor alle bronnen en sinks die worden ondersteund door de kopieerbewerking. Zie [Gekoppelde services berekenen](data-factory-compute-linked-services.md) voor de lijst met compute-services die worden ondersteund door Data Factory. In deze zelfstudie gebruikt u geen compute-service. 
 
 ### <a name="create-the-azure-storage-linked-service"></a>De gekoppelde Azure Storage-service maken
+
 1. Klik in **Solution Explorer** met de rechtermuisknop op **Linked Services**. Houd de muisaanwijzer op **Add** en klik op **New Item**.      
+
 2. Selecteer in het dialoogvenster **Add New Item** de optie **Azure Storage Linked Service** in de lijst en klik op **Add**. 
-   
+
     ![Nieuwe gekoppelde service](./media/data-factory-copy-activity-tutorial-using-visual-studio/new-linked-service-dialog.png)
+
 3. Vervang `<accountname>` en `<accountkey>`* door de naam van uw Azure-opslagaccount en de bijbehorende sleutel. 
-   
+
     ![Een gekoppelde Azure Storage-service](./media/data-factory-copy-activity-tutorial-using-visual-studio/azure-storage-linked-service.png)
+
 4. Sla het bestand **AzureStorageLinkedService1.json** op.
 
     Zie het artikel [Azure Blob Storage-connector](data-factory-azure-blob-connector.md#linked-service-properties) voor meer informatie over de JSON-eigenschappen in de definitie van de gekoppelde service.
 
 ### <a name="create-the-azure-sql-linked-service"></a>De gekoppelde Azure SQL-service maken
+
 1. Klik met de rechtermuisknop opnieuw op het knooppunt **Linked Services** in **Solution Explorer**. Houd de muisaanwijzer op **Add** en klik op **New Item**. 
 2. Selecteer deze keer **Azure SQL Linked Service** en klik op **Add**. 
 3. In het bestand **AzureSqlLinkedService1.json** vervangt u `<servername>`, `<databasename>`, `<username@servername>` en `<password>` door de namen van uw server, database en gebruikersaccount en voert u uw wachtwoord in.    
 4. Sla het bestand **AzureSqlLinkedService1.json** op. 
-    
+
     Zie [Azure SQL Database-connector](data-factory-azure-sql-connector.md#linked-service-properties) voor meer informatie over deze JSON-eigenschappen.
 
-
 ## <a name="create-datasets"></a>Gegevenssets maken
+
 In de vorige stap hebt u gekoppelde services gemaakt om uw Azure-opslagaccount en Azure SQL Database aan de data factory te koppelen. In deze stap definieert u twee gegevenssets, InputDataset en OutputDataset genaamd, die staan voor de invoer- en uitvoergegevens die zijn opgeslagen in de gegevensarchieven waarnaar wordt verwezen door respectievelijk de AzureStorageLinkedService1 en de AzureSqlLinkedService1.
 
 De gekoppelde Azure Storage-service geeft de verbindingsreeks op die de Data Factory-service tijdens runtime gebruikt om verbinding te maken met uw Azure-opslagaccount. En de blobgegevensset voor invoer (InputDataset) geeft de container en de map met de invoergegevens op.  
@@ -122,6 +135,7 @@ De gekoppelde Azure Storage-service geeft de verbindingsreeks op die de Data Fac
 Op dezelfde manier geeft de gekoppelde Azure SQL Database-service de verbindingsreeks op die de Data Factory-service in runtime gebruikt om verbinding te maken met Azure SQL Database. En de uitvoergegevensset van de SQL-tabel (OututDataset) geeft de tabel in de database op waarnaar de gegevens uit de blobopslag worden gekopieerd. 
 
 ### <a name="create-input-dataset"></a>Invoergegevensset maken
+
 In deze stap maakt u een gegevensset met de naam InputDataset die verwijst naar een blobbestand (emp.txt) in de hoofdmap van een blobcontainer (adftutorial) in Azure Storage. Deze container wordt vertegenwoordigd door de gekoppelde AzureStorageLinkedService1-service. Als u geen waarde voor de fileName hebt opgeven (of hebt overgeslagen), worden gegevens uit alle blobs in de invoermap naar het doel gekopieerd. In deze zelfstudie geeft u een waarde op voor de fileName. 
 
 Hier kunt u de term 'tabellen' gebruiken in plaats van 'gegevenssets'. Een tabel is een rechthoekige gegevensset en is het enige type gegevensset dat nu wordt ondersteund. 
@@ -166,49 +180,51 @@ Hier kunt u de term 'tabellen' gebruiken in plaats van 'gegevenssets'. Een tabel
     | Eigenschap | Beschrijving |
     |:--- |:--- |
     | type | De eigenschap type wordt ingesteld op **AzureBlob**, omdat de gegevens zich in een Azure-blobopslag bevinden. |
-    | linkedServiceName | Deze eigenschap verwijst naar de **AzureStorageLinkedService** die u eerder hebt gemaakt. |
-    | folderPath | Deze eigenschap verwijst naar de blob**container** en de **map** die de blobs voor invoer bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
-    | fileName | Deze eigenschap is optioneel. Als u deze eigenschap niet opgeeft, worden alle bestanden uit folderPath gekozen. In deze zelfstudie wordt **emp.txt** opgegeven voor de fileName, zodat alleen dat bestand wordt opgehaald voor de verwerking. |
-    | format -> type |Het invoerbestand is in de tekstindeling, zodat we **TextFormat** gebruiken. |
-    | columnDelimiter | De kolommen in het invoerbestand worden gescheiden door een **komma (`,`)** . |
-    | frequency/interval | Als frequency wordt ingesteld op **Hour** en het interval wordt ingesteld op **1**, betekent dit dat de invoersegmenten één keer per **uur** beschikbaar worden gemaakt. Met andere woorden, de Data Factory-service zoekt elk uur naar invoergegevens in de hoofdmap van de opgegeven blobcontainer (**adftutorial**). Er wordt gezocht naar gegevens binnen de begin- en eindtijd van de pijplijn, niet voor of na deze tijden.  |
+    | linkedServiceName | Verwijst naar de **AzureStorageLinkedService** die u eerder hebt gemaakt. |
+    | folderPath | Geeft de blob **container** op, plus de **map** die de invoerblobs bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
+    | fileName | Deze eigenschap is optioneel. Als u deze eigenschap niet opgeeft, worden alle bestanden uit folderPath gekozen. In deze zelfstudie wordt **emp.txt** opgegeven voor de fileName. Alleen dit bestand wordt dus opgehaald voor verwerking. |
+    | format -> type |Het invoerbestand is in de tekstindeling. Daarom gebruiken we **TextFormat**. |
+    | columnDelimiter | De kolommen in het invoerbestand worden gescheiden met een **komma (`,`)** . |
+    | frequency/interval | Als frequency wordt ingesteld op **Uur** en het interval wordt ingesteld op **1**, betekent dit dat de invoersegmenten één keer per **uur** beschikbaar worden gemaakt. Met andere woorden, de Data Factory-service zoekt elk uur naar invoergegevens in de hoofdmap van de opgegeven blobcontainer (**adftutorial**). Er wordt gezocht naar gegevens binnen de begin- en eindtijd van de pijplijn, niet voor of na deze tijden.  |
     | external | Deze eigenschap wordt ingesteld op **true** als de gegevens niet worden gegenereerd door deze pijplijn. De invoergegevens in deze zelfstudie bevinden zich in het bestand emp.txt, dat niet wordt gegenereerd door deze pijplijn. Daarom stellen we deze eigenschap in op true. |
 
     Zie het [artikel over Azure Blob-connectoren](data-factory-azure-blob-connector.md#dataset-properties) voor meer informatie over deze JSON-eigenschappen.   
 
 ### <a name="create-output-dataset"></a>Uitvoergegevensset maken
+
 In deze stap maakt u een uitvoergegevensset met de naam **OutputDataset**. Deze gegevensset wijst naar een SQL-tabel in Azure SQL Database die wordt vertegenwoordigd door **AzureSqlLinkedService1**. 
 
 1. Klik in **Solution Explorer** opnieuw met de rechtermuisknop op **Tables**. Houd de muisaanwijzer op **Add** en klik op **New Item**.
 2. In het dialoogvenster **Add New Item** selecteert u **Azure SQL** en klikt u op **Add**. 
 3. Vervang de JSON-tekst door de volgende JSON en sla het bestand **AzureSqlTableLocation1.json** op.
 
-   ```json
+    ```json
     {
-     "name": "OutputDataset",
-     "properties": {
-       "structure": [
-         {
-           "name": "FirstName",
-           "type": "String"
-         },
-         {
-           "name": "LastName",
-           "type": "String"
-         }
-       ],
-       "type": "AzureSqlTable",
-       "linkedServiceName": "AzureSqlLinkedService1",
-       "typeProperties": {
-         "tableName": "emp"
-       },
-       "availability": {
-         "frequency": "Hour",
-         "interval": 1
-       }
-     }
+        "name": "OutputDataset",
+        "properties": {
+            "structure": [
+                {
+                    "name": "FirstName",
+                    "type": "String"
+                },
+                {
+                    "name": "LastName",
+                    "type": "String"
+                }
+            ],
+            "type": "AzureSqlTable",
+            "linkedServiceName": "AzureSqlLinkedService1",
+            "typeProperties": {
+              "tableName": "emp"
+            },
+            "availability": {
+              "frequency": "Hour",
+              "interval": 1
+            }
+        }
     }
     ```
+
     De volgende tabel bevat beschrijvingen van de JSON-eigenschappen die in het codefragment worden gebruikt:
 
     | Eigenschap | Beschrijving |
@@ -223,6 +239,7 @@ In deze stap maakt u een uitvoergegevensset met de naam **OutputDataset**. Deze 
     Zie het [artikel over Azure SQL-connectoren](data-factory-azure-sql-connector.md#dataset-properties) voor meer informatie over deze JSON-eigenschappen.
 
 ## <a name="create-pipeline"></a>Pijplijn maken
+
 In deze stap maakt u een pijplijn met een **kopieeractiviteit** die gebruikmaakt van **InputDataset** als invoer en **OutputDataset** als uitvoer.
 
 Momenteel is de uitvoergegevensset dat wat de planning aanstuurt. In deze zelfstudie is de uitvoergegevensset geconfigureerd voor het produceren van een segment eenmaal per uur. De pijplijn heeft een begintijd en eindtijd die één dag uit elkaar liggen, ofwel 24 uur. Daarom worden 24 segmenten van de uitvoergegevensset door de pijplijn geproduceerd. 
@@ -231,49 +248,49 @@ Momenteel is de uitvoergegevensset dat wat de planning aanstuurt. In deze zelfst
 2. Selecteer **Copy Data Pipeline** in het dialoogvenster **Add New Item** en klik op **Add**. 
 3. Vervang de JSON door de volgende JSON en sla het bestand **CopyActivity1.json** op.
 
-   ```json   
-    {
-     "name": "ADFTutorialPipeline",
-     "properties": {
-       "description": "Copy data from a blob to Azure SQL table",
-       "activities": [
-         {
-           "name": "CopyFromBlobToSQL",
-           "type": "Copy",
-           "inputs": [
-             {
-               "name": "InputDataset"
-             }
-           ],
-           "outputs": [
-             {
-               "name": "OutputDataset"
-             }
-           ],
-           "typeProperties": {
-             "source": {
-               "type": "BlobSource"
-             },
-             "sink": {
-               "type": "SqlSink",
-               "writeBatchSize": 10000,
-               "writeBatchTimeout": "60:00:00"
-             }
-           },
-           "Policy": {
-             "concurrency": 1,
-             "executionPriorityOrder": "NewestFirst",
-             "style": "StartOfInterval",
-             "retry": 0,
-             "timeout": "01:00:00"
+   ```json
+  {
+   "name": "ADFTutorialPipeline",
+   "properties": {
+     "description": "Copy data from a blob to Azure SQL table",
+     "activities": [
+       {
+         "name": "CopyFromBlobToSQL",
+         "type": "Copy",
+         "inputs": [
+           {
+             "name": "InputDataset"
            }
+         ],
+         "outputs": [
+           {
+             "name": "OutputDataset"
+           }
+         ],
+         "typeProperties": {
+           "source": {
+             "type": "BlobSource"
+           },
+           "sink": {
+             "type": "SqlSink",
+             "writeBatchSize": 10000,
+             "writeBatchTimeout": "60:00:00"
+           }
+         },
+         "Policy": {
+           "concurrency": 1,
+           "executionPriorityOrder": "NewestFirst",
+           "style": "StartOfInterval",
+           "retry": 0,
+           "timeout": "01:00:00"
          }
-       ],
-       "start": "2017-05-11T00:00:00Z",
-       "end": "2017-05-12T00:00:00Z",
-       "isPaused": false
-     }
-    }
+       }
+     ],
+     "start": "2017-05-11T00:00:00Z",
+     "end": "2017-05-12T00:00:00Z",
+     "isPaused": false
+   }
+  }
     ```   
    - In het gedeelte Activiteiten is er slechts één activiteit waarvan **type** is ingesteld op **Copy**. Zie het artikel [Activiteiten voor gegevensverplaatsing](data-factory-data-movement-activities.md) voor meer informatie over kopieeractiviteiten. In Data Factory-oplossingen kunt u ook [activiteiten voor gegevenstransformatie](data-factory-data-transformation-activities.md) gebruiken.
    - De invoer voor de activiteit is ingesteld op **InputDataset** en de uitvoer voor de activiteit is ingesteld op **OutputDataset**. 
@@ -333,13 +350,13 @@ Houd rekening met de volgende punten:
   
   * Voer in Azure PowerShell de volgende opdracht uit om de Data Factory-provider te registreren. 
 
-    ```powershell    
-    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
+  ```powershell    
+  Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
-    U kunt de volgende opdracht uitvoeren om te bevestigen dat de Data Factory-provider is geregistreerd. 
+  U kunt de volgende opdracht uitvoeren om te bevestigen dat de Data Factory-provider is geregistreerd. 
     
-    ```powershell
-    Get-AzResourceProvider
+  ```powershell
+  Get-AzResourceProvider
     ```
   * Meld u bij de [Azure Portal](https://portal.azure.com) aan met behulp van het Azure-abonnement en navigeer naar een Data Factory-blade of maak een gegevensfactory in de Azure Portal. Door deze actie wordt de provider automatisch voor u geregistreerd.
 * De naam van de gegevensfactory wordt in de toekomst mogelijk geregistreerd als DNS-naam en wordt daarmee ook voor iedereen zichtbaar.
@@ -353,13 +370,13 @@ Navigeer naar de startpagina van uw gegevensfactory:
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Klik op **Meer services** in het linkermenu en op **Gegevensfactory's**.
 
-    ![Door gegevensfactory’s bladeren](media/data-factory-copy-activity-tutorial-using-visual-studio/browse-data-factories.png)
+  ![Door gegevensfactory’s bladeren](media/data-factory-copy-activity-tutorial-using-visual-studio/browse-data-factories.png)
 3. Begin de naam van uw gegevensfactory te typen.
 
-    ![Naam van gegevensfactory](media/data-factory-copy-activity-tutorial-using-visual-studio/enter-data-factory-name.png) 
+  ![Naam van gegevensfactory](media/data-factory-copy-activity-tutorial-using-visual-studio/enter-data-factory-name.png) 
 4. Klik op uw gegevensfactory in de lijst met resultaten om de startpagina van uw gegevensfactory te bekijken.
 
-    ![Startpagina van de gegevensfactory](media/data-factory-copy-activity-tutorial-using-visual-studio/data-factory-home-page.png)
+  ![Startpagina van de gegevensfactory](media/data-factory-copy-activity-tutorial-using-visual-studio/data-factory-home-page.png)
 5. Volg de instructies in [Gegevenssets en pijplijn bewaken](data-factory-monitor-manage-pipelines.md) voor het bewaken van de pijplijn en gegevenssets die u tijdens deze zelfstudie hebt gemaakt. Visual Studio biedt momenteel geen ondersteuning voor het bewaken van Data Factory-pijplijnen. 
 
 ## <a name="summary"></a>Samenvatting
@@ -388,7 +405,7 @@ In deze sectie wordt beschreven hoe u Server Explorer in Visual Studio gebruikt 
 
 - Klik met de rechtermuisknop op een gegevensfactory in Server Explorer en selecteer **Export Data Factory to New Project** om een Visual Studio-project te maken op basis van een bestaande gegevensfactory.
 
-    ![Een gegevensfactory exporteren naar een VS-project](./media/data-factory-copy-activity-tutorial-using-visual-studio/export-data-factory-menu.png)  
+  ![Een gegevensfactory exporteren naar een VS-project](./media/data-factory-copy-activity-tutorial-using-visual-studio/export-data-factory-menu.png)  
 
 ## <a name="update-data-factory-tools-for-visual-studio"></a>Data Factory-hulpprogramma's voor Visual Studio bijwerken
 Voer de volgende stappen uit om Azure Data Factory-hulpprogramma's voor Visual Studio bij te werken:
@@ -424,29 +441,29 @@ Voeg een configuratiebestand voor elke omgeving toe door de volgende stappen uit
     ![Een configuratiebestand toevoegen](./media/data-factory-build-your-first-pipeline-using-vs/add-config-file.png)
 3. Voeg configuratieparameters en de bijbehorende waarden toe in de volgende indeling:
 
-    ```json
-    {
-        "$schema": "http://datafactories.schema.management.azure.com/vsschemas/V1/Microsoft.DataFactory.Config.json",
-        "AzureStorageLinkedService1": [
-            {
-                "name": "$.properties.typeProperties.connectionString",
-                "value": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
-            }
-        ],
-        "AzureSqlLinkedService1": [
-            {
-                "name": "$.properties.typeProperties.connectionString",
-                "value":  "Server=tcp:<logical SQL server name>.database.windows.net,1433;Database=<Azure SQL datbase>;User ID=<Username>;Password=<Password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-            }
-        ]
-    }
+  ```json
+  {
+      "$schema": "http://datafactories.schema.management.azure.com/vsschemas/V1/Microsoft.DataFactory.Config.json",
+      "AzureStorageLinkedService1": [
+          {
+              "name": "$.properties.typeProperties.connectionString",
+              "value": "DefaultEndpointsProtocol=https;AccountName=<accountname>;AccountKey=<accountkey>"
+          }
+      ],
+      "AzureSqlLinkedService1": [
+          {
+              "name": "$.properties.typeProperties.connectionString",
+              "value":  "Server=tcp:<logical SQL server name>.database.windows.net,1433;Database=<Azure SQL datbase>;User ID=<Username>;Password=<Password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
+          }
+      ]
+  }
     ```
 
     In dit voorbeeld configureert u de eigenschap connectionString van een gekoppelde Azure Storage-service en een gekoppelde Azure SQL-service. De syntaxis voor het opgeven van de naam is [JsonPath](https://goessner.net/articles/JsonPath/).   
 
     Als JSON een eigenschap heeft met een matrix van waarden zoals in de volgende code wordt weergegeven:  
 
-    ```json
+  ```json
     "structure": [
           {
               "name": "FirstName",
@@ -461,7 +478,7 @@ Voeg een configuratiebestand voor elke omgeving toe door de volgende stappen uit
 
     Eigenschappen configureren zoals wordt weergegeven in het volgende configuratiebestand (gebruik op nul gebaseerde indexering):
 
-    ```json
+  ```json
     {
         "name": "$.properties.structure[0].name",
         "value": "FirstName"

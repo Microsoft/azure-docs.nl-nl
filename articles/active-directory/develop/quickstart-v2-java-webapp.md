@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: e93c0c6bb689980cab1b41e529c491cdf3920260
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: e188c00840a4d043e94f94f9db565e2d4e06aaba
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591713"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97031059"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp
 
@@ -47,25 +47,22 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 >
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw toepassing:
 >
-> 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-> 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.
->
-> 1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft-identiteitsplatform voor ontwikkelaars.
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
->    - Voer in de sectie **Naam** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app. Bijvoorbeeld: `java-webapp`.
->    - Selecteer **Registreren**.
-> 1. Zoek op de pagina **Overzicht** de waarden voor de **Toepassings-id (client)** en de **Map-id (tenant)** van de toepassing. Kopieer deze waarden voor later.
-> 1. Selecteer **Verificatie** in het menu en voeg dan de volgende gegevens toe:
->    - Voeg de platformconfiguratie **Web** toe.  Voeg deze `https://localhost:8443/msal4jsample/secure/aad` en `https://localhost:8443/msal4jsample/graph/me` toe als **omleidings-URI's**.
->    - Selecteer **Opslaan**.
-> 1. Selecteer **Certificaten en geheimen** in het menu en klik op **Nieuw clientgeheim** in de sectie **Clientgeheimen**:
->
->    - Typ een beschrijving in (bijvoorbeeld app-geheim).
->    - Selecteer een sleutelduur van **Over 1 jaar**.
->    - De sleutelwaarde wordt weergegeven wanneer u **Toevoegen** selecteert.
->    - Kopieer de waarde van de sleutel voor later. Deze sleutelwaarde wordt niet opnieuw weergegeven en kan niet op een andere manier worden opgehaald. Noteer de waarde daarom zodra deze wordt weergegeven in Azure Portal.
->
+> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+> 1. Selecteer **Registreren**.
+> 1. Noteer op de pagina **Overzicht** de **Toepassings-id (client)** en de **Map-id (tenant)** voor later gebruik.
+> 1. Selecteer **Verificatie** onder **Beheren**.
+> 1. Selecteer **Een platform toevoegen** > **Web**.
+> 1. Voeg `https://localhost:8443/msal4jsample/secure/aad` toe vanuit de sectie **Omleidings-URI's**.
+> 1. Selecteer **Configureren**.
+> 1. Voeg `https://localhost:8443/msal4jsample/graph/me` vanuit de sectie **Web** toe als tweede **Omleidings-URI**.
+> 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**. Selecteer in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**.
+> 1. Typ een beschrijving voor de sleutel (bijvoorbeeld 'app-geheim'), laat de standaardvervaldatum staan, en selecteer **Toevoegen**.
+> 1. Noteer de **Waarde** van het **Clientgeheim** voor later gebruik.
+
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
 >
@@ -150,7 +147,7 @@ Het rechtstreeks uitvoeren vanuit uw IDE met behulp van de ingesloten Spring Boo
 
 ##### <a name="running-from-ide"></a>Uitvoeren vanaf IDE
 
-Als u de webtoepassing vanuit een IDE uitvoert, klikt u op uitvoeren en navigeert u naar de startpagina van het project. Voor dit voorbeeld is de standaard URL voor de startpagina https://localhost:8443
+Als u de webtoepassing vanuit een IDE uitvoert, selecteert u Uitvoeren. Ga vervolgens naar de startpagina van het project. In dit voorbeeld is de standaard-URL voor de startpagina: https://localhost:8443.
 
 1. Selecteer op de voorpagina de knop **Aanmelden** om naar Azure Active Directory om te leiden en de gebruiker om referenties te vragen.
 

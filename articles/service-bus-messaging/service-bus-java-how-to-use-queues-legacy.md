@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 774f9e485c58712ea8648a148c92b6f9ef6a58c0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d24645ada2ef4ac12101aa747aacc1bbf90f123e
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452616"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509254"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Quickstart: Azure Service Bus-wachtrijen met Java gebruiken om berichten te verzenden en te ontvangen
 
@@ -18,7 +18,7 @@ ms.locfileid: "96452616"
 In deze zelfstudie leert u hoe u Java-toepassingen kunt maken om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij. 
 
 > [!WARNING]
->  Deze quickstart maakt gebruik van de oude azure-servicebus-pakketten. Zie [Berichten verzenden en ontvangen met azure-messaging-servicebus](service-bus-java-how-to-use-queues.md) voor een quickstart waarbij gebruik wordt gemaakt van het nieuwste azure-messaging-servicebus-pakket. 
+>  In deze quickstart worden de oude `azure-servicebus`-pakketten gebruikt. Raadpleeg [Berichten verzenden en ontvangen met behulp van `azure-messaging-servicebus`](service-bus-java-how-to-use-queues.md) voor een quickstart die gebruikmaakt van het nieuwste `azure-messaging-servicebus`-pakket. 
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -136,7 +136,7 @@ Het volgende voorbeeld laat zien hoe berichten kunnen worden ontvangen en verwer
     void registerReceiver(QueueClient queueClient) throws Exception {
         // register the RegisterMessageHandler callback
         queueClient.registerMessageHandler(new IMessageHandler() {
-        // callback invoked when the message handler loop has obtained a message
+            // callback invoked when the message handler loop has obtained a message
             public CompletableFuture<Void> onMessageAsync(IMessage message) {
             // receives message is passed to callback
                 if (message.getLabel() != null &&
@@ -183,8 +183,7 @@ In het geval dat de toepassing is vastgelopen na het verwerken van het bericht, 
 > U kunt resources van Service Bus beheren met [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Met Service Bus Explorer kunnen gebruikers verbinding maken met een Service Bus-naamruimte en berichtenentiteiten op een eenvoudige manier beheren. Het hulpprogramma biedt geavanceerde functies zoals functionaliteit voor importeren/exporteren of de mogelijkheid van het testen van onderwerpen, wachtrijen, abonnementen, relay-services, Notification Hubs en Event Hubs. 
 
 ## <a name="next-steps"></a>Volgende stappen
-U vindt Java-voorbeelden op GitHub in de [azure-service-bus repository](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
-
+U vindt Java-voorbeelden in GitHub in de [`azure-service-bus`opslagplaats](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
 
 [Azure SDK for Java]: /azure/developer/java/sdk/java-sdk-azure-get-started
 [Azure Toolkit for Eclipse]: /azure/developer/java/toolkit-for-eclipse/installation

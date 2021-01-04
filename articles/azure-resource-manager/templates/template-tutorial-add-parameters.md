@@ -6,12 +6,12 @@ ms.date: 03/31/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7d0743d316b9d879017f3b0fbe08ee4dc2b3e1c2
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: e983f8499cbeaf400a8da6f48d7f6c8b75c4795a
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931058"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107059"
 ---
 # <a name="tutorial-add-parameters-to-your-arm-template"></a>Zelfstudie: Parameters aan uw ARM-sjabloon toevoegen
 
@@ -33,7 +33,7 @@ Mogelijk hebt u gemerkt dat er een probleem is met deze sjabloon. De naam van he
 
 ## <a name="make-template-reusable"></a>Sjabloon herbruikbaar maken
 
-Om uw sjabloon herbruikbaar te maken, voegen we een parameter toe waarmee u de naam van een opslagaccount kunt doorgeven. De gemarkeerde JSON in het volgende voorbeeld laat zien wat er in uw sjabloon is gewijzigd. De parameter **storageName** wordt geïdentificeerd als een tekenreeks. De maximumlengte is ingesteld op 24 tekens om te voorkomen dat namen te lang worden.
+Om uw sjabloon herbruikbaar te maken, voegen we een parameter toe waarmee u de naam van een opslagaccount kunt doorgeven. De gemarkeerde JSON in het volgende voorbeeld laat zien wat er in uw sjabloon is gewijzigd. De parameter `storageName` wordt geïdentificeerd als een tekenreeks. De maximale lengte is ingesteld op 24 tekens om ervoor te zorgen dat namen niet te lang worden.
 
 Kopieer het hele bestand en vervang uw sjabloon door de inhoud ervan.
 
@@ -43,7 +43,7 @@ Kopieer het hele bestand en vervang uw sjabloon door de inhoud ervan.
 
 We gaan de sjabloon implementeren. In het volgende voorbeeld wordt de sjabloon geïmplementeerd met Azure CLI of PowerShell. Merk op dat u de naam van het opslagaccount opgeeft als een waarde in de implementatieopdracht. Geef voor het opslagaccount dezelfde naam op als de naam die u in de vorige zelfstudie hebt gebruikt.
 
-Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele **templateFile** hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
+Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele `templateFile` hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -81,11 +81,11 @@ Op deze manier kunnen alle benodigde resources voor een Azure-oplossing worden o
 
 Met parameters kunt u de implementatie aanpassen door waarden op te geven die voor een specifieke omgeving zijn aangepast. U kunt bijvoorbeeld verschillende waarden doorgeven voor een implementatie in een ontwikkel-, test- of productieomgeving.
 
-In de vorige sjabloon is altijd het opslagaccount Standard_LRS geïmplementeerd. Mogelijk wilt u de flexibiliteit om verschillende SKU's te implementeren, afhankelijk van de omgeving. In het volgende voorbeeld ziet u de benodigde wijzigingen voor het toevoegen van een parameter voor de SKU. Kopieer het hele bestand en plak het over uw sjabloon.
+In de vorige sjabloon is altijd het opslagaccount **Standard_LRS** geïmplementeerd. Mogelijk wilt u de flexibiliteit om verschillende SKU's te implementeren, afhankelijk van de omgeving. In het volgende voorbeeld ziet u de benodigde wijzigingen voor het toevoegen van een parameter voor de SKU. Kopieer het hele bestand en plak het over uw sjabloon.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.json" range="1-40" highlight="10-23,32":::
 
-De parameter **storageSKU** heeft een standaardwaarde. Deze waarde wordt gebruikt wanneer tijdens de implementatie geen waarde is opgegeven. Het bevat ook een lijst met toegestane waarden. Deze waarden komen overeen met de benodigde waarden voor het maken van een opslagaccount. U wilt niet dat gebruikers van uw sjabloon SKU's doorgeven die niet werken.
+De parameter `storageSKU` heeft een standaardwaarde. Deze waarde wordt gebruikt wanneer tijdens de implementatie geen waarde is opgegeven. Het bevat ook een lijst met toegestane waarden. Deze waarden komen overeen met de benodigde waarden voor het maken van een opslagaccount. U wilt niet dat gebruikers van uw sjabloon SKU's doorgeven die niet werken.
 
 ## <a name="redeploy-template"></a>Sjabloon opnieuw implementeren
 
@@ -114,7 +114,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 Om de flexibiliteit van uw sjabloon te bekijken, implementeren we deze opnieuw. Stel de SKU-parameter nu in op **Standard_GRS**. U kunt een nieuwe naam doorgeven om een ander opslagaccount te maken, of dezelfde naam gebruiken om uw bestaande opslagaccount bij te werken. Beide opties werken.
 

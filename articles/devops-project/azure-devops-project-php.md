@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 99c8bc00beb7b189b200e0b02435262ae34835d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5727a08159f750a69920f66f4b743c187aa00885
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856089"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588961"
 ---
 # <a name="create-a-cicd-pipeline-for-php-with-azure-devops-starter"></a>Een CI/CD-pijplijn voor PHP maken met Azure DevOps Starter
 
@@ -64,9 +64,9 @@ Als u geen Azure-abonnement hebt, kunt u er gratis een krijgen via [Visual Studi
 
  Met DevOps Starter wordt een Git-opslagplaats gemaakt in Azure Repos of in GitHub. Voer de volgende stappen uit om de opslagplaats weer te geven en codewijzigingen aan te brengen in de toepassing:
 
-1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor uw master branch. Met deze koppeling opent u een weergave in de zojuist gemaakte Git-opslagplaats.
+1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor de hoofdvertakking. Met deze koppeling opent u een weergave in de zojuist gemaakte Git-opslagplaats.
 
-1. Als u de kloon-URL van de opslagplaats wilt weergeven, selecteert u **Klonen** in de rechterbovenhoek van de browser. U kunt uw Git-opslagplaats klonen in uw favoriete IDE. Gebruik in de volgende stappen de webbrowser om codewijzigingen rechtstreeks aan te brengen en door te voeren in de master branch.
+1. Als u de kloon-URL van de opslagplaats wilt weergeven, selecteert u **Klonen** in de rechterbovenhoek van de browser. U kunt uw Git-opslagplaats klonen in uw favoriete IDE. Gebruik in de volgende stappen de webbrowser om codewijzigingen rechtstreeks aan te brengen en door te voeren in de hoofdvertakking.
 
 1. Ga aan de linkerkant naar het bestand **resources/views/welcome.blade.php**.
 

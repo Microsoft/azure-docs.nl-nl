@@ -7,16 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 12/07/2020
+ms.date: 12/16/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
 ms.custom: azureday1
-ms.openlocfilehash: b6521783a0e0b7793067bb47e2856c8816f9dbdc
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 3d6e9d1d66425655f0db5751a28746b6a6a31c86
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762921"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631762"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Zelfstudie: Toegang tot Microsoft Graph krijgen vanuit een beveiligde app als de app
 
@@ -72,7 +72,8 @@ $PermissionName = "User.Read.All"
 Connect-AzureAD -TenantId $TenantID
 
 # Get the service principal for Microsoft Graph.
-$GraphServicePrincipal = Get-AzureADServicePrincipal -SearchString "Microsoft Graph"
+# First result should be AppId 00000003-0000-0000-c000-000000000000
+$GraphServicePrincipal = Get-AzureADServicePrincipal -SearchString "Microsoft Graph" | Select-Object -first 1
 
 # Assign permissions to the managed identity service principal.
 $AppRole = $GraphServicePrincipal.AppRoles | `

@@ -1,57 +1,83 @@
 ---
-title: 'Quickstart: de toegang weergeven die een gebruiker heeft tot Azure-resources - Azure RBAC'
-description: In deze quickstart leert u hoe u de toegang die een gebruiker of een andere beveiligings-principal heeft tot Azure-resources kunt weergeven via de Azure Portal en met op rollen gebaseerd toegangsbeheer (RBAC) van Azure.
+title: 'Quickstart: Toegang voor een gebruiker tot Azure-resources controleren - Azure RBAC'
+description: In deze quickstart leert u hoe u de toegang kunt controleren die u of een andere gebruiker heeft tot Azure-resources via de Azure-portal en Azure RBAC (op rollen gebaseerd toegangsbeheer).
 services: role-based-access-control
-documentationCenter: ''
 author: rolyon
 manager: mtillman
-editor: ''
 ms.service: role-based-access-control
-ms.devlang: ''
 ms.topic: quickstart
-ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 11/30/2018
+ms.date: 12/09/2020
 ms.author: rolyon
-ms.reviewer: bagovind
-ms.openlocfilehash: 9be53aa964e75bab0b90495640537fe927a5af0e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 7cf4020ad38224b25ea8bb7dc7f0fdea7dd6f3b1
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82734158"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034000"
 ---
-# <a name="quickstart-view-the-access-a-user-has-to-azure-resources"></a>Snelstart: De toegang die een gebruiker heeft tot Azure-resources bekijken
+# <a name="quickstart-check-access-for-a-user-to-azure-resources"></a>Quickstart: Toegang voor een gebruiker tot Azure-resources controleren
 
-U kunt de blade **Toegangsbeheer (IAM)** in [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](overview.md) gebruiken om de toegang weer te geven die een gebruiker of een andere beveiligings-principal tot de Azure-resources heeft. Maar soms wilt u alleen snel de toegang van één gebruiker of een andere beveiligings-principal bekijken. De eenvoudigste manier om dit te doen, is met de functie **Toegang controleren** in de Azure-portal.
+Soms moet u controleren welke toegang een gebruiker heeft tot een set Azure-resources. U controleert deze toegang door de toewijzingen voor de gebruiker te vermelden. Een snelle manier om de toegang voor één gebruiker te controleren, is via de functie **Toegang controleren** op de pagina **IAM (Toegangsbeheer)** .
 
-## <a name="view-role-assignments"></a>Roltoewijzingen weergeven
+## <a name="step-1-open-the-azure-resources"></a>Stap 1: De Azure-resources openen
 
- U kunt de toegang van een gebruiker weergeven door zijn roltoewijzingen te bekijken. Volg deze stappen om de roltoewijzingen weer te geven voor één gebruiker, groep, service-principal of beheerde identiteit in het bereik van het abonnement.
+Als u de toegang voor een gebruiker wilt controleren, moet u eerst de Azure-resources openen waarvoor u de toegang wilt controleren. Azure-resources zijn georganiseerd in niveaus, meestal een *bereik* genoemd. In Azure kunt u een bereik op vier niveaus opgeven, van ruim tot naar beperkt: beheergroep, abonnement, resourcegroep, en resource.
 
-1. Klik in de Azure-portal op de optie **Alle services** en vervolgens op **Abonnementen**.
+![Bereikniveaus voor Azure RBAC](../../includes/role-based-access-control/media/scope-levels.png)
 
-1. Klik op uw abonnement.
+Volg deze stappen om de set Azure-resources te openen waarvoor u de toegang wilt controleren.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Open [Azure Portal](https://portal.azure.com).
 
-1. Klik op het tabblad **Toegang controleren**.
+1. Open de set met Azure-resources, bijvoorbeeld **Beheergroepen**, **Abonnementen**, **Resourcegroepen** of een bepaalde resource.
 
-    ![Toegangsbeheer - Tabblad Toegang controleren](./media/check-access/access-control-check-access.png)
+1. Klik op de specifieke resource in dit bereik.
 
-1. Selecteer in de lijst **Zoeken** het type beveiligings-principal waarvoor u de toegang wilt controleren.
+    Hieronder ziet u een voorbeeld van een resourcegroep.
+
+    ![Overzicht van resourcegroep](./media/check-access/rg-overview.png)
+
+## <a name="step-2-check-access-for-a-user"></a>Stap 2: Toegang voor een gebruiker controleren
+
+Volg deze stappen om de toegang voor één gebruiker, groep, service-principal, of beheerde identiteit te controleren voor de eerder geselecteerde Azure-resources.
+
+1. Klik op **Toegangsbeheer (IAM)**.
+
+    Hieronder ziet u een voorbeeld van de pagina IAM (Toegangsbeheer) voor een resourcegroep.
+
+    ![Toegangsbeheer voor resourcegroep - Tabblad Toegang controleren](./media/check-access/rg-access-control.png)
+
+1. Selecteer op het tabblad **Toegang controleren** de lijst **Zoeken**. Selecteer de gebruiker, groep, service-principal of beheerde identiteit waarvoor u de toegang wilt controleren.
 
 1. Voer in het zoekvak een tekenreeks in om de map te doorzoeken op weergavenamen, e-mailadressen of object-id's.
 
-    ![De toegangsselectielijst controleren](./media/check-access/check-access-select.png)
+    ![De toegangsselectielijst controleren](./media/shared/rg-check-access-select.png)
 
 1. Klik op de beveiligings-principal om het deelvenster **Toewijzingen** te openen.
 
-    ![Deelvenster Toewijzingen](./media/check-access/check-access-assignments.png)
+    In dit deelvenster ziet u de toegang voor de geselecteerde beveiligingsprincipal op dit bereik en de toegang die is overgenomen in dit bereik. Toewijzingen op onderliggende bereiken worden niet vermeld. U ziet de volgende toewijzingen:
 
-    In dit deelvenster ziet u de rollen die zijn toegewezen aan de geselecteerde beveiligings-principal en het bereik. Als er een in dit bereik toewijzingen zijn geweigerd of zijn overgenomen, worden deze weergegeven.
+    - Roltoewijzingen die zijn toegevoegd met Azure RBAC.
+    - Weigeringstoewijzingen die zijn toegevoegd met behulp van Azure Blueprints of beheerde Azure-apps.
+    - Toewijzingen voor een Klassieke servicebeheerder of Co-beheerder voor klassieke implementaties. 
+
+    ![Deelvenster Rol- en weigeringstoewijzingen voor een gebruiker](./media/shared/rg-check-access-assignments-user.png)
+
+## <a name="step-3-check-your-access"></a>Stap 3: Uw toegang controleren
+
+Volg deze stappen om uw toegang tot de eerder geselecteerde Azure-resources te controleren.
+
+1. Klik op **Toegangsbeheer (IAM)**.
+
+1. Klik op het tabblad **Toegang controleren** op de knop **Mijn toegang weergeven**.
+
+    Er verschijnt een deelvenster Toewijzingen met hierin uw toegang op dit bereik en de toegang die is overgenomen in dit bereik. Toewijzingen op onderliggende bereiken worden niet vermeld.
+
+    ![Deelvenster Rol- en weigeringstoewijzingen](./media/check-access/rg-check-access-assignments.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal](quickstart-assign-role-user-portal.md)
+> [Azure-roltoewijzingen vermelden met behulp van Azure Portal](role-assignments-list-portal.md)

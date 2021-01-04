@@ -5,22 +5,22 @@ description: In deze quickstart leest u hoe u een load balancer kunt maken met e
 services: load-balancer
 documentationcenter: na
 author: asudbring
-manager: twooley
+manager: KumudD
 Customer intent: I want to create a load balancer by using an Azure Resource Manager template so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/26/2020
+ms.date: 12/09/2020
 ms.author: allensu
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 66d702846bac5825239e891ce47f8cca5bb857f0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 378ab88f4dee0c725e89f77cc6b2ffe049ff877a
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90984419"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97008432"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-by-using-an-arm-template"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen met behulp van een ARM-sjabloon
 
@@ -51,12 +51,13 @@ SKU's voor openbare IP-adressen en SKU's voor load balancers moeten overeenkomen
 Er zijn meerdere Azure-resources gedefinieerd in de sjabloon:
 
 - [**Microsoft.Network/loadBalancers**](/azure/templates/microsoft.network/loadbalancers)
-- [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses): voor de load balancer en voor elk van de drie virtuele machines.
+- [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses): voor de load balancer, de bastion-host, en voor elk van de drie virtuele machines.
+- [**Microsoft.Network/bastionHosts**](/azure/templates/microsoft.network/bastionhosts)
 - [**Microsoft.Network/networkSecurityGroups**](/azure/templates/microsoft.network/networksecuritygroups)
 - [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks)
-- [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines) (3 hiervan).
-- [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces) (3 hiervan).
-- [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions) (3 hiervan): gebruik dit om de Internet Information Server (IIS) en de webpagina's te configureren.
+- [**Microsoft.Compute/virutalMachines**](/azure/templates/microsoft.compute/virtualmachines) (3).
+- [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces) (3).
+- [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions) (3): gebruik dit om de IIS (Internet Information Server) en de webpagina's te configureren.
 
 Zie [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular) als u meer sjablonen wilt vinden die gerelateerd zijn aan Azure Load Balancer.
 
@@ -129,8 +130,10 @@ Ga naar Azure Portal, selecteer de resourcegroep die de load balancer bevat en s
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstart, gaat u het volgende doen:
+In deze quickstart hebt u het volgende gedaan:
 
+* U hebt een virtueel netwerk gemaakt voor de load balancer en virtuele machines.
+* U hebt een Azure Bastion-host gemaakt voor beheer.
 * Een standaard load balancer gemaakt en er VM's aan gekoppeld.
 * De load balancer-verkeersregel en de statustest geconfigureerd.
 * De load balancer getest.

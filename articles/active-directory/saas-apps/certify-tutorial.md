@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 356c1eea170b712e5cf7034e0c2652857e8bad3f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: de558c73f1ca1721dfa3380e296617661ff4e859
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456279"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670044"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-certify"></a>Zelfstudie: Azure Active Directory-integratie met Certify
 
@@ -42,7 +42,7 @@ Voor het configureren van Azure AD-integratie met Certify hebt u de volgende zak
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Certify ondersteunt door **IDP** geïnitieerde eenmalige aanmelding
-* Certify biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Certify biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-certify-from-the-gallery"></a>Certify toevoegen vanuit de galerie
 
@@ -50,11 +50,11 @@ Voor het configureren van de integratie van Certify met Azure AD moet u Certify 
 
 **Als u Certify vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -64,20 +64,20 @@ Voor het configureren van de integratie van Certify met Azure AD moet u Certify 
 
 4. Typ **Certify** in het zoekvak, selecteer **Certify** in het deelvenster met resultaten en klik op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Certify in de resultatenlijst](common/search-new-app.png)
+    ![Certify in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Certify configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Certify configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Certify tot stand is gebracht.
 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij Certify moet u de volgende bouwstenen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Certify configureren](#configure-certify-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding voor Certify configureren](#configure-certify-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Certify-testgebruiker maken](#create-certify-test-user)** : als u een equivalent van Britta Simon in Certify wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
+5. **[Certify-testgebruiker maken](#create-certify-test-user)**: als u een equivalent van Britta Simon in Certify wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -86,7 +86,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Certify moet u de volgende stappen uitvoeren:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Certify** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Certify** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -102,7 +102,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Certify moet u de vo
 
     ![Informatie over eenmalige aanmelding bij het Certify-domein en Certify-URL's](common/idp-identifier.png)
 
-    Typ de volgende URL in het tekstvak **Id** : `https://www.certify.com`
+    Typ de volgende URL in het tekstvak **Id**: `https://www.certify.com`
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Raw)** te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -126,7 +126,7 @@ Als u eenmalige aanmelding aan de zijde van **Certify** wilt configureren, moet 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -139,19 +139,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Certify.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Certify** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Certify**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -159,11 +159,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De Certify-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -171,7 +171,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-certify-test-user"></a>Certify-testgebruiker maken
 

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f0e69e3f62d3b9e4debb5761d877dcdfdd246f60
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 077500e0188d1cc20864d436a2e2fd711b180702
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886019"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560233"
 ---
 # <a name="chat-concepts"></a>Chatconcepten
 
@@ -46,8 +46,9 @@ De chatarchitectuur bestaat uit twee belangrijke onderdelen: 1) Vertrouwde servi
 
 De chat functie van Communication Services deelt door gebruikers gegenereerde berichten, evenals door het systeem gegenereerde berichten; dit worden **gespreksactiviteiten** genoemd. Gespreksactiviteiten worden gegenereerd als een chatgesprek wordt bijgewerkt. Als u `List Messages` of `Get Messages` aanroept in een chatgesprek bevat het resultaat de door de gebruiker gegenereerde tekstberichten en de systeemberichten in chronologische volgorde. Zo kunt u vaststellen wanneer een lid is toegevoegd of verwijderd of wanneer het onderwerp van het chatgesprek is bijgewerkt. Ondersteunde berichttypen zijn:  
 
- - `Text`: Het daadwerkelijke bericht dat door de gebruiker is samengesteld en verzonden als onderdeel van het chatgesprek. 
- - `ThreadActivity/AddMember`: Systeembericht dat aangeeft dat een of meer leden aan het chatgesprek zijn toegevoegd. Bijvoorbeeld:
+ - `Text`: Een bericht zonder opmaak dat door een gebruiker is opgesteld en verzonden als onderdeel van een chatgesprek. 
+ - `RichText/HTML`: Een bericht met opmaak. Houd er rekening mee dat Communication Services-gebruikers momenteel geen RTF-berichten kunnen verzenden. Dit berichttype wordt ondersteund voor berichten die Teams-gebruikers verzenden naar Communication Services-gebruikers in Teams Interop-scenario's.
+ - `ThreadActivity/AddMember`: Een systeembericht dat aangeeft dat een of meer leden zijn toegevoegd aan het chatgesprek. Bijvoorbeeld:
 
 ```xml
 
@@ -92,6 +93,30 @@ De chat functie van Communication Services deelt door gebruikers gegenereerde be
 
 ```
 
+- `ThreadActivity/MemberJoined`: Een systeembericht dat wordt gegenereerd wanneer een gastgebruiker deelneemt aan de Teams-vergaderchat. Communication Services-gebruikers kunnen als gast deelnemen aan Teams-vergaderchats. Bijvoorbeeld:  
+```xml
+{ 
+  "id": "1606351443605", 
+  "type": "ThreadActivity/MemberJoined", 
+  "version": "1606347753409", 
+  "priority": "normal", 
+  "content": "{\"eventtime\":1606351443080,\"initiator\":\"8:orgid:8a53fd2b5ef150bau8442ad732a6ac6b_0e8deebe7527544aa2e7bdf3ce1b8733\",\"members\":[{\"id\":\"8:acs:9b665d83-8164-4923-ad5d-5e983b07d2d7_00000006-7ef9-3bbe-b274-5a3a0d0002b1\",\"friendlyname\":\"\"}]}", 
+  "senderId": " 19:meeting_curGQFTQ8tifs3EK9aTusiszGpkZULzNTTy2dbfI4dCJEaik@thread.v2", 
+  "createdOn": "2020-11-29T00:44:03.6950000Z" 
+} 
+```
+- `ThreadActivity/MemberLeft`: Een systeembericht dat wordt gegenereerd wanneer een gastgebruiker de vergaderchat verlaat. Communication Services-gebruikers kunnen als gast deelnemen aan Teams-vergaderchats. Bijvoorbeeld: 
+```xml
+{ 
+  "id": "1606347703429", 
+  "type": "ThreadActivity/MemberLeft", 
+  "version": "1606340753429", 
+  "priority": "normal", 
+  "content": "{\"eventtime\":1606340755385,\"initiator\":\"8:orgid:8a53fd2b5u8150ba81442ad732a6ac6b_0e8deebe7527544aa2e7bdf3ce1b8733\",\"members\":[{\"id\":\"8:acs:9b665753-8164-4923-ad5d-5e983b07d2d7_00000006-7ef9-3bbe-b274-5a3a0d0002b1\",\"friendlyname\":\"\"}]}", 
+  "senderId": "19:meeting_9u7hBcYiADudn41Djm0n9DTVyAHuMZuh7p0bDsx1rLVGpnMk@thread.v2", 
+  "createdOn": "2020-11-29T23:42:33.4290000Z" 
+} 
+```
 - `ThreadActivity/TopicUpdate`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt. Bijvoorbeeld:
 
 ```xml

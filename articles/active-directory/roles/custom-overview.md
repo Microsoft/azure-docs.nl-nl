@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f694a46fddbc84968b3267842aa19108d051590
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0876478d638963e7157f7a16a263000eec634db0
+ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499234"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97005116"
 ---
 # <a name="overview-of-role-based-access-control-in-azure-active-directory"></a>Overzicht van op rollen gebaseerd toegangsbeheer in Azure Active Directory
 
@@ -30,10 +30,13 @@ In dit artikel wordt uitleg gegeven over Azure AD-rollen (Azure Active Directory
 Beide systemen maken op een soortgelijke manier gebruik van roldefinities en roltoewijzingen. Machtigingen voor Azure AD-rollen kunnen echter niet worden gebruikt in aangepaste Azure-rollen en omgekeerd.
 
 ## <a name="understand-azure-ad-role-based-access-control"></a>Uitleg over op rollen gebaseerd toegangsbeheer van Azure AD
+Azure AD biedt ondersteuning voor 2 typen roldefinities - 
+* [Ingebouwde rollen](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference)
+* [Aangepaste rollen](https://docs.microsoft.com/azure/active-directory/roles/custom-create)
 
-Het verlenen van machtigingen met behulp van aangepaste Azure AD-rollen is een proces in twee stappen: het maken van een aangepaste roldefinitie en vervolgens het toewijzen ervan met behulp van een roltoewijzing. Een aangepaste roldefinitie is een verzameling machtigingen die u toevoegt uit een vooraf ingestelde lijst. Deze machtigingen zijn dezelfde machtigingen die worden gebruikt in de ingebouwde rollen.  
+Ingebouwde rollen zijn kant-en-klare-rollen met een vaste set machtigingen. Deze roldefinities kunnen niet worden gewijzigd. Azure AD biedt ondersteuning voor veel [ingebouwde rollen](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference), en de lijst wordt alleen maar langer. Azure biedt ook ondersteuning voor [aangepaste rollen](https://docs.microsoft.com/azure/active-directory/roles/custom-create), voor meer verfijning en om te voldoen aan uw meer geavanceerde vereisten. Het verlenen van machtigingen met behulp van aangepaste Azure AD-rollen is een proces in twee stappen: het maken van een aangepaste roldefinitie en vervolgens het toewijzen ervan met behulp van een roltoewijzing. Een aangepaste roldefinitie is een verzameling machtigingen die u toevoegt uit een vooraf ingestelde lijst. Deze machtigingen zijn dezelfde machtigingen die worden gebruikt in de ingebouwde rollen.  
 
-Zodra u de roldefinitie hebt gemaakt, kunt u deze toewijzen aan een gebruiker door een roltoewijzing te maken. Met een roltoewijzing worden machtigingen in een roldefinitie aan de gebruiker verleend voor een opgegeven bereik. Met dit proces in twee stappen kunt u één roldefinitie maken en deze meerdere keren toewijzen voor verschillende bereiken. Met een bereik wordt de set Azure AD-resources gedefinieerd waartoe het rollid toegang heeft. Het meest voorkomende bereik is het bereik voor de hele organisatie (organisatiebreed). Een aangepaste rol kan worden toegewezen voor het organisatiebrede bereik. Dit betekent dat de rolmachtigingen van het rollid gelden voor alle resources in de organisatie. Een aangepaste rol kan ook worden toegewezen voor een objectbereik. Een voorbeeld van een objectbereik is één toepassing. Dezelfde rol kan aan de ene gebruiker worden toegewezen voor alle toepassingen in de organisatie, en vervolgens aan een andere gebruiker met een bereik van alleen de Contoso Expense Reports-app.  
+Zodra u de aangepaste roldefinitie hebt gemaakt (of als u een ingebouwde rol gebruikt), kunt u deze toewijzen aan een gebruiker door een roltoewijzing te maken. Met een roltoewijzing worden machtigingen in een roldefinitie aan de gebruiker verleend voor een opgegeven bereik. Met dit proces in twee stappen kunt u één roldefinitie maken en deze meerdere keren toewijzen voor verschillende bereiken. Met een bereik wordt de set Azure AD-resources gedefinieerd waartoe het rollid toegang heeft. Het meest voorkomende bereik is het bereik voor de hele organisatie (organisatiebreed). Een aangepaste rol kan worden toegewezen voor het organisatiebrede bereik. Dit betekent dat de rolmachtigingen van het rollid gelden voor alle resources in de organisatie. Een aangepaste rol kan ook worden toegewezen voor een objectbereik. Een voorbeeld van een objectbereik is één toepassing. Dezelfde rol kan aan de ene gebruiker worden toegewezen voor alle toepassingen in de organisatie, en vervolgens aan een andere gebruiker met een bereik van alleen de Contoso Expense Reports-app.  
 
 De werking van ingebouwde Azure AD-rollen en aangepaste rollen is vergelijkbaar met [Azure RBAC (op rollen gebaseerd toegangsbeheer)](../../active-directory-b2c/overview.md). Het [verschil tussen deze twee systemen voor op rollen gebaseerd toegangsbeheer](../../role-based-access-control/rbac-and-directory-admin-roles.md) is dat met Azure RBAC de toegang tot Azure-resources, zoals virtuele machines of opslag, wordt beheerd met Azure Resource Management, en dat met aangepaste Azure AD-rollen de toegang tot Azure AD-resources wordt beheerd met behulp van Graph API. Beide systemen maken gebruik van het concept van roldefinities en roltoewijzingen. U kunt geen Azure AD RBAC-machtigingen opnemen in Azure-rollen en vice versa.
 
@@ -80,7 +83,7 @@ Een bereik is de beperking van toegestane acties voor een bepaalde Azure AD-reso
 
 ## <a name="required-license-plan"></a>Vereiste licentieplan
 
-[!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
+Het gebruik van ingebouwde rollen in Azure AD is gratis, terwijl voor aangepaste rollen een Azure AD Premium P1-licentie is vereist. Zie [Algemeen beschikbare functies van de edities Gratis, Basic en Premium vergelijken](https://azure.microsoft.com/pricing/details/active-directory) als u een licentie zoekt die bij uw vereisten past.
 
 ## <a name="next-steps"></a>Volgende stappen
 

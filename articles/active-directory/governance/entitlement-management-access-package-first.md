@@ -16,12 +16,12 @@ ms.date: 09/30/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4030dedfb0d7308bb5a0f7a86bc49ee168e6d0c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 2e8d68643b5cc0002467f738dd60343fb2c42dc6
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362804"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631279"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Zelfstudie: Uw eerste toegangspakket maken in Azure AD-rechtenbeheer
 
@@ -117,6 +117,7 @@ Een *toegangspakket* is een bundel resources die een team of project nodig heeft
 11. Selecteer in de vervolgkeuzelijst **Rol** de optie **Lid**.
 
     ![Nieuw toegangspakket - tabblad Resourcerollen](./media/entitlement-management-access-package-first/resource-roles.png)
+
     >[!IMPORTANT]
     >De roltoewijzingsgroepen die aan een toegangspakket zijn toegevoegd, worden aangegeven met het subtype **Toewijsbaar aan rollen**. Raadpleeg [Een roltoewijsbare groep maken](../roles/groups-create-eligible.md) in Azure Active Directory voor meer informatie over groepen die kunnen worden toegewezen aan Azure AD-rollen. Als u geen roltoewijsbare groep ziet die u wilt toevoegen of als u deze niet kunt toevoegen, zorg er dan voor dat u de vereiste Azure AD-rol en rechtenbeheerrol hebt om deze bewerking uit te voeren. Mogelijk moet u iemand met de vereiste rollen vragen om de bron aan uw catalogus toe te voegen. Bekijk [Vereiste rollen om bronnen aan een catalogus toe te voegen](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog) voor meer informatie.
 

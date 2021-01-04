@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f621d11553101c2c0bcfce804b26c218ae58670c
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: f47ee36c0e7806afc10f8f0907825378c2d24410
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576465"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505542"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
 
@@ -69,7 +69,7 @@ De volgende tabel bevat de set van ondersteunde browsers en versies die momentee
 
 \* Let wel dat naast de vorige twee releases ook de meest recente versie van Chrome wordt ondersteund.<br/>
 
-\* * Let wel dat Safari-versies 13.1 + worden ondersteund. Uitgaande video voor Safari macOS wordt nog niet ondersteund, maar wordt wel ondersteund op iOS. Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop iOS.
+\* * Let wel dat Safari-versies 13.1 + worden ondersteund. Uitgaande video voor Safari macOS wordt nog niet ondersteund, maar wordt wel ondersteund op iOS. Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop iOS. Eén-op-één-gesprekken en groepsgesprekken zijn momenteel niet beschikbaar in Safari.
 
 ## <a name="calling-client---browser-security-model"></a>Aanroepende client - beveiligingsmodel voor browsers
 
@@ -90,6 +90,15 @@ Met deze iframe kunt u bijvoorbeeld toegang tot de camera en microfoon toestaan:
 ```html
 <iframe allow="camera *; microphone *">
 ```
+
+## <a name="calling-client-library-streaming-support"></a>Ondersteuning voor het streamen van aanroepende clientbibliotheek
+De aanroepende clientbibliotheek in Communication Services biedt ondersteuning voor de volgende configuraties:
+
+|           |Web | Android/iOS|
+|-----------|----|------------|
+|Aantal uitgaande streams dat tegelijkertijd kan worden verzonden |1 video + 1 scherm delen | 1 video + 1 scherm delen|
+|Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven |1 video + 1 scherm delen| 6 video + 1 scherm delen |
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

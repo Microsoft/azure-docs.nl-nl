@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 12/03/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 36c4ce34d6b0c4df119d5531cda725605cfd0bc1
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 256fec97819cde0f6f62d59b34416c92e1edfd20
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523715"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109603"
 ---
 # <a name="synapse-access-control"></a>Toegangsbeheer voor Synapse 
 
@@ -34,14 +34,14 @@ Toegangsbeheer kan worden vereenvoudigd door gebruik te maken van beveiligingsgr
 
 ## <a name="access-control-elements"></a>Elementen van toegangsbeheer
 
-### <a name="creating-and-managing-synapse-resources"></a>Synapse-resources maken en beheren
+### <a name="creating-and-managing-synapse-compute-resources"></a>Synapse-rekenresources maken en beheren
 
 Azure-rollen worden gebruikt voor het beheren van: 
 - Toegewezen SQL-pools, 
 - Apache Spark-pools en 
 - integratieruntimes. 
 
-Als u deze resources wilt maken, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep.  Als u ze wilt beheren, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep of voor de afzonderlijke resources. 
+Als u deze resources wilt *maken*, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep.  Als u ze wilt *beheren* nadat ze zijn gemaakt, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep of voor de afzonderlijke resources. 
 
 ### <a name="developing-and-executing-code-in-synapse"></a>Code ontwikkelen en uitvoeren in Synapse 
 
@@ -82,7 +82,7 @@ In [Toegangsbeheer voor Synapse instellen](./how-to-set-up-access-control.md) vi
 
  ### <a name="accessing-system-managed-data-in-storage"></a>Toegang tot door het systeem beheerde gegevens in de opslag
 
-Serverloze SQL-pools en Apache Spark-tabellen slaan hun gegevens op in een ADLS Gen2-container die aan de werkruimte is gekoppeld.  Aan gebruikers en de MSI van de werkruimte moeten toegangsmachtigingen van een inzender van opslagblobgegevens worden verleend voor deze ADLS Gen2-opslagcontainer.  
+De gegevens in serverloze SQL-pools en Apache Spark-tabellen worden opgeslagen in een ADLS Gen2-container die is gekoppeld aan de werkruimte. Door de gebruiker geïnstalleerde Apache Spark-bibliotheken worden ook beheerd in hetzelfde opslagaccount.  Om deze gebruikstoepassingen mogelijk te maken moet aan gebruikers en aan de MSI van de werkruimte toegang als **Gegevensbijdrager voor opslagblob** zijn verleend voor deze ADLS Gen2-opslagcontainer.  
 
 ## <a name="using-security-groups-as-a-best-practice"></a>Beveiligingsgroepen gebruiken als best practice
 

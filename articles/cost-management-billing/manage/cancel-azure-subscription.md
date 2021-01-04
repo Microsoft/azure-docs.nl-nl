@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 12/14/2020
 ms.author: banders
-ms.openlocfilehash: 3182da0d04d61d5bad4ce3e41f213ecc3be7ecaf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 662e1bf721c93ee1d59946d2fd603551f3f88ad3
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444447"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97503791"
 ---
 # <a name="cancel-your-azure-subscription"></a>Uw Azure-abonnement opzeggen
 
@@ -30,6 +30,17 @@ Hoewel dit niet vereist is, geeft Microsoft de *aanbeveling* de volgende acties 
 
 Als u een betaald Azure-ondersteuningsplan annuleert, wordt u gefactureerd voor de rest van de abonnementsperiode. Zie [Ondersteuningsabonnementen voor Azure](https://azure.microsoft.com/support/plans/) voor meer informatie.
 
+## <a name="who-can-cancel-a-subscription"></a>Wie kan een abonnement annuleren?
+
+In de onderstaande tabel worden de machtigingen beschreven die zijn vereist voor het opzeggen van een abonnement.
+
+|Abonnementstype     |Wie het abonnement kan opzeggen  |
+|---------|---------|
+|Abonnementen die zijn gemaakt toen u zich aanmeldde voor Azure via de Azure-website. Bijvoorbeeld als u zich aanmeldt voor een [gratis Azure-account](https://azure.microsoft.com/offers/ms-azr-0044p/), een [account met tarieven op gebruiksbasis](https://azure.microsoft.com/offers/ms-azr-0003p/) of een [Visual Studio-abonnement](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/). |  Beheerder van het account en eigenaars van het abonnement  |
+|[Microsoft Enterprise Agreement](https://azure.microsoft.com/pricing/enterprise-agreement/) en [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Eigenaar van het account en eigenaars van het abonnement       |
+|[Azure-plan](https://azure.microsoft.com/offers/ms-azr-0017g/) en [Azure-plan voor DevTest](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Eigenaars van het abonnement      |
+
+
 ## <a name="cancel-subscription-in-the-azure-portal"></a>Abonnement annuleren in de Azure-portal
 
 1. Selecteer uw abonnement op de [pagina Abonnementen in de Azure-portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
@@ -41,15 +52,13 @@ Als u een betaald Azure-ondersteuningsplan annuleert, wordt u gefactureerd voor 
 > [!NOTE]
 > Partners kunnen een abonnement opschorten of annuleren indien dit wordt aangevraagd door een klant of in geval van niet-betaling of fraude. Zie [Een abonnement onderbreken of annuleren](/partner-center/create-a-new-subscription#suspend-or-cancel-a-subscription) voor meer informatie.
 
-## <a name="who-can-cancel-a-subscription"></a>Wie kan een abonnement annuleren?
+## <a name="cancel-a-support-plan"></a>Een ondersteuningsplan annuleren
 
-In de onderstaande tabel worden de machtigingen beschreven die zijn vereist voor het opzeggen van een abonnement.
+Als u uw ondersteuningsplan hebt aangeschaft via de Azure-website of de Azure-portal, of als u er een hebt onder een Microsoft-klantovereenkomst, kunt u het ondersteuningsplan annuleren. Als u uw ondersteuningsplan hebt aangeschaft via een Microsoft-vertegenwoordiger of -partner, neemt u contact met hen op voor hulp. 
 
-|Abonnementstype     |Wie het abonnement kan opzeggen  |
-|---------|---------|
-|Abonnementen die zijn gemaakt toen u zich aanmeldde voor Azure via de Azure-website. Bijvoorbeeld als u zich aanmeldt voor een [gratis Azure-account](https://azure.microsoft.com/offers/ms-azr-0044p/), een [account met tarieven op gebruiksbasis](https://azure.microsoft.com/offers/ms-azr-0003p/) of een [Visual Studio-abonnement](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/). |  Beheerder van het account en eigenaars van het abonnement  |
-|[Microsoft Enterprise Agreement](https://azure.microsoft.com/pricing/enterprise-agreement/) en [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Eigenaar van het account en eigenaars van het abonnement       |
-|[Azure-plan](https://azure.microsoft.com/offers/ms-azr-0017g/) en [Azure-plan voor DevTest](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Eigenaars van het abonnement      |
+1. Ga in de Azure-portal naar **Cost Management + Billing**.
+1. Selecteer onder **Facturering** de optie **Terugkerende kosten**.
+1. Selecteer aan de rechterkant van het regelitem voor het ondersteuningsplan het weglatingsteken ( **...** ), en selecteer **Automatisch verlengen uitschakelen**.
 
 ## <a name="what-happens-after-subscription-cancellation"></a>Wat gebeurt er nadat het abonnement is opgezegd?
 

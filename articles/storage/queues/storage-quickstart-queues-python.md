@@ -1,23 +1,23 @@
 ---
-title: 'Quickstart: Azure Queue Storage-bibliotheek v12 - Python'
-description: Ontdek hoe u de Azure Queue Python v12-bibliotheek kunt gebruiken om een wachtrij te maken en berichten aan de wachtrij toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwijderen. U leert ook hoe u een wachtrij kunt verwijderen.
+title: 'Quickstart: Azure Queue Storage-clientbibliotheek v12 - Python'
+description: Leer hoe u de Azure Queue Storage-clientbibliotheek v12 voor Python kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Leer vervolgens hoe u berichten uit de wachtrij kunt lezen en verwijderen. U leert ook hoe u een wachtrij kunt verwijderen.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 12/10/2019
+ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
-ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: a19b7bc448e9a03afd122dab749352dfa21eaa5b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0eeb1333952533cdf392b93a926f256097557151
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96491890"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585493"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-python"></a>Quickstart: Azure Queue Storage-clientbibliotheek v12 voor Python
 
-Ga aan de slag met de Azure Queue Storage-clientbibliotheek versie 12 voor Python. Azure Queue Storage is een service om grote aantallen berichten op te slaan voor latere ophaling en verwerking. Volg deze stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
+Ga aan de slag met de Azure Queue Storage-clientbibliotheek v12 voor Python. Azure Queue Storage is een service waarmee u grote aantallen berichten kunt opslaan om later op te halen en te verwerken. Volg deze stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
 
 Gebruik de Azure Queue Storage-clientbibliotheek v12 voor Python voor het volgende:
 
@@ -44,11 +44,11 @@ Aanvullende bronnen:
 
 ## <a name="setting-up"></a>Instellen
 
-In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Queue Storage-clientbibliotheek v12 voor Python.
+In deze sectie wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Queue Storage-clientbibliotheek v12 voor Python.
 
 ### <a name="create-the-project"></a>Het project maken
 
-Maak een Python-toepassing met de naam *queues-quickstart-v12*.
+Maak een Python-toepassing met de naam `queues-quickstart-v12`.
 
 1. Maak in een consolevenster (zoals cmd, PowerShell of Bash) een nieuwe map voor het project.
 
@@ -56,7 +56,7 @@ Maak een Python-toepassing met de naam *queues-quickstart-v12*.
     mkdir queues-quickstart-v12
     ```
 
-1. Schakel over naar de zojuist gemaakte map *queues-quickstart-v12*.
+1. Schakel over naar de zojuist gemaakte map `queues-quickstart-v12`.
 
     ```console
     cd queues-quickstart-v12
@@ -93,7 +93,7 @@ Met deze opdracht wordt het pakket Azure Queue Storage-clientbibliotheek voor Py
 
     ```
 
-1. Sla het nieuwe bestand op als *queues-quickstart-v12.py* in de map *queues-quickstart-v12*.
+1. Sla het nieuwe bestand op als `queues-quickstart-v12.py` in de map `queues-quickstart-v12`.
 
 [!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
@@ -111,9 +111,9 @@ Het volgende diagram geeft de relatie tussen deze resources weer.
 
 Gebruik de volgende Python-klassen om te communiceren met deze resources:
 
-- [QueueServiceClient](/python/api/azure-storage-queue/azure.storage.queue.queueserviceclient): Met de `QueueServiceClient` kunt u alle wachtrijen in uw opslagaccount beheren.
-- [QueueClient](/python/api/azure-storage-queue/azure.storage.queue.queueclient): Met de `QueueClient`-klasse kunt u een afzonderlijke wachtrij en de bijbehorende berichten beheren en bewerken.
-- [QueueMessage](/python/api/azure-storage-queue/azure.storage.queue.queuemessage): De `QueueMessage`-klasse vertegenwoordigt de afzonderlijke objecten die worden geretourneerd wanneer [receive_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) wordt aangeroepen voor een wachtrij.
+- [`QueueServiceClient`](/python/api/azure-storage-queue/azure.storage.queue.queueserviceclient): Met de `QueueServiceClient` kunt u alle wachtrijen in uw opslagaccount beheren.
+- [`QueueClient`](/python/api/azure-storage-queue/azure.storage.queue.queueclient): Met de `QueueClient`-klasse kunt u een afzonderlijke wachtrij en de bijbehorende berichten beheren en bewerken.
+- [`QueueMessage`](/python/api/azure-storage-queue/azure.storage.queue.queuemessage): De `QueueMessage`-klasse vertegenwoordigt de afzonderlijke objecten die worden geretourneerd wanneer [`receive_messages`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) wordt aangeroepen voor een wachtrij.
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -130,7 +130,7 @@ Deze voorbeeldcodefragmenten laten zien hoe u de volgende acties kunt uitvoeren 
 
 ### <a name="get-the-connection-string"></a>De verbindingsreeks ophalen
 
-Met de onderstaande code wordt de verbindingsreeks voor het opslagaccount opgehaald. De verbindingsreeks is opgeslagen in de omgevingsvariabele die is gemaakt in de sectie [De opslagverbindingsreeks configureren](#configure-your-storage-connection-string).
+Met de volgende code wordt de verbindingsreeks voor het opslagaccount opgehaald. De verbindingsreeks is opgeslagen in de omgevingsvariabele die is gemaakt in de sectie [De opslagverbindingsreeks configureren](#configure-your-storage-connection-string).
 
 Voeg deze code toe in het `try`-blok:
 
@@ -146,12 +146,12 @@ Voeg deze code toe in het `try`-blok:
 
 ### <a name="create-a-queue"></a>Een wachtrij maken
 
-Verzin een naam voor de nieuwe wachtrij. Met de onderstaande code wordt een UUID-waarde aan de wachtrijnaam toegevoegd om te verzekeren dat deze uniek is.
+Verzin een naam voor de nieuwe wachtrij. Met de volgende code wordt een UUID-waarde aan de wachtrijnaam toegevoegd om te verzekeren dat deze uniek is.
 
 > [!IMPORTANT]
-> Wachtrijnamen mogen alleen kleine letters, cijfers en afbreekstreepjes bevatten en moeten beginnen met een letter of cijfer. Elk afbreekstreepje moet worden voorafgegaan en gevolgd door een cijfer of letter. De naam moet bovendien tussen 3 en 63 tekens lang zijn. Zie [Naamgeving van wachtrijen en metagegevens](/rest/api/storageservices/naming-queues-and-metadata) voor meer informatie over de naamgeving van wachtrijen.
+> Wachtrijnamen mogen alleen kleine letters, cijfers en afbreekstreepjes bevatten en moeten beginnen met een letter of cijfer. Elk afbreekstreepje moet worden voorafgegaan en gevolgd door een cijfer of letter. De naam moet bovendien tussen 3 en 63 tekens lang zijn. Zie [Naamgeving van wachtrijen en metagegevens](/rest/api/storageservices/naming-queues-and-metadata) voor meer informatie.
 
-Maak een instantie van de klasse [QueueClient](/python/api/azure-storage-queue/azure.storage.queue.queueclient). Roep vervolgens de methode [create_queue](/python/api/azure-storage-queue/azure.storage.queue.queueclient#create-queue---kwargs-) aan om de wachtrij in uw opslagaccount te maken.
+Maak een exemplaar van de [`QueueClient`](/python/api/azure-storage-queue/azure.storage.queue.queueclient)-klasse. Roep vervolgens de methode [`create_queue`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#create-queue---kwargs-) aan om de wachtrij in uw opslagaccount te maken.
 
 Voeg deze code toe aan het einde van het `try`-blok:
 
@@ -171,7 +171,7 @@ Voeg deze code toe aan het einde van het `try`-blok:
 
 ### <a name="add-messages-to-a-queue"></a>Berichten aan een wachtrij toevoegen
 
-Met het volgende codefragment worden berichten aan de wachtrij toegevoegd door de methode [send_message](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) aan te roepen. Ook wordt de [QueueMessage](/python/api/azure-storage-queue/azure.storage.queue.queuemessage) opgeslagen die door de derde `send_message`-aanroep wordt geretourneerd. De `saved_message` wordt gebruikt om de inhoud van een bericht later in het programma bij te werken.
+Met het volgende codefragment worden berichten aan de wachtrij toegevoegd door de methode [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) aan te roepen. Ook wordt de [`QueueMessage`](/python/api/azure-storage-queue/azure.storage.queue.queuemessage) opgeslagen die met de derde `send_message`-aanroep wordt geretourneerd. De `saved_message` wordt gebruikt om de inhoud van een bericht later in het programma bij te werken.
 
 Voeg deze code toe aan het einde van het `try`-blok:
 
@@ -186,7 +186,7 @@ Voeg deze code toe aan het einde van het `try`-blok:
 
 ### <a name="peek-at-messages-in-a-queue"></a>Berichten in een wachtrij bekijken
 
-Bekijk de berichten in de wachtrij door de methode [peek_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#peek-messages-max-messages-none----kwargs-) aan te roepen. Met de methode `peek_messages` worden één of meer berichten vooraan in de wachtrij opgehaald, maar wordt de zichtbaarheid van het bericht niet gewijzigd.
+Bekijk de berichten in de wachtrij door de methode [`peek_messages`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#peek-messages-max-messages-none----kwargs-) aan te roepen. Met deze methode worden één of meer berichten vooraan in de wachtrij opgehaald, maar wordt de zichtbaarheid van het bericht niet gewijzigd.
 
 Voeg deze code toe aan het einde van het `try`-blok:
 
@@ -203,7 +203,7 @@ Voeg deze code toe aan het einde van het `try`-blok:
 
 ### <a name="update-a-message-in-a-queue"></a>Een bericht in een wachtrij bijwerken
 
-Werk de inhoud van een bericht bij door de methode [update_message](/python/api/azure-storage-queue/azure.storage.queue.queueclient#update-message-message--pop-receipt-none--content-none----kwargs-) aan te roepen. De methode `update_message` kan de time-out voor zichtbaarheid en de inhoud van een bericht wijzigen. De inhoud van het bericht moet een UTF-8-gecodeerde tekenreeks zijn die maximaal 64 KB groot is. Geef behalve de nieuwe inhoud ook waarden uit het bericht door die eerder in de code waren opgeslagen. De `saved_message`-waarden identificeren welk bericht moet worden bijgewerkt.
+Werk de inhoud van een bericht bij door de methode [`update_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#update-message-message--pop-receipt-none--content-none----kwargs-) aan te roepen. Deze methode kan de time-out voor zichtbaarheid en de inhoud van een bericht wijzigen. De inhoud van het bericht moet een UTF-8-gecodeerde tekenreeks zijn die maximaal 64 KB groot is. Geef behalve de nieuwe inhoud ook waarden uit het bericht door die eerder in de code waren opgeslagen. De `saved_message`-waarden identificeren welk bericht moet worden bijgewerkt.
 
 ```python
     print("\nUpdating the third message in the queue...")
@@ -215,7 +215,7 @@ Werk de inhoud van een bericht bij door de methode [update_message](/python/api/
 
 ### <a name="receive-messages-from-a-queue"></a>Berichten van een wachtrij ontvangen
 
-Download eerder toegevoegde berichten door de methode [receive_messages](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) aan te roepen.
+Download eerder toegevoegde berichten door de methode [`receive_messages`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#receive-messages---kwargs-) aan te roepen.
 
 Voeg deze code toe aan het einde van het `try`-blok:
 
@@ -249,7 +249,7 @@ Voeg deze code toe aan het einde van het `try`-blok:
 
 ### <a name="delete-a-queue"></a>Een wachtrij verwijderen
 
-Met de volgende code worden de resources opgeschoond die de app heeft gemaakt, door de wachtrij te verwijderen met de methode [delete_queue](/python/api/azure-storage-queue/azure.storage.queue.queueclient#delete-queue---kwargs-).
+Met de volgende code worden de resources opgeschoond die met de app zijn gemaakt, door de wachtrij te verwijderen met de methode [`delete_queue`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#delete-queue---kwargs-).
 
 Voeg deze code toe aan het einde van het `try`-blok en sla het bestand op:
 
@@ -268,7 +268,7 @@ Voeg deze code toe aan het einde van het `try`-blok en sla het bestand op:
 
 Met deze app worden drie berichten gemaakt en aan een Azure-wachtrij toegevoegd. De code toont de berichten in de wachtrij, haalt ze op en verwijdert ze, en verwijdert uiteindelijk de wachtrij.
 
-Navigeer in uw consolevenster naar de map die het bestand *queues-quickstart-v12.py* bevat, en voer vervolgens de volgende `python`-opdracht uit om de app uit te voeren.
+Navigeer in het consolevenster naar de map die het bestand `queues-quickstart-v12.py` bevat, en voer de volgende opdracht `python` uit om de app uit te voeren.
 
 ```console
 python queues-quickstart-v12.py
@@ -277,7 +277,7 @@ python queues-quickstart-v12.py
 De uitvoer van de app lijkt op die in het volgende voorbeeld:
 
 ```output
-Azure Queue storage v12 - Python quickstart sample
+Azure Queue Storage client library v12 - Python quickstart sample
 Creating queue: quickstartqueues-cac365be-7ce6-4065-bd65-3756ea052cb8
 
 Adding messages to the queue...
@@ -305,7 +305,7 @@ Done
 
 Wanneer de app pauzeert voordat deze berichten ontvangt, controleert u uw opslagaccount in de [Azure-portal](https://portal.azure.com). Verifieer dat de berichten in de wachtrij staan.
 
-Druk op de **Enter**-toets om de berichten te ontvangen en verwijderen. Druk nogmaals op de **Enter**-toets wanneer u daarom wordt gevraagd, om de wachtrij te verwijderen en de demo te voltooien.
+Druk op de `Enter`-toets om de berichten te ontvangen en verwijderen. Druk nogmaals op de `Enter`-toets wanneer u daarom wordt gevraagd, om de wachtrij te verwijderen en de demo te voltooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -317,4 +317,4 @@ Voor zelfstudies, voorbeelden, quickstarts en andere documentatie gaat u naar:
 > [Azure voor Python-ontwikkelaars](/azure/python/)
 
 - Zie de [Azure Storage-bibliotheken voor Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage) voor meer informatie.
-- Ga door naar [Voorbeelden van Azure Queue Storage v12 Python-clientbibliotheken](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue/samples) om meer Azure Queue Storage-voorbeeld-apps te zien.
+- Raadpleeg [Azure Queue Storage-clientbibliotheek v12 voor Python - voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue/samples) voor meer Azure Queue Storage-voorbeeld-apps.

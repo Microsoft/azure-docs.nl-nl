@@ -8,12 +8,12 @@ ms.subservice: iot-central-retail
 ms.topic: overview
 ms.date: 10/20/2019
 ms.custom: mqtt
-ms.openlocfilehash: 8925b98269b67bfb8a96cb057982ee4e396f17ed
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 41232ba3899d098c019674e4ca4a0a8f2f7d465f
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81686232"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97345956"
 ---
 # <a name="architecture-of-iot-central-connected-logistics-application-template"></a>Architectuur van een toepassingssjabloon voor verbonden logistiek voor IoT Central
 
@@ -27,7 +27,7 @@ Partners en klanten kunnen de toepassingssjabloon en de volgende richtlijnen geb
 1. Set IoT-tags die telemetriegegevens naar een gatewayapparaat verzenden
 2. Gatewayapparaten die telemetrie en geaggregeerde inzichten naar IoT Central verzenden
 3. Gegevens worden gerouteerd naar de gewenste Azure-service voor bewerking
-4. Azure-services zoals ASA of Azure Functions kunnen worden gebruikt om gegevensstromen te transformeren en te verzenden naar de gewenste opslagaccounts 
+4. Azure-services zoals ASA of Azure Functions kunnen worden gebruikt om gegevensstromen te transformeren en te verzenden naar de gewenste opslagaccounts
 5. Zakelijke toepassingen voor eindgebruikers kunnen worden gebruikt in verschillende zakelijke werkstromen
 
 ## <a name="details"></a>Details
@@ -40,10 +40,10 @@ IoT-tags bieden sensormogelijkheden voor fysieke, lucht- en omgevingsomstandighe
 Gateways kunnen ook fungeren als IoT-tags omdat ze over mogelijkheden voor omgevingsdetectie beschikken. De gateway maakt upstream connectiviteit met de Azure IoT-cloud (MQTT) mogelijk via mobiele en wifi-kanalen.  De modi voor Bluetooth, NFC en draadloze sensornetwerken op basis van 802.15.4 worden gebruikt voor downstream communicatie met IoT-tags. Gateways bieden volledig beveiligde cloudconnectiviteit, koppeling van IoT-tags, aggregatie van sensorgegevens, gegevensretentie en de mogelijkheid om waarschuwingsdrempels te configureren.
 
 ## <a name="device-management-with-iot-central"></a>Apparaatbeheer met IoT Central 
-Azure IoT Central is een platform voor het ontwikkelen van oplossingen waarmee de connectiviteit, de configuratie en het beheer van IoT-apparaten wordt vereenvoudigd. Het platform vermindert de lasten en de kosten van het beheren en werken met IoT-apparaten en daaraan gerelateerde ontwikkelingen aanzienlijk. Klanten en partners kunnen end-to-end-bedrijfsoplossingen ontwikkelen om digitale feedbacklussen voor logistiek te realiseren.
+Azure IoT Central is een platform voor het ontwikkelen van oplossingen waarmee de connectiviteit, configuratie en het beheer van IoT-apparaten wordt vereenvoudigd. Het platform vermindert de lasten en de kosten van het beheren en werken met IoT-apparaten en daaraan gerelateerde ontwikkelingen aanzienlijk. Klanten en partners kunnen end-to-end-bedrijfsoplossingen ontwikkelen om digitale feedbacklussen voor logistiek te realiseren.
 
 ## <a name="business-insights-and-actions-using-data-egress"></a>Zakelijke inzichten en acties met behulp van uitgaande gegevens 
-Het IoT Central-platform biedt veel uitbreidingsopties door middel van continue gegevensexport en API's. Zakelijke inzichten gebaseerd op telemetriegegevensverwerking of onbewerkte telemetrie worden doorgaans geëxporteerd naar een Line-Of-Business-toepassing van uw voorkeur. Dit kan worden bereikt met webhook, Service Bus, Event Hub of Blob Storage om Machine Learning-modellen te bouwen, te trainen en te implementeren en inzichten verder te verrijken.
+Het IoT Central-platform biedt veel uitbreidingsopties door middel van continue gegevensexport en API's. Zakelijke inzichten gebaseerd op telemetriegegevensverwerking of onbewerkte telemetrie, worden doorgaans geëxporteerd naar een LOB-toepassing van uw voorkeur. Dit kan worden bereikt met webhook, Service Bus, Event Hub of Blob Storage om Machine Learning-modellen te bouwen, te trainen en te implementeren en inzichten verder te verrijken.
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over hoe u een [template voor verbonden logistiek](./tutorial-iot-central-connected-logistics.md) kunt implementeren

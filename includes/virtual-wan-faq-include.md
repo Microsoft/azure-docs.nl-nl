@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c476fe2af1fb4bddff4799609b164aab14f57b00
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5aab11b31756ee8430e8ae4d54a2b3de5ea2e136
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187392"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97612613"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Is Azure Virtual WAN algemeen beschikbaar?
 
@@ -277,3 +277,7 @@ Zie [Virtual WAN's: Basic en Standard](../articles/virtual-wan/virtual-wan-about
 ### <a name="does-virtual-wan-store-customer-data"></a>Slaat Virtual WAN klantgegevens op? 
 
 Nee. Virtual WAN slaat geen klantgegevens op.
+
+### <a name="are-there-any-managed-service-providers-that-can-manage-virtual-wan-for-users-as-a-service"></a>Zijn er Managed Service Providers die Virtual WAN voor gebruikers kunnen beheren als een service? 
+
+Ja. Raadpleeg [Azure Marketplace-aanbiedingen van Azure-netwerken MSP-partners](../articles/networking/networking-partners-msp.md#msp) voor een lijst met MSP-oplossingen (Managed Service Provider) die beschikbaar zijn via Azure Marketplace.

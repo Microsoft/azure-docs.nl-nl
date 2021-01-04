@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: 6f96b74726684d37795c94be74e48611b4145402
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a22d06137c3ec17851280605ac85c94ef8b342cd
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350208"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563072"
 ---
 # <a name="deploy-static-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Statisch weergegeven Next.js-websites implementeren in Azure Static Web Apps (preview)
 
@@ -125,7 +125,7 @@ Met Azure Static Web Apps wordt de app geïmplementeerd vanuit een GitHub-opslag
 1. Push uw wijzigingen naar GitHub.
 
     ```bash
-    git push origin master
+    git push origin main
     ```
 
 ## <a name="deploy-your-static-website"></a>Uw statische website implementeren
@@ -189,7 +189,7 @@ https://github.com/<YOUR_GITHUB_USERNAME>/nextjs-starter/actions
 
 Toen u de app maakte, is in Azure Static Web Apps een werkstroombestand voor GitHub-acties gemaakt in uw opslagplaats. U moet dit bestand overbrengen naar de lokale opslagplaats zodat de Git-geschiedenis kan worden gesynchroniseerd.
 
-Ga terug naar de terminal en voer de volgende opdracht `git pull origin master` uit.
+Ga terug naar de terminal en voer de volgende opdracht `git pull origin main` uit.
 
 ## <a name="configure-dynamic-routes"></a>Dynamische routes configureren
 

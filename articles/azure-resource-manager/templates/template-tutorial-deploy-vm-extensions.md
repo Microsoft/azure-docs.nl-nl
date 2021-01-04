@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 49bc1a77e2e25cb069a89812603ff562b8a4c1cd
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 9e04006a0908832c623230d89caa62b0985f32e4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931449"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587941"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Zelfstudie: Extensies voor virtuele machines implementeren met ARM-sjablonen
 
@@ -42,7 +42,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 ## <a name="prepare-a-powershell-script"></a>Een PowerShell-script voorbereiden
 
-U kunt een inline PowerShell-script of een scriptbestand gebruiken.  In deze zelfstudie ziet u hoe u een scriptbestand gebruikt. Een PowerShell-script met de volgende inhoud wordt gedeeld vanuit [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1):
+U kunt een inline PowerShell-script of een scriptbestand gebruiken. In deze zelfstudie ziet u hoe u een scriptbestand gebruikt. Een PowerShell-script met de volgende inhoud wordt gedeeld vanuit [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorial-vm-extension/installWebServer.ps1):
 
 ```azurepowershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
@@ -105,22 +105,22 @@ Voeg een VM-extensieresource toe aan de bestaande sjabloon met de volgende inhou
 
 Zie de [extensieverwijzing](/azure/templates/microsoft.compute/virtualmachines/extensions) voor meer informatie over deze resourcedefinitie. Hier volgen enkele belangrijke elementen:
 
-* **name**: omdat de extensiebron een onderliggende resource van het virtuele-machineobject is, moet de naam het voorvoegsel van de naam van de virtuele machine hebben. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md).
-* **dependsOn**: de extensiebron maken nadat u de virtuele machine hebt gemaakt.
-* **fileUris**: dit zijn de locaties waar de scriptbestanden worden opgeslagen. Als u ervoor kiest om de meegeleverde locaties niet te gebruiken, moet u de waarden bijwerken.
-* **commandToExecute**: met deze opdracht wordt het script aangeroepen.
+* `name`: omdat de extensiebron een onderliggende resource van het virtuele-machineobject is, moet de naam het voorvoegsel van de naam van de virtuele machine hebben. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md).
+* `dependsOn`: de extensiebron maken nadat u de virtuele machine hebt gemaakt.
+* `fileUris`: dit zijn de locaties waar de scriptbestanden worden opgeslagen. Als u ervoor kiest om de meegeleverde locaties niet te gebruiken, moet u de waarden bijwerken.
+* `commandToExecute`: met deze opdracht wordt het script aangeroepen.
 
-Als u een inline script wilt gebruiken, verwijdert u **fileUris** en wijzigt u **commandToExecute** in:
+Als u een inline script wilt gebruiken, verwijdert u `fileUris` en werkt u `commandToExecute` bij naar:
 
 ```powershell
 powershell.exe Install-WindowsFeature -name Web-Server -IncludeManagementTools && powershell.exe remove-item 'C:\\inetpub\\wwwroot\\iisstart.htm' && powershell.exe Add-Content -Path 'C:\\inetpub\\wwwroot\\iisstart.htm' -Value $('Hello World from ' + $env:computername)
 ```
 
-Met dit inline script wordt ook de inhoud van iisstart.html bijgewerkt.
+Met dit inline script wordt ook de inhoud van _iisstart.html_ bijgewerkt.
 
 U moet ook de HTTP-poort openen zodat u toegang hebt tot de webserver.
 
-1. Zoek **securityRules** in de sjabloon.
+1. Zoek `securityRules` in de sjabloon.
 1. Voeg de volgende regel toe naast **default-allow-3389**.
 
     ```json
@@ -141,7 +141,7 @@ U moet ook de HTTP-poort openen zodat u toegang hebt tot de webserver.
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-Informatie over de implementatieprocedure vindt u in de sectie De sjabloon implementeren van [Zelfstudie: ARM-sjablonen met afhankelijke resources maken](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Het wordt aanbevolen een gegenereerd wachtwoord te gebruiken voor het beheerdersaccount van de virtuele machine. Zie de sectie [Vereisten](#prerequisites) van dit artikel voor meer informatie.
+Informatie over de implementatieprocedure vindt u in de sectie **De sjabloon implementeren** van [Zelfstudie: ARM-sjablonen met afhankelijke resources maken](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Het wordt aanbevolen een gegenereerd wachtwoord te gebruiken voor het beheerdersaccount van de virtuele machine. Zie de sectie [Vereisten](#prerequisites) van dit artikel voor meer informatie.
 
 Voer de volgende opdracht uit vanuit Cloud Shell om het openbare IP-adres van de VM op te halen:
 

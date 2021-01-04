@@ -1,6 +1,6 @@
 ---
 title: 'Snelstart: Gebruikers aanmelden en Microsoft Graph aanroepen in een Universeel Windows-platform-desktop-app | Azure'
-description: In deze quickstart leert u hoe met een .NET-toepassing (XAML) voor Windows-bureaublad een token kan worden opgehaald en een API kan worden aangeroepen die is beveiligd met een Microsoft-identiteitsplatform-eindpunt
+description: In deze quickstart leert u hoe met een .NET-toepassing (XAML) voor Windows-bureaublad een token kan worden opgehaald en een API kan worden aangeroepen die is beveiligd met een Microsoft-identiteitsplatform-eindpunt.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f63dbad398afcd0a9756cc1e9d4f70f1303d00b0
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: bc7c6022f8ed95a69dcb877252fd8c5eff49ce28
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993853"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030481"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -45,16 +45,17 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
-> 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-> 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.
-> 1. Ga in de Azure-portal naar de blade [App-registraties](https://aka.ms/MobileAppReg) voor Azure Active Directory.
-> 1. Selecteer **Nieuwe registratie**.
->      - Voer in de sectie **Naam** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app. Bijvoorbeeld: `Win-App-calling-MsGraph`.
->      - Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com**.
->      - Selecteer **Registreren** om de toepassing te maken.
-> 1. Selecteer in de lijst met pagina’s voor de app de optie **Verificatie**.
-> 1. In de sectie **Omleidings-URI's** | **Voorgestelde omleidings-URI's voor openbare clients (mobiel, desktop)** gebruikt u **https://login.microsoftonline.com/common/oauth2/nativeclient** .
-> 1. Selecteer **Opslaan**.
+> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+> 1. Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com**.
+> 1. Selecteer **Registreren** om de toepassing te maken.
+> 1. Selecteer **Verificatie** onder **Beheren**.
+> 1. Selecteer **Een platform toevoegen** > **Mobiele en desktoptoepassingen**.
+> 1. Selecteer `https://login.microsoftonline.com/common/oauth2/nativeclient` in de sectie **Omleidings-URI's**.
+> 1. Selecteer **Configureren**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal

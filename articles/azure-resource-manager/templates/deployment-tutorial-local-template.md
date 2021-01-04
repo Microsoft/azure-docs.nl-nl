@@ -1,22 +1,22 @@
 ---
 title: 'Zelfstudie: een lokaal Azure Resource Manager-sjabloon implementeren'
-description: Ontdek hoe u een Azure Resource Manager-sjabloon kunt implementeren vanaf uw lokale computer
+description: Ontdek hoe u een ARM-sjabloon (Azure Resource Manager) kunt implementeren vanaf de lokale computer
 ms.date: 05/20/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: fe13376ced428713703f2bd5cf33941129dec1d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 640d314711e34119dac5e1c5bf9fa245685b6f38
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611619"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368133"
 ---
-# <a name="tutorial-deploy-a-local-azure-resource-manager-template"></a>Zelfstudie: een lokaal Azure Resource Manager-sjabloon implementeren
+# <a name="tutorial-deploy-a-local-arm-template"></a>Zelfstudie: Een lokale ARM-sjabloon implementeren
 
-Ontdek hoe u een Azure Resource Manager-sjabloon kunt implementeren vanaf uw lokale computer. Dit neemt ongeveer **8 minuten** in beslag.
+Ontdek hoe u een ARM-sjabloon (Azure Resource Manager) kunt implementeren vanaf de lokale machine. Dit neemt ongeveer **8 minuten** in beslag.
 
-Deze zelfstudie is de eerste van een reeks. In deze reeks deelt u het sjabloon op in modules door een gekoppelde sjabloon te maken. U slaat het gekoppelde sjabloon op in een opslagaccount en beveiligt dit met een SAS-token. U leert ook hoe u een DevOps-pijplijn maakt om sjablonen te implementeren. Deze reeks gaat over de implementatie van sjablonen.  Als u wilt leren hoe u een sjabloon kunt implementeren, bekijk dan de [zelfstudies voor beginners](./template-tutorial-create-first-template.md).
+Deze zelfstudie is de eerste van een reeks. In deze reeks deelt u de sjabloon op in modules door een gekoppelde sjabloon te maken. U slaat het gekoppelde sjabloon op in een opslagaccount en beveiligt dit met een SAS-token. U leert ook hoe u een DevOps-pijplijn maakt om sjablonen te implementeren. Deze reeks gaat over de implementatie van sjablonen. Als u wilt leren hoe u een sjabloon kunt implementeren, bekijk dan de [zelfstudies voor beginners](./template-tutorial-create-first-template.md).
 
 ## <a name="get-tools"></a>Hulpprogramma's installeren
 
@@ -29,23 +29,24 @@ U heeft Azure PowerShell of Azure CLI nodig om het sjabloon te implementeren. Zi
 - [Azure PowerShell installeren](/powershell/azure/install-az-ps)
 - [Azure CLI installeren in Windows](/cli/azure/install-azure-cli-windows)
 - [Azure CLI installeren in Linux](/cli/azure/install-azure-cli-linux)
+- [Azure CLI installeren in macOS](/cli/azure/install-azure-cli-macos)
 
 Nadat u Azure PowerShell of Azure CLI hebt geïnstalleerd moet u zich voor de eerste keer aanmelden. Bekijk [Aanmelden - PowerShell](/powershell/azure/install-az-ps#sign-in) of [Aanmelden - Azure CLI](/cli/azure/get-started-with-azure-cli#sign-in) voor ondersteuning.
 
 ### <a name="editor-optional"></a>Editor (optioneel)
 
-Sjablonen zijn JSON-bestanden. Om sjablonen te controleren/bewerken heeft u een goede JSON-editor nodig. We raden Visual Studio Code met de extensie Resource Manager Tools aan. Als u deze hulpprogramma's wilt installeren, raadpleegt u [Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
+Sjablonen zijn JSON-bestanden. Om sjablonen te controleren/bewerken heeft u een goede JSON-editor nodig. We raden Visual Studio Code met de extensie Resource Manager Tools aan. Als u deze hulpprogramma's wilt installeren, raadpleegt u [quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="review-template"></a>Sjabloon controleren
 
-Het sjabloon implementeert een opslagaccount, App Service-plan en webtoepassing. Als u het sjabloon wilt aanmaken, doorloop dan de [zelfstudie over Snelstartsjablonen](template-tutorial-quickstart-template.md). Dat is echter geen vereiste om deze zelfstudie te voltooien.
+Het sjabloon implementeert een opslagaccount, App Service-plan en webtoepassing. Als u de sjabloon wilt aanmaken, doorloop dan de [zelfstudie over Quickstart-sjablonen](template-tutorial-quickstart-template.md). Dat is echter geen vereiste om deze zelfstudie te voltooien.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-deployment/local-template/azuredeploy.json":::
 
 > [!IMPORTANT]
-> Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. In het sjabloon is de opslagaccountnaam de projectnaam met 'store' daaraan toegevoegd. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
+> Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. De opslagaccountnaam in de sjabloon is de projectnaam met achteraan toegevoegd: **store**. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
 
-Sla een kopie van de sjabloon op uw lokale computer op met de extensie .json, bijvoorbeeld azuredeploy.json. Verderop in deze sjabloon implementeert u deze sjabloon.
+Sla een kopie van de sjabloon op de lokale computer op met de extensie _.json_, bijvoorbeeld _azuredeploy.json_. Verderop in deze sjabloon implementeert u deze sjabloon.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -65,7 +66,7 @@ az login
 
 ---
 
-Als u meerdere Azure-abonnementen hebt, selecteert u het abonnement dat u wilt gebruiken:
+Als u meerdere Azure-abonnementen hebt, selecteert u het abonnement dat u wilt gebruiken. Vervang `[SubscriptionID/SubscriptionName]` en de vierkante haken `[]` door uw abonnementsgegevens:
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -129,7 +130,7 @@ New-AzResourceGroupDeployment `
   -verbose
 ```
 
-Zie [Resources implementeren met Resource Manager-sjablonen en Azure PowerShell](./deploy-powershell.md) voor meer informatie over de implementatie van sjablonen met Azure PowerShell.
+Zie [Resources implementeren met ARM-sjablonen en Azure PowerShell](./deploy-powershell.md) voor meer informatie over de implementatie van sjablonen met Azure PowerShell.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -148,7 +149,7 @@ az deployment group create \
   --verbose
 ```
 
-Zie [Resources implementeren met Resource Manager-sjablonen en Azure CLI](./deploy-cli.md) voor meer informatie over de implementatie van sjablonen met Azure CLI.
+Zie [Resources implementeren met ARM-sjablonen en Azure CLI](./deploy-cli.md) voor meer informatie over de implementatie van sjablonen met Azure CLI.
 
 ---
 

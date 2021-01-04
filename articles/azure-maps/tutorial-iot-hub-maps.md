@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 6109164d8827a343a550a114acc42db2461f3a2c
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: d475c76d338270cb9b8e34ea8563cdfd8fdf5122
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905346"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563055"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-by-using-azure-maps"></a>Zelfstudie: Ruimtelijke IoT-analyse implementeren met behulp van Azure Maps
 
@@ -143,8 +143,9 @@ Volg deze stappen om de geofence te uploaden met behulp van de Azure Maps Data U
 
    ```HTTP
    https://atlas.microsoft.com/mapData/<operationId>/status?api-version=1.0&subscription-key={subscription-key}
-
-7. When the **GET** HTTP request completes successfully, it returns a `resourceLocation`. The `resourceLocation` contains the unique `udid` for the uploaded content. Copy this `udid` for later use in this tutorial.
+   ```
+   
+7. Wanneer de HTTP-aanvraag **GET** met succes is uitgevoerd, retourneert deze een `resourceLocation`. De `resourceLocation` bevat de unieke `udid` voor de geüploade inhoud. Kopieer deze `udid` voor later gebruik in deze zelfstudie.
 
       ```json
       {

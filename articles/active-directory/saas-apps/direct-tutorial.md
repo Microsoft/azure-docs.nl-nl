@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 8226a1e445c6f7f6360d715d17bbe5229e4172b6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a3b9ae91118f714ce15f56cde0f79faa4fb4d640
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92454776"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97586581"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-direct"></a>Zelfstudie: Azure Active Directory-integratie met direct
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van direct in Azure AD moet u direct uit
 
 **Als u direct wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,9 +61,9 @@ Voor het configureren van de integratie van direct in Azure AD moet u direct uit
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **direct** , selecteer **direct** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **direct**, selecteer **direct** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![direct in de resultatenlijst](common/search-new-app.png)
+    ![direct in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met direct voert u de volgende stappen uit:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de **direct** -toepassing.
+1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de **direct**-toepassing.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -131,7 +131,7 @@ Als u eenmalige aanmelding aan de zijde van **direct** wilt configureren, moet u
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -144,7 +144,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u brittasimon@yourcompanydomain.extension. Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
@@ -185,15 +185,15 @@ In deze sectie gaat u in direct een gebruiker maken met de naam Britta Simon. Ne
 
 In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
 
-1. Als u wilt testen in de **door IDP geïnitieerde modus** :
+1. Als u wilt testen in de **door IDP geïnitieerde modus**:
 
-    Wanneer u op de tegel **direct** in het toegangsvenster klikt, wordt u automatisch aangemeld bij uw **direct** -toepassing.
+    Wanneer u op de tegel **direct** in het toegangsvenster klikt, wordt u automatisch aangemeld bij uw **direct**-toepassing.
 
-2. Als u wilt testen in de **door SP geïnitieerde modus** :
+2. Als u wilt testen in de **door SP geïnitieerde modus**:
 
     a. Klik op de tegel **direct** in het toegangsvenster en u wordt omgeleid naar de aanmeldingspagina van de toepassing.
 
-    b. Voer in het tekstvak dat wordt weergegeven uw `subdomain` in en druk op '次へ (Volgende) '. U wordt dan automatisch aangemeld bij uw **direct** -toepassing.
+    b. Voer in het tekstvak dat wordt weergegeven, uw `subdomain` in en selecteer **Volgende**. U wordt dan automatisch aangemeld bij uw **direct**-toepassing.
 
 Wanneer u op de tegel direct in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van direct waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 

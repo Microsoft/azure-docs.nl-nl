@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: overview
-ms.date: 11/18/2020
+ms.date: 12/15/2020
 ms.author: banders
-ms.openlocfilehash: 0ef3f833d1bac4f26f49ace2b366cdfcf5ef3e35
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b79bde204d82b069b3314855a45a680b863c3f69
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352980"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560488"
 ---
 # <a name="what-are-azure-reservations"></a>Wat zijn Azure-reserveringen?
 
@@ -58,13 +58,14 @@ Zie  [Een reservering kopen](prepare-buy-reservation.md) voor meer informatie
 
 De aangeschafte reservering wordt verrekend volgens de betalingswijze die is gekoppeld aan het abonnement. De reserveringskosten worden afgetrokken van het saldo van uw financiële toezegging, indien beschikbaar. Wanneer het saldo van uw financiële toezegging ontoereikend is voor de kosten van de reservering, wordt de overschrijding gefactureerd. Als u een abonnement hebt van een afzonderlijk plan met tarieven voor betalen per gebruik, worden kosten voor vooruitbetalingen onmiddellijk in rekening gebracht op de creditcard die in uw account is geregistreerd. Maandelijkse betalingen worden op uw factuur weergegeven en deze kosten worden maandelijks op uw creditcard in rekening gebracht. Wanneer u per factuur wordt gefactureerd, ziet u de kosten op uw volgende factuur. 
 
-## <a name="permissions-to-view-and-manage-reservations"></a>Machtigingen voor het weergeven en beheren van reserveringen 
+## <a name="who-can-manage-a-reservation-by-default"></a>Wie kunnen standaard een reservering beheren?
 
-De gebruiker die een reservering koopt en de accountbeheerder van het abonnement dat wordt gebruikt om de reservering te factureren, krijgen de rol van eigenaar voor de reserveringsorder en voor de reservering.
+De volgende gebruikers kunnen standaard reserveringen weergeven en beheren:
 
-U kunt het reserveringsbeheer delegeren door personen toe te voegen aan rollen voor de reserveringsbestelling of de reservering. U wijst de rollen toe in de Azure-portal of met behulp van API's en PowerShell. 
+- De persoon die een reservering koopt, en de accountbeheerder van het factureringsabonnement dat is gebruikt om de reservering te kopen, worden toegevoegd aan de reserveringsorder.
+- Factureringsbeheerders van een Enterprise Agreement en Microsoft-klantovereenkomst.
 
-Zie  [Gebruikers toevoegen of wijzigen die een reservering kunnen beheren](manage-reserved-vm-instance.md#add-or-change-users-who-can-manage-a-reservation) voor meer informatie 
+Raadpleeg [Reserveringen voor Azure-resources beheren](manage-reserved-vm-instance.md) om toe te staan dat andere personen reserveringen beheren.
 
 ## <a name="get-reservation-details-and-utilization-after-purchase"></a>Details en het gebruik van een reserveringsdetails ontvangen na de aankoop
 

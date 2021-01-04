@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: ded54628a307f3cf4441e804f7f1025a0e943b51
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 4eb3c2905f3c1ccfa63da1bb4a8c81decdbc2f2b
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979943"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507724"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)
 
@@ -265,16 +265,17 @@ U hebt nu een eenvoudige webserver voor uw toepassing met één pagina. Aan het 
 
 Voordat u verdergaat met de verificatie, registreert u uw toepassing op **Azure Active Directory**.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-1. Als u via uw account toegang hebt tot meerdere tenants, selecteert u het account rechts bovenin en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
-1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft identity platform voor ontwikkelaars.
-1. Wanneer de pagina **Een toepassing registreren** wordt weergegeven, voert u een naam in voor de toepassing.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 1. Selecteer in de sectie **Omleidings-URI** het platform **Web** in de vervolgkeuzelijst en stel de waarde vervolgens in op de URL van de toepassing die is gebaseerd op uw webserver.
 1. Selecteer **Registreren**.
 1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
-1. Voor deze quickstart moet de [Impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
-1. Schakel in **Geavanceerde instellingen**, onder **Impliciete toekenning**, de selectievakjes **Id-tokens** en **Toegangstokens** in. Id-tokens en toegangstokens zijn vereist, omdat via deze app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Selecteer in de sectie **Impliciete toekenning** de opties **Id-tokens** en **Toegangstokens**. Id-tokens en toegangstokens zijn vereist, omdat via deze app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
 1. Selecteer **Opslaan**.
 
 > ### <a name="set-a-redirect-url-for-nodejs"></a>Een omleidings-URL instellen voor Node.js

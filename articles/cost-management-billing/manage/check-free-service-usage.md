@@ -1,19 +1,19 @@
 ---
 title: Gebruik van gratis Azure-services controleren en bijhouden
-description: Lees hier hoe u het gebruik van gratis services kunt controleren in de Azure-portal. Er zijn geen kosten voor services die zijn inbegrepen in een gratis account, tenzij u de servicelimieten overschrijdt.
+description: Lees hier hoe u het gebruik van gratis services kunt controleren in de Azure-portal. Er zijn geen kosten voor services die zijn inbegrepen bij een gratis account, tenzij u de servicelimieten overschrijdt.
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 12/04/2020
 ms.author: banders
-ms.openlocfilehash: 787d54ba2050a0293957310dbc8377b83a7f7bfc
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: c7c28e64822a6aefa17e8baa4ef42a3b3fea8adb
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690048"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589773"
 ---
 # <a name="check-usage-of-free-services-included-with-your-azure-free-account"></a>Gebruik van gratis services controleren die deel uitmaken van uw gratis Azure-account
 
@@ -22,18 +22,13 @@ Er worden geen kosten in rekening gebracht voor services die gratis worden gelev
 ## <a name="check-usage-in-the-azure-portal"></a>Gebruik controleren in het Azure-portal
 
 1.  Meld u aan bij de [Azure-portal](https://portal.azure.com).
-
-2.  Zoek naar **Abonnementen**.
-
+1.  Zoek naar **Abonnementen**.  
     ![Schermopname van zoekopdracht in portal naar abonnementen](./media/check-free-service-usage/billing-search-subscriptions.png)
-
-3.  Selecteer het abonnement dat is gemaakt toen u zich aanmeldde voor een gratis Azure-account.
-
-4.  Schuif omlaag naar de tabel waarin het gebruik van de gratis services wordt weergegeven.
-
+1.  Selecteer het abonnement dat is gemaakt toen u zich aanmeldde voor een gratis Azure-account.
+1.  Schuif omlaag naar de tabel waarin het gebruik van de gratis services wordt weergegeven.  
     ![Schermopname met gebruik van gratis services](./media/check-free-service-usage/subscription-usage-free-services.png)
 
-    De tabel heeft de volgende kolommen:
+De tabel heeft de volgende kolommen:
 
 * **Meter:** Identificeert de maateenheid voor de service die wordt verbruikt.
 * **Gebruik/limiet:** Gebruik en limiet voor de huidige maand voor de meter.
@@ -45,7 +40,7 @@ Er worden geen kosten in rekening gebracht voor services die gratis worden gelev
 
 > [!IMPORTANT]
 >
-> Gratis services zijn alleen beschikbaar voor het abonnement dat is gemaakt toen u zich aanmeldde voor een gratis Azure-account. Als u de tabel voor gratis services niet ziet op de overzichtspagina van het abonnement, zijn deze niet beschikbaar voor het abonnement.
+> Gratis services zijn alleen beschikbaar voor het abonnement dat is gemaakt toen u zich registreerde voor een gratis Azure-account. Als u de tabel voor gratis services niet ziet op de overzichtspagina van het abonnement, zijn deze niet beschikbaar voor het abonnement.
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
 

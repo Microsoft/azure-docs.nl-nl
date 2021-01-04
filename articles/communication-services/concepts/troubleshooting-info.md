@@ -8,12 +8,12 @@ ms.author: manoskow
 ms.date: 10/23/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 775075765c8c8eaa94541c0f094c1f7743fe59d9
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 88ad060c1ba28285051a91bd928a2a7116dff1ce
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886784"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937539"
 ---
 # <a name="troubleshooting-in-azure-communication-services"></a>Problemen met Azure Communication Services oplossen
 
@@ -165,6 +165,25 @@ Ga in Android Studio naar Device File Explorer door Weergave > Hulpprogramma Win
    
 
 ---
+
+
+## <a name="calling-client-library-error-codes"></a>Foutcodes voor aanroepende clientbibliotheek
+
+De aanroepende clientbibliotheek van Azure Communication Services maakt gebruik van de volgende foutcodes om u te helpen problemen met oproepen op te lossen. Deze foutcodes worden weergegeven via de eigenschap `call.callEndReason` nadat de oproep is beëindigd.
+
+| Foutcode | Beschrijving | Actie die moet worden uitgevoerd |
+| -------- | ---------------| ---------------|
+| 403 | Verboden / Verificatiefout. | Controleer of het Communication Services-token geldig is, en niet is verlopen. |
+| 404 | Oproep is niet gevonden. | Controleer of het nummer dat u belt (of de oproep waaraan u deelneemt) bestaat. |
+| 408 | Time-out voor oproepcontroller. | Er is een time-out voor de oproepcontroller opgetreden tijdens het wachten op protocolberichten van gebruikerseindpunten. Controleer of de clients zijn verbonden en beschikbaar zijn. |
+| 410 | Fout met de lokale mediastack of media-infrastructuur. | Controleer of u de meest recente clientbibliotheek gebruikt in een ondersteunde omgeving. |
+| 430 | Kan het bericht niet bezorgen bij de clienttoepassing. | Zorg ervoor dat de clienttoepassing actief en beschikbaar is. |
+| 480 | Het eindpunt van de externe client is niet geregistreerd. | Controleer of het externe eindpunt beschikbaar is. |
+| 481 | Verwerken van binnenkomende oproep is mislukt. | Dien een ondersteuningsaanvraag in via de Azure-portal |
+| 487 | Oproep is geannuleerd, lokaal afgewezen, beëindigd als gevolg van een probleem met een niet-overeenkomend eindpunt, of genereren van de media-aanbieding is mislukt. | Verwacht gedrag. |
+| 490, 491, 496, 487, 498 | Netwerkproblemen met lokaal eindpunt. | Controleer het netwerk. |
+| 500, 503, 504 | Fout in Communication Services-infrastructuur. | Dien een ondersteuningsaanvraag in via de Azure-portal |
+| 603 | Oproep is globaal geweigerd door een Communication Services-deelnemer | Verwacht gedrag. |
 
 
 ## <a name="related-information"></a>Gerelateerde informatie

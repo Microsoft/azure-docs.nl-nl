@@ -3,16 +3,18 @@ title: HTTP-extensieprotocol - Azure
 description: In dit artikel leert u het HTTP-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-module.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: f1e1fb0e8fe63b3a83c59a4ec48abdac7f22096a
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 52c98231780a2776f4ff67992f29b247eccb8bc2
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016651"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97399142"
 ---
 # <a name="http-extension-protocol"></a>HTTP-extensieprotocol
 
-In dit artikel leert u het HTTP-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-module.
+Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/media-graph-extension-concept?branch=release-lva-dec-update). Als u de HTTP-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via HTTP
+
+In dit artikel leert u het HTTP-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-module. 
 
 Het HTTP-contract wordt op basis van de volgende twee onderdelen gedefinieerd:
 
@@ -85,19 +87,16 @@ Date: Fri, 17 Apr 2020 04:44:01 GMT
 }
 ```
 
-Het wordt aanbevolen dat antwoorden worden geretourneerd met behulp van geldige JSON-documenten volgens het hieronder gedefinieerde schema, dat vooraf is ingesteld. Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
+Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
 
 Als een antwoord wordt geretourneerd waarbij het inhoudstype niet 'application/json' is, wordt het bericht door Live Video Analytics als basis-64-inhoud versleuteld en geserialiseerd als een ondoorzichtige JSON-nettolading.
 
-Als er wel een antwoord met inhoudstype 'application/json' wordt geretourneerd maar het JSON-schema niet het hieronder beschreven metagegevensschema voor deductie volgt, wordt de nettolading van het bericht doorgestuurd via de pijplijn, maar dan is er wel sprake van beperkte interoperabiliteit.
+Als er wel een antwoord met inhoudstype 'application/json' wordt geretourneerd maar het JSON-schema niet het hieronder beschreven metagegevensschema voor deductie volgt, wordt de nettolading van het bericht doorgestuurd via de pijplijn, maar dan is er wel sprake van beperkte interoperabiliteit. Kijk [hier](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update) voor gedetailleerde en up-to-date informatie met betrekking tot het metagegevensschema voor deductie.
 
 > [!NOTE]
 > Als er geen enkel antwoord wordt geproduceerd, moet de HTTP 204-statuscode (geen inhoud) worden geretourneerd, met een lege hoofdtekst. Live Video Analytics interpreteert dit als een leeg resultaat. De gebeurtenis wordt niet via de pijplijn doorgestuurd.
 
-## <a name="data-contracts---class-hierarchy"></a>Gegevenscontracten: klassehiërarchie
-
-![klassehiërarchie](./media/http-extension-protocol/class-hierarchy.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[gRPC-gegevenscontract](./grpc-extension-protocol.md)
+[gRPC-extensieprotocol](./grpc-extension-protocol.md)

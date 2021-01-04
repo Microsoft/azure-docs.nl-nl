@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: peshultz
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 7752bc3f768aec7a3e98fb1813c4194f81fb9dfb
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 6cc6e6a9739b8b06ab3c48dd3fd75f19de8d0787
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917627"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106271"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Zelfstudie: Python-scripts uitvoeren via Azure Data Factory met behulp van Azure Batch
 
@@ -148,12 +148,23 @@ Als er waarschuwingen of fouten worden gegenereerd door de uitvoering van het sc
 1. Klik op de taak met de afsluitcode voor de fout.
 1. Bekijk `stdout.txt` en `stderr.txt` om uw probleem te onderzoeken en vast te stellen.
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Hoewel jobs en taken zelf niet in rekening worden gebracht, worden rekenknooppunten wel in rekening gebracht. Daarom is het raadzaam om pools alleen toe te wijzen als dat nodig is. Wanneer u de pool verwijdert, wordt ook alle taakuitvoer op de knooppunten verwijderd. De invoer- en uitvoerbestanden blijven echter aanwezig in het opslagaccount. Wanneer u het Batch-account en het opslagaccount niet meer nodig hebt, kunt u deze ook verwijderen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie bekeek u een voorbeeld dat u meer informatie bood over het uitvoeren van Python-scripts als onderdeel van een pijplijn via Azure Data Factory met behulp van Azure Batch.
+In deze zelfstudie heeft u het volgende geleerd:
+
+> [!div class="checklist"]
+> * Verifiëren met Batch- en Storage-accounts
+> * Een script ontwikkelen en uitvoeren in Python
+> * Een pool van rekenknooppunten maken om een toepassing uit te voeren
+> * Uw Python-workloads plannen
+> * Uw analysepijplijn bewaken
+> * Toegang tot uw logboekbestanden
 
 Zie voor meer informatie over Azure Data Factory:
 
 > [!div class="nextstepaction"]
 > [Overzicht van Azure Data Factory](../data-factory/introduction.md)
-

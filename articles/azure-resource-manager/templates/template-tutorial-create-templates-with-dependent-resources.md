@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a43fa12e72484e97b828648cd7d610f5cf15ea4e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: d1e5848e568f42fb8a77c65c775962f27a5a03df
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931585"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588033"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Zelfstudie: ARM-sjablonen met afhankelijke resources maken
 
@@ -46,7 +46,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De sjabloon die in deze zelfstudie wordt gebruikt, heet [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Een eenvoudige Windows-VM implementeren).
 
-1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
+1. Selecteer in Visual Studio Code **Bestand** > **Bestand openen**.
 2. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
@@ -54,18 +54,18 @@ Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats 
     ```
 
 3. Selecteer **Openen** om het bestand te openen.
-4. Selecteer **Bestand**>**Opslaan als** om het bestand op uw lokale computer op te slaan als **azuredeploy.json**.
+4. Selecteer **Bestand** > **Opslaan als** om het bestand op uw lokale computer op te slaan als _azuredeploy.json_.
 
 ## <a name="explore-the-template"></a>De sjabloon verkennen
 
 Wanneer u de sjabloon in deze sectie verkent, probeert u om deze vragen te beantwoorden:
 
 * Hoeveel Azure-resources zijn er in deze sjabloon gedefinieerd?
-* Een van de resources is een Azure-opslagaccount.  Ziet de definitie eruit zoals de definitie die is gebruikt in de laatste zelfstudie?
+* Een van de resources is een Azure-opslagaccount. Ziet de definitie eruit zoals de definitie die is gebruikt in de laatste zelfstudie?
 * Kunt u de sjabloonverwijzingen vinden voor de resources die zijn gedefinieerd in deze sjabloon?
 * Kunt u de afhankelijkheden van de resources vinden?
 
-1. Vouw in Visual Studio Code de elementen samen totdat u alleen de elementen op het eerste niveau en tweede niveau binnen **resources** ziet:
+1. Vouw in Visual Studio Code de elementen samen totdat u alleen de elementen op het eerste niveau en tweede niveau binnen `resources` ziet:
 
     ![ARM-sjablonen in Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
@@ -96,7 +96,7 @@ Wanneer u de sjabloon in deze sectie verkent, probeert u om deze vragen te beant
 
     ![ARM-sjablonen in Visual Studio Code: virtueel netwerk dependsOn](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
 
-    Met het element dependsOn kunt u één resource als afhankelijk van een of meer resources definiëren. Deze resource is afhankelijk van één andere resource:
+    Met het element `dependsOn` kunt u één resource definiëren als afhankelijk van een of meer resources. Deze resource is afhankelijk van één andere resource:
 
     * `Microsoft.Network/networkSecurityGroups`
 
@@ -124,7 +124,7 @@ Door de afhankelijkheden op te geven, kan Resource Manager de oplossing efficië
 
     ![Bestand uploaden in Cloud Shell in de Azure-portal](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u eerder hebt opgeslagen. Na het uploaden van het bestand kunt u de **ls**-opdracht en de **cat**-opdracht uitvoeren om te controleren of het bestand is geüpload.
+1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u eerder hebt opgeslagen. Nadat het bestand is geüpload, kunt u de opdracht `ls` en de opdracht `cat` gebruiken om te controleren of het bestand is geüpload.
 
 1. Gebruik het volgende PowerShell-script om de sjabloon te implementeren.
 

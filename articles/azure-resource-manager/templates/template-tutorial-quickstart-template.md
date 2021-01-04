@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 445e7ce2d6e609d75bff38bb3d049a87f184be12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46b32ae7aeb971c9391a69e3ca3d01f669774248
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91613591"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106900"
 ---
 # <a name="tutorial-use-azure-quickstart-templates"></a>Zelfstudie: Azure-snelstartsjablonen sjablonen gebruiken
 
@@ -34,10 +34,10 @@ Deze sjabloon werkt goed voor het implementeren van opslagaccounts en App Servic
 ## <a name="find-template"></a>Sjabloon zoeken
 
 1. Open [Azure-snelstartsjablonen](https://azure.microsoft.com/resources/templates/).
-1. Typ bij **Search** de zoektekst **deploy linux web app**.
-1. Selecteer de sjabloon met de naam **Deploy a basic Linux web app**. Als u deze niet kunt vinden, is dit de [directe link](https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/).
+1. Typ bij **Search** de zoektekst _deploy linux web app_.
+1. Selecteer de tegel met de naam **Basis-web-app voor Linux**. Als u deze niet kunt vinden, is dit de [directe link](https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/).
 1. Selecteer **Zoeken op GitHub**.
-1. Selecteer **azuredeploy.json**.
+1. Selecteer _azuredeploy.json_.
 1. Bekijk de sjabloon. Zoek in het bijzonder naar de resource `Microsoft.Web/sites`.
 
     ![Resource Manager-snelstartsjabloon voor website](./media/template-tutorial-quickstart-template/resource-manager-template-quickstart-template-web-site.png)
@@ -48,15 +48,15 @@ Voeg de snelstartsjabloon samen met de bestaande sjabloon:
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json" range="1-108" highlight="32-45,49,85-100":::
 
-De naam van de web-app moet uniek zijn binnen Azure. Om te voorkomen dat er dubbele namen worden gebruikt, is de variabele **webAppPortalName** bijgewerkt van **"webAppPortalName": "[concat(parameters('webAppName'), '-webapp')]"** in **"webAppPortalName": "[concat(parameters('webAppName'), uniqueString(resourceGroup().id))]"** .
+De naam van de web-app moet uniek zijn binnen Azure. Om te voorkomen dat er dubbele namen worden gebruikt, is de variabele `webAppPortalName` bijgewerkt van `"webAppPortalName": "[concat(parameters('webAppName'), '-webapp')]"` in `"webAppPortalName": "[concat(parameters('webAppName'), uniqueString(resourceGroup().id))]"` .
 
 Voeg aan het einde van de definitie `Microsoft.Web/serverfarms` een komma toe om de resourcedefinitie te scheiden van de definitie van `Microsoft.Web/sites`.
 
 Deze nieuwe resource heeft een aantal functies die van belang zijn.
 
-U ziet dat de resource een element bevat met de naam **dependsOn** dat is ingesteld op het App Service-plan. Deze instelling is vereist omdat het App Service-plan moet bestaan voordat de web-app wordt gemaakt. Het element **dependsOn** geeft aan Resource Manager door hoe de resources moeten worden gerangschikt voor implementatie.
+U ziet dat de resource een element bevat met de naam `dependsOn` dat is ingesteld op het App Service-plan. Deze instelling is vereist omdat het App Service-plan moet bestaan voordat de web-app wordt gemaakt. Het element `dependsOn` geeft aan Resource Manager door hoe de resources moeten worden gerangschikt voor implementatie.
 
-De eigenschap **serverFarmId** maakt gebruik van de functie [resourceId](template-functions-resource.md#resourceid). Deze functie haalt de unieke id voor een resource op. In dit geval wordt de unieke id voor het App Service-plan opgehaald. De web-app is gekoppeld aan één specifiek App Service-plan.
+De eigenschap `serverFarmId` maakt gebruik van de functie [resourceId](template-functions-resource.md#resourceid). Deze functie haalt de unieke id voor een resource op. In dit geval wordt de unieke id voor het App Service-plan opgehaald. De web-app is gekoppeld aan één specifiek App Service-plan.
 
 ## <a name="deploy-template"></a>Sjabloon implementeren
 
@@ -91,7 +91,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

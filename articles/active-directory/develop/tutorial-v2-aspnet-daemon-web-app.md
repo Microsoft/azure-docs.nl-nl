@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 031ee9a6d945d923279fd3025c32212c3ead98ed
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: c1d448fe9da72654ac1600009e66c88c5e7b93b4
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95406596"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509424"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -65,7 +65,7 @@ Of [download het voorbeeld in een zip-bestand](https://github.com/Azure-Samples/
 
 Dit voorbeeld heeft één project. Voor het registreren van de toepassing bij uw Azure AD-tenant kunt u:
 
-- De stappen volgen in [Het voorbeeld registreren met uw Azure Active Directory-tenant](#register-your-application) en [Het voorbeeld configureren om uw Azure AD-tenant te gebruiken](#choose-the-azure-ad-tenant).
+- De stappen volgen in [Het voorbeeld registreren met uw Azure Active Directory-tenant](#register-the-client-app-dotnet-web-daemon-v2) en [Het voorbeeld configureren om uw Azure AD-tenant te gebruiken](#choose-the-azure-ad-tenant).
 - PowerShell-voorbeeldscripts gebruiken die:
   - *automatisch* de Azure AD-toepassingen en bijbehorende objecten (wachtwoorden, machtigingen, afhankelijkheden) voor u maken.
   - De configuratiebestanden wijzigen van het Visual Studio-project.
@@ -93,40 +93,34 @@ Als u de automatisering niet wilt gebruiken, gebruikt u de stappen in de volgend
 
 ### <a name="choose-the-azure-ad-tenant"></a>De Azure AD-tenant kiezen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Als uw account zich in meer dan een Azure AD-tenant bevindt, selecteert u uw profiel in het menu bovenaan de pagina en vervolgens **Schakelen tussen mappen**.
-1. Wijzig uw portalsessie naar de gewenste Azure AD-tenant.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+
 
 ### <a name="register-the-client-app-dotnet-web-daemon-v2"></a>De client-app registreren (dotnet-web-daemon-v2)
 
-1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft-identiteitsplatform voor ontwikkelaars.
-1. Selecteer **Nieuwe registratie**.
-1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
-   - Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt zichtbaar voor gebruikers van de app. Voer bijvoorbeeld **dotnet-web-daemon-v2** in.
-   - Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst**.
-   - Selecteer in de sectie **URI omleiden (optioneel)** de optie **Web** in de keuzelijst en voer de volgende omleidings-URI's in:
-       - **https://localhost:44316/**
-       - **https://localhost:44316/Account/GrantPermissions**
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst**.
+1. Selecteer in de sectie **URI omleiden (optioneel)** de optie **Web** in de keuzelijst, en voer `https://localhost:44316/` en `https://localhost:44316/Account/GrantPermissions` in als Omleidings-URI's.
 
-     Als er meer dan twee omleidings-URI's zijn, moet u ze later, nadat de app is gemaakt, toevoegen vanuit het tabblad **Verificatie**.
+    Als er meer dan twee omleidings-URI's zijn, moet u ze later, nadat de app is gemaakt, toevoegen vanuit het tabblad **Verificatie**.
 1. Selecteer **Registreren** om de toepassing te maken.
-1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
-1. Selecteer in de lijst met pagina’s voor de app de optie **Verificatie**. Daarna kunt u het volgende doen:
-   - In de sectie **Geavanceerde instellingen** stelt u de **Afmeldings-URL** in op **https://localhost:44316/Account/EndSession** .
-   - Selecteer in de sectie **Geavanceerde instellingen** > **Impliciete toekenning** de optie **Toegangstokens** en **ID-tokens**. Voor dit voorbeeld moet de [impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden en een API aan te roepen.
+1. Zoek de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Stel de **Afmeldings-URL** in op `https://localhost:44316/Account/EndSession`.
+1. Selecteer in de sectie **Impliciete toekenning** de opties **Toegangstokens** en **Id-tokens**. Voor dit voorbeeld moet de [impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden en een API aan te roepen.
 1. Selecteer **Opslaan**.
-1. Selecteer in de pagina **Certificaten en geheimen**, in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**. Daarna kunt u het volgende doen:
-
-   1. Voer een beschrijving in (bijvoorbeeld: **app-geheim**).
-   1. Selecteer wanneer de sleutel vervalt: **Over één jaar**, **Over twee jaar** of **Vervalt nooit**.
-   1. Selecteer de knop **Add**.
-   1. Wanneer de sleutelwaarde wordt weergegeven, kopieer deze dan en sla hem op een veilige plek op. U hebt deze sleutel later nodig om het project in Visual Studio te configureren. De sleutel wordt niet opnieuw weergegeven en is niet op een andere manier opvraagbaar.
-1. Selecteer in de lijst met pagina’s voor de app de optie **API-machtigingen**. Daarna kunt u het volgende doen:
-   1. Selecteer de knop **Een machtiging toevoegen**.
-   1. Zorg ervoor dat het tabblad **Microsoft-API's** is geselecteerd.
-   1. Selecteer in de sectie **Veelgebruikte Microsoft-API's** de optie **Microsoft Graph**.
-   1. Zorg ervoor dat in de sectie **Toepassingstoestemmingen** de juiste machtigingen zijn geselecteerd: **User.Read.All**.
-   1. Selecteer de knop **Toestemmingen toevoegen**.
+1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
+1. Selecteer in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**. 
+1. Voer een beschrijving in (bijvoorbeeld: **app-geheim**).
+1. Selecteer wanneer de sleutel vervalt: **Over één jaar**, **Over twee jaar** of **Vervalt nooit**.
+1. Selecteer **Toevoegen**. Noteer de sleutelwaarde op een veilige locatie. U hebt deze sleutel later nodig om het project in Visual Studio te configureren.
+1. Selecteer onder **Beheren** achtereenvolgens **API-machtigingen** > **Een machtiging toevoegen**.
+1. Selecteer in de sectie **Veelgebruikte Microsoft-API's** de optie **Microsoft Graph**.
+1. Zorg ervoor dat in de sectie **Toepassingstoestemmingen** de juiste machtigingen zijn geselecteerd: **User.Read.All**.
+1. Selecteer **Machtigingen toevoegen**.
 
 ## <a name="configure-the-sample-to-use-your-azure-ad-tenant"></a>Het voorbeeld configureren om uw Azure AD-tenant te gebruiken
 

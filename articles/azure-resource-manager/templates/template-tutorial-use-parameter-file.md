@@ -1,17 +1,17 @@
 ---
 title: 'Zelfstudie: een sjabloon implementeren met behulp van een parameterbestand'
-description: Gebruik parameterbestanden die de waarden bevatten voor het implementeren van uw Azure Resource Manager-sjabloon.
+description: Gebruik parameterbestanden die de waarden bevatten voor het implementeren van uw ARM-sjabloon (Azure Resource Manager).
 author: mumian
 ms.date: 09/10/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: de72f9f32a3b08ad1742ee2055efce5b93cab899
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6257161017afc9dab692c43fcc64e5d961a90ba
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90069506"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368423"
 ---
 # <a name="tutorial-use-parameter-files-to-deploy-your-arm-template"></a>Zelfstudie: Parameterbestanden gebruiken voor het implementeren van uw ARM-sjabloon
 
@@ -41,23 +41,25 @@ U hoeft niet voor alle parameters een waarde op te geven. Als een ongespecificee
 
 U kunt geen parameternaam in het parameterbestand opgeven die niet overeenkomt met een parameternaam in de sjabloon. Er wordt een foutbericht weergegeven wanneer er onbekende parameters worden opgegeven.
 
-Maak in Visual Studio Code een nieuw bestand met de volgende inhoud. Sla het bestand op met de naam **azuredeploy.parameters.dev.json**.
+Maak in Visual Studio Code een nieuw bestand met de volgende inhoud. Sla het bestand op met de naam _azuredeploy.parameters.dev.json_.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.dev.json":::
 
-Dit bestand is het parameterbestand voor de ontwikkelomgeving. U ziet dat Standard_LRS wordt gebruikt als opslagaccount, namen van resources worden voorzien van het voorvoegsel **dev** en de tag **Environment** (Omgeving) wordt ingesteld op **Dev** (Ontwikkeling).
+Dit bestand is het parameterbestand voor de ontwikkelomgeving. U ziet dat **Standard_LRS** wordt gebruikt als opslagaccount, namen van resources worden voorzien van het voorvoegsel **dev** en de tag `Environment` wordt ingesteld op **Dev**.
 
-Maak nogmaals een nieuw bestand, ditmaal met de volgende inhoud. Sla het bestand op met de naam **azuredeploy.parameters.prod.json**.
+Maak nogmaals een nieuw bestand, ditmaal met de volgende inhoud. Sla het bestand op met de naam _azuredeploy.parameters.prod.json_.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.prod.json":::
 
-Dit bestand is het parameterbestand voor de productieomgeving. U ziet dat Standard_GRS wordt gebruikt als opslagaccount, namen van resources worden voorzien van het voorvoegsel **contoso** en de tag **Environment** (Omgeving) wordt ingesteld op **Production** (Productie). In een echte productieomgeving zou u ook een app-service willen gebruiken met een andere SKU dan een gratis SKU, maar in deze zelfstudie blijven we die SKU gebruiken.
+Dit bestand is het parameterbestand voor de productieomgeving. Notice that it uses **Standard_GRS** for the storage account, names resources with a **contoso** prefix, and sets the `Environment` tag to **Production**. In een echte productieomgeving zou u ook een app-service willen gebruiken met een andere SKU dan een gratis SKU, maar in deze zelfstudie blijven we die SKU gebruiken.
 
 ## <a name="deploy-template"></a>Sjabloon implementeren
 
 Gebruik Azure CLI of Azure PowerShell om de sjabloon te implementeren.
 
 Als laatste test van uw sjabloon maken we twee nieuwe resourcegroepen. Eén voor de ontwikkelomgeving en één voor de productieomgeving.
+
+Vervang als variabelen voor de sjabloon en parameter `{path-to-the-template-file}`, `{path-to-azuredeploy.parameters.dev.json}`, `{path-to-azuredeploy.parameters.prod.json}` en de accolades `{}` door de bestandspaden voor de sjabloon en de parameter.
 
 Eerst implementeren de sjabloon in de ontwikkelomgeving.
 
@@ -128,7 +130,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 ## <a name="verify-deployment"></a>Implementatie verifiëren
 
@@ -142,7 +144,7 @@ U kunt de implementatie controleren door de resourcegroepen te bekijken vanuit d
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 1. Selecteer **Resourcegroep** in het linkermenu van Azure Portal.
-2. Voer de naam van de resourcegroep in het veld **Filter by name** in. Als u deze serie hebt voltooid, hebt u drie resourcegroepen om te verwijderen: myResourceGroup, myResourceGroupDev en myResourceGroupProd.
+2. Voer de naam van de resourcegroep in het veld **Filter by name** in. Als u deze serie hebt voltooid, hebt u drie resourcegroepen om te verwijderen: **myResourceGroup**, **myResourceGroupDev** en **myResourceGroupProd**.
 3. Selecteer de naam van de resourcegroep.
 4. Selecteer **Resourcegroep verwijderen** in het bovenste menu.
 

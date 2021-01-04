@@ -3,12 +3,12 @@ title: Livevideo analyseren met Computer Vision voor ruimtelijke analyse, Azure
 description: In deze zelfstudie leert u hoe u Live Video Analytics samen met de AI-functie Computer Vision ruimtelijke analyse gebruikt van Azure Cognitive Services om een livevideofeed van een (gesimuleerde) IP-camera te analyseren.
 ms.topic: tutorial
 ms.date: 09/08/2020
-ms.openlocfilehash: 0dc89eaddf5cabc3063744dfe2c9f0236c70438c
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 5cebedec11b91f5b0b94df25a860da3d517bb997
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015682"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400506"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Livevideo analyseren met Computer Vision voor ruimtelijke analyse (preview)
 
@@ -51,7 +51,7 @@ Dit zijn de vereisten om de module ruimtelijke analyse te verbinden met de modul
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/spatial-analysis-tutorial/overview.png" alt-text="Overzicht van ruimtelijke analyse":::
  
-Dit diagram laat zien hoe de signalen in deze zelfstudie stromen. Een [Edge-module](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) simuleert een IP-camera die als host fungeert voor een RTSP-server (Real-Time Streaming Protocol). Een [RTSP-bron](media-graph-concept.md#rtsp-source)-knooppunt haalt de videofeed van deze server, en verstuurt videoframes naar het [framefilterprocessor](media-graph-concept.md#frame-rate-filter-processor)-knooppunt. Deze processor beperkt de framesnelheid van de videostream die het processorknooppunt MediaGraphCognitiveServicesVisionExtension bereikt.
+Dit diagram laat zien hoe de signalen in deze zelfstudie stromen. Een [Edge-module](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) simuleert een IP-camera die als host fungeert voor een RTSP-server (Real-Time Streaming Protocol). Met een [RTSP-bron](media-graph-concept.md#rtsp-source)knooppunt wordt de videofeed van deze server gehaald, en worden videoframes verzonden naar het knooppunt `MediaGraphCognitiveServicesVisionExtension`processorknooppunt.
 
 De node MediaGraphCognitiveServicesVisionExtension speelt de rol van proxy. Het converteert videoframes naar het opgegeven afbeeldingstype. Vervolgens wordt de afbeelding via **gedeeld geheugen** doorgestuurd naar een andere Edge-module die AI-bewerkingen achter een gRPC-eindpunt uitvoert. In dit voorbeeld is die Edge-module de module ruimtelijke analyse. Het processorknooppunt MediaGraphCognitiveServicesVisionExtension voert twee dingen uit:
 
@@ -71,7 +71,7 @@ Er zijn drie primaire parameters vereist voor alle Cognitive Services-containers
 Een sleutel wordt gebruikt om de container voor de ruimtelijke analyse te starten en is beschikbaar op de Azure Portal-pagina `Keys and Endpoint` van de bijbehorende Cognitive Service-resource. Navigeer naar die pagina en zoek de sleutels en de eindpunt-URI.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/spatial-analysis-tutorial/keys-endpoint.png" alt-text="Overzicht van ruimtelijke analyse":::
+> :::image type="content" source="./media/spatial-analysis-tutorial/keys-endpoint.png" alt-text="Eindpunt-URI":::
 
 ## <a name="set-up-azure-stack-edge"></a>Azure Stack Edge instellen
 
@@ -169,17 +169,17 @@ Volg deze stappen om het manifest te genereren op basis van het sjabloonbestand 
 1. Selecteer naast het deelvenster AZURE IOT HUB het pictogram Meer acties om de IoT Hub-verbindingsreeks in te stellen. U kunt de tekenreeks kopiëren vanuit het bestand src/cloud-to-device-console-app/appsettings.json.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/spatial-analysis-tutorial/connection-string.png" alt-text="Overzicht van ruimtelijke analyse":::
+    > :::image type="content" source="./media/spatial-analysis-tutorial/connection-string.png" alt-text="Ruimtelijke analyse: verbindingsreeks":::
 1. Klik met de rechtermuisknop op `src/edge/deployment.spatialAnalysis.template.json` en selecteer IoT Edge-implementatiemanifest genereren.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/spatial-analysis-tutorial/deployment-template-json.png" alt-text="Overzicht van ruimtelijke analyse":::
+    > :::image type="content" source="./media/spatial-analysis-tutorial/deployment-template-json.png" alt-text="Ruimtelijke analyse: implementatie amd64 JSON":::
     
     Met deze actie maakt u een manifestbestand met de naam deployment.amd64.json in de map src/edge/config.
 1. Klik met de rechtermuisknop op `src/edge/config/deployment.spatialAnalysis.amd64.json`, selecteer Implementatie voor één apparaat maken en selecteer vervolgens de naam van uw edge-apparaat.
     
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/spatial-analysis-tutorial/deployment-amd64-json.png" alt-text="Overzicht van ruimtelijke analyse":::   
+    > :::image type="content" source="./media/spatial-analysis-tutorial/deployment-amd64-json.png" alt-text="Ruimtelijke analyse: implementatiesjabloon JSON":::   
 1. Wanneer u wordt gevraagd om een IoT Hub-apparaat te selecteren, kiest u uw Azure Stack Edge-naam in de vervolgkeuzelijst.
 1. Vernieuw Azure IoT Hub na ongeveer 30 seconden in de linkerbenedenhoek van het venster. Op het edge-apparaat worden nu de volgende geïmplementeerde modules weergegeven:
     
@@ -204,17 +204,17 @@ Volg deze stappen om deze gebeurtenissen te bekijken:
 1. Klik met de rechtermuisknop en selecteer **Extensie-instellingen**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Overzicht van ruimtelijke analyse":::
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Extensie-instellingen":::
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Overzicht van ruimtelijke analyse":::
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
 1. Open het deelvenster Explorer en zoek Azure IoT Hub in de linkerbenedenhoek.
 1. Vouw het knooppunt Apparaten uit.
 1. Klik met de rechtermuisknop op uw Azure Stack Edge en selecteer Bewaking van ingebouwd gebeurteniseindpunt starten.
     
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/spatial-analysis-tutorial/start-monitoring.png" alt-text="Overzicht van ruimtelijke analyse":::
+    > :::image type="content" source="./media/spatial-analysis-tutorial/start-monitoring.png" alt-text="Ruimtelijke analyse: bewaking starten":::
      
 ## <a name="run-the-program"></a>Het programma uitvoeren
 

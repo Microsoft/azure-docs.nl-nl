@@ -3,12 +3,12 @@ title: Azure Event Hubs - Gegevensanomalieën binnen in realtime verzonden gebeu
 description: 'Zelfstudie: Gegevensanomalieën binnen in realtime naar Microsoft Azure Event Hubs verzonden gebeurtenissen visualiseren'
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 1394f9bedfdfc3715090bdb8a9028d2654a1e4e3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b72b82f3959565e6bd0598fef8e21bb64fedb053
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934052"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655676"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Zelfstudie: gegevensanomalieën binnen in realtime naar Azure Event Hubs verzonden gebeurtenissen visualiseren
 
@@ -26,14 +26,12 @@ In deze zelfstudie leert u het volgende:
 
 U hebt een Azure-abonnement nodig om deze zelfstudie te voltooien. Als u nog geen abonnement hebt, maakt u een [gratis account][] voordat u begint.
 
-## <a name="prerequisites"></a>Vereisten
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 - Installeer [Visual Studio](https://www.visualstudio.com/). 
 - U hebt een Power BI-account nodig om de uitvoer van een Stream Analytics-taak te analyseren. U kunt [Power BI gratis uitproberen](https://app.powerbi.com/signupredirect?pbi_source=web).
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="set-up-resources"></a>Resources instellen
 

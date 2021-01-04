@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 67c88e98d966a21163aafefcad8363086d5b3bf4
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 52b5bd0650b3a069adc3ef7f101c48a4674deaab
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931041"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97107104"
 ---
 # <a name="tutorial-add-template-functions-to-your-arm-template"></a>Zelfstudie: Sjabloonfuncties toevoegen aan uw ARM-sjabloon
 
@@ -37,7 +37,7 @@ Als u de vorige zelfstudie in deze serie hebt voltooid, hebt u al een functie ge
 
 Met functies kunt u flexibiliteit aan uw sjabloon toevoegen door dynamische waarden op te halen tijdens de implementatie. In deze zelfstudie gebruikt u een functie om de locatie op te halen van de resourcegroep die u voor de implementatie gebruikt.
 
-In het volgende voorbeeld ziet u de benodigde wijzigingen voor het toevoegen van een parameter met de naam **location**.  De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
+In het volgende voorbeeld ziet u de benodigde wijzigingen voor het toevoegen van een parameter met de naam `location`. De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
 
 Kopieer het hele bestand en vervang uw sjabloon door de inhoud ervan.
 
@@ -47,7 +47,7 @@ Kopieer het hele bestand en vervang uw sjabloon door de inhoud ervan.
 
 In de vorige zelfstudies hebt u een opslagaccount gemaakt in US - oost, maar uw resourcegroep is gemaakt in VS - centraal. Voor deze zelfstudie wordt uw opslagaccount in dezelfde regio gemaakt als de resourcegroep. Gebruik de standaardwaarde voor de locatie, zodat u deze parameterwaarde niet hoeft op te geven. U moet een nieuwe naam opgeven voor het opslagaccount, omdat u een opslagaccount maakt op een andere locatie. Gebruik bijvoorbeeld **store2** als voorvoegsel in plaats van **store1**.
 
-Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele **templateFile** hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
+Zie [Resourcegroep maken](template-tutorial-create-first-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt. In het voorbeeld wordt ervan uitgegaan dat u de variabele `templateFile` hebt ingesteld op het pad naar het sjabloonbestand, zoals weergegeven in de [eerste zelfstudie](template-tutorial-create-first-template.md#deploy-template).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -74,7 +74,7 @@ az deployment group create \
 ---
 
 > [!NOTE]
-> Als de implementatie is mislukt, gebruikt u de schakeloptie **verbose** voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie **debug** voor meer informatie over foutopsporing.
+> Als de implementatie is mislukt, gebruikt u de schakeloptie `verbose` voor informatie over de resources die worden gemaakt. Gebruik de schakeloptie `debug` voor meer informatie over foutopsporing.
 
 ## <a name="verify-deployment"></a>Implementatie verifiëren
 

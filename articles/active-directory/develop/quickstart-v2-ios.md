@@ -13,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 3ea3c3990a9319a81c841de8a7109850fcab5179
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: d1a3965fef6966f70a829cd66d6ce10a01d7af98
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993904"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030889"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
@@ -55,16 +55,17 @@ De quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alle
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
-> 1. Ga naar de pagina [App-registraties](https://aka.ms/MobileAppReg) in het Microsoft identity platform voor ontwikkelaars.
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
->      - Voer in de sectie **Naam** een beschrijvende toepassingsnaam in. Deze wordt zichtbaar voor gebruikers van de app wanneer ze zich aanmelden of toestemming aan uw app verlenen.
->      - Sla de overige configuratieopties op deze pagina over.
->      - Selecteer `Register`.
-> 1. Selecteer `Authentication` > `Add Platform` > `iOS` in de sectie **Beheren**.
->      - Voer de **_bundel-id_* _ voor uw toepassing in. De bundel-id is een unieke tekenreeks en een unieke identificatie voor uw toepassing, bijvoorbeeld `com.<yourname>.identitysample.MSALMacOS`. Noteer de waarde die u gebruikt.
->      - De iOS-configuratie is ook van toepassing op macOS-toepassingen.
-> 1. Selecteer `Configure` en sla de details van de _*_MSAL-configuratie_*_ op voor later gebruik verderop in deze quickstart.
+> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.    
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+> 1. Selecteer **Registreren**.
+> 1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Platform toevoegen** > **iOS**
+> 1. Voer de **bundel-id** voor uw toepassing in. De bundel-id is een unieke tekenreeks en een unieke identificatie voor uw toepassing, bijvoorbeeld `com.<yourname>.identitysample.MSALMacOS`. Noteer de waarde die u gebruikt. De iOS-configuratie is ook van toepassing op macOS-toepassingen.
+> 1. Selecteer **Configureren** en sla de details van de **MSAL-configuratie** op voor later gebruik verderop in deze quickstart.
+> 1. Selecteer **Gereed**.
+
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Stap 1: Uw toepassing configureren
@@ -101,7 +102,7 @@ Navigeer in een terminalvenster naar de map met het gedownloade codevoorbeeld en
 >#### <a name="step-4-configure-your-project"></a>Stap 4: Het project configureren
 > Als u hierboven optie 1 hebt geselecteerd, kunt u deze stappen overslaan.
 > 1. Pak het zip-bestand uit en open het project in XCode.
-> 1. Bewerk _ *ViewController.swift** en vervang de regel die begint met 'let kClientID' door het volgende codefragment. Vergeet niet om de waarde voor `kClientID` bij te werken met de client-id die u eerder in deze quickstart hebt opgeslagen tijdens het registreren van uw app in de portal:
+> 1. Bewerk **ViewController.swift** en vervang de regel die begint met 'let kClientID' door het volgende codefragment. Vergeet niet om de waarde voor `kClientID` bij te werken met de client-id die u eerder in deze quickstart hebt opgeslagen tijdens het registreren van uw app in de portal:
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```

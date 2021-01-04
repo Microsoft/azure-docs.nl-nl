@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 88b3879a648117329f2485012542b48d6a7a7755
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: f9e7547b8b9a8728c2c1ce7d1d01d06ad1d55dc1
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752682"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387238"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -85,32 +85,38 @@ Schakel als volgt replicatie in:
     -  Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Als u deze optie selecteert, moet u op het tabblad Compute de beschikbaarheidszone opgeven die moet worden gebruikt voor elk van de geselecteerde computers. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones
     -  Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
+9. Selecteer in **Type schijfversleuteling**:
+    - Versleuteling at-rest van gegevens met door platform beheerde sleutel
+    - Versleuteling at-rest van gegevens met door klant beheerde sleutel
 
-9. In **Azure Hybrid Benefit**:
+   > [!NOTE]
+   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](https://go.microsoft.com/fwlink/?linkid=2151800) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
+  
+10. In **Azure Hybrid Benefit**:
 
     - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende**.
     - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende**.
 
     ![Doelinstellingen](./media/tutorial-migrate-vmware/target-settings.png)
 
-10. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-vmware-migration.md#azure-vm-requirements).
+11. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-vmware-migration.md#azure-vm-requirements).
 
     - **VM-grootte**: Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**. 
     - **Besturingssysteemschijf**: Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat. 
     - **Beschikbaarheidszone**: Geef de beschikbaarheidszone op die moet worden gebruikt.
     - **Beschikbaarheidsset**: Geef de beschikbaarheidsset op die moet worden gebruikt.
 
-> [!NOTE]
->Als u een andere beschikbaarheidsoptie wilt selecteren voor een set virtuele machines, gaat u naar stap 1 en herhaalt u de stappen door andere beschikbaarheidsopties te selecteren na het starten van de replicatie voor één set virtuele machines.
+    > [!NOTE]
+    > Als u een andere beschikbaarheidsoptie wilt selecteren voor een set virtuele machines, gaat u naar stap 1 en herhaalt u de stappen door andere beschikbaarheidsopties te selecteren na het starten van de replicatie voor één set virtuele machines.
 
 
  ![VM-rekeninstellingen](./media/tutorial-migrate-vmware/compute-settings.png)
 
-11. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
+12. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
    
     ![Schermopname met het tabblad Schijven van het dialoogvenster Repliceren.](./media/tutorial-migrate-vmware/disks.png)
 
-12. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
+13. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
 
 > [!NOTE]
 > U kunt de replicatie-instellingen op elk gewenst moment bijwerken voordat de replicatie begint. (**Beheren** > **Machines repliceren**). U kunt de instellingen niet meer wijzigen nadat de replicatie is begonnen.
@@ -182,7 +188,7 @@ Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de 
 ## <a name="complete-the-migration"></a>Migratie voltooien
 
 1. Nadat de migratie is voltooid, klikt u met de rechtermuisknop op de VM > **Replicatie stoppen**. Hiermee stopt de replicatie voor de on-premises machine, en worden de gegevens over de replicatiestatus voor de VM opgeschoond.
-2. Installeer de Azure VM [Windows](../virtual-machines/extensions/agent-windows.md)- of [Linux](../virtual-machines/extensions/agent-linux.md)-agent op de gemigreerde computers.
+2. Installeer de Azure-VM-[Linux](../virtual-machines/extensions/agent-linux.md)-agent op de gemigreerde computers, als op de machine het Linux-besturingssysteem wordt uitgevoerd. Tijdens de migratie wordt de VM-agent voor Windows-VM's automatisch geïnstalleerd.
 3. Voer correcties van de app uit na de migratie, zoals updates van de databaseverbindingsreeksen en webserverconfiguraties.
 4. Voer acceptatietesten van de toepassing en de migratie uit op de gemigreerde toepassing die nu wordt uitgevoerd in Azure.
 5. Leid het verkeer naar het gemigreerde Azure VM-exemplaar.

@@ -8,15 +8,15 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 12/04/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1e758a886e32c5a3f7cd3c744ac451b948a74802
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 8d348c6a26404f7adbf89cd107a1f0ad0a1cacd5
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91308857"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97590831"
 ---
 # <a name="upgrade-your-azure-free-account-or-azure-for-students-starter-account"></a>Een upgrade uitvoeren voor uw gratis Azure-account of Microsoft Azure for Students Starter-account
 
@@ -28,46 +28,36 @@ Als u zich hebt geregistreerd voor een [Azure for Students Starter-account](http
 
 ## <a name="upgrade-your-azure-free-account"></a>Uw gratis Azure-account upgraden
 
-Wanneer u een upgrade uitvoert voor uw gratis Azure-account, behoudt u uw resterende tegoed voor de volledige 30 dagen vanaf het moment dat u zich registreert. Bijvoorbeeld: Als u zich registreert op 1 november en op 5 november een upgrade uitvoert, zijn alle ongebruikte tegoeden beschikbaar tot en met 30 november. U hebt na de upgrade ook gedurende 12 maanden toegang tot gratis services.
+Wanneer u een upgrade uitvoert voor uw gratis Azure-account, behoudt u uw resterende tegoed voor de volledige 30 dagen vanaf het moment dat u zich registreert. Als u zich bijvoorbeeld registreert op 1 november, en op 5 november een upgrade uitvoert, zijn alle ongebruikte tegoeden beschikbaar tot en met 30 november. U hebt na de upgrade ook gedurende 12 maanden toegang tot gratis services.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com)
-1. Zoek naar **Abonnementen**.
-
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Zoek naar **Abonnementen**.  
     ![Schermopname van de zoekopdracht](./media/upgrade-azure-subscription/search-subscriptions-ibiza.png)
-
 1. Selecteer het abonnement dat is gemaakt tijdens uw aanmelding voor een gratis Azure-account.
-1. Klik in het abonnementsoverzicht op de knop **Abonnement bijwerken** in de opdrachtbalk. Als u de knop Abonnement bijwerken niet ziet, klikt u op de upgradebanner boven aan de pagina.
-
+1. Selecteer in het abonnementsoverzicht de optie **Abonnement bijwerken** in de opdrachtbalk. Als u de knop Abonnement bijwerken niet ziet, selecteert u op upgradebanner bovenaan de pagina.  
     ![Schermopname van de upgradeknop](./media/upgrade-azure-subscription/free-upgrade-button.png)
-
 1. Als u nog geen betalingswijze voor uw account hebt, wordt u gevraagd om er een toe te voegen.
-
 1. Mogelijk moet u een telefoonnummer invoeren om uw identiteit te verifiëren.
-
-1. Typ een naam voor uw nieuwe abonnement.
-
+1. Typ een naam voor uw nieuwe abonnement.  
      ![Schermopname van de naam](./media/upgrade-azure-subscription/free-upgrade-name.png)
-
 1. Kies een ondersteuningsplan voor uw abonnement. Zie [Azure-ondersteuningsplannen](https://azure.microsoft.com/us/support/plans/) voor meer informatie over ondersteuningsplannen.
-
-1. Klik op **Upgrade**.
+1. Selecteer **Upgraden**.
 
 <a id="student"></a>
 
 ## <a name="upgrade-your-azure-for-students-starter-account"></a>Een upgrade uitvoeren van uw Azure for Students Starter-account
 
+Gebruik de volgende informatie om uw Azure for Students Starter-account te upgraden.
+
 ### <a name="upgrade-to-an-azure-free-account"></a>Een upgrade uitvoeren naar een gratis Azure-account
 
 Voer de onderstaande stappen uit als u in aanmerking komt voor een upgrade naar een gratis Azure-account.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com)
-1. Zoek naar **Abonnementen**.
-
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Zoek naar **Abonnementen**.  
     ![Schermopname van de zoekopdracht](./media/upgrade-azure-subscription/search-subscriptions-ibiza.png)
-
-1. Selecteer het abonnement dat is gemaakt toen u zich aanmeldde voor een Azure for Students Starter-account.
-1. Klik in het abonnementsoverzicht op **Abonnement bijwerken** in de opdrachtbalk.
-
+1. Selecteer het abonnement dat is gemaakt toen u zich registreerde voor een Azure for Students Starter-account.
+1. Selecteer in het abonnementsoverzicht de optie **Abonnement bijwerken** in de opdrachtbalk.  
     ![Schermopname van de knop voor de upgrade voor studenten](./media/upgrade-azure-subscription/student-upgrade-ibiza.png)
 
 ### <a name="upgrade-to-pay-as-you-go-rates"></a>Upgrade naar tarieven voor betalen per gebruik
@@ -76,7 +66,7 @@ Voer de onderstaande stappen uit als u in aanmerking komt voor een upgrade naar 
 1. Mogelijk moet u een telefoonnummer invoeren om uw identiteit te verifiëren.
 1. Typ een naam voor uw nieuwe abonnement.
 1. Kies een ondersteuningsplan voor uw abonnement. Zie [Azure-ondersteuningsplannen](https://azure.microsoft.com/us/support/plans/) voor meer informatie over ondersteuningsplannen.
-1. Klik op **Upgrade**.
+1. Selecteer **Upgraden**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

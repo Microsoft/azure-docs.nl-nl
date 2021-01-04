@@ -1,20 +1,20 @@
 ---
-title: 'Quickstart: Uw eerste statische web-app bouwen met Azure Static Web Apps'
-description: Meer informatie over het bouwen van een Azure Static Web Apps-website.
+title: 'Quickstart: Uw eerste statische site bouwen met Azure Static Web Apps'
+description: Leer hoe u een statische site kunt implementeren in Azure Static Web Apps.
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: a78f74b4aadd26af141ed84ca99a092693f56af5
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: eb2356451c349f894c9ca74b1359f6a02d0e002a
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369559"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562511"
 ---
-# <a name="quickstart-building-your-first-static-web-app"></a>Quickstart: Uw eerste statische web-app bouwen
+# <a name="quickstart-building-your-first-static-site-with-azure-static-web-apps"></a>Quickstart: Uw eerste statische site bouwen met Azure Static Web Apps
 
 Met Azure Static Web Apps wordt een website gepubliceerd in een productieomgeving door apps te bouwen vanuit een GitHub-opslagplaats. In deze quickstart implementeert u een webtoepassing in Azure Static Web Apps met behulp van de Visual Studio Code-extensie.
 
@@ -52,7 +52,7 @@ Open vervolgens Visual Studio Code en ga naar **File > Open Folder** om de opsla
 
     :::image type="content" source="media/getting-started/extension-create-app.png" alt-text="Statische web-app maken":::
 
-1. Selecteer de vertakking **master** en druk op **Enter**.
+1. Selecteer de **hoofdvertakking** en druk op **Enter**.
 
     :::image type="content" source="media/getting-started/extension-branch.png" alt-text="Naam van vertakking":::
 

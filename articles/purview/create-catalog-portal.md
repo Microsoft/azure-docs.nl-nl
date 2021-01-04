@@ -1,18 +1,18 @@
 ---
 title: 'Quickstart: Een Azure Purview-account maken in Azure Portal (preview)'
 description: In deze quickstart wordt beschreven hoe u een Azure Purview-account maakt en machtigingen configureert om het te kunnen gaan gebruiken.
-author: hophan
+author: hophanms
 ms.author: hophan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: quickstart
 ms.date: 10/23/2020
-ms.openlocfilehash: c9e0b155a4cf34373bb6d851241dc62ddd661045
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 3119152e4a7d0dc799dfe273722101c95c11c0c9
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602355"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97400383"
 ---
 # <a name="quickstart-create-an-azure-purview-account-in-the-azure-portal"></a>Quickstart: Een Azure Purview-account maken in Azure Portal
 
@@ -30,6 +30,10 @@ In deze quickstart gaat u een Azure Purview-account maken.
 * Uw account moet gemachtigd zijn om resources te maken in het abonnement
 
 * Als uw **Azure Policy** alle toepassingen ervan weerhoudt om een **Storage-account** en een **EventHub-naamruimte** te maken, moet u met behulp van tags uitzonderingen voor het beleid maken. Deze kunt u invoeren tijdens het proces voor het maken van een Purview-account. De belangrijkste reden hiervoor is dat voor elk gemaakt Purview-account een beheerde resourcegroep wordt gemaakt met daarin een Storage-account en een EventHub-naamruimte.
+
+    > [!important]
+    > U hoeft deze stap niet uit te voeren als u niet beschikt over Azure Policy, of als er geen bestaand Azure-beleid is dat het maken van een **opslagaccount** en **EventHub-naamruimte** blokkeert.
+
     1. Ga naar Azure Portal en zoek op **beleid**
     1. Volg [Een aangepaste beleidsdefinitie maken](https://docs.microsoft.com/azure/governance/policy/tutorials/create-custom-policy-definition) of wijzig bestaand beleid om twee uitzonderingen toe te voegen aan operator `not` en tag `resourceBypass`:
 
@@ -151,7 +155,7 @@ Als u op Toevoegen klikt en twee opties ziet die als uitgeschakeld zijn gemarkee
 
 1. Selecteer **Roltoewijzing toevoegen**.
 
-1. Zie [Catalogusmachtigingen](catalog-permissions.md) voor meer informatie over het roltype **Purview-gegevenscurator** of **Purview-gegevensbronbeheerder**, afhankelijk van waar de service-principal voor wordt gebruikt.
+1. Raadpleeg [Catalogusmachtigingen](catalog-permissions.md) en [Toepassings- en service-principal-objecten in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) voor meer informatie over het roltype **Purview-gegevenscurator** of **Purview-gegevensbronbeheerder**, afhankelijk van waar de service-principal voor wordt gebruikt.
 
 1. Laat bij **Toegang toewijzen aan** de standaardwaarde **Gebruiker, groep of service-principal** staan.
 

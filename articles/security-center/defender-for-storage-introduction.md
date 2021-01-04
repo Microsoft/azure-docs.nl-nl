@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 8979e315f188a5c21cce206c24f195f72096d438
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: b338b8ee93fb24cff54968630d4ff00deca0b64b
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516510"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606722"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Inleiding tot Azure Defender for Storage
 
@@ -20,7 +20,6 @@ ms.locfileid: "97516510"
 **Azure Defender voor opslag** is een beveiligingsintelligentielaag van Azure voor de detectie van ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of misbruik te maken van uw opslagaccounts. Er wordt gebruikgemaakt van de geavanceerde mogelijkheden van beveiligings-AI en [Microsoft-bedreigingsinformatie](https://go.microsoft.com/fwlink/?linkid=2128684) om contextuele beveiligingswaarschuwingen en aanbevelingen te bieden.
 
 Beveiligingswaarschuwingen worden geactiveerd wanneer zich afwijkingen in de activiteit voordoen. Deze waarschuwingen zijn geïntegreerd met Azure Security Center en worden ook via e-mail verzonden naar abonnementsbeheerders. Ze bevatten informatie over verdachte activiteiten en aanbevelingen voor het onderzoeken en oplossen van bedreigingen.
-
 
 ## <a name="availability"></a>Beschikbaarheid
 
@@ -31,6 +30,17 @@ Beveiligingswaarschuwingen worden geactiveerd wanneer zich afwijkingen in de act
 |Beveiligde opslagtypen:|[Blob Storage](https://azure.microsoft.com/services/storage/blobs/)<br>[Azure Files](../storage/files/storage-files-introduction.md)<br>[Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
 |||
+
+
+## <a name="what-are-the-benefits-of-azure-defender-for-storage"></a>Wat zijn de voordelen van Azure Defender for Storage?
+
+Azure Defender for Storage biedt:
+
+- **Systeemeigen Azure-beveiliging**: in Defender for Storage kunt u gegevens die zijn opgeslagen in Azure Blob, Azure Files, en Data Lake, met slechts één muisklik beveiligen. Als systeemeigen Azure-service biedt Defender for Storage een centrale beveiliging voor alle gegevensactiva die worden beheerd in Azure, en is het geïntegreerd met andere beveiligingsservices in Azure, zoals Azure Sentinel.
+- **Suite voor geavanceerd detecteren**: detecties in Defender for Storage worden mogelijk gemaakt met Bedreigingsinformatie van Microsoft, en bieden bescherming tegen de belangrijkste opslagbedreigingen, zoals anonieme toegang, gecompromitteerde referenties, social engineering, misbruik van machtigingen, en schadelijke inhoud.
+- **Antwoorden op schaal**: met de geautomatiseerde hulpprogramma's van Security Center kunt u gemakkelijker reageren op geïdentificeerde bedreigingen en deze voorkomen. Meer informatie over [Geautomatiseerde antwoorden op Security Center-triggers](workflow-automation.md).
+
+:::image type="content" source="media/defender-for-storage-introduction/defender-for-storage-high-level-overview.png" alt-text="Overzicht op hoog niveau van de functies van Azure Defender for Storage":::
 
 
 ## <a name="what-kind-of-alerts-does-azure-defender-for-storage-provide"></a>Wat voor soort waarschuwingen biedt Azure Defender for Storage?

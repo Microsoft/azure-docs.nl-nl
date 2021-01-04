@@ -8,13 +8,13 @@ ms.subservice: cost-management
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
-ms.custom: contperfq1
-ms.openlocfilehash: b2340e5b220936c1333cf842251b669b3e034042
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: f6df8c6ff0db74798b71d57feae91e5245f2a6c2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151215"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97028715"
 ---
 # <a name="analyze-unexpected-charges"></a>Onverwachte kosten analyseren
 
@@ -59,13 +59,13 @@ Eén enkele resource kan zorgen voor een toename van de kosten voor meerdere Azu
 
 - Rekenuren
 - Uren IP-adres
-- Binnenkomende gegevensoverdracht
+- Inkomende gegevensoverdracht
 - Uitgaande gegevensoverdracht
-- Standaard - beheerde schijven
-- Standaard - beheerde schijfbewerkingen
-- Standaard-IO - schijf
-- Standaard-IO - blok-blobs lezen
-- Standaard-IO - blok-blobs schrijven
+- Standard - Beheerde schijf
+- Standard - Beheerde schijfbewerkingen
+- Standard - IO - Schijf
+- Standard - IO - Lezen blok-blob
+- Standard - IO - Schrijven blok-blob
 - Standard - IO - Verwijderen blok-blob
 
 Wanneer de virtuele machine wordt gemaakt, begint elke meter gebruiksrecords te verzenden. Het gebruik en de metertarieven worden bijgehouden in het Azure-metersysteem. In het CSV-gebruiksbestand kunt u de meters zien die zijn gebruikt voor het berekenen van uw factuur.
@@ -80,7 +80,7 @@ Als u gemachtigd bent om een resource weer te geven, zou u ook toegang moeten he
 
 ### <a name="analyze-user-permissions-to-the-resources-parent-scope"></a>Gebruikersmachtigingen voor het bovenliggende bereik van de resource analyseren
 
-Personen met schrijftoegang tot een abonnement of resourcegroep beschikken meestal over informatie over de resources die zijn gemaakt. Ze zouden het doel van een resource moeten kunnen verklaren of u kunnen verwijzen naar de persoon die het wel weet. Zie [Roltoewijzingen weergeven](../../role-based-access-control/check-access.md#view-role-assignments) als u wilt weten hoe u kunt vaststellen welke mensen er machtigingen voor een abonnementsbereik hebben. U kunt een vergelijkbaar proces voor resourcegroepen gebruiken.
+Personen met schrijftoegang tot een abonnement of resourcegroep beschikken meestal over informatie over de resources die zijn gemaakt. Ze zouden het doel van een resource moeten kunnen verklaren of u kunnen verwijzen naar de persoon die het wel weet. Zie [Toegang voor een gebruiker tot Azure-resources controleren](../../role-based-access-control/check-access.md) als u wilt weten hoe u kunt vaststellen welke personen machtigingen voor een abonnementsbereik hebben. U kunt een vergelijkbaar proces voor resourcegroepen gebruiken.
 
 ## <a name="get-help-to-identify-charges"></a>Hulp krijgen bij het identificeren van kosten
 

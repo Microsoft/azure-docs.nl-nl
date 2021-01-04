@@ -1,20 +1,20 @@
 ---
 title: 'Quickstart: Uw eerste statische web-app bouwen met Azure Static Web Apps met behulp van de Azure Portal'
-description: Leer hoe u een Azure Static Web Apps-instantie bouwt met de Azure Portal.
+description: Leer hoe u een statische site kunt implementeren in Azure Static Web Apps met behulp van de Azure-portal.
 services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 09/03/2020
 ms.author: cshoe
-ms.openlocfilehash: b009b34be69e48ae6205cd9ab88d1583ca9c6561
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: aab99721b61ababe218e509ab1078198b5f4152b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91280556"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030362"
 ---
-# <a name="quickstart-building-your-first-static-web-app-in-the-azure-portal"></a>Quickstart: Uw eerste statische web-app bouwen in de Azure Portal
+# <a name="quickstart-building-your-first-static-site-in-the-azure-portal"></a>Quickstart: Uw eerste statische site bouwen in de Azure-portal
 
 Met Azure Static Web Apps wordt een website gepubliceerd in een productieomgeving door apps te bouwen vanuit een GitHub-opslagplaats. In deze quickstart implementeert u een webtoepassing in Azure Static Web Apps met behulp van de Azure-portal.
 
@@ -51,14 +51,14 @@ Op het tabblad _Basisbeginselen_ kunt u de nieuwe app configureren en aan een Gi
 
 Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats in.
 
-:::image type="content" source="media/getting-started-portal/repository-details.png" alt-text="Basissectie":::
+:::image type="content" source="media/getting-started-portal/repository-details.png" alt-text="Gegevens van opslagplaats":::
 
 1. Kies de gewenste _organisatie_
 1. Selecteer **mijn-eerste-statische-web-app** in de vervolgkeuzelijst _Opslagplaats_
 1. Selecteer **hoofd** in de vervolgkeuzelijst _Vertakking_
 
 > [!NOTE]
-> Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps**en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
+> Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps** en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
 
 1. Voeg in de sectie _Build-details_ configuratiegegevens toe die specifiek zijn voor het front-end-framework van uw keuze.
 
@@ -94,18 +94,18 @@ Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats 
 
 1. Selecteer **Controleren + maken**.
 
-    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Basissectie":::
+    :::image type="content" source="media/getting-started-portal/review-create.png" alt-text="Knop Beoordelen en maken":::
 
     > [!NOTE]
     > U kunt het [werkstroombestand](github-actions-workflow.md) bewerken als u deze waarden wilt wijzigen nadat u de app hebt gemaakt.
 
 1. Selecteer **Maken**.
 
-    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="Basissectie":::
+    :::image type="content" source="media/getting-started-portal/create-button.png" alt-text="De knop Maken":::
 
 1. Selecteer **Ga naar resource**.
 
-    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="Basissectie":::
+    :::image type="content" source="media/getting-started-portal/resource-button.png" alt-text="De knop Naar de resource gaan":::
 
 [!INCLUDE [view website](../../includes/static-web-apps-get-started-view-website.md)]
 

@@ -6,12 +6,12 @@ ms.author: rahugup
 manager: bsiva
 ms.topic: tutorial
 ms.date: 10/1/2020
-ms.openlocfilehash: 187e17bcf385ba6b3c17566fc00e5ee77cf009fe
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: ce712736c25c0757f5b654e4442a4f08acdf15e2
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752478"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97029784"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless---powershell"></a>VMware-VM's migreren naar Azure (zonder agent) - PowerShell
 
@@ -464,7 +464,7 @@ while (($StopReplicationJob.State -eq "InProgress") -or ($StopReplicationJob.Sta
 Write-Output $StopReplicationJob.State
 ```
 
-2. Installeer de Azure VM [Windows](../virtual-machines/extensions/agent-windows.md)- of [Linux](../virtual-machines/extensions/agent-linux.md)-agent op de gemigreerde computers.
+2. Installeer de [Linux](../virtual-machines/extensions/agent-linux.md)-agent op de gemigreerde computers, als op de machine het Linux-besturingssysteem wordt uitgevoerd. Tijdens de migratie wordt de VM-agent voor Windows-VM's automatisch geïnstalleerd.
 3. Voer correcties van de app uit na de migratie, zoals updates van de databaseverbindingsreeksen en webserverconfiguraties.
 4. Voer acceptatietesten van de toepassing en de migratie uit op de gemigreerde toepassing die nu wordt uitgevoerd in Azure.
 5. Leid het verkeer naar het gemigreerde Azure VM-exemplaar.

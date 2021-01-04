@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 12/05/2019
+ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9433945ffe1181b62ee193baf1c2dd0b89ec14c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0acef468aa53e456cd6fb416fe45558aee064699
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856803"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97355814"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Wat is Azure AD Connect-cloudinrichting?
 Azure AD Connect-cloudinrichting is een nieuwe Microsoft-agent die is ontworpen om te voldoen aan uw hybride identiteitsdoelen voor synchronisatie van gebruikers, groepen en contactpersonen naar Azure AD.  De agent kan naast Azure AD Connect Sync worden gebruikt en biedt de volgende voordelen:
@@ -72,6 +72,7 @@ In de volgende tabel worden Azure AD Connect en Azure AD Connect-cloudinrichting
 | Azure Active Directory Domain Services-ondersteuning|● | |
 | [Hybride Exchange-write-back](../hybrid/reference-connect-sync-attributes-synchronized.md#exchange-hybrid-writeback) |● | |
 | Ondersteuning voor meer dan 50.000 objecten per AD-domein |● | |
+| Verwijzingen naar meerdere domeinen|● | |
 
 ## <a name="next-steps"></a>Volgende stappen 
 

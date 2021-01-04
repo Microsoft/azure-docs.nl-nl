@@ -13,12 +13,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 08ee000d8f801559fcf572b8ab489161fd090b77
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 7ba15e66cca7baefdf8cca5cabd5e5d5b1e2c7f7
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95996199"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507809"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
@@ -75,24 +75,28 @@ Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw
 
 ### <a name="register-your-application"></a>Uw toepassing registreren
 
-1. Ga naar [Azure Portal](https://aka.ms/MobileAppReg).
-2. Open de blade [App-registraties](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) en klik op **+Nieuwe registratie**.
-3. Voer een **naam** in voor uw app en klik op **Registeren**, **zonder** een omleidings-URI in te stellen.
-4. Selecteer in de sectie **Beheren** van het deelvenster dat verschijnt, de optie **Verificatie** >  **+Een platform toevoegen** > **Android**. (Mogelijk moet u 'Overschakelen naar de nieuwe ervaring' bovenaan de blade selecteren om deze sectie weer te geven)
-5. Voer de pakketnaam van het project in. Als u de code hebt gedownload, is deze waarde `com.azuresamples.msalandroidapp`.
-6. Klik in de sectie **Handtekening-hash** van de pagina **Uw Android-app configureren** op **Een handtekening-hash voor de ontwikkeling genereren.** en kopieer de KeyTool-opdracht die u wilt gebruiken voor uw platform.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer **Registreren**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen** > **Android**.
+1. Voer de pakketnaam van het project in. Als u de code hebt gedownload, is deze waarde `com.azuresamples.msalandroidapp`.
+1. Selecteer in de sectie **Handtekening-hash** van de pagina **Uw Android-app configureren** de optie **Een handtekening-hash voor de ontwikkeling genereren.** en kopieer de KeyTool-opdracht die u wilt gebruiken voor uw platform.
 
    > [!Note]
    > KeyTool.exe is geïnstalleerd als onderdeel van de JDK (Java Development Kit). U moet ook het OpenSSL-hulpprogramma installeren om de KeyTool-opdracht uit te voeren. Raadpleeg de [Android-documentatie over het genereren van een sleutel](https://developer.android.com/studio/publish/app-signing#generate-key) voor meer informatie.
 
-7. Voer de **handtekening-hash** in die is gegenereerd door KeyTool.
-8. Klik op `Configure` en sla de **MSAL-configuratie** op die wordt weergegeven op de pagina **Android-configuratie**, zodat u deze kunt invoeren wanneer u de app later configureert.  Klik op **Gereed**.
+1. Voer de **handtekening-hash** in die is gegenereerd door KeyTool.
+1. Selecteer **Configureren** en sla de **MSAL-configuratie** op die wordt weergegeven op de pagina **Android-configuratie**, zodat u deze kunt invoeren wanneer u de app later configureert.  
+1. Selecteer **Gereed**.
 
 ### <a name="configure-your-application"></a>Uw toepassing configureren
 
 1. Ga in het projectdeelvenster van Android Studio naar **app\src\main\res**.
-2. Klik met de rechtermuisknop op **res** en kies **Nieuw** > **Map**. Voer `raw` in als de naam van de nieuwe map en klik op **OK**.
-3. Maak in **app** > **src** > **main** > **res** > **raw** een nieuw JSON-bestand met de naam `auth_config_single_account.json` en plak de MSAL-configuratie die u eerder hebt opgeslagen.
+1. Klik met de rechtermuisknop op **res** en kies **Nieuw** > **Map**. Voer `raw` in als de naam van de nieuwe map en klik op **OK**.
+1. Maak in **app** > **src** > **main** > **res** > **raw** een nieuw JSON-bestand met de naam `auth_config_single_account.json` en plak de MSAL-configuratie die u eerder hebt opgeslagen.
 
     Plak deze onder de omleidings-URI:
     ```json

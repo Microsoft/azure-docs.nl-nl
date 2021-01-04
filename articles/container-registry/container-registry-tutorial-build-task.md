@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Azure Container Registry-taak 
 ms.topic: tutorial
 ms.date: 11/24/2020
 ms.custom: seodec18, mvc, devx-track-azurecli
-ms.openlocfilehash: 00f77d9dc56bf8fff792a23bbb139519ccd24351
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 7f2e6d7f304977d3e6d92a778dba5bf026343707
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030591"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562902"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Zelfstudie: Builds van containerinstallatiekopieën in de cloud automatiseren bij het doorvoeren van broncode
 
@@ -58,7 +58,7 @@ az acr task create \
 ```
 
 
-Deze taak geeft aan dat elke keer dat code wordt doorgevoerd naar de *master*-vertakking in de opslagplaats zoals is opgegeven door `--context`, ACR Tasks dan de containerinstallatiekopie van de code in die vertakking bouwt. Er wordt gebruik gemaakt van het Dockerfile dat is opgegeven door `--file` vanuit de hoofdmap. Het argument `--image` geeft een parameterwaarde van `{{.Run.ID}}` aan voor het versiegedeelte van de tag van de installatiekopie, zodat de gebouwde installatiekopie correleert met een specifieke build en uniek is gelabeld.
+Deze taak geeft aan dat elke keer dat code wordt doorgevoerd naar de *hoofd* vertakking in de opslagplaats zoals is opgegeven met `--context`, ACR Tasks de containerinstallatiekopie van de code in deze vertakking bouwt. Er wordt gebruik gemaakt van het Dockerfile dat is opgegeven door `--file` vanuit de hoofdmap. Het argument `--image` geeft een parameterwaarde van `{{.Run.ID}}` aan voor het versiegedeelte van de tag van de installatiekopie, zodat de gebouwde installatiekopie correleert met een specifieke build en uniek is gelabeld.
 
 De uitvoer van een geslaagde [az acr task create][az-acr-task-create]-opdracht is vergelijkbaar met het volgende:
 
@@ -103,7 +103,7 @@ De uitvoer van een geslaagde [az acr task create][az-acr-task-create]-opdracht i
       {
         "name": "defaultSourceTriggerName",
         "sourceRepository": {
-          "branch": "master",
+          "branch": "main",
           "repositoryUrl": "https://github.com/gituser/acr-build-helloworld-node",
           "sourceControlAuthProperties": null,
           "sourceControlType": "GitHub"
@@ -194,7 +194,7 @@ Voer vervolgens de volgende opdrachten uit om een nieuw bestand te maken, door t
 echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Testing ACR Tasks"
-git push origin master
+git push origin main
 ```
 
 U wordt mogelijk gevraagd om uw GitHub-referenties op te geven wanneer u de opdracht `git push` uitvoert. Geef uw GitHub-gebruikersnaam op en voer het persoonlijke toegangstoken (PAT) in dat u eerder hebt gemaakt voor het wachtwoord.

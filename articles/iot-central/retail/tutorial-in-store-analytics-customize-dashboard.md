@@ -11,12 +11,12 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/12/2019
-ms.openlocfilehash: 47edaec54a2470e9b657b2f214be923439e1e8a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5165f7d6e16e0d136dbf8d4507090c78372185cb
+ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81000117"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97348047"
 ---
 # <a name="tutorial--customize-the-operator-dashboard-and-manage-devices-in-azure-iot-central"></a>Zelfstudie:  Het operatordashboard aanpassen en apparaten beheren in Azure IoT Central
 
@@ -107,13 +107,13 @@ Tegels verwijderen die u niet in uw toepassing wilt gebruiken:
 
 1. Selecteer **Bewerken** op de werkbalk van het dashboard. 
 
-1. Selecteer **X Verwijderen** om de volgende tegels te verwijderen: **Terug naar alle zones**, **Ga naar het winkeldashboard**, **Wachttijd**en alle drie de tegels die zijn gekoppeld aan **Kassa 3**. Het Contoso winkeldashboard gebruikt deze tegels niet. 
+1. Selecteer **X Verwijderen** om de volgende tegels te verwijderen: **Terug naar alle zones**, **Ga naar het winkeldashboard**, **Wachttijd** en alle drie de tegels die zijn gekoppeld aan **Kassa 3**. Het Contoso winkeldashboard gebruikt deze tegels niet. 
 
     ![Tegels van Azure IoT Central verwijderen](./media/tutorial-in-store-analytics-customize-dashboard/delete-tiles.png)
 
 1. Scroll om de resterende dashboardtegels in beeld te brengen.
 
-1. Selecteer **X Verwijderen** om de volgende tegels te verwijderen: **Opwarmen kassazone**, **Afkoelen kassazone**, **Instellingen voor de bezettingssensor**, **Instellingen voor de thermostaat-sensor**en **Omgevingsomstandigheden**. 
+1. Selecteer **X Verwijderen** om de volgende tegels te verwijderen: **Opwarmen kassazone**, **Afkoelen kassazone**, **Instellingen voor de bezettingssensor**, **Instellingen voor de thermostaat-sensor** en **Omgevingsomstandigheden**. 
 
    ![Resterende tegels van Azure IoT Central verwijderen](./media/tutorial-in-store-analytics-customize-dashboard/delete-tiles-2.png)
 

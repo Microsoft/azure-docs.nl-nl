@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 1a8d851d2e70850155950786c6aa67c1d5086eb2
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 383f7f37e93b4705419ba1f93f509c86eaab192b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993870"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030634"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Python-webapp
 
@@ -50,31 +50,25 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
-> 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-> 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.
-> 1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft-identiteitsplatform voor ontwikkelaars.
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
->      - Voer in de sectie **Naam** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app. Bijvoorbeeld: `python-webapp`.
->      - Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
->      - Selecteer **Registreren**.
->      - Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
-> 1. Selecteer **Verificatie** in het menu en voeg dan de volgende gegevens toe:
->    - Voeg de platformconfiguratie **Web** toe. Voeg `http://localhost:5000/getAToken` toe als **Omleidings-URI's**.
->    - Selecteer **Opslaan**.
-> 1. Kies in het menu aan de linkerkant de optie **Certificaten en geheimen** en klik op **Nieuw clientgeheim** in het gedeelte **Clientgeheimen**:
->
->      - Typ een beschrijving voor de sleutel (van het app-geheim van de instantie).
->      - Selecteer een sleutelduur van **Over 1 jaar**.
->      - Wanneer u op **Toevoegen** klikt, wordt de sleutelwaarde weergegeven.
->      - Kopieer de waarde van de sleutel. U hebt dit later nodig.
-> 1. Selecteer het gedeelte **API-machtigingen**
->
->      - Klik op de knop **Een machtiging toevoegen** en vervolgens
->      - Zorg ervoor dat het tabblad **Microsoft-API's** is geselecteerd
->      - Klik in het gedeelte *Veelgebruikte Microsoft-API's* op **Microsoft Graph**
->      - Zorg ervoor dat in het gedeelte **Gedelegeerde toestemmingen** de juiste machtigingen zijn aangevinkt: **User.ReadBasic.All**. Gebruik het zoekvak indien nodig.
->      - Selecteer de knop **Toestemmingen toevoegen**
+> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing, bijvoorbeeld `python-webapp`. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+> 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
+> 1. Selecteer **Registreren**.
+> 1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
+> 1. Selecteer **Verificatie** onder **Beheren**.
+> 1. Selecteer **Een platform toevoegen** > **Web**.
+> 1. Voeg `http://localhost:5000/getAToken` toe als **Omleidings-URI's**.
+> 1. Selecteer **Configureren**.
+> 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**, en in de sectie **Clientgeheimen** selecteert u **Nieuw clientgeheim**.
+> 1. Typ een beschrijving voor de sleutel (bijvoorbeeld 'app-geheim'), laat de standaardvervaldatum staan, en selecteer **Toevoegen**.
+> 1. Noteer de **Waarde** van het **Clientgeheim** voor later gebruik.
+> 1. Selecteer onder **Beheren** achtereenvolgens **API-machtigingen** > **Een machtiging toevoegen**.
+>1.  Zorg ervoor dat het tabblad **Microsoft-API's** is geselecteerd.
+> 1. Selecteer in de sectie *Veelgebruikte Microsoft-API's* de optie **Microsoft Graph**.
+> 1. Zorg ervoor dat in de sectie **Gedelegeerde toestemmingen** de juiste machtigingen zijn aangevinkt: **User.ReadBasic.All**. Gebruik het zoekvak indien nodig.
+> 1. Selecteer de knop **Toestemmingen toevoegen**.
 >
 > [!div class="sxs-lookup" renderon="portal"]
 >

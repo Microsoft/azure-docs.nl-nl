@@ -2,13 +2,13 @@
 title: Een hybride machine verbinden met servers met Azure Arc
 description: Meer informatie over het verbinden en registreren van uw hybride machine met Azure Arc-servers.
 ms.topic: quickstart
-ms.date: 11/12/2020
-ms.openlocfilehash: 3779d95ac138e83b1d953f744e07ae553890a5d7
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 12/15/2020
+ms.openlocfilehash: 68869854cbfcf6d7297137e6239b2229a20c04a1
+ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576752"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97516786"
 ---
 # <a name="quickstart-connect-hybrid-machine-with-azure-arc-enabled-servers"></a>Quickstart: Een hybride machine verbinden met servers met Azure Arc
 
@@ -29,6 +29,9 @@ Met [servers met Azure Arc](../overview.md) kunt u uw Windows- en Linux-computer
     * Als de computer verbinding maakt via een firewall of proxyserver om via internet te communiceren, moet u ervoor zorgen dat de [vermelde](../agent-overview.md#networking-configuration) URL's niet worden geblokkeerd.
 
     * Servers met Azure Arc ondersteunen alleen de regio's die [hier](../overview.md#supported-regions) worden opgegeven.
+
+> [!WARNING]
+> In de naam van de Linux-host of de Windows-computer mag niet een van de gereserveerde woorden of merken voorkomen, anders mislukt het registreren van de verbonden machine met Azure. Zie [Fouten in de gereserveerde resourcenaam oplossen](../../../azure-resource-manager/templates/error-reserved-resource-name.md) voor een lijst met de gereserveerde woorden.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 

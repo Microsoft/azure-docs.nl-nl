@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 802b7d2ca5d96bf385c4b8f0ee0cdaa3db181a1c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: feda969a5818402f4a5f2dadc80c70c324ad7492
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922567"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559961"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Zelfstudie: Gegevens scannen met Azure Purview (preview)
 
@@ -146,10 +146,11 @@ Nadat de catalogusconfiguratie is voltooid, voert u de volgende scripts uit in h
 
    Wanneer u de opdracht uitvoert, wordt er mogelijk een pop-upvenster weergegeven waarin u zich kunt aanmelden met uw Azure Active Directory-referenties.
 
-1. Gebruik de volgende opdracht om de starterkit uit te voeren. Vervang de tijdelijke aanduidingen `CatalogName`, `TenantID`, `SubscriptionID`, `newresourcegroupname`en `CatalogResourceGroupName`. Voor `newresourcegroupname`, gebruikt u een unieke naam voor de resourcegroep die het gegevensdomein bevat.
 
-> [!IMPORTANT]
-> De **newresourcegroupname** gebruikt alleen cijfers en kleine en moet minder dan 17 tekens bevatten. **Er zijn geen hoofdletters en speciale tekens toegestaan.** Deze beperking is afkomstig van regels voor naamgeving van opslagaccounts.
+1. Gebruik de volgende opdracht om de starterkit uit te voeren. Vervang de tijdelijke aanduidingen `CatalogName`, `TenantID`, `SubscriptionID`, `NewResourceGroupName`en `CatalogResourceGroupName`. Gebruik voor `NewResourceGroupName` een unieke naam (met alleen kleine alfanumerieke tekens) voor de resourcegroep die het gegevensdomein bevat.
+
+   > [!IMPORTANT]
+   > De **newresourcegroupname** gebruikt alleen cijfers en kleine en moet minder dan 17 tekens bevatten. **Er zijn geen hoofdletters en speciale tekens toegestaan.** Deze beperking is afkomstig van regels voor naamgeving van opslagaccounts.
 
    ```powershell
    .\RunStarterKit.ps1 -CatalogName <CatalogName> -TenantId <TenantID>`

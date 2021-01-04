@@ -7,20 +7,30 @@ ms.service: attestation
 ms.topic: quickstart
 ms.date: 11/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dee9e7596c0a30301d9e0453ef22a6dfe9541522
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: fb8b0f12844ce1057bd3cfc4716a32ee64ec5586
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96020939"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96937216"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-cli"></a>Quickstart: Azure Attestation instellen met Azure CLI
 
 Ga aan de slag met Azure Attestation door met behulp van Azure CLI attestation in te stellen.
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
-
 ## <a name="get-started"></a>Aan de slag
+
+1. Installeer deze extensie met behulp van de CLI-opdracht
+
+   ```azurecli
+   az extension add --name attestation
+   ```
+   
+1. Controleer de versie
+
+   ```azurecli
+   az extension show --name attestation --query version
+   ```
 
 1. Gebruik de volgende opdracht om u aan te melden bij Azure:
 
@@ -55,19 +65,16 @@ Ga aan de slag met Azure Attestation door met behulp van Azure CLI attestation i
 
 Hier vindt u de opdrachten die u kunt gebruiken om de attestation-provider te maken en beheren:
 
-1. Voer de opdracht [az attestation create](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_create) uit om een attestation-provider te maken:
+1. Voer de opdracht [az attestation create](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_create) uit om een attestation-provider te maken:
 
    ```azurecli
-   az attestation create --resource-group attestationrg --name attestationProvider --location uksouth \
-      --attestation-policy SgxDisableDebugMode --certs-input-path C:\test\policySignersCertificates.pem
+   az attestation create --name "myattestationprovider" --resource-group "MyResourceGroup" --location westus
    ```
-
-   Met de parameter **--certs-input-path** wordt een reeks vertrouwde handtekeningsleutels opgegeven. Als u een bestandsnaam voor deze parameter opgeeft, moet de attestation-provider alleen worden geconfigureerd met beleidsregels in ondertekende JWT-indeling. Anders kan beleid worden geconfigureerd in tekstindeling of in een niet-ondertekende JWT-indeling. Zie [Basisconcepten](basic-concepts.md) voor meer informatie over JWT. Zie [Voorbeelden van een attestation-certificaat van beleidsondertekening](policy-signer-examples.md) voor voorbeelden van certificaten.
-
-1. Voer de opdracht [az attestation show](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_show) uit om eigenschappen van de attestation-provider op te halen, zoals status en AttestURI:
+   
+1. Voer de opdracht [az attestation show](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_show) uit om eigenschappen van de attestation-provider op te halen, zoals status en AttestURI:
 
    ```azurecli
-   az attestation show --resource-group attestationrg --name attestationProvider
+   az attestation show --name "myattestationprovider" --resource-group "MyResourceGroup"
    ```
 
    Deze opdracht zorgt ervoor dat er waarden worden weergegeven zoals in de volgende uitvoer:
@@ -84,34 +91,20 @@ Hier vindt u de opdrachten die u kunt gebruiken om de attestation-provider te ma
    TagsTable:
    ```
 
-U kunt een attestation-provider verwijderen met behulp van de opdracht [az attestation delete](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_delete):
+U kunt een attestation-provider verwijderen met behulp van de opdracht [az attestation delete](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_delete):
 
 ```azurecli
-az attestation delete --resource-group attestationrg --name attestationProvider
+az attestation delete --name "myattestationprovider" --resource-group "sample-resource-group"
 ```
 
 ## <a name="policy-management"></a>Beleidsbeheer
 
-Voor het beheren van beleid, heeft een Azure AD-gebruiker de volgende machtigingen nodig voor `Actions`:
+Gebruik de opdrachten die hieronder worden beschreven, om beleidsbeheer voor een attestation-provider te kunnen bieden, één attestation-type per keer.
 
-- `Microsoft.Attestation/attestationProviders/attestation/read`
-- `Microsoft.Attestation/attestationProviders/attestation/write`
-- `Microsoft.Attestation/attestationProviders/attestation/delete`
-
-Deze machtigingen kunnen worden toegewezen aan een AD-gebruiker via een rol zoals `Owner` (machtigingen voor jokertekens), `Contributor` (machtigingen voor jokertekens) of `Attestation Contributor` (alleen specifieke machtigingen voor Azure Attestation).  
-
-Voor het lezen van beleid, heeft een Azure AD-gebruiker de volgende machtigingen nodig voor `Actions`:
-
-- `Microsoft.Attestation/attestationProviders/attestation/read`
-
-Deze machtiging kan worden toegewezen aan een AD-gebruiker via een rol zoals `Reader` (machtigingen voor jokertekens) of `Attestation Reader` (alleen specifieke machtigingen voor Azure Attestation).
-
-Gebruik de opdrachten die hieronder worden beschreven om beheer van beleid voor een attestation-provider te kunnen bieden (één TEE per keer).
-
-De opdracht [az attestation policy show](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_show) retourneert het huidige beleid voor de opgegeven TEE:
+De opdracht [az attestation policy show](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_show) retourneert het huidige beleid voor de opgegeven TEE:
 
 ```azurecli
-az attestation policy show --resource-group attestationrg --name attestationProvider --tee SgxEnclave
+az attestation policy show --name "myattestationprovider" --resource-group "MyResourceGroup" --attestation-type SGX-IntelSDK
 ```
 
 > [!NOTE]
@@ -119,48 +112,24 @@ az attestation policy show --resource-group attestationrg --name attestationProv
 
 De volgende typen TEE worden ondersteund:
 
-- `CyResComponent`
-- `OpenEnclave`
-- `SgxEnclave`
-- `VSMEnclave`
+- `SGX-IntelSDK`
+- `SGX-OpenEnclaveSDK`
+- `TPM`
 
-Gebruik de opdracht [az attestation policy set](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_set) om een nieuw beleid voor de opgegeven TEE in te stellen.
+Gebruik de opdracht [az attestation policy set](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_set) om nieuw beleid voor het opgegeven attestation-type in te stellen.
 
-```azurecli
-az attestation policy set --resource-group attestationrg --name attestationProvider --tee SgxEnclave \
-   --new-attestation-policy newAttestationPolicyname
-```
-
-Het attestation-beleid in JWT-indeling moet een claim met de naam `AttestationPolicy` bevatten. Een ondertekend beleid moet zijn ondertekend met een persoonlijke sleutel die overeenkomt met een van de bestaande certificaten van beleidsondertekening.
-
-Zie [Voorbeelden van een attestation-beleid](policy-examples.md) voor voorbeelden van beleid.
-
-Met de opdracht [az attestation policy reset](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_reset) wordt een nieuw beleid voor de opgegeven TEE ingesteld.
+Beleid in de tekstindeling instellen voor een opgegeven attestation-type met behulp van het bestandspad:
 
 ```azurecli
-az attestation policy reset --resource-group attestationrg --name attestationProvider --tee SgxEnclave \
-   --policy-jws "eyJhbGciOiJub25lIn0.."
+az attestation policy set --name testatt1 --resource-group testrg --attestation-type SGX-IntelSDK --new-attestation-policy-file "{file_path}"
 ```
 
-## <a name="policy-signer-certificates-management"></a>Beheer van certificaten voor beleidsondertekening
-
-Gebruik de volgende opdrachten om de certificaten van beleidsondertekening voor een attestation-provider te beheren:
+Beleid in de JWT-indeling instellen voor een opgegeven attestation-type met behulp van het bestandspad:
 
 ```azurecli
-az attestation signer list --resource-group attestationrg --name attestationProvider
-
-az attestation signer add --resource-group attestationrg --name attestationProvider \
-   --signer "eyAiYWxnIjoiUlMyNTYiLCAie..."
-
-az attestation signer remove --resource-group attestationrg --name attestationProvider \
-   --signer "eyAiYWxnIjoiUlMyNTYiLCAie..."
+az attestation policy set --name "myattestationprovider" --resource-group "MyResourceGroup" \
+--attestation-type SGX-IntelSDK --new-attestation-policy-file "{file_path}" --policy-format JWT
 ```
-
-Het certificaat van beleidsondertekening is een ondertekende JWT met een claim met de naam `maa-policyCertificate`. De waarde van de claim is een JWK die de vertrouwde ondertekeningssleutel bevat die moet worden toegevoegd. De JWT moet zijn ondertekend met een persoonlijke sleutel die overeenkomt met een van de bestaande certificaten van beleidsondertekening. Zie [Basisconcepten](basic-concepts.md) voor meer informatie over JWT en JWK.
-
-Houd er rekening mee dat alle semantische manipulatie van het certificaat van beleidsondertekening moet worden uitgevoerd buiten Azure CLI. Wat Azure CLI betreft, is dit een eenvoudige tekenreeks.
-
-Zie [Voorbeelden van een attestation-certificaat van beleidsondertekening](policy-signer-examples.md) voor voorbeelden van certificaten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

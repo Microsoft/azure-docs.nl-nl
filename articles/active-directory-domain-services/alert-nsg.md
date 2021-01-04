@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: justinha
-ms.openlocfilehash: 58cdd025587823f7eb702164c965ab622a7325d3
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 5b48d326efad889adbcf25d487ee27b8200f558f
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615644"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693922"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: waarschuwingen voor netwerk configuratie in Azure Active Directory Domain Services
 
@@ -38,13 +38,15 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="inbound-security-rules"></a>Inkomende beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Bewerking |
+| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
 |----------|------|------|----------|--------|-------------|--------|
 | 301      | AllowPSRemoting | 5986| TCP | AzureActiveDirectoryDomainServices | Alle | Toestaan |
 | 201      | AllowRD | 3389 | TCP | CorpNetSaw | Alle | <sup>1</sup> weigeren |
 | 65000    | AllVnetInBound | Alle | Alle | VirtualNetwork | VirtualNetwork | Toestaan |
 | 65001    | AllowAzureLoadBalancerInBound | Alle | Alle | AzureLoadBalancer | Alle | Toestaan |
 | 65500    | DenyAllInBound | Alle | Alle | Alle | Alle | Weigeren |
+
+
 <sup>1</sup> Optioneel voor fout opsporing. Toestaan wanneer dit nodig is voor geavanceerde probleem oplossing.
 
 > [!NOTE]
@@ -52,7 +54,7 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="outbound-security-rules"></a>Uitgaande beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Bewerking |
+| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
 |----------|------|------|----------|--------|-------------|--------|
 | 65000    | AllVnetOutBound | Alle | Alle | VirtualNetwork | VirtualNetwork | Toestaan |
 | 65001    | AllowAzureLoadBalancerOutBound | Alle | Alle |  Alle | Internet | Toestaan |

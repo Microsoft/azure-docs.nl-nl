@@ -1,23 +1,33 @@
 ---
 title: Azure Lighthouse en door Azure beheerde toepassingen
-description: Krijg inzicht in de manier waarop Azure Lighthouse en door Azure beheerde toepassingen verschillende scenario's kunnen ondersteunen en hoe ze samen kunnen worden gebruikt.
-ms.date: 08/12/2020
+description: Krijg inzicht in de manier waarop Azure Lighthouse en Azure Managed Applications samen kunnen worden gebruikt.
+ms.date: 12/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: b3d6c83a50f1da006f2618f7f4ff59759dac2555
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 5c30c3234a57e25ceaa521ad485f58d4d663ebe9
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436518"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693966"
 ---
 # <a name="azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse en door Azure beheerde toepassingen
 
-Zowel door Azure beheerde toepassingen als Azure Lighthouse werken door een service provider in te scha kelen voor toegang tot bronnen die zich in de Tenant van de klant bevinden. Het kan handig zijn om inzicht te krijgen in de verschillen in de manier waarop ze werken en de scenario's die ze kunnen inschakelen, en hoe ze samen worden gebruikt.
+Zowel door Azure beheerde toepassingen als Azure Lighthouse werken door een service provider in te scha kelen voor toegang tot bronnen die zich in de Tenant van de klant bevinden. Het kan handig zijn om inzicht te krijgen in de verschillen in de manier waarop ze werken, en de scenario's die ze kunnen gebruiken en hoe ze samen worden gebruikt.
 
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, kunnen [bedrijven die meerdere tenants beheren](enterprise.md) , gebruikmaken van dezelfde processen en hulpprogram ma's.
 
 ## <a name="comparing-azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse en door Azure beheerde toepassingen vergelijken
+
+In deze tabel ziet u enkele verschillen op hoog niveau die van invloed kunnen zijn op het gebruik van Azure Lighthouse of Azure Managed Applications. Zoals hieronder vermeld, kunt u ook een oplossing ontwerpen die ze samen gebruikt.
+
+|Overweging  |Azure Lighthouse  |Door Azure beheerde toepassingen  |
+|---------|---------|---------|
+|Typische gebruiker     |Service providers of ondernemingen die meerdere tenants beheren         |Onafhankelijke software leveranciers (Isv's)         |
+|Bereik van cross-Tenant toegang     |Abonnement (en) of resource groep (en)         |Resource groep (bereik van één toepassing)         |
+|Tevens in azure Marketplace     |Nee (aanbiedingen kunnen worden gepubliceerd naar Azure Marketplace, maar klanten worden afzonderlijk gefactureerd)        |Ja         |
+|IP-beveiliging     |Ja (het IP-adres kan in de Tenant van de service provider blijven staan)        |Ja (op basis van het ontwerp, de resource groep is vergrendeld voor klanten)         |
+|Weigeringstoewijzingen     |Nee         |Ja        |
 
 ### <a name="azure-lighthouse"></a>Azure Lighthouse
 
@@ -51,3 +61,4 @@ Klanten kunnen ook geïnteresseerd zijn in beheerde toepassingen van meerdere se
 
 - Meer informatie over door [Azure beheerde toepassingen](../../azure-resource-manager/managed-applications/overview.md).
 - Meer informatie over het [voorbereiden van een abonnement op Azure Lighthouse](../how-to/onboard-customer.md).
+- Meer informatie over [ISV-scenario's met Azure Lighthouse](isv-scenarios.md).

@@ -3,14 +3,14 @@ title: Pre-scripts en post scripts beheren in uw Updatebeheer-implementatie in a
 description: In dit artikel leest u hoe u vooraf-scripts en post scripts voor update-implementaties configureert en beheert.
 services: automation
 ms.subservice: update-management
-ms.date: 05/17/2019
+ms.date: 12/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb2a272829374cfeba5c334ff87268c4928885f5
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 4c37fe107d9256461e5aa632f859ae02c5dc42f5
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222195"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683411"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Scripts voorafgaand aan de back-up en scripts die erop volgen, beheren
 
@@ -100,9 +100,9 @@ Als u een pre-script of post script wilt gebruiken in een update-implementatie, 
 
 ![Scripts selecteren](./media/pre-post-scripts/select-scripts.png)
 
-Selecteer het script dat u wilt gebruiken. In dit voor beeld gebruiken we het runbook **UpdateManagement-TurnOnVms** . Wanneer u het runbook selecteert, wordt de pagina **script configureren** geopend. Selecteer **vooraf script**en selecteer vervolgens **OK**.
+Selecteer het script dat u wilt gebruiken. In dit voor beeld gebruiken we het runbook **UpdateManagement-TurnOnVms** . Wanneer u het runbook selecteert, wordt de pagina **script configureren** geopend. Selecteer **vooraf script** en selecteer vervolgens **OK**.
 
-Herhaal dit proces voor het script **UpdateManagement-TurnOffVms** . Maar wanneer u het **script type**kiest, selecteert u **post-script**.
+Herhaal dit proces voor het script **UpdateManagement-TurnOffVms** . Maar wanneer u het **script type** kiest, selecteert u **post-script**.
 
 In het gedeelte **geselecteerde items** worden nu de geselecteerde scripts weer gegeven. Een is een pre-script en de andere is een post script:
 
@@ -146,7 +146,7 @@ Pre-tasks en post-tasks worden uitgevoerd als runbooks en worden niet systeem ei
 * Een uitvoeren als-account
 * Een runbook dat u wilt uitvoeren
 
-Als u wilt communiceren met Azure-machines, moet u de cmdlet [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0) gebruiken om te communiceren met uw Azure-vm's. Zie voor een voor beeld van hoe u dit doet, het runbook [-voor beeld updatebeheer: script uitvoeren met de opdracht Run](https://gallery.technet.microsoft.com/Update-Management-Run-40f470dc).
+Als u wilt communiceren met Azure-machines, moet u de cmdlet [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) gebruiken om te communiceren met uw Azure-vm's. Zie voor een voor beeld van hoe u dit doet, het runbook [-voor beeld updatebeheer: script uitvoeren met de opdracht Run](https://github.com/azureautomation/update-management-run-script-with-run-command).
 
 ### <a name="interact-with-non-azure-machines"></a>Communiceren met niet-Azure-machines
 
@@ -157,7 +157,7 @@ Taken en taken die na uitvoering worden uitgevoerd in de Azure-context en die ge
 * Een runbook dat u lokaal wilt uitvoeren
 * Een bovenliggend runbook
 
-Een bovenliggend runbook wordt uitgevoerd in de Azure-context om te communiceren met niet-Azure-machines. Met dit runbook wordt een onderliggend runbook aangeroepen met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.7.0) . U moet de `RunOn` para meter opgeven en de naam opgeven van de Hybrid Runbook worker waarmee het script moet worden uitgevoerd. Zie het runbook-voor beeld [updatebeheer: script lokaal uitvoeren](https://gallery.technet.microsoft.com/Update-Management-Run-6949cc44).
+Een bovenliggend runbook wordt uitgevoerd in de Azure-context om te communiceren met niet-Azure-machines. Met dit runbook wordt een onderliggend runbook aangeroepen met de cmdlet [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook) . U moet de `RunOn` para meter opgeven en de naam opgeven van de Hybrid Runbook worker waarmee het script moet worden uitgevoerd. Zie het runbook-voor beeld [updatebeheer: script lokaal uitvoeren](https://github.com/azureautomation/update-management-run-script-locally).
 
 ## <a name="abort-patch-deployment"></a>Patch implementatie afbreken
 
@@ -173,7 +173,7 @@ if (<My custom error logic>)
 
 ## <a name="samples"></a>Voorbeelden
 
-Voor beelden voor pre-scripts en post scripts vindt u in de [Script Center-galerie](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B0%5D.Text=Windows%20Azure&f%5B1%5D.Type=SubCategory&f%5B1%5D.Value=WindowsAzure_automation&f%5B1%5D.Text=Automation&f%5B2%5D.Type=SearchText&f%5B2%5D.Value=update%20management&f%5B3%5D.Type=Tag&f%5B3%5D.Value=Patching&f%5B3%5D.Text=Patching&f%5B4%5D.Type=ProgrammingLanguage&f%5B4%5D.Value=PowerShell&f%5B4%5D.Text=PowerShell) en de [PowerShell Gallery](https://www.powershellgallery.com/packages?q=Tags%3A%22UpdateManagement%22+Tags%3A%22Automation%22), of u kunt ze importeren via de Azure Portal. Als u dit wilt doen, selecteert u in uw Automation-account, onder **proces automatisering**, **Runbooks galerie**. Gebruik **updatebeheer** voor het filter.
+Voor beelden voor pre-scripts en post-scripts vindt u in de [Azure Automation github-organisatie](https://github.com/azureautomation) en de [PowerShell Gallery](https://www.powershellgallery.com/packages?q=Tags%3A%22UpdateManagement%22+Tags%3A%22Automation%22), of u kunt ze importeren via de Azure Portal. Als u dit wilt doen, selecteert u in uw Automation-account, onder **proces automatisering**, **Runbooks galerie**. Gebruik **updatebeheer** voor het filter.
 
 ![Galerie lijst](./media/pre-post-scripts/runbook-gallery.png)
 
@@ -186,7 +186,7 @@ U kunt ook zoeken naar de naam van het script, zoals wordt weer gegeven in de vo
 * Updatebeheer script uitvoeren met de opdracht uitvoeren
 
 > [!IMPORTANT]
-> Nadat u de runbooks hebt geïmporteerd, moet u deze publiceren voordat ze kunnen worden gebruikt. Hiertoe gaat u naar het runbook in uw Automation-account, selecteert u **bewerken**en selecteert u vervolgens **publiceren**.
+> Nadat u de runbooks hebt geïmporteerd, moet u deze publiceren voordat ze kunnen worden gebruikt. Hiertoe gaat u naar het runbook in uw Automation-account, selecteert u **bewerken** en selecteert u vervolgens **publiceren**.
 
 De voor beelden zijn gebaseerd op de basis sjabloon die in het volgende voor beeld is gedefinieerd. Deze sjabloon kan worden gebruikt om uw eigen runbook te maken voor gebruik met pre-scripts en post scripts. De benodigde logica voor verificatie met Azure en het verwerken van de `SoftwareUpdateConfigurationRunContext` para meter is opgenomen.
 
@@ -242,8 +242,8 @@ $variable = Get-AutomationVariable -Name $runId
 ```
 
 > [!NOTE]
-> Voor niet-grafische power shell-runbooks `Add-AzAccount` en `Add-AzureRMAccount` aliassen voor [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). U kunt deze cmdlets gebruiken of u kunt [uw modules bijwerken](../automation-update-azure-modules.md) naar de nieuwste versie in uw Automation-account. Zelfs wanneer u juist een nieuw Automation-account heeft aangemaakt, moet u mogelijk uw modules bijwerken.
+> Voor niet-grafische power shell-runbooks `Add-AzAccount` en `Add-AzureRMAccount` aliassen voor [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). U kunt deze cmdlets gebruiken of u kunt [uw modules bijwerken](../automation-update-azure-modules.md) naar de nieuwste versie in uw Automation-account. Zelfs wanneer u juist een nieuw Automation-account heeft aangemaakt, moet u mogelijk uw modules bijwerken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [updates en patches voor uw virtuele machines beheren](manage-updates-for-vm.md)voor meer informatie over update beheer.
+Zie [updates en patches voor uw virtuele machines beheren](manage-updates-for-vm.md)voor meer informatie over update beheer.

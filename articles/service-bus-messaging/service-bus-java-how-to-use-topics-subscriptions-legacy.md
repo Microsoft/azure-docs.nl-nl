@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 33d8aa9be6a6ee4182e49e658bd41ebf6da588e5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c44f3329626c42bdbb9e206c9dbf258c97b1aa57
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456562"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655642"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-java"></a>Quickstart: Service Bus-onderwerpen en -abonnementen met Java gebruiken
 In deze quickstart schrijft u Java-code voor het verzenden van berichten naar een Azure Service Bus-onderwerp en ontvangt u vervolgens berichten van abonnementen op dit onderwerp. 

@@ -65,6 +65,8 @@
           href: ./security-controls-policy.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
+        - name: Aanbevolen procedures voor beveiliging
+          href: security-best-practices.md
     - name: Workflow en resources van batchservice
       displayName: developer features
       href: batch-service-workflow-features.md

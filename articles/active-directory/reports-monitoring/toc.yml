@@ -98,9 +98,9 @@
     - name: Azure AD PowerShell-cmdlets voor rapportage
       href: reference-powershell-reporting.md
     - name: API-verwijzing voor auditlogboeken
-      href: /graph/api/resources/directoryaudit?view=graph-rest-beta
+      href: /graph/api/resources/directoryaudit?view=graph-rest-1.0
     - name: API-verwijzing voor aanmeldlogboeken
-      href: /graph/api/resources/signin?view=graph-rest-beta
+      href: /graph/api/resources/signin?view=graph-rest-1.0
     - name: Activiteiten controleren
       href: reference-audit-activities.md
     - name: Beleid voor gegevensretentie

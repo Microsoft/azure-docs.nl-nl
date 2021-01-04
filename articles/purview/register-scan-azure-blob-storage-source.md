@@ -1,18 +1,18 @@
 ---
 title: De Azure Storage-BLOB scannen
 description: Meer informatie over het scannen van Azure Blob-opslag in uw Azure controle sfeer liggen Data Catalog.
-author: hophanms
-ms.author: hophan
+author: shsandeep123
+ms.author: sandeepshah
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 1bcd8390a298d7fc46f9c04633f610eb4492d33d
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 9fc5c115486c7cbf84fc0bd98ff7996c674f2e24
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400706"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694821"
 ---
 # <a name="register-and-scan-azure-blob-storage"></a>Azure Blob Storage registreren en scannen
 
@@ -27,7 +27,7 @@ Azure Blob Storage ondersteunt volledige en incrementele scans voor het vastlegg
 - Voordat u gegevens bronnen registreert, maakt u een Azure controle sfeer liggen-account. Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)voor meer informatie over het maken van een controle sfeer liggen-account.
 - U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn
 
-## <a name="setting-up-authentication-for-a-scan"></a>Verificatie instellen voor een scan
+## <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
 Er zijn drie manieren om verificatie voor Azure Blob-opslag in te stellen:
 
@@ -40,9 +40,9 @@ Er zijn drie manieren om verificatie voor Azure Blob-opslag in te stellen:
 Wanneer u **beheerde identiteit** kiest om de verbinding in te stellen, moet u eerst uw controle sfeer liggen-account de machtiging geven om de gegevens bron te scannen:
 
 1. Ga naar uw opslagaccount.
-1. Selecteer **Access Control (IAM)** in het navigatie menu aan de linkerkant. 
+1. Selecteer **Access Control (IAM)** in het linker navigatiemenu. 
 1. Selecteer **+ Toevoegen**.
-1. Stel de **rol** in op **Storage BLOB data Reader** en voer uw Azure controle sfeer liggen-account naam in onder invoervak **selecteren** . Selecteer vervolgens **Opslaan** om deze roltoewijzing aan uw controle sfeer liggen-account toe te wijzen.
+1. Stel de **rol** in op **Storage BLOB data Reader** en voer uw Azure controle sfeer liggen-account naam in onder invoervak **selecteren** . Selecteer vervolgens **Opslaan** om deze rol toe te wijzen aan uw Purview-account.
 
 > [!Note]
 > Raadpleeg de stappen in [toegang verlenen tot blobs en wacht rijen met Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad) voor meer informatie.
@@ -55,42 +55,42 @@ Wanneer de geselecteerde verificatie methode de **account sleutel** is, moet u u
 1. **Instellingen > toegangs sleutels** selecteren
 1. Kopieer uw *sleutel* en sla deze ergens op om de volgende stappen uit te voeren
 1. Navigeer naar uw sleutelkluis
-1. **Instellingen > geheimen** selecteren
+1. Selecteer **Instellingen > Geheimen**
 1. Selecteer **+ genereren/importeren** en voer de **naam** en **waarde** in als de *sleutel* van uw opslag account
-1. Selecteer **maken** om te volt ooien
-1. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
+1. Selecteer **Maken** om te voltooien
+1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
 1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de sleutel voor het instellen van de scan
 
 ### <a name="service-principal"></a>Service-principal
 
-Als u een Service-Principal wilt gebruiken, kunt u een bestaande gebruiken of een nieuwe maken. 
+Als u een service-principal wilt gebruiken, kunt u een bestaande gebruiken of een nieuwe maken. 
 
 > [!Note]
-> Als u een nieuwe Service-Principal moet maken, volgt u deze stappen:
+> Als u een nieuwe service-principal moet maken, volgt u deze stappen:
 > 1. Navigeer naar [Azure Portal](https://portal.azure.com).
 > 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 > 1. Selecteer **App-registraties**.
-> 1. Selecteer **+ nieuwe toepassing registreren**.
-> 1. Voer een naam in voor de **toepassing** (de Service Principal Name).
-> 1. Selecteer **alleen accounts in deze organisatie Directory**.
-> 1. Voor omleidings-URI selecteert u **Web** en voert u de gewenste URL in. het hoeft niet echt of werk te zijn.
+> 1. Selecteer **+ Nieuwe toepassing registreren**.
+> 1. Voer een naam in voor de **toepassing** (de service-principal-naam).
+> 1. Selecteer **Alleen accounts in deze organisatiemap**.
+> 1. Bij Omleidings-URI selecteert u **Web** en voert u de gewenste URL in. Dit hoeft geen echte of werkende URL te zijn.
 > 1. Selecteer vervolgens **Registreren**.
 
 Het is vereist om de toepassings-ID en het geheim van de Service-Principal op te halen:
 
-1. Navigeer naar uw Service-Principal in de [Azure Portal](https://portal.azure.com)
-1. Kopieer de waarden van de **toepassings-id van de toepassing (client)** van het **overzicht** en het **client geheim** van **certificaten & geheimen**.
+1. Navigeer naar uw service-principal in [Azure Portal](https://portal.azure.com)
+1. Kopieer de waarde van de **Toepassings-id (client)** uit **Overzicht** en van **Clientgeheim** uit **Certificaten & geheimen**.
 1. Navigeer naar uw sleutelkluis
-1. **Instellingen > geheimen** selecteren
-1. Selecteer **+ genereren/importeren** en voer de **naam** van uw keuze en **waarde** in als het **client geheim** van de Service-Principal
-1. Selecteer **maken** om te volt ooien
-1. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
-1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal voor het instellen van de scan
+1. Selecteer **Instellingen > Geheimen**
+1. Selecteer **+ Genereren/importeren** en voer de **Naam** van uw keuze in en de **Waarde** als het **Clientgeheim** van uw service-principal
+1. Selecteer **Maken** om te voltooien
+1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
+1. Maak tot slot [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal om uw scan in te stellen
 
 #### <a name="granting-the-service-principal-access-to-your-blob-storage"></a>De Service-Principal toegang verlenen tot uw Blob-opslag
 
 1. Ga naar uw opslagaccount.
-1. Selecteer **Access Control (IAM)** in het navigatie menu aan de linkerkant. 
+1. Selecteer **Access Control (IAM)** in het linker navigatiemenu. 
 1. Selecteer **+ Toevoegen**.
 1. Stel de **rol** in op **Storage BLOB data Reader** en voer uw service principal name of object-id in onder invoervak **selecteren** . Selecteer vervolgens **Opslaan** om deze roltoewijzing aan uw Service-Principal toe te wijzen.
 
@@ -110,25 +110,25 @@ Het is vereist om de toepassings-ID en het geheim van de Service-Principal op te
 
 Ga als volgt te werk om een nieuw BLOB-account in uw Data Catalog te registreren:
 
-1. Navigeer naar uw controle sfeer liggen-account
-1. **Bronnen** selecteren in de linkernavigatiebalk
+1. Ga naar uw Purview-account
+1. Selecteer **Bronnen** in het linkernavigatievenster
 1. Selecteer **Registreren**
 1. Selecteer **Azure Blob Storage** bij **bronnen registreren**
 1. Selecteer **Doorgaan**
 
 Ga als volgt te werk op het scherm **bronnen registreren (Azure Blob Storage)** :
 
-1. Voer een **naam** in die voor de gegevens bron wordt weer gegeven in de catalogus. 
+1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus. 
 1. Kies uw abonnement om opslag accounts te filteren
 1. Selecteer een opslagaccount
-1. Een verzameling selecteren of een nieuwe maken (optioneel)
-1. **Volt ooien** om de gegevens bron te registreren.
+1. Selecteer een verzameling of maak een nieuwe (optioneel)
+1. **Voltooi** om de gegevensbron te registreren.
 
-:::image type="content" source="media/register-scan-azure-blob-storage-source/register-sources.png" alt-text="bronnen opties registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-blob-storage-source/register-sources.png" alt-text="opties voor bronnen registreren" border="true":::
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

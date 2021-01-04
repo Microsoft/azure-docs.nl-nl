@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 07/22/2020
-ms.openlocfilehash: 99c60cf541b3997f2aeca2ccef5a5af6b9c88e08
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: bff20468e8185073f5c192c1e115bc405dd089eb
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131493"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693617"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Een Power BI-app-aanbieding maken
 
@@ -23,8 +23,8 @@ Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner C
 ## <a name="create-a-new-offer"></a>Een nieuwe aanbieding maken
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-2. Selecteer in het menu links de optie **commerciële Marketplace** -  >  **overzicht** .
-3. Selecteer op de pagina overzicht **+ nieuwe aanbieding**  >  **Power bi service-app** .
+2. Selecteer in het menu links de optie **commerciële Marketplace**-  >  **overzicht**.
+3. Selecteer op de pagina overzicht **+ nieuwe aanbieding**  >  **Power bi service-app**.
 
    ![Illustreert het navigatie menu.](./media/new-offer-power-bi-app.png)
 
@@ -81,7 +81,7 @@ Wanneer u uw aanbieding naar Marketplace publiceert met partner centrum, moet u 
 
 Hier volgen enkele aanvullende bronnen voor het beheer van leads:
 
-- [Leads van klanten van uw aanbieding voor commerciële Marketplace](commercial-marketplace-get-customer-leads.md)
+- [Leads van uw aanbieding in de commerciële marketplace](commercial-marketplace-get-customer-leads.md)
 - [Veelgestelde vragen over Lead beheer](../lead-management-faq.md#common-questions-about-lead-management)
 - [Problemen met configuratie fouten van de lead oplossen](../lead-management-faq.md#publishing-config-errors)
 - [Overzicht Lead beheer](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) PDF (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
@@ -97,7 +97,7 @@ Op deze pagina kunt u de categorieën en industrieën definiëren die worden geb
 Selecteer categorieën en subcategorieën om uw aanbieding te plaatsen in de juiste Zoek gebieden voor Marketplace. Zorg ervoor dat u beschrijft hoe uw aanbod deze categorieën ondersteunt in de beschrijving van de aanbieding. Selecteer:
 
 - Ten minste één en Maxi maal twee categorieën, met inbegrip van een primaire en secundaire categorie (optioneel).
-- Maxi maal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing** .
+- Maxi maal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing**.
 
 Bekijk de volledige lijst met categorieën en subcategorieën in [Aanbevolen procedures voor aanbiedingen](../gtm-offer-listing-best-practices.md).
 
@@ -109,9 +109,7 @@ Bekijk de volledige lijst met categorieën en subcategorieën in [Aanbevolen pro
 
 #### <a name="terms-and-conditions"></a>Voorwaarden
 
-Als u uw eigen aangepaste voor waarden wilt opgeven, voert u Maxi maal 10.000 tekens in het vak **voor waarden** in. Als voor de voor waarden een langere beschrijving is vereist, voert u één webkoppeling in naar waar ze kunnen worden gevonden. Het wordt weer gegeven voor klanten als een actieve koppeling.
-
-Klanten moeten deze voor waarden accepteren voordat ze uw aanbieding kunnen proberen.
+Als u uw eigen aangepaste voor waarden wilt opgeven, voert u Maxi maal 10.000 tekens in het vak **voor waarden** in. Klanten moeten deze voor waarden accepteren voordat ze uw aanbieding kunnen proberen.
 
 Selecteer **concept opslaan** voordat u doorgaat naar de volgende sectie, aanbieding aanbieden.
 
@@ -186,7 +184,7 @@ Voer het webadres in voor het privacybeleid van uw organisatie. U bent verantwoo
 
 ### <a name="contact-information"></a>Contactgegevens
 
-U moet de naam, het e-mail adres en het telefoon nummer opgeven voor een **ondersteunings contact** en een **technische contact persoon** . Deze informatie wordt niet weer gegeven aan klanten. Het is beschikbaar voor micro soft en kan worden meegeleverd met de Cloud Solution Provider (CSP)-partners.
+U moet de naam, het e-mail adres en het telefoon nummer opgeven voor een **ondersteunings contact** en een **technische contact persoon**. Deze informatie wordt niet weer gegeven aan klanten. Het is beschikbaar voor micro soft en kan worden meegeleverd met de Cloud Solution Provider (CSP)-partners.
 
 - Ondersteunings contact (vereist): voor algemene ondersteunings vragen.
 - Technische contact persoon (vereist): voor technische vragen en certificerings problemen.
@@ -248,7 +246,7 @@ Voeg desgewenst instructies (Maxi maal 3.000 tekens) toe om het micro soft-valid
 
 Nadat u alle vereiste gedeelten van de aanbieding hebt voltooid, kunt u uw aanbieding verzenden om deze te controleren en te publiceren.
 
-Selecteer in de rechter bovenhoek van de portal **controleren en publiceren** .
+Selecteer in de rechter bovenhoek van de portal **controleren en publiceren**.
 
 Op de pagina controleren kunt u het volgende doen:
 
@@ -260,4 +258,4 @@ Op de pagina controleren kunt u het volgende doen:
 
 Selecteer **publiceren** om de aanbieding voor publicatie in te dienen.
 
-We sturen u een e-mail om u te laten weten wanneer een preview-versie van de aanbieding beschikbaar is om te controleren en goed te keuren. Als u uw aanbieding naar het publiek wilt publiceren, gaat u naar partner centrum en selecteert u **Go-Live** .
+We sturen u een e-mail om u te laten weten wanneer een preview-versie van de aanbieding beschikbaar is om te controleren en goed te keuren. Als u uw aanbieding naar het publiek wilt publiceren, gaat u naar partner centrum en selecteert u **Go-Live**.

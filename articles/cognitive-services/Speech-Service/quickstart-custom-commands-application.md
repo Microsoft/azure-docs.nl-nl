@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: d89f9330947d1c5d0146b8531f265d86d0fd5160
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.custom: references_regions
+ms.openlocfilehash: c5f8be87e7ee95e1deff12cce09204b5fe8a0bb7
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329148"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694194"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Een spraakassistent maken met aangepaste opdrachten
 
@@ -27,12 +28,12 @@ Op dit moment ondersteunt aangepaste opdrachten spraak abonnementen die in deze 
 * VS - west 2
 * VS - oost
 * VS - oost 2
+* VS - west-centraal
 * Europa - noord
 * Europa -west
-* VS - west-centraal
-* India - centraal
 * Azië - oost
 * Azië - zuidoost
+* India - centraal
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -66,7 +67,7 @@ Op dit moment ondersteunt aangepaste opdrachten spraak abonnementen die in deze 
     > [!div class="mx-imgBorder"]
     > ![Een project maken](media/custom-commands/import-project.png)
 
-1.  Selecteer in de lijst **Luis authoring resource** een authoring resource. Als er geen geldige ontwerp resources zijn, maakt u er een door  **nieuwe Luis maken**te selecteren.
+1.  Selecteer in de lijst **Luis authoring resource** een authoring resource. Als er geen geldige ontwerp resources zijn, maakt u er een door  **nieuwe Luis maken** te selecteren.
 
     > [!div class="mx-imgBorder"]
     > ![Een resource maken](media/custom-commands/create-new-luis-resource.png)
@@ -102,7 +103,7 @@ Voordat u toegang tot deze toepassing kunt krijgen vanuit een andere locatie dan
 
 
 1. Selecteer **instellingen** in het linkerdeel venster en selecteer  **Luis resources** in het middelste deel venster.
-1. Selecteer een Voorspellings bron of maak een resource door **nieuwe resource maken**te selecteren.
+1. Selecteer een Voorspellings bron of maak een resource door **nieuwe resource maken** te selecteren.
 1. Selecteer **Opslaan**.
     
     > [!div class="mx-imgBorder"]

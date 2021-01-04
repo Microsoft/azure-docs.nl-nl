@@ -13,12 +13,12 @@ ms.author: aahi
 keywords: textmining, sentimentanalyse, tekstanalyse
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-text-analytics
-ms.openlocfilehash: a1eba2f599a0365f43707ff7c9035d91e8637481
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: f93b7954861bf3351d2930132e1391e1f21b2a6f
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505856"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97655115"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library-and-rest-api"></a>Quickstart: de clientbibliotheek en REST API van Text Analytics gebruiken
 
@@ -39,8 +39,6 @@ Gebruik dit artikel om aan de slag te gaan met de clientbibliotheek en REST API 
 >    * Volg alleen de instructies voor de versie die u gebruikt.
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Voor productiescenario's wordt aanbevolen om de batch-asynchrone methoden te gebruiken voor prestaties en schaalbaarheid. Zie de referentiedocumentatie hieronder.
 > * Als u Text Analytics wilt gebruiken voor status of asynchrone bewerkingen, bekijkt u de voorbeelden in Github voor [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics), [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/) of [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
-
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 [!INCLUDE [C# quickstart](../includes/quickstarts/csharp-sdk.md)]
 

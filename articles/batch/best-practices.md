@@ -1,18 +1,21 @@
 ---
 title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
-ms.date: 11/18/2020
+ms.date: 12/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0f19fceca0212bd0a05d7caa311403b173c19de5
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 5c3521a3b5fe0dd9c2d1534f6e2a6864647f5da3
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563174"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694175"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
 In dit artikel wordt een verzameling aanbevolen procedures en handige tips beschreven voor het effectief gebruik van de Azure Batch-service, op basis van de praktijk ervaring met batch. Deze tips kunnen u helpen bij het verbeteren van de prestaties en Vermijd het ontwerpen van Valk uilen in uw Azure Batch oplossingen.
+
+> [!TIP]
+> Zie voor meer informatie over beveiliging in Azure Batch de [Aanbevolen procedures voor batch beveiliging en naleving](security-best-practices.md).
 
 ## <a name="pools"></a>Pools
 

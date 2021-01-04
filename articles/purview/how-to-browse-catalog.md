@@ -1,20 +1,20 @@
 ---
 title: 'Procedure: bladeren door de Data Catalog'
 description: Dit artikel geeft een overzicht van de manier waarop u door de Azure controle sfeer liggen-Data Catalog op basis van het type activum kunt bladeren.
-author: hrasheed-msft
-ms.author: hrasheed
+author: chanuengg
+ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: b8cdbbc29472ae10920c347dde308c352bf0b68a
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: dd2fd4fbc9d8aecd9821d668dd02bd4b68659cf6
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552479"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695055"
 ---
-# <a name="browse-the-azure-purview-data-catalog"></a>Bladeren door de Azure controle sfeer liggen Data Catalog
+# <a name="browse-the-azure-purview-data-catalog"></a>Bladeren door de Azure Purview-gegevenscatalogus
 
 In dit artikel wordt beschreven hoe u gegevens in uw Azure controle sfeer liggen kunt detecteren Data Catalog met behulp van de hiërarchische naam ruimte van de gegevens bron.
 

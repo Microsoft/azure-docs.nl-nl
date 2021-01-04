@@ -3,12 +3,12 @@ title: Overzicht van AMQP 1,0 in Azure Service Bus
 description: Lees hoe Azure Service Bus Advanced Message Queueing Protocol (AMQP) ondersteunt, een open standaard protocol.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: e585fcc905d1651d49008b623b01a6c2f8a04fcc
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 241a6b7fb9f9055ce610e44e5cd37dba87c77554
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498775"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709279"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Ondersteuning voor AMQP 1,0 in Service Bus
 De Azure Service Bus-Cloud service maakt gebruik van het [Advanced Message queueing Protocol (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) als het belangrijkste communicatie middel. Micro soft heeft partners in de branche, zowel klanten als leveranciers van concurrerende Messa ging-makelaars, ontwikkeld om AMQP in het afgelopen decennium te ontwikkelen en ontwikkelen, met nieuwe uitbrei dingen die worden ontwikkeld in het [Oasis AMQP Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 is een ISO-en IEC-norm ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -42,7 +42,7 @@ In oktober 2011 werd het ontwikkelings werk overgegaan naar een technisch comit√
 * **Technologie leveranciers**: Axway software, Huawei Technologies, IIT software, INETCO Systems, Kaazing, micro soft, Mitre Corporation, Primeton Technologies, progressief software, Red Hat, Sita, Software AG, Solace Systems, VMware, WSO2, Zenika.
 * **Gebruikers bedrijven**: Bank of America, Credit Suisse, Deutsche boerse, Goldman Sachs, JPMorgan-nadoende.
 
-De huidige stoelen van het [OASIS AMQP Technical Committee] (( https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) Red Hat en micro soft vertegenwoordigen.
+De huidige stoelen van het [Technical Committee Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp) zijn Red Hat en micro soft.
 
 Enkele van de meest voorkomende voor delen van open standaarden zijn:
 
@@ -65,10 +65,10 @@ In de volgende afbeelding ziet u een voorbeeld implementatie waarbij Java-client
 Alle ondersteunde Service Bus-client bibliotheken die beschikbaar zijn via de Azure SDK gebruiken AMQP 1,0.
 
 - [Azure Service Bus voor .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
-- [Azure Service Bus bibliotheken voor Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
-- [Azure Service Bus provider voor Java JMS 2,0](how-to-use-java-message-service-20.md)
-- [Azure Service Bus-modules voor Java script en type script](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
-- [Azure Service Bus bibliotheken voor python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
+- [Azure Service Bus-bibliotheken voor Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
+- [Azure Service Bus-provider voor Java JMS 2.0](how-to-use-java-message-service-20.md)
+- [Azure Service Bus-modules voor JavaScript en TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
+- [Azure Service Bus-bibliotheken voor Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 

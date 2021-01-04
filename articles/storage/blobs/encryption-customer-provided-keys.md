@@ -5,21 +5,21 @@ description: Clients die aanvragen indienen voor Azure Blob-opslag hebben de mog
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 09/17/2020
+ms.date: 12/14/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: abdc83019205fc39e1e85a53da7e49f8a7d4f11c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fcc5c02c4a37e205622470260d3c620ad76d07d8
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91618723"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694709"
 ---
 # <a name="provide-an-encryption-key-on-a-request-to-blob-storage"></a>Geef een versleutelings sleutel op voor een aanvraag voor Blob-opslag
 
-Clients die aanvragen indienen voor Azure Blob-opslag hebben de mogelijkheid om per aanvraag een versleutelings sleutel op te geven. Met inbegrip van de versleutelings sleutel op de aanvraag biedt gedetailleerde controle over de versleutelings instellingen voor Blob Storage-bewerkingen. Door de klant verschafte sleutels kunnen worden opgeslagen in Azure Key Vault of in een andere sleutel opslag.
+Clients die aanvragen indienen voor Azure Blob-opslag hebben de optie om een AES-256-versleutelings sleutel per aanvraag op te geven. Met inbegrip van de versleutelings sleutel op de aanvraag biedt gedetailleerde controle over de versleutelings instellingen voor Blob Storage-bewerkingen. Door de klant verschafte sleutels kunnen worden opgeslagen in Azure Key Vault of in een andere sleutel opslag.
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
@@ -45,7 +45,7 @@ Voor REST-aanroepen kunnen clients de volgende headers gebruiken om informatie o
 |---------------|-------------|
 |`x-ms-encryption-key` |Vereist voor zowel schrijf-als Lees aanvragen. Een met base64 gecodeerde AES-256-versleutelings sleutel waarde. |
 |`x-ms-encryption-key-sha256`| Vereist voor zowel schrijf-als Lees aanvragen. De met base64 gecodeerde SHA256 van de versleutelings sleutel. |
-|`x-ms-encryption-algorithm` | Vereist voor schrijf aanvragen, optioneel voor lees aanvragen. Hiermee geeft u de algoritme op die moet worden gebruikt voor het versleutelen van gegevens met de opgegeven sleutel. Moet AES256 zijn. |
+|`x-ms-encryption-algorithm` | Vereist voor schrijf aanvragen, optioneel voor lees aanvragen. Hiermee geeft u de algoritme op die moet worden gebruikt voor het versleutelen van gegevens met de opgegeven sleutel.  De waarde van deze header moet zijn `AES256` . |
 
 Het opgeven van de versleutelings sleutels voor de aanvraag is optioneel. Als u echter een van de hierboven vermelde kopteksten voor een schrijf bewerking opgeeft, moet u deze allemaal opgeven.
 

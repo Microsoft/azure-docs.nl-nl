@@ -8,7 +8,7 @@
       items:
         - name: Over Container Registry
           href: container-registry-intro.md
-    - name: Quickstarts
+    - name: Snelstartgidsen
       expanded: true
       items:
         - name: Een containerregister maken - CLI
@@ -57,6 +57,9 @@
           href: container-registry-image-tag-version.md
         - name: Geo-replicatie
           href: container-registry-geo-replication.md
+        - name: Zoneredundantie
+          displayName: availability zone
+          href: zone-redundancy.md
         - name: Best practices voor het register
           href: container-registry-best-practices.md
         - name: Openbare afbeeldingen beheren

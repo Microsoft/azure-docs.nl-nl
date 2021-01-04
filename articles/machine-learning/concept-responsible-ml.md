@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
-ms.date: 11/16/2020
-ms.openlocfilehash: ff85ed669fb7c3ac43e322eb747c537a30801920
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.date: 12/21/2020
+ms.openlocfilehash: 83bca8a2a81823cd0a8bda1633599292460ddd30
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701429"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724324"
 ---
 # <a name="what-is-responsible-machine-learning-preview"></a>Wat is er verantwoordelijk machine learning? (preview)
 
@@ -62,10 +62,7 @@ Wanneer gegevens worden gebruikt voor analyse, is het belang rijk dat de gegeven
 
 In traditionele scenario's worden onbewerkte gegevens opgeslagen in bestanden en data bases. Wanneer gebruikers gegevens analyseren, gebruiken ze doorgaans de onbewerkte gegevens. Dit is een probleem omdat dit kan leiden tot inbreuk op de privacy van een persoon. Differentiële privacy probeert dit probleem te verhelpen door "Noise" of wille keurigheid toe te voegen aan de gegevens, zodat gebruikers geen afzonderlijke gegevens punten kunnen identificeren.
 
-Het implementeren van differentiatie van een differentieel particulier systeem is lastig. [WhiteNoise](https://github.com/opendifferentialprivacy/whitenoise-core) is een open-source project dat verschillende onderdelen bevat voor het bouwen van wereld wijde differentiatie systemen. Voor meer informatie over de differentiële privacy en het WhiteNoise-project raadpleegt u het artikel privacy [beschermen met behulp van differentiële privacy en WhiteNoise](./concept-differential-privacy.md) .
-
-> [!NOTE]
-> De naam van de Toolkit wordt gewijzigd en de nieuwe naam wordt in de komende weken geïntroduceerd. 
+Het implementeren van differentiatie van een differentieel particulier systeem is lastig. [SmartNoise](https://github.com/opendifferentialprivacy/smartnoise-core) is een open-source project dat verschillende onderdelen bevat voor het bouwen van wereld wijde differentiatie systemen. Voor meer informatie over de differentiële privacy en het SmartNoise-project raadpleegt u het artikel privacy [beschermen met behulp van differentiële privacy en SmartNoise](./concept-differential-privacy.md) .
 
 ## <a name="work-on-encrypted-data-with-homomorphic-encryption"></a>Werken met versleutelde gegevens met Homomorphic-versleuteling
 

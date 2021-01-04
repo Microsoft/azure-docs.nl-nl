@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 09957461fd92114d1181a570550ee1a189edd8ea
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 874d44e3900b1edf24c2f6bee95d787c5fc3988d
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009861"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704832"
 ---
-## <a name="create-an-azure-container-instance-resource"></a>Een Azure container instance-resource maken
+## <a name="create-an-azure-container-instance-resource-using-the-azure-portal"></a>Een Azure container Instance-bron maken met behulp van de Azure Portal
 
 1. Ga naar de pagina [maken](https://ms.portal.azure.com/#create/Microsoft.ContainerInstances) voor container instances.
 
@@ -43,9 +43,9 @@ ms.locfileid: "96009861"
 
     | Sleutel | Waarde |
     |--|--|
-    |`apikey`|Wordt gekopieerd van de pagina **sleutels** van de resource. Het is een teken reeks van 32 alfanumerieke tekens zonder spaties of streepjes `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` .|
-    |`billing`|Wordt gekopieerd van de pagina **overzicht** van de resource.|
-    |`eula`|`accept`|
+    |`ApiKey`|Wordt gekopieerd van de pagina **sleutels en het eind punt** van de resource. Het is een teken reeks van 32 alfanumerieke tekens zonder spaties of streepjes `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` .|
+    |`Billing`| De eind punt-URL is gekopieerd van de pagina **sleutels en het eind punt** van de resource.|
+    |`Eula`|`accept`|
 
 5. Klik op **controleren en maken**
 6. Nadat de validatie is geslaagd, klikt u op **maken** om het aanmaak proces te volt ooien

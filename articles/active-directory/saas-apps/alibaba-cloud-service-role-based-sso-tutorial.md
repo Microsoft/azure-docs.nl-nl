@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: ef057b64fa04387d0ebec5a6e5c38f0e06c55a7d
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: c9db5ab471f743ffbf3ae4e140ad4cb32d0a3d6c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368967"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97670189"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Zelfstudie: Eenmalige aanmelding via Azure Active Directory integreren met Alibaba Cloud Service (eenmalige aanmelding op basis van rollen)
 
@@ -76,7 +76,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u beschikt over een **bestand met metagegevens van de serviceprovider**:
 
@@ -84,7 +84,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden**.
 
-    
+
     >[!NOTE]
     >1. Download de metagegevens van de serviceprovider vanaf [deze](https://signin.alibabacloud.com/saml-role/sp-metadata.xml) koppeling voor Alibaba Cloud International Site.
     > 1. Download de metagegevens van de serviceprovider vanaf [deze](https://signin.aliyun.com/saml-role/sp-metadata.xml) koppeling voor Alibaba Cloud Service (CN) Site.
@@ -184,17 +184,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
     f. Ga terug naar de Graph Explorer, wijzig de methode van **GET** naar **PATCH**, plak de volgende inhoud in het gedeelte **Aanvraagbody** en klik op **Query uitvoeren**:
     ```
     { 
-    "appRoles": [
+      "appRoles": [
         { 
-        "allowedMemberTypes":[
+          "allowedMemberTypes":[
             "User"
-        ],
-        "description": "msiam_access",
-        "displayName": "msiam_access",
-        "id": "41be2db8-48d9-4277-8e86-f6d22d35****",
-        "isEnabled": true,
-        "origin": "Application",
-        "value": null
+          ],
+          "description": "msiam_access",
+          "displayName": "msiam_access",
+          "id": "41be2db8-48d9-4277-8e86-f6d22d35****",
+          "isEnabled": true,
+          "origin": "Application",
+          "value": null
         },
         { "allowedMemberTypes": [
             "User"
@@ -206,7 +206,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
         "origin": "ServicePrincipal",
         "value": "acs:ram::187125022722****:role/aadrole,acs:ram::187125022722****:saml-provider/AAD"
         }
-    ]
+      ]
     }
     ```
     > [!NOTE]

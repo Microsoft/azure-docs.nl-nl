@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: ffbf3fa3e2d404b7bc5888ef01707cbd816600b3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ab056e0685264b03d35ee6b95afad7c6362f9db6
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182849"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695796"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
 
@@ -52,7 +52,7 @@ U moet de rol **Inzender** hebben voor de resource groep die uw vm's bevat om he
 > [!NOTE]
 > Als u automanage wilt gebruiken op een virtuele machine die is verbonden met een werk ruimte in een ander abonnement, moet u de hiervoor vermelde machtigingen hebben voor elk abonnement.
 
-Het is ook belang rijk te weten dat automanage alleen virtuele Windows-machines ondersteunt die zich in de volgende regio's bevinden: Europa-west, VS-Oost, VS-West 2, Canada-centraal, West-Centraal vs.
+Het is ook belang rijk te weten dat automanage alleen virtuele Windows-machines ondersteunt die zich in de volgende regio's bevinden: Europa-west, VS-Oost, VS-West 2, Canada-centraal, West-Centraal VS, Japan-Oost.
 
 ## <a name="participating-services"></a>Deelnemende Services
 

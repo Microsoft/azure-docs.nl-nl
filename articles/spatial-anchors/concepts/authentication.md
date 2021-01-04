@@ -9,12 +9,12 @@ ms.date: 11/20/2020
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0166a3b6031f9e1d364a37db99be5bc5a65267df
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 01065f9ac26599d26d6e2a6979eae1e559a82854
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95484607"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722960"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Verificatie en autorisatie voor Azure spatiale ankers
 
@@ -193,7 +193,7 @@ Het Azure AD-toegangs token wordt opgehaald via de [MSAL](../../active-directory
 **In uw code**
 
 >[!NOTE]
-> U kunt het service voorbeeld gebruiken dat beschikbaar is op GitHub.
+> U kunt het [service voorbeeld](https://github.com/Azure/azure-spatial-anchors-samples/tree/master/Sharing/SharingServiceSample) gebruiken dat beschikbaar is als onderdeel van de voor [beeld-apps van ruimtelijke ankers](https://github.com/Azure/azure-spatial-anchors-samples).
 
 1.    Zorg ervoor dat u de toepassings-ID, het toepassings geheim en de omleidings-URI van uw eigen Azure AD-toepassing gebruikt als de **client-id**, het **geheim** en de **RedirectUri** -para meters in MSAL.
 2.    Stel de Tenant-ID in op uw eigen Azure AD-Tenant-ID in de para meter **Authority** in MSAL.

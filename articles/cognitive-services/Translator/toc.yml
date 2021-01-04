@@ -4,7 +4,7 @@
   items:
     - name: Wat is Translator?
       href: translator-info-overview.md
-    - name: Snelstart
+    - name: Snelstartgids
       href: quickstart-translator.md
     - name: Taalondersteuning
       href: language-support.md
@@ -56,30 +56,20 @@
       items:
         - name: v3 Translator-naslaginformatie
           href: reference/v3-0-reference.md
-          items:
-            - name: Talen
-              href: reference/v3-0-languages.md
-            - name: Vertalen
-              href: reference/v3-0-translate.md
-            - name: Transcriberen
-              href: reference/v3-0-transliterate.md
-            - name: Detecteren
-              href: reference/v3-0-detect.md
-            - name: BreakSentence
-              href: reference/v3-0-break-sentence.md
-            - name: Opzoeken in woordenlijst
-              href: reference/v3-0-dictionary-lookup.md
-            - name: Voorbeelden in woordenlijst
-              href: reference/v3-0-dictionary-examples.md
-        - name: v2 Translator-naslaginformatie (verouderd)
-          href: reference/v2-0-reference.md
-          items:
-            - name: Tekst transformeren
-              href: transform-text.md
-            - name: CTF-rapportage (Collaborative Translation Framework) gebruiken
-              href: ctf-reporting.md
-            - name: N beste vertalingen retourneren
-              href: return-n-best-translations.md
+        - name: Talen
+          href: reference/v3-0-languages.md
+        - name: Vertalen
+          href: reference/v3-0-translate.md
+        - name: Transcriberen
+          href: reference/v3-0-transliterate.md
+        - name: Detecteren
+          href: reference/v3-0-detect.md
+        - name: BreakSentence
+          href: reference/v3-0-break-sentence.md
+        - name: Opzoeken in woordenlijst
+          href: reference/v3-0-dictionary-lookup.md
+        - name: Voorbeelden in woordenlijst
+          href: reference/v3-0-dictionary-examples.md
         - name: Aanvraaglimieten
           href: request-limits.md
     - name: Resources

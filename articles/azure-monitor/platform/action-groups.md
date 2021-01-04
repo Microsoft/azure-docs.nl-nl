@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 9b5b20de1b86eae72de54b3f2c1cf37074fba144
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: b5b6a697e6a5cae064a6a48419246dc12e8d048c
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095165"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695829"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
@@ -132,6 +132,18 @@ Mogelijk hebt u een beperkt aantal e-mail acties in een actie groep. Zie het art
 E-mail verzenden naar de leden van de rol van het abonnement. E-mail wordt alleen verzonden naar **Azure AD-gebruikers** leden van de rol. Er wordt geen e-mail verzonden naar Azure AD-groepen of service-principals.
 
 Een e-mail melding wordt alleen verzonden naar het *primaire e-mail* adres.
+
+Als u geen meldingen ontvangt op uw *primaire e-mail*, kunt u de volgende stappen uitvoeren:
+
+1. Ga in Azure Portal naar *Active Directory*.
+2. Klik op alle gebruikers (in het linkerdeel venster). er wordt een lijst met gebruikers weer gegeven (in het rechterdeel venster).
+3. Selecteer de gebruiker voor wie u de *primaire e-mail* gegevens wilt controleren.
+
+  :::image type="content" source="media/action-groups/active-directory-user-profile.png" alt-text="Voor beeld voor het controleren van het gebruikers profiel."border="true":::
+
+4. Klik in het gebruikers profiel onder contact gegevens op het tabblad E-mail op de knop *bewerken* bovenaan en voeg uw *primaire e-mail* toe en klik bovenaan op de knop *Opslaan* .
+
+  :::image type="content" source="media/action-groups/active-directory-add-primary-email.png" alt-text="Voor beeld voor het toevoegen van een primair e-mail bericht."border="true":::
 
 Mogelijk hebt u een beperkt aantal e-mail acties in een actie groep. Zie het artikel [informatie over de frequentie beperking](./alerts-rate-limiting.md) .
 

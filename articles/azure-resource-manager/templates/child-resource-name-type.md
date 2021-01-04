@@ -2,19 +2,21 @@
 title: Onderliggende resources in sjablonen
 description: Hierin wordt beschreven hoe u de naam en het type instelt voor onderliggende resources in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 08/26/2019
-ms.openlocfilehash: 3a69829e674925982c618807f49433a033d8c5f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/21/2020
+ms.openlocfilehash: c594096fd95f663db2120b29c575b341924dcc36
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80743836"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97721940"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Naam en type voor onderliggende resources instellen
 
-Onderliggende resources zijn bronnen die alleen bestaan in de context van een andere resource. Een extensie van een [virtuele machine](/azure/templates/microsoft.compute/2019-03-01/virtualmachines/extensions) kan bijvoorbeeld niet bestaan zonder een [virtuele machine](/azure/templates/microsoft.compute/2019-03-01/virtualmachines). De extensie resource is een onderliggend element van de virtuele machine.
+Onderliggende resources zijn bronnen die alleen bestaan in de context van een andere resource. Een extensie van een [virtuele machine](/azure/templates/microsoft.compute/virtualmachines/extensions) kan bijvoorbeeld niet bestaan zonder een [virtuele machine](/azure/templates/microsoft.compute/virtualmachines). De extensie resource is een onderliggend element van de virtuele machine.
 
-In een resource manager-sjabloon kunt u de onderliggende resource opgeven binnen de bovenliggende resource of buiten de bovenliggende resource. In het volgende voor beeld ziet u de onderliggende resource die is opgenomen in de eigenschap resources van de bovenliggende resource.
+Elke bovenliggende resource accepteert alleen bepaalde resource typen als onderliggende resources. Het resource type voor de onderliggende resource bevat het resource type voor de bovenliggende resource. Bijvoorbeeld: **micro soft. web/sites/config** en **micro soft. web/sites/uitbrei dingen** zijn zowel onderliggende resources van **micro soft. web/sites**. De geaccepteerde resource typen worden opgegeven in het [sjabloon schema](https://github.com/Azure/azure-resource-manager-schemas) van de bovenliggende resource.
+
+In een Azure Resource Manager sjabloon (ARM-sjabloon) kunt u de onderliggende bron opgeven binnen de bovenliggende resource of buiten de bovenliggende resource. In het volgende voor beeld ziet u de onderliggende resource die is opgenomen in de eigenschap resources van de bovenliggende resource.
 
 ```json
 "resources": [
@@ -26,6 +28,8 @@ In een resource manager-sjabloon kunt u de onderliggende resource opgeven binnen
   }
 ]
 ```
+
+Onderliggende resources kunnen alleen vijf niveaus diep worden gedefinieerd.
 
 In het volgende voor beeld wordt de onderliggende resource buiten de bovenliggende resource weer gegeven. U kunt deze aanpak gebruiken als de bovenliggende resource niet is geïmplementeerd in dezelfde sjabloon of als u een [kopie](copy-resources.md) wilt gebruiken om meer dan één onderliggende resource te maken.
 
@@ -132,6 +136,6 @@ In het volgende voor beeld ziet u een virtueel netwerk en een subnet dat beide z
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [ontwerp sjablonen](template-syntax.md)voor meer informatie over het maken van Azure Resource Manager sjablonen.
+* Zie [ontwerp sjablonen](template-syntax.md)voor meer informatie over het maken van arm-sjablonen.
 
 * Zie de [functie Reference](template-functions-resource.md#reference)voor meer informatie over de indeling van de resource naam bij het verwijzen naar de resource.

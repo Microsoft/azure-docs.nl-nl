@@ -5,25 +5,25 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 50abfec19295f80fa79864fedb31eadd31dd4d69
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 34a947a2a0f6d8c87c0580f273130b671b4f17fc
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203667"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722229"
 ---
 # <a name="troubleshoot"></a>Problemen oplossen
 
 Op deze pagina vindt u veelvoorkomende problemen met betrekking tot de externe rendering van Azure en manieren om deze op te lossen.
 
-## <a name="cant-link-storage-account-to-arr-account"></a>Kan opslag account niet koppelen aan ARR-account
+## <a name="cant-link-storage-account-to-arr-account"></a>Kan opslagaccount niet koppelen aan ARR-account
 
 Soms wordt tijdens het [koppelen van een opslag account](../how-tos/create-an-account.md#link-storage-accounts) het externe rendering-account niet weer gegeven. Als u dit probleem wilt oplossen, gaat u naar het ARR-account in de Azure Portal en selecteert u **identiteit** in de groep **instellingen** aan de linkerkant. Zorg ervoor dat de **status** is ingesteld op **aan**.
 ![Unity frame debugger](./media/troubleshoot-portal-identity.png)
 
 ## <a name="client-cant-connect-to-server"></a>Client kan geen verbinding maken met de server
 
-Zorg ervoor dat de firewalls (op het apparaat, binnen routers, enzovoort) de poorten die worden vermeld in de [systeem vereisten](../overview/system-requirements.md#network-ports), niet blok keren.
+Zorg ervoor dat de firewalls (op het apparaat, binnen routers, enzovoort) de poorten die worden vermeld in de [systeem vereisten](../overview/system-requirements.md#network-firewall), niet blok keren.
 
 ## <a name="error-disconnected-videoformatnotavailable"></a>Fout ' `Disconnected: VideoFormatNotAvailable` '
 

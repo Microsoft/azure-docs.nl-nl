@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: e5d360933cbeb611046aede6164ec2e2fa497664
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 7ed7c3a586f5671191e3c517b5925cab888caefb
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347792"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724303"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Zin en uitlijning in parallelle documenten
 
@@ -22,7 +22,7 @@ Na het uploaden van documenten, worden de zinnen die aanwezig zijn in parallelle
 
 ## <a name="pairing-and-alignment-process"></a>Proces voor koppelen en uitlijnen
 
-Aangepaste vertalers leren de vertalingen van zinnen per zin. Er wordt een zin van de bron gelezen en vervolgens de vertaling van deze zin vanaf het doel. Vervolgens worden woorden en zinsdelen in deze twee zinnen op elkaar uitgelijnd. Dit proces maakt het mogelijk om een kaart van de woorden en zinsdelen in één zin te maken naar de equivalente woorden en zinsdelen in de vertaling van deze zin. Uitlijning probeert ervoor te zorgen dat de systeem treinen op zinnen met vertalingen van elkaar worden uitgevoerd.
+Aangepaste vertalers leren de vertalingen van zinnen per zin. Er wordt een zin uit de bron tekst gelezen en vervolgens de vertaling van deze zin van de doel tekst. Vervolgens worden woorden en zinsdelen in deze twee zinnen op elkaar uitgelijnd. Dit proces maakt het mogelijk om in één zin een kaart van de woorden en zinsdelen te maken naar de equivalente woorden en zinsdelen in de vertaling van zijn zin. Uitlijning probeert ervoor te zorgen dat de systeem treinen op zinnen met vertalingen van elkaar worden uitgevoerd.
 
 ## <a name="pre-aligned-documents"></a>Vooraf uitgelijnde documenten
 

@@ -4,12 +4,12 @@ description: In deze Quick Start schakelt u Event Grid-gebeurtenissen in voor he
 ms.topic: article
 ms.date: 08/23/2018
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 6058fceb873e2b26da2d30dadba456e2a625f3f2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 2d13dd0ec5e50086e674b215d93917d6173d5af9
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93074213"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694398"
 ---
 # <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Quick Start: gebeurtenissen verzenden vanuit een persoonlijk container register naar Event Grid
 
@@ -78,7 +78,7 @@ Als u de voor beeld-app wilt implementeren, stelt `SITE_NAME` u een unieke naam 
 ```azurecli-interactive
 SITE_NAME=<your-site-name>
 
-az group deployment create \
+az deployment group create \
     --resource-group $RESOURCE_GROUP_NAME \
     --template-uri "https://raw.githubusercontent.com/Azure-Samples/azure-event-grid-viewer/master/azuredeploy.json" \
     --parameters siteName=$SITE_NAME hostingPlanName=$SITE_NAME-plan
@@ -200,13 +200,13 @@ De volgende scherm afbeelding toont de voor beeld-app met de drie gebeurtenissen
 
 ![Webbrowser met de voor beeld-app met ImagePushed-en ImageDeleted-gebeurtenissen][sample-app-03]
 
-Gefeliciteerd Als u de `ImagePushed` -en `ImageDeleted` -gebeurtenissen ziet, verzendt uw REGI ster gebeurtenissen naar Event grid en stuurt Event grid deze gebeurtenissen door naar het eind punt van uw web-app.
+Gefeliciteerd. Als u de `ImagePushed` -en `ImageDeleted` -gebeurtenissen ziet, verzendt uw REGI ster gebeurtenissen naar Event grid en stuurt Event grid deze gebeurtenissen door naar het eind punt van uw web-app.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Zodra u klaar bent met de resources die u in deze Quick Start hebt gemaakt, kunt u ze allemaal verwijderen met de volgende Azure CLI-opdracht. Wanneer u een resource groep verwijdert, worden alle resources die deze bevat permanent verwijderd.
 
-**Waarschuwing** : deze bewerking kan niet ongedaan worden gemaakt. Zorg ervoor dat u geen van de resources in de groep meer nodig hebt voordat u de opdracht uitvoert.
+**Waarschuwing**: deze bewerking kan niet ongedaan worden gemaakt. Zorg ervoor dat u geen van de resources in de groep meer nodig hebt voordat u de opdracht uitvoert.
 
 ```azurecli-interactive
 az group delete --name $RESOURCE_GROUP_NAME

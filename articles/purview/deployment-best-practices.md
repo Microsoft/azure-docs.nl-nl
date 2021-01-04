@@ -1,18 +1,18 @@
 ---
 title: Aanbevolen best practices voor implementatie
-description: Dit artikel bevat aanbevolen procedures voor het implementeren van Azure controle sfeer liggen. Met Azure controle sfeer liggen kunnen gebruikers gegevens bronnen registreren, detecteren, begrijpen en gebruiken.
-author: hophanms
-ms.author: hophan
+description: Dit artikel bevat aanbevolen procedures voor het implementeren van Azure controle sfeer liggen. Met Azure Purview kan elke gebruiker gegevensbronnen registreren, detecteren, begrijpen en gebruiken.
+author: shsandeep123
+ms.author: sandeepshah
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: 1b2841f69ebe91dac748a4b2e24dc0c33756b1da
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 48966e481f9cf8796c866b5c15a4e2a8616eade7
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400689"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695862"
 ---
 # <a name="azure-purview-deployment-best-practices"></a>Aanbevolen procedures voor de implementatie van Azure controle sfeer liggen
 
@@ -90,8 +90,8 @@ Enkele belang rijke belanghebbenden die u mogelijk wilt gebruiken:
 |**Domein/eigenaar van het bedrijf**|Een zakelijke persoon die van invloed is op het gebruik van hulpprogram ma's en budget beheer heeft|
 |**Gegevensanalist**|Kan een bedrijfs probleem melden en gegevens analyseren zodat leidinggevenden zakelijke beslissingen kunnen nemen|
 |**Data architect**|Data bases ontwerpen voor bedrijfskritische line-of-Business-Apps, samen met het ontwerpen en implementeren van gegevens beveiliging|
-|**Data Engineer**|De gegevens stack actief maken en onderhouden, gegevens uit verschillende bronnen ophalen, gegevens integreren en voorbereiden, gegevens pijplijnen instellen|
-|**Data Scientist**|Bouw analytische modellen en stel gegevens producten in die moeten worden geopend door Api's|
+|**Data engineer**|De gegevens stack actief maken en onderhouden, gegevens uit verschillende bronnen ophalen, gegevens integreren en voorbereiden, gegevens pijplijnen instellen|
+|**Data scientist**|Bouw analytische modellen en stel gegevens producten in die moeten worden geopend door Api's|
 |**DB-beheerder**|Aan data base gerelateerde incidenten en aanvragen binnen Service Level Agreements (Sla's) vastleggen en oplossen; Kan gegevens pijplijnen instellen|
 |**DevOps**|De ontwikkeling en implementatie van line-of-business-toepassingen; kan schrijf scripts en indelings mogelijkheden bevatten|
 |**Specialist gegevens beveiliging**|Evalueer de algehele netwerk-en gegevens beveiliging, die betrekking heeft op gegevens die beschikbaar zijn in en uit controle sfeer liggen|

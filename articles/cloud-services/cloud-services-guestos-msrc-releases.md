@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 12/15/2020
+ms.date: 12/21/2020
 ms.author: yohaddad
-ms.openlocfilehash: 2fb1ae2bbda55a04f4e76505a55b28372af00f33
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 7f683b5002fd31b599ae6fadeb82e5c6f5ce56a0
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606671"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708903"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
@@ -79,34 +79,31 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 
 
 ## <a name="november-2020-guest-os"></a>November 2020-gast besturingssysteem
->[!NOTE] 
-
->Het besturings systeem november gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem november gast. Deze lijst is onderhevig aan wijzigingen. 
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-|  OOB rel 20-11 |  [4594442]  |  Meest recente cumulatieve update | 6,25 | 17 november 2020 |
-|  OOB rel 20-11 |  [4594441]  |  Meest recente cumulatieve update | 5,49 | 19 november 2020 |
-|  Rel 20-11 |  [4580325]  |  Flash-Update | 3,91, 4,84, 5,49, 6,25 | 13 oktober 2020 |
-|  Rel 20-11 |  [4586768]  |  Cumulatieve update voor IE | 2,104, 3,91, 4,84 | 10 november 2020 |
-|  Rel 20-11 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,104 | 10 november 2020 |
-|  Rel 20-11 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,104 | 10 november 2020 |
-|  Rel 20-11 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,84 | 10 november 2020 |
-|  Rel 20-11 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,84 | 10 november 2020 |
-|  Rel 20-11 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,91 | 10 november 2020 |
-|  Rel 20-11 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 3,91 | 10 november 2020 |
-|  Rel 20-11 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | 6,25 | 13 oktober 2020 |
-|  Rel 20-11 |  [4586827]  |  Maandelijks samen vouwen | 2,104 | 10 november 2020 |
-|  Rel 20-11 |  [4586834]  |  Maandelijks samen vouwen | 3,91 | 10 november 2020 |
-|  Rel 20-11 |  [4586845]  |  Maandelijks samen vouwen | 4,84 | 10 november 2020 |
-|  Rel 20-11 |  [4566426]  |  Onderhouds stack-update | 3,91 | Jul 14, 2020 |
-|  Rel 20-11 |  [4566425]  |  Onderhouds stack-update | 4,84 | Jul 14, 2020 |
-|  OOB rel 20-11 |  [4578013]  |  Zelfstandige beveiligings update | 4,84 | 19 augustus 2020 |
-|  Rel 20-11 |  [4576750]  |  Onderhouds stack-update | 5,49 | 8 sep 2020 |
-|  Rel 20-11 |  [4580970]  |  Onderhouds stack-update | 2,104 | 13 oktober 2020 |
-|  Rel 20-11 |  [4587735]  |  Onderhouds stack-update | 6,25 | 10 november 2020 |
-|  Rel 20-11 |  [4494175]  |  Micro | 5,49 | 1 sep, 2020 |
-|  Rel 20-11 |  [4494174]  |  Micro | 6,25 | 3 sep, 2020 |
+|  OOB rel 20-11 |  [4594442]  |  Meest recente cumulatieve update | [6,25] | 17 november 2020 |
+|  OOB rel 20-11 |  [4594441]  |  Meest recente cumulatieve update | [5,49] | 19 november 2020 |
+|  Rel 20-11 |  [4580325]  |  Flash-Update | [3,91], [4,84], [5,49], [6,25] | 13 oktober 2020 |
+|  Rel 20-11 |  [4586768]  |  Cumulatieve update voor IE | [2,104], [3,91], [4,84] | 10 november 2020 |
+|  Rel 20-11 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [2,104] | 10 november 2020 |
+|  Rel 20-11 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [2,104] | 10 november 2020 |
+|  Rel 20-11 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [4,84] | 10 november 2020 |
+|  Rel 20-11 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [4,84] | 10 november 2020 |
+|  Rel 20-11 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [3,91] | 10 november 2020 |
+|  Rel 20-11 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [3,91] | 10 november 2020 |
+|  Rel 20-11 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | [6,25] | 13 oktober 2020 |
+|  Rel 20-11 |  [4586827]  |  Maandelijks samen vouwen | [2,104] | 10 november 2020 |
+|  Rel 20-11 |  [4586834]  |  Maandelijks samen vouwen | [3,91] | 10 november 2020 |
+|  Rel 20-11 |  [4586845]  |  Maandelijks samen vouwen | [4,84] | 10 november 2020 |
+|  Rel 20-11 |  [4566426]  |  Onderhouds stack-update | [3,91] | Jul 14, 2020 |
+|  Rel 20-11 |  [4566425]  |  Onderhouds stack-update | [4,84] | Jul 14, 2020 |
+|  OOB rel 20-11 |  [4578013]  |  Zelfstandige beveiligings update | [4,84] | 19 augustus 2020 |
+|  Rel 20-11 |  [4576750]  |  Onderhouds stack-update | [5,49] | 8 sep 2020 |
+|  Rel 20-11 |  [4580970]  |  Onderhouds stack-update | [2,104] | 13 oktober 2020 |
+|  Rel 20-11 |  [4587735]  |  Onderhouds stack-update | [6,25] | 10 november 2020 |
+|  Rel 20-11 |  [4494175]  |  Micro | [5,49] | 1 sep, 2020 |
+|  Rel 20-11 |  [4494174]  |  Micro | [6,25] | 3 sep, 2020 |
 
 [4594442]: https://support.microsoft.com/kb/4594442
 [4594441]: https://support.microsoft.com/kb/4594441
@@ -130,6 +127,11 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 [4587735]: https://support.microsoft.com/kb/4587735
 [4494175]: https://support.microsoft.com/kb/4494175
 [4494174]: https://support.microsoft.com/kb/4494174
+[2,104]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,91]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,84]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,49]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,25]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 
 

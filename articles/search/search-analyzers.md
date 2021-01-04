@@ -7,14 +7,14 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/20/2020
+ms.date: 12/18/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 544509a8c90c9273b748591509b1fa86510d71c3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bbda4268ca00d1c12f851517e2b35add7fba7f9b
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013816"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694298"
 ---
 # <a name="analyzers-for-text-processing-in-azure-cognitive-search"></a>Analyse functies voor tekst verwerking in azure Cognitive Search
 
@@ -315,55 +315,61 @@ Als u de .NET SDK-code voorbeelden gebruikt, kunt u deze voor beelden toevoegen 
 
 Elke Analyzer die wordt gebruikt als-is, zonder configuratie, is opgegeven voor een veld definitie. Er is geen vereiste voor het maken van een vermelding in de sectie **[analyse functies]** van de index. 
 
-In dit voor beeld worden de Engelse en Franse analyse functies van micro soft toegewezen aan de velden Beschrijving. Het is een fragment dat is gemaakt op basis van een grotere definitie van de hotels-index, gemaakt met behulp van de klasse hotel in het hotels.cs-bestand van het [DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) -voor beeld.
+Taal analysen worden gebruikt als-is. Als u deze wilt gebruiken, roept u [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer)aan, waarbij u het type [LexicalAnalyzerName](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) opgeeft dat een tekst analyse biedt die wordt ondersteund in azure Cognitive Search.
 
-Roep [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer)aan, geef het type [LexicalAnalyzerName](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzername) op dat een tekst analyse biedt die wordt ondersteund in azure Cognitive Search.
+Aangepaste analyse functies zijn op dezelfde manier opgegeven in de definitie van het veld, maar dit werkt alleen als u de Analyzer in de index definitie opgeeft, zoals wordt beschreven in de volgende sectie.
 
 ```csharp
     public partial class Hotel
     {
        . . . 
-
-        [IsSearchable]
-        [Analyzer(AnalyzerName.AsString.EnMicrosoft)]
-        [JsonProperty("description")]
+        [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.EnLucene)]
         public string Description { get; set; }
 
-        [IsSearchable]
-        [Analyzer(AnalyzerName.AsString.FrLucene)]
-        [JsonProperty("description_fr")]
+        [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.FrLucene)]
+        [JsonPropertyName("Description_fr")]
         public string DescriptionFr { get; set; }
 
+        [SearchableField(AnalyzerName = "url-analyze")]
+        public string Url { get; set; }
       . . .
     }
 ```
+
 <a name="Define-a-custom-analyzer"></a>
 
 ### <a name="define-a-custom-analyzer"></a>Een aangepaste analyse functie definiëren
 
-Wanneer aanpassing of configuratie vereist is, moet u een Analyzer-constructie toevoegen aan een index. Zodra u het hebt gedefinieerd, kunt u de definitie van het veld toevoegen, zoals wordt getoond in het vorige voor beeld.
+Wanneer aanpassing of configuratie vereist is, voegt u een Analyzer-constructie toe aan een index. Zodra u het hebt gedefinieerd, kunt u de definitie van het veld toevoegen, zoals wordt getoond in het vorige voor beeld.
 
-Maak een [CustomAnalyzer](/dotnet/api/azure.search.documents.indexes.models.customanalyzer) -object. Zie [CustomAnalyzerTests.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs)voor meer voor beelden.
+Maak een [CustomAnalyzer](/dotnet/api/azure.search.documents.indexes.models.customanalyzer) -object. Een aangepaste analyse functie is een door de gebruiker gedefinieerde combi natie van een bekende tokenizer, nul of meer token filter en nul of meer namen van teken filters:
+
++ [CustomAnalyzer. tokenizer](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenizer)
++ [CustomAnalyzer.TokenFilters](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenfilters)
++ [CustomAnalyzer.CharFilters](/dotnet/api/microsoft.azure.search.models.customanalyzer.charfilters)
+
+In het volgende voor beeld wordt een aangepaste analyse functie gemaakt met de naam ' URL-analyse ' die gebruikmaakt van de [uax_url_email tokenizer](/dotnet/api/microsoft.azure.search.models.customanalyzer.tokenizer) en het [token filter voor kleine letters](/dotnet/api/microsoft.azure.search.models.tokenfiltername.lowercase).
 
 ```csharp
+private static void CreateIndex(string indexName, SearchIndexClient adminClient)
 {
-   var definition = new Index()
+   FieldBuilder fieldBuilder = new FieldBuilder();
+   var searchFields = fieldBuilder.Build(typeof(Hotel));
+
+   var analyzer = new CustomAnalyzer("url-analyze", "uax_url_email")
    {
-         Name = "hotels",
-         Fields = FieldBuilder.BuildForType<Hotel>(),
-         Analyzers = new[]
-            {
-               new CustomAnalyzer()
-               {
-                     Name = "url-analyze",
-                     Tokenizer = TokenizerName.UaxUrlEmail,
-                     TokenFilters = new[] { TokenFilterName.Lowercase }
-               }
-            },
+         TokenFilters = { TokenFilterName.Lowercase }
    };
 
-   serviceClient.Indexes.Create(definition);
+   var definition = new SearchIndex(indexName, searchFields);
+
+   definition.Analyzers.Add(analyzer);
+
+   adminClient.CreateOrUpdateIndex(definition);
+}
 ```
+
+Zie [CustomAnalyzerTests.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs)voor meer voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -375,13 +381,13 @@ Maak een [CustomAnalyzer](/dotnet/api/azure.search.documents.indexes.models.cust
 
 + [Aangepaste analyse functies configureren](index-add-custom-analyzers.md) voor een minimale verwerking of gespecialiseerde verwerking op afzonderlijke velden.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
  [REST API voor documenten zoeken](/rest/api/searchservice/search-documents) 
 
- [Eenvoudige query syntaxis](query-simple-syntax.md) 
+ [Vereenvoudigde querysyntaxis](query-simple-syntax.md) 
 
- [Volledige lucene-query syntaxis](query-lucene-syntax.md) 
+ [Volledige Lucene-querysyntaxis](query-lucene-syntax.md) 
  
  [Zoekresultaten verwerken](search-pagination-page-layout.md)
 

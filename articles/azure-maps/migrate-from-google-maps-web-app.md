@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: 4dee8de8f42b78ecdab9d9e15bb277d58fa8ba70
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: fcb8090427530271600a6699fafa5c488c426784
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905057"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680882"
 ---
-# <a name="tutorial---migrate-a-web-app-from-google-maps"></a>Zelfstudie - Een web-app migreren uit Google Maps
+# <a name="tutorial-migrate-a-web-app-from-google-maps"></a>Zelfstudie: Een web-app migreren vanuit Google Maps
 
 De meeste web-apps die gebruikmaken van Google Maps, maken gebruik van de Google Maps v3 JavaScript-SDK. De Azure Maps Web-SDK is de geschikte op Azure gebaseerde SDK om naar te migreren. Met de Azure Maps Web-SDK kunt u interactieve kaarten aanpassen met uw eigen inhoud en beelden. U kunt uw app uitvoeren in zowel web-apps als of mobiele apps. Dit besturingselement maakt gebruik van WebGL, zodat u grote gegevenssets kunt weergeven met hoge prestaties. U kunt ontwikkelen met deze SDK met behulp van JavaScript of TypeScript. In deze zelfstudie leert u het volgende:
 
@@ -31,27 +31,27 @@ De meeste web-apps die gebruikmaken van Google Maps, maken gebruik van de Google
 > * Verkeergegevens weergeven
 > * Een terrein-overlay toevoegen
 
-U leert ook het volgende: 
+U leert ook het volgende:
 
 > [!div class="checklist"]
-> * Hoe u algemene kaarttaken uitvoert met de Azure Maps Web-SDK
-> * Best practices om prestaties en gebruikerservaring te verbeteren
-> * Tips over hoe u uw toepassing maakt met geavanceerde functies in Azure Maps
+> * Hoe u algemene kaarttaken uitvoert met de Azure Maps Web-SDK.
+> * Best practices om prestaties en gebruikerservaring te verbeteren.
+> * Tips over hoe u uw toepassing maakt met geavanceerde functies in Azure Maps.
 
 Als u een bestaande webtoepassing wilt migreren, controleert u of deze een opensource-bibliotheek voor kaartbesturingselementen gebruikt. Dit zijn voorbeelden van opensource-bibliotheken voor kaartbesturingselementen: Cesium, Leaflet en OpenLayers. U kunt uw toepassing nog steeds migreren, zelfs als deze gebruikmaakt van een opensource-bibliotheek voor kaartbesturingselementen, en u niet de Azure Maps Web-SDK wilt gebruiken. In dat geval verbindt u uw toepassing met de Azure Maps-tegelservices ([wegtegels](/rest/api/maps/render/getmaptile) \| [satelliettegels](/rest/api/maps/render/getmapimagerytile)). Hieronder vindt u meer informatie over het gebruik van Azure Maps in een aantal veelgebruikte opensource-bibliotheken voor kaartbesturingselementen.
 
-- Cesium: een 3D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [Documentatie](https://cesiumjs.org/)
-- Leaflet: een lichtgewicht 2D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [Documentatie](https://leafletjs.com/)
-- OpenLayers: een 2D-kaartbesturingselement voor het web dat projecties ondersteunt. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [Documentatie](https://openlayers.org/)
+* Cesium: een 3D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [Documentatie](https://cesiumjs.org/)
+* Leaflet: een lichtgewicht 2D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [Documentatie](https://leafletjs.com/)
+* OpenLayers: een 2D-kaartbesturingselement voor het web dat projecties ondersteunt. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [Documentatie](https://openlayers.org/)
 
 Bij het ontwikkelen met behulp van een JavaScript-framework kan een van de volgende opensource-projecten nuttig zijn:
 
-- [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
-- [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
-- [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
-- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
+* [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
+* [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
+* [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
+* [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
 
-## <a name="prerequisites"></a>Vereisten 
+## <a name="prerequisites"></a>Vereisten
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 2. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
@@ -97,40 +97,40 @@ Deze verzameling bevat codevoorbeelden voor elk platform en elk voorbeeld heeft 
 
 **Onderwerpen**
 
-- [Een kaart laden](#load-a-map)
-- [Lokaliseren van de kaart](#localizing-the-map)
-- [De kaartweergave instellen](#setting-the-map-view)
-- [Een markering toevoegen](#adding-a-marker)
-- [Een aangepaste markering toevoegen](#adding-a-custom-marker)
-- [Een polylijn toevoegen](#adding-a-polyline)
-- [Een veelhoek toevoegen](#adding-a-polygon)
-- [Een informatievenster weergeven](#display-an-info-window)
-- [Een GeoJSON-bestand importeren](#import-a-geojson-file)- 
-- [Clusteren van markeringen](#marker-clustering)
-- [Een heatmap toevoegen](#add-a-heat-map)
-- [Een tegellaag als overlay gebruiken](#overlay-a-tile-layer)
-- [Verkeergegevens weergeven](#show-traffic-data)
-- [Een terrein-overlay toevoegen](#add-a-ground-overlay)
-- [KML-gegevens toevoegen aan de kaart](#add-kml-data-to-the-map)
+* [Een kaart laden](#load-a-map)
+* [Lokaliseren van de kaart](#localizing-the-map)
+* [De kaartweergave instellen](#setting-the-map-view)
+* [Een markering toevoegen](#adding-a-marker)
+* [Een aangepaste markering toevoegen](#adding-a-custom-marker)
+* [Een polylijn toevoegen](#adding-a-polyline)
+* [Een veelhoek toevoegen](#adding-a-polygon)
+* [Een informatievenster weergeven](#display-an-info-window)
+* [Een GeoJSON-bestand importeren](#import-a-geojson-file)* 
+* [Clusteren van markeringen](#marker-clustering)
+* [Een heatmap toevoegen](#add-a-heat-map)
+* [Een tegellaag als overlay gebruiken](#overlay-a-tile-layer)
+* [Verkeergegevens weergeven](#show-traffic-data)
+* [Een terrein-overlay toevoegen](#add-a-ground-overlay)
+* [KML-gegevens toevoegen aan de kaart](#add-kml-data-to-the-map)
 
 ### <a name="load-a-map"></a>Een kaart laden
 
 Beide SDK's hanteren dezelfde stappen om een kaart te laden:
 
-- Voeg een verwijzing toe naar de kaart-SDK.
-- Voeg een tag `div` toe aan de hoofdtekst van de pagina, die als tijdelijke aanduiding voor de kaart fungeert.
-- Maak een JavaScript-functie die wordt aangeroepen wanneer de pagina is geladen.
-- Maak een instantie van de betreffende Map-klasse.
+* Voeg een verwijzing toe naar de kaart-SDK.
+* Voeg een tag `div` toe aan de hoofdtekst van de pagina, die als tijdelijke aanduiding voor de kaart fungeert.
+* Maak een JavaScript-functie die wordt aangeroepen wanneer de pagina is geladen.
+* Maak een instantie van de betreffende Map-klasse.
 
 **Enkele belangrijke verschillen**
 
-- Voor Google Maps moet een accountsleutel worden opgegeven in de scriptverwijzing van de API. Verificatiereferenties voor Azure Maps worden opgegeven als opties van de Map-klasse. Deze referentie kan bestaan uit een abonnementssleutel of Azure Active Directory-gegevens.
-- Google Maps accepteert een callback-functie in de scriptverwijzing van de API, die wordt gebruikt om een initialisatiefunctie aan te roepen voor het laden van de kaart. Met Azure Maps moet de gebeurtenis onload van de pagina worden gebruikt.
-- Bij het verwijzen naar het element `div` waarin de kaart wordt weergegeven, is voor de `Map`-klasse in Azure Maps alleen de waarde `id` vereist terwijl Google Maps een object `HTMLElement` vereist.
-- Coördinaten in Azure Maps worden gedefinieerd als Position-objecten, die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]`.
-- Het zoomniveau in Azure Maps is één niveau lager dan het zoomniveau in Google Maps. Dit verschil komt door het verschil in grootte van het tegelsysteem van beide platforms.
-- Azure Maps voegt geen navigatiebesturingselementen toe aan het kaartcanvas. Daarom heeft een kaart standaard geen knoppen voor zoomen en kaartstijl. Er zijn echter wel opties beschikbaar voor het toevoegen van een kaartstijlkiezer, zoomknoppen, en besturingselementen voor kompas- of rotatieregeling en kantelregeling.
-- Er wordt een gebeurtenis-handler toegevoegd in Azure Maps om de gebeurtenis `ready` van de kaartinstantie te controleren. Deze gebeurtenis wordt geactiveerd wanneer het laden van de WebGL-context voor de kaart en alle benodigde resources is voltooid. Voeg aan deze gebeurtenis-handler de code toe die u wilt uitvoeren nadat het laden van de kaart is voltooid.
+* Voor Google Maps moet een accountsleutel worden opgegeven in de scriptverwijzing van de API. Verificatiereferenties voor Azure Maps worden opgegeven als opties van de Map-klasse. Deze referentie kan bestaan uit een abonnementssleutel of Azure Active Directory-gegevens.
+* Google Maps accepteert een callback-functie in de scriptverwijzing van de API, die wordt gebruikt om een initialisatiefunctie aan te roepen voor het laden van de kaart. Met Azure Maps moet de gebeurtenis onload van de pagina worden gebruikt.
+* Bij het verwijzen naar het element `div` waarin de kaart wordt weergegeven, is voor de `Map`-klasse in Azure Maps alleen de waarde `id` vereist terwijl Google Maps een object `HTMLElement` vereist.
+* Coördinaten in Azure Maps worden gedefinieerd als Position-objecten, die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]`.
+* Het zoomniveau in Azure Maps is één niveau lager dan het zoomniveau in Google Maps. Dit verschil komt door het verschil in grootte van het tegelsysteem van beide platforms.
+* Azure Maps voegt geen navigatiebesturingselementen toe aan het kaartcanvas. Daarom heeft een kaart standaard geen knoppen voor zoomen en kaartstijl. Er zijn echter wel opties beschikbaar voor het toevoegen van een kaartstijlkiezer, zoomknoppen, en besturingselementen voor kompas- of rotatieregeling en kantelregeling.
+* Er wordt een gebeurtenis-handler toegevoegd in Azure Maps om de gebeurtenis `ready` van de kaartinstantie te controleren. Deze gebeurtenis wordt geactiveerd wanneer het laden van de WebGL-context voor de kaart en alle benodigde resources is voltooid. Voeg aan deze gebeurtenis-handler de code toe die u wilt uitvoeren nadat het laden van de kaart is voltooid.
 
 In de onderstaande basisvoorbeelden wordt Google Maps gebruikt voor het laden van een kaart die op coördinaten is gecentreerd over New York. De lengtegraad:-73.985, de breedtegraad: 40.747 en de kaart heeft het zoomniveau 12.
 
@@ -235,7 +235,7 @@ Klik [hier](how-to-use-map-control.md) voor uitgebreide informatie over het inst
 
 **Aanvullende informatie:**
 
-- Azure Maps biedt ook navigatiebesturingselementen voor het draaien en kantelen van de kaartweergave, zoals [hier](map-add-controls.md) wordt beschreven.
+* Azure Maps biedt ook navigatiebesturingselementen voor het draaien en kantelen van de kaartweergave, zoals [hier](map-add-controls.md) wordt beschreven.
 
 ### <a name="localizing-the-map"></a>Lokaliseren van de kaart
 
@@ -255,7 +255,7 @@ Hier ziet u een voorbeeld van Google Maps waarbij de taal is ingesteld op 'fr-FR
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
 
-Azure Maps biedt twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de algemene naamruimte *atlas*. Hierdoor worden in alle exemplaren van kaartbesturingselementen in uw app standaard deze instellingen gebruikt. Met de volgende code stelt u de taal in op Frans ('fr-FR') en de regionale weergave op 'auto':
+Azure Maps biedt twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de algemene naamruimte *atlas*. Hierdoor worden in alle exemplaren van kaartbesturingselementen in uw app standaard deze instellingen gebruikt. Met de volgende code stelt u de taal in op Frans ('fr-FR') en de regionale weergave op 'Auto':
 
 ```javascript
 atlas.setLanguage('fr-FR');
@@ -277,7 +277,7 @@ map = new atlas.Map('myMap', {
 ```
 
 > [!NOTE]
-> Met Azure Maps kunt u op dezelfde pagina meerdere kaartexemplaren laden met verschillende taal-en regio-instellingen. Het is ook mogelijk om deze instellingen bij te werken in de kaart nadat deze is geladen. 
+> Met Azure Maps kunt u op dezelfde pagina meerdere kaartexemplaren laden met verschillende taal-en regio-instellingen. Het is ook mogelijk om deze instellingen bij te werken in de kaart nadat deze is geladen.
 
 Bekijk [hier](supported-languages.md) een gedetailleerde lijst met ondersteunde talen in Azure Maps.
 
@@ -325,16 +325,16 @@ map.setStyle({
 
 **Aanvullende informatie:**
 
-- [Een kaartstijl kiezen](choose-map-style.md)
-- [Ondersteunde kaartstijlen](supported-map-styles.md)
+* [Een kaartstijl kiezen](choose-map-style.md)
+* [Ondersteunde kaartstijlen](supported-map-styles.md)
 
 ### <a name="adding-a-marker"></a>Een markering toevoegen
 
 In Azure Maps kunt u op verschillende manieren puntgegevens weergeven op de kaart:
 
-- **HTML-markeringen**: punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
-- **Symboollaag**: punten weergeven met een pictogram of tekst binnen de WebGL-context.
-- **Bellenlaag**: punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
+* **HTML-markeringen**: punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
+* **Symboollaag**: punten weergeven met een pictogram of tekst binnen de WebGL-context.
+* **Bellenlaag**: punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
 
 Symbool en bellenlagen moet u renderen in de WebGL-context. Op beide lagen kunnen grote sets met punten op de kaart worden weergegeven. Voor deze lagen moeten gegevens worden opgeslagen in een gegevensbron. Gegevensbronnen en renderinglagen moeten worden toegevoegd aan de kaart nadat de gebeurtenis `ready` is geactiveerd. HTML-markeringen worden op de pagina weergegeven als DOM-elementen en maken geen gebruik van een gegevensbron. Hoe meer DOM-elementen er op een pagina staan, des te langzamer de pagina wordt. Als er meer dan een paar honderd punten moeten worden weergegeven op een kaart, is het beter om een van de renderinglagen te gebruiken.
 
@@ -455,7 +455,6 @@ U kunt aangepaste afbeeldingen gebruiken om punten op een kaart voor te stellen.
 ![afbeelding van een gele punaise](media/migrate-google-maps-web-app/yellow-pushpin.png)<br/>
 yellow-pushpin.png</center>
 
-
 #### <a name="before-google-maps"></a>Vóór: Google Maps
 
 Maak een aangepaste markering door een `Icon`-object op te geven dat de `url` van de afbeelding bevat. Geef een `anchor`-punt op om de punt van de punaise uit te lijnen met de coördinaat op de kaart. De waarde van anchor in Google Maps is relatief ten opzichte van de linkerbovenhoek van de afbeelding.
@@ -470,7 +469,6 @@ var marker = new google.maps.Marker({
     map: map
 });
 ```
-
 
 ![Aangepaste markering in Google Maps](media/migrate-google-maps-web-app/google-maps-custom-marker.png)
 
@@ -639,6 +637,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
     strokeDashArray: [3, 3]
 }));
 ```
+
 ![Polylijn in Azure Maps](media/migrate-google-maps-web-app/azure-maps-polyline.png)
 
 **Aanvullende informatie:**
@@ -709,6 +708,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
     strokeWidth: 2
 }));
 ```
+
 ![Veelhoek in Azure Maps](media/migrate-google-maps-web-app/azure-maps-polygon.png)
 
 **Aanvullende informatie:**
@@ -744,6 +744,7 @@ marker.addListener('click', function () {
     infowindow.open(map, marker);
 });
 ```
+
 ![Pop-up in Google Maps](media/migrate-google-maps-web-app/google-maps-popup.png)
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
@@ -772,6 +773,7 @@ map.events.add('click', marker, function () {
     popup.open(map);
 });
 ```
+
 ![Pop-up in Azure Maps](media/migrate-google-maps-web-app/azure-maps-popup.png)
 
 > [!NOTE]
@@ -940,16 +942,14 @@ GeoJSON is het basisgegevenstype in Azure Maps. Importeer het gegevenstype in ee
 </html>
 ```
 
-
-
 ![GeoJSON in Azure Maps](media/migrate-google-maps-web-app/azure-maps-geojson.png)
 
 **Aanvullende informatie:**
 
-- [Een symboollaag toevoegen](map-add-pin.md)
-- [Een bellenlaag toevoegen](map-add-bubble-layer.md)
-- [Puntgegevens clusteren](clustering-point-data-web-sdk.md)
-- [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
+* [Een symboollaag toevoegen](map-add-pin.md)
+* [Een bellenlaag toevoegen](map-add-bubble-layer.md)
+* [Puntgegevens clusteren](clustering-point-data-web-sdk.md)
+* [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
 
 ### <a name="marker-clustering"></a>Clusteren van markeringen
 
@@ -1017,18 +1017,16 @@ Gebruik de bibliotheek MarkerCluster om markeringen te clusteren. U kunt alleen 
 </html>
 ```
 
-
-
 ![Clustering in Google Maps](media/migrate-google-maps-web-app/google-maps-clustering.png)
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
 
 Voeg gegevens toe aan een gegevensbron en beheer de gegevens. Verbind gegevensbronnen en lagen, en geef vervolgens de gegevens weer. De klasse `DataSource` in Azure Maps biedt verschillende opties voor clustering.
 
-- `cluster`: geeft de gegevensbron opdracht om puntgegevens te clusteren.
-- `clusterRadius`: de straal in pixels waarbinnen punten moeten worden geclusterd.
-- `clusterMaxZoom`: het maximale zoomniveau voor de clustering. Als u verder inzoomt dan dit niveau, worden alle punten weergegeven als symbolen.
-- `clusterProperties`: aangepaste eigenschappen die worden berekend met behulp van expressies voor alle punten binnen elk cluster en die worden toegevoegd aan de eigenschappen van elk clusterpunt.
+* `cluster`: geeft de gegevensbron opdracht om puntgegevens te clusteren.
+* `clusterRadius`: de straal in pixels waarbinnen punten moeten worden geclusterd.
+* `clusterMaxZoom`: het maximale zoomniveau voor de clustering. Als u verder inzoomt dan dit niveau, worden alle punten weergegeven als symbolen.
+* `clusterProperties`: aangepaste eigenschappen die worden berekend met behulp van expressies voor alle punten binnen elk cluster en die worden toegevoegd aan de eigenschappen van elk clusterpunt.
 
 Wanneer clustering is ingeschakeld, verstuurt de gegevensbron geclusterde en niet-geclusterde gegevenspunten naar lagen om daar te worden weergegeven. De gegevensbron kan honderdduizenden gegevenspunten clusteren. Een geclusterd gegevenspunt heeft de volgende eigenschappen:
 
@@ -1145,16 +1143,14 @@ U kunt GeoJSON-gegevens rechtstreeks importeren met behulp van de functie `impor
 </html>
 ```
 
-
-
 ![Clustering in Azure Maps](media/migrate-google-maps-web-app/azure-maps-clustering.png)
 
 **Aanvullende informatie:**
 
-- [Een symboollaag toevoegen](map-add-pin.md)
-- [Een bellenlaag toevoegen](map-add-bubble-layer.md)
-- [Puntgegevens clusteren](clustering-point-data-web-sdk.md)
-- [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
+* [Een symboollaag toevoegen](map-add-pin.md)
+* [Een bellenlaag toevoegen](map-add-bubble-layer.md)
+* [Puntgegevens clusteren](clustering-point-data-web-sdk.md)
+* [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
 
 ### <a name="add-a-heat-map"></a>Een heatmap toevoegen
 
@@ -1227,8 +1223,6 @@ Als u een heatmap wilt maken, laadt u de bibliotheek met visualisaties door `&li
 </html>
 ```
 
-
-
 ![Heatmap in Google Maps](media/migrate-google-maps-web-app/google-maps-heatmap.png)
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
@@ -1293,8 +1287,6 @@ Laad de GeoJSON-gegevens in een gegevensbron en verbind de gegevensbron met een 
 </html>
 ```
 
-
-
 ![Heatmap in Azure Maps](media/migrate-google-maps-web-app/azure-maps-heatmap.png)
 
 **Aanvullende informatie:**
@@ -1324,8 +1316,6 @@ map.overlayMapTypes.insertAt(0, new google.maps.ImageMapType({
 }));
 ```
 
-
-
 ![Tegellaag in Google Maps](media/migrate-google-maps-web-app/google-maps-tile-layer.png)
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
@@ -1343,8 +1333,6 @@ map.layers.add(new atlas.layer.TileLayer({
     tileSize: 256
 }), 'labels');
 ```
-
-
 
 ![Tegellaag in Azure Maps](media/migrate-google-maps-web-app/azure-maps-tile-layer.png)
 
@@ -1370,8 +1358,6 @@ var trafficLayer = new google.maps.TrafficLayer();
 trafficLayer.setMap(map);
 ```
 
-
-
 ![Verkeer in Google Maps](media/migrate-google-maps-web-app/google-maps-traffic.png)
 
 #### <a name="after-azure-maps"></a>Na: Azure Maps
@@ -1387,20 +1373,16 @@ map.setTraffic({
 });
 ```
 
-
-
 ![Verkeer in Azure Maps](media/migrate-google-maps-web-app/azure-maps-traffic.png)
 
 Als u op een van de verkeerspictogrammen in Azure Maps klikt, wordt er extra informatie weergegeven in een pop-up.
-
-
 
 ![Verkeersincident in Azure Maps](media/migrate-google-maps-web-app/azure-maps-traffic-incident.png)
 
 **Aanvullende informatie:**
 
-- [Verkeer weergeven op de kaart](map-show-traffic.md)
-- [Opties voor verkeersgegevens als overlay](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Traffic%20Overlay%20Options)
+* [Verkeer weergeven op de kaart](map-show-traffic.md)
+* [Opties voor verkeersgegevens als overlay](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Traffic%20Overlay%20Options)
 
 ### <a name="add-a-ground-overlay"></a>Een terrein-overlay toevoegen
 
@@ -1514,8 +1496,6 @@ Gebruik de klasse `atlas.layer.ImageLayer` om afbeeldingen met georeferenties op
 </html>
 ```
 
-
-
 ![Overlay van afbeelding in Azure Maps](media/migrate-google-maps-web-app/azure-maps-image-overlay.png)
 
 **Aanvullende informatie:**
@@ -1528,7 +1508,6 @@ Gebruik de klasse `atlas.layer.ImageLayer` om afbeeldingen met georeferenties op
 U kunt in zowel Azure Maps als Google Maps KML-, KMZ-en GeoRSS-gegevens importeren en weergeven op een kaart. Azure Maps biedt ook ondersteuning voor GPX, GML, ruimtelijke CSV-bestanden, GeoJSON, WKT (Well Known Text), WMS (Web-Mapping Services), WMTS (Web-Mapping Tile Services) en WFS (Web Feature Services). Azure Maps leest de bestanden lokaal in het geheugen en kan in de meeste gevallen veel grotere KML-bestanden verwerken. 
 
 #### <a name="before-google-maps"></a>Vóór: Google Maps
-
 
 ```javascript
 <!DOCTYPE html>
@@ -1661,9 +1640,7 @@ In Azure Maps is GeoJSON de belangrijkste gegevensindeling die wordt gebruikt in
 </html>
 ```
 
-
 ![Azure Maps-KML](media/migrate-google-maps-web-app/azure-maps-kml.png)</center>
-
 
 **Aanvullende informatie:**
 
@@ -1675,18 +1652,18 @@ In Azure Maps is GeoJSON de belangrijkste gegevensindeling die wordt gebruikt in
 
 Dit zijn enkele aanvullende codevoorbeelden met betrekking tot de migratie van Google Maps:
 
-- [Tekenhulpmiddelen](map-add-drawing-toolbar.md)
-- [Slepen van map alleen met twee vingers](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Limit%20Map%20to%20Two%20Finger%20Panning) (Engelstalige informatie)
-- [Zoomen met schuifwiel beperken](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Limit%20Scroll%20Wheel%20Zoom) (Engelstalige informatie)
-- [Een besturingselement voor het volledig scherm maken](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Create%20a%20Fullscreen%20Control) (Engelstalige informatie)
+* [Tekenhulpmiddelen](map-add-drawing-toolbar.md)
+* [Slepen van map alleen met twee vingers](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Limit%20Map%20to%20Two%20Finger%20Panning) (Engelstalige informatie)
+* [Zoomen met schuifwiel beperken](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Limit%20Scroll%20Wheel%20Zoom) (Engelstalige informatie)
+* [Een besturingselement voor het volledig scherm maken](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Create%20a%20Fullscreen%20Control) (Engelstalige informatie)
 
 **Services:**
 
-- [De Azure Maps Services-module gebruiken](how-to-use-services-module.md)
-- [Zoeken naar bezienswaardigheden](map-search-location.md)
-- [Informatie ophalen uit een coördinaat (omgekeerde geocode)](map-get-information-from-coordinate.md)
-- [Routebeschrijving van A naar B](map-route.md)
-- [Automatische suggesties zoeken met JQuery-gebruikersinterface](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Search%20Autosuggest%20and%20JQuery%20UI)
+* [De Azure Maps Services-module gebruiken](how-to-use-services-module.md)
+* [Zoeken naar bezienswaardigheden](map-search-location.md)
+* [Informatie ophalen uit een coördinaat (omgekeerde geocode)](map-get-information-from-coordinate.md)
+* [Routebeschrijving van A naar B](map-route.md)
+* [Automatische suggesties zoeken met JQuery-gebruikersinterface](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Search%20Autosuggest%20and%20JQuery%20UI)
 
 ## <a name="google-maps-v3-to-azure-maps-web-sdk-class-mapping"></a>Toewijzing van klassen van Google Maps v3 JavaScript-SDK aan klassen van Azure Maps Web-SDK
 
@@ -1741,18 +1718,13 @@ Bibliotheken voegen extra functionaliteit toe aan de kaart. Veel van deze biblio
 | Geometriebibliotheek      | [atlas.math](/javascript/api/azure-maps-control/atlas.math)   |
 | Visualisatiebibliotheek | [Heatmap-laag](map-add-heat-map-layer.md) |
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources om op te schonen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Azure Maps Web-SDK:
+Meer informatie over het migreren naar Azure Maps:
 
 > [!div class="nextstepaction"]
-> [Map Control gebruiken](how-to-use-map-control.md)
-
-> [!div class="nextstepaction"]
-> [De module voor tekenprogramma's gebruiken](set-drawing-options.md)
-
-> [!div class="nextstepaction"]
-> [De services-module gebruiken](how-to-use-services-module.md)
-
-> [!div class="nextstepaction"]
-> [De ruimtelijke IO-module gebruiken](how-to-use-spatial-io-module.md)
+> [Een webservice migreren](migrate-from-google-maps-web-services.md)

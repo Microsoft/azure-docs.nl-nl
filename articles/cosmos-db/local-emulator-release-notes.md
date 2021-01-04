@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: 5d105ad4c2aff03dae52b340037e4c193bf82ca1
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 92fdef48556a3306ee5e3f10e07ff609a8fc4be4
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608432"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656220"
 ---
 # <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Azure Cosmos DB-emulator - opmerkingen bij de release en downloadgegevens
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -83,7 +83,7 @@ In deze release zijn twee nieuwe opstartopties voor de Cosmos-emulator toegevoeg
 
 ### <a name="246"></a>2.4.6
 
-- Deze release biedt pariteit met de functies van de Azure Cosmos-service vanaf juli 2019, met de uitzonderingen die worden vermeld in [Lokaal ontwikkelen met Azure Cosmos-emulator](local-emulator.md). Daarnaast worden verschillende fouten met betrekking tot het afsluiten van de emulator opgelost wanneer deze via de opdrachtregel wordt aangeroepen, en bij overschrijvingen van het interne IP-adres voor SDK-clients die gebruikmaken van een verbinding in directe modus.
+- Deze release biedt pariteit met de functies van de Azure Cosmos-service vanaf juli 2019, met de uitzonderingen die worden vermeld in [Lokaal ontwikkelen met Azure Cosmos DB-emulator](local-emulator.md). Daarnaast worden verschillende fouten met betrekking tot het afsluiten van de emulator opgelost wanneer deze via de opdrachtregel wordt aangeroepen, en bij overschrijvingen van het interne IP-adres voor SDK-clients die gebruikmaken van een verbinding in directe modus.
 
 ### <a name="243"></a>2.4.3
 

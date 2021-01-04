@@ -363,25 +363,13 @@
               href: custom-commands.md
             - name: Snelstartgidsen
               items:
-                - name: Een apps voor aangepaste opdrachten maken
+                - name: Een app voor aangepaste opdrachten maken
                   href: quickstart-custom-commands-application.md
             - name: Instructiegidsen
               items:
-                - name: Ontwikkelen
-                  items:
-                    - name: Toepassing met eenvoudige opdrachten maken
-                      href: how-to-custom-commands-create-application-with-simple-commands.md
-                    - name: Parameters toevoegen aan opdrachten
-                      href: how-to-custom-commands-add-parameters-to-commands.md
-                    - name: Configuraties toevoegen aan opdrachtparameters
-                      href: how-to-custom-commands-add-parameter-configuration.md
-                    - name: Interactieregels toevoegen
-                      href: how-to-custom-commands-add-interaction-rules.md
-                    - name: Taalgeneratiesjablonen toevoegen voor spraakreacties
-                      href: how-to-custom-commands-add-language-generation-templates.md
-                    - name: Custom Voice gebruiken
-                      href: how-to-custom-commands-use-custom-voice.md
-                - name: Integreren
+                - name: Apps voor aangepaste opdrachten ontwikkelen en aanpassen
+                  href: how-to-develop-custom-commands-application.md
+                - name: Integreren met clienttoepassingen
                   items:
                     - name: Integreren met een client-app met de Speech-SDK
                       href: how-to-custom-commands-setup-speech-sdk.md
@@ -395,26 +383,18 @@
                       href: how-to-custom-commands-update-command-from-client.md
                     - name: Een opdracht bijwerken vanuit een webeindpunt
                       href: how-to-custom-commands-update-command-from-web-endpoint.md
-                - name: Implementeren
-                  items:
-                    - name: Continue implementatie met Azure DevOps
-                      href: how-to-custom-commands-deploy-cicd.md
-                - name: Testen
-                  items:
-                    - name: Uw app met aangepaste opdrachten testen
-                      href: how-to-custom-commands-developer-flow-test.md
-                - name: Fouten opsporen
-                  items:
-                    - name: Fouten opsporen wanneer u de app ontwerpt
-                      href: how-to-custom-commands-debug-build-time.md
-                    - name: Fouten opsporen wanneer u de app uitvoert
-                      href: how-to-custom-commands-debug-runtime.md
-                - name: Verwijzingen
-                  items:
-                    - name: Concepten van aangepaste opdrachten
-                      href: custom-commands-references.md
+                - name: Continue implementatie met Azure DevOps
+                  href: how-to-custom-commands-deploy-cicd.md
+                - name: Toepassingen voor aangepaste opdrachten testen
+                  href: how-to-custom-commands-developer-flow-test.md
+                - name: Fouten opsporen wanneer u de app ontwerpt
+                  href: how-to-custom-commands-debug-build-time.md
+                - name: Fouten opsporen wanneer u de app uitvoert
+                  href: how-to-custom-commands-debug-runtime.md
             - name: Resources
               items:
+                - name: Concepten van aangepaste opdrachten
+                  href: custom-commands-references.md
                 - name: Voorbeelden van aangepaste opdrachten (GitHub)
                   href: 'https://aka.ms/speech/cc-samples'
                 - name: Voorbeelden van Spraakassistent (GitHub)

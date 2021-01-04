@@ -5,36 +5,56 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 11/19/2020
+ms.date: 11/24/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 48cc6b84fe88676a03d1bb6e0a8154c16e3ef618
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ce906ad62b51956cb85f854846740fa09e06895d
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007428"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97665001"
 ---
-Event Hubs daarentegen biedt streaming van berichten via een model op basis van gepartitioneerd gebruik, waarbij elke consumer slechts een specifieke subset of partitie van de berichtenstroom leest. Dit patroon maakt een horizontale schaal voor de verwerking van gebeurtenissen mogelijk en biedt andere stroomgerichte functies die niet beschikbaar zijn in wachtrijen en onderwerpen.
+Met Event Hub worden reeksen van gebeurtenissen in een of meer partities georganiseerd. Als er nieuwere gebeurtenissen plaatsvinden, worden deze toegevoegd aan het einde van deze reeks. Een partitie kan worden beschouwd als een 'doorvoerlogboek'.
 
-Een partitie is een geordende reeks gebeurtenissen die in een Event Hub wordt bewaard. Als er nieuwere gebeurtenissen plaatsvinden, worden deze toegevoegd aan het einde van deze reeks. Een partitie kan worden beschouwd als een 'doorvoerlogboek'.
+Partities bevatten gebeurtenisgegevens met de hoofdtekst van de gebeurtenis, een door de gebruiker gedefinieerde set eigenschappen waarin de gebeurtenis wordt beschreven en metagegevens, zoals de offset in de partitie, het nummer in de stroomreeks en de service-side timestamp van de acceptatie.
 
 ![Diagram waarin de reeks gebeurtenissen van oud naar nieuw wordt weergegeven.](./media/event-hubs-partitions/partition.png)
 
-Event Hubs bewaart gegevens voor een geconfigureerde bewaartijd die wordt toegepast op het niveau van alle partities in de Event Hub. Gebeurtenissen verlopen op basis van tijd. U kunt ze niet expliciet verwijderen. Omdat partities onafhankelijk zijn en hun eigen reeks gegevens bevatten, groeien ze vaak met verschillende snelheden.
+Event Hubs is ontworpen om te helpen bij het verwerken van zeer grote hoeveelheden gebeurtenissen. Partitioneren draagt hier op twee manieren aan bij:
+
+Ten eerste, hoewel Event Hubs een PaaS-service is, is er wel een onderliggende fysieke realiteit. Het bijhouden van een logboek waarbij de volgorde van gebeurtenissen wordt behouden, vereist dat deze gebeurtenissen samen in de bijbehorende opslag en replica's worden bewaard. Dit betekent dat er een doorvoerplafond is voor een dergelijk logboek. Partitioneren maakt het mogelijk om meerdere parallelle logboeken te gebruiken voor dezelfde Event Hub en zo de beschikbare doorvoercapaciteit voor onbewerkte IO-gegevens te vermenigvuldigen.
+
+Ten tweede moeten uw eigen toepassingen de verwerking van het volume aan gebeurtenissen dat naar een Event Hub wordt verzonden bij kunnen houden. Dat kan zeer complex zijn en vereist aanzienlijke, uitgeschaalde en parallelle verwerkingscapaciteit. De reden voor partities is dezelfde als hierboven: De capaciteit van één proces voor het afhandelen van gebeurtenissen is beperkt en daarom hebt u verschillende processen nodig. Partities zijn de manier waarop uw oplossing deze processen voedt en zorgen ervoor dat elke gebeurtenis een duidelijke verwerkingseigenaar heeft. 
+
+Event Hubs bewaart gebeurtenissen voor een geconfigureerde bewaartijd die wordt toegepast op het niveau van alle partities. Gebeurtenissen worden automatisch verwijderd wanneer de retentieperiode is bereikt. Als u een retentieperiode van één dag opgeeft, wordt de gebeurtenis precies 24 uur nadat deze is geaccepteerd onbeschikbaar. U kunt gebeurtenissen niet expliciet verwijderen. 
+
+De toegestane retentieperiode is maximaal zeven dagen voor Event Hubs Standard en maximaal 90 dagen voor Event Hubs Dedicated. Als u gebeurtenissen wilt archiveren na de toegestane retentieperiode, kunt u deze [automatisch laten opslaan in Azure Storage of Azure Data Lake door de functie Event Hubs Capture in te schakelen](../articles/event-hubs/event-hubs-capture-overview.md). Als u dergelijke diepe archieven wilt doorzoeken of analyseren, kunt u ze [gemakkelijk importeren in Azure Synapse](../articles/event-hubs/store-captured-data-data-warehouse.md) of andere vergelijkbare opslagplaatsen en analyseplatforms. 
+
+De limiet op de retentieperiode voor Event Hubs is om te voorkomen dat grote hoeveelheden historische klantgegevens worden vastgelegd in een archief dat alleen wordt geïndexeerd per timestamp en alleen sequentiële toegang toestaat. De architectuurfilosofie is dat voor historische gegevens uitgebreidere indexering en directere toegang nodig is dan de real-time interface voor gebeurtenissen die Event Hubs of Kafka bieden. Engines voor gebeurtenissenstromen zijn niet geschikt om te fungeren als data lakes of als langetermijnarchieven voor gebeurtenisbronnen. 
+
+Omdat partities onafhankelijk zijn en hun eigen reeks gegevens bevatten, groeien ze vaak met verschillende snelheden. In Event Hubs is dat geen bezwaar waarvoor administratieve interventies nodig zijn, zoals in Apache Kafka, maar ongelijke distributie leidt tot ongelijkmatige belasting van uw downstream-gebeurtenisverwerkers.
 
 ![Event Hubs](./media/event-hubs-partitions/multiple-partitions.png)
 
-Het aantal partities wordt opgegeven bij het maken en moet tussen 1 en 32 liggen. Het aantal partities kan niet worden gewijzigd. Houd bij het instellen van het aantal partities dus uw doelen op de lange termijn in gedachten. Partities zijn een mechanisme voor gegevensordening. Ze hebben betrekking op de mate van downstreamparallelheid die is vereist bij het gebruik van toepassingen. Het aantal partities in een Event Hub houdt rechtstreeks verband met het aantal verwachte gelijktijdige lezers. Neem contact op met het team van Event Hubs als u meer dan 32 partities wilt maken.
+Het aantal partities wordt opgegeven bij het maken en moet voor Event Hubs Standard tussen 1 en 32 liggen. Het aantal partities kan in Event Hubs Dedicated maximaal 2000 partities per capaciteitseenheid zijn. 
 
-Het is raadzaam deze op het moment van maken in te stellen op de hoogste waarde: 32. Houd er rekening mee dat als u meer dan één partitie hebt, dit ertoe leidt dat gebeurtenissen in meerdere partities worden verzonden zonder de volgorde aan te houden, tenzij u verzenders zo configureert dat deze één partitie uit 32 verzenden. Maar daardoor zijn de overige 31 overbodig. In het eerste geval moet u gebeurtenissen lezen in alle 32 partities. In het laatste geval zijn er geen duidelijke extra kosten, los van de extra configuratie die u moet instellen in de gebeurtenisverwerkingshost.
+We raden u aan om ten minste zoveel partities te kiezen als u verwacht nodig te hebben voor aanhoudende [doorvoereenheden (TU's)](../articles/event-hubs/event-hubs-faq.md#what-are-event-hubs-throughput-units) tijdens piekbelasting van uw toepassing voor die specifieke Event Hub. U moet er rekening mee houden dat één partitie een doorvoercapaciteit heeft van 1 TU (1 MB ingaand, 2 MB uitgaand). U kunt de schaal van uw TU's aanpassen aan uw naamruimte of de capaciteitseenheden van uw cluster, onafhankelijk van het aantal partities. Een Event Hub met 32 partities of een Event Hub met één partitie genereren exact dezelfde kosten als de naamruimte is ingesteld op een capaciteit van één TU. 
 
-Partities kunnen worden geïdentificeerd en rechtstreeks gegevens ontvangen, maar dit wordt niet aanbevolen. In plaats daarvan kunt u constructies op een hoger niveau gebruiken. Deze vindt u in de sectie [Gebeurtenisuitgever](../articles/event-hubs/event-hubs-features.md#event-publishers). 
+Toepassingen regelen de toewijzing van gebeurtenissen aan partities op een van de volgende drie manieren:
 
-Partities bestaan uit een reeks gebeurtenisgegevens. Deze bevatten de hoofdtekst van de gebeurtenis, een door de gebruiker gedefinieerde eigenschappenverzameling en metagegevens, zoals de offset in de partitie en het nummer in de stroomreeks.
+- Door de partitiesleutel op te geven die consistent is toegewezen (met behulp van een hash-functie) aan een van de beschikbare partities. 
+- Door geen partitiesleutel op te geven, zodat een broker voor iedere gebeurtenis een willekeurige partitie kan kiezen.
+- Door expliciet gebeurtenissen te verzenden naar een specifieke partitie.
 
-We raden u aan het aantal doorvoereenheden en partities 1:1 op elkaar af te stemmen, zodat u een optimale schaal bereikt. Eén partitie heeft een gegarandeerde opname en uitvoer van maximaal één doorvoereenheid. Hoewel het mogelijk is om in een partitie meer doorvoer te behalen, worden de prestaties niet gegarandeerd. Daarom raden we ten zeerste aan dat het aantal partities in een Event Hub groter is dan of gelijk is aan het aantal doorvoereenheden.
+Als u een partitiesleutel opgeeft, kunnen gerelateerde gebeurtenissen in dezelfde partitie worden bewaard, in dezelfde volgorde waarin ze zijn verzonden. De partitiesleutel is een tekenreeks die is afgeleid van uw toepassingscontext en identificeert de relatie tussen de gebeurtenissen.
 
-Gezien de totale doorvoer die u nodig denkt te hebben, weet u hoeveel doorvoereenheden en het minimale aantal partities u nodig hebt, maar hoeveel partities moet u echt hebben? Kies het aantal partities op basis van de parallelle downstreamuitvoering die u wilt, evenals uw doorvoerbehoeften in de toekomst. Er worden geen kosten in rekening gebracht voor het aantal partities dat u binnen een Event Hub hebt.
+Een reeks gebeurtenissen die wordt geïdentificeerd door een partitiesleutel is een *stroom*. Een partitie is een multiplex-logboekopslag voor veel van zulke stromen. 
+
+Het aantal partities van een Event Hub kan worden verhoogd nadat de Event Hub is gemaakt, maar de distributie van stromen over partities verandert als deze klaar is, omdat de toewijzing van partitiesleutels aan partities verandert. U kunt dus het beste proberen om dergelijke wijzigingen zoveel mogelijk te vermijden als de relatieve volgorde van gebeurtenissen in uw toepassing van belang is.
+
+Het instellen van het aantal partities op de maximaal toegestane waarde is verleidelijk, maar u moet er altijd rekening mee houden dat uw gebeurtenissenstromen zo moeten worden gestructureerd dat u wel kunt profiteren van meerdere partities. Als u de volgorde van alle gebeurtenissen of voor een klein aantal substromen echt moet behouden, kunt u misschien niet profiteren van het gebruik van veel partities. Daarnaast maken veel partities de verwerkingszijde complexer. 
+
+Hoewel u rechtstreeks gebeurtenissen naar partities kunt sturen, wordt dit niet aanbevolen. In plaats daarvan kunt u constructies op een hoger niveau gebruiken. Deze vindt u in de sectie [Gebeurtenisuitgever](../articles/event-hubs/event-hubs-features.md#event-publishers). 
 
 Zie de artikelen [Programmeergids voor Event Hubs](../articles/event-hubs/event-hubs-programming-guide.md#partition-key) en [Beschikbaarheid en consistentie in Event Hubs](../articles/event-hubs/event-hubs-availability-and-consistency.md) voor meer informatie over partities en de verhouding tussen de beschikbaarheid en betrouwbaarheid.

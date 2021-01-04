@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 813cb567ab3edddd6fb37cee050dc5e38ee4289f
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 444e7c9ad06c6f2ad584c0701fa652b901a4c3e7
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904887"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680765"
 ---
-# <a name="tutorial---migrate-web-service-from-google-maps"></a>Zelfstudie: webservices migreren vanuit Google Maps
+# <a name="tutorial-migrate-web-service-from-google-maps"></a>Zelfstudie: Webservice migreren vanuit Google Maps
 
 Zowel Azure Maps als Google Maps biedt toegang tot ruimtelijke API's via REST-webservices. Met de API-interfaces van deze platforms worden vergelijkbare functies uitgevoerd. Er worden echter verschillende naamconventies en antwoordobjecten voor gebruikt.
 
@@ -29,7 +29,7 @@ In deze zelfstudie leert u het volgende:
 > * Een afstandsmatrix berekenen
 > * Tijdzone-informatie ophalen
 
-U leert ook het volgende: 
+U leert ook het volgende:
 
 > [!div class="checklist"]
 > * Welk Azure Maps REST-service wanneer u van een Google Maps-webservice migreert
@@ -56,8 +56,7 @@ De volgende service-API's zijn momenteel niet beschikbaar in Azure Maps:
 - Geolocatie
 - Details en foto's van plaatsen: telefoonnummers en website-URL zijn beschikbaar in de zoek-API van Azure Maps.
 - Kaart-URL's
-- Dichtstbijzijnde wegen - dit is te realiseren via de web-SDK, zoals [hier](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Basic%20snap%20to%20road%20logic
-) te zien is, maar dit is momenteel niet beschikbaar als een service.
+- Dichtstbijzijnde wegen - dit is te realiseren via de web-SDK, zoals [hier](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Basic%20snap%20to%20road%20logic) te zien is, maar dit is momenteel niet beschikbaar als een service.
 - Statische straatweergave
 
 Azure Maps heeft verschillende aanvullende REST-webservices die interessant kunnen zijn:
@@ -65,7 +64,7 @@ Azure Maps heeft verschillende aanvullende REST-webservices die interessant kunn
 - [Ruimtelijke bewerkingen](/rest/api/maps/spatial): Complexe ruimtelijke berekeningen en bewerkingen, zoals geofencing, offloaden naar een service.
 - [Verkeer](/rest/api/maps/traffic): Toegang tot realtime verkeersstromen en incidentgegevens.
 
-## <a name="prerequisites"></a>Vereisten 
+## <a name="prerequisites"></a>Vereisten
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 2. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
@@ -123,17 +122,17 @@ Lees de [Aanbevolen procedures voor zoeken](how-to-use-best-practices-for-search
 
 De API voor reverse geocodering van Azure Maps biedt enkele aanvullende functies, die niet beschikbaar zijn in Google Maps. Deze functies kunnen nuttig zijn om in uw toepassing te integreren als u uw app migreert:
 
-- Snelheidslimietgegevens ophalen
-- Informatie over het weggebruik ophalen: lokale weg, hoofdweg, beperkte toegang, helling enzovoort
-- De kant van de straat ophalen waar zich een coördinaat bevindt
+* Snelheidslimietgegevens ophalen
+* Informatie over het weggebruik ophalen: lokale weg, hoofdweg, beperkte toegang, helling enzovoort
+* De kant van de straat ophalen waar zich een coördinaat bevindt
 
 ## <a name="search-for-points-of-interest"></a>Zoeken naar nuttige plaatsen
 
 In Google Maps kan naar nuttige plaatsen worden gezocht met behulp van de API Locaties zoeken. Deze API biedt drie verschillende manieren om te zoeken naar nuttige plaatsen:
 
-- **Locatie zoeken op basis van tekst:** Hiermee wordt gezocht naar een nuttige plaats op basis van de naam, het adres of het telefoonnummer ervan.
-- **In de buurt zoeken**: Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden.
-- **Zoeken op basis van tekst:** Hiermee wordt naar plaatsen gezocht met behulp van een vrije tekst, die een nuttige plaats en een locatie bevat. Bijvoorbeeld pizza in New York of restaurants in de buurt van Main St.
+* **Locatie zoeken op basis van tekst:** Hiermee wordt gezocht naar een nuttige plaats op basis van de naam, het adres of het telefoonnummer ervan.
+* **In de buurt zoeken**: Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden.
+* **Zoeken op basis van tekst:** Hiermee wordt naar plaatsen gezocht met behulp van een vrije tekst, die een nuttige plaats en een locatie bevat. Bijvoorbeeld pizza in New York of restaurants in de buurt van Main St.
 
 Azure Maps biedt verschillende zoek-API's voor nuttige plaatsen:
 
@@ -192,9 +191,9 @@ De tabel bevat de API-parameters in Google Maps en de vergelijkbare API-paramete
 
 Bereken routes en routebeschrijvingen met behulp van Azure Maps. Azure Maps biedt veel dezelfde functies als de routeringsservice van Google Maps, zoals:
 
-- Aankomst- en vertrektijden.
-- Realtime verkeersroutes en verkeersroutes op basis van voorspellingen.
-- Verschillende transportmodi, zoals met de auto, lopend of met de fiets.
+* Aankomst- en vertrektijden.
+* Realtime verkeersroutes en verkeersroutes op basis van voorspellingen.
+* Verschillende transportmodi, zoals met de auto, lopend of met de fiets.
 
 > [!NOTE]
 > Voor Azure Maps moeten alle routepunten coördinaten zijn. Adressen moeten eerst worden gegeocodeerd.
@@ -231,16 +230,16 @@ De tabel bevat de API-parameters in Google Maps en de vergelijkbare API-paramete
 
 De routerings-API van Azure Maps biedt aanvullende functies die niet beschikbaar zijn in Google Maps. Overweeg het gebruik van deze functies als u uw app migreert. Deze kunnen nuttig voor u zijn.
 
-- Ondersteuning voor de routetypen: kortste, snelste, trilling en zuinigst.
-- Ondersteuning voor aanvullende reismodi: bus, motor, taxi, vrachtwagen en busje.
-- Ondersteuning voor 150 routepunten.
-- Meerdere reistijden berekenen in één aanvraag; historisch verkeer, liveverkeer, geen verkeer.
-- Aanvullende wegtypen vermijden: carpoolwegen, onverharde wegen, reeds gebruikte wegen.
-- Te vermijden aangepaste gebieden opgeven.
-- Stijgingen in de route beperken.
-- Route op basis van motorspecificaties. Routes berekenen voor voertuigen met verbrandingsmotor of elektrische voertuigen op basis van motorspecificaties en de resterende brandstof of acculading.
-- Ondersteuning voor routeparameters van commerciële voertuigen, zoals de afmetingen, het gewicht, het aantal assen en het ladingtype van voertuigen.
-- De maximale voertuigsnelheid opgeven.
+* Ondersteuning voor de routetypen: kortste, snelste, trilling en zuinigst.
+* Ondersteuning voor aanvullende reismodi: bus, motor, taxi, vrachtwagen en busje.
+* Ondersteuning voor 150 routepunten.
+* Meerdere reistijden berekenen in één aanvraag; historisch verkeer, liveverkeer, geen verkeer.
+* Aanvullende wegtypen vermijden: carpoolwegen, onverharde wegen, reeds gebruikte wegen.
+* Te vermijden aangepaste gebieden opgeven.
+* Stijgingen in de route beperken.
+* Route op basis van motorspecificaties. Routes berekenen voor voertuigen met verbrandingsmotor of elektrische voertuigen op basis van motorspecificaties en de resterende brandstof of acculading.
+* Ondersteuning voor routeparameters van commerciële voertuigen, zoals de afmetingen, het gewicht, het aantal assen en het ladingtype van voertuigen.
+* De maximale voertuigsnelheid opgeven.
 
 Daarnaast ondersteunt de Route-service in Azure Maps [het berekenen van routeerbare bereiken](/rest/api/maps/route/getrouterange). Berekeningen van routeerbare bereiken worden ook wel isochronen genoemd. Dit omvat het genereren van een veelhoek boven een gebied dat in elke richting vanuit een startpunt kan worden bereisd. En dat binnen een opgegeven tijdsduur of een bepaalde hoeveelheid brandstof of acculading.
 
@@ -290,7 +289,7 @@ Naast de mogelijkheid om een statische kaartafbeelding te genereren biedt de wee
 
 Voeg markeringen toe met behulp van de parameter `markers` in de URL. De parameter `markers` maakt gebruik van een stijl en een lijst met locaties die in die stijl op de kaart moeten worden weergegeven, zoals hieronder wordt weergegeven:
 
-```
+```text
 &markers=markerStyles|markerLocation1|markerLocation2|...
 ```
 
@@ -300,21 +299,20 @@ Geef de markeringslocaties op in de indeling breedtegraad,lengtegraad.
 
 Voeg markeringsstijlen toe in de indeling `optionName:value`, waarbij meerdere stijlen worden gescheiden door een verticale streep (\|), zoals optieNaam1:waarde1\|optieNaam2:waarde2. Zoals u ziet worden de optienamen en waarden gescheiden door een dubbele punt (:). Gebruik de volgende stijloptienamen voor stijlmarkeringen in Google Maps:
 
-- `color` - de kleur van het standaardmarkeringspictogram. Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`) of een van de volgende waarden zijn. `black`, `brown`, `green`, `purple`, `yellow`, `blue`, `gray`, `orange`, `red`, `white`.
-- `label` - een enkele alfanumerieke hoofdletter die boven het pictogram wordt weergegeven.
-- `size` - de grootte van de markering. De waarde kan `tiny`, `mid`of `small` zijn.
+* `color` - de kleur van het standaardmarkeringspictogram. Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`) of een van de volgende waarden zijn. `black`, `brown`, `green`, `purple`, `yellow`, `blue`, `gray`, `orange`, `red`, `white`.
+* `label` - een enkele alfanumerieke hoofdletter die boven het pictogram wordt weergegeven.
+* `size` - de grootte van de markering. De waarde kan `tiny`, `mid`of `small` zijn.
 
 Gebruik de volgende stijloptienamen voor aangepaste pictogrammen in Google Maps:
 
-- `anchor` - geeft aan hoe de pictogramafbeelding moet worden uitgelijnd met de coördinaat. Dit kan een pixelwaarde (x, y) of een van de volgende waarden zijn: `top`, `bottom`, `left`, `right`, `center`, `topleft`, `topright`, `bottomleft` of `bottomright`.
-- `icon` - een URL die wijst naar de pictogramafbeelding.
+* `anchor` - geeft aan hoe de pictogramafbeelding moet worden uitgelijnd met de coördinaat. Dit kan een pixelwaarde (x, y) of een van de volgende waarden zijn: `top`, `bottom`, `left`, `right`, `center`, `topleft`, `topright`, `bottomleft` of `bottomright`.
+* `icon` - een URL die wijst naar de pictogramafbeelding.
 
 Laten we bijvoorbeeld een rode, middelgrote markering toevoegen aan de kaart op lengtegraad -110 en breedtegraad 45:
 
-```
+```text
 &markers=color:red|size:mid|45,-110
 ```
-
 
 ![Markering in Google Maps](media/migrate-google-maps-web-services/google-maps-marker.png)
 
@@ -322,7 +320,7 @@ Laten we bijvoorbeeld een rode, middelgrote markering toevoegen aan de kaart op 
 
 Voeg markeringen toe aan een statische kaartafbeelding door de parameter `pins` op te geven in de URL. Net als bij Google Maps geeft u een stijl en een lijst met locaties op in de parameter. De parameter `pins` kan meerdere keren worden opgegeven om markeringen met verschillende stijlen te ondersteunen.
 
-```
+```text
 &pins=iconType|pinStyles||pinLocation1|pinLocation2|...
 ```
 
@@ -332,27 +330,27 @@ In Azure Maps moet de speldlocatie de indeling lengtegraad breedtegraad hebben. 
 
 Met `iconType` geeft u het type van de te maken speld op. Het kan de volgende waarden hebben:
 
-- `default` - het standaardspeldpictogram.
-- `none` -er wordt geen pictogram weergegeven, er worden alleen labels weergegeven.
-- `custom` - geeft aan dat er een aangepast pictogram moet worden gebruikt. Een URL die wijst naar de pictogramafbeelding kan worden toegevoegd aan het einde van de parameter `pins`, achter de locatiegegevens van de speld.
-- `{udid}` - een unieke gegevens-id (UDID) voor een pictogram dat is opgeslagen in het Azure Maps Data Storage-platform.
+* `default` - het standaardspeldpictogram.
+* `none` -er wordt geen pictogram weergegeven, er worden alleen labels weergegeven.
+* `custom` - geeft aan dat er een aangepast pictogram moet worden gebruikt. Een URL die wijst naar de pictogramafbeelding kan worden toegevoegd aan het einde van de parameter `pins`, achter de locatiegegevens van de speld.
+* `{udid}` - een unieke gegevens-id (UDID) voor een pictogram dat is opgeslagen in het Azure Maps Data Storage-platform.
 
 Voeg speldstijlen toe met de indeling `optionNameValue`. Scheid meerdere stijlen door een verticale streep (\|). Bijvoorbeeld: `iconType|optionName1Value1|optionName2Value2`. De optienamen en waarden worden niet gescheiden. Gebruik de volgende stijloptienamen voor stijlmarkeringen:
 
-- `al` - geeft de matheid (alfa) van de markering aan. Kies een getal tussen 0 en 1.
-- `an` - geeft het speldanker aan. Geef x- en y-pixelwaarden op in de indeling 'x y'.
-- `co` - de kleur van de speld. Geef een 24-bits hexadecimale kleur op: `000000` tot `FFFFFF`.
-- `la` - geeft de ankerkleur aan. Geef x- en y-pixelwaarden op in de indeling 'x y'.
-- `lc` - de kleur van het label. Geef een 24-bits hexadecimale kleur op: `000000` tot `FFFFFF`.
-- `ls` - de grootte van het label in pixels. Kies een getal dat groter is dan 0.
-- `ro` - het aantal graden dat het pictogram moet worden gedraaid. Kies een getal tussen -360 en 360.
-- `sc` - een schaalwaarde voor het speldpictogram. Kies een getal dat groter is dan 0.
+* `al` - geeft de matheid (alfa) van de markering aan. Kies een getal tussen 0 en 1.
+* `an` - geeft het speldanker aan. Geef x- en y-pixelwaarden op in de indeling 'x y'.
+* `co` - de kleur van de speld. Geef een 24-bits hexadecimale kleur op: `000000` tot `FFFFFF`.
+* `la` - geeft de ankerkleur aan. Geef x- en y-pixelwaarden op in de indeling 'x y'.
+* `lc` - de kleur van het label. Geef een 24-bits hexadecimale kleur op: `000000` tot `FFFFFF`.
+* `ls` - de grootte van het label in pixels. Kies een getal dat groter is dan 0.
+* `ro` - het aantal graden dat het pictogram moet worden gedraaid. Kies een getal tussen -360 en 360.
+* `sc` - een schaalwaarde voor het speldpictogram. Kies een getal dat groter is dan 0.
 
 Geef labelwaarden op voor elke speldlocatie. Deze aanpak is efficiënter dan het toepassen van één labelwaarde op alle markeringen in de lijst met locaties. De labelwaarde kan een tekenreeks met meerdere tekens zijn. Verpak de tekenreeks in enkele aanhalingstekens om ervoor te zorgen dat deze niet wordt opgevat als een stijl- of locatiewaarde.
 
 Laten we een rood (`FF0000`) standaardpictogram toevoegen met daaronder (15 50) de naam 'Space Needle'. Het pictogram bevindt zich op lengtegraad -122,349300 en breedtegraad 47.620180:
 
-```
+```text
 &pins=default|coFF0000|la15 50||'Space Needle' -122.349300 47.620180
 ```
 
@@ -360,7 +358,7 @@ Laten we een rood (`FF0000`) standaardpictogram toevoegen met daaronder (15 50) 
 
 Voeg drie spelden toe met de labelwaarden 1, 2 en 3:
 
-```
+```text
 &pins=default||'1'-122 45|'2'-119.5 43.2|'3'-121.67 47.12
 ```
 
@@ -372,7 +370,7 @@ Voeg drie spelden toe met de labelwaarden 1, 2 en 3:
 
 Voeg lijnen en een veelhoek toe aan een statische kaartafbeelding met behulp van de parameter `path` in de URL. De parameter `path` maakt gebruik van een stijl en een lijst met locaties die op de kaart moeten worden weergegeven, zoals hieronder wordt weergegeven:
 
-```
+```text
 &path=pathStyles|pathLocation1|pathLocation2|...
 ```
 
@@ -382,14 +380,14 @@ Padlocaties worden opgegeven met de indeling `latitude1,longitude1|latitude2,lon
 
 Voeg padstijlen toe met de indeling \| en scheid meerdere stijlen door een verticale streep (`optionName:value`). Scheid de optienamen en waarden door een dubbele punt (:). Voorbeeld: `optionName1:value1|optionName2:value2`. De volgende stijloptienamen kunnen worden gebruikt voor stijlpaden in Google Maps:
 
-- `color` - de kleur van het pad of de contour van de veelhoek. Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`), een 32-bits hexadecimale kleur (`0xrrggbbbaa`) of een van de volgende waarden zijn: zwart, bruin, groen, paars, geel, blauw, grijs, oranje, rood, wit.
-- `fillColor` - de kleur om het padgebied mee op te vullen (veelhoek). Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`), een 32-bits hexadecimale kleur (`0xrrggbbbaa`) of een van de volgende waarden zijn: zwart, bruin, groen, paars, geel, blauw, grijs, oranje, rood, wit.
-- `geodesic` – geeft aan of het pad een lijn moet zijn die de kromming van de aarde volgt.
-- `weight` - de dikte van de padlijn in pixels.
+* `color` - de kleur van het pad of de contour van de veelhoek. Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`), een 32-bits hexadecimale kleur (`0xrrggbbbaa`) of een van de volgende waarden zijn: zwart, bruin, groen, paars, geel, blauw, grijs, oranje, rood, wit.
+* `fillColor` - de kleur om het padgebied mee op te vullen (veelhoek). Dit kan een 24-bits hexadecimale kleur (`0xrrggbb`), een 32-bits hexadecimale kleur (`0xrrggbbbaa`) of een van de volgende waarden zijn: zwart, bruin, groen, paars, geel, blauw, grijs, oranje, rood, wit.
+* `geodesic` – geeft aan of het pad een lijn moet zijn die de kromming van de aarde volgt.
+* `weight` - de dikte van de padlijn in pixels.
 
 Voeg tussen de coördinaten een rode lijnmatheid en pixeldikte toe aan de kaart, in de URL-parameter. In het onderstaande voorbeeld heeft de lijn een matheid van 50 procent en een dikte van vier pixels. De coördinaten zijn lengtegraad -110, breedtegraad 45 en lengtegraad -100, breedtegraad 50.
 
-```
+```text
 &path=color:0xFF000088|weight:4|45,-110|50,-100
 ```
 
@@ -399,7 +397,7 @@ Voeg tussen de coördinaten een rode lijnmatheid en pixeldikte toe aan de kaart,
 
 Voeg lijnen en veelhoeken toe aan een statische kaartafbeelding door de parameter `path` op te geven in de URL. Net als bij Google Maps geeft u een stijl en een lijst met locaties op in deze parameter. Geef de parameter `path` meerdere keren op om meerdere cirkels, lijnen en veelhoeken met verschillende stijlen weer te geven.
 
-```
+```text
 &path=pathStyles||pathLocation1|pathLocation2|...
 ```
 
@@ -407,16 +405,16 @@ Voor padlocaties moeten de coördinaten in Azure Maps de indeling lengtegraad br
 
 Voeg padstijlen toe met de indeling `optionNameValue`. Scheid meerdere stijlen door een verticale streep (\|), bijvoorbeeld `optionName1Value1|optionName2Value2`. De optienamen en waarden worden niet gescheiden. Gebruik de volgende stijloptienamen voor stijlpaden in Azure Maps:
 
-- `fa` - de matheid (alfa) van de opvulkleur die wordt gebruikt bij het weergeven van veelhoeken. Kies een getal tussen 0 en 1.
-- `fc` - de opvulkleur die wordt gebruikt om het gebied van een veelhoek weer te geven.
-- `la` - de matheid (alfa) van de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken. Kies een getal tussen 0 en 1.
-- `lc` - de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken.
-- `lw` - de breedte van de lijn in pixels.
-- `ra` - geeft de cirkelradius in meters aan.
+* `fa` - de matheid (alfa) van de opvulkleur die wordt gebruikt bij het weergeven van veelhoeken. Kies een getal tussen 0 en 1.
+* `fc` - de opvulkleur die wordt gebruikt om het gebied van een veelhoek weer te geven.
+* `la` - de matheid (alfa) van de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken. Kies een getal tussen 0 en 1.
+* `lc` - de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken.
+* `lw` - de breedte van de lijn in pixels.
+* `ra` - geeft de cirkelradius in meters aan.
 
 Voeg tussen de coördinaten een rode lijnmatheid en pixeldikte toe, in de URL-parameter. In het onderstaande voorbeeld heeft de lijn een matheid van 50 procent en een dikte van vier pixels. De coördinaten hebben de volgende waarden: lengtegraad: -110, breedtegraad 45 en lengtegraad -100, breedtegraad 50.
 
-```
+```text
 &path=lcFF0000|la.5|lw4||-110 45|-100 50
 ```
 
@@ -481,11 +479,15 @@ Naast deze API biedt Azure Maps een aantal andere tijdzone-API's. Met deze API's
 
 Azure Maps biedt clientbibliotheken voor de volgende computertalen:
 
-- JavaScript, TypeScript, Node.js – [documentatie](how-to-use-services-module.md) \| [NPM-pakket](https://www.npmjs.com/package/azure-maps-rest)
+* JavaScript, TypeScript, Node.js – [documentatie](how-to-use-services-module.md) \| [NPM-pakket](https://www.npmjs.com/package/azure-maps-rest)
 
 Deze bibliotheken voor opensource-clients zijn voor andere computertalen:
 
-- .NET Standard 2.0 – [GitHub-project](https://github.com/perfahlen/AzureMapsRestServices) \| [NuGet-pakket](https://www.nuget.org/packages/AzureMapsRestToolkit/)
+* .NET Standard 2.0 – [GitHub-project](https://github.com/perfahlen/AzureMapsRestServices) \| [NuGet-pakket](https://www.nuget.org/packages/AzureMapsRestToolkit/)
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources om op te schonen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -493,18 +495,3 @@ Meer informatie over Azure Maps REST-services:
 
 > [!div class="nextstepaction"]
 > [Aanbevolen procedures voor zoeken](how-to-use-best-practices-for-search.md)
-
-> [!div class="nextstepaction"]
-> [Zoeken naar een adres](how-to-search-for-address.md)
-
-> [!div class="nextstepaction"]
-> [Best practices voor routering](how-to-use-best-practices-for-routing.md)
-
-> [!div class="nextstepaction"]
-> [Naslagdocumentatie over de REST-service-API van Azure Maps](/rest/api/maps/)
-
-> [!div class="nextstepaction"]
-> [Codevoorbeelden](/samples/browse/?products=azure-maps)
-
-> [!div class="nextstepaction"]
-> [De services-module gebruiken (Web SDK)](how-to-use-best-practices-for-routing.md)

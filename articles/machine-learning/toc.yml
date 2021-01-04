@@ -165,6 +165,8 @@
       href: concept-model-management-and-deployment.md
     - name: Modelportabiliteit (ONNX)
       href: concept-onnx.md
+    - name: Open source-integraties
+      href: concept-open-source.md
     - name: Machine learning-pijplijnen
       href: concept-ml-pipelines.md
     - name: Beveiliging
@@ -370,6 +372,8 @@
           href: how-to-train-pytorch.md
         - name: Trainen met aangepaste Docker-installatiekopie
           href: how-to-train-with-custom-image.md
+        - name: Migreren van schatters naar ScriptRunConfig
+          href: how-to-migrate-from-estimators-to-scriptrunconfig.md
         - name: Training voor volgen en bewaken
           items:
             - name: 'Uitvoeringen starten, bewaken of annuleren'
@@ -513,8 +517,6 @@
           href: how-to-move-data-in-out-of-pipelines.md
         - name: ML-pijplijnen implementeren (Python)
           href: how-to-deploy-pipelines.md
-        - name: Een pijplijn plannen (Python)
-          href: how-to-schedule-pipelines.md
         - name: Een pijplijn activeren
           href: how-to-trigger-published-pipeline.md
         - name: Designer (slepen en neerzetten)

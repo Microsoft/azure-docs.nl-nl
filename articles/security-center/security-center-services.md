@@ -1,6 +1,6 @@
 ---
-title: Ondersteunde functies die beschikbaar zijn in Azure Security Center | Microsoft Docs
-description: Dit document bevat een lijst met services die door Azure Security Center worden ondersteund.
+title: De functies van Azure Security Center, afhankelijk van het besturingssysteem, het machinetype en de cloud
+description: Meer informatie over welke Azure Security Center-functies beschikbaar zijn per besturingssysteem, type en cloud-implementatie.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/12/2020
+ms.date: 12/17/2020
 ms.author: memildin
-ms.openlocfilehash: 40d70c7bd740d8c72ddb72047a3bae3586e1aa1f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: b3671a57b8371c47b1690b4bf6be008d695d1ca0
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445248"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97654741"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -99,10 +99,45 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 | McAfee v10+ | Linux Server-familie  | Nee | Ja * *\** _ |
 | Sophos V9+| Linux Server-familie  | Nee | Ja _*\**_  |
 
- _ *\** * De status van de dekking en de ondersteunende gegevens zijn momenteel alleen beschikbaar in de Log Analytics-werkruimte die aan uw beveiligde abonnementen is gekoppeld. Deze wordt niet weergegeven in de Azure Security Center-portal.
+ _*\**_ De status van de dekking en de ondersteunende gegevens zijn momenteel alleen beschikbaar in de Log Analytics-werkruimte die aan uw beveiligde abonnementen is gekoppeld. Deze wordt niet weergegeven in de Azure Security Center-portal.
 
 > [!NOTE]
 > Voor de detectie van System Center Endpoint Protection (SCEP) op een virtuele machine met Windows Server 2008 R2 moet SCEP worden geïnstalleerd na PowerShell (v 3.0 of nieuwer).
+
+
+
+## <a name="feature-support-in-government-clouds"></a>Functieondersteuning in overheidsclouds
+
+| Service / functie | US Gov | China Gov |
+|------|:----:|:----:|
+|[Just-in-time-toegang voor virtuele machines](security-center-just-in-time.md) (1)|✔|✔|
+|[Controle van de bestandsintegriteit](security-center-file-integrity-monitoring.md) (1)|✔|-|
+|[Adaptieve toepassingsregelaars](security-center-adaptive-application.md) (1)|✔|✔|
+|[Adaptieve netwerkbeveiliging](security-center-adaptive-network-hardening.md) (1)|-|-|
+|[Docker-hostbeveiliging](harden-docker-hosts.md) (1)|✔|✔|
+|[Geïntegreerde evaluatie van beveiligingsproblemen voor machines](deploy-vulnerability-assessment-vm.md) (1)|-|-|
+|[Microsoft Defender for Endpoint](harden-docker-hosts.md) (1)|✔|-|
+|[Verbinding maken met AWS-accounts](quickstart-onboard-aws.md) (1)|-|-|
+|[Verbinding maken met GCP-accounts](quickstart-onboard-gcp.md) (1)|-|-|
+|[Continue export](continuous-export.md)|✔|✔|
+|[Werkstroomautomatisering](workflow-automation.md)|✔|✔|
+|[Regels voor uitzonderingen voor aanbevelingen](exempt-resource.md)|-|-|
+|[Regels voor waarschuwingsonderdrukking](alerts-suppression-rules.md)|✔|✔|
+|[E-mailmeldingen voor beveiligingswaarschuwingen](security-center-provide-security-contact-details.md)|✔|✔|
+|[Inventarisatie van assets](asset-inventory.md)|-|-|
+|[Azure Defender voor App Service](defender-for-app-service-introduction.md)|-|-|
+|[Azure Defender voor Storage](defender-for-storage-introduction.md)|✔|-|
+|[Azure Defender voor SQL](defender-for-sql-introduction.md)|✔|✔ (2)|
+|[Azure Defender voor Key Vault](defender-for-key-vault-introduction.md)|-|-|
+|[Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
+|[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
+|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|-|
+|||
+
+(1) Vereist _ *Azure Defender voor servers**
+
+(2) Gedeeltelijk
 
 
 ## <a name="next-steps"></a>Volgende stappen

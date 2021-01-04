@@ -1,17 +1,17 @@
 ---
 title: Azure Data Lake Storage Gen1 prestaties afstemmen
 description: Meer informatie over het gebruik van alle beschik bare door Voer in Azure Data Lake Storage Gen1 is belang rijk om de beste prestaties te verkrijgen door zo veel mogelijk Lees-en schrijf bewerkingen tegelijk uit te voeren.
-author: stewu
+author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 06/30/2017
-ms.author: stewu
-ms.openlocfilehash: e9a589b43490613834a810a68636c426e45c2656
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.author: twooley
+ms.openlocfilehash: c7f16dd9ea450185893164e10928c7022d6ab5a6
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332515"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724677"
 ---
 # <a name="tune-azure-data-lake-storage-gen1-for-performance"></a>Azure Data Lake Storage Gen1 voor prestaties afstemmen
 
@@ -131,7 +131,7 @@ Naast de bovenstaande algemene richt lijnen heeft elke toepassing verschillende 
 | [MapReduce in HDInsight](data-lake-store-performance-tuning-mapreduce.md)            | <ul><li>MapReduce. map. Memory</li><li>MapReduce. job. Maps</li><li>MapReduce. Reduc. Memory</li><li>MapReduce. job. reduceert</li></ul> |
 | [Storm op HDInsight](data-lake-store-performance-tuning-storm.md)| <ul><li>Aantal werk processen</li><li>Aantal exemplaren van de Spout-uitvoerder</li><li>Aantal exemplaren van de bout-uitvoerder </li><li>Aantal Spout-taken</li><li>Aantal Schicht-taken</li></ul>|
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Overzicht van Azure Data Lake Storage Gen1](data-lake-store-overview.md)
 * [Aan de slag met Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

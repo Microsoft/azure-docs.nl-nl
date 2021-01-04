@@ -3,7 +3,7 @@ title: Azure Storage gebruiken voor SQL Server back-up en herstellen | Microsoft
 description: Meer informatie over het maken van een back-up van SQL Server naar Azure Storage. Hierin worden de voor delen van het maken van back-ups van SQL-data bases in Azure Storage uitgelegd
 services: virtual-machines-windows
 documentationcenter: ''
-author: MikeRayMSFT
+author: MashaMSFT
 tags: azure-service-management
 ms.assetid: 0db7667d-ef63-4e2b-bd4d-574802090f8b
 ms.service: virtual-machines-sql
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/31/2017
 ms.author: mathoma
-ms.openlocfilehash: b4100800385792557358d3fb6438f52650483f89
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 35fff49a53f5a0a9532fd0dff841356c5deaf3ea
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359786"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724779"
 ---
 # <a name="use-azure-storage-for-sql-server-backup-and-restore"></a>Azure Storage gebruiken voor SQL Server back-up en herstel
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
-Vanaf SQL Server 2012 SP1 CU2 kunt u nu rechtstreeks SQL Server back-ups naar Azure Blob-opslag schrijven. U kunt deze functie gebruiken om een back-up te maken van en te herstellen vanuit Azure Blob-opslag en een SQL Server-Data Base. De back-up naar de Cloud biedt voor delen van Beschik baarheid, onbeperkte geo-gerepliceerde opslag op locatie en gemakkelijke migratie van gegevens van en naar de Cloud. U kunt een back-up-of Restore-instructie verzenden met behulp van Transact-SQL of SMO.
+Vanaf SQL Server 2012 SP1 CU2 kunt u nu rechtstreeks een back-up van SQL Server data bases maken in Azure Blob-opslag. Gebruik deze functie om een back-up te maken van en te herstellen vanuit Azure Blob-opslag. Back-up naar de Cloud biedt voor delen van Beschik baarheid, onbeperkte geo-gerepliceerde opslag op locatie en gemakkelijke migratie van gegevens van en naar de Cloud. U kunt met `BACKUP` `RESTORE` behulp van Transact-SQL of SMO problemen of overzichten verlenen.
 
 ## <a name="overview"></a>Overzicht
 SQL Server 2016 introduceert nieuwe mogelijkheden. u kunt [back-ups van bestands momentopnamen](/sql/relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure) gebruiken om bijna momentane back-ups en zeer snelle herstel bewerkingen uit te voeren.
@@ -52,26 +52,26 @@ De volgende Azure-onderdelen worden gebruikt bij het maken van een back-up naar 
 | --- | --- |
 | **Opslagaccount** |Het opslag account is het begin punt voor alle opslag Services. Als u toegang wilt krijgen tot Azure Blob-opslag, moet u eerst een Azure Storage-account maken. Zie [Azure Blob Storage gebruiken](https://azure.microsoft.com/develop/net/how-to-guides/blob-storage/)voor meer informatie over Azure Blob-opslag. |
 | **Container** |Een container biedt een groepering van een set blobs en kan een onbeperkt aantal blobs bevatten. Als u een SQL Server back-up wilt schrijven naar Azure Blob-opslag, moet u ten minste de basis container hebben gemaakt. |
-| **Blob** |Een bestand van elk type en elke grootte. Blobs zijn adresseerbaar met behulp van de volgende URL-indeling: **https://[Storage account]. blob. core. Windows. net/[container]/[BLOB]**. Zie [Wat zijn blok-en pagina-blobs](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) ? voor meer informatie over pagina-blobs. |
+| **Blob** |Een bestand van elk type en elke grootte. Blobs zijn adresseerbaar met behulp van de volgende URL-indeling: `https://<storageaccount>.blob.core.windows.net/<container>/<blob>` . Zie [Wat zijn blok-en pagina-blobs](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) ? voor meer informatie over pagina-blobs. |
 
 ## <a name="sql-server-components"></a>SQL Server onderdelen
 De volgende SQL Server onderdelen worden gebruikt bij het maken van een back-up naar Azure Blob Storage.
 
 | Onderdeel | Beschrijving |
 | --- | --- |
-| **URL** |Met een URL wordt een Uniform Resource Identifier (URI) naar een uniek back-upbestand opgegeven. De URL wordt gebruikt om de locatie en naam van het back-upbestand van SQL Server op te geven. De URL moet verwijzen naar een echte blob, niet alleen een container. Als de BLOB niet bestaat, wordt deze gemaakt. Als een bestaande blob is opgegeven, mislukt de back-up, tenzij de > met de optie FORMAT is opgegeven. Hier volgt een voor beeld van de URL die u in de back-upopdracht zou opgeven: **http [s]://[Storage account]. blob. core. Windows. net/[container]/[filename. bak]**. HTTPS wordt aanbevolen, maar is niet vereist. |
+| **URL** |Met een URL wordt een Uniform Resource Identifier (URI) naar een uniek back-upbestand opgegeven. De URL bevat de locatie en naam van het back-upbestand van SQL Server. De URL moet verwijzen naar een echte blob, niet alleen een container. Als de BLOB niet bestaat, wordt deze door Azure gemaakt. Als een bestaande blob is opgegeven, mislukt de back-upopdracht, tenzij de `WITH FORMAT` optie is opgegeven. Hier volgt een voor beeld van de URL die u in de back-upopdracht zou opgeven: `https://<storageaccount>.blob.core.windows.net/<container>/<FILENAME.bak>` .<br><br> HTTPS wordt aanbevolen, maar is niet vereist. |
 | **Referentie** |De gegevens die nodig zijn om verbinding te maken en te verifiëren met Azure Blob Storage, worden opgeslagen als referentie. Als SQL Server back-ups naar een Azure-Blob wilt schrijven of van deze wilt herstellen, moet u een SQL Server referentie maken. Zie [SQL Server referentie](/sql/t-sql/statements/create-credential-transact-sql)voor meer informatie. |
 
 > [!NOTE]
 > SQL Server 2016 is bijgewerkt ter ondersteuning van blok-blobs. Raadpleeg de [zelf studie: Microsoft Azure Blob-opslag gebruiken met SQL Server 2016-data bases](/sql/relational-databases/tutorial-use-azure-blob-storage-service-with-sql-server-2016) voor meer informatie.
 > 
-> 
 
 ## <a name="next-steps"></a>Volgende stappen
+
 1. Maak een Azure-account als u er nog geen hebt. Als u Azure evalueert, moet u rekening houden met de [gratis proef versie](https://azure.microsoft.com/free/).
 2. Ga vervolgens door met een van de volgende zelf studies, waarmee u een opslag account maakt en een herstel bewerking uitvoert.
    
-   * **SQL Server 2014**: [zelf studie: SQL Server 2014 back-up en herstel naar Microsoft Azure Blob-opslag](https://msdn.microsoft.com/library/jj720558\(v=sql.120\).aspx).
+   * **SQL Server 2014**: [zelf studie: SQL Server 2014 back-up en herstel naar Microsoft Azure Blob-opslag](/previous-versions/sql/2014/relational-databases/backup-restore/sql-server-backup-to-url).
    * **SQL Server 2016**: [zelf studie: de Microsoft Azure Blob storage gebruiken met SQL Server 2016-data bases](/sql/relational-databases/tutorial-use-azure-blob-storage-service-with-sql-server-2016)
 3. Bekijk de aanvullende documentatie vanaf [SQL Server back-up en herstel met Microsoft Azure Blob-opslag](/sql/relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service).
 

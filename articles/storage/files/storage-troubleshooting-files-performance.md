@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 90942e4deebdc65fe26ce94f04a15fe2b8c0684c
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 960b3c29f97c43e1247018a60f6c6310c7cf02de
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512066"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724660"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -46,7 +46,7 @@ Als u wilt controleren of uw share wordt beperkt, kunt u Azure-metrische gegeven
 ### <a name="solution"></a>Oplossing
 
 - Als u een standaard bestands share gebruikt, schakelt u [grote bestands shares](./storage-files-how-to-create-large-file-share.md?tabs=azure-portal) in voor uw opslag account. Grote bestands shares bieden ondersteuning voor Maxi maal 10.000 IOPS per share.
-- Als u een Premium-bestands share gebruikt, verg root u de grootte van de ingerichte bestands share om de limiet voor IOPS te verhogen. Zie de sectie ' wat is inrichten voor Premium file shares ' in de [plannings handleiding van Azure files](./storage-files-planning.md#understanding-provisioning-for-premium-file-shares)voor meer informatie.
+- Als u een Premium-bestands share gebruikt, verg root u de grootte van de ingerichte bestands share om de limiet voor IOPS te verhogen. Zie het onderwerp [over het inrichten van Premium-bestands shares voor](./understanding-billing.md#provisioned-billing)meer informatie.
 
 ### <a name="cause-2-metadata-or-namespace-heavy-workload"></a>Oorzaak 2: meta gegevens of een zware werk belasting van de naam ruimte
 
@@ -285,7 +285,7 @@ Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.co
 
 Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)voor meer informatie over het configureren van waarschuwingen in azure monitor.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 - [Problemen met Azure Files in Windows oplossen](storage-troubleshoot-windows-file-connection-problems.md)  
 - [Problemen met Azure Files in Linux oplossen](storage-troubleshoot-linux-file-connection-problems.md)  
 - [Veelgestelde vragen over Azure Files](storage-files-faq.md)

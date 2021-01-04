@@ -15,12 +15,12 @@ ms.date: 12/11/2020
 ms.subservice: hybrid
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad3bd938355d138e660958e34d046d7af03e75c7
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: edb602e3d55ae07f49d5448283ae0d2b6da4b0cb
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97371103"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97694160"
 ---
 # <a name="manage-agent-registry-options"></a>Agent Register opties beheren
 
@@ -63,6 +63,30 @@ Gebruik de volgende stappen om referentie Chasing in te scha kelen:
     > ![Verwijzing Chasing](media/how-to-manage-registry-options/referral-chasing.png)
 1. Start de Azure AD Connect Provisioning-Service opnieuw vanuit de *Services* -console.
 1. Als u meerdere inrichtings agenten hebt geïmplementeerd, moet u deze register wijziging Toep assen op alle agents voor consistentie.
+
+## <a name="skip-gmsa-configuration"></a>GMSA-configuratie overs Laan
+Wanneer u de wizard agent configureren uitvoert met Agent versie 1.1.281.0 +, wordt u gevraagd om een door de [groep beheerd service account (GMSA)](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)in te stellen. De GMSA-instellingen van de wizard worden tijdens runtime gebruikt voor alle synchronisatie-en inrichtings bewerkingen. 
+
+Als u een upgrade uitvoert van een eerdere versie van de agent en een aangepast Service account hebt ingesteld met gedelegeerde machtigingen op OE-niveau die specifiek zijn voor uw Active Directory-topologie, kunt u de GMSA-configuratie overs Laan/uitstellen en deze wijziging plannen. 
+
+> [!NOTE]
+> Deze richt lijnen zijn specifiek van toepassing op klanten die inkomend (werk dagen/SuccessFactors) inkomende inrichting hebben geconfigureerd met agent versies voorafgaand aan 1.1.281.0 en een aangepast Service account voor agent bewerkingen hebben ingesteld. In de lange periode kunt u het beste overschakelen naar GMSA als een best practice.  
+
+In dit scenario kunt u nog steeds de binaire bestanden van de agent bijwerken en de GMSA-configuratie overs Laan door de volgende stappen uit te voeren: 
+
+1. Meld u als Administrator aan op de Windows-Server waarop de Azure AD Connect inrichtings agent wordt uitgevoerd.
+1. Voer het installatie programma van de agent uit om de nieuwe binaire bestanden van de agent te installeren. Sluit de wizard agent configureren, die automatisch wordt geopend nadat de installatie is voltooid. 
+1. Gebruik de menu opdracht *uitvoeren* om de REGI ster-editor (regedit.exe) te openen. 
+1. Zoek de sleutel map **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent**
+1. Klik met de rechter muisknop en selecteer ' New-> DWORD-waarde '
+1. Geef de naam op: `UseCredentials`
+1. Dubbel klik op de naam van de **waarde** en voer de waardegegevens in als `1` .  
+    > [!div class="mx-imgBorder"]
+    > ![Referenties gebruiken](media/how-to-manage-registry-options/use-credentials.png)
+1. Start de Azure AD Connect Provisioning-Service opnieuw vanuit de *Services* -console.
+1. Als u meerdere inrichtings agenten hebt geïmplementeerd, moet u deze register wijziging Toep assen op alle agents voor consistentie.
+1. Voer de wizard agent configureren uit vanaf de korte cut. De wizard slaat de configuratie van GMSA over. 
+
 
 > [!NOTE]
 > U kunt controleren of de Register opties zijn ingesteld door [uitgebreide logboek registratie](how-to-troubleshoot.md#log-files)in te scha kelen. De logboeken die tijdens het opstarten van de agent worden gegenereerd, worden weer gegeven in de configuratie waarden die zijn opgenomen in het REGI ster. 

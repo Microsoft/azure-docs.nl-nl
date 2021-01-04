@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 10/26/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: ac3f2cc1c68ea552b2858d932217a28055fee0fd
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 627196c0a76f1de23f7e5421c47a33356a73967f
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466739"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709432"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge Pro R
 
@@ -86,6 +86,7 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
   * Geïsoleerd van krachtige elektromagnetische velden die door elektrische apparaten worden geproduceerd.
   * Voorzien van goed geaarde afzet mogelijkheden.
   * Voorzien van voldoende ruimte om toegang te krijgen tot de stroom kabel (s), omdat ze fungeren als de hoofd stroom voor het verbreken van het product.
+* Ethernet-kabels worden niet meegeleverd met het product. Om elektromagnetische interferentie te verminderen, wordt aanbevolen dat Cat 6 shielded twisted-paar-bekabeling (STP) wordt gebruikt.
 * Het instellen van de apparatuur in een werk ruimte die de nodige lucht omloop rond de apparatuur toestaat; Zorg ervoor dat de voor-en achterkant volledig worden verwijderd terwijl het apparaat wordt uitgevoerd.
 * Installeer de apparatuur in het gebied van de door de Tempe ratuur bewaakte ruimte vrij van verontreinigingen en sta voldoende lucht omloop rond de apparatuur toe.
 * Houd de apparatuur weg van bronnen van vloei bare en buitensporig vochtige omgevingen.
@@ -115,6 +116,11 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
   * Het apparaat is verwijderd en de behuizing van het apparaat is beschadigd.
   * U vermoedt dat het apparaat service of reparatie nodig heeft.
 * Ontkoppel de eenheid permanent voordat u deze verplaatst of als u denkt dat deze op enigerlei wijze beschadigd is geraakt.
+* Om te voor komen dat een hoge lekkage actueel is, is het raadzaam dat elke nood zaak is verbonden met een onafhankelijk vertakkings circuit wanneer één doorvoer oplossing meer dan één niet-onderbroken voeding heeft. In het geval dat een energie distributie-eenheid (PDU) of een ander apparaat wordt gebruikt, waarbij de veiligheid van elke nood voeding afhankelijk is van een enkele invoer lade van de PDU, moet de massa Terminal aan de buiten kant van elke nood voeding ook worden gebruikt met een aanvullend gebouw voor de grond.
+
+  > [!NOTE]
+  > Als een PDU wordt gebruikt die al een aanvullend wegdek heeft, is het gebruik van de extra geaard Terminal op de UPS niet vereist.
+
 * Geef een geschikte voedings bron met elektrische overbelasting beveiliging op om te voldoen aan de volgende energie specificaties:
 
   * Voltage: 100 tot 240 v wissel spanning
@@ -157,7 +163,7 @@ Het apparaat is ontworpen om te worden gebruikt in de volgende omgevingen:
 |:--- |:--- |
 |Temperatuur specificaties | <ul><li>Opslag temperatuur: – 33 &deg; c – 63 &deg; C (– 28 &deg; f-145 &deg; f) </li><li>Doorlopende bewerking: 5 &deg; c – 43 &deg; c (41 &deg; F – 110 &deg; F)</li><li>Maximale temperatuur overgang (besturings-en opslag): 20 &deg; C/h (68 &deg; F/h)</li></ul> |
 |Relatieve vochtigheids specificaties | <ul><li>Opslag: 5% tot 95% RH met 33 &deg; C (91 &deg; F) maximum Dew-punt. De atmosfeer moet te allen tijde niet-condenserend zijn.</li><li>Actief: 5% tot 85% relatieve vochtigheids graad met 29 &deg; C (84,2 &deg; F) Maxi maal Dew punt</li></ul> |
-| Specificaties maximum hoogte | <ul><li>Actief (zonder nood voeding): 15.000 ft (4.572 meters)</li><li>Actief (met UPS): 6,561 ft (2.000 meters)</li><li>Opslag: 40.000 ft (12.192 meters)</li></ul> |
+| Specificaties maximum hoogte | <ul><li>Actief (zonder nood voeding): 15.000 ft (4.572 meters)</li><li>Actief (met UPS): 10.000 ft (3.048 meters)</li><li>Opslag: 40.000 ft (12.192 meters)</li></ul> |
 
 <!--|Standard operating temperature specifications | <ul>Continuous operation (for altitude less than 950 m or 3117 ft): +5&deg;C–45&deg;C (41&deg;F–113&deg;F) with no direct sunlight on the equipment</ui>
 |Expanded operating temperature specifications | <ul><li>Continuous operation: 5&deg;C to 45&deg;C at 5% to 85% RH with 29&deg;C dew point.</li><li></= 1% of annual operating hours: –5&deg;C to 55&deg;C at 5% to 90% RH with 29&deg;C dew point. |

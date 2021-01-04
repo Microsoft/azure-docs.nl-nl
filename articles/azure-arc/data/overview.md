@@ -9,12 +9,12 @@ ms.service: azure-arc
 ms.subservice: azure-arc-data
 ms.date: 09/22/2020
 ms.topic: overview
-ms.openlocfilehash: e8a28415bf9448133102e92a658e7d200ac2772c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: ef16a4c0b6ea40fb4934307916f1fe79ccea72f9
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316969"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97609136"
 ---
 # <a name="what-are-azure-arc-enabled-data-services-preview"></a>Wat zijn Azure Arc-gegevensservices (preview)?
 
@@ -33,7 +33,7 @@ Azure Arc-gegevensservices, zoals Azure Arc Enabled SQL Managed Instance en Azur
 
 ## <a name="elastic-scale"></a>Elastisch schalen
 
-Met cloudfunctionaliteit on-premises kunt u databases op dezelfde manier dynamisch omhoog of omlaag schalen als in Azure, op basis van de beschikbare capaciteit van uw infrastructuur. Deze mogelijkheid kan voldoen aan burst-scenario's die vluchtige behoeften hebben, waaronder scenario's waarbij gegevens in realtime moeten worden opgenomen en opgevraagd, op elke schaal, met een reactietijd van minder dan seconden. Daarnaast kunt u ook database-instanties uitschalen met behulp van de unieke implementatie optie voor hyperschalen van Azure Database for PostgreSQL Hyperscale. Deze mogelijkheid biedt gegevens-workloads een extra boost van capaciteitsoptimalisatie, met behulp van unieke scale- *out* lees- en schrijfbewerkingen.
+Met cloudfunctionaliteit on-premises kunt u databases op dezelfde manier dynamisch omhoog of omlaag schalen als in Azure, op basis van de beschikbare capaciteit van uw infrastructuur. Deze mogelijkheid kan voldoen aan burst-scenario's die vluchtige behoeften hebben, waaronder scenario's waarbij gegevens in realtime moeten worden opgenomen en opgevraagd, op elke schaal, met een reactietijd van minder dan seconden. Daarnaast kunt u ook database-instanties uitschalen met behulp van de unieke implementatie optie voor hyperschalen van Azure Database for PostgreSQL Hyperscale. Deze mogelijkheid biedt gegevens-workloads een extra boost van capaciteitsoptimalisatie, met behulp van unieke scale-*out* lees- en schrijfbewerkingen.
 
 ## <a name="self-service-provisioning"></a>Self-service inrichten
 
@@ -50,7 +50,7 @@ Veel van de services, zoals het inrichten van selfservice, automatische back-ups
 ## <a name="next-steps"></a>Volgende stappen
 
 > **Wilt u gewoon iets uitproberen?**  
-> Ga snel aan de slag met [Azure Arc Jumpstart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) op Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
+> Ga snel aan de slag met [Azure Arc Jumpstart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
 
 [Installeer de client-hulpprogramma's](install-client-tools.md)
 

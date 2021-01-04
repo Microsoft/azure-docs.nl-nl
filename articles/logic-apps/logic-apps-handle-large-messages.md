@@ -3,16 +3,14 @@ title: Grote berichten afhandelen met behulp van Chunking
 description: Meer informatie over het verwerken van grote bericht grootten met behulp van chunks in geautomatiseerde taken en werk stromen die u maakt met Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-author: DavidCBerry13
-ms.author: daberry
 ms.topic: article
-ms.date: 12/03/2019
-ms.openlocfilehash: 1b23c92ec70b80a6cd08fc42a05ffec1e5b43b31
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.date: 12/18/2020
+ms.openlocfilehash: de4af34182fc1a95968e95d322a6ec35101a3dc9
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656764"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695879"
 ---
 # <a name="handle-large-messages-with-chunking-in-azure-logic-apps"></a>Grote berichten verwerken met Chunking in Azure Logic Apps
 
@@ -40,8 +38,57 @@ Services die communiceren met Logic Apps kunnen hun eigen bericht grootte limiet
 
 Voor connectors die ondersteuning bieden voor Chunking, is het onderliggende Chunking-protocol onzichtbaar voor eind gebruikers. Niet alle connectors ondersteunen echter Chunking, dus genereren deze connectors fouten wanneer binnenkomende berichten de limieten voor de grootte van de connector overschrijden.
 
-> [!NOTE]
-> Voor acties die gebruikmaken van Chunking, kunt u de hoofd tekst van de trigger niet door geven of expressies gebruiken zoals `@triggerBody()?['Content']` in die acties. In plaats daarvan kunt u voor inhoud van tekst of JSON-bestand proberen de [actie **opstellen**](../logic-apps/logic-apps-perform-data-operations.md#compose-action) te gebruiken of [een variabele te maken](../logic-apps/logic-apps-create-variables-store-values.md) om die inhoud af te handelen. Als de hoofd tekst van de trigger andere inhouds typen bevat, zoals media bestanden, moet u andere stappen uitvoeren om die inhoud af te handelen.
+
+Voor acties die worden ondersteund en zijn ingeschakeld voor Chunking, kunt u geen trigger-instanties,-variabelen en-expressies gebruiken, zoals `@triggerBody()?['Content']` het gebruik van een van deze invoer om te voor komen dat de segment bewerking plaatsvindt. Gebruik in plaats daarvan de [actie **opstellen**](../logic-apps/logic-apps-perform-data-operations.md#compose-action). U moet in het bijzonder een `body` veld maken met behulp van de actie **opstellen** om de gegevens uitvoer op te slaan van de hoofd tekst van de trigger, de variabele, de expressie enzovoort, bijvoorbeeld:
+
+```json
+"Compose": {
+    "inputs": {
+        "body": "@variables('myVar1')"
+    },
+    "runAfter": {
+        "Until": [
+            "Succeeded"
+        ]
+    },
+    "type": "Compose"
+},
+```
+Gebruik, om te verwijzen naar de gegevens, in de segmenterende actie `@body('Compose')` .
+
+```json
+"Create_file": {
+    "inputs": {
+        "body": "@body('Compose')",
+        "headers": {
+            "ReadFileMetadataFromServer": true
+        },
+        "host": {
+            "connection": {
+                "name": "@parameters('$connections')['sftpwithssh_1']['connectionId']"
+            }
+        },
+        "method": "post",
+        "path": "/datasets/default/files",
+        "queries": {
+            "folderPath": "/c:/test1/test1sub",
+            "name": "tt.txt",
+            "queryParametersSingleEncoded": true
+        }
+    },
+    "runAfter": {
+        "Compose": [
+            "Succeeded"
+        ]
+    },
+    "runtimeConfiguration": {
+        "contentTransfer": {
+            "transferMode": "Chunked"
+        }
+    },
+    "type": "ApiConnection"
+},
+```
 
 <a name="set-up-chunking"></a>
 

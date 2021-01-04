@@ -9,16 +9,23 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: d257c66de8fb62fb57c573d91966f3e7d8d1b123
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 6024aae68183fbe02125ef4207e9fbce8abd6a2b
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904955"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679076"
 ---
-# <a name="tutorial---migrate-web-service-from-bing-maps"></a>Zelfstudie: webservice migreren vanuit Bing Kaarten
+# <a name="tutorial-migrate-web-service-from-bing-maps"></a>Zelfstudie: Webservice migreren vanuit Bing Maps
 
-Zowel Azure Maps als Bing Maps biedt toegang tot ruimtelijke API's via REST-webservices. De API-interfaces voor deze platformen voeren vergelijkbare functies uit, maar gebruiken verschillende naamconventies en antwoordobjecten.
+Zowel Azure Maps als Bing Maps biedt toegang tot ruimtelijke API's via REST-webservices. De API-interfaces voor deze platformen voeren vergelijkbare functies uit, maar gebruiken verschillende naamconventies en antwoordobjecten. In deze zelfstudie leert u het volgende:
+
+> * Voorwaartse en achterwaartse geocodering
+> * Zoeken naar nuttige plaatsen
+> * Routes en routebeschrijvingen berekenen
+> * Een kaartafbeelding ophalen
+> * Een afstandsmatrix berekenen
+> * Tijdzone-informatie ophalen
 
 De volgende tabel bevat de API’s van de Azure Maps-service die vergelijkbare functionaliteit bieden als de vermelde API's van de Bing Maps-service.
 
@@ -59,6 +66,12 @@ Controleer ook de volgende handleidingen voor aanbevolen procedures:
 -   [Aanbevolen procedures voor zoeken](./how-to-use-best-practices-for-search.md)
 -   [Best practices voor routering](./how-to-use-best-practices-for-routing.md)
 
+## <a name="prerequisites"></a>Vereisten
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+2. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel. Zie [Verificatie beheren in Azure Maps](how-to-manage-authentication.md) voor meer informatie over verificatie in Azure Maps.
+
 ## <a name="geocoding-addresses"></a>Geocodering van adressen
 
 Bij geocodering wordt een adres (zoals `"1 Microsoft way, Redmond, WA"`) omgezet naar een coördinaat (zoals lengtegraad: -122,1298, breedtegraad: 47.64005). Coördinaten worden vervolgens vaak gebruikt om een punaise op een kaart te plaatsen of om een kaart te centreren.
@@ -91,9 +104,9 @@ De volgende tabellen bevatten kruisverwijzingen naar de API-parameters van Bing 
 
 Azure Maps ondersteunt ook;
 
--   `countrySecondarySubdivision` -Regio, districten
--   `countryTertiarySubdivision` -Gebieden met naam; buurten, kantons, gemeenschappen
--   `ofs` -Paginering van de resultaten in combinatie met de `maxResults`-parameter.
+* `countrySecondarySubdivision` -Regio, districten
+* `countryTertiarySubdivision` -Gebieden met naam; buurten, kantons, gemeenschappen
+* `ofs` -Paginering van de resultaten in combinatie met de `maxResults`-parameter.
 
 **Locatie per query (vrije adrestekenreeks)**
 
@@ -109,10 +122,10 @@ Azure Maps ondersteunt ook;
 
 Azure Maps ondersteunt ook;
 
--   `typeahead` – Geeft aan of de query wordt geïnterpreteerd als een gedeeltelijke invoer en de zoekopdracht overschakelt naar de voorspellingsmodus (automatische suggestie/automatisch aanvullen).
--   `countrySet` – Een door komma's gescheiden lijst met ISO2-landcodes waartoe de zoekopdracht kan worden beperkt.
--   `lat`/`lon`, `topLeft`/`btmRight`, `radius` – Geef de locatie en het gebied van de gebruiker op om de resultaten lokaal relevant te maken.
--   `ofs` -Paginering van de resultaten in combinatie met de `maxResults`-parameter.
+* `typeahead` – Geeft aan of de query wordt geïnterpreteerd als een gedeeltelijke invoer en de zoekopdracht overschakelt naar de voorspellingsmodus (automatische suggestie/automatisch aanvullen).
+* `countrySet` – Een door komma's gescheiden lijst met ISO2-landcodes waartoe de zoekopdracht kan worden beperkt.
+* `lat`/`lon`, `topLeft`/`btmRight`, `radius` – Geef de locatie en het gebied van de gebruiker op om de resultaten lokaal relevant te maken.
+* `ofs` -Paginering van de resultaten in combinatie met de `maxResults`-parameter.
 
 Een voorbeeld van het gebruik van de zoekservice is [hier](./how-to-search-for-address.md) gedocumenteerd. Raadpleeg ook de documentatie [Aanbevolen procedures voor zoeken](./how-to-use-best-practices-for-search.md).
 
@@ -142,9 +155,9 @@ Raadpleeg ook de documentatie [Aanbevolen procedures voor zoeken](./how-to-use-b
 
 De API voor reverse geocoderings van Azure Maps bevat enkele extra functies die niet beschikbaar zijn in Bing Maps en waarvan integratie nuttig kan zijn bij het migreren van uw app:
 
--   Snelheidslimietgegevens ophalen.
--   Informatie over het weggebruik ophalen: lokale weg, hoofdweg, beperkte toegang, helling enzovoort.
--   De kant van de straat waar het coördinaat zich bevindt.
+* Snelheidslimietgegevens ophalen.
+* Informatie over het weggebruik ophalen: lokale weg, hoofdweg, beperkte toegang, helling enzovoort.
+* De kant van de straat waar het coördinaat zich bevindt.
 
 **Vergelijkingstabel voor entiteitstypen**
 
@@ -174,10 +187,10 @@ Verschillende van de zoek-API’s in Azure Maps bieden ondersteuning voor de voo
 
 Azure Maps kan worden gebruikt om routes en routebeschrijvingen te berekenen. Azure Maps biedt veel dezelfde functies als de routeringsservice van Bing Maps, zoals;
 
--   aankomst- en vertrektijden
--   realtime verkeersroutes en verkeersroutes op basis van voorspellingen
--   verschillende transportmodi, rijden, wandelen, vrachtwagen
--   optimalisatie van meerdere bestemmingen (verkopers in de buitendienst)
+* aankomst- en vertrektijden
+* realtime verkeersroutes en verkeersroutes op basis van voorspellingen
+* verschillende transportmodi, rijden, wandelen, vrachtwagen
+* optimalisatie van meerdere bestemmingen (verkopers in de buitendienst)
 
 > [!NOTE]
 > Voor Azure Maps moeten alle routepunten coördinaten zijn. Adressen moeten eerst een geocodering krijgen.
@@ -237,21 +250,21 @@ Vergeet niet om ook de documentatie [Best practices voor routering](./how-to-use
 
 De API voor routering in Azure Maps bevat veel extra functies die niet beschikbaar zijn in Bing Maps en waarvan integratie nuttig kan zijn bij het migreren van uw app:
 
--   Ondersteuning voor de routetypen: kortste, snelste, trilling en zuinigst.
--   Ondersteuning voor aanvullende reismodi: fiets, bus, motor, taxi, vrachtwagen en busje.
--   Ondersteuning voor 150 routepunten.
--   Meerdere reistijden berekenen in één aanvraag; historisch verkeer, liveverkeer, geen verkeer.
--   Aanvullende wegtypen vermijden: carpoolwegen, onverharde wegen, reeds gebruikte wegen.
--   Route op basis van motorspecificaties. Routes berekenen voor voertuigen met verbrandingsmotor of elektrische voertuigen op basis van hun resterende brandstof/acculading en motorspecificaties.
--   De maximale voertuigsnelheid opgeven.
+* Ondersteuning voor de routetypen: kortste, snelste, trilling en zuinigst.
+* Ondersteuning voor aanvullende reismodi: fiets, bus, motor, taxi, vrachtwagen en busje.
+* Ondersteuning voor 150 routepunten.
+* Meerdere reistijden berekenen in één aanvraag; historisch verkeer, liveverkeer, geen verkeer.
+* Aanvullende wegtypen vermijden: carpoolwegen, onverharde wegen, reeds gebruikte wegen.
+* Route op basis van motorspecificaties. Routes berekenen voor voertuigen met verbrandingsmotor of elektrische voertuigen op basis van hun resterende brandstof/acculading en motorspecificaties.
+* De maximale voertuigsnelheid opgeven.
 
 ## <a name="snap-coordinates-to-road"></a>Coördinaten uitlijnen met de weg
 
 Er zijn verschillende manieren waarop u coördinaten kunt uitlijnen met wegen in Azure Maps.
 
--   Gebruik de API voor routebeschrijvingen om coördinaten uit te lijnen op een logische route over het wegennet.
--   Gebruik de Azure Maps Web SDK om afzonderlijke coördinaten uit te lijnen met de dichtstbijzijnde weg op de vectortegels.
--   Gebruik de Azure Maps-vectortegels om afzonderlijke coördinaten uit te lijnen.
+* Gebruik de API voor routebeschrijvingen om coördinaten uit te lijnen op een logische route over het wegennet.
+* Gebruik de Azure Maps Web SDK om afzonderlijke coördinaten uit te lijnen met de dichtstbijzijnde weg op de vectortegels.
+* Gebruik de Azure Maps-vectortegels om afzonderlijke coördinaten uit te lijnen.
 
 **De API voor routebeschrijvingen gebruiken om coördinaten uit te lijnen**
 
@@ -259,8 +272,8 @@ Azure Maps kan coördinaten uitlijnen aan wegen met behulp van de API voor [rout
 
 De API voor routebeschrijvingen kan op twee manieren worden gebruikt om coördinaten uit te lijnen met wegen.
 
--   Als er 150 of minder coördinaten zijn, kunnen deze worden doorgegeven als waypoints aan de API voor het ophalen van routebeschrijvingen. U kunt deze methode gebruiken om twee verschillende soorten uitgelijnde gegevens op te halen. De route-instructies bevatten de afzonderlijke uitgelijnde waypoints, terwijl het traject een geïnterpoleerde reeks coördinaten bevat die het volledige pad tussen de coördinaten vullen.
--   Als er meer dan 150 coördinaten zijn, kan de API voor het plaatsen van routebeschrijvingen worden gebruikt. De start- en eindcoördinaten moeten worden doorgegeven in de queryparameter, maar alle coördinaten kunnen worden doorgegeven aan de parameter `supportingPoints` in de hoofdtekst van de POST-aanvraag en worden opgemaakt als een verzameling GeoJSON-geometriepunten. De enige uitgelijnde gegevens die beschikbaar zijn via deze methode, zijn het traject, dat een geïnterpoleerde reeks coördinaten is waarmee het volledige pad tussen de coördinaten wordt opgevuld. [Hier staat een voorbeeld](https://azuremapscodesamples.azurewebsites.net/?sample=Snap%20points%20to%20logical%20route%20path) van deze methode met behulp van de services-module in de Azure Maps Web-SDK.
+* Als er 150 of minder coördinaten zijn, kunnen deze worden doorgegeven als waypoints aan de API voor het ophalen van routebeschrijvingen. U kunt deze methode gebruiken om twee verschillende soorten uitgelijnde gegevens op te halen. De route-instructies bevatten de afzonderlijke uitgelijnde waypoints, terwijl het traject een geïnterpoleerde reeks coördinaten bevat die het volledige pad tussen de coördinaten vullen.
+* Als er meer dan 150 coördinaten zijn, kan de API voor het plaatsen van routebeschrijvingen worden gebruikt. De start- en eindcoördinaten moeten worden doorgegeven in de queryparameter, maar alle coördinaten kunnen worden doorgegeven aan de parameter `supportingPoints` in de hoofdtekst van de POST-aanvraag en worden opgemaakt als een verzameling GeoJSON-geometriepunten. De enige uitgelijnde gegevens die beschikbaar zijn via deze methode, zijn het traject, dat een geïnterpoleerde reeks coördinaten is waarmee het volledige pad tussen de coördinaten wordt opgevuld. [Hier staat een voorbeeld](https://azuremapscodesamples.azurewebsites.net/?sample=Snap%20points%20to%20logical%20route%20path) van deze methode met behulp van de services-module in de Azure Maps Web-SDK.
 
 De volgende tabel bevat de API-parameters in Bing Maps en de vergelijkbare API-parameters in Azure Maps.
 
@@ -368,9 +381,7 @@ In Bing Maps kan bijvoorbeeld een rood markeringspunt met het label 'AB' worden 
 
 > `&pushpin=45,-110;7;AB`
 
-<center>
-
-![Markeringspunt op statische kaart in Bing Maps](media/migrate-bing-maps-web-service/bing-maps-static-map-pin.jpg)</center>
+![Markeringspunt op statische kaart in Bing Maps](media/migrate-bing-maps-web-service/bing-maps-static-map-pin.jpg)
 
 **Na: Azure Maps**
 
@@ -384,21 +395,21 @@ Voor locaties naar markeringspunten moeten de coördinaten in Azure Maps de `lon
 
 De waarde `iconType` geeft het type markeringspunt aan dat moet worden gemaakt en kan de volgende waarden hebben:
 
--   `default` - het standaardspeldpictogram.
--   `none` -er wordt geen pictogram weergegeven, er worden alleen labels weergegeven.
--   `custom` - geeft aan dat er een aangepast pictogram moet worden gebruikt. Een URL die wijst naar de pictogramafbeelding kan worden toegevoegd aan het einde van de parameter `pins`, achter de locatiegegevens van de speld.
--   `{udid}` – Een unieke gegevens-id (UDID) voor een pictogram dat is opgeslagen in het Azure Maps Data Storage-platform.
+* `default` - het standaardspeldpictogram.
+* `none` -er wordt geen pictogram weergegeven, er worden alleen labels weergegeven.
+* `custom` - geeft aan dat er een aangepast pictogram moet worden gebruikt. Een URL die wijst naar de pictogramafbeelding kan worden toegevoegd aan het einde van de parameter `pins`, achter de locatiegegevens van de speld.
+* `{udid}` – Een unieke gegevens-id (UDID) voor een pictogram dat is opgeslagen in het Azure Maps Data Storage-platform.
 
 Stijlen van markeringspunten in Azure Maps worden toegevoegd met de indeling `optionNameValue`, waarbij meerdere stijlen worden gescheiden door een verticale streep (`|`), zoals dit `iconType|optionName1Value1|optionName2Value2`. Houd er rekening mee dat de optienamen en waarden niet zijn gescheiden. De volgende stijloptienamen kunnen worden gebruikt voor het opmaken van markeringspunten in Azure Maps:
 
--   `al` - geeft de matheid (alfa) van de markeringspunten aan. Kan een getal tussen 0 en 1 zijn.
--   `an` - geeft het speldanker aan. De waarden voor de x- en y-pixel opgegeven in de notatie `x y`.
--   `co` - de kleur van de speld. Moet een 24-bits hexadecimale kleur zijn: `000000` tot `FFFFFF`.
--   `la` - geeft de ankerkleur aan. De waarden voor de x- en y-pixel opgegeven in de notatie `x y`.
--   `lc` - de kleur van het label. Moet een 24-bits hexadecimale kleur zijn: `000000` tot `FFFFFF`.
--   `ls` - de grootte van het label in pixels. Kan een getal zijn dat groter is dan 0.
--   `ro` - het aantal graden dat het pictogram moet worden gedraaid. Kan een getal tussen -360 en 360 zijn.
--   `sc` - een schaalwaarde voor het speldpictogram. Kan een getal zijn dat groter is dan 0.
+* `al` - geeft de matheid (alfa) van de markeringspunten aan. Kan een getal tussen 0 en 1 zijn.
+* `an` - geeft het speldanker aan. De waarden voor de x- en y-pixel opgegeven in de notatie `x y`.
+* `co` - de kleur van de speld. Moet een 24-bits hexadecimale kleur zijn: `000000` tot `FFFFFF`.
+* `la` - geeft de ankerkleur aan. De waarden voor de x- en y-pixel opgegeven in de notatie `x y`.
+* `lc` - de kleur van het label. Moet een 24-bits hexadecimale kleur zijn: `000000` tot `FFFFFF`.
+* `ls` - de grootte van het label in pixels. Kan een getal zijn dat groter is dan 0.
+* `ro` - het aantal graden dat het pictogram moet worden gedraaid. Kan een getal tussen -360 en 360 zijn.
+* `sc` - een schaalwaarde voor het speldpictogram. Kan een getal zijn dat groter is dan 0.
 
 Labelwaarden worden opgegeven voor elke locatie van een markeringspunt in plaats van een enkele labelwaarde te hebben die van toepassing is op alle markeringspunten in de lijst met locaties. De labelwaarde kan bestaan uit een tekenreeks van meerdere tekens en moet worden voorzien van enkele aanhalingstekens om ervoor te zorgen dat deze niet wordt verward met een stijl- of locatiewaarde.
 
@@ -406,17 +417,13 @@ U kunt in Azure Maps bijvoorbeeld een rood (`FF0000`) standaardpictogram toevoeg
 
 > `&pins=default|coFF0000|la15 50||'Space Needle'-122.349300 47.620180`
 
-<center>
-
-![Markeringspunt op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-pin.jpg)</center>
+![Markeringspunt op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-pin.jpg)
 
 In het volgende voorbeeld worden drie markeringspunten toegevoegd met de labelwaarden '1', '2' en '3':
 
 > `&pins=default||'1'-122 45|'2'-119.5 43.2|'3'-121.67 47.12`
 
-<center>
-
-![Meerdere markeringspunten op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-multiple-pins.jpg)</center>
+![Meerdere markeringspunten op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-multiple-pins.jpg)
 
 ### <a name="draw-curve-url-parameter-format-comparison"></a>Vergelijking van de notatie van de URL-parameter om krommen te tekenen
 
@@ -436,9 +443,7 @@ In Bing Maps kan bijvoorbeeld een blauwe lijn met een dekking van 50% en een dik
 
 `&drawCurve=l,FF000088,4;45,-110_50,-100`
 
-<center>
-
-![Lijn op statische kaart in Bing Maps](media/migrate-bing-maps-web-service/bing-maps-static-map-line.jpg)</center>
+![Lijn op statische kaart in Bing Maps](media/migrate-bing-maps-web-service/bing-maps-static-map-line.jpg)
 
 **Na: Azure Maps**
 
@@ -450,20 +455,18 @@ Voor padlocaties moeten de coördinaten in Azure Maps de `longitude latitude`-in
 
 Padstijlen in Azure Maps worden toegevoegd met de indeling `optionNameValue`, waarbij meerdere stijlen worden gescheiden door een verticale streep (`|`), zoals dit `optionName1Value1|optionName2Value2`. Houd er rekening mee dat de optienamen en waarden niet zijn gescheiden. De volgende stijloptienamen kunnen worden gebruikt voor stijlpaden in Azure Maps:
 
--   `fa` - De matheid (alfa) van de opvulkleur die wordt gebruikt bij het weergeven van veelhoeken. Kan een getal tussen 0 en 1 zijn.
--   `fc` - De opvulkleur die wordt gebruikt om het gebied van een veelhoek weer te geven.
--   `la` - de matheid (alfa) van de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken. Kan een getal tussen 0 en 1 zijn.
--   `lc` - de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken.
--   `lw` - de breedte van de lijn in pixels.
--   `ra` - geeft de cirkelradius in meters aan.
+* `fa` - De matheid (alfa) van de opvulkleur die wordt gebruikt bij het weergeven van veelhoeken. Kan een getal tussen 0 en 1 zijn.
+* `fc` - De opvulkleur die wordt gebruikt om het gebied van een veelhoek weer te geven.
+* `la` - de matheid (alfa) van de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken. Kan een getal tussen 0 en 1 zijn.
+* `lc` - de lijnkleur die wordt gebruikt bij het weergeven van lijnen en de contour van veelhoeken.
+* `lw` - de breedte van de lijn in pixels.
+* `ra` - geeft de cirkelradius in meters aan.
 
 In Azure Maps kan bijvoorbeeld een blauwe lijn met een dekking van 50% en een dikte van vier pixels aan de kaart worden toegevoegd tussen coördinaten (lengtegraad:-110, breedtegraad: 45 en lengtegraad -100, breedtegraad 50) met de volgende URL-parameter:
 
 > `&path=lc0000FF|la.5|lw4||-110 45|-100 50`
 
-<center>
-
-![Lijn op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-line.jpg)</center>
+![Lijn op statische kaart in Azure Maps](media/migrate-bing-maps-web-service/azure-maps-static-map-line.jpg)
 
 ## <a name="calculate-a-distance-matrix"></a>Een afstandsmatrix berekenen
 
@@ -547,8 +550,8 @@ Raadpleeg ook de documentatie [Aanbevolen procedures voor zoeken](./how-to-use-b
 
 Azure Maps biedt verschillende API's voor het ophalen van verkeersgegevens. Er zijn twee soorten verkeersgegevens beschikbaar;
 
--   **Stroomgegevens** – Voorzien in metrische gegevens over de verkeersstroom op delen van wegen. Deze worden vaak gebruikt om een kleurcode aan wegen toe te kennen. Deze gegevens worden om de 2 minuten bijgewerkt.
--   **Incidentgegevens** – Voorzien in gegevens over wegwerkzaamheden, wegsluitingen, ongelukken en andere incidenten die van invloed kunnen zijn op verkeer. Deze gegevens worden om de minuut bijgewerkt.
+* **Stroomgegevens** – Voorzien in metrische gegevens over de verkeersstroom op delen van wegen. Deze worden vaak gebruikt om een kleurcode aan wegen toe te kennen. Deze gegevens worden om de 2 minuten bijgewerkt.
+* **Incidentgegevens** – Voorzien in gegevens over wegwerkzaamheden, wegsluitingen, ongelukken en andere incidenten die van invloed kunnen zijn op verkeer. Deze gegevens worden om de minuut bijgewerkt.
 
 Bing Maps biedt stroom- en incidentgegevens via de interactieve besturingselementen voor kaarten en stelt incidentgegevens ook beschikbaar als een service.
 
@@ -602,9 +605,9 @@ Daarnaast biedt het Azure Maps-platform ook een aantal extra tijdzone-API's om t
 
 De services voor ruimtelijke gegevens in Bing Maps bieden drie belangrijke functies:
 
--   Batchgewijze geocodering – Verwerk een grote batch met geocodes van adressen in één aanvraag.
--   Gegevens van administratieve grenzen ophalen – Gebruik een coördinaat en haal een snijpuntgrens op voor een opgegeven entiteitstype.
--   Ruimtelijke bedrijfsgegevens hosten en opvragen – Upload een eenvoudige 2D-gegevenstabel en open deze met enkele eenvoudige ruimtelijke query's.
+* Batchgewijze geocodering – Verwerk een grote batch met geocodes van adressen in één aanvraag.
+* Gegevens van administratieve grenzen ophalen – Gebruik een coördinaat en haal een snijpuntgrens op voor een opgegeven entiteitstype.
+* Ruimtelijke bedrijfsgegevens hosten en opvragen – Upload een eenvoudige 2D-gegevenstabel en open deze met enkele eenvoudige ruimtelijke query's.
 
 ### <a name="batch-geocode-data"></a>Geocodegegevens batchgewijs verwerken
 
@@ -660,7 +663,11 @@ Azure Maps biedt clientbibliotheken voor de volgende computertalen;
 
 Bibliotheken voor opensource-clients voor andere programmeertalen;
 
--   .NET Standard 2.0 – [GitHub-project](https://github.com/perfahlen/AzureMapsRestServices) \| [NuGet-pakket](https://www.nuget.org/packages/AzureMapsRestToolkit/)
+* .NET Standard 2.0 – [GitHub-project](https://github.com/perfahlen/AzureMapsRestServices) \| [NuGet-pakket](https://www.nuget.org/packages/AzureMapsRestToolkit/)
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources om op te schonen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -668,15 +675,3 @@ Meer informatie over de REST-services van Azure Maps.
 
 > [!div class="nextstepaction"]
 > [Aanbevolen procedures voor het gebruik van Zoekservice](how-to-use-best-practices-for-search.md)
-
-> [!div class="nextstepaction"]
-> [Best practices voor het gebruik van de routeringsservice](how-to-use-best-practices-for-search.md)
-
-> [!div class="nextstepaction"]
-> [De services-module gebruiken (Web SDK)](how-to-use-best-practices-for-routing.md)
-
-> [!div class="nextstepaction"]
-> [Naslagdocumentatie over de REST-service-API van Azure Maps](/rest/api/maps/)
-
-> [!div class="nextstepaction"]
-> [Codevoorbeelden](/samples/browse/?products=azure-maps)

@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: ca05194c0d8e63290a9cab8d9f7903daa192069b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 00892b61cd23ee38ff3d63f8b61391ff1bffdc90
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030345"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97616402"
 ---
 # <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Quickstart: Uw eerste statische site bouwen met behulp van Azure CLI
 
@@ -129,7 +129,7 @@ Als u deze toepassing verder niet gaat gebruiken, kunt u het Azure Static Web Ap
 
 ```bash
 az staticwebapp delete \
-    --name my-first-static-web-app
+    --name my-first-static-web-app \
     --resource-group my-first-static-web-app
 ```
 

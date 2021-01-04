@@ -1,14 +1,14 @@
 ---
 title: De agent voor Azure Arc-servers beheren
 description: In dit artikel worden de verschillende beheer taken beschreven die u normaal gesp roken uitvoert tijdens de levens cyclus van de computer agent die verbonden is met Azure Arc ingeschakeld.
-ms.date: 10/30/2020
+ms.date: 12/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9e17bf58d1e94b64d1cdc6ff0b57b1b6a81be180
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: f408048f61f76d6b258ea8e063630b4e2aa841af
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107189"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724371"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>De verbonden machine agent beheren en onderhouden
 
@@ -61,7 +61,7 @@ Update pakket voor de verbonden machine agent voor Windows is beschikbaar vanaf:
 
 * [Windows agent Windows Installer-pakket](https://aka.ms/AzureConnectedMachineAgent) van het micro soft Download centrum.
 
-De agent kan worden geüpgraded na diverse methoden om uw proces voor het beheren van software-updates te ondersteunen. U kunt zich buiten Microsoft Update downloaden en uitvoeren vanaf de opdracht prompt, vanuit een script of andere oplossing voor automatisering of vanuit de wizard gebruikers interface door uit te voeren `AzureConnectedMachine.msi` .
+De agent kan worden geüpgraded na diverse methoden ter ondersteuning van het software-update beheer proces. U kunt zich buiten Microsoft Update downloaden en uitvoeren vanaf de opdracht prompt, vanuit een script of andere oplossing voor automatisering of vanuit de wizard gebruikers interface door uit te voeren `AzureConnectedMachine.msi` .
 
 > [!NOTE]
 > * Als u de agent wilt bijwerken, moet u over *beheerders* machtigingen beschikken.
@@ -189,7 +189,7 @@ Voer de volgende opdracht uit om verbinding te maken met uw referenties met verh
 
 ### <a name="disconnect"></a>Verbinding verbreken
 
-Met deze para meter wordt een resource opgegeven in Azure Resource Manager die de machine vertegenwoordigt die wordt verwijderd in Azure. De agent wordt niet van de computer verwijderd. dit moet als een afzonderlijke stap worden uitgevoerd. Als u de verbinding met de computer opnieuw wilt registreren met servers die zijn ingeschakeld voor Azure, kunt u `azcmagent connect` een nieuwe resource maken in Azure.
+Met deze para meter wordt een resource opgegeven in Azure Resource Manager die de machine vertegenwoordigt die wordt verwijderd in Azure. De agent wordt niet van de computer verwijderd, maar u kunt de agent afzonderlijk verwijderen. Als u de verbinding met de computer opnieuw wilt registreren met servers die zijn ingeschakeld voor Azure, kunt u `azcmagent connect` een nieuwe resource maken in Azure.
 
 > [!NOTE]
 > Als u een of meer van de Azure VM-extensies hebt geïmplementeerd op uw met Arc ingeschakelde server en u de registratie ervan in azure verwijdert, worden de uitbrei dingen nog steeds geïnstalleerd. Het is belang rijk om te begrijpen dat, afhankelijk van de geïnstalleerde uitbrei ding, de functie actief wordt uitgevoerd. Voor computers die zijn bedoeld om buiten gebruik te worden gesteld of niet meer worden beheerd door Arc-servers, moeten de uitbrei dingen eerst worden verwijderd voordat de registratie van Azure wordt verwijderd.
@@ -208,7 +208,7 @@ Voer de volgende opdracht uit als u de verbinding wilt verbreken met de referent
 
 ## <a name="remove-the-agent"></a>De agent verwijderen
 
-Voer een van de volgende methoden uit om de met Windows of Linux verbonden machine agent te verwijderen van de computer. Als de agent wordt verwijderd, wordt de registratie van de computer bij servers met Arc ingeschakeld niet ongedaan gemaakt of worden de Azure VM-extensies verwijderd. U moet deze stappen afzonderlijk uitvoeren wanneer u de computer niet langer hoeft te beheren in azure, en deze moeten worden voltooid voordat de agent wordt verwijderd.
+Voer een van de volgende methoden uit om de met Windows of Linux verbonden machine agent te verwijderen van de computer. Als de agent wordt verwijderd, wordt de registratie van de computer bij servers met Arc ingeschakeld niet ongedaan gemaakt of worden de Azure VM-extensies verwijderd. Hef de registratie van de machine op en verwijder de geïnstalleerde VM-extensies afzonderlijk wanneer u de machine niet meer hoeft te beheren in Azure en deze stappen moeten worden uitgevoerd voordat de agent wordt verwijderd.
 
 ### <a name="windows-agent"></a>Windows-agent
 
@@ -286,6 +286,10 @@ Als u van plan bent om het beheer van de machine met ondersteunende services in 
 ## <a name="update-or-remove-proxy-settings"></a>Proxy-instellingen bijwerken of verwijderen
 
 Als u de agent wilt configureren om te communiceren met de service via een proxy server of als u deze configuratie na de implementatie wilt verwijderen, of gebruik een van de volgende methoden om deze taak te volt ooien.
+
+> [!NOTE]
+> Arc ingeschakelde servers biedt geen ondersteuning voor het gebruik van een [log Analytics gateway](../../azure-monitor/platform/gateway.md) als een proxy voor de verbonden machine agent.
+>
 
 ### <a name="windows"></a>Windows
 

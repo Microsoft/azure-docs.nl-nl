@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
-ms.openlocfilehash: b0cdfd76ed5e7ae20800b52e6074809de12a8b5f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: adee491625cec3b4a22cc7b3d1f3ba17595d9e87
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031467"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673247"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-confluence-saml-sso-by-microsoft"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Confluence SAML SSO by Microsoft
 
@@ -196,7 +196,7 @@ In dit gedeelte gaat u B.Simon toestemming geven voor gebruik van eenmalige aanm
     1. Kopieer de waarden voor **Identifier, Reply URL, Sign on URL** en plak deze in respectievelijk de vakken **Id, Antwoord-URL en Aanmeldings-URL** in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
     1. Typ bij **Login Button Name** de naam van de knop die gebruikers van uw organisatie moeten zien op het aanmeldingsscherm.
-    
+
     1. Typ bij **Beschrijving knop voor Aanmelden** de beschrijving van de knop die gebruikers van uw organisatie moeten zien op het aanmeldingsscherm.
 
     1. Selecteer bij **SAML User ID Location** het keuzerondje **User ID is in the NameIdentifier element of the Subject statement** of **User ID is in an Attribute element**.  Deze id moet de gebruikers-id van Confluence zijn. Als de gebruikers-id niet overeenkomt, kunnen gebruikers zich niet aanmelden. 
@@ -259,9 +259,9 @@ Als u in het toegangsvenster op de tegel Confluence SAML SSO by Microsoft klikt,
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

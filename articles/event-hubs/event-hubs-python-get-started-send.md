@@ -3,12 +3,12 @@ title: Gebeurtenissen verzenden naar of ontvangen van Azure Event Hubs met behul
 description: Dit artikel bevat een overzicht van het maken van een Python-toepassing waarmee gebeurtenissen worden verzonden naar/ontvangen van Azure Event Hubs met behulp van het nieuwste pakket azure-eventhub.
 ms.topic: quickstart
 ms.date: 02/11/2020
-ms.openlocfilehash: 4850dc9119f6ef43e687f476f66928f13713f051
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: f05f546f19a7944c049b97ba18065159db6fab67
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97105948"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97605561"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-by-using-python-azure-eventhub"></a>Gebeurtenissen verzenden naar of gebeurtenissen ontvangen van Event Hubs met behulp van Python (azure-eventhub)
 In deze quickstart ziet u hoe u gebeurtenissen kunt verzenden naar en ontvangen van een Event Hub met behulp van het Python-pakket **azure-eventhub**.
@@ -50,7 +50,7 @@ In deze sectie maakt u een Python-script voor het verzenden van gebeurtenissen n
     async def run():
         # Create a producer client to send messages to the event hub.
         # Specify a connection string to your event hubs namespace and
-            # the event hub name.
+        # the event hub name.
         producer = EventHubProducerClient.from_connection_string(conn_str="EVENT HUBS NAMESPACE - CONNECTION STRING", eventhub_name="EVENT HUB NAME")
         async with producer:
             # Create a batch.

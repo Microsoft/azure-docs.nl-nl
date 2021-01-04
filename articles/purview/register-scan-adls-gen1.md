@@ -1,18 +1,18 @@
 ---
 title: Azure Data Lake Storage registreren en scannen (ADLS) gen1
 description: In deze zelf studie wordt beschreven hoe u gegevens kunt scannen van Azure Data Lake Storage Gen1 naar Azure controle sfeer liggen.
-author: kchandra
-ms.author: kchandra
+author: shsandeep123
+ms.author: sandeepshah
 ms.service: data-catalog
 ms.subservice: data-catalog-gen2
 ms.topic: how-to
 ms.date: 11/30/2020
-ms.openlocfilehash: ee0b9238deb7805113f0cbfa28d0b60a114820a9
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: a831681f892de9f6aae50fa9a2fcf71e883fe6ba
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553224"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693718"
 ---
 # <a name="register-and-scan-azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1 registreren en scannen
 
@@ -34,7 +34,7 @@ De Azure Data Lake Storage Gen1 gegevens bron ondersteunt de volgende functional
 - Voordat u gegevens bronnen registreert, maakt u een Azure controle sfeer liggen-account. Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)voor meer informatie over het maken van een controle sfeer liggen-account.
 - U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn
 
-## <a name="setting-up-authentication-for-a-scan"></a>Verificatie instellen voor een scan
+## <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
 De volgende verificatie methoden worden ondersteund voor Azure Data Lake Storage Gen1:
 
@@ -69,7 +69,7 @@ U kunt het MSI-bestand van de catalogus toevoegen aan het abonnement, de resourc
 
 5. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account).
 
-6. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal voor het instellen van de scan
+6. Maak tot slot [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal om uw scan in te stellen
 > [!Note]
 > Nadat u het MSI-bestand van de catalogus hebt toegevoegd aan de gegevens bron, wacht u tot 15 minuten voordat u een scan hebt ingesteld.
 
@@ -85,11 +85,11 @@ Als u een Service-Principal wilt gebruiken, moet u eerst een van de volgende sta
 
 3. Selecteer **App-registraties**.
 
-4. Selecteer **+ nieuwe toepassing registreren**.
+4. Selecteer **+ Nieuwe toepassing registreren**.
 
-5. Voer een naam in voor de **toepassing** (de Service Principal Name).
+5. Voer een naam in voor de **toepassing** (de service-principal-naam).
 
-6. Selecteer **alleen accounts in deze organisatie Directory**.
+6. Selecteer **Alleen accounts in deze organisatiemap**.
 
 7. Voor **omleidings-URI** selecteert u **Web** en voert u de gewenste URL in. het hoeft niet echt of werk te zijn.
 
@@ -127,15 +127,15 @@ Ga als volgt te werk om een nieuw ADLS Gen1-account in uw Data Catalog te regist
 
 Ga als volgt te werk op het scherm bronnen registreren (Azure Data Lake Storage Gen1):
 
-1. Voer een **naam** in die voor de gegevens bron wordt weer gegeven in de catalogus.
+1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
 2. Kies uw abonnement om opslag accounts te filteren
 3. Selecteer een opslagaccount
-4. Een verzameling selecteren of een nieuwe maken (optioneel)
-5. Volt ooien om de gegevens bron te registreren.
+4. Selecteer een verzameling of maak een nieuwe (optioneel)
+5. Voltooi om de gegevensbron te registreren.
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d6f3d2051790ba02f5e4ea1687830ccbdf6dcf21
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 1ab382ec10d932b94961c73b7d7ac9082125a88c
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285145"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704517"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Een Azure-sleutel kluis en een beleid voor kluis toegang maken met behulp van een resource manager-sjabloon
 
@@ -176,14 +176,14 @@ U kunt hier meer Key Vault sjablonen vinden: [Key Vault Resource Manager-referen
 
 U kunt de Azure Portal gebruiken om de voor gaande sjablonen te implementeren met behulp van de optie **uw eigen sjabloon bouwen in editor** , zoals hier wordt beschreven: [resources implementeren vanuit een aangepaste sjabloon](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).
 
-U kunt de voor gaande sjablonen ook opslaan in bestanden en deze opdrachten gebruiken:  [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create):
+U kunt de voor gaande sjablonen ook opslaan in bestanden en deze opdrachten gebruiken:  [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) en [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create):
 
 ```azurepowershell
 New-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile key-vault-template.json
 ```
 
 ```azurecli
-az group deployment create --resource-group ExampleGroup --template-file key-vault-template.json
+az deployment group create --resource-group ExampleGroup --template-file key-vault-template.json
 ```
 
 ## <a name="clean-up-resources"></a>Resources opschonen
@@ -219,4 +219,4 @@ Write-Host "Press [ENTER] to continue..."
 
 - [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
 - [Verifiëren bij een sleutel kluis](authentication.md)
-- [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
+- [Ontwikkelaars handleiding Azure Key Vault](developers-guide.md)

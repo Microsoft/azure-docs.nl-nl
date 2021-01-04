@@ -10,18 +10,18 @@ ms.custom: how-to, automl
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: cf1eb1c72cc93fcb72862b15f3884969915c24dd
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: ce13e0431827bb2c72a03ca33a1ecaefc53d4970
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360646"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702515"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Interpreteerbaarheid: modeluitleg in geautomatiseerde machine learning (preview)
 
 
 
-In dit artikel vindt u informatie over het verkrijgen van uitleg voor automatische machine learning (ML) in Azure Machine Learning. Automatische ML helpt u bij het begrijpen van het belang van de functie. 
+In dit artikel leert u hoe u in Azure Machine Learning uitleg krijgt voor automatische machine learning (AutoML). AutoML helpt u bij het begrijpen van de functie prioriteit van de modellen die worden gegenereerd. 
 
 Alle SDK-versies nadat 1.0.85 `model_explainability=True` standaard is ingesteld. In SDK-versie 1.0.85 en eerdere versies moeten gebruikers `model_explainability=True` in het object worden ingesteld `AutoMLConfig` om te kunnen werken met model Interpretation. 
 
@@ -34,15 +34,18 @@ In dit artikel leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - Functies voor interpretaties. Voer uit `pip install azureml-interpret` om het benodigde pakket op te halen.
-- Kennis van het bouwen van geautomatiseerde ML experimenten. Voor meer informatie over het gebruik van de Azure Machine Learning SDK, voltooit u de [zelf studie voor het regressie model](tutorial-auto-train-models.md) of raadpleegt u How to [Configure Automated ml experimenten](how-to-configure-auto-train.md).
+- Kennis van het bouwen van AutoML experimenten. Voor meer informatie over het gebruik van de Azure Machine Learning SDK, voltooit u de [zelf studie voor het regressie model](tutorial-auto-train-models.md) of raadpleegt u [AutoML experimenten configureren](how-to-configure-auto-train.md).
 
 ## <a name="interpretability-during-training-for-the-best-model"></a>Interpretiteit tijdens de training voor het beste model
 
-Haal de uitleg op uit de `best_run` , die uitleg bevat over functies die zijn ontworpen voor de functie.
+Haal de uitleg op uit de `best_run` , die uitleg bevat voor zowel onbewerkte als ontworpen functies.
 
 > [!Warning]
 > Interpretiteit, aanbevolen model uitleg is niet beschikbaar voor het automatisch ML van prognose experimenten waarbij de volgende algoritmen worden aanbevolen als het beste model: 
-> * ForecastTCN
+> * TCNForecaster
+> * AutoArima
+> * ExponentialSmoothing
+> * Prophet
 > * Gemiddeld 
 > * Naive
 > * Gemiddelde seizoen 
@@ -62,7 +65,7 @@ print(engineered_explanations.get_feature_importance_dict())
 
 ## <a name="interpretability-during-training-for-any-model"></a>Interpretiteit tijdens de training voor elk model 
 
-Wanneer u de beschrijving van het model berekent en ze visualiseren, bent u niet beperkt tot een bestaande beschrijving van een model voor een geautomatiseerd ML-model. U kunt ook een uitleg voor uw model met verschillende test gegevens krijgen. In de stappen in deze sectie wordt uitgelegd hoe u het belang van de functie hebt berekend en gevisualiseerd op basis van uw test gegevens.
+Wanneer u de beschrijving van het model berekent en deze weergeeft, bent u niet beperkt tot een bestaande beschrijving van een model voor een AutoML-model. U kunt ook een uitleg voor uw model met verschillende test gegevens krijgen. In de stappen in deze sectie wordt uitgelegd hoe u het belang van de functie hebt berekend en gevisualiseerd op basis van uw test gegevens.
 
 ### <a name="retrieve-any-other-automl-model-from-training"></a>Alle andere AutoML-modellen uit de training ophalen
 
@@ -94,7 +97,7 @@ Als u een uitleg voor AutoML-modellen wilt genereren, gebruikt u de `MimicWrappe
 
 - Het object van de uitleger installatie
 - Uw werk ruimte
-- Een surrogaat model voor het uitleggen van het `fitted_model` model Automated ml
+- Een surrogaat model voor het uitleggen van het `fitted_model` AutoML-model
 
 De MimicWrapper neemt ook het `automl_run` object over waar de toelichte verklaringen worden geüpload.
 
@@ -113,7 +116,7 @@ explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator,
 
 ### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>MimicExplainer gebruiken voor het berekenen en visualiseren van de belang rijke functie
 
-U kunt de `explain()` methode in MimicWrapper aanroepen met de getransformeerde test voorbeelden om het belang van de functie voor de gegenereerde functies te verkrijgen. U kunt ook gebruiken `ExplanationDashboard` om de visualisatie van het dash board weer te geven van de belang rijke waarden van de functie van de gegenereerde functies van ontworpen door FEATURIZERS ml.
+U kunt de `explain()` methode in MimicWrapper aanroepen met de getransformeerde test voorbeelden om het belang van de functie voor de gegenereerde functies te verkrijgen. U kunt ook gebruiken `ExplanationDashboard` om de visualisatie van het dash board weer te geven van de belang rijke waarden van de functie van de gegenereerde, ontworpen functies door AutoML featurizers.
 
 ```python
 engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=automl_explainer_setup_obj.X_test_transform)
@@ -122,7 +125,7 @@ print(engineered_explanations.get_feature_importance_dict())
 
 ## <a name="interpretability-during-inference"></a>Interpretiteit tijdens deinterferentie
 
-In deze sectie leert u hoe u een geautomatiseerd ML-model kunt operationeel maken met de uitleger die is gebruikt voor het berekenen van de uitleg in de vorige sectie.
+In deze sectie leert u hoe u een AutoML-model kunt operationeel maken met de uitleger die is gebruikt voor het berekenen van de uitleg in de vorige sectie.
 
 ### <a name="register-the-model-and-the-scoring-explainer"></a>Het model en de uitleg over scores registreren
 
@@ -200,7 +203,7 @@ service.wait_for_deployment(show_output=True)
 
 ### <a name="inference-with-test-data"></a>Afleiding met test gegevens
 
-Detrain met een aantal test gegevens om de voorspelde waarde van het model geautomatiseerd ML te bekijken. Bekijk de belang rijke functie voor de voorspelde waarde.
+Detrain met bepaalde test gegevens om de voorspelde waarde van AutoML model te zien, die momenteel alleen wordt ondersteund in Azure Machine Learning SDK. Bekijk de belang rijke functies die bijdragen aan een voorspelde waarde. 
 
 ```python
 if service.state == 'Healthy':
@@ -217,9 +220,11 @@ if service.state == 'Healthy':
 
 ### <a name="visualize-to-discover-patterns-in-data-and-explanations-at-training-time"></a>Visualiseer om patronen in gegevens en uitleg te ontdekken tijdens de trainings tijd
 
-U kunt het grafiek onderdeel urgentie in uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com)visualiseren. Nadat de automatische uitvoering van de ML is voltooid, selecteert u **model details weer geven** om een specifieke uitvoering weer te geven. Selecteer het tabblad **uitleg** om het visualisatie dashboard te bekijken.
+U kunt het grafiek onderdeel urgentie in uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com)visualiseren. Nadat de AutoML-uitvoering is voltooid, selecteert u **model details weer geven** om een specifieke uitvoering weer te geven. Selecteer het tabblad **uitleg** om het visualisatie dashboard te bekijken.
 
-[![Architectuur van Machine Learning-interpretaties](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
+[![Architectuur van Machine Learning-interpretaties](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png)](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png#lightbox)
+
+Voor meer informatie over de visualisaties van het uitleg van het dash board en specifieke waarnemings punten raadpleegt u de hand van de procedure voor het [gebruik van interpretaties](how-to-machine-learning-interpretability-aml.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

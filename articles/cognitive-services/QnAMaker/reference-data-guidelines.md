@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 01/02/2020
-ms.openlocfilehash: fd4ea4b671ee8efa853109e288459fdc256bee23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d73fd6c7f49c10c8aca1060e91fc69b0e581738b
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776677"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707500"
 ---
 # <a name="import-and-export-data-reference"></a>Gegevens verwijzing importeren en exporteren
 
@@ -18,4 +18,6 @@ Bekijk deze import-en export verwijzing om de beste resultaten te krijgen voor u
 
 ## <a name="import-and-export-knowledge-base"></a>De Knowledge Base importeren en exporteren
 
-**TSV-en xls-bestanden**, van geëxporteerde kennis grondslagen, kunnen alleen worden gebruikt door het importeren van de bestanden van de pagina **instellingen** in de QnA Maker Portal. Ze kunnen niet worden gebruikt als gegevens bronnen tijdens het maken van een Knowledge Base of vanuit het onderdeel **bestand toevoegen** of **+ URL** toevoegen op de pagina **instellingen** .
+**TSV-en xls-bestanden**, van geëxporteerde kennis grondslagen, kunnen alleen worden gebruikt door het importeren van de bestanden van de pagina **instellingen** in de QnA Maker Portal. Ze kunnen niet worden gebruikt als gegevens bronnen tijdens het maken van een Knowledge Base of vanuit het onderdeel **bestand toevoegen** of **+ URL** toevoegen op de pagina **instellingen** . 
+
+Wanneer u de Knowledge Base via deze **TSV-en xls-bestanden** importeert, worden de QnA-paren toegevoegd aan de redactionele bron en niet de bronnen waaruit de QnAs zijn geëxtraheerd in de geëxporteerde kennis basis. 

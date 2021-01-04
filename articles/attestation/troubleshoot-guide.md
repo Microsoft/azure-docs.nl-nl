@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 72d7a40c38f3629a70260f223074b456dff9ce38
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3ae3e12c11f194b3efcc149382dc952bd74d38b5
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182832"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704313"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Gids voor het oplossen van problemen met Microsoft Azure
 
@@ -280,7 +280,7 @@ Als u wilt blijven werken met de PowerShell Gallery, voert u de volgende opdrach
 De gebruiker is toegewezen met de juiste rollen. Maar gerichte autorisatie problemen tijdens het beheren van attest beleid via Power shell.
 
 ### <a name="error"></a>Fout
-De client met object-id heeft <object Id>  geen toestemming om de actie uit te voeren van micro soft. Authorization/roleassignments/write over scope ' subcriptions/ <subscriptionId> resourcegroups/secure_enclave_poc/providers/Microsoft.Authorization/roleassignments/ <role assignmentId> ' of het bereik is ongeldig. Als u onlangs toegang hebt verleend, kunt u uw referenties vernieuwen
+De client met object-id &lt; -object-id heeft &gt;  geen toestemming om de actie micro soft. Authorization/roleassignments/write over het bereik ' subcriptions/ &lt; subscriptionId &gt; ResourceGroups/secure_enclave_poc/providers/Microsoft.Authorization/roleassignments/ &lt; Role assignmentId ' uit te voeren &gt; of het bereik is ongeldig. Als u onlangs toegang hebt verleend, kunt u uw referenties vernieuwen
 
 ### <a name="troubleshooting-steps"></a>Stappen voor probleemoplossing
 

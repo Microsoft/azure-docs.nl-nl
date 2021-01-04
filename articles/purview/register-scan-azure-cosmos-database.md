@@ -1,18 +1,18 @@
 ---
 title: De Azure Cosmos-data base scannen (SQL-API)
 description: Hier vindt u informatie over het scannen van de Azure Cosmos-data base (SQL API).
-author: viseshag
-ms.author: viseshag
+author: djpmsft
+ms.author: daperlov
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/9/2020
-ms.openlocfilehash: e1d2035b787380d9b93943b92fbe81c09fc6a527
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 1aaeed1973ebd15af312b722ab61938aa4271947
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553170"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696250"
 ---
 # <a name="register-and-scan-azure-cosmos-database-sql-api"></a>Azure Cosmos-data base registreren en scannen (SQL-API)
 
@@ -27,7 +27,7 @@ De Azure Cosmos-data base (SQL-API) ondersteunt volledige en incrementele scans 
 - Voordat u gegevens bronnen registreert, maakt u een Azure controle sfeer liggen-account. Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)voor meer informatie over het maken van een controle sfeer liggen-account.
 - U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn
 
-## <a name="setting-up-authentication-for-a-scan"></a>Verificatie instellen voor een scan
+## <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
 Er is slechts één manier om verificatie in te stellen voor de Azure Cosmos-data base (SQL-API):
 
@@ -41,38 +41,38 @@ Wanneer de geselecteerde verificatie methode de **account sleutel** is, moet u u
 1. **Instellingen**  >  **sleutels** selecteren 
 1. Kopieer uw *sleutel* en sla deze ergens op om de volgende stappen uit te voeren
 1. Navigeer naar uw sleutelkluis
-1. **Instellingen > geheimen** selecteren
+1. Selecteer **Instellingen > Geheimen**
 1. Selecteer **+ genereren/importeren** en voer de **naam** en **waarde** in als de *sleutel* van uw opslag account
-1. Selecteer **maken** om te volt ooien
-1. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
+1. Selecteer **Maken** om te voltooien
+1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
 1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de sleutel voor het instellen van de scan
 
 ## <a name="register-an-azure-cosmos-database-sql-api-account"></a>Een SQL-API-account (Azure Cosmos data base) registreren
 
 Ga als volgt te werk om een nieuw Azure Cosmos data base-account (SQL-API) in uw Data Catalog te registreren:
 
-1. Navigeer naar uw controle sfeer liggen-account
-1. **Bronnen** selecteren in de linkernavigatiebalk
+1. Ga naar uw Purview-account
+1. Selecteer **Bronnen** in het linkernavigatievenster
 1. Selecteer **Registreren**
 1. Selecteer **Azure Cosmos DB (SQL-API)** bij **bronnen registreren**.
 1. Selecteer **Doorgaan**
 
-:::image type="content" source="media/register-scan-azure-cosmos-database/register-new-data-source.png" alt-text="nieuwe gegevens bron registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-cosmos-database/register-new-data-source.png" alt-text="nieuwe gegevensbron registreren" border="true":::
 
 Ga als volgt te werk op het scherm **bronnen registreren (Azure Cosmos DB (SQL-API))** :
 
-1. Voer een **naam** in die voor de gegevens bron wordt weer gegeven in de catalogus.
-1. Kies hoe u wilt verwijzen naar het gewenste opslag account:
+1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
+1. Kies hoe u wilt verwijzen naar het gewenste opslagaccount:
    1. Selecteer een **Azure-abonnement**, selecteer het juiste abonnement in de vervolg keuzelijst van het Azure- **abonnement** en het relevante cosmosDB-account in de vervolg keuzelijst **Cosmos DB account naam** .
    1. U kunt **ook hand matig invoeren** selecteren en een service-eind punt (URL) invoeren.
-1. **Volt ooien** om de gegevens bron te registreren.
+1. **Voltooi** om de gegevensbron te registreren.
 
-:::image type="content" source="media/register-scan-azure-cosmos-database/register-sources.png" alt-text="bronnen opties registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-cosmos-database/register-sources.png" alt-text="opties voor bronnen registreren" border="true":::
 
 
 [!INCLUDE [create and manage scans](includes/manage-scans.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

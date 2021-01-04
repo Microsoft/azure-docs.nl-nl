@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 79ac8e7868b04a63637e24d6dde651b218ce6a46
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 86822c5a9cef84ff4b51bc94b6b2dd3dbdee91bf
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489187"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702006"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Maxi maal beschik bare Service Fabric betrouw bare schijf op basis van schijven koppelen in een Service Fabric mesh-toepassing 
 De algemene methode voor het persistent maken van de status met container-apps is het gebruik van externe opslag, zoals Azure File Storage of Data Base, zoals Azure Cosmos DB. Dit resulteert in een aanzienlijke Lees-en schrijf latentie voor de externe opslag.
@@ -60,7 +60,7 @@ az mesh deployment create --resource-group myResourceGroup --template-uri https:
 U kunt ook de status van de implementatie bekijken met de opdracht
 
 ```azurecli-interactive
-az group deployment show --name counter.sfreliablevolume.linux --resource-group myResourceGroup
+az deployment group show --name counter.sfreliablevolume.linux --resource-group myResourceGroup
 ```
 
 Let op de naam van de gateway resource die het resource type heeft als `Microsoft.ServiceFabricMesh/gateways` . Dit wordt gebruikt om het open bare IP-adres van de app op te halen.

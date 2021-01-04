@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 12/18/2020
 ms.author: aahi
-ms.openlocfilehash: 8ddaed181d017e3167694a9d7edf53c7c09fd5e9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 003b4411ac791898f4a7467b9b03f29aadba2fc7
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968516"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704831"
 ---
 # <a name="deploy-and-run-container-on-azure-container-instance"></a>Container implementeren en uitvoeren in Azure Container Instance
 
@@ -23,11 +23,12 @@ Met de volgende stappen kunt u Azure Cognitive Services-toepassingen in de Cloud
 
 ## <a name="prerequisites"></a>Vereisten
 
-Het recept werkt met een Cognitive Services-container. De cognitieve service resource moet worden gemaakt in de Azure Portal voordat u het recept gebruikt. Elke cognitieve service die containers ondersteunt, is bedoeld voor het installeren en configureren van de service voor een container. Voor sommige services is een bestand of een set bestanden vereist als invoer voor de container. het is belang rijk dat u de container hebt gebruikt voordat u deze oplossing gebruikt.
+Het recept werkt met een Cognitive Services-container. De cognitieve service resource moet worden gemaakt voordat u het recept gebruikt. Elke cognitieve service die containers ondersteunt, heeft het artikel ' How to install ' voor het installeren en configureren van de service voor een container. Voor sommige services is een bestand of een set bestanden vereist als invoer voor de container. het is belang rijk dat u de container hebt gebruikt voordat u deze oplossing gebruikt.
 
-* Een cognitieve service resource, gemaakt in Azure Portal.
+* Een Azure-resource voor de Azure cognitieve service die u gebruikt.
 * URL van het cognitieve service- **eind punt** : Controleer de installatie van uw specifieke service voor de container, zodat u kunt vinden waar de eind punt-URL zich bevindt in het Azure Portal en wat een juist voor beeld van de URL is. De exacte indeling kan veranderen van service naar service.
 * Cognitieve service **sleutel** : de sleutels bevinden zich op de pagina **sleutels** voor de Azure-resource. U hebt slechts een van de twee sleutels nodig. De sleutel is een teken reeks van 32 alfanumerieke tekens.
+
 * Eén Cognitive Services-container op uw lokale host (uw computer). Zorg ervoor dat u het volgende kunt doen:
   * Haal de installatie kopie op met een `docker pull` opdracht.
   * Voer de lokale container uit met alle vereiste configuratie-instellingen met een `docker run` opdracht.
@@ -35,12 +36,32 @@ Het recept werkt met een Cognitive Services-container. De cognitieve service res
 
 Alle variabelen tussen punt haken, `<>` moeten worden vervangen door uw eigen waarden. Deze vervanging omvat de punt haken.
 
-[!INCLUDE [Create a Text Analytics Containers on Azure Container Instances](includes/create-container-instances-resource.md)]
+> [!IMPORTANT]
+> De LUIS-container vereist een `.gz` model bestand dat tijdens runtime wordt opgehaald. De container moet toegang hebben tot dit model bestand via een volume koppeling vanuit het container exemplaar. Voer de volgende stappen uit om een model bestand te uploaden:
+> 1. [Maak een Azure-bestands share](../../storage/files/storage-how-to-create-file-share.md). Noteer de naam van het Azure Storage account, de sleutel en de naam van de bestands share die u later nodig hebt.
+> 2. [Exporteer uw Luis-model (app-pakket) vanuit de Luis-Portal](../LUIS/luis-container-howto.md#export-packaged-app-from-luis). 
+> 3. Navigeer in het Azure Portal naar de **overzichts** pagina van de bron van het opslag account en selecteer **Bestands shares**. 
+> 4. Selecteer de naam van de bestands share die u onlangs hebt gemaakt en selecteer vervolgens **uploaden**. Upload vervolgens uw verpakte app. 
+
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+
+[!INCLUDE [Portal instructions for creating an ACI instance](includes/create-container-instances-resource.md)]
+
+# <a name="cli"></a>[CLI](#tab/cli)
+
+[!INCLUDE [CLI instructions for creating an ACI instance](../containers/includes/create-container-instances-resource-from-azure-cli.md)]
+
+---
+
 
 ## <a name="use-the-container-instance"></a>Het container exemplaar gebruiken
 
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+
 1. Selecteer het **overzicht** en kopieer het IP-adres. Dit is een numeriek IP-adres, zoals `55.55.55.55` .
 1. Open een nieuw browser tabblad en gebruik het IP-adres, bijvoorbeeld `http://<IP-address>:5000 (http://55.55.55.55:5000` ). U ziet de start pagina van de container, zodat u weet dat de container wordt uitgevoerd.
+
+    ![Start pagina van container](../../../includes/media/cognitive-services-containers-api-documentation/container-webpage.png)
 
 1. Selecteer **Service-API-beschrijving** om de Swagger-pagina voor de container weer te geven.
 
@@ -49,3 +70,12 @@ Alle variabelen tussen punt haken, `<>` moeten worden vervangen door uw eigen wa
 1. Selecteer **uitvoeren** om de aanvraag naar uw container exemplaar te verzenden.
 
     U hebt Cognitive Services containers gemaakt en gebruikt in azure container instance.
+
+# <a name="cli"></a>[CLI](#tab/cli)
+
+[!INCLUDE [API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
+
+> [!NOTE]
+> Als u de Text Analytics uitvoert voor Status container, gebruikt u de volgende URL voor het verzenden van query's: `http://localhost:5000/text/analytics/v3.2-preview.1/entities/health`
+
+---

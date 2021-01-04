@@ -1,29 +1,26 @@
 ---
-title: Implementatie van differentiële privacy met het WhiteNoise-pakket (preview-versie)
+title: Implementatie van differentiële privacy met het SmartNoise-pakket (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over de differentiële privacy en hoe het WhiteNoise-pakket u kan helpen bij het implementeren van differentiële privé systemen die de privacy van gegevens behouden.
+description: Meer informatie over de differentiële privacy en hoe het SmartNoise-pakket u kan helpen bij het implementeren van differentiële privé systemen die de privacy van gegevens behouden.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/09/2020
+ms.date: 12/21/2020
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.openlocfilehash: 9728bf2c86c0629b09e2325650ce288cf9b3cc7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 307786c0df744751122487b8c931d0e9572d5f22
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86199798"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723487"
 ---
-# <a name="preserve-data-privacy-by-using-differential-privacy-and-the-whitenoise-package-preview"></a>Behoud de privacy van gegevens met behulp van differentiële privacy en het WhiteNoise-pakket (preview-versie)
+# <a name="preserve-data-privacy-by-using-differential-privacy-and-the-smartnoise-package-preview"></a>Behoud de privacy van gegevens met behulp van differentiële privacy en het SmartNoise-pakket (preview-versie)
 
-Meer informatie over de differentiële privacy en hoe het WhiteNoise-pakket u kan helpen bij het implementeren van differentiatie van een differentieel particulier systeem.
+Meer informatie over de differentiële privacy en hoe het SmartNoise-pakket u kan helpen bij het implementeren van differentiatie van een differentieel particulier systeem.
 
 Als de hoeveelheid gegevens die een organisatie voor het verzamelen en gebruiken van analyses toeneemt, is dit van belang voor privacy en beveiliging. Voor analyses zijn gegevens vereist. Normaal gesp roken worden de gegevens die worden gebruikt om modellen te trainen, nauw keuriger. Wanneer persoonlijke gegevens voor deze analyses worden gebruikt, is het met name belang rijk dat de gegevens gedurende het hele gebruik persoonlijk blijven.
-
-> [!NOTE]
-> De naam van de Toolkit wordt gewijzigd en de nieuwe naam wordt in de komende weken geïntroduceerd. 
 
 ## <a name="how-differential-privacy-works"></a>Hoe differentiële privacy werkt
 
@@ -34,7 +31,7 @@ Differentiële privacy is een verzameling systemen en procedures die u helpen de
 
 In traditionele scenario's worden onbewerkte gegevens opgeslagen in bestanden en data bases. Wanneer gebruikers gegevens analyseren, gebruiken ze doorgaans de onbewerkte gegevens. Dit is een probleem omdat dit kan leiden tot inbreuk op de privacy van een persoon. Differentiële privacy probeert dit probleem te verhelpen door "Noise" of wille keurigheid toe te voegen aan de gegevens, zodat gebruikers geen afzonderlijke gegevens punten kunnen identificeren. Een dergelijk systeem biedt ten minste plausible-weigerings mogelijkheden.
 
-In differentiatie bare systemen worden gegevens gedeeld via aanvragen die **query's**worden genoemd. Wanneer een gebruiker een query voor gegevens indient, worden de aangevraagde gegevens door middel van **Privacy-mechanismen** ruis toegevoegd. Privacy-mechanismen retour neren een *benadering van de gegevens* in plaats van de onbewerkte gegevens. Dit privacy-behoud resultaat wordt weer gegeven in een **rapport**. Rapporten bestaan uit twee delen, de werkelijke gegevens die worden berekend en een beschrijving van de manier waarop de gegevens zijn gemaakt.
+In differentiatie bare systemen worden gegevens gedeeld via aanvragen die **query's** worden genoemd. Wanneer een gebruiker een query voor gegevens indient, worden de aangevraagde gegevens door middel van **Privacy-mechanismen** ruis toegevoegd. Privacy-mechanismen retour neren een *benadering van de gegevens* in plaats van de onbewerkte gegevens. Dit privacy-behoud resultaat wordt weer gegeven in een **rapport**. Rapporten bestaan uit twee delen, de werkelijke gegevens die worden berekend en een beschrijving van de manier waarop de gegevens zijn gemaakt.
 
 ## <a name="differential-privacy-metrics"></a>Differentiële metrische gegevens over privacy
 
@@ -46,7 +43,7 @@ Een andere waarde die rechtstreeks aan Epsilon is gerelateerd, is **Delta**. Del
 
 ## <a name="privacy-budget"></a>Privacy-budget
 
-Ter bescherming van de privacy in systemen waar meerdere query's zijn toegestaan, definieert differentiële privacy een frequentie limiet. Deze limiet wordt ook wel een **Privacy-budget**genoemd. Projectbudgetten worden een letter epsilon toegewezen, meestal tussen 1 en 3 om het risico van het heridentificatieen te beperken. Naarmate er rapporten worden gegenereerd, houden de projectbudgetten de letterlijke waarde van afzonderlijke rapporten en de statistische functie voor alle rapporten bij. Nadat een privacy-budget is uitgegeven of uitgeput, hebben gebruikers geen toegang meer tot gegevens.  
+Ter bescherming van de privacy in systemen waar meerdere query's zijn toegestaan, definieert differentiële privacy een frequentie limiet. Deze limiet wordt ook wel een **Privacy-budget** genoemd. Projectbudgetten worden een letter epsilon toegewezen, meestal tussen 1 en 3 om het risico van het heridentificatieen te beperken. Naarmate er rapporten worden gegenereerd, houden de projectbudgetten de letterlijke waarde van afzonderlijke rapporten en de statistische functie voor alle rapporten bij. Nadat een privacy-budget is uitgegeven of uitgeput, hebben gebruikers geen toegang meer tot gegevens.  
 
 ## <a name="reliability-of-data"></a>Betrouw baarheid van gegevens
 
@@ -54,10 +51,10 @@ Hoewel het behoud van privacy het doel is, is er sprake van een afweging wanneer
 
 ## <a name="implementing-differentially-private-systems"></a>Het implementeren van differentiatie van een differentieel particulier systeem
 
-Het implementeren van differentiatie van een differentieel particulier systeem is lastig. WhiteNoise is een open-source project dat verschillende onderdelen bevat voor het bouwen van wereld wijde differentiatie systemen. WhiteNoise bestaat uit de volgende onderdelen op het hoogste niveau:
+Het implementeren van differentiatie van een differentieel particulier systeem is lastig. SmartNoise is een open-source project dat verschillende onderdelen bevat voor het bouwen van wereld wijde differentiatie systemen. SmartNoise bestaat uit de volgende onderdelen op het hoogste niveau:
 
 - Kern
-- Systeem
+- SDK
 
 ### <a name="core"></a>Kern
 
@@ -68,9 +65,9 @@ De kern bibliotheek bevat de volgende privacy-mechanismen voor het implementeren
 |Analyse     | Een grafiek beschrijving van wille keurige berekeningen. |
 |Validator     | Een roest-bibliotheek met een set hulpprogram ma's voor het controleren en afleiden van de benodigde voor waarden voor een analyse die differentiatie privé is.          |
 |Runtime     | Het medium om de analyse uit te voeren. De referentie runtime is geschreven in roest, maar runtime kan worden geschreven met behulp van een reken raamwerk zoals SQL en Spark, afhankelijk van de behoeften van uw gegevens.        |
-|Bindingen     | Taal bindingen en helper-bibliotheken om analyses te maken. Momenteel WhiteNoise biedt python-bindingen. |
+|Bindingen     | Taal bindingen en helper-bibliotheken om analyses te maken. Momenteel SmartNoise biedt python-bindingen. |
 
-### <a name="system"></a>Systeem
+### <a name="sdk"></a>SDK
 
 De systeem bibliotheek bevat de volgende hulpprogram ma's en services voor het werken met tabellaire en relationele gegevens:
 
@@ -84,4 +81,4 @@ De systeem bibliotheek bevat de volgende hulpprogram ma's en services voor het w
 
 [Behoud de privacy van gegevens](how-to-differential-privacy.md) in azure machine learning.
 
-Voor meer informatie over de onderdelen van WhiteNoise raadpleegt u de GitHub-opslag plaatsen voor [WhiteNoise core package](https://github.com/opendifferentialprivacy/whitenoise-core), [WhiteNoise systeem package](https://github.com/opendifferentialprivacy/whitenoise-system) en [WhiteNoise samples](https://github.com/opendifferentialprivacy/whitenoise-samples).
+Voor meer informatie over de onderdelen van SmartNoise raadpleegt u de GitHub-opslag plaatsen voor [SmartNoise core package](https://github.com/opendifferentialprivacy/smartnoise-core), [SmartNoise SDK](https://github.com/opendifferentialprivacy/smartnoise-sdk)en [SmartNoise samples](https://github.com/opendifferentialprivacy/smartnoise-samples).

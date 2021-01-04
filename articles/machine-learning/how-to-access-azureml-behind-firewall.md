@@ -11,16 +11,19 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8560acd9c5a11004c5144441d395863c8b85edba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0fa3492555b2870ae7b95abec08bbd3280cdc985
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461400"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705061"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>De werk ruimte achter een firewall gebruiken voor Azure Machine Learning
 
-In dit artikel vindt u informatie over het configureren van Azure Firewall voor het beheren van de toegang tot uw Azure Machine Learning-werk ruimte en het open bare Internet. Zie [Enter prise Security for Azure machine learning](concept-enterprise-security.md) voor meer informatie over het beveiligen van Azure machine learning.
+In dit artikel vindt u informatie over het configureren van Azure Firewall voor het beheren van de toegang tot uw Azure Machine Learning-werk ruimte en het open bare Internet. Zie [Enter prise Security for Azure machine learning](concept-enterprise-security.md)voor meer informatie over het beveiligen van Azure machine learning.
+
+> [!WARNING]
+> Toegang tot gegevens opslag achter een firewall wordt alleen ondersteund in code-eerste ervaringen. Het gebruik van de [Azure machine learning Studio](overview-what-is-machine-learning-studio.md) om toegang te krijgen tot gegevens achter een firewall, wordt niet ondersteund. Als u met de studio met behulp van de gegevens opslag in een particulier netwerk wilt werken, moet u eerst [een virtueel netwerk instellen](../virtual-network/quick-create-portal.md) en [de Studio toegang geven tot gegevens die zijn opgeslagen in een virtueel netwerk](how-to-enable-studio-virtual-network.md).
 
 ## <a name="azure-firewall"></a>Azure Firewall
 
@@ -74,7 +77,7 @@ Zie [een Azure batch groep maken in een virtueel netwerk](../batch/batch-virtual
 
     Voor vermeldingen die bevatten `region` , vervangt u door de Azure-regio die u gebruikt. Bijvoorbeeld `keyvault.westus`.
 
-    Selecteer voor het __protocol__ `TCP` . Selecteer voor de bron- __ports__ en doel poort `*` .
+    Selecteer voor het __protocol__ `TCP` . Selecteer voor de bron- en doel poort `*` .
 
 1. Voeg __toepassings regels__ toe voor de volgende hosts:
 

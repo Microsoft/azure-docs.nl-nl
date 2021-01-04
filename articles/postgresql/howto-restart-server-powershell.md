@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 99fc29071086a5c9271b8b2dec00976833a36352
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 2d37de4a1861cb78b4a76c8ca7bc8c3643245b32
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489775"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706963"
 ---
 # <a name="restart-azure-database-for-postgresql-server-using-powershell"></a>Azure Database for PostgreSQL server opnieuw opstarten met Power shell
 
@@ -20,7 +20,8 @@ In dit onderwerp wordt beschreven hoe u een Azure Database for PostgreSQL server
 
 Het opnieuw opstarten van de server wordt geblokkeerd als de service bezet is. De service kan bijvoorbeeld een eerder aangevraagde bewerking verwerken, zoals het schalen van vCores.
 
-De hoeveelheid tijd die nodig is voor het volt ooien van een herstart is afhankelijk van het PostgreSQL-herstel proces. Om de herstarttijd te beperken, raden we u aan om de hoeveelheid activiteit die op de server plaatsvindt, te minimaliseren voordat de computer opnieuw wordt opgestart.
+> [!NOTE] 
+> De tijd die nodig is om opnieuw op te starten, is afhankelijk van het PostgreSQL-herstel proces. Om de herstarttijd te verlagen, raden we u aan om de hoeveelheid activiteit die op de server plaatsvindt, te minimaliseren voordat de computer opnieuw wordt opgestart. Mogelijk wilt u ook de frequentie van het controle punt verhogen. U kunt ook aan het controle punt gerelateerde parameter waarden afstemmen, inclusief `max_wal_size` . Het is ook raadzaam om de opdracht uit te voeren `CHECKPOINT` voordat de server opnieuw wordt opgestart.
 
 ## <a name="prerequisites"></a>Vereisten
 

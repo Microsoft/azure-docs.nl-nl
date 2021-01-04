@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: juliako
-ms.openlocfilehash: 282e1ef98a3c0d6e152b56a180a639c86d004af9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 82dc9aa9615ef86c878fb75df6650dcc1f904a8f
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493097"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702609"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Een Video Indexer-account maken dat is verbonden met Azure
 
@@ -107,9 +107,14 @@ Als de verbinding met Azure is mislukt, kunt u proberen om het probleem op te lo
 
 1. Gebruik [Azure](https://portal.azure.com/) Portal om een Azure Media Services-account te maken, zoals wordt beschreven in [een account maken](../previous/media-services-portal-create-account.md).
 
+     Zorg ervoor dat het Media Services-account is gemaakt met de klassieke Api's. 
+ 
+    ![Klassieke API Media Services](./media/create-account/enable-classic-api.png)
+
+
     Wanneer u een opslag account voor uw Media Services-account maakt, selecteert u **StorageV2** voor de account soort en **geo-redundante** (GRS) voor de replicatie velden.
 
-    ![Nieuw AMS-account](./media/create-account/create-ams-account1.png)
+    ![Nieuw AMS-account](./media/create-account/create-new-ams-account.png)
 
     > [!NOTE]
     > Zorg ervoor dat u de Media Services resource-en account namen noteert. U hebt deze nodig voor de stappen in de volgende sectie.
@@ -120,7 +125,7 @@ Als de verbinding met Azure is mislukt, kunt u proberen om het probleem op te lo
 
     Selecteer in het nieuwe Media Services account **streaming-eind punten**. Selecteer vervolgens het streaming-eind punt en klik op Start.
 
-    ![Streaming-eindpunten](./media/create-account/create-ams-account2.png)
+    ![Streaming-eindpunten](./media/create-account/create-ams-account-se.png)
 4. Er moet een AD-App worden gemaakt om Video Indexer te verifiëren met Media Services-API. De volgende stappen leiden u door het Azure AD-verificatie proces dat wordt beschreven in [aan de slag met Azure AD-verificatie met behulp van de Azure Portal](../previous/media-services-portal-get-started-with-aad.md):
 
     1. Selecteer in het nieuwe Media Services account **API-toegang**.
@@ -171,7 +176,9 @@ Het account wordt over 90 dagen definitief verwijderd.
 
 De volgende Azure Media Services gerelateerde overwegingen zijn van toepassing:
 
-* Als u automatisch verbinding maakt, ziet u een nieuwe resource groep, Media Services-account en een opslag account in uw Azure-abonnement.
+* Als u van plan bent om verbinding te maken met een bestaand Media Services-account, controleert u of het Media Services-account is gemaakt met de klassieke Api's. 
+ 
+    ![Klassieke API Media Services](./media/create-account/enable-classic-api.png)
 * Als u verbinding maakt met een bestaand Media Services-account, Video Indexer de bestaande configuratie van **gereserveerde** media-eenheden niet wijzigen.
 
    Mogelijk moet u het type en het aantal gereserveerde media-eenheden aanpassen op basis van de geplande belasting. Als uw belasting hoog is en u onvoldoende eenheden of snelheid hebt, kan de video verwerking leiden tot time-outstoringen.

@@ -4,12 +4,12 @@ description: Ontvang een melding via SMS, webhook, SMS, e-mail en meer wanneer b
 ms.subservice: alerts
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: 836fc20b6c3d46766801dce0e2aeda83a217d6a3
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: e0d71c014780637b490c745ed829078d138df675
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536078"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708429"
 ---
 # <a name="alerts-on-activity-log"></a>Meldingen over activiteitenlogboek
 
@@ -18,7 +18,8 @@ ms.locfileid: "95536078"
 Waarschuwingen voor activiteiten logboeken zijn waarschuwingen die worden geactiveerd wanneer een nieuwe [activiteiten logboek gebeurtenis](activity-log-schema.md) optreedt die overeenkomt met de voor waarden die zijn opgegeven in de waarschuwing. Op basis van de volg orde en het volume van de gebeurtenissen die zijn vastgelegd in het [activiteiten logboek van Azure](platform-logs-overview.md), wordt de waarschuwings regel geactiveerd. Waarschuwings regels voor activiteiten logboeken zijn Azure-resources, zodat ze kunnen worden gemaakt met behulp van een Azure Resource Manager sjabloon. Ze kunnen ook worden gemaakt, bijgewerkt of verwijderd in de Azure Portal. In dit artikel worden de concepten geïntroduceerd van waarschuwingen voor activiteiten Logboeken. Zie [waarschuwingen voor activiteiten logboek maken en beheren](alerts-activity-log.md)voor meer informatie over het maken of gebruiken van waarschuwings regels voor activiteiten Logboeken.
 
 > [!NOTE]
-> Er **kunnen geen** waarschuwingen worden gemaakt voor gebeurtenissen in de categorie waarschuwing van het activiteiten logboek.
+> * Er **kunnen geen** waarschuwingen worden gemaakt voor gebeurtenissen in de categorie waarschuwing van het activiteiten logboek.
+> * Waarschuwingen voor activiteiten logboeken met de beveiligings categorie kunnen ook worden gedefinieerd in een [nieuwe bijgewerkte stroom](https://docs.microsoft.com/azure/security-center/continuous-export?tabs=azure-portal) naar [ServiceNow](https://docs.microsoft.com/azure/security-center/export-to-siem)
 
 Normaal gesp roken maakt u waarschuwingen voor activiteiten Logboeken om meldingen te ontvangen wanneer:
 

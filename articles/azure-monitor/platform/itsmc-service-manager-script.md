@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: 4babd015b05527cb03d2747b1c9b9a34941634ab
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d620df0b55b024cd5d7c25ea17d9b09c5c5da8ff
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657002"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722875"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Service Manager web-app maken met behulp van het geautomatiseerde script
 
-Gebruik het volgende script om de web-app voor uw Service Manager-exemplaar te maken. Meer informatie over Service Manager verbinding vindt u hier: [Service Manager web-app](./itsmc-connections.md#create-and-deploy-service-manager-web-app-service)
+Gebruik het volgende script om de web-app voor uw Service Manager-exemplaar te maken. Meer informatie over Service Manager verbinding vindt u hier: [Service Manager web-app](./itsmc-connections-scsm.md)
 
 Voer het script uit door de volgende vereiste gegevens op te geven:
 
@@ -29,9 +29,6 @@ Voer het script uit door de volgende vereiste gegevens op te geven:
 Met het script wordt de web-app gemaakt met de naam die u hebt opgegeven (samen met enkele extra teken reeksen om deze uniek te maken). De web- **app-URL**, de **client-id** en het **client geheim** worden gegenereerd.
 
 Sla deze waarden op. u hebt deze waarden nodig wanneer u een verbinding maakt met IT Service Management-connector.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -321,5 +318,5 @@ if(!$err)
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-[Configureer de hybride verbinding](./itsmc-connections.md#configure-the-hybrid-connection).
+[Configureer de hybride verbinding](./itsmc-connections-scsm.md#configure-the-hybrid-connection).
 

@@ -6,15 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 08/12/2020
+ms.date: 12/18/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 0b48b8d954b132caab96e5978c90687899ea04c2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 59acbc545e6bb37ebd090ec458d98586de882133
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549222"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696279"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Java SDK voor SQL API: release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -53,6 +53,12 @@ Dit is de oorspronkelijke Azure Cosmos DB Java SDK v2 voor de SQL-API die synchr
 |**Minimale ondersteunde runtime**|[Java Development Kit (JDK) 7 +](/java/azure/jdk/?view=azure-java-stable&preserve-view=true)|
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="261"></a><a name="2.6.1"></a>2.6.1
+* Er is een fout opgelost bij het verwerken van een query via service Interop.
+
+### <a name="260"></a><a name="2.6.0"></a>2.6.0
+* Er is ondersteuning toegevoegd voor het uitvoeren van query's voor wijzigings invoer vanuit een bepaald tijdstip.
 
 ### <a name="251"></a><a name="2.5.1"></a>2.5.1
 * Hiermee wordt de primaire partitie cache probleem opgelost in de documentCollection-query.
@@ -271,6 +277,8 @@ Microsoft zal ten minste **12 maanden** vóór de buitengebruikstelling van een 
 
 | Versie | Releasedatum | Buitengebruikstellingsdatum |
 | --- | --- | --- |
+| [2.6.1](#2.6.1) |17 december 2020 |--- |
+| [2.6.0](#2.6.0) |16 juli 2020 |--- |
 | [2.5.1](#2.5.1) |03 juni 2020 |--- |
 | [2.5.0](#2.5.0) |12 mei 2020 |--- |
 | [2.4.7](#2.4.7) |20 februari 2020 |--- |

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 13959c4a3c798656efdc72b5c8e5f96e4fb2392a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2b811b1ace646cc4e0a93b937fbb90cfbf7aec0f
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011894"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704891"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Problemen met de Log Analytics-agent voor Linux oplossen 
 
@@ -66,7 +66,7 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Belang rijke logboek locaties en logboek verzamelaar-hulp programma
 
- Bestand | Pad
+ File | Pad
  ---- | -----
  Log Analytics agent voor Linux-logboek bestand | `/var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
  Logboek bestand voor configuratie van Log Analytics agent | `/var/opt/microsoft/omsconfig/omsconfig.log`
@@ -241,23 +241,6 @@ Problemen met betrekking tot prestaties doen zich niet altijd voor en ze zijn ze
 3. OMI opnieuw starten: <br/>
 `sudo scxadmin -restart`
 
-## <a name="issue-you-are-not-seeing-any-data-in-the-azure-portal"></a>Probleem: u ziet geen gegevens in het Azure Portal
-
-### <a name="probable-causes"></a>Mogelijke oorzaken
-
-- Onboarding naar Azure Monitor is mislukt
-- De verbinding met de Azure Monitor is geblokkeerd
-- Er wordt een back-up gemaakt van Log Analytics agent voor Linux-gegevens
-
-### <a name="resolution"></a>Oplossing
-1. Controleer of het voorbereidings Azure Monitor is geslaagd door te controleren of het volgende bestand bestaat: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`
-2. Onboarding uitvoeren met behulp van de `omsadmin.sh` opdracht regel instructies
-3. Als u een proxy gebruikt, raadpleegt u de eerder beschreven stappen voor het oplossen van de proxy.
-4. In sommige gevallen, wanneer de Log Analytics-agent voor Linux niet kan communiceren met de service, worden gegevens op de agent in de wachtrij geplaatst voor de volledige buffer grootte, 50 MB. De agent moet opnieuw worden gestart door de volgende opdracht uit te voeren: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]` . 
-
-    >[!NOTE]
-    >Dit probleem is opgelost in Agent versie 1.1.0-28 en hoger.
-
 
 ## <a name="issue-you-are-not-seeing-forwarded-syslog-messages"></a>Probleem: u ziet geen doorgestuurde syslog-berichten 
 
@@ -313,7 +296,7 @@ Deze fout geeft aan dat de Linux Diagnostic extension (LAD) wordt geïnstalleerd
 
 ### <a name="resolution"></a>Oplossing
 1. Voeg de omsagent-gebruiker toe om te lezen uit het nagios-bestand door deze [instructies](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/OMS-Agent-for-Linux.md#nagios-alerts)te volgen.
-2. Zorg ervoor dat in het algemene configuratie bestand van de Log Analytics-agent voor Linux in de `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf` nagios-bron en het filter geen opmerkingen zijn. **both**
+2. Zorg ervoor dat in het algemene configuratie bestand van de Log Analytics-agent voor Linux in de `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf` nagios-bron en het filter geen opmerkingen zijn. 
 
     ```
     <source>
@@ -335,6 +318,7 @@ Deze fout geeft aan dat de Linux Diagnostic extension (LAD) wordt geïnstalleerd
 * De verbinding met de Azure Monitor is geblokkeerd
 * De virtuele machine is opnieuw opgestart
 * Het OMI-pakket is hand matig bijgewerkt naar een nieuwere versie, vergeleken met wat is geïnstalleerd door Log Analytics agent voor Linux-pakket
+* OMI is geblokkeerd, de OMS-agent wordt geblokkeerd
 * Fout in de klasse van de DSC-resource Logboeken is *niet gevonden* in het `omsconfig.log` logboek bestand
 * Er wordt een back-up gemaakt van Log Analytics-agent voor gegevens
 * DSC-logboeken *huidige configuratie bestaat niet. Voer Start-DscConfiguration opdracht met de para meter-Path uit om een configuratie bestand op te geven en maak eerst een huidige configuratie.* in het `omsconfig.log` logboek bestand, maar er bestaat geen logboek bericht over `PerformRequiredConfigurationChecks` bewerkingen.
@@ -345,6 +329,7 @@ Deze fout geeft aan dat de Linux Diagnostic extension (LAD) wordt geïnstalleerd
 4. Als u een proxy gebruikt, raadpleegt u de bovenstaande stappen voor het oplossen van problemen met proxy.
 5. In sommige Azure-distributie systemen wordt Omid OMI server daemon niet gestart nadat de virtuele machine opnieuw is opgestart. Dit leidt ertoe dat er geen gegevens over de audit, de change tracking of de UpdateManagement-oplossing worden weer gegeven. De tijdelijke oplossing is om de Omi-server hand matig te starten door uit te voeren `sudo /opt/omi/bin/service_control restart` .
 6. Nadat het OMI-pakket hand matig is bijgewerkt naar een nieuwere versie, moet het hand matig opnieuw worden opgestart om Log Analytics agent verder te kunnen werken. Deze stap is vereist voor sommige distributies waarbij OMI-server niet automatisch wordt gestart nadat de upgrade is uitgevoerd. Voer uit `sudo /opt/omi/bin/service_control restart` om Omi opnieuw te starten.
+* In sommige gevallen kan OMI worden geblokkeerd. De OMS-agent kan een geblokkeerde status invoeren die wacht op OMI, waarbij alle gegevens verzameling wordt geblokkeerd. Het proces van de OMS-agent wordt uitgevoerd, maar er is geen activiteit, die wordt vastgelegd door geen nieuwe logboek regels (zoals verzonden heartbeats) aanwezig in `omsagent.log` . Start OMI opnieuw `sudo /opt/omi/bin/service_control restart` op om de agent te herstellen.
 7. Als er een fout bericht *klasse niet gevonden* wordt weer gegeven in omsconfig. log, voert u uit `sudo /opt/omi/bin/service_control restart` .
 8. In sommige gevallen wordt er een back-up gemaakt van de gegevens op de agent, wanneer de Log Analytics-agent voor Linux niet kan communiceren met Azure Monitor, de volledige buffer grootte: 50 MB. De agent moet opnieuw worden gestart door de volgende opdracht uit te voeren `/opt/microsoft/omsagent/bin/service_control restart` .
 

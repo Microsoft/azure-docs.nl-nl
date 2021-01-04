@@ -1,17 +1,17 @@
 ---
 title: Afstemming van Azure Data Lake Storage Gen1 prestaties-Power shell
 description: Tips voor het verbeteren van de prestaties bij het gebruik van Azure PowerShell met Azure Data Lake Storage Gen1.
-author: stewu
+author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 01/09/2018
-ms.author: stewu
-ms.openlocfilehash: f5e6f6601a563a387476e4e2eaf353c8bef384ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: twooley
+ms.openlocfilehash: 4ac2bbb21fd1a987d544a536d0f52628824e0bf4
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85504692"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723793"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Richt lijnen voor het afstemmen van prestaties voor het gebruik van Power shell met Azure Data Lake Storage Gen1
 

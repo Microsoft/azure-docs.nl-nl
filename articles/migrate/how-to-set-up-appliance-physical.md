@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 04/15/2020
-ms.openlocfilehash: 21d40b1962a3e4000876686659b76d019991785d
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 73c3d529978c91946632ed599f02b8938830621e
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751679"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705316"
 ---
 # <a name="set-up-an-appliance-for-physical-servers"></a>Een apparaat instellen voor fysieke servers
 
@@ -119,11 +119,16 @@ Het apparaat voor de eerste keer instellen.
 ### <a name="register-the-appliance-with-azure-migrate"></a>Het apparaat registreren bij Azure Migrate
 
 1. Plak de **Azure Migrate-projectsleutel** die u in de portal hebt gekopieerd. Als u de sleutel niet hebt, gaat u naar **Serverevaluatie > Detecteren > Bestaande apparaten beheren**, selecteert u de naam van het apparaat die u hebt ingevoerd op het moment dat de sleutel werd gegenereerd en kopieert u de bijbehorende sleutel.
-1. Klik op **Aanmelden**. Er wordt een Azure-aanmeldingsprompt geopend in een nieuw browsertabblad. Als dit niet wordt weergegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
-1. Meld u op het nieuwe tabblad aan met de gebruikersnaam en het wachtwoord van Azure.
+1. U hebt een apparaatcode nodig om te verifiëren bij Azure. Als u op **Aanmelden** klikt, wordt er een modale met de apparaatcode geopend, zoals hieronder wordt weer gegeven.
+
+    ![Modale weer gave van de apparaatcode](./media/tutorial-discover-vmware/device-code.png)
+
+1. Klik op **code kopiëren & aanmelding** om de apparaatcode te kopiëren en open een Azure-aanmeldings prompt in een nieuw browser tabblad. Als deze niet wordt weer gegeven, controleert u of de pop-upblokkering in de browser is uitgeschakeld.
+1. Plak op het tabblad Nieuw de code van het apparaat en meld u aan met uw Azure-gebruikers naam en-wacht woord.
    
    Aanmelden met een pincode wordt niet ondersteund.
-3. Nadat u zich hebt aangemeld, gaat u terug naar de web-app. 
+3. Als u het tabblad aanmelding per ongeluk sluit zonder u aan te melden, moet u het tabblad browser van het configuratie beheer van het apparaat vernieuwen om de knop aanmelden opnieuw in te scha kelen.
+1. Nadat u zich hebt aangemeld, gaat u terug naar het vorige tabblad met het configuratie beheer van het apparaat.
 4. Als het Azure-gebruikersaccount dat wordt gebruikt voor logboekregistratie de juiste [machtigingen ](./tutorial-discover-physical.md) heeft voor de Azure-resources die tijdens het genereren van de sleutel zijn gemaakt, wordt de registratie van het apparaat gestart.
 1. Nadat het apparaat is geregistreerd, kunt u de registratiedetails zien door op **Details weergeven** te klikken.
 
@@ -132,7 +137,17 @@ Het apparaat voor de eerste keer instellen.
 
 Maak nu verbinding vanaf het apparaat met de fysieke servers die moeten worden gedetecteerd en start de detectie.
 
-1. In **Stap 1: Geef referenties op voor de detectie van fysieke of virtuele Windows- en Linux-servers**, klik op **Referenties toevoegen** om een beschrijvende naam voor referenties op te geven, voeg een **gebruikersnaam** en **wachtwoord** toe voor een Windows- of Linux-server. Klik op **Opslaan**.
+1. Klik in **stap 1: referenties opgeven voor de detectie van fysieke of virtuele Windows-servers en** op **referenties toevoegen**.
+1. Voor Windows Server selecteert u het bron type als **Windows-Server**, geeft u een beschrijvende naam op voor referenties, voegt u de gebruikers naam en het wacht woord toe. Klik op **Opslaan**.
+1. Als u verificatie op basis van wacht woorden voor Linux-server gebruikt, selecteert u het bron type als **Linux-server (op wacht woord gebaseerd)**, geeft u een beschrijvende naam op voor referenties, voegt u de gebruikers naam en het wacht woord toe. Klik op **Opslaan**.
+1. Als u verificatie op basis van SSH-sleutels voor Linux-server gebruikt, kunt u bron type selecteren als **Linux-server (op basis van SSH-sleutel)**, een beschrijvende naam voor referenties opgeven, de gebruikers naam toevoegen, bladeren en het bestand met de persoonlijke SSH-sleutel selecteren. Klik op **Opslaan**.
+
+    - Azure Migrate ondersteunt de persoonlijke SSH-sleutel die wordt gegenereerd door de opdracht ssh-keygen met behulp van RSA-, DSA-, ECDSA-en ed25519-algoritmen.
+    - Momenteel wordt Azure Migrate geen SSH-sleutel op basis van een wachtwoordzin ondersteund. Gebruik een SSH-sleutel zonder wachtwoordzin.
+    - Het persoonlijke SSH-sleutel bestand dat is gegenereerd door PuTTy, wordt momenteel niet door Azure Migrate ondersteund.
+    - Azure Migrate ondersteunt de OpenSSH-indeling van het bestand met de persoonlijke SSH-sleutel, zoals hieronder wordt weer gegeven:
+    
+    ![Ondersteunde indeling voor de persoonlijke SSH-sleutel](./media/tutorial-discover-physical/key-format.png)
 1. Als u meerdere referenties tegelijk wilt toevoegen, klikt u op **Meer toevoegen** om meer referenties op te slaan en toe te voegen. Er worden meerdere referenties ondersteund voor detectie van fysieke servers.
 1. In **Stap 2: Geef de gegevens voor de fysieke of virtuele server op**, klik op **Detectiebron toevoegen** om het **IP-adres of de FQDN** van de server op te geven en tevens de beschrijvende naam voor de referenties waarmee verbinding wordt gemaakt met de server.
 1. U kunt **één item per keer toevoegen** of **meerdere items in één keer toevoegen**. Er is ook een optie om de gegevens van een server op te geven via **CSV importeren**.

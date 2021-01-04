@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 12/07/2020
-ms.openlocfilehash: 16002d7acf97832f743410a203e2f76e99646c0c
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 7122c960dc7921e833329d528f96f0efe0347bda
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673355"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707466"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -412,7 +412,9 @@ In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-s
 
 > [!TIP]
 > Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicAppsManagement** gebruiken in plaats van inkomende Logic apps IP-adres voorvoegsels op te geven voor elke regio.
-> Deze tag werkt in de regio's waar de Logic Apps-service beschikbaar is.
+> Voor beheerde connectors kunt u optioneel het **AzureConnectors** -service label gebruiken, in plaats van inkomende IP-adres voorvoegsels voor beheerde connectors op te geven voor elke regio.
+> Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is.
+
 
 <a name="multi-tenant-inbound"></a>
 
@@ -429,7 +431,7 @@ In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-s
 | Central US | 13.67.236.76, 40.77.111.254, 40.77.31.87, 104.43.243.39 |
 | Azië - oost | 168.63.200.173, 13.75.89.159, 23.97.68.172, 40.83.98.194 |
 | VS - oost | 137.135.106.54, 40.117.99.79, 40.117.100.228, 137.116.126.165 |
-| US - oost 2 | 40.84.25.234, 40.79.44.7, 40.84.59.136, 40.70.27.253 |
+| VS - oost 2 | 40.84.25.234, 40.79.44.7, 40.84.59.136, 40.70.27.253 |
 | Frankrijk - centraal | 52.143.162.83, 20.188.33.169, 52.143.156.55, 52.143.158.203 |
 | Frankrijk - zuid | 52.136.131.145, 52.136.129.121, 52.136.130.89, 52.136.131.4 |
 | Duitsland - noord | 51.116.211.29, 51.116.208.132, 51.116.208.37, 51.116.208.64 |
@@ -476,7 +478,7 @@ In deze sectie vindt u de uitgaande IP-adressen voor de Azure Logic Apps-service
 
 > [!TIP]
 > Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicApps** gebruiken in plaats van uitgaande Logic apps IP-adres voorvoegsels opgeven voor elke regio.
-> Voor beheerde connectors kunt u optioneel het **AzureConnectors** -service label gebruiken in plaats van de uitgaande IP-adres voorvoegsels voor beheerde connectors op te geven voor elke regio. Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is. 
+> Deze tag werkt in de regio's waar de Logic Apps-service beschikbaar is. 
 
 <a name="multi-tenant-outbound"></a>
 
@@ -493,7 +495,7 @@ In deze sectie vindt u de uitgaande IP-adressen voor de Azure Logic Apps-service
 | Central US | 13.67.236.125, 104.208.25.27, 40.122.170.198, 40.113.218.230, 23.100.86.139, 23.100.87.24, 23.100.87.56, 23.100.82.16 | 52.173.241.27, 52.173.245.164, 13.89.171.80 - 13.89.171.95, 13.89.178.64 - 13.89.178.95 |
 | Azië - oost | 13.75.94.173, 40.83.127.19, 52.175.33.254, 40.83.73.39, 65.52.175.34, 40.83.77.208, 40.83.100.69, 40.83.75.165 | 13.75.110.131, 52.175.23.169, 13.75.36.64 - 13.75.36.79, 104.214.164.0 - 104.214.164.31 |
 | VS - oost | 13.92.98.111, 40.121.91.41, 40.114.82.191, 23.101.139.153, 23.100.29.190, 23.101.136.201, 104.45.153.81, 23.101.132.208 | 40.71.249.139, 40.71.249.205, 40.114.40.132, 40.71.11.80 - 40.71.11.95, 40.71.15.160 - 40.71.15.191 |
-| US - oost 2 | 40.84.30.147, 104.208.155.200, 104.208.158.174, 104.208.140.40, 40.70.131.151, 40.70.29.214, 40.70.26.154, 40.70.27.236 | 52.225.129.144, 52.232.188.154, 104.209.247.23, 40.70.146.208 - 40.70.146.223, 40.70.151.96 - 40.70.151.127 |
+| VS - oost 2 | 40.84.30.147, 104.208.155.200, 104.208.158.174, 104.208.140.40, 40.70.131.151, 40.70.29.214, 40.70.26.154, 40.70.27.236 | 52.225.129.144, 52.232.188.154, 104.209.247.23, 40.70.146.208 - 40.70.146.223, 40.70.151.96 - 40.70.151.127 |
 | Frankrijk - centraal | 52.143.164.80, 52.143.164.15, 40.89.186.30, 20.188.39.105, 40.89.191.161, 40.89.188.169, 40.89.186.28, 40.89.190.104 | 40.89.186.239, 40.89.135.2, 40.79.130.208 - 40.79.130.223, 40.79.148.96 - 40.79.148.127 |
 | Frankrijk - zuid | 52.136.132.40, 52.136.129.89, 52.136.131.155, 52.136.133.62, 52.136.139.225, 52.136.130.144, 52.136.140.226, 52.136.129.51 | 52.136.142.154, 52.136.133.184, 40.79.178.240 - 40.79.178.255, 40.79.180.224 - 40.79.180.255 |
 | Duitsland - noord | 51.116.211.168, 51.116.208.165, 51.116.208.175, 51.116.208.192, 51.116.208.200, 51.116.208.222, 51.116.208.217, 51.116.208.51 | 51.116.60.192, 51.116.211.212, 51.116.59.16 - 51.116.59.31, 51.116.60.192 - 51.116.60.223 |

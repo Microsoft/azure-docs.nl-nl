@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
-ms.openlocfilehash: a7524ea80906f9df5f63af9e7d672bbef500b0d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed74d0829a8372ea8391fcd331eef2ef3af3dae0
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373331"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704908"
 ---
 # <a name="deploy-okd-in-azure"></a>OKD implementeren in azure
 
@@ -124,7 +124,7 @@ Verschillende releases hebben mogelijk verschillende para meters. Controleer de 
 In het volgende voor beeld worden het OKD-cluster en alle gerelateerde resources geïmplementeerd in een resource groep met de naam openshiftrg, met een implementatie naam van myOpenShiftCluster. Er wordt rechtstreeks vanuit de GitHub-opslag plaats naar de sjabloon verwezen tijdens het gebruik van een lokaal parameter bestand met de naam azuredeploy.parameters.jsop.
 
 ```azurecli 
-az group deployment create -g openshiftrg --name myOpenShiftCluster \
+az deployment group create -g openshiftrg --name myOpenShiftCluster \
       --template-uri https://raw.githubusercontent.com/Microsoft/openshift-origin/master/azuredeploy.json \
       --parameters @./azuredeploy.parameters.json
 ```

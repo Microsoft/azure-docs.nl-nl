@@ -6,19 +6,19 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 12/14/2017
 ms.author: cynthn
-ms.openlocfilehash: 17d36acfa2de699ff2b22ac16d327ea738519f4a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5992fb20fc8b86d4a0094a8fe5ed6cb6eb03754d
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975379"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704466"
 ---
 # <a name="create-a-complete-linux-virtual-machine-with-the-azure-cli"></a>Een volledige virtuele Linux-machine maken met de Azure CLI
 Als u snel een virtuele machine (VM) in azure wilt maken, kunt u één Azure CLI-opdracht gebruiken die standaard waarden gebruikt voor het maken van vereiste ondersteunende resources. Resources, zoals een virtueel netwerk, een openbaar IP-adres en een netwerk beveiligings groep, worden automatisch gemaakt. Als u meer controle hebt over uw omgeving in productie gebruik, kunt u deze resources van tevoren maken en vervolgens uw Vm's toevoegen. Dit artikel helpt u bij het maken van een virtuele machine en elk van de ondersteunende bronnen één voor één.
 
 Zorg ervoor dat u de nieuwste [Azure cli](/cli/azure/install-az-cli2) hebt geïnstalleerd en dat u bent aangemeld bij een Azure-account in met [AZ login](/cli/azure/reference-index).
 
-Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myVnet*en *myVM*.
+Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myVnet* en *myVM*.
 
 ## <a name="create-resource-group"></a>Een resourcegroep maken
 Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Er moet een resource groep worden gemaakt vóór een virtuele machine en de ondersteunende bronnen voor het virtuele netwerk. Maak de resource groep met [AZ Group Create](/cli/azure/group). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
@@ -558,10 +558,10 @@ az group export --name myResourceGroup > myResourceGroup.json
 
 Met deze opdracht maakt `myResourceGroup.json` u het bestand in de huidige werkmap. Wanneer u een omgeving maakt op basis van deze sjabloon, wordt u gevraagd om alle resource namen. U kunt deze namen invullen in het sjabloon bestand door de `--include-parameter-default-value` para meter toe te voegen aan de `az group export` opdracht. Bewerk de JSON-sjabloon om de resource namen op te geven of [Maak een parameters.jsvoor het bestand](../../azure-resource-manager/templates/template-syntax.md?toc=/azure/virtual-machines/linux/toc.json) waarin de resource namen worden opgegeven.
 
-Als u een omgeving wilt maken op basis van uw sjabloon, gebruikt u [AZ Group Deployment maken](/cli/azure/group/deployment) als volgt:
+Als u een omgeving wilt maken op basis van uw sjabloon, gebruikt u [AZ Deployment Group Create](/cli/azure/deployment/group) als volgt:
 
 ```azurecli
-az group deployment create \
+az deployment group create \
     --resource-group myNewResourceGroup \
     --template-file myResourceGroup.json
 ```

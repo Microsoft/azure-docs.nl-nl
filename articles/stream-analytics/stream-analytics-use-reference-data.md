@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/2/2020
-ms.openlocfilehash: 2cfd391daa13a100a56bb10b79b27eda80902374
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.date: 12/18/2020
+ms.openlocfilehash: e7f5b3ae0a4dc7faa67a361b210b1d014e1f1b93
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533602"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722127"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Referentie gegevens gebruiken voor Zoek opdrachten in Stream Analytics
 
@@ -137,6 +137,18 @@ INTO    output
 FROM    Step1
 JOIN    refData2 ON refData2.Desc = Step1.Desc 
 ``` 
+
+## <a name="iot-edge-jobs"></a>IoT Edge taken
+
+Alleen lokale referentie gegevens worden ondersteund voor Stream Analytics Edge-taken. Wanneer een taak wordt geïmplementeerd op IoT Edge apparaat, worden er referentie gegevens uit het door de gebruiker gedefinieerde bestandspad geladen. Een bestand met referentie gegevens gereed is voor het apparaat. Plaats voor een Windows-container het bestand met referentie gegevens op de lokale schijf en deel het lokale station met de docker-container. Voor een Linux-container maakt u een docker-volume en vult u het gegevens bestand in op het volume.
+
+Referentie gegevens op IoT Edge update worden geactiveerd door een implementatie. Nadat de Stream Analytics-module is geactiveerd, worden de bijgewerkte gegevens gekozen zonder dat de actieve taak wordt gestopt.
+
+Er zijn twee manieren om de referentie gegevens bij te werken:
+
+* Het pad naar de referentie gegevens in uw Stream Analytics-taak bijwerken vanuit Azure Portal.
+
+* Werk de IoT Edge-implementatie bij.
 
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]

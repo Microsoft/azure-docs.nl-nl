@@ -80,7 +80,8 @@
         - name: Containers configureren
           href: text-analytics-resource-container-config.md
         - name: Containerinstanties gebruiken
-          href: how-tos/text-analytics-how-to-use-container-instances.md
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
         - name: Kubernetes Service (AKS) gebruiken
           href: how-tos/text-analytics-how-to-use-kubernetes-service.md
         - name: Documentatie voor Cognitive Services-containers
@@ -123,7 +124,7 @@
               href: /java/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-java-stable
             - name: Node.js
               href: /javascript/api/@azure/cognitiveservices-textanalytics/?view=azure-node-latest
-            - name: Go
+            - name: Aan de slag
               href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/textanalytics'
 - name: Resources
   items:

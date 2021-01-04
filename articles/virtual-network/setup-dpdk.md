@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/12/2020
 ms.author: labattul
-ms.openlocfilehash: 622b7e629a7f5fea77afc18ec5121fe3466716ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba7c2a37d58f20ac4ff1f49a46a406d1b1f70106
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87387554"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704415"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>DPDK instellen op een virtuele Linux-machine
 
@@ -50,7 +50,7 @@ De volgende distributies van Azure Marketplace worden ondersteund:
 
 **Aangepaste kernel-ondersteuning**
 
-Zie [patches voor het bouwen van een door Azure afgestemde Linux-kernel](https://github.com/microsoft/azure-linux-kernel)voor een Linux-kernel-versie die niet wordt vermeld. U kunt ook contact opnemen met voor meer informatie [azuredpdk@microsoft.com](mailto:azuredpdk@microsoft.com) . 
+Zie [patches voor het bouwen van een door Azure afgestemde Linux-kernel](https://github.com/microsoft/azure-linux-kernel)voor een Linux-kernel-versie die niet wordt vermeld. U kunt ook contact opnemen met voor meer informatie [aznetdpdk@microsoft.com](mailto:aznetdpdk@microsoft.com) . 
 
 ## <a name="region-support"></a>Ondersteuning voor regio
 
@@ -136,7 +136,7 @@ Nadat de computer opnieuw is opgestart, voert u de volgende opdrachten eenmaal u
 
 3. PCI-adressen
 
-   * Gebruik `ethtool -i <vf interface name>` om te bepalen welk PCI-adres voor *VF*moet worden gebruikt.
+   * Gebruik `ethtool -i <vf interface name>` om te bepalen welk PCI-adres voor *VF* moet worden gebruikt.
    * Als *eth0* versneld netwerken is ingeschakeld, zorgt u ervoor dat testpmd niet per ongeluk het *VF* -PCI-apparaat neemt voor *eth0*. Als de DPDK-toepassing per ongeluk de beheer netwerk interface overneemt en u uw SSH-verbinding verliest, gebruikt u de seriële console om de DPDK-toepassing te stoppen. U kunt de seriële console ook gebruiken om de virtuele machine te stoppen of te starten.
 
 4. Laad *ibuverbs* bij elke herstart met `modprobe -a ib_uverbs` . Voor SLES alleen 15, laadt u ook *mlx4_ib* met `modprobe -a mlx4_ib` .
@@ -251,7 +251,7 @@ Met de volgende opdrachten worden periodiek de statistieken van pakketten per se
 
 Wanneer u de vorige opdrachten op een virtuele machine uitvoert, wijzigt u *IP_SRC_ADDR* en *IP_DST_ADDR* in, `app/test-pmd/txonly.c` zodat deze overeenkomen met het werkelijke IP-adres van de virtuele machines voordat u compileert. Anders worden de pakketten verwijderd voordat de doorstuur server wordt bereikt. Het is niet mogelijk om een derde computer doorgestuurd verkeer te ontvangen, omdat de *testpmd* -doorstuur server de Layer 3-adressen niet wijzigt, tenzij u een aantal code wijzigingen aanbrengt.
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Naslaginformatie
 
 * [Opties voor EAL](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#eal-command-line-options)
 * [Testpmd-opdrachten](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#testpmd-command-line-options)

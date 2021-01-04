@@ -3,12 +3,12 @@ title: Basis installatie kopie-updates-taken
 description: Meer informatie over basis installatie kopieën voor installatie kopieën van de toepassings container en over hoe een update van een basis installatie kopie een Azure Container Registry taak kan activeren.
 ms.topic: article
 ms.date: 01/22/2019
-ms.openlocfilehash: 74e5fb81e3ef6f75b5ee2872ee44b99aae096fd8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: df33096830cd7b34a288c38c105aff3610315337
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009820"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707483"
 ---
 # <a name="about-base-image-updates-for-acr-tasks"></a>Over updates van basis installatie kopieën voor ACR-taken
 
@@ -57,7 +57,7 @@ De tijd tussen het moment dat een basis installatie kopie wordt bijgewerkt en wa
 * **Standaard ingeschakeld** : wanneer u een ACR-taak maakt met de opdracht [AZ ACR Task Create][az-acr-task-create] , wordt de taak standaard *ingeschakeld* voor trigger door een update van de basis installatie kopie. Dat wil zeggen, de `base-image-trigger-enabled` eigenschap is ingesteld op True. Als u dit gedrag in een taak wilt uitschakelen, werkt u de eigenschap bij op ONWAAR. Voer bijvoorbeeld de volgende opdracht [AZ ACR Task update][az-acr-task-update] uit:
 
   ```azurecli
-  az acr task update --myregistry --name mytask --base-image-trigger-enabled False
+  az acr task update --registry myregistry --name mytask --base-image-trigger-enabled False
   ```
 
 * **Trigger voor het bijhouden van afhankelijkheden** : om een ACR-taak in te scha kelen om de afhankelijkheden van een container installatie kopie te bepalen en bij te houden, zoals de basis installatie kopie, moet u eerst de taak activeren om de installatie kopie **ten minste één keer** te bouwen. Activeer de taak bijvoorbeeld hand matig met behulp van de opdracht [AZ ACR Task run][az-acr-task-run] .

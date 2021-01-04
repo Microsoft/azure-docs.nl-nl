@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 05/26/2020
-ms.openlocfilehash: 0858d448cf768dbe6ea48f07247725fac30da860
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.date: 12/20/2020
+ms.openlocfilehash: ed5e4d05a693ff9b0bf8823ba31de17d000d0fb6
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95758889"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706878"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Azure Log Analytics-werk ruimte verwijderen en herstellen
 
@@ -19,7 +19,7 @@ In dit artikel wordt uitgelegd hoe u met de procedure voor het uitvoeren van Azu
 
 ## <a name="considerations-when-deleting-a-workspace"></a>Overwegingen bij het verwijderen van een werk ruimte
 
-Wanneer u een Log Analytics-werk ruimte verwijdert, wordt er een tijdelijke Verwijder bewerking uitgevoerd om het herstel van de werk ruimte met inbegrip van gegevens en verbonden agents binnen 14 dagen toe te staan, of het verwijderen per ongeluk of opzettelijk is geslaagd. Na de periode voor het voorlopig verwijderen kunnen de werkruimte resource en de gegevens niet worden hersteld. de bijbehorende gegevens worden in een wachtrij geplaatst voor permanent verwijderen en binnen 30 dagen volledig verwijderd. De naam van de werk ruimte is vrijgegeven en u kunt deze gebruiken om een nieuwe werk ruimte te maken.
+Wanneer u een Log Analytics-werk ruimte verwijdert, wordt er een tijdelijke Verwijder bewerking uitgevoerd om het herstel van de werk ruimte met inbegrip van gegevens en verbonden agents binnen 14 dagen toe te staan, of het verwijderen per ongeluk of opzettelijk is geslaagd. Na de periode voor het voorlopig verwijderen zijn de resource en de gegevens van de werk ruimte niet-herstelbaar en in de wachtrij geplaatst om binnen 30 dagen volledig te worden verwijderd. De naam van de werk ruimte is vrijgegeven en u kunt deze gebruiken om een nieuwe werk ruimte te maken.
 
 > [!NOTE]
 > Als u het gedrag van zacht verwijderen wilt negeren en uw werk ruimte permanent wilt verwijderen, volgt u de stappen in [permanente werk ruimte verwijderen](#permanent-workspace-delete).
@@ -76,12 +76,15 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 ## <a name="recover-workspace"></a>Werk ruimte herstellen
 Wanneer u per ongeluk een Log Analytics-werk ruimte verwijdert, wordt de werk ruimte door de service in een tijdelijke verwijderings status geplaatst, waardoor deze niet toegankelijk is voor een wille keurige bewerking. De naam van de verwijderde werk ruimte blijft behouden tijdens de tijdelijke verwijderings periode en kan niet worden gebruikt voor het maken van een nieuwe werk ruimte. Na de periode voor het voorlopig verwijderen is de werk ruimte niet-herstelbaar, wordt deze gepland voor permanent verwijderen en wordt de naam ervan vrijgegeven en kan deze worden gebruikt voor het maken van een nieuwe werk ruimte.
 
-U kunt uw werk ruimte herstellen tijdens de tijdelijke periode, inclusief gegevens, configuratie en verbonden agents. U moet over Inzender machtigingen beschikken voor het abonnement en de resource groep waar de werk ruimte zich bevond vóór de bewerking voor zacht verwijderen. Het herstel van de werk ruimte wordt uitgevoerd door een Log Analytics-werk ruimte te maken met de details van de verwijderde werk ruimte, met inbegrip van:
+U kunt uw werk ruimte herstellen tijdens de tijdelijke periode, inclusief gegevens, configuratie en verbonden agents. U moet over Inzender machtigingen beschikken voor het abonnement en de resource groep waar de werk ruimte zich bevond vóór de bewerking voor zacht verwijderen. Het herstel van de werk ruimte wordt uitgevoerd door de Log Analytics-werk ruimte opnieuw te maken met de details van de verwijderde werk ruimte, met inbegrip van:
 
 - Abonnements-id
 - Naam resourcegroep
 - Werkruimtenaam
-- Region
+- Regio
+
+> [!IMPORTANT]
+> Als uw werk ruimte is verwijderd als onderdeel van het verwijderen van een resource groep, moet u eerst de resource groep opnieuw maken.
 
 ### <a name="azure-portal"></a>Azure Portal
 
@@ -104,20 +107,19 @@ PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-nam
 
 De werk ruimte en alle bijbehorende gegevens worden teruggezet na de herstel bewerking. Oplossingen en gekoppelde services zijn permanent verwijderd uit de werk ruimte toen ze werd verwijderd en moeten opnieuw worden geconfigureerd om de werk ruimte naar de eerder geconfigureerde status te brengen. Sommige gegevens zijn mogelijk niet beschikbaar voor de query nadat de werk ruimte is hersteld en de bijbehorende schema's worden toegevoegd aan de werk ruimte.
 
-> [!NOTE]
-> * Wanneer u tijdens de tijdelijke verwijderings periode een werk ruimte opnieuw maakt, geeft u een indicatie dat deze werkruimte naam al in gebruik is. 
- 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 U moet ten minste *log Analytics Inzender* machtigingen hebben om een werk ruimte te verwijderen.
 
-* Als u niet zeker weet of de verwijderde werk ruimte zich in de modus voor voorlopig verwijderen bevindt en kan worden hersteld, klikt u op de pagina *werk ruimten op Log Analytics* [herstellen](#recover-workspace) om een lijst met voorlopig verwijderde werk ruimten per abonnement weer te geven. Permanent verwijderde werk ruimten worden niet opgenomen in de lijst.
+* Als u niet zeker weet of de verwijderde werk ruimte zich in de modus voor voorlopig verwijderen bevindt en kan worden hersteld, klikt u op [Prullenbak openen](#recover-workspace) op *log Analytics pagina werk ruimten* om een lijst met voorlopig verwijderde werk ruimten per abonnement weer te geven. Permanent verwijderde werk ruimten worden niet opgenomen in de lijst.
 * Als er een fout bericht wordt weer gegeven, *is de naam van de werk ruimte al in gebruik* of *conflict* bij het maken van een werk ruimte, kan dit sinds:
   * De naam van de werk ruimte is niet beschikbaar en wordt gebruikt door iemand in uw organisatie of door een andere klant.
-  * De werk ruimte is in de afgelopen 14 dagen verwijderd en de naam is gereserveerd voor de tijdelijke periode voor het verwijderen. Volg deze stappen om de werk ruimte eerst te herstellen en permanent verwijderen uit te voeren om de tijdelijke verwijdering te onderdrukken en uw werk ruimte permanent te verwijderen om een nieuwe werk ruimte met dezelfde naam te maken.<br>
+  * De werk ruimte is in de afgelopen 14 dagen verwijderd en de naam is gereserveerd voor de tijdelijke periode voor het verwijderen. Volg deze stappen om de werk ruimte eerst te herstellen en vervolgens permanent verwijderen uit te voeren om de werk ruimte te vervangen door de voorlopig te verwijderen en permanent te verwijderen om een nieuwe werk ruimte met dezelfde naam te maken.<br>
     1. [Herstel](#recover-workspace) uw werk ruimte.
     2. Uw werk ruimte [permanent verwijderen](#permanent-workspace-delete) .
     3. Maak een nieuwe werk ruimte met dezelfde naam voor de werk ruimte.
-* Als er een 204-respons code wordt weer gegeven waarin de *resource niet wordt gevonden*, wordt de oorzaak mogelijk opeenvolgend geprobeerd de bewerking werk ruimte verwijderen te gebruiken. 204 is een leeg antwoord. Dit betekent meestal dat de resource niet bestaat, zodat de verwijdering is voltooid zonder dat u iets hoeft te doen.
-  Nadat de aanroep voor het verwijderen is voltooid, kunt u de werk ruimte herstellen en de permanente Verwijder bewerking volt ooien in een van de methoden die u eerder hebt voorgesteld.
+ 
+      Nadat de aanroep voor het verwijderen is voltooid, kunt u de werk ruimte herstellen en de permanente Verwijder bewerking volt ooien in een van de methoden die u eerder hebt voorgesteld.
 
+* Als u 204-respons code krijgt met een *resource die niet is gevonden* bij het verwijderen van een werk ruimte, zijn er mogelijk een opeenvolgende nieuwe pogingen ondervonden. 204 is een leeg antwoord. Dit betekent meestal dat de resource niet bestaat, zodat de verwijdering is voltooid zonder dat u iets hoeft te doen.
+* Als u de resource groep en de werk ruimte hebt verwijderd, ziet u de verwijderde werk ruimte in de [Prullenbak](#recover-workspace) van de pagina. de herstel bewerking mislukt echter met fout code 404 omdat de resource groep niet bestaat. Maak de resource groep opnieuw en voer het herstel opnieuw uit.

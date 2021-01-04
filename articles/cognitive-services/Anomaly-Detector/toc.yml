@@ -12,14 +12,6 @@
       items:
         - name: Anomaly Detector-clientbibliotheken
           href: ./quickstarts/client-libraries.md
-    - name: REST-API
-      items:
-        - name: C# gebruiken
-          href: quickstarts/detect-data-anomalies-csharp.md
-        - name: Java gebruiken
-          href: quickstarts/detect-data-anomalies-java.md
-        - name: Python gebruiken
-          href: quickstarts/detect-data-anomalies-python.md
 - name: Zelfstudies
   items:
     - name: Afwijkingen in batch visualiseren met behulp van Power BI

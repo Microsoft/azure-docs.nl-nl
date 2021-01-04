@@ -14,12 +14,12 @@ ms.date: 02/28/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0fadcf3f5aefa76ab03d6313643fc18df71f6c3b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 06eb7e8d1be2e58fd6cf87167a585a2ffeee0d7f
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004650"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708480"
 ---
 # <a name="configure-azure-ad-role-settings-in-privileged-identity-management"></a>Instellingen voor Azure AD-functies configureren in Privileged Identity Management
 
@@ -43,8 +43,8 @@ Volg de stappen in dit artikel voor het goed keuren of weigeren van aanvragen vo
 Volg deze stappen om de instellingen voor een Azure AD-functie te openen.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/) met een gebruiker in de beheerdersrol [privileged Role](../roles/permissions-reference.md#privileged-role-administrator) .
-gt
-1. Open **Azure AD privileged Identity Management** &gt; functie-instellingen van **Azure AD-rollen** &gt; **Role settings**.
+
+1. Open **Azure AD privileged Identity Management** &gt; functie-instellingen van **Azure AD-rollen** &gt; .
 
     ![Pagina rolinstellingen die Azure AD-rollen weer geven](./media/pim-how-to-change-default-settings/role-settings.png)
 

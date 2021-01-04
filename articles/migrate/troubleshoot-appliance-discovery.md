@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 647e07fe32beedbd54ca6c5bb95c1de9564df2fd
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 810ea58c5d88dec53463b9a2b04750169c70e137
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654010"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704024"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 
@@ -42,12 +42,6 @@ Dit kan gebeuren als de apparaatapparaat zich achter een proxy bevindt.
 - Als u een firewall proxy op basis van een URL gebruikt om de uitgaande connectiviteit te beheren, voegt u [deze url's](migrate-appliance.md#url-access) toe aan een acceptatie lijst.
 - Als u een interceptie proxy gebruikt om verbinding te maken met internet, importeert u het proxy certificaat op de apparaat-VM met behulp van de [volgende stappen](./migrate-appliance.md).
 
-
-## <a name="clicking-on-login-button-opens-a-new-tab-with-no-device-code"></a>Als u op de knop aanmelding klikt, wordt er een nieuw tabblad geopend zonder apparaatcode
-
-Als u na het klikken op ' aanmelding in het configuratie beheer van het apparaat, een nieuw tabblad wordt geopend zonder code, gaat u terug naar het tabblad toestel Configuration Manager en kunt u de apparaatcode vet letter type vinden onder de knop aanmelding, zoals wordt weer gegeven in de onderstaande scherm afbeelding. Kopieer de code en plak deze op het tabblad Aanmelden om te verifiëren met Azure.
-
-![Apparaatcode](./media/troubleshoot-appliance-discovery/code.png)
 
 ## <a name="cant-sign-into-azure-from-the-appliance-web-app"></a>Kan niet aanmelden bij Azure vanuit de Web-App van het apparaat
 

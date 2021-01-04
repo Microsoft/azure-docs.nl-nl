@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 03/09/2020
 ms.topic: article
-ms.openlocfilehash: 5ee9d39db130c76f683ca1f4d1ff64f9ed86d97e
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 300e0ff26d643ae0263d21e604cb26da37a18841
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92204738"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723822"
 ---
 # <a name="the-arrinspector-inspection-tool"></a>Het inspectiehulpprogramma ArrInspector
 
@@ -108,17 +108,3 @@ In de rechter bovenhoek kunt u een live-update van de panelen onderbreken met ee
 ![Pauze modus](./media/pause-mode.png)
 
 Wanneer u live update opnieuw inschakelt, worden alle panels opnieuw ingesteld.
-
-## <a name="host-configuration"></a>Hostconfiguratie
-
-Het hulp programma maakt standaard verbinding met de ARR-server die wordt uitgevoerd op dezelfde host als voor de ArrInspector. U kunt deze echter configureren voor het controleren van een andere server, ervan uitgaande dat er een ARR-exemplaar wordt uitgevoerd terwijl de hulp poort is geopend.
-
-Hiertoe opent u het hoofd menu aan de linkerkant van de koptekst balk en selecteert u *configuratie*van de host. Klik op **nieuwe host toevoegen**en voer de naam en hostnaam in. Voor *hostname* gebruikt u de hostnaam die eindigt op `.mixedreality.azure.com` , geen `http://` poort.
-
-![Hostconfiguratie](./media/host-configuration.png)
-
-Als u snel wilt overschakelen van de ene host naar een andere, gebruikt u de vervolg keuzelijst rechtsboven.
-
-![Host-keuze lijst](./media/host-switch-combo.png)
-
-De hostlijst wordt opgeslagen in de lokale opslag van de browser, zodat deze behouden blijft wanneer dezelfde browser opnieuw wordt geopend.

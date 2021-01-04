@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 10/22/2020
-ms.openlocfilehash: e67376e2ef79f9711f54ce54d0d91623593ca8ea
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 9a35c0dc8a3b994b015d7a8d64f76f7e10d95a00
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853285"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722399"
 ---
 # <a name="connectivity-architecture-for-azure-sql-managed-instance"></a>Connectiviteitsarchitectuur van Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -311,12 +311,13 @@ Als het virtuele netwerk een aangepaste DNS bevat, moet de aangepaste DNS-server
 
 **TLS 1,2 wordt afgedwongen voor uitgaande verbindingen**: In januari 2020 heeft micro soft TLS 1,2 afgedwongen voor verkeer binnen de service in alle Azure-Services. Voor Azure SQL Managed instance heeft dit tot gevolg dat TLS 1,2 wordt afgedwongen voor uitgaande verbindingen die worden gebruikt voor replicatie en gekoppelde server verbindingen met SQL Server. Als u versies van SQL Server ouder dan 2016 met SQL Managed instance gebruikt, moet u ervoor zorgen dat er [TLS 1,2-specifieke updates](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) zijn toegepast.
 
-De volgende functies van het virtuele netwerk worden momenteel niet ondersteund met SQL Managed instance:
+De volgende functies van het virtuele netwerk worden momenteel *niet ondersteund* met SQL Managed instance:
 
 - **Micro soft-peering**: het inschakelen van [micro soft-peering](../../expressroute/expressroute-faqs.md#microsoft-peering) op ExpressRoute-circuits die rechtstreeks of buiten gebruik worden gepeerd met een virtueel netwerk waarbij het SQL Managed instance-exemplaar van invloed is op de verkeers stroom tussen onderdelen van een SQL Managed instance binnen het virtuele netwerk en de services waarvan deze afhankelijk is, waardoor Implementaties van SQL Managed instance naar virtueel netwerk waarop micro soft-peering al is ingeschakeld, zullen naar verwachting mislukken.
 - **Globale Virtual Network-peering**: de [peering van virtuele netwerken](../../virtual-network/virtual-network-peering-overview.md) tussen Azure-regio's werkt niet voor door SQL beheerde instanties die worden geplaatst in subnetten die zijn gemaakt vóór 9/22/2020.
 - **AzurePlatformDNS**: het gebruik van [de AzurePlatformDNS-servicetag voor](../../virtual-network/service-tags-overview.md) het blok keren van de DNS-omzetting van het platform zou het SQL Managed instance niet beschikbaar laten. Hoewel SQL Managed instance de door de klant gedefinieerde DNS voor DNS-omzetting in de Engine ondersteunt, is er een afhankelijkheid van platform-DNS voor platform bewerkingen.
 - **NAT-gateway**: door [Azure Virtual Network NAT](../../virtual-network/nat-overview.md) te gebruiken voor het beheren van uitgaande verbindingen met een specifiek openbaar IP-adres, wordt het door SQL beheerde exemplaar niet beschikbaar weer gegeven. De service SQL Managed instance is momenteel beperkt tot het gebruik van basis load balancer die geen samen werking van binnenkomende en uitgaande stromen biedt met Virtual Network NAT.
+- **IPv6 voor Azure Virtual Network**: het implementeren van een beheerd exemplaar naar [dual stack IPv4/IPv6-virtuele netwerken](../../virtual-network/ipv6-overview.md) wordt verwacht. Het koppelen van een netwerk beveiligings groep (NSG) of route tabel (UDR) met IPv6-adres voorvoegsels naar het subnet van het SQL-beheerde exemplaar of het toevoegen van IPv6-adres voorvoegsels aan NSG of UDR die al is gekoppeld aan het subnet van het beheerde exemplaar, zou het SQL Managed instance-exemplaar niet beschikbaar weer geven. Implementaties van SQL Managed instance naar een subnet met NSG en UDR die al IPv6-voor voegsels hebben, zullen naar verwachting mislukken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

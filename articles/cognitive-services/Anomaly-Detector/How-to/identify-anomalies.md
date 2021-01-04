@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: mbullwin
-ms.openlocfilehash: b2cd5e32503953de874ab470ca3f9413d2b37d59
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 74f891ba7f5b400b5782565e670539167f4e2464
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014644"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703429"
 ---
 # <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Procedure: afwijkende detector API gebruiken op uw tijdreeks gegevens  
 
@@ -71,4 +71,4 @@ In de volgende voor beelden ziet u een anomalie detectie-API-resultaat op versch
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Wat is de Anomaly Detector-API?](../overview.md)
-* [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector-REST API](../quickstarts/detect-data-anomalies-csharp.md)
+* [Snelstartgids: afwijkingen in uw time series-gegevens detecteren met behulp van de anomalie detectie](../quickstarts/client-libraries.md)

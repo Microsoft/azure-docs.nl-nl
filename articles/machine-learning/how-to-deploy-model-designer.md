@@ -10,17 +10,19 @@ author: likebupt
 ms.reviewer: peterlu
 ms.date: 10/29/2020
 ms.topic: conceptual
-ms.custom: how-to, deploy, studio
-ms.openlocfilehash: 23c6417741d0753fcdaaf30c89c8f51348cc5dc5
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.custom: how-to, deploy, studio, designer
+ms.openlocfilehash: 35acfc51ae76fdacef11f03b1fbd91ad58650ae6
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554679"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722620"
 ---
 # <a name="use-the-studio-to-deploy-models-trained-in-the-designer"></a>De Studio gebruiken voor het implementeren van modellen die zijn getraind in de ontwerp functie
 
-In dit artikel leert u hoe u een getraind model vanuit de Designer kunt implementeren als een realtime-eind punt in Azure Machine Learning Studio.
+In dit artikel leert u hoe u een ontwerp model kunt implementeren als een realtime-eind punt in Azure Machine Learning Studio.
+
+Zodra de registratie is geregistreerd of gedownload, kunt u getrainde modellen op dezelfde manier als elk ander model gebruiken. Geëxporteerde modellen kunnen worden geïmplementeerd in use-cases zoals Internet der dingen (IoT) en lokale implementaties.
 
 De implementatie in Studio bestaat uit de volgende stappen:
 
@@ -61,7 +63,6 @@ Nadat de trainings pijplijn is voltooid, registreert u het getrainde model voor 
 Nadat u het model hebt geregistreerd, kunt u het vinden op de Asset-pagina voor **modellen** in de Studio.
     
 ![Scherm opname van het geregistreerde model op de Asset-pagina modellen](./media/how-to-deploy-model-designer/models-asset-page.png)
-
 
 ## <a name="download-the-entry-script-file-and-conda-dependencies-file"></a>Down load het script bestand voor vermelding en Conda afhankelijkheden bestand
 

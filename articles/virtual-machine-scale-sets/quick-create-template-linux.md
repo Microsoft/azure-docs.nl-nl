@@ -9,12 +9,12 @@ ms.subservice: linux
 ms.date: 03/27/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, subject-armqs, devx-track-azurecli
-ms.openlocfilehash: d040215968b0ebb433edba03e4839ffe7add0e5c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 52e0e50d3c0c68b57181645c3eb695308fdac65a
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745857"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703820"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-scale-set-with-an-arm-template"></a>Quickstart: Een virtuele-machineschaalset in Linux maken met een ARM-sjabloon
 
@@ -24,7 +24,7 @@ Met een virtuele-machineschaalset kunt u een reeks automatisch schalende virtuel
 
 Met ARM-sjablonen kunt u groepen gerelateerde resources implementeren. In één sjabloon kunt u de virtuele-machineschaalset maken, toepassingen installeren en regels voor automatisch schalen configureren. Met behulp van variabelen en parameters kan deze sjabloon opnieuw worden gebruikt voor het bijwerken van bestaande schaalsets, of om extra schaalsets te maken. U kunt sjablonen implementeren via de Azure-portal, Azure CLI of Azure PowerShell of via CI/CD-pijplijnen (Continuous Integration/Continuous Delivery).
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-bottle-autoscale%2Fazuredeploy.json)
 
@@ -77,7 +77,7 @@ Als u de schaalset wilt testen, installeert u een eenvoudige webtoepassing. Wann
 
 De sjabloon maakt gebruik van de aangepaste scriptextensie om [Bottle](https://bottlepy.org/docs/dev/), een Python-webframework, en een eenvoudige HTTP-server te installeren.
 
-Er zijn twee scripts gedefinieerd in **fileUris** - *installserver.sh* en *workserver.py* . Deze bestanden worden gedownload uit GitHub. Vervolgens wordt `bash installserver.sh` uitgevoerd met *commandToExecute* om de app te installeren en configureren:
+Er zijn twee scripts gedefinieerd in **fileUris** - *installserver.sh* en *workserver.py*. Deze bestanden worden gedownload uit GitHub. Vervolgens wordt `bash installserver.sh` uitgevoerd met *commandToExecute* om de app te installeren en configureren:
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
@@ -92,7 +92,7 @@ U kunt ook een Resource Manager-sjabloon implementeren met Azure CLI:
 az group create --name myResourceGroup --location EastUS
 
 # Deploy template into resource group
-az group deployment create \
+az deployment group create \
     --resource-group myResourceGroup \
     --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-bottle-autoscale/azuredeploy.json
 ```
@@ -109,7 +109,7 @@ az network public-ip list \
     --query [*].ipAddress -o tsv
 ```
 
-Voer het openbare IP-adres van de load balancer in een webbrowser in. Gebruik hiervoor deze notatie: *http:\//publicIpAddress:9000/do_work* . Via de load balancer wordt verkeer naar een van uw VM-instanties gedistribueerd, zoals wordt weergegeven in het volgende voorbeeld:
+Voer het openbare IP-adres van de load balancer in een webbrowser in. Gebruik hiervoor deze notatie: *http:\//publicIpAddress:9000/do_work*. Via de load balancer wordt verkeer naar een van uw VM-instanties gedistribueerd, zoals wordt weergegeven in het volgende voorbeeld:
 
 ![Standaardwebpagina in NGINX](media/virtual-machine-scale-sets-create-template/running-python-app.png)
 

@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Java Service Fabric-toepassing
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.custom: mvc, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 89c49ae530b7a4716bc6e8bf0ea6ccb011847eb8
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: c2e2b2883bfa01d3a36de5d58425449f6f973010
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738903"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702154"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Java-toepassing implementeren in een Service Fabric-cluster in Azure
 
@@ -114,10 +114,10 @@ In de volgende stappen maakt u de benodigde resources die vereist zijn voor het 
 10. Maak een Event Hubs-resource met behulp van de volgende opdracht. Volg de aanwijzingen om details in te voeren voor de namespaceName, eventHubName, consumerGroupName, sendAuthorizationRule en receiveAuthorizationRule.
 
     ```azurecli
-    az group deployment create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
+    az deployment group create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
 
     Example:
-    az group deployment create -g testeventhubsrg --template-file eventhubsdeploy.json
+    az deployment group create -g testeventhubsrg --template-file eventhubsdeploy.json
     Please provide string value for 'namespaceName' (? for help): testeventhubnamespace
     Please provide string value for 'eventHubName' (? for help): testeventhub
     Please provide string value for 'consumerGroupName' (? for help): testeventhubconsumergroup
@@ -154,7 +154,7 @@ In de volgende stappen maakt u de benodigde resources die vereist zijn voor het 
     python3 eventhubssastoken.py 'testeventhubs' 'testeventhubs' 'sender' '[PRIMARY-KEY]'
     ```
 
-    Kopieer de waarde van het veld **sr** in de JSON die is geretourneerd. De veldwaarde **sr** is de SAS-token voor EventHubs. De volgende URL is een voorbeeld van het veld **sr** :
+    Kopieer de waarde van het veld **sr** in de JSON die is geretourneerd. De veldwaarde **sr** is de SAS-token voor EventHubs. De volgende URL is een voorbeeld van het veld **sr**:
 
     ```output
     https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
@@ -176,8 +176,8 @@ In de volgende stappen maakt u de benodigde resources die vereist zijn voor het 
     }
     ```
 
-13. Opens **sfdeploy.parameters.json** . Wijzig de volgende parameters en sla het bestand op.
-    - **clusterName** . Gebruik alleen kleine letters en cijfers.
+13. Opens **sfdeploy.parameters.json**. Wijzig de volgende parameters en sla het bestand op.
+    - **clusterName**. Gebruik alleen kleine letters en cijfers.
     - **adminUserName** (in een waarde anders dan leeg)
     - **adminPassword** (in een waarde anders dan leeg)
 
@@ -189,7 +189,7 @@ In de volgende stappen maakt u de benodigde resources die vereist zijn voor het 
 
 ## <a name="deploy-your-application-to-the-cluster"></a>De toepassing in het cluster implementeren
 
-1. Voordat u uw toepassing implementeert, moet u het volgende codefragment toevoegen aan het bestand *Voting/VotingApplication/ApplicationManifest.xml* . Het veld **X509FindValue** is de vingerafdruk die is geretourneerd uit stap 4 van de sectie **Een Service Fabric-cluster maken in Azure** . Dit codefragment is genest onder het veld **ApplicationManifest** (het hoofdveld).
+1. Voordat u uw toepassing implementeert, moet u het volgende codefragment toevoegen aan het bestand *Voting/VotingApplication/ApplicationManifest.xml*. Het veld **X509FindValue** is de vingerafdruk die is geretourneerd uit stap 4 van de sectie **Een Service Fabric-cluster maken in Azure**. Dit codefragment is genest onder het veld **ApplicationManifest** (het hoofdveld).
 
     ```xml
     <Certificates>

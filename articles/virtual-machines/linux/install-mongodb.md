@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 49a0e48977393aeab7ff93b79e28acc55a87b51a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e3bc8ed2745e06096e05f17319a8f7896f87f80f
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016179"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97702035"
 ---
 # <a name="how-to-install-and-configure-mongodb-on-a-linux-vm"></a>MongoDB installeren en configureren op een virtuele Linux-machine
 
@@ -125,10 +125,10 @@ Als u deze omgeving wilt maken, moet u de nieuwste [Azure cli](/cli/azure/instal
 az group create --name myResourceGroup --location eastus
 ```
 
-Implementeer vervolgens de sjabloon MongoDB met [AZ Group Deployment Create](/cli/azure/group/deployment). Voer desgevraagd uw eigen unieke waarden in voor *newStorageAccountName*, *dnsNameForPublicIP* en gebruikers naam en wacht woord:
+Implementeer vervolgens de sjabloon MongoDB met [AZ Deployment Group Create](/cli/azure/deployment/group). Voer desgevraagd uw eigen unieke waarden in voor *newStorageAccountName*, *dnsNameForPublicIP* en gebruikers naam en wacht woord:
 
 ```azurecli
-az group deployment create --resource-group myResourceGroup \
+az deployment group create --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-on-centos/azuredeploy.json
 ```
 
@@ -176,10 +176,10 @@ Als u deze omgeving wilt maken, moet u de nieuwste [Azure cli](/cli/azure/instal
 az group create --name myResourceGroup --location eastus
 ```
 
-Implementeer vervolgens de sjabloon MongoDB met [AZ Group Deployment Create](/cli/azure/group/deployment). Definieer uw eigen resource namen en grootten, zoals voor *mongoAdminUsername*, *sizeOfDataDiskInGB* en *configNodeVmSize*:
+Implementeer vervolgens de sjabloon MongoDB met [AZ Deployment Group Create](/cli/azure/deployment/group). Definieer uw eigen resource namen en grootten, zoals voor *mongoAdminUsername*, *sizeOfDataDiskInGB* en *configNodeVmSize*:
 
 ```azurecli
-az group deployment create --resource-group myResourceGroup \
+az deployment group create --resource-group myResourceGroup \
   --parameters '{"adminUsername": {"value": "azureuser"},
     "adminPassword": {"value": "P@ssw0rd!"},
     "mongoAdminUsername": {"value": "mongoadmin"},
@@ -198,10 +198,10 @@ az group deployment create --resource-group myResourceGroup \
   --no-wait
 ```
 
-Deze implementatie kan een uur duren om alle VM-exemplaren te implementeren en te configureren. De `--no-wait` vlag wordt aan het einde van de voor gaande opdracht gebruikt om de besturings element te retour neren naar de opdracht prompt zodra de sjabloon implementatie is geaccepteerd door het Azure-platform. U kunt vervolgens de implementatie status weer geven met [AZ Group Deployment show](/cli/azure/group/deployment). In het volgende voor beeld wordt de status weer gegeven van de *myMongoDBCluster* -implementatie in de resource groep *myResourceGroup* :
+Deze implementatie kan een uur duren om alle VM-exemplaren te implementeren en te configureren. De `--no-wait` vlag wordt aan het einde van de voor gaande opdracht gebruikt om de besturings element te retour neren naar de opdracht prompt zodra de sjabloon implementatie is geaccepteerd door het Azure-platform. U kunt vervolgens de implementatie status weer geven met [AZ Deployment Group show](/cli/azure/deployment/group). In het volgende voor beeld wordt de status weer gegeven van de *myMongoDBCluster* -implementatie in de resource groep *myResourceGroup* :
 
 ```azurecli
-az group deployment show \
+az deployment group show \
     --resource-group myResourceGroup \
     --name myMongoDBCluster \
     --query [properties.provisioningState] \

@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/2/2020
 ms.custom: seodec18
-ms.openlocfilehash: e8b8c89b94b2fbb191eee0ea57e957802a54204e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 35231eda43e766b5febd8ba90c4d92a44537e0ef
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126971"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703752"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Azure Stream Analytics uitvoer naar Azure Cosmos DB  
 Azure Stream Analytics kan gericht zijn op [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) voor json-uitvoer, waardoor gegevens worden gearchiveerd en query's met lage latentie worden uitgevoerd op ONgestructureerde JSON-gegevens. Dit document bevat enkele aanbevolen procedures voor het implementeren van deze configuratie. Het is raadzaam om uw taak in te stellen op compatibiliteits niveau 1,2 wanneer u Azure Cosmos DB als uitvoer gebruikt.
@@ -21,7 +21,7 @@ Azure Stream Analytics kan gericht zijn op [Azure Cosmos DB](https://azure.micro
 Als u niet bekend bent met Azure Cosmos DB, raadpleegt u de [Azure Cosmos DB documentatie](../cosmos-db/index.yml) om aan de slag te gaan. 
 
 > [!Note]
-> Op dit moment ondersteunt Stream Analytics alleen verbinding met Azure Cosmos DB via de *SQL-API* .
+> Op dit moment ondersteunt Stream Analytics alleen verbinding met Azure Cosmos DB via de *SQL-API*.
 > Andere Azure Cosmos DB Api's worden nog niet ondersteund. Als u Stream Analytics naar Azure Cosmos DB accounts die zijn gemaakt met andere Api's, zijn de gegevens mogelijk niet op de juiste manier opgeslagen. 
 
 ## <a name="basics-of-azure-cosmos-db-as-an-output-target"></a>Basis beginselen van Azure Cosmos DB als uitvoer doel
@@ -97,7 +97,7 @@ De binnenkomende gebeurtenis snelheid in Event Hubs is twee keer hoger dan Azure
 
 ![Vergelijking van metrische gegevens Azure Cosmos DB](media/stream-analytics-documentdb-output/stream-analytics-documentdb-output-2.png)
 
-Met 1,2 is Stream Analytics intelligenter in het gebruik van 100 procent van de beschik bare door Voer in Azure Cosmos DB met weinig herverzendingen tegen beperking of frequentie beperking. Dit biedt een betere ervaring voor andere werk belastingen, zoals query's die op de container worden uitgevoerd. Als u wilt zien hoe Stream Analytics met Azure Cosmos DB wordt geschaald als een Sink voor 1.000 tot 10.000 berichten per seconde, probeert u  [Dit Azure-voorbeeld project](https://github.com/Azure-Samples/streaming-at-scale/tree/master/eventhubs-streamanalytics-cosmosdb).
+Met 1,2 is Stream Analytics intelligenter in het gebruik van 100 procent van de beschik bare door Voer in Azure Cosmos DB met weinig herverzendingen tegen beperking of frequentie beperking. Dit biedt een betere ervaring voor andere werk belastingen, zoals query's die op de container worden uitgevoerd. Als u wilt zien hoe Stream Analytics met Azure Cosmos DB wordt geschaald als een Sink voor 1.000 tot 10.000 berichten per seconde, probeert u  [Dit Azure-voorbeeld project](https://github.com/Azure-Samples/streaming-at-scale/tree/main/eventhubs-streamanalytics-cosmosdb).
 
 De door Voer van Azure Cosmos DB uitvoer is identiek aan 1,0 en 1,1. We *raden u ten zeerste* aan dat u het compatibiliteits niveau 1,2 in stream Analytics gebruikt met Azure Cosmos db.
 
@@ -138,7 +138,7 @@ Als er een tijdelijke fout is opgetreden, wordt de service niet beschik baarheid
 - Verboden (HTTP-fout code 403)
 - Onjuiste aanvraag (HTTP-fout code 400)
 
-## <a name="common-issues"></a>Veelvoorkomende problemen
+## <a name="common-issues"></a>Algemene problemen
 
 1. Een unieke index beperking wordt toegevoegd aan de verzameling en de uitvoer gegevens van Stream Analytics schenden deze beperking. Zorg ervoor dat de uitvoer gegevens van Stream Analytics niet overtreden op unieke beperkingen of verwijder de beperkingen. Zie [beperkingen voor unieke sleutels in azure Cosmos DB](../cosmos-db/unique-keys.md)voor meer informatie.
 

@@ -2,21 +2,22 @@
 title: DHCP voor Azure VMware-oplossing beheren
 description: Meer informatie over het maken en beheren van DHCP voor uw Azure VMware-oplossing privécloud.
 ms.topic: how-to
+ms.custom: contperf-fy21q2
 ms.date: 11/09/2020
-ms.openlocfilehash: 9143a8544fe1b98262c3e990ccdf56f5d5f65957
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: bcaba4274b0e6b423e9fa490c80fc57204d4e153
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335950"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708548"
 ---
 # <a name="manage-dhcp-for-azure-vmware-solution"></a>DHCP voor Azure VMware-oplossing beheren
 
 Voor toepassingen en werk belastingen die worden uitgevoerd in een privécloud-omgeving zijn DHCP-services vereist voor IP-adres toewijzingen.  In dit artikel wordt beschreven hoe u op twee manieren DHCP kunt maken en beheren in de Azure VMware-oplossing:
 
-- Als u NSX-T gebruikt voor het hosten van uw DHCP-server, moet u [een DHCP-server maken](#create-a-dhcp-server) en [door sturen naar die server](#create-dhcp-relay-service). Wanneer u de DHCP-server maakt, voegt u ook een netwerk segment toe en geeft u het DHCP IP-adres bereik op.   
+- Als u NSX-T gebruikt om uw DHCP-server te hosten, moet u [een DHCP-server maken](#create-a-dhcp-server) en [deze doorsturen naar die server](#create-dhcp-relay-service). Wanneer u de DHCP-server maakt, voegt u ook een netwerk segment toe en geeft u het DHCP IP-adres bereik op.   
 
-- Als u een externe DHCP-server van derden gebruikt in uw netwerk, moet u de [DHCP Relay-service maken](#create-dhcp-relay-service). Wanneer u een relay maakt naar een DHCP-server, of u nu NSX-T of een derde partij gebruikt om uw DHCP-server te hosten, moet u het DHCP IP-adres bereik opgeven.
+- Als u een externe DHCP-server van derden in uw netwerk gebruikt, moet u [een DHCP-doorgifteservice maken](#create-dhcp-relay-service). Wanneer u een relay maakt naar een DHCP-server, of u nu NSX-T of een derde partij gebruikt om uw DHCP-server te hosten, moet u het DHCP IP-adres bereik opgeven.
 
 >[!IMPORTANT]
 >DHCP werkt niet voor virtuele machines (Vm's) op het VMware HCX L2-netwerk wanneer de DHCP-server zich in het on-premises Data Center bevindt.  NSX blokkeert standaard alle DHCP-aanvragen van het door lopen van de L2-stretch. Zie de procedure [DHCP-aanvragen verzenden naar de on-premises DHCP-server](#send-dhcp-requests-to-the-on-premises-dhcp-server) voor de oplossing.
@@ -28,11 +29,11 @@ Als u NSX-T wilt gebruiken om uw DHCP-server te hosten, maakt u een DHCP-server.
 
 1. Selecteer in NSX-T Manager de optie **netwerken**  >  **DHCP** en selecteer vervolgens **server toevoegen**.
 
-1. Selecteer **DHCP** voor het **server type** , geef de server naam en het IP-adres op en selecteer vervolgens **Opslaan**.
+1. Selecteer **DHCP** voor het **server type**, geef de server naam en het IP-adres op en selecteer vervolgens **Opslaan**.
 
    :::image type="content" source="./media/manage-dhcp/dhcp-server-settings.png" alt-text="DHCP-server toevoegen" border="true":::
 
-1. Selecteer **gateways van laag 1** , selecteer het verticale beletsel teken op de laag-1-gateway en selecteer vervolgens **bewerken**.
+1. Selecteer **gateways van laag 1**, selecteer het verticale beletsel teken op de laag-1-gateway en selecteer vervolgens **bewerken**.
 
    :::image type="content" source="./media/manage-dhcp/edit-tier-1-gateway.png" alt-text="te gebruiken gateway selecteren" border="true":::
 
@@ -46,7 +47,7 @@ Als u NSX-T wilt gebruiken om uw DHCP-server te hosten, maakt u een DHCP-server.
 
 1. Selecteer opnieuw **Opslaan** en selecteer vervolgens **bewerken sluiten**.
 
-### <a name="add-a-network-segment"></a>Een netwerk segment toevoegen
+### <a name="add-a-network-segment"></a>Een netwerksegment toevoegen
 
 [!INCLUDE [add-network-segment-steps](includes/add-network-segment-steps.md)]
 
@@ -57,11 +58,11 @@ Als u een externe DHCP-server van derden wilt gebruiken, moet u een DHCP-Relay-s
 
 1. Selecteer in NSX-T Manager de optie **netwerken**  >  **DHCP** en selecteer vervolgens **server toevoegen**.
 
-1. Selecteer **DHCP-Relay** voor het **server type** , geef de server naam en het IP-adres op en selecteer vervolgens **Opslaan**.
+1. Selecteer **DHCP-Relay** voor het **server type**, geef de server naam en het IP-adres op en selecteer vervolgens **Opslaan**.
 
    :::image type="content" source="./media/manage-dhcp/create-dhcp-relay.png" alt-text="DHCP Relay-service maken" border="true":::
 
-1. Selecteer **gateways van laag 1** , selecteer het verticale beletsel teken op de laag-1-gateway en selecteer vervolgens **bewerken**.
+1. Selecteer **gateways van laag 1**, selecteer het verticale beletsel teken op de laag-1-gateway en selecteer vervolgens **bewerken**.
 
    :::image type="content" source="./media/manage-dhcp/edit-tier-1-gateway-relay.png" alt-text="gateway voor laag 1 bewerken" border="true":::
 
@@ -78,7 +79,7 @@ Als u een externe DHCP-server van derden wilt gebruiken, moet u een DHCP-Relay-s
 
 ## <a name="specify-the-dhcp-ip-address-range"></a>Het DHCP IP-adres bereik opgeven
 
-1. Selecteer in NSX-T-Manager **netwerk**  >  **segmenten**. 
+1. Selecteer **Netwerken** > **Segmenten** in de NSX-T Manager. 
    
 1. Selecteer de verticale beletsel tekens op de segment naam en selecteer **bewerken**.
    
@@ -109,7 +110,7 @@ Als u DHCP-aanvragen wilt verzenden van uw Azure VMware-oplossing-Vm's op het ui
 
    :::image type="content" source="media/manage-dhcp/hcx-find-destination-network.png" alt-text="Scherm opname van een netwerk extensie in VMware vSphere-client" lightbox="media/manage-dhcp/hcx-find-destination-network.png":::
 
-1. Selecteer in de Azure VMware-oplossing NSX-T Manager **netwerk**  >  **Segments**  >  **segment profielen**. 
+1. Selecteer in de Azure VMware-oplossing NSX-T Manager **netwerk**  >    >  **segment profielen**. 
 
 1. Selecteer **segment profiel toevoegen** en vervolgens **segment beveiliging**.
 

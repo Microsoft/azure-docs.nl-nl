@@ -5,12 +5,12 @@ author: stevelas
 ms.topic: article
 ms.date: 07/21/2020
 ms.author: stevelas
-ms.openlocfilehash: 636896edf8180052508f366bcc548efe13dec1e2
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: e5f0fe76b599874afe8d64c293f3d914da5dd243
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95810049"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705163"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Geo-replicatie in Azure Container Registry
 
@@ -59,6 +59,8 @@ De functie voor geo-replicatie van Azure Container Registry biedt de volgende vo
 * Eén configuratie van installatie kopie-implementaties beheren, omdat alle regio's dezelfde afbeeldings-URL gebruiken: `contoso.azurecr.io/public/products/web:1.2`
 * Push naar één REGI ster, terwijl ACR de geo-replicatie beheert. ACR repliceert alleen unieke lagen en vermindert de gegevens overdracht tussen regio's. 
 * Configureer regionale [webhooken](container-registry-webhook.md) om u op de hoogte te stellen van gebeurtenissen in specifieke replica's.
+
+Azure Container Registry biedt ook ondersteuning voor [beschikbaarheids zones](zone-redundancy.md) om in een Azure-regio een robuuste en Maxi maal beschik bare Azure container Registry te maken. De combi natie van beschikbaarheids zones voor redundantie binnen een regio en geo-replicatie tussen meerdere regio's, verbetert de betrouw baarheid en prestaties van een REGI ster.
 
 ## <a name="configure-geo-replication"></a>Geo-replicatie configureren
 

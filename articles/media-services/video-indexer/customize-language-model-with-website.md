@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 08/10/2020
 ms.author: kumud
-ms.openlocfilehash: f9eedba6c8aee5c8aab73e2ed598a4511b4c5982
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd8b36340deb6c785989107461dd420e7fc0d985
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020453"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722569"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-website"></a>Een taal model aanpassen met de Video Indexer-website
 
@@ -28,34 +28,27 @@ U kunt de Video Indexer-website gebruiken om aangepaste taal modellen in uw acco
 ## <a name="create-a-language-model"></a>Een taal model maken
 
 1. Ga naar de [video indexer](https://www.videoindexer.ai/) -website en meld u aan.
-2. Als u een model in uw account wilt aanpassen, selecteert u de knop **aanpassing van inhouds model** in de rechter bovenhoek van de pagina.
+1. Als u een model in uw account wilt aanpassen, selecteert u de knop **aanpassing van inhouds model** aan de linkerkant van de pagina.
 
-   ![Het inhouds model in Video Indexer aanpassen](./media/content-model-customization/content-model-customization.png)
-
-3. Selecteer het tabblad **taal** .
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/customize-language-model/model-customization.png" alt-text="Het inhouds model in Video Indexer aanpassen":::
+1. Selecteer het tabblad **taal** .
 
     U ziet een lijst met ondersteunde talen.
-
-    ![Lijst met talen modellen in Video Indexer](./media/customize-language-model/customize-language-model.png)
-
-4. Selecteer **model toevoegen**onder de gewenste taal.
-5. Typ de naam voor het taal model en druk op ENTER.
+1. Selecteer **model toevoegen** onder de gewenste taal.
+1. Typ de naam voor het taal model en druk op ENTER.
 
     Met deze stap maakt u het model en biedt de optie om tekst bestanden naar het model te uploaden.
+1. Selecteer **bestand toevoegen** om een tekst bestand toe te voegen. De bestanden Verkenner wordt geopend.
+1. Navigeer naar en selecteer het tekst bestand. U kunt meerdere tekst bestanden toevoegen aan een taal model.
 
-6. Selecteer **bestand toevoegen**om een tekst bestand toe te voegen. De bestanden Verkenner wordt geopend.
-
-7. Navigeer naar en selecteer het tekst bestand. U kunt meerdere tekst bestanden toevoegen aan een taal model.
-
-    U kunt ook een tekst bestand toevoegen door de knop **...** te selecteren aan de rechter kant van het taal model en vervolgens **bestand toevoegen**te selecteren.
-
-8. Wanneer u klaar bent met het uploaden van de tekst bestanden, selecteert u de optie voor de groene **trein** .
-
-    ![Train language model in Video Indexer](./media/customize-language-model/train-model.png)
+    U kunt ook een tekst bestand toevoegen door de knop **...** te selecteren aan de rechter kant van het taal model en vervolgens **bestand toevoegen** te selecteren.
+1. Wanneer u klaar bent met het uploaden van de tekst bestanden, selecteert u de optie voor de groene **trein** .
 
 Het trainings proces kan een paar minuten duren. Zodra de training is voltooid, ziet u **getraind** naast het model. U kunt het bestand bekijken, downloaden en verwijderen uit het model.
 
-![Getraind taal model in Video Indexer](./media/customize-language-model/preview-model.png)
+> [!div class="mx-imgBorder"]
+> :::image type="content" source="./media/customize-language-model/customize-language-model.png" alt-text="Het model trainen":::
 
 ### <a name="using-a-language-model-on-a-new-video"></a>Een taal model gebruiken in een nieuwe video
 
@@ -64,28 +57,22 @@ Voer een van de volgende acties uit om uw taal model te gebruiken in een nieuwe 
 * Selecteer de knop **uploaden** boven aan de pagina.
 
     ![Knop Uploaden Video Indexer](./media/customize-language-model/upload.png)
+* Verwijder uw audio-of video bestand of blader naar het bestand.
 
-* Zet uw audio-of video bestand neer in de cirkel of blader naar het bestand.
+U krijgt de mogelijkheid om de taal van de **video bron** te selecteren. Selecteer de vervolg keuzelijst en selecteer een taal model dat u hebt gemaakt in de lijst. U moet de taal van uw taal model en de naam die u hebt opgegeven tussen haakjes zeggen. Bijvoorbeeld:
 
-    ![Media bestand uploaden Video Indexer](./media/customize-language-model/upload2.png)
-
-U krijgt de mogelijkheid om de taal van de **video bron**te selecteren. Selecteer de vervolg keuzelijst en selecteer een taal model dat u hebt gemaakt in de lijst. U moet de taal van uw taal model en de naam die u hebt opgegeven tussen haakjes zeggen.
+![De taal van de video bron kiezen: een video opnieuw indexeren met Video Indexer](./media/customize-language-model/reindex.png)
 
 Selecteer de optie **uploaden** onder aan de pagina en uw nieuwe video wordt geïndexeerd met uw taal model.
 
 ### <a name="using-a-language-model-to-reindex"></a>Een taal model gebruiken om opnieuw te indexeren
 
-Als u uw taal model wilt gebruiken om een video in uw verzameling opnieuw te indexeren, gaat u naar uw **account Video's** op de start pagina van [video indexer](https://www.videoindexer.ai/) en houdt u de muis aanwijzer over de naam van de video die u opnieuw wilt indexeren.
+Als u uw taal model wilt gebruiken om een video in uw verzameling opnieuw te indexeren, voert u de volgende stappen uit:
 
-U ziet opties voor het bewerken van uw video, het verwijderen van de video en het opnieuw indexeren van uw video. Selecteer de optie voor het opnieuw indexeren van uw video.
-
-![Opnieuw indexeren met Video Indexer](./media/customize-language-model/reindex1.png)
-
-U krijgt de mogelijkheid om de taal van de **video bron** te selecteren waarmee u uw video opnieuw wilt indexeren. Selecteer de vervolg keuzelijst en selecteer een taal model dat u hebt gemaakt in de lijst. U moet de taal van uw taal model en de naam die u hebt opgegeven tussen haakjes zeggen.
-
-![De taal van de video bron kiezen: een video opnieuw indexeren met Video Indexer](./media/customize-language-model/reindex.png)
-
-Selecteer de knop **opnieuw indexeren** en uw video wordt opnieuw geïndexeerd met uw taal model.
+1. Meld u aan bij de start pagina van [video indexer](https://www.videoindexer.ai/) .
+1. Klik op **de knop op** de video en selecteer **opnieuw indexeren**.
+1. U krijgt de mogelijkheid om de taal van de **video bron** te selecteren waarmee u uw video opnieuw wilt indexeren. Selecteer de vervolg keuzelijst en selecteer een taal model dat u hebt gemaakt in de lijst. U moet de taal van uw taal model en de naam die u hebt opgegeven tussen haakjes zeggen.
+1. Selecteer de knop **opnieuw indexeren** en uw video wordt opnieuw geïndexeerd met uw taal model.
 
 ## <a name="edit-a-language-model"></a>Een taal model bewerken
 
@@ -95,17 +82,17 @@ Als u bestanden toevoegt aan of verwijdert uit het taal model, moet u het model 
 
 ### <a name="rename-the-language-model"></a>De naam van het taal model wijzigen
 
-U kunt de naam van het taal model wijzigen door de knop met het weglatings teken (**...**) aan de rechter kant van het taal model te selecteren en **naam wijzigen**te selecteren.
+U kunt de naam van het taal model wijzigen door de knop met het weglatings teken (**...**) aan de rechter kant van het taal model te selecteren en **naam wijzigen** te selecteren.
 
 Typ de nieuwe naam en druk op ENTER.
 
 ### <a name="add-files"></a>Bestanden toevoegen
 
-Selecteer **bestand toevoegen**om een tekst bestand toe te voegen. De bestanden Verkenner wordt geopend.
+Selecteer **bestand toevoegen** om een tekst bestand toe te voegen. De bestanden Verkenner wordt geopend.
 
 Navigeer naar en selecteer het tekst bestand. U kunt meerdere tekst bestanden toevoegen aan een taal model.
 
-U kunt ook een tekst bestand toevoegen door de knop met het weglatings teken (**...**) aan de rechter kant van het taal model te selecteren en vervolgens **bestand toevoegen**te selecteren.
+U kunt ook een tekst bestand toevoegen door de knop met het weglatings teken (**...**) aan de rechter kant van het taal model te selecteren en vervolgens **bestand toevoegen** te selecteren.
 
 ### <a name="delete-files"></a>Bestanden verwijderen
 
@@ -145,8 +132,6 @@ Video Indexer ondersteunt automatische aanpassing van taal modellen op basis van
     > Voor de aanpassing worden alleen tekstuele correcties gebruikt. Correcties die geen werkelijke woorden (bijvoorbeeld lees tekens of spaties) bevatten, worden niet opgenomen.
     
 1. U ziet afschrift correcties worden weer gegeven op het tabblad taal van de pagina aanpassing van het inhouds model.
-
-    ![Taal model aanpassen: Video Indexer](./media/customize-language-model/customize.png)
 
    Als u wilt kijken naar het bestand ' van transcripten bewerken ' voor elk van uw taal modellen, selecteert u dit om het te openen.
 

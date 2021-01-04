@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 06/09/2020
 ms.author: b-juche
-ms.openlocfilehash: e2838b759a611cb55b9fd3fadf834c84eb74210d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a61d6ba1f908a7dae56db066bfae329fc26f1c5c
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91533635"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696129"
 ---
 # <a name="register-for-azure-netapp-files"></a>Registreren voor Azure NetApp Files
 
@@ -30,7 +30,8 @@ In dit artikel wordt beschreven hoe u zich registreert voor Azure NetApp Files, 
 
 ## <a name="submit-a-waitlist-request-for-accessing-the-service"></a><a name="waitlist"></a>Een Waitlist-aanvraag indienen voor toegang tot de service
 
-1. Een Waitlist-aanvraag indienen om toegang te krijgen tot de Azure NetApp Files-service via de [inzendings pagina van Azure NetApp files Waitlist](https://aka.ms/azurenetappfiles). 
+1. Ga naar de volgende pagina en verzend een Waitlist-verzoek om toegang te krijgen tot de Azure NetApp Files-service:  
+    [**Waitlist-pagina voor het verzenden van Azure NetApp Files**](https://aka.ms/azurenetappfiles) 
 
     Waitlist-aanmelding biedt geen garantie voor directe toegang tot de service. 
 

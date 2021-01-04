@@ -7,12 +7,12 @@ ms.custom: devx-track-csharp
 ms.date: 08/15/2020
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: b2bf406dcab626b3ac08caf1a21ffea9332d3ca2
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 70ec9248db002823e969fa5f4fba8bf1074a9af7
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672641"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706929"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Afhankelijkheidsinjectie gebruiken in .NET Azure Functions
 
@@ -30,7 +30,7 @@ Voordat u afhankelijkheids injectie kunt gebruiken, moet u de volgende NuGet-pak
 
 - [Micro soft. net. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) pakket versie 1.0.28 of hoger
 
-- [Micro soft. extensies. DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (momenteel alleen versie 3. x en eerder ondersteund)
+- [Micro soft. Extensions. DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (momenteel alleen versie 3. x en eerder ondersteund)
 
 ## <a name="register-services"></a>Services registreren
 

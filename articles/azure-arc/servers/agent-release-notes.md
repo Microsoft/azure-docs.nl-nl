@@ -1,14 +1,14 @@
 ---
 title: Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
-description: Dit artikel bevat opmerkingen bij de release voor servers agent voor Azure Arc ingeschakeld. Voor veel van de samen vattingen vindt u koppelingen naar aanvullende informatie.
+description: Dit artikel bevat opmerkingen bij de release voor servers agent voor Azure Arc ingeschakeld. Voor veel van de samen vattingen vindt u koppelingen naar meer informatie.
 ms.topic: conceptual
-ms.date: 12/14/2020
-ms.openlocfilehash: 3a01113d0d6416fb050f5c66191d5c420b7ac137
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.date: 12/21/2020
+ms.openlocfilehash: 4b7fd97d5b7e1cddc1d78e0d24205890e74c45c1
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505644"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722518"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 
@@ -20,6 +20,8 @@ De Azure-servers die zijn verbonden met de computer agent, ontvangen voortdurend
 
 ## <a name="december-2020"></a>December 2020
 
+Versie: 1,3
+
 ### <a name="new-feature"></a>Nieuwe functie
 
 Ondersteuning toegevoegd voor Windows Server 2008 R2
@@ -30,11 +32,15 @@ Er is een probleem opgelost waardoor de aangepaste script extensie op Linux niet
 
 ## <a name="november-2020"></a>November 2020
 
+Versie: 1,2
+
 ### <a name="fixed"></a>Opgelost
 
 Probleem opgelost waarbij de proxy configuratie kan worden verwijderd na een upgrade van op RPM gebaseerde distributies.
 
 ## <a name="october-2020"></a>Oktober 2020
+
+Versie: 1.1
 
 ### <a name="fixed"></a>Opgelost
 
@@ -61,7 +67,7 @@ Versie: 1,0 (algemene Beschik baarheid)
 - De `azcmagent show --json` optie is toegevoegd aan de status van de uitvoer agent in een gemakkelijk te analyseren indeling.
 - `azcmagent show`De markering is toegevoegd aan de uitvoer om aan te geven of de server zich op een virtuele machine bevindt die wordt gehost in Azure.
 - `azcmagent disconnect --force-local-only`Optie toegevoegd om het opnieuw instellen van de status van de lokale agent toe te staan wanneer de Azure-service niet kan worden bereikt.
-- De `azcmagent connect --cloud` optie is toegevoegd ter ondersteuning van extra Clouds. In deze release wordt alleen Azure ondersteund door de service op het moment van de agent release.
+- De `azcmagent connect --cloud` optie is toegevoegd ter ondersteuning van andere Clouds. In deze release wordt alleen Azure ondersteund door de service op het moment van de agent release.
 - De agent is gelokaliseerd in door Azure ondersteunde talen.
 
 ### <a name="fixed"></a>Opgelost

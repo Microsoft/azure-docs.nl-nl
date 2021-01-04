@@ -5,21 +5,21 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 12/18/2020
 ms.author: mimart
 author: msmimart
-manager: celestedg
+manager: CelesteDG
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9bc7d94cff46b54b81615cf064ed63927b3ec60
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: b1aebfaa176992b7e20824518bc214a6688ae493
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929290"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703582"
 ---
-# <a name="email-one-time-passcode-authentication-preview"></a>Verificatie met eenmalige e-mail code voor e-mail (preview-versie)
+# <a name="email-one-time-passcode-authentication"></a>Verificatie met eenmalige e-mail wachtwoord code
 
 In dit artikel wordt beschreven hoe u eenmalige verificatie via e-mail voor B2B-gast gebruikers inschakelt. Met de functie voor eenmalige e-mail code worden B2B-gast gebruikers geverifieerd wanneer ze niet kunnen worden geverifieerd via andere manieren, zoals Azure AD, een Microsoft-account (MSA) of Google Federatie. Met authenticatie op basis van eenmalige wachtwoord code hoeft u geen Microsoft-account te maken. Wanneer de gast gebruiker een uitnodiging heeft ingewisseld of een gedeelde resource opent, kunnen ze een tijdelijke code aanvragen, die wordt verzonden naar hun e-mail adres. Vervolgens voeren ze deze code in om door te gaan met aanmelden.
 

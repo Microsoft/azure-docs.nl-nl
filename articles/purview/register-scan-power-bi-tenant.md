@@ -1,18 +1,18 @@
 ---
 title: Een Power BI-Tenant registreren en scannen (preview)
 description: Meer informatie over hoe u de Azure controle sfeer liggen-Portal kunt gebruiken om een Power BI-Tenant te registreren en te scannen.
-author: viseshag
-ms.author: viseshag
+author: chanuengg
+ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 3813d58d894d87051b1bcf8b512c848d527a52bb
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 3d8107e980b9cad9bc55cb51cc78b63985986ba5
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615845"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696230"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
@@ -72,8 +72,6 @@ Nu u de catalogus machtigingen hebt gegeven om verbinding te maken met de beheer
 
 Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL 
 
-1. Voeg de volgende teken reeks toe aan het einde van de URI van uw controle sfeer liggen-exemplaar: `?feature.ext.catalog={"pbi":"true"}` . Hiermee schakelt u de optie Power BI registratie in uw catalogus in.
-
 1. Selecteer het pictogram van het **beheer centrum** .
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/management-center.png" alt-text="Pictogram beheer centrum.":::
@@ -112,6 +110,5 @@ Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over het gebruik van Power shell-cmdlets om een Power BI Tenant te registreren en te scannen:
-  
-- [Power shell gebruiken om Power BI te registreren en te scannen](powershell-register-scan-power-bi.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

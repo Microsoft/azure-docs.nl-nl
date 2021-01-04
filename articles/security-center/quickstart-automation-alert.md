@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: memildin
 ms.date: 08/20/2020
-ms.openlocfilehash: 12b7c86e528af6c174f456add4d29a92239cd01e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e53a5c4840cee0651090bec0b68cc53e13102299
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678013"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705486"
 ---
 # <a name="quickstart-create-an-automatic-response-to-a-specific-security-alert-using-an-arm-template"></a>Quickstart: een automatisch antwoord op een specifieke beveiligingswaarschuwing maken met behulp van een ARM-sjabloon
 
@@ -46,21 +46,21 @@ Zie deze [door de community bijgedragen sjablonen](https://azure.microsoft.com/r
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-- **PowerShell** :
+- **PowerShell**:
 
   ```azurepowershell-interactive
   New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new resource group for your deployment
   New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-securitycenter-create-automation-for-alertnamecontains/azuredeploy.json
   ```
 
-- **CLI** :
+- **CLI**:
 
   ```azurecli-interactive
   az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new resource group for your deployment
-  az group deployment create --resource-group <my-resource-group> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-securitycenter-create-automation-for-alertnamecontains/azuredeploy.json
+  az deployment group create --resource-group <my-resource-group> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-securitycenter-create-automation-for-alertnamecontains/azuredeploy.json
   ```
 
-- **Portal** :
+- **Portal**:
 
   [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-securitycenter-create-automation-for-alertnamecontains%2fazuredeploy.json)
 

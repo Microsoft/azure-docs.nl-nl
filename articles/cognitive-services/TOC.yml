@@ -15,6 +15,8 @@
       href: cognitive-services-custom-subdomains.md
     - name: Taalondersteuning
       href: language-support.md
+    - name: Kosten voorspellen en beheren
+      href: plan-manage-costs.md
 - name: Snelstartgidsen
   items:
     - name: Een nieuwe resource maken met de Azure-portal

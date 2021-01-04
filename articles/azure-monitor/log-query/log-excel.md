@@ -6,16 +6,16 @@ ms.topic: conceptual
 author: roygalMS
 ms.author: roygal
 ms.date: 11/03/2020
-ms.openlocfilehash: d903d1bb16ba3576d0092979f1cc6b82fac1c0be
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 6fa181a35c46ed16e4e8c1884e66c54984c418ca
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507526"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703446"
 ---
 # <a name="integrate-log-analytics-and-excel"></a>Log Analytics en Excel integreren
 
-U kunt Azure Monitor Log Analytics en micro soft Excel integreren met behulp van de M-query en de Log Analytics-API.  Met deze integratie kunt u 500.000 records naar Excel verzenden.
+U kunt Azure Monitor Log Analytics en micro soft Excel integreren met behulp van de M-query en de Log Analytics-API. Met deze integratie kunt u Maxi maal 500.000 records naar Excel verzenden, zolang het totale volume van de resultaten niet groter is dan 61MiB.
 
 > [!NOTE]
 > Omdat Excel een lokale client toepassing is, zijn de beperkingen van lokale hardware en software van invloed op de prestaties en de mogelijkheid om grote gegevens sets te verwerken.
@@ -80,11 +80,11 @@ in AnalyticsQuery
 Voor het importeren van de query. 
 
 1. Open Microsoft Excel. 
-1. Ga in het lint naar het menu **Data** . Selecteer **gegevens ophalen**. Selecteer in **andere bronnen** **lege query** :
+1. Ga in het lint naar het menu **Data** . Selecteer **gegevens ophalen**. Selecteer in **andere bronnen** **lege query**:
  
    :::image type="content" source="media/log-excel/excel-import-blank-query.png" alt-text="Optie importeren uit leeg in Excel" border="true":::
 
-1. Selecteer in het venster Power query de optie **Geavanceerde editor** :
+1. Selecteer in het venster Power query de optie **Geavanceerde editor**:
 
    :::image type="content" source="media/log-excel/advanced-editor.png" alt-text="Geavanceerde query-editor voor Excel" border="true":::
 
@@ -97,6 +97,9 @@ Voor het importeren van de query.
  
 
    :::image type="content" source="media/log-excel/excel-query-result.png" alt-text="Query resultaten in Excel" border="true":::
+
+> [!Note]
+> Als het aantal records kleiner is dan verwacht, overschrijdt het volume van de resultaten mogelijk de limiet van 61MiB. Probeer `project` of `project-away` in uw query te gebruiken om de kolommen te beperken tot de kolom die u nodig hebt.
 
 ##  <a name="refreshing--data"></a>Gegevens vernieuwen
 

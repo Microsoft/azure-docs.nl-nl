@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: e2c71e028225c22ab0355ff4cda77dacadf94095
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: b5f7f494c9d0969fbf9431d0b552dafa21a5eace
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512042"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705401"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Azure-resources voor QnA Maker
 
@@ -268,8 +268,10 @@ In het venster Azure Portal maken kunt u een resource voor QnA Maker Managed (pr
 
 > [!div class="mx-imgBorder"]
 > ![Scherm opname van Azure Portal bron vermelding QnA Maker beheerd (preview-versie)](../media/qnamaker-how-to-setup-service/resources-created-v2.png)
+
 > [!TIP]
 > Maak een nieuwe resource groep wanneer u een QnA Maker resource maakt. Hiermee kunt u alle resources weer geven die zijn gekoppeld aan de QnA Maker beheerde resource (preview) bij het zoeken op resource groep.
+
 > [!TIP]
 > Gebruik een naamgevings Conventie om prijs categorieën aan te geven binnen de naam van de resource of de resource groep. Wanneer er fouten optreden bij het maken van een nieuwe Knowledge Base of het toevoegen van nieuwe documenten, is de Cognitive Search prijs categorie limiet een veelvoorkomend probleem.
 

@@ -3,25 +3,37 @@ title: Overzicht van Azure Key Vault herstel | Microsoft Docs
 description: Key Vault herstel functies zijn ontworpen om te voor komen dat uw sleutel kluis en geheimen, sleutels en certificaten die zijn opgeslagen in de sleutel kluis per ongeluk of opzettelijk worden verwijderd.
 ms.service: key-vault
 ms.subservice: general
-ms.topic: conceptual
-author: ShaneBala-keyvault
-ms.author: sudbalas
-manager: ravijan
-ms.date: 12/15/2020
-ms.openlocfilehash: 485da2230de80150c9a5d13b262d1857c8c172fc
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.topic: how-to
+ms.author: mbaldwin
+author: msmbaldwin
+manager: rkarlin
+ms.date: 09/30/2020
+ms.openlocfilehash: 258d100276b20ea2437ebffb1473492a247657e8
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587108"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704211"
 ---
-# <a name="how-to-enable-soft-delete-and-purge-protection"></a>Voorlopig verwijderen en leegmaken van beveiliging inschakelen
+# <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault herstel beheer met zacht verwijderen en de beveiliging opschonen
 
 Dit artikel heeft betrekking op twee herstel functies van Azure Key Vault, zacht verwijderen en beveiliging opschonen. Dit document bevat een overzicht van deze functies en laat zien hoe u deze kunt beheren via de Azure Portal, Azure CLI en Azure PowerShell.
 
+Zie voor meer informatie over Key Vault.
+- [Overzicht van Key Vault](overview.md)
+- [Overzicht van Azure Key Vault sleutels, geheimen en certificaten](about-keys-secrets-certificates.md)
+
+## <a name="prerequisites"></a>Vereisten
+
+* Een Azure-abonnement - [Een gratis abonnement maken](https://azure.microsoft.com/free/dotnet)
+* [Power shell-module](https://docs.microsoft.com/powershell/azure/install-az-ps).
+* [Azure-CLI](/cli/azure/install-azure-cli)
+* Een sleutelkluis: u kunt er een maken met behulp van [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md)
+
 ## <a name="what-are-soft-delete-and-purge-protection"></a>Wat is zacht verwijderen en de beveiliging opschonen
 
-Zacht verwijderen en de beveiliging opschonen zijn twee verschillende herstel functies voor de sleutel kluis.
+[Zacht verwijderen](soft-delete-overview.md) en de beveiliging opschonen zijn twee verschillende herstel functies voor de sleutel kluis.
+
 > [!IMPORTANT]
 > Het inschakelen van zacht verwijderen is van cruciaal belang om ervoor te zorgen dat uw sleutel kluizen en referenties tegen onbedoeld verwijderen worden beschermd. Het inschakelen van voorlopig verwijderen wordt echter beschouwd als een belang rijke wijziging omdat u mogelijk uw toepassings logica moet wijzigen of extra machtigingen voor uw service-principals moet bieden. Voordat u voorlopig verwijderen inschakelt met behulp van de onderstaande instructies, moet u ervoor zorgen dat uw toepassing is compatibel met de wijziging die in dit document wordt beschreven [ .](soft-delete-change.md)
 
@@ -34,7 +46,9 @@ Het **opschonen** van de beveiliging is zodanig ontworpen dat het verwijderen va
 > [!NOTE]
 > Het opschonen van de beveiliging is zo ontworpen dat er geen beheerdersrol of machtiging is die het opschonen van de beveiliging kan overschrijven, uitschakelen of omzeilen. **Wanneer het leegmaken van de beveiliging is ingeschakeld, kan het niet worden uitgeschakeld of overschreven door iedereen, waaronder micro soft.** Dit betekent dat u een verwijderde sleutel kluis moet herstellen of wachten totdat de Bewaar periode is verstreken voordat u de naam van de sleutel kluis opnieuw gebruikt.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
+Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.md) voor meer informatie over voorlopig verwijderen
+
+# <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
 
 ## <a name="verify-if-soft-delete-is-enabled-on-a-key-vault-and-enable-soft-delete"></a>Controleren of de functie voor voorlopig verwijderen is ingeschakeld voor een sleutel kluis en het voorlopig verwijderen inschakelen
 
@@ -89,7 +103,7 @@ Het **opschonen** van de beveiliging is zodanig ontworpen dat het verwijderen va
 
 :::image type="content" source="../media/key-vault-recovery-5.png" alt-text="Op sleutels is de optie Verwijderde sleutels beheren gemarkeerd.":::
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ## <a name="key-vault-cli"></a>Key Vault (CLI)
 
@@ -370,3 +384,14 @@ Het **opschonen** van de beveiliging is zodanig ontworpen dat het verwijderen va
   ```powershell
   Remove-AzKeyVaultSecret -VaultName ContosoVault -InRemovedState -name SQLPassword
   ```
+---
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Azure Key Vault Power shell-cmdlets](https://docs.microsoft.com/powershell/module/az.keyvault)
+- [Azure CLI-opdrachten Key Vault](https://docs.microsoft.com/cli/azure/keyvault)
+- [Back-up voor Azure Key Vault](backup.md)
+- [Key Vault-logboekregistratie inschakelen](howto-logging.md)
+- [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
+- [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
+- [Aanbevolen procedures voor het gebruik van een sleutel kluis](best-practices.md)

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/24/2020
-ms.openlocfilehash: ac210adbc29075f27739b08dcf83eeedbeea3ed5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: ba1542d1bb10933edb34b697f1c81cc5e3e7f1c9
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630359"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705367"
 ---
 # <a name="ipsec-encryption-in-transit-for-azure-hdinsight"></a>IPSec-versleuteling in transit voor Azure HDInsight
 
@@ -47,7 +47,7 @@ Versleuteling in transit is ingeschakeld met behulp van de `isEncryptionInTransi
 
 U kunt [een voorbeeld sjabloon en een parameter bestand downloaden](https://github.com/Azure-Samples/hdinsight-enterprise-security). Voordat u de sjabloon en het Azure CLI-code fragment hieronder gebruikt, vervangt u de volgende tijdelijke aanduidingen door de juiste waarden:
 
-| Tijdelijke aanduiding | Description |
+| Tijdelijke aanduiding | Beschrijving |
 |---|---|
 | `<SUBSCRIPTION_ID>` | De ID van uw Azure-abonnement |
 | `<RESOURCE_GROUP>` | De resource groep waar u het nieuwe cluster en opslag account wilt maken. |
@@ -70,7 +70,7 @@ az account set --subscription <SUBSCRIPTION_ID>
 # Create resource group
 az group create --name <RESOURCEGROUPNAME> --location eastus2
 
-az group deployment create --name HDInsightEnterpriseSecDeployment \
+az deployment group create --name HDInsightEnterpriseSecDeployment \
     --resource-group <RESOURCEGROUPNAME> \
     --template-file hdinsight-enterprise-security.json \
     --parameters parameters.json

@@ -1,7 +1,7 @@
 ---
-title: Modellen opnieuw trainen met behulp van Azure Machine Learning Designer
+title: Pijplijn parameters gebruiken voor het opnieuw trainen van modellen in de ontwerp functie
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het opnieuw trainen van machine learning modellen met gepubliceerde pijp lijnen in Azure Machine Learning Designer.
+description: Train modellen met gepubliceerde pijp lijnen en pijplijn parameters in Azure Machine Learning Designer.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,17 +10,17 @@ author: likebupt
 ms.date: 04/06/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: d754674fe3aa65fa9fd8540b05083979ce96aff8
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 6efb0f095f8a157f723a3b7c0c2b229546ebb36b
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437113"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708463"
 ---
-# <a name="retrain-models-with-azure-machine-learning-designer"></a>Modellen opnieuw trainen met Azure Machine Learning Designer
+# <a name="use-pipeline-parameters-to-retrain-models-in-the-designer"></a>Pijplijn parameters gebruiken voor het opnieuw trainen van modellen in de ontwerp functie
 
 
-In dit artikel leert u hoe u Azure Machine Learning Designer kunt gebruiken om een machine learning model opnieuw te trainen. U gebruikt gepubliceerde pijp lijnen om uw werk stroom te automatiseren en para meters in te stellen voor het trainen van uw model op nieuwe gegevens. 
+In dit artikel leert u hoe u Azure Machine Learning Designer kunt gebruiken om een machine learning model opnieuw te trainen met pijplijn parameters. U gebruikt gepubliceerde pijp lijnen om uw werk stroom te automatiseren en para meters in te stellen voor het trainen van uw model op nieuwe gegevens. Met pijplijn parameters kunt u bestaande pijp lijnen opnieuw gebruiken voor verschillende taken.  
 
 In dit artikel leert u het volgende:
 

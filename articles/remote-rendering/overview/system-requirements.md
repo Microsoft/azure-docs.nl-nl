@@ -5,12 +5,13 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: 536f5e7d2fa12d1f9a9f09a31b463d2096dcad37
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.custom: references_regions
+ms.openlocfilehash: 4380f14610fb0775c82aa79ec7cda9dc70cf0715
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207407"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722688"
 ---
 # <a name="system-requirements"></a>Systeemvereisten
 
@@ -64,7 +65,32 @@ Zie speciaal hoofd stuk voor [netwerk vereisten](../reference/network-requiremen
 
 Raadpleeg de [hand leiding](../resources/troubleshoot.md#unstable-holograms)voor het oplossen van problemen met netwerk problemen.
 
-### <a name="network-ports"></a>Netwerkpoorten
+### <a name="network-firewall"></a>Netwerkfirewall
+
+### <a name="sdk-version--0176"></a>SDK-versie >= 0.1.76
+
+Externe rendering van virtuele machines gebruiken gedeelde IP-adressen uit de volgende IP-adresbereiken:
+
+| Naam             | Regio         | IP-voor voegsel         |
+|------------------|:---------------|:------------------|
+| Australië - oost   | australiaeast  | 20.53.44.240/28   |
+| VS - oost          | eastus         | 20.62.129.224/28  |
+| VS - oost 2        | eastus2        | 20.49.103.240/28  |
+| Japan - oost       | japaneast      | 20.191.165.112/28 |
+| Europa - noord     | northeurope    | 52.146.133.64/28  |
+| VS - zuid-centraal | southcentralus | 20.65.132.80/28   |
+| Azië - zuidoost   | southeastasia  | 20.195.64.224/28  |
+| Verenigd Koninkrijk Zuid         | uksouth        | 51.143.209.144/28 |
+| Europa -west      | westeurope     | 20.61.99.112/28   |
+| VS - west 2        | westus2        | 20.51.9.64/28     |
+
+Zorg ervoor dat de firewalls (op apparaat, binnen routers, enzovoort) deze IP-bereiken en de volgende poortbereiken niet blok keren:
+
+| Poort              | Protocol  | Toestaan    |
+|-------------------|---------- |----------|
+| 49152-65534       | TCP/UDP | Verzendt |
+
+#### <a name="sdk-version--0176"></a>SDK-versie < 0.1.76
 
 Zorg ervoor dat de firewalls (op het apparaat, binnen routers, enzovoort) niet de volgende poorten blok keren:
 

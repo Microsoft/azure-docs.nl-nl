@@ -48,7 +48,8 @@
         - name: Containers configureren
           href: face-resource-container-config.md
         - name: Containerinstanties gebruiken
-          href: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
         - name: Documentatie voor Cognitive Services-containers
           href: ../containers/index.yml
 - name: Uitgebreide scenario's

@@ -1,17 +1,17 @@
 ---
 title: Prestaties afstemmen-Hive op Azure Data Lake Storage Gen1
 description: Meer informatie over het afstemmen van de prestaties voor Hive op HdInsight en Azure Data Lake Storage Gen1. Voor I/O-intensieve query's moet u de component afstemmen om betere prestaties te krijgen.
-author: stewu
+author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
-ms.author: stewu
-ms.openlocfilehash: 7b1bbe7f632d8101dbff02a31092f06c7b644ece
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.author: twooley
+ms.openlocfilehash: 082d684ed0a29cb6bf2de9c506886b6d98cf174a
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108317"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723778"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Richt lijnen voor het afstemmen van de prestaties van Hive op HDInsight en Azure Data Lake Storage Gen1
 

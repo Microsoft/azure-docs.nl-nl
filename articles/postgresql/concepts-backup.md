@@ -6,16 +6,16 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.openlocfilehash: b267a97b640c9d069f83223206200fc4814c86b9
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c712af41fdc191cab4fd08c9d8175a849d4f286a
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488007"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706767"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---single-server"></a>Back-ups maken en herstellen in Azure Database for PostgreSQL-één server
 
-Azure Database for PostgreSQL maakt automatisch server back-ups en slaat ze op in een door de gebruiker geconfigureerde lokaal redundante of geografisch redundante opslag. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Backup en Restore zijn een essentieel onderdeel van een strategie voor bedrijfs continuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
+Azure Database for PostgreSQL maakt automatisch server back-ups en slaat ze op in een door de gebruiker geconfigureerde lokaal redundante of geografisch redundante opslag. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Back-ups maken en herstellen zijn essentiële onderdelen van een strategie voor bedrijfscontinuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
 
 ## <a name="backups"></a>Back-ups
 
@@ -47,7 +47,7 @@ De Bewaar periode voor back-ups bepaalt hoe ver terug in de tijd een herstel naa
 Azure Database for PostgreSQL biedt de flexibiliteit om te kiezen tussen lokaal redundante of geografisch redundante back-upopslag in de lagen Algemeen en geoptimaliseerd voor geheugen. Wanneer de back-ups worden opgeslagen in geografisch redundante back-upopslag, worden ze niet alleen opgeslagen in de regio waarin uw server wordt gehost, maar worden ook gerepliceerd naar een [gekoppeld Data Center](../best-practices-availability-paired-regions.md). Dit biedt betere beveiliging en de mogelijkheid om uw server in een andere regio te herstellen in het geval van een ramp. De laag basis biedt alleen lokaal redundante back-upopslag.
 
 > [!IMPORTANT]
-> Het configureren van lokaal redundante of geografisch redundante opslag voor back-up is alleen toegestaan tijdens het maken van de server. Zodra de server is ingericht, kunt u de optie voor opslag redundantie van back-ups niet meer wijzigen.
+> Het configureren van lokaal redundante of geografisch redundante opslag voor back-up is alleen toegestaan tijdens het maken van een server. Zodra de server is ingericht, kunt u de optie voor redundantie van back-upopslag niet meer wijzigen.
 
 ### <a name="backup-storage-cost"></a>Kosten voor back-upopslag
 
@@ -59,7 +59,7 @@ De belangrijkste manier om de opslag kosten voor back-ups te beheren, is door de
 
 ## <a name="restore"></a>Herstellen
 
-In Azure Database for PostgreSQL wordt met het uitvoeren van een herstel bewerking een nieuwe server gemaakt van de back-ups van de oorspronkelijke server.
+In Azure Database for PostgreSQL wordt met het uitvoeren van een herstel bewerking een nieuwe server gemaakt van de back-ups van de oorspronkelijke server. 
 
 Er zijn twee soorten herstel beschikbaar:
 
@@ -68,8 +68,11 @@ Er zijn twee soorten herstel beschikbaar:
 
 De geschatte duur van de herstel bewerking is afhankelijk van verschillende factoren, zoals de grootte van de data base, het transactie logboek, de netwerk bandbreedte en het totale aantal data bases dat op hetzelfde moment in dezelfde regio wordt hersteld. De herstel tijd is doorgaans minder dan 12 uur.
 
-> [!IMPORTANT]
-> Verwijderde servers **kunnen niet** worden hersteld. Als u de server verwijdert, worden ook alle data bases die deel uitmaken van de server, verwijderd en kunnen deze niet worden hersteld. Beheerders kunnen gebruikmaken van [beheer vergrendelingen](../azure-resource-manager/management/lock-resources.md)om Server bronnen te beveiligen, na implementatie van onopzettelijk verwijderen of onverwachte wijzigingen.
+> [!NOTE] 
+> Als uw bron PostgreSQL-server is versleuteld met door de klant beheerde sleutels, raadpleegt u de [documentatie](concepts-data-encryption-postgresql.md) voor aanvullende overwegingen. 
+
+> [!NOTE]
+> Als u een verwijderde PostgreSQL-server wilt herstellen, volgt u de procedure die [hier](howto-restore-dropped-server.md)wordt beschreven.
 
 ### <a name="point-in-time-restore"></a>Terugzetten naar eerder tijdstip
 
@@ -81,11 +84,14 @@ Mogelijk moet u wachten totdat de back-up van het volgende transactie logboek wo
 
 ### <a name="geo-restore"></a>Geo-herstel
 
-U kunt een server herstellen naar een andere Azure-regio waar de service beschikbaar is als u uw server hebt geconfigureerd voor geografisch redundante back-ups. Servers die ondersteuning bieden voor Maxi maal 4 TB aan opslag kunnen worden hersteld naar de geografische paar regio, of op elke regio die ondersteuning biedt voor Maxi maal 16 TB aan opslag ruimte. Voor servers die Maxi maal 16 TB aan opslag ondersteunen, kunnen geo-back-ups worden hersteld in elke regio die ook ondersteuning biedt voor 16 TB-servers. Bekijk de [prijs categorieën van Azure data base for PostgeSQL](concepts-pricing-tiers.md) voor de lijst met ondersteunde regio's.
+U kunt een server herstellen naar een andere Azure-regio waar de service beschikbaar is als u uw server hebt geconfigureerd voor geografisch redundante back-ups. Servers die ondersteuning bieden voor Maxi maal 4 TB aan opslag kunnen worden hersteld naar de geografische paar regio, of op elke regio die ondersteuning biedt voor Maxi maal 16 TB aan opslag ruimte. Voor servers die Maxi maal 16 TB aan opslag ondersteunen, kunnen geo-back-ups worden hersteld in elke regio die ook ondersteuning biedt voor 16 TB-servers. Bekijk [Azure database for PostgreSQL prijs categorieën](concepts-pricing-tiers.md) voor de lijst met ondersteunde regio's.
 
 Geo-Restore is de standaard herstel optie als uw server niet beschikbaar is vanwege een incident in de regio waarin de server wordt gehost. Als een grootschalig incident in een regio resulteert in niet-beschik baarheid van uw database toepassing, kunt u een server herstellen van de geo-redundante back-ups naar een server in een andere regio. Er is een vertraging tussen het moment waarop een back-up wordt gemaakt en wanneer deze wordt gerepliceerd naar een andere regio. Deze vertraging kan tot een uur duren, dus als er sprake is van een nood geval, kan er Maxi maal één uur gegevens verlies zijn.
 
 Tijdens de geo-herstel bewerking kunnen de volgende server configuraties worden gewijzigd: Compute Generation, vCore, Bewaar periode voor back-up en opties voor back-redundantie. Het wijzigen van de prijs categorie (Basic, Algemeen of Optimized memory) of opslag grootte wordt niet ondersteund.
+
+> [!NOTE]
+> Als uw bron server gebruikmaakt van een infra structuur met dubbele versleuteling voor het herstellen van de-server, zijn er beperkingen met betrekking tot de beschik bare regio's. Zie de [infra structuur voor dubbele versleuteling](concepts-infrastructure-double-encryption.md) voor meer informatie.
 
 ### <a name="perform-post-restore-tasks"></a>Taken na herstel uitvoeren
 

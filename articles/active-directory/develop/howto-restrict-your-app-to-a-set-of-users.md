@@ -13,12 +13,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: a9b0090fa13a6d2f7a837a4f5ffee37d70893318
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5a5242cb9448b3d11e0921b2272cf00bef8f6c1
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116900"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722263"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users-in-an-azure-ad-tenant"></a>Procedure: uw Azure AD-App beperken tot een set gebruikers in een Azure AD-Tenant
 
@@ -49,14 +49,14 @@ Er zijn twee manieren om een toepassing met ingeschakelde gebruikers toewijzing 
 
 1. Ga naar de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder**.
 1. Selecteer op de bovenste balk het aangemelde account. 
-1. Onder **Directory**selecteert u de Azure AD-Tenant waar de app wordt geregistreerd.
+1. Onder **Directory** selecteert u de Azure AD-Tenant waar de app wordt geregistreerd.
 1. Selecteer in de navigatie aan de linkerkant **Azure Active Directory**. Als Azure Active Directory niet beschikbaar is in het navigatie venster, voert u de volgende stappen uit:
 
     1. Selecteer **alle services** boven aan het hoofd navigatie menu aan de linkerkant.
     1. Typ **Azure Active Directory** in het vak Zoek opdracht filteren en selecteer vervolgens het **Azure Active Directory** item in het resultaat.
 
-1. Selecteer in **Azure Active Directory** het deel venster Azure Active Directory **bedrijfs toepassingen** in het navigatie menu **Azure Active Directory** links.
-1. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+1. Selecteer in  het deel venster Azure Active Directory **bedrijfs toepassingen** in het navigatie menu **Azure Active Directory** links.
+1. Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
 
      Als u de toepassing die u wilt weer geven hier niet ziet, gebruikt u de diverse filters boven aan de lijst **alle toepassingen** om de lijst te beperken of omlaag te schuiven in de lijst om uw toepassing te vinden.
 
@@ -69,12 +69,12 @@ Er zijn twee manieren om een toepassing met ingeschakelde gebruikers toewijzing 
 
 1. Ga naar de [**Azure Portal**](https://portal.azure.com/).
 1. Selecteer op de bovenste balk het aangemelde account. 
-1. Onder **Directory**selecteert u de Azure AD-Tenant waar de app wordt geregistreerd.
+1. Onder **Directory** selecteert u de Azure AD-Tenant waar de app wordt geregistreerd.
 1. Selecteer in de navigatie aan de linkerkant **Azure Active Directory**.
 1. Selecteer **app-registraties** in het deel venster **Azure Active Directory** van het navigatie menu **Azure Active Directory** links.
 1. Maak of selecteer de app die u wilt beheren. U moet **eigenaar** zijn van deze app-registratie.
 1. Op de **overzichts** pagina van de toepassing volgt u de koppeling **beheerde toepassing in lokale map** onder de essentiële elementen boven aan de pagina. Hiermee gaat u naar de _beheerde bedrijfs toepassing_ van de app-registratie.
-1. Selecteer **Eigenschappen**in de Blade navigatie aan de linkerkant.
+1. Selecteer **Eigenschappen** in de Blade navigatie aan de linkerkant.
 1. Zoek de instelling **gebruikers toewijzing vereist?** en stel deze in op **Ja**. Als deze optie is ingesteld op **Ja**, moeten gebruikers in de Tenant eerst worden toegewezen aan deze toepassing of kunnen ze zich niet aanmelden bij deze toepassing.
 1. Selecteer **Opslaan** om deze configuratie wijziging op te slaan.
 
@@ -82,7 +82,7 @@ Er zijn twee manieren om een toepassing met ingeschakelde gebruikers toewijzing 
 
 Zodra u uw app hebt geconfigureerd om gebruikers toewijzing in te scha kelen, kunt u gebruikers en groepen toewijzen aan de app.
 
-1. Selecteer het deel venster **gebruikers en groepen** in het navigatie menu aan de linkerkant van de toepassing.
+1. Selecteer het deel venster **gebruikers en groepen** in het navigatie menu aan de linkerkant van de Enter prise-toepassing.
 1. Klik boven aan de lijst **gebruikers en groepen** op de knop **gebruiker toevoegen** om het deel venster **toewijzing toevoegen** te openen.
 1. Selecteer de optie **gebruikers** selecteren in het deel venster **toewijzing toevoegen** . 
 

@@ -8,12 +8,12 @@ ms.author: parkerra
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 8c321eae9451715077aa50d163b62b51ec88ce1a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ce79fe88b33659241a226af7bbb7a966ede41abb
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95496882"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696157"
 ---
 # <a name="anchor-relationships-and-way-finding-in-azure-spatial-anchors"></a>Verankeringen en manier om te vinden in azure ruimtelijke ankers
 
@@ -64,7 +64,7 @@ U kunt ruimtelijke ankers verbinden met meerdere sessies. Met deze methode kunt 
 
 Ankers verbinden met meerdere sessies:
 
-1. De app maakt enkele ankers in één CloudSpatialAnchorSession.
+1. De app maakt enkele ankers (ankers A en B) in één CloudSpatialAnchorSession.
 2. Op een ander tijdstip zoekt de app een van deze ankers (bijvoorbeeld anker A) met behulp van een nieuwe CloudSpatialAnchorSession.
 3. Door lopen naar een nieuwe locatie. Het onderliggende platform voor gemengde of uitgebreide realiteit houdt de verplaatsing bij.
 4. Maak anker C met behulp van dezelfde CloudSpatialAnchorSession. Ankers A, B en C zijn nu verbonden. De spatiale ankers-service onderhoudt deze relatie.

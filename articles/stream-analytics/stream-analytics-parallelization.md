@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: b41677d1e4f3ba3889472a3fb9bd6c6a9db4c0a8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 326af3bc38ce70cc7cb205384bb4302c5ff73d28
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123367"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704177"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Gebruik query parallel Lise ring in Azure Stream Analytics
 In dit artikel leest u hoe u parallel Lise ring in Azure Stream Analytics kunt gebruiken. U leert hoe u Stream Analytics taken kunt schalen door het configureren van invoer partities en het afstemmen van de definitie van de analyse query.
@@ -24,13 +24,13 @@ Een Stream Analytics taak definitie bevat ten minste één streaming-invoer, een
 ## <a name="partitions-in-inputs-and-outputs"></a>Partities in invoer en uitvoer
 Met partitioneren kunt u gegevens in subsets verdelen op basis van een [partitie sleutel](../event-hubs/event-hubs-scalability.md#partitions). Als uw invoer (bijvoorbeeld Event Hubs) is gepartitioneerd met een sleutel, is het raadzaam om deze partitie sleutel op te geven wanneer u invoer toevoegt aan uw Stream Analytics-taak. Het schalen van een Stream Analytics taak maakt gebruik van partities in de invoer en uitvoer. Een Stream Analytics taak kan verschillende partities parallel gebruiken en schrijven, waardoor de door Voer wordt verhoogd. 
 
-### <a name="inputs"></a>Invoerwaarden
+### <a name="inputs"></a>Invoer
 Alle Azure Stream Analytics invoer kan gebruikmaken van partitionering:
 -   EventHub (de partitie sleutel expliciet moet worden ingesteld met het sleutel woord PARTITION BY als u het compatibiliteits niveau 1,1 of lager gebruikt)
 -   IoT Hub (moet de partitie sleutel expliciet instellen met het sleutel woord PARTITION BY als u het compatibiliteits niveau 1,1 of lager gebruikt)
 -   Blob Storage
 
-### <a name="outputs"></a>Uitvoerwaarden
+### <a name="outputs"></a>Uitvoer
 
 Wanneer u werkt met Stream Analytics, kunt u gebruikmaken van partitionering in de uitvoer:
 -   Azure Data Lake Storage
@@ -58,7 +58,7 @@ Een *verlegen parallelle* taak is het meest schaal bare scenario in azure stream
 
 2. De volgende stap is het maken van de query is gepartitioneerd. Voor taken met compatibiliteits niveau 1,2 of hoger (aanbevolen) kan aangepaste kolom worden opgegeven als partitie sleutel in de invoer instellingen en de taak automatisch wordt paralellized. Voor taken met compatibiliteits niveau 1,0 of 1,1 moet u **Partition by PartitionId** gebruiken in alle stappen van uw query. Meerdere stappen zijn toegestaan, maar ze moeten allemaal worden gepartitioneerd met dezelfde sleutel. 
 
-3. Het meren deel van de uitvoer die wordt ondersteund in Stream Analytics kan gebruikmaken van partitionering. Als u een uitvoer type gebruikt dat geen ondersteuning biedt voor partitionering, wordt de taak niet *verlegen parallel* . Zorg ervoor dat de **partitie sleutel kolom** is ingesteld op dezelfde partitie sleutel die wordt gebruikt in de query voor Event hub-uitvoer. Raadpleeg de [sectie uitvoer](#outputs) voor meer informatie.
+3. Het meren deel van de uitvoer die wordt ondersteund in Stream Analytics kan gebruikmaken van partitionering. Als u een uitvoer type gebruikt dat geen ondersteuning biedt voor partitionering, wordt de taak niet *verlegen parallel*. Zorg ervoor dat de **partitie sleutel kolom** is ingesteld op dezelfde partitie sleutel die wordt gebruikt in de query voor Event hub-uitvoer. Raadpleeg de [sectie uitvoer](#outputs) voor meer informatie.
 
 4. Het aantal invoer partities moet gelijk zijn aan het aantal uitvoer partities. Blob Storage-uitvoer kan partities ondersteunen en het partitie schema van de upstream-query overnemen. Wanneer een partitie sleutel voor Blob Storage is opgegeven, worden gegevens gepartitioneerd per invoer partitie, zodat het resultaat nog steeds volledig parallel is. Hier volgen enkele voor beelden van partitie waarden die een volledig parallelle taak toestaan:
 
@@ -89,7 +89,7 @@ Query:
     WHERE TollBoothId > 100
 ```
 
-Deze query is een eenvoudig filter. Daarom hoeft u zich geen zorgen te maken over het partitioneren van de invoer die wordt verzonden naar de Event Hub. Taken met een compatibiliteits niveau van vóór 1,2 moeten de component **Partition by PartitionId** bevatten, zodat de vereiste #2 van eerder is voldaan. Voor de uitvoer moeten we de Event Hub uitvoer in de taak configureren zodat de partitie sleutel is ingesteld op **PartitionId** . Een laatste controle is om ervoor te zorgen dat het aantal invoer partities gelijk is aan het aantal uitvoer partities.
+Deze query is een eenvoudig filter. Daarom hoeft u zich geen zorgen te maken over het partitioneren van de invoer die wordt verzonden naar de Event Hub. Taken met een compatibiliteits niveau van vóór 1,2 moeten de component **Partition by PartitionId** bevatten, zodat de vereiste #2 van eerder is voldaan. Voor de uitvoer moeten we de Event Hub uitvoer in de taak configureren zodat de partitie sleutel is ingesteld op **PartitionId**. Een laatste controle is om ervoor te zorgen dat het aantal invoer partities gelijk is aan het aantal uitvoer partities.
 
 ### <a name="query-with-a-grouping-key"></a>Query's met een groepeer sleutel
 
@@ -233,7 +233,7 @@ Als u meer SUs voor de query wilt gebruiken, moeten zowel de invoer gegevensstro
     GROUP BY TumblingWindow(minute, 3), TollBoothId, PartitionId
 ```
 
-Wanneer een query is gepartitioneerd, worden de invoer gebeurtenissen verwerkt en geaggregeerd in afzonderlijke partitie groepen. Uitvoer gebeurtenissen worden ook gegenereerd voor elk van de groepen. Partitioneren kan onverwachte resultaten veroorzaken wanneer het veld **groeperen op** niet de partitie sleutel in de gegevens stroom voor invoer is. Het veld **TollBoothId** in de vorige query is bijvoorbeeld niet de partitie sleutel van **input1** . Het resultaat is dat de gegevens van TollBooth #1 in meerdere partities kunnen worden verdeeld.
+Wanneer een query is gepartitioneerd, worden de invoer gebeurtenissen verwerkt en geaggregeerd in afzonderlijke partitie groepen. Uitvoer gebeurtenissen worden ook gegenereerd voor elk van de groepen. Partitioneren kan onverwachte resultaten veroorzaken wanneer het veld **groeperen op** niet de partitie sleutel in de gegevens stroom voor invoer is. Het veld **TollBoothId** in de vorige query is bijvoorbeeld niet de partitie sleutel van **input1**. Het resultaat is dat de gegevens van TollBooth #1 in meerdere partities kunnen worden verdeeld.
 
 Elk van de **input1** -partities wordt afzonderlijk verwerkt door stream Analytics. Als gevolg hiervan worden meerdere records van het aantal auto's voor dezelfde tollbooth in hetzelfde Tumblingvenstertriggers-venster gemaakt. Als de invoer partitie sleutel niet kan worden gewijzigd, kan dit probleem worden opgelost door een niet-partitie stap toe te voegen aan aggregatie waarden voor verschillende partities, zoals in het volgende voor beeld:
 
@@ -270,7 +270,7 @@ De volgende opmerkingen gebruiken een Stream Analytics-taak met stateless (passt
 | 5 K     |    6    |  6 DI   |
 | 10 K    |    12   |  10 DI  |
 
-De [Event hub](https://github.com/Azure-Samples/streaming-at-scale/tree/master/eventhubs-streamanalytics-eventhubs) -oplossing schaalt lineair in termen van streaming-eenheden (su) en door Voer, waardoor het de meest efficiënte en beste manier is om gegevens uit stream Analytics te analyseren en te streamen. Taken kunnen tot 192 SU worden geschaald, wat ongeveer vertaalt om tot 200 MB/s of 19.000.000.000.000 gebeurtenissen per dag te verwerken.
+De [Event hub](https://github.com/Azure-Samples/streaming-at-scale/tree/main/eventhubs-streamanalytics-eventhubs) -oplossing schaalt lineair in termen van streaming-eenheden (su) en door Voer, waardoor het de meest efficiënte en beste manier is om gegevens uit stream Analytics te analyseren en te streamen. Taken kunnen tot 192 SU worden geschaald, wat ongeveer vertaalt om tot 200 MB/s of 19.000.000.000.000 gebeurtenissen per dag te verwerken.
 
 #### <a name="azure-sql"></a>Azure SQL
 |Opname frequentie (gebeurtenissen per seconde) | Streaming-eenheden | Uitvoer resources  |
@@ -279,7 +279,7 @@ De [Event hub](https://github.com/Azure-Samples/streaming-at-scale/tree/master/e
 |    5 K   |   18 |  P4   |
 |    10 K  |   36 |  P6   |
 
-[Azure SQL](https://github.com/Azure-Samples/streaming-at-scale/tree/master/eventhubs-streamanalytics-azuresql)  biedt ondersteuning voor het parallel schrijven, het overnemen van partitionering, maar is niet standaard ingeschakeld. Het inschakelen van partitionering, samen met een volledig parallelle query, kan echter niet voldoende zijn voor hogere door voer. Het schrijven van SQL-door Voer is aanzienlijk afhankelijk van uw database configuratie en tabel schema. Het artikel over [SQL-uitvoer prestaties](./stream-analytics-sql-output-perf.md) bevat meer details over de para meters die uw schrijf doorvoer kunnen maximaliseren. Zoals vermeld in de [Azure stream Analytics uitvoer naar Azure SQL database](./stream-analytics-sql-output-perf.md#azure-stream-analytics) artikel, wordt deze oplossing niet lineair geschaald als een volledig parallelle pijp lijn van meer dan 8 partities en moet deze mogelijk opnieuw worden gepartitioneerd vóór SQL-uitvoer [(zie)](/stream-analytics-query/into-azure-stream-analytics#into-shard-count). Premium-Sku's zijn vereist om te voorzien in hoge i/o-tarieven, samen met de overhead van logboek back-ups die om de paar minuten worden uitgevoerd.
+[Azure SQL](https://github.com/Azure-Samples/streaming-at-scale/tree/main/eventhubs-streamanalytics-azuresql)  biedt ondersteuning voor het parallel schrijven, het overnemen van partitionering, maar is niet standaard ingeschakeld. Het inschakelen van partitionering, samen met een volledig parallelle query, kan echter niet voldoende zijn voor hogere door voer. Het schrijven van SQL-door Voer is aanzienlijk afhankelijk van uw database configuratie en tabel schema. Het artikel over [SQL-uitvoer prestaties](./stream-analytics-sql-output-perf.md) bevat meer details over de para meters die uw schrijf doorvoer kunnen maximaliseren. Zoals vermeld in de [Azure stream Analytics uitvoer naar Azure SQL database](./stream-analytics-sql-output-perf.md#azure-stream-analytics) artikel, wordt deze oplossing niet lineair geschaald als een volledig parallelle pijp lijn van meer dan 8 partities en moet deze mogelijk opnieuw worden gepartitioneerd vóór SQL-uitvoer [(zie)](/stream-analytics-query/into-azure-stream-analytics#into-shard-count). Premium-Sku's zijn vereist om te voorzien in hoge i/o-tarieven, samen met de overhead van logboek back-ups die om de paar minuten worden uitgevoerd.
 
 #### <a name="cosmos-db"></a>Cosmos DB
 |Opname frequentie (gebeurtenissen per seconde) | Streaming-eenheden | Uitvoer resources  |
@@ -288,7 +288,7 @@ De [Event hub](https://github.com/Azure-Samples/streaming-at-scale/tree/master/e
 |  5 K   |  24   | 60K RU  |
 |  10 K  |  48   | 120K RU |
 
-[Cosmos DB](https://github.com/Azure-Samples/streaming-at-scale/tree/master/eventhubs-streamanalytics-cosmosdb) uitvoer van stream Analytics is bijgewerkt voor het gebruik van systeem eigen integratie onder [compatibiliteits niveau 1,2](./stream-analytics-documentdb-output.md#improved-throughput-with-compatibility-level-12). Compatibiliteits niveau 1,2 maakt aanzienlijk hogere door Voer en vermindert het gebruik van RU in vergelijking met 1,1. Dit is het standaard compatibiliteits niveau voor nieuwe taken. De oplossing maakt gebruik van CosmosDB-containers die zijn gepartitioneerd op/deviceId en de rest van de oplossing is identiek geconfigureerd.
+[Cosmos DB](https://github.com/Azure-Samples/streaming-at-scale/tree/main/eventhubs-streamanalytics-cosmosdb) uitvoer van stream Analytics is bijgewerkt voor het gebruik van systeem eigen integratie onder [compatibiliteits niveau 1,2](./stream-analytics-documentdb-output.md#improved-throughput-with-compatibility-level-12). Compatibiliteits niveau 1,2 maakt aanzienlijk hogere door Voer en vermindert het gebruik van RU in vergelijking met 1,1. Dit is het standaard compatibiliteits niveau voor nieuwe taken. De oplossing maakt gebruik van CosmosDB-containers die zijn gepartitioneerd op/deviceId en de rest van de oplossing is identiek geconfigureerd.
 
 Alle [streaming bij Azure-voor beelden van gegevens stromen](https://github.com/Azure-Samples/streaming-at-scale) gebruiken een event hub als invoer die wordt ingevoerd door test-clients te simuleren. Elke invoer gebeurtenis is een 1 KB JSON-document, waarmee geconfigureerde opname tarieven worden omgezet in doorvoer tarieven (1 MB/s, 5 MB/s en 10 MB/s). Gebeurtenissen simuleren een IoT-apparaat dat de volgende JSON-gegevens verzendt (in een Inge kort formulier) voor Maxi maal 1K apparaten:
 
@@ -313,7 +313,7 @@ Alle [streaming bij Azure-voor beelden van gegevens stromen](https://github.com/
 
 Gebruik het deel venster metrieken in uw Azure Stream Analytics-taak om knel punten in uw pijp lijn te identificeren. Bekijk **invoer-en uitvoer gebeurtenissen** voor door Voer en [' watermerk vertraging '](https://azure.microsoft.com/blog/new-metric-in-azure-stream-analytics-tracks-latency-of-your-streaming-pipeline/) of achterstands **gebeurtenissen** om te zien of de taak de invoer snelheid bijhoudt. Voor metrische gegevens van Event hub zoekt u naar **vertraagde aanvragen** en past u de drempel waarden dienovereenkomstig aan. Bekijk voor Cosmos DB metrische gegevens het **maximum aantal gebruikte ru/s per partitie sleutel bereik** onder door Voer om ervoor te zorgen dat de partitie sleutel bereik op gelijke wijze worden verbruikt. Bewaak **logboek-io** en **CPU** voor Azure SQL DB.
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

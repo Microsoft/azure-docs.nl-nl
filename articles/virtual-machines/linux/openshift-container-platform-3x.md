@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 04/05/2020
 ms.author: haroldw
-ms.openlocfilehash: 0c60fdfda0c18f5a8feb11c3d9c5a386025670cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fab8f88a39730411503af273902a53f169e3fe57
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87368146"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97703732"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Open Shift container platform 3,11 implementeren in azure
 
@@ -32,7 +32,7 @@ Zorg ervoor dat u een geldige gebruikers naam, wacht woord en groeps-ID voor Red
 
 ### <a name="private-clusters"></a>Particuliere clusters
 
-Voor het implementeren van particuliere open Shift-clusters is meer dan alleen een openbaar IP-adres dat is gekoppeld aan de Master-load balancer (webconsole) of de infra structuur load balancer (router) vereist.  Een persoonlijk cluster maakt doorgaans gebruik van een aangepaste DNS-server (niet de standaard Azure DNS), een aangepaste domein naam (zoals contoso.com) en vooraf gedefinieerde virtuele netwerken.  Voor particuliere clusters moet u het virtuele netwerk vooraf configureren met alle juiste subnetten en DNS-server instellingen.  Gebruik vervolgens **existingMasterSubnetReference**, **existingInfraSubnetReference**, **existingCnsSubnetReference**en **existingNodeSubnetReference** om het bestaande subnet op te geven voor gebruik door het cluster.
+Voor het implementeren van particuliere open Shift-clusters is meer dan alleen een openbaar IP-adres dat is gekoppeld aan de Master-load balancer (webconsole) of de infra structuur load balancer (router) vereist.  Een persoonlijk cluster maakt doorgaans gebruik van een aangepaste DNS-server (niet de standaard Azure DNS), een aangepaste domein naam (zoals contoso.com) en vooraf gedefinieerde virtuele netwerken.  Voor particuliere clusters moet u het virtuele netwerk vooraf configureren met alle juiste subnetten en DNS-server instellingen.  Gebruik vervolgens **existingMasterSubnetReference**, **existingInfraSubnetReference**, **existingCnsSubnetReference** en **existingNodeSubnetReference** om het bestaande subnet op te geven voor gebruik door het cluster.
 
 Als de privécloud is geselecteerd (**masterClusterType**= privé), moet er een statisch privé-IP-adres worden opgegeven voor **masterPrivateClusterIp**.  Dit IP-adres wordt toegewezen aan de front-end van de hoofd load balancer.  Het IP-adres moet zich in de CIDR bevinden voor het hoofd-subnet en wordt niet gebruikt.  **masterClusterDnsType** moet worden ingesteld op aangepast en de naam van de hoofd-DNS moet worden opgegeven voor **masterClusterDns**.  De DNS-naam moet worden toegewezen aan het statische privé-IP-adres en wordt gebruikt om toegang te krijgen tot de console op de hoofd knooppunten.
 
@@ -295,9 +295,9 @@ Verschillende releases kunnen verschillende para meters hebben, dus controleer d
 | `existingInfraSubnetReference` | Volledige verwijzing naar het bestaande subnet voor infra structuur knooppunten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
 | `existingCnsSubnetReference` | Volledige verwijzing naar het bestaande subnet voor de CNS-knoop punten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
 | `existingNodeSubnetReference` | Volledige verwijzing naar het bestaande subnet voor reken knooppunten. Niet nodig bij het maken van een nieuw vNet/subnet |  |  |
-| `masterClusterType` | Geef op of het cluster particuliere of open bare hoofd knooppunten gebruikt. Als privé is gekozen, worden de hoofd knooppunten niet blootgesteld aan Internet via een openbaar IP-adres. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `masterPrivateClusterIp` | Open <br> eigen | Open |
+| `masterClusterType` | Geef op of het cluster particuliere of open bare hoofd knooppunten gebruikt. Als privé is gekozen, worden de hoofd knooppunten niet blootgesteld aan Internet via een openbaar IP-adres. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `masterPrivateClusterIp` | openbaar <br> eigen | openbaar |
 | `masterPrivateClusterIp` | Als er knoop punten van een persoonlijke Master zijn geselecteerd, moet u een privé-IP-adres opgeven voor gebruik door de interne load balancer voor hoofd knooppunten. Dit statische IP-adres moet zich in het CIDR-blok bevinden voor het hoofd-subnet en wordt niet al gebruikt. Als er open bare hoofd knooppunten zijn geselecteerd, wordt deze waarde niet gebruikt, maar moet deze wel worden opgegeven |  | 10.1.0.200 |
-| `routerClusterType` | Geef op of het cluster particuliere of open bare infra structuur knooppunten gebruikt. Als privé is gekozen, worden de infra structuur niet via een openbaar IP-adres blootgesteld aan Internet. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `routerPrivateClusterIp` | Open <br> eigen | Open |
+| `routerClusterType` | Geef op of het cluster particuliere of open bare infra structuur knooppunten gebruikt. Als privé is gekozen, worden de infra structuur niet via een openbaar IP-adres blootgesteld aan Internet. In plaats daarvan wordt het privé-IP-adres gebruikt dat is opgegeven in de `routerPrivateClusterIp` | openbaar <br> eigen | openbaar |
 | `routerPrivateClusterIp` | Als er particuliere infra structuur knooppunten zijn geselecteerd, moet er een privé-IP-adres worden opgegeven voor gebruik door de interne load balancer voor infra structuur knooppunten. Dit statische IP-adres moet zich in het CIDR-blok bevinden voor het infra structuur-subnet en niet al in gebruik. Als open bare-infra structuur knooppunten zijn geselecteerd, wordt deze waarde niet gebruikt, maar moet deze wel worden opgegeven |  | 10.2.0.200 |
 | `routingCertType` | Aangepast certificaat voor routerings domein of het standaard zelfondertekende certificaat gebruiken-volg de instructies in de sectie **aangepaste certificaten** | selfsigned <br> aangepast | selfsigned |
 | `masterCertType` | Aangepast certificaat voor hoofd domein of het standaard zelfondertekende certificaat gebruiken-volg de instructies in de sectie **aangepaste certificaten** | selfsigned <br> aangepast | selfsigned |
@@ -312,7 +312,7 @@ Verschillende releases kunnen verschillende para meters hebben, dus controleer d
 In het volgende voor beeld worden het openshift-cluster en alle gerelateerde resources geïmplementeerd in een resource groep met de naam openshiftrg, met een implementatie naam van myOpenShiftCluster. Er wordt rechtstreeks naar de sjabloon verwezen vanuit de GitHub opslag plaats en er wordt een lokaal bestand met para meters met de naam azuredeploy.parameters.jsin het bestand gebruikt.
 
 ```azurecli 
-az group deployment create -g openshiftrg --name myOpenShiftCluster \
+az deployment group create -g openshiftrg --name myOpenShiftCluster \
       --template-uri https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master/azuredeploy.json \
       --parameters @./azuredeploy.parameters.json
 ```

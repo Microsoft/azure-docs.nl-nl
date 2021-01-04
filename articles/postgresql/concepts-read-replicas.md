@@ -6,12 +6,12 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: 8fabf8169270c3162604b6535a6cf2fb07cd9a9d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: dc19b95e891235ac35c703adef50a23a9f70fbdb
+ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422141"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97706793"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Replica's lezen in Azure Database for PostgreSQL-één server
 
@@ -72,12 +72,14 @@ De functie voor het lezen van replica's maakt gebruik van fysieke PostgreSQL-rep
 
 Meer informatie over [het maken van een lees replica in de Azure Portal](howto-read-replicas-portal.md).
 
+Als uw bron PostgreSQL-server is versleuteld met door de klant beheerde sleutels, raadpleegt u de [documentatie](concepts-data-encryption-postgresql.md) voor aanvullende overwegingen.
+
 ## <a name="connect-to-a-replica"></a>Verbinding maken met een replica
 Wanneer u een replica maakt, neemt deze de firewall regels of het VNet-service-eind punt van de primaire server niet over. Deze regels moeten onafhankelijk worden ingesteld voor de replica.
 
 De replica neemt het beheerders account over van de primaire server. Alle gebruikers accounts op de primaire server worden gerepliceerd naar de replica's die worden gelezen. U kunt alleen verbinding maken met een lees replica met behulp van de gebruikers accounts die beschikbaar zijn op de primaire server.
 
-U kunt verbinding maken met de replica door de hostnaam en een geldig gebruikers account te gebruiken, net zoals bij een gewone Azure Database for PostgreSQL-server. Voor een server met de naam **mijn replica** met de gebruikers naam **myadmin** , kunt u verbinding maken met de replica met behulp van psql:
+U kunt verbinding maken met de replica door de hostnaam en een geldig gebruikers account te gebruiken, net zoals bij een gewone Azure Database for PostgreSQL-server. Voor een server met de naam **mijn replica** met de gebruikers naam **myadmin**, kunt u verbinding maken met de replica met behulp van psql:
 
 ```bash
 psql -h myreplica.postgres.database.azure.com -U myadmin@myreplica -d postgres
@@ -166,8 +168,8 @@ Firewall regels, regels voor virtuele netwerken en parameter instellingen worden
 VCores schalen of tussen Algemeen en geoptimaliseerd voor geheugen:
 * PostgreSQL vereist `max_connections` dat de instelling op een secundaire server [groter is dan of gelijk is aan de instelling op de primaire](https://www.postgresql.org/docs/current/hot-standby.html), anders kan het secundaire niet worden gestart.
 * In Azure Database for PostgreSQL wordt het Maxi maal toegestane aantal verbindingen voor elke server vastgesteld op de reken-SKU sinds de verbindingen van het geheugen bezet zijn. U vindt meer informatie over de [toewijzing tussen max_connections en Compute-sku's](concepts-limits.md).
-* **Omhoog schalen** : u kunt de berekening van een replica eerst opschalen en vervolgens omhoog schalen. Deze volg orde zorgt ervoor dat fouten de vereiste niet schenden `max_connections` .
-* **Omlaag schalen** : schaal eerst de primaire Compute en schaal vervolgens omlaag in de replica. Als u de replica lager wilt schalen dan de primaire, treedt er een fout op omdat dit de vereiste schendt `max_connections` .
+* **Omhoog schalen**: u kunt de berekening van een replica eerst opschalen en vervolgens omhoog schalen. Deze volg orde zorgt ervoor dat fouten de vereiste niet schenden `max_connections` .
+* **Omlaag schalen**: schaal eerst de primaire Compute en schaal vervolgens omlaag in de replica. Als u de replica lager wilt schalen dan de primaire, treedt er een fout op omdat dit de vereiste schendt `max_connections` .
 
 Opslag ruimte schalen:
 * Voor alle replica's is opslag automatisch verg Roten ingeschakeld om replicatie problemen vanuit een opslag-volledige replica te voor komen. Deze instelling kan niet worden uitgeschakeld.

@@ -57,8 +57,6 @@
   items:
     - name: IoT Explorer installeren en gebruiken
       href: howto-use-iot-explorer.md
-    - name: IoT Plug and Play-brug installeren en gebruiken
-      href: howto-use-iot-pnp-bridge.md
     - name: DTDL-bewerkingsprogramma's installeren en gebruiken
       href: howto-use-dtdl-authoring-tools.md
     - name: Ingesloten C gebruiken
@@ -67,6 +65,10 @@
       href: howto-manage-digital-twin.md
     - name: Een apparaat certificeren
       href: howto-certify-device.md
+    - name: IoT Plug and Play-brug installeren en gebruiken
+      href: howto-use-iot-pnp-bridge.md
+    - name: 'IoT Plug and Play-brug bouwen, implementeren en uitbreiden'
+      href: howto-build-deploy-extend-pnp-bridge.md
 - name: Naslaginformatie
   items:
     - name: Bibliotheken en SDK's

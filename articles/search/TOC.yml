@@ -372,7 +372,7 @@
               href: search-indexer-howto-access-trusted-service-exception.md
             - name: Toegang via privé-eindpunten
               href: search-indexer-howto-access-private.md
-        - name: Toegang op basis van identiteit
+        - name: Beveiliging op documentniveau
           items:
             - name: Beveiligingsfilters
               href: search-security-trimming-for-azure-search.md
@@ -550,6 +550,8 @@
           href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
         - name: Cursus voor ontwikkelaars (Pluralsight)
           href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
+    - name: Partneroplossingen
+      href: resource-partners-knowledge-mining.md
     - name: Veelgestelde vragen
       href: search-faq-frequently-asked-questions.md
     - name: Prijzen

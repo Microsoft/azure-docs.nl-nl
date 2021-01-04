@@ -290,6 +290,8 @@
         - name: Statuscontrole gebruiken in Configuratiebeheer
           displayName: adm
           href: deployment-manager-tutorial-health-check.md
+    - name: Microsoft Learn-pad over sjablonen
+      href: /learn/paths/deploy-manage-resource-manager-templates/
 - name: Concepten
   items:
     - name: Best practices voor sjablonen

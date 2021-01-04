@@ -89,6 +89,22 @@
       href: event-hubs-availability-and-consistency.md
     - name: Schaalbaarheid
       href: event-hubs-scalability.md
+    - name: Federatie
+      items:
+        - name: Federatie in meerdere sites en regio's
+          href: event-hubs-federation-overview.md
+        - name: Gebeurtenisreplicatietaken en -toepassingen
+          href: event-hubs-federation-replicator-functions.md
+        - name: Gebeurtenisreplicatietaakpatronen
+          href: event-hubs-federation-patterns.md
+        - name: Geconfigureerde replicatietaken
+          href: event-hubs-federation-configuration.md
+        - name: Gebeurtenissen repliceren tussen Event Hubs
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopy'
+        - name: Gebeurtenissen verzenden naar Azure Service Bus
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus'
+        - name: Gebeurtenissen ophalen in Azure Service Bus
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub'
     - name: Geo-noodherstel
       items:
         - name: Geo-herstel na noodgeval en geo-replicatie

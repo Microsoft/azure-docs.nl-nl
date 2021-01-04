@@ -72,6 +72,8 @@
       items:
         - name: Beheer van grote Azure HANA-exemplaren via de Azure-portal
           href: hana-li-portal.md
+        - name: BareMetal-instanties beheren via de Azure Portal
+          href: baremetal-infrastructure-portal.md
         - name: Hoge beschikbaarheid met STONITH instellen
           href: ha-setup-with-stonith.md
         - name: Back-up van het besturingssysteem voor SKU's type II

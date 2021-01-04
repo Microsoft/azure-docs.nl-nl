@@ -59,6 +59,8 @@
               href: solutions-windows-virtual-desktop.md
     - name: Veelgestelde vragen over Azure NetApp Files
       href: azure-netapp-files-faqs.md
+    - name: Wat is het hulpprogramma Azure Application Consistent Snapshot
+      href: azacsnap-introduction.md
 - name: Instructiegidsen
   items:
     - name: Registreren voor Azure NetApp Files
@@ -131,6 +133,32 @@
       href: /rest/api/netapp/
     - name: Resource Manager-sjabloon
       href: /azure/templates/microsoft.netapp/allversions
+    - name: Het hulpprogramma Azure Application Consistent Snapshot (AzAcSnap)
+      items:
+        - name: Aan de slag met AzAcSnap
+          href: azacsnap-get-started.md
+        - name: AzAcSnap installeren
+          href: azacsnap-installation.md
+        - name: Herstel na noodgevallen met AzAcSnap
+          href: azacsnap-disaster-recovery.md
+        - name: Tips en trucs voor het gebruik van AzAcSnap
+          href: azacsnap-tips.md
+        - name: Problemen met AzAcSnap oplossen
+          href: azacsnap-troubleshoot.md
+        - name: AzAcSnap-opdrachtverwijzing
+          items:
+            - name: AzAcSnap configureren
+              href: azacsnap-cmd-ref-configure.md
+            - name: AzAcSnap testen
+              href: azacsnap-cmd-ref-test.md
+            - name: Back-ups maken met AzAcSnap
+              href: azacsnap-cmd-ref-backup.md
+            - name: Details ophalen met AzAcSnap
+              href: azacsnap-cmd-ref-details.md
+            - name: Verwijderen met AzAcSnap
+              href: azacsnap-cmd-ref-delete.md
+            - name: Herstellen met AzAcSnap
+              href: azacsnap-cmd-ref-restore.md
 - name: Resources
   items:
     - name: Prijzen

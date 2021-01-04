@@ -96,6 +96,22 @@
       href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
     - name: Prestaties optimaliseren
       href: service-bus-performance-improvements.md
+    - name: Federatie
+      items:
+        - name: Berichtreplicatie en federatie in meerdere regio's
+          href: service-bus-federation-overview.md
+        - name: Berichtreplicatietaken en -toepassingen
+          href: service-bus-federation-replicator-functions.md
+        - name: Berichtreplicatietaakpatronen
+          href: service-bus-federation-patterns.md
+        - name: Geconfigureerde replicatietaken
+          href: service-bus-federation-configuration.md
+        - name: Gebeurtenissen repliceren tussen Service Bus-entiteiten
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopy'
+        - name: Berichten repliceren naar Event Hubs
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub'
+        - name: Berichten ophalen uit Event Hubs
+          href: 'https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus'
     - name: Geo-herstel na noodgeval en geo-replicatie
       href: service-bus-geo-dr.md
     - name: Asynchrone berichten en hoge beschikbaarheid

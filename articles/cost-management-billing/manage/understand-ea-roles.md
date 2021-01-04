@@ -1,24 +1,24 @@
 ---
-title: Inzicht in beheerdersrollen voor Enterprise in Azure
+title: Inzicht in beheerdersrollen voor EA's (Enterprise Agreement) in Azure
 description: Meer informatie over zakelijke beheerdersrollen in Azure. U kunt vijf afzonderlijke beheerdersrollen toewijzen.
 author: bandersmsft
 ms.reviewer: adwise
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 09/23/2020
+ms.date: 12/10/2020
 ms.author: banders
-ms.custom: contperfq1
-ms.openlocfilehash: e712b44f22a8080b14a2cc2532cadf2dd4738b76
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: e8420f68fba40ddb61d06770f9f5bc2fafe5616a
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409196"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97560522"
 ---
-# <a name="managing-azure-enterprise-roles"></a>Azure Enterprise-rollen beheren
+# <a name="managing-azure-enterprise-agreement-roles"></a>Azure Enterprise Agreement-rollen beheren
 
-Voor het beheren van het gebruik en de uitgaven van uw organisatie kunnen Azure-klanten met een Enterprise Agreement (EA) vijf beheerdersrollen toewijzen:
+Voor het beheren van het gebruik en de uitgaven van uw organisatie kunnen Azure-klanten met een Enterprise Agreement vijf beheerdersrollen toewijzen:
 
 - Zakelijke beheerder
 - Zakelijke beheerder (alleen lezen)<sup>1</sup>
@@ -40,7 +40,7 @@ Deze rollen zijn specifiek voor het beheren van Azure Enterprise Agreements en z
 
 De hiërarchie van de Azure Enterprise-portal bestaat uit de volgende elementen:
 
-- **Azure Enterprise-portal** : een online beheerportal waarmee u de kosten van uw Azure EA-services kunt beheren. U kunt:
+- **Azure Enterprise-portal**: een online beheerportal waarmee u de kosten van uw Azure EA-services kunt beheren. U kunt:
 
   - Een Azure EA-hiërarchie maken met afdelingen, accounts en abonnementen.
   - De kosten van de gebruikte services afstemmen, gebruiksrapporten downloaden en prijslijsten bekijken.
@@ -82,6 +82,8 @@ Gebruikers met deze rol hebben het hoogste toegangsniveau. Ze kunnen:
 - Contactpersonen voor meldingen beheren.
 - Gebruik voor alle accounts weergeven.
 - Niet-gefactureerde kosten voor alle accounts weergeven.
+- Alle reserveringsorders en reserveringen weergeven en beheren die van toepassing zijn op de Enterprise Agreement.
+  - Ondernemingsbeheerders (alleen lezen) kunnen reserveringsorders en reserveringen weergeven. Ze kunnen deze niet beheren.
 
 U kunt meerdere ondernemingsbeheerders hebben voor elke Enterprise-inschrijving. U kunt alleen-lezentoegang verlenen aan ondernemingsbeheerders. Ze nemen allemaal de rol van afdelingsbeheerder over.
 

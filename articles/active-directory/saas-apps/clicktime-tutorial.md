@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
-ms.openlocfilehash: c184d4758d6435659d737c11904357711f4f0a36
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 3337d66934c1fe317296cffaa9a663e212cce12d
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455868"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673168"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Zelfstudie: Azure Active Directory-integratie met ClickTime
 
@@ -49,11 +49,11 @@ Om de integratie van ClickTime in Azure Active Directory te integreren, moet u C
 
 **Voer de volgende stappen uit om ClickTime toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Om de integratie van ClickTime in Azure Active Directory te integreren, moet u C
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **ClickTime** , selecteer **ClickTime** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **ClickTime**, selecteer **ClickTime** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![ClickTime in de lijst met resultaten](common/search-new-app.png)
+    ![ClickTime in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure Active Directory met ClickTime op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure Active Directory met ClickTime op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in ClickTime tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure Active Directory met ClickTime te configureren en te testen, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Om eenmalige aanmelding van Azure Active Directory met ClickTime te configureren, moet u de volgende stappen uitvoeren:
 
-1. In de [Microsoft Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **ClickTime** .
+1. In de [Microsoft Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **ClickTime**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -104,7 +104,7 @@ Om eenmalige aanmelding van Azure Active Directory met ClickTime te configureren
     a. In het tekstvak **Id** typt u een URL: `https://app.clicktime.com/sp/`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
-    
+
     ```http
     https://app.clicktime.com/Login/
     https://app.clicktime.com/App/Login/Consume.aspx
@@ -128,25 +128,25 @@ Om eenmalige aanmelding van Azure Active Directory met ClickTime te configureren
 
 1. Meld u in een ander browservenster bij uw ClickTime-bedrijfssite als beheerder aan.
 
-1. Klik in de werkbalk bovenaan op **Voorkeuren** en klik vervolgens op **Beveiligingsinstellingen** .
+1. Klik in de werkbalk bovenaan op **Voorkeuren** en klik vervolgens op **Beveiligingsinstellingen**.
 
 1. Voer in het configuratiegedeelte **Voorkeuren voor eenmalige aanmelding** de volgende stappen uit:
-   
+
     ![Beveiligingsinstellingen](./media/clicktime-tutorial/tic777280.png "Beveiligingsinstellingen")
-   
-    a.  Selecteer **Toestaan** voor aanmelden met eenmalige aanmelding (SSO) met **Azure Active Directory** .
-   
+
+    a.  Selecteer **Toestaan** voor aanmelden met eenmalige aanmelding (SSO) met **Azure Active Directory**.
+
     b. Plak in het tekstvak **Eindpunt identiteitsprovider** de **aanmeldings-URL** die u in de Microsoft Azure-portal hebt gekopieerd.
-   
-    c.  Open het **base-64 gecodeerde certificaat** dat u hebt gedownload vanuit Azure Portal in **Kladblok** , kopieer de inhoud en plak deze in het tekstvak **X.509-certificaat** .
-   
-    d.  Klik op **Opslaan** .
+
+    c.  Open het **base-64 gecodeerde certificaat** dat u hebt gedownload vanuit Azure Portal in **Kladblok**, kopieer de inhoud en plak deze in het tekstvak **X.509-certificaat**.
+
+    d.  Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -159,19 +159,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot ClickTime.
 
-1. Selecteer **Bedrijfstoepassingen** in de Microsoft Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **ClickTime** .
+1. Selecteer **Bedrijfstoepassingen** in de Microsoft Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **ClickTime**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -179,11 +179,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De ClickTime-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -191,7 +191,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-clicktime-test-user"></a>ClickTime-testgebruiker maken
 
@@ -203,28 +203,28 @@ In het geval van ClickTime is inrichten een handmatige taak.
 
 **Als u een gebruikersaccount wilt inrichten, voert u de volgende stappen uit:**
 
-1. Meld u aan bij uw **ClickTime** -tenant.
+1. Meld u aan bij uw **ClickTime**-tenant.
 
-1. Klik in de werkbalk bovenaan op **Company** en klik vervolgens op **People** .
-   
+1. Klik in de werkbalk bovenaan op **Company** en klik vervolgens op **People**.
+
     ![Schermopname met de tenant ClickTime met Company en People geselecteerd.](./media/clicktime-tutorial/tic777282.png "People")
 
-1. Klik op **Add Person** .
-   
+1. Klik op **Add Person**.
+
     ![Persoon toevoegen](./media/clicktime-tutorial/tic777283.png "Persoon toevoegen")
 
 1. Voer in de sectie New Person de volgende stappen uit:
-   
+
     ![Schermopname met de sectie Persoon toevoegen, waarin u de informatie kunt invoeren die in deze stap is beschreven.](./media/clicktime-tutorial/tic777284.png "People")
-   
-    a.  Typ in het tekstvak **full name** de volledige naam van de gebruiker, zoals **Britta Simon** . 
-  
-    b.  Typ in het tekstvak **email-adres** het e-mailadres van de gebruiker, bijvoorbeeld **brittasimon\@contoso.com** .
-       
+
+    a.  Typ in het tekstvak **full name** de volledige naam van de gebruiker, zoals **Britta Simon**. 
+
+    b.  Typ in het tekstvak **email-adres** het e-mailadres van de gebruiker, bijvoorbeeld **brittasimon\@contoso.com**.
+
     > [!NOTE]
     > U kunt desgewenst extra eigenschappen voor het nieuwe persoonsobject instellen.
-   
-    c.  Klik op **Opslaan** .
+
+    c.  Klik op **Opslaan**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

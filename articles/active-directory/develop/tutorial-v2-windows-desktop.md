@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: d205cff71b962afb9ead8271ee0c220fa1e2242f
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 5fb7c0df653048adcffceda4d8a384be823b5c3a
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518767"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507690"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Zelfstudie: De Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -104,18 +104,17 @@ U kunt uw toepassing snel registreren door het volgende te doen:
 ### <a name="option-2-advanced-mode"></a>Optie 2: Geavanceerde modus
 
 Ga als volgt te werk om de toepassing te registreren en de registratiegegevens van de toepassing toe te voegen aan uw oplossing:
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.
-1. Ga naar de pagina [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Microsoft-identiteitsplatform voor ontwikkelaars.
-1. Selecteer **Nieuwe registratie**.
-   - Voer in de sectie **Naam** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app. Bijvoorbeeld: `Win-App-calling-MsGraph`.
-   - Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com**.
-   - Selecteer **Registreren** om de toepassing te maken.
-1. Selecteer in de lijst met pagina’s voor de app de optie **Verificatie**.
-   1. In de sectie **omleidings-URI's** in de lijst met omleidings-URI's doet u het volgende:
-   1. Selecteer in de kolom **TYPE** **Openbare client/systeemeigen (mobiel en desktop)** .
-   1. Voer in de kolom **OMLEIDINGS-URI** `https://login.microsoftonline.com/common/oauth2/nativeclient` in.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in een organisatiemap (alle Azure AD-mappen - meerdere tenants) en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox).**
 1. Selecteer **Registreren**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
+1. Selecteer **Mobiele toepassingen en desktoptoepassingen**.
+1. Selecteer **https://login.microsoftonline.com/common/oauth2/nativeclient** in de sectie **Omleidings-URI's**.
+1. Selecteer **Configureren**.
 1. Ga naar Visual Studio, open het bestand *App.xaml.cs* en vervang `Enter_the_Application_Id_here` in het codefragment hieronder door de toepassings-id u zojuist hebt geregistreerd en gekopieerd.
 
     ```csharp

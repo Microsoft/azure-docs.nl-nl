@@ -3,17 +3,17 @@ title: 'Quickstart: Azure Storage-wachtrijen maken in de portal'
 description: Gebruik de Azure-portal om een wachtrij te maken. Gebruik vervolgens de Azure-portal om een bericht toe te voegen, de berichteigenschappen te bekijken en het bericht uit de wachtrij te verwijderen.
 author: mhopkins-msft
 ms.author: mhopkins
+ms.reviewer: dineshm
 ms.date: 08/13/2020
+ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
-ms.topic: quickstart
-ms.reviewer: dineshm
-ms.openlocfilehash: 0ee3d9c26d6972da9e528660d034432ce696aa45
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 24b1d16ab5f13a9aef1faa5bc7a3579ad1a5aa5e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347196"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585544"
 ---
 # <a name="quickstart-create-a-queue-and-add-a-message-with-the-azure-portal"></a>Quickstart: Een wachtrij maken en een bericht toevoegen met de Azure-portal
 
@@ -28,7 +28,7 @@ In deze quickstart leert u de [Azure-portal](https://portal.azure.com/) te gebru
 Als u een wachtrij wilt maken in de Azure-portal, volgt u deze stappen:
 
 1. Navigeer naar het nieuwe opslagaccount in Azure Portal.
-2. Blader in het linkermenu van het opslagaccount naar het gedeelte **Queue-service** en selecteer **Wachtrijen**.
+2. Blader in het linkermenu van het opslagaccount naar de sectie **Queue Storage**, en selecteer vervolgens **Wachtrijen**.
 3. Selecteer de knop **+ Wachtrij**.
 4. Typ een naam voor de nieuwe wachtrij. De wachtrijnaam mag alleen uit kleine letters bestaan, moet beginnen met een letter of cijfer en mag alleen letters, cijfers en het streepje (-) bevatten.
 6. Selecteer **OK** om de wachtrij te maken.
@@ -66,4 +66,4 @@ Bij het verwijderen van berichten uit de wachtrij wordt altijd het oudste berich
 In deze quickstart hebt u geleerd hoe u een wachtrij maakt, een bericht toevoegt, eigenschappen van berichten bekijkt en een bericht uit de wachtrij in de Azure-portal verwijdert.
 
 > [!div class="nextstepaction"]
-> [Wat zijn Azure-wachtrijen?](storage-queues-introduction.md)
+> [Wat is Azure Queue Storage?](storage-queues-introduction.md)

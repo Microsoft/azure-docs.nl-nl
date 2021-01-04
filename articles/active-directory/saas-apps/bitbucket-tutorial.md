@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
-ms.openlocfilehash: ffd93016a2cbde3aa2a5844cfdb72e4c0cc8b623
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 5e0b1d8d2cb80886131a88c01a6c24102ad7c77c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457109"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673536"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bitbucket-by-resolution-gmbh"></a>Zelfstudie: Azure Active Directory-integratie met SAML SSO for Bitbucket by resolution GmbH
 
@@ -51,11 +51,11 @@ Voor het configureren van de integratie van SAML SSO for Bitbucket by resolution
 
 **Voer de volgende stappen uit om SAML SSO for Bitbucket by resolution GmbH toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -65,20 +65,20 @@ Voor het configureren van de integratie van SAML SSO for Bitbucket by resolution
 
 4. Typ **SAML SSO for Bitbucket by resolution GmbH** in het zoekvak, selecteer **SAML SSO for Bitbucket by resolution GmbH** in het resultatenvenster en klik op **Toevoegen** om de toepassing toe te voegen.
 
-     ![SAML SSO for Bitbucket by resolution GmbH in de resultatenlijst](common/search-new-app.png)
+    ![SAML SSO for Bitbucket by resolution GmbH in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding via Azure AD met SAML SSO for Bitbucket by resolution GmbH op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding via Azure AD met SAML SSO for Bitbucket by resolution GmbH op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in SAML SSO for Bitbucket by resolution GmbH tot stand is gebracht.
 
 Voltooi de volgende stappen om eenmalige aanmelding via Azure AD met SAML SSO for Bitbucket by resolution GmbH te configureren en te testen:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding configureren voor SAML SSO for Bitbucket by resolution GmbH](#configure-saml-sso-for-bitbucket-by-resolution-gmbh-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
+2. **[Eenmalige aanmelding configureren voor SAML SSO for Bitbucket by resolution GmbH](#configure-saml-sso-for-bitbucket-by-resolution-gmbh-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor SAML SSO for Bitbucket by resolution GmbH maken](#create-saml-sso-for-bitbucket-by-resolution-gmbh-test-user)** : als u een tegenhanger van Britta Simon in SAML SSO for Bitbucket by resolution GmbH wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor SAML SSO for Bitbucket by resolution GmbH maken](#create-saml-sso-for-bitbucket-by-resolution-gmbh-test-user)**: als u een tegenhanger van Britta Simon in SAML SSO for Bitbucket by resolution GmbH wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -87,7 +87,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding via Azure AD met SAML SSO for Bitbucket by resolution GmbH te configureren:
 
-1. In de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de toepassing **SAML SSO for Bitbucket by resolution GmbH** , selecteert u **Eenmalige aanmelding** .
+1. In de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de toepassing **SAML SSO for Bitbucket by resolution GmbH**, selecteert u **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -138,13 +138,13 @@ Voer de volgende stappen uit om eenmalige aanmelding via Azure AD met SAML SSO f
 
     ![De id-provider](./media/bitbucket-tutorial/tutorial_bitbucket_identityprovider.png)
 
-    a. Selecteer bij **Idp Type** (Type IdP) de optie **AZURE AD** .
+    a. Selecteer bij **Idp Type** (Type IdP) de optie **AZURE AD**.
 
     b. Voer in het tekstvak **Name** (Naam) de naam in.
 
     c. Voer in het tekstvak **Description** (Omschrijving) de omschrijving in.
 
-    d. Klik op **Volgende** .
+    d. Klik op **Volgende**.
 
 6. Op de **pagina voor het configureren van de id-provider** klikt u op **Next** (Volgende).
 
@@ -153,8 +153,8 @@ Voer de volgende stappen uit om eenmalige aanmelding via Azure AD met SAML SSO f
 7.  Klik op de pagina **Import SAML Idp Metadata** (Metagegevens voor SAML-IdP importeren) op de optie **Load File** (Bestand laden) om het bestand **METADATA XML** te uploaden die u uit de Azure-portal hebt gedownload.
 
     ![De IdP-metagegevens](./media/bitbucket-tutorial/tutorial_bitbucket_idpmetadata.png)
-    
-8. Klik op **Volgende** .
+
+8. Klik op **Volgende**.
 
 9. Klik op **Save settings** (Instellingen opslaan).
 
@@ -164,7 +164,7 @@ Voer de volgende stappen uit om eenmalige aanmelding via Azure AD met SAML SSO f
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -177,31 +177,31 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte stelt u Britta Simon in staat om eenmalige aanmelding van Azure te gebruiken door haar toegangsrechten voor SAML SSO for Bitbucket by resolution GmbH te verlenen.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **SAML SSO for Bitbucket by resolution GmbH** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **SAML SSO for Bitbucket by resolution GmbH**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Typ en selecteer in de lijst met toepassingen **SAML SSO for Bitbucket by resolution GmbH** .
+2. Typ en selecteer in de lijst met toepassingen **SAML SSO for Bitbucket by resolution GmbH**.
 
     ![De link SAML SSO for Bitbucket by resolution GmbH in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -209,7 +209,7 @@ In dit gedeelte stelt u Britta Simon in staat om eenmalige aanmelding van Azure 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-saml-sso-for-bitbucket-by-resolution-gmbh-test-user"></a>Testgebruiker voor SAML SSO for Bitbucket by resolution GmbH maken
 

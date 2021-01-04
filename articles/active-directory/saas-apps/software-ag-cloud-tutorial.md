@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/20/2020
+ms.date: 12/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 4acc4c0cec530b8f83648042cd7a417992257543
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f6f56958fb63e73e254a45e7cf8ad457be8269ef
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602016"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607640"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-software-ag-cloud"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Software AG Cloud
 
@@ -77,12 +77,16 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://*.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`
+    1. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon:
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://*.softwareag.cloud/auth/realms/TENANT-NAME`
+        `https://*.softwareag.cloud/auth/realms/TENANT-NAME/broker/IDENTITY-PROVIDER-NAME/endpoint`
 
-    > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [klantondersteuningsteam van Software AG Cloud](mailto:support@softwareag.com) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    1. In het tekstvak **Id (Entiteits-id)** typt u een URL met het volgende patroon:
+
+        `https://*.softwareag.cloud/auth/realms/TENANT-NAME`
+
+        > [!NOTE]
+        > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [klantondersteuningsteam van Software AG Cloud](mailto:support@softwareag.com) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -147,13 +151,10 @@ In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in Software 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Ervan uitgaande dat Microsoft Azure is geconfigureerd als provider in Software AG Cloud, gaat u naar `www.softwareag.cloud`, klikt u op de knop Aanmelden en voert u de naam van de omgeving in. Klik in het volgende scherm op 'Aanmelden met <IDP NAME>' en voer de aanmeldingsgegevens in. Nadat u bent geverifieerd, wordt u aangemeld en wordt de startpagina van Software AG Cloud geopend.
-
-* Ga rechtstreeks naar de aanmeldings-URL van Software AG Cloud en initieer de aanmeldingsstroom daar.
-
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in het toegangsvenster op de tegel Software AG Cloud in Mijn apps klikt, wordt u omgeleid naar de aanmeldings-URL voor Software AG Cloud. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps
-
+Ervan uitgaande dat Microsoft Azure is geconfigureerd als provider in Software AG Cloud, gaat u naar `www.softwareag.cloud`, klikt u op de knop Aanmelden en voert u de naam van de omgeving in. Klik in het volgende scherm op 'Aanmelden met <IDP NAME>' en voer de aanmeldingsgegevens in. Nadat u bent geverifieerd, wordt u aangemeld en wordt de startpagina van Software AG Cloud geopend.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Software AG Cloud hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u Software AG Cloud hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+

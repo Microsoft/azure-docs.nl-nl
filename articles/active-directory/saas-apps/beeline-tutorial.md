@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: fd961c611b0f002880f8aee677d759e547433a86
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 4274596f7d53488a2ca5d0e0d3ab3021531907df
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457313"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674077"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-beeline"></a>Zelfstudie: Azure Active Directory-integratie met Beeline
 
@@ -49,11 +49,11 @@ Om de integratie van Beeline in Azure AD te configureren, moet u Beeline vanuit 
 
 **Voer de volgende stappen uit om Beeline toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,11 +63,11 @@ Om de integratie van Beeline in Azure AD te configureren, moet u Beeline vanuit 
 
 4. Typ **Beeline** in het zoekvak, selecteer **Beeline** in het deelvenster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Beeline in de resultatenlijst](common/search-new-app.png)
+    ![Beeline in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Beeline configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Beeline configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Beeline tot stand is gebracht.
 
 Als u eenmalige aanmelding van Azure AD met Beeline wilt configureren en testen, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met Beeline:
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Beeline** .
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Beeline**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -112,7 +112,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [ondersteuningsteam van Beeline](https://www.beeline.com/support-beeline/) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-5. De toepassing Beeline verwacht dat de SAML-asserties een specifieke indeling hebben. Neem eerst contact op met het [ondersteuningsteam van Beeline](https://www.beeline.com/support-beeline/) om de juiste gebruikers-id te bepalen die wordt toegewezen in de toepassing. Neem ook even de richtlijnen van het [Beeline-ondersteuningsteam](https://www.beeline.com/support-beeline/) door over het kenmerk dat moet worden gebruikt voor deze toewijzing. U kunt de waarde van dit kenmerk beheren via het tabblad **User Attributes** van de toepassing. In de volgende schermopname ziet u een voorbeeld hiervan. Hier hebben we de claim **User Identifier** toegewezen aan het kenmerk **userprincipalname** . Dit geeft een unieke gebruikers-id die in elk geslaagd SAML-antwoord wordt verzonden naar de toepassing Beeline.
+5. De toepassing Beeline verwacht dat de SAML-asserties een specifieke indeling hebben. Neem eerst contact op met het [ondersteuningsteam van Beeline](https://www.beeline.com/support-beeline/) om de juiste gebruikers-id te bepalen die wordt toegewezen in de toepassing. Neem ook even de richtlijnen van het [Beeline-ondersteuningsteam](https://www.beeline.com/support-beeline/) door over het kenmerk dat moet worden gebruikt voor deze toewijzing. U kunt de waarde van dit kenmerk beheren via het tabblad **User Attributes** van de toepassing. In de volgende schermopname ziet u een voorbeeld hiervan. Hier hebben we de claim **User Identifier** toegewezen aan het kenmerk **userprincipalname**. Dit geeft een unieke gebruikers-id die in elk geslaagd SAML-antwoord wordt verzonden naar de toepassing Beeline.
 
     ![image](common/edit-attribute.png)
 
@@ -133,7 +133,7 @@ Als u eenmalige aanmelding aan de zijde van **Beeline** wilt configureren, moet 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -146,19 +146,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie zorgt u ervoor dat Britta Simon gebruik kan maken van eenmalige aanmelding van Azure, door haar toegang te geven tot Beeline.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Beeline** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Beeline**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -166,11 +166,11 @@ In deze sectie zorgt u ervoor dat Britta Simon gebruik kan maken van eenmalige a
 
     ![De koppeling Beeline in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -178,7 +178,7 @@ In deze sectie zorgt u ervoor dat Britta Simon gebruik kan maken van eenmalige a
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-beeline-test-user"></a>Testgebruiker voor Beeline maken
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: adac6993c0fc40fa81328655903850c1da85ccf3
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 5b8d9cedcc2ca3085f342db0bbf5fe3704ac7242
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457364"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674102"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bc-in-the-cloud"></a>Zelfstudie: Azure Active Directory-integratie met BC in de Cloud
 
@@ -49,7 +49,7 @@ Om de integratie van BC in the Cloud te configureren in Azure AD, moet u BC in t
 
 **Ga als volgt te werk om BC in the Cloud vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Om de integratie van BC in the Cloud te configureren in Azure AD, moet u BC in t
 
 4. Typ **BC in the Cloud** in het zoekvak, selecteer **BC in the Cloud** in het deelvenster met resultaten en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![BC in the Cloud toevoegen in de resultatenlijst](common/search-new-app.png)
+    ![BC in the Cloud toevoegen in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Om eenmalige aanmelding van Azure AD met BC in the Cloud te configureren en testen, moet u de volgende procedures voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor BC in the Cloud configureren](#configure-bc-in-the-cloud-single-sign-on)** : de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
+2. **[Eenmalige aanmelding voor BC in the Cloud configureren](#configure-bc-in-the-cloud-single-sign-on)**: de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Een testgebruiker voor BC in the Cloud maken](#create-bc-in-the-cloud-test-user)** : een tegenhanger voor Britta Simon definiëren in BC in the Cloud die is gekoppeld aan de Azure AD-versie van de gebruiker.
+5. **[Een testgebruiker voor BC in the Cloud maken](#create-bc-in-the-cloud-test-user)**: een tegenhanger voor Britta Simon definiëren in BC in the Cloud die is gekoppeld aan de Azure AD-versie van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -124,13 +124,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-bc-in-the-cloud-single-sign-on"></a>BC in the Cloud-eenmalige aanmelding configureren
 
-Als u eenmalige aanmelding aan de **BC in the Cloud** -zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [BC in the Cloud-ondersteuningsteam](https://www.bcinthecloud.com/supportcenter/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **BC in the Cloud**-zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [BC in the Cloud-ondersteuningsteam](https://www.bcinthecloud.com/supportcenter/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -143,7 +143,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -155,7 +155,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot BC in the Cloud.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **BC in the Cloud**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **BC in the Cloud**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

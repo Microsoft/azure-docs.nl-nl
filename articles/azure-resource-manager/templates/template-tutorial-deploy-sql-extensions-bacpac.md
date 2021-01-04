@@ -5,16 +5,16 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b798e5ceb72ece3989fb81014555f2bc0fea5926
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 2d50903f464c03157ee393787af6ddfdad975aed
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931398"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588026"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Zelfstudie: SQL BACPAC-bestanden met ARM-sjablonen importeren
 
-Meer informatie over het gebruik van Azure SQL Database-extensies om een BACPAC-bestand te importeren met ARM-sjablonen (Azure Resource Manager). Implementatieartefacten zijn, naast de hoofdsjabloonbestanden, bestanden die vereist zijn om een implementatie te voltooien. Het BACPAC-bestand is een artefact.
+Meer informatie over het gebruik van Azure SQL Database-extensies om een [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac)-bestand te importeren met ARM-sjablonen (Azure Resource Manager). Implementatieartefacten zijn, naast de hoofdsjabloonbestanden, bestanden die vereist zijn om een implementatie te voltooien. Het BACPAC-bestand is een artefact.
 
 In deze zelfstudie maakt u een sjabloon voor het implementeren van een [logische SQL-server](../../azure-sql/database/logical-servers.md) en één database, en importeert u een BACPAC-bestand. Voor informatie over het implementeren van extensies van virtuele Azure-machines met behulp van ARM-sjablonen, raadpleegt u [Zelfstudie: Extensies van virtuele machines implementeren met ARM-sjablonen](./template-tutorial-deploy-vm-extensions.md).
 
@@ -55,7 +55,7 @@ Het BACPAC-bestand moet worden opgeslagen in een Azure Storage-account voordat h
 * Het BACPAC-bestand uploaden naar de container.
 * De sleutel van het opslagaccount en de URL van de blob weergeven.
 
-1. Selecteer **Uitproberen** om de Cloud shell te openen. Plak het volgende PowerShell-script in het shell-venster.
+1. Selecteer **Uitproberen** om de shell te openen. Plak het volgende PowerShell-script in het shell-venster.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"
@@ -120,7 +120,7 @@ De sjabloon die in deze zelfstudie wordt gebruikt, wordt opgeslagen in [GitHub](
 
 ## <a name="edit-the-template"></a>De sjabloon bewerken
 
-1. Voeg twee extra parameters toe aan het einde van de sectie **parameters** om de sleutel van het opslagaccount en de BACPAC-URL in te stellen.
+1. Voeg twee extra parameters toe aan het einde van de sectie `parameters` om de sleutel van het opslagaccount en de BACPAC-URL in te stellen.
 
     ```json
         "storageAccountKey": {
@@ -137,7 +137,7 @@ De sjabloon die in deze zelfstudie wordt gebruikt, wordt opgeslagen in [GitHub](
         }
     ```
 
-    Voeg een komma toe na **adminPassword**. Als u het JSON-bestand wilt opmaken vanuit Visual Studio Code, selecteert u Shift+Alt+F.
+    Voeg een komma toe na de afsluitende accolade (`}`) van de eigenschap `adminPassword`. Als u het JSON-bestand wilt opmaken vanuit Visual Studio Code, selecteert u Shift+Alt+F.
 
     Zie [Een BACPAC-bestand voorbereiden](#prepare-a-bacpac-file) om deze twee waarden op te halen.
 
@@ -196,11 +196,11 @@ De sjabloon die in deze zelfstudie wordt gebruikt, wordt opgeslagen in [GitHub](
 
         Zie de [verwijzing voor SQL Database-extensies](/azure/templates/microsoft.sql/servers/databases/extensions) voor meer informatie over de resourcedefinitie. Hier volgen enkele belangrijke elementen:
 
-        * **dependsOn**: de extensieresource moet worden gemaakt nadat de database is gemaakt.
-        * **storageKeyType**: Geef het type van de te gebruiken opslagsleutel op. De waarde kan `StorageAccessKey` of `SharedAccessKey` zijn. Gebruik in deze zelfstudie `StorageAccessKey`.
-        * **storageKey**: Geef de sleutel op voor het opslagaccount waarin het BACPAC-bestand wordt opgeslagen. Als het type opslagsleutel `SharedAccessKey` is, moet deze worden voorafgegaan door een '?'.
-        * **storageUri**: Geef de URL op van het BACPAC-bestand dat is opgeslagen in een opslagaccount.
-        * **administratorLoginPassword**: het wachtwoord van de SQL-beheerder. Gebruik een gegenereerd wachtwoord. Zie [Vereisten](#prerequisites).
+        * `dependsOn`: de extensieresource moet worden gemaakt nadat de database is gemaakt.
+        * `storageKeyType`: Geef het type van de te gebruiken opslagsleutel op. De waarde kan `StorageAccessKey` of `SharedAccessKey` zijn. Gebruik in deze zelfstudie `StorageAccessKey`.
+        * `storageKey`: Geef de sleutel op voor het opslagaccount waarin het BACPAC-bestand wordt opgeslagen. Als het type opslagsleutel `SharedAccessKey` is, moet deze worden voorafgegaan door een '?'.
+        * `storageUri`: Geef de URL op van het BACPAC-bestand dat is opgeslagen in een opslagaccount.
+        * `administratorLoginPassword`: het wachtwoord van de SQL-beheerder. Gebruik een gegenereerd wachtwoord. Zie [Vereisten](#prerequisites).
 
 De voltooide sjabloon ziet er als volgt uit:
 

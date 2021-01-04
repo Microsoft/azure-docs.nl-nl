@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 5f19b55a955b8e3e1500cf14fa221b46808ac857
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 8827171788bd83a202b3607537204c71c34f29e0
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698288"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511838"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen via Azure Portal
 
@@ -40,6 +40,10 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
+
+*Afbeelding: Resources gemaakt in quickstart.*
 
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
@@ -140,7 +144,7 @@ In deze sectie maakt u een load balancer-regel:
     | Statustest | Selecteer **myHealthProbe**. |
     | Time-out voor inactiviteit (minuten) | Verplaats de schuifregelaar naar **15** minuten. |
     | Opnieuw instellen van TCP | Selecteer **Ingeschakeld**. |
-    | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet**. |
+    | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet.** |
 
 4. Laat de overige standaardwaarden staan en selecteer **OK**.
 
@@ -321,6 +325,10 @@ Zie [Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md) voo
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
+
+*Afbeelding: Resources gemaakt in quickstart.*
 
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
@@ -576,7 +584,7 @@ De virtuele machines die in de vorige stappen zijn gemaakt, moeten worden toegev
 
 ## <a name="install-iis"></a>IIS installeren
 
-1. Selecteer in het linkermenu **Alle services**, selecteer vervolgens **Alle resources** en selecteer daarna in de lijst met resources **myVM1**, die zich in de resourcegroep **CreateStdLBQS-rg** bevindt.
+1. Selecteer in het linkermenu **Alle services**. Selecteer **Alle resources** en selecteer vervolgens in de lijst met resources **myVM1**, die zich in de resourcegroep **CreatePubLBQS-rg** bevindt.
 
 2. Selecteer op de pagina **Overzicht** de optie **Verbinding maken** en daarna **Bastion**.
 

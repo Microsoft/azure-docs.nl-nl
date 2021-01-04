@@ -3,12 +3,12 @@ title: De Azure Resource Manager-sjabloon van een virtuele machine weer geven en
 description: Meer informatie over het gebruik van de Azure Resource Manager-sjabloon van een virtuele machine om andere Vm's te maken
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7f969abe1ca903a226e73c5c70781dce512c2926
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb7cb38dfb2c1664017f0e342fefecdd464df45f
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91282490"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696002"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Virtuele machines maken met behulp van een Azure Resource Manager sjabloon 
 
@@ -25,7 +25,7 @@ Er zijn twee manieren om Vm's in DevTest Labs te maken met behulp van een resour
 
    ![Scherm opname van de lijst met virtuele machines als afzonderlijke items in de lijst met virtuele DevTest Labs-machines.](./media/devtest-lab-use-arm-template/devtestlab-lab-vm-single-item.png)
 
-   Dit type resource manager-sjabloon kan worden ingericht via de Azure PowerShell opdracht **New-AzResourceGroupDeployment** of via de Azure cli-opdracht **AZ Group Deployment maken**. Hiervoor zijn beheerders machtigingen vereist, zodat gebruikers die zijn toegewezen met een gebruikersrol van DevTest Labs de implementatie niet kunnen uitvoeren. 
+   Dit type resource manager-sjabloon kan worden ingericht via de Azure PowerShell opdracht **New-AzResourceGroupDeployment** of via de Azure cli-opdracht **AZ Deployment Group Create**. Hiervoor zijn beheerders machtigingen vereist, zodat gebruikers die zijn toegewezen met een gebruikersrol van DevTest Labs de implementatie niet kunnen uitvoeren. 
 
 - Resource Manager-sjablonen die gebruikmaken van het resource type micro soft. Compute/informatie kunnen meerdere virtuele machines inrichten als één omgeving in de lijst met virtuele machines van DevTest Labs:
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 07/21/2020
+ms.date: 12/11/2020
 ms.author: alkohli
-ms.openlocfilehash: 04e4394e6a439c923558ef90e13c14c0adaa4020
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1035f7fb34ed5b2b11e3ef472ccda7cccc30f652
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88142108"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359027"
 ---
 # <a name="tutorial-return-azure-data-box-preview"></a>Zelfstudie: Azure Data Box retourneren (preview)
 
@@ -53,12 +53,12 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS, Canada of Europa r
 
 1. Zorg ervoor dat het apparaat uit staat en de kabels zijn verwijderd. 
 2. Rol het netsnoer op en plaats het veilig aan de achterzijde van het apparaat.
-3. Zorg ervoor dat het verzendlabel wordt weergegeven op het E-ink-scherm en plan met de vervoerder een tijdstip waarop het kan worden opgehaald. Neem contact op met de Microsoft-ondersteuning als het label beschadigd is of ontbreekt of niet wordt weergegeven op het e-inkscherm. Als het ondersteuningsteam dit aanraadt, gaat u in de Azure-portal naar **Overzicht > Verzendlabel downloaden**. Download het verzendlabel en bevestig dat op het apparaat. 
+3. Zorg ervoor dat het verzendlabel wordt weergegeven op het E-ink-scherm, en plan met de vervoerder een tijdstip waarop het kan worden opgehaald. Neem contact op met de Microsoft-ondersteuning als het label is beschadigd of ontbreekt, of als het niet wordt weergegeven op het E-ink-scherm. Ga, als het ondersteuningsteam dit aanraadt, in de Azure-portal naar **Overzicht > Verzendlabel downloaden**. Download het verzendlabel en bevestig het op het apparaat. 
 4. Als u het apparaat retourneert, spreekt u met UPS een tijdstip af waarop het kan worden opgehaald. Ophalen van apparaat plannen:
 
-    - Bel met UPS (gratis land-/regiospecifiek nummer).
-    - Vermeld in uw gesprek het trackingnummer voor de retournering, zoals weergegeven op het E-ink-display of het afgedrukte label.
-    - Als het trackingnummer niet wordt vermeld, moet u bij het afhalen door UPS extra kosten betalen.
+   - Bel met UPS (gratis land-/regiospecifiek nummer).
+   - Vermeld in uw gesprek het trackingnummer voor de retournering, zoals weergegeven op het E-ink-display of het afgedrukte label. Als u het trackingnummer niet vermeldt, moet u bij het ophalen door UPS extra kosten betalen.
+   - Als zich problemen voordoen tijdens het plannen van het ophalen van het apparaat, of als u wordt gevraagd om extra kosten te betalen, neemt u contact op met Azure Data Box Operations. E-mail verzenden naar [adbops@microsoft.com](mailto:adbops@microsoft.com).
 
     In plaats van het ophalen te plannen, kunt u de Data Box ook zelf naar de dichtstbijzijnde inleverlocatie brengen.
 4. Nadat de Data Box door de vervoerder is opgehaald en gescand, verandert de orderstatus in de portal in **Opgehaald**. Er wordt ook een tracerings-id weergegeven.
@@ -172,7 +172,7 @@ Zo nodig kunt u contact opnemen met de ondersteuning van Quantium Solutions (in 
        * Pickup time:
     ```
 
-Indien u een probleem ondervindt, stuurt u een e-mail naar Data Box Operations Asia [adbo@microsoft.com](mailto:adbo@microsoft.com) en vermeldt u de taaknaam in de onderwerpregel en het probleem dat u hebt ondervonden.
+Indien u een probleem ondervindt, stuurt u een e-mail naar Data Box Operations Asia [adbo@microsoft.com](mailto:adbo@microsoft.com). Vermeld de taaknaam in de onderwerpregel en het probleem dat u hebt ondervonden.
 
 ## <a name="self-managed"></a>[Zelfbeheerd](#tab/in-selfmanaged)
 
@@ -194,7 +194,7 @@ Als u de Data Box gebruikt in Japan, Singapore, Korea, India, Zuid-Afrika of Wes
 ---
 
 ## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
- 
+
 Zodra het apparaat het Azure-datacenter heeft bereikt, worden de gegevens door de Data Box van de schijven gewist volgens de [richtlijnen van NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
 
 ## <a name="next-steps"></a>Volgende stappen

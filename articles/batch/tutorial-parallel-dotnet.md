@@ -1,16 +1,16 @@
 ---
-title: Een parallelle workload uitvoeren met behulp van de .NET API
+title: 'Zelfstudie: Een parallelle workload uitvoeren met behulp van de .NET API'
 description: 'Zelfstudie: Mediabestanden parallel transcoderen met ffmpeg in Azure Batch met behulp van de clientbibliotheek Batch .NET'
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 396d0f6a2ef9a8c24fc92b641c889ef9e1a7df49
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: a990a5480a8a6462bb6ef9f84070b78768628fd0
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578294"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106526"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Zelfstudie: een parallelle workload uitvoeren met Azure Batch met behulp van de .NET API
 
@@ -317,7 +317,7 @@ Verwijder de resourcegroep, het Batch-account en het opslagaccount wanneer u dez
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u het volgende geleerd:
+In deze zelfstudie heeft u het volgende geleerd:
 
 > [!div class="checklist"]
 > * Een toepassingspakket toevoegen aan uw Batch-account
@@ -332,6 +332,3 @@ Voor meer voorbeelden van het gebruik van de .NET API om Batch-workloads te plan
 
 > [!div class="nextstepaction"]
 > [C#-voorbeelden voor Batch](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp)
-
-
-Door de exemplaarvariabelen in te stellen op LowPriorityNodeCount = 0 en DedicatedNodeCount=5 is het probleem opgelost en kon de taak worden voltooid.

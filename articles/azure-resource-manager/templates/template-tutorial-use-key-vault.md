@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 75eb977559573b72883de3ddbc27391c7e299a6f
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: ae2361d12dfe18cadd80dd3b84405b2b17751e59
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929313"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97584082"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Zelfstudie: Azure Key Vault integreren in ARM-sjabloonimplementatie
 
@@ -43,6 +43,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
     ```console
     openssl rand -base64 32
     ```
+
     Controleer of het gegenereerde wachtwoord voldoet aan de wachtwoordvereisten voor virtuele machines. Elke Azure-service heeft eigen wachtwoordvereisten. Zie [Wat zijn de wachtwoordvereisten bij het maken van een virtuele machine?](../../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm) voor meer informatie over wachtwoordvereisten voor virtuele machines.
 
 ## <a name="prepare-a-key-vault"></a>Een sleutelkluis voorbereiden
@@ -53,7 +54,7 @@ In deze sectie maakt u een sleutelkluis en voegt u er een geheime waarde aan toe
 * Hiermee voegt u een geheim toe aan de sleutelkluis. In het geheim wordt het wachtwoord van de VM-beheerder opgeslagen.
 
 > [!NOTE]
-> Als de gebruiker die de virtuele-machinesjabloon gaat implementeren niet de eigenaar of inzender is van de sleutelkluis, moet de eigenaar of inzender u toegang verlenen tot de machtiging *Microsoft.KeyVault/vaults/deploy/action* voor de sleutelkluis. Zie [Azure Key Vault gebruiken om veilige parameterwaarden door te geven tijdens de implementatie](./key-vault-parameter.md) voor meer informatie.
+> Als de gebruiker die de virtuele-machinesjabloon gaat implementeren niet de eigenaar of inzender is van de sleutelkluis, moet de eigenaar of inzender u toegang verlenen tot de machtiging `Microsoft.KeyVault/vaults/deploy/action` voor de sleutelkluis. Zie [Azure Key Vault gebruiken om veilige parameterwaarden door te geven tijdens de implementatie](./key-vault-parameter.md) voor meer informatie.
 
 Als u het volgende Azure PowerShell-script wilt uitvoeren, selecteert u **Proberen** om Azure Cloud Shell te openen. Plak het script door met de rechtermuisknop op het shell-venster te klikken en **Plakken** te selecteren.
 
@@ -79,7 +80,7 @@ Write-Host "Press [ENTER] to continue ..."
 > * De standaardnaam voor de geheime waarde is **vmAdminPassword**. Deze is vastgelegd in de sjabloon.
 > * Als u de sjabloon de geheime waarde op wilt laten halen, moet u voor de sleutelkluis een toegangsbeleid met de naam **Toegang tot Azure Resource Manager inschakelen voor sjabloonimplementatie** inschakelen. Dit beleid wordt ingeschakeld in de sjabloon. Zie [Sleutelkluizen en geheime waarden implementeren](./key-vault-parameter.md#deploy-key-vaults-and-secrets)voor meer informatie over het toegangsbeleid.
 
-De sjabloon heeft één uitvoerwaarde genaamd *keyVaultId*. U gebruikt deze ID en de geheime naam later in deze zelfstudie om de geheime waarde op te halen. De indeling van de resource-ID is:
+De sjabloon heeft één uitvoerwaarde genaamd `keyVaultId`. U gebruikt deze ID en de geheime naam later in deze zelfstudie om de geheime waarde op te halen. De indeling van de resource-ID is:
 
 ```json
 /subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>
@@ -87,7 +88,7 @@ De sjabloon heeft één uitvoerwaarde genaamd *keyVaultId*. U gebruikt deze ID e
 
 Wanneer u de ID kopieert en plakt, kan deze over meerdere regels worden verdeeld. Voeg de regels samen en verwijder extra spaties.
 
-Als u de implementatie wilt valideren, voert u de volgende Power shell-opdracht uit in hetzelfde shell-deelvenster om de geheime waarde als leesbare tekst op te halen. De opdracht werkt alleen in dezelfde shell-sessie, omdat deze de variabele *$keyVaultName* gebruikt, die in het vorige PowerShell-script is gedefinieerd.
+Als u de implementatie wilt valideren, voert u de volgende Power shell-opdracht uit in hetzelfde shell-deelvenster om de geheime waarde als leesbare tekst op te halen. De opdracht werkt alleen in dezelfde shell-sessie, omdat deze de variabele `$keyVaultName` gebruikt, die in het vorige PowerShell-script is gedefinieerd.
 
 ```azurepowershell
 (Get-AzKeyVaultSecret -vaultName $keyVaultName  -name "vmAdminPassword").SecretValueText
@@ -146,14 +147,14 @@ Als u een statische ID gebruikt, hoeft u geen wijzigingen aan te brengen in het 
     ```
 
     > [!IMPORTANT]
-    > Vervang de waarde voor **ID** door de resource-ID van de sleutelkluis die u in de vorige stappen heeft gemaakt. De geheime naam wordt vastgelegd als **vmAdminPassword**.  Zie [Een sleutelkluis voorbereiden](#prepare-a-key-vault).
+    > Vervang de waarde voor `id` door de resource-ID van de sleutelkluis die u in de vorige stappen heeft gemaakt. De `secretName` wordt vastgelegd als **vmAdminPassword**.  Zie [Een sleutelkluis voorbereiden](#prepare-a-key-vault).
 
     ![Key Vault en Resource Manager-sjabloon integreren - virtuele-machine-implementatie - parameterbestand](./media/template-tutorial-use-key-vault/resource-manager-tutorial-create-vm-parameters-file.png)
 
 1. Werk de volgende waarden bij:
 
-    * **adminUsername**: De naam van het beheerdersaccount van de virtuele machine.
-    * **dnsLabelPrefix**: Geef een naam op voor de waarde dnsLabelPrefix.
+    * `adminUsername`: De naam van het beheerdersaccount van de virtuele machine.
+    * `dnsLabelPrefix`: Geef de waarde `dnsLabelPrefix` een naam.
 
     Zie de vorige afbeelding voor voorbeelden van namen.
 
@@ -167,7 +168,7 @@ Als u een statische ID gebruikt, hoeft u geen wijzigingen aan te brengen in het 
 
     ![Bestand uploaden in Cloud Shell in de Azure-portal](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Selecteer **Upload/download files** en selecteer **Uploaden**. Upload *azuredeploy.json* en *azuredeploy.para meters.json* naar Cloud Shell. Na het uploaden van het bestand kunt u de **ls**-opdracht en de **cat**-opdracht uitvoeren om te controleren of het bestand is geüpload.
+1. Selecteer **Upload/download files** en selecteer **Uploaden**. Upload *azuredeploy.json* en *azuredeploy.para meters.json* naar Cloud Shell. Na het uploaden van het bestand kunt u de `ls`-opdracht en de `cat`-opdracht uitvoeren om te controleren of het bestand is geüpload.
 
 1. Gebruik het volgende PowerShell-script om de sjabloon te implementeren.
 

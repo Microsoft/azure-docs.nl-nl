@@ -11,138 +11,139 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: f213ae3aeb482cd9c7cbb708fdc2457d9e55b1a3
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 6599abd6282d0d1eb7cb81002c34ddd5158dab6b
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907345"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97511056"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-awarego"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AwareGo
+# <a name="tutorial-azure-active-directory-single-sign-on-integration-with-awarego"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AwareGo
 
 In deze zelfstudie leert u hoe u AwareGo kunt integreren met Azure Active Directory (Azure AD). Wanneer u AwareGo integreert met Azure AD, kunt u het volgende doen:
 
 * In Azure AD beheren wie toegang heeft tot AwareGo.
-* Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij AwareGo.
-* Uw accounts op een centrale locatie beheren: Azure Portal.
+* Instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij AwareGo.
+* Uw accounts op een centrale locatie beheren, namelijk de Azure-portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een abonnement op AwareGo waarvoor eenmalige aanmelding (SSO) is ingeschakeld.
+* Een abonnement op AwareGo waarvoor eenmalige aanmelding is ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
-
-* AwareGo ondersteunt door **SP** geïnitieerde eenmalige aanmelding
+In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen. AwareGo biedt ondersteuning voor met SP (serviceprovider) geïnitieerde eenmalige aanmelding.
 
 
 ## <a name="adding-awarego-from-the-gallery"></a>AwareGo toevoegen uit de galerie
 
-Als u de integratie van AwareGo in Azure AD wilt configureren, moet u AwareGo uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
+Als u de integratie van AwareGo in Azure AD wilt configureren, moet u AwareGo vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps (Software as a Service).
 
-1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Meld u aan bij de Azure-portal met een werkaccount, een schoolaccount, of een persoonlijk Microsoft-account.
+1. Selecteer in het linkerdeelvenster de service **Azure Active Directory**.
+1. Selecteer **Bedrijfstoepassingen** > **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Typ in het gedeelte **Toevoegen uit de galerie** **AwareGo** in het zoekvak.
-1. Selecteer **AwareGo** in het deelvenster met resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
+1. Selecteer **AwareGo** in het resultatenpaneel en voeg de app vervolgens toe. Na enkele seconden wordt de app toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-awarego"></a>Eenmalige aanmelding van Azure AD configureren en testen voor AwareGo
 
-Configureer en test eenmalige aanmelding van Azure AD met AwareGo met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in AwareGo.
+Configureer en test eenmalige aanmelding van Azure AD met AwareGo met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in AwareGo.
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory voor AwareGo te configureren en te testen:
 
-1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
-    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** zodat uw gebruikers deze functie kunnen gebruiken.  
+
+    a. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met de gebruiker B.Simon.  
+    b. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat de gebruiker B.Simon eenmalige aanmelding van Azure AD kan gebruiken.  
+
 1. **[Eenmalige aanmelding voor AwareGo configureren](#configure-awarego-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-    1. **[Testgebruiker voor AwareGo maken](#create-awarego-test-user)** : als u een tegenhanger van B. Simon in AwareGo wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
-1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
+
+    a. **[Een testgebruiker voor AwareGo maken](#create-an-awarego-test-user)** : als u een tegenhanger van B.Simon in AwareGo wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.  
+    b. **[Eenmalige aanmelding testen](#test-sso)** om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
+Ga als volgt te werk om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Zoek in Azure Portal, op de integratiepagina van de toepassing **AwareGo**, de sectie **Beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer in de Azure-portal op de integratiepagina van de toepassing **AwareGo**, onder **Beheren**, de optie **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Als u de instellingen wilt bewerken, selecteert u in het deelvenster **Eenmalige aanmelding met SAML instellen** de knop **Bewerken**.
 
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Schermopname van de knop Bewerken voor Standaard SAML-configuratie.](common/edit-urls.png)
 
-1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
+1. Voer in het bewerkingsvenster, onder **Standaard SAML-configuratie**, de volgende stappen uit:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een van de volgende URL's:
+    a. Voer in het vak **Aanmeldings-URL** een van de volgende URL's in:
 
-    | Aanmeldings-URL |
-    |-------------|
-    | `https://lms.awarego.com/auth/signin/` |
-    | `https://my.awarego.com/auth/signin/` |
+    * `https://lms.awarego.com/auth/signin/` 
+    * `https://my.awarego.com/auth/signin/`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.awarego.com`
+    b. Typ in het vak **Id (entiteits-id)** een URL in de volgende indeling in: `https://<SUBDOMAIN>.awarego.com`
 
-    c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.awarego.com/auth/sso/callback`
+    c. Typ in het vak **Antwoord-URL** een URL in de volgende indeling in: `https://<SUBDOMAIN>.awarego.com/auth/sso/callback`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [ondersteuningsteam van AwareGo](mailto:support@awarego.com) om deze waarden op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De bovenstaande waarden zijn niet echt. Werk deze waarden bij met de werkelijke id en antwoord-URL's. U kunt de waarden verkrijgen door contact op te nemen met [het klantondersteuningsteam van AwareGo](mailto:support@awarego.com). U kunt ook verwijzen naar de voorbeelden die worden weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
+1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat**, selecteeert u naast **Certificaat (Base64)** de optie u **Downloaden** om het certificaat te downloaden en op te slaan op de computer.
 
-    ![De link om het certificaat te downloaden](common/certificatebase64.png)
+    ![Schermopname van de koppeling Downloaden in het deelvenster SAML-handtekeningcertificaat.](common/certificatebase64.png)
 
-1. In de sectie **AwareGo instellen** kopieert u de juiste URL('s) op basis van uw behoeften.
+1. Kopieer in de sectie **AwareGo instellen** een of meer URL's, afhankelijk van de vereisten.
 
-    ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
+    ![Schermopname van het deelvenster AwareGo instellen, om configuratie-URL's te kopiëren.](common/copy-configuration-urls.png)
+
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van de Azure-portal de optie **Azure Active Directory**. Selecteer vervolgens **Gebruikers** > **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
-   1. Voer in het veld **Naam**`B.Simon` in.  
-   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
-   1. Klik op **Create**.
+1. Voer in het deelvenster **Gebruikerseigenschappen** de volgende stappen uit:
+
+   a. Voer in het vak **Naam** de naam **B.Simon** in.  
+   b. Voer in het vak **Gebruikersnaam** de gebruikersnaam in met de volgende indeling: `<username>@<companydomain>.<extension>` (bijvoorbeeld B.Simon@contoso.com).  
+   c. Schakel het selectievakje **Wachtwoord weergeven** in, en noteer vervolgens de waarde die wordt weergegeven in het vak **Wachtwoord**, voor later gebruik.  
+   d. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot AwareGo.
+In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmelding van Azure door de gebruiker toegang te verlenen tot AwareGo.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer **AwareGo** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
+1. Selecteer **AwareGo** in de lijst **Toepassingen**.
+1. Ga op de overzichtspagina van de app naar de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen**.
+1. Selecteer **B.Simon** in het deelvenster **Gebruikers en groepen** in de lijst **Gebruikers**. Selecteer vervolgens de knop **Selecteren**.
+1. Als u denkt dat u een rol gaat toewijzen aan de gebruikers, kunt u deze selecteren in de vervolgkeuzelijst **Een rol selecteren**. Als er geen rol is ingesteld voor deze app, wordt de rol *Standaardtoegang* geselecteerd.
+1. Selecteer in het deelvenster **Toewijzing toevoegen** de knop **Toewijzen**.
 
 ## <a name="configure-awarego-sso"></a>Eenmalige aanmelding voor AwareGo configureren
 
-Als u eenmalige aanmelding aan de zijde van **AwareGo** wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de juiste, uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van AwareGo](mailto:support@awarego.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de zijde van **AwareGo** wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de juiste in de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van AwareGo](mailto:support@awarego.com). Het ondersteuningsteam maakt deze instelling om de verbinding met eenmalige aanmelding van SAML aan beide zijden goed in te stellen.
 
-### <a name="create-awarego-test-user"></a>Testgebruiker voor AwareGo maken
+### <a name="create-an-awarego-test-user"></a>Een testgebruiker voor AwareGo maken
 
-In deze sectie maakt u in AwareGo een gebruiker met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van AwareGo](mailto:support@awarego.com) om de gebruikers toe te voegen in het AwareGo-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie maakt u in AwareGo een gebruiker met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van AwareGo](mailto:support@awarego.com) om de gebruikers toe te voegen op het AwareGo-platform. U moet de gebruikers maken en activeren voordat u eenmalige aanmelding kunt gebruiken.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
+In deze sectie kunt u de configuratie voor eenmalige aanmelding van Azure AD testen door een van de volgende handelingen uit te voeren: 
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AwareGo, waar u de aanmeldingsstroom kunt starten. 
+* Selecteer **Deze toepassing testen** in het Azure Portal. Hiermee wordt u omgeleid naar de aanmeldingspagina van AwareGo, waar u de aanmeldingsstroom kunt initiëren. 
 
-* Ga rechtstreeks naar de aanmeldings-URL van AwareGo en start de aanmeldingsstroom daar.
+* Ga rechtstreeks naar de aanmeldingspagina van AwareGo, en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel AwareGo klikt, wordt dit omgeleid naar de AwareGo-aanmeldings-URL. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* Ga naar Mijn apps van Microsoft. Als u in Mijn apps de tegel **AwareGo** selecteert, wordt u naar de aanmeldingspagina van AwareGo geleid. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u AwareGo hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u AwareGo hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van App-beheer voor voorwaardelijke toegang. Zie [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app) voor meer informatie.
 
 

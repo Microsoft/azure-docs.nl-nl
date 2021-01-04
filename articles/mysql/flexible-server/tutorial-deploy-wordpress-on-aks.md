@@ -7,16 +7,17 @@ ms.author: sumuth
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 31ad9450c775e5e4e7ae543241b48f8c372ad9ee
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 7713b7596b21e02e941a19f64d3658ab0f5f51f5
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749201"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97359010"
 ---
 # <a name="tutorial-deploy-wordpress-app-on-aks-with-azure-database-for-mysql---flexible-server"></a>Zelfstudie: WordPress-app implementeren op AKS met Azure Database for MySQL: flexibele server
 
-In deze quickstart implementeert u een WordPress-toepassing op een AKS-cluster (Azure Kubernetes Service) met Azure Database for MySQL - flexibele server (preview) met behulp van de Azure CLI. [AKS](../../aks/intro-kubernetes.md) is een beheerde kubernetes-service waarmee u snel clusters kunt implementeren en beheren. [Azure Database for MySQL - flexibele server (preview)](overview.md) is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Momenteel is de flexibele server in preview.
+In deze quickstart implementeert u een WordPress-toepassing op een AKS-cluster (Azure Kubernetes Service) met Azure Database for MySQL - flexibele server (preview) met behulp van de Azure CLI. 
+**[AKS](../../aks/intro-kubernetes.md)** is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. **[Azure Database for MySQL - flexibele server (preview)](overview.md)** is een volledig beheerde databaseservice die is ontworpen om nauwkeurige controle en flexibiliteit te bieden als het gaat om databasebeheerfuncties en configuratie-instellingen. Momenteel is de flexibele server in preview.
 
 > [!NOTE]
 > - Azure Database for MySQL Flexible Server is momenteel beschikbaar als openbare preview
@@ -115,7 +116,7 @@ De gemaakte server heeft de volgende kenmerken:
 - De opdracht maakt gebruik van lokale context, dus de server wordt in de resourcegroep ```wordpress-project``` en in de regio ```eastus``` gemaakt.
 
 
-## <a name="build-your-wordpress-docker-image"></a>Een Docker-installatiekopie van WordPress bouwen
+### <a name="build-your-wordpress-docker-image"></a>Een Docker-installatiekopie van WordPress bouwen
 
 Download de [nieuwste WordPress](https://wordpress.org/download/)-versie. Maak een nieuwe directory, ```my-wordpress-app```, voor uw project en gebruik deze eenvoudige mappenstructuur
 
@@ -173,6 +174,7 @@ define('DB_COLLATE', '');
 define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 ```
 
+### <a name="create-a-dockerfile"></a>Een Dockerfile maken
 Maak een nieuw Docker-bestand en kopieer dit codefragment. De Apache-webserver wordt met behulp van het Docker-bestand ingesteld met PHP en de mysqli-extensie wordt erdoor ingeschakeld.
 
 ```docker
@@ -182,12 +184,12 @@ RUN docker-php-ext-install mysqli
 RUN docker-php-ext-enable mysqli
 ```
 
-## <a name="build-your-docker-image"></a>De Docker-installatiekopie bouwen
-Zorg ervoor dat u zich in de map ```my-wordpress-app``` in een terminal bevindt met behulp van de opdracht ```cd```. Voer de volgende opdracht uit om de installatiekopie van het bulletinboard te bouwen:
+### <a name="build-your-docker-image"></a>De Docker-installatiekopie bouwen
+Zorg ervoor dat u zich in de map ```my-wordpress-app``` in een terminal bevindt met behulp van de opdracht ```cd```. Voer de volgende opdracht uit om de installatiekopie te bouwen:
 
 ``` bash
 
-docker build --tag myblog:latest . 
+docker build --tag myblog:latest .
 
 ```
 
@@ -272,8 +274,6 @@ In de volgende voorbeelduitvoer ziet u dat je implementaties en services zijn ge
 
 ```output
 deployment "wordpress-blog" created
-service "php-svc" created
-deployment "azure-vote-front" created
 service "php-svc" created
 ```
 

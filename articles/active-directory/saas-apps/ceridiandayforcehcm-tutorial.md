@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
-ms.openlocfilehash: bd7213f31eb737bedd64d627141c2576fdadb79a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: b2241ff6841a5b3f536419336dc4f4fd888663d9
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456371"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673066"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ceridian-dayforce-hcm"></a>Zelfstudie: Azure Active Directory-integratie met Ceridian Dayforce HCM
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Ceridian Dayforce HCM in Azure AD, m
 
 **Voer de volgende stappen uit om Ceridian Dayforce HCM toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Voor het configureren van de integratie van Ceridian Dayforce HCM in Azure AD, m
 
 4. Typ **Ceridian Dayforce HCM** in het zoekvak, selecteer **Ceridian Dayforce HCM** in het resultatenvenster en klik op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Ceridian Dayforce HCM in de resultatenlijst](common/search-new-app.png)
+    ![Ceridian Dayforce HCM in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Voltooi de volgende bouwstenen om Azure AD-eenmalige aanmelding met Ceridian Dayforce HCM te configureren en testen:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Ceridian Dayforce HCM configureren](#configure-ceridian-dayforce-hcm-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
+2. **[Eenmalige aanmelding voor Ceridian Dayforce HCM configureren](#configure-ceridian-dayforce-hcm-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Ceridian Dayforce HCM maken](#create-ceridian-dayforce-hcm-test-user)** : als u een tegenhanger van Britta Simon in Ceridian Dayforce HCM wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Ceridian Dayforce HCM maken](#create-ceridian-dayforce-hcm-test-user)**: als u een tegenhanger van Britta Simon in Ceridian Dayforce HCM wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met Ceridian Dayforce HCM te configureren:
 
-1. In de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de toepassing **Ceridian Dayforce HCM** , selecteert u **Eenmalige aanmelding**.
+1. In de [Azure-portal](https://portal.azure.com/), op de integratiepagina voor de toepassing **Ceridian Dayforce HCM**, selecteert u **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -130,7 +130,7 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met Ceridian Dayfo
     ![Schermopname die Gebruikerskenmerken toont met het pictogram Bewerken geselecteerd.](common/edit-attribute.png)
 
 6. In de sectie **Gebruikersclaims** in het dialoogvenster **Gebruikerskenmerken** configureert u het kenmerk van het SAML-token zoals wordt weergegeven in de bovenstaande afbeelding en voert u de volgende stappen uit:
-    
+
     | Naam | Bronkenmerk|
     | ---------| --------- |
     | naam  | User.extensionattribute2 |
@@ -169,13 +169,13 @@ Voer de volgende stappen uit om Azure AD-eenmalige aanmelding met Ceridian Dayfo
 
 ### <a name="configure-ceridian-dayforce-hcm-single-sign-on"></a>Ceridian Dayforce HCM configureren voor eenmalige aanmelding
 
-Als u eenmalige aanmelding aan de **Ceridian Dayforce HCM** -zijde wilt configureren, moet u het gedownloade **XML-bestand met metagegevens** en de correct uit de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Ceridian Dayforce HCM](https://www.ceridian.com/support) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Ceridian Dayforce HCM**-zijde wilt configureren, moet u het gedownloade **XML-bestand met metagegevens** en de correct uit de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Ceridian Dayforce HCM](https://www.ceridian.com/support) sturen. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -188,7 +188,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -200,7 +200,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Ceridian Dayforce HCM.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Ceridian Dayforce HCM**.
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Ceridian Dayforce HCM**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/03/2020
-ms.openlocfilehash: 7a2e029fbcc1a26da9c8c8cbff5ee3b9bbb849e0
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 06f738ea88093ea8de45efebea983fd7fa13216e
+ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928270"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97387816"
 ---
 # <a name="tutorial-use-the-rest-apis"></a>Zelfstudie: REST API's gebruiken
 
@@ -113,7 +113,7 @@ Zoek de volgende waarden en sla ze op:
   * In de sectie **Beheren** in het linkerdeelvenster, selecteert u **Eigenschappen**, zoek de **tenant-id** en selecteer het pictogram **Naar Klembord kopiëren** om de waarde op te slaan.
 * Atlas-eindpunt:
   * Selecteer op de [pagina Azure Purview-accounts](https://aka.ms/purviewportal) in Azure Portal het Purview-account in de lijst.
-  * Selecteer **Overzicht**, zoek **Atlas-eindpunt** en selecteer het pictogram **Naar Klembord kopiëren** om de waarde op te slaan. Verwijder het gedeelte *https://* van de tekenreeks wanneer u deze later gebruikt.
+  * Selecteer **Eigenschappen**, zoek **Atlas-eindpunt** en selecteer het pictogram **Naar Klembord kopiëren** om de waarde op te slaan. Verwijder het gedeelte *https://* van de tekenreeks wanneer u deze later gebruikt.
 * Accountnaam:
   * Extraheer de naam van uw catalogus uit de tekenreeks van het Atlas-eindpunt. Als uw Atlas-eindpunt bijvoorbeeld `https://ThisIsMyCatalog.catalog.purview.azure.com`is, is `ThisIsMyCatalog` uw accountnaam.
 
@@ -199,6 +199,7 @@ namespace PurviewCatalogSdkTest
         {
             Console.WriteLine("Azure Purview client");
 
+            // You need to change the api path below (e.g. /api) based on what you're trying to call
             string baseUri = string.Format("https://{0}.catalog.purview.azure.com/api", accountName);
 
             // Get token and set auth

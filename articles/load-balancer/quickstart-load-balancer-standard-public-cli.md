@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: b00d0c83758d0349fd3926e0c263b65af2e4dc92
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 2b22c00845b38d2edea2d78497fb4b46a51896d4
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96021177"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587125"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-cli"></a>Quickstart: Een openbare load balancer maken om taken van VM's te verdelen met behulp van Azure CLI
 
@@ -53,6 +53,8 @@ Maak een resourcegroep maken met [az group create](/cli/azure/group#az-group-cre
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen. Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
 
 ## <a name="configure-virtual-network---standard"></a>Virtuele netwerken configureren - Standard
 
@@ -551,6 +553,8 @@ Voeg de virtuele machines aan de uitgaande groep toe met [az network nic ip-conf
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen. Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-public-portal/resources-diagram-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
 
 ## <a name="configure-virtual-network---basic"></a>Virtueel netwerk configureren - Basic
 

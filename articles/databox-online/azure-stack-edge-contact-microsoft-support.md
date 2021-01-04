@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 07/11/2019
+ms.date: 12/17/2020
 ms.author: alkohli
-ms.openlocfilehash: dbdd4c7d23f56618c0e76649abe4faad86c5804c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a457c2816d4075190a2174339f7e52a2ea41730a
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743298"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696028"
 ---
 # <a name="open-a-support-ticket-for-azure-stack-edge-pro-and-azure-data-box-gateway"></a>Open een ondersteunings ticket voor Azure Stack Edge Pro en Azure Data Box Gateway
 
@@ -28,7 +28,7 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
 
 1. Ga naar uw Azure Stack Edge Pro-of Data Box Gateway-bestelling. Navigeer naar ondersteuning en de sectie **probleem oplossing** en selecteer vervolgens **nieuwe ondersteunings aanvraag**.
 
-2. Voer in de **nieuwe ondersteunings aanvraag**op het tabblad **basis beginselen** de volgende stappen uit:
+2. Voer in de **nieuwe ondersteunings aanvraag** op het tabblad **basis beginselen** de volgende stappen uit:
 
     1. Selecteer in de vervolg keuzelijst **probleem type** de optie **technisch**.
     2. Kies uw **abonnement**.
@@ -36,24 +36,24 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
     4. Selecteer uw **resource**. Dit komt overeen met de naam van uw order.
     5. Geef een korte **samen vatting** van het probleem dat u ondervindt. 
     6. Selecteer het **type probleem**.
-    7. Kies op basis van het probleem type dat u hebt geselecteerd een **subtype**van een bijbehorend probleem.
-    8. Selecteer **volgende: >>oplossingen **.
+    7. Kies op basis van het probleem type dat u hebt geselecteerd een **subtype** van een bijbehorend probleem.
+    8. Selecteer **volgende: >>oplossingen**.
 
-        ![Basisbeginselen](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-1.png)
+        ![Basisinstellingen](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-1.png)
 
 3. Voer op het tabblad **Details** de volgende stappen uit:
 
     1. Geef de begin datum en-tijd op voor het probleem.
     2. Geef een **Beschrijving** op voor het probleem.
-    3. Selecteer in het **bestand uploaden**het mappictogram om te bladeren naar de andere bestanden die u wilt uploaden.
+    3. Selecteer in het **bestand uploaden** het mappictogram om te bladeren naar de andere bestanden die u wilt uploaden.
     4. Controleer de **Diagnostische gegevens voor delen**.
     5. Op basis van uw abonnement wordt er automatisch een **ondersteunings plan** ingevuld.
     6. Selecteer in de vervolg keuzelijst de **Ernst**.
     7. Geef een **Voorkeurs methode voor contact persoon op**.
     8. De **respons uren** worden automatisch geselecteerd op basis van uw abonnement.
     9. Geef de gewenste taal voor de ondersteuning op.
-    10. Geef in de **contact gegevens**uw naam, e-mail adres, telefoon nummer, optionele contact persoon, land/regio. Microsoft Ondersteuning gebruikt deze informatie om u te bereiken voor meer informatie, diagnose en oplossing. 
-    11. Selecteer **volgende: controleren + >>maken **.
+    10. Geef in de **contact gegevens** uw naam, e-mail adres, telefoon nummer, optionele contact persoon, land/regio. Microsoft Ondersteuning gebruikt deze informatie om u te bereiken voor meer informatie, diagnose en oplossing. 
+    11. Selecteer **volgende: controleren + >>maken**.
 
         ![Probleem](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-2.png)
 
@@ -61,13 +61,13 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
 
     ![Probleem 2](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-3.png)
 
-    Nadat u het ondersteunings ticket hebt gemaakt, neemt een ondersteunings technicus zo snel mogelijk contact met u op om te kunnen door gaan met uw aanvraag.
+    Nadat u het ondersteunings ticket hebt gemaakt, neemt een ondersteunings technicus zo snel mogelijk contact met u op om door te gaan met uw aanvraag.
 
 ## <a name="get-hardware-support"></a>Hardwareondersteuning ophalen
 
 Deze informatie is alleen van toepassing op Azure Stack apparaat. Het proces voor het rapporteren van hardwareproblemen verloopt als volgt:
 
-1. Open een ondersteunings ticket van de Azure Portal voor een hardwareprobleem. Selecteer **Azure stack hardware**onder **probleem type**. Kies het **subtype** van het probleem als **hardware-fout**.
+1. Open een ondersteunings ticket van de Azure Portal voor een hardwareprobleem. Selecteer **Azure stack hardware** onder **probleem type**. Kies het **subtype** van het probleem als **hardware-fout**.
 
     ![Hardwareprobleem](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-hardware-issue-1.png)
 
@@ -75,10 +75,10 @@ Deze informatie is alleen van toepassing op Azure Stack apparaat. Het proces voo
 
 2. Als Microsoft Ondersteuning bepaalt dat dit een hardwareprobleem is, wordt een van de volgende acties uitgevoerd:
 
-    * Er wordt een veld vervangings eenheid (FRU) voor het defecte hardwareonderdeel verzonden. Stroom eenheden en harde schijven zijn momenteel de enige ondersteunde FRUs.
+    * Er wordt een veld vervangings eenheid (FRU) voor het defecte hardwareonderdeel verzonden. Stroom eenheden en schijven met een Solid-status worden momenteel de enige ondersteunde FRUs.
     * Alleen FRUs worden in de volgende werkdag vervangen. voor alle andere zaken moet een FSR (Full-System replacement) worden verzonden.
 
-3. Als er een ondersteunings ticket wordt gegenereerd voor een lokale tijd van maandag tot en met vrijdag van 4:30 uur, wordt de volgende werkdag verzonden naar uw locatie om een FRU of een volledig vervanging van het apparaat uit te voeren.
+3. Als een ondersteunings ticket vóór 4:30 uur plaatselijke tijd (maandag t/m vrijdag) wordt gerepareerd, wordt de volgende werkdag verzonden naar uw locatie om een FRU-vervanging te kunnen uitvoeren. Een volledig systeem vervanging duurt doorgaans veel langer omdat de onderdelen worden verzonden vanuit onze fabriek en kunnen worden onderhevig aan het vervoer en de douane vertragingen.
 
 ## <a name="manage-a-support-request"></a>Een ondersteunings aanvraag beheren
 
@@ -90,7 +90,7 @@ Nadat u een ondersteuningsticket hebt gemaakt, kunt u de voortgang van het ticke
 
     ![Ondersteunings aanvragen beheren](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-manage-support-request-1.png)
 
-2. In **Help en ondersteuning**wordt een lijst in tabel vorm met **recente ondersteunings aanvragen** weer gegeven.
+2. In **Help en ondersteuning** wordt een lijst in tabel vorm met **recente ondersteunings aanvragen** weer gegeven.
 
     <!--[Manage support requests](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-1.png)--> 
 

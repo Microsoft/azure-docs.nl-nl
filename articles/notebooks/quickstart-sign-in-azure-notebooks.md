@@ -3,12 +3,12 @@ title: Aanmelden bij Azure Notebooks Preview
 description: Meld u snel aan bij Azure Notebooks Preview en stel een gebruikers-id in, zodat u toegang krijgt tot opgeslagen projecten en notebooks met anderen kunt delen.
 ms.topic: quickstart
 ms.date: 04/15/2019
-ms.openlocfilehash: 8a2d9836cd005ab11106c569929a6776d605da50
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 168da5d4d36cd4cfadb4ef120ddfabbd261cafaf
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85830414"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97109450"
 ---
 # <a name="quickstart-sign-in-and-set-a-user-id-for-azure-notebooks-preview"></a>Quickstart: Meld u aan en stel een gebruikers-id in voor Azure Notebooks Preview
 
@@ -41,7 +41,7 @@ Hoewel u Azure Notebooks altijd kunt bekijken zonder u aan te melden, moet u zic
 
     ![Vragen om een gebruikers-id voor Azure Notebooks in te voeren](media/accounts/create-user-id.png)
 
-    Als u **Nee**selecteert, wordt u telkens wanneer u zich aanmeldt, door Azure Notebooks gevraagd om een gebruikers-id. Uw gebruikers-ID kan ook op elk gewenst moment worden ingesteld in uw [gebruikersprofiel](azure-notebooks-user-profile.md).
+    Als u **Nee** selecteert, wordt u telkens wanneer u zich aanmeldt, door Azure Notebooks gevraagd om een gebruikers-id. Uw gebruikers-ID kan ook op elk gewenst moment worden ingesteld in uw [gebruikersprofiel](azure-notebooks-user-profile.md).
 
 1. Nadat u zich hebt aangemeld, wordt u door Azure Notebooks naar uw openbare profielpagina gebracht, waarop u **Profielgegevens bewerken** kunt selecteren om de rest van uw gegevens in te vullen (Zie [Uw profiel en gebruikers-id](azure-notebooks-user-profile.md) voor meer informatie):
 
@@ -59,4 +59,4 @@ Als u zich wilt afmelden, selecteert u uw gebruikersnaam in de rechterbovenhoek 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Snelstart: Een notebook maken en delen](quickstart-create-share-jupyter-notebook.md)
+> [Snelstart: Een Jupyter Notebook-project exporteren](quickstart-export-jupyter-notebook-project.md)

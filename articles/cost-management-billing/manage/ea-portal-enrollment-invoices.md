@@ -3,18 +3,18 @@ title: Facturen voor Azure Enterprise-inschrijvingen
 description: In dit artikel wordt uitgelegd hoe u uw Azure Enterprise-factuur kunt beheren en erop kunt reageren.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/23/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.custom: contperfq1
-ms.openlocfilehash: 57ada2ca760ffff2124582c31fdd095d04d4375f
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: c64127f7ebbb416d9dfebb5e417cd27d51697665
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410950"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97030719"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Facturen voor Azure Enterprise-inschrijvingen
 
@@ -39,18 +39,14 @@ Als u het gedetailleerde gebruik voor specifieke accounts wilt bekijken, downloa
 U kunt als volgt rapporten en grafieken met het gebruiksoverzicht weergeven:
 
 1. Meld u aan bij de Azure Enterprise-portal.
-
 1. Selecteer een vooruitbetalingsperiode.
-
-   Als u de periode voor **Gebruiksoverzicht** wilt wijzigen, schakelt u rechtsboven van **M** (Maandelijks) naar **A** (Aangepast). Geef vervolgens de aangepaste begin- en einddatums op.
-
+   Als u de periode voor **Gebruiksoverzicht** wilt wijzigen, schakelt u rechtsboven van **M** (Maandelijks) naar **A** (Aangepast). Geef vervolgens de aangepaste begin- en einddatums op.  
    ![Gebruiksoverzicht maken en weergeven en rapporten downloaden in aangepaste weergave](./media/ea-portal-enrollment-invoices/create-ea-view-usage-summary-and-download-reports-custom-view.png)
 1. Selecteer een periode of maand in de grafiek om aanvullende gegevens weer te geven.
-
    - De grafiek toont het MoM-gebruik (maand over maand), uitgesplitst in ingezet voor gebruik, te veel in rekening gebrachte service, afzonderlijke gefactureerde kosten en Azure Marketplace-kosten.
    - U kunt voor de geselecteerde maand gebruikmaken van de velden onder de grafiek om te filteren op afdelingen, accounts en abonnementen.
    - U kunt schakelen tussen **Kosten per services** en **Kosten per hiërarchie**.
-   - U kunt gegevens over **Azure-services** , **afzonderlijk gefactureerde kosten** en **Azure Marketplace** bekijken door de betreffende gedeelten uit te breiden.
+   - U kunt gegevens over **Azure-services**, **afzonderlijk gefactureerde kosten** en **Azure Marketplace** bekijken door de betreffende gedeelten uit te breiden.
 
 Bekijk deze video voor meer informatie over hoe u gebruik kunt weergeven:
 
@@ -72,7 +68,7 @@ Rapporten downloaden:
 3. Selecteer naast het maandrapport de optie **Downloaden**.
 
    > [!NOTE]
-   > Het kan na de werkelijke gebruiksdatum nog maximaal vijf dagen duren voordat het gebruik wordt weergegeven in de rapporten.
+   > Het kan na de werkelijke gebruiksdatum nog maximaal 72 uur duren voordat het gebruik wordt weergegeven in de rapporten.
    >
    > Gebruikers die CSV-bestanden met Safari downloaden naar Excel, ervaren mogelijk indelingsfouten. Open het bestand met een teksteditor om fouten te voorkomen.
 
@@ -142,20 +138,20 @@ Uw factureringsinterval is afhankelijk van hoe u vooruitbetaalde aankopen wilt d
 
 De datum waarop u de overschrijdingsfactuur ontvangt, is afhankelijk van de startdatum en de opzet van de inschrijving:
 
-- **Directe inschrijvingen met een startdatum vóór 1 mei 2018** :
+- **Directe inschrijvingen met een startdatum vóór 1 mei 2018**:
   - Als u gebruikmaakt van een directe EA (Enterprise Agreement), hebt u een jaarlijkse factureringsperiode voor Azure-services, met uitzondering van Azure Marketplace-services. De factureringsperiode is gebaseerd op de jubileumdatum: de datum waarop de overeenkomst van kracht werd.
   - Als u de drempelwaarde van uw Azure-vooruitbetaling voor EA met 150% overschrijdt, wordt de factureringsperiode automatisch geconverteerd naar per kwartaal, gebaseerd op de jubileumdatum. U ontvangt ook een overschrijdingsfactuur voor de Azure-service.
   - Als u de drempelwaarde van uw Azure-vooruitbetaling niet met 150% overschrijdt, behoudt de inschrijving een jaarlijkse factureringsperiode. De overschrijdingsfactuur ontvangt u aan het einde van het vooruitbetaalde jaar.
 
-- **Directe inschrijvingen met een startdatum na 1 mei 2018** :
+- **Directe inschrijvingen met een startdatum na 1 mei 2018**:
   - Uw Azure-verbruik en de kosten worden afzonderlijk in rekening gebracht tijdens een maandelijkse factureringsperiode.
   - Kosten die niet onder uw Azure-vooruitbetaling vallen, vallen onder de overschrijdingsbetaling.  
 
-- **Indirecte inschrijvingen die zijn gestart vóór 1 mei 2018** :
+- **Indirecte inschrijvingen die zijn gestart vóór 1 mei 2018**:
 
   Als u een indirecte EA-klant (Enterprise Agreement) bent met een begindatum van vóór 1 mei 2018, hebt u een factureringsperiode van een kwartaal. De kanaalpartner (CP) brengt kosten rechtstreeks bij u in rekening.  
 
-- **Indirecte inschrijvingen met een startdatum na 1 mei 2018** :
+- **Indirecte inschrijvingen met een startdatum na 1 mei 2018**:
 
   U hebt een maandelijkse factureringsperiode.  
 
@@ -169,9 +165,9 @@ Voor overschrijding wordt u gefactureerd voor het gebruik of de reserveringen di
 
 Voor elk item op de factuur ziet u het volgende:
 
-- **Berekend bedrag** : de totale kosten
-- **Vooruitbetaald gebruik** : het vooruitbetaalde bedrag dat wordt gebruikt om de kosten te dekken
-- **Nettobedrag** : de kosten die de vooruitbetaling overschrijden
+- **Berekend bedrag**: de totale kosten
+- **Vooruitbetaald gebruik**: het vooruitbetaalde bedrag dat wordt gebruikt om de kosten te dekken
+- **Nettobedrag**: de kosten die de vooruitbetaling overschrijden
 
 Toepasselijke belastingen worden alleen berekend over het nettobedrag dat de vooruitbetaling overschrijdt.
 
@@ -264,7 +260,7 @@ Al het gefactureerde gebruik is gebaseerd op minuten die worden geconverteerd na
 
 ### <a name="average-daily-consumption"></a>Gemiddeld dagelijks verbruik
 
-Sommige services zijn maandelijks geprijsd, terwijl het gebruik dagelijks wordt gerapporteerd. In deze gevallen wordt het gebruik eenmaal per dag geëvalueerd, gedeeld door 31, en opgeteld over het aantal dagen in de betreffende factureringsmaand. Op deze manier zijn de tarieven nooit hoger dan verwacht voor een maand, en zijn ze enigszins lager voor maanden met minder dan 31 dagen.
+Sommige services zijn maandelijks geprijsd, terwijl het gebruik dagelijks wordt gerapporteerd. In deze gevallen wordt het gebruik eenmaal per dag geëvalueerd, gedeeld door 31, en opgeteld over het aantal dagen in de betreffende factureringsmaand. De tarieven zijn dus nooit hoger dan verwacht voor een maand en enigszins lager voor maanden met minder dan 31 dagen.
 
 ### <a name="compute-hours-conversion"></a>Omzetten van rekenuren
 

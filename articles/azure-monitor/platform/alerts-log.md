@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
-ms.openlocfilehash: 61aba3e5792d1cc20da16686d052de91744dab76
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a8dbadd3af9dc21ced54af151e4de705f854e011
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186776"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696066"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
@@ -112,7 +112,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
 1. Selecteer in de [Portal](https://portal.azure.com/) **monitor** en kies vervolgens **waarschuwingen**.
 
-    ![Controleren](media/alerts-log/AlertsPreviewMenu.png)
+    ![Bewaking](media/alerts-log/AlertsPreviewMenu.png)
 
 1. Selecteer **nieuwe waarschuwings regel**. 
 
@@ -312,7 +312,7 @@ U kunt Azure Resource Manager CLI ook gebruiken met [sjabloon](./alerts-log-crea
 ```azurecli
 az login
 
-az group deployment create \
+az deployment group create \
     --name AlertDeployment \
     --resource-group ResourceGroupofTargetResource \
     --template-file mylogalerttemplate.json \

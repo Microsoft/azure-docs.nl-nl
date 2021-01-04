@@ -8,19 +8,22 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/04/2020
+ms.date: 12/10/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 5d0b2df551c73e8c9b24d80280bbc993d9b361b7
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: bcb484d62b7c4add7e1ab5562c19417a90cfb7e1
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928464"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97587550"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
 Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant.
+
+Connectors zijn een belangrijk onderdeel van Application Proxy. Zie [Informatie over connectors voor de Azure AD-toepassingsproxy](application-proxy-connectors.md) voor meer informatie over connectors.
 
 Deze zelfstudie:
 
@@ -74,7 +77,7 @@ Voor de Windows-connectorserver moet TLS 1.2 zijn ingeschakeld voordat u de Appl
 TLS 1.2 inschakelen:
 
 1. Stel de volgende registersleutels in:
-    
+
    ```
    Windows Registry Editor Version 5.00
 
@@ -191,7 +194,7 @@ Nu u uw omgeving hebt voorbereid en een connector hebt geïnstalleerd, kunt u on
 1. Meld u aan als beheerder in de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Azure Active Directory** in het navigatiepaneel aan de linkerkant.
 3. Selecteer **Ondernemingstoepassingen** en selecteer vervolgens **Nieuwe toepassing**.
-4. Selecteer **Toepassingsproxy configureren voor veilige externe toegang tot een on-premises toepassing** in de sectie **Uw eigen toepassing maken**.
+4. Selecteer de knop **Een on-premises toepassing toevoegen**. Deze ziet u ergens halverwege de pagina in de sectie **On-premises toepassingen**. U kunt ook bovenaan de pagina **Uw eigen toepassing maken** selecteren en vervolgens **Toepassingsproxy configureren voor veilige externe toegang tot een on-premises toepassing** selecteren.
 5. Geef in de sectie **Uw eigen on-premises toepassing toevoegen** de volgende informatie over uw toepassing op:
 
     | Veld | Beschrijving |

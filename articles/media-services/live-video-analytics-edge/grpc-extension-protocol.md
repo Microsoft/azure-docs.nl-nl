@@ -3,25 +3,29 @@ title: gRPC-extensieprotocol - Azure
 description: In dit artikel leert u het gRPC-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-extensie.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 288dcd1a11c7c42d8796d3b17f2bfd56f562aaf1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7f21ff358b8dd5ac540de8c39c37c52e98977e59
+ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89448052"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97401624"
 ---
 # <a name="grpc-extension-protocol"></a>gRPC-extensieprotocol
 
+Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/media-graph-extension-concept?branch=release-lva-dec-update). Als u de gRPC-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via een gestructureerd gRPC-protocol met hoge prestaties.
+
 In dit artikel leert u het gRPC-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-extensie.
 
-gRPC is een modern, open-source en hoog presterend RPC-framework dat in elke omgeving kan worden uitgevoerd. De gRPC-transportservice maakt gebruik van HTTP/2 bidirectionele streaming tussen:
+gRPC is een modern, opensource-RPC-framework met hoge prestaties, dat in elke omgeving kan worden uitgevoerd en ondersteuning biedt voor communicatie tussen verschillende platformen en in verschillende talen. De gRPC-transportservice maakt gebruik van HTTP/2 bidirectionele streaming tussen:
 
 * de gRPC-client ( Live Video Analytics in IoT Edge-module) en 
 * de gRPC-server (uw aangepaste extensie).
 
 Een gRPC-sessie is een enkele verbinding van de gRPC-client naar de gRPC-server via de TCP/TLS-poort. 
 
-In één sessie: De client verzendt een mediastream-descriptor gevolgd door videoframes naar de server als een [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc)-bericht over de gRPC-stroomsessie. De server valideert de stream-descriptor, analyseert het videoframe en retourneert de deductieresultaten als een protobuf-bericht.
+In één sessie: De client verzendt een mediastream-descriptor gevolgd door videoframes naar de server als een [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc)-bericht over de gRPC-stroomsessie. De server valideert de stream-descriptor, analyseert het videoframe en retourneert de deductieresultaten als een protobuf-bericht. 
+
+Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
 
 ![gRPC-extensiecontract](./media/grpc-extension-protocol/grpc.png)
 
@@ -32,9 +36,10 @@ In één sessie: De client verzendt een mediastream-descriptor gevolgd door vide
 De aangepaste uitbreiding moet de volgende gRPC-service implementeren:
 
 ```
-service MediaGraphExtension {
-  rpc ProcessMediaStream(stream MediaStreamMessage) returns (stream MediaStreamMessage);
-}
+service MediaGraphExtension
+    {
+        rpc ProcessMediaStream(stream MediaStreamMessage) returns (stream MediaStreamMessage);
+    }
 ```
 
 Als deze wordt aangeroepen, wordt er een bidirectionele stroom geopend om berichten te verzenden tussen de gRPC-extensie en Live Video Analytics-graaf. Het eerste bericht dat door elke partij in deze stroom wordt verzonden, bevat een MediaStreamDescriptor, waarmee wordt gedefinieerd welke gegevens in de volgende MediaSamples worden verzonden.
@@ -45,18 +50,23 @@ De graafextensie kan bijvoorbeeld het bericht (hier uitgedrukt in JSON) verzende
  {
     "sequence_number": 1,
     "ack_sequence_number": 0,
-    "media_stream_descriptor": {
-        "graph_identifier": {
+    "media_stream_descriptor": 
+    {
+        "graph_identifier": 
+        {
             "media_services_arm_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/microsoft.media/mediaservices/mediaAccountName",
             "graph_instance_name": "mediaGraphName",
             "graph_node_name": "grpcExtension"
         },
-        "media_descriptor": {
+        "media_descriptor": 
+        {
             "timescale": 90000,
-            "video_frame_sample_format": {
+            "video_frame_sample_format": 
+            {
                 "encoding": "RAW",
                 "pixel_format": "RGB24",
-                "dimensions": {
+                "dimensions": 
+                {
                     "width": 416,
                     "height": 416
                 },
@@ -73,13 +83,17 @@ De aangepaste extensie zou als antwoord het volgende bericht verzenden om aan te
 {
     "sequence_number": 1,
     "ack_sequence_number": 1,
-    "media_stream_descriptor": {
-        "extension_identifier": "customExtensionName"    }
+    "media_stream_descriptor": 
+    {
+        "extension_identifier": "customExtensionName"    
+    }
 }
 ```
 
 Nu beide zijden media-descriptors hebben uitgewisseld, begint Live Video Analytics frames naar de extensie te verzenden.
 
+> [!NOTE]
+> De gRPC-implementatie aan de serverzijde kan worden uitgevoerd in de programmeertaal van uw keuze.
 ### <a name="sequence-numbers"></a>Reeksnummers
 
 Zowel het gRPC-extensieknooppunt als de aangepaste extensie houden een afzonderlijke reeks volgnummers bij die worden toegewezen aan hun berichten. Deze volgnummers moeten monotoon toenemen, te beginnen bij 1. `ack_sequence_number` kan worden genegeerd als er geen bericht wordt bevestigd. Dit kan zich voordoen wanneer het eerste bericht wordt verzonden.
@@ -106,7 +120,8 @@ De ontvanger opent vervolgens het bestand `/dev/shm/inference_client_share_memor
 ```
 {
     "timestamp": 143598615750000,
-    "content_reference": {
+    "content_reference": 
+    {
         "address_offset": 519168,
         "length_bytes": 173056
     }
@@ -123,25 +138,27 @@ De IPC-modus van de container moet correct zijn geconfigureerd om de Live Video 
 Dit kan er als volgt uitzien op de apparaatdubbel met de eerste optie van hierboven.
 
 ```
-"liveVideoAnalytics": {
+"liveVideoAnalytics": 
+{
   "version": "1.0",
   "type": "docker",
   "status": "running",
   "restartPolicy": "always",
-  "settings": {
+  "settings": 
+  {
     "image": "mcr.microsoft.com/media/live-video-analytics:1",
     "createOptions": 
-      "HostConfig": {
+      "HostConfig": 
+      {
         "IpcMode": "host"
       }
-    }
   }
 }
 ```
 
 Zie https://docs.docker.com/engine/reference/run/#ipc-settings---ipc voor meer informatie over IPC-modi.
 
-## <a name="media-graph-grpc-extension-contract-definitions"></a>gRPC-extensiecontractdefinities voor mediagrafiek
+## <a name="mediagraph-grpc-extension-contract-definitions"></a>Contractdefinities voor de MediaGraph gRPC-extensie
 
 In deze sectie wordt het gRPC-contract gedefinieerd waarmee de gegevensstroom wordt gedefinieerd.
 
@@ -159,10 +176,12 @@ Gebruikersnaam-wachtwoordreferenties kunnen worden gebruikt om dit te bereiken. 
 {
   "@type": "#Microsoft.Media.MediaGraphGrpcExtension",
   "name": "{moduleIdentifier}",
-  "endpoint": {
+  "endpoint": 
+  {
     "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
     "url": "tcp://customExtension:8081",
-    "credentials": {
+    "credentials": 
+    {
       "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
       "username": "username",
       "password": "password"
@@ -175,6 +194,35 @@ Gebruikersnaam-wachtwoordreferenties kunnen worden gebruikt om dit te bereiken. 
 Wanneer de gRPC-aanvraag wordt verzonden, wordt de volgende header opgenomen in de metagegevens van de aanvraag om de basisverificatie van HTTP te imiteren.
 
 `x-ms-authentication: Basic (Base64 Encoded username:password)`
+
+
+## <a name="configuring-inference-server-for-each-mediagraph-over-grpc-extension"></a>De deductieserver configureren voor elke MediaGraph via gRPC-extensie
+Bij het configureren van de deductieserver, hoeft u geen knooppunt beschikbaar te maken voor elk AI-model dat is verpakt binnen de deductieserver. In plaats hiervan kunt u voor een grafiekexemplaar de eigenschap `extensionConfiguration` van het knooppunt `MediaGraphGrpcExtension` gebruiken, en definiëren hoe AI-modellen moeten worden geselecteerd. Tijdens de uitvoering geeft LVA deze tekenreeks door aan de deductieserver, die de tekenreeks kan gebruiken om het gewenste AI-model aan te roepen. Deze eigenschap `extensionConfiguration` is een optionele eigenschap en is serverspecifiek. De eigenschap kan als volgt worden gebruikt:
+```
+{
+  "@type": "#Microsoft.Media.MediaGraphGrpcExtension",
+  "name": "{moduleIdentifier}",
+  "endpoint": 
+  {
+    "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
+    "url": "${grpcExtensionAddress}",
+    "credentials": 
+    {
+      "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
+      "username": "${grpcExtensionUserName}",
+      "password": "${grpcExtensionPassword}"
+    }
+  },
+    // Optional server configuration string. This is server specific 
+  "extensionConfiguration": "{Optional extension specific string}",
+  "dataTransfer": 
+  {
+    "mode": "sharedMemory",
+    "SharedMemorySizeMiB": "5"
+  }
+    //Other fields omitted
+}
+```
 
 ## <a name="using-grpc-over-tls"></a>gRPC via TLS gebruiken
 

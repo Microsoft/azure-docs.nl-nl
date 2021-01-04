@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
-ms.date: 11/09/2020
+ms.date: 12/14/2020
 ms.author: jingwang
-ms.openlocfilehash: 9d3c3dc3b9a83973e41bf5d7dd204316508c2cb4
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 76a490ed28f940620db7835c4cec145740f48503
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96013391"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97509016"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Quickstart: Een gegevensfactory maken met de Azure Data Factory-UI 
 
@@ -45,42 +45,42 @@ Bekijk deze video voor een beter begrip van de Data Factory-UI:
 1. Selecteer **Integratie** en selecteer vervolgens **Data Factory**. 
    
    ![Selectie van Data Factory in het deelvenster Nieuw](./media/doc-common-process/new-azure-data-factory-menu.png)
-1. Voer op de pagina **Nieuwe data factory** **ADFTutorialDataFactory** in als **naam**. 
+1. Selecteer op de pagina **Data factory maken** op het tabblad **Basisbeginselen** het Azure-**abonnement** waarin u de data factory wilt maken.
+1. Voer een van de volgende stappen uit voor **Resourcegroep**:
+
+    a. Selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
+
+    b. Selecteer **Nieuwe maken** en voer de naam van een nieuwe resourcegroep in.
+    
+    Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie. 
+
+1. Selecteer bij **Regio** de locatie voor de data factory.
+
+   De lijst bevat alleen locaties die worden ondersteund door Data Factory en waar uw Azure Data Factory-metagegevens worden opgeslagen. De bijbehorende gegevensarchieven (zoals Azure Storage en Azure SQL Database) en berekeningen (zoals Azure HDInsight) die Data Factory gebruikt, kunnen in andere regio's worden uitgevoerd.
  
+1. Voer **ADFTutorialDataFactory** in bij **Naam**.
    De naam van de Azure-gegevensfactory moet *wereldwijd uniek* zijn. Als u het volgende foutbericht ziet, wijzigt u de naam van de data factory (bijvoorbeeld **&lt;uwnaam&gt;ADFTutorialDataFactory**) en probeert u het opnieuw. Zie het artikel [Data factory - Naamgevingsregels](naming-rules.md) voor naamgevingsregels voor Data Factory-artefacten.
   
    ![Fout als de naam niet beschikbaar is](./media/doc-common-process/name-not-available-error.png)
-1. Selecteer voor **Abonnement** het Azure-abonnement waarin u de gegevensfactory wilt maken. 
-1. Voer een van de volgende stappen uit voor **Resourcegroep**:
-     
-   - Selecteer **Bestaande gebruiken** en selecteer een bestaande resourcegroep in de lijst. 
-   - Selecteer **Nieuwe maken** en voer de naam van een resourcegroep in.   
-         
-   Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
+
 1. Selecteer **V2** als **Versie**.
-1. Selecteer voor **Locatie** een locatie voor de data factory.
 
-   De lijst bevat alleen locaties die worden ondersteund door Data Factory en waar uw Azure Data Factory-metagegevens worden opgeslagen. De bijbehorende gegevensarchieven (zoals Azure Storage en Azure SQL Database) en berekeningen (zoals Azure HDInsight) die Data Factory gebruikt, kunnen in andere regio's worden uitgevoerd.
+1. Selecteer **Volgende: Git-configuratie**, en selecteer vervolgens het selectievakje **Git later configureren**.
 
-1. Selecteer **Volgende: Git-configuratie**, en selecteer vervolgens **Git later configureren**.
+1. Selecteer **Controleren en maken**, en selecteer **Maken** nadat de validatie is voltooid. Nadat het maken is voltooid, selecteert u **Ga naar resource** om naar de pagina **Data Factory** te gaan. 
 
-1. Selecteer **Maken**. Nadat het maken is voltooid, selecteert u **Ga naar resource** om naar de pagina **Data Factory** te gaan. 
-
-1. Selecteer de tegel **Maken en controleren** om de gebruikersinterface (UI) van Azure Data Factory te openen op een afzonderlijk tabblad.
+1. Selecteer de tegel **Maken en controleren** om de UI (gebruikersinterface) van Azure Data Factory te openen op een afzonderlijk browsertabblad.
    
    ![Startpagina van Data Factory, met de tegel Maken en controleren](./media/doc-common-process/data-factory-home-page.png)
    
    > [!NOTE]
    > Als u ziet dat de webbrowser vastloopt bij Autoriseren, schakelt u het selectievakje **Cookies van derden en sitegegevens blokkeren**  uit. U kunt het selectievakje ook ingeschakeld laten, een uitzondering maken voor **login.microsoftonline.com** en de app opnieuw openen.
    
-1. Schakel op de pagina **Aan de slag** over naar het tabblad **Auteur** in het linkerpaneel. 
-
-    ![Pagina Aan de slag](./media/doc-common-process/get-started-page-author-button.png)
 
 ## <a name="create-a-linked-service"></a>Een gekoppelde service maken
 In deze procedure maakt u een gekoppelde service om uw Azure Storage-account te koppelen aan de data factory. De gekoppelde service beschikt over de verbindingsgegevens die de Data Factory-service tijdens runtime gebruikt om er een verbinding mee tot stand te brengen.
 
-1. Open het [tabblad Beheren](./author-management-hub.md) via het linkerdeelvenster.
+1. Open op de pagina van de Azure Data Factory-UI het tabblad [**Beheren**](./author-management-hub.md) in het linkerdeelvenster.
 
 1. Selecteer op de pagina Gekoppelde services **+Nieuw** om een nieuwe gekoppelde service te maken.
 
@@ -109,10 +109,13 @@ De invoergegevensset vertegenwoordigt de brongegevens in de invoermap. In de def
 De uitvoergegevensset vertegenwoordigt de gegevens die worden gekopieerd naar de bestemming. In de definitie van de uitvoergegevensset geeft u de blob-container (**adftutorial**) en de map (**uitvoer**) op, en het bestand waarin de brongegevens zijn gekopieerd. Elke uitvoering van een pijplijn heeft een unieke id die eraan is gekoppeld. U hebt toegang tot deze id via de systeemvariabele **RunId**. De naam van het uitvoerbestand wordt dynamisch geëvalueerd op basis van de run-id van de pijplijn.   
 
 In de instellingen voor de gekoppelde service hebt u het Azure Storage-account opgegeven dat de brongegevens bevat. In de instellingen voor de brongegevensset geeft u de precieze locatie van de brongegevens op (blob-container, map en bestand). In de instellingen voor de sink-gegevensset geeft u de locatie op waarnaar de gegevens worden gekopieerd (blob-container, map en bestand). 
- 
+
+1. Selecteer het tabblad **Maken** in het linkerdeelvenster.
+
 1. Selecteer de knop **+** (plus) en vervolgens **Gegevensset**.
 
    ![Menu om een gegevensset te maken](./media/quickstart-create-data-factory-portal/new-dataset-menu.png)
+
 1. Selecteer op de pagina **Nieuwe gegevensset** de optie **Azure Blob-opslag** en selecteer **Doorgaan**. 
 
 1. Selecteer op de pagina **Indeling selecteren** het indelingstype van uw gegevens en selecteer **Doorgaan**. Selecteer in dit geval **Binair** wanneer u bestanden ongewijzigd kopieert zonder de inhoud te parseren.
@@ -163,7 +166,7 @@ In deze procedure maakt en valideert u een pijplijn via een kopieeractiviteit di
 
 1. Ga naar het tabblad **Sink** in de instellingen voor de kopieeractiviteit en selecteer **OutputDataset** bij **Sink-gegevensset**.
 
-1. Klik in de pijplijnwerkbalk boven het canvas op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of de pijplijn is gevalideerd. Klik op de **>>** (pijl-rechts) om de uitvoergegevens van de validatie te sluiten. 
+1. Klik in de pijplijnwerkbalk boven het canvas op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of de pijplijn is gevalideerd. Als u de validatie-uitvoer wilt sluiten, selecteert u in de rechterbovenhoek de knop Valideren. 
 
    ![Een pijplijn valideren](./media/quickstart-create-data-factory-portal/pipeline-validate.png)
 
@@ -185,7 +188,7 @@ In deze procedure implementeert u entiteiten (gekoppelde services, gegevenssets,
 
     ![Alles publiceren](./media/quickstart-create-data-factory-portal/publish-all.png)
 
-1. Als u de pijplijn handmatig wilt activeren, selecteert u de optie **Trigger toevoegen** op de pijplijnwerkbalk en selecteert u **Nu activeren**. Klik op de pagina **Pijplijnuitvoering** op **Voltooien**.
+1. Als u de pijplijn handmatig wilt activeren, selecteert u de optie **Trigger toevoegen** op de pijplijnwerkbalk en selecteert u **Nu activeren**. Selecteer **OK** op de pagina **Pijplijnuitvoering**.
 
 ## <a name="monitor-the-pipeline"></a>De pijplijn bewaken
 

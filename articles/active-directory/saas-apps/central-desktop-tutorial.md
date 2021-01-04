@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 321c6bf52f4dac636f6bebb3a79d3a206c2ea11b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 36ba61c86082e191831c2c890de4466181f1a4db
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456429"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674181"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Zelfstudie: Azure Active Directory-integratie met Central Desktop
 
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Central Desktop met Azure AD moet u 
 
 **Als u Central Desktop vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,11 +63,11 @@ Voor het configureren van de integratie van Central Desktop met Azure AD moet u 
 
 4. Typ **Central Desktop** in het zoekvak, selecteer **Central Desktop** in het deelvenster met resultaten en klik op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Central Desktop in de resultatenlijst](common/search-new-app.png)
+    ![Central Desktop in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Central Desktop configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Central Desktop configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Central Desktop tot stand is gebracht.
 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij Central Desktop moet u de volgende bouwstenen uitvoeren:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Central Desktop moet u de volgende stappen uitvoeren:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Central Desktop** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Central Desktop** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -104,7 +104,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Central Desktop moet
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<companyname>.centraldesktop.com`
 
     b. Typ in het vak **Id** een URL met het volgende patroon:
-    
+
     ```http
     https://<companyname>.centraldesktop.com/saml2-metadata.php
     https://<companyname>.imeetcentral.com/saml2-metadata.php
@@ -131,17 +131,17 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Central Desktop moet
 
 ### <a name="configure-central-desktop-single-sign-on"></a>Eenmalige aanmelding voor Central Desktop configureren
 
-1. Meld u aan bij uw **Central Desktop** -tenant.
+1. Meld u aan bij uw **Central Desktop**-tenant.
 
-2. Ga naar **Settings** . Selecteer **Advanced** en vervolgens **Single Sign On** .
+2. Ga naar **Settings**. Selecteer **Advanced** en vervolgens **Single Sign On**.
 
     ![Instellen - Geavanceerd](./media/central-desktop-tutorial/ic769563.png "Instellen - Geavanceerd")
 
-3. Voer de volgende stappen uit op de pagina **Single Sign On Settings** :
+3. Voer de volgende stappen uit op de pagina **Single Sign On Settings**:
 
     ![Instellingen voor eenmalige aanmelding](./media/central-desktop-tutorial/ic769564.png "Instellingen voor eenmalige aanmelding")
 
-    a. Selecteer **Enable SAML v2 Single Sign On** .
+    a. Selecteer **Enable SAML v2 Single Sign On**.
 
     b. Plak in het vak **SSO URL** de **Azure AD-id** die u in de Azure-portal hebt gekopieerd.
 
@@ -149,25 +149,25 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Central Desktop moet
 
     d. Plak in het vak **SSO Logout URL** de **afmeldings-URL** die u uit de Azure-portal hebt gekopieerd.
 
-4. Voer de volgende stappen uit in de sectie **Message Signature Verification Method** :
+4. Voer de volgende stappen uit in de sectie **Message Signature Verification Method**:
 
     ![Bericht voor de verificatiemethode van de gegevensondertekening](./media/central-desktop-tutorial/ic769565.png "Bericht voor de verificatiemethode van de gegevensondertekening")
-    
-    a. Selecteer **Certificaat** .
 
-    b. Selecteer **RSH SHA256** in de lijst **SSO Certificate** .
+    a. Selecteer **Certificaat**.
 
-    c. Open het gedownloade certificaat in Kladblok. Kopieer vervolgens de inhoud van het certificaat en plak deze in het veld **SSO Certificate** .
+    b. Selecteer **RSH SHA256** in de lijst **SSO Certificate**.
 
-    d. Selecteer **Display a link to your SAMLv2 login page** .
+    c. Open het gedownloade certificaat in Kladblok. Kopieer vervolgens de inhoud van het certificaat en plak deze in het veld **SSO Certificate**.
 
-    e. Selecteer **Update** .
+    d. Selecteer **Display a link to your SAMLv2 login page**.
+
+    e. Selecteer **Update**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -180,19 +180,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Central Desktop.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en vervolgens **Central Desktop** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en vervolgens **Central Desktop**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -200,11 +200,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De Central Desktop-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -212,7 +212,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-central-desktop-test-user"></a>Central Desktop-testgebruiker maken
 
@@ -225,18 +225,18 @@ Voordat Azure AD-gebruikers zich kunnen aanmelden, moeten ze worden ingericht vo
 
 1. Meld u aan bij uw Central Desktop-tenant.
 
-2. Selecteer **People** en selecteer vervolgens **Add Internal Members** .
+2. Selecteer **People** en selecteer vervolgens **Add Internal Members**.
 
     ![People](./media/central-desktop-tutorial/ic781051.png "People")
 
-3. Typ in het vak **Email Address of New Members** een Azure AD-account dat u wilt inrichten, en selecteer vervolgens **Next** .
+3. Typ in het vak **Email Address of New Members** een Azure AD-account dat u wilt inrichten, en selecteer vervolgens **Next**.
 
     ![E-mailadressen van nieuwe gebruikers](./media/central-desktop-tutorial/ic781052.png "E-mailadressen van nieuwe gebruikers")
 
 4. Selecteer **Add Internal member(s)** .
 
     ![Intern lid toevoegen](./media/central-desktop-tutorial/ic781053.png "Intern lid toevoegen")
-  
+
    > [!NOTE]
    > De gebruikers die u toevoegt ontvangen een e-mail met een bevestigingskoppeling voor het activeren van hun account.
 

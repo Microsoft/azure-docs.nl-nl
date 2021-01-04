@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/09/2019
 ms.author: jeedes
-ms.openlocfilehash: 0e5b9b9ba71412244d42204f6cad712b939d7c15
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 82f3a2dc7f43bd484d6a81efaa8d07f13b746d9e
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319001"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671060"
 ---
 # <a name="tutorial-integrate-aha-with-azure-active-directory"></a>Zelfstudie: Aha! integreren met Azure Active Directory
 
@@ -73,11 +73,11 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Aha! te con
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u op de pagina van toepassingsintegratie van**Aha!** de sectie **Beheren** en selecteert u **Eenmalige aanmelding**.
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u op de pagina van toepassingsintegratie van **Aha!** de sectie **Beheren** en selecteert u **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
 
@@ -143,7 +143,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
     ![Instellingen](./media/aha-tutorial/IC798950.png "Instellingen")
 
 5. Klik op **Account**.
-  
+
     ![Profiel](./media/aha-tutorial/IC798951.png "Profiel")
 
 6. Klik op **Security and single sign-on**.
@@ -178,8 +178,8 @@ Wanneer u op de tegel Aha! in het toegangsvenster klikt, wordt u automatisch aan
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)

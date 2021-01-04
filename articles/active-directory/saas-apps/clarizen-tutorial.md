@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 1e4a0199e8d9a04b07b52f90d9c1823f69e07c7d
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 38b2ff6909dae15ff0f836316d5d12140ecc331a
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455983"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672933"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Zelfstudie: Azure Active Directory-integratie met Clarizen
 
@@ -49,11 +49,11 @@ Om de integratie van Clarizen in Azure AD te configureren, moet u Clarizen uit d
 
 **Voer de volgende stappen uit om Clarizen uit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,22 +61,22 @@ Om de integratie van Clarizen in Azure AD te configureren, moet u Clarizen uit d
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Clarizen** , selecteer **Clarizen** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Clarizen**, selecteer **Clarizen** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Clarizen in de lijst met resultaten](common/search-new-app.png)
+    ![Clarizen in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding met Clarizen configureren en testen met behulp van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding met Clarizen configureren en testen met behulp van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Clarizen tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding met Clarizen wilt configureren en testen, moet u de volgende stappen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Clarizen configureren](#configure-clarizen-single-sign-on)** : de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
+2. **[Eenmalige aanmelding voor Clarizen configureren](#configure-clarizen-single-sign-on)**: de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Clarizen maken](#create-clarizen-test-user)** : als u een tegenhanger van Britta Simon in Clarizen wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Clarizen maken](#create-clarizen-test-user)**: als u een tegenhanger van Britta Simon in Clarizen wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Clarizen, moet u de volgende stappen uitvoeren:
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Clarizen** -toepassing de optie **Eenmalige aanmelding** .
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Clarizen**-toepassing de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,11 +126,11 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Clarizen, moet u de 
 
 1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van Clarizen.
 
-1. Klik op uw gebruikersnaam en klik vervolgens op **Instellingen** .
+1. Klik op uw gebruikersnaam en klik vervolgens op **Instellingen**.
 
     ![Op ‘Instellingen’ klikken onder uw gebruikersnaam](./media/clarizen-tutorial/tutorial_clarizen_001.png "Instellingen")
 
-1. Klik op het tabblad **Algemene instellingen** . Klik vervolgens naast **Federatieve aanmelding** op **Bewerken** .
+1. Klik op het tabblad **Algemene instellingen**. Klik vervolgens naast **Federatieve aanmelding** op **Bewerken**.
 
     ![Tabblad ‘Algemene instellingen’](./media/clarizen-tutorial/tutorial_clarizen_002.png "Globale instellingen")
 
@@ -138,7 +138,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Clarizen, moet u de 
 
     ![Dialoogvenster ‘Federatieve aanmelding’](./media/clarizen-tutorial/tutorial_clarizen_003.png "Federatieve aanmelding")
 
-    a. Selecteer **Federatieve aanmelding inschakelen** .
+    a. Selecteer **Federatieve aanmelding inschakelen**.
 
     b. Klik op **Uploaden** om uw gedownloade certificaat te uploaden.
 
@@ -146,15 +146,15 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Clarizen, moet u de 
 
     d. Voer in het tekstvak **Afmeldings-URL** de waarde van de **logout-URL** in uit het configuratievenster van de Azure AD-toepassing.
 
-    e. Selecteer **BERICHT gebruiken** .
+    e. Selecteer **BERICHT gebruiken**.
 
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -167,31 +167,31 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Clarizen.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Clarizen** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Clarizen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst met toepassingen **Clarizen** .
+2. Selecteer in de lijst met toepassingen **Clarizen**.
 
     ![De koppeling Clarizen in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -199,7 +199,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-clarizen-test-user"></a>Testgebruiker voor Clarizen maken
 
@@ -211,11 +211,11 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Clarizen, moet u ge
 
 1. Meld u als beheerder aan bij de bedrijfssite van Clarizen.
 
-2. Klik op **People** .
+2. Klik op **People**.
 
     ![Op ‘Personen’ klikken](./media/clarizen-tutorial/create_aaduser_001.png "People")
 
-3. Klik op **Gebruiker uitnodigen** .
+3. Klik op **Gebruiker uitnodigen**.
 
     ![Knop ‘Gebruiker uitnodigen’](./media/clarizen-tutorial/create_aaduser_002.png "Invite Users")
 
@@ -225,7 +225,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Clarizen, moet u ge
 
     a. Typ in het tekstvak **E-mail** het e-mailadres van het account van Britta Simon.
 
-    b. Klik op **Uitnodigen** .
+    b. Klik op **Uitnodigen**.
 
     > [!NOTE]
     > De houder van het Azure Active Directory-account ontvangt een e-mail en volgt een koppeling om zijn account te bevestigen voordat het actief wordt.

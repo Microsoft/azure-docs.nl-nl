@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 12/09/2020
-ms.openlocfilehash: 8594250d72754e6b7d2a6d8c27d3d5bcd0e9c8e4
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 16b924f486215d972477e93c4e199e7076a0a531
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920873"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97508880"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-in-the-azure-portal"></a>Meerdere tabellen bulksgewijs kopiëren met behulp van Azure Data Factory in de Azure-portal
 
@@ -25,7 +25,7 @@ ms.locfileid: "96920873"
 Deze zelfstudie demonstreert het **kopiëren van een aantal tabellen uit Azure SQL Database naar Azure Synapse Analytics**. U kunt hetzelfde patroon toepassen in andere kopieerscenario's. Bijvoorbeeld het kopiëren van tabellen van SQL Server/Oracle naar Azure SQL Database/Data Synapse Analytics/Azure Blob, verschillende paden kopiëren van Blob naar Azure SQL Database-tabellen.
 
 > [!NOTE]
-> - Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent met Azure Data Factory.
+> Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent met Azure Data Factory.
 
 Op hoog niveau bevat deze zelfstudie de volgende stappen:
 
@@ -99,9 +99,7 @@ Om deze instelling te controleren en in te schakelen, gaat u naar uw server > Be
 1. Nadat het maken is voltooid, selecteert u **Ga naar resource** om naar de pagina **Data Factory** te gaan. 
    
 1. Klik op **Author & Monitor** om de gebruikersinterface (UI) van Data Factory op een afzonderlijk tabblad te openen.
-1. Ga op de pagina **Aan de slag** naar het tabblad **Auteur** in het linkerdeelvenster, zoals wordt weergegeven in de volgende afbeelding:
 
-     ![Pagina Aan de slag](./media/doc-common-process/get-started-page-author-button.png)
 
 ## <a name="create-linked-services"></a>Gekoppelde services maken
 U maakt gekoppelde services om uw gegevensarchieven en compute-services aan een gegevensfactory te koppelen. Een gekoppelde service beschikt over de verbindingsgegevens die de Data Factory-service tijdens runtime gebruikt om een verbinding met het gegevensarchief tot stand te brengen. 
@@ -177,7 +175,9 @@ In deze zelfstudie zijn de bron- en doel-SQL-tabellen niet vastgelegd in de defi
 
 ### <a name="create-a-dataset-for-source-sql-database"></a>Een gegevensset maken voor bron SQL-Database
 
-1. Klik op **+ (plus)** in het linkervenster en klik vervolgens op **Dataset**. 
+1. Selecteer het tabblad **Maken** in het linkerdeelvenster.
+
+1. Klik in het linkerdeelvenster op **+** (plusteken) en selecteer **Gegevensset**. 
 
     ![Nieuw gegevenssetmenu](./media/tutorial-bulk-copy-portal/new-dataset-menu.png)
 1. Selecteer in het venster **Nieuwe gegevensset** de optie **Azure SQL Database** en selecteer vervolgens **Doorgaan**. 
@@ -277,7 +277,7 @@ De pijplijn **IterateAndCopySQLTables** gebruikt een lijst met tabellen als para
     1. Selecteer het selectievakje voor **Fasering inschakelen**.
     1. Selecteer **AzureStorageLinkedService** bij **Store Account Linked Service**.
 
-1. Klik in de bovenste pijplijnwerkbalk op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of er geen validatiefouten zijn. Sluit het venster **Pipeline Validation Report** door op **>>** te klikken.
+1. Klik in de bovenste pijplijnwerkbalk op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of er geen validatiefouten zijn. Sluit het venster **Pijplijnvalidatierapport** door op de dubbele vierkante haken **>>** te klikken.
 
 ### <a name="create-the-pipeline-gettablelistandtriggercopydata"></a>De pijplijn GetTableListAndTriggerCopyData maken
 
@@ -285,6 +285,8 @@ Deze pijplijn voert twee acties uit:
 
 * Zoekt de systeemtabel van Azure SQL Database op om de lijst met te kopiëren tabellen op te halen.
 * Activeert de pijplijn 'IterateAndCopySQLTables' om het kopiëren van de gegevens daadwerkelijk uit te voeren.
+
+Hier volgen de stappen voor het maken van de pijplijn:
 
 1. Klik op **+ (plus)** in het linkervenster en klik op **Pipeline**.
 1. In het paneel onder **Eigenschappen** wijzigt u de naam van de pijplijn in **GetTableListAndTriggerCopyData**. 

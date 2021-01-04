@@ -11,12 +11,12 @@ ms.custom:
 - mqtt
 - device-developer
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 9eeb8174c900b0f548144231e65643c9559f75e3
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 2757d696f5922263abf87399d6491e46b5e5513c
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033865"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application"></a>Zelfstudie: Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing
 
@@ -84,3 +84,4 @@ U, als apparaatontwikkelaar, kent nu de basisbeginselen van het maken van een ap
 * Lees [Wat zijn apparaatsjablonen?](./concepts-device-templates.md) voor meer informatie over de rol van apparaatsjablonen wanneer u uw apparaatcode implementeert.
 * Lees [Verbinding maken met Azure IoT Central](./concepts-get-connected.md) voor meer informatie over het registreren van apparaten met IoT Central en hoe IoT Central apparaatverbindingen beveiligt.
 * Zie [Telemetrie-, eigenschap- en opdracht-payloads](concepts-telemetry-properties-commands.md) voor meer informatie over de gegevens die door het apparaat worden uitgewisseld met IoT Central.
+* Lees de [Handleiding voor ontwikkelaars van IoT Plug en Play-apparaten](../../iot-pnp/concepts-developer-guide-device.md).

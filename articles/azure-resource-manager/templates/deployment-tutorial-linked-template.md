@@ -5,12 +5,12 @@ ms.date: 03/13/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: a90bb90c90206ffe00f8b4f2d035c0ea844b5c47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81a8b6cd5044b31ee80f50448d6610ba6a57281e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91611670"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97585646"
 ---
 # <a name="tutorial-deploy-a-linked-template"></a>Zelfstudie: Een gekoppelde sjabloon implementeren
 
@@ -32,11 +32,11 @@ U kunt de resource van het opslagaccount verplaatsen naar een gekoppelde sjabloo
 
 :::code language="json" source="~/resourcemanager-templates/get-started-deployment/linked-template/linkedStorageAccount.json":::
 
-De volgende sjabloon is de hoofdsjabloon.  Het gemarkeerde object **Microsoft.Resources/deployments** laat zien hoe u een gekoppelde sjabloon aanroept. De gekoppelde sjabloon kan niet worden opgeslagen als een lokaal bestand of een bestand dat alleen beschikbaar is in uw lokale netwerk. U kunt alleen een URI-waarde opgeven die *http* of *https* bevat. De sjabloon moet toegankelijk zijn voor Resource Manager. U kunt ook de gekoppelde sjabloon in een opslagaccount plaatsen en de URI voor dat item gebruiken. De URI wordt doorgegeven aan de sjabloon met behulp van een parameter. Zie de definitie van de gemarkeerde parameter.
+De volgende sjabloon is de hoofdsjabloon. Het gemarkeerde object `Microsoft.Resources/deployments` laat zien hoe u een gekoppelde sjabloon aanroept. De gekoppelde sjabloon kan niet worden opgeslagen als een lokaal bestand of een bestand dat alleen beschikbaar is in uw lokale netwerk. U kunt alleen een URI-waarde opgeven die HTTP of HTTP bevat. De sjabloon moet toegankelijk zijn voor Resource Manager. U kunt ook de gekoppelde sjabloon in een opslagaccount plaatsen en de URI voor dat item gebruiken. De URI wordt doorgegeven aan de sjabloon met behulp van een parameter. Zie de definitie van de gemarkeerde parameter.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-deployment/linked-template/azuredeploy.json" highlight="27-32,40-58":::
 
-Sla een kopie van de hoofdsjabloon op uw lokale computer op met de extensie .json, bijvoorbeeld azuredeploy.json. U hoeft geen kopie van de gekoppelde sjabloon op te slaan.  De gekoppelde sjabloon wordt gekopieerd van een GitHub-opslagplaats naar een opslagaccount.
+Sla een kopie van de hoofdsjabloon op de lokale computer op met de extensie _.json_, bijvoorbeeld _azuredeploy.json_. U hoeft geen kopie van de gekoppelde sjabloon op te slaan. De gekoppelde sjabloon wordt gekopieerd van een GitHub-opslagplaats naar een opslagaccount.
 
 ## <a name="store-the-linked-template"></a>De gekoppelde sjabloon opslaan
 
@@ -45,7 +45,7 @@ Met het volgende PowerShell-script maakt u een opslagaccount, maakt u een contai
 Selecteer **Uitproberen** om Cloud Shell te openen, selecteer **Kopiëren** om het PowerShell-script te kopiëren en klik met de rechtermuisknop op het deelvenster van de shell om het script te plakken:
 
 > [!IMPORTANT]
-> Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. In het sjabloon is de opslagaccountnaam de projectnaam met 'store' daaraan toegevoegd. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
+> Opslagaccountnamen moeten tussen 3 en 24 tekens lang zijn en mogen alleen getallen en kleine letters bevatten. De naam moet uniek zijn. De opslagaccountnaam in de sjabloon is de projectnaam met achteraan toegevoegd: **store**. De projectnaam moet tussen 3 en 11 tekens lang zijn. De projectnaam moet dus voldoen aan de vereisten voor de opslagaccountnaam en minder dan 11 tekens lang zijn.
 
 ```azurepowershell-interactive
 $projectName = Read-Host -Prompt "Enter a project name:"   # This name is used to generate names for Azure resources, such as storage account name.
@@ -93,7 +93,7 @@ Als u een privésjabloon in een opslagaccount wilt implementeren, genereert u ee
 Zie [Resourcegroep maken](./deployment-tutorial-local-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt.
 
 > [!NOTE]
-> In de onderstaande Azure CLI-code is datumparameter -d een ongeldig argument in macOS. MacOS-gebruikers die 2 uur willen toevoegen aan de huidige tijd in de terminal op macOS, moeten -v+2H gebruiken.
+> In de onderstaande Azure CLI-code is `date`-parameter `-d` een ongeldig argument in macOS. MacOS-gebruikers die 2 uur willen toevoegen aan de huidige tijd in de terminal op macOS, moeten `-v+2H` gebruiken.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -176,7 +176,7 @@ Schoon de geïmplementeerd resources op door de resourcegroep te verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt geleerd hoe u een gekoppelde sjabloon kunt implementeren. In de volgende zelfstudie leert u hoe u een DevOp-pijplijn voor het implementeren van een sjabloon maakt.
+U hebt geleerd hoe u een gekoppelde sjabloon kunt implementeren. In de volgende zelfstudie leert u hoe u een DevOps-pijplijn voor het implementeren van een sjabloon maakt.
 
 > [!div class="nextstepaction"]
 > [Een pijplijn maken](./deployment-tutorial-pipeline.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
-ms.openlocfilehash: 781ce1fbc8bca0fb816a57d87903d253341414e6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 014a394e72b09abf7adcd881e874a965daa6ecb0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455507"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672913"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Zelfstudie: Azure Active Directory-integratie met CompetencyIQ | Microsoft Docs
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van CompetencyIQ in Azure Active Directo
 
 **Als u CompetencyIQ uit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,9 +61,9 @@ Voor het configureren van de integratie van CompetencyIQ in Azure Active Directo
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **CompetencyIQ** , selecteer **CompetencyIQ** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **CompetencyIQ**, selecteer **CompetencyIQ** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![CompetencyIQ in de lijst met resultaten](common/search-new-app.png)
+    ![CompetencyIQ in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Om eenmalige aanmelding bij Azure Active Directory met CompetencyIQ te configureren en testen, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding met CompetencyIQ configureren](#configure-competencyiq-single-sign-on)** : de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
+2. **[Eenmalige aanmelding met CompetencyIQ configureren](#configure-competencyiq-single-sign-on)**: de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor CompetencyIQ maken](#create-competencyiq-test-user)** : als u een tegenhanger van Britta Simon in CompetencyIQ wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
+5. **[Testgebruiker voor CompetencyIQ maken](#create-competencyiq-test-user)**: als u een tegenhanger van Britta Simon in CompetencyIQ wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -124,13 +124,13 @@ Voor het configureren van eenmalige aanmelding bij Azure Active Directory met Co
 
 ### <a name="configure-competencyiq-single-sign-on"></a>CompetencyIQ voor eenmalige aanmelding configureren
 
-Als u eenmalige aanmelding aan de **CompetencyIQ** -zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [CompetencyIQ-ondersteuningsteam](https://www.competencyiq.com/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **CompetencyIQ**-zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [CompetencyIQ-ondersteuningsteam](https://www.competencyiq.com/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -143,7 +143,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -155,7 +155,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding bij Azure door haar toegang te geven tot CompetencyIQ.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **CompetencyIQ**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **CompetencyIQ**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

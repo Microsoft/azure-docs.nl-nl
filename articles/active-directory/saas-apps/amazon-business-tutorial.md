@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: jeedes
-ms.openlocfilehash: 42da33fe874b6dea43bc16009dd27b70e6c3f535
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 1424669af9fe28257e66c8c5438f6e1d171954e0
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589891"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672896"
 ---
 # <a name="tutorial-integrate-amazon-business-with-azure-active-directory"></a>Zelfstudie: Amazon Business integreren met Azure Active Directory
 
@@ -74,12 +74,12 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. Voer in het gedeelte **Standaard SAML-configuratie** de volgende stappen uit als u in de door **IDP** geïnitieerde modus wilt configureren:
 
     1. In het tekstvak **Id (Entiteits-id)** typt u een URL met één van de volgende patronen:
-    
+
        | URL | Regio |
        |-|-|
        | `https://www.amazon.com`| Noord-Amerika |
@@ -87,7 +87,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
        | `https://www.amazon.de`| Europa |
 
     1. In het tekstvak **Antwoord-URL** typt u een URL met één van de volgende patronen:
-    
+
        | URL | Regio |
        |-|-|
        | `https://www.amazon.com/bb/feature/sso/action/3p_redirect?idpid={idpid}`| Noord-Amerika |
@@ -146,7 +146,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Selecteer in de wizard **Eenmalige aanmelding instellen** de provider volgens de vereisten van uw organisatie en klik op **Volgende**.
 
     ![Schermopname van Set up S S O, (S S O instellen) met Microsoft Azure A D en Next (Volgende) geselecteerd.](media/amazon-business-tutorial/default-group1.png)
-    
+
     > [!NOTE]
     > Hoewel Microsoft ADFS een vermelde optie is, werkt het niet met Azure AD-eenmalige aanmelding.
 
@@ -193,12 +193,12 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Ten slotte wordt in de sectie **SSO-verbindingsgegevens** de **status** weergegeven als **Actief**.
 
     ![Schermopname van S S O Connection Details (S S O-verbindingsdetails) met de status Active (Actief).](media/amazon-business-tutorial/sso-connection5.png)
-    
+
     > [!NOTE]
     > Als u de toepassing wilt configureren in de door **SP** geïnitieerde modus, voert u de volgende stap uit en plakt u de aanmeldings-URL van de bovenstaande schermopname in het tekstvak **Aanmeldings-URL** van de sectie **Extra URL's instellen** in Azure Portal. Gebruik de volgende indeling:
     >
     > `https://www.amazon.<TLD>/bb/feature/sso/action/start?domain_hint=<uniqueid>`
-    
+
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
@@ -236,7 +236,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer **Amazon Business** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
+    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
@@ -288,8 +288,8 @@ Wanneer u op de tegel Amazon Business in het toegangsvenster klikt, wordt u auto
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)

@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 94509ba209e95eb9199ddd760529d47eb48bda10
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: fc1401959adb97f8c4caf6d413a212d9f3b62801
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96930795"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588111"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Zelfstudie: Meerdere resource-instanties maken met ARM-sjablonen
 
@@ -38,15 +38,16 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 [Azure-quickstart-sjablonen](https://azure.microsoft.com/resources/templates/) is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De in deze snelstart gebruikte sjabloon wordt [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Standaardopslagaccount maken) genoemd. De sjabloon definieert een Azure Storage-accountresource.
 
-1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
-2. Plak de volgende URL in **Bestandsnaam**:
+1. Selecteer in Visual Studio Code **Bestand** > **Bestand openen**.
+1. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
     ```
-3. Selecteer **Openen** om het bestand te openen.
-4. De resource Microsoft.Storage/storageAccounts is in de sjabloon gedefinieerd. Vergelijk de sjabloon met de [sjabloonverwijzing](/azure/templates/Microsoft.Storage/storageAccounts). Het is handig om enige basiskennis te hebben van de sjabloon voordat u deze gaat aanpassen.
-5. Selecteer **Bestand**>**Opslaan als** om het bestand op uw lokale computer op te slaan als **azuredeploy.json**.
+
+1. Selecteer **Openen** om het bestand te openen.
+1. Er is een `Microsoft.Storage/storageAccounts`-resource gedefinieerd in de sjabloon. Vergelijk de sjabloon met de [sjabloonverwijzing](/azure/templates/Microsoft.Storage/storageAccounts). Het is handig om enige basiskennis te hebben van de sjabloon voordat u deze gaat aanpassen.
+1. Selecteer **Bestand** > **Opslaan als** om het bestand op uw lokale computer op te slaan als _azuredeploy.json_.
 
 ## <a name="edit-the-template"></a>De sjabloon bewerken
 
@@ -56,10 +57,10 @@ Breng vanuit Visual Studio Code de volgende vier wijzigingen aan:
 
 ![Azure Resource Manager maakt meerdere instanties](./media/template-tutorial-create-multiple-instances/resource-manager-template-create-multiple-instances.png)
 
-1. Voeg een `copy`-element toe aan de resourcedefinitie van het opslagaccount. In het copy-element geeft u het aantal iteraties en een variabele voor deze lus op. Het aantal iteraties moet een positief geheel getal zijn en mag niet hoger zijn dan 800.
-2. De functie `copyIndex()` retourneert de huidige iteratie in de lus. U gebruikt de index als het voorvoegsel van de naam. `copyIndex()` is gebaseerd op nul. Als u de indexwaarde wilt verschuiven, kunt u een waarde doorgeven in de functie copyIndex(). Bijvoorbeeld *copyIndex(1)* .
-3. Verwijder het element **variables**, want dit wordt niet meer gebruikt.
-4. Verwijder het element **outputs**. Dit is niet langer nodig.
+1. Voeg een `copy`-element toe aan de resourcedefinitie van het opslagaccount. In het `copy`-element geeft u het aantal iteraties en een variabele voor deze lus op. Het aantal iteraties moet een positief geheel getal zijn en mag niet hoger zijn dan 800.
+2. De functie `copyIndex()` retourneert de huidige iteratie in de lus. U gebruikt de index als het voorvoegsel van de naam. `copyIndex()` is gebaseerd op nul. Als u de indexwaarde wilt verschuiven, kunt u een waarde doorgeven in de functie `copyIndex()`. Bijvoorbeeld `copyIndex(1)`.
+3. Verwijder het element `variables`, want dit wordt niet meer gebruikt.
+4. Verwijder het element `outputs`. Dit wordt niet meer gebruikt.
 
 De voltooide sjabloon ziet er als volgt uit:
 
@@ -109,17 +110,17 @@ De voltooide sjabloon ziet er als volgt uit:
 }
 ```
 
-Voor meer informatie over het maken van meerdere instanties raadpleegt u [Deploy multiple instances of a resource or property in ARM Templates](./copy-resources.md) (Meerdere instanties van een resource of eigenschap implementeren in ARM-sjablonen)
+Raadpleeg [Resourceherhaling in ARM-sjablonen](./copy-resources.md) voor meer informatie over het maken van meerdere exemplaren
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
 1. Meld u aan bij [Azure Cloud Shell](https://shell.azure.com)
 
-1. Kies uw favoriete omgeving door in de linkerbovenhoek **PowerShell** of **Bash** (voor CLI) te selecteren.  U moet de shell opnieuw starten wanneer u overschakelt.
+1. Kies uw favoriete omgeving door in de linkerbovenhoek **PowerShell** of **Bash** (voor CLI) te selecteren. U moet de shell opnieuw starten wanneer u overschakelt.
 
     ![Bestand uploaden in Cloud Shell in de Azure-portal](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Na het uploaden van het bestand kunt u de **ls**-opdracht en de **cat**-opdracht uitvoeren om te controleren of het bestand is geüpload.
+1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Nadat het bestand is geüpload, kunt u de opdracht `ls` en de opdracht `cat` gebruiken om te controleren of het bestand is geüpload.
 
 1. Voer vanuit Cloud Shell de volgende opdrachten uit. Selecteer het tabblad om de PowerShell-code of de CLI-code weer te geven.
 
@@ -148,9 +149,9 @@ Voor meer informatie over het maken van meerdere instanties raadpleegt u [Deploy
 
     ---
 
-Als u alle drie de opslagaccounts wilt weergeven, laat u de parameter --name weg:
+Na een geslaagde sjabloonimplementatie kunt u de drie opslagaccounts weergeven die zijn gemaakt in de opgegeven resourcegroep. Vergelijk de namen van de opslagaccounts met de naamdefinitie in de sjabloon.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="cli"></a>[CLI](#tab/azure-cli)
 
 ```azurecli
 echo "Enter a project name that is used to generate resource group name:" &&
@@ -172,8 +173,6 @@ Write-Host "Press [ENTER] to continue ..."
 
 ---
 
-Vergelijk de namen van de opslagaccounts met de naamdefinitie in de sjabloon.
-
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Schoon de geïmplementeerd Azure-resources, wanneer u deze niet meer nodig hebt, op door de resourcegroep te verwijderen.
@@ -185,7 +184,7 @@ Schoon de geïmplementeerd Azure-resources, wanneer u deze niet meer nodig hebt,
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u meerdere instanties van opslagaccounts maakt.  In de volgende zelfstudie ontwikkelt u een sjabloon met meerdere resources en meerdere resourcetypen. Sommige resources hebben afhankelijke resources.
+In deze zelfstudie hebt u geleerd hoe u meerdere instanties van opslagaccounts maakt. In de volgende zelfstudie ontwikkelt u een sjabloon met meerdere resources en meerdere resourcetypen. Sommige resources hebben afhankelijke resources.
 
 > [!div class="nextstepaction"]
 > [Afhankelijke resources maken](./template-tutorial-create-templates-with-dependent-resources.md)

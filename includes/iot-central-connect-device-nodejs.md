@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/24/2020
-ms.openlocfilehash: 4b19ae1b584a2d300e4144e79ef76245c71035cf
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 6a6baa14d7521f4a85350af7b08b5fcbe82ddf6b
+ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96126110"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97033833"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -27,7 +27,7 @@ Wanneer u het voorbeeld uitvoert om verbinding te maken met IoT Central, wordt d
 
 De methode `main`:
 
-* Hiermee wordt een `client`-object gemaakt en wordt de id van het `dtmi:com:example:Thermostat;1`-model ingesteld voordat de verbinding wordt geopend.
+* Hiermee wordt een `client`-object gemaakt en wordt de id van het `dtmi:com:example:Thermostat;1`-model ingesteld voordat de verbinding wordt geopend. IoT Central gebruikt de model-id om de apparaatsjabloon voor dit apparaat te identificeren of te genereren. Zie [Een apparaat koppelen met een apparaatsjabloon](../articles/iot-central/core/concepts-get-connected.md#associate-a-device-with-a-device-template) voor meer informatie.
 * Hiermee maakt u een opdracht-handler.
 * Start een lus om elke 10 seconden een temperatuurtelemetriegegevens te verzenden.
 * Hiermee wordt de eigenschap `maxTempSinceLastReboot` naar IoT Central verzonden. IoT Central negeert de eigenschap `serialNumber` omdat deze geen deel uitmaakt van het apparaatmodel.
@@ -83,7 +83,7 @@ async function main() {
 }
 ```
 
-De functie `provisionDevice` laat zien hoe het apparaat DPS gebruikt om te registreren en verbinding te maken met IoT Central. De payload bevat de model-id:
+De functie `provisionDevice` laat zien hoe het apparaat DPS gebruikt om te registreren en verbinding te maken met IoT Central. De payload omvat de model-id die in IoT Central wordt gebruikt om [het apparaat te koppelen aan een apparaatsjabloon](../articles/iot-central/core/concepts-get-connected.md#associate-a-device-with-a-device-template):
 
 ```javascript
 async function provisionDevice(payload) {

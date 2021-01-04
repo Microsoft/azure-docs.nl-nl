@@ -3,25 +3,25 @@ title: 'Quickstart: Azure Storage V11 voor .NET gebruiken om een wachtrij te beh
 description: In deze quickstart leert u hoe u de Azure Storage-clientbibliotheek voor .NET kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwerken.
 author: mhopkins-msft
 ms.author: mhopkins
+ms.reviewer: dineshm
 ms.date: 07/24/2020
+ms.topic: quickstart
 ms.service: storage
 ms.subservice: queues
-ms.topic: quickstart
-ms.reviewer: dineshm
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f7368025993c91490d808ef0ae5f5f66233fe666
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 23703dc507aa909aea4711289a4d7d5c5e6a170e
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345615"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588196"
 ---
 # <a name="quickstart-use-the-azure-storage-sdk-v11-for-net-to-manage-a-queue"></a>Quickstart: De Azure Storage SDK V11 voor .NET gebruiken om een wachtrij te beheren
 
-In deze quickstart leert u hoe u de Azure Storage-clientbibliotheek versie 11 voor .NET kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwerken.
+In deze quickstart leert u hoe u de Azure Storage-clientbibliotheek v11 voor .NET kunt gebruiken om een wachtrij te maken en er berichten aan toe te voegen. Vervolgens leert u hoe u berichten uit de wachtrij kunt lezen en verwerken.
 
 > [!NOTE]
-> In deze snelstart wordt gebruikgemaakt van een oudere versie van de Azure Queue Storage-clientbibliotheek. Als u aan de slag wilt gaan met de vorige versie, raadpleegt u [Quickstart: Azure Queue Storage-clientbibliotheek v12 voor .NET](storage-quickstart-queues-dotnet.md).
+> In deze quickstart wordt gebruikgemaakt van een oudere versie van de Azure Queue Storage-clientbibliotheek. Als u aan de slag wilt gaan met de vorige versie, raadpleegt u [Quickstart: Azure Queue Storage-clientbibliotheek v12 voor .NET](storage-quickstart-queues-dotnet.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,13 +50,13 @@ Zie [Choose between .NET Core and .NET Framework for server apps](/dotnet/standa
 
 De voorbeeldtoepassing die in deze quickstart wordt gebruikt, is een basisconsoletoepassing. U kunt de voorbeeldtoepassing verkennen op [GitHub](https://github.com/Azure-Samples/storage-queues-dotnet-quickstart).
 
-Gebruik [git](https://git-scm.com/) om een kopie van de toepassing naar uw ontwikkelomgeving te downloaden.
+Gebruik [Git](https://git-scm.com/) om een kopie van de toepassing te downloaden naar de ontwikkelomgeving.
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
 ```
 
-Met deze opdracht wordt de opslagplaats naar uw lokale git-map gekloond. Zoek voor het openen van de Visual Studio-oplossing naar de map *storage-wachtrijen-dotnet-snelstart* , open deze en dubbelklik op *storage-wachtrijen-dotnet-snelstart.sln*.
+Met deze opdracht wordt de opslagplaats naar uw lokale Git-map gekloond. Zoek voor het openen van de Visual Studio-oplossing naar de map `storage-queues-dotnet-quickstart`, open deze en dubbelklik op `storage-queues-dotnet-quickstart.sln`.
 
 [!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
 
@@ -98,7 +98,7 @@ De voorbeeldtoepassing maakt een wachtrij en voegt er een bericht aan toe. De to
 
 ### <a name="windows"></a>Windows
 
-Als u Visual Studio als editor gebruikt, drukt u op **F5** om het uit te voeren.
+Als u Visual Studio als editor gebruikt, drukt u op `F5` om het uit te voeren.
 
 Navigeer anders naar de toepassingsmap en voer de toepassing uit met de opdracht `dotnet run`.
 
@@ -148,7 +148,7 @@ We gaan nu de voorbeeldcode verkennen, zodat u begrijpt hoe deze werkt.
 
 ### <a name="try-parsing-the-connection-string"></a>Probeer de verbindingsreeks te parseren
 
-Het voorbeeld controleert eerst of de omgevingsvariabele een verbindingsreeks bevat die kan worden geparseerd om een [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount)-object te maken dat naar het opslagaccount wijst. Het voorbeeld gebruikt de [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse)-methode om te controleren of de verbindingsreeks geldig is. Als **TryParse** lukt, wordt de variabele *storageAccount* geïnitialiseerd en **true** geretourneerd.
+Het voorbeeld controleert eerst of de omgevingsvariabele een verbindingsreeks bevat die kan worden geparseerd om een [`CloudStorageAccount`](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount)-object te maken dat naar het opslagaccount wijst. Het voorbeeld gebruikt de methode [`TryParse`](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse) om te controleren of de verbindingsreeks geldig is. Als `TryParse` is geslaagd, wordt de variabele `storageAccount` geïnitialiseerd en wordt `true` geretourneerd.
 
 ```csharp
 // Retrieve the connection string for use with the application. The storage connection string is stored
@@ -204,7 +204,7 @@ Console.WriteLine("Message expiration time: {0}", message.ExpirationTime.ToStrin
 Console.WriteLine();
 ```
 
-Als u een bericht wilt toevoegen dat niet verloopt, gebruikt u `Timespan.FromSeconds(-1)` in uw aanroep naar [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
+Als u een bericht wilt toevoegen dat niet verloopt, gebruikt u `Timespan.FromSeconds(-1)` in uw aanroep naar [`AddMessageAsync`](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
 
 ```csharp
 await queue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null);
@@ -262,19 +262,19 @@ if (queue != null)
 
 ## <a name="resources-for-developing-net-applications-with-queues"></a>Resources voor het ontwikkelen van .NET-toepassingen met wachtrijen
 
-Zie de volgende aanvullende bronnen voor .NET-ontwikkeling met Azure-wachtrijen:
+Zie de volgende aanvullende bronnen voor .NET-ontwikkeling met Azure Queue Storage:
 
 ### <a name="binaries-and-source-code"></a>Binaire bestanden en broncode
 
 - Download de NuGet-pakketten voor de nieuwste versie van de [Azure Storage-clientbibliotheek voor .NET](/dotnet/api/overview/azure/storage)
-  - [Algemeen](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
+  - [Algemeen](https://www.nuget.org/packages/microsoft.azure.storage.common/)
   - [Wachtrijen](https://www.nuget.org/packages/Azure.Storage.Queues/)
 - Bekijk de [broncode van de .NET-clientbibliotheek](https://github.com/Azure/azure-storage-net) op GitHub.
 
-### <a name="client-library-reference-and-samples"></a>Naslaginformatie en voorbeelden voor de .NET-clientbibliotheek
+### <a name="azure-storage-client-library-reference-and-samples"></a>Naslaginformatie en voorbeelden voor de Azure Storage-clientbibliotheek
 
-- Zie het [.NET API-referentiemateriaal](/dotnet/api/overview/azure/storage) voor meer informatie over de .NET-clientbibliotheek.
-- Verken [Wachtrij-opslagvoorbeelden](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=queues) die zijn geschreven met de .NET-clientbibliotheek.
+- Bekijk de [naslaginformatie voor Azure Storage-clientbibliotheken voor .NET](/dotnet/api/overview/azure/storage) voor meer informatie over .NET-clientbibliotheken.
+- Verken [Queue Storage-voorbeelden](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=queues) die zijn geschreven met de .NET-clientbibliotheek.
 
 ## <a name="next-steps"></a>Volgende stappen
 

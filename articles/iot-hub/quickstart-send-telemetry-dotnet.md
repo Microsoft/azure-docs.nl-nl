@@ -14,18 +14,18 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 06/01/2020
-ms.openlocfilehash: 21410f7137a76b43f57ca7a1e037908410eae365
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: e4c87d8579b06cdfb37c1635a25db5ce67aa3545
+ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844519"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97094791"
 ---
-# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-net"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en lezen met een back-endtoepassing (.NET)
+# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-service-application-net"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub, en lezen met een servicetoepassing (.NET)
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
-IoT Hub is een Azure-service waarmee grote hoeveelheden telemetrie van uw IoT-apparaten naar de cloud kunt opnemen voor opslag of verwerking. In deze snelstartgids verzendt u telemetrie vanuit een toepassing voor een gesimuleerd apparaat via IoT Hub naar een back-endtoepassing voor verwerking.
+IoT Hub is een Azure-service waarmee grote hoeveelheden telemetrie van uw IoT-apparaten naar de cloud kunt opnemen voor opslag of verwerking. In deze quickstart verzendt u telemetrie vanuit een toepassing voor een gesimuleerd apparaat via IoT Hub, naar een servicetoepassing voor verwerking.
 
 In de snelstartgids worden twee vooraf geschreven C#-toepassingen gebruikt, één voor het verzenden van de telemetrie en één voor het lezen van de telemetrie van de hub. Voordat u deze twee toepassingen kunt uitvoeren, moet u een IoT-hub maken en een apparaat registreren bij de hub.
 
@@ -33,7 +33,7 @@ In de snelstartgids worden twee vooraf geschreven C#-toepassingen gebruikt, éé
 
 ## <a name="prerequisites"></a>Vereisten
 
-* De twee voorbeeldtoepassingen die u uitvoert in deze snelstartgids zijn geschreven in C#. .NET Core SDK 3.0 of hoger moet zijn geïnstalleerd op uw ontwikkelcomputer.
+* De twee voorbeeldtoepassingen die u uitvoert in deze snelstartgids zijn geschreven in C#. .NET Core SDK 3.1 of hoger moet zijn geïnstalleerd op de ontwikkelcomputer.
 
     U kunt de .NET Core SDK voor meerdere platforms downloaden van [.NET](https://www.microsoft.com/net/download/all).
 
@@ -44,7 +44,7 @@ In de snelstartgids worden twee vooraf geschreven C#-toepassingen gebruikt, éé
     ```
 
     > [!NOTE]
-    > .NET Core SDK 3.0 of hoger wordt aanbevolen voor het compileren van de Event Hubs-servicecode die wordt gebruikt voor het lezen van telemetrie in deze quickstart. U kunt .NET Core SDK 2.1 gebruiken als u de taalversie voor de servicecode instelt op preview, zoals vermeld in de sectie [De telemetrie van uw hub lezen](#read-the-telemetry-from-your-hub).
+    > .NET Core SDK 3.1 of hoger wordt aanbevolen voor het compileren van de Event Hubs-servicecode die wordt gebruikt voor het lezen van telemetrie in deze quickstart.
 
 
 * Download de Azure IoT-voorbeelden van [https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) en pak het ZIP-archief uit.
@@ -85,9 +85,9 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 
    `HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyDotnetDevice;SharedAccessKey={YourSharedAccessKey}`
 
-    U gebruikt deze waarde verderop in de quickstart.
+    U gebruikt deze waarde verderop in de snelstart.
 
-3. U hebt ook het _Event Hubs-compatibele eindpunt_, het _Event Hubs-compatibele pad_ en de _primaire sleutel service_ van uw IoT-hub nodig om de back-endtoepassing in staat te stellen verbinding te maken met uw IoT-hub en de berichten op te halen. Met de volgende opdrachten worden deze waarden opgehaald voor uw IoT-hub:
+3. U hebt ook het _Event Hubs-compatibele eindpunt_, het _Event Hubs-compatibele pad_ en de _primaire sleutel service_ van uw IoT-hub nodig om de servicetoepassing in staat te stellen verbinding te maken met uw IoT-hub en de berichten op te halen. Met de volgende opdrachten worden deze waarden opgehaald voor uw IoT-hub:
 
    **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
@@ -105,22 +105,18 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 
 De toepassing voor het gesimuleerde apparaat maakt verbinding met een apparaatspecifiek eindpunt op uw IoT-hub en verstuurt gesimuleerde telemetrie over temperatuur en luchtvochtigheid.
 
-1. Navigeer in een lokaal terminalvenster naar de hoofdmap van het voorbeeldproject in C#. Navigeer vervolgens naar de map **iot-hub\Quickstarts\simulated-device**.
+1. Navigeer in een lokaal terminalvenster naar de hoofdmap van het voorbeeldproject in C#. Navigeer vervolgens naar de map **iot-hub\Quickstarts\SimulatedDevice**.
 
-2. Open het bestand **SimulatedDevice.cs** in een teksteditor van uw keuze.
-
-    Vervang de waarde van de variabele `s_connectionString` door de apparaatverbindingsreeks die u eerder hebt genoteerd. Sla daarna de wijzigingen op in **SimulatedDevice.cs**.
-
-3. Voer in het lokale terminalvenster de volgende opdrachten uit om de vereiste pakketten te installeren voor de toepassing voor het gesimuleerde apparaat:
+2. Voer in het lokale terminalvenster de volgende opdrachten uit om de vereiste pakketten te installeren voor de toepassing voor het gesimuleerde apparaat:
 
     ```cmd/sh
     dotnet restore
     ```
 
-4. Voer in het lokale terminalvenster de volgende opdracht uit om de toepassing voor het gesimuleerde apparaat te compileren en uit te voeren:
+3. Voer in het lokale terminalvenster de volgende opdracht uit om de toepassing voor het gesimuleerde apparaat te compileren en uit te voeren met de apparaatverbindingsreeks die u eerder hebt genoteerd:
 
     ```cmd/sh
-    dotnet run
+    dotnet run -- {DeviceConnectionString}
     ```
 
     In de volgende schermafbeelding ziet u de uitvoer op het moment dat de toepassing voor het gesimuleerde apparaat telemetriegegevens naar uw IoT-hub verzendt:
@@ -129,36 +125,37 @@ De toepassing voor het gesimuleerde apparaat maakt verbinding met een apparaatsp
 
 ## <a name="read-the-telemetry-from-your-hub"></a>De telemetrie van uw hub lezen
 
-De back-endtoepassing maakt verbinding met het eindpunt **Events** aan de servicezijde van uw IoT-hub. De toepassing ontvangt de berichten die van het gesimuleerde apparaat naar de cloud worden verzonden. Een back-endtoepassing van IoT Hub wordt meestal uitgevoerd in de cloud om berichten van apparaat naar cloud te ontvangen en verwerken.
+De servicetoepassing maakt verbinding met het eindpunt **Events** aan de servicezijde van de IoT-hub. De toepassing ontvangt de berichten die van het gesimuleerde apparaat naar de cloud worden verzonden. Een servicetoepassing van IoT Hub wordt meestal uitgevoerd in de cloud om berichten van apparaat naar cloud te ontvangen en verwerken.
 
-1. Navigeer in een ander lokaal terminalvenster naar de hoofdmap van het voorbeeldproject in C#. Navigeer vervolgens naar de map **iot-hub\Quickstarts\read-d2c-messages**.
+1. Navigeer in een ander lokaal terminalvenster naar de hoofdmap van het voorbeeldproject in C#. Navigeer vervolgens naar de map **iot-hub\Quickstarts\ReadD2cMessages**.
 
-2. Open het bestand **ReadDeviceToCloudMessages.cs** in een teksteditor van uw keuze. Werk de volgende variabelen bij en sla de wijzigingen in het bestand op.
-
-    | Variabele | Waarde |
-    | -------- | ----------- |
-    | `EventHubsCompatibleEndpoint` | Vervang de waarde van de variabele door het met Event Hubs compatibele eindpunt dat u eerder hebt genoteerd. |
-    | `EventHubName`                | Vervang de waarde van de variabele door het met Event Hubs compatibele pad dat u eerder hebt genoteerd. |
-    | `IotHubSasKey`                | Vervang de waarde van de variabele door de primaire sleutel service die u eerder hebt genoteerd. |
-
-    > [!NOTE]
-    > Als u .NET Core SDK 2.1 gebruikt, moet u de taalversie instellen op preview om de code te compileren. Open hiervoor het bestand **read-d2c-messages.csproj** en stel de waarde van het element `<LangVersion>` in op `preview`.
-
-3. Voer in het lokale terminalvenster de volgende opdrachten uit om de vereiste bibliotheken voor de back-endtoepassing te installeren:
+2. Voer in het lokale terminalvenster de volgende opdrachten uit om de vereiste bibliotheken voor de toepassing te installeren:
 
     ```cmd/sh
     dotnet restore
     ```
 
-4. Voer in het lokale terminalvenster de volgende opdrachten uit om de back-endtoepassing te bouwen en uit te voeren:
+3. Voer in het lokale terminalvenster de volgende opdracht uit om de parameteropties te zien.
 
     ```cmd/sh
     dotnet run
     ```
 
-    In de volgende schermafbeelding ziet u de uitvoer op het moment dat de back-endtoepassing telemetriegegevens ontvangt die door het gesimuleerde apparaat naar de hub zijn verzonden:
+4. Voer in het lokale terminalvenster een van de volgende opdrachten uit om de toepassing te bouwen en uit te voeren met:
 
-    ![De back-endtoepassing uitvoeren](media/quickstart-send-telemetry-dotnet/read-device-to-cloud.png)
+    ```cmd/sh
+    dotnet run -- -c {EventHubConnectionString}
+    ```
+
+    of
+
+    ```cmd/sh
+    dotnet run -- -e {EventHubCompatibleEndpoint} -n {EventHubName} -s {SharedAccessKey}
+    ```
+
+    In de volgende schermafbeelding ziet u de uitvoer op het moment dat de servicetoepassing telemetriegegevens ontvangt die door het gesimuleerde apparaat naar de hub zijn verzonden:
+
+    ![De servicetoepassing uitvoeren](media/quickstart-send-telemetry-dotnet/read-device-to-cloud.png)
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -166,9 +163,9 @@ De back-endtoepassing maakt verbinding met het eindpunt **Events** aan de servic
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een IoT-hub geconfigureerd, een apparaat geregistreerd, gesimuleerde telemetrie verzonden naar de hub met behulp van een C#-toepassing en de telemetrie gelezen van de hub met behulp van een eenvoudige back-endtoepassing.
+In deze quickstart hebt u een IoT-hub geconfigureerd, een apparaat geregistreerd, gesimuleerde telemetrie verzonden naar de hub met behulp van een C#-toepassing en de telemetrie gelezen van de hub met behulp van een eenvoudige servicetoepassing.
 
-Ga verder met de volgende snelstartgids als u wilt weten hoe u een gesimuleerd apparaat beheert vanuit een back-endtoepassing.
+Ga verder met de volgende snelstartgids als u wilt weten hoe u een gesimuleerd apparaat beheert vanuit een servicetoepassing.
 
 > [!div class="nextstepaction"]
 > [Snelstart: Een apparaat beheren dat is verbonden met een IoT-hub](quickstart-control-device-dotnet.md)

@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 672c9f0d5403ae27a26d58617dca44f0f1121411
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b83201ae864d1f1eb9124af5268360bb1748f6c8
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904160"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507605"
 ---
 # <a name="tutorial-sync-data-from-sql-edge-to-azure-blob-storage-by-using-azure-data-factory"></a>Zelfstudie: Gegevens synchroniseren van SQL Edge naar Azure Blob-opslag met behulp van Azure Data Factory
 
@@ -59,8 +59,11 @@ Voer deze opdrachten uit in de instantie van SQL Edge:
     CREATE PROCEDURE usp_write_watermark @timestamp datetime, @TableName varchar(50)  
     AS  
     BEGIN
+    
     UPDATE [dbo].[watermarktable]
-    SET [WatermarkValue] = @timestamp WHERE [TableName] = @TableName
+    SET [WatermarkValue] = @timestamp
+    WHERE [TableName] = @TableName
+
     END
     Go
 ```
@@ -91,7 +94,7 @@ Maak een data factory door de instructies in [deze zelfstudie](../data-factory/q
 
 6. Ga in het venster **Eigenschappen instellen** voor de gegevensset naar **Naam** en voer **WatermarkDataset** in.
 
-7. Selecteer **Nieuw** voor **Gekoppelde service**en voer deze stappen uit:
+7. Selecteer **Nieuw** voor **Gekoppelde service** en voer deze stappen uit:
 
     1. Voer **SQLDBEdgeLinkedService** in bij **Naam**.
 
@@ -109,7 +112,7 @@ Maak een data factory door de instructies in [deze zelfstudie](../data-factory/q
 
     7. Selecteer **OK**.
 
-8. Selecteer **Bewerken**op het tabblad **Instellingen**.
+8. Selecteer **Bewerken** op het tabblad **Instellingen**.
 
 9. Selecteer op het tabblad **Verbinding** **[dbo].[watermarktable]** voor **Tabel**. Als u eerst een voorbeeld van de gegevens in de tabel wilt bekijken, klikt u op **Gegevens vooraf bekijken**.
 
@@ -123,7 +126,7 @@ Maak een data factory door de instructies in [deze zelfstudie](../data-factory/q
 
     1. Voer in het venster **Eigenschappen instellen** onder **Naam** **SourceDataset** in. Selecteer **SQLDBEdgeLinkedService** bij **Gekoppelde service**.
 
-    2. Selecteer bij **Tabel**de tabel die u wilt synchroniseren. U kunt ook een query opgeven voor deze gegevensset, zoals verderop in deze zelfstudie wordt beschreven. De query heeft voorrang op de tabel die u in deze stap opgeeft.
+    2. Selecteer bij **Tabel** de tabel die u wilt synchroniseren. U kunt ook een query opgeven voor deze gegevensset, zoals verderop in deze zelfstudie wordt beschreven. De query heeft voorrang op de tabel die u in deze stap opgeeft.
 
     3. Selecteer **OK**.
 
@@ -187,7 +190,7 @@ Maak een data factory door de instructies in [deze zelfstudie](../data-factory/q
 
 30. Selecteer **Opgeslagen procedureactiviteit** in de pijplijnontwerper en verander de naam in **SPtoUpdateWatermarkActivity**.
 
-31. Ga naar het tabblad **SQL-account** en selecteer **QLDBEdgeLinkedService** bij **Gekoppelde service**.
+31. Ga naar het tabblad **SQL-account** en selecteer **_QLDBEdgeLinkedService_* bij **Gekoppelde service**.
 
 32. Ga naar het tabblad **Opgeslagen procedure** en voer deze stappen uit:
 

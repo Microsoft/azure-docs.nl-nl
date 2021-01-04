@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/16/2020
+ms.date: 12/15/2020
 ms.author: jeedes
-ms.openlocfilehash: 822e28402d0b7829b835ad03a3b3cf7d05c3d343
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 96c4eba31013b868fa7afb41544d5d8cbcc1cdc6
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180996"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97607215"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-cloud-academy---sso"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Cloud Academy - SSO
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Cloud Academy - SSO kunt integreren met Azure A
 * Gebruik Azure AD om te bepalen wie toegang heeft tot Cloud Academy - SSO.
 * Zorg ervoor dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Cloud Academy - SSO.
 * Uw accounts op één centrale locatie beheren: de Azure-portal.
-
-Zie [Wat is eenmalige aanmelding?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,15 +37,14 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-Cloud Academy - SSO biedt ondersteuning voor door SP geïnitieerde eenmalige aanmelding.
-
-Nadat u Cloud Academy - SSO hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+* Cloud Academy - SSO biedt ondersteuning voor door **SP** geïnitieerde eenmalige aanmelding
+* Cloud Academy - SSO biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="add-cloud-academy---sso-from-the-gallery"></a>Cloud Academy - SSO toevoegen vanuit de galerie
 
 Als u de integratie van Cloud Academy - SSO met Azure AD wilt configureren, moet u Cloud Academy - SSO vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u aan bij de Azure-portal met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een toepassing toe te voegen.
@@ -72,14 +69,29 @@ Voltooi de volgende stappen van hoog niveau om eenmalige aanmelding van Azure AD
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **Cloud Academy - SSO**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer in de Azure-portal op de integratiepagina van de toepassing **Cloud Academy - SSO**, in de sectie **Beheren**, de optie **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken:
 
    ![Schermopname van het potloodpictogram voor het bewerken van de standaard-SAML-configuratie.](common/edit-urls.png)
 
-1. Ga naar de sectie **Standaard-SAML-configuratie** en typ `https://cloudacademy.com/login/enterprise/` in het vak **Aanmeldings-URL**.
+1. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
 
+    a. In het tekstvak **Aanmeldings-URL** typt u een van de volgende URL's:
+    
+    | Aanmeldings-URL |
+    |--------------|
+    | `https://cloudacademy.com/login/enterprise/` |
+    | `https://app.qa.com/login/enterprise/` |
+    |
+    
+    b. In het tekstvak **Antwoord-URL** typt u een van de volgende URL's:
+    
+    | Antwoord-URL |
+    |--------------|
+    | `https://cloudacademy.com/labs/social/complete/saml/` |
+    | `https://app.qa.com/labs/social/complete/saml/` |
+    |
 1. Ga naar de pagina **Eenmalige aanmelding met SAML instellen** en selecteer in de sectie **SAML-handtekeningcertificaat** de kopieerknop om de **App-URL voor federatieve metagegevens** te kopiëren. Sla de URL op.
 
     ![Schermopname van de kopieerknop voor de app-URL voor federatieve metagegevens.](common/copy-metadataurl.png)
@@ -103,15 +115,9 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen**.
 1. Selecteer **Cloud Academy - SSO** in de lijst met toepassingen.
 1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen**:
-
-   ![Schermopname van de optie Gebruikers en groepen.](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**:
-
-    ![Schermopname van de knop Gebruiker toevoegen.](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst **Gebruikers** en selecteer vervolgens de knop **Selecteren** onderaan het scherm.
-1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Klik onder aan het scherm op de knop **Selecteren**.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-single-sign-on-for-cloud-academy"></a>Eenmalige aanmelding voor Cloud Academy configureren
@@ -145,36 +151,19 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 
 ### <a name="create-a-cloud-academy-test-user"></a>Een testgebruiker maken voor Cloud Academy - SSO
 
-1. Meld u aan bij Cloud Academy - SSO.
-
-1. Selecteer de naam van uw bedrijf en selecteer vervolgens **Members** in het menu dat wordt weergegeven:
-
-    ![Schermopname met de optie Members.](./media/cloud-academy-sso-tutorial/create-user.PNG)
-
-1. Selecteer **Invite Members** en vervolgens **Invite a Single Member**:
-
-    ![Schermopname van de optie Invite a single Member.](./media/cloud-academy-sso-tutorial/create-user-1.PNG)
-
-1. Voer waarden in de vereiste velden in en selecteer **Invite**:
-
-    ![Schermopname van het dialoogvenster Invite a Member.](./media/cloud-academy-sso-tutorial/create-user-2.PNG)
+In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in Cloud Academy - SSO. Cloud Academy - SSO biedt ondersteuning voor Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in Cloud Academy - SSO, wordt er na verificatie een nieuwe gemaakt.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-U gaat nu uw configuratie voor eenmalige aanmelding van Azure AD testen met behulp van het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster de tegel Cloud Academy - SSO selecteert, wordt u automatisch aangemeld bij het exemplaar van Cloud Academy - SSO waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Inleiding tot het toegangsvenster](../user-help/my-apps-portal-end-user-access.md) voor meer informatie.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Cloud Academy - SSO, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van Cloud Academy - SSO en initieer de aanmeldingsstroom daar.
 
-- [Zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Cloud Academy - SSO klikt, wordt u omgeleid naar de aanmeldings-URL van Cloud Academy - SSO. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Cloud Academy - SSO uitproberen met Azure AD](https://aad.portal.azure.com/)
-
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
-
-- [Cloud Academy - SSO beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+Zodra u Cloud Academy - SSO hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

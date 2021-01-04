@@ -1,21 +1,29 @@
 ---
-title: Een Batch-taak activeren met behulp van Azure Functions
+title: 'Zelfstudie: Een Batch-taak activeren met behulp van Azure Functions'
 description: 'Zelfstudie: OCR toepassen op gescande documenten wanneer ze worden toegevoegd aan een opslagblob'
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: peshultz
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 6e481219c6be68f9e9da06d92b6c28998cc7a6e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b441b4c4fcbeb089cef24c3a84fa33021e7840de
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88930091"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106379"
 ---
 # <a name="tutorial-trigger-a-batch-job-using-azure-functions"></a>Zelfstudie: Een Batch-taak activeren met behulp van Azure Functions
 
-In deze zelfstudie leert u hoe u een Batch-taak kunt activeren met behulp van Azure Functions. We gaan een voorbeeld bekijken waarin OCR (optische tekenherkenning) via Azure Batch wordt toegepast op documenten die worden toegevoegd aan een Azure Storage-blobcontainer. Om de OCR-verwerking te stroomlijnen, gaan we een Azure-functie configureren die een Batch-taak voor OCR uitvoert elke keer dat een bestand wordt toegevoegd aan de blobcontainer.
+In deze zelfstudie leert u hoe u een Batch-taak kunt activeren met behulp van [Azure Functions](../azure-functions/functions-overview.md). We gaan een voorbeeld bekijken waarin OCR (optische tekenherkenning) via Azure Batch wordt toegepast op documenten die worden toegevoegd aan een Azure Storage-blobcontainer. Om de OCR-verwerking te stroomlijnen, gaan we een Azure-functie configureren die een Batch-taak voor OCR uitvoert elke keer dat een bestand wordt toegevoegd aan de blobcontainer. In deze zelfstudie leert u procedures om het volgende te doen:
+
+> [!div class="checklist"]
+> * Batch Explorer gebruiken om pools en taken te maken
+> * Storage Explorer gebruiken om blobcontainers en een handtekening voor gedeelde toegang (shared access signature, SAS) te maken
+> * Een Azure-functie maken die wordt geactiveerd via een blob
+> * Invoerbestanden uploaden naar Storage
+> * Taakuitvoering controleren
+> * Uitvoerbestanden ophalen
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -97,9 +105,13 @@ Als u de uitvoerbestanden van Storage Explorer wilt downloaden naar uw lokale co
 > [!TIP]
 > De gedownloade bestanden zijn doorzoekbaar wanneer u ze opent in een PDF-lezer.
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er worden kosten berekend voor de pool zolang de knooppunten actief zijn, zelfs als er geen taken zijn gepland. Verwijder de pool wanneer u deze niet meer nodig hebt. Selecteer in de accountweergave **Pools** en de naam van de pool. Selecteer vervolgens **Verwijderen**. Wanneer u de pool verwijdert, wordt ook alle taakuitvoer op de knooppunten verwijderd. De uitvoerbestanden blijven echter aanwezig in het opslagaccount. Wanneer u het Batch-account en het opslagaccount niet meer nodig hebt, kunt u deze ook verwijderen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u het volgende geleerd: 
+In deze zelfstudie heeft u het volgende geleerd:
 
 > [!div class="checklist"]
 > * Batch Explorer gebruiken om pools en taken te maken
@@ -109,6 +121,10 @@ In deze zelfstudie hebt u het volgende geleerd:
 > * Taakuitvoering controleren
 > * Uitvoerbestanden ophalen
 
-* Voor meer voorbeelden van het gebruik van de .NET API om Batch-workloads te plannen en te verwerken raadpleegt u [de voorbeelden op GitHub](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp). 
 
-* Bekijk [de documentatie van Azure Functions](../azure-functions/functions-triggers-bindings.md) voor meer Azure Functions-triggers die u kunt gebruiken om Batch-workloads uit te voeren.
+Ga door met verkennen van de rendering-toepassingen die beschikbaar zijn via Batch Explorer in de sectie **Galerie**. Er zijn voor elke toepassing verschillende sjablonen beschikbaar, die na verloop van tijd worden uitgebreid. Voor Blender bestaan bijvoorbeeld sjablonen die één installatiekopie in tegels opsplitsen, dus delen van een installatiekopie kunnen parallel worden gerenderd.
+
+Voor meer voorbeelden van het gebruik van de .NET API om Batch-workloads te plannen en te verwerken raadpleegt u de voorbeelden op GitHub.
+
+> [!div class="nextstepaction"]
+> [C#-voorbeelden voor Batch](https://github.com/Azure-Samples/azure-batch-samples/tree/master/CSharp)

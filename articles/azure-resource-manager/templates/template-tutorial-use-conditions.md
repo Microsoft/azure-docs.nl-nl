@@ -5,18 +5,18 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 1f4e8c0bc6a066e0d82d393474bfc804be5e3fb3
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f044863be7d0bfaaad57d3974a1d2856b27927ea
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931364"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589131"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Zelfstudie: Voorwaarden gebruiken in ARM-sjablonen
 
 Leer hoe u Azure-resources kunt implementeren op basis van voorwaarden in een ARM-sjabloon (Azure Resource Manager).
 
-In de zelfstudie [Resource-implementatievolgorde instellen](./template-tutorial-create-templates-with-dependent-resources.md) maakt u een virtuele machine, een virtueel netwerk en enkele andere afhankelijke resources, waaronder een opslagaccount. In plaats van elke keer een nieuw opslagaccount te maken, laat u gebruikers kiezen of ze een nieuw opslagaccount willen maken of een bestaand opslagaccount willen gebruiken. Om dit doel te bereiken, definieert u een extra parameter. Als de waarde van de parameter 'new' is, wordt er een nieuw opslagaccount gemaakt. Anders wordt een bestaand opslagaccount met de gegeven naam gebruikt.
+In de zelfstudie [Resource-implementatievolgorde instellen](./template-tutorial-create-templates-with-dependent-resources.md) maakt u een virtuele machine, een virtueel netwerk en enkele andere afhankelijke resources, waaronder een opslagaccount. In plaats van elke keer een nieuw opslagaccount te maken, laat u gebruikers kiezen of ze een nieuw opslagaccount willen maken of een bestaand opslagaccount willen gebruiken. Om dit doel te bereiken, definieert u een extra parameter. Als de waarde van de parameter **new** is, wordt er een nieuw opslagaccount gemaakt. Anders wordt een bestaand opslagaccount met de gegeven naam gebruikt.
 
 ![Diagram: voorwaarden gebruiken in Resource Manager-sjablonen](./media/template-tutorial-use-conditions/resource-manager-template-use-condition-diagram.png)
 
@@ -54,7 +54,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats van een sjabloon helemaal vanaf de basis te maken, kunt u een voorbeeldsjabloon zoeken en aanpassen. De sjabloon die in deze zelfstudie wordt gebruikt, heet [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Een eenvoudige Windows-VM implementeren).
 
-1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
+1. Selecteer in Visual Studio Code **Bestand** > **Bestand openen**.
 1. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
@@ -73,19 +73,19 @@ Snelstartsjablonen voor Azure is een opslagplaats voor ARM-sjablonen. In plaats 
 
     Het is een goed idee om de sjabloonreferentie door te nemen voordat u een sjabloon aanpast.
 
-1. Selecteer **Bestand**>**Opslaan als** om het bestand op uw lokale computer op te slaan als **azuredeploy.json**.
+1. Selecteer **Bestand** > **Opslaan als** om het bestand op uw lokale computer op te slaan als _azuredeploy.json_.
 
 ## <a name="modify-the-template"></a>De sjabloon aanpassen
 
 Breng de volgende twee wijzigingen aan in de bestaande sjabloon:
 
 * Voeg een parameter voor de opslagaccountnaam toe. Gebruikers kunnen een nieuwe opslagaccountnaam of een bestaande opslagaccountnaam opgeven.
-* Voeg een nieuwe parameter toe met de naam **newOrExisting**. De implementatie gebruikt deze parameter om te bepalen of er een nieuw opslagaccount moet worden gemaakt of dat er een bestaand opslagaccount moet worden gebruikt.
+* Voeg een nieuwe parameter toe met de naam `newOrExisting`. De implementatie gebruikt deze parameter om te bepalen of er een nieuw opslagaccount moet worden gemaakt of dat er een bestaand opslagaccount moet worden gebruikt.
 
 Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
 
-1. Open **azuredeploy.json** in Visual Studio Code.
-1. Vervang de drie **variables('storageAccountName')** overal in de sjabloon door **parameters('storageAccountName')** .
+1. Open _azuredeploy.json_ in Visual Studio Code.
+1. Vervang de drie `variables('storageAccountName')` overal in de sjabloon door `parameters('storageAccountName')` .
 1. Verwijder de volgende variabeledefinitie:
 
     ![Schermopname waarin de variabeledefinities die u moet verwijderen, zijn gemarkeerd.](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template-remove-storageaccountname.png)
@@ -105,7 +105,7 @@ Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
     },
     ```
 
-    Druk op **Alt+Shift+F** om de sjabloon in Visual Studio Code in te delen.
+    Druk op Alt+Shift+F om de sjabloon in Visual Studio Code in te delen.
 
     De bijgewerkte parameterdefinitie ziet er als volgt uit:
 
@@ -117,12 +117,12 @@ Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
     "condition": "[equals(parameters('newOrExisting'),'new')]",
     ```
 
-    De voorwaarde controleert de waarde van een parameter met de naam **newOrExisting**. Als de parameterwaarde **new** is, wordt er een opslagaccount gemaakt.
+    Met de voorwaarde wordt de waarde van de parameter `newOrExisting` gecontroleerd. Als de parameterwaarde **new** is, wordt er een opslagaccount gemaakt.
 
     De bijgewerkte definitie van het opslagaccount ziet er als volgt uit:
 
     ![Schermopname van de bijgewerkte definitie van het opslagaccount.](./media/template-tutorial-use-conditions/resource-manager-tutorial-use-condition-template.png)
-1. Werk de eigenschap **storageUri** van de resourcedefinitie van de virtuele machine bij met de volgende waarde:
+1. Werk de eigenschap `storageUri` van de resourcedefinitie van de virtuele machine bij met de volgende waarde:
 
     ```json
     "storageUri": "[concat('https://', parameters('storageAccountName'), '.blob.core.windows.net')]"
@@ -136,16 +136,16 @@ Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
 
 1. Meld u aan bij [Azure Cloud Shell](https://shell.azure.com)
 
-1. Kies uw favoriete omgeving door in de linkerbovenhoek **PowerShell** of **Bash** (voor CLI) te selecteren.  U moet de shell opnieuw starten wanneer u overschakelt.
+1. Kies uw favoriete omgeving door in de linkerbovenhoek **PowerShell** of **Bash** (voor CLI) te selecteren. U moet de shell opnieuw starten wanneer u overschakelt.
 
     ![Bestand uploaden in Cloud Shell in de Azure-portal](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Na het uploaden van het bestand kunt u de **ls**-opdracht en de **cat**-opdracht uitvoeren om te controleren of het bestand is geüpload.
+1. Selecteer **Upload/download files** en selecteer **Uploaden**. Zie de vorige schermafbeelding. Selecteer het bestand dat u in de vorige sectie hebt opgeslagen. Nadat het bestand is geüpload, kunt u de opdracht `ls` en de opdracht `cat` gebruiken om te controleren of het bestand is geüpload.
 
 1. Gebruik het volgende PowerShell-script om de sjabloon te implementeren.
 
     > [!IMPORTANT]
-    > De naam van het opslagaccount moet uniek zijn in Azure. De naam mag alleen kleine letters of cijfers bevatten. De naam mag niet langer zijn dan 24 tekens. De naam van het opslagaccount is de projectnaam waaraan 'store' is toegevoegd. Zorg ervoor dat de projectnaam en de gegenereerde opslagaccountnaam voldoen aan de vereisten voor opslagaccountnamen.
+    > De naam van het opslagaccount moet uniek zijn in Azure. De naam mag alleen kleine letters of cijfers bevatten. De naam mag niet langer zijn dan 24 tekens. De naam van het opslagaccount is de projectnaam waaraan **store** is toegevoegd. Zorg ervoor dat de projectnaam en de gegenereerde opslagaccountnaam voldoen aan de vereisten voor opslagaccountnamen.
 
     ```azurepowershell
     $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name and resource names"
@@ -172,9 +172,9 @@ Hier volgt de procedure waarmee de wijzigingen kunnen worden aangebracht:
     ```
 
     > [!NOTE]
-    > De implementatie mislukt als **newOrExisting** de waarde **new** heeft, maar het opslagaccount met de opgegeven naam al bestaat.
+    > De implementatie mislukt als `newOrExisting` de waarde **new** heeft, maar het opslagaccount met de opgegeven naam al bestaat.
 
-Maak in dat geval een andere implementatie door **newOrExisting** in te stellen op 'existing' en de naam van een bestaand opslagaccount op te geven. Zie [Een opslagaccount maken](../../storage/common/storage-account-create.md) voor informatie over het vooraf maken van een opslagaccount.
+Maak in dit geval een andere implementatie door `newOrExisting` in te stellen op **existing**, en de naam van een bestaand opslagaccount op te geven. Zie [Een opslagaccount maken](../../storage/common/storage-account-create.md) voor informatie over het vooraf maken van een opslagaccount.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

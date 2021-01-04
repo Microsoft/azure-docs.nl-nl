@@ -6,14 +6,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 12/09/2020
 ms.author: banders
-ms.openlocfilehash: 8c3ab3f4f9bc56e9651a98e5c011cad65f21fd9d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ca55773b2deb74ea0647ed33df4040065762f94a
+ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348978"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938474"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-from-other-accounts"></a>Eigendom van facturering van Azure-abonnementen van andere accounts krijgen
 
@@ -22,6 +22,14 @@ Mogelijk wilt u het eigendom van Azure-abonnementen overnemen als de bestaande f
 Dit artikel is van toepassing op een factureringsaccount voor een Microsoft-klantovereenkomst. [Controleer of u toegang hebt tot een Microsoft-klantovereenkomst](#check-for-access).
 
 Als u het eigendom van facturering wilt aanvragen, moet u **eigenaar van de factuursectie** zijn of **inzender van de factuursectie**. Zie [Rollen en taken van factuursectie](understand-mca-roles.md#invoice-section-roles-and-tasks) voor meer informatie.
+
+De persoon bij wie u eigendom van facturering aanvraagt, moet beschikken over een van deze rollen:
+
+- Voor een Enterprise Microsoft-klantovereenkomst moet aan de gebruiker de rol Factureringseigenaar zijn toegewezen.
+- Voor een Enterprise Agreement moet aan de gebruiker de rol Accounteigenaar zijn toegewezen.
+- Voor een factureringsaccount van het Microsoft Online-serviceprogramma moet aan de gebruiker de rol Accountbeheerder zijn toegewezen.
+
+Zie [Uw factureringsaccounts weergeven in Azure Portal](view-all-accounts.md) voor meer informatie.
 
 ## <a name="request-billing-ownership"></a>Eigendom van facturering aanvragen
 
@@ -42,7 +50,7 @@ Als u het eigendom van facturering wilt aanvragen, moet u **eigenaar van de fact
 1. Selecteer een factuursectie in de lijst. Zodra u het eigendom van de abonnementen hebt overgenomen, wordt het gebruik ervan toegewezen aan deze sectie van de factuur voor het factureringsprofiel.
 1. Selecteer **Overdrachtsaanvragen** aan de linkerkant en selecteer vervolgens **Een nieuwe aanvraag toevoegen**.  
     [![Schermopname van de selectie van overdrachtsaanvragen](./media/mca-request-billing-ownership/mca-select-transfer-requests.png)](./media/mca-request-billing-ownership/mca-select-transfer-requests.png#lightbox)
-1. Voer het e-mailadres in van de gebruiker van wie u het eigendom van facturering wilt aanvragen. De gebruiker moet een accountbeheerder zijn op een Microsoft Online Serviceprogramma-factureringsaccount of een accounteigenaar op een Enterprise Agreement. Zie [Uw factureringsaccounts weergeven in Azure Portal](view-all-accounts.md) voor meer informatie. Selecteer **Overdrachtsaanvraag verzenden**.  
+1. Voer het e-mailadres in van de gebruiker van wie u het eigendom van facturering wilt aanvragen. Selecteer **Overdrachtsaanvraag verzenden**.  
     [![Schermopname van de verzending van een overdrachtsaanvraag](./media/mca-request-billing-ownership/mca-send-transfer-requests.png)](./media/mca-request-billing-ownership/mca-send-transfer-requests.png#lightbox)
 1. De gebruiker ontvangt een e-mail met instructies voor het beoordelen van uw overdrachtsaanvraag.  
     ![Schermopname van de e-mail over de beoordeling van een overdrachtsaanvraag](./media/mca-request-billing-ownership/mca-review-transfer-request-email.png)
@@ -68,6 +76,7 @@ Als u het eigendom van facturering wilt aanvragen, moet u **eigenaar van de fact
 1. Selecteer de factuursectie in de lijst waarvoor de overdrachtsaanvraag is verzonden.
 1. Selecteer **Overdrachtsaanvragen** aan de linkerkant. Op de pagina Overdrachtsaanvragen wordt de volgende informatie weergegeven:  
     [![Schermopname van de lijst met overdrachtsaanvragen](./media/mca-request-billing-ownership/mca-select-transfer-requests-for-status.png)](./media/mca-request-billing-ownership/mca-select-transfer-requests-for-status.png#lightbox)
+
    |Kolom|Definitie|
    |---------|---------|
    |Aanvraagdatum|De datum waarop de overdrachtsaanvraag is verzonden|

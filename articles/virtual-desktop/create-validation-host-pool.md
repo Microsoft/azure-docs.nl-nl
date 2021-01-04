@@ -3,15 +3,15 @@ title: Windows Virtual Desktop-hostgroep voor service-updates - Azure
 description: Een validatiehostgroep maken om service-updates te bewaken voordat updates worden geïmplementeerd voor productie.
 author: Heidilohr
 ms.topic: tutorial
-ms.date: 03/13/2020
+ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b8eb8378480b8784939e3ab63327e73e3705c74a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ead4c0aa7d8d71642fd8a4635edbabcafee5b6c2
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526507"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563242"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Zelfstudie: Een hostpool voor het valideren van service-updates maken
 
@@ -66,6 +66,20 @@ De resultaten van de cmdlet moeten er ongeveer als volgt uitzien:
     LoadBalancerType    : BreadthFirst
     ValidationEnvironment : True
 ```
+
+## <a name="enable-your-validation-environment-with-the-azure-portal"></a>De validatieomgeving inschakelen met behulp van de Azure-portal
+
+U kunt de Azure-portal ook gebruiken om uw validatieomgeving in te schakelen.
+
+De Azure-portal gebruiken om uw validatiehostpool te configureren:
+
+1. Meld u aan bij Azure Portal op <https://portal.azure.com>.
+2. Zoek en selecteer **Windows Virtual Desktop**.
+3. Selecteer op de Windows Virtual Desktop-pagina de optie **Hostpools**.
+4. Selecteer de naam van de hostpool die u wilt bewerken.
+5. Selecteer **Eigenschappen**.
+6. Selecteer in het veld validatieomgeving de optie **Ja** om de validatieomgeving in te schakelen.
+7. Selecteer **Opslaan**. Hiermee worden de nieuwe instellingen toegepast.
 
 ## <a name="update-schedule"></a>Updateplanning
 

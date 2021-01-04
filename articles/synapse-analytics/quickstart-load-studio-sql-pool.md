@@ -6,15 +6,15 @@ author: kevinvngo
 ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: quickstart
-ms.date: 11/16/2020
+ms.date: 12/11/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 312c57c103bf733bc72c5de1d22ab3239d5b5e96
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 86ef610af605c657868824eefe2e6e706f6963ac
+ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484666"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97360174"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Snelstart: Bulksgewijs laden met Synapse SQL
 
@@ -39,26 +39,25 @@ U kunt gegevens eenvoudig bulksgewijs laden met toegewezen SQL-pools. Klik hierv
 
 ### <a name="steps"></a>Stappen
 
-1. Selecteer het opslagaccount en het bestand of de map waar vanuit u gegevens wilt laden in het venster 'Opslaglocatie van bron'. De wizard probeert automatisch Parquet-bestanden te detecteren. Als het bestandstype Parquet niet kan worden bevestigd, wordt standaard de tekst met scheidingstekens (CSV) gebruikt.
+1. Selecteer het opslagaccount en het bestand of de map waar vanuit u gegevens wilt laden in het venster 'Opslaglocatie van bron'. Met de wizard wordt automatisch geprobeerd om Parquet-bestanden en CSV-bestanden (tekstbestanden met scheidingstekens) te detecteren, waaronder het toewijzen van de bronvelden uit het bestand aan de juiste doel-SQL-gegevenstypen. 
 
    ![Bronlocatie selecteren](./sql/media/bulk-load/bulk-load-source-location.png)
 
-2. Selecteer de instellingen voor de bestandsindeling, waaronder het opslagaccount waarnaar u geweigerde rijen wilt schrijven (foutbestand). Momenteel worden alleen CSV- en Parquet-bestanden ondersteund.
+2. Selecteer de instellingen voor de bestandsindeling, inclusief de foutinstellingen voor wanneer er rijen zijn geweigerd tijdens het bulksgewijs laden. U kunt ook Voorbeeld van gegevens weergeven selecteren om te zien hoe het bestand wordt geparseerd met de COPY-instructie. Configureer op basis hiervan de instellingen voor bestandsindeling. Telkens wanneer u een instelling voor de bestandsindeling wijzigt, selecteert u ‘Voorbeeld van gegevens weergeven’ om te zien hoe de COPY-instructie het bestand parseert met de bijgewerkte instelling:
 
-    ![Instellingen voor bestandsindeling selecteren](./sql/media/bulk-load/bulk-load-file-format-settings.png)
-
-3. U kunt ‘Voorbeeld van gegevens weergeven’ selecteren om te zien hoe de COPY-instructie het bestand parseert. Configureer op basis hiervan de instellingen voor bestandsindeling. Telkens wanneer u een instelling voor de bestandsindeling wijzigt, selecteert u ‘Voorbeeld van gegevens weergeven’ om te zien hoe de COPY-instructie het bestand parseert met de bijgewerkte instelling: ![Voorbeeld van gegevens weergeven](./sql/media/bulk-load/bulk-load-file-format-settings-preview-data.png) 
+   ![Voorbeeld van gegevens weergeven](./sql/media/bulk-load/bulk-load-file-format-settings-preview-data.png) 
 
 > [!NOTE]  
 >
 > - Het bekijken van een voorbeeld van de gegevens met veldeindtekens voor meerdere tekens, wordt niet ondersteund door de wizard voor bulksgewijs laden. De wizard voor bulksgewijs laden geeft een voorbeeld van de gegevens in één kolom wanneer een veldeindteken voor meerdere tekens is opgegeven. 
-> - Het opgeven van rij-eindtekens voor meerdere tekens wordt ondersteund in de instructie COPY. Dit wordt echter niet ondersteund in de wizard voor bulksgewijs laden waarin een fout voorkomt.
+> - Wanneer u Kolomnamen afleiden selecteert, worden met de wizard voor bulksgewijs laden de kolomnamen geparseerd uit de eerste rij, opgegeven in het veld Eerste rij. Met de wizard voor bulksgewijs laden wordt de waarde FIRSTROW in de COPY-instructie automatisch met 1 verhoogd, om deze koprij te negeren. 
+> - Het opgeven van rij-eindtekens voor meerdere tekens wordt ondersteund in de COPY-instructie. Dit wordt echter niet ondersteund in de wizard voor bulksgewijs laden waar een fout wordt geretourneerd.
 
-4. Selecteer de toegewezen SQL-pool die u gebruikt om gegevens te laden, en geef aan of de gegevens naar een bestaande of nieuwe tabel moeten worden geladen: ![Doellocatie selecteren](./sql/media/bulk-load/bulk-load-target-location.png)
+3. Selecteer de toegewezen SQL-pool die u gebruikt om gegevens te laden, en geef aan of de gegevens naar een bestaande of nieuwe tabel moeten worden geladen: ![Doellocatie selecteren](./sql/media/bulk-load/bulk-load-target-location.png)
+4. Klik op ‘Kolomtoewijzing configureren’ om te controleren of u de juiste kolomtoewijzing gebruikt. Let op: de namen van kolommen worden automatisch gedetecteerd als 'Leid kolomnamen af' is ingeschakeld. Bij nieuwe tabellen is het van cruciaal belang dat u de kolomtoewijzing configureert om de gegevenstypen van de doelkolom bij te werken:
 
-5. Klik op ‘Kolomtoewijzing configureren’ om te controleren of u de juiste kolomtoewijzing gebruikt. Let op: de namen van kolommen worden automatisch gedetecteerd als 'Leid kolomnamen af' is ingeschakeld. Bij nieuwe tabellen is het van cruciaal belang dat u de kolomtoewijzing configureert om de gegevenstypen van de doelkolom bij te werken: ![Kolomtoewijzing configureren](./sql/media/bulk-load/bulk-load-target-location-column-mapping.png)
-
-6. Selecteer ‘Script openen’. Er wordt een T-SQL-script gegenereerd met de COPY-instructie om gegevens uit uw data lake te laden: ![Het SQL-script openen](./sql/media/bulk-load/bulk-load-target-final-script.png)
+   ![Kolomtoewijzing configureren](./sql/media/bulk-load/bulk-load-target-location-column-mapping.png)
+5. Selecteer ‘Script openen’. Er wordt een T-SQL-script gegenereerd met de COPY-instructie om gegevens uit uw data lake te laden: ![Het SQL-script openen](./sql/media/bulk-load/bulk-load-target-final-script.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

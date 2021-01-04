@@ -7,19 +7,19 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/16/2020
-ms.openlocfilehash: b783366958380f391dc76583c42988badc9915c8
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.date: 12/12/2020
+ms.openlocfilehash: 1e9d63c88cf0cd6f65db99b2bc878797770d53cd
+ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056477"
+ms.lasthandoff: 12/13/2020
+ms.locfileid: "97368627"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Quickstart: Een Azure Cognitive Search-index maken in de Azure-portal
 
-De wizard **Gegevens importeren** is een hulpprogramma in de Azure-portal dat u begeleidt bij het maken van een zoekindex zodat u binnen enkele minuten interessante query's kunt schrijven. 
+Maak uw eerste index met behulp van de wizard **Gegevens importeren** en een ingebouwde voorbeeldgegevensbron met fictieve hotelgegevens. De wizard begeleidt u bij het maken van een zoekindex (hotels-sample-index) zodat u binnen enkele minuten interessante query's kunt schrijven. 
 
-De wizard bevat ook pagina's voor AI-verrijking, zodat u tekst en structuur kunt extraheren uit afbeeldingsbestanden en ongestructureerde tekst. Inhoudsverwerking met AI bevat Optical Character Recognition (OCR), het extraheren van trefwoordzinnen en entiteiten en afbeeldingsanalyse.
+Hoewel u de opties niet gebruikt in deze quickstart, bevat de wizard een pagina voor AI-verrijking. Hiermee kunt u tekst en structuur extraheren uit afbeeldingsbestanden en ongestructureerde tekst. Voor vergelijkbare stapsgewijze instructies voor AI-verrijking, raadpleegt u [Quickstart: Een cognitieve-vaardighedenset maken](cognitive-search-quickstart-blob.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -49,11 +49,11 @@ Voor deze zelfstudie gebruiken we een ingebouwde gegevensset die met behulp van 
 
 1. [Vind uw zoekservice](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) en klik op de overzichtspagina op **Gegevens importeren** in de opdrachtbalk om een zoekindex te maken en te vullen.
 
-   :::image type="content" source="media/search-get-started-portal/import-data-cmd.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/import-data-cmd.png" alt-text="Opdracht Gegevens importeren":::
 
 1. Klik in de wizard op **Verbinding maken met uw gegevens** > **Voorbeelden** > **hotels-sample**. Deze gegevensbron is ingebouwd. Als u uw eigen gegevensbron zou maken, zou u een naam, het type en de verbindingsgegevens moeten opgeven. Zodra de gegevensbron is gemaakt, wordt deze een bestaande gegevensbron genoemd die opnieuw kan worden gebruikt voor andere bewerkingen.
 
-   :::image type="content" source="media/search-get-started-portal/import-datasource-sample.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/import-datasource-sample.png" alt-text="Voorbeeldgegevensset selecteren":::
 
 1. Ga door naar de volgende pagina.
 
@@ -63,7 +63,7 @@ De wizard ondersteunt het maken van een [pijplijn voor AI-verrijking](cognitive-
 
 Deze stap slaan we nu even over en we gaan naar **Doelindex aanpassen**.
 
-   :::image type="content" source="media/search-get-started-portal/skip-cog-skill-step.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/skip-cog-skill-step.png" alt-text="Stap voor cognitieve vaardigheden overslaan":::
 
 > [!TIP]
 > U kunt een voorbeeld van een AI-indexering doorlopen in een [Snelstartgids](cognitive-search-quickstart-blob.md) of [zelfstudie](cognitive-search-tutorial-blob.md).
@@ -83,24 +83,24 @@ Opslagvereisten verschillen niet als gevolg van uw selectie. Als u bijvoorbeeld 
 
 Standaard wordt met de wizard de gegevensbron gescand op unieke id's als basis voor het sleutelveld. *Tekenreeksen* hebben de kenmerken **Ophaalbaar** en **Doorzoekbaar**. *Gehele getallen* hebben de kenmerken **Ophaalbaar**, **Filterbaar**, **Sorteerbaar** en **Geschikt voor facetten**.
 
-1. Accepteer de standaardwaarden. 
+1. Accepteer de standaardwaarden.
 
    Als u de wizard opnieuw uitvoert met behulp van een bestaande gegevensbron met hotels, kan de index niet worden geconfigureerd met standaardkenmerken. Voor toekomstige importbewerkingen moet u de kenmerken handmatig selecteren. 
 
-   :::image type="content" source="media/search-get-started-portal/hotelsindex.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/hotelsindex.png" alt-text="Gegenereerde hotelindex":::
 
 2. Ga door naar de volgende pagina.
 
 
 ### <a name="step-4---configure-indexer"></a>Stap 4: indexeerfunctie configureren
 
-Klik in de wizard**Gegevens importeren** op **Indexeerfunctie** > **Naam** en typ een naam voor de indexeerfunctie.
+Klik in de wizard **Gegevens importeren** op **Indexeerfunctie** > **Naam** en typ een naam voor de indexeerfunctie.
 
 Dit object definieert een uitvoerbaar proces. U kunt een terugkerend schema instellen, maar in dit geval gebruikt u de standaardoptie om de indexeerfunctie één keer meteen uit te voeren.
 
 Klik op **Verzenden** om de indexeerfunctie te maken en tegelijkertijd uit te voeren.
 
-  :::image type="content" source="media/search-get-started-portal/hotels-indexer.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+  :::image type="content" source="media/search-get-started-portal/hotels-indexer.png" alt-text="indexeerfunctie voor hotels":::
 
 ## <a name="monitor-progress"></a>Voortgang controleren
 
@@ -108,7 +108,7 @@ De wizard leidt u naar de lijst met indexeerfuncties waar u de voortgang kunt co
 
 Het kan een paar minuten duren voordat in de portal de pagina is bijgewerkt, maar u zou de zojuist gemaakte indexeerfunctie in de lijst moeten zien met de status die aangeeft dat deze wordt uitgevoerd of is geslaagd en met het aantal geïndexeerde documenten.
 
-   :::image type="content" source="media/search-get-started-portal/indexers-inprogress.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/indexers-inprogress.png" alt-text="Voortgangsbericht voor de indexeerfunctie":::
 
 ## <a name="view-the-index"></a>De index bekijken
 
@@ -116,13 +116,13 @@ De belangrijkste servicepagina bevat koppelingen naar de resources die in uw Azu
 
 Wacht tot de portalpagina is vernieuwd. Na enkele minuten ziet u de index met het aantal documenten en de opslaggrootte.
 
-   :::image type="content" source="media/search-get-started-portal/indexes-list.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/indexes-list.png" alt-text="Lijst met indexen op het servicedashboard":::
 
 In deze lijst kunt u op de index *hotels-sample* klikken die u zojuist hebt gemaakt, het indexschema bekijken. en eventueel nieuwe velden toevoegen. 
 
 Op het tabblad **Velden** wordt het indexschema getoond. Scroll naar de onderkant van de lijst om een nieuw veld in te voeren. In de meeste gevallen kunt u geen bestaande velden wijzigen. Bestaande velden hebben een fysieke weergave in Azure Cognitive Search en kunnen daarom niet worden gewijzigd, zelfs niet in code. Als u een bestaand veld fundamenteel wilt wijzigen, maakt u een nieuwe index en verwijdert u het oorspronkelijke veld.
 
-   :::image type="content" source="media/search-get-started-portal/sample-index-def.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/sample-index-def.png" alt-text="voorbeeld van indexdefinitie":::
 
 Andere constructies, zoals scoreprofielen en CORS-opties, kunnen op elk gewenst moment worden toegevoegd.
 
@@ -140,15 +140,15 @@ U zou nu een zoekindex moeten hebben die klaar is om query’s uit te voeren met
 
 1. Klik op **Search explorer** in de opdrachtbalk.
 
-   :::image type="content" source="media/search-get-started-portal/search-explorer-cmd.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/search-explorer-cmd.png" alt-text="Opdracht Search Explorer":::
 
 2. Kies in de vervolgkeuzelijst **Index** de *voorbeeldindex met hotels*. Klik op de vervolgkeuzelijst voor de **API-versie** om de REST-API's te zien die beschikbaar zijn. Gebruik voor onderstaande query's de algemeen beschikbare versie (2020-06-30).
 
-   :::image type="content" source="media/search-get-started-portal/search-explorer-changeindex.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/search-explorer-changeindex.png" alt-text="Index- en API-opdrachten":::
 
 3. Plak in de zoekbalk de onderstaande querytekenreeksen en klik op **Zoeken**.
 
-   :::image type="content" source="media/search-get-started-portal/search-explorer-query-string-example.png" alt-text="Lijsten met indexen, indexeerfuncties en gegevensbronnen":::
+   :::image type="content" source="media/search-get-started-portal/search-explorer-query-string-example.png" alt-text="Querytekenreeks en knop Zoeken":::
 
 ## <a name="example-queries"></a>Voorbeelden van query's
 
@@ -188,8 +188,8 @@ Facetfilters zijn opgenomen in zoekopdrachten. U kunt de facetparameter gebruike
 
 #### <a name="example-faceted-with-scope-reduction-searchfacetcategorytop2"></a>Voorbeeld (gefacetteerd met bereikvermindering): `search=*&facet=Category&$top=2`
 
-* **search=** * is een lege zoekopdracht. Met een lege zoekopdracht wordt naar alles gezocht. Eén reden om een lege query in te dienen, is om de hele set documenten te filteren of als facet te gebruiken. U wilt bijvoorbeeld een facetnavigatiestructuur die bestaat uit alle hotels in de index.
-* **facet** retourneert een navigatiestructuur die u kunt doorgeven aan een UI-besturingselement. Deze retourneert categorieën en een aantal. In dit geval zijn categorieën gebaseerd op een veld dat gemakshalve *categorie* wordt genoemd. Er is geen aggregatie in Azure Cognitive Search, maar u kunt een geschatte aggregatie bepalen via `facet`, dat het aantal documenten in elke categorie retourneert.
+* **search=** _ is een lege zoekopdracht. Met een lege zoekopdracht wordt naar alles gezocht. Eén reden om een lege query in te dienen, is om de hele set documenten te filteren of als facet te gebruiken. U wilt bijvoorbeeld een facetnavigatiestructuur die bestaat uit alle hotels in de index.
+_ **facet** retourneert een navigatiestructuur die u kunt doorgeven aan een UI-besturingselement. Deze retourneert categorieën en een aantal. In dit geval zijn categorieën gebaseerd op een veld dat gemakshalve *categorie* wordt genoemd. Er is geen aggregatie in Azure Cognitive Search, maar u kunt een geschatte aggregatie bepalen via `facet`, dat het aantal documenten in elke categorie retourneert.
 
 * **$top=2** retourneert twee documenten, om te illustreren dat u `top` kunt gebruiken om het aantal resultaten te verlagen of te verhogen.
 

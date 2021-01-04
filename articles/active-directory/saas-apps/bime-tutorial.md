@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.openlocfilehash: d2a94b1503a6c7cd4a5790cc3ba4693103e70bfb
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 3bbd18bc7851d4ccffca4f721f6e2aef45ff3c3d
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457194"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673710"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bime"></a>Zelfstudie: Azure Active Directory-integratie met Bime
 
@@ -49,11 +49,11 @@ Als u de integratie van Bime wilt configureren in Azure AD, dient u Bime vanuit 
 
 **Als u Bime wilt toevoegen vanuit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,20 +63,20 @@ Als u de integratie van Bime wilt configureren in Azure AD, dient u Bime vanuit 
 
 4. Typ **Bime** in het zoekvak, selecteer **Bime** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Bime in de lijst met resultaten](common/search-new-app.png)
+    ![Bime in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Bime op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Bime op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Bime tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met Bime, dient u de volgende bouwstenen te voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Bime configureren](#configure-bime-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Eenmalige aanmelding voor Bime configureren](#configure-bime-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Bime maken](#create-bime-test-user)** : als u een tegenhanger van Britta Simon in Bime wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Bime maken](#create-bime-test-user)**: als u een tegenhanger van Britta Simon in Bime wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met Bime:
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Bime** .
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Bime**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -130,27 +130,27 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 1. Meld u als administrator in een ander browservenster aan bij de bedrijfssite van Bime.
 
-2. Klik in de werkbalk op **Admin** en vervolgens op **Account** .
-  
+2. Klik in de werkbalk op **Admin** en vervolgens op **Account**.
+
     ![Schermopname van het geselecteerde beheeritem en het geselecteerde account.](./media/bime-tutorial/ic775558.png "Beheerder")
 
 3. Voer op de configuratiepagina voor accounts de volgende stappen uit:
-  
+
     ![Eenmalige aanmelding configureren](./media/bime-tutorial/ic775559.png "Eenmalige aanmelding configureren")
 
-    a. Selecteer **Enable SAML authentication** .
+    a. Selecteer **Enable SAML authentication**.
 
     b. Plak in het tekstvak **Remote Login URL** de waarde van **Login URL** die u hebt gekopieerd uit de Azure-portal.
 
     c. Plak in het tekstvak **Certificate Fingerprint** de waarde van de **THUMBPRINT** van het certificaat die u hebt gekopieerd uit de Azure-portal.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -163,19 +163,19 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Bime.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Bime** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Bime**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -183,11 +183,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling naar Bime in de lijst Toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -195,7 +195,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-bime-test-user"></a>Bime-testgebruiker maken
 
@@ -203,9 +203,9 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bime, moeten ze in 
 
 **Voer de volgende stappen uit om de gebruikersinrichting te configureren:**
 
-1. Meld u aan bij uw **Bime** -tenant.
+1. Meld u aan bij uw **Bime**-tenant.
 
-2. Klik in de werkbalk op **Admin** en vervolgens op **Users** .
+2. Klik in de werkbalk op **Admin** en vervolgens op **Users**.
 
     ![Schermopname van het geselecteerde beheeritem, waarbij 'Gebruikers' is geselecteerd.](./media/bime-tutorial/ic775561.png "Beheerder")
 
@@ -217,13 +217,13 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Bime, moeten ze in 
 
     ![Gebruikersdetails](./media/bime-tutorial/ic775563.png "Gebruikersdetails")
 
-    a. Voer in het tekstvak **First name** de voornaam van de gebruiker in, zoals **Britta** .
+    a. Voer in het tekstvak **First name** de voornaam van de gebruiker in, zoals **Britta**.
 
-    b. Voer in het tekstvak **Last name** de achternaam van de gebruiker in, zoals **Simon** .
+    b. Voer in het tekstvak **Last name** de achternaam van de gebruiker in, zoals **Simon**.
 
-    c. Voer in het tekstvak **Email** het e-mailadres van de gebruiker in, bijvoorbeeld **brittasimon\@contoso.com** .
+    c. Voer in het tekstvak **Email** het e-mailadres van de gebruiker in, bijvoorbeeld **brittasimon\@contoso.com**.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 > [!NOTE]
 > U kunt voor het inrichten van Azure AD-gebruikersaccounts ook een ander hulpmiddel of een andere API gebruiken om het account te maken, als het door Bime wordt geleverd.

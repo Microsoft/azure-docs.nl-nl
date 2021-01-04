@@ -13,12 +13,12 @@ ms.date: 09/18/2020
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: aff89d49dec9bafedb3c9a5a76abdeb803740a12
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: f04a8aa96b51ac9330e4302c3afcc48f7d305b39
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95746724"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97507707"
 ---
 # <a name="tutorial-sign-in-users-and-call-microsoft-graph-from-an-ios-or-macos-app"></a>Zelfstudie: Gebruikers aanmelden en Microsoft Graph aanroepen vanuit een iOS- of macOS-app
 
@@ -71,16 +71,17 @@ Als u een voltooide versie wilt downloaden van de app die u in deze zelfstudie h
 
 ## <a name="register-your-application"></a>Uw toepassing registreren
 
-1. Ga naar de [Azure-portal](https://aka.ms/MobileAppReg)
-2. Open de blade App-registraties en selecteer **+Nieuwe registratie**.
-3. Voer een **Naam** in voor de app, zonder een omleidings-URI in te stellen.
-4. Selecteer **Accounts in een organisatiemap (alle Azure AD-mappen - meerdere tenants) en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox)** onder **Ondersteunde accounttypen**
-5. Selecteer **Registreren**
-6. Selecteer in de sectie **Beheren** van het deelvenster dat verschijnt, de optie **Verificatie**.
-
-7. Selecteer bovenaan het scherm **De nieuwe ervaring uitproberen** om de nieuwe versie van App-registratie te openen. Selecteer vervolgens **+ Nieuwe registraties** >  **+ Een platform toevoegen** > **iOS/macOS**.
-    - Voer de bundel-id van het project in. Als u de code hebt gedownload, is de id `com.microsoft.identitysample.MSALiOS`. Als u een eigen project wilt maken, selecteert u uw project in Xcode en opent u het tabblad **Algemeen**. De bundel-id wordt weergegeven in de sectie **Identiteit**.
-8. Selecteer `Configure` en sla de **MSAL-configuratie** op die wordt weergegeven op de pagina **MSAL-configuratie**, zodat u deze kunt invoeren wanneer u de app later configureert. Selecteer **Gereed**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatiemap (alle Azure AD-mappen - meerdere tenants) en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox).**
+1. Selecteer **Registreren**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen** > **iOS/macOS**.
+1. Voer de bundel-id van het project in. Als u de code hebt gedownload, is de id `com.microsoft.identitysample.MSALiOS`. Als u een eigen project wilt maken, selecteert u uw project in Xcode en opent u het tabblad **Algemeen**. De bundel-id wordt weergegeven in de sectie **Identiteit**.
+1. Selecteer **Configureren** en sla de **MSAL-configuratie** op die wordt weergegeven op de pagina **MSAL-configuratie**, zodat u deze kunt invoeren wanneer u de app later configureert. 
+1. Selecteer **Gereed**.
 
 ## <a name="add-msal"></a>MSAL toevoegen
 
@@ -520,7 +521,7 @@ Met het volgende codefragment wordt de eerste keer een token opgehaald door een 
 
 1. `MSALInteractiveTokenParameters` maken met bereiken.
 2. `acquireToken()` aanroepen met de gemaakte parameters.
-3. Fouten afhandelen. Raadpleeg [Handleiding voor foutafhandeling in MSAL voor iOS en macOS](msal-handling-exceptions.md) voor meer details.
+3. Fouten afhandelen. Raadpleeg [Handleiding voor foutafhandeling in MSAL voor iOS en macOS](msal-error-handling-ios.md) voor meer details.
 4. De geslaagde aanvraag afhandelen.
 
 Voeg de volgende code toe aan de klasse `ViewController`.

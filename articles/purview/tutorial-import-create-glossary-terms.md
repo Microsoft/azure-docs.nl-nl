@@ -1,18 +1,18 @@
 ---
 title: 'Zelfstudie: Woordenlijsttermen maken en importeren in Azure Purview (preview)'
 description: In deze zelfstudie wordt beschreven hoe u woordenlijsttermen maakt, hoe u woordenlijsttermen aan een asset toevoegt en hoe u woordenlijsttermen kunt importeren.
-author: hophanms
-ms.author: hophan
+author: shsandeep123
+ms.author: sandeepshah
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 4dc8dd84c22d094c87c82f5a920015f886780df2
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 0ea6fcaff1ec699431da8b67adee68735a8611a8
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97399805"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696086"
 ---
 # <a name="tutorial-create-and-import-glossary-terms-in-azure-purview-preview"></a>Zelfstudie: Woordenlijsttermen maken en importeren in Azure Purview (preview)
 

@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/25/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: a427c77ec23bb933f96d8aec54ca33169aee84d4
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 671ca73cfa898be532521599d1211d2a8081eb4b
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576023"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97563259"
 ---
 # <a name="azure-synapse-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics
 
@@ -59,7 +59,7 @@ A: Om te beginnen werkt Azure Synapse samen met de ingebouwde kostenanalyse en k
 
 A: Synapse-werkruimten bieden ondersteuning voor door de gebruiker gedefinieerde mappen.
 
-### <a name="q-can-i-link-more-than-one-power-bi-workspaces-to-a-single-azure-synapse-workspace"></a>V: Kan ik meer dan één Power BI-werkruimte koppelen aan een enkele Azure Synapse-werkruimte?
+### <a name="q-can-i-link-more-than-one-power-bi-workspace-to-a-single-azure-synapse-workspace"></a>V: Kan ik meer dan één Power BI-werkruimte koppelen aan een enkele Azure Synapse-werkruimte?
     
 A: Op dit moment kunt u slechts één Power BI-werkruimte koppelen aan een Azure Synapse-werkruimte. 
 
@@ -69,7 +69,7 @@ A: Synapse Link voor Apache Spark is algemeen beschikbaar. Synapse Link voor een
 
 ### <a name="q-does-azure-synapse-workspace-support-cicd"></a>V: Biedt een Azure Synapse-werkruimte ondersteuning voor CI/CD? 
 
-A: Ja. Alle pijplijnartefacten, notebooks, SQL-scripts en Spark-taakdefinities bevinden zich in GIT. Alle pooldefinities worden in GIT als ARM-sjablonen opgeslagen. Toegewezen SQL-poolobjecten (schema's, tabellen, weergaven, enzovoort) worden beheerd met databaseprojecten met CI/CD-ondersteuning.
+A: Ja. Alle pijplijnartefacten, notebooks, SQL-scripts en Spark-taakdefinities bevinden zich in Git. Alle pooldefinities worden als ARM-sjablonen opgeslagen in Git. Toegewezen SQL-poolobjecten (schema's, tabellen, weergaven, enzovoort) worden beheerd met databaseprojecten met CI/CD-ondersteuning.
 
 ## <a name="pipelines"></a>Pipelines
 
@@ -91,11 +91,11 @@ A: Op dit moment moet u uw Azure Data Factory-pijplijnen en gerelateerde artefac
 
 A: Apache Spark voor Synapse IS Apache Spark met extra ondersteuning voor integraties met andere services (AAD, AzureML, enzovoort) en extra bibliotheken (mssparktuils, Hummingbird) en vooraf afgestemde prestatieconfiguraties.
 
-Elke workload die momenteel wordt uitgevoerd op Apache Spark, wordt zonder wijziging uitgevoerd op MSFT Spark. 
+Elke workload die momenteel wordt uitgevoerd op Apache Spark, wordt zonder wijziging uitgevoerd op Apache Spark voor Azure Synapse. 
 
 ### <a name="q-what-versions-of-spark-are-available"></a>V: Welke versies van Spark zijn er beschikbaar?
 
-A: Azure Synapse Apache Spark biedt volledige ondersteuning voor Spark 2.4. Zie [Ondersteuning voor Apache Spark-versies](./spark/apache-spark-version-support.md) voor een volledige lijst met kernonderdelen en de versie die momenteel wordt ondersteund.
+A: Azure Synapse Apache Spark biedt volledige ondersteuning voor Spark 2.4. Raadpleeg [Ondersteuning voor Apache Spark-versies](./spark/apache-spark-version-support.md) voor een volledige lijst met kernonderdelen en de versie die momenteel wordt ondersteund.
 
 ### <a name="q-is-there-an-equivalent-of-dbutils-in-azure-synapse-spark"></a>V: Is er een equivalent van DButils in Azure Synapse Spark?
 
@@ -121,7 +121,7 @@ De eenvoudigste manier om deze taak uit te voeren, is om de gegevens in Spark te
  
 Voor dit scenario moet u elke ontwikkelaar een serverloze Spark-pool bieden die is ingesteld op het gebruik van een klein aantal Spark-resources. Aangezien serverloze Spark-Pools niets kosten totdat ze actief worden gebruikt, worden de kosten geminimaliseerd wanneer er meerdere ontwikkelaars zijn. De pools delen metagegevens (Spark-tabellen) zodat ze eenvoudig met elkaar kunnen samenwerken.
 
-### <a name="q-how-do-i-include-manage-and-install-libraries"></a>V: Hoe kan ik bibliotheken toevoegen, beheren en installeren? 
+### <a name="q-how-do-i-include-manage-and-install-libraries"></a>V: Hoe kan ik bibliotheken toevoegen, beheren en installeren?
 
 A:  U kunt externe pakketten installeren via een requirements.txt-bestand tijdens het maken van de Spark-pool, vanuit de Synapse-werkruimte of vanuit Azure Portal. Zie [Bibliotheken beheren voor Apache Spark in Azure Synapse Analytics](./spark/apache-spark-azure-portal-add-libraries.md).
 
@@ -140,7 +140,7 @@ A: Er is geen "verplaatsing" of "migratie". U kunt ervoor kiezen om nieuwe werkr
 A: Standaard worden alle nieuwe toegewezen SQL-pools geïmplementeerd in een werkruimte. U kunt echter nog steeds een speciale SQL-pool (voorheen SQL DW) in een zelfstandige vorm maken. 
 
 
-### <a name="q-what-are-the-functional-differences-between-dedicated-sql-pools-and-serverless-sql-pool"></a>V: Wat zijn de functionele verschillen tussen toegewezen SQL-pools en serverloze pools? 
+### <a name="q-what-are-the-functional-differences-between-dedicated-sql-pools-and-serverless-sql-pools"></a>V: Wat zijn de functionele verschillen tussen toegewezen SQL-pools en serverloze pools?
 
 A: U vindt een volledige lijst met verschillen in [Verschillen in T-SQL-functies in Synapse SQL](./sql/overview-features.md).
 

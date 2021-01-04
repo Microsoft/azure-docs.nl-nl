@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/21/2020
 ms.author: jeedes
-ms.openlocfilehash: fcaaea387cab24772b9e6f31f4e7d93ff643b983
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 59c01d5d8589b61ff0aaacb81d12fed8fba4f842
+ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515590"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97505508"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-paylocity"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Paylocity
 
@@ -120,9 +120,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -148,7 +148,15 @@ In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmeldin
 
 ## <a name="configure-paylocity-sso"></a>Eenmalige aanmelding configureren in Paylocity
 
-Als u eenmalige aanmelding wilt configureren in **Paylocity** , moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's uit de Azure-portal verzenden naar het [ondersteuningsteam van Paylocity](mailto:service@paylocity.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Eenmalige aanmelding aan de zijde van **Paylocity** configureren:
+
+1. Download het **XML-bestand met federatieve metagegevens**.
+1. Ga in Paylocity naar **HR en Payroll** > **Gebruikerstoegang** > **SSO-configuratie**.
+1. Selecteer **SSO-integratie toevoegen** onder **SSO-integraties**. Er wordt een nieuwe lade geopend.
+1. Selecteer in de vervolgkeuzelijst **Microsoft Azure** als de SSO-provider.
+1. Selecteer **Status** in de vervolgkeuzelijst.
+1. Sleep het metagegevensbestand naar het neerzetgebied en zet het bestand hier neer. In Paylocity wordt geprobeerd de URL's en (een of meer) beveiligingscertificaten te parseren voor Verlener, Post-omleiding en Binding.
+1. Selecteer **Opslaan** om de wijzigingen te bevestigen. De integratie moet worden weergegeven onder **SSO-integraties**.
 
 ### <a name="create-paylocity-test-user"></a>Testgebruiker maken voor Paylocity
 

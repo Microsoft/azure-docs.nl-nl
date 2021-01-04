@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: fb1d6ceca6321eabac11cf16d3a2c424f5d9619e
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 0603e04424acfe979f44110b973b79f6c07e0b81
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456180"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673602"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-chronicx"></a>Zelfstudie: Azure Active Directory-integratie met ChronicX®
 
@@ -42,7 +42,7 @@ Voor het configureren van Azure AD-integratie met ChronicX® hebt u het volgende
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * ChronicX® biedt ondersteuning voor **SP** geïnitieerde eenmalige aanmelding
-* ChronicX® biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* ChronicX® biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-chronicx-from-the-gallery"></a>ChronicX® toevoegen vanuit de galerie
 
@@ -50,7 +50,7 @@ Voor het configureren van de integratie van ChronicX® met Azure AD moet u Chron
 
 **Als u ChronicX® vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -64,7 +64,7 @@ Voor het configureren van de integratie van ChronicX® met Azure AD moet u Chron
 
 4. Typ **ChronicX®** in het zoekvak, selecteer **ChronicX®** in het deelvenster met resultaten en klik op **Toevoegen** om de toepassing toe te voegen.
 
-     ![ChronicX® in de lijst met resultaten](common/search-new-app.png)
+    ![ChronicX® in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -131,7 +131,7 @@ Als u eenmalige aanmelding aan de zijde van **ChronicX®** wilt configureren, mo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -144,7 +144,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 

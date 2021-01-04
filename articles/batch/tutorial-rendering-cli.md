@@ -1,15 +1,15 @@
 ---
-title: Een scène renderen in de cloud
+title: 'Zelfstudie: Een scène weergeven in de cloud'
 description: 'Zelfstudie: Een Autodesk 3ds Max-scène renderen met Arnold met behulp van de Batch-renderingservice en de Azure-opdrachtregelinterface'
 ms.topic: tutorial
 ms.date: 03/05/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 579a5446cb199bb73f98e2e1cbb0948f062470a8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: e0858e838ba73862ef7f15040915c5f5cd3c751b
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542385"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106339"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Zelfstudie: Een scène renderen met Azure Batch 
 
@@ -57,7 +57,7 @@ az storage account create \
     --location eastus2 \
     --sku Standard_LRS
 ```
-Maak een Batch-account met behulp van de opdracht [az batch account create](/cli/azure/batch/account#az-batch-account-create). In het volgende voorbeeld wordt een Batch-account met de naam *mybatchaccount* gemaakt in *myResourceGroup* , en wordt het gemaakte opslagaccount gekoppeld.  
+Maak een Batch-account met behulp van de opdracht [az batch account create](/cli/azure/batch/account#az-batch-account-create). In het volgende voorbeeld wordt een Batch-account met de naam *mybatchaccount* gemaakt in *myResourceGroup*, en wordt het gemaakte opslagaccount gekoppeld.  
 
 ```azurecli-interactive 
 az batch account create \
@@ -278,7 +278,7 @@ Open *dragon.jpg* op uw computer. De gerenderde afbeelding ziet er ongeveer als 
 
 ## <a name="scale-the-pool"></a>De pool schalen
 
-U wijzigt u de pool om deze voor te bereiden op een grotere renderingtaak met meerdere frames. Batch biedt een aantal manieren om rekenresources te schalen, waaronder [automatisch schalen](batch-automatic-scaling.md) waarbij knoppunten worden toegevoegd of verwijderd wanneer de taak daarom vraagt. Voor dit eenvoudige voorbeeld gebruikt u de opdracht [az batch pool resize](/cli/azure/batch/pool#az-batch-pool-resize) om het aantal knooppunten met lage prioriteit in de pool te verhogen naar *6* :
+U wijzigt u de pool om deze voor te bereiden op een grotere renderingtaak met meerdere frames. Batch biedt een aantal manieren om rekenresources te schalen, waaronder [automatisch schalen](batch-automatic-scaling.md) waarbij knoppunten worden toegevoegd of verwijderd wanneer de taak daarom vraagt. Voor dit eenvoudige voorbeeld gebruikt u de opdracht [az batch pool resize](/cli/azure/batch/pool#az-batch-pool-resize) om het aantal knooppunten met lage prioriteit in de pool te verhogen naar *6*:
 
 ```azurecli-interactive
 az batch pool resize --pool-id myrenderpool --target-dedicated-nodes 0 --target-low-priority-nodes 6
@@ -346,7 +346,7 @@ In deze zelfstudie hebt u het volgende geleerd:
 > * De pool schalen en een scène met meerdere frames renderen
 > * Gerenderde uitvoer downloaden
 
-Voor meer informatie over rendering met de kracht van de cloud raadpleegt u de opties voor de Batch-renderingservice. 
+Raadpleeg de documentatie over de Batch-renderingservice voor meer informatie over rendering op cloudschaal.
 
 > [!div class="nextstepaction"]
 > [Service voor batch-rendering](batch-rendering-service.md)

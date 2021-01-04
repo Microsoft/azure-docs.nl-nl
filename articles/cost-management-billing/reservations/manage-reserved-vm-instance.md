@@ -6,20 +6,20 @@ ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 12/08/2020
 ms.author: banders
-ms.openlocfilehash: 050984d58137ec03996572d2de41115073e4ab2b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2cd0611d5701f5ca407afd6d4e3b1b0ae22b6c12
+ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96338160"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97562970"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Reserveringen voor Azure-resources beheren
 
 Nadat u een Azure-reservering hebt gekocht, moet u de reservering mogelijk toepassen op een ander abonnement, aanpassen wie de reservering kan beheren of het bereik van de reservering wijzigen. U kunt een reservering ook opsplitsen in twee reserveringen om sommige van de exemplaren die u hebt gekocht, toe te passen op een ander abonnement.
 
-Als u voor Azure gereserveerde virtuele machine-instanties hebt aangeschaft, kunt u de optimalisatie-instelling voor de reservering wijzigen. De reserveringskorting kan worden toegepast op virtuele machines in dezelfde serie, maar u kunt ook datacentercapaciteit voor een specifieke VM-grootte reserveren. Probeer ook reserveringen te optimaliseren, zodat deze volledig worden gebruikt.
+Als u Azure Reserved Virtual Machine Instances hebt aangeschaft, kunt u de optimalisatie-instelling voor de reservering wijzigen. De reserveringskorting kan worden toegepast op virtuele machines in dezelfde serie, maar u kunt ook datacentercapaciteit voor een specifieke VM-grootte reserveren. Probeer reserveringen te optimaliseren, zodat ze volledig worden gebruikt.
 
 *De machtiging die is vereist om een reservering te beheren is afzonderlijk van abonnementsmachtigingen.*
 
@@ -31,7 +31,7 @@ Wanneer u een reservering aanschaft, worden twee objecten gemaakt: een **reserve
 
 Op het moment van aankoop staat er één reservering onder een reserveringsorder. Door bepaalde acties, zoals splitsen, samenvoegen, gedeeltelijke restitutie of uitwisselen, worden nieuwe reserveringen gemaakt onder de **reserveringsorder**.
 
-Als u een reserveringsorder wilt zien, gaat u naar **Reserveringen**, selecteert u de reservering en klikt u vervolgens op de **reserveringsorder-id**.
+Als u een reserveringsorder wilt zien, gaat u naar **Reserveringen** en selecteert u de reservering. Selecteer vervolgens de **Reserveringsorder-id**.
 
 ![Voorbeeld van details van een reserveringsorder, met reserveringsorder-id ](./media/manage-reserved-vm-instance/reservation-order-details.png)
 
@@ -53,27 +53,40 @@ Als u overschakelt van Gedeeld naar Eén bereik, kunt u alleen abonnementen sele
 
 Het bereik is alleen van toepassing op afzonderlijke abonnementen met tarieven voor betalen per gebruik (de aanbieding MS-AZR-0003P of MS-AZR-0023P), de Enterprise-aanbieding MS-AZR-0017P of MS-AZR-0148P of CSP-abonnementstypen.
 
-## <a name="add-or-change-users-who-can-manage-a-reservation"></a>Gebruikers toevoegen of wijzigen die een reservering kunnen beheren
+## <a name="who-can-manage-a-reservation-by-default"></a>Wie kunnen standaard een reservering beheren?
 
-U kunt het reserveringsbeheer delegeren door personen toe te voegen aan rollen voor de reserveringsbestelling of de reservering. De standaardinstelling is dat de persoon die de reservering heeft besteld en de accountbeheerder de rol van eigenaar hebben voor de reserveringsbestelling en de reservering.
+De volgende gebruikers kunnen standaard reserveringen weergeven en beheren:
 
-U kunt de toegang tot reserveringsorders en reserveringen beheren, *onafhankelijk van de abonnementen* waarvoor de reserveringskorting geldt. Wanneer u iemand een machtiging geeft om een reserveringsorder of de reservering te beheren, geeft u die persoon hiermee geen machtiging om ook het abonnement te beheren. Evenzo is iemand die van u een machtiging krijgt om een abonnement in het bereik van de reservering te beheren, ook niet gemachtigd om de reserveringsorder of de reservering te beheren.
+- De persoon die een reservering koopt, en de accountbeheerder van het factureringsabonnement dat is gebruikt om de reservering te kopen, worden toegevoegd aan de reserveringsorder.
+- Factureringsbeheerders van een Enterprise Agreement en Microsoft-klantovereenkomst.
 
-Als de gebruiker een uitwisseling of een restitutie wil uitvoeren, moet deze persoon toegang hebben tot de reserveringsorder. Wanneer u machtigingen aan iemand toewijst, kunt u het beste machtigingen voor de reserveringsorder geven, niet voor de reservering.
+U hebt twee opties om toe te staan dat andere personen reserveringen beheren:
 
-U kunt het toegangsbeheer voor een reservering als volgt delegeren:
+- Toegangsbeheer voor een afzonderlijke reserveringsorder delegeren:
+    1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+    1. Selecteer **Alle services** > **Reservering** om de reserveringen te bekijken waartoe u toegang hebt.
+    1. Selecteer de reservering waarvoor u de toegang wilt delegeren aan andere gebruikers.
+    1. Selecteer bij Reserveringsdetails de reserveringsorder.
+    1. Klik op **Toegangsbeheer (IAM)** .
+    1. Selecteer **Roltoewijzing toevoegen** > **Rol** > **Eigenaar**. Als u beperkte toegang wilt verlenen, selecteert u een andere rol.
+    1. Typ het e-mailadres van de gebruiker die u als eigenaar wilt toevoegen.
+    1. Selecteer de gebruiker en selecteer vervolgens **Opslaan**.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Selecteer **Alle services** > **Reservering** om de reserveringen te bekijken waartoe u toegang hebt.
-3. Selecteer de reservering waarvoor u de toegang wilt delegeren aan andere gebruikers.
-4. Klik op **Toegangsbeheer (IAM)** .
-5. Selecteer **Roltoewijzing toevoegen** > **Rol** > **Eigenaar**. Als u beperkte toegang wilt geven, selecteert u een andere rol.
-6. Typ het e-mailadres van de gebruiker die u als eigenaar wilt toevoegen.
-7. Selecteer de gebruiker en selecteer vervolgens **Opslaan**.
+- Een gebruiker als factureringsbeheerder toevoegen aan een Enterprise Agreement of Microsoft-klantovereenkomst:
+    - Voor een Enterprise Agreement voegt u gebruikers toe met de rol _Ondernemingsbeheerder_ om alle reserveringsorders weer te geven en te beheren die van toepassing zijn op de Enterprise Agreement. Gebruikers met de rol _Ondernemingsbeheerder (alleen lezen)_ kunnen de reservering alleen weergeven. Afdelingsbeheerders en accounteigenaars kunnen reserveringen niet weergeven, _tenzij_ ze expliciet worden toegevoegd met behulp van IAM (Toegangsbeheer). Zie [Azure Enterprise-rollen beheren](../manage/understand-ea-roles.md) voor meer informatie.
+
+        _Ondernemingsbeheerders kunnen eigendom van een reserveringsorder overnemen, en ze kunnen andere gebruikers toevoegen aan een reservering met behulp van IAM (Toegangsbeheer)._
+    - Voor een Microsoft-klantovereenkomst kunnen gebruikers met de rol Eigenaar van factureringsprofiel of de rol Inzender van factureringsprofiel alle reserveringsaankopen beheren die zijn gedaan via het factureringsprofiel. Factureringsprofiellezers en factuurbeheerders kunnen alle reserveringen weergeven waarvoor is betaald met het factureringsprofiel. Ze kunnen echter geen wijzigingen aanbrengen in reserveringen.
+    Zie [Rollen en taken van een factureringsprofiel](../manage/understand-mca-roles.md#billing-profile-roles-and-tasks) voor meer informatie.
+
+### <a name="how-billing-administrators-view-or-manage-reservations"></a>Hoe Factureringsbeheerders reserveringen weergeven of beheren
+
+1. Ga naar **Cost Management + Billing**, en selecteer vervolgens aan de linkerkant van de pagina de optie **Reserveringstransacties**.
+2. Als u beschikt over de vereiste factureringsmachtigingen, kunt u reserveringen weergeven en beheren. Als u geen reserveringen ziet, controleert u of u bent aangemeld met behulp van de Azure AD-tenant waar de reserveringen zijn gemaakt.
 
 ## <a name="split-a-single-reservation-into-two-reservations"></a>Eén reservering in twee reserveringen splitsen
 
- Nadat u meer dan één resource-instantie in een reservering hebt aangeschaft, kunt u ervoor kiezen instanties in die reservering aan verschillende abonnementen toe te wijzen. Standaard hebben alle instanties één bereik: Eén abonnement, Resourcegroep of Gedeeld. Stel, u hebt een reservering voor 10 VM-instanties aangeschaft en abonnement A als bereik opgegeven. Nu wilt u dat wijzigen in 7 instanties voor abonnement A en 3 instanties voor abonnement B. U kunt dit doen door een reservering te splitsen. Nadat u een reservering hebt gesplitst, wordt de oorspronkelijke reserverings-id geannuleerd en worden er twee nieuwe reserveringen gemaakt. Splitsen heeft geen invloed op de reserveringsorder: een splitsing is geen nieuwe commerciële transactie en de nieuwe reserveringen hebben dezelfde einddatum als de gesplitste reservering.
+ Nadat u meer dan één resource-instantie in een reservering hebt aangeschaft, kunt u ervoor kiezen instanties in die reservering aan verschillende abonnementen toe te wijzen. Standaard hebben alle instanties één bereik: Eén abonnement, Resourcegroep of Gedeeld. Stel dat u een reservering hebt aangeschaft voor 10 VM-exemplaren, en abonnement A als bereik hebt opgegeven. Nu wilt u dit wijzigen in 7 exemplaren voor abonnement A en 3 exemplaren voor abonnement B. U kunt dit doen door een reservering te splitsen. Nadat u een reservering hebt gesplitst, wordt de oorspronkelijke reserverings-id geannuleerd en worden er twee nieuwe reserveringen gemaakt. Splitsen heeft geen invloed op de reserveringsorder: een splitsing is geen nieuwe commerciële transactie en de nieuwe reserveringen hebben dezelfde einddatum als de gesplitste reservering.
 
  U kunt een reservering in twee reserveringen splitsen via PowerShell, CLI of de API.
 
@@ -110,7 +123,7 @@ Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde 
 
 ## <a name="change-optimize-setting-for-reserved-vm-instances"></a>De optimalisatie-instelling wijzigen voor gereserveerde VM-instanties
 
- Wanneer u een gereserveerde VM-instantie aanschaft, kunt u de flexibiliteit of de capaciteit van de instantiegrootte prioriteit geven. De flexibiliteit van de instantiegrootte is van toepassing op de reserveringskorting op andere virtuele machines in de [groep met VM’s met dezelfde grootte](../../virtual-machines/reserved-vm-instance-size-flexibility.md). Met de capaciteitsprioriteit wordt prioriteit toegekend aan de datacentercapaciteit voor uw implementaties. Deze optie biedt u extra vertrouwen dat u de VM-instanties kunt starten op het moment dat u ze nodig hebt.
+ Wanneer u een gereserveerde VM-instantie aanschaft, kunt u de flexibiliteit of de capaciteit van de instantiegrootte prioriteit geven. De flexibiliteit van de instantiegrootte is van toepassing op de reserveringskorting op andere virtuele machines in de [groep met VM’s met dezelfde grootte](../../virtual-machines/reserved-vm-instance-size-flexibility.md). Met de capaciteitsprioriteit wordt datacentercapaciteit toegekend aan uw belangrijkste implementaties. Deze optie biedt u extra vertrouwen dat u de VM-instanties kunt starten op het moment dat u ze nodig hebt.
 
 Wanneer het bereik van de reservering Gedeeld is, is de flexibiliteit van de instantiegrootte ingeschakeld. De datacentercapaciteit heeft geen prioriteit voor VM-implementaties.
 
@@ -121,9 +134,9 @@ U kunt de optimalisatie-instelling voor de reservering als volgt bijwerken:
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Selecteer **Alle services** > **Reserveringen**.
 3. Selecteer de reservering.
-4. Selecteer **Instellingen** > **Configuratie**.  
+4. Selecteer **Instellingen** > **Configuratie**.
   ![Voorbeeld met het configuratie-item](./media/manage-reserved-vm-instance/add-product03.png)
-5. Wijzig de instelling **Optimaliseren voor**.  
+5. Wijzig de instelling **Optimaliseren voor**.
   ![Voorbeeld met de instelling Optimaliseren voor](./media/manage-reserved-vm-instance/instance-size-flexibility-option.png)
 
 ## <a name="optimize-reservation-use"></a>Gebruik van reservering optimaliseren
@@ -138,7 +151,7 @@ Een van de manieren om het gebruik van reserveringen weer te geven, is via Azure
 2. Selecteer **Alle services** > [**Reserveringen**](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) en bekijk het **Percentage gebruik** voor een reservering.  
   ![Afbeelding met de lijst met reserveringen](./media/manage-reserved-vm-instance/reservation-list.png)
 3. Selecteer een reservering.
-4. Controleer de trend van het gebruik van deze reservering over een bepaalde tijd.  
+4. Controleer de trend van het gebruik van deze reservering over een bepaalde tijd.
   ![Afbeelding met het gebruik van de reservering ](./media/manage-reserved-vm-instance/reservation-utilization-trend.png)
 
 ### <a name="view-reservation-use-with-api"></a>Het gebruik van de reservering weergeven met een API

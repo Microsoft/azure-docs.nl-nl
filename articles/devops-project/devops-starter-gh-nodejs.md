@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: ''
 ms.date: 08/24/2020
 ms.author: ninallam
-ms.openlocfilehash: 92fa445cee75b2311cbadf96e24c31a1dbd579b8
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: e3c72ce6a15f90f0dbe08bbff10db0ca5f6b5c8f
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92332692"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97588808"
 ---
 # <a name="set-up-cicd-for-a-nodejs-app-with-devops-starter-using-github-actions"></a>CI/CD instellen voor een Node.js-app met DevOps Starter met GitHub Actions
 
@@ -43,29 +43,29 @@ DevOps Starter maakt een CI/CD-werkstroom met behulp van GitHub-acties. Met DevO
 
     ![landings_pagina](_img/azure-devops-project-nodejs/landing-page.png)
 
-1. Zorg ervoor dat de CI/CD-provider is geselecteerd als **GitHub Actions** .
+1. Zorg ervoor dat de CI/CD-provider is geselecteerd als **GitHub Actions**.
 
     ![CICD_provider](_img/azure-devops-project-nodejs/provider-selection.png)
 
-1. Selecteer de **Node.js** -voorbeeldtoepassing. De Node.js-voorbeelden omvatten een keuze uit verschillende toepassingsframeworks.
+1. Selecteer de **Node.js**-voorbeeldtoepassing. De Node.js-voorbeelden omvatten een keuze uit verschillende toepassingsframeworks.
 
-1. Het standaardvoorbeeldframework is **Express.js** . Laat de standaardinstelling ongewijzigd en selecteer **Volgende** .   
+1. Het standaardvoorbeeldframework is **Express.js**. Laat de standaardinstelling ongewijzigd en selecteer **Volgende**.   
 
-2. Windows-web-app is het standaardimplementatiedoel. Het toepassingsframework, dat u eerder hebt gekozen, bepaalt welk type implementatiedoel hier beschikbaar is voor de Azure-service. Laat de standaardservice ongewijzigd en selecteer **Volgende** .
+2. Windows-web-app is het standaardimplementatiedoel. Het toepassingsframework, dat u eerder hebt gekozen, bepaalt welk type implementatiedoel hier beschikbaar is voor de Azure-service. Laat de standaardservice ongewijzigd en selecteer **Volgende**.
  
 ## <a name="configure-github-account-and-an-azure-subscription"></a>Configureer een GitHub-account en een Azure-abonnement 
 
 1. Verifieer met GitHub.
 
-   1. Klik op de knop **Autoriseren** . 
+   1. Klik op de knop **Autoriseren**. 
    
    1. Meld u aan bij GitHub. Als u geen GitHub-account hebt, kunt u hier ook registreren.
 
-2. Kies een bestaande **GitHub-organisatie** . 
+2. Kies een bestaande **GitHub-organisatie**. 
    
    1. Kies een naam voor uw GitHub-opslagplaats. 
    
-   1. Selecteer uw Azure-abonnement en locatie, kies een naam voor de toepassing en selecteer vervolgens **Gereed** .
+   1. Selecteer uw Azure-abonnement en locatie, kies een naam voor de toepassing en selecteer vervolgens **Gereed**.
     
        ![Enter_GH_details](_img/azure-devops-project-nodejs/gh-details.png)
 
@@ -74,7 +74,7 @@ DevOps Starter maakt een CI/CD-werkstroom met behulp van GitHub-acties. Met DevO
    
 3. Selecteer **Bladeren** om de actieve toepassing weer te geven.
     
-    Het dashboard bevat details over de GitHub-werkstroom en Azure-resources. Als u de details van de GitHub-werkstroom wilt bekijken zoals de meest recente uitvoering, doorvoeringen en taakstatus, moet u **Autoriseren op GitHub** .
+    Het dashboard bevat details over de GitHub-werkstroom en Azure-resources. Als u de details van de GitHub-werkstroom wilt bekijken zoals de meest recente uitvoering, doorvoeringen en taakstatus, moet u **Autoriseren op GitHub**.
    
    ![Authorize_dashboard](_img/azure-devops-project-nodejs/authenticate-dashboard.png)
 
@@ -86,11 +86,11 @@ DevOps Starter heeft automatisch een GitHub-werkstroom geconfigureerd met behulp
 
 Met DevOps Starter wordt een opslagplaats gemaakt in GitHub. Ga als volgt te werk om de opslagplaats weer te geven en codewijzigingen aan de brengen in de toepassing:
 
-1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor uw master branch. Met deze koppeling opent u een weergave met de zojuist gemaakte GitHub-opslagplaats.
+1. Selecteer aan de linkerkant van het DevOps Starter-dashboard de koppeling voor de hoofdvertakking. Met deze koppeling opent u een weergave met de zojuist gemaakte GitHub-opslagplaats.
 
-1. Als u de kloon-URL van de opslagplaats wilt weergeven, selecteert u **Klonen** in de rechterbovenhoek van de browser. U kunt uw Git-opslagplaats klonen in uw favoriete IDE. In de volgende stappen kunt u de webbrowser gebruiken om codewijzigingen rechtstreeks aan te brengen en door te voeren in de master branch.
+1. Als u de kloon-URL van de opslagplaats wilt weergeven, selecteert u **Klonen** in de rechterbovenhoek van de browser. U kunt uw Git-opslagplaats klonen in uw favoriete IDE. In de volgende stappen kunt u de webbrowser gebruiken om codewijzigingen rechtstreeks aan te brengen en door te voeren in de hoofdvertakking.
 
-1. Ga aan de linkerkant van de browser naar het bestand **/Application/views/index.pug** .
+1. Ga aan de linkerkant van de browser naar het bestand **/Application/views/index.pug**.
 
 1. Selecteer **Bewerken** en breng een wijziging aan in de tekst.
     Wijzig bijvoorbeeld een stuk tekst voor een van de tags.
@@ -104,13 +104,13 @@ U moet nu een taak in uitvoering zien voor het bouwen van een GitHub-werkstroom.
 
 In de vorige stap werd in DevOps Starter automatisch een volledige GitHub-werkstroom geconfigureerd. Verken de werkstroom en pas deze zo nodig aan. Voer de volgende stappen uit om vertrouwd te raken met de werkstroom.
 
-1. Selecteer aan de linkerkant van het DevOps Starter-dashboard **GitHub-werkstroom** . Met deze link worden een browsertabblad en de GitHub-werkstroom voor het nieuwe project geopend.
+1. Selecteer aan de linkerkant van het DevOps Starter-dashboard **GitHub-werkstroom**. Met deze link worden een browsertabblad en de GitHub-werkstroom voor het nieuwe project geopend.
     > [!NOTE]
     > Wijzig de naam van het werkstroombestand niet. De naam van het werkstroombestand moet **devops-starter-workflow.yml** zijn, zodat het dashboard de wijzigingen kan weergeven
 
 1. Het yaml-bestand van de werkstroom bevat alle GitHub Actions die nodig zijn om de toepassing te bouwen en implementeren. Klik op de optie **Bestand bewerken** om het werkstroombestand aan te passen.
 
-1. Klik op het tabblad **Code** van de opslagplaats op **doorvoeringen** . In deze weergave worden de codedoorvoeringen weergegeven die zijn gekoppeld aan deze implementatie.
+1. Klik op het tabblad **Code** van de opslagplaats op **doorvoeringen**. In deze weergave worden de codedoorvoeringen weergegeven die zijn gekoppeld aan deze implementatie.
 
 1. Op het tabblad **Acties** van de opslagplaats kunt u de geschiedenis bekijken van alle uitvoeringen van de werkstroom van uw opslagplaats.
 

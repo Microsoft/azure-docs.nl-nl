@@ -1,16 +1,16 @@
 ---
-title: Met Azure Batch en Batch Explorer een Blender-scène renderen
+title: 'Zelfstudie: Met Azure Batch en Batch Explorer een Blender-scène weergeven'
 description: Zelfstudie - Meerdere frames uit een Blender scène renderen met behulp van Azure Batch en de Batch Explorer-clienttoepassing
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 65baff827417cebe2289cc821df94acd38a1ae61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c015e4e83b0505a45690e92c1d732f74b6f6b0e
+ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85964801"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97106458"
 ---
 # <a name="tutorial-render-a-blender-scene-using-batch-explorer"></a>Zelfstudie: Een Blender-scène met Batch Explorer renderen
 
@@ -93,6 +93,7 @@ De status van de pool van toepassingen en virtuele machines kan worden gecontrol
 ## <a name="create-a-rendering-job"></a>Een renderingtaak maken
 
 Maak een renderingtaak voor het renderen van een aantal frames met behulp van de groep die is gemaakt:
+
 * Selecteer de menuopdracht 'Galerie' in het hoofdmenu aan de linkerkant.
 * Selecteer het item 'Blender' voor een lijst van toepassingsitems.
 * Selecteer de items voor het weergeven van frames op Windows Server.
@@ -137,6 +138,18 @@ Wanneer alle taken zijn voltooid, wordt de taak gemarkeerd als voltooid: ![Elk t
 * Klik met de rechtermuisknop en selecteer 'Verwijderen' of selecteer het prullenbakpictogram boven de groep
 
 ## <a name="next-steps"></a>Volgende stappen
-* Verken de rendering-toepassingen die beschikbaar zijn via de Batch Explorer in de sectie 'Galerie'.
-* Er zijn voor elke toepassing verschillende sjablonen beschikbaar, die na verloop van tijd worden uitgebreid.  Voor Blender bestaan bijvoorbeeld sjablonen die één installatiekopie in tegels opsplitsen, dus delen van een installatiekopie kunnen parallel worden gerenderd.
-* Bekijk de reeks artikelen [hier](./batch-rendering-service.md)voor een uitgebreide beschrijving van de mogelijkheden voor rendering.
+
+In deze zelfstudie heeft u het volgende geleerd:
+
+> [!div class="checklist"]
+> * Een scène uploaden naar Azure Storage
+> * Een Batch-pool maken met meerdere knooppunten om de rendering uit te voeren
+> * Meerdere frames renderen
+> * De gerenderde framebestanden bekijken en installeren
+
+Ga door met verkennen van de rendering-toepassingen die beschikbaar zijn via Batch Explorer in de sectie **Galerie**. Er zijn voor elke toepassing verschillende sjablonen beschikbaar, die na verloop van tijd worden uitgebreid. Voor Blender bestaan bijvoorbeeld sjablonen die één installatiekopie in tegels opsplitsen, dus delen van een installatiekopie kunnen parallel worden gerenderd.
+
+Voor meer informatie over rendering met de kracht van de cloud raadpleegt u de opties voor de Batch-renderingservice.
+
+> [!div class="nextstepaction"]
+> [Service voor batch-rendering](batch-rendering-service.md)

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 78f473a7c4b10475c6c206764ce526c70fa056fe
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 5fe070bc1abe0592b3082c597c1812781335448a
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313355"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673179"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory met AcquireIO
 
@@ -73,7 +73,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
@@ -110,7 +110,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer **AcquireIO** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
+    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
@@ -134,7 +134,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Klik aan de linkerkant van het menu op **App Store**.
 
-     ![Schermopname waarin App Store is gemarkeerd.](./media/acquireio-tutorial/config01.png)
+    ![Schermopname waarin App Store is gemarkeerd.](./media/acquireio-tutorial/config01.png)
 
 1. Schuif omlaag naar **Active Directory** en klik op **installeren**.
 
@@ -162,7 +162,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij AcquireIO, moeten z
 
 1. Klik aan de linkerkant van het menu op **Profielen** en navigeer naar **Profiel toevoegen**.
 
-     ![Schermopname met Profileren gemarkeerd in het menu aan de linkerkant van het scherm en Profiel toevoegen ook gemarkeerd.](./media/acquireio-tutorial/config04.png)
+    ![Schermopname met Profileren gemarkeerd in het menu aan de linkerkant van het scherm en Profiel toevoegen ook gemarkeerd.](./media/acquireio-tutorial/config04.png)
 
 1. Voer de volgende stappen uit in het pop-upvenster **Klant toevoegen**:
 
@@ -182,9 +182,9 @@ Wanneer u op de tegel AcquireIO in het toegangsvenster klikt, wordt u automatisc
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

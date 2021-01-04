@@ -5,12 +5,12 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7a44edc7cd09709f14415fa0a92e63558001d46d
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 31c4e6383b5eaea2bb66dc1baafa0fbff4918a7c
+ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928525"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97589114"
 ---
 # <a name="tutorial-troubleshoot-arm-template-deployments"></a>Zelfstudie: Problemen met ARM-sjabloonimplementatie oplossen
 
@@ -43,7 +43,7 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 Open een sjabloon met de naam [Een standaardopslagaccount maken](https://azure.microsoft.com/resources/templates/101-storage-account-create/) vanuit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/) en stel twee sjabloonproblemen in.
 
-1. Selecteer in Visual Studio Code **Bestand**>**Bestand openen**.
+1. Selecteer in Visual Studio Code **Bestand** > **Bestand openen**.
 2. Plak de volgende URL in **Bestandsnaam**:
 
     ```url
@@ -51,16 +51,16 @@ Open een sjabloon met de naam [Een standaardopslagaccount maken](https://azure.m
     ```
 
 3. Selecteer **Openen** om het bestand te openen.
-4. Wijzig de **apiVersion**-regel in de volgende regel:
+4. Wijzig de `apiVersion`-regel in de volgende regel:
 
     ```json
     "apiVersion1": "2018-07-02",
     ```
 
-    - **apiVersion1** is een ongeldige elementnaam. Dit is een validatiefout.
-    - De API-versie moet '2018-07-01' zijn.  Dit is een implementatiefout.
+    - `apiVersion1` is een ongeldig elementnaam. Dit is een validatiefout.
+    - De API-versie moet `"2018-07-01"` zijn.  Dit is een implementatiefout.
 
-5. Selecteer **Bestand**>**Opslaan als** om het bestand op uw lokale computer op te slaan als **azuredeploy.json**.
+5. Selecteer **Bestand** > **Opslaan als** om het bestand op uw lokale computer op te slaan als _azuredeploy.json_.
 
 ## <a name="troubleshoot-the-validation-error"></a>De validatiefout oplossen
 
@@ -68,13 +68,13 @@ Raadpleeg de sectie [De sjabloon implementeren](template-tutorial-create-multipl
 
 U ontvangt een foutbericht vanuit de shell dat vergelijkbaar is met:
 
-```
+```azurepowershell
 New-AzResourceGroupDeployment : 4:29:24 PM - Error: Code=InvalidRequestContent; Message=The request content was invalid and could not be deserialized: 'Could not find member 'apiVersion1' on object of type 'TemplateResource'. Path 'properties.template.resources[0].apiVersion1', line 36, position 24.'.
 ```
 
-Het foutbericht geeft aan dat er een probleem is met **apiVersion1**.
+Het foutbericht geeft aan dat er een probleem is met `apiVersion1`.
 
-Gebruik Visual Studio Code om het probleem te verhelpen door **apiVersion1** te wijzigen in **apiVersion**. Sla de sjabloon vervolgens op.
+Gebruik Visual Studio Code om het probleem te verhelpen door `apiVersion1` te wijzigen in `apiVersion`. Sla de sjabloon vervolgens op.
 
 ## <a name="troubleshoot-the-deployment-error"></a>De implementatiefout oplossen
 
@@ -82,7 +82,7 @@ Raadpleeg de sectie [De sjabloon implementeren](template-tutorial-create-multipl
 
 U ontvangt een foutbericht vanuit de shell dat vergelijkbaar is met:
 
-```
+```azurepowershell
 New-AzResourceGroupDeployment : 4:48:50 PM - Resource Microsoft.Storage/storageAccounts 'storeqii7x2rce77dc' failed with message '{
   "error": {
     "code": "NoRegisteredProviderFound",

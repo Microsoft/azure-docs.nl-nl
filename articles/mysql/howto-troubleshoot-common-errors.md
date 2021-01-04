@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
-ms.openlocfilehash: f64d4d2b9acbe0e6585ca546c915b82d2d1dbbc4
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 986bc5ef24855ac0014975edc0a26a11a82ec6ca
+ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737195"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97510959"
 ---
 # <a name="common-errors"></a>Algemene fouten
 
@@ -36,13 +36,13 @@ BEGIN
 END;
 ```
 
-**Oplossing** :  Om de fout op te lossen, stelt u log_bin_trust_function_creators in op 1 op de blade [Serverparameters](howto-server-parameters.md) in de portal, voert u de DDL-instructies uit of importeert u het schema om de gewenste objecten te maken en zet u de parameter log_bin_trust_function_creators terug naar de vorige waarde na het maken.
+**Oplossing**:  Om de fout op te lossen, stelt u log_bin_trust_function_creators in op 1 op de blade [Serverparameters](howto-server-parameters.md) in de portal, voert u de DDL-instructies uit of importeert u het schema om de gewenste objecten te maken en zet u de parameter log_bin_trust_function_creators terug naar de vorige waarde na het maken.
 
 #### <a name="error-1227-42000-at-line-101-access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operation-operation-failed-with-exitcode-1"></a>ERROR 1227 (42000) at line 101: Access denied; you need (at least one of) the SUPER privilege(s) for this operation. Operation failed with exitcode 1
 
 De bovenstaande fout kan optreden bij het importeren van een dump-bestand of het maken van een procedure met [definities](https://dev.mysql.com/doc/refman/5.7/en/create-procedure.html). 
 
-**Oplossing** :  Om deze fout op te lossen, kan de gebruiker met beheerdersrechten machtigingen verlenen om procedures te maken of uit te voeren door de opdracht GRANT uit te voeren, zoals in de volgende voorbeelden:
+**Oplossing**:  Om deze fout op te lossen, kan de gebruiker met beheerdersrechten machtigingen verlenen om procedures te maken of uit te voeren door de opdracht GRANT uit te voeren, zoals in de volgende voorbeelden:
 
 ```sql
 GRANT CREATE ROUTINE ON mydb.* TO 'someuser'@'somehost';
@@ -61,9 +61,40 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`AdminUserName`@`ServerName`*/ /*!50003
 DELIMITER ;
 ```
+#### <a name="error-1227-42000-at-line-295-access-denied-you-need-at-least-one-of-the-super-or-set_user_id-privileges-for-this-operation"></a>ERROR 1227 (42000) at line 295: Access denied; you need (at least one of) the SUPER or SET_USER_ID privilege(s) for this operation
+
+De bovenstaande fout kan optreden tijdens het uitvoeren van CREATE VIEW met DEFINER-instructies, als onderdeel van het importeren van een dumpbestand of het uitvoeren van een script. In Azure Database for MySQL worden aan geen enkele gebruiker SUPER-bevoegdheden of de SET_USER_ID-bevoegdheid verleend. 
+
+**Oplossing**: 
+* Gebruik, indien mogelijk, de gebruiker van de definities om CREATE VIEW uit te voeren. Waarschijnlijk zijn er veel weergaven met verschillende definities die verschillende machtigingen hebben, zodat dit niet haalbaar is.  OF
+* Bewerk het dumpbestand of CREATE VIEW-script, en verwijder de instructie DEFINER= uit het dumpbestand OF 
+* Bewerk het dumpbestand of CREATE VIEW-script en vervang de definitiewaarden door de gebruiker met beheerdersmachtigingen die het scriptbestand importeert of uitvoert.
+
+> [!Tip] 
+> Gebruik sed of perl om een dumpbestand of SQL-script te wijzigen, om de instructie DEFINE= te vervangen
+
+## <a name="common-connection-errors-for-server-admin-login"></a>Veelvoorkomende verbindingsfouten voor aanmeldgegevens van de serverbeheerder
+
+Wanneer een Azure Database for MySQL-server wordt gemaakt, worden tijdens het maken van de server door de eindgebruiker aanmeldgegevens van de serverbeheerder opgegeven. Met de aanmeldgegevens van de serverbeheerder kunt u nieuwe databases maken, nieuwe gebruikers toevoegen en machtigingen verlenen. Als de aanmeldgegevens van de serverbeheerder worden verwijderd, worden de bijbehorende machtigingen ingetrokken of wordt het bijbehorende wachtwoord gewijzigd. Het kan zijn dat u dan verbindingsfouten ziet in de toepassing bij het verbinding maken. Hieronder ziet u enkele veelvoorkomende fouten
+
+#### <a name="error-1045-28000-access-denied-for-user-usernameip-address-using-password-yes"></a>ERROR 1045 (28000): Access denied for user 'username'@'IP address' (using password: YES)
+
+De bovenstaande fout treedt op als:
+
+* De gebruikersnaam niet bestaat
+* De gebruikersnaam is verwijderd
+* Het bijbehorende wachtwoord is gewijzigd of opnieuw is ingesteld.
+
+**Oplossing**: 
+* Valideer of 'gebruikersnaam' bestaat als een geldige gebruiker op de server, of dat deze per ongeluk is verwijderd. U kunt de volgende query uitvoeren door u aan te melden bij de Azure Database for MySQL-gebruiker:
+  ```sql
+  select user from mysql.user;
+  ```
+* Als u zich niet kunt aanmelden bij de MySQL om de bovenstaande query uit te voeren, raden wij u aan [het beheerderswachtwoord opnieuw in te stellen in de Azure-portal](howto-create-manage-server-portal.md). Met de optie voor het opnieuw instellen van wachtwoorden in de Azure-portal kunt u de gebruiker opnieuw maken, het wachtwoord opnieuw instellen, en de beheerdersmachtigingen herstellen. Hierdoor kunt u zich aanmelden met de aanmeldgegevens van de serverbeheerder en verdere bewerkingen uitvoeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 Als u het antwoord op uw vraag niet hebt gevonden, kunt u het volgende doen:
+
 - Plaats uw vraag op [de Microsoft Q&A-pagina](/answers/topics/azure-database-mysql.html) of op [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).
 - Stuur een e-mail naar het Azure Database for MySQL-team [@Ask Azure DB for MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com). Dit e-mailadres is geen alias voor technische ondersteuning.
 - Als u contact wilt opnemen met Ondersteuning voor Azure, kunt u een [ticket indienen vanuit Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). Als u een probleem met uw account wilt oplossen, kunt u een [ondersteuningsaanvraag](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) indienen in Azure Portal.

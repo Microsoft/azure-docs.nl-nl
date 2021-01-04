@@ -8,14 +8,14 @@ ms.author: shresha
 manager: dpalled
 ms.workload: big-data
 ms.topic: overview
-ms.date: 10/02/2020
+ms.date: 12/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8fdbb42d06f26849d14e093c340c6d2457ee6ec9
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: ae5887657e7657e60348217c21aa0ed17f9f4b07
+ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020092"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97606297"
 ---
 # <a name="what-is-azure-time-series-insights-gen2"></a>Wat is Azure Time Series Insights Gen2
 

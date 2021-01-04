@@ -5,12 +5,12 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: c191da32444c3eb0315373780c8037f1b45be423
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: c72083f205fae77de366125e666cee479fd46805
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96993047"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97692011"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -75,7 +75,7 @@ const callStateElement = document.getElementById('call-state');
 async function init() {
     const callClient = new CallClient();
     const tokenCredential = new AzureCommunicationUserCredential("<USER ACCESS TOKEN>");
-    callAgent = await callClient.createCallAgent(tokenCredential);
+    callAgent = await callClient.createCallAgent(tokenCredential, {displayName: 'ACS user'});
     teamsMeetingJoinButton.disabled = false;
 }
 init();
@@ -90,11 +90,7 @@ hangUpButton.addEventListener("click", async () => {
     callStateElement.innerText = '-';
   });
 
-teamsMeetingJoinButton.addEventListener("click", () => {
-    
-    // set display name in the meeting
-    callAgent.updateDisplayName('ACS user');
-    
+teamsMeetingJoinButton.addEventListener("click", () => {    
     // join with meeting link
     call = callAgent.join({meetingLink: meetingLinkInput.value}, {});
     

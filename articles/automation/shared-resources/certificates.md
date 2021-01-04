@@ -3,21 +3,21 @@ title: Certificaten in Azure Automation beheren
 description: In dit artikel leest u hoe u met certificaten werkt voor toegang door runbooks en DSC-configuraties.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 09/10/2020
+ms.date: 12/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1c79b7c239c41e8d195230423b17fa3c5a7f51a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbf9eb6c97dcceeca5e86e8bef47a39fb685792f
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825809"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734807"
 ---
 # <a name="manage-certificates-in-azure-automation"></a>Certificaten in Azure Automation beheren
 
 Azure Automation certificaten veilig opslaat voor toegang door runbooks en DSC-configuraties, met behulp van de cmdlet [Get-AzAutomationCertificate](/powershell/module/Az.Automation/Get-AzAutomationCertificate) voor Azure Resource Manager resources. Met beveiligde certificaat opslag kunt u runbooks en DSC-configuraties maken die gebruikmaken van certificaten voor verificatie, of deze toevoegen aan Azure of bronnen van derden.
 
 >[!NOTE]
->Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Automation slaat de sleutel op in de door het systeem beheerde Key Vault-service. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen. 
+>Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Automation slaat de sleutel op in de door het systeem beheerde Key Vault-service. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen.
 
 ## <a name="powershell-cmdlets-to-access-certificates"></a>Power shell-cmdlets voor toegang tot certificaten
 
@@ -40,12 +40,12 @@ De interne cmdlet in de volgende tabel wordt gebruikt voor toegang tot certifica
 |:---|:---|
 |`Get-AutomationCertificate`|Haalt een certificaat op dat moet worden gebruikt in een runbook-of DSC-configuratie. Retourneert een [System. Security. Cryptography. X509Certificates. X509Certificate2](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2) -object.|
 
-> [!NOTE] 
+> [!NOTE]
 > Vermijd het gebruik van variabelen in de `Name` para meter van `Get-AutomationCertificate` in een RUNBOOK of DSC-configuratie. Dergelijke variabelen kunnen de detectie van afhankelijkheden tussen runbooks of DSC-configuraties en Automation-variabelen tijdens ontwerp tijd bemoeilijken.
 
-## <a name="python-2-functions-to-access-certificates"></a>Python 2-functies voor toegang tot certificaten
+## <a name="python-functions-to-access-certificates"></a>Python-functies voor toegang tot certificaten
 
-Gebruik de functie in de volgende tabel voor toegang tot certificaten in een python 2-runbook.
+Gebruik de functie in de volgende tabel voor toegang tot certificaten in een python 2-en 3-runbook. Python 3-runbooks zijn momenteel beschikbaar als preview-versie.
 
 | Functie | Beschrijving |
 |:---|:---|
@@ -56,14 +56,14 @@ Gebruik de functie in de volgende tabel voor toegang tot certificaten in een pyt
 
 ## <a name="create-a-new-certificate"></a>Een nieuw certificaat maken
 
-Wanneer u een nieuw certificaat maakt, uploadt u een CER-of PFX-bestand naar Automation. Als u het certificaat als exporteerbaar markeert, kunt u het uit het Automation-certificaat archief overzetten. Als de service niet kan worden geëxporteerd, kan deze alleen worden gebruikt voor ondertekening binnen het runbook of de DSC-configuratie. Voor Automation is vereist dat het certificaat de provider **micro soft Enhanced RSA en AES Cryptographic Provider**heeft.
+Wanneer u een nieuw certificaat maakt, uploadt u een CER-of PFX-bestand naar Automation. Als u het certificaat als exporteerbaar markeert, kunt u het uit het Automation-certificaat archief overzetten. Als de service niet kan worden geëxporteerd, kan deze alleen worden gebruikt voor ondertekening binnen het runbook of de DSC-configuratie. Voor Automation is vereist dat het certificaat de provider **micro soft Enhanced RSA en AES Cryptographic Provider** heeft.
 
 ### <a name="create-a-new-certificate-with-the-azure-portal"></a>Een nieuw certificaat maken met de Azure Portal
 
 1. Klik vanuit uw Automation-account in het linkerdeel venster op **certificaten** onder **gedeelde bron**.
 1. Selecteer op de pagina **certificaten** de optie **een certificaat toevoegen**.
 1. Typ in het veld **naam** een naam voor het certificaat.
-1. Als u wilt bladeren naar een **CER** -of **PFX** -bestand, kiest u onder **een certificaat bestand uploaden**de optie **een bestand selecteren**. Als u een **PFX** -bestand selecteert, geeft u een wacht woord op en geeft u aan of het kan worden geëxporteerd.
+1. Als u wilt bladeren naar een **CER** -of **PFX** -bestand, kiest u onder **een certificaat bestand uploaden** de optie **een bestand selecteren**. Als u een **PFX** -bestand selecteert, geeft u een wacht woord op en geeft u aan of het kan worden geëxporteerd.
 1. Selecteer **maken** om het nieuwe certificaat activum op te slaan.
 
 ### <a name="create-a-new-certificate-with-powershell"></a>Een nieuw certificaat maken met Power shell
@@ -126,7 +126,9 @@ New-AzResourceGroupDeployment -Name NewCert -ResourceGroupName $ResourceGroupNam
 
 Gebruik de interne cmdlet om een certificaat op te halen `Get-AutomationCertificate` . U kunt de cmdlet [Get-AzAutomationCertificate](/powershell/module/Az.Automation/Get-AzAutomationCertificate) niet gebruiken, omdat deze informatie over de certificaat Asset retourneert, maar niet het certificaat zelf.
 
-### <a name="textual-runbook-example"></a>Voor beeld van een tekst-runbook
+### <a name="textual-runbook-examples"></a>Voor beelden van tekst-runbook
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 In het volgende voor beeld ziet u hoe u een certificaat toevoegt aan een Cloud service in een runbook. In dit voor beeld wordt het wacht woord opgehaald uit een versleutelde automatiserings variabele.
 
@@ -138,17 +140,7 @@ $certPwd = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
 ```
 
-### <a name="graphical-runbook-example"></a>Voor beeld van grafisch runbook
-
-Voeg een activiteit voor de interne `Get-AutomationCertificate` cmdlet toe aan een grafisch runbook door met de rechter muisknop op het certificaat in het deel venster Bibliotheek te klikken en **toevoegen aan canvas**te selecteren.
-
-![Scherm opname van het toevoegen van een certificaat aan het canvas](../media/certificates/automation-certificate-add-to-canvas.png)
-
-In de volgende afbeelding ziet u een voor beeld van het gebruik van een certificaat in een grafisch runbook.
-
-![Scherm afbeelding van een voor beeld van grafisch ontwerpen](../media/certificates/graphical-runbook-add-certificate.png)
-
-### <a name="python-2-example"></a>Python 2-voor beeld
+# <a name="python-2"></a>[Python 2](#tab/python2)
 
 Het volgende voor beeld laat zien hoe u toegang krijgt tot certificaten in Python 2-runbooks.
 
@@ -159,6 +151,30 @@ cert = automationassets.get_automation_certificate("AzureRunAsCertificate")
 # returns the binary cert content  
 print cert
 ```
+
+# <a name="python-3"></a>[Python 3](#tab/python3)
+
+Het volgende voor beeld laat zien hoe u toegang krijgt tot certificaten in Python 3-runbooks (preview-versie).
+
+```python
+# get a reference to the Azure Automation certificate
+cert = automationassets.get_automation_certificate("AzureRunAsCertificate")
+
+# returns the binary cert content  
+print (cert)
+```
+
+---
+
+### <a name="graphical-runbook-example"></a>Voor beeld van grafisch runbook
+
+Voeg een activiteit voor de interne `Get-AutomationCertificate` cmdlet toe aan een grafisch runbook door met de rechter muisknop op het certificaat in het deel venster Bibliotheek te klikken en **toevoegen aan canvas** te selecteren.
+
+![Scherm opname van het toevoegen van een certificaat aan het canvas](../media/certificates/automation-certificate-add-to-canvas.png)
+
+In de volgende afbeelding ziet u een voor beeld van het gebruik van een certificaat in een grafisch runbook.
+
+![Scherm afbeelding van een voor beeld van grafisch ontwerpen](../media/certificates/graphical-runbook-add-certificate.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

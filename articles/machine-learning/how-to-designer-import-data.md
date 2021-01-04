@@ -10,12 +10,12 @@ ms.author: keli19
 ms.date: 11/13/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: 5569b625b8f0c4ba890c0cd5b1700ca6fe83d968
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: a2cc0840b7ba4b26cf9f5b1219fc189230870774
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591985"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739855"
 ---
 # <a name="import-data-into-azure-machine-learning-designer"></a>Gegevens importeren in Azure Machine Learning Designer
 
@@ -47,8 +47,7 @@ Als de gegevens van de module-uitvoer een tabel indeling hebben, moet u ervoor k
  - **File dataset** registreert de uitvoermap van de module als een bestands gegevensset. De uitvoermap bevat een gegevens bestand en meta bestanden die door de ontwerp functie intern worden gebruikt. Selecteer deze optie als u de geregistreerde gegevensset in de ontwerp functie wilt blijven gebruiken. 
 
  - **In tabellaire gegevensset** wordt alleen het uitvoer gegevensbestand van de module geregistreerd als een gegevensset in tabel vorm. Deze indeling kan eenvoudig worden gebruikt door andere hulpprogram ma's, bijvoorbeeld in geautomatiseerde Machine Learning of de python-SDK. Selecteer deze optie als u van plan bent de geregistreerde gegevensset buiten de ontwerp functie te gebruiken.  
-
-
+ 
 
 ### <a name="use-a-dataset"></a>Een gegevensset gebruiken
 
@@ -62,6 +61,14 @@ Als u een bestands gegevensset registreert, is het uitvoer poort type van de geg
 > [!NOTE]
 > De ontwerp functie ondersteunt het [versie beheer](how-to-version-track-datasets.md)van de gegevensset. Geef de gegevensset-versie op in het eigenschappen paneel van de module gegevensset.
 
+### <a name="limitations"></a>Beperkingen 
+
+- Momenteel kunt u tabellaire gegevensset alleen visualiseren in de ontwerp functie. Als u een bestands gegevensset buiten Designer registreert, kunt u deze niet visualiseren op het canvas van de ontwerp functie.
+- Uw gegevensset wordt opgeslagen in het virtuele netwerk (VNet). Als u wilt visualiseren, moet u de werk ruimte beheerde identiteit van het gegevens archief inschakelen.
+    1. Ga naar de gerelateerde gegevens opslag en **Klik op referenties bijwerken** 
+     :::image type="content" source="./media/resource-known-issues/datastore-update-credential.png" alt-text="gegevens bijwerken":::
+    1. Selecteer **Ja** om de beheerde identiteit van de werk ruimte in te scha kelen.
+    :::image type="content" source="./media/resource-known-issues/enable-workspace-managed-identity.png" alt-text="Beheerde identiteit van werk ruimte inschakelen":::
 
 ## <a name="import-data-using-the-import-data-module"></a>Gegevens importeren met behulp van de module gegevens importeren
 

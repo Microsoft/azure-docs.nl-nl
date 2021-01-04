@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 1773e1345e9410f54a0364b586c3afca5b648b4c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: ab173f47ed09dbe77c12cad844d8a1f3654f4a9b
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341529"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734756"
 ---
 # <a name="file-integrity-monitoring-in-azure-security-center"></a>Controle van bestands integriteit in Azure Security Center
 Meer informatie over het configureren van FIM (File Integrity Monitoring) in Azure Security Center met behulp van deze procedure.
@@ -31,7 +31,7 @@ Meer informatie over het configureren van FIM (File Integrity Monitoring) in Azu
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md)vereist.<br>FIM uploadt gegevens naar de Log Analytics-werk ruimte. De gegevens kosten zijn van toepassing op basis van de hoeveelheid gegevens die u uploadt. Zie [log Analytics prijzen](https://azure.microsoft.com/pricing/details/log-analytics/) voor meer informatie.|
 |Vereiste rollen en machtigingen:|**Eigenaar van de werk ruimte** kan FIM inschakelen/uitschakelen (Zie [Azure-rollen voor log Analytics](/services-hub/health/azure-roles#azure-roles)) voor meer informatie.<br>**Lezer** kan resultaten weer geven.|
-|Clouds:|![Ja ](./media/icons/yes-icon.png) commerciële Clouds<br>![Ja ](./media/icons/yes-icon.png) US gov<br>![Geen ](./media/icons/no-icon.png) China gov, andere gov<br>Wordt alleen ondersteund in regio's waar de oplossing voor het bijhouden van wijzigingen van Azure Automation beschikbaar is.<br>Zie [ondersteunde regio's voor gekoppelde log Analytics-werk ruimte](../automation/how-to/region-mappings.md).<br>Meer [informatie over het bijhouden van wijzigingen](../automation/change-tracking/overview.md).|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja ](./media/icons/yes-icon.png) , National/soeverein (US gov, China gov, andere gov)<br>Wordt alleen ondersteund in regio's waar de oplossing voor het bijhouden van wijzigingen van Azure Automation beschikbaar is.<br>Zie [ondersteunde regio's voor gekoppelde log Analytics-werk ruimte](../automation/how-to/region-mappings.md).<br>Meer [informatie over het bijhouden van wijzigingen](../automation/change-tracking/overview.md).|
 |||
 
 ## <a name="what-is-fim-in-security-center"></a>Wat is FIM in Security Center?
@@ -124,7 +124,7 @@ FIM is alleen beschikbaar op de pagina's van Security Center in het Azure Portal
 
     - ![Pictogram inschakelen][3] Schakel FIM in op alle computers onder de werk ruimte en configureer de FIM-opties. Dit pictogram geeft aan dat FIM niet is ingeschakeld voor de werk ruimte.
 
-        :::image type="content" source="./media/security-center-file-integrity-monitoring/workspace-list-fim.png" alt-text="FIM starten":::
+        :::image type="content" source="./media/security-center-file-integrity-monitoring/workspace-list-fim.png" alt-text="FIM inschakelen voor een specifieke werk ruimte":::
 
 
     > [!TIP]
@@ -133,9 +133,9 @@ FIM is alleen beschikbaar op de pagina's van Security Center in het Azure Portal
 
 1. Selecteer **inschakelen**. De details van de werk ruimte, inclusief het aantal Windows-en Linux-computers onder de werk ruimte, worden weer gegeven.
 
-    :::image type="content" source="./media/security-center-file-integrity-monitoring/workspace-fim-status.png" alt-text="FIM starten":::
+    :::image type="content" source="./media/security-center-file-integrity-monitoring/workspace-fim-status.png" alt-text="Pagina Details van FIM-werk ruimte":::
 
-   De aanbevolen instellingen voor Windows en Linux worden ook vermeld.  Vouw **Windows-bestanden**, het **REGI ster**en de **Linux-bestanden** uit om de volledige lijst met aanbevolen items weer te geven.
+   De aanbevolen instellingen voor Windows en Linux worden ook vermeld.  Vouw **Windows-bestanden**, het **REGI ster** en de **Linux-bestanden** uit om de volledige lijst met aanbevolen items weer te geven.
 
 1. Schakel de selectie vakjes uit voor de aanbevolen entiteiten die u niet wilt bewaakt door FIM.
 
@@ -150,7 +150,7 @@ FIM is alleen beschikbaar op de pagina's van Security Center in het Azure Portal
 
 Het dash board **Bestands integriteits controle** wordt weer gegeven voor werk ruimten waarin FIM is ingeschakeld. Het FIM-dash board wordt geopend nadat u FIM hebt ingeschakeld in een werk ruimte of wanneer u een werk ruimte selecteert in het venster **Bestands integriteit controle** waarvoor FIM is ingeschakeld.
 
-:::image type="content" source="./media/security-center-file-integrity-monitoring/fim-dashboard.png" alt-text="FIM starten":::
+:::image type="content" source="./media/security-center-file-integrity-monitoring/fim-dashboard.png" alt-text="Het FIM-dash board en de verschillende informatie panelen":::
 
 In het FIM-dash board voor een werk ruimte worden de volgende details weer gegeven:
 
@@ -161,7 +161,7 @@ In het FIM-dash board voor een werk ruimte worden de volgende details weer gegev
 
 Selecteer **filter** aan de bovenkant van het dash board om de tijds periode te wijzigen waarvoor wijzigingen worden weer gegeven.
 
-:::image type="content" source="./media/security-center-file-integrity-monitoring/dashboard-filter.png" alt-text="FIM starten":::
+:::image type="content" source="./media/security-center-file-integrity-monitoring/dashboard-filter.png" alt-text="Tijds periode filter voor het FIM-dash board":::
 
 Op het tabblad **servers** worden de computers weer gegeven die aan deze werk ruimte rapporteren. Voor elke machine worden de volgende dashboard lijsten weer gegeven:
 
@@ -191,7 +191,7 @@ Op het tabblad **wijzigingen** (zie hieronder) worden alle wijzigingen voor de w
 
    ![Instellingen][11]
 
-   **Werkruimte configuratie** wordt geopend met de weer gave van drie tabbladen: **Windows-REGI ster**, **Windows-bestanden**en Linux- **bestanden**. Elk tabblad bevat de entiteiten die u in die categorie kunt bewerken. Voor elke entiteit die wordt vermeld, geeft Security Center aan of FIM is ingeschakeld (true) of niet is ingeschakeld (false).  Als u de entiteit bewerkt, kunt u FIM in-of uitschakelen.
+   **Werkruimte configuratie** wordt geopend met de weer gave van drie tabbladen: **Windows-REGI ster**, **Windows-bestanden** en Linux- **bestanden**. Elk tabblad bevat de entiteiten die u in die categorie kunt bewerken. Voor elke entiteit die wordt vermeld, geeft Security Center aan of FIM is ingeschakeld (true) of niet is ingeschakeld (false).  Als u de entiteit bewerkt, kunt u FIM in-of uitschakelen.
 
    ![Werkruimteconfiguratie][12]
 
@@ -208,7 +208,7 @@ Onder **bewerken voor wijzigingen bijhouden** kunt u het volgende doen:
 
 ## <a name="add-a-new-entity-to-monitor"></a>Een nieuwe entiteit toevoegen om te bewaken
 1. Ga terug naar het **dash board bestands integriteit controleren** en selecteer de **instellingen** bovenaan. **Werkruimte configuratie** wordt geopend.
-2. Selecteer onder **werkruimte configuratie**het tabblad voor het type entiteit dat u wilt toevoegen: Windows-REGI ster, Windows-bestanden of Linux-bestanden. In dit voor beeld hebben we **Linux-bestanden**geselecteerd.
+2. Selecteer onder **werkruimte configuratie** het tabblad voor het type entiteit dat u wilt toevoegen: Windows-REGI ster, Windows-bestanden of Linux-bestanden. In dit voor beeld hebben we **Linux-bestanden** geselecteerd.
 
    ![Een nieuw item toevoegen om te bewaken][14]
 
@@ -224,11 +224,11 @@ Onder **bewerken voor wijzigingen bijhouden** kunt u het volgende doen:
 
    ![Een werk ruimte selecteren waar FIM is ingeschakeld][16]
 
-3. Selecteer **instellingen**onder Bestands integriteit controleren.
+3. Selecteer **instellingen** onder Bestands integriteit controleren.
 
    ![Instellingen selecteren][17]
 
-4. Selecteer onder **werkruimte configuratie**een groep waarvoor **ingeschakeld** is ingesteld op waar.
+4. Selecteer onder **werkruimte configuratie** een groep waarvoor **ingeschakeld** is ingesteld op waar.
 
    ![Werkruimte configuratie][18]
 
@@ -251,7 +251,7 @@ U kunt FIM uitschakelen. FIM maakt gebruik van de Azure Wijzigingen bijhouden-op
 
 1. Als u FIM wilt uitschakelen, keert u terug naar het dash board **File Integrity Monitoring** .
 2. Selecteer een werkruimte.
-3. Selecteer onder **Bestands integriteit controleren**de optie **uitschakelen**.
+3. Selecteer onder **Bestands integriteit controleren** de optie **uitschakelen**.
 
    ![FIM uitschakelen][20]
 

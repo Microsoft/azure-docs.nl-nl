@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5be0d45843eed8c7c0d7d9b6dc4655de01e914c3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d064eb0b748c361b76139b1a21d25cec8996e818
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461449"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734773"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Variabelen in Azure Automation beheren
 
@@ -26,7 +26,7 @@ Automation-variabelen zijn handig voor de volgende scenario's:
 
 Azure Automation persistente variabelen en maakt deze beschikbaar, zelfs als een runbook-of DSC-configuratie mislukt. Dit gedrag maakt het mogelijk dat een runbook of DSC-configuratie een waarde instelt die vervolgens wordt gebruikt door een ander runbook of door hetzelfde runbook of de DSC-configuratie de volgende keer dat deze wordt uitgevoerd.
 
-Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelings status niet meer wijzigen zonder de variabele opnieuw te maken. Als u met Automation-account variabelen gevoelige gegevens opslaat die nog niet zijn versleuteld, moet u deze verwijderen en opnieuw maken als versleutelde variabelen. Een Azure Security Center aanbeveling is het versleutelen van alle Azure Automation variabelen, zoals beschreven in de variabelen van het [Automation-account moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-computeapp). Als u niet-versleutelde variabelen hebt die u wilt uitsluiten van deze beveiligings aanbeveling, raadpleegt u [een resource uitsluiten van aanbevelingen en beveiligde scores](../../security-center/exempt-resource.md) om een uitzonderings regel te maken.
+Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelingsstatus ervan niet meer wijzigen zonder de variabele opnieuw te maken. Als u met Automation-accountvariabelen gevoelige gegevens opslaat die nog niet zijn versleuteld, moet u deze verwijderen en opnieuw maken als versleutelde variabelen. Azure Security Center raadt aan om alle Azure Automation-variabelen te versleutelen, zoals beschreven in [Automation-accountvariabelen moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-computeapp). Als u niet-versleutelde variabelen hebt die u wilt uitsluiten van deze beveiligingsaanbeveling, raadpleegt u [Een resource uitsluiten van aanbevelingen en de beveiligingsscore](../../security-center/exempt-resource.md) om een uitzonderingsregel te maken.
 
 >[!NOTE]
 >Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Azure Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Azure Automation slaat de sleutel op in de door het systeem beheerde Key Vault. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen.
@@ -38,7 +38,7 @@ Wanneer u een variabele met de Azure Portal maakt, moet u een gegevens type in d
 * Tekenreeks
 * Geheel getal
 * DateTime
-* Boolean
+* Booleaans
 * Null
 
 De variabele is niet beperkt tot het opgegeven gegevens type. U moet de variabele instellen met behulp van Windows Power shell als u een waarde van een ander type wilt opgeven. Als u opgeeft `Not defined` , wordt de waarde van de variabele ingesteld op null. U moet de waarde instellen met de cmdlet [set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) of de interne `Set-AutomationVariable` cmdlet.
@@ -80,11 +80,11 @@ $mytestencryptvar = Get-AutomationVariable -Name TestVariable
 Write-output "The encrypted value of the variable is: $mytestencryptvar"
 ```
 
-## <a name="python-2-functions-to-access-variables"></a>Python 2-functies voor toegang tot variabelen
+## <a name="python-functions-to-access-variables"></a>Python-functies voor toegang tot variabelen
 
-De functies in de volgende tabel worden gebruikt voor toegang tot variabelen in een python 2-runbook.
+De functies in de volgende tabel worden gebruikt voor toegang tot variabelen in een python 2-en 3-runbook. Python 3-runbooks zijn momenteel beschikbaar als preview-versie.
 
-|Python 2-functies|Beschrijving|
+|Python-functies|Beschrijving|
 |:---|:---|
 |`automationassets.get_automation_variable`|Hiermee haalt u de waarde van een bestaande variabele op. |
 |`automationassets.set_automation_variable`|Hiermee stelt u de waarde voor een bestaande variabele in. |
@@ -135,9 +135,10 @@ $vmValue = Get-AzAutomationVariable -ResourceGroupName "ResourceGroup01" `
 $vmName = $vmValue.Name
 $vmExtensions = $vmValue.Extensions
 ```
+
 ## <a name="textual-runbook-examples"></a>Voor beelden van tekst-runbook
 
-### <a name="retrieve-and-set-a-simple-value-from-a-variable"></a>Een eenvoudige waarde uit een variabele ophalen en instellen
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 In het volgende voor beeld ziet u hoe u een variabele kunt instellen en ophalen in een tekst runbook. In dit voor beeld wordt ervan uitgegaan dat de `NumberOfIterations` variabele integer een naam en `NumberOfRunnings` een teken reeks met de naam heeft gemaakt `SampleMessage` .
 
@@ -154,7 +155,7 @@ for ($i = 1; $i -le $NumberOfIterations; $i++) {
 Set-AzAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
 ```
 
-### <a name="retrieve-and-set-a-variable-in-a-python-2-runbook"></a>Een variabele ophalen en instellen in een python 2-runbook
+# <a name="python-2"></a>[Python 2](#tab/python2)
 
 Het volgende voor beeld laat zien hoe u een variabele kunt ophalen, een variabele kunt instellen en een uitzonde ring kunt afhandelen voor een niet-bestaande variabele in een python 2-runbook.
 
@@ -177,6 +178,32 @@ try:
 except AutomationAssetNotFound:
     print "variable not found"
 ```
+
+# <a name="python-3"></a>[Python 3](#tab/python3)
+
+Het volgende voor beeld laat zien hoe u een variabele kunt ophalen, een variabele kunt instellen en een uitzonde ring kunt afhandelen voor een niet-bestaande variabele in een python 3-runbook (preview-versie).
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a variable
+value = automationassets.get_automation_variable("test-variable")
+print value
+
+# set a variable (value can be int/bool/string)
+automationassets.set_automation_variable("test-variable", True)
+automationassets.set_automation_variable("test-variable", 4)
+automationassets.set_automation_variable("test-variable", "test-string")
+
+# handle a non-existent variable exception
+try:
+    value = automationassets.get_automation_variable("nonexisting variable")
+except AutomationAssetNotFound:
+    print ("variable not found")
+```
+
+---
 
 ## <a name="graphical-runbook-examples"></a>Voor beelden van grafische runbook
 

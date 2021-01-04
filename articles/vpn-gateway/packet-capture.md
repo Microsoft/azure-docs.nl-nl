@@ -5,14 +5,14 @@ services: vpn-gateway
 author: radwiv
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 12/2/2020
 ms.author: radwiv
-ms.openlocfilehash: c6aa2b63344ef629d55f5a4efb66e4ee0e55975e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: caa9a0869d7d4bca58b91a0c682177e1408f8300
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661032"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733803"
 ---
 # <a name="configure-packet-capture-for-vpn-gateways"></a>Pakket opname voor VPN-gateways configureren
 
@@ -31,6 +31,7 @@ De volgende voor beelden van JSON en een JSON-schema geven uitleg over elke eige
 - Het is niet mogelijk om meerdere pakket opnames voor de gateway tegelijk uit te voeren.
 - Het is niet mogelijk om meerdere pakket opnames op één verbinding tegelijk uit te voeren. U kunt meerdere pakket opnames op verschillende verbindingen tegelijk uitvoeren.
 - U kunt Maxi maal vijf pakket opnames per gateway tegelijk uitvoeren. Deze pakket opnames kunnen bestaan uit een combi natie van pakket opnames voor de hele gateway en pakket opnames per verbinding.
+- De eenheid voor MaxPacketBufferSize is bytes en MaxFileSize is MB
 
 ### <a name="example-json"></a>Voor beeld JSON
 ```JSON-interactive

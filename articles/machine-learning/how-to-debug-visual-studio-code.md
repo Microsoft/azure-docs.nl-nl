@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/30/2020
-ms.openlocfilehash: a9d20732c3ae08718c400faff44137000e98fffd
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: e572f1f6a9452ccab9deddb62a5e219a81df5d47
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629425"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739991"
 ---
 # <a name="interactive-debugging-with-visual-studio-code"></a>Interactieve fout opsporing met Visual Studio code
 
@@ -536,4 +536,10 @@ docker stop debug
 
 Nu u versus externe code hebt ingesteld, kunt u een reken instantie gebruiken als externe Compute van VS code om uw code interactief te debuggen. 
 
-[Zelf studie: uw eerste ml-model trainen](tutorial-1st-experiment-sdk-train.md) laat zien hoe u een reken instantie met een geïntegreerde notebook kunt gebruiken.
+Meer informatie over het oplossen van problemen:
+
+* [Implementatie van lokaal model](how-to-troubleshoot-deployment-local.md)
+* [Implementatie van extern model](how-to-troubleshoot-deployment.md)
+* [Machine Learning-pijplijnen](how-to-debug-pipelines.md)
+* [ParallelRunStep](how-to-debug-parallel-run-step.md)
+

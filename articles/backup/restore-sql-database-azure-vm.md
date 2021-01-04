@@ -3,12 +3,12 @@ title: SQL Server data bases herstellen op een virtuele Azure-machine
 description: In dit artikel wordt beschreven hoe u SQL Server-data bases herstelt die worden uitgevoerd op een virtuele Azure-machine en waarvan een back-up is gemaakt met Azure Backup. U kunt ook meerdere regio's herstellen gebruiken om uw data bases terug te zetten naar een secundaire regio.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: bbafd179f4b2f4e91a4bf19da41ffc14e4775e5c
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 7dd8d8d54fa7d33bb4a0935357597d19dd2368c5
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172170"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734399"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>SQL Server-databases herstellen in Azure-VM's
 
@@ -23,12 +23,13 @@ Azure Backup kunt SQL Server-data bases die worden uitgevoerd op virtuele Azure-
 - Herstel naar een specifieke datum of tijd (naar de seconde) met behulp van back-ups van transactie Logboeken. Azure Backup bepaalt automatisch de juiste volledige differentiële back-up en de keten van logboek back-ups die moeten worden hersteld op basis van de geselecteerde tijd.
 - Herstel een specifieke volledige of differentiële back-up om te herstellen naar een specifiek herstel punt.
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="restore-prerequisites"></a>Vereisten herstellen
 
 Let op het volgende voordat u een Data Base herstelt:
 
 - U kunt de database herstellen naar een exemplaar van SQL Server in dezelfde Azure-regio.
 - De doel server moet zijn geregistreerd bij dezelfde kluis als de bron.
+- Als er meerdere exemplaren worden uitgevoerd op een server, moeten alle exemplaren actief zijn. Anders wordt de server niet weer gegeven in de lijst met doel servers, zodat u de Data Base naar kunt herstellen. Raadpleeg [de stappen voor probleem oplossing](backup-sql-server-azure-troubleshoot.md#faulty-instance-in-a-vm-with-multiple-sql-server-instances)voor meer informatie.
 - Als u een met TDE versleutelde data base wilt herstellen naar een andere SQL Server, moet u [het certificaat eerst herstellen naar de doel server](/sql/relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server).
 - [CDC](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server) ingeschakelde data bases moeten worden hersteld met de optie [herstellen als bestanden](#restore-as-files) .
 - Voordat u de data base ' Master ' herstelt, start u het SQL Server-exemplaar in de modus voor één gebruiker met behulp van de opstart optie **-m AzureWorkloadBackup**.
@@ -36,7 +37,6 @@ Let op het volgende voordat u een Data Base herstelt:
   - Alleen de opgegeven client naam kan de verbinding openen.
 - Voor alle systeem databases (model, Master, msdb) stopt u de SQL Server Agent-service voordat u de herstel bewerking start.
 - Sluit alle toepassingen die mogelijk proberen verbinding te maken met een van deze data bases.
-- Als er meerdere exemplaren worden uitgevoerd op een server, moeten alle instanties anders worden uitgevoerd. Als u de Data Base wilt herstellen, wordt de server niet weer gegeven in de lijst met doel servers.
 
 ## <a name="restore-a-database"></a>Een database herstellen
 
@@ -69,7 +69,7 @@ Herstel als volgt:
 
     ![Selecteer herstellen](./media/backup-azure-sql-database/restore-db.png)
 
-7. Geef in **configuratie herstellen**op waar (of hoe) de gegevens moeten worden teruggezet:
+7. Geef in **configuratie herstellen** op waar (of hoe) de gegevens moeten worden teruggezet:
    - **Alternatieve locatie**: herstel de Data Base op een andere locatie en behoud de oorspronkelijke bron database.
    - **Db overschrijven**: herstel de gegevens naar hetzelfde SQL Server exemplaar als de oorspronkelijke bron. Met deze optie wordt de oorspronkelijke database overschreven.
 
@@ -85,7 +85,7 @@ Herstel als volgt:
 1. Selecteer de SQL Server naam en het exemplaar waarnaar u de Data Base wilt herstellen.
 1. Geef in het vak **Herstelde databasenaam** de naam van de doeldatabase op.
 1. Indien van toepassing, selecteert u **overschrijven als de data base met dezelfde naam al bestaat in het geselecteerde SQL-exemplaar**.
-1. Selecteer **herstel punt**en selecteer of u wilt [herstellen naar een bepaald tijdstip](#restore-to-a-specific-point-in-time) of dat u wilt [herstellen naar een specifiek herstel punt](#restore-to-a-specific-restore-point).
+1. Selecteer **herstel punt** en selecteer of u wilt [herstellen naar een bepaald tijdstip](#restore-to-a-specific-point-in-time) of dat u wilt [herstellen naar een specifiek herstel punt](#restore-to-a-specific-restore-point).
 
     ![Herstel punt selecteren](./media/backup-azure-sql-database/select-restore-point.png)
 
@@ -105,7 +105,7 @@ Herstel als volgt:
 
 ### <a name="restore-and-overwrite"></a>Herstellen en overschrijven
 
-1. Selecteer in het menu **configuratie herstellen** onder **herstel van herstellen**de optie **Data Base overschrijven**  >  **OK**.
+1. Selecteer in het menu **configuratie herstellen** onder **herstel van herstellen** de optie **Data Base overschrijven**  >  **OK**.
 
     ![DB overschrijven selecteren](./media/backup-azure-sql-database/restore-configuration-overwrite-db.png)
 
@@ -134,7 +134,7 @@ Als u de back-upgegevens wilt herstellen als. bak-bestanden in plaats van een Da
 
     ![Herstellen als bestanden selecteren](./media/backup-azure-sql-database/restore-as-files.png)
 
-1. Selecteer **herstel punt**en selecteer of u wilt [herstellen naar een bepaald tijdstip](#restore-to-a-specific-point-in-time) of dat u wilt [herstellen naar een specifiek herstel punt](#restore-to-a-specific-restore-point).
+1. Selecteer **herstel punt** en selecteer of u wilt [herstellen naar een bepaald tijdstip](#restore-to-a-specific-point-in-time) of dat u wilt [herstellen naar een specifiek herstel punt](#restore-to-a-specific-restore-point).
 
 1. Alle back-upbestanden die zijn gekoppeld aan het geselecteerde herstel punt, worden in het doelpad gedumpt. U kunt de bestanden herstellen als een Data Base op elke computer waarop deze zich bevinden met behulp van SQL Server Management Studio.
 

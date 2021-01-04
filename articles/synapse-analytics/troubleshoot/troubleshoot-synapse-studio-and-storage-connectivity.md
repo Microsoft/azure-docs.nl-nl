@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: cee6d030a9639a7203a32a3c0957733cecb1f8b6
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8cf440a517c1a3496b3df438fdd0d2534609908f
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445320"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733103"
 ---
 # <a name="troubleshoot-connectivity-between-azure-synapse-analytics-synapse-studio-and-storage"></a>Problemen met de connectiviteit tussen Azure Synapse Analytics Synapse Studio en opslag oplossen
 
@@ -24,7 +24,11 @@ Als uw opslag account niet over de juiste machtigingen beschikt, kunt u de opsla
 
 Het gedetailleerde fout bericht kan verschillen, maar de algemene betekenis van het fout bericht is: "deze aanvraag is niet gemachtigd om deze bewerking uit te voeren.".
 
-![Probleem met opslag connectiviteit 1](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue.1.png)
+In het gekoppelde opslag knooppunt:  
+![Probleem met opslag connectiviteit 1](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-1.png)
+
+In het knoop punt opslag container:  
+![Probleem met opslag connectiviteit 1a](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-1a.png)
 
 **Oplossing**: zie [de Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](../../storage/common/storage-auth-aad-rbac-portal.md) om uw account toe te wijzen aan de juiste rol.
 
@@ -33,7 +37,11 @@ Het gedetailleerde fout bericht kan verschillen, maar de algemene betekenis van 
 
 Wanneer u de pijl selecteert om de opslag structuur uit te breiden in ' gegevens '--> ' gekoppeld ' in Synapse Studio, ziet u mogelijk het probleem ' REQUEST_SEND_ERROR ' in het linkerdeel venster. Bekijk de scherm opname van het probleem symptoom hieronder:
 
-![Probleem met opslag connectiviteit 2](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue.2.png)
+In het gekoppelde opslag knooppunt:  
+![Probleem met opslag connectiviteit 2](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-2.png)
+
+In het knoop punt opslag container:  
+![Opslag connectiviteits probleem 2a](media/troubleshoot-synapse-studio-and-storage-connectivity/storage-connectivity-issue-2a.png)
 
 Er kunnen verschillende mogelijke redenen zijn om dit probleem op te lossen:
 
@@ -51,6 +59,7 @@ U kunt de opdracht ' nslookup \<storage-account-name\> . DFS.core.Windows.net ' 
 
 * De opslag resource die u wilt openen, is Azure Data Lake Storage Gen2 en bevindt zich achter een firewall en een vNet (waarbij het persoonlijke opslag eindpunt is geconfigureerd).
 * De container resource die u wilt openen, is verwijderd of bestaat niet.
+* Kruising-Tenant: de werkruimte Tenant die gebruiker heeft gebruikt voor aanmelding is niet hetzelfde als de Tenant van het opslag account. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

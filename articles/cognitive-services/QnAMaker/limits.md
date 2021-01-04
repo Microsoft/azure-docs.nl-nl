@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/09/2020
-ms.openlocfilehash: 1a384eed542d0c09a973e0e68288f9fc1660cc96
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: b3dca3617e2fb7ccdff870041374e9158498c9d1
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380895"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97708937"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limieten en grenzen voor de Knowledge Base QnA Maker
 
@@ -82,10 +82,10 @@ De lengte en de acceptabele tekens voor de naam en waarde van de meta gegevens w
 
 ## <a name="knowledge-base-content-limits"></a>Limieten voor Knowledge Base-inhoud
 Algemene limieten voor de inhoud van de Knowledge Base:
-* Lengte van antwoord tekst: 25.000
-* Lengte van de vraag tekst: 1.000
-* Lengte van de tekst van de meta gegevens sleutel: 100
-* Lengte van tekst van meta gegevens waarde: 500
+* Lengte van antwoord tekst: 25.000 tekens
+* Lengte van de vraag tekst: 1.000 tekens
+* Lengte van de tekst van de meta gegevens sleutel: 100 tekens
+* Lengte van tekst van meta gegevens waarde: 500 tekens
 * Ondersteunde tekens voor de naam van de meta gegevens: alfabetten, cijfers en `_`
 * Ondersteunde tekens voor de meta gegevens waarde: alle behalve `:` en `|`
 * Lengte van bestands naam: 200

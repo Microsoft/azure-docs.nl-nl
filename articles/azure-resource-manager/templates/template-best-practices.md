@@ -1,18 +1,18 @@
 ---
 title: Aanbevolen procedures voor sjablonen
-description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen. Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
+description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen (ARM-sjablonen). Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: c62bde8fc8cfc79330d13b7b2ff4f778dadf1339
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 85d58098508d5ac7cad6c1cb3cb68ad6c7f179f9
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497976"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724983"
 ---
 # <a name="arm-template-best-practices"></a>Aanbevolen procedures voor ARM-sjablonen
 
-Dit artikel laat u zien hoe u aanbevolen procedures kunt gebruiken bij het maken van uw ARM-sjabloon. Met deze aanbevelingen kunt u veelvoorkomende problemen voor komen wanneer u een ARM-sjabloon gebruikt om een oplossing te implementeren.
+Dit artikel laat u zien hoe u aanbevolen procedures kunt gebruiken bij het maken van uw Azure Resource Manager sjabloon (ARM-sjabloon). Met deze aanbevelingen kunt u veelvoorkomende problemen voor komen wanneer u een ARM-sjabloon gebruikt om een oplossing te implementeren.
 
 ## <a name="template-limits"></a>Limieten voor sjablonen
 
@@ -26,7 +26,7 @@ U bent ook beperkt tot:
 * 64 uitvoer waarden
 * 24.576 tekens in een sjabloon expressie
 
-U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Zie voor meer informatie [gekoppelde sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/building-blocks/extending-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.
+U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Zie voor meer informatie [gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/building-blocks/extending-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.
 
 ## <a name="resource-group"></a>Resourcegroep
 
@@ -48,32 +48,32 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
 
 * Gebruik para meters voor resource namen die u voor eenvoudige identificatie wilt opgeven.
 
-* Geef een beschrijving op van elke para meter in de meta gegevens:
+* Geef een beschrijving op van elke para meter in de meta gegevens.
 
-   ```json
-   "parameters": {
-       "storageAccountType": {
-           "type": "string",
-           "metadata": {
-               "description": "The type of the new storage account created to store the VM disks."
-           }
-       }
-   }
-   ```
-
-* Standaard waarden definiëren voor para meters die niet gevoelig zijn. Als u een standaard waarde opgeeft, is het eenvoudiger om de sjabloon te implementeren en zien gebruikers van uw sjabloon een voor beeld van een geschikte waarde. Een standaard waarde voor een para meter moet geldig zijn voor alle gebruikers in de standaard implementatie configuratie. 
-   
-   ```json
-   "parameters": {
-        "storageAccountType": {
-            "type": "string",
-            "defaultValue": "Standard_GRS",
-            "metadata": {
-                "description": "The type of the new storage account created to store the VM disks."
-            }
+    ```json
+    "parameters": {
+      "storageAccountType": {
+        "type": "string",
+        "metadata": {
+          "description": "The type of the new storage account created to store the VM disks."
         }
-   }
-   ```
+      }
+    }
+    ```
+
+* Standaard waarden definiëren voor para meters die niet gevoelig zijn. Als u een standaard waarde opgeeft, is het eenvoudiger om de sjabloon te implementeren en zien gebruikers van uw sjabloon een voor beeld van een geschikte waarde. Een standaard waarde voor een para meter moet geldig zijn voor alle gebruikers in de standaard implementatie configuratie.
+
+    ```json
+    "parameters": {
+      "storageAccountType": {
+        "type": "string",
+        "defaultValue": "Standard_GRS",
+        "metadata": {
+          "description": "The type of the new storage account created to store the VM disks."
+        }
+      }
+    }
+    ```
 
 * Als u een optionele para meter wilt opgeven, gebruikt u geen lege teken reeks als standaard waarde. Gebruik in plaats daarvan een letterlijke waarde of een taal expressie om een waarde te maken.
 
@@ -84,7 +84,7 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
      "metadata": {
        "description": "Name of the storage account"
      }
-   },
+   }
    ```
 
 * Gebruik `allowedValues` spaarzaam. Gebruik deze alleen wanneer u moet controleren of sommige waarden niet zijn opgenomen in de toegestane opties. Als u `allowedValues` te breed gebruikt, kunt u geldige implementaties blok keren door de lijst niet up-to-date te houden.
@@ -95,18 +95,18 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
 
 * Gebruik altijd para meters voor gebruikers namen en wacht woorden (of geheimen).
 
-* Gebruiken `securestring` voor alle wacht woorden en geheimen. Gebruik het type als u gevoelige gegevens doorgeeft in een JSON-object `secureObject` . Sjabloon parameters met een beveiligde teken reeks of beveiligde object typen kunnen niet worden gelezen na het implementeren van de resource. 
-   
-   ```json
-   "parameters": {
-       "secretValue": {
-           "type": "securestring",
-           "metadata": {
-               "description": "The value of the secret to store in the vault."
-           }
-       }
-   }
-   ```
+* Gebruiken `securestring` voor alle wacht woorden en geheimen. Gebruik het type als u gevoelige gegevens doorgeeft in een JSON-object `secureObject` . Sjabloon parameters met een beveiligde teken reeks of beveiligde object typen kunnen niet worden gelezen na het implementeren van de resource.
+
+    ```json
+    "parameters": {
+      "secretValue": {
+        "type": "securestring",
+        "metadata": {
+          "description": "The value of the secret to store in the vault."
+        }
+      }
+    }
+    ```
 
 * Geef geen standaard waarden op voor gebruikers namen, wacht woorden of een waarde die een `secureString` type vereist.
 
@@ -114,7 +114,7 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
 
 ### <a name="location-recommendations-for-parameters"></a>Aanbevelingen voor de locatie van para meters
 
-* Gebruik een para meter om de locatie voor resources op te geven en stel de standaard waarde in op `resourceGroup().location` . Als u een locatie parameter opgeeft, kunnen gebruikers van de sjabloon een locatie opgeven waarvoor ze gemachtigd zijn om te implementeren.
+* Gebruik een para meter om de locatie voor resources op te geven en stel de standaard waarde in op `resourceGroup().location` . Als u een locatie parameter opgeeft, kunnen gebruikers van de sjabloon een locatie opgeven waar ze gemachtigd zijn om resources te implementeren.
 
    ```json
    "parameters": {
@@ -125,7 +125,7 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
          "description": "The location in which the resources should be deployed."
        }
      }
-   },
+   }
    ```
 
 * Geef geen `allowedValues` voor de locatie parameter op. De locaties die u opgeeft, zijn mogelijk niet beschikbaar in alle Clouds.
@@ -144,7 +144,7 @@ De volgende informatie kan nuttig zijn wanneer u met [variabelen](template-varia
 
 * Gebruik variabelen voor waarden die u maakt op basis van een complexe schikking van sjabloon functies. De sjabloon is gemakkelijker te lezen wanneer de complexe expressie alleen in variabelen wordt weer gegeven.
 
-* U kunt de functie [Reference](template-functions-resource.md#reference) niet gebruiken in de sectie **Varia bles** van de sjabloon. De **verwijzings** functie heeft zijn waarde afgeleid van de runtime status van de resource. Variabelen worden echter opgelost tijdens het eerst parseren van de sjabloon. Bouw waarden die de **verwijzings** functie rechtstreeks nodig hebben in het gedeelte **resources** of **uitvoer** van de sjabloon.
+* U kunt de functie [Reference](template-functions-resource.md#reference) niet gebruiken in de `variables` sectie van de sjabloon. De `reference` functie heeft zijn waarde afgeleid van de runtime status van de resource. Variabelen worden echter opgelost tijdens het eerst parseren van de sjabloon. Construct waarden die de `reference` functie rechtstreeks nodig hebben in `resources` de `outputs` sectie of van de sjabloon.
 
 * Variabelen voor resource namen bevatten die uniek moeten zijn.
 
@@ -166,7 +166,7 @@ Gebruik geen variabelen voor de API-versie. Gebruik met name niet de [functie pr
 
 Wanneer u wilt bepalen welke [afhankelijkheden](define-resource-dependency.md) er moeten worden ingesteld, gebruikt u de volgende richt lijnen:
 
-* Gebruik de functie **Reference** en geef de naam van de resource door om een impliciete afhankelijkheid in te stellen tussen resources die een eigenschap moeten delen. Voeg geen expliciet `dependsOn` element toe wanneer u al een impliciete afhankelijkheid hebt gedefinieerd. Deze aanpak vermindert het risico van overbodige afhankelijkheden. Zie [impliciete afhankelijkheid](define-resource-dependency.md#reference-and-list-functions)voor een voor beeld van het instellen van een impliciete afhankelijkheid.
+* Gebruik de `reference` functie en geef de resource naam door om een impliciete afhankelijkheid in te stellen tussen resources die een eigenschap moeten delen. Voeg geen expliciet `dependsOn` element toe wanneer u al een impliciete afhankelijkheid hebt gedefinieerd. Deze aanpak vermindert het risico van overbodige afhankelijkheden. Zie [Naslag informatie en lijst functies](define-resource-dependency.md#reference-and-list-functions)voor een voor beeld van het instellen van een impliciete afhankelijkheid.
 
 * Stel een onderliggende bron in die afhankelijk is van de bovenliggende resource.
 
@@ -180,109 +180,108 @@ Wanneer u wilt bepalen welke [afhankelijkheden](define-resource-dependency.md) e
 
 De volgende informatie kan nuttig zijn wanneer u met [resources](template-syntax.md#resources)werkt:
 
-* Om andere inzenders inzicht te geven in het doel van de resource, geeft u **opmerkingen** op voor elke resource in de sjabloon:
-   
-   ```json
-   "resources": [
-     {
-         "name": "[variables('storageAccountName')]",
-         "type": "Microsoft.Storage/storageAccounts",
-         "apiVersion": "2019-06-01",
-         "location": "[resourceGroup().location]",
-         "comments": "This storage account is used to store the VM disks.",
-         ...
-     }
-   ]
-   ```
+* Geef `comments` voor elke resource in de sjabloon op om andere inzenders inzicht te geven in het doel van de resource.
 
-* Als u een *openbaar eind punt* in uw sjabloon gebruikt (zoals een openbaar eind punt voor Azure Blob-opslag), hoeft u de naam ruimte *niet vast te coderen* . Gebruik de functie **Reference** om de naam ruimte dynamisch op te halen. U kunt deze methode gebruiken om de sjabloon te implementeren in verschillende open bare naam ruimte omgevingen zonder het eind punt in de sjabloon hand matig te wijzigen. Stel de API-versie in op de versie die u gebruikt voor het opslag account in uw sjabloon:
-   
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
-       }
-   }
-   ```
-   
-   Als het opslag account is geïmplementeerd in dezelfde sjabloon die u maakt en de naam van het opslag account niet wordt gedeeld met een andere resource in de sjabloon, hoeft u de naam ruimte van de provider of de apiVersion niet op te geven als u verwijst naar de bron. In het volgende voor beeld ziet u de vereenvoudigde syntaxis:
-   
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
-       }
-   }
-   ```
-     
-   U kunt ook verwijzen naar een bestaand opslag account dat zich in een andere resource groep bevindt:
+    ```json
+    "resources": [
+      {
+        "name": "[variables('storageAccountName')]",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2019-06-01",
+        "location": "[resourceGroup().location]",
+        "comments": "This storage account is used to store the VM disks.",
+          ...
+      }
+    ]
+    ```
 
-   ```json
-   "diagnosticsProfile": {
-       "bootDiagnostics": {
-           "enabled": "true",
-           "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
-       }
-   }
-   ```
+* Als u een *openbaar eind punt* in uw sjabloon gebruikt (zoals een openbaar eind punt voor Azure Blob-opslag), hoeft u de naam ruimte *niet vast te coderen* . Gebruik de `reference` functie om de naam ruimte dynamisch op te halen. U kunt deze methode gebruiken om de sjabloon te implementeren in verschillende open bare naam ruimte omgevingen zonder het eind punt in de sjabloon hand matig te wijzigen. Stel de API-versie in op de versie die u gebruikt voor het opslag account in uw sjabloon.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
+      }
+    }
+    ```
+
+   Als het opslag account is geïmplementeerd in dezelfde sjabloon die u maakt en de naam van het opslag account niet wordt gedeeld met een andere resource in de sjabloon, hoeft u de naam ruimte van de provider niet op te geven of de `apiVersion` Wanneer u naar de bron verwijst. In het volgende voor beeld wordt de vereenvoudigde syntaxis weer gegeven.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
+      }
+    }
+    ```
+
+   U kunt ook verwijzen naar een bestaand opslag account in een andere resource groep.
+
+    ```json
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": "true",
+        "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
+      }
+    }
+    ```
 
 * Wijs alleen open bare IP-adressen toe aan een virtuele machine wanneer deze vereist zijn voor een toepassing. Als u verbinding wilt maken met een virtuele machine (VM) voor fout opsporing of voor beheer-of beheer doeleinden, gebruikt u binnenkomende NAT-regels, een virtuele netwerk gateway of een JumpBox.
-   
+
      Zie voor meer informatie over het maken van verbinding met virtuele machines:
-   
+
    * [Vm's uitvoeren voor een architectuur met meerdere lagen in azure](/azure/architecture/reference-architectures/n-tier/n-tier-sql-server)
    * [WinRM-toegang instellen voor virtuele machines in Azure Resource Manager](../../virtual-machines/windows/winrm.md)
    * [Externe toegang tot uw virtuele machine toestaan met behulp van de Azure Portal](../../virtual-machines/windows/nsg-quickstart-portal.md)
    * [Externe toegang tot uw virtuele machine toestaan met behulp van Power shell](../../virtual-machines/windows/nsg-quickstart-powershell.md)
    * [Externe toegang tot uw virtuele Linux-machine toestaan met behulp van Azure CLI](../../virtual-machines/linux/nsg-quickstart.md)
 
-* De eigenschap **domeinnaam label** voor open bare IP-adressen moet uniek zijn. De **domeinnaam label** -waarde moet tussen de 3 en 63 tekens lang zijn en de regels volgen die zijn opgegeven met deze reguliere expressie: `^[a-z][a-z0-9-]{1,61}[a-z0-9]$` . Omdat de functie **Unique string** een teken reeks genereert die 13 tekens lang is, is de para meter **dnsPrefixString** beperkt tot 50 tekens:
+* De `domainNameLabel` eigenschap voor open bare IP-adressen moet uniek zijn. De `domainNameLabel` waarde moet tussen de 3 en 63 tekens lang zijn en de regels volgen die zijn opgegeven met deze reguliere expressie: `^[a-z][a-z0-9-]{1,61}[a-z0-9]$` . Omdat de `uniqueString` functie een teken reeks met een lengte van 13 tekens genereert, `dnsPrefixString` is de para meter beperkt tot 50 tekens.
 
-   ```json
-   "parameters": {
-       "dnsPrefixString": {
-           "type": "string",
-           "maxLength": 50,
-           "metadata": {
-               "description": "The DNS label for the public IP address. It must be lowercase. It should match the following regular expression, or it will raise an error: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$"
-           }
-       }
-   },
-   "variables": {
-       "dnsPrefix": "[concat(parameters('dnsPrefixString'),uniquestring(resourceGroup().id))]"
-   }
-   ```
+    ```json
+    "parameters": {
+      "dnsPrefixString": {
+        "type": "string",
+        "maxLength": 50,
+        "metadata": {
+          "description": "The DNS label for the public IP address. It must be lowercase. It should match the following regular expression, or it will raise an error: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$"
+        }
+      }
+    },
+    "variables": {
+      "dnsPrefix": "[concat(parameters('dnsPrefixString'),uniquestring(resourceGroup().id))]"
+    }
+    ```
 
-* Wanneer u een wacht woord aan een aangepaste script extensie toevoegt, gebruikt u de eigenschap **commandToExecute** in de eigenschap **protectedSettings** :
-   
-   ```json
-   "properties": {
-       "publisher": "Microsoft.Azure.Extensions",
-       "type": "CustomScript",
-       "typeHandlerVersion": "2.0",
-       "autoUpgradeMinorVersion": true,
-       "settings": {
-           "fileUris": [
-               "[concat(variables('template').assets, '/lamp-app/install_lamp.sh')]"
-           ]
-       },
-       "protectedSettings": {
-           "commandToExecute": "[concat('sh install_lamp.sh ', parameters('mySqlPassword'))]"
-       }
-   }
-   ```
-   
+* Wanneer u een wacht woord aan een aangepaste script extensie toevoegt, gebruikt u de `commandToExecute` eigenschap in de `protectedSettings` eigenschap.
+
+    ```json
+    "properties": {
+      "publisher": "Microsoft.Azure.Extensions",
+      "type": "CustomScript",
+      "typeHandlerVersion": "2.0",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+        "fileUris": [
+          "[concat(variables('template').assets, '/lamp-app/install_lamp.sh')]"
+        ]
+      },
+      "protectedSettings": {
+        "commandToExecute": "[concat('sh install_lamp.sh ', parameters('mySqlPassword'))]"
+      }
+    }
+    ```
+
    > [!NOTE]
-   > Gebruik de eigenschap **protectedSettings** van de relevante extensies om ervoor te zorgen dat geheimen worden versleuteld wanneer ze worden door gegeven als para meters voor vm's en uitbrei dingen.
-   > 
+   > Gebruik de `protectedSettings` eigenschap van de relevante extensies om ervoor te zorgen dat geheimen worden versleuteld wanneer ze worden door gegeven als para meters voor vm's en uitbrei dingen.
 
 ## <a name="use-test-toolkit"></a>Test Toolkit gebruiken
 
 De ARM-sjabloon test Toolkit is een script dat controleert of uw sjabloon aanbevolen procedures gebruikt. Als uw sjabloon niet voldoet aan de aanbevolen procedures, wordt een lijst met waarschuwingen met voorgestelde wijzigingen geretourneerd. De test Toolkit kan u helpen bij het implementeren van aanbevolen procedures in uw sjabloon.
 
-Nadat u uw sjabloon hebt voltooid, voert u de test Toolkit uit om te zien of er manieren zijn om de IT-implementatie te verbeteren. Zie [arm-sjabloon test Toolkit](test-toolkit.md)voor meer informatie.
+Nadat u uw sjabloon hebt voltooid, voert u de test Toolkit uit om te zien of er manieren zijn om de implementatie te verbeteren. Zie [test Toolkit voor arm-sjablonen gebruiken](test-toolkit.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

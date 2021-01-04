@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 120446472038076e34f62b47ba79348e5de8b972
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c75fcd1fd20e41df5018fcaa07fe83051d7e5f1a
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010925"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740365"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Het registreren van een apparaat bij Azure IoT Hub Device Provisioning Service
 
@@ -26,7 +26,7 @@ Door registratie in de Device Provisioning Service kan een apparaat worden [inge
 
 ## <a name="disallow-devices-by-using-an-individual-enrollment-entry"></a>Apparaten niet toestaan met een afzonderlijke inschrijvings vermelding
 
-Afzonderlijke registraties zijn van toepassing op één apparaat en kunnen X. 509-certificaten of SAS-tokens (in een echte of virtuele TPM) gebruiken als Attestation-mechanisme. (Apparaten die SAS-tokens gebruiken als Attestation-mechanisme kunnen alleen worden ingericht via een individuele inschrijving.) Als u een apparaat met een afzonderlijke inschrijving niet wilt toestaan, kunt u de inschrijvings vermelding uitschakelen of verwijderen. 
+Afzonderlijke registraties zijn van toepassing op één apparaat en kunnen X. 509-certificaten, TPM-goedkeurings sleutels (in een echte of virtuele TPM) of SAS-tokens als Attestation-mechanisme gebruiken. Als u een apparaat met een afzonderlijke inschrijving niet wilt toestaan, kunt u de inschrijvings vermelding uitschakelen of verwijderen. 
 
 Het apparaat tijdelijk niet toestaan door de inschrijvings vermelding uit te scha kelen: 
 

@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 12/15/2020
+ms.date: 12/21/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0532441e1ab0d2676e7800c9d63878f9bf3bb3dc
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: bff76cbaa678ed82538eb6d75633aa94cdce30bf
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616158"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723266"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -82,6 +82,10 @@ Om te zorgen voor de beveiliging van gegevens die onderweg zijn naar Azure, rade
 
 De verbonden machine agent voor Linux en Windows communiceert veilig uitgaande naar Azure Arc via TCP-poort 443. Als de computer verbinding maakt via een firewall of proxy server om via internet te communiceren, raadpleegt u het volgende om inzicht te krijgen in de vereisten voor de netwerk configuratie.
 
+> [!NOTE]
+> Arc ingeschakelde servers biedt geen ondersteuning voor het gebruik van een [log Analytics gateway](../../azure-monitor/platform/gateway.md) als een proxy voor de verbonden machine agent.
+>
+
 Als de uitgaande connectiviteit wordt beperkt door uw firewall of proxy server, controleert u of de Url's die hieronder worden weer gegeven niet zijn geblokkeerd. Wanneer u alleen de IP-bereiken of domein namen toestaat die vereist zijn om de agent te laten communiceren met de-service, moet u toegang tot de volgende service tags en Url's toestaan.
 
 Service Tags:
@@ -97,9 +101,11 @@ Adres
 |---------|---------|
 |`management.azure.com`|Azure Resource Manager|
 |`login.windows.net`|Azure Active Directory|
+|`login.microsoftonline.com`|Azure Active Directory|
 |`dc.services.visualstudio.com`|Application Insights|
 |`*.guestconfiguration.azure.com` |Gastconfiguratie|
 |`*.his.arc.azure.com`|Hybride identiteits service|
+|`www.office.com`|Office 365|
 
 Voor preview-agents (versie 0,11 en lager) hebt u ook toegang tot de volgende Url's nodig:
 
@@ -163,7 +169,7 @@ De verbonden machine agent voor Windows kan worden geïnstalleerd met behulp van
 * Hand matig door het Windows Installer-pakket uit te voeren `AzureConnectedMachineAgent.msi` vanuit de opdracht shell.
 * Vanuit een Power shell-sessie met behulp van een script methode.
 
-Na de installatie van de verbonden machine-agent voor Windows, worden de volgende aanvullende configuratie wijzigingen van het hele systeem toegepast.
+Na de installatie van de verbonden machine agent voor Windows, worden de volgende wijzigingen in de configuratie van het hele systeem toegepast.
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 
@@ -215,7 +221,7 @@ Na de installatie van de verbonden machine-agent voor Windows, worden de volgend
 
 De verbonden machine agent voor Linux is opgenomen in de voorkeurs pakket indeling voor de distributie (. RPM of. DEB) die wordt gehost in de micro soft [package-opslag plaats](https://packages.microsoft.com/). De agent wordt geïnstalleerd en geconfigureerd met de shell-script bundel [Install_linux_azcmagent. sh](https://aka.ms/azcmagent).
 
-Na de installatie van de verbonden machine agent voor Linux worden de volgende aanvullende configuratie wijzigingen van het hele systeem toegepast.
+Na de installatie van de verbonden machine agent voor Linux worden de volgende wijzigingen in de configuratie van het hele systeem toegepast.
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 

@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: shresha
-ms.openlocfilehash: 3aedbef079ba62f42ea79afdcd9995d7ee23d9fa
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 15f1a814b302611029cf6459b8d2df93a32a2d36
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020722"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740552"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>Migreren naar nieuwe Azure Time Series Insights API-versies Gen2
 
@@ -76,7 +76,7 @@ Als u query's hebt gegenereerd met behulp van de Power BI-connector, worden deze
 Voor het bijwerken van de query's voor het gebruik van de nieuwe API-versie en de syntaxis van de nieuwe time series-expressie moeten query's opnieuw worden gegenereerd vanuit de Explorer. Lees meer over [het maken van query's met behulp van de Power bi-connector](./how-to-connect-power-bi.md).
 
 > [!NOTE]
-> U moet de versie van Power BI Desktop van juli 2020 gebruiken. Als dat niet het geval is, ziet u mogelijk een [Ongeldige query Payload-versie fout](./how-to-diagnose-troubleshoot.md#problem-power-bi-connector-shows-unable-to-connect).
+> U moet ten minste de versie van Power BI Desktop juli 2020 gebruiken. Als u dit niet doet, ziet u mogelijk de fout ' ongeldige query Payload version '.
 
 ## <a name="migrate-custom-applications"></a>Aangepaste toepassingen migreren
 
@@ -84,7 +84,7 @@ Als uw aangepaste toepassing aanroepen naar de volgende REST-eind punten aanroep
 
 - Api's voor time series model
   - Api's voor model instellingen
-    - [Ophalen](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
+    - [Toevoegen](/rest/api/time-series-insights/dataaccessgen2/modelsettings/get)
     - [Bijwerken](/rest/api/time-series-insights/dataaccessgen2/modelsettings/update)
   - Exemplaar-Api's
     - [Alle batch bewerkingen](/rest/api/time-series-insights/dataaccessgen2/timeseriesinstances/executebatch)

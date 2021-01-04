@@ -3,15 +3,15 @@ title: Verbindingen in Azure Automation beheren
 description: In dit artikel leest u hoe u Azure Automation verbindingen met externe services of toepassingen kunt beheren en hoe u deze kunt gebruiken in runbooks.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 01/13/2020
+ms.date: 12/22/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 0a3cff616f814b8e5209b15f9d3f7439533452ca
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 8deb249dc042701ec02c3e5e30f3603be132d0ec
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071758"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733991"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Verbindingen in Azure Automation beheren
 
@@ -43,10 +43,10 @@ Met de cmdlets in de volgende tabel worden Automation-verbindingen met Power she
 
 |Cmdlet|Beschrijving|
 |---|---|
-|[Get-AzAutomationConnection](/powershell/module/az.automation/get-azautomationconnection?view=azps-3.7.0)|Hiermee haalt u informatie op over een verbinding.|
-|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection?view=azps-3.7.0)|Hiermee maakt u een nieuwe verbinding.|
-|[Remove-AzAutomationConnection](/powershell/module/Az.Automation/Remove-AzAutomationConnection?view=azps-3.7.0)|Hiermee verwijdert u een bestaande verbinding.|
-|[Set-AzAutomationConnectionFieldValue](/powershell/module/Az.Automation/Set-AzAutomationConnectionFieldValue?view=azps-3.7.0)|Hiermee stelt u de waarde van een bepaald veld voor een bestaande verbinding in.|
+|[Get-AzAutomationConnection](/powershell/module/az.automation/get-azautomationconnection)|Hiermee haalt u informatie op over een verbinding.|
+|[New-AzAutomationConnection](/powershell/module/az.automation/new-azautomationconnection)|Hiermee maakt u een nieuwe verbinding.|
+|[Remove-AzAutomationConnection](/powershell/module/Az.Automation/Remove-AzAutomationConnection)|Hiermee verwijdert u een bestaande verbinding.|
+|[Set-AzAutomationConnectionFieldValue](/powershell/module/Az.Automation/Set-AzAutomationConnectionFieldValue)|Hiermee stelt u de waarde van een bepaald veld voor een bestaande verbinding in.|
 
 ## <a name="internal-cmdlets-to-access-connections"></a>Interne cmdlets voor toegang tot verbindingen
 
@@ -59,9 +59,9 @@ De interne cmdlet in de volgende tabel wordt gebruikt voor toegang tot verbindin
 >[!NOTE]
 >Vermijd het gebruik van variabelen met de `Name` para meter van `Get-AutomationConnection` . Het gebruik van variabelen in dit geval kan de detectie van afhankelijkheden tussen runbooks of DSC-configuraties en verbindings assets tijdens het ontwerpen bemoeilijken.
 
-## <a name="python-2-functions-to-access-connections"></a>Python 2-functies voor toegang tot verbindingen
+## <a name="python-functions-to-access-connections"></a>Python-functies voor toegang tot verbindingen
 
-De functie in de volgende tabel wordt gebruikt voor toegang tot verbindingen in een python 2-runbook.
+De functie in de volgende tabel wordt gebruikt voor toegang tot verbindingen in een python 2-en 3-runbook. Python 3-runbooks zijn momenteel beschikbaar als preview-versie.
 
 | Functie | Beschrijving |
 |:---|:---|
@@ -97,7 +97,7 @@ Wanneer u uw Automation-account maakt, bevat het standaard verschillende globale
 
 ## <a name="add-a-connection-type"></a>Een verbindings type toevoegen
 
-Als uw runbook of DSC-configuratie verbinding maakt met een externe service, moet u een verbindings type definiëren in een [aangepaste module](shared-resources/modules.md#custom-modules) die een integratie module wordt genoemd. Deze module bevat een meta gegevensbestand dat eigenschappen van het verbindings type specificeert en de naam ** &lt; module &gt;-Automation.jsheeft op**. Deze bevindt zich in de map module van het gecomprimeerde **zip** -bestand. Dit bestand bevat de velden van een verbinding die vereist zijn om verbinding te maken met het systeem of de service die door de module wordt vertegenwoordigd. Met dit bestand kunt u de veld namen, gegevens typen, versleutelings status en optionele status voor het verbindings type instellen. 
+Als uw runbook of DSC-configuratie verbinding maakt met een externe service, moet u een verbindings type definiëren in een [aangepaste module](shared-resources/modules.md#custom-modules) die een integratie module wordt genoemd. Deze module bevat een meta gegevensbestand dat eigenschappen van het verbindings type specificeert en de naam **&lt; module &gt;-Automation.jsheeft op**. Deze bevindt zich in de map module van het gecomprimeerde **zip** -bestand. Dit bestand bevat de velden van een verbinding die vereist zijn om verbinding te maken met het systeem of de service die door de module wordt vertegenwoordigd. Met dit bestand kunt u de veld namen, gegevens typen, versleutelings status en optionele status voor het verbindings type instellen. 
 
 Het volgende voor beeld is een sjabloon in de **JSON** -bestands indeling die de gebruikers naam-en wachtwoord eigenschappen definieert voor een aangepast verbindings type met de naam `MyModuleConnection` :
 
@@ -124,9 +124,9 @@ Het volgende voor beeld is een sjabloon in de **JSON** -bestands indeling die de
 
 ## <a name="get-a-connection-in-a-runbook-or-dsc-configuration"></a>Verbinding in een runbook of DSC-configuratie verkrijgen
 
-Een verbinding in een runbook of DSC-configuratie ophalen met de interne `Get-AutomationConnection` cmdlet. Deze cmdlet heeft de voor keur boven de `Get-AzAutomationConnection` cmdlet, omdat deze de verbindings waarden ophaalt in plaats van informatie over de verbinding. 
+Een verbinding in een runbook of DSC-configuratie ophalen met de interne `Get-AutomationConnection` cmdlet. Deze cmdlet heeft de voor keur boven de `Get-AzAutomationConnection` cmdlet, omdat deze de verbindings waarden ophaalt in plaats van informatie over de verbinding.
 
-### <a name="textual-runbook-example"></a>Voor beeld van een tekst-runbook
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 In het volgende voor beeld ziet u hoe u het uitvoeren als-account gebruikt om te verifiëren met Azure Resource Manager-resources in uw runbook. Er wordt gebruikgemaakt van een verbindings element met het run as-account dat verwijst naar de Service-Principal op basis van certificaten.
 
@@ -135,19 +135,9 @@ $Conn = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
 ```
 
-### <a name="graphical-runbook-examples"></a>Voor beelden van grafische runbook
+# <a name="python"></a>[Python](#tab/python2)
 
-U kunt een activiteit voor de interne `Get-AutomationConnection` cmdlet toevoegen aan een grafisch runbook. Klik met de rechter muisknop op de verbinding in het deel venster Bibliotheek van de grafische editor en selecteer **toevoegen aan canvas**.
-
-![toevoegen aan canvas](media/automation-connections/connection-add-canvas.png)
-
-In de volgende afbeelding ziet u een voor beeld van het gebruik van een verbindings object in een grafisch runbook. In dit voor beeld wordt de `Constant value` gegevensset voor de `Get RunAs Connection` activiteit gebruikt, waarbij een verbindings object voor verificatie wordt gebruikt. Er wordt hier een [pijplijn koppeling](automation-graphical-authoring-intro.md#use-links-for-workflow) gebruikt omdat de `ServicePrincipalCertificate` parameterset een enkel object verwacht.
-
-![verbindingen ophalen](media/automation-connections/automation-get-connection-object.png)
-
-### <a name="python-2-runbook-example"></a>Voor beeld van python 2-runbook
-
-In het volgende voor beeld ziet u hoe u kunt verifiëren met behulp van de run as-verbinding in een python 2-runbook.
+In het volgende voor beeld ziet u hoe u met de uitvoeren als-verbinding kunt verifiëren in een python 2-en 3-runbook.
 
 ```python
 """ Tutorial to show how to authenticate against Azure resource manager resources """
@@ -155,7 +145,7 @@ import azure.mgmt.resource
 import automationassets
 
 def get_automation_runas_credential(runas_connection):
-    """ Returns credentials to authenticate against Azure resoruce manager """
+    """ Returns credentials to authenticate against Azure resource manager """
     from OpenSSL import crypto
     from msrestazure import azure_active_directory
     import adal
@@ -189,6 +179,18 @@ runas_connection = automationassets.get_automation_connection(
     "AzureRunAsConnection")
 azure_credential = get_automation_runas_credential(runas_connection)
 ```
+
+---
+
+### <a name="graphical-runbook-examples"></a>Voor beelden van grafische runbook
+
+U kunt een activiteit voor de interne `Get-AutomationConnection` cmdlet toevoegen aan een grafisch runbook. Klik met de rechter muisknop op de verbinding in het deel venster Bibliotheek van de grafische editor en selecteer **toevoegen aan canvas**.
+
+![toevoegen aan canvas](media/automation-connections/connection-add-canvas.png)
+
+In de volgende afbeelding ziet u een voor beeld van het gebruik van een verbindings object in een grafisch runbook. In dit voor beeld wordt de `Constant value` gegevensset voor de `Get RunAs Connection` activiteit gebruikt, waarbij een verbindings object voor verificatie wordt gebruikt. Er wordt hier een [pijplijn koppeling](automation-graphical-authoring-intro.md#use-links-for-workflow) gebruikt omdat de `ServicePrincipalCertificate` parameterset een enkel object verwacht.
+
+![verbindingen ophalen](media/automation-connections/automation-get-connection-object.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

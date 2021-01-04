@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 98cc72f85499481ba3841ce82fe307740d5e9fab
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: e1b29d901630156471bbb9cb8b939bb4bb29c836
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96842700"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724222"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
@@ -114,56 +114,6 @@ Zie [Advanced Threat Protection voor Azure Storage](../common/azure-defender-sto
 
 ## <a name="storage-tiers"></a>Opslaglagen
 [!INCLUDE [storage-files-tiers-overview](../../../includes/storage-files-tiers-overview.md)]
-
-### <a name="understanding-provisioning-for-premium-file-shares"></a>Informatie over het inrichten voor Premium-bestands shares
-Premium-bestands shares worden ingericht op basis van een vaste GiB/IOPS/doorvoer ratio. De grootte van alle shares wordt Mini maal volgens basis lijn/door Voer en toegestaan voor burst. Voor elke GiB-inrichting wordt de share minimale IOPS/door Voer en een IOPS-en 0,1-door Voer tot Maxi maal maximum aantal limieten per share verleend. De mini maal toegestane inrichting is 100 GiB met minimale IOPS/door voer. 
-
-Alle Premium-shares worden gratis bursting aangeboden op basis van de beste inspanningen. De grootte van alle shares kan Maxi maal 4.000 IOPS of Maxi maal drie IOPS per ingerichte GiB burst, afhankelijk van wat een grotere burst-IOPS voor de share vormt. Alle shares ondersteunen bursting voor een maximale duur van 60 minuten bij een piek burst-limiet. Nieuwe shares beginnen met het volledige burst-tegoed op basis van de ingerichte capaciteit.
-
-Shares moeten worden ingericht in 1 GiB-stappen. De minimale grootte is 100 GiB, de volgende grootte is 101 GiB, enzovoort.
-
-> [!TIP]
-> Basis lijn IOPS = 400 + 1 * ingerichte GiB. (Maxi maal 100.000 IOPS).
->
-> Burst-limiet = MAX (4.000, 3 * limiet voor IOPS) van basis lijn. (welke limiet groter is, Maxi maal 100.000 IOPS).
->
-> uitgangs bedrag = 60 MiB/s + 0,06 * ingerichte GiB
->
-> Ingangs frequentie = 40 MiB/s + 0,04 * ingerichte GiB
-
-De inrichtings share grootte wordt opgegeven door het share quotum. Share quotum kan op elk moment worden verhoogd, maar kan pas na 24 uur na de laatste toename worden verlaagd. Nadat u 24 uur hebt gewacht zonder een quota verhoging, kunt u het share quotum zo vaak als u wilt verlagen totdat u het opnieuw verhoogt. Wijzigingen in IOPS/doorvoer schaal worden binnen een paar minuten na de grootte gewijzigd.
-
-Het is mogelijk om de grootte van uw ingerichte share onder uw gebruikte GiB te verkleinen. Als u dit doet, verliest u geen gegevens, maar worden er nog steeds kosten in rekening gebracht voor de gebruikte grootte en worden de prestaties (de basis-IOPS, door Voer en burst IOPS) van de ingerichte share ontvangen, niet de gebruikte grootte.
-
-In de volgende tabel ziet u enkele voor beelden van deze formules voor de ingerichte grootte van de shares:
-
-|Capaciteit (GiB) | IOPS basis lijn | Burst IOPS | Uitgang (MiB/s) | Ingangs (MiB/s) |
-|---------|---------|---------|---------|---------|
-|100         | 500     | Maximaal 4000     | 66   | 44   |
-|500         | 900     | Maximaal 4000  | 90   | 60   |
-|1\.024       | 1.424   | Maximaal 4000   | 122   | 81   |
-|5.120       | 5.520   | Maxi maal 15.360  | 368   | 245   |
-|10.240      | 10.640  | Maxi maal 30.720  | 675   | 450   |
-|33.792      | 34.192  | Maxi maal 100.000 | 2.088 | 1.392   |
-|51.200      | 51.600  | Maxi maal 100.000 | 3.132 | 2.088   |
-|102.400     | 100.000 | Maxi maal 100.000 | 6.204 | 4.136   |
-
-Het is belang rijk te weten dat de prestaties van efficiënte bestands shares afhankelijk zijn van de netwerk limieten van de computer, de beschik bare netwerk bandbreedte, i/o-grootte, parallellisme, onder vele andere factoren. Bijvoorbeeld, op basis van een interne test met 8 KiB i/o-schrijf grootten, kan één virtuele Windows-machine zonder SMB meerdere kanalen, *standaard F16s_v2*, die is verbonden met Premium file share via SMB, 20.000 Read IOPS en een Maxi maal 15.000 schrijf-IOPS behaalt. Met 512 MiB lees/schrijf-i/o-groottes kan dezelfde virtuele machine 1,1 GiB/s uitgaand worden gemaakt en 370 MiB/s door voer. Dezelfde client kan tot \~ 3x prestaties leiden als SMB meerdere kanalen is ingeschakeld op de Premium-shares. Als u maximale prestaties wilt schalen, [schakelt u SMB meerdere kanalen](storage-files-enable-smb-multichannel.md) in en verspreidt u de belasting over verschillende vm's. Raadpleeg de [hand leiding](storage-troubleshooting-files-performance.md) voor het oplossen van problemen met [SMB meerdere kanalen](storage-files-smb-multichannel-performance.md) voor een aantal veelvoorkomende prestatie problemen en tijdelijke oplossingen.
-
-#### <a name="bursting"></a>Toepassingen
-Als uw werk belasting de extra prestaties nodig heeft om aan de piek vraag te voldoen, kan uw aandeel burst-tegoed gebruiken om de limiet van de share basislijn te halen om de share prestaties te bieden die nodig zijn om te voldoen aan de vraag. Premium-bestands shares kunnen de IOPS opburstren tot 4.000 of tot een factor van drie, afhankelijk van wat een hogere waarde is. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Bursting werkt op basis van de beste inspanningen en de burst-limiet is geen garantie. bestands shares *kunnen de limiet* voor een maximale duur van 60 minuten oplopen.
-
-De tegoeden worden in een burst-Bucket verzameld wanneer het verkeer voor uw bestands share onder IOPS voor de basis lijn valt. Een GiB-share van 100 heeft bijvoorbeeld 500 Baseline IOPS. Als het werkelijke verkeer op de share 100 IOPS is voor een specifiek interval van 1 seconde, worden 400 de ongebruikte IOPS gecrediteerd op een burst-Bucket. Op dezelfde manier, een niet-actieve TiB-share, accumuleert burst tegoed bij 1.424 IOPS. Deze tegoeden worden vervolgens later gebruikt wanneer bewerkingen de basis lijn van IOPS overschrijden.
-
-Wanneer een share de limiet van de basis lijn overschrijdt en over een tegoed in een burst-Bucket beschikt, wordt het maximum voor de Maxi maal toegestane piek burst-snelheid gesplitst. Shares kunnen blijven worden opgedeeld zolang de tegoeden resteren, Maxi maal 60 minuten duren, maar dit is gebaseerd op het aantal burst-tegoeden dat is samengevoegd. Elke i/o-limiet van meer dan Baseline IOPS maakt gebruik van één tegoed en zodra alle tegoeden zijn verbruikt, wordt de share teruggestuurd naar de IOPS van de basis lijn.
-
-Aandelen tegoeden hebben drie statussen:
-
-- Samen, wanneer de bestands share minder dan de basis lijn voor IOPS gebruikt.
-- Weigeren, wanneer de bestands share meer dan de basis lijn voor IOPS en de bursting-modus gebruikt.
-- Een constante is dat de bestands share precies de basis voor het aantal IOPS gebruikt. er zijn geen tegoeden die zijn samengevoegd of gebruikt.
-
-Nieuwe bestands shares beginnen met het volledige aantal tegoeden in de burst-Bucket. Burst-tegoed wordt niet in rekening gebracht als de delen IOPS onder de basis lijn IOPS vallen vanwege het beperken van de server.
 
 ### <a name="enable-standard-file-shares-to-span-up-to-100-tib"></a>Schakel standaard bestands shares in om Maxi maal 100 TiB te beslaan
 [!INCLUDE [storage-files-tiers-enable-large-shares](../../../includes/storage-files-tiers-enable-large-shares.md)]

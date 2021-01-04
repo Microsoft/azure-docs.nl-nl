@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: f85df2e16554b4830d3e5f1bc82c5c8cdf22e28b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 4f4cd8189c9166ee08c1e4ccd800a1202d3b5893
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586627"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724813"
 ---
 # <a name="smb-multichannel-performance"></a>Prestaties van SMB Multichannel
 
@@ -63,7 +63,7 @@ In de meeste scenario's, met name multi-threaded workloads, moeten clients beter
 1. Open Power shell als beheerder en gebruik de volgende opdracht: `Get-SmbMultichannelConnection |fl`
 1. Zoeken naar **MaxChannels** -en **CurrentChannels** -eigenschappen
 
-:::image type="content" source="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG" alt-text="Scherm opname van de resultaten van Get-smbmultichannelconnection." lightbox="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG":::
+:::image type="content" source="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG" alt-text="Scherm opname van Get-SMBMultichannelConnection resultaten." lightbox="media/storage-files-smb-multichannel-performance/files-smb-multi-channel-connection.PNG":::
 
 ## <a name="performance-comparison"></a>Vergelijking van prestaties
 
@@ -119,7 +119,7 @@ De volgende tips kunnen u helpen uw prestaties te optimaliseren:
 - Zorg ervoor dat uw opslag account en uw client zich in dezelfde Azure-regio bevinden om de netwerk latentie te verminderen.
 - Gebruik toepassingen met meerdere threads en verspreide taken over meerdere bestanden.
 - Prestatie voordelen van SMB meerdere kanalen nemen toe met het aantal bestanden dat de belasting distribueert.
-- De prestaties van Premium-shares zijn gebonden aan de ingerichte share grootte (IOPS/uitgaand/binnenkomend) en limieten voor één bestand. Zie voor meer informatie [over het inrichten van Premium-bestands shares](storage-files-planning.md#understanding-provisioning-for-premium-file-shares).
+- De prestaties van Premium-shares zijn gebonden aan de ingerichte share grootte (IOPS/uitgaand/binnenkomend) en limieten voor één bestand. Zie voor meer informatie [over het inrichten van Premium-bestands shares](understanding-billing.md#provisioned-billing).
 - De maximale prestaties van één VM-client zijn nog steeds gebonden aan VM-limieten. [Standard_D32s_v3](../../virtual-machines/dv3-dsv3-series.md) kan bijvoorbeeld een maximale band breedte van 16.000 Mbps (of 2 Gbps) ondersteunen. de uitvoer van de virtuele machine (schrijf bewerkingen naar opslag) is niet toegestaan in een Data limiet, ingangs (Lees bewerkingen van opslag). De prestaties van bestands shares zijn afhankelijk van de netwerk limieten van de computer, Cpu's, interne opslag beschik bare netwerk bandbreedte, i/o-grootte, parallelle uitvoering en andere factoren.
 - De eerste test is doorgaans een warm-up, de resultaten worden verwijderd en de test wordt herhaald.
 - Als de prestaties beperkt zijn door één client en de werk belasting nog steeds lager is dan de ingerichte limieten voor shares, kunnen hogere prestaties worden bereikt door de belasting over meerdere clients te spreiden.

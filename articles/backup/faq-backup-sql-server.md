@@ -4,12 +4,12 @@ description: Vind antwoorden op veelgestelde vragen over het maken van back-ups 
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 89316770dc137bff031e6268db5ece156edd4f25
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 7518fc49f7d6d728bd8faa0de4cf0edc1c6d5831
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172373"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734110"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Veelgestelde vragen over SQL Server-data bases die worden uitgevoerd op een back-up van Azure VM
 
@@ -33,11 +33,11 @@ In sommige gevallen worden herstel back-ups door de Azure Backup-service geactiv
 Automatisch herstellen als een mogelijkheid is standaard ingeschakeld voor alle gebruikers. Als u er echter voor kiest om het uit te kiezen, voert u de volgende stappen uit:
 
 - Op het SQL Server-exemplaar in de map *C:\Program Files\Azure workload Backup\bin* maakt of bewerkt u de **ExtensionSettingsOverrides.jsin** het bestand.
-- Stel *{"EnableAutoHealer": False}* in het **ExtensionSettingsOverrides.js**in.
+- Stel *{"EnableAutoHealer": False}* in het **ExtensionSettingsOverrides.js** in.
 - Sla de wijzigingen op en sluit het bestand.
 - Open op het SQL Server-exemplaar **taak beheer** en start de **AzureWLBackupCoordinatorSvc** -service vervolgens opnieuw.
 
-## <a name="can-i-control-how-many-concurrent-backups-run-on-the-sql-server"></a>Kan ik bepalen hoeveel gelijktijdige back-ups worden uitgevoerd op de SQL Server?
+## <a name="can-i-control-how-many-concurrent-backups-run-on-the-sql-server"></a>Kan ik bepalen hoeveel gelijktijdige back-ups worden uitgevoerd op de SQL-server?
 
 Ja. U kunt de snelheid waarmee het back-upbeleid wordt uitgevoerd, beperken om de impact op een SQL Server-exemplaar te minimaliseren. Ga als volgt te werk om de instelling te wijzigen:
 
@@ -62,7 +62,7 @@ Volgens de beperkingen van SQL kunt u alleen volledige back-up kopiëren op de s
 
 Nee. Azure Backup beschermt SQL Server data bases die worden uitgevoerd in Azure. Als een beschikbaarheids groep (AG) wordt gespreid tussen Azure-en on-premises machines, kan de AG alleen worden beveiligd als de primaire replica wordt uitgevoerd in Azure. Azure Backup beschermt ook alleen de knoop punten die worden uitgevoerd in dezelfde Azure-regio als de Recovery Services kluis.
 
-## <a name="can-i-protect-availability-groups-across-regions"></a>Kan ik beschikbaarheidsgroepen in meerdere regio's beschermen?
+## <a name="can-i-protect-availability-groups-across-regions"></a>Kan ik beschikbaarheids groepen beveiligen in verschillende regio's?
 
 De Azure Backup Recovery Services kluis kan alle knoop punten die zich in dezelfde regio bevinden als de kluis detecteren en beveiligen. Als uw SQL Server AlwaysOn-beschikbaarheids groep meerdere Azure-regio's omvat, stelt u de back-up in vanuit de regio die het primaire knoop punt heeft. Azure Backup kunnen alle data bases in de beschikbaarheids groep detecteren en beveiligen op basis van uw voor keuren voor back-ups. Wanneer er niet aan de voor keur voor de back-up wordt voldaan, mislukken de back-ups en wordt de fout melding weer geven.
 
@@ -78,7 +78,7 @@ In het menu **back-uptaak** worden alle geplande bewerkingen en acties op aanvra
 
 Ja, u kunt deze mogelijkheid met [automatische beveiliging](backup-sql-server-database-azure-vms.md#enable-auto-protection)krijgen.  
 
-## <a name="if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups"></a>Wat gebeurt er met de back-ups als ik een Data Base uit een automatisch beveiligde exemplaar Verwijder?
+## <a name="if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups"></a>Wat gebeurt er met de back-ups als ik een database uit een automatisch beveiligd exemplaar verwijder?
 
 Als een Data Base uit een niet-beveiligd exemplaar wordt verwijderd, worden er nog steeds back-ups van de data base geprobeerd. Dit betekent dat de verwijderde data base wordt weer gegeven als beschadigd onder **Back-upitems** en nog steeds is beveiligd.
 
@@ -98,13 +98,18 @@ U kunt de data base selecteren, waarvan de naam nu wordt gewijzigd en er beveili
 
 ## <a name="why-cant-i-see-an-added-database-for-an-autoprotected-instance"></a>Waarom kan ik een toegevoegde data base niet zien voor een niet-beveiligde instantie?
 
-Een Data Base die u [aan een niet-beveiligd exemplaar toevoegt](backup-sql-server-database-azure-vms.md#enable-auto-protection) , wordt mogelijk niet direct weer gegeven onder beveiligde items. Dat komt doordat de detectie doorgaans om de 8 uur wordt uitgevoerd. U kunt echter direct nieuwe data bases detecteren en beveiligen als u hand matig een detectie uitvoert door **Rediscover db's**te selecteren, zoals wordt weer gegeven in de volgende afbeelding:
+Een Data Base die u [aan een niet-beveiligd exemplaar toevoegt](backup-sql-server-database-azure-vms.md#enable-auto-protection) , wordt mogelijk niet direct weer gegeven onder beveiligde items. Dat komt doordat de detectie doorgaans om de 8 uur wordt uitgevoerd. U kunt echter direct nieuwe data bases detecteren en beveiligen als u hand matig een detectie uitvoert door **Rediscover db's** te selecteren, zoals wordt weer gegeven in de volgende afbeelding:
 
   ![Een nieuw toegevoegde data base hand matig detecteren](./media/backup-azure-sql-database/view-newly-added-database.png)
   
 ## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Kan ik data bases beveiligen waarvoor TDE (Transparent Data Encryption) is ingeschakeld en de data base wordt versleuteld met het hele back-upproces?
 
-Ja, Azure Backup ondersteunt back-ups van SQL Server-data bases of-server waarop TDE is ingeschakeld. Backup ondersteunt [TDe](/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) met sleutels die worden beheerd door Azure, of met door de klant beheerde sleutels (BYOK).  Backup voert geen SQL-versleuteling uit als onderdeel van het back-upproces zodat de data base versleuteld blijft wanneer er een back-up wordt gemaakt.
+Ja, Azure Backup ondersteunt back-ups van SQL Server-data bases of-server waarop TDE is ingeschakeld. Backup ondersteunt [TDe](/sql/relational-databases/security/encryption/transparent-data-encryption) met sleutels die worden beheerd door Azure, of met door de klant beheerde sleutels (BYOK).  Backup voert geen SQL-versleuteling uit als onderdeel van het back-upproces zodat de data base versleuteld blijft wanneer er een back-up wordt gemaakt.
+
+## <a name="does-azure-backup-perform-a-checksum-operation-on-the-data-stream"></a>Voert Azure Backup een controlesom bewerking uit voor de gegevens stroom?
+
+Er wordt een controlesom bewerking uitgevoerd voor de gegevens stroom. Dit is echter niet te verwarren met [SQL-controlesom](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
+Back-up van Azure-workload berekent de controlesom voor de gegevens stroom en slaat deze expliciet op tijdens de back-upbewerking. Deze controlesom stroom wordt vervolgens als referentie gebruikt en wordt kruislings gecontroleerd met de controlesom van de gegevens stroom tijdens de herstel bewerking om ervoor te zorgen dat de gegevens consistent zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 

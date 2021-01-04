@@ -4,12 +4,12 @@ description: Back-ups maken van SQL-data bases in azure-Vm's en deze herstellen 
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 0b3b943a53c1da0f6f1e938b5b234dc82541b46d
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 0a3467ffa3a67ac9ad593748948cea8da59e3e6b
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92901671"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734535"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure-vms-with-powershell"></a>Back-up en herstel van SQL-data bases in azure Vm's met Power shell
 
@@ -56,7 +56,7 @@ Stel Power shell als volgt in:
 
     ![Lijst met Recovery Services-cmdlets](./media/backup-azure-afs-automation/list-of-recoveryservices-ps-az.png)
 
-4. Meld u aan bij uw Azure-account met **Connect-AzAccount** .
+4. Meld u aan bij uw Azure-account met **Connect-AzAccount**.
 5. Op de webpagina die wordt weer gegeven, wordt u gevraagd uw account referenties in te voeren.
 
     * U kunt ook uw account referenties als een para meter in de cmdlet **Connect-AzAccount** met **-Credential** toevoegen.
@@ -80,7 +80,7 @@ Stel Power shell als volgt in:
     Get-AzResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
     ```
 
-9. Controleer in de uitvoer van de opdracht of **RegistrationState** is gewijzigd in **geregistreerd** . Als dat niet het geval is, voert u de cmdlet **REGI ster-AzResourceProvider** opnieuw uit.
+9. Controleer in de uitvoer van de opdracht of **RegistrationState** is gewijzigd in **geregistreerd**. Als dat niet het geval is, voert u de cmdlet **REGI ster-AzResourceProvider** opnieuw uit.
 
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 
@@ -103,7 +103,7 @@ De Recovery Services kluis is een resource manager-resource, dus u moet deze in 
 3. Geef het type redundantie op dat moet worden gebruikt voor de kluis opslag.
 
     * U kunt [lokaal redundante opslag](../storage/common/storage-redundancy.md#locally-redundant-storage), [geografisch redundante](../storage/common/storage-redundancy.md#geo-redundant-storage) opslag of [zone-redundante opslag](../storage/common/storage-redundancy.md#zone-redundant-storage) gebruiken.
-    * In het volgende voor beeld wordt de optie **-BackupStorageRedundancy** ingesteld voor de [set-AzRecoveryServicesBackupProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd voor **testvault** ingesteld op **georedundant** .
+    * In het volgende voor beeld wordt de optie **-BackupStorageRedundancy** ingesteld voor de [set-AzRecoveryServicesBackupProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd voor **testvault** ingesteld op **georedundant**.
 
     ```powershell
     $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
@@ -172,7 +172,7 @@ $schpol.ScheduleRunTimes[0] = $UtcTime
 > [!IMPORTANT]
 > U moet de start tijd binnen 30 minuten meerdere keer opgeven. In het bovenstaande voor beeld kan de waarde alleen ' 01:00:00 ' of ' 02:30:00 ' zijn. De begin tijd mag niet ' 01:15:00 ' zijn.
 
-In het volgende voor beeld worden het plannings beleid en het Bewaar beleid opgeslagen in variabelen. Vervolgens worden deze variabelen gebruikt als para meters voor een nieuw beleid ( **NewSQLPolicy** ). **NewSQLPolicy** neemt dagelijks een volledige back-up, behoudt deze gedurende 180 dagen en maakt elke 2 uur een logboek back-up
+In het volgende voor beeld worden het plannings beleid en het Bewaar beleid opgeslagen in variabelen. Vervolgens worden deze variabelen gebruikt als para meters voor een nieuw beleid (**NewSQLPolicy**). **NewSQLPolicy** neemt dagelijks een volledige back-up, behoudt deze gedurende 180 dagen en maakt elke 2 uur een logboek back-up
 
 ```powershell
 $schPol = Get-AzRecoveryServicesBackupSchedulePolicyObject -WorkloadType "MSSQL"
@@ -268,7 +268,7 @@ Azure Backup kunt SQL Server-data bases die worden uitgevoerd op virtuele Azure-
 * Herstel naar een specifieke datum of tijd (naar de seconde) met behulp van back-ups van transactie Logboeken. Azure Backup bepaalt automatisch de juiste volledige differentiële back-up en de keten van logboek back-ups die moeten worden hersteld op basis van de geselecteerde tijd.
 * Herstel een specifieke volledige of differentiële back-up om te herstellen naar een specifiek herstel punt.
 
-Controleer de vereisten die [hier](restore-sql-database-azure-vm.md#prerequisites) worden vermeld voordat u SQL db's herstelt.
+Controleer de vereisten die [hier](restore-sql-database-azure-vm.md#restore-prerequisites) worden vermeld voordat u SQL db's herstelt.
 
 Haal eerst de relevante back-up van de SQL-Data Base op met behulp van de Power shell [-cmdlet Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) .
 
@@ -499,7 +499,7 @@ Als de uitvoer verloren is gegaan of als u de relevante taak-ID wilt ophalen, [h
 
 ### <a name="change-policy-for-backup-items"></a>Beleid voor back-upitems wijzigen
 
-U kunt het beleid van het back-upitem wijzigen van *Policy1* in *Policy2* . Als u wilt scha kelen tussen beleids regels voor een back-upitem, haalt u het relevante beleid op en maakt u een back-up van het item. Gebruik de opdracht [Enable-AzRecoveryServices](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) met back-upitem als para meter.
+U kunt het beleid van het back-upitem wijzigen van *Policy1* in *Policy2*. Als u wilt scha kelen tussen beleids regels voor een back-upitem, haalt u het relevante beleid op en maakt u een back-up van het item. Gebruik de opdracht [Enable-AzRecoveryServices](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) met back-upitem als para meter.
 
 ```powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>

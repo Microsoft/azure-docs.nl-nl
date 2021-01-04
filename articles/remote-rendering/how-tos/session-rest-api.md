@@ -5,16 +5,16 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: 0af9d6906e038a4b9285a2c302fc0c98345fdbd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d957c5d6521010c7393e2297be16cd7bef41c35f
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90023751"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724065"
 ---
 # <a name="use-the-session-management-rest-api"></a>De REST API voor sessiebeheer gebruiken
 
-Als u de functionaliteit voor externe rendering van Azure wilt gebruiken, moet u een *sessie*maken. Elke sessie komt overeen met een virtuele machine (VM) die wordt toegewezen in Azure en er wordt gewacht tot een client apparaat verbinding maakt. Wanneer een apparaat verbinding maakt, worden de aangevraagde gegevens door de VM weer gegeven en wordt het resultaat als een video stroom beschouwd. Tijdens het maken van de sessie hebt u gekozen voor welk type server u wilt uitvoeren, waarmee de prijzen worden bepaald. Zodra de sessie niet meer nodig is, moet deze worden gestopt. Als deze niet hand matig wordt gestopt, wordt deze automatisch afgesloten wanneer de *lease tijd* van de sessie verloopt.
+Als u de functionaliteit voor externe rendering van Azure wilt gebruiken, moet u een *sessie* maken. Elke sessie komt overeen met een virtuele machine (VM) die wordt toegewezen in Azure en er wordt gewacht tot een client apparaat verbinding maakt. Wanneer een apparaat verbinding maakt, worden de aangevraagde gegevens door de VM weer gegeven en wordt het resultaat als een video stroom beschouwd. Tijdens het maken van de sessie hebt u gekozen voor welk type server u wilt uitvoeren, waarmee de prijzen worden bepaald. Zodra de sessie niet meer nodig is, moet deze worden gestopt. Als deze niet hand matig wordt gestopt, wordt deze automatisch afgesloten wanneer de *lease tijd* van de sessie verloopt.
 
 We bieden een Power shell-script in de voor [beelden-opslag plaats](https://github.com/Azure/azure-remote-rendering) in de map *Scripts* , genaamd *RenderingSession.ps1*, waarin het gebruik van onze service wordt gedemonstreerd. Het script en de bijbehorende configuratie worden hier beschreven: [voor beelden van Power shell-scripts](../samples/powershell-example-scripts.md)
 
@@ -25,7 +25,7 @@ We bieden een Power shell-script in de voor [beelden-opslag plaats](https://gith
 
 Bekijk de [lijst met beschik bare regio's](../reference/regions.md) voor de basis-url's om de aanvragen naar te verzenden.
 
-Voor de voorbeeld scripts hieronder hebt u de regio *westus2*gekozen.
+Voor de voorbeeld scripts hieronder hebt u de regio *westus2* gekozen.
 
 ### <a name="example-script-choose-an-endpoint"></a>Voorbeeld script: een eind punt kiezen
 
@@ -37,11 +37,14 @@ $endPoint = "https://remoterendering.westus2.mixedreality.azure.com"
 
 Als u geen externe rendering-account hebt, [maakt u er een](create-an-account.md). Elke resource wordt geïdentificeerd door een *accountId*, dat wordt gebruikt tijdens de sessie-api's.
 
-### <a name="example-script-set-accountid-and-accountkey"></a>Voorbeeld script: accountId en accountKey instellen
+### <a name="example-script-set-accountid-accountkey-and-account-domain"></a>Voorbeeld script: accountId instellen, accountKey en account domein
+
+Account domein is de locatie van het externe rendering-account. In dit voor beeld is de locatie van het account regio *Oost*.
 
 ```PowerShell
 $accountId = "********-****-****-****-************"
 $accountKey = "*******************************************="
+$accountDomain = "eastus.mixedreality.azure.com"
 ```
 
 ## <a name="common-request-headers"></a>Algemene aanvraag headers
@@ -52,7 +55,7 @@ $accountKey = "*******************************************="
 
 ```PowerShell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-$webResponse = Invoke-WebRequest -Uri "https://sts.mixedreality.azure.com/accounts/$accountId/token" -Method Get -ContentType "application/json" -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
+$webResponse = Invoke-WebRequest -Uri "https://sts.$accountDomain/accounts/$accountId/token" -Method Get -ContentType "application/json" -Headers @{ Authorization = "Bearer ${accountId}:$accountKey" }
 $response = ConvertFrom-Json -InputObject $webResponse.Content
 $token = $response.AccessToken;
 ```
@@ -79,7 +82,7 @@ Met deze opdracht maakt u een sessie. Hiermee wordt de ID van de nieuwe sessie g
 
 | Statuscode | JSON-nettolading | Opmerkingen |
 |-----------|:-----------|:-----------|
-| 202 | -sessionId: GUID | Geslaagd |
+| 202 | -sessionId: GUID | Success |
 
 ### <a name="example-script-create-a-session"></a>Voorbeeld script: een sessie maken
 
@@ -143,7 +146,7 @@ Met deze opdracht worden de para meters van een sessie bijgewerkt. Op dit moment
 
 | Statuscode | JSON-nettolading | Opmerkingen |
 |-----------|:-----------|:-----------|
-| 200 | | Geslaagd |
+| 200 | | Success |
 
 #### <a name="example-script-update-a-session"></a>Voorbeeld script: een sessie bijwerken
 
@@ -265,7 +268,7 @@ Met deze opdracht wordt een sessie gestopt. De toegewezen VM wordt kort na gecla
 
 | Statuscode | JSON-nettolading | Opmerkingen |
 |-----------|:-----------|:-----------|
-| 204 | | Geslaagd |
+| 204 | | Success |
 
 ### <a name="example-script-stop-a-session"></a>Voorbeeld script: een sessie stoppen
 

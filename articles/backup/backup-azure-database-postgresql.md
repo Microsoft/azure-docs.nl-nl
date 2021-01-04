@@ -4,12 +4,12 @@ description: Meer informatie over Azure Database for PostgreSQL back-up met lang
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: edbfdb6ea741cdb344a121acdbee3b8bd4bc743c
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 32837e5bb871f7db5024569efc27940047aeacd7
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927886"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734637"
 ---
 # <a name="azure-database-for-postgresql-backup-with-long-term-retention-preview"></a>Azure Database for PostgreSQL back-up met lange termijn retentie (preview-versie)
 
@@ -31,7 +31,7 @@ U kunt deze oplossing afzonderlijk of in aanvulling op de systeem eigen back-upo
 
 |Ondersteuning  |Details  |
 |---------|---------|
-|Ondersteunde implementaties   |  Zelfstandige afzonderlijke server Azure Database for PostgreSQL     |
+|Ondersteunde implementaties   |  [Azure Database for PostgreSQL - één server](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---single-server)     |
 |Ondersteunde Azure-regio's |  VS-Oost, VS-Oost 2, VS-centraal, Zuid-Centraal VS, VS-West, VS-West 2, West-Centraal VS, Brazilië-zuid, Canada-centraal, Europa-noord, Europa-west, UK-zuid, UK-west, Duitsland-west-centraal, Zwitserland-noord, Zwitserland-west, Azië-oost, Zuid-Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-Zuid, India centraal, Australië-oost, Australië-centraal, Australië-centraal 2, UAE-Noord  |
 |Ondersteunde Azure PostgreSQL-versies    |   9,5, 9,6, 10, 11      |
 
@@ -55,7 +55,7 @@ U kunt deze oplossing afzonderlijk of in aanvulling op de systeem eigen back-upo
   
 5. Zodra u de beveiliging configureren voor de geselecteerde data bases hebt geactiveerd, stelt de back-upservice de coördinator in met de back-upschemaën en andere beleids gegevens.
 
-6. Op de geplande tijd communiceert de coördinator met de invoeg toepassing en begint deze met het streamen van de back-upgegevens van de post gres-server met behulp van **pg_dump** .
+6. Op de geplande tijd communiceert de coördinator met de invoeg toepassing en begint deze met het streamen van de back-upgegevens van de post gres-server met behulp van **pg_dump**.
 
 7. De invoeg toepassing verzendt de gegevens rechtstreeks naar de back-upkluis, waardoor er geen staging-locatie nodig is. De gegevens worden versleuteld met door micro soft beheerde sleutels en opgeslagen door de Azure Backup-service in opslag accounts.
 
@@ -71,15 +71,15 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
 1. Er zijn twee manieren om het proces te starten:
 
-    1. Ga naar [Backup Center](backup-center-overview.md)-overzicht van back-  ->  **Overview**  ->  **UPS** .
+    1. Ga naar [Backup Center](backup-center-overview.md)-overzicht van back-  ->    ->  **UPS**.
 
         ![Ga naar Back-upcentrum](./media/backup-azure-database-postgresql/backup-center.png)
 
-        Onder **initiëren: back-up configureren** selecteert u het **type gegevens bron** als **Azure database for PostgreSQL** .
+        Onder **initiëren: back-up configureren** selecteert u het **type gegevens bron** als **Azure database for PostgreSQL**.
 
         ![In initiëren: back-up configureren selecteert u gegevens bron type](./media/backup-azure-database-postgresql/initiate-configure-backup.png)
 
-    1. U kunt ook rechtstreeks naar [back-upkluizen](backup-vault-overview.md)gaan  ->  **Backup** .
+    1. U kunt ook rechtstreeks naar [back-upkluizen](backup-vault-overview.md)gaan  ->  .
 
         ![Ga naar back-upkluizen](./media/backup-azure-database-postgresql/backup-vaults.png)
 
@@ -89,7 +89,7 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
     ![Back-upkluis selecteren in back-up configureren](./media/backup-azure-database-postgresql/configure-backup.png)
 
-1. Selecteer of maak een **back-upbeleid** .
+1. Selecteer of maak een **back-upbeleid**.
 
     ![Back-upbeleid kiezen](./media/backup-azure-database-postgresql/backup-policy.png)
 
@@ -121,7 +121,7 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
 ## <a name="create-backup-policy"></a>Back-upbeleid maken
 
-1. Ga naar **Backup Center**  ->  **back-upbeleid**  ->  **toevoegen** . U kunt ook naar **back-upkluis** back-  ->  **upbeleid**  ->  **toevoegen** .
+1. Ga naar **Backup Center**  ->  **back-upbeleid**  ->  **toevoegen**. U kunt ook naar **back-upkluis** back-  ->  **upbeleid**  ->  **toevoegen**.
 
     ![Back-upbeleid toevoegen](./media/backup-azure-database-postgresql/add-backup-policy.png)
 
@@ -142,8 +142,8 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
 1. De **standaard Bewaar regel** wordt toegepast wanneer er geen andere Bewaar regel is en heeft een standaard waarde van drie maanden.
 
-    - De Bewaar duur ligt tussen zeven dagen en tien jaar in de **back-upgegevens opslag** .
-    - De Bewaar duur ligt tussen zes maanden en tien jaar in de archief **gegevens opslag** .
+    - De Bewaar duur ligt tussen zeven dagen en tien jaar in de **back-upgegevens opslag**.
+    - De Bewaar duur ligt tussen zes maanden en tien jaar in de archief **gegevens opslag**.
 
     ![Bewaar duur bewerken](./media/backup-azure-database-postgresql/edit-retention.png)
 
@@ -157,15 +157,15 @@ U kunt een Data Base herstellen naar een Azure PostgreSQL-server binnen hetzelfd
 Volg deze stapsgewijze hand leiding voor het activeren van een herstel bewerking:
 
 1. Er zijn twee manieren om het herstel proces te starten:
-    1. Ga naar [Back-upcentrum](backup-center-overview.md)  ->  **overzicht**  ->  **herstellen** .
+    1. Ga naar [Back-upcentrum](backup-center-overview.md)  ->  **overzicht**  ->  **herstellen**.
 
     ![Herstellen in Back-upcentrum selecteren](./media/backup-azure-database-postgresql/backup-center-restore.png)
 
-    Onder **initiëren: herstellen** selecteert u het **type gegevens bron** als **Azure database for PostgreSQL** . Selecteer het **back-upexemplaar** .
+    Onder **initiëren: herstellen** selecteert u het **type gegevens bron** als **Azure database for PostgreSQL**. Selecteer het **back-upexemplaar**.
 
     ![Gegevens bron type selecteren in initiëren: herstellen](./media/backup-azure-database-postgresql/initiate-restore.png)
 
-    1. U kunt ook rechtstreeks naar back- **Backup vault**  ->  **upinstanties** van backup-kluis gaan. Selecteer een **back-upexemplaar** dat overeenkomt met de data base die u wilt herstellen.
+    1. U kunt ook rechtstreeks naar back-   ->  **upinstanties** van backup-kluis gaan. Selecteer een **back-upexemplaar** dat overeenkomt met de data base die u wilt herstellen.
 
     ![Back-upinstanties voor herstellen](./media/backup-azure-database-postgresql/backup-instances-restore.png)
 
@@ -179,25 +179,25 @@ Volg deze stapsgewijze hand leiding voor het activeren van een herstel bewerking
 
     ![Lijst met herstel punten](./media/backup-azure-database-postgresql/list-recovery-points.png)
 
-1. Invoer **parameters herstellen** . Op dit moment kunt u kiezen uit twee soorten **herstel bewerkingen: herstellen als data base** en **herstellen als bestanden** .
+1. Invoer **parameters herstellen**. Op dit moment kunt u kiezen uit twee soorten **herstel bewerkingen: herstellen als data base** en **herstellen als bestanden**.
 
-1. **Herstellen als data base** : herstel de back-upgegevens om een nieuwe Data Base te maken in de doel postgresql-server.
+1. **Herstellen als data base**: herstel de back-upgegevens om een nieuwe Data Base te maken in de doel postgresql-server.
 
     - De doel server kan hetzelfde zijn als de bron server. Het overschrijven van de oorspronkelijke Data Base wordt echter niet ondersteund.
     - U kunt kiezen tussen de server en alle abonnementen, maar in dezelfde regio als de kluis.
-    - Selecteer **controleren + herstellen** . Hiermee wordt de validatie geactiveerd om te controleren of de service de juiste herstel machtigingen heeft op de doel server.
+    - Selecteer **controleren + herstellen**. Hiermee wordt de validatie geactiveerd om te controleren of de service de juiste herstel machtigingen heeft op de doel server.
 
     ![Herstellen als data base](./media/backup-azure-database-postgresql/restore-as-database.png)
 
-1. **Herstellen als bestanden** : de back-upbestanden dumpen naar het doel-opslag account (blobs).
+1. **Herstellen als bestanden**: de back-upbestanden dumpen naar het doel-opslag account (blobs).
 
     - U kunt kiezen uit de opslag accounts voor alle abonnementen, maar in dezelfde regio als de kluis.
     - Selecteer de doel container in de container lijst die is gefilterd op het geselecteerde opslag account.
-    - Selecteer **controleren + herstellen** . Hiermee wordt de validatie geactiveerd om te controleren of de service de juiste herstel machtigingen heeft op de doel server.
+    - Selecteer **controleren + herstellen**. Hiermee wordt de validatie geactiveerd om te controleren of de service de juiste herstel machtigingen heeft op de doel server.
 
     ![Herstellen als bestanden](./media/backup-azure-database-postgresql/restore-as-files.png)
 
-1. Controleer de informatie en selecteer **herstellen** . Hiermee wordt een bijbehorende herstel taak geactiveerd die kan worden gevolgd onder **back-uptaken** .
+1. Controleer de informatie en selecteer **herstellen**. Hiermee wordt een bijbehorende herstel taak geactiveerd die kan worden gevolgd onder **back-uptaken**.
 
 ## <a name="prerequisite-permissions-for-configure-backup-and-restore"></a>Vereiste machtigingen voor het configureren van back-up en herstel
 
@@ -207,7 +207,7 @@ Azure Backup volgt strikte beveiligings richtlijnen. Hoewel het een systeem eige
 
 ## <a name="manage-the-backed-up-azure-postgresql-databases"></a>De back-ups van Azure PostgreSQL-data bases beheren
 
-Dit zijn de beheer bewerkingen die u kunt uitvoeren op de **back-Upinstanties** :
+Dit zijn de beheer bewerkingen die u kunt uitvoeren op de **back-Upinstanties**:
 
 ### <a name="on-demand-backup"></a>Back-ups op aanvraag
 
@@ -228,7 +228,7 @@ U kunt de beveiliging van een back-upitem stoppen. Hierdoor worden ook de bijbeh
 
 U kunt het bijbehorende beleid wijzigen met een back-upexemplaar.
 
-1. Selecteer het beleid voor het wijzigen van het **back-upexemplaar**  ->  **Change Policy** .
+1. Selecteer het beleid voor het wijzigen van het **back-upexemplaar**  ->  .
 
     ![Beleid wijzigen](./media/backup-azure-database-postgresql/change-policy.png)
 
@@ -254,7 +254,7 @@ Stappen:
 
     ![Access Control deel venster](./media/backup-azure-database-postgresql/access-control-pane.png)
 
-1. Selecteer **een roltoewijzing toevoegen** .
+1. Selecteer **een roltoewijzing toevoegen**.
 
     ![Roltoewijzing toevoegen](./media/backup-azure-database-postgresql/add-role-assignment.png)
 
@@ -280,7 +280,7 @@ Stappen:
 
 Een Active Directory beheerder toevoegen aan de OSS-server:
 
-Deze stap is vereist om verbinding te maken met de data base via een gebruiker die kan worden geverifieerd met Azure Active Directory in plaats van een wacht woord. De gebruiker van de Azure AD-beheerder in Azure Database for PostgreSQL heeft de rol **azure_ad_admin** . Alleen een **azure_ad_admin** rol kan nieuwe database gebruikers maken die kunnen worden geverifieerd met Azure AD.
+Deze stap is vereist om verbinding te maken met de data base via een gebruiker die kan worden geverifieerd met Azure Active Directory in plaats van een wacht woord. De gebruiker van de Azure AD-beheerder in Azure Database for PostgreSQL heeft de rol **azure_ad_admin**. Alleen een **azure_ad_admin** rol kan nieuwe database gebruikers maken die kunnen worden geverifieerd met Azure AD.
 
 1. Ga naar het tabblad Active Directory beheer in het navigatie deel venster links van de server weergave en voeg uzelf (of iemand anders) toe als Active Directory beheerder.
 
@@ -294,7 +294,7 @@ Raadpleeg [dit document](https://download.microsoft.com/download/7/4/d/74d689aa-
 
 ### <a name="usererrormissingnetworksecuritypermissions"></a>UserErrorMissingNetworkSecurityPermissions
 
-Stel de netwerk regel in door de vlag **toegang tot Azure-Services toestaan** in te scha kelen in de server weergave. Stel in de server weergave, onder het deel venster **verbindings beveiliging** , de vlag **toegang tot Azure-Services toestaan** in op **Ja** .
+Stel de netwerk regel in door de vlag **toegang tot Azure-Services toestaan** in te scha kelen in de server weergave. Stel in de server weergave, onder het deel venster **verbindings beveiliging** , de vlag **toegang tot Azure-Services toestaan** in op **Ja**.
 
 ![Toegang tot Azure-services toestaan](./media/backup-azure-database-postgresql/allow-access-to-azure-services.png)
 
@@ -303,7 +303,7 @@ Stel de netwerk regel in door de vlag **toegang tot Azure-Services toestaan** in
 #### <a name="permission-to-restore-to-a-storage-account-container-when-restoring-as-files"></a>Machtiging voor het herstellen van een opslag account container bij het herstellen als bestanden
 
 1. Geef de back-upkluis-MSI de machtiging om toegang te krijgen tot de containers van het opslag account met behulp van de Azure Portal.
-    1. Ga naar het **opslag account**  ->  **Access Control**  ->  **roltoewijzing toe te voegen** .
+    1. Ga naar het **opslag account**  ->  **Access Control**  ->  **roltoewijzing toe te voegen**.
     1. Wijs de rol **gegevensinzender voor opslag BLOB** toe aan het MSI-bestand van de back-upkluis.
 
     ![Rol Inzender gegevens voor BLOB toewijzen](./media/backup-azure-database-postgresql/assign-storage-blog-data-contributor-role.png)
@@ -315,7 +315,7 @@ Stel de netwerk regel in door de vlag **toegang tot Azure-Services toestaan** in
     ```
 
     1. Vervang de para meter assigned door de **toepassings-id** van het MSI-bestand van de kluis en de bereik parameter om naar uw specifieke container te verwijzen.
-    1. Als u de **toepassings-id** van de kluis-MSI wilt ophalen, selecteert u **alle toepassingen** onder **toepassings type** :
+    1. Als u de **toepassings-id** van de kluis-MSI wilt ophalen, selecteert u **alle toepassingen** onder **toepassings type**:
 
         ![Alle toepassingen selecteren](./media/backup-azure-database-postgresql/select-all-applications.png)
 

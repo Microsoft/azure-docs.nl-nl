@@ -3,14 +3,14 @@ title: Referenties beheren in Azure Automation
 description: In dit artikel leest u hoe u referentie-assets maakt en hoe u deze kunt gebruiken in een runbook of DSC-configuratie.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 12/03/2020
+ms.date: 12/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: ec35653f67c46a7032e834020d8e2ca4ab3125c8
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: caaeb0e40d277ef5e356c0f385a818b831326d6e
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558829"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734824"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Referenties beheren in Azure Automation
 
@@ -51,9 +51,9 @@ Import-Module Orchestrator.AssetManagement.Cmdlets -ErrorAction SilentlyContinue
 > [!NOTE]
 > Vermijd het gebruik van variabelen in de `Name` para meter van `Get-AutomationPSCredential` . Hun gebruik kan de detectie van afhankelijkheden tussen runbooks of DSC-configuraties en referentie-assets tijdens het ontwerp bemoeilijken.
 
-## <a name="python-2-functions-that-access-credentials"></a>Python 2-functies die toegang hebben tot referenties
+## <a name="python-functions-that-access-credentials"></a>Python-functies die toegang hebben tot referenties
 
-De functie in de volgende tabel wordt gebruikt voor toegang tot referenties in een python 2-runbook.
+De functie in de volgende tabel wordt gebruikt voor toegang tot referenties in een python 2-en 3-runbook. Python 3-runbooks zijn momenteel beschikbaar als preview-versie.
 
 | Functie | Beschrijving |
 |:---|:---|
@@ -104,6 +104,8 @@ U kunt ook de methode [GetNetworkCredential](/dotnet/api/system.management.autom
 
 ### <a name="textual-runbook-example"></a>Voor beeld van een tekst-runbook
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
 In het volgende voor beeld ziet u hoe u een Power shell-referentie gebruikt in een runbook. De referentie wordt opgehaald en de gebruikers naam en het wacht woord worden toegewezen aan variabelen.
 
 ```powershell
@@ -126,6 +128,36 @@ $myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$sec
 Connect-AzAccount -Credential $myPsCred
 ```
 
+# <a name="python-2"></a>[Python 2](#tab/python2)
+
+In het volgende voor beeld ziet u een voor beeld van toegang tot referenties in Python 2-runbooks.
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a credential
+cred = automationassets.get_automation_credential("credtest")
+print cred["username"]
+print cred["password"]
+```
+
+# <a name="python-3"></a>[Python 3](#tab/python3)
+
+In het volgende voor beeld ziet u een voor beeld van toegang tot referenties in Python 3-runbooks (preview-versie).
+
+```python
+import automationassets
+from automationassets import AutomationAssetNotFound
+
+# get a credential
+cred = automationassets.get_automation_credential("credtest")
+print (cred["username"])
+print (cred["password"])
+```
+
+---
+
 ### <a name="graphical-runbook-example"></a>Voor beeld van grafisch runbook
 
 U kunt een activiteit voor de interne `Get-AutomationPSCredential` cmdlet toevoegen aan een grafisch runbook door met de rechter muisknop op de referentie in het deel venster Bibliotheek van de grafische editor te klikken en **toevoegen aan canvas** te selecteren.
@@ -139,20 +171,6 @@ In de volgende afbeelding ziet u een voor beeld van het gebruik van een referent
 ## <a name="use-credentials-in-a-dsc-configuration"></a>Referenties gebruiken in een DSC-configuratie
 
 DSC-configuraties in Azure Automation kunnen werken met referentie-assets met `Get-AutomationPSCredential` , maar ze kunnen ook referentie-assets door geven via para meters. Zie [configuraties compileren in azure Automation DSC](../automation-dsc-compile.md#credential-assets)voor meer informatie.
-
-## <a name="use-credentials-in-a-python-2-runbook"></a>Referenties gebruiken in een python 2-runbook
-
-In het volgende voor beeld ziet u een voor beeld van toegang tot referenties in Python 2-runbooks.
-
-```python
-import automationassets
-from automationassets import AutomationAssetNotFound
-
-# get a credential
-cred = automationassets.get_automation_credential("credtest")
-print cred["username"]
-print cred["password"]
-```
 
 ## <a name="next-steps"></a>Volgende stappen
 

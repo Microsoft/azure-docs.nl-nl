@@ -3,14 +3,14 @@ title: Azure Automation-runbooktypen
 description: In dit artikel worden de typen runbooks beschreven die u kunt gebruiken in Azure Automation en overwegingen om te bepalen welk type u moet gebruiken.
 services: automation
 ms.subservice: process-automation
-ms.date: 03/05/2019
+ms.date: 12/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 24d0123eecc56b56573e94d831283d8d360cd16e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a0c12297f19d30bf13ffbe594e0433c83914a8e
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185922"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733957"
 ---
 # <a name="azure-automation-runbook-types"></a>Azure Automation-runbooktypen
 
@@ -33,9 +33,9 @@ Houd rekening met de volgende overwegingen wanneer u bepaalt welk type moet word
 
 U kunt grafische PowerShell Werkstroom-runbooks maken en bewerken met behulp van de grafische editor in Azure Portal. U kunt dit type runbook echter niet maken of bewerken met een ander hulp programma. Belangrijkste functies van grafische runbooks:
 
-* Kan worden geëxporteerd naar bestanden in uw Automation-account en vervolgens worden geïmporteerd in een ander Automation-account. 
-* Power shell-code genereren. 
-* Kan tijdens het importeren worden geconverteerd naar of vanuit grafische power shell-werk stroom-runbooks. 
+* Exporteren naar bestanden in uw Automation-account en vervolgens geïmporteerd in een ander Automation-account.
+* Power shell-code genereren.
+* Wordt geconverteerd naar of van grafische power shell-werk stroom-runbooks tijdens het importeren.
 
 ### <a name="advantages"></a>Voordelen
 
@@ -59,7 +59,7 @@ PowerShell-runbooks zijn gebaseerd op Windows PowerShell. U bewerkt de code van 
 
 ### <a name="advantages"></a>Voordelen
 
-* Implementeer alle complexe logica met Power shell-code zonder de extra complexiteit van Power shell-werk stroom.
+* Implementeer alle complexe logica met Power shell-code zonder de andere complexiteit van Power shell-werk stroom.
 * Start sneller dan Power shell workflow-runbooks, omdat ze niet hoeven te worden gecompileerd voordat ze worden uitgevoerd.
 * Voer in Azure en in Hybrid Runbook Workers uit voor zowel Windows als Linux.
 
@@ -68,7 +68,7 @@ PowerShell-runbooks zijn gebaseerd op Windows PowerShell. U bewerkt de code van 
 * U moet vertrouwd zijn met het uitvoeren van Power shell-scripts.
 * Runbooks kunnen geen [parallelle verwerking](automation-powershell-workflow.md#use-parallel-processing) gebruiken om meerdere acties parallel uit te voeren.
 * Runbooks kunnen geen [controle punten](automation-powershell-workflow.md#use-checkpoints-in-a-workflow) gebruiken om het runbook te hervatten als er een fout optreedt.
-* U kunt alleen Power shell workflow-runbooks en grafische runbooks als onderliggende runbooks toevoegen met behulp van de cmdlet [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) , waarmee een nieuwe taak wordt gemaakt.
+* U kunt alleen Power shell workflow-runbooks en grafische runbooks als onderliggende runbooks toevoegen met behulp van de cmdlet [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) , waarmee een nieuwe taak wordt gemaakt.
 
 ### <a name="known-issues"></a>Bekende problemen
 
@@ -76,7 +76,7 @@ Hieronder vindt u actuele bekende problemen met Power shell-runbooks:
 
 * Power shell-runbooks kunnen een niet-versleutelde [variabele Asset](./shared-resources/variables.md) niet ophalen met een null-waarde.
 * Power shell-runbooks kunnen een variabele Asset met `*~*` in de naam niet ophalen.
-* Een [Get-process-](/powershell/module/microsoft.powershell.management/get-process?view=powershell-7) bewerking in een lus in een Power shell-runbook kan vastlopen na ongeveer 80 iteraties.
+* Een [Get-process-](/powershell/module/microsoft.powershell.management/get-process) bewerking in een lus in een Power shell-runbook kan vastlopen na ongeveer 80 iteraties.
 * Een Power shell-runbook kan mislukken als wordt geprobeerd een grote hoeveelheid gegevens naar de uitvoer stroom tegelijk te schrijven. Normaal gesp roken kunt u dit probleem omzeilen door het runbook uit te voeren alleen de informatie die nodig is om met grote objecten te werken. In plaats van zonder beperkingen te gebruiken `Get-Process` , kunt u bijvoorbeeld de cmdlet uitvoer alleen de vereiste para meters hebben als in `Get-Process | Select ProcessName, CPU` .
 
 ## <a name="powershell-workflow-runbooks"></a>Power shell workflow-runbooks
@@ -100,18 +100,29 @@ Power shell workflow-runbooks zijn tekst-runbooks op basis van [Windows Power sh
 
 ## <a name="python-runbooks"></a>Python-runbooks
 
-Python-runbooks worden gecompileerd onder Python 2. U kunt de code van het runbook rechtstreeks bewerken met de teksteditor in de Azure-portal. U kunt ook een editor voor offline tekst gebruiken en [het runbook importeren](manage-runbooks.md) in azure Automation.
+Python runbooks compileren onder python 2 en python 3. Python 3-runbooks zijn momenteel beschikbaar als preview-versie. U kunt de code van het runbook rechtstreeks bewerken met de teksteditor in de Azure-portal. U kunt ook een editor voor offline tekst gebruiken en [het runbook importeren](manage-runbooks.md) in azure Automation.
 
 ### <a name="advantages"></a>Voordelen
 
 * Gebruik de robuuste python-bibliotheken.
-* Kan worden uitgevoerd in azure of op hybride Runbook-werk rollen van Linux. Windows Hybrid Runbook Workers worden ondersteund met [python 2.7](https://www.python.org/downloads/release/latest/python2) geïnstalleerd.
+* Kan worden uitgevoerd in azure of op Hybrid Runbook Workers.
+* Voor python 2 worden Windows Hybrid Runbook Workers ondersteund met [Python 2,7](https://www.python.org/downloads/release/latest/python2) geïnstalleerd.
+* Voor python 3-Cloud taken wordt python 3,8-versie ondersteund. Scripts en pakketten van elke 3. x-versie kunnen werken als de code compatibel is tussen verschillende versies.  
+* Voor python 3-taken op Windows-computers kunt u kiezen voor het installeren van een versie van 3. x die u wilt gebruiken.  
+* Voor python 3-taken op Linux-machines is het afhankelijk van de python 3-versie die op de computer is geïnstalleerd om DSC-OMSConfig en de Linux-Hybrid Worker uit te voeren. We raden aan om 3,6 te installeren op Linux-computers. Verschillende versies moeten echter ook werken als er geen wijzigingen in de methode handtekeningen of contracten tussen versies van python 3 optreden.
 
 ### <a name="limitations"></a>Beperkingen
 
 * U moet bekend zijn met python-scripts.
-* Alleen python 2 wordt momenteel ondersteund. Alle python 3-specifieke functies mislukken.
 * Als u bibliotheken van derden wilt gebruiken, moet u [de pakketten importeren](python-packages.md) in het Automation-account.
+*    Het is niet mogelijk om met de cmdlet start-AutomationRunbook in de Power shell/Power shell-werk stroom een python 3-runbook (preview) te starten. U kunt de cmdlet **Start-AzAutomationRunbook** van de module AZ. Automation of de cmdlet **Start-AzureRmAutomationRunbook** van de AzureRm. Automation-module gebruiken om deze beperking te omzeilen.  
+* Python 3-runbooks (preview) en pakketten werken niet met Power shell.
+* Het gebruiken van een webhook om een Python-runbook te starten wordt niet ondersteund.
+* Azure Automation biedt geen ondersteuning voor **sys. stderr**.
+
+### <a name="known-issues"></a>Bekende problemen
+
+Python 3-taken mislukken soms met een uitzonderings bericht *Ongeldige interpreter-pad naar een uitvoerbaar bestand*. Deze uitzonde ring kan optreden als een taak vertraging heeft ondergaan, die meer dan tien minuten begint of **Start-AutomationRunbook** gebruikt om python 3-runbooks te starten. Als de taak is vertraagd, moet het runbook opnieuw worden gestart om het opnieuw te starten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

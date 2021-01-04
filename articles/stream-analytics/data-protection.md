@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 4436289d544de057acef132117346ac53c20b5a7
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 76218003a40c02def3dc62ea8480022d9647938d
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576491"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723334"
 ---
 # <a name="data-protection-in-azure-stream-analytics"></a>Gegevens beveiliging in Azure Stream Analytics 
 
@@ -72,7 +72,7 @@ Gebruik de volgende stappen om uw opslag account te configureren voor privé geg
 
    ![Instellingen voor het opslag account voor privé gegevens](./media/data-protection/storage-account-create.png)
 
-1. Als u wilt verifiëren met beheerde identiteit (preview), selecteert u **beheerde identiteit** in de vervolg keuzelijst authenticatie modus. Als u beheerde identiteit kiest, moet u uw Stream Analytics-taak toevoegen aan de toegangs beheer lijst van het opslag account. Als u geen toegang geeft tot uw taak, kan de taak geen bewerkingen uitvoeren. Zie [Azure RBAC gebruiken om een beheerde identiteits toegang toe te wijzen aan een andere resource](../active-directory/managed-identities-azure-resources/howto-assign-access-portal.md#use-azure-rbac-to-assign-a-managed-identity-access-to-another-resource)voor meer informatie over het verlenen van toegang.
+1. Als u wilt verifiëren met beheerde identiteit (preview), selecteert u **beheerde identiteit** in de vervolg keuzelijst authenticatie modus. Als u een beheerde identiteit kiest, moet u uw Stream Analytics-taak toevoegen aan de toegangs beheer lijst van het opslag account met de rol van de BLOB voor de *gegevens* van de blobopslag. Als u geen toegang geeft tot uw taak, kan de taak geen bewerkingen uitvoeren. Zie [Azure RBAC gebruiken om een beheerde identiteits toegang toe te wijzen aan een andere resource](../active-directory/managed-identities-azure-resources/howto-assign-access-portal.md#use-azure-rbac-to-assign-a-managed-identity-access-to-another-resource)voor meer informatie over het verlenen van toegang.
 
    :::image type="content" source="media/data-protection/storage-account-create-msi.png" alt-text="Instellingen voor het opslag account voor privé gegevens met beheerde identiteits verificatie":::
 

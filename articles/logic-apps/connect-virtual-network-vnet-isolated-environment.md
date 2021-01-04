@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/18/2020
-ms.openlocfilehash: 3eaabc6c1e7d34bb5d9433d742581f39bdfbf98e
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 315de18539bf083515658b40fa70f3c214d7c909
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97669530"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739736"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Verbinding maken met virtuele Azure-netwerken van Azure Logic Apps met behulp van een ISE (Integration service Environment)
 
@@ -44,24 +44,14 @@ U kunt ook een ISE maken met behulp van de voor [beeld-Azure Resource Manager Qu
   > [!IMPORTANT]
   > Logic apps, ingebouwde triggers, ingebouwde acties en connectors die worden uitgevoerd in uw ISE, gebruiken een prijs plan dat verschilt van het prijs plan op basis van verbruik. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over de prijzen en facturerings werkzaamheden voor ISEs. Zie [Logic apps prijzen](../logic-apps/logic-apps-pricing.md)voor prijs tarieven.
 
-* Een [virtueel Azure-netwerk](../virtual-network/virtual-networks-overview.md). Het virtuele netwerk moet vier *lege* subnetten hebben, die vereist zijn voor het maken en implementeren van resources in uw ISE en die worden gebruikt door deze interne en verborgen onderdelen:
+* Een [virtueel Azure-netwerk](../virtual-network/virtual-networks-overview.md) met vier *lege* subnetten, dat vereist is voor het maken en implementeren van resources in uw ISE en die worden gebruikt door deze interne en verborgen onderdelen:
 
   * Logic Apps compute
   * Interne App Service Environment (connectors)
   * Interne API Management (connectors)
   * Interne redis voor caching en prestaties
   
-  U kunt de subnetten vooraf maken of u kunt wachten totdat u uw ISE maakt, zodat u subnetten tegelijk kunt maken. Controleer echter de vereisten voor het [subnet](#create-subnet)voordat u uw subnets maakt.
-
-  > [!IMPORTANT]
-  >
-  > Gebruik niet de volgende IP-adres ruimten voor uw virtuele netwerk of subnetten, omdat deze niet kunnen worden omgezet door Azure Logic Apps:<p>
-  > 
-  > * 0.0.0.0/8
-  > * 100.64.0.0/10
-  > * 127.0.0.0/8
-  > * 168.63.129.16/32
-  > * 169.254.169.254/32
+  U kunt de subnetten vooraf maken of wanneer u uw ISE maakt, zodat u de subnetten op hetzelfde moment kunt maken. Voordat u de subnetten maakt, moet u echter de vereisten voor het [subnet](#create-subnet)controleren.
 
   * Zorg ervoor dat het virtuele netwerk [toegang biedt tot uw ISE](#enable-access) zodat uw ISE goed kan werken en toegankelijk moet blijven.
 
@@ -170,14 +160,14 @@ Als u geen toegang voor deze afhankelijkheden toestaat, mislukt uw ISE-implement
 
 * Service-eindpunten
 
-  U moet Service-eind punten inschakelen voor Azure SQL, Storage, Service Bus en Event Hubs omdat u geen verkeer via een firewall naar deze services kunt verzenden.
+  U moet Service-eind punten inschakelen voor Azure SQL, Storage, Service Bus, sleutel kluis en Event Hubs omdat u geen verkeer via een firewall naar deze services kunt verzenden.
 
 *  Andere binnenkomende en uitgaande afhankelijkheden
 
    Uw firewall *moet* de volgende binnenkomende en uitgaande afhankelijkheden toestaan:
    
    * [Azure App Service afhankelijkheden](../app-service/environment/firewall-integration.md#deploying-your-ase-behind-a-firewall)
-   * [Azure Cache Service-afhankelijkheden](../azure-cache-for-redis/cache-how-to-premium-vnet.md#what-are-some-common-misconfiguration-issues-with-azure-cache-for-redis-and-vnets)
+   * [Azure Cache Service-afhankelijkheden](../azure-cache-for-redis/cache-how-to-premium-vnet.md#what-are-some-common-misconfiguration-issues-with-azure-cache-for-redis-and-virtual-networks)
    * [Azure API Management-afhankelijkheden](../api-management/api-management-using-with-vnet.md#-common-network-configuration-issues)
 
 <a name="create-environment"></a>
@@ -219,7 +209,7 @@ Als u geen toegang voor deze afhankelijkheden toestaat, mislukt uw ISE-implement
 
    * Maakt gebruik van een naam die begint met een letter of een onderstrepings teken (geen getallen). deze tekens worden niet gebruikt: `<` ,, `>` `%` , `&` , `\\` , `?` , `/` .
 
-   * Maakt gebruik van de [CIDR-indeling (classable Inter-Domain Routing)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) en een klasse B-adres ruimte.
+   * Maakt gebruik van de [CIDR-indeling (classable Inter-Domain Routing)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
    
      > [!IMPORTANT]
      >

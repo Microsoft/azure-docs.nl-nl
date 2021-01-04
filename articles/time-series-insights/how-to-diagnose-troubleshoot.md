@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3d26a0ef86ab96940f3d5bb96d87340b77f1faca
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: eca2009ee0470dec9c9ce60d8754f8f7a71619d3
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016833"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740535"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Een Azure Time Series Insights Gen2-omgeving diagnosticeren en problemen oplossen
 
@@ -124,14 +124,6 @@ Als de tijds tempel eigenschap niet expliciet is opgegeven, wordt de IoT-hub van
 Dit probleem kan zich voordoen als in uw omgeving geen hiërarchie voor tijdreeks modellen is gedefinieerd. Lees voor meer informatie over het [werken met Time Series-modellen](./time-series-insights-overview.md).
 
   [![Bij niet-bovenliggende instanties wordt een waarschuwing weer gegeven.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
-
-## <a name="problem-power-bi-connector-shows-unable-to-connect"></a>Probleem: Power BI connector toont ' kan geen verbinding maken '
-
-Dit probleem kan optreden als u geen gebruik maakt van de nieuwste versie van de Power BI-connector in Power BI Desktop.
-
-[![Scherm afbeelding toont het dialoog venster kan geen verbinding maken.](media/preview-troubleshoot/power-bi-unable-to-connect.png)](media/preview-troubleshoot/power-bi-unable-to-connect.png#lightbox)
-
-- Controleer de versie van uw Power BI Desktop en zorg ervoor dat u de versie van juli 2020 gebruikt. Als dat niet het geval is, werkt u de Power BI Desktop bij en voert u de connector opnieuw uit.
 
 ## <a name="next-steps"></a>Volgende stappen
 

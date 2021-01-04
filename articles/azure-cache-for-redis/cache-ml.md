@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: d9731455edf0afbe4c0768ae40a51316ac71ad94
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c2241d738a43c6891ee4bea0829400fdc51a664b
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537572"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734229"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-with-azure-cache-for-redis"></a>Een machine learning model implementeren voor het Azure Functions met Azure cache voor redis 
 
@@ -41,9 +41,9 @@ Azure cache voor redis is zeer goed en schaalbaar: wanneer het is gekoppeld aan 
 ## <a name="create-an-azure-cache-for-redis-instance"></a>Een instantie van Azure Cache voor Redis maken 
 U kunt een machine learning model implementeren om te Azure Functions met een basis-, standaard-of Premium-cache-exemplaar. Volg deze stappen om een cache-exemplaar te maken.  
 
-1. Ga naar de Azure Portal start pagina of open het menu Sidebar en selecteer vervolgens **een resource maken** . 
+1. Ga naar de Azure Portal start pagina of open het menu Sidebar en selecteer vervolgens **een resource maken**. 
    
-1. Selecteer op de pagina **Nieuw** de optie **Databases** en selecteer vervolgens **Azure Cache voor Redis** .
+1. Selecteer op de pagina **Nieuw** de optie **Databases** en selecteer vervolgens **Azure Cache voor Redis**.
 
     :::image type="content" source="media/cache-private-link/2-select-cache.png" alt-text="Selecteer Azure Cache voor Redis.":::
    
@@ -51,7 +51,7 @@ U kunt een machine learning model implementeren om te Azure Functions met een ba
    
    | Instelling      | Voorgestelde waarde  | Beschrijving |
    | ------------ |  ------- | -------------------------------------------------- |
-   | **DNS-naam** | Geef een wereldwijd unieke naam op. | De cachenaam is een tekenreeks van 1 tot 63 tekens die alleen cijfers, letters en afbreekstreepjes mag bevatten. De naam moet beginnen en eindigen met een cijfer of letter en mag geen opeenvolgende afbreekstreepjes bevatten. De *hostnaam* van uw cache-exemplaar wordt *\<DNS name>.redis.cache.windows.net* . | 
+   | **DNS-naam** | Geef een wereldwijd unieke naam op. | De cachenaam is een tekenreeks van 1 tot 63 tekens die alleen cijfers, letters en afbreekstreepjes mag bevatten. De naam moet beginnen en eindigen met een cijfer of letter en mag geen opeenvolgende afbreekstreepjes bevatten. De *hostnaam* van uw cache-exemplaar wordt *\<DNS name>.redis.cache.windows.net*. | 
    | **Abonnement** | Open de vervolgkeuzelijst en selecteer uw abonnement. | Het abonnement waarmee dit nieuwe Azure Cache voor Redis-exemplaar wordt gemaakt. | 
    | **Resourcegroep** | Open de vervolgkeuzelijst en selecteer een resourcegroep of kies **Nieuwe maken** en geef een naam voor de nieuwe resourcegroep op. | Naam voor de resourcegroep waarin de cache en andere resources moeten worden gemaakt. Door al uw app-resources in één resourcegroep te plaatsen, kunt u ze eenvoudig beheren of verwijderen. | 
    | **Locatie** | Open de vervolgkeuzelijst en selecteer een locatie. | Selecteer een [regio](https://azure.microsoft.com/regions/) in de buurt van andere services die gaan gebruikmaken van de cache. |
@@ -59,7 +59,7 @@ U kunt een machine learning model implementeren om te Azure Functions met een ba
 
 1. Selecteer het tabblad **Netwerken** of klik op de knop **Netwerken** onderaan de pagina.
 
-1. Selecteer uw verbindingsmethode op het tabblad **Netwerk** .
+1. Selecteer uw verbindingsmethode op het tabblad **Netwerk**.
 
 1. Selecteer het tabblad **Volgende: Geavanceerd** of klik op de knop **Volgende: Geavanceerd** onderaan de pagina.
 
@@ -71,7 +71,7 @@ U kunt een machine learning model implementeren om te Azure Functions met een ba
 
 1. Voer desgewenst in het tabblad **Tags** de naam en waarde in om de resource te categoriseren. 
 
-1. Selecteer **Controleren + maken** . Het tabblad Beoordelen + maken wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.
+1. Selecteer **Controleren + maken**. Het tabblad Beoordelen + maken wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.
 
 1. Selecteer **Maken** nadat het groene bericht Validatie geslaagd verschijnt.
 
@@ -81,7 +81,7 @@ Het duurt even voor de cache is gemaakt. U kunt de voortgang bekijken op de **ov
 
 Voordat u implementeert, moet u definiëren wat er nodig is om het model als een webservice uit te voeren. In de volgende lijst worden de belangrijkste items beschreven die nodig zijn voor een implementatie:
 
-* Een __invoer script__ . Met dit script worden aanvragen geaccepteerd, wordt de aanvraag met het model gescoord en worden de resultaten geretourneerd.
+* Een __invoer script__. Met dit script worden aanvragen geaccepteerd, wordt de aanvraag met het model gescoord en worden de resultaten geretourneerd.
 
     > [!IMPORTANT]
     > Het invoer script is specifiek voor uw model. het moet inzicht krijgen in de indeling van de gegevens van de inkomende aanvraag, de indeling van de gegevens die worden verwacht door uw model en de indeling van de gegevens die aan clients worden geretourneerd.
@@ -123,9 +123,9 @@ def run(data):
 
 Zie [Score code definiëren](../machine-learning/how-to-deploy-and-where.md?tabs=python#define-an-entry-script) voor meer informatie over het invoer script.
 
-* **Afhankelijkheden** , zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
+* **Afhankelijkheden**, zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
 
-Deze entiteiten worden ingekapseld in een Afleidings __configuratie__ . De deductieconfiguratie verwijst naar het invoerscript en andere afhankelijkheden.
+Deze entiteiten worden ingekapseld in een Afleidings __configuratie__. De deductieconfiguratie verwijst naar het invoerscript en andere afhankelijkheden.
 
 > [!IMPORTANT]
 > Wanneer u een configuratie voor afwijzen maakt voor gebruik met Azure Functions, moet u een [omgevings](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py) object gebruiken. Houd er rekening mee dat als u een aangepaste omgeving definieert, de standaard waarden van azureml en versie >= 1.0.45 als een PIP-afhankelijkheid worden toegevoegd. Dit pakket bevat de functionaliteit die nodig is om het model als een webservice te hosten. In het volgende voor beeld ziet u hoe u een omgevings object maakt en dit gebruikt met een configuratie voor ingaand gebruik:
@@ -283,14 +283,14 @@ Op dit punt begint de functie-app het laden van de installatie kopie.
 > [!IMPORTANT]
 > Het kan enkele minuten duren voordat de installatie kopie is geladen. U kunt de voortgang bewaken met behulp van de Azure Portal.
 
-## <a name="test-azure-function-http-trigger"></a>HTTP-trigger Azure function testen 
+## <a name="test-azure-functions-http-trigger"></a>Azure Functions HTTP-trigger testen 
 
-We gaan nu de HTTP-trigger van Azure function uitvoeren en testen.
+We gaan nu onze Azure Functions HTTP-trigger uitvoeren en testen.
 
-1. Ga naar de Azure function-app in het Azure Portal.
-1. Selecteer onder ontwikkelaar **code + test** . 
+1. Ga naar de functie-app in het Azure Portal.
+1. Selecteer onder ontwikkelaar **code + test**. 
 1. Klik aan de rechter kant op het tabblad **invoer** . 
-1. Klik op de knop **uitvoeren** om de http-trigger van Azure Function te testen. 
+1. Klik op de knop **uitvoeren** om de Azure functions http-trigger te testen. 
 
 U hebt nu een model geïmplementeerd van Azure Machine Learning als een functie-app met behulp van een Azure-cache voor redis-exemplaar. Meer informatie over Azure cache voor redis door te navigeren naar de koppelingen in de onderstaande sectie.
 
@@ -305,17 +305,17 @@ Als u klaar bent met de Snelstartgids, kunt u de Azure-resources die u in deze Q
 
 ### <a name="to-delete-a-resource-group"></a>Een resourcegroep verwijderen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer vervolgens **Resourcegroepen** .
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer vervolgens **Resourcegroepen**.
 
-2. Typ in het vak **Filteren op naam...** de naam van de resourcegroep. Selecteer in de resourcegroep, in de resultatenlijst, de optie **...** . Selecteer vervolgens **Resourcegroep verwijderen** .
+2. Typ in het vak **Filteren op naam...** de naam van de resourcegroep. Selecteer in de resourcegroep, in de resultatenlijst, de optie **...** . Selecteer vervolgens **Resourcegroep verwijderen**.
 
-U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ ter bevestiging de naam van de resourcegroep. Selecteer vervolgens **Verwijderen** .
+U wordt gevraagd om het verwijderen van de resourcegroep te bevestigen. Typ ter bevestiging de naam van de resourcegroep. Selecteer vervolgens **Verwijderen**.
 
 Na enkele ogenblikken worden de resourcegroep en alle bijbehorende resources verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen 
 
 * Meer informatie over [Azure cache voor redis](./cache-overview.md)
-* Meer informatie over het configureren van uw functions-app in de [functions](../azure-functions/functions-create-function-linux-custom-image.md) -documentatie.
+* Meer informatie over het configureren van uw functie-app in de [functions](../azure-functions/functions-create-function-linux-custom-image.md) -documentatie.
 * [Naslaginformatie voor API](/python/api/azureml-contrib-functions/azureml.contrib.functions?preserve-view=true&view=azure-ml-py) 
 * Een [python-app maken die gebruikmaakt van Azure cache voor redis](./cache-python-get-started.md)

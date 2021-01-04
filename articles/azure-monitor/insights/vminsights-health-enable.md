@@ -1,50 +1,71 @@
 ---
-title: Azure Monitor voor VM's gast status inschakelen (preview)
+title: Gaststatus van Azure Monitor voor VM's inschakelen (preview)
 description: Hierin wordt beschreven hoe u Azure Monitor voor VM's gast status inschakelt in uw abonnement en hoe u virtuele machines kunt voorbereiden.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
-ms.openlocfilehash: 20d38e5caee67ca8bb13877d3162401fa245dc2d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: references_regions
+ms.openlocfilehash: 78ce082c6e90cfc9c67ddcfa00926d292b9ed7ea
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444772"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740467"
 ---
-# <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Azure Monitor voor VM's gast status inschakelen (preview)
+# <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Gaststatus van Azure Monitor voor VM's inschakelen (preview)
 Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 De open bare preview heeft de volgende beperkingen Azure Monitor voor VM's de gast status:
 
 - Er worden momenteel alleen virtuele Azure-machines ondersteund. Azure Arc voor servers wordt momenteel niet ondersteund.
-- Op de virtuele machine moet een van de volgende besturings systemen worden uitgevoerd: 
+
+
+## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
+Op de virtuele machine moet een van de volgende besturings systemen worden uitgevoerd: 
+
   - Ubuntu 16,04 LTS, Ubuntu 18,04 LTS
   - Windows Server 2012 of hoger
-- De virtuele machine moet zich in een van de volgende regio's bevinden:
-  - Australië - oost
-  - Australië - zuidoost
-  - India - centraal
-  - Central US
-  - VS - oost
-  - VS - oost 2
-  - VS-Oost 2 EUAP
-  - Duitsland - west-centraal
-  - Japan - oost
-  - VS - noord-centraal
-  - Europa - noord
-  - South Central US
-  - Azië - zuidoost
-  - Verenigd Koninkrijk Zuid
-  - Europa -west
-  - VS - west
-  - VS - west 2
-- Log Analytics werk ruimte moet zich in een van de volgende regio's bevinden:
-  - VS - oost
-  - VS-Oost 2 EUAP
-  - Europa-west regio
+
+## <a name="supported-regions"></a>Ondersteunde regio's
+
+De virtuele machine moet zich in een van de volgende regio's bevinden:
+
+- Australië - centraal
+- Australië - oost
+- Australia Southeast
+- India - centraal
+- Central US
+- Azië - oost
+- VS - oost
+- VS - oost 2
+- VS-Oost 2 EUAP
+- Duitsland - west-centraal
+- Japan East
+- VS - noord-centraal
+- Europa - noord
+- South Central US
+- Azië - zuidoost
+- Verenigd Koninkrijk Zuid
+- VS - west-centraal
+- Europa -west
+- VS - west
+- VS - west 2
+
+
+Log Analytics werk ruimte moet zich in een van de volgende regio's bevinden:
+
+- Central US
+- VS - oost
+- VS - oost 2
+- VS-Oost 2 EUAP
+- Europa - noord
+- Azië - zuidoost
+- Verenigd Koninkrijk Zuid
+- Europa-west regio
+- West US 2
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -52,9 +73,8 @@ De open bare preview heeft de volgende beperkingen Azure Monitor voor VM's de ga
 - De door de gebruiker uitgevoerde stappen voor het uitvoeren van de voor bereiding moeten een mini maal niveau van Inzender toegang hebben tot het abonnement waar de virtuele machine en gegevens verzamelings regel zich bevinden.
 - Vereiste Azure-resource providers moeten zijn geregistreerd, zoals wordt beschreven in de volgende sectie.
 
-
 ## <a name="register-required-azure-resource-providers"></a>Vereiste Azure-resource providers registreren
-De volgende Azure-resource providers moeten worden geregistreerd voor uw abonnement om Azure Monitor voor VM's gast status in te scha kelen. 
+De volgende Azure-resource providers worden geregistreerd voor uw abonnement om Azure Monitor voor VM's gast status in te scha kelen. 
 
 - Micro soft. WorkloadMonitor
 - Microsoft.Insights

@@ -3,12 +3,12 @@ title: Problemen met SQL Server database back-up oplossen
 description: Informatie over het oplossen van back-ups van SQL Server-data bases die worden uitgevoerd op virtuele machines van Azure met Azure Backup.
 ms.topic: troubleshooting
 ms.date: 06/18/2019
-ms.openlocfilehash: f215b848bedae333979f0fed8eb7f216fb6e25f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d702959be70716f0c2bc85920bdb7aa3e061aff1
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91332777"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97733916"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Problemen met SQL Server database back-up oplossen met behulp van Azure Backup
 
@@ -18,7 +18,7 @@ Zie [over SQL Server back-up in azure vm's](sql-support-matrix.md#feature-consid
 
 ## <a name="sql-server-permissions"></a>SQL Server machtigingen
 
-Als u de beveiliging voor een SQL Server Data Base op een virtuele machine wilt configureren, moet u de **AzureBackupWindowsWorkload** -extensie op die virtuele machine installeren. Als u de fout **UserErrorSQLNoSysadminMembership**krijgt, betekent dit dat uw SQL Server-exemplaar niet over de vereiste back-upmachtigingen beschikt. Volg de stappen in [set VM permissions](backup-azure-sql-database.md#set-vm-permissions)om deze fout op te lossen.
+Als u de beveiliging voor een SQL Server Data Base op een virtuele machine wilt configureren, moet u de **AzureBackupWindowsWorkload** -extensie op die virtuele machine installeren. Als u de fout **UserErrorSQLNoSysadminMembership** krijgt, betekent dit dat uw SQL Server-exemplaar niet over de vereiste back-upmachtigingen beschikt. Volg de stappen in [set VM permissions](backup-azure-sql-database.md#set-vm-permissions)om deze fout op te lossen.
 
 ## <a name="troubleshoot-discover-and-configure-issues"></a>Problemen met detectie en configuratie oplossen
 
@@ -56,13 +56,47 @@ Bij momenten kunnen wille keurige fouten optreden in back-up-en herstel bewerkin
 
 1. SQL biedt ook enkele richt lijnen voor het werken met antivirus Programma's. Raadpleeg [dit artikel](https://support.microsoft.com/help/309422/choosing-antivirus-software-for-computers-that-run-sql-server) voor meer informatie.
 
+## <a name="faulty-instance-in-a-vm-with-multiple-sql-server-instances"></a>Defect exemplaar in een VM met meerdere exemplaren van SQL Server
+
+U kunt alleen herstellen naar een SQL-VM als alle SQL-exemplaren die in de virtuele machine worden uitgevoerd, in orde zijn gerapporteerd. Als een of meer exemplaren ' faulted ' zijn, wordt de virtuele machine niet weer gegeven als een herstel doel. Dit kan daarom een mogelijke reden zijn waarom een virtuele machine met meerdere exemplaren mogelijk niet wordt weer gegeven in de vervolg keuzelijst ' server ' tijdens de herstel bewerking.
+
+U kunt de ' back-up-gereedheid ' van alle SQL-exemplaren in de virtuele machine valideren onder **back-up configureren**:
+
+![Gereedheid voor back-ups valideren](./media/backup-sql-server-azure-troubleshoot/backup-readiness.png)
+
+Als u een herstel bewerking wilt uitvoeren voor de in orde zijnde SQL-exemplaren, voert u de volgende stappen uit:
+
+1. Meld u aan bij de SQL-VM en ga naar `C:\Program Files\Azure Workload Backup\bin` .
+1. Maak een JSON-bestand met de naam `ExtensionSettingsOverrides.json` (als dit nog niet aanwezig is). Als dit bestand al aanwezig is op de virtuele machine, kunt u door gaan met het gebruik ervan.
+1. Voeg de volgende inhoud toe aan het JSON-bestand en sla het bestand op:
+
+    ```json
+    {
+                  "<ExistingKey1>":"<ExistingValue1>",
+                    …………………………………………………… ,
+              "whitelistedInstancesForInquiry": "FaultyInstance_1,FaultyInstance_2"
+            }
+            
+            Sample content:        
+            { 
+              "whitelistedInstancesForInquiry": "CRPPA,CRPPB "
+            }
+
+    ```
+
+1. Activeer de **herdetectie db's** -bewerking op de betrokken server van de Azure Portal (dezelfde locatie waar back-ups kunnen worden gedetecteerd). De VM wordt weer gegeven als doel voor herstel bewerkingen.
+
+    ![Db's opnieuw detecteren](./media/backup-sql-server-azure-troubleshoot/rediscover-dbs.png)
+
+1. Verwijder de vermelding *whitelistedInstancesForInquiry* uit de ExtensionSettingsOverrides.jsin het bestand wanneer de herstel bewerking is voltooid.
+
 ## <a name="error-messages"></a>Foutberichten
 
 ### <a name="backup-type-unsupported"></a>Het back-uptype wordt niet ondersteund
 
 | Ernst | Beschrijving | Mogelijke oorzaken | Aanbevolen actie |
 |---|---|---|---|
-| Waarschuwing | De huidige instellingen voor deze data base bieden geen ondersteuning voor bepaalde back-uptypen die aanwezig zijn in het bijbehorende beleid. | <li>Alleen een volledige database back-upbewerking kan worden uitgevoerd op de hoofd database. Differentiële back-up en transactie logboek back-up zijn niet mogelijk. </li> <li>Voor elke data base in het eenvoudige herstel model is geen back-up van transactie logboeken toegestaan.</li> | De data base-instellingen wijzigen SP alle back-uptypen in het beleid worden ondersteund. Of wijzig het huidige beleid zodat alleen de ondersteunde back-uptypen worden vermeld. Anders worden de niet-ondersteunde back-uptypen overgeslagen tijdens de geplande back-up of mislukt de back-uptaak voor back-ups op aanvraag.
+| Waarschuwing | De huidige instellingen voor deze data base bieden geen ondersteuning voor bepaalde back-uptypen die aanwezig zijn in het bijbehorende beleid. | <li>Alleen een volledige database back-upbewerking kan worden uitgevoerd op de hoofd database. Differentiële back-up en transactie logboek back-up zijn niet mogelijk. </li> <li>Voor elke data base in het eenvoudige herstel model is geen back-up van transactie logboeken toegestaan.</li> | Wijzig de instellingen van de data base zodat alle back-uptypen in het beleid worden ondersteund. Of wijzig het huidige beleid zodat alleen de ondersteunde back-uptypen worden vermeld. Anders worden de niet-ondersteunde back-uptypen overgeslagen tijdens de geplande back-up of mislukt de back-uptaak voor back-ups op aanvraag.
 
 ### <a name="usererrorsqlpodoesnotsupportbackuptype"></a>UserErrorSQLPODoesNotSupportBackupType
 
@@ -179,7 +213,7 @@ De virtuele machine kan geen verbinding maken met Azure Backup service vanwege p
 Controleer op een of meer van de volgende symptomen voordat u de bewerking opnieuw registreren start:
 
 - Alle bewerkingen (zoals back-up, herstel en configuratie back-up) mislukken op de virtuele machine met een van de volgende fout codes: **WorkloadExtensionNotReachable**, **UserErrorWorkloadExtensionNotInstalled**, **WorkloadExtensionNotPresent**, **WorkloadExtensionDidntDequeueMsg**.
-- Als het gebied voor de **back-upstatus** voor het back-upitem **niet bereikbaar**is, geeft u alle andere oorzaken uit die kunnen resulteren in dezelfde status:
+- Als het gebied voor de **back-upstatus** voor het back-upitem **niet bereikbaar** is, geeft u alle andere oorzaken uit die kunnen resulteren in dezelfde status:
 
   - Onvoldoende machtigingen voor het uitvoeren van back-upbewerkingen op de VM.
   - De virtuele machine wordt afgesloten, dus er kunnen geen back-ups worden gemaakt.

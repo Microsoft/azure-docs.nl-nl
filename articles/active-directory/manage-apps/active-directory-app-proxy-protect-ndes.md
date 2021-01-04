@@ -13,12 +13,12 @@ ms.topic: how-to
 ms.date: 01/17/2020
 ms.author: kenwith
 ms.reviewer: mimart
-ms.openlocfilehash: 0682115727068c928418d97fbf92ed32897c39d4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 0793547c4eafcad256664546240a07c1bcb0e628
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656748"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709007"
 ---
 # <a name="integrate-with-azure-ad-application-proxy-on-a-network-device-enrollment-service-ndes-server"></a>Integreren met Azure AD-toepassingsproxy op een server met een registratie service voor netwerk apparaten (NDES)
 
@@ -66,7 +66,7 @@ Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelh
 
 1. Nadat de installatie is voltooid, gaat u terug naar de Azure Portal.
 
-1. Selecteer **bedrijfs toepassingen**.
+1. Selecteer **Enterprise-toepassingen**.
 
    ![Zorg ervoor dat u de juiste belanghebbenden gebruikt](./media/active-directory-app-proxy-protect-ndes/azure-active-directory-enterprise-applications.png)
 
@@ -81,7 +81,7 @@ Azure AD-toepassingsproxy is gebaseerd op Azure. Het biedt u een enorme hoeveelh
 
 1. Selecteer **+ toevoegen** om uw toepassing op te slaan.
 
-1. Test of u toegang hebt tot de NDES-server via de Azure AD-toepassings proxy door de koppeling die u in stap 10 hebt gekopieerd, in een browser te plakken. Er wordt een standaard welkomst pagina van IIS weer geven.
+1. Test of u toegang hebt tot de NDES-server via de Azure AD-toepassings proxy door de koppeling die u in stap 15 hebt gekopieerd, in een browser te plakken. Er wordt een standaard welkomst pagina van IIS weer geven.
 
 1. Als laatste test voegt u het *mscep.dll* pad toe aan de bestaande URL die u in de vorige stap hebt geplakt:
 

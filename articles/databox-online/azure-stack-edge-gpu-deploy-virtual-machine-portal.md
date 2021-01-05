@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro device so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 89ef196cb5a124b8b1100871c408400f3fceef5c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 04ba9777fe9e8470e6f02c83f3996d098023e05e
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466541"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763452"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-the-azure-portal"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via de Azure Portal
 
@@ -123,7 +123,7 @@ Volg deze stappen om een virtuele machine te maken nadat u een VM-installatie ko
     |---------|---------|
     |Naam van de virtuele machine     |         |
     |Installatiekopie     | Selecteer een van de VM-installatie kopieën die beschikbaar zijn op het apparaat.        |
-    |Grootte     | Kies uit de [ondersteunde VM-grootten](azure-stack-edge-gpu-deploy-virtual-machine-templates.md#supported-vm-sizes).        |
+    |Grootte     | Kies uit de [ondersteunde VM-grootten](azure-stack-edge-gpu-virtual-machine-sizes.md).        |
     |Gebruikersnaam     | Gebruik de standaard gebruikers naam *azureuser*.        |
     |Verificatietype    | U kunt kiezen uit een open bare SSH-sleutel of een door de gebruiker gedefinieerd wacht woord.       |
     |Wachtwoord     | Voer een wacht woord in om u aan te melden bij de virtuele machine. Het wacht woord moet ten minste 12 tekens lang zijn en voldoen aan de gedefinieerde [complexiteits vereisten](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).        |

@@ -10,12 +10,12 @@ author: saachigopal
 ms.date: 10/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: a441d1d22f938e1d1e05aea547929fa3b315d406
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: cb8e71d9f94441f79dd7ce2fd5ee6458987563c3
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012891"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795917"
 ---
 # <a name="train-a-model-by-using-a-custom-docker-image"></a>Een model trainen met behulp van een aangepaste docker-installatie kopie
 
@@ -29,7 +29,7 @@ Voer de code uit in een van de volgende omgevingen:
 
 * Azure Machine Learning Compute-instantie (geen down loads of installatie vereist):
   * Voltooi de zelf studie [omgeving en werk ruimte instellen](tutorial-1st-experiment-sdk-setup.md) om een toegewezen notebook server te maken die vooraf is geladen met de SDK en de voor beeld-opslag plaats.
-  * Zoek in het Azure machine learning- [voor beeld-opslag plaats](https://github.com/Azure/azureml-examples)een voltooid notitie blok door naar de fastai-map **notebooks**  >  **fastai**  >  **-resnet34. ipynb** te gaan. 
+  * Zoek in het Azure machine learning- [voor beeld-opslag plaats](https://github.com/Azure/azureml-examples)een voltooid notitie blok door naar de fastai-map **notebooks**  >    >  **-resnet34. ipynb** te gaan. 
 * Uw eigen Jupyter Notebook-server:
   * Maak een [configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
   * Installeer de [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). 
@@ -158,7 +158,7 @@ Wanneer u een trainings uitvoering verzendt met behulp van een- `ScriptRunConfig
 ```python
 from azureml.core import Experiment
 
-run = Experiment(ws,'fastai-custom-image').submit(src)
+run = Experiment(ws,'Tutorial-fastai').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 

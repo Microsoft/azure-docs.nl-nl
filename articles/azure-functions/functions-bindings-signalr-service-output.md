@@ -6,12 +6,12 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 02/20/2020
 ms.author: cshoe
-ms.openlocfilehash: 8bb07e650c99f18cfecbc7b7674e0ca0e5a01dae
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 159df4c228f74bb605c745e899d99bfff2aa511b
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998903"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763282"
 ---
 # <a name="signalr-service-output-binding-for-azure-functions"></a>Uitvoer binding van de signaal/service voor Azure Functions
 
@@ -753,4 +753,5 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Berichten van de seingevings service (binding activeren) afhandelen](./functions-bindings-signalr-service-trigger.md)
 - [De URL en het toegangs token van het service-eind punt retour neren (invoer binding)](./functions-bindings-signalr-service-input.md)

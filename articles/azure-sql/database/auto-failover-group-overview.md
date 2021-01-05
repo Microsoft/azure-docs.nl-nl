@@ -1,5 +1,5 @@
 ---
-title: Groep voor automatische failover
+title: Automatische failover-groepen
 titleSuffix: Azure SQL Database & SQL Managed Instance
 description: Met groepen voor automatische failover kunt u replicatie en automatische/gecoördineerde failover van een groep data bases op een server of alle data bases in een beheerd exemplaar beheren.
 services: sql-database
@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
-ms.date: 11/16/2020
-ms.openlocfilehash: 0d2248b9c0a289f5e4f9f2f8e987365ab58c49c0
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.date: 12/26/2020
+ms.openlocfilehash: 91375f4460b55617ace0b18b60d59d961a762f4c
+ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94988541"
+ms.lasthandoff: 12/27/2020
+ms.locfileid: "97792497"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Gebruik groepen voor automatische failover om transparante en gecoördineerde failover van meerdere data bases mogelijk te maken
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ Daarnaast bieden automatische-failover-groepen alleen-lezen-en alleen-lezen list
 
 Wanneer u groepen voor automatische failover gebruikt met automatische failoverbeleid, wordt elke storing die invloed heeft op data bases op een server of een beheerd exemplaar, automatisch failover. U kunt de groep voor automatische failover beheren met:
 
-- [Azure-portal](geo-distributed-application-configure-tutorial.md)
+- [Azure Portal](geo-distributed-application-configure-tutorial.md)
 - [Azure CLI: failover-groep](scripts/add-database-to-failover-group-cli.md)
 - [Power shell: failover-groep](scripts/add-database-to-failover-group-powershell.md)
 - [Rest API: failovergroep](/rest/api/sql/failovergroups).
@@ -229,7 +229,7 @@ Als uw toepassing gebruikmaakt van SQL Managed instance als de gegevenslaag, vol
 
 ### <a name="creating-the-secondary-instance"></a>Het secundaire exemplaar maken
 
-Om ervoor te zorgen dat de verbinding met het primaire SQL-beheerde exemplaar na een failover niet wordt onderbroken, moeten de primaire en secundaire exemplaren zich in dezelfde DNS-zone bevindt. Hiermee wordt gegarandeerd dat hetzelfde multi-Domain (SAN)-certificaat kan worden gebruikt voor het verifiëren van de client verbindingen met een van de twee exemplaren in de failovergroep. Wanneer uw toepassing gereed is voor productie-implementatie, maakt u een secundair SQL-beheerd exemplaar in een andere regio en zorgt u ervoor dat de DNS-zone wordt gedeeld met het primaire SQL-beheerde exemplaar. U kunt dit doen door de optionele para meter op te geven `DNS Zone Partner` met behulp van de Azure Portal, Power shell of de rest API.
+Om ervoor te zorgen dat de verbinding met het primaire SQL-beheerde exemplaar na een failover niet wordt onderbroken, moeten de primaire en secundaire exemplaren zich in dezelfde DNS-zone bevindt. Hiermee wordt gegarandeerd dat hetzelfde multi-Domain (SAN)-certificaat kan worden gebruikt voor het verifiëren van de client verbindingen met een van de twee exemplaren in de failovergroep. Wanneer uw toepassing gereed is voor productie-implementatie, maakt u een secundair SQL-beheerd exemplaar in een andere regio en zorgt u ervoor dat de DNS-zone wordt gedeeld met het primaire SQL-beheerde exemplaar. U kunt dit doen door de optionele para meter op te geven tijdens het maken. Als u Power shell of de REST API gebruikt, wordt de naam van de optionele para meter `DNS Zone Partner` en de naam van het bijbehorende optionele veld in de Azure Portal is een primair beheerd exemplaar.
 
 > [!IMPORTANT]
 > Het eerste beheerde exemplaar dat in het subnet wordt gemaakt, bepaalt de DNS-zone voor alle volgende instanties in hetzelfde subnet. Dit betekent dat twee exemplaren van hetzelfde subnet geen deel kunnen uitmaken van verschillende DNS-zones.
@@ -424,7 +424,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Hiermee wordt een failover van een failovergroep naar de secundaire server geactiveerd |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Voegt een of meer data bases toe aan een failovergroep|
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |
@@ -462,7 +462,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Remove-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Hiermee verwijdert u een failovergroep|
 
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |

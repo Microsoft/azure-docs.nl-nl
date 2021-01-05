@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u Service Bus-wacht rijen en-onderwerpe
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8fd845ba24fd96ad6de566a7f55b25bd7129074d
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 9c500a69f853b11437a0dcaa48213fe3a84da53b
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96930429"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796632"
 ---
 # <a name="partitioned-queues-and-topics"></a>Gepartitioneerde wachtrijen en onderwerpen
 
@@ -29,8 +29,9 @@ Wanneer een client een bericht wil ontvangen van een gepartitioneerde wachtrij o
 De Peek-bewerking voor een niet-gepartitioneerde entiteit retourneert altijd het oudste bericht, maar niet in een gepartitioneerde entiteit. In plaats daarvan wordt het oudste bericht geretourneerd in een van de partities waarvan de Message Broker het eerst heeft gereageerd. Er wordt niet gegarandeerd dat het geretourneerde bericht het oudste is in alle partities. 
 
 Er zijn geen extra kosten verbonden aan het verzenden van een bericht naar of het ontvangen van een bericht van een gepartitioneerde wachtrij of onderwerp.
->[!NOTE]
-> De bewerking Peek retourneert het oudste bericht van het gedeelte op basis van de SequenceNumber. Voor partioned-entiteiten wordt het Volg nummer uitgegeven ten opzichte van de partitie. Zie [bericht sequentiëren en tijds tempels](../service-bus-messaging/message-sequencing.md)voor meer informatie.
+
+> [!NOTE]
+> De bewerking Peek retourneert het oudste bericht van de partitie op basis van het Volg nummer. Voor gepartitioneerde entiteiten wordt het Volg nummer uitgegeven ten opzichte van de partitie. Zie [bericht sequentiëren en tijds tempels](../service-bus-messaging/message-sequencing.md)voor meer informatie.
 
 ## <a name="enable-partitioning"></a>Partitionering inschakelen
 

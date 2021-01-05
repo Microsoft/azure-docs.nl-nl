@@ -5,19 +5,20 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
-ms.openlocfilehash: 1446808b77e5eea78a9912db4c7a8e2dd783f33a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 9e60fd9a20720d75f96a0b78ee783bd5509a8f90
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104373"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763486"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>SignalR-servicebindingen voor Azure Functions
 
 In deze reeks artikelen wordt uitgelegd hoe u real-time berichten verifieert en verzendt naar clients die zijn verbonden met de [Azure signalerings service](https://azure.microsoft.com/services/signalr-service/) door gebruik te maken van de service bindingen van de signalering in azure functions. Azure Functions ondersteunt invoer- en uitvoerbindingen voor SignalR Service.
 
-| Bewerking | Type |
+| Actie | Type |
 |---------|---------|
+| Berichten van de seingevings service verwerken | [Binding activeren](./functions-bindings-signalr-service-trigger.md) |
 | De URL en het toegangs token van het service-eind punt retour neren | [Invoer binding](./functions-bindings-signalr-service-input.md) |
 | Signaal service berichten verzenden |[Uitvoer binding](./functions-bindings-signalr-service-output.md) |
 
@@ -55,5 +56,6 @@ Als u de aantekeningen van de seingevings service in Java-functies wilt gebruike
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Berichten van de seingevings service (binding activeren) afhandelen](./functions-bindings-signalr-service-trigger.md)
 - [De URL en het toegangs token van het service-eind punt retour neren (invoer binding)](./functions-bindings-signalr-service-input.md)
 - [Signaal service berichten verzenden (uitvoer binding)](./functions-bindings-signalr-service-output.md)

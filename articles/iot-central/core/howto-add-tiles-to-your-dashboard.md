@@ -3,15 +3,15 @@ title: Configureren voor uw Azure IoT Central-dash board | Microsoft Docs
 description: Als ontwerper leert u hoe u de standaard Azure IoT Central Application dash board kunt configureren met tegels.
 author: TheJasonAndrew
 ms.author: v-anjaso
-ms.date: 11/06/2020
+ms.date: 12/19/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 2ea2dd18cd5816c7c1406ac201421a2983e431a3
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 73c78f514f974b97eb178177f12dc4ceff7ede63
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491976"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797006"
 ---
 # <a name="configure-the-application-dashboard"></a>Het toepassings dashboard configureren
 
@@ -22,7 +22,7 @@ Het **dash board** is de eerste pagina die u ziet wanneer u verbinding maakt met
 
 ## <a name="add-tiles"></a>Tegels toevoegen
 
-In de volgende scherm afbeelding ziet u het dash board in een toepassing die is gemaakt op basis van de sjabloon voor **aangepaste toepassingen** . Als u het huidige dash board wilt aanpassen, selecteert u **bewerken** , selecteert u **Nieuw** persoonlijk of gedeeld dash board toevoegen.
+In de volgende scherm afbeelding ziet u het dash board in een toepassing die is gemaakt op basis van de sjabloon voor **aangepaste toepassingen** . Als u het huidige dash board wilt aanpassen, selecteert u **bewerken**, selecteert u **Nieuw** persoonlijk of gedeeld dash board toevoegen.
 
 :::image type="content" source="media/howto-add-tiles-to-your-dashboard/dashboard-sample-contoso.png" alt-text="Dash board voor toepassingen op basis van de sjabloon voor aangepaste toepassingen":::
 
@@ -30,7 +30,7 @@ Nadat u **bewerken** of **Nieuw** hebt geselecteerd, bevindt het dash board zich
 
 1. Selecteer een **apparaatgroep** en kies vervolgens uw apparaten in de vervolg keuzelijst **apparaten** om weer te geven op de tegel. U ziet nu de beschik bare telemetrie, eigenschappen en opdrachten van de apparaten.
 
-1. Als dat nodig is, gebruikt u de vervolg keuzelijst om een telemetrie-waarde te selecteren die op de tegel moet worden weer gegeven. U kunt meer items aan de tegel toevoegen door **+ telemetrie** , **+ eigenschap** of **+ Cloud** in te scha kelen.
+1. Als dat nodig is, gebruikt u de vervolg keuzelijst om een telemetrie-waarde te selecteren die op de tegel moet worden weer gegeven. U kunt meer items aan de tegel toevoegen door **+ telemetrie**, **+ eigenschap** of **+ Cloud** in te scha kelen.
 
 :::image type="content" source="media/howto-add-tiles-to-your-dashboard/device-details.png" alt-text="Een tweemetrische temperatuur tegel toevoegen aan het dash board":::
 
@@ -58,7 +58,7 @@ In de volgende tabel worden de verschillende typen tegels beschreven die u aan e
 | Markdown         | Geprijsde tegels kunnen worden weer gegeven op tegels met een kop en beschrijving tekst die is opgemaakt met prijs verlaging. De URL kan een relatieve koppeling zijn naar een andere pagina in de toepassing of een absolute koppeling naar een externe site.|
 | Installatiekopie            | Afbeeldings tegels geven een aangepaste afbeelding weer en kunnen worden geklikt. De URL kan een relatieve koppeling zijn naar een andere pagina in de toepassing of een absolute koppeling naar een externe site.|
 | Label            | Met label tegels wordt aangepaste tekst op een dash board weer gegeven. U kunt de grootte van de tekst kiezen. Gebruik een label tegel om relevante informatie toe te voegen aan het dash board, zoals beschrijvingen, contact gegevens of Help.|
-| Aantal            | Met de tegels tellen wordt het aantal apparaten in een apparaatgroep weer gegeven.|
+| Count            | Met de tegels tellen wordt het aantal apparaten in een apparaatgroep weer gegeven.|
 | Kaart              | Kaart tegels geven de locatie weer van een of meer apparaten op een kaart. U kunt ook Maxi maal 100 punten van de locatie geschiedenis van een apparaat weer geven. U kunt bijvoorbeeld een bemonsterde route weer geven van waar een apparaat zich in de afgelopen week bevindt.|
 | KPI              |  KPI-tegels geven geaggregeerde telemetrie-waarden weer voor een of meer apparaten gedurende een bepaalde periode. U kunt dit bijvoorbeeld gebruiken om de maximale Tempe ratuur en druk voor een of meer apparaten in het afgelopen uur weer te geven.|
 | Lijndiagram       | Met tegels in lijn diagrammen worden een of meer geaggregeerde telemetriegegevens voor een of meer apparaten voor een bepaalde periode getekend. U kunt bijvoorbeeld een lijn diagram weer geven om de gemiddelde Tempe ratuur en druk van een of meer apparaten in het afgelopen uur af te zetten.|
@@ -87,7 +87,7 @@ Voor tegels die teken reeks eigenschappen of telemetrie-waarden weer geven, kunt
 
 :::image type="content" source="media/howto-add-tiles-to-your-dashboard/string-customization.png" alt-text="Wijzigen hoe een teken reeks op een tegel wordt weer gegeven":::
 
-Voor numerieke **kpi's** , de **laatste bekende waarde** en **Eigenschappen** tegels kunt u voorwaardelijke opmaak gebruiken om de kleur van de tegel aan te passen op basis van de huidige waarde. Als u voorwaardelijke opmaak wilt toevoegen, selecteert u **configureren** op de tegel en selecteert u vervolgens het pictogram **voorwaardelijke opmaak** naast de waarde die u wilt aanpassen:
+Voor numerieke **kpi's**, de **laatste bekende waarde** en **Eigenschappen** tegels kunt u voorwaardelijke opmaak gebruiken om de kleur van de tegel aan te passen op basis van de huidige waarde. Als u voorwaardelijke opmaak wilt toevoegen, selecteert u **configureren** op de tegel en selecteert u vervolgens het pictogram **voorwaardelijke opmaak** naast de waarde die u wilt aanpassen:
 
 :::image type="content" source="media/howto-add-tiles-to-your-dashboard/conditional-formatting-1.png" alt-text="Scherm afbeelding die laat zien hoe u de optie configureren voor een tegel kunt vinden en vervolgens het pictogram voor voorwaardelijke opmaak":::
 

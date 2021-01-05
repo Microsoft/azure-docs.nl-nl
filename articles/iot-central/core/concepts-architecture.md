@@ -3,21 +3,19 @@ title: Architecturale concepten in azure IoT Central | Microsoft Docs
 description: In dit artikel worden de belangrijkste concepten besproken die betrekking hebben op de architectuur van Azure IoT Central
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/27/2019
+ms.date: 12/19/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 7b048581b29fa4244c42261810f382b229a627dd
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: c2d5310d1a664aa2e22d4241d8066e41d9c82bd1
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985961"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796717"
 ---
 # <a name="azure-iot-central-architecture"></a>Azure IoT Central-architectuur
-
-
 
 Dit artikel bevat een overzicht van de Microsoft Azure IoT Central architectuur.
 

@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 08/31/2020
+ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 3a17e73c66c2296cc36b24e3b0a8abfcab00e46a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2443765ecc9116193cefbc729ced25fa5657e59
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419390"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763422"
 ---
 Voordat u Vm's op uw Azure Stack edge-apparaat kunt implementeren, moet u uw client configureren om verbinding te maken met het apparaat via Azure Resource Manager over Azure PowerShell. Ga voor gedetailleerde stappen naar [verbinding maken met Azure Resource Manager op uw Azure stack edge-apparaat](../articles/databox-online/azure-stack-edge-j-series-connect-resource-manager.md).
 
@@ -34,13 +34,15 @@ Zorg ervoor dat de volgende stappen kunnen worden gebruikt om toegang te krijgen
 
     Schakel Compute in op de netwerkinterface. Azure Stack Edge maakt en beheert een virtuele switch die overeenkomt met die netwerk interface. Voer op dit moment geen specifieke IP-adressen in voor Kubernetes. Het kan enkele minuten duren om de berekening in te scha kelen.
 
-    <!--If you decide to use another network interface for compute, make sure that you:
-    
-    - Delete all the VMs that you have deployed using Azure Resource Manager.
-    
-    - Delete all virtual network interfaces and the virtual network associated with this network interface. 
-    
-    - You can now enable another network interface for compute.-->
+    > [!NOTE]
+    > Als u GPU-Vm's maakt, selecteert u een netwerk interface die is verbonden met internet. Hiermee kunt u de GPU-extensie op uw apparaat installeren.
 
-<!--1. You may also need to configure TLS 1.2 on your client machine if running older versions of AzCopy.--> 
 
+1. Schakel de VM-rol in van de Azure Portal. Met deze stap maakt u een uniek abonnement voor uw apparaat dat wordt gebruikt voor het maken van Vm's via de lokale Api's van het apparaat. 
+
+    1. Als u de VM-functie wilt inschakelen, gaat u in het Azure Portal naar de Azure Stack Edge-resource voor uw Azure Stack edge-apparaat. Ga naar **Edge compute > virtual machines**.
+
+        ![VM-installatie kopie 1 toevoegen](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-1.png)
+
+    1. Selecteer **virtual machines** om naar de pagina **overzicht** te gaan. Cloud beheer van virtuele machines **inschakelen** .
+        ![VM-installatie kopie 2 toevoegen](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-2.png)

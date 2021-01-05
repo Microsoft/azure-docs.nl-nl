@@ -3,17 +3,17 @@ title: Regels en acties configureren in Azure IoT Central | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u als een bouwer op telemetrie regels en acties in uw Azure IoT Central-toepassing kunt configureren.
 author: vavilla
 ms.author: vavilla
-ms.date: 11/27/2019
+ms.date: 12/23/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 8391202e991c240b03bd79b947c1c3c6dcc9afd7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 378a1dbcfbc89cdf9b24dc2490db583f1135b9a2
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362534"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796785"
 ---
 # <a name="configure-rules"></a>Regels configureren
 
@@ -23,7 +23,7 @@ Regels in IoT Central fungeren als een hulp programma voor aanpas bare reactie d
 
 ## <a name="select-target-devices"></a>Doel apparaten selecteren
 
-Gebruik de sectie doel apparaten om te selecteren op welk soort apparaten deze regel wordt toegepast. Met filters kunt u verder verfijnen welke apparaten moeten worden opgenomen. De filters gebruiken eigenschappen op het apparaatprofiel om de set apparaten te filteren. Filters zelf activeren geen actie. In de volgende scherm afbeelding zijn de apparaten waarop de doel **machine**wordt toegepast, het type apparaat sjabloon. Met het filter wordt aangegeven dat de regel alleen **koel kasten** moet bevatten waarvan de eigenschap **gefabriceerde status** gelijk is aan **Washington**.
+Gebruik de sectie doel apparaten om te selecteren op welk soort apparaten deze regel wordt toegepast. Met filters kunt u verder verfijnen welke apparaten moeten worden opgenomen. De filters gebruiken eigenschappen op het apparaatprofiel om de set apparaten te filteren. Filters zelf activeren geen actie. In de volgende scherm afbeelding zijn de apparaten waarop de doel **machine** wordt toegepast, het type apparaat sjabloon. Met het filter wordt aangegeven dat de regel alleen **koel kasten** moet bevatten waarvan de eigenschap **gefabriceerde status** gelijk is aan **Washington**.
 
 ![Voorwaarden](media/howto-configure-rules/filters.png)
 

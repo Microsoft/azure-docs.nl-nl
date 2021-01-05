@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/17/2020
+ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: b3671a57b8371c47b1690b4bf6be008d695d1ca0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: f5d6d6255b48192a5943159599531fac18ebeb26
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654741"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796989"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -111,7 +111,7 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 | Service / functie | US Gov | China Gov |
 |------|:----:|:----:|
 |[Just-in-time-toegang voor virtuele machines](security-center-just-in-time.md) (1)|✔|✔|
-|[Controle van de bestandsintegriteit](security-center-file-integrity-monitoring.md) (1)|✔|-|
+|[Controle van de bestandsintegriteit](security-center-file-integrity-monitoring.md) (1)|✔|✔|
 |[Adaptieve toepassingsregelaars](security-center-adaptive-application.md) (1)|✔|✔|
 |[Adaptieve netwerkbeveiliging](security-center-adaptive-network-hardening.md) (1)|-|-|
 |[Docker-hostbeveiliging](harden-docker-hosts.md) (1)|✔|✔|
@@ -119,19 +119,19 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Microsoft Defender for Endpoint](harden-docker-hosts.md) (1)|✔|-|
 |[Verbinding maken met AWS-accounts](quickstart-onboard-aws.md) (1)|-|-|
 |[Verbinding maken met GCP-accounts](quickstart-onboard-gcp.md) (1)|-|-|
-|[Continue export](continuous-export.md)|✔|✔|
+|[Continue export](continuous-export.md)|✔|✔ (2)|
 |[Werkstroomautomatisering](workflow-automation.md)|✔|✔|
 |[Regels voor uitzonderingen voor aanbevelingen](exempt-resource.md)|-|-|
 |[Regels voor waarschuwingsonderdrukking](alerts-suppression-rules.md)|✔|✔|
 |[E-mailmeldingen voor beveiligingswaarschuwingen](security-center-provide-security-contact-details.md)|✔|✔|
-|[Inventarisatie van assets](asset-inventory.md)|-|-|
+|[Inventarisatie van assets](asset-inventory.md)|✔|✔|
 |[Azure Defender voor App Service](defender-for-app-service-introduction.md)|-|-|
-|[Azure Defender voor Storage](defender-for-storage-introduction.md)|✔|-|
+|[Azure Defender voor Storage](defender-for-storage-introduction.md)|✔ (2)|-|
 |[Azure Defender voor SQL](defender-for-sql-introduction.md)|✔|✔ (2)|
 |[Azure Defender voor Key Vault](defender-for-key-vault-introduction.md)|-|-|
 |[Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
-|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔|
 |[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|-|
 |||
 

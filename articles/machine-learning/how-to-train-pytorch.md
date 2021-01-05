@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 12/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: eec53570c542ceb60c937072135fcb70b59e80a6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: e3bf77406df302c4ba83cb7a8f1a30fba9f6339e
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631037"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795934"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>PyTorch-modellen op schaal trainen met Azure Machine Learning
 
@@ -206,7 +206,7 @@ Zie [trainings uitvoeringen configureren en verzenden](how-to-set-up-training-ta
 Het [object run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) biedt de interface voor de uitvoerings geschiedenis terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
 
 ```Python
-run = Experiment(ws, name='pytorch-birds').submit(src)
+run = Experiment(ws, name='Tutorial-pytorch-birds').submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
@@ -314,6 +314,10 @@ src = ScriptRunConfig(source_directory=project_folder,
 Als u in plaats daarvan de Gloo-back-end voor gedistribueerde trainingen wilt gebruiken, geeft u `communication_backend='Gloo'` in plaats daarvan op. De Gloo-back-end wordt aanbevolen voor gedistribueerde CPU-training.
 
 Zie [gedistribueerde PyTorch met DistributedDataParallel](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/pytorch/distributed-pytorch-with-nccl-gloo)voor een volledige zelf studie over het uitvoeren van gedistribueerde PyTorch in azure ml.
+
+### <a name="troubleshooting"></a>Problemen oplossen
+
+* **Horovod is uitgeschakeld**: in de meeste gevallen is er sprake van een onderliggende uitzonde ring in een van de processen waardoor Horovod werd afgesloten als u zich tegen komt "AbortedError: Horovod is afgesloten". Elke classificatie in de MPI-taak krijgt een eigen toegewezen logboekbestand in Azure ML. Deze logboeken hebben de naam `70_driver_logs`. In het geval van gedistribueerde trainingen worden de logboeknamen aangevuld met het achtervoegsel `_rank` om het onderscheiden van de logboeken gemakkelijker te maken. Als u de exacte fout wilt vinden die ervoor heeft gezorgd dat Horovod wordt afgesloten, gaat u naar alle logboek bestanden en zoekt u `Traceback` aan het einde van de driver_log bestanden. Met een van deze bestanden krijgt u de daad werkelijke onderliggende uitzonde ring. 
 
 ## <a name="export-to-onnx"></a>Exporteren naar ONNX
 

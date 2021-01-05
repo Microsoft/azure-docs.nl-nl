@@ -3,19 +3,19 @@ title: Azure IoT Edge en Azure IoT Central | Microsoft Docs
 description: Meer informatie over het gebruik van Azure IoT Edge met een IoT Central-toepassing.
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/12/2019
+ms.date: 12/19/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom:
 - device-developer
 - iot-edge
-ms.openlocfilehash: 4c4248246be845aa8608aac8b8a3ce761ea1ef86
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9a7c886ba4dd6e7ab4bd62700f5437855a16a5ad
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004769"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796564"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Azure IoT Edge-apparaten verbinden met een Azure IoT Central-toepassing
 

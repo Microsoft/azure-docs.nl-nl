@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 12/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: afb751e08faea6dabde72b192d246b48735cff53
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 4fe22e0dae73df7af4fc24ba508ecbecf72dfd05
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938683"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795365"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Werken met NSG-toegang en Azure Bastion
 
@@ -28,7 +28,7 @@ In dit diagram:
 * Connect Integration-een RDP/SSH-sessie met één klik binnen de browser
 * Is er geen openbaar IP-adres vereist voor de virtuele Azure-machine.
 
-## <a name="network-security-groups"></a><a name="nsg"></a>Netwerkbeveiligingsgroepen
+## <a name="network-security-groups"></a><a name="nsg"></a>Netwerk beveiligings groepen
 
 In deze sectie ziet u het netwerk verkeer tussen de gebruiker en Azure Bastion, en tot doel-Vm's in uw virtuele netwerk:
 
@@ -40,7 +40,8 @@ _ Binnenkomend **verkeer:**
 
    * **Binnenkomend verkeer via het open bare Internet:** De Azure-Bastion maakt een openbaar IP-adres waarvoor poort 443 is ingeschakeld op het open bare IP-adres voor binnenkomend verkeer. Poort 3389/22 hoeft niet te worden geopend op de AzureBastionSubnet.
    * **Binnenkomend verkeer vanuit het Azure Bastion-besturings vlak:** Schakel voor de connectiviteit van het besturings element het argument poort 443 binnenkomend van de **GatewayManager** -service in. Hiermee wordt het besturings vlak ingeschakeld, dat wil zeggen dat gateway beheer met Azure Bastion kan communiceren.
-   * **Binnenkomend verkeer van Azure Load Balancer:** Schakel voor status tests het poort 443 in dat binnenkomend van het **AzureLoadBalancer** -service label. Hiermee kan Azure Load Balancer connectiviteit detecteren 
+   * **Binnenkomend verkeer vanuit Azure Bastion data-vlak:** Schakel voor de communicatie tussen de onderliggende onderdelen van Azure Bastion poort 8080, 5701 van de **VirtualNetwork** -servicetag in op de servicetag **VirtualNetwork** . Hierdoor kunnen de onderdelen van Azure Bastion met elkaar communiceren.
+   * **Binnenkomend verkeer van Azure Load Balancer:** Schakel voor status tests het poort 443 in dat binnenkomend van het **AzureLoadBalancer** -service label. Hiermee kan Azure Load Balancer connectiviteit detecteren
 
 
    :::image type="content" source="./media/bastion-nsg/inbound.png" alt-text="Scherm opname bevat binnenkomende beveiligings regels voor Azure Bastion-connectiviteit.":::
@@ -48,7 +49,9 @@ _ Binnenkomend **verkeer:**
 * **Uitgaand verkeer:**
 
    * Uitgaand **verkeer naar doel-vm's:** Azure Bastion bereikt de doel-Vm's via privé-IP. De Nsg's moet uitgaand verkeer naar andere doel-VM-subnetten toestaan voor poort 3389 en 22.
+   * Uitgaand **verkeer naar Azure Bastion data-vlak:** Schakel voor de communicatie tussen de onderliggende onderdelen van Azure Bastion poort 8080, 5701 van de **VirtualNetwork** -servicetag naar het label **VirtualNetwork** -service in. Hierdoor kunnen de onderdelen van Azure Bastion met elkaar communiceren.
    * Uitgaand **verkeer naar andere open bare eind punten in Azure:** Azure Bastion moet verbinding kunnen maken met verschillende open bare eind punten in azure (bijvoorbeeld voor het opslaan van Diagnostische logboeken en logboeken voor meters). Daarom heeft Azure Bastion een uitgaand verkeer naar 443 naar **Cloud** service-tag nodig.
+   * Uitgaand **verkeer naar Internet:** Azure Bastion moet kunnen communiceren met internet voor het valideren van sessies en certificaten. Daarom is het raadzaam poort 80 uitgaand verkeer naar Internet in te scha kelen **.**
 
 
    :::image type="content" source="./media/bastion-nsg/outbound.png" alt-text="Scherm opname toont de uitgaande beveiligings regels voor Azure Bastion-connectiviteit.":::

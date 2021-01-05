@@ -3,12 +3,12 @@ title: Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 description: Hierin wordt beschreven hoe u back-ups van virtuele Azure-machines maakt en herstelt met Azure Backup met Power shell
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: ded2bc8a71bf564e31f40ca9f0d6c8049188768b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 610049ec14243abb296aef431eb37533c6169817
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95978366"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797057"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 
@@ -259,6 +259,8 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 > Als u de Azure Government Cloud gebruikt, gebruikt u de waarde `ff281ffe-705c-4f53-9f37-a40e6f2c68f3` voor de para meter **ServicePrincipalName** in de cmdlet [set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) .
 >
 
+Als u op een paar schijven selectief back-ups wilt maken en anderen wilt uitsluiten zoals vermeld in [deze scenario's](selective-disk-backup-restore.md#scenarios), kunt u de beveiliging configureren en alleen back-ups maken van de relevante schijven zoals [hier](selective-disk-backup-restore.md#enable-backup-with-powershell)wordt beschreven.
+
 ## <a name="monitoring-a-backup-job"></a>Een back-uptaak bewaken
 
 U kunt langlopende bewerkingen, zoals back-uptaken, bewaken zonder de Azure Portal te gebruiken. Gebruik de cmdlet [Get-AzRecoveryservicesBackupJob](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) om de status van een taak in voortgang op te halen. Met deze cmdlet worden de back-uptaken voor een specifieke kluis opgehaald en die kluis opgegeven in de kluis context. In het volgende voor beeld wordt de status van een taak in uitvoering opgehaald als een matrix en wordt de status opgeslagen in de variabele $joblist.
@@ -338,6 +340,10 @@ $bkpPol.AzureBackupRGName="Contosto_"
 $bkpPol.AzureBackupRGNameSuffix="ForVMs"
 Set-AzureRmRecoveryServicesBackupProtectionPolicy -policy $bkpPol
 ```
+
+### <a name="exclude-disks-for-a-protected-vm"></a>Schijven uitsluiten voor een beveiligde virtuele machine
+
+Azure VM-back-up biedt u de mogelijkheid om op selectieve wijze schijven uit te sluiten of op te nemen die handig zijn in [deze scenario's](selective-disk-backup-restore.md#scenarios). Als de virtuele machine al wordt beveiligd met een back-up van Azure VM en als er een back-up wordt gemaakt van alle schijven, kunt u de beveiliging wijzigen om selectief schijven op te nemen of uit te sluiten, zoals [hier](selective-disk-backup-restore.md#modify-protection-for-already-backed-up-vms-with-powershell)wordt beschreven.
 
 ### <a name="trigger-a-backup"></a>Een back-up activeren
 
@@ -511,6 +517,13 @@ Als de herstel taak is voltooid, gebruikt u de cmdlet [Get-AzRecoveryServicesBac
 $restorejob = Get-AzRecoveryServicesBackupJob -Job $restorejob -VaultId $targetVault.ID
 $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $targetVault.ID
 ```
+
+#### <a name="restore-selective-disks"></a>Selectieve schijven herstellen
+
+Een gebruiker kan selectief enkele schijven herstellen in plaats van de volledige back-upset. Geef de vereiste schijf-Lun's als para meter op om ze alleen te herstellen in plaats van de volledige set zoals [hier](selective-disk-backup-restore.md#restore-selective-disks-with-powershell)wordt beschreven.
+
+> [!IMPORTANT]
+> Eén moet selectief back-ups maken van schijven om selectief schijven te herstellen. Meer informatie vindt u [hier](selective-disk-backup-restore.md#selective-disk-restore).
 
 Wanneer u de schijven herstelt, gaat u naar de volgende sectie om de virtuele machine te maken.
 

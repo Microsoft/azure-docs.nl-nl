@@ -3,14 +3,14 @@ title: Overzicht van Durable Functions-versies-Azure Functions
 description: Meer informatie over Durable Functions-versies.
 author: cgillum
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 12/23/2020
 ms.author: azfuncdf
-ms.openlocfilehash: d6662259494bba5747e01c4574186e9030112247
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4d10bab06428295bbc8c5319bd47787d7b1fb34
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88719407"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763367"
 ---
 # <a name="durable-functions-versions-overview"></a>Overzicht van Durable Functions versies
 
@@ -50,6 +50,8 @@ Installeer de meest recente versie van 2. x van de uitbrei ding Durable Function
 
 Durable Functions 2. x is beschikbaar in versie 2. x van de [Azure functions extensie bundel](../functions-bindings-register.md#extension-bundles).
 
+Voor python-ondersteuning in Durable Functions is Durable Functions 2. x vereist.
+
 Als u de versie van de uitbreidings bundel in uw project wilt bijwerken, opent u host.jsop en werkt `extensionBundle` u de sectie bij om versie 2. x () te gebruiken `[2.*, 3.0.0)` .
 
 ```json
@@ -61,6 +63,9 @@ Als u de versie van de uitbreidings bundel in uw project wilt bijwerken, opent u
     }
 }
 ```
+
+> [!NOTE]
+> Als in Visual Studio code niet de juiste sjablonen worden weer gegeven nadat u de versie van de uitbreidings bundel hebt gewijzigd, laadt u het venster opnieuw door de opdracht *ontwikkelaar: venster opnieuw laden* uit te voeren (<kbd>Ctrl + r</kbd> in Windows en Linux, <kbd>Command + r</kbd> in macOS).
 
 #### <a name="net"></a>.NET
 

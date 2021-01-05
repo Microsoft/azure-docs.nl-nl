@@ -16,12 +16,12 @@ ms.date: 04/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31bdfc7e3eca2a2678b75b80973a1680448737d1
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 5394a2829af4b0cd7a1c817f6aad4ca5451cc4bc
+ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507673"
+ms.lasthandoff: 12/27/2020
+ms.locfileid: "97792429"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quickstart"></a>Pass-Through-verificatie Azure Active Directory: Quick Start
 
@@ -51,7 +51,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan.
 
 ### <a name="in-your-on-premises-environment"></a>In uw on-premises omgeving
 
-1. Een server met Windows Server 2012 R2 of hoger identificeren om Azure AD Connect uit te voeren. Als dit nog niet is ingeschakeld, [schakelt u TLS 1,2 in op de-server](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect). Voeg de-server toe aan hetzelfde Active Directory forest als de gebruikers waarvan u de wacht woorden die u wilt valideren.
+1. Een server met Windows Server 2012 R2 of hoger identificeren om Azure AD Connect uit te voeren. Als dit nog niet is ingeschakeld, [schakelt u TLS 1,2 in op de-server](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect). Voeg de-server toe aan hetzelfde Active Directory forest als de gebruikers waarvan u de wacht woorden die u wilt valideren. Houd er rekening mee dat de installatie van Pass-Through verificatie agent op Windows Server Core-versies niet wordt ondersteund. 
 2. Installeer de [meest recente versie van Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) op de server die in de voor gaande stap is geïdentificeerd. Als u Azure AD Connect al hebt uitgevoerd, controleert u of de versie 1.1.750.0 of hoger is.
 
     >[!NOTE]

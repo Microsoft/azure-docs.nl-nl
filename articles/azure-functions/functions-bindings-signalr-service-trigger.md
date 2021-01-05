@@ -6,16 +6,18 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
-ms.openlocfilehash: e2651afbcdc3bae71bb531aa0e821f83264c295d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2482a26987ec142880acc51bf470d844655b6e3f
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212589"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763507"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Binding van de signaal service-trigger voor Azure Functions
 
 Gebruik de binding van de *signaal* schakelaar om te reageren op berichten die zijn verzonden vanuit de Azure signalerings service. Wanneer de functie wordt geactiveerd, worden berichten die zijn door gegeven aan de functie, geparseerd als een JSON-object.
+
+In de modus signaal service Server gebruikt de signaal service de [upstream](../azure-signalr/concept-upstream.md) -functie voor het verzenden van berichten van de client naar functie-app. En functie-app maakt gebruik van de trigger voor signaal service Triggers om deze berichten af te handelen. De algemene architectuur wordt hieronder weer gegeven: :::image type="content" source="media/functions-bindings-signalr-service/signalr-trigger.png" alt-text="signaalsterkte activeren architectuur":::
 
 Zie het [overzicht](functions-bindings-signalr-service.md)voor meer informatie over de installatie-en configuratie details.
 
@@ -197,21 +199,28 @@ InvocationContext bevat alle inhoud in het bericht verzenden van de signalerings
 |Gebeurtenis| De gebeurtenis van het bericht.|
 |ConnectionId| De verbindings-ID van de client die het bericht verzendt.|
 |UserId| De gebruikers-id van de client die het bericht verzendt.|
-|Headers| De headers van de aanvraag.|
+|Kopteksten| De headers van de aanvraag.|
 |Query’s uitvoeren| De query van de aanvraag wanneer clients verbinding maken met de service.|
 |Claims| De claims van de client.|
 
 ## <a name="using-parameternames"></a>`ParameterNames` gebruiken
 
-Met de eigenschap `ParameterNames` in `SignalRTrigger` kunt u argumenten van aanroep berichten binden aan de para meters van functions. Hiermee krijgt u een handige manier om toegang te krijgen tot argumenten van `InvocationContext` .
+Met de eigenschap `ParameterNames` in `SignalRTrigger` kunt u argumenten van aanroep berichten binden aan de para meters van functions. De naam die u hebt gedefinieerd, kan worden gebruikt als onderdeel van [binding expressies](../azure-functions/functions-bindings-expressions-patterns.md) in andere bindingen of als para meters in uw code. Hiermee krijgt u een handige manier om toegang te krijgen tot argumenten van `InvocationContext` .
 
-Stel dat u een Java script-signaal-client probeert te invoke methode `broadcast` in een Azure-functie met twee argumenten.
+Stel dat u een Java script-signaal-client probeert te invoke methode `broadcast` in azure-functie met twee argumenten `message1` `message2` .
 
 ```javascript
 await connection.invoke("broadcast", message1, message2);
 ```
 
-U hebt toegang tot deze twee argumenten vanuit para meter en u kunt ook het type para meter voor hen toewijzen met behulp van `ParameterNames` .
+Nadat u hebt ingesteld `parameterNames` , wordt de naam die u hebt gedefinieerd, respectievelijk overeenkomen met de argumenten die aan de client zijde worden verzonden. 
+
+```cs
+[SignalRTrigger(parameterNames: new string[] {"arg1, arg2"})]
+```
+
+De bevat vervolgens de `arg1` inhoud van `message1` en `arg2` bevat de inhoud van `message2` .
+
 
 ### <a name="remarks"></a>Opmerkingen
 
@@ -219,20 +228,28 @@ Voor de para meter binding is de volg orde van belang. Als u gebruikt `Parameter
 
 `ParameterNames` en het kenmerk `[SignalRParameter]` **kan niet** tegelijkertijd worden gebruikt, of u krijgt een uitzonde ring.
 
-## <a name="send-messages-to-signalr-service-trigger-binding"></a>Berichten verzenden naar de trigger binding van de signaal service
+## <a name="signalr-service-integration"></a>Signa lering Service-integratie
 
-De Azure-functie genereert een URL voor de binding van de signaal service-trigger en wordt als volgt opgemaakt:
+De Signa lering-service heeft een URL nodig voor toegang tot functie-app wanneer u de trigger binding van de signaal service gebruikt. De URL moet worden geconfigureerd in de **upstream-instellingen** van de signaal service-zijde. 
+
+:::image type="content" source="../azure-signalr/media/concept-upstream/upstream-portal.png" alt-text="Upstream-Portal":::
+
+Wanneer u de signalerings service trigger gebruikt, kan de URL eenvoudig en opgemaakt zijn, zoals hieronder wordt weer gegeven:
 
 ```http
-https://<APP_NAME>.azurewebsites.net/runtime/webhooks/signalr?code=<API_KEY>
+<Function_App_URL>/runtime/webhooks/signalr?code=<API_KEY>
 ```
 
-De `API_KEY` wordt gegenereerd door de Azure-functie. U kunt de `API_KEY` van Azure Portal ophalen, omdat u de trigger voor signaal service-Triggers gebruikt.
+De `Function_App_URL` is te vinden op de overzichts pagina van functie-app en de `API_KEY` functie wordt gegenereerd door Azure. U kunt de `API_KEY` van vinden `signalr_extension` op de Blade **app-sleutels** van functie-app.
 :::image type="content" source="media/functions-bindings-signalr-service/signalr-keys.png" alt-text="API-sleutel":::
 
-U moet deze URL instellen in `UrlTemplate` de upstream-instellingen van de signalerings service.
+Als u meer dan één functie-app wilt gebruiken in combi natie met één signalerings service, kan upstream ook complexe routerings regels ondersteunen. Meer informatie vindt u in de [upstream-instellingen](../azure-signalr/concept-upstream.md).
+
+## <a name="step-by-step-sample"></a>Voor beeld van stap voor stap
+
+U kunt het voor beeld in GitHub volgen om een chat ruimte op functie-app te implementeren met de functie binding en upstream van de seingevings service: [bidirectionele chat room](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat) -voor beeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Ontwikkeling en configuratie van Azure Functions met Azure SignalR Service](../azure-signalr/signalr-concept-serverless-development-config.md)
-* [Bindings voorbeeld van signaal service trigger](https://github.com/Azure/azure-functions-signalrservice-extension/tree/dev/samples/bidirectional-chat)
+* [Bindings voorbeeld van signaal service trigger](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat)

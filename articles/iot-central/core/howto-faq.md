@@ -3,16 +3,16 @@ title: Veelgestelde vragen over Azure IoT Central | Microsoft Docs
 description: Veelgestelde vragen over Azure IoT Central (FAQ) en antwoorden
 author: dominicbetts
 ms.author: dobett
-ms.date: 09/23/2020
+ms.date: 12/20/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: cbe0dbe55f903c25556698a5d510bf9e67b408be
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: acabaf843f8acfe7bc0b5e9456dee09bde74bef7
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126717"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796037"
 ---
 # <a name="frequently-asked-questions-for-iot-central"></a>Veelgestelde vragen over IoT Central
 
@@ -38,11 +38,11 @@ Wanneer een operator de blok kering van een apparaat opheffen, wordt de status t
 
 Als de apparaatstatus wacht op **goed keuring** op de pagina **apparaten** , betekent dit dat de optie **automatisch goed keuren** is uitgeschakeld:
 
-:::image type="content" source="media/howto-faq/auto-approve.png" alt-text="Scherm afbeelding van geblokkeerd apparaat":::
+:::image type="content" source="media/howto-faq/auto-approve.png" alt-text="Scherm opname met de optie toepassing met automatisch goed keuren uitgeschakeld.":::
 
 Een operator moet een apparaat expliciet goed keuren voordat er gegevens worden verzonden. Apparaten die niet hand matig zijn geregistreerd op de pagina **apparaten** , maar die zijn verbonden met geldige referenties, hebben de status van het apparaat **wacht op goed keuring**. Opera tors kunnen deze apparaten goed keuren op de pagina **apparaten** met behulp van de knop **goed keuren** :
 
-:::image type="content" source="media/howto-faq/approve-device.png" alt-text="Scherm afbeelding van geblokkeerd apparaat":::
+:::image type="content" source="media/howto-faq/approve-device.png" alt-text="Scherm afbeelding die laat zien hoe een apparaat moet worden goedgekeurd":::
 
 **Hoe kan ik een apparaat aan een apparaatprofiel koppelen?**
 

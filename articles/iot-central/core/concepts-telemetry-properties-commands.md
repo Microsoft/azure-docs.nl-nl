@@ -3,17 +3,17 @@ title: De telemetrie-, Property-en Command-Payloads in azure IoT Central | Micro
 description: Met Azure IoT Central-Apparaatbeheer kunt u opgeven welke telemetrie, eigenschappen en opdrachten van een apparaat moeten worden geïmplementeerd. Inzicht in de indeling van de gegevens die een apparaat kan uitwisselen met IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/05/2020
+ms.date: 12/19/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 5b1bbce68be19c2dbb08f7d69611b719b450a370
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: c29af68433f29d7bdd363bedfa6d36316b952f4c
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96121765"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97795340"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -827,7 +827,7 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 }
 ```
 
-## <a name="commands"></a>Opdracht
+## <a name="commands"></a>Opdrachten
 
 > [!NOTE]
 > In de gebruikers interface van IoT Central kunt u de **wachtrij selecteren als u offline** kiest voor een opdracht. Deze instelling is niet opgenomen als u een model of interface uit de sjabloon voor het apparaat exporteert.

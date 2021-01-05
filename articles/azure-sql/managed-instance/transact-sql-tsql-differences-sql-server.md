@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: c18ee43eefe9c6cf9cba7f4e8f6c3fd3f55bba5a
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: e6dc4656e33b55a2cc695874376baf1cd816a838
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368695"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796292"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -69,6 +69,7 @@ Beperkingen:
 
 - Met een SQL Managed Instance kunt u een back-up maken van een exemplaar database met Maxi maal 32 Stripes, die voldoende is voor data bases tot 4 TB als back-upcompressie wordt gebruikt.
 - U kunt niet uitvoeren `BACKUP DATABASE ... WITH COPY_ONLY` op een Data Base die is versleuteld met door service beheerde transparent Data Encryption (TDE). Door service beheerde TDE zorgt ervoor dat back-ups worden versleuteld met een interne TDE-sleutel. De sleutel kan niet worden geëxporteerd, dus u kunt de back-up niet herstellen. Gebruik automatische back-ups en herstel naar een bepaald tijdstip, of gebruik in plaats daarvan door de [klant beheerde (BYOK) TDe](../database/transparent-data-encryption-tde-overview.md#customer-managed-transparent-data-encryption---bring-your-own-key) . U kunt versleuteling ook uitschakelen voor de data base.
+- Systeem eigen back-ups die zijn gemaakt op een beheerd exemplaar, kunnen niet worden hersteld naar een SQL Server. Dit komt doordat het beheerde exemplaar een hogere interne database versie heeft dan een versie van SQL Server.
 - De maximale grootte van de back-upstripe met behulp van de `BACKUP` opdracht in het SQL Managed instance is 195 GB. Dit is de maximale grootte voor de blob. Verhoog het aantal Stripes in de back-upopdracht om de afzonderlijke Stripe-grootte te verminderen en binnen deze limiet te blijven.
 
     > [!TIP]
@@ -84,7 +85,7 @@ Zie [back-up](/sql/t-sql/statements/backup-transact-sql)voor informatie over bac
 
 ## <a name="security"></a>Beveiliging
 
-### <a name="auditing"></a>Controleren
+### <a name="auditing"></a>Controles
 
 De belangrijkste verschillen tussen controles in Microsoft Azure SQL en in SQL Server zijn:
 

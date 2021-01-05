@@ -1,18 +1,18 @@
 ---
 title: Sjabloon syntaxis en expressies
-description: Beschrijft de declaratieve JSON-syntaxis voor Azure Resource Manager sjablonen.
+description: Beschrijft de declaratieve JSON-syntaxis voor Azure Resource Manager sjablonen (ARM-sjablonen).
 ms.topic: conceptual
 ms.date: 03/17/2020
-ms.openlocfilehash: baddedae1b918502e579d2ed230e0779960f45e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44a386ed849771dfba717c8d1414e64422d0c7bd
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82203825"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797040"
 ---
-# <a name="syntax-and-expressions-in-azure-resource-manager-templates"></a>Syntaxis en expressies in Azure Resource Manager-sjablonen
+# <a name="syntax-and-expressions-in-arm-templates"></a>Syntaxis en expressies in ARM-sjablonen
 
-De basis syntaxis van de sjabloon is JSON. U kunt echter expressies gebruiken om de JSON-waarden uit te breiden die beschikbaar zijn in de sjabloon.  Expressies staan respectievelijk tussen de vierkante haken `[` en `]`. De waarde van de expressie wordt geëvalueerd als de sjabloon wordt geïmplementeerd. Een expressie kan een tekenreeks, een geheel getal, een booleaanse waarde of een object retourneren.
+De basis syntaxis van de Azure Resource Manager sjabloon (ARM-sjabloon) is JavaScript Object Notation (JSON). U kunt echter expressies gebruiken om de JSON-waarden uit te breiden die beschikbaar zijn in de sjabloon.  Expressies staan respectievelijk tussen de vierkante haken `[` en `]`. De waarde van de expressie wordt geëvalueerd als de sjabloon wordt geïmplementeerd. Een expressie kan een tekenreeks, een geheel getal, een booleaanse waarde of een object retourneren.
 
 Een sjabloon expressie mag niet langer zijn dan 24.576 tekens.
 
@@ -31,7 +31,7 @@ Azure Resource Manager biedt [functies](template-functions.md) die u in een sjab
 
 Binnen de expressie roept de syntaxis `resourceGroup()` een van de functies aan die Resource Manager biedt voor gebruik in een sjabloon. In dit geval is het de functie [resourceGroup](template-functions-resource.md#resourcegroup) . Net als in Java script worden functie aanroepen opgemaakt als `functionName(arg1,arg2,arg3)` . De syntaxis `.location` haalt één eigenschap op uit het object dat door die functie wordt geretourneerd.
 
-Sjabloon functies en de bijbehorende para meters zijn niet hoofdletter gevoelig. Met Resource Manager worden bijvoorbeeld **variabelen (' var1 ')** en **variabelen (' var1 ')** als hetzelfde omgezet. Als de functie wordt geëvalueerd, wordt de-functie in de gevallen bewaard, tenzij deze expliciet een hoofdletter gebruik wijzigt (zoals toUpper of toLower). Bepaalde resource typen kunnen Case vereisten hebben die gescheiden zijn van de manier waarop functies worden geëvalueerd.
+Sjabloon functies en de bijbehorende para meters zijn niet hoofdletter gevoelig. Resource Manager kan bijvoorbeeld worden omgezet `variables('var1')` en `VARIABLES('VAR1')` dezelfde. Als de functie wordt geëvalueerd, wordt de situatie bij het behouden van de para meter `toUpper` `toLower` . Bepaalde resource typen kunnen Case vereisten hebben die gescheiden zijn van de manier waarop functies worden geëvalueerd.
 
 Als u een teken reeks waarde wilt door geven als een para meter voor een functie, gebruikt u enkele aanhalings tekens.
 
@@ -123,7 +123,7 @@ Dezelfde opmaak wordt toegepast bij het door geven van waarden in vanuit een par
 
 ## <a name="null-values"></a>Null-waarden
 
-Als u een eigenschap op null wilt instellen, kunt u **Null** of **[JSON (' null ')]** gebruiken. De [json-functie](template-functions-object.md#json) retourneert een leeg object wanneer u `null` de para meter opgeeft. In beide gevallen behandelen Resource Manager-sjablonen dit alsof de eigenschap niet aanwezig is.
+U kunt `null` of `[json('null')]` gebruiken om een eigenschap in te stellen op nul. De [json-functie](template-functions-object.md#json) retourneert een leeg object wanneer u `null` de para meter opgeeft. In beide gevallen behandelen Resource Manager-sjablonen dit alsof de eigenschap niet aanwezig is.
 
 ```json
 "stringValue": null,
@@ -132,5 +132,5 @@ Als u een eigenschap op null wilt instellen, kunt u **Null** of **[JSON (' null 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure Resource Manager-sjabloon functies](template-functions.md)voor een volledige lijst met sjabloon functies.
-* Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](template-syntax.md)voor meer informatie over sjabloon bestanden.
+* Zie [arm-sjabloon functies](template-functions.md)voor de volledige lijst met sjabloon functies.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over sjabloon bestanden.

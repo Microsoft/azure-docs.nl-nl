@@ -8,15 +8,15 @@ ms.subservice: core
 ms.author: nibaccam
 author: aniththa
 ms.reviewer: nibaccam
-ms.date: 07/10/2020
+ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
-ms.openlocfilehash: 7cd704dad3d0ede55e4df4d9e222ff83fd7ae350
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 4539936007de0b45ab33dbd391baacc8f7d2ce2a
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919638"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97796054"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Automatische machine learning modellen maken, controleren en implementeren met Azure Machine Learning
 
@@ -80,7 +80,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
         Kolomkoppen| Geeft aan hoe eventuele koppen van de gegevensset worden behandeld.
         Rijen overslaan | Geeft aan hoeveel rijen er eventueel worden overgeslagen in de gegevensset.
     
-        Selecteer **Next**.
+        Selecteer **Volgende**.
 
     1. Het **schema** formulier wordt op de slimme wijze ingevuld op basis van de selecties in het formulier **instellingen en preview** . Hier configureert u het gegevens type voor elke kolom, bekijkt u de kolom namen en selecteert u welke kolommen niet voor uw experiment moeten worden **toegevoegd** . 
             
@@ -88,10 +88,10 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
 
     1. Het formulier **Details bevestigen** is een samen vatting van de gegevens die eerder zijn ingevuld in de **basis gegevens** en- **instellingen en preview** -formulieren. U kunt ook een gegevens profiel maken voor uw gegevensset met behulp van een profilerings functie ingeschakeld. Meer informatie over [gegevensprofilering](how-to-connect-data-ui.md#profile).
 
-        Selecteer **Next**.
+        Selecteer **Volgende**.
 1. Selecteer de zojuist gemaakte gegevensset zodra deze wordt weer gegeven. U kunt ook een preview van de gegevensset en voorbeeld statistieken bekijken. 
 
-1. Voer een unieke naam voor het experiment in op het formulier voor het configureren van een **uitvoering** .
+1. Selecteer op het formulier **Run configureren** de optie **nieuwe maken** en voer **zelf studie-automl-Deploy** in voor de naam van het experiment.
 
 1. Selecteer een doel kolom. Dit is de kolom waarop u de voor spellingen wilt uitvoeren.
 
@@ -113,7 +113,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
     >[!NOTE]
     > De naam van de berekening geeft aan of de compute die u selecteert/maakt, *profile ring is ingeschakeld*. (Zie de sectie [gegevens profilering](how-to-connect-data-ui.md#profile) voor meer informatie).
 
-    Selecteer **Next**.
+    Selecteer **Volgende**.
 
 1. Selecteer op het **taak type en het instellingen** formulier het taak type: classificatie, regressie of prognose. Zie [ondersteunde taak typen](concept-automated-ml.md#when-to-use-automl-classify-regression--forecast) voor meer informatie.
 
@@ -164,7 +164,7 @@ Toegerekend met| Selecteer welke waarde er ontbrekende waarden moeten worden toe
 Selecteer **volt ooien** om uw experiment uit te voeren. Het voorbereiden van het experiment kan tot 10 minuten duren. Trainingstaken kunnen nog 2-3 minuten meer kosten voordat het uitvoeren van elke pijplijn is voltooid.
 
 > [!NOTE]
-> De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine variaties in een aanbevolen model met de uiteindelijke metrische gegevens Score, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
+> De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine afwijkingen in de Score van de uiteindelijke metrische gegevens van een aanbevolen model, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
 
 ### <a name="view-experiment-details"></a>Details van experiment weer geven
 
@@ -172,7 +172,7 @@ Het scherm **detail uitvoeren** wordt geopend op het tabblad **Details** . In di
 
 Het tabblad **Modellen** bevat een lijst met de gemaakte modellen, op volgorde van de metrische score. Standaardstaat het model dat het hoogst scoort op basis van het gekozen metrische gegeven bovenaan de lijst. Terwijl de trainingstaak meer modellen uitprobeert, worden deze toegevoegd aan de lijst. Gebruik dit om een snelle vergelijking te krijgen van de metrische gegevens voor de tot dusver geproduceerde modellen.
 
-[![Dash board Details uitvoeren](media/how-to-use-automated-ml-for-ml-models/run-details.png)](media/how-to-use-automated-ml-for-ml-models/run-details-expanded.png#lightbox)
+![Uitvoeringsdetails](./media/how-to-use-automated-ml-for-ml-models/explore-models.gif)
 
 ### <a name="view-training-run-details"></a>Details van de cursus uitvoering weer geven
 
@@ -216,10 +216,10 @@ Geautomatiseerde ML helpt u bij het implementeren van het model zonder code te s
 1. Selecteer **Implementeren**. Implementatie duurt ongeveer 20 minuten.
     Zodra de implementatie is gestart, wordt het tabblad **Overzicht van model** weergegeven. U kunt de voortgang van de implementatie bekijken in de sectie **Implementatiestatus**. 
 
-U hebt nu een operationele webservice om voorspellingen te genereren. U kunt de voorspellingen testen door de service te doorzoeken via [Ondersteuning voor ingebouwde Azure Machine Learning van Power BI](how-to-consume-web-service.md#consume-the-service-from-power-bi).
+U hebt nu een operationele webservice om voorspellingen te genereren. U kunt de voorspellingen testen door de service te doorzoeken via [Ondersteuning voor ingebouwde Azure Machine Learning van Power BI](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het gebruik van een webservice](./how-to-consume-web-service.md).
+* [Meer informatie over het gebruik van een webservice](how-to-consume-web-service.md).
 * Krijg [inzicht in geautomatiseerde machine learning resultaten](how-to-understand-automated-ml.md).
 * Meer [informatie over automatische machine learning](concept-automated-ml.md) en Azure machine learning.

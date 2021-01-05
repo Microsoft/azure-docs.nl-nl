@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2020
 ms.author: rkarlin
-ms.openlocfilehash: 5e7eabd44ea8c56fbb102f9e48812745a31de62a
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 0c303adb4ee7c7551c6b389ec169d92a661a63bc
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089193"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835020"
 ---
 # <a name="azure-defender-for-iot-frequently-asked-questions"></a>Veelgestelde vragen over Azure Defender voor IoT
 
@@ -79,15 +79,11 @@ Ja. U kunt een aangepaste waarschuwing instellen voor een vooraf vastgestelde se
 
 De Sens oren en agents blijven gegevens uitvoeren en opslaan zolang het apparaat actief is. Gegevens worden opgeslagen in de cache voor beveiligings berichten volgens de grootte configuratie. Wanneer het apparaat de connectiviteit verkrijgt, wordt het verzenden van beveiligings berichten hervat.
 
-
-
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie over hoe u aan de slag kunt gaan met Defender voor IoT:
 
 - Lees het [overzicht](overview.md) van Defender voor IOT
-- De vereisten voor de [service](service-prerequisites.md) controleren
-- Meer informatie over hoe u aan de [slag kunt gaan](getting-started.md)
+- De [systeem vereisten](quickstart-system-prerequisites.md) controleren
+- Meer informatie over hoe u aan de [slag gaat met Defender voor IOT](getting-started.md)
 - Informatie [over Defender voor IOT-beveiligings waarschuwingen](concept-security-alerts.md)

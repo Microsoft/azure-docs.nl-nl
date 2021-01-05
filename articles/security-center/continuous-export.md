@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 12/08/2020
+ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: bdca5a753a49c26587db27892b54c2cb88910c83
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 823992ba6d3b175c8d20a001f8298a5c4af9a1ae
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862459"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97832706"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -24,6 +24,7 @@ Met **doorlopend exporteren** kunt u volledig aanpassen *wat* wordt geëxporteer
 - Alle waarschuwingen met hoge urgentie worden verzonden naar een Azure Event hub
 - Alle problemen met de ernst van gemiddeld of op het hoogste niveau van de scan van beveiligings lekken van uw SQL-servers worden verzonden naar een specifieke Log Analytics-werk ruimte
 - Specifieke aanbevelingen worden naar een event hub of Log Analytics werk ruimte bezorgd wanneer ze worden gegenereerd 
+- De beveiligde score voor een abonnement wordt verzonden naar een Log Analytics werkruimte wanneer de score voor een besturings element wordt gewijzigd door 0,01 of meer 
 
 In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics werk ruimten of Azure Event Hubs kunt configureren.
 
@@ -41,18 +42,28 @@ In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics w
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|<ul><li>**Beveiligings beheerder** of- **eigenaar** voor de resource groep</li><li>Schrijf machtigingen voor de doel resource</li><li>Als u het Azure Policy beleid ' DeployIfNotExist ' gebruikt dat hieronder wordt beschreven, hebt u ook machtigingen nodig voor het toewijzen van beleid</li></ul>|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere gov<br>![Yes](./media/icons/yes-icon.png) Gov China (naar Event hub)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Ja](./media/icons/yes-icon.png) Gov China (naar Event hub)|
 |||
 
 
+## <a name="what-data-types-can-be-exported"></a>Welke gegevens typen kunnen er worden geëxporteerd?
 
+Continue export kan de volgende gegevens typen exporteren wanneer ze veranderen:
 
+- Beveiligingswaarschuwingen
+- Aanbevelingen voor beveiliging 
+- Beveiligings resultaten die kunnen worden beschouwd als ' sub ' aanbevelingen zoals bevindingen van scanners voor beveiligings evaluatie of specifieke systeem updates. U kunt ervoor kiezen om deze op te geven met de aanbevelingen van het bovenliggende item, zoals ' systeem updates moeten op uw computers worden geïnstalleerd '.
+- Beveiligde Score (per abonnement of per besturings element)
+- Nalevings gegevens voor regelgeving
+
+> [!NOTE]
+> Het exporteren van beveiligde scores en nalevings gegevens is een preview-functie en is niet beschikbaar op overheids Clouds. 
 
 ## <a name="set-up-a-continuous-export"></a>Een continue export instellen 
 
 U kunt continue export configureren vanaf de Security Center pagina's in Azure Portal, via het Security Center REST API of op schaal met behulp van de meegeleverde Azure Policy sjablonen. Selecteer het juiste tabblad hieronder voor meer informatie.
 
-### <a name="use-the-azure-portal"></a>[**Azure Portal gebruiken**](#tab/azure-portal)
+### <a name="use-the-azure-portal"></a>[**De Azure-portal gebruiken**](#tab/azure-portal)
 
 ### <a name="configure-continuous-export-from-the-security-center-pages-in-azure-portal"></a>Continue export configureren vanaf de Security Center pagina's in Azure Portal
 
@@ -67,12 +78,12 @@ De onderstaande stappen zijn nodig om een doorlopende export naar Log Analytics 
     Hier ziet u de export opties. Er is een tabblad voor elk beschik bare export doel. 
 
 1. Selecteer het gegevens type dat u wilt exporteren en kies uit de filters voor elk type (bijvoorbeeld alleen waarschuwingen met hoge Ernst exporteren).
-1. Als uw selectie een van deze vier aanbevelingen bevat, kunt u desgewenst de evaluaties van beveiligings problemen samen voegen:
+1. Als uw selectie echter een van deze aanbevelingen bevat, kunt u de evaluatie van de beveiligings lekken samen met hen opnemen:
     - De conclusies van de evaluatie van beveiligings problemen voor uw SQL-data bases moeten worden hersteld
     - De resultaten van evaluatie van beveiligings problemen op uw SQL-servers op computers moeten worden hersteld (preview-versie)
     - Beveiligingsproblemen met installatiekopieën in Azure Container Registry moeten worden hersteld (mogelijk gemaakt door Qualys)
     - Beveiligingsproblemen op uw virtuele machines moeten worden hersteld
-    - Er moeten systeemupdates op uw computers worden geïnstalleerd
+    - Er moeten systeemupdates op uw computers zijn geïnstalleerd
 
     Schakel de optie **beveiligings resultaten bevatten** in om de resultaten op te vragen met deze aanbevelingen.
 
@@ -81,7 +92,7 @@ De onderstaande stappen zijn nodig om een doorlopende export naar Log Analytics 
 1. Kies in het gebied export doel de locatie waar u de gegevens wilt opslaan. Gegevens kunnen worden opgeslagen in een doel voor een ander abonnement (bijvoorbeeld op een centraal Event hub-exemplaar of een centrale Log Analytics-werk ruimte).
 1. Selecteer **Opslaan**.
 
-### <a name="use-the-rest-api"></a>[**REST-API gebruiken**](#tab/rest-api)
+### <a name="use-the-rest-api"></a>[**De REST API gebruiken**](#tab/rest-api)
 
 ### <a name="configure-continuous-export-using-the-rest-api"></a>Continue export configureren met behulp van de REST API
 
@@ -182,7 +193,7 @@ Als u waarschuwingen en aanbevelingen van Security Center in Azure Monitor wilt 
 
     * Selecteer voor **resource** de log Analytics werk ruimte waarnaar u beveiligings waarschuwingen en aanbevelingen hebt geëxporteerd.
 
-    * Selecteer **Condition** voor voor waarde **aangepaste logboek zoekopdracht**. Configureer op de pagina die wordt weer gegeven, de query, de lookback periode en de frequentie periode. In de zoek query kunt u *SecurityAlert* of *SecurityRecommendation* typen om een query uit te voeren op de gegevens typen die Security Center doorlopend exporteren naar wanneer u de functie continue export naar log Analytics inschakelt. 
+    * Selecteer voor voor waarde **aangepaste logboek zoekopdracht**. Configureer op de pagina die wordt weer gegeven, de query, de lookback periode en de frequentie periode. In de zoek query kunt u *SecurityAlert* of *SecurityRecommendation* typen om een query uit te voeren op de gegevens typen die Security Center doorlopend exporteren naar wanneer u de functie continue export naar log Analytics inschakelt. 
     
     * U kunt desgewenst de [actie groep](../azure-monitor/platform/action-groups.md) configureren die u wilt activeren. Actie groepen kunnen e-mail verzenden, ITSM tickets, webhooks en meer activeren.
     ![Waarschuwings regel Azure Monitor](./media/continuous-export/azure-monitor-alert-rule.png)
@@ -216,6 +227,9 @@ Nee. Continue export is gebouwd voor het streamen van **gebeurtenissen**:
 
 - **Waarschuwingen** die zijn ontvangen voordat de export werd ingeschakeld, worden niet geëxporteerd.
 - **Aanbevelingen** worden verzonden wanneer de nalevings status van een resource wordt gewijzigd. Bijvoorbeeld wanneer een resource in orde verandert in een slechte status. Daarom worden, net als bij waarschuwingen, aanbevelingen voor bronnen waarvan de status niet is gewijzigd sinds u de export hebt ingeschakeld, niet geëxporteerd.
+- Er wordt een **beveiligde Score (preview-versie)** per beveiligings beheer of abonnement verzonden wanneer de Score van een beveiligings controle wordt gewijzigd door 0,01 of meer. 
+- De **nalevings status van de regelgeving (preview)** wordt verzonden wanneer de status van de naleving van de resource wordt gewijzigd.
+
 
 
 ### <a name="why-are-recommendations-sent-at-different-intervals"></a>Waarom worden aanbevelingen met verschillende intervallen verzonden?

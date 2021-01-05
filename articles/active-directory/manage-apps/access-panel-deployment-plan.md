@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/27/2019
+ms.date: 12/31/2020
 ms.author: kenwith
-ms.openlocfilehash: 7edb7b498450625faf90f0601e19745ad632635a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 209760b51e0f3ab931fa43ef88406f15c75ac079
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835659"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97832536"
 ---
 # <a name="plan-an-azure-active-directory-my-apps-deployment"></a>Een Azure Active Directory implementatie van mijn apps plannen
 
@@ -54,7 +54,7 @@ Azure AD mijn apps voor delen bedrijven op de volgende manieren:
 
 Mijn apps is gratis en er zijn geen licenties nodig om op basis niveau te gebruiken. Voor het aantal objecten in uw directory en de aanvullende functies die u wilt implementeren, kunnen echter extra licenties nodig zijn. Enkele algemene scenario's voor Azure AD met licentie vereisten zijn onder andere de volgende beveiligings functies:
 
-* [Azure AD-Multi-Factor Authentication](../authentication/concept-mfa-howitworks.md)
+* [Azure AD Multi-Factor Authentication](../authentication/concept-mfa-howitworks.md)
 * [Groepslid maatschap](../fundamentals/active-directory-manage-groups.md)
 * [Self-service voor wachtwoord opnieuw instellen](../authentication/tutorial-enable-sspr.md)
 * [Azure Active Directory Identity Protection](../identity-protection/overview-identity-protection.md)
@@ -74,9 +74,9 @@ De volgende tabel bevat een overzicht van de belangrijkste use cases voor een im
 
 | Gebied| Beschrijving |
 | - | - |
-| Access| De portal van mijn apps is toegankelijk vanaf zakelijke en persoonlijke apparaten in het bedrijfs netwerk. |
-|Access | De portal van mijn apps is toegankelijk vanaf zakelijke apparaten buiten het bedrijfs netwerk. |
-| Controleren| Gebruiks gegevens worden minstens elke 29 dagen in bedrijfs systemen gedownload. |
+| Toegang| De portal van mijn apps is toegankelijk vanaf zakelijke en persoonlijke apparaten in het bedrijfs netwerk. |
+|Toegang | De portal van mijn apps is toegankelijk vanaf zakelijke apparaten buiten het bedrijfs netwerk. |
+| Controles| Gebruiks gegevens worden minstens elke 29 dagen in bedrijfs systemen gedownload. |
 | Beheer| De levens cyclus van de gebruikers toewijzingen aan toepassingen en groepen die zijn verbonden met Azure AD, wordt gedefinieerd en bewaakt. |
 | Beveiliging| Toegang tot bronnen wordt geregeld via gebruikers-en groeps toewijzingen. Alleen geautoriseerde gebruikers kunnen toegang tot resources beheren. |
 | Prestaties| De tijd lijnen voor het door geven van toegangs toewijzingen worden gedocumenteerd en gecontroleerd. |
@@ -122,11 +122,11 @@ De volgende tabel bevat een lijst met verschillende belang rijke configuraties v
 | De test groepen bepalen| Identificeer de Azure AD-beveiligings groep die moet worden gebruikt en zorg ervoor dat alle leden van de test groep deel uitmaken. |
 | Bepaal welke groep of groepen moeten worden ingeschakeld voor productie.| Identificeer de Azure AD-beveiligings groepen of de Active Directory groepen die zijn gesynchroniseerd met Azure AD om te worden gebruikt. Zorg ervoor dat alle leden van de pilot deel uitmaken van de groep. |
 | Gebruikers toestaan om SSO te gebruiken voor bepaalde typen toepassingen| Federatieve SSO, OAuth, wacht woord-SSO, app proxy |
-| Gebruikers toestaan self-service voor wachtwoord herstel te gebruiken | Yes |
-| Gebruikers toestaan om Multi-Factor Authentication te gebruiken| Yes |
+| Gebruikers toestaan self-service voor wachtwoord herstel te gebruiken | Ja |
+| Gebruikers toestaan om Multi-Factor Authentication te gebruiken| Ja |
 | Gebruikers toestaan om beheer van selfservice groepen te gebruiken voor bepaalde typen groepen| Beveiligings groepen, Microsoft 365 groepen |
-| Gebruikers toestaan self-service app-beheer te gebruiken| Yes |
-| Gebruikers toestaan om toegangs beoordelingen te gebruiken| Yes |
+| Gebruikers toestaan self-service app-beheer te gebruiken| Ja |
+| Gebruikers toestaan om toegangs beoordelingen te gebruiken| Ja |
 
 ### <a name="plan-consent-strategy"></a>Strategie voor het plannen van toestemming
 
@@ -172,7 +172,7 @@ Zie voor meer informatie over het implementeren en configureren van uw SaaS-toep
 
 Wanneer gebruikers zich aanmelden bij SSO-toepassingen op basis van wacht woorden, moeten ze de uitbrei ding voor beveiligde aanmelding van mijn apps installeren en gebruiken. De uitbrei ding voert een script uit dat het wacht woord verzendt naar het aanmeld formulier van de toepassing. Gebruikers wordt gevraagd de uitbrei ding te installeren wanneer ze de SSO-toepassing op basis van een wacht woord voor het eerst starten. Meer informatie over de uitbrei ding vindt u in deze documentatie over het [installeren van de browser uitbreiding mijn apps]().
 
-Als u SSO-toepassingen op basis van wacht woorden moet integreren, moet u een mechanisme definiëren om de uitbrei ding op schaal te implementeren met [ondersteunde browsers](../user-help/my-apps-portal-end-user-access.md). Een aantal opties:
+Als u SSO-toepassingen op basis van wacht woorden moet integreren, moet u een mechanisme definiëren om de uitbrei ding op schaal te implementeren met [ondersteunde browsers](../user-help/my-apps-portal-end-user-access.md). Mogelijke opties zijn:
 
 * [groepsbeleid voor Internet Explorer]()
 * [Configuration Manager voor Internet Explorer](/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
@@ -238,7 +238,7 @@ Azure AD biedt [rapporten die technische en zakelijke inzichten bieden](../repor
 
 Azure AD houdt de meeste controle gegevens gedurende 30 dagen. De gegevens zijn beschikbaar via de Azure-beheer portal of-API die u kunt downloaden naar uw analyse systemen.
 
-#### <a name="auditing"></a>Controleren
+#### <a name="auditing"></a>Controles
 
 Audit logboeken voor toegang tot toepassingen zijn 30 dagen beschikbaar. Als de beveiligings controle binnen uw onderneming een langere retentie vereist, moeten de logboeken worden geëxporteerd naar een SIEM-hulp programma (Security Information Event and Management), zoals Splunk of ArcSight.
 

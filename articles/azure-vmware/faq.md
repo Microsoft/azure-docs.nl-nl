@@ -2,24 +2,23 @@
 title: Veelgestelde vragen
 description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure VMware-oplossing.
 ms.topic: conceptual
-ms.date: 11/19/2020
-ms.author: dikamath
-ms.openlocfilehash: 3033df2021a8d1780caf9b0b7cd4dbe8de2a6050
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.date: 12/22/2020
+ms.openlocfilehash: 941708003558dda601aa43459bc83133788687fd
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861405"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835190"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
-In dit artikel vindt u antwoorden op veelgestelde vragen over de Azure VMware-oplossing.
+In dit artikel worden veelgestelde vragen beantwoord over de Azure VMware-oplossing.
 
 ## <a name="general"></a>Algemeen
 
 #### <a name="what-is-azure-vmware-solution"></a>Wat is Azure VMware Solution?
 
-Als ondernemingen de strategie voor modernisatie verhogen om de flexibiliteit van het bedrijf te verbeteren, kosten te verlagen en innovatie te versnellen, zijn hybride Cloud platforms opgegroeid als belangrijkste digitale trans formatie van klanten. De oplossing Azure VMware combineert de Software-Defined Data Center-software van VMware (SDDC) met Microsoft Azure Global Cloud service-ecosysteem. De Azure VMware-oplossing wordt beheerd om te voldoen aan de vereisten voor prestaties, Beschik baarheid, beveiliging en naleving.
+Als ondernemingen de strategie voor modernisatie verhogen om de flexibiliteit van het bedrijf te verbeteren, kosten te verlagen en innovatie te versnellen, zijn hybride Cloud platforms opgegroeid als belangrijkste digitale trans formatie van klanten. De oplossing Azure VMware combineert de Software-Defined Data Center-software van VMware (SDDC) met het Azure Global Cloud service-ecosysteem van micro soft. De Azure VMware-oplossing wordt beheerd om te voldoen aan de vereisten voor prestaties, Beschik baarheid, beveiliging en naleving.
 
 ## <a name="azure-vmware-solution-service"></a>Azure VMware-oplossings service
 
@@ -59,13 +58,11 @@ Updates die in de service zelf zijn aangebracht, volgen het standaard proces voo
 
 Met de nieuwe Azure VMware-oplossing beschikt micro soft en VMware over een direct partnerschap voor de Cloud provider. De nieuwe oplossing is volledig ontworpen, gebouwd en ondersteund door micro soft en goedgekeurd door VMware. In architectuur zijn de oplossingen consistent, met de VMware-technologie stack die wordt uitgevoerd op een specifieke Azure-infra structuur.
 
-
-
 #### <a name="can-azure-vmware-solution-vms-be-managed-by-vmrc"></a>Kunnen Vm's van Azure VMware-oplossingen worden beheerd door VMRC?
-Ja, op voor waarde dat het systeem waarop het is geïnstalleerd, toegang kan krijgen tot de privécloud en de open bare DNS gebruikt om ESXi-hostnamen op te lossen.
+Ja. Op voor waarde dat het systeem waarop het is geïnstalleerd, toegang heeft tot de privécloud en de open bare DNS gebruikt om ESXi-hostnamen op te lossen.
 
 #### <a name="are-there-special-instructions-for-installing-and-using-vmrc-with-azure-vmware-solution-vms"></a>Zijn er speciale instructies voor het installeren en gebruiken van VMRC met virtuele machines met Azure VMware-oplossingen?
-Nee. Gebruik de [instructies van VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-89E7E8F0-DB2B-437F-8F70-BA34C505053F.html) om te voldoen aan de vereisten van de virtuele machine die in deze instructies zijn opgegeven. 
+Nee. Volg de [instructies van VMware](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-89E7E8F0-DB2B-437F-8F70-BA34C505053F.html)om te voldoen aan de vereisten van de virtuele machine. 
 
 #### <a name="is-vmware-hcx-supported-on-vpns"></a>Worden VMware-HCX ondersteund op Vpn's?
 Nee, vanwege de vereisten voor band breedte en latentie.
@@ -77,7 +74,7 @@ Azure Bastion is de aanbevolen service om verbinding te maken met het Jump box o
 Nee. Azure Load Balancer intern: ondersteunt alleen virtuele Azure IaaS-machines. Azure Load Balancer biedt geen ondersteuning voor back-endservers op basis van IP-adressen; alleen Azure-Vm's of objecten voor virtuele-machine schaal sets waarin Azure VMware-oplossings-Vm's geen Azure-objecten zijn.
 
 #### <a name="can-an-existing-expressroute-gateway-be-used-to-connect-to-azure-vmware-solution"></a>Kan een bestaande ExpressRoute-gateway worden gebruikt om verbinding te maken met de Azure VMware-oplossing?
-Ja, u kunt een bestaande ExpressRoute-gateway gebruiken om verbinding te maken met de Azure VMware-oplossing zolang deze de limiet van vier ExpressRoute-circuits per virtueel netwerk niet overschrijdt.  Om toegang te krijgen tot Azure VMware Solution on-premises via ExpressRoute, moet u beschikken over ExpressRoute Global Reach, omdat de ExpressRoute-gateway geen transitieve routering biedt tussen de verbonden circuits.
+Ja. Gebruik een bestaande ExpressRoute-gateway om verbinding te maken met de Azure VMware-oplossing, zolang deze de limiet van vier ExpressRoute-circuits per virtueel netwerk niet overschrijdt. Voor toegang tot de Azure VMware-oplossing van on-premises via ExpressRoute, moet u ExpressRoute Global Reach, omdat de ExpressRoute-gateway geen transitieve route ring biedt tussen de verbonden circuits.
 
 ## <a name="compute-network-storage-and-backup"></a>Berekenings-, netwerk-, opslag-en back-ups
 
@@ -105,9 +102,9 @@ Elke ESXi-host in de Azure VMware-oplossing is geconfigureerd met 4 25-Gbps Nic'
 
 Ja, alle vSAN-gegevens worden standaard versleuteld met sleutels die zijn opgeslagen in Azure Key Vault.
 
-#### <a name="you-document-that-commvault-veritas-and-veeam-have-extended-their-backup-solutions-to-work-with-azure-vmware-solution-what-about-other-independent-software-vendors-isvs-backup-solutions"></a>U documenteert dat CommVault, Veritas en Veeam hun back-upoplossingen hebben uitgebreid om met de Azure VMware-oplossing te werken. Wat zijn de back-upoplossingen van andere onafhankelijke software leveranciers (Isv's)?
+####  <a name="what-independent-software-vendors-isvs-backup-solutions-work-with-azure-vmware-solution"></a>Welke Isv's (Independent Software Vendors)-back-upoplossingen werken met de Azure VMware-oplossing?
 
-Net als we weten, moeten alle back-upoplossingen die gebruikmaken van VMware VADP met de HotAdd-transport modus, direct worden gebruikt in het vak op de Azure VMware-oplossing.
+CommVault, Veritas en Veeam hebben hun back-upoplossingen uitgebreid om te kunnen samen werken met de Azure VMware-oplossing.  Een back-upoplossing die gebruikmaakt van VMware VADP met de HotAdd-transport modus, werkt echter direct uit het vak op de Azure VMware-oplossing.
 
 #### <a name="what-about-support-for-isv-backup-solutions"></a>Hoe zit het met ondersteuning voor ISV-back-upoplossingen?
 
@@ -127,7 +124,7 @@ Nee.
 
 Nee, hosts en clusters in de privécloud zijn toegewezen en veilig verwijderd voor en na gebruik.
 
-#### <a name="what-are-the-minimum-and-the-maximum-number-of-hosts-per-cluster"></a>Wat is het minimum en het maximum aantal hosts per cluster?
+#### <a name="what-are-the-minimum-and-maximum-number-of-hosts-per-cluster"></a>Wat zijn het minimale en maximum aantal hosts per cluster?
 
 Clusters kunnen worden geschaald tussen 3-en 16 ESXi-hosts. Proef clusters zijn beperkt tot drie hosts.
 
@@ -147,7 +144,8 @@ Nee. High-end ESXi-hosts zijn gereserveerd voor gebruik in productie clusters.
 
 #### <a name="what-versions-of-vmware-software-is-used-in-private-clouds"></a>Welke versies van VMware-software worden gebruikt in persoonlijke Clouds?
 
-Private clouds gebruiken vSphere 6,7 U3, vSAN 6,7 U3, VMware HCX en NSX-T 2,5.  Zie voor meer informatie [de vereisten voor de VMware-software versie](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-54E5293B-8707-4D29-BFE8-EE63539CC49B.html).
+[!INCLUDE [vmware-software-versions](includes/vmware-software-versions.md)]
+
 
 #### <a name="do-private-clouds-use-vmware-nsx"></a>Gebruiken persoonlijke Clouds VMware NSX?
 
@@ -188,11 +186,11 @@ Schakel in het Azure Portal Internet connectiviteit in voor een privécloud. Maa
 
 #### <a name="do-i-need-to-restrict-access-from-the-internet-to-vms-on-logical-networks-in-a-private-cloud"></a>Moet ik de toegang van Internet tot Vm's op logische netwerken in een privécloud beperken?
 
-Nee. Netwerk verkeer binnenkomend van het Internet rechtstreeks naar persoonlijke Clouds is standaard niet toegestaan.  U kunt echter Azure VMware-oplossings-Vm's beschikbaar maken op Internet via de [open bare IP-](public-ip-usage.md) optie in uw Azure portal voor uw Azure VMware-oplossing privécloud.
+Nee. Netwerk verkeer binnenkomend van het Internet rechtstreeks naar persoonlijke Clouds is standaard niet toegestaan.  U kunt echter Azure VMware-oplossings-Vm's beschikbaar maken op Internet via de [open bare IP-](public-ip-usage.md) optie in uw Azure portal voor uw persoonlijke cloud van Azure VMware-oplossing.
 
 #### <a name="do-i-need-to-restrict-internet-access-from-vms-on-logical-networks-to-the-internet"></a>Moet ik Internet toegang beperken van Vm's op logische netwerken naar het Internet?
 
-Ja. U moet NSX-T-beheer gebruiken om een firewall te maken waarmee de toegang tot internet wordt beperkt.
+Ja. U moet NSX-T-beheer gebruiken om een firewall te maken voor het beperken van de toegang tot het Internet van de virtuele machine.
 
 
 #### <a name="can-azure-vmware-solution-use-azure-virtual-wan-hosted-expressroute-gateways"></a>Kan de Azure VMware-oplossing Azure Virtual WAN hosted ExpressRoute-gateways gebruiken?
@@ -201,6 +199,9 @@ Ja.
 #### <a name="can-transit-connectivity-be-established-between-on-premises-and-azure-vmware-solution-through-azure-virtual-wan-over-expressroute-global-reach"></a>Kan Transit connectiviteit tot stand worden gebracht tussen on-premises en Azure VMware-oplossing via Azure Virtual WAN via ExpressRoute Global Reach?
 Virtuele WAN-verbindingen van Azure bieden geen transitieve route ring tussen twee verbonden ExpressRoute-circuits en een niet-virtuele WAN ExpressRoute-gateway. Met behulp van ExpressRoute Global Reach maakt u verbinding tussen de on-premises en Azure VMware-oplossing, maar gaat u door het wereld wijde netwerk van micro soft in plaats van de virtuele WAN-hub.
 
+#### <a name="could-i-use-hcx-through-public-internet-communications-as-a-workaround-for-the-non-supportability-of-hcx-when-using-vpn-s2s-with-vwan-for-on-premises-communications"></a>Kan ik HCX gebruiken via open bare Internet communicatie als tijdelijke oplossing voor de niet-ondersteunde HCX Wanneer VPN S2S met vWAN voor on-premises communicatie wordt gebruikt?
+
+Momenteel is de enige ondersteunde methode voor HCX via ExpressRoute.
 
 ## <a name="accounts-and-privileges"></a>Accounts en bevoegdheden
 
@@ -245,7 +246,7 @@ U hebt een Azure-account in een Azure-abonnement nodig.
 
 #### <a name="are-red-hat-solutions-supported-on-azure-vmware-solution"></a>Worden Red Hat-oplossingen ondersteund op de Azure VMware-oplossing?
 
-Micro soft en Red Hat delen een geïntegreerd ondersteunings team met co-locatie dat een uniform contact punt biedt voor Red Hat-ecosystemen die worden uitgevoerd op het Azure-platform.  Net als andere Azure-platform services die met Red Hat Enterprise Linux werken, valt de Azure VMware-oplossing onder de Cloud toegang en het geïntegreerde ondersteunings paraplu. Red Hat Enterprise Linux wordt ondersteund voor het uitvoeren van een Azure VMware-oplossing in Azure.
+Micro soft en Red Hat delen een geïntegreerd ondersteunings team dat een uniform contact punt biedt voor Red Hat-ecosystemen die worden uitgevoerd op het Azure-platform.  Net als andere Azure-platform services die met Red Hat Enterprise Linux werken, valt de Azure VMware-oplossing onder de Cloud toegang en het geïntegreerde ondersteunings paraplu. Red Hat Enterprise Linux wordt ondersteund voor het uitvoeren van een Azure VMware-oplossing in Azure.
 
 #### <a name="is-vmware-hcx-enterprise-available-and-if-so-how-much-does-it-cost"></a>Is VMware HCX Enter prise beschikbaar en zo ja, hoeveel kost het?
 
@@ -294,11 +295,11 @@ Voordat u uw Azure VMware-oplossings resource kunt maken, dient u een ondersteun
    az provider register -n Microsoft.AVS --subscription <your subscription ID>
    ```
 
-   Zie [Azure-resourceproviders en -typen](../azure-resource-manager/management/resource-providers-and-types.md) voor meer manieren om de Azure Synapse-resourceprovider te registeren. 
+   Zie [Azure-resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md)voor meer manieren om de resource provider te registreren. 
 
 #### <a name="are-reserved-instances-available-for-purchasing-through-the-cloud-solution-provider-csp-program"></a>Kunnen gereserveerde instanties worden aangeschaft via het programma van de Cloud Solution Provider (CSP)?
 
-Ja. CSP kan gereserveerde instanties voor hun klanten kopen. Zie het artikel [kosten besparen met een gereserveerde instantie](reserved-instance.md) voor meer informatie. 
+Ja. CSP kan gereserveerde instanties voor hun klanten kopen. Zie [kosten besparen met een gereserveerde instantie](reserved-instance.md)voor meer informatie. 
 
 #### <a name="does-azure-vmware-solution-offer-multi-tenancy-for-hosting-csp-partners"></a>Biedt de Azure VMware-oplossing een multitenancy voor het hosten van CSP-partners?
 

@@ -1,0 +1,205 @@
+---
+title: Gebruikers maken en beheren
+description: Gebruikers van Sens oren en de on-premises beheer console maken en beheren. Aan gebruikers kan de rol van beheerder, beveiligings analist of alleen-lezen gebruiker worden toegewezen.
+author: shhazam-ms
+manager: rkarlin
+ms.author: shhazam
+ms.date: 12/21/2020
+ms.topic: article
+ms.service: azure
+ms.openlocfilehash: c3a9e1c7e96d0392e1f94b71549f612738622dea
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97840963"
+---
+# <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
+
+In dit artikel wordt beschreven hoe u gebruikers van Sens oren en de on-premises beheer console maakt en beheert. Gebruikers rollen omvatten Administrator, beveiligings analist of alleen-lezen gebruiker. Elke rol is gekoppeld aan een reeks machtigingen voor hulpprogram ma's voor de sensor of on-premises beheer console. Rollen zijn ontworpen om granulaire, veilige toegang tot Azure Defender voor IoT te vergemakkelijken.
+
+Er zijn ook functies beschikbaar voor het bijhouden van gebruikers activiteiten en het inschakelen van Active Directory-aanmelding.
+
+Elke sensor en on-premises beheer console wordt standaard geïnstalleerd met een Cyber-gebruiker *en een ondersteunings* gebruikers. Deze gebruikers hebben toegang tot geavanceerde hulpprogram ma's voor probleem oplossing en installatie. Gebruikers met beheerders rechten moeten zich aanmelden met deze gebruikers referenties, een beheerders gebruiker maken en vervolgens extra gebruikers maken voor beveiligings analisten en alleen-lezen gebruikers.
+
+## <a name="role-based-permissions"></a>Op rollen gebaseerde machtigingen
+De volgende gebruikers rollen zijn beschikbaar:
+
+- **Alleen**-lezen: alleen-lezen gebruikers voeren taken uit, zoals het weer geven van waarschuwingen en apparaten op de apparaattoewijzing. Deze gebruikers hebben toegang tot opties die worden weer gegeven onder **Navigatie**.
+
+- **Beveiligings analist**: beveiligings analisten hebben alleen-lezen gebruikers machtigingen. Ze kunnen ook acties uitvoeren op apparaten, waarschuwingen bevestigen en onderzoek hulpprogramma's gebruiken. Deze gebruikers hebben toegang tot de opties die worden weer gegeven onder **Navigatie** en **analyse**.
+
+- **Beheerder**: beheerders hebben toegang tot alle hulpprogram ma's, waaronder het definiëren van systeem configuraties, het maken en beheren van gebruikers, en nog veel meer. Deze gebruikers hebben toegang tot opties die worden weer gegeven onder **Navigatie**, **analyse** en **beheer**.
+
+### <a name="role-based-permissions-to-on-premises-management-console-tools"></a>Op rollen gebaseerde machtigingen voor on-premises beheer console-hulpprogram ma's
+
+In deze sectie worden de machtigingen beschreven die beschikbaar zijn voor beheerders, beveiligings analisten en alleen-lezen gebruikers voor de on-premises beheer console.  
+
+| Machtiging | Alleen-lezen | Beveiligings analist | Beheerder |
+|--|--|--|--|
+| De Enter prise-kaart weer geven en filteren | ✓ | ✓ | ✓ |
+| Een site bouwen |  |  | ✓ |
+| Een site beheren (zones toevoegen en bewerken) |  |  | ✓ |
+| Inventaris van apparaten weer geven en filteren | ✓ | ✓ | ✓ |
+| Waarschuwingen weer geven en beheren: erkennen, leren en vastmaken | ✓ | ✓ | ✓ |
+| Rapporten genereren |  | ✓ | ✓ |
+| Rapporten over risico analyse weer geven |  | ✓ | ✓ |
+| Uitsluitingen van waarschuwingen instellen |  | ✓ | ✓ |
+| Toegangs groepen weer geven of definiëren |  |  | ✓ |
+| Systeem instellingen beheren |  |  | ✓ |
+| Gebruikers beheren |  |  | ✓ |
+| Waarschuwings gegevens naar partners verzenden |  |  | ✓ |
+| Certificaten beheren |  |  | ✓ |
+| Sessietime-out wanneer gebruikers niet actief zijn | 30 minuten | 30 minuten  | 30 minuten  |
+
+#### <a name="assign-users-to-access-groups"></a>Gebruikers toewijzen aan toegangs groepen
+
+Beheerders kunnen gebruikers toegangs beheer in Defender voor IoT verbeteren door gebruikers toe te wijzen aan specifieke *toegangs groepen*. Toegangs groepen worden toegewezen aan zones, sites, regio's en bedrijfs eenheden waar een sensor zich bevindt. Door gebruikers toe te wijzen om toegang te krijgen tot groepen, krijgen beheerders specifieke controle over waar gebruikers apparaat detecties beheren en analyseren. 
+
+Op deze manier kunt u grote organisaties gebruiken waar gebruikers machtigingen complex zijn of kunnen worden bepaald door een globaal beveiligings beleid van de organisatie. Zie [globaal toegangs beheer definiëren](how-to-define-global-user-access-control.md)voor meer informatie.
+
+### <a name="role-based-permissions-to-sensor-tools"></a>Op rollen gebaseerde machtigingen voor sensor hulpprogramma's
+
+In deze sectie worden de machtigingen beschreven die beschikbaar zijn voor sensor beheerders, beveiligings analisten en alleen-lezen gebruikers.  
+
+| Machtiging | Alleen-lezen | Beveiligings analist | Beheerder |
+|--|--|--|--|
+| Het dashboard weergeven | ✓ | ✓ | ✓ |
+| Zoom weergave van kaart instellen |  |  | ✓ |
+| Waarschuwingen weergeven | ✓ | ✓ | ✓ |
+| Waarschuwingen beheren: erkennen, leren en vastmaken |  | ✓ | ✓ |
+| Gebeurtenissen in een tijd lijn weer geven |  | ✓ | ✓ |
+| Apparaten toestaan, bekende scan apparaten, programmeer apparaten |  | ✓ | ✓ |
+| Onderzoek gegevens weer geven | ✓ | ✓ | ✓ |
+| Systeem instellingen beheren |  |  | ✓ |
+| Gebruikers beheren |  |  | ✓ |
+| DNS-servers voor reverse lookup |  |  | ✓ |
+| Waarschuwings gegevens naar partners verzenden |  | ✓ | ✓ |
+| Waarschuwings opmerkingen maken |  | ✓ | ✓ |
+| Geschiedenis van de wijziging van het programma weer geven | ✓ | ✓ | ✓ |
+| Aangepaste waarschuwings regels maken |  | ✓ | ✓ |
+| Meerdere meldingen tegelijk beheren |  | ✓ | ✓ |
+| Certificaten beheren |  |  | ✓ |
+| Sessietime-out wanneer gebruikers niet actief zijn | 30 minuten | 30 minuten | 30 minuten |
+
+## <a name="define-users"></a>Gebruikers definiëren
+
+In deze sectie wordt beschreven hoe u gebruikers definieert. Gebruikers van cyberx, ondersteuning en beheerders kunnen andere gebruikers definities toevoegen, verwijderen en bijwerken.
+
+Een gebruiker definiëren:
+
+1. Selecteer in het linkerdeel venster voor de sensor of de on-premises beheer console de optie **gebruikers**.
+2. In het venster **gebruikers** selecteert u **gebruiker maken**.
+3. Definieer de volgende para meters in het deel venster **gebruiker maken** :
+
+   - **Gebruikers naam**: Voer een gebruikers naam in.
+   - **E-mail**: Voer het e-mail adres van de gebruiker in.
+   - **Voor naam**: Voer de voor naam van de gebruiker in.
+   - **Achternaam**: Voer de achternaam van de gebruiker in.
+   - **Rol**: Definieer de rol van de gebruiker. Zie [machtigingen op basis van rollen](#role-based-permissions).
+   - **Toegangs groep**: als u een gebruiker voor de on-premises beheer console maakt, definieert u de toegangs groep van de gebruiker. Zie [globaal toegangs beheer definiëren](how-to-define-global-user-access-control.md).
+   - **Wacht woord**: Selecteer het gebruikers type als volgt:
+     - **Lokale gebruiker**: Definieer een wacht woord voor de gebruiker van een sensor of een on-premises beheer console. Het wacht woord moet uit ten minste zes tekens bestaan en mag alleen letters en cijfers bevatten.
+     - **Active Directory gebruiker**: u kunt gebruikers toestaan zich aan te melden bij de sensor of beheer console met behulp van Active Directory referenties. Gedefinieerde Active Directory groepen kunnen worden gekoppeld aan specifieke machtigings niveaus. U kunt bijvoorbeeld een specifieke Active Directory groep configureren en alle gebruikers in de groep toewijzen aan het gebruikers type met het kenmerk alleen-lezen.
+
+:::image type="content" source="media/how-to-create-azure-for-defender-users-and-roles/manage-user-views.png" alt-text="Uw gebruikers beheren.":::
+
+## <a name="user-session-timeout"></a>Time-out van gebruikers sessie
+
+Als gebruikers gedurende een bepaalde tijd niet actief zijn op het toetsen bord of de muis, worden ze afgemeld bij hun sessie en moeten ze zich opnieuw aanmelden.
+
+Wanneer gebruikers gedurende een periode van 30 minuten niet hebben gewerkt met de muis of het toetsen bord van de console, wordt een afmelding van de sessie geforceerd.
+
+Deze functie is standaard ingeschakeld en bij een upgrade, maar kan worden uitgeschakeld. Daarnaast kunnen sessie tellings tijden worden bijgewerkt. Sessie tijden worden in seconden gedefinieerd. Definities worden toegepast per sensor en on-premises beheer console.
+
+Er wordt een sessietime-out-bericht weer gegeven in de console wanneer de time-out voor inactiviteit is verstreken.
+
+### <a name="control-inactivity-sign-out"></a>Uitloggen van inactiviteit controleren
+
+Gebruikers met beheerders rechten kunnen afmeldingen van inactiviteit in-en uitschakelen en de drempel waarden voor inactiviteit aanpassen.
+
+Voor toegang tot de opdracht:
+
+1. Meld u aan bij de CLI voor de sensor of on-premises beheer console met behulp van Defender voor IoT-beheerders referenties.
+
+2. Voer `sudo nano /var/cyberx/properties/authentication` in.
+
+```azurecli-interactive
+    infinity_session_expiration = true
+    session_expiration_default_seconds = 0
+    # half an hour in seconds (comment)
+    session_expiration_admin_seconds = 1800
+    # a day in seconds
+    session_expiration_security_analyst_seconds = 1800
+    # a week in seconds
+    session_expiration_read_only_users_seconds = 1800
+```
+
+Als u de functie wilt uitschakelen, wijzigt `infinity_session_expiration = true` u in `infinity_session_expiration = false` .
+
+Als u tellings perioden wilt bijwerken, wijzigt `= <number>` u de waarde in de gewenste tijd.
+
+
+## <a name="track-user-activity"></a>Gebruikers activiteit volgen 
+
+U kunt de gebruikers activiteit volgen in de tijd lijn van de gebeurtenis op elke sensor. De tijd lijn geeft het gebeurtenis-of betrokken apparaat weer en de tijd en datum waarop de gebruiker de activiteit heeft uitgevoerd.
+
+Gebruikers activiteiten weer geven:
+
+1. Meld u aan bij de sensor.
+1. Schakel de optie **gebruikers bewerkingen** in de tijd lijn van de gebeurtenis in. 
+
+    :::image type="content" source="media/how-to-create-azure-for-defender-users-and-roles/User-login-attempts.png" alt-text="De activiteit van een gebruiker weer geven.":::
+
+## <a name="integrate-with-active-directory-servers"></a>Integreren met Active Directory-servers 
+
+Configureer de sensor of on-premises beheer console om met Active Directory te werken. Hiermee kunnen Active Directory gebruikers toegang krijgen tot de Defender voor IoT-consoles met behulp van hun Active Directory referenties.
+
+Er worden twee typen verificatie op basis van LDAP ondersteund:
+
+- **Volledige verificatie**: de gebruikers gegevens worden opgehaald van de LDAP-server. Voor beelden zijn de voor naam, achternaam, e-mail adres en gebruikers machtigingen.
+
+- **Vertrouwde gebruiker**: alleen het gebruikers wachtwoord wordt opgehaald. Andere gebruikers gegevens die worden opgehaald, zijn gebaseerd op gebruikers die zijn gedefinieerd in de sensor.
+
+### <a name="active-directory-and-defender-for-iot-permissions"></a>Active Directory en Defender voor IoT-machtigingen
+
+U kunt Active Directory groepen die hier zijn gedefinieerd, koppelen met specifieke machtigings niveaus. U kunt bijvoorbeeld een specifieke Active Directory groep configureren en RO-machtigingen toewijzen aan alle gebruikers in de groep. Zie [gebruikers maken en beheren](how-to-create-and-manage-users.md) voor meer informatie.
+
+Active Directory configureren:
+
+1. Selecteer **systeem instellingen** in het linkerdeel venster.
+
+    :::image type="content" source="media/how-to-setup-active-directory/ad-system-settings-v2.png" alt-text="Bekijk de instellingen van uw Active Directory-systeem.":::
+
+2. Selecteer **Active Directory** in het deel venster **systeem instellingen** .
+
+    :::image type="content" source="media/how-to-setup-active-directory/ad-configurations-v2.png" alt-text="Bewerk uw Active Directory configuraties.":::
+
+3. Selecteer **Active Directory integratie ingeschakeld** opslaan in het dialoog venster **Active Directory configuratie bewerken**  >  . Het dialoog venster **Active Directory configuratie bewerken** wordt uitgevouwen en u kunt nu de para meters voor het configureren van Active Directory opgeven.
+
+    :::image type="content" source="media/how-to-setup-active-directory/ad-integration-enabled-v2.png" alt-text="Voer de para meters in om Active Directory te configureren.":::
+
+    > [!NOTE]
+    > - U moet de LDAP-para meters hier precies definiëren als ze worden weer gegeven in Active Directory.
+    > - Gebruik alleen kleine letters voor alle para meters Active Directory. Gebruik kleine letters, zelfs wanneer de configuraties in Active Directory hoofd letters gebruiken.
+    > - U kunt niet zowel LDAP als LDAPS configureren voor hetzelfde domein. U kunt echter beide voor verschillende domeinen tegelijk gebruiken.
+
+4. Stel de Active Directory server-para meters als volgt in:
+
+   | Server parameter | Beschrijving |
+   |--|--|
+   | FQDN van domein controller | Stel de Fully Qualified Domain Name (FQDN) precies zo in als deze op uw LDAP-server wordt weer gegeven. Voer bijvoorbeeld `host1.subdomain.domain.com` in. |
+   | Domein controller poort | Definieer de poort waarop uw LDAP is geconfigureerd. |
+   | Primair domein | Stel de domein naam (bijvoorbeeld `subdomain.domain.com` ) en het verbindings type in op basis van uw LDAP-configuratie. |
+   | Active Directory groepen | Geef de groeps namen op die zijn gedefinieerd in uw Active Directory configuratie op de LDAP-server. |
+   | Vertrouwde domeinen | Als u een vertrouwd domein wilt toevoegen, voegt u de domein naam en het verbindings type van een vertrouwd domein toe. <br />U kunt alleen vertrouwde domeinen configureren voor gebruikers die zijn gedefinieerd onder gebruikers. |
+
+5. Selecteer **Opslaan**.
+
+6. Selecteer **server toevoegen** en een andere server configureren om een vertrouwde server toe te voegen.
+
+## <a name="see-also"></a>Zie tevens
+
+[Uw sensor](how-to-activate-and-set-up-your-sensor.md) 
+ activeren en instellen [Uw on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md) 
+ activeren en instellen [Sensor activiteit volgen](how-to-track-sensor-activity.md)

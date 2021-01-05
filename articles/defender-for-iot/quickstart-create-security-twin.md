@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: 74e0e8daa662f4dd49f1886972236b5b0a3b100a
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 3e48ed870bf405a82441678b5e8c01d199e7ebff
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348854"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835003"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Quickstart: Een azureiotsecurity-moduledubbel maken
 
@@ -65,10 +65,10 @@ Ga als volgt te werk om te controleren of er een moduledubbel bestaat voor een s
 
 1. Selecteer in uw Azure IoT Hub **IoT-apparaten** in het menu **Explorers**.
 1. Voer de apparaat-id in of selecteer een optie in het veld **Query uitvoeren op apparaat** en klik op **Query uitvoeren op apparaten**.
-    ![Query uitvoeren op apparaten](./media/quickstart/verify-security-module-twin.png)
+    :::image type="content" source="./media/quickstart/verify-security-module-twin.png" alt-text="Query uitvoeren op apparaten":::
 1. Selecteer het apparaat of dubbelklik erop om de pagina met details van het apparaat te openen.
 1. Selecteer het menu **Module-identiteiten** en bevestig dat de **azureiotsecurity**-module aanwezig is in de lijst met module-identiteiten die zijn gekoppeld aan het apparaat.
-    ![Modules die zijn gekoppeld aan een apparaat](./media/quickstart/verify-security-module-twin-3.png)
+    :::image type="content" source="./media/quickstart/verify-security-module-twin-3.png" alt-text="Modules die zijn gekoppeld aan een apparaat":::
 
 Raadpleeg [Agentconfiguratie](how-to-agent-configuration.md) voor meer informatie over het aanpassen van eigenschappen van Defender for IoT-moduledubbels.
 

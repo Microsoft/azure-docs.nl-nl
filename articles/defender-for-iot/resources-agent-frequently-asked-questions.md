@@ -13,17 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2020
 ms.author: rkarlin
-ms.openlocfilehash: 9862519a2003eb373c43fef1b660986a8d830327
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: f584f11603e41b63f3c96749ed6c720eb5ce07a8
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094453"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835054"
 ---
 # <a name="azure-defender-for-iot-agent-frequently-asked-questions"></a>Veelgestelde vragen over Azure Defender voor IoT-agent
 
 In dit artikel vindt u een lijst met veelgestelde vragen en antwoorden over de Defender voor IoT-agent.
-
 
 ## <a name="do-i-have-to-install-an-embedded-security-agent"></a>Moet ik een Inge sloten beveiligings agent installeren?
 
@@ -41,7 +40,6 @@ Het installeren van de agent op uw IoT-apparaten is niet verplicht om Defender i
 Defender voor IoT-agent biedt een bedreigings dekking op apparaatniveau voor apparaatconfiguratie, gedrag en toegang (door de configuratie te scannen), &-verbinding te verwerken. De Defender voor IoT-beveiligings agent scant geen bedrijfsgerelateerde gegevens of activiteiten.
 
 De beveiligings agent voor Defender voor IoT is open source en beschikbaar op GitHub in 32 bits en 64-bits Windows-en Linux-versies: https://github.com/Azure/Azure-IoT-Security .
-
 
 ## <a name="what-are-the-dependencies-and-prerequisites-of-the-agent"></a>Wat zijn de afhankelijkheden en vereisten van de agent?
 
@@ -87,13 +85,11 @@ De agent kan niet worden uitgeschakeld.
 
 Als de agent niet meer communiceert of geen beveiligings berichten verzendt, wordt een melding op het **apparaat wordt** gegenereerd.
 
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie over hoe u aan de slag kunt gaan met Defender voor IoT:
 
 - Lees het [overzicht](overview.md) van Defender voor IOT
-- De vereisten voor de [service](service-prerequisites.md) controleren
-- Meer informatie over hoe u aan de [slag kunt gaan](getting-started.md)
+- De [systeem vereisten](quickstart-system-prerequisites.md) controleren
+- Meer informatie over hoe u aan de [slag gaat met Defender voor IOT](getting-started.md)
 - Informatie [over Defender voor IOT-beveiligings waarschuwingen](concept-security-alerts.md)

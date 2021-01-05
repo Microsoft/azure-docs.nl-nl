@@ -1,17 +1,17 @@
 ---
 title: Probleemoplossings procedure voor de Azure signalerings service
 description: Meer informatie over het oplossen van problemen met connectiviteit en het afleveren van berichten
-author: YanJin
+author: yjin81
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: yajin1
-ms.openlocfilehash: 413bb88deac96c1ca12e8a9d25fc9cd16edf4616
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 2e22777b747ae24c3e643cbd43bfdb0604d453a2
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183954"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707653"
 ---
 # <a name="how-to-troubleshoot-connectivity-and-message-delivery-issues"></a>Problemen met connectiviteit en aflevering van berichten oplossen
 
@@ -28,6 +28,8 @@ Eerst moet u controleren vanaf de Azure Portal welke [ServiceMode](./concept-ser
 * `Classic`Raadpleeg voor modus de [klassieke modus problemen oplossen](#classic_mode_tsg)
 
 <a name="default_mode_tsg"></a>
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="default-mode-troubleshooting"></a>Problemen met de standaard modus oplossen
 
@@ -73,6 +75,7 @@ De signaal *Server* onderhoudt de *Server verbinding* tussen de *Server* en de *
 
 Bekijk de netwerk tracering aan de server zijde om de status code en fout details te achterhalen waarom de *Server verbinding* wordt verbroken of geweigerd door de *service* en zoek naar de hoofd oorzaak in de [probleemoplossings handleiding](./signalr-howto-troubleshoot-guide.md).
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ### <a name="how-to-add-logs"></a>Logboeken toevoegen
 
@@ -166,6 +169,8 @@ U kunt ook [Diagnostische logboeken inschakelen](./signalr-howto-diagnostic-logs
 
 <a name="serverless_mode_tsg"></a>
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="serverless-mode-troubleshooting"></a>Problemen met serverloze modus oplossen
 
 Wanneer **ASRS** in de *serverloze* modus is, ondersteunt alleen **ASP.net core signalerings** `Serverless` modus en wordt de **ASP.net-Signa lering** deze modus **niet** ondersteund.
@@ -174,11 +179,15 @@ Om problemen met de connectiviteit in `Serverless` de modus te diagnosticeren, i
 
 <a name="classic_mode_tsg"></a>
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="classic-mode-troubleshooting"></a>Problemen met de klassieke modus oplossen
 
 `Classic` modus is verouderd en wordt niet aanbevolen om te gebruiken. In deze modus gebruikt de Azure signalerings service de verbonden *Server verbindingen* om te bepalen of de huidige service zich in de `default` modus of modus bevindt `serverless` . Dit kan leiden tot een aantal tussenliggende client verbindings problemen omdat, wanneer er een plotselinge overschakeling van de verbinding van de verbonden *Server* is, bijvoorbeeld door een netwerk instabiliteit, de Azure-Signa lering vermeent naar `serverless` de modus en clients die zijn verbonden tijdens deze periode, nooit naar de gehoste app-server worden doorgestuurd. Schakel [Logboeken aan de service zijde](#add_logs_server) in en controleer of er clients zijn geregistreerd alsof `ServerlessModeEntered` u een host hebt van de app server, maar sommige clients nooit de kant van de app-server hebben bereikt. Als dat het geval is, kunt u [deze client verbindingen afbreken](https://github.com/Azure/azure-signalr/blob/dev/docs/rest-api.md#API) en de clients opnieuw opstarten kunnen helpen.
 
 Problemen met de `classic` modus voor probleem oplossing en het afleveren van berichten zijn vergelijkbaar met het [oplossen van problemen met de standaard modus](#default_mode_tsg).
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="service-health"></a>Status van service
 
@@ -188,13 +197,15 @@ U kunt de status-API voor de service status controleren.
 
 * Status code van antwoord:
   * 200: in orde.
-  * 503: uw service is niet in orde. U kunt het volgende doen:
+  * 503: uw service is niet in orde. U kunt:
     * Wacht enkele minuten op auto herstel.
     * Controleer of het IP-adres overeenkomt met de IP-adressen uit de portal.
     * Of start het exemplaar opnieuw.
     * Als alle bovenstaande opties niet werken, neemt u contact met ons op door een nieuwe ondersteunings aanvraag toe te voegen in Azure Portal.
 
 Meer informatie over [herstel na nood gevallen](./signalr-concept-disaster-recovery.md).
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="next-steps"></a>Volgende stappen
 

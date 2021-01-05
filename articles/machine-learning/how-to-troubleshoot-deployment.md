@@ -1,7 +1,7 @@
 ---
-title: Problemen met de implementatie van Remote Web service oplossen
+title: Problemen met de implementatie van externe modellen oplossen
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het omzeilen, oplossen en oplossen van problemen met veelvoorkomende docker-implementatie fouten met Azure Kubernetes service en Azure Container Instances.
+description: Meer informatie over hoe u een aantal algemene docker-implementatie fouten oplost met Azure Kubernetes service en Azure Container Instances.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.reviewer: jmartens
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: contperf-fy20q4, devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 92cd70e864ae0490ce3f9e7435d9518241f93c8e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 4224e301d6410fc97da1f98cd0dd9577c6341cd3
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031501"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740620"
 ---
-# <a name="troubleshoot-model-deployment"></a>Problemen met model implementatie oplossen
+# <a name="troubleshooting-remote-model-deployment"></a>Problemen met de implementatie van externe modellen oplossen 
 
-Meer informatie over het oplossen van problemen en het oplossen van veelvoorkomende fouten met betrekking tot externe docker-implementatie met Azure Container Instances (ACI) en Azure Kubernetes service (AKS) met behulp van Azure Machine Learning.
+Informatie over het oplossen en oplossen van veelvoorkomende fouten die kunnen optreden bij het implementeren van een model naar Azure Container Instances (ACI) en Azure Kubernetes service (AKS) met behulp van Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,7 +48,7 @@ Inzicht in deze stappen op hoog niveau helpt u te begrijpen waar fouten zich voo
 
 De eerste stap in fouten bij fout opsporing is het ophalen van de implementatie Logboeken. Volg eerst de [instructies hier](how-to-deploy-and-where.md#connect-to-your-workspace) om verbinding te maken met uw werk ruimte.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 Ga als volgt te werk om de logboeken van een geïmplementeerde webservice op te halen:
 
@@ -177,6 +177,16 @@ Er zijn twee dingen die u kunnen helpen bij het voor komen van 503-status codes:
 Een 504-status code geeft aan dat er een time-out is opgetreden voor de aanvraag. De standaard time-out is 1 minuut.
 
 U kunt de time-out verhogen of proberen de service te versnellen door de score.py te wijzigen zodat overbodige aanroepen worden verwijderd. Als deze acties het probleem niet verhelpen, gebruikt u de informatie in dit artikel om fouten op te sporen in het score.py-bestand. De code kan een niet-reagerende status hebben of een oneindige lus.
+
+## <a name="other-error-messages"></a>Andere fout berichten
+
+Voer deze acties uit voor de volgende fouten:
+
+|Fout  | Oplossing  |
+|---------|---------|
+|Fout bij het maken van de installatie kopie bij het implementeren van de webservice     |  Voeg ' pynacl = = 1.2.1 ' toe als een PIP-afhankelijkheid voor het Conda-bestand voor installatie kopie configuratie       |
+|`['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`     |   Wijzig de SKU voor virtuele machines die in uw implementatie worden gebruikt naar een met meer geheugen. |
+|FPGA-fout     |  U kunt geen modellen implementeren op Fpga's totdat u hebt aangevraagd en goedgekeurd voor FPGA-quotum. Vul het quotum aanvraag formulier in om toegang aan te vragen: https://aka.ms/aml-real-time-ai       |
 
 ## <a name="advanced-debugging"></a>Geavanceerde fout opsporing
 

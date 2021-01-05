@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 04/06/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to learn the options available to monitor the health of my vaults
-ms.openlocfilehash: 9195bb59264731914740e1cca902707603e3502d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7ff3daded48612fd308396420dca65cd81d9fafc
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018117"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724694"
 ---
 # <a name="monitoring-and-alerting-for-azure-key-vault"></a>Bewaking en waarschuwingen voor Azure Key Vault
 
@@ -40,7 +40,7 @@ Zodra u de sleutel kluis hebt gestart om uw productie geheimen op te slaan, is h
 
 **Intensiteit** van de kluis: het aantal aanvragen per seconde dat een sleutel kluis kan leveren is gebaseerd op het type bewerking dat wordt uitgevoerd. Voor sommige kluis bewerkingen gelden lagere drempel waarden per seconde. Met deze metrische waarde wordt het totale gebruik van uw sleutel kluis geaggregeerd voor alle bewerkings typen die worden opgehaald met een percentage dat het huidige gebruik van de sleutel kluis aangeeft. Raadpleeg het volgende document voor een volledige lijst met de sleutel kluis-service limieten. [Limieten van Azure Key Vault-service](service-limits.md)
 
-**Latentie van Service-API** : deze metrische waarde toont de gemiddelde latentie van een aanroep van de sleutel kluis. Hoewel uw sleutel kluis mogelijk binnen service limieten valt, kan een hoog gebruik van de sleutel kluis een latentie veroorzaken waardoor toepassingen downstream mislukken. 
+**API-latentie van service** -deze metriek toont de gemiddelde latentie van aanroepen naar sleutel kluis, gemeten bij de service. Het bevat geen tijd die wordt verbruikt door de client of het netwerk tussen client en service.
 
 **Totaal aantal API-treffers** : in deze metrische gegevens worden alle aanroepen van uw sleutel kluis weer gegeven. Dit helpt u te bepalen welke toepassingen uw sleutel kluis bellen. 
 
@@ -57,7 +57,7 @@ Zodra u de sleutel kluis hebt gestart om uw productie geheimen op te slaan, is h
 
 4. Werk de titel van de grafiek bij naar wat u op het dash board wilt weer geven. 
 5. Selecteer het bereik. In dit voor beeld wordt een enkele sleutel kluis geselecteerd. 
-6. Selecteer de metrische gegevens over de **gehele Beschik baarheid** en aggregatie van de kluis **Avg** 
+6. Selecteer de metrische gegevens over de **gehele Beschik baarheid** en aggregatie van de kluis  
 7. Werk het tijds bereik bij in de afgelopen 24 uur en werk de tijd granulatie bij naar 1 minuut. 
 
 > [!div class="mx-imgBorder"]

@@ -1,17 +1,17 @@
 ---
 title: Gids voor probleemoplossing voor Azure SignalR Service
 description: Meer informatie over het oplossen van veelvoorkomende problemen
-author: YanJin
+author: yjin81
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 55ad9c90129a5d732f377ac1b6c905c14de319dc
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 505176758e1dbba1d6bf262554568edd8a197a4d
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607420"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707670"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -63,6 +63,8 @@ services.MapAzureSignalR(GetType().FullName, options =>
             });
 ```
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="tls-12-required"></a>TLS 1,2 vereist
 
 ### <a name="possible-errors"></a>Mogelijke fouten:
@@ -104,11 +106,15 @@ Voeg de volgende code toe aan het opstarten:
 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 ```
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="400-bad-request-returned-for-client-requests"></a>400 ongeldige aanvraag geretourneerd voor client aanvragen
 
 ### <a name="root-cause"></a>Hoofdoorzaak
 
 Controleer of uw client aanvraag meerdere `hub` query reeksen heeft. `hub` is een verduurzaamde query parameter en 400 wordt gegenereerd als de service meer dan een `hub` in de query detecteert.
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="401-unauthorized-returned-for-client-requests"></a>401 - Niet gemachtigd geretourneerd voor clientaanvragen
 
@@ -128,6 +134,8 @@ Uit veiligheids overwegingen wordt het uitbreiden van TTL niet aanbevolen. Het t
 
 [Hier](#restart_connection) kunt u controleren hoe client verbindingen opnieuw moeten worden gestart.
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="404-returned-for-client-requests"></a>404 geretourneerd voor clientaanvragen
 
 Voor een permanente verbinding met een signaal sterkte maakt het eerst `/negotiate` gebruik van de Azure signalerings service en wordt vervolgens de echte verbinding met de Azure signalerings service tot stand gebracht.
@@ -138,9 +146,13 @@ Voor een permanente verbinding met een signaal sterkte maakt het eerst `/negotia
 * Controleer de URL van de aanvraag wanneer 404 optreedt. Als de URL is gericht op uw web-app en vergelijkbaar met `{your_web_app}/hubs/{hubName}` , controleert u of de client `SkipNegotiation` is `true` . Wanneer u Azure Signalr gebruikt, ontvangt de client omleidings-URL wanneer deze de app server voor het eerst onderhandelt. De client mag **geen** onderhandeling overs Laan bij gebruik van Azure-Signa lering.
 * Een andere 404 kan zich voordoen wanneer de verbindings aanvraag meer dan **5** seconden na `/negotiate` wordt aangeroepen. Controleer de tijds tempel van de client aanvraag en open een probleem met ons als de aanvraag voor de service een trage reactie heeft.
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="404-returned-for-aspnet-signalrs-reconnect-request"></a>404 geretourneerd voor aanvraag voor reconnect van ASP.NET-signaal sterkte
 
 Wanneer de [client verbinding](#client_connection_drop)wordt verbroken, maakt de ASP.net-Signa lering een verbinding met hetzelfde `connectionId` aantal drie keer voor het stoppen van de verbinding. `/reconnect` kan helpen als de verbinding wordt verbroken door problemen met het netwerk, waardoor `/reconnect` de permanente verbinding kan worden hersteld. Onder andere omstandigheden wordt de client verbinding verbroken als gevolg van de gerouteerde server verbinding, of de signaal service heeft een aantal interne fouten, zoals het opnieuw opstarten/failover/implementatie, bestaat niet meer, waardoor de verbinding `/reconnect` wordt geretourneerd `404` . Het is het verwachte gedrag voor `/reconnect` en na drie keer opnieuw proberen van de verbinding wordt gestopt. De logica voor het [opnieuw starten](#restart_connection) van de verbinding wordt voorgesteld wanneer de verbinding wordt gestopt.
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="429-too-many-requests-returned-for-client-requests"></a>429 (te veel aanvragen) geretourneerd voor client aanvragen
 
@@ -155,6 +167,8 @@ De verbindingen zijn zowel client-als server verbindingen. [hier](./signalr-conc
 ### <a name="too-many-negotiate-requests-at-the-same-time"></a>Er zijn te veel onderhandelen over aanvragen op hetzelfde moment.
 
 Er wordt een wille keurige vertraging weer gegeven voordat u opnieuw verbinding kunt maken. Controleer [hier](#restart_connection) de voor beelden voor nieuwe pogingen.
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500-fout tijdens de onderhandeling: de Azure signalerings service is nog niet verbonden. Probeer het later opnieuw.
 
@@ -215,6 +229,8 @@ Wanneer u SDK-versie >= gebruikt `1.0.0` , kunt u traceringen inschakelen door h
 
 <a name="client_connection_drop"></a>
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="client-connection-drops"></a>Client verbinding verbroken
 
 Wanneer de client is verbonden met de Azure-Signa lering, kan de permanente verbinding tussen de client en de Azure-Signa lering soms om verschillende redenen worden verbroken. In deze sectie worden verschillende mogelijkheden beschreven die een dergelijke verbinding veroorzaken, en vindt u richt lijnen voor het identificeren van de hoofd oorzaak.
@@ -240,6 +256,7 @@ Client verbindingen kunnen onder verschillende omstandigheden worden verwijderd:
 2. Controleer het gebeurtenis logboek van de app-server om te controleren of de app-server opnieuw is opgestart
 3. Maak een probleem aan ons dat het tijds bestek levert en e-mail adres van de resource naar ons verzendt.
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="client-connection-increases-constantly"></a>Client verbinding wordt voortdurend verhoogd
 
@@ -295,6 +312,8 @@ Dit probleem treedt vaak op wanneer iemand een signaal/client verbinding maakt i
 
 <a name="server_connection_drop"></a>
 
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
+
 ## <a name="server-connection-drops"></a>Server verbinding verbroken
 
 Wanneer de app-server wordt gestart, wordt op de achtergrond de Azure SDK gestart met het initiëren van server verbindingen met de externe Azure-Signa lering. Zoals beschreven in de [interne werking van de Azure signalerings service](https://github.com/Azure/azure-signalr/blob/dev/docs/internal.md), stuurt Azure signalering binnenkomende client verkeer naar deze server verbindingen. Zodra een server verbinding is verbroken, worden alle client verbindingen die worden gebruikt, ook gesloten.
@@ -320,6 +339,8 @@ Verbinding met Server-service is gesloten door **ASRS**(**een** zure **S** ignal
 1. Logboek van de app-server openen om te zien of er iets abnormaal is gebeurd
 2. Controleer het gebeurtenis logboek van de app-server om te controleren of de app-server opnieuw is opgestart
 3. Maak een probleem aan ons dat het tijds bestek levert en e-mail adres van de resource naar ons verzendt.
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="tips"></a>Tips
 
@@ -352,6 +373,8 @@ Neem ASP.NET Core een voor beeld (ASP.NET één is vergelijkbaar):
     * [ASP.NET C#-client](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.CSharpClient/Program.cs#L78)
 
     * [ASP.NET java script-client](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.JavaScriptClient/wwwroot/index.html#L71)
+
+[Ondervindt u problemen of feedback over het oplossen van problemen? Laat het ons weten.](https://aka.ms/asrs/survey/troubleshooting)
 
 ## <a name="next-steps"></a>Volgende stappen
 

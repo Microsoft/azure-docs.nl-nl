@@ -6,7 +6,7 @@
       href: about-certificates.md
     - name: Over certificaatverlenging
       href: overview-renew-certificate.md
-- name: Snelstartgidsen
+- name: Snelstarts
   expanded: true
   items:
     - name: CLI
@@ -21,6 +21,8 @@
       href: quick-create-node.md
     - name: Python
       href: quick-create-python.md
+    - name: Java
+      href: quick-create-java.md
 - name: Voorbeelden
   items:
     - name: Key Vault-codevoorbeelden

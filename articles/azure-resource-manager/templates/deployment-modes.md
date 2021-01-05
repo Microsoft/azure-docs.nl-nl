@@ -3,12 +3,12 @@ title: Implementatiemodi
 description: Hierin wordt beschreven hoe u kunt opgeven of u een volledige of incrementele implementatie modus met Azure Resource Manager wilt gebruiken.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: bc499be4185905af7eaf71b3515895de9bee46d3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 45eee255cec06925095ed0696c669b5c205f8b56
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184039"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724405"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Azure Resource Manager deployment modes (Implementatiemodi voor Azure Resource Manager)
 
@@ -33,7 +33,7 @@ Als u naar [meer dan één resource groep in een sjabloon](./deploy-to-resource-
 
 Er zijn een aantal verschillen in de manier waarop bron typen het verwijderen van de modus volt ooien verwerken. Bovenliggende resources worden automatisch verwijderd als ze niet worden gebruikt in een sjabloon die wordt geïmplementeerd in de modus voltooid. Sommige onderliggende resources worden niet automatisch verwijderd wanneer ze niet in de sjabloon staan. Deze onderliggende resources worden echter verwijderd als de bovenliggende resource wordt verwijderd.
 
-Als uw resource groep bijvoorbeeld een DNS-zone (het resource type micro soft. Network/dnsZones) en een CNAME-record (micro soft. Network/dnsZones/CNAME-resource type) bevat, is de DNS-zone de bovenliggende resource voor de CNAME-record. Als u implementeert in de modus volledig en u de DNS-zone niet in uw sjabloon opneemt, worden de DNS-zone en de CNAME-record verwijderd. Als u de DNS-zone in uw sjabloon opneemt, maar niet de CNAME-record opneemt, wordt de CNAME niet verwijderd.
+Als uw resource groep bijvoorbeeld een DNS-zone ( `Microsoft.Network/dnsZones` resource type) en een CNAME-record ( `Microsoft.Network/dnsZones/CNAME` bron type) bevat, is de DNS-zone de bovenliggende resource voor de CNAME-record. Als u implementeert in de modus volledig en u de DNS-zone niet in uw sjabloon opneemt, worden de DNS-zone en de CNAME-record verwijderd. Als u de DNS-zone in uw sjabloon opneemt, maar niet de CNAME-record opneemt, wordt de CNAME niet verwijderd.
 
 Zie [Azure-resources verwijderen voor implementaties in de volledige modus](complete-mode-deletion.md)voor een lijst met de verwijdering van resource typen die worden verwijderd.
 
@@ -113,19 +113,19 @@ In het volgende voor beeld ziet u een gekoppelde sjabloon die is ingesteld op in
 ```json
 "resources": [
   {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2017-05-10",
-      "name": "linkedTemplate",
-      "properties": {
-          "mode": "Incremental",
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2017-05-10",
+    "name": "linkedTemplate",
+    "properties": {
+      "mode": "Incremental",
           <nested-template-or-external-template>
-      }
+    }
   }
 ]
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure Resource Manager sjablonen ontwerpen](template-syntax.md)voor meer informatie over het maken van Resource Manager-sjablonen.
-* Zie [een toepassing implementeren met Azure Resource Manager sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van resources.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over het maken van Resource Manager-sjablonen.
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van resources.
 * Zie [Azure rest API](/rest/api/)om de bewerkingen voor een resource provider weer te geven.

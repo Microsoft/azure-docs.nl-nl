@@ -5,16 +5,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/22/2020
 ms.author: trbye
-ms.openlocfilehash: d97a1bf00d722414bedda4be79adc0c26d02c751
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dc569050b78a5797808f2e2e000019ba516ba22e
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81421919"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739230"
 ---
-## <a name="speech-modes"></a>Spraak modi
-
-**SBSI**
+**Interactief**
 - Bedoeld voor opdracht-en controle scenario's.
 - Heeft een time-outwaarde van X.
 - Aan het einde van een herkende utterance stopt de service de verwerking van de audio van die aanvraag-ID en eindigt de beurt. De verbinding is niet gesloten.
@@ -34,4 +32,4 @@ ms.locfileid: "81421919"
 **Dicteren**
 - Hiermee kunnen gebruikers interpunctie opgeven door het te spreken.
 - Wordt aangeroepen in kooldioxyde door `EnableDictation` op het object op te geven `SpeechConfig` , ongeacht de API-aanroep die de herkenning start.
-- De 1<sup>St</sup> partij-cluster retourneert `speech.fragment` berichten voor tussenliggende resultaten, de<sup>rd</sup> drie retour berichten van de derde partij `speech.hypothesis` .
+- De 1<sup>St</sup> partij-cluster retourneert `speech.fragment` berichten voor tussenliggende resultaten, de<sup></sup> drie retour berichten van de derde partij `speech.hypothesis` .

@@ -5,17 +5,17 @@ author: memildin
 manager: rkarlin
 services: security-center
 ms.author: memildin
-ms.date: 09/22/2020
+ms.date: 12/22/2020
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: d15d73b0f2b87b8e6f66c7bd4e7fb34f6b06e1a0
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: d5820af1efd91efd79fb2a860d6aad8d2eeed80d
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341920"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740875"
 ---
-# <a name="explore-and-manage-your-resources-with-asset-inventory-and-management-tools"></a>Verken en beheer uw resources met hulpprogramma's voor assetvoorraad en -beheer
+# <a name="explore-and-manage-your-resources-with-asset-inventory"></a>Uw resources verkennen en beheren met inventarisatie van activa
 
 De pagina voor assetinventarisatie van Azure Security Center biedt één pagina voor het weergeven van het beveiligingspostuur van de resources die u hebt verbonden met Security Center. 
 
@@ -43,7 +43,7 @@ De mogelijkheden voor het beheer van middelen voor dit hulp programma zijn aanzi
 |Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|Alle gebruikers|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
+|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) Nationaal/onafhankelijk (Overheid van de VS, China, andere overheden)|
 |||
 
 
@@ -63,9 +63,9 @@ De pagina inventarisatie bevat de volgende hulpprogram ma's:
 
     Zodra u filters hebt toegepast, worden de samenvattings waarden bijgewerkt om te koppelen aan de query resultaten. 
 
-- **Export opties** -inventaris biedt de mogelijkheid om de resultaten van de geselecteerde filter opties te exporteren naar een CSV-bestand. Daarnaast kunt u de query zelf exporteren naar Azure resource Graph Explorer om de KQL-query verder te verfijnen, op te slaan of te wijzigen.
+- **Export opties** -inventaris biedt de mogelijkheid om de resultaten van de geselecteerde filter opties te exporteren naar een CSV-bestand. Daarnaast kunt u de query zelf exporteren naar Azure resource Graph Explorer om de KQL-query (Kusto Query Language) verder te verfijnen, op te slaan of te wijzigen.
 
-    ![Export opties van de inventaris](./media/asset-inventory/inventory-export-options.png)
+    :::image type="content" source="./media/asset-inventory/inventory-export-options.png" alt-text="Export opties van de inventaris":::
 
     > [!TIP]
     > De KQL-documentatie biedt een Data Base met een aantal voorbeeld gegevens in combi natie met enkele eenvoudige query's om het ' gevoel ' voor de taal te krijgen. [Meer informatie vindt u in deze KQL-zelf studie](/azure/data-explorer/kusto/query/tutorial?pivots=azuredataexplorer).
@@ -94,7 +94,7 @@ Met behulp van de [Kusto-query taal (KQL)](/azure/data-explorer/kusto/query/)kan
 
 1. Selecteer de relevante opties in de filters om de specifieke query te maken die u wilt uitvoeren.
 
-    :::image type="content" source="./media/asset-inventory/inventory-filters.png" alt-text="Filteren op productie resources die niet worden bewaakt" lightbox="./media/asset-inventory/inventory-filters.png":::
+    :::image type="content" source="./media/asset-inventory/inventory-filters.png" alt-text="Filter opties voor inventaris" lightbox="./media/asset-inventory/inventory-filters.png":::
 
     Standaard worden de resources gesorteerd op het aantal actieve beveiligings aanbevelingen.
 
@@ -114,22 +114,22 @@ Met behulp van de [Kusto-query taal (KQL)](/azure/data-explorer/kusto/query/)kan
 
     - **Off** -resources die niet worden beveiligd door een Azure Defender-abonnement. U kunt met de rechter muisknop op een van deze opties klikken en deze upgraden:
 
-        :::image type="content" source="./media/asset-inventory/upgrade-resource-inventory.png" alt-text="Filteren op productie resources die niet worden bewaakt" lightbox="./media/asset-inventory/upgrade-resource-inventory.png":::
+        :::image type="content" source="./media/asset-inventory/upgrade-resource-inventory.png" alt-text="Een resource upgraden van met de rechter muisknop naar Azure Defender" lightbox="./media/asset-inventory/upgrade-resource-inventory.png":::
 
     - **On** -resources die worden beveiligd met een Azure Defender-abonnement
     - **Gedeeltelijk** : dit is van toepassing op **abonnementen** die niet alle Azure Defender-abonnementen hebben uitgeschakeld. Het volgende abonnement bevat bijvoorbeeld vijf Azure Defender-abonnementen die zijn uitgeschakeld. 
 
-        :::image type="content" source="./media/asset-inventory/pricing-tier-partial.png" alt-text="Filteren op productie resources die niet worden bewaakt":::
+        :::image type="content" source="./media/asset-inventory/pricing-tier-partial.png" alt-text="Abonnement gedeeltelijk op Azure Defender":::
 
 1. Als u de resultaten van uw query verder wilt onderzoeken, selecteert u de resources die u interesseren.
 
-1. Als u de huidige geselecteerde filter opties wilt weer geven als een query in resource Graph Explorer, selecteert u **weer gave in resource Graph Explorer**.
+1. Als u de huidige geselecteerde filter opties wilt weer geven als een query in resource Graph Explorer, selecteert u **query openen**.
 
     ![Inventarisatie query in ARG](./media/asset-inventory/inventory-query-in-resource-graph-explorer.png)
 
 1. Een eerder gedefinieerde logische app uitvoeren met 
 
-1. Als u sommige filters hebt gedefinieerd en de pagina hebt geopend, worden Security Center de resultaten niet automatisch bijgewerkt. Wijzigingen in resources zijn niet van invloed op de weer gegeven resultaten tenzij u de pagina hand matig opnieuw laadt of **vernieuwen**selecteert.
+1. Als u sommige filters hebt gedefinieerd en de pagina hebt geopend, worden Security Center de resultaten niet automatisch bijgewerkt. Wijzigingen in resources zijn niet van invloed op de weer gegeven resultaten tenzij u de pagina hand matig opnieuw laadt of **vernieuwen** selecteert.
 
 
 ## <a name="faq---inventory"></a>Veelgestelde vragen-inventaris
@@ -140,7 +140,7 @@ De inventaris weergave bevat uw Security Center verbonden resources van een CSPM
 
 In de volgende scherm afbeelding ziet u bijvoorbeeld een gebruiker met toegang tot 38-abonnementen, maar er zijn nog maar 10 aanbevelingen. Als ze worden gefilterd op **resource type = abonnementen**, worden alleen die 10 abonnementen met actieve aanbevelingen weer gegeven in de inventaris:
 
-:::image type="content" source="./media/asset-inventory/filtered-subscriptions-some.png" alt-text="Filteren op productie resources die niet worden bewaakt":::
+:::image type="content" source="./media/asset-inventory/filtered-subscriptions-some.png" alt-text="Niet alle hoeven worden geretourneerd wanneer er geen actieve aanbevelingen zijn":::
 
 ### <a name="why-do-some-of-my-resources-show-blank-values-in-the-azure-defender-or-agent-monitoring-columns"></a>Waarom worden in sommige resources lege waarden weer gegeven in de kolommen van Azure Defender of de agent bewaking?
 
@@ -148,7 +148,7 @@ Niet alle Security Center bewaakte resources hebben agents. Bijvoorbeeld Azure S
 
 Wanneer de prijs-of agent bewaking niet relevant is voor een resource, worden er niets weer gegeven in die kolommen met de inventarisatie.
 
-:::image type="content" source="./media/asset-inventory/agent-pricing-blanks.png" alt-text="Filteren op productie resources die niet worden bewaakt":::
+:::image type="content" source="./media/asset-inventory/agent-pricing-blanks.png" alt-text="Sommige resources bevatten lege gegevens in de agent bewaking of Azure Defender-kolommen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

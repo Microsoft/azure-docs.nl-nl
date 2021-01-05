@@ -2,13 +2,13 @@
 title: Meerdere exemplaren van bronnen implementeren
 description: Gebruik kopieer bewerkingen en matrices in een Azure Resource Manager sjabloon (ARM-sjabloon) om het resource type meerdere keren te implementeren.
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: 7a894ee6a31a43dd8da3d84d88276824c6bbc9f7
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.date: 12/21/2020
+ms.openlocfilehash: c9bcb22ec53129520fd9574d0eb58b1e5777531e
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672828"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724490"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Resource iteratie in ARM-sjablonen
 
@@ -189,43 +189,6 @@ Als u opslag accounts bijvoorbeeld twee keer tegelijk wilt implementeren, gebrui
 
 De `mode` eigenschap accepteert ook **parallel**, wat de standaard waarde is.
 
-## <a name="depend-on-resources-in-a-loop"></a>Is afhankelijk van resources in een lus
-
-U geeft aan dat een resource wordt geïmplementeerd na een andere resource met behulp van het- `dependsOn` element. Als u een resource wilt implementeren die afhankelijk is van de verzameling van resources in een lus, geeft u de naam van de Kopieer-lus op in het element dependsOn. In het volgende voor beeld ziet u hoe u drie opslag accounts implementeert voordat u de virtuele machine implementeert. De volledige definitie van de virtuele machine wordt niet weer gegeven. U ziet dat de naam van het element Copy is ingesteld op `storagecopy` en dat het element dependsOn voor de virtuele machine ook is ingesteld op `storagecopy` .
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2019-04-01",
-      "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "copy": {
-        "name": "storagecopy",
-        "count": 3
-      },
-      "properties": {}
-    },
-    {
-      "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2015-06-15",
-      "name": "[concat('VM', uniqueString(resourceGroup().id))]",
-      "dependsOn": ["storagecopy"],
-      ...
-    }
-  ],
-  "outputs": {}
-}
-```
-
 ## <a name="iteration-for-a-child-resource"></a>Herhaling voor een onderliggende resource
 
 U kunt geen kopieer proces voor een onderliggende Resource gebruiken. Als u meer dan één exemplaar van een resource wilt maken die doorgaans wordt gedefinieerd als genest in een andere resource, moet u die resource in plaats daarvan maken als resource op het hoogste niveau. U definieert de relatie met de bovenliggende resource via de eigenschappen type en naam.
@@ -286,11 +249,10 @@ In de volgende voor beelden ziet u algemene scenario's voor het maken van meer d
 |[Opslag kopiëren](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystorage.json) |Hiermee worden meer dan één opslag account met een index nummer in de naam geïmplementeerd. |
 |[Opslag van seriële kopieën](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/serialcopystorage.json) |Hiermee worden verschillende opslag accounts tegelijkertijd geïmplementeerd. De naam bevat het index nummer. |
 |[Opslag kopiëren met een matrix](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystoragewitharray.json) |Hiermee worden verschillende opslag accounts geïmplementeerd. De naam bevat een waarde uit een matrix. |
-|[VM-implementatie met een variabele aantal gegevens schijven](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Hiermee worden verschillende gegevens schijven met een virtuele machine geïmplementeerd. |
-|[Meerdere beveiligings regels](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Implementeert diverse beveiligings regels voor een netwerk beveiligings groep. Hiermee worden de beveiligings regels van een para meter gemaakt. Zie [meerdere NSG-parameter bestanden](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json)voor de para meter. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* Zie [de volg orde voor het implementeren van resources in arm-sjablonen definiëren voor het](define-resource-dependency.md)instellen van afhankelijkheden voor resources die zijn gemaakt in een copy-lus.
 * Zie [zelf studie: meerdere resource-instanties maken met arm-sjablonen](template-tutorial-create-multiple-instances.md)om een zelf studie te door lopen.
 * Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die betrekking heeft op het kopiëren van de resource.
 * Zie voor andere toepassingen van het element copy:

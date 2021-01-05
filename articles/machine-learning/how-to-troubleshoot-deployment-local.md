@@ -1,7 +1,7 @@
 ---
-title: Problemen met de implementatie van webservices lokaal oplossen
+title: Problemen met de implementatie van het lokale model oplossen
 titleSuffix: Azure Machine Learning
-description: Meer informatie over hoe u de algemene Azure Machine Learning docker-implementatie fouten lokaal kunt omzeilen, oplossen en oplossen.
+description: Voer een implementatie van het lokale model uit als eerste stap in het oplossen van fouten in model implementaties.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 01a5f600acf9542c5adabcdf2523a42ca44233af
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: a879a81ae2bcb4e659c69a801f7c299c10ab3d77
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680508"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740637"
 ---
-# <a name="troubleshoot-model-deployment-locally"></a>Model implementatie lokaal oplossen
+# <a name="troubleshooting-with-a-local-model-deployment"></a>Problemen oplossen met een lokale model implementatie
 
-Meer informatie over het oplossen van problemen en het oplossen van veelvoorkomende Azure Machine Learning implementatie fouten van de docker-webservice.
+Probeer de implementatie van een lokaal model als eerste stap in het oplossen van problemen met de implementatie van Azure Container Instances (ACI) of Azure Kubernetes service (AKS).  Het gebruik van een lokale webservice maakt het gemakkelijker om veelvoorkomende Azure Machine Learning implementatie fouten van de docker-webservice te herkennen en op te lossen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -33,8 +33,6 @@ Meer informatie over het oplossen van problemen en het oplossen van veelvoorkome
     Als u de docker-installatie wilt controleren, gebruikt u de opdracht `docker run hello-world` vanaf een Terminal of opdracht prompt. Raadpleeg de [docker-documentatie](https://docs.docker.com/)voor meer informatie over het installeren van docker of het oplossen van problemen met docker-fouten.
 
 ## <a name="debug-locally"></a>Lokaal fouten opsporen
-
-Als u problemen ondervindt bij het implementeren van een model naar ACI of AKS, implementeert u het als een lokale webservice. Het gebruik van een lokale webservice maakt het gemakkelijker om problemen op te lossen.
 
 U vindt een voor beeld van een [lokale implementatie notitieblok](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb) in de  [MachineLearningNotebooks](https://github.com/Azure/MachineLearningNotebooks) -opslag plaats om een uitvoer bare-voorbeeld te verkennen.
 

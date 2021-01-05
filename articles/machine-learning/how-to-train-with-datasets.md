@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: b6ec9d7035194efc471fc06befad9822c8684a5d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 8b95c5a45992c895713e0be056856172b14b830d
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685576"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740671"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Train met gegevens sets in Azure Machine Learning
 
@@ -220,6 +220,7 @@ print(os.listdir(mounted_path))
 print (mounted_path)
 ```
 
+
 ## <a name="directly-access-datasets-in-your-script"></a>Rechtstreeks toegang tot gegevens sets in uw script
 
 Geregistreerde gegevens sets zijn zowel lokaal als extern toegankelijk op reken clusters, zoals de Azure Machine Learning compute. Gebruik de volgende code om toegang te krijgen tot uw geregistreerde gegevensset voor experimenten en de geregistreerde gegevensset op naam te openen. De [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) methode voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte.
@@ -255,7 +256,34 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 ## <a name="notebook-examples"></a>Voor beelden van notebooks
 
 + De [notitie blokken](https://aka.ms/dataset-tutorial) van de gegevensset tonen en uitvouwen op concepten in dit artikel.
-+ Bekijk hoe u [gegevens sets in uw ml-pijp lijnen kunt parametize](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb).
++ Bekijk hoe u [gegevens sets in uw ml-pijp lijnen kunt parametrize](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-showcasing-dataset-and-pipelineparameter.ipynb).
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+* **Het initialiseren van de gegevensset is mislukt: er is een time-out opgetreden bij het wachten op een koppelings punt**: 
+  * Als u geen regels voor uitgaande [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview) hebt en u `azureml-sdk>=1.12.0` deze wilt gebruiken, bijwerken `azureml-dataset-runtime` en de afhankelijkheden ervan het meest recente te zijn voor de specifieke secundaire versie, of als u deze gebruikt in een uitvoering, maakt u uw omgeving opnieuw, zodat deze de meest recente patch kan hebben met de oplossing. 
+  * Als u gebruikt `azureml-sdk<1.12.0` , moet u upgraden naar de nieuwste versie.
+  * Als u regels voor uitgaande NSG hebt, moet u ervoor zorgen dat er een regel voor uitgaande verbindingen is waarmee al het verkeer voor de servicetag kan worden toegestaan `AzureResourceMonitor` .
+
+### <a name="overloaded-azurefile-storage"></a>Overbelaste AzureFile-opslag
+
+Als er een fout bericht wordt weer gegeven `Unable to upload project files to working directory in AzureFile because the storage is overloaded` , moet u de volgende tijdelijke oplossingen Toep assen.
+
+Als u bestands share gebruikt voor andere werk belastingen, zoals gegevens overdracht, is de aanbeveling om blobs te gebruiken zodat de bestands share gratis kan worden gebruikt voor het verzenden van uitvoeringen. U kunt de werk belasting ook splitsen tussen twee verschillende werk ruimten.
+
+### <a name="passing-data-as-input"></a>Gegevens door geven als invoer
+
+*  **TypeError: FileNotFound: bestand of map**: deze fout treedt op als het bestandspad dat u opgeeft niet waar het bestand zich bevindt. U moet ervoor zorgen dat de manier waarop u naar het bestand verwijst consistent is met de locatie waar u uw gegevensset op het reken doel hebt gekoppeld. We raden u aan het abstracte pad te gebruiken bij het koppelen van een gegevensset aan een reken doel om te zorgen voor een deterministische status. In de volgende code koppelen we bijvoorbeeld de gegevensset aan onder de hoofdmap van het bestands systeem van het berekenings doel `/tmp` . 
+    
+    ```python
+    # Note the leading / in '/tmp/dataset'
+    script_params = {
+        '--data-folder': dset.as_named_input('dogscats_train').as_mount('/tmp/dataset'),
+    } 
+    ```
+
+    Als u de voorloop back slash (/) niet opneemt, moet u voor voegsel van de werkmap opgeven, bijvoorbeeld `/mnt/batch/.../tmp/dataset` op het berekenings doel om aan te geven waar u de gegevensset wilt koppelen.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

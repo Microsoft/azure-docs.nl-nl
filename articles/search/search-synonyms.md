@@ -3,181 +3,151 @@ title: Synoniemen voor het uitbreiden van query's via een zoek index
 titleSuffix: Azure Cognitive Search
 description: Maak een synoniemen toewijzing om het bereik van een zoek query op een Azure Cognitive Search-index uit te breiden. Het bereik is uitgebreid met gelijkwaardige termen die u in een lijst opgeeft.
 manager: nitinme
-author: brjohnstmsft
-ms.author: brjohnst
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 08/26/2020
-ms.openlocfilehash: a8f1fa07b94072d37cf83320b6c8956d3b412f12
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 12/18/2020
+ms.openlocfilehash: b62621a77f383b5c6413e7c187e7ba3d60beabad
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993581"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97732084"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Synoniemen in azure Cognitive Search
 
-Synoniemen in zoek machines koppelen gelijkwaardige termen waarmee impliciet het bereik van een query wordt uitgebreid, zonder dat de gebruiker daad werkelijk de term hoeft op te geven. Op basis van de term "hond" en synoniemen van "Canine" en "Puppy" worden documenten met "hond", "Canine" of "Puppy" bijvoorbeeld binnen het bereik van de query weer gegeven.
-
-In azure Cognitive Search wordt de uitbrei ding van synoniemen uitgevoerd op het moment van de query. U kunt synoniemen toevoegen aan een service zonder onderbreking van bestaande bewerkingen. U kunt een eigenschap  **synonymMaps** toevoegen aan een veld definitie zonder de index opnieuw op te bouwen.
+Met synoniemen kaarten kunt u gelijkwaardige voor waarden koppelen door het bereik van een query uit te breiden zonder dat de gebruiker de term daad werkelijk hoeft op te geven. Voor beeld: aangenomen dat "hond", "Canine" en "Puppy" synoniemen zijn, komt een query op "Canine" overeen met een document dat "hond" bevat.
 
 ## <a name="create-synonyms"></a>Synoniemen maken
 
-Er is geen portal ondersteuning voor het maken van synoniemen, maar u kunt de REST API of .NET SDK gebruiken. Om aan de slag te gaan met REST, raden we u aan [postman of Visual Studio code](search-get-started-rest.md) en formulering van aanvragen te gebruiken met deze API: [Create synoniem Maps](/rest/api/searchservice/create-synonym-map). Voor C#-ontwikkel aars kunt u aan de slag met [synoniemen toevoegen in azure cognitieve Zoek opdrachten met C#](search-synonyms-tutorial-sdk.md).
+Een synoniem toewijzing is een Asset die eenmaal kan worden gemaakt en door veel indexen kan worden gebruikt. De [servicelaag bepaalt hoeveel](search-limits-quotas-capacity.md#synonym-limits) synoniemen er u kunt maken, variërend van 3 synoniemen voor de lagen gratis en Basic, Maxi maal 20 voor de standaard lagen. 
 
-Als u gebruikmaakt van door de [klant beheerde sleutels](search-security-manage-encryption-keys.md) voor versleuteling aan de service zijde, kunt u die beveiliging ook Toep assen op de inhoud van uw synoniemen kaart.
+U kunt meerdere synoniemen kaarten maken voor verschillende talen, zoals Engels en Franse versies, of lexicons als uw inhoud technisch of onduidelijke terminologie bevat. Hoewel u meerdere synoniemen kaarten kunt maken, kunt u op dit moment slechts een van de toewijzingen gebruiken.
 
-## <a name="use-synonyms"></a>Synoniemen gebruiken
+Een synoniemen kaart bestaat uit een naam, indeling en regels die als synoniemen worden gebruikt voor het toewijzen van vermeldingen. De enige indeling die wordt ondersteund `solr` , is en de `solr` indeling bepaalt de constructie van de regel.
 
-In azure Cognitive Search is de ondersteuning voor synoniemen gebaseerd op synoniemen die u definieert en uploadt naar uw service. Deze kaarten vormen een onafhankelijke resource (zoals indexen of gegevens bronnen) en kunnen worden gebruikt door elk doorzoekbaar veld in een index in uw zoek service.
-
-Synoniemen en indexen worden onafhankelijk bewaard. Wanneer u een synoniemen kaart definieert en uploadt naar uw service, kunt u de synoniemen functie inschakelen voor een veld door een nieuwe eigenschap met de naam **synonymMaps** in de veld definitie toe te voegen. Het maken, bijwerken en verwijderen van een synoniemen kaart is altijd een hele document bewerking, wat betekent dat u geen incrementele delen van de synoniemen kaart kunt maken, bijwerken of verwijderen. Als u zelfs één vermelding wilt bijwerken, moet u het opnieuw laden.
-
-Het opnemen van synoniemen in uw zoek toepassing is een proces in twee stappen:
-
-1.  Voeg aan de hand van de onderstaande Api's een synoniemen kaart toe aan uw zoek service.  
-
-2.  Configureer een Doorzoek bare veld om de synoniemen toewijzing in de index definitie te gebruiken.
-
-U kunt meerdere synoniemen kaarten maken voor uw zoek toepassing (bijvoorbeeld op taal als uw toepassing een meertalige klanten database ondersteunt). Er kan op dit moment slechts een veld worden gebruikt. U kunt de eigenschap synonymMaps van een veld op elk gewenst moment bijwerken.
-
-### <a name="synonymmaps-resource-apis"></a>SynonymMaps-resource-Api's
-
-#### <a name="add-or-update-a-synonym-map-under-your-service-using-post-or-put"></a>Een synoniemen kaart onder uw service toevoegen of bijwerken met behulp van POST of PUT.
-
-Synoniemen worden geüpload naar de service via POST of PUT. Elke regel moet worden gescheiden door het nieuwe regel teken (' \n '). U kunt Maxi maal 5.000 regels per synoniem toewijzen in een gratis service en 20.000 regels per kaart in alle andere Sku's. Elke regel kan Maxi maal 20 uitbrei dingen hebben.
-
-Synoniemen moeten de Apache solr-indeling hebben die hieronder wordt uitgelegd. Als u een bestaande synoniemen lijst in een andere indeling hebt en deze rechtstreeks wilt gebruiken, laat het ons dan weten op [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
-
-U kunt met behulp van HTTP POST een nieuwe synoniemen toewijzing maken, zoals in het volgende voor beeld:
-
-```synonym-map
-    POST https://[servicename].search.windows.net/synonymmaps?api-version=2020-06-30
-    api-key: [admin key]
-
-    {
-       "name":"mysynonymmap",
-       "format":"solr",
-       "synonyms": "
-          USA, United States, United States of America\n
-          Washington, Wash., WA => WA\n"
-    }
+```http
+POST /synonymmaps?api-version=2020-06-30
+{
+    "name": "geo-synonyms",
+    "format": "solr",
+    "synonyms": "
+        USA, United States, United States of America\n
+        Washington, Wash., WA => WA\n"
+}
 ```
 
-U kunt ook PUT gebruiken en de naam van de toewijzing van het synoniem opgeven op de URI. Als de synoniemen toewijzing niet bestaat, wordt deze gemaakt.
+Als u een synoniemen toewijzing wilt maken, gebruikt u de [map synoniem maken (rest API)](/rest/api/searchservice/create-synonym-map) of een Azure-SDK. Voor C#-ontwikkel aars raden we u aan te beginnen met het [toevoegen van synoniemen in azure cognitieve Zoek opdrachten met C#](search-synonyms-tutorial-sdk.md).
 
-```synonym-map
-    PUT https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
-    api-key: [admin key]
+## <a name="define-rules"></a>Regels definiëren
 
-    {
-       "format":"solr",
-       "synonyms": "
-          USA, United States, United States of America\n
-          Washington, Wash., WA => WA\n"
-    }
+Toewijzings regels voldoen aan de open-source synoniem filter specificatie van Apache solr, zoals beschreven in dit document: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). De `solr` indeling ondersteunt twee soorten regels:
+
++ equivalentie (waarbij de voor waarden gelijk zijn aan de vervangingen in de query)
+
++ expliciete toewijzingen (waarbij voor waarden worden toegewezen aan één expliciete termijn voorafgaand aan het uitvoeren van query's)
+
+Elke regel moet worden gescheiden door het nieuwe regel teken ( `\n` ). U kunt Maxi maal 5.000 regels per synoniem toewijzen in een gratis service en 20.000 regels per kaart in andere lagen. Elke regel kan Maxi maal 20 uitbrei dingen (of items in een regel) bevatten. Zie [synoniemen limieten](search-limits-quotas-capacity.md#synonym-limits)voor meer informatie.
+
+Query-parsers verlaagt alle hoofd letters en andere voor waarden, maar als u speciale tekens in de teken reeks wilt behouden, zoals een komma of streepje, voegt u de juiste escape tekens toe wanneer u de synoniemen kaart maakt. 
+
+### <a name="equivalency-rules"></a>Gelijkwaardige regels
+
+Regels voor equivalente termen worden in dezelfde regel door komma's gescheiden. In het eerste voor beeld wordt een query op `USA` uitgebreid naar `USA` of `"United States"` of `"United States of America"` . Houd er rekening mee dat als u wilt overeenkomen met een woord groep, de query zelf een woordgroepen query met een aanhalings teken moet zijn.
+
+In het geval van de gelijkwaardige aanvraag wordt met een query voor `dog` de query uitgebreid om ook en toe te voegen `puppy` `canine` .
+
+```json
+{
+"format": "solr",
+"synonyms": "
+    USA, United States, United States of America\n
+    dog, puppy, canine\n
+    coffee, latte, cup of joe, java\n"
+}
 ```
 
-##### <a name="apache-solr-synonym-format"></a>Indeling van Apache solr-synoniem
+### <a name="explicit-mapping"></a>Expliciete toewijzing
 
-De solr-indeling ondersteunt gelijkwaardige en expliciete synoniemen toewijzingen. Toewijzings regels voldoen aan de open-source synoniem filter specificatie van Apache solr, zoals beschreven in dit document: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Hieronder volgt een voorbeeld regel voor equivalente synoniemen.
+Regels voor een expliciete toewijzing worden aangeduid met een pijl `=>` . Als deze is opgegeven, wordt een term volgorde van een zoek query die overeenkomt met de linkerkant van, `=>` vervangen door de alternatieven aan de rechter kant op het moment van de query.
 
+In het expliciete geval wordt een query `Washington` voor `Wash.` of `WA` wordt herschreven als `WA` , en in de query-engine wordt alleen gezocht naar overeenkomsten voor de term `WA` . Expliciete toewijzing is alleen van toepassing in de opgegeven richting en de query wordt `WA` `Washington` in dit geval niet opnieuw geschreven.
+
+```json
+{
+"format": "solr",
+"synonyms": "
+    Washington, Wash., WA => WA\n
+    California, Calif., CA => CA\n"
+}
 ```
-USA, United States, United States of America
-```
 
-Met de bovenstaande regel wordt een zoek opdracht "USA" uitgebreid naar "USA" of "Verenigde Staten" of "Verenigde Staten van Amerika".
+### <a name="escaping-special-characters"></a>Speciale tekens in een escape teken
 
-Expliciete toewijzing wordt aangeduid met een pijl "=>". Als deze is opgegeven, wordt een term volgorde van een zoek query die overeenkomt met de linkerkant van "=>" vervangen door de alternatieven aan de rechter kant. Op basis van de onderstaande regel, zoek query's "Washington", "wassen" of "WA" wordt allemaal herschreven naar "WA". Expliciete toewijzing is alleen van toepassing in de opgegeven richting en schrijft in dit geval de query "WA" niet opnieuw naar "Washington".
+Als u synoniemen wilt definiëren die komma's of andere speciale tekens bevatten, kunt u ze met een back slash, zoals in dit voor beeld:
 
-```
-Washington, Wash., WA => WA
-```
-
-Als u synoniemen wilt definiëren die komma's bevatten, kunt u ze met een back slash, zoals in dit voor beeld:
-
-```
-WA\, USA, WA, Washington
+```json
+{
+"format": "solr",
+"synonyms": "WA\, USA, WA, Washington\n"
+}
 ```
 
 Omdat de back slash zelf een speciaal teken in andere talen is, zoals JSON en C#, moet u dit waarschijnlijk ook met dubbele Escape. De JSON die wordt verzonden naar de REST API voor de bovenstaande synoniemen kaart ziet er bijvoorbeeld als volgt uit:
 
 ```json
-    {
-       "format":"solr",
-       "synonyms": "WA\\, USA, WA, Washington"
-    }
+{
+"format":"solr",
+"synonyms": "WA\\, USA, WA, Washington"
+}
 ```
 
-#### <a name="list-synonym-maps-under-your-service"></a>Lijst met synoniemen in uw service.
+## <a name="upload-and-manage-synonym-maps"></a>Synoniemen overzichten uploaden en beheren
 
-```synonym-map
-    GET https://[servicename].search.windows.net/synonymmaps?api-version=2020-06-30
-    api-key: [admin key]
+Zoals eerder vermeld, kunt u een synoniemen kaart maken of bijwerken zonder de werk belasting van de query en het indexeren te onderbreken. Een synoniem toewijzing is een zelfstandig object (zoals indexen of gegevens bronnen), en zolang er geen veld wordt gebruikt, worden de indexering of query's niet door updates uitgevoerd. Als u echter een synoniemen toewijzing aan een veld definitie hebt toegevoegd en u vervolgens een synoniemen kaart verwijdert, mislukt alle query's die de betreffende velden bevatten, met een 404-fout.
+
+Het maken, bijwerken en verwijderen van een synoniemen kaart is altijd een hele document bewerking, wat betekent dat u geen incrementele onderdelen van de synoniemen kaart kunt bijwerken of verwijderen. Als u zelfs een regel wilt bijwerken, moet u het opnieuw laden.
+
+## <a name="assign-synonyms-to-fields"></a>Synoniemen toewijzen aan velden
+
+Nadat u een synoniemen kaart hebt geüpload, kunt u de synoniemen voor velden van het type `Edm.String` of gebruiken `Collection(Edm.String)` in velden met `"searchable":true` . Zoals aangegeven, kan een veld definitie slechts één synoniemen kaart gebruiken.
+
+```http
+POST /indexes?api-version=2020-06-30
+{
+    "name":"hotels-sample-index",
+    "fields":[
+        {
+            "name":"description",
+            "type":"Edm.String",
+            "searchable":true,
+            "synonymMaps":[
+            "en-synonyms"
+            ]
+        },
+        {
+            "name":"description_fr",
+            "type":"Edm.String",
+            "searchable":true,
+            "analyzer":"fr.microsoft",
+            "synonymMaps":[
+            "fr-synonyms"
+            ]
+        }
+    ]
+}
 ```
 
-#### <a name="get-a-synonym-map-under-your-service"></a>Maak een synoniemen toewijzing onder uw service.
+## <a name="query-on-equivalent-or-mapped-fields"></a>Query op equivalente of toegewezen velden
 
-```synonym-map
-    GET https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
-    api-key: [admin key]
-```
+Het toevoegen van synoniemen biedt geen nieuwe vereisten voor het bouwen van query's. U kunt termen en woordgroepen query's verzenden net zoals u eerder hebt gedaan voordat u synoniemen hebt toegevoegd. Het enige verschil is dat als een query term bestaat in de synoniemen kaart, de query-engine de term of woord groep uitvouwt of herschrijft, afhankelijk van de regel.
 
-#### <a name="delete-a-synonyms-map-under-your-service"></a>Verwijder een synoniemen toewijzing onder uw service.
-
-```synonym-map
-    DELETE https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2020-06-30
-    api-key: [admin key]
-```
-
-### <a name="configure-a-searchable-field-to-use-the-synonym-map-in-the-index-definition"></a>Configureer een Doorzoek bare veld om de synoniemen toewijzing in de index definitie te gebruiken.
-
-Een nieuwe veld eigenschap **synonymMaps** kan worden gebruikt om een synoniemen toewijzing op te geven die moet worden gebruikt voor een Doorzoek bare veld. Synoniemen zijn service niveau resources en kunnen worden verwezen door elk veld van een index onder de service.
-
-```synonym-map
-    POST https://[servicename].search.windows.net/indexes?api-version=2020-06-30
-    api-key: [admin key]
-
-    {
-       "name":"myindex",
-       "fields":[
-          {
-             "name":"id",
-             "type":"Edm.String",
-             "key":true
-          },
-          {
-             "name":"name",
-             "type":"Edm.String",
-             "searchable":true,
-             "analyzer":"en.lucene",
-             "synonymMaps":[
-                "mysynonymmap"
-             ]
-          },
-          {
-             "name":"name_jp",
-             "type":"Edm.String",
-             "searchable":true,
-             "analyzer":"ja.microsoft",
-             "synonymMaps":[
-                "japanesesynonymmap"
-             ]
-          }
-       ]
-    }
-```
-
-**synonymMaps** kan worden opgegeven voor Doorzoek bare velden van het type EDM. String of Collection (EDM. String).
-
-> [!NOTE]
-> U kunt slechts één synoniemen kaart per veld hebben. Als u meerdere synoniemen kaarten wilt gebruiken, laat het ons dan weten op [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
-
-## <a name="impact-of-synonyms-on-other-search-features"></a>Gevolgen van synoniemen voor andere zoek functies
+## <a name="how-synonyms-interact-with-other-features"></a>Hoe synoniemen werken met andere functies
 
 De synoniemen functie schrijft de oorspronkelijke query opnieuw met synoniemen met de operator OR. Daarom behandelen treffers markeren en Score profielen de oorspronkelijke term en synoniemen als gelijkwaardig.
 
-De functie synoniem is van toepassing op zoek query's en is niet van toepassing op filters of facetten. Op dezelfde manier zijn suggesties alleen gebaseerd op de oorspronkelijke periode. overeenkomsten met synoniemen worden niet weer gegeven in het antwoord.
+Synoniemen zijn alleen van toepassing op zoek query's en worden niet ondersteund voor filters, facetten, automatisch aanvullen of suggesties. Automatisch aanvullen en suggesties zijn alleen gebaseerd op de oorspronkelijke periode. overeenkomsten met synoniemen worden niet weer gegeven in het antwoord.
 
 Synoniemen uitbreidingen zijn niet van toepassing op zoek termen met Joker tekens. voor waarden voor voor voegsels, fuzzy en regex worden niet uitgevouwen.
 
@@ -188,4 +158,4 @@ Als u een bestaande index in een ontwikkelings omgeving (niet-productie) hebt, k
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Een synoniemen kaart maken](/rest/api/searchservice/create-synonym-map)
+> [Een synoniemen kaart maken (REST API)](/rest/api/searchservice/create-synonym-map)

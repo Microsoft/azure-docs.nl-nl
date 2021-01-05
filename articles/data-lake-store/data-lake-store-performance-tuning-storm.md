@@ -1,17 +1,17 @@
 ---
 title: Prestaties afstemmen-Storm met Azure Data Lake Storage Gen1
 description: Begrijp de factoren die u moet overwegen wanneer u de prestaties van een Azure Storm-topologie afstemt, inclusief veelvoorkomende problemen oplossen.
-author: stewu
+author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
-ms.author: stewu
-ms.openlocfilehash: 68f30079d85e2064b92718c65b38dbb5069d810b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.author: twooley
+ms.openlocfilehash: 95619c75d332ec1bf68af97fc3dddbc67b6706ed
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92101644"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725034"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Richt lijnen voor het afstemmen van de prestaties voor Storm op HDInsight en Azure Data Lake Storage Gen1
 
@@ -126,7 +126,7 @@ Als u de limieten bereikt van de band breedte van Data Lake Storage Gen1, worden
 
 Als u wilt controleren of u een beperking krijgt, schakelt u de logboek registratie voor fout opsporing in aan de client zijde:
 
-1. In **Ambari**  >  **Storm**  >  **config**  >  **Advanced Storm-worker-log4j**, Wijzig ** &lt; root level = "info &gt; "** naar ** &lt; root level = "Debug &gt; "**. Start alle knoop punten/service opnieuw op om de configuratie van kracht te laten worden.
+1. In **Ambari**  >  **Storm**  >  **config**  >  **Advanced Storm-worker-log4j**, Wijzig **&lt; root level = "info &gt; "** naar **&lt; root level = "Debug &gt; "**. Start alle knoop punten/service opnieuw op om de configuratie van kracht te laten worden.
 2. Bewaak de Storm-topologie logboeken op worker-knoop punten (onder/var/log/Storm/worker-Artifacts/ &lt; &gt; / &lt; -topologie poort &gt; /Worker.log) voor data Lake Storage gen1 beperkings uitzonderingen.
 
 ## <a name="next-steps"></a>Volgende stappen

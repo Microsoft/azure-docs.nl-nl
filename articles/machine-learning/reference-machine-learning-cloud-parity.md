@@ -9,14 +9,14 @@ ms.topic: reference
 ms.reviewer: larryfr
 ms.author: andzha
 author: Anurzeuii
-ms.date: 08/24/2020
+ms.date: 12/21/2020
 ms.custom: references_regions
-ms.openlocfilehash: 0300dab1fa7d0ef0d20c4236cc452135b3ade20e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 88240f9b46997d11f1e7c2d93fa880b004615a11
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305743"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725017"
 ---
 # <a name="azure-machine-learning-sovereign-cloud-parity"></a>Azure Machine Learning soevereine Cloud pariteit
 
@@ -56,7 +56,7 @@ We streven ernaar maximale pariteit te bieden tussen onze open bare Cloud en soe
 | Werkruimte notitieblokken en delen van bestanden                                        | Algemene beschikbaarheid                   | JA                | JA         |
 | Ondersteuning voor R en python                                                       | Algemene beschikbaarheid                   | JA                | JA         |
 | Ondersteuning voor virtuele netwerken                                                    | Openbare preview       | NO                 | NO          |
-| **Rekenproces** |   |  | | 
+| **Reken instantie** |   |  | | 
 | Beheerde Compute-instanties voor geïntegreerde notebooks                         | Algemene beschikbaarheid                   | JA                | JA         |
 | Jupyter, Jjupyterlab-integratie                                            | Algemene beschikbaarheid                   | JA                | JA         |
 | Ondersteuning voor Virtual Network (VNet)                                             | Openbare preview       | JA                | JA         |
@@ -92,7 +92,7 @@ We streven ernaar maximale pariteit te bieden tussen onze open bare Cloud en soe
 | ML gesteunde labels (afbeeldings classificatie en object detectie)           | Openbare preview       | JA                | JA         |
 | **Verantwoordelijke ML** |   | | |
 | Uitleg bij de gebruikers interface                                                       | Openbare preview       | NO                 | NO          |
-| Differentiële privacybeleid WhiteNoise Toolkit                                    | OSS                  | NO                 | NO          |
+| Differentiële privacybeleid SmartNoise Toolkit                                    | OSS                  | NO                 | NO          |
 | aangepaste labels in Azure Machine Learning voor het implementeren van gegevens bladen              | Algemene beschikbaarheid                   | NO                 | NO          |
 | Verdeling AzureML-integratie                                               | Openbare preview       | NO                 | NO          |
 | Coninterpreter-SDK                                                      | Algemene beschikbaarheid                   | JA                | JA         |
@@ -169,7 +169,7 @@ We streven ernaar maximale pariteit te bieden tussen onze open bare Cloud en soe
 | Werkruimte notitieblokken en delen van bestanden                                        | Algemene beschikbaarheid               | JA       | N.v.t.        |
 | Ondersteuning voor R en python                                                       | Algemene beschikbaarheid               | JA       | N.v.t.        |
 | Ondersteuning voor virtuele netwerken                                                    | Openbare preview   | NO        | N.v.t.        |
-| **Rekenproces** |    | | |
+| **Reken instantie** |    | | |
 | Beheerde Compute-instanties voor geïntegreerde notebooks                         | Algemene beschikbaarheid               | NO        | N.v.t.        |
 | Jupyter, Jjupyterlab-integratie                                            | Algemene beschikbaarheid               | JA       | N.v.t.        |
 | Ondersteuning voor Virtual Network (VNet)                                             | Openbare preview   | JA       | N.v.t.        |
@@ -205,7 +205,7 @@ We streven ernaar maximale pariteit te bieden tussen onze open bare Cloud en soe
 | ML gesteunde labels (afbeeldings classificatie en object detectie)           | Openbare preview   | JA       | N.v.t.        |
 | **Verantwoordelijke ML** |    | | |
 | Uitleg bij de gebruikers interface                                                       | Openbare preview   | NO        | N.v.t.        |
-| Differentiële privacybeleid WhiteNoise Toolkit                                    | OSS              | NO        | N.v.t.        |
+| Differentiële privacybeleid SmartNoise Toolkit                                    | OSS              | NO        | N.v.t.        |
 | aangepaste labels in Azure Machine Learning voor het implementeren van gegevens bladen              | Algemene beschikbaarheid               | NO        | N.v.t.        |
 | Verdeling AzureML-integratie                                               | Openbare preview   | NO        | N.v.t.        |
 | Coninterpreter-SDK                                                      | Algemene beschikbaarheid               | JA       | N.v.t.        |

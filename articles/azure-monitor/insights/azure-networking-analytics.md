@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: c304354f378708c43c25ef8b92b7b80b37ac03af
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 19370eee9d9fa524de9beeaa85a15521580bd8e6
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563106"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707687"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Azure-netwerk bewakings oplossingen in Azure Monitor
 
@@ -104,6 +104,21 @@ Op het tabblad gedetailleerde meet gegevens weer geven wordt de vooraf ingevulde
 
 [![Scherm opname van Application Gateway werkmap](media/azure-networking-analytics/azure-appgw-workbook.png)](media/azure-networking-analytics/application-gateway-workbook.png#lightbox)
 
+### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Nieuwe mogelijkheden met Azure Monitor Network Insights-werkmap
+
+> [!NOTE]
+> Er zijn geen extra kosten verbonden aan Azure Monitor Insights-werkmap. Log Analytics-werk ruimte worden nog steeds gefactureerd volgens het gebruik.
+
+Met de netwerk Insights-werkmap kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics, zoals:
+
+* Gecentraliseerde console voor bewaking en probleem oplossing met zowel [metrische](../insights/network-insights-overview.md#resource-health-and-metrics) als logboek gegevens.
+
+* Flexibel canvas ter ondersteuning van het maken van aangepaste, uitgebreide [Visualisaties](../platform/workbooks-overview.md#visualizations).
+
+* De mogelijkheid om [werkmap sjablonen](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) te gebruiken en te delen met bredere community.
+
+Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../platform/workbooks-overview.md)
+
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Migreren van Azure gateway Analytics-oplossing naar Azure Monitor-werkmappen
 
 > [!NOTE]
@@ -119,21 +134,6 @@ Op het tabblad gedetailleerde meet gegevens weer geven wordt de vooraf ingevulde
 3. Wanneer u al uw metrische gegevens en logboek inzichten kunt zien, kunt u de oplossing voor Azure gateway Analytics verwijderen uit uw werk ruimte, maar u hebt de oplossingen ook van de pagina Solution resource.
 
 [![Scherm afbeelding van de optie voor het verwijderen van Azure-toepassing gateway Analytics-oplossing.](media/azure-networking-analytics/azure-appgw-analytics-delete.png)](media/azure-networking-analytics/application-gateway-analytics-delete.png#lightbox)
-
-### <a name="new-capabilities-with-azure-monitor-network-insights-workbook"></a>Nieuwe mogelijkheden met Azure Monitor Network Insights-werkmap
-
-> [!NOTE]
-> Er zijn geen extra kosten verbonden aan Azure Monitor Insights-werkmap. Log Analytics-werk ruimte worden nog steeds gefactureerd volgens het gebruik.
-
-Met de netwerk Insights-werkmap kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics, zoals:
-
-* Gecentraliseerde console voor bewaking en probleem oplossing met zowel [metrische](../insights/network-insights-overview.md#resource-health-and-metrics) als logboek gegevens.
-
-* Flexibel canvas ter ondersteuning van het maken van aangepaste, uitgebreide [Visualisaties](../platform/workbooks-overview.md#visualizations).
-
-* De mogelijkheid om [werkmap sjablonen](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) te gebruiken en te delen met bredere community.
-
-Raadpleeg voor meer informatie over de mogelijkheden van de nieuwe werkmap oplossing [werkmappen-overzicht](../platform/workbooks-overview.md)
 
 ## <a name="azure-network-security-group-analytics-solution-in-azure-monitor"></a>Analyse oplossing voor Azure-netwerk beveiligings groep in Azure Monitor
 

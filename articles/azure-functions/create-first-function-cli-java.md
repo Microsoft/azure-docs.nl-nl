@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: db24fa4721e2e502c5098b415c4cf06da80f697d
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 504d3a834760605149c93c0beea84bbe1b59e263
+ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175675"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97707551"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -146,7 +146,7 @@ Het archetype genereert ook een moduletest voor uw functie. Wanneer u de functie
     </pre>
     
     > [!NOTE]  
-    > Als HttpExample niet verschijnt zoals hieronder weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u **Ctrl**+**C** om de host te stoppen, gaat u naar de hoofdmap van het project en voert u de vorige opdracht opnieuw uit.
+    > Als HttpExample niet verschijnt zoals hierboven weergegeven, hebt u waarschijnlijk de host gestart van buiten de hoofdmap van het project. In dat geval gebruikt u **Ctrl**+**C** om de host te stoppen, gaat u naar de hoofdmap van het project en voert u de vorige opdracht opnieuw uit.
 
 1. Kopieer de URL van uw `HttpExample`-functie van deze uitvoer naar een browser en voeg de query tekenreeks toe `?name=<YOUR_NAME>`, waardoor de volledige URL verschijnt, zoals `http://localhost:7071/api/HttpExample?name=Functions`. In de browser moet een bericht als het volgende weergeven `Hello Functions`:
 

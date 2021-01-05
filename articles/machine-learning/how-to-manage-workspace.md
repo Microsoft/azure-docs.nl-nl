@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 4425fdf488665ad555c73c59682041cb23a9ca66
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3fca8e74112b90b3cac70adaa955bbf242999705
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447330"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739583"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
 
@@ -31,6 +31,8 @@ Als uw behoeften veranderen of vereisten voor automatisering verhogen, kunt u oo
 ## <a name="limitations"></a>Beperkingen
 
 [!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
+
+Als u een werk ruimte maakt, wordt er standaard ook een Azure Container Registry (ACR) gemaakt.  Omdat ACR momenteel geen Unicode-tekens in namen van resource groepen ondersteunt, gebruikt u een resource groep die deze tekens niet bevat.
 
 ## <a name="create-a-workspace"></a>Een werkruimte maken
 
@@ -154,6 +156,8 @@ Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verif
  1. Selecteer **Ga naar resource** om de nieuwe werkruimte te bekijken.
  
 ---
+
+
 
 ### <a name="networking"></a>Netwerken  
 
@@ -368,6 +372,16 @@ Selecteer in de [Azure Portal](https://portal.azure.com/) **verwijderen**  boven
 [!INCLUDE [aml-delete-resource-group](../../includes/aml-delete-resource-group.md)]
 
 ## <a name="troubleshooting"></a>Problemen oplossen
+
+* **Ondersteunde browsers in azure machine learning Studio**: we raden u aan om de meest recente browser te gebruiken die compatibel is met uw besturings systeem. De volgende browsers worden ondersteund:
+  * Micro soft Edge (de nieuwe micro soft Edge, nieuwste versie. Geen micro soft Edge verouderd)
+  * Safari (meest recente versie, alleen Mac)
+  * Chrome (meest recente versie)
+  * Firefox (meest recente versie)
+
+* **Azure Portal**: 
+  * Als u rechtstreeks naar uw werk ruimte gaat vanuit een koppeling voor delen vanuit de SDK of de Azure Portal, kunt u de standaard **overzichts** pagina met abonnements gegevens in de uitbrei ding niet weer geven. In dit scenario kunt u ook niet overschakelen naar een andere werk ruimte. Als u een andere werk ruimte wilt weer geven, gaat u rechtstreeks naar [Azure machine learning Studio](https://ml.azure.com) en zoekt u naar de naam van de werk ruimte.
+  * Alle assets (gegevens sets, experimenten, reken processen, enzovoort) zijn alleen beschikbaar in [Azure machine learning Studio](https://ml.azure.com). Deze zijn *niet* beschikbaar via de Azure Portal.
 
 ### <a name="resource-provider-errors"></a>Fouten van de resource provider
 

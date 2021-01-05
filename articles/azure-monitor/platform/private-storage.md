@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: f221237bee441ec78d726dabf476d1085a27071d
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 0a2439f0ed18cf93691a1d0389e049b1b7993d93
+ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095301"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97732054"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslag accounts gebruiken in Azure Monitor Log Analytics
 
@@ -32,11 +32,11 @@ Ondersteunde gegevens typen:
 * IIS-logboeken
 
 ## <a name="using-private-links"></a>Persoonlijke koppelingen gebruiken
-In sommige gevallen zijn door klanten beheerde opslag accounts vereist, wanneer persoonlijke koppelingen worden gebruikt om verbinding te maken met Azure Monitor-resources. Een dergelijk geval is de opname van aangepaste Logboeken of IIS-logboeken. Deze gegevens typen worden eerst als blobs geüpload naar een tussenliggend Azure Storage account en worden alleen opgenomen in een werk ruimte. Zo kunnen sommige Azure Monitor oplossingen gebruikmaken van opslag accounts voor het opslaan van grote bestanden, zoals Watson-dump bestanden, die worden gebruikt door de Azure Security Center-oplossing. 
+In sommige gevallen zijn door klanten beheerde opslag accounts vereist, wanneer persoonlijke koppelingen worden gebruikt om verbinding te maken met Azure Monitor-resources. Een dergelijk geval is de opname van aangepaste Logboeken of IIS-logboeken. Deze gegevens typen worden eerst als blobs geüpload naar een tussenliggend Azure Storage account en worden alleen opgenomen in een werk ruimte. Op dezelfde manier kunnen sommige Azure Monitor oplossingen gebruikmaken van opslag accounts voor het opslaan van grote bestanden, zoals Azure Security Center (ASC), die mogelijk bestanden moeten uploaden. 
 
 ##### <a name="private-link-scenarios-that-require-a-customer-managed-storage"></a>Scenario's voor persoonlijke koppelingen waarvoor een door de klant beheerde opslag is vereist
 * Opname van aangepaste logboeken en IIS-logboeken
-* Een ASC-oplossing toestaan om Watson-dump bestanden te verzamelen
+* De oplossing ASC toestaan om bestanden te uploaden
 
 ### <a name="how-to-use-a-customer-managed-storage-account-over-a-private-link"></a>Een door de klant beheerd opslag account gebruiken via een persoonlijke koppeling
 ##### <a name="workspace-requirements"></a>Werkruimte vereisten
@@ -45,13 +45,14 @@ Wanneer u verbinding maakt met Azure Monitor via een persoonlijke koppeling, kun
 Het opslag account kan alleen verbinding maken met uw persoonlijke koppeling als:
 * Bevinden zich op uw VNet of een peered netwerk en is verbonden met uw VNet via een persoonlijke koppeling. Hiermee kunnen agents op uw VNet logboeken naar het opslag account verzenden.
 * Bevinden zich in dezelfde regio als de werk ruimte waaraan deze is gekoppeld.
-* Azure Monitor toegang tot het opslag account toestaan. Als u ervoor hebt gekozen om alleen netwerken te selecteren voor toegang tot uw opslag account, moet u ook de volgende uitzonde ring toestaan: ' vertrouwde micro soft-Services toegang geven tot dit opslag account '. Hiermee kan Log Analytics de logboeken lezen die zijn opgenomen in dit opslag account.
+* Azure Monitor toegang tot het opslag account toestaan. Als u ervoor hebt gekozen om alleen netwerken te selecteren voor toegang tot uw opslag account, moet u de uitzonde ring: ' vertrouwde micro soft-Services toestaan voor toegang tot dit opslag account ' selecteren.
+![Afbeelding van de MS-Service vertrouwens relatie van het opslag account](./media/private-storage/storage-trust.png)
 * Als uw werk ruimte ook verkeer afhandelt vanuit andere netwerken, moet u het opslag account configureren om binnenkomend verkeer van de relevante netwerken/internet toe te staan.
 
 ##### <a name="link-your-storage-account-to-a-log-analytics-workspace"></a>Uw opslag account koppelen aan een Log Analytics-werk ruimte
 U kunt uw opslag account aan de werk ruimte koppelen via de [Azure cli](/cli/azure/monitor/log-analytics/workspace/linked-storage) of [rest API](/rest/api/loganalytics/linkedstorageaccounts). Toepasselijke data source type-waarden:
 * CustomLogs: voor het gebruik van de opslag voor aangepaste logboeken en IIS-logboeken tijdens opname.
-* AzureWatson: gebruik de opslag voor Watson-dump bestanden die zijn geüpload door de ASC (Azure Security Center)-oplossing. Zie voor meer informatie over het beheren van de Bewaar periode van een gekoppeld opslag account en het controleren van de activiteit van uw opslag account [beheer van gekoppelde opslag accounts](#managing-linked-storage-accounts). 
+* AzureWatson: gebruik de opslag voor bestanden die zijn geüpload door de ASC (Azure Security Center)-oplossing. Zie voor meer informatie over het beheren van de Bewaar periode van een gekoppeld opslag account en het controleren van de activiteit van uw opslag account [beheer van gekoppelde opslag accounts](#managing-linked-storage-accounts). 
 
 ## <a name="encrypting-data-with-cmk"></a>Gegevens versleutelen met CMK
 Azure Storage versleutelt alle gegevens in rust in een opslag account. Standaard worden gegevens versleuteld met door micro soft beheerde sleutels (MMK). In plaats daarvan kunt u met Azure Storage echter een door de klant beheerde sleutel (CMK) van de Azure-sleutel kluis gebruiken om uw opslag gegevens te versleutelen. U kunt uw eigen sleutels importeren in Azure Key Vault, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren.

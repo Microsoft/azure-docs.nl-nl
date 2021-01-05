@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2020
 ms.author: rdhillon
-ms.openlocfilehash: 14ecb30af11bf750c90e45c3fb6b443d861a1445
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13535a82f8aca741a1e25755e5a2d971ce45514e
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400752"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739294"
 ---
 # <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Service-eindpuntbeleid voor virtueel netwerk voor Azure Storage
 
@@ -122,7 +122,7 @@ Virtuele netwerken en Azure Storage accounts kunnen zich in dezelfde of verschil
 - Virtuele netwerken moeten zich in dezelfde regio bevinden als het beleid voor service-eindpunten.
 - U kunt alleen beleid voor service-eindpunten toepassen op een subnet als de service-eindpunten zijn geconfigureerd voor de Azure-services die in het beleid worden vermeld.
 - Het is niet mogelijk om beleid voor service-eindpunten te gebruiken voor verkeer van uw on-premises netwerk naar Azure-services.
-- Azure Managed Services biedt momenteel geen ondersteuning voor eindpunt beleidsregels. Dit omvat beheerde services die zijn geïmplementeerd in de gedeelde subnetten (bijvoorbeeld *Azure HDInsight, Azure batch, Azure voegt, Azure-toepassing gateway, azure VPN gateway, Azure firewall*) of in de toegewezen subnetten (bijvoorbeeld *Azure app service Environment, Azure Redis Cache, Azure API Management, Azure SQL mi, klassieke beheerde services*).
+- Azure Managed Services biedt momenteel geen ondersteuning voor eindpunt beleidsregels. Dit omvat beheerde services die zijn geïmplementeerd in de gedeelde subnetten (bijvoorbeeld *Azure batch, Azure voegt, Azure-toepassing gateway, azure VPN gateway, Azure firewall*) of in de toegewezen subnetten (bijvoorbeeld *Azure app service Environment, Azure Redis Cache, Azure API Management, Azure SQL mi, klassieke beheerde services*).
 
  > [!WARNING]
  > Azure-services die in uw virtuele netwerk zijn geïmplementeerd, zoals Azure HDInsight, hebben toegang tot andere Azure-services, zoals Azure Storage, om aan de vereisten voor de infrastructuur te kunnen voldoen. Als u het beleid voor eindpunten tot specifieke resources beperkt, kan de toegang tot deze infrastructuurresources worden onderbroken voor de Azure-services die in uw virtuele netwerk zijn geïmplementeerd.

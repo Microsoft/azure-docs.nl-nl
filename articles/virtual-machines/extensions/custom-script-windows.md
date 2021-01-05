@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/31/2020
 ms.author: robreed
-ms.openlocfilehash: 8d11ff6eaab8ed6a13c3c2aa1b712cc57e7825ea
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: aa95d6792f2f5754a237c7bf5e90a11e2e011ede
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960968"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861785"
 ---
 # <a name="custom-script-extension-for-windows"></a>Aangepaste scriptextensie voor Windows
 
@@ -61,7 +61,7 @@ Als uw script zich op een lokale server bevindt, moet u mogelijk nog steeds extr
 * De uitvoering van het script mag 90 minuten duren. Als het langer duurt, mislukt de inrichting van de extensie.
 * Neem opnieuw opstarten niet in het script op. Deze actie veroorzaakt problemen met andere extensies die worden geïnstalleerd. Na het opnieuw opstarten wordt de extensie niet voortgezet.
 * Als u een script hebt dat ertoe leidt dat de computer opnieuw wordt opgestart en vervolgens toepassingen installeert en scripts uitvoert, kunt u het opnieuw opstarten plannen met een geplande Windows-taak of gebruikmaken van hulpprogram ma's zoals DSC, chef of Puppet-extensies.
-* Het is niet raadzaam om een script uit te voeren dat de VM-agent stopt te stoppen of bij te werken. Dit kan de uitbrei ding in een overgangs status, tot een time-out leiden.
+* Het is niet raadzaam om een script uit te voeren dat de VM-agent stopt te stoppen of bij te werken. Dit kan de uitbrei ding in een overgangs status verlaten, waardoor er een time-out optreedt.
 * De extensie voert een script slechts eenmaal uit. Wilt u dat een script bij iedere start wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Als u wilt plannen wanneer een script wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Wanneer het script wordt uitgevoerd, ziet u alleen de extensiestatus 'overgang maken' van de Azure-portal of CLI. Als u meer statusupdates van een actief script wilt, dan moet u uw eigen oplossing maken.
@@ -123,9 +123,9 @@ Deze items moeten worden behandeld als gevoelige gegevens en worden opgegeven in
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Name | Waarde/voor beeld | Gegevenstype |
+| Naam | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Compute | tekenreeks |
 | type | CustomScriptExtension | tekenreeks |
 | typeHandlerVersion | 1,10 | int |
@@ -283,7 +283,7 @@ Als u [invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke
 ```error
 The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
 ```
-## <a name="virtual-machine-scale-sets"></a>Virtual Machine Scale Sets
+## <a name="virtual-machine-scale-sets"></a>Virtuele-machineschaalsets
 
 Zie [add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension?view=azps-3.3.0) voor meer informatie over het implementeren van de aangepaste script extensie voor een schaalset.
 

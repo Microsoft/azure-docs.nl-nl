@@ -3,15 +3,15 @@ title: Container bestanden voor het FSLogix-Profiel van Windows virtueel bureau 
 description: In dit artikel worden FSLogix-profiel containers in virtueel bureau blad van Windows en Azure files beschreven.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/07/2019
+ms.date: 01/04/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e3bd667bc7fce8f9fb10b852cae7a6c4ad198d75
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: ef7f19d835f4fef1a911da01015321b2dda67682
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797193"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861883"
 ---
 # <a name="fslogix-profile-containers-and-azure-files"></a>FSLogix-profielcontainers en Azure Files
 
@@ -70,7 +70,7 @@ S2D-clusters vereisen een besturings systeem dat met een patch in een beveiligde
 Op 19 november 2018 heeft [micro soft FSLogix aangeschaft](https://blogs.microsoft.com/blog/2018/11/19/microsoft-acquires-fslogix-to-enhance-the-office-365-virtualization-experience/). FSLogix is een oplossing voor veel uitdagingen met een profiel container. De sleutel is onder andere:
 
 - **Prestaties:** De [FSLogix-profiel containers](/fslogix/configure-profile-container-tutorial/) zijn hoge prestaties en kunnen prestatie problemen oplossen die de Exchange-modus met een historische cache hebben geblokkeerd.
-- **OneDrive:** Zonder FSLogix-profiel containers wordt OneDrive voor bedrijven niet ondersteund in niet-permanente RDSH-of VDI-omgevingen. In de [Best practices voor OneDrive voor bedrijven en FSLogix](/fslogix/overview/) wordt beschreven hoe ze communiceren. Zie [de Synchronisatieclient gebruiken op virtuele Bureau bladen](/deployoffice/rds-onedrive-business-vdi/)voor meer informatie.
+- **OneDrive:** Zonder FSLogix-profiel containers wordt OneDrive voor bedrijven niet ondersteund in niet-permanente RDSH-of VDI-omgevingen. Op de pagina voor het [ondersteunen van OneDrive](/onedrive/sync-vdi-support) kan u zien hoe ze communiceren. Zie [de Synchronisatieclient gebruiken op virtuele Bureau bladen](/deployoffice/rds-onedrive-business-vdi/)voor meer informatie.
 - **Aanvullende mappen:** FSLogix biedt de mogelijkheid om gebruikers profielen uit te breiden voor het toevoegen van extra mappen.
 
 Sinds de aanschaf is micro soft begonnen met het vervangen van bestaande gebruikers profiel oplossingen, zoals UPD, met FSLogix-profiel containers.

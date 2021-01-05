@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: on-premises, docker, container
-ms.openlocfilehash: 778fe388ae3db68d836384299a8a1c7c06e31f41
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2bef6aa4e624386750a4c989d7e56cc1b22aaa5e
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001797"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862005"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Docker-containers voor LUIS installeren en uitvoeren
 
@@ -77,7 +77,7 @@ Gebruik de [`docker pull`](https://docs.docker.com/engine/reference/commandline/
 docker pull mcr.microsoft.com/azure-cognitive-services/language/luis:latest
 ```
 
-Zie Luis op docker hub voor een volledige beschrijving van de beschik bare Tags, zoals `latest` in de voor gaande opdracht wordt gebruikt. [LUIS](https://go.microsoft.com/fwlink/?linkid=2043204)
+Zie Luis op docker hub voor een volledige beschrijving van de beschik bare Tags, zoals `latest` in de voor gaande opdracht wordt gebruikt. [](https://go.microsoft.com/fwlink/?linkid=2043204)
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -113,7 +113,7 @@ De map invoer koppeling kan de modellen **productie**, **fase ring** en **versie
 |Pakket type|Query eind punt-API|Beschik baarheid van query's|Bestands naam indeling pakket|
 |--|--|--|--|
 |Versie|GET, POST|Alleen container|`{APP_ID}_v{APP_VERSION}.gz`|
-|Staging|GET, POST|Azure en container|`{APP_ID}_STAGING.gz`|
+|Faseren|GET, POST|Azure en container|`{APP_ID}_STAGING.gz`|
 |Productie|GET, POST|Azure en container|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
@@ -257,7 +257,7 @@ Gebruik de host, `http://localhost:5000`, voor container-API's.
 
 De query parameters configureren hoe en wat wordt geretourneerd in de query-antwoord:
 
-|Query parameter|Type|Doel|
+|Queryparameter|Type|Doel|
 |--|--|--|
 |`query`|tekenreeks|De utterance van de gebruiker.|
 |`verbose`|booleaans|Een Booleaanse waarde die aangeeft of alle meta gegevens voor de voorspelde modellen moeten worden geretourneerd. De standaardinstelling is onwaar.|
@@ -273,7 +273,7 @@ De query parameters configureren hoe en wat wordt geretourneerd in de query-antw
 
 De query parameters configureren hoe en wat wordt geretourneerd in de query-antwoord:
 
-|Query parameter|Type|Doel|
+|Queryparameter|Type|Doel|
 |--|--|--|
 |`q`|tekenreeks|De utterance van de gebruiker.|
 |`timezoneOffset`|getal|Met de time zone offset kunt u [de tijd zone wijzigen](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity) die wordt gebruikt door de vooraf samengestelde entiteit datetimeV2.|
@@ -373,9 +373,6 @@ De LUIS-container verzendt facturerings gegevens naar Azure met behulp van een _
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Zie [containers configureren](luis-container-configuration.md)voor meer informatie over deze opties.
-
-<!--blogs/samples/video courses -->
-[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Samenvatting
 

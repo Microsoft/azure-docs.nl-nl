@@ -172,12 +172,12 @@
           href: how-to-migrate.md
         - name: Machines op migratie voorbereiden
           href: prepare-for-migration.md
+        - name: Windows 2003-servers voorbereiden voor migratie
+          href: prepare-windows-server-2003-migration.md
         - name: Virtuele VMware-machines migreren
           items:
             - name: VMware-VM's migreren naar versleutelde Azure-VM's
               href: how-to-migrate-vmware-vms-with-cmk-disks.md
-            - name: Windows 2003-servers voorbereiden voor migratie
-              href: prepare-windows-server-2003-migration.md
         - name: Migratie schalen
           items:
             - name: Migratie van een groot aantal VM's automatiseren

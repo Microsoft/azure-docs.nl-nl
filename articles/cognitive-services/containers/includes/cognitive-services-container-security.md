@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/11/2020
+ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: bb9b0da609169288521d21ee6d5e412a786c7549
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 4b106ebc5606c4e5a290e12728d4e2011e80f6a2
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94573897"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861807"
 ---
 ## <a name="azure-cognitive-services-container-security"></a>Azure Cognitive Services-container beveiliging
 
@@ -44,7 +44,7 @@ De host moet lijst **poort 443** en de volgende domeinen toestaan:
 
 #### <a name="disable-deep-packet-inspection"></a>Uitgebreide pakket inspectie uitschakelen
 
-> [Diepe pakket inspectie](https://en.wikipedia.org/wiki/Deep_packet_inspection) (dpi) is een type gegevens verwerking dat gedetailleerder inspecteert op de gegevens die via een computernet werk worden verzonden. dit gebeurt meestal door het blok keren, opnieuw routeren of registreren hiervan.
+[Diepe pakket inspectie](https://en.wikipedia.org/wiki/Deep_packet_inspection) (dpi) is een type gegevens verwerking dat gedetailleerder inspecteert op de gegevens die via een computernet werk worden verzonden. dit gebeurt meestal door het blok keren, opnieuw routeren of registreren hiervan.
 
 Schakel DPI uit op de beveiligde kanalen die de Cognitive Services containers maken voor micro soft-servers. Als u dit niet doet, kan de container niet goed functioneren.
 

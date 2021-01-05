@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 99ed7d3ad81202ab6fe67bf52888bbdbf0b28d2a
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: b7bd04790c7ac124afe3e9b503803f27118ae959
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387085"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861869"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -52,7 +52,7 @@ Alle typen technische profielen delen hetzelfde concept. U verzendt invoer claim
 ![Diagram dat de technische profiel stroom illustreert](./media/technical-profiles/technical-profile-flow.png)
 
 1. **Eenmalige aanmelding (SSO) sessie beheer** : Hiermee wordt de sessie status van het technische profiel hersteld met behulp van [SSO-sessie beheer](custom-policy-reference-sso.md).
-1. **Invoer claims transformeren** : voordat het technische profiel wordt gestart, voert Azure AD B2C invoer [claims Transformation] uit. (claimstransformations.md).
+1. **Invoer claims transformeren** : voordat het technische profiel wordt gestart, voert Azure AD B2C invoer [claims trans formatie](claimstransformations.md)uit.
 1. **Invoer claims** : claims worden opgehaald uit de claims-Bag die worden gebruikt voor het technische profiel.
 1. **Uitvoering van technisch profiel** -het technische profiel waarmee de claims worden uitgewisseld met de geconfigureerde partij. Bijvoorbeeld:
     - Leid de gebruiker om naar de ID-provider om de aanmelding te volt ooien. Nadat het aanmelden is geslaagd, keert de gebruiker terug en wordt de uitvoering van het technische profiel voortgezet.
@@ -86,7 +86,7 @@ Het element **TechnicalProfile** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 |---------|---------|---------|
-| Id | Yes | Een unieke id van het technische profiel. Naar het technische profiel kan worden verwezen via deze id vanuit andere elementen in het beleids bestand. Bijvoorbeeld **OrchestrationSteps** en **ValidationTechnicalProfile**. |
+| Id | Ja | Een unieke id van het technische profiel. Naar het technische profiel kan worden verwezen via deze id vanuit andere elementen in het beleids bestand. Bijvoorbeeld **OrchestrationSteps** en **ValidationTechnicalProfile**. |
 
 De **TechnicalProfile** bevat de volgende elementen:
 
@@ -120,8 +120,8 @@ Het **protocol** geeft het protocol aan dat moet worden gebruikt voor communicat
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Naam | Yes | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OAuth1` , `OAuth2` , `SAML2` , `OpenIdConnect` , `Proprietary` of `None` . |
-| Handler | No | Wanneer de protocol naam is ingesteld op `Proprietary` , geeft u de volledig gekwalificeerde naam op van de assembly die wordt gebruikt door Azure AD B2C om de protocolhandler te bepalen. |
+| Naam | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OAuth1` , `OAuth2` , `SAML2` , `OpenIdConnect` , `Proprietary` of `None` . |
+| Handler | Nee | Wanneer de protocol naam is ingesteld op `Proprietary` , geeft u de volledig gekwalificeerde naam op van de assembly die wordt gebruikt door Azure AD B2C om de protocolhandler te bepalen. |
 
 ## <a name="metadata"></a>Metagegevens
 
@@ -137,7 +137,7 @@ Het element **item** van het **META** gegevenselement bevat het volgende kenmerk
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Sleutel | Yes | De meta gegevens sleutel. Zie elk [type technische profiel](#type-of-technical-profiles)voor de lijst met meta gegevens items. |
+| Sleutel | Ja | De meta gegevens sleutel. Zie elk [type technische profiel](#type-of-technical-profiles)voor de lijst met meta gegevens items. |
 
 In het volgende voor beeld ziet u het gebruik van meta gegevens die relevant zijn voor het [technische profiel van OAuth2](oauth2-technical-profile.md#metadata).
 
@@ -191,8 +191,8 @@ Het **sleutel** element bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | No | Een unieke id van een bepaalde sleutel paar waarnaar wordt verwezen vanuit andere elementen in het beleids bestand. |
-| StorageReferenceId | Yes | Een id van een opslag sleutel container waarnaar wordt verwezen vanuit andere elementen in het beleids bestand. |
+| Id | Nee | Een unieke id van een bepaalde sleutel paar waarnaar wordt verwezen vanuit andere elementen in het beleids bestand. |
+| StorageReferenceId | Ja | Een id van een opslag sleutel container waarnaar wordt verwezen vanuit andere elementen in het beleids bestand. |
 
 ## <a name="input-claims-transformations"></a>Invoer van claim transformaties
 
@@ -212,7 +212,7 @@ Het element **InputClaimsTransformation** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van een claim transformatie die al is gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
+| ReferenceId | Ja | Een id van een claim transformatie die al is gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
 
 De volgende technische profielen verwijzen naar de **CreateOtherMailsFromEmail** -claim transformatie. De claim transformatie voegt de waarde van de `email` claim toe aan de `otherMails` verzameling voordat de gegevens worden opgeslagen in de map.
 
@@ -251,9 +251,9 @@ Het **input claim** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClaimTypeReferenceId | Yes | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
-| Standaard | No | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
-| PartnerClaimType | No | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
+| ClaimTypeReferenceId | Ja | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
+| Standaard | Nee | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
+| PartnerClaimType | Nee | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
 
 ## <a name="display-claims"></a>Claims weer geven
 
@@ -279,9 +279,9 @@ Het **DisplayClaim** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClaimTypeReferenceId | No | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
-| DisplayControlReferenceId | No | De id van een [Weergave besturings element](display-controls.md) dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
-| Vereist | No | Hiermee wordt aangegeven of de weergave claim vereist is. |
+| ClaimTypeReferenceId | Nee | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
+| DisplayControlReferenceId | Nee | De id van een [Weergave besturings element](display-controls.md) dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
+| Vereist | Nee | Hiermee wordt aangegeven of de weergave claim vereist is. |
 
 In het volgende voor beeld ziet u het gebruik van de besturings elementen weer geven claims en weer gave met in een zelf-bevestigd technisch profiel.
 
@@ -325,9 +325,9 @@ Het **PersistedClaim** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClaimTypeReferenceId | Yes | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
-| Standaard | No | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
-| PartnerClaimType | No | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
+| ClaimTypeReferenceId | Ja | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
+| Standaard | Nee | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
+| PartnerClaimType | Nee | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
 
 In het volgende voor beeld wordt het **UserWriteUsingLogonEmail-** technische profiel van Aad of het [Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/SocialAndLocalAccounts), waarmee een nieuw lokaal account wordt gemaakt, de volgende claims behouden:
 
@@ -356,10 +356,10 @@ Het **output claim** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClaimTypeReferenceId | Yes | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
-| Standaard | No | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
-|AlwaysUseDefaultValue |No |Het gebruik van de standaard waarde afdwingen.  |
-| PartnerClaimType | No | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
+| ClaimTypeReferenceId | Ja | De id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand of het bovenliggende beleids bestand. |
+| Standaard | Nee | Een standaard waarde die moet worden gebruikt om een claim te maken als de claim aangegeven door ClaimTypeReferenceId niet bestaat, zodat de resulterende claim kan worden gebruikt als een input claim van het technische profiel. |
+|AlwaysUseDefaultValue |Nee |Het gebruik van de standaard waarde afdwingen.  |
+| PartnerClaimType | Nee | De id van het claim type van de externe partner waaraan het opgegeven claim type van het beleid is toegewezen. Als het kenmerk PartnerClaimType niet is opgegeven, wordt het opgegeven claim type van het beleid toegewezen aan het partner claim type met dezelfde naam. Gebruik deze eigenschap wanneer de naam van het claim type afwijkt van de andere partij. De eerste claim naam is bijvoorbeeld ' noemer ', terwijl de partner een claim met de naam ' first_name ' gebruikt. |
 
 ## <a name="output-claims-transformations"></a>Trans formaties uitvoer claims
 
@@ -379,7 +379,7 @@ Het element **OutputClaimsTransformation** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van een claim transformatie die al is gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
+| ReferenceId | Ja | Een id van een claim transformatie die al is gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
 
 Het volgende technische profiel verwijst naar de AssertAccountEnabledIsTrue-claim transformatie om te evalueren of het account is ingeschakeld of niet na het lezen `accountEnabled` van de claim uit de Directory.    
 
@@ -422,7 +422,7 @@ Het element **ValidationTechnicalProfile** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
+| ReferenceId | Ja | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
 
 ## <a name="subjectnaminginfo"></a>SubjectNamingInfo
 
@@ -430,7 +430,7 @@ De **SubjectNamingInfo** definieert de naam van het onderwerp dat wordt gebruikt
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Claim type | Yes | Een id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand. |
+| Claim type | Ja | Een id van een claim type dat al is gedefinieerd in de sectie ClaimsSchema in het beleids bestand. |
 
 ## <a name="include-technical-profile"></a>Technisch profiel toevoegen
 
@@ -440,7 +440,7 @@ Het element **IncludeTechnicalProfile** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
+| ReferenceId | Ja | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
 
 
 In het volgende voor beeld ziet u het gebruik van de insluiting:
@@ -549,7 +549,7 @@ De verwijzing naar het **UseTechnicalProfileForSessionManagement** -element naar
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
+| ReferenceId | Ja | Een id van een technisch profiel is al gedefinieerd in het beleids bestand of het bovenliggende beleids bestand. |
 
 ## <a name="enabled-for-user-journeys"></a>Ingeschakeld voor gebruikers reizen
 

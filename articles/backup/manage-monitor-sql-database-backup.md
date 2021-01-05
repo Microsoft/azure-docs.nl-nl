@@ -3,12 +3,12 @@ title: SQL Server Db's op een virtuele Azure-machine beheren en controleren
 description: In dit artikel wordt beschreven hoe u SQL Server-data bases die worden uitgevoerd op een virtuele machine van Azure kunt beheren en controleren.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: b0df22002521c8148cac1200e79aeb0ae5a60546
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e37e6fc211b34b7e427b66db374a705faafd25f9
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021500"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858727"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Back-ups van SQL Server-databases beheren en bewaken
 
@@ -20,7 +20,7 @@ Als u nog geen back-ups voor uw SQL Server-data bases hebt geconfigureerd, raadp
 
 Azure Backup worden alle geplande bewerkingen en acties op aanvraag weer gegeven onder **back-uptaken** in de portal, met uitzonde ring van de geplande back-ups van het logboek, omdat ze zeer vaak kunnen worden uitgevoerd. De taken die u in deze Portal ziet, zijn onder andere database detectie en-registratie, het configureren van back-ups en back-up-en herstel bewerkingen.
 
-![De portal voor back-uptaken](./media/backup-azure-sql-database/jobs-list.png)
+![De portal voor back-uptaken](./media/backup-azure-sql-database/sql-backup-jobs-list.png)
 
 Ga voor meer informatie over bewakings scenario's naar [bewaking in het Azure Portal](backup-azure-monitoring-built-in-monitor.md) en [bewaking met behulp van Azure monitor](backup-azure-monitoring-use-azuremonitor.md).  
 
@@ -36,13 +36,9 @@ Database back-upwaarschuwingen bewaken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer **waarschuwingen en gebeurtenissen** op het kluis dashboard.
+2. Selecteer **back-upwaarschuwingen** op het kluis dashboard.
 
-   ![Waarschuwingen en gebeurtenissen selecteren](./media/backup-azure-sql-database/vault-menu-alerts-events.png)
-
-3. Selecteer in **waarschuwingen en gebeurtenissen** **back-upwaarschuwingen**.
-
-   ![Waarschuwingen voor back-ups selecteren](./media/backup-azure-sql-database/backup-alerts-dashboard.png)
+   ![Waarschuwingen voor back-ups selecteren](./media/backup-azure-sql-database/sql-backup-alerts-list.png)
 
 ## <a name="stop-protection-for-a-sql-server-database"></a>Beveiliging van een SQL Server-database stoppen
 
@@ -83,7 +79,7 @@ Ga als volgt te werk om de beveiliging van een database te stoppen:
 >
 >Zie de veelgestelde vragen hieronder voor meer informatie over de optie gegevens verwijderen:
 >
->- [Wat gebeurt er met de back-ups als ik een Data Base uit een automatisch beveiligde exemplaar Verwijder?](faq-backup-sql-server.md#if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups)
+>- [Wat gebeurt er met de back-ups als ik een database uit een automatisch beveiligd exemplaar verwijder?](faq-backup-sql-server.md#if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups)
 >- [Als ik de back-upbewerking van een automatisch beveiligde data base stop, wat is dan het gedrag?](faq-backup-sql-server.md#if-i-change-the-name-of-the-database-after-it-has-been-protected-what-will-be-the-behavior)
 >
 >

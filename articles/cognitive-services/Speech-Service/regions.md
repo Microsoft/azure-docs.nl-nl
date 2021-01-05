@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.custom: seodec18
-ms.openlocfilehash: 7b872340c50c800ebe4d4d6c7ca56b3b327bf162
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: seodec18,references_regions
+ms.openlocfilehash: f11ccafd58cc64e6186ef590bbbccbfab3335ea4
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95972641"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854856"
 ---
 # <a name="speech-service-supported-regions"></a>Ondersteunde regio's voor spraak Services
 
@@ -44,6 +44,8 @@ De speech-service is beschikbaar in deze regio's voor **spraak herkenning**, **t
 
 Als u de [spraak-SDK](speech-sdk.md)gebruikt, worden regio's opgegeven met de **regio-id** (bijvoorbeeld als een para meter aan `SpeechConfig.FromSubscription` ). Zorg ervoor dat de regio overeenkomt met de regio van uw abonnement.
 
+Als u van plan bent een aangepast model met audio gegevens te trainen, gebruikt u een van de [regio's met speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor een snellere training. U kunt de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription) gebruiken om het volledig getrainde model later te kopiëren naar een andere regio.
+
 ### <a name="intent-recognition"></a>Intentieherkenning
 
 Beschik bare regio's voor **intentie herkenning** via de Speech SDK zijn de volgende:
@@ -57,27 +59,31 @@ Beschik bare regio's voor **intentie herkenning** via de Speech SDK zijn de volg
 | Europa        | Europa -west      | `westeurope`         |
 | Noord-Amerika | VS - oost          | `eastus`             |
 | Noord-Amerika | VS - oost 2        | `eastus2`            |
-| Noord-Amerika | VS - zuid-centraal | `southcentralus`     |
+| Noord-Amerika | South Central US | `southcentralus`     |
 | Noord-Amerika | VS - west-centraal  | `westcentralus`      |
 | Noord-Amerika | VS - west          | `westus`             |
-| Noord-Amerika | VS - west 2        | `westus2`            |
+| Noord-Amerika | West US 2        | `westus2`            |
 | Zuid-Amerika | Brazil South     | `brazilsouth`        |
 
 Dit is een subset van de publicatie regio's die worden ondersteund door de [Language Understanding-service (Luis)](../luis/luis-reference-regions.md).
 
 ### <a name="voice-assistants"></a>Spraakassistenten
 
-De [spraak-SDK](speech-sdk.md) ondersteunt de mogelijkheden van de **Voice Assistant** in deze regio's:
+De [spraak-SDK](speech-sdk.md) biedt ondersteuning voor **spraak assistent** -mogelijkheden via [directe line spraak](https://docs.microsoft.com/azure/cognitive-services/speech-service/direct-line-speech) in deze regio's:
 
-| Regio         | Regio-id |
-| -------------- | -------------------- |
-| VS - west        | `westus`             |
-| VS - west 2      | `westus2`            |
-| VS - oost        | `eastus`             |
-| VS - oost 2      | `eastus2`            |
-| Europa -west    | `westeurope`         |
-| Europa - noord   | `northeurope`        |
-| Azië - zuidoost | `southeastasia`      |
+| Wereld wijde regio | Regio           | Regio-id    |
+| ------------- | ---------------- | -------------------- |
+| Noord-Amerika | VS - west          | `westus`             |
+| Noord-Amerika | West US 2        | `westus2`            |
+| Noord-Amerika | VS - oost          | `eastus`             |
+| Noord-Amerika | VS - oost 2        | `eastus2`            |
+| Noord-Amerika | VS - west-centraal  | `westcentralus`      |
+| Noord-Amerika | South Central US | `southcentralus`     |
+| Europa        | Europa -west      | `westeurope`         |
+| Europa        | Europa - noord     | `northeurope`        |
+| Azië          | Azië - oost        | `eastasia`           |
+| Azië          | Azië - zuidoost   | `southeastasia`      |
+| India         | India - centraal    | `centralindia`       |
 
 ### <a name="speaker-recognition"></a>Speaker Recognition
 

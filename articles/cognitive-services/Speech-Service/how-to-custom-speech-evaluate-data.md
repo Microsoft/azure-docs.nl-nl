@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: b8b3a0aa6d9790dbb5900eac2d79074f44a749d2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 54a54dccd82e4f6cfd72a1cc8a71b51f9fd4ed95
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025647"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857355"
 ---
 # <a name="evaluate-and-improve-custom-speech-accuracy"></a>Nauwkeurigheid van Custom Speech beoordelen en verbeteren
 
@@ -23,7 +23,7 @@ In dit artikel leert u hoe u de nauw keurigheid van de spraak-naar-tekst modelle
 
 ## <a name="evaluate-custom-speech-accuracy"></a>Nauwkeurigheid van Custom Speech evalueren
 
-De industrie standaard om de nauw keurigheid van het model te meten is een *woord fout* (wer). WER telt het aantal onjuiste woorden dat is geïdentificeerd tijdens de herkenning. vervolgens wordt gedeeld door het totale aantal woorden dat is opgegeven in de transcripten met menselijke labels (hieronder weer gegeven als N). Ten slotte wordt dat aantal vermenigvuldigd met 100% om de WER te berekenen.
+De industrie standaard om de nauw keurigheid van het model te meten is een [woord fout](https://en.wikipedia.org/wiki/Word_error_rate) (wer). WER telt het aantal onjuiste woorden dat is geïdentificeerd tijdens de herkenning. vervolgens wordt gedeeld door het totale aantal woorden dat is opgegeven in de transcripten met menselijke labels (hieronder weer gegeven als N). Ten slotte wordt dat aantal vermenigvuldigd met 100% om de WER te berekenen.
 
 ![WER-formule](./media/custom-speech/custom-speech-wer-formula.png)
 
@@ -36,6 +36,8 @@ Onjuist geïdentificeerde woorden vallen in drie categorieën:
 Hier volgt een voorbeeld:
 
 ![Voor beeld van onjuist geïdentificeerde woorden](./media/custom-speech/custom-speech-dis-words.png)
+
+Als u WER-metingen lokaal wilt repliceren, kunt u sclite van [SCTK](https://github.com/usnistgov/SCTK)gebruiken.
 
 ## <a name="resolve-errors-and-improve-wer"></a>Fouten oplossen en WER verbeteren
 
@@ -96,7 +98,7 @@ In de volgende secties wordt beschreven hoe elk soort aanvullende trainings gege
 
 ### <a name="add-related-text-sentences"></a>Verwante tekst zinnen toevoegen
 
-Aanvullende verwante zinnen kunnen hoofd zakelijk vervangings fouten met betrekking tot de fout herkenning van veelvoorkomende woorden en toepassingsspecifieke woorden verminderen door ze in context weer te geven. Domein-specifieke woorden kunnen ongebruikelijk of opgemaakte woorden zijn, maar de uitspraak moet duidelijk zijn om te worden herkend.
+Wanneer u een nieuw aangepast model traint, begint u met het toevoegen van gerelateerde tekst om de erkenning van domein-specifieke woorden en zinsdelen te verbeteren. Verwante tekst zinnen kunnen de vervangings fouten met betrekking tot de fout herkenning van veelvoorkomende woorden en toepassingsspecifieke woorden in de context verminderen. Domein-specifieke woorden kunnen ongebruikelijk of opgemaakte woorden zijn, maar de uitspraak moet duidelijk zijn om te worden herkend.
 
 > [!NOTE]
 > Vermijd Verwante tekst zinnen die ruis bevatten, zoals niet-herken bare tekens of woorden.
@@ -111,6 +113,12 @@ Houd rekening met de volgende details:
 * Vermijd voor beelden die transcriptie-fouten bevatten, maar neem een verscheidenheid aan audio kwaliteit op.
 * Vermijd zinnen die geen verband houden met uw probleem domein. Niet-verwante zinnen kunnen schadelijk zijn voor uw model.
 * Wanneer de kwaliteit van transcripten verschilt, kunt u uitzonderlijk goede zinnen dupliceren (zoals uitstekende transcripties die sleutel zinnen bevatten) om het gewicht te verg Roten.
+* De transcripten worden door de spraak service automatisch gebruikt voor het verbeteren van de herkenning van domein-specifieke woorden en zinsdelen, alsof ze zijn toegevoegd als gerelateerde tekst.
+* Training met audio biedt de meeste voor delen als de audio ook moeilijk te begrijpen is voor mensen. In de meeste gevallen moet u training starten door alleen de bijbehorende tekst te gebruiken.
+* Het kan enkele dagen duren voordat een trainings bewerking is voltooid. Zorg ervoor dat u uw spraak service-abonnement maakt in een [regio met speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training om de snelheid van de training te verbeteren.
+
+> [!NOTE]
+> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd.
 
 ### <a name="add-new-words-with-pronunciation"></a>Nieuwe woorden met uitspraak toevoegen
 

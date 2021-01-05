@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: aef332e54fa650e1abbebe671560238d7eb318de
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f2d55d1fcc92abdc629581d6e4d277ec0294dce0
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492043"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858685"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Problemen met Azure Files oplossen in Windows (SMB)
 
@@ -406,6 +406,8 @@ De cmdlet voert deze controles hieronder uit, en biedt richt lijnen voor fouten:
 5. CheckSidHasAadUser: Controleer of de aangemelde AD-gebruiker is gesynchroniseerd met Azure AD. Als u wilt controleren of een specifieke AD-gebruiker is gesynchroniseerd met Azure AD, kunt u de-gebruikers naam en-domein opgeven in de invoer parameters. 
 6. CheckGetKerberosTicket: er wordt geprobeerd een Kerberos-ticket op te halen om verbinding te maken met het opslag account. Als er geen geldig Kerberos-token is, voert u de cmdlet Klist ophalen CIFS/Storage-account-name. file. core. Windows. net uit en controleert u de fout code in het hoofd knooppunt waardoor het ophalen van het ticket mislukt.
 7. CheckStorageAccountDomainJoined: Controleer of de AD-verificatie is ingeschakeld en of de AD-eigenschappen van het account zijn ingevuld. Als dat niet het geval is, raadpleegt u de instructie [hier](./storage-files-identity-ad-ds-enable.md) om AD DS verificatie in te scha kelen op Azure files. 
+8. CheckUserRbacAssignment: Controleer of de AD-gebruiker de juiste RBAC-roltoewijzing heeft om machtigingen op share niveau te geven voor toegang tot Azure Files. Als dat niet het geval is, raadpleegt u de instructie [hier](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-assign-permissions) om de machtiging op share niveau te configureren. (Ondersteund op AzFilesHybrid v 0.2.3 + versie)
+9. CheckUserFileAccess: Controleer of de AD-gebruiker over de juiste machtigingen voor mappen/bestanden (Windows-Acl's) beschikt om toegang te krijgen tot Azure Files. Als dat niet het geval is, raadpleegt u de instructie [hier](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-configure-permissions) om de machtiging voor het map-of bestands niveau te configureren. (Ondersteund op AzFilesHybrid v 0.2.3 + versie)
 
 ## <a name="unable-to-configure-directoryfile-level-permissions-windows-acls-with-windows-file-explorer"></a>Kan de machtigingen voor mappen en bestands niveau (Windows-Acl's) niet configureren met Windows bestanden Verkenner
 

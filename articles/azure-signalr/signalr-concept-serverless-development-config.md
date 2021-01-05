@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: acb85a04b8a1ca491058702510079a36b93fc657
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 3d69b72012819e3d9099e447b9048fe07aea86d3
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151045"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858702"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Ontwikkeling en configuratie van Azure Functions met Azure SignalR Service
 
@@ -49,7 +49,7 @@ Zie [app service-verificatie gebruiken](#using-app-service-authentication)voor m
 
 ### <a name="handle-messages-sent-from-signalr-service"></a>Berichten verwerken die zijn verzonden vanuit de seingevings service
 
-Gebruik de binding van de *signaal trigger* om berichten te verwerken die zijn verzonden vanuit de signalerings service. U kunt worden geactiveerd wanneer clients berichten verzenden of clients een verbinding maken of de verbinding verbreken.
+Gebruik de binding van de *signaal trigger* om berichten te verwerken die zijn verzonden vanuit de signalerings service. U kunt een melding ontvangen wanneer clients berichten verzenden of clients die verbinding maken met of losgekoppeld zijn.
 
 Zie voor meer informatie de referentie voor het activeren van de [ *signaal/trigger* binding](../azure-functions/functions-bindings-signalr-service-trigger.md).
 

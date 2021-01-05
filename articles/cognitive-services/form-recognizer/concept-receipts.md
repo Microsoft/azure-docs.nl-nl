@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 769dea079339af2c6307d9230e047a654dc3d5dd
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 82f6c5989149b50a1ef5e6c6fb5350d474476436
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95492207"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845468"
 ---
 # <a name="receipt-concepts"></a>Concepten van ontvangsten
 
@@ -62,7 +62,7 @@ De kwitantie-API retourneert ook de volgende informatie:
 Als u de service voor de ontvangst van de formulier herkenning wilt uitproberen, gaat u naar het hulp programma online voor beeld-UI:
 
 > [!div class="nextstepaction"]
-> [Vooraf gebouwde modellen proberen](https://fott-preview.azurewebsites.net/)
+> [Vooraf gebouwde modellen uitproberen](https://fott-preview.azurewebsites.net/)
 
 ## <a name="input-requirements"></a>Vereisten voor invoer
 
@@ -456,12 +456,11 @@ De ontvangst-uitvoer is ook nuttig voor algemeen gebruik. Gebruik de kassabon-AP
 
 Bevestigingen bevatten nuttige gegevens die u kunt gebruiken voor het analyseren van het gedrag van consumenten en het kopen van trends.
 
-De kassabon-API voorziet ook in de [AIBuilder-functie voor ontvangst verwerking](/ai-builder/prebuilt-receipt-processing).
+De kassabon-API voorziet ook in de [functie voor ontvangst verwerking van de AI Builder](/ai-builder/prebuilt-receipt-processing).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voltooi de Quick Start van de [client bibliotheek](quickstarts/client-library.md) van een formulier om aan de slag te gaan met het schrijven van een app voor het verwerken van de kwitantie met de formulier Recognizer in de taal van uw keuze.
-- U kunt ook de Quick Start van de [kassabon-API python](./quickstarts/python-receipts.md) gebruiken om de bevestigingen te herkennen met de rest API.
+- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van een kwitantie met de formulier herkenner in de taal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

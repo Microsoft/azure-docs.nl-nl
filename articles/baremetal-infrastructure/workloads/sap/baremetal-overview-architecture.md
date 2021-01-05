@@ -1,15 +1,15 @@
 ---
 title: Overzicht van de preview-versie van BareMetal-infra structuur in azure
-description: Overzicht van het implementeren van BareMetal-infra structuur in Azure.
+description: Overzicht van de BareMetal-infra structuur in Azure.
 ms.custom: references_regions
 ms.topic: conceptual
-ms.date: 12/31/2020
-ms.openlocfilehash: db974d9260344d1f6050235bb2a9fbaa0420659b
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.date: 1/4/2021
+ms.openlocfilehash: eb4dc129719dc410f7101598e3d72e68f17809c1
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97829202"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860977"
 ---
 #  <a name="what-is-baremetal-infrastructure-preview-on-azure"></a>Wat is een BareMetal-infra structuur in azure?
 
@@ -25,7 +25,7 @@ De BareMetal-infra structuur voor gespecialiseerde en algemene werk belastingen 
 - South Central US
 
 >[!NOTE]
->**Rev 4,2** is de meest recente BareMetal-infra structuur met een rebranding die gebruikmaakt van de bestaande Rev 4-architectuur.  Rev 4 biedt dichter nabijheid van de virtuele machines van Azure virtual machine (VM) en verlaagt de latentie tussen Azure-Vm's en BareMetal-exemplaar eenheden. U kunt uw BareMetal-instanties openen en beheren via de Azure Portal. 
+>**Rev 4,2** is de meest recente BareMetal-infra structuur met een eigenlijke rebranding en maakt gebruik van de bestaande Rev 4-architectuur.  Rev 4 biedt dichter nabijheid van de Azure virtual machine-hosts (VM). Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen Azure Vm's en BareMetal exemplaar eenheden die zijn geïmplementeerd in Rev 4-stem pels of-rijen.  U kunt uw BareMetal-instanties openen en beheren via de Azure Portal. 
 
 ## <a name="support"></a>Ondersteuning
 BareMetal-infra structuur is ISO 27001, ISO 27017, SOC 1 en SOC 2-compatibel.  Er wordt ook gebruikgemaakt van een BYOL-model (maken-your-own-License): besturings systeem, gespecialiseerde werk belasting en toepassingen van derden.  
@@ -35,13 +35,13 @@ Zodra u toegang krijgt tot de hoofdmap en volledig beheer, neemt u de volgende v
 - Licenties, beveiliging en ondersteuning voor besturings systeem en software van derden
 
 Micro soft is verantwoordelijk voor het volgende:
-- Gecertificeerde hardware bieden voor gespecialiseerde workloads 
+- De hardware voorzien van gespecialiseerde workloads 
 - Het besturings systeem inrichten
 
 :::image type="content" source="media/baremetal-support-model.png" alt-text="Model voor ondersteuning van BareMetal-infra structuur" border="false":::
 
 ## <a name="compute"></a>Compute
-De BareMetal-infra structuur biedt meerdere Sku's die zijn gecertificeerd voor gespecialiseerde workloads. Beschik bare Sku's beschik bare variëren van het kleinere systeem met twee sockets tot het systeem met 24 sockets. Gebruik de workload-specifieke gecertificeerde Sku's voor uw gespecialiseerde werk belasting.
+De BareMetal-infra structuur biedt meerdere Sku's voor gespecialiseerde workloads. Beschik bare Sku's beschik bare variëren van het kleinere systeem met twee sockets tot het systeem met 24 sockets. Gebruik de workload-specifieke Sku's voor uw gespecialiseerde werk belasting.
 
 De BareMetal-instantie stempel zelf is een combi natie van de volgende onderdelen:
 
@@ -72,10 +72,10 @@ De beschik bare versies van het Linux-besturings systeem zijn:
    - SLES 15 SP1
 
 ## <a name="storage"></a>Opslag
-BareMetal-exemplaren op basis van een specifiek SKU-type worden geleverd met vooraf gedefinieerde NFS-opslag op basis van een specifiek type werk belasting. Wanneer u BareMetal inricht, kunt u extra opslag ruimte inrichten op basis van uw geschatte groei door een ondersteunings aanvraag in te dienen. Alle opslag wordt geleverd met een all-flash-schijf in Revision 4,2 met ondersteuning voor NFSv3 en NFSv4. De nieuwere versie van de revisies 4,5 NVMe-SSD is beschikbaar. Zie de sectie [BareMetal workload type](../../../virtual-machines/workloads/sap/get-started.md) voor meer informatie over opslag grootte.
+BareMetal-exemplaren op basis van een specifiek SKU-type worden geleverd met vooraf gedefinieerde NFS-opslag voor het specifieke type werk belasting. Wanneer u BareMetal inricht, kunt u meer opslag ruimte inrichten op basis van uw geschatte groei door een ondersteunings aanvraag in te dienen. Alle opslag wordt geleverd met een all-flash-schijf in Revision 4,2 met ondersteuning voor NFSv3 en NFSv4. De nieuwere versie van de revisies 4,5 NVMe-SSD is beschikbaar. Zie de sectie [BareMetal workload type](../../../virtual-machines/workloads/sap/get-started.md) voor meer informatie over opslag grootte.
 
 >[!NOTE]
->De opslag die wordt gebruikt voor BareMetal voldoet aan de vereisten voor FIPS 140-2-beveiliging die standaard versleuteling bieden. De gegevens worden veilig opgeslagen op de schijven.
+>De opslag die wordt gebruikt voor BareMetal voldoet aan de 140-2-vereisten voor de [publicatie van Federal Information Processing Standard (FIPS)](/microsoft-365/compliance/offering-fips-140-2) die standaard versleuteling aanbieden. De gegevens worden veilig opgeslagen op de schijven.
 
 ## <a name="networking"></a>Netwerken
 De architectuur van Azure Network Services is een belang rijk onderdeel voor een geslaagde implementatie van gespecialiseerde workloads in BareMetal-instanties. Waarschijnlijk zijn niet alle IT-systemen in azure al aanwezig. Azure biedt u netwerk technologie waarmee Azure eruitziet als een virtueel Data Center naar uw on-premises software-implementaties. De Azure-netwerk functionaliteit die is vereist voor BareMetal-exemplaren is:
@@ -91,10 +91,10 @@ BareMetal-exemplaren worden ingericht binnen het IP-adres bereik van uw Azure VN
 :::image type="content" source="media/baremetal-infrastructure-portal/baremetal-infrastructure-diagram.png" alt-text="Diagram van Azure BareMetal-infra structuur" lightbox="media/baremetal-infrastructure-portal/baremetal-infrastructure-diagram.png" border="false":::
 
 De weer gegeven architectuur is onderverdeeld in drie secties:
-- **Links:** Toont de on-premises-infra structuur van de klant die verschillende toepassingen uitvoert, verbinding maken via de partner of de lokale edge-router, zoals Equinix. Zie [connectiviteits providers en-locaties: Azure ExpressRoute](../../../expressroute/expressroute-locations.md)voor meer informatie.
-- **Center:** Toont [ExpressRoute](../../../expressroute/expressroute-introduction.md) ingericht met behulp van uw Azure-abonnement waarmee verbinding wordt gemaakt met het Azure Edge-netwerk.
-- **Rechts:** Toont Azure IaaS, en in dit geval het gebruik van Vm's voor het hosten van uw toepassingen, die zijn ingericht in uw virtuele Azure-netwerk.
-- **Onder:** Geeft aan dat uw ExpressRoute-gateway is ingeschakeld met [ExpressRoute FastPath](../../../expressroute/about-fastpath.md) voor BareMetal-connectiviteit met lage latentie.   
+- **Links:** toont de on-premises infra structuur van de klant die verschillende toepassingen uitvoert, waarbij verbinding wordt gemaakt via de partner of de lokale edge-router, zoals Equinix. Zie [connectiviteits providers en-locaties: Azure ExpressRoute](../../../expressroute/expressroute-locations.md)voor meer informatie.
+- **Center:** toont [ExpressRoute](../../../expressroute/expressroute-introduction.md) ingericht met behulp van uw Azure-abonnement waarmee verbinding wordt gemaakt met het Azure Edge-netwerk.
+- **Rechts:** hier worden Azure-IaaS weer gegeven, en in dit geval het gebruik van vm's voor het hosten van uw toepassingen, die zijn ingericht in uw virtuele Azure-netwerk.
+- **Onder:** toont uw ExpressRoute-gateway die is ingeschakeld met [ExpressRoute FastPath](../../../expressroute/about-fastpath.md) voor BareMetal-connectiviteit met lage latentie.   
    >[!TIP]
    >Ter ondersteuning hiervan moet uw ExpressRoute-gateway Ultra Performance zijn.  Zie [over ExpressRoute virtuele netwerk gateways](../../../expressroute/expressroute-about-virtual-network-gateways.md)voor meer informatie.
 

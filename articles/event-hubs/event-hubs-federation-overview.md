@@ -4,12 +4,12 @@ description: In dit artikel vindt u een overzicht van de Federatie met meerdere 
 ms.topic: article
 ms.date: 12/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 7deb6fe04241225f1f97a204cc62b4aefad9f440
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 12ef895c8b16fe18ed02ebf01d17624ac71c2f3e
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97804034"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861461"
 ---
 # <a name="multi-site-and-multi-region-federation"></a>Federatie in meerdere sites en regio's
 
@@ -196,6 +196,7 @@ Vervolgens kunt u lezen hoe u een Replicator-toepassing instelt met Azure Stream
 - [Gebeurtenis-Replicator toepassingen in Azure Functions][1]
 - [Gebeurtenissen tussen Event Hubs repliceren][2]
 - [Gebeurtenissen repliceren naar Azure Service Bus][3]
+- [Apache Kafka MirrorMaker gebruiken met Event Hubs][11] 
 
 [1]: event-hubs-federation-replicator-functions.md
 [2]: https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopy
@@ -207,3 +208,4 @@ Vervolgens kunt u lezen hoe u een Replicator-toepassing instelt met Azure Stream
 [8]: event-hubs-federation-patterns.md#log-projection
 [9]: process-data-azure-stream-analytics.md
 [10]: event-hubs-federation-patterns.md#replication
+[11]: event-hubs-kafka-mirror-maker-tutorial.md

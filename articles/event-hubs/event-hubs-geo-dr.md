@@ -3,18 +3,27 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 6dd2385a6f6e61136a1284171532aedd70a9cc96
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: e10ac5847a38190c8feaae5e51f9b55bee4c4fbc
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608347"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861479"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
-Als er voor de hele Azure-regio's of-Data Centers (als er geen [beschikbaarheids zones](../availability-zones/az-overview.md) worden gebruikt) downtime actief is, is het essentieel dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn *geo-nood herstel* en *geo-replicatie* belang rijke functies voor elke onderneming. Azure Event Hubs ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte. 
 
-> [!NOTE]
-> De functie voor geo-nood herstel is alleen beschikbaar voor de [Standard-en speciale sku's](https://azure.microsoft.com/pricing/details/event-hubs/).  
+Een tolerantie voor disastrous storingen bij het verwerken van gegevens bronnen is een vereiste voor veel ondernemingen en in sommige gevallen, zelfs door industriële voor Schriften. 
+
+Azure Event Hubs verspreidt het risico op onherstelbare storingen van afzonderlijke machines of zelfs volledige racks in clusters die meerdere fout domeinen binnen een Data Center omspannen en implementeert transparante fout detectie en failover-mechanismen, zodat de service zal blijven functioneren binnen de gegarandeerde service niveaus en normaal gesp roken zonder merk bare onderbrekingen in het geval van dergelijke storingen. Als er een Event Hubs naam ruimte is gemaakt met de optie ingeschakeld voor [beschikbaarheids zones](../availability-zones/az-overview.md), wordt het risico van uitval risico verder verdeeld over drie fysiek gescheiden faciliteiten en is de service voldoende capaciteits reserves om direct te kunnen omgaan met het volledige, onherstelbaar verlies van de volledige faciliteit. 
+
+Het Azure Event Hubs-cluster model met de ondersteuning voor de beschikbaarheids zone biedt een tolerantie voor problemen met de hardware en zelfs tot een onherstelbaar verlies van de volledige datacenter faciliteiten. Het kan nog steeds bestaan uit een grote fysieke vernietiging, waardoor zelfs deze maat regelen niet voldoende kunnen worden beschermd. 
+
+De Event Hubs geo-nood herstel functie is zodanig ontworpen dat het herstellen van een ramp van deze omvang eenvoudiger is en dat de Azure-regio niet goed kan worden gerepareerd en zonder dat de configuratie van uw toepassingen hoeft te worden gewijzigd. Het afbreken van een Azure-regio omvat doorgaans diverse services en deze functie is vooral gericht op het behoud van de integriteit van de samengestelde toepassings configuratie.  
+
+Met de functie voor het Geo-Disaster herstellen zorgt u ervoor dat de volledige configuratie van een naam ruimte (Event Hubs, consumenten groepen en instellingen) voortdurend wordt gerepliceerd van een primaire naam ruimte naar een secundaire naam ruimte wanneer deze is gekoppeld, en u kunt een eenmalige failover op elk gewenst moment initiëren van de primaire naar de secundaire. Bij het verplaatsen van de failover wordt de gekozen alias naam voor de naam ruimte opnieuw ingesteld op de secundaire naam ruimte en wordt de koppeling verbroken. De failover is bijna onmiddellijk eenmaal gestart. 
+
+> [!IMPORTANT]
+> Met de functie wordt een onmiddellijke continuïteit van bewerkingen met dezelfde configuratie ingeschakeld, maar **worden de gebeurtenis gegevens niet gerepliceerd**. Tenzij de nood situatie het verlies van alle zones heeft veroorzaakt, blijven de gebeurtenis gegevens bewaard in de primaire Event hub nadat de failover kan worden hersteld en de historische gebeurtenissen kunnen worden verkregen vanaf het moment dat de toegang tot een keer is teruggezet. Voor het repliceren van gebeurtenis gegevens en het uitvoeren van overeenkomende naam ruimten in actieve/actieve configuraties om te voldoen aan storingen en rampen, hoeft u niet te voldoen aan deze geo-nood herstel functie set, maar volgt u de [richt lijnen voor replicatie](event-hubs-federation-overview.md).  
 
 ## <a name="outages-and-disasters"></a>Storingen en rampen
 

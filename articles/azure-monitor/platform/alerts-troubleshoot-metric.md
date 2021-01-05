@@ -4,14 +4,14 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 11/25/2020
+ms.date: 01/03/2021
 ms.subservice: alerts
-ms.openlocfilehash: fc54d2ba3ca4e7a150a1602c671b99f58197bc44
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9a05fe509e032681a0bf5ed989595a25f66d33c6
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657291"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857338"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -265,6 +265,23 @@ U kunt het beste een *aggregatie granulatie (punt)* kiezen die groter is dan de 
 -   Waarschuwings regel voor metrische gegevens die meerdere dimensies bewaakt: wanneer een nieuwe Dimensiewaardecombinatie wordt toegevoegd
 -   Waarschuwings regel voor metrische gegevens die meerdere resources bewaakt: wanneer een nieuwe resource wordt toegevoegd aan het bereik
 -   Waarschuwings regel voor metrische gegevens die een metriek bewaakt die niet continu wordt uitgezonden (sparse metrisch): wanneer de metriek wordt verzonden na een periode van meer dan 24 uur waarin deze niet is verzonden
+
+## <a name="the-dynamic-thresholds-borders-dont-seem-to-fit-the-data"></a>De grenzen van de dynamische drempel waarden lijken niet op de gegevens
+
+Als het gedrag van een metriek onlangs is gewijzigd, worden de wijzigingen niet nood zakelijk weer gegeven in de dynamische drempel grenzen (boven en onder), omdat deze worden berekend op basis van metrische gegevens van de afgelopen 10 dagen. Wanneer u de dynamische drempel waarden voor een bepaalde metriek bekijkt, moet u ervoor zorgen dat u de metrische trend in de afgelopen week bekijkt en niet alleen voor recente uren of dagen.
+
+## <a name="why-is-weekly-seasonality-not-detected-by-dynamic-thresholds"></a>Waarom is wekelijkse seizoensgebondenheid niet gedetecteerd door dynamische drempels?
+
+Voor het identificeren van de wekelijkse seizoensgebondenheid is voor het model voor dynamische drempel waarden ten minste drie weken van historische gegevens vereist. Als er voldoende historische gegevens beschikbaar zijn, wordt elke wekelijkse seizoensgebondenheid die bestaat in de metrische gegevens geïdentificeerd en wordt het model dienovereenkomstig aangepast. 
+
+## <a name="dynamic-thresholds-shows-a-negative-lower-bound-for-a-metric-even-though-the-metric-always-has-positive-values"></a>Dynamische drempel waarden geven een negatieve ondergrens voor een metriek, hoewel de metrische gegevens altijd positieve waarde hebben
+
+Wanneer een metriek een grote schommeling vertoont, wordt door dynamische drempel waarden een breder model rond de metrische gegevens gemaakt, wat kan leiden tot een onderrand onder nul. Dit kan in de volgende gevallen gebeuren:
+1. De gevoeligheid is ingesteld op laag 
+2. De mediaan waarden zijn dicht bij nul
+3. De metriek vertoont een onregelmatige werking met een hoge variantie (er zijn pieken of spannings dips in de gegevens)
+
+Wanneer de ondergrens een negatieve waarde heeft, betekent dit dat de metriek plausible is om de waarde nul te bereiken, gezien het onregelmatige gedrag van de metriek. U kunt overwegen een hogere gevoeligheid of een grotere *aggregatie granulatie (punt)* te kiezen om het model minder gevoelig te maken, of gebruik de optie *gegevens negeren vóór* om een recente irregulaity uit te sluiten van de historische gegevens die worden gebruikt om het model te bouwen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

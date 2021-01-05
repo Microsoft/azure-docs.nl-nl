@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
-ms.openlocfilehash: 9f8004b41e8048dfc97fb61bb67a634963c0c575
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: a913bc0ae01507cb26c1650d63918a8319eeacf4
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317551"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857423"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
@@ -64,7 +64,7 @@ Net als bij log Analytics beperkt het tijds bereik de query gegevens tot het opg
 
 Een query scant bijvoorbeeld 60 minuten, wanneer het tijds bereik 60 minuten is, zelfs als de tekst **geleden (1d)** bevat. Het tijds bereik en de filter tijd voor query's moeten overeenkomen. In het voorbeeld geval wordt de **periode** voor het overschrijven van de  /  **query tijd** op één dag gewijzigd. dit werkt zoals verwacht.
 
-### <a name="measure"></a>Measure
+### <a name="measure"></a>Meting
 
 Logboek waarschuwingen maken het mogelijk om in te scha kelen naar numerieke waarden die kunnen worden geëvalueerd. U kunt twee verschillende dingen meten:
 
@@ -100,7 +100,7 @@ Vervolgens worden de waarschuwings regels gecontroleerd op aanvragen die eindige
 
 Voor werk ruimten en Application Insights wordt deze aangeroepen **op basis van** de **metrische maat eenheid** van de selectie. In alle andere resource typen wordt **meting** genoemd met de selectie van een wille keurige kolom naam.
 
-### <a name="aggregation-type"></a>Aggregatietype
+### <a name="aggregation-type"></a>Type aggregatie
 
 De berekening die wordt uitgevoerd op meerdere records om ze samen te voegen tot één numerieke waarde. Bijvoorbeeld:
 - **Count** retourneert het aantal records in de query
@@ -120,6 +120,8 @@ In werk ruimten en Application Insights wordt het alleen ondersteund in meet typ
 ### <a name="split-by-alert-dimensions"></a>Splitsen op waarschuwings dimensies
 
 Splits waarschuwingen op cijfer-of teken reeks kolommen in afzonderlijke waarschuwingen door ze te groeperen in unieke combi Naties. Bij het maken van resource gerichte waarschuwingen op schaal (abonnement of het bereik van een resource groep) kunt u de kolom van de Azure-Resource-ID splitsen. Bij het splitsen van de Azure-Resource-ID-kolom wordt het doel van de waarschuwing gewijzigd in de opgegeven resource.
+
+De kolom voor het splitsen van de Azure-Resource-ID wordt aanbevolen als u dezelfde voor waarde op meerdere Azure-resources wilt bewaken. U kunt bijvoorbeeld alle virtuele machines bewaken voor CPU-gebruik via 80%. U kunt er ook voor kiezen om te splitsen wanneer u een voor waarde op meerdere resources in het bereik wilt, zoals het controleren of het CPU-gebruik van ten minste vijf computers in het bereik van de resource groep meer dan 80% heeft.
 
 In werk ruimten en Application Insights wordt het alleen ondersteund in meet type meet **waarde** . Het veld heet **aggregatie op**. Het is beperkt tot drie kolommen. Het hebben van meer dan drie groepen per kolom in de query kan leiden tot onverwachte resultaten. In alle andere resource typen wordt het geconfigureerd in de sectie **splitsen op dimensies** van de voor waarde (beperkt tot zes splitsingen).
 

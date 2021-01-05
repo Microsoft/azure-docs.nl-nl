@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 5645a2e0449a1929421f9444bf645f08ad0525e9
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 10fa47a8f613218b1331259040be77df867ade95
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296808"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854839"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -42,10 +42,10 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 |---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](security-center-pricing.md) is vereist                                                                                                                                                                                                                                             |
-| Ondersteunde platformen:            | ![Yes](./media/icons/yes-icon.png) Azure-machines met Windows<br>![Yes](./media/icons/yes-icon.png) Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  | Defender voor eind punt is ingebouwd in Windows 10 1703 (en nieuwer) en Windows Server 2019.<br>Security Center ondersteunt detectie in Windows Server 2016, 2012 R2 en 2008 R2 SP1.<br>Server eindpunt bewaking met deze integratie is uitgeschakeld voor Office 365 GCC-klanten. |
-| Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement                         |
-| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële Clouds.<br>![No](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
+| Ondersteunde platformen:            | Azure-machines met Windows<br>Azure-Arc-machines met Windows|
+| Ondersteunde versies van Windows:  |  • Security Center detectie ondersteunt Windows Server 2016, 2012 R2 en 2008 R2 SP1<br> • Server eindpunt bewaking met behulp van deze integratie is uitgeschakeld voor Office 365 GCC-klanten<br> • Geen ondersteuning voor Windows Server 2019, Windows 10 1703 (en nieuwer) of Linux|
+| Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
+| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov<br>![Nee](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
 
 

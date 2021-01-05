@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/03/2020
-ms.openlocfilehash: 69b2713e928707479945df0bb242ac2fbc001c32
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.date: 12/23/2020
+ms.openlocfilehash: 3f5a6171ba81b858d649f381ed316be0637a2571
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600656"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858651"
 ---
 # <a name="data-flow-script-dfs"></a>Gegevens stroom script (DFS)
 
@@ -245,6 +245,18 @@ derive(each(match(type=='string'), $$ = 'string'),
     each(match(type=='timestamp'), $$ = 'timestamp'),
     each(match(type=='boolean'), $$ = 'boolean'),
     each(match(type=='double'), $$ = 'double')) ~> DerivedColumn1
+```
+
+### <a name="fill-down"></a>Omlaag door voeren
+Hier vindt u informatie over het implementeren van het algemene ' opvullen '-probleem met gegevens sets wanneer u NULL-waarden wilt vervangen door de waarde van de vorige niet-NULL-waarde in de reeks. Houd er rekening mee dat deze bewerking negatieve gevolgen voor de prestaties kan hebben omdat u een synthetisch venster moet maken in uw hele gegevensset met een ' dummy ' categorie waarde. Daarnaast moet u sorteren op een waarde om de juiste gegevens reeks te maken om de vorige niet-NULL-waarde te vinden. In dit fragment hieronder wordt de categorie synthetisch gemaakt als dummy en wordt gesorteerd op een surrogaat sleutel. U kunt de surrogaat sleutel verwijderen en uw eigen gegevensspecifieke Sorteer sleutel gebruiken. In dit code fragment wordt ervan uitgegaan dat u al een bron transformatie hebt toegevoegd met de naam ```source1```
+
+```
+source1 derive(dummy = 1) ~> DerivedColumn
+DerivedColumn keyGenerate(output(sk as long),
+    startAt: 1L) ~> SurrogateKey
+SurrogateKey window(over(dummy),
+    asc(sk, true),
+    Rating2 = coalesce(Rating, last(Rating, true()))) ~> Window1
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

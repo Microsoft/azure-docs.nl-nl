@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: mathapli
 ms.reviewer: cynthn
-ms.openlocfilehash: 1f31cc982e5e7f92cfe7e8adf588dd96628f2c6f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: fd36d365eb02819352bc14caf9d8e258a8663c70
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95744038"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861393"
 ---
 # <a name="red-hat-enterprise-linux-rhel-extended-lifecycle-support"></a>Ondersteuning voor uitgebreide levenscyclus Red Hat Enterprise Linux (RHEL)
 In dit artikel vindt u informatie over de uitgebreide levenscyclus ondersteuning voor Red Hat Enter prise-installatie kopieën:
@@ -38,6 +38,12 @@ Vanaf 30 november 2020 zal Red Hat Enterprise Linux 6 het einde van de onderhoud
 
 #### <a name="what-is-the-additional-charge-for-using-red-hat-enterprise-linux-extended-life-cycle-support-els-add-on"></a>Wat zijn de extra kosten voor het gebruik van Red Hat Enterprise Linux-invoeg toepassing voor de uitgebreide levenscyclus cyclus (ELS)?
 De kosten met betrekking tot uitgebreide levenscyclus ondersteuning vindt u in het [formulier Els](https://aka.ms/els-form)
+
+#### <a name="ive-deployed-a-vm-by-using-custom-image-how-can-i-add-extended-lifecycle-support-to-this-vm"></a>Ik heb een virtuele machine geïmplementeerd met behulp van aangepaste installatie kopie. Hoe kan ik uitgebreide ondersteuning voor de levens cyclus toevoegen aan deze virtuele machine?
+U moet rechtstreeks contact opnemen met Red Hat en direct ondersteuning krijgen.
+
+#### <a name="ive-deployed-a-vm-by-using-custom-image-can-i-convert-this-vm-to-a-payg-vm"></a>Ik heb een virtuele machine geïmplementeerd met behulp van aangepaste installatie kopie. Kan ik deze VM converteren naar een PAYG-VM?
+Nee, dat kan niet. De conversie wordt momenteel niet ondersteund in Azure.
 
 
 ## <a name="next-steps"></a>Volgende stappen

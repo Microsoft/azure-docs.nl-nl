@@ -3,12 +3,12 @@ title: Back-upcentrum-Veelgestelde vragen
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over Back-upcentrum
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.openlocfilehash: c5b23a32b60f651cd3ff91819155d83a7465491a
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 5befa39411c22253bfccc689d8b5c5967a8cd759
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173812"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858617"
 ---
 # <a name="backup-center---frequently-asked-questions"></a>Back-upcentrum: veelgestelde vragen
 
@@ -34,7 +34,9 @@ Nee. Het Back-upcentrum is klaar voor de doos. Als u echter [back-uprapporten](.
 
 ### <a name="do-i-need-to-have-any-special-permissions-to-use-backup-center"></a>Heb ik speciale machtigingen nodig om het Back-upcentrum te gebruiken?
 
-Het Back-upcentrum als zodanig heeft geen nieuwe machtigingen nodig. Als u het juiste niveau van Azure RBAC-toegang hebt voor de resources die u beheert, kunt u Back-upcentrum voor deze bronnen gebruiken. Als u bijvoorbeeld informatie over uw back-ups wilt weer geven, hebt u **Lees** toegang tot uw kluizen nodig. Als u een back-up wilt configureren en andere back-upbewerkingen wilt uitvoeren, moet u de rollen **back-upinzender** of **back-upoperator** hebben. Meer informatie over [Azure-rollen voor Azure backup](./backup-rbac-rs-vault.md).
+Het Back-upcentrum als zodanig heeft geen nieuwe machtigingen nodig. Als u het juiste niveau van Azure RBAC-toegang hebt voor de resources die u beheert, kunt u Back-upcentrum voor deze bronnen gebruiken. Als u bijvoorbeeld informatie over uw back-ups wilt weer geven, hebt u **Lees** toegang tot uw kluizen nodig. Als u een back-up wilt configureren en andere back-upbewerkingen wilt uitvoeren, moet u de rollen **back-upinzender** of **back-upoperator** hebben. Meer informatie over [Azure-rollen voor Azure backup](./backup-rbac-rs-vault.md). 
+
+Als u [back-uprapporten](./configure-reports.md) gebruikt in Back-upcentrum, moet u toegang hebben tot de log Analytics werk ruimte (n) waarnaar uw kluis (s) gegevens verzenden, om rapporten voor deze kluizen weer te geven.
 
 ## <a name="pricing"></a>Prijzen
 

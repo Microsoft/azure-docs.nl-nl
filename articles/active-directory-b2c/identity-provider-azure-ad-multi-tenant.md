@@ -8,40 +8,41 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/04/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 71e3bf429c7b8d3f4f8fe205c05b0701732fdef9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c9ac92f836e1d0c1210bb16b5c1d6e232fd5c22e
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653806"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858464"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Aanmelden voor multi tenant-Azure Active Directory instellen met behulp van aangepast beleid in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
-::: zone pivot="b2c-custom-policy"
+::: zone pivot="b2c-user-flow"
 
-[!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
+[!INCLUDE [active-directory-b2c-limited-to-custom-policy](../../includes/active-directory-b2c-limited-to-custom-policy.md)]
 
 ::: zone-end
+
+::: zone pivot="b2c-custom-policy"
+
+In dit artikel wordt beschreven hoe u aanmelden kunt inschakelen voor gebruikers die gebruikmaken van het multi tenant-eind punt voor Azure Active Directory (Azure AD). Hierdoor kunnen gebruikers van meerdere Azure AD-tenants zich aanmelden met Azure AD B2C, zonder dat u een id-provider hoeft te configureren voor elke Tenant. Gast leden in een van deze tenants kunnen zich echter **niet** aanmelden. Hiervoor moet u [elke Tenant afzonderlijk configureren](identity-provider-azure-ad-single-tenant.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
-In dit artikel wordt beschreven hoe u aanmelden kunt inschakelen voor gebruikers die gebruikmaken van het multi tenant-eind punt voor Azure Active Directory (Azure AD). Hierdoor kunnen gebruikers van meerdere Azure AD-tenants zich aanmelden met Azure AD B2C, zonder dat u een id-provider hoeft te configureren voor elke Tenant. Gast leden in een van deze tenants kunnen zich echter **niet** aanmelden. Hiervoor moet u [elke Tenant afzonderlijk configureren](identity-provider-azure-ad-single-tenant.md).
-
-
 ## <a name="register-an-application"></a>Een toepassing registreren
 
 Als u het aanmelden voor gebruikers van een specifieke Azure AD-organisatie wilt inschakelen, moet u een toepassing registreren in de Azure AD-Tenant van de organisatie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die de Azure AD-Tenant van uw organisatie bevat (bijvoorbeeld contoso.com). Selecteer het **filter Directory + abonnement** in het bovenste menu en kies vervolgens de map die uw Tenant bevat.
 1. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 1. Selecteer **Nieuwe registratie**.
@@ -71,41 +72,6 @@ Als u de `family_name` en `given_name` claims van Azure ad wilt ophalen, kunt u 
 1. Selecteer **id** voor het **token type**.
 1. Selecteer de optionele claims om toe te voegen `family_name` en `given_name` .
 1. Klik op **Add**.
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="configure-azure-ad-as-an-identity-provider"></a>Azure AD configureren als een id-provider
-
-1. Zorg ervoor dat u de map gebruikt die de Azure AD B2C-tenant bevat. Selecteer het filter **Map + Abonnement** in het bovenste menu en kies de map die uw Azure AD B2C-tenant bevat.
-1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
-1. Selecteer **Id-providers** en selecteer vervolgens **Nieuwe OpenID Connect-provider**.
-1. Voer een **naam** in. Voer bijvoorbeeld *Contoso Azure AD* in.
-1. Voor **URL voor metagegevens** voert u de volgende URL in, waarbij `{tenant}` wordt vervangen door de domeinnaam van uw Azure AD-tenant:
-
-    ```
-    https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
-    ```
-
-    Bijvoorbeeld `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
-    Bijvoorbeeld `https://login.microsoftonline.com/contoso.com/v2.0/.well-known/openid-configuration`.
-
-1. Voor **Client-id** voert u de toepassings-id in die u eerder hebt genoteerd.
-1. Voor **Clientgeheim** voert u het clientgeheim in dat u eerder hebt genoteerd.
-1. Voer de `openid profile` in voor **Bereik**.
-1. Wijzig de standaard waarden voor het **antwoord type**, de **antwoord modus** en de **domein Hint**.
-1. Selecteer onder **Claimstoewijzing voor id-provider** de volgende claims:
-
-    - **Gebruikers-id**: *oid*
-    - **Weergavenaam**: *name*
-    - **Voornaam**: *given_name*
-    - **Achternaam**: *family_name*
-    - **E-mail**: *preferred_username*
-
-1. Selecteer **Opslaan**.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
 
 ## <a name="create-a-policy-key"></a>Een beleids sleutel maken
 
@@ -243,24 +209,6 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
     Werk de waarde van **TechnicalProfileReferenceId** bij naar de **id** van het technische profiel dat u eerder hebt gemaakt. Bijvoorbeeld `Common-AAD`.
 
 3. Sla het *TrustFrameworkExtensions.xml* bestand op en upload het opnieuw voor verificatie.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-azure-ad-identity-provider-to-a-user-flow"></a>Een Azure AD-ID-provider toevoegen aan een gebruikers stroom 
-
-1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Azure AD-ID-provider.
-1. Selecteer **Contoso Azure AD** bij de **sociale id-providers**.
-1. Selecteer **Opslaan**.
-1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
-1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
 
 ## <a name="update-and-test-the-relying-party-file"></a>Het Relying Party bestand bijwerken en testen
 

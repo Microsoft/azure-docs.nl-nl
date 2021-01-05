@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 7d07dda7741aa075b8d853a8d06d3d3218ca901a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: fafa4c1e8c12ce26a90cfdf9df940823abf5ff25
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563814"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857440"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Wat is een Azure Machine Learning-rekeninstantie?
 
@@ -130,7 +130,12 @@ Deze acties kunnen worden beheerd door Azure RBAC:
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
 
-### <a name="create-a-compute-instance"></a><a name="create"></a>Een rekenproces maken
+Opmerking Als u een gebruiker van een reken instantie wilt maken, moet u machtigingen hebben voor de volgende acties:
+* *Micro soft. MachineLearningServices/werk ruimten/reken kracht/schrijven*
+* *Micro soft. MachineLearningServices/werk ruimten/checkComputeNameAvailability/actie*
+
+
+### <a name="create-a-compute-instance"></a><a name="create"></a>Een reken instantie maken
 
 Maak in uw werk ruimte in Azure Machine Learning Studio [een nieuw reken exemplaar](how-to-create-attach-compute-studio.md#compute-instance) van het gedeelte **Compute** of in de sectie **notebooks** , wanneer u klaar bent om een van uw notitie blokken uit te voeren. 
 

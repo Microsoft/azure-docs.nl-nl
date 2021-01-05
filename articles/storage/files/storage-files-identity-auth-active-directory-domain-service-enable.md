@@ -4,16 +4,16 @@ description: Meer informatie over het inschakelen van verificatie op basis van i
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 04/21/2020
+ms.date: 01/03/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: deed7c3dce2d7da1940a8a4871efac7453e2cf60
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 340455450cd6a18adfd8d0843fee423f82f10a45
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033677"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858396"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Active Directory Domain Services authenticatie inschakelen op Azure Files
 
@@ -22,8 +22,7 @@ ms.locfileid: "97033677"
 Als u geen ervaring hebt met Azure-bestands shares, raden we u aan onze [plannings handleiding](storage-files-planning.md) te lezen voordat u de volgende serie artikelen leest.
 
 > [!NOTE]
-> Azure Files ondersteunt Kerberos-verificatie met Azure AD DS met RC4-HMAC-versleuteling. AES Kerberos-versleuteling wordt nog niet ondersteund.
-> Azure Files ondersteunt verificatie voor Azure AD DS met volledige synchronisatie met Azure AD. Als u scoped Synchronization hebt ingeschakeld in azure AD DS dat alleen een beperkt aantal identiteiten vanuit Azure AD synchroniseert, wordt verificatie en autorisatie niet ondersteund.
+> Azure Files ondersteunt Kerberos-verificatie met Azure AD DS met RC4-HMAC en AES 256-versleuteling. Azure Files ondersteunt verificatie voor Azure AD DS met volledige synchronisatie met Azure AD. Als u scoped Synchronization hebt ingeschakeld in azure AD DS dat alleen een beperkt aantal identiteiten vanuit Azure AD synchroniseert, wordt verificatie en autorisatie niet ondersteund.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -59,7 +58,7 @@ Voordat u Azure AD over SMB voor Azure-bestands shares inschakelt, moet u ervoor
 
 ## <a name="regional-availability"></a>Regionale beschikbaarheid
 
-Azure Files verificatie met Azure AD DS is beschikbaar in [alle open bare en gov regio's van Azure](https://azure.microsoft.com/global-infrastructure/locations/).
+Azure Files verificatie met Azure AD DS is beschikbaar in [alle regio's van Azure open bare, gov en China](https://azure.microsoft.com/global-infrastructure/locations/).
 
 ## <a name="overview-of-the-workflow"></a>Overzicht van de werk stroom
 

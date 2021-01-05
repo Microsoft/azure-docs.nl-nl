@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 130cd643856b38471eac6d6869cdc1ed8b0bcd2e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 5a912790b4a7a86c44576b98ce7e95f44b810c9e
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499149"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857372"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
@@ -67,7 +67,7 @@ Nadat het eind punt is geïmplementeerd, wordt de naam van het eind punt weer ge
 
 ## <a name="view-logging-data"></a>Logboek gegevens weer geven
 
-Logboek gegevens kunnen worden gedownload onder Details van **eind punten**  >  **Details**.
+Logboek gegevens kunnen alleen worden geëxporteerd als u naar de pagina van het eind punt gaat onder **implementaties**.
 > [!NOTE]
 >Logboek gegevens zijn 30 dagen beschikbaar op opslag van micro soft-eigendom. Deze wordt daarna verwijderd. Als een opslag account van een klant aan het Cognitive Services-abonnement is gekoppeld, worden de logboek gegevens niet automatisch verwijderd.
 
@@ -75,7 +75,7 @@ Logboek gegevens kunnen worden gedownload onder Details van **eind punten**  >  
 
 * [Meer informatie over het gebruik van uw aangepaste model](how-to-specify-source-language.md)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 - [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)

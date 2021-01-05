@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: be01309fee3454fbd4be78130f9826b493e7bf7a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 51f9ad4fea1c139cee5974ecd81645c9a904feb4
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033762"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854890"
 ---
 # <a name="what-is-custom-speech"></a>Wat is Custom Speech?
 
@@ -43,6 +43,23 @@ Dit diagram markeert de onderdelen waaruit de [Custom speech Portal](https://aka
 ## <a name="set-up-your-azure-account"></a>Uw Azure-account instellen
 
 U moet een Azure-account en een spraak service-abonnement hebben voordat u de [Custom speech Portal](https://speech.microsoft.com/customspeech) kunt gebruiken om een aangepast model te maken. Als u geen account en abonnement hebt, [kunt u de Speech-service gratis uitproberen](overview.md#try-the-speech-service-for-free).
+
+Als u van plan bent een aangepast model met audio gegevens te trainen, kiest u een van de volgende regio's met specifieke hardware die beschikbaar is voor training. Dit verkort de tijd die nodig is voor het trainen van een model.
+
+* Australië - oost
+* Canada - midden
+* India - centraal
+* VS - oost
+* VS - oost 2
+* VS - noord-centraal
+* Europa - noord
+* South Central US
+* Azië - zuidoost
+* Verenigd Koninkrijk Zuid
+* VS (overheid) - Arizona
+* VS (overheid) - Virginia
+* Europa -west
+* West US 2
 
 > [!NOTE]
 > Zorg ervoor dat u een Standard-abonnement (S0) maakt. Gratis (F0) abonnementen worden niet ondersteund.

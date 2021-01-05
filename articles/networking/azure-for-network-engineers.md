@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 06/25/2020
 ms.author: osamaz
-ms.openlocfilehash: 4f513da4e7883cd273098039c9c4a4645d849f0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e13dc868512dba15c5b335c1774aaa540eef8157
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85516217"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861412"
 ---
 # <a name="azure-for-network-engineers"></a>Azure voor netwerktechnici
 Als een conventionele netwerk technicus hebt u fysieke activa, zoals routers, switches, kabels, firewalls voor het bouwen van een infra structuur. U hebt op een logische laag het virtuele LAN (VLAN) geconfigureerd, het STP (ring Tree Protocol), routerings protocollen (RIP, OSPF, BGP). U hebt uw netwerk beheerd met beheer hulpprogramma's en CLI. Netwerken in de Cloud wijken af van de locatie van de netwerk eindpunten logische en het gebruik van routerings protocollen mini maal. U werkt met Azure Resource Manager-API, Azure CLI en Power shell voor het configureren en beheren van assets in Azure. U begint uw netwerk traject in de Cloud door basis tenants van Azure-netwerken te weten te komen. 
@@ -67,7 +67,7 @@ Wanneer u concurrerende vermeldingen in een routerings tabel hebt, selecteert Az
 
 ## <a name="security"></a>Beveiliging
 
-U kunt netwerk verkeer filteren van en naar bronnen in een virtueel netwerk met behulp van netwerk beveiligings groepen. U kunt ook gebruikmaken van virtuele netwerk apparaten (NVA), zoals Azure Firewall of firewalls van andere leveranciers. U kunt bepalen hoe Azure verkeer routeert van subnetten. U kunt ook beperken wie in uw organisatie kan werken met resources in virtuele netwerken.
+U kunt netwerk verkeer filteren van en naar bronnen in een virtueel netwerk met behulp van netwerk beveiligings groepen. U kunt ook virtuele netwerk apparaten (NVA) gebruiken, zoals Azure Firewall of firewalls van andere leveranciers. U kunt bepalen hoe Azure verkeer routeert van subnetten. U kunt ook beperken wie in uw organisatie kan werken met resources in virtuele netwerken.
 
 Een netwerkbeveiligingsgroep (NSG) bevat een lijst met ACL-regels (Access Control List, toegangsbeheerlijst) waarmee netwerkverkeer naar subnetten, NIC’s of beide wordt toegestaan of geweigerd. NSG's kunnen worden gekoppeld aan subnetten of afzonderlijke NIC’s die zijn verbonden met een subnet. Als een NSG is gekoppeld aan een subnet, zijn de ACL-regels van toepassing op alle virtuele machines in dat subnet. U kunt het verkeer naar een afzonderlijke NIC beperken door een NSG rechtstreeks aan een NIC te koppelen.
 

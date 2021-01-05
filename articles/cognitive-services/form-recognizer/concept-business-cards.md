@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 76e19c36f0fa4096966c5dd23d2384b6b30f2271
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ed57c496443c9d1541bfa9933e7718213da116d7
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95498857"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845615"
 ---
 # <a name="business-card-concepts"></a>Concepten van visitekaartjes
 
@@ -374,7 +374,7 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie: het knoop punt ' rea
 }
 ```
 
-Volg de Snelstartgids voor het [extra heren van gegevens van visite kaartjes](./QuickStarts/python-business-cards.md) voor het implementeren van gegevens extractie met behulp van python en de rest API.
+Volg de [Quick Start Snelstartgids om](./QuickStarts/client-library.md) gegevens extractie met behulp van python en de rest API te implementeren.
 
 ## <a name="customer-scenarios"></a>Klant Scenario's  
 
@@ -385,11 +385,11 @@ De gegevens die zijn geëxtraheerd met de Business Card API kunnen worden gebrui
 * Houd de verkoop kansen bij.  
 * Haal contact gegevens in bulk op uit bestaande afbeeldingen van visite kaartjes. 
 
-De Business Card-API voorziet ook in de [verwerkings functie voor AIBuilder-bedrijfs kaarten](/ai-builder/prebuilt-business-card).
+De Business Card-API voorziet ook in de [verwerkings functie van de AI Builder-bedrijfs kaart](/ai-builder/prebuilt-business-card).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Volg de Quick Start van de [Business Cards-API python](./quickstarts/python-business-cards.md) om te beginnen met het herkennen van visite kaartjes.
+- Volg de [Quick](./quickstarts/client-library.md) start om aan de slag te gaan met het herkennen van visite kaartjes.
 
 ## <a name="see-also"></a>Zie ook
 

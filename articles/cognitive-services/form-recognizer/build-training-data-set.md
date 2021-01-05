@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: 513d98ae274c668197b066c742119055248f37f9
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 661b0bbf1aa389dc76567d95ad917548255a1b35
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911712"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845594"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Een trainings gegevensverzameling voor een aangepast model bouwen
 
@@ -72,11 +72,8 @@ Als u de volgende inhoud aan de aanvraag tekst toevoegt, wordt de API getraind m
 
 Nu u hebt geleerd hoe u een set trainings gegevens bouwt, volgt u een Snelstartgids om een aangepast model voor formulier herkenning te trainen en te beginnen met het gebruik ervan in uw formulieren.
 
-* [Een model trainen en formulier gegevens extra heren met behulp van de client bibliotheek](./quickstarts/client-library.md)
-* [Een model trainen en formulier gegevens extra heren met behulp van krul](./quickstarts/curl-train-extract.md)
-* [Een model trainen en formulier gegevens extra heren met behulp van de REST API en python](./quickstarts/python-train-extract.md)
+* [Een model trainen en formulier gegevens extra heren met behulp van de client bibliotheek of de REST API](./quickstarts/client-library.md)
 * [Trainen met labels met behulp van het voor beeld-label programma](./quickstarts/label-tool.md)
-* [Trainen met labels met behulp van de REST API en Python](./quickstarts/python-labeled-data.md)
 
 ## <a name="see-also"></a>Zie ook
 

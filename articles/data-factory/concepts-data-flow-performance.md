@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 11/24/2020
-ms.openlocfilehash: cc06f12317f5e30721452e07bd4dc5f50dfdb7ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 12/18/2020
+ms.openlocfilehash: d23b2f65f25b704beaee12c53e47706653dcc208
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022357"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858569"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -115,7 +115,7 @@ Gegevens stromen distribueren de gegevens verwerking over verschillende knoop pu
 
 De standaard cluster grootte is vier Stuur knooppunten en vier werk knooppunten.  Bij het verwerken van meer gegevens worden grotere clusters aanbevolen. Hieronder ziet u de mogelijke opties voor de grootte:
 
-| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Notities |
+| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Opmerkingen |
 | ------------ | ------------ | ----------- | ----- |
 | 4 | 4 | 8 | Niet beschikbaar voor berekenings optimalisatie |
 | 8 | 8 | 16 | |
@@ -169,7 +169,7 @@ U kunt lezen van Azure SQL Database met behulp van een tabel of een SQL-query. A
 
 ### <a name="azure-synapse-analytics-sources"></a>Azure Synapse Analytics-bronnen
 
-Wanneer u Azure Synapse Analytics gebruikt, is een instelling met de naam **fase ring inschakelen** aanwezig in de bron opties. Dit maakt het mogelijk om ADF te lezen van Synapse met ```Polybase``` , waardoor de Lees prestaties aanzienlijk worden verbeterd. ```Polybase```Als u inschakelen hebt, moet u een Azure Blob Storage of Azure data Lake Storage Gen2 tijdelijke locatie opgeven in de instellingen voor de gegevens stroom activiteit.
+Wanneer u Azure Synapse Analytics gebruikt, is een instelling met de naam **fase ring inschakelen** aanwezig in de bron opties. Dit maakt het mogelijk om ADF te lezen van Synapse met ```Staging``` , waardoor de Lees prestaties aanzienlijk worden verbeterd. ```Staging```Als u inschakelen hebt, moet u een Azure Blob Storage of Azure data Lake Storage Gen2 tijdelijke locatie opgeven in de instellingen voor de gegevens stroom activiteit.
 
 ![Faseringsmodus inschakelen](media/data-flow/enable-staging.png "Faseringsmodus inschakelen")
 
@@ -216,9 +216,9 @@ Plan een grootte van uw bron en Sink Azure SQL DB en DW vóór de uitvoering van
 
 ### <a name="azure-synapse-analytics-sinks"></a>Azure Synapse Analytics-sinks
 
-Wanneer u naar Azure Synapse Analytics schrijft, moet u ervoor zorgen dat het **inschakelen van staging** is ingesteld op waar. Op deze manier kan ADF schrijven met [poly base](/sql/relational-databases/polybase/polybase-guide) , waarmee de gegevens effectief worden geladen. U moet verwijzen naar een Azure Data Lake Storage Gen2-of Azure Blob Storage-account voor het faseren van de gegevens bij gebruik van poly base.
+Wanneer u naar Azure Synapse Analytics schrijft, moet u ervoor zorgen dat het **inschakelen van staging** is ingesteld op waar. Dit maakt het mogelijk om ADF te schrijven met behulp van de [SQL copy-opdracht](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql) , die de gegevens effectief laadt. U moet verwijzen naar een Azure Data Lake Storage Gen2-of Azure Blob Storage-account voor het faseren van de gegevens bij gebruik van staging.
 
-Met uitzonde ring van poly Base, zijn dezelfde aanbevolen procedures van toepassing op Azure Synapse Analytics als Azure SQL Database.
+Met uitzonde ring van fase ring, zijn dezelfde aanbevolen procedures van toepassing op Azure Synapse Analytics als Azure SQL Database.
 
 ### <a name="file-based-sinks"></a>Op bestanden gebaseerde sinks 
 
@@ -309,6 +309,14 @@ Het uitvoeren van taken zal waarschijnlijk de langste tijd duren om end-to-end u
 ### <a name="overloading-a-single-data-flow"></a>Eén gegevens stroom overbelasten
 
 Als u al uw logica in één gegevens stroom plaatst, wordt de volledige taak door ADF uitgevoerd op één Spark-exemplaar. Hoewel dit een manier is om de kosten te reduceren, worden verschillende logische stromen gecombineerd en kunnen ze moeilijk worden bewaakt en worden fouten opgespoord. Als een onderdeel mislukt, zullen alle andere delen van de taak ook mislukken. Het Azure Data Factory Team raadt aan om gegevens stromen te organiseren door onafhankelijke stromen van bedrijfs logica. Als uw gegevens stroom te groot wordt, kunt u deze opsplitsen in gescheiden onderdelen, waardoor bewaking en fout opsporing eenvoudiger zijn. Hoewel er geen vaste limiet is voor het aantal trans formaties in een gegevens stroom, wordt de taak met te veel complex gemaakt.
+
+### <a name="execute-sinks-in-parallel"></a>Sinks parallel uitvoeren
+
+Het standaard gedrag van gegevens stroom-sinks is om elke Sink sequentieel, op een seriële manier uit te voeren en om te voor komen dat de gegevens stroom wordt uitgevoerd wanneer er een fout optreedt in de sink. Daarnaast worden alle sinks standaard ingesteld op dezelfde groep, tenzij u naar de eigenschappen van de gegevens stroom gaat en verschillende prioriteiten instelt voor de sinks.
+
+Met gegevens stromen kunt u sinks groeperen in groepen op het tabblad Eigenschappen van gegevens stroom in de gebruikers interface van UI Designer. U kunt de volg orde van de uitvoering van uw sinks instellen en de combi natie van wastafels groeperen met hetzelfde groeps nummer. Als u groepen wilt beheren, kunt u een ADF vragen om sinks in dezelfde groep uit te voeren, zodat deze parallel worden uitgevoerd.
+
+In de activiteit gegevens stroom uitvoeren met pijp lijn onder de sectie eigenschappen van ' sink ' is een optie om het laden van parallelle sinks in te scha kelen. Wanneer u ' parallel uitvoeren ' inschakelt, geeft u aan dat gegevens stromen op hetzelfde moment worden geschreven naar verbonden sinks, in plaats van op een opeenvolgende manier. Als u de parallelle optie wilt gebruiken, moeten de sinks zijn gegroepeerd en met dezelfde stroom worden verbonden via een nieuwe vertakking of voorwaardelijke splitsing.
 
 ## <a name="next-steps"></a>Volgende stappen
 

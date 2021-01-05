@@ -8,13 +8,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.author: makromer
-ms.date: 11/24/2020
-ms.openlocfilehash: 1c0ed7cf38cc01623169216ec45e88d198ede3d2
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.date: 01/03/2021
+ms.openlocfilehash: 3eff23a42a6ac5f5360bdebfcc692e13acb3e8b0
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095080"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858774"
 ---
 # <a name="data-flow-activity-in-azure-data-factory"></a>Gegevens stroom activiteit in Azure Data Factory
 
@@ -38,6 +38,8 @@ Gebruik de activiteit gegevens stroom om gegevens te transformeren en te verplaa
          "computeType": "General"
       },
       "traceLevel": "Fine",
+      "runConcurrently": true,
+      "continueOnError": true,      
       "staging": {
           "linkedService": {
               "referenceName": "MyStagingLinkedService",
@@ -95,6 +97,14 @@ Als u een Azure Synapse Analytics als sink of bron gebruikt, moet u een fasering
 Als u niet elke pijplijn uitvoering van uw gegevens stroom activiteiten nodig hebt om alle uitgebreide telemetriegegevens logboeken volledig te registreren, kunt u desgewenst uw logboek registratie niveau instellen op basis of geen. Bij het uitvoeren van uw gegevens stromen in de modus ' uitgebreid ' (standaard), vraagt u om de automatische logboek activiteit voor elk afzonderlijke partitie niveau bij de gegevens transformatie. Dit kan een dure bewerking zijn, zodat u alleen uitgebreide informatie kunt inschakelen als u problemen met het oplossen van gegevens stroom en de prestaties van de pijp lijn verbetert. In de modus standaard worden alleen transformatie duur vastgelegd terwijl ' geen ' een samen vatting van de duur geeft.
 
 ![Logboek registratie niveau](media/data-flow/logging.png "Niveau van logboek registratie instellen")
+
+## <a name="sink-properties"></a>Eigenschappen van Sink
+
+Met de groeperings functie in gegevens stromen kunt u de volg orde van de uitvoering van uw sinks instellen en de combi natie van sinks groeperen met hetzelfde groeps nummer. Als u groepen wilt beheren, kunt u de ADF vragen om sinks in dezelfde groep parallel te voeren. U kunt ook de Sink-groep zo instellen dat deze verder gaat, zelfs nadat een van de sinks een fout heeft aangetroffen.
+
+Het standaard gedrag van gegevens stroom-sinks is om elke Sink sequentieel, op een seriële manier uit te voeren en om te voor komen dat de gegevens stroom wordt uitgevoerd wanneer er een fout optreedt in de sink. Daarnaast worden alle sinks standaard ingesteld op dezelfde groep, tenzij u naar de eigenschappen van de gegevens stroom gaat en verschillende prioriteiten instelt voor de sinks.
+
+![Eigenschappen van Sink](media/data-flow/sink-properties.png "Sink-eigenschappen instellen")
 
 ## <a name="parameterizing-data-flows"></a>Parameterizing-gegevens stromen
 

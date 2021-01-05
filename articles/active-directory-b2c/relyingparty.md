@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9c50bd71f4e2e5bbe12518f5a5d1cd486af9723a
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0f0f3b6ffcb7ee12a692470b922cf23a3f0f40f0
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509748"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858431"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
@@ -93,8 +93,8 @@ Het element **endpoint** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Yes | Een unieke id van het eind punt.|
-| UserJourneyReferenceId | Yes | Een id van de gebruikers traject in het beleid. Zie voor meer informatie [gebruikers ritten](userjourneys.md)  | 
+| Id | Ja | Een unieke id van het eind punt.|
+| UserJourneyReferenceId | Ja | Een id van de gebruikers traject in het beleid. Zie voor meer informatie [gebruikers ritten](userjourneys.md)  | 
 
 In het volgende voor beeld ziet u een Relying Party met het [User info-eind punt](userinfo-endpoint.md):
 
@@ -131,7 +131,7 @@ Het element **DefaultUserJourney** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ReferenceId | Yes | Een id van de gebruikers traject in het beleid. Zie voor meer informatie [gebruikers ritten](userjourneys.md) |
+| ReferenceId | Ja | Een id van de gebruikers traject in het beleid. Zie voor meer informatie [gebruikers ritten](userjourneys.md) |
 
 ## <a name="userjourneybehaviors"></a>UserJourneyBehaviors
 
@@ -152,9 +152,9 @@ Het element **SingleSignOn** bevat in het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Bereik | Yes | Het bereik van het gedrag bij eenmalige aanmelding. Mogelijke waarden: `Suppressed` , `Tenant` , `Application` of `Policy` . De `Suppressed` waarde geeft aan dat het gedrag wordt onderdrukt en dat de gebruiker altijd wordt gevraagd een id-provider te selecteren.  De `Tenant` waarde geeft aan dat het gedrag wordt toegepast op alle beleids regels in de Tenant. Bijvoorbeeld: een gebruiker die door twee beleids ritten voor een Tenant navigeert, wordt niet gevraagd om een id-provider te selecteren. De `Application` waarde geeft aan dat het gedrag wordt toegepast op alle beleids regels voor de toepassing die de aanvraag maakt. Bijvoorbeeld: een gebruiker die door twee beleids ritten voor een toepassing navigeert, wordt niet gevraagd om een id-provider te selecteren. De `Policy` waarde geeft aan dat het gedrag alleen van toepassing is op een beleid. Bijvoorbeeld: een gebruiker die door twee beleids trajecten voor een vertrouwens raamwerk navigeert, wordt gevraagd een id-provider selectie in te scha kelen bij het overschakelen tussen de beleids regels. |
-| KeepAliveInDays | Yes | Hiermee wordt bepaald hoe lang de gebruiker aangemeld blijft. Als u de waarde instelt op 0, wordt de KMSI-functionaliteit uitgeschakeld. Zie [me aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi)voor meer informatie. |
-|EnforceIdTokenHintOnLogout| No|  Forceren dat een eerder uitgegeven ID-token wordt door gegeven aan het afmeldings eindpunt als hint voor de huidige geverifieerde sessie van de eind gebruiker met de client. Mogelijke waarden: `false` (standaard) of `true` . Zie voor meer informatie [Web Sign-in with OpenID Connect Connect](openid-connect.md).  |
+| Bereik | Ja | Het bereik van het gedrag bij eenmalige aanmelding. Mogelijke waarden: `Suppressed` , `Tenant` , `Application` of `Policy` . De `Suppressed` waarde geeft aan dat het gedrag wordt onderdrukt en dat de gebruiker altijd wordt gevraagd een id-provider te selecteren.  De `Tenant` waarde geeft aan dat het gedrag wordt toegepast op alle beleids regels in de Tenant. Bijvoorbeeld: een gebruiker die door twee beleids ritten voor een Tenant navigeert, wordt niet gevraagd om een id-provider te selecteren. De `Application` waarde geeft aan dat het gedrag wordt toegepast op alle beleids regels voor de toepassing die de aanvraag maakt. Bijvoorbeeld: een gebruiker die door twee beleids ritten voor een toepassing navigeert, wordt niet gevraagd om een id-provider te selecteren. De `Policy` waarde geeft aan dat het gedrag alleen van toepassing is op een beleid. Bijvoorbeeld: een gebruiker die door twee beleids trajecten voor een vertrouwens raamwerk navigeert, wordt gevraagd een id-provider selectie in te scha kelen bij het overschakelen tussen de beleids regels. |
+| KeepAliveInDays | Ja | Hiermee wordt bepaald hoe lang de gebruiker aangemeld blijft. Als u de waarde instelt op 0, wordt de KMSI-functionaliteit uitgeschakeld. Zie [me aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi)voor meer informatie. |
+|EnforceIdTokenHintOnLogout| Nee|  Forceren dat een eerder uitgegeven ID-token wordt door gegeven aan het afmeldings eindpunt als hint voor de huidige geverifieerde sessie van de eind gebruiker met de client. Mogelijke waarden: `false` (standaard) of `true` . Zie voor meer informatie [Web Sign-in with OpenID Connect Connect](openid-connect.md).  |
 
 
 ## <a name="journeyinsights"></a>JourneyInsights
@@ -163,12 +163,12 @@ Het **JourneyInsights** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| TelemetryEngine | Yes | De waarde moet zijn `ApplicationInsights` . |
-| InstrumentationKey | Yes | De teken reeks die de instrumentatie sleutel voor het Application Insights-element bevat. |
-| DeveloperMode | Yes | Mogelijke waarden: `true` of `false` . Als `true` Application Insights de telemetrie versnellen door de verwerkings pijplijn. Deze instelling is geschikt voor ontwikkeling, maar is beperkt bij hoge volumes. De gedetailleerde activiteiten logboeken zijn alleen ontworpen om te helpen bij het ontwikkelen van aangepast beleid. Gebruik de ontwikkelings modus niet in productie. In Logboeken worden alle claims verzameld die worden verzonden naar en van de id-providers tijdens de ontwikkeling. Bij gebruik in productie neemt de ontwikkelaar de verantwoordelijkheid voor PII (privé Identificeer bare informatie) die is verzameld in het logboek van de app Insights waarvan ze eigenaar zijn. Deze gedetailleerde logboeken worden alleen verzameld wanneer deze waarde is ingesteld op `true` .|
-| ClientEnabled | Yes | Mogelijke waarden: `true` of `false` . Indien `true` , verzendt het Application Insights script aan de client zijde voor het bijhouden van de pagina weergave en fouten aan de client zijde. |
-| ServerEnabled | Yes | Mogelijke waarden: `true` of `false` . Als `true` de bestaande UserJourneyRecorder-JSON als aangepaste gebeurtenis wordt verzonden naar Application Insights. |
-| TelemetryVersion | Yes | De waarde moet zijn `1.0.0` . |
+| TelemetryEngine | Ja | De waarde moet zijn `ApplicationInsights` . |
+| InstrumentationKey | Ja | De teken reeks die de instrumentatie sleutel voor het Application Insights-element bevat. |
+| DeveloperMode | Ja | Mogelijke waarden: `true` of `false` . Als `true` Application Insights de telemetrie versnellen door de verwerkings pijplijn. Deze instelling is geschikt voor ontwikkeling, maar is beperkt bij hoge volumes. De gedetailleerde activiteiten logboeken zijn alleen ontworpen om te helpen bij het ontwikkelen van aangepast beleid. Gebruik de ontwikkelings modus niet in productie. In Logboeken worden alle claims verzameld die worden verzonden naar en van de id-providers tijdens de ontwikkeling. Bij gebruik in productie neemt de ontwikkelaar de verantwoordelijkheid voor PII (privé Identificeer bare informatie) die is verzameld in het logboek van de app Insights waarvan ze eigenaar zijn. Deze gedetailleerde logboeken worden alleen verzameld wanneer deze waarde is ingesteld op `true` .|
+| ClientEnabled | Ja | Mogelijke waarden: `true` of `false` . Indien `true` , verzendt het Application Insights script aan de client zijde voor het bijhouden van de pagina weergave en fouten aan de client zijde. |
+| ServerEnabled | Ja | Mogelijke waarden: `true` of `false` . Als `true` de bestaande UserJourneyRecorder-JSON als aangepaste gebeurtenis wordt verzonden naar Application Insights. |
+| TelemetryVersion | Ja | De waarde moet zijn `1.0.0` . |
 
 Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md) voor meer informatie
 
@@ -190,7 +190,7 @@ Het element **ContentDefinitionParameter** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Name | Yes | De naam van het sleutel waarde-paar. |
+| Naam | Ja | De naam van het sleutel waarde-paar. |
 
 Zie [de gebruikers interface configureren met dynamische inhoud met behulp van aangepast beleid](customize-ui-with-html.md#configure-dynamic-custom-page-content-uri) voor meer informatie.
 
@@ -200,7 +200,7 @@ Het element **TechnicalProfile** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Id | Yes | De waarde moet zijn `PolicyProfile` . |
+| Id | Ja | De waarde moet zijn `PolicyProfile` . |
 
 De **TechnicalProfile** bevat de volgende elementen:
 
@@ -217,7 +217,7 @@ Het **protocol** element bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Name | Yes | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
+| Naam | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
 
 ### <a name="metadata"></a>Metagegevens
 
@@ -225,12 +225,13 @@ Wanneer het protocol is `SAML` , bevat een meta gegevenselement de volgende elem
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| IdpInitiatedProfileEnabled | No | Hiermee wordt aangegeven of de door IDP geïnitieerde stroom wordt ondersteund. Mogelijke waarden: `true` of `false` (standaard). | 
-| XmlSignatureAlgorithm | No | De methode die Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord. Mogelijke waarden: `Sha256` , `Sha384` , `Sha512` of `Sha1` . Zorg ervoor dat u het handtekening algoritme aan beide zijden met dezelfde waarde configureert. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund. Zie [SAML-Uitgever van technische profielen](saml-issuer-technical-profile.md#metadata)voor meer informatie over het configureren van de SAML-bevestiging. |
-| DataEncryptionMethod | No | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de gegevens met behulp van het Advanced Encryption Standard-algoritme (AES). De meta gegevens bepalen de waarde van het `<EncryptedData>` element in het SAML-antwoord. Mogelijke waarden: `Aes256` (standaard), `Aes192` , `Sha512` of ` Aes128` . |
-| KeyEncryptionMethod| No | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de kopie van de sleutel die is gebruikt voor het versleutelen van de gegevens. De meta gegevens bepalen de waarde van het  `<EncryptedKey>` element in het SAML-antwoord. Mogelijke waarden: ` Rsa15` (standaard)-RSA-algoritme (open bare sleutel crypto grafie Standard) versie 1,5, ` RsaOaep` -RSA OAEP-versleutelings algoritme (optimale asymmetrische-coderings opvulling). |
-| UseDetachedKeys | No |  Mogelijke waarden: `true` , of `false` (standaard). Wanneer de waarde is ingesteld op `true` , Azure AD B2C de indeling van de versleutelde beweringen wijzigen. Als u ontkoppelde sleutels gebruikt, wordt de versleutelde bewering toegevoegd als onderliggend element van de EncrytedAssertion in plaats van de EncryptedData. |
-| WantsSignedResponses| No | Hiermee wordt aangegeven of Azure AD B2C de `Response` sectie van het SAML-antwoord ondertekent. Mogelijke waarden: `true` (standaard) of `false` .  |
+| IdpInitiatedProfileEnabled | Nee | Hiermee wordt aangegeven of de door IDP geïnitieerde stroom wordt ondersteund. Mogelijke waarden: `true` of `false` (standaard). | 
+| XmlSignatureAlgorithm | Nee | De methode die Azure AD B2C gebruikt voor het ondertekenen van het SAML-antwoord. Mogelijke waarden: `Sha256` , `Sha384` , `Sha512` of `Sha1` . Zorg ervoor dat u het handtekening algoritme aan beide zijden met dezelfde waarde configureert. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund. Zie [SAML-Uitgever van technische profielen](saml-issuer-technical-profile.md#metadata)voor meer informatie over het configureren van de SAML-bevestiging. |
+| DataEncryptionMethod | Nee | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de gegevens met behulp van het Advanced Encryption Standard-algoritme (AES). De meta gegevens bepalen de waarde van het `<EncryptedData>` element in het SAML-antwoord. Mogelijke waarden: `Aes256` (standaard), `Aes192` , `Sha512` of ` Aes128` . |
+| KeyEncryptionMethod| Nee | Hiermee wordt de methode aangegeven die Azure AD B2C gebruikt voor het versleutelen van de kopie van de sleutel die is gebruikt voor het versleutelen van de gegevens. De meta gegevens bepalen de waarde van het  `<EncryptedKey>` element in het SAML-antwoord. Mogelijke waarden: ` Rsa15` (standaard)-RSA-algoritme (open bare sleutel crypto grafie Standard) versie 1,5, ` RsaOaep` -RSA OAEP-versleutelings algoritme (optimale asymmetrische-coderings opvulling). |
+| UseDetachedKeys | Nee |  Mogelijke waarden: `true` , of `false` (standaard). Wanneer de waarde is ingesteld op `true` , Azure AD B2C de indeling van de versleutelde beweringen wijzigen. Als u ontkoppelde sleutels gebruikt, wordt de versleutelde bewering toegevoegd als onderliggend element van de EncrytedAssertion in plaats van de EncryptedData. |
+| WantsSignedResponses| Nee | Hiermee wordt aangegeven of Azure AD B2C de `Response` sectie van het SAML-antwoord ondertekent. Mogelijke waarden: `true` (standaard) of `false` .  |
+| RemoveMillisecondsFromDateTime| Nee | Geeft aan of de millisconds wordt verwijderd uit datum/tijd-waarden binnen het SAML-antwoord (dit zijn onder andere IssueInstant, NotBefore, NotOnOrAfter en AuthnInstant). Mogelijke waarden: `false` (standaard) of `true` .  |
 
 ### <a name="outputclaims"></a>OutputClaims
 
@@ -244,9 +245,9 @@ Het **output claim** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| ClaimTypeReferenceId | Yes | Een verwijzing naar een **claim** type dat al is gedefinieerd in de sectie **ClaimsSchema** in het beleids bestand. |
-| Standaard | No | Een standaard waarde die kan worden gebruikt als de claim waarde leeg is. |
-| PartnerClaimType | No | Verzendt de claim in een andere naam zoals deze is geconfigureerd in de definitie claim type. |
+| ClaimTypeReferenceId | Ja | Een verwijzing naar een **claim** type dat al is gedefinieerd in de sectie **ClaimsSchema** in het beleids bestand. |
+| Standaard | Nee | Een standaard waarde die kan worden gebruikt als de claim waarde leeg is. |
+| PartnerClaimType | Nee | Verzendt de claim in een andere naam zoals deze is geconfigureerd in de definitie claim type. |
 
 ### <a name="subjectnaminginfo"></a>SubjectNamingInfo
 
@@ -258,8 +259,8 @@ Het element **SubjectNamingInfo** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Claim type | Yes | Een verwijzing naar de **PartnerClaimType** van een uitvoer claim. De uitvoer claims moeten worden gedefinieerd in de **OutputClaims** -verzameling van het Relying Party-beleid. |
-| Indeling | No | Wordt gebruikt voor SAML-relying party's voor het instellen van de **NameID-indeling** die wordt geretourneerd in de SAML-bevestiging. |
+| Claim type | Ja | Een verwijzing naar de **PartnerClaimType** van een uitvoer claim. De uitvoer claims moeten worden gedefinieerd in de **OutputClaims** -verzameling van het Relying Party-beleid. |
+| Indeling | Nee | Wordt gebruikt voor SAML-relying party's voor het instellen van de **NameID-indeling** die wordt geretourneerd in de SAML-bevestiging. |
 
 In het volgende voor beeld ziet u hoe u een OpenID Connect Connect-Relying Party definieert. De onderwerpnaam informatie is geconfigureerd als `objectId` :
 

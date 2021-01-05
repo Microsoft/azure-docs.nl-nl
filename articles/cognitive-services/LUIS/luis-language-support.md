@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 12/09/2019
-ms.openlocfilehash: 1da43d0ef208d61ced6c8ca8dbc7603e0ef51155
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 9363a2dacd91d3868e69e47381eea528e358935c
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96021568"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845461"
 ---
 # <a name="language-and-region-support-for-luis"></a>Taal-en regio ondersteuning voor LUIS
 
@@ -30,12 +30,12 @@ LUIS begrijpt uitingen in de volgende talen:
 
 | Taal |Landinstelling  |  Vooraf gebouwd domein | Vooraf gebouwde entiteit | Aanbevelingen voor woordgroepen lijst | **[Tekst analyse](../text-analytics/language-support.md)<br>(Sentiment en<br>Woord|
 |--|--|:--:|:--:|:--:|:--:|
-| Engels (Verenigde Staten) |`en-US` | ✔ | ✔  |✔|✔|
 | Arabisch (preview-modern Standard-Arabisch) |`ar-AR`|-|-|-|-|
 | *[Chinees](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
 | Nederlands |`nl-NL` |✔|-|-|✔|
-| Frans (Frankrijk) |`fr-FR` |✔| ✔ |✔ |✔|
+| Engels (Verenigde Staten) |`en-US` | ✔ | ✔  |✔|✔|
 | Frans (Canada) |`fr-CA` |-|-|-|✔|
+| Frans (Frankrijk) |`fr-FR` |✔| ✔ |✔ |✔|
 | Duits |`de-DE` |✔| ✔ |✔ |✔|
 | Gujarati | `gu-IN`|-|-|-|-|
 | Hindi | `hi-IN`|-|✔|-|-|
@@ -44,8 +44,8 @@ LUIS begrijpt uitingen in de volgende talen:
 | Koreaans |`ko-KR` |✔|-|-|Alleen sleutel woorden|
 | Mahrati | `mr-IN`|-|-|-|-|
 | Portugees (Brazilië) |`pt-BR` |✔| ✔ |✔ |niet alle subcultuuren|
-| Spaans (Spanje) |`es-ES` |✔| ✔ |✔|✔|
 | Spaans (Mexico)|`es-MX` |-|-|✔|✔|
+| Spaans (Spanje) |`es-ES` |✔| ✔ |✔|✔|
 | Tamil | `ta-IN`|-|-|-|-|
 | Telugu | `te-IN`|-|-|-|-|
 | Turks | `tr-TR` |✔|✔|-|Alleen sentiment|

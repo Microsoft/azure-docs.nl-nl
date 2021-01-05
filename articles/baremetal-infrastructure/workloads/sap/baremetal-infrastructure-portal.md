@@ -2,22 +2,24 @@
 title: BareMetal instantie-eenheden in azure
 description: Meer informatie over het identificeren en gebruiken van BareMetal-exemplaar eenheden via de Azure Portal.
 ms.topic: how-to
-ms.date: 12/31/2020
-ms.openlocfilehash: 927baa79519781ef74920b17bc9fcd858f0f6c6f
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.date: 1/4/2021
+ms.openlocfilehash: 30e1661e82546dbaf6d8dc4288ad896df89f401e
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97829189"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861038"
 ---
 # <a name="manage-baremetal-instances-through-the-azure-portal"></a>BareMetal-instanties beheren via de Azure Portal
  
 In dit artikel wordt uitgelegd hoe [BareMetal-exemplaren](baremetal-overview-architecture.md)worden weer gegeven in de [Azure Portal](https://portal.azure.com/) . In dit artikel ziet u ook de activiteiten die u kunt uitvoeren in de Azure Portal met uw geïmplementeerde BareMetal-exemplaar eenheden. 
  
 ## <a name="register-the-resource-provider"></a>De resourceprovider registreren
-Een Azure-resource provider voor BareMetal-instanties biedt zicht baarheid van de instanties in de Azure Portal, momenteel beschikbaar als open bare preview. Het Azure-abonnement dat u gebruikt voor implementaties van BareMetal-exemplaar registreert standaard de resource provider *BareMetalInfrastructure* . Als uw geïmplementeerde instantie-eenheden van BareMetal niet worden weer geven, moet u de resource provider registreren bij uw abonnement. Er zijn twee manieren om de resource provider voor de BareMetal-instantie te registreren:
+Een Azure-resource provider voor BareMetal-instanties biedt zicht baarheid van de instanties in de Azure Portal, momenteel beschikbaar als open bare preview. Het Azure-abonnement dat u gebruikt voor implementaties van BareMetal-exemplaar registreert standaard de resource provider *BareMetalInfrastructure* . Als uw geïmplementeerde instantie-eenheden van BareMetal niet worden weer geven, moet u de resource provider registreren bij uw abonnement. 
+
+Er zijn twee manieren om de resource provider voor de BareMetal-instantie te registreren:
  
-* [Azure CLI](#azure-cli)
+* [Azure-CLI](#azure-cli)
  
 * [Azure Portal](#azure-portal)
  
@@ -85,15 +87,15 @@ De kenmerken in de installatie kopie kijken niet veel af van de kenmerken van de
 Aan de rechter kant ziet u de naam van de eenheid, het besturings systeem (OS), het IP-adres en de SKU, waarin het aantal CPU-threads en het geheugen wordt weer gegeven. U ziet ook de energie status en de hardware-versie (revisie van de BareMetal-instantie stempel). De energie status geeft aan of de hardware-eenheid is ingeschakeld of uitgeschakeld. De details van het besturings systeem geven echter niet aan of het actief is en wordt uitgevoerd.
  
 De mogelijke hardware revisies zijn:
+
+* Revisie 3 (Rev 3)
+
+* Revisie 4 (Rev 4)
  
-* Revisie 3
- 
-* Revisie 4
- 
-* Revisie 4,2
+* Revisie 4,2 (Rev 4,2)
  
 >[!NOTE]
->Revisie 4,2 is de meest recente BareMetal-infra structuur met de revisie 4-architectuur. Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen Azure Vm's en BareMetal exemplaar eenheden die zijn geïmplementeerd in revisie 4 stem pels of rijen. Zie [BareMetal-infra structuur op Azure](baremetal-overview-architecture.md)voor meer informatie over de verschillende revisies.
+>Rev 4,2 is de meest recente BareMetal-infra structuur met een eigenlijke rebranding en maakt gebruik van de bestaande Rev 4-architectuur. Rev 4 biedt dichter nabijheid van de Azure virtual machine-hosts (VM). Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen Azure Vm's en BareMetal exemplaar eenheden die zijn geïmplementeerd in Rev 4-stem pels of-rijen. U kunt uw BareMetal-instanties openen en beheren via de Azure Portal. Zie [BareMetal-infra structuur op Azure](baremetal-overview-architecture.md)voor meer informatie.
  
 Aan de rechter kant ziet u ook de naam van de [locatie van de Azure nabijheid](../../../virtual-machines/linux/co-location.md) , die automatisch wordt gemaakt voor elke geïmplementeerde BareMetal-exemplaar-eenheid. Verwijs naar de plaatsings groep voor proximity wanneer u de virtuele Azure-machines implementeert die als host fungeren voor de toepassingslaag. Wanneer u de plaatsings groep voor proximity gebruikt die is gekoppeld aan de BareMetal-exemplaar-eenheid, zorgt u ervoor dat de virtuele Azure-machines dicht bij de BareMetal-exemplaar-eenheid worden geïmplementeerd.
  

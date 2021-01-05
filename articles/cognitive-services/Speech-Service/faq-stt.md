@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: 32f6a9dae1a5b0be604b53d814ebc85cb7813b91
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a78e18de1f495feb6234fa5bfd97162d8b80de4c
+ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353762"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857321"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
@@ -25,7 +25,7 @@ Als u in deze veelgestelde vragen geen antwoorden op uw vragen kunt vinden, kunt
 
 **V: wat is het verschil tussen een basislijn model en een aangepaste spraak op het tekst model?**
 
-**A**: een basislijn model is getraind met behulp van gegevens van micro soft en is al geïmplementeerd in de Cloud. U kunt een aangepast model gebruiken om een model aan te passen aan een specifieke omgeving met specifieke omgevings ruis of-taal. In fabrieks-, auto-of geluids-en geluids eigen straten is een aangepast akoestisch model vereist. Voor onderwerpen als biologie, natuur kunde, radiology, product namen en aangepaste acroniemen zou een aangepast taal model nodig zijn.
+**A**: een basislijn model is getraind met behulp van gegevens van micro soft en is al geïmplementeerd in de Cloud. U kunt een aangepast model gebruiken om een model aan te passen aan een specifieke omgeving met specifieke omgevings ruis of-taal. In fabrieks-, auto-of geluids-en geluids eigen straten is een aangepast akoestisch model vereist. Voor onderwerpen als biologie, natuur kunde, radiology, product namen en aangepaste acroniemen zou een aangepast taal model nodig zijn. Als u een aangepast model traint, moet u beginnen met Verwante tekst om de herkenning van speciale termen en zinsdelen te verbeteren.
 
 **V: waar kan ik beginnen als ik een basis lijn model wil gebruiken?**
 
@@ -49,9 +49,15 @@ U kunt basis lijnen en aangepaste modellen implementeren in de portal en vervolg
 
 **A**: op dit moment kunt u een akoestische of taal aanpassings proces niet terugdraaien. U kunt geïmporteerde gegevens en modellen verwijderen wanneer ze zich in een Terminal status bevinden.
 
-**V: wat is het verschil tussen het zoek-en dicteer model en het gespreks model?**
+**V: Ik krijg een aantal resultaten voor elke woord groep met de gedetailleerde uitvoer indeling. Welk account moet ik gebruiken?**
 
-**A**: u kunt kiezen uit meer dan één basislijn model in de speech-service. Het gespreks model is handig voor het herkennen van spraak die in een gespreks stijl wordt gesp roken. Dit model is ideaal voor het transcriberen van telefoon gesprekken. Het model voor zoeken en dicteren is ideaal voor apps met spraak activering. Het universele model is een nieuw model dat gericht is op beide scenario's. Het universele model bevindt zich momenteel op of boven het kwaliteits niveau van het gespreks model in de meeste landen.
+**A**: Neem altijd het eerste resultaat, zelfs als een ander resultaat (' N-Best ') mogelijk een hogere betrouwbaarheids waarde heeft. De spraak service beschouwt het eerste resultaat als het beste. Het kan ook een lege teken reeks zijn als er geen spraak is herkend.
+
+De overige resultaten zijn waarschijnlijk erger en er zijn mogelijk geen volledige kapitalisatie en lees tekens toegepast. Deze resultaten zijn vooral nuttig in speciale scenario's, zoals het geven van gebruikers de optie om correcties uit een lijst te kiezen of om onjuist herkende opdrachten af te handelen.
+
+**V: Waarom zijn er verschillende basis modellen?**
+
+**A**: u kunt kiezen uit meer dan één basis model in de speech-service. Elke model naam bevat de datum waarop deze is toegevoegd. Wanneer u begint met het trainen van een aangepast model, kunt u het meest recente model gebruiken om de beste nauw keurigheid te bereiken. Oudere basis modellen zijn nog steeds beschikbaar wanneer een nieuw model beschikbaar wordt gemaakt. U kunt door gaan met het model dat u hebt gebruikt totdat het is buiten gebruik gesteld (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)). U wordt nog steeds geadviseerd om over te scha kelen naar het meest recente basis model voor betere nauw keurigheid.
 
 **V: kan ik mijn bestaande model (model stacking) bijwerken?**
 
@@ -59,19 +65,27 @@ U kunt basis lijnen en aangepaste modellen implementeren in de portal en vervolg
 
 De oude gegevensset en de nieuwe gegevensset moeten worden gecombineerd in één ZIP-bestand (voor akoestische gegevens) of in een txt-bestand (voor taal gegevens). Wanneer de aanpassing is voltooid, moet het nieuwe, bijgewerkte model opnieuw worden geïmplementeerd om een nieuw eind punt te verkrijgen
 
-**V: wanneer een nieuwe versie van een basis lijn beschikbaar is, wordt mijn implementatie automatisch bijgewerkt?**
+**V: wanneer een nieuwe versie van een basis model beschikbaar is, wordt mijn implementatie automatisch bijgewerkt?**
 
 **A**: implementaties worden niet automatisch bijgewerkt.
 
-Als u een model hebt aangepast en geïmplementeerd met basis lijn V 1.0, blijft die implementatie ongewijzigd. Klanten kunnen het geïmplementeerde model buiten gebruik stellen, opnieuw aanpassen met de nieuwere versie van de basis lijn en opnieuw implementeren.
+Als u een model hebt aangepast en geïmplementeerd, blijft die implementatie. U kunt het geïmplementeerde model buiten gebruik stellen, opnieuw aanpassen met de nieuwere versie van het basis model en opnieuw implementeren voor een betere nauw keurigheid.
+
+Basis modellen en aangepaste modellen worden na enige tijd buiten gebruik gesteld (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)).
 
 **V: kan ik mijn model downloaden en lokaal uitvoeren?**
 
-**A**: modellen kunnen niet lokaal worden gedownload en uitgevoerd.
+**A**: u kunt een aangepast model lokaal uitvoeren in een [docker-container](speech-container-howto.md?tabs=cstt).
+
+**V: kan ik mijn gegevens sets, modellen en implementaties kopiëren naar of verplaatsen naar een andere regio of een ander abonnement?**
+
+**A**: u kunt de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription) gebruiken om een aangepast model naar een andere regio of een ander abonnement te kopiëren. Gegevens sets of implementaties kunnen niet worden gekopieerd. U kunt een gegevensset opnieuw importeren in een ander abonnement en eind punten maken met behulp van de model kopieën.
 
 **V: zijn mijn aanvragen geregistreerd?**
 
-**A**: standaard aanvragen worden niet geregistreerd (audio of transcriptie). Indien nodig kunt u *logboek inhoud van deze eindpunt* optie selecteren wanneer u [een aangepast eind punt maakt](./how-to-custom-speech-train-model.md) om tracering in te scha kelen. Vervolgens worden aanvragen geregistreerd in Azure in beveiligde opslag.
+**A**: standaard aanvragen worden niet geregistreerd (audio of transcriptie). Indien nodig kunt u *logboek inhoud van deze eindpunt* optie selecteren wanneer u [een aangepast eind punt maakt](./how-to-custom-speech-train-model.md). U kunt ook audio logboek registratie inschakelen in de [Speech SDK](speech-sdk.md) op basis van per aanvraag zonder een aangepast eind punt te maken. In beide gevallen worden de geluids-en herkennings resultaten van aanvragen opgeslagen in beveiligde opslag. Voor abonnementen die gebruikmaken van micro soft-opslag, zijn ze 30 dagen beschikbaar.
+
+U kunt de geregistreerde bestanden op de implementatie pagina in speech Studio exporteren als u een aangepast eind punt gebruikt met *logboek inhoud van dit eind punt* ingeschakeld. Als audio logboek registratie via de SDK is ingeschakeld, roept u de [API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetBaseModelLogs) aan voor toegang tot de bestanden.
 
 **V: mijn aanvragen worden beperkt?**
 
@@ -92,7 +106,7 @@ Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limit
 
 **V: wat is de limiet voor de grootte van een gegevensset en waarom is het de limiet?**
 
-**A**: de limiet wordt veroorzaakt door de beperking van de grootte van een bestand voor http-upload. Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limits.md) voor de daad werkelijke limiet.
+**A**: de limiet wordt veroorzaakt door de beperking van de grootte van een bestand voor http-upload. Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limits.md) voor de daad werkelijke limiet. U kunt uw gegevens in meerdere gegevens sets splitsen en allemaal selecteren om het model te trainen.
 
 **V: kan ik mijn tekst bestanden opzip zodat ik een groter tekst bestand kan uploaden?**
 
@@ -118,21 +132,19 @@ Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limit
 
 **V: moet ik de aanpassings gegevens zelf detranscriberen?**
 
-**A**: Ja! U kunt het zelf detranscriberen of een professionele transcriptie-service gebruiken. Sommige gebruikers hebben de voor keur aan professionele transcribers en anderen gebruiken crowdsourcing of de transcripties zelf.
+**A**: Ja. U kunt het zelf detranscriberen of een professionele transcriptie-service gebruiken. Sommige gebruikers hebben de voor keur aan professionele transcribers en anderen gebruiken crowdsourcing of de transcripties zelf.
+
+**V: hoe lang duurt het om de audio gegevens van een aangepast model te trainen?**
+
+**A**: een model trainen met audio gegevens is een lang proces. Afhankelijk van de hoeveelheid gegevens kan het enkele dagen duren voordat een aangepast model is gemaakt. Als deze niet binnen een week kan worden voltooid, kan de service de trainings bewerking afbreken en het model rapporteren als mislukt. Voor snellere resultaten gebruikt u een van de [regio's](custom-speech-overview.md#set-up-your-azure-account) waar speciale hardware beschikbaar is voor training. U kunt het volledig getrainde model naar een andere regio kopiëren met behulp van de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription). Training met alleen tekst is veel sneller en eindigt doorgaans binnen enkele minuten.
+
+Sommige basis modellen kunnen niet worden aangepast met audio gegevens. Voor hen gebruikt de service alleen de tekst van de transcriptie voor training en worden de audio gegevens verwijderd. De training wordt vervolgens veel sneller uitgevoerd en de resultaten zijn hetzelfde als training met alleen tekst.
 
 ## <a name="accuracy-testing"></a>Nauw keurig testen
 
-**V: kan ik offline testen van mijn aangepaste akoestische model uitvoeren met behulp van een aangepast taal model?**
-
-**A**: Ja, alleen het aangepaste taal model selecteren in de vervolg keuzelijst bij het instellen van de offline test.
-
-**V: kan ik offline testen van mijn aangepaste taal model uitvoeren met behulp van een aangepast akoestisch model?**
-
-**A**: Ja, selecteer het aangepaste geluids model in de vervolg keuzelijst bij het instellen van de offline test.
-
 **V: wat is een woord fout (WER) en hoe wordt dit berekend?**
 
-**A**: wer is de evaluatie-metric voor spraak herkenning. WER wordt geteld als het totale aantal fouten, inclusief invoegingen, verwijderingen en vervangingen, gedeeld door het totale aantal woorden in de verwijzings transcriptie. Zie [Word-fout frequentie](https://en.wikipedia.org/wiki/Word_error_rate)voor meer informatie.
+**A**: wer is de evaluatie-metric voor spraak herkenning. WER wordt geteld als het totale aantal fouten, inclusief invoegingen, verwijderingen en vervangingen, gedeeld door het totale aantal woorden in de verwijzings transcriptie. Zie de [nauw keurigheid van Custom speech evalueren](how-to-custom-speech-evaluate-data.md#evaluate-custom-speech-accuracy)voor meer informatie.
 
 **V: Hoe kan ik bepalen of de resultaten van een nauw keurigheid testen goed zijn?**
 

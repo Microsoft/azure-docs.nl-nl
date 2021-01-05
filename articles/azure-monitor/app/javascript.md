@@ -4,12 +4,12 @@ description: Het ophalen van de pagina weergave en aantal sessies, webclientgege
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0588a3eac4ced6cec1e7aea431c6555bbe8bff0a
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 6678c662c4646a8181b1617ccddf9b8718c957bf
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559876"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858549"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights voor webpagina’s
 
@@ -339,7 +339,7 @@ Belang rijke wijzigingen in de SDK v2-versie:
 - Als u betere API-hand tekeningen wilt toestaan, zijn een aantal van de API-aanroepen, zoals trackPageView en trackException, bijgewerkt. Uitvoeren in Internet Explorer 8 en eerdere versies van de browser wordt niet ondersteund.
 - De telemetrie-envelop heeft veld naam-en structuur wijzigingen door gegevens schema-updates.
 - Verplaatst `context.operation` naar `context.telemetryTrace` . Sommige velden zijn ook gewijzigd ( `operation.id`  -->  `telemetryTrace.traceID` ).
-  - Als u de huidige pagina weergave-ID hand matig wilt vernieuwen (bijvoorbeeld in SPA-apps), gebruikt u `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()` .
+  - Als u de huidige pagina weergave-ID hand matig wilt vernieuwen (bijvoorbeeld in SPA-apps), gebruikt u `appInsights.properties.context.telemetryTrace.traceID = Microsoft.ApplicationInsights.Telemetry.Util.generateW3CId()` .
     > [!NOTE]
     > Als u de tracerings-ID uniek wilt laten, waar u eerder hebt gebruikt `Util.newId()` , gebruikt u nu `Util.generateW3CId()` . Beide uiteindelijk eindigen op de bewerkings-ID.
 

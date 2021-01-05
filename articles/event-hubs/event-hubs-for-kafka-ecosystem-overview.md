@@ -3,12 +3,12 @@ title: Event Hub van Apache Kafka app gebruiken-Azure Event Hubs | Microsoft Doc
 description: Dit artikel bevat informatie over Apache Kafka ondersteuning door Azure Event Hubs.
 ms.topic: article
 ms.date: 09/25/2020
-ms.openlocfilehash: d9aa8af30d5ef5e1a985e4d73a9d4a8921ac7d45
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b0f0da76bba68f8a66695700d530e871cbd35e3c
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369587"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861331"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Azure Event Hubs van Apache Kafka toepassingen gebruiken
 Event Hubs biedt een eind punt dat compatibel is met de Apache Kafka® producer-en Consumer-Api's die kunnen worden gebruikt door de meeste bestaande Apache Kafka-client toepassingen als alternatief voor het uitvoeren van uw eigen Apache Kafka-cluster. Event Hubs ondersteunt de clients van de producent-en consumenten-Api's van Apache Kafka op versie 1,0 en hoger.
@@ -81,7 +81,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ```
 
 > [!IMPORTANT]
-> Vervang `{YOUR.EVENTHUBS.CONNECTION.STRING}` door de verbindingsreeks voor uw Event Hubs-naamruimte. Zie [een Event Hubs Connection String ophalen](event-hubs-get-connection-string.md)voor instructies over het ophalen van de Connection String. Hier volgt een voor beeld van een configuratie: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Vervang `{YOUR.EVENTHUBS.CONNECTION.STRING}` door de verbindingsreeks voor uw Event Hubs-naamruimte. Zie [Een verbindingsreeks voor Event Hubs ophalen](event-hubs-get-connection-string.md) voor instructies voor het ophalen van de verbindingsreeks. Hier volgt een voorbeeldconfiguratie: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 > [!NOTE]
 > Bij het gebruik van SAS-verificatie met Kafka-clients worden de verbinding met de ingestelde verbindingen niet verbroken wanneer de SAS-sleutel opnieuw wordt gegenereerd. 
@@ -118,9 +118,7 @@ De payload van een event hub-gebeurtenis is een byte stroom en de inhoud kan wor
 
 ### <a name="log-compaction"></a>Logboek compressie
 
-Apache Kafka logboek compressie is een functie waarmee alle sleutels behalve de laatste record van elke sleutel uit een partitie kunnen worden verwijderd, waardoor een Apache Kafka onderwerp effectief wordt omgezet in een sleutel waarde-archief waarbij de laatste toegevoegde waarde het vorige overschrijft. Het sleutel-value Store-patroon, zelfs met frequente updates, is veel beter ondersteund door database services zoals [Azure Cosmos DB](../cosmos-db/introduction.md).
-
-De functie logboek compressie wordt gebruikt door de client Frameworks Kafka Connect en Kafka streams.
+Apache Kafka logboek compressie is een functie waarmee alle sleutels behalve de laatste record van elke sleutel uit een partitie kunnen worden verwijderd, waardoor een Apache Kafka onderwerp effectief wordt omgezet in een sleutel waarde-archief waarbij de laatste toegevoegde waarde het vorige overschrijft. Deze functie is momenteel niet geïmplementeerd door Azure Event Hubs. Het sleutel-value Store-patroon, zelfs met frequente updates, is veel beter ondersteund door database services zoals [Azure Cosmos DB](../cosmos-db/introduction.md). Raadpleeg het onderwerp [logboek projectie](event-hubs-federation-overview.md#log-projections) in de Event hubs Federation-richt lijnen voor meer informatie. 
 
 ### <a name="kafka-streams"></a>Kafka stromen
 

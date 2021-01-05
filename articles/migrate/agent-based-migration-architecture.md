@@ -6,12 +6,12 @@ ms.author: rahugup
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: 1389b03d87beb24cba50fec0a782de8b7f935557
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: c605c21307cda874f34ae5ea9f4e4959e5e6c183
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753889"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861949"
 ---
 # <a name="agent-based-migration-architecture"></a>Migratiearchitectuur op basis van een agent
 
@@ -92,14 +92,14 @@ Als u virtuele VMware-machines repliceert, kunt u de [Site Recovery Deployment p
 
 Gebruik de waarden in deze tabel om erachter te komen of u een extra proces server nodig hebt in uw implementatie.
 
-- Als uw dagelijkse wijzigings frequentie (verloop frequentie) groter is dan 2 TB, implementeert u een extra proces server.
+- Als de dagelijkse wijzigings frequentie (het verloop tempo) groter is dan 2 TB, implementeert u een extra proces server.
 - Als u meer dan 200 computers repliceert, implementeert u een extra replicatie apparaat.
 
 **CPU** | **Geheugen** | **Vrije ruimte-gegevens in cache opslaan** | **Verloop frequentie** | **Replicatie limieten**
 --- | --- | --- | --- | ---
 8 Vcpu's (2 sockets * 4 kernen \@ 2,5 GHz) | 16 GB | 300 GB | 500 GB of minder | < 100 computers 
 12 Vcpu's (2 sockets * 6 kernen \@ 2,5 GHz) | 18 GB | 600 GB | 501 GB tot 1 TB | 100-150 machines.
-16 Vcpu's (2 sockets * 8 kernen \@ 2,5 GHz) | 32 G1 |  1 TB | 1 TB tot 2 TB | 151-200 machines.
+16 Vcpu's (2 sockets * 8 kernen \@ 2,5 GHz) | 32 GB |  1 TB | 1 TB tot 2 TB | 151-200 machines.
 
 ### <a name="sizing-scale-out-process-servers"></a>Grootte van scale-out proces servers aanpassen
 
@@ -108,7 +108,7 @@ Als u een scale-out proces server wilt implementeren, gebruikt u deze tabel om d
 **Proces server** | **Vrije ruimte voor het opslaan van gegevens in de cache** | **Verloop frequentie** | **Replicatie limieten**
 --- | --- | --- | --- 
 4 Vcpu's (2 sockets * 2 kernen \@ 2,5 GHz), 8 GB geheugen | 300 GB | 250 GB of minder | Maxi maal 85 computers 
-8 Vcpu's (2 sockets * 4 kernen \@ 2,5 GHz), 12 GB geheugen | 600 GB | 251 GB tot 1 TB    | 86-150 machines.
+8 Vcpu's (2 sockets * 4 kernen \@ 2,5 GHz), 12 GB geheugen | 600 GB | 251 GB tot 1 TB | 86-150 machines.
 12 Vcpu's (2 sockets * 6 kernen \@ 2,5 GHz), 24 GB geheugen | 1 TB | 1-2 TB | 151-225 machines.
 
 ## <a name="throttle-upload-bandwidth"></a>Upload bandbreedte beperken.

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: on-premises, docker, container, sentiment analyse, natuurlijke taal verwerking
-ms.openlocfilehash: 088cf407320dcf8ef6705c57d86836531d9bdfe6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f785a5e6749e46b34723af11b4d61a98b5d94384
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965143"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862488"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>De Text Analytics-containers installeren en uitvoeren
 
@@ -85,7 +85,7 @@ Container installatie kopieën voor Text Analytics zijn beschikbaar op de micro 
 
 [!INCLUDE [docker-pull-language-detection-container](../includes/docker-pull-language-detection-container.md)]
 
-# <a name="text-analytics-for-health-preview"></a>[Text Analytics status (preview-versie)](#tab/healthcare)
+# <a name="text-analytics-for-health-preview"></a>[Text Analytics voor status (preview)](#tab/healthcare)
 
 [!INCLUDE [docker-pull-health-container](../includes/docker-pull-health-container.md)]
 
@@ -119,7 +119,7 @@ Gebruik de opdracht [docker run](https://docs.docker.com/engine/reference/comman
 
 [!INCLUDE [docker-run-language-detection-container](../includes/docker-run-language-detection-container.md)]
 
-# <a name="text-analytics-for-health-preview"></a>[Text Analytics status (preview-versie)](#tab/healthcare)
+# <a name="text-analytics-for-health-preview"></a>[Text Analytics voor status (preview)](#tab/healthcare)
 
 [!INCLUDE [docker-run-health-container](../includes/docker-run-health-container.md)]
 
@@ -155,10 +155,6 @@ De Text Analytics-containers verzenden facturerings gegevens naar Azure met behu
 
 Zie [containers configureren](../text-analytics-resource-container-config.md)voor meer informatie over deze opties.
 
-<!--blogs/samples/video course -->
-
-[!INCLUDE [Discoverability of more container information](../../../../includes/cognitive-services-containers-discoverability.md)]
-
 ## <a name="summary"></a>Samenvatting
 
 In dit artikel hebt u concepten en werk stromen geleerd om Text Analytics containers te downloaden, te installeren en uit te voeren. Samenvatting:
@@ -167,7 +163,7 @@ In dit artikel hebt u concepten en werk stromen geleerd om Text Analytics contai
    * *Sentimentanalyse*
    * *Sleuteltermextractie (preview-versie)* 
    * *Taaldetectie (preview-versie)*
-   * *Text Analytics status (preview-versie)*
+   * *Text Analytics voor status (preview)*
 * Container installatie kopieën worden gedownload uit de micro soft Container Registry (MCR) of de voor beeld-container opslagplaats.
 * Container installatie kopieën worden uitgevoerd in docker.
 * U kunt de REST API of SDK gebruiken voor het aanroepen van bewerkingen in Text Analytics containers door de URI van de host op te geven van de container.

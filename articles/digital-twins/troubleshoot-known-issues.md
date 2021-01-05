@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: a9735e355244d51464c66c10e02f97f03d2e67cd
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: d0c26255e6d9d35d51390ed2b432b9c5dc9ab2be
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673462"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862468"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Bekende problemen in azure Digital Apparaatdubbels
 
@@ -37,13 +37,21 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 | --- | --- | --- |
 | Als u wilt bepalen of uw roltoewijzing is ingesteld nadat het script is uitgevoerd, volgt u de instructies in de sectie toewijzing van gebruikersrol [*controleren*](how-to-set-up-instance-scripted.md#verify-user-role-assignment) van het artikel Setup. Als uw gebruiker niet met deze rol wordt weer gegeven, is dit van invloed op het probleem. | Voor gebruikers die zijn aangemeld met een persoonlijk [Microsoft-account (MSA)](https://account.microsoft.com/account), is de principal-id van uw gebruiker die u aanduidt in opdrachten zoals deze kan verschillen van de e-mail berichten van uw gebruiker, waardoor het script moeilijker kan worden gedetecteerd en gebruikt om de functie correct toe te wijzen. | Als u dit wilt oplossen, kunt u de roltoewijzing hand matig instellen met behulp van de [cli-instructies](how-to-set-up-instance-cli.md#set-up-user-access-permissions) of [Azure Portal instructies](how-to-set-up-instance-portal.md#set-up-user-access-permissions). |
 
-## <a name="issue-with-interactive-browser-authentication"></a>Probleem met interactieve browser verificatie
+## <a name="issue-with-interactive-browser-authentication-on-azureidentity-120"></a>Probleem met interactieve browser verificatie op Azure. identiteits 1.2.0
 
 **Beschrijving van probleem:** Wanneer u verificatie code in uw Azure Digital Apparaatdubbels-toepassingen schrijft met versie **1.2.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, kunnen er problemen optreden met de [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) -methode. Dit geeft als fout bericht ' Azure. Identity. AuthenticationFailedException ' bij het verifiëren van de verificatie in een browser venster. Het browser venster kan niet volledig worden gestart, of lijkt om de gebruiker te verifiëren, terwijl de client toepassing nog steeds mislukt met de fout.
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |
-| De &nbsp; betrokken &nbsp; methode &nbsp; wordt &nbsp; gebruikt &nbsp; in &nbsp; de &nbsp; volgende artikelen:<br><br>[*Zelfstudie: Een client-app coderen*](tutorial-code.md)<br><br>[*Instructies: app-verificatie code schrijven*](how-to-authenticate-client.md)<br><br>[*Instructies: de Azure Digital Apparaatdubbels-Api's en Sdk's gebruiken*](how-to-use-apis-sdks.md) | Sommige gebruikers hebben dit probleem gehad met versie **1.2.0** van de `Azure.Identity` bibliotheek. | Werk uw toepassingen bij voor het gebruik van de [meest recente versie](https://www.nuget.org/packages/Azure.Identity) van om dit probleem op te lossen `Azure.Identity` . Nadat de bibliotheek versie is bijgewerkt, moet de browser naar verwachting laden en verifiëren. |
+| De &nbsp; betrokken &nbsp; methode &nbsp; wordt &nbsp; gebruikt &nbsp; in &nbsp; de &nbsp; volgende artikelen:<br><br>[*Zelfstudie: Een client-app coderen*](tutorial-code.md)<br><br>[*Instructies: app-verificatie code schrijven*](how-to-authenticate-client.md)<br><br>[*Instructies: de Azure Digital Apparaatdubbels-Api's en Sdk's gebruiken*](how-to-use-apis-sdks.md) | Sommige gebruikers hebben dit probleem gehad met versie **1.2.0** van de `Azure.Identity` bibliotheek. | Werk uw toepassingen bij voor het gebruik van een [nieuwere versie](https://www.nuget.org/packages/Azure.Identity) van om dit probleem op te lossen `Azure.Identity` . Nadat de bibliotheek versie is bijgewerkt, moet de browser naar verwachting laden en verifiëren. |
+
+## <a name="issue-with-default-azure-credential-authentication-on-azureidentity-130"></a>Probleem met standaard verificatie van Azure-referenties op Azure. identiteits 1.3.0
+
+**Beschrijving van probleem:** Wanneer u verificatie code in uw Azure Digital Apparaatdubbels-toepassingen schrijft met versie **1.3.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, kunt u problemen ondervinden met de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) -methode die in veel voor beelden in deze documenten wordt gebruikt. Dit geeft aan dat er een fout bericht wordt weer gegeven dat ' Azure. Identity. AuthenticationFailedException: SharedTokenCacheCredential-verificatie is mislukt ' wordt weer gegeven wanneer de code probeert te verifiëren.
+
+| Is dit van invloed op mij? | Oorzaak | Oplossing |
+| --- | --- | --- |
+| DefaultAzureCredential wordt gebruikt in de meeste documentatie voorbeelden die verificatie bevatten. Als u verificatie code schrijft met behulp van DefaultAzureCredential en versie 1.3.0 van de `Azure.Identity` bibliotheek gebruikt, kan dit van invloed zijn op u. | Dit probleem geeft aan wanneer u DefaultAzureCredential gebruikt met versie **1.3.0** van de `Azure.Identity` bibliotheek. | Als u dit wilt oplossen, moet u de toepassing van [versie 1.2.2](https://www.nuget.org/packages/Azure.Identity/1.2.2) van gebruiken `Azure.Identity` . Nadat de bibliotheek versie is gewijzigd, moet de verificatie slagen zoals verwacht. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: fafa4c1e8c12ce26a90cfdf9df940823abf5ff25
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: 54da62ce961156b64c917b448557c17e7516e222
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857440"
+ms.locfileid: "97862142"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Wat is een Azure Machine Learning-rekeninstantie?
 
@@ -130,7 +130,7 @@ Deze acties kunnen worden beheerd door Azure RBAC:
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
 
-Opmerking Als u een gebruiker van een reken instantie wilt maken, moet u machtigingen hebben voor de volgende acties:
+Als u een reken instantie wilt maken, moet u machtigingen hebben voor de volgende acties:
 * *Micro soft. MachineLearningServices/werk ruimten/reken kracht/schrijven*
 * *Micro soft. MachineLearningServices/werk ruimten/checkComputeNameAvailability/actie*
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/05/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d39f26d86792214c1ef0300bc39404bf6581826f
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 2af8db1a6e8c774f1004b380c8aaaa06ba61d8c3
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629475"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862338"
 ---
 # <a name="deploy-azure-file-sync"></a>Azure Files SYNC implementeren
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -110,11 +110,11 @@ Schakel de **Verbeterde beveiliging van Internet Explorer** uit voor elke server
 > U kunt deze stap overs Laan als u Azure File Sync implementeert op Windows Server Core.
 
 1. Serverbeheer openen.
-2. Klik op **lokale server** :  
+2. Klik op **lokale server**:  
     ![Lokale server aan de linkerkant van de gebruikersinterface van Serverbeheer](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-1.PNG)
 3. Selecteer in het deelvenster **Eigenschappen** de koppeling naar **Verbeterde beveiliging van Internet Explorer**.  
     ![Het deelvenster Verbeterde beveiliging van Internet Explorer in de gebruikersinterface van Serverbeheer](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-2.PNG)
-4. Selecteer in het dialoog venster **Verbeterde beveiliging van Internet Explorer** de optie **uitschakelen** voor **beheerders** en **gebruikers** :  
+4. Selecteer in het dialoog venster **Verbeterde beveiliging van Internet Explorer** de optie **uitschakelen** voor **beheerders** en **gebruikers**:  
     ![Het pop-upvenster Verbeterde beveiliging van Internet Explorer met de optie Uit geselecteerd](media/storage-sync-files-deployment-guide/prepare-server-disable-IEESC-3.png)
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -157,10 +157,10 @@ Als u een opslag synchronisatie service wilt implementeren, gaat u naar de [Azur
 
 Voer de volgende gegevens in in het deelvenster dat verschijnt:
 
-- **Naam** : een unieke naam (per regio) voor de opslag synchronisatie service.
-- **Abonnement** : het abonnement waarin u de opslag synchronisatie service wilt maken. Afhankelijk van de configuratie strategie van uw organisatie hebt u mogelijk toegang tot een of meer abonnementen. Een Azure-abonnement is de meest eenvoudige container voor facturering voor elke Cloud service (zoals Azure Files).
-- **Resource groep** : een resource groep is een logische groep Azure-resources, zoals een opslag account of een opslag synchronisatie service. U kunt een nieuwe resource groep maken of een bestaande resource groep gebruiken voor Azure File Sync. (We raden u aan om resource groepen als containers te gebruiken om resources logisch te isoleren voor uw organisatie, zoals het groeperen van resources of resources voor een specifiek project.)
-- **Locatie** : de regio waarin u Azure File Sync wilt implementeren. In deze lijst worden alleen ondersteunde regio's beschikbaar.
+- **Naam**: een unieke naam (per regio) voor de opslag synchronisatie service.
+- **Abonnement**: het abonnement waarin u de opslag synchronisatie service wilt maken. Afhankelijk van de configuratie strategie van uw organisatie hebt u mogelijk toegang tot een of meer abonnementen. Een Azure-abonnement is de meest eenvoudige container voor facturering voor elke Cloud service (zoals Azure Files).
+- **Resource groep**: een resource groep is een logische groep Azure-resources, zoals een opslag account of een opslag synchronisatie service. U kunt een nieuwe resource groep maken of een bestaande resource groep gebruiken voor Azure File Sync. (We raden u aan om resource groepen als containers te gebruiken om resources logisch te isoleren voor uw organisatie, zoals het groeperen van resources of resources voor een specifiek project.)
+- **Locatie**: de regio waarin u Azure File Sync wilt implementeren. In deze lijst worden alleen ondersteunde regio's beschikbaar.
 
 Wanneer u klaar bent, selecteert u **maken** om de opslag synchronisatie service te implementeren.
 
@@ -295,9 +295,9 @@ Nadat u zich hebt aangemeld, wordt u gevraagd de volgende gegevens op te vragen:
 
 ![Schermafbeelding van de gebruikersinterface van de serverregistratie](media/storage-sync-files-deployment-guide/register-server-scubed-1.png)
 
-- **Azure-abonnement** : het abonnement dat de opslag synchronisatie service bevat (Zie [de opslag synchronisatie service implementeren](#deploy-the-storage-sync-service)). 
-- **Resource groep** : de resource groep die de opslag synchronisatie service bevat.
-- **Opslag synchronisatie service** : de naam van de opslag synchronisatie service waarmee u zich wilt registreren.
+- **Azure-abonnement**: het abonnement dat de opslag synchronisatie service bevat (Zie [de opslag synchronisatie service implementeren](#deploy-the-storage-sync-service)). 
+- **Resource groep**: de resource groep die de opslag synchronisatie service bevat.
+- **Opslag synchronisatie service**: de naam van de opslag synchronisatie service waarmee u zich wilt registreren.
 
 Nadat u de benodigde gegevens hebt geselecteerd, selecteert u **registreren** om de server registratie te volt ooien. Als deel van het registratieproces wordt u gevraagd u nogmaals aan te melden.
 
@@ -322,16 +322,16 @@ Een Cloud-eind punt is een verwijzing naar een Azure-bestands share. Alle server
 De beheerder die het Cloud-eind punt maakt, moet lid zijn van de **eigenaar** van de beheer functie voor het opslag account dat de Azure-bestands share bevat waaraan het Cloud eindpunt verwijst. Dit kan worden geconfigureerd onder **Access Control (IAM)** in de Azure portal voor het opslag account.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-Als u een synchronisatie groep wilt maken, gaat u in het [Azure Portal](https://portal.azure.com/)naar de opslag synchronisatie service en selecteert u **+ synchronisatie groep** :
+Als u een synchronisatie groep wilt maken, gaat u in het [Azure Portal](https://portal.azure.com/)naar de opslag synchronisatie service en selecteert u **+ synchronisatie groep**:
 
 ![Een nieuwe synchronisatiegroep in de Azure-portal maken](media/storage-sync-files-deployment-guide/create-sync-group-1.png)
 
 Voer in het deelvenster dat verschijnt de volgende gegevens in om een synchronisatiegroep met een cloudeindpunt te maken:
 
-- **Naam van de synchronisatie groep** : de naam van de synchronisatie groep die moet worden gemaakt. Deze naam moet uniek zijn binnen de opslagsynchronisatieservice, maar het mag een willekeurige naam zijn die u makkelijk kunt onthouden.
-- **Abonnement** : het abonnement waarin u de opslag synchronisatie service hebt geïmplementeerd in [de opslag synchronisatie service implementeren](#deploy-the-storage-sync-service).
-- **Opslag account** : als u **opslag account selecteren** selecteert, wordt er een ander deel venster weer gegeven waarin u het opslag account kunt selecteren dat de Azure-bestands share heeft waarmee u wilt synchroniseren.
-- **Azure-bestands share** : de naam van de Azure-bestands share waarmee u wilt synchroniseren.
+- **Naam van de synchronisatie groep**: de naam van de synchronisatie groep die moet worden gemaakt. Deze naam moet uniek zijn binnen de opslagsynchronisatieservice, maar het mag een willekeurige naam zijn die u makkelijk kunt onthouden.
+- **Abonnement**: het abonnement waarin u de opslag synchronisatie service hebt geïmplementeerd in [de opslag synchronisatie service implementeren](#deploy-the-storage-sync-service).
+- **Opslag account**: als u **opslag account selecteren** selecteert, wordt er een ander deel venster weer gegeven waarin u het opslag account kunt selecteren dat de Azure-bestands share heeft waarmee u wilt synchroniseren.
+- **Azure-bestands share**: de naam van de Azure-bestands share waarmee u wilt synchroniseren.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Als u de synchronisatie groep wilt maken, voert u de volgende Power shell uit. Vergeet niet door `<my-sync-group>` de gewenste naam van de synchronisatie groep te vervangen.
@@ -414,11 +414,11 @@ Als u een server eindpunt wilt toevoegen, gaat u naar de zojuist gemaakte synchr
 
 Voer in het deelvenster **Servereindpunt toevoegen** de volgende gegevens in om een servereindpunt te maken:
 
-- **Geregistreerde server** : de naam van de server of het cluster waar u het server eindpunt wilt maken.
-- **Pad** : het pad naar de Windows-Server dat moet worden gesynchroniseerd als onderdeel van de synchronisatie groep.
-- **Cloud lagen** : een schakel optie om Cloud lagen in of uit te scha kelen. Met Cloud lagen kunnen zelden gebruikte of geopende bestanden worden getierd naar Azure Files.
-- **Beschik bare volume ruimte** : de hoeveelheid beschik bare ruimte die moet worden gereserveerd op het volume waarop het server eindpunt zich bevindt. Als volume beschik bare ruimte bijvoorbeeld is ingesteld op 50% op een volume met één server eindpunt, wordt er ongeveer de helft van de hoeveelheid gegevens gelaagd tot Azure Files. Ongeacht of Cloud lagen zijn ingeschakeld, heeft uw Azure-bestands share altijd een volledige kopie van de gegevens in de synchronisatie groep.
-- **Eerste download modus** : dit is een optionele selectie, te beginnen met Agent versie 11. Dit kan handig zijn wanneer er bestanden aanwezig zijn in de Azure-bestands share, maar niet op de server. Een dergelijke situatie kan bijvoorbeeld voor komen als u een server eindpunt maakt om een andere filiaal server toe te voegen aan een synchronisatie groep of wanneer u een mislukte Server herstelt. Als Cloud lagen zijn ingeschakeld, wordt standaard alleen de naam ruimte ingetrokken, maar geen bestands inhoud. Dit is handig als u van mening bent dat aanvragen voor gebruikers toegang moeten bepalen welke bestands inhoud wordt ingetrokken voor de server. Als Cloud lagen zijn uitgeschakeld, is de standaard instelling dat de naam ruimte eerst wordt gedownload. vervolgens worden de bestanden ingetrokken op basis van het tijds tempel laatst gewijzigd totdat de lokale capaciteit is bereikt. U kunt de eerste download modus echter alleen wijzigen in de naam ruimte. Een derde modus kan alleen worden gebruikt als Cloud lagen zijn uitgeschakeld voor dit server eindpunt. In deze modus wordt voor komen dat de naam ruimte eerst wordt ingetrokken. Bestanden worden alleen op de lokale server weer gegeven als ze volledig kunnen worden gedownload. Deze modus is handig als voor een exemplaar van een toepassing volledige bestanden moeten aanwezig zijn en geen gelaagde bestanden in de naam ruimte kunnen verdragen.
+- **Geregistreerde server**: de naam van de server of het cluster waar u het server eindpunt wilt maken.
+- **Pad**: het pad naar de Windows-Server dat moet worden gesynchroniseerd als onderdeel van de synchronisatie groep.
+- **Cloud lagen**: een schakel optie om Cloud lagen in of uit te scha kelen. Met Cloud lagen kunnen zelden gebruikte of geopende bestanden worden getierd naar Azure Files.
+- **Beschik bare volume ruimte**: de hoeveelheid beschik bare ruimte die moet worden gereserveerd op het volume waarop het server eindpunt zich bevindt. Als volume beschik bare ruimte bijvoorbeeld is ingesteld op 50% op een volume met één server eindpunt, wordt er ongeveer de helft van de hoeveelheid gegevens gelaagd tot Azure Files. Ongeacht of Cloud lagen zijn ingeschakeld, heeft uw Azure-bestands share altijd een volledige kopie van de gegevens in de synchronisatie groep.
+- **Eerste download modus**: dit is een optionele selectie, te beginnen met Agent versie 11. Dit kan handig zijn wanneer er bestanden aanwezig zijn in de Azure-bestands share, maar niet op de server. Een dergelijke situatie kan bijvoorbeeld voor komen als u een server eindpunt maakt om een andere filiaal server toe te voegen aan een synchronisatie groep of wanneer u een mislukte Server herstelt. Als Cloud lagen zijn ingeschakeld, wordt standaard alleen de naam ruimte ingetrokken, maar geen bestands inhoud. Dit is handig als u van mening bent dat aanvragen voor gebruikers toegang moeten bepalen welke bestands inhoud wordt ingetrokken voor de server. Als Cloud lagen zijn uitgeschakeld, is de standaard instelling dat de naam ruimte eerst wordt gedownload. vervolgens worden de bestanden ingetrokken op basis van het tijds tempel laatst gewijzigd totdat de lokale capaciteit is bereikt. U kunt de eerste download modus echter alleen wijzigen in de naam ruimte. Een derde modus kan alleen worden gebruikt als Cloud lagen zijn uitgeschakeld voor dit server eindpunt. In deze modus wordt voor komen dat de naam ruimte eerst wordt ingetrokken. Bestanden worden alleen op de lokale server weer gegeven als ze volledig kunnen worden gedownload. Deze modus is handig als voor een exemplaar van een toepassing volledige bestanden moeten aanwezig zijn en geen gelaagde bestanden in de naam ruimte kunnen verdragen.
 
 Selecteer **maken** om het server eindpunt toe te voegen. Uw bestanden worden nu gesynchroniseerd op de Azure-bestands share en Windows-Server. 
 

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 188a348b497a485be0a8091b50a3f2c11b6493c0
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 71b57eae1a66e6966f61123e638c4790410ef445
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960747"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862523"
 ---
 # <a name="azure-cognitive-services-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Cognitive Services-containers (FAQ)
 
@@ -22,7 +22,7 @@ ms.locfileid: "94960747"
 
 **V: wat is er beschikbaar?**
 
-**A:** Met Azure Cognitive Services-containers kunnen ontwikkel aars gebruikmaken van dezelfde intelligente Api's die beschikbaar zijn in azure, maar met de [voor delen](../cognitive-services-container-support.md#features-and-benefits) van container opslag. Sommige containers zijn beschikbaar als geteste preview waarvoor een toepassing voor toegang nodig is. Andere containers zijn openbaar beschikbaar als een niet-gegate preview-versie of zijn algemeen beschikbaar. U kunt een volledige lijst met containers en hun Beschik baarheid vinden in de [container ondersteuning in Azure Cognitive Services](../cognitive-services-container-support.md#container-availability-in-azure-cognitive-services) -artikel. U kunt de containers ook weer geven in de [docker-hub](https://hub.docker.com/_/microsoft-azure-cognitive-services).
+**A:** Met Azure Cognitive Services-containers kunnen ontwikkel aars gebruikmaken van dezelfde intelligente Api's die beschikbaar zijn in azure, maar met de [voor delen](../cognitive-services-container-support.md#features-and-benefits) van container opslag. Sommige containers zijn beschikbaar als geteste preview waarvoor een toepassing voor toegang nodig is. Andere containers zijn openbaar beschikbaar als een niet-gegate preview-versie of zijn algemeen beschikbaar. U kunt een volledige lijst met containers en hun Beschik baarheid vinden in de [container ondersteuning in Azure Cognitive Services](../cognitive-services-container-support.md) -artikel. U kunt de containers ook weer geven in de [docker-hub](https://hub.docker.com/_/microsoft-azure-cognitive-services).
 
 **V: is er een verschil tussen de Cognitive Services Cloud en de containers?**
 
@@ -164,7 +164,7 @@ Bekijk de volgende tags voor mogelijke vragen en antwoorden die zijn afgestemd o
  
 **V: Hoe kan ik de containers ontdekken?**
 
-**A:** Cognitive Services containers zijn beschikbaar op verschillende locaties, zoals de Azure Portal, docker hub en Azure container registers. Raadpleeg [container opslagplaatsen en installatie kopieën](../cognitive-services-container-support.md#container-repositories-and-images)voor de meest recente container locaties.
+**A:** Cognitive Services containers zijn beschikbaar op verschillende locaties, zoals de Azure Portal, docker hub en Azure container registers. Raadpleeg [container installatie kopieën](container-image-tags.md)voor de meest recente container locaties.
 
 **V: hoe worden Cognitive Services containers vergeleken met AWS-en Google-aanbiedingen?**
 

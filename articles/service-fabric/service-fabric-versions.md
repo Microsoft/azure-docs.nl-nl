@@ -3,12 +3,12 @@ title: Ondersteunde cluster versies in azure Service Fabric
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: 4407ddb80b00c847e14643be816bc681718dcb8b
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 5770aa072666f89a574da9d1f2584ab33b612330
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652208"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862165"
 ---
 # <a name="supported-service-fabric-versions"></a>Ondersteunde Service Fabric versies
 
@@ -21,8 +21,31 @@ Raadpleeg de volgende documenten voor meer informatie over hoe u uw cluster met 
 - [Een Azure Service Fabric-cluster upgraden](service-fabric-cluster-upgrade.md)
 - [Een upgrade uitvoeren van de Service Fabric versie die wordt uitgevoerd op uw zelfstandige Windows Server-cluster](service-fabric-cluster-upgrade-windows-server.md)
 
-## <a name="supported-versions"></a>Ondersteunde versies
 
+## <a name="unsupported-versions"></a>Niet-ondersteunde versies
+
+### <a name="upgrade-alert-for-versions-between-57-and-below-6363"></a>Upgrade waarschuwing voor versies tussen 5,7 en onder 6.3.63. *
+
+***Alle Service Fabric clusters met niet-ondersteunde versies van 5,7 tot 6.3.63.* wordt beïnvloed door een wijziging in de beveiligings breuk die in azure wordt getotaliseerd op 7 januari, 2021 * * *.
+ 
+ Om ernstige onderbrekingen van de service te voor komen (inclusief clusters die niet beschikbaar zijn), moet u uw clusters zo snel mogelijk upgraden naar een van de onderstaande ondersteunde versies van Service Fabric runtime die de oplossing voor het beveiligings probleem bevat. We hebben de betrokken klanten met begeleiding afgenomen. Als u een ondersteunings abonnement hebt en u technische hulp nodig hebt, kunt u contact met ons opnemen via [Azure-ondersteunings kanalen](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) door een ondersteunings aanvraag te openen en deze context te vermelden in het ondersteunings ticket. 
+ 
+  #### <a name="supported-service-fabric-runtime-versions-including-the-fix-for-the-security-breaking-change"></a>Ondersteunde Service Fabric runtime versies, waaronder de oplossing voor de wijziging van de beveiligings breuk 
+   Voer een upgrade uit voor uw Service Fabric-clusters die worden uitgevoerd op oudere, niet-ondersteunde versies die worden beïnvloed door de wijziging van beveiligings problemen in een van de onderstaande ondersteunde versie.
+
+  | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch  | 
+  | --- | --- |--- | 
+  | Windows | 7,0. * | 7.0.478.9590 |
+  | Windows | 7,1. * | 7.1.503.9590 |
+  | Windows | 7,2. * | 7.2.445.9590 |
+  | Ubuntu 16 | 7,0. * | 7.0.472.1  |
+  | Ubuntu 16 | 7,1. * | 7.1.455.1  |
+  | Ubuntu 1804 | 7,1. * | 7.1.455.1804 |
+  | Ubuntu 16 | 7,2. * | 7.2.447.1 |
+  | Ubuntu 1804 | 7,2. * | 7.2.447.1804 |
+ 
+
+## <a name="supported-versions"></a>Ondersteunde versies
 De volgende tabel bevat de versies van Service Fabric en de bijbehorende eind datums voor ondersteuning.
 
 | Service Fabric runtime in het cluster | Kan rechtstreeks upgraden vanaf Cluster versie |Versie van compatibele SDK of NuGet-pakket | Einde van ondersteuning |

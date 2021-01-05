@@ -2,22 +2,31 @@
 title: Azure Service Bus geo-nood herstel | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood geval in Azure Service Bus
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 8c203ed197c1e5bfb15cfb503a04df79b85c630e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/04/2021
+ms.openlocfilehash: c07721c07923a40da9fe28e0e3116bfd6a52210f
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372520"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862355"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Azure Service Bus geo-nood herstel
 
-Als er voor de hele Azure-regio's of-Data Centers (als er geen [beschikbaarheids zones](../availability-zones/az-overview.md) worden gebruikt) downtime actief is, is het van essentieel belang dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom is het niet zo dat *geo-nood herstel* een belang rijk onderdeel is van elke onderneming. Azure Service Bus ondersteunt geo-nood herstel op het niveau van de naam ruimte.
+Een tolerantie voor disastrous storingen bij het verwerken van gegevens bronnen is een vereiste voor veel ondernemingen en in sommige gevallen, zelfs door industriële voor Schriften. 
 
-De functie voor het opnieuw gebruiken van geo-nood herstel is wereld wijd beschikbaar voor de Service Bus Premium-SKU. 
+Azure Service Bus verspreidt het risico op onherstelbare storingen van afzonderlijke machines of zelfs het volt ooien van rekken in clusters met meerdere fout domeinen binnen een Data Center en implementeert de transparante detectie van storingen en failover-mechanismen, zodat de service binnen de gegarandeerde service niveaus blijft werken en normaal gesp roken geen merkbaar onderbrekingen ondervinden in het geval van dergelijke storingen. Als er een Service Bus naam ruimte is gemaakt met de optie ingeschakeld voor [beschikbaarheids zones](../availability-zones/az-overview.md), wordt het risico van uitval risico verder verdeeld over drie fysiek gescheiden faciliteiten en is de service voldoende capaciteits reserves om direct te kunnen omgaan met het volledige, onherstelbaar verlies van de volledige faciliteit. 
 
->[!NOTE]
-> Geo-Disaster herstel zorgt er momenteel alleen voor dat de meta gegevens (wacht rijen, onderwerpen, abonnementen, filters) worden gekopieerd van de primaire naam ruimte naar een secundaire naam ruimte wanneer deze zijn gekoppeld.
+Het cluster model voor alle Active Azure Service Bus met de ondersteuning van de beschikbaarheids zone is van toepassing op alle on-premises Message Broker-producten in termen van tolerantie tegen problemen met de hardwarestoringen en zelfs tot onherstelbare verlies van volledige datacenter faciliteiten. Het kan nog steeds bestaan uit een grote fysieke vernietiging, waardoor zelfs deze maat regelen niet voldoende kunnen worden beschermd. 
+
+De Service Bus geo-nood herstel functie is zodanig ontworpen dat het herstellen van een ramp van deze omvang eenvoudiger is en dat de Azure-regio niet goed kan worden gerepareerd en zonder dat de configuratie van uw toepassingen hoeft te worden gewijzigd. Het afbreken van een Azure-regio omvat doorgaans diverse services en deze functie is vooral gericht op het behoud van de integriteit van de samengestelde toepassings configuratie. De functie is wereld wijd beschikbaar voor de Service Bus Premium-SKU. 
+
+De functie voor het Geo-Disaster herstellen zorgt ervoor dat de volledige configuratie van een naam ruimte (wacht rijen, onderwerpen, abonnementen, filters) voortdurend wordt gerepliceerd van een primaire naam ruimte naar een secundaire naam ruimte, en Hiermee kunt u een eenmalige failover van de primaire naar de secundaire, op elk gewenst moment starten. Bij het verplaatsen van de failover wordt de gekozen alias naam voor de naam ruimte opnieuw ingesteld op de secundaire naam ruimte en wordt de koppeling verbroken. De failover is bijna onmiddellijk eenmaal gestart. 
+
+> [!IMPORTANT]
+> Met deze functie kunt u een onmiddellijke continuïteit van bewerkingen met dezelfde configuratie uitvoeren, maar **worden de berichten in wacht rijen of onderwerp-abonnementen of wacht rijen voor onbestel berichten niet gerepliceerd**. Als u de wachtrij semantiek wilt behouden, is voor deze replicatie niet alleen de replicatie van bericht gegevens vereist, maar van elke wijziging in de status in de Broker. Voor de meeste Service Bus-naam ruimten, overschrijdt het vereiste replicatie verkeer het verkeer van de toepassing en de wacht rijen met een hoge door Voer, de meeste berichten worden gerepliceerd naar de secundaire terwijl ze al van de primaire worden verwijderd, waardoor overmatig verspilling verkeer ontstaat. Voor replicatie routes met een hoge latentie die van toepassing zijn op een groot aantal paars dat u zou kiezen voor een geo-nood herstel, is het mogelijk dat het replicatie verkeer niet langer kan worden bewaard met het toepassings verkeer als gevolg van latentie-veroorzaakte beperkings effecten.
+ 
+> [!TIP]
+> Voor het repliceren van de inhoud van wacht rijen en onderwerpen, en het uitvoeren van overeenkomende naam ruimten in actieve/actieve configuraties om te voldoen aan storingen en rampen, hoeft u zich niet aan deze functieset voor geo-nood herstel te houden, maar volgt u de [richt lijnen voor replicatie](service-bus-federation-overview.md).  
 
 ## <a name="outages-and-disasters"></a>Storingen en rampen
 
@@ -51,14 +60,14 @@ In de volgende sectie vindt u een overzicht van het instellen van koppeling tuss
 
 Het installatie proces is als volgt:
 
-1. Richt een ***primaire*** service bus Premium-naam ruimte in.
+1. Richt een ***Primary** _ service bus Premium-naam ruimte in.
 
-2. Richt een ***secundaire*** service bus Premium-naam ruimte in in een *andere regio dan waar de primaire naam ruimte is ingericht*. Dit helpt de fout isolatie tussen verschillende datacenter regio's mogelijk te maken.
+2. Een _*_secundaire_*_ service bus Premium-naam ruimte inrichten in een regio _different van waaruit de primaire naam ruimte is ingericht *. Dit helpt de fout isolatie tussen verschillende datacenter regio's mogelijk te maken.
 
-3. Maak een koppeling tussen de primaire naam ruimte en de secundaire naam ruimte om de ***alias***te verkrijgen.
+3. Maak een koppeling tussen de primaire naam ruimte en de secundaire naam ruimte om de *-**alias** _ op te halen.
 
     >[!NOTE] 
-    > Als u [uw Azure service bus Standard-naam ruimte hebt gemigreerd naar Azure service bus Premium](service-bus-migrate-standard-premium.md), moet u de bestaande alias (de service bus Standard-naam ruimte Connection String) gebruiken om de configuratie voor herstel na nood gevallen te maken via de **PS/CLI** of de **rest API**.
+    > Als u [uw Azure service bus Standard-naam ruimte hebt gemigreerd naar Azure service bus Premium](service-bus-migrate-standard-premium.md), moet u de bestaande alias (de service bus Standard-naam ruimte Connection String) gebruiken om de configuratie voor herstel na nood gevallen te maken via de _ *PS/CLI** of **rest API**.
     >
     >
     > Dit komt doordat uw Azure Service Bus Standard-naam ruimte connection string/DNS-naam zelf een alias vormt voor uw Azure Service Bus Premium-naam ruimte.
@@ -68,7 +77,7 @@ Het installatie proces is als volgt:
     > Als u de portal gebruikt voor het instellen van de configuratie voor herstel na nood gevallen, zal de portal dit voor behoud van u van u samen stellen.
 
 
-4. Gebruik de ***alias*** die is verkregen in stap 3 om uw client toepassingen te verbinden met de primaire naam ruimte die geschikt is voor het gebruik van geo-Dr. In eerste instantie wijst de alias naar de primaire naam ruimte.
+4. Gebruik de **_alias_* _ die is verkregen in stap 3 om uw client toepassingen te verbinden met de primaire naam ruimte die geschikt is voor het gebruik van geo-Dr. In eerste instantie wijst de alias naar de primaire naam ruimte.
 
 5. Beschrijving Voeg bewaking toe om te detecteren of een failover nood zakelijk is.
 
@@ -80,7 +89,7 @@ Een failover wordt hand matig geactiveerd door de klant (expliciet via een opdra
 
 Nadat de failover is geactiveerd-
 
-1. De ***alias*** Connection String wordt bijgewerkt zodat deze verwijst naar de secundaire Premium-naam ruimte.
+1. De _*_alias_*_ Connection String wordt bijgewerkt zodat deze verwijst naar de secundaire Premium-naam ruimte.
 
 2. Clients (afzenders en ontvangers) maken automatisch verbinding met de secundaire naam ruimte.
 
@@ -168,9 +177,9 @@ Stel dat u twee virtuele netwerken hebt: VNET-1, VNET-2 en deze primaire en twee
 ![Persoonlijke eind punten en virtuele netwerken](./media/service-bus-geo-dr/private-endpoints-virtual-networks.png)
 
 
-Voor deel van deze benadering is dat failover kan plaatsvinden op de toepassingslaag, onafhankelijk van Service Bus naam ruimte. Stel u de volgende scenario's voor: 
+Voor deel van deze benadering is dat failover kan plaatsvinden op de toepassingslaag, onafhankelijk van Service Bus naam ruimte. Denk eens na over de volgende scenario's: 
 
-**Failover van toepassing:** Hier komt de toepassing niet voor in VNET-1 maar wordt deze verplaatst naar VNET-2. Als beide persoonlijke eind punten zijn geconfigureerd op zowel VNET-1 als VNET-2 voor zowel primaire als secundaire naam ruimten, werkt de toepassing gewoon. 
+_ *Failover van de toepassing:* hier is de toepassing niet aanwezig in vnet-1 maar wordt deze verplaatst naar VNET-2. Als beide persoonlijke eind punten zijn geconfigureerd op zowel VNET-1 als VNET-2 voor zowel primaire als secundaire naam ruimten, werkt de toepassing gewoon. 
 
 **Service Bus failover van de naam ruimte**: hier wordt de toepassing opnieuw uitgevoerd, omdat beide particuliere eind punten zijn geconfigureerd voor virtuele netwerken voor zowel de primaire als de secundaire naam ruimte. 
 

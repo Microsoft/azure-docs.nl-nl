@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 874d44e3900b1edf24c2f6bee95d787c5fc3988d
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 24f6052c436b73d0075371fa74160d21826e2209
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704832"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97866048"
 ---
 ## <a name="create-an-azure-container-instance-resource-using-the-azure-portal"></a>Een Azure container Instance-bron maken met behulp van de Azure Portal
 
@@ -28,8 +28,8 @@ ms.locfileid: "97704832"
     |Resourcegroep|Selecteer de beschik bare resource groep of maak een nieuwe, zoals `cognitive-services` .|
     |Containernaam|Voer een naam in zoals `cognitive-container-instance` . De naam moet in kleine letters worden gereduceerd.|
     |Locatie|Selecteer een regio voor de implementatie.|
-    |Type installatiekopie|Als uw container installatie kopie is opgeslagen in een container register waarvoor geen referenties zijn vereist, kiest u `Public` . Als u toegang hebt tot de container installatie kopie, moet u de optie referenties kiezen `Private` . Raadpleeg [container opslagplaatsen en installatie kopieën](../../cognitive-services-container-support.md#container-repositories-and-images) voor meer informatie over of de container installatie kopie al dan niet is `Public` `Private` (' open bare preview '). |
-    |Naam van installatiekopie|Voer de locatie van de Cognitive Services-container in. De locatie is wat wordt gebruikt als argument voor de `docker pull` opdracht. Raadpleeg de [container opslagplaatsen en installatie kopieën](../../cognitive-services-container-support.md#container-repositories-and-images) voor de beschik bare afbeeldings namen en de bijbehorende opslag plaats.<br><br>De naam van de installatie kopie moet volledig gekwalificeerd zijn om drie delen op te geven. Ten eerste, het container register en vervolgens de naam van de installatie kopie: `<container-registry>/<repository>/<image-name>` .<br><br>Hier ziet u een voor beeld `mcr.microsoft.com/azure-cognitive-services/keyphrase` van de Sleuteltermextractie installatie kopie in de micro soft-container Registry onder de Azure Cognitive Services-opslag plaats. Een ander voor beeld is `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` dat de spraak-naar-tekst afbeelding wordt weer gegeven in de micro soft-opslag plaats van het container voorbeeld container register. |
+    |Type installatiekopie|Als uw container installatie kopie is opgeslagen in een container register waarvoor geen referenties zijn vereist, kiest u `Public` . Als u toegang hebt tot de container installatie kopie, moet u de optie referenties kiezen `Private` . Raadpleeg [container opslagplaatsen en installatie kopieën](../container-image-tags.md) voor meer informatie over of de container installatie kopie al dan niet is `Public` `Private` (' open bare preview '). |
+    |Naam van installatiekopie|Voer de locatie van de Cognitive Services-container in. De locatie is wat wordt gebruikt als argument voor de `docker pull` opdracht. Raadpleeg de [container opslagplaatsen en installatie kopieën](../container-image-tags.md) voor de beschik bare afbeeldings namen en de bijbehorende opslag plaats.<br><br>De naam van de installatie kopie moet volledig gekwalificeerd zijn om drie delen op te geven. Ten eerste, het container register en vervolgens de naam van de installatie kopie: `<container-registry>/<repository>/<image-name>` .<br><br>Hier ziet u een voor beeld `mcr.microsoft.com/azure-cognitive-services/keyphrase` van de Sleuteltermextractie installatie kopie in de micro soft-container Registry onder de Azure Cognitive Services-opslag plaats. Een ander voor beeld is `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` dat de spraak-naar-tekst afbeelding wordt weer gegeven in de micro soft-opslag plaats van het container voorbeeld container register. |
     |Type besturings systeem|`Linux`|
     |Grootte|Wijzig grootte in de voorgestelde aanbevelingen voor uw specifieke cognitieve service-container:<br>twee CPU-kernen<br>4 GB
 

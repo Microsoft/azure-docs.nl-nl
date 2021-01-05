@@ -4,13 +4,13 @@ description: Waarschuwingen maken met op machine learning gebaseerde Dynamische 
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 02/16/2020
-ms.openlocfilehash: 110d4a3219b4898fa6f138e29f1112d7134f674c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/04/2021
+ms.openlocfilehash: 92fafc9357ca08cd31c9ba7badbf7f6433f44f86
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012336"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862576"
 ---
 # <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor"></a>Metrische waarschuwingen met dynamische drempel waarden in Azure Monitor
 
@@ -39,7 +39,7 @@ Dynamische drempel waarden worden doorlopend ontdekt bij de gegevens van de metr
 De drempel waarden worden geselecteerd op een zodanige manier dat een afwijking van deze drempel waarden een afwijking van het meet gedrag aangeeft.
 
 > [!NOTE]
-> Het seizoen patroon detectie wordt ingesteld op een uur, dag of week interval. Dit betekent dat andere patronen zoals bihourly patroon of semiweekly mogelijk niet worden gedetecteerd.
+> Dynamische drempel waarden kunnen de seizoensgebondenheid voor elk uur, dagelijks of wekelijks patroon detecteren. Andere patronen, zoals bidirectionele of semi-wekelijkse Seizoensgebonden, worden mogelijk niet gedetecteerd. Voor het detecteren van wekelijkse seizoensgebonden tijd zijn er ten minste drie weken aan historische gegevens vereist. 
 
 ## <a name="what-does-sensitivity-setting-in-dynamic-thresholds-mean"></a>Wat betekent ' gevoeligheid ' in dynamische drempels?
 

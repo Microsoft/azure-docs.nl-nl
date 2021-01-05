@@ -12,12 +12,12 @@ ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: on-premises, OCR, docker, container
-ms.openlocfilehash: b89d02107365872471f1dd5a7df07902b08f2031
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: a9eae2e547b347c88f8e745742ed34194c37a3b2
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96006900"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862470"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Lees de OCR docker-containers (preview) installeren 
 
@@ -92,7 +92,7 @@ Er zijn container installatie kopieën voor lezen beschikbaar.
 | Container | Container Registry/opslagplaats/naam van installatie kopie |
 |-----------|------------|
 | Lees 2,0-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview` |
-| Lees 3,2-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1` |
+| Read 3.2-preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1` |
 
 Gebruik de [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) opdracht om een container installatie kopie te downloaden.
 
@@ -207,7 +207,7 @@ Gebruik de host, `http://localhost:5000`, voor container-API's. U kunt het Swagg
 U kunt de- `POST /vision/v3.2/read/analyze` en- `GET /vision/v3.2/read/operations/{operationId}` bewerkingen in concert gebruiken om asynchroon een installatie kopie te lezen, vergelijkbaar met de manier waarop de computer vision-service die bijbehorende rest-bewerkingen gebruikt. De asynchrone POST-methode retourneert een `operationId` die wordt gebruikt als id voor de HTTP GET-aanvraag.
 
 
-Selecteer in de Swagger-gebruikers interface de `asyncBatchAnalyze` om deze uit te vouwen in de browser. Selecteer vervolgens **Try it out**  >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
+Selecteer in de Swagger-gebruikers interface de `asyncBatchAnalyze` om deze uit te vouwen in de browser. Selecteer vervolgens   >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
 
 ![tabbladen versus spaties](media/tabs-vs-spaces.png)
 
@@ -284,7 +284,7 @@ De `operation-location` is de volledig gekwalificeerde URL en is toegankelijk vi
 
 U kunt de- `POST /vision/v2.0/read/core/asyncBatchAnalyze` en- `GET /vision/v2.0/read/operations/{operationId}` bewerkingen in concert gebruiken om asynchroon een installatie kopie te lezen, vergelijkbaar met de manier waarop de computer vision-service die bijbehorende rest-bewerkingen gebruikt. De asynchrone POST-methode retourneert een `operationId` die wordt gebruikt als id voor de HTTP GET-aanvraag.
 
-Selecteer in de Swagger-gebruikers interface de `asyncBatchAnalyze` om deze uit te vouwen in de browser. Selecteer vervolgens **Try it out**  >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
+Selecteer in de Swagger-gebruikers interface de `asyncBatchAnalyze` om deze uit te vouwen in de browser. Selecteer vervolgens   >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
 
 ![tabbladen versus spaties](media/tabs-vs-spaces.png)
 
@@ -389,10 +389,6 @@ De Cognitive Services-containers verzenden facturerings gegevens naar Azure, met
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Zie [containers configureren](./computer-vision-resource-container-config.md)voor meer informatie over deze opties.
-
-<!--blogs/samples/video course -->
-
-[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Samenvatting
 

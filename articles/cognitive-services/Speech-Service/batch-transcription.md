@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/03/2020
+ms.date: 12/23/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 426cf78f6b87acf1d8c7551b0b0a6172a30167b1
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 68a129f38e9a94a7e381d11ffa3c3d02791b025b
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621092"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755766"
 ---
 # <a name="how-to-use-batch-transcription"></a>Batch-transcriptie gebruiken
 
-Batch-transcriptie is een reeks REST API bewerkingen waarmee u een grote hoeveelheid audio in de opslag kunt transcriberen. U kunt naar audio bestanden verwijzen met behulp van een typische URI of een SAS-URI (Shared Access Signature) en transcriptie-resultaten asynchroon ontvangen. Met de v 3.0 API kunt u een of meer audio bestanden transcriberen of een hele opslag container verwerken.
+Batch-transcriptie is een reeks REST API bewerkingen waarmee u een grote hoeveelheid audio in de opslag kunt transcriberen. U kunt naar audio bestanden verwijzen met behulp van een typische URI of een [SAS-URI (Shared Access Signature)](../../storage/common/storage-sas-overview.md) en transcriptie-resultaten asynchroon ontvangen. Met de v 3.0 API kunt u een of meer audio bestanden transcriberen of een hele opslag container verwerken.
 
 U kunt batch-transcriptie REST-Api's gebruiken om de volgende methoden aan te roepen:
 
@@ -66,7 +66,7 @@ Als u een geordende definitieve transcriptie wilt maken, gebruikt u de tijds tem
 
 ### <a name="configuration"></a>Configuratie
 
-Configuratie parameters worden als JSON opgegeven.
+Configuratie parameters worden als JSON opgegeven. 
 
 **Een of meer afzonderlijke bestanden transcriberen.** Als u meer dan één bestand wilt transcriberen, raden we u aan om meerdere bestanden in één aanvraag te verzenden. In het onderstaande voor beeld worden drie bestanden gebruikt:
 
@@ -85,7 +85,7 @@ Configuratie parameters worden als JSON opgegeven.
 }
 ```
 
-**Een hele opslag container verwerken:**
+**Een hele opslag container verwerken.** Container- [sa's](../../storage/common/storage-sas-overview.md) moeten de `r` machtigingen (lezen) en `l` (lijst) bevatten:
 
 ```json
 {
@@ -177,10 +177,10 @@ Gebruik deze optionele eigenschappen om transcriptie te configureren:
       `destinationContainerUrl`
    :::column-end:::
    :::column span="2":::
-      Optionele URL met [service ad-hoc SAS](../../storage/common/storage-sas-overview.md) naar een Beschrijf bare container in Azure. Het resultaat wordt opgeslagen in deze container. SAS met beleid voor opgeslagen toegang wordt **niet** ondersteund. Wanneer deze niet is opgegeven, slaat micro soft de resultaten op in een opslag container die door micro soft wordt beheerd. Wanneer de transcriptie wordt verwijderd door het aanroepen van [Delete transcriptie](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription), worden de resultaat gegevens ook verwijderd.
+      Optionele URL met [ad-hoc SAS](../../storage/common/storage-sas-overview.md) naar een Beschrijf bare container in Azure. Het resultaat wordt opgeslagen in deze container. SAS met beleid voor opgeslagen toegang wordt **niet** ondersteund. Wanneer deze niet is opgegeven, slaat micro soft de resultaten op in een opslag container die door micro soft wordt beheerd. Wanneer de transcriptie wordt verwijderd door het aanroepen van [Delete transcriptie](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/DeleteTranscription), worden de resultaat gegevens ook verwijderd.
 :::row-end:::
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>Opslag
 
 Batch transcriptie kan audio lezen van een open bare Internet-URI en kan audio lezen of transcripties schrijven met behulp van een SAS-URI met [Azure Blob Storage](../../storage/blobs/storage-blobs-overview.md).
 

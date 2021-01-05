@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: f64a91e3b285c265296c361366a10443eda18201
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: b7af6b489aeb919fd1db0e45ddba58a21b1c3633
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489405"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760131"
 ---
 # <a name="azure-monitor-metrics-overview"></a>Overzicht van Azure Monitor metrische gegevens
 Azure Monitor metrieken is een functie van Azure Monitor die numerieke gegevens uit [bewaakte bronnen](../monitor-reference.md) in een time series-data base verzamelt. Metrische gegevens zijn numerieke waarden die met regel matige tussen pozen worden verzameld en een aspect van een systeem op een bepaald moment beschrijven. Metrische gegevens in Azure Monitor zijn licht gewicht en kunnen bijna realtime-scenario's ondersteunen, waardoor ze vooral nuttig zijn voor waarschuwingen en snelle detectie van problemen. U kunt ze interactief met metrische gegevens Verkenner analyseren, proactief een melding ontvangen wanneer een waarde een drempel overschrijdt of deze visualiseren in een werkmap of dash board.
@@ -40,7 +40,7 @@ De volgende tabel geeft een lijst van de verschillende manieren waarop u metrisc
 ![Overzicht van metrische gegevens](media/data-platform-metrics/metrics-overview.png)
 
 
-## <a name="data-collection"></a>Gegevensverzameling
+## <a name="data-collection"></a>Gegevens verzamelen
 Er zijn drie basis bronnen voor metrische gegevens die worden verzameld door Azure Monitor. Zodra deze metrische gegevens worden verzameld in de data base van de Azure Monitor metriek, kunnen ze samen worden geëvalueerd, ongeacht de bron.
 
 **Azure-resources**. Platform metrieken worden gemaakt door Azure-resources en geven u inzicht in hun status en prestaties. Elk type resource maakt een [afzonderlijke set metrische gegevens](metrics-supported.md) zonder dat er configuratie is vereist. Metrische platform gegevens worden verzameld van Azure-resources met een frequentie van één minuut, tenzij anders aangegeven in de definitie van de metrische gegevens. 
@@ -56,7 +56,7 @@ Er zijn drie basis bronnen voor metrische gegevens die worden verzameld door Azu
 ## <a name="metrics-explorer"></a>Metrics-explorer
 Gebruik [Metrics Explorer](metrics-charts.md) om de gegevens in uw metrische data base interactief te analyseren en de waarden van meerdere metrieken in de loop van de tijd te bepalen. U kunt de grafieken vastmaken aan een dash board om ze te bekijken met andere visualisaties. U kunt ook metrische gegevens ophalen met behulp van de [Azure monitoring rest API](rest-api-walkthrough.md).
 
-![Metrics Explorer](media/data-platform/metrics-explorer.png)
+![Metrics Explorer](media/data-platform-metrics/metrics-explorer.png)
 
 - Zie aan de slag [met Azure monitor Metrics Explorer](metrics-getting-started.md) om aan de slag te gaan met metrische gegevens Verkenner.
 
@@ -71,9 +71,9 @@ Gegevens die worden verzameld door Azure Monitor metrieken worden opgeslagen in 
 * Sommige metrische gegevens kunnen meerdere dimensies hebben, zoals wordt beschreven in [multi-dimensionale metrische gegevens](#multi-dimensional-metrics). Aangepaste metrische gegevens kunnen Maxi maal 10 dimensies hebben.
 
 ## <a name="multi-dimensional-metrics"></a>Multi-dimensionale metrische gegevens
-Een van de uitdagingen van metrische gegevens is dat deze regel matig beperkte informatie bevat om context te bieden voor verzamelde waarden. Azure Monitor verhelpt deze uitdaging met multidimensionale metrische gegevens. Afmetingen van een metriek zijn naam/waarde-paren die aanvullende gegevens bevatten om de waarde van de metriek te beschrijven. Een metrische _beschik bare schijf ruimte_ kan bijvoorbeeld een dimensie hebben met de naam _station_ met de waarden _C:_ , _D:_ , waardoor het weer geven van de beschik bare schijf ruimte op alle stations of elk afzonderlijk station kan worden toegestaan.
+Een van de uitdagingen van metrische gegevens is dat deze regel matig beperkte informatie bevat om context te bieden voor verzamelde waarden. Azure Monitor verhelpt deze uitdaging met multidimensionale metrische gegevens. Afmetingen van een metriek zijn naam/waarde-paren die aanvullende gegevens bevatten om de waarde van de metriek te beschrijven. Een metrische _beschik bare schijf ruimte_ kan bijvoorbeeld een dimensie hebben met de naam _station_ met de waarden _C:_, _D:_, waardoor het weer geven van de beschik bare schijf ruimte op alle stations of elk afzonderlijk station kan worden toegestaan.
 
-In het onderstaande voor beeld ziet u twee gegevens sets voor een hypothetische metriek met de naam _netwerk doorvoer_. De eerste gegevensset heeft geen dimensies. De tweede gegevensset toont de waarden met twee dimensies, het _IP-adres_ en de _richting_ :
+In het onderstaande voor beeld ziet u twee gegevens sets voor een hypothetische metriek met de naam _netwerk doorvoer_. De eerste gegevensset heeft geen dimensies. De tweede gegevensset toont de waarden met twee dimensies, het _IP-adres_ en de _richting_:
 
 ### <a name="network-throughput"></a>Netwerk doorvoer
 

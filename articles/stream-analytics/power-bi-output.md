@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 29bd4dc5cabe8b29efe7b89395c5e7d36bd0347a
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: cc48d26c217f52dfa52ac6cd3d7f18a806c93927
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129776"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740977"
 ---
 # <a name="power-bi-output-from-azure-stream-analytics"></a>Power BI uitvoer van Azure Stream Analytics
 
@@ -27,7 +27,7 @@ De volgende tabel geeft een lijst van eigenschaps namen en de bijbehorende besch
 | Naam van eigenschap | Beschrijving |
 | --- | --- |
 | Uitvoeralias |Geef een beschrijvende naam op die wordt gebruikt in query's om de uitvoer van de query naar deze Power BI uitvoer te sturen. |
-| Groeps werkruimte |Als u het delen van gegevens met andere Power BI gebruikers wilt inschakelen, kunt u groepen in uw Power BI account selecteren of **mijn werk ruimte** kiezen als u niet naar een groep wilt schrijven. Als u een bestaande groep wilt bijwerken, moet u de Power BI-verificatie vernieuwen. |
+| Werkruimte Groep |Als u het delen van gegevens met andere Power BI gebruikers wilt inschakelen, kunt u groepen in uw Power BI account selecteren of **mijn werk ruimte** kiezen als u niet naar een groep wilt schrijven. Als u een bestaande groep wilt bijwerken, moet u de Power BI-verificatie vernieuwen. |
 | Naam van de gegevensset |Geef een naam op voor de gegevensset die u voor de Power BI uitvoer wilt gebruiken. |
 | Tabelnaam |Geef een tabel naam op onder de gegevensset van de Power BI uitvoer. Power BI uitvoer van Stream Analytics taken kan momenteel slechts één tabel bevatten in een gegevensset. |
 | Verbinding machtigen | U moet autoriseren met Power BI om uw uitvoer instellingen te configureren. Zodra u deze uitvoer toegang hebt verleend aan uw Power BI-dash board, kunt u de toegang intrekken door het wacht woord van het gebruikers account te wijzigen, de taak uitvoer te verwijderen of de Stream Analytics-taak te verwijderen. | 
@@ -80,9 +80,5 @@ Zie [Power bi-limieten voor rest API](/power-bi/developer/automation/api-rest-ap
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Beheerde identiteit gebruiken om uw Azure Stream Analytics-taak te verifiëren voor Power BI (preview)](powerbi-output-managed-identity.md)
 * [Snelstart: Een Stream Analytics-taak maken via Azure Portal](stream-analytics-quick-create-portal.md)
-* [Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI](quick-create-azure-cli.md)
-* [Quickstart: Een Azure Stream Analytics-taak maken via een ARM-sjabloon](quick-create-azure-resource-manager.md)
-* [Quickstart: Een Stream Analytics-taak maken met behulp van Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Quickstart: Een Azure Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
-* [Snelstartgids: een Azure Stream Analytics-taak maken in Visual Studio code](quick-create-visual-studio-code.md)

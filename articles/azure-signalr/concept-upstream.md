@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
-ms.openlocfilehash: 1d51f5e8d2fac1e2b180a608c840d0a322e76271
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 33df4410b9dd82fd0b1c732eb03ab5e0e77e9869
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92143244"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763112"
 ---
 # <a name="upstream-settings"></a>Upstream-instellingen
 
@@ -53,16 +53,29 @@ Wanneer een client in de ' chat '-hub de hub-methode aanroept `broadcast` , word
 http://host.com/chat/api/messages/broadcast
 ```
 
+### <a name="key-vault-secret-reference-in-url-template-settings"></a>Key Vault geheime referentie in URL-sjabloon instellingen
+
+De URL van de upstream is geen versleuteling bij de rest. Als u gevoelige informatie hebt, kunt u het beste Key Vault gebruiken om ze op te slaan waar toegangs beheer een betere verzekering heeft. In principe kunt u de beheerde identiteit van de Azure signalerings service inschakelen en vervolgens lees machtigingen verlenen voor een Key Vault-exemplaar en Key Vault verwijzing gebruiken in plaats van tekst zonder opmaak in een upstream-URL-patroon.
+
+1. Een door het systeem toegewezen identiteit of door de gebruiker toegewezen identiteit toevoegen. Zie [beheerde identiteit toevoegen in azure Portal](./howto-use-managed-identity.md#add-a-system-assigned-identity)
+
+2. Verleen geheim Lees machtiging voor de beheerde identiteit in het toegangs beleid in de Key Vault. Zie [toegangs beleid voor Key Vault toewijzen met behulp van de Azure Portal](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+
+3. Vervang uw gevoelige tekst door de syntaxis `{@Microsoft.KeyVault(SecretUri=<secret-identity>)}` in het URL-patroon van de upstream.
+
+> [!NOTE]
+> De geheime inhoud wordt alleen opnieuw gelezen wanneer u de upstream-instellingen wijzigt of de beheerde identiteit wijzigt. Zorg ervoor dat u de machtiging geheim lezen hebt verleend aan de beheerde identiteit voordat u de Key Vault geheime referentie gebruikt.
+
 ### <a name="rule-settings"></a>Regel instellingen
 
-U kunt *regels voor kanbanregels*, *categorie regels*en *gebeurtenis regels* afzonderlijk instellen. De overeenkomende regel ondersteunt drie indelingen. Neem gebeurtenis regels als voor beeld:
+U kunt *regels voor kanbanregels*, *categorie regels* en *gebeurtenis regels* afzonderlijk instellen. De overeenkomende regel ondersteunt drie indelingen. Neem gebeurtenis regels als voor beeld:
 - Gebruik een asterisk (*) om een wille keurige gebeurtenis te zoeken.
 - Gebruik een komma (,) om lid te worden van meerdere gebeurtenissen. Bijvoorbeeld, `connected, disconnected` komt overeen met de gebeurtenissen Connected en disconnected.
 - De volledige gebeurtenis naam moet overeenkomen met de gebeurtenis. Bijvoorbeeld, `connected` komt overeen met de gebeurtenis Connected.
 
 > [!NOTE]
-> Als u gebruikmaakt van Azure Functions en [signaal schakelaar](../azure-functions/functions-bindings-signalr-service-trigger.md), wordt door de signaal trigger een enkel eind punt beschikbaar gesteld in de volgende indeling: `https://<APP_NAME>.azurewebsites.net/runtime/webhooks/signalr?code=<API_KEY>` .
-> U kunt de URL-sjabloon alleen configureren voor deze URL.
+> Als u gebruikmaakt van Azure Functions en [signaal schakelaar](../azure-functions/functions-bindings-signalr-service-trigger.md), wordt door de signaal trigger een enkel eind punt beschikbaar gesteld in de volgende indeling: `<Function_App_URL>/runtime/webhooks/signalr?code=<API_KEY>` .
+> U kunt gewoon **URL-sjabloon instellingen** configureren voor deze URL en **regel instellingen** standaard blijven gebruiken. Zie de integratie van de [Signa lering-service](../azure-functions/functions-bindings-signalr-service-trigger.md#signalr-service-integration) voor meer informatie over het zoeken naar `<Function_App_URL>` en `<API_KEY>` .
 
 ### <a name="authentication-settings"></a>Verificatie-instellingen
 
@@ -80,11 +93,11 @@ Wanneer u selecteert `ManagedIdentity` , moet u een beheerde identiteit in de Az
     :::image type="content" source="media/concept-upstream/upstream-portal.png" alt-text="Upstream-instellingen":::
 
 3. Voeg Url's toe onder het URL-patroon van de **upstream**. Vervolgens wordt de standaard waarde weer gegeven in de instellingen van de **hub** .
-4. Als u instellingen wilt instellen voor **regels**voor de hub, **gebeurtenis regels**, **categorie regels**en **upstream-verificatie**, selecteert u de waarde hub- **regels**. Er wordt een pagina weer gegeven waarin u de instellingen kunt bewerken:
+4. Als u instellingen wilt instellen voor **regels** voor de hub, **gebeurtenis regels**, **categorie regels** en **upstream-verificatie**, selecteert u de waarde hub- **regels**. Er wordt een pagina weer gegeven waarin u de instellingen kunt bewerken:
 
-    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Upstream-instellingen":::
+    :::image type="content" source="media/concept-upstream/upstream-detail-portal.png" alt-text="Details van de upstream-instelling":::
 
-5. Als u een **upstream-verificatie**wilt instellen, moet u ervoor zorgen dat u eerst een beheerde identiteit hebt ingeschakeld. Selecteer vervolgens **beheerde identiteit gebruiken**. Afhankelijk van uw behoeften kunt u opties selecteren onder **verificatie resource-id**. Zie [beheerde identiteiten voor de Azure signalerings service](howto-use-managed-identity.md) voor meer informatie.
+5. Als u een **upstream-verificatie** wilt instellen, moet u ervoor zorgen dat u eerst een beheerde identiteit hebt ingeschakeld. Selecteer vervolgens **beheerde identiteit gebruiken**. Afhankelijk van uw behoeften kunt u opties selecteren onder **verificatie resource-id**. Zie [beheerde identiteiten voor de Azure signalerings service](howto-use-managed-identity.md) voor meer informatie.
 
 ## <a name="create-upstream-settings-via-resource-manager-template"></a>Upstream-instellingen maken via Resource Manager-sjabloon
 
@@ -115,7 +128,7 @@ Als u de instellingen voor de upstream wilt maken met behulp van een [Azure Reso
 
 ## <a name="serverless-protocols"></a>Serverloze protocollen
 
-De Azure signalerings service stuurt berichten naar eind punten die de volgende protocollen volgen.
+De Azure signalerings service stuurt berichten naar eind punten die de volgende protocollen volgen. U kunt de [trigger voor signaal service-activering](../azure-functions/functions-bindings-signalr-service-trigger.md) gebruiken met functie-app, die deze protocollen voor u afhandelt.
 
 ### <a name="method"></a>Methode
 
@@ -170,3 +183,5 @@ Hex_encoded(HMAC_SHA256(accessKey, connection-id))
 
 - [Beheerde identiteiten voor de Azure signalerings service](howto-use-managed-identity.md)
 - [Ontwikkeling en configuratie van Azure Functions met Azure SignalR Service](signalr-concept-serverless-development-config.md)
+- [Berichten van de seingevings service (binding activeren) afhandelen](../azure-functions/functions-bindings-signalr-service-trigger.md)
+- [Bindings voorbeeld van signaal service trigger](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/BidirectionChat)

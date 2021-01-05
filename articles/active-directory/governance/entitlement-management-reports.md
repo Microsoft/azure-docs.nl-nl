@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86f2d5202a9b5439fcacca549659e4e181ffeca4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6eb44c1efd683b6febe9a355ef72c80cc6f2e40d
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85078133"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746623"
 ---
 # <a name="view-reports-and-logs-in-azure-ad-entitlement-management"></a>Rapporten en logboeken weer geven in het beheer van rechten van Azure AD
 
@@ -87,7 +87,7 @@ Als u meer wilt weten over de manier waarop een gebruiker toegang tot een toegan
 
 1. Klik op **Toepassen**.
 
-1. Klik op **downloaden**om de logboeken te downloaden.
+1. Klik op **downloaden** om de logboeken te downloaden.
 
 Wanneer Azure AD een nieuwe aanvraag ontvangt, wordt een controle record geschreven waarin de **categorie** is `EntitlementManagement` en de **activiteit** doorgaans `User requests access package assignment` .  In het geval van een directe toewijzing die in de Azure Portal is gemaakt, is het veld **activiteit** van de controle record `Administrator directly assigns user to access package` en wordt de gebruiker die de toewijzing uitvoert geïdentificeerd door de **ActorUserPrincipalName**.
 

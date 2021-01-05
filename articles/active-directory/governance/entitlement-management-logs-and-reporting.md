@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/17/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89d6379f3fa41036836288ed5c75fbdaad0031da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af9921510ba11ab1bd7d0664b2c4c19e042864d3
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88783815"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746640"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Logboeken en rapporten archiveren op het beheer van rechten van Azure AD in Azure Monitor
 
@@ -44,7 +44,7 @@ Voor het archiveren van Azure AD-controle logboeken moet u Azure Monitor in een 
     ![Het deelvenster Diagnostische instellingen](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
 
 
-1. Nadat het logboek naar Azure Monitor is verzonden, selecteert u **log Analytics werk ruimten**en selecteert u de werk ruimte die de Azure AD-controle Logboeken bevat.
+1. Nadat het logboek naar Azure Monitor is verzonden, selecteert u **log Analytics werk ruimten** en selecteert u de werk ruimte die de Azure AD-controle Logboeken bevat.
 
 1. Selecteer **gebruik en geschatte kosten** en klik op **gegevens retentie**. Wijzig de schuif regelaar in het aantal dagen dat u de gegevens wilt houden om te voldoen aan uw controle vereisten.
 
@@ -54,7 +54,7 @@ Voor het archiveren van Azure AD-controle logboeken moet u Azure Monitor in een 
     
     1. Selecteer **Azure Active Directory** klik vervolgens op **werkmappen**. 
     
-    1. Vouw de sectie **Azure Active Directory probleem oplossing**uit en klik op **datum bereik gearchiveerd logboek**. 
+    1. Vouw de sectie **Azure Active Directory probleem oplossing** uit en klik op **datum bereik gearchiveerd logboek**. 
 
 
 ## <a name="view-events-for-an-access-package"></a>Gebeurtenissen voor een toegangs pakket weer geven  
@@ -128,7 +128,7 @@ Voer de volgende stappen uit om de roltoewijzing in te stellen en een query te m
 
     ![Een roltoewijzing toevoegen](./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png)
 
-### <a name="install-azure-powershell-module"></a>Azure PowerShell module installeren
+### <a name="install-azure-powershell-module"></a>Azure PowerShell-module installeren
 
 Zodra u de juiste roltoewijzing hebt, start u Power shell en [installeert u de module Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.3.0) (als u dat nog niet hebt gedaan) door het volgende te typen:
 

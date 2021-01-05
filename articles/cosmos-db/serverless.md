@@ -5,13 +5,13 @@ author: ThomasWeiss
 ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/25/2020
-ms.openlocfilehash: cabc243c6ba74217873b5b0a5fa51a7cb410512e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 12/23/2020
+ms.openlocfilehash: c5086eee805ffbcdf0741eae4db405b1bcbe8692
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170826"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760356"
 ---
 # <a name="azure-cosmos-db-serverless-preview"></a>Azure Cosmos DB serverloze (preview-versie)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -19,7 +19,7 @@ ms.locfileid: "96170826"
 > [!IMPORTANT]
 > Azure Cosmos DB server is momenteel beschikbaar als preview-versie. Deze preview-versie wordt zonder Service Level Agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Azure Cosmos DB serverloos kunt u uw Azure Cosmos-account gebruiken op basis van verbruik, waarbij alleen kosten worden berekend voor de aanvraag eenheden die worden verbruikt door uw database bewerkingen en de opslag die wordt gebruikt door uw gegevens. Er worden geen minimale kosten in rekening gebracht bij het gebruik van Azure Cosmos DB in de serverloze modus.
+Azure Cosmos DB serverloos kunt u uw Azure Cosmos-account gebruiken op basis van verbruik, waarbij alleen kosten worden berekend voor de aanvraag eenheden die worden verbruikt door uw database bewerkingen en de opslag die wordt gebruikt door uw gegevens. Serverloze containers kunnen duizenden aanvragen per seconde aanbieden zonder minimale kosten en geen capaciteits planning vereist.
 
 > [!IMPORTANT] 
 > Hebt u feedback over serverloos? We willen horen! U kunt een bericht weghalen naar het Azure Cosmos DB serverloze team: [azurecosmosdbserverless@service.microsoft.com](mailto:azurecosmosdbserverless@service.microsoft.com) .
@@ -36,13 +36,12 @@ Azure Cosmos DB server het beste geschikt is voor scenario's waar u verwacht:
 - **Laag, onregelmatig en onvoorspelbaar verkeer**: omdat het inrichten van capaciteit in dergelijke situaties niet vereist is en het mogelijk is dat de kosten worden verboden
 - **Matige prestaties**: omdat containers van serverloze [specifieke prestatie kenmerken](#performance) hebben
 
-Om deze redenen moet Azure Cosmos DB serverloos worden overwogen voor de volgende typen werk belasting:
+Om deze redenen moet Azure Cosmos DB serverloze worden overwogen in de volgende situaties:
 
-- Ontwikkeling
-- Testen
-- Prototyping
-- Werkbaar concept
-- Niet-kritieke toepassing met licht verkeer
+- Aan de slag met Azure Cosmos DB
+- Ontwikkeling, testen en prototypen van nieuwe toepassingen
+- Kleine tot middel grote toepassingen uitvoeren met onregelmatige verkeer dat moeilijk te voors pellen is
+- Integreren met serverloze Compute-services zoals [Azure functions](../azure-functions/functions-overview.md)
 
 Zie de [keuze tussen ingerichte door Voer en serverloos](throughput-serverless.md) artikel voor meer informatie over het kiezen van de aanbieding die het beste bij uw gebruik past.
 

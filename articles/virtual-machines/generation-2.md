@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: jushiman
-ms.openlocfilehash: 56a360f461c89d7c60e973bf2d6258d63113ab47
-ms.sourcegitcommit: 6b16e7cc62b29968ad9f3a58f1ea5f0baa568f02
+ms.openlocfilehash: 61897a790da8a5f52b1b8f8e208629e7755690fa
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/28/2020
-ms.locfileid: "96303777"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97759735"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Ondersteuning voor Generatie 2-VM’s in Azure
 
@@ -36,7 +36,9 @@ Virtuele machines van de eerste generatie worden ondersteund door alle VM-groott
 * [Dasv4-serie](dav4-dasv4-series.md)
 * [Ddsv4-serie](ddv4-ddsv4-series.md)
 * [Esv3-serie](ev3-esv3-series.md)
+* [Esv4-serie](ev4-esv4-series.md)
 * [Easv4-serie](eav4-easv4-series.md)
+* [Edsv4-serie](edv4-edsv4-series.md)
 * [Fsv2-serie](fsv2-series.md)
 * [GS-serie](sizes-previous-gen.md#gs-series)
 * [HB-serie](hb-series.md)

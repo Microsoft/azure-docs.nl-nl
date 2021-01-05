@@ -2,16 +2,23 @@
 title: Service Fabric volgende stappen voor het maken van een project
 description: Meer informatie over het toepassings project dat u zojuist hebt gemaakt in Visual Studio.  Meer informatie over het bouwen van services met zelf studies en meer informatie over het ontwikkelen van services voor Service Fabric.
 ms.topic: conceptual
-ms.date: 12/07/2017
-ms.openlocfilehash: 01a69016e0c299fba0365fab5332b572fd2ca87a
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.date: 12/21/2020
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 59c8eb0737d2cef1c4b1df34d673b74944fef4e1
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314477"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760432"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Uw Service Fabric-toepassing en de volgende stappen
-Uw Azure Service Fabric-toepassing is gemaakt. In dit artikel worden enkele zelf studies beschreven voor het uitproberen, het Makeup van uw project, een aantal meer informatie die u mogelijk interesseert en mogelijke volgende stappen.
+Uw Azure Service Fabric-toepassing is gemaakt. Dit artikel bevat een aantal resources, wat meer informatie u mogelijk interesseert en mogelijke [volgende stappen](#next-steps).
+
+Nieuwe gebruikers kunnen [zelf studies, scenario's en voor beelden](#get-started-with-tutorials-walk-throughs-and-samples) vinden. Het kan ook handig zijn om de [structuur van het gemaakte toepassings project](#the-application-project)te controleren. Ook bevat beschrijvingen van de [Programmeer modellen](#learn-more-about-the-programming-models)van service Fabric, [service communicatie](#learn-about-service-communication), [toepassings beveiliging](#learn-about-configuring-application-security)en [levens cyclus van toepassingen](#learn-about-the-application-lifecycle).
+
+Meer ervaren gebruikers kunnen het gedeelte van de Service Fabric [Best practices](#learn-about-best-practices) vinden om te leren hoe ze profiteren van het platform en de structuur van toepassingen met een maximale effectiviteit.
+
+Zie de [betreffende sectie](#have-questions-or-feedback--need-to-report-an-issue)voor degenen met vragen of feedback of voor wie een probleem moet worden gemeld.
 
 ## <a name="get-started-with-tutorials-walk-throughs-and-samples"></a>Aan de slag met zelf studies, instructies en voor beelden
 Klaar om te beginnen?  
@@ -26,11 +33,6 @@ Of probeer een van de volgende instructies uit en maak uw eerste...
 
 Misschien bent u ook geïnteresseerd in het uitproberen van de [voorbeeld toepassingen](/samples/browse/?products=azure).
 
-## <a name="have-questions-or-feedback--need-to-report-an-issue"></a>Vragen of feedback?  Wilt u een probleem melden?
-Lees de [Veelgestelde vragen](service-fabric-common-questions.md) en vind antwoorden op wat service Fabric kan doen en hoe dit moet worden gebruikt.
-
-[Ondersteunings opties bieden](service-fabric-support.md) een lijst met forums over stack overflow en MSDN voor het stellen van vragen, evenals opties voor het rapporteren van problemen, het verkrijgen van ondersteuning en het indienen van product feedback.
-
 ## <a name="the-application-project"></a>Het toepassings project
 Elke nieuwe toepassing bevat een toepassings project. Er kunnen één of twee extra projecten zijn, afhankelijk van het gekozen type service.
 
@@ -41,8 +43,6 @@ Het toepassings project bestaat uit:
 * Drie toepassings parameter bestanden (hetzelfde als hierboven) die u kunt gebruiken voor het onderhouden van omgevings-specifieke toepassings configuraties, zoals het aantal partities dat moet worden gemaakt voor een service. Meer informatie over het [configureren van uw toepassing voor meerdere omgevingen](service-fabric-manage-multiple-environment-app-configuration.md).
 * Een implementatie script dat u kunt gebruiken om uw toepassing te implementeren vanaf de opdracht regel of als onderdeel van een automatische continue integratie-en implementatie pijplijn. Meer informatie over het [implementeren van toepassingen met behulp van Power shell](service-fabric-deploy-remove-applications.md).
 * Het toepassings manifest, waarmee de toepassing wordt beschreven. U vindt het manifest in de map Application Package root. Meer informatie over [toepassings-en service manifesten](service-fabric-application-model.md).
-
-
 
 ## <a name="learn-more-about-the-programming-models"></a>Meer informatie over de programmeer modellen
 Service Fabric biedt meerdere manieren om uw services te schrijven en te beheren.  Hier vindt u een overzicht en conceptuele informatie over [stateless en stateful reliable Services](service-fabric-reliable-services-introduction.md), [reliable actors](service-fabric-reliable-actors-introduction.md), [containers](service-fabric-containers-overview.md), [uitvoer bare gast bestanden](service-fabric-guest-executables-introduction.md)en stateless [ASP.net Core Services](service-fabric-reliable-services-communication-aspnetcore.md).
@@ -57,6 +57,26 @@ Uw toepassing kan gevoelige informatie bevatten, zoals verbindings reeksen voor 
 
 ## <a name="learn-about-the-application-lifecycle"></a>Meer informatie over de levens cyclus van toepassingen
 Net als bij andere platforms gaat een Service Fabric-toepassing doorgaans door de volgende fasen: ontwerpen, ontwikkelen, testen, implementeren, bijwerken, onderhoud en verwijderen. [Dit artikel](service-fabric-application-lifecycle.md) bevat een overzicht van de api's en hoe deze worden gebruikt door de verschillende rollen in de fasen van de levens cyclus van de service Fabric-toepassing.
+
+## <a name="learn-about-best-practices"></a>Meer informatie over best practices
+Service Fabric heeft een aantal artikelen waarin [Aanbevolen procedures](./service-fabric-best-practices-overview.md)worden beschreven. Profiteer van deze informatie om ervoor te zorgen dat het cluster en de toepassing zo goed mogelijk worden uitgevoerd.
+De besproken onderwerpen zijn onder andere:
+* [Beveiliging](./service-fabric-best-practices-security.md)
+* [Netwerken](./service-fabric-best-practices-networking.md)
+* [Compute-planning en schalen](./service-fabric-best-practices-capacity-scaling.md)
+* [Infrastructure als code](./service-fabric-best-practices-infrastructure-as-code.md)
+* [Controle en diagnose](./service-fabric-best-practices-monitoring.md)
+* [Toepassingsontwerp](./service-fabric-best-practices-applications.md)
+
+Ook inbegrepen is een [controle lijst voor productie voorbereiding](./service-fabric-production-readiness-checklist.md) waarmee alle best practice informatie in een gemakkelijk te gebruiken indeling wordt geïntegreerd.
+
+## <a name="have-questions-or-feedback--need-to-report-an-issue"></a>Vragen of feedback?  Wilt u een probleem melden?
+Lees de [Veelgestelde vragen](service-fabric-common-questions.md) en vind antwoorden op wat service Fabric kan doen en hoe dit moet worden gebruikt.
+
+[Hand leidingen voor probleem oplossing](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides) kunnen nuttig zijn bij het vaststellen en oplossen van veelvoorkomende problemen in service Fabric clusters.
+
+[Ondersteunings opties bieden](service-fabric-support.md) een lijst met forums over stack overflow en MSDN voor het stellen van vragen, evenals opties voor het rapporteren van problemen, het verkrijgen van ondersteuning en het indienen van product feedback.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Maak een Windows-cluster in azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).

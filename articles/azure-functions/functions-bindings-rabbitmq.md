@@ -7,21 +7,21 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: a38015d9f7560930d77d5d50ac70dca5bcdde6a6
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 2a480f25821f5022295b18ca24abfd2c0fb8a50c
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672505"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746521"
 ---
 # <a name="rabbitmq-bindings-for-azure-functions-overview"></a>RabbitMQ-bindingen voor Azure Functions-overzicht
 
 > [!NOTE]
-> De RabbitMQ-bindingen worden alleen volledig ondersteund in **Windows Premium en speciale** abonnementen. Verbruik en Linux worden momenteel niet ondersteund.
+> De RabbitMQ-bindingen worden alleen volledig ondersteund voor **Premium-en speciale** abonnementen. Verbruik wordt niet ondersteund.
 
 Azure Functions integreert met [RabbitMQ](https://www.rabbitmq.com/) via [Triggers en bindingen](./functions-triggers-bindings.md). Met de Azure Functions RabbitMQ-extensie kunt u berichten verzenden en ontvangen met behulp van de RabbitMQ-API met functies.
 
-| Bewerking | Type |
+| Actie | Type |
 |---------|---------|
 | Een functie uitvoeren wanneer een RabbitMQ-bericht door de wachtrij wordt opgehaald | [Trigger](./functions-bindings-rabbitmq-trigger.md) |
 | RabbitMQ-berichten verzenden |[Uitvoer binding](./functions-bindings-rabbitmq-output.md) |
@@ -34,7 +34,7 @@ Om aan de slag te gaan met het ontwikkelen met deze uitbrei ding, moet u eerst [
 
 Voor het werken met de trigger en bindingen moet u verwijzen naar het juiste pakket. Het NuGet-pakket wordt gebruikt voor .NET-klassen bibliotheken terwijl de uitbreidings bundel wordt gebruikt voor alle andere toepassings typen.
 
-| Taal                                        | Toevoegen door...                                   | Opmerkingen 
+| Taal                                        | Toevoegen door...                                   | Opmerkingen
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Het [NuGet-pakket]installeren, versie 4. x | |
 | C#-script, Java, java script, Python, Power shell | De [uitbreidings bundel] registreren          | De [extensie voor Azure-Hulpprogram ma's] wordt aanbevolen voor gebruik met Visual Studio code. |

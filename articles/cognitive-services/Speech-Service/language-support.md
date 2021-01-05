@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 1b73b018432e5fb9a8af90fc141d009d1bb7b799
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: d0cb9dc3c54f409c3bdd71fbb57c823e15abc22d
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617048"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762959"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -137,6 +137,11 @@ Zowel de micro soft Speech SDK als REST Api's ondersteunen deze stemmen, die elk
 Neural text-to-speech is een nieuw type spraak synthese dat wordt aangedreven door diepe Neural-netwerken. Als u een neurale stem gebruikt, is de gesynthetiseerde spraak bijna niet van de menselijke opnamen te onderscheiden.
 
 Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitbreiden en spraak assistenten die natuurlijk en aantrekkelijker zijn, en om digitale teksten, zoals e-books, te converteren naar Audiobooks en in-car navigatie systemen te verbeteren. Dankzij de menselijke, natuurlijke prosodie en duidelijke articulatie verminderen neurale stemmen de bij het luisteren optredende vermoeidheid wanneer gebruikers met AI-systemen communiceren.
+
+> [!NOTE]
+> Neural stemmen worden gemaakt op basis van voor beelden die een sample frequentie van 24 kHz gebruiken.
+> Alle stemmen kunnen worden gesampled of gedownsamplen naar andere sampling frequenties bij het nakunsten.
+
 
 | Taal | Landinstelling | Geslacht | Spraak naam | Stijl ondersteuning |
 |---|---|---|---|---|
@@ -294,6 +299,11 @@ Zie voor meer informatie over het configureren en aanpassen van Neural stemmen, 
 
 Meer dan 75 standaard stemmen zijn beschikbaar in meer dan 45 talen en land instellingen, waarmee u tekst kunt converteren naar gesynthesizerde spraak. Zie [regio's](regions.md#standard-and-neural-voices)voor meer informatie over regionale Beschik baarheid.
 
+> [!NOTE]
+> Met twee uitzonde ringen worden standaard stemmen gemaakt op basis van steek proeven die een sample frequentie van 16 kHz gebruiken.
+> **De AriaRUS** en en **-US-GuyRUS** stemmen worden ook gemaakt op basis van steek proeven die gebruikmaken van een sample frequentie van 24 kHz.
+> Alle stemmen kunnen worden gesampled of gedownsamplen naar andere sampling frequenties bij het nakunsten.
+
 | Taal | Land instelling (BCP-47) | Geslacht | Spraak naam |
 |--|--|--|--|
 | Arabisch (Arabisch) | `ar-EG` | Vrouw | `ar-EG-Hoda`|
@@ -325,7 +335,7 @@ Meer dan 75 standaard stemmen zijn beschikbaar in meer dan 45 talen en land inst
 | Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-Susan`|
 | Engels (Verenigde Staten) | `en-US` | Man | `en-US-BenjaminRUS`|
 | Engels (Verenigde Staten) | `en-US` | Man | `en-US-GuyRUS`|
-| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-JessaRUS`|
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-AriaRUS`|
 | Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-ZiraRUS`|
 | Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-HeidiRUS`|
 | Frans (Canada) | `fr-CA` | Vrouw | `fr-CA-Caroline`|

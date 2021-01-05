@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf6e02ebad2ac5150be4775ad0ff6069fe3db89f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4b87fdd7c73d089c46d456491c02d49cb6f8883d
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980040"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745960"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Een catalogus met resources maken en beheren in azure AD-rechts beheer
 
@@ -69,9 +69,9 @@ Als u resources wilt toevoegen aan een toegangs pakket, moeten de resources aanw
 
 1. Klik op **resources toevoegen**.
 
-1. Klik op een resource type: **groepen en teams**, **toepassingen**of **share point-sites**.
+1. Klik op een resource type: **groepen en teams**, **toepassingen** of **share point-sites**.
 
-    Als u een resource die u wilt toevoegen niet ziet of u geen resource kunt toevoegen, moet u ervoor zorgen dat u beschikt over de vereiste functie voor Azure AD-Directory en rechten beheer. Mogelijk moet u iemand met de vereiste rollen hebben om de resource toe te voegen aan uw catalogus. Zie [vereiste rollen voor het toevoegen van resources aan een catalogus](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog)voor meer informatie.
+    Als u een resource die u wilt toevoegen niet ziet of u geen resource kunt toevoegen, moet u ervoor zorgen dat u beschikt over de vereiste functie voor Azure AD-Directory en rechten beheer. Mogelijk moet u iemand met de vereiste rollen hebben om de resource toe te voegen aan uw catalogus. Bekijk [Vereiste rollen om bronnen aan een catalogus toe te voegen](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog) voor meer informatie.
 
 1. Selecteer een of meer resources van het type dat u wilt toevoegen aan de catalogus.
 
@@ -150,9 +150,9 @@ U kunt een catalogus verwijderen, maar alleen als deze geen toegangs pakketten h
 
 1. Klik in het menu links op **catalogi** en open vervolgens de catalogus die u wilt verwijderen.
 
-1. Klik op **verwijderen**in het **overzicht**van de catalogus.
+1. Klik op **verwijderen** in het **overzicht** van de catalogus.
 
-1. Klik op **Ja**in het bericht venster dat wordt weer gegeven.
+1. Klik op **Ja** in het bericht venster dat wordt weer gegeven.
 
 ### <a name="deleting-a-catalog-programmatically"></a>Een catalogus programmatisch verwijderen
 

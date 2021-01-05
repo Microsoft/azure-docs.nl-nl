@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 22cef5919e597d4cd83ad80f5758a0427c52e2bb
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: e1031df9f305015048de7f708123a51875776e1b
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219731"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760585"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Gegevens opslaan aan de rand met Azure Blob Storage op IoT Edge
 
@@ -71,7 +71,7 @@ Een standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azu
 
 ## <a name="devicetocloudupload-and-deviceautodelete-properties"></a>eigenschappen deviceToCloudUpload en deviceAutoDelete
 
-Gebruik de gewenste eigenschappen van de module om **deviceToCloudUploadProperties** en **deviceAutoDeleteProperties**in te stellen. Gewenste eigenschappen kunnen tijdens de implementatie worden ingesteld of later worden gewijzigd door de module te bewerken, maar niet opnieuw te implementeren. We raden u aan om de ' module dubbele ' voor `reported configuration` te controleren en `configurationValidation` om ervoor te zorgen dat waarden correct worden door gegeven.
+Gebruik de gewenste eigenschappen van de module om **deviceToCloudUploadProperties** en **deviceAutoDeleteProperties** in te stellen. Gewenste eigenschappen kunnen tijdens de implementatie worden ingesteld of later worden gewijzigd door de module te bewerken, maar niet opnieuw te implementeren. We raden u aan om de ' module dubbele ' voor `reported configuration` te controleren en `configurationValidation` om ervoor te zorgen dat waarden correct worden door gegeven.
 
 ### <a name="devicetoclouduploadproperties"></a>deviceToCloudUploadProperties
 
@@ -81,9 +81,9 @@ De naam van deze instelling is `deviceToCloudUploadProperties` . Als u de IoT Ed
 | ----- | ----- | ---- |
 | uploadOn | de waarde True, false | Standaard ingesteld op `false` . Als u de functie wilt inschakelen, stelt u dit veld in op `true` . <br><br> Omgevings variabele: `deviceToCloudUploadProperties__uploadOn={false,true}` |
 | uploadOrder | NewestFirst, OldestFirst | Hiermee kunt u de volg orde kiezen waarin de gegevens naar Azure worden gekopieerd. Standaard ingesteld op `OldestFirst` . De volg orde wordt bepaald door het tijdstip van de laatste wijziging van de blob. <br><br> Omgevings variabele: `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
-| cloudStorageConnectionString |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` is een connection string waarmee u het opslag account kunt opgeven waarnaar u uw gegevens wilt uploaden. Opgeven `Azure Storage Account Name` , `Azure Storage Account Key` , `End point suffix` . Voeg de juiste EndpointSuffix van Azure toe, waarbij gegevens worden geüpload, wat de wereld wijde Azure, overheids Azure en Microsoft Azure Stack is. <br><br> U kunt ervoor kiezen om Azure Storage SAS-connection string hier op te geven. Maar u moet deze eigenschap bijwerken wanneer deze verloopt. <br><br> Omgevings variabele: `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
+| cloudStorageConnectionString |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` is een connection string waarmee u het opslag account kunt opgeven waarnaar u uw gegevens wilt uploaden. Opgeven `Azure Storage Account Name` , `Azure Storage Account Key` , `End point suffix` . Voeg de juiste EndpointSuffix van Azure toe, waarbij gegevens worden geüpload, wat de wereld wijde Azure, overheids Azure en Microsoft Azure Stack is. <br><br> U kunt ervoor kiezen om Azure Storage SAS-connection string hier op te geven. Maar u moet deze eigenschap bijwerken wanneer deze verloopt. SAS-machtigingen kunnen onder andere het maken van toegang voor containers omvatten en het maken, schrijven en toevoegen van toegang voor blobs.  <br><br> Omgevings variabele: `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
 | storageContainersForUpload | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Hiermee kunt u de namen van de containers opgeven die u wilt uploaden naar Azure. Met deze module kunt u zowel de bron-als de doel container naam opgeven. Als u de naam van de doel container niet opgeeft, wordt de naam van de container automatisch toegewezen als `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>` . U kunt sjabloon teken reeksen maken voor de naam van de doel container, de kolom mogelijke waarden bekijken. <br>*% h-> IoT Hub naam (3-50 tekens). <br>*% d-> IoT Edge apparaat-ID (1 tot 129 tekens). <br>*% m-> module naam (1 tot 64 tekens). <br>*% c-> bron container naam (3 tot 63 tekens). <br><br>De maximum grootte van de container naam is 63 tekens, terwijl de naam van de doel container automatisch wordt toegewezen als de grootte van de container groter is dan 63 tekens, wordt elke sectie (IoTHubName, IotEdgeDeviceID, module naam, SourceContainerName) in 15 tekens geknipt. <br><br> Omgevings variabele: `deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target=<targetName>` |
-| deleteAfterUpload | de waarde True, false | Standaard ingesteld op `false` . Als deze is ingesteld op `true` , worden de gegevens automatisch verwijderd wanneer het uploaden naar de Cloud opslag is voltooid. <br><br> **Let**op: als u toevoeg-blobs gebruikt, wordt met deze instelling toevoeg-blobs uit de lokale opslag verwijderd nadat het uploaden is geslaagd, en eventuele toekomstige toevoeg bewerkingen voor het blok keren van deze blobs mislukken. Gebruik deze instelling voorzichtig, schakel dit niet in als uw toepassing incidenteel toevoeg bewerkingen uitvoert of geen ondersteuning biedt voor doorlopende toevoeg bewerkingen<br><br> Omgevings variabele: `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` . |
+| deleteAfterUpload | de waarde True, false | Standaard ingesteld op `false` . Als deze is ingesteld op `true` , worden de gegevens automatisch verwijderd wanneer het uploaden naar de Cloud opslag is voltooid. <br><br> **Let** op: als u toevoeg-blobs gebruikt, wordt met deze instelling toevoeg-blobs uit de lokale opslag verwijderd nadat het uploaden is geslaagd, en eventuele toekomstige toevoeg bewerkingen voor het blok keren van deze blobs mislukken. Gebruik deze instelling voorzichtig, schakel dit niet in als uw toepassing incidenteel toevoeg bewerkingen uitvoert of geen ondersteuning biedt voor doorlopende toevoeg bewerkingen<br><br> Omgevings variabele: `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` . |
 
 ### <a name="deviceautodeleteproperties"></a>deviceAutoDeleteProperties
 
@@ -93,7 +93,7 @@ De naam van deze instelling is `deviceAutoDeleteProperties` . Als u de IoT Edge 
 | ----- | ----- | ---- |
 | deleteOn | de waarde True, false | Standaard ingesteld op `false` . Als u de functie wilt inschakelen, stelt u dit veld in op `true` . <br><br> Omgevings variabele: `deviceAutoDeleteProperties__deleteOn={false,true}` |
 | deleteAfterMinutes | `<minutes>` | Geef de tijd in minuten op. De module verwijdert automatisch uw blobs uit de lokale opslag wanneer deze waarde verloopt. Het huidige maximum aantal minuten dat is toegestaan, is 35791. <br><br> Omgevings variabele: `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
-| retainWhileUploading | de waarde True, false | De standaard instelling is ingesteld op `true` , en de BLOB wordt bewaard tijdens het uploaden naar de Cloud opslag als deleteAfterMinutes verloopt. U kunt deze instellen op `false` en de gegevens worden verwijderd zodra deleteAfterMinutes verloopt. Opmerking: voor deze eigenschap werkt uploadOn moet worden ingesteld op True.  <br><br> **Let**op: als u toevoeg-blobs gebruikt, wordt met deze instelling toevoeg-blobs uit de lokale opslag verwijderd wanneer de waarde verloopt en eventuele toekomstige toevoeg bewerkingen voor het blok keren van deze blobs mislukken. U kunt ervoor zorgen dat de verloop waarde groot genoeg is voor de verwachte frequentie van toevoeg bewerkingen die door uw toepassing worden uitgevoerd.<br><br> Omgevings variabele: `deviceAutoDeleteProperties__retainWhileUploading={false,true}`|
+| retainWhileUploading | de waarde True, false | De standaard instelling is ingesteld op `true` , en de BLOB wordt bewaard tijdens het uploaden naar de Cloud opslag als deleteAfterMinutes verloopt. U kunt deze instellen op `false` en de gegevens worden verwijderd zodra deleteAfterMinutes verloopt. Opmerking: voor deze eigenschap werkt uploadOn moet worden ingesteld op True.  <br><br> **Let** op: als u toevoeg-blobs gebruikt, wordt met deze instelling toevoeg-blobs uit de lokale opslag verwijderd wanneer de waarde verloopt en eventuele toekomstige toevoeg bewerkingen voor het blok keren van deze blobs mislukken. U kunt ervoor zorgen dat de verloop waarde groot genoeg is voor de verwachte frequentie van toevoeg bewerkingen die door uw toepassing worden uitgevoerd.<br><br> Omgevings variabele: `deviceAutoDeleteProperties__retainWhileUploading={false,true}`|
 
 ## <a name="using-smb-share-as-your-local-storage"></a>SMB-share gebruiken als lokale opslag
 
@@ -143,7 +143,7 @@ sudo chown -R 11000:11000 /srv/containerdata
 sudo chmod -R 700 /srv/containerdata
 ```
 
-Als u de service als een andere gebruiker dan **absie**moet uitvoeren, kunt u uw aangepaste gebruikers-id opgeven in CreateOptions onder gebruiker-eigenschap in het implementatie manifest. In dat geval moet u de standaard-of basis groep-ID gebruiken `0` .
+Als u de service als een andere gebruiker dan **absie** moet uitvoeren, kunt u uw aangepaste gebruikers-id opgeven in CreateOptions onder gebruiker-eigenschap in het implementatie manifest. In dat geval moet u de standaard-of basis groep-ID gebruiken `0` .
 
 ```json
 "createOptions": {
@@ -175,7 +175,7 @@ Geef uw IoT Edge apparaat op als het BLOB-eind punt voor opslag aanvragen die u 
   * `http://<fully qualified domain name>:11002/<account name>`
  
  > [!IMPORTANT]
- > Azure IoT Edge is hoofdletter gevoelig wanneer u aanroepen naar modules uitvoert en de opslag-SDK is standaard ingesteld op kleine letters. Hoewel de naam van de module in [Azure Marketplace](how-to-deploy-modules-portal.md#deploy-modules-from-azure-marketplace) **AzureBlobStorageonIoTEdge**is, is het wijzigen van de naam in kleine letters handig om ervoor te zorgen dat uw verbindingen met de Azure Blob Storage op IOT Edge module niet worden onderbroken.
+ > Azure IoT Edge is hoofdletter gevoelig wanneer u aanroepen naar modules uitvoert en de opslag-SDK is standaard ingesteld op kleine letters. Hoewel de naam van de module in [Azure Marketplace](how-to-deploy-modules-portal.md#deploy-modules-from-azure-marketplace) **AzureBlobStorageonIoTEdge** is, is het wijzigen van de naam in kleine letters handig om ervoor te zorgen dat uw verbindingen met de Azure Blob Storage op IOT Edge module niet worden onderbroken.
  
 ## <a name="azure-blob-storage-quickstart-samples"></a>Voor beelden van Azure Blob Storage Quick Start
 

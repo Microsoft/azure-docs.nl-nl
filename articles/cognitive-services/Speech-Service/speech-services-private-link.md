@@ -1,69 +1,87 @@
 ---
-title: Spraak Services gebruiken met persoonlijke eind punten
+title: Privé-eind punten gebruiken met de spraak service
 titleSuffix: Azure Cognitive Services
-description: Procedure voor het gebruik van spraak Services met privé-eind punten van Azure-koppeling
+description: Meer informatie over het gebruik van de spraak service met privé-eind punten van de persoonlijke Azure-koppeling
 services: cognitive-services
 author: alexeyo26
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 12/15/2020
 ms.author: alexeyo
-ms.openlocfilehash: 01a0171ed2b660fbabebf4276a74f8a3ea631bde
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: f905582615b16780fae179ba6a21bd4343bd47f3
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516528"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755800"
 ---
-# <a name="using-speech-services-with-private-endpoints-provided-by-azure-private-link"></a>Spraak Services gebruiken met privé-eind punten van de persoonlijke Azure-koppeling
+# <a name="use-speech-service-through-a-private-endpoint"></a>Speech Service gebruiken via een persoonlijk eind punt
 
-Met de [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md) kunt u via een [persoonlijk eind punt](../../private-link/private-endpoint-overview.md)verbinding maken met verschillende PaaS-Services in Azure. Een persoonlijk eind punt is een privé-IP-adres binnen een specifiek [virtueel netwerk](../../virtual-network/virtual-networks-overview.md) en subnet.
+Met de [persoonlijke Azure-koppeling](../../private-link/private-link-overview.md) kunt u verbinding maken met Services in azure met behulp van een [persoonlijk eind punt](../../private-link/private-endpoint-overview.md).
+Een persoonlijk eind punt is een privé-IP-adres dat alleen toegankelijk is binnen een specifiek [virtueel netwerk](../../virtual-network/virtual-networks-overview.md) en subnet.
 
-In dit artikel wordt uitgelegd hoe u persoonlijke koppelingen en privé-eind punten instelt en gebruikt met Azure cognitieve speech Services. 
+In dit artikel wordt uitgelegd hoe u persoonlijke koppelingen en privé-eind punten instelt en gebruikt met Azure cognitieve speech Services.
 
 > [!NOTE]
-> In dit artikel worden de specifieke informatie over het instellen en gebruiken van een persoonlijke koppeling met Azure cognitieve speech Services beschreven. Voordat u verder gaat, moet u vertrouwd raken met het algemene artikel over het [gebruik van virtuele netwerken met Cognitive Services](../cognitive-services-virtual-networks.md).
+> In dit artikel worden de specifieke informatie over het instellen en gebruiken van een persoonlijke koppeling met Azure cognitieve speech Services beschreven. Lees hoe u [virtuele netwerken gebruikt met Cognitive Services](../cognitive-services-virtual-networks.md)voordat u doorgaat.
 
-Voor het inschakelen van een spraak bron voor de scenario's voor het persoonlijke eind punt moet u de volgende taken uitvoeren:
-- [Aangepaste domein naam voor de spraak bron maken](#create-custom-domain-name)
-- [Privé-eind punt (en) maken en configureren](#enabling-private-endpoints)
-- [Bestaande toepassingen en oplossingen aanpassen](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled)
+Voer de volgende taken uit om een spraak service te gebruiken via een persoonlijk eind punt:
 
-Als u later besluit alle persoonlijke eind punten te verwijderen, maar de resource blijft gebruiken, worden de vereiste acties beschreven in [deze sectie](#using-speech-resource-with-custom-domain-name-without-private-endpoints).
+1. [Aangepaste domein naam voor de spraak bron maken](#create-a-custom-domain-name)
+2. [Privé-eind punt (en) maken en configureren](#enable-private-endpoints)
+3. [Bestaande toepassingen en oplossingen aanpassen](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled)
 
-## <a name="create-custom-domain-name"></a>Aangepaste domein naam maken
+Als u later persoonlijke eind punten wilt verwijderen, maar nog steeds de spraak resource wilt gebruiken, voert u de taken uit die in [deze sectie](#use-speech-resource-with-custom-domain-name-without-private-endpoints)worden gevonden.
 
-Privé-eind punten vereisen het gebruik van [Cognitive Services aangepaste subdomein namen](../cognitive-services-custom-subdomains.md). Gebruik de onderstaande instructies om een voor uw spraak bron te maken.
+## <a name="create-a-custom-domain-name"></a>Een aangepaste domein naam maken
 
-> [!WARNING]
-> Een spraak bron waarvoor een aangepaste domein naam is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. Waarschijnlijk moet u uw toepassings code aanpassen voor zowel het [persoonlijke eind punt ingeschakeld](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) als niet-scenario's met [  persoonlijke eind punten](#using-speech-resource-with-custom-domain-name-without-private-endpoints) .
+Persoonlijke eind punten vereisen een [Cognitive Services aangepaste subdomeinnaam](../cognitive-services-custom-subdomains.md). Volg de onderstaande instructies om een voor uw spraak bron te maken.
+
+> [!CAUTION]
+> Een spraak bron waarvoor een aangepaste domein naam is ingeschakeld, maakt gebruik van een andere manier om te communiceren met de spraak service.
+> U moet waarschijnlijk uw toepassings code aanpassen voor zowel het [persoonlijke eind punt ingeschakeld](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) als scenario's waarvoor [ **geen** persoonlijke eind punten zijn ingeschakeld](#use-speech-resource-with-custom-domain-name-without-private-endpoints) .
 >
-> Het inschakelen van een aangepaste domein naam kan [**niet onomkeerbaar**](../cognitive-services-custom-subdomains.md#can-i-change-a-custom-domain-name)zijn. De enige manier om terug te gaan naar de [regionale naam](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) is het maken van een nieuwe spraak resource. 
+> Wanneer u een aangepaste domein naam inschakelt, kan de bewerking [**niet onomkeerbaar**](../cognitive-services-custom-subdomains.md#can-i-change-a-custom-domain-name)zijn. De enige manier om terug te gaan naar de [regionale naam](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) is het maken van een nieuwe spraak resource.
 >
-> Met name in gevallen waarin uw spraak bron een groot aantal gekoppelde aangepaste modellen en projecten heeft die zijn gemaakt via [Speech Studio](https://speech.microsoft.com/) , wordt u **aangeraden de** configuratie te proberen met een test resource en vervolgens de ene te wijzigen die in de productie omgeving wordt gebruikt.
+> Als uw spraak bron een groot aantal gekoppelde aangepaste modellen en projecten heeft die zijn gemaakt via [Speech Studio](https://speech.microsoft.com/) , wordt u **aangeraden de** configuratie met een test bron te proberen voordat u de resource die wordt gebruikt in de productie omgeving wijzigt.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
-- Ga naar [Azure Portal](https://portal.azure.com/) en meld u aan bij uw Azure-account
-- De vereiste spraak resource selecteren
-- *Netwerk* selecteren (*resource beheer* groep) 
-- Klik op het tabblad *firewalls en virtuele netwerken* (standaard) op de knop **aangepaste domein naam genereren**
-- Er wordt een nieuw paneel weer gegeven met instructies voor het maken van een uniek aangepast subdomein voor uw resource
-> [!WARNING]
-> Nadat u een aangepaste domein naam hebt gemaakt, **kan deze niet meer** worden gewijzigd. Zie de bovenstaande waarschuwing voor meer informatie.
-- Wanneer de bewerking is voltooid, kunt u de *sleutels en het eind punt* (*resource beheer* groep) selecteren en de nieuwe naam van het eind punt van uw resource verifiëren in de indeling van <p />`{your custom name}.cognitiveservices.azure.com`
+Als u een aangepaste domein naam met Azure Portal wilt maken, voert u de volgende stappen uit:
+
+1. Ga naar [Azure Portal](https://portal.azure.com/) en meld u aan bij uw Azure-account.
+1. Selecteer de vereiste spraak resource.
+1. Klik in de groep **resource beheer** in het navigatie deel venster links op **netwerken**.
+1. Klik op het tabblad **firewalls en virtuele netwerken** op **aangepaste domein naam genereren**. Er wordt een nieuw rechts venster weer gegeven met instructies voor het maken van een uniek aangepast subdomein voor uw resource.
+1. Voer in het deel venster aangepaste domein naam genereren een aangepast domein naam gedeelte in. Uw volledige aangepaste domein ziet er als volgt uit: `https://{your custom name}.cognitiveservices.azure.com` . 
+    **Nadat u een aangepaste domein naam hebt gemaakt, _kan deze niet meer_ worden gewijzigd. Lees de waarschuwing voor waarschuwing hierboven opnieuw.** Nadat u de aangepaste domein naam hebt ingevoerd, klikt u op **Opslaan**.
+1. Nadat de bewerking is voltooid, klikt u in de groep **resource beheer** op **sleutels en eind punt**. Bevestig dat de nieuwe eindpunt naam van de resource op deze manier begint:
+
+    `https://{your custom name}.cognitiveservices.azure.com`
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Voor deze sectie moet u lokaal Power shell versie 7. x of hoger met de Azure PowerShell module versie 5.1.0 of hoger uitvoeren. Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt installeren of upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps).
+Als u een aangepaste domein naam met behulp van Power shell wilt maken, controleert u of uw computer Power shell versie 7. x of hoger met de Azure PowerShell module versie 5.1.0 of hoger heeft. Voer de volgende stappen uit om de versies van deze hulpprogram ma's weer te geven:
 
-Voordat u verder gaat met uitvoeren, `Connect-AzAccount` kunt u een verbinding maken met Azure.
+1. Typ in een Power shell-venster:
 
-## <a name="verify-custom-domain-name-availability"></a>Beschik baarheid van aangepaste domein namen controleren
+    `$PSVersionTable`
 
-U moet controleren of het aangepaste domein dat u wilt gebruiken, gratis is. We gebruiken de [Beschik baarheid](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) van de domein-methode controleren van Cognitive Services rest API. Zie de opmerkingen in het onderstaande code blok voor een uitleg van de stappen.
+    Bevestig dat de waarde van PSVersion groter is dan 7. x. Volg de instructies bij het [installeren van verschillende versies van Power shell](/powershell/scripting/install/installing-powershell) om een upgrade uit te voeren voor Power shell.
+
+1. Typ in een Power shell-venster:
+
+    `Get-Module -ListAvailable Az`
+
+    Als er niets wordt weer gegeven of als Azure PowerShell module versie lager is dan 5.1.0, volgt u de instructies op de [Azure PowerShell module installeren](/powershell/azure/install-Az-ps) om een upgrade uit te voeren.
+
+Voordat u doorgaat, voert `Connect-AzAccount` u uit om een verbinding te maken met Azure.
+
+## <a name="verify-custom-domain-name-is-available"></a>Controleer of de aangepaste domein naam beschikbaar is
+
+U moet controleren of het aangepaste domein dat u wilt gebruiken, beschikbaar is. Volg deze stappen om te bevestigen dat het domein beschikbaar is via de bewerking [domein beschikbaarheid controleren](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) in het Cognitive Services rest API.
 
 > [!TIP]
 > De onderstaande code werkt **niet** in azure Cloud shell.
@@ -72,18 +90,16 @@ U moet controleren of het aangepaste domein dat u wilt gebruiken, gratis is. We 
 $subId = "Your Azure subscription Id"
 $subdomainName = "custom domain name"
 
-# Select the Azure subscription containing Speech resource
-# If your Azure account has only one active subscription
-# you can skip this step
+# Select the Azure subscription that contains Speech resource.
+# You can skip this step if your Azure account has only one active subscription.
 Set-AzContext -SubscriptionId $subId
 
-# Preparing OAuth token which is used in request
-# to Cognitive Services REST API
+# Prepare OAuth token to use in request to Cognitive Services REST API.
 $Context = Get-AzContext
 $AccessToken = (Get-AzAccessToken -TenantId $Context.Tenant.Id).Token
 $token = ConvertTo-SecureString -String $AccessToken -AsPlainText -Force
 
-# Preparing and executing the request to Cognitive Services REST API
+# Prepare and send the request to Cognitive Services REST API.
 $uri = "https://management.azure.com/subscriptions/" + $subId + `
     "/providers/Microsoft.CognitiveServices/checkDomainAvailability?api-version=2017-04-18"
 $body = @{
@@ -94,55 +110,55 @@ $jsonBody = $body | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri $uri -ContentType "application/json" -Authentication Bearer `
     -Token $token -Body $jsonBody | Format-List
 ```
-Als de gewenste naam beschikbaar is, krijgt u een antwoord als volgt:
+Als de gewenste naam beschikbaar is, ziet u een antwoord als volgt:
 ```azurepowershell
 isSubdomainAvailable : True
 reason               :
 type                 :
 subdomainName        : my-custom-name
 ```
-Als de naam al wordt gebruikt, ontvangt u het volgende antwoord:
+Als de naam al wordt gebruikt, wordt het volgende antwoord weer gegeven:
 ```azurepowershell
 isSubdomainAvailable : False
 reason               : Sub domain name 'my-custom-name' is already used. Please pick a different name.
 type                 :
 subdomainName        : my-custom-name
 ```
-## <a name="enabling-custom-domain-name"></a>Aangepaste domein naam inschakelen
+## <a name="create-your-custom-domain-name"></a>Uw aangepaste domein naam maken
 
-We gebruiken de cmdlet [set-AzCognitiveServicesAccount](/powershell/module/az.cognitiveservices/set-azcognitiveservicesaccount) om de aangepaste domein naam voor de geselecteerde spraak resource in te scha kelen. Zie de opmerkingen in het onderstaande code blok voor een uitleg van de stappen.
+We gebruiken de cmdlet [set-AzCognitiveServicesAccount](/powershell/module/az.cognitiveservices/set-azcognitiveservicesaccount) om de aangepaste domein naam voor de geselecteerde spraak resource in te scha kelen.
 
-> [!WARNING]
-> Nadat de code hieronder is uitgevoerd, maakt u een aangepaste domein naam voor uw spraak resource. Deze naam **kan niet** worden gewijzigd. Zie de bovenstaande waarschuwing voor meer informatie.
+> [!CAUTION]
+> Nadat de onderstaande code is uitgevoerd, maakt u een aangepaste domein naam voor uw spraak resource.
+> Deze naam **kan niet** worden gewijzigd. Meer informatie vindt u in **de waarschuwing waarschuwings bericht** hierboven.
 
 ```azurepowershell
 $resourceGroup = "Resource group name where Speech resource is located"
 $speechResourceName = "Your Speech resource name"
 $subdomainName = "custom domain name"
 
-# Select the Azure subscription containing Speech resource
-# If your Azure account has only one active subscription
-# you can skip this step
+# Select the Azure subscription that contains Speech resource.
+# You can skip this step if your Azure account has only one active subscription.
 $subId = "Your Azure subscription Id"
 Set-AzContext -SubscriptionId $subId
 
-# Set the custom domain name to the selected resource
-# WARNING! THIS IS NOT REVERSIBLE!
+# Set the custom domain name to the selected resource.
+# CAUTION: THIS CANNOT BE CHANGED OR UNDONE!
 Set-AzCognitiveServicesAccount -ResourceGroupName $resourceGroup `
     -Name $speechResourceName -CustomSubdomainName $subdomainName
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
 - Deze sectie vereist de nieuwste versie van de Azure CLI. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-## <a name="verify-custom-domain-name-availability"></a>Beschik baarheid van aangepaste domein namen controleren
+## <a name="verify-the-custom-domain-name-is-available"></a>Controleer of de aangepaste domein naam beschikbaar is
 
-U moet controleren of het aangepaste domein dat u wilt gebruiken, gratis is. We gebruiken de [Beschik baarheid](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) van de domein-methode controleren van Cognitive Services rest API. 
+U moet controleren of het aangepaste domein dat u wilt gebruiken, gratis is. We gebruiken de [Beschik baarheid](/rest/api/cognitiveservices/accountmanagement/checkdomainavailability/checkdomainavailability) van de domein-methode controleren van Cognitive Services rest API.
 
-Kopieer het onderstaande code blok, voeg de aangepaste domein naam in en sla het bestand op `subdomain.json` .
+Kopieer het onderstaande code blok, plaats de aangepaste domein naam van uw voor keur en sla deze op in het bestand `subdomain.json` .
 
 ```json
 {
@@ -156,7 +172,7 @@ Kopieer het bestand naar de huidige map of upload het naar Azure Cloud Shell en 
 ```azurecli-interactive
 az rest --method post --url "https://management.azure.com/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.CognitiveServices/checkDomainAvailability?api-version=2017-04-18" --body @subdomain.json
 ```
-Als de gewenste naam beschikbaar is, krijgt u een antwoord als volgt:
+Als de gewenste naam beschikbaar is, ziet u een antwoord als volgt:
 ```azurecli
 {
   "isSubdomainAvailable": true,
@@ -166,7 +182,7 @@ Als de gewenste naam beschikbaar is, krijgt u een antwoord als volgt:
 }
 ```
 
-Als de naam al wordt gebruikt, ontvangt u het volgende antwoord:
+Als de naam al wordt gebruikt, wordt het volgende antwoord weer gegeven:
 ```azurecli
 {
   "isSubdomainAvailable": false,
@@ -175,7 +191,7 @@ Als de naam al wordt gebruikt, ontvangt u het volgende antwoord:
   "type": null
 }
 ```
-## <a name="enabling-custom-domain-name"></a>Aangepaste domein naam inschakelen
+## <a name="enable-custom-domain-name"></a>Aangepaste domein naam inschakelen
 
 Als u een aangepaste domein naam wilt inschakelen voor de geselecteerde spraak bron, gebruikt u de opdracht [AZ cognitiveservices account update](/cli/azure/cognitiveservices/account#az_cognitiveservices_account_update) .
 
@@ -184,15 +200,17 @@ Selecteer het Azure-abonnement met de spraak resource. Als uw Azure-account slec
 az account set --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 Stel de aangepaste domein naam in op de geselecteerde resource. Vervang de waarden van de voor beeld-para meters door de feitelijke items en voer de onderstaande opdracht uit.
-> [!WARNING]
-> Nadat u de opdracht hieronder hebt uitgevoerd, maakt u een aangepaste domein naam voor uw spraak bron. Deze naam **kan niet** worden gewijzigd. Zie de bovenstaande waarschuwing voor meer informatie.
+
+> [!CAUTION]
+> Nadat u de opdracht hieronder hebt uitgevoerd, maakt u een aangepaste domein naam voor uw spraak bron. Deze naam **kan niet** worden gewijzigd. Meer informatie vindt u in de waarschuwing waarschuwings bericht hierboven.
+
 ```azurecli
 az cognitiveservices account update --name my-speech-resource-name --resource-group my-resource-group-name --custom-domain my-custom-name
 ```
 
 **_
 
-## <a name="enabling-private-endpoints"></a>Privé-eind punten inschakelen
+## <a name="enable-private-endpoints"></a>Privé-eind punten inschakelen
 
 Schakel het persoonlijke eind punt in met Azure Portal, Azure PowerShell of Azure CLI.
 
@@ -218,7 +236,7 @@ Krijg kennis met de algemene principes van [DNS voor privé-eind punten in cogni
 
 De `my-private-link-speech.cognitiveservices.azure.com` DNS-naam van een voor beeld van een spraak resource wordt gebruikt voor deze sectie.
 
-Meld u aan bij een virtuele machine die zich bevindt in het virtuele netwerk waaraan u het persoonlijke eind punt hebt gekoppeld. Open de Windows-opdracht prompt of de bash-shell, voer de opdracht nslookup uit en controleer of de aangepaste domein naam van de resource is omgezet:
+Meld u aan bij een virtuele machine die zich bevindt in het virtuele netwerk waaraan u het persoonlijke eind punt hebt gekoppeld. Open Windows-opdracht prompt of bash-shell, voer uit `nslookup` en bevestig dat de aangepaste domein naam van uw resource is omgezet:
 ```dos
 C:\>nslookup my-private-link-speech.cognitiveservices.azure.com
 Server:  UnKnown
@@ -233,11 +251,11 @@ Controleer of het opgeloste IP-adres overeenkomt met het adres van uw persoonlij
 
 #### <a name="optional-check-dns-resolution-from-other-networks"></a>(Optionele controle). DNS-omzetting van andere netwerken
 
-Deze controle is nood zakelijk als u van plan bent om uw persoonlijke eind punt te gebruiken in de hybride modus, dat wil zeggen dat u *alle netwerken* of *geselecteerde netwerken en* de toegangs optie privé-eind punten hebt ingeschakeld in de sectie *netwerken* van uw resource. Als u van plan bent om toegang te krijgen tot de resource met alleen een persoonlijk eind punt, kunt u deze sectie overs Laan.
+Deze controle is nood zakelijk als u van plan bent om uw persoonlijke eind punt met spraak bronnen in hybride modus te gebruiken, waarbij u *alle netwerken* of *geselecteerde netwerken en* de optie toegang tot privé-eind punten hebt ingeschakeld in de sectie *netwerken* van uw bron. Als u van plan bent om de resource te openen door alleen een persoonlijk eind punt te gebruiken, kunt u deze sectie overs Laan.
 
-De `my-private-link-speech.cognitiveservices.azure.com` DNS-naam van een voor beeld van een spraak resource wordt gebruikt voor deze sectie.
+We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron voor deze sectie.
 
-Voer op een computer die is verbonden met een netwerk van waaruit u toegang hebt tot de resource Open Windows-opdracht prompt of bash-shell de opdracht ' nslookup ' uit en controleer of de aangepaste domein naam van de resource is omgezet:
+Open Windows-opdracht prompt of bash-shell op elke computer die is verbonden met een netwerk van waaruit u toegang hebt tot de resource, voer de `nslookup` opdracht uit en bevestig dat de aangepaste domein naam van de resource is omgezet:
 ```dos
 C:\>nslookup my-private-link-speech.cognitiveservices.azure.com
 Server:  UnKnown
@@ -251,18 +269,18 @@ Aliases:  my-private-link-speech.cognitiveservices.azure.com
           westeurope.prod.vnet.cog.trafficmanager.net
 ```
 
-Houd er rekening mee dat IP-adressen worden omgezet naar een VNet-proxy-eind punt, dat wordt gebruikt voor het verzenden van het netwerk verkeer naar het persoonlijke eind punt dat is ingeschakeld Cognitive Services bron. Dit gedrag is anders voor een resource waarvoor een aangepaste domein naam is ingeschakeld, maar *waarvoor geen* persoonlijke eind punten zijn geconfigureerd. Zie [deze sectie](#dns-configuration).
+Houd er rekening mee dat het omgezette IP-adres verwijst naar een eind punt van een virtuele netwerk proxy, waarmee het netwerk verkeer wordt verzonden naar het persoonlijke eind punt voor de Cognitive Services bron. Het gedrag verschilt voor een resource met een aangepaste domein naam, maar *zonder* persoonlijke eind punten. Zie [deze sectie](#dns-configuration) voor meer informatie.
 
-## <a name="adjusting-existing-applications-and-solutions"></a>Bestaande toepassingen en oplossingen aanpassen 
+## <a name="adjust-existing-applications-and-solutions"></a>Bestaande toepassingen en oplossingen aanpassen
 
-Een spraak bron waarvoor een aangepast domein is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. Dit geldt voor een aangepast, voor het domein ingeschakelde spraak resource [met](#using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) en [zonder](#using-speech-resource-with-custom-domain-name-without-private-endpoints) persoonlijke eind punten. De huidige sectie bevat de benodigde informatie voor beide gevallen.
+Een spraak bron waarvoor een aangepast domein is ingeschakeld, maakt gebruik van een andere manier om te communiceren met spraak Services. Dit geldt voor een aangepast, voor het domein ingeschakelde spraak resource [met](#use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled) en [zonder](#use-speech-resource-with-custom-domain-name-without-private-endpoints) persoonlijke eind punten. De huidige sectie bevat de benodigde informatie voor beide gevallen.
 
-### <a name="using-speech-resource-with-custom-domain-name-and-private-endpoint-enabled"></a>Een spraak Resource gebruiken waarvoor een aangepaste domein naam en een persoonlijk eind punt zijn ingeschakeld
+### <a name="use-speech-resource-with-custom-domain-name-and-private-endpoint-enabled"></a>Een spraak bron gebruiken waarvoor een aangepaste domein naam en een persoonlijk eind punt zijn ingeschakeld
 
 Een spraak bron waarvoor een aangepaste domein naam en een persoonlijk eind punt is ingeschakeld, gebruikt een andere manier om te communiceren met spraak Services. In deze sectie wordt uitgelegd hoe u deze resource kunt gebruiken met spraak Services REST API en [spraak-SDK](speech-sdk.md).
 
 > [!NOTE]
-> Houd er rekening mee dat een spraak bron zonder privé-eind punten, maar waarvoor een **aangepaste domein naam** is ingeschakeld, ook een speciale manier heeft om te communiceren met spraak Services, maar deze methode wijkt af van het scenario van een op persoonlijke eind punt ingeschakelde spraak resource. Als u een dergelijke resource hebt (Stel dat u een resource hebt met privé-eind punten, maar vervolgens besluit om deze te verwijderen), moet u vertrouwd raken met de [sectie correspondent](#using-speech-resource-with-custom-domain-name-without-private-endpoints).
+> Houd er rekening mee dat een spraak bron zonder privé-eind punten, maar waarvoor een **aangepaste domein naam** is ingeschakeld, ook een speciale manier heeft om te communiceren met spraak Services, maar deze methode wijkt af van het scenario van een op persoonlijke eind punt ingeschakelde spraak resource. Als u een dergelijke resource hebt (Stel dat u een resource hebt met privé-eind punten, maar vervolgens besluit om deze te verwijderen), moet u vertrouwd raken met de [sectie correspondent](#use-speech-resource-with-custom-domain-name-without-private-endpoints).
 
 #### <a name="speech-resource-with-custom-domain-name-and-private-endpoint-usage-with-rest-api"></a>Spraak bron met aangepaste domein naam en persoonlijk eind punt. Gebruik met REST API
 
@@ -330,11 +348,11 @@ We gebruiken Europa-west als een voor beeld van een Azure `my-private-link-speec
 
 Voor een lijst met de stemmen die in de regio worden ondersteund, moet de volgende twee bewerkingen worden uitgevoerd:
 
-- Verificatie token verkrijgen via
+- Autorisatie token verkrijgen:
 ```http
 https://westeurope.api.cognitive.microsoft.com/sts/v1.0/issuetoken
 ```
-- Het verkregen token gebruiken Haal de lijst met stemmen op via
+- Gebruik het token om de lijst met stemmen op te halen:
 ```http
 https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list
 ```
@@ -413,7 +431,7 @@ Als u het in de vorige sectie beschreven principe wilt Toep assen op uw toepassi
 - De eind punt-URL bepalen die door uw toepassing wordt gebruikt
 - Wijzig uw eind punt-URL zoals beschreven in de vorige sectie en maak uw `SpeechConfig` klasse-exemplaar met behulp van deze gewijzigde URL expliciet
 
-###### <a name="determining-application-endpoint-url"></a>De URL van het toepassings eindpunt bepalen
+###### <a name="determine-application-endpoint-url"></a>Eind punt-URL van toepassing bepalen
 
 - [Schakel logboek registratie in voor uw toepassing](how-to-use-logging.md) en voer deze uit om het logboek te genereren
 - In het logboek bestand zoeken naar `SPEECH-ConnectionUrl` . De teken reeks bevat de `value` para meter, die op zijn beurt de volledige URL bevat die uw toepassing gebruikt
@@ -426,7 +444,7 @@ De URL die wordt gebruikt door de toepassing in dit voor beeld is:
 ```
 wss://westeurope.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US
 ```
-###### <a name="creating-speechconfig-instance-using-full-endpoint-url"></a>`SpeechConfig`Exemplaar maken met volledige eind punt-URL
+###### <a name="create-speechconfig-instance-using-full-endpoint-url"></a>`SpeechConfig`Exemplaar maken met volledige eind punt-URL
 
 Wijzig het eind punt dat u in de vorige sectie hebt bepaald, zoals beschreven in het bovenstaande [algemene principe](#general-principle) .
 
@@ -464,7 +482,7 @@ SPXSpeechConfiguration *speechConfig = [[SPXSpeechConfiguration alloc] initWithE
 
 Na deze wijziging moet uw toepassing samen werken met de persoonlijke ingeschakelde spraak bronnen. We werken aan meer naadloze ondersteuning van het scenario voor een persoonlijk eind punt.
 
-### <a name="using-speech-resource-with-custom-domain-name-without-private-endpoints"></a>Spraak Resource gebruiken met een aangepaste domein naam zonder persoonlijke eind punten
+### <a name="use-speech-resource-with-custom-domain-name-without-private-endpoints"></a>Een spraak bron gebruiken met een aangepaste domein naam zonder persoonlijke eind punten
 
 In dit artikel hebben we verschillende keren geduurd, waardoor het inschakelen van een aangepast domein voor een spraak resource **onomkeerbaar** is en een andere manier wordt gebruikt om te communiceren met spraak Services, vergeleken met de ' gebruikelijke ' items (dat wil zeggen, die gebruikmaken van [regionale namen van eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints)).
 
@@ -529,7 +547,7 @@ Als u uw toepassing wilt inschakelen voor het scenario van een spraak bron met e
 - Verificatie token aanvragen via Cognitive Services REST API
 - Klasse instantiëren `SpeechConfig` met behulp van de methode van autorisatie token/met autorisatie token 
 
-###### <a name="requesting-authorization-token"></a>Autorisatie token aanvragen
+###### <a name="request-authorization-token"></a>Verificatie token aanvragen
 
 Raadpleeg [dit artikel](../authentication.md#authenticate-with-an-authentication-token) voor informatie over het verkrijgen van het token via de Cognitive Services rest API. 
 
@@ -540,7 +558,7 @@ https://my-private-link-speech.cognitiveservices.azure.com/sts/v1.0/issueToken
 > [!TIP]
 > U kunt deze URL vinden in de sectie *sleutels en eind punt* (*resource beheer* groep) van uw spraak resource in azure Portal.
 
-###### <a name="creating-speechconfig-instance-using-authorization-token"></a>`SpeechConfig`Exemplaar maken met autorisatie token
+###### <a name="create-speechconfig-instance-using-authorization-token"></a>`SpeechConfig`Exemplaar maken met autorisatie token
 
 U moet `SpeechConfig` een klasse instantiëren met behulp van het autorisatie token dat u in de vorige sectie hebt verkregen. Stel dat de volgende variabelen zijn gedefinieerd:
 

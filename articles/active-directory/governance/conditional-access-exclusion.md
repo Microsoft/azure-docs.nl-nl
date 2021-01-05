@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 06/17/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4a18ad04064ef8356e21d106843d6c946f50741
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 426e28048ae370919529ea710717a3a3867d999d
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362719"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746249"
 ---
 # <a name="use-azure-ad-access-reviews-to-manage-users-excluded-from-conditional-access-policies"></a>Azure AD-toegangs beoordelingen gebruiken voor het beheren van gebruikers die zijn uitgesloten van het beleid voor voorwaardelijke toegang
 
@@ -89,7 +89,7 @@ U kunt nu een beleid voor voorwaardelijke toegang maken waarin deze uitsluitings
 
 4. Klik onder toewijzingen op **gebruikers en groepen**.
 
-5. Selecteer **alle gebruikers**op het tabblad **includes** .
+5. Selecteer **alle gebruikers** op het tabblad **includes** .
 
 6. Voeg op het tabblad **uitsluiten** een vinkje toe aan **gebruikers en groepen** en klik vervolgens op **uitgesloten gebruikers selecteren**.
 

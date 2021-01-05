@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: ba872f221f3bde29f0bb48b04dc2259d3ab4938a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c715804693571bc421951de1288fc884d2eae8d
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906279"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746181"
 ---
 # <a name="advanced-multistage-attack-detection-in-azure-sentinel"></a>Geavanceerde aanvals detectie in azure-Sentinel
 
@@ -38,18 +38,18 @@ Deze detectie is standaard ingeschakeld in azure Sentinel. Gebruik de volgende i
 
 1. Ga naar **Azure Sentinel**  >  **Configuration**  >  **Analytics**
 
-1. Selecteer **actieve regels**en zoek in de kolom **naam** **Geavanceerde detectie van aanvallen** van meerdere fasen door de lijst voor het type **Fusion** regel te filteren. Controleer de kolom **status** om te controleren of deze detectie is ingeschakeld of uitgeschakeld.
+1. Selecteer **actieve regels** en zoek in de kolom **naam** **Geavanceerde detectie van aanvallen** van meerdere fasen door de lijst voor het type **Fusion** regel te filteren. Controleer de kolom **status** om te controleren of deze detectie is ingeschakeld of uitgeschakeld.
 
     :::image type="content" source="./media/fusion/selecting-fusion-rule-type.png" alt-text="{alt-text}":::
 
-1. Als u de status wilt wijzigen **, selecteert u**dit item en selecteert u op de Blade **Geavanceerde aanvals detectie** .
+1. Als u de status wilt wijzigen **, selecteert u** dit item en selecteert u op de Blade **Geavanceerde aanvals detectie** .
 
-1. Op de Blade wizard voor het **maken van regels** wordt de status wijziging automatisch voor u geselecteerd, dus Selecteer **volgende: controleren**en vervolgens **Opslaan**. 
+1. Op de Blade wizard voor het **maken van regels** wordt de status wijziging automatisch voor u geselecteerd, dus Selecteer **volgende: controleren** en vervolgens **Opslaan**. 
 
  Omdat het type **Fusion** Rule slechts één regel bevat die niet kan worden gewijzigd, zijn regel sjablonen niet van toepassing op dit regel type.
 
 > [!NOTE]
-> Azure Sentinel maakt momenteel gebruik van 30 dagen aan historische gegevens om de machine learning systemen te trainen. Deze gegevens worden altijd versleuteld met behulp van de sleutels van micro soft, zoals door de machine learning pijp lijn wordt door gegeven. De trainings gegevens worden echter niet versleuteld met behulp van door de [klant beheerde sleutels (CMK)](customer-managed-keys.md) als u CMK hebt ingeschakeld in uw Azure Sentinel-werk ruimte. Als u wilt deel nemen aan fusie, gaat u naar **Azure Sentinel**   \>  **Configuration**   \>  **Analytics \> actieve regels \> detectie** van meerdere fasen en selecteert u in de kolom **status** de optie **uitschakelen.**
+> Azure Sentinel maakt momenteel gebruik van 30 dagen aan historische gegevens om de machine learning systemen te trainen. Deze gegevens worden altijd versleuteld met behulp van de sleutels van micro soft, zoals door de machine learning pijp lijn wordt door gegeven. De trainings gegevens worden echter niet versleuteld met behulp van door de [klant beheerde sleutels (CMK)](customer-managed-keys.md) als u CMK hebt ingeschakeld in uw Azure Sentinel-werk ruimte. Als u wilt deel nemen aan fusie, gaat u naar **Azure Sentinel** \> **Configuration** \> **Analytics \> actieve regels \> detectie** van meerdere fasen en selecteert u in de kolom **status** de optie **uitschakelen.**
 
 ## <a name="attack-detection-scenarios"></a>Scenario's voor aanvals detectie
 
@@ -84,6 +84,70 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 - **Aanmeldings gebeurtenis vanaf een anoniem IP-adres dat leidt tot meerdere activiteiten voor het maken van VM'S**
 
 - **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor het maken van meerdere VM-activiteiten**
+
+## <a name="credential-harvesting-new-threat-classification"></a>Referenties verzamelen (nieuwe bedreigings classificatie)
+
+### <a name="malicious-credential-theft-tool-execution-following-suspicious-sign-in"></a>Uitvoering van kwaad aardige referentie diefstal programma na verdachte aanmelding
+
+**Mitre ATT&VERzonken tactiek:** Initiële toegang, referentie toegang
+
+**Mitre ATT&VERzonken technieken:** Geldig account (T1078), referentie dumping van het besturings systeem (T1003)
+
+**Gegevens connector bronnen:** Azure Active Directory Identity Protection, micro soft Defender voor eind punt
+
+**Beschrijving:** Fusion incidenten van dit type geven aan dat er een bekende referentie diefstal programma is uitgevoerd na een verdachte aanmelding bij Azure AD. Dit biedt een hoge mate van betrouw baarheid dat het gebruikers account dat is genoteerd in de beschrijving van de waarschuwing is aangetast en mogelijk een hulp programma als **Mimikatz** heeft gebruikt voor het verzamelen van referenties zoals sleutels, lees bare wacht woorden en/of wacht woord-hashes van het systeem. De geoogste referenties kunnen een aanvaller toegang tot gevoelige gegevens geven, bevoegdheden escaleren en/of op een later tijdstip verplaatsen via het netwerk. De permutaties van verdachte Azure AD-aanmeldings waarschuwingen met de schadelijke referentie diefstal hulp programma zijn:
+
+- **Onmogelijke reis naar ongewone locaties die leiden tot kwaad aardige referentie diefstal hulp programma**
+
+- **Aanmeldings gebeurtenis vanaf een onbekende locatie, waardoor schadelijke referentie diefstal wordt uitgevoerd**
+
+- **Aanmeldings gebeurtenis vanaf een geïnfecteerd apparaat waardoor schadelijke referentie diefstal wordt uitgevoerd**
+
+- **Aanmeldings gebeurtenis vanaf een anoniem IP-adres dat schadelijk is voor de uitvoering van kwaad aardige referentie diefstal**
+
+- **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor de uitvoering van kwaad aardige referentie diefstal**
+
+### <a name="suspected-credential-theft-activity-following-suspicious-sign-in"></a>Verdachte activiteit voor referentie diefstal na verdachte aanmelding
+
+**Mitre ATT&VERzonken tactiek:** Initiële toegang, referentie toegang
+
+**Mitre ATT&VERzonken technieken:** Geldig account (T1078), referenties van wachtwoord archieven (T1555), referentie dumping van het besturings systeem (T1003)
+
+**Gegevens connector bronnen:** Azure Active Directory Identity Protection, micro soft Defender voor eind punt
+
+**Beschrijving:** Fusie-incidenten van dit type geven aan dat de activiteit die is gekoppeld aan patronen van referentie diefstal, is opgetreden na een verdachte aanmelding bij Azure AD. Dit biedt een hoge mate van betrouw baarheid dat de gebruikers account in de beschrijving van de waarschuwing is aangetast en wordt gebruikt om referenties te stelen, zoals sleutels, wacht woorden voor tekst zonder opmaak, wacht woord-hashes, enzovoort. De gestolen referenties kunnen ertoe leiden dat een aanvaller toegang krijgt tot gevoelige gegevens, machtigingen kan escaleren en/of later over het netwerk kan worden verplaatst. De permutaties van verdachte Azure AD-aanmeldings waarschuwingen met de waarschuwing dief stal activiteit voor referenties zijn:
+
+- **Onmogelijke reis naar ongewone locaties die leiden tot vermoeden dat de dief stal van referentie activiteiten**
+
+- **Aanmeldings gebeurtenis vanaf een onbekende locatie die leidt tot een verdachte activiteit van referentie diefstal**
+
+- **Aanmeldings gebeurtenis vanaf een geïnfecteerd apparaat waardoor de verdachte referentie diefstal activiteit**
+
+- **Aanmeldings gebeurtenis vanaf een anoniem IP-adres dat leidt tot een verdachte referentie diefstal activiteit**
+
+- **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties, waardoor de verdachte referentie diefstal activiteit**
+
+## <a name="crypto-mining-new-threat-classification"></a>Crypto grafie-analyse (nieuwe bedreigings classificatie)
+
+### <a name="crypto-mining-activity-following-suspicious-sign-in"></a>Crypto-analyse activiteit na verdacht aanmelden
+
+**Mitre ATT&VERzonken tactiek:** Initiële toegang, referentie toegang
+
+**Mitre ATT&VERzonken technieken:** Geldig account (T1078), bron overname (T1496)
+
+**Gegevens connector bronnen:** Azure Active Directory Identity Protection, Azure Defender (Azure Security Center)
+
+**Beschrijving:** Fusie-incidenten van dit type wijzen op crypto-analyse activiteiten die zijn gekoppeld aan een verdachte aanmelding bij een Azure AD-account. Dit biedt een hoge mate van betrouw baarheid dat het gebruikers account dat is genoteerd in de beschrijving van de waarschuwing, is aangetast en is gebruikt voor het overnemen van bronnen in uw omgeving naar crypto grafie. Dit kan uw resources van de reken kracht tijd resteert en/of resulteren in aanzienlijk hoger dan verwacht Cloud gebruiks facturen. De permutaties van verdachte Azure AD-aanmeldings waarschuwingen met de waarschuwing voor de activiteit van de crypto-analyse zijn:  
+
+- **Onmogelijke reis naar ongewone locaties die leiden tot crypto grafie-activiteit**
+
+- **Aanmeldings gebeurtenis vanaf een onbekende locatie die leidt tot crypto grafie-activiteit**
+
+- **Aanmeldings gebeurtenis vanaf een geïnfecteerd apparaat die leidt tot crypto grafie-activiteit**
+
+- **Aanmeldings gebeurtenis vanaf een anoniem IP-adres dat leidt tot crypto grafie-activiteit**
+
+- **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor de activiteit van crypto analyse**
 
 ## <a name="data-exfiltration"></a>Gegevensoverdracht
 
@@ -368,6 +432,26 @@ Dit scenario is momenteel beschikbaar als **open bare preview**.
 **Gegevens connector bronnen:** Micro soft Defender voor eind punt (voorheen MDATP), Palo Alto-netwerken 
 
 **Beschrijving:** Fusie-incidenten van dit type geven aan dat WMI-opdrachten (Windows Management Interface) op afstand werden uitgevoerd op een systeem, en dat er verdachte binnenkomende activiteiten zijn gedetecteerd door de firewall Palo Alto Networks. Dit geeft aan dat een aanvaller toegang heeft verkregen tot uw netwerk en probeert zich op een later tijdstip te verplaatsen, bevoegdheden te escaleren en/of schadelijke nettoladingen uit te voeren. Net als bij alle ' bewoonde ' aanvallen op het land ' kan deze activiteit een authentiek gebruik zijn van WMI. De uitvoering van de externe WMI-opdracht gevolgd door de verdachte binnenkomende firewall activiteit verhoogt echter het vertrouwen dat WMI op een schadelijke manier wordt gebruikt en moet verder worden onderzocht. In Palo Alto-Logboeken wordt Azure Sentinel gericht op [bedreigings logboeken](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs)en verkeer wordt beschouwd als verdacht Wanneer bedreigingen zijn toegestaan (verdachte gegevens, bestanden, flooden, pakketten, scans, spyware, url's, virussen, beveiligings problemen, bosbrand-virussen, Wildfires). U kunt ook verwijzen naar het Palo Alto-bedreigings logboek dat overeenkomt met het [type bedreiging/inhoud](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) dat wordt vermeld in de beschrijving van het fusie incident voor aanvullende waarschuwings Details.
+
+### <a name="suspicious-powershell-command-line-following-suspicious-sign-in"></a>Verdachte Power shell-opdracht regel na verdacht aanmelden
+
+**Mitre ATT&VERzonken tactiek:** Initiële toegang, uitvoering
+
+**Mitre ATT&VERzonken technieken:** Geldig account (T1078), opdracht-en scripting-interpreter (T1059)
+
+**Gegevens connector bronnen:** Azure Active Directory Identity Protection, micro soft Defender voor het eind punt (voorheen MDATP)
+
+**Beschrijving:** Fusion incidenten van dit type geven aan dat een gebruiker mogelijk schadelijke Power shell-opdrachten heeft uitgevoerd na een verdachte aanmelding bij een Azure AD-account. Dit biedt een hoge mate van betrouw baarheid dat het account dat wordt genoteerd in de beschrijving van de waarschuwing, is aangetast en er nog andere schadelijke acties zijn uitgevoerd. Aanvallers maken gebruik van Power shell om schadelijke nettoladingen in het geheugen uit te voeren zonder artefacten op de schijf te verlaten, om detectie te voor komen door beveiligings mechanismen op basis van schijven zoals virus scanners. De permutaties van verdachte Azure AD-aanmeldings waarschuwingen met de verdachte Power shell-opdracht waarschuwing zijn:
+
+- **Onmogelijke reis naar ongewone locaties die leiden tot verdachte Power shell-opdracht regel**
+
+- **Aanmeldings gebeurtenis vanaf een onbekende locatie die leidt tot verdachte Power shell-opdracht regel**
+
+- **Aanmeldings gebeurtenis vanaf een geïnfecteerd apparaat dat verdacht is op de opdracht regel van verdachte Power shell**
+
+- **Aanmeldings gebeurtenis vanaf een anoniem IP-adres dat leidt tot verdachte Power shell-opdracht regel**
+
+- **Aanmeldings gebeurtenis van de gebruiker met de gelekte referenties voor de verdachte Power shell-opdracht regel**
 
 ## <a name="malware-c2-or-download"></a>Malware C2 of downloaden
 

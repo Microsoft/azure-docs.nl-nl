@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e72784dbdcf08d672a8498609ca3a5bbd11e632d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 72079cc399eea249bce4d285e2c3c4fbf9304708
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319023"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760602"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Azure Databricks ML experimenten bijhouden met MLflow en Azure Machine Learning (preview)
 
@@ -43,7 +43,7 @@ Bekijk het [volgen van experimenten en maak eind punten met MLflow en Azure mach
 
 Als u MLflow tracking met Azure Machine Learning, kunt u de vastgelegde metrische gegevens en artefacten opslaan vanuit uw Azure Databricks worden uitgevoerd in uw: 
 
-* Azure Databricks-werkruimte.
+* Azure Databricks werk ruimte.
 * Azure Machine Learning-werkruimte
 
 Nadat u uw Azure Databricks-werk ruimte en-cluster hebt gemaakt, 
@@ -156,9 +156,9 @@ Nadat uw model is getraind, kunt u uw modellen registreren en registreren bij de
 
 De back-upserver is standaard de Azure Databricks-werk ruimte. tenzij u ervoor hebt gekozen om [MLflow tracking zo in te stellen dat deze alleen in uw Azure machine learning-werk ruimte worden bijgehouden](#set-mlflow-tracking-to-only-track-in-your-azure-machine-learning-workspace), dan is de back-upserver Azure machine learning de werk ruimte.   
 
-* **Als een geregistreerd model met de naam niet bestaat** , wordt een nieuw model door de methode geregistreerd, wordt versie 1 gemaakt en wordt een ModelVersion MLflow-object geretourneerd. 
+* **Als een geregistreerd model met de naam niet bestaat**, wordt een nieuw model door de methode geregistreerd, wordt versie 1 gemaakt en wordt een ModelVersion MLflow-object geretourneerd. 
 
-* **Als er al een geregistreerd model met de naam bestaat** , maakt de methode een nieuwe model versie en retourneert het versie object. 
+* **Als er al een geregistreerd model met de naam bestaat**, maakt de methode een nieuwe model versie en retourneert het versie object. 
 
 ```python
 mlflow.spark.log_model(model, artifact_path = "model", 
@@ -180,8 +180,8 @@ Wanneer u klaar bent voor het maken van een eind punt voor uw ML-modellen. U kun
 U kunt gebruikmaken van de [mlflow. azureml. Implementeer](https://www.mlflow.org/docs/latest/python_api/mlflow.azureml.html#mlflow.azureml.deploy) API om een model te implementeren in uw Azure machine learning-werk ruimte. Als u het model alleen hebt geregistreerd voor de Azure Databricks-werk ruimte, zoals beschreven in de sectie [modellen registreren bij MLflow](#register-models-with-mlflow) , geeft u de `model_name` para meter op om het model in azure machine learning werk ruimte te registreren. 
 
 Azure Databricks-uitvoeringen kunnen worden geïmplementeerd naar de volgende eind punten, 
-* [Azure Container Instance](how-to-use-mlflow.md#deploy-to-aci)
-* [Azure Kubernetes Service](how-to-use-mlflow.md#deploy-to-aks)
+* [Azure-container exemplaar](how-to-deploy-models-with-mlflow.md#deploy-to-aci)
+* [Azure Kubernetes Service](how-to-deploy-models-with-mlflow.md#deploy-to-aks)
 
 ### <a name="deploy-models-to-adb-endpoints-for-batch-scoring"></a>Modellen implementeren voor ADB-eind punten voor batch Score 
 

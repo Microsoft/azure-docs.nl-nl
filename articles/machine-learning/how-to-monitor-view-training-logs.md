@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 0dd5f6a48175bad35b37155c8ff881e352922ca7
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: ea96e1056e6157cfddbdc2f0b6451ed55a74d1de
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674464"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97756055"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>MILLILITERs logboeken en-metrische gegevens bewaken en weer geven
 
@@ -121,7 +121,7 @@ Logboek bestanden zijn een essentiële bron voor het opsporen van fouten in de A
 In de volgende tabellen ziet u de inhoud van de logboek bestanden in de mappen die in deze sectie worden weer gegeven.
 
 > [!NOTE]
-> Informatie die de gebruiker zou moeten zien, ook als skimmingYou niet per se elk bestand voor elke uitvoering ziet. Bijvoorbeeld: de 20_image_build_log *. txt wordt alleen weer gegeven wanneer een nieuwe installatie kopie wordt gemaakt (bijvoorbeeld wanneer u de omgeving wijzigt).
+> U hoeft niet per se elk bestand te zien voor elke uitvoering. Bijvoorbeeld: de 20_image_build_log *. txt wordt alleen weer gegeven wanneer een nieuwe installatie kopie wordt gemaakt (bijvoorbeeld wanneer u de omgeving wijzigt).
 
 #### <a name="azureml-logs-folder"></a>`azureml-logs` map
 

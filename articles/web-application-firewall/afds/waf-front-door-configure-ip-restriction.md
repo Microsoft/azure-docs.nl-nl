@@ -5,20 +5,20 @@ services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: article
-ms.date: 03/26/2020
+ms.date: 12/22/2020
 ms.author: tyao
-ms.openlocfilehash: f260bfc7b097931cc1a978e790c1d9dd966703ac
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 60a4ef47bc30955c918983d54f613cbdb5cbed73
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563508"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746759"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door"></a>Een IP-beperkings regel configureren met een Web Application Firewall voor Azure front deur
 
 In dit artikel wordt beschreven hoe u IP-beperkings regels configureert in een Web Application firewall (WAF) voor Azure front deur door gebruik te maken van de Azure Portal, Azure CLI, Azure PowerShell of een Azure Resource Manager sjabloon.
 
-Een op IP-adres gebaseerde toegangs beheer regel is een aangepaste WAF-regel waarmee u de toegang tot uw webtoepassingen kunt beheren. Dit doet u door een lijst met IP-adressen of IP-adresbereiken op te geven in CIDR-indeling (Classable Inter-Domain Routing).
+Een op IP-adres gebaseerde toegangs beheer regel is een aangepaste WAF-regel waarmee u de toegang tot uw webtoepassingen kunt beheren. Dit doet u door een lijst met IP-adressen of IP-adresbereiken op te geven in CIDR-indeling (Classable Inter-Domain Routing). Er zijn twee typen overeenkomende variabelen in het IP-adres matching, **RemoteAddr** en **SocketAddr**. RemoteAddr is het oorspronkelijke client-IP-adres dat meestal via X-doorgestuurd wordt verzonden voor de aanvraag header. SocketAddr is het bron-IP-adres dat WAF ziet. Als uw gebruiker zich achter een proxy bevindt, is SocketAddr vaak het proxy server adres.
 
 Uw webtoepassing is standaard toegankelijk via internet. Als u de toegang tot clients wilt beperken in een lijst met bekende IP-adressen of IP-adresbereiken, kunt u een IP-overeenkomende regel maken die de lijst met IP-adressen als overeenkomende waarden bevat en de operator is ingesteld op ' not ' (negatie is True) en de actie die moet worden **geblokkeerd**. Nadat een IP-beperkings regel is toegepast, ontvangen aanvragen die afkomstig zijn van adressen buiten deze lijst met toegestane antwoorden een 403 verboden antwoord.
 
@@ -30,7 +30,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
 
 ### <a name="create-a-waf-policy"></a>Een WAF-beleid maken
 
-1. Selecteer op de Azure Portal **een resource maken** , typ  **Web Application firewall** in het zoekvak en selecteer **Web Application firewall (WAF)**.
+1. Selecteer op de Azure Portal **een resource maken**, typ  **Web Application firewall** in het zoekvak en selecteer **Web Application firewall (WAF)**.
 2. Selecteer **Maken**.
 3. Gebruik op de pagina **een WAF-beleid maken** de volgende waarden om het tabblad **basis beginselen** te volt ooien:
    
@@ -56,7 +56,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
    |Status     |Ingeschakeld|
    |Regel type     |Match|
    |Prioriteit    |100|
-   |Type overeenkomst     |Het IP-adres|
+   |Type overeenkomst     |IP-adres|
    |Overeenkomende variabele|RemoteAddr|
    |Bewerking|Bevat niet|
    |IP-adres of-bereik|10.10.10.0/24|
@@ -68,7 +68,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
 6. Selecteer **volgende: koppeling**.
 7. Selecteer **frontend-host toevoegen**.
 8. Selecteer voor **frontend-host** de frontend-host en selecteer **toevoegen**.
-9. Selecteer **Controleren + maken**.
+9. Selecteer **Controleren en maken**.
 10. Nadat de beleids validatie is geslaagd, selecteert u **maken**.
 
 ### <a name="test-your-waf-policy"></a>Uw WAF-beleid testen
@@ -109,7 +109,7 @@ Gebruik de opdracht [AZ Network front-deur WAF-Policy Custom-Rule Create](/cli/a
 
 In de volgende voor beelden:
 -  Vervang *IPAllowPolicyExampleCLI* door uw unieke beleid dat u eerder hebt gemaakt.
--  Vervang *IP-adres bereik-1* , *IP-adres-Range-2* door uw eigen bereik.
+-  Vervang *IP-adres bereik-1*, *IP-adres-Range-2* door uw eigen bereik.
 
 Maak eerst een regel voor IP-invoer voor het beleid dat u in de vorige stap hebt gemaakt. 
 > [!NOTE]
@@ -190,7 +190,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
 
 ### <a name="define-an-ip-match-condition"></a>Een IP-match voorwaarde definiëren
 Gebruik de opdracht [New-AzFrontDoorWafMatchConditionObject](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject) om een overeenkomende IP-voor waarde te definiëren.
-Vervang in het volgende voor beeld *IP-adres-bereik-1* , *IP-adres-Range-2* door uw eigen bereik.    
+Vervang in het volgende voor beeld *IP-adres-bereik-1*, *IP-adres-Range-2* door uw eigen bereik.    
 ```powershell
 $IPMatchCondition = New-AzFrontDoorWafMatchConditionObject `
 -MatchVariable  RemoteAddr `
@@ -225,7 +225,7 @@ Zoek de naam van de resource groep die het Azure front-deur profiel bevat met be
 
 ### <a name="link-a-waf-policy-to-an-azure-front-door-front-end-host"></a>Een WAF-beleid koppelen aan een front-end voor de Azure-host
 
-Een WAF-beleids object koppelen aan een bestaande front-end-host en eigenschappen van de Azure front-deur bijwerken. Haal eerst het object voor de Azure-deur op met behulp van [Get-AzFrontDoor](/powershell/module/Az.FrontDoor/Get-AzFrontDoor). Stel vervolgens de eigenschap **WebApplicationFirewallPolicyLink** in op de resource-ID van *$IPAllowPolicyExamplePS* , die u in de vorige stap hebt gemaakt, met behulp van de [set-AzFrontDoor](/powershell/module/Az.FrontDoor/Set-AzFrontDoor) opdracht.
+Een WAF-beleids object koppelen aan een bestaande front-end-host en eigenschappen van de Azure front-deur bijwerken. Haal eerst het object voor de Azure-deur op met behulp van [Get-AzFrontDoor](/powershell/module/Az.FrontDoor/Get-AzFrontDoor). Stel vervolgens de eigenschap **WebApplicationFirewallPolicyLink** in op de resource-ID van *$IPAllowPolicyExamplePS*, die u in de vorige stap hebt gemaakt, met behulp van de [set-AzFrontDoor](/powershell/module/Az.FrontDoor/Set-AzFrontDoor) opdracht.
 
 ```azurepowershell
   $FrontDoorObjectExample = Get-AzFrontDoor `

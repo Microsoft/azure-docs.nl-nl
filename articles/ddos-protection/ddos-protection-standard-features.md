@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 104c9dcd3b7fd931e4f54841c9de9d17cfd72353
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 602bb98f2cdc8a96874eba8dadfa33f3267d19ac
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937318"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746555"
 ---
 # <a name="azure-ddos-protection-standard-features"></a>Azure DDoS Protection Standard-functies
 
@@ -24,23 +24,23 @@ De volgende secties bevatten een overzicht van de belangrijkste functies van de 
 
 ## <a name="always-on-traffic-monitoring"></a>Bewaking over altijd verkeer
 
-DDoS Protection Standard bewaakt het werkelijke verkeers gebruik en vergelijkt deze met de drempel waarden die zijn gedefinieerd in het DDoS-beleid. Wanneer de drempel waarde voor verkeer wordt overschreden, wordt de DDoS-beperking automatisch gestart. Wanneer het verkeer onder de drempel waarde komt, wordt de risico beperking verwijderd.
+DDoS Protection Standard bewaakt het werkelijke verkeers gebruik en vergelijkt deze met de drempel waarden die zijn gedefinieerd in het DDoS-beleid. Wanneer de drempel waarde voor verkeer wordt overschreden, wordt de DDoS-beperking automatisch gestart. Wanneer het verkeer onder de drempel waarden terugkeert, wordt de risico beperking gestopt.
 
 ![Azure DDoS Protection standaard beperking](./media/ddos-protection-overview/mitigation.png)
 
-Tijdens de risico beperking wordt het verkeer dat wordt verzonden naar de beveiligde bron, omgeleid door de DDoS Protection-Service en worden er diverse controles uitgevoerd, zoals de volgende controles:
+Tijdens het beperken wordt het verkeer dat wordt verzonden naar de beveiligde bron, omgeleid door de DDoS Protection-Service en worden er diverse controles uitgevoerd, zoals:
 
 - Zorg ervoor dat de pakketten voldoen aan de Internet specificaties en niet zijn beschadigd.
 - Communiceer met de client om te bepalen of het verkeer mogelijk een vervalst pakket is (bijvoorbeeld: SYN auth of SYN cookie of door een pakket voor de bron te verwijderen om het opnieuw te verzenden).
 - Aantal pakketten beperken als er geen andere afdwing methode kan worden uitgevoerd.
 
-DDoS-beveiliging blokkeert aanvalsverkeer en stuurt het resterende verkeer door naar de beoogde bestemming. Binnen een paar minuten na detectie van aanvallen wordt u op de hoogte gebracht met behulp van metrische gegevens van Azure Monitor. Door logboek registratie in DDoS Protection standaard-telemetrie te configureren, kunt u de logboeken schrijven naar beschik bare opties voor toekomstige analyse. Metrische gegevens in Azure Monitor voor DDoS Protection standaard worden 30 dagen bewaard.
+DDoS-beveiliging vervalt het verkeer van aanvallen en stuurt het resterende verkeer door naar de bestemming. Binnen een paar minuten na detectie van aanvallen wordt u op de hoogte gebracht met metrische gegevens van Azure Monitor. Door logboek registratie in DDoS Protection standaard-telemetrie te configureren, kunt u de logboeken schrijven naar beschik bare opties voor toekomstige analyse. Metrische gegevens in Azure Monitor voor DDoS Protection standaard worden 30 dagen bewaard.
 
 ## <a name="adaptive-real-time-tuning"></a>Adaptieve real time tuning
 
-De Azure DDoS Protection Basic-service helpt klanten te beschermen en te voor komen dat ze van invloed zijn op andere klanten. Als een service bijvoorbeeld is ingericht voor een typisch volume van legitiem binnenkomend verkeer dat kleiner is dan de frequentie van de *Activering* van het beleid voor de hele infrastructuur DDoS Protection, kan een DDoS-aanval op de resources van die klant niet worden opgemerkt. Meer in het algemeen, de complexiteit van recente aanvallen (bijvoorbeeld multi-vector DDoS) en het toepassingsspecifieke gedrag van tenants aanroepen voor een aangepast beveiligings beleid per klant. Deze aanpassing wordt door de service uitgevoerd met behulp van twee inzichten:
+De Azure DDoS Protection Basic-service helpt klanten te beschermen en te voor komen dat ze van invloed zijn op andere klanten. Als een service bijvoorbeeld is ingericht voor een typisch volume van legitiem binnenkomend verkeer dat kleiner is dan de frequentie van de *Activering* van het beleid voor de hele infrastructuur DDoS Protection, kan een DDoS-aanval op de resources van die klant niet worden opgemerkt. Meer in het algemeen, de complexiteit van recente aanvallen (bijvoorbeeld multi-vector DDoS) en het toepassingsspecifiek gedrag van tenants voor het aanroepen van een specifiek beveiligings beleid per klant. Deze service wordt uitgevoerd met behulp van twee inzichten:
 
-- Automatisch leren van verkeers patronen per klant (per IP) voor laag 3 en 4.
+- Automatisch leren van verkeers patronen per klant (per openbaar IP) voor laag 3 en 4.
 
 - Het minimaliseren van valse positieven, waarbij rekening wordt gehouden met de schaal van Azure, waarmee IT een aanzienlijke hoeveelheid verkeer kan absorberen.
 
@@ -48,11 +48,11 @@ De Azure DDoS Protection Basic-service helpt klanten te beschermen en te voor ko
 
 ## <a name="ddos-protection-telemetry-monitoring-and-alerting"></a>DDoS Protection telemetrie, bewaking en waarschuwingen
 
-DDoS Protection Standard maakt voor de duur van een DDoS-aanval uitgebreide telemetrie mogelijk via [Azure monitor](../azure-monitor/overview.md) . U kunt waarschuwingen configureren voor elk van de Azure Monitor metrische gegevens die DDoS Protection gebruikt. U kunt logboek registratie integreren met Splunk (Azure Event Hubs), Azure Monitor-logboeken en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure Monitor.
+DDoS Protection Standard biedt uitgebreide telemetrie via [Azure monitor](../azure-monitor/overview.md). U kunt waarschuwingen configureren voor elk van de Azure Monitor metrische gegevens die DDoS Protection gebruikt. U kunt logboek registratie integreren met Splunk (Azure Event Hubs), Azure Monitor-logboeken en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure Monitor.
 
 ### <a name="ddos-mitigation-policies"></a>DDoS-beperkings beleid
 
-Selecteer in de Azure Portal **Monitor**  >  **metrische gegevens** controleren. Selecteer de resource groep in het deel venster **metrische gegevens** , selecteer een resource type voor het **open bare IP-adres** en selecteer uw open bare Azure IP-adres. DDoS-metrische gegevens worden weer gegeven in het deel venster **beschik bare metrische gegevens** .
+Selecteer in de Azure Portal   >  **metrische gegevens** controleren. Selecteer de resource groep in het deel venster **metrische gegevens** , selecteer een resource type voor het **open bare IP-adres** en selecteer uw open bare Azure IP-adres. DDoS-metrische gegevens worden weer gegeven in het deel venster **beschik bare metrische gegevens** .
 
 DDoS Protection Standard geldt voor elk openbaar IP-adres van de beveiligde bron, in het virtuele netwerk waarop DDoS is ingeschakeld, drie opties voor het beperken van de oplossing (TCP SYN, TCP en UDP). U kunt de drempel waarden voor het beleid weer geven door de metrische **inkomende pakketten te selecteren om de DDoS-beperking te activeren**.
 

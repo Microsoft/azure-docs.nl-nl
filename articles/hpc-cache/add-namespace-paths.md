@@ -4,14 +4,14 @@ description: Client gerichte paden maken voor back-end-opslag met Azure HPC cach
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 12/22/2020
 ms.author: v-erkel
-ms.openlocfilehash: e525fc0705dffcd4765e6a1f6c5235bdef260fcd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5549670dbd1f302bdb17b8b94cbd1fb5c4c1a1d9
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96339673"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760529"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>De geaggregeerde naam ruimte instellen
 
@@ -21,13 +21,13 @@ Raadpleeg [de geaggregeerde naam ruimte plannen](hpc-cache-namespace.md) voor me
 
 De **naam ruimte** pagina in het Azure portal toont de paden die clients gebruiken voor toegang tot uw gegevens via de cache. Op deze pagina kunt u naam ruimte paden maken, verwijderen of wijzigen. U kunt ook naam ruimte paden configureren met behulp van de Azure CLI.
 
-Alle bestaande paden die op de client zijn gericht, worden weer gegeven op de pagina **naam ruimte** . Als een opslag doel geen paden heeft, wordt deze niet weer gegeven in de tabel.
+Alle client gerichte paden die voor deze cache zijn gedefinieerd, worden weer gegeven op de pagina **naam ruimte** . Opslag doelen waarvoor geen naam ruimte paden zijn gedefinieerd, worden nog niet weer gegeven in de tabel.
 
-U kunt de tabel kolommen sorteren door op de pijlen te klikken en beter inzicht te krijgen in de geaggregeerde naam ruimte van uw cache.
+U kunt de tabel kolommen sorteren om beter inzicht te krijgen in de geaggregeerde naam ruimte van uw cache. Klik op de pijlen in de kolom koppen om de paden te sorteren.
 
-![scherm afbeelding van de pagina Portal naam ruimte met twee paden in een tabel. Kolom koppen: pad naar naam ruimte, opslag doel, exportpad en export-submap. De items in de eerste kolom zijn klikable links. Top knoppen: pad naar naam ruimte toevoegen, vernieuwen, verwijderen](media/namespace-page.png)
+[![scherm afbeelding van de pagina Portal naam ruimte met twee paden in een tabel. Kolom koppen: pad naar naam ruimte, opslag doel, exportpad en export-submap en beleid voor client toegang. De namen van de paden in de eerste kolom zijn klikable links. Top knoppen: pad naar naam ruimte toevoegen, vernieuwen, verwijderen ](media/namespace-page.png)](media/namespace-page.png#lightbox)
 
-## <a name="add-or-edit-client-facing-namespace-paths"></a>Aan client gerichte naam ruimte paden toevoegen of bewerken
+## <a name="add-or-edit-namespace-paths"></a>Naam ruimte paden toevoegen of bewerken
 
 U moet ten minste één pad naar de naam ruimte maken voordat clients toegang hebben tot het opslag doel. (Lees [de Azure HPC-cache koppelen](hpc-cache-mount.md) voor meer informatie over client toegang.)
 
@@ -43,19 +43,21 @@ Laad de pagina **naam ruimte** -instellingen vanuit het Azure Portal. Op deze pa
 
 * **Een nieuw pad toevoegen:** Klik bovenaan op de knop **+ toevoegen** en vul de gegevens in het deel venster bewerken in.
 
-  * Selecteer het opslag doel in de vervolg keuzelijst. (In deze scherm afbeelding kan het Blob-opslag doel niet worden geselecteerd omdat het al een pad voor de naam ruimte heeft.)
+  ![Scherm opname van de velden naam ruimte toevoegen bewerken met een Blob-opslag doel geselecteerd. De export-en submap paden worden ingesteld op/en niet bewerkbaar.](media/namespace-add-blob.png)
 
-    ![Scherm afbeelding van de nieuwe naam ruimte velden bewerken met de opslag doel-selector beschikbaar](media/namespace-select-storage-target.png)
+  * Voer het pad in dat clients gebruiken voor toegang tot dit opslag doel.
+
+  * Selecteer welk toegangs beleid moet worden gebruikt voor dit pad. Meer informatie over het aanpassen van client toegang in het [gebruik van beleids regels voor client toegang](access-policies.md).
+
+  * Selecteer het opslag doel in de vervolg keuzelijst. Als een Blob-opslag doel al een pad naar een naam ruimte heeft, kan deze niet worden geselecteerd.
 
   * Voor een Azure Blob-opslag doel worden de export-en submap paden automatisch ingesteld op ``/`` .
 
-* **Een bestaand pad wijzigen:** Klik op het pad naar de naam ruimte. Het deel venster bewerken wordt geopend en u kunt het pad wijzigen.
-
-  ![Scherm afbeelding van de pagina met de naam ruimte na klikken op een pad naar een BLOB-naam ruimte: de velden bewerken worden in een deel venster aan de rechter kant weer gegeven](media/edit-namespace-blob.png)
+* **Een bestaand pad wijzigen:** Klik op het pad naar de naam ruimte. Het deel venster bewerken wordt geopend. U kunt het pad en toegangs beleid wijzigen, maar u kunt niet overschakelen naar een ander opslag doel.
 
 * **Een pad naar een naam ruimte verwijderen:** Selecteer het selectie vakje links van het pad en klik op de knop **verwijderen** .
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
@@ -81,7 +83,7 @@ In deze lijst wordt het maximum aantal naam ruimte paden per configuratie weer g
 
   * 3 TB cache-10-naam ruimte paden
   * 6 TB cache-10-naam ruimte paden
-  * 23 TB cache-20 naam ruimte paden
+  * 12 TB cache-20 naam ruimte paden
 
 * Maxi maal 4 GB/s door Voer:
 
@@ -109,15 +111,17 @@ Vul deze waarden in voor elk pad naar de naam ruimte:
 
 * **Pad naar de naam ruimte** -het pad naar de client.
 
+* **Beleid voor client toegang** : Selecteer welk toegangs beleid moet worden gebruikt voor dit pad. Meer informatie over het aanpassen van client toegang in het [gebruik van beleids regels voor client toegang](access-policies.md).
+
 * **Opslag doel** : als u een nieuw pad naar een naam ruimte maakt, selecteert u een opslag doel in de vervolg keuzelijst.
 
 * **Pad exporteren** : Geef het pad naar de NFS-export op. Zorg ervoor dat u de naam van de export correct typt: de portal valideert de syntaxis voor dit veld, maar controleert de export pas nadat u de wijziging hebt verzonden.
 
 * **Submap exporteren** : als u met dit pad een specifieke submap van de export wilt koppelen, voert u deze hier in. Als dat niet het geval is, laat u dit veld leeg.
 
-![scherm afbeelding van de pagina Portal-naam ruimte met de update pagina aan de rechter kant openen](media/update-namespace-nfs.png)
+![scherm afbeelding van de pagina Portal naam ruimte met de pagina bewerken aan de rechter kant. Het bewerkings formulier bevat instellingen voor het pad van een NFS-opslag doel naam ruimte](media/namespace-edit-nfs.png)
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 

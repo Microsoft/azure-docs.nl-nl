@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: c12935a4b0b9cbbf088ba7b9c5ea804be0ce85a1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8ea0c27fdd64bae1e6fe9443df76c86e0eb89a75
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447360"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762912"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python
 
@@ -27,7 +27,7 @@ In deze zelfstudie wordt beschreven hoe u een virtuele machine op uw Azure Stack
 
 De implementatiewerkstroom wordt afgebeeld in het volgende diagram.
 
-![VM-implementatiewerkstroom](media/azure-stack-edge-j-series-deploy-virtual-machine-powershell/vm-workflow_r.svg)
+![VM-implementatiewerkstroom](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
 
 Een overzicht op hoog niveau van de implementatiewerkstroom is als volgt:
 
@@ -43,7 +43,7 @@ Een overzicht op hoog niveau van de implementatiewerkstroom is als volgt:
 10. Een VNet maken
 11. Een VNIC maken met de VNet-subnet-ID
 
-Zie [VM's op uw Azure Stack Edge Pro-apparaat implementeren met behulp van Azure PowerShell](azure-stack-edge-j-series-deploy-virtual-machine-powershell.md) voor een gedetailleerde uitleg van het werkstroomdiagram. Voor informatie over verbinding maken met Azure Resource Manager raadpleegt u [Verbinding maken met Azure Resource Manager met behulp van Azure PowerShell](azure-stack-edge-j-series-connect-resource-manager.md).
+Zie [VM's op uw Azure Stack Edge Pro-apparaat implementeren met behulp van Azure PowerShell](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md) voor een gedetailleerde uitleg van het werkstroomdiagram. Voor informatie over verbinding maken met Azure Resource Manager raadpleegt u [Verbinding maken met Azure Resource Manager met behulp van Azure PowerShell](azure-stack-edge-j-series-connect-resource-manager.md).
 
 ## <a name="prerequisites"></a>Vereisten
 

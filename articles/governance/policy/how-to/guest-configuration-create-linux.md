@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een Azure Policy gast configurat
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1f6308250717d35dc725b097575bf3921646c6a0
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 705c12cff5f4377249674ef9db155d1ed321ce42
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302716"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755868"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Beleidsregels voor gastconfiguratie voor Linux maken
 
@@ -329,10 +329,15 @@ Configuration AuditFilePathExists
 
 ## <a name="policy-lifecycle"></a>Levens duur van beleid
 
-Er zijn drie velden waarvoor aandacht is vereist voor het vrijgeven van een update voor de beleids definitie.
+Als u een update wilt vrijgeven voor het beleid, brengt u de wijziging aan voor zowel het gast configuratie pakket als de details van de Azure Policy definitie.
 
 > [!NOTE]
 > De `version` eigenschap van de toewijzing van de gast configuratie heeft alleen invloed op pakketten die door micro soft worden gehost. De best practice voor het versie beheer van aangepaste inhoud is het insluiten van de versie in de bestands naam.
+
+Geef bij uitvoering `New-GuestConfigurationPackage` een naam op voor het pakket dat deze uniek maakt ten opzichte van vorige versies. U kunt een versie nummer gebruiken in de naam zoals `PackageName_1.0.0` .
+Het nummer in dit voor beeld wordt alleen gebruikt om het pakket uniek te maken, niet om op te geven dat het pakket moet worden beschouwd als een nieuwe of oudere versie dan andere pakketten.
+
+Werk vervolgens de para meters die worden gebruikt met de `New-GuestConfigurationPolicy` cmdlet uit die hieronder worden beschreven.
 
 - **Versie**: wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een versie nummer opgeven dat groter is dan het aantal dat momenteel is gepubliceerd.
 - **contentUri**: wanneer u de `New-GuestConfigurationPolicy` cmdlet uitvoert, moet u een URI naar de locatie van het pakket opgeven. Met inbegrip van een pakket versie in de bestands naam zorgt u ervoor dat de waarde van deze eigenschap in elke versie verandert.

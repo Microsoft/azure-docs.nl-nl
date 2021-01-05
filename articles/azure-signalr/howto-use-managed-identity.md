@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 06/8/2020
 ms.author: chenyl
-ms.openlocfilehash: 9b6141e6009cb868d63429836f8c8f050c792ee5
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 4f70cbacf686210c1188cb0a87e6116af8ed4b01
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152302"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97763144"
 ---
 # <a name="managed-identities-for-azure-signalr-service"></a>Beheerde identiteiten voor de Azure signalerings service
 
@@ -42,11 +42,11 @@ Voor het maken van een exemplaar van de Azure signalerings service met een door 
 
 3. Selecteer **identiteit**.
 
-4. Selecteer **toevoegen**op het tabblad door de **gebruiker toegewezen** .
+4. Selecteer **toevoegen** op het tabblad door de **gebruiker toegewezen** .
 
-5. Zoek naar de identiteit die u eerder hebt gemaakt en selecteer deze. Selecteer **Toevoegen**.
+5. Zoek de identiteit die u eerder hebt gemaakt en selecteert deze. Selecteer **Toevoegen**.
 
-    :::image type="content" source="media/signalr-howto-use-managed-identity/user-identity-portal.png" alt-text="Een door het systeem toegewezen identiteit toevoegen aan de portal":::
+    :::image type="content" source="media/signalr-howto-use-managed-identity/user-identity-portal.png" alt-text="Een door de gebruiker toegewezen identiteit toevoegen aan de portal":::
 
 ## <a name="use-a-managed-identity-in-serverless-scenarios"></a>Een beheerde identiteit gebruiken in serverloze scenario's
 
@@ -56,9 +56,12 @@ De Azure signalerings service is een volledig beheerde service. u kunt dus geen 
 
 1. Een door het systeem toegewezen identiteit of door de gebruiker toegewezen identiteit toevoegen.
 
-2. Configureer de instellingen voor de upstream en gebruik **ManagedIdentity** als **verificatie** -instellingen. Zie [upstream-instellingen](concept-upstream.md)voor meer informatie over het maken van upstream-instellingen met verificatie.
+2. Voeg één upstream-instelling toe en klik op een wille keurige asterisk om naar een gedetailleerde pagina te gaan, zoals hieronder wordt weer gegeven.
+    :::image type="content" source="media/signalr-howto-use-managed-identity/pre-msi-settings.png" alt-text="pre-MSI-instelling":::
+    
+    :::image type="content" source="media/signalr-howto-use-managed-identity/msi-settings.png" alt-text="MSI-instelling":::
 
-3. In de instellingen voor beheerde identiteits verificatie voor **resource**kunt u de doel resource opgeven. De resource wordt een `aud` claim in het verkregen toegangs token, dat kan worden gebruikt als onderdeel van validatie in de upstream-eind punten. De bron kan een van de volgende zijn:
+3. In de instellingen voor beheerde identiteits verificatie voor **resource** kunt u de doel resource opgeven. De resource wordt een `aud` claim in het verkregen toegangs token, dat kan worden gebruikt als onderdeel van validatie in de upstream-eind punten. De bron kan een van de volgende zijn:
     - Leeg
     - Toepassings-ID (client) van de Service-Principal
     - De URI van de toepassings-ID van de Service-Principal
@@ -76,6 +79,37 @@ Als u toegangs tokens wilt valideren, moet uw app ook de doel groep en de handte
 De Azure Active Directory (Azure AD) middleware heeft ingebouwde mogelijkheden voor het valideren van toegangs tokens. U kunt door onze voor [beelden](../active-directory/develop/sample-v2-code.md) bladeren om er een te vinden in de taal van uw keuze.
 
 We bieden bibliotheken en code voorbeelden die laten zien hoe u de token validatie kunt afhandelen. Er zijn ook verschillende open source-partner bibliotheken beschikbaar voor de validatie van de JSON Web Token (JWT). Er is ten minste één optie voor bijna elk platform en de taal. Zie [verificatie bibliotheken voor micro soft-identiteits platform](../active-directory/develop/reference-v2-libraries.md)voor meer informatie over Azure AD-verificatie bibliotheken en code voorbeelden.
+
+#### <a name="authentication-in-function-app"></a>Verificatie in functie-app
+
+Het instellen van de validatie van toegangs tokens in functie-app is eenvoudig en efficiënt zonder code werkt.
+
+1. Schakel op de pagina **verificatie/autorisatie** het **app service verificatie** in **op** aan.
+
+2. Selecteer **Aanmelden met Azure Active Directory** in **actie die moet worden uitgevoerd wanneer de aanvraag niet is geverifieerd**.
+
+3. Klik in de verificatie provider in **Azure Active Directory**
+
+4. Op de pagina Nieuw. Selecteer **Express** en **Maak nieuwe AD-App** en klik vervolgens op **OK** :::image type="content" source="media/signalr-howto-use-managed-identity/function-aad.png" alt-text="functie Aad":::
+
+5. Navigeer naar de signalerings service en volg de [stappen](howto-use-managed-identity.md#add-a-system-assigned-identity) om een door het systeem toegewezen identiteit toe te voegen of door de gebruiker toegewezen identiteit.
+
+6. Ga in de seingevings service naar **upstream-instellingen** en kies **beheerde identiteit gebruiken** en **Selecteer bestaande toepassingen**. Selecteer de toepassing die u eerder hebt gemaakt.
+
+Na deze instellingen worden aanvragen zonder toegangs token in de header door de functie-app geweigerd.
+
+## <a name="use-a-managed-identity-for-key-vault-reference"></a>Een beheerde identiteit gebruiken voor Key Vault referentie
+
+De signaal service heeft toegang tot Key Vault om geheim te krijgen met behulp van de beheerde identiteit.
+
+1. Voeg een door het systeem toegewezen identiteit of door de gebruiker toegewezen identiteit voor de Azure signalerings service toe.
+
+2. Verleen geheim Lees machtiging voor de beheerde identiteit in het toegangs beleid in de Key Vault. Zie [toegangs beleid voor Key Vault toewijzen met behulp van de Azure Portal](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+
+Deze functie kan momenteel worden gebruikt in de volgende scenario's:
+
+- [Referentie geheim in upstream-URL-patroon](./concept-upstream.md#key-vault-secret-reference-in-url-template-settings)
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

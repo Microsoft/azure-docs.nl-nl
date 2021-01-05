@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/17/2020
+ms.date: 12/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 959837ff540fd95d186497858d7b9de1f8b1124d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3fef2f85ca7e7b4034c8582477796d49446ea44
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91274007"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746776"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Toegang tot groepen of toepassingen in azure AD-toegangs beoordelingen bekijken
 
@@ -69,7 +69,7 @@ Zodra u de toegangs beoordeling hebt geopend, kunt u uw toegang zien.
 
 1. Klik op **Ja** om uw toegang te beperken of op **Nee** om uw toegang te verwijderen.
 
-1. Als u op **Ja**klikt, moet u mogelijk een motivering opgeven in het vak **reden** .
+1. Als u op **Ja** klikt, moet u mogelijk een motivering opgeven in het vak **reden** .
 
     ![Scherm afbeelding met een voltooide toegangs beoordeling waarin wordt gevraagd of u nog steeds toegang tot een groep nodig hebt, waarbij ' ja ' is geselecteerd.](./media/review-your-access/perform-access-review-submit.png)
 
@@ -150,7 +150,7 @@ U kunt de openstaande toegangs beoordelingen ook weer geven met behulp van uw br
 
 1. Selecteer **Ja** om uw toegang te beperken of selecteer **Nee** om uw toegang te verwijderen.
 
-1. Als u op **Ja**klikt, moet u mogelijk een motivering opgeven in het vak **reden** .
+1. Als u op **Ja** klikt, moet u mogelijk een motivering opgeven in het vak **reden** .
 
     ![Voltooide toegangs beoordeling waarin u wordt gevraagd of u nog steeds toegang tot een groep nodig hebt](./media/review-your-access/review-access-yes-preview.png)
 

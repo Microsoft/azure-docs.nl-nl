@@ -5,14 +5,14 @@ author: mayanknayar
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
 ms.topic: how-to
-ms.date: 09/09/2020
+ms.date: 12/23/2020
 ms.author: manayar
-ms.openlocfilehash: 8c7574daced9cec078b6e98e378212ce30d6f4f6
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: e22e8b81382614c2930c72a8150606f859be501d
+ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744715"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762976"
 ---
 # <a name="preview-automatic-vm-guest-patching-for-windows-vms-in-azure"></a>Preview: Automatische VM-gastpatches voor Windows VM's in Azure
 
@@ -34,11 +34,11 @@ Automatische VM-gast patching heeft de volgende kenmerken:
 
 Als automatische VM-gast patches is ingeschakeld op een VM, worden de beschik bare *essentiële* en *beveiligings* patches automatisch gedownload en toegepast op de VM. Dit proces wordt elke maand automatisch uitgevoerd wanneer er nieuwe patches worden uitgebracht via Windows Update. De evaluatie en installatie van patches worden automatisch uitgevoerd en het proces omvat het opnieuw opstarten van de virtuele machine, indien nodig.
 
-De virtuele machine wordt regel matig beoordeeld om de toepasselijke patches voor die VM te bepalen. De patches kunnen elke wille keurige dag op de virtuele machine worden geïnstalleerd tijdens daluren van de virtuele machine. Deze automatische beoordeling zorgt ervoor dat eventuele ontbrekende patches zo snel mogelijk worden gedetecteerd.
+De virtuele machine wordt regel matig elke paar dagen en meerdere keren binnen een periode van 30 dagen geëvalueerd om de toepasselijke patches voor die VM te bepalen. De patches kunnen elke wille keurige dag op de virtuele machine worden geïnstalleerd tijdens daluren van de virtuele machine. Deze automatische beoordeling zorgt ervoor dat eventuele ontbrekende patches zo snel mogelijk worden gedetecteerd.
 
-Patches worden binnen 30 dagen na de maandelijkse Windows Update versie geïnstalleerd, met de volgende hieronder beschreven Beschik baarheid: eerste Orchestration. Patches worden alleen geïnstalleerd tijdens daluren voor de virtuele machine, afhankelijk van de tijd zone van de virtuele machine. De virtuele machine moet worden uitgevoerd gedurende de daluren van de patches die automatisch worden geïnstalleerd. Als een virtuele machine tijdens een periodieke evaluatie wordt uitgeschakeld, wordt de VM automatisch beoordeeld en worden toepasselijke patches automatisch geïnstalleerd tijdens de volgende periodieke evaluatie wanneer de virtuele machine wordt ingeschakeld.
+Patches worden binnen 30 dagen na de maandelijkse Windows Update versie geïnstalleerd, met de volgende hieronder beschreven Beschik baarheid: eerste Orchestration. Patches worden alleen geïnstalleerd tijdens daluren voor de virtuele machine, afhankelijk van de tijd zone van de virtuele machine. De virtuele machine moet worden uitgevoerd gedurende de daluren van de patches die automatisch worden geïnstalleerd. Als een virtuele machine tijdens een periodieke evaluatie is uitgeschakeld, wordt de VM automatisch beoordeeld en worden toepasselijke patches automatisch geïnstalleerd tijdens de volgende periodieke evaluatie (meestal binnen een paar dagen) wanneer de virtuele machine is ingeschakeld.
 
-Als u patches met andere patch classificaties of installatie van patches wilt installeren binnen uw eigen aangepaste onderhouds venster, kunt u [updatebeheer](tutorial-config-management.md#manage-windows-updates)gebruiken.
+Definitie-updates en andere patches die niet zijn geclassificeerd als *kritiek* of *beveiliging* , worden niet geïnstalleerd via de automatische VM-gast patching. Als u patches met andere patch classificaties of installatie van patches wilt installeren binnen uw eigen aangepaste onderhouds venster, kunt u [updatebeheer](tutorial-config-management.md#manage-windows-updates)gebruiken.
 
 ### <a name="availability-first-patching"></a>Beschik baarheid-eerste patching
 
@@ -69,11 +69,11 @@ De volgende platform-Sku's worden momenteel ondersteund (en worden regel matig t
 
 | Publisher               | OS-aanbieding      |  Sku               |
 |-------------------------|---------------|--------------------|
-| Microsoft Corporation   | WindowsServer | 2012-R2-Datacenter |
-| Microsoft Corporation   | WindowsServer | 2016-Data Center    |
-| Microsoft Corporation   | WindowsServer | 2016-Data Center-Server-Core |
-| Microsoft Corporation   | WindowsServer | 2019-Datacenter |
-| Microsoft Corporation   | WindowsServer | 2019-Data Center-Server-Core |
+| MicrosoftWindowsServer  | WindowsServer | 2012-R2-Datacenter |
+| MicrosoftWindowsServer  | WindowsServer | 2016-Data Center    |
+| MicrosoftWindowsServer  | WindowsServer | 2016-Data Center-Server-Core |
+| MicrosoftWindowsServer  | WindowsServer | 2019-Datacenter |
+| MicrosoftWindowsServer  | WindowsServer | 2019-Data Center-core |
 
 ## <a name="patch-orchestration-modes"></a>Patch Orchestration-modi
 Virtuele Windows-machines in azure ondersteunen nu de volgende patch indelings modi:
@@ -83,7 +83,7 @@ Virtuele Windows-machines in azure ondersteunen nu de volgende patch indelings m
 - Deze modus is vereist voor de beschik baarheid-eerste patches.
 - Als u deze modus instelt, wordt de systeem eigen Automatische updates ook uitgeschakeld op de virtuele Windows-machine om te voor komen dat er dubbele bewerkingen worden uitgevoerd.
 - Deze modus wordt alleen ondersteund voor virtuele machines die worden gemaakt met behulp van de ondersteunde installatie kopieën van het besturings systeem.
-- Als u deze modus wilt gebruiken, stelt u de eigenschap `osProfile.windowsConfiguration.enableAutomaticUpdates=true` in en stelt u de eigenschap  `osProfile.windowsConfiguration.patchSettings.patchMode=AutomaticByPlatfom` in de VM-sjabloon in.
+- Als u deze modus wilt gebruiken, stelt u de eigenschap `osProfile.windowsConfiguration.enableAutomaticUpdates=true` in en stelt u de eigenschap  `osProfile.windowsConfiguration.patchSettings.patchMode=AutomaticByPlatform` in de VM-sjabloon in.
 
 **AutomaticByOS:**
 - In deze modus wordt Automatische updates op de virtuele Windows-machine ingeschakeld en worden patches op de VM geïnstalleerd via Automatische updates.
@@ -107,7 +107,7 @@ Virtuele Windows-machines in azure ondersteunen nu de volgende patch indelings m
 - De virtuele machine moet toegang hebben tot Windows Update-eind punten. Als uw virtuele machine is geconfigureerd voor het gebruik van Windows Server Update Services (WSUS), moeten de relevante WSUS-server eindpunten toegankelijk zijn.
 - Gebruik Compute API versie 2020-06-01 of hoger.
 
-Het inschakelen van de Preview-functionaliteit vereist eenmalige aanmelding voor de functie *InGuestAutoPatchVMPreview* per abonnement, zoals hieronder wordt beschreven.
+Het inschakelen van de Preview-functionaliteit vereist eenmalige aanmelding voor de functie **InGuestAutoPatchVMPreview** per abonnement, zoals hieronder wordt beschreven.
 
 ### <a name="rest-api"></a>REST-API
 In het volgende voor beeld wordt beschreven hoe u de preview-versie van uw abonnement kunt inschakelen:
@@ -199,7 +199,7 @@ Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Gebruik [AZ VM Create](/cli/azure/vm#az-vm-create) om automatische VM-gast patches in te scha kelen bij het maken van een nieuwe virtuele machine. In het volgende voor beeld wordt automatische VM-gast patches geconfigureerd voor een virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup* :
+Gebruik [AZ VM Create](/cli/azure/vm#az-vm-create) om automatische VM-gast patches in te scha kelen bij het maken van een nieuwe virtuele machine. In het volgende voor beeld wordt automatische VM-gast patches geconfigureerd voor een virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup*:
 
 ```azurecli-interactive
 az vm create --resource-group myResourceGroup --name myVM --image Win2019Datacenter --enable-agent --enable-auto-update --patch-mode AutomaticByPlatform
@@ -254,10 +254,10 @@ De resultaten van de installatie van de patch voor uw virtuele machine kunnen wo
 ## <a name="on-demand-patch-assessment"></a>Evaluatie op aanvraag van patches
 Als automatische VM-gast patches al is ingeschakeld voor uw virtuele machine, wordt een periodieke patch-evaluatie uitgevoerd op de VM tijdens de daluren van de VM. Dit proces wordt automatisch uitgevoerd en de resultaten van de laatste evaluatie kunnen worden gecontroleerd via de instantie weergave van de virtuele machine, zoals eerder in dit document is beschreven. U kunt op elk gewenst moment een patch evaluatie op aanvraag voor uw virtuele machine activeren. Het kan een paar minuten duren voordat de patch-evaluatie is voltooid en de status van de laatste evaluatie is bijgewerkt op de instantie weergave van de virtuele machine.
 
-Het inschakelen van de Preview-functionaliteit vereist eenmalige aanmelding voor de functie *InGuestPatchVMPreview* per abonnement. De preview-versie van de functie voor patch evaluatie op aanvraag kan worden ingeschakeld na het [voorzienings proces](automatic-vm-guest-patching.md#requirements-for-enabling-automatic-vm-guest-patching) dat eerder is beschreven voor automatische VM-gast patches.
+Het inschakelen van de Preview-functionaliteit vereist eenmalige aanmelding voor de functie **InGuestPatchVMPreview** per abonnement. Deze functie voorbeeld wijkt af van de automatische registratie van de functie voor het automatisch uitvoeren van VM-gast patches die eerder is uitgevoerd voor **InGuestAutoPatchVMPreview**. Het inschakelen van de preview van extra functies is een afzonderlijke en extra vereiste. De preview-versie van de functie voor patch evaluatie op aanvraag kan worden ingeschakeld na het [voorzienings proces](automatic-vm-guest-patching.md#requirements-for-enabling-automatic-vm-guest-patching) dat eerder is beschreven voor automatische VM-gast patches.
 
 > [!NOTE]
->Met patch evaluatie op aanvraag wordt niet automatisch de installatie van de patch geactiveerd. Geoordeelde en toepasselijke patches voor de virtuele machine worden alleen geïnstalleerd tijdens de piek uren van de virtuele machine, volgens het proces voor de beschik baarheid-eerste patches dat eerder in dit document is beschreven.
+>Met patch evaluatie op aanvraag wordt niet automatisch de installatie van de patch geactiveerd. Als u automatische VM-gast patching hebt ingeschakeld, worden de geraamde en toepasselijke patches voor de virtuele machine geïnstalleerd tijdens de daluren van de VM, gevolgd door het proces voor eerste patches dat eerder in dit document is beschreven.
 
 ### <a name="rest-api"></a>REST-API
 ```

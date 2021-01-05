@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 9b2ab664f319de07fd70bd1a22b1ba6d64ac208f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05dadfe88ed64aea8066b02298ba158a44a03c6f
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87320252"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760172"
 ---
 # <a name="metric-chart-examples"></a>Voor beelden van metrische grafieken 
 
@@ -24,7 +24,7 @@ Wilt u de voor beelden van uw fantastische grafieken delen met de wereld? U kunt
 
 In dit diagram wordt weer gegeven of de CPU voor een App Service binnen het aanvaard bare bereik valt en opsplitst in instantie om te bepalen of de belasting goed is gedistribueerd. U kunt in het diagram zien dat de app vóór 6 uur op één Server exemplaar werd uitgevoerd en vervolgens omhoog schalen door een andere instantie toe te voegen.
 
-![Lijn diagram van gemiddeld CPU-percentage per Server exemplaar](./media/metric-chart-samples/cpu-by-instance.png)
+![Lijn diagram van gemiddeld CPU-percentage per Server exemplaar](./media/metrics-charts/cpu-by-instance.png)
 
 ### <a name="how-to-configure-this-chart"></a>Hoe kan ik deze grafiek configureren?
 
@@ -34,17 +34,17 @@ Selecteer uw App Service Resource en zoek het **CPU-percentage** metriek. Klik v
 
 Bekijk de beschik baarheid per regio van uw toepassing om te bepalen welke geografische locaties problemen ondervinden. Dit diagram toont de Application Insights beschikbaarheids metriek. U kunt zien dat de bewaakte toepassing geen problemen ondervindt met Beschik baarheid van het VS-Oost-Data Center, maar er is wel een deel van de beschik baarheid van West-VS en Azië-oost.
 
-![Grafiek van gemiddelde Beschik baarheid per locatie](./media/metric-chart-samples/availability-run-location.png)
+![Grafiek van gemiddelde Beschik baarheid per locatie](./media/metrics-charts/availability-by-location.png)
 
 ### <a name="how-to-configure-this-chart"></a>Hoe kan ik deze grafiek configureren?
 
 U moet eerst [Application Insights beschikbaarheids](../app/monitor-web-app-availability.md) controle inschakelen voor uw website. Vervolgens kiest u uw Application Insights resource en selecteert u de beschikbaarheids metriek. Splitsing Toep assen op de dimensie **uitvoerings locatie** .
 
-## <a name="volume-of-storage-account-transactions-by-api-name"></a>Volume van opslag account transacties op API-naam
+## <a name="volume-of-failed-storage-account-transactions-by-api-name"></a>Volume van mislukte Storage-account transacties op API-naam
 
-Er is een overmatig volume trans acties voor uw opslag account resource. U kunt de metrische gegevens van de trans actie gebruiken om te bepalen welke API verantwoordelijk is voor de overmaat belasting. U ziet dat de volgende grafiek is geconfigureerd met dezelfde dimensie (API-naam) in filteren en splitsen om de weer gave te beperken tot alleen de API-aanroepen van de interesse:
+De resource voor het opslag account heeft een overmatig volume aan mislukte trans acties. U kunt de metrische gegevens van de trans actie gebruiken om te bepalen welke API verantwoordelijk is voor de overmatige fout. U ziet dat de volgende grafiek is geconfigureerd met dezelfde dimensie (API-naam) in splitsen en gefilterd op het mislukte antwoord type:
 
-![Staaf diagram van API-trans acties](./media/metric-chart-samples/transactions-by-api.png)
+![Staaf diagram van API-trans acties](./media/metrics-charts/split-and-filter-example.png)
 
 ### <a name="how-to-configure-this-chart"></a>Hoe kan ik deze grafiek configureren?
 

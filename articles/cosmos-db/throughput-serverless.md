@@ -5,13 +5,13 @@ author: ThomasWeiss
 ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/25/2020
-ms.openlocfilehash: 1943aae3a2b01490dca687bcdea99d76da238d51
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 12/23/2020
+ms.openlocfilehash: a6f8b79ecc8dcac71dc8f5d1be2bb58a0288a307
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187252"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760245"
 ---
 # <a name="how-to-choose-between-provisioned-throughput-and-serverless"></a>Kiezen tussen ingerichte door Voer en serverloos
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -25,7 +25,7 @@ Azure Cosmos DB is beschikbaar in twee verschillende capaciteits modi: [ingerich
 | Criteria | Ingerichte doorvoer | Serverloos |
 | --- | --- | --- |
 | Status | Algemeen beschikbaar | In preview |
-| Geschikt voor | Essentiële werk belastingen waarvoor voorspel bare prestaties zijn vereist | Kleine tot middel grote niet-kritieke workloads met licht en onregelmatig verkeer |
+| Geschikt voor | Essentiële werk belastingen waarvoor voorspel bare prestaties zijn vereist | Kleine tot middel grote workloads met licht en onregelmatige verkeer dat moeilijk te voors pellen is |
 | Uitleg | Voor elk van uw containers voorziet u een bepaalde hoeveelheid door Voer, uitgedrukt in [aanvraag eenheden](request-units.md) per seconde. Elke seconde is deze hoeveelheid aanvraag eenheden beschikbaar voor uw database bewerkingen. Ingerichte door Voer kan hand matig worden bijgewerkt of automatisch worden aangepast met automatische [schaling](provision-throughput-autoscale.md). | U voert uw database bewerkingen uit op uw containers zonder dat u enige capaciteit hoeft in te richten. |
 | Geo-distributie | Beschikbaar (onbeperkt aantal Azure-regio's) | Niet beschikbaar (serverloze accounts kunnen alleen worden uitgevoerd in één Azure-regio) |
 | Maximale opslag per container | Onbeperkt | 50 GB |

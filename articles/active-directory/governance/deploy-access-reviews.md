@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 08/14/2020
+ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f3e825f908ffe475b05a5e6748d9505e7283b50
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: a2e670525840b801df874e3f8dcbdbadc0955a12
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362696"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746300"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Implementatie van Azure Active Directory Access beoordelingen plannen
 
@@ -59,7 +59,7 @@ De belangrijkste voor delen van het inschakelen van toegangs beoordelingen zijn:
 
 * **Risico's beheren**. Toegangs beoordelingen bieden organisaties een manier om de toegang tot gegevens en toepassingen te controleren, het risico van lekkage van gegevens en verstrijken van gegevens te verlagen. Dit omvat mogelijkheden om regel matig de toegang van externe partners tot bedrijfs bronnen te controleren. 
 
-* **Naleving en**beheer van adressen. Met toegangs beoordelingen kunt u de toegangs levenscyclus bepalen en opnieuw certificeren voor groepen, apps en sites. U kunt tracerings Beoordelingen voor naleving of risico gevoelige toepassingen beheren die specifiek zijn voor uw organisatie. 
+* **Naleving en** beheer van adressen. Met toegangs beoordelingen kunt u de toegangs levenscyclus bepalen en opnieuw certificeren voor groepen, apps en sites. U kunt tracerings Beoordelingen voor naleving of risico gevoelige toepassingen beheren die specifiek zijn voor uw organisatie. 
 
 * **Kosten verlagen**. Toegangs beoordelingen zijn ingebouwd in de Cloud en zijn systeem eigen met cloud resources zoals groepen, toepassingen en toegangs pakketten. Het gebruik van toegangs beoordelingen is minder kostbaar dan het bouwen van uw eigen hulpprogram ma's of op een andere manier om uw on-premises toolset bij te werken.
 
@@ -193,7 +193,7 @@ De administratieve rol die vereist is voor het maken, beheren of lezen van een t
 | Resourcetype| Toegangs beoordelingen maken en beheren (makers)| Resultaten van de toegangs beoordeling lezen |
 | - | - | -|
 | Groep of toepassing| Hoofdbeheerder <p>Gebruikersbeheerder| Makers en beveiligings beheerder |
-| Geprivilegieerde rollen in azure AD| Hoofdbeheerder <p>Beheerder van geprivilegieerde rol| makers <p>Beveiligingslezer<p>Beveiligingsbeheer |
+| Geprivilegieerde rollen in azure AD| Hoofdbeheerder <p>Beheerder voor bevoorrechte rollen| makers <p>Beveiligingslezer<p>Beveiligingsbeheer |
 | Geprivilegieerde rollen in azure (resources)| Hoofdbeheerder<p>Gebruikersbeheerder<p>Resource-eigenaar| makers |
 | Toegangs pakket| Hoofdbeheerder<p>Maker van het toegangs pakket| Alleen globale beheerder |
 
@@ -397,7 +397,7 @@ Met toegangs beoordelingen kunnen revisoren worden verklaard of gebruikers nog s
 
 * Gebruikersbeheerder
 
-* Beheerder voor geprivilegieerde authenticatie
+* Bevoorrechte verificatiebeheerder
 
 * Beheerder van voorwaardelijke toegang
 

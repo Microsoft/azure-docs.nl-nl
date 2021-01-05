@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 4979902853602073e6230ef7387d6c6596fe77da
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: d08cb2761a8d8010c455ff959d6c247e8b64ef20
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325912"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746572"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Migratie overzicht: SQL Server SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -24,7 +24,7 @@ Meer informatie over de verschillende migratie strategieën voor het migreren va
 
 U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 
-- SQL Server on Virtual Machines  
+- SQL Server op Virtual Machines  
 - Amazon Web Services (AWS) EC2 
 - Amazon Relational Data Base service (AWS RDS) 
 - Compute Engine (Google Cloud Platform-GCP)
@@ -127,6 +127,20 @@ Deze services omvatten:
 
 Bij de voor bereiding voor het migreren van SQL Server-data bases naar SQL Server op virtuele machines van Azure, moet u rekening houden met de versies van SQL Server die worden ondersteund. Zie [SQL Server op virtuele machines](../../virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-server-vms)van Azure voor een lijst met momenteel ondersteunde SQL Server versies op Azure-vm's.
 
+## <a name="migration-assets"></a>Migratie-assets 
+
+Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
+
+|Asset  |Beschrijving  |
+|---------|---------|
+|[Beoordelings model en hulp programma voor gegevens workload](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
+|[Automatisering van perfmon Data Collection met logman](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Perfmon%20Data%20Collection%20Automation%20Using%20Logman)|Een hulp programma waarmee u gegevens kunt verzamelen om inzicht te krijgen in de basislijn prestaties die helpt bij de aanbeveling voor migratie doel. Dit hulp programma dat logman.exe gebruikt voor het maken van de opdracht voor het maken, starten, stoppen en verwijderen van prestatie meter items die zijn ingesteld op een externe SQL Server.|
+|[SQL Server-implementatie in azure](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/SQL%20Server%20Deployment%20in%20Azure%20.pdf)|Dit document richt lijnen helpt u bij het controleren van verschillende opties om uw SQL Server-workloads naar Azure te verplaatsen, inclusief functie vergelijking, hoge Beschik baarheid en overwegingen voor back-up/opslag. |
+|[On-premises SQL Server naar virtuele Azure-machine](https://github.com/microsoft/DataMigrationTeam/blob/master/Whitepapers/OnPremise%20SQL%20Server%20to%20Azure%20VM.pdf)|In dit technisch document worden de stappen beschreven voor het maken van back-ups en het herstellen van data bases van on-premises SQL Server naar SQL Server op virtuele machine van Azure met voorbeeld scripts.|
+|[Multiple-SQL-VM-VNet-ILB](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/ARM%20Templates/Multiple-SQL-VM-VNet-ILB)|In dit technisch document worden de stappen beschreven voor het instellen van meerdere virtuele Azure-machines in een configuratie van SQL Server always on-beschikbaarheids groep.|
+|[Virtuele Azure-machines die Ultra-SSD ondersteunen per regio](https://github.com/microsoft/DataMigrationTeam/tree/master/IP%20and%20Scripts/Find%20Azure%20VMs%20supporting%20Ultra%20SSD)|Deze Power shell-scripts bieden een programmatische optie voor het ophalen van de lijst met regio's die ondersteuning bieden voor virtuele Azure-machines die een ultra Ssd's ondersteunen.|
+
+Deze resources zijn ontwikkeld als onderdeel van het data SQL expert-programma, dat wordt gesponsord door het technische team van de Azure-gegevens groep. Het kern Handvest van het data SQL expert-programma is het deblokkeren en versnellen van complexe modernisering en het concurreren van de migratie mogelijkheden van het gegevens platform naar het Azure-gegevens platform van micro soft. Als u denkt dat uw organisatie graag deelneemt aan het data SQL expert-programma, neemt u contact op met uw account team en vraagt u om een benoeming in te dienen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

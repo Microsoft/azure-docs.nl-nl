@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 30004306d9ff44df04a26640a2bd7a09256fce25
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 4c964f3661e120026189a75d331e6db975b41c70
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516684"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97756072"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
 
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe u in azure controle sfeer liggen referenties
 
 * Een Azure-sleutelkluis. Zie [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md)voor meer informatie over het maken van deze.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Een referentie is verificatie-informatie die Azure controle sfeer liggen kan gebruiken voor verificatie bij uw geregistreerde gegevens bronnen. Een referentie object kan worden gemaakt voor diverse typen verificatie scenario's (zoals basis verificatie waarvoor gebruikers naam en wacht woord zijn vereist) en legt de specifieke informatie vast op basis van het gekozen type verificatie methode. Referenties gebruiken uw bestaande Azure-sleutel kluizen geheimen om gevoelige verificatie gegevens op te halen tijdens het proces voor het maken van de referenties.
 
 ## <a name="using-purview-managed-identity-to-set-up-scans"></a>Scans instellen met behulp van controle sfeer liggen beheerde identiteit
@@ -73,7 +73,7 @@ Het referentie type dat momenteel wordt ondersteund in controle sfeer liggen:
 * SQL-verificatie: u voegt het **wacht woord** toe als geheim in de sleutel kluis
 * Account sleutel: u voegt de **account sleutel** toe als geheim in de sleutel kluis
 
-Hier vindt u meer informatie over het toevoegen van geheimen aan een sleutel kluis: (sleutel kluis invoegen-artikel)
+Zie [een geheim toevoegen aan Key Vault](../key-vault/secrets/quick-create-portal.md#add-a-secret-to-key-vault)voor meer informatie.
 
 Nadat u uw geheimen in uw sleutel kluis hebt opgeslagen, maakt u een nieuwe referentie door + nieuw te selecteren in de opdracht balk voor referenties. Geef de vereiste informatie op, waaronder het selecteren van de verificatie methode en een Key Vault-exemplaar waaruit een geheim moet worden geselecteerd. Als alle gegevens zijn ingevuld, klikt u op maken.
 

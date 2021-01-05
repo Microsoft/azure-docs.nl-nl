@@ -1,7 +1,7 @@
 ---
-title: Ontwikkelen met autoML & Azure Databricks
+title: Ontwikkelen met AutoML & Azure Databricks
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het instellen van een ontwikkel omgeving in Azure Machine Learning en Azure Databricks. Gebruik de Azure ML-Sdk's voor Databricks en Databricks met autoML.
+description: Meer informatie over het instellen van een ontwikkel omgeving in Azure Machine Learning en Azure Databricks. Gebruik de Azure ML-Sdk's voor Databricks en Databricks met AutoML.
 services: machine-learning
 author: rastala
 ms.author: roastala
@@ -11,14 +11,14 @@ ms.reviewer: larryfr
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ef8ee7718aabb443fda6cd7b276ee53472261913
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 878e6f11645a6478c0d536e9d6d6dac4518c5349
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424352"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740960"
 ---
-# <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Stel een ontwikkel omgeving in met Azure Databricks en autoML in Azure Machine Learning 
+# <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Stel een ontwikkel omgeving in met Azure Databricks en AutoML in Azure Machine Learning 
 
 Meer informatie over het configureren van een ontwikkel omgeving in Azure Machine Learning die gebruikmaakt van Azure Databricks en geautomatiseerd ML.
 
@@ -32,9 +32,9 @@ Zie [een python-ontwikkel omgeving instellen](how-to-configure-environment.md)vo
 Azure Machine Learning werk ruimte. Als u er geen hebt, kunt u een Azure Machine Learning-werk ruimte maken met behulp van de [Azure Portal](how-to-manage-workspace.md)-, [Azure CLI](how-to-manage-workspace-cli.md#create-a-workspace)-en [Azure Resource Manager-sjablonen](how-to-create-workspace-template.md).
 
 
-## <a name="azure-databricks-with-azure-machine-learning-and-automl"></a>Azure Databricks met Azure Machine Learning en autoML
+## <a name="azure-databricks-with-azure-machine-learning-and-automl"></a>Azure Databricks met Azure Machine Learning en AutoML
 
-Azure Databricks integreert met Azure Machine Learning en de autoML-mogelijkheden. 
+Azure Databricks integreert met Azure Machine Learning en de AutoML-mogelijkheden. 
 
 U kunt Azure Databricks gebruiken:
 
@@ -68,7 +68,7 @@ Zodra het cluster wordt uitgevoerd, [maakt u een bibliotheek](https://docs.datab
 Als u automatische ML wilt gebruiken, gaat u verder met [het toevoegen van de Azure ml SDK met AutoML](#add-the-azure-ml-sdk-with-automl-to-databricks).
 
 
-1. Klik met de rechter muisknop op de huidige werkruimte map waar u de bibliotheek wilt opslaan. Selecteer **Create**  >  **bibliotheek** maken.
+1. Klik met de rechter muisknop op de huidige werkruimte map waar u de bibliotheek wilt opslaan. Selecteer   >  **bibliotheek** maken.
     
     > [!TIP]
     > Als u een oude SDK-versie hebt, schakelt u deze uit in de geïnstalleerde bibliotheken van het cluster en gaat u naar de Prullenbak. Installeer de nieuwe SDK-versie en start het cluster opnieuw op. Als er een probleem is nadat de computer opnieuw is opgestart, ontkoppelt u het cluster en koppelt u het opnieuw.
@@ -97,7 +97,7 @@ Als u automatische ML wilt gebruiken, gaat u verder met [het toevoegen van de Az
   ![Azure Machine Learning SDK voor Databricks](./media/how-to-configure-environment/amlsdk-withoutautoml.jpg) 
 
 ## <a name="add-the-azure-ml-sdk-with-automl-to-databricks"></a>Voeg de Azure ML SDK met AutoML toe aan Databricks
-Als het cluster is gemaakt met Databricks Runtime 7,1 of hoger ( *niet* ml), voert u de volgende opdracht uit in de eerste cel van uw notitie blok om de AML-SDK te installeren.
+Als het cluster is gemaakt met Databricks Runtime 7,1 of hoger (*niet* ml), voert u de volgende opdracht uit in de eerste cel van uw notitie blok om de AML-SDK te installeren.
 
 ```
 %pip install --upgrade --force-reinstall -r https://aka.ms/automl_linux_requirements.txt
@@ -120,6 +120,44 @@ Uitproberen:
  ![ paneel importeren](./media/how-to-configure-environment/azure-db-import.png)
 
 + Meer informatie over het [maken van een pijp lijn met Databricks als de trainings Compute](how-to-create-your-first-pipeline.md).
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+* **Fout bij het installeren van pakketten**
+
+    Azure Machine Learning SDK-installatie mislukt op Azure Databricks wanneer er meer pakketten zijn geïnstalleerd. Sommige pakketten, zoals `psutil` , kunnen conflicten veroorzaken. Installeer pakketten door de bibliotheek versie te blok keren om installatie fouten te voor komen. Dit probleem heeft betrekking op Databricks en niet op de Azure Machine Learning SDK. Dit probleem kan ook optreden met andere bibliotheken. Voorbeeld:
+    
+    ```python
+    psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
+    ```
+
+    U kunt ook init-scripts gebruiken als u problemen ondervindt bij de installatie van python-bibliotheken. Deze aanpak wordt niet officieel ondersteund. Zie voor meer informatie [cluster-scoped init-scripts](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+
+* **Fout bij importeren: kan naam niet importeren `Timedelta` van `pandas._libs.tslibs`**: als u deze fout ziet wanneer u gebruikmaakt van automatische machine learning, voert u de twee volgende regels uit in uw notitie blok:
+    ```
+    %sh rm -rf /databricks/python/lib/python3.7/site-packages/pandas-0.23.4.dist-info /databricks/python/lib/python3.7/site-packages/pandas
+    %sh /databricks/python/bin/pip install pandas==0.23.4
+    ```
+
+* **Import fout: geen module met de naam ' Pandas. core. indices '**: als u deze fout ziet wanneer u automatische machine learning gebruikt:
+
+    1. Voer deze opdracht uit om twee pakketten te installeren in uw Azure Databricks cluster:
+    
+       ```bash
+       scikit-learn==0.19.1
+       pandas==0.22.0
+       ```
+    
+    1. Ontkoppel het cluster en koppel het vervolgens opnieuw aan uw notitie blok.
+    
+    Als u met deze stappen het probleem niet kunt oplossen, probeert u het cluster opnieuw op te starten.
+
+* **FailToSendFeather**: als er een `FailToSendFeather` fout wordt weer gegeven bij het lezen van gegevens op Azure Databricks cluster, raadpleegt u de volgende oplossingen:
+    
+    * Upgrade `azureml-sdk[automl]` pakket naar de nieuwste versie.
+    * Voeg `azureml-dataprep` versie 1.1.8 of hoger toe.
+    * Voeg `pyarrow` versie 0,11 of hoger toe.
+  
 
 ## <a name="next-steps"></a>Volgende stappen
 

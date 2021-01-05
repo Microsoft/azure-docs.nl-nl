@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 302f1a081ca44cf6436f2c318b03e227f6640489
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1bbc3b3cd755aabd348a238ad65cda132b9a7547
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001963"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746606"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om een werkmap te openen en een bestand te maken in
 
 Voor een nationale Cloud gebruiker voert u de volgende stappen uit om eerst de Azure-omgeving in te stellen en vervolgens de **Azure: Sign in** -opdracht te gebruiken om u aan te melden bij Azure:
 
-1. Navigeer naar **File**  >  **instellingen voor bestands voorkeuren**  >  **Settings**.
+1. Navigeer naar   >  **instellingen voor bestands voorkeuren**  >  .
 2. Zoek naar de volgende teken reeks: **Azure: Cloud**.
 3. Selecteer de nationale Cloud in de lijst:
 
@@ -203,7 +203,7 @@ Voer de volgende stappen uit om de query's te verzenden met de interactieve opdr
 
    ![Scherm afbeelding toont een optie om de installatie van PySpark over te slaan.](./media/hdinsight-for-vscode/install-the-pyspark-kernel.png)
 
-5. Als u het later opnieuw moet installeren, kunt u naar de instellingen van de **Bestands**  >  **voorkeur** navigeren  >  **Settings** en vervolgens **HDInsight uitschakelen: Schakel overs Laan Pyspark-installatie** in de instellingen in. 
+5. Als u het later opnieuw moet installeren, kunt u naar de instellingen van de **Bestands**  >  **voorkeur** navigeren  >  en vervolgens **HDInsight uitschakelen: Schakel overs Laan Pyspark-installatie** in de instellingen in. 
     
     ![Scherm afbeelding toont de optie om de installatie overs Laan Pyspark in te scha kelen.](./media/hdinsight-for-vscode/enable-skip-pyspark-installation.png)
 
@@ -211,29 +211,31 @@ Voer de volgende stappen uit om de query's te verzenden met de interactieve opdr
 
    ![pyspark correct geïnstalleerd](./media/hdinsight-for-vscode/pyspark-kernel-installed-successfully.png)
 
-7. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Python: selecteer Interpreter om Jupyter-server te starten** in.
+7. Gebruik de opdracht prompt om **PIP install numpy = = 1.19.3** uit te voeren en vervolgens opnieuw het VSCode-venster opnieuw te laden.
+
+8. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Python: selecteer Interpreter om Jupyter-server te starten** in.
 
    ![selecteer interpreter om Jupyter-server te starten](./media/hdinsight-for-vscode/select-interpreter-to-start-jupyter-server.png)
 
-8. Selecteer hieronder de Python-optie.
+9. Selecteer hieronder de Python-optie.
 
    ![kies de onderstaande optie](./media/hdinsight-for-vscode/choose-the-below-option.png)
     
-9. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Developer: Venster opnieuw laden** in.
+10. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Developer: Venster opnieuw laden** in.
 
-   ![venster opnieuw laden](./media/hdinsight-for-vscode/reload-window.png)
+    ![venster opnieuw laden](./media/hdinsight-for-vscode/reload-window.png)
 
-10. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
+11. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
 
-11. Selecteer alle code, klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark Interactive/Synapse: PySpark Interactive** om de query te verzenden. 
+12. Selecteer alle code, klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark Interactive/Synapse: PySpark Interactive** om de query te verzenden. 
 
     ![contextmenu van pyspark interactive](./media/hdinsight-for-vscode/pyspark-interactive-right-click.png)
 
-12. Selecteer het cluster als u geen standaard cluster hebt opgegeven. Na enkele ogen blikken worden de **python-interactieve** resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en de code wordt uitgevoerd. Als u wilt overschakelen naar Synapse Pyspark kernel, wordt het uitschakelen van automatische instellingen in Azure Portal aangemoedigd. Anders kan het lang duren voordat het cluster wordt geactiveerd en de Synapse-kernel wordt ingesteld voor het eerste gebruik. Als u met de hulpprogram ma's ook een blok code in plaats van het hele script bestand kunt verzenden met behulp van het snelmenu:
+13. Selecteer het cluster als u geen standaard cluster hebt opgegeven. Na enkele ogen blikken worden de **python-interactieve** resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en de code wordt uitgevoerd. Als u wilt overschakelen naar Synapse Pyspark kernel, wordt het uitschakelen van automatische instellingen in Azure Portal aangemoedigd. Anders kan het lang duren voordat het cluster wordt geactiveerd en de Synapse-kernel wordt ingesteld voor het eerste gebruik. Als u met de hulpprogram ma's ook een blok code in plaats van het hele script bestand kunt verzenden met behulp van het snelmenu:
 
     ![interactief pyspark Interactive python-venster](./media/hdinsight-for-vscode/pyspark-interactive-python-interactive-window.png)
 
-13. Voer **%% info** in en druk op SHIFT + ENTER om de taak gegevens weer te geven (optioneel):
+14. Voer **%% info** in en druk op SHIFT + ENTER om de taak gegevens weer te geven (optioneel):
 
     ![pyspark interactieve weergave taak gegevens](./media/hdinsight-for-vscode/pyspark-interactive-view-job-information.png)
 
@@ -266,7 +268,8 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 
 > [!NOTE]
-> De versie Ms-python >=2020.5.78807 wordt niet ondersteund voor deze uitbreiding. Dit is een [bekend probleem](#known-issues).
+>
+> [' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding '](#issues-changed) is opgelost. De nieuwste MS-python-versie kan nu worden gebruikt.
 
 ## <a name="submit-pyspark-batch-job"></a>Batch taak PySpark verzenden
 
@@ -329,7 +332,7 @@ De [Apache livy](https://livy.incubator.apache.org/) -configuratie wordt onderst
 
 ### <a name="method-1"></a>Methode 1  
 
-1. Navigeer in de menu balk naar instellingen voor **Bestands**  >  **Voorkeuren**  >  **Settings**.
+1. Navigeer in de menu balk naar instellingen voor **Bestands**  >  **Voorkeuren**  >  .
 2. Voer in het vak **Zoek instellingen** **HDInsight-taak inzending in: livy conf**.  
 3. Selecteer **bewerken in settings.js** voor het relevante Zoek resultaat.
 
@@ -476,7 +479,7 @@ Een taak verzenden naar een HDInsight-cluster met behulp van Data Lake Storage G
 
 ## <a name="unlink-cluster"></a>Cluster ontkoppelen
 
-1. Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Spark/Hive: ontkoppelen van een cluster**.  
+1. Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Spark/Hive: ontkoppelen van een cluster**.  
 
 2. Selecteer een cluster om te ontkoppelen.  
 
@@ -484,15 +487,12 @@ Een taak verzenden naar een HDInsight-cluster met behulp van Data Lake Storage G
 
 ## <a name="sign-out"></a>Afmelden  
 
-Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
+Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
-## <a name="known-issues"></a>Bekende problemen
+## <a name="issues-changed"></a>Problemen gewijzigd
 
-### <a name="ms-python-2020578807-version-is-not-supported-on-this-extention"></a>De versie ms-python >=2020.5.78807 wordt niet ondersteund voor deze uitbreiding 
+Voor dit probleem wordt MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding ' is opgelost, kan de **meest recente versie van MS-python** nu worden gebruikt.
 
-'Kan geen verbinding maken met Jupyter notebook.' is een bekend probleem voor Python-versie >=2020.5.78807. Gebruikers wordt aangeraden de versie **[2020.4.76186](https://github.com/microsoft/vscode-python/releases/download/2020.4.76186/ms-python-release.vsix)** van MS-python te gebruiken om dit probleem te voorkomen.
-
-![bekende problemen](./media/hdinsight-for-vscode/known-issue.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

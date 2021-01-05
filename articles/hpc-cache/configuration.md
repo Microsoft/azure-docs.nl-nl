@@ -4,14 +4,14 @@ description: In dit artikel wordt uitgelegd hoe u aanvullende instellingen voor 
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 05/06/2020
+ms.date: 12/21/2020
 ms.author: v-erkel
-ms.openlocfilehash: b01c4d896d5ec600e0fe22e3ca7b7816141776a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02bf862cdc3b20ef3e5fdb024f474267efa0c70d
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86497196"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760500"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Aanvullende instellingen voor de Azure HPC-cache configureren
 
@@ -43,7 +43,7 @@ Als u de MTU-instellingen op andere systeem onderdelen niet wilt wijzigen, moet 
 Lees meer over MTU-instellingen in virtuele netwerken van Azure door het [afstemmen van TCP/IP-prestaties voor Azure-vm's](../virtual-network/virtual-network-tcpip-performance-tuning.md)te lezen.
 
 ## <a name="configure-root-squash"></a>Basis-Squash configureren
-<!-- linked from troubleshoot -->
+<!-- linked from troubleshoot and from access policies -->
 
 De instelling **basis Squash inschakelen** bepaalt hoe Azure HPC cache aanvragen van de hoofd gebruiker op client computers verwerkt.
 
@@ -53,7 +53,10 @@ Als hoofdmap Squash is uitgeschakeld, wordt een aanvraag van de client root user
 
 Met het instellen van basis-squash in de cache kunt u de vereiste ``no_root_squash`` instelling compenseren op NAS-systemen die worden gebruikt als opslag doelen. (Lees meer over de [vereisten voor NFS-opslag doel](hpc-cache-prerequisites.md#nfs-storage-requirements).) Het kan ook de beveiliging verbeteren wanneer deze wordt gebruikt met Azure Blob Storage-doelen.
 
-De standaard instelling is **Ja**. (Caches die vóór april 2020 zijn gemaakt, kunnen de standaard instelling **Nee**hebben.)
+De standaard instelling is **Ja**. (Caches die vóór april 2020 zijn gemaakt, kunnen de standaard instelling **Nee** hebben.)
+
+> [!TIP]
+> U kunt ook root Squash instellen voor specifieke opslag exports door de beleids regels voor [client toegang](access-policies.md#root-squash)aan te passen.
 
 ## <a name="view-snapshots-for-blob-storage-targets"></a>Moment opnamen voor Blob-opslag doelen weer geven
 

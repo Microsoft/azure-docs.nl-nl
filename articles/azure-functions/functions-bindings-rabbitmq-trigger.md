@@ -7,17 +7,17 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 5930219486de8704c777496bcaf293411c5fb7b1
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 4ba19fdf700790d89fe04867985fb803c3b0a2fc
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673984"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97760398"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>RabbitMQ-trigger voor Azure Functions-overzicht
 
 > [!NOTE]
-> De RabbitMQ-bindingen worden alleen volledig ondersteund in **Windows Premium en speciale** abonnementen. Verbruik en Linux worden momenteel niet ondersteund.
+> De RabbitMQ-bindingen worden alleen volledig ondersteund voor **Premium-en speciale** abonnementen. Verbruik wordt niet ondersteund.
 
 Gebruik de trigger RabbitMQ om te reageren op berichten van een RabbitMQ-wachtrij.
 
@@ -43,18 +43,23 @@ public static void RabbitMQTrigger_BasicDeliverEventArgs(
 In het volgende voor beeld ziet u hoe u het bericht als een POCO leest.
 
 ```cs
-public class TestClass
+namespace Company.Function
 {
-    public string x { get; set; }
-}
+    public class TestClass
+    {
+        public string x { get; set; }
+    }
 
-[FunctionName("RabbitMQTriggerCSharp")]
-public static void RabbitMQTrigger_BasicDeliverEventArgs(
-    [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
-    ILogger logger
-    )
-{
-    logger.LogInformation($"C# RabbitMQ queue trigger function processed message: {Encoding.UTF8.GetString(pocObj)}");
+    public class RabbitMQTriggerCSharp{
+        [FunctionName("RabbitMQTriggerCSharp")]
+        public static void RabbitMQTrigger_BasicDeliverEventArgs(
+            [RabbitMQTrigger("queue", ConnectionStringSetting = "rabbitMQConnectionAppSetting")] TestClass pocObj,
+            ILogger logger
+            )
+        {
+            logger.LogInformation($"C# RabbitMQ queue trigger function processed message: {pocObj}");
+        }
+    }
 }
 ```
 
@@ -82,7 +87,7 @@ Hier vindt u de bindings gegevens in de *function.js* in het bestand:
 
 Dit is de C# Script-code:
 
-```csx
+```C#
 using System;
 
 public static void Run(string myQueueItem, ILogger log)
@@ -216,7 +221,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**userNameSetting**|**UserNameSetting**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die de gebruikers naam bevat voor toegang tot de wachtrij. Bijvoorbeeld UserNameSetting:% < UserNameFromSettings >%|
 |**passwordSetting**|**PasswordSetting**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>De naam van de app-instelling die het wacht woord bevat voor toegang tot de wachtrij. Bijvoorbeeld PasswordSetting:% < PasswordFromSettings >%|
 |**connectionStringSetting**|**ConnectionStringSetting**|De naam van de app-instelling die de RabbitMQ-berichten wachtrij connection string bevat. Houd er rekening mee dat als u de connection string rechtstreeks opgeeft, en niet via een app-instelling in local.settings.jsop, de trigger niet werkt. (Bijvoorbeeld: in *function.jsop*: connectionStringSetting: "rabbitMQConnection" <br> In *local.settings.jsop*: "rabbitMQConnection": "< ActualConnectionstring >")|
-|**Importeer**|**Poort**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+|**Importeer**|**Poort**|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0 die verwijst naar de standaard poort instelling van de client rabbitmq: 5672.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -280,7 +285,7 @@ In deze sectie worden de algemene configuratie-instellingen beschreven die besch
 |prefetchCount|30|Hiermee wordt het aantal berichten opgehaald of ingesteld dat de ontvanger van het bericht tegelijk kan aanvragen en in de cache wordt geplaatst.|
 |queueName|n.v.t.| De naam van de wachtrij waaruit berichten moeten worden ontvangen.|
 |connectionString|n.v.t.|De RabbitMQ-berichten wachtrij connection string. Houd er rekening mee dat de connection string hier direct wordt opgegeven en niet via een app-instelling.|
-|poort|0|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0.|
+|poort|0|(wordt genegeerd als u connections Tring gebruikt) Hiermee wordt de gebruikte poort opgehaald of ingesteld. De standaard waarde is 0 die verwijst naar de standaard poort instelling van de client rabbitmq: 5672.|
 
 ## <a name="local-testing"></a>Lokaal testen
 
@@ -305,9 +310,24 @@ Als u lokaal test zonder een connection string, moet u de instelling hostName en
 
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------|
-|Hostnaam|n.v.t.|(wordt genegeerd als ConnectStringSetting wordt gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
-|userName|n.v.t.|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>Naam voor toegang tot de wachtrij |
-|wachtwoord|n.v.t.|(wordt genegeerd als ConnectionStringSetting wordt gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+|Hostnaam|n.v.t.|(wordt genegeerd als u connections Tring gebruikt) <br>De hostnaam van de wachtrij (bijvoorbeeld: 10.26.45.210)|
+|userName|n.v.t.|(wordt genegeerd als u connections Tring gebruikt) <br>Naam voor toegang tot de wachtrij |
+|wachtwoord|n.v.t.|(wordt genegeerd als u connections Tring gebruikt) <br>Wacht woord voor toegang tot de wachtrij|
+
+
+## <a name="enable-runtime-scaling"></a>Het schalen van de runtime inschakelen
+
+De RabbitMQ-trigger kan alleen naar meerdere instanties worden uitgeschaald als de instelling voor **bewaking van runtime schaal** is ingeschakeld. 
+
+In de portal kunt u deze instelling vinden onder   >  **runtime-instellingen** voor de configuratie-functie voor uw functie-app.
+
+:::image type="content" source="media/functions-networking-options/virtual-network-trigger-toggle.png" alt-text="VNETToggle":::
+
+In de CLI kunt u **runtime Scale-bewaking** inschakelen met behulp van de volgende opdracht:
+
+```azurecli-interactive
+az resource update -g <resource_group> -n <function_app_name>/config/web --set properties.functionsRuntimeScaleMonitoringEnabled=1 --resource-type Microsoft.Web/sites
+```
 
 ## <a name="monitoring-rabbitmq-endpoint"></a>RabbitMQ-eind punt bewaken
 Uw wacht rijen en uitwisselingen voor een bepaald RabbitMQ-eind punt controleren:

@@ -4,16 +4,16 @@ description: Meer informatie over het wijzigen van prestatie lagen voor bestaand
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 11/19/2020
+ms.date: 01/05/2021
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 8a21a78bf27847b41c0af7bc4361f7c6c8071949
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: f67113b2e2afa16456321b0ee2a94ce80fab4d81
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "96016510"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900957"
 ---
 # <a name="change-your-performance-tier-using-the-azure-powershell-module-or-the-azure-cli"></a>Uw prestatie niveau wijzigen met behulp van de Azure PowerShell-module of de Azure CLI
 
@@ -25,7 +25,7 @@ ms.locfileid: "96016510"
 
 ## <a name="create-an-empty-data-disk-with-a-tier-higher-than-the-baseline-tier"></a>Een lege gegevens schijf maken met een hogere laag dan de basislijn laag
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 subscriptionId=<yourSubscriptionIDHere>
@@ -75,7 +75,7 @@ New-AzDisk -DiskName $diskName -Disk $diskConfig -ResourceGroupName $resourceGro
 
 ## <a name="update-the-tier-of-a-disk"></a>De laag van een schijf bijwerken
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 resourceGroupName=<yourResourceGroupNameHere>
@@ -100,7 +100,7 @@ Update-AzDisk -ResourceGroupName $resourceGroupName -DiskName $diskName -DiskUpd
 
 ## <a name="show-the-tier-of-a-disk"></a>De laag van een schijf weer geven
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az disk show -n $diskName -g $resourceGroupName --query [tier] -o tsv

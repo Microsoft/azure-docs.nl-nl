@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: 8bffe0c3871eae12f3b875a96301136d11dfc516
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 4e87e99f16a89cab95f9bd07b75b80f1c13d47f1
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783790"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900651"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Gids voor probleemoplossing voor Azure Storage Explorer
 
@@ -23,7 +23,7 @@ In deze hand leiding vindt u een overzicht van oplossingen voor problemen die va
 
 ## <a name="azure-rbac-permissions-issues"></a>Problemen met Azure RBAC-machtigingen
 
-Azure [RBAC](../../role-based-access-control/overview.md) -toegangs beheer op basis van rollen maakt zeer nauw keuriger toegang tot Azure-resources door sets machtigingen te combi neren in _rollen_ . Hier volgen enkele strategieën om optimaal gebruik te maken van Azure RBAC in Storage Explorer.
+Azure [RBAC](../../role-based-access-control/overview.md) -toegangs beheer op basis van rollen maakt zeer nauw keuriger toegang tot Azure-resources door sets machtigingen te combi neren in _rollen_. Hier volgen enkele strategieën om optimaal gebruik te maken van Azure RBAC in Storage Explorer.
 
 ### <a name="how-do-i-access-my-resources-in-storage-explorer"></a>Heb ik toegang tot mijn resources in Storage Explorer Hoe kan ik?
 
@@ -46,7 +46,7 @@ U moet ten minste één rol toewijzen die toegang verleent tot het lezen van geg
 
 ### <a name="why-do-i-need-a-management-layer-role-to-see-my-resources-in-storage-explorer"></a>Waarom heb ik een rol van beheer laag nodig om mijn resources in Storage Explorer te zien?
 
-Azure Storage heeft twee toegangs niveaus: _beheer_ en _gegevens_ . Abonnementen en opslag accounts zijn toegankelijk via de Management-laag. Containers, blobs en andere gegevens bronnen worden geopend via de gegevenslaag. Als u bijvoorbeeld een lijst wilt ophalen van uw opslag accounts van Azure, verzendt u een aanvraag naar het beheer eindpunt. Als u een lijst met Blob-containers in een account wilt, verzendt u een aanvraag naar het juiste service-eind punt.
+Azure Storage heeft twee toegangs niveaus: _beheer_ en _gegevens_. Abonnementen en opslag accounts zijn toegankelijk via de Management-laag. Containers, blobs en andere gegevens bronnen worden geopend via de gegevenslaag. Als u bijvoorbeeld een lijst wilt ophalen van uw opslag accounts van Azure, verzendt u een aanvraag naar het beheer eindpunt. Als u een lijst met Blob-containers in een account wilt, verzendt u een aanvraag naar het juiste service-eind punt.
 
 Azure-rollen kunnen u machtigingen verlenen voor toegang tot beheer of gegevenslaag. De rol van lezer geeft bijvoorbeeld alleen-lezen toegang tot management Layer-resources.
 
@@ -61,34 +61,37 @@ Als u geen rol hebt die machtigingen voor een beheer laag verleent, kan Storage 
 Als u toegang wilt krijgen tot BLOB-containers of-wacht rijen, kunt u deze resources koppelen met uw Azure-referenties.
 
 1. Open het dialoog venster verbinding maken.
-2. Selecteer een resource toevoegen via Azure Active Directory (Azure AD). Klik op Volgende.
-3. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Klik op Volgende.
-4. Selecteer het resource type, voer de URL in voor de resource en voer een unieke weergave naam in voor de verbinding. Klik op Volgende. Klik op Verbinding maken.
+2. Selecteer een resource toevoegen via Azure Active Directory (Azure AD). Selecteer Volgende.
+3. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Selecteer Volgende.
+4. Selecteer het resource type, voer de URL in voor de resource en voer een unieke weergave naam in voor de verbinding. Selecteer volgende en vervolgens verbinding maken.
 
 Voor andere resource typen hebben we momenteel geen oplossing met betrekking tot Azure RBAC. Als tijdelijke oplossing kunt u een SAS-URI aanvragen om [aan uw resource te koppelen](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=linux#use-a-shared-access-signature-uri).
 
 ### <a name="recommended-azure-built-in-roles"></a>Aanbevolen ingebouwde rollen van Azure
 
 Er zijn verschillende ingebouwde rollen van Azure die de machtigingen kunnen bieden die nodig zijn om Storage Explorer te gebruiken. Enkele van deze rollen zijn:
-- [Eigenaar](../../role-based-access-control/built-in-roles.md#owner): alles beheren, inclusief toegang tot resources. **Opmerking** : met deze rol krijgt u toegang tot sleutels.
-- [Inzender](../../role-based-access-control/built-in-roles.md#contributor): alles beheren, met uitzonde ring van toegang tot resources. **Opmerking** : met deze rol krijgt u toegang tot sleutels.
-- [Lezer](../../role-based-access-control/built-in-roles.md#reader): bronnen lezen en weer geven.
-- [Inzender voor het opslag account](../../role-based-access-control/built-in-roles.md#storage-account-contributor): volledig beheer van opslag accounts. **Opmerking** : met deze rol krijgt u toegang tot sleutels.
-- [Eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner)van de opslag-BLOB-gegevens: volledige toegang tot Azure Storage BLOB-containers en-gegevens.
-- [Inzender voor gegevens](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor)van de opslag-blob: Lees-, schrijf-en verwijder Azure Storage containers en blobs.
-- [Gegevens lezer](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader)van de opslag-Blob: Azure Storage containers en blobs voor lezen en weer geven.
+- [Eigenaar](/azure/role-based-access-control/built-in-roles#owner): alles beheren, inclusief toegang tot resources.
+- [Inzender](/azure/role-based-access-control/built-in-roles#contributor): alles beheren, met uitzonde ring van toegang tot resources.
+- [Lezer](/azure/role-based-access-control/built-in-roles#reader): bronnen lezen en weer geven.
+- [Inzender voor het opslag account](/azure/role-based-access-control/built-in-roles#storage-account-contributor): volledig beheer van opslag accounts.
+- [Eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner)van de opslag-BLOB-gegevens: volledige toegang tot Azure Storage BLOB-containers en-gegevens.
+- [Inzender voor gegevens](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor)van de opslag-blob: Lees-, schrijf-en verwijder Azure Storage containers en blobs.
+- [Gegevens lezer](/azure/role-based-access-control/built-in-roles#storage-blob-data-reader)van de opslag-Blob: Azure Storage containers en blobs voor lezen en weer geven.
+
+> [!NOTE]
+> De Inzender rollen eigenaar, Inzender en opslag account verlenen toegang tot de sleutel tot het account.
 
 ## <a name="error-self-signed-certificate-in-certificate-chain-and-similar-errors"></a>Fout: zelfondertekend certificaat in certificaat keten (en vergelijk bare fouten)
 
 Certificaat fouten treden doorgaans op in een van de volgende situaties:
 
-- De app is verbonden via een _transparante proxy_ . Dit betekent dat een server (zoals uw bedrijfs server) het HTTPS-verkeer onderschept, ontsleutelt en vervolgens versleutelt met behulp van een zelfondertekend certificaat.
+- De app is verbonden via een _transparante proxy_. Dit betekent dat een server (zoals uw bedrijfs server) het HTTPS-verkeer onderschept, ontsleutelt en vervolgens versleutelt met behulp van een zelfondertekend certificaat.
 - U voert een toepassing uit die een zelfondertekend TLS/SSL-certificaat injecteert in de HTTPS-berichten die u ontvangt. Voor beelden van toepassingen die certificaten injecteren, zijn onder andere software voor de inspectie van virussen en netwerk verkeer.
 
 Wanneer Storage Explorer een zelfondertekend of niet-vertrouwd certificaat ziet, weet het niet meer of het ontvangen HTTPS-bericht is gewijzigd. Als u een exemplaar van het zelfondertekende certificaat hebt, kunt u Storage Explorer om dit te vertrouwen door de volgende stappen uit te voeren:
 
 1. Een met base 64 gecodeerde X. 509 (. CER)-kopie van het certificaat verkrijgen.
-2. Ga naar **bewerken**  >  **SSL-certificaten**  >  **certificaten importeren** , en gebruik vervolgens de bestands kiezer om het. cer-bestand te zoeken, te selecteren en te openen.
+2. Ga naar **bewerken**  >  **SSL-certificaten**  >  **certificaten importeren**, en gebruik vervolgens de bestands kiezer om het. cer-bestand te zoeken, te selecteren en te openen.
 
 Dit probleem kan ook optreden als er meerdere certificaten (root en tussenliggend) zijn. Om deze fout op te lossen, moeten beide certificaten worden toegevoegd.
 
@@ -98,12 +101,12 @@ Als u niet zeker weet waar het certificaat vandaan komt, volgt u deze stappen om
     * [Windows](https://slproweb.com/products/Win32OpenSSL.html): een van de lichte versies moet voldoende zijn.
     * Mac en Linux: moeten zijn opgenomen in uw besturings systeem.
 2. Voer OpenSSL uit.
-    * Windows: Open de installatiemap, selecteer **/bin/** en dubbel klik vervolgens op **openssl.exe** .
+    * Windows: Open de installatiemap, selecteer **/bin/** en dubbel klik vervolgens op **openssl.exe**.
     * Mac en Linux: uitvoeren `openssl` vanaf een Terminal.
 3. Voer `s_client -showcerts -connect microsoft.com:443` uit.
 4. Zoek naar zelfondertekende certificaten. Als u niet zeker weet welke certificaten u zelf hebt ondertekend, noteert u de locatie van het onderwerp `("s:")` en de uitgever `("i:")` .
 5. Wanneer u zelfondertekende certificaten vindt, kopieert en plakt u alles uit (en inclusief) `-----BEGIN CERTIFICATE-----` `-----END CERTIFICATE-----` in een nieuw CER-bestand.
-6. Open Storage Explorer en ga naar **Edit**  >  **SSL Certificates**  >  **import certificaten** voor SSL-certificaten bewerken. Gebruik vervolgens de bestands kiezer om de CER-bestanden die u hebt gemaakt, te zoeken, te selecteren en te openen.
+6. Open Storage Explorer en ga naar   >    >  **import certificaten** voor SSL-certificaten bewerken. Gebruik vervolgens de bestands kiezer om de CER-bestanden die u hebt gemaakt, te zoeken, te selecteren en te openen.
 
 Als u geen zelfondertekende certificaten kunt vinden door deze stappen te volgen, neemt u contact met ons op via het feedback programma. U kunt Storage Explorer ook openen vanaf de opdracht regel met behulp van de `--ignore-certificate-errors` vlag. Wanneer deze vlag wordt geopend, worden certificaat fouten Storage Explorer genegeerd.
 
@@ -113,7 +116,7 @@ Als u geen zelfondertekende certificaten kunt vinden door deze stappen te volgen
 
 De dialoog vensters met een leeg aanmeld probleem worden meestal beschreven wanneer Active Directory Federation Services (AD FS) Storage Explorer om een omleiding uit te voeren, wat niet wordt ondersteund door elektron. U kunt dit probleem omzeilen door de apparaatcode stroom te gebruiken om u aan te melden. Voer hiervoor de volgende stappen uit:
 
-1. Open op de werk balk links verticaal de knop **instellingen** . Ga in het deel venster instellingen naar **toepassing**  >  **Aanmelden** . Schakel **Aanmelden met apparaatcode stroom in** .
+1. Open op de werk balk links verticaal de knop **instellingen**. Ga in het deel venster instellingen naar **toepassing**  >  **Aanmelden**. Schakel **Aanmelden met apparaatcode stroom in**.
 2. Open het dialoog venster **verbinding maken** (via het pictogram met de plug-in de verticale balk aan de linkerkant of selecteer **account toevoegen** in het deel venster account).
 3. Kies de omgeving waarin u zich wilt aanmelden.
 4. Selecteer **Aanmelden.**
@@ -175,9 +178,9 @@ Als u uw abonnementen niet kunt ophalen nadat u zich hebt aangemeld, kunt u de v
 
 Als u een gekoppeld account of opslag resource niet kunt verwijderen via de gebruikers interface, kunt u alle gekoppelde resources hand matig verwijderen door de volgende mappen te verwijderen:
 
-* Windows `%AppData%/StorageExplorer`
+* Windows: `%AppData%/StorageExplorer`
 * macOS: `/Users/<your_name>/Library/Application Support/StorageExplorer`
-* Spreek `~/.config/StorageExplorer`
+* Linux: `~/.config/StorageExplorer`
 
 > [!NOTE]
 > Sluit Storage Explorer voordat u deze mappen verwijdert.
@@ -187,46 +190,62 @@ Als u een gekoppeld account of opslag resource niet kunt verwijderen via de gebr
 
 ## <a name="proxy-issues"></a>Proxy problemen
 
-Controleer eerst of de volgende informatie die u hebt ingevoerd juist is:
+Storage Explorer ondersteunt het verbinding maken met Azure Storage bronnen via een proxy server. Als u problemen ondervindt met het verbinden met Azure via een proxy, zijn hier enkele suggesties.
 
-* De proxy-URL en het poort nummer
-* Gebruikers naam en wacht woord als de proxy deze vereist
+> [!NOTE]
+> Storage Explorer ondersteunt alleen basis verificatie met proxy servers. Andere verificatie methoden, zoals NTLM, worden niet ondersteund.
 
 > [!NOTE]
 > Storage Explorer biedt geen ondersteuning voor automatische proxy-configuratie bestanden voor het configureren van proxy-instellingen.
 
-### <a name="common-solutions"></a>Algemene oplossingen
+### <a name="verify-storage-explorer-proxy-settings"></a>Proxy-instellingen voor Storage Explorer controleren
+
+De **toepassing → proxy → proxy configuratie** -instelling bepaalt welke bron-Storage Explorer de proxy configuratie haalt.
+
+Als u omgevings variabelen gebruiken selecteert, moet u de omgevings `HTTPS_PROXY` variabelen instellen `HTTP_PROXY` (omgevings variabelen zijn hoofdletter gevoelig, dus zorg ervoor dat u de juiste variabelen instelt). Als deze variabelen niet zijn gedefinieerd of ongeldig zijn, maakt Storage Explorer geen gebruik van een proxy. Start Storage Explorer opnieuw nadat u omgevings variabelen hebt gewijzigd.
+
+Als u app-proxy-instellingen gebruiken selecteert, controleert u of de proxy-instellingen in de app juist zijn.
+
+### <a name="steps-for-diagnosing-issues"></a>Stappen voor het oplossen van problemen
 
 Als u nog steeds problemen ondervindt, kunt u de volgende probleemoplossings methoden proberen:
 
-* Als u verbinding kunt maken met internet zonder uw proxy te gebruiken, controleert u of Storage Explorer werkt zonder dat er proxy instellingen zijn ingeschakeld. Als dit het geval is, is er mogelijk een probleem met de proxy-instellingen. Werk samen met uw beheerder om de problemen te identificeren.
-* Controleer of andere toepassingen die gebruikmaken van de proxy server naar verwachting werken.
-* Controleer of u verbinding kunt maken met de portal voor de Azure-omgeving die u wilt gebruiken.
-* Controleer of u antwoorden kunt ontvangen van uw service-eind punten. Voer een van uw eind punt-Url's in uw browser in. Als u verbinding kunt maken, ontvangt u InvalidQueryParameterValue of een soortgelijk XML-antwoord.
-* Als iemand anders ook gebruikmaakt van Storage Explorer met uw proxy server, controleert u of ze verbinding kunnen maken. Als dat mogelijk is, moet u contact opnemen met de beheerder van de proxy server.
+1. Als u verbinding kunt maken met internet zonder uw proxy te gebruiken, controleert u of Storage Explorer werkt zonder dat er proxy instellingen zijn ingeschakeld. Als Storage Explorer verbinding maakt, is er mogelijk een probleem met de proxy server. Werk samen met uw beheerder om de problemen te identificeren.
+2. Controleer of andere toepassingen die gebruikmaken van de proxy server naar verwachting werken.
+3. Controleer of u verbinding kunt maken met de portal voor de Azure-omgeving die u wilt gebruiken.
+4. Controleer of u antwoorden kunt ontvangen van uw service-eind punten. Voer een van uw eind punt-Url's in uw browser in. Als u verbinding kunt maken, ontvangt u een `InvalidQueryParameterValue` of hetzelfde XML-antwoord.
+5. Controleer of iemand anders met Storage Explorer met dezelfde proxy server verbinding kan maken. Als dat mogelijk is, moet u contact opnemen met de beheerder van de proxy server.
 
 ### <a name="tools-for-diagnosing-issues"></a>Hulpprogram ma's voor het oplossen van problemen
 
-Als u hulpprogram ma's voor netwerken hebt, zoals Fiddler voor Windows, kunt u de problemen als volgt vaststellen:
+Een netwerk programma, zoals Fiddler, kan u helpen bij het onderzoeken van problemen.
 
-* Als u uw proxy moet gebruiken, moet u mogelijk uw netwerk hulpprogramma configureren om verbinding te maken via de proxy.
-* Controleer het poort nummer dat wordt gebruikt door uw netwerk programma.
-* Voer de URL van de lokale host en het poort nummer van het netwerk hulpprogramma in als proxy-instellingen in Storage Explorer. Wanneer u dit op de juiste wijze uitvoert, start het netwerk hulpprogramma het registreren van netwerk aanvragen van Storage Explorer naar beheer-en service-eind punten. Voer bijvoorbeeld `https://cawablobgrs.blob.core.windows.net/` in voor uw BLOB-eind punt in een browser en ontvang een antwoord dat er ongeveer als volgt uitziet:
+1. Configureer uw netwerk hulpprogramma als een proxy server die wordt uitgevoerd op de lokale host. Als u achter een daad werkelijke proxy moet blijven werken, moet u mogelijk uw netwerk hulpprogramma configureren om verbinding te maken via de proxy.
+2. Controleer het poort nummer dat wordt gebruikt door uw netwerk programma.
+3. Configureer Storage Explorer proxy-instellingen voor het gebruik van de lokale host en het poort nummer van het netwerk hulpprogramma (zoals ' localhost: 8888 ').
+ 
+Wanneer de instelling correct is ingesteld, worden netwerk aanvragen van Storage Explorer naar beheer-en service-eind punten in het netwerk hulpprogramma vastgelegd.
+ 
+Als uw netwerk hulpprogramma geen logboek registratie Storage Explorer verkeer bevat, kunt u uw hulp programma testen met een andere toepassing. Voer bijvoorbeeld de eind punt-URL in voor een van uw opslag resources (zoals `https://contoso.blob.core.windows.net/` ) in een webbrowser en ontvang een antwoord dat lijkt op:
 
   ![Codevoorbeeld](./media/storage-explorer-troubleshooting/4022502_en_2.png)
 
-  Dit antwoord geeft aan dat de resource bestaat, ook al hebt u er geen toegang toe.
+  Het antwoord geeft aan dat de resource bestaat, ook al hebt u er geen toegang toe.
+
+Als uw netwerk hulpprogramma alleen verkeer van andere toepassingen weergeeft, moet u mogelijk de proxy-instellingen in Storage Explorer aanpassen. Anders moet u de instellingen van uw hulp programma aanpassen.
 
 ### <a name="contact-proxy-server-admin"></a>Beheerder van de proxy server
 
-Als uw proxy-instellingen juist zijn, moet u wellicht contact opnemen met de beheerder van uw proxy server voor het volgende:
+Als uw proxy-instellingen juist zijn, moet u wellicht contact opnemen met de beheerder van de proxy server voor het volgende:
 
 * Zorg ervoor dat uw proxy geen verkeer naar Azure-beheer-of resource-eind punten blokkeert.
-* Controleer het verificatie protocol dat door uw proxy server wordt gebruikt. Storage Explorer ondersteunt momenteel geen NTLM-proxy's.
+* Controleer het verificatie protocol dat door uw proxy server wordt gebruikt. Storage Explorer ondersteunt alleen basis verificatie protocollen. Storage Explorer ondersteunt geen NTLM-proxy's.
 
 ## <a name="unable-to-retrieve-children-error-message"></a>Fout bericht ' kan geen onderliggende items ophalen '
 
-Als u met Azure bent verbonden via een proxy, controleert u of de proxy-instellingen juist zijn. Als u toegang hebt tot een resource van de eigenaar van het abonnement of het account, controleert u of u lees-of lijst machtigingen voor die resource hebt.
+Als u met Azure bent verbonden via een proxy, controleert u of de proxy-instellingen juist zijn.
+
+Als de eigenaar van een abonnement of account u toegang heeft verleend tot een resource, controleert u of u lees-of lijst machtigingen hebt voor die bron.
 
 ## <a name="connection-string-doesnt-have-complete-configuration-settings"></a>De verbindings reeks heeft geen volledige configuratie-instellingen
 
@@ -238,8 +257,8 @@ Als u de account sleutels ziet, moet u een probleem in GitHub oplossen zodat we 
 
 Als dit fout bericht wordt weer gegeven wanneer u een aangepaste verbinding probeert toe te voegen, zijn de verbindings gegevens die zijn opgeslagen in de lokale referentie beheerder mogelijk beschadigd. U kunt dit probleem omzeilen door de beschadigde lokale verbindingen te verwijderen en vervolgens opnieuw toe te voegen:
 
-1. Start Storage Explorer. Ga in het menu naar **Help**  >  **in-/uitschakelen Ontwikkelhulpprogramma's** .
-2. Ga in het geopende venster op het tabblad **toepassing** naar **lokale opslag** (links) > **File://** .
+1. Start Storage Explorer. Ga in het menu naar **Help**  >  **in-/uitschakelen Ontwikkelhulpprogramma's**.
+2. Ga in het geopende venster op het tabblad **toepassing** naar **lokale opslag** (links) > **File://**.
 3. Afhankelijk van het type verbinding waarmee u een probleem ondervindt, zoekt u de sleutel en kopieert u de waarde ervan naar een tekst editor. De waarde is een matrix met uw aangepaste verbindings namen, zoals de volgende:
     * Opslagaccounts
         * `StorageExplorer_CustomConnections_Accounts_v1`
@@ -265,13 +284,13 @@ Nadat u alle verbindingen hebt door lopen, moet u voor alle verbindings namen di
 # <a name="windows"></a>[Windows](#tab/Windows)
 
 1. Zoek in het menu **Start** naar **referentie beheer** en open het.
-2. Ga naar **Windows-referenties** .
+2. Ga naar **Windows-referenties**.
 3. Onder **algemene referenties** zoekt u naar vermeldingen die de `<connection_type_key>/<corrupted_connection_name>` sleutel hebben (bijvoorbeeld `StorageExplorer_CustomConnections_Accounts_v1/account1` ).
 4. Verwijder deze vermeldingen en voeg de verbindingen opnieuw toe.
 
 # <a name="macos"></a>[MacOS](#tab/macOS)
 
-1. Open Spotlight (Command + spatie balk) en zoek naar **sleutel hanger toegang** .
+1. Open Spotlight (Command + spatie balk) en zoek naar **sleutel hanger toegang**.
 2. Zoek naar vermeldingen die de `<connection_type_key>/<corrupted_connection_name>` sleutel hebben (bijvoorbeeld `StorageExplorer_CustomConnections_Accounts_v1/account1` ).
 3. Verwijder deze vermeldingen en voeg de verbindingen opnieuw toe.
 

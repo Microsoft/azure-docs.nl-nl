@@ -2,13 +2,13 @@
 title: Waarschuwingen registreren van Azure Monitor voor containers | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u aangepaste logboek waarschuwingen maakt voor geheugen-en CPU-gebruik van Azure Monitor voor containers.
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: e9b0e01ca4c0ccb24d0d1b04a4d17ec06db253b6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.date: 01/05/2021
+ms.openlocfilehash: 131f5ebc0f72afce381b4b82d6fe50a5d5e37123
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966248"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901501"
 ---
 # <a name="how-to-create-log-alerts-from-azure-monitor-for-containers"></a>Logboek waarschuwingen maken op basis van Azure Monitor voor containers
 
@@ -224,7 +224,7 @@ KubePodInventory
         KubePodInventory
         | where TimeGenerated < endDateTime
         | where TimeGenerated >= startDateTime
-        | summarize PodStatus=any(PodStatus) by TimeGenerated, PodUid, ClusterId
+        | summarize PodStatus=any(PodStatus) by TimeGenerated, PodUid, ClusterName
         | summarize TotalCount = count(),
                     PendingCount = sumif(1, PodStatus =~ 'Pending'),
                     RunningCount = sumif(1, PodStatus =~ 'Running'),
@@ -281,7 +281,7 @@ In deze sectie wordt uitgelegd hoe u een waarschuwings regel voor metrische meti
 >Met de volgende procedure voor het maken van een waarschuwings regel voor container resource gebruik moet u overschakelen naar een nieuwe API voor logboek waarschuwingen, zoals beschreven in de voor [keur voor de switch-API voor logboek waarschuwingen](../platform/alerts-log-api-switch.md).
 >
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zoek in het Azure Portal naar en selecteer **log Analytics-werk ruimten**.
 3. Selecteer de werk ruimte die Azure Monitor ondersteunt voor containers in de lijst met Log Analytics-werk ruimten. 
 4. Selecteer in het deel venster aan de linkerkant **Logboeken** om de pagina Azure monitor logboeken te openen. U gebruikt deze pagina om Azure-logboek query's te schrijven en uit te voeren.

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 11/25/2020
 ms.author: rolyon
-ms.openlocfilehash: c4082f7fc535807ec996034ba695549a51969a99
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 6eadba7d778a632896529f3c7c53886619d96444
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182407"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901467"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure PowerShell
 
@@ -28,6 +28,7 @@ Om roltoewijzingen toe te voegen of te verwijderen, hebt u het volgende nodig:
 
 - Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](built-in-roles.md#user-access-administrator) of [Eigenaar](built-in-roles.md#owner)
 - [Power shell in azure Cloud shell](../cloud-shell/overview.md) of [Azure PowerShell](/powershell/azure/install-az-ps)
+- Het account dat u gebruikt om de Power shell-opdracht uit te voeren, moet de Microsoft Graph `Directory.Read.All` machtiging hebben.
 
 ## <a name="steps-to-add-a-role-assignment"></a>Stappen om een roltoewijzing toe te voegen
 

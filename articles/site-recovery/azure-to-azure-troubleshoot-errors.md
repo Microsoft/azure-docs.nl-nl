@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: b71c6b834a6217007134b3be961a0ffa103e2706
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 6d61a44e671c43754fa7cccbe8ea8fe54eeba387
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368040"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900413"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Azure-naar-Azure-VM-replicatiefouten oplossen
 
@@ -186,10 +186,13 @@ Controleren of de virtuele machine gebruikmaakt van een aangepaste DNS-instellin
 
 1. Open **virtuele machines** en selecteer de VM.
 1. Navigeer naar de **instellingen** van de virtuele machines en selecteer **netwerken**.
-1. Selecteer in **virtueel netwerk/subnet**de koppeling om de resource pagina van het virtuele netwerk te openen.
+1. Selecteer in **virtueel netwerk/subnet** de koppeling om de resource pagina van het virtuele netwerk te openen.
 1. Ga naar **instellingen** en selecteer **DNS-servers**.
 
 Probeer toegang te krijgen tot de DNS-server vanaf de virtuele machine. Als de DNS-server niet toegankelijk is, maakt u deze toegankelijk door een failover uit te voeren voor de DNS-server of door de regel van de site te maken tussen DR-netwerk en DNS.
+
+> [!NOTE]
+> Als u privé-eind punten gebruikt, moet u ervoor zorgen dat de virtuele machines de privé-DNS-records kunnen omzetten.
 
 :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/custom_dns.png" alt-text="com-fout.":::
 
@@ -281,14 +284,14 @@ Als u de replicatie status van de virtuele machine weer in orde wilt maken, kunt
 1. Ga naar **gerepliceerde items**  >  _VM-naam_  >  **schijven**.
 1. Selecteer de niet-beveiligde schijf en selecteer vervolgens **replicatie inschakelen**:
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/add-disk.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/add-disk.png" alt-text="Schakel replicatie in op VM-schijven.":::
 
 #### <a name="to-dismiss-the-warning"></a>De waarschuwing negeren
 
-1. Ga naar de VM-naam van de **gerepliceerde items**  >  _VM name_.
+1. Ga naar de VM-naam van de **gerepliceerde items**  >  .
 1. Selecteer de waarschuwing in het gedeelte **overzicht** en selecteer vervolgens **OK**.
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png" alt-text="Waarschuwing nieuwe schijf negeren.":::
 
 ## <a name="vm-removed-from-vault-completed-with-information-error-code-150225"></a>De virtuele machine die is verwijderd uit de kluis is voltooid met informatie (fout code 150225)
 
@@ -300,7 +303,7 @@ U kunt deze waarschuwing negeren als u deze virtuele machine nooit opnieuw wilt 
 > Als u het opschonen niet doet:
 >
 > - Wanneer u replicatie inschakelt met behulp van de Recovery Services kluis, wordt de virtuele machine niet weer gegeven.
-> - Als u de **virtuele machine**probeert te beveiligen met behulp van de  >  **instellingen**voor  >  **herstel na nood**geval, mislukt de bewerking met de bericht **replicatie kan niet worden ingeschakeld vanwege de bestaande verlopen bron koppelingen op de VM**.
+> - Als u de **virtuele machine** probeert te beveiligen met behulp van de  >  **instellingen** voor  >  **herstel na nood** geval, mislukt de bewerking met de bericht **replicatie kan niet worden ingeschakeld vanwege de bestaande verlopen bron koppelingen op de VM**.
 
 ### <a name="fix-the-problem"></a>Het probleem oplossen
 
@@ -309,10 +312,10 @@ U kunt deze waarschuwing negeren als u deze virtuele machine nooit opnieuw wilt 
 
 1. Verwijder de vergren deling van de virtuele machine of VM-resource groep. In de volgende afbeelding moet de resource vergrendeling op de VM met de naam bijvoorbeeld `MoveDemo` worden verwijderd:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Vergren deling van virtuele machine verwijderen.":::
 
 1. Down load het script om [een verouderde site Recovery configuratie te verwijderen](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
-1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep**en **VM-naam** op als para meters.
+1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep** en **VM-naam** op als para meters.
 1. Als u wordt gevraagd om Azure-referenties, geeft u deze op. Controleer vervolgens of het script zonder storingen wordt uitgevoerd.
 
 ## <a name="replication-not-enabled-on-vm-with-stale-resources-error-code-150226"></a>Replicatie is niet ingeschakeld op de virtuele machine met verouderde resources (fout code 150226)
@@ -334,10 +337,10 @@ Een verouderde configuratie kan optreden op een Azure-VM als u replicatie voor d
 
 1. Verwijder de vergren deling van de virtuele machine of VM-resource groep. In de volgende afbeelding moet de resource vergrendeling op de VM met de naam bijvoorbeeld `MoveDemo` worden verwijderd:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Vergren deling van virtuele machine verwijderen.":::
 
 1. Down load het script om [een verouderde site Recovery configuratie te verwijderen](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
-1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep**en **VM-naam** op als para meters.
+1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep** en **VM-naam** op als para meters.
 1. Als u wordt gevraagd om Azure-referenties, geeft u deze op. Controleer vervolgens of het script zonder storingen wordt uitgevoerd.
 
 ## <a name="cant-select-vm-or-resource-group-in-enable-replication-job"></a>VM of resource groep kan niet worden geselecteerd in replicatie taak inschakelen
@@ -346,7 +349,7 @@ Een verouderde configuratie kan optreden op een Azure-VM als u replicatie voor d
 
 Site Recovery moeten de resource groep en de virtuele machines van de bron regio momenteel op dezelfde locatie zijn. Als dat niet het geval is, kunt u de virtuele machine of resource groep niet vinden wanneer u probeert beveiliging toe te passen.
 
-Als tijdelijke oplossing kunt u de replicatie van de virtuele machine inschakelen in plaats van de Recovery Services kluis. Ga naar de eigenschappen van de **bron-VM**  >  **Properties**  >  **nood herstel** en schakel de replicatie in.
+Als tijdelijke oplossing kunt u de replicatie van de virtuele machine inschakelen in plaats van de Recovery Services kluis. Ga naar de eigenschappen van de **bron-VM**  >    >  **nood herstel** en schakel de replicatie in.
 
 ### <a name="issue-2-the-resource-group-isnt-part-of-the-selected-subscription"></a>Probleem 2: de resource groep maakt geen deel uit van het geselecteerde abonnement
 
@@ -367,10 +370,10 @@ Mogelijk ziet u de virtuele machine die u wilt inschakelen voor replicatie als e
 
 1. Verwijder de vergren deling, indien van toepassing, van de virtuele machine of VM-resource groep. In de volgende afbeelding moet de resource vergrendeling op de VM met de naam bijvoorbeeld `MoveDemo` worden verwijderd:
 
-   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/vm-locks.png" alt-text="Vergren deling van virtuele machine verwijderen.":::
 
 1. Down load het script om [een verouderde site Recovery configuratie te verwijderen](https://github.com/AsrOneSdk/published-scripts/blob/master/Cleanup-Stale-ASR-Config-Azure-VM.ps1).
-1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep**en **VM-naam** op als para meters.
+1. Voer het script uit, _Cleanup-stale-asr-config-Azure-VM.ps1_. Geef de **abonnements-id**, **VM-resource groep** en **VM-naam** op als para meters.
 1. Als u wordt gevraagd om Azure-referenties, geeft u deze op. Controleer vervolgens of het script zonder storingen wordt uitgevoerd.
 
 ## <a name="unable-to-select-a-vm-for-protection"></a>Kan geen virtuele machine selecteren voor beveiliging
@@ -381,7 +384,7 @@ De virtuele machine heeft een uitbrei ding die is geïnstalleerd met een mislukt
 
 ### <a name="fix-the-problem"></a>Het probleem oplossen
 
-Ga naar extensies voor **virtuele machines**-  >  **instellingen**  >  **Extensions** en controleer op uitbrei dingen met de status mislukt. Verwijder een mislukte uitbrei ding en probeer het opnieuw om de virtuele machine te beveiligen.
+Ga naar extensies voor **virtuele machines**-  >  **instellingen**  >   en controleer op uitbrei dingen met de status mislukt. Verwijder een mislukte uitbrei ding en probeer het opnieuw om de virtuele machine te beveiligen.
 
 ## <a name="vm-provisioning-state-isnt-valid-error-code-150019"></a>De inrichtings status van de virtuele machine is niet geldig (fout code 150019)
 
@@ -404,17 +407,17 @@ Als u de replicatie op de virtuele machine wilt inschakelen, moet de inrichtings
 
 Als de bron-VM deel uitmaakt van een virtueel netwerk en er al een andere virtuele machine van hetzelfde virtuele netwerk is toegewezen aan een netwerk in de doel resource groep, is de vervolg keuzelijst netwerk selectie niet beschikbaar (grijs weer gegeven).
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="com-fout.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/unabletoselectnw.png" alt-text="De lijst met netwerk selectie is niet beschikbaar.":::
 
 ### <a name="issue-2-you-previously-protected-the-vm-and-then-you-disabled-the-replication"></a>Probleem 2: u hebt de virtuele machine eerder beveiligd en vervolgens de replicatie uitgeschakeld
 
-Als u de replicatie van een virtuele machine uitschakelt, wordt de netwerk toewijzing niet verwijderd. De toewijzing moet worden verwijderd uit de Recovery Services kluis waar de virtuele machine is beveiligd. Selecteer de **Recovery Services kluis** en ga naar **Manage**  >  **site Recovery-infra structuur**beheren  >  **voor netwerk toewijzing van virtuele Azure-machines**  >  **Network Mapping**.
+Als u de replicatie van een virtuele machine uitschakelt, wordt de netwerk toewijzing niet verwijderd. De toewijzing moet worden verwijderd uit de Recovery Services kluis waar de virtuele machine is beveiligd. Selecteer de **Recovery Services kluis** en ga naar   >  **site Recovery-infra structuur** beheren  >  **voor netwerk toewijzing van virtuele Azure-machines**  >  .
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/delete_nw_mapping.png" alt-text="com-fout.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/delete_nw_mapping.png" alt-text="Netwerk toewijzing verwijderen.":::
 
 Het doelnet-netwerk dat tijdens de installatie van nood herstel is geconfigureerd, kan na de eerste installatie worden gewijzigd en nadat de virtuele machine is beveiligd. Als u **netwerk toewijzing wilt wijzigen** , selecteert u de netwerk naam:
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/modify_nw_mapping.png" alt-text="com-fout.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/modify_nw_mapping.png" alt-text="Netwerk toewijzing wijzigen.":::
 
 
 ## <a name="com-or-vss-error-code-151025"></a>COM+ of VSS (fout code 151025)
@@ -437,7 +440,7 @@ Stel de COM+-systeem toepassing en Volume Shadow Copy Service in op automatische
 1. Open de console Services in Windows.
 1. Zorg ervoor dat de COM+-systeem toepassing en Volume Shadow Copy Service niet zijn ingesteld op **uitgeschakeld** als **opstart type**.
 
-   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/com-error.png" alt-text="com-fout.":::
+   :::image type="content" source="./media/azure-to-azure-troubleshoot-errors/com-error.png" alt-text="Controleer het opstart type van de COM plus-systeem toepassing en het Volume Shadow Copy Service.":::
 
 ## <a name="unsupported-managed-disk-size-error-code-150172"></a>Niet-ondersteunde beheerde schijf grootte (fout code 150172)
 
@@ -459,7 +462,7 @@ Zorg ervoor dat de schijf grootte binnen het ondersteunde bereik ligt en voer de
 
 ### <a name="possible-causes"></a>Mogelijke oorzaken
 
-De configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_of _/etc/default/grub_) van de linux-grub (Unified Bootloader) kunnen de werkelijke apparaatnamen opgeven in plaats van de UUID-waarden (Universally Unique Identifier) voor de `root` `resume` para meters en. Site Recovery vereist UUID, omdat de apparaatnamen kunnen veranderen. Bij het opnieuw opstarten is het mogelijk dat een virtuele machine niet dezelfde naam heeft als de failover, waardoor er problemen ontstaan.
+De configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_ of _/etc/default/grub_) van de linux-grub (Unified Bootloader) kunnen de werkelijke apparaatnamen opgeven in plaats van de UUID-waarden (Universally Unique Identifier) voor de `root` `resume` para meters en. Site Recovery vereist UUID, omdat de apparaatnamen kunnen veranderen. Bij het opnieuw opstarten is het mogelijk dat een virtuele machine niet dezelfde naam heeft als de failover, waardoor er problemen ontstaan.
 
 De volgende voor beelden zijn regels uit GRUB-bestanden waarbij apparaatnamen worden weer gegeven in plaats van de vereiste UUID:
 
@@ -494,7 +497,7 @@ Vervang elke naam van het apparaat door de bijbehorende UUID:
 
 ### <a name="possible-cause"></a>Mogelijke oorzaak
 
-De GRUB-configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_of _/etc/default/grub_) kunnen de para meters bevatten `rd.lvm.lv` of `rd_LVM_LV` . Met deze para meters worden de LVM-apparaten (Logical Volume Manager) geïdentificeerd die tijdens de opstart tijd moeten worden gedetecteerd. Als deze LVM-apparaten niet bestaan, wordt het beveiligde systeem zelf niet gestart en blijft het in het opstart proces zitten. Hetzelfde probleem wordt ook weer gegeven met de failover-VM. Hier volgen enkele voor beelden:
+De GRUB-configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_ of _/etc/default/grub_) kunnen de para meters bevatten `rd.lvm.lv` of `rd_LVM_LV` . Met deze para meters worden de LVM-apparaten (Logical Volume Manager) geïdentificeerd die tijdens de opstart tijd moeten worden gedetecteerd. Als deze LVM-apparaten niet bestaan, wordt het beveiligde systeem zelf niet gestart en blijft het in het opstart proces zitten. Hetzelfde probleem wordt ook weer gegeven met de failover-VM. Hier volgen enkele voor beelden:
 
 - Bestand: _/boot/grub2/grub.cfg_ op RHEL7:
 

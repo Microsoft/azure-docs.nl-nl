@@ -3,12 +3,12 @@ title: Een cluster bijwerken voor het gebruik van de algemene naam van het certi
 description: Meer informatie over het converteren van een Azure Service Fabric-cluster certificaat van declaraties op basis van een vinger afdruk naar algemene namen.
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 013b8190390a4b05791b0a56072487f249956ec5
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: f719b1eb39da776827c6babec61e9e6701bb4602
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92495202"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900787"
 ---
 # <a name="convert-cluster-certificates-from-thumbprint-based-declarations-to-common-names"></a>Cluster certificaten van declaraties op basis van vinger afdruk naar algemene namen converteren
 
@@ -63,8 +63,11 @@ Er zijn meerdere geldige start statussen voor een conversie. De invariantie is d
 #### <a name="valid-starting-states"></a>Geldige start statussen
 
 - `Thumbprint: GoalCert, ThumbprintSecondary: None`
-- `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, waarbij `GoalCert` een latere `NotAfter` datum is dan die van `OldCert1`
-- `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, waarbij `GoalCert` een latere `NotAfter` datum is dan die van `OldCert1`
+- `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, waarbij `GoalCert` een latere `NotBefore` datum is dan die van `OldCert1`
+- `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, waarbij `GoalCert` een latere `NotBefore` datum is dan die van `OldCert1`
+
+> [!NOTE]
+> Voorafgaand aan versie 7.2.445 (7,2 CU4) Service Fabric het meest recente verlopende certificaat (het certificaat met het meest recente ' NotAfter-eigendom) geselecteerd, zodat GoalCert een latere datum moet hebben voor de bovenstaande start statussen vóór 7,2 CU4 `NotAfter``OldCert1`
 
 Als uw cluster zich niet in een van de geldige statussen bevindt, raadpleegt u informatie over het bereiken van die status in de sectie aan het einde van dit artikel.
 
@@ -217,11 +220,14 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
 
 | Begin status | Upgrade 1 | Upgrade 2 |
 | :--- | :--- | :--- |
-| `Thumbprint: OldCert1, ThumbprintSecondary: None` en `GoalCert` heeft een latere `NotAfter` datum dan `OldCert1` | `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert` | - |
-| `Thumbprint: OldCert1, ThumbprintSecondary: None` en `OldCert1` heeft een latere `NotAfter` datum dan `GoalCert` | `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1` | `Thumbprint: GoalCert, ThumbprintSecondary: None` |
-| `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, waarbij `OldCert1` een latere `NotAfter` datum is dan `GoalCert` | Upgrade uitvoeren naar `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
-| `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, waarbij `OldCert1` een latere `NotAfter` datum is dan `GoalCert` | Upgrade uitvoeren naar `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` en `GoalCert` heeft een latere `NotBefore` datum dan `OldCert1` | `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert` | - |
+| `Thumbprint: OldCert1, ThumbprintSecondary: None` en `OldCert1` heeft een latere `NotBefore` datum dan `GoalCert` | `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1` | `Thumbprint: GoalCert, ThumbprintSecondary: None` |
+| `Thumbprint: OldCert1, ThumbprintSecondary: GoalCert`, waarbij `OldCert1` een latere `NotBefore` datum is dan `GoalCert` | Upgrade uitvoeren naar `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
+| `Thumbprint: GoalCert, ThumbprintSecondary: OldCert1`, waarbij `OldCert1` een latere `NotBefore` datum is dan `GoalCert` | Upgrade uitvoeren naar `Thumbprint: GoalCert, ThumbprintSecondary: None` | - |
 | `Thumbprint: OldCert1, ThumbprintSecondary: OldCert2` | Verwijder een van `OldCert1` of `OldCert2` om de status te verkrijgen `Thumbprint: OldCertx, ThumbprintSecondary: None` | Door gaan vanaf de nieuwe begin status |
+
+> [!NOTE]
+> Voor een cluster met een versie die ouder is dan versie 7.2.445 (7,2 CU4), vervangt u door `NotBefore` `NotAfter` de bovenstaande status.
 
 Zie [certificaten beheren in een Azure service Fabric-cluster](service-fabric-cluster-security-update-certs-azure.md)voor instructies over het uitvoeren van deze upgrades.
 

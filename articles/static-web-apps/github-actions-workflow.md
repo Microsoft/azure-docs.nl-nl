@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 3518935991409d87917582558a34ad7c54841e23
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 5e6188ca2e8e0972e86bed578144a29a96570876
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173666"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901195"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
 
@@ -63,7 +63,7 @@ jobs:
         ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
         app_location: '/' # App source code path
         api_location: 'api' # Api source code path - optional
-        app_artifact_location: 'dist' # Built app content directory - optional
+        output_location: 'dist' # Built app content directory - optional
         ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -132,7 +132,7 @@ with:
     ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
     app_location: '/' # App source code path
     api_location: 'api' # Api source code path - optional
-    app_artifact_location: 'dist' # Built app content directory - optional
+    output_location: 'dist' # Built app content directory - optional
     ###### End of Repository/Build Configurations ######
 ```
 
@@ -140,7 +140,7 @@ with:
 |---|---|---|
 | `app_location` | Locatie van de toepassings code.<br><br>Voer bijvoorbeeld `/` in als de bron code van uw toepassing zich in de hoofdmap van de opslag plaats bevindt, of `/app` als de code van uw toepassing zich in de map bevindt `app` . | Ja |
 | `api_location` | De locatie van uw Azure Functions-code.<br><br>Voer bijvoorbeeld `/api` in als uw app-code zich in een map met de naam bevindt `api` . Als er geen Azure Functions-app wordt gedetecteerd in de map, mislukt de build, wordt ervan uitgegaan dat u geen API wilt. | Nee |
-| `app_artifact_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `app_artifact_location` waarde instellen. | Nee |
+| `output_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `output_location` waarde instellen. | Nee |
 
 De `repo_token` `action` waarden, en `azure_static_web_apps_api_token` worden door Azure static web apps voor u ingesteld, niet hand matig worden gewijzigd.
 
@@ -163,7 +163,7 @@ U kunt de werk stroom aanpassen om te zoeken naar de [routes.js](routes.md) in e
 |---------------------|-------------|
 | `routes_location` | Hiermee definieert u de maplocatie waar de _routes.jsin_ het bestand wordt gevonden. Deze locatie is relatief ten opzichte van de hoofdmap van de opslag plaats. |
 
- Het is met name belang rijk dat u de locatie van uw _routes.jsop_ het bestand kunt vinden. Dit is vooral handig als uw front-end Framework-build-stap dit bestand niet standaard verplaatst naar de `app_artifact_location` .
+ Het is met name belang rijk dat u de locatie van uw _routes.jsop_ het bestand kunt vinden. Dit is vooral handig als uw front-end Framework-build-stap dit bestand niet standaard verplaatst naar de `output_location` .
 
 ## <a name="environment-variables"></a>Omgevingsvariabelen
 
@@ -189,7 +189,7 @@ jobs:
           ###### Repository/Build Configurations
           app_location: "/"
           api_location: "api"
-          app_artifact_location: "public"
+          output_location: "public"
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
           HUGO_VERSION: 0.58.0

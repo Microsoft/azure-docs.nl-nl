@@ -4,12 +4,12 @@ description: Meer informatie over het schema van de JSON dat wordt gepost naar e
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
-ms.openlocfilehash: 026613c3f5710137fb110153b34f9ed74bbf8a7b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a73ab12d1729acba132aeffd4104ca7846ecb9e8
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522784"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901433"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Webhooks voor Azure-activiteiten logboek waarschuwingen
 Als onderdeel van de definitie van een actie groep kunt u webhook-eind punten configureren voor het ontvangen van waarschuwings meldingen voor activiteiten Logboeken. Met webhooks kunt u deze meldingen naar andere systemen sturen voor nabewerkingen of aangepaste acties. In dit artikel ziet u hoe de payload voor het HTTP POST-bericht naar een webhook eruit ziet.
@@ -27,6 +27,19 @@ De webhook kan desgewenst autorisatie op basis van tokens gebruiken voor verific
 
 ## <a name="payload-schema"></a>Payload-schema
 De JSON-nettolading die deel uitmaakt van de POST-bewerking verschilt op basis van het veld data. context. activityLog. Event source van de payload.
+
+> [!NOTE]
+> Op dit moment wordt de beschrijving die deel uitmaakt van de gebeurtenis activiteiten logboek gekopieerd naar de geactiveerde eigenschap **waarschuwing beschreven** .
+>
+> Als u de nettolading van het activiteiten logboek wilt uitlijnen met andere waarschuwings typen, beginnend op 1 april 2021, wordt in plaats daarvan de beschrijving van de waarschuwings regel in de waarschuwing in de trigger ' **Description '** opgenomen.
+>
+> Ter voor bereiding op deze wijziging hebben we een nieuwe eigenschap **"gebeurtenis beschrijving van het activiteiten logboek"** gemaakt in de waarschuwing voor het starten van het activiteiten logboek. Deze nieuwe eigenschap wordt gevuld met de eigenschap **"Description"** die al beschikbaar is voor gebruik. Dit betekent dat het nieuwe veld **"gebeurtenis beschrijving van het activiteiten logboek"** de beschrijving bevat die deel uitmaakt van de gebeurtenis in het activiteiten logboek.
+>
+> Controleer uw waarschuwings regels, actie regels, webhooks, logische apps of andere configuraties waarbij u mogelijk de eigenschap **' Beschrijving '** van de gebrande waarschuwing gebruikt en deze vervangt door de eigenschap **Beschrijving van gebeurtenis logboeken** .
+>
+> Als uw voor waarde (in uw actie regels, webhooks, logische app of andere configuraties) momenteel is gebaseerd op de eigenschap **' Beschrijving '** voor waarschuwingen van het activiteiten logboek, moet u deze mogelijk wijzigen in plaats daarvan op basis van de eigenschap **Beschrijving van gebeurtenis logboeken** .
+>
+> Als u de nieuwe eigenschap **"Description"** wilt vullen, kunt u een beschrijving toevoegen in de definitie van de waarschuwings regel.
 
 ### <a name="common"></a>Algemeen
 

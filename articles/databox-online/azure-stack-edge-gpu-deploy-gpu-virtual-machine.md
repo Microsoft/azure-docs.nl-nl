@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 6fa8705221e1f1f9a9143f274a53db21b657988f
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 0a7f54d991d31594a6ab522dbf9e73958cde3023
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763830"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900141"
 ---
 # <a name="gpu-vms-for-your-azure-stack-edge-pro-device"></a>GPU-Vm's voor uw Azure Stack Edge Pro-apparaat
 
@@ -338,7 +338,7 @@ Zie [NVIDIA GPU-stuur programma-extensie voor Windows](../virtual-machines/exten
 
 ### <a name="gpu-extension-for-linux"></a>GPU-extensie voor Linux
 
-Als u NVIDIA GPU-Stuur Programma's wilt implementeren voor een bestaande virtuele machine, bewerkt u het `addGPUExtLinuxVM.parameters.json` parameter bestand en implementeert u vervolgens de sjabloon `addGPUextensiontoVM.json` .
+Als u NVIDIA GPU-Stuur Programma's wilt implementeren voor een bestaande virtuele machine, bewerkt u het parameter bestand en implementeert u vervolgens de sjabloon `addGPUextensiontoVM.json` . Er zijn specifieke parameter bestanden voor Ubuntu en Red Hat Enterprise Linux (RHEL) zoals beschreven in de volgende secties.
 
 #### <a name="edit-parameters-file"></a>Parameter bestand bewerken
 
@@ -371,8 +371,7 @@ Als Ubuntu wordt gebruikt, `addGPUExtLinuxVM.parameters.json` neemt het bestand 
     }
     }
 ```
-Als u Red Hat Enterprise Linux (RHEL) gebruikt, neemt het bestand de volgende para meters:
-
+Als Red Hat Enterprise Linux (RHEL) gebruikt, `addGPUExtensionRHELVM.parameters.json` heeft het bestand de volgende para meters:
 
 ```powershell
 {

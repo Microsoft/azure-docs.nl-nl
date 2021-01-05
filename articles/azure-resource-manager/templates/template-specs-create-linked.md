@@ -2,13 +2,13 @@
 title: Een sjabloon specificatie met gekoppelde sjablonen maken
 description: Meer informatie over het maken van een sjabloon spec met gekoppelde sjablonen.
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 038fb3e6bbb6086535b83a69de7a3fe49a8e60bb
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.date: 01/05/2021
+ms.openlocfilehash: e5725ece165f5716480afbcb4ef9098274c09993
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518886"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900634"
 ---
 # <a name="tutorial-create-a-template-spec-with-linked-templates-preview"></a>Zelf studie: een sjabloon specificatie met gekoppelde sjablonen maken (preview)
 
@@ -19,7 +19,7 @@ Meer informatie over het maken van een [sjabloon specificatie](template-specs.md
 Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 
 > [!NOTE]
-> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken met Azure PowerShell, moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps)installeren. Als u deze wilt gebruiken met Azure CLI, gebruikt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
+> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Voor gebruik met Azure PowerShell moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps) installeren. Voor gebruik met Azure CLI hebt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli) nodig.
 
 ## <a name="create-linked-templates"></a>Gekoppelde sjablonen maken
 
@@ -191,7 +191,7 @@ az ts create \
   --version "1.0.0.0" \
   --resource-group templateSpecRG \
   --location "westus2" \
-  --template-file "c:\Templates\linkedTS\azuredeploy.json"
+  --template-file "<path-to-main-template>"
 ```
 
 ---
@@ -237,7 +237,7 @@ az group create \
   --name webRG \
   --location westus2
 
-id = $(az template-specs show --name webSpec --resource-group templateSpecRG --version "1.0.0.0" --query "id")
+id = $(az ts show --name webSpec --resource-group templateSpecRG --version "1.0.0.0" --query "id")
 
 az deployment group create \
   --resource-group webRG \

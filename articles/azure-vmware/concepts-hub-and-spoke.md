@@ -3,12 +3,12 @@ title: 'Concept: een implementatie van een Azure VMware-oplossing integreren in 
 description: Meer informatie over het integreren van een implementatie van een Azure VMware-oplossing in een hub-en spoke-architectuur in Azure.
 ms.topic: conceptual
 ms.date: 10/26/2020
-ms.openlocfilehash: 788ef9886e0d102a549e84cd01c658e9e4131c63
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0d511c8d6a96ffb6fa666bcb7c989764f398bdc9
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967445"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901382"
 ---
 # <a name="integrate-azure-vmware-solution-in-a-hub-and-spoke-architecture"></a>Azure VMware-oplossing integreren in een hub-en spoke-architectuur
 
@@ -128,7 +128,7 @@ Implementeer [Microsoft Azure Bastion](../bastion/index.yml) -service in het vir
 
 Voor Azure DNS oplossing zijn er twee opties beschikbaar:
 
--   Gebruik de Azure Active Directory (Azure AD) domein controllers die zijn geïmplementeerd op de hub (beschreven in [identiteits overwegingen](#identity-considerations)) als naam servers.
+-   Gebruik de domein controllers die zijn geïmplementeerd op de hub (beschreven in [identiteits overwegingen](#identity-considerations)) als naam servers.
 
 -   Een Azure DNS privé zone implementeren en configureren.
 
@@ -136,7 +136,7 @@ U kunt het beste beide combi neren om een betrouw bare naam omzetting te bieden 
 
 Als algemene ontwerp aanbeveling gebruikt u de bestaande Azure DNS-infra structuur (in dit geval Active Directory-geïntegreerde DNS) die is geïmplementeerd op ten minste twee virtuele Azure-machines die zijn geïmplementeerd in het VM-netwerk en die in de spoke-virtuele netwerken zijn geconfigureerd voor het gebruik van deze Azure DNS servers in de DNS-instellingen.
 
-U kunt Azure Privé-DNS gebruiken, waarbij de Azure Privé-DNS-zone aan het virtuele netwerk is gekoppeld.  De DNS-servers worden gebruikt als hybride resolvers met voorwaardelijke door sturen naar een on-premises of Azure VMware-oplossing die gebruikmaakt van de Azure Privé-DNS-infra structuur van de klant. 
+U kunt Azure Privé-DNS gebruiken, waarbij de Azure Privé-DNS-zone aan het virtuele netwerk is gekoppeld.  De DNS-servers worden gebruikt als hybride resolvers met voorwaardelijk door sturen naar on-premises of Azure VMware-oplossing met behulp van de Azure Privé-DNS-infra structuur van de klant. 
 
 Als u de levens cyclus van de DNS-records voor de Vm's die zijn geïmplementeerd in de spoke-virtuele netwerken automatisch wilt beheren, schakelt u automatische registratie in. Wanneer deze functie is ingeschakeld, is het maximum aantal privé-DNS-zones slechts één. Als deze is uitgeschakeld, is het maximum aantal 1000.
 
@@ -144,7 +144,7 @@ On-premises en Azure VMware-oplossingen kunnen worden geconfigureerd met voorwaa
 
 ## <a name="identity-considerations"></a>Identiteits overwegingen
 
-Voor identiteits doeleinden is de beste benadering om ten minste één AD-domein controller te implementeren op de hub. Gebruik twee gedeelde service subnetten in zone-gedistribueerde mode of een beschik bare VM-set. Zie [Azure Architecture Center](/azure/architecture/reference-architectures/identity/adds-extend-domain) voor het uitbreiden van uw on-PREMISes AD-domein naar Azure.
+Voor identiteits doeleinden is het de beste benadering om ten minste één domein controller op de hub te implementeren. Gebruik twee gedeelde service subnetten in zone-gedistribueerde mode of een beschik bare VM-set. Zie [Azure Architecture Center](/azure/architecture/reference-architectures/identity/adds-extend-domain)voor meer informatie over het uitbreiden van uw on-premises Active Directory (AD)-domein naar Azure.
 
 Implementeer daarnaast een andere domein controller op de Azure VMware-oplossing zijde om als identiteits-en DNS-bron binnen de vSphere omgeving te fungeren.
 

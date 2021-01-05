@@ -4,12 +4,12 @@ description: Meer informatie over het beheren van certificaten in een Service Fa
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.custom: sfrev
-ms.openlocfilehash: aba681157d71f94914462b8d9fc13b90d4d6b153
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 722c84c25cb5188e45dd96363bab9af6ff93f6dc
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88653661"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901263"
 ---
 # <a name="certificate-management-in-service-fabric-clusters"></a>Certificaat beheer in Service Fabric clusters
 
@@ -109,9 +109,12 @@ Als een kantlijn notitie: IETF [RFC 3647](https://tools.ietf.org/html/rfc3647) f
 
 We hebben eerder gezien dat Azure Key Vault automatische draaiing van certificaten ondersteunt: het beleid voor het koppelen van certificaten definieert het tijdstip, hetzij per dagen vóór de verval datum of het percentage van de totale levens duur, wanneer het certificaat in de kluis wordt gedraaid. De inrichtings agent moet worden aangeroepen na dit moment en vóór het verlopen van het nu-vorige certificaat om dit nieuwe certificaat te distribueren naar alle knoop punten van het cluster. Service Fabric helpt bij het verhogen van status waarschuwingen wanneer de verval datum van een certificaat (en dat momenteel in gebruik is in het cluster) eerder is dan een vooraf bepaald interval. Een automatische inrichtings agent (de extensie van de sleutel kluis-VM) die is geconfigureerd om het kluis certificaat te observeren, zal regel matig de kluis pollen, de rotatie detecteren en het nieuwe certificaat ophalen en installeren. Voor het inrichten via de functie geheimen van de VM-VMSS is een geautoriseerde operator vereist voor het bijwerken van de virtuele machine/VMSS met de versie van de sleutel-kluis die overeenkomt met het nieuwe certificaat.
 
-In beide gevallen wordt het geroteerde certificaat nu ingericht op alle knoop punten en we hebben het mechanisme beschreven dat wordt Service Fabric gebruiken om rotaties te detecteren. Laat ons kijken wat er gebeurt als volgende: er wordt ervan uitgegaan dat de rotatie is toegepast op het cluster certificaat dat is gedeclareerd door de algemene onderwerpnaam (alle van toepassing op het moment van schrijven en Service Fabric runtime versie 7.1.409).
-  - voor nieuwe verbindingen binnen en in het cluster wordt met de Service Fabric-runtime het overeenkomende certificaat gevonden en geselecteerd met de meest recente verloop datum (de eigenschap ' NotAfter ' van het certificaat, vaak afgekort tot ' n.v.t. ')
+In beide gevallen wordt het geroteerde certificaat nu ingericht op alle knoop punten en we hebben het mechanisme beschreven dat wordt Service Fabric gebruiken om rotaties te detecteren. Laat ons kijken wat er gebeurt als volgende: er wordt aangenomen dat de rotatie is toegepast op het cluster certificaat dat is gedeclareerd door de algemene onderwerpnaam
+  - voor nieuwe verbindingen binnen en in het cluster zoekt de Service Fabric-runtime het meest recente overeenkomende certificaat dat is uitgegeven (grootste waarde van de eigenschap ' NotBefore '). Opmerking: dit is een wijziging ten opzichte van eerdere versies van de Service Fabric runtime.
   - bestaande verbindingen worden bewaard/toegestaan om natuurlijke te verlopen of anderszins af te breken. een interne handler krijgt een melding dat er een nieuwe overeenkomst bestaat
+
+> [!NOTE] 
+> Vóór versie 7.2.445 (7,2 CU4) Service Fabric het meest verlopende certificaat geselecteerd (het certificaat met de meest rechtse eigenschap ' NotAfter ')
 
 Dit is de volgende belang rijke opmerkingen:
   - Het vernieuwings certificaat kan worden genegeerd als de verval datum eerder is dan die van het certificaat dat momenteel in gebruik is.
@@ -134,8 +137,11 @@ We hebben methoden, beperkingen, uiteengezette ingewikkelde regels en definities
 
 De reeks is volledig scriptbaar/geautomatiseerd en maakt het mogelijk dat een door de gebruiker aanraak vrije eerste implementatie van een cluster dat is geconfigureerd voor automatische rollover van certificaten. Hieronder vindt u gedetailleerde stappen. We gebruiken een combi natie van Power shell-cmdlets en-fragmenten van JSON-sjablonen. Dezelfde functionaliteit kan worden behaald met alle ondersteunde manieren van interactie met Azure.
 
-[!NOTE] In dit voor beeld wordt ervan uitgegaan dat er al een certificaat aanwezig is in de kluis. voor het inschrijven en vernieuwen van een door een sleutel kluis beheerd certificaat zijn vereiste hand matige stappen vereist, zoals eerder in dit artikel is beschreven. Voor productie omgevingen gebruikt u door de sleutel kluis beheerde certificaten. Hieronder vindt u een voor beeld van een specifiek script voor een micro soft-interne PKI.
-De functie voor het door certificerings instanties uitgegeven certificaat is alleen zinvol voor certificaten. het gebruik van zelfondertekende certificaten, met inbegrip van deze die zijn gegenereerd bij het implementeren van een Service Fabric cluster in de Azure Portal, is nonsensical, maar kan nog wel worden gebruikt voor lokaal/door een ontwikkelaar gehoste implementaties, door de vinger afdruk van de verlener te declareren zodat deze hetzelfde is als het blad certificaat.
+> [!NOTE]
+> In dit voor beeld wordt ervan uitgegaan dat er al een certificaat aanwezig is in de kluis. voor het inschrijven en vernieuwen van een door een sleutel kluis beheerd certificaat zijn vereiste hand matige stappen vereist, zoals eerder in dit artikel is beschreven. Voor productie omgevingen gebruikt u door de sleutel kluis beheerde certificaten. Hieronder vindt u een voor beeld van een specifiek script voor een micro soft-interne PKI.
+
+> [!NOTE]
+> De functie voor het door certificerings instanties uitgegeven certificaat is alleen zinvol voor certificaten. het gebruik van zelfondertekende certificaten, met inbegrip van deze die zijn gegenereerd bij het implementeren van een Service Fabric cluster in de Azure Portal, is nonsensical, maar kan nog wel worden gebruikt voor lokaal/door een ontwikkelaar gehoste implementaties, door de vinger afdruk van de verlener te declareren zodat deze hetzelfde is als het blad certificaat.
 
 ### <a name="starting-point"></a>Begin punt
 Voor het boogere wordt de volgende begin status in rekening gebracht:

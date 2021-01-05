@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34f82fc060586e2df5acefa6b0836171e558aa4a
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 536a9641b68ccd2510a7891b46483a322fb6ecb7
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615764"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900923"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -36,7 +36,7 @@ Beheerders kunnen ervoor kiezen om een of meer besturings elementen af te dwinge
 
 - [Multi-factor Authentication (Azure AD Multi-Factor Authentication) vereisen](../authentication/concept-mfa-howitworks.md)
 - [Vereisen dat het apparaat wordt gemarkeerd als compatibel (Microsoft Intune)](/intune/protect/device-compliance-get-started)
-- [Hybride Azure AD-aangesloten apparaat vereisen](../devices/concept-azure-ad-join-hybrid.md)
+- [Hybride Azure AD-gekoppeld apparaat vereisen](../devices/concept-azure-ad-join-hybrid.md)
 - [Goedgekeurde client-apps vereisen](app-based-conditional-access.md)
 - [Beleid voor app-beveiliging vereisen](app-protection-based-conditional-access.md)
 - [Wachtwoord wijziging vereisen](#require-password-change)
@@ -60,7 +60,7 @@ Een apparaat kan worden gemarkeerd als compatibel door intune (voor elk besturin
 
 Apparaten moeten worden geregistreerd in azure AD voordat ze kunnen worden gemarkeerd als compatibel. Meer informatie over apparaatregistratie vindt u in het artikel, [wat een apparaat-id is](../devices/overview.md).
 
-### <a name="require-hybrid-azure-ad-joined-device"></a>Hybride Azure AD-aangesloten apparaat vereisen
+### <a name="require-hybrid-azure-ad-joined-device"></a>Hybride Azure AD-gekoppeld apparaat vereisen
 
 Organisaties kunnen ervoor kiezen om de apparaat-id te gebruiken als onderdeel van het beleid voor voorwaardelijke toegang. Organisaties kunnen vereisen dat apparaten hybride Azure AD zijn toegevoegd met dit selectie vakje. Zie het artikel [Wat is een apparaat-id?](../devices/overview.md)voor meer informatie over apparaat-id's.
 
@@ -102,6 +102,7 @@ Deze instelling is van toepassing op de volgende iOS-en Android-apps:
 - Microsoft Word
 - Microsoft Yammer
 - Microsoft Whiteboard
+- Microsoft 365 Admin
 
 **Opmerkingen**
 

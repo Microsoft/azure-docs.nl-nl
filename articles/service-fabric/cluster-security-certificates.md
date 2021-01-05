@@ -3,12 +3,12 @@ title: X. 509 authenticatie op basis van certificaten in een Service Fabric clus
 description: Meer informatie over verificatie op basis van certificaten in Service Fabric clusters en het detecteren, beperken en oplossen van aan certificaten gerelateerde problemen.
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: 4d81cb9d224bdc2e3002c621c86729df235e0d81
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 8af0246e0e576f9877c4c5e3b1f1a4314ae29827
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574765"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901246"
 ---
 # <a name="x509-certificate-based-authentication-in-service-fabric-clusters"></a>X. 509 authenticatie op basis van certificaten in Service Fabric clusters
 
@@ -170,7 +170,10 @@ Het knooppunt type certificaten kunnen ook worden gedeclareerd door de algemene 
   </NodeTypes>
 ```
 
-Voor beide typen declaraties leest een Service Fabric knoop punt de configuratie bij het opstarten, zoekt en laadt de opgegeven certificaten en sorteert deze in aflopende volg orde van hun NotAfter-kenmerk. verlopen certificaten worden genegeerd en het eerste element van de lijst is geselecteerd als de client referentie voor een Service Fabric verbindings poging door dit knoop punt. (In feite Service Fabric voor keur voor het meest verlopende certificaat.)
+Voor beide typen declaraties leest een Service Fabric knoop punt de configuratie bij het opstarten, zoekt en laadt de opgegeven certificaten en sorteert deze in aflopende volg orde van hun NotBefore-kenmerk. verlopen certificaten worden genegeerd en het eerste element van de lijst is geselecteerd als de client referentie voor een Service Fabric verbindings poging door dit knoop punt. (In feite is Service Fabric het meest recent verleende certificaat als voor keur.)
+
+> [!NOTE]
+> Vóór versie 7.2.445 (7,2 CU4) Service Fabric het meest verlopende certificaat geselecteerd (het certificaat met de meest rechtse eigenschap ' NotAfter ')
 
 Houd er rekening mee dat voor op de algemene naam gebaseerde presentatie declaraties een certificaat als een overeenkomst wordt beschouwd als de algemene naam van het onderwerp gelijk is aan het X509FindValue-veld (of X509FindValueSecondary) van de declaratie als een hoofdletter gevoelige, exacte vergelijking van teken reeksen. Dit is in tegens telling tot de validatie regels, die ondersteuning bieden voor joker tekens, evenals niet-hoofdletter gevoelige teken reeks vergelijkingen.  
 

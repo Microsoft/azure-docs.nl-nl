@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 17b0564b4b73f5a5032343dcb78669cbf4cabd5a
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 057f965c67c25d486771a4c037e13153a7f2cf66
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516144"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901144"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning met het open-source pakket Fairlearn om de verdeling van ML-modellen te beoordelen (preview-versie)
 
@@ -46,7 +46,7 @@ Latere versies van Fairlearn moeten ook in de volgende voorbeeld code werken.
 
 In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We uploaden model verdeling Insights in Azure Machine Learning en bekijken het verdeling Assessment dash board in Azure Machine Learning Studio.
 
-1. Train een voorbeeld model in een Jupyter-notebook. 
+1. Train een voorbeeld model in Jupyter Notebook. 
 
     Voor de gegevensset wordt gebruikgemaakt van de bekende verzamelings gegevens voor volwassenen die worden opgehaald uit OpenML. We pretenden een probleem met de lenings beslissing met het label dat aangeeft of een individu een eerdere lening opnieuw heeft betaald. We gaan een model trainen om te voors pellen of voorheen onschuldlijke personen een lening zullen terugbetalen. Een dergelijk model kan worden gebruikt bij het nemen van uitbetalings beslissingen.
 

@@ -8,12 +8,12 @@ author: grantomation
 ms.author: b-grodel
 keywords: Aro, open Shift, AZ Aro, Red Hat, CLI, Azure file
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: fe80698b71ae0ba808991d79b423d49abfacdf7c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 201ec3293943f53179bcabde45259d15ce6208a6
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825912"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901280"
 ---
 # <a name="create-an-azure-files-storageclass-on-azure-red-hat-openshift-4"></a>Een Azure Files StorageClass maken in Azure Red Hat OpenShift 4
 
@@ -59,7 +59,7 @@ ARO_RESOURCE_GROUP=aro-rg
 CLUSTER=cluster
 ARO_SERVICE_PRINCIPAL_ID=$(az aro show -g $ARO_RESOURCE_GROUP -n $CLUSTER --query servicePrincipalProfile.clientId -o tsv)
 
-az role assignment create --role Contributor -–assignee $ARO_SERVICE_PRINCIPAL_ID -g $AZURE_FILES_RESOURCE_GROUP
+az role assignment create --role Contributor --assignee $ARO_SERVICE_PRINCIPAL_ID -g $AZURE_FILES_RESOURCE_GROUP
 ```
 
 ### <a name="set-aro-cluster-permissions"></a>ARO-cluster machtigingen instellen
@@ -81,6 +81,8 @@ oc adm policy add-cluster-role-to-user azure-secret-reader system:serviceaccount
 
 Met deze stap maakt u een StorageClass met een Azure Files-inrichting. In het StorageClass-manifest zijn de details van het opslag account vereist zodat het ARO-cluster weet dat er een opslag account buiten de huidige resource groep moet worden weer geven.
 
+Tijdens het inrichten van de opslag wordt een geheim gemaakt met de naam secretnaam voor de koppelings referenties. In een context met multitenancy wordt het ten zeerste aanbevolen om de waarde voor secretNamespace expliciet in te stellen, anders kan de referenties van het opslag account door andere gebruikers worden gelezen.
+
 ```bash
 cat << EOF >> azure-storageclass-azure-file.yaml
 kind: StorageClass
@@ -90,6 +92,7 @@ metadata:
 provisioner: kubernetes.io/azure-file
 parameters:
   location: $LOCATION
+  secretNamespace: kube-system
   skuName: Standard_LRS
   storageAccount: $AZURE_STORAGE_ACCOUNT_NAME
   resourceGroup: $AZURE_FILES_RESOURCE_GROUP
@@ -116,7 +119,7 @@ Maak een nieuwe toepassing en wijs er opslag aan toe.
 
 ```bash
 oc new-project azfiletest
-oc new-app –template httpd-example
+oc new-app -template httpd-example
 
 #Wait for the pod to become Ready
 curl $(oc get route httpd-example -n azfiletest -o jsonpath={.spec.host})

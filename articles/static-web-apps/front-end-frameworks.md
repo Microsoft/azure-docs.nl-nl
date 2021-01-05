@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 07/18/2020
 ms.author: cshoe
-ms.openlocfilehash: 4b1bc58b6b4a87cd6e5e09e83020a38261b8746f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14564b0591ef0146131b3f9324556b613e25daac
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90905375"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901229"
 ---
 # <a name="configure-front-end-frameworks-and-libraries-with-azure-static-web-apps-preview"></a>Front-end-frameworks en-bibliotheken configureren met de preview-versie van Azure static Web Apps
 
@@ -24,7 +24,7 @@ De volgende tabel bevat de instellingen voor een reeks frameworks en bibliotheke
 
 De bedoeling van de tabel kolommen wordt uitgelegd door de volgende items:
 
-- **Locatie van app-artefact**: hier wordt de waarde weer gegeven voor `app_artifact_location` . Dit is de [map voor de samengestelde versies van toepassings bestanden](github-actions-workflow.md#build-and-deploy).
+- **Uitvoer locatie**: hier wordt de waarde weer gegeven voor `output_location` . Dit is de [map voor de samengestelde versies van toepassings bestanden](github-actions-workflow.md#build-and-deploy).
 
 - **Aangepaste build-opdracht**: wanneer voor het Framework een andere opdracht dan of is vereist `npm run build` `npm run azure:build` , kunt u een [aangepaste build-opdracht](github-actions-workflow.md#custom-build-commands)definiëren.
 

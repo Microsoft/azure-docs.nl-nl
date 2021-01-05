@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 5cac21046b6b4afdefc4213f6a1fab438d62cca3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: dbff136ac5787ef9549cca9dc8f946c56a138986
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957534"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900498"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Overzicht van Red Hat Enterprise Linux installatie kopieën
 
@@ -22,7 +22,7 @@ In dit artikel worden beschik bare installatie kopieën van Red Hat Enterprise L
 Zie [Red Hat Enterprise Linux levens cyclus](https://access.redhat.com/support/policy/updates/errata)voor meer informatie over Red Hat-ondersteunings beleid voor alle versies van RHEL. Zie [Azure prijs calculator](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)voor prijzen voor meer informatie.
 
 >[!IMPORTANT]
-> RHEL-installatie kopieën die momenteel beschikbaar zijn in azure Marketplace ondersteunen de licentie modellen van uw eigen abonnement (BYOS) of betalen naar gebruik. De [Azure Hybrid use Benefit](../../windows/hybrid-use-benefit-licensing.md) en dynamische scha KELEN tussen BYOS en betalen naar gebruik-licenties worden niet ondersteund. Als u de licentie modus wilt wijzigen, moet u de virtuele machine opnieuw implementeren vanuit de bijbehorende installatie kopie.
+> RHEL-installatie kopieën die momenteel beschikbaar zijn in azure Marketplace ondersteunen de licentie modellen van uw eigen abonnement (BYOS) of betalen naar gebruik. Dynamische switches tussen BYOS en betalen per gebruik kunnen worden uitgevoerd via [Azure Hybrid use Benefit](../../linux/azure-hybrid-benefit-linux.md).
 
 >[!NOTE]
 > Voor een probleem met betrekking tot RHEL-installatie kopieën in azure Marketplace kunt u een ondersteunings ticket indienen bij micro soft.

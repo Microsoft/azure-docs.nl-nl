@@ -3,15 +3,15 @@ title: Resource groepen beheren-Azure CLI
 description: Gebruik Azure CLI voor het beheren van uw resource groepen via Azure Resource Manager. Laat zien hoe u resource groepen kunt maken, weer geven en verwijderen.
 author: mumian
 ms.topic: conceptual
-ms.date: 09/01/2020
+ms.date: 01/05/2021
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4a9a4ed4ebba7f6f2470bb9e7000a899ebc26323
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: db4a938d2f773ed24d4c7a48d747dd5cc22c0bd2
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185807"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900277"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-cli"></a>Azure Resource Manager-resource groepen beheren met behulp van Azure CLI
 
@@ -84,14 +84,14 @@ U kunt de resources in de groep verplaatsen naar een andere resource groep. Zie 
 
 ## <a name="lock-resource-groups"></a>Resource groepen vergren delen
 
-Vergren delen voor komt dat andere gebruikers in uw organisatie per ongeluk essentiële resources verwijderen of wijzigen, zoals een Azure-abonnement, resource groep of resource. 
+Vergren delen voor komt dat andere gebruikers in uw organisatie per ongeluk essentiële resources verwijderen of wijzigen, zoals een Azure-abonnement, resource groep of resource.
 
 Met het volgende script wordt een resource groep vergrendeld zodat de resource groep niet kan worden verwijderd.
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName  
+az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName
 ```
 
 Met het volgende script worden alle vergren delingen voor een resource groep opgehaald:
@@ -99,7 +99,7 @@ Met het volgende script worden alle vergren delingen voor een resource groep opg
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az lock list --resource-group $resourceGroupName  
+az lock list --resource-group $resourceGroupName
 ```
 
 Met het volgende script wordt een vergren deling verwijderd:
@@ -125,13 +125,88 @@ Nadat u de resource groep hebt ingesteld, kunt u de Resource Manager-sjabloon vo
 - Automatiseer toekomstige implementaties van de oplossing omdat de sjabloon alle volledige infra structuur bevat.
 - De syntaxis van de sjabloon leren door te kijken naar de JavaScript Object Notation (JSON) die uw oplossing vertegenwoordigt.
 
+Als u alle resources in een resource groep wilt exporteren, gebruikt u [AZ Group export](/cli/azure/group?view=azure-cli-latest#az_group_export&preserve-view=true) en geeft u de naam van de resource groep op.
+
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
-az group export --name $resourceGroupName  
+az group export --name $resourceGroupName
 ```
 
-Met het script wordt de sjabloon op de-console weer gegeven.  Kopieer de JSON en sla deze op als een bestand.
+Met het script wordt de sjabloon op de-console weer gegeven. Kopieer de JSON en sla deze op als een bestand.
+
+In plaats van alle resources in de resource groep te exporteren, kunt u selecteren welke resources u wilt exporteren.
+
+Als u één resource wilt exporteren, geeft u deze resource-ID door.
+
+```azurecli-interactive
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+echo "Enter the storage account name:" &&
+read storageAccountName &&
+storageAccount=$(az resource show --resource-group $resourceGroupName --name $storageAccountName --resource-type Microsoft.Storage/storageAccounts --query id --output tsv) &&
+az group export --resource-group $resourceGroupName --resource-ids $storageAccount
+```
+
+Als u meer dan één resource wilt exporteren, geeft u de resource-Id's die door spaties zijn gescheiden door. Als u alle resources wilt exporteren, geeft u dit argument niet op of levert u ' * ' op.
+
+```azurecli-interactive
+az group export --resource-group <resource-group-name> --resource-ids $storageAccount1 $storageAccount2
+```
+
+Wanneer u de sjabloon exporteert, kunt u opgeven of de para meters in de sjabloon moeten worden gebruikt. Standaard worden para meters voor resource namen opgenomen, maar ze hebben geen standaard waarde. U moet deze parameter waarde door geven tijdens de implementatie.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "type": "String"
+  }
+}
+```
+
+In de resource wordt de para meter gebruikt voor de naam.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "[parameters('serverfarms_demoHostPlan_name')]",
+    ...
+  }
+]
+```
+
+Als u de `--include-parameter-default-value` para meter gebruikt bij het exporteren van de sjabloon, bevat de sjabloon parameter een standaard waarde die is ingesteld op de huidige waarde. U kunt deze standaard waarde gebruiken of de standaard waarde overschrijven door door te geven in een andere waarde.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "defaultValue": "demoHostPlan",
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "defaultValue": "webSite3bwt23ktvdo36",
+    "type": "String"
+  }
+}
+```
+
+Als u de- `--skip-resource-name-params` para meter gebruikt bij het exporteren van de sjabloon, worden para meters voor resource namen niet opgenomen in de sjabloon. In plaats daarvan wordt de resource naam rechtstreeks op de resource ingesteld op de huidige waarde. U kunt de naam niet aanpassen tijdens de implementatie.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "demoHostPlan",
+    ...
+  }
+]
+```
 
 De functie sjabloon exporteren biedt geen ondersteuning voor het exporteren van Azure Data Factory-resources. Zie [een Data Factory in azure Data Factory kopiëren of klonen](../../data-factory/copy-clone-data-factory.md)voor meer informatie over het exporteren van Data Factory-resources.
 

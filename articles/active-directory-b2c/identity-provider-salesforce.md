@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/05/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 69c2bd96c7aa3bb3328784bb3b5027ade4902c43
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 129809a83bcebdcf80b05a7300dd9acf862e5886
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97669224"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900396"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Sales Force-account met behulp van Azure Active Directory B2C
 
@@ -48,10 +48,12 @@ Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azur
     1. **API-naam** 
     1. **E-mail adres van contact persoon** : het e-mail adres voor Sales Force
 1. Selecteer onder **API (OAuth-instellingen inschakelen)** de optie **OAuth-instellingen inschakelen**
-1. Voer in de **call back-URL** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang `your-tenant-name` door de naam van uw tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
-1. Selecteer in de **geselecteerde OAuth-scopes** **toegang tot uw basis gegevens (id, profiel, e-mail, adres, telefoon)** en **sta toegang toe tot uw unieke id (OpenID Connect)**.
-1. Selecteer **geheim vereisen voor webserver stroom**.
-1. Selecteer **ID-token configureren** en selecteer vervolgens **standaard claims toevoegen**.
+    1. Voer in de **call back-URL** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang `your-tenant-name` door de naam van uw tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
+    1. Selecteer in de **geselecteerde OAuth-scopes** **toegang tot uw basis gegevens (id, profiel, e-mail, adres, telefoon)** en **sta toegang toe tot uw unieke id (OpenID Connect)**.
+    1. Selecteer **geheim vereisen voor webserver stroom**.
+1. **ID-token configureren** selecteren 
+    1. Stel het **token in op** 5 minuten geldig.
+    1. Selecteer **standaard claims toevoegen**.
 1. Klik op **Opslaan**.
 1. Kopieer de waarden van de **consument sleutel** en het **consument geheim**. U hebt beide nodig om Sales Force te configureren als een id-provider in uw Tenant. **Client geheim** is een belang rijke beveiligings referentie.
 
@@ -63,10 +65,10 @@ Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azur
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **Id-providers** en selecteer vervolgens **Nieuwe OpenID Connect-provider**.
 1. Voer een **naam** in. Voer bijvoorbeeld *Sales Force* in.
-1. Voor **meta gegevens-URL** voert u de volgende URL `{org}` in die wordt vervangen door uw Sales Force-organisatie:
+1. Voer voor **meta gegevens-URL** de URL in van het [Sales Force OpenID Connect Connect-configuratie document](https://help.salesforce.com/articleView?id=remoteaccess_using_openid_discovery_endpoint.htm). Voor een sandbox wordt login.salesforce.com vervangen door test.salesforce.com. Voor een community wordt login.salesforce.com vervangen door de Community-URL, zoals username.force.com/.well-known/openid-configuration. De URL moet HTTPS zijn.
 
     ```
-    https://{org}.my.salesforce.com/.well-known/openid-configuration
+    https://login.salesforce.com/.well-known/openid-configuration
     ```
 
 1. Voor **Client-id** voert u de toepassings-id in die u eerder hebt genoteerd.
@@ -80,7 +82,7 @@ Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azur
     - **Weergavenaam**: *name*
     - **Voornaam**: *given_name*
     - **Achternaam**: *family_name*
-    - **E-mail**: *preferred_username*
+    - **E-mail**: *e-mail*
 
 1. Selecteer **Opslaan**.
 ::: zone-end
@@ -91,7 +93,7 @@ Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azur
 
 U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vastgelegd.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw Tenant bevat.
 3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 4. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
@@ -100,7 +102,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `SalesforceSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -121,8 +123,7 @@ U kunt een Sales Force-account definiëren als een claim provider door deze toe 
           <DisplayName>Salesforce</DisplayName>
           <Protocol Name="OpenIdConnect" />
           <Metadata>
-            <!-- Update the {org} below to your Salesforce organization -->
-            <Item Key="METADATA">https://{org}.my.salesforce.com/.well-known/openid-configuration</Item>
+            <Item Key="METADATA">https://login.salesforce.com/.well-known/openid-configuration</Item>
             <Item Key="response_types">code</Item>
             <Item Key="response_mode">form_post</Item>
             <Item Key="scope">openid id profile email</Item>
@@ -154,7 +155,7 @@ U kunt een Sales Force-account definiëren als een claim provider door deze toe 
     </ClaimsProvider>
     ```
 
-4. Stel de **meta gegevens** `{org}` -URI in met uw Sales Force-organisatie.
+4. De **meta gegevens** worden ingesteld op de URL van het [configuratie document Sales Force OpenID Connect Connect](https://help.salesforce.com/articleView?id=remoteaccess_using_openid_discovery_endpoint.htm). Voor een sandbox wordt login.salesforce.com vervangen door test.salesforce.com. Voor een community wordt login.salesforce.com vervangen door de Community-URL, zoals username.force.com/.well-known/openid-configuration. De URL moet HTTPS zijn.
 5. Stel **client_id** van de toepassings-id in voor de registratie van de toepassing.
 6. Sla het bestand op.
 

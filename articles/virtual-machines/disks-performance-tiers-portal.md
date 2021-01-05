@@ -4,16 +4,16 @@ description: Meer informatie over het wijzigen van de prestatie lagen voor nieuw
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 11/19/2020
+ms.date: 01/05/2021
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: a868d5d236cf4c5a8d29f15490909c2f1a53546f
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 625fb1e3dd0b433da6b60f995aa6b380c23ec9ce
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "96016568"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901016"
 ---
 # <a name="change-your-performance-tier-using-the-azure-portal"></a>Uw prestatie niveau wijzigen met behulp van de Azure Portal
 
@@ -29,7 +29,7 @@ ms.locfileid: "96016568"
 
 De volgende stappen laten zien hoe u de prestatie laag van de schijf wijzigt wanneer u de schijf voor het eerst maakt:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Ga naar de virtuele machine waarvoor u een nieuwe schijf wilt maken.
 1. Wanneer u de nieuwe schijf selecteert, kiest u eerst de grootte van de schijf die u nodig hebt.
 1. Wanneer u een grootte hebt geselecteerd, selecteert u een andere prestatie categorie om de prestaties te wijzigen.
@@ -42,12 +42,12 @@ De volgende stappen laten zien hoe u de prestatie laag van de schijf wijzigt wan
 
 In de volgende stappen wordt uitgelegd hoe u de prestatie tier van een bestaande schijf wijzigt:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Ga naar de virtuele machine met de schijf die u wilt wijzigen.
 1. Maak de toewijzing van de virtuele machine ongedaan of ontkoppel de schijf.
 1. Uw schijf selecteren
 1. Selecteer **formaat en prestaties**.
-1. Selecteer in de vervolg keuzelijst **prestatie lagen** een laag die afwijkt van de huidige basis lijn van de schijf.
+1. Selecteer in de vervolg keuzelijst **prestatie laag** een andere laag dan de huidige prestatie laag van de schijf.
 1. Selecteer **Formaat wijzigen**.
 
 :::image type="content" source="media/disks-performance-tiers-portal/change-tier-existing-disk.png" alt-text="Scherm afbeelding van de Blade formaat en prestaties, prestatie niveau is gemarkeerd." lightbox="media/disks-performance-tiers-portal/performance-tier-settings.png":::

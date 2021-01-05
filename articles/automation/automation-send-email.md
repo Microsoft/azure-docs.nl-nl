@@ -3,14 +3,14 @@ title: Een e-mailbericht verzenden vanuit een Azure Automation-runbook
 description: In dit artikel leest u hoe u een e-mailbericht verzendt vanuit een runbook.
 services: automation
 ms.subservice: process-automation
-ms.date: 07/15/2019
+ms.date: 01/05/2021
 ms.topic: conceptual
-ms.openlocfilehash: a81ae680a5f04eca0a6cc01ee24b474cc5daabea
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 65fa226b368baa3b1d4f376600e610a518c48c02
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97005202"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900318"
 ---
 # <a name="send-an-email-from-a-runbook"></a>Een e-mailbericht vanuit een runbook verzenden
 
@@ -67,7 +67,7 @@ Zie [Key Vault-quickstarts](../key-vault/index.yml) voor andere manieren om een 
 
 Als u Azure Key Vault binnen een runbook wilt gebruiken, moet u de volgende modules importeren in uw Automation-account:
 
-* [Az.Profile](https://www.powershellgallery.com/packages/Az.Profile)
+* [Az.Accounts](https://www.powershellgallery.com/packages/Az.Accounts)
 * [Az.KeyVault](https://www.powershellgallery.com/packages/Az.KeyVault)
 
 Zie [Az-modules importeren](shared-resources/modules.md#import-az-modules) voor instructies.
@@ -142,7 +142,7 @@ Als u uw test-e-mailbericht in eerste instantie niet ziet, controleert u de mapp
 
 1. Wanneer u het runbook niet meer nodig hebt, selecteert u het in de lijst met runbooks en klikt u op **Verwijderen**.
 
-2. Verwijder de Key Vault met behulp van de cmdlet [Remove-AzKeyVault](/powershell/module/az.keyvault/remove-azkeyvault?view=azps-3.7.0).
+2. Verwijder de Key Vault met behulp van de cmdlet [Remove-AzKeyVault](/powershell/module/az.keyvault/remove-azkeyvault).
 
 ```azurepowershell-interactive
 $VaultName = "<your KeyVault name>"

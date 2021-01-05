@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc3dce8bb51299eb78bd2958eebf7a69594318a4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 3bba64f8c07545107d57f79ae94dab96e517815f
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546468"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900702"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Problemen met licentie toewijzing voor een groep in Azure Active Directory identificeren en oplossen
 
@@ -68,7 +68,6 @@ Als u wilt zien welke gebruikers en groepen licenties gebruiken, selecteert u ee
 
 Bekijk het volgende voorbeeld. Een gebruiker heeft rechtstreeks een licentie voor Office 365 Enter prise *E1* toegewezen, waarbij alle abonnementen zijn ingeschakeld. De gebruiker is toegevoegd aan een groep waaraan het Office 365 Enter prise *E3* -product is toegewezen. Het E3-product bevat service plannen die niet kunnen overlappen met de abonnementen die zijn opgenomen in E1, waardoor de toewijzing van de groeps licentie mislukt met de fout ' conflicterende service abonnementen '. In dit voor beeld zijn de conflicterende service plannen:
 
-- Share point online (abonnement 2) is in conflict met share point online (abonnement 1).
 - Exchange Online (abonnement 2) veroorzaakt een conflict met Exchange Online (abonnement 1).
 
 Als u dit conflict wilt oplossen, moet u twee van de plannen uitschakelen. U kunt de E1-licentie die rechtstreeks aan de gebruiker is toegewezen, uitschakelen. Of u moet de volledige toewijzing van de groeps licentie wijzigen en de plannen uitschakelen in de E3-licentie. U kunt er ook voor kiezen om de E1-licentie van de gebruiker te verwijderen als deze overbodig is in de context van de E3-licentie.

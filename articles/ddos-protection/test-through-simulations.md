@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 55692122461ef1b22b43b0def43e826ac7aeae30
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: e3a665e3615c9ff3a68cf13eeaef5e8f41632f6a
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813782"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900357"
 ---
 # <a name="test-through-simulations"></a>Testen via simulaties
 
@@ -42,9 +42,9 @@ We hebben een partnerschap gemaakt met [BreakingPoint Cloud](https://www.ixiacom
     |---------      |---------                                          |
     |Doel-IP-adres           | Voer een van uw open bare IP-adressen in die u wilt testen.                     |
     |Poortnummer   | Voer _443_ in.                       |
-    |DDoS-profiel | Selecteer **TCP SYN flood**.|
-    |Test grootte       | Selecteer **van persoonlijkheden PPS, 100 Mbps en 8 bron-ip's.**                                  |
-    |Test duur | Selecteer **10 minuten**.|
+    |DDoS-profiel | Mogelijke waarden zijn **DNS-Flooding**, **NTPv2 Flooding**, **SSDP-Flooding**, **TCP SYN Flooding**, **UDP 64B flood**, **UDP 128B flood**, **UDP 256B flood**, **UDP 512B flood**, **UDP 1024B flood**, **UDP 1514B flood**, **UDP-fragmentatie** **UDP memcached**.|
+    |Test grootte       | Mogelijke waarden zijn **100.000 PPS, 50 Mbps en 4 bron-ip's**, **van persoonlijkheden PPS, 100 Mbps en 8 bron-ip's**, **400K PPS, 200 Mbps en 16 bron** Ip's, **800K PPS, 400 Mbps en 32 bron ip's**.                                  |
+    |Test duur | Mogelijke waarden zijn **10 minuten**, **15 minuten**, **20 minuten**, **25 minuten**, **30 minuten**.|
 
 Dit moet er nu als volgt uitzien:
 

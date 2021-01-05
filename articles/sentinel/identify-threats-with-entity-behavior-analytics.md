@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/19/2020
 ms.author: yelevin
-ms.openlocfilehash: a0a677342534cd92d5530199076e3d2e7084134d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 2326746d274c68225cd4c8569df6a20d6050ec1a
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95494774"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900889"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
@@ -91,7 +91,7 @@ De volgende typen entiteiten worden momenteel geïdentificeerd in azure Sentinel
 - Host
 - IP-adres (IP)
 - Malware
-- Bestand
+- File
 - Proces
 - Cloud toepassing (CloudApplication)
 - Domein naam (DNS)
@@ -177,6 +177,8 @@ Entiteits pagina's zijn ontworpen om deel uit te maken van meerdere gebruiks sce
 | **ActivityInsights**      | contextuele analyse van de activiteit op basis van onze profilering              |
 | **InvestigationPriority** | afwijkings Score, tussen 0-10 (0 = goed aardig, 10 = sterk afwijkend)         |
 |
+
+U kunt de volledige set contextuele verrijkingen waarnaar wordt verwezen in **UsersInsights**, **DevicesInsights** en **ActivityInsights** , bekijken in het [referentie document voor UEBA-verrijkingen](ueba-enrichments.md).
 
 ### <a name="querying-behavior-analytics-data"></a>Query's uitvoeren op de analyse gegevens van gedrag
 

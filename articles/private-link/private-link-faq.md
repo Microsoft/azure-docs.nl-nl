@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: 2e5edb0ccf20ab0dba14864487f2b2ddef7d57e7
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: c074c29b7a37f49d5a4c7a5fab00b9a3e41c6893
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544204"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901535"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen over persoonlijke koppelingen van Azure
 
@@ -43,8 +43,8 @@ Ja. U kunt meerdere persoonlijke eind punten hebben in hetzelfde VNet of subnet.
 ### <a name="do-i-require-a-dedicated-subnet-for-private-endpoints"></a>Is er een toegewezen subnet vereist voor privé-eind punten? 
 Nee. U hebt geen toegewezen subnet voor privé-eind punten nodig. U kunt een privé-eindpunt-IP-adres kiezen uit elk subnet van het VNet waar uw service is geïmplementeerd.  
  
-### <a name="can-private-endpoint-connect-to-private-link-service-across-azure-active-directory-tenants"></a>Kan een persoonlijk eind punt verbinding maken met de service voor persoonlijke koppelingen tussen Azure Active Directory tenants? 
-Ja. Privé-eind punten kunnen verbinding maken met persoonlijke koppelings Services of Azure PaaS over AD-tenants.  
+### <a name="can-a-private-endpoint-connect-to-private-link-services-across-azure-active-directory-tenants"></a>Kan een persoonlijk eind punt verbinding maken met persoonlijke koppelings services tussen Azure Active Directory tenants? 
+Ja. Privé-eind punten kunnen verbinding maken met persoonlijke koppelings Services of met een Azure-PaaS over Azure Active Directory-tenants. Voor privé-eind punten die verbinding maken tussen tenants, moet hand matige goed keuring worden aangevraagd. 
  
 ### <a name="can-private-endpoint-connect-to-azure-paas-resources-across-azure-regions"></a>Kan een persoonlijk eind punt verbinding maken met Azure PaaS-resources in azure-regio's?
 Ja. Privé-eind punten kunnen verbinding maken met Azure PaaS-resources in azure-regio's.

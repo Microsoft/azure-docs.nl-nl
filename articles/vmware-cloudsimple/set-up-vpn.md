@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing door CloudSimple-VPN configureren tussen on-premises en Privécloud
 description: Hierin wordt beschreven hoe u een site-naar-site-of punt-naar-site-VPN-verbinding configureert tussen uw on-premises netwerk en uw CloudSimple-Privécloud
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 5cd08ce938a25e3311358892c9afa9eefd6c6dbf
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: b7a119b538ee07b961011bfa98d748f92cc76f0e
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424668"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899215"
 ---
 # <a name="configure-a-vpn-connection-to-your-cloudsimple-private-cloud"></a>Een VPN-verbinding met uw CloudSimple-Privécloud configureren
 
@@ -79,7 +79,7 @@ Met een punt-naar-site-VPN-verbinding worden de DNS-namen van de eerste Privécl
 
 1. Start de [CloudSimple-Portal](access-cloudsimple-portal.md).
 
-2. Navigeer naar **Resources**  >  **persoonlijke Clouds** van resources en selecteer de privécloud waarmee u verbinding wilt maken.
+2. Navigeer naar   >  **persoonlijke Clouds** van resources en selecteer de privécloud waarmee u verbinding wilt maken.
 
 3. Op de pagina **samen vatting** van de privécloud kopieert u het IP-adres van de DNS-server van de Privécloud onder **basis informatie**.
 

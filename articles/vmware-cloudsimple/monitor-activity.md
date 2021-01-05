@@ -2,19 +2,19 @@
 title: Activiteiten van de Privécloud controleren
 titleSuffix: Azure VMware Solution by CloudSimple
 description: Beschrijft de beschik bare informatie over activiteiten in de Azure VMware-oplossing op CloudSimple omgeving, met inbegrip van waarschuwingen, gebeurtenissen, taken en controle.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/13/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 1228f3a54e02d4fe7a5133e2bfba55c38e34718a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb597cc71d228a1daaaa4e52d76b301764ff9292
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77019669"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899300"
 ---
 # <a name="monitor-vmware-solution-by-cloudsimple-activity"></a>VMware-oplossing op CloudSimple-activiteit bewaken
 
@@ -50,7 +50,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 ------------ | ------------- |
 | Waarschuwings type | Categorie van de waarschuwing.|
 | Tijd | Tijdstip waarop de waarschuwing is opgetreden. |
-| Ernst | Significantie van de waarschuwing.|
+| Severity | Significantie van de waarschuwing.|
 | Resourcenaam | De naam die is toegewezen aan de resource, zoals de naam van de Privécloud. |
 | Resourcetype | Categorie van resource: Privécloud, Cloud rack. |
 | Resource-id | De id van de resource. |
@@ -67,7 +67,7 @@ De volgende kolommen met informatie zijn beschikbaar voor waarschuwingen. Klik o
 ------------ | ------------- |
 | Tijd | De datum en tijd waarop de gebeurtenis heeft plaatsgevonden. |
 | Gebeurtenistype | Numerieke code waarmee de gebeurtenis wordt aangeduid. |
-| Ernst | Ernst van gebeurtenis.|
+| Severity | Ernst van gebeurtenis.|
 | Resourcenaam | De naam die is toegewezen aan de resource, zoals de naam van de Privécloud. |
 | Resourcetype | Categorie van resource: Privécloud, Cloud rack. |
 | Beschrijving | Beschrijving van de trigger van de waarschuwing. |

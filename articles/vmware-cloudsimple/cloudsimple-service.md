@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing op CloudSimple-service
 description: Meer informatie over de CloudSimple-service met zijn overzicht. Door de service te maken, kunt u knoop punten aanschaffen, knoop punten reserveren en persoonlijke clouds maken.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/20/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ec77209c0995bf5aec0957c8d4d2269f27d743bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f32197eda4fc7632e883fd21dd6e1caa0dbd24b
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88142125"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898739"
 ---
 # <a name="cloudsimple-service-overview"></a>Overzicht van de CloudSimple-service
 

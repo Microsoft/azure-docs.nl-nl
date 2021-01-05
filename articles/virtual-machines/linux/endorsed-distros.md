@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: conceptual
-ms.date: 10/09/2020
+ms.date: 01/03/2021
 ms.author: guybo
-ms.openlocfilehash: b27b7344d84ce1361d8294fa4f3490c50afbb4c3
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9d278582840404702bfef3e5fc9af395f659d844
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489655"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898076"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Officiële Linux-distributies op Azure
 
@@ -36,7 +36,7 @@ De Azure Linux-agent is al vooraf geïnstalleerd op Azure Marketplace-installati
 | --- | --- | --- | --- |
 | CentOS door Rogue Wave software |CentOS 6. x, 7. x, 8. x |CentOS 6,3: [Lis downloaden](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4 +: in kernel |Pakket: in [opslag plaats](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) onder WALinuxAgent <br/>Bron code: [github](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)<p> CoreOS is nu [eind tijd](https://coreos.com/os/eol/) vanaf 26 mei 2020. |Niet meer beschikbaar | | |
-| Debian door credativ |8.x, 9.x |In kernel |Pakket: in opslag plaats onder waagent <br/>Bron code: [github](https://github.com/Azure/WALinuxAgent) |
+| Debian door credativ |8. x, 9. x, 10. x |In kernel |Pakket: in opslag plaats onder waagent <br/>Bron code: [github](https://github.com/Azure/WALinuxAgent) |
 |Flatcar container Linux door Kinvolk| Pro, stabiel, bèta| In kernel | WA-Linux-agent is al geïnstalleerd in/usr/share/OEM/bin/waagent |
 | Oracle Linux door Oracle |6.x, 7.x, 8.x |In kernel |Pakket: in opslag plaats onder WALinuxAgent <br/>Bron code: [github](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | [Red Hat Enterprise Linux door Red Hat](../workloads/redhat/overview.md) |6.x, 7.x, 8.x |In kernel |Pakket: in opslag plaats onder WALinuxAgent <br/>Bron code: [github](https://github.com/Azure/WALinuxAgent) |

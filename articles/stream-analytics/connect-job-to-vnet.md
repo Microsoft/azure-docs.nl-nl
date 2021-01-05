@@ -6,14 +6,14 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/23/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a2d26689a3036f05d7c8e7f417fbbb447402aedc
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: f140384ee2c78b38982c99dab5912bc451584a42
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762857"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898144"
 ---
 # <a name="connect-stream-analytics-jobs-to-resources-in-an-azure-virtual-network-vnet"></a>Stream Analytics-taken verbinden met resources in een Azure Virtual Network (VNet)
 
@@ -41,7 +41,7 @@ Uw taken kunnen met behulp van deze techniek verbinding maken met de volgende Az
 1. [Blob Storage of Azure data Lake Storage Gen2](https://docs.microsoft.com/azure/stream-analytics/blob-output-managed-identity) : kan het opslag account van uw taak, de invoer of uitvoer van streams zijn.
 2. [Azure-Event hubs](https://docs.microsoft.com/azure/stream-analytics/event-hubs-managed-identity) : kan de stroomsgewijze invoer of uitvoer van uw taak zijn.
 
-Als uw taken verbinding moeten maken met andere invoer-of uitvoer typen, is de enige optie voor het gebruik van privé-eind punten in Stream Analytics clusters.
+Als uw taken verbinding moeten maken met andere invoer-of uitvoer typen, kunt u eerst van Stream Analytics naar Event Hubs uitvoer schrijven en vervolgens naar een wille keurige gewenste bestemming met behulp van Azure Functions. Als u rechtstreeks wilt schrijven van Stream Analytics naar andere uitvoer typen die zijn beveiligd in een VNet of firewall, is de enige optie om privé-eind punten in Stream Analytics clusters te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

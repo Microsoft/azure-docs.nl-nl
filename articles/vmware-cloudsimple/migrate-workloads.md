@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing door CloudSimple-werk belasting Vm's migreren naar Privécloud
 description: Hierin wordt beschreven hoe u virtuele machines migreert van on-premises vCenter naar CloudSimple Private Cloud vCenter
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/20/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 87b8a112a319519dbde977ee30136a884137212d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 851305775d14ed371440434b2fbe9334ec0a21b9
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77019992"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899317"
 ---
 # <a name="migrate-workload-vms-from-on-premises-vcenter-to-private-cloud-vcenter-environment"></a>Werkbelasting-Vm's migreren van on-premises vCenter naar een Privécloud-vCenter-omgeving
 

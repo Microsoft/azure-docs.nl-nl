@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing door CloudSimple-vSAN-versleuteling configureren voor Privécloud
 description: Hierin wordt beschreven hoe u de functie voor vSAN-software versleuteling configureert, zodat uw persoonlijke cloud van CloudSimple kan worden gebruikt in combi natie met een sleutel beheer server die wordt uitgevoerd in uw virtuele Azure-netwerk.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 638b60bd3612fa25350ecef0a738fea75c2f53d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5da05c7f3c6878b0804799360e512676b9002d3
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77020638"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899045"
 ---
 # <a name="configure-vsan-encryption-for-cloudsimple-private-cloud"></a>VSAN-versleuteling configureren voor de Privécloud van CloudSimple
 
@@ -98,9 +98,9 @@ Ga in vCenter naar **Cluster > configureren** en selecteer **algemene** optie vo
 
 ![VSAN-versleuteling inschakelen en KMS-cluster configureren in vCenter](media/vsan-config02.png)
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
-### <a name="azure"></a>Azuur
+### <a name="azure"></a>Azure
 
 [Een virtuele netwerk gateway configureren voor ExpressRoute met behulp van de Azure Portal](../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md)
 

@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/13/2017
+ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: 1f9b9e91cda93a986fdaaf0f53d8987544e783a2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d465106725e9b936172fb74e1cc265c14942f662
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966459"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898093"
 ---
 # <a name="read-nsg-flow-logs"></a>NSG-stroomlogboeken lezen
 

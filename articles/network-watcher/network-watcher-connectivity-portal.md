@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/03/2017
+ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: e8d46d6428204727bc6d63dc156eda195040c513
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f33c5f0fdf69737df0d8bd83499ded1e0e0f4f88
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494168"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898110"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-portal"></a>Verbindingen met Azure Network Watcher met de Azure Portal oplossen
 

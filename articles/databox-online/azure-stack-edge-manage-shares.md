@@ -1,27 +1,27 @@
 ---
-title: Azure Stack Edge Pro-share beheer | Microsoft Docs
-description: Hierin wordt beschreven hoe u de Azure Portal gebruikt om shares te beheren op uw Azure Stack Edge Pro.
+title: Azure Stack Edge Pro-FPGA share Management | Microsoft Docs
+description: Hierin wordt beschreven hoe u de Azure Portal gebruikt om shares te beheren op uw Azure Stack Edge Pro-FPGA.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 03/25/2019
+ms.date: 01/04/2021
 ms.author: alkohli
-ms.openlocfilehash: 4d43b70c8f958ad37b6ac2d0ee043d5f07d11da9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7fbb5ca43d2877e2e14914b71df7cc1bcdf27f88
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444593"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898232"
 ---
-# <a name="use-the-azure-portal-to-manage-shares-on-azure-stack-edge-pro"></a>De Azure Portal gebruiken om shares te beheren op Azure Stack Edge Pro
+# <a name="use-the-azure-portal-to-manage-shares-on-azure-stack-edge-pro-fpga"></a>Gebruik de Azure Portal om shares te beheren op Azure Stack Edge Pro FPGA 
 
-In dit artikel wordt beschreven hoe u shares kunt beheren op uw Azure Stack Edge Pro. U kunt de Azure Stack Edge Pro beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om shares toe te voegen, te verwijderen, te vernieuwen of de opslag sleutel te synchroniseren voor opslag accounts die zijn gekoppeld aan de shares.
+In dit artikel wordt beschreven hoe u shares kunt beheren op uw Azure Stack Edge Pro FPGA-apparaat. U kunt het Azure Stack Edge Pro FPGA-apparaat beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om shares toe te voegen, te verwijderen, te vernieuwen of de opslag sleutel te synchroniseren voor opslag accounts die zijn gekoppeld aan de shares.
 
 ## <a name="about-shares"></a>Info over shares
 
-Als u gegevens wilt overdragen naar Azure, moet u shares maken op uw Azure Stack Edge Pro. De shares die u toevoegt op het Azure Stack Edge Pro-apparaat kunnen lokale shares zijn of shares die gegevens pushen naar de Cloud.
+Als u gegevens wilt overdragen naar Azure, moet u shares maken op uw Azure Stack Edge Pro-FPGA. De shares die u toevoegt op het Azure Stack Edge Pro-apparaat kunnen lokale shares zijn of shares die gegevens pushen naar de Cloud.
 
  - **Lokale shares**: gebruik deze shares wanneer u wilt dat de gegevens lokaal worden verwerkt op het apparaat.
  - **Shares**: gebruik deze shares als u wilt dat de apparaatgegevens automatisch naar uw opslag account in de cloud worden gepusht. Alle Cloud functies, zoals **vernieuwen** en **synchronisatie van opslag sleutels** , zijn van toepassing op de shares.
@@ -39,7 +39,7 @@ In dit artikel leert u het volgende:
 
 Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Gateway > shares**. Selecteer **+ share toevoegen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **gateway van de Cloud opslag**. Ga naar **shares** en selecteer **+ share toevoegen** op de opdracht balk.
 
     ![Selecteer share toevoegen](media/azure-stack-edge-manage-shares/add-share-1.png)
 
@@ -72,7 +72,7 @@ Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
 ## <a name="add-a-local-share"></a>Een lokale share toevoegen
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Gateway > shares**. Selecteer **+ share toevoegen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**. Selecteer **+ share toevoegen** op de opdracht balk.
 
    ![Selecteer share 2 toevoegen](media/azure-stack-edge-manage-shares/add-local-share-1.png)
 
@@ -96,15 +96,13 @@ Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
    ![Blade met updates shares weer geven](media/azure-stack-edge-manage-shares/add-local-share-3.png)
     
-    Selecteer de share om de lokale koppel punt voor de Edge Compute-modules voor deze share weer te geven.
 
-   ![Details van lokale share weer geven](media/azure-stack-edge-manage-shares/add-local-share-4.png)
 
 ## <a name="mount-a-share"></a>Een share koppelen
 
 Als u een share hebt gemaakt voordat u Compute hebt geconfigureerd op uw Azure Stack Edge Pro-apparaat, moet u de share koppelen. Voer de volgende stappen uit om een share te koppelen.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Gateway > shares**. Selecteer in de lijst met shares de share die u wilt koppelen. In de kolom **gebruikt voor berekening** wordt de status **uitgeschakeld** weer gegeven voor de geselecteerde share.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**. Selecteer in de lijst met shares de share die u wilt koppelen. In de kolom **gebruikt voor berekening** wordt de status **uitgeschakeld** weer gegeven voor de geselecteerde share.
 
    ![Share 3 selecteren](media/azure-stack-edge-manage-shares/select-share-mount.png)
 
@@ -122,13 +120,13 @@ Als u een share hebt gemaakt voordat u Compute hebt geconfigureerd op uw Azure S
 
 5. Selecteer de share opnieuw om de lokale koppel punt voor de share weer te geven. De Edge Compute-module maakt gebruik van deze lokale koppel punt voor de share.
 
-   ![Lokale koppel punt voor de share](media/azure-stack-edge-manage-shares/share-mountpoint.png)
+   ![Lokale koppel punt voor de share](media/azure-stack-edge-manage-shares/share-mountpoint.png) 
 
 ## <a name="unmount-a-share"></a>Een share ontkoppelen
 
 Voer de volgende stappen uit in de Azure Portal om een share te ontkoppelen.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Gateway > shares**.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**.
 
    ![Share 4 selecteren](media/azure-stack-edge-manage-shares/select-share-unmount.png)
 
@@ -148,13 +146,13 @@ Voer de volgende stappen uit in de Azure Portal om een share te ontkoppelen.
 
 Voer in de Azure Portal de volgende stappen uit om een share te verwijderen.
 
-1. Klik in de lijst met shares op de share die u wilt verwijderen.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**. Klik in de lijst met shares op de share die u wilt verwijderen.
 
    ![Share 5 selecteren](media/azure-stack-edge-manage-shares/delete-share-1.png)
 
-2. Klik op **Verwijderen**.
+2. Selecteer **Verwijderen**.
 
-   ![Op Verwijderen klikken](media/azure-stack-edge-manage-shares/delete-share-2.png)
+   ![Verwijderen selecteren](media/azure-stack-edge-manage-shares/delete-share-2.png)
 
 3. Klik op **Ja** als u om bevestiging wordt gevraagd.
 
@@ -173,15 +171,15 @@ Met de functie voor vernieuwen kunt u de inhoud van een share vernieuwen. Wannee
 
 Voer in de Azure Portal de volgende stappen uit om een share te vernieuwen.
 
-1. Ga in de Azure Portal naar **Shares**. Klik op de share die u wilt vernieuwen.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**. Klik op de share die u wilt vernieuwen.
 
    ![Selecteer share 6](media/azure-stack-edge-manage-shares/refresh-share-1.png)
 
-2. Klik op **Vernieuwen**.
+2. Selecteer **gegevens vernieuwen**.
 
-   ![Op Vernieuwen klikken](media/azure-stack-edge-manage-shares/refresh-share-2.png)
+   ![Vernieuwen selecteren](media/azure-stack-edge-manage-shares/refresh-share-2.png)
  
-3. Klik op **Ja** als u om bevestiging wordt gevraagd. Er wordt een taak gestart om de inhoud van de on-premises share te vernieuwen.
+3. Selecteer **Ja** als u om bevestiging wordt gevraagd. Er wordt een taak gestart om de inhoud van de on-premises share te vernieuwen.
 
    ![Vernieuwen bevestigen](media/azure-stack-edge-manage-shares/refresh-share-3.png)
 
@@ -199,7 +197,7 @@ Als de sleutels van uw opslagaccount zijn geroteerd, moet u de toegangssleutels 
 
 Voer in de Azure Portal de volgende stappen uit om uw toegangssleutel voor opslag te synchroniseren.
 
-1. Ga in uw resource naar **Overzicht**. Klik in de lijst met shares op een share die is gekoppeld aan het opslagaccount dat u wilt synchroniseren.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar de **Cloud Storage gateway > shares**. Klik in de lijst met shares op een share die is gekoppeld aan het opslagaccount dat u wilt synchroniseren.
 
     ![Selecteer delen met relevant opslag account](media/azure-stack-edge-manage-shares/sync-storage-key-1.png)
 

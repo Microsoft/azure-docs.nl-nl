@@ -1,19 +1,19 @@
 ---
 title: 'Quick Start: een Azure VMware-VM maken op een Privécloud-Azure VMware-oplossing door CloudSimple'
 description: Meer informatie over het maken van een virtuele VMware-machine op CloudSimple-Privécloud. Open de CloudSimple-Portal vanuit het Azure Portal.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/16/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: fd67a5a7f1bf665333e06c66f73c7f18727a3e12
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: c741f01ccc3e34ec991aa77fc850fd9f60c4d8aa
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427765"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899283"
 ---
 # <a name="create-vmware-virtual-machines-on-your-private-cloud"></a>Virtuele VMware-machines maken in uw Privécloud
 
@@ -36,7 +36,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 U kunt nu vCenter starten om virtuele machines en beleids regels in te stellen.
 
-Als u toegang wilt krijgen tot vCenter, start u vanuit de CloudSimple-Portal. Klik op de start pagina onder **algemene taken**op **VSphere-client starten**.  Selecteer de privécloud en klik vervolgens op **vSphere-client starten** op de privécloud.
+Als u toegang wilt krijgen tot vCenter, start u vanuit de CloudSimple-Portal. Klik op de start pagina onder **algemene taken** op **VSphere-client starten**.  Selecteer de privécloud en klik vervolgens op **vSphere-client starten** op de privécloud.
 
    ![VSphere-client starten](media/launch-vcenter-from-cloudsimple-portal.png)
 
@@ -78,7 +78,7 @@ Als u toegang wilt krijgen tot vCenter, start u vanuit de CloudSimple-Portal. Kl
 8. Selecteer het gast besturingssysteem van de ISO voor de virtuele machine die u maakt en klik op **volgende**.
     ![Scherm afbeelding die laat zien hoe u het guese-besturings systeem van de ISO selecteert voor de virtuele machine.](media/vcvm07.png)
 
-9. Selecteer de opties voor harde schijf en netwerk. Selecteer **ISO-bestand Data Store**voor nieuwe cd/dvd-stations.  Als u verkeer van het open bare IP-adres naar deze VM wilt toestaan, selecteert u het netwerk als **VM-1**.
+9. Selecteer de opties voor harde schijf en netwerk. Selecteer **ISO-bestand Data Store** voor nieuwe cd/dvd-stations.  Als u verkeer van het open bare IP-adres naar deze VM wilt toestaan, selecteert u het netwerk als **VM-1**.
     ![Scherm opname van de locatie waar u het ISO-bestand Data Store selecteert.](media/vcvm08.png)
 
 10. Er wordt een selectie venster geopend. Selecteer het bestand dat u eerder hebt geüpload naar de map Iso's en templates en klik op **OK**.

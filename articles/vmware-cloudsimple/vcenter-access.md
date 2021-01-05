@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing op CloudSimple-Access vSphere-client
 description: Hierin wordt beschreven hoe u toegang krijgt tot de vCenter van uw Privécloud.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/30/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 18d9463bc512257034860e1188372879524924f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e62042a84f7ac2615762e3d9b036e4340bd8c73
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77022661"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899113"
 ---
 # <a name="access-your-private-cloud-vcenter-portal"></a>Toegang tot uw Private Cloud vCenter-Portal
 

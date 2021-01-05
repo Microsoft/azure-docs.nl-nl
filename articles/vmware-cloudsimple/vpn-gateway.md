@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing door CloudSimple: een VPN-gateway instellen'
 description: Hierin wordt beschreven hoe u punt-naar-site-VPN-gateway en site-naar-site-VPN-gateway instelt en verbindingen maakt tussen uw on-premises netwerk en uw CloudSimple-Privécloud
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a8b7e238333196381524d189904871fe5933c906
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78f78bfbf885cbae7708a75cb54ce2d41e7b526c
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91871997"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899096"
 ---
 # <a name="set-up-vpn-gateways-on-cloudsimple-network"></a>VPN-gateways instellen op het CloudSimple-netwerk
 
@@ -44,7 +44,7 @@ Met een punt-naar-site-VPN-gateway kunt u een beleid voor automatische toevoegin
 
     ![Een VPN-gateway maken](media/create-vpn-gateway.png)
 
-4. Geef voor **Gateway configuratie**de volgende instellingen op en klik op **volgende**.
+4. Geef voor **Gateway configuratie** de volgende instellingen op en klik op **volgende**.
 
     * Selecteer **site-naar-site-VPN** als het gateway type.
     * Voer een naam in om de gateway te identificeren.
@@ -62,15 +62,15 @@ Met een punt-naar-site-VPN-gateway kunt u een beleid voor automatische toevoegin
     * Voer het open bare IP-adres van uw on-premises VPN-gateway in voor de peer-IP.
     * Voer de peer-id van uw on-premises VPN-gateway in.  De peer-id is doorgaans het open bare IP-adres van uw on-premises VPN-gateway.  Als u een specifieke id op uw gateway hebt geconfigureerd, voert u de id in.
     * Kopieer de gedeelde sleutel die moet worden gebruikt voor de verbinding van uw on-premises VPN-gateway.  Als u de standaard gedeelde sleutel wilt wijzigen en een nieuwe wilt opgeven, klikt u op het pictogram bewerken.
-    * Voor **on-premises voor voegsels**voert u de on-premises CIDR-voor voegsels in die toegang hebben tot het CloudSimple-netwerk.  U kunt meerdere CIDR-voor voegsels toevoegen wanneer u de verbinding maakt.
+    * Voor **on-premises voor voegsels** voert u de on-premises CIDR-voor voegsels in die toegang hebben tot het CloudSimple-netwerk.  U kunt meerdere CIDR-voor voegsels toevoegen wanneer u de verbinding maakt.
 
     ![Site-naar-site-VPN-gateway verbinding maken](media/create-vpn-gateway-s2s-connection.png)
 
 6. Schakel de VLAN/subnetten in op uw particuliere cloud netwerk dat toegankelijk is vanaf het on-premises netwerk en klik op **volgende**.
 
-    * Als u een management-VLAN/-subnet wilt toevoegen, schakelt u **vlan's voor beheer/subnetten van persoonlijke Clouds toevoegen**in.  Het subnet van het beheer is vereist voor vMotion-en vSAN-subnetten.
-    * Als u vMotion-subnets wilt toevoegen, schakelt u het **toevoegen van VMotion-netwerk van persoonlijke Clouds**in.
-    * Als u vSAN-subnetten wilt toevoegen, schakelt u **vSAN subnet van persoonlijke Clouds toevoegen**in.
+    * Als u een management-VLAN/-subnet wilt toevoegen, schakelt u **vlan's voor beheer/subnetten van persoonlijke Clouds toevoegen** in.  Het subnet van het beheer is vereist voor vMotion-en vSAN-subnetten.
+    * Als u vMotion-subnets wilt toevoegen, schakelt u het **toevoegen van VMotion-netwerk van persoonlijke Clouds** in.
+    * Als u vSAN-subnetten wilt toevoegen, schakelt u **vSAN subnet van persoonlijke Clouds toevoegen** in.
     * Selecteer een of meer specifieke VLAN'S.
 
     ![Verbinding maken](media/create-vpn-gateway-s2s-connection-vlans.png)
@@ -87,14 +87,14 @@ Met een punt-naar-site-VPN-gateway kunt u een beleid voor automatische toevoegin
 
     ![Een VPN-gateway maken](media/create-vpn-gateway.png)
 
-4. Geef voor **Gateway configuratie**de volgende instellingen op en klik op **volgende**.
+4. Geef voor **Gateway configuratie** de volgende instellingen op en klik op **volgende**.
 
     * Selecteer **punt-naar-site-VPN** als het gateway type.
     * Voer een naam in om de gateway te identificeren.
     * Selecteer de Azure-locatie waar uw CloudSimple-service is geïmplementeerd.
     * Geef het client subnet op voor de punt-naar-site-gateway.  Wanneer u verbinding maakt, wordt er een DHCP-adres van het client-subnet gegeven.
 
-5. Geef voor **verbinding/gebruiker**de volgende instellingen op en klik op **volgende**.
+5. Geef voor **verbinding/gebruiker** de volgende instellingen op en klik op **volgende**.
 
     * Als u wilt dat alle huidige en toekomstige gebruikers automatisch toegang hebben tot de Privécloud via de punt-naar-site-gateway, selecteert u **automatisch alle gebruikers toevoegen**. Wanneer u de optie selecteert, worden alle gebruikers in de lijst met gebruikers automatisch geselecteerd. U kunt de automatische optie onderdrukken door afzonderlijke gebruikers in de lijst uit te scha kelen.
     * Als u afzonderlijke gebruikers wilt selecteren, klikt u op de selectie vakjes in de gebruikers lijst.
@@ -103,7 +103,7 @@ Met een punt-naar-site-VPN-gateway kunt u een beleid voor automatische toevoegin
 
     * Met de opties voor **automatisch toevoegen** wordt het globale beleid voor de gateway ingesteld. De instellingen zijn van toepassing op de huidige gateway. De instellingen kunnen worden overschreven in het gebied **selecteren** .
     * Selecteer **vlan's voor beheer/subnetten van persoonlijke Clouds toevoegen**. 
-    * Klik op door de gebruiker gedefinieerde vlan's  **/subnetten toevoegen**om alle door de gebruiker gedefinieerde vlan's/subnetten toe te voegen.
+    * Klik op door de gebruiker gedefinieerde vlan's  **/subnetten toevoegen** om alle door de gebruiker gedefinieerde vlan's/subnetten toe te voegen.
     * De **selectie** -instellingen overschrijven de algemene instellingen onder **automatisch toevoegen**.
 
 7. Klik op **volgende** om de instellingen te controleren. Klik op de pictogrammen bewerken om wijzigingen aan te brengen.

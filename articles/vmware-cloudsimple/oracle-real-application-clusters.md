@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing door CloudSimple: Optimaliseer uw CloudSimple-Privécloud voor Oracle RAC'
 description: Hierin wordt beschreven hoe u een nieuw cluster implementeert en een virtuele machine optimaliseert voor de installatie en configuratie van Oracle Real Application Clusters (RAC)
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/06/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 980ba86a9916e13dd2ac7639bd06d3ab8546d2f1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 3959aae5f490af10c6747cfa67d9960e0c4a203f
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424690"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899266"
 ---
 # <a name="optimize-your-cloudsimple-private-cloud-for-installing-oracle-rac"></a>Optimaliseer uw CloudSimple-Privécloud voor het installeren van Oracle RAC
 
@@ -87,7 +87,7 @@ Gegevens schijven worden voornamelijk gebruikt voor het opslaan van database bes
 
 * Vier schijven worden geconfigureerd als virtuele schijven en gekoppeld op alle virtuele Oracle RAC-machines.
 * Elke schijf wordt gekoppeld op een andere SCSI-controller.
-* Elke virtuele schijf is geconfigureerd als een **brede inrichting**die in de regel is ingesteld op nul.  
+* Elke virtuele schijf is geconfigureerd als een **brede inrichting** die in de regel is ingesteld op nul.  
 * Delen is ingesteld op **multi Writer**.  
 * De schijven moeten worden geconfigureerd als een schijf groep voor automatische opslag beheer (ASM).  
 * Redundantie wordt gedefinieerd op de opslag met behulp van vSAN-beleid.  
@@ -102,7 +102,7 @@ Logboek bestanden opnieuw uitvoeren worden gebruikt voor het opslaan van een kop
 * Logboek schijven opnieuw moeten worden geconfigureerd als meerdere schijf groepen.  
 * Er worden zes schijven gemaakt en gekoppeld op alle virtuele Oracle RAC-machines.
 * Schijven zijn gekoppeld op verschillende SCSI-controllers
-* Elke virtuele schijf is geconfigureerd als een **brede inrichting**die in de regel is ingesteld op nul.
+* Elke virtuele schijf is geconfigureerd als een **brede inrichting** die in de regel is ingesteld op nul.
 * Delen is ingesteld op **multi Writer**.  
 * De schijven moeten worden geconfigureerd als twee ASM-schijf groepen.
 * Elke ASM-schijf groep bevat drie schijven die zich op verschillende SCSI-controllers bevinden.  
@@ -130,7 +130,7 @@ Stem schijven bieden functionaliteit voor quorum schijven als een extra communic
 
 * Er worden vijf schijven gemaakt en gekoppeld op alle virtuele Oracle RAC-machines.
 * Schijven zijn gekoppeld op één SCSI-controller
-* Elke virtuele schijf is geconfigureerd als een **brede inrichting**die in de regel is ingesteld op nul.
+* Elke virtuele schijf is geconfigureerd als een **brede inrichting** die in de regel is ingesteld op nul.
 * Delen is ingesteld op **multi Writer**.  
 * De schijven moeten worden geconfigureerd als een ASM-schijf groep.  
 * ASM-redundantie is ingesteld op **hoge** redundantie.
@@ -143,7 +143,7 @@ De snelle herstel ruimte (FRA) is het bestands systeem dat wordt beheerd door de
 
 * Er worden twee schijven gemaakt en gekoppeld op alle virtuele Oracle RAC-machines.
 * Schijven zijn gekoppeld op een andere SCSI-controller
-* Elke virtuele schijf is geconfigureerd als een **brede inrichting**die in de regel is ingesteld op nul.
+* Elke virtuele schijf is geconfigureerd als een **brede inrichting** die in de regel is ingesteld op nul.
 * Delen is ingesteld op **multi Writer**.  
 * De schijven moeten worden geconfigureerd als een ASM-schijf groep.  
 * ASM-redundantie is ingesteld op **externe** redundantie.
@@ -174,7 +174,7 @@ met vSAN-beleid worden de fouten gedefinieerd die moeten worden toegestaan en sc
 3. Selecteer in het menu links **VM-opslag beleid** en selecteer vervolgens **een VM-opslag beleid maken**.
 4. Voer een duidelijke naam in voor het beleid en klik op **volgende**.
 5. Selecteer in de sectie **beleids structuur** de optie **regels inschakelen voor vSAN-opslag** en klik op **volgende**.
-6. Selecteer in **vSAN**de  >  sectie**Beschik baarheid** van vSAN **geen** voor site ramp tolerantie. Selecteer de optie voor **RAID-mirroring** voor de gewenste FTT als u niet wilt dat deze kan worden toegelaten.
+6. Selecteer in de  >  sectie **Beschik baarheid** van vSAN **geen** voor site ramp tolerantie. Selecteer de optie voor **RAID-mirroring** voor de gewenste FTT als u niet wilt dat deze kan worden toegelaten.
     ![vSAN-instellingen ](media/oracle-rac-storage-wizard-vsan.png) .
 7. Selecteer in de sectie **Geavanceerd** het aantal schijf Stripes per object. Voor object ruimte reservering selecteert u **dik ingericht**. Selecteer **object controlesom uitschakelen**. Klik op **volgende**.
 8. Volg de instructies op het scherm om de lijst met compatibele vSAN-gegevens opslag te bekijken, de instellingen te controleren en de installatie te volt ooien.
@@ -217,7 +217,7 @@ Oracle gebruikt een gedeelde schijf voor het opslaan van de gegevens, het regist
 6. Geef het VM-opslag beleid op dat u wilt instellen als vSAN-opslag beleid dat u eerder hebt gedefinieerd.
 7. Selecteer de locatie als een map op vSAN gegevens opslag. De locatie helpt bij het bladeren en koppelen van de schijven aan een tweede virtuele machine.
 8. Voor het inrichten van schijven selecteert u de **brede inrichting**.
-9. Geef **multi-Writer**op voor delen.
+9. Geef **multi-Writer** op voor delen.
 10. Selecteer voor het knoop punt van het virtuele apparaat de nieuwe SCSI-controller die is gemaakt in stap 2.
 
     ![Scherm opname van de velden die nodig zijn voor het maken van schijven op de eerste VM.](media/oracle-rac-new-hard-disk.png)
@@ -232,7 +232,7 @@ Herhaal stap 2 tot en met 10 voor alle nieuwe schijven die nodig zijn voor de Or
 4. Blader naar de locatie waar de schijf is gemaakt voor de eerste VM en selecteer het VMDK-bestand.
 5. Geef het VM-opslag beleid op dat u wilt instellen als vSAN-opslag beleid dat u eerder hebt gedefinieerd.
 6. Voor het inrichten van schijven selecteert u de **brede inrichting**.
-7. Geef **multi-Writer**op voor delen.
+7. Geef **multi-Writer** op voor delen.
 8. Selecteer voor het knoop punt van het virtuele apparaat de nieuwe SCSI-controller die is gemaakt in stap 2.
 
     ![Schijven maken op de eerste VM](media/oracle-rac-existing-hard-disk.png)
@@ -253,7 +253,7 @@ Regels voor affiniteit tussen de virtuele machine en de host zorgen ervoor dat d
 7. Als u een regel wilt maken, klikt u op **virtuele machine/host-regels**.
 8. Klik op **+** .
 9. Voer een naam in voor de regel en Schakel **inschakelen in**.
-10. Selecteer **virtual machines als host**voor het regel type.
+10. Selecteer **virtual machines als host** voor het regel type.
 11. Selecteer de VM-groep die de Oracle Vm's bevat.
 12. Select **moet worden uitgevoerd op hosts in deze groep**.
 13. Selecteer de hostgroep die u hebt gemaakt.

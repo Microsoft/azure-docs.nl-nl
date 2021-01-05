@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 2b71bee620ab7d5b1ef98b60013d1978f49d127f
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 3d7292999fc4b53fed06822461857185127dc793
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505883"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898722"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -49,7 +49,7 @@ Standaard gebruiken [functies proxy's](functions-proxies.md) een snelkoppeling v
 |Sleutel|Waarde|Beschrijving|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Aanroepen met een back-end-URL die verwijst naar een functie in de lokale functie-app, worden niet rechtstreeks naar de functie verzonden. In plaats daarvan worden de aanvragen teruggestuurd naar de HTTP-frontend voor de functie-app.|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Aanroepen met een back-end-URL die verwijst naar een functie in de lokale functie-app, worden direct naar de functie doorgestuurd. Dit is de standaardwaarde. |
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|onjuist|Aanroepen met een back-end-URL die verwijst naar een functie in de lokale functie-app, worden direct naar de functie doorgestuurd. Dit is de standaardwaarde. |
 
 ## <a name="azure_function_proxy_backend_url_decode_slashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
 
@@ -58,7 +58,7 @@ Met deze instelling bepaalt u of de tekens `%2F` worden gedecodeerd als slashes 
 |Sleutel|Waarde|Beschrijving|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Routerings parameters met gecodeerde slashes worden gedecodeerd. |
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Alle route parameters worden ongewijzigd door gegeven, wat het standaard gedrag is. |
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|onjuist|Alle route parameters worden ongewijzigd door gegeven, wat het standaard gedrag is. |
 
 Denk bijvoorbeeld na over het proxies.jsbestand voor een functie-app in het `myfunction.com` domein.
 
@@ -185,6 +185,14 @@ Hiermee geeft u het maximum aantal taal werk processen op, met een standaard waa
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
 |\_aantal functies werk \_ proces \_|2|
+
+## <a name="python_threadpool_thread_count"></a>\_aantal PYTHON thread pool- \_ threads \_
+
+Hiermee geeft u het maximum aantal threads op dat een python-taal medewerker zou gebruiken voor het uitvoeren van functie aanroepen, met een standaard waarde van `1` voor python-versie `3.8` en lager. Voor python `3.9` -versie en hoger is de waarde ingesteld op `None` . Houd er rekening mee dat deze instelling geen garantie biedt voor het aantal threads dat tijdens uitvoeringen zou worden ingesteld. Met deze instelling kan python het aantal threads uitbreiden naar de opgegeven waarde. De instelling is alleen van toepassing op de python-functies apps. Daarnaast is de instelling van toepassing op synchrone functies aanroep en niet voor-routines.
+
+|Sleutel|Voorbeeldwaarde|Maximumwaarde|
+|---|------------|---------|
+|\_aantal PYTHON thread pool- \_ threads \_|2|32|
 
 
 ## <a name="functions_worker_runtime"></a>FUNCTIONs \_ runtime van worker \_

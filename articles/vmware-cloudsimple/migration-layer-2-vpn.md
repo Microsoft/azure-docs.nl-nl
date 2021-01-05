@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing door CloudSimple: een laag 2-netwerk on-premises uitrekken naar een Privécloud'
 description: Hierin wordt beschreven hoe u een laag 2-VPN instelt tussen NSX-T op een CloudSimple-Privécloud en een on-premises zelfstandige NSX Edge-client
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: f524bf6af66d44bc13b7c0957de7977968cbef28
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 06446b6c36e36466fe891d7327d8151603cdecd2
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427252"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899368"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Workloads migreren met behulp van uitgerekte netwerken van Laag 2
 
@@ -108,11 +108,11 @@ Zie voor meer informatie [virtuele particuliere netwerken](https://docs.vmware.c
 
 De volgende stappen laten zien hoe u de logische router-ID van de Tier0 DR-routerings instantie voor de IPsec-en L2VPN-Services kunt ophalen. De ID van de logische router is later nodig bij het implementeren van de L2VPN.
 
-1. Meld u aan bij NSX-T-beheer `https://*nsx-t-manager-ip-address*` en selecteer **netwerk**  >  **routers**  >  **provider-**  >  **overzicht**van LR. Voor de **modus hoge Beschik baarheid**selecteert u **actief/stand-by**. Met deze actie wordt een pop-upvenster geopend waarin de Edge-VM wordt weer gegeven waarop de Tier0-router momenteel actief is.
+1. Meld u aan bij NSX-T-beheer `https://*nsx-t-manager-ip-address*` en selecteer **netwerk**  >  **routers**  >  **provider-**  >  **overzicht** van LR. Voor de **modus hoge Beschik baarheid** selecteert u **actief/stand-by**. Met deze actie wordt een pop-upvenster geopend waarin de Edge-VM wordt weer gegeven waarop de Tier0-router momenteel actief is.
 
     ![Selecteer actief/stand-by](media/l2vpn-fetch01.png)
 
-2. Selecteer de randen van **infrastructuur**  >  **knooppunten**  >  **Edges**. Noteer het IP-adres van het beheer van de actieve Edge-VM (Edge VM1) die in de vorige stap is geïdentificeerd.
+2. Selecteer de randen van **infrastructuur**  >  **knooppunten**  >  . Noteer het IP-adres van het beheer van de actieve Edge-VM (Edge VM1) die in de vorige stap is geïdentificeerd.
 
     ![Notitie beheer-IP](media/l2vpn-fetch02.png)
 
@@ -137,7 +137,7 @@ De volgende stappen laten zien hoe u de logische router-ID van de Tier0 DR-route
 ## <a name="fetch-the-logical-switch-id-needed-for-l2vpn"></a>De ID van de logische switch ophalen die nodig is voor L2VPN
 
 1. Meld u aan bij NSX-T Manager ( `https://nsx-t-manager-ip-address` ).
-2. Selecteer switches van **Network**  >  **switching**  >  **Switches**  >  ** \>< \logical switch**  >  **Overview**(Engelstalig).
+2. Selecteer switches van **Network**  >  **switching**  >    >  **\>< \logical switch**  >  **Overview**(Engelstalig).
 3. Noteer de UUID van de logische switch Stretch, die vereist is voor het configureren van de L2VPN.
 
     ![logische-router uitvoer ophalen](media/l2vpn-fetch-switch01.png)
@@ -154,16 +154,16 @@ Voor het tot stand brengen van een VPN-route op basis van IPsec tussen de NSX-T 
 
 ### <a name="advertise-the-loopback-interface-ip-to-the-underlay-network"></a>Het IP-adres van de loop back-interface adverteren naar het aan-netwerk
 
-1. Maak een null-route voor het loop back-interface netwerk. Meld u aan bij NSX-T-beheer en selecteer **Network**  >  **Routing**  >  **routers**  >  **provider-LR**  >  **route ring**  >  **statische routes**. Klik op **Add**. Voor **netwerk**voert u het IP-adres van de loop back-interface in. Klik voor **volgende hops**op **toevoegen**, geef ' null ' op voor de volgende hop en behoud de standaard waarde van 1 voor de beheer afstand.
+1. Maak een null-route voor het loop back-interface netwerk. Meld u aan bij NSX-T-beheer en selecteer **Network**  >  **Routing**  >  **routers**  >  **provider-LR**  >  **route ring**  >  **statische routes**. Klik op **Add**. Voor **netwerk** voert u het IP-adres van de loop back-interface in. Klik voor **volgende hops** op **toevoegen**, geef ' null ' op voor de volgende hop en behoud de standaard waarde van 1 voor de beheer afstand.
 
     ![Statische route toevoegen](media/l2vpn-routing-security01.png)
 
-2. Een IP-voorvoegsel lijst maken. Meld u aan bij NSX-T-beheer en selecteer **netwerk**  >  **Routering**  >  **routers**  >  **provider-LR**  >  **routerings**  >  **lijst met IP-voor voegsel**. Klik op **Add**. Voer een naam in om de lijst aan te duiden. Voor voor **voegsels**klikt u twee keer op **toevoegen** . Voer op de eerste regel ' 0.0.0.0/0 ' in voor het **netwerk** en ' weigeren ' voor de **actie**. Selecteer in de tweede regel **een** voor **netwerk** en **toestaan** om **actie te ondernemen**.
+2. Een IP-voorvoegsel lijst maken. Meld u aan bij NSX-T-beheer en selecteer **netwerk**  >  **Routering**  >  **routers**  >  **provider-LR**  >  **routerings**  >  **lijst met IP-voor voegsel**. Klik op **Add**. Voer een naam in om de lijst aan te duiden. Voor voor **voegsels** klikt u twee keer op **toevoegen** . Voer op de eerste regel ' 0.0.0.0/0 ' in voor het **netwerk** en ' weigeren ' voor de **actie**. Selecteer in de tweede regel **een** voor **netwerk** en **toestaan** om **actie te ondernemen**.
 3. Koppel de IP-voorvoegsel lijst aan beide BGP-neighbors (TOR). Als u de lijst met IP-voor voegsels aan de BGP-neighbor koppelt, wordt voor komen dat de standaard route in BGP wordt geadverteerd naar de TOR-switches. Elke andere route die de null-route bevat, adverteert echter het IP-adres van de loop back-interface aan de TOR-switches.
 
     ![Lijst met IP-voor voegsels maken](media/l2vpn-routing-security02.png)
 
-4. Meld u aan bij NSX-T-beheer en selecteer **Network**  >  **Routing**  >  **routers**  >  **provider-LR**  >  **Routering**  >  **BGP**  >  **Neighbors**. Selecteer de eerste neighbor. Klik **Edit**op  >  **adres families**bewerken. Voor de IPv4-serie bewerkt u de kolom **out filter** en selecteert u de lijst met IP-voor voegsels die u hebt gemaakt. Klik op **Opslaan**. Herhaal deze stap voor de tweede neighbor.
+4. Meld u aan bij NSX-T-beheer en selecteer **Network**  >  **Routing**  >  **routers**  >  **provider-LR**  >  **Routering**  >  **BGP**  >  **Neighbors**. Selecteer de eerste neighbor. Klik op  >  **adres families** bewerken. Voor de IPv4-serie bewerkt u de kolom **out filter** en selecteert u de lijst met IP-voor voegsels die u hebt gemaakt. Klik op **Opslaan**. Herhaal deze stap voor de tweede neighbor.
 
     ![IP-voorvoegsel lijst 1 koppelen lijst ](media/l2vpn-routing-security03.png) ![ met IP-voor voegsels 2](media/l2vpn-routing-security04.png)
 

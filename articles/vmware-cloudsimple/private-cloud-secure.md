@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossingen op CloudSimple-beveiligde Privécloud
 description: Hierin wordt beschreven hoe u Azure VMware-oplossingen beveiligt via CloudSimple Private Cloud
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 000e43a7861bd155ebbd7175db96dd323731464b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 5e70745cd6e2f6a2a13581052f65e014bd0d0481
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518208"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899164"
 ---
 # <a name="how-to-secure-your-private-cloud-environment"></a>Uw persoonlijke cloud omgeving beveiligen
 

@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing op CloudSimple: open bare IP-adressen toewijzen'
 description: Hierin wordt beschreven hoe u open bare IP-adressen toewijst voor virtuele machines in de Privécloud.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/15/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 565c9ad0fbd37b026a1ba555d83b9032d2efcba4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb46ad726cd3b99324e9bb96b998ed1b4da885de
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77024293"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899181"
 ---
 # <a name="allocate-public-ip-addresses-for-private-cloud-environment"></a>Open bare IP-adressen toewijzen voor een privé-cloud omgeving
 

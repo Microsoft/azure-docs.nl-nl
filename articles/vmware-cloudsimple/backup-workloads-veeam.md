@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing door CloudSimple back-ups te maken van virtuele workload-machines in een Privécloud met behulp van Veeam
 description: Hierin wordt beschreven hoe u een back-up kunt maken van uw virtuele machines die worden uitgevoerd in een CloudSimple Privécloud op basis van Azure met Veeam B&R 9,5
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/16/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: cb883b70d1ae9f2894c7679633a586586922aa18
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 7be606b3e23a594e67acf3f169d88353403d8577
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92419934"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899334"
 ---
 # <a name="back-up-workload-vms-on-cloudsimple-private-cloud-using-veeam-br"></a>Back-ups maken van werkbelasting Vm's op CloudSimple Privécloud met Veeam B&R
 
@@ -246,12 +246,12 @@ Configureer met behulp van de Veeam-console Veeam-back-up en herstel software. Z
 
 5. Configureer back-uptaken.
     * Volg de instructies bij het [maken van een back-uptaak](https://www.youtube.com/watch?v=YHxcUFEss4M)voor het configureren van back-uptaken.
-    * Schakel versleuteling van back-upbestanden onder **Geavanceerde instellingen > opslag**in.
+    * Schakel versleuteling van back-upbestanden onder **Geavanceerde instellingen > opslag** in.
 
 6. Back-upkopie taken configureren.
 
     * Als u back-uptaken wilt configureren, volgt u de instructies in de video [maken van een back-upkopie taak](https://www.youtube.com/watch?v=LvEHV0_WDWI&t=2s).
-    * Schakel versleuteling van back-upbestanden onder **Geavanceerde instellingen > opslag**in.
+    * Schakel versleuteling van back-upbestanden onder **Geavanceerde instellingen > opslag** in.
 
 ### <a name="cloudsimple-portal-set-up-veeam-access-and-de-escalate-privileges"></a>CloudSimple-portal: Veeam-toegang en de bevoegdheden van de escalatie instellen
 Maak een openbaar IP-adres voor de Veeam-back-up en herstel server. Zie [Public IP-adressen toewijzen](public-ips.md)voor instructies.

@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing door CloudSimple-DNS configureren voor CloudSimple-Privécloud
 description: Hierin wordt beschreven hoe u een DNS-naam omzetting instelt voor toegang tot de vCenter-Server op een CloudSimple-Privécloud vanuit on-premises werk stations
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 7a2b2344bbb110cd4b35cc1f6428f61e48552b01
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 63822050512421895b0cfed08fb141f77da20b03
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563004"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97899249"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>DNS configureren voor naam omzetting voor Private Cloud vCenter-toegang vanaf on-premises werk stations
 
@@ -46,7 +46,7 @@ Het specifieke bestand en de para meters die moeten worden geconfigureerd, kunne
 Voor de standaard configuratie van de BIND-server bewerkt u bijvoorbeeld/etc/named.conf-bestand op uw DNS-server en voegt u de volgende zone gegevens toe.
 
 > [!NOTE]
->Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+>Dit artikel bevat verwijzingen naar de term slave, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ```
 zone "az.cloudsimple.io"

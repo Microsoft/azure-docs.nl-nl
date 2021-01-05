@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 11/23/2020
 ms.author: erhopf
-ms.openlocfilehash: 818ea89822b67c9bca99a4b8934a08d9b384f8b6
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 3814f52034922c7814b1d45822ca1e9d5f248825
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736439"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97844984"
 ---
 # <a name="language-support-for-form-recognizer"></a>Taalondersteuning voor Form Recognizer
 
@@ -24,12 +24,12 @@ In deze tabel staan de menselijke talen die worden ondersteund in de service For
 
 |Taal| Taalcode | Form Recognizer v2.0 | Preview van Form Recognizer v2.1|
 |:-----|:----:|:-----:|:---:|
-|Engels (gedrukt en handgeschreven) | `en` | ✔ | ✔|
 |Chinees (Vereenvoudigd) | `zh-Hans`| | ✔ |
-|Japans | `ja` |  | ✔|
 |Nederlands | `nl` | | ✔ |
+|Engels (gedrukt en handgeschreven) | `en` | ✔ | ✔|
 |Frans | `fr` | | ✔ |
 |Duits | `de` | | ✔ |
 |Italiaans | `it` | | ✔ |
+|Japans | `ja` |  | ✔|
 |Portugees | `pt` | | ✔ |
 |Spaans | `es` | | ✔ |

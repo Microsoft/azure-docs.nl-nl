@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: conceptual
 ms.date: 08/24/2020
 ms.author: aahi
-ms.openlocfilehash: b4acd431656eb008702f62dc1ecf12bda62dae17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 176060700f50a6ce6e8cb5cf622ee4c922e5a952
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051080"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845361"
 ---
 # <a name="language-and-region-support-for-the-ink-recognizer-api"></a>Taal-en regio ondersteuning voor de inkt Recognizer-API
 
@@ -41,8 +41,8 @@ In dit artikel wordt uitgelegd welke talen worden ondersteund voor de API voor i
 | Nederlands (Nederland)                        |     `nl-NL`     |
 | Engels (Australië)                        |     `en-AU`     |
 | Engels (Canada)                           |     `en-CA`     |
-| Engels (Verenigd Koninkrijk)                   |     `en-GB`     |
 | Engels (India)                            |     `en-IN`     |
+| Engels (Verenigd Koninkrijk)                   |     `en-GB`     |
 | Engels (Verenigde Staten)                    |     `en-US`     |
 | Fins                                    |     `fi-FI`     |
 | Frans (Frankrijk)                            |     `fr-FR`     |
@@ -67,23 +67,23 @@ In dit artikel wordt uitgelegd welke talen worden ondersteund voor de API voor i
 | Pools                                     |     `pl-PL`     |
 | Portugees (Brazilië)                        |     `pt-BR`     |
 | Portugees (Portugal)                      |     `pt-PT`     |
-| Romaans                                    |     `rm-CH`     |
 | Roemeens                                   |     `ro-RO`     |
+| Romaans                                    |     `rm-CH`     |
 | Russisch                                    |     `ru-RU`     |
 | Schots Gaelic                            |     `gd-GB`     |
-| Noord Sotho sa Sotho                           |    `nso-ZA`     |
 | Servisch (Cyrillisch, Bosnië en Herzegovina) |  `sr-Cyrl-BA`   |
 | Servisch (Cyrillisch, Montenegro)             |  `sr-Cyrl-ME`   |
 | Servisch (Cyrillisch, Servië)                 |  `sr-Cyrl-RS`   |
 | Servisch (Latijns, Bosnië en Herzegovina)    |  `sr-Latn-BA`   |
 | Servisch (Latijns, Montenegro)                |  `sr-Latn-ME`   |
 | Servisch (Latijns, Servië)                    |  `sr-Latn-RS`   |
+| Noord Sotho sa Sotho                           |    `nso-ZA`     |
 | Setswana (Zuid-Afrika)                    |     `tn-ZA`     |
 | Slowaaks                                     |     `sk-SK`     |
 | Sloveens                                  |     `sl-SI`     |
 | Spaans (Argentinië)                        |     `es-AR`     |
-| Spaans (Spanje)                            |     `es-ES`     |
 | Spaans (Mexico)                           |     `es-MX`     |
+| Spaans (Spanje)                            |     `es-ES`     |
 | Zweeds (Zweden)                           |     `sv-SE`     |
 | Turks                                    |     `tr-TR`     |
 | Welsh                                      |     `cy-GB`     |
@@ -91,7 +91,7 @@ In dit artikel wordt uitgelegd welke talen worden ondersteund voor de API voor i
 | Xhosa                                      |     `xh-ZA`     |
 | Zulu                                       |     `zu-ZA`     |
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Wat is de Ink Recognizer-API?](overview.md)
 * [Digitale inkt streken verzenden naar de API voor inkt herkenning](concepts/send-ink-data.md)

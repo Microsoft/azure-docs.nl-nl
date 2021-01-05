@@ -3,14 +3,14 @@
 - name: Overzicht
   expanded: true
   items:
-    - name: Over Security Center
+    - name: Wat is Azure Security Center?
+      href: security-center-introduction.md
+    - name: Beschikbaarheid
       items:
-        - name: Wat is Azure Security Center?
-          href: security-center-introduction.md
         - name: Ondersteunde platforms
           displayName: coverage
           href: security-center-os-coverage.md
-        - name: Functiedekking voor VM's
+        - name: 'Dekking per besturingssysteem, type machine en cloud'
           href: security-center-services.md
         - name: Functiedekking voor Azure PaaS-resources
           href: features-paas.md
@@ -110,6 +110,8 @@
       href: tutorial-security-incident.md
     - name: Uw regelnaleving verbeteren
       href: security-center-compliance-dashboard.md
+    - name: Beveiligingsbeleid beheren
+      href: tutorial-security-policy.md
 - name: Concepten
   items:
     - name: Cloud Security Posture Management
@@ -120,11 +122,6 @@
           href: secure-score-security-controls.md
         - name: Overzicht van beveiligingsaanbevelingen
           href: security-center-recommendations.md
-        - name: Overzicht van beveiligingsbeleid
-          href: tutorial-security-policy.md
-        - name: Ingebouwd beveiligingsbeleid
-          displayName: 'samples, policy'
-          href: ./policy-reference.md
         - name: Aanbevelingen gebruiken om de beveiliging te verbeteren
           href: security-center-using-recommendations.md
         - name: Beveiligingsbasislijn
@@ -224,14 +221,9 @@
         - name: Docker-hosts verharden
           displayName: containers
           href: harden-docker-hosts.md
-    - name: Azure Defender voor SQL gebruiken
-      items:
-        - name: Azure Defender voor SQL configureren op virtuele Azure-machines
+        - name: Azure Defender voor SQL gebruiken
           href: defender-for-sql-usage.md
           displayName: 'hybrid, arc'
-        - name: Uw SQL-informatiebeschermingsbeleid aanpassen
-          displayName: 'sql, database, data discovery'
-          href: security-center-info-protection-policy.md
     - name: Azure Defender voor containerregisters gebruiken
       items:
         - name: Scan uw registerafbeeldingen op kwetsbaarheden
@@ -281,6 +273,9 @@
       href: security-center-investigation-user-data.md
     - name: Zichtbaarheid in de hele tenant verkrijgen
       href: security-center-management-groups.md
+    - name: Uw SQL-informatiebeschermingsbeleid aanpassen
+      displayName: 'sql, database, data discovery'
+      href: security-center-info-protection-policy.md
 - name: Naslaginformatie
   items:
     - name: REST-API’s
@@ -297,6 +292,9 @@
           href: faq-vms.md
         - name: Bestaande gebruikers van Azure Log Analytics
           href: faq-azure-monitor-logs.md
+    - name: Ingebouwd beveiligingsbeleid
+      displayName: 'samples, policy'
+      href: policy-reference.md
     - name: Azure-roadmapblog
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: Evaluatie van eindpuntbeveiliging en aanbevelingen

@@ -8,18 +8,18 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 9d6d65ea7255528146b144c4bfa35e98b10b4055
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 5bfe28a8111128ba7d8072c27d8647e6137620cd
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371756"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97844772"
 ---
 Ga aan de slag met de Bing Autosuggest-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen.
 
 Gebruik de Bing Autosuggest-clientbibliotheek voor .NET om zoeksuggesties te krijgen op onvolledige queryreeksen.
 
-[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingAutoSuggest) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.AutoSuggest/) | [Voorbeeldcode](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/BingAutoSuggest/Program.cs)
+[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/bing-autosuggest-readme?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingAutoSuggest) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.AutoSuggest/) | [Voorbeeldcode](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/BingAutoSuggest/Program.cs)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -216,4 +216,4 @@ Als u een Cognitive Services-abonnement wilt opschonen en verwijderen, kunt u de
 ## <a name="see-also"></a>Zie ook
 
 - [Wat is Bing Automatische suggesties?](../../get-suggested-search-terms.md)
-- [Dotnet-referentie Bing Autosuggest](/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet)
+- [Dotnet-referentie Bing Autosuggest](/dotnet/api/overview/azure/cognitiveservices/bing-autosuggest-readme?view=azure-dotnet)

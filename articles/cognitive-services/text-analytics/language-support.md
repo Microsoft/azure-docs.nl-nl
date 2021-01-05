@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: b3a633c1eff6adf2a33b4f3bfc818eb51ff5ee85
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 180de56e3c158802460d2ff995041e8572d4dcd7
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653092"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97844973"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Ondersteuning voor Text Analytics-API v3-taal 
 
@@ -61,9 +61,9 @@ ms.locfileid: "97653092"
 | Taal               | Taalcode | v 2.1-ondersteuning | v3-ondersteuning | Starten met versie van v3-model: |       Opmerkingen        |
 |:-----------------------|:-------------:|:----------:|:----------:|:-------------------------------:|:------------------:|
 | Arabisch                |     `ar`      |     ✓      |            |                                 |                    |
-| Tsjechisch                 |     `cs`      |     ✓      |            |                                 |                    |
 | Chinese-Simplified     |   `zh-hans`   |     ✓      |            |                                 | `zh` ook geaccepteerd |
 | Chinese-Traditional   |   `zh-hant`   |     ✓      |            |                                 |                    |
+| Tsjechisch                 |     `cs`      |     ✓      |            |                                 |                    |
 | Deens                |     `da`      |     ✓      |            |                                 |                    |
 | Nederlands                 |     `nl`      |     ✓      |            |                                 |                    |
 | Engels                |     `en`      |     ✓      |     ✓      |           2019-10-01            |                    |
@@ -77,8 +77,8 @@ ms.locfileid: "97653092"
 | Koreaans                |     `ko`      |     ✓      |            |                                 |                    |
 | Noors (Bokmål)   |     `no`      |     ✓      |            |                                 | `nb` ook geaccepteerd |
 | Pools                |     `pl`      |     ✓      |            |                                 |                    |
-| Portugees (Portugal) |    `pt-PT`    |     ✓      |            |                                 | `pt` ook geaccepteerd |
 | Portugees (Brazilië)   |    `pt-BR`    |     ✓      |            |                                 |                    |
+| Portugees (Portugal) |    `pt-PT`    |     ✓      |            |                                 | `pt` ook geaccepteerd |
 | Russisch              |     `ru`      |     ✓      |            |                                 |                    |
 | Spaans               |     `es`      |     ✓      |     ✓       |              2020-04-01                   |                    |
 | Zweeds               |     `sv`      |     ✓      |            |                                 |                    |
@@ -101,8 +101,8 @@ ms.locfileid: "97653092"
 | Koreaans                |     `ko`      |     ✓      |     ✓      |                2019-10-01                 |                    |
 | Noors (Bokmål)   |     `no`      |     ✓      |     ✓      |                2019-10-01                 | `nb` ook geaccepteerd |
 | Pools                |     `pl`      |     ✓      |     ✓      |                2019-10-01                 |                    |
-| Portugees (Portugal) |    `pt-PT`    |     ✓      |     ✓      |                2019-10-01                 | `pt` ook geaccepteerd |
 | Portugees (Brazilië)   |    `pt-BR`    |     ✓      |     ✓      |                2019-10-01                 |                    |
+| Portugees (Portugal) |    `pt-PT`    |     ✓      |     ✓      |                2019-10-01                 | `pt` ook geaccepteerd |
 | Russisch               |     `ru`      |     ✓      |     ✓      |                2019-10-01                 |                    |
 | Spaans               |     `es`      |     ✓      |     ✓      |                2019-10-01                 |                    |
 | Zweeds               |     `sv`      |     ✓      |     ✓      |                2019-10-01                 |                    |
@@ -217,6 +217,6 @@ Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u Taald
 
 ---
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Wat is de Text Analytics-API?](overview.md)   

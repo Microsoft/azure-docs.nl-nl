@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/24/2020
 ms.author: yelevin
-ms.openlocfilehash: 9827e93f793ef47a835aa0a5fb2005e2830a0824
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 3312eed71865508e5e83d37c7ced8cf220f13ca9
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655711"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835105"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Verbinding maken met gegevens van Microsoft Cloud App Security 
 
@@ -48,7 +48,7 @@ Als Cloud App Security is geïmplementeerd en opnamet van uw gegevens, kunnen de
 
 1. Klik op **wijzigingen Toep assen**.
 
-1. U kunt selecteren of u de waarschuwingen van Azure Defender wilt ontvangen van Azure Security Center om automatisch incidenten te genereren in azure Sentinel. Schakel onder **incidenten maken** de optie **ingeschakeld** in om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse** bewerken op het tabblad  **actieve regels** .
+1. U kunt selecteren of u wilt dat de waarschuwingen van Cloud App Security automatisch incidenten genereren in azure Sentinel. Onder **incidenten maken: aanbevolen!** selecteert u **ingeschakeld** om de standaard analyse regel in te scha kelen waarmee automatisch incidenten worden gemaakt op basis van waarschuwingen. U kunt deze regel vervolgens onder **analyse** bewerken op het tabblad  **actieve regels** .
 
 1. Als u het relevante schema in Log Analytics voor Cloud App Security-waarschuwingen wilt gebruiken, typt u `SecurityAlert` in het query venster. Typ voor het Cloud Discovery logboeken schema `McasShadowItReporting` .
 

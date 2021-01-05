@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 3f71cef19d25a7f987af4147ae0a889280e49bd1
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 7539e896d810a2f0fbf3c07f389f25e2d3c31fe1
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563157"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97844999"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -209,7 +209,7 @@ De JSON-antwoorden voor alle API-aanroepen hebben nieuwe notaties. Sommige sleut
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voltooi een [quickstart voor de clientbibliotheek](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een formulierverwerkingsapp met een Form Recognizer in de taal van uw keuze.
+Maak een [Snelstartgids](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van formulieren met de formulier Recognizer in de taal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

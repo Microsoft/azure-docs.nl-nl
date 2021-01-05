@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 5511551f240fe4fdd2f2aa3bc8a3a2615505f35f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 704763e8e6e7c5336d0ed3e1c28791fb96c77aba
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88936109"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97844925"
 ---
 #     <a name="custom-entity-lookup-cognitive-skill-preview"></a>Aangepaste entiteit opzoeken cognitieve vaardigheid (preview-versie)
 
@@ -41,7 +41,9 @@ Parameters zijn hoofdlettergevoelig.
 | `entitiesDefinitionUri`    | Pad naar een JSON-of CSV-bestand met alle doel tekst die moet worden vergeleken. Deze entiteits definitie wordt gelezen aan het begin van het uitvoeren van een Indexeer functie. eventuele updates van dit bestand worden uitgevoerd totdat de volgende keer wordt uitgevoerd. Deze configuratie moet toegankelijk zijn via HTTPS. Zie de aangepaste indeling voor de [entiteits definitie](#custom-entity-definition-format) hieronder voor het verwachte CSV-of JSON-schema.|
 |`inlineEntitiesDefinition` | Definities van de inline JSON-entiteit. Deze para meter vervangt de para meter entitiesDefinitionUri indien aanwezig. Er kan niet meer dan 10 KB aan configuratie worden meegeleverd. Zie de definitie van de [aangepaste entiteit](#custom-entity-definition-format) hieronder voor het verwachte JSON-schema. |
 |`defaultLanguageCode` |    Beschrijving De taal code van de invoer tekst die wordt gebruikt voor het Tokenize en afbakenen van invoer tekst. De volgende talen worden ondersteund: `da, de, en, es, fi, fr, it, ko, pt` . De standaard waarde is English ( `en` ). Als u een language code-CountryCode-indeling doorgeeft, wordt alleen het language code deel van de indeling gebruikt.  |
-
+|`globalDefaultCaseSensitive` | Beschrijving Standaard waarde voor hoofdletter gevoelig voor de vaardigheid. Als de `defaultCaseSensitive` waarde van een entiteit niet is opgegeven, wordt deze waarde de `defaultCaseSensitive` waarde voor die entiteit. |
+|`globalDefaultAccentSensitive` | Beschrijving Standaard accent gevoelige waarde voor de vaardigheid. Als de `defaultAccentSensitive` waarde van een entiteit niet is opgegeven, wordt deze waarde de `defaultAccentSensitive` waarde voor die entiteit. |
+|`globalDefaultFuzzyEditDistance` | Beschrijving Standaard waarde voor onbewerkte afstand voor de vaardigheid. Als de `defaultFuzzyEditDistance` waarde van een entiteit niet is opgegeven, wordt deze waarde de `defaultFuzzyEditDistance` waarde voor die entiteit. |
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
@@ -151,8 +153,10 @@ De onderstaande tabellen bevatten meer informatie over de verschillende configur
 | `subtype` | Beschrijving Dit veld kan worden gebruikt als passthrough voor aangepaste meta gegevens over de overeenkomende tekst (en). De waarde van dit veld wordt weer gegeven bij elke overeenkomst van de entiteit in de vaardigheids uitvoer. |
 | `id` | Beschrijving Dit veld kan worden gebruikt als passthrough voor aangepaste meta gegevens over de overeenkomende tekst (en). De waarde van dit veld wordt weer gegeven bij elke overeenkomst van de entiteit in de vaardigheids uitvoer. |
 | `caseSensitive` | Beschrijving De standaard waarde is False. Booleaanse waarde waarmee wordt aangegeven of vergelijkingen met de naam van de entiteit gevoelig zijn voor teken behuizing. Voor beelden van niet-hoofdletter gevoelige overeenkomsten van micro soft zijn: micro soft, micro soft, micro soft |
+| `accentSensitive` | Beschrijving De standaard waarde is False. Een Booleaanse waarde die aangeeft of accenten en niet-accenten letters zoals ' é ' en ' e ' identiek moeten zijn. |
 | `fuzzyEditDistance` | Beschrijving De standaard waarde is 0. De maximum waarde van 5. Hiermee wordt het toegestane aantal uiteenlopende tekens aangegeven dat nog steeds overeenkomt met de naam van de entiteit. De kleinste mogelijke overeenkomst voor elk gegeven resultaat wordt geretourneerd.  Als de bewerkings afstand is ingesteld op 3, zou Windows 10 nog steeds overeenkomen met ' Windows ', ' Windows10 ' en ' Windows 7 '. <br/> Wanneer hoofdletter gevoeligheid is ingesteld op ONWAAR, worden de verschillen in de overeenkomst niet meegeteld bij de tolerantie, maar anderszins. |
-| `defaultCaseSensitive` | Beschrijving Hiermee wijzigt u de standaard waarde voor hoofdletter gevoeligheid voor deze entiteit. Het wordt gebruikt om de standaard waarde van alle aliassen caseSensitive waarden te wijzigen. |
+| `defaultCaseSensitive` | Beschrijving Hiermee wijzigt u de standaard waarde voor hoofdletter gevoeligheid voor deze entiteit. Het kan worden gebruikt om de standaard waarde van alle aliassen caseSensitive waarden te wijzigen. |
+| `defaultAccentSensitive` | Beschrijving Hiermee wijzigt u de standaard waarde voor accent gevoeligheid voor deze entiteit. Het kan worden gebruikt om de standaard waarde van alle aliassen accentSensitive waarden te wijzigen.|
 | `defaultFuzzyEditDistance` | Beschrijving Wijzigt de standaard waarde voor het bewerken van fuzzy voor deze entiteit. Het kan worden gebruikt om de standaard waarde van alle aliassen fuzzyEditDistance waarden te wijzigen. |
 | `aliases` | Beschrijving Een matrix met complexe objecten die kunnen worden gebruikt om alternatieve spellingen of synoniemen op te geven voor de naam van de hoofd entiteit. |
 
@@ -160,6 +164,7 @@ De onderstaande tabellen bevatten meer informatie over de verschillende configur
 |------------------|-------------|
 | `text`  | De alternatieve spelling of weer gave van de naam van een doel entiteit.  |
 | `caseSensitive` | Beschrijving Fungeert hetzelfde als de hoofd entiteit ' caseSensitive-para meter hierboven, maar is alleen van toepassing op deze ene alias. |
+| `accentSensitive` | Beschrijving Fungeert hetzelfde als de hoofd entiteit ' accentSensitive-para meter hierboven, maar is alleen van toepassing op deze ene alias. |
 | `fuzzyEditDistance` | Beschrijving Fungeert hetzelfde als de hoofd entiteit ' fuzzyEditDistance-para meter hierboven, maar is alleen van toepassing op deze ene alias. |
 
 
@@ -302,7 +307,7 @@ Als u besluit om een verwijzing naar het definitie bestand van de entiteiten op 
 
 Deze waarschuwing wordt verzonden als het aantal gedetecteerde overeenkomsten groter is dan het toegestane maximum. In dit geval worden er ook dubbele overeenkomsten beëindigd. Als dit niet acceptabel is, kunt u een [ondersteunings ticket](https://ms.portal.azure.com/#create/Microsoft.Support) indienen zodat we u kunnen helpen met uw individuele use-case.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 + [Ingebouwde vaardigheden](cognitive-search-predefined-skills.md)
 + [Een vaardig heden definiëren](cognitive-search-defining-skillset.md)

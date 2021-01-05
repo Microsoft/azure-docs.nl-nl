@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/05/2019
-  ms.openlocfilehash: 3ba0788b150f39c43471fd9d5e69b14a36ddbb78
-  ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+  ms.openlocfilehash: a94e30beb495d3ead38a14ef86c050dfc1afd0fd
+  ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/23/2020
-  ms.locfileid: "95493601"
+  ms.lasthandoff: 01/01/2021
+  ms.locfileid: "97845266"
 landingContent:
 - title: Over Form Recognizer
   linkLists:
@@ -45,7 +45,7 @@ landingContent:
     - text: De JavaScript-SDK gebruiken
       url: quickstarts/client-library.md?pivots=programming-language-javascript
     - text: De REST API gebruiken (cURL)
-      url: quickstarts/curl-train-extract.md
+      url: quickstarts/client-library.md?pivots=programming-language-rest-api
 - title: Een set met trainingsgegevens samenstellen
   linkLists:
   - linkListType: how-to-guide
@@ -62,8 +62,6 @@ landingContent:
     links:
     - text: Trainen met behulp van het voorbeeldhulpprogramma voor labelen
       url: quickstarts/label-tool.md
-    - text: Trainen met labels met behulp van de REST API en Python
-      url: quickstarts/python-labeled-data.md
 - title: Gegevens extraheren uit ontvangsten
   linkLists:
   - linkListType: quickstart
@@ -77,9 +75,7 @@ landingContent:
     - text: De JavaScript-SDK gebruiken
       url: quickstarts/client-library.md?pivots=programming-language-javascript
     - text: De REST API gebruiken (cURL)
-      url: quickstarts/curl-train-extract.md
-    - text: De REST API gebruiken (cURL)
-      url: quickstarts/curl-receipts.md
+      url: quickstarts/client-library.md?pivots=programming-language-rest-api
   - linkListType: concept
     links:
     - text: Concepten van ontvangsten
@@ -88,8 +84,16 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Met behulp van de REST API
-      url: quickstarts/python-business-cards.md?
+    - text: De .NET SDK gebruiken
+      url: quickstarts/client-library.md?pivots=programming-language-csharp
+    - text: De Python-SDK gebruiken
+      url: quickstarts/client-library.md?pivots=programming-language-python
+    - text: De Java-SDK gebruiken
+      url: quickstarts/client-library.md?pivots=programming-language-java
+    - text: De JavaScript-SDK gebruiken
+      url: quickstarts/client-library.md?pivots=programming-language-javascript
+    - text: De REST API gebruiken (cURL)
+      url: quickstarts/client-library.md?pivots=programming-language-rest-api
   - linkListType: concept
     links:
     - text: Concepten van visitekaartjes
@@ -111,9 +115,7 @@ landingContent:
     - text: De JavaScript-SDK gebruiken
       url: quickstarts/client-library.md?pivots=programming-language-javascript
     - text: De REST API gebruiken (cURL)
-      url: quickstarts/curl-train-extract.md
-    - text: De REST API gebruiken (Python)
-      url: quickstarts/python-layout.md
+      url: quickstarts/client-library.md?pivots=programming-language-rest-api
 - title: Containers gebruiken
   linkLists:
   - linkListType: get-started

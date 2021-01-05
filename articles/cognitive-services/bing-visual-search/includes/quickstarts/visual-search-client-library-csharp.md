@@ -9,16 +9,16 @@ ms.topic: include
 ms.date: 03/26/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8c50d13f35f3d4f04cacba736e7e9fd5f3fba6f5
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: bd214d4500ff306d0fc392cffbdbfa344a7c41a3
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371682"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97844780"
 ---
 In deze quickstart leert u hoe u met de C#-clientbibliotheek afbeeldingsinzichten krijgt uit de Bing Visual Search-service. Hoewel Bing Visual Search een REST API heeft die compatibel is met de meeste programmeertalen, biedt de clientbibliotheek een eenvoudige manier om de service in uw toepassingen te integreren. De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingVisualSearch).
 
-[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingVisualSearch) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.VisualSearch/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/)
+[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/bing-visual-search-readme?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingVisualSearch) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.VisualSearch/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/)
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: be3d3f11e90c17bd8c4792418500da651039e480
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: a80eaecc02fa3c8c6618341c02e22241f0dc7faf
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562800"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845079"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Geavanceerde functies van Azure Metrics Explorer
 
@@ -22,6 +22,35 @@ ms.locfileid: "97562800"
 ## <a name="metrics-in-azure"></a>Metrische gegevens in azure
 
 [Metrische gegevens in azure monitor](data-platform-metrics.md) zijn de reeks gemeten waarden en aantallen die gedurende een bepaalde periode worden verzameld en opgeslagen. Er zijn standaard metrische gegevens (of platformen) en aangepaste metrische gegevens. De standaard metrische gegevens worden aan u door het Azure-platform zelf verschaft. Standaard waarden zijn de status-en gebruiks statistieken van uw Azure-resources. Terwijl aangepaste metrische gegevens worden verzonden naar Azure door uw toepassingen met behulp [van de Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens](../app/api-custom-events-metrics.md), een  [Windows Azure Diagnostics-extensie (WAD)](./diagnostics-extension-overview.md)of door [Azure monitor rest API](./metrics-store-custom-rest-api.md).
+
+## <a name="resource-scope-picker"></a>Resource bereik kiezer
+Met de kiezer voor het bereik van resources kunt u metrische gegevens weer geven in één en meerdere resources. Hieronder vindt u instructies voor het gebruik van de resource bereik kiezer. 
+
+### <a name="selecting-a-single-resource"></a>Eén resource selecteren
+Selecteer **Metrische gegevens** in het menu van **Azure Monitor** of in de sectie **Controle** van het menu van een resource. Klik op de knop een bereik selecteren om de bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. Dit moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van een resource. 
+
+![Scherm afbeelding van de kiezer voor het bereik van resources](./media/metrics-charts/scope-picker.png)
+
+Voor bepaalde resources kunt u de metrische gegevens van één resource per keer weer geven. Deze resources bevinden zich in de sectie alle resource typen in de vervolg keuzelijst resource typen.
+
+![Scherm afbeelding van één resource](./media/metrics-charts/single-resource-scope.png)
+
+Nadat u op de gewenste resource hebt geklikt, worden alle abonnementen en resource groepen weer geven die deze resource bevatten.
+
+![Scherm opname van beschik bare resources](./media/metrics-charts/available-single-resource.png)
+
+> [!TIP]
+> Als u de metrische gegevens van meerdere resources tegelijk of metrische gegevens over een abonnement of resource groep wilt weer geven, klikt u op de knop voor de stem.
+
+Wanneer u tevreden bent met uw selectie, klikt u op Toep assen.
+
+### <a name="viewing-metrics-across-multiple-resources"></a>Metrische gegevens weer geven in meerdere resources
+Sommige resource typen hebben de mogelijkheid om gegevens op te vragen voor meerdere resources, zolang ze zich in hetzelfde abonnement en dezelfde locatie bevinden. Deze resource typen vindt u boven aan de vervolg keuzelijst ' resource typen '. Zie [dit document](metrics-dynamic-scope.md#selecting-multiple-resources)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
+
+![Scherm afbeelding van meerdere bron typen](./media/metrics-charts/multi-resource-scope.png)
+
+Voor compatibele multi-resource typen kunt u ook een query uitvoeren voor metrische gegevens over een abonnement of meerdere resource groepen. Raadpleeg [dit artikel](metrics-dynamic-scope.md#selecting-a-resource-group-or-subscription) voor meer informatie over hoe u dit doet.
+
 
 ## <a name="create-views-with-multiple-metrics-and-charts"></a>Weer gaven met meerdere metrische gegevens en grafieken maken
 
@@ -61,11 +90,25 @@ Stel bijvoorbeeld dat in de grafiek de waarde voor de **reactie tijd** van de se
 
 Er zijn vijf aggregatie typen voor basis statistieken beschikbaar in de metrische gegevens Verkenner: **som**, **aantal**, **min**, **Max** en **gemiddeld**. De **som** aggregatie wordt soms ook wel de **totale** aggregatie genoemd. Voor veel metrische gegevens worden in Metrics Explorer de aggregaties die volledig irrelevant zijn, verborgen en kunnen ze niet worden gebruikt.
 
-- **Sum** : de som van alle waarden die zijn vastgelegd in het aggregatie-interval
-- **Count** : het aantal metingen dat over het aggregatie-interval is vastgelegd. Houd er rekening mee dat **Count** gelijk is aan **Sum** in gevallen waarin de metrische gegevens altijd worden vastgelegd met de waarde 1. Dit is gebruikelijk wanneer de metrische gegevens het aantal afzonderlijke gebeurtenissen bijhouden, en elke meting vertegenwoordigt één gebeurtenis (dat wil zeggen dat de code een metrische record afrondt wanneer een nieuwe aanvraag binnenkomt)
-- **Gemiddeld** : het gemiddelde van de metrische waarden die zijn vastgelegd in het aggregatie-interval
-- **Min** -de kleinste waarde die is vastgelegd tijdens het aggregatie-interval
-- **Max** : de grootste waarde die over het aggregatie-interval is vastgelegd
+**Sum** : de som van alle waarden die zijn vastgelegd in het aggregatie-interval
+
+![Scherm opname van de som van de aanvraag](./media/metrics-charts/request-sum.png)
+
+**Count** : het aantal metingen dat over het aggregatie-interval is vastgelegd. Houd er rekening mee dat **Count** gelijk is aan **Sum** in gevallen waarin de metrische gegevens altijd worden vastgelegd met de waarde 1. Dit is gebruikelijk wanneer de metrische gegevens het aantal afzonderlijke gebeurtenissen bijhouden, en elke meting vertegenwoordigt één gebeurtenis (dat wil zeggen dat de code een metrische record afrondt wanneer een nieuwe aanvraag binnenkomt)
+
+![Scherm afbeelding van het aantal aanvragen](./media/metrics-charts/request-count.png)
+
+**Gemiddeld** : het gemiddelde van de metrische waarden die zijn vastgelegd in het aggregatie-interval
+
+![Scherm opname van de gemiddelde aanvraag](./media/metrics-charts/request-avg.png)
+
+**Min** -de kleinste waarde die is vastgelegd tijdens het aggregatie-interval
+
+![Scherm opname van minimale aanvraag](./media/metrics-charts/request-min.png)
+
+**Max** : de grootste waarde die over het aggregatie-interval is vastgelegd
+
+![Scherm opname van maximum aanvraag](./media/metrics-charts/request-max.png)
 
 ## <a name="apply-filters-to-charts"></a>Filters toep assen op grafieken
 

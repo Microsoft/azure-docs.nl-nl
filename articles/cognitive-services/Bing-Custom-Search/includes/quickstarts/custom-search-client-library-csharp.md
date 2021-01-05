@@ -8,19 +8,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/27/2020
 ms.author: aahi
-ms.openlocfilehash: 4698649eace23e8428dffb9801294beb22ac126a
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 82ceb5b45a2c2bfe754995d3c1b39e46181830ae
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371986"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97844751"
 ---
 Aan de slag met de clientbibliotheek van Bing Custom Search voor C#. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. Met de API van Bing Custom Search kunt u op maat gemaakte zoekervaringen zonder advertenties maken voor onderwerpen die u interesseren. De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/BingSearchv7/BingCustomWebSearch).
 
 Gebruik de Bing Custom Search-clientbibliotheek voor C# voor het volgende:
 * Zoekresultaten zoeken op internet vanuit uw exemplaar van Bing Custom Search.
 
-[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
+[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/bing-custom-search-readme?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
 
 
 ## <a name="prerequisites"></a>Vereisten

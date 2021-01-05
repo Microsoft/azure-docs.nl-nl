@@ -2,24 +2,20 @@
 title: Een Azure Active Directory-toepassingsproxy-implementatie plannen
 description: Een end-to-end-hand leiding voor het plannen van de implementatie van toepassings proxy in uw organisatie
 services: active-directory
-documentationcenter: azure
 author: kenwith
 manager: celestedg
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/04/2019
+ms.date: 12/31/2020
 ms.author: kenwith
-ms.openlocfilehash: 9815237617566eda4759ecc31718786b6cb2cac8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 08289987dac81905584ee65b808cfcbf35525728
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96176049"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835139"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Plan een implementatie voor de Azure AD-toepassingsproxy
 
@@ -281,7 +277,7 @@ Micro soft heeft het principe van het verlenen van de minst mogelijke bevoegdhei
 
 | Zakelijke rol| Zakelijke taken| Azure AD-rollen |
 |---|---|---|
-| Help Desk-beheerder | Doorgaans beperkt tot het kwalificeren van door eind gebruikers gerapporteerde problemen en het uitvoeren van beperkte taken, zoals het wijzigen van de wacht woorden van gebruikers, het ongeldig vernieuwen van tokens en het controleren van de status van de service. | Helpdesk beheerder |
+| Help Desk-beheerder | Doorgaans beperkt tot het kwalificeren van door eind gebruikers gerapporteerde problemen en het uitvoeren van beperkte taken, zoals het wijzigen van de wacht woorden van gebruikers, het ongeldig vernieuwen van tokens en het controleren van de status van de service. | Helpdeskbeheerder |
 | Identiteits beheerder| Lees de Azure AD-aanmeldings rapporten en audit Logboeken om problemen met de app-proxy op te lossen.| Beveiligingslezer |
 | Eigenaar van de toepassing| Maak en beheer alle aspecten van bedrijfs toepassingen, toepassings registraties en toepassings proxy-instellingen.| Toepassings beheerder |
 | Infrastructuur beheerder | Eigenaar certificaat overschakeling | Toepassings beheerder |

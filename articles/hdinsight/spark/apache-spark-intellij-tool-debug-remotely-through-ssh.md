@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/23/2019
-ms.openlocfilehash: 421993ac4aaba551b6fcbd002783d44559ce377d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7a2044e9bb0110eda666d12e29a715547381e2be
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995332"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822332"
 ---
 # <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Fouten opsporen Apache Spark toepassingen op een HDInsight-cluster met Azure-toolkit voor IntelliJ via SSH
 
@@ -71,7 +71,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 
 1. Klik vanuit het **SparkCore_WasbIOTest** script met de rechter muisknop op de script editor en selecteer vervolgens de optie **' SparkCore_WasbIOTest ' uitvoeren** om lokale uitvoering uit te voeren.
 
-1. Zodra de lokale uitvoering is voltooid, kunt u het uitvoer bestand opslaan in de standaard **gegevens** van de project Verkenner  >  **__default__**.
+1. Zodra de lokale uitvoering is voltooid, kunt u het uitvoer bestand opslaan in de standaard **gegevens** van de project Verkenner  >  ****.
 
     ![Resultaat lokale uitvoering IntelliJ-project](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/spark-local-run-result.png)
 
@@ -93,7 +93,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 
 ## <a name="perform-remote-run"></a>Extern uitvoeren uitvoeren
 
-1. Navigeren om **Run**  >  **bewerkings configuraties uit te voeren...**. In dit menu kunt u de configuraties voor fout opsporing op afstand maken of bewerken.
+1. Navigeren om   >  **bewerkings configuraties uit te voeren...**. In dit menu kunt u de configuraties voor fout opsporing op afstand maken of bewerken.
 
 1. Selecteer in het dialoog venster **configuraties voor uitvoeren/fout opsporing** het plus teken ( **+** ). Selecteer vervolgens de optie **Apache Spark op HDInsight** .
 
@@ -178,7 +178,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van HDInsight-
 * [Azure-toolkit voor IntelliJ gebruiken om fouten op te lossen Apache Spark toepassingen op afstand via VPN](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Gebruik HDInsight-Hulpprogram Ma's in Azure-toolkit voor Eclipse om Apache Spark-toepassingen te maken](./apache-spark-eclipse-tool-plugin.md)
 * [Apache Zeppelin-notebooks gebruiken met een Apache Spark-cluster in HDInsight](apache-spark-zeppelin-notebook.md)
-* [Kernels die beschikbaar zijn voor Jupyter-notebook in het Apache Spark-cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Kernels die beschikbaar zijn voor Jupyter Notebook in het Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Externe pakketten gebruiken met Jupyter-notebooks](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Jupyter op uw computer installeren en verbinding maken met een HDInsight Spark-cluster](apache-spark-jupyter-notebook-install-locally.md)
 

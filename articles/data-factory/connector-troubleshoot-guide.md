@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/09/2020
+ms.date: 12/30/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: a7a81a742922d45be965c7f73e3cb910d0ef989a
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e6591762ed6a7e2b462a209730276f3198d86ae8
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109284"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821465"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -24,7 +24,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
   
 ## <a name="azure-blob-storage"></a>Azure Blob Storage
 
-### <a name="error-code--azurebloboperationfailed"></a>Fout code: AzureBlobOperationFailed
+### <a name="error-code-azurebloboperationfailed"></a>Fout code: AzureBlobOperationFailed
 
 - **Bericht**: `Blob operation Failed. ContainerName: %containerName;, path: %path;.`
 
@@ -33,24 +33,9 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Aanbeveling**: Raadpleeg de fout voor meer informatie. Raadpleeg het Help-document van blob: https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes . Neem contact op met het opslag team als u hulp nodig hebt.
 
 
-### <a name="error-code--azureblobservicenotreturnexpecteddatalength"></a>Fout code: AzureBlobServiceNotReturnExpectedDataLength
-
-- **Bericht**: `Error occurred when trying to fetch the blob '%name;'. This could be a transient issue and you may rerun the job. If it fails again continuously, contact customer support.`
-
-
-### <a name="error-code--azureblobnotsupportmultiplefilesintosingleblob"></a>Fout code: AzureBlobNotSupportMultipleFilesIntoSingleBlob
-
-- **Bericht**: `Transferring multiple files into a single Blob is not supported. Currently only single file source is supported.`
-
-
-### <a name="error-code--azurestorageoperationfailedconcurrentwrite"></a>Fout code: AzureStorageOperationFailedConcurrentWrite
-
-- **Bericht**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
-
-
 ### <a name="invalid-property-during-copy-activity"></a>Ongeldige eigenschap tijdens de Kopieer activiteit
 
-- **Bericht**:  `Copy activity <Activity Name> has an invalid "source" property. The source type is not compatible with the dataset <Dataset Name> and its linked service <Linked Service Name>. Please verify your input against.`
+- **Bericht**: `Copy activity <Activity Name> has an invalid "source" property. The source type is not compatible with the dataset <Dataset Name> and its linked service <Linked Service Name>. Please verify your input against.`
 
 - **Oorzaak**: het type dat in de gegevensset is gedefinieerd, is inconsistent met het bron/Sink-type dat is gedefinieerd in de Kopieer activiteit.
 
@@ -79,7 +64,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: er zijn twee mogelijke oorzaken:
 
     - Als u **Invoegen** als schrijf gedrag gebruikt, betekent dit dat de bron gegevens rijen/objecten met dezelfde id hebben.
-
     - Als u **Upsert** als schrijf gedrag gebruikt en u een andere unieke sleutel instelt op de container, betekent dit dat de bron gegevens rijen/objecten hebben met verschillende id's, maar dezelfde waarde hebben voor de gedefinieerde unieke sleutel.
 
 - **Oplossing**: 
@@ -100,9 +84,8 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: Hier volgen twee oplossingen:
 
-    1. **Verhoog de container ru** naar een grotere waarde in Cosmos DB, waardoor de prestaties van de Kopieer activiteit worden verbeterd, hoewel er meer kosten in Cosmos DB ontstaan. 
-
-    2. Verklein **writeBatchSize** naar een kleinere waarde (zoals 1000) en stel **parallelCopies** in op een kleinere waarde, zoals 1, waardoor de prestaties van het kopiëren worden verergerd dan de huidige, maar er worden geen kosten in rekening gebracht in Cosmos db.
+    - **Verhoog de container ru** naar een grotere waarde in Cosmos DB, waardoor de prestaties van de Kopieer activiteit worden verbeterd, hoewel er meer kosten in Cosmos DB ontstaan. 
+    - Verklein **writeBatchSize** naar een kleinere waarde (zoals 1000) en stel **parallelCopies** in op een kleinere waarde, zoals 1, waardoor de prestaties van het kopiëren worden verergerd dan de huidige, maar er worden geen kosten in rekening gebracht in Cosmos db.
 
 ### <a name="column-missing-in-column-mapping"></a>Kolom ontbreekt in kolom toewijzing
 
@@ -130,70 +113,15 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: Voeg In MongoDb Connection String de optie "**uuidRepresentation = Standard**" toe. Zie [MongoDB Connection String](connector-mongodb.md#linked-service-properties)voor meer informatie.
             
+## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL API)
 
-## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
+### <a name="error-code--cosmosdbsqlapioperationfailed"></a>Fout code: CosmosDbSqlApiOperationFailed
 
-### <a name="error-code--adlsgen2operationfailed"></a>Fout code: AdlsGen2OperationFailed
+- **Bericht**: `CosmosDbSqlApi operation Failed. ErrorMessage: %msg;.`
 
-- **Bericht**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+- **Oorzaak**: probleem met CosmosDbSqlApi-bewerking.
 
-- **Oorzaak**: ADLS Gen2 genereert de fout die aangeeft dat de bewerking is mislukt.
-
-- **Aanbeveling**: Raadpleeg het gedetailleerde fout bericht dat wordt gegenereerd door ADLS Gen2. Als dit wordt veroorzaakt door een tijdelijke fout, probeer het dan opnieuw. Als u meer hulp nodig hebt, neemt u contact op met de ondersteuning van Azure Storage en geeft u de aanvraag-ID op in een fout bericht.
-
-- **Oorzaak**: wanneer het fout bericht ' verboden ' bevat, is voor de service-principal of beheerde identiteit die u gebruikt mogelijk niet voldoende machtigingen voor toegang tot de ADLS Gen2.
-
-- **Aanbeveling**: Raadpleeg het Help-document: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication .
-
-- **Oorzaak**: wanneer het fout bericht ' InternalServerError ' bevat, wordt de fout geretourneerd door ADLS Gen2.
-
-- **Aanbeveling**: dit wordt mogelijk veroorzaakt door een tijdelijke fout, probeer het opnieuw. Als het probleem zich blijft voordoen, neemt u contact op met Azure Storage ondersteuning en geeft u de aanvraag-ID op in het fout bericht.
-
-
-### <a name="error-code--adlsgen2invalidurl"></a>Fout code: AdlsGen2InvalidUrl
-
-- **Bericht**: `Invalid url '%url;' provided, expecting http[s]://<accountname>.dfs.core.windows.net.`
-
-
-### <a name="error-code--adlsgen2invalidfolderpath"></a>Fout code: AdlsGen2InvalidFolderPath
-
-- **Bericht**: `The folder path is not specified. Cannot locate the file '%name;' under the ADLS Gen2 account directly. Please specify the folder path instead.`
-
-
-### <a name="error-code--adlsgen2operationfailedconcurrentwrite"></a>Fout code: AdlsGen2OperationFailedConcurrentWrite
-
-- **Bericht**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
-
-
-### <a name="error-code-adlsgen2timeouterror"></a>Fout code: AdlsGen2TimeoutError
-
-- **Bericht**: `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
-
-
-### <a name="request-to-adls-gen2-account-met-timeout-error"></a>Fout bij het aanvragen van een time-out voor de ADLS Gen2-account
-
-- **Bericht**: fout code = `UserErrorFailedBlobFSOperation` , fout bericht = `BlobFS operation failed for: A task was canceled` .
-
-- **Oorzaak**: het probleem wordt veroorzaakt door de time-outfout van de ADLS Gen2-sink, wat meestal gebeurt op de zelf-hostende IR-computer.
-
-- **Aanbeveling**: 
-
-    1. Plaats uw zelf-hostende IR-computer en het doel ADLS Gen2 account in dezelfde regio, indien mogelijk. Dit kan een wille keurige time-outfout voor komen en betere prestaties hebben.
-
-    1. Controleer of er een speciale netwerk instelling is, zoals ExpressRoute, en zorg ervoor dat het netwerk voldoende band breedte heeft. U kunt het beste de zelf-hostende IR-instelling voor gelijktijdige taken verlagen wanneer de totale band breedte laag is, waardoor netwerk resource-concurrentie voor meerdere gelijktijdige taken kan voor komen.
-
-    1. Kleinere blok grootte voor niet-binaire kopieën gebruiken om een dergelijke time-outfout te verhelpen als de bestands grootte gemiddeld of klein is. Raadpleeg [Blob Storage put-blok](https://docs.microsoft.com/rest/api/storageservices/put-block).
-
-       Als u de aangepaste blok grootte wilt opgeven, kunt u de eigenschap bewerken in. json-editor:
-    ```
-    "sink": {
-        "type": "DelimitedTextSink",
-        "storeSettings": {
-            "type": "AzureBlobFSWriteSettings",
-            "blockSizeInMB": 8
-        }
-    }
-    ```
+- **Aanbeveling**: Raadpleeg de fout voor meer informatie. Raadpleeg [CosmosDb Help-document](https://docs.microsoft.com/azure/cosmos-db/troubleshoot-dot-net-sdk). Neem contact op met het CosmosDb-team als u hulp nodig hebt.
 
 
 ## <a name="azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1
@@ -203,7 +131,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Symptomen**: de Kopieer activiteit mislukt met de volgende fout: 
 
     ```
-    Message: Failure happened on 'Sink' side. ErrorCode=UserErrorFailedFileOperation,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Upload file failed at path STAGING/PLANT/INDIARENEWABLE/LiveData/2020/01/14\\20200114-0701-oem_gibtvl_mannur_data_10min.csv.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=System.Net.WebException,Message=The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.,Source=System,''Type=System.Security.Authentication.AuthenticationException,Message=The remote certificate is invalid according to the validation procedure.,Source=System,'.
+    Message: ErrorCode = `UserErrorFailedFileOperation`, Error Message = `The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`.
     ```
 
 - **Oorzaak**: de validatie van het certificaat is mislukt tijdens de TLS-handshake.
@@ -238,7 +166,62 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: wanneer de STS (Service token server) die eigendom is van Azure Active Directory niet beschikbaar is, dat wil zeggen, een HTTP-fout 503 wordt geretourneerd. 
 
 - **Oplossing**: Voer de Kopieer activiteit na enkele minuten opnieuw uit.
+
+
+## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
+
+### <a name="error-code-adlsgen2operationfailed"></a>Fout code: ADLSGen2OperationFailed
+
+- **Bericht**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+
+- **Oorzaak**: ADLS Gen2 genereert de fout die aangeeft dat de bewerking is mislukt.
+
+- **Aanbeveling**: Raadpleeg het gedetailleerde fout bericht dat wordt gegenereerd door ADLS Gen2. Als dit wordt veroorzaakt door een tijdelijke fout, probeer het dan opnieuw. Als u meer hulp nodig hebt, neemt u contact op met de ondersteuning van Azure Storage en geeft u de aanvraag-ID op in een fout bericht.
+
+- **Oorzaak**: wanneer het fout bericht ' verboden ' bevat, is voor de service-principal of beheerde identiteit die u gebruikt mogelijk niet voldoende machtigingen voor toegang tot de ADLS Gen2.
+
+- **Aanbeveling**: Raadpleeg het Help-document: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication .
+
+- **Oorzaak**: wanneer het fout bericht ' InternalServerError ' bevat, wordt de fout geretourneerd door ADLS Gen2.
+
+- **Aanbeveling**: dit wordt mogelijk veroorzaakt door een tijdelijke fout, probeer het opnieuw. Als het probleem zich blijft voordoen, neemt u contact op met Azure Storage ondersteuning en geeft u de aanvraag-ID op in het fout bericht.
+
+### <a name="request-to-adls-gen2-account-met-timeout-error"></a>Fout bij het aanvragen van een time-out voor de ADLS Gen2-account
+
+- **Bericht**: fout code = `UserErrorFailedBlobFSOperation` , fout bericht = `BlobFS operation failed for: A task was canceled` .
+
+- **Oorzaak**: het probleem wordt veroorzaakt door de time-outfout van de ADLS Gen2-sink, wat meestal gebeurt op de zelf-hostende IR-computer.
+
+- **Aanbeveling**: 
+
+    - Plaats uw zelf-hostende IR-computer en het doel ADLS Gen2 account in dezelfde regio, indien mogelijk. Dit kan een wille keurige time-outfout voor komen en betere prestaties hebben.
+
+    - Controleer of er een speciale netwerk instelling is, zoals ExpressRoute, en zorg ervoor dat het netwerk voldoende band breedte heeft. U kunt het beste de zelf-hostende IR-instelling voor gelijktijdige taken verlagen wanneer de totale band breedte laag is, waardoor netwerk resource-concurrentie voor meerdere gelijktijdige taken kan voor komen.
+
+    - Kleinere blok grootte voor niet-binaire kopieën gebruiken om een dergelijke time-outfout te verhelpen als de bestands grootte gemiddeld of klein is. Raadpleeg [Blob Storage put-blok](https://docs.microsoft.com/rest/api/storageservices/put-block).
+
+       Als u de aangepaste blok grootte wilt opgeven, kunt u de eigenschap bewerken in. json-editor:
+        ```
+        "sink": {
+            "type": "DelimitedTextSink",
+            "storeSettings": {
+                "type": "AzureBlobFSWriteSettings",
+                "blockSizeInMB": 8
+            }
+        }
+        ```
+
                   
+## <a name="azure-file-storage"></a>Azure File Storage
+
+### <a name="error-code--azurefileoperationfailed"></a>Fout code: AzureFileOperationFailed
+
+- **Bericht**: `Azure File operation Failed. Path: %path;. ErrorMessage: %msg;.`
+
+- **Oorzaak**: probleem met Azure File Storage-bewerking.
+
+- **Aanbeveling**: Raadpleeg de fout voor meer informatie. Raadpleeg het Help-document van Azure File: https://docs.microsoft.com/rest/api/storageservices/file-service-error-codes . Neem contact op met het opslag team als u hulp nodig hebt.
+
 
 ## <a name="azure-synapse-analyticsazure-sql-databasesql-server"></a>Azure Synapse Analytics/Azure SQL Database/SQL Server
 
@@ -246,13 +229,29 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Bericht**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
 
+- **Oorzaak**: Azure SQL: als het fout bericht ' SqlErrorNumber = 47073 ' bevat, betekent dit dat open bare netwerk toegang wordt geweigerd in de connectiviteits instelling.
+
+- **Aanbeveling**: Stel bij Azure SQL-firewall de optie open bare netwerk toegang weigeren in op Nee. Meer informatie van https://docs.microsoft.com/azure/azure-sql/database/connectivity-settings#deny-public-network-access .
+
+- **Oorzaak**: Azure SQL: als het fout bericht SQL-fout code bevat, zoals ' SqlErrorNumber = [error code] ', raadpleegt u de Azure SQL-probleemoplossings handleiding.
+
+- **Aanbeveling**: meer informatie van https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues .
+
+- **Oorzaak**: Controleer of poort 1433 voor komt in de lijst met toegestane firewalls.
+
+- **Aanbeveling**: Volg dit referentie document: https://docs.microsoft.com/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by- .
+
 - **Oorzaak**: als het fout bericht ' SQLException ' bevat, genereert SQL database de fout die aangeeft dat een bepaalde bewerking is mislukt.
 
 - **Aanbeveling**: Zoek op SQL-fout code in dit referentie document voor meer informatie: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Als u meer hulp nodig hebt, neemt u contact op met Azure SQL-ondersteuning.
 
+- **Oorzaak**: als dit een tijdelijk probleem is (bijvoorbeeld een instabiele netwerk verbinding), voegt u de nieuwe poging in het activiteiten beleid toe om de oplossing te verkleinen.
+
+- **Aanbeveling**: Volg dit referentie document: https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities#activity-policy .
+
 - **Oorzaak**: als het fout bericht ' client met IP-adres '... ' bevat heeft geen toegang tot de server, en u probeert verbinding te maken met Azure SQL Database. dit wordt meestal veroorzaakt door Azure SQL Database firewall probleem.
 
-- **Aanbeveling**: Schakel in de configuratie van de logische SQL Server-firewall de optie ' Azure-Services en-bronnen toestaan voor toegang tot deze server ' in. Verwijzings document: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure .
+- **Aanbeveling**: Schakel in configuratie van Azure SQL Server firewall de optie ' Azure-Services en-bronnen toestaan voor toegang tot deze server ' in. Verwijzings document: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure .
 
 
 ### <a name="error-code--sqloperationfailed"></a>Fout code: SqlOperationFailed
@@ -272,7 +271,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: als het fout bericht ' InvalidOperationException ' bevat, wordt dit meestal veroorzaakt door ongeldige invoer gegevens.
 
 - **Aanbeveling**: als u wilt identificeren in welke rij het probleem zich voordoet, schakelt u de functie fout tolerantie in op Kopieer activiteit, waarmee u problematische rij (en) kunt omleiden naar de opslag voor verdere onderzoek. Verwijzings document: https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance .
-
 
 
 ### <a name="error-code--sqlunauthorizedaccess"></a>Fout code: SqlUnauthorizedAccess
@@ -342,11 +340,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Aanbeveling**: Controleer de kolom in de query ' Structure ' in dataset en ' mappings ' in de activiteit.
 
 
-### <a name="error-code--sqlcolumnnamemismatchbycasesensitive"></a>Fout code: SqlColumnNameMismatchByCaseSensitive
-
-- **Bericht**: `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
-
-
 ### <a name="error-code--sqlbatchwritetimeout"></a>Fout code: SqlBatchWriteTimeout
 
 - **Bericht**: `Timeouts in SQL write operation.`
@@ -385,11 +378,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: de SQL-verbinding wordt gesloten door SQL database wanneer de verbinding hoog gelijktijdig wordt uitgevoerd en de server is beëindigd.
 
 - **Aanbeveling**: externe server heeft de SQL-verbinding gesloten. Voeren. Als probleem reproduceren, neemt u contact op met Azure SQL-ondersteuning.
-
-
-### <a name="error-code--sqlcreatetablefailedunsupportedtype"></a>Fout code: SqlCreateTableFailedUnsupportedType
-
-- **Bericht**: `Type '%type;' in source side cannot be mapped to a type that supported by sink side(column name:'%name;') in autocreate table.`
 
 
 ### <a name="error-message-conversion-failed-when-converting-from-a-character-string-to-uniqueidentifier"></a>Fout bericht: de conversie is mislukt tijdens het converteren van een teken reeks naar een unieke id
@@ -454,9 +442,9 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
     - Tijd-> 12 bytes
     - Tinyint-> 1 byte
 
-- **Oplossing**: Verklein de kolom breedte kleiner dan 1 MB
-
-- Of gebruik bulksgewijze invoeg aanpak door poly Base uit te scha kelen
+- **Oplossing**: 
+    - Verklein de kolom breedte zodat deze kleiner is dan 1 MB.
+    - U kunt ook bulksgewijs invoegen door PolyBase uit te schakelen.
 
 
 ### <a name="error-message-the-condition-specified-using-http-conditional-headers-is-not-met"></a>Fout bericht: er is niet voldaan aan de voor waarde die is opgegeven met een HTTP-header (n)
@@ -478,17 +466,17 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oorzaak**: de hoofd oorzaak van het probleem wordt meestal veroorzaakt door het knel punt van de Azure SQL-zijde. Hier volgen enkele mogelijke oorzaken:
 
-    1. De Azure DB-laag is niet hoog genoeg.
+    - De Azure DB-laag is niet hoog genoeg.
 
-    1. Het gebruik van Azure DB-DTU is bijna 100%. U kunt [de prestaties bewaken](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) en overwegen om de DB-laag bij te werken.
+    - Het gebruik van Azure DB-DTU is bijna 100%. U kunt [de prestaties bewaken](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) en overwegen om de DB-laag bij te werken.
 
-    1. De indexen zijn niet juist ingesteld. Verwijder alle indexen voordat u de gegevens laadt en maak deze opnieuw nadat het laden is voltooid.
+    - De indexen zijn niet juist ingesteld. Verwijder alle indexen voordat de gegevens worden geladen en maak deze opnieuw nadat het laden is voltooid.
 
-    1. WriteBatchSize is niet groot genoeg om de grootte van de schemarij ruimte aan te passen. Probeer de eigenschap voor het probleem te verg Roten.
+    - WriteBatchSize is niet groot genoeg om de grootte van de schemarij ruimte aan te passen. Probeer de eigenschap voor het probleem te verg Roten.
 
-    1. In plaats van bulksgewijs inkrimpen, wordt opgeslagen procedure gebruikt, die naar verwachting de prestaties verergert. 
+    - In plaats van bulksgewijs inkrimpen, wordt opgeslagen procedure gebruikt, die naar verwachting de prestaties verergert. 
 
-- **Oplossing**: Raadpleeg de TSG voor de prestaties van de [Kopieer activiteit](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting)
+- **Oplossing**: Raadpleeg de TSG voor de [prestaties van de Kopieer activiteit](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting)
 
 
 ### <a name="performance-tier-is-low-and-leads-to-copy-failure"></a>De prestatie tier is laag en het kopiëren van de fout is mislukt
@@ -506,10 +494,10 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oorzaak**: het huidige SQL-account heeft onvoldoende machtigingen voor het uitvoeren van aanvragen die zijn uitgegeven door .net SqlBulkCopy. WriteToServer.
 
-- **Oplossing**: Ga naar een meer PRIVILEGEd SQL-account.
+- **Oplossing**: Schakel over naar een meer PRIVILEGEd SQL-account.
 
 
-### <a name="string-or-binary-data-would-be-truncated"></a>Teken reeks of binaire gegevens worden afgekapt
+### <a name="error-message-string-or-binary-data-would-be-truncated"></a>Fout bericht: teken reeks of binaire gegevens worden afgekapt
 
 - **Symptomen**: er is een fout opgetreden bij het kopiëren van gegevens naar een on-premises/Azure SQL Server-tabel: 
 
@@ -517,11 +505,36 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: Voer de volgende stappen uit om het probleem op te lossen:
 
-    1. Pas [fout tolerantie](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)toe, met name ' redirectIncompatibleRowSettings ', om problemen op te lossen met de rijen die het probleem hebben.
+    1. [Fout tolerantie](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor SQL-Sink Toep assen, met name ' redirectIncompatibleRowSettings ', om problemen op te lossen met de rijen die het probleem hebben.
 
-    1. Controleer de omgeleide gegevens met de kolom lengte van SQL-tabel schema om te zien welke kolom (len) moeten worden bijgewerkt.
+        > [!NOTE]
+        > Houd er rekening mee dat fout tolerantie mogelijk meer tijd in beslag neemt. Dit kan leiden tot hogere kosten.
 
-    1. Update het tabel schema dienovereenkomstig.
+    2. Controleer de omgeleide gegevens met de kolom lengte van SQL-tabel schema om te zien welke kolom (len) moeten worden bijgewerkt.
+
+    3. Update het tabel schema dienovereenkomstig.
+
+
+## <a name="azure-table-storage"></a>Azure-tabelopslag
+
+### <a name="error-code--azuretableduplicatecolumnsfromsource"></a>Fout code: AzureTableDuplicateColumnsFromSource
+
+- **Bericht**: `Duplicate columns with same name '%name;' are detected from source. This is NOT supported by Azure Table Storage sink`
+
+- **Oorzaak**: het kan gebruikelijk zijn voor SQL-query's met samen voeging of ongestructureerde CSV-bestanden
+
+- **Aanbeveling**: dubbel Controleer de bron kolommen en corrigeer dienovereenkomstig.
+
+
+## <a name="db2"></a>DB2
+
+### <a name="error-code--db2driverrunfailed"></a>Fout code: DB2DriverRunFailed
+
+- **Bericht**: `Error thrown from driver. Sql code: '%code;'`
+
+- **Oorzaak**: als het fout bericht ' SQLSTATE = 51002 SQLCODE =-805 ' bevat, raadpleegt u de tip in dit document: https://docs.microsoft.com/azure/data-factory/connector-db2#linked-service-properties
+
+- **Aanbeveling**: probeer ' NULLID ' in de eigenschap ' packageCollection ' in te stellen
 
 
 ## <a name="delimited-text-format"></a>Tekst indeling met scheidings tekens
@@ -537,7 +550,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 ### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Fout code: DelimitedTextMoreColumnsThanDefined
 
-- **Bericht**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
+- **Bericht**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %expectedColumnCount;.`
 
 - **Oorzaak**: het aantal kolommen in de problematische rij is groter dan het aantal kolommen in de eerste rij. Dit kan worden veroorzaakt door een gegevens probleem of door een onjuiste instelling van het scheidings teken voor kolom/aanhalings tekens.
 
@@ -550,22 +563,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: als uw bron een map is, is het mogelijk dat de bestanden in de opgegeven map een ander schema hebben.
 
 - **Aanbeveling**: Zorg ervoor dat de bestanden in de opgegeven map een identiek schema hebben.
-
-
-### <a name="error-code--delimitedtextincorrectrowdelimiter"></a>Fout code: DelimitedTextIncorrectRowDelimiter
-
-- **Bericht**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
-
-
-### <a name="error-code--delimitedtexttoolargecolumncount"></a>Fout code: DelimitedTextTooLargeColumnCount
-
-- **Bericht**: `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
-
-
-### <a name="error-code--delimitedtextinvalidsettings"></a>Fout code: DelimitedTextInvalidSettings
-
-- **Bericht**: `%settingIssues;`
-
 
 
 ## <a name="dynamics-365common-data-servicedynamics-crm"></a>Dynamics 365/Common Data Service/Dynamics CRM
@@ -583,9 +580,45 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Symptomen**: sommige kolommen worden niet meer weer gegeven bij het importeren van schema of het voorbekijken van gegevens. Fout bericht: `The valid structure information (column name and type) are required for Dynamics source.`
 
-- **Oorzaak**: dit probleem is in principe gepaard met het ontwerp, omdat ADF geen kolommen kan weer geven die geen waarde in de eerste tien records bevatten. Controleer of de kolommen die u hebt toegevoegd, de juiste indeling hebben. 
+- **Oorzaak**: dit probleem is in principe gepaard met het ontwerp, omdat ADF geen kolommen kan weer geven die geen waarde in de eerste tien records bevatten. Zorg ervoor dat de kolommen die u hebt toegevoegd de juiste indeling hebben. 
 
 - **Aanbeveling**: Voeg hand matig de kolommen toe op het tabblad toewijzing.
+
+
+### <a name="error-code--dynamicsmissingtargetformultitargetlookupfield"></a>Fout code: DynamicsMissingTargetForMultiTargetLookupField
+
+- **Bericht**: `Cannot find the target column for multi-target lookup field: '%fieldName;'.`
+
+- **Oorzaak**: de doel kolom bestaat niet in de bron of in de kolom toewijzing.
+
+- **Aanbeveling**: 1. Zorg ervoor dat de bron de doel kolom bevat. 2. Voeg de doel kolom toe aan de kolom toewijzing. Zorg ervoor dat de kolom Sink zich in het patroon {fieldName} bevindt @EntityReference .
+
+
+### <a name="error-code--dynamicsinvalidtargetformultitargetlookupfield"></a>Fout code: DynamicsInvalidTargetForMultiTargetLookupField
+
+- **Bericht**: `The provided target: '%targetName;' is not a valid target of field: '%fieldName;'. Valid targets are: '%validTargetNames;"`
+
+- **Oorzaak**: er wordt een onjuiste entiteits naam gegeven als doel entiteit van een opzoek veld met meerdere doelen.
+
+- **Aanbeveling**: Geef een geldige entiteits naam op voor het opzoek veld met meerdere doelen.
+
+
+### <a name="error-code--dynamicsinvalidtypeformultitargetlookupfield"></a>Fout code: DynamicsInvalidTypeForMultiTargetLookupField
+
+- **Bericht**: `The provided target type is not a valid string. Field: '%fieldName;'.`
+
+- **Oorzaak**: de waarde in doel kolom is geen teken reeks
+
+- **Aanbeveling**: Geef een geldige teken reeks op in de kolom multi-doel lookup-doel.
+
+
+### <a name="error-code--dynamicsfailedtorequetserver"></a>Fout code: DynamicsFailedToRequetServer
+
+- **Bericht**: `The dynamics server or the network is experiencing issues. Check network connectivity or check dynamics server log for more details.`
+
+- **Oorzaak**: de Dynamics-Server is onstabiel of ontoegankelijk of het netwerk ondervindt problemen.
+
+- **Aanbeveling**: Controleer de netwerk verbinding of Controleer het logboek van Dynamics Server voor meer informatie. Neem contact op met de ondersteuning voor Dynamics voor verdere hulp.
 
 
 ## <a name="excel-format"></a>Excel-indeling
@@ -594,73 +627,45 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Symptomen**:
 
-    1. Wanneer u Excel-gegevensset maakt en een schema importeert vanuit verbinding/archief, voor beeld van gegevens, lijst of werk bladen vernieuwen, kunt u een time-outfout opvragen als het Excel-bestand groot is.
+    - Wanneer u een Excel-gegevensset maakt en een schema importeert vanuit verbinding/archief, voor beeld van gegevens, lijst of werk bladen vernieuwen, kunt u een time-outfout opvragen als het Excel-bestand groot is.
 
-    1. Wanneer u de Kopieer activiteit gebruikt om gegevens te kopiëren van een groot Excel-bestand (>= 100 MB) naar een ander gegevens archief, kunnen er trage prestaties of OOM problemen optreden.
+    - Wanneer u de Kopieer activiteit gebruikt om gegevens te kopiëren van een groot Excel-bestand (>= 100 MB) naar een ander gegevens archief, kan dit leiden tot trage prestaties of OOM probleem.
 
 - **Oorzaak**: 
 
-    1. Voor bewerkingen zoals het importeren van schema, het weer geven van voor beelden van gegevens en het vermelden van werk bladen in Excel-gegevensset, is de time-out 100 en static. Voor een groot Excel-bestand kunnen deze bewerkingen niet worden voltooid binnen de time-outwaarde.
+    - Voor bewerkingen zoals het importeren van schema, het bekijken van gegevens en het weer geven van werk bladen in Excel-gegevensset, is de time-out 100 s en statisch. Voor een groot Excel-bestand kunnen deze bewerkingen niet worden voltooid binnen de time-outwaarde.
 
-    2. Met de ADF Copy-activiteit wordt het hele Excel-bestand in het geheugen gelezen en vervolgens vindt het opgegeven werk blad en de cellen om gegevens te lezen. Dit gedrag is te wijten aan het gebruik van de onderliggende SDK.
+    - Met de ADF Copy-activiteit wordt het hele Excel-bestand in het geheugen gelezen en vervolgens vindt het opgegeven werk blad en de cellen om gegevens te lezen. Dit gedrag is te wijten aan het gebruik van de onderliggende SDK.
 
 - **Oplossing**: 
 
-    1. Voor het importeren van schema kunt u een kleiner voorbeeld bestand genereren dat een subset is van het oorspronkelijke bestand en kiest u schema importeren uit voorbeeld bestand in plaats van schema importeren uit verbinding/archief.
+    - Voor het importeren van schema kunt u een kleiner voorbeeld bestand genereren, een subset van het oorspronkelijke bestand, en vervolgens schema importeren uit voorbeeld bestand kiezen in plaats van schema importeren vanuit verbinding/archief.
 
-    2. Voor het werk blad overzichten kunt u in de vervolg keuzelijst voor het werk blad op bewerken klikken en in plaats daarvan de blad naam/index invoeren.
+    - Voor het werk blad overzichten kunt u in de vervolg keuzelijst voor het werk blad op bewerken klikken en in plaats daarvan de blad naam/index invoeren.
 
-    3. Als u een groot Excel-bestand (>100 MB) wilt kopiëren naar een ander archief, kunt u de Excel-bron gegevens stroom gebruiken die door sport streaming wordt gelezen en beter presteert.
+    - Als u een groot Excel-bestand (>100 MB) wilt kopiëren naar een ander archief, kunt u gebruikmaken van de Excel-bron gegevens stroom die door sport streaming wordt gelezen en beter presteert.
+    
 
+## <a name="ftp"></a>FTP
 
-## <a name="hdinsight"></a>HDInsight
+### <a name="error-code--ftpfailedtoconnecttoftpserver"></a>Fout code: FtpFailedToConnectToFtpServer
 
-### <a name="ssl-error-when-adf-linked-service-using-hdinsight-esp-cluster"></a>SSL-fout bij het koppelen van een ADF-service met het HDInsight ESP-cluster
+- **Bericht**: `Failed to connect to FTP server. Please make sure the provided server informantion is correct, and try again.`
 
-- **Bericht**: `Failed to connect to HDInsight cluster: 'ERROR [HY000] [Microsoft][DriverSupport] (1100) SSL certificate verification failed because the certificate is missing or incorrect.`
+- **Oorzaak**: onjuist gekoppeld Service type kan worden gebruikt voor FTP-server, zoals het gebruik van een gekoppelde service van SFTP om verbinding te maken met een FTP-server.
 
-- **Oorzaak**: het probleem heeft waarschijnlijk te maken met het vertrouwens archief van het systeem.
-
-- **Oplossing**: u kunt navigeren naar het pad **micro soft Integration RUNTIME\4.0\SHARED\ODBC Drivers\Microsoft Hive ODBC Driver\lib** en DriverConfiguration64.exe openen om de instelling te wijzigen.
-
-    ![Schakel het selectie vakje systeem vertrouwens opslag gebruiken uit](./media/connector-troubleshoot-guide/system-trust-store-setting.png)
+- **Aanbeveling**: Controleer de poort van de doel server. FTP maakt standaard gebruik van poort 21.
 
 
-## <a name="json-format"></a>JSON-indeling
+## <a name="http"></a>HTTP
 
-### <a name="error-code--jsoninvalidarraypathdefinition"></a>Fout code: JsonInvalidArrayPathDefinition
+### <a name="error-code--httpfilefailedtoread"></a>Fout code: HttpFileFailedToRead
 
-- **Bericht**: `Error occurred when deserializing source JSON data. Check whether the JsonPath in JsonNodeReference and JsonPathDefintion is valid.`
+- **Bericht**: `Failed to read data from http server. Check the error from http server：%message;`
 
+- **Oorzaak**: deze fout treedt op wanneer Azure Data Factory communiceert met de http-server, maar de bewerking van de HTTP-aanvraag is mislukt.
 
-### <a name="error-code--jsonemptyjobjectdata"></a>Fout code: JsonEmptyJObjectData
-
-- **Bericht**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
-
-
-### <a name="error-code--jsonnullvalueinpathdefinition"></a>Fout code: JsonNullValueInPathDefinition
-
-- **Bericht**: `Null JSONPath detected in JsonPathDefinition.`
-
-
-### <a name="error-code--jsonunsupportedhierarchicalcomplexvalue"></a>Fout code: JsonUnsupportedHierarchicalComplexValue
-
-- **Bericht**: `The retrieved type of data %data; with value %value; is not supported yet. Please either remove the targeted column '%name;' or enable skip incompatible row to skip the issue rows.`
-
-
-### <a name="error-code--jsonconflictpartitiondiscoveryschema"></a>Fout code: JsonConflictPartitionDiscoverySchema
-
-- **Bericht**: `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
-
-
-### <a name="error-code--jsoninvaliddataformat"></a>Fout code: JsonInvalidDataFormat
-
-- **Bericht**: `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
-
-
-### <a name="error-code--jsoninvaliddatamixedarrayandobject"></a>Fout code: JsonInvalidDataMixedArrayAndObject
-
-- **Bericht**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
+- **Aanbeveling**: Controleer de HTTP-status code \ bericht in het fout bericht en los het probleem op de externe server op.
 
 
 ## <a name="oracle"></a>Oracle
@@ -673,9 +678,44 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Aanbeveling**: 
 
-    Voer uit `select dump(<column name>)` om te controleren of de waarde in Oracle binnen het bereik van ADF is. 
+    Voer uit `select dump(<column name>)` om te controleren of de waarde in Oracle van het ADF-bereik is. 
 
     Als u de byte volgorde in het resultaat wilt weten, controleert u https://stackoverflow.com/questions/13568193/how-are-dates-stored-in-oracle .
+
+
+## <a name="orc-format"></a>Orc-indeling
+
+### <a name="error-code--orcjavainvocationexception"></a>Fout code: OrcJavaInvocationException
+
+- **Bericht**: `An error occurred when invoking java, message: %javaException;.`
+
+- **Oorzaak**: wanneer het fout bericht ' Java. lang. OutOfMemory ', ' Java heap Space ' en ' doubleCapacity ' bevat, is dit meestal een geheugen beheer probleem in de oude versie van Integration runtime.
+
+- **Aanbeveling**: als u gebruikmaakt van zelf-hostende Integration runtime, kunt u het beste een upgrade naar de nieuwste versie uitvoeren.
+
+- **Oorzaak**: wanneer het fout bericht ' Java. lang. OutOfMemory ' bevat, heeft de Integration runtime onvoldoende bronnen om de bestanden te verwerken.
+
+- **Aanbeveling**: Beperk de gelijktijdige uitvoeringen van de Integration runtime. Voor zelf-hostende Integration Runtime schaalt u omhoog naar een krachtige computer met geheugen dat groter is dan of gelijk is aan 8 GB.
+
+- **Oorzaak**: wanneer het fout bericht ' NullPointerReference ' bevat, is er mogelijk een tijdelijke fout.
+
+- **Aanbeveling**: Probeer het opnieuw. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
+
+- **Oorzaak**: wanneer het fout bericht ' BufferOverflowException ' bevat, is er mogelijk een tijdelijke fout.
+
+- **Aanbeveling**: Probeer het opnieuw. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
+
+- **Oorzaak**: wanneer het fout bericht ' Java. lang. ClassCastException:org. apache. Hadoop. component. serde2. io. HiveCharWritable bevat, niet kan worden geconverteerd naar org. apache. Hadoop. io. Text ', is dit het type conversie probleem in Java runtime. Normaal gesp roken wordt de oorzaak van bron gegevens niet goed afgehandeld in Java runtime.
+
+- **Aanbeveling**: dit is gegevens probleem. Probeer teken reeks te gebruiken in plaats van char/Varchar in Orc-indelings gegevens.
+
+### <a name="error-code--orcdatetimeexceedlimit"></a>Fout code: OrcDateTimeExceedLimit
+
+- **Bericht**: `The Ticks value '%ticks;' for the datetime column must be between valid datetime ticks range -621355968000000000 and 2534022144000000000.`
+
+- **Oorzaak**: als de datum/tijd-waarde ' 0001-01-01 00:00:00 ' is, kan dit worden veroorzaakt door het verschil tussen de Juliaanse kalender en de Gregoriaanse kalender. https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar#Difference_between_Julian_and_proleptic_Gregorian_calendar_dates.
+
+- **Aanbeveling**: Controleer de waarde voor de maat streepjes en Vermijd het gebruik van de datum-/tijdwaarde ' 0001-01-01 00:00:00 '.
 
 
 ## <a name="parquet-format"></a>Parquet-indeling
@@ -828,14 +868,22 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: 
 
-    1. Controleer of er spaties in de kolom naam van de Sink staan.
+    - Controleer of er spaties in de kolom naam van de Sink staan.
 
-    1. Controleer of de eerste rij met spaties als kolom naam wordt gebruikt.
+    - Controleer of de eerste rij met spaties als kolom naam wordt gebruikt.
 
-    1. Controleer of het type OriginalType wel of niet wordt ondersteund. Probeer deze speciale symbolen te vermijden `,;{}()\n\t=` . 
+    - Controleer of het type OriginalType wel of niet wordt ondersteund. Probeer deze speciale symbolen te vermijden `,;{}()\n\t=` . 
 
 
 ## <a name="rest"></a>REST
+
+### <a name="error-code--restsinkcallfailed"></a>Fout code: RestSinkCallFailed
+
+- **Bericht**: `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
+
+- **Oorzaak**: deze fout treedt op wanneer Azure Data Factory praat met het rest-eind punt via het HTTP-protocol en de aanvraag bewerking mislukt.
+
+- **Aanbeveling**: Controleer de HTTP-status code \ bericht in het fout bericht en los het probleem op de externe server op.
 
 ### <a name="unexpected-network-response-from-rest-connector"></a>Onverwachte netwerk reactie van REST-connector
 
@@ -861,75 +909,76 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 ## <a name="sftp"></a>SFTP
 
-### <a name="invalid-sftp-credential-provided-for-sshpublickey-authentication-type"></a>Er is een ongeldige SFTP-referentie gegeven voor het verificatie type SSHPublicKey
+#### <a name="error-code--sftpoperationfail"></a>Fout code: SftpOperationFail
 
-- **Symptomen**: de open bare SSH-sleutel verificatie wordt gebruikt terwijl een ongeldige SFTP-referentie wordt aangeboden voor het verificatie type SshPublicKey.
+- **Bericht**: `Failed to '%operation;'. Check detailed error from SFTP.`
 
-- **Oorzaak**: deze fout kan drie mogelijke oorzaken hebben:
+- **Oorzaak**: het probleem met de SFTP-bewerking is opgetreden.
 
-    1. De inhoud van een persoonlijke sleutel wordt opgehaald uit Azure/SDK, maar is niet juist gecodeerd.
-
-    1. De indeling van de onjuiste sleutel inhoud is gekozen.
-
-    1. Ongeldige inhoud voor referentie of persoonlijke sleutel.
-
-- **Oplossing**: 
-
-    1. Voor **Oorzaak 1**:
-
-       Als de inhoud van een persoonlijke sleutel afkomstig is uit Azure en het oorspronkelijke sleutel bestand kan worden gebruikt als de klant deze rechtstreeks naar een gekoppelde SFTP-service uploadt
-
-       Raadpleeg https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authentication de privateKey-inhoud is een base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
-
-       Versleutel **de volledige inhoud van de oorspronkelijke persoonlijke sleutel** met base64-code ring en sla de versleutelde teken reeks op in Azure. De oorspronkelijke persoonlijke sleutel is de naam die kan worden gebruikt voor de gekoppelde service van SFTP als u op uploaden van bestand klikt.
-
-       Hier volgen enkele voor beelden die worden gebruikt voor het genereren van de teken reeks:
-
-       - C#-code gebruiken:
-       ```
-       byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
-       string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
-       ```
-
-       - Python-code gebruiken:
-       ```
-       import base64
-       rfd = open(r'{Private Key Path}', 'rb')
-       keyContent = rfd.read()
-       rfd.close()
-       print base64.b64encode(Key Content)
-       ```
-
-       - Hulp programma voor Base64-conversie van derden gebruiken
-
-         Hulpprogram ma's zoals https://www.base64encode.org/ aanbevolen.
-
-    1. Voor **oorzaak 2**:
-
-       Als PKCS # 8-indeling SSH-persoonlijke sleutel wordt gebruikt
-
-       PKCS # 8-persoonlijke SSH-sleutel (beginnen met '-----beginnen met de versleutelde persoonlijke sleutel-----') wordt momenteel niet ondersteund voor toegang tot de SFTP-server in ADF. 
-
-       Voer de onderstaande opdrachten uit om de sleutel om te zetten in een traditionele SSH-sleutel notatie (begin met '-----BEGIN RSA-sleutel-----'):
-
-       ```
-       openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
-       chmod 600 traditional_format_key_file
-       ssh-keygen -f traditional_format_key_file -p
-       ```
-    1. Voor **oorzaak 3**:
-
-       Controleer of het sleutel bestand of het wacht woord juist is.
+- **Aanbeveling**: gedetailleerde fout van SFTP controleren.
 
 
-### <a name="incorrect-linked-service-type-is-used"></a>Er wordt een onjuist gekoppeld Service type gebruikt
+### <a name="error-code--sftprenameoperationfail"></a>Fout code: SftpRenameOperationFail
 
-- **Symptomen**: FTP/SFTP-server kan niet worden bereikt.
+- **Bericht**: `Failed to rename the temp file. Your SFTP server doesn't support renaming temp file, please set "useTempFileRename" as false in copy sink to disable uploading to temp file.`
 
-- **Oorzaak**: onjuist gekoppeld Service type wordt gebruikt voor FTP-of SFTP-server, zoals het gebruik van een met FTP gekoppelde service om verbinding te maken met een SFTP-server of omgekeerd.
+- **Oorzaak**: uw SFTP-server biedt geen ondersteuning voor het hernoemen van het tijdelijke bestand.
 
-- **Oplossing**: Controleer de poort van de doel server. FTP maakt standaard gebruik van poort 21 en SFTP gebruikt poort 22.
+- **Aanbeveling**: Stel ' useTempFileRename ' in als False in copy Sink om uploaden naar het tijdelijke bestand uit te scha kelen.
 
+
+### <a name="error-code--sftpinvalidsftpcredential"></a>Fout code: SftpInvalidSftpCredential
+
+- **Bericht**: `Invalid Sftp credential provided for '%type;' authentication type.`
+
+- **Oorzaak**: de inhoud van een persoonlijke sleutel wordt OPGEHAALD uit Azure/SDK, maar is niet juist gecodeerd.
+
+- **Aanbeveling**:  
+
+    Als de inhoud van een persoonlijke sleutel afkomstig is uit Azure en het oorspronkelijke sleutel bestand kan worden gebruikt als de klant deze rechtstreeks naar een gekoppelde SFTP-service uploadt
+
+    Raadpleeg https://docs.microsoft.com/azure/data-factory/connector-sftp#using-ssh-public-key-authentication de privateKey-inhoud is een base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
+
+    Versleutel **de volledige inhoud van de oorspronkelijke persoonlijke sleutel** met base64-code ring en sla de versleutelde teken reeks op in Azure. De oorspronkelijke persoonlijke sleutel is de naam die kan worden gebruikt voor de gekoppelde service van SFTP als u op uploaden van bestand klikt.
+
+    Hier volgen enkele voor beelden die worden gebruikt voor het genereren van de teken reeks:
+
+    - C#-code gebruiken:
+    ```
+    byte[] keyContentBytes = File.ReadAllBytes(Private Key Path);
+    string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
+    ```
+
+    - Python-code gebruiken:
+    ```
+    import base64
+    rfd = open(r'{Private Key Path}', 'rb')
+    keyContent = rfd.read()
+    rfd.close()
+    print base64.b64encode(Key Content)
+    ```
+
+    - Hulp programma voor Base64-conversie van derden gebruiken
+
+        Hulpprogram ma's zoals https://www.base64encode.org/ aanbevolen.
+
+- **Oorzaak**: de indeling van de onjuiste sleutel inhoud is gekozen
+
+- **Aanbeveling**:  
+
+    PKCS # 8-persoonlijke SSH-sleutel (beginnen met '-----beginnen met de versleutelde persoonlijke sleutel-----') wordt momenteel niet ondersteund voor toegang tot de SFTP-server in ADF. 
+
+    Voer de onderstaande opdrachten uit om de sleutel om te zetten in een traditionele SSH-sleutel notatie (begin met '-----BEGIN RSA-sleutel-----'):
+
+    ```
+    openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
+    chmod 600 traditional_format_key_file
+    ssh-keygen -f traditional_format_key_file -p
+    ```
+
+- **Oorzaak**: ongeldige inhoud van referentie-of persoonlijke sleutel
+
+- **Aanbeveling**: dubbel Controleer met de hulpprogram Ma's zoals WinSCP om te controleren of uw sleutel bestand of-wacht woord juist is.
 
 ### <a name="sftp-copy-activity-failed"></a>SFTP-Kopieer activiteit is mislukt
 
@@ -940,15 +989,19 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oplossing**: dubbel Controleer hoe uw gegevensset is geconfigureerd door de kolom doel gegevensset te koppelen om te controleren of er een dergelijke ' AccMngr-kolom is.
 
 
-### <a name="sftp-server-connection-throttling"></a>Verbinding beperken met SFTP-server
+### <a name="error-code--sftpfailedtoconnecttosftpserver"></a>Fout code: SftpFailedToConnectToSftpServer
 
-- **Symptomen**: Server respons bevat geen SSH-protocol-id en kan niet worden gekopieerd.
+- **Bericht**: `Failed to connect to Sftp server '%server;'.`
 
-- **Oorzaak**: ADF maakt het mogelijk om meerdere verbindingen te maken die worden gedownload van de sftp-server en soms door de sftp-server beperking te bereiken. Vrijwel elke server retourneert een andere fout wanneer de beperking wordt bereikt.
+- **Oorzaak**: als het fout bericht de Lees bewerking socket bevat na 30000 milliseconden een time-out heeft, is het mogelijk dat er een onjuist gekoppeld Service type voor de sftp-server wordt gebruikt, zoals het gebruik van een met FTP gekoppelde service om verbinding te maken met een SFTP-server.
 
-- **Oplossing**: 
+- **Aanbeveling**: Controleer de poort van de doel server. SFTP maakt standaard gebruik van poort 22.
 
-    Geef het maximale aantal gelijktijdige verbindingen van de SFTP-gegevensset op 1 en voer de kopie opnieuw uit. Als de bewerking is geslaagd, kunnen we ervoor zorgen dat beperking de oorzaak is.
+- **Oorzaak**: als het fout bericht ' server antwoord bevat geen SSH-protocol-id ', een mogelijke oorzaak is dat SFTP-server de verbinding heeft beperkt. ADF maakt het mogelijk om meerdere verbindingen te maken voor het gelijktijdig downloaden van de SFTP-server, en soms wordt het door de SFTP-server beperkt. Vrijwel elke server retourneert een andere fout wanneer de beperking wordt bereikt.
+
+- **Aanbeveling**:  
+
+    Geef de maximale gelijktijdige verbinding van de SFTP-gegevensset op 1 op en voer de kopie opnieuw uit. Als de bewerking is geslaagd, kunnen we ervoor zorgen dat beperking de oorzaak is.
 
     Als u de lage door voer wilt verhogen, neemt u contact op met de SFTP-beheerder om de limiet voor gelijktijdige verbindingen te verhogen of voegt u het volgende IP-adres toe aan de lijst met toegestane items:
 
@@ -958,13 +1011,53 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
     - Als u een zelf-hostende IR gebruikt, voegt u het IP-adres van de machine toe die is geïnstalleerd op de acceptatie lijst SHIR.
 
 
-### <a name="error-code-sftprenameoperationfail"></a>Fout code: SftpRenameOperationFail
+## <a name="sharepoint-online-list"></a>SharePoint Online-lijst
 
-- **Symptomen**: de pijp lijn kan geen gegevens kopiëren van de BLOB naar SFTP met de volgende fout: `Operation on target Copy_5xe failed: Failure happened on 'Sink' side. ErrorCode=SftpRenameOperationFail,Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException` .
+### <a name="error-code--sharepointonlineauthfailed"></a>Fout code: SharePointOnlineAuthFailed
 
-- **Oorzaak**: de optie useTempFileRename is ingesteld als waar bij het kopiëren van de gegevens. Hiermee kan het proces tijdelijke bestanden gebruiken. De fout wordt geactiveerd als een of meer tijdelijke bestanden zijn verwijderd voordat de hele gegevens worden gekopieerd.
+- **Bericht**: `The access token generated failed, status code: %code;, error message: %message;.`
 
-- **Oplossing**: Stel de optie useTempFileName in op false.
+- **Oorzaak**: de Service-Principal-ID en-sleutel zijn mogelijk niet correct ingesteld.
+
+- **Aanbeveling**: Controleer de geregistreerde toepassing (Service-Principal-id) en de sleutel of deze correct is ingesteld.
+
+
+## <a name="xml-format"></a>XML-indeling
+
+### <a name="error-code--xmlsinknotsupported"></a>Fout code: XmlSinkNotSupported
+
+- **Bericht**: `Write data in xml format is not supported yet, please choose a different format!`
+
+- **Oorzaak**: een XML-gegevensset als Sink-gegevensset in uw Kopieer activiteit gebruikt
+
+- **Aanbeveling**: een gegevensset in een andere indeling gebruiken als kopie-sink.
+
+
+### <a name="error-code--xmlattributecolumnnameconflict"></a>Fout code: XmlAttributeColumnNameConflict
+
+- **Bericht**: `Column names %attrNames;' for attributes of element '%element;' conflict with that for corresponding child elements, and the attribute prefix used is '%prefix;'.`
+
+- **Oorzaak**: er is een kenmerk voorvoegsel gebruikt dat het conflict heeft veroorzaakt.
+
+- **Aanbeveling**: Stel een andere waarde in voor de eigenschap attributePrefix.
+
+
+### <a name="error-code--xmlvaluecolumnnameconflict"></a>Fout code: XmlValueColumnNameConflict
+
+- **Bericht**: `Column name for the value of element '%element;' is '%columnName;' and it conflicts with the child element having the same name.`
+
+- **Oorzaak**: een van de onderliggende element namen gebruikt als de kolom naam voor de waarde van het element.
+
+- **Aanbeveling**: Stel een andere waarde in voor de eigenschap valueColumn.
+
+
+### <a name="error-code--xmlinvalid"></a>Fout code: XmlInvalid
+
+- **Bericht**: `Input XML file '%file;' is invalid with parsing error '%error;'.`
+
+- **Oorzaak**: het XML-invoer bestand heeft niet de juiste indeling.
+
+- **Aanbeveling**: Corrigeer het XML-bestand om het goed te maken.
 
 
 ## <a name="general-copy-activity-error"></a>Fout met algemene Kopieer activiteit
@@ -987,24 +1080,23 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Aanbeveling**: Controleer de Sink-gegevensset en herstel het pad zonder joker waarde.
 
 
-### <a name="error-code--mappinginvalidpropertywithemptyvalue"></a>Fout code: MappingInvalidPropertyWithEmptyValue
+### <a name="fips-issue"></a>FIPS-probleem
 
-- **Bericht**: `One or more '%sourceOrSink;' in copy activity mapping doesn't point to any data. Choose one of the three properties 'name', 'path' and 'ordinal' to reference columns/fields.`
+- **Symptomen**: Kopieer activiteit mislukt op door FIPS ingeschakelde, zelf-hostende Integration runtime machine met fout bericht `This implementation is not part of the Windows Platform FIPS validated cryptographic algorithms.` . Dit kan gebeuren bij het kopiëren van gegevens met connectors zoals Azure Blob, SFTP, enzovoort.
 
+- **Oorzaak**: FIPS (Federal Information Processing Standards) definieert een bepaalde set cryptografische algoritmen die mogen worden gebruikt. Wanneer de FIPS-modus is ingeschakeld op de computer, zijn sommige cryptografische klassen waarvan de activiteit wordt gekopieerd, in sommige scenario's geblokkeerd.
 
-### <a name="error-code--mappinginvalidpropertywithnamepathandordinal"></a>Fout code: MappingInvalidPropertyWithNamePathAndOrdinal
+- **Oplossing**: in [dit artikel](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/why-we-8217-re-not-recommending-8220-fips-mode-8221-anymore/ba-p/701037)vindt u meer informatie over de huidige situatie van de FIPS-modus in Windows en kunt u evalueren of u FIPS op de zelf-hostende Integration runtime computer wilt uitschakelen.
 
-- **Bericht**: `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
+    Als u daarentegen FIPS wilt Azure Data Factory overs Laan en de uitvoering van de activiteit hebt voltooid, kunt u de volgende stappen volgen:
 
+    1. Open de map waarin zelf-hostende Integration Runtime is geïnstalleerd, meestal onder `C:\Program Files\Microsoft Integration Runtime\<IR version>\Shared` .
 
-### <a name="error-code--mappingduplicatedordinal"></a>Fout code: MappingDuplicatedOrdinal
+    2. Open diawp.exe.config en voeg `<enforceFIPSPolicy enabled="false"/>` het volgende toe aan de `<runtime>` sectie.
 
-- **Bericht**: `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
+        ![FIPS uitschakelen](./media/connector-troubleshoot-guide/disable-fips-policy.png)
 
-
-### <a name="error-code--mappinginvalidordinalforsinkcolumn"></a>Fout code: MappingInvalidOrdinalForSinkColumn
-
-- **Bericht**: `Invalid 'ordinal' property for sink column under 'mappings' property. Ordinal: %Ordinal;.`
+    3. Start de zelf-hostende Integration Runtime computer opnieuw op.
 
 
 ## <a name="next-steps"></a>Volgende stappen

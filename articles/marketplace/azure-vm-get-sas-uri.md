@@ -7,12 +7,12 @@ ms.topic: how-to
 author: iqshahmicrosoft
 ms.author: krsh
 ms.date: 10/19/2020
-ms.openlocfilehash: ead367568762d4b76de7164feb56b7a31cd53e0d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e28942a77a1d695a17f3231901f337695e602c64
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129113"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825555"
 ---
 # <a name="how-to-generate-a-sas-uri-for-a-vm-image"></a>Een SAS-URI voor een VM-installatie kopie genereren
 
@@ -34,12 +34,12 @@ Er zijn twee algemene hulpprogram ma's voor het maken van een SAS-adres (URL):
 
 ### <a name="using-tool-1-azure-storage-explorer"></a>Hulp programma 1 gebruiken: Azure Storage Explorer
 
-1. Ga naar uw **opslag account** .
-1. Open **Storage Explorer** .
+1. Ga naar uw **opslag account**.
+1. Open **Storage Explorer**.
 
     :::image type="content" source="media/create-vm/storge-account-explorer.png" alt-text="Venster opslag account.":::
 
-3. Klik in de **container** met de rechter muisknop op het VHD-bestand en selecteer **hand tekening voor share toegang ophalen** .
+3. Klik in de **container** met de rechter muisknop op het VHD-bestand en selecteer **hand tekening voor share toegang ophalen**.
 4. Voer in het dialoog venster **Shared Access Signature** de volgende velden in:
 
     1. Begin tijd – machtigings begindatum voor toegang tot de virtuele harde schijf. Geef een datum op die één dag voor de huidige datum valt.
@@ -62,7 +62,7 @@ Er zijn twee algemene hulpprogram ma's voor het maken van een SAS-adres (URL):
 1. Down load en Installeer [Microsoft Azure LC](/cli/azure/install-azure-cli)I. Er zijn versies beschikbaar voor Windows, macOS en verschillende distributies van Linux.
 2. Maak een Power shell-bestand (. ps1-bestands extensie), kopieer de volgende code en sla deze lokaal op.
 
-    ```JSON
+    ```azurecli-interactive
     az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net’ --name <vhd-name> --permissions rl --start ‘<start-date>’ --expiry ‘<expiry-date>’
     ```
 
@@ -70,25 +70,26 @@ Er zijn twee algemene hulpprogram ma's voor het maken van een SAS-adres (URL):
 
     - account naam: de naam van uw Azure Storage-account.
     - account sleutel: uw Azure Storage-account sleutel.
-    - VHD-naam: de naam van uw VHD.
     - Start datum: de start datum van machtigingen voor toegang tot de VHD. Geef een datum op van één dag voor de huidige datum.
     - verloop datum: de verval datum van de machtiging voor de toegang tot de virtuele harde schijf. Geef een datum op die ten minste drie weken na de huidige datum valt.
 
     Hier volgt een voor beeld van de juiste parameter waarden (op het moment van schrijven):
 
-    `az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ON c+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net’ --name vhds -- permissions rl --start ‘2020-04-01T00:00:00Z’ --expiry ‘2021-04-01T00:00:00Z’`
+    ```azurecli-interactive
+    az storage container generate-sas --connection-string ‘DefaultEndpointsProtocol=https;AccountName=st00009;AccountKey=6L7OWFrlabs7Jn23OaR3rvY5RykpLCNHJhxsbn9ON c+bkCq9z/VNUPNYZRKoEV1FXSrvhqq3aMIDI7N3bSSvPg==;EndpointSuffix=core.windows.net’ --name vhds -- permissions rl --start ‘2020-04-01T00:00:00Z’ --expiry ‘2021-04-01T00:00:00Z’
+    ```
 
 1. Sla de wijzigingen op.
 2. Gebruik een van de volgende methoden om dit script uit te voeren met beheerders bevoegdheden voor het maken van een SAS-connection string voor toegang op container niveau:
 
-    - Voer het script uit vanaf de-console. Klik in Windows met de rechter muisknop op het script en selecteer **als administrator uitvoeren** .
+    - Voer het script uit vanaf de-console. Klik in Windows met de rechter muisknop op het script en selecteer **als administrator uitvoeren**.
     - Voer het script uit vanuit een Power shell-script editor, zoals [Windows PowerShell ISE](/powershell/scripting/components/ise/introducing-the-windows-powershell-ise). In dit scherm wordt het maken van een SAS-connection string in deze editor weer gegeven:
 
     [![een SAS-connection string maken in de Power shell-editor](media/vm/create-sas-uri-power-shell-ise.png)](media/vm/create-sas-uri-power-shell-ise.png#lightbox)
 
 6. Kopieer de SAS-connection string en sla deze op in een tekst bestand op een veilige locatie. Bewerk deze teken reeks om de VHD-locatie gegevens toe te voegen om de definitieve SAS-URI te maken.
 7. Ga in het Azure Portal naar de Blob-opslag met de VHD die is gekoppeld aan de nieuwe URI.
-8. Kopieer de URL van het thebBlob-service-eind punt:
+8. Kopieer de URL van het eind punt van de BLOB-service:
 
     ![De URL van het eind punt van de BLOB-service wordt gekopieerd.](media/vm/create-sas-uri-blob-endpoint.png)
 

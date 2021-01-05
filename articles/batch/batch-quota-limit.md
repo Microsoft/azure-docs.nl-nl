@@ -2,14 +2,14 @@
 title: Servicequota en -limieten
 description: Meer informatie over standaard Azure Batch quota's, limieten en beperkingen, en het aanvragen van quotum verhogingen
 ms.topic: conceptual
-ms.date: 12/16/2020
+ms.date: 12/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9f529d388cb883f635b6225801af5ce41b8c997a
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 11c9ad1e916ad7e64b59cc13c0967d2b9daed4aa
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614508"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814632"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Quota en limieten voor Batch-service
 
@@ -33,7 +33,7 @@ Houd er ook rekening mee dat quota's geen gegarandeerde waarden zijn. Quota kunn
 
 ### <a name="cores-quotas-in-batch-service-mode"></a>Kernen quota's in de batch-service modus
 
-Het afdwingen van specifieke kern quota wordt verbeterd, waarbij de wijzigingen in fasen beschikbaar worden gemaakt en voor alle batch-accounts aan het eind december 2020 worden uitgevoerd.
+Het afdwingen van specifieke kern quota wordt verbeterd, waarbij de wijzigingen in fasen beschikbaar worden gemaakt en voor alle batch-accounts aan het eind januari 2021 worden uitgevoerd.
 
 Er bestaan kern quota's voor elke VM-serie die wordt ondersteund door batch en die worden weer gegeven op de pagina **quota's** in de portal. De quotum limieten van de VM-serie kunnen worden bijgewerkt met een ondersteunings aanvraag, zoals hieronder wordt beschreven.
 
@@ -70,7 +70,7 @@ Limieten voor groeps grootte worden ingesteld door de batch-service. In tegens t
 
 ## <a name="other-limits"></a>Andere limieten
 
-Aanvullende limieten die zijn ingesteld door de batch-service. In tegens telling tot [resource quota](#resource-quotas)kunnen deze waarden niet worden gewijzigd.
+Deze aanvullende limieten worden ingesteld door de batch-service. In tegens telling tot [resource quota](#resource-quotas)kunnen deze waarden niet worden gewijzigd.
 
 | **Resource** | **Maximum limiet** |
 | --- | --- |
@@ -80,6 +80,7 @@ Aanvullende limieten die zijn ingesteld door de batch-service. In tegens telling
 | Toepassings pakketten per pool | 10 |
 | Maximale levens duur van taken | 180 dagen<sup>1</sup> |
 | [Koppelingen](virtual-file-mount.md) per Compute-knoop punt | 10 |
+| Certificaten per pool | 12 |
 
 <sup>1</sup> de maximale levens duur van een taak, van wanneer deze wordt toegevoegd aan de taak wanneer deze is voltooid, is 180 dagen. Voltooide taken blijven zeven dagen geldig; gegevens voor taken die niet binnen de maximale levens duur zijn voltooid, zijn niet toegankelijk.
 
@@ -91,7 +92,7 @@ U kunt als volgt uw batch-account quota's weer geven in de [Azure Portal](https:
 1. Selecteer **quota's** in het menu van het batch-account.
 1. De quota's weer geven die momenteel zijn toegepast op het batch-account.
 
-:::image type="content" source="./media/batch-quota-limit/account-quota-portal.png" alt-text="Quota voor batch-account":::
+:::image type="content" source="./media/batch-quota-limit/account-quota-portal.png" alt-text="Scherm opname van de batch-account quota's in het Azure Portal.":::
 
 ## <a name="increase-a-quota"></a>Een quotum verhogen
 
@@ -99,27 +100,27 @@ U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met 
 
 1. Selecteer de tegel **Help + ondersteuning** in het dash board van de portal of het vraag teken (**?**) in de rechter bovenhoek van de portal.
 1. Selecteer basis principes **nieuwe ondersteunings aanvraag**  >  .
-1. In de **basis beginselen**:
-   
+1. In **Basisbeginselen**:
+
     1. **Probleem type**  >  **Service-en abonnements limieten (quota's)**
-   
+
     1. Selecteer uw abonnement.
-   
+
     1. **Quotum type**  >  **Batch**
-      
-       Selecteer **Volgende**.
-    
+
+       Selecteer **Next**.
+
 1. In **Details**:
-      
+
     1. Geef in **Details** opgeven de locatie, het quotum type en het batch-account op.
-    
-       ![Verhoging van batch quotum][quota_increase]
+
+       :::image type="content" source="media/batch-quota-limit/quota-increase.png" alt-text="Scherm afbeelding van het venster met quotum details bij het aanvragen van een quota verhoging.":::
 
        De volgende quota typen zijn beschikbaar:
 
        * **Per batch-account**  
          Waarden die specifiek zijn voor één batch-account, inclusief specifieke kernen met een lage prioriteit en het aantal taken en Pools.
-        
+
        * **Per regio**  
          Waarden die van toepassing zijn op alle batch-accounts in een regio en bevat het aantal batch-accounts per regio per abonnement.
 
@@ -127,14 +128,14 @@ U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met 
 
     1. Selecteer een **Ernst** op basis van uw [bedrijfs impact](https://aka.ms/supportseverity).
 
-       Selecteer **Volgende**.
+       Selecteer **Next**.
 
 1. Bij **contact gegevens**:
-   
+
     1. Selecteer een **Voorkeurs methode voor contact personen**.
-   
+
     1. Controleer de vereiste contact gegevens en geef deze op.
-   
+
        Selecteer **maken** om de ondersteunings aanvraag in te dienen.
 
 Zodra u uw ondersteunings aanvraag hebt ingediend, neemt de ondersteuning van Azure contact met u op. Quota aanvragen kunnen binnen een paar minuten of Maxi maal twee werk dagen worden voltooid.

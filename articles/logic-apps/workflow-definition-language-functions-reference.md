@@ -3,15 +3,15 @@ title: Naslag Gids voor functies in expressies
 description: Naslag Gids voor functies in expressies voor Azure Logic Apps en energie automatisering
 services: logic-apps
 ms.suite: integration
-ms.reviewer: estfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: a4646263eeb93a33a03e32107b46bb6dc104ce06
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 5c03d9b64f957f6ef8450197477f185dc8d15b2d
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326298"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825862"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Naslag Gids voor het gebruik van functies in expressies voor Azure Logic Apps en energie automatisering
 
@@ -104,7 +104,7 @@ Als u wilt werken met verzamelingen, meestal matrices, teken reeksen en soms, wo
 | Functie verzameling | Taak |
 | ------------------- | ---- |
 | [daarin](../logic-apps/workflow-definition-language-functions-reference.md#contains) | Controleer of een verzameling een specifiek item heeft. |
-| [gelaten](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Controleer of een verzameling leeg is. |
+| [leeg](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Controleer of een verzameling leeg is. |
 | [instantie](../logic-apps/workflow-definition-language-functions-reference.md#first) | Het eerste item van een verzameling retour neren. |
 | [Snij punt](../logic-apps/workflow-definition-language-functions-reference.md#intersection) | Een verzameling retour neren die *alleen* de gemeen schappelijke items in de opgegeven verzamelingen heeft. |
 | [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | Wanneer een herhalende actie een matrix heeft, wordt het huidige item in de matrix geretourneerd tijdens de huidige iteratie van de actie. |
@@ -128,7 +128,7 @@ Als u met voor waarden wilt werken, vergelijkt u waarden en expressie resultaten
 | Logische vergelijkings functie | Taak |
 | --------------------------- | ---- |
 | [and](../logic-apps/workflow-definition-language-functions-reference.md#and) | Controleer of alle expressies waar zijn. |
-| [is gelijk aan](../logic-apps/workflow-definition-language-functions-reference.md#equals) | Controleer of beide waarden gelijk zijn. |
+| [gelijk is aan](../logic-apps/workflow-definition-language-functions-reference.md#equals) | Controleer of beide waarden gelijk zijn. |
 | [groter](../logic-apps/workflow-definition-language-functions-reference.md#greater) | Controleer of de eerste waarde groter is dan de tweede waarde. |
 | [greaterOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#greaterOrEquals) | Controleer of de eerste waarde groter is dan of gelijk is aan de tweede waarde. |
 | [If](../logic-apps/workflow-definition-language-functions-reference.md#if) | Controleer of een expressie True of False is. Retour neer een opgegeven waarde op basis van het resultaat. |
@@ -149,7 +149,7 @@ Als u het type of de indeling van een waarde wilt wijzigen, kunt u deze conversi
 
 | Conversie functie | Taak |
 | ------------------- | ---- |
-| [matrix](../logic-apps/workflow-definition-language-functions-reference.md#array) | Een matrix retour neren van een enkele opgegeven invoer. Zie [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray)voor meerdere invoer. |
+| [array](../logic-apps/workflow-definition-language-functions-reference.md#array) | Een matrix retour neren van een enkele opgegeven invoer. Zie [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray)voor meerdere invoer. |
 | [base64](../logic-apps/workflow-definition-language-functions-reference.md#base64) | Retourneert de met base64 gecodeerde versie voor een teken reeks. |
 | [base64ToBinary](../logic-apps/workflow-definition-language-functions-reference.md#base64ToBinary) | Retourneert de binaire versie voor een base64-gecodeerde teken reeks. |
 | [base64ToString](../logic-apps/workflow-definition-language-functions-reference.md#base64ToString) | Retourneert de versie van de teken reeks voor een base64-gecodeerde teken reeks. |
@@ -282,8 +282,8 @@ Zie de [Alfabetische lijst](../logic-apps/workflow-definition-language-functions
 | [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | De hoofd tekst van een specifiek deel in de uitvoer van een actie met meerdere delen retour neren. |
 | [uitvoer](../logic-apps/workflow-definition-language-functions-reference.md#outputs) | De uitvoer van een actie tijdens runtime retour neren. |
 | [instellen](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Retourneert de waarde voor een para meter die wordt beschreven in uw werk stroom definitie. |
-| [Daardoor](../logic-apps/workflow-definition-language-functions-reference.md#result) | De invoer en uitvoer retour neren van alle acties binnen de opgegeven actie in het bereik, zoals `For_each` , `Until` en `Scope` . |
-| [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | De uitvoer van een trigger retour neren tijdens runtime of vanuit andere JSON-naam-en-waardeparen. Zie ook [triggerOutputs](#triggerOutputs) en [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
+| [result](../logic-apps/workflow-definition-language-functions-reference.md#result) | De invoer en uitvoer retour neren van alle acties binnen de opgegeven actie in het bereik, zoals `For_each` , `Until` en `Scope` . |
+| [activeren](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | De uitvoer van een trigger retour neren tijdens runtime of vanuit andere JSON-naam-en-waardeparen. Zie ook [triggerOutputs](#triggerOutputs) en [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
 | [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Retour neer de uitvoer van een trigger `body` tijdens runtime. Zie [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
 | [triggerFormDataValue](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Een enkele waarde Retour neren die overeenkomt met een sleutel naam in trigger uitvoer van *formulier gegevens* of *formulier codering* . |
 | [triggerMultipartBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerMultipartBody) | De hoofd tekst voor een specifiek deel in de meerdelige uitvoer van een trigger retour neren. |
@@ -1139,11 +1139,11 @@ Als u `bool()` met een-object werkt, moet de waarde van het object een teken ree
 | `true` of `false` | Booleaans | De Booleaanse versie van de opgegeven waarde. |
 ||||
 
-*Uitvoerwaarden*
+*Uitvoer*
 
 In deze voor beelden ziet u de verschillende typen invoer die worden ondersteund voor `bool()` :
 
-| Invoer waarde | Type | Retourwaarde |
+| Invoerwaarde | Type | Retourwaarde |
 | ----------- | ---------- | ---------------------- |
 | `bool(1)` | Geheel getal | `true` |
 | `bool(0)` | Geheel getal    | `false` |
@@ -1678,7 +1678,7 @@ decodeUriComponent('<value>')
 In dit voor beeld worden de escape-tekens in deze teken reeks vervangen door gedecodeerde versies:
 
 ```
-decodeUriComponent('http%3A%2F%2Fcontoso.com')
+decodeUriComponent('https%3A%2F%2Fcontoso.com')
 ```
 
 En retourneert dit resultaat: `"https://contoso.com"`
@@ -1753,7 +1753,7 @@ In dit voor beeld wordt een met URI gecodeerde versie gemaakt voor deze teken re
 encodeUriComponent('https://contoso.com')
 ```
 
-En retourneert dit resultaat: `"http%3A%2F%2Fcontoso.com"`
+En retourneert dit resultaat: `"https%3A%2F%2Fcontoso.com"`
 
 <a name="empty"></a>
 
@@ -4174,7 +4174,7 @@ In dit voor beeld wordt een matrix gemaakt op basis van de sleutel waarde ' feed
 triggerFormDataMultiValues('feedUrl')
 ```
 
-En retourneert deze matrix als een voor beeld van een resultaat: `["http://feeds.reuters.com/reuters/topNews"]`
+En retourneert deze matrix als een voor beeld van een resultaat: `["https://feeds.a.dj.com/rss/RSSMarketsMain.xml"]`
 
 <a name="triggerFormDataValue"></a>
 
@@ -4205,7 +4205,7 @@ In dit voor beeld wordt een teken reeks gemaakt op basis van de sleutel waarde '
 triggerFormDataValue('feedUrl')
 ```
 
-En retourneert deze teken reeks als voorbeeld resultaat: `"http://feeds.reuters.com/reuters/topNews"`
+En retourneert deze teken reeks als voorbeeld resultaat: `"https://feeds.a.dj.com/rss/RSSMarketsMain.xml"`
 
 <a name="triggerMultipartBody"></a>
 
@@ -4336,7 +4336,7 @@ In dit voor beeld wordt een met URI gecodeerde versie gemaakt voor deze teken re
 uriComponent('https://contoso.com')
 ```
 
-En retourneert dit resultaat: `"http%3A%2F%2Fcontoso.com"`
+En retourneert dit resultaat: `"https%3A%2F%2Fcontoso.com"`
 
 <a name="uriComponentToBinary"></a>
 
@@ -4363,7 +4363,7 @@ uriComponentToBinary('<value>')
 In dit voor beeld wordt de binaire versie gemaakt voor deze teken reeks met URI-code ring:
 
 ```
-uriComponentToBinary('http%3A%2F%2Fcontoso.com')
+uriComponentToBinary('https%3A%2F%2Fcontoso.com')
 ```
 
 En retourneert dit resultaat:
@@ -4398,7 +4398,7 @@ uriComponentToString('<value>')
 In dit voor beeld wordt de gedecodeerde teken reeks versie gemaakt voor deze teken reeks met URI-code ring:
 
 ```
-uriComponentToString('http%3A%2F%2Fcontoso.com')
+uriComponentToString('https%3A%2F%2Fcontoso.com')
 ```
 
 En retourneert dit resultaat: `"https://contoso.com"`
@@ -4458,7 +4458,7 @@ uriPath('<uri>')
 In dit voor beeld wordt de `path` waarde voor deze URI gezocht:
 
 ```
-uriPath('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriPath('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 En retourneert dit resultaat: `"/catalog/shownew.htm"`
@@ -4488,7 +4488,7 @@ uriPathAndQuery('<uri>')
 In dit voor beeld worden de `path` en- `query` waarden voor deze URI gezocht:
 
 ```
-uriPathAndQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriPathAndQuery('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 En retourneert dit resultaat: `"/catalog/shownew.htm?date=today"`
@@ -4518,7 +4518,7 @@ uriPort('<uri>')
 In dit voor beeld wordt de `port` waarde voor deze URI geretourneerd:
 
 ```
-uriPort('http://www.localhost:8080')
+uriPort('https://www.localhost:8080')
 ```
 
 En retourneert dit resultaat: `8080`
@@ -4548,7 +4548,7 @@ uriQuery('<uri>')
 In dit voor beeld wordt de `query` waarde voor deze URI geretourneerd:
 
 ```
-uriQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriQuery('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 En retourneert dit resultaat: `"?date=today"`
@@ -4578,7 +4578,7 @@ uriScheme('<uri>')
 In dit voor beeld wordt de `scheme` waarde voor deze URI geretourneerd:
 
 ```
-uriScheme('http://www.contoso.com/catalog/shownew.htm?date=today')
+uriScheme('https://www.contoso.com/catalog/shownew.htm?date=today')
 ```
 
 En retourneert dit resultaat: `"http"`
@@ -4918,16 +4918,16 @@ Dit is het resultaat: `30`
 
 *Voorbeeld 8*
 
-In dit voor beeld geldt dat u deze XML-teken reeks hebt, die de XML-document naam ruimte bevat `xmlns="http://contoso.com"` :
+In dit voor beeld geldt dat u deze XML-teken reeks hebt, die de XML-document naam ruimte bevat `xmlns="https://contoso.com"` :
 
 ```xml
-<?xml version="1.0"?><file xmlns="http://contoso.com"><location>Paris</location></file>
+<?xml version="1.0"?><file xmlns="https://contoso.com"><location>Paris</location></file>
 ```
 
-Deze expressies gebruiken ofwel een XPath-expressie `/*[name()="file"]/*[name()="location"]` of `/*[local-name()="file" and namespace-uri()="http://contoso.com"]/*[local-name()="location"]` , om knoop punten te vinden die overeenkomen met het `<location></location>` knoop punt. In deze voor beelden ziet u de syntaxis die u gebruikt in de Logic app Designer of in de expressie-editor:
+Deze expressies gebruiken ofwel een XPath-expressie `/*[name()="file"]/*[name()="location"]` of `/*[local-name()="file" and namespace-uri()="https://contoso.com"]/*[local-name()="location"]` , om knoop punten te vinden die overeenkomen met het `<location></location>` knoop punt. In deze voor beelden ziet u de syntaxis die u gebruikt in de Logic app Designer of in de expressie-editor:
 
 * `xpath(xml(body('Http')), '/*[name()="file"]/*[name()="location"]')`
-* `xpath(xml(body('Http')), '/*[local-name()="file" and namespace-uri()="http://contoso.com"]/*[local-name()="location"]')`
+* `xpath(xml(body('Http')), '/*[local-name()="file" and namespace-uri()="https://contoso.com"]/*[local-name()="location"]')`
 
 Dit is het knoop punt resultaat dat overeenkomt met het `<location></location>` knoop punt: 
 

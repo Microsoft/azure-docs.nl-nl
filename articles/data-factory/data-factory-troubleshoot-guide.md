@@ -5,17 +5,18 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/16/2020
+ms.date: 12/30/2020
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: c9dd39ffa68d8261f5c5d301d4c351c52b3f27c1
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 922ec6c4b579a657e7ee5e872148f8126ce175e2
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654589"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822281"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Problemen met Azure Data Factory oplossen
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In dit artikel worden algemene probleemoplossings methoden besproken voor externe controle activiteiten in Azure Data Factory.
@@ -440,7 +441,7 @@ De volgende tabel is van toepassing op U-SQL.
 
 - **Aanbeveling**: Controleer of het eind punt dat u probeert te raken reageert op aanvragen. U kunt hulpprogram ma's zoals Fiddler/postman gebruiken.
 
-## <a name="custom"></a>Aangepast telefoonnummer
+## <a name="custom"></a>Aangepast
 
 De volgende tabel is van toepassing op Azure Batch.
  
@@ -545,7 +546,6 @@ De volgende tabel is van toepassing op Azure Batch.
 - **Oorzaak**: er is een interne fout opgetreden tijdens het lezen van de service-principal of het instantiëren van de MSI-verificatie.
 
 - **Aanbeveling**: overweeg het leveren van een service-principal die machtigingen heeft voor het maken van een HDInsight-cluster in het opgegeven abonnement en probeer het opnieuw. Controleer of de [Managed Identities correct zijn ingesteld](../hdinsight/hdinsight-managed-identities.md).
-
 
 ### <a name="error-code-2300"></a>Fout code: 2300
 
@@ -952,6 +952,16 @@ De volgende tabel is van toepassing op Azure Batch.
 
 - **Aanbeveling**: Geef een Azure Blob-opslag account op als extra opslag ruimte voor de gekoppelde service op aanvraag van HDInsight.
 
+### <a name="ssl-error-when-adf-linked-service-using-hdinsight-esp-cluster"></a>SSL-fout bij het koppelen van een ADF-service met het HDInsight ESP-cluster
+
+- **Bericht**: `Failed to connect to HDInsight cluster: 'ERROR [HY000] [Microsoft][DriverSupport] (1100) SSL certificate verification failed because the certificate is missing or incorrect.`
+
+- **Oorzaak**: het probleem heeft waarschijnlijk te maken met het vertrouwens archief van het systeem.
+
+- **Oplossing**: u kunt navigeren naar het pad **micro soft Integration RUNTIME\4.0\SHARED\ODBC Drivers\Microsoft Hive ODBC Driver\lib** en DriverConfiguration64.exe openen om de instelling te wijzigen.
+
+    ![Schakel het selectie vakje systeem vertrouwens opslag gebruiken uit](./media/connector-troubleshoot-guide/system-trust-store-setting.png)
+
 ## <a name="web-activity"></a>Web Activity
 
 ### <a name="error-code-2128"></a>Fout code: 2128
@@ -1001,7 +1011,7 @@ De volgende tabel is van toepassing op Azure Batch.
 
 1. Schakel het vastleggen van verkeer in en voltooi de problematische trans actie op de pagina.
 
-1. Ga naar: **bestanden**  >  **Save**  >  **alle sessies** opslaan.
+1. Ga naar: **bestanden**  >    >  **alle sessies** opslaan.
 
 Zie [aan de slag met Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler)voor meer informatie.
 
@@ -1015,7 +1025,7 @@ Wanneer u ziet dat de activiteit veel langer wordt uitgevoerd dan uw normale uit
 
 **Fout bericht:**`The payload including configurations on activity/dataSet/linked service is too large. Please check if you have settings with very large value and try to reduce its size.`
 
-**Oorzaak:** De payload voor elke uitvoering van de activiteit omvat de configuratie van de activiteit, de bijbehorende gegevensset (s) en de gekoppelde service (s), indien van toepassing, en een klein gedeelte van de systeem eigenschappen die per type activiteit worden gegenereerd. De limiet voor deze Payload grootte is 896KB zoals vermeld in de sectie [Data Factory limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
+**Oorzaak:** De payload voor elke uitvoering van de activiteit omvat de configuratie van de activiteit, de bijbehorende gegevensset (s) en de gekoppelde service (s) configuraties, indien van toepassing, en een klein gedeelte van de systeem eigenschappen die per type activiteit worden gegenereerd. De maximale grootte van deze nettolading is 896 KB, zoals vermeld in de sectie [Data Factory limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
 
 **Aanbeveling:** U bereikt waarschijnlijk deze limiet omdat u een of meer grote parameter waarden doorgeeft vanuit de upstream-activiteit of extern, met name als u werkelijke gegevens doorgeeft over activiteiten in de controle stroom. Controleer of u de grootte van grote parameter waarden kunt beperken of uw pijplijn logica wilt afstemmen om te voor komen dat dergelijke waarden worden door gegeven aan activiteiten in plaats daarvan in de activiteit.
 
@@ -1027,5 +1037,5 @@ Probeer deze bronnen voor meer informatie over probleem oplossing:
 * [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
 * [Stack Overflow forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 * [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)
-* [Azure-Video's](https://azure.microsoft.com/resources/videos/index/)
+* [Azure-video's](https://azure.microsoft.com/resources/videos/index/)
 * [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)

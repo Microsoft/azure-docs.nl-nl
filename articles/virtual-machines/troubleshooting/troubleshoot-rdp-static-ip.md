@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/08/2018
 ms.author: genli
-ms.openlocfilehash: 49f3f44c7de8c700d0093c5eb6f166a1dffb34a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bf19a6f77a87f2424f9e7b889e48119d57d1e2e5
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087245"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97820979"
 ---
 #  <a name="cannot-remote-desktop-to-azure-virtual-machines-because-of-static-ip"></a>Kan geen extern bureau blad naar Azure Virtual Machines vanwege een vast IP-adres
 
@@ -63,13 +63,13 @@ U kunt dit probleem oplossen door met behulp van seriële controle DHCP in te sc
 3. Als de DHCP is uitgeschakeld, keert u de configuratie van de netwerk interface terug voor gebruik van DHCP:
 
     ```console
-    netsh interface ip set address name="<NIC Name>" source=dhc
+    netsh interface ip set address name="<NIC Name>" source=dhcp
     ```
 
     Als de interwerk-interface bijvoorbeeld ' Ethernet 2 ' is, voert u de volgende opdracht uit:
 
     ```console
-    netsh interface ip set address name="Ethernet 2" source=dhc
+    netsh interface ip set address name="Ethernet 2" source=dhcp
     ```
 
 4. Voer een query uit op de IP-configuratie om ervoor te zorgen dat de netwerk interface nu correct is ingesteld. Het nieuwe IP-adres moet overeenkomen met de naam die wordt opgegeven door Azure.

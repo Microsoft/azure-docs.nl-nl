@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 1dbf6478a62675c8b514298007a7663239d8f7cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65163225853037ac4cb97a02c0bdaf554b509fb1
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084639"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822196"
 ---
 # <a name="known-issues-for-apache-spark-cluster-on-hdinsight"></a>Bekende problemen met Apache Spark cluster op HDInsight
 
@@ -81,7 +81,7 @@ Hieronder vindt u enkele bekende problemen met betrekking tot Jupyter-notebooks.
 
 ### <a name="notebooks-with-non-ascii-characters-in-filenames"></a>Notitie blokken met niet-ASCII-tekens in bestands namen
 
-Gebruik geen niet-ASCII-tekens in Jupyter notebook-bestands namen. Als u probeert een bestand te uploaden via de Jupyter-gebruikers interface, die een niet-ASCII-bestands naam heeft, mislukt dit zonder fout bericht. Met Jupyter kunt u het bestand niet uploaden, maar wordt er geen zicht bare fout gegenereerd.
+Gebruik geen niet-ASCII-tekens in Jupyter Notebook bestands namen. Als u probeert een bestand te uploaden via de Jupyter-gebruikers interface, die een niet-ASCII-bestands naam heeft, mislukt dit zonder fout bericht. Met Jupyter kunt u het bestand niet uploaden, maar wordt er geen zicht bare fout gegenereerd.
 
 ### <a name="error-while-loading-notebooks-of-larger-sizes"></a>Fout tijdens het laden van notitie blokken met een grotere grootte
 
@@ -100,15 +100,15 @@ U moet een aantal aanbevolen procedures volgen om te voor komen dat deze fout zi
 
 ### <a name="notebook-initial-startup-takes-longer-than-expected"></a>Het eerste keer opstarten van de notebook duurt langer dan verwacht
 
-De eerste code-instructie in Jupyter notebook met Spark Magic kan meer dan een minuut duren.  
+De eerste code-instructie in Jupyter Notebook met Spark Magic kan meer dan een minuut duren.  
 
 **Korte**
 
 Dit gebeurt omdat wanneer de eerste code cel wordt uitgevoerd. Op de achtergrond wordt de sessie configuratie gestart en worden de context van Spark, SQL en Hive ingesteld. Nadat deze contexten zijn ingesteld, wordt de eerste instructie uitgevoerd. Dit geeft de indruk dat de instructie veel tijd duurde om te volt ooien.
 
-### <a name="jupyter-notebook-timeout-in-creating-the-session"></a>Time-out van Jupyter-notebook bij het maken van de sessie
+### <a name="jupyter-notebook-timeout-in-creating-the-session"></a>Time-out bij het maken van de sessie Jupyter Notebook
 
-Wanneer het Spark-cluster niet meer bronnen bevat, wordt er een time-out opgetreden tijdens het maken van de sessie door de Spark-en PySpark-kernels in de Jupyter-notebook.
+Wanneer het Spark-cluster niet meer bronnen bevat, wordt er een time-out opgetreden tijdens het maken van de sessie door de Spark-en PySpark-kernels in de Jupyter Notebook.
 
 **Oplossingen**
 
@@ -119,7 +119,7 @@ Wanneer het Spark-cluster niet meer bronnen bevat, wordt er een time-out opgetre
 
 2. Start het notitie blok dat u probeerde op te starten. Er moeten voldoende resources beschikbaar zijn om nu een sessie te maken.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Overzicht: Apache Spark in Azure HDInsight](apache-spark-overview.md)
 
@@ -140,7 +140,7 @@ Wanneer het Spark-cluster niet meer bronnen bevat, wordt er een time-out opgetre
 * [De invoegtoepassing HDInsight Tools for IntelliJ IDEA gebruiken om Spark Scala-toepassingen te maken en in te dienen](apache-spark-intellij-tool-plugin.md)
 * [De invoeg toepassing HDInsight tools for IntelliJ-idee gebruiken om op afstand fouten in Apache Spark toepassingen op te sporen](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Apache Zeppelin-notebooks gebruiken met een Apache Spark-cluster in HDInsight](apache-spark-zeppelin-notebook.md)
-* [Kernels die beschikbaar zijn voor Jupyter notebook in Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Kernels die beschikbaar zijn voor Jupyter Notebook in Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Externe pakketten gebruiken met Jupyter-notebooks](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Jupyter op uw computer installeren en verbinding maken met een HDInsight Spark-cluster](apache-spark-jupyter-notebook-install-locally.md)
 

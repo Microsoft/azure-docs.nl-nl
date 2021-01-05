@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: ebed7d87ba538b2f886155527bb89c1ffd2bcf58
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c8ce1a66d6dbf215c3d49740f2aec47ab01f7591
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545698"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822315"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Fout bij het opsporen van Spark-taken met Azure-toolkit voor IntelliJ (preview-versie)
 
@@ -44,7 +44,7 @@ Een Spark 2.3.2-project maken om de fout opsporing voort te zetten, fout in het 
 
      ![IntelliJ een debug-project maken](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-projectfor-failure-debug.png)
 
-   c. Selecteer **Volgende** .
+   c. Selecteer **Volgende**.
 
 2. Voer in het venster **New Project** de volgende stappen uit:
 
@@ -54,9 +54,9 @@ Een Spark 2.3.2-project maken om de fout opsporing voort te zetten, fout in het 
 
    b. Selecteer in de vervolg keuzelijst **Project SDK** **Java 1,8** voor **Spark 2.3.2** -cluster.
 
-   c. Selecteer in de vervolg keuzelijst **Spark-versie** **Spark 2.3.2 (scala 2.11.8)** .
+   c. Selecteer in de vervolg keuzelijst **Spark-versie** **Spark 2.3.2 (scala 2.11.8)**.
 
-   d. Selecteer **Finish** .
+   d. Selecteer **Finish**.
 
 3. Selecteer **src**  >  **Main**  >  **scala** om de code in het project te openen. In dit voor beeld wordt het script **AgeMean_Div ()** gebruikt.
 
@@ -72,11 +72,11 @@ Maak een Spark scala/Java-toepassing en voer de toepassing uit op een Spark-clus
 
    ![Nieuwe configuratie IntelliJ toevoegen](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-01.png)
 
-3. Overschakelen naar **extern uitvoeren op** het tabblad cluster. Voer informatie in voor de **naam** , het **Spark-cluster** en de naam van de **hoofd klasse** . Onze hulp middelen ondersteunen debug met **uitvoerende** software. De **numExectors** , de standaard waarde is 5 en u kunt beter niet hoger dan 3 instellen. U kunt de uitvoerings tijd verminderen door **Spark. garens. maxAppAttempts** toe te voegen aan de **taak configuraties** en de waarde in te stellen op 1. Klik op de knop **OK** om de configuratie op te slaan.
+3. Overschakelen naar **extern uitvoeren op** het tabblad cluster. Voer informatie in voor de **naam**, het **Spark-cluster** en de naam van de **hoofd klasse**. Onze hulp middelen ondersteunen debug met **uitvoerende** software. De **numExectors**, de standaard waarde is 5 en u kunt beter niet hoger dan 3 instellen. U kunt de uitvoerings tijd verminderen door **Spark. garens. maxAppAttempts** toe te voegen aan de **taak configuraties** en de waarde in te stellen op 1. Klik op de knop **OK** om de configuratie op te slaan.
 
    ![IntelliJ voor fout opsporing uitvoeren](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-002.png)
 
-4. De configuratie wordt nu opgeslagen met de naam die u hebt ingevoerd. Als u de configuratie gegevens wilt weer geven, selecteert u de naam van de configuratie. Als u wijzigingen wilt aanbrengen, selecteert u **configuraties bewerken** .
+4. De configuratie wordt nu opgeslagen met de naam die u hebt ingevoerd. Als u de configuratie gegevens wilt weer geven, selecteert u de naam van de configuratie. Als u wijzigingen wilt aanbrengen, selecteert u **configuraties bewerken**.
 
 5. Nadat u de configuratie-instellingen hebt voltooid, kunt u het project uitvoeren op het externe cluster.
 
@@ -90,7 +90,7 @@ Maak een Spark scala/Java-toepassing en voer de toepassing uit op een Spark-clus
 
 Als het verzenden van de taak mislukt, kunt u het mislukte taak profiel downloaden naar de lokale computer voor verdere fout opsporing.
 
-1. Open **Microsoft Azure Storage Explorer** , zoek het HDInsight-account van het cluster voor de mislukte taak, down load de mislukte taak resources van de overeenkomstige locatie: **\hdp\spark2-events \\ . Spark \\ \<application ID> -failures** naar een lokale map. In het venster **activiteiten** wordt de voortgang van het downloaden weer gegeven.
+1. Open **Microsoft Azure Storage Explorer**, zoek het HDInsight-account van het cluster voor de mislukte taak, down load de mislukte taak resources van de overeenkomstige locatie: **\hdp\spark2-events \\ . Spark \\ \<application ID> -failures** naar een lokale map. In het venster **activiteiten** wordt de voortgang van het downloaden weer gegeven.
 
    ![Fout bij het downloaden van Azure Storage Explorer](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
 
@@ -142,7 +142,7 @@ Als het verzenden van de taak mislukt, kunt u het mislukte taak profiel download
 * [HDInsight-Hulpprogram Ma's gebruiken voor IntelliJ met Hortonworks sandbox](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)
 * [Gebruik HDInsight-Hulpprogram Ma's in Azure-toolkit voor Eclipse om Apache Spark-toepassingen te maken](./apache-spark-eclipse-tool-plugin.md)
 * [Apache Zeppelin-notebooks gebruiken met een Apache Spark-cluster in HDInsight](apache-spark-zeppelin-notebook.md)
-* [Kernels die beschikbaar zijn voor Jupyter-notebook in het Apache Spark-cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Kernels die beschikbaar zijn voor Jupyter Notebook in het Apache Spark cluster voor HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Externe pakketten gebruiken met Jupyter-notebooks](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Jupyter op uw computer installeren en verbinding maken met een HDInsight Spark-cluster](apache-spark-jupyter-notebook-install-locally.md)
 

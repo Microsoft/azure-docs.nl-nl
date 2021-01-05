@@ -1,6 +1,6 @@
 ---
-title: Kernels voor Jupyter notebook in Spark-clusters in azure HDInsight
-description: Meer informatie over de PySpark-, PySpark3-en Spark-kernels voor Jupyter notebook beschikbaar met Spark-clusters in azure HDInsight.
+title: Kernels voor Jupyter Notebook in Spark-clusters in azure HDInsight
+description: Meer informatie over de PySpark-, PySpark3-en Spark-kernels voor Jupyter Notebook beschikbaar zijn met Spark-clusters in azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 8c3993d8208a9a9e2ab54be44d88de0b20a2e586
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1139ce2358d5e5b3b52376892524e7ee0dd5611
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084712"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822230"
 ---
-# <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Kernels voor Jupyter notebook in Apache Spark-clusters in azure HDInsight
+# <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Kernels voor het Jupyter Notebook op Apache Spark clusters in azure HDInsight
 
-HDInsight Spark-clusters bieden kernels die u kunt gebruiken met de Jupyter notebook van [Apache Spark](./apache-spark-overview.md) voor het testen van uw toepassingen. Een kernel is een programma dat uw code uitvoert en interpreteert. De drie kernels zijn:
+HDInsight Spark-clusters bieden kernels die u kunt gebruiken met de Jupyter Notebook op [Apache Spark](./apache-spark-overview.md) voor het testen van uw toepassingen. Een kernel is een programma dat uw code uitvoert en interpreteert. De drie kernels zijn:
 
 - **PySpark** -voor toepassingen die zijn geschreven in Python2.
 - **PySpark3** -voor toepassingen die zijn geschreven in Python3.
@@ -29,30 +29,30 @@ In dit artikel leert u hoe u deze kernels en de voor delen van het gebruik ervan
 
 Een Apache Spark cluster in HDInsight. Zie [Apache Spark-clusters maken in Azure HDInsight](apache-spark-jupyter-spark-sql.md) voor instructies.
 
-## <a name="create-a-jupyter-notebook-on-spark-hdinsight"></a>Een Jupyter-notebook maken op Spark HDInsight
+## <a name="create-a-jupyter-notebook-on-spark-hdinsight"></a>Een Jupyter Notebook maken in Spark HDInsight
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)uw Spark-cluster.  Zie de [lijst en clusters weer geven](../hdinsight-administer-use-portal-linux.md#showClusters) voor de instructies. De **overzichts** weergave wordt geopend.
 
 2. Selecteer in de weer gave **overzicht** in het vak **cluster dashboards** de optie **Jupyter notebook**. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
 
-    ![Jupyter notebook op Apache Spark](./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png "Jupyter notebook in Spark")
+    ![Jupyter Notebook op Apache Spark](./media/apache-spark-jupyter-notebook-kernels/hdinsight-spark-open-jupyter-interactive-spark-sql-query.png "Jupyter Notebook op Spark")
   
    > [!NOTE]  
-   > U kunt ook het Jupyter-notebook in het Spark-cluster bereiken door de volgende URL in uw browser te openen. Vervang **CLUSTERNAME** door de naam van uw cluster.
+   > U kunt ook de Jupyter Notebook in Spark-cluster bereiken door de volgende URL in uw browser te openen. Vervang **CLUSTERNAME** door de naam van uw cluster.
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-3. Selecteer **Nieuw**en selecteer vervolgens **Pyspark**, **PySpark3**of **Spark** om een notitie blok te maken. Gebruik de Spark-kernel voor scala-toepassingen, PySpark-kernel voor Python2-toepassingen en PySpark3 kernel voor Python3-toepassingen.
+3. Selecteer **Nieuw** en selecteer vervolgens **Pyspark**, **PySpark3** of **Spark** om een notitie blok te maken. Gebruik de Spark-kernel voor scala-toepassingen, PySpark-kernel voor Python2-toepassingen en PySpark3 kernel voor Python3-toepassingen.
 
-    ![Kernels voor Jupyter notebook in Spark](./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png "Kernels voor Jupyter notebook in Spark")
+    ![Kernels voor Jupyter Notebook op Spark](./media/apache-spark-jupyter-notebook-kernels/kernel-jupyter-notebook-on-spark.png "Kernels voor Jupyter Notebook op Spark")
 
 4. Er wordt een notitie blok geopend met de kernel die u hebt geselecteerd.
 
 ## <a name="benefits-of-using-the-kernels"></a>Voor delen van het gebruik van de kernels
 
-Hier volgen enkele voor delen van het gebruik van de nieuwe kernels met Jupyter notebook in Spark HDInsight-clusters.
+Hier volgen enkele voor delen van het gebruik van de nieuwe kernels met Jupyter Notebook op Spark HDInsight-clusters.
 
-- **Vooraf ingestelde contexten**. Met  **PySpark**, **PySpark3**of **Spark** -kernels hoeft u de Spark-of Hive-contexten niet expliciet in te stellen voordat u met uw toepassingen begint te werken. Deze contexten zijn standaard beschikbaar. Het betreft deze contexten:
+- **Vooraf ingestelde contexten**. Met  **PySpark**, **PySpark3** of **Spark** -kernels hoeft u de Spark-of Hive-contexten niet expliciet in te stellen voordat u met uw toepassingen begint te werken. Deze contexten zijn standaard beschikbaar. Het betreft deze contexten:
 
   - **sc** -voor Spark-context
   - **sqlContext** -voor Hive-context
@@ -94,7 +94,7 @@ Het `%%sql` Magic ondersteunt verschillende para meters die u kunt gebruiken om 
 | --- | --- | --- |
 | -o |`-o <VARIABLE NAME>` |Gebruik deze para meter om het resultaat van de query op te slaan in de context%% Local python als een [Panda](https://pandas.pydata.org/) data frame. De naam van de variabele data frame is de naam van de variabele die u opgeeft. |
 | -q |`-q` |Gebruik deze para meter om visualisaties voor de cel uit te scha kelen. Als u de inhoud van een cel niet wilt visualiseren en u deze gewoon wilt vastleggen als een data frame, gebruikt u `-q -o <VARIABLE>` . Als u visualisaties wilt uitschakelen zonder de resultaten vast te leggen (bijvoorbeeld voor het uitvoeren van een SQL-query, zoals een `CREATE TABLE` instructie), gebruikt u `-q` zonder een argument op te geven `-o` . |
-| -m |`-m <METHOD>` |Waarbij de **methode** ofwel **nemen** of voor **beeld** is (de standaard instelling **is).** Als de methode is **`take`** ingesteld, worden de elementen van de kernel verzameld van de resultaat gegevensset die is opgegeven door MaxRows (verderop in deze tabel beschreven). Als de methode voor **beeld**is, wordt de kernel wille keurig voor beelden van elementen van de gegevensset op basis van de `-r` para meter in de volgende tabel beschreven. |
+| -m |`-m <METHOD>` |Waarbij de **methode** ofwel **nemen** of voor **beeld** is (de standaard instelling **is).** Als de methode is **`take`** ingesteld, worden de elementen van de kernel verzameld van de resultaat gegevensset die is opgegeven door MaxRows (verderop in deze tabel beschreven). Als de methode voor **beeld** is, wordt de kernel wille keurig voor beelden van elementen van de gegevensset op basis van de `-r` para meter in de volgende tabel beschreven. |
 | -r |`-r <FRACTION>` |Hier is een **fractie** een getal met drijvende komma tussen 0,0 en 1,0. Als de voorbeeld methode voor de SQL-query is, wordt in `sample` de kernel wille keurig de opgegeven Fractie van de onderdelen van de resultatenset voor u weer gegeven. Als u bijvoorbeeld een SQL-query met de argumenten uitvoert `-m sample -r 0.01` , worden 1% van de resultaat rijen wille keurig voor beeld. |
 | -n |`-n <MAXROWS>` |**MaxRows** is een geheel getal. De kernel beperkt het aantal uitvoer rijen tot **MaxRows**. Als **MaxRows** een negatief getal is, zoals **-1**, is het aantal rijen in de resultatenset niet beperkt. |
 
@@ -107,7 +107,7 @@ SELECT * FROM hivesampletable
 
 De bovenstaande instructie voert de volgende acties uit:
 
-- Hiermee worden alle records uit **hivesampletable**geselecteerd.
+- Hiermee worden alle records uit **hivesampletable** geselecteerd.
 - Omdat we-q gebruiken, wordt de functie voor autovisualisatie uitgeschakeld.
 - Omdat we een `-m sample -r 0.1 -n 500` wille keurig 10% van de rijen in de hivesampletable gebruiken, wordt de grootte van het resultaat ingesteld op 500 rijen.
 - Ten slotte wordt `-o query2` de uitvoer ook opgeslagen in een data frame met de naam **query2**.

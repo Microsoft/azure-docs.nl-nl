@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: fcb845904216fbe4cb05828877775ea2178c45e9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: b5795172517ba2e707d66ebe486c51d31575bd0d
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539153"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821873"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Apache Spark REST API gebruiken voor het verzenden van externe taken naar een HDInsight Spark-cluster
 
@@ -126,7 +126,7 @@ Voer de volgende stappen uit:
     {"from":0,"total":0,"sessions":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
     ```
 
-    U ziet dat in de laatste regel van de uitvoer het volgende wordt vermeld **: 0** , waarmee wordt aangegeven dat er geen actieve batches worden uitgevoerd.
+    U ziet dat in de laatste regel van de uitvoer het volgende wordt vermeld **: 0**, waarmee wordt aangegeven dat er geen actieve batches worden uitgevoerd.
 
 1. Laat ons nu een batch-taak indienen. In het volgende code fragment wordt een invoer bestand (input.txt) gebruikt voor het door geven van de JAR-naam en de naam van de klasse als para meters. Als u deze stappen uitvoert vanaf een Windows-computer, is het gebruik van een invoer bestand de aanbevolen methode.
 
@@ -155,7 +155,7 @@ Voer de volgende stappen uit:
     {"id":0,"state":"starting","log":[]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
     ```
 
-    U ziet dat de laatste regel van de uitvoer **staat voor de status: wordt gestart** . Het bericht bevat ook **id: 0** . Hier is **0** de batch-id.
+    U ziet dat de laatste regel van de uitvoer **staat voor de status: wordt gestart**. Het bericht bevat ook **id: 0**. Hier is **0** de batch-id.
 
 1. U kunt nu de status van deze specifieke batch ophalen met behulp van de batch-ID.
 
@@ -177,7 +177,7 @@ Voer de volgende stappen uit:
     {"id":0,"state":"success","log":["\t diagnostics: N/A","\t ApplicationMaster host: 10.0.0.4","\t ApplicationMaster RPC port: 0","\t queue: default","\t start time: 1448063505350","\t final status: SUCCEEDED","\t tracking URL: http://myspar.lpel.jx.internal.cloudapp.net:8088/proxy/application_1447984474852_0002/","\t user: root","15/11/20 23:52:47 INFO Utils: Shutdown hook called","15/11/20 23:52:47 INFO Utils: Deleting directory /tmp/spark-b72cd2bf-280b-4c57-8ceb-9e3e69ac7d0c"]}* Connection #0 to host mysparkcluster.azurehdinsight.net left intact
     ```
 
-    In de uitvoer wordt nu status weer gegeven **: geslaagd** , wat aangeeft dat de taak is voltooid.
+    In de uitvoer wordt nu status weer gegeven **: geslaagd**, wat aangeeft dat de taak is voltooid.
 
 1. Als u wilt, kunt u nu de batch verwijderen.
 

@@ -1,6 +1,6 @@
 ---
 title: Apache Spark streamen met Apache Kafka-Azure HDInsight
-description: Meer informatie over het gebruik van Apache Spark voor het streamen van gegevens naar of van Apache Kafka met behulp van DStreams. In dit voorbeeld gaat u met behulp van een Jupyter Notebook gegevens streamen van Spark naar HDInsight.
+description: Meer informatie over het gebruik van Apache Spark voor het streamen van gegevens naar of van Apache Kafka met behulp van DStreams. In dit voor beeld streamt u gegevens met behulp van een Jupyter Notebook van Spark in HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: e2f4bbe6157e1affa4975f6dcee2ad0f1d98a71b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88a62b2d1ebee3bf933729ab82bc9e37a3db066b
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086089"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821176"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Apache Spark streaming (DStream)-voor beeld met Apache Kafka in HDInsight
 
@@ -55,7 +55,7 @@ Hoewel u hand matig een Azure Virtual Network-, Kafka-en Spark-cluster kunt make
     |---|---|
     |Resourcegroep|Een groep maken of een bestaande selecteren.|
     |Locatie|Selecteer een locatie die geografisch dicht bij u ligt.|
-    |Basis cluster naam|Deze waarde wordt gebruikt als de basis naam voor de Spark-en Kafka-clusters. Als u bijvoorbeeld **hdistreaming** invoert, wordt een Spark-cluster met de naam __Spark-Hdistreaming__ en een Kafka-cluster met de naam **Kafka-hdistreaming**gemaakt.|
+    |Basis cluster naam|Deze waarde wordt gebruikt als de basis naam voor de Spark-en Kafka-clusters. Als u bijvoorbeeld **hdistreaming** invoert, wordt een Spark-cluster met de naam __Spark-Hdistreaming__ en een Kafka-cluster met de naam **Kafka-hdistreaming** gemaakt.|
     |Gebruikersnaam voor clusteraanmelding|De gebruikers naam van de beheerder voor de Spark-en Kafka-clusters.|
     |Wachtwoord voor clusteraanmelding|Het gebruikers wachtwoord van de beheerder voor de Spark-en Kafka-clusters.|
     |SSH-gebruikersnaam|De SSH-gebruiker die moet worden gemaakt voor de Spark-en Kafka-clusters.|

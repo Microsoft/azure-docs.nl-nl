@@ -16,13 +16,13 @@ ms.workload: identity
 ms.date: 12/01/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.custom: has-adal-ref, devx-track-azurecli
-ms.openlocfilehash: 4d7debce83928e21072c981b007e8048bfc4c594
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.custom: has-adal-ref
+ms.openlocfilehash: 2be66904898ecdf2006952f5e80c17dc78b81c06
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460936"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825806"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Veelgestelde vragen en bekende problemen met beheerde identiteiten voor Azure-resources
 

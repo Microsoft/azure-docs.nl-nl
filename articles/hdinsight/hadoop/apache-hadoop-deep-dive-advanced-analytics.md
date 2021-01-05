@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
-ms.openlocfilehash: ffc8fcf734877f55210507310849a5746a280c3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13dd960cc7c900882acbcb9b17a5b8a1f32f956c
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504346"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821499"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Diep gaande kennis-geavanceerde analyse
 
@@ -91,7 +91,7 @@ Er zijn drie belang rijke taken in dit geavanceerde analyse scenario:
 
 1. Maak een Azure HDInsight Hadoop cluster met een Apache Spark 2.1.0-distributie.
 2. Voer een aangepast script uit om Microsoft Cognitive Toolkit te installeren op alle knoop punten van een Azure HDInsight Spark cluster.
-3. Upload een vooraf ontwikkelde Jupyter-notebook naar uw HDInsight Spark-cluster om een getraind Microsoft Cognitive Toolkit diep Learning model toe te passen op bestanden in een Azure Blob Storage-account met behulp van de Spark python API (PySpark).
+3. Upload een vooraf gebouwde Jupyter Notebook naar uw HDInsight Spark-cluster om een getraind Microsoft Cognitive Toolkit diep leer model toe te passen op bestanden in een Azure Blob Storage-account met behulp van de Spark python API (PySpark).
 
 In dit voor beeld wordt de CIFAR-10-installatie kopieset gebruikt die is gecompileerd en gedistribueerd door Alex Krizhevsky, wijnbouw Nair en Geoffrey Hinton,. De CIFAR-10-gegevensset bevat 60.000 32 × 32 kleuren afbeeldingen die deel uitmaken van tien wederzijds exclusieve klassen:
 

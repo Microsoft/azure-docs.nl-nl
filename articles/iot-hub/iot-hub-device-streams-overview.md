@@ -11,13 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 - 'Role: Technical Support'
-- devx-track-azurecli
-ms.openlocfilehash: bdd9d5fd878094326331e60fc1a639eef08b7ea3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9487fc562fa099d2650aabc8d15fc1449c7fcb5c
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792460"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825168"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Streams van IoT Hub-apparaten (preview-versie)
 
@@ -57,7 +56,7 @@ Het programmatisch maken van een apparaat stroom met behulp van de SDK omvat de 
 
 1. De apparaat-app registreert vooraf een terugroeping om op de hoogte te worden gesteld wanneer een nieuwe apparaat stroom naar het apparaat wordt geïnitieerd. Deze stap vindt normaal gesp roken plaats wanneer het apparaat wordt opgestart en verbinding maakt met IoT Hub.
 
-2. Het programma aan de service zijde initieert een apparaat stroom wanneer dit nodig is door de apparaat-ID ( _niet_ het IP-adres) op te geven.
+2. Het programma aan de service zijde initieert een apparaat stroom wanneer dit nodig is door de apparaat-ID (_niet_ het IP-adres) op te geven.
 
 3. Met IoT hub wordt het apparaat aan het programma geïnformeerd door het aanroepen van de call back die is geregistreerd in stap 1. Het apparaat accepteert of weigert de aanvraag voor het initiëren van de stroom. Deze logica kan specifiek zijn voor uw toepassings scenario. Als de stroom aanvraag door het apparaat wordt afgewezen, IoT Hub de service dienovereenkomstig informeren. anders volgt u de onderstaande stappen.
 
@@ -129,9 +128,9 @@ U kunt Azure Monitor instellen voor het verzamelen [van de bron logboeken voor a
 
 Volg de onderstaande stappen om een diagnostische instelling te maken voor het verzenden van Logboeken voor het streamen van apparaten voor uw IoT Hub naar Azure Monitor-logboeken:
 
-1. Ga in Azure Portal naar uw IoT-hub. Klik in het linkerdeel venster onder **bewaking** op **Diagnostische instellingen** . Selecteer vervolgens **Diagnostische instelling toevoegen** .
+1. Ga in Azure Portal naar uw IoT-hub. Klik in het linkerdeel venster onder **bewaking** op **Diagnostische instellingen**. Selecteer vervolgens **Diagnostische instelling toevoegen**.
 
-2. Geef een naam op voor de diagnostische instelling en selecteer **DeviceStreams** in de lijst met Logboeken. Selecteer vervolgens **verzenden naar log Analytics** . U wordt begeleid bij het kiezen van een bestaande Log Analytics werk ruimte of het maken van een nieuwe.
+2. Geef een naam op voor de diagnostische instelling en selecteer **DeviceStreams** in de lijst met Logboeken. Selecteer vervolgens **verzenden naar log Analytics**. U wordt begeleid bij het kiezen van een bestaande Log Analytics werk ruimte of het maken van een nieuwe.
 
     :::image type="content" source="media/iot-hub-device-streams-overview/device-streams-configure-diagnostics.png" alt-text="Logboeken voor apparaten stromen inschakelen":::
 
@@ -183,7 +182,7 @@ Het voor beeld van een lokale proxy demonstreert een manier om tunneling in te s
 
 In deze sectie wordt het gebruik van de streams beschreven om de gebruiker in staat te stellen SSH naar een apparaat via de streams van een apparaat te maken (de aanvraag voor RDP of andere client/server-toepassing is vergelijkbaar met de bijbehorende poort van het Protocol).
 
-De installatie maakt gebruik van twee *lokale proxy* Programma's die worden weer gegeven in de onderstaande afbeelding, namelijk *apparaat-lokale proxy* en *service-Local proxy* . De lokale proxy Programma's zijn verantwoordelijk voor het uitvoeren van de handshake voor het [initiëren van de apparaatgegevens](#device-stream-creation-flow) met IOT hub en met behulp van reguliere client/server-sockets met de SSH-client en SSH-daemon.
+De installatie maakt gebruik van twee *lokale proxy* Programma's die worden weer gegeven in de onderstaande afbeelding, namelijk *apparaat-lokale proxy* en *service-Local proxy*. De lokale proxy Programma's zijn verantwoordelijk voor het uitvoeren van de handshake voor het [initiëren van de apparaatgegevens](#device-stream-creation-flow) met IOT hub en met behulp van reguliere client/server-sockets met de SSH-client en SSH-daemon.
 
 !["Device stream-proxy-installatie voor SSH/RDP"](./media/iot-hub-device-streams-overview/iot-hub-device-streams-ssh.png)
 

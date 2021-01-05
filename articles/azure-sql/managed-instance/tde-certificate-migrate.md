@@ -4,19 +4,19 @@ description: Een certificaat voor het beveiligen van de database versleutelings 
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: security
-ms.custom: sqldbrb=1, devx-track-azurecli
+ms.custom: sqldbrb=1
 ms.devlang: ''
 ms.topic: how-to
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein, jovanpop
 ms.date: 07/21/2020
-ms.openlocfilehash: 80ff16156348db9c3a209757b48b7d54615d9104
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c465da3d5d812ea7e811cbe59318122700c6e786
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790692"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97824666"
 ---
 # <a name="migrate-a-certificate-of-a-tde-protected-database-to-azure-sql-managed-instance"></a>Een certificaat van een met TDE beveiligde data base migreren naar een met Azure SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -125,7 +125,7 @@ Als het certificaat in het certificaat archief van de SQL Server lokale machine 
 
 2. Vouw in de MMC-module Certificaten het pad persoonlijk > certificaten uit om de lijst met certificaten weer te geven.
 
-3. Klik met de rechter muisknop op het certificaat en klik op **exporteren** .
+3. Klik met de rechter muisknop op het certificaat en klik op **exporteren**.
 
 4. Volg de wizard om het certificaat en de persoonlijke sleutel naar een. pfx-indeling te exporteren.
 

@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 817b8976f5d014d990945816c2df1c7e8ed729fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 366c77ff94773163b71845b1ccbc6072c503734a
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084882"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822298"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Fouten opsporen in Apache Spark-taken die worden uitgevoerd in Azure HDInsight
 
-In dit artikel leert u hoe u Apache Spark-taken die worden uitgevoerd op HDInsight-clusters kunt bijhouden en fouten oplost. Fout opsporing met behulp van de Apache Hadoop GARENs UI, Spark-gebruikers interface en de Spark-geschiedenis server. U start een Spark-taak met behulp van een notitie blok dat beschikbaar is in het Spark-cluster, **machine learning: voorspellende analyse van gegevens van levensmiddelen inspecties met behulp van MLLib**. Gebruik de volgende stappen om een toepassing bij te houden die u hebt verzonden met behulp van een andere methode, bijvoorbeeld **Spark-verzen**ding.
+In dit artikel leert u hoe u Apache Spark-taken die worden uitgevoerd op HDInsight-clusters kunt bijhouden en fouten oplost. Fout opsporing met behulp van de Apache Hadoop GARENs UI, Spark-gebruikers interface en de Spark-geschiedenis server. U start een Spark-taak met behulp van een notitie blok dat beschikbaar is in het Spark-cluster, **machine learning: voorspellende analyse van gegevens van levensmiddelen inspecties met behulp van MLLib**. Gebruik de volgende stappen om een toepassing bij te houden die u hebt verzonden met behulp van een andere methode, bijvoorbeeld **Spark-verzen** ding.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -34,7 +34,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     ![Azure Portal GARENs-UI starten](./media/apache-spark-job-debugging/launch-apache-yarn-ui.png)
 
    > [!TIP]  
-   > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Als u de Ambari-gebruikers interface wilt starten, selecteert u **Ambari Home** onder **cluster dashboards**. Ga in de Ambari-gebruikers interface naar de snelle koppelingen voor **garens**  >  **Quick Links** > de actieve Resource Manager-> **Resource Manager-gebruikers interface**.
+   > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Als u de Ambari-gebruikers interface wilt starten, selecteert u **Ambari Home** onder **cluster dashboards**. Ga in de Ambari-gebruikers interface naar de snelle koppelingen voor **garens**  >   > de actieve Resource Manager-> **Resource Manager-gebruikers interface**.
 
 2. Omdat u de Spark-taak met Jupyter-notebooks hebt gestart, heeft de toepassing de naam **remotesparkmagics** (de naam voor alle toepassingen die vanuit de notitie blokken zijn gestart). Selecteer de toepassings-ID voor de toepassings naam om meer informatie over de taak weer te geven. Met deze actie wordt de toepassings weergave gestart.
 
@@ -50,7 +50,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 In de Spark-gebruikers interface kunt u inzoomen op de Spark-taken die worden uitgevoerd door de toepassing die u eerder hebt gestart.
 
-1. Als u de Spark-gebruikers interface wilt starten, selecteert u in de toepassings weergave de koppeling met de **tracerings-URL**, zoals wordt weer gegeven in de bovenstaande scherm opname. U kunt alle Spark-taken zien die worden gestart door de toepassing die wordt uitgevoerd in de Jupyter-notebook.
+1. Als u de Spark-gebruikers interface wilt starten, selecteert u in de toepassings weergave de koppeling met de **tracerings-URL**, zoals wordt weer gegeven in de bovenstaande scherm opname. U kunt alle Spark-taken zien die worden gestart door de toepassing die wordt uitgevoerd in de Jupyter Notebook.
 
     ![Het tabblad Server taken van Spark-geschiedenis](./media/apache-spark-job-debugging/view-apache-spark-jobs.png)
 
@@ -104,7 +104,7 @@ Zodra een taak is voltooid, wordt de informatie over de taak opgeslagen in de Sp
 
     ![Voltooide Spark-geschiedenis server toepassingen](./media/apache-spark-job-debugging/view-completed-applications.png "Spark-geschiedenis server2 starten")
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Resources beheren voor het Apache Spark-cluster in Azure HDInsight](apache-spark-resource-manager.md)
 * [Fouten opsporen Apache Spark taken met uitgebreide Spark-geschiedenis server](apache-azure-spark-history-server.md)

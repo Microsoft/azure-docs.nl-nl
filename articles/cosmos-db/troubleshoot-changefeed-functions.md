@@ -4,16 +4,16 @@ description: Veelvoorkomende problemen, tijdelijke oplossingen en diagnostische 
 author: ealsur
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
-ms.date: 03/13/2020
+ms.date: 12/29/2020
 ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 9fc5da214a50cb000d2154d08bb9b6f6f98ac5ec
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 1b7b82ea07b7e00d281739011c9c9f83ab4dff73
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340525"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825624"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-functions-trigger-for-cosmos-db"></a>Problemen vaststellen en oplossen bij het gebruik van Azure Functions trigger voor Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -85,16 +85,18 @@ Het concept van een ' wijziging ' is een bewerking in een document. De meest voo
 
 ### <a name="some-changes-are-missing-in-my-trigger"></a>Er ontbreken enkele wijzigingen in de trigger
 
-Als u merkt dat sommige wijzigingen die in de Azure Cosmos-container zijn aangebracht, niet worden opgehaald door de Azure function, is er een eerste onderzoek stap die moet worden uitgevoerd.
+Als u merkt dat sommige wijzigingen die zijn opgetreden in de Azure Cosmos-container, niet worden opgehaald door de Azure-functie of omdat er geen wijzigingen in de bestemming ontbreken, kunt u de onderstaande stappen volgen.
 
 Als uw Azure-functie de wijzigingen ontvangt, worden deze vaak verwerkt en kunnen eventueel het resultaat naar een andere bestemming worden verzonden. Wanneer u ontbrekende wijzigingen onderzoekt, moet u **meten welke wijzigingen worden ontvangen op het opname punt** (wanneer de Azure-functie wordt gestart), niet op de bestemming.
 
 Als sommige wijzigingen op de bestemming ontbreken, kan dit betekenen dat er een fout optreedt tijdens de uitvoering van de Azure-functie nadat de wijzigingen zijn ontvangen.
 
-In dit scenario is het de beste manier om blokken toe te voegen `try/catch` in uw code en binnen de lussen die de wijzigingen kunnen verwerken, om eventuele fouten voor een bepaalde subset van items te detecteren en ze dienovereenkomstig te verwerken (stuur ze naar een andere opslag voor verdere analyse of probeer het opnieuw). 
+In dit scenario is het de beste manier om blokken toe te voegen `try/catch` in uw code en binnen de lussen die de wijzigingen kunnen verwerken, om eventuele fouten voor een bepaalde subset van items te detecteren en ze dienovereenkomstig te verwerken (stuur ze naar een andere opslag voor verdere analyse of probeer het opnieuw).
 
 > [!NOTE]
 > Standaard wordt er met de Azure Functions-trigger niet opnieuw een batch met wijzigingen geprobeerd als er een niet-afgehandelde uitzondering tijdens het uitvoeren van de code is opgetreden. Dit betekent dat de wijzigingen niet zijn doorgevoerd op de bestemming omdat u deze niet kunt verwerken.
+
+Als de bestemming een andere Cosmos-container is en u Upsert-bewerkingen uitvoert om de items te kopiëren, **controleert u of de partitie sleutel definitie op zowel de bewaakte als de doel container hetzelfde zijn**. Upsert-bewerkingen kunnen meerdere bron items opslaan als één in het doel vanwege dit verschil in de configuratie.
 
 Als u merkt dat sommige wijzigingen niet door de trigger zijn ontvangen, is het meest voorkomende scenario dat er **een andere Azure-functie wordt uitgevoerd**. Het kan een andere Azure-functie zijn die is geïmplementeerd in azure of een Azure-functie die lokaal wordt uitgevoerd op de computer van een ontwikkelaar en die **exact dezelfde configuratie** heeft (dezelfde bewaakte en lease-containers). deze Azure-functie stelen een subset van de wijzigingen die u verwacht dat uw Azure-functie wordt verwerkt.
 

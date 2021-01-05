@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/13/2019
-ms.openlocfilehash: 6e472c65897fa57cdb1e0b09d94c62913e268040
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3397c57f793c6994847786ff8247e5ccfa453ec0
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087466"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821244"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Azure Machine Learning werk belastingen uitvoeren met geautomatiseerde machine learning op Apache Spark in HDInsight
 
@@ -24,7 +24,7 @@ Voor algemene zelf studies van automatische machine learning raadpleegt u [zelf 
 Alle nieuwe HDInsight-Spark-clusters worden vooraf geïnstalleerd met AzureML-AutoML SDK.
 
 > [!Note]
-> Azure Machine Learning pakketten worden geïnstalleerd in de Python3 Conda-omgeving. De geïnstalleerde Jupyter-notebook moet worden uitgevoerd met behulp van de PySpark3-kernel.
+> Azure Machine Learning pakketten worden geïnstalleerd in de Python3 Conda-omgeving. De geïnstalleerde Jupyter Notebook moet worden uitgevoerd met behulp van de PySpark3-kernel.
 
 U kunt ook Zeppelin-notebooks gebruiken voor het gebruik van AutoML.
 

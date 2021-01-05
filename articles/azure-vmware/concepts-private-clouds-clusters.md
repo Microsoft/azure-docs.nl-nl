@@ -3,12 +3,12 @@ title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: af34bb0d83d9571ae91dce90cab198a61cfe82a1
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7f8508abed3446c58a683454bc49ec7dbb49d051
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967377"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825085"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -48,18 +48,8 @@ Hosts die worden gebruikt voor het bouwen of schalen van clusters, zijn afkomsti
 
 ## <a name="vmware-software-versions"></a>VMware-software versies
 
-De huidige software versies van de VMware-software die worden gebruikt in azure VMware-oplossingen persoonlijke Cloud clusters zijn:
+[!INCLUDE [vmware-software-versions](includes/vmware-software-versions.md)]
 
-| Software              |    Versie   |
-| :---                  |     :---:    |
-| VCSA/vSphere/ESXi |    6,7 U3    | 
-| ESXi                  |    6,7 U3    | 
-| vSAN                  |    6,7 U3    |
-| NSX-T                 |      2.5     |
-
-Voor elk nieuw cluster in een privécloud komt de software versie overeen met wat momenteel wordt uitgevoerd. Voor elke nieuwe privécloud in een abonnement wordt de meest recente versie van de software stack geïnstalleerd.
-
-U vindt het algemene upgrade beleid en de processen voor de Azure VMware Solution platform-software die wordt beschreven in [updates voor privécloud en upgrades](concepts-upgrades.md).
 
 ## <a name="host-maintenance-and-lifecycle-management"></a>Host onderhoud en levenscyclus beheer
 

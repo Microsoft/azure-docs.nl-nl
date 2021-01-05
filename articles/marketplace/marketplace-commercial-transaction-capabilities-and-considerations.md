@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 898c106fb961373889fbae87db6c755fe2495ff8
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: d602687ea623b90ea5dcae4ece09a1ccc438ea57
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621260"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822383"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
@@ -90,7 +90,7 @@ Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openba
 
 Er worden 20% Standard Store-service kosten in rekening gebracht wanneer klanten uw koop aanbieding kopen via de commerciële Marketplace. Zie sectie 5c van de [micro soft Publisher-overeenkomst](https://go.microsoft.com/fwlink/?LinkID=699560)voor meer informatie over deze kosten.
 
-Voor bepaalde transactable-aanbiedingen die u publiceert naar de commerciële Marketplace, kunt u in aanmerking komen voor een lagere winkel service tarief van 10%. Voor een aanbieding die in aanmerking komt, moet deze door micro soft zijn aangewezen als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de maandelijkse kosten voor Marketplace-service voor de maand worden ontvangen. Zie [vereisten voor co-sell-status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen.
+Voor bepaalde transactable-aanbiedingen die u publiceert naar de commerciële Marketplace, kunt u in aanmerking komen voor een lagere winkel service tarief van 10%. Voor een aanbieding die in aanmerking komt, moet deze door micro soft zijn aangewezen als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de kosten voor de lagere Marketplace-service worden ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties die ingaan op de eerste dag van de volgende maand, totdat de gemotiveerd status van Azure IP co-sell verloren is gegaan. Zie [vereisten voor co-sell-status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen.
 
 De lagere kosten voor Marketplace-service zijn van toepassing op Azure IP gemotiveerd SaaS, Vm's, beheerde apps en alle andere gekwalificeerde transactable IaaS-oplossingen die beschikbaar worden gesteld via de commerciële Marketplace. Betaalde SaaS-aanbiedingen die zijn gekoppeld aan een micro soft teams-app of ten minste twee Microsoft 365-invoeg toepassingen (Excel, Power Point, Word, Outlook en share point) en naar Microsoft AppSource worden gepubliceerd, ontvangen ook deze korting.
 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: amishu
-ms.openlocfilehash: a715d0ece88cf2caf1cb3d20d703f550353094c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b8dda0347e5713ef35705425b54f29a110803488
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87282726"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821516"
 ---
-De verwerking van gecomprimeerde audio wordt geïmplementeerd met [`GStreamer`](https://gstreamer.freedesktop.org) . `GStreamer`De binaire bestanden voor licentie redenen worden niet gecompileerd en gekoppeld aan de spraak-SDK. Ontwikkel aars moeten verschillende afhankelijkheden en invoeg toepassingen installeren, Zie [installeren op Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c). `GStreamer` binaire bestanden moeten zich in het systeempad bevinden, zodat de Speech SDK de binaire bestanden kan laden tijdens runtime. Als de spraak-SDK tijdens runtime kan worden gevonden `libgstreamer-1.0-0.dll` , betekent dit dat de binaire bestanden zich in het systeempad bevinden.
+Het verwerken van gecomprimeerde audio wordt geïmplementeerd met behulp van [gstreamer](https://gstreamer.freedesktop.org). Om licentie redenen GStreamer binaire bestanden niet worden gecompileerd en gekoppeld aan de spraak-SDK. Ontwikkel aars moeten verschillende afhankelijkheden en invoeg toepassingen installeren, Zie [installatie op Windows](https://gstreamer.freedesktop.org/documentation/installing/on-windows.html?gi-language=c) of [installaties op Linux](https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c). GStreamer binaire bestanden moeten zich in het systeempad bevinden, zodat de spraak-SDK de binaire bestanden kan laden tijdens runtime. Als de spraak-SDK bijvoorbeeld in Windows kan worden gevonden `libgstreamer-1.0-0.dll` tijdens runtime, betekent dit dat de binaire gstreamer-bestanden zich in het systeempad bevinden.
 

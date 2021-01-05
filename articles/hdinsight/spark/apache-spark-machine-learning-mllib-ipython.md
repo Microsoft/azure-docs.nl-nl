@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020, devx-track-python
 ms.date: 04/27/2020
-ms.openlocfilehash: bd61c6812d794d30e28f087dabf58db51e9c3296
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a6407f7c3b1e8570cdc6b36dceec79fba58689c7
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230412"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822179"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Apache Spark MLlib gebruiken om een machine learning-toepassing te bouwen en een gegevensset te analyseren
 
@@ -24,7 +24,7 @@ MLlib is een belang rijke Spark-bibliotheek die veel hulpprogram ma's biedt die 
 * Classificatie
 * Regressie
 * Clustering
-* Modellen maken
+* Modelleren
 * SVD (Singular Value Decomposition) en PCA (Principal Component Snalysis)
 * Hypothesen voor het testen en berekenen van voorbeeldstatistieken
 
@@ -84,7 +84,7 @@ Gebruik de Spark-context om de onbewerkte CSV-gegevens in het geheugen te halen 
     inspections.take(1)
     ```
 
-    De uitvoer is:
+    Dit is de uitvoer:
 
     ```
     [['413707',
@@ -121,7 +121,7 @@ Gebruik de Spark-context om de onbewerkte CSV-gegevens in het geheugen te halen 
     df.registerTempTable('CountResults')
     ```
 
-    De vier kolommen met interesse in de data frame zijn **id**, **naam**, **resultaten**en **schendingen**.
+    De vier kolommen met interesse in de data frame zijn **id**, **naam**, **resultaten** en **schendingen**.
 
 4. Voer de volgende code uit om een klein voor beeld van de gegevens te krijgen:
 
@@ -129,7 +129,7 @@ Gebruik de Spark-context om de onbewerkte CSV-gegevens in het geheugen te halen 
     df.show(5)
     ```
 
-    De uitvoer is:
+    Dit is de uitvoer:
 
     ```
     +------+--------------------+-------+--------------------+
@@ -153,7 +153,7 @@ Laten we een idee krijgen van wat de gegevensset bevat.
     df.select('results').distinct().show()
     ```
 
-    De uitvoer is:
+    Dit is de uitvoer:
 
     ```
     +--------------------+
@@ -176,7 +176,7 @@ Laten we een idee krijgen van wat de gegevensset bevat.
 
     Het `%%sql` Magic wordt gevolgd door `-o countResultsdf` ervoor te zorgen dat de uitvoer van de query lokaal wordt opgeslagen op de Jupyter-server (doorgaans de hoofd knooppunt van het cluster). De uitvoer wordt persistent gemaakt als een [Panda](https://pandas.pydata.org/) data frame met de opgegeven naam **countResultsdf**. `%%sql`Zie [kernels die beschikbaar zijn op Jupyter-notebooks met Apache Spark HDInsight-clusters](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic)voor meer informatie over het Magic en andere magics die beschikbaar zijn in de PySpark-kernel.
 
-    De uitvoer is:
+    Dit is de uitvoer:
 
     ![SQL-query-uitvoer](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "SQL-query-uitvoer")
 
@@ -196,8 +196,8 @@ Laten we een idee krijgen van wat de gegevensset bevat.
 
     Voor het voors pellen van een voedsel inspectie resultaat moet u een model ontwikkelen op basis van de schendingen. Omdat logistiek regressie een binaire classificatie methode is, is het zinvol om de resultaat gegevens in twee categorieën te groeperen: **mislukt** en **door geven**:
 
-   - Door
-       - Door
+   - Geslaagd
+       - Geslaagd
        - Pass-Through-voor waarden
    - Mislukt
        - Mislukt
@@ -227,7 +227,7 @@ Laten we een idee krijgen van wat de gegevensset bevat.
     labeledData.take(1)
     ```
 
-    De uitvoer is:
+    Dit is de uitvoer:
 
     ```
     [Row(label=0.0, violations=u"41. PREMISES MAINTAINED FREE OF LITTER, UNNECESSARY ARTICLES, CLEANING  EQUIPMENT PROPERLY STORED - Comments: All parts of the food establishment and all parts of the property used in connection with the operation of the establishment shall be kept neat and clean and should not produce any offensive odors.  REMOVE MATTRESS FROM SMALL DUMPSTER. | 35. WALLS, CEILINGS, ATTACHED EQUIPMENT CONSTRUCTED PER CODE: GOOD REPAIR, SURFACES CLEAN AND DUST-LESS CLEANING METHODS - Comments: The walls and ceilings shall be in good repair and easily cleaned.  REPAIR MISALIGNED DOORS AND DOOR NEAR ELEVATOR.  DETAIL CLEAN BLACK MOLD LIKE SUBSTANCE FROM WALLS BY BOTH DISH MACHINES.  REPAIR OR REMOVE BASEBOARD UNDER DISH MACHINE (LEFT REAR KITCHEN). SEAL ALL GAPS.  REPLACE MILK CRATES USED IN WALK IN COOLERS AND STORAGE AREAS WITH PROPER SHELVING AT LEAST 6' OFF THE FLOOR.  | 38. VENTILATION: ROOMS AND EQUIPMENT VENTED AS REQUIRED: PLUMBING: INSTALLED AND MAINTAINED - Comments: The flow of air discharged from kitchen fans shall always be through a duct to a point above the roofline.  REPAIR BROKEN VENTILATION IN MEN'S AND WOMEN'S WASHROOMS NEXT TO DINING AREA. | 32. FOOD AND NON-FOOD CONTACT SURFACES PROPERLY DESIGNED, CONSTRUCTED AND MAINTAINED - Comments: All food and non-food contact equipment and utensils shall be smooth, easily cleanable, and durable, and shall be in good repair.  REPAIR DAMAGED PLUG ON LEFT SIDE OF 2 COMPARTMENT SINK.  REPAIR SELF CLOSER ON BOTTOM LEFT DOOR OF 4 DOOR PREP UNIT NEXT TO OFFICE.")]
@@ -235,7 +235,7 @@ Laten we een idee krijgen van wat de gegevensset bevat.
 
 ## <a name="create-a-logistic-regression-model-from-the-input-dataframe"></a>Een logistiek regressie model maken op basis van de invoer data frame
 
-De laatste taak is het converteren van de gelabelde gegevens. Converteer de gegevens naar een indeling die door logistieke regressie kan worden geanalyseerd. De invoer van een algoritme voor logistiek regressie moet een set van *Vector paren met label functies*hebben. Waarbij "functie Vector" een vector is van getallen die het invoer punt vertegenwoordigen. Daarom moet u de kolom schendingen converteren. deze is semi-Structured en bevat veel opmerkingen in vrije tekst. De kolom converteren naar een matrix met echte getallen die een machine eenvoudig kan begrijpen.
+De laatste taak is het converteren van de gelabelde gegevens. Converteer de gegevens naar een indeling die door logistieke regressie kan worden geanalyseerd. De invoer van een algoritme voor logistiek regressie moet een set van *Vector paren met label functies* hebben. Waarbij "functie Vector" een vector is van getallen die het invoer punt vertegenwoordigen. Daarom moet u de kolom schendingen converteren. deze is semi-Structured en bevat veel opmerkingen in vrije tekst. De kolom converteren naar een matrix met echte getallen die een machine eenvoudig kan begrijpen.
 
 Een standaard machine learning methode voor de verwerking van natuurlijke taal is het toewijzen van elk afzonderlijk woord een "index". Geef vervolgens een vector door aan het algoritme machine learning. Zo dat elke index waarde de relatieve frequentie van dat woord in de teken reeks bevat.
 
@@ -252,7 +252,7 @@ model = pipeline.fit(labeledData)
 
 ## <a name="evaluate-the-model-using-another-dataset"></a>Het model evalueren met een andere gegevensset
 
-U kunt het model dat u eerder hebt gemaakt, gebruiken om te voors *pellen* wat de resultaten van nieuwe inspecties zijn. De voor spellingen zijn gebaseerd op de schendingen die zijn waargenomen. U hebt dit model getraind op de gegevensset **Food_Inspections1.csv**. U kunt een tweede gegevensset **Food_Inspections2.csv**gebruiken om de kracht van dit model op de nieuwe gegevens te *evalueren* . Deze tweede gegevensset (**Food_Inspections2.csv**) bevindt zich in de standaard opslag container die aan het cluster is gekoppeld.
+U kunt het model dat u eerder hebt gemaakt, gebruiken om te voors *pellen* wat de resultaten van nieuwe inspecties zijn. De voor spellingen zijn gebaseerd op de schendingen die zijn waargenomen. U hebt dit model getraind op de gegevensset **Food_Inspections1.csv**. U kunt een tweede gegevensset **Food_Inspections2.csv** gebruiken om de kracht van dit model op de nieuwe gegevens te *evalueren* . Deze tweede gegevensset (**Food_Inspections2.csv**) bevindt zich in de standaard opslag container die aan het cluster is gekoppeld.
 
 1. Voer de volgende code uit om een nieuwe data frame te maken, **predictionsDf** die de voor spelling bevat die door het model is gegenereerd. Het fragment maakt ook een tijdelijke tabel met de naam voor **spellingen** op basis van de data frame.
 
@@ -313,7 +313,7 @@ U kunt het model dat u eerder hebt gemaakt, gebruiken om te voors *pellen* wat d
 
 U kunt nu een definitieve visualisatie maken om u te helpen de testresultaten te beoordelen.
 
-1. U begint met het extra heren van de verschillende voor spellingen en resultaten van de tijdelijke tabel met voor **spellingen** die u eerder hebt gemaakt. De volgende query's scheiden de uitvoer als *true_positive*, *false_positive*, *true_negative*en *false_negative*. In de onderstaande query's schakelt u visualisatie uit met behulp van `-q` en slaat u ook de uitvoer (met behulp van `-o` ) op als dataframes die vervolgens met het Magic kan worden gebruikt `%%local` .
+1. U begint met het extra heren van de verschillende voor spellingen en resultaten van de tijdelijke tabel met voor **spellingen** die u eerder hebt gemaakt. De volgende query's scheiden de uitvoer als *true_positive*, *false_positive*, *true_negative* en *false_negative*. In de onderstaande query's schakelt u visualisatie uit met behulp van `-q` en slaat u ook de uitvoer (met behulp van `-o` ) op als dataframes die vervolgens met het Magic kan worden gebruikt `%%local` .
 
     ```PySpark
     %%sql -q -o true_positive
@@ -349,7 +349,7 @@ U kunt nu een definitieve visualisatie maken om u te helpen de testresultaten te
     plt.axis('equal')
     ```
 
-    U moet de volgende uitvoer zien:
+    In dat geval moet de volgende uitvoer worden weergegeven:
 
     ![Spark machine learning toepassings uitvoer-cirkel diagram percentages van mislukte voedings inspecties.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Uitvoer resultaat van Spark machine learning")
 

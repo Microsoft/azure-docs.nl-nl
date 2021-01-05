@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive, devx-track-azurecli
+ms.custom: hdinsightactive
 ms.date: 11/26/2019
-ms.openlocfilehash: 66b14e435b777595e23fcf5a98d4820f36d21a1a
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 0722119b35ecebf3ed1e7a377707de02a6c127bf
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742034"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825198"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Apache Kafka op HDInsight gebruiken met Azure IoT Hub
 
@@ -125,7 +125,7 @@ Gebruik vanuit uw SSH-verbinding met het Edge-knoop punt de volgende stappen om 
     |`value.converter=org.apache.kafka.connect.json.JsonConverter`|`value.converter=org.apache.kafka.connect.storage.StringConverter`|Hetzelfde als hierboven.|
     |N.v.t.|`consumer.max.poll.records=10`|Toevoegen aan het einde van het bestand. Deze wijziging is het voor komen van time-outs in de Sink-connector door deze te beperken tot 10 records tegelijk. Zie [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md) voor meer informatie.|
 
-1. Als u het bestand wilt opslaan, gebruikt u __CTRL + X__ , __Y__ en __voert__ u in.
+1. Als u het bestand wilt opslaan, gebruikt u __CTRL + X__, __Y__ en __voert__ u in.
 
 1. Gebruik de volgende opdrachten om de onderwerpen te maken die door de connector worden gebruikt:
 
@@ -151,9 +151,9 @@ Voer de volgende stappen uit om IoT hub-gegevens op te halen die worden gebruikt
 
    * Voer __vanuit het [Azure Portal](https://portal.azure.com/)__ de volgende stappen uit:
 
-     1. Navigeer naar uw IoT Hub en selecteer __eind punten__ .
-     2. Selecteer __gebeurtenissen__ van __ingebouwde eind punten__ .
-     3. Kopieer de waarde van de volgende velden uit __Eigenschappen__ :
+     1. Navigeer naar uw IoT Hub en selecteer __eind punten__.
+     2. Selecteer __gebeurtenissen__ van __ingebouwde eind punten__.
+     3. Kopieer de waarde van de volgende velden uit __Eigenschappen__:
 
          * __Event hub-compatibele naam__
          * __Event hub-compatibel eind punt__
@@ -180,7 +180,7 @@ Voer de volgende stappen uit om IoT hub-gegevens op te halen die worden gebruikt
 
     * Voer __vanuit het [Azure Portal](https://portal.azure.com/)__ de volgende stappen uit:
 
-        1. Selecteer __beleid voor gedeelde toegang__ en selecteer vervolgens __service__ .
+        1. Selecteer __beleid voor gedeelde toegang__ en selecteer vervolgens __service__.
         2. Kopieer de waarde van de __primaire sleutel__ .
         3. Kopieer de __verbindings reeks--__ waarde voor de primaire sleutel.
 
@@ -233,7 +233,7 @@ Als u de bron wilt configureren voor gebruik met uw IoT Hub, voert u de volgende
 
     Zie [Kafka Connect source connector for Azure IOT hub](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md)voor een voorbeeld configuratie.
 
-1. Als u de wijzigingen wilt opslaan, gebruikt u __CTRL + X__ , __Y__ en voert u vervolgens __Enter__ .
+1. Als u de wijzigingen wilt opslaan, gebruikt u __CTRL + X__, __Y__ en voert u vervolgens __Enter__.
 
 Zie voor meer informatie over het configureren van de connector bron [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md) .
 
@@ -262,7 +262,7 @@ Als u de Sink-verbinding wilt configureren voor gebruik met uw IoT Hub, voert u 
 
     Zie [Kafka Connect Sink connector voor Azure IOT hub](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)voor een voorbeeld configuratie.
 
-1. Als u de wijzigingen wilt opslaan, gebruikt u __CTRL + X__ , __Y__ en voert u vervolgens __Enter__ .
+1. Als u de wijzigingen wilt opslaan, gebruikt u __CTRL + X__, __Y__ en voert u vervolgens __Enter__.
 
 Zie voor meer informatie over het configureren van de connector-Sink [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md) .
 

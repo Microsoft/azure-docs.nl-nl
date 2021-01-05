@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: e3e2ca2eca0d258a14365edc97b98d0c827b0b6f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: d0d990bc273c33e94b82b597753b29361b1665e1
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546055"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821856"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Poorten die worden gebruikt door Apache Hadoop Services in HDInsight
 
@@ -34,7 +34,7 @@ Als u extra computers wilt toevoegen aan het virtuele netwerk, moet u eerst het 
 
 Alle knoop punten in een HDInsight-cluster bevinden zich in een Azure-Virtual Network. De knoop punten zijn niet rechtstreeks toegankelijk vanaf internet. Een open bare gateway biedt Internet toegang tot de volgende poorten, die gemeen schappelijk zijn voor alle typen HDInsight-clusters.
 
-| Service | Poort | Protocol | Description |
+| Service | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- |
 | sshd |22 |SSH |Verbindt clients met sshd op de primaire hoofd knooppunt. Zie [SSH gebruiken met HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md) voor meer informatie. |
 | sshd |22 |SSH |Verbindt clients met sshd op het Edge-knoop punt. Zie [SSH gebruiken met HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md) voor meer informatie. |
@@ -85,7 +85,7 @@ Voorbeelden:
 
 ### <a name="hdfs-ports"></a>HDFS-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | NameNode-webgebruikersinterface |Hoofd knooppunten |30070 |HTTPS |Web-UI voor weer gave van status |
 | NameNode-meta gegevens service |hoofd knooppunten |8020 |IPC |Meta gegevens van het bestands systeem |
@@ -96,7 +96,7 @@ Voorbeelden:
 
 ### <a name="yarn-ports"></a>GAREN-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | Webgebruikersinterface van Resource Manager |Hoofd knooppunten |8088 |HTTP |Web-UI voor Resource Manager |
 | Webgebruikersinterface van Resource Manager |Hoofd knooppunten |8090 |HTTPS |Web-UI voor Resource Manager |
@@ -110,20 +110,20 @@ Voorbeelden:
 
 ### <a name="hive-ports"></a>Hive-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | HiveServer2 |Hoofd knooppunten |10001 |Thrift |Service voor het maken van een verbinding met hive (Thrift/JDBC) |
 | Hive-metastore |Hoofd knooppunten |9083 |Thrift |Service voor verbinding maken met meta gegevens van Hive (Thrift/JDBC) |
 
 ### <a name="webhcat-ports"></a>WebHCat-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | WebHCat-server |Hoofd knooppunten |30111 |HTTP |Web-API boven op HCatalog en andere Hadoop-Services |
 
 ### <a name="mapreduce-ports"></a>MapReduce-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | JobHistory |Hoofd knooppunten |19888 |HTTP |MapReduce JobHistory-Web-UI |
 | JobHistory |Hoofd knooppunten |10020 |&nbsp; |MapReduce JobHistory-server |
@@ -131,21 +131,21 @@ Voorbeelden:
 
 ### <a name="oozie"></a>Oozie
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | Oozie-server |Hoofd knooppunten |11000 |HTTP |URL voor Oozie-service |
 | Oozie-server |Hoofd knooppunten |11001 |HTTP |Poort voor Oozie-beheerder |
 
 ### <a name="ambari-metrics"></a>Metrische gegevens van Ambari
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | Tijd lijn (toepassings geschiedenis) |Hoofd knooppunten |6188 |HTTP |De Web-UI van de tijdlijn service |
 | Tijd lijn (toepassings geschiedenis) |Hoofd knooppunten |30200 |RPC |De Web-UI van de tijdlijn service |
 
 ### <a name="hbase-ports"></a>HBase-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | HMaster |Hoofd knooppunten |16000 |&nbsp; |&nbsp; |
 | HMaster info-webinterface |Hoofd knooppunten |16010 |HTTP |De poort voor de HBase Master Web-UI |
@@ -154,7 +154,7 @@ Voorbeelden:
 
 ### <a name="kafka-ports"></a>Kafka-poorten
 
-| Service | Knooppunten | Poort | Protocol | Description |
+| Service | Knooppunten | Poort | Protocol | Beschrijving |
 | --- | --- | --- | --- | --- |
 | Connection |Worker-knoop punten |9092 |Kafka wire-protocol |Gebruikt voor client communicatie |
 | &nbsp; |Zookeeper-knoop punten |2181 |&nbsp; |De poort die clients gebruiken om verbinding te maken met Zookeeper |
@@ -162,11 +162,11 @@ Voorbeelden:
 
 ### <a name="spark-ports"></a>Spark-poorten
 
-| Service | Knooppunten | Poort | Protocol | URL-pad | Description |
+| Service | Knooppunten | Poort | Protocol | URL-pad | Beschrijving |
 | --- | --- | --- | --- | --- | --- |
 | Spark Thrift-servers |Hoofd knooppunten |10002 |Thrift | &nbsp; | Service voor het maken van verbinding met Spark SQL (Thrift/JDBC) |
 | Livy-server | Hoofd knooppunten | 8998 | HTTP | &nbsp; | Service voor het uitvoeren van instructies, taken en toepassingen |
-| Jupyter-notebook | Hoofd knooppunten | 8001 | HTTP | &nbsp; | Website van Jupyter-notebook |
+| Jupyter Notebook | Hoofd knooppunten | 8001 | HTTP | &nbsp; | Jupyter Notebook website |
 
 Voorbeelden:
 

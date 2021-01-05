@@ -5,12 +5,12 @@ services: service-fabric
 documentationcenter: .net
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: 25e6854491f35dd0aa46b5de218d312f57854760
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bbfdc0a30aa673e8602ec9233fde4236c99ef5aa
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018916"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882208"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Overzicht van Service Fabric clusters op Azure
 Een Service Fabric-cluster is een met het netwerk verbonden reeks virtuele of fysieke machines waarop uw microservices worden geïmplementeerd en beheerd. Een computer of virtuele machine die deel uitmaakt van een cluster, wordt een cluster knooppunt genoemd. Clusters kunnen worden geschaald naar duizenden knoop punten. Als u nieuwe knoop punten aan het cluster toevoegt, worden in Service Fabric de service partitie replica's en instanties over het verhoogde aantal knoop punten gebalanceerd. De algehele prestaties van toepassingen verbeteren en conflicten voor toegang tot het geheugen neemt af. Als de knoop punten in het cluster niet efficiënt worden gebruikt, kunt u het aantal knoop punten in het cluster verlagen. Service Fabric opnieuw, worden de partitie replica's en instanties over het aantal knoop punten verkleind om beter gebruik te maken van de hardware op elk knoop punt.
@@ -86,7 +86,7 @@ Toepassings vereisten veranderen in de loop van de tijd. Mogelijk moet u cluster
 
 Lees voor meer informatie [Azure-clusters schalen](service-fabric-cluster-scaling.md).
 
-## <a name="upgrading"></a>Abonnement
+## <a name="upgrading"></a>Upgrade uitvoeren
 Een Azure Service Fabric-cluster is een resource waarvan u de eigenaar bent, maar wordt gedeeltelijk beheerd door micro soft. Micro soft is verantwoordelijk voor het patchen van het onderliggende besturings systeem en het uitvoeren van Service Fabric runtime-upgrades voor uw cluster. U kunt uw cluster zo instellen dat automatische runtime-upgrades worden ontvangen, wanneer micro soft een nieuwe versie uitgeeft of een door u gewenste ondersteunde runtime versie selecteert. Naast runtime-upgrades kunt u ook de cluster configuratie, zoals certificaten of toepassings poorten, bijwerken.
 
 Lees [upgrades voor clusters](service-fabric-cluster-upgrade.md)voor meer informatie.
@@ -94,16 +94,17 @@ Lees [upgrades voor clusters](service-fabric-cluster-upgrade.md)voor meer inform
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 U kunt clusters maken op virtuele machines waarop deze besturings systemen worden uitgevoerd:
 
-| Besturingssysteem | Eerste ondersteunde Service Fabric versie |
-| --- | --- |
-| Windows Server 2012 R2 | Alle versies |
-| Windows Server 2016 | Alle versies |
-| Windows Server 1709 | 6.0 |
-| Windows Server 1803 | 6.4 |
-| Windows Server 1809 | 6.4.654.9590 |
-| Windows Server 2019 | 6.4.654.9590 |
-| Linux Ubuntu 16,04 | 6.0 |
-| Linux Ubuntu 18,04 | 7.1 |
+| Besturingssysteem | Eerste ondersteunde Service Fabric versie | Laatst ondersteunde Service Fabric versie |
+| --- | --- | --- | 
+| Windows Server 2019 | 6.4.654.9590 | N.v.t. |
+| Windows Server 2016 | Alle versies | N.v.t. |
+| Windows Server-20H2 | 7.2.445.9590 | N.v.t. |
+| Windows Server 1809 | 6.4.654.9590 | 7.2.445.9590 |
+| Windows Server 1803 | 6.4 | 7.2.445.9590 |
+| Windows Server 1709 | 6.0 | 7.2.445.9590 |
+| Windows Server 2012 | Alle versies | N.v.t. | 
+| Linux Ubuntu 16,04 | 6.0 | N.v.t. |
+| Linux Ubuntu 18,04 | 7.1 | N.v.t. |
 
 Zie [ondersteunde cluster versies in azure](./service-fabric-versions.md#supported-operating-systems) voor meer informatie.
 

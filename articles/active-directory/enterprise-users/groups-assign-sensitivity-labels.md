@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b40171d87ccffa7c5c4fb72d2e79af015b1d16f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: a78cf9b7d78078030ac0db8bd2f0fddb93a8dda4
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859960"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881393"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Gevoeligheids labels toewijzen aan Microsoft 365 groepen in Azure Active Directory
 
@@ -48,7 +48,7 @@ Als u gepubliceerde labels op groepen wilt Toep assen, moet u eerst de functie i
     ```
 
     > [!NOTE]
-    > Als er geen groeps instellingen voor deze Azure AD-organisatie zijn gemaakt, moet u eerst de instellingen maken. Volg de stappen in [Azure Active Directory-cmdlets voor het configureren van groeps instellingen](../enterprise-users/groups-settings-cmdlets.md) voor het maken van groeps instellingen voor deze Azure AD-organisatie.
+    > Als er geen groeps instellingen voor deze Azure AD-organisatie zijn gemaakt, wordt in de bovenstaande cmdlet een fout bericht weer gegeven met de tekst ' kan het argument niet binden aan de para meter ' id ' omdat dit null is. In dit geval moet u eerst de instellingen maken. Volg de stappen in [Azure Active Directory-cmdlets voor het configureren van groeps instellingen](../enterprise-users/groups-settings-cmdlets.md) voor het maken van groeps instellingen voor deze Azure AD-organisatie.
 
 1. Vervolgens geeft u de instellingen van de huidige groep weer.
 

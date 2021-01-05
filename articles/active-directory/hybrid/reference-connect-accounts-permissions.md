@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 05/18/2020
+ms.date: 01/04/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c075e19422341ad7ccfd3ad951517876ab26a495
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1b0771687aa7ccf9b749c107a6b1c507cb3ba08d
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858413"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881936"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: accounts en machtigingen
 
@@ -44,7 +44,7 @@ Naast deze drie accounts die worden gebruikt om Azure AD Connect uit te voeren, 
 
 - **AD DS Enter prise-beheerders account**: wordt optioneel gebruikt om het AD DS-Connector account te maken.
 
-- **Azure AD Global Administrator-account**: wordt gebruikt voor het maken van het Azure AD-Connector account en het configureren van Azure AD.
+- **Azure AD Global Administrator-account**: wordt gebruikt voor het maken van het Azure AD-Connector account en het configureren van Azure AD.  U kunt globale beheerders accounts bekijken in azure Portal.  Zie [rollen weer geven](../../active-directory/roles/manage-roles-portal.md#view-all-roles).
 
 - **SQL-SA-account (optioneel)**: wordt gebruikt voor het maken van de ADSync-data base wanneer de volledige versie van SQL Server wordt gebruikt.  Deze SQL Server kan lokaal of extern zijn voor de Azure AD Connect installatie.  Dit account kan hetzelfde account zijn als de ondernemings beheerder.  Het inrichten van de data base kan nu buiten de band worden uitgevoerd door de SQL-beheerder en vervolgens worden geïnstalleerd door de beheerder van de Azure AD Connect met de rechten van de data base-eigenaar.  Zie voor meer informatie [installeren Azure AD Connect met behulp van SQL delegated Administrator Permissions](how-to-connect-install-sql-delegation.md)
 
@@ -175,7 +175,7 @@ Als u aangepaste instellingen gebruikt, bent u zelf verantwoordelijk voor het ma
 ### <a name="adsync-service-account"></a>ADSync-serviceaccount
 De synchronisatie service kan worden uitgevoerd onder verschillende accounts. Het kan worden uitgevoerd onder een **virtueel service account** (leverancierspecifieke naam), een **beheerd service account voor groepen** (gMSA/sMSA) of een gewoon gebruikers account. De ondersteunde opties zijn gewijzigd met de release van 2017 april wanneer u een nieuwe installatie maakt. Als u een upgrade uitvoert van een eerdere versie van Azure AD Connect, zijn deze extra opties niet beschikbaar.
 
-| Type account | Installatie optie | Description |
+| Type account | Installatie optie | Beschrijving |
 | --- | --- | --- |
 | [Virtueel service-account](#virtual-service-account) | Express en aangepast, 2017 april en hoger | Dit is de optie die wordt gebruikt voor alle snelle installaties, met uitzonde ring van installaties op een domein controller. Voor aangepast is dit de standaard optie, tenzij een andere optie wordt gebruikt. |
 | [Door groep beheerd serviceaccount](#group-managed-service-account) | Aangepast, 2017 april en hoger | Als u een externe SQL Server gebruikt, raden we u aan een beheerd service account voor een groep te gebruiken. |
@@ -200,7 +200,7 @@ Legenda:
 - sMSA- [zelfstandig beheerd service account](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
 - gMSA: door [groep beheerd service account](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))
 
-| | LocalDB</br>Express | LocalDB/LocalSQL</br>Aangepast telefoonnummer | Externe SQL</br>Aangepast telefoonnummer |
+| | LocalDB</br>Express | LocalDB/LocalSQL</br>Aangepast | Externe SQL</br>Aangepast |
 | --- | --- | --- | --- |
 | **computer die lid is van een domein** | **KENMERK**</br>Lokaal account (2008) | **KENMERK**</br>Lokaal account (2008)</br>Lokaal account</br>Domeinaccount</br>sMSA, gMSA | **gMSA**</br>Domeinaccount |
 | **Domein controller** | **Domeinaccount** | *gMSA*</br>**Domeinaccount**</br>sMSA| *gMSA*</br>**Domeinaccount**|

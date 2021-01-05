@@ -11,15 +11,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 07/12/2019
+ms.date: 01/04/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0144c57549e374404d3dde0fe997ba41adc8606b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c06988bf9c3558f5ef82862bdbcd821dc42ca28a
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967581"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880984"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Wat is SAP HANA on Azure (grote exemplaren)?
 
@@ -35,12 +35,14 @@ De isolatie van de klant binnen het infrastructuur stempel wordt uitgevoerd in d
 
 Deze bare-metal server eenheden worden alleen ondersteund om SAP HANA uit te voeren. De SAP-toepassingslaag of de werk belasting van de middelste workload-laag worden uitgevoerd in virtuele machines. De infra structuur-stem pels die de SAP HANA op Azure-eenheden (grote exemplaren) uitvoeren, zijn verbonden met de Azure Network Services-backbones. Op deze manier wordt connectiviteit met lage latentie tussen SAP HANA op Azure-eenheden (grote exemplaren) en virtuele machines gegeven.
 
-Vanaf juli 2019 maken we onderscheid tussen twee verschillende revisies van HANA grote instantie stempels en locatie van implementaties:
+Vanaf januari 2021 maken we onderscheid tussen twee verschillende revisies van HANA grote instantie stempels en locatie van implementaties:
 
 - Revisie 3 (Rev 3): zijn de stem pels die beschikbaar zijn gesteld voor de klant om te implementeren vóór 2019 juli
 - "Revisie 4" (Rev 4): nieuw stempel ontwerp dat is geïmplementeerd in dicht bij Azure VM-hosts en wat tot nu toe wordt vrijgegeven in de Azure-regio's van:
     -  VS - west 2 
-    -  VS - oost 
+    -  VS - oost
+    -  Oost-VS2 (tussen twee Beschikbaarheidszones)
+    -  VS Zuid-Centraal (tussen twee Beschikbaarheidszones)
     -  Europa -west
     -  Europa - noord
 

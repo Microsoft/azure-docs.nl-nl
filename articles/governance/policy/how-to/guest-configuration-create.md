@@ -3,12 +3,12 @@ title: Beleidsregels voor gastconfiguratie voor Windows maken
 description: Meer informatie over het maken van een Azure Policy-gast configuratie beleid voor Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: d01f4fff28debc3fabcfb32b32b02c5029ce7323
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 85ffda54d58db0544858ca8ab61335b61f18299e
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755970"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881783"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken
 
@@ -138,9 +138,32 @@ class ResourceName : OMI_BaseResource
 };
 ```
 
+Als de resource vereiste eigenschappen heeft, moeten deze ook `Get-TargetResource` parallel met de klasse worden geretourneerd `reasons` . Als `reasons` dit niet het geval is, omvat de service het gedrag ' catch-all ' waarmee de waarden worden vergeleken met `Get-TargetResource` en de waarden die worden geretourneerd door en `Get-TargetResource` die een gedetailleerde vergelijking biedt als `reasons` .
+
 ### <a name="configuration-requirements"></a>Configuratievereisten
 
 De naam van de aangepaste configuratie moet consistent zijn. De naam van het zip-bestand voor het inhouds pakket, de configuratie naam in het MOF-bestand en de naam van de gast toewijzing in de Azure Resource Manager sjabloon (ARM-sjabloon) moet hetzelfde zijn.
+
+### <a name="policy-requirements"></a>Beleids vereisten
+
+De sectie beleids definitie `metadata` moet twee eigenschappen bevatten voor de gast configuratie service om het inrichten en rapporteren van gast configuratie toewijzingen te automatiseren. De `category` eigenschap moet worden ingesteld op ' gast configuratie ' en een sectie `Guest Configuration` met de naam moet informatie bevatten over de toewijzing van de gast configuratie. Met `New-GuestConfigurationPolicy` deze cmdlet wordt deze tekst automatisch gemaakt.
+Zie de stapsgewijze instructies op deze pagina.
+
+In het volgende voor beeld wordt de sectie gedemonstreerd `metadata` .
+
+```json
+    "metadata": {
+      "category": "Guest Configuration",
+      "guestConfiguration": {
+        "name": "test",
+        "version": "1.0.0",
+        "contentType": "Custom",
+        "contentUri": "CUSTOM-URI-HERE",
+        "contentHash": "CUSTOM-HASH-VALUE-HERE",
+        "configurationParameter": {}
+      }
+    },
+```
 
 ### <a name="scaffolding-a-guest-configuration-project"></a>Een configuratie project voor een gast steiger
 

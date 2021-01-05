@@ -11,27 +11,27 @@ ms.reviewer: nibaccam
 ms.date: 12/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 1159a6cfda6b877f04573c85fa437ce3bff81af1
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: b905b050752e2a6b7acd11e82420c0b0203dfcd1
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97761745"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882191"
 ---
 # <a name="deploy-mlflow-models-with-azure-machine-learning-preview"></a>MLflow-modellen implementeren met Azure Machine Learning (preview-versie)
 
-In dit artikel vindt u informatie over het implementeren van uw MLflow-model als een Azure Machine Learning-webservice, zodat u de model beheer-en gegevensopslag mogelijkheden van Azure Machine Learning kunt Toep assen op uw productie modellen.
+In dit artikel vindt u informatie over het implementeren van uw [MLflow](https://www.mlflow.org) -model als een Azure machine learning-webservice, zodat u de model beheer-en gegevensopslag mogelijkheden van Azure machine learning kunt Toep assen op uw productie modellen.
 
 Azure Machine Learning biedt implementatie configuraties voor:
 * Azure container instance (ACI) is een geschikte keuze voor een snelle ontwikkel-en test implementatie.
 * Azure Kubernetes service (AKS), die wordt aanbevolen voor schaal bare productie-implementaties.
 
-[MLflow](https://www.mlflow.org) is een open-source bibliotheek voor het beheren van de levens cyclus van uw machine learning experimenten. Dankzij de integratie met Azure Machine Learning kan dit beheer verder worden uitgebreid dan de cursus fase van het model, naar de implementatie fase van uw productie model.
+MLflow is een open-source bibliotheek voor het beheren van de levens cyclus van uw machine learning experimenten. Dankzij de integratie met Azure Machine Learning kan dit beheer worden uitgebreid tot de implementatie fase van het productie model.
 
 >[!NOTE]
 > MLflow is een open-source bibliotheek die regel matig wordt gewijzigd. Als zodanig moeten de functies die beschikbaar zijn via de Azure Machine Learning-en MLflow-integratie, worden beschouwd als een preview en niet volledig worden ondersteund door micro soft.
 
-In het volgende diagram ziet u dat u met de MLflow implementation API uw bestaande MLflow-model kunt implementeren als een Azure Machine Learning-webservice, ondanks hun frameworks: PyTorch, tensor flow, scikit-learn, ONNX, enzovoort, en uw productie modellen beheren in uw werk ruimte.
+In het volgende diagram ziet u dat u met de MLflow implementation API en Azure Machine Learning, modellen kunt implementeren die zijn gemaakt met populaire frameworks, zoals PyTorch, tensor flow, scikit-learn, enzovoort, als Azure Machine Learning-webservices en deze beheren in uw werk ruimte. 
 
 ![ mlflow-modellen implementeren met Azure machine learning](./media/how-to-use-mlflow/mlflow-diagram-deploy.png)
 
@@ -40,9 +40,11 @@ In het volgende diagram ziet u dat u met de MLflow implementation API uw bestaan
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Stel de tracerings-URI voor MLflow in om verbinding te maken Azure machine learning](how-to-use-mlflow.md).
+* Een machine learning model. Als u geen getraind model hebt, kunt u het voor beeld van een notitie blok vinden dat het beste past bij uw reken scenario in [deze opslag plaats](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/using-mlflow) en de instructies volgen. 
+* [Stel de tracerings-URI voor MLflow in om verbinding te maken Azure machine learning](how-to-use-mlflow.md#track-local-runs).
 * Installeer het `azureml-mlflow`-pakket. 
     * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
+* Bekijk welke [toegangs machtigingen u nodig hebt om uw MLflow-bewerkingen uit te voeren met uw werk ruimte](how-to-assign-roles.md#mlflow-operations). 
 
 ## <a name="deploy-to-aci"></a>Implementeren naar ACI
 
@@ -140,7 +142,7 @@ Als u niet van plan bent om uw geïmplementeerde webservice te gebruiken, kunt u
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks
 
-De [MLflow met Azure ml-notebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow) demonstreren en uitvouwen op concepten die in dit artikel worden gepresenteerd.
+De [MLflow met Azure machine learning-notebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/using-mlflow) tonen en uitvouwen op concepten die in dit artikel worden gepresenteerd.
 
 > [!NOTE]
 > Een door de Community aangedreven opslag plaats van voor beelden met behulp van mlflow vindt u op https://github.com/Azure/azureml-examples .
@@ -150,3 +152,4 @@ De [MLflow met Azure ml-notebooks](https://github.com/Azure/MachineLearningNoteb
 * [Uw modellen beheren](concept-model-management-and-deployment.md).
 * Bewaak uw productie modellen voor [gegevens drift](./how-to-enable-data-collection.md).
 * [Volg Azure Databricks uitvoeringen met MLflow](how-to-use-mlflow-azure-databricks.md).
+

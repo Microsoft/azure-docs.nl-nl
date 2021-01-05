@@ -6,18 +6,18 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: fd33ca4c5d637e31230d8c124fdb9ec7c71d2ba7
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 3213df378bc3b8403ebd11f899d722106de67a65
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094842"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882021"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Azure Blob-opslag trigger voor Azure Functions
 
 Met de trigger voor Blob-opslag wordt een functie gestart wanneer er een nieuwe of bijgewerkte BLOB wordt gedetecteerd. De inhoud van de BLOB wordt opgegeven als [invoer voor de functie](./functions-bindings-storage-blob-input.md).
 
-Voor de Azure Blob Storage-trigger is een opslag account voor algemeen gebruik vereist. Opslag v2-accounts met [hiërarchie naam ruimten](../storage/blobs/data-lake-storage-namespace.md) worden ook ondersteund. Als u een alleen-BLOB-account wilt gebruiken of als uw toepassing gespecialiseerde behoeften heeft, bekijkt u de alternatieven voor het gebruik van deze trigger.
+Voor de Azure Blob Storage-trigger is een opslag account voor algemeen gebruik vereist. Opslag v2-accounts met [hiërarchische naam ruimten](../storage/blobs/data-lake-storage-namespace.md) worden ook ondersteund. Als u een alleen-BLOB-account wilt gebruiken of als uw toepassing gespecialiseerde behoeften heeft, bekijkt u de alternatieven voor het gebruik van deze trigger.
 
 Zie het [overzicht](./functions-bindings-storage-blob.md)voor meer informatie over de installatie-en configuratie details.
 
@@ -114,6 +114,24 @@ public static void Run(CloudBlockBlob myBlob, string name, ILogger log)
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+Deze functie schrijft een logboek wanneer een BLOB wordt toegevoegd of bijgewerkt in de `myblob` container.
+
+```java
+@FunctionName("blobprocessor")
+public void run(
+  @BlobTrigger(name = "file",
+               dataType = "binary",
+               path = "myblob/{name}",
+               connection = "MyStorageAccountAppSetting") byte[] content,
+  @BindingName("name") String filename,
+  final ExecutionContext context
+) {
+  context.getLogger().info("Name: " + filename + " Size: " + content.length + " bytes");
+}
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 In het volgende voor beeld ziet u een binding van een BLOB-trigger in een *function.jsin* bestand-en [Java script-code](functions-reference-node.md) die gebruikmaakt van de binding. De functie schrijft een logboek wanneer een BLOB wordt toegevoegd of bijgewerkt in de `samples-workitems` container.
@@ -146,6 +164,34 @@ module.exports = function(context) {
     context.log('Node.js Blob trigger function processed', context.bindings.myBlob);
     context.done();
 };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u hoe u een functie maakt die wordt uitgevoerd wanneer een bestand wordt toegevoegd aan de `source` Blob Storage-container.
+
+Het functie configuratie bestand (_function.jsaan_) bevat een binding met `type` van `blobTrigger` en `direction` ingesteld op `in` .
+
+```json
+{
+  "bindings": [
+    {
+      "name": "InputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "source/{name}",
+      "connection": "MyStorageAccountConnectionString"
+    }
+  ]
+}
+```
+
+Hier ziet u de gekoppelde code voor het _run.ps1_ -bestand.
+
+```powershell
+param([byte[]] $InputBlob, $TriggerMetadata)
+
+Write-Host "PowerShell Blob trigger: Name: $($TriggerMetadata.Name) Size: $($InputBlob.Length) bytes"
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -183,24 +229,6 @@ import azure.functions as func
 
 def main(myblob: func.InputStream):
     logging.info('Python Blob trigger function processed %s', myblob.name)
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-Deze functie schrijft een logboek wanneer een BLOB wordt toegevoegd of bijgewerkt in de `myblob` container.
-
-```java
-@FunctionName("blobprocessor")
-public void run(
-  @BlobTrigger(name = "file",
-               dataType = "binary",
-               path = "myblob/{name}",
-               connection = "MyStorageAccountAppSetting") byte[] content,
-  @BindingName("name") String filename,
-  final ExecutionContext context
-) {
-  context.getLogger().info("Name: " + filename + " Size: " + content.length + " bytes");
-}
 ```
 
 ---
@@ -267,17 +295,21 @@ Het opslag account dat moet worden gebruikt, wordt in de volgende volg orde bepa
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Het `@BlobTrigger` kenmerk wordt gebruikt om u toegang te geven tot de BLOB waarmee de functie is geactiveerd. Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Kenmerken worden niet ondersteund door Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Het `@BlobTrigger` kenmerk wordt gebruikt om u toegang te geven tot de BLOB waarmee de functie is geactiveerd. Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
 
 ---
 
@@ -305,17 +337,21 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 [!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-trigger.md)]
 
+# <a name="java"></a>[Java](#tab/java)
+
+Het `@BlobTrigger` kenmerk wordt gebruikt om u toegang te geven tot de BLOB waarmee de functie is geactiveerd. Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Toegang krijgen tot BLOB-gegevens die `context.bindings.<NAME>` `<NAME>` overeenkomen met de waarde die is gedefinieerd in *function.jsop*.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Open de BLOB-gegevens via een para meter die overeenkomt met de naam die is opgegeven door de naam parameter van de binding in de _function.jsin_ het bestand.
+
 # <a name="python"></a>[Python](#tab/python)
 
-Toegang tot BLOB-gegevens via de para meter getypeerd als [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python). Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Het `@BlobTrigger` kenmerk wordt gebruikt om u toegang te geven tot de BLOB waarmee de functie is geactiveerd. Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
+Toegang tot BLOB-gegevens via de para meter getypeerd als [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python&preserve-view=true). Raadpleeg het [voor beeld](#example) van de trigger voor meer informatie.
 
 ---
 
@@ -374,6 +410,10 @@ Als de BLOB de naam *{20140101}-soundfile.mp3* heeft, `name` wordt de waarde van
 
 [!INCLUDE [functions-bindings-blob-storage-trigger](../../includes/functions-bindings-blob-storage-metadata.md)]
 
+# <a name="java"></a>[Java](#tab/java)
+
+Meta gegevens zijn niet beschikbaar in Java.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
@@ -383,13 +423,13 @@ module.exports = function (context, myBlob) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Meta gegevens zijn beschikbaar via de `$TriggerMetadata` para meter.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Meta gegevens zijn niet beschikbaar in python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Meta gegevens zijn niet beschikbaar in Java.
 
 ---
 
@@ -399,11 +439,11 @@ De Azure Functions runtime zorgt ervoor dat er geen blob-activering meer dan é�
 
 Azure Functions worden BLOB-ontvangsten opgeslagen in een container met de naam *Azure-webjobs-hosts* in het Azure-opslag account voor uw functie-app (gedefinieerd door de app `AzureWebJobsStorage` -instelling). Een BLOB-ontvangst heeft de volgende informatie:
 
-* De geactiveerde functie (' naam van de *&lt; functie-app>*. Vervullen. *&lt; functie naam>*, bijvoorbeeld: "MyFunctionApp. functions. CopyBlob")
+* De getriggerde functie ( `<FUNCTION_APP_NAME>.Functions.<FUNCTION_NAME>` bijvoorbeeld: `MyFunctionApp.Functions.CopyBlob` )
 * De container naam
-* Het BLOB-type ("BlockBlob" of "PageBlob")
+* Het type BLOB ( `BlockBlob` of `PageBlob` )
 * De BLOB-naam
-* De ETag (een BLOB-versie-id, bijvoorbeeld: "0x8D1DC6E70A277EF")
+* De ETag (een BLOB-versie-id, bijvoorbeeld: `0x8D1DC6E70A277EF` )
 
 Als u het opnieuw verwerken van een BLOB wilt afdwingen, verwijdert u de BLOB-ontvangst voor die blob van de container *Azure-webjobs-hosts* hand matig. Tijdens het opnieuw verwerken wordt mogelijk niet onmiddellijk uitgevoerd. Dit is gegarandeerd op een later tijdstip. Als u onmiddellijk opnieuw wilt verwerken, kunt u de *ScanInfo* -Blob in *Azure-webjobs-hosts/blobscaninfo* bijwerken. Alle blobs met een tijds tempel dat als laatste is gewijzigd nadat de `LatestScan` eigenschap opnieuw wordt gescand.
 
@@ -413,11 +453,11 @@ Wanneer een BLOB-activerings functie mislukt voor een bepaalde blob, worden Azur
 
 Als alle 5 pogingen mislukken, Azure Functions een bericht aan een opslag wachtrij met de naam *webjobs-sjabloon blobtrigger-Poison* toevoegen. Het maximum aantal nieuwe pogingen kan worden geconfigureerd. Dezelfde MaxDequeueCount-instelling wordt gebruikt voor de verwerking van verontreinigde BLOB-verwerking en verontreinigde wachtrij berichten. Het wachtrij bericht voor verontreinigde blobs is een JSON-object dat de volgende eigenschappen bevat:
 
-* FunctionId (in de indeling *&lt; functie app name>*. Vervullen. *&lt; functie naam>*)
-* BlobType ("BlockBlob" of "PageBlob")
+* FunctionId (in de indeling `<FUNCTION_APP_NAME>.Functions.<FUNCTION_NAME>` )
+* BlobType ( `BlockBlob` of `PageBlob` )
 * ContainerName
 * BlobName
-* ETag (een BLOB-versie-id, bijvoorbeeld: "0x8D1DC6E70A277EF")
+* ETag (een BLOB-versie-id, bijvoorbeeld: `0x8D1DC6E70A277EF` )
 
 ## <a name="concurrency-and-memory-usage"></a>Gelijktijdigheid en geheugen gebruik
 

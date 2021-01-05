@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/15/2020
-ms.openlocfilehash: d6936d6c72855bc22e3fc9323028fd0b8cd0fb29
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 4ffe663c1a1651891af5f6e65ee231cbe3e8d650
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097572"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882297"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>Resourcelimieten voor individuele databases met gebruikmaking van het vCore-aankoopmodel
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -225,7 +225,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 
 \* Behalve lokale SSD IO gebruiken werk belastingen externe pagina- [Server](service-tier-hyperscale.md#page-server) -io. Effectief IOPS is afhankelijk van de werk belasting. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)en [Data io in statistieken voor bron gebruik](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)voor meer informatie.
 
-#### <a name="notes"></a>Notities
+#### <a name="notes"></a>Opmerkingen
 
 **Opmerking 1**: grootschalige is een architectuur met meerdere lagen met afzonderlijke Compute-en opslag onderdelen: [grootschalige service tier-architectuur](service-tier-hyperscale.md#distributed-functions-architecture)
 
@@ -307,7 +307,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|200|400|600|800|1000|1200|1400|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|30.000|30.000|30.000|
 |Aantal replica's|1|1|1|1|1|1|1|
-|Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Meerdere AZ|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|
 |Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
 
@@ -332,7 +332,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|1600|1800|2000|2400|3200|4000|8000|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|30.000|30.000|30.000|
 |Aantal replica's|1|1|1|1|1|1|1|
-|Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Meerdere AZ|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|[Beschikbaar als preview-versie](high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)|
 |Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
 

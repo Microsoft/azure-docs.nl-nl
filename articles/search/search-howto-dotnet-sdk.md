@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3ceead297ea726e256d806c08c22810b39296793
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 15a878eb863b71a4519e75def2598f013152dfb7
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917168"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881630"
 ---
 # <a name="how-to-use-azuresearchdocuments-in-a-c-net-application"></a>Azure.Search.Documents gebruiken in een C# .NET-toepassing
 
@@ -31,7 +31,7 @@ Net als bij vorige versies kunt u deze bibliotheek gebruiken voor het volgende:
 + Zoek documenten laden en beheren in een index
 + Query's uitvoeren, allemaal zonder de details van HTTP en JSON te hoeven afhandelen
 
-De bibliotheek wordt gedistribueerd als één [Azure.Search.DocUment NuGet-pakket](https://www.nuget.org/packages/Azure.Search.Documents/), dat alle api's bevat die worden gebruikt om toegang te krijgen tot een zoek service.
+De bibliotheek wordt gedistribueerd als één [Azure.Search.DocUments NuGet-pakket](https://www.nuget.org/packages/Azure.Search.Documents/), dat alle api's bevat die worden gebruikt om toegang te krijgen tot een zoek service.
 
 De client bibliotheek definieert klassen zoals `SearchIndex` , `SearchField` , en `SearchDocument` , evenals bewerkingen zoals `SearchIndexClient.CreateIndex` en `SearchClient.Search` op de `SearchIndexClient` `SearchClient` klassen and. Deze klassen zijn ingedeeld in de volgende naam ruimten:
 
@@ -56,9 +56,9 @@ Als u de vorige versie van de .NET SDK hebt gebruikt en u een upgrade wilt uitvo
 
 + Down load het [Azure.Search.Documents-pakket](https://www.nuget.org/packages/Azure.Search.Documents) met **hulpprogram ma's**  >  **NuGet package manager**  >  **NuGet-pakketten beheren voor oplossing** in Visual Studio. Zoek de naam van het pakket `Azure.Search.Documents` .
 
-Azure SDK voor .NET voldoet aan [.NET Standard 2,0](/dotnet/standard/net-standard#net-implementation-support), wat betekent dat .NET Framework 4.6.1 en .net Core 2,0 als minimale vereisten.
+Azure SDK voor .NET voldoet aan [.NET Standard 2.0](/dotnet/standard/net-standard#net-implementation-support), wat betekent dat .NET Framework 4.6.1 en .NET Core 2.0 de minimale vereisten zijn.
 
-## <a name="example-application"></a>Voorbeeld toepassing
+## <a name="example-application"></a>Voorbeeldtoepassing
 
 In dit artikel leert u hoe u het [DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) -code voorbeeld op github kunt gebruiken om basis concepten te illustreren in azure Cognitive Search-specifiek, hoe u een zoek index maakt, laadt en er query's op uitvoert.
 

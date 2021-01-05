@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/20/2018
+ms.date: 01/04/2021
 ms.author: genli
-ms.openlocfilehash: 0a69df8a20c4e1502de151c38c60b54667c2d4dc
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: e1e7e78cab1f3a240737b5e25e0dff28c420add8
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814479"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883109"
 ---
 # <a name="troubleshoot-outbound-smtp-connectivity-problems-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in azure oplossen
 
@@ -76,10 +76,6 @@ Voor abonnementen van de volgende typen die zijn gemaakt na 15 november 2017, zi
 Als u rechtstreeks e-mail berichten van Azure-vm's naar externe e-mail providers wilt verzenden (zonder een geverifieerde SMTP-relay), kunt u een aanvraag indienen door een ondersteunings aanvraag te openen met behulp van het volgende probleem type: **technische**  >  **Virtual Network**  >  **connectiviteit**  >  **kan geen e-mail verzenden (SMTP/poort 25)**. Zorg ervoor dat u gegevens toevoegt over waarom uw implementatie e-mail rechtstreeks naar e-mail providers moet verzenden in plaats van een geverifieerde relay te gebruiken. Aanvragen worden beoordeeld en goedgekeurd door micro soft. Aanvragen worden pas verleend nadat aanvullende AntiFraud-controles zijn voltooid. 
 
 Nadat een abonnement is uitgesloten en de Vm's zijn gestopt en opnieuw zijn opgestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
-
-## <a name="restrictions-and-limitations"></a>Beperkingen en beperkingen
-
-Routerings poort 25 verkeer via Azure PaaS services zoals [Azure firewall](https://azure.microsoft.com/services/azure-firewall/) wordt niet ondersteund.
 
 ## <a name="need-help-contact-support"></a>Hebt u hulp nodig? Contact opnemen met ondersteuning
 

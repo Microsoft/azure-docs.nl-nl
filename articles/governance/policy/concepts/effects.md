@@ -3,12 +3,12 @@ title: Inzicht krijgen in de werking van effecten
 description: Azure Policy definities hebben verschillende effecten die bepalen hoe de naleving wordt beheerd en gerapporteerd.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 19811eca33be7dff4d9bee5b8bd89dd38f185a57
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: e72e94766dce2660409e729bc43eb107fb9ab39a
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873945"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883075"
 ---
 # <a name="understand-azure-policy-effects"></a>Azure Policy effecten begrijpen
 
@@ -32,7 +32,7 @@ De volgende effecten zijn _afgeschaft_:
 > [!IMPORTANT]
 > In plaats van de **EnforceOPAConstraint** -of **EnforceRegoPolicy** -effecten gebruikt u _controleren_ en _weigeren_ met de resource provider modus `Microsoft.Kubernetes.Data` . De ingebouwde beleids definities zijn bijgewerkt. Wanneer bestaande beleids toewijzingen van deze ingebouwde beleids definities worden gewijzigd, moet de para meter _effect_ worden gewijzigd in een waarde in de lijst met bijgewerkte _allowedValues_ .
 
-## <a name="order-of-evaluation"></a>Volg orde van evaluatie
+## <a name="order-of-evaluation"></a>Volgorde van evaluatie
 
 Aanvragen om een resource te maken of bij te werken worden eerst geëvalueerd door Azure Policy. Azure Policy maakt een lijst met alle toewijzingen die van toepassing zijn op de resource en evalueert vervolgens de resource op basis van elke definitie. Voor een [Resource Manager-modus](./definition-structure.md#resource-manager-modes)worden door Azure Policy verschillende effecten verwerkt voordat de aanvraag aan de juiste resource provider wordt door gegeven. Deze volg orde voor komt onnodige verwerking door een resource provider wanneer een resource niet voldoet aan de ontworpen governance-besturings elementen van Azure Policy. Met een [resource provider modus](./definition-structure.md#resource-provider-modes)beheert de resource provider de evaluatie en het resultaat en rapporteert de resultaten terug naar Azure Policy.
 
@@ -42,6 +42,8 @@ Aanvragen om een resource te maken of bij te werken worden eerst geëvalueerd do
 - De **controle** wordt als laatste geëvalueerd.
 
 Nadat de resource provider een succes code heeft geretourneerd in een aanvraag voor de Resource Manager-modus, **AuditIfNotExists** en **DeployIfNotExists** bepalen of aanvullende nalevings logboek registratie of actie vereist is.
+
+Daarnaast wordt `PATCH` met aanvragen die gerelateerde velden alleen wijzigen, de `tags` beleids evaluatie beperkt tot beleids regels met voor waarden die `tags` gerelateerde velden controleren.
 
 ## <a name="append"></a>Toevoegen
 
@@ -166,8 +168,8 @@ De eigenschap **Details** van de AuditIfNotExists-effecten heeft alle subeigensc
   - Toegestane waarden zijn _abonnements_ -en _ResourceGroup_.
   - Hiermee stelt u het bereik van waar de gerelateerde resource moet worden opgehaald om overeen te komen met.
   - Is niet van toepassing als **type** een resource is die onder de **if** -voor waarde-resource zou vallen.
-  - Voor _ResourceGroup_zou de resource groep van de **if** -voor waarde worden beperkt of de resource groep die is opgegeven in **ResourceGroupName**.
-  - Voor het _abonnement_voert u een query uit op het hele abonnement voor de gerelateerde resource.
+  - Voor _ResourceGroup_ zou de resource groep van de **if** -voor waarde worden beperkt of de resource groep die is opgegeven in **ResourceGroupName**.
+  - Voor het _abonnement_ voert u een query uit op het hele abonnement voor de gerelateerde resource.
   - De standaard waarde is _ResourceGroup_.
 - **ExistenceCondition** (optioneel)
   - Als u niets opgeeft, wordt een gerelateerde bron van het **type** voldoet aan het effect en wordt de controle niet geactiveerd.
@@ -288,8 +290,8 @@ De eigenschap **Details** van het effect DeployIfNotExists heeft alle subeigensc
   - Toegestane waarden zijn _abonnements_ -en _ResourceGroup_.
   - Hiermee stelt u het bereik van waar de gerelateerde resource moet worden opgehaald om overeen te komen met.
   - Is niet van toepassing als **type** een resource is die onder de **if** -voor waarde-resource zou vallen.
-  - Voor _ResourceGroup_zou de resource groep van de **if** -voor waarde worden beperkt of de resource groep die is opgegeven in **ResourceGroupName**.
-  - Voor het _abonnement_voert u een query uit op het hele abonnement voor de gerelateerde resource.
+  - Voor _ResourceGroup_ zou de resource groep van de **if** -voor waarde worden beperkt of de resource groep die is opgegeven in **ResourceGroupName**.
+  - Voor het _abonnement_ voert u een query uit op het hele abonnement voor de gerelateerde resource.
   - De standaard waarde is _ResourceGroup_.
 - **ExistenceCondition** (optioneel)
   - Als u niets opgeeft, wordt een gerelateerde bron van het **type** voldoet aan het effect en wordt de implementatie niet geactiveerd.
@@ -519,20 +521,20 @@ De eigenschap **Details** van het effect Modify heeft alle subeigenschappen die 
   - De gedefinieerde rol moet alle bewerkingen bevatten die zijn toegewezen aan de rol [Inzender](../../../role-based-access-control/built-in-roles.md#contributor) .
 - **conflictEffect** (optioneel)
   - Hiermee wordt bepaald welke beleids definitie ' WINS ' in het geval van meer dan één beleids definitie dezelfde eigenschap wijzigt of wanneer de wijzigings bewerking niet werkt voor de opgegeven alias.
-    - Voor nieuwe of bijgewerkte bronnen heeft de beleids definitie met _weigeren_ prioriteit. Beleids definities met _controle_ alle **bewerkingen**overs Laan. Als er meer dan één beleids definitie is _geweigerd, wordt_de aanvraag geweigerd als een conflict. Als alle beleids definities _controle_hebben, worden geen van de **bewerkingen** van de conflicterende beleids definities verwerkt.
-    - Voor bestaande bronnen geldt dat als er meerdere beleids regels zijn _geweigerd_, de nalevings status _conflicterend_is. Als een of minder beleids definities zijn _geweigerd_, retourneert elke toewijzing een nalevings status van _niet-compatibel_.
+    - Voor nieuwe of bijgewerkte bronnen heeft de beleids definitie met _weigeren_ prioriteit. Beleids definities met _controle_ alle **bewerkingen** overs Laan. Als er meer dan één beleids definitie is _geweigerd, wordt_ de aanvraag geweigerd als een conflict. Als alle beleids definities _controle_ hebben, worden geen van de **bewerkingen** van de conflicterende beleids definities verwerkt.
+    - Voor bestaande bronnen geldt dat als er meerdere beleids regels zijn _geweigerd_, de nalevings status _conflicterend_ is. Als een of minder beleids definities zijn _geweigerd_, retourneert elke toewijzing een nalevings status van _niet-compatibel_.
   - Beschik bare waarden: _controleren_, _weigeren_, _uitgeschakeld_.
   - De standaard waarde is _weigeren_.
 - **bewerkingen** (vereist)
   - Een matrix met alle label bewerkingen die moeten worden voltooid voor overeenkomende resources.
   - Eigenschappen:
     - **bewerking** (vereist)
-      - Definieert welke actie moet worden uitgevoerd op een overeenkomende resource. Opties zijn: _addOrReplace_, _toevoegen_, _verwijderen_. Een gezichte lijkt op [Append](#append) het _toevoegen_ van het effect.
+      - Definieert welke actie moet worden uitgevoerd op een overeenkomende resource. Opties zijn: _addOrReplace_, _toevoegen_, _verwijderen_. Een gezichte lijkt op [](#append) het _toevoegen_ van het effect.
     - **veld** (vereist)
       - Het label dat moet worden toegevoegd, vervangen of verwijderd. Label namen moeten voldoen aan dezelfde naam Conventie voor andere [velden](./definition-structure.md#fields).
     - **waarde** (optioneel)
       - De waarde waarop de tag moet worden ingesteld.
-      - Deze eigenschap is vereist als **operation** de bewerking _addOrReplace_ of _add_is.
+      - Deze eigenschap is vereist als  de bewerking _addOrReplace_ of _add_ is.
     - **voor waarde** (optioneel)
       - Een teken reeks met een Azure Policy taal expressie met [beleids functies](./definition-structure.md#policy-functions) die worden geëvalueerd als _waar_ of _Onwaar_.
       - Biedt geen ondersteuning voor de volgende beleids functies: `field()` , `resourceGroup()` , `subscription()` .
@@ -671,7 +673,7 @@ Als zowel beleid 1 als beleid 2 gevolgen heeft voor de weigering, verandert de s
 - Nieuwe resources in abonnement die niet in ' westus ' voor komen, worden geweigerd door beleid 1
 - Nieuwe resources in resource groep B van abonnement A worden geweigerd
 
-Elke toewijzing wordt afzonderlijk geëvalueerd. Daarom is er geen kans dat een resource door een hiaat wordt geslipd van verschillen in het bereik. Het resultaat van het beperken van beleids definities voor lagen wordt als **cumulatief het meest beperkend**beschouwd. Als voor het beleid 1 en 2 bijvoorbeeld een weigering is ingesteld, wordt een bron geblokkeerd door de beleids definities die elkaar overlappen en conflicteren. Als u de resource nog steeds moet maken in het doel bereik, kunt u de uitsluitingen voor elke toewijzing controleren om te controleren of de juiste beleids toewijzingen van invloed zijn op de juiste bereiken.
+Elke toewijzing wordt afzonderlijk geëvalueerd. Daarom is er geen kans dat een resource door een hiaat wordt geslipd van verschillen in het bereik. Het resultaat van het beperken van beleids definities voor lagen wordt als **cumulatief het meest beperkend** beschouwd. Als voor het beleid 1 en 2 bijvoorbeeld een weigering is ingesteld, wordt een bron geblokkeerd door de beleids definities die elkaar overlappen en conflicteren. Als u de resource nog steeds moet maken in het doel bereik, kunt u de uitsluitingen voor elke toewijzing controleren om te controleren of de juiste beleids toewijzingen van invloed zijn op de juiste bereiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 10/08/2020
 ms.author: alkohli
-ms.openlocfilehash: e93a7fd7aec5463a3d77bd9d6bb17d7072097870
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5e6f411fef5d3e27b6ad61b720f1c64fb6f8c9a0
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447638"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883330"
 ---
 # <a name="troubleshoot-activation-issues-on-your-azure-stack-edge-pro-gpu-device"></a>Activerings problemen op uw Azure Stack Edge Pro GPU-apparaat oplossen 
 
@@ -31,7 +31,7 @@ De volgende tabel bevat een overzicht van de fouten met betrekking tot het activ
 | Als de Azure Key Vault gebruikt voor activering wordt verwijderd voordat het apparaat wordt geactiveerd met de activerings sleutel, wordt deze fout weer gegeven. <br> ![Sleutel kluis fout 1](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-1.png)  | Als de sleutel kluis is verwijderd, kunt u de sleutel kluis herstellen als de kluis zich in de duur van de schone beveiliging bevindt. Volg de stappen in [een sleutel kluis herstellen](../key-vault/general/key-vault-recovery.md#list-recover-or-purge-soft-deleted-secrets-keys-and-certificates). <br>Als de duur voor het leegmaken van de beveiliging is verstreken, kan de sleutel kluis niet worden hersteld. Neem contact op met Microsoft Ondersteuning voor volgende stappen. |
 | Als de Azure Key Vault wordt verwijderd nadat het apparaat is geactiveerd en u vervolgens een bewerking probeert uit te voeren waarvoor versleuteling is vereist, bijvoorbeeld: **gebruiker toevoegen**, **share toevoegen**, **berekening configureren**, wordt deze fout weer gegeven. <br> ![Sleutel kluis fout 2](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-2.png)    | Als de sleutel kluis is verwijderd, kunt u de sleutel kluis herstellen als de kluis zich in de duur van de schone beveiliging bevindt. Volg de stappen in een sleutel kluis herstellen. <br>Als de duur voor het leegmaken van de beveiliging is verstreken, kan de sleutel kluis niet worden hersteld. Neem contact op met Microsoft Ondersteuning voor volgende stappen. |
 | Als de sleutel voor de integriteit van het kanaal in de Azure Key Vault wordt verwijderd en u vervolgens probeert om bewerkingen uit te voeren waarvoor versleuteling is vereist, bijvoorbeeld: **gebruiker toevoegen**, **share toevoegen**, **Compute configureren** -vervolgens ontvangt u deze fout. <br> ![Sleutel kluis fout 3](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-3.png) | Als de integriteits sleutel van het kanaal in de sleutel kluis wordt verwijderd, maar deze nog steeds binnen de duur van het leegmaken ligt, volgt u de stappen in [ongedaan maken sleutel kluis sleutel verwijderen](/powershell/module/az.keyvault/undo-azkeyvaultkeyremoval). <br>Als de duur voor het leegmaken van de beveiliging is verstreken, en als u de sleutel hebt gemaakt, kunt u herstellen vanuit de back-up, anders kan de sleutel niet worden hersteld. Neem contact op met Microsoft Ondersteuning voor volgende stappen. |
-| Als de activerings sleutel niet kan worden gegenereerd vanwege een fout, wordt deze fout weer gegeven. Meer informatie is te vinden in de melding. <br> ![Sleutel kluis fout 4](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-4.png)   | Wacht een paar minuten en voer de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
+| Als de activerings sleutel niet kan worden gegenereerd vanwege een fout, wordt deze fout weer gegeven. Meer informatie is te vinden in de melding. <br> ![Sleutel kluis fout 4](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-4.png)   | Zorg ervoor dat de poorten en Url's die zijn opgegeven in de [Access-Azure Key Vault achter een firewall](../key-vault/general/access-behind-firewall.md) zijn geopend op de firewall om toegang te krijgen tot de Key Vault. Wacht een paar minuten en voer de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met Microsoft Ondersteuning. |
 | Als de gebruiker alleen-lezen machtigingen heeft, mag de gebruiker geen activerings sleutel genereren en deze fout wordt weer gegeven. <br> ![Sleutel kluis fout 5](./media/azure-stack-edge-gpu-troubleshoot-activation/key-vault-error-5.png) | Dit kan zijn omdat u niet de juiste toegang of  *micro soft hebt. de kluis* is niet geregistreerd.<li>Zorg ervoor dat u toegang hebt tot de eigenaar of Inzender op het niveau van de resource groep die wordt gebruikt voor uw Azure Stack Edge-resource.</li><li>Zorg ervoor dat de resource provider micro soft.-kluis is geregistreerd. Als u een resource provider wilt registreren, gaat u naar het abonnement dat wordt gebruikt voor Azure Stack Edge-resource. Ga naar **resource providers**, zoek naar *micro soft.-kluis* en selecteer en **registratie**.</li> |
 
 ## <a name="next-steps"></a>Volgende stappen

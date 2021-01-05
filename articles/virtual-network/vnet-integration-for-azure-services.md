@@ -12,19 +12,19 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: kumud
-ms.openlocfilehash: 814158ad68e63760c1f2a1bce3eeff812de3c13e
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: a25d6d0d1990682287b5962a7bd93a0c525db133
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938729"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882361"
 ---
 # <a name="integrate-azure-services-with-virtual-networks-for-network-isolation"></a>Azure-Services integreren met virtuele netwerken voor netwerk isolatie
 
 Dankzij de integratie van Virtual Network (VNet) voor een Azure-service kunt u de toegang tot de service alleen vergren delen op de infra structuur van uw virtuele netwerk. De VNet-infra structuur omvat ook gepeerde virtuele netwerken en on-premises netwerken.
 
 VNet-integratie biedt Azure-Services de voor delen van netwerk isolatie en kan worden bereikt met een of meer van de volgende methoden:
-- [Implementatie van toegewezen exemplaren van de service in een virtueel netwerk](virtual-network-service-endpoints-overview.md). De services kunnen vervolgens worden geopend in het virtuele netwerk en vanuit on-premises netwerken.
+- [Implementatie van toegewezen exemplaren van de service in een virtueel netwerk](virtual-network-for-azure-services.md). De services kunnen vervolgens worden geopend in het virtuele netwerk en vanuit on-premises netwerken.
 - Het gebruik van een [privé-eind punt](../private-link/private-endpoint-overview.md) waarmee u privé en veilig een service kunt verbinden met een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md). Persoonlijk eind punt gebruikt een privé-IP-adres uit uw VNet, waardoor de service in het virtuele netwerk effectief wordt.
 - Toegang tot de service via open bare eind punten door een virtueel netwerk uit te breiden naar de service, via [service-eind punten](virtual-network-service-endpoints-overview.md). Met service-eindpunten kunnen serviceresources worden beveiligd naar het virtuele netwerk.
 - [Service Tags](service-tags-overview.md) gebruiken om verkeer naar uw Azure-resources toe te staan of te weigeren van open bare IP-eind punten.

@@ -9,17 +9,29 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: b11b0b46e57247d09e576795079e20c679e519d5
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: 695702c04e2eeb74ee27b7d4276a3be94d9d1cf7
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760109"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881817"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
 
+## <a name="2020-12-31"></a>2020-12-31
+### <a name="azure-machine-learning-studio-notebooks-experience-december-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van december)
++ **Nieuwe functies**
+  + Zoek opdracht van de gebruikers naam. Gebruikers kunnen nu zoeken in alle bestanden die zijn opgeslagen in een werk ruimte.
+  + De ondersteunings periode naast elkaar afprijsen per notebook-cel. In een notebook-cel kunnen gebruikers nu beschikken over de optie voor het weer geven van de syntaxis voor gerenderde prijs verlaging en korting naast elkaar.
+  + Status balk van cel. De status balk geeft aan in welke staat een code-cel zich bevindt, of een cel is uitgevoerd en hoe lang het duurt om te worden uitgevoerd. 
+   
++ **Oplossingen en verbeteringen voor oplossingen**
+  + Verbeterde laad tijden voor pagina's
+  + Verbeterde prestaties 
+  + Verbeterde snelheid en kernel-betrouw baarheid
+  
 ## <a name="2020-12-07"></a>2020-12-07
 
 ### <a name="azure-machine-learning-sdk-for-python-v1190"></a>Azure Machine Learning SDK voor python v-1.19.0
@@ -83,7 +95,19 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
     + Het gebruik van Nccl en Gloo is afgeschaft als een geldig type invoer voor Estimator-klassen in het voor deel van het gebruik van PyTorchConfiguration met ScriptRunConfig. 
     + Het gebruik van MPI is afgeschaft als een geldig type invoer voor Estimator-klassen in het voor deel van het gebruik van MpiConfiguration met ScriptRunConfig.
 
+## <a name="2020-11-30"></a>2020-11-30
+### <a name="azure-machine-learning-studio-notebooks-experience-november-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van november)
++ **Nieuwe functies**
+   + Systeem eigen terminal. Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de [Geïntegreerde Terminal.](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#terminal)
+  + Dubbele map 
+  + Kostprijs berekening voor de vervolg keuzelijst compute 
+  + Offline Compute-Pylance 
 
++ **Oplossingen en verbeteringen voor oplossingen**
+  + Verbeterde laad tijden voor pagina's
+  + Verbeterde prestaties 
+  + Verbeterde snelheid en kernel-betrouw baarheid
+  + Grote bestanden uploaden. U kunt nu bestand uploaden >95mb
 
 ## <a name="2020-11-09"></a>2020-11-09
 

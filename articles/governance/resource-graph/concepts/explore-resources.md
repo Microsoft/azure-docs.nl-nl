@@ -3,12 +3,12 @@ title: Uw Azure-resources verkennen
 description: Meer informatie over het gebruik van de resource Graph-query taal om uw resources te verkennen en te ontdekken hoe ze zijn verbonden.
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2b0ef3935d865618a9d4dda2825f7d4383baf772
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 01f9c0c574d8a8d6d4b5f06fc1398313649cfb8d
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056239"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882905"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Azure-resources verkennen met Resource Graph
 
@@ -175,9 +175,6 @@ Resources
 | project disk.id
 ```
 
-> [!NOTE]
-> Een andere manier om de SKU te verkrijgen zou zijn met behulp van de **aliass** -eigenschap **micro soft. Compute/informatie/SKU. name**. Zie de voor beelden [aliassen weer geven](../samples/starter.md#show-aliases) en [afzonderlijke alias waarden weer geven](../samples/starter.md#distinct-alias-values) .
-
 ```azurecli-interactive
 az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
 ```
@@ -207,7 +204,7 @@ Resources
 | where type =~ 'Microsoft.Compute/disks' and id == '/subscriptions/<subscriptionId>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/disks/ContosoVM1_OsDisk_1_9676b7e1b3c44e2cb672338ebe6f5166'
 ```
 
-Voordat u de query uitvoert, weet u zeker dat het **type** **micro soft. Compute/disks**is? Als u de volledige ID bekijkt, ziet u **/providers/Microsoft.Compute/disks/** als onderdeel van de teken reeks.
+Voordat u de query uitvoert, weet u zeker dat het **type** **micro soft. Compute/disks** is? Als u de volledige ID bekijkt, ziet u **/providers/Microsoft.Compute/disks/** als onderdeel van de teken reeks.
 Dit teken reeks fragment geeft u een hint voor het type waarnaar moet worden gezocht. Een alternatieve methode is om de limiet te verwijderen per type en in plaats daarvan alleen op het ID-veld te zoeken. Als de ID uniek is, wordt er slechts één record geretourneerd en bevat de eigenschap **type** deze details.
 
 > [!NOTE]

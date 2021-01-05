@@ -3,12 +3,12 @@ title: Veelvoorkomende fouten oplossen
 description: Meer informatie over het oplossen van problemen met het maken van beleids definities, de verschillende SDK en de invoeg toepassing voor Kubernetes.
 ms.date: 12/01/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: f3667988d527100507d308887338278e1200d454
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: b88d00575adb571c59b562d25067c4a1716fb50f
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510995"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882973"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Fouten oplossen met behulp van Azure Policy
 
@@ -36,7 +36,7 @@ Er wordt een onjuiste of niet-bestaande alias gebruikt in een beleids definitie.
 
 #### <a name="resolution"></a>Oplossing
 
-Controleer eerst of de Resource Manager-eigenschap een alias heeft. Gebruik [Azure Policy extensie voor Visual Studio code](../how-to/extension-for-vscode.md), [Azure resource Graph](../../resource-graph/samples/starter.md#distinct-alias-values)of SDK om beschik bare aliassen op te zoeken. Als de alias voor een resource manager-eigenschap niet bestaat, maakt u een ondersteunings ticket.
+Controleer eerst of de Resource Manager-eigenschap een alias heeft. Gebruik [Azure Policy extensie voor Visual Studio code](../how-to/extension-for-vscode.md) of SDK om beschik bare aliassen op te zoeken. Als de alias voor een resource manager-eigenschap niet bestaat, maakt u een ondersteunings ticket.
 
 ### <a name="scenario-evaluation-details-not-up-to-date"></a>Scenario: evaluatie Details zijn niet up-to-date
 

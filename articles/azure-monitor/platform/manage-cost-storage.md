@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/16/2020
+ms.date: 12/24/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: a3a4c7a51f0d75b67465a83a2fbbf3ae8a141c4c
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 45f02850797582f97220e91d1582b04b3be711c0
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97671162"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882480"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -132,9 +132,9 @@ Geen van de verouderde prijs categorieën heeft prijzen op basis van regionaal.
 
 ## <a name="change-the-data-retention-period"></a>De gegevensretentieperiode wijzigen
 
-In de volgende stappen wordt beschreven hoe u kunt configureren hoe lang logboek gegevens worden bewaard in uw werk ruimte. Gegevens retentie kan worden geconfigureerd van 30 tot 730 dagen (2 jaar) voor alle werk ruimten, tenzij ze gebruikmaken van de verouderde gratis prijs categorie. Meer [informatie](https://azure.microsoft.com/pricing/details/monitor/) over prijzen voor langere retentie van gegevens. 
+In de volgende stappen wordt beschreven hoe u kunt configureren hoe lang logboek gegevens worden bewaard in uw werk ruimte. Bewaren van gegevens op het niveau van de werk ruimte kan worden geconfigureerd van 30 tot 730 dagen (2 jaar) voor alle werk ruimten, tenzij ze gebruikmaken van de verouderde gratis prijs categorie. Meer [informatie](https://azure.microsoft.com/pricing/details/monitor/) over prijzen voor langere retentie van gegevens. Het bewaren van afzonderlijke gegevens typen kan worden ingesteld op Maxi maal vier dagen. 
 
-### <a name="default-retention"></a>Standaard retentie
+### <a name="workspace-level-default-retention"></a>Standaard retentie op werkruimte niveau
 
 Als u de standaard retentie voor uw werk ruimte wilt instellen, 
  
@@ -158,7 +158,7 @@ Opmerking: De [API voor opschonen](/rest/api/loganalytics/workspacepurge/purge) 
 
 ### <a name="retention-by-data-type"></a>Bewaren op gegevens type
 
-Het is ook mogelijk om verschillende Bewaar instellingen op te geven voor afzonderlijke gegevens typen van 30 tot 730 dagen (met uitzonde ring van werk ruimten in de prijs categorie verouderde gratis). Elk gegevens type is een subresource van de werk ruimte. De SecurityEvent-tabel kan bijvoorbeeld als volgt worden behandeld in [Azure Resource Manager](../../azure-resource-manager/management/overview.md) :
+Het is ook mogelijk om verschillende Bewaar instellingen op te geven voor afzonderlijke gegevens typen van 4 tot 730 dagen (met uitzonde ring van werk ruimten in de prijs categorie verouderde gratis) die de standaard retentie van het werkruimte niveau onderdrukken. Elk gegevens type is een subresource van de werk ruimte. De SecurityEvent-tabel kan bijvoorbeeld als volgt worden behandeld in [Azure Resource Manager](../../azure-resource-manager/management/overview.md) :
 
 ```
 /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/MyResourceGroupName/providers/Microsoft.OperationalInsights/workspaces/MyWorkspaceName/Tables/SecurityEvent
@@ -350,7 +350,8 @@ Usage
 | where TimeGenerated > ago(32d)
 | where StartTime >= startofday(ago(31d)) and EndTime < startofday(now())
 | where IsBillable == true
-| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), Solution | render barchart
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), Solution 
+| render columnchart
 ```
 
 De component with `TimeGenerated` is alleen om ervoor te zorgen dat de query-ervaring in het Azure Portal na de standaard 24 uur terugkeert. Wanneer u het gegevens type gebruik gebruikt `StartTime` en `EndTime` de tijds verzamelingen weergeeft waarvoor de resultaten worden weer gegeven. 
@@ -364,7 +365,8 @@ Usage
 | where TimeGenerated > ago(32d)
 | where StartTime >= startofday(ago(31d)) and EndTime < startofday(now())
 | where IsBillable == true
-| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), DataType | render barchart
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), DataType 
+| render columnchart
 ```
 
 Of om een tabel weer te geven op oplossing en type voor de afgelopen maand,
@@ -661,4 +663,5 @@ Er zijn enkele aanvullende Log Analytics limieten, waarvan sommige afhankelijk z
 - Als u een effectief gebeurtenis verzamelings beleid wilt configureren, raadpleegt u [Azure Security Center filter beleid](../../security-center/security-center-enable-data-collection.md).
 - Wijzig de [prestatiemeteritemconfiguratie](data-sources-performance-counters.md).
 - Controleer de [configuratie van gebeurtenis logboeken](data-sources-windows-events.md)om de instellingen van uw gebeurtenis verzameling te wijzigen.
+- Bekijk [syslog-configuratie](data-sources-syslog.md)om de instellingen van uw syslog-verzameling te wijzigen.
 - Bekijk [syslog-configuratie](data-sources-syslog.md)om de instellingen van uw syslog-verzameling te wijzigen.

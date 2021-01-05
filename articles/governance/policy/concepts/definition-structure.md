@@ -3,12 +3,12 @@ title: Details van de structuur van de beleids definitie
 description: Hierin wordt beschreven hoe beleids definities worden gebruikt om conventies voor Azure-resources in uw organisatie in te richten.
 ms.date: 10/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5f9a110247d4ec93c8f3fb95fc9ed61eb6806787
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 52adaf9522e4690c4c44a72ed47592f5b1d6471e
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305159"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883245"
 ---
 # <a name="azure-policy-definition-structure"></a>Structuur van Azure-beleidsdefinities
 
@@ -75,7 +75,7 @@ Azure Policy ingebouwde toepassingen en patronen bevinden zich op voor [beelden 
 U gebruikt **DisplayName** en **Beschrijving** om de beleids definitie te identificeren en context op te geven wanneer deze wordt gebruikt. **DisplayName** heeft een maximale lengte van _128_ tekens en een **Beschrijving** van Maxi maal _512_ tekens.
 
 > [!NOTE]
-> Tijdens het maken of bijwerken van een beleids definitie, de **id** , het **type** en de **naam** worden gedefinieerd door de Eigenschappen extern van de JSON en zijn deze niet nodig in het JSON-bestand. Het ophalen van de beleids definitie via SDK retourneert de eigenschappen **id** , **type** en **naam** als onderdeel van de JSON, maar elk is een alleen-lezen informatie met betrekking tot de beleids definitie.
+> Tijdens het maken of bijwerken van een beleids definitie, de **id**, het **type** en de **naam** worden gedefinieerd door de Eigenschappen extern van de JSON en zijn deze niet nodig in het JSON-bestand. Het ophalen van de beleids definitie via SDK retourneert de eigenschappen **id**, **type** en **naam** als onderdeel van de JSON, maar elk is een alleen-lezen informatie met betrekking tot de beleids definitie.
 
 ## <a name="type"></a>Type
 
@@ -106,9 +106,9 @@ U wordt aangeraden de **modus** `all` in de meeste gevallen in te stellen. Alle 
 
 De volgende resource provider modus wordt volledig ondersteund:
 
-- `Microsoft.Kubernetes.Data` voor het beheren van uw Kubernetes-clusters in of uit Azure. Definities die gebruikmaken van deze resource provider modus, gebruiken effecten _controleren_ , _weigeren_ en _uitgeschakeld_. Het gebruik van het [EnforceOPAConstraint](./effects.md#enforceopaconstraint) -effect is _afgeschaft_.
+- `Microsoft.Kubernetes.Data` voor het beheren van uw Kubernetes-clusters in of uit Azure. Definities die gebruikmaken van deze resource provider modus, gebruiken effecten _controleren_, _weigeren_ en _uitgeschakeld_. Het gebruik van het [EnforceOPAConstraint](./effects.md#enforceopaconstraint) -effect is _afgeschaft_.
 
-De volgende resource provider modi worden momenteel ondersteund als een **Preview** :
+De volgende resource provider modi worden momenteel ondersteund als een **Preview**:
 
 - `Microsoft.ContainerService.Data` voor het beheren van regels voor toegangs beheer in de [Azure Kubernetes-service](../../../aks/intro-kubernetes.md). Definities die gebruikmaken van deze resource provider modus **moeten** het [EnforceRegoPolicy](./effects.md#enforceregopolicy) -effect gebruiken. Deze modus is _afgeschaft_.
 - `Microsoft.KeyVault.Data` voor het beheren van kluizen en certificaten in [Azure Key Vault](../../../key-vault/general/overview.md). Zie [Azure Key Vault integreren met Azure Policy](../../../key-vault/general/azure-policy.md)voor meer informatie over deze beleids definities.
@@ -128,7 +128,7 @@ De optionele `metadata` eigenschap bevat informatie over de beleids definitie. K
 - `deprecated` (Booleaans): de vlag True of False voor als de beleids definitie is gemarkeerd als _afgeschaft_.
 
 > [!NOTE]
-> De Azure Policy-service gebruikt `version` , `preview` en `deprecated` Eigenschappen om het niveau van de wijziging in een ingebouwde beleids definitie of-initiatief en-status over te brengen. De indeling van `version` is: `{Major}.{Minor}.{Patch}` . Specifieke statussen, zoals _afgeschaft_ of _Preview_ , worden toegevoegd aan de `version` eigenschap of een andere eigenschap als een **Booleaanse waarde**. Zie [ingebouwde versie beheer](https://github.com/Azure/azure-policy/blob/master/built-in-policies/README.md)voor meer informatie over de manier waarop Azure Policy ingebouwde versies.
+> De Azure Policy-service gebruikt `version` , `preview` en `deprecated` Eigenschappen om het niveau van de wijziging in een ingebouwde beleids definitie of-initiatief en-status over te brengen. De indeling van `version` is: `{Major}.{Minor}.{Patch}` . Specifieke statussen, zoals _afgeschaft_ of _Preview_, worden toegevoegd aan de `version` eigenschap of een andere eigenschap als een **Booleaanse waarde**. Zie [ingebouwde versie beheer](https://github.com/Azure/azure-policy/blob/master/built-in-policies/README.md)voor meer informatie over de manier waarop Azure Policy ingebouwde versies.
 
 ## <a name="parameters"></a>Parameters
 
@@ -143,7 +143,7 @@ Para meters werken op dezelfde manier als wanneer u beleid bouwt. Door para mete
 Een para meter heeft de volgende eigenschappen die worden gebruikt in de beleids definitie:
 
 - `name`: De naam van de para meter. Wordt gebruikt door de `parameters` implementatie functie binnen de beleids regel. Zie [een parameter waarde gebruiken](#using-a-parameter-value)voor meer informatie.
-- `type`: Bepaalt of de para meter een **teken reeks** , een **matrix** , een **object** , een **Booleaanse waarde** , een **geheel getal** , een **float** of een **datum/tijd** is.
+- `type`: Bepaalt of de para meter een **teken reeks**, een **matrix**, een **object**, een **Booleaanse waarde**, een **geheel getal**, een **float** of een **datum/tijd** is.
 - `metadata`: Definieert subeigenschappen die voornamelijk worden gebruikt door de Azure Portal om gebruikers vriendelijke informatie weer te geven:
   - `description`: De uitleg van het gebruik van de para meter voor. Kan worden gebruikt om voor beelden te bieden van acceptabele waarden.
   - `displayName`: De beschrijvende naam die wordt weer gegeven in de portal voor de para meter.
@@ -189,7 +189,7 @@ Dit voor beeld verwijst naar de **allowedLocations** -para meter die is gedemons
 
 ### <a name="strongtype"></a>strongType
 
-Binnen de `metadata` eigenschap kunt u **strongType** gebruiken om een multi-select lijst met opties in de Azure Portal op te geven. **strongType** kan een ondersteund _resource type_ of een toegestane waarde zijn. Als u wilt bepalen of een _resource type_ geldig is voor **strongType** , gebruikt u [Get-AzResourceProvider](/powershell/module/az.resources/get-azresourceprovider). De indeling voor een _resource type_ **strongType** is `<Resource Provider>/<Resource Type>` . Bijvoorbeeld `Microsoft.Network/virtualNetworks/subnets`.
+Binnen de `metadata` eigenschap kunt u **strongType** gebruiken om een multi-select lijst met opties in de Azure Portal op te geven. **strongType** kan een ondersteund _resource type_ of een toegestane waarde zijn. Als u wilt bepalen of een _resource type_ geldig is voor **strongType**, gebruikt u [Get-AzResourceProvider](/powershell/module/az.resources/get-azresourceprovider). De indeling voor een _resource type_ **strongType** is `<Resource Provider>/<Resource Type>` . Bijvoorbeeld `Microsoft.Network/virtualNetworks/subnets`.
 
 Sommige _resource typen_ die niet worden geretourneerd door **Get-AzResourceProvider** worden ondersteund. Deze typen zijn:
 
@@ -284,7 +284,7 @@ In een voor waarde wordt geëvalueerd of een **veld** of de **waarde** -accessor
   `"greaterOrEquals": intValue`
 - `"exists": "bool"`
 
-Voor **minder** , **lessOrEquals** , **meer** en **greaterOrEquals** als het eigenschaps type niet overeenkomt met het type voor waarde, wordt een fout gegenereerd. Teken reeks vergelijkingen worden gemaakt met `InvariantCultureIgnoreCase` .
+Voor **minder**, **lessOrEquals**, **meer** en **greaterOrEquals** als het eigenschaps type niet overeenkomt met het type voor waarde, wordt een fout gegenereerd. Teken reeks vergelijkingen worden gemaakt met `InvariantCultureIgnoreCase` .
 
 Wanneer u de voor waarden **like** en **notLike** gebruikt, geeft u een Joker teken `*` op in de waarde.
 De waarde mag niet meer dan één Joker teken bevatten `*` .
@@ -438,7 +438,7 @@ Gebruik in plaats daarvan de functie [als ()](../../../azure-resource-manager/te
 
 Met de gereviseerde beleids regel `if()` controleert u de lengte van de **naam** voordat u probeert een `substring()` waarde op te halen die korter is dan drie tekens. Als de **naam** te kort is, wordt de waarde ' niet beginnend met ABC ' geretourneerd in plaats van **ABC**. Een resource met een korte naam die niet met **ABC** begint, mislukt nog steeds de beleids regel, maar veroorzaakt geen fout meer tijdens de evaluatie.
 
-### <a name="count"></a>Aantal
+### <a name="count"></a>Count
 
 Voor waarden die tellen hoeveel leden van een matrix in de resource-nettolading voldoen aan een voor waarde-expressie, kunnen worden gevormd met de expressie **Count** . Bij algemene scenario's wordt gecontroleerd of ten minste één van ', ' precies één van ', ' alle of ' geen van ' de matrix leden voldoen aan de voor waarde. met **Count** wordt elk lid van een [ \[ \* \] alias](#understanding-the--alias) matrix geëvalueerd voor een voorwaarde expressie en worden de _werkelijke_ resultaten opgeteld, die vervolgens worden vergeleken met de operator voor expressies. Expressies met **aantallen** kunnen Maxi maal drie keer worden toegevoegd aan een enkele **policyRule** -definitie.
 
@@ -456,7 +456,7 @@ De structuur van de **Count** -expressie is:
 }
 ```
 
-De volgende eigenschappen worden gebruikt met **aantal** :
+De volgende eigenschappen worden gebruikt met **aantal**:
 
 - **Count. Field** (vereist): bevat het pad naar de matrix en moet een matrix alias zijn. Als de matrix ontbreekt, wordt de expressie geëvalueerd naar _False_ zonder rekening te houden met de voor waarde-expressie.
 - **Count. where** (optioneel): de voor waarde-expressie voor het afzonderlijk evalueren van elke [ \[ \* \] alias](#understanding-the--alias) matrix lid van het **veld Count.**. Als deze eigenschap niet is ingevuld, worden alle matrix leden met het pad van ' Field ' geëvalueerd als _waar_. Elke [voor waarde](../concepts/definition-structure.md#conditions) kan worden gebruikt in deze eigenschap.
@@ -569,13 +569,13 @@ Voor beeld 6: gebruik de `field()` functie binnen de `where` voor waarden om toe
 
 Azure Policy ondersteunt de volgende typen effect:
 
-- **Toevoegen** : Hiermee voegt u de gedefinieerde set velden toe aan de aanvraag
-- **Controle** : er wordt een waarschuwings gebeurtenis gegenereerd in het activiteiten logboek, maar de aanvraag mislukt niet
-- **AuditIfNotExists** : er wordt een waarschuwings gebeurtenis in het activiteiten logboek gegenereerd als een gerelateerde resource niet bestaat
-- **Weigeren** : er wordt een gebeurtenis in het activiteiten logboek gegenereerd en de aanvraag mislukt
-- **DeployIfNotExists** : implementeert een gerelateerde resource als deze nog niet bestaat
-- **Uitgeschakeld** : resources worden niet geëvalueerd voor naleving van de beleids regel
-- **Wijzigen** : de gedefinieerde labels worden toegevoegd, bijgewerkt of verwijderd uit een resource
+- **Toevoegen**: Hiermee voegt u de gedefinieerde set velden toe aan de aanvraag
+- **Controle**: er wordt een waarschuwings gebeurtenis gegenereerd in het activiteiten logboek, maar de aanvraag mislukt niet
+- **AuditIfNotExists**: er wordt een waarschuwings gebeurtenis in het activiteiten logboek gegenereerd als een gerelateerde resource niet bestaat
+- **Weigeren**: er wordt een gebeurtenis in het activiteiten logboek gegenereerd en de aanvraag mislukt
+- **DeployIfNotExists**: implementeert een gerelateerde resource als deze nog niet bestaat
+- **Uitgeschakeld**: resources worden niet geëvalueerd voor naleving van de beleids regel
+- **Wijzigen**: de gedefinieerde labels worden toegevoegd, bijgewerkt of verwijderd uit een resource
 - **EnforceOPAConstraint** (afgeschaft): Hiermee configureert u de open Policy Agent Admissions-controller met gate keeper v3 voor zelf-beheerde Kubernetes-clusters in azure
 - **EnforceRegoPolicy** (afgeschaft): Hiermee configureert u de open Policy Agent Admissions-controller met gate keeper v2 in de Azure Kubernetes-service
 
@@ -606,10 +606,10 @@ De volgende functie is beschikbaar voor gebruik in een beleids regel, maar versc
 De volgende functies zijn alleen beschikbaar in beleids regels:
 
 - `addDays(dateTime, numberOfDaysToAdd)`
-  - **DateTime** : [required] string-string in de indeling Universal ISO 8601 datetime ' jjjj-mm-ddTuu: mm: SS. FFFFFFFZ'
-  - **numberOfDaysToAdd** : [vereist] geheel getal-aantal dagen dat moet worden toegevoegd
+  - **DateTime**: [required] string-string in de indeling Universal ISO 8601 datetime ' jjjj-mm-ddTuu: mm: SS. FFFFFFFZ'
+  - **numberOfDaysToAdd**: [vereist] geheel getal-aantal dagen dat moet worden toegevoegd
 - `field(fieldName)`
-  - **FieldName** : [required] string: naam van het [veld](#fields) dat moet worden opgehaald
+  - **FieldName**: [required] string: naam van het [veld](#fields) dat moet worden opgehaald
   - Retourneert de waarde van het veld van de resource die wordt geëvalueerd door de if-voor waarde.
   - `field` wordt hoofd zakelijk gebruikt in combi natie met **AuditIfNotExists** en **DeployIfNotExists** om te verwijzen naar velden in de resource die worden geëvalueerd. Een voor beeld van dit gebruik is te zien in het [DeployIfNotExists-voor beeld](effects.md#deployifnotexists-example).
 - `requestContext().apiVersion`
@@ -629,8 +629,8 @@ De volgende functies zijn alleen beschikbaar in beleids regels:
 
 
 - `ipRangeContains(range, targetRange)`
-    - **Range** : [required] string-teken reeks die een bereik van IP-adressen aangeeft.
-    - **targetRange** : [vereist] teken reeks-teken reeks die een bereik van IP-adressen aangeeft.
+    - **Range**: [required] string-teken reeks die een bereik van IP-adressen aangeeft.
+    - **targetRange**: [vereist] teken reeks-teken reeks die een bereik van IP-adressen aangeeft.
 
     Retourneert of het opgegeven IP-adres bereik het doel-IP-adres bereik bevat. Lege bereiken of combi neren tussen IP-families is niet toegestaan en resulteert in een evaluatie fout.
 
@@ -669,25 +669,6 @@ De lijst met aliassen is altijd groeien. Als u wilt weten welke aliassen momente
   Gebruik de [extensie Azure Policy voor Visual Studio code](../how-to/extension-for-vscode.md) om aliassen voor resource-eigenschappen weer te geven en te detecteren.
 
   :::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Scherm afbeelding van de uitbrei ding van de Azure Policy voor Visual Studio code die een eigenschap aanwijst om de alias namen weer te geven." border="false":::
-
-- Azure Resource Graph
-
-  Gebruik de `project` operator om de **alias** van een resource weer te geven.
-
-  ```kusto
-  Resources
-  | where type=~'microsoft.storage/storageaccounts'
-  | limit 1
-  | project aliases
-  ```
-  
-  ```azurecli-interactive
-  az graph query -q "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
-  ```
-  
-  ```azurepowershell-interactive
-  Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1 | project aliases"
-  ```
 
 - Azure PowerShell
 

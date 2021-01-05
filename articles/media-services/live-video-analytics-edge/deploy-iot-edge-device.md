@@ -3,12 +3,12 @@ title: Live video Analytics implementeren op een IoT Edge apparaat-Azure
 description: In dit artikel worden de stappen beschreven die u helpen bij het implementeren van live video Analytics op uw IoT Edge-apparaat. U kunt dit bijvoorbeeld doen als u toegang hebt tot een lokale Linux-machine en/of eerder een Azure Media Services-account hebt gemaakt.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: 4fa4a9643976ba513b025706cacec26b2a50afb5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 38d138b43441016e06fca5003bc09c940cb23efe
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498316"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883313"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Live video Analytics implementeren op een IoT Edge apparaat
 
@@ -108,7 +108,7 @@ Een implementatie manifest is een JSON-document waarin wordt beschreven welke mo
     Voorbeelden:
     
     * **Module naam IOT Edge**: lvaEdge
-    * **Afbeeldings-URI**: mcr.Microsoft.com/Media/Live-video-Analytics:1.0    
+    * **Afbeeldings-URI**: mcr.Microsoft.com/Media/Live-video-Analytics:2.0    
     
     ![Scherm afbeelding toont het tabblad module-instellingen.](./media/deploy-iot-edge-device/add.png)
     

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/19/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6978afc802bddd536c56fcb4e06a40ccc58867fe
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 12b9639342e2e35b9229aa15bb9cfb4695427606
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172660"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881188"
 ---
 # <a name="define-a-one-time-password-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Een eenmalige wachtwoord technische profiel definiëren in een Azure AD B2C aangepast beleid
 
@@ -45,7 +45,7 @@ In het volgende voor beeld ziet u een technisch profiel met een eenmalig wacht w
 
 ## <a name="generate-code"></a>Code genereren
 
-De eerste modus van dit technische profiel is het genereren van een code. Hieronder vindt u de opties die kunnen worden geconfigureerd voor deze modus.
+De eerste modus van dit technische profiel is het genereren van een code. Hieronder vindt u de opties die kunnen worden geconfigureerd voor deze modus. Gegenereerde codes en pogingen worden bijgehouden in de sessie. 
 
 ### <a name="input-claims"></a>Invoer claims
 
@@ -73,7 +73,7 @@ De volgende instellingen kunnen worden gebruikt voor het configureren van de mod
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| CodeExpirationInSeconds | Nee | Tijd in seconden totdat de code verloopt. Minimum: `60` ; Maximum: `1200` ; Standaard: `600` . Telkens wanneer er een code wordt gegeven (zelfde code met `ReuseSameCode` of een nieuwe code), wordt het verloop van de code verlengd.  |
+| CodeExpirationInSeconds | Nee | Tijd in seconden totdat de code verloopt. Minimum: `60` ; Maximum: `1200` ; Standaard: `600` . Telkens wanneer er een code wordt gegeven (zelfde code met `ReuseSameCode` of een nieuwe code), wordt het verloop van de code verlengd. Deze keer wordt ook gebruikt om de time-out voor opnieuw proberen in te stellen (zodra het maximum aantal pogingen is bereikt, wordt de gebruiker vergrendeld om nieuwe codes te verkrijgen tot deze tijd is verstreken). |
 | CodeLength | Nee | Lengte van de code. De standaardwaarde is `6`. |
 | CharacterSet | Nee | De tekenset voor de code, opgemaakt voor gebruik in een reguliere expressie. Bijvoorbeeld `a-z0-9A-Z`. De standaardwaarde is `0-9`. De tekenset moet mini maal tien verschillende tekens bevatten in de opgegeven set. |
 | NumRetryAttempts | Nee | Het aantal verificatie pogingen voordat de code als ongeldig wordt beschouwd. De standaardwaarde is `5`. |

@@ -4,12 +4,12 @@ description: Meer informatie over het koppelen van een Azure Files-volume om de 
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 5ca619ac3ae93ee238d019b64ecccc975b7c8e3b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: afebdcdc9d9c5852d7fe66ed06ac457c1dbb0afb
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746857"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881800"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Een Azure-bestandsshare koppelen in Azure Container Instances
 
@@ -20,6 +20,9 @@ Azure-containerinstanties zijn standaard staatloos. Als de container vastloopt o
 >
 > Het koppelen van een Azure Files share aan een container exemplaar is vergelijkbaar met een docker [BIND-koppeling](https://docs.docker.com/storage/bind-mounts/). Houd er rekening mee dat als u een share koppelt in een container Directory waarin bestanden of directory's bestaan, deze bestanden of mappen worden verborgen door de koppeling en niet toegankelijk zijn wanneer de container wordt uitgevoerd.
 >
+
+> [!IMPORTANT]
+> Als u container groepen implementeert in een Azure-Virtual Network, moet u een [service-eind punt](../virtual-network/virtual-network-service-endpoints-overview.md) toevoegen aan uw Azure Storage-account.
 
 ## <a name="create-an-azure-file-share"></a>Een Azure-bestandsshare maken
 
@@ -256,7 +259,7 @@ Als u bijvoorbeeld twee Azure Files shares hebt gemaakt met de naam *share1* en 
 }]
 ```
 
-Voor elke container in de container groep waarin u de volumes wilt koppelen, vult u de `volumeMounts` matrix in de `properties` sectie van de container definitie. Hiermee koppelt u bijvoorbeeld de twee volumes, *myvolume1* en *myvolume2* , die eerder zijn gedefinieerd:
+Voor elke container in de container groep waarin u de volumes wilt koppelen, vult u de `volumeMounts` matrix in de `properties` sectie van de container definitie. Hiermee koppelt u bijvoorbeeld de twee volumes, *myvolume1* en *myvolume2*, die eerder zijn gedefinieerd:
 
 ```JSON
 "volumeMounts": [{

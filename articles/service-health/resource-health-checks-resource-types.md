@@ -3,12 +3,12 @@ title: Ondersteunde resource typen via Azure Resource Health | Microsoft Docs
 description: Ondersteunde resource typen via Azure resource Health
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 79f979b55366d29ca8cf22a1e65ebdcc557ef594
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 1b0958732a96786b2fb86b2b145f5cb8d36c0c5a
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899501"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883364"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Resource typen en status controles in azure resource Health
 Hieronder vindt u een volledige lijst met alle controles die worden uitgevoerd door middel van resource typen.
@@ -144,7 +144,7 @@ Hieronder vindt u een volledige lijst met alle controles die worden uitgevoerd d
 |---|
 |<ul><li>Is de IoT Central toepassing beschikbaar?</li></ul>|
 
-## <a name="microsoftkeyvaultvaults"></a>Micro soft.-sleutel kluis/-kluizen
+## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 |Controles uitgevoerd|
 |---|
 |<ul><li>Worden aanvragen voor de sleutel kluis mislukt als gevolg van problemen met het Azure-kern systeem van het platform?</li><li>Worden aanvragen voor sleutel kluis beperkt vanwege te veel aanvragen van de klant?</li></ul>|
@@ -168,6 +168,11 @@ Hieronder vindt u een volledige lijst met alle controles die worden uitgevoerd d
 |Controles uitgevoerd|
 |---|
 |<ul><li>Zijn de prestaties van de Application Gateway gedegradeerd?</li><li>Is de Application Gateway beschikbaar?</li></ul>|
+
+## <a name="microsoftnetworkbastionhosts"></a>Micro soft. Network/bastionhosts
+|Controles uitgevoerd|
+|---|
+|<ul><li>Is de bastion-host actief?</li></ul>|
 
 ## <a name="microsoftnetworkconnections"></a>Micro soft. Network/Connections
 |Controles uitgevoerd|

@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 1f7a493c071e86114afd7d4a9e08e204bbab509d
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: 20c59e5ecc24dfe5c9eadb05899bf37d39ce09e7
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809476"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882280"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -129,7 +129,22 @@ Gebruik de volgende procedure om actie groepen te maken:
 
 9. Als u **afzonderlijke werk items maken voor elk configuratie-item** selecteert, heeft elk configuratie-item een eigen werk item. Dit betekent dat er één werk item per configuratie-item is.
 
-    * In het geval dat u in de vervolg keuzelijst werk item of waarschuwing klikt: als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, wordt er door elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één waarschuwing per configuratie-item zijn.
+    * In het geval dat u selecteert in de vervolg keuzelijst voor werk items "incident" of "waarschuwing": 
+        * Als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** inschakelt, wordt in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn.
+
+            Bijvoorbeeld:
+            1) Waarschuwing 1 met 3 configuratie-items: A, B, C er worden drie werk items gemaakt.
+            2) Waarschuwing 2 met 1 configuratie-item: D maakt 1 werk item.
+
+                **Aan het einde van deze stroom worden vier waarschuwingen weer gegeven**
+        * Als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, zijn er waarschuwingen waarmee geen nieuw werk item wordt gemaakt. werk items worden samengevoegd volgens waarschuwings regel.
+
+            Bijvoorbeeld:
+            1) Waarschuwing 1 met 3 configuratie-items: A, B, C maakt 1 werk item.
+            2) Waarschuwing 2 voor dezelfde waarschuwings regel als fase 1 met 1 configuratie-item: D wordt samengevoegd met het werk item in fase 1.
+            3) Waarschuwing 3 voor een andere waarschuwings regel met 1 configuratie-item: E maakt 1 werk item.
+
+                **Aan het einde van deze stroom zijn er twee waarschuwingen**
 
        ![Scherm opname van het ITSM-incident venster.](media/itsmc-overview/itsm-action-configuration.png)
 

@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 12/21/2020
+ms.date: 01/04/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9e842e4d2a4dbd118840498587696df085b07700
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: d56ed0cdae9046cb7d76f7d74545309ee6292ecd
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722892"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883092"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -83,6 +83,8 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 01/04/2021: nieuwe Azure-regio's die worden ondersteund door HLI toevoegen aan [Wat is SAP Hana op Azure (grote exemplaren)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
+- 12/29/2020: aanbevelingen voor de architectuur toevoegen voor specifieke Azure-regio's in [SAP-werkbelasting configuraties met Azure-beschikbaarheidszones](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones)
 - 12/21/2020: nieuwe certificeringen toevoegen aan Sku's van HANA grote instanties in [beschik bare sku's voor HLI](./hana-available-skus.md)
 - 12/12/2020: aanwijzer toegevoegd aan SAP-opmerking meer informatie over Oracle Enter prise Linux support van SAP naar [welke SAP-software wordt ondersteund voor Azure-implementaties](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-supported-product-on-azure#oracle-dbms-support)
 - 11/26/2020: [SAP Hana Azure virtual machine-opslag configuraties](./hana-vm-operations-storage.md) en- [Azure Storage typen aanpassen voor SAP-workload](./planning-guide-storage.md) om enkele VM-service- [sla's](https://azure.microsoft.com/support/legal/sla/virtual-machines) te wijzigen

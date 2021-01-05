@@ -2,14 +2,14 @@
 title: Label resources, resource groepen en abonnementen voor logische organisatie
 description: Laat zien hoe u Tags toepast om Azure-resources te organiseren voor facturering en beheer.
 ms.topic: conceptual
-ms.date: 12/03/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e47d3acf15ce5e4f5cb70444419b76beb21ae98b
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 3d1161eb99e1145c7a003326310db1922ec3d55c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558144"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881745"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Tags gebruiken om uw Azure-resources en-beheer hiërarchie te organiseren
 
@@ -438,9 +438,12 @@ Als de namen van tags of waarden spaties bevatten, plaatst u deze tussen dubbele
 az tag update --resource-id $group --operation Merge --tags "Cost Center"=Finance-1222 Location="West US"
 ```
 
-## <a name="templates"></a>Sjablonen
+## <a name="arm-templates"></a>ARM-sjablonen
 
-U kunt resources, resource groepen en abonnementen labelen tijdens de implementatie met een resource manager-sjabloon.
+U kunt resources, resource groepen en abonnementen labelen tijdens de implementatie met een Azure Resource Manager sjabloon (ARM-sjabloon).
+
+> [!NOTE]
+> De labels die u via de ARM-sjabloon toepast, overschrijven alle bestaande tags.
 
 ### <a name="apply-values"></a>Waarden Toep assen
 
@@ -448,7 +451,7 @@ In het volgende voor beeld wordt een opslag account met drie Tags geïmplementee
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "utcShort": {
@@ -487,7 +490,7 @@ U kunt een objectparameter definiëren waarmee verschillende tags worden opgesla
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -525,7 +528,7 @@ Als u veel waarden wilt opslaan in een enkele tag, past u een JSON-tekenreeks to
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -558,7 +561,7 @@ Als u labels van een resource groep wilt Toep assen op een resource, gebruikt u 
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {

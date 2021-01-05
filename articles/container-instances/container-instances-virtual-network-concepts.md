@@ -3,12 +3,12 @@ title: Scenario's voor het gebruik van een virtueel netwerk
 description: Scenario's, bronnen en beperkingen voor het implementeren van container groepen naar een virtueel Azure-netwerk.
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 5e9c1d1606a9ad491ba7a7e623f1606717aa5b1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2fb468a6a860bcc076043c30606922f43fbdb1ad
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89569166"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882429"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Scenario's en resources voor het virtuele netwerk
 
@@ -41,6 +41,7 @@ Met container groepen die zijn geïmplementeerd in een virtueel Azure-netwerk, k
 * U kunt een [beheerde identiteit](container-instances-managed-identity.md) niet gebruiken in een container groep die is geïmplementeerd in een virtueel netwerk.
 * U kunt geen test voor de [duur](container-instances-liveness-probe.md) van de bewaarde of [gereedheids test](container-instances-readiness-probe.md) inschakelen in een container groep die is geïmplementeerd in een virtueel netwerk.
 * Vanwege de extra netwerk bronnen die betrokken zijn, zijn implementaties naar een virtueel netwerk doorgaans langzamer dan het implementeren van een standaard container exemplaar.
+* Als u uw container groep verbindt met een Azure Storage-account, moet u een [service-eind punt](../virtual-network/virtual-network-service-endpoints-overview.md) toevoegen aan die resource.
 
 [!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
 

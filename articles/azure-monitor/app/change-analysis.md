@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 05/04/2020
-ms.openlocfilehash: 36e73ceddaa5e3f9cbbf4a41f76a4ba6d70eed0f
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 50e199d2d56016086bb409f8690e9828f1d19984
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979960"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881506"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Toepassings wijzigings analyse (preview) gebruiken in Azure Monitor
 
@@ -183,7 +183,6 @@ Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integrati
     ```
 
 - **Kan de micro soft. ChangeAnalysis-resource provider niet registreren**. Dit bericht geeft aan dat er direct een fout is opgetreden bij de gebruikers interface heeft een aanvraag verzonden om de resource provider te registreren en is niet gerelateerd aan het probleem met de machtiging. Waarschijnlijk is het een probleem met een tijdelijke Internet verbinding. Vernieuw de pagina en controleer de Internet verbinding. Als de fout zich blijft voordoen, neemt u contact op met changeanalysishelp@microsoft.com
-- **Kan geen query uitvoeren op de micro soft. ChangeAnalysis-resource provider** met *het bericht Azure Lighthouse-abonnement wordt niet ondersteund. de wijzigingen zijn alleen beschikbaar in de thuis Tenant van het abonnement*. Er is nu een beperking voor de resource provider voor wijzigings analyse die wordt geregistreerd via een Azure Lighthouse-abonnement voor gebruikers die zich niet in de thuis Tenant bevinden. We verwachten dat deze beperking in de nabije toekomst wordt opgelost. Als dit probleem zich voordoet, is er een tijdelijke oplossing waarbij u een Service-Principal moet maken en de rol expliciet kunt toewijzen om de toegang toe te staan.  Neem contact changeanalysishelp@microsoft.com op met meer informatie.
 
 - **Dit duurt langer dan verwacht**. Dit bericht geeft aan dat de registratie langer dan twee minuten duurt. Dit is ongebruikelijk, maar dit betekent niet noodzakelijkerwijs dat er iets verkeerd is gegaan. U kunt naar **Abonnementen gaan | Resource provider** die moet worden gecontroleerd op de registratie status van de **micro soft. ChangeAnalysis** -resource provider. U kunt proberen de gebruikers interface te gebruiken voor het opheffen van de registratie, opnieuw registreren of vernieuwen om te zien of het helpt. Neem contact op met de ondersteuning als het probleem zich blijft voordoen changeanalysishelp@microsoft.com .
     ![Problemen met de RP-registratie oplossen](./media/change-analysis/troubleshoot-registration-taking-too-long.png)
@@ -191,6 +190,10 @@ Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integrati
 ![Scherm afbeelding van het hulp programma problemen vaststellen en oplossen voor een virtuele machine waarop hulpprogram ma's voor probleem oplossing is geselecteerd.](./media/change-analysis/vm-dnsp-troubleshootingtools.png)
 
 ![Scherm afbeelding van de tegel voor het hulp programma probleem oplossing voor het analyseren van recente wijzigingen voor een virtuele machine.](./media/change-analysis/analyze-recent-changes.png)
+
+### <a name="azure-lighthouse-subscription-is-not-supported"></a>Azure Lighthouse-abonnement wordt niet ondersteund
+
+- **Kan geen query uitvoeren op de micro soft. ChangeAnalysis-resource provider** met *het bericht Azure Lighthouse-abonnement wordt niet ondersteund. de wijzigingen zijn alleen beschikbaar in de thuis Tenant van het abonnement*. Er is nu een beperking voor de resource provider voor wijzigings analyse die wordt geregistreerd via een Azure Lighthouse-abonnement voor gebruikers die zich niet in de thuis Tenant bevinden. We verwachten dat deze beperking in de nabije toekomst wordt opgelost. Als dit probleem zich voordoet, is er een tijdelijke oplossing waarbij u een Service-Principal moet maken en de rol expliciet kunt toewijzen om de toegang toe te staan.  Neem contact changeanalysishelp@microsoft.com op met meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

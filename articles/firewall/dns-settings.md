@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 11/06/2020
+ms.date: 01/04/2021
 ms.author: victorh
-ms.openlocfilehash: 197d48a2f5368111ec194a18f86aedf5ad78e1b2
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 855c06b610fb8166f6f2dfcf37af34efb3713ffe
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565616"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883215"
 ---
 # <a name="azure-firewall-dns-settings"></a>DNS-instellingen Azure Firewall
 
@@ -65,13 +65,16 @@ $azFw | Set-AzFirewall
 
 U kunt Azure Firewall configureren om te fungeren als een DNS-proxy. Een DNS-proxy is een intermediair voor DNS-aanvragen van virtuele client machines naar een DNS-server. Als u een aangepaste DNS-server configureert, schakelt u DNS-proxy in om te voor komen dat de DNS-omzetting niet overeenkomt en schakelt u het filteren van FQDN (Fully Qualified Domain Name) in de netwerk regels in.
 
+:::image type="content" source="media/dns-settings/dns-proxy-2.png" alt-text="D N S proxy configuratie met behulp van een aangepaste D N S-server.":::
+
+
 Als u DNS-proxy niet inschakelt, kunnen DNS-aanvragen van de client op een ander tijdstip worden getransporteerd naar een DNS-server of een andere reactie retour neren vergeleken met de firewall. De DNS-proxy plaatst Azure Firewall in het pad van de client aanvragen om inconsistentie te voor komen.
 
 Wanneer Azure Firewall een DNS-proxy is, zijn er twee typen cache functies mogelijk:
 
-- **Positieve cache** : DNS-omzetting is geslaagd. De firewall gebruikt de TTL (time to Live) van het pakket of het object. 
+- **Positieve cache**: DNS-omzetting is geslaagd. De firewall gebruikt de TTL (time to Live) van het pakket of het object. 
 
-- **Negatieve cache** : DNS-omzetting resulteert in geen reactie of geen oplossing. De firewall slaat deze informatie één uur in de cache op.
+- **Negatieve cache**: DNS-omzetting resulteert in geen reactie of geen oplossing. De firewall slaat deze informatie één uur in de cache op.
 
 De DNS-proxy slaat alle opgeloste IP-adressen op uit de FQDN-waarden in netwerk regels. Gebruik als best practice FQDN-adressen die worden omgezet in één IP-adres.  
 

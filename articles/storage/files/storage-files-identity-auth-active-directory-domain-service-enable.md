@@ -8,12 +8,12 @@ ms.date: 01/03/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 340455450cd6a18adfd8d0843fee423f82f10a45
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 153ffd699b22a6379758bf66b896a2b37a19fdf3
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858396"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883279"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Active Directory Domain Services authenticatie inschakelen op Azure Files
 
@@ -22,7 +22,8 @@ ms.locfileid: "97858396"
 Als u geen ervaring hebt met Azure-bestands shares, raden we u aan onze [plannings handleiding](storage-files-planning.md) te lezen voordat u de volgende serie artikelen leest.
 
 > [!NOTE]
-> Azure Files ondersteunt Kerberos-verificatie met Azure AD DS met RC4-HMAC en AES 256-versleuteling. Azure Files ondersteunt verificatie voor Azure AD DS met volledige synchronisatie met Azure AD. Als u scoped Synchronization hebt ingeschakeld in azure AD DS dat alleen een beperkt aantal identiteiten vanuit Azure AD synchroniseert, wordt verificatie en autorisatie niet ondersteund.
+> Azure Files ondersteunt Kerberos-verificatie met Azure AD DS alleen met RC4-HMAC. AES Kerberos-versleuteling wordt nog niet ondersteund.
+> Azure Files ondersteunt verificatie voor Azure AD DS met volledige synchronisatie met Azure AD. Als u scoped Synchronization hebt ingeschakeld in azure AD DS dat alleen een beperkt aantal identiteiten vanuit Azure AD synchroniseert, wordt verificatie en autorisatie niet ondersteund.
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 4ddb02bbcf284566550517f8fa343a728e2275a9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 895b4529a8b99ecc66e3566b4696a0e61c337153
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483624"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881902"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -38,16 +38,23 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 >
 > Zie voor meer informatie: [de Azure Portal beperkingen voor Media Services v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
 
+## <a name="december-2020"></a>December 2020
+
+### <a name="regional-availability"></a>Regionale beschikbaarheid
+
+Azure Media Services is nu beschikbaar in de regio Noor wegen Oost in de Azure Portal.  Er bevindt zich geen restV2 in deze regio.
+
 ## <a name="october-2020"></a>Oktober 2020
 
 ### <a name="basic-audio-analysis"></a>Basis analyse van audio
+
 De vooraf ingestelde audio analyse bevat nu een prijs categorie voor de Basic-modus. De nieuwe Basic Audio Analyzer-modus biedt een goedkope optie voor het extra heren van spraak-transcriptie en het opmaken van uitvoer bijschriften en ondertiteling. Deze modus voert spraak-naar-tekst transcriptie en genereert een ondertitelings bestand van VTT. De uitvoer van deze modus bevat een Insights-JSON-bestand met alleen de tref woorden, transcriptie en timing gegevens. Automatische taal detectie en diarization van de spreker zijn niet opgenomen in deze modus. Zie de lijst met [ondersteunde talen.](analyzing-video-audio-files-concept.md#built-in-presets)
 
 Klanten die Indexeer functie v1 en Indexeer functie v2 gebruiken, moeten worden gemigreerd naar de standaard instelling voor de analyse van audio.
 
 Zie [video-en audio bestanden analyseren](analyzing-video-audio-files-concept.md)voor meer informatie over de Basic Audio Analyzer-modus.  Zie [een eenvoudige audio transformatie maken](how-to-create-basic-audio-transform.md)voor meer informatie over het gebruik van de Basic Audio Analyzer-modus met de rest API.
 
-## <a name="live-events"></a>Livegebeurtenissen
+### <a name="live-events"></a>Livegebeurtenissen
 
 Updates van de meeste eigenschappen zijn nu toegestaan wanneer Live-gebeurtenissen worden gestopt. Daarnaast mogen gebruikers een voor voegsel opgeven voor de statische hostnaam voor de invoer en preview-Url's van de live-gebeurtenis. VanityUrl wordt nu aangeroepen `useStaticHostName` om het doel van de eigenschap beter weer te geven.
 
@@ -57,7 +64,7 @@ Een live-gebeurtenis ondersteunt het ontvangen van verschillende invoer hoogte-b
 
 Met Live Encoding wordt nu de mogelijkheid toegevoegd voor het uitvoeren van vaste-sleutel frame-interval fragmenten tussen 0,5 en 20 seconden.
 
-## <a name="accounts"></a>Accounts
+### <a name="accounts"></a>Accounts
 
 > [!WARNING]
 > Als u een Media Services-account maakt met de 2020-05-01 API-versie, werkt dit niet met RESTv2 

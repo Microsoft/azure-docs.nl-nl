@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bfe8af8c30bbc2bc66c363fbd85f6764a48c28a1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 666b3c609224c1665c150718b2b89c4bac72577e
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488065"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882225"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Remote Desktop publiceren met Azure AD-toepassingsproxy
 
@@ -42,18 +42,13 @@ In een RDS-implementatie worden de extern bureau blad-webfunctie en de RD-gatewa
 ## <a name="requirements"></a>Vereisten
 
 - Zowel het extern bureau blad-web als de RD-gateway-eind punten moeten zich op dezelfde computer bevinden en met een gemeen schappelijke basis. Extern bureau blad-web en-RD-gateway worden gepubliceerd als één toepassing met toepassings proxy, zodat u een eenmalige aanmelding kunt hebben tussen de twee toepassingen.
-
-- U moet al een [RDS](/windows-server/remote/remote-desktop-services/rds-in-azure)-toepassing hebben geïmplementeerd en een [toepassings proxy hebben ingeschakeld](application-proxy-add-on-premises-application.md).
-
+- U moet al een [RDS](/windows-server/remote/remote-desktop-services/rds-in-azure)-toepassing hebben geïmplementeerd en een [toepassings proxy hebben ingeschakeld](application-proxy-add-on-premises-application.md). Zorg ervoor dat u voldoet aan de vereisten om toepassings proxy in te scha kelen, zoals het installeren van de connector, het openen van de vereiste poorten en URL'S, en het inschakelen van TLS 1,2 op de-server.
 - Uw eind gebruikers moeten een compatibele browser gebruiken om verbinding te maken met RD Web of de extern bureau blad-webclient. Zie [ondersteuning voor client configuraties](#support-for-other-client-configurations)voor meer informatie.
-
 - Bij het publiceren van extern bureau blad-webtoepassingen, is het raadzaam om dezelfde interne en externe FQDN te gebruiken. Als de interne en externe FQDN-namen verschillend zijn, moet u de vertaling van de aanvraag header uitschakelen om te voor komen dat de client ongeldige koppelingen ontvangt.
-
 - Als u RD Web op Internet Explorer gebruikt, moet u de ActiveX-invoeg toepassing voor RDS inschakelen.
-
 - Als u de extern bureau blad-webclient gebruikt, moet u de connector versie van de toepassings proxy [1.5.1975 of hoger](./application-proxy-release-version-history.md)gebruiken.
-
 - Gebruikers kunnen alleen verbinding maken met resources die in het deel venster **RemoteApp en Bureau bladen** zijn gepubliceerd voor de pre-verificatie stroom van Azure AD. Gebruikers kunnen geen verbinding maken met een bureau blad met behulp van het deel venster **verbinding maken met een externe computer** .
+- Als u Windows Server 2019 gebruikt, moet u mogelijk het HTTP2-protocol uitschakelen. Zie [zelf studie: een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure Active Directory](application-proxy-add-on-premises-application.md)voor meer informatie.
 
 ## <a name="deploy-the-joint-rds-and-application-proxy-scenario"></a>Het gezamenlijke RDS-en toepassings proxy scenario implementeren
 

@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 14a65b83195bff48934668ff029f925e13884bad
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 8789015c239aae58ec25f0f644d4c497da477c2b
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743697"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881239"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-ad-multi-factor-authentication"></a>Herauthenticatie vragen en de levens duur van sessies voor Azure AD-Multi-Factor Authentication optimaliseren
 
@@ -108,7 +108,7 @@ Voer de volgende stappen uit als u de optie *aangemeld blijven* wilt configurere
 1. Selecteer de **huis stijl** van het bedrijf en kies voor elke land instelling de **optie weer geven om aangemeld te blijven**.
 1. Kies *Ja* en selecteer vervolgens **Opslaan**.
 
-Als u instellingen voor multi-factor Authentication wilt onthouden, voert u de volgende stappen uit:
+Voer de volgende stappen uit om multi-factor Authentication-instellingen op vertrouwde apparaten te onthouden:
 
 1. Zoek en selecteer *Azure Active Directory* in de Azure AD-Portal.
 1. Selecteer **beveiliging** en vervolgens **MFA**.

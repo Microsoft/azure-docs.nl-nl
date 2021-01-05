@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 11/18/2020
+ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 86cd5a5cbbb17dc3d3e4d56e4267be2718f6081d
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 14e4fda6ef36dd8fc57529046473d8afa916ef2c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830867"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880967"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -168,7 +168,7 @@ TLS/SSL-certificaten verlopen en moeten worden vernieuwd. Dit gebeurt meestal el
 
 ### <a name="update-a-microsoft-generated-certificate"></a>Een door micro soft gegenereerd certificaat bijwerken
 
-Als het certificaat oorspronkelijk is gegenereerd door micro soft (als de *leaf_domain_label* wordt gebruikt om de service te maken), gebruikt u een van de volgende voor beelden om het certificaat bij te werken:
+Als het certificaat oorspronkelijk is gegenereerd door micro soft (als de *leaf_domain_label* wordt gebruikt om de service te maken), **wordt dit automatisch verlengd wanneer dit** nodig is. Als u de service hand matig wilt vernieuwen, gebruikt u een van de volgende voor beelden om het certificaat bij te werken:
 
 > [!IMPORTANT]
 > * Als het bestaande certificaat nog geldig is, gebruikt u `renew=True` (SDK) of `--ssl-renew` (CLI) om de configuratie te forceren om deze te vernieuwen. Als het bestaande certificaat bijvoorbeeld 10 dagen nog geldig is en u niet gebruikt `renew=True` , kan het certificaat mogelijk niet worden verlengd.

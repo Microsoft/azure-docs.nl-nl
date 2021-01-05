@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: 82b786f3c90a7ef482ccbcd6e66fb9abfc4eea5f
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 4e974d93b5b7550081abcd7e251c7eda265a2397
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561933"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882956"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Een niet-beschik bare-gastenboek toepassing met redis implementeren op een Kubernetes-cluster op basis van Azure Stack Edge Pro GPU
 
@@ -27,13 +27,15 @@ De implementatie wordt uitgevoerd met behulp van GitOps op het Kubernetes-cluste
 
 Deze procedure is bedoeld voor gebruikers die de Kubernetes- [workloads op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-workload-management.md) hebben bekeken en die bekend zijn met de concepten van [Wat is Azure Arc enabled Kubernetes (preview)](../azure-arc/kubernetes/overview.md).
 
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term slave, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u de stateless toepassing kunt implementeren, moet u ervoor zorgen dat u de volgende vereisten hebt voltooid op uw apparaat en de client die u gaat gebruiken voor toegang tot het apparaat:
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term slave, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ### <a name="for-device"></a>Voor het apparaat
 
@@ -108,7 +110,6 @@ Volg deze stappen om de Azure Arc-resource te configureren voor het implementere
 1. De implementatie duurt enkele minuten. Wanneer de implementatie is voltooid, wordt de status van de **operator** weer gegeven als **geïnstalleerd**.
 
     ![Scherm afbeelding toont het Azure Arc enabled Kubernetes-cluster met een geïnstalleerde status.](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
-
 
 ## <a name="verify-deployment"></a>Implementatie verifiëren
 

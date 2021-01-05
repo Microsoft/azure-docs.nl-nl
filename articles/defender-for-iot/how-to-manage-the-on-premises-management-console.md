@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 7bbac0d8593d47c3162a8ea43e928343a88f2de4
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 34efef4a01b58cc26fd1567336184837a703ade2
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861433"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97839891"
 ---
 # <a name="manage-the-on-premises-management-console"></a>De on-premises beheer console beheren
 
@@ -292,34 +292,14 @@ Uw wachtwoord opnieuw instellen:
 1. Ga naar de pagina Defender voor IoT- **sites en Sens oren** en selecteer het tabblad **mijn wacht woord herstellen** .
 1. Voer de unieke id in en selecteer **herstellen**. Het activerings bestand wordt gedownload.
 1. Ga naar de pagina voor **wachtwoord herstel** en upload het activerings bestand.
-1. Selecteer **Volgende**.
+1. Selecteer **Next**.
  
    U krijgt nu uw gebruikers naam en een nieuw door het systeem gegenereerd wacht woord.
 
 > [!NOTE]
 > De sensor is gekoppeld aan het abonnement waarmee deze oorspronkelijk was verbonden. U kunt het wacht woord alleen herstellen door gebruik te maken van hetzelfde abonnement dat is gekoppeld aan.
 
-## <a name="update-the-software-version"></a>De software versie bijwerken
-
-In de volgende procedure wordt beschreven hoe u de software versie van de on-premises beheer console bijwerkt. Het update proces duurt ongeveer 30 minuten.
-
-1. Ga naar de [Azure Portal](https://portal.azure.com/).
-
-1. Ga naar Defender voor IoT.
-
-1. Ga naar de pagina **updates** .
-
-1. Selecteer een versie in de sectie on-premises beheer console.
-
-1. Selecteer **Downloaden** en sla het bestand op.
-
-1. Meld u aan bij de on-premises beheer console en selecteer **systeem instellingen** in het menu aan de zijkant.
-
-1. Selecteer in het deel venster **versie bijwerken** de optie **bijwerken**.
-
-1. Selecteer het bestand dat u hebt gedownload van de pagina Defender voor IoT- **updates** .
-
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [Sens oren beheren vanuit de beheer console](how-to-manage-sensors-from-the-on-premises-management-console.md)
 

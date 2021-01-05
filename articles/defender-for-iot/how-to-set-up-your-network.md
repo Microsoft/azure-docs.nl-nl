@@ -4,15 +4,15 @@ description: Meer informatie over de architectuur van de oplossing, netwerk voor
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 01/03/2021
+ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b5cb7d0e421657b84c365d8dca536191cafd4e72
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 3e9380f067b091c4473b8c29bda3d31bb93cbc6d
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861966"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97840843"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Over Azure Defender voor IoT-netwerk installatie
 
@@ -54,7 +54,7 @@ Site-informatie vastleggen, zoals:
 
 - Configuratie werkstation.
 
-- SSL-certificaten (optioneel, maar aanbevolen).
+- SSL-certificaten (optioneel).
 
 - SMTP-verificatie (optioneel). Als u de SMTP-server met verificatie wilt gebruiken, moet u de referenties voorbereiden die vereist zijn voor uw server.
 
@@ -569,7 +569,7 @@ Een overzicht van het diagram van een industrieel netwerk stelt u in staat om de
     > [!NOTE]
     > Het apparaat Defender voor IoT moet zijn verbonden met een switch op een lager niveau dat het verkeer tussen de poorten op de switch ziet.  
 
-2. Geef het geschatte aantal netwerk apparaten op dat wordt bewaakt. U hebt deze informatie nodig wanneer u uw abonnement op de Azure Defender voor IoT-Portal wilt voorbereiden. Tijdens het voorbereidings proces wordt u gevraagd om het aantal apparaten in stappen van 1000 in te voeren.
+2. Geef het geschatte aantal apparaten in de netwerken op (optioneel).
 
 3. Geef een lijst met subnetten voor de productie netwerken en een beschrijving (optioneel). 
 
@@ -694,6 +694,6 @@ Neem contact op met een Active Directory beheerder om een Active Directory site-
 | Camera | |
 | Röntgen computer | |
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [Over de installatie van Defender voor IoT](how-to-install-software.md)

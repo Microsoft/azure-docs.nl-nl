@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: raynew
-ms.openlocfilehash: 34064fe3fe88a34b0dd2430d7adec3ebcb17ebcc
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 79224c14fc5182df7a699864af3d78c9be36259f
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95528224"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797268"
 ---
 # <a name="move-resources-across-regions-from-resource-group"></a>Resources verplaatsen tussen regio's (van resource groep)
 
@@ -57,6 +57,9 @@ In dit artikel vindt u informatie over het verplaatsen van resources in een spec
 ## <a name="select-resources-to-move"></a>Te verplaatsen resources selecteren
 
 Selecteer de resources die u wilt verplaatsen. U kunt resources verplaatsen naar een doel regio in het bron regio abonnement. Als u het abonnement wilt wijzigen, kunt u dat doen nadat de resources zijn verplaatst.
+
+> [!NOTE]
+>  Selecteer geen gekoppelde schijven, anders mislukt de bewerking. Gekoppelde schijven worden automatisch opgenomen in een VM-verplaatsing.
 
 1. Open de relevante resource groep in het Azure Portal.
 2. Op de pagina resource groep selecteert u de resources die u wilt verplaatsen.

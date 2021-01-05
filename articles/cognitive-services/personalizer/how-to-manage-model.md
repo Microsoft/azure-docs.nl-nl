@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: f82adad5273f1c5559cbeb1924f59e57c863f6b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48e954eab9da5dfc638f93a7c4e55c675c4f2ac9
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91303451"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797244"
 ---
 # <a name="how-to-manage-model-and-learning-settings"></a>Model-en leer instellingen beheren
 
@@ -18,7 +18,7 @@ De door de machine geleerde model-en leer instellingen kunnen worden geëxportee
 
 ## <a name="export-the-personalizer-model"></a>Het Personalr model exporteren
 
-Bekijk in het gedeelte resource beheer voor **model-en leer instellingen**het maken van het model en de datum van de laatste update en exporteer het huidige model. U kunt de Azure Portal of de Personaler-Api's gebruiken voor het exporteren van een model bestand voor archiverings doeleinden.
+Bekijk in het gedeelte resource beheer voor **model-en leer instellingen** het maken van het model en de datum van de laatste update en exporteer het huidige model. U kunt de Azure Portal of de Personaler-Api's gebruiken voor het exporteren van een model bestand voor archiverings doeleinden.
 
 ![Huidig Personal model exporteren](media/settings/export-current-personalizer-model.png)
 
@@ -55,4 +55,4 @@ De [leer beleids](concept-active-learning.md#understand-learning-policy-settings
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Meer informatie over het beheren van een leer beleid](how-to-manage-model.md)
+[Analyseer uw leer proces met een offline-evaluatie](how-to-offline-evaluation.md)

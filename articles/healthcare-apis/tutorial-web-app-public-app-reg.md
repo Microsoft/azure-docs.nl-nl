@@ -9,12 +9,12 @@ ms.reviewer: matjazl
 ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
-ms.openlocfilehash: f559c87a5c3285bf966f9389d623b2262e93cbca
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: bf357dcc9c4790632a1131278edc41c13ac810b1
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425810"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802606"
 ---
 # <a name="client-application-registration"></a>Clienttoepassingen registreren
 In de vorige zelfstudie hebt u de Azure-API for FHIR geïmplementeerd en ingesteld. Nu u Azure API for FHIR hebt ingesteld, gaan we een openbare clienttoepassing registreren. U kunt de volledige instructiegids voor het [registreren van een openbare client-app](register-public-azure-ad-client-app.md) lezen voor meer informatie of om problemen op te lossen, maar voor deze zelfstudie hebben we de belangrijkste stappen op een rij gezet.
@@ -22,7 +22,7 @@ In de vorige zelfstudie hebt u de Azure-API for FHIR geïmplementeerd en ingeste
 1. Navigeren naar Azure Active Directory
 1. Selecteer **App-registratie** --> **Nieuwe registratie**
 1. Geef de toepassing een naam
-1. Selecteer **Openbare client/systeemeigen (mobiel en desktop)** en stel de omleidings-URL in op https://www.getpostman.com/oauth2/callback.
+1. Selecteer **Openbare client/systeemeigen (mobiel en desktop)** en stel de omleidings-URL in op `https://www.getpostman.com/oauth2/callback`.
 
    :::image type="content" source="media/tutorial-web-app/register-public-app.png" alt-text="Schermopname van het deelvenster voor het registreren van een toepassing, en een voorbeeld van een toepassingsnaam en omleidings-URL.":::
 

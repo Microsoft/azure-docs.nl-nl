@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/23/2020
+ms.date: 12/28/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 2350177373bc99907c437d814d8f01193f18f3fd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7bd85c60025475e8208847a12ccc2729743a975a
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95895720"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803915"
 ---
 # <a name="perform-a-point-in-time-restore-on-block-blob-data"></a>Herstel naar een bepaald tijdstip uitvoeren op blok-BLOB-gegevens
 
@@ -23,7 +23,7 @@ U kunt herstel punt in tijd gebruiken om een of meer sets blok-blobs naar een ee
 Zie herstel naar een bepaald tijdstip [voor blok-blobs voor](point-in-time-restore-overview.md)meer informatie over herstel naar een bepaald tijdstip.
 
 > [!CAUTION]
-> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een container te verwijderen, verwijdert u afzonderlijke blobs als u deze mogelijk wilt herstellen.
+> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen.
 
 ## <a name="enable-and-configure-point-in-time-restore"></a>Herstel naar een bepaald tijdstip inschakelen en configureren
 
@@ -107,6 +107,8 @@ Alleen blok-blobs worden hersteld. Pagina-blobs en toevoeg-blobs worden niet opg
 > Wanneer u een herstel bewerking uitvoert, blokkeert Azure Storage gegevens bewerkingen op de blobs in de bereiken die worden teruggezet voor de duur van de bewerking. Lees-, schrijf-en verwijder bewerkingen worden geblokkeerd op de primaire locatie. Daarom kunnen bewerkingen, zoals het weer geven van containers in het Azure Portal, niet worden uitgevoerd zoals verwacht tijdens het terugzetten.
 >
 > Lees bewerkingen van de secundaire locatie kunnen door gaan tijdens de herstel bewerking als het opslag account geo-gerepliceerd is.
+>
+> De tijd die nodig is voor het herstellen van een set gegevens is gebaseerd op het aantal schrijf-en verwijder bewerkingen tijdens de herstel periode. Bijvoorbeeld: een account met 1.000.000 objecten met 3.000 objecten per dag en 1.000 objecten die per dag worden verwijderd, duurt ongeveer twee uur om terug te gaan naar een punt 30 dagen in het verleden. Een Bewaar periode en herstel van meer dan 90 dagen in het verleden worden niet aanbevolen voor een account met deze wijzigings factor.
 
 ### <a name="restore-all-containers-in-the-account"></a>Alle containers in het account herstellen
 

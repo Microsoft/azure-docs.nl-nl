@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 0b91869e59109550910712b9386056c23843cecd
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 235d54d36965ac5d8d173354b2223247806a1fff
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559588"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803660"
 ---
 # <a name="enable-logging-in-ml-training-runs"></a>Logboek registratie inschakelen in ML-trainings uitvoeringen
 
@@ -92,7 +92,7 @@ In de volgende notebooks worden concepten in dit artikel gedemonstreerd:
 * [how-to-use-azureml/training/train-on-local](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local)
 * [how-to-use-azureml/track-and-monitor-experiments/logging-api](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/track-and-monitor-experiments/logging-api)
 
-[! AML-kloon-in-azure-notebook toevoegen](/includes/aml-clone-for-examples.md)
+[! AML-kloon-in-azure-notebook toevoegen](https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/includes/aml-clone-for-examples.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

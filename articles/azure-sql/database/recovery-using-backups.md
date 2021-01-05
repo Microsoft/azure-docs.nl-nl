@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein, danil
 ms.date: 11/13/2020
-ms.openlocfilehash: 138cd03989008aa4fbd7d6ca3e06aff94fa76e33
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: a70571dcf380fc2186565a40778991ac70a218d6
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989442"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797210"
 ---
 # <a name="recover-using-automated-database-backups---azure-sql-database--sql-managed-instance"></a>Herstellen met behulp van automatische database back-ups-Azure SQL Database & door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -95,7 +95,7 @@ Als u een Data Base van een beheerd exemplaar wilt herstellen naar een bepaald t
   ![Scherm opname van de opties voor het herstellen van data bases voor een SQL Managed instance.](./media/recovery-using-backups/pitr-backup-managed-instance-annotated.png)
 
 > [!TIP]
-> Zie [programmatisch herstel met behulp van geautomatiseerde back-ups uitvoeren](recovery-using-backups.md)om een Data Base programmatisch te herstellen met een back-up.
+> Zie [programmatische herstel met behulp van geautomatiseerde back-ups](recovery-using-backups.md)voor het programmatisch herstellen van een Data Base uit een back-up.
 
 ## <a name="deleted-database-restore"></a>Het terugzetten van de data base is verwijderd
 
@@ -157,7 +157,7 @@ Vanuit de Azure Portal maakt u een nieuwe single-of Managed instance-data base e
 
 Ga als volgt te werk om een enkele data base te herstellen uit de Azure Portal in de gewenste regio en server:
 
-1. Selecteer in het **dash board** de optie **Add**  >  **Create SQL database** toevoegen. Voer de vereiste gegevens in op het tabblad **basis beginselen** .
+1. Selecteer in het **dash board** de optie   >  **Create SQL database** toevoegen. Voer de vereiste gegevens in op het tabblad **basis beginselen** .
 2. Selecteer **aanvullende instellingen**.
 3. Selecteer **back-up** voor het **gebruiken van bestaande gegevens**.
 4. Selecteer voor **back-up** een back-up in de lijst met beschik bare back-ups van geo-herstel.

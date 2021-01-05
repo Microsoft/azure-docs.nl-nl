@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: thvankra
-ms.openlocfilehash: f5f2cb5ac8c354df38310cdcb47b98e1da5b6cfa
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: c969e4fac3ae30088cfe47a7b0edff22c578cb8b
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97521823"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802351"
 ---
 # <a name="troubleshoot-common-issues-in-azure-cosmos-db-cassandra-api"></a>Veelvoorkomende problemen in Azure Cosmos DB Cassandra-API oplossen
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -28,7 +28,7 @@ In dit artikel worden veelvoorkomende fouten en oplossingen beschreven voor toep
 | OverloadedException (Java) | Het totale aantal verbruikte aanvraag eenheden is hoger dan de aanvraag eenheden die zijn ingericht voor de code of tabel. Daarom worden de aanvragen beperkt. | U kunt de door Voer die is toegewezen aan een spatie of tabel, schalen op basis van de Azure Portal (Zie [hier](manage-scale-cassandra.md) voor schaal bewerkingen in Cassandra-API) of als u een beleid voor opnieuw proberen wilt implementeren. Voor Java, zie voor beelden opnieuw proberen voor het stuur programma [v3. x](https://github.com/Azure-Samples/azure-cosmos-cassandra-java-retry-sample) en het [stuur programma v4. x](https://github.com/Azure-Samples/azure-cosmos-cassandra-java-retry-sample-v4). Zie ook [Azure Cosmos Cassandra-uitbrei dingen voor Java](https://github.com/Azure/azure-cosmos-cassandra-extensions) |
 | OverloadedException (Java), zelfs met voldoende door Voer | Het systeem lijkt te vereisen dat er aanvragen worden beperkt, ondanks dat er voldoende door Voer is ingericht voor aanvraag volume en/of verbruikte aanvraag eenheids kosten  | Cassandra-API implementeert een systeem doorvoer budget voor bewerkingen op schema niveau (CREATE TABLE, ALTER TABLE, DROP TABLE). Dit budget moet voldoende zijn voor schema bewerkingen in een productie systeem. Als u echter een groot aantal bewerkingen op schema niveau hebt, is het mogelijk dat u deze limiet overschrijdt. Aangezien dit budget niet door de gebruiker wordt beheerd, moet u overwegen om het aantal uitgevoerde schema bewerkingen te verlagen. Als u met deze actie het probleem niet kunt verhelpen of als het niet haalbaar is voor uw workload, [maakt u een ondersteunings aanvraag voor Azure](../azure-portal/supportability/how-to-create-azure-support-request.md).|
 | ClosedConnectionException (Java) | Na een periode van niet-actieve verbindingen, kan de toepassing geen verbinding maken| Deze fout kan worden veroorzaakt door een time-out voor inactiviteit van Azure LoadBalancers, die 4 minuten is. Stel Keep Alive-instelling in het stuur programma in (zie hieronder) en verbeter Keep-Alive-instellingen in het besturings systeem of [Stel time-out voor inactiviteit in azure Load Balancer in](../load-balancer/load-balancer-tcp-idle-timeout.md?tabs=tcp-reset-idle-portal). |
-| Andere onregelmatige verbindings fouten (Java) | De verbinding wordt onverwacht verbroken of geduurd | De Apache Cassandra-Stuur Programma's voor java bieden twee systeem eigen beleid voor opnieuw verbinden: `ExponentialReconnectionPolicy` en `ConstantReconnectionPolicy` . De standaardwaarde is `ExponentialReconnectionPolicy`. Voor Azure Cosmos DB Cassandra-API wordt echter `ConstantReconnectionPolicy` een vertraging van 2 seconden aangeraden. Raadpleeg de [documentatie van het stuur programma](https://docs.datastax.com/developer/java-driver/4.9/manual/core/reconnection/)  voor Java v4. x-stuur programma en [hier](https://docs.datastax.com/developer/java-driver/3.7/manual/reconnection/) voor Java 3. x-richt lijnen (Zie ook de voor beelden hieronder).|
+| Andere onregelmatige verbindings fouten (Java) | De verbinding wordt onverwacht verbroken of geduurd | De Apache Cassandra-Stuur Programma's voor java bieden twee systeem eigen beleid voor opnieuw verbinden: `ExponentialReconnectionPolicy` en `ConstantReconnectionPolicy` . De standaardwaarde is `ExponentialReconnectionPolicy`. Voor Azure Cosmos DB Cassandra-API wordt echter `ConstantReconnectionPolicy` een vertraging van 2 seconden aangeraden. Raadpleeg de [documentatie van het stuur programma](https://docs.datastax.com/en/developer/java-driver/4.9/manual/core/reconnection/)  voor Java v4. x-stuur programma en [hier](https://docs.datastax.com/en/developer/java-driver/3.7/manual/reconnection/) voor Java 3. x-richt lijnen (Zie ook de voor beelden hieronder).|
 
 Als uw fout niet hierboven wordt vermeld en er een fout optreedt bij het uitvoeren van een [ondersteunde bewerking in Cassandra-API](cassandra-support.md), waarbij de fout *niet aanwezig is bij het gebruik van native Apache Cassandra*, [maakt u een ondersteunings aanvraag voor Azure](../azure-portal/supportability/how-to-create-azure-support-request.md)
 

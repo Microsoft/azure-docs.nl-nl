@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/27/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: cc0dd5e76227c0814659b74afc2ac46c8ca4de73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a51cd242eb26709464aa502938cd04807aea721
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87102594"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805599"
 ---
 ## <a name="common-scenarios"></a>Algemene scenario's
 De volgende scenario's kunnen aanzienlijk van bursting profiteren:
@@ -47,7 +47,7 @@ In de volgende voor beelden ziet u hoe bursting werkt met verschillende combi Na
     - Ingericht (e) MB/s: 25
     - Max burst MB/s: 170 
 - 2 P10-gegevens schijven 
-    - Ingericht (e) MB/s: 25
+    - Ingericht (e) MB/s: 100
     - Max burst MB/s: 170
 
  Wanneer de VM wordt opgestart, worden er gegevens opgehaald van de besturingssysteem schijf. Omdat de besturingssysteem schijf deel uitmaakt van een virtuele machine die aan de slag gaat, is de besturingssysteem schijf vol met burst-tegoed. Deze tegoeden staan de opstart tijd van de besturingssysteem schijf tegen 170 MB/s seconde, zoals hieronder wordt weer gegeven:

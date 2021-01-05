@@ -1,41 +1,41 @@
 ---
 title: 'ExpressRoute: circuits van het klassieke naar het Azure Resource Manager verplaatsen'
-description: Meer informatie over wat het betekent om een Azure ExpressRoute-circuit te verplaatsen van het klassieke naar het Azure Resource Manager-implementatie model.
+description: Meer informatie over wat er gebeurt wanneer u een Azure ExpressRoute-circuit verplaatst van het klassieke naar het Azure Resource Manager-implementatie model.
 services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 12/07/2018
+ms.date: 12/15/2020
 ms.author: duau
-ms.openlocfilehash: 649174e59c3e58b4675393ce665cf765016d5551
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: dcba2e9de2b37e8c432f94781b3c4c369ad52395
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331546"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97807938"
 ---
 # <a name="moving-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model"></a>ExpressRoute-circuits verplaatsen van het klassieke naar het Resource Manager-implementatiemodel
-Dit artikel bevat een overzicht van wat het betekent om een Azure ExpressRoute-circuit te verplaatsen van het klassieke naar het Azure Resource Manager-implementatiemodel.
+Dit artikel bevat een overzicht van wat er gebeurt wanneer u een Azure ExpressRoute-circuit van het klassieke naar het implementatie model van Azure Resource Manager verplaatst.
 
-U kunt één ExpressRoute-circuit gebruiken om verbinding te maken met virtuele netwerken die zijn geïmplementeerd in het klassieke en het Resource Manager-implementatiemodel. Een ExpressRoute-circuit kan nu, ongeacht de manier waarop deze is gemaakt, via beide implementatiemodellen worden gekoppeld aan virtuele netwerken.
+U kunt één ExpressRoute-circuit gebruiken om virtuele netwerken te verbinden die zijn geïmplementeerd in het klassieke en het Resource Manager-implementatie model.
 
 ![Een ExpressRoute-circuit dat via beide implementatiemodellen wordt gekoppeld aan virtuele netwerken](./media/expressroute-move/expressroute-move-1.png)
 
 ## <a name="expressroute-circuits-that-are-created-in-the-classic-deployment-model"></a>ExpressRoute-circuits die zijn gemaakt in het klassieke implementatiemodel
-ExpressRoute-circuits die zijn gemaakt in het klassieke implementatiemodel moeten eerst naar het Resource Manager-implementatiemodel worden verplaatst om connectiviteit met zowel het klassieke als het Resource Manager-implementatiemodel in te schakelen. Er is geen connectiviteitsonderbreking of -verlies wanneer een verbinding wordt verplaatst. Alle koppelingen van circuit naar virtueel netwerk in het klassieke implementatiemodel (binnen hetzelfde abonnement en overlappend abonnement) blijven behouden.
+ExpressRoute-circuits die zijn gemaakt in het klassieke implementatie model moeten eerst worden gemigreerd naar het Resource Manager-implementatie model. Alleen vervolgens kan de verbinding met zowel het klassieke als het Resource Manager-implementatie model worden ingeschakeld. Connectiviteit wordt niet onderbroken of verstoord wanneer een verbinding wordt verplaatst. Alle verbindingen van circuit naar virtueel netwerk in het klassieke implementatie model binnen hetzelfde abonnement en voor meerdere abonnementen blijven behouden.
 
-Wanneer de verbinding is verplaatst, werkt het ExpressRoute-circuit exact zoals een ExpressRoute-circuit dat is gemaakt in het Resource Manager-implementatiemodel. Nu kunt u verbinding maken met virtuele netwerken in het Resource Manager- implementatiemodel.
+Nadat de verplaatsing is voltooid, werkt het ExpressRoute-circuit precies hetzelfde als een ExpressRoute-circuit dat is gemaakt in het Resource Manager-implementatie model. Nu kunt u verbinding maken met virtuele netwerken in het Resource Manager- implementatiemodel.
 
-Wanneer een ExpressRoute-circuit is verplaatst naar het Resource Manager-implementatiemodel, kunt u de levenscyclus van het ExpressRoute-circuit alleen beheren met het Resource Manager-implementatiemodel. Dit betekent dat u handelingen, zoals het toevoegen, bijwerken, verwijderen van peerings, het bijwerken van circuiteigenschappen (zoals bandbreedte, SKU en factureringstype) en het bijwerken en verwijderen van circuits alleen kunt uitvoeren in het Resource Manager-implementatiemodel. Raadpleeg onderstaande sectie over circuits die zijn gemaakt in het Resource Manager-implementatiemodel, voor meer informatie over hoe u de toegang tot beide implementatiemodellen kunt beheren.
+Nadat u het ExpressRoute-circuit hebt verplaatst naar het Resource Manager-implementatie model, kunt u het niet beheren in het implementatie model van het bron beheer. Bewerkingen voor het beheren van peerings, het bijwerken van eigenschappen van circuits en het verwijderen van circuits zijn alleen beschikbaar via het Resource Manager-implementatie model. Raadpleeg de volgende sectie voor meer informatie over hoe u de toegang tot beide implementatie modellen kunt beheren.
 
-U hebt uw connectiviteitsprovider niet nodig om de verplaatsing uit te voeren.
+U hoeft uw connectiviteits provider niet te betrekken om uw circuit naar het Resource Manager-implementatie model te verplaatsen.
 
 ## <a name="expressroute-circuits-that-are-created-in-the-resource-manager-deployment-model"></a>ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementatiemodel
-U kunt ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementatiemodel inschakelen voor toegang vanuit beide implementatiemodellen. Elk ExpressRoute-circuit in uw abonnement kan worden ingeschakeld voor toegang vanuit beide implementatiemodellen.
+U kunt ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementatiemodel inschakelen voor toegang vanuit beide implementatiemodellen. Elk ExpressRoute-circuit in uw abonnement kan zodanig worden geconfigureerd dat het toegang heeft vanuit beide implementatie modellen.
 
-* ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementatiemodel hebben standaard geen toegang tot het klassieke implementatiemodel.
-* ExpressRoute-circuits die van het klassieke implementatiemodel zijn verplaatst naar Resource Manager-implementatiemodel zijn standaard toegankelijk vanuit beide implementatiemodellen.
-* Een ExpressRoute-circuit heeft altijd toegang tot het Resource Manager-implementatiemodel, ongeacht of het is gemaakt in het Resource Manager- of klassieke implementatiemodel. Dat betekent dat u virtuele netwerken die in het Resource Manager-implementatiemodel zijn gemaakt, kunt koppelen door de instructies te volgen in [how to link virtual networks](expressroute-howto-linkvnet-arm.md) (Virtuele netwerken koppelen).
+* ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementatie model hebben standaard geen toegang tot het klassieke implementatie model.
+* ExpressRoute-circuits die zijn verplaatst van het klassieke implementatie model naar het Resource Manager-implementatie model, zijn standaard toegankelijk vanuit beide implementatie modellen.
+* Een ExpressRoute-circuit heeft altijd toegang tot het Resource Manager-implementatie model, ongeacht of het is gemaakt in het Resource Manager-of klassieke implementatie model. U kunt verbindingen met virtuele netwerken maken door de instructies te volgen voor [het koppelen van virtuele netwerken](expressroute-howto-linkvnet-arm.md).
 * De toegang tot het klassieke implementatiemodel wordt gecontroleerd met de parameter **allowClassicOperations** in het ExpressRoute-circuit.
 
 > [!IMPORTANT]
@@ -44,11 +44,13 @@ U kunt ExpressRoute-circuits die zijn gemaakt in het Resource Manager-implementa
 > 
 
 ## <a name="controlling-access-to-the-classic-deployment-model"></a>Toegang tot het klassieke implementatiemodel beheren
-U kunt één ExpressRoute-circuit inschakelen om te worden gekoppeld aan virtuele netwerken in beide implementatiemodellen, door de parameter **allowClassicOperations** van het ExpressRoute-circuit in te stellen.
+U kunt een ExpressRoute-circuit inschakelen om te koppelen aan virtuele netwerken in beide implementatie modellen. Als u dit wilt doen, stelt u de para meter **allowClassicOperations** in op het ExpressRoute-circuit.
 
-Wanneer u **allowClassicOperations** instelt op TRUE, kunt u virtuele netwerken vanuit beide implementatiemodellen koppelen aan het ExpressRoute-circuit. U kunt een koppeling maken met een virtueel netwerk in het klassieke implementatiemodel door de richtlijnen te volgen in [how to link virtual networks in the classic deployment model](expressroute-howto-linkvnet-classic.md) (Een virtueel netwerk koppelen in het klassieke implementatiemodel). U kunt een koppeling maken met een virtueel netwerk in het Resource Manager-implementatiemodel door de richtlijnen te volgen in [how to link virtual networks in the Resource Manager deployment model](expressroute-howto-linkvnet-arm.md) (Een virtueel netwerk koppelen in het Resource Manager-implementatiemodel).
+Wanneer u **allowClassicOperations** instelt op TRUE, kunt u virtuele netwerken vanuit beide implementatiemodellen koppelen aan het ExpressRoute-circuit. 
+* Zie [virtuele netwerken voor het klassieke implementatie model koppelen voor](expressroute-howto-linkvnet-classic.md)het koppelen van virtuele netwerken in het klassieke implementatie model.
+* Zie [virtuele netwerken koppelen in het Resource Manager-implementatie model](expressroute-howto-linkvnet-arm.md)om virtuele netwerken in het Resource Manager-implementatie model te koppelen.
 
-Wanneer u **allowClassicOperations** instelt op FALSE, wordt de toegang tot het circuit vanuit het klassieke implementatiemodel geblokkeerd. Alle koppelingen met virtuele netwerken in het klassieke implementatiemodel blijven echter behouden. In dit geval is het ExpressRoute-circuit niet zichtbaar in het klassieke implementatiemodel.
+Wanneer u **allowClassicOperations** instelt op FALSE, wordt de toegang tot het circuit vanuit het klassieke implementatiemodel geblokkeerd. Alle virtuele netwerken die zijn gekoppeld aan het klassieke implementatie model blijven echter behouden. Het ExpressRoute-circuit is niet zichtbaar in het klassieke implementatie model.
 
 ## <a name="supported-operations-in-the-classic-deployment-model"></a>Ondersteunde bewerkingen in het klassieke implementatiemodel
 De volgende klassieke bewerkingen worden ondersteund in een ExpressRoute-circuit als **allowClassicOperations** is ingesteld op TRUE:
@@ -63,9 +65,9 @@ Als **allowClassicOperations** echter is ingesteld op True, kunt u de volgende k
 * ExpressRoute-circuits verwijderen
 
 ## <a name="communication-between-the-classic-and-the-resource-manager-deployment-models"></a>Communicatie tussen het klassieke en het Resource Manager-implementatiemodel
-Het ExpressRoute-circuit fungeert als een brug tussen het klassieke en het Resource Manager-implementatiemodel. Verkeer tussen virtuele machines in virtuele netwerken in het klassieke implementatiemodel en die in virtuele netwerken in het Resource Manager-implementatiemodel stroomt via ExpressRoute als beide virtuele netwerken zijn gekoppeld aan hetzelfde ExpressRoute-circuit.
+Het ExpressRoute-circuit fungeert als een brug tussen het klassieke en het Resource Manager-implementatiemodel. Verkeer tussen virtuele netwerken voor beide implementatie modellen kan het ExpressRoute-circuit passeren als beide virtuele netwerken zijn gekoppeld aan hetzelfde circuit.
 
-Cumulatieve doorvoer wordt beperkt door de doorvoercapaciteit van de gateway van het virtueel netwerk. Verkeer komt de netwerken van de connectiviteitsprovider of uw netwerken in dergelijke gevallen niet binnen. De verkeersstroom tussen de virtuele netwerken vindt volledig plaats in het Microsoft-netwerk.
+Cumulatieve doorvoer wordt beperkt door de doorvoercapaciteit van de gateway van het virtueel netwerk. Verkeer voert de netwerken van de connectiviteits provider of uw netwerken in dergelijke gevallen niet in. De verkeersstroom tussen de virtuele netwerken vindt volledig plaats in het Microsoft-netwerk.
 
 ## <a name="access-to-azure-public-and-microsoft-peering-resources"></a>Toegang tot resources in openbare Azure-peering en Microsoft-peering
 U blijft zonder onderbreking toegang houden tot resources die doorgaans toegankelijk zijn via openbare Azure-peering en Microsoft-peering.  
@@ -74,10 +76,10 @@ U blijft zonder onderbreking toegang houden tot resources die doorgaans toeganke
 In deze sectie wordt beschreven wat er wordt ondersteund voor ExpressRoute-circuits:
 
 * U kunt één ExpressRoute-circuit gebruiken voor toegang tot virtuele netwerken die zijn geïmplementeerd in het klassieke en het Resource Manager-implementatiemodel.
-* U kunt een ExpressRoute-circuit verplaatsen van het klassieke naar het Resource Manager-implementatiemodel Wanneer het is verplaatst, werkt het ExpressRoute-circuit net als elk ander ExpressRoute-circuit dat is gemaakt in het Resource Manager-implementatiemodel.
+* U kunt een ExpressRoute-circuit verplaatsen van het klassieke naar het Resource Manager-implementatiemodel Nadat het ExpressRoute-circuit is verplaatst, blijft het werken zoals elk ander ExpressRoute-circuit dat is gemaakt in het Resource Manager-implementatie model.
 * U kunt alleen het ExpressRoute-circuit verplaatsen. Met deze bewerking kunt u geen circuitkoppelingen, virtuele netwerken of VPN-gateways verplaatsen.
-* Wanneer een ExpressRoute-circuit is verplaatst naar het Resource Manager-implementatiemodel, kunt u de levenscyclus van het ExpressRoute-circuit alleen beheren met het Resource Manager-implementatiemodel. Dit betekent dat u handelingen, zoals het toevoegen, bijwerken, verwijderen van peerings, het bijwerken van circuiteigenschappen (zoals bandbreedte, SKU en factureringstype) en het bijwerken en verwijderen van circuits alleen kunt uitvoeren in het Resource Manager-implementatiemodel.
-* Het ExpressRoute-circuit fungeert als een brug tussen het klassieke en het Resource Manager-implementatiemodel. Verkeer tussen virtuele machines in virtuele netwerken in het klassieke implementatiemodel en die in virtuele netwerken in het Resource Manager-implementatiemodel stroomt via ExpressRoute als beide virtuele netwerken zijn gekoppeld aan hetzelfde ExpressRoute-circuit.
+* Wanneer een ExpressRoute-circuit is verplaatst naar het Resource Manager-implementatiemodel, kunt u de levenscyclus van het ExpressRoute-circuit alleen beheren met het Resource Manager-implementatiemodel. Dit betekent dat u bewerkingen kunt uitvoeren zoals het toevoegen/bijwerken/verwijderen van peerings, het bijwerken van eigenschappen van circuits (zoals band breedte, SKU en facturerings type) en het verwijderen van circuits alleen in het Resource Manager-implementatie model.
+* Het ExpressRoute-circuit fungeert als een brug tussen het klassieke en het Resource Manager-implementatiemodel. Verkeer tussen virtuele machines in klassieke virtuele netwerken en virtuele machines in virtuele netwerken van Resource Manager kan communiceren via ExpressRoute als beide virtuele netwerken zijn gekoppeld aan hetzelfde ExpressRoute-circuit.
 * Abonnementoverschrijdende connectiviteit wordt ondersteund in zowel het klassieke als het Resource Manager-implementatiemodel.
 * Nadat u een ExpressRoute-circuit uit het klassieke model naar het model van Azure Resource Manager hebt verplaatst, kunt u [de virtuele netwerken die zijn gekoppeld aan het ExpressRoute-circuit migreren](expressroute-migration-classic-resource-manager.md).
 

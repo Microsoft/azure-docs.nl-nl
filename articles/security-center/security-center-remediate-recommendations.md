@@ -1,6 +1,6 @@
 ---
 title: Aanbevelingen herstellen in Azure Security Center | Microsoft Docs
-description: In dit artikel wordt uitgelegd hoe u aanbevelingen in Azure Security Center herstelt om uw resources te beschermen en te voldoen aan het beveiligings beleid.
+description: In dit artikel wordt uitgelegd hoe u reageert op aanbevelingen in Azure Security Center om uw resources te beschermen en te voldoen aan het beveiligings beleid.
 services: security-center
 documentationcenter: na
 author: memildin
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/08/2020
 ms.author: memildin
-ms.openlocfilehash: 3d4b968d0d5e091d72cf718d58b11ade68ddf8c6
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: dabd7e9e2c3c74225efc4611c7ad3523a6c76ba5
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637082"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97807987"
 ---
 # <a name="remediate-recommendations-in-azure-security-center"></a>Aanbevelingen oplossen in Azure Security Center
 
@@ -26,41 +26,41 @@ Aanbevelingen bieden suggesties voor een betere beveiliging van uw resources. U 
 
 ## <a name="remediation-steps"></a>Herstels tappen <a name="remediation-steps"></a>
 
-Nadat u alle aanbevelingen hebt bekeken, moet u bepalen welke u het eerst wilt herstellen. U wordt aangeraden de effect op een [beveiligde Score](security-center-recommendations.md#monitor-recommendations) te gebruiken om te helpen bepalen wat u eerst moet doen.
+Nadat u alle aanbevelingen hebt bekeken, moet u bepalen welke u het eerst wilt herstellen. We raden u aan de beveiligings maatregelen te priori teren met het hoogste potentieel om uw beveiligde score te verhogen.
 
-1. Klik in de lijst op de aanbeveling.
+1. Selecteer een aanbeveling in de lijst.
 
 1. Volg de instructies in de sectie **herstel stappen** . Elke aanbeveling heeft een eigen set instructies. De volgende scherm afbeelding toont herbemiddelings stappen voor het configureren van toepassingen zodat alleen verkeer via HTTPS wordt toegestaan.
 
-    ![Details van aanbeveling](./media/security-center-remediate-recommendations/security-center-remediate-recommendation.png)
+    :::image type="content" source="./media/security-center-remediate-recommendations/security-center-remediate-recommendation.png" alt-text="Hand matige herstel stappen voor een aanbeveling" lightbox="./media/security-center-remediate-recommendations/security-center-remediate-recommendation.png":::
 
-1. Zodra dit is voltooid, wordt een melding weer gegeven dat u wordt geïnformeerd als het herstel is geslaagd.
+1. Zodra dit is voltooid, wordt een melding weer gegeven waarin wordt gemeld of het probleem is opgelost.
 
-## <a name="quick-fix-remediation"></a>Snel herstel oplossen<a name="one-click"></a>
+## <a name="quick-fix-remediation"></a>Snel herstel oplossen
 
-Snelle oplossing vereenvoudigt herstel en stelt u in staat snel uw beveiligde score te verhogen en de beveiliging van uw omgeving te verbeteren.
+Om het herstel te vereenvoudigen en de beveiliging van uw omgeving te verbeteren (en uw veilige score te verg Roten), bevatten veel aanbevelingen een optie voor snel oplossen.
 
-Met snelle oplossing kunt u snel een aanbeveling op meerdere resources herstellen. 
+Met snelle oplossing kunt u snel een aanbeveling op meerdere resources herstellen.
 
 > [!TIP]
-> Snelle oplossing is alleen beschikbaar voor specifieke aanbevelingen. Als u de aanbevelingen met de optie snel herstellen wilt vinden, gebruikt u het toegewezen filter boven aan de lijst met aanbevelingen:
+> Oplossingen voor snel oplossen zijn alleen beschikbaar voor specifieke aanbevelingen. Als u de aanbevelingen met een beschik bare snelle oplossing wilt vinden, gebruikt u het filter **antwoord acties** voor de lijst met aanbevelingen:
 > 
 > :::image type="content" source="media/security-center-remediate-recommendations/quick-fix-filter.png" alt-text="Gebruik de filters boven de lijst met aanbevelingen om aanbevelingen met de optie snel herstellen te vinden.":::
 
-Voor het implementeren van een oplossing voor snel herstel:
+Voor het implementeren van een oplossing voor snel oplossen:
 
-1. In de lijst met aanbevelingen waarvoor de **snelle oplossing** is geïnstalleerd. Label, klikt u op de aanbeveling.
+1. In de lijst met aanbevelingen waarvoor de **snelle oplossing** is geïnstalleerd. Selecteer een aanbeveling.
 
-    [![Selecteer snelle oplossing.](media/security-center-remediate-recommendations/security-center-one-click-fix-select.png)](media/security-center-remediate-recommendations/security-center-one-click-fix-select.png#lightbox)
+    [![Selecteer snelle oplossing.](media/security-center-remediate-recommendations/security-center-quick-fix-select.png)](media/security-center-remediate-recommendations/security-center-quick-fix-select.png#lightbox)
 
-1. Op het tabblad **beschadigde bronnen** selecteert u de resources waarvoor u de aanbeveling wilt implementeren en klikt u op **herstellen**.
+1. Op het tabblad **beschadigde bronnen** selecteert u de resources waarvoor u de aanbeveling wilt implementeren en selecteert u **herstellen**.
 
     > [!NOTE]
     > Sommige van de vermelde bronnen zijn mogelijk uitgeschakeld, omdat u niet over de juiste machtigingen beschikt om deze te wijzigen.
 
 1. In het bevestigings venster leest u de details van het herstel en de implicaties.
 
-    ![Snel oplossen](./media/security-center-remediate-recommendations/security-center-one-click-fix-view.png)
+    ![Snel oplossen](./media/security-center-remediate-recommendations/security-center-quick-fix-view.png)
 
     > [!NOTE]
     > De implicaties worden weer gegeven in het grijze vak in het venster **resources herstellen** dat wordt geopend nadat u op **herstellen** hebt geklikt. Ze geven een lijst weer met de wijzigingen die worden aangebracht wanneer u doorgaat met het oplossen van problemen met snel herstel.
@@ -79,7 +79,7 @@ Voor de herstel bewerking wordt gebruikgemaakt van een sjabloon implementatie of
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit document hebt u geleerd hoe u aanbevelingen in Security Center kunt herstellen. Zie de volgende onderwerpen voor meer informatie over Security Center:
+In dit document hebt u geleerd hoe u aanbevelingen in Security Center kunt herstellen. Zie de volgende pagina's voor meer informatie over het Security Center:
 
 * [Beveiligings beleid instellen in azure Security Center](tutorial-security-policy.md) -meer informatie over het configureren van beveiligings beleid voor uw Azure-abonnementen en-resource groepen.
 * [Beveiligingsstatus controleren in Azure Security Center](security-center-monitoring.md): meer informatie over het controleren van de status van uw Azure-resources.

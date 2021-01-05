@@ -10,12 +10,13 @@ ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18, devx-track-java, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: aa3329c3d9e241fb8224ecc69199779d53027474
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+adobe-target: true
+ms.openlocfilehash: 0334e259f75440cae25f1e165c0621c85f7c7705
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183138"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804000"
 ---
 # <a name="configure-a-java-app-for-azure-app-service"></a>Een Java-app voor Azure App Service configureren
 
@@ -25,7 +26,7 @@ Deze hand leiding bevat belang rijke concepten en instructies voor Java-Ontwikke
 
 ## <a name="deploying-your-app"></a>Uw app implementeren
 
-U kunt de [Azure web app-invoeg toepassing voor maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) gebruiken om uw. War-of jar-bestanden te implementeren. Implementatie met populaire Ide's wordt ook ondersteund met de [Azure-Toolkit voor IntelliJ](/azure/developer/java/toolkit-for-intellij/) of [Azure-Toolkit voor eclipse](/azure/developer/java/toolkit-for-eclipse).
+U kunt de [Azure web app-invoeg toepassing voor maven](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md) gebruiken om uw. War-of jar-bestanden te implementeren. Implementatie met populaire Ide's wordt ook ondersteund met de [Azure-Toolkit voor IntelliJ](/azure/developer/java/toolkit-for-intellij/) of [Azure-Toolkit voor eclipse](/azure/developer/java/toolkit-for-eclipse).
 
 Anders is uw implementatie methode afhankelijk van het type archief:
 
@@ -541,7 +542,7 @@ Bepaal vervolgens of de gegevens bron beschikbaar moet zijn voor één toepassin
 
 #### <a name="shared-server-level-resources"></a>Resources op gedeelde server niveau
 
-Als u een gedeelde gegevens bron op server niveau wilt toevoegen, moet u de server.xml van Tomcat bewerken. Upload eerst een [opstart script](faq-app-service-linux.md#built-in-images) en stel het pad naar het script in de **Configuration**  >  **opstart opdracht** van de configuratie in. U kunt het opstart script uploaden met [FTP](deploy-ftp.md).
+Als u een gedeelde gegevens bron op server niveau wilt toevoegen, moet u de server.xml van Tomcat bewerken. Upload eerst een [opstart script](faq-app-service-linux.md#built-in-images) en stel het pad naar het script in de   >  **opstart opdracht** van de configuratie in. U kunt het opstart script uploaden met [FTP](deploy-ftp.md).
 
 Met het opstart script wordt een [XSL-trans formatie](https://www.w3schools.com/xml/xsl_intro.asp) naar het server.xml-bestand gemaakt en wordt het resulterende XML-bestand uitgevoerd naar `/usr/local/tomcat/conf/server.xml` . Het opstart script moet libxslt installeren via APK. Het XSL-bestand en het opstart script kunnen worden geüpload via FTP. Hieronder ziet u een voor beeld van een opstart script.
 

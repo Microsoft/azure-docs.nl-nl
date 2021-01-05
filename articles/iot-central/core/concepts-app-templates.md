@@ -3,16 +3,16 @@ title: Wat zijn toepassings sjablonen in azure IoT Central | Microsoft Docs
 description: Met Azure IoT Central-toepassings sjablonen kunt u overgaan naar de ontwikkeling van IoT-oplossingen.
 author: philmea
 ms.author: philmea
-ms.date: 10/25/2019
+ms.date: 12/19/2020
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: dae2461336316defb6f2cfc63b775c67cf2196d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27f054cb085e5064ffed0e75b77d53a1406b566e
+ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91813063"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97797125"
 ---
 # <a name="what-are-application-templates"></a>Wat zijn toepassingssjablonen?
 

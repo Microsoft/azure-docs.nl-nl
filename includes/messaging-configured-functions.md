@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 5070d1dc19995b635ebff6b98fec07e2b7d9fc70
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9cc19548f0b969421974afe3e274fc5334590cb0
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97663613"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805643"
 ---
 Met Azure Functions kunt u alleen configuratie taken configureren die op een vooraf gebaseerd toegangs punt Lean zijn. De [configuratie-voor beelden op basis van configuraties voor Azure functions](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config) laten zien hoe u [vooraf ontwikkelde helpers kunt](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/src/Azure.Messaging.Replication) gebruiken in uw eigen code of code hoeft te verhandelen en alleen configuratie kunt gebruiken.
 
@@ -218,9 +218,9 @@ De volgende tabel geeft u de juiste waarden voor combi Naties van bronnen en doe
 
 ### <a name="retry-policy"></a>Beleid voor opnieuw proberen
 
-Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md) om het beleid voor opnieuw proberen te configureren. De beleids instellingen die in de projecten in deze opslag plaats worden gekozen, configureren een exponentiële uitstel-strategie met intervallen van vijf seconden tot 5 minuten met oneindige pogingen om gegevens verlies te voor komen.
+Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](/azure/azure-functions/functions-bindings-error-pages) om het beleid voor opnieuw proberen te configureren. De beleids instellingen die in de projecten in deze opslag plaats worden gekozen, configureren een exponentiële uitstel-strategie met intervallen van vijf seconden tot 5 minuten met oneindige pogingen om gegevens verlies te voor komen.
 
-Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
+Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
 
 ### <a name="build-deploy-and-configure"></a>Bouwen, implementeren en configureren
 

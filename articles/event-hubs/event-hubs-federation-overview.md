@@ -4,14 +4,14 @@ description: In dit artikel vindt u een overzicht van de Federatie met meerdere 
 ms.topic: article
 ms.date: 12/12/2020
 ms.author: spelluru
-ms.openlocfilehash: 02057d505308902d780e20e095bc248d1eaa1a74
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 7deb6fe04241225f1f97a204cc62b4aefad9f440
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657393"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804034"
 ---
-# <a name="multi-site-and-multi-region-federation"></a>Federatie met meerdere sites en meerdere regio's
+# <a name="multi-site-and-multi-region-federation"></a>Federatie in meerdere sites en regio's
 
 Voor veel geavanceerde oplossingen moeten dezelfde gebeurtenis stromen beschikbaar worden gemaakt voor gebruik op meerdere locaties, of moeten gebeurtenis stromen op meerdere locaties worden verzameld en vervolgens worden geconsolideerd in een specifieke locatie voor verbruik. Er is ook vaak de nood zaak om gebeurtenis stromen te verrijken of te verminderen, of om te zorgen voor de conversies van gebeurtenis indelingen, ook binnen één regio en oplossing.
 
@@ -148,9 +148,9 @@ Voor de implementatie van de bovenstaande patronen is een schaal bare en betrouw
 
 Voor stateful-replicatie toepassingen die relaties tussen gebeurtenissen moeten overwegen, samengestelde gebeurtenissen, verrijkende gebeurtenissen maken of gebeurtenissen verminderen, gegevens aggregaties maken en nettoladingen van gebeurtenissen transformeren, [Azure stream Analytics](../stream-analytics/stream-analytics-introduction.md) de beste implementatie optie is.
 
-In Azure Stream Analytics maakt u [taken](../stream-analytics/stream-analytics-quick-create-portal.md) voor de integratie van [invoer](../stream-analytics/stream-analytics-add-inputs.md) en [uitvoer](../stream-analytics/stream-analytics-define-outputs.md) en integreert u de gegevens van de invoer via [query's](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference.md) waarmee een resultaat wordt verkregen dat vervolgens beschikbaar wordt gesteld aan de uitvoer.
+In Azure Stream Analytics maakt u [taken](../stream-analytics/stream-analytics-quick-create-portal.md) voor de integratie van [invoer](../stream-analytics/stream-analytics-add-inputs.md) en [uitvoer](../stream-analytics/stream-analytics-define-outputs.md) en integreert u de gegevens van de invoer via [query's](/stream-analytics-query/stream-analytics-query-language-reference) waarmee een resultaat wordt verkregen dat vervolgens beschikbaar wordt gesteld aan de uitvoer.
 
-Query's zijn gebaseerd op de [SQL-query taal](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference.md) en kunnen worden gebruikt om streaminggegevens in een bepaalde periode eenvoudig te filteren, te sorteren, te combi neren en samen te voegen. U kunt deze SQL-taal ook uitbreiden met [Java script](../stream-analytics/stream-analytics-javascript-user-defined-functions.md) en door de [gebruiker gedefinieerde functies (udf's) van C#](../stream-analytics/stream-analytics-edge-csharp-udf-methods.md). U kunt eenvoudig de opties voor gebeurtenisvolgorde en de duur van tijdvensters aanpassen bij het uitvoeren van combinatiebewerkingen, met behulp van eenvoudige taalconstructs en/of configuraties.
+Query's zijn gebaseerd op de [SQL-query taal](/stream-analytics-query/stream-analytics-query-language-reference) en kunnen worden gebruikt om streaminggegevens in een bepaalde periode eenvoudig te filteren, te sorteren, te combi neren en samen te voegen. U kunt deze SQL-taal ook uitbreiden met [Java script](../stream-analytics/stream-analytics-javascript-user-defined-functions.md) en door de [gebruiker gedefinieerde functies (udf's) van C#](../stream-analytics/stream-analytics-edge-csharp-udf-methods.md). U kunt eenvoudig de opties voor gebeurtenisvolgorde en de duur van tijdvensters aanpassen bij het uitvoeren van combinatiebewerkingen, met behulp van eenvoudige taalconstructs en/of configuraties.
 
 Elke taak heeft een of meer uitvoerwaarden voor de getransformeerde gegevens, en u kunt bepalen wat er gebeurt als reactie op de informatie die u hebt geanalyseerd. U kunt bijvoorbeeld:
 
@@ -191,7 +191,7 @@ In dit artikel hebben we een reeks Federatie patronen verkend en de rol van Azur
 
 Vervolgens kunt u lezen hoe u een Replicator-toepassing instelt met Azure Stream Analytics of Azure Functions en vervolgens gebeurtenis stromen tussen Event Hubs en verschillende andere gebeurtenissen voor gebeurtenis en berichten repliceert:
 
-- [Taak patronen voor gebeurtenis replicatie][10]
+- [Gebeurtenisreplicatietaakpatronen][10]
 - [Gegevens verwerken met Azure Stream Analytics][9]
 - [Gebeurtenis-Replicator toepassingen in Azure Functions][1]
 - [Gebeurtenissen tussen Event Hubs repliceren][2]

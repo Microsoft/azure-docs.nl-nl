@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 12/28/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: d435ced4c8ec56fae5081ede367b593d2b66ef0f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 8812ab091037bcb3144a7fed53a449c3f5de353a
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936536"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802504"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Beperkte toegang verlenen tot Azure Storage-resources met behulp van Shared Access signatures (SAS)
 
@@ -112,7 +112,7 @@ Het SAS-token is een teken reeks die u aan de client zijde genereert, bijvoorbee
 
 Client toepassingen bieden de SAS-URI die moet Azure Storage als onderdeel van een aanvraag. Vervolgens controleert de service de SAS-para meters en de hand tekening om te controleren of deze geldig is. Als de service controleert of de hand tekening geldig is, wordt de aanvraag geautoriseerd. Anders wordt de aanvraag geweigerd met fout code 403 (verboden).
 
-Hier ziet u een voorbeeld van een SAS-URI van de service, met de bron-URI en het SAS-token:
+Hier volgt een voor beeld van een SAS-URI van de service, waarin de bron-URI en het SAS-token worden weer gegeven. Omdat de SAS-token de URI-query teken reeks bevat, moet de bron-URI eerst worden gevolgd door een vraag teken en vervolgens door het SAS-token:
 
 ![Onderdelen van een SAS-URI (Service)](./media/storage-sas-overview/sas-storage-uri.png)
 

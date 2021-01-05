@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: d73bfd19a4135d09e9e19fcbcfedd50dbc1f7067
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 86d7b1a6d361ebbc0d8419d184f9a11d390a37f1
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632677"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803184"
 ---
 # <a name="tips-and-tricks-for-using-azure-application-consistent-snapshot-tool-preview"></a>Tips en trucs voor het gebruik van Azure-toepassing consistent momentopname programma (preview-versie)
 
@@ -132,7 +132,7 @@ Een moment opname van een opslag volume kan worden teruggezet naar een nieuw vol
 
 Een moment opname kan worden teruggezet naar het gegevens gebied SAP HANA, maar SAP HANA moet niet worden uitgevoerd als er een kopie wordt gemaakt ( `cp /hana/data/H80/mnt00001/.snapshot/hana_hourly.2020-06-17T113043.1586971Z/*` ).
 
-Voor een grote Azure-instantie kunt u contact opnemen met het micro soft Operations-team door een service aanvraag te openen om een gewenste moment opname te herstellen vanuit de bestaande beschik bare moment opnamen. U kunt een service aanvraag openen via Azure Portal: <https://portal.azure.com.>
+Voor een grote Azure-instantie kunt u contact opnemen met het micro soft Operations-team door een service aanvraag te openen om een gewenste moment opname te herstellen vanuit de bestaande beschik bare moment opnamen. U kunt een service aanvraag openen via Azure Portal: <https://portal.azure.com>
 
 Als u besluit de nood herstel failover uit te voeren, `azacsnap -c restore --restore revertvolume` maakt de opdracht op de Dr-site automatisch de meest recente ( `/hana/data` en `/hana/logbackups` ) moment opnamen van volumes om een SAP Hana herstel mogelijk te maken. Gebruik deze opdracht om te zorgen dat de replicatie tussen productie-en DR-sites wordt verbroken.
 
@@ -249,7 +249,7 @@ Een ' boot '-moment opname kan als volgt worden hersteld:
 
 1. De klant moet de server afsluiten.
 1. Nadat de server is afgesloten, moet de klant een service aanvraag openen die de machine-ID en de moment opname bevat die moet worden hersteld.
-    > Klanten kunnen een service aanvraag openen vanuit de Azure Portal: <https://portal.azure.com.>
+    > Klanten kunnen een service aanvraag openen vanuit de Azure Portal: <https://portal.azure.com>
 1. Micro soft herstelt het LUN van het besturings systeem met de opgegeven computer-ID en moment opname en start vervolgens de server op.
 1. De klant moet vervolgens controleren of de server is opgestart en in orde is.
 

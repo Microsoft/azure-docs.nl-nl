@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: bc6b7553d240de05404d24f828a5f7db14772f93
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 279a00a6146d756e6a518dbf86b88f471d170b3a
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657411"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97805648"
 ---
 ## <a name="what-is-a-replication-task"></a>Wat is een replicatie taak?
 
@@ -22,11 +22,11 @@ De meeste replicatie taken sturen gebeurtenissen ongewijzigd door en voeren Maxi
 
 Replicatie taken zijn in het algemeen stateless, wat betekent dat ze geen status of andere neven effecten delen in opeenvolgende of parallelle uitvoeringen van een taak. Dit geldt ook voor batch verwerking en koppelen, die beide kunnen worden geïmplementeerd boven op de bestaande status van een stroom. 
 
-Dit maakt het verschil tussen replicatie taken en aggregatie taken, die in het algemeen stateful zijn, en zijn het domein van analyse frameworks en-services zoals [Azure stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-introduction.md).
+Dit maakt het verschil tussen replicatie taken en aggregatie taken, die in het algemeen stateful zijn, en zijn het domein van analyse frameworks en-services zoals [Azure stream Analytics](/azure/stream-analytics/stream-analytics-introduction).
 
 ## <a name="replication-applications-and-tasks-in-azure-functions"></a>Replicatie toepassingen en taken in Azure Functions
 
-In Azure Functions wordt een replicatie taak geïmplementeerd met behulp van een [trigger](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings.md) waarmee een of meer invoer berichten worden opgehaald uit een geconfigureerde bron en een [uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings.md#binding-direction) waarmee berichten die worden gekopieerd van de bron naar een geconfigureerd doel worden doorgestuurd. 
+In Azure Functions wordt een replicatie taak geïmplementeerd met behulp van een [trigger](/azure/azure-functions/functions-triggers-bindings) waarmee een of meer invoer berichten worden opgehaald uit een geconfigureerde bron en een [uitvoer binding](/azure/azure-functions/functions-triggers-bindings#binding-direction) waarmee berichten die worden gekopieerd van de bron naar een geconfigureerd doel worden doorgestuurd. 
 
 | Trigger  | Uitvoer |
 |----------|--------|
@@ -57,17 +57,17 @@ Voor eenvoudige replicatie taken waarmee berichten tussen Event Hubs en Service 
 
 ### <a name="retry-policy"></a>Beleid voor opnieuw proberen
 
-Als u gegevens verlies tijdens Beschik baarheid wilt voor komen aan beide zijden van een replicatie functie, moet u het beleid voor opnieuw proberen zodanig configureren dat dit krachtig is. Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md) om het beleid voor opnieuw proberen te configureren. 
+Als u gegevens verlies tijdens Beschik baarheid wilt voor komen aan beide zijden van een replicatie functie, moet u het beleid voor opnieuw proberen zodanig configureren dat dit krachtig is. Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](/azure/azure-functions/functions-bindings-error-pages) om het beleid voor opnieuw proberen te configureren. 
 
 De beleids instellingen die zijn gekozen voor de voorbeeld projecten in de voor beeld- [opslag plaats](https://github.com/Azure-Samples/azure-messaging-replication-dotnet) , configureren een exponentiële uitstel-strategie met intervallen van vijf seconden tot 15 minuten met oneindige pogingen om gegevens verlies te voor komen. 
 
-Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](https://docs.microsoft.com/azure/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
+Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
 
 ### <a name="setting-up-a-replication-application-host"></a>Een replicatie-toepassingshost instellen
 
 Een replicatie toepassing is een host voor uitvoering van een of meer replicatie taken. 
 
-Het is een Azure Functions toepassing die is geconfigureerd om te worden uitgevoerd op het verbruiks abonnement of (aanbevolen) in een Azure Functions Premium-abonnement. Alle replicatie toepassingen moeten worden uitgevoerd onder een door het [systeem of de gebruiker toegewezen beheerde identiteit](https://docs.microsoft.com/azure/app-service/overview-managed-identity.md). 
+Het is een Azure Functions toepassing die is geconfigureerd om te worden uitgevoerd op het verbruiks abonnement of (aanbevolen) in een Azure Functions Premium-abonnement. Alle replicatie toepassingen moeten worden uitgevoerd onder een door het [systeem of de gebruiker toegewezen beheerde identiteit](/azure/app-service/overview-managed-identity). 
 
 Met de gekoppelde Azure Resource Manager-sjablonen (ARM) kunt u een replicatie toepassing maken en configureren met:
 
@@ -137,7 +137,7 @@ Voor direct diagnostische gegevens kunt u werken met het portal-hulp programma v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Azure Functions implementaties](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies.md)
-* [Diagnostische gegevens Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-diagnostics.md)
-* [Azure Functions-netwerk opties](https://docs.microsoft.com/azure/azure-functions/functions-networking-options.md)
-* [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview.md)
+* [Azure Functions implementaties](/azure/azure-functions/functions-deployment-technologies)
+* [Diagnostische gegevens Azure Functions](/azure/azure-functions/functions-diagnostics)
+* [Azure Functions-netwerk opties](/azure/azure-functions/functions-networking-options)
+* [Azure Application Insights](/azure/azure-monitor/app/app-insights-overview)

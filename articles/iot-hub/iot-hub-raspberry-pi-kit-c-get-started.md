@@ -10,12 +10,12 @@ ms.date: 02/14/2019
 ms.author: wesmc
 ms.custom:
 - 'Role: Cloud Development'
-ms.openlocfilehash: b21b161a03be7a37fe1d3e872e10d4de437670db
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 52da3c28faa375f8b308e3fe78329fec4f996af9
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145858"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804051"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-c"></a>Raspberry Pi verbinden met Azure IoT Hub (C)
 
@@ -99,7 +99,7 @@ Bereid de microSD-kaart voor op de installatie van de Raspbian-installatie kopie
 
 1. Down load Raspbian.
 
-   1. [Down load Raspbian stretch met Desktop](https://www.raspberrypi.org/downloads/raspbian/) (het zip-bestand).
+   1. [Down load Raspbian stretch met Desktop](https://www.raspberrypi.org/software/) (het zip-bestand).
 
    2. Pak de Raspbian-installatie kopie uit naar een map op uw computer.
 
@@ -125,7 +125,7 @@ Bereid de microSD-kaart voor op de installatie van de Raspbian-installatie kopie
 
    ![Het menu Raspbian-voor keuren](./media/iot-hub-raspberry-pi-kit-c-get-started/1-raspbian-preferences-menu.png)
 
-3. Stel op het tabblad **interfaces** **SPI** en **SSH** in op **inschakelen**en klik vervolgens op **OK**. Als u geen fysieke Sens oren hebt en gesimuleerde sensor gegevens wilt gebruiken, is deze stap optioneel.
+3. Stel op het tabblad **interfaces** **SPI** en **SSH** in op **inschakelen** en klik vervolgens op **OK**. Als u geen fysieke Sens oren hebt en gesimuleerde sensor gegevens wilt gebruiken, is deze stap optioneel.
 
    ![Schakel SPI en SSH in op Raspberry pi](./media/iot-hub-raspberry-pi-kit-c-get-started/2-enable-spi-ssh-on-raspberry-pi.png)
 

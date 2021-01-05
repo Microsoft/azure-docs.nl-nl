@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 12/28/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ca09e41e6d5b83f14d2dfee4107135585b7e945a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 518df665db0ba3770bee757f45d02b6ccd303a00
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95908792"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803864"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
@@ -43,7 +43,7 @@ De bewerking **BLOB-bereiken herstellen** retourneert een Restore-id waarmee de 
 > Lees bewerkingen van de secundaire locatie kunnen door gaan tijdens de herstel bewerking als het opslag account geo-gerepliceerd is.
 
 > [!CAUTION]
-> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een container te verwijderen, verwijdert u afzonderlijke blobs als u deze mogelijk wilt herstellen.
+> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen.
 
 ### <a name="prerequisites-for-point-in-time-restore"></a>Vereisten voor herstel naar een bepaald tijdstip
 
@@ -57,9 +57,12 @@ Herstel naar een bepaald tijdstip vereist dat de volgende Azure Storage-functies
 
 Wanneer u herstel naar een bepaald tijdstip voor een opslag account inschakelt, geeft u een Bewaar periode op. Blok-blobs in uw opslag account kunnen worden hersteld tijdens de Bewaar periode.
 
-De Bewaar periode begint wanneer u herstel op tijdstippen inschakelt. Denk eraan dat u geen blobs kunt herstellen naar een status vóór het begin van de Bewaar periode. Als u bijvoorbeeld punt-in-time herstel hebt ingeschakeld op 1 mei met een Bewaar periode van 30 dagen, kunt u op 15 mei Maxi maal vijf tien dagen herstellen. Op 1 juni kunt u gegevens terugzetten van tussen de en dertig dagen.
+De Bewaar periode begint een paar minuten nadat u herstel naar een bepaald tijdstip hebt ingeschakeld. Denk eraan dat u geen blobs kunt herstellen naar een status vóór het begin van de Bewaar periode. Als u bijvoorbeeld punt-in-time herstel hebt ingeschakeld op 1 mei met een Bewaar periode van 30 dagen, kunt u op 15 mei Maxi maal vijf tien dagen herstellen. Op 1 juni kunt u gegevens terugzetten van tussen de en dertig dagen.
 
 De Bewaar periode voor herstel naar een bepaald tijdstip moet ten minste één dag kleiner zijn dan de retentie periode die is opgegeven voor de tijdelijke verwijdering. Als de Bewaar periode voor zacht verwijderen bijvoorbeeld is ingesteld op 7 dagen, mag de Bewaar periode voor het herstel punt van de tijd tussen 1 en 6 dagen liggen.
+
+> [!IMPORTANT]
+> De tijd die nodig is voor het herstellen van een set gegevens is gebaseerd op het aantal schrijf-en verwijder bewerkingen tijdens de herstel periode. Bijvoorbeeld: een account met 1.000.000 objecten met 3.000 objecten per dag en 1.000 objecten die per dag worden verwijderd, duurt ongeveer twee uur om terug te gaan naar een punt 30 dagen in het verleden. Een Bewaar periode en herstel van meer dan 90 dagen in het verleden worden niet aanbevolen voor een account met deze wijzigings factor.
 
 ### <a name="permissions-for-point-in-time-restore"></a>Machtigingen voor herstel naar een bepaald tijdstip
 

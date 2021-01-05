@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: abhishgu
 ms.reviewer: abhishgu
-ms.openlocfilehash: a233845e8f19cc44cd9d00a0392b1341db297fd6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 25972ba2bb30c39838c4822a42af292e8d8b1dba
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632752"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803626"
 ---
 # <a name="ingest-data-from-apache-kafka-into-azure-cosmos-db-cassandra-api-using-kafka-connect"></a>Gegevens opnemen van Apache Kafka in Azure Cosmos DB Cassandra-API met behulp van Kafka Connect
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -22,7 +22,7 @@ Bestaande Cassandra-toepassingen kunnen gemakkelijk samen werken met de [Azure C
 
 Gegevens in Apache Kafka (onderwerpen) zijn alleen nuttig wanneer ze door andere toepassingen worden gebruikt of in andere systemen worden opgenomen. Het is mogelijk om een oplossing te bouwen met behulp van de [Kafka producer/Consumer](https://kafka.apache.org/documentation/#api) api's [met behulp van de taal-en client-SDK van uw keuze](https://cwiki.apache.org/confluence/display/KAFKA/Clients). Kafka Connect biedt een alternatieve oplossing. Het is een platform voor het streamen van gegevens tussen Apache Kafka en andere systemen op een schaal bare en betrouw bare manier. Omdat Kafka Connect ondersteuning biedt voor de plank connectors die Cassandra bevatten, hoeft u geen aangepaste code te schrijven om Kafka te integreren met Azure Cosmos DB Cassandra-API. 
 
-In dit artikel wordt gebruikgemaakt van de open-source [DataStax Apache Kafka-connector](https://docs.datastax.com/kafka/doc/kafka/kafkaIntro.html), die boven op Kafka Connect Framework wordt gebruikt om records van een Kafka-onderwerp op te nemen in rijen van een of meer Cassandra tabellen. Het voor beeld biedt een herbruikbare installatie met behulp van docker opstellen. Dit is heel handig omdat u hiermee alle vereiste onderdelen lokaal kunt Boots trappen met één opdracht. Deze onderdelen zijn onder andere Kafka, Zookeeper, Kafka Connect Worker en de toepassing voor het genereren van gegevens.
+In dit artikel wordt gebruikgemaakt van de open-source [DataStax Apache Kafka-connector](https://docs.datastax.com/en/kafka/doc/kafka/kafkaIntro.html), die boven op Kafka Connect Framework wordt gebruikt om records van een Kafka-onderwerp op te nemen in rijen van een of meer Cassandra tabellen. Het voor beeld biedt een herbruikbare installatie met behulp van docker opstellen. Dit is heel handig omdat u hiermee alle vereiste onderdelen lokaal kunt Boots trappen met één opdracht. Deze onderdelen zijn onder andere Kafka, Zookeeper, Kafka Connect Worker en de toepassing voor het genereren van gegevens.
 
 Hier volgt een overzicht van de onderdelen en hun service definities: u kunt naar het volledige `docker-compose` bestand [in de GitHub-opslag plaats](https://github.com/Azure-Samples/cosmosdb-cassandra-kafka/blob/main/docker-compose.yaml)verwijzen.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: rdhillon
-ms.openlocfilehash: f861f9efa6ecc1886647ed6c460b6718ff97e8a1
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 90831c0e8d5ab73f65dc801319a357d59799cbc6
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522325"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97807549"
 ---
 # <a name="troubleshoot-azure-private-endpoint-connectivity-problems"></a>Verbindingsproblemen met het Azure-privé-eindpunt oplossen
 
@@ -100,8 +100,24 @@ Bekijk deze stappen om te controleren of alle gebruikelijke configuraties naar v
     
        ![NSG uitgaande regels](./media/private-endpoint-tsg/nsg-outbound-rules.png)
 
+1. De virtuele bron machine moet de route naar het persoonlijke eind punt IP-adres van de volgende hop hebben als InterfaceEndpoints in de juiste routes van de NIC. 
+
+    a. Als u de persoonlijke eindpunt route niet kunt zien in de bron-VM, controleert u of 
+     - De bron-VM en het persoonlijke eind punt behoren tot hetzelfde VNET. Zo ja, dan moet u ondersteuning bieden. 
+     - De bron-VM en het persoonlijke eind punt maken deel uit van verschillende VNETs en controleren vervolgens op de IP-verbinding tussen de VNETS. Als er sprake is van een IP-verbinding en u de route niet kunt zien, wordt ondersteuning geboden. 
+
 1. Als de verbinding resultaten heeft gevalideerd, kan het connectiviteits probleem te maken hebben met andere aspecten zoals geheimen, tokens en wacht woorden op de toepassingslaag.
-   - In dit geval controleert u de configuratie van de persoonlijke koppelings resource die aan het persoonlijke eind punt is gekoppeld. Zie voor meer informatie de Azure-oplossing voor het [oplossen van problemen met persoonlijke koppelingen](troubleshoot-private-link-connectivity.md).
+   - In dit geval controleert u de configuratie van de persoonlijke koppelings resource die aan het persoonlijke eind punt is gekoppeld. Zie voor meer informatie de Azure-oplossing voor het [oplossen van problemen met persoonlijke koppelingen](troubleshoot-private-link-connectivity.md)
+   
+1. Het is altijd handig om te verkleinen voordat u het ondersteunings ticket gaat verhogen. 
+
+    a. Als de bron on-premises verbinding maakt met een privé-eind punt in azure met problemen, probeert u verbinding te maken 
+      - Naar een andere virtuele machine van on-premises en controleer of u een IP-verbinding met de Virtual Network van on-premises hebt. 
+      - Van een virtuele machine in de Virtual Network naar het persoonlijke eind punt.
+      
+    b. Als de bron Azure en het persoonlijke eind punt zich in verschillende Virtual Network bevindt, probeert u verbinding te maken 
+      - Naar het persoonlijke eind punt van een andere bron. Op deze manier kunt u specifieke problemen met virtuele machines isoleren. 
+      - Naar een virtuele machine die deel uitmaakt van hetzelfde Virtual Network van het persoonlijke eind punt.  
 
 1. Neem contact op met het [ondersteunings](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) team van Azure als uw probleem nog steeds niet is opgelost en er nog een probleem is met de verbinding.
 

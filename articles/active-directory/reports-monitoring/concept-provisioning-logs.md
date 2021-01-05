@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 10/07/2020
+ms.date: 12/28/2020
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2408db2d91740350405f11e2a1250ab9b3a4fe31
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 56818862b6bc4eb38b819185aceb121e6e78488e
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181200"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803524"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Rapporten inrichten in de Azure Active Directory Portal (preview)
 
@@ -44,6 +44,7 @@ In dit onderwerp vindt u een overzicht van het inrichtings rapport.
 ### <a name="who-can-access-the-data"></a>Wie hebben er toegang tot de gegevens?
 * Eigen aren van toepassingen kunnen logboeken weer geven voor toepassingen waarvan ze eigenaar zijn
 * Gebruikers in de rollen beveiligings beheerder, beveiligings lezer, rapport lezer, toepassings beheerder en Cloud toepassings beheerder
+* Gebruikers in een aangepaste rol met de [machtiging provisioningLogs](https://docs.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions#full-list-of-permissions)
 * Globale beheerders
 
 
@@ -56,12 +57,12 @@ Aan uw Tenant moet een Azure AD Premium-licentie zijn gekoppeld om het rapport a
 De inrichtings logboeken bieden antwoorden op de volgende vragen:
 
 * Welke groepen zijn met succes gemaakt in ServiceNow?
-* Welke rollen zijn geïmporteerd uit Amazon Web Services?
+* Wat zijn de gebruikers van Adobe verwijderd?
 * Wat zijn de gebruikers die niet met succes zijn gemaakt in DropBox?
 
 U kunt toegang krijgen tot de inrichtings logboeken door **inrichtings logboeken** te selecteren in de sectie **bewaking** van de Blade **Azure Active Directory** in de [Azure Portal](https://portal.azure.com). Het kan Maxi maal twee uur duren voordat bepaalde inrichtings records worden weer gegeven in de portal.
 
-![Inrichtings logboeken](./media/concept-provisioning-logs/access-provisioning-logs.png "Inrichtingslogboeken")
+![Inrichtingslogboeken](./media/concept-provisioning-logs/access-provisioning-logs.png "Inrichtingslogboeken")
 
 
 Een inrichtings logboek heeft een standaard lijst weergave waarin het volgende wordt weer gegeven:
@@ -86,7 +87,7 @@ Hiermee kunt u extra velden weergeven of velden verwijderen die al worden weerge
 
 Selecteer een item in de lijst weergave voor meer gedetailleerde informatie.
 
-![Gedetailleerde informatie](./media/concept-provisioning-logs/steps.png "Filter")
+![Gedetailleerde informatie](./media/concept-provisioning-logs/steps.png "Filteren")
 
 
 ## <a name="filter-provisioning-activities"></a>Inrichtings activiteiten filteren
@@ -95,12 +96,12 @@ U kunt uw inrichtings gegevens filteren. Sommige filter waarden worden dynamisch
 In de standaard weergave kunt u de volgende filters selecteren:
 
 - Identiteit
-- Datum
+- Date
 - Status
-- Bewerking
+- Actie
 
 
-![Filters toevoegen](./media/concept-provisioning-logs/default-filter.png "Filter")
+![Filters toevoegen](./media/concept-provisioning-logs/default-filter.png "Filteren")
 
 Met het **identiteits** filter kunt u de naam of de identiteit opgeven die u bevalt. Deze identiteit kan een gebruiker, een groep, een rol of een ander object zijn. U kunt zoeken op de naam of ID van het object. De ID is afhankelijk van het scenario. Wanneer u bijvoorbeeld een object inricht vanuit Azure AD naar Sales Force, is de bron-ID de object-ID van de gebruiker in azure AD terwijl de TargetID de ID van de gebruiker in Sales Force is. Bij het inrichten van workday naar Active Directory, is de bron-ID de werk nemer-ID van de werkdag. Houd er rekening mee dat de naam van de gebruiker mogelijk niet altijd aanwezig is in de identiteits kolom. Er wordt altijd één ID weer. 
 
@@ -120,7 +121,7 @@ Wanneer u een aangepast tijds bestek selecteert, kunt u een begin-en eind datum 
 Met het **status** filter kunt u het volgende selecteren:
 
 - Alles
-- Geslaagd
+- Success
 - Fout
 - Overgeslagen
 
@@ -132,7 +133,7 @@ Met het **actie** filter kunt u het volgende filteren:
 - Bijwerken
 - Verwijderen
 - Uitschakelen
-- Anders
+- Overige
 
 Daarnaast kunt u aan de filters van de standaard weergave ook de volgende filters instellen:
 
@@ -191,7 +192,7 @@ Het tabblad **stappen** bevat een overzicht van de stappen voor het inrichten va
 
 
 
-![Scherm afbeelding toont het tabblad stappen, waarin de inrichtings stappen worden weer gegeven.](./media/concept-provisioning-logs/steps.png "Filter")
+![Scherm afbeelding toont het tabblad stappen, waarin de inrichtings stappen worden weer gegeven.](./media/concept-provisioning-logs/steps.png "Filteren")
 
 
 ### <a name="troubleshoot-and-recommendations"></a>Problemen oplossen en aanbevelingen
@@ -219,13 +220,15 @@ Op het tabblad **samen vatting** vindt u een overzicht van wat er is gebeurd en 
 
 - Er worden mogelijk overgeslagen gebeurtenissen weer geven voor gebruikers die zich niet in het bereik bevinden. Dit wordt verwacht, vooral wanneer het synchronisatie bereik is ingesteld op alle gebruikers en groepen. Onze service evalueert alle objecten in de Tenant, zelfs degene die buiten het bereik vallen. 
 
-- De inrichtings logboeken zijn momenteel niet beschikbaar in de Government Cloud. Als u geen toegang hebt tot de inrichtings logboeken, moet u de audit Logboeken gebruiken als tijdelijke oplossing.  
+- De inrichtings logboeken zijn momenteel niet beschikbaar in de Government Cloud. Als u geen toegang hebt tot de inrichtings logboeken, moet u de audit Logboeken gebruiken als tijdelijke oplossing. 
+
+- In de inrichtings logboeken worden geen functie-import bewerkingen weer gegeven (is van toepassing op AWS, Sales Force en ZenDesk). De logboeken voor de functie-import bewerkingen vindt u in de audit Logboeken. 
 
 ## <a name="error-codes"></a>Foutcodes
 
 Gebruik de onderstaande tabel voor meer informatie over het oplossen van fouten die u in de inrichtings Logboeken kunt vinden. Geef feedback met behulp van de koppeling onder aan deze pagina voor eventuele ontbrekende fout codes. 
 
-|Foutcode|Description|
+|Foutcode|Beschrijving|
 |---|---|
 |Conflict, EntryConflict|Corrigeer de conflicterende kenmerk waarden in azure AD of de toepassing of Controleer de overeenkomende kenmerk configuratie als het conflicterende gebruikers account zou moeten overeenkomen en moeten worden overgenomen. Raadpleeg de volgende [documentatie](../app-provisioning/customize-application-attributes.md) voor meer informatie over het configureren van overeenkomende kenmerken.|
 |TooManyRequests|De doel-app heeft deze poging geweigerd de gebruiker bij te werken omdat deze is overbelast en te veel aanvragen ontvangt. Er is niets te doen. Deze poging wordt automatisch buiten gebruik gesteld. Micro soft is ook op de hoogte gesteld van dit probleem.|

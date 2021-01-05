@@ -13,12 +13,12 @@ ms.author: wesmc
 ms.custom:
 - 'Role: Cloud Development'
 - devx-track-js
-ms.openlocfilehash: 1d6a51e2e9c052be0c59435b287c5fdde459f55d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c96f674b64401250d45542d0f59f13654cf37caa
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334188"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802521"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Verbinding maken tussen Raspberry Pi en Azure IoT Hub (Node.js)
 
@@ -97,7 +97,7 @@ Bereid de microSD-kaart voor op de installatie van de Raspbian-installatie kopie
 
 1. Down load Raspbian.
 
-   a. [Raspbian Buster met Desktop](https://www.raspberrypi.org/downloads/raspbian/) (het zip-bestand).
+   a. [Raspbian Buster met Desktop](https://www.raspberrypi.org/software/) (het zip-bestand).
 
    b. Pak de Raspbian-installatie kopie uit naar een map op uw computer.
 
@@ -125,7 +125,7 @@ Bereid de microSD-kaart voor op de installatie van de Raspbian-installatie kopie
 
    ![Het menu Raspbian-voor keuren](./media/iot-hub-raspberry-pi-kit-node-get-started/1-raspbian-preferences-menu.png)
 
-4. Stel op het tabblad **interfaces** de optie **I2C** en **SSH** in op **inschakelen**en klik vervolgens op **OK**. Als u geen fysieke Sens oren hebt en gesimuleerde sensor gegevens wilt gebruiken, is deze stap optioneel.
+4. Stel op het tabblad **interfaces** de optie **I2C** en **SSH** in op **inschakelen** en klik vervolgens op **OK**. Als u geen fysieke Sens oren hebt en gesimuleerde sensor gegevens wilt gebruiken, is deze stap optioneel.
 
    ![I2C en SSH inschakelen op Raspberry pi](./media/iot-hub-raspberry-pi-kit-node-get-started/2-enable-i2c-ssh-on-raspberry-pi.png)
 

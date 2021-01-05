@@ -3,14 +3,14 @@ title: Bericht replicatie en Federatie-Azure Service Bus tussen regio's | Micros
 description: In dit artikel vindt u een overzicht van gebeurtenis replicatie en Federatie met meerdere regio's met Azure Service Bus.
 ms.topic: article
 ms.date: 12/12/2020
-ms.openlocfilehash: 32d8c9112eeb2f71e7f2c8dcd6f8f73da2dc1ca9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d5153820feab8b7901356838ec435d992aa82116
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657414"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803269"
 ---
-# <a name="message-replication-and-cross-region-federation"></a>Bericht replicatie en Federatie van meerdere regio's
+# <a name="message-replication-and-cross-region-federation"></a>Berichtreplicatie en federatie in meerdere regio's
 
 In naam ruimten biedt Azure Service Bus ondersteuning voor het [maken van topologieën van gekoppelde wacht rijen en onderwerp-abonnementen met behulp van autoforwarding](service-bus-auto-forwarding.md) , zodat de implementatie van verschillende routerings patronen mogelijk wordt. U kunt bijvoorbeeld partners voorzien van specifieke wacht rijen waarnaar ze machtigingen voor verzenden of ontvangen hebben en die tijdelijk kunnen worden opgeschort, en ze flexibel verbinden met andere entiteiten die privé zijn voor de toepassing. U kunt ook complexe topologieën voor multi-stage routering maken, of u kunt wacht rijen in een postvak stijl maken, waarmee u de wachtrij-achtige abonnementen van onderwerpen verwerkt en meer opslag capaciteit per abonnee toestaat. 
 
@@ -150,7 +150,7 @@ Azure Functions kan worden uitgevoerd onder een door [Azure beheerde identiteit]
 
 Azure Functions kunnen de replicatie taken bovendien rechtstreeks integreren met Azure Virtual Networks en [service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) voor alle Azure Messa ging-Services, en het is gemakkelijk geïntegreerd met [Azure monitor](../azure-monitor/overview.md).
 
-Het belangrijkste is dat Azure Functions vooraf ontwikkelde, schaal bare triggers en uitvoer bindingen voor [azure Event hubs](../azure-functions/functions-bindings-service-bus.md), [azure IOT hub](../azure-functions/functions-bindings-event-iot.md), [Azure Service Bus](../azure-functions/functions-bindings-service-bus.md), [Azure Event grid](../azure-functions/functions-bindings-event-grid.md)en [Azure Queue Storage](/azure-functions/functions-bindings-storage-queue.md), aangepaste uitbrei dingen voor [RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension)en [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension)heeft. De meeste triggers worden dynamisch aan de doorvoer behoeften aangepast door het aantal gelijktijdig uitgevoerde instanties te schalen op basis van gedocumenteerde metrische gegevens. 
+Het belangrijkste is dat Azure Functions vooraf ontwikkelde, schaal bare triggers en uitvoer bindingen voor [azure Event hubs](../azure-functions/functions-bindings-service-bus.md), [azure IOT hub](../azure-functions/functions-bindings-event-iot.md), [Azure Service Bus](../azure-functions/functions-bindings-service-bus.md), [Azure Event grid](../azure-functions/functions-bindings-event-grid.md)en [Azure Queue Storage](/azure/azure-functions/functions-bindings-storage-queue), aangepaste uitbrei dingen voor [RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension)en [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension)heeft. De meeste triggers worden dynamisch aan de doorvoer behoeften aangepast door het aantal gelijktijdig uitgevoerde instanties te schalen op basis van gedocumenteerde metrische gegevens. 
 
 Met het Azure Functions-verbruiks abonnement kan de vooraf gemaakte triggers zelfs op nul worden geschaald, terwijl er geen berichten beschikbaar zijn voor replicatie. Dit betekent dat u geen kosten hebt om de configuratie gereed te maken voor het schalen van back-ups. De sleutel die het verbruiks plan gebruikt, is dat de latentie voor replicatie taken van deze status aanzienlijk hoger is dan met de hosting plannen waar de infra structuur actief is.  
 
@@ -165,6 +165,6 @@ Vervolgens wilt u weten hoe u een Replicator-toepassing instelt met Azure Functi
 - [Replicatie toepassingen in Azure Functions](service-bus-federation-replicator-functions.md)
 - [Gebeurtenissen tussen Service Bus entiteiten repliceren](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopy)
 - [Routerings gebeurtenissen naar Azure Event Hubs](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub)
-- [Gebeurtenissen ophalen van Azure Event Hubs](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubsCopyToServiceBus)
+- [Gebeurtenissen ophalen van Azure Event Hubs](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus)
 
 [1]: ./media/service-bus-auto-forwarding/IC628632.gif 

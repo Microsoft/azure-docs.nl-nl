@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1b17729437b238b98f60e2cd97664fa6aafcccd4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b3ba007f03b3aa4883d9455dc43b2bc19676da59
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462455"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803966"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>IoT Plug en Play-apparaten certificeren
 
@@ -41,7 +41,7 @@ Om aan de certificerings vereisten te voldoen, moet uw apparaat:
 - Maakt verbinding met Azure IoT Hub met behulp van de [DPS](../iot-dps/about-iot-dps.md).
 - U kunt telemetrie, eigenschappen of opdrachten implementeren volgens de IoT-Plug en Play Conventie.
 - Beschrijf de interacties van het apparaat met een [DTDL v2](https://aka.ms/dtdl) -model.
-- Publiceer het model en alle vereiste interfaces in de [opslag plaats van het open bare Azure IOT-model](https://devicemodels.azureiotsolutions.com/)
+- Publiceer het model en alle vereiste interfaces in de opslag plaats van het open bare Azure IoT-model
 - De model-ID verzenden tijdens de [registratie van DPS](./concepts-developer-guide-device.md#dps-payload) in de nettolading van de DPS-inrichting.
 - De model-ID tijdens de [MQTT-verbinding](./concepts-developer-guide-device.md#model-id-announcement)aankondigen.
 - Alle modellen van apparaten moeten compatibel zijn met [Azure IOT Central](../iot-central/core/overview-iot-central-developer.md).
@@ -174,7 +174,7 @@ De volgende stappen laten zien hoe u de [Azure-gecertificeerde Apparaatbeheer](h
 
 Als u de [certificerings Portal](https://aka.ms/acdp)wilt gebruiken, moet u een Azure Active Directory van uw werk-of school-Tenant gebruiken.
 
-Als u de modellen wilt publiceren naar de open bare Azure IoT-model opslagplaats, moet uw account lid zijn van de [Microsoft Partner Network](https://partner.microsoft.com). Het systeem controleert of de Microsoft Partner Network-ID bestaat en of het account volledig gecontroleerd is voordat het naar de catalogus van het apparaat wordt gepubliceerd.
+Als u de modellen wilt publiceren naar de [open bare Azure IOT-model opslagplaats](https://github.com/Azure/iot-plugandplay-models), moet uw account lid zijn van de [Microsoft Partner Network](https://partner.microsoft.com). Het systeem controleert of de Microsoft Partner Network-ID bestaat en of het account volledig gecontroleerd is voordat het naar de catalogus van het apparaat wordt gepubliceerd.
 
 ### <a name="company-profile"></a>Bedrijfs profiel
 

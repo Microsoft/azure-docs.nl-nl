@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 6aa54f65b504e61a5e74ed584c5dad51e49eb087
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 60aab2c77a5ccf59e129b21deab34daf756b2e23
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031450"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827424"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -151,7 +151,7 @@ Voorbeelden zijn:
    ```
 
 
-1. Voor prognose taken hebt u aanvullende instellingen nodig. Zie het artikel [een time-series Forecast model](how-to-auto-train-forecast.md) voor meer informatie. 
+1. Voor prognose taken zijn extra instellingen vereist. Raadpleeg het artikel een prognose model voor het maken van [een time-reeks](how-to-auto-train-forecast.md) voor meer informatie. 
 
     ```python
     time_series_settings = {
@@ -235,7 +235,7 @@ Wanneer u uw experimenten in uw `AutoMLConfig` object configureert, kunt u de in
 
 Ensemble-modellen zijn standaard ingeschakeld en worden weer gegeven als de laatste uitvoerings herhalingen in een AutoML-uitvoering. Momenteel worden **VotingEnsemble** en **StackEnsemble** ondersteund. 
 
-Stem implementeert een zacht stem waarbij gewogen gemiddelden worden gebruikt. De stacking-implementatie maakt gebruik van een implementatie met twee lagen, waarbij de eerste laag dezelfde modellen heeft als de juiste ensemble en het tweede laag model wordt gebruikt om de optimale combi natie van modellen van de eerste laag te vinden. 
+Met stemmen worden zachte stem geïmplementeerd, waarbij gewogen gemiddelden worden gebruikt. De stacking-implementatie maakt gebruik van een implementatie met twee lagen, waarbij de eerste laag dezelfde modellen heeft als de juiste ensemble en het tweede laag model wordt gebruikt om de optimale combi natie van modellen van de eerste laag te vinden. 
 
 Als u gebruikmaakt van ONNX-modellen **of** als u model uitleg hebt ingeschakeld, wordt de stacking uitgeschakeld en wordt alleen stem gebruik gebruikgemaakt.
 
@@ -305,7 +305,7 @@ automl_classifier = AutoMLConfig(
 
 Er zijn enkele opties die u in uw AutoMLConfig kunt definiëren om uw experiment te beëindigen.
 
-|Criteria| description
+|Criteria| beschrijving
 |----|----
 Geen &nbsp; criteria | Als u geen afsluit parameters definieert, wordt het experiment voortgezet tot er geen verdere voortgang wordt gemaakt op basis van uw primaire metriek.
 Na &nbsp; een &nbsp; &nbsp; tijds duur &nbsp;| Gebruik `experiment_timeout_minutes` in uw instellingen om te bepalen hoe lang, in minuten, uw experiment moet blijven werken. <br><br> Om te voor komen dat er storingen optreden, is er mini maal 15 minuten of 60 minuten als uw rij op kolom grootte groter is dan 10.000.000.
@@ -321,7 +321,7 @@ from azureml.core.experiment import Experiment
 ws = Workspace.from_config()
 
 # Choose a name for the experiment and specify the project folder.
-experiment_name = 'automl-classification'
+experiment_name = 'Tutorial-automl'
 project_folder = './sample_projects/automl-classification'
 
 experiment = Experiment(ws, experiment_name)
@@ -374,6 +374,109 @@ Voor algemene informatie over hoe model toelichtingen en functie belang kunnen w
 
 > [!NOTE]
 > Het ForecastTCN-model wordt momenteel niet ondersteund door de uitleg-client. Dit model retourneert geen uitzonderings dashboard als het wordt geretourneerd als het beste model en biedt geen ondersteuning voor uitleg over de uitvoering van een on-demand.
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+* De **recente upgrade van `AutoML` afhankelijkheden naar nieuwere versies leidt tot een afbreuk aan de compatibiliteit**: vanaf versie 1.13.0 van de SDK worden modellen niet geladen in oudere sdk's vanwege incompatibiliteit tussen de oudere versies die we in onze vorige pakketten hebben vastgemaakt en de nieuwere versies die we nu vastmaken. U ziet de fout, zoals:
+  * Module niet gevonden: ex. `No module named 'sklearn.decomposition._truncated_svd` ,
+  * Import fouten: ex. `ImportError: cannot import name 'RollingOriginValidator'` ,
+  * Kenmerk fouten: ex. `AttributeError: 'SimpleImputer' object has no attribute 'add_indicator`
+  
+  U kunt dit probleem omzeilen door een van de volgende twee stappen uit te voeren, afhankelijk van de `AutoML` SDK-trainings versie:
+    * Als uw `AutoML` SDK-trainings versie hoger is dan 1.13.0, hebt u `pandas == 0.25.1` en nodig `sckit-learn==0.22.1` . Als er sprake is van een versie die niet overeenkomt, upgradet u scikit-Learn en/of Pandas naar de juiste versie, zoals hieronder wordt weer gegeven:
+      
+      ```bash
+         pip install --upgrade pandas==0.25.1
+         pip install --upgrade scikit-learn==0.22.1
+      ```
+      
+    * Als uw `AutoML` SDK-trainings versie lager is dan of gelijk is aan 1.12.0, hebt u `pandas == 0.23.4` en nodig `sckit-learn==0.20.3` . Als er een versie conflict is, downgrade scikit-Learn en/of Pandas om de versie te corrigeren, zoals hieronder wordt weer gegeven:
+  
+      ```bash
+        pip install --upgrade pandas==0.23.4
+        pip install --upgrade scikit-learn==0.20.3
+      ```
+
+* **Mislukte implementatie**: voor versies <= 1.18.0 van de SDK kan de basis installatie kopie die is gemaakt voor de implementatie mislukken met de volgende fout: "ImportError: kan geen naam importeren `cached_property` uit `werkzeug` ". 
+
+  De volgende stappen kunnen het probleem omzeilen:
+  1. Het model pakket downloaden
+  2. Pak het pakket uit
+  3. Implementeren met behulp van de uitgepakte assets
+
+* **Forecasting R2-Score is altijd nul**: dit probleem doet zich voor als de verstrekte trainings gegevens een tijd reeks hebben die dezelfde waarde voor de laatste `n_cv_splits`  +  `forecasting_horizon` gegevens punten bevat. Als dit patroon in uw tijd reeks wordt verwacht, kunt u de primaire metriek overschakelen naar een genormaliseerd wortel fout.
+ 
+* **Tensor flow**: vanaf versie 1.5.0 van de SDK installeert automatische machine learning standaard geen tensor flow-modellen. Als u tensor flow wilt installeren en wilt gebruiken met uw geautomatiseerde ML experimenten, installeert u tensor flow = = 1.12.0 via CondaDependecies. 
+ 
+   ```python
+   from azureml.core.runconfig import RunConfiguration
+   from azureml.core.conda_dependencies import CondaDependencies
+   run_config = RunConfiguration()
+   run_config.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['tensorflow==1.12.0'])
+  ```
+
+* **Experimenteer grafieken**: binaire classificatie grafieken (Precision-intrekken, Roc, winst curve enz.) die worden weer gegeven in automatische ml-experimenten, worden niet correct gerenderd in de gebruikers interface sinds 4/12. In grafiek grafieken worden momenteel inverse resultaten weer gegeven, waarbij betere modellen worden weer gegeven met lagere resultaten. Een oplossing wordt onderzocht.
+
+* **Databricks annuleren automatische uitvoering van een machine learning**: wanneer u gebruikmaakt van geautomatiseerde machine learning mogelijkheden op Azure Databricks, kunt u een uitvoering annuleren en een nieuwe uitvoering van het experiment starten door het Azure Databricks-cluster opnieuw op te starten.
+
+* **Databricks >tien herhalingen voor automatische machine learning** machine learning: als u meer dan 10 iteraties hebt, moet u instellen `show_output` op `False` Wanneer u de uitvoering verzendt.
+
+* **Databricks-widget voor de Azure machine learning SDK en geautomatiseerde machine learning**: de SDK-widget Azure machine learning wordt niet ondersteund in een Databricks-notebook omdat de notebooks geen HTML-widgets kunnen parseren. U kunt de widget in de portal weer geven met behulp van deze python-code in uw Azure Databricks notebook-cel:
+
+    ```
+    displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.get_portal_url(), local_run.id))
+    ```
+* **automl_setup mislukt**: 
+    * Voer automl_setup uit vanaf een Anaconda-prompt in Windows. Gebruik deze koppeling om [Miniconda te installeren](https://docs.conda.io/en/latest/miniconda.html).
+    * Zorg ervoor dat de Conda 64-bits is geïnstalleerd in plaats van 32-bits door de opdracht uit te voeren `conda info` . De `platform` moet `win-64` voor Windows of `osx-64` voor Mac zijn.
+    * Zorg ervoor dat Conda 4.4.10 of hoger is geïnstalleerd. U kunt de versie controleren met de opdracht `conda -V` . Als u een vorige versie hebt geïnstalleerd, kunt u deze bijwerken met behulp van de opdracht: `conda update conda` .
+    * Spreek `gcc: error trying to exec 'cc1plus'`
+      *  Als de `gcc: error trying to exec 'cc1plus': execvp: No such file or directory` fout is opgetreden, installeert u build Essentials met behulp van de opdracht `sudo apt-get install build-essential` .
+      * Geef een nieuwe naam als de eerste para meter op automl_setup om een nieuwe Conda-omgeving te maken. Bekijk bestaande Conda-omgevingen met `conda env list` en verwijder ze met `conda env remove -n <environmentname>` .
+      
+* **automl_setup_linux. sh mislukt**: als automl_setup_linus. sh mislukt bij Ubuntu Linux met de fout: `unable to execute 'gcc': No such file or directory`-
+  1. Zorg ervoor dat de uitgaande poorten 53 en 80 zijn ingeschakeld. Op een virtuele machine van Azure kunt u dit doen vanuit de Azure Portal door de virtuele machine te selecteren en op netwerken te klikken.
+  2. Voer de volgende opdracht uit: `sudo apt-get update`
+  3. Voer de volgende opdracht uit: `sudo apt-get install build-essential --fix-missing`
+  4. `automl_setup_linux.sh`Opnieuw uitvoeren
+
+* **Configuration. ipynb mislukt**:
+  * Voor lokale Conda moet u er eerst voor zorgen dat automl_setup is uitgevoerd.
+  * Zorg ervoor dat de subscription_id juist is. Zoek de subscription_id in het Azure Portal door alle services te selecteren en vervolgens op abonnementen. De tekens ' < ' en ' > ' mogen niet worden opgenomen in de subscription_id waarde. `subscription_id = "12345678-90ab-1234-5678-1234567890abcd"`Heeft bijvoorbeeld een geldige indeling.
+  * Zorg ervoor dat Inzender of eigenaar toegang heeft tot het abonnement.
+  * Controleer of de regio een van de ondersteunde regio's is: `eastus2` , `eastus` , `westcentralus` , `southeastasia` , `westeurope` , `australiaeast` , `westus2` , `southcentralus` .
+  * Zorg ervoor dat u toegang tot de regio hebt met behulp van de Azure Portal.
+  
+* **`import AutoMLConfig` mislukt**: er zijn pakket wijzigingen in de geautomatiseerde machine learning versie 1.0.76. hiervoor moet de vorige versie worden verwijderd voordat de nieuwe versie kan worden bijgewerkt. Als de `ImportError: cannot import name AutoMLConfig` is aangetroffen na een upgrade van een SDK-versie vóór v 1.0.76 naar v 1.0.76 of hoger, lost u de fout op door het volgende uit te voeren: `pip uninstall azureml-train automl` en vervolgens `pip install azureml-train-auotml` . Het script automl_setup. cmd doet dit automatisch. 
+
+* **Workspace.from_config mislukt**: als de aanroepen ws = Workspace.from_config () mislukken
+  1. Controleer of de configuratie. ipynb-notebook is uitgevoerd.
+  2. Als het notitie blok wordt uitgevoerd vanuit een map die zich niet in de map bevindt waar de `configuration.ipynb` was uitgevoerd, kopieert u de map aml_config en het bestand config.jsop dat item zich in de nieuwe map. Workspace.from_config leest de config.jsop voor de notitieblokmap of de bovenliggende map.
+  3. Als er een nieuw abonnement, een resource groep, werk ruimte of regio wordt gebruikt, moet u ervoor zorgen dat u het `configuration.ipynb` notitie blok opnieuw uitvoert. Het is niet mogelijk om config.jsrechtstreeks te wijzigen als de werk ruimte al bestaat in de opgegeven resource groep onder het opgegeven abonnement.
+  4. Als u de regio wilt wijzigen, wijzigt u de werk ruimte, de resource groep of het abonnement. `Workspace.create` Er wordt geen werk ruimte gemaakt of bijgewerkt als deze al bestaat, zelfs als de opgegeven regio verschillend is.
+  
+* **Voorbeeld notitieblok mislukt**: als een voor beeld van een notebook mislukt met een fout die eigenschap, methode of bibliotheek niet bestaat:
+  * Zorg ervoor dat de juiste kernel is geselecteerd in de Jupyter Notebook. De kernel wordt weer gegeven in de rechter bovenhoek van de notitie blok pagina. De standaard waarde is azure_automl. De kernel wordt opgeslagen als onderdeel van het notitie blok. Als u overschakelt naar een nieuwe Conda-omgeving, moet u dus de nieuwe kernel in het notitie Blok selecteren.
+      * Voor Azure Notebooks moet het python 3,6 zijn. 
+      * Voor lokale Conda-omgevingen moet dit de Conda-omgevings naam zijn die u hebt opgegeven in automl_setup.
+  * Zorg ervoor dat het notitie blok voor de SDK-versie is die u gebruikt. U kunt de SDK-versie controleren door `azureml.core.VERSION` in een Jupyter notebook-cel uit te voeren. U kunt de vorige versie van de voorbeeld notitieblokken downloaden van GitHub door op de knop te klikken `Branch` , het tabblad te selecteren `Tags` en vervolgens de versie te selecteren.
+
+* **`import numpy` mislukt in Windows**: sommige Windows-omgevingen zien een fout bij het laden van numpy met de meest recente python-versie 3.6.8. Als u dit probleem ziet, probeert u met python-versie 3.6.7.
+
+* **`import numpy` mislukt**: Controleer de tensor flow-versie in de Automated ml Conda-omgeving. Ondersteunde versies zijn < 1,13. Verwijder tensor flow uit de omgeving als de versie >= 1,13 is. U kunt de versie van tensor flow controleren en de installatie als volgt verwijderen:
+  1. Start een opdracht shell, activeer de Conda-omgeving waar automatisch ml-pakketten worden geïnstalleerd.
+  2. Voer `pip freeze` in en zoek naar `tensorflow` , indien gevonden, de weer gegeven versie moet < 1,13
+  3. Als de vermelde versie geen ondersteunde versie is, `pip uninstall tensorflow` typt u in de opdracht shell en voert u y in voor bevestiging.
+  
+ * **Uitvoeren mislukt met `jwt.exceptions.DecodeError`**: exact fout bericht: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` . 
+ 
+    U kunt een upgrade uitvoeren naar de nieuwste versie van de AutoML SDK: `pip install -U azureml-sdk[automl]` . 
+    
+    Als dat niet haalbaar is, controleert u de versie van PyJWT. Ondersteunde versies zijn < 2.0.0. Verwijder PyJWT uit de omgeving als de versie >= 2.0.0 is. U kunt de versie van PyJWT controleren, de juiste versie als volgt verwijderen en installeren:
+    1. Start een opdracht shell, activeer de Conda-omgeving waar automatisch ml-pakketten worden geïnstalleerd.
+    2. Voer `pip freeze` in en zoek naar `PyJWT` , indien gevonden, de weer gegeven versie < 2.0.0
+    3. Als de vermelde versie geen ondersteunde versie is, `pip uninstall PyJWT` typt u in de opdracht shell en voert u y in voor bevestiging.
+    4. Installeren met `pip install 'PyJWT<2.0.0'` .
 
 ## <a name="next-steps"></a>Volgende stappen
 

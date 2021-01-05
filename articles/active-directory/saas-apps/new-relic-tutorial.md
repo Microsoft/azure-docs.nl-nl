@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 3e93b5c4fd2a169da5cdcc42aaabdd29a2c22bb7
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 2a7d191af78da417d0ee2ade12b1576912643b6c
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92522457"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827447"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-by-account"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met New Relic by Account
 
@@ -48,15 +48,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van New Relic by Account met Microsoft Azure Active Directory moet u New Relic by Account vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **New Relic by Account** in het zoekvak.
 1. Selecteer **New Relic by Account** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-new-relic-by-account"></a>Eenmalige aanmelding van Azure AD configureren en testen voor New Relic by Account
 
-Configureer en test eenmalige aanmelding van Azure AD met New Relic by Account met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in New Relic by Account.
+Configureer en test eenmalige aanmelding van Azure AD met New Relic by Account met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in New Relic by Account.
 
 Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met New Relic by Account te configureren en te testen:
 
@@ -71,8 +71,8 @@ Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met New Reli
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **New Relic by Account** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **New Relic by Account** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -80,7 +80,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon:
 
-    `https://rpm.newrelic.com/accounts/{acc_id}/sso/saml/login`. Vergeet niet om `acc_id` te vervangen door uw eigen account-id van New Relic by Account.
+    `https://rpm.newrelic.com:443/accounts/{acc_id}/sso/saml/finalize`. Vergeet niet om `acc_id` te vervangen door uw eigen account-id van New Relic by Account.
 
     b. Typ een URL in het vak **Id (Entiteits-id)** : `rpm.newrelic.com`
 
@@ -102,41 +102,41 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot New Relic by Account.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **New Relic by Account** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-new-relic-by-account-sso"></a>Eenmalige aanmelding configureren voor New Relic by Account
 
-1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van **New Relic by Account** .
+1. Meld u in een andere browser als beheerder aan bij de bedrijfssite van **New Relic by Account**.
 
-2. Klik in het menu bovenaan op **Accountinstellingen** .
+2. Klik in het menu bovenaan op **Accountinstellingen**.
    
     ![Schermopname van de welkomstpagina met Accountinstellingen geselecteerd.](./media/new-relic-tutorial/ic797036.png "Accountinstellingen")
 
-3. Klik op het tabblad **Security and authentication** en klik vervolgens op het tabblad **Single sign on** .
+3. Klik op het tabblad **Security and authentication** en klik vervolgens op het tabblad **Single sign on**.
    
     ![Single Sign-On](./media/new-relic-tutorial/ic797037.png "Eenmalige aanmelding")
 
@@ -150,17 +150,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
    
     c. Plak in het tekstvak **Logout landing URL** de waarde van de **URL voor afmelden** die u hebt gekopieerd uit Azure Portal.
 
-    d. Klik op **Save my changes** .
+    d. Klik op **Save my changes**.
 
 ### <a name="create-new-relic-by-account-test-user"></a>Nieuwe New Relic by Account-testgebruiker maken
 
-1. Meld u als beheerder aan bij uw bedrijfssite van **New Relic by Account** .
+1. Meld u als beheerder aan bij uw bedrijfssite van **New Relic by Account**.
 
-2. Klik in het menu bovenaan op **Accountinstellingen** .
+2. Klik in het menu bovenaan op **Accountinstellingen**.
    
     ![Schermopname met Accountinstellingen geselecteerd in de welkomstpagina.](./media/new-relic-tutorial/ic797040.png "Accountinstellingen")
 
-3. Klik in het linkernavigatievenster op **Account** , klik op **Summary** en klik vervolgens op **Add user** .
+3. Klik in het linkernavigatievenster op **Account**, klik op **Summary** en klik vervolgens op **Add user**.
    
     ![Schermopname van het deelvenster Samenvatting, waar u Gebruiker toevoegen kunt selecteren.](./media/new-relic-tutorial/ic797041.png "Accountinstellingen")
 
@@ -170,9 +170,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
    
     a. Typ in het tekstvak **Email** het e-mailadres van een geldige Azure Active Directory-gebruiker die u wilt inrichten.
 
-    b. Bij **Role** selecteert u **User** .
+    b. Bij **Role** selecteert u **User**.
 
-    c. Klik op **Add this user** .
+    c. Klik op **Add this user**.
 
 > [!NOTE]
 > U kunt alle hulpprogramma's voor het maken van gebruikersaccounts of API's van New Relic by Account gebruiken om Azure AD-gebruikersaccounts in te richten.

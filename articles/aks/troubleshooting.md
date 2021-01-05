@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen bij
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: d157dd6b3347c8fbfd8712fa20d52cedb425f47f
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 02ff1581bafe62a092be87d16df51c7ca8c020b4
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751475"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830935"
 ---
 # <a name="aks-troubleshooting"></a>AKS-problemen oplossen
 
@@ -197,7 +197,7 @@ Wanneer een kubernetes-cluster op Azure (AKS of Nee) een regel matig omhoog/omla
 Service returned an error. Status=429 Code=\"OperationNotAllowed\" Message=\"The server rejected the request because too many requests have been received for this subscription.\" Details=[{\"code\":\"TooManyRequests\",\"message\":\"{\\\"operationGroup\\\":\\\"HighCostGetVMScaleSet30Min\\\",\\\"startTime\\\":\\\"2020-09-20T07:13:55.2177346+00:00\\\",\\\"endTime\\\":\\\"2020-09-20T07:28:55.2177346+00:00\\\",\\\"allowedRequestCount\\\":1800,\\\"measuredRequestCount\\\":2208}\",\"target\":\"HighCostGetVMScaleSet30Min\"}] InnerError={\"internalErrorCode\":\"TooManyRequestsReceived\"}"}
 ```
 
-Deze beperkings fouten worden [hier](../azure-resource-manager/management/request-limits-and-throttling.md) gedetailleerd beschreven [here](../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md)
+Deze beperkings fouten worden [hier](../azure-resource-manager/management/request-limits-and-throttling.md) gedetailleerd beschreven [](../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md)
 
 De aanbeveling van het technische team van AKS is om ervoor te zorgen dat u versie ten minste 1.18. x gebruikt, die veel verbeteringen bevat. Meer informatie vindt u [hier](https://github.com/Azure/AKS/issues/1413) in deze [verbeteringen.](https://github.com/kubernetes-sigs/cloud-provider-azure/issues/247)
 
@@ -439,7 +439,7 @@ Bij Kubernetes-versies **ouder dan 1.15.0**, wordt er mogelijk een fout bericht 
 
 ### <a name="why-do-upgrades-to-kubernetes-116-fail-when-using-node-labels-with-a-kubernetesio-prefix"></a>Waarom worden upgrades naar Kubernetes 1,16 mislukt wanneer u knooppunt labels gebruikt met een kubernetes.io-voor voegsel
 
-Vanaf Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) kan [alleen een gedefinieerde subset van labels met het voor voegsel kubernetes.io](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/0000-20170814-bounding-self-labeling-kubelets.md#proposal) worden toegepast door de kubelet op knoop punten. AKS kan geen actieve labels namens u zonder toestemming worden verwijderd, omdat dit kan leiden tot uitval tijd voor werk belastingen.
+Vanaf Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) kan [alleen een gedefinieerde subset van labels met het voor voegsel kubernetes.io](https://v1-18.docs.kubernetes.io/docs/concepts/overview/working-with-objects/labels/) worden toegepast door de kubelet op knoop punten. AKS kan geen actieve labels namens u zonder toestemming worden verwijderd, omdat dit kan leiden tot uitval tijd voor werk belastingen.
 
 Als gevolg hiervan kunt u het volgende doen om dit probleem te verhelpen:
 

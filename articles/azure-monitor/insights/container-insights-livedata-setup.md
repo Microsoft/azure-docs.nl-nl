@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u de real-time-weer gave van co
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: references_regions
-ms.openlocfilehash: 45ed931f734e874e81af837fff5c4a326349cb21
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 62bc7613995296504dfba551cdb631ac3386aa75
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95530179"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830782"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>De functie voor live data (preview) instellen
 
@@ -48,7 +48,7 @@ De Azure Portal vraagt u uw aanmeldings referenties voor een Azure Active Direct
 
 Als u wilt voor komen dat er extra configuratie wijzigingen worden toegepast om de Kubernetes- **clusterUser** toegang te geven tot de functie Live data (preview) nadat [Kubernetes RBAC](#configure-kubernetes-rbac-authorization) -autorisatie is ingeschakeld, heeft aks een nieuwe Kubernetes-cluster functie binding met de naam **clusterMonitoringUser** toegevoegd. Deze binding van de cluster functie heeft alle machtigingen die nodig zijn om toegang te krijgen tot de Kubernetes-API en de eind punten voor het gebruik van de functie Live data (preview).
 
-Als u de functie Live data (preview) wilt gebruiken met deze nieuwe gebruiker, moet u lid zijn van de rol [Inzender](../../role-based-access-control/built-in-roles.md#contributor) op de AKS-cluster bron. Azure Monitor voor containers, wanneer ingeschakeld, is geconfigureerd voor verificatie met behulp van deze gebruiker. Als de clusterMonitoringUser-functie binding niet bestaat in een cluster, wordt in plaats daarvan **clusterUser** gebruikt voor verificatie.
+Als u de functie Live data (preview) wilt gebruiken met deze nieuwe gebruiker, moet u lid zijn van de [Azure Kubernetes service-cluster gebruiker](../../role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role) of [Inzender](../../role-based-access-control/built-in-roles.md#contributor) functie op de AKS-cluster bron. Azure Monitor voor containers, wanneer ingeschakeld, is geconfigureerd om standaard te verifiëren met behulp van de clusterMonitoringUser. Als de clusterMonitoringUser-functie binding niet bestaat in een cluster, wordt in plaats daarvan **clusterUser** gebruikt voor verificatie. Inzender geeft u toegang tot de clusterMonitoringUser (als deze bestaat) en de Azure Kuberenetes service-cluster gebruiker krijgt u toegang tot de clusterUser. Een van deze twee rollen geeft voldoende toegangs rechten voor het gebruik van deze functie.
 
 AKS heeft deze nieuwe functie binding in januari 2020 vrijgegeven, zodat de clusters die zijn gemaakt voor de januari 2020 niet. Als u een cluster hebt dat is gemaakt vóór 2020 januari, kan de nieuwe **clusterMonitoringUser** worden toegevoegd aan een bestaand cluster door een put-bewerking uit te voeren op het cluster, of een andere bewerking uit te voeren op het cluster waarmee een put-bewerking op het cluster wordt uitgevoerd, zoals het bijwerken van de Cluster versie.
 

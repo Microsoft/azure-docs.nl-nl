@@ -6,13 +6,13 @@ ms.assetid: 66774bde-13f5-45d0-9a70-4e9536a4f619
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: ccompy
-ms.custom: seodec18, fasttrack-edit, devx-track-azurecli
-ms.openlocfilehash: c7900341cfcda52dafcb269b833f5ad8dd0f55b7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: seodec18, fasttrack-edit
+ms.openlocfilehash: 16f6a0660fa9aa20f636ee412f3f337bd5dea9b5
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92739755"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825977"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Hybride verbindingen in Azure App Service
 
@@ -20,7 +20,7 @@ Hybride verbindingen is zowel een service in azure als een functie in Azure App 
 
 In App Service kan Hybride verbindingen worden gebruikt om toegang te krijgen tot toepassings bronnen in elk netwerk waarmee uitgaande oproepen naar Azure via poort 443 kunnen worden gemaakt. Hybride verbindingen biedt toegang vanuit uw app tot een TCP-eind punt en biedt geen nieuwe manier om toegang te krijgen tot uw app. De hybride verbinding wordt gebruikt in App Service en is afgestemd op één combi natie van TCP-host en poort. Hiermee kunnen uw apps toegang krijgen tot bronnen in elk besturings systeem, op voor waarde dat het een TCP-eind punt is. Met de functie Hybride verbindingen weet u niet of u weet wat het toepassings protocol is of wat u opent. Het biedt gewoon toegang tot het netwerk.  
 
-## <a name="how-it-works"></a>Hoe het werkt ##
+## <a name="how-it-works"></a>Uitleg ##
 Hybride verbindingen moet een relay-agent worden geïmplementeerd, waar deze zowel het gewenste eind punt als aan Azure kan bereiken. De relay-agent, Hybrid Connection Manager (HCM), belt naar Azure Relay via poort 443. Vanuit de Web-App-site maakt de App Service-infra structuur ook verbinding met Azure Relay namens de toepassing. Via de gekoppelde verbindingen kan uw app toegang krijgen tot het gewenste eind punt. De verbinding maakt gebruik van TLS 1,2 voor beveiliging en SAS-sleutels (Shared Access Signature) voor verificatie en autorisatie.    
 
 ![Diagram van de stroom op hoog niveau van hybride verbinding][1]
@@ -56,15 +56,15 @@ Wat u niet kunt doen met Hybride verbindingen zijn onder andere:
 
 ## <a name="add-and-create-hybrid-connections-in-your-app"></a>Hybride verbindingen toevoegen en maken in uw app ##
 
-Als u een hybride verbinding wilt maken, gaat u naar de [Azure Portal][portal] en selecteert u uw app. Selecteer **netwerken**  >  **Configureer uw hybride verbindings eindpunten** . Hier ziet u de Hybride verbindingen die zijn geconfigureerd voor uw app.  
+Als u een hybride verbinding wilt maken, gaat u naar de [Azure Portal][portal] en selecteert u uw app. Selecteer **netwerken**  >  **Configureer uw hybride verbindings eindpunten**. Hier ziet u de Hybride verbindingen die zijn geconfigureerd voor uw app.  
 
 ![Scherm opname van de lijst met hybride verbindingen][2]
 
-Selecteer **[+] hybride verbinding toevoegen** om een nieuwe hybride verbinding toe te voegen.  U ziet een lijst met de Hybride verbindingen die u al hebt gemaakt. Als u een of meer ervan aan uw app wilt toevoegen, selecteert u de gewenste items en selecteert u **geselecteerde hybride verbinding toevoegen** .  
+Selecteer **[+] hybride verbinding toevoegen** om een nieuwe hybride verbinding toe te voegen.  U ziet een lijst met de Hybride verbindingen die u al hebt gemaakt. Als u een of meer ervan aan uw app wilt toevoegen, selecteert u de gewenste items en selecteert u **geselecteerde hybride verbinding toevoegen**.  
 
 ![Scherm opname van de portal voor hybride verbindingen][3]
 
-Als u een nieuwe hybride verbinding wilt maken, selecteert u **nieuwe hybride verbinding maken** . Geef het volgende op: 
+Als u een nieuwe hybride verbinding wilt maken, selecteert u **nieuwe hybride verbinding maken**. Geef het volgende op: 
 
 - Naam van de hybride verbinding.
 - Hostnaam van eind punt.
@@ -75,7 +75,7 @@ Als u een nieuwe hybride verbinding wilt maken, selecteert u **nieuwe hybride ve
 
 Elke hybride verbinding is gekoppeld aan een Service Bus naam ruimte en elke Service Bus naam ruimte bevindt zich in een Azure-regio. Het is belang rijk om een Service Bus naam ruimte in dezelfde regio als uw app te gebruiken om te voor komen dat de netwerk latentie wordt geduurd.
 
-Als u uw hybride verbinding uit uw app wilt verwijderen, klikt u er met de rechter muisknop op en selecteert u **verbinding verbreken** .  
+Als u uw hybride verbinding uit uw app wilt verwijderen, klikt u er met de rechter muisknop op en selecteert u **verbinding verbreken**.  
 
 Wanneer een hybride verbinding wordt toegevoegd aan uw app, kunt u de details ervan weer geven door deze te selecteren. 
 
@@ -97,7 +97,7 @@ App Service Hybride verbindingen zijn alleen beschikbaar in Sku's Basic, Standar
 | Basic | 5 per abonnement |
 | Standard | 25 per abonnement |
 | PremiumV2 | 200 per app |
-| Isolated | 200 per app |
+| Geïsoleerd | 200 per app |
 
 In de gebruikers interface van het App Service plan wordt weer gegeven hoeveel Hybride verbindingen er worden gebruikt en door welke apps.  
 
@@ -113,7 +113,7 @@ Naast de vereiste van een App Service plan SKU, zijn er extra kosten verbonden a
 
 ## <a name="hybrid-connection-manager"></a>Hybrid Connection Manager ##
 
-De functie Hybride verbindingen vereist een relay-agent in het netwerk dat als host fungeert voor uw hybride verbindings eindpunt. Deze relay-agent wordt de Hybrid Connection Manager (HCM) genoemd. Als u HCM wilt downloaden, selecteert u vanuit uw app in het [Azure Portal][portal] **netwerken**  >  **uw hybride verbindings-eind punten configureren** .  
+De functie Hybride verbindingen vereist een relay-agent in het netwerk dat als host fungeert voor uw hybride verbindings eindpunt. Deze relay-agent wordt de Hybrid Connection Manager (HCM) genoemd. Als u HCM wilt downloaden, selecteert u vanuit uw app in het [Azure Portal][portal] **netwerken**  >  **uw hybride verbindings-eind punten configureren**.  
 
 Dit hulp programma kan worden uitgevoerd op Windows Server 2012 en hoger. De HCM wordt uitgevoerd als een service en maakt verbinding met het uitgaande verkeer naar Azure Relay op poort 443.  
 
@@ -126,7 +126,7 @@ Wanneer u de HCM-gebruikers interface start, is het eerste wat u ziet een tabel 
 Een of meer Hybride verbindingen toevoegen aan uw HCM:
 
 1. Start de HCM-gebruikers interface.
-2. Selecteer **een andere hybride verbinding configureren** .
+2. Selecteer **een andere hybride verbinding configureren**.
 ![Scherm opname van nieuwe Hybride verbindingen configureren][8]
 
 1. Meld u aan met uw Azure-account om uw Hybride verbindingen beschikbaar te stellen voor uw abonnementen. De HCM blijft uw Azure-account verder gebruiken dan dat. 
@@ -134,7 +134,7 @@ Een of meer Hybride verbindingen toevoegen aan uw HCM:
 1. Selecteer het Hybride verbindingen dat u door de HCM wilt laten door sturen.
 ![Scherm opname van Hybride verbindingen][9]
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 U kunt nu de Hybride verbindingen zien die u hebt toegevoegd. U kunt ook de geconfigureerde hybride verbinding selecteren om de details te bekijken.
 
@@ -160,7 +160,7 @@ Als u wilt dat iemand buiten uw abonnement als host voor een HCM-exemplaar voor 
 
 ![Een hybride verbinding hand matig toevoegen][11]
 
-### <a name="upgrade"></a>Upgrade ###
+### <a name="upgrade"></a>Upgraden ###
 
 De Hybrid Connection Manager bevatten periodieke updates om problemen op te lossen of verbeteringen aan te brengen. Wanneer er upgrades worden uitgebracht, wordt een pop-upvenster weer gegeven in de HCM-gebruikers interface. Wanneer de upgrade wordt toegepast, worden de wijzigingen toegepast en wordt de HCM opnieuw gestart. 
 

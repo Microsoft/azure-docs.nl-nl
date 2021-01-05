@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/05/2020
-ms.openlocfilehash: 783431c4888a68e24cf3d2603c541c4797ea65d8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 12/29/2020
+ms.openlocfilehash: 34a5dfb44ee78245b56c1774701f48b3b8a494df
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741096"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827475"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Een integratieserviceomgeving (ISE) maken met behulp van de Logic Apps REST API
 
@@ -27,7 +27,7 @@ Raadpleeg de volgende artikelen voor meer informatie over andere manieren om een
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Dezelfde vereisten [prerequisites](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [toegangs eisen](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
+* Dezelfde vereisten [](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [toegangs eisen](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
 
 * Alle extra resources die u met uw ISE wilt gebruiken, zodat u de informatie in de ISE-definitie kunt toevoegen, bijvoorbeeld: 
 
@@ -69,9 +69,7 @@ Neem de volgende eigenschappen op in de aanvraag header:
 
 Geef in de hoofd tekst van de aanvraag de resource definitie op die moet worden gebruikt voor het maken van uw ISE, met inbegrip van informatie over aanvullende mogelijkheden die u wilt inschakelen voor uw ISE, bijvoorbeeld:
 
-* Als u een ISE wilt maken die het gebruik van een zelfondertekend certificaat dat is geïnstalleerd op de `TrustedRoot` locatie, neemt u het `certificates` object op in de `properties` sectie ISE-definitie, zoals verderop in dit artikel wordt beschreven.
-
-  Als u deze mogelijkheid wilt inschakelen op een bestaande ISE, kunt u een PATCH aanvraag alleen voor het `certificates` object verzenden. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
+* Als u een ISE wilt maken die het gebruik van een zelfondertekend certificaat en certificaat dat is uitgegeven door een bedrijfs certificerings instantie die is geïnstalleerd op de `TrustedRoot` locatie, neemt u het `certificates` object op in de sectie ISE definition `properties` , zoals in dit artikel verderop wordt beschreven.
 
 * Als u een ISE wilt maken die gebruikmaakt van een door het systeem toegewezen of door de gebruiker toegewezen beheerde identiteit, neemt u het `identity` object op met het beheerde identiteits type en andere vereiste informatie in de ISE-definitie, zoals verderop in dit artikel wordt beschreven.
 
@@ -123,7 +121,7 @@ Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschapp
             }
          ]
       },
-      // Include `certificates` object to enable self-signed certificate support
+      // Include `certificates` object to enable self-signed certiificate and certificate issued by Enterprise Certificate Authority
       "certificates": {
          "testCertificate": {
             "publicCertificate": "{base64-encoded-certificate}",
@@ -183,6 +181,45 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
             "publicCertificate": "LS0tLS1CRUdJTiBDRV...",
             "kind": "TrustedRoot"
          }
+      }
+   }
+}
+```
+## <a name="add-custom-root-certificates"></a>Aangepaste basis certificaten toevoegen
+
+U gebruikt vaak een ISE om verbinding te maken met aangepaste services op uw virtuele netwerk of on-premises. Deze aangepaste services worden vaak beschermd door een certificaat dat is uitgegeven door een aangepaste basis certificerings instantie, zoals een bedrijfs certificerings instantie of een zelfondertekend certificaat. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Voor uw ISE om verbinding te maken met deze services via Transport Layer Security (TLS), moet uw ISE toegang hebben tot deze basis certificaten. Als u uw ISE wilt bijwerken met een aangepast vertrouwd basis certificaat, maakt u deze HTTPS- `PATCH` aanvraag:
+
+`PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
+
+Lees de volgende overwegingen voordat u deze bewerking uitvoert:
+
+* Zorg ervoor dat u het basis certificaat *en* alle tussenliggende certificaten uploadt. Het maximum aantal certificaten is 20.
+
+* Het uploaden van basis certificaten is een vervangings bewerking waarbij de meest recente upload het vorige uploaden overschrijft. Als u bijvoorbeeld een aanvraag verzendt die één certificaat uploadt en vervolgens een andere aanvraag verzendt om een ander certificaat te uploaden, gebruikt uw ISE alleen het tweede certificaat. Als u beide certificaten moet gebruiken, voegt u deze samen in dezelfde aanvraag toe.  
+
+* Het uploaden van basis certificaten is een asynchrone bewerking die enige tijd kan duren. Als u de status of het resultaat wilt controleren, kunt u een aanvraag verzenden met `GET` behulp van dezelfde URI. Het antwoord bericht bevat een `provisioningState` veld dat de `InProgress` waarde retourneert wanneer de upload bewerking nog actief is. Wanneer `provisioningState` de waarde is `Succeeded` , is de upload bewerking voltooid.
+
+#### <a name="request-body-syntax-for-adding-custom-root-certificates"></a>Syntaxis van de aanvraag tekst voor het toevoegen van aangepaste basis certificaten
+
+Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschappen worden beschreven die moeten worden gebruikt wanneer u basis certificaten toevoegt:
+
+```json
+{
+   "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
+   "name": "{ISE-name}",
+   "type": "Microsoft.Logic/integrationServiceEnvironments",
+   "location": "{Azure-region}",
+   "properties": {
+      "certificates": {
+         "testCertificate1": {
+            "publicCertificate": "{base64-encoded-certificate}",
+            "kind": "TrustedRoot"
+         },
+         "testCertificate2": {
+            "publicCertificate": "{base64-encoded-certificate}",
+            "kind": "TrustedRoot"
+         }
+      }
    }
 }
 ```

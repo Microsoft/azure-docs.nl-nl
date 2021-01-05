@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 02/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 3e4a770a33f5cdb3c3b2de09cbcb8431b2fc3fbb
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 09612ff3d86c669801f9e824d367a2b9a5bb10ac
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968652"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830646"
 ---
 # <a name="red-hat-workloads-on-azure"></a>Red Hat-workloads op Azure
 
@@ -36,7 +36,7 @@ U kunt de betalen per gebruik-installatiekopieën gebruiken als u zich geen zorg
 ### <a name="red-hat-gold-images"></a>Red Hat Gold-installatiekopieën
 
 Azure biedt ook Red Hat Gold-installatiekopieën (`rhel-byos`). Deze installatiekopieën kunnen nuttig zijn voor klanten die bestaande Red Hat-abonnementen hebben en ze willen gebruiken in Azure. U bent verplicht uw bestaande Red Hat-abonnementen voor Red Hat Cloud Access in te schakelen voordat u deze kunt gebruiken in Azure. Toegang tot deze installatiekopieën wordt automatisch verleend wanneer uw Red Hat-abonnementen zijn ingeschakeld voor Cloudtoegang en voldoen aan de geschiktheidsvereisten. Door gebruik te maken van deze installatiekopieën kan een klant dubbele facturering voorkomen die kan ontstaan door het gebruik van de betalen per gebruik-installatiekopie.
-* Lees hoe u uw [Red Hat-abonnementen kunt gebruiken voor Cloud-toegang met Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs).
+* Lees hoe u uw [Red Hat-abonnementen kunt gebruiken voor Cloud-toegang met Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/enabling-and-maintaining-subs_cloud-access).
 * Meer informatie over [het vinden van de Red Hat Gold-installatiekopieën in Azure Portal, Azure CLI of de PowerShell-cmdlet](./byos.md).
 
 > [!NOTE]

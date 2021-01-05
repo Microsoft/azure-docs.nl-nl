@@ -10,13 +10,13 @@ ms.author: aashishb
 author: aashishb
 ms.date: 11/18/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 872958f87e7d75427d5939aed73314920cfaf3ea
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.custom: how-to
+ms.openlocfilehash: 86cd5a5cbbb17dc3d3e4d56e4267be2718f6081d
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631088"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830867"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -73,14 +73,17 @@ Wanneer u een certificaat aanvraagt, moet u de FQDN-namen opgeven van het adres 
 
 ## <a name="enable-tls-and-deploy"></a><a id="enable"></a> TLS inschakelen en implementeren
 
-Als u de service wilt implementeren (of opnieuw wilt implementeren) met TLS ingeschakeld, stelt u de para meter *ssl_enabled* in op ' True ', waar dit van toepassing is. Stel de para meter *ssl_certificate* in op de waarde van het *certificaat* bestand. Stel de *ssl_key* in op de waarde van het *sleutel* bestand.
+**Voor AKS-implementatie** kunt u TLS-beëindiging inschakelen wanneer u [een AKS-cluster maakt of koppelt in de](how-to-create-attach-kubernetes.md) AML-werk ruimte. Tijdens de implementatie van het AKS-model kunt u TLS-beëindiging uitschakelen met het implementatie configuratie object, anders wordt voor alle implementaties van AKS-modellen standaard TLS-beëindiging ingeschakeld op AKS cluster tijd maken of koppelen.
+
+Voor ACI-implementatie kunt u TLS-beëindiging inschakelen bij model implementatie tijd met configuratie object implementatie.
+
 
 ### <a name="deploy-on-azure-kubernetes-service"></a>Implementeren in azure Kubernetes service
 
   > [!NOTE]
   > De informatie in deze sectie is ook van toepassing wanneer u een beveiligde webservice voor de ontwerp functie implementeert. Als u niet bekend bent met het gebruik van de python-SDK, raadpleegt u [Wat is de Azure machine learning SDK voor python?](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
 
-Zowel **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** als **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** retour neren een configuratie object dat een **enable_ssl** -methode heeft, en u kunt **enable_ssl** methode gebruiken om TLS in te scha kelen.
+Wanneer u [een AKS-cluster maakt of koppelt in de](how-to-create-attach-kubernetes.md) AML-werk ruimte, kunt u TLS-beëindiging inschakelen met **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** en **[AksCompute.attach_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** -configuratie objecten. Beide methoden retour neren een configuratie object dat een **enable_ssl** methode heeft, en u kunt **enable_ssl** methode gebruiken om TLS in te scha kelen.
 
 U kunt TLS inschakelen met behulp van micro soft-certificaat of een aangepast certificaat dat is gekocht bij de certificerings instantie. 
 

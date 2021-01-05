@@ -10,12 +10,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: fbf8c1987a66cad6d9d9bc9dab829af4b42a224e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 236390529ddaf84416448138d7b5bdf31caf681b
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971554"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827492"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Diagnostische gegevens over opstarten gebruiken om problemen met virtuele machines in azure op te lossen
 
@@ -52,7 +52,7 @@ Controleer op het tabblad **beheer** in het gedeelte **bewaking** of **Diagnosti
 ![VM maken](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
 
 > [!NOTE]
-> De functie diagnostische gegevens over opstarten biedt geen ondersteuning voor Premium Storage-account typen of zone redundent. Als u het Premium-opslag account gebruikt voor diagnostische gegevens over opstarten, kan de StorageAccountTypeNotSupported-fout worden weer gegeven wanneer u de virtuele machine start.
+> De functie diagnostische gegevens over opstarten biedt geen ondersteuning voor het Premium Storage-account of het zone type redundante opslag. Als u het Premium-opslag account gebruikt voor diagnostische gegevens over opstarten, kan de StorageAccountTypeNotSupported-fout worden weer gegeven wanneer u de virtuele machine start.
 >
 
 ### <a name="deploying-from-an-azure-resource-manager-template"></a>Implementeren vanuit een Azure Resource Manager sjabloon
@@ -86,8 +86,8 @@ Voor meer informatie over het implementeren van resources met behulp van sjablon
 Voer de volgende stappen uit om diagnostische gegevens over opstarten op een bestaande virtuele machine in te scha kelen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en selecteer vervolgens de virtuele machine.
-2. Selecteer in de sectie **ondersteuning en probleem oplossing** de optie **Diagnostische gegevens over opstarten**en selecteer vervolgens het tabblad **instellingen** .
-3. In de instellingen voor **Diagnostische gegevens over opstarten** wijzigt u de status in **op**aan en selecteert u in de vervolg keuzelijst **opslag account** een opslag account. 
+2. Selecteer in de sectie **ondersteuning en probleem oplossing** de optie **Diagnostische gegevens over opstarten** en selecteer vervolgens het tabblad **instellingen** .
+3. In de instellingen voor **Diagnostische gegevens over opstarten** wijzigt u de status in **op** aan en selecteert u in de vervolg keuzelijst **opslag account** een opslag account. 
 4. Sla de wijziging op.
 
     ![Bestaande VM bijwerken](./media/virtual-machines-common-boot-diagnostics/enable-for-existing-vm.png)

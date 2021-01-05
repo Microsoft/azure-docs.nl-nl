@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/29/2020
+ms.date: 12/29/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: aae822665702300064e82e80d74b5c2256423ea1
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1e6aaf1b37073bf93e0aca8237161bf11af3a872
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957279"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827220"
 ---
 # <a name="azure-proximity-placement-groups-for-optimal-network-latency-with-sap-applications"></a>Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen
 SAP-toepassingen die zijn gebaseerd op de architectuur van SAP NetWeaver of SAP S/4HANA, zijn gevoelig voor netwerk latentie tussen de SAP-toepassingslaag en de SAP-gegevenslaag. Deze gevoeligheid is het resultaat van de meeste bedrijfs logica die wordt uitgevoerd in de toepassingslaag. Omdat de SAP-toepassingslaag de bedrijfs logica uitvoert, worden query's naar de data base-laag met een hoge frequentie, met een snelheid van duizenden of tien tallen per seconde, uitgegeven. In de meeste gevallen is de aard van deze query's eenvoudig. Ze kunnen vaak worden uitgevoerd op de database laag in 500 micro seconden of minder.
@@ -42,6 +42,8 @@ Azure biedt [proximity placement groups](../../linux/co-location.md)om u de moge
 > - Alleen wanneer dit nodig is
 > - Alleen op granulatie van één SAP-systeem en niet voor een volledig systeem landschap of een volledig SAP-landschap
 > - Een manier om de verschillende VM-typen en het aantal Vm's binnen een proximity-plaatsings groep naar een minimum te beperken
+
+Stel dat u virtuele machines implementeert door Beschikbaarheidszones op te geven en dezelfde Beschikbaarheidszones te selecteren. de netwerk latentie tussen deze Vm's moet voldoende zijn voor het uitvoeren van SAP NetWeaver en S/4HANA-systemen met de prestaties en door voer. Deze veronderstelling is onafhankelijk van het feit of een bepaalde zone is opgebouwd uit één Data Center of meerdere data centers. De enige reden voor het gebruik van proximity placement groups in zonegebonden-implementaties is het geval dat u virtuele Azure-beschikbaarheids sets wilt toewijzen in combi natie met zonegebonden geïmplementeerde Vm's.
 
 
 ## <a name="what-are-proximity-placement-groups"></a>Wat zijn proximity placement groups? 

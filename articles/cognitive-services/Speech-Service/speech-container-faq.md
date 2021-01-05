@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a657f43ef2d889cad1608d34e9235b1d5e7cb576
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 85534d1f64b273e42a2ea063e67286ee7bb4a90a
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95894147"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827152"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Speech-Service containers
 
@@ -169,7 +169,7 @@ StatusCode: InvalidArgument,
 Details: Voice does not match.
 ```
 
-**Antwoord 2:** U moet de juiste spraak naam opgeven in de aanvraag. Dit is hoofdletter gevoelig. Raadpleeg de volledige toewijzing van de service naam. U moet gebruiken `en-US-JessaRUS` , omdat deze `en-US-JessaNeural` nu niet beschikbaar is in container versie van tekst naar spraak.
+**Antwoord 2:** U moet de juiste spraak naam opgeven in de aanvraag. Dit is hoofdletter gevoelig. Raadpleeg de volledige toewijzing van de service naam.
 
 **Fout 3:**
 
@@ -292,7 +292,7 @@ Helpt u bij het invullen van de volgende metrische test gegevens, waaronder welk
 
 | Eindpunt                                                | Functionele test                                                   | SDK | REST-API |
 |---------------------------------------------------------|-------------------------------------------------------------------|-----|----------|
-| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Yes      |
+| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Ja      |
 | `/speech/recognition/dictation/cognitiveservices/v1`    | Cognitive Services on-premises dicteren v1 WebSocket-eind punt        | Ja | Nee       |
 | `/speech/recognition/interactive/cognitiveservices/v1`  | Het Cognitive Services on-premises interactieve v1 WebSocket-eind punt  |     |          |
 | `/speech/recognition/conversation/cognitiveservices/v1` | Het on-premises RIP-WebSocket-eind punt van de cognitieve Services |     |          |
@@ -309,6 +309,8 @@ De tijdelijke oplossing is overschakelen naar het gebruik van doorlopende herken
 Voor uw code stelt u het eind punt in op `host:port` /Speech/Recognition/Interactive/cognitiveservices/v1
 
 Zie voor de verschillende modi spraak modi-Zie hieronder:
+
+## <a name="speech-modes---interactive-conversation-dictation"></a>Spraak modi-interactief, conversatie, dicteren
 
 [!INCLUDE [speech-modes](includes/speech-modes.md)]
 
@@ -401,13 +403,13 @@ Hoeveel gelijktijdige aanvragen wordt een 4-core, 4 GB RAM-ingang? Als we een vo
 |----------------|---------------------|---------------------|
 | Spraak naar tekst | 2 Core, 2 GB geheugen | 4-core, 4 GB geheugen |
 
-# <a name="custom-speech-to-text"></a>[Custom Speech-naar-tekst](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Aangepaste spraak-naar-tekst](#tab/cstt)
 
 | Container             | Minimum             | Aanbevolen         |
 |-----------------------|---------------------|---------------------|
-| Custom Speech-naar-tekst | 2 Core, 2 GB geheugen | 4-core, 4 GB geheugen |
+| Aangepaste spraak-naar-tekst | 2 Core, 2 GB geheugen | 4-core, 4 GB geheugen |
 
-# <a name="text-to-speech"></a>[Tekst-naar-spraak](#tab/tts)
+# <a name="text-to-speech"></a>[Tekst naar spraak](#tab/tts)
 
 | Container      | Minimum             | Aanbevolen         |
 |----------------|---------------------|---------------------|
@@ -558,6 +560,8 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 </summary>
 
 **Antwoord:** Er zijn drie eind punten in de spraak container voor verschillende gebruiks methoden, die als spraak modi worden gedefinieerd. Zie hieronder:
+
+## <a name="speech-modes"></a>Spraak modi
 
 [!INCLUDE [speech-modes](includes/speech-modes.md)]
 

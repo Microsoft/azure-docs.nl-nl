@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
 ms.date: 10/30/2020
-ms.openlocfilehash: bab84b12c871c621b5a317ba8b47f9b18c91bff3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: bd6ff46807c22309679ba7e8518685bb05cc77e2
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500186"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97830714"
 ---
 # <a name="deploy-enterprise-java-applications-to-azure-with-jboss-eap-on-red-hat-enterprise-linux"></a>Zakelijke Java-toepassingen implementeren in Azure met JBoss EAP op Red Hat Enterprise Linux
 
@@ -152,7 +152,7 @@ Zie [Red Hat Enterprise Linux-prijzen](https://azure.microsoft.com/pricing/detai
 Als u BYOS wilt gebruiken voor het RHEL-besturingssysteem, moet u een geldig Red Hat-abonnement hebben met rechten om het RHEL-besturingssysteem in Azure te gebruiken. Zorg dat u aan de volgende vereisten voldoet voordat u het RHEL-besturingssysteem met het BYOS-model implementeert:
 
 1. Zorg ervoor dat er rechten voor het RHEL-besturingssysteem en JBoss EAP zijn gekoppeld aan uw Red Hat-abonnement.
-2. Geef uw Azure-abonnements-id toestemming voor het gebruik van RHEL BYOS-installatiekopieën. Volg de [Documentatie voor Red Hat Subscription Management](https://access.redhat.com/documentation/en/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) om het proces te voltooien. Dit omvat de volgende stappen:
+2. Geef uw Azure-abonnements-id toestemming voor het gebruik van RHEL BYOS-installatiekopieën. Volg de [Documentatie voor Red Hat Subscription Management](https://access.redhat.com/documentation/red_hat_subscription_management/1/) om het proces te voltooien. Dit omvat de volgende stappen:
 
    1. Schakel Microsoft Azure in als provider in het Red Hat Cloud Access Dashboard.
 
@@ -160,7 +160,7 @@ Als u BYOS wilt gebruiken voor het RHEL-besturingssysteem, moet u een geldig Red
 
    1. Schakel nieuwe producten in voor Cloud Access op Microsoft Azure.
     
-   1. Activeer Red Hat Gold-installatiekopieën voor uw Azure-abonnement. Zie [Red Hat Gold-installatiekopieën op Microsoft Azure](https://access.redhat.com/documentation/en/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-gold-image-azure) voor meer informatie.
+   1. Activeer Red Hat Gold-installatiekopieën voor uw Azure-abonnement. Zie [Red Hat Gold-installatiekopieën op Microsoft Azure](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/cloud-access-gold-images_cloud-access#proc_using-gold-images-azure_cloud-access) voor meer informatie.
 
    1. Wacht tot Red Hat Gold-installatiekopieën beschikbaar zijn in uw Azure-abonnement. Deze installatiekopieën zijn doorgaans binnen drie uur na verzending beschikbaar.
     
@@ -212,7 +212,7 @@ U kunt de sjabloon op de volgende manieren implementeren:
   ```
 
   ```
-  az group deployment create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
+  az deployment group create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
   ```
 
   Bekijk [De CLI installeren](/cli/azure/install-azure-cli) voor meer informatie over het installeren en configureren van de Azure CLI.

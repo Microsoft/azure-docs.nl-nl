@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.openlocfilehash: 16de95e177f6be1b5bb2517b5ae3ca595cfb5766
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 5841af4225f88b36fe727b60a597af208ac830f5
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96939111"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827169"
 ---
 # <a name="microsoft-identity-platform-token-exchange-scenarios-with-saml-and-oidcoauth"></a>Scenario's voor uitwisseling van micro soft Identity platform-tokens met SAML en OIDC/OAuth
 
@@ -33,4 +33,4 @@ De algemene strategie bestaat uit het toevoegen van de OIDC/OAuth-stack aan uw a
 > De aanbevolen bibliotheek voor het toevoegen van het gedrag OIDC/OAuth is de micro soft Authentication Library (MSAL). Zie [overzicht van micro soft Authentication Library (MSAL)](msal-overview.md)voor meer informatie over MSAL. De vorige bibliotheek heeft Active Directory Authentication Library (ADAL) genoemd, maar dit wordt niet aanbevolen omdat MSAL deze vervangt.
 
 ## <a name="next-steps"></a>Volgende stappen
-- [verificatie stromen en toepassings scenario's](authentication-flows-app-scenarios.md)
+- [Verificatiestromen en app-scenario's](authentication-flows-app-scenarios.md)

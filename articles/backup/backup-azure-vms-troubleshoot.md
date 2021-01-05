@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het oplossen van fouten die 
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: cb25d9263648fbd92bc075751c1a8e627d03bd44
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 2cda13ea089ac08dff7c1ba5ca93ba56ab3c23cf
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325210"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831547"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Back-upfouten op virtuele machines van Azure oplossen
 
@@ -74,6 +74,16 @@ Fout bericht: kan een of meer koppel punten van de VM niet blok keren om een con
 * Voer een consistentie controle van het bestands systeem op deze apparaten uit met behulp van de **fsck** -opdracht.
 * Koppel de apparaten opnieuw en voer de back-upbewerking opnieuw uit.</ol>
 
+Als u de apparaten niet kunt ontkoppelen, kunt u de back-upconfiguratie van de VM bijwerken om bepaalde koppel punten te negeren. Als bijvoorbeeld het koppel punt '/mnt/resource ' niet kan worden gekoppeld en de back-upfouten van de virtuele machine worden veroorzaakt, kunt u de back-upconfiguratiebestand van de VM als volgt bijwerken met de ```MountsToSkip``` eigenschap.
+
+```bash
+cat /var/lib/waagent/Microsoft.Azure.RecoveryServices.VMSnapshotLinux-1.0.9170.0/main/tempPlugin/vmbackup.conf[SnapshotThread]
+fsfreeze: True
+MountsToSkip = /mnt/resource
+SafeFreezeWaitInSeconds=600
+```
+
+
 ### <a name="extensionsnapshotfailedcom--extensioninstallationfailedcom--extensioninstallationfailedmdtc---extension-installationoperation-failed-due-to-a-com-error"></a>ExtensionSnapshotFailedCOM/ExtensionInstallationFailedCOM/ExtensionInstallationFailedMDTC-extensie is niet geïnstalleerd/bewerking mislukt vanwege een COM+-fout
 
 Fout code: ExtensionSnapshotFailedCOM <br/>
@@ -104,11 +114,11 @@ Fout bericht: de momentopname bewerking is mislukt, omdat de status van de VSS-s
 
 Deze fout treedt op omdat de VSS-schrijvers een slechte status hebben. Azure Backup extensies communiceren met VSS-schrijvers om moment opnamen van de schijven te maken. Volg deze stappen om dit probleem op te lossen:
 
-Stap 1: Start de VSS-schrijvers opnieuw op met een onjuiste status.
+Stap 1: Start VSS Writer-services met een ongeldige status opnieuw.
 
 * Voer uit vanaf een opdracht prompt met verhoogde bevoegdheid ```vssadmin list writers``` .
-* De uitvoer bevat alle VSS-schrijvers en hun status. Voor elke VSS Writer met een status die niet **[1] stabiel** is, start u de service van de betreffende VSS Writer opnieuw.
-* Als u de service opnieuw wilt starten, voert u de volgende opdrachten uit vanaf een opdracht prompt met verhoogde bevoegdheid:
+* De uitvoer bevat alle VSS Writer-services en de bijbehorende status. Start de service van de respectieve VSS Writer opnieuw voor elke VSS Writer met een status die niet **[1] Stabiel** is.
+* Voer de volgende opdrachten uit vanaf een opdrachtprompt met verhoogde bevoegdheid: 
 
  ```net stop serviceName``` <br>
  ```net start serviceName```
@@ -131,7 +141,7 @@ Oplossing:
 
 * Controleer op mogelijkheden voor het verdelen van de belasting over de VM-schijven. Hierdoor wordt de belasting van enkele schijven verminderd. U kunt [de limiet voor IOPs controleren door Diagnostische gegevens op opslag niveau in te scha kelen](../virtual-machines/troubleshooting/performance-diagnostics.md#install-and-run-performance-diagnostics-on-your-vm).
 * Wijzig het back-upbeleid voor het uitvoeren van back-ups tijdens piek uren, wanneer de belasting van de virtuele machine op het laagste niveau is.
-* Voer een upgrade uit voor de Azure-schijven ter ondersteuning van hogere IOPs. [Meer informatie vindt u hier](../virtual-machines/disks-types.md)
+* Voer een upgrade uit voor de Azure-schijven ter ondersteuning van hogere IOPs. [Klik hier voor meer informatie](../virtual-machines/disks-types.md)
 
 ### <a name="extensionfailedvssserviceinbadstate---snapshot-operation-failed-due-to-vss-volume-shadow-copy-service-in-bad-state"></a>ExtensionFailedVssServiceInBadState - Momentopname bewerking is mislukt omdat de VSS-service (Volume Shadow Copy Service) een ongeldige status heeft
 
@@ -142,14 +152,14 @@ Deze fout treedt op omdat de VSS-service een ongeldige status heeft. Azure Backu
 
 Start de VSS-service (Volume Shadow Copy) opnieuw.
 
-* Navigeer naar Services. msc en start de Volume Shadow Copy-service opnieuw.<br>
+* Navigeer naar Services.msc en start de 'Volume Shadow Copy-service' opnieuw op.<br>
 (of)<br>
-* Voer de volgende opdrachten uit vanaf een opdracht prompt met verhoogde bevoegdheid:
+* Voer vanaf een opdrachtprompt met verhoogde bevoegdheid de volgende opdracht uit:
 
  ```net stop VSS``` <br>
  ```net start VSS```
 
-Als het probleem zich blijft voordoen, start u de VM opnieuw op met de geplande uitval tijd.
+Als het probleem zich blijft voordoen, start u de VM op de geplande downtime opnieuw op.
 
 ### <a name="usererrorskunotavailable---vm-creation-failed-as-vm-size-selected-is-not-available"></a>Het maken van een UserErrorSkuNotAvailable-VM is mislukt omdat de geselecteerde VM-grootte niet beschikbaar is
 
@@ -207,7 +217,7 @@ Fout bericht: de extensie status is geen ondersteuning voor de back-upbewerking
 De back-upbewerking is mislukt vanwege een inconsistente status van de back-upextensie. Volg deze stappen om dit probleem op te lossen:
 
 * Zorg ervoor dat de gastagent geïnstalleerd en responsief is
-* Ga vanuit het Azure Portal naar de **Virtual Machine**  >  extensies van **alle instellingen**  >  **Extensions** van de virtuele machine
+* Ga vanuit het Azure Portal naar de   >  extensies van **alle instellingen**  >   van de virtuele machine
 * Selecteer de back-upextensie VmSnapshot of VmSnapshotLinux en selecteer **verwijderen**.
 * Voer de back-upbewerking opnieuw uit nadat u de back-upextensie hebt verwijderd
 * De volgende back-upbewerking installeert de nieuwe extensie in de gewenste status
@@ -283,7 +293,7 @@ Fout code: VmNotInDesirableState <br/> Fout bericht: de VM bevindt zich niet in 
 * Als de virtuele machine zich in een tijdelijke status bevindt tussen het **uitvoeren** en **Afsluiten**, wacht u totdat de status is gewijzigd. Activeer vervolgens de back-uptaak.
 * Als de virtuele machine een virtuele Linux-machine is en **gebruikmaakt van de** Security-Enhanced Linux-kernel-module, sluit u het pad van de Azure Linux-agent uit het beveiligings beleid uit en controleert u of de back-upextensie is geïnstalleerd.
 
-* De VM-agent is niet aanwezig op de virtuele machine: <br>Installeer de vereiste onderdelen en de VM-agent. Start vervolgens de bewerking opnieuw. | Lees meer over de installatie van de [VM-agent en het valideren](#vm-agent)van de installatie van de VM-agent.
+* De VM-agent is niet aanwezig op de virtuele machine: <br>Installeer de vereiste onderdelen en de VM-agent. Start vervolgens de bewerking opnieuw. | Meer informatie over de installatie van de [VM-agent en het valideren](#vm-agent)van de installatie van de VM-agent.
 
 ### <a name="extensionsnapshotfailednosecurenetwork---the-snapshot-operation-failed-because-of-failure-to-create-a-secure-network-communication-channel"></a>ExtensionSnapshotFailedNoSecureNetwork-de momentopname bewerking is mislukt vanwege een fout bij het maken van een beveiligd kanaal voor netwerk communicatie
 
@@ -405,7 +415,7 @@ VM-back-up is afhankelijk van het uitgeven van momentopname opdrachten aan onder
 * **Als meer dan vier vm's dezelfde Cloud service delen, verspreidt u de virtuele machines over meerdere back-upbeleid**. Spreid de back-uptijden zodat er niet meer dan vier VM-back-ups tegelijk worden gestart. Probeer de start tijden in het beleid met ten minste een uur te scheiden.
 * **De virtuele machine wordt uitgevoerd op een hoog CPU-of geheugen niveau**. Als de virtuele machine wordt uitgevoerd op een hoog geheugen of CPU-gebruik, meer dan 90 procent, wordt uw momentopname taak in de wachtrij geplaatst en vertraagd. Er is uiteindelijk een time-out opgegaan. Als dit probleem optreedt, probeert u een back-up op aanvraag uit te voeren.
 
-## <a name="networking"></a>Networking
+## <a name="networking"></a>Netwerken
 
 DHCP moet zijn ingeschakeld in de gast voor het werken met IaaS VM-back-up. Als u een statisch privé IP-adres nodig hebt, configureert u dit via de Azure Portal of Power shell. Zorg ervoor dat de DHCP-optie in de virtuele machine is ingeschakeld.
 Meer informatie over het instellen van een statisch IP-adres via Power shell:

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 512776f2498a88f1fda9b5e7f0e2db0ddd32b955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36dfbf0fda060a8f273fee64098d6234b575088c
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962325"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831836"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Open-source technologieën Veelgestelde vragen over Web Apps in azure
 
@@ -54,8 +54,8 @@ Als u de versie van de Node.js toepassing wilt wijzigen, kunt u een van de volge
 
 * Gebruik in de Azure Portal **app-instellingen**.
   1. Ga in het Azure Portal naar uw web-app.
-  2. Selecteer **Toepassings instellingen**op de Blade **instellingen** .
-  3. In **app-instellingen**kunt u WEBSITE_NODE_DEFAULT_VERSION als de sleutel en de versie van Node.js u als de waarde wilt gebruiken.
+  2. Selecteer **Toepassings instellingen** op de Blade **instellingen** .
+  3. In **app-instellingen** kunt u WEBSITE_NODE_DEFAULT_VERSION als de sleutel en de versie van Node.js u als de waarde wilt gebruiken.
   4. Ga naar uw **kudu-console** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
   5. Als u de Node.js versie wilt controleren, voert u de volgende opdracht in:  
      ```
@@ -169,9 +169,9 @@ Een andere oplossing is het schrijven van een Webtaak die volgens een schema wor
 
 ## <a name="where-do-i-find-the-log-files-for-jetty"></a>Waar vind ik de logboek bestanden voor jetty?
 
-Voor Marketplace en aangepaste implementaties bevindt het logboek bestand zich in de map D:\home\site\wwwroot\bin\jetty-Distribution-9.1.2.v20140210\logs. Houd er rekening mee dat de maplocatie afhankelijk is van de versie van Jetty die u gebruikt. Het pad dat hier wordt vermeld, is bijvoorbeeld voor jetty 9.1.2. Zoek naar jetty_*YYYY_MM_DD*. stderrout. log.
+Voor Marketplace en aangepaste implementaties bevindt het logboek bestand zich in de map D:\home\site\wwwroot\bin\jetty-Distribution-9.1.2.v20140210\logs. Houd er rekening mee dat de maplocatie afhankelijk is van de versie van Jetty die u gebruikt. Het pad dat hier wordt vermeld, is bijvoorbeeld voor jetty 9.1.2. Zoek naar jetty_ *YYYY_MM_DD*. stderrout. log.
 
-Voor implementaties van portal-app-instellingen is het logboek bestand in D:\home\LogFiles. Zoek naar jetty_*YYYY_MM_DD*. stderrout. log
+Voor implementaties van portal-app-instellingen is het logboek bestand in D:\home\LogFiles. Zoek naar jetty_ *YYYY_MM_DD*. stderrout. log
 
 ## <a name="can-i-send-email-from-my-azure-web-app"></a>Kan ik een e-mail verzenden vanuit mijn Azure-web-app?
 
@@ -181,24 +181,24 @@ App Service heeft geen ingebouwde e-mail functie. Zie deze [stack overflow discu
 
 Als u onlangs naar Azure hebt gemigreerd, kan WordPress omleiden naar de oude domein-URL. Dit wordt veroorzaakt door een instelling in de MySQL-data base.
 
-WordPress Buddy + is een Azure-site-uitbrei ding die u kunt gebruiken om de omleidings-URL rechtstreeks in de-data base bij te werken. Zie [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/)voor meer informatie over het gebruik van WordPress buddy +.
+WordPress Buddy + is een Azure-site-uitbrei ding die u kunt gebruiken om de omleidings-URL rechtstreeks in de-data base bij te werken. Zie [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows)voor meer informatie over het gebruik van WordPress buddy +.
 
 Als u de omleidings-URL liever hand matig bijwerkt met behulp van SQL-query's of PHPMyAdmin, raadpleegt u [WordPress: omleiden naar de verkeerde URL](/archive/blogs/azureossds/wordpress-redirecting-to-wrong-url).
 
 ## <a name="how-do-i-change-my-wordpress-sign-in-password"></a>Hoe kan ik mijn WordPress-aanmeldings wachtwoord wijzigen?
 
-Als u het aanmeldings wachtwoord van WordPress hebt verg eten, kunt u WordPress Buddy + gebruiken om het wacht woord bij te werken. Als u uw wacht woord opnieuw wilt instellen, installeert u de WordPress Buddy + Azure-site-extensie en voert u de stappen uit die worden beschreven in [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/).
+Als u het aanmeldings wachtwoord van WordPress hebt verg eten, kunt u WordPress Buddy + gebruiken om het wacht woord bij te werken. Als u uw wacht woord opnieuw wilt instellen, installeert u de WordPress Buddy + Azure-site-extensie en voert u de stappen uit die worden beschreven in [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows).
 
 ## <a name="i-cant-sign-in-to-wordpress-how-do-i-resolve-this"></a>Ik kan me niet aanmelden bij WordPress. Hoe los ik dit op?
 
-Als u zichzelf hebt geblokkeerd na de laatste keer dat u een invoeg toepassing hebt geïnstalleerd, hebt u een defecte invoeg toepassing. WordPress Buddy + is een Azure-site-uitbrei ding die u kan helpen om invoeg toepassingen uit te scha kelen in WordPress. Zie voor meer informatie [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/).
+Als u zichzelf hebt geblokkeerd na de laatste keer dat u een invoeg toepassing hebt geïnstalleerd, hebt u een defecte invoeg toepassing. WordPress Buddy + is een Azure-site-uitbrei ding die u kan helpen om invoeg toepassingen uit te scha kelen in WordPress. Zie voor meer informatie [WordPress-hulpprogram ma's en MySQL-migratie met WordPress Buddy +](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows).
 
 ## <a name="how-do-i-migrate-my-wordpress-database"></a>Hoe kan ik de WordPress-data base te migreren?
 
 U hebt meerdere opties voor het migreren van de MySQL-data base die is verbonden met uw WordPress-website:
 
 * Ontwikkel aars: gebruik de [opdracht prompt of phpMyAdmin](/archive/blogs/azureossds/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service)
-* Niet-ontwikkel aars: gebruik [WordPress Buddy +](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/)
+* Niet-ontwikkel aars: gebruik [WordPress Buddy +](https://www.electrongeek.com/blog/2016/12/21/wordpress-buddy-site-extension-for-app-service-on-windows)
 
 ## <a name="how-do-i-help-make-wordpress-more-secure"></a>Hoe kan ik kunt u WordPress veiliger maken?
 

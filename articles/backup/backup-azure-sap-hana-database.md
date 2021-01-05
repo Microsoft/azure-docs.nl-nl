@@ -3,12 +3,12 @@ title: Back-ups maken van een SAP HANA Data Base naar Azure met Azure Backup
 description: In dit artikel vindt u informatie over het maken van een back-up van een SAP HANA Data Base naar Azure virtual machines met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: f7957670b3ba98c640ebc53c6427273ca75a4e6d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 87111660983e2626d8f61ddc65fdc13394509a4f
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682843"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831632"
 ---
 # <a name="back-up-sap-hana-databases-in-azure-vms"></a>Back-ups maken van SAP HANA-databases in virtuele Azure-machines
 
@@ -91,6 +91,9 @@ U kunt ook de volgende FQDN's gebruiken om toegang te verlenen tot de vereiste s
 
 Wanneer u een back-up maakt van een SAP HANA-database die wordt uitgevoerd op een virtuele Azure-machine, gebruikt de back-upextensie op de virtuele machine de HTTPS-API's voor het verzenden van beheeropdrachten naar Azure Backup en gegevens naar Azure Storage. De back-upextensie maakt ook gebruik van Azure AD voor verificatie. Leid het verkeer van de back-upextensie voor deze drie services via de HTTP-proxy. Gebruik de lijst met IP-adressen en FQDN's die hierboven worden genoemd om toegang tot de vereiste services toe te staan. Geverifieerde proxyservers worden niet ondersteund.
 
+> [!NOTE]
+> Er is geen proxy ondersteuning op service niveau. Dat wil zeggen dat verkeer via de proxy van slechts enkele of geselecteerde services (Azure backup services) niet wordt ondersteund. De volledige gegevens of het verkeer kan worden gerouteerd door een proxy of niet.
+
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
 ## <a name="discover-the-databases"></a>De databases detecteren
@@ -169,12 +172,12 @@ Geef als volgt de beleidsinstellingen op:
     ![Beleid voor differentiële back-ups](./media/backup-azure-sap-hana-database/differential-backup-policy.png)
 
     > [!NOTE]
-    > Incrementele back-ups worden nu ondersteund in de open bare preview-versie. U kunt kiezen voor een differentieel of een incrementele back-up, maar niet voor beide.
-1. Selecteer in **Incrementeel back-upbeleid** **inschakelen** om de besturings elementen frequentie en retentie te openen.
-    * U kunt Maxi maal één incrementele back-up per dag activeren.
-    * Incrementele back-ups kunnen Maxi maal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.
+    > Incrementele back-ups worden nu ondersteund in de open bare preview-versie. U kunt kiezen voor een differentieel of een incrementele dagelijkse back-up, maar niet voor beide.
+1. In **Beleid voor een incrementele back-up** selecteert u **Inschakelen** om de frequentie- en bewaarinstellingen te openen.
+    * U kunt maximaal één incrementele back-up per dag activeren.
+    * Incrementele back-ups kunnen maximaal 180 dagen worden bewaard. Als dat voor u te kort is, moet u volledige back-ups gebruiken.
 
-    ![Incrementeel back-upbeleid](./media/backup-azure-sap-hana-database/incremental-backup-policy.png)
+    ![Beleid voor incrementele back-ups](./media/backup-azure-sap-hana-database/incremental-backup-policy.png)
 
 1. Selecteer **OK** om het beleid op te slaan en terug te gaan naar het hoofdmenu **Back-upbeleid**.
 1. Selecteer **Logboekback-up** als u een back-upbeleid voor een transactielogboek wilt toevoegen;

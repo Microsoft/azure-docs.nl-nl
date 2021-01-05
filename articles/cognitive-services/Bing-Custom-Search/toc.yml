@@ -75,7 +75,7 @@
     - name: SDK's
       items:
         - name: .NET
-          href: /dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet
+          href: /dotnet/api/overview/azure/cognitiveservices/bing-custom-search-readme?view=azure-dotnet
         - name: Java - Aangepast zoeken
           href: /java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable
         - name: Java - Aangepast zoeken voor afbeeldingen

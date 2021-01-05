@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4077ade7de93470aaf03acef1dc1cefca8bd3d4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 7f142aa4ca203a65c45741f87853579ca60e1879
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837359"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831751"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -38,7 +38,7 @@ Op de pagina **alle apparaten** kunt u het volgende doen:
 
 U kunt de portal voor apparaten openen met de volgende stappen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Blader naar **Azure Active Directory**  >  **apparaten**.
 
 ## <a name="manage-devices"></a>Apparaten beheren
@@ -117,9 +117,9 @@ U kunt de BitLocker-sleutels weer geven en kopiëren zodat gebruikers versleutel
 
 Als u de BitLocker-sleutels wilt bekijken of kopiëren, moet u eigenaar zijn van het apparaat of een gebruiker zijn die ten minste een van de volgende rollen heeft:
 
-- Beheerder van Cloud apparaat
+- Cloudapparaatbeheerder
 - Hoofdbeheerder
-- Helpdesk beheerder
+- Helpdeskbeheerder
 - Intune-servicebeheerder
 - Beveiligingsbeheer
 - Beveiligingslezer
@@ -139,7 +139,7 @@ De functie voor beeld filtering inschakelen in de weer gave **alle apparaten** :
 
 ![Preview-functionaliteit voor filteren inschakelen](./media/device-management-azure-portal/device-filter-preview-enable.png)
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Blader naar **Azure Active Directory**  >  **apparaten**.
 1. Selecteer de banner waarin wordt **vermeld, probeer de nieuwe verbeteringen voor het filteren van apparaten uit. Klik om de preview-versie in te scha kelen.**
 
@@ -165,10 +165,10 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 
 - **Aanvullende lokale beheerders op aan Azure AD gekoppelde apparaten** : u kunt de gebruikers selecteren die lokale beheerders rechten op een apparaat krijgen. Deze gebruikers worden toegevoegd aan de rol van het *apparaat Administrators* in azure AD. Globale beheerders in azure AD en eigen aren van apparaten krijgen standaard lokale beheerders rechten. Deze optie is een Premium Edition-mogelijkheid die beschikbaar is via producten als Azure AD Premium of de Enter prise Mobility Suite (EMS).
 - **Gebruikers kunnen hun apparaten registreren bij Azure AD** . u moet deze instelling configureren zodat Windows 10 Personal-, Ios-, Android-en macOS-apparaten kunnen worden geregistreerd bij Azure AD. Als u **geen** selecteert, mogen apparaten zich niet registreren bij Azure AD. Inschrijving met Microsoft Intune of het beheer van mobiele apparaten (MDM) voor Microsoft 365 vereist registratie. Als u een van deze services hebt geconfigureerd, is **Alles** **geselecteerd en is er geen beschikbaar** .
-- **Multi-factor Authentication vereisen voor het toevoegen van apparaten** : u kunt kiezen of gebruikers een extra verificatie factor moeten opgeven om hun apparaat toe te voegen aan Azure AD. De standaard waarde is **Nee**. U wordt aangeraden multi-factor Authentication te vereisen bij het registreren van een apparaat. Voordat u multi-factor Authentication inschakelt voor deze service, moet u ervoor zorgen dat multi-factor Authentication is geconfigureerd voor de gebruikers die hun apparaten registreren. Zie aan de slag [met Azure AD-multi-factor Authentication](../authentication/concept-mfa-howitworks.md)voor meer informatie over de verschillende azure AD multi-factor Authentication Services. 
+- **Multi-factor Authentication vereisen voor het toevoegen van apparaten** : u kunt kiezen of gebruikers een extra verificatie factor moeten opgeven om toe te voegen aan Azure AD of hun apparaat te registreren. De standaard waarde is **Nee**. U wordt aangeraden multi-factor Authentication te vereisen bij het registreren of toevoegen van een apparaat. Voordat u multi-factor Authentication inschakelt voor deze service, moet u ervoor zorgen dat multi-factor Authentication is geconfigureerd voor de gebruikers die hun apparaten registreren. Zie aan de slag [met Azure AD-multi-factor Authentication](../authentication/concept-mfa-howitworks.md)voor meer informatie over de verschillende azure AD multi-factor Authentication Services. 
 
 > [!NOTE]
-> **Vereisen dat multi-factor Authentication wordt toegevoegd** aan de instelling apparaten is van toepassing op apparaten die zijn opgenomen in azure AD of Azure AD. Deze instelling is niet van toepassing op hybride apparaten die deel uitmaken van Azure AD.
+> **Vereisen dat multi-factor Authentication wordt toegevoegd** aan de instelling apparaten is van toepassing op apparaten die zijn toegevoegd aan Azure AD (met enkele uitzonde ringen) of Azure AD is geregistreerd. Deze instelling is niet van toepassing op hybride Azure AD gekoppelde apparaten, [Azure AD gekoppelde virtuele machines in azure](/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows#enabling-azure-ad-login-in-for-windows-vm-in-azure) en aan Azure AD gekoppelde apparaten met behulp van de [zelf-implementatie modus van Windows auto pilot](/mem/autopilot/self-deploying).
 
 - **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**.
 

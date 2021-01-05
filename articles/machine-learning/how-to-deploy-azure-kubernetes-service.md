@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to, contperf-fy21q1, deploy, devx-track-azurecli
+ms.custom: how-to, contperf-fy21q1, deploy
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: d7540066ccc0d3a62dbd4012eee100d8e8aea98f
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 7ba01139e365b2f0023ef0784b6ed83e7bde609a
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505083"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831721"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Een model implementeren in een Azure Kubernetes service-cluster
 
@@ -92,6 +92,55 @@ Azureml-Fe schaalt beide omhoog (verticaal) om meer kernen te gebruiken en uit (
 
 Wanneer u omlaag of omlaag schaalt, wordt het CPU-gebruik gebruikt. Als aan de drempel waarde voor het CPU-gebruik wordt voldaan, wordt de front-end eerst omlaag geschaald. Als het CPU-gebruik de drempel waarde voor inschalen inneemt, vindt er een inschaal bewerking plaats. U kunt alleen omhoog en omlaag schalen als er voldoende cluster bronnen beschikbaar zijn.
 
+## <a name="understand-connectivity-requirements-for-aks-inferencing-cluster"></a>Connectiviteits vereisten voor het AKS-cluster
+
+Wanneer Azure Machine Learning een AKS-cluster maakt of koppelt, wordt het AKS-cluster geïmplementeerd met een van de volgende twee netwerk modellen:
+* Kubenet-netwerken: de netwerk bronnen worden doorgaans gemaakt en geconfigureerd als het AKS-cluster wordt geïmplementeerd.
+* Azure Container Networking Interface-netwerk (CNI): het AKS-cluster wordt verbonden met resources en configuraties van het bestaande virtuele netwerk.
+
+Voor de eerste netwerk modus wordt netwerken gemaakt en op de juiste wijze geconfigureerd voor Azure Machine Learning service. Omdat het cluster is verbonden met een bestaand virtueel netwerk, is het voor de tweede netwerk modus, met name wanneer aangepaste DNS wordt gebruikt voor een bestaand virtueel netwerk, extra aandacht vereist voor de connectiviteits vereisten voor AKS-deverzekering-cluster en zorgen voor een DNS-omzetting en uitgaande connectiviteit voor AKS.
+
+In het volgende diagram worden alle connectiviteits vereisten voor het afnemen van AKS vastgelegd. Zwarte pijlen vertegenwoordigen de werkelijke communicatie en blauwe pijlen vertegenwoordigen de domein namen, die door de klant beheerde DNS moeten worden omgezet.
+
+ ![Connectiviteits vereisten voor AKS-demijnen](./media/how-to-deploy-aks/aks-network.png)
+
+### <a name="overall-dns-resolution-requirements"></a>Algemene vereisten voor DNS-omzetting
+DNS-omzetting binnen bestaande VNET is onder het beheer van de klant. De volgende DNS-vermeldingen moeten kunnen worden omgezet:
+* AKS-API-server in de vorm van \<cluster\> . hcp. \<region\> . azmk8s.io
+* Micro soft Container Registry (MCR): mcr.microsoft.com
+* Azure Container Registry (ARC) van de klant in de vorm van \<ACR name\> . azurecr.io
+* Azure Storage account in de vorm van \<account\> . table.core.Windows.net en \<account\> . blob.core.Windows.net
+* Beschrijving Voor AAD-verificatie: api.azureml.ms
+* De domein naam Score endpoint, automatisch gegenereerd door Azure ML of aangepaste domein naam. De automatisch gegenereerde domein naam zou er als volgt uitzien: \<leaf-domain-label \+ auto-generated suffix\> . \<region\> . cloudapp.azure.com
+
+### <a name="connectivity-requirements-in-chronological-order-from-cluster-creation-to-model-deployment"></a>Connectiviteits vereisten in chronologische volg orde: van het maken van een cluster naar model implementatie
+
+In het proces van AKS maken of koppelen, wordt de Azure ML-router (azureml-Fe) geïmplementeerd in het AKS-cluster. Voor de implementatie van de Azure ML-router moet AKS-knoop punt het volgende kunnen:
+* DNS voor AKS API-Server omzetten
+* DNS voor MCR omzetten om docker-installatie kopieën voor Azure ML router te downloaden
+* Down load installatie kopieën van MCR, waarbij uitgaande connectiviteit vereist is
+
+Direct nadat de azureml-Fe is geïmplementeerd, wordt geprobeerd om te beginnen en is het volgende vereist:
+* DNS voor AKS API-Server omzetten
+* Query AKS API server om andere instanties van zichzelf te detecteren (dit is een service met meerdere pod)
+* Verbinding maken met andere exemplaren van zichzelf
+
+Zodra azureml-Fe is gestart, is extra connectiviteit vereist om goed te werken:
+* Verbinding maken met Azure Storage voor het downloaden van dynamische configuratie
+* Los DNS op voor de AAD-verificatie server api.azureml.ms en communiceer ermee wanneer de geïmplementeerde service gebruikmaakt van AAD-verificatie.
+* Query AKS API server om geïmplementeerde modellen te detecteren
+* Effectief communiceren met geïmplementeerd model
+
+Bij het implementeren van een model implementatie-AKS knoop punt moet het volgende kunnen: 
+* DNS voor de ACR van de klant oplossen
+* Afbeeldingen downloaden van de ACR van de klant
+* DNS voor Azure-BLOBs omzetten waarbij model wordt opgeslagen
+* Modellen downloaden van Azure-BLOBs
+
+Nadat het model is geïmplementeerd en de service wordt gestart, wordt het door azureml-Fe automatisch gedetecteerd met behulp van de AKS-API en kan de aanvraag ernaar worden doorgestuurd. Het moet kunnen communiceren met een model van peulen.
+>[!Note]
+>Als voor het geïmplementeerde model een verbinding is vereist (bijvoorbeeld het uitvoeren van een query op een externe data base of andere REST-service, het downloaden van een BLOG enz.), moeten zowel de DNS-omzetting als de uitgaande communicatie voor deze services worden ingeschakeld.
+
 ## <a name="deploy-to-aks"></a>Implementeren naar AKS
 
 Als u een model wilt implementeren in azure Kubernetes service, maakt u een __implementatie configuratie__ waarin de benodigde reken resources worden beschreven. Bijvoorbeeld het aantal kernen en het geheugen. U hebt ook een Afleidings __configuratie__ nodig, waarmee de omgeving wordt beschreven die nodig is voor het hosten van het model en de webservice. Zie [hoe en wanneer u modellen wilt implementeren](how-to-deploy-and-where.md)voor meer informatie over het maken van de configuratie voor demijnen.
@@ -125,7 +174,7 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 * [Model. implementeren](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
 * [Webservice.wait_for_deployment](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truewait-for-deployment-show-output-false-)
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u wilt implementeren met behulp van de CLI, gebruikt u de volgende opdracht. Vervang door `myaks` de naam van het AKS Compute-doel. Vervang door `mymodel:1` de naam en versie van het geregistreerde model. Vervang door `myservice` de naam om deze service te verlenen:
 

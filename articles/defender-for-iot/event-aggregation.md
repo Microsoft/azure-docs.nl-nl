@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/03/2020
 ms.author: mlottner
-ms.openlocfilehash: 7f7575697706363c082a4e6374b3df7a49e65cdf
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: c823f0034db7d5fbe1f6b46f6af74e9fa374a6de
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548848"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97832366"
 ---
 # <a name="defender-for-iot-event-aggregation"></a>Defender voor IoT-gebeurtenis aggregatie
 
@@ -97,6 +97,6 @@ Als u aan de slag wilt gaan met Defender voor IoT-implementatie, gebruikt u de v
 
 - Meer informatie over [verificatie methoden voor beveiligings agenten](concept-security-agent-authentication-methods.md)
 - Een [beveiligings agent](how-to-deploy-agent.md) selecteren en implementeren
-- Bekijk de vereisten voor Defender voor IoT- [Services](service-prerequisites.md)
+- Raadpleeg Defender voor IoT- [systeem vereisten](quickstart-system-prerequisites.md)
 - Meer informatie over het [inschakelen van Defender voor IOT-service in uw IOT hub](quickstart-onboard-iot-hub.md)
 - Meer informatie over de service van de [Veelgestelde vragen over Defender voor IOT](resources-frequently-asked-questions.md)

@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 20e51100eba595f9261be24e0e3675aa565479cd
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4eba3fabee50e0011d5a63297c726a9647dd84c0
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535551"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831530"
 ---
 # <a name="quickstart-use-ruby-to-connect-and-query-data-in-azure-database-for-mysql"></a>Quickstart: Ruby gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for MySQL
 
@@ -72,7 +72,7 @@ Haal de verbindingsgegevens op die nodig zijn om verbinding te maken met de Azur
 ## <a name="connect-and-create-a-table"></a>Verbinding maken en een tabel maken
 Gebruik de volgende code om een tabel te verbinden en te maken met behulp van de SQL-instructie **CREATE TABLE**, gevolgd door de SQL-instructie **INSERT INTO** om rijen in de tabel toe te voegen.
 
-De code gebruikt een [mysql2::client](https://www.rubydoc.info/gems/mysql2)-klasse om verbinding te maken met de MySQL-server. Vervolgens wordt de methode ```query()``` aangeroepen op de opdrachten DROP, CREATE TABLE en INSERT INTO uit te voeren. Roep tot slot de ```close()``` aan om de verbinding vóór het sluiten te verbreken.
+De code gebruikt een mysql2::client-klasse om verbinding te maken met de MySQL-server. Vervolgens wordt de methode ```query()``` aangeroepen op de opdrachten DROP, CREATE TABLE en INSERT INTO uit te voeren. Roep tot slot de ```close()``` aan om de verbinding vóór het sluiten te verbreken.
 
 Vervang de tekenreeksen `host`, `database`, `username` en `password` door uw eigen waarden.
 ```ruby
@@ -117,7 +117,7 @@ end
 ## <a name="read-data"></a>Gegevens lezen
 Gebruik de volgende code om verbinding te maken en de gegevens te lezen met behulp van de SQL-instructie **SELECT**.
 
-De code gebruikt een [mysql2::client](https://www.rubydoc.info/gems/mysql2)-klasse om verbinding te maken met Azure Database for MySQL met de methode ```new()```. Daarna wordt de methode ```query()``` aangeroepen om de SELECT-opdrachten uit te voeren. Vervolgens wordt methode ```close()``` aangeroepen om de verbinding vóór het sluiten te verbreken.
+De code gebruikt een mysql2::client-klasse om verbinding te maken met Azure Database for MySQL met de methode ```new()```. Daarna wordt de methode ```query()``` aangeroepen om de SELECT-opdrachten uit te voeren. Vervolgens wordt methode ```close()``` aangeroepen om de verbinding vóór het sluiten te verbreken.
 
 Vervang de tekenreeksen `host`, `database`, `username` en `password` door uw eigen waarden.
 
@@ -156,7 +156,7 @@ end
 ## <a name="update-data"></a>Gegevens bijwerken
 Gebruik de volgende code om verbinding te maken en de gegevens bij te werken met behulp van de SQL-instructie **UPDATE**.
 
-De code gebruikt een [mysql2::client](https://www.rubydoc.info/gems/mysql2) .new()-methode om verbinding te maken met Azure Database voor MySQL. Daarna wordt de methode ```query()``` aangeroepen om de UPDATE-opdrachten uit te voeren. Vervolgens wordt methode ```close()``` aangeroepen om de verbinding vóór het sluiten te verbreken.
+De code gebruikt een [mysql2::client](https://rubygems.org/gems/mysql2-client-general_log) .new()-methode om verbinding te maken met Azure Database voor MySQL. Daarna wordt de methode ```query()``` aangeroepen om de UPDATE-opdrachten uit te voeren. Vervolgens wordt methode ```close()``` aangeroepen om de verbinding vóór het sluiten te verbreken.
 
 Vervang de tekenreeksen `host`, `database`, `username` en `password` door uw eigen waarden.
 
@@ -241,5 +241,5 @@ az group delete \
 > [Een database migreren met behulp van Exporteren en importeren](./concepts-migrate-import-export.md) <br/>
 
 > [!div class="nextstepaction"]
-> [Meer informatie over MySQL2-client](https://www.rubydoc.info/gems/mysql2) <br/>
+> [Meer informatie over MySQL2-client](https://rubygems.org/gems/mysql2-client-general_log) <br/>
 

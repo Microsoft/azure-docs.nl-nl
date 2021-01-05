@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: e773c2db9c7849dd9680f8ae0c600405f422d7e1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6400d3f3c721619551ba3989a2e5799b72ff9f38
+ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463190"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97831921"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -281,6 +281,78 @@ Zie [Compute-doelen maken in azure machine learning Studio](how-to-create-attach
 
 ---
 
+## <a name="create-or-attach-an-aks-cluster-with-tls-termination"></a>Een AKS-cluster maken of koppelen met TLS-beëindiging
+Wanneer u [een AKS-cluster maakt of koppelt](how-to-create-attach-kubernetes.md), kunt u TLS-beëindiging inschakelen met **[AksCompute.provisioning_configuration ()](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueprovisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none--cluster-purpose-none--load-balancer-type-none--load-balancer-subnet-none-)** en **[AksCompute.attach_configuration ()-](/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py&preserve-view=true#&preserve-view=trueattach-configuration-resource-group-none--cluster-name-none--resource-id-none--cluster-purpose-none-)** configuratie objecten. Beide methoden retour neren een configuratie object dat een **enable_ssl** methode heeft, en u kunt **enable_ssl** methode gebruiken om TLS in te scha kelen.
+
+In het volgende voor beeld ziet u hoe u TLS-beëindiging inschakelt met automatische TLS-certificaat generatie en-configuratie met behulp van micro soft-certificaat op de schermen.
+```python
+   from azureml.core.compute import AksCompute, ComputeTarget
+   
+   # Enable TLS termination when you create an AKS cluster by using provisioning_config object enable_ssl method
+
+   # Leaf domain label generates a name using the formula
+   # "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+   # where "######" is a random series of characters
+   provisioning_config.enable_ssl(leaf_domain_label = "contoso")
+   
+   # Enable TLS termination when you attach an AKS cluster by using attach_config object enable_ssl method
+
+   # Leaf domain label generates a name using the formula
+   # "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+   # where "######" is a random series of characters
+   attach_config.enable_ssl(leaf_domain_label = "contoso")
+
+
+```
+In het volgende voor beeld ziet u hoe u TLS-beëindiging inschakelt met aangepast certificaat en aangepaste domein naam. Met een aangepast domein en certificaat moet u uw DNS-record bijwerken zodat deze verwijst naar het IP-adres van Score-eind punt, Raadpleeg [uw DNS bijwerken](how-to-secure-web-service.md#update-your-dns)
+
+```python
+   from azureml.core.compute import AksCompute, ComputeTarget
+
+   # Enable TLS termination with custom certificate and custom domain when creating an AKS cluster
+   
+   provisioning_config.enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    
+   # Enable TLS termination with custom certificate and custom domain when attaching an AKS cluster
+
+   attach_config.enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+
+
+```
+>[!NOTE]
+> Zie [TLS gebruiken voor het beveiligen van een webservice via Azure machine learning](how-to-secure-web-service.md) voor meer informatie over het beveiligen van model implementaties op AKS-clusters.
+
+## <a name="create-or-attach-an-aks-cluster-to-use-internal-load-balancer-with-private-ip"></a>Een AKS-cluster maken of koppelen voor het gebruik van interne Load Balancer met particulier IP-adres
+Wanneer u een AKS-cluster maakt of koppelt, kunt u het cluster configureren voor het gebruik van een interne Load Balancer. Met een interne Load Balancer worden Score-eind punten voor uw implementaties naar AKS een privé-IP-adres in het virtuele netwerk gebruikt. De volgende code fragmenten laten zien hoe u een intern Load Balancer configureert voor een AKS-cluster.
+```python
+   
+   from azureml.core.compute.aks import AksUpdateConfiguration
+   from azureml.core.compute import AksCompute, ComputeTarget
+   
+   # When you create an AKS cluster, you can specify Internal Load Balancer to be created with provisioning_config object
+   provisioning_config = AksCompute.provisioning_configuration(load_balancer_type = 'InternalLoadBalancer')
+
+   # when you attach an AKS cluster, you can update the cluster to use internal load balancer after attach
+   aks_target = AksCompute(ws,"myaks")
+
+   # Change to the name of the subnet that contains AKS
+   subnet_name = "default"
+   # Update AKS configuration to use an internal load balancer
+   update_config = AksUpdateConfiguration(None, "InternalLoadBalancer", subnet_name)
+   aks_target.update(update_config)
+   # Wait for the operation to complete
+   aks_target.wait_for_completion(show_output = True)
+   
+   
+```
+>[!IMPORTANT]
+> Azure Machine Learning biedt geen ondersteuning voor het beëindigen van TLS met interne Load Balancer. Interne Load Balancer heeft een persoonlijk IP-adres en het persoonlijke IP-adres kan zich in een ander netwerk bevindt en het certificaat kan worden recused. 
+
+>[!NOTE]
+> Voor meer informatie over het beveiligen van de omgeving voor het afwijzen van interferentie, raadpleegt u [een Azure machine learning omgeving voor het](how-to-secure-inferencing-vnet.md) dezien van interferentie
+
 ## <a name="detach-an-aks-cluster"></a>Een AKS-cluster ontkoppelen
 
 Gebruik een van de volgende methoden om een cluster los te koppelen van uw werk ruimte:
@@ -305,6 +377,52 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
 Selecteer in Azure Machine Learning Studio __Compute__, __clusters__ afstellen en het cluster dat u wilt verwijderen. Gebruik de koppeling __loskoppelen__ om het cluster los te koppelen.
+
+---
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+### <a name="update-the-cluster"></a>Het cluster bijwerken
+
+Updates voor Azure Machine Learning onderdelen die zijn geïnstalleerd in een Azure Kubernetes service-cluster, moeten hand matig worden toegepast. 
+
+U kunt deze updates Toep assen door het cluster te ontkoppelen van de Azure Machine Learning-werk ruimte en vervolgens het cluster opnieuw te koppelen aan de werk ruimte. Als TLS is ingeschakeld in het cluster, moet u het TLS/SSL-certificaat en de persoonlijke sleutel opgeven wanneer u het cluster opnieuw koppelt. 
+
+```python
+compute_target = ComputeTarget(workspace=ws, name=clusterWorkspaceName)
+compute_target.detach()
+compute_target.wait_for_completion(show_output=True)
+
+attach_config = AksCompute.attach_configuration(resource_group=resourceGroup, cluster_name=kubernetesClusterName)
+
+## If SSL is enabled.
+attach_config.enable_ssl(
+    ssl_cert_pem_file="cert.pem",
+    ssl_key_pem_file="key.pem",
+    ssl_cname=sslCname)
+
+attach_config.validate_configuration()
+
+compute_target = ComputeTarget.attach(workspace=ws, name=args.clusterWorkspaceName, attach_configuration=attach_config)
+compute_target.wait_for_completion(show_output=True)
+```
+
+Als u het TLS/SSL-certificaat en de persoonlijke sleutel niet meer hebt of als u een certificaat gebruikt dat is gegenereerd door Azure Machine Learning, kunt u de bestanden ophalen voordat u het cluster ontkoppelt door verbinding te maken met het cluster met behulp `kubectl` van en het geheim op te halen `azuremlfessl` .
+
+```bash
+kubectl get secret/azuremlfessl -o yaml
+```
+
+>[!Note]
+>Kubernetes slaat de geheimen op in de indeling basis-64-code ring. U moet base-64 decoderen van de- `cert.pem` en- `key.pem` onderdelen van de geheimen voordat u deze opgeeft `attach_config.enable_ssl` . 
+
+### <a name="webservice-failures"></a>Fouten van webservice
+
+Veel mislukte webservice-fouten in AKS kunnen worden opgespoord door verbinding te maken met het cluster met behulp van `kubectl` . U kunt het `kubeconfig.json` voor een AKS-cluster verkrijgen door het uit te voeren
+
+```azurecli-interactive
+az aks get-credentials -g <rg> -n <aks cluster name>
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,24 +1,26 @@
 ---
 title: Een Red Hat Enterprise Linux VHD maken en uploaden voor gebruik in azure
 description: Meer informatie over het maken en uploaden van een virtuele harde schijf van Azure (VHD) met een Red Hat Linux-besturings systeem.
-author: gbowerman
+author: danielsollondon
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
-ms.date: 05/17/2019
-ms.author: guybo
-ms.openlocfilehash: 8c352b9e6b067724fbfc00bf5b0338baf8514421
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/01/2020
+ms.author: danis
+ms.openlocfilehash: 065b4348675fcd48088fd26db0e0293eb2d7a387
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500492"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896461"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Een op Red Hat gebaseerde virtuele machine voor Azure voorbereiden
 In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie de [opbouw functie voor Azure-installatie kopie√´n](./image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopie√´n te automatiseren.
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-hyper-v-manager"></a>Een op Red Hat gebaseerde virtuele machine voorbereiden vanuit Hyper-V-beheer
+## <a name="hyper-v-manager"></a>Hyper-V-beheer
+
+In deze sectie wordt beschreven hoe u een virtuele machine met [RHEL 6](#rhel-6-using-hyper-v-manager) of [RHEL 7](#rhel-7-using-hyper-v-manager) voorbereidt met behulp van Hyper-V-beheer.
 
 ### <a name="prerequisites"></a>Vereisten
 In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van de website Red Hat en de RHEL-installatie kopie hebt ge√Ønstalleerd op een virtuele harde schijf (VHD). Zie [hyper-v-functie installeren en een virtuele machine configureren](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11))voor meer informatie over het gebruik van Hyper-v-beheer om een installatie kopie van een besturings systeem te installeren.
@@ -28,12 +30,13 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 * Azure biedt geen ondersteuning voor de VHDX-indeling. Azure ondersteunt alleen vaste VHD. U kunt Hyper-V-beheer gebruiken om de schijf te converteren naar VHD-indeling, of u kunt de cmdlet Convert-VHD gebruiken. Als u VirtualBox gebruikt, selecteert u **vaste grootte** in plaats van de standaard optie voor dynamisch toegewezen wanneer u de schijf maakt.
 * Azure biedt ondersteuning voor gen1 (BIOS Boot) & Gen2 (UEFI boot) virtuele machines.
 * De maximale grootte die is toegestaan voor de VHD is 1.023 GB.
-* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) en [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) -documentatie.
-* Kernel-ondersteuning voor het koppelen van UDF-bestands systemen (Universal Disk Format) is vereist. Bij de eerste keer opstarten op Azure wordt de inrichtings configuratie door de UDF-indelings media die aan de gast is gekoppeld, door gegeven aan de virtuele Linux-machine. De Azure Linux-agent moet het UDF-bestands systeem kunnen koppelen om de configuratie te lezen en de virtuele machine in te richten.
-* Configureer geen swap partitie op de schijf met het besturings systeem. De Linux-agent kan worden geconfigureerd voor het maken van een wissel bestand op de tijdelijke bron schijf.  Meer informatie hierover vindt u in de volgende stappen.
+* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) en [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) -documentatie.
+* **Kernel-ondersteuning voor het koppelen van UDF-bestands systemen (Universal Disk Format) is vereist**. Bij de eerste keer opstarten op Azure wordt de inrichtings configuratie door de UDF-indelings media die aan de gast is gekoppeld, door gegeven aan de virtuele Linux-machine. De Azure Linux-agent moet het UDF-bestands systeem kunnen koppelen om de configuratie te lezen en de virtuele machine zo in te richten, mislukt het inrichten.
+* Configureer geen swap partitie op de schijf met het besturings systeem. Meer informatie hierover vindt u in de volgende stappen.
+
 * Alle Vhd's op Azure moeten een virtuele grootte hebben die is afgestemd op 1 MB. Wanneer u van een onbewerkte schijf naar VHD converteert, moet u ervoor zorgen dat de onbewerkte schijf grootte een meervoud van 1MB is v√≥√≥r de conversie. Meer informatie vindt u in de volgende stappen. Zie ook [Linux-installatie notities](create-upload-generic.md#general-linux-installation-notes) voor meer informatie.
 
-### <a name="prepare-a-rhel-6-virtual-machine-from-hyper-v-manager"></a>Een virtuele machine met RHEL 6 voorbereiden vanuit Hyper-V-beheer
+### <a name="rhel-6-using-hyper-v-manager"></a>RHEL 6 met Hyper-V-beheer
 
 1. Selecteer de virtuele machine in Hyper-V-beheer.
 
@@ -156,7 +159,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 1. Klik op **actie**  >  **Afsluiten** in Hyper-V-beheer. Uw Linux-VHD is nu gereed om te worden ge√ºpload naar Azure.
 
 
-### <a name="prepare-a-rhel-7-virtual-machine-from-hyper-v-manager"></a>Een virtuele machine met RHEL 7 voorbereiden vanuit Hyper-V-beheer
+### <a name="rhel-7-using-hyper-v-manager"></a>RHEL 7 met Hyper-V-beheer
 
 1. Selecteer de virtuele machine in Hyper-V-beheer.
 
@@ -235,25 +238,89 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     # sudo systemctl enable waagent.service
     ```
 
-1. Maak geen wissel ruimte op de schijf met het besturings systeem.
-
-    De Azure Linux-agent kan automatisch wissel ruimte configureren door gebruik te maken van de lokale bron schijf die is gekoppeld aan de virtuele machine nadat de virtuele machine is ingericht op Azure. Houd er rekening mee dat de lokale bron schijf een tijdelijke schijf is en kan worden leeg gemaakt als de inrichting van de virtuele machine wordt opheffen. Nadat u de Azure Linux-agent in de vorige stap hebt ge√Ønstalleerd, wijzigt u de volgende para meters op de `/etc/waagent.conf` juiste manier:
+1. Cloud-init installeren voor het afhandelen van de inrichting
 
     ```console
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
+    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # Configure waagent for cloud-init
+    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+
+    echo "Allow only Azure datasource, disable fetching network setting via IMDS"
+    cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
+    datasource_list: [ Azure ]
+    datasource:
+    Azure:
+        apply_network_config: False
+    EOF
+
+    if [[ -f /mnt/resource/swapfile ]]; then
+    echo Removing swapfile - RHEL uses a swapfile by default
+    swapoff /mnt/resource/swapfile
+    rm /mnt/resource/swapfile -f
+    fi
+
+    echo "Add console log file"
+    cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
+
+    # This tells cloud-init to redirect its stdout and stderr to
+    # 'tee -a /var/log/cloud-init-output.log' so the user can see output
+    # there without needing to look on the console.
+    output: {all: '| tee -a /var/log/cloud-init-output.log'}
+    EOF
+
     ```
 
+1. Wisselings configuratie maakt geen wissel ruimte op de schijf met het besturings systeem.
+
+    Voorheen werd de Azure Linux-agent gebruikt om de wissel ruimte automatisch te configureren met behulp van de lokale bron schijf die is gekoppeld aan de virtuele machine nadat de virtuele machine is ingericht op Azure. Dit wordt nu echter verwerkt door Cloud-init, u **moet** de Linux-agent niet gebruiken om de bron schijf te Format teren Maak het wissel bestand, wijzig de volgende para meters op de `/etc/waagent.conf` juiste manier:
+
+    ```console
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+    ```
+
+    Als u koppelen, Format teren en wisselen wilt maken, kunt u het volgende doen:
+    * Deze in als Cloud-init-configuratie door geven telkens wanneer u een virtuele machine maakt
+    * Gebruik een Cloud-init-instructie ge√Øntegreerde in de installatie kopie die dit doet wanneer de virtuele machine wordt gemaakt:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
 1. Als u de registratie van het abonnement wilt opheffen, voert u de volgende opdracht uit:
 
     ```console
     # sudo subscription-manager unregister
     ```
 
-1. Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
+1. Inrichting
+
+    Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
 
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
@@ -268,8 +335,11 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 1. Klik op **actie**  >  **Afsluiten** in Hyper-V-beheer. Uw Linux-VHD is nu gereed om te worden ge√ºpload naar Azure.
 
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-kvm"></a>Een op Red Hat gebaseerde virtuele machine voorbereiden op basis van KVM
-### <a name="prepare-a-rhel-6-virtual-machine-from-kvm"></a>Een virtuele machine van RHEL 6 voorbereiden op KVM
+## <a name="kvm"></a>KVM
+
+In deze sectie wordt beschreven hoe u met KVM een [RHEL 6](#rhel-6-using-kvm) -of [RHEL 7](#rhel-7-using-kvm) -distributie voorbereidt om te uploaden naar Azure. 
+
+### <a name="rhel-6-using-kvm"></a>RHEL 6 met KVM
 
 1. Down load de KVM-installatie kopie van RHEL 6 van de website Red Hat.
 
@@ -420,7 +490,12 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
     # skip the deprovision step
-    # waagent -force -deprovision
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
 
     # export HISTSIZE=0
 
@@ -465,7 +540,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     ```
 
         
-### <a name="prepare-a-rhel-7-virtual-machine-from-kvm"></a>Een virtuele machine van RHEL 7 voorbereiden op KVM
+### <a name="rhel-7-using-kvm"></a>RHEL 7 met KVM
 
 1. Down load de KVM-installatie kopie van RHEL 7 van de website Red Hat. Deze procedure maakt gebruik van RHEL 7 als voor beeld.
 
@@ -596,17 +671,13 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     # systemctl enable waagent.service
     ```
 
-1. Maak geen wissel ruimte op de schijf met het besturings systeem.
+1. Cloud-init installeren volg de stappen in ' een RHEL 7-virtuele machine voorbereiden vanuit Hyper-V-beheer ', stap 12, ' Cloud-init installeren voor het afhandelen van de inrichting '.
 
-    De Azure Linux-agent kan automatisch wissel ruimte configureren door gebruik te maken van de lokale bron schijf die is gekoppeld aan de virtuele machine nadat de virtuele machine is ingericht op Azure. Houd er rekening mee dat de lokale bron schijf een tijdelijke schijf is en kan worden leeg gemaakt als de inrichting van de virtuele machine wordt opheffen. Nadat u de Azure Linux-agent in de vorige stap hebt ge√Ønstalleerd, wijzigt u de volgende para meters op de `/etc/waagent.conf` juiste manier:
+1. Configuratie wisselen 
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
-    ```
+    Maak geen wissel ruimte op de schijf met het besturings systeem.
+    Volg de stappen in ' een virtuele machine van RHEL 7 voorbereiden vanuit Hyper-V-beheer ', stap 13, ' swap configuratie '
+
 
 1. Hef de registratie van het abonnement op (indien nodig) door de volgende opdracht uit te voeren:
 
@@ -614,17 +685,10 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     # subscription-manager unregister
     ```
 
-1. Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
 
-    ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
-    # sudo waagent -force -deprovision
+1. Inrichting
 
-    # export HISTSIZE=0
-
-    # logout
-    ```
+    Volg de stappen in ' een RHEL 7-virtuele machine voorbereiden vanuit Hyper-V-beheer ', stap 15, ' inrichting opheffen '
 
 1. Sluit de virtuele machine in KVM af.
 
@@ -663,7 +727,10 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-7.4.raw rhel-7.4.vhd
     ```
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-vmware"></a>Een op Red Hat gebaseerde virtuele machine voorbereiden vanuit VMware
+## <a name="vmware"></a>VMware
+
+In deze sectie wordt beschreven hoe u een [RHEL 6](#rhel-6-using-vmware) -of [RHEL 7](#rhel-6-using-vmware)  -distributie van VMware voorbereidt.
+
 ### <a name="prerequisites"></a>Vereisten
 In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√Ønstalleerd in VMware. Zie voor meer informatie over het installeren van een besturings systeem in VMware de [installatie handleiding voor VMware Guest Operating System](https://partnerweb.vmware.com/GOSIG/home.html).
 
@@ -671,7 +738,7 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
 * Configureer geen swap partitie op de schijf met het besturings systeem. U kunt de Linux-agent configureren voor het maken van een wissel bestand op de tijdelijke bron schijf. In de volgende stappen vindt u meer informatie hierover.
 * Wanneer u de virtuele harde schijf maakt, selecteert u **virtuele schijf opslaan als √©√©n bestand**.
 
-### <a name="prepare-a-rhel-6-virtual-machine-from-vmware"></a>Een virtuele machine met RHEL 6 voorbereiden vanuit VMware
+### <a name="rhel-6-using-vmware"></a>RHEL 6 met VMware
 1. In RHEL 6 kan NetworkManager conflicteren met de Azure Linux-agent. Verwijder dit pakket door de volgende opdracht uit te voeren:
 
     ```console
@@ -788,7 +855,12 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     ```console
     # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
     # skip the deprovision step
-    # sudo waagent -force -deprovision
+    # sudo rm -rf /var/lib/waagent/
+    # sudo rm -f /var/log/waagent.log
+
+    # waagent -force -deprovision+user
+    # rm -f ~/.bash_history
+    
 
     # export HISTSIZE=0
 
@@ -830,7 +902,7 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-6.9.raw rhel-6.9.vhd
     ```
 
-### <a name="prepare-a-rhel-7-virtual-machine-from-vmware"></a>Een virtuele machine met RHEL 7 voorbereiden vanuit VMware
+### <a name="rhel-7-using-vmware"></a>RHEL 7 met VMware
 1. Maak of bewerk het `/etc/sysconfig/network` bestand en voeg de volgende tekst toe:
 
     ```config
@@ -918,17 +990,14 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     # sudo systemctl enable waagent.service
     ```
 
-1. Maak geen wissel ruimte op de schijf met het besturings systeem.
+1. Cloud-init installeren
 
-    De Azure Linux-agent kan automatisch wissel ruimte configureren door gebruik te maken van de lokale bron schijf die is gekoppeld aan de virtuele machine nadat de virtuele machine is ingericht op Azure. Houd er rekening mee dat de lokale bron schijf een tijdelijke schijf is en kan worden leeg gemaakt als de inrichting van de virtuele machine wordt opheffen. Nadat u de Azure Linux-agent in de vorige stap hebt ge√Ønstalleerd, wijzigt u de volgende para meters op de `/etc/waagent.conf` juiste manier:
+    Volg de stappen in ' een virtuele machine van RHEL 7 voorbereiden vanuit Hyper-V-beheer ', stap 12, ' Cloud-init installeren voor het afhandelen van de inrichting '.
 
-    ```config-conf
-    ResourceDisk.Format=y
-    ResourceDisk.Filesystem=ext4
-    ResourceDisk.MountPoint=/mnt/resource
-    ResourceDisk.EnableSwap=y
-    ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
-    ```
+1. Configuratie wisselen
+
+    Maak geen wissel ruimte op de schijf met het besturings systeem.
+    Volg de stappen in ' een virtuele machine van RHEL 7 voorbereiden vanuit Hyper-V-beheer ', stap 13, ' swap configuratie '
 
 1. Als u de registratie van het abonnement wilt opheffen, voert u de volgende opdracht uit:
 
@@ -936,17 +1005,10 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     # sudo subscription-manager unregister
     ```
 
-1. Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
+1. Inrichting
 
-    ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
-    # sudo waagent -force -deprovision
+    Volg de stappen in ' een RHEL 7-virtuele machine voorbereiden vanuit Hyper-V-beheer ', stap 15, ' inrichting opheffen '
 
-    # export HISTSIZE=0
-
-    # logout
-    ```
 
 1. Sluit de virtuele machine af en converteer het VMDK-bestand naar de VHD-indeling.
 
@@ -983,8 +1045,11 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc rhel-7.4.raw rhel-7.4.vhd
     ```
 
-## <a name="prepare-a-red-hat-based-virtual-machine-from-an-iso-by-using-a-kickstart-file-automatically"></a>Een op Red Hat gebaseerde virtuele machine voorbereiden vanuit een ISO met behulp van een kickstart-bestand automatisch
-### <a name="prepare-a-rhel-7-virtual-machine-from-a-kickstart-file"></a>Een virtuele machine van RHEL 7 voorbereiden vanuit een kickstart-bestand
+## <a name="kickstart-file"></a>Kickstart-bestand
+
+In deze sectie wordt beschreven hoe u een RHEL 7 distributie van een ISO voorbereidt met behulp van een kickstart-bestand.
+
+### <a name="rhel-7-from-a-kickstart-file"></a>RHEL 7 van een kickstart-bestand
 
 1.  Maak een kickstart-bestand dat de volgende inhoud bevat en sla het bestand op. Zie de [installatie handleiding voor kickstart](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html)voor meer informatie over de installatie van KickStart.
 
@@ -1075,12 +1140,46 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     # Enable waaagent at boot-up
     systemctl enable waagent
 
+    # Install cloud-init
+    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # Configure waagent for cloud-init
+    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+
     # Disable the root account
     usermod root -p '!!'
 
-    # Configure swap in WALinuxAgent
-    sed -i 's/^\(ResourceDisk\.EnableSwap\)=[Nn]$/\1=y/g' /etc/waagent.conf
-    sed -i 's/^\(ResourceDisk\.SwapSizeMB\)=[0-9]*$/\1=2048/g' /etc/waagent.conf
+    # Disabke swap in WALinuxAgent
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+
+    # Configure swap using cloud-init
+    cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+    #cloud-config
+    # Generated by Azure cloud image build
+    disk_setup:
+    ephemeral0:
+        table_type: mbr
+        layout: [66, [33, 82]]
+        overwrite: True
+    fs_setup:
+    - device: ephemeral0.1
+        filesystem: ext4
+    - device: ephemeral0.2
+        filesystem: swap
+    mounts:
+    - ["ephemeral0.1", "/mnt"]
+    - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+    EOF
 
     # Set the cmdline
     sed -i 's/^\(GRUB_CMDLINE_LINUX\)=".*"$/\1="console=tty1 console=ttyS0 earlyprintk=ttyS0 rootdelay=300"/g' /etc/default/grub
@@ -1105,7 +1204,14 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge√
     EOF
 
     # Deprovision and prepare for Azure if you are creating a generalized image
-    waagent -force -deprovision
+    sudo cloud-init clean --logs --seed
+    sudo rm -rf /var/lib/cloud/
+    sudo rm -rf /var/lib/waagent/
+    sudo rm -f /var/log/waagent.log
+
+    sudo waagent -force -deprovision+user
+    rm -f ~/.bash_history
+    export HISTSIZE=0
 
     %end
     ```

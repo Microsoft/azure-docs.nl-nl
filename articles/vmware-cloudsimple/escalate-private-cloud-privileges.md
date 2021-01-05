@@ -2,19 +2,19 @@
 title: Persoonlijke Cloud bevoegdheden escaleren
 titleSuffix: Azure VMware Solution by CloudSimple
 description: Beschrijft hoe u bevoegdheden in uw privécloud kunt escaleren voor beheer functies in vCenter
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 06/05/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 628824a3d303184e199452b0974c7f99d99a4933
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2215bd9a60fdcf76077c3a1f2a91631dc0dbe88
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86998949"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895819"
 ---
 # <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Persoonlijke Cloud vCenter-bevoegdheden escaleren vanuit de CloudSimple-Portal
 
@@ -35,7 +35,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 2. Open de pagina **resources** , selecteer de privécloud waarvoor u bevoegdheden wilt escaleren.
 
-3. Klik onder aan de pagina samen vatting onder **vSphere bevoegdheden wijzigen**op **escaleren**.
+3. Klik onder aan de pagina samen vatting onder **vSphere bevoegdheden wijzigen** op **escaleren**.
 
     ![VSphere-bevoegdheid wijzigen](media/escalate-private-cloud-privilege.png)
 

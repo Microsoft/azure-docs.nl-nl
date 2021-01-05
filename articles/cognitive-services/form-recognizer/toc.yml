@@ -7,45 +7,13 @@
       href: overview.md
     - name: Nieuwe functies
       href: whats-new.md
-- name: Snelstartgidsen
+- name: Aan de slag met Form Recognizer
   expaned: true
   items:
-    - name: Clientbibliotheek gebruiken
+    - name: De clientbibliotheek of REST API gebruiken
       href: quickstarts/client-library.md
     - name: Het voorbeeldhulpprogramma voor labelen gebruiken
-      items:
-        - name: Aangepast model trainen met labels
-          href: quickstarts/label-tool.md
-    - name: Met behulp van de REST API
-      items:
-        - name: Aangepast model trainen en gebruiken zonder labels
-          items:
-            - name: cURL
-              href: quickstarts/curl-train-extract.md
-            - name: Python
-              href: quickstarts/python-train-extract.md
-        - name: Aangepast model trainen en gebruiken met labels
-          items:
-            - name: Python
-              href: quickstarts/python-labeled-data.md
-        - name: Vooraf gebouwd ontvangstmodel gebruiken
-          items:
-            - name: cURL
-              href: quickstarts/curl-receipts.md
-            - name: Python
-              href: quickstarts/python-receipts.md
-        - name: Vooraf gebouwd visitekaartjesmodel gebruiken
-          items:
-            - name: Python
-              href: quickstarts/python-business-cards.md
-        - name: Vooraf gebouwd factureringsmodel gebruiken
-          items:
-            - name: Python
-              href: quickstarts/python-invoices.md
-        - name: Informatie over tekstindeling ophalen
-          items:
-            - name: Python
-              href: quickstarts/python-layout.md
+      href: quickstarts/label-tool.md
 - name: Zelfstudies
   items:
     - name: Form Recognizer gebruiken met Cognitive Search
@@ -77,7 +45,8 @@
           href: form-recognizer-container-configuration.md
           displayName: 'docker, container, run, billing, apikey, logging'
         - name: Containerinstanties gebruiken
-          href: deploy-form-recognizer-on-container-instances.md
+          maintainContext: true
+          href: ../containers/azure-container-instance-recipe.md
         - name: Documentatie voor Cognitive Services-containers
           href: ../containers/index.yml
     - name: Back-ups maken en modellen herstellen

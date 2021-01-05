@@ -9,17 +9,17 @@ editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/01/2020
+ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 974418a1b3c1e7fe93b2f6839c16169e5bd5abc5
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 557f53e39781406674b9903dcf0bb3cb536cd804
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696996"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897481"
 ---
 # <a name="step-3-validate-connectivity"></a>STAP 3: connectiviteit valideren
 
@@ -44,7 +44,7 @@ Houd er rekening mee dat het ongeveer 20 minuten kan duren voordat uw logboeken 
 1. Voer het volgende script uit op de logboek-doorstuur server (waarbij de werk ruimte-ID in plaats van de tijdelijke aanduiding wordt toegepast) om te controleren of de verbinding tussen uw beveiligings oplossing, de logboek-forwarder en Azure-Sentinel wordt gecontroleerd. Met dit script wordt gecontroleerd of de daemon op de juiste poorten luistert, of het door sturen correct is geconfigureerd en dat er geen communicatie tussen de daemon en de Log Analytics agent wordt geblokkeerd. Er worden ook beeldberichten TestCommonEventFormat verzonden om end-to-end-connectiviteit te controleren. <br>
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]` 
+    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
     ```
 
    - Mogelijk wordt er een bericht weer gegeven waarin u wordt gevraagd een opdracht uit te voeren om een probleem met de **toewijzing van het *computer* veld** te corrigeren. Zie de [uitleg bij het validatie script](#mapping-command) voor meer informatie.
@@ -207,8 +207,7 @@ Het validatie script voert de volgende controles uit:
     - Configuratie bestand: `/etc/syslog-ng/conf.d/security-config-omsagent.conf`
 
         ```bash
-        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};
-        destination oms_destination {tcp(\"127.0.0.1\" port("25226"));};
+        filter f_oms_filter {match(\"CEF\|ASA\" ) ;};destination oms_destination {tcp(\"127.0.0.1\" port(25226));};
         log {source(s_src);filter(f_oms_filter);destination(oms_destination);};
         ```
 

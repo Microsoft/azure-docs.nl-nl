@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: e7d013775861f290d532e0d7c132896ebeff8ae8
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 137670715af8b90d8a867459fa50249cd9be8e70
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680216"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897113"
 ---
 # <a name="platform-supported-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager in Linux
 
@@ -23,6 +23,8 @@ ms.locfileid: "97680216"
 
 
 In dit artikel vindt u een overzicht van het door het platform ondersteunde migratie programma, over het migreren van resources van de implementatie modellen Azure Service Manager (ASM) ook wel Classic naar Resource Manager (ARM) en informatie over het verbinden van resources uit de twee implementatie modellen die naast elkaar worden gebruikt in uw abonnement met behulp van site-naar-site gateways van het virtuele netwerk. U kunt meer lezen over [Azure Resource Manager functies en voor delen](../azure-resource-manager/management/overview.md). 
+
+ASM ondersteunt twee verschillende Compute-producten, Azure Virtual Machines (klassiek) ook wel IaaS Vm's & [azure Cloud Services (klassiek)](https://docs.microsoft.com/azure/cloud-services/) ook wel PaaS Vm's of Web/Worker-rollen. In dit document wordt alleen gepraat over het migreren van Azure Virtual Machines (klassiek).
 
 ## <a name="goal-for-migration"></a>Doel voor migratie
 Met Resource Manager kunt u complexe toepassingen implementeren via sjablonen, virtuele machines configureren met behulp van VM-extensies en toegangs beheer en tagging van het netwerk. Azure Resource Manager bevat schaal bare, parallelle implementatie voor virtuele machines in beschikbaarheids sets. Het nieuwe implementatie model biedt ook een levenscyclus beheer van compute, netwerk en opslag onafhankelijk. Ten slotte is er een focus op het inschakelen van beveiliging standaard met het afdwingen van virtuele machines in een virtueel netwerk.
@@ -88,7 +90,7 @@ Als uw opslag account geen gekoppelde schijven of Virtual Machines gegevens heef
 > Het Resource Manager-implementatie model bevat niet het concept van klassieke installatie kopieën en schijven. Wanneer het opslag account is gemigreerd, zijn klassieke installatie kopieën en schijven niet zichtbaar in de stack van de Resource Manager, maar blijven de back-upvhd's in het opslag account.
 
 In de volgende scherm afbeeldingen ziet u hoe u een klassiek opslag account bijwerkt naar een Azure Resource Manager Storage-account met behulp van Azure Portal:
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Ga naar uw opslagaccount.
 3. Klik in de sectie **instellingen** op **migreren naar arm**.
 4. Klik op **valideren** om de haal baarheid van de migratie te bepalen.

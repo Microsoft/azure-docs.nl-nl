@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 0b2346ae4777b31ce2e5c396fb03084d38b2008f
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 7926f4023b64feff33ae55fc6c8726a605773fef
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678969"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895033"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Extensie van de virtuele machine Key Vault voor Windows
 
@@ -37,9 +37,23 @@ De extensie van de Key Vault-VM wordt ook ondersteund op een aangepaste lokale v
 
 ## <a name="prerequisities"></a>Prerequisities
   - Key Vault-exemplaar met het certificaat. Zie [een Key Vault maken](../../key-vault/general/quick-create-portal.md)
-  - VM/VMSS moet toegewezen [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) hebben
+  - De virtuele machine moet een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) hebben toegewezen
   - Het Key Vault toegangs beleid moet zijn ingesteld met geheimen `get` en `list` machtigingen voor de door de virtuele machine/VMSS beheerde identiteit om een geheim gedeelte van het certificaat op te halen. Zie [verifiëren bij Key Vault](../../key-vault/general/authentication.md) en [een Key Vault toegangs beleid toewijzen](../../key-vault/general/assign-access-policy-cli.md).
-
+  -  VMSS moet de volgende identiteits instelling hebben: ` 
+  "identity": {
+  "type": "UserAssigned",
+  "userAssignedIdentities": {
+  "[parameters('userAssignedIdentityResourceId')]": {}
+  }
+  }
+  `
+  
+- De Azure-extensie moet deze instelling hebben: `
+                  "authenticationSettings": {
+                    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
+                    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
+                  }
+   `
 ## <a name="extension-schema"></a>Extensieschema
 
 De volgende JSON toont het schema voor de extensie van de Key Vault-VM. Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen ervan worden beschouwd als open bare informatie. De uitbrei ding vereist een lijst met bewaakte certificaten, polling frequentie en het doel certificaat archief. Specifiek:  
@@ -140,6 +154,17 @@ De JSON-configuratie voor een extensie van een virtuele machine moet zijn genest
     }
 ```
 
+### <a name="extension-dependency-ordering"></a>Volg orde van extensie afhankelijkheid
+De extensie van de Key Vault-VM ondersteunt de volg orde van de extensie als deze is geconfigureerd. De uitbrei ding rapporteert standaard dat deze is gestart zodra het pollen is gestart. Het kan echter zo worden geconfigureerd dat er wordt gewacht tot de volledige lijst met certificaten is gedownload voordat een geslaagde start wordt gerapporteerd. Als andere uitbrei dingen afhankelijk zijn van de installatie van de volledige set certificaten voordat ze worden gestart, kunt u met deze instelling een afhankelijkheid declareren voor de uitbrei ding van de Key Vault. Hiermee voor komt u dat de uitbrei dingen worden gestart totdat alle certificaten waarvan ze afhankelijk zijn, zijn geïnstalleerd. De uitbrei ding zal de eerste down load voor onbepaalde tijd opnieuw proberen en blijven in een `Transitioning` status.
+
+Als u dit wilt inschakelen, stelt u het volgende in:
+```
+"secretsManagementSettings": {
+    "requireInitialSync": true,
+    ...
+}
+```
+> Eraan Het gebruik van deze functie is niet compatibel met een ARM-sjabloon die een door het systeem toegewezen identiteit maakt en een Key Vault toegangs beleid met die identiteit bijwerkt. Dit leidt tot een deadlock als het toegangs beleid voor de kluis pas kan worden bijgewerkt als alle uitbrei dingen zijn gestart. U moet in plaats daarvan *één door de gebruiker toegewezen MSI-identiteit* gebruiken en uw kluizen vooraf-ACL met die identiteit voordat u implementeert.
 
 ## <a name="azure-powershell-deployment"></a>Azure PowerShell-implementatie
 > [!WARNING]

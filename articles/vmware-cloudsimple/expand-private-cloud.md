@@ -1,19 +1,19 @@
 ---
 title: Vouw de Azure VMware-oplossing uit via CloudSimple Private Cloud
 description: Hierin wordt beschreven hoe u een bestaande CloudSimple-Privécloud uitbreidt om capaciteit toe te voegen aan een bestaand of nieuw cluster
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 06/06/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a82ba1b433e62ed1c4b72b8e942d4ade29f26c4a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c469ea3f104e71eb80010d4a5cd421eab6184fcf
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77025296"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895853"
 ---
 # <a name="expand-a-cloudsimple-private-cloud"></a>Een CloudSimple-Privécloud uitbreiden
 
@@ -48,7 +48,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 4. Kies of u uw bestaande cluster wilt uitbreiden of een nieuw vSphere-cluster wilt maken. Wanneer u wijzigingen aanbrengt, wordt de samenvattings informatie op de pagina bijgewerkt.
 
     * Als u uw bestaande cluster wilt uitbreiden, klikt u op **bestaand cluster uitvouwen**. Selecteer het cluster dat u wilt uitbreiden en voer het aantal knoop punten in dat u wilt toevoegen. Elk cluster kan Maxi maal 16 knoop punten bevatten.
-    * Klik op **Nieuw cluster maken**om een nieuw cluster toe te voegen. Voer een naam in voor het cluster. Selecteer een bestaand Data Center of voer een naam in om een nieuw Data Center te maken. Kies het knooppunt type. U kunt een ander type knoop punt kiezen bij het maken van een nieuw vSphere-cluster, maar niet bij het uitbreiden van een bestaand vSphere-cluster. Selecteer het aantal knoop punten. Elk nieuw cluster moet ten minste drie knoop punten hebben.
+    * Klik op **Nieuw cluster maken** om een nieuw cluster toe te voegen. Voer een naam in voor het cluster. Selecteer een bestaand Data Center of voer een naam in om een nieuw Data Center te maken. Kies het knooppunt type. U kunt een ander type knoop punt kiezen bij het maken van een nieuw vSphere-cluster, maar niet bij het uitbreiden van een bestaand vSphere-cluster. Selecteer het aantal knoop punten. Elk nieuw cluster moet ten minste drie knoop punten hebben.
 
     ![Open de privécloud en voeg knoop punten toe](media/resources-expand-private-cloud-add-nodes.png)
 

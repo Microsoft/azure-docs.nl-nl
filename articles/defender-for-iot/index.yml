@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Defender voor IoT
-summary: Azure Defender for IoT is een cloud-beveiligingsservice van Azure die uitgebreide bescherming biedt tegen bedreigingen voor IoT-apparaten.
+summary: Azure Defender for IoT biedt uitgebreide bedreigingsdetectie voor IoT-/OT-omgevingen met meerdere implementatieopties, waaronder volledig on-premises, verbonden met de cloud of hybride.
 metadata:
   title: Documentatie voor Azure Defender voor IoT
   description: Meer informatie over hoe Azure Defender for IoT, een cloud-beveiligingsservice van Azure, uitgebreide bescherming biedt tegen bedreigingen voor IoT-apparaten.
@@ -11,12 +11,12 @@ metadata:
   author: mlottner
   ms.author: mlottner
   ms.date: 09/07/2020
-  ms.openlocfilehash: 00cef8a146a84c4261dde46785f2ea9bb1c03173
-  ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+  ms.openlocfilehash: 65bdc8c54e8cee2ee1b63d21a172ba870162d070
+  ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/31/2020
-  ms.locfileid: "97832332"
+  ms.lasthandoff: 01/04/2021
+  ms.locfileid: "97860832"
 landingContent:
 - title: Aan de slag met Azure Defender for IoT
   linkLists:

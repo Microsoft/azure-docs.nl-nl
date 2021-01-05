@@ -1,19 +1,19 @@
 ---
 title: Azure VMware-oplossing beheren via CloudSimple Private Cloud
 description: Beschrijft de mogelijkheden die beschikbaar zijn voor het beheren van uw CloudSimple persoonlijke cloud resources en-activiteit
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 06/10/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: b0aff8298ac2335e5216252eb2cbd5a393cc37d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f2f66c2e1e2e8aa596393d4c69a757138ab5a91
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86524993"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895203"
 ---
 # <a name="manage-private-cloud-resources-and-activity"></a>Persoonlijke cloud resources en-activiteiten beheren
 
@@ -47,7 +47,7 @@ Een uitgebreid overzicht van de geselecteerde Privécloud weer geven.  Overzicht
 * [Inkoop knooppunten](create-nodes.md). Voeg knoop punten toe aan deze Privécloud.
 * [Uitvouwen](expand-private-cloud.md). Voeg knoop punten toe aan deze Privécloud.
 * **Vernieuwen**. De gegevens op deze pagina bijwerken.
-* **Verwijderen**. U kunt de Privécloud op elk gewenst moment verwijderen. **Voordat u verwijdert, moet u ervoor zorgen dat u een back-up hebt gemaakt van alle systemen en gegevens.** Wanneer u een Privécloud verwijdert, worden alle Vm's, de configuratie van de vCenter en de gegevens verwijderd. Klik op **verwijderen** in het gedeelte samen vatting van de geselecteerde privécloud. Na het verwijderen worden alle gegevens van de Privécloud gewist in een beveiligd, uiterst compatibel verwijderings proces.
+* **Delete**. U kunt de Privécloud op elk gewenst moment verwijderen. **Voordat u verwijdert, moet u ervoor zorgen dat u een back-up hebt gemaakt van alle systemen en gegevens.** Wanneer u een Privécloud verwijdert, worden alle Vm's, de configuratie van de vCenter en de gegevens verwijderd. Klik op **verwijderen** in het gedeelte samen vatting van de geselecteerde privécloud. Na het verwijderen worden alle gegevens van de Privécloud gewist in een beveiligd, uiterst compatibel verwijderings proces.
 * [Wijzig de vSphere-bevoegdheden](escalate-private-cloud-privileges.md).  Escaleren uw bevoegdheden op deze Privécloud.
 
 ## <a name="private-cloud-vlanssubnets"></a>Particuliere cloud-VLAN'S/-subnetten

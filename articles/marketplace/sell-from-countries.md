@@ -8,17 +8,17 @@ ms.custom: references_regions
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 09/02/2020
-ms.openlocfilehash: fd33ebebf35e0407f7ce39c609ee372a7d1d4a61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/04/2021
+ms.openlocfilehash: 48a0c3484b6cbeac4d71d3fbf383bb1c14466a9d
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250501"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897328"
 ---
 # <a name="supported-publisher-countries-and-regions"></a>Ondersteunde uitgevers landen en regio's
 
-Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moet u uw verblijfs naam hebben in een van de volgende landen of regio's.
+Voor het publiceren van een aanbieding naar micro soft Commercial Marketplace moet uw bedrijf legaal zijn in een van de volgende landen of regio's:
 
 - Afghanistan
 - Åland-eilanden
@@ -115,7 +115,7 @@ Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moe
 - Guinee-Bissau
 - Guyana
 - Haïti
-- Heard Island en McDonald eilanden
+- Heard- en McDonald-eilanden
 - Honduras
 - Hongkong SAR
 - Hongarije
@@ -134,7 +134,6 @@ Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moe
 - Kazachstan
 - Kenia
 - Kiribati
-- Korea
 - Kosovo
 - Koeweit
 - Kirgistan
@@ -202,7 +201,7 @@ Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moe
 - Rwanda
 - Réunion
 - Saba
-- Saint--Barthélemy
+- Saint Barthélemy
 - Saint Kitts en Nevis
 - Saint Lucia
 - Saint-Martin
@@ -216,14 +215,15 @@ Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moe
 - Seychellen
 - Sierra Leone
 - Singapore
-- Sint-Eustatius
+- Sint Eustatius
 - Sint Maarten
 - Slowakije
 - Slovenië
 - Salomonseilanden
 - Somalië
 - Zuid-Afrika
-- Zuid-Georgië en de zuidelijke Sandwich eilanden
+- Zuid-Georgië en de Zuidelijke Sandwicheilanden
+- Zuid-Korea (Republiek Korea)
 - Zuid-Soedan
 - Spanje
 - Sri Lanka
@@ -248,7 +248,7 @@ Als u een aanbieding naar micro soft Commercial Marketplace wilt publiceren, moe
 - Turkmenistan
 - Turks- en Caicos-eilanden
 - Tuvalu
--  Kleine afgelegen eilanden van de Verenigde Staten
+- Amerikaanse ondergeschikte afgelegen eilanden
 - Amerikaanse Maagden eilanden
 - Oeganda
 - Oekraïne

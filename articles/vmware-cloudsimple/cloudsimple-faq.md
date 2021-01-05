@@ -1,19 +1,19 @@
 ---
 title: Veelgestelde vragen-Azure VMware-oplossing per CloudSimple
 description: Deze veelgestelde vragen over Azure VMware-oplossingen van CloudSimple zijn onder andere connectiviteit, netwerken, beveiliging, opslag, Azure-integratie en anderen.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/15/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 0db8c13a7467ed864c0845319b37f958f60fa4d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3551327f9aa07fe218d3b05f73057e36f92abcad
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88140884"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895560"
 ---
 # <a name="frequently-asked-questions-about-vmware-solution-by-cloudsimple"></a>Veelgestelde vragen over VMware-oplossing per CloudSimple
 
@@ -131,7 +131,7 @@ CloudSimple bewaakt voortdurend alle hardware-onderdelen van de Privécloud.  Al
 
 **Hoe kan ik grootschalige upload-of migratie van toepassingen en gegevens van on-premises uitvoeren?**
 
-CloudSimple biedt een systeem eigen VMware vSphere oplossing.  Alle VMware-hulpprogram ma's voor het bulksgewijs migreren van gegevens kunnen worden gebruikt in combi natie met uw Privécloud.  Opties zijn onder andere:
+CloudSimple biedt een systeem eigen VMware vSphere oplossing.  Alle VMware-hulpprogram ma's voor het bulksgewijs migreren van gegevens kunnen worden gebruikt in combi natie met uw Privécloud.  Mogelijke opties zijn:
 
 * VMware HCX voor het bulksgewijs migreren van gegevens.
 * Koud migreren van gegevens met behulp van Storage vMotion van on-premises naar CloudSimple.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/10/2020
-ms.openlocfilehash: cf64deb17bea508637debb5612231d355d523fbb
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 57b350c7772d42e5dbd89c1d03c89f905a26398b
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95315580"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895526"
 ---
 # <a name="azure-monitor-agent-overview-preview"></a>Overzicht van Azure Monitor-agent (preview)
 De Azure Monitor-agent (AMA) verzamelt bewakings gegevens van het gast besturingssysteem van virtuele machines en levert deze aan Azure Monitor. In deze artikelen vindt u een overzicht van de Azure Monitor-agent, inclusief hoe u deze kunt installeren en hoe u gegevens verzameling kunt configureren.
@@ -54,7 +54,7 @@ De volgende beperkingen zijn van toepassing tijdens de open bare preview van de 
 
 - De Azure Monitor-agent biedt geen ondersteuning voor oplossingen en inzichten zoals Azure Monitor voor VM's en Azure Security Center. Het enige scenario dat momenteel wordt ondersteund, is het verzamelen van gegevens met behulp van de regels voor gegevens verzameling die u configureert. 
 - Regels voor het verzamelen van gegevens moeten in dezelfde regio worden gemaakt als de Log Analytics werk ruimte die als bestemming wordt gebruikt.
-- Azure virtual machines en servers met Azure Arc ingeschakeld worden momenteel ondersteund. Virtuele-machine schaal sets, Azure Kubernetes-service en andere compute-resource typen worden momenteel niet ondersteund.
+- Virtuele machines van Azure, virtuele-machine schaal sets en Azure Arc-servers worden momenteel ondersteund. De Azure Kubernetes-service en andere compute-resource typen worden momenteel niet ondersteund.
 - De virtuele machine moet toegang hebben tot de volgende HTTPS-eind punten:
   - *.ods.opinsights.azure.com
   - *. ingest.monitor.azure.com
@@ -76,7 +76,7 @@ De volgende tabel bevat de gegevens typen die u op dit moment kunt verzamelen me
 
 De Azure Monitor-agent verzendt gegevens naar Azure Monitor metrieken of een Log Analytics-werk ruimte die Azure Monitor logboeken ondersteunt.
 
-| Gegevensbron | Bestemmingen | Description |
+| Gegevensbron | Bestemmingen | Beschrijving |
 |:---|:---|:---|
 | Prestaties        | Metrische gegevens van Azure Monitor<br>Log Analytics-werkruimte | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
 | Windows-gebeurtenis logboeken | Log Analytics-werkruimte | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |

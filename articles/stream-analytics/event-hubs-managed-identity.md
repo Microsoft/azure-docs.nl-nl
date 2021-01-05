@@ -5,13 +5,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 11/30/2020
-ms.openlocfilehash: c65833e5bf581c6326bf9362c7e5fc00a985d301
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 01/04/2021
+ms.openlocfilehash: ca27df7188c5edd1da94fc41707f6c25eb4034bf
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355030"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895135"
 ---
 # <a name="use-managed-identities-to-access-event-hubfrom-an-azure-stream-analytics-job-preview"></a>Beheerde identiteiten gebruiken voor toegang tot Event hub vanuit een Azure Stream Analytics-taak (preview-versie)
 
@@ -20,6 +20,9 @@ Azure Stream Analytics ondersteunt beheerde identiteits verificatie voor zowel i
 Een beheerde identiteit is een beheerde toepassing die is geregistreerd in Azure Active Directory die een bepaalde Stream Analytics taak vertegenwoordigt. De beheerde toepassing wordt gebruikt om te verifiëren bij een doel bron, met inbegrip van Event Hubs die zich achter een firewall of een virtueel netwerk (VNet) bevinden. Voor meer informatie over het overs laan van firewalls, Zie [toegang tot Azure Event hubs-naam ruimten toestaan via persoonlijke eind punten](../event-hubs/private-link-service.md#trusted-microsoft-services).
 
 Dit artikel laat u zien hoe u beheerde identiteit kunt inschakelen voor een Event Hubs invoer of uitvoer van een Stream Analytics taak via de Azure Portal.Voordat u beheerde identiteit hebt ingeschakeld, moet u eerst een Stream Analytics-taak en Event hub-Resource hebben.
+
+### <a name="limitation"></a>Beperking
+Tijdens de preview-fase werkt de bemonsterings invoer van Event Hubs op Azure Portal niet wanneer beheerde identiteits verificatie wordt gebruikt.
 
 ## <a name="create-a-managedidentity"></a>Een beheerde identiteit maken  
 

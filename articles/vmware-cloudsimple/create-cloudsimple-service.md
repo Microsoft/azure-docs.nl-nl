@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing op CloudSimple: CloudSimple-service maken'
 description: Meer informatie over het maken van de CloudSimple-service in de Azure Portal. Controleer de vereiste configuratie voordat u begint.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 2a196e717dd6e02570e4bdf830a24ce342b47ece
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53f2d0fc9f73985bd70792c8c3b7607eb4c560fa
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88140544"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896291"
 ---
 # <a name="create-the-azure-vmware-solution-by-cloudsimple-service"></a>De Azure VMware-oplossing maken op basis van de CloudSimple-service
 
@@ -36,7 +36,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 4. Klik op **toevoegen** om een nieuwe service te maken.
     ![CloudSimple-service toevoegen](media/create-cloudsimple-service-add.png)
 5. Selecteer het abonnement waar u de CloudSimple-service wilt maken.
-6. Selecteer de resource groep voor de service. Klik op **nieuwe maken**om een nieuwe resource groep toe te voegen.
+6. Selecteer de resource groep voor de service. Klik op **nieuwe maken** om een nieuwe resource groep toe te voegen.
 7. Voer een naam in om de service te identificeren.
 8. Voer de CIDR in voor de service gateway. Geef een/28-subnet op dat niet overlapt met een van uw on-premises subnetten, Azure-subnetten of geplande CloudSimple-subnetten. U kunt de CIDR niet wijzigen nadat de service is gemaakt.
 

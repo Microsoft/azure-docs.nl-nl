@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: a54c77844498beb4fd052153cbcf8cbe498cdb75
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 23c62562299768afb5f5d87bbcf4f7b19b3235ce
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132207"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897855"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configureren, optimaliseren en problemen oplossen in AzCopy
 
@@ -28,13 +28,13 @@ AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden 
 
 ## <a name="configure-proxy-settings"></a>Proxyinstellingen configureren
 
-Stel de omgevings variabele in om de proxy-instellingen voor AzCopy te configureren `https_proxy` . Als u AzCopy uitvoert in Windows, detecteert AzCopy proxyinstellingen automatisch. U hoeft deze instelling dus niet te gebruiken in Windows. Als u ervoor kiest om deze instelling te gebruiken in Windows, wordt automatische detectie overschreven.
+Stel de omgevings variabele in om de proxy-instellingen voor AzCopy te configureren `HTTPS_PROXY` . Als u AzCopy uitvoert in Windows, detecteert AzCopy proxyinstellingen automatisch. U hoeft deze instelling dus niet te gebruiken in Windows. Als u ervoor kiest om deze instelling te gebruiken in Windows, wordt automatische detectie overschreven.
 
 | Besturingssysteem | Opdracht  |
 |--------|-----------|
-| **Windows** | In een opdracht prompt gebruikt u: `set https_proxy=<proxy IP>:<proxy port>`<br> In Power shell gebruikt u: `$env:https_proxy="<proxy IP>:<proxy port>"`|
-| **Linux** | `export https_proxy=<proxy IP>:<proxy port>` |
-| **MacOS** | `export https_proxy=<proxy IP>:<proxy port>` |
+| **Windows** | In een opdracht prompt gebruikt u: `set HTTPS_PROXY=<proxy IP>:<proxy port>`<br> In Power shell gebruikt u: `$env:HTTPS_PROXY="<proxy IP>:<proxy port>"`|
+| **Linux** | `export HTTPS_PROXY=<proxy IP>:<proxy port>` |
+| **MacOS** | `export HTTPS_PROXY=<proxy IP>:<proxy port>` |
 
 Momenteel biedt AzCopy geen ondersteuning voor proxy's waarvoor authenticatie met NTLM of Kerberos is vereist.
 

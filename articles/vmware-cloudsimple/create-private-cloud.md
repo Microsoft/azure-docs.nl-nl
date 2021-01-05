@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing op CloudSimple: CloudSimple-Privécloud maken'
 description: Hierin wordt beschreven hoe u een CloudSimple-Privécloud maakt om VMware-workloads uit te breiden naar de Cloud met operationele flexibiliteit en continuïteit
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 4f700ac34b6c6e2a651366bee7dd1785c608064f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f4af4a36e719cbf15b3f0af77db81a32f2f2e42
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77024786"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97896274"
 ---
 # <a name="create-a-cloudsimple-private-cloud"></a>Een CloudSimple-Privécloud maken
 
@@ -50,14 +50,14 @@ Toegang tot de [CloudSimple-Portal](access-cloudsimple-portal.md).
 1. Selecteer **Alle services**.
 2. Zoek naar **CloudSimple Services**.
 3. Selecteer de CloudSimple-service waarop u uw Privécloud wilt maken.
-4. Klik in **overzicht**op **privécloud maken** om een nieuw browser tabblad voor CloudSimple portal te openen. Meld u aan met uw aanmeldings referenties voor Azure als u hierom wordt gevraagd.
+4. Klik in **overzicht** op **privécloud maken** om een nieuw browser tabblad voor CloudSimple portal te openen. Meld u aan met uw aanmeldings referenties voor Azure als u hierom wordt gevraagd.
 
     ![Een Privécloud maken van Azure](media/create-private-cloud-from-azure.png)
 
 5. Geef in de CloudSimple-Portal een naam op voor de Privécloud.
 6. Selecteer een **locatie** voor de privécloud.
-7. Selecteer het **knooppunt type**in overeenstemming met wat u in azure hebt ingericht.
-8. Geef het **aantal knoop punten**op.  Er zijn ten minste drie knoop punten vereist voor het maken van een Privécloud.
+7. Selecteer het **knooppunt type** in overeenstemming met wat u in azure hebt ingericht.
+8. Geef het **aantal knoop punten** op.  Er zijn ten minste drie knoop punten vereist voor het maken van een Privécloud.
 
     ![Een persoonlijke Cloud maken-basis gegevens](media/create-private-cloud-basic-info.png)
 
@@ -71,7 +71,7 @@ Toegang tot de [CloudSimple-Portal](access-cloudsimple-portal.md).
 
 11. Klik op **volgende: controleren en maken**.
 12. Controleer de instellingen. Als u instellingen wilt wijzigen, klikt u op **vorige**.
-13. Klik op **Maken**.
+13. Klik op **Create**.
 
 Het inrichtings proces voor de privécloud wordt gestart. Het kan tot twee uur duren voordat de Privécloud is ingericht.
 

@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing op CloudSimple: Configureer een hoge Beschik baarheid van on-premises naar CloudSimple VPN-gateway'
 description: Hierin wordt beschreven hoe u een Maxi maal beschik bare verbinding van uw on-premises omgeving configureert met een CloudSimple VPN-gateway die is ingeschakeld voor hoge Beschik baarheid
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6e3118814eacc6cc63b5db59bd7f1877c1d347dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80805aaa172518c40c7ad123ca24361ee0f15e69
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77025262"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895696"
 ---
 # <a name="configure-a-high-availability-connection-from-on-premises-to-cloudsimple-vpn-gateway"></a>Een verbinding met hoge Beschik baarheid van on-premises naar CloudSimple VPN-gateway configureren
 
@@ -162,7 +162,7 @@ Omdat deze configuratie voor een VPN met hoge Beschik baarheid is, zijn twee tun
 
 Routes zijn nodig om de on-premises subnetten CloudSimple Private Cloud-subnetten te bereiken.
 
-Virtuele **netwerk**  >  **routers**selecteren  >  *standaard*  >  **statische routes**  >  **toevoegen**, configureren van de volgende velden en klik op **OK**.
+Virtuele **netwerk**  >  **routers** selecteren  >  *standaard*  >  **statische routes**  >  **toevoegen**, configureren van de volgende velden en klik op **OK**.
 
 * Naam. Voer een naam in voor een eenvoudige identificatie van het doel van de route.
 * Beoogde. Geef de CloudSimple particuliere cloud subnetten op die via S2S-tunnel interfaces van on-premises moeten worden bereikt
@@ -224,7 +224,7 @@ Herhaal de vorige stappen om de secundaire IKE-gateway te maken.
 
 ### <a name="5-define-ipsec-crypto-profiles"></a>5. Definieer IPSEC-crypto profielen
 
-Selecteer **netwerk**netwerk  >  **profielen uitvouwen**  >  **IPSec crypto**  >  **toevoegen**, Configureer de volgende velden en klik op **OK**.
+Selecteer **netwerk** netwerk  >  **profielen uitvouwen**  >  **IPSec crypto**  >  **toevoegen**, Configureer de volgende velden en klik op **OK**.
 
 * Naam. Voer een naam in voor het IPsec-crypto profiel.
 * IPsec-protocol. Selecteer **ESP**.
@@ -242,8 +242,8 @@ Selecteer **netwerk**  >  **uitbreiden netwerk profielen**  >  **monitor**  >  *
 
 * Naam. Voer een naam in van het monitor profiel dat moet worden gebruikt voor het controleren van de tunnel voor proactieve reactie op de fout.
 * Optreden. Selecteer **failover**.
-* Bereik. Voer de waarde **3**in.
-* Spreek. Voer de waarde **7**in.
+* Bereik. Voer de waarde **3** in.
+* Spreek. Voer de waarde **7** in.
 
 ### <a name="7-set-up-primary-and-secondary-ipsec-tunnels"></a>7. primaire en secundaire IPsec-tunnels instellen.
 
@@ -272,7 +272,7 @@ Tabblad Proxy-id's: Klik op **IPv4**  >  **toevoegen** en configureer het volgen
 
 Herhaal de vorige stappen om nog een IPsec-tunnel te maken die u voor de secundaire CloudSimple VPN-peer kunt gebruiken.
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
 NAT configureren op Cisco ASA:
 

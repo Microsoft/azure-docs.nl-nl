@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van functies met python
 ms.topic: article
 ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 8254abda68949e6884143316d4b29b07ade129dc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cf1d8f89de61a548f6c542d6d8a73fde93675e95
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96167842"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895407"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Python
 
@@ -299,87 +299,7 @@ U kunt ook de `status_code` en `headers` voor het antwoord bericht instellen in 
 
 ## <a name="scaling-and-performance"></a>Schalen en prestaties
 
-Het is belang rijk om te begrijpen hoe uw functies worden uitgevoerd en hoe de prestaties van invloed zijn op de manier waarop uw functie-app wordt geschaald. Dit is vooral belang rijk bij het ontwerpen van zeer krachtige apps. Hier volgen enkele factoren waarmee u rekening moet houden bij het ontwerpen, schrijven en configureren van uw functions-apps.
-
-### <a name="horizontal-scaling"></a>Horizontale schaalaanpassing
-Standaard controleert Azure Functions automatisch de belasting van uw toepassing en worden er indien nodig extra exemplaren van de host voor python gemaakt. Functies gebruiken ingebouwde drempel waarden voor verschillende trigger typen om te bepalen wanneer instanties moeten worden toegevoegd, zoals de leeftijd van berichten en de grootte van de wachtrij voor Queue trigger. Deze drempel waarden kunnen niet door de gebruiker worden geconfigureerd. Zie [hoe het verbruik en de Premium-abonnementen werken](functions-scale.md#how-the-consumption-and-premium-plans-work)voor meer informatie.
-
-### <a name="improving-throughput-performance"></a>Prestaties van door Voer verbeteren
-
-Een sleutel voor het verbeteren van de prestaties is te weten hoe uw app resources gebruikt en uw functie-app dienovereenkomstig kan configureren.
-
-#### <a name="understanding-your-workload"></a>Meer informatie over uw workload
-
-De standaard configuraties zijn geschikt voor de meeste toepassingen van Azure Functions. U kunt de prestaties van de door Voer van uw toepassingen echter verbeteren door configuraties te gebruiken op basis van uw werkbelasting profiel. De eerste stap is het begrijpen van het type werk belasting dat u uitvoert.
-
-| | I/O-gebonden werk belasting | CPU-gebonden werk belasting |
-|--| -- | -- |
-|**Kenmerken van functie-app**| <ul><li>De app moet veel gelijktijdige aanroepen verwerken.</li> <li> Met de app worden een groot aantal I/O-gebeurtenissen verwerkt, zoals netwerk aanroepen en lees-en schrijf bewerkingen van de schijf.</li> </ul>| <ul><li>App voert langlopende berekeningen uit, zoals het wijzigen van de grootte van afbeeldingen.</li> <li>App maakt gegevens transformatie.</li> </ul> |
-|**Voorbeelden**| <ul><li>Web-API's</li><ul> | <ul><li>Gegevensverwerking</li><li> Machine learning-interferentie</li><ul>|
-
-
-> [!NOTE]
->  Omdat de werk belasting van echte wereld het meeste is van vaak een combi natie van I/O-en CPU-gebonden, wordt u aangeraden de werk belasting te profileren onder realistische productie belasting.
-
-
-#### <a name="performance-specific-configurations"></a>Prestatie-specifieke configuraties
-
-Nadat u het werkbelasting Profiel van de functie-app hebt begrepen, zijn de volgende configuraties die u kunt gebruiken om de doorvoer prestaties van uw functies te verbeteren.
-
-##### <a name="async"></a>Async
-
-Omdat [python een single-threaded runtime is](https://wiki.python.org/moin/GlobalInterpreterLock), kan een host-exemplaar voor python slechts één functie aanroep tegelijk verwerken. Voor toepassingen die een groot aantal I/O-gebeurtenissen verwerken en/of I/O gebonden zijn, kunt u de prestaties aanzienlijk verbeteren door functions asynchroon uit te voeren.
-
-Als u een functie asynchroon wilt uitvoeren, gebruikt u de `async def` -instructie, waarmee de functie rechtstreeks wordt uitgevoerd met [asyncio](https://docs.python.org/3/library/asyncio.html) :
-
-```python
-async def main():
-    await some_nonblocking_socket_io_op()
-```
-Hier volgt een voor beeld van een functie met een HTTP-trigger die gebruikmaakt van [aiohttp](https://pypi.org/project/aiohttp/) HTTP-client:
-
-```python
-import aiohttp
-
-import azure.functions as func
-
-async def main(req: func.HttpRequest) -> func.HttpResponse:
-    async with aiohttp.ClientSession() as client:
-        async with client.get("PUT_YOUR_URL_HERE") as response:
-            return func.HttpResponse(await response.text())
-
-    return func.HttpResponse(body='NotFound', status_code=404)
-```
-
-
-Een functie zonder `async` sleutel woord wordt automatisch uitgevoerd in een asyncio-thread groep:
-
-```python
-# Runs in an asyncio thread-pool
-
-def main():
-    some_blocking_socket_io()
-```
-
-Om het volledige voor deel van het asynchroon uitvoeren van functions te garanderen, moet de I/O-bewerking/-bibliotheek die in de code wordt gebruikt, ook asynchroon worden geïmplementeerd. Het gebruik van synchrone I/O-bewerkingen in functies die als asynchroon zijn gedefinieerd, kunnen de algehele prestaties nadelig **beïnvloeden** .
-
-Hier volgen enkele voor beelden van client bibliotheken met een geïmplementeerd async-patroon:
-- [aiohttp](https://pypi.org/project/aiohttp/) -HTTP-client/server voor asyncio 
-- [Streams API](https://docs.python.org/3/library/asyncio-stream.html) -primitieve async/await-gereed-readys om met de netwerk verbinding te werken
-- [Janus wachtrij](https://pypi.org/project/janus/) -thread-safe asyncio-bewuste wachtrij voor python
-- [pyzmq](https://pypi.org/project/pyzmq/) -python-bindingen voor ZeroMQ
- 
-
-##### <a name="use-multiple-language-worker-processes"></a>Werk processen in meerdere talen gebruiken
-
-Elk functions-exemplaar heeft standaard een werk proces met één taal. U kunt het aantal werk processen per host (Maxi maal 10) verhogen met behulp van de [FUNCTIONS_WORKER_PROCESS_COUNT](functions-app-settings.md#functions_worker_process_count) toepassings instelling. Azure Functions probeert vervolgens gelijktijdige functie aanroepen voor deze werk nemers gelijkmatig te verdelen.
-
-Voor CPU-gebonden apps moet u instellen dat het aantal taal werkers hetzelfde is als of hoger is dan het aantal kernen dat beschikbaar is per functie-app. Zie [beschik bare sku's](functions-premium-plan.md#available-instance-skus)van het exemplaar voor meer informatie. 
-
-I/O-gebonden apps kunnen ook profiteren van het verhogen van het aantal werk processen dat groter is dan het aantal beschik bare kernen. Houd er rekening mee dat het instellen van het aantal werk nemers te hoog kan invloed hebben op de algehele prestaties vanwege het verhoogde aantal vereiste context switches. 
-
-De FUNCTIONS_WORKER_PROCESS_COUNT is van toepassing op elke host die functies maakt wanneer uw toepassing wordt geschaald om aan de vraag te voldoen.
-
+Voor schaal-en prestatie best practices voor python-functie-apps raadpleegt u het [artikel python schalen en prestaties](python-scale-performance-reference.md).
 
 ## <a name="context"></a>Context
 

@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/30/2020
 ms.author: juliako
-ms.openlocfilehash: 9f7bf41bd864f6780eee00938f35bb34d2336eb5
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 7ce0807fa4cd068cfdd09ac9f78c5415da7e6437
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145749"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895339"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -29,6 +29,12 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Bekende problemen
 * Opgeloste fouten
 * Afgeschafte functionaliteit
+
+##  <a name="december-2020"></a>2020 december? 
+
+### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Video Indexer geïmplementeerd in de Zwitserland-west en Zwitserland-noord
+
+U kunt nu een Video Indexer betaalde account maken in de regio's Zwitserland-west en Zwitserland-noord.
 
 ## <a name="october-2020"></a>Oktober 2020
 
@@ -142,7 +148,7 @@ In de komende weken wordt dit gewijzigd en wordt de URL van de [video indexer we
    
     De regionale Url's worden niet ondersteund en worden in de komende weken geblokkeerd.
 
-## <a name="january-2020"></a>januari 2020
+## <a name="january-2020"></a>Januari 2020
  
 ### <a name="custom-language-support-for-additional-languages"></a>Aangepaste taal ondersteuning voor extra talen
 
@@ -160,7 +166,7 @@ Een nieuwe Video Indexer GitHub met verschillende projecten, aan de slag-hand le
 
 Video Indexer gecombineerde **authenticaties** en **bewerkingen** in één [video indexer OpenAPI-specificatie (Swagger)](https://api-portal.videoindexer.ai/docs/services/Operations/export?DocumentFormat=OpenApiJson). Ontwikkel aars kunnen de Api's vinden in [video indexer ontwikkelaars Portal](https://api-portal.videoindexer.ai/).
 
-## <a name="december-2019"></a>december 2019
+## <a name="december-2019"></a>December 2019
 
 ### <a name="update-transcript-with-the-new-api"></a>Transcript bijwerken met de nieuwe API
 
@@ -196,7 +202,7 @@ Wanneer streaming-eind punt is uitgeschakeld, wordt in Video Indexer een beschri
 
 De status code 409 wordt nu geretourneerd door de [video opnieuw te indexeren](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?) en [video-index](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Index?) api's bij te werken voor het geval een video actief wordt geïndexeerd, om te voor komen dat de huidige herindex wijzigingen per ongeluk worden overschreven.
 
-## <a name="november-2019"></a>november 2019
+## <a name="november-2019"></a>November 2019
  
 * Ondersteuning voor Koreaanse aangepaste taal modellen
 

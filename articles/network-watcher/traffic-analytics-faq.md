@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/08/2018
+ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: f27f2a6319bf2648546a62c2566d938db657738f
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: a5fdde954d2826f34c671552a88365f9276b89a0
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518461"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895220"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Traffic Analytics
 
@@ -69,14 +69,14 @@ U kunt Traffic Analytics voor Nsg's gebruiken in een van de volgende ondersteund
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- VS - zuid-centraal
+- South Central US
 - Central US
 - VS - west
 - VS - west 2
 - Frankrijk - centraal
 - Europa -west
 - Europa - noord
-- Brazil South
+- Brazilië - zuid
 - Verenigd Koninkrijk West
 - Verenigd Koninkrijk Zuid
 - Australië - oost
@@ -97,7 +97,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- VS - zuid-centraal
+- South Central US
 - Central US
 - VS - west
 - VS - west 2

@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing door CloudSimple: vCenter instellen op de Privécloud voor vRealize Automation'
 description: Hierin wordt beschreven hoe u een VMware vCenter-Server instelt op uw CloudSimple-Privécloud als eind punt voor VMware vRealize Automation
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: df73acfc469a8b7b5329b61095aefdbd73baafd4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b6c6a320e6299808a91214476c8c0460f9f53d9
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77024837"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895050"
 ---
 # <a name="set-up-vcenter-on-your-private-cloud-for-vmware-vrealize-automation"></a>VCenter instellen in uw Privécloud voor VMware vRealize Automation
 
@@ -48,10 +48,10 @@ Voltooi deze taken voordat u de vCenter-Server configureert:
 2. Implementeer een vSphere-agent voor het vRealize Automation-eind punt.
     1. Ga naar https://*vra-URL*: 5480/Installer, waarbij *vra-URL* de URL is die u gebruikt voor toegang tot de gebruikers interface van vRealize Automation-beheer.
     2. Klik op het **installatie programma IaaS** om het installatie programma te downloaden.<br>
-    De naam Conventie voor het installatie bestand is setup_*vra-URL* @5480.exe .
+    De naam Conventie voor het installatie bestand is setup_ *vra-URL* @5480.exe .
     3. Voer het installatieprogramma uit. Klik in het scherm Welkom op **Volgende**.
     4. Accepteer de gebruiksrecht overeenkomst en klik op **volgende**.
-    5. Geef de aanmeldings gegevens op, klik op **certificaat accepteren**en klik vervolgens op **volgende**.
+    5. Geef de aanmeldings gegevens op, klik op **certificaat accepteren** en klik vervolgens op **volgende**.
     ![vRA-referenties](media/configure-vra-endpoint-login.png)
     6. Selecteer **aangepaste installatie** -en **proxy-agents** en klik op **volgende**.
     ![vRA-installatie type](media/configure-vra-endpoint-install-type.png)
@@ -64,15 +64,15 @@ Voltooi deze taken voordat u de vCenter-Server configureert:
         ![vRA-installatie proxy](media/configure-vra-endpoint-proxy.png)
 
     11. Klik op **Volgende**.
-    12. Klik op **Install**.
+    12. Klik op **Installeren**.
 
 ## <a name="configure-the-vsphere-agent"></a>De vSphere-agent configureren
 
 1. Ga naar https://*vra-URL*/vcac en meld u aan als **ConfigurationAdmin**.
-2. Selecteer **Infrastructure**  >  eind punten van infrastructuur**eindpunten**  >  **Endpoints**.
+2. Selecteer   >  eind punten van infrastructuur **eindpunten**  >  .
 3. Selecteer **nieuwe**  >  **virtuele**-  >  **vSphere**.
 4. Voer de naam van het vSphere-eind punt in dat u in de vorige procedure hebt opgegeven.
-5. Geef bij **adres**de PRIVÉCLOUD vCenter Server URL op in de indeling https://*vCenter-FQDN*/SDK, waarbij *vCenter-FQDN* de naam is van de vCenter-Server.
+5. Geef bij **adres** de PRIVÉCLOUD vCenter Server URL op in de indeling https://*vCenter-FQDN*/SDK, waarbij *vCenter-FQDN* de naam is van de vCenter-Server.
 6. Voer de referenties in voor de vRealize Automation IaaS-gebruiker met beheerders rechten die voor u zijn gemaakt CloudSimple-ondersteuning.
 7. Klik op **verbinding testen** om de gebruikers referenties te valideren. Als de test mislukt, controleert u de URL, account gegevens en de naam van het [eind punt](#verify-the-endpoint-name) en voert u de test opnieuw uit.
 8. Klik na een geslaagde test op **OK** om het vSphere-eind punt te maken.

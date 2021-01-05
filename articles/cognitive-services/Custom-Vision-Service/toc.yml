@@ -13,7 +13,7 @@
       items:
         - name: De webportal gebruiken
           href: getting-started-build-a-classifier.md
-        - name: De Custom Vision-SDK gebruiken
+        - name: De Custom Vision-SDK of REST API gebruiken
           href: quickstarts/image-classification.md
     - name: Een objectdetector maken
       items:

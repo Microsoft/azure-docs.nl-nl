@@ -1,19 +1,19 @@
 ---
 title: Toegang tot de Azure VMware-oplossing via CloudSimple-Portal
 description: Hierin wordt beschreven hoe u vanuit de Azure-portal de VMware Solution by CloudSimple-portal opent
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 06/04/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 0ea178655646f7f130476acaffc35c60181968ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0aa7a9a1f19a9d4fb2c555b08753e0b57c657974
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87058707"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895152"
 ---
 # <a name="access-the-vmware-solution-by-cloudsimple-portal-from-the-azure-portal"></a>Open de VMware-oplossing via CloudSimple portal van de Azure Portal
 

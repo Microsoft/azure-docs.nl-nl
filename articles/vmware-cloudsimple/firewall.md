@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing op CloudSimple: Firewall tabellen en-regels instellen'
 description: Hierin wordt beschreven hoe u Firewall tabellen en-regels voor de Privécloud instelt om verkeer op subnetten en VLAN'S te beperken.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/15/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 986f4b0da7254ebac3725a704f32af785c72fbcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 32dcfb0c6cd26b5f34afad328db8f383fa1c2a6f
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85846872"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895628"
 ---
 # <a name="set-up-firewall-tables-and-rules-for-private-clouds"></a>Firewall tabellen en-regels voor persoonlijke Clouds instellen
 
@@ -37,7 +37,7 @@ Met de firewall tabellen en de gekoppelde regels kunt u beperkingen opgeven voor
 > [!IMPORTANT]
 > U kunt Maxi maal twee firewall tabellen per Privécloud maken.
 
-## <a name="firewall-rules"></a>Firewall-regels
+## <a name="firewall-rules"></a>Firewallregels
 
 Firewall regels bepalen hoe de firewall specifieke typen verkeer behandelt. Het tabblad **regels** voor een geselecteerde firewall tabel bevat een lijst met alle gekoppelde regels.
 
@@ -72,7 +72,7 @@ Firewall regels bepalen hoe de firewall specifieke typen verkeer behandelt. Het 
 
 Nadat u een firewall tabel hebt gedefinieerd, kunt u de subnetten opgeven waarop de regels in de tabel van toepassing zijn.
 
-1. **Network**  >  Selecteer een firewall tabel op de pagina netwerk**firewall tabellen** .
+1.   >  Selecteer een firewall tabel op de pagina netwerk **firewall tabellen** .
 2. Open het tabblad **gekoppelde vlan's/subnet** .
 3. Klik op **koppelen aan een VLAN/subnet**.
 4. Selecteer de Privécloud en het VLAN. De bijbehorende subnetnaam en het CIDR-blok worden weer gegeven.

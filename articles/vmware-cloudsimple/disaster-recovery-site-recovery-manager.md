@@ -1,19 +1,19 @@
 ---
 title: 'Azure VMware-oplossing door CloudSimple: Stel de Privécloud in als een nood herstel site met behulp van VMware Site Recovery Manager'
 description: Hierin wordt beschreven hoe u uw CloudSimple-Privécloud instelt als een nood herstel site met behulp van VMware Site Recovery Manager.
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/20/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6714b2c5d87141fd94d0f96d9cf07913442d18d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d71f8aec1f35514ac6c10b17b6f7b69b79b05bd
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91267054"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897906"
 ---
 # <a name="set-up-private-cloud-as-a-disaster-recovery-target-with-vmware-site-recovery-manager"></a>Een Privécloud instellen als een nood herstel doel met VMware Site Recovery Manager
 
@@ -219,7 +219,7 @@ U hebt volledige controle over de vSphere-replicatie en de software-levens duur 
 
  [Replicatie-en vSphere-replicatie technologieën kunnen zowel op de matrix als](https://blogs.vmware.com/virtualblocks/2017/06/22/srm-array-based-replication-vs-vsphere-replication) op dezelfde tijd worden gebruikt. Ze moeten echter worden toegepast op een afzonderlijke set virtuele machines (een bepaalde virtuele machine kan worden beveiligd door replicatie op basis van een matrix of vSphere, maar niet voor beide). Bovendien kan de CloudSimple-site worden geconfigureerd als een herstel site voor meerdere beveiligde sites. Zie de opties voor de meerdere locaties van de [website](https://blogs.vmware.com/virtualblocks/2016/07/28/srm-multisite/) voor meer informatie over configuraties voor meerdere locaties.
 
-## <a name="references"></a>Referenties
+## <a name="references"></a>Verwijzingen
 
 * [Documentatie voor VMware Site Recovery Manager](https://docs.vmware.com/en/Site-Recovery-Manager/index.html)
 * [Operationele limieten voor Site Recovery Manager 6,5](https://kb.vmware.com/s/article/2147110)

@@ -1,19 +1,19 @@
 ---
 title: Account beheer-Azure VMware-oplossing op CloudSimple Portal
 description: Hierin wordt beschreven hoe u accounts in de Azure VMware-oplossing beheert door de CloudSimple-Portal
-author: sharaths-cs
-ms.author: b-shsury
+author: Ajayan1008
+ms.author: v-hborys
 ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 00348d36c38fdbfdf69a2e4e80a4c720268b40c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c26d5accce77ce6fd8c9b6c2b519b93f95013ce
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77025364"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895169"
 ---
 # <a name="manage-accounts-on-the-azure-vmware-solution-by-cloudsimple-portal"></a>Accounts in de Azure VMware-oplossing beheren via de CloudSimple-Portal
 

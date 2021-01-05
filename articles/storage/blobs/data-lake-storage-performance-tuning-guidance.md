@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 834672274ade1f8551e86e7c636c4625368d997c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: f0f64d910d03e42008c5fe6fef28a5b9c0917abd
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652191"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814462"
 ---
 # <a name="optimize-azure-data-lake-storage-gen2-for-performance"></a>Azure Data Lake Storage Gen2 optimaliseren voor prestaties
 
@@ -21,11 +21,11 @@ Azure Data Lake Storage Gen2 ondersteunt hoge door Voer voor I/O-intensieve anal
 
 ![Prestaties Data Lake Storage Gen2](./media/data-lake-storage-performance-tuning-guidance/throughput.png)
 
-Data Lake Storage Gen2 kan worden geschaald om de benodigde door Voer voor alle analyse scenario's te bieden. Een Data Lake Storage Gen2-account biedt standaard automatisch voldoende door Voer om te voldoen aan de behoeften van een brede categorie van use cases. Voor de gevallen waarin klanten de standaard limiet uitvoeren, kan het Data Lake Storage Gen2-account worden geconfigureerd om meer door voer te bieden door contact op te nemen met de [ondersteuning van Azure](https://azure.microsoft.com/support/faq/).
+Data Lake Storage Gen2 kan worden geschaald om de benodigde door Voer voor alle analyse scenario's te bieden. Een Data Lake Storage Gen2-account biedt standaard voldoende door Voer in de standaard configuratie om te voldoen aan de behoeften van een brede categorie Use cases. Voor de gevallen waarin klanten de standaard limiet uitvoeren, kan het Data Lake Storage Gen2-account worden geconfigureerd om meer door voer te bieden door contact op te nemen met de [ondersteuning van Azure](https://azure.microsoft.com/support/faq/).
 
 ## <a name="data-ingestion"></a>Gegevensopname
 
-Bij het opnemen van gegevens van een bron systeem naar Data Lake Storage Gen2, is het belang rijk om te overwegen dat de bron-hardware, de bron netwerkhardware en de netwerk verbinding met Data Lake Storage Gen2 de knel punt kunnen zijn.  
+Bij het opnemen van gegevens van een bron systeem naar Data Lake Storage Gen2, is het belang rijk om te overwegen dat de bron-hardware, de bron netwerkhardware of de netwerk verbinding met Data Lake Storage Gen2 de bottleneck kan zijn.  
 
 ![Diagram met de factoren waarmee rekening moet worden gehouden bij het opnemen van gegevens van een bron systeem naar Data Lake Storage Gen2.](./media/data-lake-storage-performance-tuning-guidance/bottleneck.png)
 
@@ -37,7 +37,7 @@ Of u nu gebruikmaakt van on-premises machines of Vm's in azure, moet u zorgvuldi
 
 ### <a name="network-connectivity-to-data-lake-storage-gen2"></a>De netwerk verbinding met de Data Lake Storage Gen2
 
-De netwerk verbinding tussen de bron gegevens en Data Lake Storage Gen2 kan soms het knel punt zijn. Als uw bron gegevens on-premises zijn, kunt u een speciale koppeling met [Azure ExpressRoute](https://azure.microsoft.com/services/expressroute/) gebruiken. Als uw bron gegevens zich in azure bevinden, zijn de prestaties het beste wanneer de gegevens zich in dezelfde Azure-regio bevinden als het Data Lake Storage Gen2-account.
+De netwerk verbinding tussen de bron gegevens en Data Lake Storage Gen2 kan soms het knel punt zijn. Als uw bron gegevens on-premises zijn, kunt u een speciale koppeling met [Azure ExpressRoute](https://azure.microsoft.com/services/expressroute/)gebruiken. Als uw bron gegevens zich in azure bevinden, zijn de prestaties het beste wanneer de gegevens zich in dezelfde Azure-regio bevinden als het Data Lake Storage Gen2-account.
 
 ### <a name="configure-data-ingestion-tools-for-maximum-parallelization"></a>Hulp middelen voor gegevens opname configureren voor maximale parallel Lise ring
 
@@ -138,5 +138,5 @@ Naast de bovenstaande algemene richt lijnen heeft elke toepassing verschillende 
 | [MapReduce in HDInsight](data-lake-storage-performance-tuning-mapreduce.md) | <ul><li>MapReduce. map. Memory</li><li>MapReduce. job. Maps</li><li>MapReduce. Reduc. Memory</li><li>MapReduce. job. reduceert</li></ul> |
 | [Storm op HDInsight](data-lake-storage-performance-tuning-storm.md)| <ul><li>Aantal werk processen</li><li>Aantal exemplaren van de Spout-uitvoerder</li><li>Aantal exemplaren van de bout-uitvoerder </li><li>Aantal Spout-taken</li><li>Aantal Schicht-taken</li></ul>|
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 * [Overzicht van Azure Data Lake Storage Gen2](data-lake-storage-introduction.md)

@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 76695d4d8dbc3e3a6b04b89b8f34e41b83a92963
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 88af554faab9479a402dd393b0a7eed0835ce59e
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965184"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814343"
 ---
-# <a name="working-with-security-policies"></a>Werken met beveiligingsbeleid
+# <a name="manage-security-policies"></a>Beveiligingsbeleid beheren
 
 In dit artikel wordt uitgelegd hoe beveiligings beleid wordt geconfigureerd en hoe u deze in Security Center kunt weer geven. 
 

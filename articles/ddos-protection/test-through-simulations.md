@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: eff738e24b3abce52e80291c55a3ae64c3c8c853
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 55692122461ef1b22b43b0def43e826ac7aeae30
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92905263"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813782"
 ---
-# <a name="test-through-simulations"></a>Testen door simulaties
+# <a name="test-through-simulations"></a>Testen via simulaties
 
 Het is een goed idee om uw hypo Thesen te testen op de manier waarop uw services reageren op aanvallen door periodieke simulaties uit te voeren. Controleer tijdens het testen of uw services of toepassingen op de verwachte manier blijven functioneren en er geen onderbreking is voor de gebruikers ervaring. Identificeer hiaten uit een technologie en proces oogpunt en neem ze op in de DDoS-respons strategie. We raden u aan om dergelijke tests uit te voeren in faserings omgevingen of tijdens niet-piek uren om de impact op de productie omgeving te minimaliseren.
 
@@ -36,15 +36,15 @@ We hebben een partnerschap gemaakt met [BreakingPoint Cloud](https://www.ixiacom
 
 ## <a name="configure-a-ddos-test-attack"></a>Een DDoS-test aanval configureren
 
-1. Voer de volgende waarden in of Selecteer deze en selecteer vervolgens **Test starten** :
+1. Voer de volgende waarden in of Selecteer deze en selecteer vervolgens **Test starten**:
 
     |Instelling        |Waarde                                              |
     |---------      |---------                                          |
     |Doel-IP-adres           | Voer een van uw open bare IP-adressen in die u wilt testen.                     |
     |Poortnummer   | Voer _443_ in.                       |
-    |DDoS-profiel | Selecteer **TCP SYN flood** .|
+    |DDoS-profiel | Selecteer **TCP SYN flood**.|
     |Test grootte       | Selecteer **van persoonlijkheden PPS, 100 Mbps en 8 bron-ip's.**                                  |
-    |Test duur | Selecteer **10 minuten** .|
+    |Test duur | Selecteer **10 minuten**.|
 
 Dit moet er nu als volgt uitzien:
 
@@ -54,15 +54,19 @@ Dit moet er nu als volgt uitzien:
 
 1. Meld u aan bij https://portal.azure.com en ga naar uw abonnement.
 1. Selecteer het open bare IP-adres waarop u de aanval hebt getest.
-1. Selecteer **Metrische gegevens** onder **Bewaking** .
-1. Voor **metrische gegevens** selecteert u _onder DDoS-aanval of niet_ .
+1. Selecteer **Metrische gegevens** onder **Bewaking**.
+1. Voor **metrische gegevens** selecteert u _onder DDoS-aanval of niet_.
 
-Zodra de bron is aangevallen, ziet u dat de waarde wordt gewijzigd van **0** in **1** , zoals in de volgende afbeelding:
+Zodra de bron is aangevallen, ziet u dat de waarde wordt gewijzigd van **0** in **1**, zoals in de volgende afbeelding:
 
 ![Simulatie van DDoS-aanvals voorbeeld: Portal](./media/ddos-attack-simulation/ddos-attack-simulation-example-2.png)
 
+### <a name="breakingpoint-cloud-api-script"></a>BreakingPoint Cloud-API-script
+
+Dit [API-script](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Breaking%20Point%20SDK) kan worden gebruikt om DDoS-tests te automatiseren door één keer uit te voeren of door gebruik te maken van cron om regel matige tests te plannen. Dit is handig om te controleren of uw logboek registratie juist is geconfigureerd en dat detectie-en antwoord procedures effectief zijn. De scripts vereisen een Linux-besturings systeem (getest met Ubuntu 18,04 LTS) en python 3. Installeer de vereisten en API-client met behulp van het meegeleverde script of door de documentatie op de [BreakingPoint-Cloud](http://breakingpoint.cloud/) website te gebruiken.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [weer geven en configureren van DDoS Protection-telemetrie](telemetry-monitoring-alerting.md).
-- Meer informatie over het [configureren van DDoS voor risico beperking van rapporten en stroom logboeken](reports-and-flow-logs.md).
+- Meer informatie over het [weer geven en configureren van DDoS Protection-telemetrie](telemetry.md).
+- Meer informatie over het [weer geven en configureren van DDoS diagnostische logboek registratie](diagnostic-logging.md).
 - Meer informatie over het [inschakelen van DDoS snelle reacties](ddos-rapid-response.md).

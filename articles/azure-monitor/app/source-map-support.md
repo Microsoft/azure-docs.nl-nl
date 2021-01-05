@@ -2,16 +2,16 @@
 title: Ondersteuning van bron toewijzing voor Java script-toepassingen-Azure Monitor Application Insights
 description: Meer informatie over het uploaden van bron kaarten naar uw eigen opslag account BLOB-container met behulp van Application Insights.
 ms.topic: conceptual
-author: markwolff
-ms.author: marwolff
+author: DavidCBerry13
+ms.author: daberry
 ms.date: 06/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6403ecd534d17298a10ffcf8f089a2b010fa3a51
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 9326531d9071305ad804e9c60f8ac90bcb5eaee6
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536452"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809629"
 ---
 # <a name="source-map-support-for-javascript-applications"></a>Ondersteuning van bron toewijzing voor Java script-toepassingen
 

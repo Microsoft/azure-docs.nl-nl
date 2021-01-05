@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: dec2c845780b62e9a595c73504037142c511c0e6
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 08ab78171376f702aecb1f49571dda583eae5d82
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989408"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813867"
 ---
 # <a name="manage-ddos-protection-plans-permissions-and-restrictions"></a>DDoS Protection plannen beheren: machtigingen en beperkingen
 
@@ -30,7 +30,7 @@ Een DDoS-beschermings plan werkt in verschillende regio's en abonnementen. Hetze
 
 Als u wilt werken met DDoS-beveiligings plannen, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-| Bewerking                                            | Name                                     |
+| Actie                                            | Naam                                     |
 | ---------                                         | -------------                            |
 | Micro soft. Network/ddosProtectionPlans/lezen        | Een DDoS-beschermings plan lezen              |
 | Micro soft. Network/ddosProtectionPlans/schrijven       | Een DDoS-beschermings plan maken of bijwerken  |
@@ -51,4 +51,4 @@ Voor klanten die verschillende abonnementen hebben en die ervoor willen zorgen d
 Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
 
 > [!div class="nextstepaction"]
-> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry-monitoring-alerting.md)
+> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

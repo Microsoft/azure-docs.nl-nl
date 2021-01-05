@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: vinigam
-ms.openlocfilehash: ccfbb92c27e4508595f19c2ea6900730cde609b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 015b8e400e9d386fff8f35756a77139e61bbaff1
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74666372"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809289"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Schema's en gegevens aggregatie in Traffic Analytics
 
@@ -39,11 +39,11 @@ Traffic Analytics is een Cloud oplossing die inzicht geeft in de activiteit van 
 5. FlowStartTime_t veld geeft het eerste exemplaar van een dergelijke geaggregeerde stroom (dezelfde vier tupel) aan in het verwerkings interval van het stroom logboek tussen ' FlowIntervalStartTime_t ' en ' FlowIntervalEndTime_t '.
 6. Voor alle resources in TA zijn de stromen die in de gebruikers interface worden aangegeven, de totale stromen die worden gezien door de NSG, maar in Log Analytics gebruiker ziet u alleen de enkele, gereduceerde record. Als u alle stromen wilt weer geven, gebruikt u het veld blob_id, waarnaar kan worden verwezen vanuit Storage. Het totale aantal stromen voor die record komt overeen met de afzonderlijke stromen die in de BLOB worden weer gegeven.
 
-De onderstaande query helpt u bij het zoeken naar alle stroom logboeken van on-premises in de afgelopen 30 dagen.
+De onderstaande query helpt u tijdens de afgelopen 30 dagen te kijken naar alle subnetten die communiceren met niet-Azure open bare Ip's.
 ```
 AzureNetworkAnalytics_CL
 | where SubType_s == "FlowLog" and FlowStartTime_t >= ago(30d) and FlowType_s == "ExternalPublic"
-| project Subnet_s  
+| project Subnet1_s, Subnet2_s  
 ```
 Als u het pad naar de BLOB voor de stromen in de bovenstaande query wilt weer geven, gebruikt u de volgende query:
 

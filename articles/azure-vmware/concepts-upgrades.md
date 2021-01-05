@@ -3,16 +3,14 @@ title: Concepten-updates en upgrades voor Privécloud
 description: Meer informatie over de belangrijkste upgrade processen en functies in de Azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 380e97eae559145a9ef5ed7b6e7bf14f18039eed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6fb65a0e192fbf1f054857223b3fdaf58fc6a903
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316797"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809646"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Updates en upgrades voor persoonlijke Clouds in azure VMware-oplossing
-
-## <a name="overview"></a>Overzicht
 
 Een van de belangrijkste voor delen van persoonlijke Clouds van Azure VMware-oplossingen is dat het platform voor u wordt onderhouden. Platform onderhoud omvat geautomatiseerde updates voor een gevalideerde VMware-software bundel, om ervoor te zorgen dat u de nieuwste versie van de gevalideerde persoonlijke cloud software van Azure VMware-oplossing gebruikt.
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 49fa0c849a6b2eab0647922a711c50b4fe762584
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 69f9b5a74566879ecf8f15f23e689ebb731da45a
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095659"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814139"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-powershell"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren met behulp van Azure PowerShell
 
@@ -45,7 +45,7 @@ Gebruik [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegrou
 New-AzResourceGroup -Name MyResourceGroup -Location "East US"
 ```
 
-Maak nu een DDoS-beveiligings plan met de naam _MyDdosProtectionPlan_ :
+Maak nu een DDoS-beveiligings plan met de naam _MyDdosProtectionPlan_:
 
 ```azurepowershell-interactive
 New-AzDdosProtectionPlan -ResourceGroupName MyResourceGroup -Name MyDdosProtectionPlan -Location "East US"
@@ -55,7 +55,7 @@ New-AzDdosProtectionPlan -ResourceGroupName MyResourceGroup -Name MyDdosProtecti
 
 ### <a name="enable-ddos-for-a-new-virtual-network"></a>DDoS inschakelen voor een nieuw virtueel netwerk
 
-U kunt DDoS-beveiliging inschakelen bij het maken van een virtueel netwerk. In dit voor beeld noemen we onze virtuele netwerk _MyVnet_ : 
+U kunt DDoS-beveiliging inschakelen bij het maken van een virtueel netwerk. In dit voor beeld noemen we onze virtuele netwerk _MyVnet_: 
 
 ```azurepowershell-interactive
 New-AzVirtualNetwork -Name MyVnet -ResourceGroupName MyResourceGroup -Location "East US" -AddressPrefix 10.0.0.0/16
@@ -114,4 +114,4 @@ Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele ne
 Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
 
 > [!div class="nextstepaction"]
-> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry-monitoring-alerting.md)
+> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

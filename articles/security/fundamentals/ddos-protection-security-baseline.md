@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1c1a5a96742d380ce42c0aea8c77a199083df47f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cbc22f9b55f8d20880b43516a2a5bc8f55d389f5
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492247"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814496"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Azure-beveiligings basislijn voor Azure DDoS Protection Standard
 
@@ -38,7 +38,7 @@ Deze beveiligings basislijn is van toepassing op de richt lijnen [Azure Security
 
 Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. Met activiteiten Logboeken kunt u inzicht krijgen in de bewerkingen die zijn uitgevoerd op uw Azure-cache voor redis-exemplaren op het niveau van het besturings vlak. Met Azure-activiteiten logboek gegevens kunt u bepalen wat voor schrijf bewerkingen (PUT, POST, DELETE) die worden uitgevoerd op het niveau van de Control-instantie voor uw Azure DDoS Protection-instanties, de ' wat, wie en wanneer ' zijn.
 
-- [Waarschuwingen voor DDoS Protection-metrische gegevens configureren](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Diagnostische logboek registratie voor DDoS weer geven en configureren](../../ddos-protection/diagnostic-logging.md)
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
 
@@ -60,7 +60,7 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 **Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een log Analytics-werk ruimte. Voer query's uit in Log Analytics om zoek termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de activiteiten logboek gegevens die mogelijk zijn verzameld voor Recovery Services kluizen.
 
-- [Informatie over toegang tot telemetrie, logboeken en aanvals analyses voor DDoS Protection Standard-Service](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Informatie over toegang tot telemetrie, logboeken en aanvals analyses voor DDoS Protection Standard-Service](../../ddos-protection/telemetry.md)
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
 
@@ -76,7 +76,7 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 Onboarding van een Log Analytics-werk ruimte naar Azure-Sentinel, aangezien deze een via-oplossing (Security Orchestration Automated Response) biedt. Hiermee kunnen playbooks (geautomatiseerde oplossingen) worden gemaakt en gebruikt om beveiligings problemen op te lossen. Daarnaast kunt u aangepaste logboek waarschuwingen maken in uw Log Analytics-werk ruimte met behulp van Azure Monitor.
 
-- [Hoe kan ik waarschuwingen voor metrische gegevens van DDoS configureren?](https://azure.microsoft.com/blog/holiday-season-is-ddos-season/)
+- [Hoe kan ik waarschuwingen voor metrische gegevens van DDoS configureren?](../../ddos-protection/alerts.md)
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md)
 
@@ -142,7 +142,7 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 
 - [Uw client toepassing (Service-Principal) registreren bij Azure AD](/rest/api/azure/#register-your-client-application-with-azure-ad)
 
-- [Informatie over Azure DDos Protection-API](/rest/api/virtual-network/)
+- [Azure DDoS Protection API-gegevens](/rest/api/virtual-network/)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -384,7 +384,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: veilige configuraties instellen voor alle Azure-resources
 
-**Richt lijnen**: standaard beveiligings configuraties voor Azure DDoS-beveiliging definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken om de configuratie van uw Recovery Services kluizen te controleren of af te dwingen.
+**Richt lijnen**: standaard beveiligings configuraties voor Azure DDoS Protection definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken om de configuratie van uw Recovery Services kluizen te controleren of af te dwingen.
 
 - [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
@@ -524,7 +524,7 @@ Test uw veronderstellingen over hoe uw services reageren op een aanval door verk
 
 Selecteer een van de beschik bare metrische gegevens voor DDoS-beveiliging om u te waarschuwen wanneer er tijdens een aanval een actieve oplossing is, met behulp van de configuratie van de Azure Monitor waarschuwingen. Wanneer aan de voor waarden wordt voldaan, ontvangt het opgegeven adres een e-mail waarschuwing
 
-- [Waarschuwingen voor DDoS Protection-metrische gegevens configureren](../../ddos-protection/telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics)
+- [Waarschuwingen voor DDoS Protection-metrische gegevens configureren](../../ddos-protection/alerts.md)
 
 - [Continue export configureren](../../security-center/continuous-export.md)
 

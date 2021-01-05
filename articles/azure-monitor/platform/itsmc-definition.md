@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: c6bac44e6f7212344463665840f180732970c3d4
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1f7a493c071e86114afd7d4a9e08e204bbab509d
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657155"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809476"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -32,10 +32,9 @@ Voordat u een verbinding kunt maken, moet u ITSMC toevoegen.
 
    ![Scherm opname waarin de knop maken wordt weer gegeven in azure Marketplace.](media/itsmc-overview/add-itsmc-solution.png)
 
-3. Selecteer in de sectie **OMS-werk ruimte** de Azure log Analytics-werk ruimte waar u ITSMC wilt installeren.
+3. Selecteer in de sectie **La Workspace** de Azure log Analytics-werk ruimte waar u ITSMC wilt installeren.
    >[!NOTE]
    >
-   > * Als onderdeel van de doorlopende overgang van Microsoft Operations Management Suite (OMS) naar Azure Monitor worden OMS-werk ruimten nu aangeduid als *log Analytics*.
    > * ITSMC kan alleen in Log Analytics-werk ruimten worden geïnstalleerd in de volgende regio's: VS-Oost, VS-West 2, Zuid-Centraal VS, West-Centraal VS, US Gov-Arizona, US Gov-Virginia, Canada-centraal, Europa-west, Zuid-Brittannië, Zuidoost-Azië, Japan-Oost, Centraal-India en Australië-zuidoost.
 
 4. Selecteer in de sectie **log Analytics werk ruimte** de resource groep waar u de ITSMC-resource wilt maken:
@@ -56,10 +55,10 @@ Als u een verbinding wilt maken, moet u uw ITSM-hulp programma voorbereiden om d
 
 Op basis van het ITSM-product waarmee u verbinding maakt, selecteert u een van de volgende koppelingen voor instructies:
 
-- [System Center Service Manager](./itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure)
-- [ServiceNow](./itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
-- [Provance](./itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure)  
-- [Cherwell](./itsmc-connections.md#connect-cherwell-to-it-service-management-connector-in-azure)
+- [ServiceNow](./itsmc-connections-servicenow.md)
+- [System Center Service Manager](./itsmc-connections-scsm.md)
+- [Cherwell](./itsmc-connections-cherwell.md)
+- [Provance](./itsmc-connections-provance.md)
 
 Nadat u uw ITSM-hulpprogram ma's hebt bereid, voert u de volgende stappen uit om een verbinding te maken:
 
@@ -70,10 +69,14 @@ Nadat u uw ITSM-hulpprogram ma's hebt bereid, voert u de volgende stappen uit om
 1. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
 
    ![Scherm opname van het menu-item ITSM-verbindingen.](media/itsmc-overview/add-new-itsm-connection.png)
-   Op deze pagina wordt de lijst met verbindingen weer gegeven.
 1. Selecteer **verbinding toevoegen**.
 
-4. Geef de verbindings instellingen op, zoals beschreven in [de ITSMC-verbinding configureren met uw ITSM-producten of-services](./itsmc-connections.md).
+1. Geef de verbindings instellingen op, zoals wordt beschreven op basis van ITSM-producten/-services:
+
+    - [ServiceNow](./itsmc-connections-servicenow.md)
+    - [System Center Service Manager](./itsmc-connections-scsm.md)
+    - [Cherwell](./itsmc-connections-cherwell.md)
+    - [Provance](./itsmc-connections-provance.md)
 
    > [!NOTE]
    >
@@ -83,13 +86,7 @@ Nadat u uw ITSM-hulpprogram ma's hebt bereid, voert u de volgende stappen uit om
 
 ## <a name="use-itsmc"></a>ITSMC gebruiken
 
-   U kunt ITSMC gebruiken om werk items te maken op basis van Azure-waarschuwingen, Log Analytics waarschuwingen en Log Analytics logboek records.
-
-## <a name="template-definitions"></a>Sjabloon definities
-
-   Er zijn typen werk items die sjablonen kunnen gebruiken die zijn gedefinieerd door het ITSM-hulp programma.
-Met behulp van sjablonen kunt u velden definiëren die automatisch worden ingevuld op basis van vaste waarden die zijn gedefinieerd als onderdeel van de actie groep. U definieert sjablonen in het hulp programma ITSM.
-U kunt definiëren in welke sjabloon u wilt gebruiken als onderdeel van de definitie van de actie groep.
+   U kunt ITSMC gebruiken om waarschuwingen te maken van Azure Monitor waarschuwingen in het ITSM-hulp programma.
 
 ## <a name="create-itsm-work-items-from-azure-alerts"></a>ITSM-werk items maken op basis van Azure-waarschuwingen
 
@@ -100,7 +97,13 @@ Actie groepen bieden een modulaire en herbruikbare manier om acties voor uw Azur
 > [!NOTE]
 > Nadat u de ITSM-verbinding hebt gemaakt, moet u 30 minuten wachten totdat het synchronisatie proces is voltooid.
 
-Gebruik de volgende procedure om werk items te maken:
+### <a name="template-definitions"></a>Sjabloon definities
+
+   Er zijn typen werk items die sjablonen kunnen gebruiken die zijn gedefinieerd door het ITSM-hulp programma.
+Met behulp van sjablonen kunt u velden definiëren die automatisch worden ingevuld op basis van vaste waarden die zijn gedefinieerd als onderdeel van de actie groep. U definieert sjablonen in het hulp programma ITSM.
+U kunt definiëren welke sjabloon u wilt gebruiken als onderdeel van de definitie van de actie groep.
+
+Gebruik de volgende procedure om actie groepen te maken:
 
 1. Selecteer in de Azure Portal  **waarschuwingen**.
 2. Selecteer in het menu boven aan het scherm **acties beheren**:
@@ -115,13 +118,16 @@ Gebruik de volgende procedure om werk items te maken:
 
 4. Selecteer in de lijst met meldingen **volgende: acties**.
 5. Selecteer in de lijst acties de optie **ITSM** in de lijst **actie type** . Geef een **naam** op voor de actie. Selecteer de knop pen die de **Details** van de bewerking weergeeft.
+
+    ![Scherm afbeelding waarin de definitie van de actie groep wordt weer gegeven.](media/itsmc-definition/action-group-pen.png)
+
 6. Selecteer in de lijst **abonnement** het abonnement waarin uw log Analytics-werk ruimte zich bevindt. Selecteer in de lijst **verbinding** de naam van uw ITSM-connector. Deze wordt gevolgd door de naam van uw werk ruimte. Bijvoorbeeld MyITSMConnector (MyWorkspace).
 
 7. Selecteer een type **werk item** .
 
 8. Als u velden met vaste waarden wilt invullen, selecteert u **aangepaste sjabloon gebruiken**. Als dat niet het geval is, kiest u een bestaande [sjabloon](#template-definitions) in de lijst **sjabloon** en voert u de vaste waarden in de sjabloon velden in.
 
-9. Als u **afzonderlijke werk items maken voor elk configuratie-item** selecteert, heeft elk configuratie-item een eigen werk item. Er wordt één werk item per configuratie-item weer. Het wordt bijgewerkt op basis van de waarschuwingen die worden gemaakt.
+9. Als u **afzonderlijke werk items maken voor elk configuratie-item** selecteert, heeft elk configuratie-item een eigen werk item. Dit betekent dat er één werk item per configuratie-item is.
 
     * In het geval dat u in de vervolg keuzelijst werk item of waarschuwing klikt: als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, wordt er door elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één waarschuwing per configuratie-item zijn.
 
@@ -141,124 +147,6 @@ Wanneer u een Azure-waarschuwings regel maakt of bewerkt, gebruikt u een actie g
 >
 >- Het veld korte beschrijving in de definitie van de waarschuwings regel is beperkt tot 40 tekens wanneer u het verzendt met behulp van de actie ITSM.
 
-## <a name="additional-information"></a>Aanvullende informatie
-
-### <a name="data-synced-from-your-itsm-product"></a>Gegevens die zijn gesynchroniseerd met uw ITSM-product
-
-Incidenten en wijzigings aanvragen worden gesynchroniseerd vanuit uw ITSM-product naar uw Log Analytics-werk ruimte, op basis van de configuratie van de verbinding.
-
-In deze sectie vindt u enkele voor beelden van gegevens die zijn verzameld door ITSMC.
-
-De velden in **ServiceDesk_CL** variëren, afhankelijk van het type werk item dat u in log Analytics importeert. Hier volgt een lijst met velden voor twee typen werk items:
-
-**Werk item:** **incidenten**  
-ServiceDeskWorkItemType_s = "incident"
-
-**Fields**
-
-- ServiceDeskConnectionName
-- Service Desk-ID
-- Staat
-- Urgentie
-- Impact
-- Prioriteit
-- Escalatie
-- Created By
-- Opgelost door
-- Gesloten door
-- Bron
-- Toegewezen aan
-- Categorie
-- Titel
-- Beschrijving
-- Gemaakt op
-- Datum gesloten
-- Datum opgelost
-- Datum laatst gewijzigd
-- Computer
-
-**Werk item:** **wijzigings aanvragen**
-
-ServiceDeskWorkItemType_s = "ChangeRequest"
-
-**Fields**
-- ServiceDeskConnectionName
-- Service Desk-ID
-- Created By
-- Gesloten door
-- Bron
-- Toegewezen aan
-- Titel
-- Type
-- Categorie
-- Staat
-- Escalatie
-- Conflict status
-- Urgentie
-- Prioriteit
-- Risico
-- Impact
-- Toegewezen aan
-- Gemaakt op
-- Datum gesloten
-- Datum laatst gewijzigd
-- Aangevraagde datum
-- Geplande begin datum
-- Geplande eind datum
-- Begin datum van werk
-- Eind datum van werk
-- Beschrijving
-- Computer
-
-## <a name="output-data-for-a-servicenow-incident"></a>Uitvoer gegevens voor een ServiceNow-incident
-
-| Log Analytics veld | Het veld ServiceNow |
-|:--- |:--- |
-| ServiceDeskId_s| Getal |
-| IncidentState_s | Staat |
-| Urgency_s |Urgentie |
-| Impact_s |Impact|
-| Priority_s | Prioriteit |
-| CreatedBy_s | Geopend door |
-| ResolvedBy_s | Opgelost door|
-| ClosedBy_s  | Gesloten door |
-| Source_s| Type contact |
-| AssignedTo_s | Toegewezen aan  |
-| Category_s | Categorie |
-| Title_s|  Korte beschrijving |
-| Description_s|  Opmerkingen |
-| CreatedDate_t|  Had |
-| ClosedDate_t| gesloten|
-| ResolvedDate_t|Opgelost|
-| Computer  | Configuratie-item |
-
-## <a name="output-data-for-a-servicenow-change-request"></a>Uitvoer gegevens voor een wijzigings aanvraag voor een ServiceNow
-
-| Log Analytics | Het veld ServiceNow |
-|:--- |:--- |
-| ServiceDeskId_s| Getal |
-| CreatedBy_s | Aangevraagd door |
-| ClosedBy_s | Gesloten door |
-| AssignedTo_s | Toegewezen aan  |
-| Title_s|  Korte beschrijving |
-| Type_s|  Type |
-| Category_s|  Categorie |
-| CRState_s|  Staat|
-| Urgency_s|  Urgentie |
-| Priority_s| Prioriteit|
-| Risk_s| Risico|
-| Impact_s| Impact|
-| RequestedDate_t  | Aangevraagd door datum |
-| ClosedDate_t | Gesloten datum |
-| PlannedStartDate_t  | Geplande begin datum |
-| PlannedEndDate_t  | Geplande eind datum |
-| WorkStartDate_t  | Werkelijke begin datum |
-| WorkEndDate_t | Werkelijke eind datum|
-| Description_s | Beschrijving |
-| Computer  | Configuratie-item |
-
 ## <a name="next-steps"></a>Volgende stappen
 
-[Overzicht](./itsmc-overview.md) 
- van ITSM-connector [ITSM-producten/-services toevoegen aan IT Service Management-connector](./itsmc-connections.md) 
- [Problemen met ITSM-connector oplossen](./itsmc-resync-servicenow.md)
+* [Problemen oplossen in ITSM-connector](./itsmc-resync-servicenow.md)

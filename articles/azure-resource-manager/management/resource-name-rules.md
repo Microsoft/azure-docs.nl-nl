@@ -2,13 +2,13 @@
 title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
-ms.date: 12/04/2020
-ms.openlocfilehash: a6aac03277a11cf671f5a618bc85ff987cfdc2dd
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.date: 12/29/2020
+ms.openlocfilehash: edcf3f09b57ed7628611c482effddb210ef8e456
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608313"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814377"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -170,7 +170,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Galerij | resourcegroep | 1-80 | Alfanumerieke tekens en punten.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
 > | galerieën/toepassingen | galerie | 1-80 | Alfanumerieke tekens, afbreek streepjes en punten.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
 > | galerieën/toepassingen/versies | toepassing | 32-bits geheel getal | Cijfers en peri Oden. |
-> | galerieën/afbeeldingen | galerie | 1-80 | Alfanumerieke tekens, afbreek streepjes en punten.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
+> | galerieën/afbeeldingen | galerie | 1-80 | Alfanumeriek, onderstrepings tekens, afbreek streepjes en punten.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
 > | galerieën/afbeeldingen/versies | image | 32-bits geheel getal | Cijfers en peri Oden. |
 > | images | resourcegroep | 1-80 | Alfanumeriek, onderstrepings tekens, punten en afbreek streepjes.<br><br>Begin met alfanumeriek. Eindigen met een alfanumeriek of onderstrepings teken. |
 > | momentopnamen | resourcegroep | 1-80 | Alfanumeriek, onderstrepings tekens, punten en afbreek streepjes.<br><br>Begin met alfanumeriek. Eindigen met een alfanumeriek of onderstrepings teken. |
@@ -537,7 +537,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
 > | clusters | resourcegroep | 4-63 | Alfanumerieke tekens en afbreek streepjes.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
-> | workspaces | resourcegroep | 4-63 | Alfanumerieke tekens en afbreek streepjes.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
+> | workspaces | internationaal | 4-63 | Alfanumerieke tekens en afbreek streepjes.<br><br>Beginnen en eindigen met een alfanumerieke teken. |
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 

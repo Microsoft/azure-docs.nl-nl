@@ -8,12 +8,12 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/15/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: aeee13152364c31d82f674df784a27114035a041
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: d8cb5179583dd23ea2bd4baf5ebe7d84b0ae9cbf
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028543"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814428"
 ---
 # <a name="azure-consumption-commitment-benefit"></a>Voordeel van Azure-verbruikstoezegging
 
@@ -31,7 +31,7 @@ Als u gebruik wilt maken van dit voor deel, koopt u gewoon een in aanmerking kom
 
 ## <a name="determine-if-your-organization-has-an-azure-consumption-commitment-maccctc"></a>Bepalen of uw organisatie een Azure-verbruiks toezeg ging heeft (MACC/CtC)
 
-Als u niet zeker weet of uw organisatie een kwalificerende overeenkomst heeft, meldt u zich aan bij de Marketplace-ervaring binnen het [Azure Portal](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) onder een Tenant die is gekoppeld aan uw organisatie. Als u de optie **voor delen in aanmerking van Azure** ziet binnen het prijs filter, hebt u een in aanmerking komend Azure-verbruiks toezeg ging. Het kwalificeren van Azure Marketplace-aankopen draagt bij aan de Azure-toezeg ging van uw organisatie als deze rechtstreeks via de Azure Marketplace wordt aangeschaft.
+Als u niet zeker weet of uw organisatie een kwalificerende overeenkomst heeft, meldt u zich aan bij de Marketplace-ervaring binnen het [Azure Portal](https://ms.portal.azure.com/#blade/Microsoft_Azure_Marketplace/MarketplaceOffersBlade/selectedMenuItemId/home) onder een Tenant die is gekoppeld aan uw organisatie. Als u de optie voor het selecteren van **Azure-voor delen die in aanmerking komt alleen** als filter optie, hebt u een in aanmerking komend Azure-verbruiks toezeg ging. Het kwalificeren van Azure Marketplace-aankopen draagt bij aan de Azure-toezeg ging van uw organisatie als deze rechtstreeks via de Azure Marketplace wordt aangeschaft.
 
 [![In aanmerking komende menu optie voor Azure.](media/azure-benefit/azure-benefit-eligible.png)](media/azure-benefit/azure-benefit-eligible.png#lightbox)
 

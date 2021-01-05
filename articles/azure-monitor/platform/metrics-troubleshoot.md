@@ -7,28 +7,16 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 1a9286ff15834fafe4a69907836ce1abd17abca6
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 7c3af0865282475ded0172d18aecad1dfb61721b
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168066"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814258"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Problemen met grafieken met metrische gegevens oplossen
 
 Gebruik dit artikel als u problemen ondervindt met het maken, aanpassen of interpreteren van grafieken in azure Metrics Explorer. Als u niet bekend bent met metrische gegevens, kunt u leren hoe u aan de [slag gaat met metrische gegevens Verkenner](metrics-getting-started.md) en [geavanceerde functies van Metrics Explorer](metrics-charts.md). U kunt ook [voor beelden](metric-chart-samples.md) bekijken van de geconfigureerde metrische grafieken.
-
-## <a name="cant-find-your-resource-to-select-it"></a>Kan de resource niet vinden om deze te selecteren
-
-U hebt op de knop **Resource selecteren** geklikt, maar u ziet uw resource niet in het dialoogvenster Resourcekiezer.
-
-**Oplossing:** Voor metrische gegevens Verkenner moeten abonnementen en resource groepen worden geselecteerd voordat de beschik bare resources worden vermeld. Ga als volgt te werk als u de resource niet ziet:
-
-1. Controleer of u het juiste abonnement hebt geselecteerd in de vervolgkeuzelijst **Abonnement**. Als uw abonnement niet wordt weergegeven, klikt u op **Map- en abonnementsinstellingen ** en voegt u een abonnement met uw resource toe.
-
-1. Controleer of u de juiste resourcegroep hebt geselecteerd.
-    > [!WARNING]
-    > Wanneer u Metrics Explorer de eerste keer opent, bevat de vervolgkeuzelijst **Resourcegroep** geen vooraf geselecteerde resourcegroepen. Dit is om de beste prestatie te kunnen bieden. U moet minstens één groep kiezen om resources te zien te krijgen.
 
 ## <a name="chart-shows-no-data"></a>Diagram toont geen gegevens
 
@@ -72,23 +60,23 @@ Het verzamelen van metrische gegevens van een **gastbesturingssysteem** is allee
 
 ## <a name="error-retrieving-data-message-on-dashboard"></a>Bericht ' fout bij het ophalen van gegevens ' op het dash board
 
-Dit probleem kan optreden wanneer uw dashboard is gemaakt met een metriek die later is afgeschaft en verwijderd uit Azure. Als u wilt controleren of dit het geval is, opent u het tabblad **Metrische gegevens** van uw resource, en controleert u de beschikbare metrische gegevens in de metriekenkiezer. Als de metriek niet wordt weergegeven, is deze verwijderd uit Azure. Als een metriek is afgeschaft, is er meestal een betere nieuwe metriek die een vergelijkbaar perspectief op de resourcestatus biedt.
+Dit probleem kan optreden wanneer uw dashboard is gemaakt met een metriek die later is afgeschaft en verwijderd uit Azure. Als u wilt controleren of dit het geval is, opent u het tabblad **metrische gegevens** van uw resource en controleert u de beschik bare metrische gegevens in de metrische kiezer. Als de metriek niet wordt weergegeven, is deze verwijderd uit Azure. Als een metriek is afgeschaft, is er meestal een betere nieuwe metriek die een vergelijkbaar perspectief op de resourcestatus biedt.
 
 **Oplossing:** Werk de tegel fout bij door een alternatieve metriek voor uw grafiek op het dash board te kiezen. U kunt [een lijst met beschikbare metrische gegevens voor Azure-services bekijken](metrics-supported.md).
 
-## <a name="chart-shows-dashed-line"></a>Grafiek toont streepjes lijn
+## <a name="chart-shows-dashed-line"></a>Grafiek toont stippellijn
 
 Voor grafieken van Azure-metrieken wordt gestreepte lijn stijl gebruikt om aan te geven dat er een ontbrekende waarde is (ook wel ' null-waarde ' genoemd) tussen twee bekende tijdgebonden gegevens punten. Als u bijvoorbeeld in de tijd kiezer hebt gekozen voor ' 1 minuut ' tijd granulatie, maar de metriek is gerapporteerd op 07:26, 07:27, 07:29 en 07:30 (Let op een minuut tussen de tweede en derde gegevens punten), dan wordt een stippel lijn verbonden met 07:27 en 07:29 en wordt er verbinding gemaakt met alle andere gegevens punten. De onderbroken lijn wordt op nul gezet wanneer de metriek **aantal** en **Sum** -aggregatie gebruikt. Voor de **gemiddeld**, **min** of **Max** aggregaties verbindt de streepjes lijn twee dichtstbijzijnde gegevens punten. Als er gegevens ontbreken aan de meest rechtse of linkse kant van de grafiek, wordt de stippellijn uitgebreid in de richting van het ontbrekende gegevenspunt.
-  ![Scherm afbeelding die laat zien hoe de onderbroken lijn wordt weer gegeven als de gegevens aan de rechter kant of de linkerkant van de grafiek ontbreken, wordt uitgebreid naar de richting van het ontbrekende gegevens punt.](./media/metrics-troubleshoot/missing-data-point-line-chart.png)
+  ![Scherm afbeelding die laat zien hoe de onderbroken lijn wordt weer gegeven als de gegevens aan de rechter kant of de linkerkant van de grafiek ontbreken, wordt uitgebreid naar de richting van het ontbrekende gegevens punt.](./media/metrics-troubleshoot/dashed-line.png)
 
-**Oplossing:** Dit gedrag is inherent aan het ontwerp. Dit is handig voor het identificeren van ontbrekende gegevenspunten. Het lijn diagram is een superieure keuze voor het visualiseren van trends van metrische gegevens met hoge dichtheid, maar is mogelijk moeilijk te interpreteren voor metrische gegevens met sparse-waarden, met name wanneer u met de tijd korrels een rol geeft. De stippellijn vergemakkelijkt het lezen van deze grafieken, maar als uw grafiek nog steeds niet duidelijk is, kunt u overwegen uw metrische gegevens weer te geven met een ander grafiektype. Bijvoorbeeld, een spreidings grafiek diagram voor dezelfde metrische informatie laat elke keer duidelijk zien door een punt te visualiseren wanneer er sprake is van een waarde en overs laan van het gegevens punt wanneer de waarde ontbreekt: ![ scherm afbeelding die de menu optie spreidings diagram markeert.](./media/metrics-troubleshoot/missing-data-point-scatter-chart.png)
+**Oplossing:** Dit gedrag is inherent aan het ontwerp. Dit is handig voor het identificeren van ontbrekende gegevenspunten. Het lijn diagram is een superieure keuze voor het visualiseren van trends van metrische gegevens met hoge dichtheid, maar is mogelijk moeilijk te interpreteren voor metrische gegevens met sparse-waarden, met name wanneer u met de tijd korrels een rol geeft. De stippellijn vergemakkelijkt het lezen van deze grafieken, maar als uw grafiek nog steeds niet duidelijk is, kunt u overwegen uw metrische gegevens weer te geven met een ander grafiektype. Bijvoorbeeld, een spreidings grafiek diagram voor dezelfde metrische informatie laat elke keer duidelijk zien door een punt te visualiseren wanneer er sprake is van een waarde en overs laan van het gegevens punt wanneer de waarde ontbreekt: ![ scherm afbeelding die de menu optie spreidings diagram markeert.](./media/metrics-troubleshoot/scatter-plot.png)
 
    > [!NOTE]
    > Als u nog steeds liever een lijndiagram gebruikt voor uw metrische gegevens, kan het verplaatsen van de muis over de grafiek helpen om de tijdgranulatie weer te geven door het markeren van het gegevenspunt op de locatie van de muisaanwijzer.
 
-## <a name="chart-shows-unexpected-drop-in-values"></a>Diagram toont onverwachte waarden voor neerzetten
+## <a name="chart-shows-unexpected-drop-in-values"></a>Mijn grafiek laat een onverwachte daling van waarden zien
 
-In veel gevallen is de waargenomen daling van de metrische waarden een verkeerde interpretatie van de gegevens die in de grafiek worden weergegeven. U kunt worden misleid door een daling van optellingen of aantallen wanneer de grafiek de meest recente minuten toont omdat de laatste punten van metrische gegevens nog niet zijn ontvangen of verwerkt door Azure. Afhankelijk van de service kan de latentie van de verwerking van metrische gegevens enkele minuten bedragen. Voor grafieken die een recent tijd bereik met een granulatie van 1 of 5 minuten weer geven, wordt de waarde in de laatste paar minuten meer duidelijker: ![ scherm afbeelding waarin de waarde in de afgelopen paar minuten wordt weer gegeven.](./media/metrics-troubleshoot/drop-in-values.png)
+In veel gevallen is de waargenomen daling van de metrische waarden een verkeerde interpretatie van de gegevens die in de grafiek worden weergegeven. U kunt worden misleid door een daling van optellingen of aantallen wanneer de grafiek de meest recente minuten toont omdat de laatste punten van metrische gegevens nog niet zijn ontvangen of verwerkt door Azure. Afhankelijk van de service kan de latentie van de verwerking van metrische gegevens enkele minuten bedragen. Voor grafieken die een recent tijd bereik met een granulatie van 1 of 5 minuten weer geven, wordt de waarde in de laatste paar minuten meer duidelijker: ![ scherm afbeelding waarin de waarde in de afgelopen paar minuten wordt weer gegeven.](./media/metrics-troubleshoot/unexpected-dip.png)
 
 **Oplossing:** Dit gedrag is inherent aan het ontwerp. Wij vinden dat het direct weergeven van ontvangen gegevens zinvol is, zelfs wanneer het *gedeeltelijke* of *onvolledige* gegevens betreft. U kunt zo namelijk sneller belangrijke conclusies trekken en meteen met uw onderzoek beginnen. In het geval van een metrische waarde die bijvoorbeeld het aantal storingen aangeeft, kunt u aan een gedeeltelijke waarde X al zien dat er ten minste X storingen zijn opgetreden in een bepaalde minuut. U kunt het probleem dan meteen gaan onderzoeken, in plaats van te wachten op het exacte aantal storingen dat zich heeft voorgedaan, wat misschien ook niet zo belangrijk is. De grafiek wordt bijgewerkt zodra we de volledige set gegevens ontvangen, maar op dat moment kunnen er ook weer nieuwe onvolledige gegevenspunten van meer recente minuten worden weergeven.
 
@@ -98,7 +86,7 @@ Virtuele machines en schaalsets voor virtuele machines kennen twee soorten metri
 
 Metrische gegevens van het gastbesturingssysteem worden standaard opgeslagen in een Azure Storage-account, die u kiest op het tabblad **Diagnostische instellingen** van uw resource. Als er geen metrische gegevens van het gastbesturingssysteem worden verzameld of als Metrics Explorer er geen toegang tot krijgt, ziet u alleen de naamruimte voor de metrische gegevens van **Host van virtuele machine**:
 
-![afbeelding van metrische gegevens](./media/metrics-troubleshoot/cannot-pick-guest-os-namespace.png)
+![afbeelding van metrische gegevens](./media/metrics-troubleshoot/vm.png)
 
 **Oplossing:** Als de naam ruimte en metrische gegevens van het **gast besturingssysteem (klassiek)** niet worden weer gegeven in Metrics Explorer:
 

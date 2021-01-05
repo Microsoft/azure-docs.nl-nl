@@ -36,8 +36,6 @@
       items:
         - name: Onzekere voorspellingen herstellen
           href: luis-tutorial-review-endpoint-utterances.md
-        - name: Batchgewijs gegevenssets testen
-          href: luis-tutorial-batch-testing.md
         - name: Patronen toevoegen om voorspellingen te verbeteren
           href: luis-tutorial-pattern.md
     - name: Gebruiken met een bot
@@ -93,8 +91,6 @@
       items:
         - name: Interactief testen
           href: luis-concept-test.md
-        - name: Batchgewijs testen
-          href: luis-concept-batch-test.md
     - name: Gegevensbeheer
       items:
         - name: Gegevens wijzigen
@@ -229,7 +225,7 @@
         - name: Containers configureren
           href: luis-container-configuration.md
         - name: Containerinstanties gebruiken
-          href: deploy-luis-on-container-instances.md
+          href: ../containers/azure-container-instance-recipe.md
         - name: Containerbeperkingen
           href: luis-container-limitations.md
           displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'

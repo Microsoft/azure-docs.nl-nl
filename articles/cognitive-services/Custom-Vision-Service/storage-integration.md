@@ -9,12 +9,12 @@ ms.subservice: custom-vision
 ms.topic: how-to
 ms.date: 09/11/2020
 ms.author: pafarley
-ms.openlocfilehash: f4d9cc4c02ab062c73e9dbd977d9ea9e6ccdb60d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 43cd03e8f4a66d18adc33c943481002ff7b326d3
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532683"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813204"
 ---
 # <a name="integrate-azure-storage-for-notifications-and-backup"></a>Azure Storage integreren voor meldingen en back-ups
 
@@ -62,7 +62,7 @@ Nu u de integratie-Url's hebt, kunt u een nieuw Custom Vision project maken dat 
 
 ### <a name="create-new-project"></a>Nieuw project maken
 
-Wanneer u de [CreateProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeae) -API aanroept, voegt u de optionele para meters _exportModelContainerUri_ en _notificationQueueUri_toe. Wijs de URL-waarden toe die u in de vorige sectie hebt ontvangen. 
+Wanneer u de [CreateProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeae) -API aanroept, voegt u de optionele para meters _exportModelContainerUri_ en _notificationQueueUri_ toe. Wijs de URL-waarden toe die u in de vorige sectie hebt ontvangen. 
 
 ```curl
 curl -v -X POST "{endpoint}/customvision/v3.3/Training/projects?exportModelContainerUri={inputUri}&notificationQueueUri={inputUri}&name={inputName}"
@@ -206,4 +206,5 @@ Het `"exportStatus"` veld kan ofwel `"ExportCompleted"` of zijn `"ExportFailed"`
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze hand leiding hebt u geleerd hoe u een project tussen Custom Vision resources kopieert en verplaatst. Bekijk vervolgens de naslag documenten voor de API om te zien wat u nog meer kunt doen met Custom Vision.
-* [REST API-referentiedocumentatie](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)
+* [Referentie documentatie voor REST API (training)](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb3)
+* [Referentie documentatie voor REST API (voor spelling)](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.1/operations/5eb37d24548b571998fde5f3)

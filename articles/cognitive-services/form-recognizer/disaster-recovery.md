@@ -9,16 +9,16 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 168dcf994d00ba1cb2070665ada5a55cf86cfa4a
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 747ceb0106f437f9e2442c2b8c68c0b73a9107a6
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359809"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808250"
 ---
 # <a name="back-up-and-recover-your-form-recognizer-models"></a>Back-ups van uw formulieren Recognizer-modellen maken en herstellen
 
-Wanneer u een resource voor een formulier herkenning maakt in de Azure Portal, geeft u een regio op. Daarna blijven uw resource en alle bijbehorende bewerkingen gekoppeld aan de desbetreffende Azure server-regio. Het is zeldzaam, maar niet onmogelijk, om een netwerk probleem op te lossen dat een hele regio aantreft. Als uw oplossing altijd beschikbaar moet zijn, moet u deze zo ontwerpen dat failover wordt uitgevoerd naar een andere regio of de werk belasting tussen twee of meer regio's kan worden gesplitst. Beide benaderingen vereisen ten minste twee formulier herkennings resources in verschillende regio's en de mogelijkheid om [aangepaste modellen](./quickstarts/curl-train-extract.md) te synchroniseren tussen regio's.
+Wanneer u een resource voor een formulier herkenning maakt in de Azure Portal, geeft u een regio op. Daarna blijven uw resource en alle bijbehorende bewerkingen gekoppeld aan de desbetreffende Azure server-regio. Het is zeldzaam, maar niet onmogelijk, om een netwerk probleem op te lossen dat een hele regio aantreft. Als uw oplossing altijd beschikbaar moet zijn, moet u deze zo ontwerpen dat failover wordt uitgevoerd naar een andere regio of de werk belasting tussen twee of meer regio's kan worden gesplitst. Beide benaderingen vereisen ten minste twee formulier herkennings resources in verschillende regio's en de mogelijkheid om aangepaste modellen te synchroniseren tussen regio's.
 
 Met de copy API wordt dit scenario ingeschakeld, zodat u aangepaste modellen kunt kopiëren van één formulier Recognizer-account of naar anderen, dat in elke ondersteunde geografische regio kan voor komen. Deze hand leiding laat zien hoe u de Kopieer REST API met krul kunt gebruiken. U kunt ook een HTTP-aanvraag service zoals postman gebruiken om de aanvragen uit te geven.
 

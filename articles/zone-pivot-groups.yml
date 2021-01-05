@@ -40,6 +40,22 @@ groups:
     title: JavaScript
   - id: programming-language-python
     title: Python
+- id: programming-languages-set-cusvis
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Aan de slag
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-rest-api
+    title: REST-API
 - id: programming-languages-set-two
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -69,7 +85,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
 - id: programming-languages-set-four
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -91,7 +107,7 @@ groups:
   - id: programming-language-go
     title: Aan de slag
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-python
     title: Python
   - id: programming-language-ruby
@@ -103,7 +119,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-python
     title: Python
 - id: programming-languages-set-seven
@@ -139,7 +155,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-java
     title: Java
   - id: rest-api
@@ -153,9 +169,23 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-python
     title: Python
+- id: programming-languages-set-formre
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-rest-api
+    title: REST-API
 - id: programming-languages-set-eleven
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -247,7 +277,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
   - id: programming-language-python
@@ -555,7 +585,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
 - id: programming-languages-speech-services-one-nomore-no-go
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -679,7 +709,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
   - id: programming-language-python
@@ -761,7 +791,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
   - id: programming-language-python
@@ -936,10 +966,22 @@ groups:
     title: Gebruikersstroom
   - id: b2c-custom-policy
     title: Aangepast beleid
+- id: anomaly-detector-quickstart
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-python
+    title: Python
+  - id: rest-api
+    title: REST
 metadata:
-  ms.openlocfilehash: 8c246dacc9a8b1f5370352489a156fa0ebc92742
-  ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+  ms.openlocfilehash: a21332c679a839a86460ce83b43b5283245e6d35
+  ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/15/2020
-  ms.locfileid: "97503723"
+  ms.lasthandoff: 12/30/2020
+  ms.locfileid: "97814564"

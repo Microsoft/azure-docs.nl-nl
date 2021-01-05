@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/01/2020
 ms.author: ccompy
-ms.openlocfilehash: 93b92da999c15255f543abca346fc2bf8840006c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0b93111357cf0d6e57eeb5495d50bd18a15dca77
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999426"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97812779"
 ---
 * De multi tenant systemen die ondersteuning bieden voor het volledige assortiment prijs abonnementen, behalve geïsoleerd.
 * De App Service Environment, die wordt geïmplementeerd in uw VNet en die ondersteuning biedt voor geïsoleerde prijzen plan-apps.
@@ -33,7 +33,7 @@ Er zijn enkele dingen die VNet-integratie niet ondersteunt, zoals:
 * Integratie van Active Directory.
 * Naamgeving.
 
-Gateway-vereiste VNet-integratie biedt alleen toegang tot bronnen in het doel-VNet of in netwerken die zijn verbonden met het doel-VNet met peering of Vpn's. Gateway-vereiste VNet-integratie biedt geen toegang tot bronnen die beschikbaar zijn via Azure ExpressRoute-verbindingen of werkt met Service-eind punten.
+Gateway-vereiste VNet-integratie biedt alleen toegang tot bronnen in het doel-VNet of in netwerken die zijn verbonden met het doel-VNet met peering of Vpn's. Gateway-vereiste VNet-integratie biedt geen toegang tot bronnen die beschikbaar zijn via Azure ExpressRoute-verbindingen of om met Service-eind punten te werken.
 
 VNet-integratie geeft uw app altijd toegang tot resources in uw VNet, maar verleent geen inkomende persoonlijke toegang aan uw app vanuit het VNet. Toegang via een persoonlijke site verwijst naar het toegankelijk maken van uw app vanuit een particulier netwerk, bijvoorbeeld vanuit een Azure-VNet. VNet-integratie is alleen voor het maken van uitgaande oproepen vanuit uw app naar uw VNet.
 

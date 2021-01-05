@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: bonova, sstein
-ms.date: 11/10/2020
-ms.openlocfilehash: c30cecf0b480a1765f04ee48a0fd66f4ddd52708
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.reviewer: bonova, sstein, danil
+ms.date: 12/25/2020
+ms.openlocfilehash: 7bdde57c1d33118fd7d3c8e04a2507d8997c36d0
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630323"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809510"
 ---
 # <a name="features-comparison-azure-sql-database-and-azure-sql-managed-instance"></a>Vergelijking van functies: Azure SQL Database en Azure SQL Managed instance
 
@@ -51,7 +51,7 @@ De volgende tabel geeft een overzicht van de belangrijkste functies van SQL Serv
 | [Sortering-Server/exemplaar](/sql/relational-databases/collations/set-or-change-the-server-collation) | Nee, standaard server sortering `SQL_Latin1_General_CP1_CI_AS` wordt altijd gebruikt. | Ja, kan worden ingesteld wanneer het [exemplaar wordt gemaakt](../managed-instance/scripts/create-powershell-azure-resource-manager-template.md) en kan later niet worden bijgewerkt. |
 | [Columnstore-indexen](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes- [Premium-laag, Standard-laag-S3 en hoger, algemeen laag, bedrijfskritiek en grootschalige-lagen](/sql/relational-databases/indexes/columnstore-indexes-overview) |Ja |
 | [Common language runtime-CLR](/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts) | Nee | Ja, maar zonder toegang tot bestands systeem in `CREATE ASSEMBLY` instructie-Zie [CLR-verschillen](../managed-instance/transact-sql-tsql-differences-sql-server.md#clr) |
-| [Referenties](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Ja, maar alleen [Data Base-bereik referenties](/sql/t-sql/statements/create-database-scoped-credential-transact-sql). | Ja, maar alleen **Azure Key Vault** en `SHARED ACCESS SIGNATURE` worden ondersteund Zie [Details](../managed-instance/transact-sql-tsql-differences-sql-server.md#credential) |
+| [Referenties](/sql/relational-databases/security/authentication-access/credentials-database-engine) | Ja, maar alleen [Data Base-bereik referenties](/sql/t-sql/statements/create-database-scoped-credential-transact-sql). | Ja, maar alleen **Azure Key Vault** en `SHARED ACCESS SIGNATURE` worden ondersteund-Zie [Details](../managed-instance/transact-sql-tsql-differences-sql-server.md#credential) |
 | [Query's met namen van meerdere data bases/drie delen](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Nee-Zie [elastische query's](elastic-query-overview.md) | Ja, plus [elastische query's](elastic-query-overview.md) |
 | [Transacties tussen databases](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Nee | Ja, binnen het exemplaar. Zie [verschillen tussen gekoppelde servers](../managed-instance/transact-sql-tsql-differences-sql-server.md#linked-servers) voor query's die betrekking hebben op meerdere instanties. |
 | [Data base-DbMail](/sql/relational-databases/database-mail/database-mail) | Nee | Ja |
@@ -128,6 +128,7 @@ Het Azure-platform biedt een aantal PaaS-mogelijkheden die als extra waarde word
 | [Azure Resource Health](../../service-health/resource-health-overview.md) | Ja | Nee |
 | Back-upretentie | Ja. standaard 7 dagen, Maxi maal 35 dagen. | Ja. standaard 7 dagen, Maxi maal 35 dagen. |
 | [Gegevens migratie service (DMS)](/sql/dma/dma-overview) | Ja | Ja |
+| [Elastische taken](elastic-jobs-overview.md) | Ja, Zie [elastische taken (preview-versie)](elastic-jobs-overview.md) | Nee ([SQL-Agent](../managed-instance/transact-sql-tsql-differences-sql-server.md#sql-server-agent) kan in plaats daarvan worden gebruikt). |
 | Toegang tot bestands systeem | Nee. Gebruik [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) of [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) om gegevens van Azure Blob Storage als een alternatief te openen en te laden. | Nee. Gebruik [Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) of [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) om gegevens van Azure Blob Storage als een alternatief te openen en te laden. |
 | [Geo-herstel](recovery-using-backups.md#geo-restore) | Ja | Ja |
 | [Grootschalige-architectuur](service-tier-hyperscale.md) | Ja | Nee |
@@ -147,7 +148,7 @@ Het Azure-platform biedt een aantal PaaS-mogelijkheden die als extra waarde word
 | [Query prestaties inzichten (QPI)](query-performance-insight-use.md) | Ja | Nee. Gebruik ingebouwde rapporten in SQL Server Management Studio en Azure Data Studio. |
 | [VNet](../../virtual-network/virtual-networks-overview.md) | Gedeeltelijk, het maakt beperkte toegang mogelijk met behulp van [VNet-eind punten](vnet-service-endpoint-rule-overview.md) | Ja, SQL Managed instance wordt geïnjecteerd in het VNet van de klant. Zie [subnet](../managed-instance/transact-sql-tsql-differences-sql-server.md#subnet) en [VNet](../managed-instance/transact-sql-tsql-differences-sql-server.md#vnet) |
 | VNet-service-eindpunt | [Ja](vnet-service-endpoint-rule-overview.md) | Nee |
-| Globale VNet-peering | Ja, met behulp van [privé-IP-en service-eind punten](vnet-service-endpoint-rule-overview.md) | Nee, het [SQL-beheerde exemplaar wordt niet ondersteund](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) vanwege een [Load Balancer beperking in de globale VNet-peering](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints).
+| Globale VNet-peering | Ja, met behulp van [privé-IP-en service-eind punten](vnet-service-endpoint-rule-overview.md) | Ja, met behulp van [peering op virtueel netwerk](https://techcommunity.microsoft.com/t5/azure-sql/new-feature-global-vnet-peering-support-for-azure-sql-managed/ba-p/1746913). |
 
 ## <a name="tools"></a>Hulpprogramma's
 

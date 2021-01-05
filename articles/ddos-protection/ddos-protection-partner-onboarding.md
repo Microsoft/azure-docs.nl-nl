@@ -8,12 +8,12 @@ mms.devlang: na
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: kumud
-ms.openlocfilehash: 4cc0fd970f9adc26f5fdb024f501dcb0edf77bde
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 962f6bcf7747a82749e7ccab95de34f7834a8372
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992417"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814207"
 ---
 # <a name="partnering-with-azure-ddos-protection-standard"></a>Partnering met Azure DDoS Protection Standard
 In dit artikel worden de mogelijkheden voor partner ondersteuning beschreven die worden ingeschakeld door de Azure DDoS Protection Standard. Dit artikel is bedoeld om product managers en rollen van bedrijfs ontwikkeling inzicht te geven in de investerings paden en om inzicht te krijgen in de verwerkings waarde van de partner.
@@ -40,8 +40,8 @@ Voor elke beveiligde toepassing worden met Azure DDoS Protection standaard de dr
 Azure DDoS Protection identificeert en vermindert DDoS-aanvallen zonder tussen komst van de gebruiker.
 
 - Als de beveiligde resource zich in het abonnement bevindt dat onder Azure Security Center wordt behandeld, stuurt DDoS Protection standaard automatisch een waarschuwing naar Security Center wanneer een DDoS-aanval wordt gedetecteerd en gereduceerd op basis van de beveiligde toepassing.
-- Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u ook [een waarschuwing configureren](telemetry-monitoring-alerting.md#configure-alerts-for-ddos-protection-metrics) voor de metriek onder DDoS-aanval of niet.
-- U kunt er ook voor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens en om [aanvals analyses te configureren](telemetry-monitoring-alerting.md) om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt verwijderd, aanvals vectoren, de belangrijkste inzenders en andere gegevens.
+- Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u ook [een waarschuwing configureren](alerts.md) voor de metriek onder DDoS-aanval of niet.
+- U kunt er ook voor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens en [telemetrie van aanvallen te configureren](telemetry.md) om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt neergezet, de aanvals vectoren, de belangrijkste inzenders en andere gegevens.
 
 ![Metrische gegevens van DDoS](./media/ddos-protection-partner-onboarding/ddos-metrics.png)
 
@@ -71,7 +71,7 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 3. Schakel Azure DDoS Protection standaard in op het virtuele netwerk van de service met open bare eind punten die gebruikmaken van DDoS Protection Plan dat in de eerste stap is gemaakt. Zie [DDoS Standard-beveiligings plan inschakelen](manage-ddos-protection.md#enable-ddos-protection-for-an-existing-virtual-network) voor stpe-by-Step-instructies
    > [!IMPORTANT] 
    > Nadat Azure DDoS Protection standaard is ingeschakeld in een virtueel netwerk, worden alle open bare IP-adressen binnen dat virtuele netwerk automatisch beveiligd. De oorsprong van deze open bare Ip's kan binnen Azure (client abonnement) of buiten Azure vallen. 
-4. U kunt eventueel Azure DDoS Protection standaard-telemetrie en aanvals analyses integreren in uw toepassingsspecifiek dash board dat specifiek is voor de klant. Zie [DDoS Protection-telemetrie weer geven en configureren](telemetry-monitoring-alerting.md)voor meer informatie over het gebruik van telemetrie. 
+4. U kunt eventueel Azure DDoS Protection standaard-telemetrie en aanvals analyses integreren in uw toepassingsspecifiek dash board dat specifiek is voor de klant. Zie [DDoS Protection-telemetrie weer geven en configureren](telemetry.md)voor meer informatie over het gebruik van telemetrie. 
 
 ### <a name="onboarding-guides-and-technical-documentation"></a>Gidsen en technische documentatie voor onboarding
 
@@ -80,7 +80,7 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 - [Naslag informatie over Azure DDoS Protection-API](/rest/api/virtualnetwork/ddosprotectionplans)
 - [Naslag informatie over Azure Virtual Network API](/rest/api/virtualnetwork/virtualnetworks)
 
-### <a name="get-help"></a>Hulp vragen
+### <a name="get-help"></a>Help opvragen
 
 - Neem contact op met de [Azure-beveiligings Community](https://techcommunity.microsoft.com/t5/security-identity/bd-p/Azure-Security)als u vragen hebt over de integratie van toepassingen, services of producten met Azure DDoS Protection Standard.
 - Volg de discussies op [stack overflow](https://stackoverflow.com/tags/azure-ddos/).

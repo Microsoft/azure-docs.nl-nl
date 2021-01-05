@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: fc60ca462a2891cc022847e056e32239f2675f70
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: fd154ec40ed4d1650e44a67fd5d362a2bc0c519d
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094571"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813935"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren
 
@@ -38,9 +38,9 @@ In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een 
 ## <a name="create-a-ddos-protection-plan"></a>Een DDoS-beschermings plan maken
 
 1. Selecteer in de linkerbovenhoek van het Azure Portal **een resource maken** .
-2. Zoek naar de term *DDoS* . Wanneer **DDoS-beschermings plan** wordt weer gegeven in de zoek resultaten, selecteert u dit.
-3. Selecteer **Maken** .
-4. Voer de volgende waarden in of Selecteer deze, en selecteer vervolgens **maken** :
+2. Zoek naar de term *DDoS*. Wanneer **DDoS-beschermings plan** wordt weer gegeven in de zoek resultaten, selecteert u dit.
+3. Selecteer **Maken**.
+4. Voer de volgende waarden in of Selecteer deze, en selecteer vervolgens **maken**:
 
     |Instelling        |Waarde                                              |
     |---------      |---------                                          |
@@ -54,8 +54,8 @@ In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een 
 ### <a name="enable-ddos-protection-for-a-new-virtual-network"></a>DDoS-beveiliging inschakelen voor een nieuw virtueel netwerk
 
 1. Selecteer in de linkerbovenhoek van het Azure Portal **een resource maken** .
-2. Selecteer **Netwerken** en selecteer vervolgens **Virtueel netwerk** .
-3. Voer de volgende waarden in of Selecteer deze, accepteer de resterende standaard instellingen en selecteer vervolgens **maken** :
+2. Selecteer **Netwerken** en selecteer vervolgens **Virtueel netwerk**.
+3. Voer de volgende waarden in of Selecteer deze, accepteer de resterende standaard instellingen en selecteer vervolgens **maken**:
 
     | Instelling         | Waarde                                           |
     | ---------       | ---------                                       |
@@ -63,7 +63,7 @@ In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een 
     | Abonnement    | Selecteer uw abonnement.                                    |
     | Resourcegroep  | Selecteer **bestaande gebruiken** en selecteer vervolgens **MyResourceGroup** |
     | Locatie        | _VS-Oost_ invoeren                                                    |
-    | DDoS Protection Standard | Selecteer **Inschakelen** . Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.|
+    | DDoS Protection Standard | Selecteer **Inschakelen**. Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.|
 
 U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of een ander abonnement wanneer DDoS standaard is ingeschakeld voor het virtuele netwerk. Als u een virtueel netwerk wilt verplaatsen waarbij DDoS Standard is ingeschakeld, moet u eerst DDoS-standaard uitschakelen, het virtuele netwerk verplaatsen en vervolgens DDoS Standard inschakelen. Na de verplaatsing worden de automatisch afgestemde beleids drempels voor alle beveiligde open bare IP-adressen in het virtuele netwerk opnieuw ingesteld.
 
@@ -72,8 +72,12 @@ U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of e
 1. Maak een DDoS-beschermings plan door de stappen in [een DDoS-beveiligings plan maken](#create-a-ddos-protection-plan)uit te voeren, als u geen bestaand DDoS-beveiligings abonnement hebt.
 2. Selecteer in de linkerbovenhoek van het Azure Portal **een resource maken** .
 3. Voer de naam in van het virtuele netwerk waarvoor u DDoS Protection standaard wilt inschakelen in het **vak resources, services en documenten zoeken** bovenaan de portal. Wanneer de naam van het virtuele netwerk wordt weer gegeven in de zoek resultaten, selecteert u dit.
-4. Selecteer **DDoS Protection** onder **instellingen** .
-5. selecteer **Standaard** . Selecteer onder **DDoS-beschermings plan** een bestaand DDoS-beveiligings plan of het plan dat u hebt gemaakt in stap 1 en selecteer vervolgens **Opslaan** . Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.
+4. Selecteer **DDoS Protection** onder **instellingen**.
+5. selecteer **Standaard**. Selecteer onder **DDoS-beschermings plan** een bestaand DDoS-beveiligings plan of het plan dat u hebt gemaakt in stap 1 en selecteer vervolgens **Opslaan**. Het plan dat u selecteert, kan zich in hetzelfde of een ander abonnement bevindt dan het virtuele netwerk, maar beide abonnementen moeten aan dezelfde Azure Active Directory-Tenant zijn gekoppeld.
+
+### <a name="enable-ddos-protection-for-all-virtual-networks"></a>DDoS-beveiliging inschakelen voor alle virtuele netwerken
+
+Met dit [beleid](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Policy%20-%20Virtual%20Networks%20should%20be%20associated%20with%20an%20Azure%20DDoS%20Protection%20Standard%20plan) worden alle virtuele netwerken gedetecteerd in een gedefinieerd bereik waarvoor geen DDoS Protection standaard is ingeschakeld. vervolgens kunt u desgewenst een herstel taak maken waarmee de koppeling wordt gemaakt om het VNet te beveiligen. Zie voor gedetailleerde stapsgewijze instructies voor het implementeren van dit beleid https://aka.ms/ddosvnetpolicy-techcommunity .
 
 ## <a name="validate-and-test"></a>Valideren en testen
 
@@ -96,14 +100,14 @@ U kunt uw resources voor de volgende zelf studie blijven gebruiken. Als u deze n
 
 2. Filter of schuif omlaag om de resource groep _MyResourceGroup_ te zoeken.
 
-3. Selecteer de resourcegroep en selecteer **Resourcegroep verwijderen** .
+3. Selecteer de resourcegroep en selecteer **Resourcegroep verwijderen**.
 
-4. Typ de naam van de resourcegroep die u wilt controleren en selecteer vervolgens **Verwijderen** .
+4. Typ de naam van de resourcegroep die u wilt controleren en selecteer vervolgens **Verwijderen**.
 
 DDoS-beveiliging uitschakelen voor een virtueel netwerk: 
 
 1. Voer de naam in van het virtuele netwerk waarvoor u de DDoS-beveiligings standaard wilt uitschakelen in het **vak resources, services en documenten zoeken** bovenaan de portal. Wanneer de naam van het virtuele netwerk wordt weer gegeven in de zoek resultaten, selecteert u dit.
-2. Selecteer **onder DDoS Protection standaard** de optie **uitschakelen** .
+2. Selecteer **onder DDoS Protection standaard** de optie **uitschakelen**.
 
 Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele netwerken loskoppelen. 
 
@@ -112,4 +116,4 @@ Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele ne
 Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
 
 > [!div class="nextstepaction"]
-> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry-monitoring-alerting.md)
+> [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

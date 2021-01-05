@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 06/11/2020
+ms.date: 12/29/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 300b9b6279231079807f8c923570bddab657ff56
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 93bcbab9445d83bf17b37b6affc1d2bc70703bbf
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92095888"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814326"
 ---
 # <a name="initiate-a-storage-account-failover"></a>Failover van een opslag account initiëren
 
@@ -38,6 +38,13 @@ Voordat u een account-failover kunt uitvoeren op uw opslag account, moet u ervoo
 
 Zie [Azure Storage redundantie](storage-redundancy.md)voor meer informatie over Azure Storage redundantie.
 
+Houd er rekening mee dat de volgende functies en services niet worden ondersteund voor account-failover:
+
+- Azure File Sync biedt geen ondersteuning voor de failover van het opslag account. Er mag geen failover-overschakeling worden uitgevoerd voor opslagaccounts met Azure-bestandsshares die worden gebruikt als cloudeindpunten in Azure File Sync. Als u dat wel doet, werkt de synchronisatie niet meer en kan dit leiden tot onverwacht gegevensverlies van bestanden in cloudlagen.
+- ADLS Gen2 opslag accounts (accounts waarvoor een hiërarchische naam ruimte is ingeschakeld) worden op dit moment niet ondersteund.
+- Er kan geen failover worden uitgevoerd voor een opslag account met Premium-blok-blobs. Opslag accounts die ondersteuning bieden voor Premium-blok-blobs ondersteunen momenteel geen geo-redundantie.
+- Er kan geen failover worden uitgevoerd voor een opslag account met een of meer [Onveranderbaarheid-beleids](../blobs/storage-blob-immutable-storage.md) containers waarvoor een virus is ingeschakeld. Een niet-vergrendelde/vergrendelde, op tijd gebaseerde Bewaar-en wettelijk Bewaar beleidsregels voor komen failover om naleving te behouden.
+
 ## <a name="initiate-the-failover"></a>De failover initiëren
 
 ## <a name="portal"></a>[Portal](#tab/azure-portal)
@@ -54,7 +61,7 @@ Voer de volgende stappen uit om een account-failover te initiëren vanuit de Azu
 1. Selecteren **Voorbereiden voor failover**.
 1. Bekijk het bevestigings venster. Wanneer u klaar bent, voert u **Ja** in om de failover te bevestigen en te initiëren.
 
-    :::image type="content" source="media/storage-initiate-account-failover/portal-failover-confirm.png" alt-text="Scherm opname van geo-replicatie en failover-status":::
+    :::image type="content" source="media/storage-initiate-account-failover/portal-failover-confirm.png" alt-text="Scherm opname van het bevestigings dialoogvenster voor een account-failover":::
 
 ## <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -91,7 +98,7 @@ Voer de volgende opdracht uit om een account-failover te initiëren vanuit Power
 Invoke-AzStorageAccountFailover -ResourceGroupName <resource-group-name> -Name <account-name>
 ```
 
-## <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u Azure CLI wilt gebruiken om een account-failover te initiëren, voert u de volgende opdrachten uit:
 

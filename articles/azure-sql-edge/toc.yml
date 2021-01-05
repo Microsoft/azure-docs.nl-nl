@@ -28,14 +28,6 @@
       href: tutorial-sync-data-factory.md
     - name: Gegevens synchroniseren met SQL Data Sync
       href: tutorial-sync-data-sync.md
-    - name: Een end-to-end IoT-oplossing bouwen met SQL Edge
-      items:
-        - name: Azure-resources instellen
-          href: tutorial-deploy-azure-resources.md
-        - name: IoT Edge-modules instellen
-          href: tutorial-set-up-iot-edge-modules.md
-        - name: Model implementeren in SQL Edge
-          href: tutorial-run-ml-model-on-sql-edge.md
 - name: Concepten
   items:
     - name: Implementeren
@@ -138,6 +130,18 @@
       href: create-stream-analytics-job.md
     - name: Oplossen van implementatieproblemen
       href: troubleshoot.md
+- name: Voorbeelden
+  items:
+    - name: Voorspellingen voor ijzererts
+      items:
+        - name: Azure-resources instellen
+          href: tutorial-deploy-azure-resources.md
+        - name: IoT Edge-modules instellen
+          href: tutorial-set-up-iot-edge-modules.md
+        - name: Model implementeren in SQL Edge
+          href: tutorial-run-ml-model-on-sql-edge.md
+    - name: Hernieuwbare energie - analyse van windturbines
+      href: tutorial-renewable-energy-demo.md
 - name: Naslaginformatie
   items:
     - name: Referentie voor Transact-SQL (T-SQL)

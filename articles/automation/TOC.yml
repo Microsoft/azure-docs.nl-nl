@@ -27,6 +27,8 @@
       href: learn/automation-tutorial-runbook-textual.md
     - name: Een Python-runbook maken
       href: learn/automation-tutorial-runbook-textual-python2.md
+    - name: Een Python 3-runbook
+      href: learn/automation-tutorial-runbook-textual-python-3.md
 - name: Concepten
   items:
     - name: Overzicht van Automation-accountverificatie
@@ -96,6 +98,8 @@
           href: shared-resources/variables.md
         - name: Python 2-pakketten beheren
           href: python-packages.md
+        - name: Python 3-pakketten beheren
+          href: python-3-packages.md
         - name: Problemen met gedeelde resources oplossen
           href: troubleshoot/shared-resources.md
     - name: Procesautomatisering

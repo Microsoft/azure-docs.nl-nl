@@ -15,9 +15,11 @@
 - name: Zelfstudies
   items:
     - name: DDoS-beschermingstelemetrie bekijken en configureren
-      href: telemetry-monitoring-alerting.md
-    - name: Rapporten en stroomlogboeken voor DDoS-aanvalsbeperking configureren
-      href: reports-and-flow-logs.md
+      href: telemetry.md
+    - name: Registratie in DDoS-diagnoselogboek bekijken en configureren
+      href: diagnostic-logging.md
+    - name: DDoS-beschermingswaarschuwingen bekijken en configureren
+      href: alerts.md
 - name: Concepten
   items:
     - name: Typen aanvallen

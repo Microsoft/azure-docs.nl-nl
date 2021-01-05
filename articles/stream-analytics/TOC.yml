@@ -30,16 +30,17 @@
           href: create-cluster.md
 - name: Zelfstudies
   items:
-    - name: 1 - Een taak maken/beheren
-      href: stream-analytics-manage-job.md
-    - name: 2 - Azure Functions uitvoeren
+    - name: Frauduleuze aanroepen in Power BI visualiseren
+      href: stream-analytics-real-time-fraud-detection.md
+    - name: Azure Functions uitvoeren
       href: stream-analytics-with-azure-functions.md
-    - name: 3 - Implementeren met CI/CD in Azure-pijplijnen
-      href: stream-analytics-tools-visual-studio-cicd-vsts.md
-    - name: 4 - Een C#-UDF uitvoeren
+    - name: Een C#-UDF uitvoeren
       href: stream-analytics-edge-csharp-udf.md
-    - name: 5 - Aangepaste .NET-deserialisatie maken
+    - name: Een aangepaste .NET-deserialisatie maken
       href: custom-deserializer.md
+    - name: Een IoT Edge-taak maken
+      href: /azure/iot-edge/tutorial-deploy-stream-analytics?view=iotedge-2018-06
+      maintainContext: true
 - name: Voorbeelden
   items:
     - name: Codevoorbeelden
@@ -56,6 +57,8 @@
       href: develop-locally.md
     - name: Beveiliging
       items:
+        - name: Taken verbinden met Azure Virtual Network (VNet)
+          href: connect-job-to-vnet.md
         - name: Besturingselementen voor beveiliging van Azure Policy
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
@@ -129,6 +132,8 @@
           href: repartition.md
         - name: Doorvoer van uw taak vergroten
           href: stream-analytics-scale-jobs.md
+    - name: IoT Edge
+      href: stream-analytics-edge.md
     - name: Status van een taak
       href: job-states.md
     - name: Vensterfuncties
@@ -181,35 +186,31 @@
           href: stream-analytics-job-reliability.md
         - name: SQL-referentiegegevens gebruiken
           href: sql-reference-data.md
-        - name: Verifiëren met beheerde identiteit
-          items:
-            - name: ADLS Gen 1
-              href: stream-analytics-managed-identities-adls.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Blob Storage
-              href: blob-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Event Hubs
-              href: event-hubs-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Power BI
-              href: powerbi-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
-            - name: Azure SQL en Azure Synapse
-              href: sql-database-output-managed-identity.md
-              displayName: 'managed identity, identities, authenticate'
         - name: Uw gegevens versleutelen
           href: data-protection.md
         - name: Geografische redundantie
           href: geo-redundancy.md
+    - name: Verifiëren met beheerde identiteit
+      items:
+        - name: ADLS Gen 1
+          href: stream-analytics-managed-identities-adls.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Blob Storage
+          href: blob-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Event Hubs
+          href: event-hubs-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Power BI
+          href: powerbi-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
+        - name: Azure SQL en Azure Synapse
+          href: sql-database-output-managed-identity.md
+          displayName: 'managed identity, identities, authenticate'
     - name: Oplossingen bouwen
       items:
         - name: Twitter-sentimentanalyse
           href: stream-analytics-twitter-sentiment-analysis-trends.md
-        - name: Fraudebewaking in realtime
-          href: stream-analytics-real-time-fraud-detection.md
-        - name: Taken uitvoeren in IoT Edge
-          href: stream-analytics-edge.md
         - name: Taken uitvoeren in Azure Stack
           href: on-azure-stack.md
         - name: Analyse van de sensorgegevens van een tolloket
@@ -287,6 +288,8 @@
           href: debug-locally-using-job-diagram-vs-code.md
         - name: Taken verkennen
           href: visual-studio-code-explore-jobs.md
+        - name: Aangepaste .NET-deserialisator maken en fouten erin opsporen
+          href: visual-studio-code-custom-deserializer.md
         - name: JobConfig.json-velden
           href: job-config-json.md
     - name: Problemen oplossen

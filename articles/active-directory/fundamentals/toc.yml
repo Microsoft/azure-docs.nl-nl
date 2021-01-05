@@ -25,6 +25,28 @@
   items:
     - name: Beveiliging
       items:
+        - name: Veilige externe toegang tot resources
+          items:
+            - name: Overzicht van veilige externe toegang
+              href: secure-external-access-resources.md
+            - name: 1 Uw beveiligingsinstelling bepalen
+              href: 1-secure-access-posture.md
+            - name: 2. Uw huidige status bepalen
+              href: 2-secure-access-current-state.md
+            - name: 3. Een beveiligingsabonnement maken
+              href: 3-secure-access-plan.md
+            - name: 4. Veilige toegang met groepen
+              href: 4-secure-access-groups.md
+            - name: 5. Veilige toegang met B2B-samen werking
+              href: 5-secure-access-b2b.md
+            - name: 6. Veilige toegang met rechtenbeheer
+              href: 6-secure-access-entitlement-managment.md
+            - name: 7. Veilige toegang met voorwaardelijke toegang
+              href: 7-secure-access-conditional-access.md
+            - name: 8. Veilige toegang met vertrouwelijkheidslabels
+              href: 8-secure-access-sensitivity-labels.md
+            - name: '9. Veilige toegang tot Teams, SharePoint en OneDrive'
+              href: 9-secure-access-teams-sharepoint.md
         - name: MFA inschakelen
           href: concept-fundamentals-mfa-get-started.md
         - name: Standaardinstellingen voor de beveiliging

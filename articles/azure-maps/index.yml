@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: fa4db97e2aefe48e792f7d43dbb782e7a0967716
-  ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+  ms.openlocfilehash: 17113e3a2564ed56ecbcf8e34de27c4fe398ce03
+  ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/09/2020
-  ms.locfileid: "96905261"
+  ms.lasthandoff: 12/18/2020
+  ms.locfileid: "97680672"
 landingContent:
 - title: Over Azure Maps
   linkLists:
@@ -40,6 +40,8 @@ landingContent:
     links:
     - text: Een webtoepassing maken met Azure Maps
       url: quick-demo-map-app.md
+    - text: Een Android-app maken met Azure Maps
+      url: quick-android-map.md
   - linkListType: concept
     links:
     - text: De juiste prijscategorie kiezen voor een Maps-account
@@ -130,12 +132,26 @@ landingContent:
       url: /javascript/api/azure-maps-spatial-io/
 - title: Ontwikkelen met Android SDK
   linkLists:
+  - linkListType: tutorial
+    links:
+    - text: GeoJSON-gegevens in een kaart laden
+      url: tutorial-load-geojson-file-android.md
   - linkListType: how-to-guide
     links:
     - text: Aan de slag gaan met Android-kaartbesturingselementen
       url: how-to-use-android-map-control-library.md
-    - text: Metagegevens van een functie weergeven
-      url: display-feature-information-android.md
+    - text: Een gegevensbron maken
+      url: create-data-source-android-sdk.md
+    - text: Een bubbellaag toevoegen
+      url: map-add-bubble-layer-android.md
+    - text: Een symboollaag toevoegen
+      url: how-to-add-symbol-to-android-map.md
+    - text: Een lijnlaag toevoegen
+      url: android-map-add-line-layer.md
+    - text: Een polygoonlaag toevoegen
+      url: how-to-add-shapes-to-android-map.md
+    - text: Gegevensgestuurde stijlexpressies gebruiken
+      url: data-driven-style-expressions-android-sdk.md
     - text: Een titellaag toevoegen aan een kaart
       url: how-to-add-tile-layer-android-map.md
     - text: Vormen toevoegen aan een kaart

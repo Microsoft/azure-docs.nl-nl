@@ -544,18 +544,40 @@
           href: platform/alerts-resource-move.md
         - name: IT Service Management
           items:
-            - name: IT Service Management Connector
+            - name: ITSM-connectoroverzicht
               href: platform/itsmc-overview.md
-            - name: IT Service Management-verbindingen
-              href: platform/itsmc-connections.md
-            - name: Definitie van IT Service Management-connector
+            - name: ITSM-connectorpartners instellen
+              items:
+                - name: Overzicht
+                  href: platform/itsmc-connections.md
+                - name: ServiceNow
+                  href: platform/itsmc-connections-servicenow.md
+                - name: System Center Service Manager
+                  items:
+                    - name: Instellen
+                      href: platform/itsmc-connections-scsm.md
+                    - name: Service Manager-web-app maken
+                      href: platform/itsmc-service-manager-script.md
+                - name: Cherwell
+                  href: platform/itsmc-connections-cherwell.md
+                - name: Provance
+                  href: platform/itsmc-connections-provance.md
+            - name: Azure-configuratie voor ITSM-connector
               href: platform/itsmc-definition.md
-            - name: Service Manager-web-app maken
-              href: platform/itsmc-service-manager-script.md
+            - name: Gesynchroniseerde gegevens van uw ITSM-product
+              href: platform/itsmc-synced-data.md
             - name: Problemen oplossen in ITSM-connector
               href: platform/itsmc-resync-servicenow.md
             - name: Integreren met beveiligde export
-              href: platform/it-service-management-connector-secure-webhook-connections.md
+              items:
+                - name: Overzicht
+                  href: platform/it-service-management-connector-secure-webhook-connections.md
+                - name: Azure-configuratie voor veilige export
+                  href: platform/itsm-connector-secure-webhook-connections-azure-configuration.md
+                - name: BMC
+                  href: platform/itsmc-secure-webhook-connections-bmc.md
+                - name: ServiceNow
+                  href: platform/itsmc-secure-webhook-connections-servicenow.md
         - name: Klassieke waarschuwingsregels migreren
           items:
             - name: Over klassieke waarschuwingen
@@ -790,6 +812,8 @@
               href: app/snapshot-debugger.md
             - name: Snapshot Debugger inschakelen voor een app-service
               href: app/snapshot-debugger-appservice.md
+            - name: Snapshot Debugger inschakelen voor een functie-app
+              href: app/snapshot-debugger-function-app.md
             - name: Snapshot Debugger inschakelen voor andere omgevingen
               href: app/snapshot-debugger-vm.md
             - name: Snapshot Debugger upgraden

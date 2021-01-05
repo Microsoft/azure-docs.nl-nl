@@ -24,12 +24,15 @@
     - name: Aanbiedingen voor beheerde service in Azure Marketplace
       displayName: 'azure marketplace, marketplace, managed service, private, plan'
       href: ./concepts/managed-services-offers.md
-    - name: Overwegingen voor een Cloud Solution Provider-programma
+    - name: Cloud Solution Provider-programma
       displayName: 'csp, aobo, partner'
       href: ./concepts/cloud-solution-provider.md
-    - name: Azure Lighthouse in zakelijke scenario's
+    - name: Zakelijke scenario's
       displayName: 'corporation, IT, consolidate'
       href: ./concepts/enterprise.md
+    - name: ISV-scenario's
+      displayName: 'independent, software, vendor, saas'
+      href: ./concepts/isv-scenarios.md
     - name: Azure Lighthouse en door Azure beheerde toepassingen
       displayName: 'managed apps, ama'
       href: ./concepts/managed-applications.md

@@ -42,8 +42,14 @@
       href: hpc-cache-mount.md
     - name: De cache beheren
       href: hpc-cache-manage.md
-    - name: Optionele instellingen configureren
-      href: configuration.md
+    - name: Optionele instellingen gebruiken
+      items:
+        - name: Optionele instellingen configureren
+          href: configuration.md
+        - name: Toegangsbeleid aanpassen
+          href: access-policies.md
+        - name: Adreslijstservices instellen
+          href: directory-services.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

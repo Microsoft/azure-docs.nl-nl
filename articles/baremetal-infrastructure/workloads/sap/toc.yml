@@ -1,0 +1,16 @@
+- name: Azure BareMetal Infrastructure
+  href: ../../index.yml
+- name: Overzicht
+  items:
+    - name: Over BareMetal Infrastructure
+      href: baremetal-overview-architecture.md
+    - name: Inzicht in de voorwaarden
+      href: ../../know-baremetal-terms.md
+- name: Instructiegidsen
+  items:
+    - name: BareMetal-exemplaareenheden beheren in Azure
+      href: baremetal-infrastructure-portal.md
+- name: Naslaginformatie
+  items:
+    - name: BareMetal-workloadtypen
+      href: /azure/virtual-machines/workloads/sap/get-started?context=/azure/baremetal-infrastructure/context/context

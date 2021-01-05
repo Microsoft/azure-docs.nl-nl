@@ -11,48 +11,58 @@ metadata:
   author: mlottner
   ms.author: mlottner
   ms.date: 09/07/2020
-  ms.openlocfilehash: 18f3f2f14d4e04c523a355f699eaf24b8c93bb81
-  ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+  ms.openlocfilehash: 00cef8a146a84c4261dde46785f2ea9bb1c03173
+  ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/15/2020
-  ms.locfileid: "92090009"
+  ms.lasthandoff: 12/31/2020
+  ms.locfileid: "97832332"
 landingContent:
-- title: Informatie over Azure Defender for IoT
+- title: Aan de slag met Azure Defender for IoT
   linkLists:
   - linkListType: overview
     links:
     - text: Wat is Azure Defender for IoT?
       url: overview.md
-    - text: Beveiligingsmodule voor Azure RTOS
-      url: iot-security-azure-rtos.md
-    - text: Uw oplossing plannen
-      url: service-prerequisites.md
-  - linkListType: architecture
-    links:
-    - text: Meer informatie over de Azure Defender for IoT-architectuur
+    - text: Architectuur van de oplossing
       url: architecture.md
-    - text: Azure Defender for IoT-agents
-      url: security-agent-architecture.md
+    - text: Instellingsoverzicht
+      url: getting-started.md
+- title: Instellen en onboarden - Oplossing zonder agent
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Uw netwerk instellen
+      url: how-to-set-up-your-network.md
+    - text: Vereiste apparaten identificeren
+      url: how-to-identify-required-appliances.md
+    - text: Software installeren
+      url: how-to-install-software.md
+- title: Uw netwerk bewaken - Oplossing zonder agent
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Verbonden apparaten bekijken
+      url: how-to-work-with-the-sensor-device-map.md
+    - text: Apparaatinventarissen bekijken
+      url: how-to-investigate-sensor-detections-in-a-device-inventory.md
+    - text: Waarschuwingen onderzoeken
+      url: how-to-work-with-alerts-on-your-sensor.md
+    - text: Rapporten genereren
+      url: how-to-generate-reports.md
+    - text: Controleren welk verkeer wordt gedetecteerd
+      url: how-to-control-what-traffic-is-monitored.md
+    - text: Verbinding maken met Azure Sentinel
+      url: how-to-configure-with-sentinel.md
+- title: Azure Defender for IoT - Oplossing met agent
+  linkLists:
+  - linkListType: overview
+    links:
     - text: Edge-beveiligingsmodule
       url: security-edge-architecture.md
-- title: Azure Defender for IoT onboarden in IoT Hub
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Aan de slag met Azure Defender for IoT
-      url: getting-started.md
-    - text: IoT Hub
-      url: iot-hub-integration.md
-    - text: Aan de slag met de beveiligingsmodule voor Azure RTOS
-      url: concept-rtos-security-module.md
-    - text: Beveiligingsagents
-      url: security-agents.md
-- title: De oplossing configureren
-  linkLists:
   - linkListType: quickstart
     links:
-    - text: Azure Defender for IoT inschakelen in IoT Hub
+    - text: IoT Hub inschakelen - Oplossingen met agent
       url: quickstart-onboard-iot-hub.md
     - text: Uw IoT-beveiligingsoplossing configureren
       url: quickstart-configure-your-solution.md
@@ -64,40 +74,6 @@ landingContent:
       url: quickstart-create-custom-alerts.md
     - text: Beveiligingswaarschuwingen onderzoeken
       url: quickstart-investigate-security-alerts.md
-- title: Pas uw oplossing aan
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: De beveiligingsmodule voor Azure RTOS aanpassen
-      url: how-to-azure-rtos-security-module.md
-    - text: Een agent kiezen
-      url: how-to-deploy-agent.md
-    - text: Een beveiligingsagent voor Azure Defender for IoT op basis van C# implementeren voor Windows
-      url: how-to-deploy-windows-cs.md
-    - text: Een beveiligingsagent voor Azure Defender for IoT op basis van C# implementeren voor Linux
-      url: how-to-deploy-linux-cs.md
-    - text: Een beveiligingsagent voor Azure Defender for IoT op basis van C implementeren voor Linux
-      url: how-to-deploy-linux-c.md
-    - text: Edge-beveiligingsmodule implementeren
-      url: how-to-deploy-edge.md
-    - text: Beveiligingsagents configureren
-      url: how-to-agent-configuration.md
-    - text: Uw eigen beveiligingsberichten verzenden
-      url: how-to-send-security-messages.md
-    - text: Toegang tot onbewerkte beveiligingsgegevens
-      url: how-to-security-data-access.md
-    - text: Een apparaat onderzoeken
-      url: how-to-investigate-device.md
-- title: Problemen met een beveiligingsagent oplossen
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Handleiding voor probleemoplossing voor beveiligingsagenten (Linux)
-      url: troubleshoot-agent.md
-    - text: Meer informatie over het bestand LocalConfiguration.json - C-agent
-      url: azure-iot-security-local-configuration-c.md
-    - text: Meer informatie over het Local-configuratiebestand - C#-agent
-      url: azure-iot-security-local-configuration-csharp.md
 - title: Oplossingsresources voor Azure Defender for IoT
   linkLists:
   - linkListType: video

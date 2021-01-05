@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.service: app-service
   ms.date: 08/06/2020
-  ms.openlocfilehash: 3fc31095ec0d8e1ecdbe44c0751c55164d20e088
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 8ace1c6bb530fcc93d06f48bcef0d1ccfdf82306
+  ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "88080025"
+  ms.lasthandoff: 12/22/2020
+  ms.locfileid: "97724422"
 landingContent:
 - title: Meer informatie over App Service
   linkLists:
@@ -56,6 +56,8 @@ landingContent:
       url: configure-ssl-bindings.md
     - text: App in gefaseerde omgevingen uitvoeren
       url: deploy-staging-slots.md
+    - text: Opslag en Microsoft Graph veilig openen
+      url: scenario-secure-app-overview.md
   - linkListType: how-to-guide
     links:
     - text: Diagnostische logboeken inschakelen

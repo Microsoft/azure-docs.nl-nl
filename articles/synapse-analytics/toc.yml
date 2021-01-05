@@ -502,7 +502,7 @@
               items:
                 - name: Een Azure Stream Analytics-taak toevoegen
                   href: ./sql-data-warehouse/sql-data-warehouse-integrate-azure-stream-analytics.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-        - name: Hulpprogramma's om verbinding te maken met Synapse-werkruimtes
+        - name: Verbinding maken met hulpprogramma's en toepassingen
           items:
             - name: Overzicht
               href: sql/connect-overview.md
@@ -510,14 +510,20 @@
               href: sql/get-started-azure-data-studio.md
             - name: Verbindingsreeksen
               href: sql/connection-strings.md
-            - name: Query’s uitvoeren met Sqlcmd
-              href: sql/get-started-connect-sqlcmd.md
             - name: Query's uitvoeren met SSMS
               href: sql/get-started-ssms.md
-            - name: Query’s uitvoeren bij Visual Studio
-              href: sql/get-started-visual-studio.md
             - name: Verbinding maken met Power BI Desktop
               href: sql/get-started-power-bi-professional.md
+            - name: Query's uitvoeren bij Visual Studio SSDT
+              href: sql/get-started-visual-studio.md
+            - name: Query's uitvoeren met .NET Core
+              href: ../azure-sql/database/connect-query-dotnet-core.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Query's uitvoeren met Visual Studio .NET
+              href: ../azure-sql/database/connect-query-dotnet-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Query's uitvoeren met Python
+              href: ../azure-sql/database/connect-query-python.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Query’s uitvoeren met Sqlcmd
+              href: sql/get-started-connect-sqlcmd.md
 - name: Apache Spark
   items:
     - name: Overzicht
@@ -1107,6 +1113,10 @@
           href: ./machine-learning/tutorial-cognitive-services-anomaly.md
         - name: Cognitive Services voor Azure Synapse configureren
           href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
+- name: Uitleg
+  items:
+    - name: Kosten voorspellen en beheren
+      href: plan-manage-costs.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

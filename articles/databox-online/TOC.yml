@@ -213,14 +213,20 @@
               href: azure-stack-edge-gpu-deploy-virtual-machine-portal.md
             - name: VM's implementeren - sjablonen
               href: azure-stack-edge-gpu-deploy-virtual-machine-templates.md
+            - name: VM's implementeren - GPU
+              href: azure-stack-edge-gpu-deploy-gpu-virtual-machine.md
             - name: VM's implementeren - Azure PowerShell-cmdlets
-              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell.md
+              href: azure-stack-edge-gpu-deploy-virtual-machine-powershell.md
             - name: VM's implementeren - Azure PowerShell-script
-              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell-script.md
+              href: azure-stack-edge-gpu-deploy-virtual-machine-powershell-script.md
             - name: VM's implementeren - Azure CLI/Python
               href: azure-stack-edge-j-series-deploy-virtual-machine-cli-python.md
+            - name: Aangepaste scriptextensies implementeren in VM's
+              href: azure-stack-edge-gpu-deploy-virtual-machine-custom-script-extension.md
             - name: VM-installatiekopie maken
-              href: azure-stack-edge-j-series-create-virtual-machine-image.md
+              href: azure-stack-edge-gpu-create-virtual-machine-image.md
+            - name: 'Ondersteunde VM-grootten, -types'
+              href: azure-stack-edge-gpu-virtual-machine-sizes.md
         - name: Certificaten beheren
           items:
             - name: Vereisten
@@ -293,8 +299,6 @@
           href: azure-stack-edge-gpu-2008-release-notes.md
     - name: Gedeelde referentie
       items:
-        - name: 'IoT Edge-rol via API, SDK, PowerShell'
-          href: azure-stack-edge-gpu-iot-edge-api-update.md
         - name: Azure PowerShell
           href: /powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge
         - name: REST-API
@@ -389,6 +393,10 @@
           href: /rest/api/databoxedgegateway
         - name: .NET SDK
           href: /dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet
+- name: Beveiliging
+  items:
+    - name: Beveiligingsbasislijn
+      href: security-baseline.md
 - name: Resources
   items:
     - name: Voorbeelden van Azure Stack Edge Pro C#-module (.NET)

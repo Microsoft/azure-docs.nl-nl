@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: JnHs
   ms.author: jenhayes
-  ms.date: 12/03/2020
-  ms.openlocfilehash: 02b9ed9bb6146a73da26083718176447a7402f2a
-  ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+  ms.date: 12/17/2020
+  ms.openlocfilehash: 46a3f48c4f9548e24709a0d56fe4c750ae9a76a8
+  ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/04/2020
-  ms.locfileid: "96602322"
+  ms.lasthandoff: 12/19/2020
+  ms.locfileid: "97693961"
 landingContent:
 - title: Over Azure Lighthouse
   linkLists:
@@ -41,12 +41,14 @@ landingContent:
     links:
     - text: Aanbevolen beveiligingsprocedures
       url: ./concepts/recommended-security-practices.md
+    - text: Tenants, rollen en gebruikers
+      url: ./concepts/tenants-users-roles.md
     - text: Overwegingen voor een Cloud Solution Provider-programma
       url: ./concepts/cloud-solution-provider.md
     - text: Zakelijke scenario's
       url: ./concepts/enterprise.md
-    - text: Tenants, rollen en gebruikers
-      url: ./concepts/tenants-users-roles.md
+    - text: ISV-scenario's
+      url: ./concepts/isv-scenarios.md
 - title: Marketplace-aanbiedingen
   linkLists:
   - linkListType: how-to-guide

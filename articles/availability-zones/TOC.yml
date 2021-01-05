@@ -12,7 +12,7 @@
       href: az-overview.md
     - name: Documentatie over beschikbaarheidszones
       items:
-        - name: Regio’s weergeven die beschikbaarheidszones ondersteunen
+        - name: Azure-services die beschikbaarheidszones ondersteunen
           href: az-region.md
         - name: Virtuele machines
           items:

@@ -419,7 +419,7 @@
               href: ./spark/apache-spark-improve-performance-iocache.md
             - name: Notitieblokken gebruiken met Apache Spark
               items:
-                - name: Een lokaal Jupyter-notitieblok gebruiken
+                - name: Een lokaal Jupyter Notebook gebruiken
                   href: ./spark/apache-spark-jupyter-notebook-install-locally.md
                 - name: Jupyter-notitieblokkernels
                   href: ./spark/apache-spark-jupyter-notebook-kernels.md
@@ -437,7 +437,7 @@
                   href: ./spark/apache-spark-run-machine-learning-automl.md
         - name: Problemen oplossen
           items:
-            - name: Kan geen Jupyter-notebook maken
+            - name: Kan geen Jupyter Notebook maken
               href: ./spark/troubleshoot-jupyter-notebook-convert.md
             - name: OutOfMemoryError-uitzondering
               href: ./spark/apache-spark-troubleshoot-outofmemory.md

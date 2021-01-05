@@ -142,7 +142,7 @@
           items:
             - name: Synoniemen toevoegen
               href: search-synonyms.md
-            - name: Voorbeeld van synoniemen
+            - name: C#-voorbeeld van synoniemen
               href: search-synonyms-tutorial-sdk.md
         - name: Complexe gegevenstypen modelleren
           href: search-howto-complex-data-types.md

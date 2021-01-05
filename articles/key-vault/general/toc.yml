@@ -86,7 +86,7 @@
       href: overview-vnet-service-endpoints.md
 - name: Instructiegidsen
   items:
-    - name: Verifiëren
+    - name: Verifiëren en autoriseren
       items:
         - name: Verifiëren bij Key Vault
           href: authentication.md
@@ -104,10 +104,6 @@
           href: rbac-migration.md
         - name: Toegangsproblemen oplossen
           href: troubleshooting-access-issues.md
-    - name: Voorlopig verwijderen en opschonen beschermen inschakelen
-      href: key-vault-recovery.md
-    - name: Logboekregistratie inschakelen
-      href: howto-logging.md
     - name: Ontwikkelen
       items:
         - name: Gids voor Azure Key Vault-ontwikkelaars
@@ -118,21 +114,31 @@
           href: vs-key-vault-add-connected-service.md
     - name: Bewaken en beheren
       items:
-        - name: Bewaking en waarschuwingen voor Azure Key Vault configureren
+        - name: Event Grid-meldingen
+          items:
+            - name: Meldingen ontvangen via Logic Apps
+              href: event-grid-logicapps.md
+            - name: Meldingen ontvangen via Azure Automation
+              href: event-grid-tutorial.md
+        - name: Logboekregistratie inschakelen
+          href: howto-logging.md
+        - name: Bewaking en waarschuwingen voor Azure Key Vault configureren met Azure Monitor
           href: alert.md
+        - name: Herstelbeheer met voorlopig verwijderen en opschoningsbescherming
+          href: key-vault-recovery.md
         - name: Azure Key Vault integreren met Azure Policy
           href: azure-policy.md
-        - name: Meldingen ontvangen via Azure Event Grid en Logic Apps
-          href: event-grid-logicapps.md
-        - name: Meldingen ontvangen via Azure Event Grid en Azure Automation
-          href: event-grid-tutorial.md
         - name: Back-ups maken van individuele Key Vault-objecten
           href: backup.md
     - name: Beveiligen
       items:
-        - name: Integreren met de Azure Private Link-service
-          href: private-link-service.md
-        - name: Toegang tot Key Vault achter een firewall - Azure Key Vault
+        - name: Azure Private Link
+          items:
+            - name: Integreren met de Azure Private Link-service
+              href: private-link-service.md
+            - name: Configuratieproblemen met privélinks diagnosticeren
+              href: private-link-diagnostics.md
+        - name: Key Vault openen achter een firewall
           href: access-behind-firewall.md
     - name: Azure Key Vault verplaatsen
       items:
@@ -142,10 +148,6 @@
           href: move-subscription.md
         - name: Key Vault verplaatsen naar een andere regio
           href: move-region.md
-    - name: Netwerken
-      items:
-        - name: Configuratieproblemen met privélinks diagnosticeren
-          href: private-link-diagnostics.md
 - name: Naslaginformatie
   items:
     - name: Nieuwe functies

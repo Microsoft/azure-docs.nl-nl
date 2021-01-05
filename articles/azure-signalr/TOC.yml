@@ -54,6 +54,22 @@
           href: ../azure-functions/functions-bindings-signalr-service.md
         - name: Upstream-instellingen
           href: concept-upstream.md
+    - name: Beschikbaarheid
+      items:
+        - name: Uw app-server zonder problemen afsluiten
+          href: server-graceful-shutdown.md
+    - name: Beveiliging
+      items:
+        - name: Autorisatie
+          items:
+            - name: Toegang autoriseren met behulp van Azure Active Directory
+              href: authorize-access-azure-active-directory.md
+        - name: Verificatie
+          items:
+            - name: Verifiëren vanuit een toepassing
+              href: authenticate-application.md
+            - name: Verifiëren met een beheerde identiteit
+              href: authenticate-managed-identity.md
     - name: Hoge beschikbaarheid
       items:
         - name: Tolerantie en herstel na noodgevallen

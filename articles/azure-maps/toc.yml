@@ -9,6 +9,8 @@
   items:
     - name: Een webtoepassing maken
       href: quick-demo-map-app.md
+    - name: Een Android-app maken
+      href: quick-android-map.md
 - name: Zelfstudies
   items:
     - name: Web SDK-zelfstudies
@@ -21,6 +23,10 @@
           href: tutorial-prioritized-routes.md
         - name: Een winkellocator maken
           href: tutorial-create-store-locator.md
+    - name: Android SDK-zelfstudies
+      items:
+        - name: GeoJSON-gegevens in een kaart laden
+          href: tutorial-load-geojson-file-android.md
     - name: REST API-zelfstudies
       items:
         - name: Plattegronden maken
@@ -238,16 +244,28 @@
           href: how-to-use-android-map-control-library.md
         - name: Stijl van de kaart wijzigen
           href: set-android-map-styles.md
+        - name: Een gegevensbron maken
+          href: create-data-source-android-sdk.md
         - name: Een symboollaag toevoegen
           href: how-to-add-symbol-to-android-map.md
+        - name: Een bubbellaag toevoegen
+          href: map-add-bubble-layer-android.md
         - name: Vormen toevoegen
           href: how-to-add-shapes-to-android-map.md
+        - name: Heatmap-laag toevoegen
+          href: map-add-heat-map-layer-android.md
+        - name: Een lijnlaag toevoegen
+          href: android-map-add-line-layer.md
         - name: Functie-informatie weergeven
           href: display-feature-information-android.md
         - name: Een titellaag toevoegen
           href: how-to-add-tile-layer-android-map.md
         - name: Verkeergegevens weergeven
           href: how-to-show-traffic-android.md
+        - name: Gegevensgestuurde expressies gebruiken
+          href: data-driven-style-expressions-android-sdk.md
+        - name: Reageren op gebeurtenissen
+          href: android-map-events.md
     - name: Azure Maps gebruiken in Power BI
       items:
         - name: Aan de slag

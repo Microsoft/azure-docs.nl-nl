@@ -10,12 +10,12 @@ metadata:
   ms.service: ddos-protection
   ms.topic: landing-page
   ms.custom: azure-ddos-protection
-  ms.openlocfilehash: cfc0a8c4856711c4f011805322e2b28942866573
-  ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+  ms.openlocfilehash: 50f871b08e2a945c599f7217ce680669da39af40
+  ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/28/2020
-  ms.locfileid: "92904705"
+  ms.lasthandoff: 12/30/2020
+  ms.locfileid: "97813969"
 landingContent:
 - title: Meer informatie over Azure DDoS Protection Standard
   linkLists:
@@ -40,9 +40,11 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: DDoS-beschermingstelemetrie bekijken en configureren
-      url: telemetry-monitoring-alerting.md
-    - text: Rapporten en stroomlogboeken voor DDoS-aanvalsbeperking configureren
-      url: reports-and-flow-logs.md
+      url: telemetry.md
+    - text: Registratie in DDoS-diagnoselogboek bekijken en configureren
+      url: diagnostic-logging.md
+    - text: DDoS-beschermingswaarschuwingen bekijken en configureren
+      url: alerts.md
 - title: Reageren op DDoS-aanvallen
   linkLists:
   - linkListType: concept

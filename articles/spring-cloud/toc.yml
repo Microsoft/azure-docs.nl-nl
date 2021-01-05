@@ -95,6 +95,10 @@
           href: diagnostic-services.md
         - name: Streamt logboeken in real-time
           href: spring-cloud-howto-log-streaming.md
+        - name: Application Insights met de In-Process Agent van Java
+          href: spring-cloud-howto-application-insights.md
+        - name: Metrische gegevens voor Resilience4J-circuitonderbreker
+          href: spring-cloud-howto-circuit-breaker-metrics.md
     - name: Beveiligen
       items:
         - name: De door het systeem toegewezen beheerde identiteit inschakelen

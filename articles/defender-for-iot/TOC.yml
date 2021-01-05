@@ -5,135 +5,233 @@
   items:
     - name: Architectuur voor de oplossing
       href: architecture.md
-    - name: Beveiligingsmodule voor Azure RTOS
-      href: iot-security-azure-rtos.md
-    - name: Beveiligingsagents
-      href: security-agent-architecture.md
-    - name: Edge-beveiligingsmodule
-      href: security-edge-architecture.md
-    - name: Servicevereisten
-      href: service-prerequisites.md
-    - name: Aan de slag met Azure Defender for IoT
-      href: getting-started.md
-      items:
-        - name: IoT Hub
-          href: iot-hub-integration.md
-        - name: Beveiligingsagents
-          href: security-agents.md
 - name: Snelstartgidsen
   expanded: true
   items:
-    - name: Uw netwerk voorbereiden
-      href: quickstart-prepare-network-for-defender-for-iot.md
-    - name: Sensors onboarden
-      href: quickstart-onboard-sensors.md
-    - name: Beveiligingsmodule configureren voor Azure RTOS
-      href: quickstart-azure-rtos-security-module.md
-    - name: Azure Defender for IoT onboarden in IoT Hub
-      href: quickstart-onboard-iot-hub.md
-    - name: De oplossing configureren
-      href: quickstart-configure-your-solution.md
-    - name: Een moduledubbel maken voor Azure Defender for IoT
-      href: quickstart-create-security-twin.md
-    - name: Beveiligingsaanbevelingen onderzoeken
-      href: quickstart-investigate-security-recommendations.md
-    - name: Aangepaste beveiligingswaarschuwingen maken
-      href: quickstart-create-custom-alerts.md
-    - name: Beveiligingswaarschuwingen onderzoeken
-      href: quickstart-investigate-security-alerts.md
+    - name: Oplossing zonder agent voor organisaties
+      items:
+        - name: Systeemvereisten
+          href: quickstart-system-prerequisites.md
+        - name: Aan de slag met Azure Defender for IoT
+          href: getting-started.md
+    - name: Oplossing met agent voor apparaatbouwer
+      items:
+        - name: Beveiligingsmodule configureren voor Azure RTOS
+          href: quickstart-azure-rtos-security-module.md
+        - name: IoT Hub
+          href: quickstart-iot-hub-integration.md
+        - name: Azure Defender for IoT onboarden in IoT Hub
+          href: quickstart-onboard-iot-hub.md
+        - name: Beveiligingsagents
+          href: security-agent-architecture.md
+        - name: De oplossing configureren
+          href: quickstart-configure-your-solution.md
+        - name: Een moduledubbel maken voor Azure Defender for IoT
+          href: quickstart-create-security-twin.md
+        - name: Beveiligingsaanbevelingen onderzoeken
+          href: quickstart-investigate-security-recommendations.md
+        - name: Aangepaste beveiligingswaarschuwingen maken
+          href: quickstart-create-custom-alerts.md
+        - name: Beveiligingswaarschuwingen onderzoeken
+          href: quickstart-investigate-security-alerts.md
 - name: Concepten
   items:
-    - name: Beveiligingsmodule voor Azure RTOS
+    - name: Oplossing zonder agent voor organisaties
       items:
-        - name: Inzicht in de beveiligingsmodule voor Azure RTOS
-          href: concept-rtos-security-module.md
-        - name: Beveiligingsmodule voor Azure RTOS-waarschuwingen en -aanbevelingen
-          href: concept-rtos-security-alerts-recommendations.md
-    - name: Verificatie voor beveiligingsagents
-      href: concept-security-agent-authentication-methods.md
-    - name: Beveiligingsmodule
-      href: concept-security-module.md
-    - name: Beveiligingswaarschuwingen
-      href: concept-security-alerts.md
-    - name: Aanpasbare beveiligingswaarschuwingen
-      href: concept-customizable-security-alerts.md
-    - name: Beveiliging
+        - name: Belangrijkste concepten
+          href: concept-key-concepts.md
+    - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Aanbevelingen voor beveiliging
-          href: concept-recommendations.md
-        - name: Beveiligingsbasislijn
-          href: security-baseline.md
-    - name: Basislijn
-      href: concept-baseline.md
-    - name: Aggregatie van gebeurtenissen
-      href: event-aggregation.md
-    - name: Prijs en bijbehorende kosten
-      href: concept-pricing.md
+        - name: Beveiligingsmodule voor Azure RTOS
+          href: iot-security-azure-rtos.md
+          items:
+            - name: Inzicht in de beveiligingsmodule voor Azure RTOS
+              href: concept-rtos-security-module.md
+            - name: Beveiligingsmodule voor Azure RTOS-waarschuwingen en -aanbevelingen
+              href: concept-rtos-security-alerts-recommendations.md
+        - name: Edge-beveiligingsmodule
+          href: security-edge-architecture.md
+        - name: Beveiligingsagents
+          href: overview-security-agents.md
+        - name: Verificatie voor beveiligingsagents
+          href: concept-security-agent-authentication-methods.md
+        - name: Beveiligingsmodule
+          href: concept-security-module.md
+        - name: Beveiligingswaarschuwingen
+          href: concept-security-alerts.md
+        - name: Aanpasbare beveiligingswaarschuwingen
+          href: concept-customizable-security-alerts.md
+        - name: Beveiliging
+          items:
+            - name: Aanbevelingen voor beveiliging
+              href: concept-recommendations.md
+            - name: Beveiligingsbasislijn
+              href: security-baseline.md
+        - name: Basislijn
+          href: concept-baseline.md
+        - name: Aggregatie van gebeurtenissen
+          href: event-aggregation.md
+        - name: Prijs en bijbehorende kosten
+          href: concept-pricing.md
 - name: Instructiegidsen
   items:
-    - name: Sonsors bekijken en beheren
-      href: how-to-deploy-view-sensors.md
-    - name: De on-premises beheerconsole implementeren
-      href: how-to-deploy-management-console-appliance.md
-    - name: Werken met beveiligingsmodule voor Azure RTOS
-      href: how-to-azure-rtos-security-module.md
-    - name: Welke agent moet ik implementeren?
+    - name: Oplossing zonder agent voor organisaties
       items:
-        - name: Selecteer een te implementeren agent
-          href: how-to-deploy-agent.md
-        - name: Een beveiligingsagent op basis van C# implementeren op een Windows-apparaat
-          href: how-to-deploy-windows-cs.md
-        - name: Een beveiligingsagent op basis van C# implementeren op een Linux-apparaat
-          href: how-to-deploy-linux-cs.md
-        - name: Een beveiligingsagent op basis van C implementeren op een Linux-apparaat
-          href: how-to-deploy-linux-c.md
-    - name: Problemen met een beveiligingsagent oplossen
+        - name: Uw netwerk voorbereiden
+          items:
+            - name: Vereiste apparaten identificeren
+              href: how-to-identify-required-appliances.md
+            - name: Software installeren
+              href: how-to-install-software.md
+            - name: Uw netwerk instellen
+              href: how-to-set-up-your-network.md
+        - name: Uw sensoren voorbereiden
+          items:
+            - name: Sensors onboarden
+              href: how-to-manage-sensors-on-the-cloud.md
+            - name: Uw sensor activeren en instellen
+              href: how-to-activate-and-set-up-your-sensor.md
+        - name: Uw on-premises beheerconsole voorbereiden
+          items:
+            - name: Uw on-premises beheerconsole activeren en instellen
+              href: how-to-activate-and-set-up-your-on-premises-management-console.md
+            - name: Hoge beschikbaarheid instellen
+              href: how-to-set-up-high-availability.md
+        - name: Gebruikers en gebruikerstoegang beheren
+          items:
+            - name: Gebruikers maken en beheren
+              href: how-to-create-and-manage-users.md
+            - name: Algemeen gebruikerstoegangsbeheer definiëren
+              href: how-to-define-global-user-access-control.md
+        - name: Controleren welk verkeer wordt bewaakt
+          href: how-to-control-what-traffic-is-monitored.md
+        - name: Sensoren beheren van de on-premises beheerconsole
+          href: how-to-manage-sensors-from-the-on-premises-management-console.md
+        - name: Afzonderlijke sensoren beheren
+          href: how-to-manage-individual-sensors.md
+        - name: Sensoren in de cloud beheren
+          href: how-to-manage-sensors-on-the-cloud.md
+        - name: De on-premises beheerconsole beheren
+          href: how-to-manage-the-on-premises-management-console.md
+        - name: Werken met bedreigingsinformatiepakketten
+          href: how-to-work-with-threat-intelligence-packages.md
+        - name: Werken met informatie over de inventaris van apparaten
+          items:
+            - name: Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken
+              href: how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md
+            - name: Alle sensordetecties in een apparaatinventaris onderzoeken
+              href: how-to-investigate-sensor-detections-in-a-device-inventory.md
+        - name: Werken met een sensorapparaatkaart
+          href: how-to-work-with-the-sensor-device-map.md
+        - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
+          items:
+            - name: Werken met een waarschuwing in uw sensor
+              href: how-to-work-with-alerts-on-your-sensor.md
+            - name: Waarschuwingen weergeven
+              href: how-to-view-alerts.md
+            - name: De informatie in waarschuwingen weergeven
+              href: how-to-view-information-provided-in-alerts.md
+            - name: De waarschuwingsgebeurtenis beheren
+              href: how-to-manage-the-alert-event.md
+            - name: Incidentrespons op waarschuwingen versnellen
+              href: how-to-accelerate-alert-incident-response.md
+            - name: Waarschuwingsinformatie doorsturen
+              href: how-to-forward-alert-information-to-partners.md
+        - name: 'Inzicht krijgen in globale, regionale en lokale bedreigingen'
+          href: how-to-gain-insight-into-global-regional-and-local-threats.md
+        - name: Werken met waarschuwingen in de on-premises beheerconsole
+          href: how-to-work-with-alerts-on-premises-management-console.md
+        - name: Apparaatinformatie verrijken
+          items:
+            - name: Werken met apparaatmeldingen
+              href: how-to-work-with-device-notifications.md
+            - name: Poort- en VLAN-naamomzetting verbeteren
+              href: how-to-enhance-port-and-vlan-name-resolution.md
+            - name: Apparaatinformatie importeren
+              href: how-to-import-device-information.md
+        - name: Sensoractiviteit volgen
+          href: how-to-track-sensor-activity.md
+        - name: Rapporten genereren
+          href: how-to-generate-reports.md
+        - name: Problemen met de sensor en on-premises beheerconsole oplossen
+          href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
+        - name: SNMP MIB-bewaking instellen
+          href: how-to-set-up-snmp-mib-monitoring.md
+    - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Problemen met een Linux-beveiligingsagent voor Azure Defender for IoT oplossen
-          href: troubleshoot-agent.md
-        - name: C in lokale configuratie
-          href: azure-iot-security-local-configuration-c.md
-        - name: C# in lokale configuratie
-          href: azure-iot-security-local-configuration-csharp.md
-    - name: Edge-beveiligingsmodule implementeren
-      href: how-to-deploy-edge.md
-    - name: Beveiligingsagents configureren
-      href: how-to-agent-configuration.md
-    - name: Uw eigen beveiligingsberichten verzenden
-      href: how-to-send-security-messages.md
-    - name: Toegang tot onbewerkte beveiligingsgegevens
-      href: how-to-security-data-access.md
-    - name: Een apparaat onderzoeken
-      href: how-to-investigate-device.md
-    - name: Verbinding maken met Azure Sentinel
-      href: how-to-configure-with-sentinel.md
-    - name: Uw agent aanpassen
-      href: how-to-customize-solution.md
+        - name: Werken met beveiligingsmodule voor Azure RTOS
+          href: how-to-azure-rtos-security-module.md
+        - name: Welke agent moet ik implementeren?
+          items:
+            - name: Selecteer een te implementeren agent
+              href: how-to-deploy-agent.md
+            - name: Een beveiligingsagent op basis van C# implementeren op een Windows-apparaat
+              href: how-to-deploy-windows-cs.md
+            - name: Een beveiligingsagent op basis van C# implementeren op een Linux-apparaat
+              href: how-to-deploy-linux-cs.md
+            - name: Een beveiligingsagent op basis van C implementeren op een Linux-apparaat
+              href: how-to-deploy-linux-c.md
+        - name: Problemen met een beveiligingsagent oplossen
+          items:
+            - name: Problemen met een Linux-beveiligingsagent voor Azure Defender for IoT oplossen
+              href: troubleshoot-agent.md
+            - name: C in lokale configuratie
+              href: azure-iot-security-local-configuration-c.md
+            - name: C# in lokale configuratie
+              href: azure-iot-security-local-configuration-csharp.md
+        - name: Edge-beveiligingsmodule implementeren
+          href: how-to-deploy-edge.md
+        - name: Beveiligingsagents configureren
+          href: how-to-agent-configuration.md
+        - name: Uw eigen beveiligingsberichten verzenden
+          href: how-to-send-security-messages.md
+        - name: Toegang tot onbewerkte beveiligingsgegevens
+          href: how-to-security-data-access.md
+        - name: Een apparaat onderzoeken
+          href: how-to-investigate-device.md
+        - name: Verbinding maken met Azure Sentinel
+          href: how-to-configure-with-sentinel.md
+        - name: Uw agent aanpassen
+          href: how-to-customize-solution.md
 - name: Verwijzingen
   items:
-    - name: API voor beveiligingsmodule voor Azure RTOS
-      href: azure-rtos-security-module-api.md
-    - name: Veelgestelde vragen - service
-      href: resources-frequently-asked-questions.md
-    - name: Veelgestelde vragen - agent
-      href: resources-agent-frequently-asked-questions.md
-    - name: Azure-roadmap
-      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Oplossing zonder agent voor organisaties
+      items:
+        - name: Werken met Defender for IoT-API's
+          href: references-work-with-defender-for-iot-apis.md
+        - name: Werken met CLI-opdrachten voor Defender for IoT
+          href: references-work-with-defender-for-iot-cli-commands.md
+        - name: Eigen protocollen beheren (Horizon)
+          href: resources-manage-proprietary-protocols.md
+        - name: Defender for IoT-woordenlijst
+          href: references-defender-for-iot-glossary.md
+    - name: Oplossing met agent voor apparaatbouwers
+      items:
+        - name: API voor beveiligingsmodule voor Azure RTOS
+          href: azure-rtos-security-module-api.md
+        - name: Veelgestelde vragen - service
+          href: resources-frequently-asked-questions.md
+        - name: Veelgestelde vragen - agent
+          href: resources-agent-frequently-asked-questions.md
+        - name: Azure-roadmap
+          href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
 - name: Resources
   items:
-    - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
-      href: /learn/browse/?term=securityS&terms=securityS
-    - name: Documentatie voor Azure Security Center
-      href: ../security-center/index.yml
-    - name: Documentatie over beveiliging in Azure
-      href: ../security/index.yml
-    - name: Azure RTO-beveiligingsmodule op Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
-    - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure IoT'
-      href: 'https://techcommunity.microsoft.com/t5/iot-security/bd-p/IoTSecurity'
-    - name: Regionale beschikbaarheid
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Prijzen
-      href: 'https://azure.microsoft.com/pricing/details/security-center/'
-    - name: Video's
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'
+    - name: Oplossing met agent voor apparaatbouwers
+      items:
+        - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
+          href: /learn/browse/?term=securityS&terms=securityS
+        - name: Documentatie voor Azure Security Center
+          href: ../security-center/
+        - name: Documentatie over beveiliging in Azure
+          href: 'https://docs.microsoft.com/azure/security/'
+        - name: Azure RTO-beveiligingsmodule op Stack Overflow
+          href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
+        - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure IoT'
+          href: 'https://techcommunity.microsoft.com/t5/iot-security/bd-p/IoTSecurity'
+        - name: Regionale beschikbaarheid
+          href: 'https://azure.microsoft.com/regions/services/'
+        - name: Prijzen
+          href: 'https://azure.microsoft.com/pricing/details/security-center/'
+        - name: Video's
+          href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

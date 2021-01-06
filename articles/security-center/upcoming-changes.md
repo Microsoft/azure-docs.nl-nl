@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/14/2020
+ms.date: 01/05/2021
 ms.author: memildin
-ms.openlocfilehash: 052758079d8d413f7b0fead2a5abf3b47b9a691e
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0656000a1d6449306e8afe538f846c55c79a31a2
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511328"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915283"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -44,7 +44,7 @@ Dit is alleen van invloed op Azure Policy, waar het aantal compatibele resources
 
 ### <a name="35-preview-recommendations-being-added-to-increase-coverage-of-azure-security-benchmark"></a>Er worden 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
 
-**Geschatte datum van wijziging:** December 2020
+**Geschatte datum van wijziging:** Januari 2021
 
 Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. [Meer informatie over Azure Security-benchmark](../security/benchmarks/introduction.md).
 

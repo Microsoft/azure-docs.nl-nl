@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/24/2018
+ms.date: 01/04/2021
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: e4782bf09b8c27132417f6021927408e18755104
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9b19beae43f1d4a5b0788d9d7662828355c3dd2c
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494015"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895883"
 ---
 # <a name="what-is-azure-network-watcher"></a>Wat is Azure Network Watcher?
 

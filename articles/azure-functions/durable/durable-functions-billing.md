@@ -5,18 +5,18 @@ author: cgillum
 ms.topic: overview
 ms.date: 08/31/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 504ef93a0002895bc5662d95ad269c8593170ee2
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2ec1b080c195a47caafd0120240b5fb61ede062b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "74233014"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932279"
 ---
 # <a name="durable-functions-billing"></a>Facturering met Durable Functions
 
 [Durable Functions](durable-functions-overview.md) worden op dezelfde manier in rekening gebracht als Azure Functions. Zie [Prijzen voor Azure Functions](https://azure.microsoft.com/pricing/details/functions/) voor meer informatie.
 
-Wanneer u orchestrator-functies in het [Verbruiksabonnement](../functions-scale.md#consumption-plan) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. De volgende secties beschrijven deze behaviors en hun effecten in meer detail.
+Wanneer u orchestrator-functies in het [Verbruiksabonnement](../consumption-plan.md) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. De volgende secties beschrijven deze behaviors en hun effecten in meer detail.
 
 ## <a name="orchestrator-function-replay-billing"></a>Facturering van orchestrator-functie herhalen
 
@@ -45,7 +45,7 @@ Verschillende factoren dragen bij aan de werkelijke Azure Storage-kosten die wor
 
 * Een app met één functie is gekoppeld aan één taakhub, die een set Azure Storage-resources deelt. Deze resources worden gebruikt door alle duurzame functies in een functie-app. Het werkelijke aantal functies in de functie-app heeft geen invloed op de kosten van Azure Storage-transacties.
 * Elke instantie van de functie-app voert intern polls uit voor meerdere wachtrijen in het opslagaccount met behulp van een polling-algoritme met exponentiële uitstelfunctie. Een instantie van een niet-actieve app controleert de wachtrijen minder vaak dan een actieve app, wat leidt tot minder transactiekosten. Zie de sectie [wachtrij-polling in het artikel prestaties en schalen](durable-functions-perf-and-scale.md#queue-polling) voor meer informatie over polling van de wachtrij in Durable Functions.
-* Bij het uitvoeren van de Azure Functions Consumption- of Premium-abonnementen, worden door de [Azure Functions Scale-controller](../functions-scale.md#how-the-consumption-and-premium-plans-work) regelmatig polls uitgevoerd voor alle taakhub-wachtrijen op de achtergrond. Als een functie-app een lichte tot matige schaal heeft, zal slechts één enkele controller-exemplaar deze wachtrijen pollen. Als de functie-app wordt geschaald naar een groot aantal exemplaren, kunnen er meer schaalcontroller-exemplaren worden toegevoegd. Deze extra schaalcontroller-exemplaren kunnen de totale transactiekosten van de wachtrij verhogen.
+* Bij het uitvoeren van de Azure Functions Consumption- of Premium-abonnementen, worden door de [Azure Functions Scale-controller](../event-driven-scaling.md) regelmatig polls uitgevoerd voor alle taakhub-wachtrijen op de achtergrond. Als een functie-app een lichte tot matige schaal heeft, zal slechts één enkele controller-exemplaar deze wachtrijen pollen. Als de functie-app wordt geschaald naar een groot aantal exemplaren, kunnen er meer schaalcontroller-exemplaren worden toegevoegd. Deze extra schaalcontroller-exemplaren kunnen de totale transactiekosten van de wachtrij verhogen.
 * Elke functie-app-instantie is een concurrent voor een set blob-leases. Deze exemplaren zullen periodiek de Azure Blob-service aanroepen om vastgehouden leases te verlengen of om te proberen nieuwe leases te verwerven. Met het geconfigureerde aantal partities van de taakhub wordt het aantal blob-leases bepaald. Als u uitschaalt naar een groter aantal functie-app-instanties, worden de transactiekosten van Azure Storage die aan deze leasebewerkingen zijn gekoppeld, waarschijnlijk verhoogd.
 
 In de documentatie [Azure Storage-prijzen](https://azure.microsoft.com/pricing/details/storage/) vindt u meer informatie over Azure Storage-prijzen. 

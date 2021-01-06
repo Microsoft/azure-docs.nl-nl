@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 07/07/2020
+ms.date: 01/04/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: cc4f775c3cf4c016173c485d57f203b4665c6393
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 3c320b8faf5ccb0b1aec521909b152dff171cbd7
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370641"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862601"
 ---
 # <a name="classic-subscription-administrator-roles-azure-roles-and-azure-ad-roles"></a>Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen
 
@@ -44,11 +44,11 @@ Accountbeheerder, Servicebeheerder en Medebeheerder zijn de drie klassieke abonn
 
 | Klassiek abonnement beheerder | Limiet | Machtigingen | Opmerkingen |
 | --- | --- | --- | --- |
-| Accountbeheerder | 1 per Azure-account | <ul><li>Facturering beheren in de [Azure-portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)</li><li>Alle abonnementen in een account beheren</li><li>Nieuwe abonnementen maken</li><li>Abonnementen annuleren</li><li>De facturering voor een abonnement wijzigen</li><li>De servicebeheerder wijzigen</li></ul> | Conceptueel gezien de factureringseigenaar van het abonnement.<br>De accountbeheerder heeft geen toegang tot de Azure-portal. |
+| Accountbeheerder | 1 per Azure-account | <ul><li>Facturering beheren in de [Azure-portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)</li><li>Alle abonnementen in een account beheren</li><li>Nieuwe abonnementen maken</li><li>Abonnementen annuleren</li><li>De facturering voor een abonnement wijzigen</li><li>De servicebeheerder wijzigen</li></ul> | Conceptueel gezien de factureringseigenaar van het abonnement. |
 | Servicebeheerder | 1 per Azure-abonnement | <ul><li>Services beheren in [Azure Portal](https://portal.azure.com)</li><li>Het abonnement opzeggen</li><li>Gebruikers de rol van medebeheerder geven</li></ul> | Voor een nieuw abonnement is het standaard zo dat de accountbeheerder ook de servicebeheerder is.<br>De servicebeheerder heeft dezelfde toegang als een gebruiker met de rol van eigenaar op abonnementsniveau.<br>De servicebeheerder heeft volledige toegang tot de Azure-portal. |
 | Medebeheerder | 200 per abonnement | <ul><li>Deze rol heeft dezelfde toegangsrechten als de rol Servicebeheerder, maar kan de koppeling van abonnementen aan Azure-adreslijsten niet wijzigen</li><li>Gebruikers toewijzen aan de rol Medebeheerder, maar kan de servicebeheerder niet wijzigen</li></ul> | De medebeheerder heeft dezelfde toegang als een gebruiker met de rol van eigenaar op abonnementsniveau. |
 
-In de Azure-portal kunt u co-beheerders beheren of de servicebeheerder weergeven met behulp van het tabblad **Klassieke beheerders** .
+In de Azure-portal kunt u co-beheerders beheren of de servicebeheerder weergeven met behulp van het tabblad **Klassieke beheerders**.
 
 ![Klassieke abonnementsbeheerders van Azure in de Azure-portal](./media/rbac-and-directory-admin-roles/subscription-view-classic-administrators.png)
 
@@ -103,7 +103,7 @@ Azure AD-rollen worden gebruikt voor het beheren van Azure AD-resources in een d
 | [Gebruikersbeheerder](../active-directory/roles/permissions-reference.md#user-administrator) | <ul><li>Alle aspecten van gebruikers en groepen maken en beheren</li><li>Ondersteuningstickets beheren</li><li>Servicestatus bewaken</li><li>Wachtwoorden wijzigen voor gebruikers, helpdeskbeheerders en andere gebruikersbeheerders</li></ul> |  |
 | [Factureringsbeheerder](../active-directory/roles/permissions-reference.md#billing-administrator) | <ul><li>Aankopen doen</li><li>Abonnementen beheren</li><li>Ondersteuningstickets beheren</li><li>Servicestatus beheren</li></ul> |  |
 
-In de Azure-portal kunt u de lijst met Azure AD-rollen bekijken op de blade **Rollen en beheerders** . Zie [Machtigingen voor beheerdersrol toewijzen in Azure Active Directory](../active-directory/roles/permissions-reference.md) voor een lijst met alle Azure AD-rollen.
+In de Azure-portal kunt u de lijst met Azure AD-rollen bekijken op de blade **Rollen en beheerders**. Zie [Machtigingen voor beheerdersrol toewijzen in Azure Active Directory](../active-directory/roles/permissions-reference.md) voor een lijst met alle Azure AD-rollen.
 
 ![Azure AD-rollen in de Azure-portal](./media/rbac-and-directory-admin-roles/directory-admin-roles.png)
 

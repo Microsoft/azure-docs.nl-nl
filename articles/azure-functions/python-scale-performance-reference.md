@@ -4,19 +4,19 @@ description: Meer informatie over het ontwikkelen van Azure Functions-apps met b
 ms.topic: article
 ms.date: 10/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3383ec322903d15c6090630890d14ce6d90bc96f
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: baa362f029678f266f154df912a9178a6626667d
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97899396"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935866"
 ---
 # <a name="improve-throughput-performance-of-python-apps-in-azure-functions"></a>De doorvoer prestaties van python-apps in Azure Functions verbeteren
 
 Bij het ontwikkelen van Azure Functions met python, moet u weten hoe uw functies worden uitgevoerd en hoe de prestaties van invloed zijn op de manier waarop uw functie-app wordt geschaald. De nood zaak is belang rijker bij het ontwerpen van zeer krachtige apps. De belangrijkste factoren waarmee u rekening moet houden bij het ontwerpen, schrijven en configureren van uw functions-apps, zijn horizon taal schalen en prestatie configuraties voor door voer.
 
 ## <a name="horizontal-scaling"></a>Horizontale schaalaanpassing
-Standaard controleert Azure Functions automatisch de belasting van uw toepassing en worden er indien nodig extra exemplaren van de host voor python gemaakt. Azure Functions maakt gebruik van ingebouwde drempel waarden voor verschillende trigger typen om te bepalen wanneer instanties moeten worden toegevoegd, zoals de leeftijd van berichten en de grootte van de wachtrij voor Queue trigger. Deze drempel waarden kunnen niet door de gebruiker worden geconfigureerd. Zie [hoe het verbruik en de Premium-abonnementen werken](functions-scale.md#how-the-consumption-and-premium-plans-work)voor meer informatie.
+Standaard controleert Azure Functions automatisch de belasting van uw toepassing en worden er indien nodig extra exemplaren van de host voor python gemaakt. Azure Functions maakt gebruik van ingebouwde drempel waarden voor verschillende trigger typen om te bepalen wanneer instanties moeten worden toegevoegd, zoals de leeftijd van berichten en de grootte van de wachtrij voor Queue trigger. Deze drempel waarden kunnen niet door de gebruiker worden geconfigureerd. Zie voor meer informatie [op gebeurtenissen gebaseerd schalen in azure functions](event-driven-scaling.md).
 
 ## <a name="improving-throughput-performance"></a>Prestaties van door Voer verbeteren
 

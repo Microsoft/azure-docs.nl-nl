@@ -3,12 +3,12 @@ title: De kosten van het verbruiks abonnement in Azure Functions schatten
 description: Meer informatie over hoe u de kosten die u kunt doen bij het uitvoeren van uw functie-app in een verbruiks abonnement in azure, beter kunt schatten.
 ms.date: 9/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 58082e03c1416848e9aa1e97308bed1ceaa67295
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 430804d478df718f51ae1da9adb6693f597157a9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168105"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934880"
 ---
 # <a name="estimating-consumption-plan-costs"></a>Kosten schatten voor verbruiksplan
 
@@ -16,9 +16,9 @@ Er zijn momenteel drie typen hosting plannen voor een app die wordt uitgevoerd i
 
 | Plannen | Beschrijving |
 | ---- | ----------- |
-| [**Verbruik**](functions-scale.md#consumption-plan) | Er worden alleen kosten in rekening gebracht voor de tijd dat uw functie-app wordt uitgevoerd. Dit abonnement bevat een [gratis][prijs pagina] voor granting per abonnement.|
-| [**Premium**](functions-scale.md#premium-plan) | Biedt u dezelfde functies en schaal methode als het verbruiks abonnement, maar met verbeterde prestaties en VNET-toegang. De kosten zijn gebaseerd op de gekozen prijs categorie. Zie [Azure functions Premium-abonnement](functions-premium-plan.md)voor meer informatie. |
-| [**Toegewezen (App Service)**](functions-scale.md#app-service-plan) <br/>(Basic-laag of hoger) | Wanneer u moet worden uitgevoerd in specifieke Vm's of in isolatie, gebruikt u aangepaste installatie kopieën of wilt u uw overtollige App Service plan capaciteit gebruiken. Maakt gebruik van de facturering van het [normale app service plan](https://azure.microsoft.com/pricing/details/app-service/). De kosten zijn gebaseerd op de gekozen prijs categorie.|
+| [**Verbruik**](consumption-plan.md) | Er worden alleen kosten in rekening gebracht voor de tijd dat uw functie-app wordt uitgevoerd. Dit abonnement bevat een [gratis][prijs pagina] voor granting per abonnement.|
+| [**Premium**](functions-premium-plan.md) | Biedt u dezelfde functies en schaal methode als het verbruiks abonnement, maar met verbeterde prestaties en VNET-toegang. De kosten zijn gebaseerd op de gekozen prijs categorie. Zie [Azure functions Premium-abonnement](functions-premium-plan.md)voor meer informatie. |
+| [**Toegewezen (App Service)**](dedicated-plan.md) <br/>(Basic-laag of hoger) | Wanneer u moet worden uitgevoerd in specifieke Vm's of in isolatie, gebruikt u aangepaste installatie kopieën of wilt u uw overtollige App Service plan capaciteit gebruiken. Maakt gebruik van de facturering van het [normale app service plan](https://azure.microsoft.com/pricing/details/app-service/). De kosten zijn gebaseerd op de gekozen prijs categorie.|
 
 U hebt het abonnement gekozen dat het beste past bij de prestaties en kosten vereisten van uw functie. Zie [Azure functions schalen en hosten](functions-scale.md)voor meer informatie.
 
@@ -75,7 +75,7 @@ Gebruik [Azure monitor Metrics Explorer](../azure-monitor/platform/metrics-getti
 
 1. Klik boven aan de [Azure Portal] in **Zoek Services, resources en docs**  zoeken naar `monitor` en selecteer **monitor** onder **Services**.
 
-1. Selecteer aan de linkerkant **metrische gegevens**  >  en**Selecteer een resource**en gebruik vervolgens de instellingen onder de afbeelding om uw functie-app te kiezen.
+1. Selecteer aan de linkerkant **metrische gegevens**  >  en **Selecteer een resource** en gebruik vervolgens de instellingen onder de afbeelding om uw functie-app te kiezen.
 
     ![De resource voor de functie-app selecteren](media/functions-consumption-costing/select-a-resource.png)
 
@@ -89,7 +89,7 @@ Gebruik [Azure monitor Metrics Explorer](../azure-monitor/platform/metrics-getti
 
 1. Selecteer **Toep assen** om uw functie-app te kiezen als de te controleren bron.
 
-1. Kies bij **metriek**het **aantal functies** en de **som** voor **aggregatie**. Hiermee voegt u de som van de uitvoerings aantallen tijdens de gekozen periode toe aan de grafiek.
+1. Kies bij **metriek** het **aantal functies** en de **som** voor **aggregatie**. Hiermee voegt u de som van de uitvoerings aantallen tijdens de gekozen periode toe aan de grafiek.
 
     ![Definieer de metrische gegevens van een functie-app die u aan de grafiek wilt toevoegen](media/functions-consumption-costing/monitor-metrics-add-metric.png)
 

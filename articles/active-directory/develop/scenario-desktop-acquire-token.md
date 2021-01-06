@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 11/04/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: fd341a4f6e2402ce934bdffd4f024e0ef569eec1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9c3d9e647fc09946c1e7c1b8b2ebcbe310716ff2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340914"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935781"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -183,7 +183,7 @@ Op Android moet u ook de bovenliggende activiteit opgeven met behulp van `.WithP
 
 #### <a name="withparentactivityorwindow"></a>WithParentActivityOrWindow
 
-De gebruikers interface is belang rijk omdat deze interactief is. `AcquireTokenInteractive` heeft één specifieke optionele para meter die kan worden opgegeven voor platforms die deze kunnen ondersteunen, de bovenliggende gebruikers interface. Bij gebruik in een bureaublad toepassing `.WithParentActivityOrWindow` heeft een ander type, dat afhankelijk is van het platform. U kunt ook de optionele para meter voor het bovenliggende venster weglaten om een venster te maken, als u niet wilt bepalen waar het dialoog venster voor aanmelding op het scherm wordt weer gegeven. Dit is van toepassing op toepassingen op basis van de opdracht regel, die wordt gebruikt om aanroepen door te geven aan een andere back-end-service en geen Windows voor gebruikers interactie nodig hebt.
+De gebruikers interface is belang rijk omdat deze interactief is. `AcquireTokenInteractive` heeft één specifieke optionele para meter die kan worden opgegeven voor platforms die deze kunnen ondersteunen, de bovenliggende gebruikers interface. Bij gebruik in een bureaublad toepassing `.WithParentActivityOrWindow` heeft een ander type, dat afhankelijk is van het platform. U kunt ook de optionele para meter voor het bovenliggende venster weglaten om een venster te maken, als u niet wilt bepalen waar het dialoog venster Aanmelden wordt weer gegeven op het scherm. Dit is van toepassing op toepassingen op basis van de opdracht regel, die wordt gebruikt om aanroepen door te geven aan een andere back-end-service en geen Windows voor gebruikers interactie nodig hebt.
 
 ```csharp
 // net45
@@ -304,7 +304,7 @@ var result = app.AcquireTokenInteractive(scopes)
 
 #### <a name="other-optional-parameters"></a>Andere optionele para meters
 
-Zie AcquireTokenInteractiveParameterBuilder voor meer informatie over de andere optionele para meters voor `AcquireTokenInteractive` . [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder#methods)
+Zie AcquireTokenInteractiveParameterBuilder voor meer informatie over de andere optionele para meters voor `AcquireTokenInteractive` . [](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder#methods)
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -832,7 +832,7 @@ static async Task GetATokenForGraph()
 }
 ```
 
-Zie AcquireTokenByUsernamePasswordParameterBuilder voor meer informatie over alle wijzigingen die kunnen worden toegepast op `AcquireTokenByUsernamePassword` . [AcquireTokenByUsernamePasswordParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder#methods)
+Zie AcquireTokenByUsernamePasswordParameterBuilder voor meer informatie over alle wijzigingen die kunnen worden toegepast op `AcquireTokenByUsernamePassword` . [](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder#methods)
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -1180,7 +1180,7 @@ De aanpassing van de token cache-serialisatie voor het delen van de SSO-status t
 
 ### <a name="simple-token-cache-serialization-msal-only"></a>Eenvoudige token cache-serialisatie (alleen MSAL)
 
-Het volgende voor beeld is een Naïve-implementatie van aangepaste serialisatie van een token cache voor bureaublad toepassingen. Hier bevindt de token cache van de gebruiker zich in een bestand in dezelfde map als de toepassing.
+Het volgende voor beeld is een Naïve-implementatie van aangepaste serialisatie van een token cache voor bureaublad toepassingen. Hier bevindt de token cache van de gebruiker zich in een bestand in dezelfde map als de toepassing of, in een per gebruiker per app-map, in het geval waarin de app een [verpakte bureaublad toepassing](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes)is. Voor de volledige code raadpleegt u het volgende voor beeld: [Active-Directory-DotNet-Desktop-MSGraph-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
 
 Nadat u de toepassing hebt gemaakt, schakelt u de serialisatie in door ``TokenCacheHelper.EnableSerialization()`` de toepassing aan te roepen en door te geven `UserTokenCache` .
 
@@ -1199,15 +1199,27 @@ static class TokenCacheHelper
   {
    tokenCache.SetBeforeAccess(BeforeAccessNotification);
    tokenCache.SetAfterAccess(AfterAccessNotification);
+   try
+   {
+    // For packaged desktop apps (MSIX packages) the executing assembly folder is read-only. 
+    // In that case we need to use Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path + "\msalcache.bin" 
+    // which is a per-app read/write folder for packaged apps.
+    // See https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes
+    CacheFilePath = System.IO.Path.Combine(Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path, "msalcache.bin3");
+   }
+   catch (System.InvalidOperationException)
+   {
+    // Fall back for an un-packaged desktop app
+    CacheFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location + ".msalcache.bin";
+   }
   }
 
   /// <summary>
   /// Path to the token cache
   /// </summary>
-  public static readonly string CacheFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location + ".msalcache.bin3";
+  public static string CacheFilePath { get; private set; }
 
   private static readonly object FileLock = new object();
-
 
   private static void BeforeAccessNotification(TokenCacheNotificationArgs args)
   {

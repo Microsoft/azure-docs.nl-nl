@@ -4,12 +4,12 @@ description: Meer informatie over de Azure Functions-concepten en-technieken die
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: 54bfd770fba9a1766396d66c0c263111c233c9c2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: dd9a517749030f9f99731d36947c4d4ff2f13b01
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96167876"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936733"
 ---
 # <a name="azure-functions-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions
 In Azure Functions delen specifieke functies enkele kern technische concepten en onderdelen, ongeacht de taal of binding die u gebruikt. Lees de informatie in dit overzicht die van toepassing is op alle voor waarden, voordat u naar een bepaalde taal of binding gaat gaan.
@@ -46,7 +46,7 @@ De `bindings` eigenschap is waar u zowel triggers als bindingen configureert. El
 | `direction` |' in ', ' out ' |Geeft aan of de binding is voor het ontvangen van gegevens van de functie of het verzenden van gegevens van de functie. |
 | `name` |tekenreeks |De naam die wordt gebruikt voor de afhankelijke gegevens in de functie. Voor C# is dit een argument naam; voor Java script is het de sleutel in een lijst met sleutel/waarden. |
 
-## <a name="function-app"></a>Function App
+## <a name="function-app"></a>Functie-app
 Een functie-app biedt een uitvoerings context in azure waarin uw functies worden uitgevoerd. Zo is het de implementatie-en beheer eenheid voor uw functies. Een functie-app bestaat uit een of meer afzonderlijke functies die met elkaar worden beheerd, geïmplementeerd en geschaald. Alle functies in een functie-app delen hetzelfde prijs plan, dezelfde implementatie methode en dezelfde runtime versie. U kunt een functie-app beschouwen als een manier om uw functies te organiseren en gezamenlijk te beheren. Zie [een functie-app beheren](functions-how-to-use-azure-function-app-settings.md)voor meer informatie. 
 
 > [!NOTE]
@@ -69,7 +69,7 @@ Functie-apps kunnen worden gemaakt en gepubliceerd met behulp van verschillende 
 Met de functions-editor die in de Azure Portal is ingebouwd, kunt u uw code en uw *function.jsop* bestand direct inline bijwerken. Dit wordt alleen aanbevolen voor kleine wijzigingen of de controle van concepten best practice het gebruik van een lokaal ontwikkelings programma zoals VS code.
 
 ## <a name="parallel-execution"></a>Parallelle uitvoering
-Als er meerdere activerings gebeurtenissen sneller optreden dan een functie-runtime met één thread, kan deze de functie meerdere keren tegelijk aanroepen.  Als een functie-app het [verbruiks hosting plan](functions-scale.md#how-the-consumption-and-premium-plans-work)gebruikt, kan de functie-app automatisch worden uitgeschaald.  Elk exemplaar van de functie-app, of de app wordt uitgevoerd op het verbruiks-hosting plan of een regulier [app service hosting abonnement](../app-service/overview-hosting-plans.md), kan gelijktijdig gelijktijdige functie aanroepen verwerken met behulp van meerdere threads.  Het maximum aantal gelijktijdige functie aanroepen in elk functie-app-exemplaar is afhankelijk van het type trigger dat wordt gebruikt, evenals de resources die worden gebruikt door andere functies in de functie-app.
+Als er meerdere activerings gebeurtenissen sneller optreden dan een functie-runtime met één thread, kan deze de functie meerdere keren tegelijk aanroepen.  Als een functie-app het [verbruiks hosting plan](event-driven-scaling.md)gebruikt, kan de functie-app automatisch worden uitgeschaald.  Elk exemplaar van de functie-app, of de app wordt uitgevoerd op het verbruiks-hosting plan of een regulier [app service hosting abonnement](../app-service/overview-hosting-plans.md), kan gelijktijdig gelijktijdige functie aanroepen verwerken met behulp van meerdere threads.  Het maximum aantal gelijktijdige functie aanroepen in elk functie-app-exemplaar is afhankelijk van het type trigger dat wordt gebruikt, evenals de resources die worden gebruikt door andere functies in de functie-app.
 
 ## <a name="functions-runtime-versioning"></a>Functions runtime versie beheer
 

@@ -3,12 +3,12 @@ title: Door de gebruiker gedefinieerde functies in sjablonen
 description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 12199aca788438e4558ed2c607b866f0dc723e2a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: f428fa3bc827af3820ad9f928f4f92b881c9c84c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436960"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934676"
 ---
 # <a name="user-defined-functions-in-arm-template"></a>Door de gebruiker gedefinieerde functies in ARM-sjabloon
 
@@ -44,7 +44,7 @@ Uw functies vereisen een naam ruimte waarde om naam conflicten met sjabloon func
 
 ## <a name="use-the-function"></a>Gebruik de functie
 
-In het volgende voor beeld ziet u een sjabloon die een door de gebruiker gedefinieerde functie bevat. Deze functie wordt gebruikt om een unieke naam voor een opslag account op te halen. De sjabloon heeft een para meter met de naam **storageNamePrefix** die wordt door gegeven als een para meter voor de functie.
+In het volgende voor beeld ziet u een sjabloon die een door de gebruiker gedefinieerde functie bevat. Deze functie wordt gebruikt om een unieke naam voor een opslag account op te halen. De sjabloon heeft een para meter met `storageNamePrefix` de naam die wordt door gegeven als een para meter voor de functie.
 
 ```json
 {

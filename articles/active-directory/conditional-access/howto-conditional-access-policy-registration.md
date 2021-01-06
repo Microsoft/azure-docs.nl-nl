@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81f4407ee7721332a4143952d1720151bb70d8c9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 61f655d459592022a2e34b87adc50e3d49b03dc9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837535"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935764"
 ---
 # <a name="conditional-access-securing-security-info-registration"></a>Voorwaardelijke toegang: Veilige registratie van beveiligingsinformatie
 
@@ -26,7 +26,7 @@ Beveiligen wanneer en hoe gebruikers zich registreren voor Azure AD Multi-Factor
 
 Het volgende beleid is van toepassing op alle geselecteerde gebruikers die zich willen registreren met de gecombineerde registratie-ervaring en blokkeert de toegang tenzij ze verbinding maken vanaf een locatie die is gemarkeerd als vertrouwd netwerk.
 
-1. Blader in het **Azure Portal** naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang** voor beveiliging.
+1. Blader in het **Azure Portal** naar **Azure Active Directory**  >    >  **voorwaardelijke toegang** voor beveiliging.
 1. Selecteer **Nieuw beleid**.
 1. Voer bij naam een naam in voor dit beleid. Bijvoorbeeld **registratie van gegevens over gecombineerde beveiliging op vertrouwde netwerken**.
 1. Onder **toewijzingen** selecteert u **gebruikers en groepen** en selecteert u de gebruikers en groepen waarop u dit beleid wilt Toep assen.
@@ -61,7 +61,7 @@ Sommige kunnen ervoor kiezen om de apparaatstatus te gebruiken in plaats van loc
 
 > [!WARNING]
 > Als u Apparaatstatus als een voor waarde in uw beleid gebruikt, kan dit van invloed zijn op gast gebruikers in de Directory. De [modus alleen rapport](concept-conditional-access-report-only.md) kan helpen bij het bepalen van de impact van beleids beslissingen.
-> Houd er rekening mee dat de modus alleen rapport is niet van toepassing op CA-beleid met het bereik ' gebruikers acties '.
+> Houd er rekening mee dat de modus alleen rapport is niet van toepassing op het beleid voor voorwaardelijke toegang met het bereik ' gebruikers acties '.
 
 ## <a name="next-steps"></a>Volgende stappen
 

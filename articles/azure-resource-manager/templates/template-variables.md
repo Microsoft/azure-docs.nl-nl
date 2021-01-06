@@ -3,12 +3,12 @@ title: Variabelen in sjablonen
 description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 5d9b58d63e96656c45d3494d24099bbeadc46b11
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7f782f9c7d3107472a74fcab73290c4cebf73693
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353456"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934659"
 ---
 # <a name="variables-in-arm-template"></a>Variabelen in ARM-sjabloon
 
@@ -28,7 +28,7 @@ In het volgende voor beeld ziet u een definitie van een variabele. Er wordt een 
 },
 ```
 
-U kunt de functie [Reference](template-functions-resource.md#reference) of een van [de functies in de sectie](template-functions-resource.md#list) Varia BLES niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
+U kunt de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies in de sectie niet gebruiken `variables` . Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
 
 ## <a name="use-variable"></a>Variabele gebruiken
 
@@ -63,7 +63,7 @@ U kunt variabelen definiëren die gerelateerde waarden bevatten voor het configu
 },
 ```
 
-In para meters maakt u een waarde die aangeeft welke configuratie waarden moeten worden gebruikt.
+In `parameters` maakt u een waarde die aangeeft welke configuratie waarden moeten worden gebruikt.
 
 ```json
 "parameters": {

@@ -1,20 +1,20 @@
 ---
 title: Onderliggende resources in sjablonen
-description: Hierin wordt beschreven hoe u de naam en het type instelt voor onderliggende resources in een Azure Resource Manager sjabloon.
+description: Hierin wordt beschreven hoe u de naam en het type instelt voor onderliggende resources in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: c594096fd95f663db2120b29c575b341924dcc36
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 408914fd309676da36904a364f905a8ee809d648
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97721940"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934302"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Naam en type voor onderliggende resources instellen
 
 Onderliggende resources zijn bronnen die alleen bestaan in de context van een andere resource. Een extensie van een [virtuele machine](/azure/templates/microsoft.compute/virtualmachines/extensions) kan bijvoorbeeld niet bestaan zonder een [virtuele machine](/azure/templates/microsoft.compute/virtualmachines). De extensie resource is een onderliggend element van de virtuele machine.
 
-Elke bovenliggende resource accepteert alleen bepaalde resource typen als onderliggende resources. Het resource type voor de onderliggende resource bevat het resource type voor de bovenliggende resource. Bijvoorbeeld: **micro soft. web/sites/config** en **micro soft. web/sites/uitbrei dingen** zijn zowel onderliggende resources van **micro soft. web/sites**. De geaccepteerde resource typen worden opgegeven in het [sjabloon schema](https://github.com/Azure/azure-resource-manager-schemas) van de bovenliggende resource.
+Elke bovenliggende resource accepteert alleen bepaalde resource typen als onderliggende resources. Het resource type voor de onderliggende resource bevat het resource type voor de bovenliggende resource. `Microsoft.Web/sites/config`En `Microsoft.Web/sites/extensions` zijn bijvoorbeeld de onderliggende resources van `Microsoft.Web/sites` . De geaccepteerde resource typen worden opgegeven in het [sjabloon schema](https://github.com/Azure/azure-resource-manager-schemas) van de bovenliggende resource.
 
 In een Azure Resource Manager sjabloon (ARM-sjabloon) kunt u de onderliggende bron opgeven binnen de bovenliggende resource of buiten de bovenliggende resource. In het volgende voor beeld ziet u de onderliggende resource die is opgenomen in de eigenschap resources van de bovenliggende resource.
 
@@ -89,7 +89,7 @@ In het volgende voor beeld ziet u een virtueel netwerk en een subnet. U ziet dat
 ]
 ```
 
-Het volledige bron type is nog steeds **micro soft. Network/virtualNetworks/subnets**. U beschikt niet over **micro soft. Network/virtualNetworks/** , omdat deze wordt aangenomen van het bovenliggende bron type.
+Het volledige resource type is nog steeds `Microsoft.Network/virtualNetworks/subnets` . U geeft niet `Microsoft.Network/virtualNetworks/` op omdat deze wordt verondersteld uit het bovenliggende resource type.
 
 De naam van de onderliggende resource is ingesteld op **Subnet1** , maar de volledige naam bevat de naam van het bovenliggende item. U geeft **VNet1** niet op omdat deze wordt aangenomen van de bovenliggende resource.
 
@@ -102,7 +102,7 @@ Wanneer u buiten de bovenliggende resource hebt gedefinieerd, formatteert u het 
 "name": "{parent-resource-name}/{child-resource-name}",
 ```
 
-In het volgende voor beeld ziet u een virtueel netwerk en een subnet dat beide zijn gedefinieerd op het hoofd niveau. U ziet dat het subnet niet is opgenomen in de bronnen matrix voor het virtuele netwerk. De naam is ingesteld op **VNet1/Subnet1** en het type is ingesteld op **micro soft. Network/virtualNetworks/subnets**. De onderliggende resource is gemarkeerd als afhankelijk van de bovenliggende resource, omdat de bovenliggende resource moet bestaan voordat de onderliggende resource kan worden geïmplementeerd.
+In het volgende voor beeld ziet u een virtueel netwerk en een subnet dat beide zijn gedefinieerd op het hoofd niveau. U ziet dat het subnet niet is opgenomen in de bronnen matrix voor het virtuele netwerk. De naam is ingesteld op **VNet1/Subnet1** en het type is ingesteld op `Microsoft.Network/virtualNetworks/subnets` . De onderliggende resource is gemarkeerd als afhankelijk van de bovenliggende resource, omdat de bovenliggende resource moet bestaan voordat de onderliggende resource kan worden geïmplementeerd.
 
 ```json
 "resources": [
@@ -136,6 +136,6 @@ In het volgende voor beeld ziet u een virtueel netwerk en een subnet dat beide z
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [ontwerp sjablonen](template-syntax.md)voor meer informatie over het maken van arm-sjablonen.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over het maken van arm-sjablonen.
 
 * Zie de [functie Reference](template-functions-resource.md#reference)voor meer informatie over de indeling van de resource naam bij het verwijzen naar de resource.

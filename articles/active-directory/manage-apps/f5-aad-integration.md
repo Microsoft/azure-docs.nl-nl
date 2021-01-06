@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e011417b936ed83b4658e6dad25bf8e8ee88aed
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: b5c960c7fbcc29d0aaea7511ba2187c916e84ab3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317896"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935237"
 ---
 # <a name="f5-big-ip-access-policy-manager-and-azure-active-directory-integration-for-secure-hybrid-access"></a>F5 BIG-IP Access Policy Manager en Azure Active Directory-integratie voor beveiligde hybride toegang
 
@@ -37,7 +37,7 @@ Als u Azure AD verificatie vooraf verifieert voor in BIG-IP gepubliceerde Servic
 
 - [Gedetecteerde referentie detectie](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-risks)
 
-- [Selfservice voor wachtwoordherstel (SSPR)](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-sspr)
+- [Self-service voor wachtwoord herstel (SSPR)](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-sspr)
 
 - [Samen werking van partners](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users) -recht beheer voor de regeling van toegang tot gasten
 
@@ -71,7 +71,7 @@ Stap 1-4 in het diagram illustreert de front-end uitwisseling vooraf voor verifi
 |:------|:-----------|
 | 1. | Gebruiker selecteert een toepassings pictogram in de portal, waarbij de URL wordt omgezet naar het SAML-SP (BIG-IP) |
 | 2. | De BIG-IP leidt de gebruiker naar SAML IDP (Azure AD) voor verificatie vooraf|
-| 3. | Azure AD verwerkt CA-beleid en [sessie besturings elementen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) voor autorisatie|
+| 3. | Azure AD verwerkt beleids regels voor voorwaardelijke toegang en [sessie besturings elementen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) voor autorisatie|
 | 4. | Gebruiker leidt terug naar een BIG-IP-adres met de SAML-claims die zijn uitgegeven door Azure AD |
 | 5. | BIG-IP vraagt alle extra sessie gegevens op die moeten worden opgenomen in [SSO](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso) en [op rollen gebaseerd toegangs beheer (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) voor de gepubliceerde service |
 | 6. | BIG-IP stuurt de client aanvraag door naar de back-end-service

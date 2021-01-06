@@ -2,16 +2,25 @@
 title: Integreren met Apache Kafka Connect - Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over het gebruik van Kafka Connect with Azure Event Hubs voor Kafka.
 ms.topic: how-to
-ms.date: 06/23/2020
-ms.openlocfilehash: d37d2465d9389a0bcfaabdec32bad0c86846cfb2
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.date: 01/06/2021
+ms.openlocfilehash: f82dcdafa7921f4a994361371536b2f1ace7cbc5
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369536"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935152"
 ---
-# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview"></a>Apache Kafka Connect-ondersteuning integreren in Azure Event Hubs (preview)
-Naarmate de gegevensopname voor bedrijven toeneemt, neemt tevens de vereiste toe om diverse externe bronnen en sinks op te nemen. [Apache Kafka Connect](https://kafka.apache.org/documentation/#connect) biedt een framework om gegevens te verbinden met en te exporteren/importeren uit/in externe systemen als MySQL, HDFS, en een bestandssysteem via een Kafka-cluster. Deze zelf studie begeleidt u bij het gebruik van Kafka Connect Framework met Event Hubs.
+# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs"></a>Ondersteuning voor Apache Kafka Connect integreren in Azure Event Hubs
+[Apache Kafka Connect](https://kafka.apache.org/documentation/#connect) is een framework voor het maken van verbinding en het importeren/exporteren van gegevens van/naar elk extern systeem, zoals MySQL, HDFS en bestands systeem via een Kafka-cluster. Deze zelf studie begeleidt u bij het gebruik van Kafka Connect Framework met Event Hubs.
+
+> [!WARNING]
+> Het gebruik van het Apache Kafka Connect Framework en de bijbehorende connectors **komen niet in aanmerking voor product ondersteuning via Microsoft Azure**.
+>
+> Apache Kafka Connect gaat ervan uit dat de dynamische configuratie wordt opgeslagen in gecomprimeerde onderwerpen met een andere onbeperkte Bewaar periode. Azure Event Hubs [implementeert geen compressie als een Broker-functie](event-hubs-federation-overview.md#log-projections) en neemt altijd een Bewaar limiet op basis van tijd op voor behouden gebeurtenissen, in het hoofd van het principe dat Azure Event hubs een real-time engine voor gebeurtenis streaming is en geen gegevens-of configuratie opslag op lange termijn.
+>
+> Hoewel het Apache Kafka-project mogelijk vertrouwd is met het combi neren van deze rollen, is Azure van mening dat dergelijke informatie het beste kan worden beheerd in een juiste data base of configuratie opslag.
+>
+> Veel Apache Kafka verbindings scenario's werken wel, maar deze conceptuele verschillen tussen de Bewaar modellen van Apache Kafka en Azure Event Hubs kunnen ertoe leiden dat bepaalde configuraties niet naar behoren werken. 
 
 In deze zelf studie wordt u begeleid bij het integreren van Kafka Connect met een Event Hub en het implementeren van basis-FileStreamSource en FileStreamSink-connectors. Deze functie is momenteel beschikbaar als preview-product. Hoewel deze connectors niet bedoeld zijn voor gebruik in productieomgevingen, laten ze een end-to-end Kafka Connect-scenario zien waarin Azure Event Hubs als een Kafka-broker fungeert.
 
@@ -92,7 +101,7 @@ plugin.path={KAFKA.DIRECTORY}/libs # path to the libs directory within the Kafka
 ```
 
 > [!IMPORTANT]
-> Vervang `{YOUR.EVENTHUBS.CONNECTION.STRING}` door de verbindingsreeks voor uw Event Hubs-naamruimte. Zie [een Event Hubs Connection String ophalen](event-hubs-get-connection-string.md)voor instructies over het ophalen van de Connection String. Hier volgt een voor beeld van een configuratie: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
+> Vervang `{YOUR.EVENTHUBS.CONNECTION.STRING}` door de verbindingsreeks voor uw Event Hubs-naamruimte. Zie [Een verbindingsreeks voor Event Hubs ophalen](event-hubs-get-connection-string.md) voor instructies voor het ophalen van de verbindingsreeks. Hier volgt een voorbeeldconfiguratie: `sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="Endpoint=sb://mynamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXX";`
 
 
 ## <a name="run-kafka-connect"></a>Kafka Connect uitvoeren

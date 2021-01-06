@@ -16,12 +16,12 @@ ms.date: 05/12/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c274424641ee0173d68f0de9061415815b0df588
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 45b6b182d030c267dcec7ed57c0c0dd1901b0cb1
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107427"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935084"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Veelgestelde vragen over Azure Active Directory rapporten
 
@@ -143,8 +143,8 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Direc
 
 **A:** De status van voorwaardelijke toegang kan de volgende waarden hebben:
 
-* **Niet toegepast**: Dit betekent dat er geen CA-beleid met de gebruiker en de app in het bereik is. 
-* **Geslaagd**: Dit betekent dat er een CA-beleid met de gebruiker en de app in het bereik en het CA-beleid is voldaan. 
+* **Niet toegepast**: Dit betekent dat er geen beleid voor voorwaardelijke toegang is met de gebruiker en de app in het bereik. 
+* **Geslaagd**: Dit betekent dat er een beleid voor voorwaardelijke toegang is met de gebruiker en de app in het bereik en het beleid voor voorwaardelijke toegang is voldaan. 
 * **Probleem**: bij de aanmelding is voldaan aan de gebruikers-en toepassings voorwaarde van ten minste één beleid voor voorwaardelijke toegang en granting Controls is niet voldaan of ingesteld om de toegang te blok keren.
     
 **V: wat zijn de mogelijke waarden voor het resultaat van het beleid voor voorwaardelijke toegang?**
@@ -158,7 +158,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Direc
     
 **V: de beleids naam in het rapport alle aanmeldingen komt niet overeen met de beleids naam in CA. waarom?**
 
-**A:** De naam van het beleid in het rapport alle aanmeldingen is gebaseerd op de naam van het CA-beleid op het moment van de aanmelding. Dit kan inconsistent zijn met de beleids naam in CA als u de beleids naam later hebt bijgewerkt, dat wil zeggen, na het aanmelden.
+**A:** De naam van het beleid in het rapport alle aanmeldingen is gebaseerd op de naam van het beleid voor voorwaardelijke toegang op het moment van de aanmelding. Dit kan inconsistent zijn met de beleids naam in CA als u de beleids naam later hebt bijgewerkt, dat wil zeggen, na het aanmelden.
 
 **V: mijn aanmelding is geblokkeerd vanwege een beleid voor voorwaardelijke toegang, maar in het rapport voor de aanmeldings activiteit is aangegeven dat de aanmelding is geslaagd. Waarom?**
 

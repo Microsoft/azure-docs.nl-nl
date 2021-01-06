@@ -3,15 +3,15 @@ title: Server beheren-Azure CLI-Azure Database for PostgreSQL
 description: Meer informatie over het beheren van een Azure Database for PostgreSQL-server vanuit de Azure CLI.
 author: ajlam
 ms.author: andrela
-ms.service: mysql
+ms.service: postgresql
 ms.topic: how-to
 ms.date: 9/22/2020
-ms.openlocfilehash: d99634388b9c4db99c996cfccb9bb5f12682f217
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 2ea07e2bc12e6fc0d62abd462b8537c6a93689f9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490115"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935798"
 ---
 # <a name="manage-an-azure-database-for-postgresql-single-server-using-the-azure-cli"></a>Een Azure Database for PostgreSQL één server beheren met de Azure CLI
 
@@ -39,7 +39,7 @@ Als u nog geen server hebt gemaakt, raadpleegt u deze [Snelstartgids](quickstart
 
 ## <a name="scale-compute-and-storage"></a>Schaal berekening en opslag
 
-Met de volgende opdracht kunt u de prijs categorie eenvoudig opschalen, berekenen en opslaan. U kunt alle server bewerkingen zien die u kunt uitvoeren [AZ post gres server Overview](/cli/azure/mysql/server) (Engelstalig)
+U kunt de prijs categorie, de reken capaciteit en de opslag eenvoudig omhoog schalen met de volgende opdracht. U kunt alle server bewerkingen zien die u kunt uitvoeren [AZ post gres server Overview](/cli/azure/mysql/server) (Engelstalig)
 
 ```azurecli-interactive
 az postgres server update --resource-group myresourcegroup --name mydemoserver --sku-name GP_Gen5_4 --storage-size 6144
@@ -60,7 +60,7 @@ storage-size | 6144 | De opslagcapaciteit van de server (eenheid is MB). Mini ma
 
 
 ## <a name="manage-postgresql-databases-on-a-server"></a>PostgreSQL-data bases op een server beheren.
-U kunt elk van deze opdrachten gebruiken om data base-eigenschappen van een Data Base op uw server te maken, te verwijderen, weer te geven.
+U kunt elk van deze opdrachten gebruiken om data base-eigenschappen van een Data Base op uw server te maken, te verwijderen, weer te geven en te bekijken
 
 | Cmdlet | Gebruik| Beschrijving |
 | --- | ---| --- |

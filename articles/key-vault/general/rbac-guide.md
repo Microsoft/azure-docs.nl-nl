@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: be2fa0fa85da7c0f02567580c50968b7418e4cde
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f7a0190d664e3330d2a6205014c00c61c1183dd3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445180"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936240"
 ---
 # <a name="provide-access-to-key-vault-keys-certificates-and-secrets-with-an-azure-role-based-access-control-preview"></a>Toegang tot Key Vault sleutels, certificaten en geheimen bieden met behulp van een toegangs beheer op basis van rollen (preview) van Azure
 
@@ -41,7 +41,7 @@ Afzonderlijke sleutels, geheimen en machtigingen voor certificaten moeten alleen
 
 Meer informatie over de richt lijnen voor Azure Key Vault beheer vindt u in:
 
-- [Best practices voor Azure Key Vault](best-practices.md)
+- [Overzicht van Azure Key Vault beveiliging](security-overview.md)
 - [Azure Key Vault-service limieten](service-limits.md)
 
 ## <a name="azure-built-in-roles-for-key-vault-data-plane-operations-preview"></a>Ingebouwde rollen van Azure voor Key Vault gegevenslaag bewerkingen (preview-versie)

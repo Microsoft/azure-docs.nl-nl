@@ -1,14 +1,14 @@
 ---
 title: Toegangs regels voor Firewall
-description: Configureer regels voor toegang tot een Azure container Registry van achter een firewall, door toegang toe te staan (' white list ') REST API en domein namen van gegevens eindpunten of servicespecifieke IP-adresbereiken.
+description: Configureer regels voor toegang tot een Azure container Registry van achter een firewall, door toegang toe te staan tot REST API en gegevens eindpunt domein namen of servicespecifieke IP-adresbereiken.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: b9ecd5f802176cdc6881294f5dedefd3dd467244
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 548d64632c1d726111770dfb49f705d31f5ca714
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148512"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935985"
 ---
 # <a name="configure-rules-to-access-an-azure-container-registry-behind-a-firewall"></a>Regels configureren voor toegang tot een Azure container Registry achter een firewall
 
@@ -131,7 +131,7 @@ U kunt speciale gegevens eindpunten inschakelen met behulp van de Azure Portal o
 Gegevens eindpunten inschakelen met behulp van de portal:
 
 1. Navigeer naar het container register.
-1. Selecteer **Networking**  >  **open bare netwerk toegang**.
+1. Selecteer   >  **open bare netwerk toegang**.
 1. Schakel het selectie vakje **toegewezen gegevens eindpunt inschakelen in** .
 1. Selecteer **Opslaan**.
 

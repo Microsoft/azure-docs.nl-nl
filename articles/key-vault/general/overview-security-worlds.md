@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 07/03/2017
-ms.openlocfilehash: 3584f83c5e1a5e83d069373395227b70c084eae9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d21deea13aac3d40c452a183c340d3108a1a01f4
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81428951"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936325"
 ---
 # <a name="azure-key-vault-security-worlds-and-geographic-boundaries"></a>Azure Key Vault beveiligings werelden en geografische grenzen
 
@@ -43,6 +43,3 @@ In het artikel producten per regio, **bijvoorbeeld het tabblad** VS-Oost, centra
 >Een uitzonde ring hierop is dat US DOD-Oost en US DOD CENTRAL hun eigen beveiligings werelden hebben. 
 
 Op het tabblad **Europa** , Noord-Europa en West-Europa, wordt ook toegewezen aan de regio Europa. Hetzelfde geldt ook op het tabblad **Azië en Stille Oceaan** .
-
-
-

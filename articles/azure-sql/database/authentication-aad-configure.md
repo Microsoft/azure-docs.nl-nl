@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: 5558480f568e802637deb30c9f1b41c00826c9b5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2c7db937905baed94c6fe81adeb44c8b3f5be52b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454492"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936070"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Azure AD-verificatie configureren en beheren met Azure SQL
 
@@ -214,7 +214,7 @@ Met de volgende opdracht wordt de Azure AD-beheerder voor het SQL Managed instan
 Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstanceName01" -Confirm -PassThru
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt ook een Azure AD-beheerder inrichten voor het beheerde exemplaar van SQL door de volgende CLI-opdrachten aan te roepen:
 
@@ -320,7 +320,7 @@ In het volgende voor beeld wordt een Azure AD-beheerder verwijderd:
 Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt een Azure AD-beheerder inrichten door de volgende CLI-opdrachten aan te roepen:
 
@@ -395,7 +395,7 @@ CREATE USER [appName] FROM EXTERNAL PROVIDER;
 ```
 
 > [!NOTE]
-> Voor deze opdracht is vereist dat SQL-toegang tot Azure AD (de externe provider) namens de aangemelde gebruiker is. Soms ontstaan er omstandigheden die ertoe leiden dat Azure AD een uitzonde ring terugstuurt naar SQL. In deze gevallen ziet de gebruiker SQL-fout 33134, die het specifieke Azure AD-fout bericht moet bevatten. In de meeste gevallen geeft de fout aan dat de toegang wordt geweigerd of dat de gebruiker zich moet inschrijven in MFA om toegang te krijgen tot de resource, of dat toegang tussen toepassingen van de eerste partij moet worden afgehandeld via pre-autorisatie. In de eerste twee gevallen wordt het probleem meestal veroorzaakt door het beleid voor voorwaardelijke toegang dat is ingesteld in de Azure AD-Tenant van de gebruiker: Hiermee wordt voor komen dat de gebruiker toegang heeft tot de externe provider. Het bijwerken van het CA-beleid om toegang tot de toepassing ' 00000002-0000-0000-C000-000000000000 te gebruiken ' toe te staan (de toepassings-ID van de Azure AD-Graph API) moet het probleem oplossen. In het geval dat de fout toegang geeft tussen toepassingen van de eerste partij, moet worden verwerkt via pre-autorisatie. het probleem is dat de gebruiker is aangemeld als service-principal. De opdracht moet slagen als deze door een gebruiker wordt uitgevoerd.
+> Voor deze opdracht is vereist dat SQL-toegang tot Azure AD (de externe provider) namens de aangemelde gebruiker is. Soms ontstaan er omstandigheden die ertoe leiden dat Azure AD een uitzonde ring terugstuurt naar SQL. In deze gevallen ziet de gebruiker SQL-fout 33134, die het specifieke Azure AD-fout bericht moet bevatten. In de meeste gevallen geeft de fout aan dat de toegang wordt geweigerd of dat de gebruiker zich moet inschrijven in MFA om toegang te krijgen tot de resource, of dat toegang tussen toepassingen van de eerste partij moet worden afgehandeld via pre-autorisatie. In de eerste twee gevallen wordt het probleem meestal veroorzaakt door het beleid voor voorwaardelijke toegang dat is ingesteld in de Azure AD-Tenant van de gebruiker: Hiermee wordt voor komen dat de gebruiker toegang heeft tot de externe provider. Het bijwerken van het beleid voor voorwaardelijke toegang om toegang tot de toepassing ' 00000002-0000-0000-C000-000000000000 te gebruiken ' toe te staan (de toepassings-ID van de Azure AD-Graph API) moet het probleem oplossen. In het geval dat de fout toegang geeft tussen toepassingen van de eerste partij, moet worden verwerkt via pre-autorisatie. het probleem is dat de gebruiker is aangemeld als service-principal. De opdracht moet slagen als deze door een gebruiker wordt uitgevoerd.
 
 > [!TIP]
 > U kunt een gebruiker niet rechtstreeks maken op basis van een andere Azure Active Directory dan de Azure Active Directory die aan uw Azure-abonnement is gekoppeld. Leden van andere Active Directory-gebruikers die zijn geïmporteerd in de gekoppelde Active Directory (ook wel externe gebruikers genoemd) kunnen wel worden toegevoegd aan een Active Directory groep in de Tenant Active Directory. Door een Inge sloten database gebruiker te maken voor die AD-groep, kunnen de gebruikers van de externe Active Directory toegang krijgen tot SQL Database.

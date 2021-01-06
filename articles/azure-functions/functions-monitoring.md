@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.custom: devx-track-csharp, fasttrack-edit, contperf-fy21q2, devx-track-js
-ms.openlocfilehash: 7dbaa8712e09de9084e2bcb66d43f2181af292a0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 6dc3c582466fe0646b0350213947ff2173368bde
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033031"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936835"
 ---
 # <a name="monitor-azure-functions"></a>Azure Functions controleren
 
@@ -113,7 +113,7 @@ Omdat functies ook kunnen worden geïntegreerd met Azure Monitor, kunt u ook dia
 
 _Deze functie is beschikbaar als preview-versie._ 
 
-De [Azure functions Scale-controller](./functions-scale.md#runtime-scaling) controleert exemplaren van de Azure functions host waarop uw app wordt uitgevoerd. Deze controller maakt beslissingen over het toevoegen of verwijderen van exemplaren op basis van de huidige prestaties. U kunt de schaal controller logboeken naar Application Insights verzenden om beter inzicht te krijgen in de beslissingen die de schaal controller voor uw functie-app maakt. U kunt de gegenereerde logboeken ook opslaan in Blob Storage voor analyse door een andere service. 
+De [Azure functions Scale-controller](./event-driven-scaling.md#runtime-scaling) controleert exemplaren van de Azure functions host waarop uw app wordt uitgevoerd. Deze controller maakt beslissingen over het toevoegen of verwijderen van exemplaren op basis van de huidige prestaties. U kunt de schaal controller logboeken naar Application Insights verzenden om beter inzicht te krijgen in de beslissingen die de schaal controller voor uw functie-app maakt. U kunt de gegenereerde logboeken ook opslaan in Blob Storage voor analyse door een andere service. 
 
 Als u deze functie wilt inschakelen, voegt u een toepassings instelling toe `SCALE_CONTROLLER_LOGGING_ENABLED` met de naam van de instellingen van de functie-app. Zie [Logboeken voor schaal controller configureren](configure-monitoring.md#configure-scale-controller-logs)voor meer informatie.
 

@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen en testen van Azure Functions 
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 08/21/2019
-ms.openlocfilehash: 573177615ff898326eb29649a7f766b5df34b587
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 33adcb853099778c4b06a9cd428f480f6138ee8b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168425"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936971"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Azure Functions ontwikkelen met Visual Studio Code
 
@@ -255,7 +255,7 @@ Met de volgende stappen publiceert u uw project naar een nieuwe functie-app die 
     | ------ | ----- | ----------- |
     | Functie-app in azure selecteren | Nieuwe functie-app in azure maken | Typ bij de volgende prompt een wereld wijd unieke naam die uw nieuwe functie-app identificeert en selecteer vervolgens ENTER. Geldige tekens voor de naam van en functie-app zijn `a-z`, `0-9` en `-`. |
     | Selecteer een besturings systeem | Windows | De functie-app wordt uitgevoerd in Windows. |
-    | Een hosting abonnement selecteren | Verbruiksabonnement | Er wordt een host gebruikt voor het gebruik van een serverloos [verbruiks abonnement](functions-scale.md#consumption-plan) . |
+    | Een hosting abonnement selecteren | Verbruiksabonnement | Er wordt een host gebruikt voor het gebruik van een serverloos [verbruiks abonnement](consumption-plan.md) . |
     | Selecteer een runtime voor uw nieuwe app | Uw project taal | De runtime moet overeenkomen met het project dat u wilt publiceren. |
     | Een resource groep selecteren voor nieuwe resources | Nieuwe resource groep maken | Typ bij de volgende prompt een naam voor de resource groep, zoals `myResourceGroup` , en selecteer vervolgens ENTER. U kunt ook een bestaande resource groep selecteren. |
     | Selecteer een opslagaccount | Nieuw opslagaccount maken | Typ bij de volgende prompt een wereld wijd unieke naam voor het nieuwe opslag account dat wordt gebruikt door de functie-app en selecteer vervolgens ENTER. Namen van opslag accounts moeten tussen de 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten. U kunt ook een bestaand account selecteren. |
@@ -396,9 +396,9 @@ Zie [Azure functions bewaken](functions-monitoring.md)voor meer informatie over 
 
 Standaard worden alle C#-projecten gemaakt als door [C# gecompileerde klassen bibliotheek projecten](functions-dotnet-class-library.md). Als u liever met C#-script projecten wilt werken, moet u C#-script als de standaard taal selecteren in de Azure Functions extensie-instellingen:
 
-1. Selecteer **File**  >  **instellingen voor bestands voorkeuren**  >  **Settings**.
+1. Selecteer   >  **instellingen voor bestands voorkeuren**  >  .
 
-1. Ga naar extensies voor **gebruikers instellingen**  >  **Extensions**  >  **Azure functions**.
+1. Ga naar extensies voor **gebruikers instellingen**  >    >  **Azure functions**.
 
 1. **C #-script** uit **Azure function selecteren: project taal**.
 
@@ -408,7 +408,7 @@ Nadat u deze stappen hebt voltooid, bevatten de aanroepen van de onderliggende k
 
 De uitbrei ding Azure Functions biedt een handige grafische interface in het gebied voor interactie met uw functie-apps in Azure. Dezelfde functionaliteit is ook beschikbaar als opdrachten in het opdracht palet (F1). Deze Azure Functions-opdrachten zijn beschikbaar:
 
-|Azure Functions opdracht  | Description  |
+|Azure Functions opdracht  | Beschrijving  |
 |---------|---------|
 |**Nieuwe instellingen toevoegen**  |  Hiermee maakt u een nieuwe toepassings instelling in Azure. Zie [Toepassings instellingen publiceren](#publish-application-settings)voor meer informatie. Mogelijk moet u [deze instelling ook downloaden naar de lokale instellingen](#download-settings-from-azure). |
 | **Implementatie bron configureren** | Verbindt uw functie-app in azure met een lokale Git-opslag plaats. Zie [continue implementatie voor Azure functions voor](functions-continuous-deployment.md)meer informatie. |

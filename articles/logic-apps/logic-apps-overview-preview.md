@@ -1,17 +1,17 @@
 ---
-title: Overzicht van Azure Logic Apps Preview
+title: Overzicht voor Azure Logic Apps-preview
 description: Azure Logic Apps Preview is een Cloud oplossing voor het bouwen van geautomatiseerde stateful en stateless werk stromen die apps, gegevens, services en systemen integreren met minimale code voor scenario's op ondernemings niveau.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 0c4d0416c107c9ceb4cd0dbdf80761ab9b52d56c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 7c15b3a854b533d93bc05f7e5302671711da75c2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96924287"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936121"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -148,7 +148,7 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 
 Wanneer u het type nieuwe logische app maakt in de Azure Portal of implementeren vanuit Visual Studio code, moet u kiezen voor een hosting abonnement, ofwel [app service of Premium](../azure-functions/functions-scale.md), voor uw logische app. Dit abonnement bepaalt het prijs model dat van toepassing is op het uitvoeren van uw logische app. Als u het App Service plan selecteert, moet u ook een [prijs categorie](../app-service/overview-hosting-plans.md)kiezen.
 
-*Stateful* werk stromen gebruiken [externe opslag](../azure-functions/functions-scale.md#storage-account-requirements), zodat de [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) van toepassing zijn op opslag transacties die de Azure Logic Apps Preview-runtime uitvoert. Wacht rijen worden bijvoorbeeld gebruikt voor de planning, terwijl tabellen en blobs worden gebruikt voor het opslaan van werk stroom statussen.
+*Stateful* werk stromen gebruiken [externe opslag](../azure-functions/storage-considerations.md#storage-account-requirements), zodat de [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) van toepassing zijn op opslag transacties die de Azure Logic Apps Preview-runtime uitvoert. Wacht rijen worden bijvoorbeeld gebruikt voor de planning, terwijl tabellen en blobs worden gebruikt voor het opslaan van werk stroom statussen.
 
 > [!NOTE]
 > Tijdens de open bare preview worden met Logic apps op App Service geen *extra* kosten boven op het geselecteerde abonnement gemaakt.

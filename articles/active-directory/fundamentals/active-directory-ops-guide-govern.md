@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: d4df373f78a9c74584d0e4046f7532a2190f3a3f
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ba3ca140abe36a31ffa03422420ea537bbe4f39a
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370964"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935747"
 ---
 # <a name="azure-active-directory-governance-operations-reference-guide"></a>Naslag Gids voor Azure Active Directory governance-bewerkingen
 
@@ -59,7 +59,7 @@ Er zijn wijzigingen die speciale overwegingen vereisen tijdens het testen, van e
 | Scenario| Aanbeveling |
 |-|-|
 |Wijzig het verificatie type van federatieve naar PHS/PTA of vice versa| Gebruik [gefaseerde implementatie](../hybrid/how-to-connect-staged-rollout.md) om de impact van het wijzigen van het verificatie type te testen.|
-|Een nieuw beleid voor voorwaardelijke toegang (CA) of beleid voor identiteits beveiliging implementeren|Maak een nieuw CA-beleid en wijs dit toe aan gebruikers testen.|
+|Een nieuw beleid voor voorwaardelijke toegang (CA) of beleid voor identiteits beveiliging implementeren|Een nieuw beleid voor voorwaardelijke toegang maken en toewijzen aan gebruikers testen.|
 |Een test omgeving van een toepassing onboarden|Voeg de toepassing toe aan een productie omgeving, verberg deze in het deel venster MyApps en wijs deze toe aan test gebruikers tijdens de Quality Assurance (QA)-fase.|
 |Wijzigen van synchronisatie regels|Voer de wijzigingen in een test Azure AD Connect uit met dezelfde configuratie die momenteel in productie is, ook wel de faserings modus genoemd, en analyseer CSExport-resultaten. Als u tevreden bent, kunt u overgaan naar productie wanneer u klaar bent.|
 |Huis stijl wijzigen|Test in een afzonderlijke test Tenant.|

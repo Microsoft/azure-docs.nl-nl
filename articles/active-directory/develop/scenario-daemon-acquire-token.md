@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c13b6ed991403e65c4c4d71c964f1f7f4d1ffe7b
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 9416005c708cafe5adbad2b09ce70c41fae66fd7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443310"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936019"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Daemon-app die web-Api's aanroept-een Token ophalen
 
@@ -57,7 +57,7 @@ Het bereik dat wordt gebruikt voor client referenties moet altijd de resource-ID
 
 > [!IMPORTANT]
 > Wanneer MSAL een toegangs token aanvraagt voor een resource die een versie 1,0-toegangs token accepteert, parseert Azure AD de gewenste doel groep uit het aangevraagde bereik door alles vóór de laatste slash te nemen en deze als resource-id te gebruiken.
-> Als, als Azure SQL Database ( **https: \/ /database.Windows.net** ), de resource verwacht dat een doel groep eindigt met een slash (voor Azure SQL database `https://database.windows.net/` ), moet u een bereik van aanvragen `https://database.windows.net//.default` . (Let op de dubbele slash.) Zie ook MSAL.NET issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+> Als, als Azure SQL Database (**https: \/ /database.Windows.net**), de resource verwacht dat een doel groep eindigt met een slash (voor Azure SQL database `https://database.windows.net/` ), moet u een bereik van aanvragen `https://database.windows.net//.default` . (Let op de dubbele slash.) Zie ook MSAL.NET issue [#747: de afsluitende slash van de resource-URL wordt wegge laten, wat een SQL-verificatie fout heeft veroorzaakt](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="acquiretokenforclient-api"></a>AcquireTokenForClient-API
 
@@ -91,6 +91,10 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
     // Mitigation: Change the scope to be as expected.
 }
 ```
+
+### <a name="acquiretokenforclient-uses-the-application-token-cache"></a>AcquireTokenForClient maakt gebruik van de toepassings token cache
+
+In MSAL.NET `AcquireTokenForClient` wordt de toepassings token cache gebruikt. (Alle andere AcquireToken *xx* -methoden gebruiken de token cache van de gebruiker.) Roep niet `AcquireTokenSilent` aan voordat u belt `AcquireTokenForClient` , omdat `AcquireTokenSilent` de cache van de *gebruikers* token wordt gebruikt. `AcquireTokenForClient` Hiermee wordt de cache van het *toepassings* token zelf gecontroleerd en bijgewerkt.
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -200,10 +204,6 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 Zie de documentatie over het [micro soft-identiteits platform en de OAuth 2,0-client referenties stroom](v2-oauth2-client-creds-grant-flow.md)voor meer informatie.
 
-## <a name="application-token-cache"></a>Toepassings token cache
-
-In MSAL.NET `AcquireTokenForClient` wordt de toepassings token cache gebruikt. (Alle andere AcquireToken *xx* -methoden gebruiken de token cache van de gebruiker.) Roep niet `AcquireTokenSilent` aan voordat u belt `AcquireTokenForClient` , omdat `AcquireTokenSilent` de cache van de *gebruikers* token wordt gebruikt. `AcquireTokenForClient` Hiermee wordt de cache van het *toepassings* token zelf gecontroleerd en bijgewerkt.
-
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Hebt u het resource/.-standaard bereik gebruikt?
@@ -228,6 +228,12 @@ Content: {
   }
 }
 ```
+
+### <a name="are-you-calling-your-own-api"></a>Roept u uw eigen API aan?
+
+Als u uw eigen web-API aanroept en geen app-machtiging kunt toevoegen aan de app-registratie voor uw daemon-app, hebt u een app-rol beschikbaar in uw web-API?
+
+Zie voor meer informatie [toepassings machtigingen (app-rollen)](scenario-protected-web-api-app-registration.md#exposing-application-permissions-app-roles) weer geven en, in het bijzonder, [ervoor te zorgen dat Azure AD tokens voor uw web-API alleen aan toegestane clients geeft](scenario-protected-web-api-app-registration.md#ensuring-that-azure-ad-issues-tokens-for-your-web-api-to-only-allowed-clients).
 
 ## <a name="next-steps"></a>Volgende stappen
 

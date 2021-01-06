@@ -3,12 +3,12 @@ title: Azure Backup woordenlijst
 description: In dit artikel worden de termen gedefinieerd die nuttig zijn voor gebruik met Azure Backup.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 8baa47667e86b99ebbbf273610809814e768c077
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 1e28f0c2ad5d14ea2a8dc6ce8d5fa2b21c7e65ac
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733382"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935067"
 ---
 # <a name="azure-backup-glossary"></a>Azure Backup woordenlijst
 
@@ -172,7 +172,7 @@ Incrementele back-ups slaan alleen de blokken op die zijn gewijzigd sinds de vor
 
 ## <a name="instant-restore"></a>Direct terugzetten
 
-Bij direct terugzetten moet u een computer rechtstreeks herstellen vanuit de back-upmomentopname in plaats van de kopie van de moment opname in de kluis. Onmiddellijke herstel bewerkingen zijn sneller dan het terugzetten vanuit een kluis. Het aantal direct herstel punten dat beschikbaar is, is afhankelijk van de retentie duur die voor moment opnamen is geconfigureerd.
+(Specifieke werkbelasting voorwaarde) Bij direct terugzetten moet u een computer rechtstreeks herstellen vanuit de back-upmomentopname in plaats van de kopie van de moment opname in de kluis. Onmiddellijke herstel bewerkingen zijn sneller dan het terugzetten vanuit een kluis. Het aantal direct herstel punten dat beschikbaar is, is afhankelijk van de retentie duur die voor moment opnamen is geconfigureerd. Momenteel alleen van toepassing op back-ups van Azure VM.
 
 ## <a name="iops"></a>IOPS
 
@@ -226,23 +226,19 @@ Een herstel bewerking die vanaf het herstel punt is uitgevoerd naar de bron loca
 
 Een wachtwoordzin wordt gebruikt voor het versleutelen en ontsleutelen van gegevens tijdens het maken van een back-up of het herstellen van uw on-premises of lokale computer met de MARS-agent naar of van Azure.
 
-## <a name="point-in-time-restore"></a>Herstel naar een bepaald tijdstip
-
-Een item herstellen naar de status van een bepaald tijdstip (PIT).
-
 ## <a name="private-endpoint"></a>Privé-eindpunt
 
 Raadpleeg de [documentatie over het persoonlijke eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
 
 ## <a name="protected-instance"></a>Beveiligd exemplaar
 
-Een beveiligd exemplaar verwijst naar de computer, fysieke of virtuele server die u gebruikt voor het configureren van de back-up naar Azure.  Vanuit het **oogpunt van facturering** is het aantal beveiligde instanties voor een machine een functie van de frontend-grootte. [Meer informatie](https://azure.microsoft.com/pricing/details/backup/).
+Een beveiligd exemplaar verwijst naar de computer, fysieke of virtuele server die u gebruikt voor het configureren van de back-up naar Azure.  Vanuit het **oogpunt van facturering** is het aantal beveiligde instanties voor een machine een functie van de frontend-grootte. Daarom kan een enkel back-upexemplaar (zoals een back-up van een VM in Azure) overeenkomen met meerdere beveiligde instanties, afhankelijk van de frontend-grootte. [Meer informatie](https://azure.microsoft.com/pricing/details/backup/).
 
 ## <a name="rbac-role-based-access-control"></a>RBAC (toegangs beheer op basis van rollen)
 
 Raadpleeg de [RBAC-documentatie](https://docs.microsoft.com/azure/role-based-access-control/overview).
 
-## <a name="recovery-point-restore-point-retention-point"></a>Herstel punt/herstel punt/bewaar punt
+## <a name="recovery-point-restore-point-retention-point--point-in-time-pit"></a>Herstel punt/herstel punt/bewaar punt/punt in tijd (PIT)
 
 Een kopie van de oorspronkelijke gegevens waarvan een back-up wordt gemaakt. Een bewaar punt is gekoppeld aan een tijds tempel zodat u dit kunt gebruiken om een item te herstellen naar een bepaald punt in de tijd.
 
@@ -264,11 +260,11 @@ Een door de gebruiker gedefinieerde regel die aangeeft hoe lang back-ups moeten 
 
 ## <a name="rpo-recovery-point-objective"></a>RPO (beoogd herstel punt)
 
-RPO geeft het maximale gegevens verlies aan dat is toegestaan in een scenario met een gegevens verlies. Dit wordt bepaald door de back-upfrequentie.
+RPO geeft het maximale gegevens verlies aan dat mogelijk is in een scenario met gegevens verlies. Dit wordt bepaald door de back-upfrequentie.
 
 ## <a name="rto-recovery-time-objective"></a>RTO (beoogde herstel tijd)
 
-RTO geeft de Maxi maal toegestane tijd aan waarin gegevens kunnen worden teruggezet naar het laatst beschik bare tijdstip na een scenario voor gegevens verlies.
+RTO geeft de maximale mogelijke tijd weer waarmee gegevens kunnen worden hersteld naar het laatst beschik bare tijdstip na een scenario voor gegevens verlies.
 
 ## <a name="scheduled-backup"></a>Geplande back-up
 
@@ -284,7 +280,7 @@ Zacht verwijderen is een functie die bescherming biedt tegen onbedoeld verwijder
 
 ## <a name="snapshot"></a>Momentopname
 
-Een moment opname is een volledige, alleen-lezen kopie van een virtuele harde schijf (VHD). [Meer informatie](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk).
+Een moment opname is een volledige, alleen-lezen kopie van een virtuele harde schijf (VHD) of een Azure-bestands share. Meer informatie over [moment opnamen van schijven](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk) en [moment opnamen van bestanden](https://docs.microsoft.com/azure/storage/files/storage-snapshots-files).
 
 ## <a name="storage-account"></a>Storage-account
 
@@ -314,7 +310,7 @@ Een opslag entiteit in azure waarmee back-upgegevens worden opgeslagen. Het is o
 
 ## <a name="vault-credentials"></a>Kluis referenties
 
-Het kluis referentie bestand is een certificaat dat is gegenereerd door de portal voor elke kluis. Dit wordt gebruikt bij het registreren van een server bij de kluis. [Meer informatie](backup-azure-dpm-introduction.md).
+Het kluis referentie bestand is een certificaat dat is gegenereerd door de portal voor elke kluis. Dit wordt gebruikt bij het registreren van een on-premises server bij de kluis. [Meer informatie](backup-azure-dpm-introduction.md).
 
 ## <a name="vnet-virtual-network"></a>VNET (Virtual Network)
 

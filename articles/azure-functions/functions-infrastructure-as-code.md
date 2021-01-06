@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 708478f50078276245a7dfab7d185dd50d597407
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: f9c11c0671db882edd9a72bca8d11c7326edee43
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589794"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936886"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>De implementatie van resources voor uw functie-app in Azure Functions automatiseren
 
@@ -175,7 +175,7 @@ Deze eigenschappen zijn opgegeven in de `appSettings` verzameling in de `siteCon
 
 ## <a name="deploy-on-consumption-plan"></a>Implementeren in verbruiks abonnement
 
-Het verbruiks plan wijst automatisch reken kracht toe wanneer uw code wordt uitgevoerd, wordt zo nodig geschaald om de belasting te verwerken en vervolgens wordt geschaald wanneer code niet wordt uitgevoerd. U hoeft niet te betalen voor niet-actieve Vm's en u hoeft de capaciteit niet vooraf te reserveren. Zie [Azure functions schalen en hosten](functions-scale.md#consumption-plan)voor meer informatie.
+Het verbruiks plan wijst automatisch reken kracht toe wanneer uw code wordt uitgevoerd, wordt zo nodig geschaald om de belasting te verwerken en vervolgens wordt geschaald wanneer code niet wordt uitgevoerd. U hoeft niet te betalen voor niet-actieve Vm's en u hoeft de capaciteit niet vooraf te reserveren. Zie [Azure functions schalen en hosten](consumption-plan.md)voor meer informatie.
 
 Zie [functie-app voor verbruiks abonnement]voor een voor beeld-Azure Resource Manager sjabloon.
 
@@ -646,7 +646,7 @@ U kunt een van de volgende manieren gebruiken om uw sjabloon te implementeren:
 
 * [PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
 * [Azure-CLI](../azure-resource-manager/templates/deploy-cli.md)
-* [Azure-portal](../azure-resource-manager/templates/deploy-portal.md)
+* [Azure Portal](../azure-resource-manager/templates/deploy-portal.md)
 * [REST API](../azure-resource-manager/templates/deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>De knop Implementeren in Azure

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: ca5f237585f74225a04091b5694dbfad12864332
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 555709776c88dd3003e400bbcefe2ec1cfa0f4af
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656033"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934166"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Taal analyse functies toevoegen aan teken reeks velden in een Azure Cognitive Search-index
 
@@ -68,9 +68,9 @@ Zie [Create index &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchser
 ## <a name="language-analyzer-list"></a>Language Analyzer-lijst 
  Hieronder ziet u de lijst met ondersteunde talen in combi natie met de namen van Lucene en micro soft Analyzer.  
 
-| Taal | Naam van micro soft Analyzer | Naam van Lucene Analyzer |  |
-|--|--|--|--|
-| Arabisch | AR. micro soft | AR. lucene |  |
+| Taal | Naam van micro soft Analyzer | Naam van Lucene Analyzer |
+|--|--|--|
+| Arabisch | AR. micro soft | AR. lucene |
 | Armeens |  | HY. lucene |  |
 | Bengaals | bn. micro soft |  |  |
 | Baskisch |  | EU. lucene |  |

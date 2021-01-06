@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van Azure Functions met C#.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: 9e11d013b6e7473f290ba1ccb54857034491d116
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 77ae736c787666df5e78358bc78e06eee9b7d4f9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672662"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936920"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Naslaginformatie over Azure Functions C# voor ontwikkelaars
 
@@ -138,7 +138,7 @@ public static class BindingExpressionsExample
 
 Met het bouw proces maakt u een *function.jsvoor* een bestand in een functie map in de map build. Zoals eerder is vermeld, is dit bestand niet bedoeld om rechtstreeks te worden bewerkt. U kunt de bindings configuratie niet wijzigen of de functie uitschakelen door dit bestand te bewerken. 
 
-Het doel van dit bestand is om informatie aan de schaal controller te verstrekken die moet worden gebruikt voor [het schalen van beslissingen over het verbruiks abonnement](functions-scale.md#how-the-consumption-and-premium-plans-work). Daarom heeft het bestand alleen trigger gegevens, geen invoer-of uitvoer bindingen.
+Het doel van dit bestand is om informatie aan de schaal controller te verstrekken die moet worden gebruikt voor [het schalen van beslissingen over het verbruiks abonnement](event-driven-scaling.md). Daarom heeft het bestand alleen trigger gegevens, geen invoer-of uitvoer bindingen.
 
 De gegenereerde *function.jsvoor* het bestand bevat een `configurationSource` eigenschap die aangeeft dat de runtime .net-kenmerken voor bindingen moet gebruiken in plaats van *function.jsop* configuratie. Hier volgt een voorbeeld:
 
@@ -208,7 +208,7 @@ Als u de basis Hulpprogramma's installeert met behulp van NPM, is dit niet van i
 
 ## <a name="readytorun"></a>ReadyToRun
 
-U kunt de functie-app compileren als [binaire ReadyToRun](/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images). ReadyToRun is een vorm van een vooraf te compileren compilatie waarmee de opstart prestaties kunnen worden verbeterd om de impact van [koude-start](functions-scale.md#cold-start) bij het uitvoeren van een [verbruiks abonnement](functions-scale.md#consumption-plan)te verminderen.
+U kunt de functie-app compileren als [binaire ReadyToRun](/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images). ReadyToRun is een vorm van een vooraf te compileren compilatie waarmee de opstart prestaties kunnen worden verbeterd om de impact van [koude-start](event-driven-scaling.md#cold-start) bij het uitvoeren van een [verbruiks abonnement](consumption-plan.md)te verminderen.
 
 ReadyToRun is beschikbaar in .NET 3,0 en vereist [versie 3,0 van de Azure functions runtime](functions-versions.md).
 

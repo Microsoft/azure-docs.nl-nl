@@ -3,12 +3,12 @@ title: Azure Functions integreren met een virtueel Azure-netwerk
 description: Een stapsgewijze zelf studie waarin wordt uitgelegd hoe u een functie verbindt met een virtueel Azure-netwerk
 ms.topic: article
 ms.date: 4/23/2020
-ms.openlocfilehash: f50c923104fdfcf26f400f20f0de66a82eb3d245
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efc936111d162d73b1cc5465ae6b677c9006ab32
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87387520"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937010"
 ---
 # <a name="tutorial-integrate-functions-with-an-azure-virtual-network"></a>Zelfstudie: Azure Functions integreren met een virtueel Azure-netwerk
 
@@ -62,7 +62,7 @@ Maak vervolgens een vooraf geconfigureerde virtuele machine die WordPress in een
     | **Naam van virtuele machine** | VNET-Wordpress | De VM-naam moet uniek zijn in de resourcegroep |
     | **[Regio](https://azure.microsoft.com/regions/)** | Europa Europa - west | Kies een regio bij u in de buurt of in de buurt van de functies die toegang hebben tot de virtuele machine. |
     | **Grootte** | B1s | Kies **grootte wijzigen** en selecteer vervolgens de B1s standaard installatie kopie met 1 vCPU en 1 GB aan geheugen. |
-    | **Verificatietype** | Wachtwoord | Als u wachtwoord verificatie wilt gebruiken, moet u ook een **gebruikers naam**, een veilig **wacht woord**opgeven en vervolgens het **wacht woord bevestigen**. Voor deze zelf studie hoeft u zich niet aan te melden bij de VM, tenzij u problemen moet oplossen. |
+    | **Verificatietype** | Wachtwoord | Als u wachtwoord verificatie wilt gebruiken, moet u ook een **gebruikers naam**, een veilig **wacht woord** opgeven en vervolgens het **wacht woord bevestigen**. Voor deze zelf studie hoeft u zich niet aan te melden bij de VM, tenzij u problemen moet oplossen. |
 
 1. Kies het tabblad **netwerken** en selecteer onder virtuele netwerken configureren de optie **nieuwe maken**.
 
@@ -81,13 +81,13 @@ Maak vervolgens een vooraf geconfigureerde virtuele machine die WordPress in een
 
 1. Klik op het tabblad **netwerken** op **geen** voor het **open bare IP-adres**.
 
-1. Kies het tabblad **beheer** en kies vervolgens in het **opslag account voor diagnostische gegevens**het opslag account dat u hebt gemaakt met uw functie-app.
+1. Kies het tabblad **beheer** en kies vervolgens in het **opslag account voor diagnostische gegevens** het opslag account dat u hebt gemaakt met uw functie-app.
 
 1. Selecteer **Controleren + maken**. Nadat de validatie is voltooid, selecteert u **Maken**. Het proces voor het maken van de virtuele machine duurt een paar minuten. De gemaakte VM heeft alleen toegang tot het virtuele netwerk.
 
 1. Nadat de VM is gemaakt, kiest u **naar resource gaan** om de pagina voor de nieuwe virtuele machine weer te geven. Kies vervolgens **netwerken** onder **instellingen**.
 
-1. Controleer of er geen **openbaar IP-adres**is. Noteer het **privé-IP-adres**dat u gebruikt om verbinding te maken met de virtuele machine vanuit uw functie-app.
+1. Controleer of er geen **openbaar IP-adres** is. Noteer het **privé-IP-adres** dat u gebruikt om verbinding te maken met de virtuele machine vanuit uw functie-app.
 
     ![Netwerk instellingen in de VM](./media/functions-create-vnet/vm-networking.png)
 
@@ -99,15 +99,15 @@ Met een WordPress-site die wordt uitgevoerd op een virtuele machine in een virtu
 
 1. Selecteer in de nieuwe functie-app **netwerken** in het menu links.
 
-1. Selecteer onder **VNet-integratie**de optie **Klik hier om te configureren**.
+1. Selecteer onder **VNet-integratie** de optie **Klik hier om te configureren**.
 
     :::image type="content" source="./media/functions-create-vnet/networking-0.png" alt-text="Kies netwerken in de functie-app":::
 
-1. Selecteer **VNET toevoegen**op de pagina **VNET-integratie** .
+1. Selecteer **VNET toevoegen** op de pagina **VNET-integratie** .
 
-    :::image type="content" source="./media/functions-create-vnet/networking-2.png" alt-text="Kies netwerken in de functie-app":::
+    :::image type="content" source="./media/functions-create-vnet/networking-2.png" alt-text="De preview-versie van het VNet-integratie toevoegen":::
 
-1. In de status van de **netwerk functie**gebruikt u de instellingen in de tabel onder de installatie kopie:
+1. In de status van de **netwerk functie** gebruikt u de instellingen in de tabel onder de installatie kopie:
 
     ![Het virtuele netwerk van de functie-app definiëren](./media/functions-create-vnet/networking-3.png)
 
@@ -129,7 +129,7 @@ Als VNet-integratie is ingeschakeld, kunt u een proxy in uw functie-app maken om
 
 1. Selecteer in de functie-app  **proxy's** in het menu links en selecteer vervolgens **toevoegen**. Gebruik de proxy instellingen in de tabel onder de installatie kopie:
 
-    :::image type="content" source="./media/functions-create-vnet/create-proxy.png" alt-text="Kies netwerken in de functie-app":::
+    :::image type="content" source="./media/functions-create-vnet/create-proxy.png" alt-text="Definieer de proxyinstellingen":::
 
     | Instelling  | Voorgestelde waarde  | Beschrijving      |
     | -------- | ---------------- | ---------------- |
@@ -139,7 +139,7 @@ Als VNet-integratie is ingeschakeld, kunt u een proxy in uw functie-app maken om
 
 1. Selecteer **maken** om de proxy toe te voegen aan uw functie-app.
 
-## <a name="try-it-out"></a>Uitproberen
+## <a name="try-it-out"></a>Probeer het eens
 
 1. Probeer in uw browser toegang te krijgen tot de URL die u hebt gebruikt als de **back-end-URL**. Zoals verwacht, is er een time-out voor de aanvraag. Er treedt een time-out op omdat uw WordPress-site alleen is verbonden met uw virtuele netwerk en niet via internet.
 
@@ -160,4 +160,4 @@ Functies die worden uitgevoerd in een Premium-abonnement, delen dezelfde onderli
 > [!div class="nextstepaction"]
 > [Meer informatie over de netwerkopties in Functions](./functions-networking-options.md)
 
-[Premium-abonnement]: functions-scale.md#premium-plan
+[Premium-abonnement]: functions-premium-plan.md

@@ -5,12 +5,12 @@ author: anthonychu
 ms.author: antchu
 ms.date: 12/1/2020
 ms.topic: article
-ms.openlocfilehash: 099f90ba8c5d9dabb6c4c505e50d8c077e3eaf0f
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: f527b387afc01eb60bd582adc13a4ad3d516055b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746026"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936988"
 ---
 # <a name="azure-functions-custom-handlers"></a>Aangepaste handlers Azure Functions
 
@@ -407,7 +407,7 @@ Door de `message` uitvoer gelijk te stellen aan de volg orde van de gegevens in 
 Voor HTTP-geactiveerde functies zonder extra bindingen of uitvoer, wilt u mogelijk dat uw handler rechtstreeks werkt met de HTTP-aanvraag en het antwoord in plaats van de nettolading van de aangepaste handler- [aanvraag](#request-payload) en de [reactie](#response-payload) . Dit gedrag kan worden geconfigureerd in *host.jsvoor* het gebruik van de `enableForwardingHttpRequest` instelling.
 
 > [!IMPORTANT]
-> Het primaire doel van de functie voor aangepaste handlers is om talen en Runtimes in te scha kelen die momenteel geen eersteklas ondersteuning voor de Azure Functions hebben. Hoewel het mogelijk is om webtoepassingen uit te voeren met aangepaste handlers, is Azure Functions geen standaard omgekeerde proxy. Sommige functies, zoals het streamen van antwoorden, HTTP/2 en websockets zijn niet beschikbaar. Sommige onderdelen van de HTTP-aanvraag, zoals bepaalde headers en routes, zijn mogelijk beperkt. Uw toepassing ondervindt mogelijk ook overmatig [koud starten](functions-scale.md#cold-start).
+> Het primaire doel van de functie voor aangepaste handlers is om talen en Runtimes in te scha kelen die momenteel geen eersteklas ondersteuning voor de Azure Functions hebben. Hoewel het mogelijk is om webtoepassingen uit te voeren met aangepaste handlers, is Azure Functions geen standaard omgekeerde proxy. Sommige functies, zoals het streamen van antwoorden, HTTP/2 en websockets zijn niet beschikbaar. Sommige onderdelen van de HTTP-aanvraag, zoals bepaalde headers en routes, zijn mogelijk beperkt. Uw toepassing ondervindt mogelijk ook overmatig [koud starten](event-driven-scaling.md#cold-start).
 >
 > Als u deze omstandigheden wilt aanpakken, kunt u uw web-apps uitvoeren op [Azure app service](../app-service/overview.md).
 

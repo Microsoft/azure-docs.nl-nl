@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 9cc19548f0b969421974afe3e274fc5334590cb0
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: b487dcad83ccbc31adf2d7ec2dd77c490db2c68e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97805643"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935190"
 ---
 Met Azure Functions kunt u alleen configuratie taken configureren die op een vooraf gebaseerd toegangs punt Lean zijn. De [configuratie-voor beelden op basis van configuraties voor Azure functions](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config) laten zien hoe u [vooraf ontwikkelde helpers kunt](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/src/Azure.Messaging.Replication) gebruiken in uw eigen code of code hoeft te verhandelen en alleen configuratie kunt gebruiken.
 
@@ -166,7 +166,7 @@ Als u gebeurtenissen wilt door sturen naar een Service Bus wachtrij, voegt u con
             "direction": "out",
             "type": "serviceBus",
             "connection": "functionname-target-connection",
-            "eventHubName": "queue-b",
+            "queueName": "queue-b",
             "name": "output" 
         }
     ...
@@ -190,7 +190,7 @@ Als u gebeurtenissen wilt door sturen naar een Service Bus onderwerp, voegt u co
             "direction": "out",
             "type": "serviceBus",
             "connection": "functionname-target-connection",
-            "eventHubName": "queue-b",
+            "topicName": "topic-b",
             "name": "output" 
         }
     ...

@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20b51cc747d3a24b1437eda988397a2e999f6ab3
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: a43200985820779c56983f09b81a86989261c36f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837478"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934999"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Een implementatie van voorwaardelijke toegang plannen
 
@@ -24,7 +24,7 @@ Het plannen van de implementatie van voorwaardelijke toegang is van cruciaal bel
 
 In een mobiele wereld hebben uw gebruikers overal toegang tot de resources van uw organisatie met behulp van verschillende apparaten en apps. Als gevolg hiervan is het niet langer voldoende om zich te richten op wie toegang heeft tot een resource. U moet ook rekening houden met de locatie van de gebruiker, het apparaat dat wordt gebruikt, de toegang tot de resource en meer. 
 
-Azure Active Directory (Azure AD) voor analyses van voorwaardelijke toegang (CA), zoals gebruiker, apparaat en locatie, voor het automatiseren van beslissingen en het afdwingen van beleid voor organisatie toegang voor de resource. U kunt CA-beleid gebruiken voor het Toep assen van toegangs beheer, zoals Multi-Factor Authentication (MFA). Met CA-beleid kunt u gebruikers vragen voor MFA wanneer dit nodig is voor de beveiliging en de manier waarop gebruikers niet nodig zijn, op de hoogte blijven van de gebruiker.
+Azure Active Directory (Azure AD) voorwaardelijke toegang-analyses, zoals gebruiker, apparaat en locatie, voor het automatiseren van beslissingen en het afdwingen van beleid voor organisatie toegang voor de resource. U kunt beleid voor voorwaardelijke toegang gebruiken om toegangs beheer, zoals Multi-Factor Authentication (MFA), toe te passen. Met beleid voor voorwaardelijke toegang kunt u gebruikers vragen voor MFA wanneer dit nodig is voor de beveiliging, en de manier van gebruikers blijven gebruiken als ze niet nodig zijn.
 
 ![Overzicht van voorwaardelijke toegang](./media/plan-conditional-access/conditional-access-overview-how-it-works.png)
 
@@ -38,7 +38,7 @@ Voordat u begint, moet u weten hoe [voorwaardelijke toegang](overview.md) werkt 
 
 De voor delen van het implementeren van voorwaardelijke toegang zijn:
 
-* Verhoog de productiviteit. Onderbreek alleen gebruikers met een aanmeldings voorwaarde als MFA wanneer een of meer signalen deze rechtvaardigen. Met CA-beleid kunt u bepalen wanneer gebruikers om een MFA wordt gevraagd, wanneer de toegang wordt geblokkeerd en wanneer ze een vertrouwd apparaat moeten gebruiken.
+* Verhoog de productiviteit. Onderbreek alleen gebruikers met een aanmeldings voorwaarde als MFA wanneer een of meer signalen deze rechtvaardigen. Met beleids regels voor voorwaardelijke toegang kunt u bepalen wanneer gebruikers om een MFA wordt gevraagd, wanneer de toegang wordt geblokkeerd en wanneer ze een vertrouwd apparaat moeten gebruiken.
 
 * Risico's beheren. Het automatiseren van risico analyse met beleids voorwaarden betekent dat Risk ante aanmeldingen eenmaal zijn geïdentificeerd en opgelost of geblokkeerd. Als u voorwaardelijke toegang koppelt met [identiteits beveiliging](../identity-protection/overview-identity-protection.md), die afwijkingen en verdachte gebeurtenissen detecteert, kunt u instellen wanneer toegang tot resources wordt geblokkeerd of gegatedd. 
 
@@ -71,7 +71,7 @@ De volgende bronnen kunnen nuttig zijn als u meer informatie wilt over voorwaard
 
 * [Wat is voorwaardelijke toegang?](https://youtu.be/ffMAw2IVO7A)
 * [Hoe kan ik voorwaardelijke toegang implementeren?](https://youtu.be/c_izIRNJNuk)
-* [Hoe kan ik CA-beleid implementeren voor eind gebruikers?](https://youtu.be/0_Fze7Zpyvc)
+* [Hoe kan ik het beleid voor voorwaardelijke toegang implementeren voor eind gebruikers?](https://youtu.be/0_Fze7Zpyvc)
 * [Voorwaardelijke toegang met apparaatbesturingen](https://youtu.be/NcONUf-jeS4)
 * [Voorwaardelijke toegang met Azure AD MFA](https://youtu.be/Tbc-SU97G-w)
 * [Voorwaardelijke toegang in Enterprise Mobility + Security](https://youtu.be/A7IrxAH87wc)
@@ -102,13 +102,13 @@ Wanneer nieuwe beleids regels gereed zijn voor uw omgeving, implementeert u deze
 > [!NOTE]
 > Voor het implementeren van nieuwe beleids regels die niet specifiek zijn voor beheerders, sluit u alle beheerders uit. Dit zorgt ervoor dat beheerders nog steeds toegang hebben tot het beleid en wijzigingen kunnen aanbrengen of intrekken als er een grote invloed is op de impact. Valideer het beleid altijd met kleinere gebruikers groepen voordat u toepast op alle gebruikers.
 
-## <a name="understand-ca-policy-components"></a>Informatie over CA-beleids onderdelen
-CA-beleid is if-then-instructies: als aan een toewijzing wordt voldaan, past u deze toegangs elementen toe.
+## <a name="understand-conditional-access-policy-components"></a>De onderdelen van het beleid voor voorwaardelijke toegang begrijpen
+Beleid voor voorwaardelijke toegang geldt als-then-instructies: als aan een toewijzing wordt voldaan, past u deze toegangs elementen toe.
 
-Bij het configureren van CA-beleid worden de voor waarden *toewijzingen* genoemd. Met CA-beleid kunt u toegangs beheer op de apps van uw organisatie afdwingen op basis van bepaalde toewijzingen.
+Wanneer u beleid voor voorwaardelijke toegang configureert, worden de voor waarden *toewijzingen* genoemd. Met beleid voor voorwaardelijke toegang kunt u toegangs beheer op de apps van uw organisatie afdwingen op basis van bepaalde toewijzingen.
 
 
-Zie [buil ding a CA Policy](concept-conditional-access-policies.md)(Engelstalig) voor meer informatie.
+Zie [buil ding a Conditional Access Policy](concept-conditional-access-policies.md)voor meer informatie.
 
 ![het scherm beleid maken](media/plan-conditional-access/create-policy.png)
 
@@ -170,7 +170,7 @@ Wilt u toegang verlenen tot resources door een of meer van de volgende handeling
 
 * Vereisen dat het apparaat moet worden gemarkeerd als compatibel
 
-* Hybride Azure AD-aangesloten apparaat vereisen
+* Hybride Azure AD-gekoppeld apparaat vereisen
 
 * Goedgekeurde client-apps vereisen
 
@@ -195,7 +195,7 @@ Het is belang rijk om te begrijpen hoe toegangs tokens worden uitgegeven.
 ![Diagram voor het uitgeven van toegangs tokens](media/plan-conditional-access/CA-policy-token-issuance.png)
 
 > [!NOTE]
-> Als er geen toewijzing is vereist en er geen CA-beleid van kracht is, is het standaard gedrag om een toegangs token te verlenen. 
+> Als er geen toewijzing is vereist en er geen beleid voor voorwaardelijke toegang van kracht is, is het standaard gedrag om een toegangs token te verlenen. 
 
 Denk bijvoorbeeld aan een beleid waarbij:
 
@@ -207,14 +207,14 @@ Als een gebruiker die niet in groep 1 is, probeert toegang te krijgen tot de voo
 
 Het Framework voor voorwaardelijke toegang biedt een uitstekende configuratie flexibiliteit. Een fantastische flexibiliteit betekent echter ook dat u elk configuratie beleid zorgvuldig moet door nemen voordat het wordt vrijgegeven om ongewenste resultaten te voor komen.
 
-### <a name="apply-ca-policies-to-every-app"></a>CA-beleid Toep assen op elke app
+### <a name="apply-conditional-access-policies-to-every-app"></a>Beleid voor voorwaardelijke toegang Toep assen op elke app
 
-Toegangs tokens worden standaard verleend als een CA-beleids voorwaarde geen toegangs beheer triggert. Zorg ervoor dat voor elke app ten minste één beleid voor voorwaardelijke toegang is toegepast
+Toegangs tokens worden standaard verleend als voor de voor waarde van een voorwaardelijk toegangs beleid geen toegangs beheer wordt geactiveerd. Zorg ervoor dat voor elke app ten minste één beleid voor voorwaardelijke toegang is toegepast
 
 > [!IMPORTANT]
 > Wees voorzichtig met het gebruik van blok keren en alle apps in één beleid. Dit kan beheerders vergren delen buiten de Azure-beheer Portal en uitsluitingen kunnen niet worden geconfigureerd voor belang rijke eind punten, zoals Microsoft Graph.
 
-### <a name="minimize-the-number-of-ca-policies"></a>Minimaliseer het aantal CA-beleids regels
+### <a name="minimize-the-number-of-conditional-access-policies"></a>Minimaliseer het aantal beleids regels voor voorwaardelijke toegang
 
 Het maken van een beleid voor elke app is niet efficiënt en leidt tot moeilijk beheer. In voorwaardelijke toegang worden alleen de eerste 195-beleids regels per gebruiker toegepast. We raden u aan uw apps te analyseren en ze te groeperen in toepassingen die dezelfde resource vereisten voor dezelfde gebruikers hebben. Als alle Microsoft 365-apps of alle HR-apps dezelfde vereisten voor dezelfde gebruikers hebben, kunt u bijvoorbeeld één beleid maken en alle apps toevoegen waarop dit van toepassing is. 
 
@@ -228,9 +228,9 @@ Als u een beleid hebt geconfigureerd, kan het de organisaties van de Azure Porta
 
   * Een on-premises beveiligings groep maken en deze synchroniseren met Azure AD. De beveiligings groep moet uw toegewezen beleids beheer account bevatten. 
 
-   * Deze beveiligings groep uitsluiten alle CA-beleids regels.
+   * Deze beveiligings groep uitsluiten alle beleids regels voor voorwaardelijke toegang.
 
-   * Wanneer er een service storing optreedt, voegt u uw andere beheerders toe aan de on-premises groep en dwingt u een synchronisatie af. Hiermee wordt de uitzonde ring op CA-beleid geanimeerd.
+   * Wanneer er een service storing optreedt, voegt u uw andere beheerders toe aan de on-premises groep en dwingt u een synchronisatie af. Hiermee wordt de uitzonde ring op beleids regels voor voorwaardelijke toegang van animatie voorzien.
 
 ### <a name="set-up-report-only-mode"></a>Modus alleen rapport instellen
 
@@ -240,9 +240,9 @@ Het kan lastig zijn om het aantal en de namen van de gebruikers te voors pellen 
 * MFA vereisen
 * beleid voor aanmeldings Risico's implementeren
 
-Met de [modus alleen rapport](concept-conditional-access-report-only.md) kunnen beheerders de impact van het CA-beleid evalueren voordat ze in hun omgeving worden ingeschakeld.
+Met de [modus alleen rapport](concept-conditional-access-report-only.md) kunnen beheerders de impact van beleids regels voor voorwaardelijke toegang evalueren voordat ze in hun omgeving worden ingeschakeld.
 
-Meer informatie over het [configureren van de modus alleen rapport voor een CA-beleid](howto-conditional-access-insights-reporting.md).
+Meer informatie over het [configureren van de modus alleen rapport voor een beleid voor voorwaardelijke toegang](howto-conditional-access-insights-reporting.md).
 
 ### <a name="plan-for-disruption"></a>Plan voor onderbreking
 
@@ -295,7 +295,7 @@ Wanneer nieuwe beleids regels gereed zijn voor uw omgeving, moet u elk beleid do
 
 ## <a name="common-policies"></a>Algemene beleidsregels
 
-Bepaal bij het plannen van uw CA-beleids oplossing of u beleid moet maken om de volgende resultaten te krijgen.
+Bepaal bij het plannen van de oplossing voor het beleid voor voorwaardelijke toegang of u beleid moet maken om de volgende resultaten te verkrijgen.
 
 * [MFA vereisen](#require-mfa)
 * [Reageren op mogelijk gemanipuleerde accounts](#respond-to-potentially-compromised-accounts)
@@ -319,7 +319,7 @@ Algemene use cases voor het vereisen van MFA-toegang:
 
 ### <a name="respond-to-potentially-compromised-accounts"></a>Reageren op mogelijk gemanipuleerde accounts
 
-Met CA-beleid kunt u automatische antwoorden op aanmeldingen implementeren door mogelijk verkraakte identiteiten. De waarschijnlijkheid dat een account wordt aangetast, wordt weer gegeven in de vorm van risico niveaus. Er zijn twee risico niveaus berekend door identiteits beveiliging: aanmeldings risico en gebruikers risico. De volgende drie standaard beleidsregels die kunnen worden ingeschakeld.
+Met het beleid voor voorwaardelijke toegang kunt u automatische antwoorden op aanmeldingen implementeren door mogelijk verkraakte identiteiten. De waarschijnlijkheid dat een account wordt aangetast, wordt weer gegeven in de vorm van risico niveaus. Er zijn twee risico niveaus berekend door identiteits beveiliging: aanmeldings risico en gebruikers risico. De volgende drie standaard beleidsregels die kunnen worden ingeschakeld.
 
 * [Vereisen dat alle gebruikers zich registreren voor MFA](howto-conditional-access-policy-risk.md)
 
@@ -374,7 +374,7 @@ Sommige organisaties hebben test tenants voor dit doel einde. Het kan echter las
 
 ### <a name="create-a-test-plan"></a>Een test plan maken
 
-Het test plan is belang rijk voor een vergelijking tussen de verwachte resultaten en de werkelijke resultaten. U moet altijd een verwachting hebben voordat u iets kunt testen. De volgende tabel geeft een overzicht van voor beelden van test cases. Pas de scenario's en verwachte resultaten aan op basis van de configuratie van uw CA-beleid.
+Het test plan is belang rijk voor een vergelijking tussen de verwachte resultaten en de werkelijke resultaten. U moet altijd een verwachting hebben voordat u iets kunt testen. De volgende tabel geeft een overzicht van voor beelden van test cases. Pas de scenario's en verwachte resultaten aan op basis van de configuratie van uw beleid voor voorwaardelijke toegang.
 
 | Beleid| Scenario| Verwacht resultaat |
 | - | - | - |
@@ -389,9 +389,9 @@ Het test plan is belang rijk voor een vergelijking tussen de verwachte resultate
 
 ### <a name="configure-the-test-policy"></a>Het test beleid configureren
 
-In de [Azure Portal](https://portal.azure.com/)CONFIGUREERT u CA-beleid onder Azure Active Directory > beveiliging > voorwaardelijke toegang.
+In de [Azure Portal](https://portal.azure.com/)configureert u beleid voor voorwaardelijke toegang onder Azure Active Directory > beveiliging > voorwaardelijke toegang.
 
-Als u meer wilt weten over het maken van CA-beleid, raadpleegt u dit voor beeld: [CA-beleid om te vragen aan MFA wanneer een gebruiker zich aanmeldt bij de Azure Portal](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json). Deze Snelstartgids helpt u bij het volgende:
+Als u meer wilt weten over het maken van beleid voor voorwaardelijke toegang, raadpleegt u dit voor beeld: [beleid voor voorwaardelijke toegang om te vragen aan MFA wanneer een gebruiker zich aanmeldt bij de Azure Portal](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json). Deze Snelstartgids helpt u bij het volgende:
 
 * Vertrouwd raken met de gebruikers interface
 
@@ -415,7 +415,7 @@ U kunt de cumulatieve impact van uw beleid voor voorwaardelijke toegang bekijken
 Een andere manier om uw beleid voor voorwaardelijke toegang te valideren, is met behulp van het [hulp programma What-if](troubleshoot-conditional-access-what-if.md), dat simuleert welk beleid van toepassing zou zijn op een gebruiker die zich aanmeldt onder hypothetische omstandigheden. Selecteer de aanmeldings kenmerken die u wilt testen (zoals de gebruiker, toepassing, het platform van het apparaat en de locatie) en bekijk welke beleids regels van toepassing zijn.
 
 > [!NOTE] 
-> Hoewel een gesimuleerde uitvoering u een goed idee krijgt van de impact die een CA-beleid heeft, wordt een daad werkelijk uitgevoerde test niet vervangen.
+> Hoewel een gesimuleerde uitvoering u een goed idee krijgt van de impact van het beleid voor voorwaardelijke toegang, wordt een daad werkelijk uitgevoerde test niet vervangen.
 
 ### <a name="test-your-policy"></a>Uw beleid testen
 
@@ -442,14 +442,14 @@ Gebruik een of meer van de volgende opties voor het geval u de zojuist geïmplem
 
 ## <a name="manage-access-to-cloud-apps"></a>Toegang tot Cloud-apps beheren
 
-Gebruik de volgende opties voor het beheren van uw CA-beleid:
+Gebruik de volgende beheer opties om uw beleid voor voorwaardelijke toegang te bepalen en beheren:
 
 ![Scherm afbeelding toont de beheer opties voor C A-beleids regels, zoals benoemde locaties, aangepaste besturings elementen, Gebruiksvoorwaarden, V P N-connectiviteit en de geselecteerde klassieke beleids regels.](media/plan-conditional-access/manage-access.png)
 
 
 ### <a name="named-locations"></a>Benoemde locaties
 
-Met de voor waarde voor de locatie van een CA-beleid kunt u instellingen voor toegangs beheer koppelen aan de netwerk locaties van uw gebruikers. Met [benoemde locaties](location-condition.md)kunt u logische groeperingen van IP-adresbereiken of landen en regio's maken.
+De locatie voorwaarde van een beleid voor voorwaardelijke toegang stelt u in staat om instellingen voor toegangs beheer te koppelen aan de netwerk locaties van uw gebruikers. Met [benoemde locaties](location-condition.md)kunt u logische groeperingen van IP-adresbereiken of landen en regio's maken.
 
 ### <a name="custom-controls"></a>Aangepaste besturingselementen
 
@@ -461,7 +461,7 @@ Voordat u bepaalde Cloud-apps in uw omgeving opent, kunt u toestemming van de ge
 
 ## <a name="troubleshoot-conditional-access"></a>Problemen met voorwaardelijke toegang oplossen
 
-Wanneer een gebruiker een probleem met een CA-beleid heeft, verzamelt u de volgende informatie om het oplossen van problemen te vergemakkelijken.
+Wanneer een gebruiker een probleem met een beleid voor voorwaardelijke toegang heeft, verzamelt u de volgende informatie om het oplossen van problemen te vergemakkelijken.
 
 * Naam van gebruikers principe
 
@@ -493,4 +493,4 @@ Wanneer u de gegevens hebt verzameld, raadpleegt u de volgende bronnen:
 
 [Meer informatie over identiteits beveiliging](../identity-protection/overview-identity-protection.md)
 
-[CA-beleid beheren met Microsoft Graph-API](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)
+[Beleid voor voorwaardelijke toegang beheren met Microsoft Graph-API](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)

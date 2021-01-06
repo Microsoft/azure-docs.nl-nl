@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/09/2020
 ms.author: surmb
-ms.openlocfilehash: b8acf1b025a5943773821c8ab78de6288eb6bec2
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 05df2144b892aed764f9606fb19bd6a3242b97f3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397895"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934897"
 ---
 <a name="troubleshoot-backend-health-issues-in-application-gateway"></a>Problemen met back-endservers oplossen in Application Gateway
 ==================================================
@@ -21,6 +21,9 @@ ms.locfileid: "93397895"
 --------
 
 Azure-toepassing gateway test back-endservers standaard om de status te controleren en om te controleren of ze gereed zijn om te dienen voor aanvragen. Gebruikers kunnen ook aangepaste tests maken om de hostnaam, het pad dat wordt onderzocht en de status codes als in orde te vermelden. Als de back-endserver niet met succes reageert, markeert Application Gateway de server als beschadigd en stopt het door sturen van aanvragen naar de server. Nadat de server met succes is gestart, wordt Application Gateway hervat met het door sturen van de aanvragen.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ### <a name="how-to-check-backend-health"></a>De status van de back-end controleren
 
@@ -373,7 +376,7 @@ Dit gedrag kan om een of meer van de volgende redenen optreden:
 
     f.  Selecteer **Opslaan** en controleer of u de back-end als in orde kunt weer geven. U kunt dit ook doen via [Power shell/cli](../virtual-network/manage-network-security-group.md).
 
-1.  Controleer of uw UDR een standaard route (0.0.0.0/0) heeft met de volgende hop die niet is ingesteld als **Internet** :
+1.  Controleer of uw UDR een standaard route (0.0.0.0/0) heeft met de volgende hop die niet is ingesteld als **Internet**:
     
     a.  Volg de stappen 1a en 1b om uw subnet te bepalen.
 
@@ -381,7 +384,7 @@ Dit gedrag kan om een of meer van de volgende redenen optreden:
 
     c.  Controleer of er standaard routes (0.0.0.0/0) zijn waarbij de volgende hop niet is ingesteld als **Internet**. Als de instelling **virtueel apparaat** of **Virtual Network gateway** is, moet u ervoor zorgen dat het pakket door het virtuele apparaat of het on-premises station correct naar de Internet bestemming kan worden doorgestuurd zonder het pakket te wijzigen.
 
-    d.  Anders wijzigt u de volgende hop naar **Internet** , selecteert u **Opslaan** en controleert u de status van de back-end.
+    d.  Anders wijzigt u de volgende hop naar **Internet**, selecteert u **Opslaan** en controleert u de status van de back-end.
 
 1.  Standaard route geadverteerd door de ExpressRoute/VPN-verbinding met het virtuele netwerk via BGP:
 

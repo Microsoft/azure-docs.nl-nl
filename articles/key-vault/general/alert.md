@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 04/06/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to learn the options available to monitor the health of my vaults
-ms.openlocfilehash: 7ff3daded48612fd308396420dca65cd81d9fafc
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 5946a5d6d1adb5f609f497b4c2194582f624fe24
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724694"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934591"
 ---
 # <a name="monitoring-and-alerting-for-azure-key-vault"></a>Bewaking en waarschuwingen voor Azure Key Vault
 
@@ -25,8 +25,8 @@ ms.locfileid: "97724694"
 Zodra u de sleutel kluis hebt gestart om uw productie geheimen op te slaan, is het belang rijk om de status van uw sleutel kluis te controleren om er zeker van te zijn dat uw service goed werkt. Wanneer u begint met het schalen van uw service, neemt het aantal aanvragen toe dat naar uw sleutelkluis wordt verzonden. Dit kan de latentie van uw aanvragen verhogen en er in uitzonderlijke gevallen voor zorgen dat uw aanvragen worden beperkt, waardoor de prestaties van uw service worden beïnvloed. U moet ook een waarschuwing ontvangen als uw sleutel kluis een ongebruikelijk aantal fout codes verzendt, zodat u snel kunt worden geïnformeerd over problemen met toegangs beleid of firewall configuratie. In dit document worden de volgende onderwerpen behandeld:
 
 + Basis Key Vault metrische gegevens die moeten worden bewaakt
-+ Metrische gegevens configureren en een dash board maken 
-+ Waarschuwingen maken met de opgegeven drempel waarden 
++ Metrische gegevens configureren en een dash board maken
++ Waarschuwingen maken met de opgegeven drempel waarden
 
 ## <a name="basic-key-vault-metrics-to-monitor"></a>Basis Key Vault metrische gegevens die moeten worden bewaakt
 

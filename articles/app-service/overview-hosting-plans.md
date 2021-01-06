@@ -1,21 +1,21 @@
 ---
-title: App Service-abonnementen
+title: App Service-plannen
 description: Meer informatie over de werking van App Service plannen in Azure App Service, hoe deze worden gefactureerd voor de klant en hoe u deze kunt schalen voor uw behoeften.
 keywords: app service, Azure app service, schaal, schaalbaar, schaal baarheid, app service-plan, kosten van app service
 ms.assetid: dea3f41e-cf35-481b-a6bc-33d7fc9d01b1
 ms.topic: article
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8033235cde5b7ebe298bb1fa8d4222e208df998b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a29d81be9b750d89230a180b8a7c786466d99bb8
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183002"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936427"
 ---
 # <a name="azure-app-service-plan-overview"></a>Overzicht van Azure App Service-plan
 
-In App Service (Web Apps, API Apps of Mobile Apps) wordt een app altijd uitgevoerd in een _app service plan_. Daarnaast heeft [Azure functions](../azure-functions/functions-scale.md#app-service-plan) ook de mogelijkheid om in een _app service-abonnement_ te worden uitgevoerd. Een App Service-plan definieert een set rekenresources waarmee een web-app kan worden uitgevoerd. Deze reken bronnen zijn vergelijkbaar met de [_server farm_](https://wikipedia.org/wiki/Server_farm) in conventionele webhosting. Een of meer apps kunnen worden geconfigureerd om te worden uitgevoerd op dezelfde rekenresources (of in hetzelfde App Service-plan).
+In App Service (Web Apps, API Apps of Mobile Apps) wordt een app altijd uitgevoerd in een _app service plan_. Daarnaast heeft [Azure functions](../azure-functions/dedicated-plan.md) ook de mogelijkheid om in een _app service-abonnement_ te worden uitgevoerd. Een App Service-plan definieert een set rekenresources waarmee een web-app kan worden uitgevoerd. Deze reken bronnen zijn vergelijkbaar met de [_server farm_](https://wikipedia.org/wiki/Server_farm) in conventionele webhosting. Een of meer apps kunnen worden geconfigureerd om te worden uitgevoerd op dezelfde rekenresources (of in hetzelfde App Service-plan).
 
 Wanneer u in een bepaalde regio een App Service plan maakt (bijvoorbeeld Europa-west), wordt er een set reken bronnen gemaakt voor dat plan in die regio. De apps die u in dit App Service plan plaatst, worden uitgevoerd op deze reken resources, zoals gedefinieerd in uw App Service plan. In elk App Service-plan wordt het volgende gedefinieerd:
 

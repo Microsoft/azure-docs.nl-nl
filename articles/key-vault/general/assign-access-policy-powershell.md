@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: fb28b4b678b37f69331b2ecff6272fd7aa64d191
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4cf0393cdb0aae1b352b81df4893f874f34970cc
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287619"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934527"
 ---
 # <a name="assign-a-key-vault-access-policy-using-azure-powershell"></a>Een Key Vault toegangs beleid toewijzen met behulp van Azure PowerShell
 
@@ -51,7 +51,7 @@ Bepaal de object-ID van de toepassing, groep of gebruiker aan wie u het toegangs
     Get-AzADServicePrincipal -SearchString <search-string>
     ```
 
-- Groepen: gebruik de cmdlet [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup?view=azps-2.7.0) met de `-SearchString` para meter om de resultaten te filteren op de naam van de gewenste groep:
+- Groepen: gebruik de cmdlet [Get-AzADGroup](/powershell/module/az.resources/get-azadgroup) met de `-SearchString` para meter om de resultaten te filteren op de naam van de gewenste groep:
 
     ```azurepowershell-interactive
     Get-AzADGroup -SearchString <search-string>
@@ -79,7 +79,6 @@ U hoeft alleen `-PermissionsToSecrets` , en toe te voegen, `-PermissionsToKeys` 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](overview-security.md#identity-and-access-management)
+- [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](security-overview.md#identity-management)
 - [Beveilig uw sleutel kluis](secure-your-key-vault.md).
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
-- [Best practices voor Azure Key Vault](best-practices.md)

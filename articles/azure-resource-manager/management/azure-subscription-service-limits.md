@@ -3,14 +3,14 @@ title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 4d56c5c3fd33d1cda05e23d5bc53e7540428671b
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 182df937ae5c0194aecfbe20b5962b44b363c708
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547845"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934460"
 ---
-# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Azure-abonnements-en service limieten, quota's en beperkingen
+# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Limieten, quota's en beperkingen voor het Azure-abonnement en de Azure-service
 
 Dit document bevat enkele van de meest voorkomende Microsoft Azure limieten, ook wel quota's genoemd.
 
@@ -132,7 +132,7 @@ Zie [beperkingen in azure database for PostgreSQL](../../postgresql/concepts-lim
 
 [!INCLUDE [functions-limits](../../../includes/functions-limits.md)]
 
-Zie voor meer informatie [functions hosting abonnementen comparison](../../azure-functions/functions-scale.md#hosting-plans-comparison)(Engelstalig).
+Zie voor meer informatie [functions hosting abonnementen comparison](../../azure-functions/functions-scale.md)(Engelstalig).
 
 ## <a name="azure-kubernetes-service-limits"></a>Limieten voor Azure Kubernetes-service
 
@@ -446,7 +446,7 @@ Elk abonnement kent limieten voor het implementeren van resources met behulp van
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Meer informatie over Azure-limieten en toename](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Grootten van virtuele machines en Cloud Services voor Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

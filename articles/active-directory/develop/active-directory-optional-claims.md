@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 1/04/2021
+ms.date: 1/05/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 6f95b4eca8dbaf6cfaa7546fddada7577a1541b3
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 4674fe41a0e3d63ef0cadc6ad55eca02fc69618e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916249"
+ms.locfileid: "97935900"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -94,7 +94,7 @@ Sommige verbeteringen van de v2-token indeling zijn beschikbaar voor apps die ge
 
 | JWT-claim     | Naam                            | Beschrijving | Notities |
 |---------------|---------------------------------|-------------|-------|
-|`aud`          | Doelgroep | Altijd aanwezig in JWTs, maar in v1 toegangs tokens kan deze op verschillende manieren worden gegenereerd. Dit kan moeilijk zijn om code te gebruiken bij het uitvoeren van token validatie.  Gebruik de [aanvullende eigenschappen voor deze claim](#additional-properties-of-optional-claims) om ervoor te zorgen dat deze altijd is ingesteld op een GUID in v1-toegangs tokens. | alleen v1 JWT-toegangs tokens|
+|`aud`          | Doelgroep | Altijd aanwezig in JWTs, maar in v1 toegangs tokens kan deze worden verzonden op diverse manieren: elke appID-URI, met of zonder een afsluitende slash, evenals de client-ID van de resource. Deze wille keurige code kan moeilijk te maken hebben met het uitvoeren van token validatie.  Gebruik de [aanvullende eigenschappen voor deze claim](#additional-properties-of-optional-claims) om ervoor te zorgen dat deze altijd is ingesteld op de client-id van de resource in v1-toegangs tokens. | alleen v1 JWT-toegangs tokens|
 |`preferred_username` | Gewenste gebruikers naam        | Biedt de voorkeurs claim van de gebruikers naam binnen v1 tokens. Dit maakt het gemakkelijker voor apps om gebruikers naam hints op te geven en lees bare weergave namen van mensen te bekijken, ongeacht hun token type.  Het is raadzaam om deze optionele claim te gebruiken in plaats van bijvoorbeeld `upn` te gebruiken `unique_name` . | v1 ID-tokens en toegangs tokens |
 
 ### <a name="additional-properties-of-optional-claims"></a>Aanvullende eigenschappen van optionele claims
@@ -108,8 +108,8 @@ Sommige optionele claims kunnen worden geconfigureerd om de manier waarop de cla
 | `upn`          |                          | Kan worden gebruikt voor SAML-en JWT-antwoorden, en voor de tokens v 1.0 en v 2.0. |
 |                | `include_externally_authenticated_upn`  | Bevat de gast-UPN zoals deze is opgeslagen in de resource-Tenant. Bijvoorbeeld: `foo_hometenant.com#EXT#@resourcetenant.com` |
 |                | `include_externally_authenticated_upn_without_hash` | Hetzelfde als hierboven, behalve dat de hash-markeringen ( `#` ) worden vervangen door onderstrepings tekens ( `_` ), bijvoorbeeld `foo_hometenant.com_EXT_@resourcetenant.com`|
-| `aud`          |                          | In v1-toegangs tokens wordt dit gebruikt om de indeling van de claim te wijzigen `aud` .  Dit heeft geen invloed op v2-tokens of ID-tokens, waarbij de `aud` claim altijd de client-id is. Gebruik deze om ervoor te zorgen dat uw API de validatie van de doel groep gemakkelijker kan uitvoeren. Net als alle optionele claims die van invloed zijn op het toegangs token, moet de resource in de aanvraag deze optionele claim instellen, omdat de resources het toegangs token van eigenaar zijn.|
-|                | `use_guid`               | Verzendt de client-ID van de resource (API) in GUID-indeling als de `aud` claim in plaats van een AppID-URI of GUID. Dus als de client-ID van een resource is `bb0a297b-6a42-4a55-ac40-09a501456577` , ontvangt elke app die een toegangs token voor die bron aanvraagt een toegangs token met `aud` : `bb0a297b-6a42-4a55-ac40-09a501456577` .|
+| `aud`          |                          | In v1-toegangs tokens wordt dit gebruikt om de indeling van de claim te wijzigen `aud` .  Dit heeft geen invloed op v2-tokens of ID-tokens van de versie, waarbij de `aud` claim altijd de client-id is. Gebruik deze configuratie om ervoor te zorgen dat uw API de validatie van de doel groep gemakkelijker kan uitvoeren. Net als alle optionele claims die van invloed zijn op het toegangs token, moet de resource in de aanvraag deze optionele claim instellen, omdat de resources het toegangs token van eigenaar zijn.|
+|                | `use_guid`               | Verzendt de client-ID van de resource (API) in GUID-indeling als de `aud` claim altijd in plaats van afhankelijk van runtime. Als een resource bijvoorbeeld deze vlag instelt en de client-ID is `bb0a297b-6a42-4a55-ac40-09a501456577` , zal elke app die een toegangs token voor die bron aanvraagt, een toegangs token ontvangen met `aud` : `bb0a297b-6a42-4a55-ac40-09a501456577` . </br></br> Als deze claim niet is ingesteld, kan een API tokens verkrijgen met een `aud` claim van `api://MyApi.com` , `api://MyApi.com/` `api://myapi.com/AdditionalRegisteredField` of een andere waarde die is ingesteld als een app-id-URI voor die API, evenals de client-id van de resource. |
 
 #### <a name="additional-properties-example"></a>Voor beeld van extra eigenschappen
 
@@ -245,7 +245,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via de gebruikers interface:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer **App-registraties** onder **Beheren**.
@@ -258,7 +258,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via het toepassings manifest:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
@@ -389,7 +389,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Configuratie van de gebruikers interface:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 
 1. Zoek en selecteer de optie **Azure Active Directory**.
@@ -412,7 +412,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Manifest configuratie:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Zoek de toepassing waarvoor u de optionele claims wilt configureren in de lijst en selecteer deze.

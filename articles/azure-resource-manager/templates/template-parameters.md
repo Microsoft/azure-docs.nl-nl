@@ -3,12 +3,12 @@ title: Para meters in sjablonen
 description: Hierin wordt beschreven hoe u para meters definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 4ac1aeb579040b35b2a9b4cb90fb5687f91ebd3b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 929d871bc0087d4fda585773b349dee4e0945c7c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353507"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934710"
 ---
 # <a name="parameters-in-arm-templates"></a>Para meters in ARM-sjablonen
 
@@ -20,7 +20,7 @@ Elke para meter moet worden ingesteld op een van de [gegevens typen](template-sy
 
 ## <a name="define-parameter"></a>Para meter definiëren
 
-In het volgende voor beeld ziet u een eenvoudige parameter definitie. Hiermee wordt een para meter gedefinieerd met de naam **storageSKU**. De para meter is een teken reeks waarde en accepteert alleen waarden die geldig zijn voor het beoogde gebruik. De para meter gebruikt een standaard waarde wanneer er geen waarde wordt gegeven tijdens de implementatie.
+In het volgende voor beeld ziet u een eenvoudige parameter definitie. Hiermee wordt een para meter gedefinieerd met de naam `storageSKU` . De para meter is een teken reeks waarde en accepteert alleen waarden die geldig zijn voor het beoogde gebruik. De para meter gebruikt een standaard waarde wanneer er geen waarde wordt gegeven tijdens de implementatie.
 
 ```json
 "parameters": {

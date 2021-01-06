@@ -4,12 +4,12 @@ description: Meer informatie over hoe u prestatie problemen in Azure Functions k
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 02/25/2018
-ms.openlocfilehash: 53848e6273cf59439d44b431652981b18bdd5ba6
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: ec16ce3e7f9793be2a012a029bcca31c9a7ea4cf
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755953"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936699"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Verbindingen in Azure Functions beheren
 
@@ -19,7 +19,7 @@ Functies in een functie-app delen resources. Onder deze gedeelde bronnen staan v
 
 Het aantal beschik bare verbindingen is deels beperkt omdat een functie-app in een [sandbox-omgeving](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)wordt uitgevoerd. Een van de beperkingen die de sandbox voor uw code oplegt, is een limiet voor het aantal uitgaande verbindingen dat momenteel 600 actief is (1.200 totaal) verbindingen per exemplaar. Wanneer u deze limiet bereikt, schrijft de functions-runtime het volgende bericht naar de logboeken: `Host thresholds exceeded: Connections` . Zie de [functies service limieten](functions-scale.md#service-limits)voor meer informatie.
 
-Deze limiet is per instantie. Wanneer de [schaal controller functie-app-exemplaren toevoegt](functions-scale.md#how-the-consumption-and-premium-plans-work) om meer aanvragen te verwerken, heeft elk exemplaar een onafhankelijke verbindings limiet. Dit betekent dat er geen algemene verbindings limiet is en dat u veel meer dan 600 actieve verbindingen voor alle actieve instanties kunt hebben.
+Deze limiet is per instantie. Wanneer de [schaal controller functie-app-exemplaren toevoegt](event-driven-scaling.md) om meer aanvragen te verwerken, heeft elk exemplaar een onafhankelijke verbindings limiet. Dit betekent dat er geen algemene verbindings limiet is en dat u veel meer dan 600 actieve verbindingen voor alle actieve instanties kunt hebben.
 
 Als u problemen wilt oplossen, moet u ervoor zorgen dat u Application Insights hebt ingeschakeld voor uw functie-app. Met Application Insights kunt u metrische gegevens weer geven voor uw functie-apps, zoals uitvoeringen. Zie [telemetrie in Application Insights weer geven](analyze-telemetry-data.md#view-telemetry-in-application-insights)voor meer informatie.  
 

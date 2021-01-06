@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 77cc87e44990f471ef38871c0225835660779a3c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 24350eb07481db66907d199cd96f84a02cc98c9e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825760"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937277"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -197,7 +197,7 @@ Zie [sampling in Application Insights](../azure-monitor/app/sampling.md)voor mee
 
 _Deze functie is beschikbaar als preview-versie._ 
 
-U kunt de [Azure functions Scale-controller](./functions-scale.md#runtime-scaling) logboeken naar een Application Insights of een Blob-opslag laten verzenden om beter inzicht te krijgen in de beslissingen die de schaal controller voor uw functie-app maakt.
+U kunt de [Azure functions Scale-controller](./event-driven-scaling.md#runtime-scaling) logboeken naar een Application Insights of een Blob-opslag laten verzenden om beter inzicht te krijgen in de beslissingen die de schaal controller voor uw functie-app maakt.
 
 Als u deze functie wilt inschakelen, voegt u een toepassings instelling toe `SCALE_CONTROLLER_LOGGING_ENABLED` met de naam van de instellingen van de functie-app. De waarde van deze instelling moet de `<DESTINATION>:<VERBOSITY>` volgende indeling hebben:
 

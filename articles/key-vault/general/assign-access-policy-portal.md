@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 9277d100eb6744adfc20fbba9f96b822654e64a3
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 910b8dae10036cc2e396be13495fd28363dc971d
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287700"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934557"
 ---
 # <a name="assign-a-key-vault-access-policy-using-the-azure-portal"></a>Een Key Vault toegangs beleid toewijzen met behulp van de Azure Portal
 
@@ -29,11 +29,11 @@ Zie [een basis groep maken en leden toevoegen](../../active-directory/fundamenta
 
 1.  Ga in het [Azure Portal](https://portal.azure.com)naar de Key Vault resource. 
 
-1.  Selecteer onder **instellingen** **toegangs beleid** en selecteer vervolgens **toegangs beleid toevoegen** :
+1.  Selecteer onder **instellingen** **toegangs beleid** en selecteer vervolgens **toegangs beleid toevoegen**:
 
     ![Selecteer toegangs beleid, selecteren functie toewijzing toevoegen](../media/authentication/assign-policy-portal-01.png)
 
-1.  Selecteer de gewenste machtigingen onder **certificaat machtigingen** , **sleutel machtigingen** en **geheime machtigingen**. U kunt ook een sjabloon selecteren die algemene combi Naties van machtigingen bevat:
+1.  Selecteer de gewenste machtigingen onder **certificaat machtigingen**, **sleutel machtigingen** en **geheime machtigingen**. U kunt ook een sjabloon selecteren die algemene combi Naties van machtigingen bevat:
 
     ![Machtigingen voor toegangs beleid opgeven](../media/authentication/assign-policy-portal-02.png)
 
@@ -54,7 +54,6 @@ Zie [een basis groep maken en leden toevoegen](../../active-directory/fundamenta
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](overview-security.md#identity-and-access-management)
+- [Azure Key Vault-beveiliging: Identiteits- en toegangsbeheer](security-overview.md#identity-management)
 - [Beveilig uw sleutel kluis](secure-your-key-vault.md).
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
-- [Best practices voor Azure Key Vault](best-practices.md)

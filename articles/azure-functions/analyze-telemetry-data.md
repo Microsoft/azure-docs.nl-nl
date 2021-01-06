@@ -4,12 +4,12 @@ description: Meer informatie over het weer geven en opvragen van Azure Functions
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1d8d9cc9a7a4111e98b1d9141957769d6f157d45
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 14b6ed3964900e3395ca335c301dfd0285da46e7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027727"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937294"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Azure Functions telemetrie in Application Insights analyseren 
 
@@ -108,7 +108,7 @@ De runtime levert de `customDimensions.LogLevel` `customDimensions.Category` vel
 
 ## <a name="consumption-plan-specific-metrics"></a>Verbruiks plan-specifieke metrische gegevens
 
-Bij het uitvoeren van een [verbruiks abonnement](functions-scale.md#consumption-plan)wordt de uitvoerings *kosten* van één functie-uitvoering gemeten in *GB seconden*. De uitvoerings kosten worden berekend door het geheugen gebruik te combi neren met de uitvoerings tijd. Zie [kosten voor verbruiks abonnementen schatten](functions-consumption-costs.md)voor meer informatie.
+Bij het uitvoeren van een [verbruiks abonnement](consumption-plan.md)wordt de uitvoerings *kosten* van één functie-uitvoering gemeten in *GB seconden*. De uitvoerings kosten worden berekend door het geheugen gebruik te combi neren met de uitvoerings tijd. Zie [kosten voor verbruiks abonnementen schatten](functions-consumption-costs.md)voor meer informatie.
 
 De volgende telemetrie-query's zijn specifiek voor metrische gegevens die van invloed zijn op de kosten van het uitvoeren van functies in het verbruiks abonnement.
 

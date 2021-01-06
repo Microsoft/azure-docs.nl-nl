@@ -5,12 +5,12 @@ author: jeffhollan
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: jehollan
-ms.openlocfilehash: bed76a6f3a17332f9a1e411ff1d4efb52703f3e1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f4d7611f285535680469f3a334ab889b0b644bfe
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020983"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936857"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -21,9 +21,9 @@ De hosting modellen hebben verschillende niveaus van netwerk isolatie beschikbaa
 U kunt functie-apps op verschillende manieren hosten:
 
 * U kunt kiezen uit plan opties die worden uitgevoerd op een multi tenant-infra structuur, met verschillende niveaus van connectiviteit voor virtuele netwerken en schaal opties:
-    * Het [verbruiks abonnement](functions-scale.md#consumption-plan) wordt dynamisch geschaald in reactie op belasting en biedt minimale opties voor netwerk isolatie.
-    * Het [Premium-abonnement](functions-scale.md#premium-plan) wordt ook dynamisch geschaald en biedt meer uitgebreide netwerk isolatie.
-    * Het Azure [app service-abonnement](functions-scale.md#app-service-plan) werkt op een vaste schaal en biedt netwerk isolatie die vergelijkbaar is met het Premium-abonnement.
+    * Het [verbruiks abonnement](consumption-plan.md) wordt dynamisch geschaald in reactie op belasting en biedt minimale opties voor netwerk isolatie.
+    * Het [Premium-abonnement](functions-premium-plan.md) wordt ook dynamisch geschaald en biedt meer uitgebreide netwerk isolatie.
+    * Het Azure [app service-abonnement](dedicated-plan.md) werkt op een vaste schaal en biedt netwerk isolatie die vergelijkbaar is met het Premium-abonnement.
 * U kunt functies uitvoeren in een [app service Environment](../app-service/environment/intro.md). Deze methode implementeert uw functie in uw virtuele netwerk en biedt volledige netwerk controle en-isolatie.
 
 ## <a name="matrix-of-networking-features"></a>Matrix van netwerk functies
@@ -34,7 +34,7 @@ U kunt functie-apps op verschillende manieren hosten:
 
 U kunt toegangs beperkingen gebruiken voor het definiëren van een lijst met door prioriteiten gerangschikte IP-adressen die geen toegang tot uw app hebben of geweigerd. De lijst kan IPv4-en IPv6-adressen of specifieke subnetten van het virtuele netwerk bevatten die gebruikmaken van [service-eind punten](#use-service-endpoints). Als er sprake is van een of meer vermeldingen, bevindt zich een impliciete ' weigeren ' aan het einde van de lijst. IP-beperkingen werken met alle opties voor het hosten van functies.
 
-Toegangs beperkingen zijn beschikbaar in de [Premium](functions-premium-plan.md), het [verbruik](functions-scale.md#consumption-plan)en het [app service](functions-scale.md#app-service-plan).
+Toegangs beperkingen zijn beschikbaar in de [Premium](functions-premium-plan.md), het [verbruik](consumption-plan.md)en het [app service](dedicated-plan.md).
 
 > [!NOTE]
 > Als er netwerk beperkingen zijn ingesteld, kunt u alleen implementeren vanuit uw virtuele netwerk of wanneer u het IP-adres van de computer die u gebruikt voor toegang tot de Azure Portal op de lijst met veilige geadresseerden. U kunt de functie echter wel beheren via de portal.
@@ -143,7 +143,7 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 
 Virtuele netwerk triggers worden ondersteund in versie 2. x en hoger van de functions-runtime. De volgende niet-HTTP-trigger typen worden ondersteund.
 
-| Extensie | Minimale versie |
+| Toestelnummer | Minimale versie |
 |-----------|---------| 
 |[Micro soft. Azure. webjobs. Extensions. Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage/) | 3.0.10 of hoger |
 |[Micro soft. Azure. webjobs. Extensions. Event hubs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventHubs)| 4.1.0 of hoger|

@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: f597e58c70d6ac9daff753f5c0a54199c2383c42
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 746a97ecd9b0bdd676e70cca38edc75905e3e4bd
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019499"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936937"
 ---
 # <a name="manage-your-function-app"></a>Uw functie-app beheren 
 
@@ -35,7 +35,7 @@ In dit artikel wordt beschreven hoe u uw functie-apps configureert en beheert.
 
 U kunt navigeren naar alles wat u nodig hebt om uw functie-app te beheren op de pagina overzicht, met name de **[Toepassings instellingen](#settings)** en **[platform functies](#platform-features)**.
 
-## <a name="application-settings"></a><a name="settings"></a>Toepassingsinstellingen
+## <a name="work-with-application-settings"></a><a name="settings"></a>Werken met toepassings instellingen
 
 Op het tabblad **Toepassings instellingen** worden instellingen onderhouden die worden gebruikt door de functie-app. Deze instellingen worden versleuteld opgeslagen en u moet **waarden weer geven** selecteren om de waarden in de portal weer te geven. U kunt ook toegang krijgen tot toepassings instellingen met behulp van de Azure CLI.
 
@@ -68,6 +68,56 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
 Wanneer u een functie-app lokaal ontwikkelt, moet u lokale kopieën van deze waarden in de local.settings.jsvan het project bestand behouden. Zie [Local Settings file](functions-run-local.md#local-settings-file)(Engelstalig) voor meer informatie.
+
+## <a name="hosting-plan-type"></a>Type hosting plan
+
+Wanneer u een functie-app maakt, maakt u ook een App Service hosting plan waarin de app wordt uitgevoerd. Een plan kan een of meer functie-apps hebben. De functionaliteit, schaal baarheid en prijs van uw functies zijn afhankelijk van het type abonnement. Zie de pagina met prijzen voor [Azure functions](https://azure.microsoft.com/pricing/details/functions/)voor meer informatie.
+
+U kunt bepalen welk type plan wordt gebruikt door uw functie-app vanuit de Azure Portal, of door gebruik te maken van de Azure CLI-of Azure PowerShell-Api's. 
+
+Met de volgende waarden wordt het type abonnement aangegeven:
+
+| Plantype | Portal | Azure CLI/Power shell |
+| --- | --- | --- |
+| [Verbruik](consumption-plan.md) | **Verbruik** | `Dynamic` |
+| [Premium](functions-premium-plan.md) | **ElasticPremium** | `ElasticPremium` |
+| [Toegewezen (App Service)](dedicated-plan.md) | Sommige | Sommige |
+
+# <a name="portal"></a>[Portal](#tab/portal)
+
+Zie **app service plan** op het tabblad **overzicht** voor de functie-app in de [Azure Portal](https://portal.azure.com)om het type abonnement te bepalen dat door uw functie-app wordt gebruikt. Als u de prijs categorie wilt zien, selecteert u de naam van het **app service plan** en selecteert u vervolgens **Eigenschappen** in het linkerdeel venster.
+
+![Schaal plan weer geven in de portal](./media/functions-scale/function-app-overview-portal.png)
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
+
+Voer de volgende Azure CLI-opdracht uit om het type hosting plan op te halen:
+
+```azurecli-interactive
+functionApp=<FUNCTION_APP_NAME>
+resourceGroup=FunctionMonitoringExamples
+appServicePlanId=$(az functionapp show --name $functionApp --resource-group $resourceGroup --query appServicePlanId --output tsv)
+az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output tsv
+
+```  
+
+Vervang in het vorige voor beeld `<RESOURCE_GROUP>` en `<FUNCTION_APP_NAME>` met de namen van de resource groep en de functie-app, respectievelijk. 
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+Voer de volgende Azure PowerShell opdracht uit om het type hosting abonnement te verkrijgen:
+
+```azurepowershell-interactive
+$FunctionApp = '<FUNCTION_APP_NAME>'
+$ResourceGroup = '<RESOURCE_GROUP>'
+
+$PlanID = (Get-AzFunctionApp -ResourceGroupName $ResourceGroup -Name $FunctionApp).AppServicePlan
+(Get-AzFunctionAppPlan -Name $PlanID -ResourceGroupName $ResourceGroup).SkuTier
+```
+Vervang in het vorige voor beeld `<RESOURCE_GROUP>` en `<FUNCTION_APP_NAME>` met de namen van de resource groep en de functie-app, respectievelijk. 
+
+---
+
 
 ## <a name="platform-features"></a>Platform functies
 
@@ -148,5 +198,5 @@ Wanneer functies een HTTP-trigger gebruiken, kunt u vereisen dat aanroepen eerst
 + [Azure App Service-instellingen configureren](../app-service/configure-common.md)
 + [Doorlopende implementatie voor Azure Functions](functions-continuous-deployment.md)
 
-[Azure CLI]: /cli/azure/
+[Azure-CLI]: /cli/azure/
 [Azure-portal]: https://portal.azure.com

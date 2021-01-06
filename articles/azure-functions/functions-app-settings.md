@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 3d7292999fc4b53fed06822461857185127dc793
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 72b42e392f350a8693ca8a052bdec1d5fd337234
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898722"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937107"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -131,7 +131,7 @@ Hiermee geeft u de opslag plaats of provider op die moet worden gebruikt voor sl
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
-|AzureWebJobsSecretStorageType|Files|
+|AzureWebJobsSecretStorageType|Bestanden|
 
 ## <a name="azurewebjobsstorage"></a>AzureWebJobsStorage
 
@@ -256,7 +256,7 @@ Alleen voor verbruik & Premium-abonnementen. Het bestandspad naar de code en con
 Het maximum aantal exemplaren waarmee de functie-app kan worden uitgeschaald. De standaard waarde is geen limiet.
 
 > [!IMPORTANT]
-> Deze instelling is beschikbaar als preview-versie.  Een [app-eigenschap voor de functie Max scale-out](./functions-scale.md#limit-scale-out) is toegevoegd en is de aanbevolen manier om uitschalen te beperken.
+> Deze instelling is beschikbaar als preview-versie.  Een [app-eigenschap voor de functie Max scale-out](./event-driven-scaling.md#limit-scale-out) is toegevoegd en is de aanbevolen manier om uitschalen te beperken.
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|

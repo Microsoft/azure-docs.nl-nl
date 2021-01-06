@@ -1,24 +1,24 @@
 ---
 title: Implementatie volgorde voor resources instellen
-description: Hierin wordt beschreven hoe u een resource instelt als afhankelijk van een andere resource tijdens de implementatie. De afhankelijkheden zorgen ervoor dat resources in de juiste volg orde worden geïmplementeerd.
+description: Hierin wordt beschreven hoe u een Azure-resource instelt als afhankelijk van een andere resource tijdens de implementatie. De afhankelijkheden zorgen ervoor dat resources in de juiste volg orde worden geïmplementeerd.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: a96dca0ab30d0baee2688427d78867ea128e673a
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: f6b63b066da06a17c3a2e51ab0f3ab9bf521a144
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722008"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934744"
 ---
 # <a name="define-the-order-for-deploying-resources-in-arm-templates"></a>Definieer de volg orde voor het implementeren van resources in ARM-sjablonen
 
-Bij het implementeren van resources moet u er mogelijk voor zorgen dat er resources bestaan voor andere resources. U hebt bijvoorbeeld een logische SQL-Server nodig voordat u een Data Base implementeert. U kunt deze relatie tot stand brengen door één resource als afhankelijk van de andere bron te markeren. Gebruik het element **dependsOn** om een expliciete afhankelijkheid te definiëren. Gebruik de functies **verwijzing** of **lijst** om een impliciete afhankelijkheid te definiëren.
+Bij het implementeren van resources moet u er mogelijk voor zorgen dat er resources bestaan voor andere resources. U hebt bijvoorbeeld een logische SQL-Server nodig voordat u een Data Base implementeert. U kunt deze relatie tot stand brengen door één resource als afhankelijk van de andere bron te markeren. Gebruik het- `dependsOn` element om een expliciete afhankelijkheid te definiëren. Gebruik de functies **verwijzing** of **lijst** om een impliciete afhankelijkheid te definiëren.
 
-Resource Manager evalueert de afhankelijkheden tussen resources en implementeert ze in de volgorde van afhankelijkheid. Als resources niet van elkaar afhankelijk zijn, worden deze door Resource Manager parallel geïmplementeerd. U hoeft alleen afhankelijkheden te definiëren voor resources die in dezelfde sjabloon zijn geïmplementeerd.
+Azure Resource Manager evalueert de afhankelijkheden tussen resources en implementeert deze in hun afhankelijke volg orde. Als resources niet van elkaar afhankelijk zijn, worden deze door Resource Manager parallel geïmplementeerd. U hoeft alleen afhankelijkheden te definiëren voor resources die in dezelfde sjabloon zijn geïmplementeerd.
 
 ## <a name="dependson"></a>dependsOn
 
-Binnen uw sjabloon kunt u met het dependsOn-element één resource definiëren als afhankelijk van een of meer resources. De waarde is een JSON-matrix met teken reeksen, die elk een resource naam of-ID zijn. De matrix kan resources bevatten die [voorwaardelijk worden geïmplementeerd](conditional-resource-deployment.md). Wanneer een voorwaardelijke resource niet is geïmplementeerd, wordt deze automatisch door Azure Resource Manager verwijderd uit de vereiste afhankelijkheden.
+In uw Azure Resource Manager-sjabloon (ARM-sjabloon) `dependsOn` kunt u met het-element één resource definiëren als afhankelijk van een of meer resources. De waarde is een JavaScript Object Notation (JSON) matrix van teken reeksen, die elk een resource naam of-ID zijn. De matrix kan resources bevatten die [voorwaardelijk worden geïmplementeerd](conditional-resource-deployment.md). Wanneer een voorwaardelijke resource niet is geïmplementeerd, wordt deze automatisch door Azure Resource Manager verwijderd uit de vereiste afhankelijkheden.
 
 In het volgende voor beeld ziet u een netwerk interface die afhankelijk is van een virtueel netwerk, een netwerk beveiligings groep en een openbaar IP-adres. Voor de volledige sjabloon raadpleegt u [de Quick Start-sjabloon voor een virtuele Linux-machine](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-linux/azuredeploy.json).
 
@@ -37,11 +37,11 @@ In het volgende voor beeld ziet u een netwerk interface die afhankelijk is van e
 }
 ```
 
-Terwijl u mogelijk bent gedependsOnd om relaties tussen uw resources toe te wijzen, is het belang rijk om te begrijpen waarom u dit doet. Als u bijvoorbeeld wilt documenteren hoe resources zijn gekoppeld, is dependsOn niet de juiste benadering. U kunt geen query uitvoeren op de resources die na de implementatie zijn gedefinieerd in het dependsOn-element. Het instellen van onnodige afhankelijkheden vertraagt de implementatie tijd omdat Resource Manager die bronnen niet parallel kan implementeren.
+Terwijl u mogelijk hebt gebogen om `dependsOn` relaties tussen uw resources toe te wijzen, is het belang rijk om te begrijpen waarom u dit doet. Als u bijvoorbeeld wilt documenteren hoe resources zijn gekoppeld, `dependsOn` is dit niet de juiste benadering. U kunt geen query uitvoeren op de resources die na de implementatie zijn gedefinieerd in het- `dependsOn` element. Het instellen van onnodige afhankelijkheden vertraagt de implementatie tijd omdat Resource Manager die bronnen niet parallel kan implementeren.
 
 ## <a name="child-resources"></a>Onderliggende resources
 
-Een impliciete implementatie afhankelijkheid wordt niet automatisch gemaakt tussen een [onderliggende bron](child-resource-name-type.md) en de bovenliggende resource. Als u de onderliggende resource moet implementeren na de bovenliggende resource, stelt u de eigenschap dependsOn in.
+Een impliciete implementatie afhankelijkheid wordt niet automatisch gemaakt tussen een [onderliggende bron](child-resource-name-type.md) en de bovenliggende resource. Als u de onderliggende resource moet implementeren na de bovenliggende resource, stelt u de `dependsOn` eigenschap in.
 
 In het volgende voor beeld ziet u een logische SQL-Server en-data base. U ziet dat er een expliciete afhankelijkheid is gedefinieerd tussen de data base en de server, zelfs als de Data Base een onderliggend item van de server is.
 
@@ -85,13 +85,13 @@ Verwijzings-en lijst expressies declareert impliciet dat de ene resource afhanke
 
 Als u een impliciete afhankelijkheid wilt afdwingen, verwijst u naar de resource op naam, niet op Resource-ID. Als u de resource-ID doorgeeft in de functies verwijzing of lijst, wordt er geen impliciete verwijzing gemaakt.
 
-De algemene indeling van de referentie functie is:
+De algemene indeling van de `reference` functie is:
 
 ```json
 reference('resourceName').propertyPath
 ```
 
-De algemene indeling van de functie Listkeys ophalen is:
+De algemene indeling van de `listKeys` functie is:
 
 ```json
 listKeys('resourceName', 'yyyy-mm-dd')
@@ -165,7 +165,7 @@ In het volgende voor beeld ziet u hoe u meerdere virtuele machines implementeert
 }
 ```
 
-In het volgende voor beeld ziet u hoe u drie opslag accounts implementeert voordat u de virtuele machine implementeert. U ziet dat de naam van het element Copy is ingesteld op `storagecopy` en dat het element dependsOn voor de virtuele machine ook is ingesteld op `storagecopy` .
+In het volgende voor beeld ziet u hoe u drie opslag accounts implementeert voordat u de virtuele machine implementeert. U ziet dat het `copy` element is `name` ingesteld op `storagecopy` en dat het `dependsOn` element voor de virtuele machine ook is ingesteld op `storagecopy` .
 
 ```json
 {
@@ -213,10 +213,9 @@ Zie [problemen met algemene Azure-implementaties met Azure Resource Manager oplo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [zelf studie: Azure Resource Manager sjablonen met afhankelijke resources maken](template-tutorial-create-templates-with-dependent-resources.md)om een zelf studie te door lopen.
+* Zie [zelf studie: arm-sjablonen maken met afhankelijke resources](template-tutorial-create-templates-with-dependent-resources.md)om een zelf studie te door lopen.
 * Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die bron afhankelijkheden omvat.
-* Zie [Azure Resource Manager aanbevolen procedures voor sjablonen](template-best-practices.md)voor aanbevelingen bij het instellen van afhankelijkheden.
+* Zie [Aanbevolen procedures voor arm-sjablonen](template-best-practices.md)voor aanbevelingen bij het instellen van afhankelijkheden.
 * Zie [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor meer informatie over het oplossen van problemen met afhankelijkheden tijdens de implementatie.
-* Zie [ontwerp sjablonen](template-syntax.md)voor meer informatie over het maken van Azure Resource Manager sjablonen.
-* Zie [sjabloon functies](template-functions.md)voor een lijst met de beschik bare functies in een sjabloon.
-
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over het maken van Azure Resource Manager sjablonen.
+* Zie [arm-sjabloon functies](template-functions.md)voor een lijst met de beschik bare functies in een sjabloon.

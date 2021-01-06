@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: trbye
-ms.openlocfilehash: b3e9c1e8ad23ea0ebf540eddbd6d4a03b8a72fe2
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 1a002b6efbe2603ae254c19f9e3cc7377198cea2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835071"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935815"
 ---
 # <a name="develop-custom-commands-applications"></a>Toepassingen voor aangepaste opdrachten ontwikkelen
 
@@ -178,7 +178,7 @@ Begin met het bewerken van de bestaande `TurnOn` opdracht om meerdere apparaten 
    1. Selecteer **Bijwerken**.
 
        > [!div class="mx-imgBorder"]
-       > ![Scherm afbeelding die laat zien waar een vereiste parameter reactie wordt gemaakt.](media/custom-commands/add-required-on-off-parameter-response.png)
+       > ![Scherm opname van de sectie ' reactie toevoegen voor een vereiste para meter ' op het tabblad eenvoudige editor geselecteerd.](media/custom-commands/add-required-on-off-parameter-response.png)
    
    1. Configureer de eigenschappen van de para meter met behulp van de volgende tabel. Zie voor meer informatie over alle configuratie-eigenschappen van een opdracht [aangepaste opdrachten concepten en definities](./custom-commands-references.md).
       

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet, contperf-fy21q2
-ms.openlocfilehash: c30e97a4bff8fa845f6eb3c3092a00ee541e59f4
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: cf985999bac0cf45eec5d8f0f5f9e921b6f4591c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032793"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934948"
 ---
 # <a name="azure-cosmos-db-sql-sdk-connectivity-modes"></a>Azure Cosmos DB SQL SDK-connectiviteits modi
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,7 +28,7 @@ De twee beschik bare connectiviteits modi zijn:
       
     De gateway modus wordt op alle SDK-platformen ondersteund. Als uw toepassing wordt uitgevoerd in een bedrijfs netwerk met strikte firewall beperkingen, is de gateway modus de beste keuze, omdat deze gebruikmaakt van de standaard HTTPS-poort en één DNS-eind punt. De verhoudingen van de prestaties zijn echter wel dat de gateway modus een extra netwerk-hop omvat telkens wanneer gegevens worden gelezen vanuit of geschreven naar Azure Cosmos DB. We raden ook de verbindings modus voor de gateway aan wanneer u toepassingen uitvoert in omgevingen met een beperkt aantal socket verbindingen.
 
-    Wanneer u de SDK in Azure Functions gebruikt, met name in het [verbruiks abonnement](../azure-functions/functions-scale.md#consumption-plan), moet u rekening houden met de huidige [limieten voor verbindingen](../azure-functions/manage-connections.md).
+    Wanneer u de SDK in Azure Functions gebruikt, met name in het [verbruiks abonnement](../azure-functions/consumption-plan.md), moet u rekening houden met de huidige [limieten voor verbindingen](../azure-functions/manage-connections.md).
 
   * Directe modus
 

@@ -6,16 +6,16 @@ ms.custom: devx-track-java
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: 48a732e3935d78bdbf8b81fe989b59be1fbe2203
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c9ecb670cea022988efda8ec690c0724310cdb4b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020429"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934846"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Java en Gradle gebruiken voor het maken en publiceren van een functie in azure
 
-In dit artikel wordt beschreven hoe u een Java-functie project bouwt en publiceert naar Azure Functions met het opdracht regel programma Gradle. Wanneer u klaar bent, wordt de functie code in azure uitgevoerd in een [hosting abonnement](functions-scale.md#consumption-plan) op de server en wordt geactiveerd door een HTTP-aanvraag. 
+In dit artikel wordt beschreven hoe u een Java-functie project bouwt en publiceert naar Azure Functions met het opdracht regel programma Gradle. Wanneer u klaar bent, wordt de functie code in azure uitgevoerd in een [hosting abonnement](consumption-plan.md) op de server en wordt geactiveerd door een HTTP-aanvraag. 
 
 > [!NOTE]
 > Als Gradle niet uw voor keur is, Bekijk dan onze vergelijk bare zelf studies voor Java-Ontwikkel aars met [maven](./create-first-function-cli-java.md), [IntelliJ idee](/azure/developer/java/toolkit-for-intellij/quickstart-functions) en [VS code](./create-first-function-vs-code-java.md).
@@ -175,5 +175,5 @@ U hebt een Java-functies project gemaakt met een door HTTP geactiveerde functie,
 > [Een Azure Storage wachtrij-uitvoer binding toevoegen](functions-add-output-binding-storage-queue-java.md)
 
 
-[Azure CLI]: /cli/azure
+[Azure-CLI]: /cli/azure
 [Azure-portal]: https://portal.azure.com

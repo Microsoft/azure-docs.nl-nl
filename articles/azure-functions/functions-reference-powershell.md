@@ -5,12 +5,12 @@ author: eamonoreilly
 ms.topic: conceptual
 ms.custom: devx-track-dotnet, devx-track-azurepowershell
 ms.date: 04/22/2019
-ms.openlocfilehash: af9490433c344c712da55e9b29bf9df364380736
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 61ed3ed274505101c65e251260bd759fe78f7b31
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422532"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936784"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions PowerShell
 
@@ -525,7 +525,7 @@ Diverse modules worden vaak gebruikt door de Power shell-werk nemer. Deze module
 De huidige lijst met modules is als volgt:
 
 * [Micro soft. Power shell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive): module die wordt gebruikt voor het werken met archieven, zoals `.zip` , `.nupkg` en anderen.
-* **ThreadJob** : een implementatie op basis van een thread van de Power shell-taak-api's.
+* **ThreadJob**: een implementatie op basis van een thread van de Power shell-taak-api's.
 
 Functies gebruiken standaard de meest recente versie van deze modules. Als u een specifieke module versie wilt gebruiken, plaatst u die specifieke versie in de `Modules` map van uw functie-app.
 
@@ -649,11 +649,11 @@ Wanneer u werkt met Power shell-functies, moet u rekening houden met de overwegi
 
 ### <a name="cold-start"></a>Koude start
 
-Bij het ontwikkelen van Azure Functions in het [serverloze hosting model](functions-scale.md#consumption-plan)is koude start een werkelijkheid. *Koude start* verwijst naar de tijd die nodig is om de functie-app uit te voeren om een aanvraag te verwerken. Koude start treedt vaker op in het verbruiks abonnement, omdat uw functie-app wordt afgesloten tijdens peri Oden van inactiviteit.
+Bij het ontwikkelen van Azure Functions in het [serverloze hosting model](consumption-plan.md)is koude start een werkelijkheid. *Koude start* verwijst naar de tijd die nodig is om de functie-app uit te voeren om een aanvraag te verwerken. Koude start treedt vaker op in het verbruiks abonnement, omdat uw functie-app wordt afgesloten tijdens peri Oden van inactiviteit.
 
 ### <a name="bundle-modules-instead-of-using-install-module"></a>Bundel modules in plaats van gebruik te maken van `Install-Module`
 
-Uw script wordt uitgevoerd op elke aanroep. Vermijd `Install-Module` het gebruik in uw script. Gebruik in plaats daarvan `Save-Module` vóór het publiceren zodat uw functie geen tijd verspilde bij het downloaden van de module. Als koude start invloed heeft op uw functies, kunt u overwegen om uw functie-app te implementeren in een [app service plan](functions-scale.md#app-service-plan) dat is ingesteld op *altijd* of op een [Premium-abonnement](functions-scale.md#premium-plan).
+Uw script wordt uitgevoerd op elke aanroep. Vermijd `Install-Module` het gebruik in uw script. Gebruik in plaats daarvan `Save-Module` vóór het publiceren zodat uw functie geen tijd verspilde bij het downloaden van de module. Als koude start invloed heeft op uw functies, kunt u overwegen om uw functie-app te implementeren in een [app service plan](dedicated-plan.md) dat is ingesteld op *altijd* of op een [Premium-abonnement](functions-premium-plan.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

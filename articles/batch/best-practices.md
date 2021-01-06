@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 12/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5c3521a3b5fe0dd9c2d1534f6e2a6864647f5da3
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 7e2a49c8307af89fb3898f5f2513fb493d0f5d90
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694175"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934285"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -24,6 +24,9 @@ In dit artikel wordt een verzameling aanbevolen procedures en handige tips besch
 ### <a name="pool-configuration-and-naming"></a>Groeps configuratie en-naamgeving
 
 - **Pool toewijzings modus** Bij het maken van een batch-account kunt u kiezen uit twee pool toewijzings modi: **batch-service** of **gebruikers abonnement**. In de meeste gevallen moet u de standaard batch-service modus gebruiken, waarin Pools achter de schermen worden toegewezen in door batch beheerde abonnementen. In de alternatieve modus Gebruikersabonnement worden Batch-VM's en andere resources rechtstreeks in uw abonnement gemaakt wanneer er een groep wordt gemaakt. Abonnements accounts voor gebruikers worden voornamelijk gebruikt om een belang rijke, maar kleine subset van scenario's mogelijk te maken. Meer informatie over de modus gebruikers abonnement vindt u op [aanvullende configuratie voor de modus gebruikers abonnement](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
+
+- **' cloudServiceConfiguration ' of ' virtualMachineConfiguration '.**
+    ' virtualMachineConfiguration ' moet worden gebruikt. Alle batch-functies worden ondersteund door groepen van ' virtualMachineConfiguration '. Niet alle functies worden ondersteund voor cloudServiceConfiguration-groepen en er worden geen nieuwe mogelijkheden gepland.
 
 - **Denk na over taak-en taak uitvoerings tijd bij het bepalen van de taak voor pool toewijzing.**
     Als u taken hebt die voornamelijk uit korte uitvoeringen bestaan, en het verwachte totale aantal taken klein is, zodat de totale verwachte uitvoerings tijd van de taak niet lang is, kunt u geen nieuwe groep voor elke taak toewijzen. De toewijzings tijd van de knoop punten vermindert de uitvoerings tijd van de taak.

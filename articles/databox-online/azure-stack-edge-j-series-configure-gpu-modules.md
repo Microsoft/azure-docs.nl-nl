@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/25/2020
+ms.date: 01/04/2021
 ms.author: alkohli
-ms.openlocfilehash: 8b9f1180639f638e72fdea2f87958628a2e9e86b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d172ce98ba93360c621a91fb0e2a55d022470943
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891472"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935551"
 ---
 # <a name="configure-and-run-a-module-on-gpu-on-azure-stack-edge-pro-device"></a>Een module op GPU op Azure Stack Edge Pro-apparaat configureren en uitvoeren
 
@@ -30,47 +30,60 @@ Zorg voordat u begint voor het volgende:
 
 ## <a name="configure-module-to-use-gpu"></a>Module configureren voor het gebruik van GPU
 
-Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack Edge Pro-apparaat om een module uit te voeren, volgt u deze stappen.
+Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack Edge Pro-apparaat om een module uit te voeren,<!--Can it be simplified? "To configure a module to be run by the GPU on your Azure Stack Edge Pro device,"?--> Volg deze stappen.
 
-1. Ga in het Azure Portal naar de resource die aan uw apparaat is gekoppeld. 
+1. Ga in het Azure Portal naar de resource die aan uw apparaat is gekoppeld.
 
-2. Ga naar **Edge-rekenproces > Aan de slag**. Selecteer configureren in de tegel **Edge Compute configureren** .
+2. Selecteer in **overzicht** **IOT Edge**.
 
     ![Module configureren voor het gebruik van GPU 1](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-1.png)
 
-3. Op de Blade **Edge Compute configureren** :
+3. Selecteer in **IOT Edge-service inschakelen** de optie **toevoegen**.
 
-    1. Kies voor **IOT hub**de optie **nieuwe maken**.
-    2. Geef een naam op voor de IoT Hub resource die u voor uw apparaat wilt maken. Als u een gratis laag wilt gebruiken, selecteert u een bestaande resource. 
-    3. Noteer het IoT Edge apparaat en het IoT-gateway apparaat dat is gemaakt met de IoT Hub bron. U gebruikt deze informatie in de volgende stappen.
+   ![Module configureren voor het gebruik van GPU 2](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-2.png)
 
-    ![Module configureren voor het gebruik van GPU 2](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-2.png)
+4. Voer in **IOT Edge-service maken** de instellingen voor uw IOT hub resource in:
 
-4. Het duurt enkele minuten om de IoT Hub resource te maken. Nadat de resource is gemaakt, selecteert u in de tegel **Edge Compute configureren** de optie **configuratie weer geven** om de details van de IOT hub resource weer te geven.
+   |Veld   |Waarde    |
+   |--------|---------|
+   |Abonnement      | Het abonnement dat wordt gebruikt door de Azure Stack Edge-resource. |
+   |Resourcegroep    | De resource groep die wordt gebruikt door de Azure Stack Edge-resource. |
+   |IoT Hub           | Kies uit **nieuwe maken** of **bestaande gebruiken**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
+   |Naam              | Als u de standaard naam van een nieuwe IoT Hub resource niet wilt gebruiken, voert u een andere naam in. |
 
-    ![Module configureren voor het gebruik van GPU 4](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-4.png)
+   Wanneer u de instellingen hebt voltooid, selecteert u **controleren + maken**. Controleer de instellingen voor uw IoT Hub resource en selecteer **maken**.
 
-5. Ga naar **automatische apparaatbeheer > IOT Edge**.
+   ![Aan de slag met rekenproces 2](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
 
-    ![Module configureren voor het gebruik van GPU 6](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-2.png)
+   Het maken van resources voor een IoT Hub resource duurt enkele minuten. Nadat de resource is gemaakt, wordt in het **overzicht** aangegeven dat de IOT Edge-service nu wordt uitgevoerd.
 
-    In het rechterdeel venster ziet u het IoT Edge apparaat dat is gekoppeld aan uw Azure Stack Edge Pro-apparaat. Dit komt overeen met het IoT Edge apparaat dat u in de vorige stap hebt gemaakt bij het maken van de IoT Hub resource. 
-    
-6. Selecteer dit IoT Edge apparaat.
+   ![Aan de slag met rekenproces 3](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
+
+5. Om te bevestigen dat de rol van de Edge Compute is geconfigureerd, selecteert u **Eigenschappen**.
+
+   ![Aan de slag met rekenproces 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
+
+6. Selecteer in **Eigenschappen** de koppeling voor **IOT edge apparaat**.
+
+   ![Module configureren voor het gebruik van GPU 6](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-2.png)
+
+   In het rechterdeel venster ziet u het IoT Edge apparaat dat is gekoppeld aan uw Azure Stack Edge Pro-apparaat. Dit apparaat komt overeen met het IoT Edge apparaat dat u hebt gemaakt bij het maken van de IoT Hub resource.
+ 
+7. Selecteer dit IoT Edge apparaat.
 
    ![Module configureren voor het gebruik van GPU 7](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-3.png)
 
-7.  Selecteer **Modules instellen**.
+8. Selecteer **Modules instellen**.
 
-    ![Module configureren voor het gebruik van GPU 8](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-4.png)
+   ![Module configureren voor het gebruik van GPU 8](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-4.png)
 
-8. Selecteer **+ toevoegen** en selecteer vervolgens **+ IOT Edge module**. 
+9. Selecteer **+ toevoegen** en selecteer vervolgens **+ IOT Edge module**. 
 
     ![Module configureren voor het gebruik van GPU 9](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-5.png)
 
-9. Op het tabblad **IOT Edge module toevoegen** :
+10. Op het tabblad **IOT Edge module toevoegen** :
 
-    1. Geef de **afbeeldings-URI**op. U gebruikt de openbaar beschik bare nvidia-module **cijfers** . 
+    1. Geef de **afbeeldings-URI** op. U gebruikt de openbaar beschik bare nvidia-module **cijfers** . 
     
     2. Stel **beleid voor opnieuw opstarten** in op **altijd**.
     
@@ -78,36 +91,36 @@ Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack
     
     ![Module configureren voor het gebruik van GPU 10](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-6.png)
 
-10. Geef op het tabblad **omgevings variabelen** de naam op van de variabele en de bijbehorende waarde. 
+11. Geef op het tabblad **omgevings variabelen** de naam op van de variabele en de bijbehorende waarde. 
 
     1. Gebruik de NVIDIA_VISIBLE_DEVICES om de huidige module één GPU op dit apparaat te laten gebruiken. 
 
-    2. Stel de waarde in op 0 of 1. Dit zorgt ervoor dat er ten minste één GPU door het apparaat wordt gebruikt voor deze module. Wanneer u de waarde instelt op 0, 1, betekent dit dat zowel de Gpu's op het apparaat door deze module worden gebruikt.
+    2. Stel de waarde in op 0 of 1. Met de waarde 0 of 1 zorgt u ervoor dat er ten minste één GPU door het apparaat wordt gebruikt voor deze module. Wanneer u de waarde instelt op 0, 1, betekent dit dat zowel de Gpu's op het apparaat door deze module worden gebruikt.
 
-        ![Module configureren voor het gebruik van GPU 11](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-7.png)
+       ![Module configureren voor het gebruik van GPU 11](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-7.png)
 
-        Voor meer informatie over omgevings variabelen die u met de NVIDIA GPU kunt gebruiken, gaat u naar [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime#environment-variables-oci-spec).
+       Voor meer informatie over omgevings variabelen die u met de NVIDIA GPU kunt gebruiken, gaat u naar [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime#environment-variables-oci-spec).
 
     > [!NOTE]
-    > Een GPU kan alleen worden toegewezen aan een module. Een module kan echter een van beide of geen Gpu's gebruiken. 
+    > Een GPU kan alleen worden toegewezen aan een module. Een module kan echter een van beide of geen Gpu's gebruiken.
 
-11. Voer een naam in voor uw module. Op dit moment kunt u de optie voor het maken van een container opgeven en de dubbele instellingen voor de module wijzigen of als u klaar bent, selecteert u **toevoegen**. 
+12. Voer een naam in voor uw module. Op dit moment kunt u de optie voor het maken van een container opgeven en de dubbele instellingen voor de module wijzigen of als u klaar bent, selecteert u **toevoegen**. 
 
     ![Module configureren voor het gebruik van GPU 12](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-8.png)
 
-12. Zorg ervoor dat de module wordt uitgevoerd en selecteer **controleren + maken**.    
+13. Zorg ervoor dat de module wordt uitgevoerd en selecteer **controleren + maken**.
 
     ![Module configureren voor het gebruik van GPU 13](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-9.png)
 
-13. Op het tabblad **controleren en maken** worden de implementatie opties weer gegeven die u hebt geselecteerd. Controleer de opties en selecteer **maken**.
+14. Op het tabblad **controleren en maken** worden de implementatie opties weer gegeven die u hebt geselecteerd. Controleer de opties en selecteer **maken**.
     
     ![Module configureren voor het gebruik van GPU 14](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-10.png)
 
-14. Noteer de **runtime status** van de module. 
+15. Noteer de **runtime status** van de module.
     
     ![Module configureren voor het gebruik van GPU 15](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-11.png)
 
-    Het duurt enkele minuten voordat de module is geïmplementeerd. Selecteer **vernieuwen** en controleer of de **runtime status** update **actief**is.
+    Het duurt enkele minuten voordat de module is geïmplementeerd. Selecteer **vernieuwen** en controleer of de **runtime status** update **actief** is.
 
     ![Module configureren voor het gebruik van GPU 16](media/azure-stack-edge-j-series-configure-gpu-modules/configure-gpu-12.png)
 

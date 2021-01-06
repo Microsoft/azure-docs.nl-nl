@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf30570f10f176c47aed0f99127e03a027eff775
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: fc631e4329c1df2cdcbfe57c2b43ccccf14afa85
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093086"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936444"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>De implementatie van uw Azure Active Directory-apparaat plannen
 
@@ -44,7 +44,7 @@ De belangrijkste voor delen van het geven van uw apparaten een Azure AD-identite
 
 * Verhoog de productiviteit – met Azure AD kunnen uw gebruikers [naadloos aanmelden (SSO)](./azuread-join-sso.md) uitvoeren op uw on-premises en cloud resources, waardoor ze productief kunnen zijn, waar ze ook zijn.
 
-* Beveiliging verhogen: met Azure AD-apparaten kunt u [beleid voor voorwaardelijke toegang (CA)](../conditional-access/require-managed-devices.md) Toep assen op resources op basis van de identiteit van het apparaat of de gebruiker. CA-beleid kan extra beveiliging bieden met behulp van [Azure AD Identity Protection](../identity-protection/overview-identity-protection.md). Het toevoegen van een apparaat aan Azure AD is een vereiste om uw veiligheid te verbeteren met een verificatie strategie zonder [wacht woord](../authentication/concept-authentication-passwordless.md) .
+* Beveiliging verhogen: met Azure AD-apparaten kunt u [beleid voor voorwaardelijke toegang](../conditional-access/require-managed-devices.md) Toep assen op resources op basis van de identiteit van het apparaat of de gebruiker. Beleid voor voorwaardelijke toegang kan extra beveiliging bieden met behulp van [Azure AD Identity Protection](../identity-protection/overview-identity-protection.md). Het toevoegen van een apparaat aan Azure AD is een vereiste om uw veiligheid te verbeteren met een verificatie strategie zonder [wacht woord](../authentication/concept-authentication-passwordless.md) .
 
 * Verbeter de gebruikers ervaring – met apparaat-id's in azure AD kunt u uw gebruikers eenvoudig toegang bieden tot de cloud resources van uw organisatie op zowel persoonlijke als zakelijke apparaten. Beheerders kunnen [Enterprise State roaming](enterprise-state-roaming-overview.md) voor een uniforme ervaring op alle Windows-apparaten inschakelen.
 
@@ -102,7 +102,7 @@ Gebruik deze structuur om opties te bepalen voor apparaten die eigendom zijn van
 
 iOS-en Android-apparaten kunnen alleen worden geregistreerd bij Azure AD. De volgende tabel geeft een hoog niveau van overwegingen voor Windows-client apparaten. Gebruik dit als een overzicht en verken de verschillende integratie methoden uitvoerig.
 
-| Overweging | Geregistreerd bij Azure AD| Azure AD-koppeling| Hybride Azure AD-koppeling |
+| Overweging | Azure AD-geregistreerd| Azure AD-koppeling| Hybride Azure AD-koppeling |
 | - | - | - | - |
 | **Client besturingssystemen**| | |  |
 | Windows 10-apparaten| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png) |
@@ -129,7 +129,7 @@ Voorwaardelijke toegang <br>(Hybride Azure AD-apparaten vereisen)| | | ![Vinkje 
 
 Geregistreerde apparaten worden vaak beheerd met [Microsoft intune](/mem/intune/enrollment/device-enrollment). Apparaten worden op een aantal manieren Inge schreven bij intune, afhankelijk van het besturings systeem. 
 
-Geregistreerde Azure AD-apparaten bieden ondersteuning voor het meenemen van uw eigen apparaten (BYOD) en apparaten in bedrijfs eigendom tot SSO met cloud resources. Toegang tot resources is gebaseerd op het Azure AD- [CA-beleid](../conditional-access/require-managed-devices.md) dat is toegepast op het apparaat en de gebruiker.
+Geregistreerde Azure AD-apparaten bieden ondersteuning voor het meenemen van uw eigen apparaten (BYOD) en apparaten in bedrijfs eigendom tot SSO met cloud resources. Toegang tot resources is gebaseerd op het beleid voor [voorwaardelijke toegang](../conditional-access/require-managed-devices.md) van Azure AD dat wordt toegepast op het apparaat en de gebruiker.
 
 ### <a name="registering-devices"></a>Apparaten registreren
 
@@ -183,7 +183,7 @@ U kunt bepalen dat Azure AD-deelname de beste oplossing voor een apparaat is, en
 | - | - | - |
 | On-premises domein toegevoegd| Azure AD-Join| Het apparaat loskoppelen van het on-premises domein voordat u deelneemt aan Azure AD |
 | Hybride Azure AD-deelname| Azure AD-Join| Het apparaat loskoppelen van on-premises domein en van Azure AD voordat u deelneemt aan Azure AD |
-| Geregistreerd bij Azure AD| Azure AD-Join| De registratie van het apparaat ongedaan maken voordat u deelneemt aan Azure AD |
+| Azure AD-geregistreerd| Azure AD-Join| De registratie van het apparaat ongedaan maken voordat u deelneemt aan Azure AD |
 
 
 ## <a name="hybrid-azure-ad-join"></a>Hybride Azure AD-koppeling
@@ -237,11 +237,11 @@ Beheerders kunnen deze geregistreerde en gekoppelde apparaten beveiligen en verd
 
 Ondersteunde en niet-ondersteunde platforms voor geïntegreerde apparaten bekijken:
 
-| Hulpprogramma’s voor apparaatbeheer| Geregistreerd bij Azure AD| Azure AD-koppeling| Hybride Azure AD-koppeling|
+| Hulpprogramma’s voor apparaatbeheer| Azure AD-geregistreerd| Azure AD-koppeling| Hybride Azure AD-koppeling|
 | - | - | - | - |
 | [Beheer van mobiele apparaten (MDM) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>Voor beeld: Microsoft Intune| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
 | [Co-beheer met Microsoft Intune en micro soft-eind punt Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 en hoger)| | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)| ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
-| [Groeps beleid](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Alleen Windows)| | | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
+| [Groepsbeleid](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Alleen Windows)| | | ![Vinkje voor deze waarden.](./media/plan-device-deployment/check.png)|  |
 
 
 

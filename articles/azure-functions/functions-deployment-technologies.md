@@ -4,12 +4,12 @@ description: Meer informatie over de verschillende manieren waarop u code kunt i
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 7a75408008a90a2c40553b1f6c5c196775a48e61
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 04d96a09d41ace64bed5667bb9f0fa6e4beed244
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96168097"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936954"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Implementatie technologieën in Azure Functions
 
@@ -25,7 +25,7 @@ In de volgende tabel worden de beschik bare implementatie methoden voor uw funct
 | -- | -- | -- |
 | Op basis van hulpprogram ma's | &bull;&nbsp;[Visual &nbsp; Studio &nbsp; code &nbsp; Publish](functions-develop-vs-code.md#publish-to-azure)<br/>&bull;&nbsp;[Visual Studio publiceren](functions-develop-vs.md#publish-to-azure)<br/>&bull;&nbsp;[Basis Hulpprogramma's publiceren](functions-run-local.md#publish) | Implementaties tijdens de ontwikkeling en andere implementaties van AD-Hock. Implementaties worden lokaal beheerd door het hulp programma. | 
 | App Service beheerd| &bull;&nbsp;[Implementatie &nbsp; centrum &nbsp; (CI/cd)](functions-continuous-deployment.md)<br/>&bull;&nbsp;[Container &nbsp; implementaties](functions-create-function-linux-custom-image.md#enable-continuous-deployment-to-azure) |  Continue implementatie (CI/CD) van broncode beheer of vanuit een container register. Implementaties worden beheerd door het App Service platform (kudu).|
-| Externe pijp lijnen|&bull;&nbsp;[DevOps-pijp lijnen](functions-how-to-azure-devops.md)<br/>&bull;&nbsp;[GitHub-acties](functions-how-to-github-actions.md) | Productie-en DevOps-pijp lijnen die extra validatie, testen en andere acties omvatten, worden uitgevoerd als onderdeel van een geautomatiseerde implementatie. Implementaties worden beheerd door de pijp lijn. |
+| Externe pijp lijnen|&bull;&nbsp;[Azure-pijp lijnen](functions-how-to-azure-devops.md)<br/>&bull;&nbsp;[GitHub-acties](functions-how-to-github-actions.md) | Productie-en DevOps-pijp lijnen die extra validatie, testen en andere acties omvatten, worden uitgevoerd als onderdeel van een geautomatiseerde implementatie. Implementaties worden beheerd door de pijp lijn. |
 
 Hoewel de implementaties van specifieke functies gebruikmaken van de beste technologie op basis van hun context, zijn de meeste implementatie methoden gebaseerd op de [zip-implementatie](#zip-deploy).
 
@@ -33,9 +33,9 @@ Hoewel de implementaties van specifieke functies gebruikmaken van de beste techn
 
 Azure Functions ondersteunt lokale ontwikkeling en hosting in Windows en Linux op meerdere platforms. Momenteel zijn er drie hosting plannen beschikbaar:
 
-+ [Meerverbruik](functions-scale.md#consumption-plan)
-+ [Ultieme](functions-scale.md#premium-plan)
-+ [Toegewezen (App Service)](functions-scale.md#app-service-plan)
++ [Verbruik](consumption-plan.md)
++ [Premium](functions-premium-plan.md)
++ [Toegewezen (App Service)](dedicated-plan.md)
 
 Elk plan heeft verschillende gedragingen. Niet alle implementatie technologieën zijn beschikbaar voor elk van de Azure Functions. In het volgende diagram ziet u welke implementatie technologieën worden ondersteund voor elke combi natie van besturings systeem en hosting plan:
 
@@ -96,7 +96,7 @@ Linux-functie-apps die worden uitgevoerd in het verbruiks abonnement, hebben gee
 
 ##### <a name="dedicated-and-premium-plans"></a>Speciale en Premium-abonnementen
 
-Functie-apps die worden uitgevoerd op Linux in het [speciale (app service)-abonnement](functions-scale.md#app-service-plan) en het [Premium-abonnement](functions-scale.md#premium-plan) hebben ook een beperkte SCM/kudu-site.
+Functie-apps die worden uitgevoerd op Linux in het [speciale (app service)-abonnement](dedicated-plan.md) en het [Premium-abonnement](functions-premium-plan.md) hebben ook een beperkte SCM/kudu-site.
 
 ## <a name="deployment-technology-details"></a>Details implementatie technologie
 

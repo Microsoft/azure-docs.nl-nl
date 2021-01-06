@@ -3,12 +3,12 @@ title: Uitvoer in sjablonen
 description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 6a375dfbc767bcbbfd8ec6b7f8cb9e942e275582
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9e4ac134e9c1864bca8dd56c3a6e2311d0328d7d
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353524"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934727"
 ---
 # <a name="outputs-in-arm-templates"></a>Uitvoer in ARM-sjablonen
 
@@ -47,7 +47,7 @@ Zie [voorwaardelijke uitvoer sjabloon](https://github.com/bmoore-msft/AzureRM-Sa
 
 ## <a name="dynamic-number-of-outputs"></a>Dynamisch aantal uitvoer bewerkingen
 
-In sommige scenario's weet u niet het aantal exemplaren van een waarde die u moet retour neren bij het maken van de sjabloon. U kunt een variabele aantal waarden retour neren met behulp van het element **copy** .
+In sommige scenario's weet u niet het aantal exemplaren van een waarde die u moet retour neren bij het maken van de sjabloon. U kunt een variabele aantal waarden retour neren met behulp van het- `copy` element.
 
 ```json
 "outputs": {
@@ -61,7 +61,7 @@ In sommige scenario's weet u niet het aantal exemplaren van een waarde die u moe
 }
 ```
 
-Zie [herhalingen in azure Resource Manager-sjablonen](copy-outputs.md)voor meer informatie.
+Zie [uitvoer iteratie in arm-sjablonen](copy-outputs.md)voor meer informatie.
 
 ## <a name="linked-templates"></a>Gekoppelde sjablonen
 

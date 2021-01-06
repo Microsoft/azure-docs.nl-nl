@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: d10689937a037469399863395e0190e399334bd3
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: a7e19894a4688fe270422e93f7081f98e0b699a3
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96924338"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936529"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-the-azure-portal-with-azure-logic-apps-preview"></a>Stateful en stateless werk stromen maken in de Azure Portal met Azure Logic Apps Preview
 
@@ -77,7 +77,7 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
    | **Abonnement** | Ja | <*Azure-subscription-name*> | Het Azure-abonnement dat moet worden gebruikt voor uw logische app. |
    | **Resourcegroep** | Ja | <*Naam-van-Azure-resourcegroep*> | De Azure-resource groep waar u uw logische app en gerelateerde resources maakt. Deze resource naam moet uniek zijn tussen regio's en mag alleen letters, cijfers, afbreek streepjes ( **-** ), onderstrepings tekens (**_**), haakjes (**()**) en punten (**.**) bevatten. <p><p>In dit voor beeld wordt een resource groep met de naam gemaakt `Fabrikam-Workflows-RG` . |
    | **Naam van logische app** | Ja | <*naam-van-logische-app*> | De te gebruiken naam voor uw logische app. Deze resource naam moet uniek zijn tussen regio's en mag alleen letters, cijfers, afbreek streepjes ( **-** ), onderstrepings tekens (**_**), haakjes (**()**) en punten (**.**) bevatten. <p><p>In dit voor beeld wordt een logische app met de naam gemaakt `Fabrikam-Workflows` . <p><p>**Opmerking**: de naam van de logische app haalt automatisch het achtervoegsel op, `.azurewebsites.net` omdat de resource van de **logische app (preview)** wordt ingeschakeld door Azure functions, die gebruikmaakt van dezelfde app-naam Conventie. |
-   | **Publiceren** | Yes | <*implementatie-omgeving*> | De implementatie bestemming voor uw logische app. U kunt implementeren in azure door een **werk stroom** of een docker-container te selecteren. <p><p>In dit voor beeld wordt de **werk stroom** gebruikt. Dit is de **logische app (preview)** -resource in Azure. <p><p>Als u **docker-container** selecteert, [geeft u de container op die u wilt gebruiken in de instellingen van de logische app](#set-docker-container). |
+   | **Publiceren** | Ja | <*implementatie-omgeving*> | De implementatie bestemming voor uw logische app. U kunt implementeren in azure door een **werk stroom** of een docker-container te selecteren. <p><p>In dit voor beeld wordt de **werk stroom** gebruikt. Dit is de **logische app (preview)** -resource in Azure. <p><p>Als u **docker-container** selecteert, [geeft u de container op die u wilt gebruiken in de instellingen van de logische app](#set-docker-container). |
    | **Regio** | Ja | <*Azure-regio*> | De Azure-regio die moet worden gebruikt bij het maken van uw resource groep en resources. <p><p>In dit voorbeeld wordt **US - west** gebruikt. |
    |||||
 
@@ -90,9 +90,9 @@ In dit artikel wordt uitgelegd hoe u uw logische app en werk stroom in de Azure 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Opslagaccount** | Ja | <*Azure-storage-account-name*> | Het [Azure Storage-account](../storage/common/storage-account-overview.md) dat moet worden gebruikt voor opslag transacties. Deze resource naam moet uniek zijn voor alle regio's en mag 3-24 tekens bevatten met alleen cijfers en kleine letters. Selecteer een bestaand account of maak een nieuw account. <p><p>In dit voor beeld wordt een opslag account gemaakt met de naam `fabrikamstorageacct` . |
-   | **Plantype** | Yes | <*Azure-hosting-plan*> | Het [hosting plan](../app-service/overview-hosting-plans.md) dat moet worden gebruikt voor het implementeren van uw logische app. Dit is een [**Premium**](../azure-functions/functions-scale.md#premium-plan) -of [**app service-plan**](../azure-functions/functions-scale.md#app-service-plan). Uw keuze is van invloed op de prijs categorieën die u later kunt kiezen. <p><p>In dit voor beeld wordt het **app service-abonnement** gebruikt. <p><p>**Opmerking**: dit is vergelijkbaar met Azure functions. voor het resource type **Logic app (preview)** is een hosting plan en een prijs categorie vereist. Verbruiks hosting plannen worden niet ondersteund of zijn niet beschikbaar voor dit resource type. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Azure Functions schalen en hosten](../azure-functions/functions-scale.md) <br>- [Prijs informatie voor App Service](https://azure.microsoft.com/pricing/details/app-service/) <p><p> |
-   | **Windows-abonnement** | Yes | <*plan-naam*> | De naam van het plan dat moet worden gebruikt. Selecteer een bestaand plan of geef de naam voor een nieuw plan op. <p><p>In dit voor beeld wordt de naam gebruikt `Fabrikam-Service-Plan` . |
-   | **SKU en grootte** | Yes | <*prijs categorie*> | De [prijs categorie](../app-service/overview-hosting-plans.md) die moet worden gebruikt voor het hosten van uw logische app. Uw keuzes worden beïnvloed door het type abonnement dat u eerder hebt gekozen. Als u de standaardlaag wilt wijzigen, selecteert u **grootte wijzigen**. U kunt vervolgens andere prijs categorieën selecteren op basis van de werk belasting die u nodig hebt. <p><p>In dit voor beeld wordt de gratis **F1-prijs categorie** gebruikt voor werk belastingen voor ontwikkelen **en testen** . Bekijk [app service prijs informatie](https://azure.microsoft.com/pricing/details/app-service/)voor meer informatie. |
+   | **Plantype** | Ja | <*Azure-hosting-plan*> | Het [hosting plan](../app-service/overview-hosting-plans.md) dat moet worden gebruikt voor het implementeren van uw logische app. Dit is een [**Premium**](../azure-functions/functions-premium-plan.md) -of [**app service-plan**](../azure-functions/dedicated-plan.md). Uw keuze is van invloed op de prijs categorieën die u later kunt kiezen. <p><p>In dit voor beeld wordt het **app service-abonnement** gebruikt. <p><p>**Opmerking**: dit is vergelijkbaar met Azure functions. voor het resource type **Logic app (preview)** is een hosting plan en een prijs categorie vereist. Verbruiks hosting plannen worden niet ondersteund of zijn niet beschikbaar voor dit resource type. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Azure Functions schalen en hosten](../azure-functions/functions-scale.md) <br>- [Prijs informatie voor App Service](https://azure.microsoft.com/pricing/details/app-service/) <p><p> |
+   | **Windows Plan** | Ja | <*plan-naam*> | De naam van het plan dat moet worden gebruikt. Selecteer een bestaand plan of geef de naam voor een nieuw plan op. <p><p>In dit voor beeld wordt de naam gebruikt `Fabrikam-Service-Plan` . |
+   | **SKU en grootte** | Ja | <*prijs categorie*> | De [prijs categorie](../app-service/overview-hosting-plans.md) die moet worden gebruikt voor het hosten van uw logische app. Uw keuzes worden beïnvloed door het type abonnement dat u eerder hebt gekozen. Als u de standaardlaag wilt wijzigen, selecteert u **grootte wijzigen**. U kunt vervolgens andere prijs categorieën selecteren op basis van de werk belasting die u nodig hebt. <p><p>In dit voor beeld wordt de gratis **F1-prijs categorie** gebruikt voor werk belastingen voor ontwikkelen **en testen** . Bekijk [app service prijs informatie](https://azure.microsoft.com/pricing/details/app-service/)voor meer informatie. |
    |||||
 
 1. Als de instellingen voor maken en implementeren worden ondersteund met behulp van [Application Insights](../azure-monitor/app/app-insights-overview.md), kunt u optioneel diagnostische logboek registratie en tracering inschakelen voor uw logische app.
@@ -299,7 +299,7 @@ Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uit
    > [!TIP]
    > Als de meest recente uitvoerings status niet wordt weer gegeven, selecteert u op de werk balk van het **monitor** paneel **vernieuwen**. Er vindt geen uitvoering plaats voor een trigger die wordt overgeslagen vanwege unmet criteria of het vinden van geen gegevens.
 
-   | Uitvoerings status | Description |
+   | Uitvoerings status | Beschrijving |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -318,7 +318,7 @@ Voor een stateful werk stroom kunt u na elke uitvoering van elke workflow de uit
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
-   | Actie status | Pictogram | Description |
+   | Actie status | Pictogram | Beschrijving |
    |---------------|------|-------------|
    | Aborted | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | Geannuleerd | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een annulerings aanvraag ontvangen. |

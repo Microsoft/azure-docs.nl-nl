@@ -1,25 +1,34 @@
 ---
-title: Apache Kafka verbinding met Azure Event Hubs (preview) integreren met Debezium voor Change Data Capture
+title: Apache Kafka verbinding maken op Azure Event Hubs integreren met Debezium voor Change Data Capture
 description: Dit artikel bevat informatie over het gebruik van Debezium met Azure Event Hubs voor Kafka.
 ms.topic: how-to
 author: abhirockzz
 ms.author: abhishgu
-ms.date: 08/11/2020
-ms.openlocfilehash: ae3ef2e1f35be432558769c512845543867ef27a
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.date: 01/06/2021
+ms.openlocfilehash: 0ad1df23e71e652f7d380ffbabb542b81954e038
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505406"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935169"
 ---
-# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-preview-with-debezium-for-change-data-capture"></a>Apache Kafka Connect-ondersteuning op Azure Event Hubs (preview) integreren met Debezium voor Change Data Capture
+# <a name="integrate-apache-kafka-connect-support-on-azure-event-hubs-with-debezium-for-change-data-capture"></a>Apache Kafka Connect-ondersteuning op Azure Event Hubs integreren met Debezium voor Change Data Capture
 
 **Change Data Capture (CDC)** is een techniek die wordt gebruikt voor het bijhouden van wijzigingen op rijniveau in database tabellen in reactie op Create-, update-en delete-bewerkingen. [Debezium](https://debezium.io/) is een gedistribueerd platform dat is gebaseerd op wijzigingen in de functies voor het vastleggen van gegevens die beschikbaar zijn in verschillende data bases (bijvoorbeeld [logische decodering in postgresql](https://www.postgresql.org/docs/current/static/logicaldecoding-explanation.html)). Het bevat een set [Kafka Connect-connectors](https://debezium.io/documentation/reference/1.2/connectors/index.html) die op wijzigingen in rijen op rijniveau tikken in database tabellen (en) en deze converteren naar gebeurtenis stromen die vervolgens naar [Apache Kafka](https://kafka.apache.org/)worden verzonden.
+
+> [!WARNING]
+> Het gebruik van de Apache Kafka Connect Framework en de Debezium-platform en de bijbehorende connectors **komen niet in aanmerking voor product ondersteuning via Microsoft Azure**.
+>
+> Apache Kafka Connect gaat ervan uit dat de dynamische configuratie wordt opgeslagen in gecomprimeerde onderwerpen met een andere onbeperkte Bewaar periode. Azure Event Hubs [implementeert geen compressie als een Broker-functie](event-hubs-federation-overview.md#log-projections) en neemt altijd een Bewaar limiet op basis van tijd op voor behouden gebeurtenissen, in het hoofd van het principe dat Azure Event hubs een real-time engine voor gebeurtenis streaming is en geen gegevens-of configuratie opslag op lange termijn.
+>
+> Hoewel het Apache Kafka-project mogelijk vertrouwd is met het combi neren van deze rollen, is Azure van mening dat dergelijke informatie het beste kan worden beheerd in een juiste data base of configuratie opslag.
+>
+> Veel Apache Kafka verbindings scenario's werken wel, maar deze conceptuele verschillen tussen de Bewaar modellen van Apache Kafka en Azure Event Hubs kunnen ertoe leiden dat bepaalde configuraties niet naar behoren werken. 
 
 In deze zelf studie leert u hoe u een op change data capture gebaseerd systeem op Azure kunt instellen met behulp van [azure Event hubs](./event-hubs-about.md?WT.mc_id=devto-blog-abhishgu) (voor Kafka), [Azure DB voor postgresql](../postgresql/overview.md) en Debezium. De [Debezium postgresql-connector](https://debezium.io/documentation/reference/1.2/connectors/postgresql.html) wordt gebruikt voor het streamen van database wijzigingen van postgresql naar Kafka-onderwerpen in azure Event hubs
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 In deze zelfstudie voert u de volgende stappen uit:
 

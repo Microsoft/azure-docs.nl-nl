@@ -3,12 +3,12 @@ title: Sjabloon structuur en syntaxis
 description: Hierin worden de structuur en eigenschappen van Azure Resource Manager sjablonen (ARM-sjablonen) beschreven met declaratieve JSON-syntaxis.
 ms.topic: conceptual
 ms.date: 12/17/2020
-ms.openlocfilehash: 698309c5aa0817c4b758ec81133d4c98061aa355
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 4c08612325d2776f8f1a7fe4486e6f592ca474a0
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653126"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934693"
 ---
 # <a name="understand-the-structure-and-syntax-of-arm-templates"></a>Informatie over de structuur en de syntaxis van ARM-sjablonen
 
@@ -35,7 +35,7 @@ In de eenvoudigste structuur heeft een sjabloon de volgende elementen:
 
 | Elementnaam | Vereist | Beschrijving |
 |:--- |:--- |:--- |
-| $schema |Ja |Locatie van het JSON-schema bestand waarin de versie van de sjabloon taal wordt beschreven. Het versienummer dat u gebruikt, is afhankelijk van het bereik van de implementatie en uw JSON-editor.<br><br>Als u [VS code gebruikt met de uitbrei ding Azure Resource Manager tools](quickstart-create-templates-use-visual-studio-code.md), gebruikt u de meest recente versie voor implementaties van resource groepen:<br>`https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#`<br><br>Andere editors (waaronder Visual Studio) kunnen dit schema mogelijk niet verwerken. Voor die editors gebruikt u:<br>`https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`<br><br>Gebruik voor implementaties van abonnementen:<br>`https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`<br><br>Voor implementaties van beheer groepen gebruikt u:<br>`https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#`<br><br>Gebruik voor Tenant implementaties:<br>`https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#` |
+| $schema |Ja |Locatie van het schema bestand van de JavaScript Object Notation (JSON) waarin de versie van de sjabloon taal wordt beschreven. Het versienummer dat u gebruikt, is afhankelijk van het bereik van de implementatie en uw JSON-editor.<br><br>Als u [Visual Studio code gebruikt met de uitbrei ding Azure Resource Manager tools](quickstart-create-templates-use-visual-studio-code.md), gebruikt u de meest recente versie voor implementaties van resource groepen:<br>`https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#`<br><br>Andere editors (waaronder Visual Studio) kunnen dit schema mogelijk niet verwerken. Voor die editors gebruikt u:<br>`https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#`<br><br>Gebruik voor implementaties van abonnementen:<br>`https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`<br><br>Voor implementaties van beheer groepen gebruikt u:<br>`https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#`<br><br>Gebruik voor Tenant implementaties:<br>`https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#` |
 | contentVersion |Ja |De versie van de sjabloon (bijvoorbeeld 1.0.0.0). U kunt een willekeurige waarde voor dit element opgeven. Gebruik deze waarde als u belangrijke wijzigingen in uw sjabloon wilt documenteren. Wanneer u resources implementeert met de sjabloon, kan deze waarde worden gebruikt om ervoor te zorgen dat de juiste sjabloon wordt gebruikt. |
 | apiProfile |Nee | Een API-versie die fungeert als een verzameling van API-versies voor resource typen. Gebruik deze waarde om te voor komen dat u API-versies opgeeft voor elke resource in de sjabloon. Wanneer u een API-profiel versie opgeeft en geen API-versie voor het resource type opgeeft, gebruikt Resource Manager de API-versie voor het bron type dat in het profiel is gedefinieerd.<br><br>De API-profiel eigenschap is vooral handig bij het implementeren van een sjabloon in verschillende omgevingen, zoals Azure Stack en wereld wijd Azure. Gebruik de versie van het API-profiel om ervoor te zorgen dat uw sjabloon automatisch versies gebruikt die in beide omgevingen worden ondersteund. Zie [API-profiel](https://github.com/Azure/azure-rest-api-specs/tree/master/profile)voor een lijst met de huidige API-profiel versies en de bronnen-API-versies die in het profiel zijn gedefinieerd.<br><br>Zie [versies bijhouden met API-profielen](templates-cloud-consistency.md#track-versions-using-api-profiles)voor meer informatie. |
 | [instellen](#parameters) |Nee |Waarden die worden gegeven bij het uitvoeren van de implementatie om de resource-implementatie aan te passen. |
@@ -98,13 +98,13 @@ De beveiligde teken reeks maakt gebruik van dezelfde indeling als teken reeks en
 
 Voor gehele getallen die als inline-para meters worden door gegeven, kan het bereik van waarden worden beperkt door de SDK of het opdracht regel programma dat u voor implementatie gebruikt. Als u bijvoorbeeld Power shell gebruikt voor het implementeren van een sjabloon, kunnen integerwaarden variëren van-2147483648 tot 2147483647. Als u deze beperking wilt vermijden, geeft u grote waarden voor geheel getal op in een [parameter bestand](parameter-files.md). De resource typen hebben hun eigen limieten voor eigenschappen van gehele getallen.
 
-Wanneer u Boole-waarden en integerwaarden in uw sjabloon opgeeft, plaatst u de waarde niet tussen aanhalings tekens. Begin-en eind teken reeks waarden met dubbele aanhalings tekens.
+Wanneer u Boole-waarden en integerwaarden in uw sjabloon opgeeft, plaatst u de waarde niet tussen aanhalings tekens. Begin-en eind teken reeks waarden met dubbele aanhalings tekens ( `"string value"` ).
 
-Objecten beginnen met een accolade links en eindigen met een haakje sluiten. Matrices beginnen met een haakje openen en eindigen met een haakje sluiten.
+Objecten beginnen met een accolade ( `{` ) en eindigend met een haakje sluiten ( `}` ). Matrices beginnen met een haakje ( `[` ) en eindigend met een haakje ( `]` ).
 
 ## <a name="parameters"></a>Parameters
 
-In de parametersectie van de sjabloon geeft u op welke waarden u kunt invoeren bij het implementeren van de resources. U kunt maximaal 256 parameters opgeven in een sjabloon. U kunt het aantal para meters verminderen door objecten te gebruiken die meerdere eigenschappen bevatten.
+In de `parameters` sectie van de sjabloon geeft u op welke waarden u kunt invoeren bij het implementeren van de resources. U kunt maximaal 256 parameters opgeven in een sjabloon. U kunt het aantal para meters verminderen door objecten te gebruiken die meerdere eigenschappen bevatten.
 
 De eigenschappen die beschikbaar zijn voor een parameter zijn:
 
@@ -141,7 +141,7 @@ Zie [para meters in arm-sjablonen](template-parameters.md)voor voor beelden van 
 
 ## <a name="variables"></a>Variabelen
 
-In de sectie variabelen kunt u waarden maken die in de hele sjabloon kunnen worden gebruikt. U hoeft geen variabelen te definiëren, maar ze vereenvoudigen uw sjabloon vaak door complexe expressies te reduceren. De indeling van elke variabele komt overeen met een van de [gegevens typen](#data-types).
+In de `variables` sectie bouwt u waarden die in de hele sjabloon kunnen worden gebruikt. U hoeft geen variabelen te definiëren, maar ze vereenvoudigen uw sjabloon vaak door complexe expressies te reduceren. De indeling van elke variabele komt overeen met een van de [gegevens typen](#data-types).
 
 In het volgende voor beeld ziet u de beschik bare opties voor het definiëren van een variabele:
 
@@ -211,7 +211,7 @@ Bij het definiëren van een gebruikers functie gelden enkele beperkingen:
 | Elementnaam | Vereist | Beschrijving |
 |:--- |:--- |:--- |
 | naamruimte |Ja |Naam ruimte voor de aangepaste functies. Gebruik om naam conflicten te voor komen met sjabloon functies. |
-| functie naam |Ja |De naam van de aangepaste functie. Wanneer u de functie aanroept, moet u de naam van de functie combi neren met de naam ruimte. Als u bijvoorbeeld een functie met de naam UniqueName in de naam ruimte Contoso wilt aanroepen, gebruikt u `"[contoso.uniqueName()]"` . |
+| functie naam |Ja |De naam van de aangepaste functie. Wanneer u de functie aanroept, moet u de naam van de functie combi neren met de naam ruimte. Als u bijvoorbeeld een functie wilt aanroepen met `uniqueName` de naam in de naam ruimte contoso, gebruikt u `"[contoso.uniqueName()]"` . |
 | para meter-naam |Nee |De naam van de para meter die moet worden gebruikt binnen de aangepaste functie. |
 | para meter-waarde |Nee |Type parameter waarde. De toegestane typen en waarden zijn **String**, **securestring**, **int**, **BOOL**, **object**, **secureObject** en **array**. |
 | uitvoer type |Ja |Het type van de uitvoer waarde. Uitvoer waarden ondersteunen dezelfde typen als de invoer parameters van de functie. |
@@ -221,7 +221,7 @@ Zie door de [gebruiker gedefinieerde functies in arm-sjabloon](template-user-def
 
 ## <a name="resources"></a>Resources
 
-In de sectie Resources definieert u de resources die worden geïmplementeerd of bijgewerkt.
+In de `resources` sectie definieert u de resources die worden geïmplementeerd of bijgewerkt.
 
 U definieert resources met de volgende structuur:
 
@@ -282,7 +282,7 @@ U definieert resources met de volgende structuur:
 | Elementnaam | Vereist | Beschrijving |
 |:--- |:--- |:--- |
 | regeling | Nee | Een Booleaanse waarde die aangeeft of de resource wordt ingericht tijdens deze implementatie. Wanneer `true` wordt de bron gemaakt tijdens de implementatie. Wanneer `false` wordt de resource overgeslagen voor deze implementatie. Zie [voor waarde](conditional-resource-deployment.md). |
-| type |Ja |Het type van de resource. Deze waarde is een combi natie van de naam ruimte van de resource provider en het resource type (zoals **micro soft. Storage/Storage accounts**). Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. Voor een onderliggende resource is de notatie van het type afhankelijk van of het is genest binnen de bovenliggende resource of buiten de bovenliggende resource is gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
+| type |Ja |Het type van de resource. Deze waarde is een combi natie van de naam ruimte van de resource provider en het bron type (zoals `Microsoft.Storage/storageAccounts` ). Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. Voor een onderliggende resource is de notatie van het type afhankelijk van of het is genest binnen de bovenliggende resource of buiten de bovenliggende resource is gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
 | apiVersion |Ja |De versie van de REST API die moet worden gebruikt voor het maken van de resource. Wanneer u een nieuwe sjabloon maakt, stelt u deze waarde in op de meest recente versie van de resource die u implementeert. Zolang de sjabloon zo nodig werkt, blijft dezelfde API-versie gebruiken. Door door te gaan met het gebruik van dezelfde API-versie, minimaliseert u het risico van een nieuwe API-versie waardoor de werking van uw sjabloon wordt gewijzigd. Overweeg de API-versie alleen bij te werken als u een nieuwe functie wilt gebruiken die wordt geïntroduceerd in een latere versie. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. |
 | naam |Ja |De naam van de resource. De naam moet volgen op de URI-onderdeel beperkingen die zijn gedefinieerd in RFC3986. Azure-Services die de resource naam beschikbaar maken voor externe partijen, valideren de naam om ervoor te zorgen dat het geen poging is om een andere identiteit te vervalsen. Voor een onderliggende resource is de notatie van de naam afhankelijk van of deze is genest binnen de bovenliggende resource of buiten de bovenliggende resource is gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
 | aantekeningen |Nee |Uw notities voor het documenteren van de resources in uw sjabloon. Zie [opmerkingen in sjablonen](template-syntax.md#comments)voor meer informatie. |
@@ -296,9 +296,9 @@ U definieert resources met de volgende structuur:
 | properties |Nee |Resource-specifieke configuratie-instellingen. De waarden voor de eigenschappen zijn gelijk aan de waarden die u opgeeft in de hoofd tekst van de aanvraag voor de REST API bewerking (PUT-methode) om de resource te maken. U kunt ook een Kopieer matrix opgeven om meerdere exemplaren van een eigenschap te maken. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. |
 | resources |Nee |Onderliggende bronnen die afhankelijk zijn van de resource die wordt gedefinieerd. Alleen resource typen opgeven die zijn toegestaan voor het schema van de bovenliggende resource. De afhankelijkheid van de bovenliggende resource is niet geïmpliceerd. Deze afhankelijkheid moet expliciet worden gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
 
-## <a name="outputs"></a>Uitvoer
+## <a name="outputs"></a>Uitvoerwaarden
 
-In de sectie outputs geeft u de waarden op die worden geretourneerd door de implementatie. Normaal gesp roken retourneert u waarden van resources die zijn geïmplementeerd.
+In de `outputs` sectie geeft u de waarden op die worden geretourneerd door de implementatie. Normaal gesp roken retourneert u waarden van resources die zijn geïmplementeerd.
 
 In het volgende voor beeld ziet u de structuur van een uitvoer definitie:
 
@@ -351,7 +351,7 @@ Voor inline opmerkingen kunt u of gebruiken, `//` `/* ... */` maar deze syntaxis
   ],
 ```
 
-In Visual Studio code kan de [uitbrei ding van de Azure Resource Manager-Hulpprogram ma's](quickstart-create-templates-use-visual-studio-code.md) automatisch een arm-sjabloon detecteren en de taal modus wijzigen. Als u in de rechter benedenhoek van VS code **Azure Resource Manager-sjabloon** ziet, kunt u de inline opmerkingen gebruiken. De inline opmerkingen worden niet meer als ongeldig gemarkeerd.
+In Visual Studio code kan de [uitbrei ding van de Azure Resource Manager-Hulpprogram ma's](quickstart-create-templates-use-visual-studio-code.md) automatisch een arm-sjabloon detecteren en de taal modus wijzigen. Als **Azure Resource Manager sjabloon** in de rechter benedenhoek van Visual Studio code wordt weer gegeven, kunt u de inline opmerkingen gebruiken. De inline opmerkingen worden niet meer als ongeldig gemarkeerd.
 
 ![Visual Studio code Azure Resource Manager-sjabloon modus](./media/template-syntax/resource-manager-template-editor-mode.png)
 
@@ -369,7 +369,7 @@ U kunt een `metadata` object bijna overal in uw sjabloon toevoegen. De Resource 
   },
 ```
 
-Voor **para meters** voegt u een `metadata` object toe met een `description` eigenschap.
+`parameters`Voeg voor een `metadata` object toe met een `description` eigenschap.
 
 ```json
 "parameters": {
@@ -385,7 +385,7 @@ Wanneer u de sjabloon via de portal implementeert, wordt de tekst die u in de be
 
 ![Parameter tip weer geven](./media/template-syntax/show-parameter-tip.png)
 
-Voor **resources** voegt u een- `comments` element of een meta gegevens object toe. In het volgende voor beeld ziet u een comments-element en een meta gegevens object.
+`resources`Voeg voor een `comments` element of een object toe `metadata` . In het volgende voor beeld worden zowel een `comments` element als een object weer gegeven `metadata` .
 
 ```json
 "resources": [
@@ -411,7 +411,7 @@ Voor **resources** voegt u een- `comments` element of een meta gegevens object t
 ]
 ```
 
-Voeg voor **uitvoer** een meta gegevens object toe aan de uitvoer waarde.
+`outputs`Voeg voor een `metadata` object toe aan de uitvoer waarde.
 
 ```json
 "outputs": {
@@ -424,11 +424,11 @@ Voeg voor **uitvoer** een meta gegevens object toe aan de uitvoer waarde.
   },
 ```
 
-U kunt geen meta gegevens object toevoegen aan door de gebruiker gedefinieerde functies.
+U kunt geen object toevoegen aan door de `metadata` gebruiker gedefinieerde functies.
 
 ## <a name="multi-line-strings"></a>Reeksen met meerdere regels
 
-U kunt een teken reeks opsplitsen in meerdere regels. Zie bijvoorbeeld de eigenschap Location en een van de opmerkingen in het volgende JSON-voor beeld.
+U kunt een teken reeks opsplitsen in meerdere regels. Zie bijvoorbeeld de `location` eigenschap en een van de opmerkingen in het volgende JSON-voor beeld.
 
 ```json
 {
@@ -448,7 +448,8 @@ U kunt een teken reeks opsplitsen in meerdere regels. Zie bijvoorbeeld de eigens
   ],
 ```
 
-Als u sjablonen met meerdere regel reeksen wilt implementeren met behulp van Azure CLI met versie 2.3.0 of ouder, moet u de `--handle-extended-json-format` Schakel optie gebruiken.
+> [!NOTE]
+> Als u sjablonen met meerdere regel reeksen wilt implementeren met behulp van Azure CLI met versie 2.3.0 of ouder, moet u de `--handle-extended-json-format` Schakel optie gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

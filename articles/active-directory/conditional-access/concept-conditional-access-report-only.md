@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df25278d37e518e99bc315a315e017b98c7f4e58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: deced953089fcbb2640cbf3e402db24cb511e769
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049380"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935883"
 ---
 # <a name="what-is-conditional-access-report-only-mode"></a>Wat is de modus alleen rapport-alleen voor voorwaardelijke toegang?
 
@@ -30,7 +30,7 @@ De modus alleen rapport is een nieuwe beleids status voor voorwaardelijk toegang
 - Klanten met een Azure Monitor-abonnement kunnen de impact van hun beleids regels voor voorwaardelijke toegang bewaken met behulp van de Insights-werkmap voor voorwaardelijke toegang.
 
 > [!WARNING]
-> Beleids regels in de modus alleen rapport die compatibele apparaten vereisen, kunnen gebruikers op Mac, iOS en Android vragen om een certificaat voor een apparaat te selecteren tijdens de beleids evaluatie, zelfs als de naleving van het apparaat niet wordt afgedwongen. Deze prompts kunnen worden herhaald totdat het apparaat compatibel is. Als u wilt voor komen dat eind gebruikers prompts ontvangen tijdens het aanmelden, sluit u de Mac-, iOS-en Android-apparaten van het apparaat uit met alleen rapport beleid waarmee de nalevings controles voor apparaten worden uitgevoerd. Houd er rekening mee dat de modus alleen rapport is niet van toepassing op CA-beleid met het bereik ' gebruikers acties '.
+> Beleids regels in de modus alleen rapport die compatibele apparaten vereisen, kunnen gebruikers op Mac, iOS en Android vragen om een certificaat voor een apparaat te selecteren tijdens de beleids evaluatie, zelfs als de naleving van het apparaat niet wordt afgedwongen. Deze prompts kunnen worden herhaald totdat het apparaat compatibel is. Als u wilt voor komen dat eind gebruikers prompts ontvangen tijdens het aanmelden, sluit u de Mac-, iOS-en Android-apparaten van het apparaat uit met alleen rapport beleid waarmee de nalevings controles voor apparaten worden uitgevoerd. Houd er rekening mee dat de modus alleen rapport is niet van toepassing op het beleid voor voorwaardelijke toegang met het bereik ' gebruikers acties '.
 
 ![Het tabblad alleen rapport in het logboek van Azure AD-aanmelding](./media/concept-conditional-access-report-only/report-only-detail-in-sign-in-log.png)
 

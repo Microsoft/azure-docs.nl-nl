@@ -3,12 +3,12 @@ title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
 ms.date: 11/20/2020
-ms.openlocfilehash: 880a956a2d839483c59578afad1b62146799578a
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: c229381ba1019a5a40a4ca6b7db88f534f57de29
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95243066"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934642"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
@@ -64,6 +64,9 @@ Wanneer u een batch-pool maakt, geeft u de configuratie van de virtuele Azure-ma
 
 Er zijn twee soorten pool configuraties beschikbaar in batch.
 
+> [!IMPORTANT]
+> Pools moeten worden geconfigureerd met virtuele-machine configuratie en niet Cloud Services configuratie. Alle batch-functies worden ondersteund door Pools met virtuele-machine configuratie en er worden nieuwe functies toegevoegd. Cloud Services-configuratie Pools bieden geen ondersteuning voor alle functies en er worden geen nieuwe mogelijkheden gepland.
+
 ### <a name="virtual-machine-configuration"></a>Configuratie van virtuele machine
 
 De **virtuele-machine configuratie** geeft aan dat de groep bestaat uit virtuele machines van Azure. Deze virtuele machines kunnen worden gemaakt met Linux- of Windows-installatiekopieën.
@@ -101,7 +104,7 @@ Wanneer u een pool maakt, kunt u opgeven welke typen knoop punten u wilt en wat 
 - **Toegewezen knoop punten.** Toegewezen rekenknooppunten zijn gereserveerd voor uw workloads. Ze zijn duurder dan de knooppunten met lage prioriteit, maar ze worden gegarandeerd nooit verschoven.
 - **Knoop punten met een lage prioriteit.** Knooppunten met lage prioriteit profiteren van de overtollige capaciteit in Azure om uw Batch-workloads uit te voeren. Knoop punten met een lage prioriteit zijn minder duur per uur dan toegewezen knoop punten, en zorgen ervoor dat werk belastingen een aanzienlijke reken kracht vereisen. Zie voor meer informatie [VM's met lage prioriteit gebruiken met Batch](batch-low-pri-vms.md).
 
-Knoop punten met een lage prioriteit kunnen worden afgebroken wanneer Azure onvoldoende capaciteit voor overschot heeft. Als een knooppunt wordt verschoven tijdens het uitvoeren van taken, worden de taken opnieuw ingepland en uitgevoerd zodra er weer een rekenknooppunt beschikbaar is. Knooppunten met lage prioriteit zijn een goede optie voor workloads waarbij de voltooiingstijd van de taak flexibel is en het werk over veel knooppunten wordt verdeeld. Voordat u besluit om knoop punten met lage prioriteit voor uw scenario te gebruiken, moet u ervoor zorgen dat het werk dat verloren gaat als gevolg van pre-verval, mini maal en eenvoudig opnieuw kan worden gemaakt.
+Knoop punten met een lage prioriteit kunnen worden afgebroken wanneer Azure onvoldoende capaciteit voor overschot heeft. Als een knooppunt wordt verschoven tijdens het uitvoeren van taken, worden de taken opnieuw ingepland en uitgevoerd zodra er weer een rekenknooppunt beschikbaar is. Knooppunten met lage prioriteit zijn een goede optie voor workloads waarbij de voltooiingstijd van de taak flexibel is en het werk over veel knooppunten wordt verdeeld. Voordat u besluit om knooppunten met lage prioriteit voor uw scenario te gebruiken, moet u ervoor zorgen dat het werk dat verloren gaat als gevolg van toe-eigening minimaal is en eenvoudig opnieuw kan worden uitgevoerd.
 
 U kunt zowel rekenknooppunten met lage prioriteit als toegewezen rekenknooppunten hebben in dezelfde groep. Elk type knoop punt heeft een eigen doel instelling, waarvoor u het gewenste aantal knoop punten kunt opgeven.
 

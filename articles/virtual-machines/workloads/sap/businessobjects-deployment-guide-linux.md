@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: 647009854ef5a0c0811fc303914f724272f1a3f5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: da04e7704274336f7f92237c1d7c30459caa7bc8
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486654"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936478"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
@@ -317,8 +317,9 @@ De server die is gemaakt, is standaard beveiligd met een firewall en is niet ope
 
    # auditbl1 is the database name of Audit database. You can provide the name you want for CMS database.
    CREATE SCHEMA `auditbl1` DEFAULT CHARACTER SET utf8;
-
-4. Create user account to connect to schema
+   ```
+   
+4. Maak een gebruikers account om verbinding te maken met het schema
 
    ```sql
    # Create a user that can connect from any host, use the '%' wildcard as a host part

@@ -3,12 +3,12 @@ title: Overdrachts wijzigingen in uw beheer Tenant bewaken
 description: Meer informatie over het bewaken van overdrachts activiteiten van klant tenants naar uw beheer Tenant.
 ms.date: 12/11/2020
 ms.topic: how-to
-ms.openlocfilehash: 8d254c90881d23255dda5c38a868eb61e51b4f08
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: f65ffda642e67ec6e2c7694a823c2ba6845a7af4
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356409"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936104"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Overdrachts wijzigingen in uw beheer Tenant bewaken
 
@@ -46,7 +46,7 @@ Omdat dit een breed toegangs niveau is, raden we u aan deze rol toe te wijzen aa
 
 - [Maak een nieuw Service-Principal-account](../../active-directory/develop/howto-create-service-principal-portal.md) dat alleen voor deze functie wordt gebruikt, in plaats van deze rol toe te wijzen aan een bestaande service-principal die wordt gebruikt voor andere Automation.
 - Zorg ervoor dat deze service-principal geen toegang heeft tot de resources van een gedelegeerde klant.
-- [Gebruik een certificaat om het te verifiëren](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options) en [veilig op te slaan in azure Key Vault](../../key-vault/general/best-practices.md).
+- [Gebruik een certificaat om het te verifiëren](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options) en [veilig op te slaan in azure Key Vault](../../key-vault/general/security-overview.md).
 - Beperk de gebruikers die toegang hebben tot namens de Service-Principal.
 
 > [!NOTE]

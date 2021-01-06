@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95f70005f2c7f53833163dcd5f0d2ee89b3db37c
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: d7e4d0c41990fcc23dd19b5682997f6381bfdb20
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861286"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937090"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Maak een flexibele toegangs beheer strategie met Azure Active Directory
 
@@ -38,8 +38,8 @@ Dit document bevat richt lijnen voor strategieën die een organisatie moet nemen
 Er zijn vier belang rijke Takeaways in dit document:
 
 * Voorkom dat de beheerder wordt vergrendeld door middel van toegangs accounts voor nood gevallen.
-* Implementeer MFA met behulp van voorwaardelijke toegang (CA) in plaats van MFA per gebruiker.
-* De gebruikers vergrendeling beperken met behulp van meerdere besturings elementen voor voorwaardelijke toegang (CA).
+* Implementeer MFA met voorwaardelijke toegang in plaats van MFA per gebruiker.
+* Vergren deling van gebruikers beperken met behulp van meerdere besturings elementen voor voorwaardelijke toegang.
 * De gebruikers vergrendeling beperken door meerdere verificatie methoden of gelijkwaardige voor elke gebruiker in te richten.
 
 ## <a name="before-a-disruption"></a>Vóór een onderbreking
@@ -138,9 +138,9 @@ Deze naamgevings standaard voor het beleid voor nood gevallen is als volgt:
 EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions]
 ```
 
-Het volgende voor beeld: **een voor beeld van een CA-beleid om de toegang tot essentiële samenwerkings-apps te herstellen**, is een typische zakelijke nood geval. In dit scenario vereist de organisatie MFA doorgaans voor alle Exchange Online-en share point online-toegang, en de onderbreking in dit geval is de MFA-provider voor de klant heeft een storing (of Azure AD MFA, on-premises MFA-provider of MFA van derden). Dit beleid verkleint deze onderbreking doordat specifieke doel gebruikers alleen toegang hebben tot deze apps vanaf vertrouwde Windows-apparaten wanneer ze toegang hebben tot de app vanuit hun vertrouwde bedrijfs netwerk. Hierbij worden ook nood accounts en essentiële beheerders uitgesloten van deze beperkingen. De doel gebruikers krijgen vervolgens toegang tot Exchange Online en share point online, terwijl andere gebruikers nog steeds geen toegang tot de apps hebben vanwege de storing. Dit voor beeld vereist een benoemde netwerk locatie **CorpNetwork** en een **ContingencyAccess** met de doel gebruikers, een groep met de naam **CoreAdmins** met de kern beheerders en een groep met de naam **EmergencyAccess** met de accounts voor toegang voor nood gevallen. De nood gevallen vereist vier beleids regels om de gewenste toegang te bieden. 
+Het volgende voor beeld: **een voor beeld van een beleid voor voorwaardelijke toegang om de toegang tot essentiële samenwerkings-apps te herstellen**, is een typische zakelijke nood geval. In dit scenario vereist de organisatie MFA doorgaans voor alle Exchange Online-en share point online-toegang, en de onderbreking in dit geval is de MFA-provider voor de klant heeft een storing (of Azure AD MFA, on-premises MFA-provider of MFA van derden). Dit beleid verkleint deze onderbreking doordat specifieke doel gebruikers alleen toegang hebben tot deze apps vanaf vertrouwde Windows-apparaten wanneer ze toegang hebben tot de app vanuit hun vertrouwde bedrijfs netwerk. Hierbij worden ook nood accounts en essentiële beheerders uitgesloten van deze beperkingen. De doel gebruikers krijgen vervolgens toegang tot Exchange Online en share point online, terwijl andere gebruikers nog steeds geen toegang tot de apps hebben vanwege de storing. Dit voor beeld vereist een benoemde netwerk locatie **CorpNetwork** en een **ContingencyAccess** met de doel gebruikers, een groep met de naam **CoreAdmins** met de kern beheerders en een groep met de naam **EmergencyAccess** met de accounts voor toegang voor nood gevallen. De nood gevallen vereist vier beleids regels om de gewenste toegang te bieden. 
 
-**Voor beeld van een CA-beleid voor nood gevallen om de toegang tot essentiële samenwerkings-apps te herstellen:**
+**Voor beeld van een voorwaardelijk beleid voor voorwaardelijke toegang om de toegang tot essentiële samenwerkings-apps te herstellen:**
 
 * Beleid 1: apparaten die lid zijn van een domein vereisen voor Exchange en share point
   * Naam: EM001-IN nood gevallen: MFA-onderbreking [1/4]-Exchange share point: hybride Azure AD-deelname vereisen
@@ -180,9 +180,9 @@ Volg orde van activering:
 5. Beleid inschakelen 4: Controleer of alle gebruikers Exchange Online niet kunnen ophalen van de systeem eigen e-mail toepassingen op mobiele apparaten.
 6. Schakel het bestaande MFA-beleid voor share point online en Exchange Online uit.
 
-In dit volgende voor beeld wordt een **voor beeld van een CA-beleid voor onvoorziene toestemming voor mobiele toegang tot Sales Force**, een zakelijke app-toegang, hersteld. In dit scenario vereist de klant doorgaans dat de verkoop medewerkers toegang hebben tot Sales Force (geconfigureerd voor eenmalige aanmelding met Azure AD) vanaf mobiele apparaten, zodat ze alleen kunnen worden toegestaan van compatibele apparaten. De onderbreking in dit geval is dat er een probleem is met de evaluatie van de naleving van het apparaat en dat de storing plaatsvindt op een gevoelige tijd wanneer het verkoop team toegang moet hebben tot Sales Force om deals te sluiten. Met deze beleids regels voor nood gevallen kunnen essentiële gebruikers toegang krijgen tot Sales Force vanaf een mobiel apparaat, zodat ze de deals blijven sluiten en het bedrijf niet kan verstoren. In dit voor beeld bevat **SalesforceContingency** alle verkoop medewerkers die de toegang moeten behouden en **SalesAdmins** de benodigde beheerders van Sales Force bevatten.
+In dit volgende voor beeld wordt een **voor beeld van een beleid voor voorwaardelijke toegang in de nood gevallen voor mobiele toegang tot Sales Force toegestaan**, waarna de toegang van een zakelijke app wordt hersteld. In dit scenario vereist de klant doorgaans dat de verkoop medewerkers toegang hebben tot Sales Force (geconfigureerd voor eenmalige aanmelding met Azure AD) vanaf mobiele apparaten, zodat ze alleen kunnen worden toegestaan van compatibele apparaten. De onderbreking in dit geval is dat er een probleem is met de evaluatie van de naleving van het apparaat en dat de storing plaatsvindt op een gevoelige tijd wanneer het verkoop team toegang moet hebben tot Sales Force om deals te sluiten. Met deze beleids regels voor nood gevallen kunnen essentiële gebruikers toegang krijgen tot Sales Force vanaf een mobiel apparaat, zodat ze de deals blijven sluiten en het bedrijf niet kan verstoren. In dit voor beeld bevat **SalesforceContingency** alle verkoop medewerkers die de toegang moeten behouden en **SalesAdmins** de benodigde beheerders van Sales Force bevatten.
 
-**Voor beeld B: beleid voor onvoorziene CA**
+**Voor beeld B: beleid voor voorwaardelijke toegang met nood gevallen**
 
 * Beleid 1: iedereen niet in het SalesContingency-team blok keren
   * Naam: EM001-inschakelen IN nood gevallen: apparaatcompatibiliteit-onderbreking [1/2]-Sales Force-alle gebruikers blok keren, behalve SalesforceContingency
@@ -282,7 +282,7 @@ Als uw organisatie verouderd beleid voor MFA per gebruiker gebruikt, kunt u het 
 >[!NOTE]
  > Het configureren van [vertrouwde IP-adressen](./howto-mfa-mfasettings.md) voor Azure AD MFA is alleen beschikbaar met [Azure AD Premium-licenties](./concept-mfa-licensing.md).
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Documentatie voor Azure AD-verificatie](./howto-mfaserver-iis.md)
 * [Beheer accounts voor toegang in nood gevallen beheren in azure AD](../roles/security-emergency-access.md)

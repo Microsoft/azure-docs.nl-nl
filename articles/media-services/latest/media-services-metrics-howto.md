@@ -14,18 +14,18 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 09c306b85c910e8ec2021abf15013935c44b0df3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91e74668224d1cdbbc462bf6c2c0a22c4f0a9837
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707707"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916572"
 ---
 # <a name="monitor-media-services-metrics"></a>Metrische gegevens voor Media Services controleren
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](media-services-metrics-diagnostic-logs.md)voor een gedetailleerde beschrijving van deze functie en om te zien waarom u Azure Media Services metrische gegevens en Diagnostische logboeken wilt gebruiken.
+Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](media-services-metrics-diagnostic-logs.md)voor een gedetailleerde beschrijving van deze functie en om te begrijpen waarom u Azure Media Services metrische gegevens en Diagnostische logboeken moet gebruiken.
 
 Azure Monitor biedt verschillende manieren om te communiceren met metrische gegevens, zoals het maken van grafieken in de portal, het openen ervan via de REST API of het opvragen van query's met behulp van Azure CLI. In dit artikel wordt uitgelegd hoe u metrische gegevens kunt controleren met behulp van de Azure Portal grafieken en Azure CLI.
 
@@ -38,24 +38,21 @@ Azure Monitor biedt verschillende manieren om te communiceren met metrische gege
 
 1. Meld u aan bij Azure Portal op https://portal.azure.com.
 1. Navigeer naar uw Azure Media Services-account en selecteer **metrische gegevens**.
-1. Klik op het vak **resource** en selecteer de resource waarvoor u de metrische gegevens wilt bewaken.
+1. Klik op het vak **bereik** en selecteer de resource die u wilt bewaken.
 
-    Het venster **een resource selecteren** wordt weer gegeven aan de rechter kant met de lijst met beschik bare resources. In dit geval ziet u:
+    Het venster **een bereik selecteren** wordt weer gegeven aan de rechter kant met de lijst met beschik bare resources. In dit geval ziet u:
 
     * &lt;Media Services-account naam&gt;
     * &lt;Naam van Media Services account naam van &gt; / &lt; streaming-eind punt&gt;
     * &lt;naam van opslag account&gt;
 
-    Selecteer de resource en druk op **Toep assen**. Zie [Media Services metrische gegevens controleren](media-services-metrics-diagnostic-logs.md)voor meer informatie over ondersteunde bronnen en metrische gegevens.
-
-    ![Scherm opname van de geselecteerde resource en markeert de knop Toep assen.](media/media-services-metrics/metrics02.png)
+    Filter vervolgens de resource en druk op **Toep assen**. Zie [Media Services metrische gegevens controleren](media-services-metrics-diagnostic-logs.md)voor meer informatie over ondersteunde bronnen en metrische gegevens.
 
     > [!NOTE]
-    > Als u wilt scha kelen tussen resources waarvoor u de metrische gegevens wilt controleren, klikt u nogmaals op het vak **resource** en herhaalt u deze stap.
-1. (Optioneel) Geef uw grafiek een naam (Bewerk de naam door op het potlood bovenaan te drukken).
-1. Voeg metrische gegevens toe die u wilt weer geven.
+    > Als u wilt scha kelen tussen resources die u wilt bewaken, klikt u nogmaals op het vak **bron** en herhaalt u deze stap.
 
-    ![Metrische gegevens](media/media-services-metrics/metrics03.png)
+1. Optioneel: Geef een naam op voor de grafiek (Bewerk de naam door bovenaan op het potlood te drukken).
+1. Voeg de metrische gegevens toe die u wilt weer geven.
 1. U kunt uw grafiek vastmaken aan uw dash board.
 
 ## <a name="view-metrics-with-azure-cli"></a>Metrische gegevens weer geven met Azure CLI
@@ -72,8 +69,8 @@ Als u andere metrische gegevens wilt ophalen, vervangt u ' uitgang ' door de naa
 
 ## <a name="see-also"></a>Zie ook
 
-* [Azure Monitor metrische gegevens](../../azure-monitor/platform/data-platform.md)
-* [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md).
+- [Metrische gegevens van Azure Monitor](../../azure-monitor/platform/data-platform.md)
+- [Metrische waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../../azure-monitor/platform/alerts-metric.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 288d1740c1c4c67dd8756de5fc0652966ae89488
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: e914bcece9a30270d12d5c2cc09d3fd1014783c6
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620971"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916504"
 ---
 # <a name="azure-file-share-protocols"></a>Protocollen voor Azure-bestands shares
 
@@ -24,7 +24,7 @@ Azure Files biedt twee protocollen voor het koppelen en koppelen van uw Azure-be
 |Functie  |NFS (preview-versie)  |SMB  |
 |---------|---------|---------|
 |Toegangs protocollen     |NFS 4,1         |SMB 2,1, SMB 3,0         |
-|Ondersteund besturings systeem     |Linux-kernel versie 4.3 +         |Windows 2008 R2 +, Linux-kernel versie 4.11 +         |
+|Aanbevolen besturings systeem     |Linux-kernel versie 4.3 +         |Windows 2008 R2 +, Linux-kernel versie 4.11 +         |
 |[Beschikbare lagen](storage-files-planning.md#storage-tiers)     |Premium Storage         |Premium-opslag, geoptimaliseerde trans actie, hot, cool         |
 |[Redundantie](storage-files-planning.md#redundancy)     |LRS, ZRS         |LRS, ZRS, GRS         |
 |Verificatie     |Alleen voor de host gebaseerde verificatie        |Verificatie op basis van identiteit, verificatie op basis van een gebruiker         |

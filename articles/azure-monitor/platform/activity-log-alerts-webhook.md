@@ -4,12 +4,12 @@ description: Meer informatie over het schema van de JSON dat wordt gepost naar e
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.subservice: alerts
-ms.openlocfilehash: a73ab12d1729acba132aeffd4104ca7846ecb9e8
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: b48f094b460a2871b502c72b39b849ed68b9c085
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901433"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916627"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Webhooks voor Azure-activiteiten logboek waarschuwingen
 Als onderdeel van de definitie van een actie groep kunt u webhook-eind punten configureren voor het ontvangen van waarschuwings meldingen voor activiteiten Logboeken. Met webhooks kunt u deze meldingen naar andere systemen sturen voor nabewerkingen of aangepaste acties. In dit artikel ziet u hoe de payload voor het HTTP POST-bericht naar een webhook eruit ziet.
@@ -40,6 +40,7 @@ De JSON-nettolading die deel uitmaakt van de POST-bewerking verschilt op basis v
 > Als uw voor waarde (in uw actie regels, webhooks, logische app of andere configuraties) momenteel is gebaseerd op de eigenschap **' Beschrijving '** voor waarschuwingen van het activiteiten logboek, moet u deze mogelijk wijzigen in plaats daarvan op basis van de eigenschap **Beschrijving van gebeurtenis logboeken** .
 >
 > Als u de nieuwe eigenschap **"Description"** wilt vullen, kunt u een beschrijving toevoegen in de definitie van de waarschuwings regel.
+> ![Waarschuwingen voor geactiveerde activiteiten logboeken](media/activity-log-alerts-webhook/activity-log-alert-fired.png)
 
 ### <a name="common"></a>Algemeen
 

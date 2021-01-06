@@ -8,16 +8,32 @@ ms.date: 09/15/2020
 ms.author: jeffpatt
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 661cfd5bb410a714bc42e0cd9676ac2ec08f8a45
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a37c86268d2424971058021044c60185a25348f
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90708692"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916453"
 ---
 # <a name="troubleshoot-azure-nfs-file-shares"></a>Problemen met Azure NFS-bestands shares oplossen
 
 In dit artikel vindt u enkele veelvoorkomende problemen met betrekking tot Azure NFS-bestands shares. Het biedt mogelijke oorzaken en tijdelijke oplossingen wanneer deze problemen optreden.
+
+## <a name="chgrp-filename-failed-invalid-argument-22"></a>chgrp ' filename ' is mislukt: ongeldig argument (22)
+
+### <a name="cause-1-idmapping-is-not-disabled"></a>Oorzaak 1: idmapping is niet uitgeschakeld
+Azure Files geen alfanumerieke UID/GID toestaan. Idmapping moet daarom worden uitgeschakeld. 
+
+### <a name="cause-2-idmapping-was-disabled-but-got-re-enabled-after-encountering-bad-filedir-name"></a>Oorzaak 2: idmapping is uitgeschakeld, maar opnieuw ingeschakeld na een onjuiste bestands-/mapnaam
+Zelfs als idmapping correct is uitgeschakeld, worden de instellingen voor het uitschakelen van idmapping in sommige gevallen overschreven. Als bijvoorbeeld de Azure Files een onjuiste bestands naam tegen komt, wordt een fout bericht weer gegeven. Als deze specifieke fout code wordt weer gegeven, besluit de NFS v 4,1 Linux-client om idmapping opnieuw in te scha kelen en de toekomstige aanvragen opnieuw te worden verzonden met een alfanumerieke UID/GID. Raadpleeg dit [artikel](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#:~:text=The%20Azure%20File%20service%20naming%20rules%20for%20directory,be%20no%20more%20than%20255%20characters%20in%20length)voor een lijst met niet-ondersteunde tekens in azure files. Dubbele punt is een van de niet-ondersteunde tekens. 
+
+### <a name="workaround"></a>Tijdelijke oplossing
+Controleer of idmapping is uitgeschakeld en niets opnieuw inschakelt en voer de volgende handelingen uit:
+
+- De share ontkoppelen
+- Id-toewijzing uitschakelen met # ECHO Y >/sys/module/nfs/parameters/nfs4_disable_idmapping
+- De share opnieuw koppelen
+- Als rsync wordt uitgevoerd, voert u rsync uit met het argument ' — numeric-id's ' uit de map zonder ongeldige dir/bestands naam.
 
 ## <a name="unable-to-create-an-nfs-share"></a>Kan geen NFS-share maken
 
@@ -52,7 +68,7 @@ NFS is alleen beschikbaar voor opslag accounts met de volgende configuratie:
 - Laag-Premium
 - Account type-FileStorage
 - Redundantie-LRS
-- Regio's-VS-Oost, VS-Oost 2, UK-zuid, Zuidoost-Azië
+- Regio's- [lijst met ondersteunde regio's](https://docs.microsoft.com/azure/storage/files/storage-files-how-to-create-nfs-shares?tabs=azure-portal#regional-availability)
 
 #### <a name="solution"></a>Oplossing
 
@@ -84,13 +100,13 @@ In het volgende diagram ziet u de connectiviteit met behulp van open bare eind p
 
 :::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-public-endpoints.jpg" alt-text="Diagram van connectiviteit van open bare eind punten." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-public-endpoints.jpg":::
 
-- [Persoonlijk eind punt](storage-files-networking-endpoints.md#create-a-private-endpoint)
+- [Privé-eindpunt](storage-files-networking-endpoints.md#create-a-private-endpoint)
     - De toegang is veiliger dan het service-eind punt.
     - Toegang tot de NFS-share via een persoonlijke koppeling is beschikbaar vanuit en buiten de Azure-regio van het opslag account (cross-Region, on-premises)
     - Virtual Network-peering met virtuele netwerken die worden gehost in het persoonlijke eind punt bieden NFS-share toegang tot de clients in gekoppelde virtuele netwerken.
     - Privé-eind punten kunnen worden gebruikt in combi natie met ExpressRoute, punt-naar-site-en site-naar-site-Vpn's.
 
-:::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg" alt-text="Diagram van connectiviteit van open bare eind punten." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg":::
+:::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg" alt-text="Diagram van connectiviteit van privé-eind punten." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-private-endpoints.jpg":::
 
 ### <a name="cause-2-secure-transfer-required-is-enabled"></a>Oorzaak 2: beveiligde overdracht vereist is ingeschakeld
 
@@ -100,7 +116,7 @@ Dubbele versleuteling wordt nog niet ondersteund voor NFS-shares. Azure biedt ee
 
 Schakel beveiligde overdracht uit op de Blade configuratie van uw opslag account.
 
-:::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Diagram van connectiviteit van open bare eind punten.":::
+:::image type="content" source="media/storage-files-how-to-mount-nfs-shares/storage-account-disable-secure-transfer.png" alt-text="Scherm opname van de Blade configuratie van opslag account, veilige overdracht uitschakelen vereist.":::
 
 ### <a name="cause-3-nfs-common-package-is-not-installed"></a>Oorzaak 3: gemeen schappelijk NFS-pakket is niet geïnstalleerd
 Voordat u de koppelings opdracht uitvoert, installeert u het pakket door de distributie-specifieke opdracht uit te voeren.

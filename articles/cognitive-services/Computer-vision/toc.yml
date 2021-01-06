@@ -139,7 +139,7 @@
         - name: Een app voor afbeeldingsverwerking ontdekken
           href: Tutorials/CSharpTutorial.md
         - name: Andere Computer Vision-voorbeelden
-          href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision'
+          href: 'https://docs.microsoft.com/samples/browse/?products=azure&terms=computer-vision'
     - name: Veelgestelde vragen
       href: FAQ.md
     - name: Categorietaxonomie

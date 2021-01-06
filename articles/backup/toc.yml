@@ -75,7 +75,7 @@
         - name: 'Veelgestelde vragen: Recovery Services-kluizen'
           href: backup-azure-backup-faq.md
         - name: 'Veelgestelde vragen: back-upcentrum'
-          href: backup-center-faq.md
+          href: backup-center-faq.yml
         - name: 'Veelgestelde vragen: Azure VM Backup'
           href: backup-azure-vm-backup-faq.md
         - name: 'Veelgestelde vragen: MARS-agent'

@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: 1c28b4e9821f31f927ef4f640aa664d330cf8792
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: fbe517c766b3835bf4265a1309b8737a25925b7c
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96570991"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914957"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen voor app-configuratie ophalen met Azure-pijp lijnen
 
@@ -73,7 +73,7 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak in een Azure DevOps release-pijp lijn.
 
-1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  **Releases**. Zie [release pipelines](/azure/devops/pipelines/release?view=azure-devops)(Engelstalig) voor informatie over de release pijplijn.
+1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Zie [release pipelines](/azure/devops/pipelines/release?view=azure-devops)(Engelstalig) voor informatie over de release pijplijn.
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, klikt u op **nieuwe pijp lijn** om een nieuwe te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
 1. Kies het **stadium** om de taak toe te voegen. Zie voor meer informatie over stadia [fasen, afhankelijkheden en & voor waarden toevoegen](/azure/devops/pipelines/release/environments?view=azure-devops).
@@ -103,6 +103,9 @@ Als een volgende taak bijvoorbeeld een Power shell-script uitvoert, kan dit een 
 echo "$env:myBuildSetting"
 ```
 En de waarde wordt afgedrukt op de-console.
+
+> [!NOTE]
+> Azure Key Vault verwijzingen in de app-configuratie worden omgezet en ingesteld als [geheime variabelen](/azure/devops/pipelines/process/variables#secret-variables). In azure-pijp lijnen worden geheime variabelen uit het logboek gemaskeerd. Ze worden niet door gegeven aan taken als omgevings variabelen en moeten in plaats daarvan worden door gegeven als invoer. 
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

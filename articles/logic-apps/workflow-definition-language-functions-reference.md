@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 09/04/2020
-ms.openlocfilehash: 5c03d9b64f957f6ef8450197477f185dc8d15b2d
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: b15849fb8fbfed5d55b9c224f51634047b7c75b2
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825862"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914481"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Naslag Gids voor het gebruik van functies in expressies voor Azure Logic Apps en energie automatisering
 
@@ -166,7 +166,7 @@ Als u het type of de indeling van een waarde wilt wijzigen, kunt u deze conversi
 | [float](../logic-apps/workflow-definition-language-functions-reference.md#float) | Retourneert een drijvende-komma waarde voor een invoer waarde. |
 | [int](../logic-apps/workflow-definition-language-functions-reference.md#int) | Retourneert de versie met gehele getallen voor een teken reeks. |
 | [JSON](../logic-apps/workflow-definition-language-functions-reference.md#json) | De waarde of het object van het type JavaScript Object Notation (JSON) retour neren voor een teken reeks of XML. |
-| [tekenreeks](../logic-apps/workflow-definition-language-functions-reference.md#string) | Retourneert de teken reeks versie voor een invoer waarde. |
+| [tekenreeksexpressie](../logic-apps/workflow-definition-language-functions-reference.md#string) | Retourneert de teken reeks versie voor een invoer waarde. |
 | [uriComponent](../logic-apps/workflow-definition-language-functions-reference.md#uriComponent) | De versie van de URI-code ring retour neren voor een invoer waarde door onveilige URL-tekens te vervangen door Escape tekens. |
 | [uriComponentToBinary](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToBinary) | Retourneert de binaire versie voor een teken reeks met URI-code ring. |
 | [uriComponentToString](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToString) | Retourneert de versie van de teken reeks voor een teken reeks met URI-code ring. |
@@ -213,8 +213,8 @@ Zie de [Alfabetische lijst](../logic-apps/workflow-definition-language-functions
 | ------------- | ---- |
 | [add](../logic-apps/workflow-definition-language-functions-reference.md#add) | Het resultaat van het toevoegen van twee getallen retour neren. |
 | [div](../logic-apps/workflow-definition-language-functions-reference.md#div) | Retourneert het resultaat van het delen van twee getallen. |
-| [aantal](../logic-apps/workflow-definition-language-functions-reference.md#max) | Retourneert de hoogste waarde van een reeks getallen of een matrix. |
-| [Haal](../logic-apps/workflow-definition-language-functions-reference.md#min) | Retourneert de laagste waarde van een reeks getallen of een matrix. |
+| [max](../logic-apps/workflow-definition-language-functions-reference.md#max) | Retourneert de hoogste waarde van een reeks getallen of een matrix. |
+| [min.](../logic-apps/workflow-definition-language-functions-reference.md#min) | Retourneert de laagste waarde van een reeks getallen of een matrix. |
 | [mod](../logic-apps/workflow-definition-language-functions-reference.md#mod) | Retourneert de rest van het delen van twee getallen. |
 | [mul](../logic-apps/workflow-definition-language-functions-reference.md#mul) | Retourneert het product van het vermenigvuldigen van twee getallen. |
 | [ASELECT](../logic-apps/workflow-definition-language-functions-reference.md#rand) | Retourneert een wille keurig geheel getal uit een opgegeven bereik. |
@@ -682,7 +682,7 @@ addProperty(<object>, '<property>', <value>)
 | --------- | -------- | ---- | ----------- |
 | <*object*> | Ja | Object | Het JSON-object waaraan u een eigenschap wilt toevoegen |
 | <*eigenschap*> | Ja | Tekenreeks | De naam van de toe te voegen eigenschap |
-| <*Value*> | Ja | Alle | De waarde voor de eigenschap |
+| <*Value*> | Ja | Elk | De waarde voor de eigenschap |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
@@ -701,7 +701,7 @@ addProperty(<object>['<parent-property>'], '<child-property>', <value>)
 | <*object*> | Ja | Object | Het JSON-object waaraan u een eigenschap wilt toevoegen |
 | <*Parent-eigenschap*> | Ja | Tekenreeks | De naam van de bovenliggende eigenschap waaraan u de onderliggende eigenschap wilt toevoegen |
 | <*Child-eigenschap*> | Ja | Tekenreeks | De naam van de onderliggende eigenschap die moet worden toegevoegd |
-| <*Value*> | Ja | Alle | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
+| <*Value*> | Ja | Elk | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
@@ -1129,7 +1129,7 @@ bool(<value>)
 
 | Parameter | Vereist | Type | Beschrijving |
 | --------- | -------- | ---- | ----------- |
-| <*Value*> | Ja | Alle | De waarde die moet worden geconverteerd naar Booleaans. |
+| <*Value*> | Ja | Elk | De waarde die moet worden geconverteerd naar Booleaans. |
 |||||
 
 Als u `bool()` met een-object werkt, moet de waarde van het object een teken reeks of een geheel getal zijn dat kan worden geconverteerd naar een Boolean.
@@ -1139,7 +1139,7 @@ Als u `bool()` met een-object werkt, moet de waarde van het object een teken ree
 | `true` of `false` | Booleaans | De Booleaanse versie van de opgegeven waarde. |
 ||||
 
-*Uitvoer*
+*Uitvoerwaarden*
 
 In deze voor beelden ziet u de verschillende typen invoer die worden ondersteund voor `bool()` :
 
@@ -1169,7 +1169,7 @@ coalesce(<object_1>, <object_2>, ...)
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*eerste niet-null-item*> | Alle | Het eerste item of de waarde die niet null is. Als alle para meters null zijn, retourneert deze functie null. |
+| <*eerste niet-null-item*> | Elk | Het eerste item of de waarde die niet null is. Als alle para meters null zijn, retourneert deze functie null. |
 ||||
 
 *Voorbeeld*
@@ -1887,7 +1887,7 @@ first([<collection>])
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*eerste verzameling-item*> | Alle | Het eerste item in de verzameling |
+| <*eerste verzameling-item*> | Elk | Het eerste item in de verzameling |
 ||||
 
 *Voorbeeld*
@@ -2072,7 +2072,7 @@ formatNumber(1234567890, '0,0.00', 'is-is')
 Stel dat u het nummer wilt opmaken `17.35` . In dit voor beeld wordt het getal opgemaakt op de teken reeks "$17,35".
 
 ```
-formatNumber(17.36, 'C2')
+formatNumber(17.35, 'C2')
 ```
 
 *Voorbeeld 4*
@@ -2080,7 +2080,7 @@ formatNumber(17.36, 'C2')
 Stel dat u het nummer wilt opmaken `17.35` . In dit voor beeld wordt het getal op de teken reeks "17, 35 KR" opgemaakt.
 
 ```
-formatNumber(17.36, 'C2', 'is-is')
+formatNumber(17.35, 'C2', 'is-is')
 ```
 
 <a name="getFutureTime"></a>
@@ -2294,13 +2294,13 @@ if(<expression>, <valueIfTrue>, <valueIfFalse>)
 | Parameter | Vereist | Type | Beschrijving |
 | --------- | -------- | ---- | ----------- |
 | <*expressie*> | Ja | Booleaans | De expressie die moet worden gecontroleerd |
-| <*valueIfTrue*> | Ja | Alle | De waarde die moet worden geretourneerd wanneer de expressie waar is |
-| <*valueIfFalse*> | Ja | Alle | De waarde die moet worden geretourneerd wanneer de expressie onwaar is |
+| <*valueIfTrue*> | Ja | Elk | De waarde die moet worden geretourneerd wanneer de expressie waar is |
+| <*valueIfFalse*> | Ja | Elk | De waarde die moet worden geretourneerd wanneer de expressie onwaar is |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*opgegeven-retourneert-waarde*> | Alle | De opgegeven waarde die wordt geretourneerd op basis van het feit of de expressie waar of onwaar is |
+| <*opgegeven-retourneert-waarde*> | Elk | De opgegeven waarde die wordt geretourneerd op basis van het feit of de expressie waar of onwaar is |
 ||||
 
 *Voorbeeld*
@@ -2387,7 +2387,7 @@ item()
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*huidig-matrix-item*> | Alle | Het huidige item in de matrix voor de huidige herhaling van de actie |
+| <*huidig-matrix-item*> | Elk | Het huidige item in de matrix voor de huidige herhaling van de actie |
 ||||
 
 *Voorbeeld*
@@ -2416,7 +2416,7 @@ items('<loopName>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*item*> | Alle | Het item uit de huidige cyclus in de opgegeven for-each-lus |
+| <*item*> | Elk | Het item uit de huidige cyclus in de opgegeven for-each-lus |
 ||||
 
 *Voorbeeld*
@@ -2719,15 +2719,11 @@ lastIndexOf('<text>', '<searchText>')
 
 Als de waarde voor de teken reeks of subtekenreeks leeg is, gebeurt het volgende:
 
-* Als de teken reeks waarde leeg is, `-1` wordt het volgende geretourneerd:
+* Als alleen de teken reeks waarde leeg is, wordt de functie geretourneerd `-1` .
 
-* Als de waarden voor de teken reeks en de subtekenreeks beide leeg zijn, `0` wordt geretourneerd.
+* Als de waarden voor de teken reeks en de subtekenreeks beide leeg zijn, retourneert de functie `0` .
 
-* Als alleen de waarde van de subtekenreeks leeg is, wordt het hoogste van de volgende twee waarden geretourneerd:
-
-  * `0`
-
-  * De lengte van de teken reeks, min 1.
+* Als alleen de waarde van de subtekenreeks leeg is, retourneert de functie de teken reeks lengte min 1.
 
 *Voorbeelden*
 
@@ -3203,7 +3199,7 @@ parameters('<parameterName>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*para meter-waarde*> | Alle | De waarde voor de opgegeven para meter |
+| <*para meter-waarde*> | Elk | De waarde voor de opgegeven para meter |
 ||||
 
 *Voorbeeld*
@@ -3550,7 +3546,7 @@ setProperty(<object>, '<property>', <value>)
 | --------- | -------- | ---- | ----------- |
 | <*object*> | Ja | Object | Het JSON-object waarvan u de eigenschap wilt instellen |
 | <*eigenschap*> | Ja | Tekenreeks | De naam van de bestaande of nieuwe eigenschap die moet worden ingesteld |
-| <*Value*> | Ja | Alle | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
+| <*Value*> | Ja | Elk | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
 |||||
 
 Als u de onderliggende eigenschap in een onderliggend object wilt instellen, gebruikt u `setProperty()` in plaats daarvan een genest aanroep. Anders retourneert de functie alleen het onderliggende object als uitvoer.
@@ -3564,7 +3560,7 @@ setProperty(<object>['<parent-property>'], '<parent-property>', setProperty(<obj
 | <*object*> | Ja | Object | Het JSON-object waarvan u de eigenschap wilt instellen |
 | <*Parent-eigenschap*> | Ja | Tekenreeks | De naam van de bovenliggende eigenschap met de onderliggende eigenschap die u wilt instellen |
 | <*Child-eigenschap*> | Ja | Tekenreeks | De naam van de onderliggende eigenschap die moet worden ingesteld |
-| <*Value*> | Ja | Alle | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
+| <*Value*> | Ja | Elk | De waarde die moet worden ingesteld voor de opgegeven eigenschap |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
@@ -3848,7 +3844,7 @@ string(<value>)
 
 | Parameter | Vereist | Type | Beschrijving |
 | --------- | -------- | ---- | ----------- |
-| <*Value*> | Ja | Alle | De waarde die moet worden geconverteerd. Als deze waarde Null is of is geëvalueerd als null, wordt de waarde geconverteerd naar een lege teken reeks ( `""` ) waarde. <p><p>Als u bijvoorbeeld een teken reeks variabele toewijst aan een niet-bestaande eigenschap die u kunt openen met de `?` operator, wordt de null-waarde omgezet in een lege teken reeks. Het vergelijken van een null-waarde is echter niet hetzelfde als het vergelijken van een lege teken reeks. |
+| <*Value*> | Ja | Elk | De waarde die moet worden geconverteerd. Als deze waarde Null is of is geëvalueerd als null, wordt de waarde geconverteerd naar een lege teken reeks ( `""` ) waarde. <p><p>Als u bijvoorbeeld een teken reeks variabele toewijst aan een niet-bestaande eigenschap die u kunt openen met de `?` operator, wordt de null-waarde omgezet in een lege teken reeks. Het vergelijken van een null-waarde is echter niet hetzelfde als het vergelijken van een lege teken reeks. |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
@@ -4645,7 +4641,7 @@ variables('<variableName>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| <*variabele-waarde*> | Alle | De waarde voor de opgegeven variabele |
+| <*variabele-waarde*> | Elk | De waarde voor de opgegeven variabele |
 ||||
 
 *Voorbeeld*
@@ -4752,14 +4748,14 @@ xpath('<xml>', '<xpath>')
 
 | Parameter | Vereist | Type | Beschrijving |
 | --------- | -------- | ---- | ----------- |
-| <*indeling*> | Ja | Alle | De XML-teken reeks die moet worden gezocht naar knoop punten of waarden die overeenkomen met een XPath-expressie waarde |
-| <*XPath*> | Ja | Alle | De XPath-expressie die wordt gebruikt voor het zoeken van overeenkomende XML-knoop punten of-waarden |
+| <*indeling*> | Ja | Elk | De XML-teken reeks die moet worden gezocht naar knoop punten of waarden die overeenkomen met een XPath-expressie waarde |
+| <*XPath*> | Ja | Elk | De XPath-expressie die wordt gebruikt voor het zoeken van overeenkomende XML-knoop punten of-waarden |
 |||||
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
 | <*XML-knoop punt*> | XML | Een XML-knoop punt wanneer slechts één knoop punt overeenkomt met de opgegeven XPath-expressie |
-| <*Value*> | Alle | De waarde van een XML-knoop punt wanneer er slechts één waarde overeenkomt met de opgegeven XPath-expressie |
+| <*Value*> | Elk | De waarde van een XML-knoop punt wanneer er slechts één waarde overeenkomt met de opgegeven XPath-expressie |
 | [<*XML-knooppunt1*>, <*xml-Knooppunt2*>,...] </br>-of- </br>[<*waarde1*>, <*Value2*>,...] | Matrix | Een matrix met XML-knoop punten of-waarden die overeenkomen met de opgegeven XPath-expressie |
 ||||
 

@@ -9,12 +9,13 @@ ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 761b031916dd9ead71f5be6a6887208a1f200f58
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.custom: contperf-fy21q2
+ms.openlocfilehash: 385a67e117bf0cf9508b81d014e3accac4725744
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966131"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914906"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Een IoT Edge apparaat maken en inrichten met X. 509-certificaten
 
@@ -78,7 +79,7 @@ Gebruik uw gegenereerde certificaten en sleutels voor het maken van een afzonder
 
 Als u meerdere IoT Edge apparaten wilt inrichten, volgt u de stappen in de volgende sectie, [een registratie voor de DPS-groep maken](#create-a-dps-group-enrollment).
 
-Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand**van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
+Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand** van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
 
 Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)voor meer informatie over inschrijvingen in de Device Provisioning Service.
 
@@ -87,7 +88,7 @@ Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
 
-1. Selecteer onder **instellingen**de optie **inschrijvingen beheren**.
+1. Selecteer onder **instellingen** de optie **inschrijvingen beheren**.
 
 1. Selecteer **Individuele inschrijving toevoegen** en voer de volgende stappen uit om de registratie te configureren:  
 
@@ -126,7 +127,7 @@ Gebruik uw gegenereerde certificaten en sleutels voor het maken van een groeps r
 
 Als u in plaats daarvan een enkel IoT Edge apparaat wilt inrichten, volgt u de stappen in de vorige sectie en [maakt u een individuele inschrijving voor DPS](#create-a-dps-individual-enrollment).
 
-Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand**van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
+Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand** van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
 
 ### <a name="verify-your-root-certificate"></a>Uw basis certificaat verifiëren
 
@@ -172,7 +173,7 @@ Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
 
-1. Selecteer onder **instellingen**de optie **inschrijvingen beheren**.
+1. Selecteer onder **instellingen** de optie **inschrijvingen beheren**.
 
 1. Selecteer **registratie groep toevoegen** en voer de volgende stappen uit om de registratie te configureren:
 
@@ -205,7 +206,7 @@ Zie [registratie van apparaten beheren](../iot-dps/how-to-manage-enrollments.md)
 
 Nu een inschrijving voor dit apparaat bestaat, kan de IoT Edge runtime automatisch het apparaat inrichten tijdens de installatie. Ga door naar de volgende sectie om uw IoT Edge-apparaat in te stellen.
 
-## <a name="install-the-iot-edge-runtime"></a>De IoT Edge runtime installeren
+## <a name="install-the-iot-edge-runtime"></a>De IoT Edge-runtime installeren
 
 De IoT Edge-runtime wordt op alle IoT Edge-apparaten geïmplementeerd. De onderdelen worden in containers uitgevoerd en bieden u de mogelijkheid om extra containers op het apparaat te implementeren, zodat u code aan de rand kunt uitvoeren.
 

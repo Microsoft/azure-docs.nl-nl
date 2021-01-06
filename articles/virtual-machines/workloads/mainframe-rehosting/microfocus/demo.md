@@ -6,12 +6,12 @@ ms.author: sread
 ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 7fb72b9a7d0d655f99d1e5cf194f7c6f26976a37
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b2cac7a8310482305467a1cb3ed3127eb18ae416
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95976190"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915773"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Micro Focus CICS BankDemo instellen voor micro focus Enter prise Developer 4,0 op Azure
 
@@ -28,7 +28,7 @@ CICs staat voor het besturings systeem van klant gegevens, het transactie platfo
 
 - [SQL Server 2017 Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express). Down load en installeer dit op de Enter prise Developer-VM. Voor Enter prise server is een Data Base vereist voor het beheer van CICS-regio's en de toepassing BankDemo gebruikt ook een SQL Server-Data Base met de naam BANKDEMO. In deze demo wordt ervan uitgegaan dat u SQL Server Express gebruikt voor beide data bases. Wanneer u installeert, selecteert u de basis installatie.
 
-- [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) (SSMS). SSMS wordt gebruikt voor het beheren van de data bases en het uitvoeren van een T-SQL-script. Down load en installeer dit op de Enter prise Developer-VM.
+- [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017&preserve-view=true) (SSMS). SSMS wordt gebruikt voor het beheren van de data bases en het uitvoeren van een T-SQL-script. Down load en installeer dit op de Enter prise Developer-VM.
 
 - [Visual Studio 2019](https://azure.microsoft.com/downloads/) met het meest recente Service Pack of de nieuwste [Visual Studio-Community](https://visualstudio.microsoft.com/vs/community/), die u gratis kunt downloaden.
 

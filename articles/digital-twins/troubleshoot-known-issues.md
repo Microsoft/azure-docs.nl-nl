@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: d0c26255e6d9d35d51390ed2b432b9c5dc9ab2be
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: db29fbda404900c29f85fa876e9427994ee9a093
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862468"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915909"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Bekende problemen in azure Digital Apparaatdubbels
 
@@ -47,11 +47,11 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 
 ## <a name="issue-with-default-azure-credential-authentication-on-azureidentity-130"></a>Probleem met standaard verificatie van Azure-referenties op Azure. identiteits 1.3.0
 
-**Beschrijving van probleem:** Wanneer u verificatie code in uw Azure Digital Apparaatdubbels-toepassingen schrijft met versie **1.3.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, kunt u problemen ondervinden met de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) -methode die in veel voor beelden in deze documenten wordt gebruikt. Dit geeft aan dat er een fout bericht wordt weer gegeven dat ' Azure. Identity. AuthenticationFailedException: SharedTokenCacheCredential-verificatie is mislukt ' wordt weer gegeven wanneer de code probeert te verifiëren.
+**Beschrijving van probleem:** Bij het schrijven van een verificatie code met behulp van versie **1.3.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, hebben sommige gebruikers problemen ondervonden met de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) -methode die in veel voor beelden in deze Azure Digital apparaatdubbels-documenten wordt gebruikt. Dit geeft aan dat er een fout bericht wordt weer gegeven dat ' Azure. Identity. AuthenticationFailedException: SharedTokenCacheCredential-verificatie is mislukt ' wordt weer gegeven wanneer de code probeert te verifiëren.
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |
-| DefaultAzureCredential wordt gebruikt in de meeste documentatie voorbeelden die verificatie bevatten. Als u verificatie code schrijft met behulp van DefaultAzureCredential en versie 1.3.0 van de `Azure.Identity` bibliotheek gebruikt, kan dit van invloed zijn op u. | Dit probleem geeft aan wanneer u DefaultAzureCredential gebruikt met versie **1.3.0** van de `Azure.Identity` bibliotheek. | Als u dit wilt oplossen, moet u de toepassing van [versie 1.2.2](https://www.nuget.org/packages/Azure.Identity/1.2.2) van gebruiken `Azure.Identity` . Nadat de bibliotheek versie is gewijzigd, moet de verificatie slagen zoals verwacht. |
+| `DefaultAzureCredential` wordt in de meeste documentatie-voor beelden gebruikt voor deze service die verificatie bevatten. Als u verificatie code met behulp `DefaultAzureCredential` van versie 1.3.0 van de `Azure.Identity` bibliotheek schrijft en dit fout bericht ziet, heeft dit gevolgen voor u. | Dit is waarschijnlijk het gevolg van een configuratie probleem met `Azure.Identity` . | Een strategie om dit op te lossen `SharedTokenCacheCredential` , is om uw referentie uit te sluiten, zoals beschreven in dit [DefaultAzureCredential-probleem](https://github.com/Azure/azure-sdk/issues/1970) dat momenteel is geopend `Azure.Identity` .<br>Een andere mogelijkheid is om uw toepassing te wijzigen zodat deze een eerdere versie van gebruikt `Azure.Identity` , zoals [versie 1.2.3](https://www.nuget.org/packages/Azure.Identity/1.2.3). Dit heeft geen invloed op de functionaliteit van Azure Digital Apparaatdubbels en is daarom ook een geaccepteerde oplossing. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

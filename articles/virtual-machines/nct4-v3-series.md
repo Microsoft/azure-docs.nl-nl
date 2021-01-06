@@ -6,21 +6,18 @@ ms.subservice: sizes
 author: vikancha-MSFT
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 01/05/2021
 ms.author: vikancha
-ms.openlocfilehash: 2de6cceb1e3b85060a146b18a689b57573bc932e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 6463e54fb7f0a2cc03ffa043c00048c1131899ce
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585425"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913427"
 ---
-# <a name="ncast4_v3-series-in-preview"></a>NCasT4_v3-serie (in preview-versie) 
+# <a name="ncast4_v3-series"></a>NCasT4_v3-series 
 
 De virtuele machines uit de NCasT4_v3-serie worden aangedreven door [Nvidia Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) GPU'S en AMD EPYC 7V12 (Rome) cpu's. De virtuele machines beschikken over Maxi maal 4 NVIDIA T4-Gpu's met 16 GB geheugen per, Maxi maal 64 niet-multi threaded AMD EPYC 7V12 (Rome)-processor kernen en 440 GiB van het systeem geheugen. Deze virtuele machines zijn ideaal voor het implementeren van AI-Services, zoals realtime deprocessoren van door de gebruiker gegenereerde aanvragen of voor interactieve grafische en visualisatie werk belastingen met behulp van het GRID-stuur programma en virtuele GPU-technologie van NVIDIA. Standaard GPU Compute-workloads op basis van CUDA, TensorRT, Caffe, ONNX en andere frameworks of GPU-versnelde grafische toepassingen op basis van OpenGL en DirectX kunnen economisch worden geïmplementeerd, met dichtbij de buurt van gebruikers op de NCasT4_v3 serie.
-
-> [!NOTe]
-> [Dien een aanvraag](https://aka.ms/NCT4v3Preview) in als onderdeel van het preview-programma.
 
 <br>
 

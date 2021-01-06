@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5917de03468b86b67520c0b4f04dfd732377a021
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 57826fcff03e79d5617c7eb69aac7d535d3c86f7
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366289"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915705"
 ---
 # <a name="conditional-access-require-mfa-for-administrators"></a>Voorwaardelijke toegang: MFA vereisen voor beheerders
 
@@ -24,13 +24,14 @@ Accounts waaraan beheerders rechten zijn toegewezen, zijn gericht op aanvallers.
 
 Micro soft raadt u aan MFA verplicht te stellen voor de volgende rollen ten minste:
 
-* Verificatie beheerder
+* Verificatiebeheerder
 * Factureringsbeheerder
 * Beheerder van voorwaardelijke toegang
 * Exchange-beheerder
 * Globale beheerder
 * Helpdesk beheerder
 * Wachtwoordbeheerder
+* Beheerder voor bevoorrechte rollen
 * Beveiligingsbeheerder
 * SharePoint-beheerder
 * Gebruikersbeheerder
@@ -54,9 +55,9 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **insluiten**selecteert u **Directory rollen (preview)** en kiest u ten minste de volgende rollen:
-      * Verificatie beheerder
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **insluiten** selecteert u **Directory rollen (preview)** en kiest u ten minste de volgende rollen:
+      * Verificatiebeheerder
       * Factureringsbeheerder
       * Beheerder van voorwaardelijke toegang
       * Exchange-beheerder
@@ -70,11 +71,11 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
       > [!WARNING]
       > Het beleid voor voorwaardelijke toegang biedt geen ondersteuning voor gebruikers die zijn toegewezen aan een directory-rol [binnen een administratieve eenheid](../roles/admin-units-assign-roles.md) of Directory-rollen die rechtstreeks aan een object zijn gekoppeld, zoals via [aangepaste rollen](../roles/custom-create.md).
 
-   1. Onder **uitsluiten**selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
    1. Selecteer **Gereed**.
-1. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **alle Cloud-apps**en selecteert u **gereed**.
-1. Onder **voor waarden**  >  **client**-apps **Configure** gaat u naar **Ja** en selecteert u onder **Selecteer de client-apps waarop dit beleid van toepassing is om** alle geselecteerde standaard instellingen te behouden en selecteert u **gereed**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **multi-factor Authentication vereisen**en selecteert u **selecteren**.
+1. Onder **Cloud-apps of acties**  >  , selecteert u **alle Cloud-apps** en selecteert u **gereed**.
+1. Onder **voor waarden**  >  **client**-apps  gaat u naar **Ja** en selecteert u onder **Selecteer de client-apps waarop dit beleid van toepassing is om** alle geselecteerde standaard instellingen te behouden en selecteert u **gereed**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **multi-factor Authentication vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid in te stellen.
 

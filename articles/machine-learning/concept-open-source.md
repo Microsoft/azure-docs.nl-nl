@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 12/16/2020
-ms.openlocfilehash: b3fa9767310bfc300087c9dc7384f33993aca70d
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: d987d21700e5f19ad8228b08508e8da842cc39eb
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97675882"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914107"
 ---
 # <a name="open-source-integration-with-azure-machine-learning-projects"></a>Open-source-integratie met Azure Machine Learning projecten
 
@@ -52,7 +52,7 @@ Voor het maken van een diep leer model is vaak veel tijd, gegevens en reken bron
 
 Educatief leren is een kunst matige intelligentie techniek waarmee modellen worden getraind met behulp van acties, provincies en beloningen: versterking van leer agenten leren om een reeks vooraf gedefinieerde acties uit te voeren die de opgegeven beloningen maximaliseren op basis van de huidige status van hun omgeving. 
 
-Het [Ray RLLib](https://github.com/ray-project/ray) -project bevat een set functies die tijdens het trainings proces hoge schaal baarheid bieden. Het iteratieve proces is zowel tijd-als resource-intensief als versterking van leer agenten proberen de optimale manier om een taak te bereiken, te ontdekken.  Ray RLLib biedt ook systeem eigen ondersteuning voor diepe leer frameworks zoals tensor flow en PyTorch.  
+Het [Ray RLLib](https://github.com/ray-project/ray) -project heeft een aantal functies waarmee de schaal baarheid tijdens het trainings proces kan worden uitgebreid. Het iteratieve proces is zowel tijd-als resource-intensief als versterking van leer agenten proberen de optimale manier om een taak te bereiken, te ontdekken.  Ray RLLib biedt ook systeem eigen ondersteuning voor diepe leer frameworks zoals tensor flow en PyTorch.  
 
 Zie voor meer informatie over het gebruik van Ray RLLib met Azure Machine Learning de [instructies voor het trainen van een versterkt leer model](how-to-use-reinforcement-learning.md).
 
@@ -101,4 +101,4 @@ Met Machine Learning Operations (MLOps), dat vaak wordt beschouwd als DevOps voo
 
 Met behulp van DevOps-procedures zoals doorlopende integratie (CI) en continue implementatie (CD) kunt u de end-to-end-machine learning levenscyclus automatiseren en beheer gegevens hiernaar vastleggen. U kunt uw [machine learning CI/cd-pijp lijn definiëren in github-acties](./how-to-github-actions-machine-learning.md) om Azure machine learning training-en implementatie taken uit te voeren. 
 
-Het vastleggen van software afhankelijkheden, metrische gegevens, meta data en model versie beheer vormt een belang rijk onderdeel van het MLOps-proces om transparante, reproduceer bare en beoordeel bare pijp lijnen te bouwen. Voor deze taak kunt u [MLFlow in azure machine learning gebruiken](how-to-use-mlflow.md) , evenals bij het [trainen van machine learning modellen in azure Databricks](./how-to-use-mlflow-azure-databricks.md).
+Het vastleggen van software afhankelijkheden, metrische gegevens, meta data en model versie beheer vormt een belang rijk onderdeel van het MLOps-proces om transparante, reproduceer bare en beoordeel bare pijp lijnen te bouwen. Voor deze taak kunt u [MLFlow in azure machine learning gebruiken](how-to-use-mlflow.md) , evenals bij het [trainen van machine learning modellen in azure Databricks](./how-to-use-mlflow-azure-databricks.md). U kunt ook [MLflow-modellen implementeren als een Azure-webservice](how-to-deploy-mlflow-models.md). 

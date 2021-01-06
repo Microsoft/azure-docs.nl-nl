@@ -10,14 +10,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: conceptual
-ms.date: 08/31/2020
+ms.date: 01/05/2021
 ms.author: inhenkel
-ms.openlocfilehash: f37b453a294a0d0a7b9a99bfebe8f3eff09e8956
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36593efd4f2583f28dffbb4f5b491fbeec7ba21d
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291191"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916317"
 ---
 # <a name="azure-storage-accounts"></a>Azure Storage-accounts
 
@@ -54,6 +54,9 @@ Ter bescherming van uw assets op rest moeten de activa worden versleuteld door d
 |[Versleuteling van de opslag aan de client zijde](../../storage/common/storage-client-side-encryption.md)|Versleuteling aan de client zijde die wordt aangeboden door Azure Storage, sleutel die wordt beheerd door de klant in Key Vault.|Niet ondersteund.|
 
 <sup>1</sup> in Media Services V3 wordt opslag VERSLEUTELING (AES-256-versleuteling) alleen ondersteund voor achterwaartse compatibiliteit wanneer uw assets zijn gemaakt met Media Services v2, wat betekent dat v3 werkt met bestaande, versleutelde opslag elementen, maar niet om nieuwe te maken.
+
+## <a name="double-encryption"></a>Dubbele versleuteling
+Media Services ondersteunt dubbele versleuteling.  Zie voor meer informatie over dubbele versleuteling [Azure Double Encryption](https://docs.microsoft.com/azure/security/fundamentals/double-encryption)(Engelstalig).
 
 ## <a name="storage-account-errors"></a>Fouten in het opslag account
 

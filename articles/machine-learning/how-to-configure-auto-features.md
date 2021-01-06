@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to,automl,contperf-fy21q2
 ms.date: 12/18/2020
-ms.openlocfilehash: 526afe758063ce6c5f6bd86f8192f56d5f844a85
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: b26b0d9086f464556cbca2c70773374c3cccbd52
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694010"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915858"
 ---
 # <a name="data-featurization-in-automated-machine-learning"></a>Gegevens parametrisatie in geautomatiseerde machine learning
 
@@ -68,9 +68,6 @@ De volgende tabel bevat een overzicht van de technieken die automatisch worden t
 |_*Meer functies genereren**_ |Voor DateTime-functies: jaar, maand, dag, dag van de week, dag van jaar, kwar taal, week van het jaar, uur, minuut, seconde.<br><br> _For prognose taken, * deze extra DateTime-functies worden gemaakt: ISO-jaar, half-halfjaar, kalender maand als teken reeks, week, dag van de week als teken reeks, dag van kwar taal, dag van jaar, AM/PM (0 als het uur vóór 12:00 uur (12 uur), 1 anders), AM/PM als teken reeks, uur van dag<br/><br/>Voor tekst functies: term frequentie op basis van unigrams, bigrams en trigrams. Meer informatie over [hoe dit wordt gedaan met Bert.](#bert-integration)|
 |**Transformeren en versleutelen** _|Numerieke functies met weinig unieke waarden transformeren in categorische-functies.<br/><br/>Code ring met één Hot-categorische wordt gebruikt voor functies met weinig kardinaliteit. Een hot-hash-code ring wordt gebruikt voor categorische-functies met een hoge kardinaliteit.|
 |_ *Woord insluitingen**|Met een tekst-featurizer worden vectoren van tekst tokens geconverteerd naar zinnen vectoren met behulp van een vooraf getraind model. De insluitings vector van elk woord in een document wordt samengevoegd met de rest om een document functie Vector te maken.|
-|**Doel codering**|Voor categorische-functies wordt met deze stap elke categorie toegewezen aan een gemiddelde doel waarde voor regressie problemen en aan de klasse-kans voor elke klasse voor classificatie problemen. Op frequentie gebaseerde weging en kruis validatie met k-vouwen worden toegepast om het overschrijden van de toewijzing en lawaai door sparse gegevens categorieën te verminderen.|
-|**Coderen van tekst doel**|Voor tekst invoer wordt een gestapeld lineair model met Bag-of-woorden gebruikt om de kans van elke klasse te genereren.|
-|**Gewicht van bewijs (WoE)**|Hiermee wordt WoE berekend als een maat eenheid van de correlatie tussen categorische-kolommen en de doel kolom. WoE wordt berekend als het logboek van de ratio van in-class versus out-of-the-Class-kansen. Met deze stap wordt één numerieke functie kolom per klasse gegenereerd en wordt de nood zaak om ontbrekende waarden en uitschieter-behandeling expliciet te verduidelijkt.|
 |**Cluster afstand**|Treinen a k: cluster model op alle numerieke kolommen. Produceert *k* nieuwe functies (één nieuwe numerieke functie per cluster) die de afstand van elk voor beeld naar de massa middelpunt van elk cluster bevatten.|
 
 ## <a name="data-guardrails"></a>Gegevens Guardrails
@@ -123,7 +120,7 @@ Ondersteunde aanpassingen zijn onder andere:
 |--|--|
 |**Update van het kolom doel**|Overschrijf het automatisch gedetecteerde functie type voor de opgegeven kolom.|
 |**Para meter bijwerken van trans formatie** |De para meters voor de opgegeven transformator bijwerken. *Biedt momenteel* ondersteuning voor toerekening (gemiddelde, meest frequente en gemiddelde) en *HashOneHotEncoder*.|
-|**Kolommen neerzetten** |Hiermee geeft u kolommen op die moeten worden featurized.|
+|**Kolommen verwijderen** |Hiermee geeft u kolommen op die moeten worden featurized.|
 |**Trans formaties blok keren**| Hiermee geeft u de Block-trans formaties op die moeten worden gebruikt in het parametrisatie-proces.|
 
 Het object maken met `FeaturizationConfig` API-aanroepen:

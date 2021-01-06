@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: troubleshooting
 ms.date: 10/16/2019
 ms.author: charwen
-ms.openlocfilehash: f3c142491363f30513877ae4368f291430aa3675
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4f5d4b7fed8f14f048794616ee272342d1e8343
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85831927"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915552"
 ---
 # <a name="troubleshoot-azure-bastion"></a>Problemen met Azure Bastion oplossen
 
@@ -81,7 +81,7 @@ The key's randomart image is:
 
 ## <a name="black-screen-in-the-azure-portal"></a><a name="blackscreen"></a>Zwart scherm in de Azure Portal
 
-**V:** Wanneer ik probeer verbinding te maken met behulp van Azure Bastion, wordt er een zwart scherm weer gegeven in de Azure Portal.
+**V:** Wanneer ik probeer verbinding te maken met behulp van Azure Bastion, kan ik niet connnect naar de doel-VM en wordt er een zwart scherm weer gegeven in de Azure Portal.
 
 **A:** Dit gebeurt wanneer er een probleem is met de netwerk verbinding tussen uw webbrowser en Azure Bastion (uw firewall voor Internet-verbindingen van de client blokkeert mogelijk websockets of vergelijk bare) of tussen de Azure-Bastion en de doel-VM. De meeste gevallen zijn een NSG toegepast op AzureBastionSubnet of op uw doel-VM-subnet dat het RDP/SSH-verkeer in het virtuele netwerk blokkeert. Sta websockets toe op de firewall van Internet en controleer de Nsg's op uw doel-VM-subnet.
 

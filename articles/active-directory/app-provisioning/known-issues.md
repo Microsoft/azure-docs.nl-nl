@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 12/14/2020
+ms.date: 01/05/2021
 ms.reviewer: arvinh
-ms.openlocfilehash: 78e9d7355b8c96295456f8aa9cb80b1d3bdd2fab
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: bde5cecc4052724f795cac03f6efceb3451ea2ee
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509543"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914345"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 
@@ -82,6 +82,10 @@ De [tijd](./application-provisioning-when-will-provisioning-finish-specific-user
 **Wijzigingen die niet worden verplaatst van de doel-app naar Azure AD**
 
 De app Provisioning Service is niet op de hoogte van wijzigingen die zijn aangebracht in externe apps. Er wordt dus geen actie ondernomen om terug te draaien. De app Provisioning Service is afhankelijk van de wijzigingen die zijn aangebracht in azure AD. 
+
+**Overschakelen van alles synchroniseren naar synchronisatie is niet actief**
+
+Nadat u het bereik hebt gewijzigd van ' Alles synchroniseren ' toegewezen ', moet u er ook voor zorgen dat de wijziging wordt doorgevoerd. U kunt de computer opnieuw opstarten vanuit de gebruikers interface.
 
 **De inrichtings cyclus gaat verder tot de voltooiing**
 

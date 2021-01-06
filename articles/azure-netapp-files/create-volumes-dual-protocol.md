@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 01/04/2020
+ms.date: 01/05/2020
 ms.author: b-juche
-ms.openlocfilehash: e74b729f837c8e6ebe86514a01b6c8bdddc616e4
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: d296f80d85bb5081c466b27e6a8624e8b3f2c924
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881086"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914982"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Een NFSv3-en SMB-volume (Dual-Protocol) maken voor Azure NetApp Files
 
@@ -133,7 +133,10 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
     * Een andere computer in het domein met het basis certificaat  
 
 3. Exporteer het basis-CA-certificaat.  
-    Basis-CA-certificaten kunnen worden geëxporteerd vanuit persoonlijke of vertrouwde basis certificerings instanties.   
+    Basis-CA-certificaten kunnen worden geëxporteerd vanuit de map persoonlijke of vertrouwde basis certificerings instanties, zoals wordt weer gegeven in de volgende voor beelden:   
+    ![scherm opname van persoonlijke certificaten](../media/azure-netapp-files/personal-certificates.png)   
+    ![scherm opname van vertrouwde basis certificerings instanties](../media/azure-netapp-files/trusted-root-certification-authorities.png)    
+
     Zorg ervoor dat het certificaat wordt geëxporteerd in de base-64 Encoded X. 509 (. CER)-indeling: 
 
     ![Wizard Certificaat exporteren](../media/azure-netapp-files/certificate-export-wizard.png)

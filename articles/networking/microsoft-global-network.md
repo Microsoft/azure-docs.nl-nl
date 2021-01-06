@@ -10,15 +10,15 @@ ms.devlang: ''
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/13/2019
+ms.date: 01/05/2020
 ms.author: kumud
 ms.reviewer: ypitsch
-ms.openlocfilehash: 05e966d3f4631e3c344bd97c0faec99cc3c6dd66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a33c7e7d637b519b249c250481a73d04c661d4d5
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91819898"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915841"
 ---
 # <a name="microsoft-global-network"></a>Wereldwijd Microsoft-netwerk
 
@@ -71,4 +71,5 @@ Deze principes zijn van toepassing op alle lagen van het netwerk: via de hostnet
 De exponentiële groei van Azure en het bijbehorende netwerk heeft een punt bereikt waarop we uiteindelijk hebben gerealiseerd dat menselijk Intuition niet meer kan worden vertrouwd op het beheer van de mondiale netwerk bewerkingen. Om te voldoen aan de nood zaak om veranderingen op lange, middel grote en korte termijn in het netwerk te valideren, hebben we een platform ontwikkeld om ons productie netwerk synthetisch te spie gelen en te emuleren. De mogelijkheid om gespiegelde omgevingen te maken en miljoenen simulaties uit te voeren, stelt ons in staat om de wijzigingen in de software en hardware te testen en hun invloed te hebben, voordat ze worden doorgevoerd in het productie platform en netwerk. 
 
 ## <a name="next-steps"></a>Volgende stappen
+- [Meer informatie over hoe micro soft wereld wijde netwerk betrouwbaarheid vertrouwt via intelligente software](https://azure.microsoft.com/blog/advancing-global-network-reliability-through-intelligent-software-part-1-of-2/)
 - [Meer informatie over de netwerk services van Azure](https://azure.microsoft.com/product-categories/networking/)

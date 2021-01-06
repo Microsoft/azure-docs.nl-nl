@@ -6,19 +6,19 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: 959070ca431c3397779a2a22c16f03b3adebbb35
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: be2657d9606f260fcea06d2535be87fc6976577c
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444511"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915671"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-pool (preview) gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 In dit artikel leert u hoe u een serverloze SQL-pool database en weer gaven kunt maken via de Synapse-koppeling voor Azure Cosmos DB. U voert een query uit op de Azure Cosmos DB containers en bouwt vervolgens een model met Power BI over die weer gaven om die query weer te geven.
 
-In dit scenario gebruikt u dummy gegevens over de verkoop van Surface-producten in een Retail Store van partners. U gaat de omzet per winkel analyseren op basis van de nabijheid van grote gezinnen en de impact van de reclame voor een specifieke week. In dit artikel maakt u twee weer gaven met de naam **RetailSales** en **StoreDemographics** en een query ertussen. U kunt de voorbeeld product gegevens ophalen uit deze [github](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) opslag plaats.
+In dit scenario gebruikt u dummy gegevens over de verkoop van Surface-producten in een Retail Store van partners. U gaat de omzet per winkel analyseren op basis van de nabijheid van grote gezinnen en de impact van de reclame voor een specifieke week. In dit artikel maakt u twee weer gaven met de naam **RetailSales** en **StoreDemographics** en een query ertussen. U kunt de voorbeeld product gegevens ophalen uit deze [github](https://github.com/Azure-Samples/Synapse/tree/main/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) opslag plaats.
 
 > [!IMPORTANT]
 > Er is momenteel een preview-versie van Synapse-SQL-pool ondersteuning voor Azure Synapse-koppeling voor de Azure Cosmos DB. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -33,7 +33,7 @@ Zorg ervoor dat u de volgende resources maakt voordat u begint:
 
 * Maak een Data Base binnen het Azure Cosmos-account en twee containers waarvoor het [analytische archief is ingeschakeld.](configure-synapse-link.md#create-analytical-ttl)
 
-* Laad gegevens van producten in de Azure Cosmos-containers, zoals wordt beschreven in deze [batch gegevens opname](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb) -notebook.
+* Laad gegevens van producten in de Azure Cosmos-containers, zoals wordt beschreven in deze [batch gegevens opname](https://github.com/Azure-Samples/Synapse/blob/main/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb) -notebook.
 
 * [Maak een Synapse-werk ruimte met de](../synapse-analytics/quickstart-create-workspace.md) naam **SynapseLinkBI**.
 

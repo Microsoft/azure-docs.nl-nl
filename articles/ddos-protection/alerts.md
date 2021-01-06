@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 4f9de2f956451cd6ab8bc8a7a0fc51903ec54694
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: d9b77def3ccefe3c866ccef78684d38da0b8a268
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97815899"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915144"
 ---
-# <a name="view-and-configure-ddos-protection-alerts"></a>Waarschuwingen voor DDoS-beveiliging weer geven en configureren
+# <a name="view-and-configure-ddos-protection-alerts"></a>DDoS-beschermingswaarschuwingen bekijken en configureren
 
 Azure DDoS Protection Standard biedt uitgebreide aanval en visualisatie met DDoS-aanvals analyses. Klanten die hun virtuele netwerken beschermen tegen DDoS-aanvallen, hebben een gedetailleerde zicht baarheid van het aanvals verkeer en acties die zijn ondernomen om de aanval via rapporten voor aanvallen te beperken & beperkende stroom Logboeken. Uitgebreide telemetrie wordt weer gegeven via Azure Monitor, met inbegrip van gedetailleerde metrische gegevens tijdens de duur van een DDoS-aanval. U kunt waarschuwingen configureren voor een van de Azure Monitor metrische gegevens die door DDoS Protection worden weer gegeven. Logboek registratie kan verder worden geïntegreerd met [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md), Splunk (Azure Event hubs), OMS Log Analytics en Azure Storage voor geavanceerde analyse via de diagnostische-interface voor Azure monitor.
 
@@ -34,7 +34,7 @@ In deze zelfstudie leert u het volgende:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Voordat u de stappen in deze zelf studie kunt volt ooien, moet u eerst een [Azure DDoS Standard-beveiligings plan](manage-ddos-protection.md) maken en moet DDoS Protection standaard zijn ingeschakeld op een virtueel netwerk.
-- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen en Azure VPN gateway. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.     
+- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.     
 
 ## <a name="configure-alerts-through-azure-monitor"></a>Waarschuwingen configureren via Azure Monitor
 
@@ -64,7 +64,7 @@ U kunt een van de beschik bare metrische gegevens voor DDoS-beveiliging selecter
     |---------                |---------                                                                                           |
     | Bereik                   | Selecteer **Resource selecteren**. </br> Selecteer het **abonnement** met het open bare IP-adres dat u wilt registreren, selecteer **openbaar IP-adres** voor het **bron type** en selecteer vervolgens het specifieke open bare IP-adres waarvoor u metrische gegevens wilt vastleggen. </br> Selecteer **Gereed**. | 
     | Voorwaarde | Selecteer **voor waarde selecteren**. </br> Onder signaal naam selecteert u **onder DDoS-aanval of niet**. </br> Selecteer onder **operator** de optie **groter dan of gelijk aan**. </br> Onder **aggregatie type** selecteert u **maximum**. </br> Voer bij **drempel waarde** *1* in. Voor de **onder DDoS-aanval of niet** metrisch betekent **0** dat u geen aanval ondervindt terwijl **1** betekent dat u een aanval ondervindt. </br> Selecteer **Gereed**. | 
-    | Acties | Selecteer **actie groepen toevoegen**. </br> Selecteer **Actiegroep maken**. </br> Onder **meldingen**, onder **meldings type**, selecteert u **e-mail/SMS-bericht/push/stem**. </br> Voer onder **naam** _MyUnderAttackEmailAlert_ in. </br> Klik op de knop bewerken, selecteer **e-mail adres** en zoveel van de volgende opties die u nodig hebt, en selecteer vervolgens **OK**. </br> Selecteer **Controleren en maken**. | 
+    | Actions | Selecteer **actie groepen toevoegen**. </br> Selecteer **Actiegroep maken**. </br> Onder **meldingen**, onder **meldings type**, selecteert u **e-mail/SMS-bericht/push/stem**. </br> Voer onder **naam** _MyUnderAttackEmailAlert_ in. </br> Klik op de knop bewerken, selecteer **e-mail adres** en zoveel van de volgende opties die u nodig hebt, en selecteer vervolgens **OK**. </br> Selecteer **Controleren + maken**. | 
     | Details van waarschuwingsregel | Voer _MyDdosAlert_ in bij **naam van waarschuwings regel**. |
 
 Binnen een paar minuten van aanvals detectie ontvangt u een e-mail bericht van Azure Monitor metrische gegevens die er ongeveer als volgt uitzien:

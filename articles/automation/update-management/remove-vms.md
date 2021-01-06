@@ -3,14 +3,14 @@ title: Vm's uit Azure Automation Updatebeheer verwijderen
 description: In dit artikel leest u hoe u machines kunt verwijderen die met Updatebeheer worden beheerd.
 services: automation
 ms.topic: conceptual
-ms.date: 09/09/2020
+ms.date: 01/05/2021
 ms.custom: mvc
-ms.openlocfilehash: 774dbe29cbb6b4d063d3619d0c710efb1949b99a
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: d0399aed9be8d81abb2aa55190225570ddcc1a4e
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222231"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913189"
 ---
 # <a name="remove-vms-from-update-management"></a>VM's verwijderen uit Updatebeheer
 
@@ -18,7 +18,7 @@ Wanneer u klaar bent met het beheren van updates op uw Vm's in uw omgeving, kunt
 
 ## <a name="sign-into-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij de [Azure-portal](https://portal.azure.com).
+Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 ## <a name="to-remove-your-vms"></a>Uw Vm's verwijderen
 
@@ -32,13 +32,20 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 3. Ga in het Azure Portal naar **log Analytics-werk ruimten**. Selecteer uw werk ruimte in de lijst.
 
-4. Selecteer in de werk ruimte Log Analytics **Logboeken** en kies vervolgens **query Verkenner** in het menu best acties.
+4. Selecteer in de werk ruimte Log Analytics **Geavanceerde instellingen** en kies vervolgens **computer groepen** in het linkermenu.
 
-5. Vouw in **query Explorer** in het rechterdeel venster het gedeelte **opgeslagen Queries\Updates** uit en selecteer de opgeslagen Zoek query `MicrosoftDefaultComputerGroup` om deze te bewerken.
+5. Selecteer in **computer groepen** in het rechterdeel venster **opgeslagen groepen**.
 
-6. Controleer in de query-editor de query en zoek de UUID voor de virtuele machine. Verwijder de UUID voor de virtuele machine en herhaal de stappen voor andere Vm's die u wilt verwijderen.
+6. Klik in de tabel voor de opgeslagen Zoek query- **updates: MicrosoftDefaultComputerGroup** op het pictogram **leden weer geven** om de leden uit te voeren en weer te geven.
 
-7. Sla de opgeslagen zoek opdracht op wanneer u klaar bent met het bewerken van het bestand door **Opslaan** te selecteren in de bovenste balk.
+7. Controleer in de query-editor de query en zoek de UUID voor de virtuele machine. Verwijder de UUID voor de virtuele machine en herhaal de stappen voor andere Vm's die u wilt verwijderen.
+
+8. Sla de opgeslagen zoek opdracht op wanneer u klaar bent met het bewerken van het bestand door **Opslaan** te selecteren in de bovenste balk. Wanneer u hierom wordt gevraagd, geeft u het volgende op:
+
+    * **Naam**: MicrosoftDefaultComputerGroup
+    * **Opslaan als**: functie
+    * **Alias**: Updates__MicrosoftDefaultComputerGroup
+    * **Categorie**: updates
 
 >[!NOTE]
 >Machines worden nog steeds weer gegeven nadat u de registratie ervan ongedaan hebt gemaakt, omdat er een rapport wordt gemaakt over alle computers die in de afgelopen 24 uur zijn beoordeeld. Nadat u de computer hebt verwijderd, moet u 24 uur wachten voordat deze niet meer worden weer gegeven.

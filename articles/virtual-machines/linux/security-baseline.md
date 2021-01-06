@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 45a33981c51f5a2590843fafc1e54f54d2e567cf
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d8893daaf73a15cdc0baf8eeb339e794f6f1da64
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498469"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913444"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Azure-beveiligings basislijn voor Linux Virtual Machines
 
@@ -900,7 +900,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Informatie over het maken van ARM-sjablonen](../windows/ps-template.md)
 
-* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910&preserve-view=true)
 
 **Monitoring door Azure Security Center**: Ja
 

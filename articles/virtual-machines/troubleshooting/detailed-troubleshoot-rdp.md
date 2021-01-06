@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 91f15e32866cca008553286f7585247909d9a4ba
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5782765504eb1e0cb57558d3d4772d08de6b4d25
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002677"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913104"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Gedetailleerde stappen voor probleemoplossing voor problemen met Extern bureaublad met Windows-VM's in Azure
 In dit artikel vindt u gedetailleerde stappen voor het oplossen van problemen bij het vaststellen en oplossen van complexe Extern bureaublad fouten voor Azure virtual machines op basis van Windows.
@@ -135,7 +135,7 @@ Voor virtuele machines die zijn gemaakt met het klassieke implementatie model, k
 
 Installeer vervolgens Azure PowerShell als u dat nog niet hebt gedaan. Zie [Azure PowerShell installeren en configureren](/powershell/azure/).
 
-Open vervolgens een Azure PowerShell opdracht prompt en wijzig de huidige map in de locatie van het **InstallWinRMCertAzureVM.ps1** script bestand. Als u een Azure PowerShell script wilt uitvoeren, moet u het juiste uitvoerings beleid instellen. Voer de opdracht **Get-ExecutionPolicy** uit om het huidige beleids niveau te bepalen. Zie [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1)voor meer informatie over het instellen van het juiste niveau.
+Open vervolgens een Azure PowerShell opdracht prompt en wijzig de huidige map in de locatie van het **InstallWinRMCertAzureVM.ps1** script bestand. Als u een Azure PowerShell script wilt uitvoeren, moet u het juiste uitvoerings beleid instellen. Voer de opdracht **Get-ExecutionPolicy** uit om het huidige beleids niveau te bepalen. Zie [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1&preserve-view=true)voor meer informatie over het instellen van het juiste niveau.
 
 Vul vervolgens de naam van uw Azure-abonnement, de naam van de Cloud service en de naam van uw virtuele machine in (Verwijder de < en > tekens) en voer deze opdrachten uit.
 

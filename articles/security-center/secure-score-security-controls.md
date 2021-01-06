@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/10/2020
+ms.date: 01/05/2021
 ms.author: memildin
-ms.openlocfilehash: 283dbf152778b5ef58e298444058f619356ef241
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 1e6b66fce6b22dfd12c162d469ce44137c94ab87
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97756106"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916368"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Beveiligingsscore in Azure Security Center
 
@@ -72,7 +72,7 @@ Voor samen vatting wordt uw beveiligde Score op de volgende locaties weer gegeve
 
 ### <a name="get-your-secure-score-from-the-rest-api"></a>Uw beveiligde Score ophalen uit de REST API
 
-U krijgt toegang tot uw score via de API voor beveiligde scores (momenteel in preview-versie). De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de [API beveiligde scores](/rest/api/securitycenter/securescores) gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de [API besturings elementen voor beveiligde scores](/rest/api/securitycenter/securescorecontrols) gebruiken om de beveiligings controles en de huidige Score van uw abonnementen weer te geven.
+U krijgt toegang tot uw score via de API voor beveiligde scores. De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de [API beveiligde scores](/rest/api/securitycenter/securescores) gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de [API besturings elementen voor beveiligde scores](/rest/api/securitycenter/securescorecontrols) gebruiken om de beveiligings controles en de huidige Score van uw abonnementen weer te geven.
 
 ![Het ophalen van een enkele beveiligde Score via de API](media/secure-score-security-controls/single-secure-score-via-api.png)
 
@@ -152,7 +152,7 @@ De maximum score voor dit besturings element, het Toep assen van systeem updates
 
 ### <a name="calculations---understanding-your-score"></a>Berekeningen: uitleg van uw Score
 
-|Metrisch|Formule en voor beeld|
+|Gegevens|Formule en voor beeld|
 |-|-|
 |**Huidige Score van beveiligings beheer**|<br>![Vergelijking voor het berekenen van de Score van een beveiligings controle](media/secure-score-security-controls/secure-score-equation-single-control.png)<br><br>Elk afzonderlijk beveiligings beheer draagt bij aan de beveiligings Score. Elke resource die wordt beïnvloed door een aanbeveling binnen het besturings element, draagt bij aan de huidige Score van het besturings element. De huidige score voor elk besturings element is een meting van de status van de resources *in* het besturings element.<br>![Knop info met de waarden die worden gebruikt bij het berekenen van de huidige Score van het beveiligings beheer](media/secure-score-security-controls/security-control-scoring-tooltips.png)<br>In dit voor beeld wordt de maximale Score van 6 gedeeld door 78, omdat dat de som is van de in orde zijnde en slechte resources.<br>6/78 = 0,0769<br>Als u wilt vermenigvuldigen met het aantal ongezonde resources (4), resulteert dit in de huidige Score:<br>0,0769 * 4 = **0,31**<br><br>|
 |**Beveiligingsscore**<br>Enkel abonnement|<br>![Vergelijking voor het berekenen van de beveiligde Score van een abonnement](media/secure-score-security-controls/secure-score-equation-single-sub.png)<br><br>![Een beveiligde Score van één abonnement waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-single-sub.png)<br>In dit voor beeld is er één abonnement met alle beveiligings controles beschikbaar (een potentiële maximum Score van 60 punten). De score toont 28 punten van een mogelijke 60 en de resterende 32 punten worden weer gegeven in de sectie ' potentiële Score verhogen ' van de beveiligings controles.<br>![Lijst met besturings elementen en de potentiële toename van de Score](media/secure-score-security-controls/secure-score-example-single-sub-recs.png)|

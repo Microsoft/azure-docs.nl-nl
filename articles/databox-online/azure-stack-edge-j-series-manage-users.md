@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 66967c1fa8f6ca42459559caf46bffb0e5afe925
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0bef344414a9ba27d5808fcd17ed664b7f51bddc
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743587"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915953"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-stack-edge-pro"></a>Gebruik de Azure Portal om gebruikers te beheren op uw Azure Stack Edge Pro
 
@@ -30,19 +30,19 @@ In dit artikel leert u het volgende:
 
 ## <a name="about-users"></a>Over gebruikers
 
-Gebruikers kunnen het recht alleen-lezen of volledige bevoegdheid hebben. Zoals de naam al aangeeft, kunnen gebruikers met het recht alleen-lezen de sharegegevens alleen weergeven. Gebruikers met volledige bevoegdheid kunnen sharegegevens lezen, schrijven, wijzigen of verwijderen.
+Gebruikers kunnen het recht alleen-lezen of volledige bevoegdheid hebben. Alleen-lezen gebruikers kunnen alleen de share gegevens weer geven. Gebruikers met volledige bevoegdheden kunnen share gegevens lezen, schrijven naar deze shares en de share gegevens wijzigen of verwijderen.
 
  - **Gebruiker met volledige bevoegdheden** - een lokale gebruiker met volledige toegang.
  - **Alleen-lezengebruiker** - een lokale gebruiker met alleen-lezentoegang. Deze gebruikers zijn gekoppeld aan shares waarmee alleen-lezenbewerkingen mogelijk zijn.
 
-De gebruikersmachtigingen worden eerst gedefinieerd wanneer de gebruiker wordt gemaakt tijdens het maken van de share. Wanneer de machtigingen voor een gebruiker zijn gedefinieerd, kunnen deze worden gewijzigd via Windows Verkenner.
+De gebruikersmachtigingen worden eerst gedefinieerd wanneer de gebruiker wordt gemaakt tijdens het maken van de share. Ze kunnen worden gewijzigd met behulp van bestanden Verkenner.
 
 
 ## <a name="add-a-user"></a>Een gebruiker toevoegen
 
 Voer in Azure Portal de volgende stappen uit om een gebruiker toe te voegen.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **overzicht > gebruikers**. Selecteer **+ gebruiker toevoegen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **gebruikers**. Selecteer **+ gebruiker toevoegen** op de opdracht balk.
 
     ![Gebruiker toevoegen selecteren](media/azure-stack-edge-j-series-manage-users/add-user-1.png)
 
@@ -59,7 +59,7 @@ Voer in Azure Portal de volgende stappen uit om een gebruiker toe te voegen.
 ## <a name="modify-user"></a>Gebruiker wijzigen
 
 U kunt het wachtwoord dat is gekoppeld aan een gebruiker, wijzigen wanneer de gebruiker is gemaakt. Selecteer in de lijst met gebruikers. Voer het nieuwe wacht woord in en bevestig dit. Sla de wijzigingen op.
- 
+
 ![Gebruiker wijzigen](media/azure-stack-edge-j-series-manage-users/modify-user-1.png)
 
 
@@ -68,7 +68,7 @@ U kunt het wachtwoord dat is gekoppeld aan een gebruiker, wijzigen wanneer de ge
 Voer in Azure Portal de volgende stappen uit om een gebruiker te verwijderen.
 
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **overzicht > gebruikers**.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **gebruikers**.
 
     ![Selecteer de gebruiker die u wilt verwijderen](media/azure-stack-edge-j-series-manage-users/delete-user-1.png)
 

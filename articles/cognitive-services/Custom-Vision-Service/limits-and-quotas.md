@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: pafarley
-ms.openlocfilehash: b79bf5e8ead16bbdf9c69e8d7faae43fa778ab3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a8ea8d5f13f72b0da1e11a27b69da2570eda543
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316576"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913478"
 ---
 # <a name="limits-and-quotas"></a>Limieten en quota
 
@@ -45,6 +45,3 @@ Het aantal trainings afbeeldingen per project en Tags per project wordt naar ver
 |Afbeelding van het maximum aantal regio's per object detectie|300|300|
 |Afbeelding van maximum aantal labels per classificatie|100|100|
 
-> [!NOTE]
-> Afbeeldingen die kleiner zijn dan 256 pixels, worden geaccepteerd, maar worden uitgebreid.
-> De hoogte-breedte verhouding van de afbeelding mag niet groter zijn dan 25

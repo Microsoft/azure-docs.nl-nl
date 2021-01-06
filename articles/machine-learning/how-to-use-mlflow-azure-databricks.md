@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 776db820ffb1a216c3f6f7e9c6d6b8d90913a063
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 9e0102cdb7e8494a8540b1970932f0d9f7f39fde
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881460"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912914"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Azure Databricks ML experimenten bijhouden met MLflow en Azure Machine Learning (preview)
 
@@ -24,7 +24,7 @@ In dit artikel leert u hoe u de tracking-URI en logboek registratie-API van MLfl
 
 [MLflow](https://www.mlflow.org) is een open-source bibliotheek voor het beheren van de levens cyclus van uw machine learning experimenten. MLFlow tracking is een onderdeel van MLflow dat de metrische gegevens van uw training en model artefacten registreert en registreert. Meer informatie over [Azure Databricks en MLflow](/azure/databricks/applications/mlflow/). 
 
-Bekijk het [volgen van experimenten en maak eind punten met MLflow en Azure machine learning](how-to-use-mlflow.md) voor aanvullende MLflow-en Azure machine learning functionaliteits integraties.
+Zie [experimenten volgen met MLflow en Azure machine learning](how-to-use-mlflow.md) voor aanvullende MLflow en Azure machine learning functionaliteits integraties.
 
 >[!NOTE]
 > MLflow is een open-source bibliotheek die regel matig wordt gewijzigd. Als zodanig moeten de functies die beschikbaar zijn via de Azure Machine Learning-en MLflow-integratie, worden beschouwd als een preview en niet volledig worden ondersteund door micro soft.
@@ -181,8 +181,8 @@ Wanneer u klaar bent voor het maken van een eind punt voor uw ML-modellen. U kun
 U kunt gebruikmaken van de [mlflow. azureml. Implementeer](https://www.mlflow.org/docs/latest/python_api/mlflow.azureml.html#mlflow.azureml.deploy) API om een model te implementeren in uw Azure machine learning-werk ruimte. Als u het model alleen hebt geregistreerd voor de Azure Databricks-werk ruimte, zoals beschreven in de sectie [modellen registreren bij MLflow](#register-models-with-mlflow) , geeft u de `model_name` para meter op om het model in azure machine learning werk ruimte te registreren. 
 
 Azure Databricks-uitvoeringen kunnen worden geïmplementeerd naar de volgende eind punten, 
-* [Azure-container exemplaar](how-to-deploy-models-with-mlflow.md#deploy-to-aci)
-* [Azure Kubernetes Service](how-to-deploy-models-with-mlflow.md#deploy-to-aks)
+* [Azure-container exemplaar](how-to-deploy-mlflow-models.md#deploy-to-azure-container-instance-aci)
+* [Azure Kubernetes Service](how-to-deploy-mlflow-models.md#deploy-to-azure-kubernetes-service-aks)
 
 ### <a name="deploy-models-to-adb-endpoints-for-batch-scoring"></a>Modellen implementeren voor ADB-eind punten voor batch Score 
 
@@ -232,7 +232,7 @@ Als u niet van plan bent om de vastgelegde metrische gegevens en artefacten in u
 De [MLflow met Azure machine learning-notebooks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/track-and-monitor-experiments/using-mlflow) tonen en uitvouwen op concepten die in dit artikel worden gepresenteerd.
 
 ## <a name="next-steps"></a>Volgende stappen
-
+* [Implementeer MLflow-modellen als een Azure-webservice](how-to-deploy-mlflow-models.md). 
 * [Uw modellen beheren](concept-model-management-and-deployment.md).
-* [Houd experimenten bij en maak eind punten met MLflow en Azure machine learning](how-to-use-mlflow.md). 
+* [Spoor experiment wordt uitgevoerd met MLflow en Azure machine learning](how-to-use-mlflow.md). 
 * Meer informatie over [Azure Databricks en MLflow](/azure/databricks/applications/mlflow/).

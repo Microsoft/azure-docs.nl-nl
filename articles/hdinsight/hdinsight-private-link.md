@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: fac26c616c977eedc466f004a9455297ec995fb8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9fe1b7a077142b00aaf2a8502faa0e166c4311c4
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352538"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915620"
 ---
 # <a name="secure-and-isolate-azure-hdinsight-clusters-with-private-link-preview"></a>Azure HDInsight-clusters beveiligen en isoleren met een persoonlijke koppeling (preview-versie)
 
@@ -29,7 +29,7 @@ De HDInsight RP maakt standaard gebruik van een *inkomende* verbinding met het c
 
 De Basic load balancers die worden gebruikt in de standaard virtuele-netwerk architectuur, bieden automatisch een open bare NAT (Network Address Translation) voor toegang tot de vereiste uitgaande afhankelijkheden, zoals de HDInsight RP. Als u de uitgaande verbinding met het open bare Internet wilt beperken, kunt u [een firewall configureren](./hdinsight-restrict-outbound-traffic.md), maar dit is geen vereiste.
 
-Als `resourceProviderConnection` u configureert voor uitgaand verkeer, kunt u ook toegang krijgen tot specifieke cluster bronnen, zoals Azure data Lake Storage Gen2 of externe meta-archieven, met behulp van persoonlijke eind punten. Het gebruik van privé-eind punten voor deze resources is niet mandetory, maar als u van plan bent om persoonlijke eind punten voor deze resources te gebruiken, moet u de persoonlijke eind punten en DNS-vermeldingen configureren `before` die het HDInsight-cluster maken. We raden u aan alle externe SQL-data bases die u nodig hebt, zoals Apache zwerver, Ambari, Oozie en Hive-meta Stores, te maken en op te geven tijdens het maken van het cluster. De vereiste is dat al deze bronnen toegankelijk moeten zijn vanuit het subnet van het cluster, hetzij via hun eigen privé-eind punt, hetzij anderszins.
+Als `resourceProviderConnection` u configureert voor uitgaand verkeer, kunt u ook toegang krijgen tot specifieke cluster bronnen, zoals Azure data Lake Storage Gen2 of externe meta-archieven, met behulp van persoonlijke eind punten. Het gebruik van privé-eind punten voor deze resources is niet verplicht, maar als u van plan bent persoonlijke eind punten voor deze resources te gebruiken, moet u de persoonlijke eind punten en DNS-vermeldingen configureren `before` die u het HDInsight-cluster maakt. We raden u aan alle externe SQL-data bases die u nodig hebt, zoals Apache zwerver, Ambari, Oozie en Hive-meta Stores, te maken en op te geven tijdens het maken van het cluster. De vereiste is dat al deze bronnen toegankelijk moeten zijn vanuit het subnet van het cluster, hetzij via hun eigen privé-eind punt, hetzij anderszins.
 
 Het gebruik van privé-eind punten voor Azure Key Vault wordt niet ondersteund. Als u Azure Key Vault gebruikt voor CMK-versleuteling in rust, moet het Azure Key Vault-eind punt toegankelijk zijn vanuit het HDInsight-subnet zonder persoonlijk eind punt.
 

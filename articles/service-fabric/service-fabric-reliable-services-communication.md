@@ -4,12 +4,12 @@ description: Overzicht van het Reliable Services communicatie model, inclusief h
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e7dc10055633c8e6dd2c645f28b774d5d5f3ac3f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 3436d29446e963faea9bda47f5a5247b7de7d859
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574323"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912611"
 ---
 # <a name="how-to-use-the-reliable-services-communication-apis"></a>De Reliable Services Communication Api's gebruiken
 Azure Service Fabric als platform is volledig neutraal over de communicatie tussen services. Alle protocollen en Stacks zijn acceptabel, van UDP tot HTTP. Het is aan de service ontwikkelaar om te kiezen hoe services moeten communiceren. Het Reliable Services Application Framework biedt ingebouwde communicatie stacks en Api's die u kunt gebruiken om uw aangepaste communicatie-onderdelen te bouwen.
@@ -288,7 +288,7 @@ public class MyCommunicationClient implements CommunicationClient {
 }
 ```
 
-De client-Factory is primair verantwoordelijk voor het maken van communicatie clients. Voor clients die geen permanente verbinding onderhouden, zoals een HTTP-client, hoeft de fabriek alleen de client te maken en te retour neren. Andere protocollen die een permanente verbinding onderhouden, zoals sommige binaire protocollen, moeten ook worden gevalideerd door de Factory om te bepalen of de verbinding opnieuw moet worden gemaakt.  
+De client-Factory is primair verantwoordelijk voor het maken van communicatie clients. Voor clients die geen permanente verbinding onderhouden, zoals een HTTP-client, hoeft de fabriek alleen de client te maken en te retour neren. Andere protocollen die een permanente verbinding onderhouden, zoals sommige binaire protocollen, moeten ook worden gevalideerd ( `ValidateClient(string endpoint, MyCommunicationClient client)` ) door de fabriek om te bepalen of de verbinding opnieuw moet worden gemaakt.  
 
 ```csharp
 public class MyCommunicationClientFactory : CommunicationClientFactoryBase<MyCommunicationClient>

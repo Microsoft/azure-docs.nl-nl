@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/04/2021
+ms.date: 01/05/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d56ed0cdae9046cb7d76f7d74545309ee6292ecd
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: f74e6435af9084b0c8f222c33dc922fe678bc4c7
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883092"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914516"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -83,6 +83,7 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 01/05/2021: wijzigingen in [SAP Hana uitschalen met het stand-by-knoop punt op virtuele machines van Azure met ANF op SLES](./sap-hana-scale-out-standby-netapp-files-suse.md) en [SAP Hana uitschalen met het knoop punt stand-by op virtuele machines van Azure met ANF op RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md), waarbij de aanbevolen configuratie wordt aangepast zodat SAP host agent het lokale poort bereik kan beheren  
 - 01/04/2021: nieuwe Azure-regio's die worden ondersteund door HLI toevoegen aan [Wat is SAP Hana op Azure (grote exemplaren)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
 - 12/29/2020: aanbevelingen voor de architectuur toevoegen voor specifieke Azure-regio's in [SAP-werkbelasting configuraties met Azure-beschikbaarheidszones](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones)
 - 12/21/2020: nieuwe certificeringen toevoegen aan Sku's van HANA grote instanties in [beschik bare sku's voor HLI](./hana-available-skus.md)

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/05/2021
 ms.author: alkohli
-ms.openlocfilehash: a0d596c7c1046ea26ac389a48c17fa5abccbfd12
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 3182258245701903e7b3d6d6163cf3e2bd55c1fc
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951601"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915444"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-stack-edge-pro-gpu"></a>Gebruik de Azure Portal om bandbreedte planningen te beheren op uw Azure Stack Edge Pro GPU 
 
@@ -36,16 +36,16 @@ In dit artikel leert u het volgende:
 Voer de volgende stappen uit in de Azure Portal om een schema toe te voegen.
 
 1. Ga in de Azure Portal voor uw Azure Stack Edge-resource naar **band breedte**.
-2. Selecteer **+ schema toevoegen**in het rechterdeel venster.
+2. Selecteer **+ schema toevoegen** in het rechterdeel venster.
 
     ![Band breedte selecteren](media/azure-stack-edge-j-series-manage-bandwidth-schedules/add-schedule-1.png)
 
-3. Doe het volgende in **Schema toevoegen**: 
+3. Doe het volgende in **Schema toevoegen**:
 
-   1. Geef de **begin dag**, de **eind datum**, de **begin tijd**en de **eind tijd** van de planning op.
+   1. Geef de **begin dag**, de **eind datum**, de **begin tijd** en de **eind tijd** van de planning op.
    2. Controleer de optie **alle dagen** als dit schema de hele dag moet worden uitgevoerd.
    3. **Bandbreedte frequentie** is de band breedte in megabits per seconde (Mbps) die wordt gebruikt door uw apparaat in bewerkingen met betrekking tot de Cloud (zowel uploads als down Loads). Geef voor dit veld een getal tussen 20 en 2.147.483.647 op.
-   4. Schakel **Onbeperkte** bandbreedte in als u de datumupload en -download niet wilt regelen.
+   4. Selecteer **onbeperkte band breedte** als u de upload van de datum niet wilt beperken en downloaden.
    5. Selecteer **Toevoegen**.
 
       ![Schema toevoegen](media/azure-stack-edge-j-series-manage-bandwidth-schedules/add-schedule-2.png)
@@ -58,9 +58,10 @@ Voer de volgende stappen uit in de Azure Portal om een schema toe te voegen.
 
 Voer de volgende stappen uit als u een bandbreedteschema wilt bewerken.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **band breedte**. 
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **band breedte**.
 2. Selecteer in de lijst met bandbreedte schema's een schema dat u wilt wijzigen.
-    ![Bandbreedte planning selecteren](media/azure-stack-edge-j-series-manage-bandwidth-schedules/modify-schedule-1.png)
+
+   ![Bandbreedte planning selecteren](media/azure-stack-edge-j-series-manage-bandwidth-schedules/modify-schedule-1.png)
 
 3. Breng de gewenste wijzigingen aan en sla de wijzigingen op.
 
@@ -77,7 +78,7 @@ Voer de volgende stappen uit om een bandbreedte schema te verwijderen dat is gek
 
 1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **band breedte**.  
 
-2. Selecteer in de lijst met bandbreedteschema's een schema dat u wilt verwijderen. Selecteer **verwijderen**in het **schema bewerken**. Selecteer **Ja**als u om bevestiging wordt gevraagd.
+2. Selecteer in de lijst met bandbreedteschema's een schema dat u wilt verwijderen. Selecteer **verwijderen** in het **schema bewerken**. Selecteer **Ja** als u om bevestiging wordt gevraagd.
 
    ![Een gebruiker verwijderen](media/azure-stack-edge-j-series-manage-bandwidth-schedules/delete-schedule-2.png)
 

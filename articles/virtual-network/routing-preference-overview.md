@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/02/2020
 ms.author: mnayak
-ms.openlocfilehash: c1c2c5f27143be7fc10269c948bee9d5465d565a
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 656f8a0e0530a20807fc8fddd4cd96d1d955c8ac
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530439"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912696"
 ---
 # <a name="what-is-routing-preference-preview"></a>Wat is routerings voorkeur (preview)?
 
@@ -65,18 +65,13 @@ Openbaar IP-adres met voorkeurs instelling voor route ring ' micro soft Global N
 Voor opslag gebruiken primaire eind punten altijd het **wereld wijde netwerk van micro soft**. U kunt secundaire eind punten met **Internet** inschakelen als uw keuze voor verkeers routering. Ondersteunde opslag Services zijn:
 
 * Blobs
-* Files
+* Bestanden
 * Web
 * Azure DataLake
 
 ## <a name="pricing"></a>Prijzen
 Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor gegevens overdracht via internet. Route ring via de **wereld wijde** prijs van gegevens overdracht van micro soft is hetzelfde als de huidige prijs voor het uitbrengen van Internet. Ga naar de [pagina met prijzen voor Azure-band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor de meest recente prijs informatie. 
 
-## <a name="availability"></a>Beschikbaarheid
-
-Ondersteuning voor route ring van voor keuren is beschikbaar in de volgende regio's voor services, zoals virtuele machines en Internet gerichte load balancer die gebruikmaken van een openbaar IP-adres voor Internet uitgaand verkeer: Europa-noord, Europa-west, Frankrijk-zuid, UK-zuid, VS-Oost, Noord-Centraal VS, Zuid-Centraal VS, VS-West, West-Centraal VS, Azië en Japan-West.
-
-Ondersteuning voor route ring van het opslag account is beschikbaar in de volgende Azure-regio's: Noord-Centraal VS, VS-West-Centraal, Zuid-Centraal VS, Oost-VS, VS-West, Europa-noord, Frankrijk-zuid, Duitsland-west-centraal, Zwitserland-west, Zuid-Azië-oost, Japan-Oost en Japan-West.
 ## <a name="limitations"></a>Beperkingen
 
 * Routerings voorkeur is alleen compatibel met de standaard-SKU van het open bare IP-adres. De basis-SKU van het open bare IP-adres wordt niet ondersteund.

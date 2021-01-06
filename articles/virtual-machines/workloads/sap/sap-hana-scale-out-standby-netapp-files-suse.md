@@ -14,14 +14,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/24/2020
+ms.date: 01/05/2021
 ms.author: radeltch
-ms.openlocfilehash: 13644872fca06ad8fc5806326736aea23e504520
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: a152735d21a347262ce6485e6110f9e040a0071a
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608653"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916232"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Een SAP HANA scale-out systeem met stand-by-knoop punt op virtuele Azure-machines implementeren met behulp van Azure NetApp Files op SUSE Linux Enterprise Server 
 
@@ -362,11 +362,13 @@ Configureer en bereid uw besturings systeem uit door de volgende stappen uit te 
     # Add the following entries in the configuration file
     ipv6.conf.all.disable_ipv6 = 1
     net.ipv4.tcp_max_syn_backlog = 16348
-    net.ipv4.ip_local_port_range = 40000 65300
     net.ipv4.conf.all.rp_filter = 0
     sunrpc.tcp_slot_table_entries = 128
     vm.swappiness=10
     </code></pre>
+
+> [!TIP]
+> Vermijd het instellen van net.ipv4.ip_local_port_range en net.ipv4.ip_local_reserved_ports expliciet in de configuratie bestanden van sysctl om SAP host agent toe te staan de poortbereiken te beheren. Zie SAP Note [2382421](https://launchpad.support.sap.com/#/notes/2382421)voor meer informatie.  
 
 4. **[A]** Wijzig de sunrpc-instellingen, zoals aanbevolen in de [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp files][anf-sap-applications-azure].  
 

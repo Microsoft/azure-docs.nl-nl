@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: a54404dafaf1093a2e2acbde88187739bd6c9f06
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 86e4a111be7585373ecf4c2fe9508f2bfca7de16
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827407"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915076"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
@@ -37,7 +37,7 @@ In deze zelfstudie leert u het volgende:
 De volgende [metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
 
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
+| Gegevens | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
 | --- | --- | --- | --- | --- |
 | ByteCount | Aantal bytes | Aantal | Totaal | Totaal aantal verzonden bytes binnen tijds periode |
 | BytesDroppedDDoS | Binnenkomende bytes verloren DDoS | BytesPerSecond | Maximum | Binnenkomende bytes verloren DDoS| 
@@ -70,7 +70,7 @@ De volgende [metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Voordat u de stappen in deze zelf studie kunt volt ooien, moet u eerst een [Azure DDoS Standard-beveiligings plan](manage-ddos-protection.md) maken en moet DDoS Protection standaard zijn ingeschakeld op een virtueel netwerk.
-- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen en Azure VPN gateway. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.  
+- DDoS bewaakt open bare IP-adressen die zijn toegewezen aan bronnen in een virtueel netwerk. Als u geen resources met open bare IP-adressen in het virtuele netwerk hebt, moet u eerst een resource met een openbaar IP-adres maken. U kunt het open bare IP-adres van alle resources die zijn geïmplementeerd via Resource Manager (niet klassiek) bewaken in het [virtuele netwerk voor Azure-Services](../virtual-network/virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network) (inclusief Azure load balancers waarbij de virtuele machines in het virtuele netwerk zich bevinden), met uitzonde ring van Azure app service omgevingen. Als u wilt door gaan met deze zelf studie, kunt u snel een virtuele [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine maken.  
 
 ## <a name="view-ddos-protection-telemetry"></a>Telemetrie van DDoS-beveiliging weer geven
 
@@ -111,4 +111,4 @@ In deze zelfstudie heeft u het volgende geleerd:
 Ga verder met de volgende zelf studie voor meer informatie over het configureren van rapporten en stroom logboeken voor het beperken van aanvallen.
 
 > [!div class="nextstepaction"]
-> [Diagnostische logboek registratie voor DDoS weer geven en configureren](diagnostic-logging.md)
+> [Registratie in DDoS-diagnoselogboek bekijken en configureren](diagnostic-logging.md)

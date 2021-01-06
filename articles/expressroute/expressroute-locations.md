@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 12/10/2020
+ms.date: 01/05/2021
 ms.author: duau
-ms.openlocfilehash: dab480012ced3a8fc50fd5f4295272c0eccc4307
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: c68d9654c673b75742205853ec186caa5d6a3ce5
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831853"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916147"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute-connectiviteit
 
@@ -52,7 +52,7 @@ In de volgende tabel vindt u een toewijzing van Azure-regio's aan ExpressRoute-l
 | **Zuid-Korea** | Korea - centraal, Korea - zuid |Busan, Seoul|
 | **VAE** | UAE-centraal, UAE-noord | Dubai, Dubai2 |
 | **Zuid-Afrika** | Zuid-Afrika-west, Zuid-Afrika-noord |Kaapstad, Johannesburg |
-| **Zuid-Amerika** | Brazil South |Bogotá, Sao Paulo |
+| **Zuid-Amerika** | Brazilië - zuid |Bogotá, Sao Paulo |
 
 
 ## <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Regio's en geopolitieke grenzen voor nationale clouds
@@ -105,7 +105,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **du datamena** |Ondersteund |Ondersteund | Dubai2 |
 | **eir** |Ondersteund |Ondersteund |Dublin|
 | **[Wereld wijde communicatie met Epsilon](https://www.epsilontel.com/solutions/direct-cloud-connect)** |Ondersteund |Ondersteund |Singapore, Singapore2 |
-| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Ondersteund |Ondersteund |Amsterdam, Atlanta, Berlijn, Canberra2, Chicago, Groningen, Dubai2, Dublin, Frankfurt, Genève, Hongkong SAR, Londen, London2, Los Angeles, los Angeles2, Melbourne, Miami, Milaan, New York, Osaka, Parijs, Sao Paulo, Seattle, Seoul, Groningen, Toronto, Washington, Stockholm |
+| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Atlanta, Berlijn, Canberra2, Chicago, Rotterdam, Dubai2, Dublin, Frankfurt, Genève, Hongkong SAR, Londen, London2, Los Angeles, los Angeles2, Melbourne, Miami, Milaan, New York, Osaka, Parijs, Sao Paulo, Seattle, Seoul, silicone dal, Singapore, Stockholm, Sydney, Tokio, Toronto, Washington DC, Zürich |
 | **Etisalat VAE** |Ondersteund |Ondersteund |Dubai|
 | **[euNetworks](https://eunetworks.com/services/solutions/cloud-connect/microsoft-azure-expressroute/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Dublin, Frankfurt, Londen |
 | **[FarEasTone](https://www.fetnet.net/corporate/en/Enterprise.html)** |Ondersteund |Ondersteund |Taipei|

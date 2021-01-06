@@ -1,18 +1,21 @@
 ---
 title: Service Fabric Services partitioneren
-description: Hierin wordt beschreven hoe u Service Fabric stateful-Services partitioneert. Partities maken gegevens opslag mogelijk op de lokale computers, zodat de gegevens en reken kracht samen kunnen worden geschaald.
+description: Meer informatie over het partitioneren Service Fabric stateless en stateful Services
 ms.topic: conceptual
 ms.date: 06/30/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d33e7b5ee293cf9dfb49e509bec2e1950033a956
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 199ae9d9844149c1931da638633110f717fe0517
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89005425"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97915892"
 ---
 # <a name="partition-service-fabric-reliable-services"></a>Partitioneren van Service Fabric-betrouwbare services
-Dit artikel bevat een inleiding tot de basis concepten van het partitioneren van Azure Service Fabric reliable Services. De bron code die in het artikel wordt gebruikt, is ook beschikbaar op [github](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
+Dit artikel bevat een inleiding tot de basis concepten van het partitioneren van Azure Service Fabric reliable Services. Als u partitioneert, kan de gegevens opslag op de lokale computers worden geschaald.
+
+> [!TIP]
+> Een [volledig voor beeld](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions) van de code in dit artikel is beschikbaar op github.
 
 ## <a name="partitioning"></a>Partitionering
 Partitioneren is niet uniek voor Service Fabric. Eigenlijk is het een kern patroon van het bouwen van schaal bare Services. In een bredere zin kunnen we nadenken over partitioneren als een concept van het delen van de status (gegevens) en te berekenen in kleinere, toegankelijke eenheden om de schaal baarheid en prestaties te verbeteren. Een bekende vorm van partitionering is het [partitioneren van gegevens][wikipartition], ook wel bekend als sharding.
@@ -348,14 +351,14 @@ Omdat we letterlijk één partitie per letter willen hebben, kunnen we 0 als de 
     
     ![Scherm afbeelding browser](./media/service-fabric-concepts-partitioning/samplerunning.png)
 
-De volledige bron code van het voor beeld is beschikbaar op [github](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions).
+De volledige oplossing van de code die in dit artikel wordt gebruikt, is hier beschikbaar: https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions .
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de volgende onderwerpen voor informatie over Service Fabric concepten:
+Meer informatie over Service Fabric Services:
 
+* [Verbinding maken en communiceren met Services in Service Fabric](service-fabric-connect-and-communicate-with-services.md)
 * [Beschik baarheid van Service Fabric Services](service-fabric-availability-services.md)
 * [Schaal baarheid van Service Fabric Services](service-fabric-concepts-scalability.md)
-* [Capaciteits planning voor Service Fabric toepassingen](service-fabric-capacity-planning.md)
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 

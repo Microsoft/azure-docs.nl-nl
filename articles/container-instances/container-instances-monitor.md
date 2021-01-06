@@ -2,13 +2,13 @@
 title: Container instanties bewaken
 description: Het gebruik van reken resources zoals CPU en geheugen door uw containers in Azure Container Instances bewaken.
 ms.topic: article
-ms.date: 04/24/2019
-ms.openlocfilehash: b10c370b599233d00b2b4a65268f6c61a11cbd5c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 12/17/2020
+ms.openlocfilehash: 83a8a5ab2c8c49f4044564c2d899685914103b0b
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007253"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916071"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Containerresources in Azure Container Instances bewaken
 
@@ -27,11 +27,11 @@ Op dit moment zijn Azure Monitor metrische gegevens alleen beschikbaar voor Linu
 
 Azure Monitor biedt de volgende [metrische gegevens voor Azure container instances][supported-metrics]. Deze metrische gegevens zijn beschikbaar voor een container groep en afzonderlijke containers. Standaard worden de metrische gegevens als gemiddelde waarden geaggregeerd.
 
-* **CPU-gebruik** : gemeten in **millicores**. Een millicore is 1/1000th van een CPU-kern, dus 500 millicores vertegenwoordigt het gebruik van 0,5 CPU-kernen.
-
-* **Geheugen gebruik** -in bytes.
-
-* **Netwerk bytes ontvangen per seconde** en **verzonden bytes per seconde** van het netwerk. 
+- **CPU-gebruik** gemeten in **millicores**. 
+  - Een millicore is 1/1000th van een CPU-kern, dus 500 millicores vertegenwoordigt het gebruik van 0,5 CPU-kernen.
+- **Geheugen gebruik** in bytes
+- **Ontvangen netwerk bytes** per seconde
+- **Verzonden netwerk bytes** per seconde 
 
 ## <a name="get-metrics---azure-portal"></a>Metrische gegevens ophalen - Azure Portal
 
@@ -39,7 +39,7 @@ Wanneer een containergroep wordt gemaakt, zijn Azure Monitor-gegevens beschikbaa
 
 ![dubbele grafiek][dual-chart]
 
-Gebruik in een container groep die meerdere containers bevat een [dimensie][monitor-dimension] om metrische gegevens per container weer te geven. Als u een grafiek wilt maken met metrische gegevens voor elke afzonderlijke container, voert u de volgende stappen uit:
+Gebruik in een container groep die meerdere containers bevat een [dimensie][monitor-dimension] om de metrische gegevens per container weer te geven. Als u een grafiek wilt maken met metrische gegevens voor elke afzonderlijke container, voert u de volgende stappen uit:
 
 1. Selecteer op de pagina **overzicht** een van de metrische grafieken, zoals **CPU**. 
 1. Selecteer de knop **splitsing Toep assen** en selecteer **container naam**.
@@ -64,18 +64,11 @@ az monitor metrics list --resource $CONTAINER_GROUP --metric CPUUsage --output t
 ```output
 Timestamp            Name       Average
 -------------------  ---------  ---------
-2019-04-23 22:59:00  CPU Usage
-2019-04-23 23:00:00  CPU Usage
-2019-04-23 23:01:00  CPU Usage  0.0
-2019-04-23 23:02:00  CPU Usage  0.0
-2019-04-23 23:03:00  CPU Usage  0.5
-2019-04-23 23:04:00  CPU Usage  0.5
-2019-04-23 23:05:00  CPU Usage  0.5
-2019-04-23 23:06:00  CPU Usage  1.0
-2019-04-23 23:07:00  CPU Usage  0.5
-2019-04-23 23:08:00  CPU Usage  0.5
-2019-04-23 23:09:00  CPU Usage  1.0
-2019-04-23 23:10:00  CPU Usage  0.5
+2020-12-17 23:34:00  CPU Usage
+. . .
+2020-12-18 00:25:00  CPU Usage
+2020-12-18 00:26:00  CPU Usage  0.4
+2020-12-18 00:27:00  CPU Usage  0.0
 ```
 
 Wijzig de waarde van de `--metric` para meter in de opdracht om andere [ondersteunde metrische gegevens][supported-metrics]op te halen. Gebruik bijvoorbeeld de volgende opdracht om metrische gegevens over het **geheugen** gebruik op te halen. 

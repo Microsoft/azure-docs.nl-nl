@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2157a1cb96475209762e829c549d628f2c35fd91
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 49a350b77958901aae5e54e82d856e4f3772702e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97425846"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930783"
 ---
 # <a name="set-up-a-file-share-for-msix-app-attach-preview"></a>Een bestands share instellen voor het koppelen van MSIX-apps (preview-versie)
 
@@ -64,6 +64,12 @@ Hier volgen enkele andere zaken die u kunt doen om de MSIX-koppelings prestaties
 Het installatie proces voor de bestands share MSIX app attach is grotendeels hetzelfde als [het installatie proces voor bestands shares van het FSLogix-profiel](create-host-pools-user-profile.md). U moet echter wel verschillende machtigingen toewijzen aan gebruikers. Voor het koppelen van de MSIX-app zijn alleen-lezen-machtigingen vereist voor toegang tot de bestands share.
 
 Als u uw MSIX-toepassingen in Azure Files opslaat, moet u voor uw sessie-hosts alle host-Vm's op basis van het toegangs beheer (RBAC) en bestands shares van het nieuwe technologie bestands systeem (NTFS) op de share toewijzen.
+
+| Azure-object                      | Vereiste rol                                     | Functie                                  |
+|-----------------------------------|--------------------------------------------------|-----------------------------------------------|
+| Session Host (VM-computer objecten)| Inzender voor opslagbestandsgegevens via SMB-share          | Lezen en uitvoeren, lezen, Mapinhoud weer geven  |
+| Beheerders op bestands share              | Inzender met verhoogde bevoegdheden voor opslagbestandsgegevens via SMB-share | Volledig beheer                                  |
+| Gebruikers op bestands share               | Inzender voor opslagbestandsgegevens via SMB-share          | Lezen en uitvoeren, lezen, Mapinhoud weer geven  |
 
 Vm's voor de sessiehost toewijzen voor het opslag account en de bestands share:
 

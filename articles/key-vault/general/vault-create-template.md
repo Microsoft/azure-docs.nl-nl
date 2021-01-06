@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 1ab382ec10d932b94961c73b7d7ac9082125a88c
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: e19277aa3639031371e0e8dd28f4dd849efd4597
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704517"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933928"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Een Azure-sleutel kluis en een beleid voor kluis toegang maken met behulp van een resource manager-sjabloon
 
@@ -213,10 +213,10 @@ Write-Host "Press [ENTER] to continue..."
 
 - Lees een [overzicht van Azure Key Vault](../general/overview.md).
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
-- Bekijk [Azure Key Vault aanbevolen procedures](../general/best-practices.md).
+- Bekijk het [Azure Key Vault Security-overzicht](security-overview.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
 - [Verifiëren bij een sleutel kluis](authentication.md)
-- [Ontwikkelaars handleiding Azure Key Vault](developers-guide.md)
+- [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)

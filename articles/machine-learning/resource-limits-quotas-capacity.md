@@ -10,18 +10,18 @@ ms.topic: reference
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 12/21/2020
-ms.openlocfilehash: 132c4b223b99f7110cd4553bb0dd93f1e58f4cdd
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: b675e72df4f128d0ce096b3ac398fab63c20557e
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733294"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930800"
 ---
 # <a name="service-limits-in-azure-machine-learning"></a>Service limieten in Azure Machine Learning
 
-In deze sectie vindt u de basis quota en beperkings drempel waarden in Azure Machine Learning.
+In deze sectie vindt u de basis quota en beperkings drempel waarden in Azure Machine Learning. Zie voor meer informatie over het verhogen van resource quota's [' Quota's beheren en verhogen voor resources '](how-to-manage-quotas.md)
 
-## <a name="workspaces"></a>Werkruimten
+## <a name="workspaces"></a>Workspaces
 | Limiet | Waarde |
 | --- | --- |
 | Werkruimtenaam | 2-32 tekens |
@@ -73,3 +73,5 @@ Een aantal limieten kan worden verg root voor afzonderlijke werk ruimten door [c
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Uw Azure Machine Learning omgeving configureren](how-to-configure-environment.md)
+- Meer informatie over hoe u resource quota kunt verhogen in [' quota's voor resources beheren en verhogen '](how-to-manage-quotas.md).
+

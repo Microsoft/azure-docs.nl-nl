@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: a74244cc45e1a3d2116f98ac73290d184f4affc0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: be8d00d795c19399d494db21578e9a7ba8dd9711
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632057"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934013"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -742,7 +742,7 @@ U kunt uw logische app als een nieuwe resource publiceren, waarmee automatisch e
 
       ![Scherm opname van het deel venster ' Azure: Logic Apps (preview) ' en een prompt om een naam op te geven voor de nieuwe logische app die u wilt maken.](./media/create-stateful-stateless-workflows-visual-studio-code/enter-logic-app-name.png)
 
-   1. Selecteer een hosting abonnement voor uw nieuwe logische app, een [**app service plan**](../azure-functions/functions-scale.md#app-service-plan) of [**Premium**](../azure-functions/functions-scale.md#premium-plan). In dit voor beeld wordt **app service plan** geselecteerd.
+   1. Selecteer een hosting abonnement voor uw nieuwe logische app, een [**app service plan**](../azure-functions/dedicated-plan.md) of [**Premium**](../azure-functions/functions-premium-plan.md). In dit voor beeld wordt **app service plan** geselecteerd.
 
       ![Scherm opname van het deel venster "Azure: Logic Apps (preview)" en een prompt om "App Service plan" of "Premium" te selecteren.](./media/create-stateful-stateless-workflows-visual-studio-code/select-hosting-plan.png)
 

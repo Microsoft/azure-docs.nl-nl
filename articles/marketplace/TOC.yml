@@ -205,8 +205,16 @@
           href: partner-center-portal/create-iot-edge-module-asset.md
     - name: Aanbieding voor beheerde service
       items:
+        - name: Een aanbieding voor beheerde service plannen
+          href: plan-managed-service-offer.md
         - name: Een aanbieding voor beheerde service maken
-          href: partner-center-portal/create-new-managed-service-offer.md
+          href: create-managed-service-offer.md
+        - name: Een vermelding voor een beheerde service configureren
+          href: create-managed-service-offer-listing.md
+        - name: Een previewdoelgroep toevoegen
+          href: create-managed-service-offer-preview.md
+        - name: Plannen maken
+          href: create-managed-service-offer-plans.md
     - name: Power BI-app-aanbiedingen
       items:
         - name: Een Power BI-app-aanbieding plannen

@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2e670525840b801df874e3f8dcbdbadc0955a12
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 4122e645b76751e8944704a6405cf5dee09129f1
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746300"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932432"
 ---
 # <a name="planning-azure-active-directory-access-reviews-deployment"></a>Implementatie van Azure Active Directory Access beoordelingen plannen
 
@@ -333,9 +333,9 @@ Groepen die zijn gesynchroniseerd vanuit on-premises Active Directory kunnen gee
 > [!NOTE]
 > We raden u aan om het bedrijfs beleid te definiëren dat bepaalt hoe groepen worden gemaakt om de groeps eigendom en de verantwoordelijkheid voor regel matige beoordeling van het lidmaatschap te waarborgen. 
 
-### <a name="review-membership-of-exclusion-groups-in-ca-policies"></a>Lidmaatschap van uitsluitings groepen in CA-beleid controleren 
+### <a name="review-membership-of-exclusion-groups-in-conditional-access-policies"></a>Lidmaatschap van uitsluitings groepen controleren in beleid voor voorwaardelijke toegang 
 
-Er zijn momenten waarop het beleid voor voorwaardelijke toegang (CA) dat is ontworpen om uw netwerk veilig te maken, niet van toepassing is op alle gebruikers. Bijvoorbeeld: een CA-beleid waarmee gebruikers zich alleen kunnen aanmelden terwijl ze op het bedrijfs netwerk werken, zijn mogelijk niet van toepassing op het verkoop team, dat uitgebreid wordt gepasseerd. In dat geval worden de leden van het verkoop team in een groep geplaatst en wordt die groep uitgesloten van het CA-beleid. 
+Er zijn momenten waarop beleid voor voorwaardelijke toegang dat is ontworpen om uw netwerk veilig te maken, niet van toepassing is op alle gebruikers. Een voor beeld: een beleid voor voorwaardelijke toegang waarmee gebruikers zich alleen kunnen aanmelden terwijl ze op het bedrijfs netwerk werken, zijn mogelijk niet van toepassing op het verkoop team, dat uitgebreid wordt verplaatst. In dat geval worden de leden van het verkoop team in een groep geplaatst en wordt die groep uitgesloten van het beleid voor voorwaardelijke toegang. 
 
 Een dergelijk groepslid maatschap regel matig controleren, omdat de uitsluiting een potentieel risico vertegenwoordigt als de verkeerde leden van de vereiste zijn uitgesloten.
 

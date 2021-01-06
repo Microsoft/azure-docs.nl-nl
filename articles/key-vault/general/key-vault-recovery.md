@@ -8,12 +8,12 @@ ms.author: mbaldwin
 author: msmbaldwin
 manager: rkarlin
 ms.date: 09/30/2020
-ms.openlocfilehash: 258d100276b20ea2437ebffb1473492a247657e8
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: a9a783333d8edd40556b7744eb7cf7dfb52953a7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704211"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933979"
 ---
 # <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault herstel beheer met zacht verwijderen en de beveiliging opschonen
 
@@ -103,7 +103,7 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 :::image type="content" source="../media/key-vault-recovery-5.png" alt-text="Op sleutels is de optie Verwijderde sleutels beheren gemarkeerd.":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ## <a name="key-vault-cli"></a>Key Vault (CLI)
 
@@ -394,4 +394,4 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 - [Key Vault-logboekregistratie inschakelen](howto-logging.md)
 - [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
-- [Aanbevolen procedures voor het gebruik van een sleutel kluis](best-practices.md)
+- [Aanbevolen procedures voor het gebruik van een sleutel kluis](security-overview.md)

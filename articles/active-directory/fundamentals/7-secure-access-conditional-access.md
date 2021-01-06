@@ -13,22 +13,22 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27c34135a59521eca361c59a1c82854469626616
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 8dd570a31813ef12ee8a007c84facb8aa5e7aca4
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97743966"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933129"
 ---
 # <a name="manage-external-access-with-conditional-access-policies"></a>Externe toegang beheren met beleid voor voorwaardelijke toegang 
 
-[Voorwaardelijke toegang](../conditional-access/overview.md) is het hulp programma dat door Azure AD wordt gebruikt om signalen samen te brengen, beleid af te dwingen en te bepalen of een gebruiker toegang moet krijgen tot bronnen. Zie [een implementatie van voorwaardelijke toegang plannen](../conditional-access/plan-conditional-access.md)voor meer informatie over het maken en gebruiken van beleids regels voor voorwaardelijke toegang (CA-beleid). 
+[Voorwaardelijke toegang](../conditional-access/overview.md) is het hulp programma dat door Azure AD wordt gebruikt om signalen samen te brengen, beleid af te dwingen en te bepalen of een gebruiker toegang moet krijgen tot bronnen. Zie voor gedetailleerde informatie over het maken en gebruiken van beleids regels voor voorwaardelijke toegang (beleid voor voorwaardelijke toegang) [een implementatie van voorwaardelijke toegang plannen](../conditional-access/plan-conditional-access.md). 
 
 ![Diagram van voorwaardelijke toegangs signalen en beslissingen](media/secure-external-access//7-conditional-access-signals.png)
 
 
 
-In dit artikel wordt het Toep assen van CA-beleid op externe gebruikers beschreven en wordt ervan uitgegaan dat u geen toegang hebt tot de functionaliteit van [rechten beheer](../governance/entitlement-management-overview.md) . CA-beleid kan worden gebruikt en wordt samen met het rechten beheer.
+In dit artikel wordt beschreven hoe u beleid voor voorwaardelijke toegang toepast op externe gebruikers en wordt ervan uitgegaan dat u geen toegang hebt tot de functionaliteit van [rechten beheer](../governance/entitlement-management-overview.md) . Beleid voor voorwaardelijke toegang kan worden gebruikt en wordt samen met het rechten beheer.
 
 Eerder in deze documentenset hebt u [een beveiligings plan gemaakt](3-secure-access-plan.md) dat wordt beschreven:
 
@@ -36,27 +36,27 @@ Eerder in deze documentenset hebt u [een beveiligings plan gemaakt](3-secure-acc
 
 * Aanmeldings vereisten voor externe gebruikers.
 
-U gebruikt dat plan om uw CA-beleid voor externe toegang te maken. 
+U gebruikt dat plan voor het maken van uw beleid voor voorwaardelijke toegang voor externe toegang. 
 
 > [!IMPORTANT]
 > Maak een paar externe gebruikers test accounts zodat u het beleid dat u maakt, kunt testen voordat u ze toepast op alle externe gebruikers.
 
 ## <a name="conditional-access-policies-for-external-access"></a>Beleid voor voorwaardelijke toegang voor externe toegang
 
-Hier volgen enkele aanbevolen procedures voor het beheren van externe toegang met CA-beleid.
+Hieronder vindt u de aanbevolen procedures voor het beheren van externe toegang met beleid voor voorwaardelijke toegang.
 
-* Als u verbonden organisaties niet in rechten beheer kunt gebruiken, maakt u een Azure AD-beveiligings groep of een Microsoft 365 groep voor elke partner organisatie waarmee u samenwerkt. Wijs alle gebruikers van die partner toe aan de groep. U kunt deze groepen vervolgens gebruiken in CA-beleid.
+* Als u verbonden organisaties niet in rechten beheer kunt gebruiken, maakt u een Azure AD-beveiligings groep of een Microsoft 365 groep voor elke partner organisatie waarmee u samenwerkt. Wijs alle gebruikers van die partner toe aan de groep. U kunt deze groepen vervolgens gebruiken in beleids regels voor voorwaardelijke toegang.
 
-* Maak zo weinig mogelijk CA-beleid. Voor toepassingen die dezelfde toegangs vereisten hebben, voegt u deze allemaal toe aan hetzelfde beleid.  
+* Maak zo weinig mogelijk beleids regels voor voorwaardelijke toegang. Voor toepassingen die dezelfde toegangs vereisten hebben, voegt u deze allemaal toe aan hetzelfde beleid.  
 ‎ 
    > [!NOTE]
-   > CA-beleid kan worden toegepast op Maxi maal 250 toepassingen. Als meer dan 250 apps dezelfde toegangs vereisten hebben, moet u dubbele beleids regels maken. Beleid A wordt toegepast op apps 1-250, beleid B is van toepassing op apps 251-500, enzovoort.
+   > Beleid voor voorwaardelijke toegang kan worden toegepast op Maxi maal 250 toepassingen. Als meer dan 250 apps dezelfde toegangs vereisten hebben, moet u dubbele beleids regels maken. Beleid A wordt toegepast op apps 1-250, beleid B is van toepassing op apps 251-500, enzovoort.
 
 * Duidelijk naam beleid dat specifiek is voor externe toegang met een naamgevings Conventie. Er is één naam Conventie *ExternalAccess_actiontaken_AppGroup*. Bijvoorbeeld ExternalAccess_Block_FinanceApps.
 
 ## <a name="block-all-external-users-from-resources"></a>Alle externe gebruikers van resources blok keren
 
-U kunt voor komen dat externe gebruikers toegang krijgen tot specifieke bronnen sets met CA-beleid. Wanneer u de set resources hebt bepaald waarvoor u de toegang wilt blok keren, maakt u een beleid.
+U kunt voor komen dat externe gebruikers toegang krijgen tot specifieke sets resources met beleid voor voorwaardelijke toegang. Wanneer u de set resources hebt bepaald waarvoor u de toegang wilt blok keren, maakt u een beleid.
 
 Een beleid maken dat de toegang voor externe gebruikers blokkeert voor een set toepassingen:
 

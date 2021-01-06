@@ -28,7 +28,7 @@
       href: delete-application-portal.md
 - name: Zelfstudies
   items:
-    - name: Lijst met vooraf geconfigureerde apps
+    - name: Lijst met zelfstudies voor app-integratie
       href: /azure/active-directory/saas-apps/
     - name: Een on-premises app toevoegen met een toepassingsproxy
       href: application-proxy-add-on-premises-application.md

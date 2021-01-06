@@ -3,12 +3,12 @@ title: Implementeren en upgraden met Azure Resource Manager
 description: Meer informatie over het implementeren van toepassingen en services naar een Service Fabric cluster met behulp van een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 12/06/2017
-ms.openlocfilehash: bb866eb24fb1b286f496bad9845d1ee557baa221
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: ed6bc7d96cb3ea0934929e6543c5e637a9f42c1f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681666"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930834"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Toepassingen en services beheren als Azure Resource Manager resources
 
@@ -50,13 +50,12 @@ Het volgende code fragment toont de verschillende soorten resources die kunnen w
 }
 ```
 
-
 ## <a name="add-a-new-application-to-your-resource-manager-template"></a>Een nieuwe toepassing toevoegen aan uw Resource Manager-sjabloon
 
 1. Bereid de Resource Manager-sjabloon voor uw cluster voor op implementatie. Zie [een service Fabric cluster maken met behulp van Azure Resource Manager](service-fabric-cluster-creation-via-arm.md) voor meer informatie.
 2. Denk na over enkele van de toepassingen die u wilt implementeren in het cluster. Zijn er nog steeds andere toepassingen waarop mogelijk afhankelijkheden kunnen worden toegepast? Bent u van plan een cluster governance of installatie toepassingen te implementeren? Deze soorten toepassingen worden het best beheerd via een resource manager-sjabloon, zoals hierboven is beschreven. 
-3. Wanneer u hebt vastgesteld welke toepassingen u op deze manier wilt implementeren, moeten de toepassingen worden verpakt, ingepakt en op een bestands share worden geplaatst. De share moet toegankelijk zijn via een REST-eind punt voor Azure Resource Manager om te worden gebruikt tijdens de implementatie.
-4. Beschrijf in uw Resource Manager-sjabloon onder uw cluster declaratie de eigenschappen van elke toepassing. Deze eigenschappen omvatten het aantal replica's of instanties en eventuele afhankelijkheids ketens tussen bronnen (andere toepassingen of Services). Zie de [rest API Swagger spec](https://aka.ms/sfrpswaggerspec)voor een lijst met uitgebreide eigenschappen. Houd er rekening mee dat hiermee de toepassings-of service manifesten niet worden vervangen, maar wordt in plaats daarvan een deel van de Resource Manager-sjabloon van het cluster beschreven. Hier volgt een voorbeeld sjabloon met een stateless service *Service1* en een stateful service *Service2* implementeren als onderdeel van *Application1*:
+3. Wanneer u hebt vastgesteld welke toepassingen u op deze manier wilt implementeren, moeten de toepassingen worden verpakt, ingepakt en op een opslag share worden geplaatst. De share moet toegankelijk zijn via een REST-eind punt voor Azure Resource Manager om te worden gebruikt tijdens de implementatie. Zie [een opslag account maken](service-fabric-concept-resource-model.md#create-a-storage-account) voor meer informatie.
+4. Beschrijf in uw Resource Manager-sjabloon onder uw cluster declaratie de eigenschappen van elke toepassing. Deze eigenschappen omvatten het aantal replica's of instanties en eventuele afhankelijkheids ketens tussen bronnen (andere toepassingen of Services). Houd er rekening mee dat hiermee de toepassings-of service manifesten niet worden vervangen, maar wordt in plaats daarvan een deel van de Resource Manager-sjabloon van het cluster beschreven. Hier volgt een voorbeeld sjabloon met een stateless service *Service1* en een stateful service *Service2* implementeren als onderdeel van *Application1*:
 
    ```json
    {
@@ -244,7 +243,7 @@ Het volgende code fragment toont de verschillende soorten resources die kunnen w
    ```
 
    > [!NOTE] 
-   > De *apiVersion* moet worden ingesteld op `"2019-03-01"` . Deze sjabloon kan ook onafhankelijk van het cluster worden geïmplementeerd, zolang het cluster al is geïmplementeerd.
+   > Raadpleeg de Service Fabric [Azure Resource Manager verwijzing](/azure/templates/microsoft.servicefabric/clusters/applicationtypes) om het gebruik en de details van de afzonderlijke sjabloon eigenschappen te vinden.
 
 5. Zetten! 
 

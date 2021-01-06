@@ -688,6 +688,10 @@
       items:
         - name: Apache HBase in HDInsight gebruiken
           href: ./hbase/apache-hbase-tutorial-get-started-linux.md
+    - name: Concepten
+      items:
+        - name: Optimaliseren voor advisor-aanbevelingen
+          href: ./hbase/apache-hbase-advisor.md
     - name: Instructiegidsen
       items:
         - name: Ontwikkelen

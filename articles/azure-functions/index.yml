@@ -1,20 +1,20 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Functions
-summary: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren. Door de mogelijkheden voor 'Compute on demand' zijn lichtgewicht-integraties en functionaliteit voor eenmalige ondersteuning mogelijk. U kunt dit ook gebruiken om web-API's aan te bieden, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken en berichtenwachtrijen te beheren.
+summary: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest. U kunt Azure Functions ook gebruiken om web-API's te maken, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken, berichtenwachtrijen te beheren en nog veel meer.
 metadata:
   title: Documentatie voor Azure Functions
-  description: Azure Functions is een serverloze compute-service waarmee u naar aanleiding van gebeurtenissen code kunt uitvoeren zonder expliciet een infrastructuur in te richten of te beheren. Door de mogelijkheden voor 'Compute on demand' zijn lichtgewicht-integraties en functionaliteit voor eenmalige ondersteuning mogelijk. U kunt dit ook gebruiken om web-API's aan te bieden, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken en berichtenwachtrijen te beheren.
+  description: Azure Functions is een cloudservice die beschikbaar is op aanvraag en alle voortdurend bijgewerkte infrastructuur en resources biedt die nodig zijn om uw toepassingen uit te voeren. U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest. U kunt Azure Functions ook gebruiken om web-API's te maken, te reageren op databasewijzigingen, IoT-gegevensstromen te verwerken, berichtenwachtrijen te beheren en nog veel meer.
   ms.service: azure-functions
   ms.topic: landing-page
   author: ggailey777
   ms.author: azfundocs
   ms.date: 09/17/2019
-  ms.openlocfilehash: e6c3cb1a9d536ed898c48c45f57434dc4bf66970
-  ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+  ms.openlocfilehash: 74acabf21252acfd79520d7f24ff79503734a235
+  ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/15/2020
-  ms.locfileid: "97505287"
+  ms.lasthandoff: 01/05/2021
+  ms.locfileid: "97901518"
 landingContent:
 - title: Over Azure Functions
   linkLists:

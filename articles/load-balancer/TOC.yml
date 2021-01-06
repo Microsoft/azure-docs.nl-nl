@@ -93,6 +93,8 @@
       href: manage.md
     - name: Virtuele-machineschaalsets
       items:
+        - name: Bestaande Azure Load Balancer bijwerken of verwijderen die wordt gebruikt door de virtuele-machineschaalset
+          href: update-load-balancer-with-vm-scale-set.md
         - name: Gebruiken met een bestaande Azure Load Balancer - Portal
           href: configure-vm-scale-set-portal.md
         - name: Gebruiken met een bestaande Azure Load Balancer - PowerShell

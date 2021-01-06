@@ -211,6 +211,8 @@
       href: /rest/api/securityinsights/
     - name: Netwerknormalisatieschema
       href: normalization-schema.md
+    - name: UEBA-verrijkingen
+      href: ueba-enrichments.md
 - name: Resources
   items:
     - name: Nuttige informatie

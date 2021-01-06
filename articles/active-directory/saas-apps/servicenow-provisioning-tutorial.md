@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 5894a57e6495ca02002c8f32b893e696c7f5679b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5c21efc9cb082d915fd87e9ae01606fce18016bc
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350701"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897273"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Zelfstudie: ServiceNow configureren voor automatische gebruikersinrichting
 
@@ -50,7 +50,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 1. Identificeer de naam van uw ServiceNow-exemplaar. U kunt de naam van het exemplaar vinden in de URL die u gebruikt voor toegang tot ServiceNow. In het onderstaande voorbeeld is de naam van het exemplaar dev35214.
 
-   ![ServiceNow-exemplaar](media/servicenow-provisioning-tutorial/servicenow_instance.png)
+   ![ServiceNow-exemplaar](media/servicenow-provisioning-tutorial/servicenow-instance.png)
 
 2. Referenties voor een beheerder in ServiceNow verkrijgen. Navigeer naar het gebruikersprofiel in ServiceNow en controleer of de gebruiker de beheerdersrol heeft. 
 
@@ -94,7 +94,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 5. Voer uw beheerdersreferenties en gebruikersnaam voor ServiceNow in de sectie **Beheerdersreferenties** in. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met ServiceNow. Als de verbinding mislukt, moet u controleren of uw ServiceNow-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-    ![Schermopname toont de Inrichtingspagina van de service, waar u Beheerdersreferenties kunt invoeren.](./media/servicenow-provisioning-tutorial/provisioning.png)
+    ![Schermopname toont de Inrichtingspagina van de service, waar u Beheerdersreferenties kunt invoeren.](./media/servicenow-provisioning-tutorial/servicenow-provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -142,11 +142,16 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
   
   `Details: Your ServiceNow instance name appears to be invalid.  Please provide a current ServiceNow administrative user name and          password along with the name of a valid ServiceNow instance.`                                                              
 
-   Deze fout wijst op een probleem in de communicatie met het ServiceNow-exemplaar. Controleer nogmaals of de volgende instellingen zijn *uitgeschakeld* in ServiceNow:
+   Deze fout wijst op een probleem in de communicatie met het ServiceNow-exemplaar. 
+   
+   Als u problemen hebt met de testverbinding, kunt u proberen de volgende instellingen **uit te schakelen** in ServiceNow:
    
    1. Selecteer **Systeembeveiliging** > **Instellingen voor hoge beveiliging** > **Basisverificatie vereisen voor inkomende SCHEMA-aanvragen**.
    2. Selecteer **Systeemeigenschappen** > **Webservices** > **Standaard autorisatie vereisen voor binnenkomende SOAP-aanvragen**.
 
+   ![SOAP-aanvraag goedkeuren](media/servicenow-provisioning-tutorial/servicenow-webservice.png)
+
+   Als dit uw problemen niet oplost, neemt u contact op met ServiceNow en vraagt u hen SOAP-foutopsporing te schakelen om de fouten op te lossen. 
 ## <a name="additional-resources"></a>Aanvullende resources
 
 * [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)

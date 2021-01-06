@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/12/2020
 ms.author: yelevin
-ms.openlocfilehash: bd85936c86656a8ae59a04ccdf53a62bd852368f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b346a23ccde6abd0f76982a4d19e00e28e8511a7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655269"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930868"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Door de klant beheerde sleutel met Azure-Sentinel instellen
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om CMK in te richten:
     > [!NOTE]
     >  Azure Key Vault moet worden geconfigureerd als herstel bare voor het beveiligen van uw sleutel en de toegang.
 
-1.  [Herstel opties inschakelen:](../key-vault/general/best-practices.md#turn-on-recovery-options)
+1.  [Herstel opties inschakelen:](../key-vault/general/key-vault-recovery.md)
 
     -   Zorg ervoor dat [zacht verwijderen](../key-vault/general/soft-delete-overview.md) is ingeschakeld.
 

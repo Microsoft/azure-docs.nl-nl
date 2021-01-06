@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 73a3be62e57991b63525372f008e15d8e4f36a74
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 1217ecba7a5fcb3c0fc95f505e7ca07fc76129b2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401726"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97930817"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -35,7 +35,7 @@ De aanbevolen topologie voor het primaire knooppunt type vereist de onderstaande
 >[!NOTE]
 > De groeps eigenschap voor de schaalset voor virtuele machines moet worden ingesteld op True, omdat Service Fabric geen ondersteuning biedt voor een schaalset voor virtuele machines die zones omspant.
 
- ![Architectuur van Azure Service Fabric-beschikbaarheids zone][sf-architecture]
+ ![Diagram waarin de architectuur van de Azure Service Fabric-beschikbaarheids zone wordt weer gegeven.][sf-architecture]
 
 ## <a name="networking-requirements"></a>Netwerkvereisten
 ### <a name="public-ip-and-load-balancer-resource"></a>Openbaar IP-adres en Load Balancer bron

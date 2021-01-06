@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a08a4f4a31893fc93789d019ea87dff390552f6a
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: fd04d24e0e46b053381858be037a009b1987f8e9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97744021"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97932517"
 ---
 # <a name="3-create-a-security-plan-for-external-access"></a>3. een beveiligings plan voor externe toegang maken 
 
@@ -175,7 +175,7 @@ Azure AD P2 en Microsoft 365 E5 hebben de volledige suite met hulpprogram ma's v
 | Beheer rechten| **Gebruiker toevoegen via toewijzing of selfservice toegang**| **Toegangspakketten**| **Toegangspakketten**|  |
 | Office 365-groep| | Toegang tot site (s) (en bijbehorende inhoud) die zijn opgenomen in de groep| Toegang tot teams (en bijbehorende inhoud) die zijn opgenomen in de groep|  |
 | Vertrouwelijkheidslabels| | **De toegang hand matig en automatisch classificeren en beperken**| **De toegang hand matig en automatisch classificeren en beperken**| **De toegang hand matig en automatisch classificeren en beperken** |
-| Azure AD-beveiligingsgroepen| **CA-beleids regels voor toegang die niet is opgenomen in toegangs pakketten**| | |  |
+| Azure AD-beveiligingsgroepen| **Beleid voor voorwaardelijke toegang voor toegang die niet is opgenomen in toegangs pakketten**| | |  |
 
 
 ### <a name="entitlement-management"></a>Beheer rechten 
@@ -195,7 +195,7 @@ U kunt robuuste governance krijgen met Azure AD P1 en Microsoft 365 E3
 | Azure AD B2B-samen werking| **Uitnodigen via e-mail, OTP, self-service**| Direct B2B-Federatie| **Periodieke controle per partner**| Account verwijderen<br>Aanmelden beperken |
 | Micro soft-of Office 365-groepen| | | | Verval datum of verwijdering van de groep.<br>Verwijderen uit de groep. |
 | Beveiligingsgroepen| | **Externe gebruikers toevoegen aan beveiligings groepen (org, team, project, enz.)**| |  |
-| Beleid voor voorwaardelijke toegang| | **CA-beleid voor externe gebruikers aanmelden**| |  |
+| Beleid voor voorwaardelijke toegang| | **Beleid voor voorwaardelijke toegang aanmelden voor externe gebruikers**| |  |
 
 
  ### <a name="access-to-resources"></a>Toegang tot resources.
@@ -204,7 +204,7 @@ U kunt robuuste governance krijgen met Azure AD P1 en Microsoft 365 E3
 | - |-|-|-|-|
 | Micro soft-of Office 365-groepen| | **Toegang tot de site (s) die zijn opgenomen in de groep (en de gekoppelde inhoud)**|**Toegang tot teams die deel uitmaken van Microsoft 365 groep (en gekoppelde inhoud)**|  |
 | Vertrouwelijkheidslabels| | De toegang hand matig classificeren en beperken| De toegang hand matig classificeren en beperken.| Hand matig classificeren om te beperken en te versleutelen |
-| Beleid voor voorwaardelijke toegang| CA-beleid voor toegangs beheer| | |  |
+| Beleid voor voorwaardelijke toegang| Beleid voor voorwaardelijke toegang voor toegangs beheer| | |  |
 | Aanvullende methoden| | Beperk de toegang tot share point-sites met beveiligings groepen.<br>Direct delen niet toestaan.| **Externe uitnodigingen in teams beperken**|  |
 
 

@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: b9fc465b5e5f132264fd36e004fa3ee7623b87a5
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: c94218248f1122cdb60ab8124bc9d9365fe8947b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854985"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97931735"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Prestaties en schaalbaarheid in Durable Functions (Azure Functions)
 
@@ -51,7 +51,7 @@ De uitbrei ding duurzame taak implementeert een wille keurig exponentiële uitst
 De maximale polling vertraging kan worden geconfigureerd via de `maxQueuePollingInterval` eigenschap in de [host.jsvoor het bestand](../functions-host-json.md#durabletask). Als u deze eigenschap instelt op een hogere waarde, kan dit leiden tot hogere latenties voor bericht verwerking. Hogere latenties worden alleen verwacht na Peri Oden van inactiviteit. Als u deze eigenschap instelt op een lagere waarde, kan dit leiden tot hogere opslag kosten als gevolg van grotere opslag transacties.
 
 > [!NOTE]
-> Bij het uitvoeren van de Azure Functions verbruiks-en Premium-abonnementen, wordt elke regel van elk besturings element en elke werk item elke 10 seconden gecontroleerd door de [Azure functions Scale-controller](../functions-scale.md#how-the-consumption-and-premium-plans-work) . Deze extra polling is nodig om te bepalen wanneer u functie-app-exemplaren wilt activeren en schaal beslissingen wilt maken. Op het moment van schrijven is dit 10 seconden interval constant en kan het niet worden geconfigureerd.
+> Bij het uitvoeren van de Azure Functions verbruiks-en Premium-abonnementen, wordt elke regel van elk besturings element en elke werk item elke 10 seconden gecontroleerd door de [Azure functions Scale-controller](../event-driven-scaling.md) . Deze extra polling is nodig om te bepalen wanneer u functie-app-exemplaren wilt activeren en schaal beslissingen wilt maken. Op het moment van schrijven is dit 10 seconden interval constant en kan het niet worden geconfigureerd.
 
 ### <a name="orchestration-start-delays"></a>Start vertragingen voor orchestration
 Indelings instanties worden gestart door een bericht te plaatsen `ExecutionStarted` in een van de beheer wachtrijen van de taak hub. Onder bepaalde omstandigheden kunt u vertragingen in meerdere seconden waarnemen tussen het moment waarop een indeling is gepland en wanneer deze daad werkelijk wordt uitgevoerd. Tijdens dit tijds interval blijft de Orchestration-instantie in de `Pending` status. Er zijn twee mogelijke oorzaken van deze vertraging:
@@ -138,7 +138,7 @@ Over het algemeen zijn Orchestrator-functies lichter en zijn ze niet vereist voo
 
 ## <a name="auto-scale"></a>Automatisch schalen
 
-Net als bij alle Azure Functions die worden uitgevoerd in het verbruiks-en elastische Premium-abonnement, Durable Functions ondersteunt automatisch schalen via de [Azure functions Scale-controller](../functions-scale.md#runtime-scaling). De schaal controller bewaakt de latentie van alle wacht rijen door regel matig de opdracht _Peek_ te geven. Op basis van de latentie van de gepeekte berichten, bepaalt de schaal controller of Vm's moeten worden toegevoegd of verwijderd.
+Net als bij alle Azure Functions die worden uitgevoerd in het verbruiks-en elastische Premium-abonnement, Durable Functions ondersteunt automatisch schalen via de [Azure functions Scale-controller](../event-driven-scaling.md#runtime-scaling). De schaal controller bewaakt de latentie van alle wacht rijen door regel matig de opdracht _Peek_ te geven. Op basis van de latentie van de gepeekte berichten, bepaalt de schaal controller of Vm's moeten worden toegevoegd of verwijderd.
 
 Als de schaal controller bepaalt dat de bericht latenties van de controle wachtrij te hoog zijn, worden er VM-exemplaren toegevoegd totdat de bericht latentie afneemt naar een acceptabel niveau of het aantal partities van de controle wachtrij bereikt. De schaal controller voegt voortdurend VM-exemplaren toe als wacht tijden voor werk items in de wachtrij hoog zijn, ongeacht het aantal partities.
 

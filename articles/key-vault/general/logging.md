@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.date: 08/12/2019
+ms.date: 12/18/2020
 ms.author: mbaldwin
-ms.openlocfilehash: eef4f6b8ee5821e54b5b7709eee7f8dad8749e63
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: d900659f3ca8a8688c1b1d3a66cd888f37521fc6
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94488533"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883381"
 ---
 # <a name="azure-key-vault-logging"></a>Logboekregistratie voor Azure Key Vault
 
@@ -23,7 +23,7 @@ Nadat u een of meer sleutelkluizen hebt gemaakt, wilt u wellicht controleren hoe
 
 U kunt uw logboekgegevens (maximaal) tien minuten nadat de sleutelkluisbewerking is uitgevoerd, bekijken. In de meeste gevallen gaat het echter veel sneller.  Het is aan u om uw logboeken in uw opslagaccount te beheren:
 
-* Gebruik standaardmethoden van Azure voor toegangsbeheer om uw logboeken te beveiligen door het aantal gebruikers te beperken dat toegang heeft tot de logboeken.
+* Gebruik standaardmethoden van Azure voor toegangsbeheer in uw opslagaccount om uw logboeken te beveiligen door het aantal gebruikers te beperken dat toegang heeft tot de logboeken.
 * Verwijder de logboeken die u niet meer in uw opslagaccount wilt bewaren.
 
 Zie [Wat is Azure Key Vault?](overview.md) voor algemene informatie over Key Vault. Bekijk de [pagina met prijzen](https://azure.microsoft.com/pricing/details/key-vault/) voor informatie over waar Key Vault beschikbaar is. Zie [Azure Monitor voor Key Vault](../../azure-monitor/insights/key-vault-insights-overview.md) voor informatie over het gebruik ervan.
@@ -85,6 +85,8 @@ De volgende tabel bevat de **operationName**-waarden en de bijbehorende REST-API
 
 ### <a name="operation-names-table"></a>Tabel met waarden voor operationName
 
+# <a name="vault"></a>[Kluis](#tab/Vault)
+
 | operationName | REST-API-opdracht |
 | --- | --- |
 | **Verificatie** |Verifiëren via het Azure Active Directory-eindpunt |
@@ -97,6 +99,12 @@ De volgende tabel bevat de **operationName**-waarden en de bijbehorende REST-API
 | **VaultRecover** |Verwijderde kluis herstellen|
 | **VaultGetDeleted** |[Verwijderde kluis ophalen](/rest/api/keyvault/vaults/getdeleted) |
 | **VaultListDeleted** |[Verwijderde kluizen weergeven](/rest/api/keyvault/vaults/listdeleted) |
+| **VaultAccessPolicyChangedEventGridNotification** | Gebeurtenis gepubliceerd voor wijzigen van toegangsbeleid voor kluis |
+
+# <a name="keys"></a>[Sleutels](#tab/Keys)
+
+| operationName | REST-API-opdracht |
+| --- | --- |
 | **KeyCreate** |[Een sleutel maken](/rest/api/keyvault/createkey) |
 | **KeyGet** |[Informatie over een sleutel ophalen](/rest/api/keyvault/getkey) |
 | **KeyImport** |[Een sleutel in een kluis importeren](/rest/api/keyvault/vaults) |
@@ -116,6 +124,32 @@ De volgende tabel bevat de **operationName**-waarden en de bijbehorende REST-API
 | **KeyRecover** |[Een sleutel herstellen](/rest/api/keyvault/recoverdeletedkey) |
 | **KeyGetDeleted** |[Een verwijderde sleutel ophalen](/rest/api/keyvault/getdeletedkey) |
 | **KeyListDeleted** |[De verwijderde sleutels in een kluis weergeven](/rest/api/keyvault/getdeletedkeys) |
+| **KeyNearExpiryEventGridNotification** |Gebeurtenis gepubliceerd voor bijna verlopen van sleutel |
+| **KeyExpiredEventGridNotification** |Gebeurtenis gepubliceerd voor verlopen van sleutel |
+
+# <a name="secrets"></a>[Geheimen](#tab/Secrets)
+
+| operationName | REST-API-opdracht |
+| --- | --- |
+| **SecretSet** |[Een geheim maken](/rest/api/keyvault/updatecertificate) |
+| **SecretGet** |[Een geheim ophalen](/rest/api/keyvault/getsecret) |
+| **SecretUpdate** |[Een geheim bijwerken](/rest/api/keyvault/updatesecret) |
+| **SecretDelete** |[Een geheim verwijderen](/rest/api/keyvault/deletesecret) |
+| **SecretList** |[Geheimen in een kluis weergeven](/rest/api/keyvault/getsecrets) |
+| **SecretListVersions** |[Versies van een geheim weergeven](/rest/api/keyvault/getsecretversions) |
+| **SecretPurge** |[Een geheim opschonen](/rest/api/keyvault/purgedeletedsecret) |
+| **SecretBackup** |[Een back-up maken van een geheim](/rest/api/keyvault/backupsecret) |
+| **SecretRestore** |[Een geheim terugzetten](/rest/api/keyvault/restoresecret) |
+| **SecretRecover** |[Een geheim herstellen](/rest/api/keyvault/recoverdeletedsecret) |
+| **SecretGetDeleted** |[Verwijderd geheim ophalen](/rest/api/keyvault/getdeletedsecret) |
+| **SecretListDeleted** |[De verwijderde geheimen in een kluis weergeven](/rest/api/keyvault/getdeletedsecrets) |
+| **SecretNearExpiryEventGridNotification** |Gebeurtenis gepubliceerd voor bijna verlopen van geheim |
+| **SecretExpiredEventGridNotification** |Gebeurtenis gepubliceerd voor verlopen van geheim |
+
+# <a name="certificates"></a>[Certificaten](#tab/Cerificates)
+
+| operationName | REST-API-opdracht |
+| --- | --- |
 | **CertificateGet** |[Informatie over een certificaat ophalen](/rest/api/keyvault/getcertificate) |
 | **CertificateCreate** |[Een certificaat maken](/rest/api/keyvault/createcertificate) |
 | **CertificateImport** |[Een certificaat importeren in een kluis](/rest/api/keyvault/importcertificate) |
@@ -146,25 +180,9 @@ De volgende tabel bevat de **operationName**-waarden en de bijbehorende REST-API
 | **CertificatePendingMerge** |Certificaat samenvoegen in behandeling |
 | **CertificatePendingUpdate** |Certificaat bijwerken in behandeling |
 | **CertificatePendingDelete** |Certificaat verwijderen in behandeling |
-| **SecretSet** |[Een geheim maken](/rest/api/keyvault/updatecertificate) |
-| **SecretGet** |[Een geheim ophalen](/rest/api/keyvault/getsecret) |
-| **SecretUpdate** |[Een geheim bijwerken](/rest/api/keyvault/updatesecret) |
-| **SecretDelete** |[Een geheim verwijderen](/rest/api/keyvault/deletesecret) |
-| **SecretList** |[Geheimen in een kluis weergeven](/rest/api/keyvault/getsecrets) |
-| **SecretListVersions** |[Versies van een geheim weergeven](/rest/api/keyvault/getsecretversions) |
-| **SecretPurge** |[Een geheim opschonen](/rest/api/keyvault/purgedeletedsecret) |
-| **SecretBackup** |[Een back-up maken van een geheim](/rest/api/keyvault/backupsecret) |
-| **SecretRestore** |[Een geheim terugzetten](/rest/api/keyvault/restoresecret) |
-| **SecretRecover** |[Een geheim herstellen](/rest/api/keyvault/recoverdeletedsecret) |
-| **SecretGetDeleted** |[Verwijderd geheim ophalen](/rest/api/keyvault/getdeletedsecret) |
-| **SecretListDeleted** |[De verwijderde geheimen in een kluis weergeven](/rest/api/keyvault/getdeletedsecrets) |
-| **VaultAccessPolicyChangedEventGridNotification** | Gebeurtenis gepubliceerd voor wijzigen van toegangsbeleid voor kluis |
-| **SecretNearExpiryEventGridNotification** |Gebeurtenis gepubliceerd voor bijna verlopen van geheim |
-| **SecretExpiredEventGridNotification** |Gebeurtenis gepubliceerd voor verlopen van geheim |
-| **KeyNearExpiryEventGridNotification** |Gebeurtenis gepubliceerd voor bijna verlopen van sleutel |
-| **KeyExpiredEventGridNotification** |Gebeurtenis gepubliceerd voor verlopen van sleutel |
 | **CertificateNearExpiryEventGridNotification** |Gebeurtenis gepubliceerd voor bijna verlopen van certificaat |
 | **CertificateExpiredEventGridNotification** |Gebeurtenis gepubliceerd voor verlopen van certificaat |
+---
 
 ## <a name="use-azure-monitor-logs"></a>Azure Monitor-logboeken gebruiken
 
@@ -175,6 +193,7 @@ Zie [Azure Key Vault in Azure Monitor](../../azure-monitor/insights/key-vault-in
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Key Vault-logboekregistratie inschakelen](howto-logging.md)
+- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
 - Zie [Azure Key Vault in een webtoepassing gebruiken](tutorial-net-create-vault-azure-web-app.md) voor een zelfstudie over het gebruik van Azure Key Vault in een .NET-webtoepassing.
 - Zie de [Ontwikkelaarshandleiding voor Azure Key Vault](developers-guide.md) voor het programmeren van verwijzingen.
 - Zie [Cmdlets voor Azure Key Vault](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) voor een lijst met Azure PowerShell 1.0-cmdlets voor Azure Key Vault.

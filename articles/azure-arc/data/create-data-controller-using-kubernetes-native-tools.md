@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 051a7f506d351a17764e38c760ffba06d224cc38
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: e8d00055d9a4d7355ccd8a33c8a9b811b852f5c8
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422566"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955277"
 ---
 # <a name="create-azure-arc-data-controller-using-kubernetes-tools"></a>Azure Arc data controller maken met behulp van Kubernetes-hulpprogram ma's
 
@@ -38,11 +38,9 @@ Als u in het verleden Azure Arc data controller hebt geïnstalleerd en u de Azur
 ```console
 # Cleanup azure arc data service artifacts
 kubectl delete crd datacontrollers.arcdata.microsoft.com 
-kubectl delete sqlmanagedinstances.sql.arcdata.microsoft.com 
-kubectl delete postgresql-11s.arcdata.microsoft.com 
-kubectl delete postgresql-12s.arcdata.microsoft.com
-kubectl delete clusterroles azure-arc-data:cr-arc-metricsdc-reader
-kubectl delete clusterrolebindings azure-arc-data:crb-arc-metricsdc-reader
+kubectl delete crd sqlmanagedinstances.sql.arcdata.microsoft.com 
+kubectl delete crd postgresql-11s.arcdata.microsoft.com 
+kubectl delete crd postgresql-12s.arcdata.microsoft.com
 ```
 
 ## <a name="overview"></a>Overzicht
@@ -59,7 +57,7 @@ Het maken van de Azure Arc-gegevens controller heeft de volgende stappen op hoog
 Voer de volgende opdracht uit om de aangepaste resource definities te maken.  **[Vereist Kubernetes-cluster beheerder machtigingen]**
 
 ```console
-kubectl create -f https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/custom-resource-definitions.yaml
+kubectl create -f https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/custom-resource-definitions.yaml
 ```
 
 ## <a name="create-a-namespace-in-which-the-data-controller-will-be-created"></a>Een naam ruimte maken waarin de gegevens controller wordt gemaakt
@@ -79,7 +77,7 @@ De Boots Trapper-service verwerkt binnenkomende aanvragen voor het maken, bewerk
 Voer de volgende opdracht uit om een Boots Trapper-service, een service account voor de Boots Trapper-service en een rol en rol voor het Boots Trapper-service account te maken.
 
 ```console
-kubectl create --namespace arc -f https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/bootstrapper.yaml
+kubectl create --namespace arc -f https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/bootstrapper.yaml
 ```
 
 Controleer of de Boots Trapper pod wordt uitgevoerd met behulp van de volgende opdracht.  Mogelijk moet u deze enkele keren uitvoeren totdat de status wordt gewijzigd in `Running` .
@@ -91,8 +89,8 @@ kubectl get pod --namespace arc
 Het sjabloon bestand Boots Trapper. yaml wordt standaard ingesteld op het ophalen van de installatie kopie van de Boots Trapper-container uit de micro soft-Container Registry (MCR).  Als uw omgeving geen rechtstreekse toegang tot de micro soft-Container Registry heeft, kunt u het volgende doen:
 - Volg de stappen om [de container installatie kopieën uit de micro soft container Registry te halen en deze naar een persoonlijk container register te pushen](offline-deployment.md).
 - [Maak een installatie kopie-pull-geheim](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-secret-by-providing-credentials-on-the-command-lin) voor uw persoonlijke container register.
-- Voeg een installatie kopie pull Secret toe aan de Boots Trapper-container. Zie het onderstaande voor beeld.
-- Wijzig de locatie van de installatie kopie voor de installatie kopie van de Boots Trapper. Zie het onderstaande voor beeld.
+- Voeg een installatie kopie pull Secret toe aan de Boots Trapper-container. Zie onderstaand voorbeeld.
+- Wijzig de locatie van de installatie kopie voor de installatie kopie van de Boots Trapper. Zie onderstaand voorbeeld.
 
 In het onderstaande voor beeld wordt ervan uitgegaan dat u een installatie kopie met een geheime naam hebt gemaakt `regcred` zoals aangegeven in de Kubernetes-documentatie.
 
@@ -102,7 +100,7 @@ containers:
       - env:
         - name: ACCEPT_EULA
           value: "Y"
-        #image: mcr.microsoft.com/arcdata/arc-bootstrapper:public-preview-oct-2020  <-- template value to change
+        #image: mcr.microsoft.com/arcdata/arc-bootstrapper:public-preview-dec-2020  <-- template value to change
         image: <your registry DNS name or IP address>/<your repo>/arc-bootstrapper:<your tag>
         imagePullPolicy: IfNotPresent
         name: bootstrapper
@@ -150,7 +148,7 @@ echo '<your string to encode here>' | base64
 # echo 'example' | base64
 ```
 
-Zodra u de gebruikers naam en het wacht woord hebt gecodeerd, kunt u een bestand maken op basis van het [sjabloon bestand](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/controller-login-secret.yaml) en de gebruikers naam en het wacht woord vervangen door uw eigen waarden.
+Zodra u de gebruikers naam en het wacht woord hebt gecodeerd, kunt u een bestand maken op basis van het [sjabloon bestand](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/controller-login-secret.yaml) en de gebruikers naam en het wacht woord vervangen door uw eigen waarden.
 
 Voer vervolgens de volgende opdracht uit om het geheim te maken.
 
@@ -165,26 +163,26 @@ kubectl create --namespace arc -f C:\arc-data-services\controller-login-secret.y
 
 U bent nu klaar om de gegevens controller zelf te maken.
 
-Maak eerst een kopie van het [sjabloon bestand](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/data-controller.yaml) lokaal op uw computer zodat u een aantal instellingen kunt wijzigen.
+Maak eerst een kopie van het [sjabloon bestand](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/data-controller.yaml) lokaal op uw computer zodat u een aantal instellingen kunt wijzigen.
 
 Bewerk het volgende naar behoefte:
 
 **Vereist**
-- **locatie** : Wijzig dit in de Azure-locatie waar de _meta gegevens_ over de gegevens controller worden opgeslagen.  U kunt de lijst met beschik bare Azure-locaties bekijken in het artikel overzicht van het [maken van gegevens controllers](create-data-controller.md) .
-- **resourceGroup** : de Azure-resource groep waar u de gegevens controller Azure-resource wilt maken in azure Resource Manager.  Normaal gesp roken moet deze resource groep al bestaan, maar dit is niet vereist tot de tijd dat u de gegevens uploadt naar Azure.
-- **abonnement** : de GUID van het Azure-abonnement voor het abonnement waarin u de Azure-resources wilt maken.
+- **locatie**: Wijzig dit in de Azure-locatie waar de _meta gegevens_ over de gegevens controller worden opgeslagen.  U kunt de lijst met beschik bare Azure-locaties bekijken in het artikel overzicht van het [maken van gegevens controllers](create-data-controller.md) .
+- **resourceGroup**: de Azure-resource groep waar u de gegevens controller Azure-resource wilt maken in azure Resource Manager.  Normaal gesp roken moet deze resource groep al bestaan, maar dit is niet vereist tot de tijd dat u de gegevens uploadt naar Azure.
+- **abonnement**: de GUID van het Azure-abonnement voor het abonnement waarin u de Azure-resources wilt maken.
 
 **AANBEVOLEN OM DE STANDAARD INSTELLINGEN TE CONTROLEREN EN MOGELIJK TE WIJZIGEN**
-- **opslag.. ClassName** : de opslag klasse die moet worden gebruikt voor de gegevens controller gegevens en logboek bestanden.  Als u niet zeker bent van de beschik bare opslag klassen in uw Kubernetes-cluster, kunt u de volgende opdracht uitvoeren: `kubectl get storageclass` .  De standaard instelling is dat `default` er een opslag klasse is die bestaat en een naam heeft die niet is dat `default` er een opslag klasse is die de standaard _is_ .  Opmerking: er zijn twee instellingen voor ClassName die moeten worden ingesteld op de gewenste opslag klasse: één voor gegevens en één voor Logboeken.
+- **opslag.. ClassName**: de opslag klasse die moet worden gebruikt voor de gegevens controller gegevens en logboek bestanden.  Als u niet zeker bent van de beschik bare opslag klassen in uw Kubernetes-cluster, kunt u de volgende opdracht uitvoeren: `kubectl get storageclass` .  De standaard instelling is dat `default` er een opslag klasse is die bestaat en een naam heeft die niet is dat `default` er een opslag klasse is die de standaard _is_ .  Opmerking: er zijn twee instellingen voor ClassName die moeten worden ingesteld op de gewenste opslag klasse: één voor gegevens en één voor Logboeken.
 - **Service type: Wijzig** het servicesapparaat in `NodePort` Als u geen Load Balancer gebruikt.  Opmerking: er zijn twee instellingen voor service type die moeten worden gewijzigd.
 
 **Beschrijving**
-- **naam** : de standaard naam van de gegevens controller is `arc` , maar u kunt deze desgewenst wijzigen.
-- **DisplayName** : Stel dit in op dezelfde waarde als het naam kenmerk boven aan het bestand.
-- **REGI ster** : de micro soft-container Registry is de standaard instelling.  Als u de installatie kopieën uit de micro soft-Container Registry haalt en [deze naar een persoonlijk container register pusht](offline-deployment.md), voert u hier het IP-adres of de DNS-naam van het REGI ster in.
-- **dockerRegistry** : het pull-geheim van de installatie kopie die wordt gebruikt om de installatie kopieën uit een persoonlijk container register te halen, indien nodig.
-- **opslag plaats** : de standaard opslagplaats op de micro soft-container Registry is `arcdata` .  Als u een persoonlijk container register gebruikt, voert u het pad in naar de map/opslag plaats met de container installatie kopieën van Azure ARR ingeschakelde Data Services.
-- **imageTag** : de huidige meest recente versie code wordt standaard in de sjabloon gebruikt, maar u kunt deze wijzigen als u een oudere versie wilt gebruiken.
+- **naam**: de standaard naam van de gegevens controller is `arc` , maar u kunt deze desgewenst wijzigen.
+- **DisplayName**: Stel dit in op dezelfde waarde als het naam kenmerk boven aan het bestand.
+- **REGI ster**: de micro soft-container Registry is de standaard instelling.  Als u de installatie kopieën uit de micro soft-Container Registry haalt en [deze naar een persoonlijk container register pusht](offline-deployment.md), voert u hier het IP-adres of de DNS-naam van het REGI ster in.
+- **dockerRegistry**: het pull-geheim van de installatie kopie die wordt gebruikt om de installatie kopieën uit een persoonlijk container register te halen, indien nodig.
+- **opslag plaats**: de standaard opslagplaats op de micro soft-container Registry is `arcdata` .  Als u een persoonlijk container register gebruikt, voert u het pad in naar de map/opslag plaats met de container installatie kopieën van Azure ARR ingeschakelde Data Services.
+- **imageTag**: de huidige meest recente versie code wordt standaard in de sjabloon gebruikt, maar u kunt deze wijzigen als u een oudere versie wilt gebruiken.
 
 Voor beeld van een voltooid yaml-bestand van de gegevens controller:
 ```yaml
@@ -200,7 +198,7 @@ spec:
     serviceAccount: sa-mssql-controller
   docker:
     imagePullPolicy: Always
-    imageTag: public-preview-oct-2020 
+    imageTag: public-preview-dec-2020 
     registry: mcr.microsoft.com
     repository: arcdata
   security:

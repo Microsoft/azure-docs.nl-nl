@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: ba64f5972d77637ec830fe6b872af66363d6c1bd
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 708e6351350a1925d58cd4da6b71427a98633362
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740042"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954954"
 ---
 # <a name="blob-storage-and-azure-data-lake-gen2-output-from-azure-stream-analytics"></a>Blob-opslag en Azure Data Lake Gen2 uitvoer van Azure Stream Analytics
 
-Data Lake Storage Gen2 maakt van Azure Storage de basis voor het bouwen van zakelijke data lakes op Azure. Data Lake Storage Gen2 is ontworpen met het starten van meerdere PETA bytes aan gegevens terwijl er honderden gigabits van de door voer worden gehouden, en waarmee u eenvoudig enorme hoeveel heden gegevens kunt beheren. Een fundamenteel onderdeel van Data Lake Storage Gen2 is het toevoegen van een hiërarchische naam ruimte aan Blob Storage.
+Data Lake Storage Gen2 maakt van Azure Storage de basis voor het bouwen van zakelijke data lakes op Azure. Data Lake Storage Gen2 is vanaf het begin ontworpen om meerdere petabytes aan gegevens te kunnen bieden met honderden gigabits aan doorvoer en stelt u in staat om eenvoudig enorme hoeveelheden gegevens te beheren. De toevoeging van een hiërarchische naamruimte aan Blob Storage vormt een fundamenteel onderdeel van Data Lake Storage Gen2.
 
 Azure Blob-opslag biedt een voordelige en schaal bare oplossing voor het opslaan van grote hoeveel heden ongestructureerde gegevens in de Cloud. Zie [blobs uploaden, downloaden en weer geven met de Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md)voor een inleiding in Blob Storage en het gebruik ervan.
 

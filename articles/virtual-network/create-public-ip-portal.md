@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: add763b713b93604e089d7aec586876fecd2887c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd35d3288591a01c14e306960601eef6dea7e761
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95895635"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954138"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Snelstartgids: een openbaar IP-adres maken met behulp van de Azure Portal
 
@@ -36,7 +36,8 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
     | ---                     | ---                         |
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
-    | Name                    | *MyStandardZRPublicIP* invoeren          |
+    | Laag (indien weer gegeven *)                  | **Regionaal** selecteren         |
+    | Naam                    | *MyStandardZRPublicIP* invoeren          |
     | IP-adrestoewijzing   | Opmerking: dit wordt vergrendeld als ' statisch '                                        |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |
@@ -46,6 +47,8 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
     | Beschikbaarheidszone       | **Zone selecteren-redundant** of specifieke zone kiezen (zie opmerking hieronder) |
 
 Houd er rekening mee dat dit alleen geldige selecties zijn in regio's met [Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  (U kunt ook een specifieke zone in deze regio's selecteren, maar het is niet mogelijk om een zonegebonden fout te maken.)
+
+\* = De laag maakt deel uit van de functionaliteit voor [Load Balancer van meerdere regio's](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) , momenteel als preview-versie beschikbaar.
 
 # <a name="basic-sku"></a>[**Basis-SKU**](#tab/option-create-public-ip-basic)
 
@@ -61,7 +64,7 @@ Voer de volgende stappen uit om een eenvoudig, statisch openbaar IP-adres te mak
     | ---                     | ---                         |
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
-    | Name                    | *MyBasicPublicIP* invoeren          |
+    | Naam                    | *MyBasicPublicIP* invoeren          |
     | IP-adrestoewijzing   | **Statisch** kiezen (zie opmerking hieronder)                                     |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |

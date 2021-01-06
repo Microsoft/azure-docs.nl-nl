@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 0b4cf72622df78e13add723853d935fc97649b4a
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 19451fb09919238a04ac953c9c38fc70b4744d16
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358993"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955294"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Een Azure-Arc-gegevens controller maken met behulp van de [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
@@ -271,12 +271,12 @@ Wanneer u de opdracht hebt uitgevoerd, gaat u door met om [de aanmaak status te 
 Voordat u de gegevens controller op Azure Red Hat open SHIFT maakt, moet u specifieke beveiligings context beperkingen (SCC) Toep assen. Voor de preview-versie versoepelt deze de beveiligings beperkingen. Toekomstige releases bieden bijgewerkte SCC.
 
 1. Down load de aangepaste beveiligings context beperking (SCC). Gebruik een van de volgende opties: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/master/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/arc-data-scc.yaml))
+   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
+   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
    - `curl` Met de volgende opdracht worden Arc-data-SCC. yaml gedownload:
 
       ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
+      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
       ```
 
 1. Maak SCC.
@@ -303,7 +303,7 @@ Gebruik het profiel `azure-arc-azure-openshift` voor Azure Red Hat open SHIFT.
 azdata arc dc config init --source azure-arc-azure-openshift --path ./custom
 ```
 
-#### <a name="create-data-controller"></a>Een gegevenscontroller maken
+#### <a name="create-data-controller"></a>Gegevenscontroller maken
 
 U kunt de volgende opdracht uitvoeren om de gegevens controller te maken:
 
@@ -329,12 +329,12 @@ Wanneer u de opdracht hebt uitgevoerd, gaat u door met om [de aanmaak status te 
 Voordat u de gegevens controller op Red Hat OCP maakt, moet u specifieke beveiligings context beperkingen (SCC) Toep assen. Voor de preview-versie versoepelt deze de beveiligings beperkingen. Toekomstige releases bieden bijgewerkte SCC.
 
 1. Down load de aangepaste beveiligings context beperking (SCC). Gebruik een van de volgende opties: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/master/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/arc-data-scc.yaml))
+   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
+   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
    - `curl` Met de volgende opdracht worden Arc-data-SCC. yaml gedownload:
 
       ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
+      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
       ```
 
 1. Maak SCC.
@@ -412,7 +412,7 @@ Met deze opdracht wordt de mogelijkheid om geheugen dumps te nemen voor het oplo
 azdata arc dc config replace --path ./custom/control.json --json-values spec.security.allowDumps=false
 ```
 
-#### <a name="create-data-controller"></a>Een gegevenscontroller maken
+#### <a name="create-data-controller"></a>Gegevenscontroller maken
 
 U kunt nu de gegevens controller maken met behulp van de volgende opdracht.
 

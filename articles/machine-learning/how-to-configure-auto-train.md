@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 60aab2c77a5ccf59e129b21deab34daf756b2e23
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 054d18337e50a367cf1f6f004f4e1d1652c7751e
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827424"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954398"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -468,15 +468,17 @@ Voor algemene informatie over hoe model toelichtingen en functie belang kunnen w
   2. Voer `pip freeze` in en zoek naar `tensorflow` , indien gevonden, de weer gegeven versie moet < 1,13
   3. Als de vermelde versie geen ondersteunde versie is, `pip uninstall tensorflow` typt u in de opdracht shell en voert u y in voor bevestiging.
   
- * **Uitvoeren mislukt met `jwt.exceptions.DecodeError`**: exact fout bericht: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` . 
- 
-    U kunt een upgrade uitvoeren naar de nieuwste versie van de AutoML SDK: `pip install -U azureml-sdk[automl]` . 
-    
-    Als dat niet haalbaar is, controleert u de versie van PyJWT. Ondersteunde versies zijn < 2.0.0. Verwijder PyJWT uit de omgeving als de versie >= 2.0.0 is. U kunt de versie van PyJWT controleren, de juiste versie als volgt verwijderen en installeren:
+ * **Uitvoeren mislukt met `jwt.exceptions.DecodeError`**: exact fout bericht: `jwt.exceptions.DecodeError: It is required that you pass in a value for the "algorithms" argument when calling decode()` .
+
+    Voor versies <= 1.17.0 van de SDK kan de installatie leiden tot een niet-ondersteunde versie van PyJWT. Controleer de PyJWT-versie in de Automated ml Conda-omgeving. Ondersteunde versies zijn < 2.0.0. U kunt de versie van PyJWT als volgt controleren:
     1. Start een opdracht shell, activeer de Conda-omgeving waar automatisch ml-pakketten worden geïnstalleerd.
     2. Voer `pip freeze` in en zoek naar `PyJWT` , indien gevonden, de weer gegeven versie < 2.0.0
-    3. Als de vermelde versie geen ondersteunde versie is, `pip uninstall PyJWT` typt u in de opdracht shell en voert u y in voor bevestiging.
-    4. Installeren met `pip install 'PyJWT<2.0.0'` .
+
+    Als de vermelde versie geen ondersteunde versie is:
+    1. U kunt een upgrade uitvoeren naar de nieuwste versie van de AutoML SDK: `pip install -U azureml-sdk[automl]` .
+    2. Als dat niet haalbaar is, verwijdert u PyJWT uit de omgeving en installeert u de juiste versie als volgt:
+        - `pip uninstall PyJWT` in de opdracht shell en voert u in `y` voor bevestiging.
+        - Installeren met `pip install 'PyJWT<2.0.0'` .
 
 ## <a name="next-steps"></a>Volgende stappen
 

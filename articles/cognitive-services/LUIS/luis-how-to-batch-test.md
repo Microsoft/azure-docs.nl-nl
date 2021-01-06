@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/29/2020
-ms.openlocfilehash: a6f4b0a503e942b79dff28212863831055892246
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 0834b8f00e4c414b3a36314b80f6c99fb8f2aea2
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916555"
+ms.locfileid: "97955209"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Batch tests met een set voor beeld-uitingen
 
@@ -168,7 +168,7 @@ De twee secties van de grafiek in het groen komen overeen met de verwachte voor 
 
 Met LUIS kunt u batch testen met behulp van de LUIS-Portal en REST API. De eind punten voor de REST API worden hieronder weer gegeven. Zie [zelf studie: gegevens sets batch testen](luis-tutorial-batch-testing.md)voor meer informatie over batch tests met behulp van de Luis-Portal. Gebruik de volledige Url's hieronder en vervang de waarden van de tijdelijke aanduiding door uw eigen LUIS-Voorspellings sleutel en-eind punt. 
 
-Vergeet niet om uw LUIS-sleutel toe te voegen aan `Apim-Subscription-Id` in de kop en stel in `Content-Type` op `application/json` .
+Vergeet niet om uw LUIS-sleutel toe te voegen aan `Ocp-Apim-Subscription-Key` in de kop en stel in `Content-Type` op `application/json` .
 
 ### <a name="start-a-batch-test"></a>Een batch test starten
 

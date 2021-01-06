@@ -11,16 +11,28 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2020
 ms.author: errobin
-ms.openlocfilehash: dcfce06bb158888b56483a73ededd354c229a99b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3acaaba86c9a546a0bd45b5386287908168d50d0
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696316"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955617"
 ---
-# <a name="troubleshoot-resource-health-frontend-and-backend-availability-issues"></a>Problemen met Beschik baarheid van resource, front-end en back-end oplossen 
+# <a name="troubleshoot-resource-health-and-inbound-availability-issues"></a>Problemen met de resource status en inkomende Beschik baarheid oplossen 
 
 Dit artikel is een hand leiding voor het onderzoeken van problemen die van invloed zijn op de beschik baarheid van uw load balancer frontend-IP-en back-endservers. 
+
+De Resource Health Check (RHC) voor de Load Balancer wordt gebruikt om de status van uw load balancer te bepalen. Hiermee wordt de metrische gegevens van het gegevenspad geanalyseerd gedurende een interval van **twee minuten** om te bepalen of de taakverdelings eindpunten, de front-end-IP-en frontend-poorten combi Naties met taakverdelings regels, beschikbaar zijn.
+
+In de onderstaande tabel wordt de RHC-logica beschreven die wordt gebruikt om de status van uw load balancer te bepalen.
+
+| Status van resource status | Beschrijving |
+| --- | --- |
+| Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
+| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. 
+| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. |
+| Onbekend | De resource status voor uw standaard load balancer resource is nog niet bijgewerkt of heeft niet de beschikbaarheids gegevens van het gegevenspad ontvangen voor de afgelopen 10 minuten. Dit hoort slechts tijdelijk het geval te zijn. De juiste status wordt weergegeven zodra er gegevens worden ontvangen. |
+
 
 ## <a name="about-the-metrics-well-use"></a>Over de metrische gegevens die we gebruiken
 De twee metrische gegevens die moeten worden gebruikt, zijn *gegevenspad Beschik baarheid* en status van *Health probe* . het is belang rijk om te begrijpen wat hun betekenis is om de juiste inzichten te verkrijgen. 

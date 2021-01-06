@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 943f1361a2a9d6bf8d891f8b4f2137b8738f0836
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 31216db98cc02724ac3625eb1a8fa18b0f75c6ee
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450767"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955022"
 ---
 # <a name="orders-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Bestellingen in Commerciële marketplace-analyses
 
 Dit artikel bevat informatie over het dash board orders in partner centrum. Dit dash board geeft informatie weer over uw orders, inclusief groei trends, die worden weer gegeven in een grafische en download bare indeling.
 
-Als u toegang wilt krijgen tot het dash board orders in het partner centrum, **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u onder **commerciële Marketplace** de optie  >  **Orders** analyseren.
+Als u toegang wilt krijgen tot het dash board orders in het partner centrum, **[](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u onder **commerciële Marketplace** de optie  >  **Orders** analyseren.
 
 >[!NOTE]
 > Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
@@ -109,17 +109,16 @@ In de tabel Order Details wordt een genummerde lijst met de 1.000 belangrijkste 
 - De gegevens kunnen worden geëxtraheerd naar een. CSV of. TSV-bestand als het aantal records kleiner is dan 1.000.
 - Als records een getal van meer dan 1.000, worden geëxporteerde gegevens asynchroon in een download pagina voor de volgende 30 dagen geplaatst.
 - Filters toep assen op de tabel **Order Details** om alleen de gegevens weer te geven waarin u bent geïnteresseerd. Filteren op land/regio, type Azure-licentie, licentie type voor commerciële Marketplace, type aanbieding, Bestel status, gratis sporen, abonnements-ID van de commerciële Marketplace, klant-ID en bedrijfs naam.
-- Omdat SaaS-aanbiedingen zijn gekocht via Azure Marketplace of Microsoft AppSource, hebt u geen Azure-abonnement nodig. de Marketplace-abonnements-ID wordt weer gegeven in de notatie 00000000-0000-0000-0000-000000000000 in de sectie **gedetailleerde order gegevens** .
 - Wanneer een bestelling door een beveiligde klant wordt aangeschaft, worden de gegevens in de **gedetailleerde gegevens** van de orders gemaskeerd (* * * * * * * * * * * *).
 
 **_Tabel 1: woorden lijst met gegevens termen_* _
 
-| Kolomnaam | Kenmerk naam | Definitie |
+| Kolomnaam | Kenmerknaam | Definitie |
 | ------------ | ------------- | ------------- |
-| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. De ID was voorheen de GUID van het Azure-abonnement. |
+| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. |
 | MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. |
 | Type aanbieding | Type aanbieding | Het soort commerciële Marketplace-aanbieding. |
-| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als Channel. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
+| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als Channel. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Onderneming</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
 | Marketplace-licentie type | Marketplace-licentie type | De facturerings methode van de aanbieding voor commerciële Marketplace. De verschillende waarden zijn:<ul><li>Gefactureerd via Azure</li><li>Neem uw eigen licentie mee</li><li>Gratis</li><li>Micro soft als wederverkoper</li></ul> |
 | SKU | SKU | Het plan dat is gekoppeld aan de aanbieding |
 | Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |

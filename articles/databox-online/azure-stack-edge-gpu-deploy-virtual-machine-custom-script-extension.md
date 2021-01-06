@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/21/2020
+ms.date: 01/05/2021
 ms.author: alkohli
-ms.openlocfilehash: f622d6e752b658172bce115cde4f30d555e2ed3a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: d601c6191da9d555e54c1d58c122420510d288fc
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763791"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955549"
 ---
 # <a name="deploy-custom-script-extension-on-vms-running-on-your-azure-stack-edge-pro-device"></a>Aangepaste script extensie implementeren op Vm's die worden uitgevoerd op uw Azure Stack Edge Pro-apparaat
 
@@ -45,7 +45,7 @@ De aangepaste script extensie voor Linux wordt uitgevoerd op de volgende OSs. An
 | Distributie | Versie |
 |---|---|
 | Linux: Ubuntu | 18,04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.4 |
+| Linux: Red Hat Enterprise Linux | 7,4, 7,5, 7,7 |
 
 <!--### Script location
 

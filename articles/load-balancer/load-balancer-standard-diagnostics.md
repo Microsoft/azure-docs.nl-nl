@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: allensu
-ms.openlocfilehash: 9c322620e1d66182937be41bb02d48fd1469f459
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: da4c5f7891b518f4e6393f3fb4e153d464f4f2a2
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697557"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955532"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
@@ -231,7 +231,14 @@ Met de grafiek kunnen klanten de implementatie zelf oplossen zonder dat ze hoeve
 
 ## <a name="resource-health-status"></a><a name = "ResourceHealth"></a>Status van resource status
 
-De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven via de bestaande **resource status** onder **monitor > service Health**.
+De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven via de bestaande **resource status** onder **monitor > service Health**. Het wordt elke **twee minuten** geëvalueerd door de beschik baarheid van het gegevenspad te meten. Dit bepaalt of uw frontend-taakverdelings eindpunten beschikbaar zijn.
+
+| Status van resource status | Beschrijving |
+| --- | --- |
+| Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
+| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.
+| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de RHC-gids voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn op uw Beschik baarheid. |
+| Onbekend | De resource status voor uw standaard load balancer resource is nog niet bijgewerkt of heeft niet de beschikbaarheids gegevens van het gegevenspad ontvangen voor de afgelopen 10 minuten. Dit hoort slechts tijdelijk het geval te zijn. De juiste status wordt weergegeven zodra er gegevens worden ontvangen. |
 
 De status van uw open bare Standard Load Balancer-resources weer geven:
 1. Selecteer **monitor**  >  **service Health**.
@@ -254,12 +261,6 @@ De status van uw open bare Standard Load Balancer-resources weer geven:
  
 De beschrijving van de algemene resource status is beschikbaar in de [RHC-documentatie](../service-health/resource-health-overview.md). Zie de onderstaande tabel voor specifieke statussen voor de Azure Load Balancer: 
 
-| Status van resource status | Beschrijving |
-| --- | --- |
-| Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
-| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek van de DataPath-Beschik baarheid heeft minder dan 90% gerapporteerd, maar meer dan 25% van de status gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de hand leiding voor het oplossen van problemen met gegevenspaden voor gegevens
-| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de hand leiding voor het oplossen van problemen met gegevenspaden van het gegevens traject] om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn |
-| Onbekend | De resource status voor uw standaard load balancer resource is nog niet bijgewerkt of heeft niet de beschikbaarheids gegevens van het gegevenspad ontvangen voor de afgelopen 10 minuten. Deze status moet tijdelijk zijn en de juiste status weer geven zodra er gegevens worden ontvangen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

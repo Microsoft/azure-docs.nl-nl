@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: b26643daede9e26f2bf1807ae99a6ced5d1cb08c
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 072abffcc74b8b060d98c07d1f310413c7b323ef
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901569"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954937"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -127,30 +127,34 @@ Gebruik de volgende procedure om actie groepen te maken:
 
 8. Als u velden met vaste waarden wilt invullen, selecteert u **aangepaste sjabloon gebruiken**. Als dat niet het geval is, kiest u een bestaande [sjabloon](#template-definitions) in de lijst **sjabloon** en voert u de vaste waarden in de sjabloon velden in.
 
-9. In de laatste sectie van de groeps definitie van de actie-ITSM kunt u definiëren hoeveel waarschuwingen van elke waarschuwing worden gemaakt. Deze sectie is alleen relevant voor het vastleggen van zoek waarschuwingen in een logboek.
+9. In de laatste sectie van de groeps definitie van de actie ITSM kunt u definiëren hoeveel werk items worden gemaakt voor elke waarschuwing.
+
+    >[!NOTE]
+    >
+    > * Deze sectie is alleen relevant voor het vastleggen van zoek waarschuwingen in een logboek.
+    > * Met metrische waarschuwingen en waarschuwingen voor activiteiten Logboeken wordt altijd één werk item per waarschuwing gemaakt.
 
     * In het geval dat u selecteert in de vervolg keuzelijst voor werk items "incident" of "waarschuwing":
-        * Als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** inschakelt, wordt in elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn.
+        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** inschakelt, wordt in elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn.
 
             Bijvoorbeeld:
             1) Waarschuwing 1 met 3 configuratie-items: A, B, C-worden drie werk items gemaakt.
-            2) Waarschuwing 2 met 1 configuratie-item: D, maakt 1 werk item.
+            2) Waarschuwing 2 met 1 configuratie-item: A-maakt 1 werk item.
 
-                **Aan het einde van deze stroom worden vier waarschuwingen weer gegeven**
-        * Als u het selectie vakje **afzonderlijke werk items voor elk configuratie-item maken** uitschakelt, zijn er waarschuwingen waarmee geen nieuw werk item wordt gemaakt. werk items worden samengevoegd volgens waarschuwings regel.
+        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** uitschakelt, wordt in ITSM-connector één werk item voor elke waarschuwings regel gemaakt en toegevoegd aan alle beïnvloede configuratie-items. Er wordt een nieuw werk item gemaakt als de vorige taak is gesloten.
+        >[!NOTE]
+        > In dit geval worden met een deel van de geactiveerde waarschuwing geen nieuwe werk items gegenereerd in het ITSM-hulp programma.
 
-            Bijvoorbeeld:
-            1) Waarschuwing 1 met 3 configuratie-items: A, B, C-maakt 1 werk item.
-            2) Waarschuwing 2 voor dezelfde waarschuwings regel als fase 1 met 1 configuratie-item: D-wordt samengevoegd met het werk item in fase 1.
-            3) Waarschuwing 3 voor een andere waarschuwings regel met 1 configuratie-item: E-maakt 1 werk item.
-
-                **Aan het einde van deze stroom zijn er twee waarschuwingen**
+            For example:
+            1) Alert 1 with 3 Configuration Items: A, B, C - will create 1 work item.
+            2) Alert 2 for the same alert rule as phase 1 with 1 Configuration Item: D - will be merged to the work item in phase 1.
+            3) Alert 3 for a different alert rule with 1 Configuration Item: E - will create 1 work item.
 
        ![Scherm opname van het ITSM-incident venster.](media/itsmc-overview/itsm-action-configuration.png)
 
     * In het geval dat u selecteert in de vervolg keuzelijst werk item:
-        * Als u **afzonderlijke werk items maken voor elke logboek vermelding** in de keuze rondjes selecteert, wordt er een waarschuwing gemaakt per rij in de zoek resultaten van de waarschuwing zoek opdracht in Logboeken. In de payload van de waarschuwing krijgt de eigenschap Description de rij uit de zoek resultaten.
-        * Als u **afzonderlijke werk items maken selecteert voor elk configuratie-item** in de keuze rondjes selectie, wordt voor elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn. Dit komt overeen met het selectie vakje inschakelen in de sectie incident/waarschuwing.
+        * Als u **' afzonderlijke werk items maken voor elke logboek vermelding (configuratie-item) selecteert, is dit veld niet ingevuld. Kan resulteren in grote hoeveel heden werk items.) "** in de keuze rondjes selectie wordt een waarschuwing gemaakt per rij in de zoek resultaten van de waarschuwing zoek opdracht in Logboeken. In de payload van de waarschuwing krijgt de eigenschap Description de rij uit de zoek resultaten.
+        * Als u in de selectie keuze rondjes **' afzonderlijke werk items maken voor elk configuratie-item '** selecteert, wordt voor elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn. Dit komt overeen met het selectie vakje inschakelen in de sectie incident/waarschuwing.
     ![Scherm opname van het ITSM-gebeurtenis venster.](media/itsmc-overview/itsm-action-configuration-event.png)
 
 10. Selecteer **OK**.

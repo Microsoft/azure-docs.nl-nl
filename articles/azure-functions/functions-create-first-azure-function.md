@@ -5,12 +5,12 @@ ms.assetid: 96cf87b9-8db6-41a8-863a-abb828e3d06d
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 746ec7aa3ee41204e051e843ff94ed0771a9d244
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: e37a14b2634395d7f31565d6d5a6f6ec96a4a2f1
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326179"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954517"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
@@ -19,7 +19,7 @@ Met Azure Functions kunt u uw code in een serverloze omgeving uitvoeren zonder d
 We raden u aan [uw functies lokaal te ontwikkelen](functions-develop-local.md) en te publiceren naar een functie-app in Azure.  
 Gebruik een van de volgende koppelingen om aan de slag te gaan met de gekozen lokale ontwikkel omgeving en-taal:
 
-| Visual Studio Code | Terminal/opdracht prompt | Visual Studio |
+| Visual Studio Code | Terminal/opdrachtprompt | Visual Studio |
 | --- | --- | --- |
 |  &bull;&nbsp;[Aan de slag met C #](./create-first-function-vs-code-csharp.md)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-vs-code-java.md)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-vs-code-node.md)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-vs-code-powershell.md)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-vs-code-python.md) |&bull;&nbsp;[Aan de slag met C #](./create-first-function-cli-csharp.md)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-cli-java.md)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-cli-node.md)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-cli-powershell.md)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-cli-python.md) | [Aan de slag met C #](functions-create-your-first-function-visual-studio.md) |
 
@@ -61,7 +61,7 @@ Maak vervolgens een functie in de nieuwe functie-app.
 
     ![De functie-URL vanuit Azure Portal kopiëren](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
 
-1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `?name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
+1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `&name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
 
     Het volgende voorbeeld toont het antwoord in de browser:
 

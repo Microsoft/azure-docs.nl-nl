@@ -1,20 +1,20 @@
 ---
-title: Problemen met de sensor en on-premises beheer console oplossen
+title: Problemen met de sensor en on-premises beheerconsole oplossen
 description: Los problemen met uw sensor en on-premises beheer console op om eventuele problemen op te lossen.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/12/2020
+ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: a57db4f88de4a3b32b4fb315fb331500f955d501
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: b91827fc0a6fb8380c9f8aa87a3def3bc1819523
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840698"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955430"
 ---
-# <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Problemen met de sensor en on-premises beheer console oplossen
+# <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Problemen met de sensor en on-premises beheerconsole oplossen
 
 In dit artikel worden de belangrijkste hulpprogram ma's voor probleem oplossing voor de sensor en de on-premises beheer console beschreven. Naast de items die hier worden beschreven, kunt u de status van uw systeem op de volgende manieren controleren:
 
@@ -28,22 +28,33 @@ In dit artikel worden de belangrijkste hulpprogram ma's voor probleem oplossing 
 
 ### <a name="investigate-password-failure-at-initial-sign-in"></a>Wachtwoord fout bij de eerste aanmelding onderzoeken
 
-Wanneer u zich voor de eerste keer aanmeldt bij een vooraf geconfigureerde pijl sensor, moet u het volgende wachtwoord herstel uitvoeren:
+Wanneer u zich voor de eerste keer aanmeldt bij een vooraf geconfigureerde pijl sensor, moet u wachtwoord herstel uitvoeren.
 
-1. Selecteer de optie voor **wachtwoord herstel** in het aanmeldings scherm van Defender voor IOT. 
+Uw wacht woord herstellen:
 
-   Het scherm voor **wachtwoord herstel** wordt geopend. Daar wordt u gevraagd om de gebruiker en het abonnement te selecteren. u krijgt een unieke id.
+1. Selecteer in het aanmeldings scherm van Defender voor IoT de optie  **wacht woord herstellen**. Het scherm voor **wachtwoord herstel** wordt geopend.
 
-1. Ga naar de pagina Defender voor IoT- **sites en Sens oren** en selecteer het tabblad **mijn wacht woord herstellen** .
+1. Selecteer **cyberx** of **support** en kopieer de unieke id.
+
+1. Ga naar de Azure Portal en selecteer **sites en Sens oren**.  
+
+1. Selecteer het tabblad **wacht woord van on-premises beheer console herstellen** .
+
+   :::image type="content" source="media/password-recovery-images/recover-button.png" alt-text="Selecteer de knop on-premises beheer herstellen om het herstel bestand te downloaden.":::
 
 1. Voer de unieke id in die u hebt ontvangen op het scherm voor **wachtwoord herstel** en selecteer **herstellen**. Het `password_recovery.zip` bestand wordt gedownload.
 
-   > [!NOTE]
-   > Wijzig het activerings bestand niet. Het is een ondertekend bestand dat niet werkt als u ermee knoeit.
+    > [!NOTE]
+    > Wijzig het wachtwoord herstel bestand niet. Het is een ondertekend bestand dat niet werkt als u ermee knoeit.
 
-1. Upload het bestand in het scherm voor **wachtwoord herstel** `password_recovery.zip` en selecteer **volgende**.
+1. Selecteer **uploaden** in het scherm **wacht woord herstellen** . **Het venster bestand voor wachtwoord herstel uploaden** wordt geopend.
 
-Vervolgens ontvangt u het door het systeem gegenereerde wacht woord voor uw beheer console. 
+1. Selecteer **Bladeren** om het bestand te zoeken `password_recovery.zip` of sleep het `password_recovery.zip` naar het venster.
+
+1. Selecteer **volgende** en uw gebruiker, en het door het systeem gegenereerde wacht woord voor uw beheer console worden weer gegeven.
+
+    > [!NOTE]
+    > Wanneer u zich voor de eerste keer aanmeldt bij een sensor of een on-premises beheer console, wordt deze gekoppeld aan het abonnement waarmee u de verbinding hebt gemaakt. Als u het wacht woord voor de gebruiker met Cyberx of ondersteuning opnieuw wilt instellen, moet u dat abonnement selecteren. Zie het wacht woord van [een gebruiker voor de sensor of on-premises beheer console opnieuw instellen](how-to-create-and-manage-users.md#resetting-a-users-password-for-the-sensor-or-on-premises-management-console) voor meer informatie over het herstellen van een gebruiker met een Cyber
 
 ### <a name="investigate-a-lack-of-traffic"></a>Een gebrek aan verkeer onderzoeken
 
@@ -65,35 +76,35 @@ Systeem prestaties controleren:
 
    :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/dashboard-view-v2.png" alt-text="Scherm opname van een voor beeld van een dash board."::: 
 
-2. Selecteer **apparaten** in het menu aan de zijkant.
+1. Selecteer **apparaten** in het menu aan de zijkant.
 
-3. Controleer in het venster **apparaten** of de apparaten worden gedetecteerd.
+1. Controleer in het venster **apparaten** of de apparaten worden gedetecteerd.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/discovered-devices.png" alt-text="Zorg ervoor dat de apparaten worden gedetecteerd.":::
 
-4. Selecteer in het menu aan de zijkant **gegevens analyse**.
+1. Selecteer in het menu aan de zijkant **gegevens analyse**.
 
-5. Selecteer in het venster **gegevens analyse** de optie **alle** en Genereer een rapport.
+1. Selecteer in het venster **gegevens analyse** de optie **alle** en Genereer een rapport.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/new-report-generated.png" alt-text="Genereer een nieuw rapport met behulp van gegevens analyse.":::
 
-6. Zorg ervoor dat het rapport gegevens bevat.
+1. Zorg ervoor dat het rapport gegevens bevat.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/new-report-generated.png" alt-text="Zorg ervoor dat het rapport gegevens bevat.":::
 
-7. Selecteer in het menu aan de zijkant **Trends & statistieken**.
+1. Selecteer in het menu aan de zijkant **Trends & statistieken**.
 
-8. Selecteer in het venster **Trends &-statistieken** de optie **widget toevoegen**.
+1. Selecteer in het venster **Trends &-statistieken** de optie **widget toevoegen**.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/add-widget.png" alt-text="Voeg een widget toe door deze te selecteren.":::
 
-9. Voeg een widget toe en zorg ervoor dat de gegevens worden weer gegeven.
+1. Voeg een widget toe en zorg ervoor dat de gegevens worden weer gegeven.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/widget-data.png" alt-text="Zorg ervoor dat het object gegevens weergeeft.":::
 
-10. Selecteer in het menu aan de zijkant **waarschuwingen**. Het venster **waarschuwingen** wordt weer gegeven.
+1. Selecteer in het menu aan de zijkant **waarschuwingen**. Het venster **waarschuwingen** wordt weer gegeven.
 
-11. Controleer of de waarschuwingen zijn gemaakt.
+1. Controleer of de waarschuwingen zijn gemaakt.
 
     :::image type="content" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/alerts-created.png" alt-text="Controleer of er waarschuwingen zijn gemaakt.":::
 
@@ -154,9 +165,9 @@ De configuratie herstellen:
 
 1. Klik met de rechter muisknop op het pictogram Cloud op de apparaat kaart en selecteer **IP-adressen exporteren**. Kopieer de open bare bereiken die privé zijn en voeg ze toe aan de lijst met subnetten. Zie [subnets configureren](how-to-control-what-traffic-is-monitored.md#configure-subnets)voor meer informatie.
 
-2. Genereer een nieuw rapport voor gegevens analyse voor Internet verbindingen.
+1. Genereer een nieuw rapport voor gegevens analyse voor Internet verbindingen.
 
-3. In het rapport gegevens analyse selecteert :::image type="icon" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/administrator-mode.png" border="false"::: u de beheerders modus en verwijdert u de IP-adressen van uw ICS-apparaten.
+1. In het rapport gegevens analyse selecteert :::image type="icon" source="media/how-to-troubleshoot-the-sensor-and-on-premises-management-console/administrator-mode.png" border="false"::: u de beheerders modus en verwijdert u de IP-adressen van uw ICS-apparaten.
 
 ### <a name="tweak-the-sensors-quality-of-service"></a>De kwaliteit van de service van de sensor aanpassen
 
@@ -179,7 +190,7 @@ De kwaliteit van de service aanpassen:
    > [!NOTE]
    > Voor een fysiek apparaat gebruikt u de em1-interface.
 
-2. Als u de interface beperking wilt wissen, voert u in `sudo cyberx-xsense-limit-interface -i eth0 -l 1mbps -c` .
+1. Als u de interface beperking wilt wissen, voert u in `sudo cyberx-xsense-limit-interface -i eth0 -l 1mbps -c` .
 
 ## <a name="on-premises-management-console-troubleshooting-tools"></a>Hulp middelen voor het oplossen van problemen met on-premises beheer console
 
@@ -203,7 +214,7 @@ De kwaliteit van de service aanpassen:
 
 1. Meld u aan als Defender voor IoT-gebruiker. 
 
-2. Controleer de standaard waarden:
+1. Controleer de standaard waarden:
 
    ```bash
    grep \"notifications\" /var/cyberx/properties/management.properties
@@ -216,20 +227,20 @@ De kwaliteit van de service aanpassen:
    notifications.max_time_to_report=10 (seconds)
    ```
 
-3. Bewerk de standaard instellingen:
+1. Bewerk de standaard instellingen:
 
    ```bash
    sudo nano /var/cyberx/properties/management.properties
    ```
 
-4. Bewerk de instellingen van de volgende regels:
+1. Bewerk de instellingen van de volgende regels:
 
    ```bash
    notifications.max_number_to_report=50
    notifications.max_time_to_report=10 (seconds)
    ```
 
-5. Sla de wijzigingen op. U hoeft niet opnieuw op te starten.
+1. Sla de wijzigingen op. U hoeft niet opnieuw op te starten.
 
 ## <a name="export-information-for-troubleshooting"></a>Informatie over het oplossen van problemen exporteren
 
@@ -239,13 +250,13 @@ Logboeken exporteren:
 
 1. Selecteer **systeem instellingen** in het linkerdeel venster.
 
-2. Selecteer **Logboeken exporteren**.
+1. Selecteer **Logboeken exporteren**.
 
     :::image type="content" source="media/how-to-export-information-for-troubleshooting/export-a-log.png" alt-text="Een logboek exporteren naar systeem ondersteuning.":::
 
-3. Voer in het vak **Bestands naam** de naam in van het bestand dat u wilt gebruiken voor het exporteren van het logboek. De standaard waarde is de huidige datum.
+1. Voer in het vak **Bestands naam** de naam in van het bestand dat u wilt gebruiken voor het exporteren van het logboek. De standaard waarde is de huidige datum.
 
-4. Selecteer de gegevens categorieën om te definiëren welke gegevens u wilt exporteren:  
+1. Selecteer de gegevens categorieën om te definiëren welke gegevens u wilt exporteren:  
 
     | Categorie exporteren | Beschrijving |
     |--|--|
@@ -261,18 +272,18 @@ Logboeken exporteren:
     | **Logboeken voor webtoepassingen** | Selecteer deze optie om informatie op te halen over alle aanvragen die worden verzonden vanuit de webinterface van de toepassing. |
     | **Systeem back-up** | Selecteer deze optie als u een back-up van alle systeem gegevens wilt exporteren voor het onderzoeken van de exacte status van het systeem. |
     | **Statistieken voor dissectie** | Selecteer deze optie om geavanceerde inspectie van protocol statistieken toe te staan. |
-    | **Database logboeken** | Selecteer deze optie als u logboeken van de systeem database wilt exporteren. Het onderzoeken van systeem logboeken helpt bij het identificeren van systeem problemen. |
+    | **Database logboeken** | Selecteer deze optie als u logboeken van de systeem database wilt exporteren. Het onderzoeken van systeem logboeken helpt systeem problemen te identificeren. |
     | **Configuratie** | Selecteer deze optie om informatie over alle Configureer bare para meters te exporteren, zodat u zeker weet dat alles correct is geconfigureerd. |
 
-5. Als u alle opties wilt selecteren, selecteert u **Alles selecteren** naast **Categorieën kiezen**.
+1. Als u alle opties wilt selecteren, selecteert u **Alles selecteren** naast **Categorieën kiezen**.
 
-6. Selecteer **Logboeken exporteren**.
+1. Selecteer **Logboeken exporteren**.
 
 De geëxporteerde logboeken worden toegevoegd aan de lijst **gearchiveerde logboeken** . Verzend de OTP naar het ondersteunings team in een afzonderlijk bericht en medium uit de geëxporteerde Logboeken. Het ondersteunings team kan alleen geëxporteerde logboeken ophalen met behulp van de unieke OTP die wordt gebruikt voor het versleutelen van de logboeken.
 
 De lijst met gearchiveerde logboeken kan Maxi maal vijf items bevatten. Als het aantal items in de lijst buiten dat aantal valt, wordt het oudste item verwijderd.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - [Waarschuwingen weergeven](how-to-view-alerts.md)
 

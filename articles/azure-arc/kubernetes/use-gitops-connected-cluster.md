@@ -1,5 +1,5 @@
 ---
-title: Configuraties implementeren met behulp van GitOps op het Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
+title: Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 services: azure-arc
 ms.service: azure-arc
 ms.date: 05/19/2020
@@ -8,14 +8,14 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure-Kubernetes-cluster met Arc-functionaliteit (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: 85771824a6cecd10346937220e400028a4570377
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 906021377cbfd6960769f98f9dbd15a5c430c71f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653449"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955328"
 ---
-# <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps op het Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
+# <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 
 GitOps, omdat dit betrekking heeft op Kubernetes, is de praktijk van het declareren van de gewenste status van Kubernetes-configuratie (implementaties, naam ruimten, enzovoort) in een Git-opslag plaats, gevolgd door een polling en pull-gebaseerde implementatie van deze configuraties naar het cluster met behulp van een operator. Dit document bevat informatie over de installatie van dergelijke werk stromen op Azure Arc enabled Kubernetes-clusters.
 
@@ -97,7 +97,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 #### <a name="use-a-private-git-repo-with-ssh-and-flux-created-keys"></a>Een privé Git-opslag plaats gebruiken met sleutels voor SSH en stromen
 
-| Parameter | Indeling | Opmerkingen
+| Parameter | Indeling | Notities
 | ------------- | ------------- | ------------- |
 | --Repository-URL | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` kan vervangen worden door `user@`
 
@@ -106,7 +106,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 #### <a name="use-a-private-git-repo-with-ssh-and-user-provided-keys"></a>Een privé Git-opslag plaats gebruiken met SSH en door de gebruiker verschafte sleutels
 
-| Parameter | Indeling | Opmerkingen |
+| Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
 | --Repository-URL  | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` kan vervangen worden door `user@` |
 | --SSH-persoonlijke sleutel | met base64 gecodeerde sleutel in de [PEM-indeling](https://aka.ms/PEMformat) | Sleutel rechtstreeks opgeven |
@@ -117,7 +117,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 #### <a name="use-a-private-git-host-with-ssh-and-user-provided-known-hosts"></a>Een privé Git-host gebruiken met SSH en door de gebruiker verschafte bekende hosts
 
-| Parameter | Indeling | Opmerkingen |
+| Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
 | --Repository-URL  | ssh://user@server/repo[. git] of user@server:repo [. git] | `git@` kan vervangen worden door `user@` |
 | --SSH-bekende-hosts | Base64-gecodeerd | bekende hosts-inhoud rechtstreeks |
@@ -129,7 +129,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 #### <a name="use-a-private-git-repo-with-https"></a>Een privé Git-opslag plaats gebruiken met HTTPS
 
-| Parameter | Indeling | Opmerkingen |
+| Parameter | Indeling | Notities |
 | ------------- | ------------- | ------------- |
 | --Repository-URL | https://server/repo[. git] | HTTPS met basis verificatie |
 | --https-gebruiker | RAW of Base64-gecodeerd | HTTPS-gebruikers naam |
@@ -150,7 +150,7 @@ Hier vindt u meer para meters die u kunt gebruiken om de configuratie aan te pas
 
 `--helm-operator-chart-version` : *Optionele* grafiek versie voor de helm-operator (indien ingeschakeld). Standaard: ' 1.2.0 '.
 
-`--operator-namespace` : *Optionele* naam voor de operator naam ruimte. Standaard: ' default '
+`--operator-namespace` : *Optionele* naam voor de operator naam ruimte. Standaard: standaard. Maxi maal 23 tekens.
 
 `--operator-params` : *Optionele* para meters voor de operator. Moet binnen enkele aanhalings tekens worden opgegeven. Bijvoorbeeld: ```--operator-params='--git-readonly --git-path=releases --sync-garbage-collection' ```
 
@@ -169,12 +169,6 @@ Opties die worden ondersteund in--operator-params
 | --Git-e-mail  | E-mail die moet worden gebruikt voor git-door voer. |
 
 * Als '--Git-gebruiker ' of '--git-e-mail ' niet is ingesteld (wat betekent dat u niet wilt dat stroom wordt geschreven naar de opslag plaats), wordt--Git-ReadOnly automatisch ingesteld (als u dit nog niet hebt ingesteld).
-
-* Als enableHelmOperator is ingesteld op True, kunnen operatorInstanceName + operatorNamespace-teken reeksen niet langer zijn dan 47 tekens.  Als u niet aan deze limiet voldoet, krijgt u de volgende fout:
-
-   ```console
-   {"OperatorMessage":"Error: {failed to install chart from path [helm-operator] for release [<operatorInstanceName>-helm-<operatorNamespace>]: err [release name \"<operatorInstanceName>-helm-<operatorNamespace>\" exceeds max length of 53]} occurred while doing the operation : {Installing the operator} on the config","ClusterState":"Installing the operator"}
-   ```
 
 Zie [vloei documentatie](https://aka.ms/FluxcdReadme)voor meer informatie.
 
@@ -251,7 +245,7 @@ Terwijl het inrichtings proces plaatsvindt, `sourceControlConfiguration` wordt d
 
 ## <a name="apply-configuration-from-a-private-git-repository"></a>Configuratie Toep assen vanuit een persoonlijke Git-opslag plaats
 
-Als u een privé Git-opslag plaats gebruikt, moet u de open bare SSH-sleutel configureren in uw opslag plaats. U kunt de open bare sleutel configureren op de Git-opslag plaats of de Git-gebruiker die toegang heeft tot de opslag plaats. De open bare SSH-sleutel is het certificaat dat u opgeeft, of het wordt gegenereerd door een stroom.
+Als u een privé Git-opslag plaats gebruikt, moet u de open bare SSH-sleutel configureren in uw opslag plaats. U kunt de open bare sleutel configureren op het specifieke Git-opslag plaats of op de Git-gebruiker die toegang heeft tot de opslag plaats. De open bare SSH-sleutel is het certificaat dat u opgeeft, of het wordt gegenereerd door een stroom.
 
 **Uw eigen open bare sleutel ophalen**
 
@@ -260,7 +254,7 @@ Als u uw eigen SSH-sleutels hebt gegenereerd, beschikt u al over de persoonlijke
 **De open bare sleutel ophalen met behulp van Azure CLI (handig als de sleutels door stroom worden gegenereerd)**
 
 ```console
-$ az k8sconfiguration show --resource-group <resource group name> --cluster-name <connected cluster name> --name <configuration name> --query 'repositoryPublicKey'
+$ az k8sconfiguration show --resource-group <resource group name> --cluster-name <connected cluster name> --name <configuration name> --cluster-type connectedClusters --query 'repositoryPublicKey' 
 Command group 'k8sconfiguration' is in preview. It may be changed/removed in a future release.
 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAREDACTED"
 ```

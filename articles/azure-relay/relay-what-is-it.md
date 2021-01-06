@@ -3,12 +3,12 @@ title: Wat is Azure Relay? | Microsoft Docs
 description: In dit artikel vindt u een overzicht van Azure Relay, een service die is bedoeld voor het ontwikkelen van cloudtoepassingen die on-premises services verbruiken die worden uitgevoerd in uw bedrijfsnetwerk zonder dat er een firewallverbinding hoeft te worden geopend of uw netwerkinfrastructuur ingrijpend hoeft te worden gewijzigd.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 0c9a67bcad47ad2e7284bcf6e70914d2ffb06a8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbf1b2134a4c2dce7a3e6a62668d0852dc08c18a
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85322645"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955379"
 ---
 # <a name="what-is-azure-relay"></a>Wat is Azure Relay?
 De Azure Relay-service stelt u in staat om services die worden uitgevoerd in uw bedrijfsnetwerk op een veilige manier aan te bieden aan de openbare cloud. U kunt dit doen zonder een poort in de firewall te openen of de infrastructuur van het bedrijfsnetwerk ingrijpend te wijzigen. 
@@ -17,7 +17,7 @@ De Relay-service ondersteunt de volgende scenario's tussen on-premises services 
 
 - Traditioneel verkeer in één richting, aanvraag/antwoord en peer-to-peer-communicatie 
 - Distributie van gebeurtenissen via internet om scenario's voor publiceren/abonneren mogelijk te maken 
-- Bidirectionele en niet-gebufferde socket-communicatie over de netwerkgrenzen heen
+- Bidirectionele en niet-gebufferde socket communicatie tussen netwerk grenzen
 
 Azure Relay is anders dan integratietechnologieën op netwerkniveau zoals VPN. Een Azure-relay kan worden gericht op een bepaald eindpunt van een toepassing op één computer. De VPN-technologie is veel ingrijpender, omdat hiervoor de netwerkomgeving moet worden aangepast. 
 
@@ -56,7 +56,7 @@ Zowel met hybride verbindingen als met WCF Relay wordt een beveiligde verbinding
 | **WCF** |x | |
 | **.NET Core** | |x |
 | **.NET Framework** |x |x |
-| **Java script/Node.JS** | |x |
+| **Java script/Node.js** | |x |
 | **Op standaarden gebaseerd open protocol** | |x |
 | **RPC-programmeringsmodellen** | |x |
 

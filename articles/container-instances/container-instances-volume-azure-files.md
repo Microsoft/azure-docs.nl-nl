@@ -4,16 +4,16 @@ description: Meer informatie over het koppelen van een Azure Files-volume om de 
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: afebdcdc9d9c5852d7fe66ed06ac457c1dbb0afb
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: d52ad8ad02735c98b29a83d8ca69cdea8c6af7d8
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881800"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954971"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Een Azure-bestandsshare koppelen in Azure Container Instances
 
-Azure-containerinstanties zijn standaard staatloos. Als de container vastloopt of stopt, gaat alle status verloren. Als u een status langer wilt behouden dan de levensduur van de container, moet u een volume vanuit een externe opslag koppelen. Zoals in dit artikel wordt weer gegeven, kunt Azure Container Instances een Azure-bestands share koppelen die is gemaakt met [Azure files](../storage/files/storage-files-introduction.md). Azure Files biedt volledig beheerde bestands shares die worden gehost in Azure Storage die toegankelijk zijn via het industrie standaard SMB-protocol (Server Message Block). Het gebruik van een Azure-bestands share met Azure Container Instances biedt functies voor het delen van bestanden die vergelijkbaar zijn met het gebruik van een Azure-bestands share met Azure virtual machines.
+Azure-containerinstanties zijn standaard staatloos. Als de container opnieuw wordt opgestart, vastloopt of wordt gestopt, is de status van het geheel verloren gegaan. Als u een status langer wilt behouden dan de levensduur van de container, moet u een volume vanuit een externe opslag koppelen. Zoals in dit artikel wordt weer gegeven, kunt Azure Container Instances een Azure-bestands share koppelen die is gemaakt met [Azure files](../storage/files/storage-files-introduction.md). Azure Files biedt volledig beheerde bestands shares die worden gehost in Azure Storage die toegankelijk zijn via het industrie standaard SMB-protocol (Server Message Block). Het gebruik van een Azure-bestands share met Azure Container Instances biedt functies voor het delen van bestanden die vergelijkbaar zijn met het gebruik van een Azure-bestands share met Azure virtual machines.
 
 > [!NOTE]
 > Het koppelen van een Azure Files share is momenteel beperkt tot Linux-containers. Zoek de huidige platform verschillen in het [overzicht](container-instances-overview.md#linux-and-windows-containers).

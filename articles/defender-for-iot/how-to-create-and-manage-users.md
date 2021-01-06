@@ -4,15 +4,15 @@ description: Gebruikers van Sens oren en de on-premises beheer console maken en 
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/21/2020
+ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: c3a9e1c7e96d0392e1f94b71549f612738622dea
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 22d0c59110ba033232fbdf41062b49e9a146ca6f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840963"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955085"
 ---
 # <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
 
@@ -89,8 +89,8 @@ In deze sectie wordt beschreven hoe u gebruikers definieert. Gebruikers van cybe
 Een gebruiker definiëren:
 
 1. Selecteer in het linkerdeel venster voor de sensor of de on-premises beheer console de optie **gebruikers**.
-2. In het venster **gebruikers** selecteert u **gebruiker maken**.
-3. Definieer de volgende para meters in het deel venster **gebruiker maken** :
+1. In het venster **gebruikers** selecteert u **gebruiker maken**.
+1. Definieer de volgende para meters in het deel venster **gebruiker maken** :
 
    - **Gebruikers naam**: Voer een gebruikers naam in.
    - **E-mail**: Voer het e-mail adres van de gebruiker in.
@@ -122,7 +122,7 @@ Voor toegang tot de opdracht:
 
 1. Meld u aan bij de CLI voor de sensor of on-premises beheer console met behulp van Defender voor IoT-beheerders referenties.
 
-2. Voer `sudo nano /var/cyberx/properties/authentication` in.
+1. Voer `sudo nano /var/cyberx/properties/authentication` in.
 
 ```azurecli-interactive
     infinity_session_expiration = true
@@ -138,7 +138,6 @@ Voor toegang tot de opdracht:
 Als u de functie wilt uitschakelen, wijzigt `infinity_session_expiration = true` u in `infinity_session_expiration = false` .
 
 Als u tellings perioden wilt bijwerken, wijzigt `= <number>` u de waarde in de gewenste tijd.
-
 
 ## <a name="track-user-activity"></a>Gebruikers activiteit volgen 
 
@@ -171,11 +170,11 @@ Active Directory configureren:
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-system-settings-v2.png" alt-text="Bekijk de instellingen van uw Active Directory-systeem.":::
 
-2. Selecteer **Active Directory** in het deel venster **systeem instellingen** .
+1. Selecteer **Active Directory** in het deel venster **systeem instellingen** .
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-configurations-v2.png" alt-text="Bewerk uw Active Directory configuraties.":::
 
-3. Selecteer **Active Directory integratie ingeschakeld** opslaan in het dialoog venster **Active Directory configuratie bewerken**  >  . Het dialoog venster **Active Directory configuratie bewerken** wordt uitgevouwen en u kunt nu de para meters voor het configureren van Active Directory opgeven.
+1. Selecteer **Active Directory integratie ingeschakeld** opslaan in het dialoog venster **Active Directory configuratie bewerken**  >  . Het dialoog venster **Active Directory configuratie bewerken** wordt uitgevouwen en u kunt nu de para meters voor het configureren van Active Directory opgeven.
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-integration-enabled-v2.png" alt-text="Voer de para meters in om Active Directory te configureren.":::
 
@@ -184,7 +183,7 @@ Active Directory configureren:
     > - Gebruik alleen kleine letters voor alle para meters Active Directory. Gebruik kleine letters, zelfs wanneer de configuraties in Active Directory hoofd letters gebruiken.
     > - U kunt niet zowel LDAP als LDAPS configureren voor hetzelfde domein. U kunt echter beide voor verschillende domeinen tegelijk gebruiken.
 
-4. Stel de Active Directory server-para meters als volgt in:
+1. Stel de Active Directory server-para meters als volgt in:
 
    | Server parameter | Beschrijving |
    |--|--|
@@ -194,11 +193,81 @@ Active Directory configureren:
    | Active Directory groepen | Geef de groeps namen op die zijn gedefinieerd in uw Active Directory configuratie op de LDAP-server. |
    | Vertrouwde domeinen | Als u een vertrouwd domein wilt toevoegen, voegt u de domein naam en het verbindings type van een vertrouwd domein toe. <br />U kunt alleen vertrouwde domeinen configureren voor gebruikers die zijn gedefinieerd onder gebruikers. |
 
-5. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**.
 
-6. Selecteer **server toevoegen** en een andere server configureren om een vertrouwde server toe te voegen.
+1. Selecteer **server toevoegen** en een andere server configureren om een vertrouwde server toe te voegen.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="resetting-a-users-password-for-the-sensor-or-on-premises-management-console"></a>Het wacht woord van een gebruiker voor de sensor of on-premises beheer console opnieuw instellen
+
+### <a name="cyberx-or-support-user"></a>Gebruiker van cyberx of ondersteuning
+
+Alleen de gebruiker met **cyberx** en **ondersteuning** heeft toegang tot de functie voor **wachtwoord herstel** . Als de gebruiker van **cyberx** of **ondersteuning** het wacht woord heeft verg eten, kunnen ze het wacht woord opnieuw instellen via de optie voor **wachtwoord herstel** op de aanmeldings pagina voor Defender voor IOT.
+
+Het wacht woord opnieuw instellen voor een gebruiker met Cyberx of ondersteuning:
+
+1. Selecteer in het aanmeldings scherm van Defender voor IoT de optie  **wacht woord herstellen**. Het scherm voor **wachtwoord herstel** wordt geopend.
+
+1. Selecteer **cyberx** of **support** en kopieer de unieke id.
+
+1. Ga naar de Azure Portal en selecteer **sites en Sens oren**.  
+
+1. Selecteer het pictogram **abonnement filter** :::image type="icon" source="media/password-recovery-images/subscription-icon.png" border="false":::  op de bovenste werk balk en selecteer het abonnement waarmee uw sensor is verbonden.
+
+1. Selecteer het tabblad **wacht woord van on-premises beheer console herstellen** .
+
+   :::image type="content" source="media/password-recovery-images/recover-button.png" alt-text="Selecteer de knop on-premises beheer herstellen om het herstel bestand te downloaden.":::
+
+1. Voer de unieke id in die u hebt ontvangen op het scherm voor **wachtwoord herstel** en selecteer **herstellen**. Het `password_recovery.zip` bestand wordt gedownload.
+
+    > [!NOTE]
+    > Wijzig het wachtwoord herstel bestand niet. Het is een ondertekend bestand dat niet werkt als u ermee knoeit.
+
+1. Selecteer **uploaden** in het scherm **wacht woord herstellen** . **Het venster bestand voor wachtwoord herstel uploaden** wordt geopend.
+
+   :::image type="content" source="media/password-recovery-images/upload.png" alt-text="Upload het herstel bestand om een nieuw wacht woord op te halen.":::
+
+1. Selecteer **Bladeren** om het bestand te zoeken `password_recovery.zip` of sleep het `password_recovery.zip` naar het venster.
+
+    > [!NOTE]
+    > Er wordt mogelijk een fout bericht weer gegeven waarin staat dat het bestand ongeldig is. Als u dit fout bericht wilt herstellen, moet u ervoor zorgen dat u het juiste abonnement hebt geselecteerd voordat u het downloadt `password_recovery.zip` en opnieuw downloadt.  
+
+1. Selecteer **volgende** en uw gebruiker, en het door het systeem gegenereerde wacht woord voor uw beheer console worden weer gegeven.
+
+### <a name="administrator-security-analyst-and-read-only-user"></a>Beheerder, beveiligings analist en alleen-lezen gebruiker
+
+Alleen-lezen en beveiligings analisten kunnen hun eigen wacht woord niet opnieuw instellen en moeten contact opnemen met een gebruiker met de rol beheerder, ondersteuning of Cyberx om hun wacht woord opnieuw in te stellen. Een gebruikers beheerder moet contact opnemen met de gebruiker van **cyberx** of **ondersteuning** om hun wacht woord opnieuw in te stellen.
+
+Het wacht woord van een gebruiker op de sensor opnieuw instellen:
+
+1. De gebruiker van de rol beheerder, ondersteuning of Cyberx meldt zich aan te melden bij de sensor.
+
+1. Selecteer **gebruikers** in het linkerdeel venster.
+
+   :::image type="content" source="media/password-recovery-images/sensor-page.png" alt-text="Selecteer de optie gebruiker in het deel venster aan de linkerkant.":::
+
+1. Zoek de gebruiker en selecteer **bewerken** in het vervolg keuzemenu **acties** .
+
+   :::image type="content" source="media/password-recovery-images/edit.png" alt-text="Selecteer Bewerken in het vervolg menu acties.":::
+
+1. Voer het nieuwe wacht woord in het veld **Nieuw wacht woord** in en **Bevestig nieuwe wacht woord** .
+
+1. Selecteer **Bijwerken**.
+
+Het wacht woord van een gebruiker opnieuw instellen op de on-premises beheer console:
+
+1. De gebruiker van de rol beheerder, ondersteuning of Cyberx meldt zich aan te melden bij de sensor.
+
+1. Selecteer **gebruikers** in het linkerdeel venster.
+
+   :::image type="content" source="media/password-recovery-images/console-page.png" alt-text="Selecteer de optie van de gebruiker in het linkerdeel venster.":::
+
+1. Zoek uw gebruiker en selecteer het bewerkings pictogram :::image type="icon" source="media/password-recovery-images/edit-icon.png" border="false"::: .
+
+1. Voer het nieuwe wacht woord in het veld **Nieuw wacht woord** in en **Bevestig nieuwe wacht woord** .
+
+1. Selecteer **Bijwerken**.
+
+## <a name="see-also"></a>Zie ook
 
 [Uw sensor](how-to-activate-and-set-up-your-sensor.md) 
  activeren en instellen [Uw on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md) 

@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 01/05/2021
 ms.author: aahi
-ms.openlocfilehash: ffa70afa0edf29181bc622cbef6ff8716134b1f7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 9a4e179767cc38169cd794f4cd629604bdcdaab0
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364935"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955039"
 ---
-# <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Veelgestelde vragen over de Text Analytics cognitieve service
+# <a name="frequently-asked-questions-faq-about-the-text-analytics-api"></a>Veelgestelde vragen over de Text Analytics-API
 
- Hier vindt u antwoorden op veelgestelde vragen over concepten, code en scenario's met betrekking tot de Text Analytics-API voor Microsoft Cognitive Services op Azure.
+ Hier vindt u antwoorden op veelgestelde vragen over concepten, code en scenario's met betrekking tot de Text Analytics-API in azure Cognitive Services.
 
 ## <a name="can-text-analytics-identify-sarcasm"></a>Kan sarcasme Text Analytics identificeren?
 
@@ -47,11 +47,21 @@ Normaal gesp roken bestaat de uitvoer uit zelfstandige naam woorden en objecten 
 
 Er worden verbeteringen aangebracht in modellen en algoritmen als de wijziging primair is of als de update stil is geslipstreamt in de-service als het een kleine is. Na verloop van tijd kan het voor komen dat dezelfde tekst invoer resulteert in een andere sentiment-Score of uitvoer van een sleutel woord groep. Dit is een normaal en opzettelijk gevolg van het gebruik van beheerde machine learning-resources in de Cloud.
 
+## <a name="service-availability-and-redundancy"></a>Beschik baarheid en redundantie van de service
+
+### <a name="is-text-analytics-service-zone-resilient"></a>Is Text Analytics service zone flexibel?
+
+Ja. De Text Analytics-service is standaard zone-flexibel.
+
+### <a name="how-do-i-configure-the-text-analytics-service-to-be-zone-resilient"></a>Hoe kan ik de Text Analytics-service zo configureren dat deze zone flexibel kan worden?
+
+Er is geen klant configuratie nodig om zone tolerantie in te scha kelen. Zone-tolerantie voor Text Analytics resources is standaard beschikbaar en wordt beheerd door de service zelf.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Is uw vraag over een ontbrekend onderdeel of functionaliteit? Overweeg om IT te vragen of te stemmen op onze [UserVoice-website](https://cognitive.uservoice.com/forums/555922-text-analytics).
 
 ## <a name="see-also"></a>Zie ook
 
- [Stack overflow: Text Analytics-API](https://stackoverflow.com/questions/tagged/text-analytics-api)   
- [Stack overflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)
+ * [Stack overflow: Text Analytics-API](https://stackoverflow.com/questions/tagged/text-analytics-api)   
+ * [Stack overflow: Cognitive Services](https://stackoverflow.com/questions/tagged/microsoft-cognitive)

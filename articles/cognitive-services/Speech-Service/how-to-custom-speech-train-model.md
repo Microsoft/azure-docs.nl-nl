@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 5a912790b4a7a86c44576b98ce7e95f44b810c9e
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: a7227195c767d90141a9b6cd95f784c239a31fd5
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857372"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955192"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
@@ -48,6 +48,11 @@ In de tabel **training** wordt een nieuw item weer gegeven dat overeenkomt met h
 
 Bekijk de nauw keurigheid van het Custom Speech model te evalueren en [te](how-to-custom-speech-evaluate-data.md) verbeteren. Als u ervoor kiest om de nauw keurigheid te testen, is het belang rijk dat u een akoestische gegevensset selecteert die afwijkt van het model dat u hebt gebruikt bij uw modellen om een realistische indruk te krijgen van de prestaties van het model.
 
+> [!NOTE]
+> Zowel basis modellen als aangepaste modellen kunnen alleen tot een bepaalde datum worden gebruikt (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)). In speech Studio wordt deze datum weer gegeven in de kolom **verloop** voor elk model en eind punt. Na deze datum kan een eind punt of een batch-transcriptie mislukken of worden terugvallen op het basis model.
+>
+> Train uw model opnieuw met het meest recente basis model om te profiteren van nauw keurigere verbeteringen en om te voor komen dat uw model verloopt.
+
 ## <a name="deploy-a-custom-model"></a>Aangepaste model implementeren
 
 Nadat u gegevens hebt geüpload en geïnspecteerd, de nauw keurigheid evalueert en een aangepast model traint, kunt u een aangepast eind punt implementeren voor gebruik met uw apps, hulpprogram ma's en producten. 
@@ -63,7 +68,7 @@ Selecteer vervolgens **eind punt toevoegen** en voer een **naam** en **Beschrijv
 
 Selecteer vervolgens **maken**. Met deze actie keert u terug naar de **implementatie** pagina. De tabel bevat nu een vermelding die overeenkomt met uw aangepaste eind punt. De status van het eind punt toont de huidige status. Het kan tot 30 minuten duren om een nieuw eind punt te instantiëren met uw aangepaste modellen. Wanneer de status van de implementatie verandert in **voltooid**, is het eind punt klaar voor gebruik.
 
-Nadat het eind punt is geïmplementeerd, wordt de naam van het eind punt weer gegeven als een koppeling. Selecteer de koppeling om informatie weer te geven die specifiek is voor uw eind punt, zoals de eindpunt sleutel, eind punt-URL en voorbeeld code.
+Nadat het eind punt is geïmplementeerd, wordt de naam van het eind punt weer gegeven als een koppeling. Selecteer de koppeling om informatie weer te geven die specifiek is voor uw eind punt, zoals de eindpunt sleutel, eind punt-URL en voorbeeld code. Noteer de verval datum en werk het model van het eind punt vóór die datum bij om een ononderbroken service te garanderen.
 
 ## <a name="view-logging-data"></a>Logboek gegevens weer geven
 
@@ -75,7 +80,7 @@ Logboek gegevens kunnen alleen worden geëxporteerd als u naar de pagina van het
 
 * [Meer informatie over het gebruik van uw aangepaste model](how-to-specify-source-language.md)
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 - [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 - [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)

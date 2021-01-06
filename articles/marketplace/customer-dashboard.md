@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 878fa181ff09d547ef6594a238e9c1d883cc89b7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c98b47507a7543002f00aae82370f5ea0043510d
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460488"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954274"
 ---
 # <a name="customers-dashboard-in-commercial-marketplace-analytics"></a>Dash board klanten in commerciële Marketplace-analyse
 
 Dit artikel bevat informatie over het dash board klanten in partner centrum. Dit dash board geeft informatie weer over uw klanten, met inbegrip van groei trends, die worden weer gegeven in een grafische en download bare indeling.
 
-Voor toegang tot het dash board klanten in Partner Center, onder **commerciële Marketplace** , selecteert u **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **klanten** analyseren.
+Voor toegang tot het dash board klanten in Partner Center, onder **commerciële Marketplace** , selecteert u **[](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **klanten** analyseren.
 
 >[!NOTE]
 > Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
@@ -142,9 +142,9 @@ en let op het volgende:
 
 _**Tabel 1: woorden lijst met gegevens termen**_
 
-| Kolomnaam | Kenmerk naam | Definitie |
+| Kolomnaam | Kenmerknaam | Definitie |
 | ------------ | ------------- | ------------- |
-| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. De ID was voorheen de GUID van het Azure-abonnement. |
+| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. |
 | DateAcquired | Aanschaf datum | De eerste datum waarop de klant een aanbieding heeft gekocht die u hebt gepubliceerd. |
 | DateLost | Datum verloren | De laatste datum waarop de klant de laatste van alle eerder gekochte aanbiedingen heeft geannuleerd. |
 | Naam van provider | Naam van provider | De naam van de provider die deel uitmaakt van de relatie tussen micro soft en de klant. Als de klant een onderneming is via wederverkoper, is dit de wederverkoper. Als er een Cloud Solution Provider (CSP) betrokken is, wordt dit de CSP. |
@@ -157,7 +157,7 @@ _**Tabel 1: woorden lijst met gegevens termen**_
 | Post code van de klant | Post code van de klant | De post code die de klant heeft ontvangen. De code kan afwijken van de post code die is opgenomen in het Azure-abonnement van een klant. |
 | CustomerCommunicationCulture | Taal van klant communicatie | De taal die door de klant wordt aanbevolen voor communicatie. |
 | CustomerCountryRegion | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |
-| AzureLicenseType | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het _kanaal_. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
+| AzureLicenseType | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het _kanaal_. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Onderneming</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
 | PromotionalCustomers | Is de contact persoon voor de reclame in | De waarde laat u weten of de klant proactief heeft gekozen voor een contact persoon van uitgevers. Op dit moment bieden we geen optie voor klanten, dus hebben we "no" aangegeven op het bord. Nadat deze functie is geïmplementeerd, gaan we dienovereenkomstig met bijwerken. |
 | CustomerState | Klant status | De staat van de woon plaats van de klant. De status kan afwijken van de status die is opgenomen in het Azure-abonnement van de klant. |
 | CommerceRootCustomer | Commerce root-klant | Een facturerings account-ID kan worden gekoppeld aan meerdere klant-Id's.<br>Een combi natie van een facturerings account-ID en een klant-ID kan worden gekoppeld aan meerdere commerciële Marketplace-abonnementen.<br>De commerce root-klant geeft de naam aan van de klant van het abonnement. |

@@ -4,12 +4,12 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over de Mi
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
-ms.openlocfilehash: cd974181c78586f915dad6cc6ed39d9255a1456b
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 1663a842b7e00c611543451d4caef96b5b5a913f
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172583"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954988"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server en DPM: veelgestelde vragen
 
@@ -56,6 +56,10 @@ U hebt geen afzonderlijke licenties nodig voor VMware/Hyper-V-beveiliging.
 
 - Als u een System Center-klant bent, kunt u System Center Data Protection Manager (DPM) gebruiken om virtuele VMware-machines te beveiligen.
 - Als u geen System Center-klant bent, kunt u Azure Backup Server (betalen per gebruik) gebruiken om virtuele VMware-machines te beveiligen.
+
+### <a name="can-i-restore-a-backup-of-a-hyper-v-or-vmware-vm-stored-in-azure-to-azure-as-an-azure-vm"></a>Kan ik een back-up van een Hyper-V-of VMware-machine die is opgeslagen in azure, herstellen naar Azure als een Azure VM?
+
+Nee, dit is op dit moment niet mogelijk. U kunt alleen herstellen naar een lokale host.
 
 ## <a name="sharepoint"></a>SharePoint
 

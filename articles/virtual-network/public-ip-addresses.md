@@ -1,5 +1,5 @@
 ---
-title: Open bare IP-adressen in azure
+title: Openbare IP-adressen in Azure
 titlesuffix: Azure Virtual Network
 description: Meer informatie over openbare IP-adressen in Azure.
 services: virtual-network
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: ef79844cf2f90ce97ea30a1948a441f909255f98
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1e46cf78c76e873bcb78af4942f42a5c4be45391
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169930"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955583"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -55,6 +55,7 @@ Standaard-SKU open bare IP-adressen:
 - Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](security-overview.md#network-security-groups)toestaan.
 - Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Kan zone-redundante (op te maken van alle drie zones) of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-region) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
+- Kan worden gebruikt als anycast frontend-Ip's voor [meerdere regio's load balancers](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) (Preview-functionaliteit).
  
 > [!NOTE]
 > Inkomende communicatie met een resource uit de Standard-SKU mislukt totdat u een [netwerkbeveiligingsgroep](security-overview.md#network-security-groups) maakt en koppelt en het gewenste binnenkomende verkeer expliciet toestaat.

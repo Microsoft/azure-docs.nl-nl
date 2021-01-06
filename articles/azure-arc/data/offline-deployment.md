@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 575903654a165bef0d09ac6abf0793af3f6784e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5fa0b6ca41349d20614a64006536e78d8ee71844
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936710"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955362"
 ---
 # <a name="offline-deployment-overview"></a>Overzicht van offline-implementatie
 
@@ -22,7 +22,7 @@ Doorgaans worden de container installatie kopieën die worden gebruikt bij het m
 
 Omdat er maandelijkse updates worden gegeven voor Azure Arc-gegevens Services en er een groot aantal container installatie kopieën zijn, kunt u het beste dit proces voor het ophalen, labelen en het pushen van de container installatie kopieën naar een persoonlijk container register met behulp van een script uitvoeren.  Het script kan worden geautomatiseerd of hand matig worden uitgevoerd.
 
-Een [voorbeeld script](https://raw.githubusercontent.com/microsoft/azure_arc/master/arc_data_services/deploy/scripts/pull-and-push-arc-data-services-images-to-private-registry.py) vindt u in de Azure Arc github-opslag plaats.
+Een [voorbeeld script](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/scripts/pull-and-push-arc-data-services-images-to-private-registry.py) vindt u in de Azure Arc github-opslag plaats.
 
 > [!NOTE]
 > Dit script vereist de installatie van python en de [docker-cli](https://docs.docker.com/install/).
@@ -36,7 +36,7 @@ Het script vraagt om de volgende informatie.  Als u het script wilt uitvoeren zo
 |Geef een gebruikers naam op voor het bron container register. Druk op ENTER voor het gebruik van geen:|SOURCE_DOCKER_USERNAME|Geef alleen een waarde op als u container installatie kopieën wilt ophalen uit een bron waarvoor aanmelden is vereist.  Voor de micro soft-Container Registry is geen aanmelding vereist.|
 |Geef een wacht woord op voor het bron container register. Druk op ENTER voor het gebruik van geen:|SOURCE_DOCKER_PASSWORD|Geef alleen een waarde op als u container installatie kopieën wilt ophalen uit een bron waarvoor aanmelden is vereist.  Voor de micro soft-Container Registry is geen aanmelding vereist. Dit is een gemaskeerde wachtwoord prompt.  Het wacht woord wordt niet weer geven als u het typt of plakt in.|
 |Container installatie kopie-tag opgeven voor de installatie kopieën in de bron: druk op ENTER voor het gebruik van `<current monthly release tag>` :|SOURCE_DOCKER_TAG|De naam van de standaard label wordt maandelijks bijgewerkt, zodat deze overeenkomt met de maand en het jaar van de huidige release op de micro soft-Container Registry.|
-|Geef de DNS-naam of het IP-adres van het doel container register op:|TARGET_DOCKER_REGISTRY|De DNS-naam of het IP-adres van het doel register.  Dit is het REGI _ster waarnaar de_installatie kopieën worden gepusht.|
+|Geef de DNS-naam of het IP-adres van het doel container register op:|TARGET_DOCKER_REGISTRY|De DNS-naam of het IP-adres van het doel register.  Dit is het REGI _ster waarnaar de_ installatie kopieën worden gepusht.|
 |Geef de register opslagplaats voor de doel container op:|TARGET_DOCKER_REPOSITORY|De opslag plaats in het doel register waarnaar de installatie kopieën worden gepusht.|
 |Geef een gebruikers naam op voor het REGI ster van de doel container. Druk op ENTER voor het gebruik van geen:|TARGET_DOCKER_USERNAME|De gebruikers naam, indien aanwezig, die wordt gebruikt om u aan te melden bij het doel container register.|
 |Geef een wacht woord op voor het doel container register. Druk op ENTER voor het gebruik van geen:|TARGET_DOCKER_PASSWORD|Het wacht woord, indien aanwezig, dat wordt gebruikt om u aan te melden bij het doel container register. Dit is een gemaskeerde wachtwoord prompt.  Het wacht woord wordt niet weer geven als u het typt of plakt in.|

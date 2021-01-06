@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 11/09/2020
+ms.date: 01/05/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f10d8a94be53780f732112c012600a7fb840642b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 18e504579c750caf452ef74844c4a388ec96448a
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180639"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954482"
 ---
 # <a name="what-is-risk"></a>Wat is risico?
 
@@ -41,7 +41,7 @@ Een gebruikers risico vertegenwoordigt de waarschijnlijkheid dat een bepaalde id
 
 Deze Risico's worden offline berekend met de interne en externe Threat Intelligence-bronnen van micro soft, waaronder beveiligings onderzoekers, politie professionals, beveiligings teams bij micro soft en andere vertrouwde bronnen.
 
-| Risico detectie | Description |
+| Risico detectie | Beschrijving |
 | --- | --- |
 | Gelekte referenties | Dit type risico detectie geeft aan dat de geldige referenties van de gebruiker zijn gelekt. Wanneer Cybercriminals geldige wacht woorden van legitieme gebruikers beveiligt, delen ze deze referenties vaak. Dit delen geschiedt doorgaans door op het donkere web te plaatsen, sites te plakken of door de referenties op de zwarte markt te verhandelen en te verkopen. Wanneer de micro soft lekkende referentie Service gebruikers referenties ophaalt van de donkere websites, plak sites of andere bronnen, worden ze gecontroleerd op basis van de huidige geldige referenties van de Azure AD-gebruikers om geldige overeenkomsten te vinden. Zie [Veelgestelde vragen](#common-questions)voor meer informatie over gelekte referenties. |
 | Azure AD-bedreigingsinformatie | Dit type risico detectie duidt op de activiteit van de gebruiker die ongebruikelijk is voor de gegeven gebruiker of is consistent met bekende aanvals patronen op basis van de interne en externe informatie bronnen van micro soft. |
@@ -52,7 +52,7 @@ Een aanmeldings risico duidt op de kans dat een bepaalde verificatie aanvraag ni
 
 Deze Risico's kunnen in realtime worden berekend of offline worden berekend met behulp van de interne en externe Threat Intelligence-bronnen van micro soft, waaronder beveiligings onderzoekers, politie professionals, beveiligings teams bij micro soft en andere vertrouwde bronnen.
 
-| Risico detectie | Detectie type | Description |
+| Risico detectie | Detectie type | Beschrijving |
 | --- | --- | --- |
 | Anoniem IP-adres | Real-time | Dit type risico detectie duidt op aanmeldingen vanaf een anoniem IP-adres (bijvoorbeeld Tor browser of anoniem VPN). Deze IP-adressen worden meestal gebruikt door Actors die hun aanmeld telemetrie (IP-adres, locatie, apparaat enzovoort) willen verbergen voor mogelijk schadelijk doel. |
 | Ongewoon traject | Offline | Dit type risico detectie identificeert twee aanmeldingen die afkomstig zijn van geografische locaties, waarbij ten minste één van de locaties mogelijk ook ongewoon kan zijn voor de gebruiker, gezien het gedrag van het verleden. Deze machine learning-algoritme houdt onder andere rekening met de tijd tussen de twee aanmeldingen en de tijd die nodig zou zijn voor de gebruiker om van de eerste locatie naar de tweede te gaan, wat aangeeft dat een andere gebruiker dezelfde referenties gebruikt. <br><br> Het algoritme negeert duidelijke ' fout-positieven ' die bijdragen aan de niet-bewaarde reis omstandigheden, zoals Vpn's en locaties die regel matig door andere gebruikers in de organisatie worden gebruikt. Het systeem heeft een initiële leer periode van het eerste aantal van 14 dagen of 10 aanmeldingen, waarbij het een nieuwe gebruiker aanmeldt. |
@@ -63,10 +63,13 @@ Deze Risico's kunnen in realtime worden berekend of offline worden berekend met 
 | Verdachte regels voor het bewerken van postvak in | Offline | Deze detectie wordt gedetecteerd door [Microsoft Cloud app Security (MCAS)](/cloud-app-security/anomaly-detection-policy#suspicious-inbox-manipulation-rules). Deze detectie profileert uw omgeving en activeert waarschuwingen wanneer verdachte regels die berichten of mappen verwijderen of verplaatsen worden ingesteld op het postvak in van een gebruiker. Deze detectie kan erop wijzen dat het account van de gebruiker is aangetast, dat berichten opzettelijk worden verborgen en dat het postvak wordt gebruikt voor het distribueren van spam of malware in uw organisatie. |
 | Wachtwoordspray | Offline | Een aanval met een wacht woord is het geval wanneer meerdere gebruikers namen worden aangevallen met veelvoorkomende wacht woorden in een geïntegreerde brute kracht om onbevoegde toegang te krijgen. Deze risico detectie wordt geactiveerd wanneer een wachtwoord sproei-aanval is uitgevoerd. |
 | Onmogelijk traject | Offline | Deze detectie wordt gedetecteerd door [Microsoft Cloud app Security (MCAS)](/cloud-app-security/anomaly-detection-policy#impossible-travel). Deze detectie identificeert twee gebruikers activiteiten (is een of meerdere sessies) die afkomstig zijn van geografisch gelegen locaties binnen een tijds periode die korter is dan de tijd die de gebruiker nodig heeft om te reizen van de eerste locatie naar de tweede, wat aangeeft dat een andere gebruiker dezelfde referenties gebruikt. |
+| Nieuw land | Offline | Deze detectie wordt gedetecteerd door [Microsoft Cloud app Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-infrequent-country). Deze detectie bekijkt eerdere activiteitlocaties om nieuwe en niet-frequente locaties vast te stellen. De engine voor de detectie van afwijkingen slaat informatie op over eerdere locaties die worden gebruikt door gebruikers in de organisatie. |
+| Activiteit van anoniem IP-adres | Offline | Deze detectie wordt gedetecteerd door [Microsoft Cloud app Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-anonymous-ip-addresses). Deze detectie identificeert dat gebruikers actief waren vanaf een IP-adres dat is geïdentificeerd als een IP-adres van een anonieme proxy. |
+| Verdachte postvak in door sturen | Offline | Deze detectie wordt gedetecteerd door [Microsoft Cloud app Security (MCAS)](/cloud-app-security/anomaly-detection-policy#suspicious-inbox-forwarding). Deze detectie zoekt naar verdachte e-mail regels voor door sturen, bijvoorbeeld als een gebruiker een regel voor het postvak in heeft gemaakt waarmee een kopie van alle e-mail berichten wordt doorgestuurd naar een extern adres. |
 
 ### <a name="other-risk-detections"></a>Andere risico detecties
 
-| Risico detectie | Detectie type | Description |
+| Risico detectie | Detectie type | Beschrijving |
 | --- | --- | --- |
 | Er is extra risico gedetecteerd | Realtime of offline | Deze detectie geeft aan dat een van de bovenstaande Premium-detecties is gedetecteerd. Aangezien de Premium-detecties alleen zichtbaar zijn voor Azure AD Premium P2-klanten, hebben ze de titel ' extra risico gedetecteerd ' voor klanten zonder Azure AD Premium P2-licenties. |
 
@@ -78,7 +81,7 @@ Met Identity Protection wordt het risico gecategoriseerd in drie niveaus: laag, 
 
 Microsoft biedt geen specifieke details over de manier waarop het risico wordt berekend, maar hoe hoger het niveau is, hoe betrouwbaarder het is dat de gebruiker of het aanmelden is gecompromitteerd. Een voorbeeld: één geval van onbekende aanmeldingseigenschappen voor een gebruiker kan minder bedreigend zijn dan gelekte referenties voor een andere gebruiker.
 
-### <a name="password-hash-synchronization"></a>Wachtwoord-hashsynchronisatie
+### <a name="password-hash-synchronization"></a>Synchronisatie van wachtwoord-hashes
 
 Risico detecties zoals gelekte referenties en wachtwoord spray vereisen de aanwezigheid van wacht woord-hashes voor detectie. Zie het artikel [wachtwoord hash-synchronisatie implementeren met Azure AD Connect Sync](../hybrid/how-to-connect-password-hash-synchronization.md)voor meer informatie over het synchroniseren van wacht woord-hashes.
 

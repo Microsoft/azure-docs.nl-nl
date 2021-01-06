@@ -11,12 +11,12 @@ ms.author: nigup
 ms.date: 12/1/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperf-fy20q4, contperf-fy21q2
-ms.openlocfilehash: 58dacc9e65da6502d083446cb7202c222cb7e795
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 1b43a1ceb1f9e098e4932b405553ae8f33e27262
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034034"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937345"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Quota voor resources beheren en verg Roten met Azure Machine Learning
 
@@ -29,7 +29,7 @@ Azure gebruikt limieten en quota's om budget overschrijdingen door fraude te voo
 > + Het aanvragen van quota wordt verhoogd.
 > + Persoonlijk eind punt en DNS-quota.
 
-Naast het beheren van quota's, leert u hoe u de [kosten voor Azure machine learning kunt plannen en beheren](concept-plan-manage-cost.md).
+Naast het beheren van quota's, kunt u leren hoe u de [kosten voor Azure machine learning plant en beheert](concept-plan-manage-cost.md) , of meer te weten te komen over de [service limieten in azure machine learning](resource-limits-quotas-capacity.md).
 
 ## <a name="special-considerations"></a>Speciale overwegingen
 
@@ -53,7 +53,9 @@ In deze sectie vindt u informatie over de standaard-en maximum quotum limieten v
 + Azure Storage
 
 > [!IMPORTANT]
-> Limieten zijn onderhevig aan wijzigingen. Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md) voor alle Azure voor de meest recente informatie.
+> Limieten zijn onderhevig aan wijzigingen. Zie  [service limieten in azure machine learning](resource-limits-quotas-capacity.md)voor de meest recente informatie.
+
+
 
 ### <a name="azure-machine-learning-assets"></a>Azure Machine Learning assets
 De volgende limieten gelden voor assets per werk ruimte. 
@@ -122,7 +124,7 @@ U kunt geen limieten genereren voor virtuele machines boven de waarden die in de
 
 Zie [container instances limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits)voor meer informatie.
 
-### <a name="storage"></a>Opslag
+### <a name="storage"></a>Storage
 Azure Storage heeft een limiet van 250 opslag accounts per regio, per abonnement. Deze limiet is inclusief standaard-en Premium-opslag accounts.
 
 Als u de limiet wilt verhogen, kunt u een aanvraag indienen via [ondersteuning voor Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Het Azure Storage team controleert uw aanvraag en kan Maxi maal 250 opslag accounts voor een regio goed keuren.
@@ -210,3 +212,4 @@ Als u een limiet wilt aanvragen voor deze scenario's, gebruikt u de volgende sta
 ## <a name="next-steps"></a>Volgende stappen
 
 + [Kosten plannen en beheren voor Azure Machine Learning](concept-plan-manage-cost.md)
++ [Service limieten in Azure Machine Learning](resource-limits-quotas-capacity.md)

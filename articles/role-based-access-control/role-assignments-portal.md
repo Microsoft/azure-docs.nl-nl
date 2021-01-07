@@ -10,16 +10,16 @@ ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1aebb80fcba6c21ccce63772195af80b94092bde
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7c58641f0039982f05be14d0f24ba89c62273d4b
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368315"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964300"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-the-azure-portal"></a>Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] In dit artikel wordt beschreven hoe u rollen toewijst met behulp van de Azure Portal.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel wordt beschreven hoe u rollen toewijst met behulp van de Azure Portal.
 
 Zie [beheerders rollen weer geven en toewijzen in azure Active Directory](../active-directory/roles/manage-roles-portal.md)als u beheerders rollen wilt toewijzen in azure Active Directory.
 
@@ -49,17 +49,17 @@ Om de pagina toegangs beheer (IAM) het meest effectief te maken, kunt u deze sta
 
 In azure RBAC kunt u een roltoewijzing toevoegen om toegang te verlenen aan een Azure-resource. Volg deze stappen om een rol toe te wijzen.
 
-1. Klik in de Azure Portal op **alle services** en selecteer vervolgens het bereik waaraan u toegang wilt verlenen. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen**of een resource selecteren.
+1. Klik in de Azure Portal op **alle services** en selecteer vervolgens het bereik waaraan u toegang wilt verlenen. U kunt bijvoorbeeld **beheer groepen**, **abonnementen**, **resource groepen** of een resource selecteren.
 
 1. Klik op de specifieke resource voor dat bereik.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op **het tabblad roltoewijzingen om de roltoewijzingen** in dit bereik weer te geven.
 
     ![Het tabblad toegangs beheer (IAM) en roltoewijzingen](./media/role-assignments-portal/role-assignments.png)
 
-1. Klik **op**  >  **toewijzing van roltoewijzing**toevoegen.
+1. Klik **op**  >  **toewijzing van roltoewijzing** toevoegen.
 
    Als u niet bent gemachtigd voor het toewijzen van rollen, is de optie Roltoewijzing toevoegen uitgeschakeld.
 
@@ -93,7 +93,7 @@ Als u een gebruiker een beheerder van een Azure-abonnement wilt maken, wijst u d
 
     ![Het tabblad toegangs beheer (IAM) en roltoewijzingen](./media/role-assignments-portal/role-assignments.png)
 
-1. Klik **op**  >  **toewijzing van roltoewijzing**toevoegen.
+1. Klik **op**  >  **toewijzing van roltoewijzing** toevoegen.
 
    Als u niet bent gemachtigd voor het toewijzen van rollen, is de optie Roltoewijzing toevoegen uitgeschakeld.
 
@@ -130,7 +130,7 @@ Volg deze stappen om een rol toe te wijzen aan een door het systeem toegewezen b
 
     ![Door het systeem toegewezen beheerde identiteit](./media/shared/identity-system-assigned.png)
 
-1. Klik onder **machtigingen**op **Azure-roltoewijzingen**.
+1. Klik onder **machtigingen** op **Azure-roltoewijzingen**.
 
     Als er al rollen zijn toegewezen aan de geselecteerde door het systeem toegewezen beheerde identiteit, ziet u de lijst met roltoewijzingen. Deze lijst bevat alle roltoewijzingen waarvoor u lees machtigingen hebt.
 
@@ -140,7 +140,7 @@ Volg deze stappen om een rol toe te wijzen aan een door het systeem toegewezen b
 
 1. Klik op **roltoewijzing toevoegen (preview)**.
 
-1. Gebruik de vervolg keuzelijsten om de set resources te selecteren waarop de roltoewijzing van toepassing is, zoals **abonnement**, **resource groep**of resource.
+1. Gebruik de vervolg keuzelijsten om de set resources te selecteren waarop de roltoewijzing van toepassing is, zoals **abonnement**, **resource groep** of resource.
 
     Als u geen schrijf machtigingen voor de roltoewijzing voor het geselecteerde bereik hebt, wordt een inline-bericht weer gegeven. 
 
@@ -152,7 +152,7 @@ Volg deze stappen om een rol toe te wijzen aan een door het systeem toegewezen b
 
    Na enkele ogen blikken is de beheerde identiteit toegewezen aan de rol bij de geselecteerde scope.
 
-### <a name="user-assigned-managed-identity"></a>Door een gebruiker toegewezen beheerde identiteit
+### <a name="user-assigned-managed-identity"></a>Door de gebruiker toegewezen beheerde identiteit
 
 Volg deze stappen om een rol toe te wijzen aan een door de gebruiker toegewezen beheerde identiteit door te beginnen met de beheerde identiteit.
 
@@ -168,7 +168,7 @@ Volg deze stappen om een rol toe te wijzen aan een door de gebruiker toegewezen 
 
 1. Klik op **roltoewijzing toevoegen (preview)**.
 
-1. Gebruik de vervolg keuzelijsten om de set resources te selecteren waarop de roltoewijzing van toepassing is, zoals **abonnement**, **resource groep**of resource.
+1. Gebruik de vervolg keuzelijsten om de set resources te selecteren waarop de roltoewijzing van toepassing is, zoals **abonnement**, **resource groep** of resource.
 
     Als u geen schrijf machtigingen voor de roltoewijzing voor het geselecteerde bereik hebt, wordt een inline-bericht weer gegeven. 
 
@@ -204,7 +204,7 @@ In azure RBAC kunt u de toegang van een Azure-resource verwijderen door een rolt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-roltoewijzingen weer geven met behulp van de Azure Portal](role-assignments-list-portal.md)
+- [Azure-roltoewijzingen vermelden met behulp van Azure Portal](role-assignments-list-portal.md)
 - [Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal](quickstart-assign-role-user-portal.md)
 - [Problemen met Azure RBAC oplossen](troubleshooting.md)
 - [Uw resources organiseren met Azure-beheergroepen](../governance/management-groups/overview.md)

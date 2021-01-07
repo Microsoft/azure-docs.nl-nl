@@ -7,12 +7,12 @@ ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 10/19/2020
-ms.openlocfilehash: 023dc877158c7074f46945893d40291e94ab2f09
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: e5fb425afdd4b212a0b28ce91418eb0ee9e3632f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629551"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964423"
 ---
 # <a name="how-to-create-plans-for-a-virtual-machine-offer"></a>Plannen maken voor een aanbieding van een virtuele machine
 
@@ -42,7 +42,7 @@ Voer in het dialoog venster **nieuw plan** een unieke **plan-id** in voor elk ab
 > [!NOTE]
 > De plan-ID kan niet worden gewijzigd nadat u **maken** hebt geselecteerd.
 
-Voer een **naam** in voor het abonnement. Klanten zien deze naam wanneer ze bepalen welk abonnement binnen uw aanbieding moet worden geselecteerd. Maak een unieke naam waarmee duidelijk de verschillen tussen de plannen worden aangegeven. U kunt bijvoorbeeld **Windows Server** met *betalen per gebruik* -, *BYOL* -, *Geavanceerd* -en *Enter prise* -abonnementen invoeren.
+Voer een **naam** in voor het abonnement. Klanten zien deze naam wanneer ze bepalen welk abonnement binnen uw aanbieding moet worden geselecteerd. Maak een unieke naam waarmee duidelijk de verschillen tussen de plannen worden aangegeven. U kunt bijvoorbeeld **Windows Server** met *betalen per gebruik*-, *BYOL*-, *Geavanceerd*-en *Enter prise* -abonnementen invoeren.
 
 Selecteer **Maken**. Hiermee opent u de pagina **installatie plannen** .
 
@@ -139,9 +139,9 @@ U kunt uw klanten een **gratis proef versie** van één, drie of zes maanden aan
 
 U kunt elk plan ontwerpen dat zichtbaar is voor iedereen of alleen voor een vooraf geselecteerde doel groep. Lidmaatschappen in deze beperkte doel groep toewijzen met behulp van Azure-abonnement-Id's.
 
-**Openbaar** : uw abonnement kan worden gezien door iedereen.
+**Openbaar**: uw abonnement kan worden gezien door iedereen.
 
-**Persoonlijk** : Maak uw plan alleen zichtbaar voor een voorgeselecteerde doel groep. Nadat het is gepubliceerd als een persoonlijk abonnement, kunt u de doel groep bijwerken of wijzigen in openbaar. Nadat u een plan openbaar hebt gemaakt, moet het openbaar blijven. Het kan niet worden teruggezet naar een privé-abonnement.
+**Persoonlijk**: Maak uw plan alleen zichtbaar voor een voorgeselecteerde doel groep. Nadat het is gepubliceerd als een persoonlijk abonnement, kunt u de doel groep bijwerken of wijzigen in openbaar. Nadat u een plan openbaar hebt gemaakt, moet het openbaar blijven. Het kan niet worden teruggezet naar een privé-abonnement.
 
 Wijs de doel groep toe die toegang heeft tot dit privé plan met behulp van de **Azure-abonnements-id** s. U kunt eventueel een **Beschrijving** toevoegen van elk Azure-abonnements-id dat u toewijst. U kunt Maxi maal 10 abonnements-Id's hand matig of Maxi maal 20.000 toevoegen als u een CSV-werk blad importeert. Azure-abonnements-Id's worden weer gegeven als GUID'S en alle letters moeten kleine letters zijn.
 
@@ -191,7 +191,7 @@ Het genereren van een virtuele machine definieert de virtuele hardware die wordt
 
 1. Wanneer u een nieuwe aanbieding maakt, selecteert u een **generatie type** en voert u de aangevraagde gegevens in:
 
-    :::image type="content" source="./media/create-vm/azure-vm-generations-image-details-1.png" alt-text="Een weer gave van de vervolg keuzelijst generatie.":::
+    :::image type="content" source="./media/create-vm/azure-vm-generations-image-details-1.png" alt-text="Een weer gave van de detail sectie generatie in het partner centrum.":::
 
 2. Als u nog een generatie aan een plan wilt toevoegen, selecteert u **generatie toevoegen**...
 
@@ -203,9 +203,7 @@ Het genereren van een virtuele machine definieert de virtuele hardware die wordt
 
 <!--    The **Generation ID** you choose will be visible to customers in places such as product URLs and ARM templates (if applicable). Use only lowercase, alphanumeric characters, dashes, or underscores; it cannot be modified once published.
 -->
-3. Bewerk de gegevens op deze pagina met **technische configuratie** om een bestaande virtuele machine bij te werken die al een generatie 1 heeft gepubliceerd:
-
-    :::image type="content" source="./media/create-vm/azure-vm-generations-updating.png" alt-text="Een weer gave van de pagina technische configuratie plannen.":::
+3. Bewerk de gegevens op de pagina **technische configuratie** om een bestaande virtuele machine bij te werken die al een generatie 1 heeft gepubliceerd.
 
 Zie [ondersteuning voor virtuele machines van](../virtual-machines/generation-2.md)de tweede generatie op Azure voor meer informatie over de verschillen tussen de mogelijkheden van de eerste en tweede generatie.
 
@@ -215,10 +213,10 @@ Geef een schijf versie en de SAS-URI (Shared Access Signature) voor de installat
 
 Deze twee vereiste velden worden weer gegeven in de vorige afbeelding hierboven:
 
-- **Schijf versie** : de versie van de installatie kopie die u opgeeft.
+- **Schijf versie**: de versie van de installatie kopie die u opgeeft.
 - **VHD-koppeling** van het besturings systeem: de locatie in uw Azure Storage-account voor de VHD van het virtuele besturingssysteem. Zie voor meer informatie over het ophalen van een SAS-URI [de gedeelde toegangs handtekening-URI voor uw VM-installatie kopie ophalen](azure-vm-get-sas-uri.md).
 
-Gegevens schijven (Selecteer **gegevens schijf toevoegen (Maxi maal 16)** ) zijn ook url's voor gedeelde Access-hand tekeningen voor VHD die zijn opgeslagen in hun Azure-opslag accounts. Voeg slechts één afbeelding per inzending toe aan een plan.
+Gegevens schijven (Selecteer **gegevens schijf toevoegen (Maxi maal 16)**) zijn ook url's voor gedeelde Access-hand tekeningen voor VHD die zijn opgeslagen in hun Azure-opslag accounts. Voeg slechts één afbeelding per inzending toe aan een plan.
 
 Ongeacht welk besturings systeem u gebruikt, voegt u alleen het minimum aantal gegevens schijven toe dat voor de oplossing nodig is. Tijdens de implementatie kunnen klanten geen schijven verwijderen die deel uitmaken van een installatie kopie, maar ze mogen altijd schijven toevoegen tijdens of na de implementatie.
 
@@ -226,4 +224,4 @@ Selecteer **concept opslaan** en selecteer vervolgens **← plan Overview** in d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Door de Csp's door verkopen](azure-vm-create-resell-csp.md)
+- [Doorverkopen via CSP's](azure-vm-create-resell-csp.md)

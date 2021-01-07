@@ -3,16 +3,16 @@ title: Uitvoer in sjablonen
 description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 9e4ac134e9c1864bca8dd56c3a6e2311d0328d7d
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f8f13b6caf063cea79dc71775fb936f406a3ee6c
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934727"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964011"
 ---
 # <a name="outputs-in-arm-templates"></a>Uitvoer in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon (ARM-sjabloon). U gebruikt uitvoer wanneer u waarden van de geïmplementeerde resources moet retour neren.
+In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon (ARM-sjabloon). U gebruikt `outputs` Wanneer u waarden van de geïmplementeerde resources moet retour neren.
 
 De indeling van elke uitvoer waarde moet overeenkomen met een van de [gegevens typen](template-syntax.md#data-types).
 
@@ -31,7 +31,7 @@ In het volgende voor beeld ziet u hoe u de resource-ID voor een openbaar IP-adre
 
 ## <a name="conditional-output"></a>Voorwaardelijke uitvoer
 
-In de sectie outputs kunt u voorwaardelijk een waarde Retour neren. Normaal gesp roken gebruikt u de voor waarde in de uitvoer wanneer u een resource [voorwaardelijk hebt geïmplementeerd](conditional-resource-deployment.md) . In het volgende voor beeld ziet u hoe u de resource-ID voor een openbaar IP-adres voorwaardelijk kunt retour neren op basis van het feit of er een nieuw pakket is geïmplementeerd:
+In de `outputs` sectie kunt u voorwaardelijk een waarde Retour neren. Normaal gesp roken gebruikt u `condition` in de `outputs` Wanneer u een resource [voorwaardelijk hebt geïmplementeerd](conditional-resource-deployment.md) . In het volgende voor beeld ziet u hoe u de resource-ID voor een openbaar IP-adres voorwaardelijk kunt retour neren op basis van het feit of er een nieuw pakket is geïmplementeerd:
 
 ```json
 "outputs": {

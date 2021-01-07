@@ -10,29 +10,30 @@ ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: e017fac551e3122cc6586b32423ff166462ccad8
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 158a5e5f859749ec2ca20bfa4783fe32cc17ee0e
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513332"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964606"
 ---
 # <a name="introduction-to-computer-vision-spatial-analysis"></a>Inleiding tot Computer Vision ruimtelijke analyse
 
-Computer Vision ruimtelijke analyse is een nieuwe functie van Azure Cognitive Services Computer Vision waarmee organisaties de waarde van hun fysieke ruimten kunnen maximaliseren door te zien wat de bewegingen en aanwezigheid van mensen binnen een bepaald gebied zijn. Zo kunt u video opnemen van CCTV of surveillance camera's, AI-vaardig heden uitvoeren om inzichten uit de video stromen te halen en gebeurtenissen te genereren die door andere systemen moeten worden gebruikt. Met de invoer van een camera stroom kan een AI-vaardigheid bijvoorbeeld het aantal mensen tellen dat een ruimte inneemt of de naleving van maat regelen met sociale distancing-richt lijnen naleeft.
+Computer Vision ruimtelijke analyse is een nieuwe functie van Azure Cognitive Services Computer Vision waarmee organisaties de waarde van hun fysieke ruimten kunnen maximaliseren door te zien wat de bewegingen en aanwezigheid van mensen binnen een bepaald gebied zijn. Zo kunt u video opnemen van CCTV of surveillance camera's, AI-bewerkingen uitvoeren om inzichten uit de videostreams op te halen en gebeurtenissen te genereren die door andere systemen moeten worden gebruikt. Met invoer uit een camera stroom kan een AI-bewerking het aantal mensen dat een ruimte binnenkomt, tellen of de naleving van het gezichts masker en de distancing-richt lijnen meten.
 
 ## <a name="the-basics-of-spatial-analysis"></a>De basis beginselen van ruimtelijke analyse
 
-Vandaag de kern vaardig heden van ruimtelijke analyse zijn gebouwd op een pijp lijn die video opneemt, mensen in de video detecteert en de mensen bijhoudt wanneer ze in de loop van de tijd worden verplaatst en gebeurtenissen worden gegenereerd als mensen communiceren met interessante regio's.
+Vandaag de kern bewerkingen van ruimtelijke analyse zijn gebaseerd op een pijp lijn die video opneemt, mensen in de video detecteert en de mensen bijhoudt wanneer ze in de loop van de tijd worden verplaatst en gebeurtenissen worden gegenereerd als mensen communiceren met interessante regio's.
 
 ## <a name="spatial-analysis-terms"></a>Voor waarden voor ruimtelijke analyse
 
-| Term | Definitie |
+| Termijn | Definitie |
 |------|------------|
 | Detectie van personen | Dit onderdeel beantwoordt de vraag "waar bevinden zich de mensen in deze afbeelding"? Er wordt gezocht naar mensen in een installatie kopie en er wordt een omsluitend kader door gegeven met de locatie van elke persoon naar het onderdeel voor het bijhouden van personen. |
-| Bijhouden van personen | Met dit onderdeel worden de detecties van mensen in de loop van de tijd verbonden, omdat de mensen zich voor een camera bewegen. Er wordt gebruikgemaakt van tijdelijke logica over hoe mensen doorgaans verplaatsen en basis informatie over het algehele uiterlijk van de mensen om dit te doen. Het is niet mogelijk om personen op meerdere camera's bij te houden of iemand te identificeren die meer dan ongeveer een minuut is verdwenen. Het bijhouden van personen gebruikt geen biometrische markeringen zoals gezichts herkenning of Gait tracking. |
-| Interesse gebied | Dit is een zone of regel die is gedefinieerd in de video invoeren als onderdeel van de configuratie. Wanneer een persoon communiceert met de regio van de video, genereert het systeem een gebeurtenis. Voor de PersonCrossingLine-vaardigheid wordt bijvoorbeeld een regel gedefinieerd in de video. Wanneer een persoon die lijn bijsnijdt, wordt een gebeurtenis gegenereerd. |
-| Gebeurtenis | Een gebeurtenis is de primaire uitvoer van ruimtelijke analyse. Elke vaardigheid verzendt regel matig een specifieke gebeurtenis (bijvoorbeeld eenmaal per minuut) of wanneer een specifieke trigger optreedt. De gebeurtenis bevat informatie over wat er is gebeurd in de invoer video, maar bevat geen afbeeldingen of video. De PeopleCount-vaardigheid kan bijvoorbeeld elke keer dat het aantal persoons wijzigingen (trigger) of één keer per minuut wordt uitgevoerd, een gebeurtenis verzenden met het bijgewerkte aantal. |
+| Bijhouden van personen | Met dit onderdeel worden de detecties van mensen in de loop van de tijd verbonden, omdat de mensen zich voor een camera bewegen. Er wordt gebruikgemaakt van tijdelijke logica over hoe mensen doorgaans verplaatsen en basis informatie over het algehele uiterlijk van de mensen om dit te doen. Er worden geen personen bijgehouden op meerdere camera's. Als een persoon het veld met de weer gave van een camera langer dan ongeveer een minuut bevindt en vervolgens de camera weergave weer inschakelt, wordt dit door het systeem als een nieuwe persoon beschouwd. Het bijhouden van personen identificeert geen unieke personen op verschillende camera's. Het maakt geen gebruik van gezichts herkenning of Gait tracking. |
+| Gezichts masker detectie | Dit onderdeel detecteert de locatie van het gezicht van een persoon in het weergave veld van de camera en identificeert de aanwezigheid van een Face-masker. Om dit te doen, scant de AI-bewerking afbeeldingen van video. Wanneer een gezicht wordt gedetecteerd, biedt de service een omsluitend kader rondom het gezicht. Met behulp van de mogelijkheden voor object detectie wordt de aanwezigheid van gezichts maskers in het selectie kader aangeduid. Bij Detectie van gezichts maskers is het niet mogelijk om één gezicht te onderscheiden van een ander gezicht, het voors pellen of classificeren van gezichts kenmerken of het uitvoeren van gezichts herkenning. |
+| Interesse gebied | Dit is een zone of regel die is gedefinieerd in de video invoeren als onderdeel van de configuratie. Wanneer een persoon communiceert met de regio van de video, genereert het systeem een gebeurtenis. Voor de bewerking PersonCrossingLine is bijvoorbeeld een regel gedefinieerd in de video. Wanneer een persoon die lijn bijsnijdt, wordt een gebeurtenis gegenereerd. |
+| Gebeurtenis | Een gebeurtenis is de primaire uitvoer van ruimtelijke analyse. Elke bewerking verzendt periodiek een specifieke gebeurtenis (bijvoorbeeld eenmaal per minuut) of wanneer een specifieke trigger optreedt. De gebeurtenis bevat informatie over wat er is gebeurd in de invoer video, maar bevat geen afbeeldingen of video. De bewerking PeopleCount kan bijvoorbeeld een gebeurtenis met het bijgewerkte aantal genereren elke keer dat het aantal persoons wijzigingen (trigger) of één keer per minuut (periodiek) wordt uitgevoerd. |
 
 ## <a name="example-use-cases-for-spatial-analysis"></a>Voor beelden van use cases voor ruimtelijke analyse
 
@@ -43,6 +44,8 @@ Hieronder ziet u enkele voor beelden van gevallen waarin we de ruimtelijke analy
 Inkoop **analyse** : een boodschappen archief maakt gebruik van camera's die op product schermen worden weer gegeven om de impact van de merchandising wijzigingen in het opslag verkeer te meten. Met het systeem kan de Store Manager bepalen welke nieuwe producten het meest worden gewijzigd in engagement.
 
 **Wachtrij beheer** : camera's die zijn opgenomen in wacht rijen voor uitchecken bieden waarschuwingen aan managers wanneer de wacht tijd te lang duurt, waardoor ze meer regels kunnen openen. Historische gegevens over het afbreken van de wachtrij bieden inzicht in het gedrag van de consument.
+
+**Naleving van gezichts masker** : in retail winkels kunnen camera's worden gebruikt die verwijzen naar de Store-voor waarden om te controleren of klanten die in de Store worden onderzocht, gezichts maskers hebben om de veiligheid te garanderen en statistische gegevens te analyseren om inzicht te krijgen in trends in het masker gebruik. 
 
 **Buil ding & Analysis** : een kantoor gebouw maakt gebruik van camera's die zijn gericht op ingangen op basis van belang rijke ruimten om Footfall te meten en hoe mensen de werk plek gebruiken. Met Insights kan de bouw Manager service en lay-out aanpassen om inzittenden beter te kunnen bedienen.
 

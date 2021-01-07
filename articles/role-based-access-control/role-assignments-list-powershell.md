@@ -14,16 +14,16 @@ ms.workload: identity
 ms.date: 07/28/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 53f31bca59bf316b6664a6c9daec886c84c1b072
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 980e9f1ffd453a070dde72f8c7ca34c7ef08f948
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648341"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964351"
 ---
 # <a name="list-azure-role-assignments-using-azure-powershell"></a>Toewijzingen van Azure-roltoewijzingen weer geven met Azure PowerShell
 
-[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] In dit artikel wordt beschreven hoe u roltoewijzingen met Azure PowerShell kunt weer geven.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control/definition-list.md)] In dit artikel wordt beschreven hoe u roltoewijzingen met Azure PowerShell kunt weer geven.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 

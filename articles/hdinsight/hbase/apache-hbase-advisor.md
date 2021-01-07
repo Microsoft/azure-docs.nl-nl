@@ -8,22 +8,22 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/03/2021
-ms.openlocfilehash: 36d40215f759190cc9e6c6e3f4918dcbc384f94f
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 73af7e2a1920e6cfdad9245d965908255ef95a1f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97893274"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964589"
 ---
 # <a name="apache-hbase-advisories-in-azure-hdinsight"></a>Apache HBase-advies in azure HDInsight
 
-In dit artikel worden verschillende adviezen beschreven die u helpen bij het optimaliseren van Apache HBase-prestaties in azure HDInsight. 
+In dit artikel worden verschillende adviezen beschreven om u te helpen bij het optimaliseren van de Apache HBase-prestaties in azure HDInsight. 
 
 ## <a name="optimize-hbase-to-read-most-recently-written-data"></a>HBase optimaliseren om meest recent geschreven gegevens te lezen
 
-Wanneer u Apache HBase gebruikt in azure HDInsight, kunt u de configuratie van HBase optimaliseren voor het scenario waarin uw toepassing de meest recent geschreven gegevens leest. Voor hoge prestaties is het optimaal dat HBase Lees bewerkingen worden uitgevoerd vanaf geheugen opslag, in plaats van de externe opslag.
+Als uw usecase de meest recent geschreven gegevens van HBase moet lezen, kan dit advies u helpen. Voor hoge prestaties is het optimaal dat HBase Lees bewerkingen worden uitgevoerd vanaf geheugen opslag, in plaats van de externe opslag.
 
-Het query advies geeft aan dat voor een bepaalde kolom familie in een tabel > 75% Lees bewerkingen heeft die worden aangeboden vanuit geheugen opslag. Deze indicator geeft aan dat zelfs als er een leegmaak bewerking plaatsvindt op de geheugen opslag, het recente bestand moet worden geopend en dat in de cache moet worden opgeslagen. De gegevens worden eerst geschreven om te geheugen opslag het systeem toegang krijgt tot de recente gegevens. Er is een kans dat de interne HBase Flusher-threads detecteren dat een bepaalde regio 128M (standaard) grootte heeft bereikt en een flush kan activeren. Dit scenario treedt op als zelfs de meest recente gegevens die zijn geschreven toen de geheugen opslag zich in de grootte bevond. Daarom kan een later gelezen van die recente records een bestand lezen in plaats van geheugen opslag. Daarom is het raadzaam om te optimaliseren dat zelfs recente gegevens die onlangs zijn leeg gemaakt, zich in de cache kunnen bevinden.
+Het query advies geeft aan dat voor een bepaalde kolom familie in een tabel > 75% Lees bewerkingen wordt uitgevoerd vanuit geheugen opslag. Deze indicator geeft aan dat zelfs als er een leegmaak bewerking plaatsvindt op de geheugen opslag, het recente bestand moet worden geopend en dat in de cache moet worden opgeslagen. De gegevens worden eerst geschreven om te geheugen opslag het systeem toegang krijgt tot de recente gegevens. Er is een kans dat de interne HBase Flusher-threads detecteren dat een bepaalde regio 128M (standaard) grootte heeft bereikt en een flush kan activeren. Dit scenario treedt op als zelfs de meest recente gegevens die zijn geschreven toen de geheugen opslag zich in de grootte bevond. Daarom kan een later gelezen van die recente records een bestand lezen in plaats van geheugen opslag. Daarom is het raadzaam om te optimaliseren dat zelfs recente gegevens die onlangs zijn leeg gemaakt, zich in de cache kunnen bevinden.
 
 Als u de recente gegevens in de cache wilt optimaliseren, kunt u de volgende configuratie-instellingen overwegen:
 
@@ -33,9 +33,9 @@ Als u de recente gegevens in de cache wilt optimaliseren, kunt u de volgende con
 
 3. Als u stap 2 en compactionThreshold hebt ingesteld, gaat u `hbase.hstore.compaction.max` naar een hogere waarde bijvoorbeeld `100` en verhoogt u ook de waarde voor de configuratie `hbase.hstore.blockingStoreFiles` naar een hogere waarde bijvoorbeeld `300` .
 
-4. Als u zeker weet dat u alleen in de recente gegevens moet lezen, stelt u `hbase.rs.cachecompactedblocksonwrite` configuratie in **op aan**. Deze configuratie vertelt het systeem, zelfs als er een compressie plaatsvindt, blijven de gegevens in de cache. De configuraties kunnen ook op familie niveau worden ingesteld. 
+4. Als u zeker weet dat u alleen de recente gegevens moet lezen, stelt u de `hbase.rs.cachecompactedblocksonwrite` configuratie in **op aan**. Deze configuratie vertelt het systeem, zelfs als er een compressie plaatsvindt, blijven de gegevens in de cache. De configuraties kunnen ook op familie niveau worden ingesteld. 
 
-   Voer in de HBase-shell de volgende opdracht uit:
+   Voer in de HBase-shell de volgende opdracht uit om configuratie in te stellen `hbase.rs.cachecompactedblocksonwrite` :
    
    ```
    alter '<TableName>', {NAME => '<FamilyName>', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '300'}}
@@ -43,15 +43,15 @@ Als u de recente gegevens in de cache wilt optimaliseren, kunt u de volgende con
 
 5. Blok cache kan worden uitgeschakeld voor een bepaalde familie in een tabel. Zorg ervoor dat deze is **ingeschakeld voor** families met de meest recente gegevens Lees bewerkingen. Blok cache is standaard ingeschakeld voor alle families in een tabel. Als u de blok cache voor een familie hebt uitgeschakeld en deze wilt inschakelen, gebruikt u de opdracht ALTER vanuit de hbase-shell.
 
-   Met deze configuraties kunt u ervoor zorgen dat de gegevens in de cache worden opgeslagen en dat de recente gegevens geen compressie ondergaan. Als er in uw scenario een TTL mogelijk is, kunt u overwegen om een op tijd gelaagde compressie te gebruiken. Zie voor meer informatie [Apache HBase-referentie gids: datum gelaagde compressie](https://hbase.apache.org/book.html#ops.date.tiered)  
+   Deze configuraties helpen ervoor te zorgen dat de gegevens in de cache beschikbaar zijn en dat de recente gegevens geen compressie ondergaan. Als er in uw scenario een TTL mogelijk is, kunt u overwegen om een op tijd gelaagde compressie te gebruiken. Zie voor meer informatie [Apache HBase-referentie gids: datum gelaagde compressie](https://hbase.apache.org/book.html#ops.date.tiered)  
 
 ## <a name="optimize-the-flush-queue"></a>De flush wachtrij optimaliseren
 
-Het beveiligings advies voor het leegmaken van de wachtrij geeft aan dat HBase-leegmaak acties mogelijk moeten worden afgestemd. De flush-handlers zijn mogelijk niet hoog genoeg geconfigureerd.
+Dit advies geeft aan dat HBase-leegmaak acties mogelijk moeten worden afgestemd. De huidige configuratie voor flush handlers is mogelijk niet hoog genoeg om te verwerken met schrijf verkeer dat kan leiden tot vertraging van leegmaak acties.
 
 In de gebruikers interface van de regio server ziet u of de wachtrij voor leegmaken groter wordt dan 100. Deze drempel geeft aan dat de leegmaak acties langzaam zijn en dat u de configuratie mogelijk moet afstemmen   `hbase.hstore.flusher.count` . Standaard is de waarde 2. Zorg ervoor dat de maximale Flusher-threads niet groter worden dan 6.
 
-Kijk ook of u een aanbeveling hebt voor het afstemmen van regio's. Als dit het geval is, moet u eerst de regio afstemmen om te zien of deze sneller kan worden leeg gemaakt. Het afstemmen van de Flusher-threads kan helpen op verschillende manieren als 
+Kijk ook of u een aanbeveling hebt voor het afstemmen van regio's. Als we dit bevestigen, wordt u geadviseerd om de regio te verfijnen om te zien of deze sneller kan worden leeg gemaakt. Anders is het mogelijk om de Flusher-threads te verfijnen.
 
 ## <a name="region-count-tuning"></a>Aantal regio's afstemmen
 
@@ -65,7 +65,7 @@ Als een voorbeeld scenario:
 
 - Als deze instellingen zijn geïmplementeerd, is het aantal regio's 100. De 4-GB Global geheugen opslag is nu gesplitst over 100 regio's. Daarom krijgt elke regio in feite 40 MB voor geheugen opslag. Wanneer de schrijf bewerkingen uniform zijn, wordt het systeem regel matig leeg gemaakt en wordt de kleinste grootte van de volg orde < 40 MB. Het kan zijn dat veel Flusher-threads de flush snelheid kunnen verhogen `hbase.hstore.flusher.count` .
 
-Het advies houdt in dat het een goed idee is om het aantal regio's per server, de heapgrootte en de grootte van de algemene geheugen opslag, samen met de flush-threads te verfijnen, zodat deze updates die worden geblokkeerd, kunnen worden vermeden.
+Het advies houdt in dat het een goed idee is om het aantal regio's per server, de Heap-grootte en de algemene configuratie van de geheugen opslag-grootte te controleren, samen met het afstemmen van flush-threads om te voor komen dat updates worden geblokkeerd.
 
 ## <a name="compaction-queue-tuning"></a>Afstemming van de verdichtings wachtrij
 

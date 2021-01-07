@@ -3,12 +3,12 @@ title: Onderliggende resources in sjablonen
 description: Hierin wordt beschreven hoe u de naam en het type instelt voor onderliggende resources in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 408914fd309676da36904a364f905a8ee809d648
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: a950d72751b829c0a2aa3ba5ca27316a0544d9cc
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934302"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963909"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Naam en type voor onderliggende resources instellen
 
@@ -137,5 +137,4 @@ In het volgende voor beeld ziet u een virtueel netwerk en een subnet dat beide z
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over het maken van arm-sjablonen.
-
 * Zie de [functie Reference](template-functions-resource.md#reference)voor meer informatie over de indeling van de resource naam bij het verwijzen naar de resource.

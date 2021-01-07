@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 12/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 06a9a955e8a963f94b1885abf5a920cb96c01940
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: adb3691625d6cdde03c803480ae948bb1911cc7d
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007447"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964368"
 ---
-# <a name="list-azure-role-assignments-using-the-azure-portal"></a>Azure-roltoewijzingen weer geven met behulp van de Azure Portal
+# <a name="list-azure-role-assignments-using-the-azure-portal"></a>Azure-roltoewijzingen vermelden met behulp van Azure Portal
 
-[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] In dit artikel wordt beschreven hoe u roltoewijzingen kunt weer geven met behulp van de Azure Portal.
+[!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control/definition-list.md)] In dit artikel wordt beschreven hoe u roltoewijzingen kunt weer geven met behulp van de Azure Portal.
 
 > [!NOTE]
 > Als uw organisatie uitbestede beheer functies heeft voor een service provider die gebruikmaakt van [Azure delegated resource management](../lighthouse/concepts/azure-delegated-resource-management.md), worden roltoewijzingen die door die service provider worden toegestaan, hier niet weer gegeven.
@@ -83,7 +83,7 @@ Als u de toegang wilt weer geven voor een gebruiker, groep, Service-Principal of
 
 1. Klik op het tabblad **Toegang controleren**.
 
-    ![Toegangs beheer van resource groep-tabblad toegang controleren](./media/role-assignments-list-portal/rg-access-control-check-access.png)
+    ![Toegangsbeheer voor resourcegroep - Tabblad Toegang controleren](./media/role-assignments-list-portal/rg-access-control-check-access.png)
 
 1. Selecteer in de lijst **zoeken** de gebruikers-, groep-, Service-Principal of beheerde identiteit waarvoor u de toegang wilt controleren.
 
@@ -93,11 +93,11 @@ Als u de toegang wilt weer geven voor een gebruiker, groep, Service-Principal of
 
 1. Klik op de beveiligings-principal om het deelvenster **Toewijzingen** te openen.
 
-    In dit deel venster ziet u de toegang voor de geselecteerde beveiligingsprincipal op dit bereik en worden deze items overgenomen in dit bereik. Toewijzingen in onderliggende bereiken worden niet weer gegeven. U ziet de volgende toewijzingen:
+    In dit deelvenster ziet u de toegang voor de geselecteerde beveiligingsprincipal op dit bereik en de toegang die is overgenomen in dit bereik. Toewijzingen op onderliggende bereiken worden niet vermeld. U ziet de volgende toewijzingen:
 
     - Roltoewijzingen die zijn toegevoegd met Azure RBAC.
-    - Weiger toewijzingen die zijn toegevoegd met Azure blauw drukken of door Azure beheerde apps.
-    - Klassieke service beheerder of Co-Administrator toewijzingen voor klassieke implementaties. 
+    - Weigeringstoewijzingen die zijn toegevoegd met behulp van Azure Blueprints of beheerde Azure-apps.
+    - Toewijzingen voor een Klassieke servicebeheerder of Co-beheerder voor klassieke implementaties. 
 
     ![Deelvenster Toewijzingen](./media/shared/rg-check-access-assignments-user.png)
 
@@ -121,7 +121,7 @@ U kunt roltoewijzingen voor door het systeem toegewezen en door de gebruiker toe
 
 1. Als u het abonnement wilt wijzigen, klikt u op de lijst met **abonnementen** .
 
-### <a name="user-assigned-managed-identity"></a>Door een gebruiker toegewezen beheerde identiteit
+### <a name="user-assigned-managed-identity"></a>Door de gebruiker toegewezen beheerde identiteit
 
 1. Open een door de gebruiker toegewezen beheerde identiteit in het Azure Portal.
 

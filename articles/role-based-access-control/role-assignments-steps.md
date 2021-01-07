@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
-ms.openlocfilehash: 56b6638462acaf43b6353787495e5b7993acb413
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 565b84603a14452dd2ec49f8cf61da128503bc03
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648273"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964249"
 ---
 # <a name="steps-to-add-a-role-assignment"></a>Stappen om een roltoewijzing toe te voegen
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] In dit artikel worden de stappen op hoog niveau beschreven voor het toevoegen van een roltoewijzing met behulp van de [Azure Portal](role-assignments-portal.md), [Azure POWERSHELL](role-assignments-powershell.md), [Azure cli](role-assignments-cli.md)of de [rest API](role-assignments-rest.md).
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel worden de stappen op hoog niveau beschreven voor het toevoegen van een roltoewijzing met behulp van de [Azure Portal](role-assignments-portal.md), [Azure POWERSHELL](role-assignments-powershell.md), [Azure cli](role-assignments-cli.md)of de [rest API](role-assignments-rest.md).
 
 ## <a name="step-1-determine-who-needs-access"></a>Stap 1: bepalen wie toegang moet hebben
 

@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 072abffcc74b8b060d98c07d1f310413c7b323ef
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: fc0f148da518c718dafaab082f9598ccd4372a1f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954937"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963807"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -140,15 +140,15 @@ Gebruik de volgende procedure om actie groepen te maken:
             Bijvoorbeeld:
             1) Waarschuwing 1 met 3 configuratie-items: A, B, C-worden drie werk items gemaakt.
             2) Waarschuwing 2 met 1 configuratie-item: A-maakt 1 werk item.
-
-        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** uitschakelt, wordt in ITSM-connector één werk item voor elke waarschuwings regel gemaakt en toegevoegd aan alle beïnvloede configuratie-items. Er wordt een nieuw werk item gemaakt als de vorige taak is gesloten.
-        >[!NOTE]
+       >[!NOTE]
         > In dit geval worden met een deel van de geactiveerde waarschuwing geen nieuwe werk items gegenereerd in het ITSM-hulp programma.
 
-            For example:
-            1) Alert 1 with 3 Configuration Items: A, B, C - will create 1 work item.
-            2) Alert 2 for the same alert rule as phase 1 with 1 Configuration Item: D - will be merged to the work item in phase 1.
-            3) Alert 3 for a different alert rule with 1 Configuration Item: E - will create 1 work item.
+        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** uitschakelt, wordt in ITSM-connector één werk item voor elke waarschuwings regel gemaakt en toegevoegd aan alle beïnvloede configuratie-items. Er wordt een nieuw werk item gemaakt als de vorige taak is gesloten.
+
+            Bijvoorbeeld:
+             1) Waarschuwing 1 met 3 configuratie-items: A, B, C-maakt 1 werk item.
+             2) Waarschuwing 2 voor dezelfde waarschuwings regel als fase 1 met 1 configuratie-item: D-wordt samengevoegd met het werk item in fase 1.
+             3) Waarschuwing 3 voor een andere waarschuwings regel met 1 configuratie-item: E-maakt 1 werk item.
 
        ![Scherm opname van het ITSM-incident venster.](media/itsmc-overview/itsm-action-configuration.png)
 

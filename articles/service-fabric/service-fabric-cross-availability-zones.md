@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 1217ecba7a5fcb3c0fc95f505e7ca07fc76129b2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f729c00d3b78631a32013ec9453302584cecbd16
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97930817"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962428"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -344,7 +344,7 @@ De volledige voorbeeld sjabloon is [hier](https://github.com/Azure-Samples/servi
 Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de volgende drie waarden in de resource van de virtuele-machine schaalset opgeven.
 
 * De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
-* De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True.
+* De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
 * De derde waarde is "zoneBalance" en is optioneel, waardoor strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. Meer informatie over [zoneBalancing](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
 * De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
 

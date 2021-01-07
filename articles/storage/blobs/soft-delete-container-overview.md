@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/25/2020
+ms.date: 01/06/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 1ebfa137357e60a1f462ef90c6430cbf0cb5b968
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.custom: references_regions
+ms.openlocfilehash: 85d880966c4c3864206c7e92256eb8e705812f20
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746598"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962173"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
@@ -53,11 +53,9 @@ Versie 2019-12-12 en hoger van de Azure Storage REST API ondersteunt het voorlop
 
 De container soft delete is beschikbaar voor de volgende typen opslag accounts:
 
-- V2-opslag accounts voor algemeen gebruik
+- Opslag accounts voor algemeen gebruik v2 en v1
 - Blob Storage-accounts blok keren
 - Blob Storage-accounts
-
-Als uw opslag account een algemeen v1-account is, gebruikt u de Azure Portal om te upgraden naar een v2-account voor algemeen gebruik. Zie [overzicht van Azure Storage-account](../common/storage-account-overview.md)voor meer informatie over opslag accounts.
 
 Opslag accounts met een hiërarchische naam ruimte die is ingeschakeld voor gebruik met Azure Data Lake Storage Gen2 worden ook ondersteund.
 

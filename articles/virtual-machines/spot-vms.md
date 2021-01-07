@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: b8e5c6b6b755134772cc8eaea3dab3af7f5346c9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e1666b7e74ceefd7e7e4fe6e499667b09efa0ac7
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963360"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963790"
 ---
 # <a name="use-spot-vms-in-azure"></a>Gebruik van een spot Vm's in azure
 
@@ -58,7 +58,7 @@ Spot-Vm's kunnen worden geïmplementeerd in elke regio, met uitzonde ring van Mi
 De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-details/) worden momenteel ondersteund:
 
 -   Enterprise Agreement
--   Betalen per gebruik
+-   Betalen naar gebruik
 -   Gesponsorde
 - Neem contact op met uw partner voor Cloud service provider (CSP)
 
@@ -81,7 +81,7 @@ U kunt historische prijzen en verwijderings tarieven weer geven per grootte in e
 
 **Tabel**:
 
-:::image type="content" source="./media/spot-table.png" alt-text="Scherm afbeelding van de regio opties met het verschil in prijs-en verwijderings tarieven als diagram.":::
+:::image type="content" source="./media/spot-table.png" alt-text="Scherm afbeelding van de regio opties met het verschil in prijs-en verwijderings tarieven als een tabel.":::
 
 
 
@@ -110,6 +110,11 @@ U kunt historische prijzen en verwijderings tarieven weer geven per grootte in e
 **V:** Waar kan ik vragen plaatsen?
 
 **A:** U kunt uw vraag met `azure-spot` op [Q&A](/answers/topics/azure-spot.html)plaatsen en labelen. 
+
+
+**V:** Hoe kan ik de maximum prijs voor een steun-VM wijzigen?
+
+**A:** Voordat u de maximum prijs kunt wijzigen, moet u de toewijzing van de virtuele machine ongedaan maken. Vervolgens kunt u de maximum prijs wijzigen in de portal, vanuit de **configuratie** sectie voor de virtuele machine. 
 
 ## <a name="next-steps"></a>Volgende stappen
 Gebruik de [cli](./linux/spot-cli.md)-, [Portal](spot-portal.md)-, [arm-sjabloon](./linux/spot-template.md)of [Power shell](./windows/spot-powershell.md) voor het implementeren van spot-vm's.

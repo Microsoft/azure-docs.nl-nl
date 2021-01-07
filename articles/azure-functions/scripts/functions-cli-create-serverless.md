@@ -6,16 +6,16 @@ ms.topic: sample
 ms.date: 07/03/2018
 ms.author: glenga
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e5fa6b5a25b07585e3c0ea07fb4a361ab82a9815
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 3a52d7ea8c940a33f4fbd2b9ad69f4f889615e7f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565089"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934336"
 ---
 # <a name="create-a-function-app-for-serverless-code-execution"></a>Een functie-app maken voor uitvoering van code zonder server 
 
-Met dit voorbeeldscript voor Azure Functions maakt u een functie-app die een container vormt voor uw functies. De functie-app wordt gemaakt met behulp van het [verbruiksabonnement](../functions-scale.md#consumption-plan), wat ideaal voor is gebeurtenisgestuurde workloads zonder server.
+Met dit voorbeeldscript voor Azure Functions maakt u een functie-app die een container vormt voor uw functies. De functie-app wordt gemaakt met behulp van het [verbruiksabonnement](../consumption-plan.md), wat ideaal voor is gebeurtenisgestuurde workloads zonder server.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -25,7 +25,7 @@ Met dit voorbeeldscript voor Azure Functions maakt u een functie-app die een con
 
 ## <a name="sample-script"></a>Voorbeeldscript
 
-Met dit script wordt een Azure Function-app gemaakt met behulp van het [Verbruiksabonnement](../functions-scale.md#consumption-plan).
+Met dit script wordt een Azure Function-app gemaakt met behulp van het [Verbruiksabonnement](../consumption-plan.md).
 
 [!code-azurecli-interactive[main](../../../cli_scripts/azure-functions/create-function-app-consumption/create-function-app-consumption.sh "Create an Azure Function on a Consumption plan")]
 

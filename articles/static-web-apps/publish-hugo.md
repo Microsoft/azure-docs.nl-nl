@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: 5f511a898b3b2964f954ba150b05f02486456dcf
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: e49a84f5ac507ac80481313c103701a88934083a
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171490"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97900770"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Hugo-site publiceren in Azure Static Web Apps Preview
 
@@ -77,7 +77,7 @@ Een Hugo-app maken met behulp van de Hugo-CLI (opdrachtregelinterface):
 
 U hebt een opslagplaats in GitHub nodig om verbinding te maken met Azure Static Web Apps. In de volgende stappen ziet u hoe u een opslagplaats maakt voor uw site.
 
-1. Maak in [https://github.com/new](https://github.com/new) een lege GitHub-opslagplaats (maak geen Leesmij-bestand) met de naam **statische-hugo-app** .
+1. Maak in [https://github.com/new](https://github.com/new) een lege GitHub-opslagplaats (maak geen Leesmij-bestand) met de naam **statische-hugo-app**.
 
 1. Voeg de GitHub-opslagplaats als externe locatie toe aan de lokale opslagplaats. Zorg ervoor dat u de tijdelijke aanduiding `<YOUR_USER_NAME>` in de volgende opdracht vervangt door uw GitHub-gebruikersnaam.
 
@@ -101,31 +101,31 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 1. Klik op **Een resource maken**
 1. Zoek **Static Web Apps**
 1. Klik op **Static Web Apps (preview)**
-1. Klik op **Maken** .
+1. Klik op **Maken**.
 
    :::image type="content" source="./media/publish-hugo/create-in-portal.png" alt-text="Een Azure Static Web Apps-resource maken in de portal":::
 
 1. Accepteer bij **Abonnement** het abonnement dat wordt vermeld, of selecteer een nieuw abonnement in de vervolgkeuzelijst.
 
-1. Selecteer in _Resourcegroep_ de optie **Nieuw** . Voer bij _Naam van nieuwe resourcegroep_ in: **statische-hugo-app** . Selecteer vervolgens **OK** .
+1. Selecteer in _Resourcegroep_ de optie **Nieuw**. Voer bij _Naam van nieuwe resourcegroep_ in: **statische-hugo-app**. Selecteer vervolgens **OK**.
 
-1. Voer vervolgens een naam in voor uw app in het vak **Naam** . Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `-`.
+1. Voer vervolgens een naam in voor uw app in het vak **Naam**. Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `-`.
 
 1. Selecteer voor _Regio_ een beschikbare regio dicht bij u in de buurt.
 
-1. Selecteer voor _SKU_ de optie **Gratis** .
+1. Selecteer voor _SKU_ de optie **Gratis**.
 
-   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Een Azure Static Web Apps-resource maken in de portal":::
+   :::image type="content" source="./media/publish-hugo/basic-app-details.png" alt-text="Ingevulde gegevens":::
 
-1. Klik op de knop **Aanmelden bij GitHub** .
+1. Klik op de knop **Aanmelden bij GitHub**.
 
 1. Selecteer de **Organisatie** waaronder u de opslagplaats hebt gemaakt.
 
-1. Selecteer de **statische-hugo-app** als de _Opslagplaats_ .
+1. Selecteer de **statische-hugo-app** als de _Opslagplaats_.
 
-1. Selecteer **hoofd** voor de _Vertakking_ .
+1. Selecteer **hoofd** voor de _Vertakking_.
 
-   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Een Azure Static Web Apps-resource maken in de portal":::
+   :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Voltooide GitHub-gegevens":::
 
 ### <a name="build"></a>Ontwikkelen
 
@@ -135,7 +135,7 @@ Vervolgens voegt u configuratie-instellingen toe die tijdens het bouwproces word
 
 1. Stel _App-locatie_ in op **/** .
 
-1. Stel _Locatie van app-artefact_ in op **openbaar** .
+1. Stel _Locatie van app-artefact_ in op **openbaar**.
 
    Een waarde voor _API-locatie_ is niet nodig omdat u momenteel geen API implementeert.
 
@@ -147,9 +147,9 @@ Vervolgens voegt u configuratie-instellingen toe die tijdens het bouwproces word
 
 1. Wacht totdat de GitHub-actie is voltooid.
 
-1. Klik in het _Overzichtsvenster_ van de Azure-portal met onlangs gemaakte Azure Static Web App-resources op de _URL_ -koppeling om de geïmplementeerde toepassing te openen.
+1. Klik in het _Overzichtsvenster_ van de Azure-portal met onlangs gemaakte Azure Static Web App-resources op de _URL_-koppeling om de geïmplementeerde toepassing te openen.
 
-   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Een Azure Static Web Apps-resource maken in de portal":::
+   :::image type="content" source="./media/publish-hugo/deployed-app.png" alt-text="Geïmplementeerde toepassing":::
 
 #### <a name="custom-hugo-version"></a>Aangepaste Hugo-versie
 
@@ -176,7 +176,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "api" # Api source code path - optional
-          app_artifact_location: "public" # Built app content directory - optional
+          output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
           HUGO_VERSION: 0.58.0

@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 14d0190a97c22a805065ceaf41dcd655b9e8182b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9a5cb463646762c262cc3c8e27123a768ef11d8
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87065291"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97914736"
 ---
 # <a name="tutorial---deploy-applications-to-a-windows-virtual-machine-in-azure-with-the-custom-script-extension"></a>Zelfstudie: Toepassingen implementeren op een virtuele Windows-machine in Azure met de aangepaste scriptextensie
 
@@ -39,7 +39,7 @@ U kunt de aangepaste scriptextensie gebruiken met virtuele Windows- en Linux-mac
 
 
 ## <a name="create-virtual-machine"></a>Virtuele machine maken
-Stel naam en wachtwoord van de beheerder in voor de VM met [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1):
+Stel naam en wachtwoord van de beheerder in voor de VM met [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&preserve-view=true):
 
 ```azurepowershell-interactive
 $cred = Get-Credential

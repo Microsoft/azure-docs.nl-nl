@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/05/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: cbae833c1b207669e35b467707f946e9bafe31d2
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.openlocfilehash: 077d200dcaf957f636acecebb441ff99a68eb96f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854941"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963584"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Een app integreren met een virtueel Azure-netwerk
 
@@ -130,6 +130,12 @@ In de gebruikers interface van het App Service plan VNet-integratie ziet u alle 
 
 * **Netwerk synchroniseren**: de bewerking netwerk synchroniseren wordt alleen gebruikt voor de gateway-afhankelijke VNet-integratie functie. Wanneer u een synchronisatie netwerk uitvoert, zorgt u ervoor dat uw certificaten en netwerk gegevens synchroon zijn. Als u de DNS van uw VNet toevoegt of wijzigt, moet u een synchronisatie netwerk bewerking uitvoeren. Met deze bewerking worden alle apps die gebruikmaken van dit VNet, opnieuw gestart. Deze bewerking werkt niet als u een app en een vnet gebruikt dat deel uitmaakt van verschillende abonnementen.
 * **Routes toevoegen**: door routes toe te voegen, wordt uitgaand verkeer naar uw VNet gestuurd.
+
+Het privé-IP-adres dat is toegewezen aan het exemplaar, wordt weer gegeven via de omgevings variabele, **WEBSITE_PRIVATE_IP**. De gebruikers interface van de kudu-console toont ook de lijst met omgevings variabelen die beschikbaar zijn voor de web-app. Dit IP-adres wordt toegewezen vanuit het adressen bereik van het geïntegreerde subnet. Voor regionale VNet-integratie is de waarde van WEBSITE_PRIVATE_IP een IP-adres van het bereik van het overgedragen subnet en voor de gateway vereiste VNet-integratie is de waarde een IP-adres van het bereik van de punt-naar-site-adressen groep die is geconfigureerd op de Virtual Network gateway. Dit is het IP-adres dat door de web-app wordt gebruikt om via de Virtual Network verbinding te maken met de resources. 
+
+> [!NOTE]
+> De waarde van WEBSITE_PRIVATE_IP is gebonden aan de wijziging. Het is echter een IP binnen het adres bereik van het subnet Integration of het punt-naar-site-adres bereik, zodat u toegang tot het hele adres bereik moet toestaan.
+>
 
 ### <a name="gateway-required-vnet-integration-routing"></a>Gateway-vereiste VNet-integratie routering
 De routes die in uw VNet zijn gedefinieerd, worden gebruikt voor het omleiden van verkeer naar uw VNet vanuit uw app. Als u extra uitgaand verkeer naar het VNet wilt verzenden, voegt u deze adres blokken hier toe. Deze functie werkt alleen met Gateway-vereiste VNet-integratie. Route tabellen hebben geen invloed op uw app-verkeer wanneer u Gateway-vereiste VNet-integratie gebruikt op de manier die met regionale VNet-integratie.

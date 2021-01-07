@@ -3,12 +3,12 @@ title: Het blauwdrukvoorbeeld voor PCI-DSS v3.2.1 implementeren
 description: Implementeer stappen voor het blauwdrukvoorbeeld voor Payment Card Industry Data Security Standard v3.2.1, inclusief de parametergegevens voor blauwdrukartefacten.
 ms.date: 08/19/2020
 ms.topic: sample
-ms.openlocfilehash: a7917f09e5e5ff898bd155f0961e5c9765b8d791
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0b1d635a073dc19e41a7ba73e130d6028daca99
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88649207"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955668"
 ---
 # <a name="deploy-the-pci-dss-v321-blueprint-sample"></a>Het blauwdrukvoorbeeld voor PCI-DSS v3.2.1 implementeren
 
@@ -93,7 +93,7 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 
 |Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
-|\[Preview\] PCI v3.2.1:2018-controles en implementatie van specifieke VM-extensies controleren ter ondersteuning van de controlevereisten|Beleidstoewijzing|Lijst met resourcetypen | Controleer diagnostische instelling voor geselecteerde resourcetypen Standaardwaarde is: alle resources zijn geselecteerd| 
+|PCI v3.2.1:2018|Beleidstoewijzing|Lijst met resourcetypen | Controleer diagnostische instelling voor geselecteerde resourcetypen Standaardwaarde is: alle resources zijn geselecteerd| 
 |Toegestane locaties|Beleidstoewijzing|Lijst met toegestane locaties|Lijst met toegestane locaties van datacentra waarin resources kunnen worden geïmplementeerd. Deze lijst kan worden aangepast aan gewenste Azure-locaties overal ter wereld. Selecteer de locaties die u wilt toestaan.| 
 |Toegestane locaties voor resourcegroepen|Beleidstoewijzing |Toegestane locatie |Met dit beleid kunt u de locaties beperken waarin uw organisatie resourcegroepen kan maken. Dit beleid wordt gebruikt om uw geografische nalevingsvereisten af te dwingen.| 
 |Controle op SQL-servers implementeren|Beleidstoewijzing|Retentieperiode in dagen|Gegevensretentie in aantal dagen. De standaardwaarde is 180, maar PCI vereist 365.| 

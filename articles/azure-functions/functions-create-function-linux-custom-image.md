@@ -5,12 +5,12 @@ ms.date: 12/2/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp, mvc, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
 zone_pivot_groups: programming-languages-set-functions-full
-ms.openlocfilehash: f270f74f97a9b9306d7b23dacec12c38f418dbd1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: fb85920b04e3cd457dc36d1ba1fd0f18dcd7abb6
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921830"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937056"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Een functie in Linux maken met een aangepaste container
 
@@ -20,7 +20,7 @@ In deze zelfstudie maakt en implementeert u uw code in Azure Functions als een a
 Azure Functions ondersteunt een taal of runtime met behulp van [aangepaste handlers](functions-custom-handlers.md). Voor sommige talen, zoals de R-programmeertaal die in deze zelfstudie wordt gebruikt, moet u de runtime of extra bibliotheken installeren als afhankelijkheden waarvoor het gebruik van een aangepaste container is vereist.
 ::: zone-end
 
-Om uw functiecode te implementeren in een aangepaste Linux-container is hosting met een [Premium-abonnement](functions-premium-plan.md#features) of een [Dedicated (App Service)-abonnement](functions-scale.md#app-service-plan) vereist. Bij het voltooien van deze zelfstudie worden er kosten ter hoogte van een paar Amerikaanse dollars in rekening gebracht op uw Azure-account. U kunt deze kosten minimaliseren door [resources op te schonen](#clean-up-resources) wanneer u klaar bent.
+Om uw functiecode te implementeren in een aangepaste Linux-container is hosting met een [Premium-abonnement](functions-premium-plan.md) of een [Dedicated (App Service)-abonnement](dedicated-plan.md) vereist. Bij het voltooien van deze zelfstudie worden er kosten ter hoogte van een paar Amerikaanse dollars in rekening gebracht op uw Azure-account. U kunt deze kosten minimaliseren door [resources op te schonen](#clean-up-resources) wanneer u klaar bent.
 
 U kunt ook een standaardcontainer van Azure App Service gebruiken, zoals wordt beschreven in [Create your first function hosted on Linux](./create-first-function-cli-csharp.md?pivots=programming-language-python) (Uw eerste functie maken die wordt gehost in Linux). Ondersteunde basisinstallatie kopieën voor Azure Functions vindt u in de [opslagplaats voor basisinstallatiekopieën van Azure Functions](https://hub.docker.com/_/microsoft-azure-functions-base).
 

@@ -9,19 +9,19 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 10/01/2020
-ms.openlocfilehash: a77f9c8f7e37d2c5a040a48b6bd96bef11d51f14
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 183d8b415ccb35d22dcc23ccf11d0707ad0778dd
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533477"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963652"
 ---
 # <a name="monitor-azure-machine-learning"></a>Azure Machine Learning bewaken
 
 Wanneer u belang rijke toepassingen en bedrijfs processen hebt die afhankelijk zijn van Azure-resources, wilt u deze resources controleren op hun Beschik baarheid, prestaties en werking. In dit artikel worden de bewakings gegevens beschreven die worden gegenereerd door Azure Machine Learning en hoe u deze gegevens kunt analyseren en er waarschuwingen op kunt volgen met behulp van Azure Monitor.
 
 > [!TIP]
-> De informatie in dit document is hoofd zakelijk bedoeld voor __beheerders__ , omdat hierin de bewaking voor de Azure machine learning-service en de bijbehorende Azure-Services wordt beschreven. Als u een __Data-wetenschapper__ of- __ontwikkelaar__ bent en informatie wilt bewaken die specifiek is voor uw *model training-uitvoeringen* , raadpleegt u de volgende documenten:
+> De informatie in dit document is hoofd zakelijk bedoeld voor __beheerders__, omdat hierin de bewaking voor de Azure machine learning-service en de bijbehorende Azure-Services wordt beschreven. Als u een __Data-wetenschapper__ of- __ontwikkelaar__ bent en informatie wilt bewaken die specifiek is voor uw *model training-uitvoeringen*, raadpleegt u de volgende documenten:
 >
 > * [Trainings uitvoeringen starten, controleren en annuleren](how-to-manage-runs.md)
 > * [Metrische gegevens registreren voor trainingsuitvoeringen](how-to-track-experiments.md)
@@ -91,6 +91,8 @@ Alle metrische gegevens voor Azure Machine Learning bevinden zich in de naam rui
 
 Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden ondersteund in azure monitor](../azure-monitor/platform/metrics-supported.md).
 
+> [!TIP]
+> Azure Monitor metrische gegevens zijn 90 dagen beschikbaar. Bij het maken van grafieken kan echter slechts 30 dagen worden gevisualiseerd. Als u bijvoorbeeld een periode van 90 dagen wilt visualiseren, moet u deze opsplitsen in drie grafieken van 30 dagen binnen de periode van 90 dagen.
 ### <a name="filtering-and-splitting"></a>Filteren en splitsen
 
 Voor metrische gegevens die dimensies ondersteunen, kunt u filters toep assen met behulp van een dimensie waarde. U kunt bijvoorbeeld **actieve kernen** filteren op een **cluster naam** van `cpu-cluster` . 
@@ -162,7 +164,7 @@ U krijgt toegang tot waarschuwingen voor Azure Machine Learning door **waarschuw
 
 De volgende tabel bevat algemene en aanbevolen waarschuwings regels voor metrische gegevens voor Azure Machine Learning:
 
-| Waarschuwingstype | Conditie | Beschrijving |
+| Waarschuwingstype | Voorwaarde | Beschrijving |
 |:---|:---|:---|
 | Modelimplementatie is mislukt | Aggregatie type: Total, operator: groter dan, drempel waarde: 0 | Wanneer een of meer model implementaties zijn mislukt |
 | Percentage quotum gebruik | Aggregatie type: Average, operator: groter dan, drempel waarde: 90| Wanneer het percentage van het quota gebruik groter is dan 90% |

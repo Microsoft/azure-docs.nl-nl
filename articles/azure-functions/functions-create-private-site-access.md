@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: 75e3886e31592b0672487bacd5ff2266e07e39cd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 766ad12daeb6d2763f7ed5fe026cd4a0021eaf33
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182497"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937039"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Zelfstudie: Toegang tot privésite van Azure Functions tot stand brengen
 
@@ -130,7 +130,7 @@ De eerste stap in deze zelfstudie is het maken van een nieuwe virtuele machine i
 
 ## <a name="create-an-azure-functions-app"></a>Een Azure Functions-app maken
 
-De volgende stap is het maken van een functie-app in Azure met behulp van het [Verbruiksabonnement](functions-scale.md#consumption-plan). Verderop in de zelfstudie implementeert u uw functiecode in deze resource.
+De volgende stap is het maken van een functie-app in Azure met behulp van het [Verbruiksabonnement](consumption-plan.md). Verderop in de zelfstudie implementeert u uw functiecode in deze resource.
 
 1. Kies in de portal **Toevoegen** bovenaan de resourcegroepweergave.
 1. Selecteer **Berekenen > Functie-app**
@@ -149,7 +149,7 @@ De volgende stap is het maken van een functie-app in Azure met behulp van het [V
 
     | Instelling      | Voorgestelde waarde  | Beschrijving      |
     | ------------ | ---------------- | ---------------- |
-    | _Opslagaccount_ | Wereldwijd unieke naam | Maak een opslagaccount die wordt gebruikt door uw functie-app. Namen van opslagaccounts moeten tussen 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten. U kunt ook een bestaand account gebruiken dat voldoet aan de [vereisten voor een opslagaccount](./functions-scale.md#storage-account-requirements). |
+    | _Opslagaccount_ | Wereldwijd unieke naam | Maak een opslagaccount die wordt gebruikt door uw functie-app. Namen van opslagaccounts moeten tussen 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten. U kunt ook een bestaand account gebruiken dat voldoet aan de [vereisten voor een opslagaccount](storage-considerations.md#storage-account-requirements). |
     | _Besturingssysteem_ | Voorkeurbesturingssysteem | Er wordt vooraf een besturingssysteem geselecteerd voor u op basis van de selectie van de runtimestack, maar u kunt de instelling wijzigen, indien nodig. |
     | _Plannen_ | Verbruik | Het [hostingabonnement](./functions-scale.md) bepaalt hoe de functie-app wordt geschaald en welke resources beschikbaar zijn voor elke instantie. |
 1. Selecteer **Beoordelen + maken** om de selecties van appconfiguratie te controleren.

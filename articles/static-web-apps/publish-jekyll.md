@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: e3bad12362358620d0f2dc105bb2820dfb691d00
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 673852f8f9aa81c838a7c1db68681bb9ee0b7e0b
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92000211"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862022"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Jekyll-site publiceren in Azure Static Web Apps Preview
 
@@ -118,7 +118,7 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Selecteer **hoofd** voor de _Vertakking_.
 
-    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Ingevulde gegevens":::
+    :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Voltooide GitHub-gegevens":::
 
 ### <a name="build"></a>Ontwikkelen
 
@@ -150,7 +150,7 @@ Vervolgens voegt u configuratie-instellingen toe die tijdens het bouwproces word
 
     ```yml
     - name: Set up Ruby
-      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      uses: ruby/setup-ruby@v1.59.1
       with:
         ruby-version: 2.6
     - name: Install dependencies
@@ -171,7 +171,7 @@ Vervolgens voegt u configuratie-instellingen toe die tijdens het bouwproces word
 
 1. Klik in het _overzichtsvenster_ in de Azure-portal op de _URL_-koppeling om de geïmplementeerde toepassing te openen.
 
-   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Ingevulde gegevens":::
+   :::image type="content" source="./media/publish-jekyll/deployed-app.png" alt-text="Geïmplementeerde toepassing":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

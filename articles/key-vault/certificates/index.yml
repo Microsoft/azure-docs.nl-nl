@@ -11,12 +11,12 @@ metadata:
   author: msmbaldwin
   ms.author: mbaldwin
   ms.date: 04/07/2020
-  ms.openlocfilehash: 5a716ad70a31342467eb0944b3e6d1f5d80d5166
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: c69a520e7f21698b71d682a4ee82411b6703ed15
+  ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "89000903"
+  ms.lasthandoff: 01/06/2021
+  ms.locfileid: "97935951"
 landingContent:
 - title: Certificaten
   linkLists:
@@ -66,10 +66,10 @@ landingContent:
       url: ../general/overview.md
     - text: Basisbegrippen
       url: ../general/basic-concepts.md
+    - text: Beveiligingsoverzicht
+      url: ../general/security-overview.md
     - text: Overzicht van voorlopig verwijderen
       url: ../general/soft-delete-overview.md
-    - text: Beveiligingsoverzicht
-      url: ../general/overview-security.md
 - title: Microsoft Learn
   linkLists:
   - linkListType: learn

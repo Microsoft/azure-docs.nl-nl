@@ -3,16 +3,16 @@ title: ISM-BEVEILIGING Australische overheid blauwdrukvoorbeeldoverzicht
 description: Overzicht van blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties van ISM-BEVEILIGING bekijken.
 ms.date: 09/11/2020
 ms.topic: sample
-ms.openlocfilehash: 4e6b1db0d2f4ecff13068c8e673f2237740ffec2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69f18c7a34bdf39ebbc2031b187d033c999165a9
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90038687"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955566"
 ---
 # <a name="overview-of-the-australian-government-ism-protected-blueprint-sample"></a>Overzicht van blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid
 
-ISM Governance-blauwdrukvoorbeeld biedt een set governancerichtlijnen met [Azure Policy](../../../policy/overview.md), dat bijdraagt aan ISM-BEVEILIGING-attestatie (versie van februari 2020). Met behulp van dit blauwdruk kunnen klanten een kernset beleidsregels implementeren voor elke Azure-architectuur waarvoor accreditatie of naleving van het ISM-framework is vereist. De sectie over toewijzing van beheeropties biedt meer informatie over de beleidsregels die in dit initiatief zijn opgenomen en hoe dit beleid kan bijdragen aan verschillende beheeropties die zijn gedefinieerd in het ISM-framework. Wanneer resources worden toegewezen aan een architectuur, worden deze op niet-naleving van toegewezen beleidsregels geëvalueerd door Azure Policy.
+ISM Governance-blauwdrukvoorbeeld biedt een set governancerichtlijnen met [Azure Policy](../../../policy/overview.md), dat bijdraagt aan ISM-BEVEILIGING-attestatie (versie van februari 2020). Met behulp van dit blauwdruk kunnen klanten een kernset beleidsregels implementeren voor elke Azure-architectuur waarvoor accreditatie of naleving van het ISM-framework is vereist. 
 
 ## <a name="control-mapping"></a>Toewijzing van beheeropties
 

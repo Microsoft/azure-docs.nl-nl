@@ -3,6 +3,8 @@
 - name: Overzicht
   href: overview.md
   items:
+    - name: Wat is nieuw?
+      href: release-notes.md
     - name: Architectuur voor de oplossing
       href: architecture.md
 - name: Snelstartgidsen

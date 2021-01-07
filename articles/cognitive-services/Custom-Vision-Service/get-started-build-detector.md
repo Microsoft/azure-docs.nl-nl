@@ -12,12 +12,12 @@ ms.date: 09/30/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: afbeeldingsherkenning, app voor afbeeldingsherkenning, Custom Vision
-ms.openlocfilehash: ab747ad5e7b9362e9c587741198a0191c032b124
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8274ddd0e492d1a27ebc1579fc6efdcc8cc84955
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018353"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97912981"
 ---
 # <a name="quickstart-build-an-object-detector-with-the-custom-vision-website"></a>Quickstart: Een objectdetector bouwen met de Custom Vision-website
 
@@ -100,6 +100,7 @@ Nadat de training is voltooid, worden de prestaties van het model berekend en we
 
 - **Precisie**: hiermee wordt de fractie correct geïdentificeerde classificaties aangegeven. Als het model bijvoorbeeld 100 afbeeldingen heeft geïdentificeerd als honden en 99 van de afbeeldingen zijn daadwerkelijk van honden, dan is de precisie 99%.
 - **Relevante overeenkomsten**: hiermee wordt de fractie feitelijke classificaties aangegeven dat correct is geïdentificeerd. Als er bijvoorbeeld daadwerkelijk 100 afbeeldingen van appels waren en het model er 80 als appels heeft geïdentificeerd, is de waarde voor relevante overeenkomsten 80%.
+- **Gemiddelde precisie** is de gemiddelde waarde van de gemiddelde precisie (AP). AP is het gebied onder de curve van precisie/relevante overeenkomsten (precisie die is uitgezet tegen relevante overeenkomsten voor elke gemaakte voorspelling).
 
 ![De trainingsresultaten tonen de algehele precisie en relevante overeenkomsten, en de gemiddelde precisie.](./media/get-started-build-detector/trained-performance.png)
 

@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Een model trainen in Python met geautomatiseerde ML'
-description: Zelfstudie over hoe u een machine learning-model traint in Python in Azure Synapse met Apache Spark en geautomatiseerde ML.
+title: 'Zelfstudie: Een model trainen in Python met geautomatiseerde machine learning'
+description: Zelfstudie over hoe u een machine learning-model traint in Python met Apache Spark en geautomatiseerde machine learning.
 services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
@@ -9,127 +9,124 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: abb7266d90171abc628739aa8f50f1760a32f68d
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: e547d047e8d736acbd1cdda5ffe3a78dbe8259f7
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093329"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901030"
 ---
-# <a name="tutorial-train-a-machine-learning-model-in-python-in-azure-synapse-with-apache-spark-and-automated-ml"></a>Zelfstudie: Een machine learning-model trainen in Python in Azure Synapse met Apache Spark en geautomatiseerde ML
+# <a name="tutorial-train-a-model-in-python-with-automated-machine-learning"></a>Zelfstudie: Een model trainen in Python met geautomatiseerde machine learning
 
 Azure Machine Learning is een cloudomgeving die u kunt gebruiken voor het trainen, implementeren, automatiseren, beheren en volgen van machine learning-modellen. 
 
-In deze zelfstudie gebruikt u [geautomatiseerde machine learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) in Azure Machine Learning om een regressiemodel te maken om de ritprijzen van NYC-taxi’s te voorspellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
+In deze zelfstudie gebruikt u [geautomatiseerde machine learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) in Azure Machine Learning om een regressiemodel te maken om de ritprijzen van taxi’s te voorspellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
 
 In deze zelfstudie leert u het volgende:
-- De gegevens downloaden met behulp van Apache Spark en Azure Open Datasets
-- Gegevens transformeren en opschonen met Apache Spark-gegevensframes
-- Een regressiemodel trainen met geautomatiseerde machine learning
-- De nauwkeurigheid van een model berekenen
+- De gegevens downloaden met behulp van Apache Spark en Azure Open Datasets.
+- Gegevens transformeren en opschonen met Apache Spark-gegevensframes.
+- Een regressiemodel trainen met geautomatiseerde machine learning.
+- De nauwkeurigheid van een model berekenen.
 
-### <a name="before-you-begin"></a>Voordat u begint
+## <a name="before-you-begin"></a>Voordat u begint
 
 - Maak een serverloze Apache Spark-pool door de stappen te volgen in de [quickstart Een serverloze Apache Spark-pool maken](../quickstart-create-apache-spark-pool-studio.md).
 - Voltooi de [zelfstudie Azure Machine Learning-werkruimte instellen](https://docs.microsoft.com/azure/machine-learning/tutorial-1st-experiment-sdk-setup) als u niet beschikt over een bestaande Azure Machine Learning-werkruimte. 
 
-### <a name="understand-regression-models"></a>Regressiemodellen begrijpen
+## <a name="understand-regression-models"></a>Regressiemodellen begrijpen
 
 *Regressiemodellen* voorspellen numerieke uitvoerwaarden op basis van onafhankelijke voorspellingen. In regressie is het doel om te helpen de relatie tot stand te brengen tussen deze onafhankelijke voorspellingsvariabelen door te schatten hoe één variabele de andere beïnvloedt.  
 
-### <a name="regression-analysis-example-on-the-nyc-taxi-data"></a>Voorbeeld van regressieanalyse van de NYC-taxigegevens
+### <a name="example-based-on-new-york-city-taxi-data"></a>Voorbeeld op basis van taxigegevens in New York City
 
-In dit voorbeeld gebruikt u Spark om een analyse uit te voeren voor gegevens over fooien voor taxiritten in New York. De gegevens zijn beschikbaar via [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Deze subset van de gegevensset bevat informatie over taxiritten, waaronder informatie over elke rit, de begin- en eindtijd en locaties, de kosten, en andere interessante kenmerken.
+In dit voorbeeld gebruikt u Spark om een analyse uit te voeren voor gegevens over fooien voor taxiritten in New York City (NYC). De gegevens zijn beschikbaar via [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Deze subset van de gegevensset bevat informatie over taxiritten, waaronder informatie over elke rit, de begin- en eindtijd en locaties en de kosten.
 
 > [!IMPORTANT]
-> 
 > Er kunnen extra kosten gelden voor het ophalen van deze gegevens uit de opslaglocatie. In de volgende stappen ontwikkelt u een model om de ritprijzen voor NYC-taxi’s te voorspellen. 
-> 
 
 ##  <a name="download-and-prepare-the-data"></a>De gegevens downloaden en voorbereiden
 
-1. Maak een notebook met behulp van de PySpark-kernel. Zie [Een notebook maken](https://docs.microsoft.com/azure/synapse-analytics/quickstart-apache-spark-notebook#create-a-notebook.) voor instructies
+U doet dit als volgt:
+
+1. Maak een notebook met behulp van de PySpark-kernel. Zie [Een notebook maken](https://docs.microsoft.com/azure/synapse-analytics/quickstart-apache-spark-notebook#create-a-notebook) voor instructies.
    
-> [!Note]
-> 
-> Vanwege de PySpark-kernel hoeft u niet expliciet contexten te maken. De Spark-context wordt automatisch voor u gemaakt wanneer u de eerste codecel uitvoert.
->
-
-2. Omdat de onbewerkte gegevens de Parquet-indeling hebben, kunt u de Spark-context gebruiken om het bestand rechtstreeks in het geheugen te plaatsen als een gegevensframe. Maak een Spark-gegevensframe door de gegevens op te halen via de Open Datasets-API. Hier gebruiken we het *schema over leeseigenschappen* van Spark-gegevensframe om de gegevenstypen en het schema af te leiden. 
+    > [!Note]
+    > Vanwege de PySpark-kernel hoeft u niet expliciet contexten te maken. De Spark-context wordt automatisch voor u gemaakt wanneer u de eerste codecel uitvoert.
+  
+2. Omdat de onbewerkte gegevens de Parquet-indeling hebben, kunt u de Spark-context gebruiken om het bestand rechtstreeks in het geheugen te plaatsen als een gegevensframe. Maak een Spark-gegevensframe door de gegevens op te halen via de Open Datasets-API. Hier gebruiken we de `schema on read`-eigenschappen van Spark-gegevensframe om de gegevenstypen en het schema af te leiden. 
    
-```python
-blob_account_name = "azureopendatastorage"
-blob_container_name = "nyctlc"
-blob_relative_path = "yellow"
-blob_sas_token = r""
+    ```python
+    blob_account_name = "azureopendatastorage"
+    blob_container_name = "nyctlc"
+    blob_relative_path = "yellow"
+    blob_sas_token = r""
 
-# Allow Spark to read from Blob remotely
-wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)
-spark.conf.set('fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),blob_sas_token)
+    # Allow Spark to read from Blob remotely
+    wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)
+    spark.conf.set('fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),blob_sas_token)
 
-# Spark read parquet, note that it won't load any data yet by now
-df = spark.read.parquet(wasbs_path)
+    # Spark read parquet, note that it won't load any data yet by now
+    df = spark.read.parquet(wasbs_path)
 
-```
+    ```
 
-3. Afhankelijk van de grootte van de Spark-pool kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid met behulp van de filters ```start_date``` en ```end_date```. Hiermee wordt een filter toegepast op basis waarvan de gegevens van één maand worden geretourneerd. Zodra we beschikken over het gefilterde gegevensframe, voeren we ook de functie ```describe()``` uit op het nieuwe dataframe om samenvattingsstatistieken voor elk veld weer te geven. 
+3. Afhankelijk van de grootte van de Spark-pool kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid met behulp van de filters ```start_date``` en ```end_date```. Hiermee wordt een filter toegepast op basis waarvan de gegevens van één maand worden geretourneerd. Als we beschikken over het gefilterde gegevensframe, voeren we ook de functie ```describe()``` uit op het nieuwe dataframe om samenvattingsstatistieken voor elk veld weer te geven. 
 
-   Op basis van de samenvattingsstatistieken zien we dat er sprake is van wat onregelmatigheden en uitschieters in de gegevens. De statistieken laten bijvoorbeeld zien dat de minimale reisafstand kleiner is dan 0. Deze onregelmatige gegevenspunten moeten worden uitgefilterd.
+   Op basis van de samenvattingsstatistieken ziet u dat er sprake is van wat onregelmatigheden in de gegevens. De statistieken laten bijvoorbeeld zien dat de minimale reisafstand kleiner is dan 0. Deze onregelmatige gegevenspunten moeten worden uitgefilterd.
    
-```python
-# Create an ingestion filter
-start_date = '2015-01-01 00:00:00'
-end_date = '2015-12-31 00:00:00'
+   ```python
+   # Create an ingestion filter
+   start_date = '2015-01-01 00:00:00'
+   end_date = '2015-12-31 00:00:00'
 
-filtered_df = df.filter('tpepPickupDateTime > "' + start_date + '" and tpepPickupDateTime < "' + end_date + '"')
+   filtered_df = df.filter('tpepPickupDateTime > "' + start_date + '" and tpepPickupDateTime< "' + end_date + '"')
 
-filtered_df.describe().show()
-```
+   filtered_df.describe().show()
+   ```
 
-4. Nu genereren we functies uit de gegevensset door een set kolommen te selecteren en verschillende op tijd gebaseerde functies te maken op basis van het datum/tijd-veld voor vertrek. We filteren ook uitschieters uit die in een eerdere stap zijn geïdentificeerd, en verwijderen vervolgens de laatste paar kolommen die onnodig zijn voor de training.
+4. Vervolgens genereert u functies uit de gegevensset door een set kolommen te selecteren en verschillende op tijd gebaseerde functies te maken op basis van het datum/tijd-veld voor vertrek. Filter de uitschieters uit die in een eerdere stap zijn geïdentificeerd, en verwijder vervolgens de laatste paar kolommen omdat die onnodig zijn voor de training.
    
-```python
-from datetime import datetime
-from pyspark.sql.functions import *
+   ```python
+   from datetime import datetime
+   from pyspark.sql.functions import *
 
-# To make development easier, faster and less expensive down sample for now
-sampled_taxi_df = filtered_df.sample(True, 0.001, seed=1234)
+   # To make development easier, faster and less expensive down sample for now
+   sampled_taxi_df = filtered_df.sample(True, 0.001, seed=1234)
 
-taxi_df = sampled_taxi_df.select('vendorID', 'passengerCount', 'tripDistance',  'startLon', 'startLat', 'endLon' \
-                                , 'endLat', 'paymentType', 'fareAmount', 'tipAmount'\
-                                , column('puMonth').alias('month_num') \
-                                , date_format('tpepPickupDateTime', 'hh').alias('hour_of_day')\
-                                , date_format('tpepPickupDateTime', 'EEEE').alias('day_of_week')\
-                                , dayofmonth(col('tpepPickupDateTime')).alias('day_of_month')
-                                ,(unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('trip_time'))\
-                        .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
-                                & (sampled_taxi_df.tipAmount >= 0)\
-                                & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
-                                & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
-                                & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 200)\
-                                & (sampled_taxi_df.rateCodeId <= 5)\
-                                & (sampled_taxi_df.paymentType.isin({"1", "2"})))
-taxi_df.show(10)
-```
+   taxi_df = sampled_taxi_df.select('vendorID', 'passengerCount', 'tripDistance',  'startLon', 'startLat', 'endLon' \
+                                   , 'endLat', 'paymentType', 'fareAmount', 'tipAmount'\
+                                   , column('puMonth').alias('month_num') \
+                                   , date_format('tpepPickupDateTime', 'hh').alias('hour_of_day')\
+                                   , date_format('tpepPickupDateTime', 'EEEE').alias('day_of_week')\
+                                   , dayofmonth(col('tpepPickupDateTime')).alias('day_of_month')
+                                   ,(unix_timestamp(col('tpepDropoffDateTime')) - unix_timestamp(col('tpepPickupDateTime'))).alias('trip_time'))\
+                           .filter((sampled_taxi_df.passengerCount > 0) & (sampled_taxi_df.passengerCount < 8)\
+                                   & (sampled_taxi_df.tipAmount >= 0)\
+                                   & (sampled_taxi_df.fareAmount >= 1) & (sampled_taxi_df.fareAmount <= 250)\
+                                   & (sampled_taxi_df.tipAmount < sampled_taxi_df.fareAmount)\
+                                   & (sampled_taxi_df.tripDistance > 0) & (sampled_taxi_df.tripDistance <= 200)\
+                                   & (sampled_taxi_df.rateCodeId <= 5)\
+                                   & (sampled_taxi_df.paymentType.isin({"1", "2"})))
+   taxi_df.show(10)
+   ```
    
    Zoals u ziet, wordt er nu een nieuwe gegevensframe gemaakt met extra kolommen voor dag van de maand, uur van vertrek, weekdag, en totale duur van de rit. 
 
-
-![Afbeelding van de gegevensframe voor de taxi.](./media/azure-machine-learning-spark-notebook/dataset.png#lightbox)
+   ![Afbeelding van de gegevensframe voor de taxi.](./media/azure-machine-learning-spark-notebook/dataset.png#lightbox)
 
 ## <a name="generate-test-and-validation-datasets"></a>Gegevens genereren voor test en validatie
 
-Zodra we beschikken over de definitieve gegevensset, kunnen we de gegevens splitsen in trainings- en testsets, met behulp van de functie ```random_ split ``` van Spark. Met behulp van de opgegeven gewichten worden met deze functie de gegevens willekeurig gesplitst in de trainingsgegevensset voor modeltraining en de validatiegegevensset voor tests.
+Zodra u beschikt over de definitieve gegevensset, kunt u de gegevens splitsen in trainings- en testsets, met behulp van de functie ```random_ split ``` in Spark. Met behulp van de opgegeven gewichten worden met deze functie de gegevens willekeurig gesplitst in de trainingsgegevensset voor modeltraining en de validatiegegevensset voor tests.
 
 ```python
-# Random split dataset using spark, convert Spark to Pandas
+# Random split dataset using Spark, convert Spark to Pandas
 training_data, validation_data = taxi_df.randomSplit([0.8,0.2], 223)
 
 ```
 Met deze stap zorgt u ervoor dat de gegevenspunten die worden gebruikt om het voltooide model te testen, niet ook zijn gebruikt om het model te trainen. 
 
 ## <a name="connect-to-an-azure-machine-learning-workspace"></a>Verbinding maken met een Azure Machine Learning-werkruimte
-In Azure Machine Learning is een **werkruimte** een klasse die de gegevens over uw Azure-abonnement en -resources accepteert. Hier wordt ook een cloudresource gemaakt om de uitvoeringen van uw model te controleren en bij te houden. In deze stap maken we een werkruimteobject op basis van de bestaande Azure Machine Learning-werkruimte.
+In Azure Machine Learning is een werkruimte een klasse die de gegevens over uw Azure-abonnement en -resources accepteert. Hier wordt ook een cloudresource gemaakt om de uitvoeringen van uw model te controleren en bij te houden. In deze stap maakt u een werkruimteobject op basis van de bestaande Azure Machine Learning-werkruimte.
    
 ```python
 from azureml.core import Workspace
@@ -168,42 +165,44 @@ dataset_training = Dataset.Tabular.from_delimited_files(path = [(datastore, 'tra
 ```
 ![Afbeelding van geüploade gegevensset.](./media/azure-machine-learning-spark-notebook/upload-dataset.png)
 
-## <a name="submit-an-automated-ml-experiment"></a>Een geautomatiseerd ML-experiment indienen
+## <a name="submit-an-automated-experiment"></a>Een geautomatiseerd experiment verzenden
 
-#### <a name="define-training-settings"></a>Trainingsinstellingen definiëren
-1. U moet de experimentparameter en modelinstellingen voor training definiëren om een experiment te verzenden. U kunt de volledige lijst met instellingen [hier](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train) bekijken.
+In de volgende secties wordt stapsgewijs uitgelegd hoe u een geautomatiseerd machine learning-experiment verzendt.
 
-```python
-import logging
+### <a name="define-training-settings"></a>Trainingsinstellingen definiëren
+1. U moet de experimentparameter en modelinstellingen voor training definiëren om een experiment te verzenden. Zie [geautomatiseerde machine learning-experimenten configureren in Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train) voor een volledige lijst met instellingen.
 
-automl_settings = {
-    "iteration_timeout_minutes": 10,
-    "experiment_timeout_minutes": 30,
-    "enable_early_stopping": True,
-    "primary_metric": 'r2_score',
-    "featurization": 'auto',
-    "verbosity": logging.INFO,
-    "n_cross_validations": 2}
-```
+   ```python
+   import logging
 
-2. Nu geeft u de gedefinieerde trainingsinstellingen als een **kwargs-parameter door aan een AutoMLConfig-object. Omdat u traint in Spark, moet u ook de Spark-context doorgeven die automatisch toegankelijk is voor de variabele ```sc```. Daarnaast geeft u de trainingsgegevens en het modeltype op. In dit geval is dat regressie.
+   automl_settings = {
+       "iteration_timeout_minutes": 10,
+       "experiment_timeout_minutes": 30,
+       "enable_early_stopping": True,
+       "primary_metric": 'r2_score',
+       "featurization": 'auto',
+       "verbosity": logging.INFO,
+       "n_cross_validations": 2}
+   ```
 
-```python
-from azureml.train.automl import AutoMLConfig
+1. Geef de gedefinieerde trainingsinstellingen door als `kwargs`-parameter voor een `AutoMLConfig`-object. Omdat u Spark gebruikt, moet u ook de Spark-context doorgeven die automatisch toegankelijk is voor de variabele ```sc```. Daarnaast geeft u de trainingsgegevens en het modeltype op. In dit geval is dat regressie.
 
-automl_config = AutoMLConfig(task='regression',
-                             debug_log='automated_ml_errors.log',
-                             training_data = dataset_training,
-                             spark_context = sc,
-                             model_explainability = False, 
-                             label_column_name ="fareAmount",**automl_settings)
-```
+   ```python
+   from azureml.train.automl import AutoMLConfig
+
+   automl_config = AutoMLConfig(task='regression',
+                                debug_log='automated_ml_errors.log',
+                                training_data = dataset_training,
+                                spark_context = sc,
+                                model_explainability = False, 
+                                label_column_name ="fareAmount",**automl_settings)
+   ```
 
 > [!NOTE]
->Geautomatiseerde machine learning-voorverwerkingsstappen (kenmerknormalisatie, het verwerken van ontbrekende gegevens, het converteren van tekst naar numerieke waarden, enzovoort) worden onderdeel van het onderliggende model. Wanneer u het model voor voorspellingen gebruikt, worden dezelfde voorverwerkingsstappen die tijdens de training zijn toegepast, automatisch toegepast op uw invoergegevens.
+>De stappen voor vooraf bewerken van geautomatiseerde machine learning worden onderdeel van het onderliggende model. Deze stappen omvatten functienormalisatie, het verwerken van ontbrekende gegevens en het converteren van tekst naar numerieke waarden. Wanneer u het model voor voorspellingen gebruikt, worden dezelfde voorverwerkingsstappen die tijdens de training zijn toegepast, automatisch toegepast op uw invoergegevens.
 
-#### <a name="train-the-automatic-regression-model"></a>Het automatische regressiemodel trainen 
-Nu maakt u een experimentobject in uw Azure Machine Learning-werkruimte. Een experiment fungeert als een container voor uw afzonderlijke uitvoeringen. 
+### <a name="train-the-automatic-regression-model"></a>Het automatische regressiemodel trainen 
+Vervolgens maakt u een experimentobject in uw Azure Machine Learning-werkruimte. Een experiment fungeert als een container voor uw afzonderlijke uitvoeringen. 
 
 ```python
 from azureml.core.experiment import Experiment
@@ -216,113 +215,113 @@ local_run = experiment.submit(automl_config, show_output=True, tags = tags)
 # Use the get_details function to retrieve the detailed output for the run.
 run_details = local_run.get_details()
 ```
-Zodra het experiment is voltooid, retourneert de uitvoer informatie over de voltooide iteraties. Voor elke iteratie ziet u het modeltype, de uitvoeringsduur en de nauwkeurigheid van de training. In het veld BEST wordt de beste trainingsscore bijgehouden op basis van uw type metrische gegevens.
+Wanneer het experiment is voltooid, retourneert de uitvoer informatie over de voltooide iteraties. Voor elke iteratie ziet u het modeltype, de uitvoeringsduur en de nauwkeurigheid van de training. In het veld **BESTE** wordt de beste trainingsscore op basis van uw type metrische waarde bijgehouden.
 
 ![Schermopname van modeluitvoer.](./media/azure-machine-learning-spark-notebook/model-output.png)
 
 > [!NOTE]
-> Nadat het geautomatiseerd ML-experiment is verzonden, worden verschillende iteraties en modeltypen uitgevoerd. Deze uitvoering duurt doorgaans 1 tot 1,5 uur. 
+> Nadat u het geautomatiseerde machine learning-experiment hebt verzonden, worden verschillende iteraties en modeltypen uitgevoerd. Het uitvoeren duurt doorgaans 60-90 minuten. 
 
-#### <a name="retrieve-the-best-model"></a>Het beste model ophalen
-Om het beste model uit uw iteraties te selecteren, gebruiken we de functie ```get_output``` om het model te retourneren dat het beste is uitgevoerd en aangepast. Met de onderstaande code wordt model opgehaald dat het beste is uitgevoerd en aangepast voor alle geregistreerde metrische gegevens of voor een bepaalde herhaling.
+### <a name="retrieve-the-best-model"></a>Het beste model ophalen
+Om het beste model uit uw iteraties te selecteren, gebruiken we de functie ```get_output``` om het model te retourneren dat het beste is uitgevoerd en aangepast. Met de volgende code wordt het model opgehaald dat het beste is uitgevoerd en aangepast voor alle geregistreerde metrische gegevens of voor een bepaalde iteratie.
 
 ```python
 # Get best model
 best_run, fitted_model = local_run.get_output()
 ```
 
-#### <a name="test-model-accuracy"></a>Modelnauwkeurigheid testen
+### <a name="test-model-accuracy"></a>Modelnauwkeurigheid testen
 1. Als u de nauwkeurigheid van het model wilt testen, gebruikt u het beste model om de ritprijzen van taxi’s te voorspellen in de testgegevensset. De functie ```predict``` maakt gebruik van het beste model en voorspelt de y-waarden (ritprijs) uit de validatiegegevensset. 
 
-```python
-# Test best model accuracy
-validation_data_pd = validation_data.toPandas()
-y_test = validation_data_pd.pop("fareAmount").to_frame()
-y_predict = fitted_model.predict(validation_data_pd)
-```
+   ```python
+   # Test best model accuracy
+   validation_data_pd = validation_data.toPandas()
+   y_test = validation_data_pd.pop("fareAmount").to_frame()
+   y_predict = fitted_model.predict(validation_data_pd)
+   ```
 
-2. De RMSE (wortel van de gemiddelde kwadratische fout) is een veelgebruikte meting van de verschillen tussen voorbeeldwaarden die zijn voorspeld met een model, en de waargenomen waarden. We berekenen de wortel van de gemiddelde kwadratische fout van de resultaten door de gegevensframe y_test te vergelijken met de waarden die zijn voorspeld met het model. 
+1. De wortel van de gemiddelde kwadratische fout is een veelgebruikte meting van de verschillen tussen voorbeeldwaarden die zijn voorspeld met een model, en de waargenomen waarden. U berekent de wortel van de gemiddelde kwadratische fout van de resultaten door het `y_test`-gegevensframe te vergelijken met de waarden die zijn voorspeld met het model. 
 
-   Met de functie ```mean_squared_error``` wordt de gemiddelde gekwadrateerde fout berekend tussen twee matrices. Vervolgens nemen we de vierkantswortel uit het resultaat. Deze metrische waarde geeft aan in welke mate de voorspelde taxiprijzen ongeveer afwijken van de werkelijke waarden.
+   Met de functie ```mean_squared_error``` wordt de gemiddelde gekwadrateerde fout berekend tussen twee matrices. Vervolgens neemt u de vierkantswortel uit het resultaat. Deze metrische waarde geeft aan in welke mate de voorspelde taxiprijzen ongeveer afwijken van de werkelijke waarden.
 
-```python
-from sklearn.metrics import mean_squared_error
-from math import sqrt
+   ```python
+   from sklearn.metrics import mean_squared_error
+   from math import sqrt
 
-# Calculate Root Mean Square Error
-y_actual = y_test.values.flatten().tolist()
-rmse = sqrt(mean_squared_error(y_actual, y_predict))
+   # Calculate Root Mean Square Error
+   y_actual = y_test.values.flatten().tolist()
+   rmse = sqrt(mean_squared_error(y_actual, y_predict))
 
-print("Root Mean Square Error:")
-print(rmse)
-```
+   print("Root Mean Square Error:")
+   print(rmse)
+   ```
 
-```Output
-Root Mean Square Error:
-2.309997102577151
-```
-De wortel van de gemiddelde kwadratische fout is een goede meting van hoe nauwkeurig het model het antwoord voorspelt. In de resultaten ziet u dat het model redelijk goed is in het voorspellen van de ritprijzen van taxi’s op basis van de functies van de gegevensset, met een afwijking van maximaal $2,00
+   ```Output
+   Root Mean Square Error:
+   2.309997102577151
+   ```
+   De wortel van de gemiddelde kwadratische fout is een goede meting van hoe nauwkeurig het model het antwoord voorspelt. In de resultaten ziet u dat het model redelijk goed is in het voorspellen van de ritprijzen van taxi’s op basis van de functies van de gegevensset, met een afwijking van maximaal $2,00.
 
-3. Voer de volgende code uit om MAPE (het gemiddelde absolute foutpercentage) te berekenen. Deze metrische waarde toont nauwkeurigheid als een percentage van de fout. Dit gebeurt door een absoluut verschil tussen elke voorspelde en werkelijke waarde te berekenen, en alle verschillen vervolgens op te tellen. Vervolgens wordt deze som weergegeven als een percentage van het totaal van de werkelijke waarden.
+1. Voer de volgende code uit om het gemiddelde absolute foutpercentage te berekenen. Deze metrische waarde toont nauwkeurigheid als een percentage van de fout. Dit gebeurt door een absoluut verschil tussen elke voorspelde en werkelijke waarde te berekenen, en alle verschillen vervolgens op te tellen. Vervolgens wordt deze som weergegeven als een percentage van het totaal van de werkelijke waarden.
 
-```python
-# Calculate MAPE and Model Accuracy 
-sum_actuals = sum_errors = 0
+   ```python
+   # Calculate MAPE and Model Accuracy 
+   sum_actuals = sum_errors = 0
 
-for actual_val, predict_val in zip(y_actual, y_predict):
-    abs_error = actual_val - predict_val
-    if abs_error < 0:
-        abs_error = abs_error * -1
+   for actual_val, predict_val in zip(y_actual, y_predict):
+       abs_error = actual_val - predict_val
+       if abs_error < 0:
+           abs_error = abs_error * -1
 
-    sum_errors = sum_errors + abs_error
-    sum_actuals = sum_actuals + actual_val
+       sum_errors = sum_errors + abs_error
+       sum_actuals = sum_actuals + actual_val
 
-mean_abs_percent_error = sum_errors / sum_actuals
+   mean_abs_percent_error = sum_errors / sum_actuals
 
-print("Model MAPE:")
-print(mean_abs_percent_error)
-print()
-print("Model Accuracy:")
-print(1 - mean_abs_percent_error)
-```
+   print("Model MAPE:")
+   print(mean_abs_percent_error)
+   print()
+   print("Model Accuracy:")
+   print(1 - mean_abs_percent_error)
+   ```
 
-```Output
-Model MAPE:
-0.03655071038487368
+   ```Output
+   Model MAPE:
+   0.03655071038487368
 
-Model Accuracy:
-0.9634492896151263
-```
-In de twee metrische gegevens voor de nauwkeurigheid van de voorspellingen ziet u dat het model redelijk goed is in het voorspellen van de ritprijzen van taxi’s op basis van de functies van de gegevensset. 
+   Model Accuracy:
+   0.9634492896151263
+   ```
+   In de twee metrische gegevens voor de nauwkeurigheid van de voorspellingen ziet u dat het model redelijk goed is in het voorspellen van de ritprijzen van taxi’s op basis van de functies van de gegevensset. 
 
-4. Na het aanpassen van een lineair regressiemodel moet u nu bepalen hoe goed het model past bij de gegevens. Hiervoor tekenen we de werkelijke ritprijs ten opzichte van de voorspelde uitvoer. Daarnaast berekenen we ook de R-kwadraatsmeting om te begrijpen hoe dicht de gegevens zich bij de aangepaste regressieregel bevinden.
+1. Na het aanpassen van een lineair regressiemodel moet u nu bepalen hoe goed het model past bij de gegevens. Hiervoor tekent u de werkelijke ritprijs ten opzichte van de voorspelde uitvoer. Daarnaast berekent u ook de R-kwadraatsmeting om te begrijpen hoe dicht de gegevens zich bij de aangepaste regressieregel bevinden.
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.metrics import mean_squared_error, r2_score
+   ```python
+   import matplotlib.pyplot as plt
+   import numpy as np
+   from sklearn.metrics import mean_squared_error, r2_score
 
-# Calculate the R2 score using the predicted and actual fare prices
-y_test_actual = y_test["fareAmount"]
-r2 = r2_score(y_test_actual, y_predict)
+   # Calculate the R2 score using the predicted and actual fare prices
+   y_test_actual = y_test["fareAmount"]
+   r2 = r2_score(y_test_actual, y_predict)
 
-# Plot the Actual vs Predicted Fare Amount Values
-plt.style.use('ggplot')
-plt.figure(figsize=(10, 7))
-plt.scatter(y_test_actual,y_predict)
-plt.plot([np.min(y_test_actual), np.max(y_test_actual)], [np.min(y_test_actual), np.max(y_test_actual)], color='lightblue')
-plt.xlabel("Actual Fare Amount")
-plt.ylabel("Predicted Fare Amount")
-plt.title("Actual vs Predicted Fare Amont R^2={}".format(r2))
-plt.show()
+   # Plot the Actual vs Predicted Fare Amount Values
+   plt.style.use('ggplot')
+   plt.figure(figsize=(10, 7))
+   plt.scatter(y_test_actual,y_predict)
+   plt.plot([np.min(y_test_actual), np.max(y_test_actual)], [np.min(y_test_actual), np.max(y_test_actual)], color='lightblue')
+   plt.xlabel("Actual Fare Amount")
+   plt.ylabel("Predicted Fare Amount")
+   plt.title("Actual vs Predicted Fare Amont R^2={}".format(r2))
+   plt.show()
 
-```
-![Schermopname van regressietekening.](./media/azure-machine-learning-spark-notebook/fare-amount.png)
+   ```
+   ![Schermopname van regressietekening.](./media/azure-machine-learning-spark-notebook/fare-amount.png)
 
-   Uit de resultaten blijkt dat de R-kwadraatsmeting geldt voor 95% van de variantie. Dit wordt ook gevalideerd door de werkelijke versus de waargenomen grafiek. Hoe meer variantie er is verantwoord met het regressiemodel, hoe dichter de gegevenspunten zich bij de aangepaste regressieregel bevinden.  
+   Uit de resultaten blijkt dat de R-kwadraatsmeting geldt voor 95 procent van de variantie. Dit wordt ook gevalideerd door de werkelijke grafiek versus de waargenomen grafiek. Hoe meer variantie er is verantwoord met het regressiemodel, hoe dichter de gegevenspunten zich bij de aangepaste regressieregel bevinden.  
 
 ## <a name="register-model-to-azure-machine-learning"></a>Model registreren bij Azure Machine Learning
-Zodra het beste model is gevalideerd, kunt u dit model registreren bij Azure Machine Learning. Nadat u het model hebt geregistreerd, kunt u het geregistreerde model downloaden of implementeren, en alle bestanden ontvangen die u hebt geregistreerd.
+Nadat u het beste model hebt gevalideerd, kunt u dit registreren bij Azure Machine Learning. Vervolgens kunt u het geregistreerde model downloaden of implementeren, en alle bestanden ontvangen die u hebt geregistreerd.
 
 ```python
 description = 'My automated ML model'
@@ -334,10 +333,10 @@ print(model.name, model.version)
 NYCGreenTaxiModel 1
 ```
 ## <a name="view-results-in-azure-machine-learning"></a>Resultaten bekijken in Azure Machine Learning
-Ten slotte kunt u ook de resultaten van herhalingen bekijken door naar het experiment te navigeren in uw Azure Machine Learning-werkruimte. Hier kunt u extra informatie vinden over de status van de uitvoering, de gebruikte modellen, en andere metrische modelgegevens. 
+Ten slotte kunt u ook de resultaten van herhalingen bekijken door naar het experiment te gaan in uw Azure Machine Learning-werkruimte. Hier kunt u extra informatie vinden over de status van de uitvoering, de gebruikte modellen, en andere metrische modelgegevens. 
 
 ![Schermopname van Azure Machine Learning-werkruimte.](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
-- [Zelfstudie voor Apache Spark MLlib](./apache-spark-machine-learning-mllib-notebook.md)
+- [Zelfstudie: Een machine learning-app bouwen met Apache Spark MLlib en Azure Synapse Analytics](./apache-spark-machine-learning-mllib-notebook.md)

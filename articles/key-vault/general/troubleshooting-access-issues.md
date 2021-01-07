@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 78b42a8ad3685d07b61c4faca384c7ee8f5a5f94
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 8e4e64cd872794354479c29d4aaa000cee45c5a3
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616385"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901212"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Problemen met het toegangsbeleid voor Azure Key Vault oplossen
 
@@ -32,10 +32,10 @@ Wanneer u begint met het schalen van uw service, neemt het aantal aanvragen toe 
 ### <a name="i-am-not-able-to-modify-access-policy-how-can-it-be-enabled"></a>Ik kan het toegangsbeleid niet wijzigen, hoe kan dit worden ingeschakeld?
 De gebruiker moet voldoende AAD-machtigingen hebben om het toegangsbeleid te wijzigen. In dit geval moet de gebruiker een hogere Inzender-rol hebben.
 
-### <a name="i-am-seeing-unkwown-policy-error-what-does-that-mean"></a>Ik zie de fout 'Onbekend beleid'. Wat betekent dat?
+### <a name="i-am-seeing-unknown-policy-error-what-does-that-mean"></a>Ik zie de fout 'Onbekend beleid'. Wat betekent dat?
 Er zijn twee mogelijkheden waardoor u toegangsbeleid in de sectie Onbekend ziet:
 * Er is mogelijk een eerdere gebruiker geweest die toegang had en om een of andere reden niet meer bestaat.
-* Als het toegangsbeleid is toegevoegd via PowerShell en het toegangsbeleid is toegevoegd voor de object-id van de toepassing in plaats van voor de service-principal
+* Als het toegangsbeleid is toegevoegd via PowerShell en het toegangsbeleid is toegevoegd voor de object-id van de toepassing in plaats van voor de service-principal.
 
 ### <a name="how-can-i-assign-access-control-per-key-vault-object"></a>Hoe kan ik toegangsbeheer per sleutelkluisobject toewijzen? 
 

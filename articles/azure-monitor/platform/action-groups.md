@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: b5b6a697e6a5cae064a6a48419246dc12e8d048c
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 72caeb60fc058b88158979d211a0bc38985975c7
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695829"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968854"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
@@ -318,7 +318,11 @@ Prijzen voor ondersteunde landen/regio's worden vermeld op de [pagina met Azure 
 ### <a name="webhook"></a>Webhook
 
 > [!NOTE]
-> Het gebruik van de webhook-actie vereist dat het eind punt van de doel-webhook geen details vereist van de waarschuwing om correct te laten functioneren of kan de waarschuwings context gegevens parseren die worden verstrekt als onderdeel van de POST-bewerking. Als het webhook-eind punt de informatie over de context van de waarschuwing niet zelf kan verwerken, kunt u een oplossing gebruiken zoals een actie van een [logische app](./action-groups-logic-app.md) voor een aangepaste manipulatie van de waarschuwings context informatie die overeenkomt met de verwachte gegevens indeling van de webhook.
+> Het gebruik van de webhook-actie vereist dat het eind punt van de doel-webhook geen details vereist van de waarschuwing om correct te laten functioneren of kan de waarschuwings context gegevens parseren die worden verstrekt als onderdeel van de POST-bewerking. 
+
+> De gebruiker moet de **eigenaar** zijn van de service-principal van de webhook om ervoor te zorgen dat de beveiliging niet wordt geschonden. Elke Azure-klant heeft toegang tot alle object-Id's via de portal, zonder de eigenaar te controleren, maar iedereen kan de beveiligde webhook toevoegen aan hun eigen actie groep voor Azure monitor-waarschuwings melding die de beveiliging schendt.
+
+> Als het webhook-eind punt de informatie over de context van de waarschuwing niet zelf kan verwerken, kunt u een oplossing gebruiken zoals een actie van een [logische app](./action-groups-logic-app.md) voor een aangepaste manipulatie van de waarschuwings context informatie die overeenkomt met de verwachte gegevens indeling van de webhook.
 
 Webhooks worden verwerkt aan de hand van de volgende regels
 - Voor een webhook-aanroep is Maxi maal drie keer geprobeerd.

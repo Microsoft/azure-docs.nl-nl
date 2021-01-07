@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/04/2019
 ms.reviewer: sngun
-ms.openlocfilehash: bdfbe5106f220a9fe4a3568709187b9071bc7917
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 96652b2a1eb35668bd8a810b309ab31cec5afdb7
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334273"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967256"
 ---
 # <a name="transactions-and-optimistic-concurrency-control"></a>Transacties en optimistisch beheer van gelijktijdigheid
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -53,7 +53,9 @@ De mogelijkheid om Java script direct in de data base-engine uit te voeren, bied
 
 Met optimistische gelijktijdigheids controle kunt u voor komen dat updates en verwijderingen verloren gaan. Gelijktijdige, conflicterende bewerkingen worden onderhevig aan de reguliere pessimistische vergren deling van de data base-engine die wordt gehost door de logische partitie die eigenaar is van het item. Wanneer twee gelijktijdige bewerkingen proberen om de nieuwste versie van een item binnen een logische partitie bij te werken, wordt een van de items gewonnen en mislukt de andere. Als echter een of twee bewerkingen die hetzelfde item gelijktijdig proberen te updaten een oudere waarde van het item hebben gelezen, is de data base niet bekend als de eerder gelezen waarde door ofwel een van beide of beide conflicten inderdaad de laatste waarde van het item waren. Gelukkig kan deze situatie worden gedetecteerd met het **optimistische Gelijktijdigheids beheer (OCC)** voordat de twee bewerkingen de transactie grens in de data base-engine invoeren. OCC beschermt uw gegevens tegen per ongeluk wijzigingen die door anderen zijn aangebracht. Ook wordt voor komen dat anderen uw eigen wijzigingen overschrijven.
 
-De gelijktijdige updates van een item worden onderhevig aan de OCC door de Layer van het communicatie protocol van Azure Cosmos DB. Azure Cosmos data base zorgt ervoor dat de client-side versie van het item dat u bijwerkt (of verwijdert) hetzelfde is als de versie van het item in de Azure Cosmos-container. Dit zorgt ervoor dat uw schrijf bewerkingen worden beschermd tegen het onbedoeld overschrijven van de schrijf bewerkingen door anderen en andersom. In een omgeving met meerdere gebruikers beschermt u met het optimistische gelijktijdigheids beheer dat u per ongeluk de verkeerde versie van een item verwijdert of bijwerkt. Als zodanig worden items beschermd tegen de problemen met de Infamous ' verloren update ' of ' verloren gegane verwijderingen '.
+De gelijktijdige updates van een item worden onderhevig aan de OCC door de Layer van het communicatie protocol van Azure Cosmos DB. Voor Azure Cosmos-accounts die zijn geconfigureerd voor **schrijf bewerkingen met één regio**, zorgt Azure Cosmos DB ervoor dat de client-side versie van het item dat u bijwerkt (of verwijdert) hetzelfde is als de versie van het item in de Azure Cosmos-container. Dit zorgt ervoor dat uw schrijf bewerkingen worden beschermd tegen het onbedoeld overschrijven van de schrijf bewerkingen door anderen en andersom. In een omgeving met meerdere gebruikers beschermt u met het optimistische gelijktijdigheids beheer dat u per ongeluk de verkeerde versie van een item verwijdert of bijwerkt. Als zodanig worden items beschermd tegen de problemen met de Infamous ' verloren update ' of ' verloren gegane verwijderingen '.
+
+In een Azure Cosmos-account dat is geconfigureerd met **meerdere regio's schrijft**, kunnen gegevens onafhankelijk worden vastgelegd in secundaire regio's als ze `_etag` overeenkomen met die van de gegevens in de lokale regio. Zodra nieuwe gegevens lokaal zijn doorgevoerd in een secundaire regio, wordt deze vervolgens samengevoegd in de hub of in de primaire regio. Als het beleid voor conflict oplossing de nieuwe gegevens in de hub-regio samenvoegt, worden deze gegevens vervolgens globaal gerepliceerd met de nieuwe `_etag` . Als het beleid voor het oplossen van conflicten de nieuwe gegevens weigert, wordt de secundaire regio teruggezet naar de oorspronkelijke gegevens en `_etag` .
 
 Elk item dat in een Azure Cosmos-container is opgeslagen, heeft een door het systeem gedefinieerde `_etag` eigenschap. De waarde van de `_etag` wordt automatisch gegenereerd en bijgewerkt door de server telkens wanneer het item wordt bijgewerkt. `_etag` kan worden gebruikt met de door de client geleverde `if-match` aanvraag header om de server toe te staan om te bepalen of een item voorwaardelijk kan worden bijgewerkt. De waarde van de `if-match` header komt overeen met de waarde van de `_etag` op de server, het item wordt vervolgens bijgewerkt. Als de waarde van de `if-match` aanvraag header niet meer actueel is, weigert de server de bewerking met een respons bericht ' HTTP 412-voor waarde voor fout '. De client kan het item vervolgens opnieuw ophalen voor het verkrijgen van de huidige versie van het item op de server of de versie van het item op de server vervangen door een eigen `_etag` waarde voor het item. Daarnaast `_etag` kan worden gebruikt met de `if-none-match` header om te bepalen of een resource opnieuw moet worden opgehaald.
 

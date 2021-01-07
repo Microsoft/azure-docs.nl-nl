@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: a7227195c767d90141a9b6cd95f784c239a31fd5
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 41fdb3d2e69ae39dbe80f21a953fd9fdaa6d1127
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955192"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968463"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
@@ -35,12 +35,12 @@ Als u herkennings problemen ondervindt met een basis model, kunt u transcripten 
 
 De eerste stap voor het trainen van een model is het uploaden van trainings gegevens. Zie [uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md) voor stapsgewijze instructies voor het voorbereiden van transcripties en gerelateerde tekst met menselijke labels (uitingen en uitspraak). Nadat u trainings gegevens uploadt, volgt u deze instructies om te beginnen met het trainen van uw model:
 
-1. Meld u aan bij de [Custom speech Portal](https://speech.microsoft.com/customspeech).
+1. Meld u aan bij de [Custom speech Portal](https://speech.microsoft.com/customspeech). Als u van plan bent om een model met audio + Transcriptie gegevens sets met menselijke labels te trainen, kiest u een spraak abonnement in een [regio met speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 2. Ga naar **spraak-naar-tekst**  >  **Custom speech**  >  **[name of project]**  >  **training**.
 3. Selecteer **model voor Train**.
 4. Geef uw training een **naam** en **Beschrijving**.
 5. Selecteer in de lijst **scenario en basislijn model** het scenario dat het meest geschikt is voor uw domein. Als u niet zeker weet welk scenario u moet kiezen, selecteert u **Algemeen**. Het basis model is het begin punt voor training. Het meest recente model is doorgaans de beste keuze.
-6. Kies op de pagina **trainings gegevens selecteren** een of meer audio en transcriptie gegevens sets met menselijke labels die u wilt gebruiken voor de training.
+6. Kies op de pagina **trainings gegevens selecteren** een of meer gerelateerde tekst gegevens sets of audio en transcriptie gegevens sets met menselijke labels die u wilt gebruiken voor de training. Wanneer u een nieuw model traint, begint u met Verwante tekst. training met audio en menselijk gelabelde transcriptie kan veel langer duren (Maxi maal [enkele dagen](how-to-custom-speech-evaluate-data.md#improve-model-recognition)).
 7. Nadat de training is voltooid, kunt u nauw keurig testen uitvoeren op het nieuwe getrainde model. Deze stap is optioneel.
 8. Selecteer **maken** om uw aangepaste model te maken.
 

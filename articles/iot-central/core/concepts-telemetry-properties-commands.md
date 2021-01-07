@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: c29af68433f29d7bdd363bedfa6d36316b952f4c
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 87fb7f0eb4017a39aca081f73de543a67400d4b5
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795340"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97969058"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -721,7 +721,7 @@ IoT Central verwacht een reactie van het apparaat naar updates van schrijf bare 
 | ----- | ----- | ----------- |
 | `'ac': 200` | Voltooid | De bewerking voor het wijzigen van de eigenschap is voltooid. |
 | `'ac': 202`  of `'ac': 201` | In behandeling | De bewerking voor het wijzigen van de eigenschap is in behandeling of wordt uitgevoerd |
-| `'ac': 4xx` | Fout | De aangevraagde wijziging van de eigenschap is ongeldig of er is een fout opgetreden |
+| `'ac': 4xx` | Fout | De aangevraagde eigenschaps wijziging is ongeldig of er is een fout opgetreden |
 | `'ac': 5xx` | Fout | Het apparaat heeft een onverwachte fout aangetroffen bij het verwerken van de aangevraagde wijziging. |
 
 `av` is het versie nummer dat naar het apparaat wordt verzonden.
@@ -828,9 +828,6 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 ```
 
 ## <a name="commands"></a>Opdrachten
-
-> [!NOTE]
-> In de gebruikers interface van IoT Central kunt u de **wachtrij selecteren als u offline** kiest voor een opdracht. Deze instelling is niet opgenomen als u een model of interface uit de sjabloon voor het apparaat exporteert.
 
 Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht die geen para meters heeft en die niet verwacht dat het apparaat iets retourneert:
 
@@ -1000,6 +997,91 @@ Wanneer het apparaat klaar is met de verwerking van de aanvraag, moet er een eig
 }
 ```
 
+### <a name="offline-commands"></a>Offline opdrachten
+
+In de gebruikers interface van IoT Central kunt u de **wachtrij selecteren als u offline** kiest voor een opdracht. Offline opdrachten zijn eenrichtings meldingen naar het apparaat vanuit uw oplossing die worden geleverd zodra een apparaat verbinding maakt. Offline opdrachten kunnen aanvraag parameters hebben, maar retour neren geen antwoord.
+
+De **wachtrij als offline** instelling niet is opgenomen als u een model of interface uit de sjabloon voor het apparaat exporteert. U kunt niet zien door te kijken naar een geëxporteerd model of een gemodelleerde interface JSON die een opdracht is een offline opdracht.
+
+Met offline opdrachten worden [IOT hub Cloud-naar-apparaat-berichten](../../iot-hub/iot-hub-devguide-messages-c2d.md) gebruikt om de opdracht en payload naar het apparaat te verzenden.
+
+In het volgende code fragment van een model van een apparaat wordt de definitie van een opdracht weer gegeven. De opdracht bevat een object parameter met een datum/tijd-veld en een opsomming:
+
+```json
+{
+  "@type": "Command",
+  "displayName": {
+    "en": "Generate Diagnostics"
+  },
+  "name": "GenerateDiagnostics",
+  "request": {
+    "@type": "CommandPayload",
+    "displayName": {
+      "en": "Payload"
+    },
+    "name": "Payload",
+    "schema": {
+      "@type": "Object",
+      "displayName": {
+        "en": "Object"
+      },
+      "fields": [
+        {
+          "displayName": {
+            "en": "StartTime"
+          },
+          "name": "StartTime",
+          "schema": "dateTime"
+        },
+        {
+          "displayName": {
+            "en": "Bank"
+          },
+          "name": "Bank",
+          "schema": {
+            "@type": "Enum",
+            "displayName": {
+              "en": "Enum"
+            },
+            "enumValues": [
+              {
+                "displayName": {
+                  "en": "Bank 1"
+                },
+                "enumValue": 1,
+                "name": "Bank1"
+              },
+              {
+                "displayName": {
+                  "en": "Bank2"
+                },
+                "enumValue": 2,
+                "name": "Bank2"
+              },
+              {
+                "displayName": {
+                  "en": "Bank3"
+                },
+                "enumValue": 2,
+                "name": "Bank3"
+              }
+            ],
+            "valueSchema": "integer"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+Als u de optie **wachtrij als offline** in de gebruikers interface van de sjabloon voor de opdracht in het vorige code fragment inschakelt, bevat het bericht dat het apparaat ontvangt de volgende eigenschappen:
+
+| Naam van eigenschap | Voorbeeldwaarde |
+| ---------- | ----- |
+| `custom_properties` | `{'method-name': 'GenerateDiagnostics'}` |
+| `data` | `{"StartTime":"2021-01-05T08:00:00.000Z","Bank":2}` |
+
 ## <a name="next-steps"></a>Volgende stappen
 
-Als ontwikkel aars van apparaten weet u nu dat u de volgende stappen hebt doorstaan om een verbinding te maken met [Azure IOT Central](./concepts-get-connected.md) om meer te weten te komen over het registreren van apparaten met IOT Central en hoe IOT Central verbindingen met apparaten beveiligt.
+Als ontwikkel aars van apparaten, nu dat u hebt geleerd over sjablonen voor apparaten, kunt u de volgende stappen uitvoeren om [verbinding te maken met Azure IOT Central](./concepts-get-connected.md) om meer te weten te komen over het registreren van apparaten met IOT Central en hoe IOT Central verbindingen met apparaten beveiligt.

@@ -6,12 +6,12 @@ ms.author: rahugup
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/14/2020
-ms.openlocfilehash: c549cae0b7bdc5e237ec3cf704a1ead53db91449
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: a1203133d8749b43a92d89e7251539a1e002bfd8
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754025"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968565"
 ---
 # <a name="support-matrix-for-physical-server-migration"></a>Ondersteunings matrix voor de migratie van fysieke servers
 
@@ -48,7 +48,7 @@ De tabel bevat een overzicht van de ondersteuning voor fysieke servers die u wil
 **UEFI-opstart** | Ondersteund. UEFI-machines worden gemigreerd naar virtuele machines van Azure Generation 2.  <br/><br/> De besturingssysteem schijf moet Maxi maal vier partities hebben en volumes moeten worden geformatteerd met NTFS.
 **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.
 **Doel schijf** | Machines kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
-**Schijfgrootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 8 TB voor gegevens schijven.
+**Schijf grootte** | 2 TB besturingssysteem schijf; 32 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 63 schijven per computer.
 **Versleutelde schijven/volumes** |  Machines met versleutelde schijven/volumes worden niet ondersteund voor migratie.
 **Gedeeld schijf cluster** | Niet ondersteund.

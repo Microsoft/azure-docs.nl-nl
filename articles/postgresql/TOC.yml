@@ -640,6 +640,8 @@
           href: howto-hyperscale-create-users.md
         - name: Gedistribueerde gegevens
           items:
+            - name: Tabelgrootte bepalen
+              href: howto-hyperscale-table-size.md
             - name: Tabellen distribueren en bewerken
               href: howto-hyperscale-modify-distributed-tables.md
         - name: Hoge beschikbaarheid
@@ -657,6 +659,8 @@
             - name: Verbindingsfouten oplossen
               href: howto-hyperscale-troubleshoot-common-connection-issues.md
               displayName: 'connection errors, hyperscale'
+            - name: Nuttige gebruikersquery's
+              href: howto-hyperscale-useful-diagnostic-queries.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

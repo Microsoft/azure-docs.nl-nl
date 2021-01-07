@@ -137,6 +137,8 @@
           href: batch-automatic-scaling.md
         - name: Een VM-grootte voor rekenknooppunten kiezen
           href: batch-pool-vm-sizes.md
+        - name: Verplaatsen van Cloudservice naar virtuele machine-pools
+          href: batch-pool-cloud-service-to-virtual-machine-configuration.md
         - name: Toegang tot rekenknooppunten configureren
           href: pool-endpoint-configuration.md
         - name: Een groep maken met de Shared Image Gallery

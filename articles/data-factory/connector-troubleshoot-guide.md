@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/30/2020
+ms.date: 01/07/2021
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: e6591762ed6a7e2b462a209730276f3198d86ae8
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 68547b8fb673cd54b7c21963ede122553bbbc390
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821465"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967120"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -113,7 +113,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: Voeg In MongoDb Connection String de optie "**uuidRepresentation = Standard**" toe. Zie [MongoDB Connection String](connector-mongodb.md#linked-service-properties)voor meer informatie.
             
-## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL API)
+## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL-API)
 
 ### <a name="error-code--cosmosdbsqlapioperationfailed"></a>Fout code: CosmosDbSqlApiOperationFailed
 
@@ -458,34 +458,15 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: probleem met treffer van Azure Synapse Analytics bij het uitvoeren van een query op de externe tabel in azure Storage.
 
 - **Oplossing**: Voer dezelfde query uit in SSMS en controleer of hetzelfde resultaat wordt weer geven. Als dit het geval is, opent u een ondersteunings ticket voor Azure Synapse Analytics en geeft u de naam van uw Azure Synapse Analytics-server en-Data Base op om verder te kunnen oplossen
-            
-
-### <a name="low-performance-when-load-data-into-azure-sql"></a>Lage prestaties bij het laden van gegevens in Azure SQL
-
-- **Symptomen**: het kopiëren van gegevens naar Azure SQL verloopt langzaam.
-
-- **Oorzaak**: de hoofd oorzaak van het probleem wordt meestal veroorzaakt door het knel punt van de Azure SQL-zijde. Hier volgen enkele mogelijke oorzaken:
-
-    - De Azure DB-laag is niet hoog genoeg.
-
-    - Het gebruik van Azure DB-DTU is bijna 100%. U kunt [de prestaties bewaken](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) en overwegen om de DB-laag bij te werken.
-
-    - De indexen zijn niet juist ingesteld. Verwijder alle indexen voordat de gegevens worden geladen en maak deze opnieuw nadat het laden is voltooid.
-
-    - WriteBatchSize is niet groot genoeg om de grootte van de schemarij ruimte aan te passen. Probeer de eigenschap voor het probleem te verg Roten.
-
-    - In plaats van bulksgewijs inkrimpen, wordt opgeslagen procedure gebruikt, die naar verwachting de prestaties verergert. 
-
-- **Oplossing**: Raadpleeg de TSG voor de [prestaties van de Kopieer activiteit](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting)
 
 
 ### <a name="performance-tier-is-low-and-leads-to-copy-failure"></a>De prestatie tier is laag en het kopiëren van de fout is mislukt
 
-- **Symptomen**: hieronder is een fout bericht opgetreden bij het kopiëren van gegevens naar Azure SQL: `Database operation failed. Error message from database execution : ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.`
+- **Symptomen**: hieronder is een fout bericht opgetreden bij het kopiëren van gegevens naar Azure SQL database: `Database operation failed. Error message from database execution : ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.`
 
-- **Oorzaak**: Azure SQL S1 wordt gebruikt, waardoor de i/o-limieten in dergelijke gevallen worden bereikt.
+- **Oorzaak**: Azure SQL database S1 wordt gebruikt, waardoor de i/o-limiet in dit geval wordt bereikt.
 
-- **Oplossing**: Voer een upgrade uit voor de Azure SQL-prestatie tier om het probleem op te lossen. 
+- **Oplossing**: Voer een upgrade uit voor de laag Azure SQL database prestaties om het probleem op te lossen. 
 
 
 ### <a name="sql-table-cannot-be-found"></a>Kan de SQL-tabel niet vinden 
@@ -619,31 +600,6 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oorzaak**: de Dynamics-Server is onstabiel of ontoegankelijk of het netwerk ondervindt problemen.
 
 - **Aanbeveling**: Controleer de netwerk verbinding of Controleer het logboek van Dynamics Server voor meer informatie. Neem contact op met de ondersteuning voor Dynamics voor verdere hulp.
-
-
-## <a name="excel-format"></a>Excel-indeling
-
-### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Time-out of langzame prestaties bij het parseren van een groot Excel-bestand
-
-- **Symptomen**:
-
-    - Wanneer u een Excel-gegevensset maakt en een schema importeert vanuit verbinding/archief, voor beeld van gegevens, lijst of werk bladen vernieuwen, kunt u een time-outfout opvragen als het Excel-bestand groot is.
-
-    - Wanneer u de Kopieer activiteit gebruikt om gegevens te kopiëren van een groot Excel-bestand (>= 100 MB) naar een ander gegevens archief, kan dit leiden tot trage prestaties of OOM probleem.
-
-- **Oorzaak**: 
-
-    - Voor bewerkingen zoals het importeren van schema, het bekijken van gegevens en het weer geven van werk bladen in Excel-gegevensset, is de time-out 100 s en statisch. Voor een groot Excel-bestand kunnen deze bewerkingen niet worden voltooid binnen de time-outwaarde.
-
-    - Met de ADF Copy-activiteit wordt het hele Excel-bestand in het geheugen gelezen en vervolgens vindt het opgegeven werk blad en de cellen om gegevens te lezen. Dit gedrag is te wijten aan het gebruik van de onderliggende SDK.
-
-- **Oplossing**: 
-
-    - Voor het importeren van schema kunt u een kleiner voorbeeld bestand genereren, een subset van het oorspronkelijke bestand, en vervolgens schema importeren uit voorbeeld bestand kiezen in plaats van schema importeren vanuit verbinding/archief.
-
-    - Voor het werk blad overzichten kunt u in de vervolg keuzelijst voor het werk blad op bewerken klikken en in plaats daarvan de blad naam/index invoeren.
-
-    - Als u een groot Excel-bestand (>100 MB) wilt kopiëren naar een ander archief, kunt u gebruikmaken van de Excel-bron gegevens stroom die door sport streaming wordt gelezen en beter presteert.
     
 
 ## <a name="ftp"></a>FTP

@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 12/26/2020
+ms.date: 01/07/2021
 ms.author: alexeyo
-ms.openlocfilehash: a1c3fcf868af76865eec9fa2be4f0fdb58074867
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 539ea6f80604eabdbbe56a3280cf5ddb367c0439
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964453"
+ms.locfileid: "97966780"
 ---
 # <a name="speech-services-in-sovereign-clouds"></a>Spraak Services in soevereine Clouds
 
@@ -41,15 +41,7 @@ Alleen beschikbaar voor Amerikaanse overheids instanties en hun partners. Zie hi
   - Neurale Voice
   - Aangepaste stem
 - **Ondersteunde talen:**
-  - Arabisch (AR-*)
-  - Chinees (ZH-*)
-  - Engels (en-*)
-  - Frans (FR-*)
-  - Duits (de-*)
-  - Hindi (Hi-IN)
-  - Koreaans (ko-KR)
-  - Russisch (ru-RU)
-  - Spaans (ES-*)
+  - Zie de lijst met ondersteunde talen [hier](language-support.md)
 
 ### <a name="endpoint-information"></a>Eindpunt gegevens
 

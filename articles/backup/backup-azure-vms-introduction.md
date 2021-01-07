@@ -3,12 +3,12 @@ title: Over Azure VM Backup
 description: In dit artikel leest u hoe de Azure Backup-service een back-up maakt van virtuele Azure-machines en hoe u de aanbevolen procedures volgt.
 ms.topic: conceptual
 ms.date: 09/13/2019
-ms.openlocfilehash: 7fa47b83eb8fa06c028079cf47ea0cb46df31860
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 291c50d4ac52d34a218b1b7cc76d625da3119d25
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325227"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968990"
 ---
 # <a name="an-overview-of-azure-vm-backup"></a>Een overzicht van Azure VM backup
 
@@ -92,7 +92,7 @@ In de volgende tabel ziet u de verschillende soorten consistentie van moment opn
 **Schijf** | Back-ups van VM-schijven zijn parallel. Als een virtuele machine bijvoorbeeld vier schijven heeft, probeert de back-upservice tegelijkertijd een back-up te maken van alle vier de schijven. De back-up is incrementeel (alleen gewijzigde gegevens).
 **Planning** |  Als u het back-upverkeer wilt verminderen, maakt u op verschillende tijdstippen van de dag een back-up van verschillende Vm's en zorgt u ervoor dat de tijden niet overlappen. Als op hetzelfde moment back-ups worden gemaakt van VM's, treden er netwerkproblemen op.
 **Back-ups voorbereiden** | Houd de tijd die nodig is om de back-up voor te bereiden. De voorbereidingstijd omvat het installeren of bijwerken van de back-upextensie en het activeren van een schaduwkopie volgens het back-upschema.
-**Gegevensoverdracht** | Bedenk de tijd die nodig is om Azure Backup de incrementele wijzigingen van de vorige back-up te identificeren.<br/><br/> In een incrementele back-up worden de wijzigingen door Azure Backup bepaald door de controlesom van het blok te berekenen. Als een blok wordt gewijzigd, wordt het gemarkeerd voor overdracht naar de kluis. De service analyseert de geïdentificeerde blokken om de hoeveelheid gegevens die moet worden overgedragen, verder te minimaliseren. Nadat alle gewijzigde blokken zijn geëvalueerd, worden de wijzigingen in de kluis door Azure Backup overgedragen.<br/><br/> Er kan een vertraging optreden tussen het maken van de schaduwkopie en het kopiëren ervan naar de kluis. Het kan Maxi maal acht uur duren voordat de moment opnamen worden overgebracht naar de kluis. De back-uptijd voor een virtuele machine is minder dan 24 uur voor de dagelijkse back-up.
+**Gegevens overdracht** | Bedenk de tijd die nodig is om Azure Backup de incrementele wijzigingen van de vorige back-up te identificeren.<br/><br/> In een incrementele back-up worden de wijzigingen door Azure Backup bepaald door de controlesom van het blok te berekenen. Als een blok wordt gewijzigd, wordt het gemarkeerd voor overdracht naar de kluis. De service analyseert de geïdentificeerde blokken om de hoeveelheid gegevens die moet worden overgedragen, verder te minimaliseren. Nadat alle gewijzigde blokken zijn geëvalueerd, worden de wijzigingen in de kluis door Azure Backup overgedragen.<br/><br/> Er kan een vertraging optreden tussen het maken van de schaduwkopie en het kopiëren ervan naar de kluis. Het kan Maxi maal acht uur duren voordat de moment opnamen worden overgebracht naar de kluis. De back-uptijd voor een virtuele machine is minder dan 24 uur voor de dagelijkse back-up.
 **Eerste back-up** | Hoewel de totale back-uptijd voor incrementele back-ups minder dan 24 uur is, is dit mogelijk niet het geval voor de eerste back-up. De tijd die nodig is om de initiële back-up te maken, is afhankelijk van de grootte van de gegevens en wanneer de back-up wordt verwerkt.
 **Wachtrij herstellen** | Met Azure Backup worden herstel taken van meerdere opslag accounts tegelijk verwerkt en worden herstel aanvragen in een wachtrij geplaatst.
 **Kopie terugzetten** | Tijdens het herstel proces worden gegevens van de kluis naar het opslag account gekopieerd.<br/><br/> De totale herstel tijd is afhankelijk van de I/O-bewerkingen per seconde (IOPS) en de door Voer van het opslag account.<br/><br/> Als u de Kopieer tijd wilt beperken, selecteert u een opslag account dat niet is geladen met andere schrijf bewerkingen en lees bewerkingen van de toepassing.
@@ -121,6 +121,7 @@ Wanneer u back-ups van VM's configureert, wordt u aangeraden deze procedures te 
 - Als u virtuele machines herstelt vanuit één kluis, raden we u ten zeerste aan om andere [v2-opslag accounts voor algemeen](../storage/common/storage-account-upgrade.md) gebruik te gebruiken om ervoor te zorgen dat het doel-opslag account niet wordt beperkt. Elke virtuele machine moet bijvoorbeeld een ander opslag account hebben. Als er bijvoorbeeld tien Vm's zijn teruggezet, gebruikt u 10 verschillende opslag accounts.
 - Voor het maken van back-ups van virtuele machines die gebruikmaken van Premium Storage met direct terugzetten, raden we aan om *50%* beschik bare ruimte toe te wijzen aan de totale toegewezen opslag ruimte. Dit is **alleen** vereist voor de eerste back-up. De 50% beschik bare ruimte is geen vereiste voor back-ups nadat de eerste back-up is voltooid.
 - De limiet voor het aantal schijven per opslagaccount is relatief ten opzichte van de mate van toegang tot de schijven door toepassingen die worden uitgevoerd op een IaaS-VM (infrastructure as a service). Als er op één opslagaccount vijf tot tien schijven of meer aanwezig zijn, geldt als vuistregel dat de belasting kan worden verdeeld door sommige schijven naar afzonderlijke opslagaccounts te verplaatsen.
+- Als u virtuele machines met beheerde schijven wilt herstellen met behulp van Power shell, geeft u de extra para meter **_TargetResourceGroupName_* _ op om de resource groep op te geven waarvoor beheerde schijven zullen worden hersteld. hier vindt u [meer informatie](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#restore-managed-disks).
 
 ## <a name="backup-costs"></a>Back-upkosten
 
@@ -130,7 +131,7 @@ De facturering begint pas nadat de eerste geslaagde back-up is voltooid. Op dit 
 
 Facturering voor een opgegeven virtuele machine stopt alleen als de beveiliging is gestopt en alle back-upgegevens worden verwijderd. Wanneer de beveiliging wordt gestopt en er geen actieve back-uptaken zijn, wordt de grootte van de laatste geslaagde back-up van de virtuele machine de beveiligde instantie grootte die wordt gebruikt voor de maandelijkse factuur.
 
-De berekening van de grootte van beveiligde instanties is gebaseerd op de *werkelijke* grootte van de virtuele machine. De grootte van de virtuele machine is de som van alle gegevens in de virtuele machine, met uitzonde ring van de tijdelijke opslag. Prijzen zijn gebaseerd op de werkelijke gegevens die op de gegevens schijven zijn opgeslagen, niet op de Maxi maal ondersteunde grootte voor elke gegevens schijf die is gekoppeld aan de virtuele machine.
+De berekening van de grootte van beveiligde instanties is gebaseerd op de _actual * grootte van de virtuele machine. De grootte van de virtuele machine is de som van alle gegevens in de virtuele machine, met uitzonde ring van de tijdelijke opslag. Prijzen zijn gebaseerd op de werkelijke gegevens die op de gegevens schijven zijn opgeslagen, niet op de Maxi maal ondersteunde grootte voor elke gegevens schijf die is gekoppeld aan de virtuele machine.
 
 Op dezelfde manier is de factuur voor back-upopslag gebaseerd op de hoeveelheid gegevens die is opgeslagen in Azure Backup, wat de som is van de werkelijke gegevens in elk herstel punt.
 

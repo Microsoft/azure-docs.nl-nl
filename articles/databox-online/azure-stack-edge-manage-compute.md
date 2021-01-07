@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 05/20/2019
+ms.date: 01/06/2021
 ms.author: alkohli
-ms.openlocfilehash: 0d93edbefb61cb8ded09f6402ca1e1661429efe1
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: ebf967fe02ab6424b9952bb0315b70fadb547fe3
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952145"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967776"
 ---
 # <a name="manage-compute-on-your-azure-stack-edge-pro"></a>Reken kracht beheren op uw Azure Stack Edge Pro
 
@@ -38,7 +38,7 @@ Gebeurtenissen zijn de dingen die gebeuren in uw cloudomgeving of op uw apparaat
 
 Voer de volgende stappen uit in de Azure Portal om een trigger te maken.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > trigger**. Selecteer **+ trigger toevoegen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IoT Edge >-triggers**. Selecteer **+ trigger toevoegen** op de opdracht balk.
 
     ![Trigger toevoegen selecteren](media/azure-stack-edge-manage-compute/add-trigger-1.png)
 
@@ -68,15 +68,15 @@ Voer de volgende stappen uit in de Azure Portal om een trigger te verwijderen.
 
 1. Selecteer de trigger die u wilt verwijderen in de lijst met triggers.
 
-    ![Trigger selecteren](media/azure-stack-edge-manage-compute/add-trigger-1.png)
+    ![Trigger selecteren](media/azure-stack-edge-manage-compute/delete-trigger-1.png)
 
 2. Klik met de rechter muisknop en selecteer **verwijderen**.
 
-    ![Verwijderen selecteren](media/azure-stack-edge-manage-compute/add-trigger-1.png)
+    ![Verwijderen selecteren](media/azure-stack-edge-manage-compute/delete-trigger-2.png)
 
 3. Klik op **Ja** als u om bevestiging wordt gevraagd.
 
-    ![De verwijdering bevestigen](media/azure-stack-edge-manage-compute/add-trigger-1.png)
+    ![De verwijdering bevestigen](media/azure-stack-edge-manage-compute/delete-trigger-3.png)
 
 De lijst met triggers-updates om de verwijdering weer te geven.
 
@@ -88,11 +88,11 @@ Gebruik de Azure Portal om de compute-configuratie weer te geven, een bestaande 
 
 Voer de volgende stappen uit in de Azure Portal om de reken configuratie voor uw apparaat weer te geven.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > modules**. Selecteer **Compute weer geven** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge overzicht** van de >. 
 
     ![Reken proces weer geven selecteren](media/azure-stack-edge-manage-compute/view-compute-1.png)
 
-2. Noteer de compute-configuratie op het apparaat. Wanneer u Compute hebt geconfigureerd, hebt u een IoT Hub resource gemaakt. Onder die IoT Hub resource worden een IoT-apparaat en een IoT Edge-apparaat geconfigureerd. Alleen de linux-modules worden ondersteund voor uitvoering op het IoT Edge-apparaat.
+2. Ga naar de **Eigenschappen** pagina. Noteer de compute-configuratie op het apparaat. Wanneer u Compute hebt geconfigureerd, hebt u een IoT Hub resource gemaakt. Onder die IoT Hub resource worden een IoT-apparaat en een IoT Edge-apparaat geconfigureerd. Alleen de linux-modules worden ondersteund voor uitvoering op het IoT Edge-apparaat.
 
     ![Configuratie weergeven](media/azure-stack-edge-manage-compute/view-compute-2.png)
 
@@ -101,11 +101,11 @@ Voer de volgende stappen uit in de Azure Portal om de reken configuratie voor uw
 
 Voer de volgende stappen uit in de Azure Portal om de bestaande Edge Compute-configuratie voor uw apparaat te verwijderen.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > aan de slag**te gaan. Selecteer **reken proces verwijderen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge overzicht** van de >. Selecteer **verwijderen** op de opdracht balk.
 
     ![Selecteer reken proces verwijderen](media/azure-stack-edge-manage-compute/remove-compute-1.png)
 
-2. Als u de compute-configuratie verwijdert, moet u uw apparaat opnieuw configureren voor het geval dat u de berekening opnieuw moet gebruiken. Selecteer **Ja**als u om bevestiging wordt gevraagd.
+2. Als u de compute-configuratie verwijdert, moet u uw apparaat opnieuw configureren voor het geval dat u de berekening opnieuw moet gebruiken. Selecteer **Ja** als u om bevestiging wordt gevraagd.
 
     ![Selecteer Compute 2 verwijderen](media/azure-stack-edge-manage-compute/remove-compute-2.png)
 
@@ -119,7 +119,7 @@ Als uw IoT-apparaat en IoT Edge-apparaatklassen zijn geroteerd, moet u de config
 
 Voer de volgende stappen uit in de Azure Portal om de toegangs sleutels voor uw apparaat te synchroniseren.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > aan de slag**te gaan. Selecteer **configuratie vernieuwen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge overzicht** van de >. Selecteer **configuratie vernieuwen** op de opdracht balk.
 
     ![Selecteer configuratie vernieuwen](media/azure-stack-edge-manage-compute/refresh-configuration-1.png)
 

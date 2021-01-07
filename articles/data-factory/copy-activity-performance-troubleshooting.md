@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/09/2020
-ms.openlocfilehash: d22d040b0001ee30e29c551e686a7cb6bc47c2af
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 01/07/2021
+ms.openlocfilehash: ee6105376f5e8dc884f13e04db51126c039328e9
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921920"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968888"
 ---
 # <a name="troubleshoot-copy-activity-performance"></a>Prestaties van de Kopieer activiteit oplossen
 
@@ -53,7 +53,7 @@ Als referentie bieden de tips voor het afstemmen van prestaties momenteel sugges
 
 In de details van de uitvoering en de duur onder aan de weer gave controle activiteit kopiëren worden de belangrijkste fasen van uw Kopieer activiteit beschreven (Zie het voor beeld aan het begin van dit artikel). Dit is vooral handig bij het oplossen van problemen met de Kopieer prestaties. Het knel punt van de Kopieer uitvoering is de versie met de langste duur. Raadpleeg de volgende tabel in de definitie van elke fase en leer hoe u de [Kopieer activiteit in azure IR oplost](#troubleshoot-copy-activity-on-azure-ir) en hoe u de [Kopieer activiteit op zelf-hostende IR oplost](#troubleshoot-copy-activity-on-self-hosted-ir) met deze informatie.
 
-| Fase           | Description                                                  |
+| Fase           | Beschrijving                                                  |
 | --------------- | ------------------------------------------------------------ |
 | Wachtrij           | De verstreken tijd totdat de Kopieer activiteit daad werkelijk wordt gestart op de Integration runtime. |
 | Script vooraf kopiëren | De verstreken tijd tussen de Kopieer activiteit, te beginnen bij de IR-en kopieer activiteit, waarbij het vooraf kopiëren van het script in de Sink-gegevens opslag wordt voltooid. Toep assen wanneer u het script voor het vooraf kopiëren van de data base-sinks configureert, bijvoorbeeld wanneer u gegevens schrijft in Azure SQL Database opschonen voordat nieuwe gegevens worden gekopieerd. |
@@ -172,6 +172,60 @@ Als de Kopieer prestaties niet voldoen aan uw verwachting, kunt u bij het oploss
 
   - Als u de [parallelle kopieën](copy-activity-performance-features.md)geleidelijk wilt afstemmen, moet u er rekening mee houden dat te veel parallelle kopieën mogelijk zelfs de prestaties nadelig beïnvloeden.
 
+
+## <a name="connector-and-ir-performance"></a>Connector-en IR-prestaties
+
+In deze sectie vindt u een aantal richt lijnen voor probleem oplossing voor het oplossen van problemen met connector type of Integration runtime.
+
+### <a name="activity-execution-time-varies-using-azure-ir-vs-azure-vnet-ir"></a>De uitvoerings tijd van de activiteit is afhankelijk van Azure IR VS Azure VNet IR
+
+De uitvoerings tijd van de activiteit varieert wanneer de gegevensset is gebaseerd op verschillende Integration Runtime.
+
+- **Symptomen**: als u de vervolg keuzelijst gekoppelde service in de gegevensset in-of uitschakelt, worden dezelfde pijplijn activiteiten uitgevoerd, maar heeft dit drastische verschillende uitvoerings tijden. Wanneer de gegevensset is gebaseerd op het Integration Runtime beheerde Virtual Network, neemt het gemiddeld meer dan twee minuten in beslag om de uitvoering te volt ooien, maar duurt het ongeveer 20 seconden om te volt ooien wanneer dit is gebaseerd op de standaard Integration Runtime.
+
+- **Oorzaak**: als u de details van de pijplijn uitvoeringen wilt controleren, kunt u zien dat de langzame pijp lijn wordt uitgevoerd op beheerde VNet (Virtual Network) IR, terwijl het normale wordt uitgevoerd op Azure IR. Het ontwerp van beheerde VNet-IR neemt langer tijd in beslag dan Azure IR omdat er niet meer dan één reken knooppunt per data factory wordt gereserveerd, waardoor elke Kopieer activiteit een warme periode van twee minuten heeft, en deze gebeurtenis voornamelijk wordt uitgevoerd op de VNet-koppeling in plaats van Azure IR.
+
+    
+### <a name="low-performance-when-loading-data-into-azure-sql-database"></a>Lage prestaties bij het laden van gegevens in Azure SQL Database
+
+- **Symptomen**: het kopiëren van gegevens in naar Azure SQL database is langzaam.
+
+- **Oorzaak**: de hoofd oorzaak van het probleem wordt meestal geactiveerd door de bottleneck van Azure SQL database-zijde. Hier volgen enkele mogelijke oorzaken:
+
+    - Azure SQL Database laag is niet hoog genoeg.
+
+    - Het DTU-gebruik Azure SQL Database bijna 100%. U kunt [de prestaties bewaken](https://docs.microsoft.com/azure/azure-sql/database/monitor-tune-overview) en overwegen om de Azure SQL database-laag bij te werken.
+
+    - De indexen zijn niet juist ingesteld. Verwijder alle indexen voordat de gegevens worden geladen en maak deze opnieuw nadat het laden is voltooid.
+
+    - WriteBatchSize is niet groot genoeg om de grootte van de schemarij ruimte aan te passen. Probeer de eigenschap voor het probleem te verg Roten.
+
+    - In plaats van bulksgewijs inkrimpen, wordt opgeslagen procedure gebruikt, die naar verwachting de prestaties verergert. 
+
+- **Oplossing**: Raadpleeg de [prestaties van de Kopieer activiteit oplossen](https://docs.microsoft.com/azure/data-factory/copy-activity-performance-troubleshooting).
+
+### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Time-out of langzame prestaties bij het parseren van een groot Excel-bestand
+
+- **Symptomen**:
+
+    - Wanneer u een Excel-gegevensset maakt en een schema importeert vanuit verbinding/archief, voor beeld van gegevens, lijst of werk bladen vernieuwen, kunt u een time-outfout opvragen als het Excel-bestand groot is.
+
+    - Wanneer u de Kopieer activiteit gebruikt om gegevens te kopiëren van een groot Excel-bestand (>= 100 MB) naar een ander gegevens archief, kan dit leiden tot trage prestaties of OOM probleem.
+
+- **Oorzaak**: 
+
+    - Voor bewerkingen zoals het importeren van schema, het bekijken van gegevens en het weer geven van werk bladen in Excel-gegevensset, is de time-out 100 s en statisch. Voor een groot Excel-bestand kunnen deze bewerkingen niet worden voltooid binnen de time-outwaarde.
+
+    - Met de ADF Copy-activiteit wordt het hele Excel-bestand in het geheugen gelezen en vervolgens vindt het opgegeven werk blad en de cellen om gegevens te lezen. Dit gedrag is te wijten aan het gebruik van de onderliggende SDK.
+
+- **Oplossing**: 
+
+    - Voor het importeren van schema kunt u een kleiner voorbeeld bestand genereren, een subset van het oorspronkelijke bestand, en vervolgens schema importeren uit voorbeeld bestand kiezen in plaats van schema importeren vanuit verbinding/archief.
+
+    - Voor het werk blad overzichten kunt u in de vervolg keuzelijst voor het werk blad op bewerken klikken en in plaats daarvan de blad naam/index invoeren.
+
+    - Als u een groot Excel-bestand (>100 MB) wilt kopiëren naar een ander archief, kunt u gebruikmaken van de Excel-bron gegevens stroom die door sport streaming wordt gelezen en beter presteert.
+    
 ## <a name="other-references"></a>Andere verwijzingen
 
 Hier vindt u de prestatie bewaking en het afstemmen van verwijzingen voor een aantal ondersteunde gegevens archieven:

@@ -123,6 +123,8 @@
           href: troubleshoot-cross-region-replication.md
         - name: Problemen met volumes van dubbele protocollen oplossen
           href: troubleshoot-dual-protocol-volumes.md
+        - name: Problemen met NFSv4.1 Kerberos-volumes oplossen
+          href: troubleshoot-nfsv41-kerberos-volumes.md
         - name: Problemen met momentopnamebeleid oplossen
           href: troubleshoot-snapshot-policies.md
         - name: Resourceproviderproviderfouten oplossen

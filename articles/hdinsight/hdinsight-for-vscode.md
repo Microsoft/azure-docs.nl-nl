@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 1bbc3b3cd755aabd348a238ad65cda132b9a7547
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: c32f90221a73d04fd6c54c8332826232d0e6a6f3
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746606"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968531"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
 
@@ -269,7 +269,7 @@ Het hulp programma biedt ook ondersteuning voor de **Spark SQL** -query:
 
 > [!NOTE]
 >
-> [' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding '](#issues-changed) is opgelost. De nieuwste MS-python-versie kan nu worden gebruikt.
+> [' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding '](#issues-changed) is opgelost. Werk de **MS-python** nu bij naar de **nieuwste versie** .
 
 ## <a name="submit-pyspark-batch-job"></a>Batch taak PySpark verzenden
 
@@ -491,7 +491,7 @@ Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Azure i
 
 ## <a name="issues-changed"></a>Problemen gewijzigd
 
-Voor dit probleem wordt MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding ' is opgelost, kan de **meest recente versie van MS-python** nu worden gebruikt.
+Voor dit probleem is ' MS-python >= 2020.5.78807-versie wordt niet ondersteund voor deze uitbrei ding ' is opgelost, moet u de **MS-python** nu bijwerken naar de **nieuwste versie** .
 
 
 ## <a name="next-steps"></a>Volgende stappen

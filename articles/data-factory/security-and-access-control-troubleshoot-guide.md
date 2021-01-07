@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 01/05/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: fac4f3029d783e9257d00466ddb9fc9741b0f5a2
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 3b7b405e34b6ca82da593507ad6103d360c5df1e
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895645"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968582"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Problemen met Azure Data Factory beveiliging en toegangs beheer oplossen
 
@@ -151,16 +151,6 @@ Ga naar de [persoonlijke Azure-koppeling voor Azure Data Factory](https://docs.m
 Probeer open bare netwerk toegang in te scha kelen op de gebruikers interface, zoals wordt weer gegeven in de volgende scherm afbeelding:
 
 ![Scherm afbeelding van het besturings element ' ingeschakeld ' voor ' open bare netwerk toegang toestaan ' in het deel venster netwerk.](media/self-hosted-integration-runtime-troubleshoot-guide/enable-public-network-access.png)
-
-### <a name="pipeline-runtime-varies-when-basing-on-different-ir"></a>Pijplijn runtime is afhankelijk van de Base op verschillende IR
-
-#### <a name="symptoms"></a>Symptomen
-
-Als u de vervolg keuzelijst voor de gekoppelde service in de gegevensset in-en uitschakelt, worden dezelfde pijplijn activiteiten uitgevoerd, maar heeft deze een drastische andere uitvoerings tijd. Wanneer de gegevensset is gebaseerd op het Integration Runtime beheerde Virtual Network, neemt het gemiddeld meer dan twee minuten in beslag om de uitvoering te volt ooien, maar duurt het ongeveer 20 seconden om te volt ooien wanneer dit is gebaseerd op de standaard Integration Runtime.
-
-#### <a name="cause"></a>Oorzaak
-
-Als u de details van pijplijn uitvoeringen wilt controleren, kunt u zien dat de langzame pijp lijn wordt uitgevoerd op beheerde VNet (Virtual Network) IR, terwijl de normale wordt uitgevoerd op Azure IR. Het ontwerp van beheerde VNet-IR neemt langer tijd in beslag dan Azure IR omdat er niet meer dan één reken knooppunt per data factory wordt gereserveerd, waardoor elke Kopieer activiteit een warme periode van twee minuten heeft, en deze gebeurtenis voornamelijk wordt uitgevoerd op de VNet-koppeling in plaats van Azure IR.
 
 ## <a name="next-steps"></a>Volgende stappen
 

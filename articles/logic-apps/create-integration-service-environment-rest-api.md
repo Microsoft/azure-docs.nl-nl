@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/29/2020
-ms.openlocfilehash: 34a5dfb44ee78245b56c1774701f48b3b8a494df
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.date: 12/30/2020
+ms.openlocfilehash: ee6c116d02a7be1682d9e8379037ef1b8c92bce8
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827475"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967035"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Een integratieserviceomgeving (ISE) maken met behulp van de Logic Apps REST API
 
@@ -121,7 +121,7 @@ Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschapp
             }
          ]
       },
-      // Include `certificates` object to enable self-signed certiificate and certificate issued by Enterprise Certificate Authority
+      // Include `certificates` object to enable self-signed certificate and the certificate issued by Enterprise Certificate Authority
       "certificates": {
          "testCertificate": {
             "publicCertificate": "{base64-encoded-certificate}",
@@ -185,6 +185,7 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
    }
 }
 ```
+
 ## <a name="add-custom-root-certificates"></a>Aangepaste basis certificaten toevoegen
 
 U gebruikt vaak een ISE om verbinding te maken met aangepaste services op uw virtuele netwerk of on-premises. Deze aangepaste services worden vaak beschermd door een certificaat dat is uitgegeven door een aangepaste basis certificerings instantie, zoals een bedrijfs certificerings instantie of een zelfondertekend certificaat. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Voor uw ISE om verbinding te maken met deze services via Transport Layer Security (TLS), moet uw ISE toegang hebben tot deze basis certificaten. Als u uw ISE wilt bijwerken met een aangepast vertrouwd basis certificaat, maakt u deze HTTPS- `PATCH` aanvraag:

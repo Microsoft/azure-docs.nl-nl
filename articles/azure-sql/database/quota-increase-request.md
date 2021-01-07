@@ -9,12 +9,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 06/04/2020
-ms.openlocfilehash: cfcdd143a26d36ed3c4646122fce7c19c41976d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44a37a912c5c7a882d21631b8ce2da2c7ba9c05e
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448827"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967698"
 ---
 # <a name="request-quota-increases-for-azure-sql-database-and-sql-managed-instance"></a>Toename van quotum aanvragen voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -25,11 +25,11 @@ In dit artikel wordt uitgelegd hoe u een quotum verhoging kunt aanvragen voor Az
 
 Gebruik de volgende stappen om een nieuwe ondersteunings aanvraag te maken op basis van de Azure Portal voor SQL Database.
 
-1. Selecteer **Help en ondersteuning**in het menu [Azure Portal](https://portal.azure.com) .
+1. Selecteer **Help en ondersteuning** in het menu [Azure Portal](https://portal.azure.com) .
 
    ![De koppeling Help en ondersteuning](./media/quota-increase-request/help-plus-support.png)
 
-1. Selecteer **nieuwe ondersteunings aanvraag**in **Help en ondersteuning**.
+1. Selecteer **nieuwe ondersteunings aanvraag** in **Help en ondersteuning**.
 
     ![Een nieuwe ondersteunings aanvraag maken](./media/quota-increase-request/new-support-request.png)
 
@@ -37,11 +37,11 @@ Gebruik de volgende stappen om een nieuwe ondersteunings aanvraag te maken op ba
 
    ![Selecteer een probleem type](./media/quota-increase-request/select-quota-issue-type.png)
 
-1. Selecteer bij **abonnement**het abonnement waarvan u het quotum wilt verhogen.
+1. Selecteer bij **abonnement** het abonnement waarvan u het quotum wilt verhogen.
 
    ![Selecteer een abonnement voor een verhoogd quotum](./media/quota-increase-request/select-subscription-support-request.png)
 
-1. Selecteer bij **quotum type**een van de volgende quotum typen:
+1. Selecteer bij **quotum type** een van de volgende quotum typen:
 
    - **SQL database** voor de quota van één data base en elastische groep.
    - **SQL database beheerde instantie** voor beheerde exemplaren.
@@ -105,20 +105,22 @@ Als uw abonnement toegang moet hebben in een bepaalde regio, selecteert u de opt
 
 1. Selecteer in de lijst **Selecteer een locatie** de Azure-regio die u wilt gebruiken. Het quotum is per abonnement in elke regio.
 
-1. Voer het **aankoop model**in en **verwachte verbruiks** gegevens.
+1. Voer het **aankoop model** in en **verwachte verbruiks** gegevens.
 
    ![Toegang tot de aanvraag regio](./media/quota-increase-request/quota-request.png)
 
-### <a name="enable-m-series-access-to-a-region"></a><a id="mseries"></a> M-Series toegang tot een regio inschakelen
+<!--
+### <a id="mseries"></a> Enable M-series access to a region
 
-Als u hardware van de M-serie wilt inschakelen voor een abonnement en regio, moet een ondersteunings aanvraag worden geopend.
+To enable M-series hardware for a subscription and region, a support request must be opened.
 
-1. Selecteer het toegangs quotum type van de **M-serie** .
+1. Select the **M-series region access** quota type.
 
-1. Selecteer in de lijst **Selecteer een locatie** de Azure-regio die u wilt gebruiken. Het quotum is per abonnement in elke regio.
+1. In the **Select a location** list, select the Azure region to use. The quota is per subscription in each region.
 
 
-   ![Toegang tot regio's uit de M-serie aanvragen](./media/quota-increase-request/quota-m-series.png)
+   ![Request M-series region access](./media/quota-increase-request/quota-m-series.png)
+-->
 
 ## <a name="sql-managed-instance-quota-type"></a><a id="sqlmiquota"></a> Quota type voor SQL-beheerd exemplaar
 
@@ -134,7 +136,7 @@ Zie [overzicht van Azure SQL Managed instance resource limieten](../managed-inst
 
 ## <a name="submit-your-request"></a>De aanvraag verzenden
 
-De laatste stap bestaat uit het invullen van de resterende details van uw quotumaanvraag voor de SQL Database. Selecteer vervolgens**Volgende: Controleren en maken > >** en klik na het controleren van de aanvraagdetails op **Maken** om de aanvraag in te dienen.
+De laatste stap bestaat uit het invullen van de resterende details van uw quotumaanvraag voor de SQL Database. Selecteer vervolgens **Volgende: Controleren en maken > >** en klik na het controleren van de aanvraagdetails op **Maken** om de aanvraag in te dienen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

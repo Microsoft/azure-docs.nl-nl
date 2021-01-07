@@ -2,19 +2,21 @@
 title: Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 description: Meer informatie over hoe u uw pool configuratie kunt bijwerken naar de nieuwste en aanbevolen configuratie
 ms.topic: how-to
-ms.date: 1/4/2021
-ms.openlocfilehash: 52e1762dc8e81b3eb7e1bce388d91dfd2c76191a
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 1/6/2021
+ms.openlocfilehash: b6f4184f7c4f133f74cb3157638b1621dad25fda
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937629"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97969024"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 
 Batch-Pools kunnen worden gemaakt met behulp van [cloudServiceConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#cloudserviceconfiguration) of [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration). ' virtualMachineConfiguration ' is de aanbevolen configuratie, omdat deze alle batch-mogelijkheden ondersteunt. cloudServiceConfiguration-groepen bieden geen ondersteuning voor alle functies en er zijn geen nieuwe functies gepland.
 
-Als u ' cloudServiceConfiguration-groepen gebruikt, wordt u ten zeerste aangeraden om de groep ' virtualMachineConfiguration ' te gebruiken. In dit artikel wordt beschreven hoe u migreert naar de aanbevolen configuratie van ' virtualMachineConfiguration '.
+Als u ' cloudServiceConfiguration-groepen gebruikt, wordt u ten zeerste aangeraden om de groep ' virtualMachineConfiguration ' te gebruiken. Zo kunt u profiteren van alle mogelijkheden van de batch, zoals een uitgebreide [selectie van VM-serie](batch-pool-vm-sizes.md), Linux vm's, [containers](batch-docker-container-workloads.md), [Azure Resource Manager virtuele netwerken](batch-virtual-network.md)en [schijf versleuteling van knoop punten](disk-encryption.md).
+
+In dit artikel wordt beschreven hoe u migreert naar ' virtualMachineConfiguration '.
 
 ## <a name="new-pools-are-required"></a>Nieuwe groepen zijn vereist
 

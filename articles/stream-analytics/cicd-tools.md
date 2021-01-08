@@ -4,16 +4,15 @@ description: In dit artikel wordt beschreven hoe u Azure Stream Analytics CI/CD-
 services: stream-analytics
 author: su-jie
 ms.author: sujie
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: aa75a553ffc131f4827aa045849f1317d894ddc5
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9e79e0a2c030e2ebfcd5ddfd49e7c05afdb0dc3c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123147"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019547"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Bouw-, test-en implementaties van een Azure Stream Analytics-taak automatiseren met CI/CD-hulpprogram ma's
 
@@ -21,7 +20,7 @@ U kunt het Azure Stream Analytics CI/CD NPM-pakket gebruiken om automatisch uw A
 
 ## <a name="installation"></a>Installatie
 
-U kunt [het pakket rechtstreeks downloaden](https://www.npmjs.com/package/azure-streamanalytics-cicd) of het [globaal](https://docs.npmjs.com/downloading-and-installing-packages-globally) installeren met behulp van de `npm install -g azure-streamanalytics-cicd` opdracht. We raden u aan de opdracht te gebruiken, die ook kan worden gebruikt in een Power shell-of Azure CLI-script taak van een build-pijp lijn in **Azure-pijp lijnen** .
+U kunt [het pakket rechtstreeks downloaden](https://www.npmjs.com/package/azure-streamanalytics-cicd) of het [globaal](https://docs.npmjs.com/downloading-and-installing-packages-globally) installeren met behulp van de `npm install -g azure-streamanalytics-cicd` opdracht. We raden u aan de opdracht te gebruiken, die ook kan worden gebruikt in een Power shell-of Azure CLI-script taak van een build-pijp lijn in **Azure-pijp lijnen**.
 
 ## <a name="build-the-project"></a>Het project bouwen
 
@@ -66,7 +65,7 @@ Wanneer een Stream Analytics project is gebouwd, worden de volgende twee bestand
 
 De standaard parameters in het parameters.jsbestand zijn afkomstig uit de instellingen in uw Visual Studio-code of Visual Studio-project. Als u wilt implementeren in een andere omgeving, vervangt u de para meters dienovereenkomstig.
 
-De standaard waarden voor alle referenties zijn **Null** . U moet de waarden instellen voordat u naar Azure implementeert.
+De standaard waarden voor alle referenties zijn **Null**. U moet de waarden instellen voordat u naar Azure implementeert.
 
 ```json
 "Input_EntryStream_sharedAccessPolicyKey": {
@@ -122,7 +121,7 @@ azure-streamanalytics-cicd addtestcase -project <projectFullPath> [-testConfigPa
 | Parameter | Beschrijving |
 |---|---|
 | `-project` | Het pad van de **asaproj.jsin** het bestand voor uw Visual Studio code-project of **[uw project naam]. Asaproj** voor Visual Studio-project. |
-| `-testConfigPath` | Het pad van het test configuratie bestand. Als deze niet is opgegeven, wordt het bestand doorzocht in **\test** onder de huidige map van de **asaproj.jsin** het bestand met de standaard bestandsnaam **testConfig.jsop** . Er wordt een nieuw bestand gemaakt als dat nog niet bestaat. |
+| `-testConfigPath` | Het pad van het test configuratie bestand. Als deze niet is opgegeven, wordt het bestand doorzocht in **\test** onder de huidige map van de **asaproj.jsin** het bestand met de standaard bestandsnaam **testConfig.jsop**. Er wordt een nieuw bestand gemaakt als dat nog niet bestaat. |
 
 #### <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
@@ -137,9 +136,9 @@ azure-streamanalytics-cicd addtestcase -project "/Users/roger/projects/samplejob
 ```
 ---
 
-Als het configuratie bestand voor de test leeg is, wordt de volgende inhoud naar het bestand geschreven. Anders wordt een test aanvraag toegevoegd aan de matrix van **TestCases** . De benodigde invoer configuraties worden automatisch gevuld volgens de invoer configuratie bestanden, indien aanwezig. Anders worden de standaard waarden geconfigureerd. Het **bestandspad** van elke invoer en verwachte uitvoer moet worden opgegeven voordat de test wordt uitgevoerd. U kunt de configuratie hand matig wijzigen.
+Als het configuratie bestand voor de test leeg is, wordt de volgende inhoud naar het bestand geschreven. Anders wordt een test aanvraag toegevoegd aan de matrix van **TestCases**. De benodigde invoer configuraties worden automatisch gevuld volgens de invoer configuratie bestanden, indien aanwezig. Anders worden de standaard waarden geconfigureerd. Het **bestandspad** van elke invoer en verwachte uitvoer moet worden opgegeven voordat de test wordt uitgevoerd. U kunt de configuratie hand matig wijzigen.
 
-Als u wilt dat de test validatie een bepaalde uitvoer negeert, stelt u het **verplichte** veld van die verwachte uitvoer in op **Onwaar** .
+Als u wilt dat de test validatie een bepaalde uitvoer negeert, stelt u het **verplichte** veld van die verwachte uitvoer in op **Onwaar**.
 
 ```json
 {
@@ -179,11 +178,11 @@ azure-streamanalytics-cicd test -project <projectFullPath> [-testConfigPath <tes
 | Parameter | Beschrijving |
 |---|---|
 | `-project` | Het pad van de **asaproj.jsin** het bestand voor uw Visual Studio code-project of **[uw project naam]. Asaproj** voor Visual Studio-project. |
-| `-testConfigPath` | Het pad naar het configuratie bestand voor de test. Als deze niet is opgegeven, wordt het bestand doorzocht in **\test** onder de huidige map van de **asaproj.jsin** het bestand met de standaard bestandsnaam **testConfig.jsop** .
+| `-testConfigPath` | Het pad naar het configuratie bestand voor de test. Als deze niet is opgegeven, wordt het bestand doorzocht in **\test** onder de huidige map van de **asaproj.jsin** het bestand met de standaard bestandsnaam **testConfig.jsop**.
 | `-outputPath` | Het pad van de uitvoermap voor het test resultaat. Als deze niet is opgegeven, worden de uitvoer resultaat bestanden in de huidige map geplaatst. |
 | `-customCodeZipFilePath` | Het pad van het zip-bestand voor aangepaste code, zoals een UDF of deserializer, als deze worden gebruikt. |
 
-Wanneer alle tests zijn voltooid, wordt een samen vatting van de test resultaten in JSON-indeling gegenereerd in de uitvoermap. Het overzichts bestand heeft de naam **testResultSummary.jsop** .
+Wanneer alle tests zijn voltooid, wordt een samen vatting van de test resultaten in JSON-indeling gegenereerd in de uitvoermap. Het overzichts bestand heeft de naam **testResultSummary.jsop**.
 
 ```json
 {

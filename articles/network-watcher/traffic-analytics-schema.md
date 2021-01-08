@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/26/2019
+ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 015b8e400e9d386fff8f35756a77139e61bbaff1
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: 765a2728c5de49787a64fff723625e53e100e450
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809289"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017779"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Schema's en gegevens aggregatie in Traffic Analytics
 
@@ -161,7 +161,7 @@ Hieronder vindt u de velden in het schema en wat ze aangeven
 | SrcPublicIPs_s | <SOURCE_PUBLIC_IP>\|\<FLOW_STARTED_COUNT>\|\<FLOW_ENDED_COUNT>\|\<OUTBOUND_PACKETS>\|\<INBOUND_PACKETS>\|\<OUTBOUND_BYTES>\|\<INBOUND_BYTES> | Vermeldingen gescheiden door balken |
 | DestPublicIPs_s | <DESTINATION_PUBLIC_IP>\|\<FLOW_STARTED_COUNT>\|\<FLOW_ENDED_COUNT>\|\<OUTBOUND_PACKETS>\|\<INBOUND_PACKETS>\|\<OUTBOUND_BYTES>\|\<INBOUND_BYTES> | Vermeldingen gescheiden door balken |
 
-### <a name="notes"></a>Opmerkingen
+### <a name="notes"></a>Notities
 
 1. In het geval van AzurePublic-en ExternalPublic stromen wordt het Azure VM-IP-adres van de klant ingevuld in VMIP_s veld, terwijl de open bare IP-adressen worden ingevuld in het veld PublicIPs_s. Voor deze twee stroom typen moeten we VMIP_s en PublicIPs_s gebruiken in plaats van SrcIP_s en DestIP_s velden. Voor AzurePublic-en ExternalPublicIP-adressen, verzamelen we verder, zodat het aantal records dat is opgenomen in de werk ruimte van de klant log Analytics mini maal is. (Dit veld wordt binnenkort afgeschaft en er moeten SrcIP_ en DestIP_s worden gebruikt, afhankelijk van of de Azure-VM de bron of de bestemming in de stroom is)
 1. Details voor stroom typen: op basis van de IP-adressen die in de stroom zijn betrokken, categoriseren we de stromen in naar de volgende stroom typen:

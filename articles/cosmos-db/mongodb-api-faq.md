@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.author: sngun
-ms.openlocfilehash: 4c93aea5a37fb286b49dabfb97522bf40c8f5429
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 08899018d03209dab09f61d4dd74feceee03b246
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333168"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019005"
 ---
 # <a name="frequently-asked-questions-about-the-azure-cosmos-dbs-api-for-mongodb"></a>Veelgestelde vragen over de API van de Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -29,12 +29,7 @@ Zie [verbinding maken met uw Cosmos-data base met de API van Azure Cosmos DB voo
 
 ## <a name="error-codes-while-using-azure-cosmos-dbs-api-for-mongodb"></a>Fout codes tijdens het gebruik van de API van Azure Cosmos DB voor MongoDB?
 
-Naast de algemene MongoDB-fout codes heeft de API van de Azure Cosmos DB voor MongoDB een eigen specifieke fout code:
-
-| Fout               | Code  | Beschrijving  | Oplossing  |
-|---------------------|-------|--------------|-----------|
-| TooManyRequests     | 16500 | Het totale aantal verbruikte aanvraag eenheden is hoger dan de ingerichte aanvraag-eenheids snelheid voor de container en is beperkt. | U kunt de door Voer die is toegewezen aan een container of een set containers van de Azure Portal schalen of het opnieuw proberen. |
-| ExceededMemoryLimit | 16501 | Als multi tenant service heeft de bewerking de geheugen toewijzing van de client overschreden. | Verklein het bereik van de bewerking via meer beperkende query criteria of neem contact op met de ondersteuning van de [Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). <br><br> Voorbeeld: `db.getCollection('users').aggregate([{$match: {name: "Andy"}}, {$sort: {age: -1}}]))` |
+Naast de algemene MongoDB-fout codes heeft de API van de Azure Cosmos DB voor MongoDB zijn eigen specifieke fout codes. Deze kunt u vinden in de [hand leiding](mongodb-troubleshoot.md)voor het oplossen van problemen.
 
 ## <a name="supported-drivers"></a>Ondersteunde Stuur Programma's
 

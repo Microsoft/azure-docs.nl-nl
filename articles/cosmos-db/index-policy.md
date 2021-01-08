@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 12/07/2020
 ms.author: tisande
-ms.openlocfilehash: 2d99e0e2b65f7131e564e6ab64e454d2947c58a6
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 00c80fa311837918a78f26e941f00cb17f1dc279
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903017"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019173"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -91,7 +91,7 @@ Bij het opnemen en uitsluiten van paden kunnen de volgende kenmerken optreden:
 
 Als deze eigenschap niet is opgegeven, hebben deze eigenschappen de volgende standaard waarden:
 
-| **Eigenschaps naam**     | **Standaardwaarde** |
+| **Eigenschaps naam**     | **Standaard waarde** |
 | ----------------------- | -------------------------------- |
 | `kind`   | `range` |
 | `precision`   | `-1`  |
@@ -135,7 +135,7 @@ Met Azure Cosmos DB worden standaard geen ruimtelijke indexen gemaakt. Als u rui
 
 ## <a name="composite-indexes"></a>Samengestelde indexen
 
-Query's die een- `ORDER BY` component met twee of meer eigenschappen hebben, hebben een samengestelde index nodig. U kunt ook een samengestelde index definiëren om de prestaties van veel gelijkheid en bereik query's te verbeteren. Standaard zijn er geen samengestelde indexen gedefinieerd, dus u moet zo nodig [samengestelde indexen toevoegen](how-to-manage-indexing-policy.md#composite-indexing-policy-examples) .
+Query's die een- `ORDER BY` component met twee of meer eigenschappen hebben, hebben een samengestelde index nodig. U kunt ook een samengestelde index definiëren om de prestaties van veel gelijkheid en bereik query's te verbeteren. Standaard zijn er geen samengestelde indexen gedefinieerd, dus u moet zo nodig [samengestelde indexen toevoegen](how-to-manage-indexing-policy.md#composite-index) .
 
 In tegens telling tot met opgenomen of uitgesloten paden kunt u geen pad maken met het `/*` Joker teken. Elk samengesteld pad heeft een impliciet `/?` aan het einde van het pad dat u niet hoeft op te geven. Samengestelde paden leiden naar een scalaire waarde. Dit is de enige waarde die wordt opgenomen in de samengestelde index.
 

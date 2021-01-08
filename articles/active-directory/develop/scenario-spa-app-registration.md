@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: e42b6b7ffa39110ce356094de690bb353a3fb10f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 0050eb61aac53b69c74306b9aaab797d8adfa915
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107784"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016997"
 ---
 # <a name="single-page-application-app-registration"></a>Toepassing met één pagina: app-registratie
 
@@ -27,10 +27,10 @@ Voer de volgende stappen uit als u een toepassing met één pagina (SPA) wilt re
 
 Voor zowel MSAL.js 1,0-als 2,0-toepassingen moet u eerst de volgende stappen uitvoeren om de eerste app-registratie te maken.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
-1. Selecteer onder **beheren** de optie **app-registraties**  >  **nieuwe registratie**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 1. Kies de **ondersteunde account typen** voor de toepassing. Voer **geen** **omleidings-URI** in. Zie [een toepassing registreren](quickstart-register-app.md)voor een beschrijving van de verschillende typen accounts.
 1. Selecteer **registreren** om de app-registratie te maken.
@@ -45,7 +45,7 @@ Configureer vervolgens de app-registratie met een **omleidings-URI** om op te ge
 Volg deze stappen om een omleidings-URI toe te voegen voor een app die gebruikmaakt van MSAL.js 2,0 of hoger. MSAL.js 2.0 + ondersteunt de autorisatie code stroom met PKCE en CORS als reactie op [Cookie beperkingen van derden](reference-third-party-cookies-spas.md). De impliciete toekennings stroom wordt niet ondersteund in MSAL.js 2.0 +.
 
 1. Selecteer in de Azure Portal de app-registratie die u eerder hebt gemaakt in [de app-registratie maken](#create-the-app-registration).
-1. Selecteer onder **beheren** de optie **verificatie**  >  **een platform toevoegen**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
 1. Selecteer onder **webtoepassingen** de tegel **toepassing met één pagina** .
 1. Voer bij **omleidings-uri's** een [omleidings-URI](reply-url.md)in. Schakel **geen** van beide selectie vakjes onder **impliciete toekenning** in.
 1. Selecteer **configureren** om het toevoegen van de omleidings-URI te volt ooien.
@@ -59,7 +59,7 @@ Volg de [zelf studie](tutorial-v2-javascript-auth-code.md) voor meer informatie.
 Volg deze stappen om een omleidings-URI toe te voegen voor een app met één pagina die gebruikmaakt van MSAL.js 1,3 of eerder en de impliciete toekennings stroom. Toepassingen die gebruikmaken van MSAL.js 1,3 of eerder, bieden geen ondersteuning voor de verificatie code stroom.
 
 1. Selecteer in de Azure Portal de app-registratie die u eerder hebt gemaakt in [de app-registratie maken](#create-the-app-registration).
-1. Selecteer onder **beheren** de optie **verificatie**  >  **een platform toevoegen**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
 1. Selecteer onder **webtoepassingen** de tegel **toepassing met één pagina** .
 1. Voer bij **omleidings-uri's** een [omleidings-URI](reply-url.md)in.
 1. De **impliciete stroom** inschakelen:

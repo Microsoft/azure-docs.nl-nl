@@ -8,17 +8,17 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: 18cedad34a6ca7d9a0ba18cd01c082f2878380a8
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7938920459654bd59620ad0992f3a13db85ff4fb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339815"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019000"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Opgeslagen procedures, triggers en door de gebruiker gedefinieerde functies schrijven in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Azure Cosmos DB biedt taalgeïntegreerde, transactionele uitvoering van JavaScript waarmee u **opgeslagen procedures** , **triggers** en **door de gebruiker gedefinieerde functies (UDF's)** kunt schrijven. Wanneer u de SQL-API in Azure Cosmos DB gebruikt, kunt u de opgeslagen procedures, triggers en UDF's definiëren in JavaScript-taal. U kunt uw logica in JavaScript schrijven en uitvoeren in de database-engine. U kunt triggers, opgeslagen procedures en UDF's maken en uitvoeren met behulp van [Azure Portal](https://portal.azure.com/), de [met JavaScript-taal geïntegreerde query-API in Azure Cosmos DB](javascript-query-api.md) en de [client SDK's van de Cosmos DB SQL-API](sql-api-dotnet-samples.md). 
+Azure Cosmos DB biedt taalgeïntegreerde, transactionele uitvoering van JavaScript waarmee u **opgeslagen procedures**, **triggers** en **door de gebruiker gedefinieerde functies (UDF's)** kunt schrijven. Wanneer u de SQL-API in Azure Cosmos DB gebruikt, kunt u de opgeslagen procedures, triggers en UDF's definiëren in JavaScript-taal. U kunt uw logica in JavaScript schrijven en uitvoeren in de database-engine. U kunt triggers, opgeslagen procedures en UDF's maken en uitvoeren met behulp van [Azure Portal](https://portal.azure.com/), de [met JavaScript-taal geïntegreerde query-API in Azure Cosmos DB](javascript-query-api.md) en de [client SDK's van de Cosmos DB SQL-API](sql-api-dotnet-samples.md). 
 
 Als u een opgeslagen procedure, trigger en een door de gebruiker gedefinieerde functie wilt aanroepen, moet u deze registreren. Zie [Werken met opgeslagen procedures, triggers en door de gebruiker gedefinieerde functies in Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md) voor meer informatie.
 
@@ -284,7 +284,7 @@ function async_sample() {
 
 ## <a name="how-to-write-triggers"></a><a id="triggers"></a>Triggers schrijven
 
-Azure Cosmos DB biedt ondersteuning aan pre-triggers en post-triggers. Pre-triggers worden uitgevoerd voordat een database-item wordt gewijzigd en post-triggers worden uitgevoerd nadat een database-item wordt gewijzigd.
+Azure Cosmos DB biedt ondersteuning aan pre-triggers en post-triggers. Vóór de triggers worden uitgevoerd voordat een Data Base-item wordt gewijzigd en post-triggers worden uitgevoerd nadat een database item is gewijzigd. Triggers zijn niet automatisch. Ze moeten worden opgegeven voor elke database bewerking waar ze moeten worden uitgevoerd.
 
 ### <a name="pre-triggers"></a><a id="pre-triggers"></a>Pretriggers
 

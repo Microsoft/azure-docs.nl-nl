@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 7fa13a328a55b0e9eaa546e70bf0711f4f011cf1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 10fb55cc133d5d6b39ca2809474ff20dfe500708
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173427"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017796"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
@@ -183,7 +183,7 @@ Voeg de omleidings-URI toe aan de registratie van de app in de [Azure Portal](ht
 
 **De omleidings-URI genereren:**
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. Selecteer **Azure Active Directory**  >  **app-registraties** > de geregistreerde app
 1. **Verificatie** selecteren  >  **een platform toevoegen**  >  **IOS/macOS**
 1. Voer uw bundel-ID in en selecteer vervolgens **configureren**.
@@ -355,7 +355,7 @@ Hier volgen enkele tips voor het vermijden van problemen wanneer u brokered-veri
   - Intune-bedrijfsportal logboeken weer geven:
 
     1. Selecteer de menu knop in de linkerbovenhoek van de app
-    1. **Settings**  >  **Diagnostische gegevens** voor instellingen selecteren
+    1.   >  **Diagnostische gegevens** voor instellingen selecteren
     1. Selecteer **Logboeken kopiëren** om de Broker-logboeken te kopiëren naar de SD-kaart van het apparaat.
     1. Verbind het apparaat met een computer met behulp van een USB-kabel om de logboeken op uw ontwikkel machine weer te geven.
 

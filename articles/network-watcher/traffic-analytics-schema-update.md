@@ -11,20 +11,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/06/2020
+ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: be69e7fc0c836257b92aa8573826fe1e8a36d770
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d7c4f1853ff8dcb9249ab6ec4f536e1f8cfa10e5
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948439"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018221"
 ---
 # <a name="sample-queries-with-new-fields-in-the-traffic-analytics-schema-august-2019-schema-update"></a>Voorbeeld query's met nieuwe velden in het Traffic Analytics schema (augustus 2019-schema-update)
 
 Het [Traffic Analytics-logboek schema](./traffic-analytics-schema.md) bevat de volgende nieuwe velden: **SrcPublicIPs_s**, **DestPublicIPs_s** **NSGRule_s**. De nieuwe velden bevatten informatie over de bron-en doel-Ip's en vereenvoudigen query's.
 
-In de komende maanden worden de volgende oudere velden afgeschaft: **VMIP_s**, **Subscription_g**, **Region_s**, **NSGRules_s**, **Subnet_s**, **VM_s**, **NIC_s**, **PublicIPs_s** FlowCount_d. **FlowCount_d**
+In de komende maanden worden de volgende oudere velden afgeschaft: **VMIP_s**, **Subscription_g**, **Region_s**, **NSGRules_s**, **Subnet_s**, **VM_s**, **NIC_s**, **PublicIPs_s** FlowCount_d. 
 
 In de volgende drie voor beelden ziet u hoe u de oude velden vervangt door de nieuwe.
 

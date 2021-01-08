@@ -3,7 +3,7 @@ title: Azure AD Connect Health-dubbele kenmerken synchronisatie fouten opsporen 
 description: In dit document wordt het diagnose proces voor gedupliceerde kenmerk synchronisatie fouten en een mogelijke oplossing van de zwevende object scenario's rechtstreeks vanuit de Azure Portal beschreven.
 services: active-directory
 documentationcenter: ''
-author: zhiweiwangmsft
+author: billmath
 manager: maheshu
 editor: billmath
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 05/11/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2bd2e72b05cc01b1a351880d565323662635364
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20f1e152d67e653b10b8378b7d667106c48dc116
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89278680"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016929"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Diagnose and remediate duplicated attribute sync errors (Synchronisatiefouten door dubbel kenmerk analyseren en herstellen)
 
@@ -39,9 +39,9 @@ Wanneer **QuarantinedAttributeValueMustBeUnique** -en **AttributeValueMustBeUniq
 ![Algemeen scenario voor het uitvoeren van een diagnose fout](./media/how-to-connect-health-diagnose-sync-errors/IIdFixCommonCase.png)
 
 ### <a name="orphaned-object-scenario"></a>Scenario met zwevende objecten
-In sommige gevallen kunt u zien dat een bestaande gebruiker het **bron anker**kwijtraakt. Het verwijderen van het bron object is opgetreden in on-premises Active Directory. Maar de wijziging van het verwijderings signaal is nooit gesynchroniseerd met Azure AD. Dit verlies wordt veroorzaakt door redenen als synchronisatie-engine problemen of domein migratie. Wanneer hetzelfde object wordt hersteld of opnieuw wordt gemaakt, moet een bestaande gebruiker de gebruiker van het **bron anker**synchroniseren. 
+In sommige gevallen kunt u zien dat een bestaande gebruiker het **bron anker** kwijtraakt. Het verwijderen van het bron object is opgetreden in on-premises Active Directory. Maar de wijziging van het verwijderings signaal is nooit gesynchroniseerd met Azure AD. Dit verlies wordt veroorzaakt door redenen als synchronisatie-engine problemen of domein migratie. Wanneer hetzelfde object wordt hersteld of opnieuw wordt gemaakt, moet een bestaande gebruiker de gebruiker van het **bron anker** synchroniseren. 
 
-Wanneer een bestaande gebruiker een object in de Cloud is, kunt u ook zien dat de conflicterende gebruiker is gesynchroniseerd met Azure AD. De gebruiker kan niet worden gesynchroniseerd met het bestaande object. Er is geen rechtstreekse manier om het **bron anker**opnieuw toe te wijzen. Meer informatie over de [bestaande Knowledge Base](https://support.microsoft.com/help/2647098). 
+Wanneer een bestaande gebruiker een object in de Cloud is, kunt u ook zien dat de conflicterende gebruiker is gesynchroniseerd met Azure AD. De gebruiker kan niet worden gesynchroniseerd met het bestaande object. Er is geen rechtstreekse manier om het **bron anker** opnieuw toe te wijzen. Meer informatie over de [bestaande Knowledge Base](https://support.microsoft.com/help/2647098). 
 
 Als voor beeld wordt met het bestaande object in azure AD de licentie van Joe bewaard. Een nieuw gesynchroniseerd object met een ander **bron anker** vindt plaats in een gedupliceerde kenmerk status in azure AD. Wijzigingen voor Joe in on-premises Active Directory worden niet toegepast op de oorspronkelijke gebruiker (bestaand object) van Joe in azure AD.  
 
@@ -50,7 +50,7 @@ Als voor beeld wordt met het bestaande object in azure AD de licentie van Joe be
 ## <a name="diagnostic-and-troubleshooting-steps-in-connect-health"></a>Diagnose-en probleemoplossings stappen in Connect Health 
 De functie voor het diagnosticeren ondersteunt gebruikers objecten met de volgende gedupliceerde kenmerken:
 
-| Kenmerk naam | Synchronisatie fout typen|
+| Kenmerknaam | Synchronisatie fout typen|
 | ------------------ | -----------------|
 | UserPrincipalName | QuarantinedAttributeValueMustBeUnique of AttributeValueMustBeUnique | 
 | ProxyAddresses | QuarantinedAttributeValueMustBeUnique of AttributeValueMustBeUnique | 
@@ -90,18 +90,18 @@ Voer een paar stappen uit om specifieke fixable-scenario's te identificeren in d
 ### <a name="does-the-user-exist-in-your-on-premises-active-directory"></a>Bevinden de gebruiker zich in uw on-premises Active Directory?
 
 Deze vraag probeert het bron object van de bestaande gebruiker te identificeren van on-premises Active Directory.  
-1. Controleer of Azure Active Directory een object heeft met de door gegeven **userPrincipalName**. Als dat niet het geval is **, beantwoordt u**antwoord.
+1. Controleer of Azure Active Directory een object heeft met de door gegeven **userPrincipalName**. Als dat niet het geval is **, beantwoordt u** antwoord.
 2. Als dit het geval is, controleert u of het object nog steeds binnen het bereik is voor synchronisatie.  
    - Zoek in de Azure AD-connector ruimte met behulp van de DN.
    - Als het object wordt gevonden in de status **toevoegen in behandeling** , **antwoord beantwoorden**. Azure AD Connect kunt het object niet verbinden met het juiste Azure AD-object.
    - Als het object niet is gevonden, beantwoordt u **Ja**.
 
 In deze voor beelden probeert de vraag te bepalen of **Jan Jackson** nog steeds aanwezig is in on-premises Active Directory.
-Voor het **algemene scenario**zijn zowel gebruikers **Joe Johnson** als **Joe-Jackson** aanwezig in on-premises Active Directory. De objecten in quarantaine zijn twee verschillende gebruikers.
+Voor het **algemene scenario** zijn zowel gebruikers **Joe Johnson** als **Joe-Jackson** aanwezig in on-premises Active Directory. De objecten in quarantaine zijn twee verschillende gebruikers.
 
 ![Algemeen scenario voor het uitvoeren van een diagnose fout](./media/how-to-connect-health-diagnose-sync-errors/IIdFixCommonCase.png)
 
-Voor het **scenario met zwevende objecten**is alleen de gebruiker **Joe Johnson** aanwezig in on-premises Active Directory:
+Voor het **scenario met zwevende objecten** is alleen de gebruiker **Joe Johnson** aanwezig in on-premises Active Directory:
 
 ![Fout bij het diagnosticeren van een zwevend object * er bestaat een gebruiker * scenario](./media/how-to-connect-health-diagnose-sync-errors/IIdFixOrphanedCase.png)
 
@@ -144,11 +144,11 @@ Cloud-gebaseerde gebruiker in azure AD mag geen bron anker hebben. Het bijwerken
 
 
 **Nils.** Wat gebeurt er als het **bestaande object** het object moet zijn dat moet worden verwijderd?  
-**Één.** Als het **bestaande object** moet worden verwijderd, is voor het proces geen wijziging van het **bron anker**vereist. Normaal gesp roken kunt u het probleem oplossen op basis van on-premises Active Directory. 
+**Één.** Als het **bestaande object** moet worden verwijderd, is voor het proces geen wijziging van het **bron anker** vereist. Normaal gesp roken kunt u het probleem oplossen op basis van on-premises Active Directory. 
 
 
 **Nils.** Welke machtigingen heeft een gebruiker nodig om de oplossing toe te passen?  
-**Één.** **Globale beheerder**of **INZENDER** van Azure RBAC heeft toestemming voor toegang tot het diagnose-en probleemoplossings proces.
+**Één.** **Globale beheerder** of **INZENDER** van Azure RBAC heeft toestemming voor toegang tot het diagnose-en probleemoplossings proces.
 
 
 **Nils.** Moet ik Azure AD Connect configureren of de Azure AD Connect Health Agent bijwerken voor deze functie?  

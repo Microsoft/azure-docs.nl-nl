@@ -8,12 +8,12 @@ mms.devlang: na
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: kumud
-ms.openlocfilehash: 962f6bcf7747a82749e7ccab95de34f7834a8372
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: f6cba0118a98ea50e8020b91b9c2064299ca4ccf
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814207"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019156"
 ---
 # <a name="partnering-with-azure-ddos-protection-standard"></a>Partnering met Azure DDoS Protection Standard
 In dit artikel worden de mogelijkheden voor partner ondersteuning beschreven die worden ingeschakeld door de Azure DDoS Protection Standard. Dit artikel is bedoeld om product managers en rollen van bedrijfs ontwikkeling inzicht te geven in de investerings paden en om inzicht te krijgen in de verwerkings waarde van de partner.
@@ -94,4 +94,3 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 Bestaande partner integraties weer geven:
 
 - [Barracuda WAF-as-a-Service](https://www.barracuda.com/waf-as-a-service)
-- [Azure Cloud WAF van Radware](https://www.radware.com/resources/microsoft-azure/)

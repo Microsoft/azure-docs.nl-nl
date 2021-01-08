@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/10/2018
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 099ead37b8d6b46b767ef59ff24a7e7ff9dc9e3c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d4112bd1d632ec21e2d8cb565027277eeb85452d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966442"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018256"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-portal"></a>Pakket opnames beheren met Azure Network Watcher met behulp van de portal
 

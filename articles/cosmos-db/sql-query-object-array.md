@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 12/08/2020
+ms.date: 01/07/2021
 ms.author: tisande
-ms.openlocfilehash: f65d179baa2c0a08e2c1dca1716c9691797fc242
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: f959e4e230c1d9f89ad5141713b6a17a8cbb17a2
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106289"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018901"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Werken met matrices en objecten in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -54,9 +54,27 @@ SELECT f.id, ARRAY(SELECT DISTINCT VALUE c.givenName FROM c IN f.children) as Ch
 FROM f
 ```
 
+U ziet deze uitvoer:
+
+```json
+[
+    {
+        "id": "AndersenFamily",
+        "ChildNames": []
+    },
+    {
+        "id": "WakefieldFamily",
+        "ChildNames": [
+            "Jesse",
+            "Lisa"
+        ]
+    }
+]
+```
+
 ## <a name="iteration"></a><a id="Iteration"></a>Iteratie
 
-De SQL-API biedt ondersteuning voor het herhalen van JSON-matrices, waarbij een nieuwe constructie wordt toegevoegd via het [sleutel woord in](sql-query-keywords.md#in) in de bron van. In het volgende voorbeeld:
+De SQL-API biedt ondersteuning voor het herhalen van JSON-matrices, met het [sleutel woord in](sql-query-keywords.md#in) van de bron. In het volgende voorbeeld:
 
 ```sql
 SELECT *
@@ -156,6 +174,9 @@ U ziet deze uitvoer:
   }
 ]
 ```
+
+> [!NOTE]
+> Wanneer u het sleutel woord IN gebruikt voor iteratie, kunt u geen eigenschappen meer filteren of projecteren buiten de matrix. In plaats daarvan moet u [samen voegingen](sql-query-join.md)gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

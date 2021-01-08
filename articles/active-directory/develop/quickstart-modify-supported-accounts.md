@@ -13,12 +13,12 @@ ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.openlocfilehash: 94a7f4d9ce1471aa1dd6aef3165562a2abc02816
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1d30d1e6c9cc60af96336cfdc7bea7126b4df7a8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453257"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017626"
 ---
 # <a name="how-to-modify-the-accounts-supported-by-an-application"></a>De accounts die worden ondersteund door een toepassing wijzigen
 
@@ -34,7 +34,7 @@ In de volgende secties leert u hoe u de registratie van uw app in de Azure-porta
 
 Ga als volgt te werk om een andere instelling op te geven voor de accounttypen die worden ondersteund door een bestaande app-registratie:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties**. Selecteer vervolgens uw toepassing.

@@ -3,15 +3,15 @@ title: Connectors voor Azure Logic Apps
 description: Werk stromen automatiseren met connectors voor Azure Logic Apps, zoals ingebouwd, beheerd, on-premises, integratie account, ISE en zakelijke connectors
 services: logic-apps
 ms.suite: integration
-ms.reviewer: jonfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 06/11/2020
-ms.openlocfilehash: 8bf91a3b7843d3212b62ced5b6a7c6fa54892ec9
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.date: 01/07/2021
+ms.openlocfilehash: c2b89450c0e474f5030f8812e888890f1fedde7e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359745"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019632"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Connectors voor Azure Logic Apps
 
@@ -28,7 +28,7 @@ Connectors zijn beschikbaar als ingebouwde triggers en acties of als beheerde co
 
 <a name="built-in"></a>
 
-* [**Ingebouwde**](#built-ins): ingebouwde triggers en acties zijn "native" voor het Azure Logic apps en u helpen u bij het uitvoeren van deze taken voor uw Logic apps:
+* [**Ingebouwde**](#built-ins): ingebouwde triggers en acties worden standaard uitgevoerd in azure Logic apps, zodat ze geen verbinding hoeven te maken voordat u ze gebruikt en u helpt bij het uitvoeren van deze taken voor uw Logic apps:
 
   * Uitvoeren op aangepaste en geavanceerde schema's.
 
@@ -81,10 +81,10 @@ Logic Apps biedt ingebouwde triggers en acties zodat u werk stromen op basis van
 
 | Naam | Beschrijving |
 |------|-------------|
-| [![][schedule-icon]<br>**Schedule** Schema voor ingebouwde connector plannen][schedule-doc] | -Een logische app uitvoeren op een opgegeven terugkeer patroon, variërend van de Basic-naar-geavanceerde planningen met de [ **terugkeer patroon** trigger][schedule-recurrence-doc]. <br>-Een logische app uitvoeren die gegevens in doorlopende segmenten moet afhandelen met de [ **verschuivende venster** trigger][schedule-sliding-window-doc]. <br>-Pauzeer uw logische app voor een opgegeven duur met de [ **vertragings** actie][schedule-delay-doc]. <br>-Pauzeer uw logische app tot de opgegeven datum en tijd met de [ **vertraging tot** actie][schedule-delay-until-doc]. |
+| [![][schedule-icon]<br> Schema voor ingebouwde connector plannen][schedule-doc] | -Een logische app uitvoeren op een opgegeven terugkeer patroon, variërend van de Basic-naar-geavanceerde planningen met de [ **terugkeer patroon** trigger][schedule-recurrence-doc]. <br>-Een logische app uitvoeren die gegevens in doorlopende segmenten moet afhandelen met de [ **verschuivende venster** trigger][schedule-sliding-window-doc]. <br>-Pauzeer uw logische app voor een opgegeven duur met de [ **vertragings** actie][schedule-delay-doc]. <br>-Pauzeer uw logische app tot de opgegeven datum en tijd met de [ **vertraging tot** actie][schedule-delay-until-doc]. |
 | [![Batch-ingebouwde connector ][batch-icon]<br> **batch**][batch-doc] | -Berichten in batches verwerken met de trigger voor **batch berichten** . <br>-Logische apps aanroepen die bestaande batch triggers hebben met de actie **berichten verzenden naar batch** . |
-| [![Http ingebouwde HTTP-connector ][http-icon]<br> **HTTP**][http-doc] | HTTP- of HTTPS-eindpunten aanroepen met triggers en acties voor HTTP. Andere ingebouwde HTTP-triggers en-acties zijn onder andere [http + Swagger ingebouwde connector][http-swagger-doc] en [http + webhook][http-webhook-doc]. |
-| [![][http-request-icon]<br>**Request** Aanvraag van ingebouwde connector aanvragen][http-request-doc] | -Maak uw logische app aanroepen van andere apps of services, Activeer Event Grid bron gebeurtenissen of Activeer reacties op antwoorden op Azure Security Center waarschuwingen met de **aanvraag** trigger. <br>-Antwoorden verzenden naar een app of service met de **reactie** actie. |
+| [![Http ingebouwde HTTP-connector ][http-icon]<br> ][http-doc] | HTTP- of HTTPS-eindpunten aanroepen met triggers en acties voor HTTP. Andere ingebouwde HTTP-triggers en-acties zijn onder andere [http + Swagger ingebouwde connector][http-swagger-doc] en [http + webhook][http-webhook-doc]. |
+| [![][http-request-icon]<br> Aanvraag van ingebouwde connector aanvragen][http-request-doc] | -Maak uw logische app aanroepen van andere apps of services, Activeer Event Grid bron gebeurtenissen of Activeer reacties op antwoorden op Azure Security Center waarschuwingen met de **aanvraag** trigger. <br>-Antwoorden verzenden naar een app of service met de **reactie** actie. |
 | [![Azure ][azure-api-management-icon]<br> **API <br> Management** voor Azure API Management ingebouwde connector][azure-api-management-doc] | Roep triggers en acties aan die zijn gedefinieerd door de eigen API's die u beheert en publiceert met Azure API Management. |
 | [![Azure-app Services ingebouwde connector ][azure-app-services-icon]<br> **Azure-app <br> Services**][azure-app-services-doc] | Roep Azure API-apps of Web-apps aan, die worden gehost in Azure App Service. De triggers en acties die door deze apps worden gedefinieerd, worden weer gegeven als andere triggers voor de eerste klasse en acties wanneer Swagger is opgenomen. |
 | [![Azure Logic Apps ingebouwde connector, ][azure-logic-apps-icon]<br> **Azure Logic <br> apps**][nested-logic-app-doc] | Roep andere logische apps aan die beginnen met de **aanvraag** trigger. |
@@ -106,11 +106,11 @@ Logic Apps biedt ingebouwde acties voor het structureren en beheren van de actie
 
 | Naam | Beschrijving |
 |------|-------------|
-| [![Voor waarde voor waarde ingebouwde ][condition-icon]<br> **Condition** actie][condition-doc] | Evalueer een voor waarde en voer verschillende acties uit op basis van het feit of de voor waarde waar of onwaar is. |
+| [![Voor waarde voor waarde ingebouwde ][condition-icon]<br>  actie][condition-doc] | Evalueer een voor waarde en voer verschillende acties uit op basis van het feit of de voor waarde waar of onwaar is. |
 | [![Voor elke ingebouwde actie ][for-each-icon]<br> **voor elk**][for-each-doc] | Voer dezelfde acties uit op elk item in een matrix. |
 | [![Bereik ingebouwd actie ][scope-icon]<br> **bereik**][scope-doc] | Groepeer acties in *bereiken* die hun eigen status krijgen nadat de acties in het bereik zijn uitgevoerd. |
-| [![][switch-icon]<br>**Switch** Schakelaar voor ingebouwde actie][switch-doc] | Groepeer acties in *gevallen* , waaraan unieke waarden worden toegewezen, met uitzonde ring van de standaard situatie. Voer alleen die aanvraag uit waarvan de toegewezen waarde overeenkomt met het resultaat van een expressie, object of token. Als er geen overeenkomsten bestaan, voert u het standaard hoofdletter gebruik uit. |
-| [![Het beëindigen van de ingebouwde ][terminate-icon]<br> **Terminate** bewerking is beëindigd][terminate-doc] | Stop een actieve werk stroom voor logische apps. |
+| [![][switch-icon]<br> Schakelaar voor ingebouwde actie][switch-doc] | Groepeer acties in *gevallen*, waaraan unieke waarden worden toegewezen, met uitzonde ring van de standaard situatie. Voer alleen die aanvraag uit waarvan de toegewezen waarde overeenkomt met het resultaat van een expressie, object of token. Als er geen overeenkomsten bestaan, voert u het standaard hoofdletter gebruik uit. |
+| [![Het beëindigen van de ingebouwde ][terminate-icon]<br>  bewerking is beëindigd][terminate-doc] | Stop een actieve werk stroom voor logische apps. |
 | [![Totdat de ingebouwde actie ][until-icon]<br> **tot**][until-doc] | Herhaal acties totdat de opgegeven voor waarde waar is of een andere status is gewijzigd. |
 |||
 
@@ -120,9 +120,9 @@ Logic Apps biedt ingebouwde acties voor het werken met gegevens uitvoer en de bi
 
 | Naam | Beschrijving |
 |------|-------------|
-| [![Gegevens bewerkingen ingebouwde actie ][data-operations-icon]<br> **gegevens bewerkingen**][data-operations-doc] | Bewerkingen uitvoeren met gegevens: <p>- **Opstellen** : Maak één uitvoer van meerdere invoer met verschillende typen. <br>- **CSV-tabel maken** : Maak een tabel met door komma's gescheiden waarden (CSV) van een matrix met JSON-objecten. <br>- **HTML-tabel maken** : een HTML-tabel maken op basis van een matrix met JSON-objecten. <br>- **Filter matrix** : Maak een matrix van items in een andere matrix die aan uw criteria voldoen. <br>- **Samen voegen** : een teken reeks maken van alle items in een matrix en deze items scheiden met het opgegeven scheidings teken. <br>- **JSON parseren** : Maak gebruikers vriendelijke tokens van eigenschappen en hun waarden in JSON-inhoud zodat u deze eigenschappen in uw werk stroom kunt gebruiken. <br>- **Select** : Maak een matrix met JSON-objecten door items of waarden in een andere matrix te transformeren en deze items aan de opgegeven eigenschappen toe te wijzen. |
-| ![Datum en tijd ingebouwde actie][date-time-icon]<br>**Datum en tijd** | Bewerkingen uitvoeren met tijds tempels: <p>- **Toevoegen aan tijd** : Voeg het opgegeven aantal eenheden toe aan een tijds tempel. <br>- **Tijd zone converteren** : Converteer een tijds tempel van de bron tijdzone naar de doel tijdzone. <br>- **Huidige tijd** : de huidige tijds tempel wordt geretourneerd als een teken reeks. <br>- **Toekomstige tijd ophalen** : retourneert de huidige tijds tempel plus de opgegeven tijds eenheden. <br>- **Vorige tijd ophalen** : retourneert de huidige tijds tempel min de opgegeven tijds eenheden. <br>- **Aftrekken van tijd** : Trek een aantal tijds eenheden af van een tijds tempel. |
-| [![Variabelen ingebouwde actie ][variables-icon]<br> **variabelen**][variables-doc] | Bewerkingen uitvoeren met variabelen: <p>- **Toevoegen aan matrix variabele** : een waarde invoegen als laatste item in een matrix die is opgeslagen door een variabele. <br>- **Toevoegen aan teken reeks variabele** : Voeg een waarde toe als het laatste teken in een teken reeks die is opgeslagen door een variabele. <br>- **Variabele verlagen** : Hiermee verkleint u een variabele met een constante waarde. <br>- **Toename van variabele** : Verhoog een variabele met een constante waarde. <br>- **Variabele initialiseren** : een variabele maken en het gegevens type en de begin waarde declareren. <br>- **Set-variabele** : wijs een andere waarde toe aan een bestaande variabele. |
+| [![Gegevens bewerkingen ingebouwde actie ][data-operations-icon]<br> **gegevens bewerkingen**][data-operations-doc] | Bewerkingen uitvoeren met gegevens: <p>- **Opstellen**: Maak één uitvoer van meerdere invoer met verschillende typen. <br>- **CSV-tabel maken**: Maak een tabel met door komma's gescheiden waarden (CSV) van een matrix met JSON-objecten. <br>- **HTML-tabel maken**: een HTML-tabel maken op basis van een matrix met JSON-objecten. <br>- **Filter matrix**: Maak een matrix van items in een andere matrix die aan uw criteria voldoen. <br>- **Samen voegen**: een teken reeks maken van alle items in een matrix en deze items scheiden met het opgegeven scheidings teken. <br>- **JSON parseren**: Maak gebruikers vriendelijke tokens van eigenschappen en hun waarden in JSON-inhoud zodat u deze eigenschappen in uw werk stroom kunt gebruiken. <br>- **Select**: Maak een matrix met JSON-objecten door items of waarden in een andere matrix te transformeren en deze items aan de opgegeven eigenschappen toe te wijzen. |
+| ![Datum en tijd ingebouwde actie][date-time-icon]<br>**Datum en tijd** | Bewerkingen uitvoeren met tijds tempels: <p>- **Toevoegen aan tijd**: Voeg het opgegeven aantal eenheden toe aan een tijds tempel. <br>- **Tijd zone converteren**: Converteer een tijds tempel van de bron tijdzone naar de doel tijdzone. <br>- **Huidige tijd**: de huidige tijds tempel wordt geretourneerd als een teken reeks. <br>- **Toekomstige tijd ophalen**: retourneert de huidige tijds tempel plus de opgegeven tijds eenheden. <br>- **Vorige tijd ophalen**: retourneert de huidige tijds tempel min de opgegeven tijds eenheden. <br>- **Aftrekken van tijd**: Trek een aantal tijds eenheden af van een tijds tempel. |
+| [![Variabelen ingebouwde actie ][variables-icon]<br> **variabelen**][variables-doc] | Bewerkingen uitvoeren met variabelen: <p>- **Toevoegen aan matrix variabele**: een waarde invoegen als laatste item in een matrix die is opgeslagen door een variabele. <br>- **Toevoegen aan teken reeks variabele**: Voeg een waarde toe als het laatste teken in een teken reeks die is opgeslagen door een variabele. <br>- **Variabele verlagen**: Hiermee verkleint u een variabele met een constante waarde. <br>- **Toename van variabele**: Verhoog een variabele met een constante waarde. <br>- **Variabele initialiseren**: een variabele maken en het gegevens type en de begin waarde declareren. <br>- **Set-variabele**: wijs een andere waarde toe aan een bestaande variabele. |
 |||
 
 <a name="managed-api-connectors"></a>
@@ -133,16 +133,16 @@ Logic Apps biedt deze populaire standaard connectors voor het automatiseren van 
 
 | Naam | Beschrijving |
 |------|-------------|
-| [![Azure Service Bus beheerde connector ][azure-service-bus-icon]<br> **Azure Service Bus** Azure service bus][azure-service-bus-doc] | Beheer asynchrone berichten, sessies en abonnementen op onderwerpen met behulp van de meest gebruikte connector in Logic Apps. |
-| [![SQL Server beheerde connector ][sql-server-icon]<br> **SQL Server** SQL Server][sql-server-doc] | Maak verbinding met uw SQL Server on-premises of een Azure SQL Database in de Cloud, zodat u records kunt beheren, opgeslagen procedures uitvoert of query's uitvoert. |
-| [![Azure ][azure-blob-storage-icon]<br> **BLOB- <br> opslag** voor Azure Blob Storage Managed connector][azure-blob-storage-doc] | Maak verbinding met uw opslag account zodat u blob-inhoud kunt maken en beheren. |
+| [![Azure Service Bus beheerde connector ][azure-service-bus-icon]<br>  Azure service bus][azure-service-bus-doc] | Beheer asynchrone berichten, sessies en abonnementen op onderwerpen met behulp van de meest gebruikte connector in Logic Apps. |
+| [![SQL Server beheerde connector ][sql-server-icon]<br>  SQL Server][sql-server-doc] | Maak verbinding met uw SQL Server on-premises of een Azure SQL Database in de Cloud, zodat u records kunt beheren, opgeslagen procedures uitvoert of query's uitvoert. |
+| [![Azure ][azure-blob-storage-icon]<br> **BLOB- <br> opslag** voor Azure Blob Storage Managed connector][azure-blob-storage-doc] | Verbinding maken met uw opslagaccount, zodat u blob-inhoud kunt maken en beheren. |
 | [![Office 365 Outlook Managed connector ][office-365-outlook-icon]<br> **Office 365 <br> Outlook**][office-365-outlook-doc] | Maak verbinding met het e-mail account van uw werk of school zodat u e-mails, taken, agenda-items en vergaderingen, contact personen, aanvragen en meer kunt maken en beheren. |
 | [![SFTP-SSH Managed connector ][sftp-ssh-icon]<br> **SFTP-SSH**][sftp-ssh-doc] | Maak verbinding met SFTP-servers die vanaf internet met SSH toegankelijk zijn, zodat u met uw bestanden en mappen kunt werken. |
 | [![Share point online Managed connector ][sharepoint-online-icon]<br> **SharePoint <br> online**][sharepoint-online-doc] | Om verbinding te maken met SharePoint Online, zodat u bestanden, bijlagen, mappen en meer kunt beheren. |
 | [![Azure queues Managed connector van Azure Queue ][azure-queues-icon]<br> **<br>**][azure-queues-doc] | Maak verbinding met uw Azure Storage-account zodat u wacht rijen en berichten kunt maken en beheren. |
-| [![][ftp-icon]<br>**FTP** FTP Managed connector][ftp-doc] | Verbinding maken met FTP-servers die u vanaf internet kunt gebruiken zodat u kunt werken met uw bestanden en mappen. |
+| [![][ftp-icon]<br> FTP Managed connector][ftp-doc] | Verbinding maken met FTP-servers die u vanaf internet kunt gebruiken zodat u kunt werken met uw bestanden en mappen. |
 | [![Bestands systeem Managed connector van bestands systeem ][file-system-icon]<br> **<br>**][file-system-doc] | Maak verbinding met uw on-premises bestands share, zodat u bestanden kunt maken en beheren. |
-| [![Azure-Event Hubs voor Azure Event Hubs Managed connector ][azure-event-hubs-icon]<br> **Azure Event Hubs**][azure-event-hubs-doc] | Hiermee kunt u gebeurtenissen verbruiken en publiceren via een Event Hub. U kunt bijvoorbeeld uitvoer van uw logische app ophalen met Event Hubs en de uitvoer vervolgens verzenden naar een realtime analytics-provider. |
+| [![Azure-Event Hubs voor Azure Event Hubs Managed connector ][azure-event-hubs-icon]<br> ][azure-event-hubs-doc] | Hiermee kunt u gebeurtenissen verbruiken en publiceren via een Event Hub. U kunt bijvoorbeeld uitvoer van uw logische app ophalen met Event Hubs en de uitvoer vervolgens verzenden naar een realtime analytics-provider. |
 | [![][azure-event-grid-icon]<br>**Azure Event** <br> **grid** van Azure Event grid Managed connector][azure-event-grid-doc] | Gebeurtenissen bewaken die zijn gepubliceerd door een Event Grid, bijvoorbeeld wanneer Azure-resources of bronnen van derden worden gewijzigd. |
 | [![De Sales Force Managed connector ][salesforce-icon]<br> **Sales Force**][salesforce-doc] | Maak verbinding met uw Sales Force-account zodat u items zoals records, taken, objecten en meer kunt maken en beheren. |
 |||
@@ -177,7 +177,7 @@ Hier volgen *enkele* veelgebruikte standaard-connectors die Logic Apps biedt voo
         [![Oracle DB connector ][oracle-db-icon]<br> **Oracle DB**][oracle-db-doc]
     :::column-end:::
     :::column:::
-        [![PostgreSQL PostgreSQL-connector ][postgre-sql-icon]<br> **PostgreSQL**][postgre-sql-doc]
+        [![PostgreSQL PostgreSQL-connector ][postgre-sql-icon]<br> ][postgre-sql-doc]
     :::column-end:::
     :::column:::
         [![Share Point server connector share ][sharepoint-server-icon]<br> **Point <br> Server**][sharepoint-server-doc]
@@ -188,7 +188,7 @@ Hier volgen *enkele* veelgebruikte standaard-connectors die Logic Apps biedt voo
         [![][sql-server-icon]<br>**SQL <br> Server** SQL Server-connector][sql-server-doc]
     :::column-end:::
     :::column:::
-        [![Teradata van Teradata-connector ][teradata-icon]<br> **Teradata**][teradata-doc]
+        [![Teradata van Teradata-connector ][teradata-icon]<br> ][teradata-doc]
     :::column-end:::
     :::column:::
         
@@ -240,7 +240,7 @@ Logic Apps biedt standaard connectors voor het bouwen van Business-to-Business (
         [![][x12-icon]<br>**<br> Code ring** voor X12-coderings actie X12][x12-encode-doc]
     :::column-end:::
     :::column:::
-        [![XML transformeert XML-trans ][xml-transform-icon]<br> **XML** <br> **formaties** actie][xml-transform-doc]
+        [![XML transformeert XML-trans ][xml-transform-icon]<br>  <br> **formaties** actie][xml-transform-doc]
     :::column-end:::
     :::column:::
         [![XML-validatie van XML-validatie actie ][xml-validate-icon]<br> **<br>**][xml-validate-doc]
@@ -349,7 +349,7 @@ Voor Logic apps die u in een dedicated [Integration service Environment (ISE)](#
         [![SFTP-SSH ISE-connector ][sftp-ssh-icon]<br> **SFTP-SSH**][sftp-ssh-doc]
     :::column-end:::
     :::column:::
-        [![][smtp-icon]<br>**SMTP** SMTP ISE-connector][smtp-doc]
+        [![][smtp-icon]<br> SMTP ISE-connector][smtp-doc]
     :::column-end:::
     :::column:::
         [![][sql-server-icon]<br>**SQL <br> Server** SQL Server ISE-connector][sql-server-doc]
@@ -369,17 +369,17 @@ Raadpleeg de volgende onderwerpen voor meer informatie:
 
 ## <a name="triggers-and-action-types"></a>Triggers en actie typen
 
-Connectors kunnen *Triggers* , *acties* of beide bieden. Een *trigger* is de eerste stap in elke logische app, die meestal de gebeurtenis specificeert waarmee de trigger wordt geactiveerd en de logische app wordt uitgevoerd. De FTP-connector heeft bijvoorbeeld een trigger waarmee uw logische app wordt gestart wanneer een bestand wordt toegevoegd of gewijzigd. Sommige triggers controleren regel matig op de opgegeven gebeurtenis of gegevens en worden geactiveerd wanneer ze de opgegeven gebeurtenis of gegevens detecteren. Andere triggers wachten zich onmiddellijk wanneer een specifieke gebeurtenis plaatsvindt of wanneer er nieuwe gegevens beschikbaar zijn. Triggers geven ook de vereiste gegevens door aan uw logische app. Uw logische app kan deze gegevens lezen en gebruiken in de werk stroom. De Office 365 Outlook-Connector heeft bijvoorbeeld de trigger ' wanneer een nieuwe e-mail binnenkomt ', waarmee de inhoud van die e-mail kan worden door gegeven aan de werk stroom van uw logische app.
+Connectors kunnen *Triggers*, *acties* of beide bieden. Een *trigger* is de eerste stap in elke logische app, die meestal de gebeurtenis specificeert waarmee de trigger wordt geactiveerd en de logische app wordt uitgevoerd. De FTP-connector heeft bijvoorbeeld een trigger waarmee uw logische app wordt gestart wanneer een bestand wordt toegevoegd of gewijzigd. Sommige triggers controleren regel matig op de opgegeven gebeurtenis of gegevens en worden geactiveerd wanneer ze de opgegeven gebeurtenis of gegevens detecteren. Andere triggers wachten zich onmiddellijk wanneer een specifieke gebeurtenis plaatsvindt of wanneer er nieuwe gegevens beschikbaar zijn. Triggers geven ook de vereiste gegevens door aan uw logische app. Uw logische app kan deze gegevens lezen en gebruiken in de werk stroom. De Office 365 Outlook-Connector heeft bijvoorbeeld de trigger ' wanneer een nieuwe e-mail binnenkomt ', waarmee de inhoud van die e-mail kan worden door gegeven aan de werk stroom van uw logische app.
 
 Wanneer een trigger wordt geactiveerd, wordt door Azure Logic Apps een exemplaar van uw logische app gemaakt en worden de *acties* in de werk stroom van de logische app uitgevoerd. Acties zijn de stappen die de trigger volgen en taken uitvoeren in de werk stroom van uw logische app. U kunt bijvoorbeeld een logische app maken die klant gegevens ophaalt uit een SQL database en die gegevens in latere acties verwerken.
 
 Hier volgen de algemene soorten triggers die Azure Logic Apps biedt:
 
-* *Terugkeer patroon trigger* : deze trigger wordt uitgevoerd volgens een opgegeven schema en is niet nauw verbonden met een bepaalde service of systeem.
+* *Terugkeer patroon trigger*: deze trigger wordt uitgevoerd volgens een opgegeven schema en is niet nauw verbonden met een bepaalde service of systeem.
 
-* *Polling trigger* : met deze trigger wordt regel matig een specifieke service of een systeem op basis van de opgegeven planning pollen, wordt gecontroleerd of er nieuwe gegevens zijn en of er een specifieke gebeurtenis is opgetreden. Als er nieuwe gegevens beschikbaar zijn of als de specifieke gebeurtenis is opgetreden, maakt en voert de trigger een nieuw exemplaar van uw logische app uit. Dit kan nu de gegevens gebruiken die als invoer worden door gegeven.
+* *Polling trigger*: met deze trigger wordt regel matig een specifieke service of een systeem op basis van de opgegeven planning pollen, wordt gecontroleerd of er nieuwe gegevens zijn en of er een specifieke gebeurtenis is opgetreden. Als er nieuwe gegevens beschikbaar zijn of als de specifieke gebeurtenis is opgetreden, maakt en voert de trigger een nieuw exemplaar van uw logische app uit. Dit kan nu de gegevens gebruiken die als invoer worden door gegeven.
 
-* *Push trigger* : deze trigger wacht op nieuwe gegevens of voor een gebeurtenis die moet worden uitgevoerd. Wanneer er nieuwe gegevens beschikbaar zijn of wanneer de gebeurtenis plaatsvindt, maakt en voert de trigger een nieuw exemplaar van uw logische app uit. Dit kan nu de gegevens gebruiken die als invoer worden door gegeven.
+* *Push trigger*: deze trigger wacht op nieuwe gegevens of voor een gebeurtenis die moet worden uitgevoerd. Wanneer er nieuwe gegevens beschikbaar zijn of wanneer de gebeurtenis plaatsvindt, maakt en voert de trigger een nieuw exemplaar van uw logische app uit. Dit kan nu de gegevens gebruiken die als invoer worden door gegeven.
 
 <a name="connections"></a>
 
@@ -390,6 +390,54 @@ De triggers en acties van elke connector bieden hun eigen eigenschappen die u ku
 Voor connectors die gebruikmaken van Azure Active Directory (Azure AD) OAuth, wordt een verbinding gemaakt bij het aanmelden bij de service, zoals Office 365, Sales Force of GitHub, waarbij uw toegangs token is [versleuteld](../security/fundamentals/encryption-overview.md) en veilig wordt opgeslagen in een Azure-geheim archief. Andere connectors, zoals FTP en SQL, vereisen een verbinding met configuratie details, zoals het server adres, de gebruikers naam en het wacht woord. Deze gegevens over de configuratie van de verbinding zijn ook versleuteld en veilig opgeslagen. Meer informatie over [versleuteling in azure](../security/fundamentals/encryption-overview.md).
 
 Verbindingen hebben toegang tot de doel service of het systeem zolang de service of het systeem dit toestaat. Voor services die gebruikmaken van Azure AD OAuth-verbindingen, zoals Office 365 en Dynamics, Azure Logic Apps de toegangs tokens voor onbepaalde tijd vernieuwd. Andere services hebben mogelijk beperkingen op hoe lang Azure Logic Apps een token kan gebruiken zonder te vernieuwen. Over het algemeen worden met sommige acties alle toegangs tokens ongeldig, zoals het wijzigen van uw wacht woord.
+
+<a name="recurrence-behavior"></a>
+
+## <a name="recurrence-behavior"></a>Gedrag van terugkeer patroon
+
+Het gedrag voor terugkerende ingebouwde triggers die in Azure Logic Apps systeem eigen worden uitgevoerd, zoals de [terugkeer patroon trigger](../connectors/connectors-native-recurrence.md), verschilt van het gedrag voor terugkerende triggers op basis van een verbinding, waarbij u eerst een verbinding moet maken, zoals de SQL-connector trigger.
+
+Als in een terugkeer patroon echter geen specifieke begin datum en-tijd worden opgegeven, wordt het eerste terugkeer patroon onmiddellijk uitgevoerd wanneer u de logische app opslaat of implementeert, ondanks de configuratie van het terugkeer patroon van de trigger. U kunt dit probleem voor komen door een begin datum en-tijd op te geven als u wilt dat het eerste terugkeer patroon wordt uitgevoerd.
+
+<a name="recurrence-built-in"></a>
+
+### <a name="recurrence-for-built-in-triggers"></a>Terugkeer patroon voor ingebouwde triggers
+
+Terugkerende ingebouwde triggers voldoen aan de planning die u instelt, met inbegrip van de tijd zone die u opgeeft. Als in een terugkeer patroon echter geen andere geavanceerde plannings opties worden opgegeven, zoals specifieke tijden voor het uitvoeren van toekomstige terugkeer patronen, zijn deze terugkeer patronen gebaseerd op de laatste uitvoering van triggers. Als gevolg hiervan kunnen de begin tijden voor die terugkeer patronen ontstaan door factoren zoals latentie tijdens opslag aanroepen. Als u geen tijd zone selecteert, kan de zomer-en winter tijd van invloed zijn op het moment dat triggers worden uitgevoerd, bijvoorbeeld door de start tijd één uur vooruit te schuiven wanneer zomer tijd wordt gestart en één uur terug wanneer de zomer tijd eindigt.
+
+Voer de volgende oplossingen uit om ervoor te zorgen dat uw logische app wordt uitgevoerd op de opgegeven start tijd en geen terugkeer patroon mist, met name wanneer de frequentie in dagen of langer is.
+
+* Zorg ervoor dat u een tijd zone selecteert zodat uw logische app wordt uitgevoerd op de opgegeven begin tijd. Als dat niet het geval is, kan dit van invloed zijn op wanneer triggers worden uitgevoerd, bijvoorbeeld de begin tijd één uur vooruit verplaatsen wanneer zomer tijd start en één uur terug wanneer de zomer tijd eindigt.
+
+  Bij het plannen van taken, Logic Apps het bericht in de wachtrij plaatsen en opgeven wanneer dat bericht beschikbaar is, op basis van de UTC-tijd waarop de laatste taak is uitgevoerd en de UTC-tijd waarop de volgende taak is ingepland om te worden uitgevoerd. Als u een tijd zone opgeeft, wordt de UTC-tijd voor uw logische app ook verschoven om de wijziging in de seizoensgebonden tijd te teller. Sommige tijd Vensters kunnen echter problemen veroorzaken wanneer de tijd verschuift. Zie voor meer informatie en voor beelden [terugkeer patroon voor zomer tijd en standaard tijd](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#daylight-saving-standard-time).
+
+* Gebruik de trigger recurrence en geef een begin datum en-tijd op voor het terugkeer patroon plus de specifieke tijdstippen waarop de volgende terugkeer patronen moeten worden uitgevoerd met behulp van de eigenschappen met de naam **in deze uren** en **op deze minuten**, die alleen beschikbaar zijn voor de **dag** -en **week** frequentie.
+
+* Gebruik de [verschuivings venster trigger](../connectors/connectors-native-sliding-window.md)in plaats van de terugkeer patroon trigger.
+
+<a name="recurrence-connection-based"></a>
+
+### <a name="recurrence-for-connection-based-triggers"></a>Terugkeer patroon voor op verbindingen gebaseerde triggers
+
+In terugkerende activeringen op basis van een verbinding, zoals SQL of SFTP-SSH, is het schema niet het enige stuur programma dat de uitvoering beheert en de tijd zone bepaalt alleen de eerste begin tijd. Volgende uitvoeringen zijn afhankelijk van het terugkeer schema, de laatste uitvoering van triggers *en* andere factoren die kunnen leiden tot een verplaatsings tijd of het produceren van onverwacht gedrag, bijvoorbeeld:
+
+* Hiermee wordt aangegeven of de trigger toegang krijgt tot een server die meer gegevens bevat, die de trigger onmiddellijk probeert op te halen.
+
+* Eventuele fouten of nieuwe pogingen om de trigger in te stellen.
+
+* Latentie tijdens opslag aanroepen.
+
+* De opgegeven planning niet behouden wanneer de zomer tijd (DST) begint en eindigt.
+
+* Andere factoren die van invloed kunnen zijn op het moment waarop de volgende runtime plaatsvindt.
+
+Probeer deze oplossingen om deze problemen op te lossen of te omzeilen:
+
+* Om ervoor te zorgen dat de tijd van het terugkeer patroon niet wordt verschoven wanneer het ZOMERtijd duurt, moet u het terugkeer patroon hand matig aanpassen zodat uw logische app op het verwachte tijdstip blijft worden uitgevoerd. Anders wordt de begin tijd één uur vooruit geschoven wanneer zomer tijd wordt gestart en één uur terug wanneer de DST eindigt.
+
+* Gebruik de trigger voor terugkeer patroon zodat u een tijd zone, een start datum en-tijd kunt opgeven, *plus* de specifieke tijdstippen waarop volgende terugkeer patronen moeten worden uitgevoerd met behulp van de eigenschappen met de naam **in deze uren** en **op deze minuten**, die alleen beschikbaar zijn voor de **dag** -en **week** frequentie. Het kan echter voor komen dat Windows toch problemen ondervindt wanneer de tijd verschuift. Zie voor meer informatie en voor beelden [terugkeer patroon voor zomer tijd en standaard tijd](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md#daylight-saving-standard-time).
+
+* Als u wilt voor komen dat er gemiste terugkeer patronen optreden, gebruikt u de trigger voor het [schuivende venster](../connectors/connectors-native-sliding-window.md)in plaats van de terugkeer patroon trigger.
 
 <a name="custom"></a>
 

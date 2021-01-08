@@ -1,22 +1,22 @@
 ---
 title: .NET gebruiken voor Apache Spark
 description: Meer informatie over het gebruik van .NET en Apache Spark voor batch verwerking, realtime streaming, machine learning en het schrijven van ad-hoc-query's in azure Synapse Analytics-notebooks.
-author: mamccrea
+author: luisquintanilla
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 05/01/2020
-ms.author: mamccrea
+ms.author: luquinta
 ms.reviewer: jrasnick
-ms.openlocfilehash: 753c7ff48960711cbedbf6b5d8644a26502dd413
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 895d766cc1e70e6a001904770d6f3ef12b6945cd
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023736"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018658"
 ---
-# <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>.NET gebruiken voor Apache Spark met Azure Synapse Analytics
+# <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>.NET voor Apache Spark gebruiken met Azure Synapse Analytics
 
 [.Net voor Apache Spark](https://dot.net/spark) biedt gratis, [open-source](https://github.com/dotnet/spark)en platformoverschrijdende .net-ondersteuning voor Spark. 
 

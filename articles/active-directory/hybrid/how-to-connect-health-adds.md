@@ -3,7 +3,7 @@ title: Azure AD Connect Health gebruiken met AD DS | Microsoft Docs
 description: Dit is de Azure AD Connect Health-pagina waarop wordt besproken hoe AD DS kunt controleren.
 services: active-directory
 documentationcenter: ''
-author: zhiweiwangmsft
+author: billmath
 manager: daveba
 editor: curtand
 ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
@@ -16,12 +16,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d75b439c2753db17cffecdc97b6389a7b31b833e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0686a4dafae17bafc65a03c985a65aecba70e60c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279870"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017014"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Azure AD Connect Health gebruiken met AD DS
 De volgende documentatie is specifiek voor het controleren van Active Directory Domain Services met Azure AD Connect Health. De ondersteunde versies van AD DS zijn: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 en Windows Server 2016.
@@ -49,10 +49,10 @@ Dit dashboard geeft een overzicht van de replicatiestatus en -topologie van uw b
 
 ![Replicatiestatus](./media/how-to-connect-health-adds/aadconnect-health-adds-replication.png)
 
-## <a name="monitoring"></a>Bewaking
+## <a name="monitoring"></a>Controleren
 Deze functie biedt grafische trends van verschillende prestatiemeters, die voortdurend worden verzameld van elke bewaakte domeincontroller. Prestaties van een domeincontroller kunnen eenvoudig worden vergeleken met andere bewaakte domeincontrollers in uw forest. Bovendien ziet u verschillende prestatiemeters naast elkaar, dit is nuttig bij probleemoplossing in uw omgeving.
 
-![Bewaking](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
+![Controleren](./media/how-to-connect-health-adds/aadconnect-health-adds-monitoring.png)
 
 Standaard hebben we vier prestatiemeters vooraf geselecteerd; u kunt echter andere meters opnemen door op de filteropdracht te klikken en de gewenste meters te (de)selecteren. Als u klikt op de grafiek van een prestatiemeter, wordt een nieuwe blade geopend. Deze bevat de gegevenspunten voor elke bewaakte domeincontroller.
 

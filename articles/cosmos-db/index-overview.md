@@ -1,18 +1,18 @@
 ---
 title: Indexeren in Azure Cosmos DB
-description: Begrijpen hoe indexering werkt in Azure Cosmos DB, verschillende soorten indexen, zoals bereik, ruimtelijke, samengestelde indexen worden ondersteund.
+description: Begrijpen hoe indexering werkt in Azure Cosmos DB, verschillende typen indexen, zoals bereik, ruimtelijke, samengestelde indexen worden ondersteund.
 author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: tisande
-ms.openlocfilehash: 4211f13324b9fda0b0823b2d035eb03863cb686d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b7349a08b93810dcc3befd6058302d6c4573ab8d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339750"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019207"
 ---
 # <a name="indexing-in-azure-cosmos-db---overview"></a>Indexeren in Azure Cosmos DB - overzicht
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -64,13 +64,13 @@ Dit zijn de paden voor elke eigenschap van het hierboven beschreven voor beeld-i
 
 Wanneer een item wordt geschreven, indexeert Azure Cosmos DB in feite elke eigenschap van het pad en de bijbehorende waarde.
 
-## <a name="index-kinds"></a>Index typen
+## <a name="types-of-indexes"></a><a id="index-types"></a>Typen indexen
 
-Azure Cosmos DB ondersteunt momenteel drie soorten indexen.
+Azure Cosmos DB ondersteunt momenteel drie typen indexen. U kunt deze index typen configureren wanneer u het indexerings beleid definieert.
 
 ### <a name="range-index"></a>Bereik index
 
-De **bereik** index is gebaseerd op een geordende boom structuur. Het bereik index type wordt gebruikt voor:
+De **bereik** index is gebaseerd op een geordende boom structuur. Het index type van het bereik wordt gebruikt voor:
 
 - Gelijkheids query's:
 
@@ -122,11 +122,11 @@ De **bereik** index is gebaseerd op een geordende boom structuur. Het bereik ind
    SELECT child FROM container c JOIN child IN c.properties WHERE child = 'value'
    ```
 
-Bereik indexen kunnen worden gebruikt voor scalaire waarden (teken reeks of getal).
+Bereik indexen kunnen worden gebruikt voor scalaire waarden (teken reeks of getal). Het standaardindexeringsbeleid voor nieuw gemaakte containers dwingt bereikindexen af voor een willekeurige tekenreeks of een willekeurig getal. Zie [voor beelden van bereik indexerings beleid](how-to-manage-indexing-policy.md#range-index) voor meer informatie over het configureren van bereik indexen
 
 ### <a name="spatial-index"></a>Ruimtelijke index
 
-Met **ruimtelijke** indexen kunnen efficiënte query's worden uitgevoerd op georuimtelijke objecten zoals-Points, lijnen, veelhoeken en multiveelhoeken. Deze query's gebruiken ST_DISTANCE, ST_WITHIN ST_INTERSECTS tref woorden. Hieronder vindt u enkele voor beelden van ruimtelijke-index type:
+Met **ruimtelijke** indexen kunnen efficiënte query's worden uitgevoerd op georuimtelijke objecten zoals-Points, lijnen, veelhoeken en multiveelhoeken. Deze query's gebruiken ST_DISTANCE, ST_WITHIN ST_INTERSECTS tref woorden. Hieronder ziet u enkele voor beelden van ruimtelijke-index type:
 
 - Georuimtelijke afstand query's:
 
@@ -146,11 +146,11 @@ Met **ruimtelijke** indexen kunnen efficiënte query's worden uitgevoerd op geor
    SELECT * FROM c WHERE ST_INTERSECTS(c.property, { 'type':'Polygon', 'coordinates': [[ [31.8, -5], [32, -5], [31.8, -5] ]]  })  
    ```
 
-Ruimtelijke indexen kunnen worden gebruikt op correct opgemaakte [GEOjson](./sql-query-geospatial-intro.md) -objecten. Punten, line strings toe, veelhoeken en multiveelhoeken worden momenteel ondersteund.
+Ruimtelijke indexen kunnen worden gebruikt op correct opgemaakte [GEOjson](./sql-query-geospatial-intro.md) -objecten. Punten, line strings toe, veelhoeken en multiveelhoeken worden momenteel ondersteund. Als u dit index type wilt gebruiken, stelt u deze in met behulp van de `"kind": "Range"` eigenschap bij het configureren van het indexerings beleid. Zie [voor beelden van ruimtelijke indexerings beleid](how-to-manage-indexing-policy.md#spatial-index) voor meer informatie over het configureren van ruimtelijke indexen
 
 ### <a name="composite-indexes"></a>Samengestelde indexen
 
-**Samengestelde** indexen verhogen de efficiëntie wanneer u bewerkingen uitvoert op meerdere velden. De samengestelde index soort wordt gebruikt voor:
+**Samengestelde** indexen verhogen de efficiëntie wanneer u bewerkingen uitvoert op meerdere velden. Het samengestelde-index type wordt gebruikt voor:
 
 - `ORDER BY` query's op meerdere eigenschappen:
 
@@ -170,11 +170,13 @@ Ruimtelijke indexen kunnen worden gebruikt op correct opgemaakte [GEOjson](./sql
  SELECT * FROM container c WHERE c.property1 = 'value' AND c.property2 > 'value'
 ```
 
-Zolang één filter predicaat een van de index typen gebruikt, evalueert de query-engine dat eerst voordat de rest wordt gescand. Als u bijvoorbeeld een SQL-query hebt zoals `SELECT * FROM c WHERE c.firstName = "Andrew" and CONTAINS(c.lastName, "Liu")`
+Zolang één filter predicaat een van het index type gebruikt, evalueert de query-engine dat eerst voordat de rest wordt gescand. Als u bijvoorbeeld een SQL-query hebt zoals `SELECT * FROM c WHERE c.firstName = "Andrew" and CONTAINS(c.lastName, "Liu")`
 
 * Met de bovenstaande query wordt eerst gefilterd op vermeldingen waarbij voor naam "Andrew" met behulp van de index. Vervolgens worden alle voor naam = "Andrew" vermeldingen door gegeven aan een volgende pijp lijn om het CONTAINs-filter predicaat te evalueren.
 
 * U kunt query's versnellen en volledige container scans voor komen met behulp van functies die de index niet gebruiken (bijvoorbeeld CONTAINs) door extra filter predikaten toe te voegen die de index gebruiken. De volg orde van de filter componenten is niet belang rijk. De query-engine geeft aan welke predikaten meer selectief zijn en voeren de query dienovereenkomstig uit.
+
+Zie [samengesteld indexerings beleid voor beelden](how-to-manage-indexing-policy.md#composite-index) van meer informatie over het configureren van samengestelde indexen
 
 ## <a name="querying-with-indexes"></a>Query's uitvoeren met indexen
 

@@ -3,16 +3,15 @@ title: Fouten opsporen Azure Stream Analytics query's lokaal met behulp van taak
 description: In dit artikel wordt beschreven hoe u in Azure Stream Analytics-Hulpprogram Ma's voor Visual Studio fouten opspoort met behulp van het taak diagram.
 author: su-jie
 ms.author: sujie
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/23/2020
-ms.openlocfilehash: c32ba468979e4566d8e349d481eddca7d407b659
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: d0e94fda1fb21be1a01516f4cecf657426ae867e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130983"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019445"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio"></a>Fouten opsporen Azure Stream Analytics query's lokaal met behulp van taak diagram in Visual Studio
 
@@ -32,7 +31,7 @@ Gebruik deze [Quick](stream-analytics-quick-create-vs.md) start om te leren hoe 
 > [!NOTE]
 > Als u een taak exporteert naar een lokaal project en wilt testen op een live invoer stroom, moet u de referenties voor alle invoer opnieuw opgeven.  
 
-Kies de invoer-en uitvoer bron van de script editor en selecteer **lokaal uitvoeren** . Het taak diagram wordt aan de rechter kant weer gegeven.
+Kies de invoer-en uitvoer bron van de script editor en selecteer **lokaal uitvoeren**. Het taak diagram wordt aan de rechter kant weer gegeven.
 
 ### <a name="view-the-intermediate-result-set"></a>De tussenliggende resultatenset weer geven  
 
@@ -72,7 +71,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 |-|-|
 |**TaxiRide**| De naam van de invoer.|
 |**Aantal rijen**| Het aantal rijen dat is gegenereerd op basis van de stap.|
-|**Gegevens grootte**| De grootte van de gegevens die uit deze stap zijn gegenereerd.|
+|**Gegevensgrootte**| De grootte van de gegevens die uit deze stap zijn gegenereerd.|
 |**Lokale invoer**| Gebruik lokale gegevens als invoer.|
 
 #### <a name="query-steps"></a>Querystappen
@@ -83,7 +82,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 |-|-|
 |**Trip data**|De naam van de tijdelijke resultatenset.|
 |**Aantal rijen**| Het aantal rijen dat is gegenereerd op basis van de stap.|
-|**Gegevens grootte**| De grootte van de gegevens die uit deze stap zijn gegenereerd.|
+|**Gegevensgrootte**| De grootte van de gegevens die uit deze stap zijn gegenereerd.|
   
 #### <a name="output-sinks-live-output"></a>Uitvoer-Sinks (live uitvoer)
 
@@ -103,7 +102,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 |**regionaggEH**|De naam van de uitvoer.|
 |**Lokale uitvoer**| Uitvoer van resultaten naar een lokaal bestand.|
 |**Aantal rijen**| Het aantal rijen uitvoer naar het lokale bestand.|
-|**Gegevens grootte**| De grootte van de gegevens uitvoer naar het lokale bestand.|
+|**Gegevensgrootte**| De grootte van de gegevens uitvoer naar het lokale bestand.|
 
 ### <a name="close-job-diagram"></a>Taak diagram sluiten
 

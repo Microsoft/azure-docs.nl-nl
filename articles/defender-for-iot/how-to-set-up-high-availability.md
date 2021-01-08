@@ -1,5 +1,5 @@
 ---
-title: Hoge Beschik baarheid instellen
+title: Hoge beschikbaarheid instellen
 description: Verhoog de tolerantie van uw Defender voor IoT-implementatie door een on-premises beheer console te installeren. Implementaties met een hoge Beschik baarheid zorgen ervoor dat uw beheerde Sens oren continu rapporteren aan een actieve on-premises beheer console.
 author: shhazam-ms
 manager: rkarlin
@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 6540b5f93bebfe39253a88dc495a3613568f8926
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: e5fa4bde316f4b1677f78c65e913a6303a9f4735
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839731"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019139"
 ---
 # <a name="about-high-availability"></a>Over hoge Beschik baarheid
 
@@ -52,7 +52,7 @@ De installatie-en configuratie procedures worden uitgevoerd in vier hoofd fasen:
 
 3. Installeer een secundair apparaat voor een on-premises beheer console. Zie voor meer informatie [over de installatie van Defender voor IOT](how-to-install-software.md).
 
-4. Koppel de primaire en secundaire on-premises beheer console-apparaten, zoals [hier](/create-the-primary-and-secondary-pair.md)wordt beschreven. De primaire on-premises beheer console moet ten minste twee Sens oren beheren om de installatie uit te voeren.
+4. Koppel de primaire en secundaire on-premises beheer console-apparaten, zoals [hier](https://infrascale.secure.force.com/pkb/articles/Support_Article/How-to-access-your-Appliance-Management-Console)wordt beschreven. De primaire on-premises beheer console moet ten minste twee Sens oren beheren om de installatie uit te voeren.
 
 ## <a name="high-availability-requirements"></a>Vereisten voor hoge Beschik baarheid
 
@@ -151,4 +151,4 @@ Bijwerken met hoge Beschik baarheid:
 
 ## <a name="see-also"></a>Zie tevens
 
-[Uw on-premises beheer console activeren en instellen](how-to-activate-and-set-up-your-on-premises-management-console.md)
+[Uw on-premises beheerconsole activeren en instellen](how-to-activate-and-set-up-your-on-premises-management-console.md)

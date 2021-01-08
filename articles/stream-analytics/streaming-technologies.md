@@ -1,18 +1,17 @@
 ---
 title: Een oplossing voor realtime-en stroom verwerking kiezen in azure
 description: Meer informatie over het kiezen van de juiste realtime analyse en streaming-verwerkings technologie om uw toepassing op Azure te bouwen.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: a204aacc0061091e0a273581e766bb669d191f0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c10a91971357001723adcb783253c9867cf6d87
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903700"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019054"
 ---
 # <a name="choose-a-real-time-analytics-and-streaming-processing-technology-on-azure"></a>Kies een real-time analyse-en streaming-verwerkings technologie in azure
 
@@ -52,7 +51,7 @@ Azure Stream Analytics is de bedrijfs technologie van micro soft en is alleen be
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een Stream Analytics taak maken met behulp van de Azure Portal](stream-analytics-quick-create-portal.md)
+* [Een Stream Analytics-taak maken met behulp van Azure Portal](stream-analytics-quick-create-portal.md)
 * [Een Stream Analytics-taak maken met behulp van Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Een Stream Analytics taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
-* [Een Stream Analytics taak maken met behulp van Visual Studio code](quick-create-visual-studio-code.md)
+* [Een Stream Analytics-taak maken met behulp van Visual Studio](stream-analytics-quick-create-vs.md)
+* [Een Stream Analytics-taak maken met behulp van Visual Studio Code](quick-create-visual-studio-code.md)

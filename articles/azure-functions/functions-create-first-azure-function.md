@@ -5,12 +5,12 @@ ms.assetid: 96cf87b9-8db6-41a8-863a-abb828e3d06d
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: e37a14b2634395d7f31565d6d5a6f6ec96a4a2f1
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 5c9612547fcfed8e583f5b2fbcfe0bddd5dc412c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954517"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019105"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
@@ -61,13 +61,13 @@ Maak vervolgens een functie in de nieuwe functie-app.
 
     ![De functie-URL vanuit Azure Portal kopiëren](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
 
-1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `&name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
+1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `?name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
 
     Het volgende voorbeeld toont het antwoord in de browser:
 
     ![Het antwoord van de functie in de browser.](./media/functions-create-first-azure-function/function-app-browser-testing.png)
 
-    De aanvraag-URL bevat een sleutel die standaard is vereist, en waarmee u via HTTP toegang hebt tot de functie.
+    Als de aanvraag-URL een [toegangs sleutel](functions-bindings-http-webhook-trigger.md#authorization-keys) ( `?code=...` ) bevat, betekent dit dat u in plaats van het **anonieme** toegangs niveau de **functie** hebt gekozen bij het maken van de functie. In dit geval moet u in plaats daarvan toevoegen `&name=<your_name>` .
 
 1. Wanneer uw functie wordt uitgevoerd, wordt traceringsinformatie naar de logboeken geschreven. Als u de uitvoer van de tracering wilt zien, gaat u terug naar de pagina **code en test** in de portal en vouwt u de pijl **Logboeken** onder aan de pagina uit.
 

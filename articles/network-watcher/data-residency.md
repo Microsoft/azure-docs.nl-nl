@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/20/2020
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 2e6a92a4d08f1603f480a990ad437a90302a8189
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b5aa8167031c3b871c6a6a4d84159c3c284bf241
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966085"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018425"
 ---
 # <a name="data-residency-for-azure-network-watcher"></a>Data locatie voor Azure Network Watcher
 Met uitzonde ring van de service verbindings monitor (preview-versie), worden klant gegevens niet opgeslagen in azure Network Watcher.

@@ -3,16 +3,15 @@ title: Azure Stream Analytics taken weer geven in Visual Studio
 description: Meer informatie over het weer geven, starten en stoppen, testen van verbindingen, het controleren van resultaten en het exporteren van uw Azure Stream Analytics taken met Visual Studio.
 author: su-jie
 ms.author: sujie
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: 43b145f5a37ea4209947e54cb276e16ff55c1da1
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 4b568fa8d9e2fb8bd00acb27b0dc3f7c45c09c57
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97682813"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019122"
 ---
 # <a name="use-visual-studio-to-view-azure-stream-analytics-jobs"></a>Visual Studio gebruiken om Azure Stream Analytics-taken weer te geven
 

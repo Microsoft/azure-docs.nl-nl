@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/29/2020
+ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: 56638f14565f76b0a2fc252b81dba3dae9e53dd8
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: acbd5c3aa88c2c8c14407ebda0c42d228aa6c9e3
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289443"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018935"
 ---
 # <a name="create-expressroute-direct-using-the-azure-portal"></a>Direct ExpressRoute maken met behulp van de Azure Portal
 
@@ -21,16 +21,23 @@ Met ExpressRoute direct kunt u rechtstreeks verbinding maken met het wereld wijd
 
 ## <a name="before-you-begin"></a><a name="before"></a>Voordat u begint
 
-Controleer of de resource provider **micro soft. Network** is geregistreerd voor uw abonnement. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider.
+Voordat u ExpressRoute direct gebruikt, moet u uw abonnement eerst registreren. Als u zich wilt inschrijven, stuurt u een E-mail naar <ExpressRouteDirect@microsoft.com> met uw abonnements-id, met inbegrip van de volgende gegevens:
+
+* Scenario's die u wilt uitvoeren met **ExpressRoute direct**
+* Locatie voorkeuren: Zie [partners en peering-locaties](expressroute-locations-providers.md) voor een volledige lijst met alle locaties
+* Tijdlijn voor implementatie
+* Eventuele andere vragen
+
+Nadat u bent Inge schreven, controleert u of de resource provider **micro soft. Network** is geregistreerd voor uw abonnement. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider.
 
 1. U hebt toegang tot uw abonnements instellingen zoals beschreven in [Azure-resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md).
-1. In uw abonnement, voor **resource providers** , controleert u of de provider **micro soft. Network** een **geregistreerde** status bevat. Als de resource provider micro soft. Network niet aanwezig is in de lijst met geregistreerde providers, voegt u deze toe.
+1. In uw abonnement, voor **resource providers**, controleert u of de provider **micro soft. Network** een **geregistreerde** status bevat. Als de resource provider micro soft. Network niet aanwezig is in de lijst met geregistreerde providers, voegt u deze toe.
 
 ## <a name="create-expressroute-direct"></a><a name="create-erdir"></a>ExpressRoute direct maken
 
 1. Selecteer in het menu [Azure Portal](https://portal.azure.com) of op de **Start** pagina de optie **een resource maken**.
 
-1. Op de **nieuwe** pagina, in het **veld _Marketplace _ zoeken_ , typt u *_* ExpressRoute direct** en selecteert u vervolgens **Enter** om naar de zoek resultaten te gaan.
+1. Op de **nieuwe** pagina, in het **veld _Marketplace _ zoeken_, typt u *_* ExpressRoute direct** en selecteert u vervolgens **Enter** om naar de zoek resultaten te gaan.
 
 1. Selecteer **ExpressRoute direct** in de resultaten.
 
@@ -40,18 +47,18 @@ Controleer of de resource provider **micro soft. Network** is geregistreerd voor
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/basics.png" alt-text="Pagina Basisinformatie":::
 
-    * **Abonnement** : het Azure-abonnement dat u wilt gebruiken voor het maken van een nieuwe ExpressRoute direct. De ExpressRoute direct resource-en ExpressRoute-circuits moeten zich in hetzelfde abonnement benemen.
-    * **Resource groep** : de Azure-resource groep waarin de nieuwe ExpressRoute direct-resource wordt gemaakt. Als u geen bestaande resourcegroep hebt, kunt u een nieuwe maken.
-    * **Regio** : De openbare Azure-regio waarin de resource wordt gemaakt.
-    * **Naam** : de naam van de nieuwe ExpressRoute direct-resource.
+    * **Abonnement**: het Azure-abonnement dat u wilt gebruiken voor het maken van een nieuwe ExpressRoute direct. De ExpressRoute direct resource-en ExpressRoute-circuits moeten zich in hetzelfde abonnement benemen.
+    * **Resource groep**: de Azure-resource groep waarin de nieuwe ExpressRoute direct-resource wordt gemaakt. Als u geen bestaande resourcegroep hebt, kunt u een nieuwe maken.
+    * **Regio**: De openbare Azure-regio waarin de resource wordt gemaakt.
+    * **Naam**: de naam van de nieuwe ExpressRoute direct-resource.
 
 1. Vul vervolgens de velden op de pagina **configuratie** in.
 
     :::image type="content" source="./media/how-to-expressroute-direct-portal/configuration.png" alt-text="Scherm opname van de pagina ' Create ExpressRoute direct ' op het tabblad ' configuratie ' is geselecteerd.":::
 
-    * **Locatie van peering** : de peering-locatie waar u verbinding maakt met de ExpressRoute direct-resource. Bekijk [ExpressRoute-locaties](expressroute-locations-providers.md)voor meer informatie over peering locaties.
-   * **Band breedte** : de band breedte van het poort paar dat u wilt reserveren. ExpressRoute direct ondersteunt de bandbreedte opties van 10 GB en 100 GB. Als uw gewenste band breedte niet beschikbaar is op de opgegeven peering-locatie, [opent u een ondersteunings aanvraag in de Azure Portal](https://aka.ms/azsupt).
-   * **Inkapseling** : ExpressRoute direct ondersteunt zowel QinQ-als Dot1Q-inkapseling.
+    * **Locatie van peering**: de peering-locatie waar u verbinding maakt met de ExpressRoute direct-resource. Bekijk [ExpressRoute-locaties](expressroute-locations-providers.md)voor meer informatie over peering locaties.
+   * **Band breedte**: de band breedte van het poort paar dat u wilt reserveren. ExpressRoute direct ondersteunt de bandbreedte opties van 10 GB en 100 GB. Als uw gewenste band breedte niet beschikbaar is op de opgegeven peering-locatie, [opent u een ondersteunings aanvraag in de Azure Portal](https://aka.ms/azsupt).
+   * **Inkapseling**: ExpressRoute direct ondersteunt zowel QinQ-als Dot1Q-inkapseling.
      * Als QinQ is geselecteerd, wordt elk ExpressRoute-circuit dynamisch toegewezen aan een S-tag en is deze uniek in de directe resource van ExpressRoute.
      *  Elk C-tag op het circuit moet uniek zijn op het circuit, maar niet via de ExpressRoute direct.
      * Als Dot1Q-inkapseling is geselecteerd, moet u de uniekheid van de C-tag (VLAN) beheren voor de volledige ExpressRoute direct-resource.

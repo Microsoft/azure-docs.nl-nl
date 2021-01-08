@@ -10,14 +10,14 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 548db64bd93dd561f9c69e9f594d01f4c0825db9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 47418b9c5235255ff7dbf4a1a151e51e4c9aba58
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948337"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019666"
 ---
 # <a name="azure-role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Op rollen gebaseerde toegangs beheer machtigingen voor Azure die zijn vereist voor het gebruik van Network Watcher mogelijkheden
 
@@ -25,7 +25,7 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 
 ## <a name="network-watcher"></a>Network Watcher
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/lezen                              | Een netwerk-Watcher ophalen                                          |
 | Micro soft. Network/networkWatchers/schrijven                             | Een netwerk-Watcher maken of bijwerken                             |
@@ -33,14 +33,14 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 
 ## <a name="nsg-flow-logs"></a>NSG-stroomlogboeken
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/configureFlowLog/Action           | Een stroom logboek configureren                                           |
 | Micro soft. Network/networkWatchers/queryFlowLogStatus/Action         | Query status voor een stroom logboek                                    |
 
 ## <a name="connection-troubleshoot"></a>Problemen met de verbinding oplossen
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/connectivityCheck/Action          | Problemen met testen van verbinding starten
 | Micro soft. Network/networkWatchers/queryTroubleshootResult/Action    | Query resultaten van de test verbinding oplossen                |
@@ -48,7 +48,7 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 
 ## <a name="connection-monitor"></a>Verbindings monitor
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/connectionMonitors/start/Action   | Verbindings monitor starten                                     |
 | Micro soft. Network/networkWatchers/connectionMonitors/stop/Action    | Verbindings monitor stoppen                                      |
@@ -59,7 +59,7 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 
 ## <a name="packet-capture"></a>Pakketopname
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/packetCaptures/queryStatus/Action | De status van een pakket opname opvragen                           |
 | Micro soft. Network/networkWatchers/packetCaptures/stop/Action        | Een pakket opname stoppen                                          |
@@ -69,32 +69,32 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u alleen de 
 
 ## <a name="ip-flow-verify"></a>IP-stroom controleren
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/ipFlowVerify/Action               | Een IP-stroom controleren                                              |
 
 ## <a name="next-hop"></a>Volgende hop
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/nextHop/actie                    | De volgende hop van een virtuele machine ophalen                                     |
 
 ## <a name="network-security-group-view"></a>Netwerkbeveiligingsgroep weergeven
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/securityGroupView/Action          | Beveiligings groepen weer geven                                           |
 
 ## <a name="topology"></a>Topologie
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/Topology/actie                   | Topologie ophalen                                                   |
 | Micro soft. Network/networkWatchers/Topology/lezen                     | Hetzelfde als hierboven                                                  |
 
 ## <a name="reachability-report"></a>Bereik baarheids rapport
 
-| Bewerking                                                              | Beschrijving                                                           |
+| Actie                                                              | Beschrijving                                                           |
 | ---------                                                           | -------------                                                  |
 | Micro soft. Network/networkWatchers/azureReachabilityReport/Action    | Een Azure-bereik baarheids rapport ophalen                               |
 

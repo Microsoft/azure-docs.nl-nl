@@ -1,17 +1,17 @@
 ---
 title: Gegevens beveiliging in Azure Stream Analytics
 description: In dit artikel wordt uitgelegd hoe u uw persoonlijke gegevens versleutelt die worden gebruikt door een Azure Stream Analytics-taak.
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 76218003a40c02def3dc62ea8480022d9647938d
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 102b03ad4fe247ae0abc4e2312d7027c6170333f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723334"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019462"
 ---
 # <a name="data-protection-in-azure-stream-analytics"></a>Gegevens beveiliging in Azure Stream Analytics 
 

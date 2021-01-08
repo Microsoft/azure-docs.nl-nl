@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/23/2019
-ms.openlocfilehash: c45445415f3eaa7cb0f9069dd5f64b57c19e5836
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: b24ea79737c9e1f64abb7f62807352dbd9573695
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437147"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018068"
 ---
 # <a name="migrate-hundreds-of-terabytes-of-data-into-azure-cosmos-db"></a>Honderden terabytes aan gegevens migreren naar Azure Cosmos DB 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -43,7 +43,7 @@ De uitdagingen die in de bovenstaande sectie worden beschreven, kunnen worden op
 
 Het aangepaste hulp programma maakt gebruik van de bibliotheek voor bulk-uitvoerder en biedt ondersteuning voor uitbrei ding op meerdere clients en bij het volgen van fouten tijdens het opname proces. Als u dit hulp programma wilt gebruiken, moeten de bron gegevens worden gepartitioneerd in afzonderlijke bestanden in Azure Data Lake Storage (ADLS) zodat verschillende migratie medewerkers elk bestand kunnen ophalen en opnemen in Azure Cosmos DB. Het aangepaste hulp programma maakt gebruik van een afzonderlijke verzameling, die meta gegevens over de voortgang van de migratie voor elk afzonderlijk bron bestand in ADLS opslaat en eventuele fouten registreert die eraan zijn gekoppeld.  
 
-In de volgende afbeelding wordt het migratie proces beschreven dat gebruikmaakt van dit aangepaste hulp programma. Het hulp programma wordt uitgevoerd op een set virtuele machines en elke virtuele machine voert een query uit op de tracerings verzameling in Azure Cosmos DB om een lease te verkrijgen op een van de bron gegevens partities. Zodra dit is gebeurd, wordt de bron gegevens partitie door het hulp programma gelezen en opgenomen in Azure Cosmos DB met behulp van de bulk-uitvoerder bibliotheek. Vervolgens wordt de verzameling bijhouden bijgewerkt met de voortgang van de opname van gegevens en eventuele fouten die zijn opgetreden. Nadat een gegevens partitie is verwerkt, probeert het hulp programma de volgende beschik bare bron partitie op te vragen. Het proces blijft de volgende bron partitie verwerken totdat alle gegevens zijn gemigreerd. De bron code voor het hulp programma is [hier](https://github.com/Azure-Samples/azure-cosmosdb-bulkingestion)beschikbaar.  
+In de volgende afbeelding wordt het migratie proces beschreven dat gebruikmaakt van dit aangepaste hulp programma. Het hulp programma wordt uitgevoerd op een set virtuele machines en elke virtuele machine voert een query uit op de tracerings verzameling in Azure Cosmos DB om een lease te verkrijgen op een van de bron gegevens partities. Zodra dit is gebeurd, wordt de bron gegevens partitie door het hulp programma gelezen en opgenomen in Azure Cosmos DB met behulp van de bulk-uitvoerder bibliotheek. Vervolgens wordt de verzameling bijhouden bijgewerkt met de voortgang van de opname van gegevens en eventuele fouten die zijn opgetreden. Nadat een gegevens partitie is verwerkt, probeert het hulp programma de volgende beschik bare bron partitie op te vragen. Het proces blijft de volgende bron partitie verwerken totdat alle gegevens zijn gemigreerd. De bron code voor het hulp programma is beschikbaar op de [Azure Cosmos DB bulk opname](https://github.com/Azure-Samples/azure-cosmosdb-bulkingestion) opslag plaats.  
 
  
 :::image type="content" source="./media/migrate-cosmosdb-data/migrationsetup.png" alt-text="Migratie Hulpprogramma's instellen" border="false":::

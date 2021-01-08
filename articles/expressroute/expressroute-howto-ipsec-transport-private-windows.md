@@ -5,23 +5,23 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 10/17/2018
+ms.date: 01/07/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 2dcb8489d94b9afc3ae4df829b37dd9785383d85
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: cfcc515787cee2bc90a2100e84337a3c96219d8a
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "92208240"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017269"
 ---
 # <a name="configure-ipsec-transport-mode-for-expressroute-private-peering"></a>IPsec-transport modus configureren voor persoonlijke ExpressRoute-peering
 
-Dit artikel helpt u bij het maken van IPsec-tunnels in de transport modus via ExpressRoute persoonlijke peering tussen virtuele Azure-machines met Windows en on-premises Windows-hosts. Met de stappen in dit artikel maakt u deze configuratie met behulp van groeps beleidsobjecten. Hoewel het mogelijk is om deze configuratie te maken zonder organisatie-eenheden (Ou's) en groeps beleidsobjecten (Gpo's), helpt de combi natie van Ou's en groeps beleidsobjecten het beheer van uw beveiligings beleid te vereenvoudigen en kunt u snel omhoog schalen. In de stappen in dit artikel wordt ervan uitgegaan dat u al een Active Directory configuratie hebt en dat u bekend bent met het gebruik van organisatie-eenheden en groeps beleidsobjecten.
+Dit artikel helpt u bij het maken van IPsec-tunnels in de transport modus via ExpressRoute persoonlijke peering. De tunnel wordt gemaakt tussen virtuele Azure-machines met Windows-en on-premises Windows-hosts. Voor de stappen in dit artikel voor deze configuratie worden groeps beleidsobjecten gebruikt. Hoewel het mogelijk is om deze configuratie te maken zonder organisatie-eenheden (Ou's) en groeps beleidsobjecten (Gpo's). De combi natie van organisatie-eenheden en groeps beleidsobjecten helpt u bij het vereenvoudigen van het beheer van uw beveiligings beleid en biedt u de mogelijkheid om snel omhoog te schalen. Voor de stappen in dit artikel wordt ervan uitgegaan dat u al een Active Directory configuratie hebt en dat u bekend bent met het gebruik van Ou's en Gpo's.
 
 ## <a name="about-this-configuration"></a>Over deze configuratie
 
-Voor de configuratie in de volgende stappen wordt één virtueel netwerk van Azure (VNet) met ExpressRoute-persoonlijke peering gebruikt. Deze configuratie kan echter meer Azure VNets-en on-premises netwerken omvatten. In dit artikel vindt u informatie over het definiëren van een IPsec-versleutelings beleid en het Toep assen hiervan op een groep virtuele Azure-machines en hosts die deel uitmaken van dezelfde organisatie-eenheid. U configureert versleuteling tussen de virtuele machines van Azure (VM1 en VM2) en de on-premises host1 alleen voor HTTP-verkeer met de doel poort 8080. U kunt verschillende typen IPsec-beleid maken op basis van uw vereisten.
+De configuratie in de volgende stappen maakt gebruik van één virtueel netwerk van Azure (VNet) met ExpressRoute-persoonlijke peering. Deze configuratie kan echter tot andere Azure VNets-en on-premises netwerken beslaan. In dit artikel vindt u informatie over het definiëren van een IPsec-versleutelings beleid dat u kunt Toep assen op een groep virtuele machines van Azure of op lokale hosts. Deze Azure-Vm's of on-premises hosts maken deel uit van dezelfde organisatie-eenheid. U configureert versleuteling tussen de virtuele machines van Azure (VM1 en VM2) en de on-premises host1 alleen voor HTTP-verkeer met de doel poort 8080. U kunt verschillende typen IPsec-beleid maken op basis van uw vereisten.
 
 ### <a name="working-with-ous"></a>Werken met organisatie-eenheden 
 
@@ -43,13 +43,13 @@ Dit diagram toont de IPsec-tunnels in transit in ExpressRoute-persoonlijke peeri
 ### <a name="working-with-ipsec-policy"></a>Werken met IPsec-beleid
 
 In Windows wordt versleuteling gekoppeld aan het IPsec-beleid. IPsec-beleid bepaalt welk IP-verkeer wordt beveiligd en het beveiligings mechanisme dat wordt toegepast op de IP-pakketten.
-**IPSec-beleid** bestaat uit de volgende items: **filter lijsten** , **filter acties** en **beveiligings regels**.
+**IPSec-beleid** bestaat uit de volgende items: **filter lijsten**, **filter acties** en **beveiligings regels**.
 
 Bij het configureren van het IPsec-beleid is het belang rijk om inzicht te krijgen in de volgende begrippen voor het IPsec-beleid:
 
 * **IPSec-beleid:** Een verzameling regels. Op elk gewenst moment kan slechts één beleid actief zijn (' toegewezen '). Elk beleid kan een of meer regels hebben, die allemaal tegelijk actief kunnen zijn. Aan een computer kan op een bepaald moment slechts één actief IPsec-beleid worden toegewezen. Binnen het IPsec-beleid kunt u echter meerdere acties definiëren die in verschillende situaties kunnen worden uitgevoerd. Elke set IPsec-regels is gekoppeld aan een filter lijst die van invloed is op het type netwerk verkeer waarop de regel van toepassing is.
 
-* **Filter lijsten:** Filter lijsten zijn bundel van een of meer filters. Eén lijst kan meerdere filters bevatten. Filter definieert of de communicatie wordt toegestaan, beveiligd of geblokkeerd op basis van de IP-adresbereiken, protocollen of zelfs specifieke protocol poorten. Elk filter komt overeen met een bepaalde set voor waarden; Pakketten die bijvoorbeeld vanuit een bepaald subnet naar een bepaalde computer op een specifieke doel poort worden verzonden. Wanneer de netwerk voorwaarden overeenkomen met een of meer van deze filters, wordt de filter lijst geactiveerd. Elk filter wordt in een specifieke filter lijst gedefinieerd. Filters kunnen niet worden gedeeld tussen filter lijsten. Een gegeven filter lijst kan echter worden opgenomen in verschillende IPsec-beleids regels. 
+* **Filter lijsten:** Filter lijsten zijn bundel van een of meer filters. Eén lijst kan meerdere filters bevatten. Een filter definieert of de communicatie wordt geblokkeerd, toegestaan of beveiligd is op basis van de volgende criteria: IP-adresbereiken, protocollen of zelfs specifieke poorten. Elk filter komt overeen met een bepaalde set voor waarden; Pakketten die bijvoorbeeld vanuit een bepaald subnet naar een bepaalde computer op een specifieke doel poort worden verzonden. Wanneer de netwerk voorwaarden overeenkomen met een of meer van deze filters, wordt de filter lijst geactiveerd. Elk filter wordt in een specifieke filter lijst gedefinieerd. Filters kunnen niet worden gedeeld tussen filter lijsten. Een gegeven filter lijst kan echter worden opgenomen in verschillende IPsec-beleids regels. 
 
 * **Filter acties:** Een beveiligings methode definieert een reeks beveiligings algoritmen, protocollen en sleutel een computer die tijdens IKE-onderhandelingen wordt aangeboden. Filter acties zijn lijsten met beveiligings methoden, gerangschikt in volg orde van voor keur.  Wanneer een computer een IPsec-sessie onderhandelt, worden Voorst Ellen geaccepteerd of verzonden op basis van de beveiligings instelling die in de lijst met filter acties is opgeslagen.
 
@@ -77,7 +77,7 @@ Zorg ervoor dat u aan de volgende vereisten voldoet:
 
 * Controleer of de virtuele Azure Windows-machines zijn geïmplementeerd in het VNet.
 
-* Controleer of er een verbinding is tussen de on-premises hosts en de virtuele Azure-machines.
+* Controleer of er een verbinding is tussen de on-premises hosts en de virtuele machines van Azure.
 
 * Controleer of de Azure Windows-Vm's en de on-premises hosts DNS kunnen gebruiken om namen correct te herleiden.
 
@@ -101,13 +101,13 @@ Zorg ervoor dat u aan de volgende vereisten voldoet:
 
 ## <a name="1-create-a-gpo"></a><a name="creategpo"></a>1. een groeps beleidsobject maken
 
-1. Als u een nieuw GPO wilt maken dat is gekoppeld aan een organisatie-eenheid, opent u de module groepsbeleid management en zoekt u de organisatie-eenheid waaraan het groeps beleidsobject wordt gekoppeld. In het voor beeld heeft de OE de naam **IPSecOU**. 
+1. Maak een nieuw groeps beleidsobject dat is gekoppeld aan een organisatie-eenheid door de module groepsbeleid-beheer te openen. Zoek vervolgens de organisatie-eenheid waaraan het groeps beleidsobject wordt gekoppeld. In het voor beeld heeft de OE de naam **IPSecOU**. 
 
    [![9]][9]
-2. Selecteer in de module groepsbeleid-beheer de OE en klik met de rechter muisknop. Klik in de vervolg keuzelijst op **groeps beleidsobject in dit domein maken en koppel deze hier...**.
+2. Selecteer in de module groepsbeleid-beheer de OE en klik met de rechter muisknop. Selecteer in de vervolg keuzelijst '**een groeps beleidsobject in dit domein maken en hier een koppeling...**'.
 
    [![10]][10]
-3. Noem het groeps beleidsobject een intuïtieve naam, zodat u deze later eenvoudig kunt vinden. Klik op **OK** om het groeps beleidsobject te maken en te koppelen.
+3. Noem het groeps beleidsobject een intuïtieve naam, zodat u deze later eenvoudig kunt vinden. Selecteer **OK** om het groeps beleidsobject te maken en te koppelen.
 
    [![11]][11]
 
@@ -122,32 +122,32 @@ Om het groeps beleidsobject toe te passen op de OE, mag het GPO niet alleen word
 
 ## <a name="3-define-the-ip-filter-action"></a><a name="filteraction"></a>3. de IP-filter actie definiëren
 
-1. Klik in de vervolg keuzelijst met de rechter muisknop op **IP-beveiligings beleid op Active Directory** en klik vervolgens op **IP-filter lijsten beheren en filter acties...**.
+1. Klik in de vervolg keuzelijst met de rechter muisknop op **IP-beveiligings beleid op Active Directory** en selecteer vervolgens **IP-filter lijsten beheren en filter acties...**.
 
    [![15]][15]
-2. Klik op het tabblad **filter acties beheren** op **toevoegen**.
+2. Selecteer op het tabblad **filter acties beheren** de optie **toevoegen**.
 
    [![16]][16]
 
-3. Klik in de **wizard filter actie voor IP-beveiliging** op **volgende**.
+3. Selecteer **volgende** in de **wizard filter actie voor IP-beveiliging**.
 
    [![17]][17]
-4. Noem de filter actie een intuïtieve naam, zodat u deze later kunt vinden. In dit voor beeld heeft de filter actie de naam **myEncryption**. U kunt ook een beschrijving toevoegen. Klik op **Volgende**.
+4. Noem de filter actie een intuïtieve naam, zodat u deze later kunt vinden. In dit voor beeld heeft de filter actie de naam **myEncryption**. U kunt ook een beschrijving toevoegen. Selecteer vervolgens **Volgende**.
 
    [![18]][18]
-5. Met **onderhandelen over beveiliging** kunt u het gedrag definiëren als IPSec niet kan worden ingesteld met een andere computer. Selecteer **onderhandelen over beveiliging** en klik vervolgens op **volgende**.
+5. Met **onderhandelen over beveiliging** kunt u het gedrag definiëren als IPSec niet kan worden ingesteld met een andere computer. Selecteer **onderhandelen over beveiliging** en selecteer vervolgens **volgende**.
 
    [![19]][19]
-6. Op de pagina **communiceren met computers die geen ondersteuning bieden voor IPSec** , selecteert u **niet-beveiligde communicatie toestaan** en klikt u op **volgende**.
+6. Op de pagina **communiceren met computers die geen ondersteuning bieden voor IPSec** , selecteert u **niet-beveiligde communicatie toestaan** en selecteert u **volgende**.
 
    [![20]][20]
-7. Selecteer op de pagina **IP-verkeer en beveiliging** de optie **aangepast** en klik vervolgens op **instellingen...**.
+7. Selecteer op de pagina **IP-verkeer en beveiliging** de optie **aangepast** en selecteer vervolgens **instellingen...**.
 
    [![21]][21]
-8. Selecteer op de pagina **aangepaste beveiligings methode instellingen** **gegevens integriteit en versleuteling (ESP): SHA1, 3DES**. Klik vervolgens op **OK**.
+8. Selecteer op de pagina **aangepaste beveiligings methode instellingen** **gegevens integriteit en versleuteling (ESP): SHA1, 3DES**. Selecteer vervolgens **OK**.
 
    [![22]][22]
-9. Op de pagina **filter acties beheren** kunt u zien dat het **myEncryption** -filter is toegevoegd. Klik op **Sluiten**.
+9. Op de pagina **filter acties beheren** kunt u zien dat het **myEncryption** -filter is toegevoegd. Selecteer **Sluiten**.
 
    [![23]][23]
 
@@ -155,28 +155,28 @@ Om het groeps beleidsobject toe te passen op de OE, mag het GPO niet alleen word
 
 Maak een filter lijst die versleuteld HTTP-verkeer opgeeft met doel poort 8080.
 
-1. Gebruik een **IP-filter lijst** om te kwalificeren welke typen verkeer moeten worden versleuteld. Klik op het tabblad **IP-filter lijsten beheren** op **toevoegen** om een nieuwe IP-filter lijst toe te voegen.
+1. Gebruik een **IP-filter lijst** om te kwalificeren welke typen verkeer moeten worden versleuteld. Selecteer op het tabblad **IP-filter lijsten beheren** de optie **toevoegen** om een nieuwe IP-filter lijst toe te voegen.
 
    [![24]][24]
-2. Typ in het veld **naam:** een naam voor de IP-filter lijst. Bijvoorbeeld **Azure-on-HTTP8080**. Klik vervolgens op **Toevoegen**.
+2. Typ in het veld **naam:** een naam voor de IP-filter lijst. Bijvoorbeeld **Azure-on-HTTP8080**. Selecteer vervolgens **toevoegen**.
 
    [![25]][25]
-3. Selecteer op de pagina **Beschrijving en gespiegelde eigenschappen van IP-filter** de optie **gespiegeld**. De gespiegelde instelling komt overeen met pakketten die in beide richtingen worden verzonden, waardoor communicatie in twee richtingen mogelijk is. Klik op **Volgende**.
+3. Selecteer op de pagina **Beschrijving en gespiegelde eigenschappen van IP-filter** de optie **gespiegeld**. De gespiegelde instelling komt overeen met pakketten die in beide richtingen worden verzonden, waardoor communicatie in twee richtingen mogelijk is. Selecteer vervolgens **Volgende**.
 
    [![26]][26]
 4. Kies op de pagina **IP-verkeer bron** , uit de vervolg keuzelijst **bron adres:** **een specifiek IP-adres of subnet**. 
 
    [![27]][27]
-5. Geef het **IP-adres of subnet** van het bron adres op: van het IP-verkeer en klik vervolgens op **volgende**.
+5. Geef het **IP-adres of subnet** van het bron adres op: van het IP-verkeer en selecteer vervolgens **volgende**.
 
    [![28]][28]
-6. Geef het **doel adres op:** IP-adres of subnet. Klik op **Volgende**.
+6. Geef het **doel adres op:** IP-adres of subnet. Selecteer vervolgens **Volgende**.
 
    [![29]][29]
-7. Selecteer op de pagina **IP-protocol type** de optie **TCP**. Klik op **Volgende**.
+7. Selecteer op de pagina **IP-protocol type** de optie **TCP**. Selecteer vervolgens **Volgende**.
 
    [![30]][30]
-8. Selecteer op de pagina **IP-protocol poort** **een van de poorten** en **tot deze poort:**. Typ **8080** in het tekstvak. Deze instellingen geven alleen het HTTP-verkeer op de doel poort 8080 wordt versleuteld. Klik op **Volgende**.
+8. Selecteer op de pagina **IP-protocol poort** **een van de poorten** en **tot deze poort:**. Typ **8080** in het tekstvak. Deze instellingen geven alleen het HTTP-verkeer op de doel poort 8080 wordt versleuteld. Selecteer vervolgens **Volgende**.
 
    [![31]][31]
 9. De IP-filter lijst weer geven.  De configuratie van de IP-filter lijst **Azure-on-HTTP8080** activeert versleuteling voor al het verkeer dat voldoet aan de volgende criteria:
@@ -190,12 +190,12 @@ Maak een filter lijst die versleuteld HTTP-verkeer opgeeft met doel poort 8080.
 
 ## <a name="5-edit-the-ip-filter-list"></a><a name="filterlist2"></a>5. de IP-filter lijst bewerken
 
-Als u hetzelfde type verkeer in tegenovergestelde richting wilt versleutelen (van de on-premises host naar de Azure VM), hebt u een tweede IP-filter nodig. Het proces voor het instellen van het nieuwe filter is hetzelfde als het proces dat u hebt gebruikt om het eerste IP-filter in te stellen. De enige verschillen zijn het bron-en doel-subnet.
+Als u hetzelfde type verkeer van de on-premises host naar de Azure VM wilt versleutelen, hebt u een tweede IP-filter nodig. Volg dezelfde stappen die u hebt gebruikt voor het instellen van het eerste IP-filter en het maken van een nieuw IP-filter. De enige verschillen zijn het bron-en doel-subnet.
 
 1. Als u een nieuw IP-filter wilt toevoegen aan de IP-filter lijst, selecteert u **bewerken**.
 
    [![33]][33]
-2. Klik op de pagina **IP-filter lijst** op **toevoegen**.
+2. Selecteer op de pagina **IP-filter lijst** de optie **toevoegen**.
 
    [![34]][34]
 3. Maak een tweede IP-filter met behulp van de instellingen in het volgende voor beeld:
@@ -205,7 +205,7 @@ Als u hetzelfde type verkeer in tegenovergestelde richting wilt versleutelen (va
 
    [![36]][36]
 
-Als versleuteling vereist is tussen een on-premises locatie en een Azure-subnet om een toepassing te beveiligen, kunt u in plaats van de bestaande IP-filter lijst een nieuwe IP-filterlijst toevoegen. Het koppelen van twee IP-filter lijsten aan hetzelfde IPsec-beleid biedt betere flexibiliteit omdat een specifieke IP-filter lijst op elk gewenst moment kan worden gewijzigd of verwijderd zonder dat dit van invloed is op de andere IP-filter lijsten.
+Als versleuteling vereist is tussen een on-premises locatie en een Azure-subnet om een toepassing te beveiligen. In plaats van de bestaande IP-filter lijst te wijzigen, kunt u een nieuwe IP-filter lijst toevoegen. Als u twee of meer IP-filter lijsten aan hetzelfde IPsec-beleid koppelt, beschikt u over meer flexibiliteit. U kunt een IP-filter lijst wijzigen of verwijderen zonder dat dit van invloed is op de andere IP-filter lijsten.
 
 ## <a name="6-create-an-ipsec-security-policy"></a><a name="ipsecpolicy"></a>6. een IPsec-beveiligings beleid maken 
 
@@ -214,13 +214,13 @@ Maak een IPsec-beleid met beveiligings regels.
 1. Selecteer het **IPSecurity-beleid op Active Directory** dat is gekoppeld aan de organisatie-eenheid. Klik met de rechter muisknop en selecteer **IP-beveiligings beleid maken**.
 
    [![37]][37]
-2. Geef het beveiligings beleid een naam. Bijvoorbeeld **beleid: Azure-on**. Klik op **Volgende**.
+2. Geef het beveiligings beleid een naam. Bijvoorbeeld **beleid: Azure-on**. Selecteer vervolgens **Volgende**.
 
    [![38]][38]
-3. Klik op **volgende** zonder het selectie vakje in te scha kelen.
+3. Selecteer **volgende** zonder het selectie vakje in te scha kelen.
 
    [![39]][39]
-4. Controleer of het selectie vakje **Eigenschappen bewerken** is geselecteerd en klik vervolgens op **volt ooien**.
+4. Controleer of het selectie vakje **Eigenschappen bewerken** is geselecteerd en selecteer vervolgens **volt ooien**.
 
    [![40]][40]
 
@@ -228,10 +228,10 @@ Maak een IPsec-beleid met beveiligings regels.
 
 Voeg aan het IPsec-beleid de **IP-filter lijst** en **filter actie** toe die u eerder hebt geconfigureerd.
 
-1. Klik op het tabblad **regels** van het eigenschappen beleid voor http op **toevoegen**.
+1. Selecteer **toevoegen** op het tabblad **regels** voor het beleid met http-eigenschappen.
 
    [![41]][41]
-2. Klik op de pagina Welkom op **Volgende**.
+2. Op de pagina Welkom selecteert u **Volgende**.
 
    [![42]][42]
 3. Een regel biedt de mogelijkheid om de IPsec-modus te definiëren: tunnel modus of transport modus.
@@ -240,33 +240,33 @@ Voeg aan het IPsec-beleid de **IP-filter lijst** en **filter actie** toe die u e
 
    * In de transport modus worden alleen de payload en ESP trailer versleuteld. de IP-header van het oorspronkelijke pakket is niet versleuteld. In de transport modus worden de IP-bron en IP-bestemming van de pakketten ongewijzigd.
 
-   Selecteer **deze regel geeft geen tunnel** op en klik op **volgende**.
+   Selecteer **deze regel geeft geen tunnel** op en selecteer **volgende**.
 
    [![43]][43]
-4. **Netwerk type** definieert welke netwerk verbinding aan het beveiligings beleid wordt gekoppeld. Selecteer **alle netwerk verbindingen** en klik vervolgens op **volgende**.
+4. **Netwerk type** definieert welke netwerk verbinding aan het beveiligings beleid wordt gekoppeld. Selecteer **alle netwerk verbindingen** en selecteer vervolgens **volgende**.
 
    [![44]][44]
-5. Selecteer de IP-filter lijst die u eerder hebt gemaakt,  **Azure-on-HTTP8080** en klik vervolgens op **volgende**.
+5. Selecteer de IP-filter lijst die u eerder hebt gemaakt,  **Azure-on-HTTP8080** en selecteer vervolgens **volgende**.
 
    [![45]][45]
 6. Selecteer de bestaande filter actie **myEncryption** die u eerder hebt gemaakt.
 
    [![46]][46]
-7. Windows ondersteunt vier verschillende soorten verificaties: Kerberos, certificaten, NTLMv2 en vooraf gedeelde sleutel. Omdat we werken met hosts die lid zijn van een domein, selecteert u **Active Directory standaard (Kerberos V5-protocol)** en klikt u vervolgens op **volgende**.
+7. Windows ondersteunt vier verschillende soorten verificaties: Kerberos, certificaten, NTLMv2 en vooraf gedeelde sleutel. Omdat we werken met hosts die lid zijn van een domein, selecteert u **Active Directory standaard (Kerberos V5-protocol)** en selecteert u **volgende**.
 
    [![47]][47]
-8. Het nieuwe beleid maakt de beveiligings regel: **Azure-on-HTTP8080**. Klik op **OK**.
+8. Het nieuwe beleid maakt de beveiligings regel: **Azure-on-HTTP8080**. Selecteer **OK**.
 
    [![48]][48]
 
-Het IPsec-beleid vereist dat alle HTTP-verbindingen op de doel poort 8080 gebruikmaken van de IPsec-transport modus. Omdat HTTP een protocol met een lees bare tekst is en het beveiligings beleid is ingeschakeld, worden gegevens versleuteld wanneer ze worden overgedragen via de ExpressRoute-persoonlijke peering. IP-beveiligings beleid voor Active Directory is gecompliceerder om te configureren dan Windows Firewall met geavanceerde beveiliging, maar biedt wel meer aanpassing van de IPsec-verbinding.
+Het IPsec-beleid vereist dat alle HTTP-verbindingen op de doel poort 8080 gebruikmaken van de IPsec-transport modus. Omdat HTTP een protocol met lees bare tekst is waarvoor het beveiligings beleid is ingeschakeld, zorgt ervoor dat de gegevens worden versleuteld wanneer ze worden overgedragen via de ExpressRoute-persoonlijke peering. IPsec-beleid voor Active Directory is complexer om te configureren dan Windows Firewall met geavanceerde beveiliging. Het biedt echter meer aanpassing van de IPsec-verbinding.
 
 ## <a name="8-assign-the-ipsec-gpo-to-the-ou"></a><a name="assigngpo"></a>8. Wijs het IPsec-groeps beleidsobject toe aan de OE
 
 1. Het beleid weer geven. Het beveiligings groeps beleid is gedefinieerd, maar is nog niet toegewezen.
 
    [![49]][49]
-2. Om het beveiligings groeps beleid toe te wijzen aan de OE **IPSecOU** , klikt u met de rechter muisknop op het beveiligings beleid en kiest u **toewijzen**.
+2. Om het beveiligings groeps beleid toe te wijzen aan de OE **IPSecOU**, klikt u met de rechter muisknop op het beveiligings beleid en kiest u **toewijzen**.
    Aan elke computer-tht die deel uitmaakt van de OE wordt het beveiligings groeps beleid toegewezen.
 
    [![50]][50]
@@ -310,7 +310,7 @@ In het volgende netwerk worden de resultaten weer gegeven voor on-premises host1
 
 [![51]][51]
 
-Als u het Power shell-script on-premisies (HTTP-client) uitvoert, wordt op de netwerk opname in de Azure-VM een soort gelijke tracering weer gegeven.
+Als u het Power shell-script on-premises (HTTP-client) uitvoert, wordt op de netwerk opname in de Azure-VM een soort gelijke tracering weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -333,7 +333,7 @@ Zie de [Veelgestelde vragen over ExpressRoute](expressroute-faqs.md)voor meer in
 [20]: ./media/expressroute-howto-ipsec-transport-private-windows/filter-action-no-ipsec.png "Geef het gedrag op. er wordt een onbeveiligde verbinding tot stand gebracht"
 [21]: ./media/expressroute-howto-ipsec-transport-private-windows/security-method.png "beveiligings mechanisme"
 [22]: ./media/expressroute-howto-ipsec-transport-private-windows/custom-security-method.png "aangepaste beveiligings methode"
-[23]: ./media/expressroute-howto-ipsec-transport-private-windows/filter-actions-list.png "lijst met 23 filter acties"
+[]: ./media/expressroute-howto-ipsec-transport-private-windows/filter-actions-list.png "lijst met 23 filter acties"
 [24]: ./media/expressroute-howto-ipsec-transport-private-windows/add-new-ip-filter.png "een nieuwe IP-filter lijst toevoegen"
 [25]: ./media/expressroute-howto-ipsec-transport-private-windows/ip-filter-http-traffic.png "http-verkeer toevoegen aan het IP-filter"
 [26]: ./media/expressroute-howto-ipsec-transport-private-windows/match-both-direction.png "overeenkomst pakket in beide richtingen"

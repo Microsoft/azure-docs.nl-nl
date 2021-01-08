@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/23/2020
+ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: a97f3bf3a479d956747755a421d7946f7aafd4f1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 3c094bf5397d15e24c3b1a58369a74438c99017e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494236"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018408"
 ---
 # <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Migreren naar verbindings monitor vanuit verbindings monitor (klassiek)
 

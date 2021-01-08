@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: bf6e61ef3dfb1c50166cf17168b4deeb21e958d7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 200753c6458698d515b02252933e4fdf6d88df55
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962906"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019088"
 ---
 # <a name="faq-about-using-azure-database-migration-service"></a>Veelgestelde vragen over het gebruik van Azure Database Migration Service
 
@@ -50,6 +50,9 @@ Azure Database Migration Service is de voorkeurs methode voor database migratie 
 
 **Nils. Hoe werkt Azure Database Migration Service vergelijken met de Azure Migrate-aanbieding?**
 Azure Migrate helpt bij het migreren van on-premises virtuele machines naar Azure IaaS. De service beoordeelt de geschiktheid voor migratie en op basis van prestaties en biedt een schatting van de kosten voor het uitvoeren van uw on-premises virtuele machines in Azure. Azure Migrate is nuttig voor lift-en-Shift-migraties van on-premises VM-gebaseerde workloads naar Azure IaaS Vm's. Maar in tegens telling tot Azure Database Migration Service is Azure Migrate geen gespecialiseerde data base Migration service-oplossing voor relationele data base-platforms van Azure PaaS, zoals Azure SQL Database of Azure SQL Managed instance.
+
+**Nils. Worden klant gegevens Database Migration Service opgeslagen?**
+Nee. Database Migration Service worden geen klant gegevens opgeslagen.
 
 ## <a name="setup"></a>Instellen
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 07/20/2020
+ms.date: 01/07/2021
 ms.author: alkohli
-ms.openlocfilehash: ec16a2b42b818e96399b8fdbad4a0951f84ef825
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 501136c6f5015dc8c68a1aba004432900675b11c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90893901"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017966"
 ---
 # <a name="replace-your-azure-stack-edge-pro-device"></a>Uw Azure Stack Edge Pro-apparaat vervangen
 
@@ -42,6 +42,9 @@ Als uw bestaande apparaat een hardwarestoring heeft, opent u een ondersteunings 
 
 
 ## <a name="create-a-resource-for-replacement-device"></a>Een resource maken voor een vervangend apparaat
+
+> [!NOTE]
+> Maak een nieuwe resource voor de activering van uw vervangende apparaat. Het is niet mogelijk om een vervangend apparaat te activeren op basis van een bestaande resource.
 
 Volg deze stappen om een resource te maken.
 

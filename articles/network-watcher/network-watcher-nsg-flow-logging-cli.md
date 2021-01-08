@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/22/2017
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: c62fbe1621e396ab938327d5159ed8ca8fb84fbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46d12db413fdf01995bc84ae018065e877afb15e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88756857"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017813"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-azure-cli"></a>Stroom logboeken voor netwerk beveiligings groepen configureren met Azure CLI
 
@@ -51,7 +51,7 @@ az network watcher flow-log create --resource-group resourceGroupName --enabled 
 
 Voor het opslag account dat u opgeeft, kunnen geen netwerk regels worden geconfigureerd die de netwerk toegang beperken tot alleen micro soft-Services of specifieke virtuele netwerken. Het opslag account kan zich in hetzelfde of een ander Azure-abonnement bevindt dan de NSG waarvoor u het stroom logboek inschakelt. Als u verschillende abonnementen gebruikt, moeten deze beide zijn gekoppeld aan dezelfde Azure Active Directory Tenant. Het account dat u voor elk abonnement gebruikt, moet de [benodigde machtigingen](required-rbac-permissions.md)hebben. 
 
-Als het opslag account zich in een andere resource groep of een ander abonnement bevindt dan de netwerk beveiligings groep, geeft u de volledige ID van het opslag account op in plaats van de naam. Bijvoorbeeld, als het opslag account zich in een resource groep bevindt met de naam *RG-opslag*, in plaats van *storageAccountName* op te geven in de vorige opdracht, geeft u */Subscriptions/{SubscriptionID}/resourceGroups/RG-Storage/providers/Microsoft.Storage/storageAccounts/storageAccountName*op.
+Als het opslag account zich in een andere resource groep of een ander abonnement bevindt dan de netwerk beveiligings groep, geeft u de volledige ID van het opslag account op in plaats van de naam. Bijvoorbeeld, als het opslag account zich in een resource groep bevindt met de naam *RG-opslag*, in plaats van *storageAccountName* op te geven in de vorige opdracht, geeft u */Subscriptions/{SubscriptionID}/resourceGroups/RG-Storage/providers/Microsoft.Storage/storageAccounts/storageAccountName* op.
 
 ## <a name="disable-network-security-group-flow-logs"></a>Stroom logboeken van netwerk beveiligings groep uitschakelen
 

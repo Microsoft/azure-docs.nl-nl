@@ -1,18 +1,17 @@
 ---
 title: Azure Functions uitvoer van Azure Stream Analytics
 description: In dit artikel worden Azure functions als uitvoer voor Azure Stream Analytics beschreven.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: ffaf66cbb5d9fa0b294f5749a1923684f16c2979
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: e5ea7a1abbbd6ab4be32955179227fbd539cf641
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94488084"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019615"
 ---
 # <a name="azure-functions-output-from-azure-stream-analytics"></a>Azure Functions uitvoer van Azure Stream Analytics
 
@@ -24,7 +23,7 @@ Azure Stream Analytics roept Azure Functions aan via HTTP-triggers. De Azure Fun
 
 | Naam van eigenschap | Beschrijving |
 | --- | --- |
-| Function App |De naam van uw Azure Functions-app. |
+| Functie-app |De naam van uw Azure Functions-app. |
 | Functie |De naam van de functie in uw Azure Functions-app. |
 | Sleutel |Als u een Azure-functie van een ander abonnement wilt gebruiken, kunt u dit doen door de sleutel voor toegang tot uw functie te geven. |
 | Maximale Batch grootte |Een eigenschap waarmee u de maximale grootte kunt instellen voor elke uitvoer batch die wordt verzonden naar uw Azure-functie. De invoer eenheid bevindt zich in bytes. Deze waarde is standaard 262.144 bytes (256 KB). |

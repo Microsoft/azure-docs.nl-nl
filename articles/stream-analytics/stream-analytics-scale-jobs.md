@@ -3,16 +3,15 @@ title: Azure Stream Analytics taken omhoog en omlaag schalen
 description: In dit artikel wordt beschreven hoe u een Stream Analytics taak kunt schalen door invoer gegevens te partitioneren, de query af te stemmen en de eenheid voor het streamen van taken in te stellen.
 author: JSeb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/22/2017
-ms.openlocfilehash: c12c4b9f4a3757a3974e4aff7699d0265bfd7840
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: e3d4fd6b6b83681284278d10409a1c16394db31f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124370"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018680"
 ---
 # <a name="scale-an-azure-stream-analytics-job-to-increase-throughput"></a>Een Azure Stream Analytics taak schalen om de door voer te verhogen
 In dit artikel wordt beschreven hoe u een Stream Analytics query kunt afstemmen om de door Voer voor streaming Analytics-taken te verhogen. U kunt de volgende hand leiding gebruiken om uw taak te schalen om een hogere belasting te verwerken en te profiteren van meer systeem bronnen (zoals meer band breedte, meer CPU-bronnen, meer geheugen).
@@ -77,7 +76,7 @@ Voor bepaalde ISV-use-cases, waarbij het rendabeler is om gegevens van meerdere 
 
 
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Volgende stappen

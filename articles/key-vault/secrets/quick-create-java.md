@@ -8,12 +8,12 @@ ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 35133b32360f65d70aa1931b31fac6886fd00b02
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 95323ec513f1a3d00347da022f7c808b029bd44f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732951"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934795"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-java"></a>Quickstart: Clientbibliotheek Azure Key Vault voor geheimen voor Java
 Aan de slag met de clientbibliotheek Azure Key Vault voor geheimen voor Java. Volg de onderstaande stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen.
@@ -47,7 +47,7 @@ Deze quickstart maakt gebruik van de Azure Identity-bibliotheek met Azure CLI om
 
    Als dat niet het geval is, opent u een browserpagina op [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en voert u de autorisatiecode in die wordt weergegeven in de terminal.
 
-2. Meldt u aan in de browser met uw accountreferenties.
+2. Meldt u zich in de browser aan met uw accountreferenties.
 
 ### <a name="create-a-new-java-console-app"></a>Nieuwe Java-console-app maken
 Gebruik in een consolevenster de opdracht `mvn` om een nieuwe Java-console-app te maken met de naam `akv-secrets-java`.
@@ -126,7 +126,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS of Linux

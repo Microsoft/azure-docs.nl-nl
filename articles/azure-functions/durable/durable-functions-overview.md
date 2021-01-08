@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 12/23/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 3725970c982c2d060685bf0b99d12a8fc998f20a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 2079a3a7c9ce6817186e743bb09d31facdecf0e7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763571"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97931718"
 ---
 # <a name="what-are-durable-functions"></a>Wat is Durable Functions?
 
@@ -698,7 +698,7 @@ Om betrouwbare en langdurige uitvoeringsgaranties te bieden, beschikken orchestr
 
 ## <a name="billing"></a>Billing
 
-Durable Functions worden op dezelfde manier in rekening gebracht als Azure Functions. Zie [Prijzen voor Azure Functions](https://azure.microsoft.com/pricing/details/functions/) voor meer informatie. Wanneer u orchestrator-functies in het [Verbruiksabonnement](../functions-scale.md#consumption-plan) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. Zie het artikel [Durable Functions-facturering](durable-functions-billing.md) voor meer informatie hierover.
+Durable Functions worden op dezelfde manier in rekening gebracht als Azure Functions. Zie [Prijzen voor Azure Functions](https://azure.microsoft.com/pricing/details/functions/) voor meer informatie. Wanneer u orchestrator-functies in het [Verbruiksabonnement](../consumption-plan.md) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. Zie het artikel [Durable Functions-facturering](durable-functions-billing.md) voor meer informatie hierover.
 
 ## <a name="jump-right-in"></a>Duik er meteen in
 

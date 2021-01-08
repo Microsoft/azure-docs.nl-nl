@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75839893d0048841440f2c790df7d23ad825d962
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 8acc547552cecaebb60888bb7b9777f6279b9b7c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093465"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015756"
 ---
 # <a name="invite-internal-users-to-b2b-collaboration"></a>Interne gebruikers uitnodigen voor B2B-samen werking
 
@@ -44,8 +44,7 @@ Als de interne gebruiker in deze gevallen moet worden gewijzigd in een B2B-gebru
 
 U kunt Power shell of de API voor uitnodigingen gebruiken om een B2B-uitnodiging naar de interne gebruiker te verzenden. Zorg ervoor dat het e-mail adres dat u wilt gebruiken voor de uitnodiging is ingesteld als het externe e-mail adres van het interne gebruikers object.
 
-- Gebruik voor een Cloud gebruiker het e-mail adres in de eigenschap User. OtherMails voor de uitnodiging.
-- Voor een on-premises gesynchroniseerde gebruiker moet u de waarde in de eigenschap User. mail voor de uitnodiging gebruiken.
+- U moet het e-mail adres van de gebruiker. mail-eigenschap gebruiken voor de uitnodiging.
 - Het domein in de eigenschap E-mail van de gebruiker moet overeenkomen met het account dat ze gebruiken om zich aan te melden. Anders kunnen sommige services, zoals teams, de gebruiker niet verifiëren.
 
 Standaard stuurt de uitnodiging de gebruiker een e-mail bericht dat ze zijn uitgenodigd, maar u kunt deze e-mail onderdrukken en uw eigen e-mail bericht verzenden.

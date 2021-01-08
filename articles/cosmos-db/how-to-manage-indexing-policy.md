@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/02/2020
 ms.author: tisande
 ms.custom: devx-track-python, devx-track-js, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: cd51210a64223fab5d2d48a91bd3d0a6521a9627
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 8d52f8c59e83a4aae8724100770965f756a439fb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341311"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015688"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB beheren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -27,7 +27,7 @@ In Azure Cosmos DB worden gegevens geïndexeerd na het [indexerings beleid](inde
 
 Hier volgen enkele voor beelden van beleids regels voor indexering die worden weer gegeven in de [JSON-indeling](index-policy.md#include-exclude-paths). Dit is de manier waarop deze worden weer gegeven op de Azure Portal. Dezelfde para meters kunnen worden ingesteld via de Azure CLI of een SDK.
 
-### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a>Opt-out-beleid om selectief enkele eigenschaps paden uit te sluiten
+### <a name="opt-out-policy-to-selectively-exclude-some-property-paths"></a><a id="range-index"></a>Opt-out-beleid om selectief enkele eigenschaps paden uit te sluiten
 
 ```json
     {
@@ -146,7 +146,7 @@ Dit indexerings beleid is gelijk aan het onderstaande dat hand matig wordt inges
 > [!NOTE]
 > U wordt aangeraden een **opt-out-** indexerings beleid te gebruiken om Azure Cosmos DB proactief een nieuwe eigenschap te indexeren die kan worden toegevoegd aan uw gegevens model.
 
-### <a name="using-a-spatial-index-on-a-specific-property-path-only"></a>Alleen een ruimtelijke index gebruiken voor een specifiek pad naar een eigenschap
+### <a name="using-a-spatial-index-on-a-specific-property-path-only"></a><a id="spatial-index"></a>Alleen een ruimtelijke index gebruiken voor een specifiek pad naar een eigenschap
 
 ```json
 {
@@ -176,7 +176,7 @@ Dit indexerings beleid is gelijk aan het onderstaande dat hand matig wordt inges
 }
 ```
 
-## <a name="composite-indexing-policy-examples"></a>Voor beelden van samengesteld indexerings beleid
+## <a name="composite-indexing-policy-examples"></a><a id="composite-index"></a>Voor beelden van samengesteld indexerings beleid
 
 Naast het opnemen of uitsluiten van paden voor afzonderlijke eigenschappen, kunt u ook een samengestelde index opgeven. Als u een query wilt uitvoeren met een- `ORDER BY` component voor meerdere eigenschappen, is een [samengestelde index](index-policy.md#composite-indexes) voor die eigenschappen vereist. Daarnaast hebben samengestelde indexen het voor deel van de prestaties voor query's met meerdere filters of met een filter en een component ORDER BY.
 
@@ -351,7 +351,7 @@ Met een [indexerings beleid-update](index-policy.md#modifying-the-indexing-polic
 > [!NOTE]
 > Wanneer u het indexerings beleid bijwerkt, wordt de schrijf bewerking naar Azure Cosmos DB onderbroken. Meer informatie over het [indexeren van trans formaties](index-policy.md#modifying-the-indexing-policy)
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 Azure Cosmos-containers slaan hun indexerings beleid op als een JSON-document waarmee u de Azure Portal rechtstreeks kunt bewerken.
 

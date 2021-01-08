@@ -1,19 +1,18 @@
 ---
 title: Een IoT-oplossing bouwen met behulp van Azure Stream Analytics
 description: Aan de slag met de zelf studie voor de Stream Analytics IoT-oplossing van een tollbooth-scenario
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 87ec59d19fb442293fb7f14d110cf513015ec9f7
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: ddec53b18cd6f374a5665298b43b46122bcfa143
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130796"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016147"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Een IoT-oplossing bouwen met behulp van Stream Analytics
 
@@ -134,7 +133,7 @@ Er zijn verschillende bronnen die eenvoudig kunnen worden geïmplementeerd in ee
 
 9. Selecteer **aanschaffen** om de voorbeeld sjabloon te implementeren.
 
-10. Na enkele ogen blikken wordt er een melding weer gegeven om te bevestigen dat de **implementatie is geslaagd** .
+10. Na enkele ogen blikken wordt er een melding weer gegeven om te bevestigen dat de **implementatie is geslaagd**.
 
 ### <a name="review-the-azure-stream-analytics-tollapp-resources"></a>Bekijk de Azure Stream Analytics TollApp-resources
 
@@ -176,7 +175,7 @@ Er zijn verschillende bronnen die eenvoudig kunnen worden geïmplementeerd in ee
 ## <a name="start-the-tollapp-streaming-job"></a>De TollApp streaming-taak starten
 Volg deze stappen om de streaming-taak te starten:
 
-1. Selecteer op de pagina **overzicht** van de taak **Start** .
+1. Selecteer op de pagina **overzicht** van de taak **Start**.
 
 2. Selecteer **nu** in het deel venster **taak starten** .
 
@@ -185,11 +184,11 @@ Volg deze stappen om de streaming-taak te starten:
 ## <a name="review-the-cosmosdb-output-data"></a>De CosmosDB-uitvoer gegevens controleren
 1. Zoek de resource groep die de TollApp-resources bevat.
 
-2. Selecteer het Azure Cosmos DB account met het naam patroon **tollapp \<random\> -Cosmos** .
+2. Selecteer het Azure Cosmos DB account met het naam patroon **tollapp \<random\> -Cosmos**.
 
 3. Selecteer de **Data Explorer** kop om de pagina Data Explorer te openen.
 
-4. Vouw de **tollAppDatabase** -  >  **tollAppCollection** -  >  **documenten** uit.
+4. Vouw de **tollAppDatabase**-  >  **tollAppCollection**-  >  **documenten** uit.
 
 5. In de lijst met id's worden verschillende documenten weer gegeven zodra de uitvoer beschikbaar is.
 
@@ -214,7 +213,7 @@ AND DATEDIFF (minute, EntryStream, ExitStream ) BETWEEN 0 AND 15
 
 ### <a name="to-update-the-tollapp-streaming-job-query-syntax"></a>De query syntaxis van de TollApp streaming-taak bijwerken:
 
-1. Selecteer op de pagina **overzicht** van de taak **stoppen** .
+1. Selecteer op de pagina **overzicht** van de taak **stoppen**.
 
 2. Wacht even totdat de melding is gestopt.
 
@@ -224,7 +223,7 @@ AND DATEDIFF (minute, EntryStream, ExitStream ) BETWEEN 0 AND 15
 
 5. Selecteer **Opslaan** om de query op te slaan. Bevestig **Ja** om de wijzigingen op te slaan.
 
-6. Selecteer op de pagina **overzicht** van de taak **Start** .
+6. Selecteer op de pagina **overzicht** van de taak **Start**.
 
 7. Selecteer **nu** in het deel venster **taak starten** .
 
@@ -301,9 +300,9 @@ De streaming-taak omhoog schalen naar meer streaming-eenheden:
 
 2. Werk de query syntaxis op de **query pagina< >** en sla de wijzigingen op.
 
-3. Selecteer onder de kop CONFIGURe op de streaming-taak **schalen** .
+3. Selecteer onder de kop CONFIGURe op de streaming-taak **schalen**.
 
-4. Schuif de schuif regelaar voor **streaming-eenheden** van 1 tot en met 6. Streaming-eenheden definiëren de hoeveelheid reken kracht die de taak kan ontvangen. Selecteer **Opslaan** .
+4. Schuif de schuif regelaar voor **streaming-eenheden** van 1 tot en met 6. Streaming-eenheden definiëren de hoeveelheid reken kracht die de taak kan ontvangen. Selecteer **Opslaan**.
 
 5. **Start** de streaming-taak om de extra schaal te demonstreren. Azure Stream Analytics verdeelt werk over meer compute-resources en zorgt voor een betere door Voer, waarbij de hoeveelheid werk over resources wordt gepartitioneerd met behulp van de kolom die is opgegeven in de component PARTITION BY.
 
@@ -319,7 +318,7 @@ U hebt ook toegang tot **activiteiten logboeken** vanuit het gebied met taak das
 
 2. Zoek de resource groep die acht resources bevat die gerelateerd zijn aan de sjabloon TollApp.
 
-3. Selecteer **Resourcegroep verwijderen** . Typ de naam van de resource groep om de verwijdering te bevestigen.
+3. Selecteer **Resourcegroep verwijderen**. Typ de naam van de resource groep om de verwijdering te bevestigen.
 
 ## <a name="conclusion"></a>Conclusie
 Met deze oplossing hebt u de Azure Stream Analytics-service geïntroduceerd. Hier wordt uitgelegd hoe u invoer en uitvoer configureert voor de Stream Analytics taak. Met het scenario voor gratis gegevens hebben de oplossing gemeen schappelijke typen problemen die zich voordoen in de ruimte van gegevens in beweging en hoe deze kunnen worden opgelost met eenvoudige SQL-achtige query's in Azure Stream Analytics. De oplossing beschreven SQL-extensie constructies voor het werken met tijdelijke gegevens. U hebt geleerd hoe u gegevens stromen samenvoegt, hoe u de gegevens stroom verrijkt met statische referentie gegevens en hoe u een query uitbreidt om een hogere door voer te krijgen.

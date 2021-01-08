@@ -3,16 +3,15 @@ title: Referentie gegevens gebruiken voor Zoek opdrachten in Azure Stream Analyt
 description: In dit artikel wordt beschreven hoe u referentie gegevens kunt gebruiken om gegevens in het query ontwerp van een Azure Stream Analytics-taak te zoeken of correleren.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/18/2020
-ms.openlocfilehash: e7f5b3ae0a4dc7faa67a361b210b1d014e1f1b93
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: d4053cd02dd11922a402971c7f3934a8b818eaa4
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722127"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015900"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Referentie gegevens gebruiken voor Zoek opdrachten in Stream Analytics
 
@@ -82,7 +81,7 @@ Azure Stream Analytics automatisch wordt gescand op vernieuwde referentie gegeve
 3. Referentie gegevens-blobs worden **niet** gerangschikt op de tijd ' laatst gewijzigd ' van de blob, maar alleen door de tijd en de datum die zijn opgegeven in de naam van de blob met de {date}-en {time} vervangingen.
 3. Om te voor komen dat een groot aantal blobs wordt vermeld, kunt u overwegen om zeer oude blobs te verwijderen waarvoor de verwerking niet meer wordt uitgevoerd. ASA kan worden uitgevoerd om een kleine hoeveelheid opnieuw te verwerken in sommige scenario's, zoals opnieuw opstarten.
 
-## <a name="azure-sql-database"></a>Azure SQL Database
+## <a name="azure-sql-database"></a>Azure SQL-database
 
 Azure SQL Database referentie gegevens worden opgehaald door uw Stream Analytics-taak en worden opgeslagen als een moment opname in het geheugen voor verwerking. De moment opname van de referentie gegevens wordt ook opgeslagen in een container in een opslag account dat u opgeeft in de configuratie-instellingen. De container wordt automatisch gemaakt wanneer de taak wordt gestart. Als de taak wordt gestopt of een mislukte status krijgt, worden de automatisch gemaakte containers verwijderd wanneer de taak opnieuw wordt gestart.  
 

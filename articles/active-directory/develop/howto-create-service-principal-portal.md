@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 46781edad6ad9290932216b9e9f23a359d25497a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 284ab3a2aabb2395636982237159117a10151019
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366153"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014940"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Procedure: Gebruik de portal voor het maken van een Azure AD-toepassing en service-principal die toegang hebben tot resources
 
@@ -42,7 +42,7 @@ U moet over voldoende machtigingen beschikken om een toepassing te registreren b
 
    ![Zoek uw rol. Als u een gebruiker bent, moet u ervoor zorgen dat niet-beheerders apps kunnen registreren](./media/howto-create-service-principal-portal/view-user-info.png)
 
-1. Selecteer **gebruikers instellingen**in het linkerdeel venster.
+1. Selecteer **gebruikers instellingen** in het linkerdeel venster.
 1. Controleer de instelling **app-registraties** . Deze waarde kan alleen worden ingesteld door een beheerder. Als deze instelling is ingesteld op **Ja**, kan elke gebruiker in de Azure AD-Tenant een app registreren.
 
 Als de instelling app-registraties is ingesteld op **Nee**, kunnen alleen gebruikers met een rol beheerder deze typen toepassingen registreren. Bekijk de [beschik bare rollen](../roles/permissions-reference.md#available-roles) en [rolmachtigingen](../roles/permissions-reference.md#role-permissions) voor meer informatie over beschik bare beheerders rollen en de specifieke machtigingen in azure AD die aan elke rol worden gegeven. Als aan uw account de gebruikersrol is toegewezen, maar de instelling van de app-registratie is beperkt tot gebruikers met beheerders rechten, vraagt u de beheerder om een van de beheerders rollen toe te wijzen die alle aspecten van app-registraties kunnen maken en beheren, of om gebruikers in staat te stellen apps te registreren.
@@ -53,9 +53,9 @@ In uw Azure-abonnement moet uw account `Microsoft.Authorization/*/Write` toegang
 
 Uw abonnements machtigingen controleren:
 
-1. Zoek en selecteer **abonnementen**of selecteer **abonnementen** op de **Start** pagina.
+1. Zoek en selecteer **abonnementen** of selecteer **abonnementen** op de **Start** pagina.
 
-   ![Search](./media/howto-create-service-principal-portal/select-subscription.png)
+   ![Zoeken](./media/howto-create-service-principal-portal/select-subscription.png)
 
 1. Selecteer het abonnement waarin u de Service-Principal wilt maken.
 
@@ -75,11 +75,11 @@ Uw abonnements machtigingen controleren:
 
 Laten we meteen beginnen met het maken van de identiteit. Als u een probleem ondervindt, controleert u de [vereiste machtigingen](#permissions-required-for-registering-an-app) om te controleren of uw account de identiteit kan maken.
 
-1. Meld u aan bij uw Azure-account via de [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij uw Azure-account via de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 1. Selecteer **Azure Active Directory**.
 1. Selecteer **App-registraties**.
 1. Selecteer **Nieuwe registratie**.
-1. Geef de toepassing een naam. Selecteer een ondersteund account type, dat bepaalt wie de toepassing kan gebruiken. Onder **omleidings-URI**selecteert u **Web** voor het type toepassing dat u wilt maken. Voer de URI in waarnaar het toegangs token wordt verzonden. U kunt geen referenties maken voor een [systeem eigen toepassing](../manage-apps/application-proxy-configure-native-client-application.md). U kunt dit type niet gebruiken voor een geautomatiseerde toepassing. Nadat u de waarden hebt ingesteld, selecteert u **registreren**.
+1. Geef de toepassing een naam. Selecteer een ondersteund account type, dat bepaalt wie de toepassing kan gebruiken. Onder **omleidings-URI** selecteert u **Web** voor het type toepassing dat u wilt maken. Voer de URI in waarnaar het toegangs token wordt verzonden. U kunt geen referenties maken voor een [systeem eigen toepassing](../manage-apps/application-proxy-configure-native-client-application.md). U kunt dit type niet gebruiken voor een geautomatiseerde toepassing. Nadat u de waarden hebt ingesteld, selecteert u **registreren**.
 
    ![Typ een naam voor uw toepassing](./media/howto-create-service-principal-portal/create-app.png)
 
@@ -143,7 +143,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
 Dit certificaat exporteren naar een bestand met behulp van de MMC-module [gebruikers certificaat beheren](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) , toegankelijk via het configuratie scherm van Windows.
 
-1. Selecteer **uitvoeren** in het menu **Start** en voer vervolgens **certmgr. msc**in.
+1. Selecteer **uitvoeren** in het menu **Start** en voer vervolgens **certmgr. msc** in.
 
    Het hulp programma certificaat beheer voor de huidige gebruiker wordt weer gegeven.
 
@@ -181,10 +181,10 @@ Als u ervoor kiest geen certificaat te gebruiken, kunt u een nieuw toepassings g
 ## <a name="configure-access-policies-on-resources"></a>Toegangs beleid voor resources configureren
 Houd er rekening mee dat u aanvullende machtigingen moet configureren voor bronnen die voor uw toepassing toegankelijk moeten zijn. U moet bijvoorbeeld ook [het toegangs beleid van een sleutel kluis bijwerken](../../key-vault/general/secure-your-key-vault.md#data-plane-and-access-policies) om uw toepassing toegang te geven tot sleutels, geheimen of certificaten.
 
-1. Navigeer in het [Azure Portal](https://portal.azure.com)naar uw sleutel kluis en selecteer **toegangs beleid**.
-1. Selecteer **toegangs beleid toevoegen**en selecteer vervolgens de sleutel, het geheim en de certificaat machtigingen die u uw toepassing wilt verlenen.  Selecteer de service-principal die u eerder hebt gemaakt.
+1. Navigeer in <a href="https://portal.azure.com/" target="_blank">het <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>naar uw sleutel kluis en selecteer **toegangs beleid**.
+1. Selecteer **toegangs beleid toevoegen** en selecteer vervolgens de sleutel, het geheim en de certificaat machtigingen die u uw toepassing wilt verlenen.  Selecteer de service-principal die u eerder hebt gemaakt.
 1. Selecteer **toevoegen** om het toegangs beleid toe te voegen en **Sla** vervolgens op om uw wijzigingen door te voeren.
-    ![Toegangs beleid toevoegen](./media/howto-create-service-principal-portal/add-access-policy.png)
+    ![Toegangsbeleid toevoegen](./media/howto-create-service-principal-portal/add-access-policy.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het [gebruik van Azure PowerShell voor het maken van een Service-Principal](howto-authenticate-service-principal-powershell.md).

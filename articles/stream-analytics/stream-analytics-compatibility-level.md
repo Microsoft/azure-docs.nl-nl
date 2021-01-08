@@ -1,17 +1,17 @@
 ---
 title: Compatibiliteits niveaus Azure Stream Analytics
 description: Meer informatie over het instellen van een compatibiliteits niveau voor een Azure Stream Analytics-taak en belang rijke wijzigingen in het meest recente compatibiliteits niveau
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 11014c5a5c5cd0cabae1b62083bd5e662be2c6b7
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 8105988cd2036f44d214befad3365cf9ee96ee0d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348930"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015977"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Compatibiliteits niveau voor Azure Stream Analytics taken
 
@@ -53,7 +53,7 @@ De volgende belang rijke wijzigingen worden geïntroduceerd in compatibiliteits 
 
 ###  <a name="amqp-messaging-protocol"></a>AMQP Messa ging Protocol
 
-**1,2-niveau** : Azure stream Analytics gebruikt [AMQP-berichten Protocol (Advanced Message queueing Protocol)](../service-bus-messaging/service-bus-amqp-overview.md) om te schrijven naar service bus-wacht rijen en-onderwerpen. Met AMQP kunt u platform onafhankelijke, hybride toepassingen bouwen met behulp van een open standaard protocol.
+**1,2-niveau**: Azure stream Analytics gebruikt [AMQP-berichten Protocol (Advanced Message queueing Protocol)](../service-bus-messaging/service-bus-amqp-overview.md) om te schrijven naar service bus-wacht rijen en-onderwerpen. Met AMQP kunt u platform onafhankelijke, hybride toepassingen bouwen met behulp van een open standaard protocol.
 
 ### <a name="geospatial-functions"></a>Georuimtelijke functies
 

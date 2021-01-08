@@ -3,17 +3,16 @@ title: Azure Stream Analytics-taken via een programma controleren en beheren
 description: In dit artikel wordt beschreven hoe u Stream Analytics-taken die zijn gemaakt via REST Api's, Azure SDK of Power shell, programmatisch kunt bewaken.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/20/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9c746e409964b4625a4c9921d9f02ca0c9730a35
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: dda1b6b652870440e7228e6640bb555f4c2e4a63
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123443"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015073"
 ---
 # <a name="programmatically-create-a-stream-analytics-job-monitor"></a>Programmatisch een Stream Analytics taak controle maken
 

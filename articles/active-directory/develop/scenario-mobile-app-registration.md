@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 2af79efa2bd1685d0e7bd621e2ddb8930425dee1
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: cdd32185d1ffddb4c6bc3d62b91690f68dec17ca
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614894"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014719"
 ---
 # <a name="register-mobile-apps-that-call-web-apis"></a>Mobiele apps registreren die web-Api's aanroepen
 
@@ -83,7 +83,7 @@ Als uw app alleen een gebruikers naam-wachtwoord verificatie gebruikt, hoeft u g
 
 U moet uw toepassing echter identificeren als een open bare client toepassing. Hiervoor doet u het volgende:
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com)nog steeds uw app in **app-registraties** en selecteer vervolgens **verificatie**.
+1. Selecteer in de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span></a>nog steeds uw app in **app-registraties** en selecteer vervolgens **verificatie**.
 1. In **Geavanceerde instellingen**  >  **kunnen open bare client stromen**  >  **de volgende mobiele en desktop stromen inschakelen:**, selecteer **Ja**.
 
    :::image type="content" source="media/scenarios/default-client-type.png" alt-text="Instelling van open bare client inschakelen in het deel venster verificatie in Azure Portal":::

@@ -1,18 +1,17 @@
 ---
 title: Azure Cosmos DB uitvoer van Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u gegevens kunt uitvoeren van Azure Stream Analytics naar Azure Cosmos DB.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: a086d9fe150766c6b31210f29bf802a75e0ee4ec
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 9382ac8dc71d1ccb3a85dc0a7a027c8e99296cc6
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491729"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98016574"
 ---
 # <a name="azure-cosmos-db-output-from-azure-stream-analytics"></a>Azure Cosmos DB uitvoer van Azure Stream Analytics
 
@@ -34,7 +33,7 @@ In de volgende tabel worden de eigenschappen beschreven voor het maken van een A
 | Account-id | De naam of eind punt-URI van het Azure Cosmos DB-account. |
 | Accountsleutel | De gedeelde toegangs sleutel voor het Azure Cosmos DB-account. |
 | Database | De naam van de Azure Cosmos DB-Data Base. |
-| Containernaam | De container naam die moet worden gebruikt, die voor komt in Cosmos DB. Voorbeeld:  <br /><ul><li> _MyContainer_ : er moet een container met de naam ' MyContainer ' bestaan.</li>|
+| Containernaam | De container naam die moet worden gebruikt, die voor komt in Cosmos DB. Voorbeeld:  <br /><ul><li> _MyContainer_: er moet een container met de naam ' MyContainer ' bestaan.</li>|
 | Document-ID |Optioneel. De naam van het veld in uitvoer gebeurtenissen dat wordt gebruikt om de primaire sleutel op te geven waarop invoeg-of update bewerkingen zijn gebaseerd.
 
 ## <a name="partitioning"></a>Partitionering

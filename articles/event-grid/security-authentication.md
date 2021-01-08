@@ -2,13 +2,13 @@
 title: Gebeurtenis levering verifiëren naar gebeurtenis-handlers (Azure Event Grid)
 description: In dit artikel worden verschillende methoden beschreven voor het verifiëren van de levering aan gebeurtenis-handlers in Azure Event Grid.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: abe16c9598c8c10caa832150aafac997dd7f1624
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/07/2021
+ms.openlocfilehash: 8360aa49e3d83879499af79448ff9f85082f47ac
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87460640"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015535"
 ---
 # <a name="authenticate-event-delivery-to-event-handlers-azure-event-grid"></a>Gebeurtenis levering verifiëren naar gebeurtenis-handlers (Azure Event Grid)
 Dit artikel bevat informatie over het verifiëren van gebeurtenis levering aan gebeurtenis-handlers. Ook wordt uitgelegd hoe u de webhook-eind punten die worden gebruikt voor het ontvangen van gebeurtenissen van Event Grid met behulp van Azure Active Directory (Azure AD) of een gedeeld geheim kunt beveiligen.
@@ -41,6 +41,9 @@ Zie [webhook Event Delivery](webhook-event-delivery.md) (Engelstalig) voor meer 
 
 > [!IMPORTANT]
 Azure Event Grid ondersteunt alleen **https** -webhook-eind punten. 
+
+## <a name="endpoint-validation-with-cloudevents-v10"></a>Eindpunt validatie met CloudEvents v 1.0
+Als u al bekend bent met Event Grid, is het mogelijk dat u op de hoogte bent van de validatie-Handshake van het eind punt om misbruik te voor komen. CloudEvents v 1.0 implementeert zijn eigen [beveiligings semantiek voor misbruik](webhook-event-delivery.md) door gebruik te maken van de **http-opties** methode. Zie [HTTP 1,1-Webhooks voor gebeurtenis levering-versie 1,0 voor](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection)meer informatie hierover. Wanneer u het CloudEvents-schema voor uitvoer gebruikt, maakt Event Grid gebruik van de CloudEvents v 1.0-misbruik beveiliging in plaats van het Event Grid validatie gebeurtenis mechanisme. Zie [CloudEvents v 1.0-schema gebruiken met Event grid](cloudevents-schema.md)voor meer informatie. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

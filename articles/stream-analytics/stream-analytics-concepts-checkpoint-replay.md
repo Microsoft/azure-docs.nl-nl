@@ -1,25 +1,24 @@
 ---
 title: Het controle punt en de concepten van herstel na opnieuw afspelen in Azure Stream Analytics
 description: In dit artikel wordt het controle punt beschreven en worden de concepten voor taak herstel opnieuw afgespeeld in Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 10d9053e082a995085fa255cc0d9f63a2b4e2b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: df31f8538bb9eabeca37fe4c52c4443fd447e415
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84020605"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015315"
 ---
 # <a name="checkpoint-and-replay-concepts-in-azure-stream-analytics-jobs"></a>Controle punten en concepten voor opnieuw afspelen in Azure Stream Analytics taken
 In dit artikel worden het interne controle punt en de concepten voor het opnieuw afspelen van Azure Stream Analytics beschreven en de invloed hiervan op de taak herstel. Telkens wanneer een Stream Analytics taak wordt uitgevoerd, wordt de status informatie intern onderhouden. Deze status informatie wordt periodiek opgeslagen in een controle punt. In sommige gevallen wordt de controlepunt informatie gebruikt voor taak herstel als een taak fout of een upgrade optreedt. In andere gevallen kan het controle punt niet worden gebruikt voor herstel, en moet er een herhaling worden uitgevoerd.
 
-## <a name="stateful-query-logicin-temporal-elements"></a>Stateful query logica in tijdelijke elementen
-Een van de unieke mogelijkheden van Azure Stream Analytics taak is het uitvoeren van stateful verwerking, zoals venster aggregaties, tijdelijke samen voegingen en tijdelijke analytische functies. Elk van deze opera tors houdt status informatie bij het uitvoeren van de taak.De maximale venster grootte voor deze query-elementen is zeven dagen. 
+## <a name="stateful-query-logic-in-temporal-elements"></a>Stateful query logica in tijdelijke elementen
+Een van de unieke mogelijkheden van Azure Stream Analytics taak is het uitvoeren van stateful verwerking, zoals venster aggregaties, tijdelijke samen voegingen en tijdelijke analytische functies. Elk van deze opera tors houdt status informatie bij het uitvoeren van de taak. De maximale venster grootte voor deze query-elementen is zeven dagen. 
 
 Het tijdelijke venster-concept wordt in verschillende Stream Analytics query-elementen weer gegeven:
 1. Statistische functies in Vensters (groeperen op basis van Tumblingvenstertriggers, verspringen en schuivende Vensters)

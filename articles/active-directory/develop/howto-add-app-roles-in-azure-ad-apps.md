@@ -13,12 +13,12 @@ ms.date: 11/13/2020
 ms.author: kkrishna
 ms.reviewer: marsma, kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bae8f0955ef45e21d38797789bdea4f62bf5ea28
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: b2ac90334ade52d68c775d9db5a84545774f3844
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614928"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013699"
 ---
 # <a name="how-to-add-app-roles-to-your-application-and-receive-them-in-the-token"></a>Procedure: app-rollen toevoegen aan uw toepassing en deze ontvangen in het token
 
@@ -49,7 +49,7 @@ Het aantal rollen dat u toevoegt, telt de toepassings manifest limieten die word
 
 Een app-rol maken met behulp van de gebruikers interface van de Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies vervolgens de Azure Active Directory Tenant met de app-registratie waaraan u een app-functie wilt toevoegen.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **beheren** de optie **app-registraties** en selecteer vervolgens de toepassing waarvoor u de app-rollen wilt definiëren.
@@ -74,7 +74,7 @@ Een app-rol maken met behulp van de gebruikers interface van de Azure Portal:
 
 Als u rollen wilt toevoegen door het manifest rechtstreeks te bewerken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies vervolgens de Azure Active Directory Tenant met de app-registratie waaraan u een app-functie wilt toevoegen.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **beheren** de optie **app-registraties** en selecteer vervolgens de toepassing waarvoor u de app-rollen wilt definiëren.
@@ -136,7 +136,7 @@ Wanneer u app-rollen in uw toepassing hebt toegevoegd, kunt u gebruikers en groe
 
 Gebruikers en groepen toewijzen aan rollen met behulp van de Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. In **Azure Active Directory** selecteert u **bedrijfs toepassingen** in het navigatie menu aan de linkerkant.
 1. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven. Als uw toepassing niet wordt weer gegeven in de lijst, gebruikt u de filters boven aan de lijst **alle toepassingen** om de lijst te beperken, of schuif omlaag in de lijst om de toepassing te zoeken.
 1. Selecteer de toepassing waarin u gebruikers of beveiligings groep aan rollen wilt toewijzen.
@@ -158,7 +158,7 @@ Wanneer u app-rollen toewijst aan een toepassing, maakt u *toepassings machtigin
 
 App-rollen toewijzen aan een toepassing met behulp van de Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
 1. Selecteer in **Azure Active Directory** **app-registraties** in het navigatie menu aan de linkerkant.
 1. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven. Als uw toepassing niet wordt weer gegeven in de lijst, gebruikt u de filters boven aan de lijst **alle toepassingen** om de lijst te beperken, of schuif omlaag in de lijst om de toepassing te zoeken.
 1. Selecteer de toepassing waaraan u een app-functie wilt toewijzen.
@@ -206,7 +206,7 @@ Meer informatie over app-rollen met de volgende resources.
 * Codevoorbeelden op GitHub
   * [Autorisatie toevoegen met behulp van groepen en groepclaims aan een ASP.NET Core web-app](https://aka.ms/groupssample)
   * [Hoek-toepassing met één pagina (SPA) die een .NET core web-API aanroept en app-rollen en beveiligings groepen gebruikt](https://github.com/Azure-Samples/ms-identity-javascript-angular-spa-dotnetcore-webapi-roles-groups/blob/master/README.md)
-* Referentie documentatie
+* Referentiedocumentatie
   * [Azure AD-App-manifest](./reference-app-manifest.md)
   * [Azure AD-toegangs tokens](access-tokens.md)
   * [Azure AD ID-tokens](id-tokens.md)

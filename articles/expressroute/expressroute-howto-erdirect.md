@@ -5,18 +5,27 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 12/14/2020
 ms.author: duau
-ms.openlocfilehash: a450c4057b4639206fd1db4b7f44d27c69441f7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 964af92006aad7b5ce8bdf25a332cbcf9c7ef144
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91569856"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014515"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>ExpressRoute direct configureren
 
 ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken met het wereld wijde netwerk van micro soft via peering-locaties strategisch gedistribueerd over de hele wereld. Zie [About ExpressRoute Direct](expressroute-erdirect-about.md) (Over ExpressRoute Direct) voor meer informatie.
+
+## <a name="before-you-begin"></a>Voordat u begint
+
+Voordat u ExpressRoute direct gebruikt, moet u uw abonnement eerst registreren. Als u zich wilt inschrijven, stuurt u een E-mail naar <ExpressRouteDirect@microsoft.com> met uw abonnements-id, met inbegrip van de volgende gegevens:
+
+* Scenario's die u wilt uitvoeren met **ExpressRoute direct**
+* Locatie voorkeuren: Zie [partners en peering-locaties](expressroute-locations-providers.md) voor een volledige lijst met alle locaties
+* Tijdlijn voor implementatie
+* Eventuele andere vragen
 
 ## <a name="create-the-resource"></a><a name="resources"></a>De resource maken
 
@@ -39,7 +48,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    Get-AzExpressRoutePortsLocation
    ```
 
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
   
    ```powershell
    Name                : Equinix-Ashburn-DC2
@@ -72,7 +81,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    Get-AzExpressRoutePortsLocation -LocationName "Equinix-San-Jose-SV1"
    ```
 
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
 
    ```powershell
    Name                : Equinix-San-Jose-SV1
@@ -106,7 +115,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    > Het kenmerk encapsulation kan ook worden ingesteld op Dot1Q. 
    >
 
-   **Voorbeelduitvoer:**
+   **Voorbeeld uitvoer:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -162,7 +171,7 @@ Raadpleeg de zojuist gemaakte ExpressRoute direct-resource, voer een klant naam 
   ```powershell 
    New-AzExpressRoutePortLOA -ExpressRoutePort $ERDirect -CustomerName TestCustomerName -Destination "C:\Users\SampleUser\Downloads" 
    ```
- **Voorbeeld uitvoer**
+ **Voorbeelduitvoer**
 
    ```powershell
    Written Letter of Authorization To: C:\Users\SampleUser\Downloads\LOA.pdf
@@ -187,7 +196,7 @@ Dit proces moet worden gebruikt om een laag 1-test uit te voeren, zodat elke Kru
    $ERDirect.Links[1].AdminState = "Enabled"
    Set-AzExpressRoutePort -ExpressRoutePort $ERDirect
    ```
-   **Voorbeelduitvoer:**
+   **Voorbeeld uitvoer:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -256,7 +265,7 @@ Maak een circuit op de ExpressRoute direct-resource.
 
   Andere band breedten zijn onder andere: 5,0, 10,0 en 40,0
 
-  **Voorbeelduitvoer:**
+  **Voorbeeld uitvoer:**
 
   ```powershell
   Name                             : ExpressRoute-Direct-ckt

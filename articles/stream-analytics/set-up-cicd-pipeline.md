@@ -4,16 +4,15 @@ description: In dit artikel wordt beschreven hoe u een doorlopende integratie-en
 services: stream-analytics
 author: su-jie
 ms.author: sujie
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: d9b6dfc977aab7d8907b5d3c3851a22f96227d78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b601a3586cfa971b2e8337a914f4e10bb0178ba0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91757755"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014243"
 ---
 # <a name="use-azure-devops-to-create-a-cicd-pipeline-for-a-stream-analytics-job"></a>Azure DevOps gebruiken om een CI/CD-pijp lijn te maken voor een Stream Analytics-taak
 
@@ -31,7 +30,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
 
 1. Open een webbrowser en navigeer naar uw project in azure DevOps.  
 
-1. Selecteer **builds**onder **pijp lijnen** in het navigatie menu aan de linkerkant. Selecteer vervolgens **nieuwe pijp lijn**.
+1. Selecteer **builds** onder **pijp lijnen** in het navigatie menu aan de linkerkant. Selecteer vervolgens **nieuwe pijp lijn**.
 
    :::image type="content" source="media/set-up-cicd-pipeline/new-pipeline.png" alt-text="Nieuwe Azure-pijp lijn maken":::
 
@@ -39,7 +38,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
 
 1. Selecteer het bron type, het team project en de opslag plaats. Selecteer vervolgens **Doorgaan**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/select-repo.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/select-repo.png" alt-text="Azure Stream Analytics project selecteren":::
 
 1. Selecteer op de pagina **een sjabloon kiezen** de optie **lege taak**.
 
@@ -47,7 +46,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
 
 1. Selecteer op de pagina **taken** het plus teken naast **Agent taak 1**. Voer *NPM* in de taak zoeken in en selecteer **NPM**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/search-npm.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/search-npm.png" alt-text="NPM-taak selecteren":::
 
 2. Geef de taak een **weergave naam**. Wijzig de **opdracht** optie in *aangepast* en voer de volgende opdracht in: **opdracht en argumenten**. Wijzig de overige standaard opties.
 
@@ -55,7 +54,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
    install -g azure-streamanalytics-cicd
    ```
 
-   :::image type="content" source="media/set-up-cicd-pipeline/npm-config.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/npm-config.png" alt-text="Configuraties voor NPM-taak invoeren":::
 
 ## <a name="add-a-build-task"></a>Een bouw taak toevoegen
 
@@ -77,7 +76,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
 
    In de onderstaande afbeelding wordt een Stream Analytics Visual Studio-code project als voor beeld gebruikt.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-build.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-build.png" alt-text="Configuraties voor de opdracht regel taak Visual Studio code invoeren":::
 
 ## <a name="add-a-test-task"></a>Een test taak toevoegen
 
@@ -87,7 +86,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
    |-|-|
    |testPath|Testen|
 
-   :::image type="content" source="media/set-up-cicd-pipeline/pipeline-variables-test.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/pipeline-variables-test.png" alt-text="Pijplijn variabelen toevoegen":::
 
 2. Selecteer op de pagina **taken** het plus teken naast **Agent taak 1**. Zoeken naar **opdracht regel**.
 
@@ -99,7 +98,7 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
    azure-streamanalytics-cicd test -project $(projectRootPath)/asaproj.json -outputpath $(projectRootPath)/$(outputPath)/$(testPath) -testConfigPath $(projectRootPath)/test/testConfig.json 
    ```
 
-   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-test.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/command-line-config-test.png" alt-text="Configuraties voor de opdracht regel taak invoeren":::
 
 ## <a name="add-a-copy-files-task"></a>Een taak voor het kopiëren van bestanden toevoegen
 
@@ -114,17 +113,17 @@ U moet een bestands taak kopiëren toevoegen om het bestand met de test samenvat
    |Inhoud| `**` |
    |Doelmap| `$(build.artifactstagingdirectory)`|
 
-2. Vouw de **besturings opties**uit. Selecteer **zelfs als een vorige taak is mislukt, tenzij de build is geannuleerd** tijdens het **uitvoeren van deze taak**.
+2. Vouw de **besturings opties** uit. Selecteer **zelfs als een vorige taak is mislukt, tenzij de build is geannuleerd** tijdens het **uitvoeren van deze taak**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/copy-config.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/copy-config.png" alt-text="Configuraties voor kopieer taak invoeren":::
 
 ## <a name="add-a-publish-build-artifacts-task"></a>Een taak voor het bouwen van een publicatie maken toevoegen
 
 1. Selecteer op de pagina **taken** het plus teken naast **Agent taak 1**. Zoek naar **Build-artefacten publiceren** en selecteer de optie met het pictogram met de zwarte pijl.
 
-2. Vouw de **besturings opties**uit. Selecteer **zelfs als een vorige taak is mislukt, tenzij de build is geannuleerd** tijdens het **uitvoeren van deze taak**.
+2. Vouw de **besturings opties** uit. Selecteer **zelfs als een vorige taak is mislukt, tenzij de build is geannuleerd** tijdens het **uitvoeren van deze taak**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/publish-config.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/publish-config.png" alt-text="Configuraties voor publicatie taak invoeren":::
 
 ## <a name="save-and-run"></a>Opslaan en uitvoeren
 
@@ -134,9 +133,9 @@ Wanneer u klaar bent met het toevoegen van het NPM-pakket, de opdracht regel, he
 
 Het bestand met de test samenvatting en Azure Resource Manager sjabloon bestanden vindt u in de **gepubliceerde** map.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/check-build-test-result.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/check-build-test-result.png" alt-text="Het build-en test resultaat controleren":::
 
-   :::image type="content" source="media/set-up-cicd-pipeline/check-drop-folder.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/check-drop-folder.png" alt-text="Artefacten controleren":::
 
 ## <a name="release-with-azure-pipelines"></a>Release met Azure-pijp lijnen
 
@@ -148,9 +147,9 @@ Open een webbrowser en navigeer naar uw Azure Stream Analytics Visual Studio cod
 
 2. Selecteer **beginnen met een lege taak**.
 
-3. Selecteer in het vak **artefacten** **+ een artefact toevoegen**. Selecteer onder **bron**de build-pijp lijn die u hebt gemaakt en selecteer **toevoegen**.
+3. Selecteer in het vak **artefacten** **+ een artefact toevoegen**. Selecteer onder **bron** de build-pijp lijn die u hebt gemaakt en selecteer **toevoegen**.
 
-   :::image type="content" source="media/set-up-cicd-pipeline/build-artifact.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+   :::image type="content" source="media/set-up-cicd-pipeline/build-artifact.png" alt-text="Bouw pijplijn artefact invoeren":::
 
 4. Wijzig de naam van **fase 1** in de implementatie van de **taak in de test omgeving**.
 
@@ -196,7 +195,7 @@ Open een webbrowser en navigeer naar uw Azure Stream Analytics Visual Studio cod
 
 Als u een release wilt maken, selecteert u **vrijgave maken** in de rechter bovenhoek.
 
-:::image type="content" source="media/set-up-cicd-pipeline/create-release.png" alt-text="Nieuwe Azure-pijp lijn maken":::
+:::image type="content" source="media/set-up-cicd-pipeline/create-release.png" alt-text="Een release maken met behulp van Azure-pijp lijnen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

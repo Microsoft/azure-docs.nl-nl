@@ -1,14 +1,14 @@
 ---
 title: Service lagen en-functies van Regi ster
-description: Meer informatie over de functies en limieten in de Basic-, Standard-en Premium-Service lagen (Sku's) van Azure Container Registry.
+description: Meer informatie over de functies en limieten (quota's) in de Basic-, Standard-en Premium-Service lagen (Sku's) van Azure Container Registry.
 ms.topic: article
 ms.date: 05/18/2020
-ms.openlocfilehash: e2a5ad52775e9000aa0beb0a926d809da1c5a0e0
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: b55fc16dcd6dcb544ed4597ce4bdc6ba17b52646
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048471"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015658"
 ---
 # <a name="azure-container-registry-service-tiers"></a>Service lagen Azure Container Registry
 
@@ -30,7 +30,9 @@ De volgende tabel bevat een overzicht van de functies en register limieten van d
 
 ## <a name="changing-tiers"></a>Lagen wijzigen
 
-U kunt de servicelaag van een REGI ster wijzigen met de Azure CLI of in de Azure Portal. U kunt de laag vrij verplaatsen, zolang de laag die u wilt overschakelen, de vereiste maximale opslag capaciteit heeft. 
+U kunt de servicelaag van een REGI ster wijzigen met de Azure CLI of in de Azure Portal. U kunt vrij verplaatsen tussen lagen, zolang de laag die u omschakelt, de vereiste maximale opslag capaciteit heeft. 
+
+Er is geen register downtime of gevolgen voor register bewerkingen wanneer u overschakelt tussen service lagen.
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -42,7 +44,7 @@ az acr update --name myregistry --sku Premium
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Selecteer in het **overzicht** van het container register in de Azure Portal **Update**en selecteer vervolgens een nieuwe **SKU** in de vervolg keuzelijst SKU.
+Selecteer in het **overzicht** van het container register in de Azure Portal **Update** en selecteer vervolgens een nieuwe **SKU** in de vervolg keuzelijst SKU.
 
 ![SKU'S voor container Registry bijwerken in Azure Portal][update-registry-sku]
 

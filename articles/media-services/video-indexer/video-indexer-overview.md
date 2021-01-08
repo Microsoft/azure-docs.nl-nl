@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 09/11/2020
 ms.author: juliako
-ms.openlocfilehash: b327facc2ac9ad64cf5237ecddc3e4024f75daa6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6b5a228c12cfc874673dda854de6d4dcc25f28c1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90052134"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014532"
 ---
 # <a name="what-is-azure-media-services-video-indexer"></a>Wat is Azure Media Services Video Indexer?
 
@@ -76,7 +76,7 @@ In de volgende lijst ziet u de inzichten die u uit uw Video's kunt ophalen met V
 
 * **Audio-transcriptie**: converteert spraak naar tekst in 12 talen en maakt extensies mogelijk. De volgende talen worden ondersteund: Engels, Spaans, Frans, Duits, Italiaans, Chinees (Mandarijn), Japans, Arabisch, Russisch, Portugees, Hindi en Koreaans.
 * **Automatische taaldetectie**: identificeert automatisch de meest gesproken taal. De volgende talen worden ondersteund: Engels, Spaans, Frans, Duits, Italiaans, Chinees (Mandarijn), Japans, Arabisch, Russisch en Portugees. Als de taal niet met vertrouwen kan worden geïdentificeerd, neemt Video Indexer aan dat de gesproken taal Engels is. Zie [Taalidentificatiemodel](language-identification-model.md) voor meer informatie.
-* **Meertalige spraak-identificatie en transcriptie** (preview-versie): identificeert automatisch de gesp roken taal in verschillende segmenten van audio. Elke segment van het mediabestand wordt verzonden voor een transcriptie en deze transcripties worden vervolgens gecombineerd in één uniforme transcriptie. Zie [Inhoud in meerdere talen automatisch identificeren en transcriberen](multi-language-identification-transcription.md) voor meer informatie.
+* **Multi-Language Speech Identification and transcriptie**: identificeert automatisch de gesp roken taal in verschillende segmenten van audio. Elke segment van het mediabestand wordt verzonden voor een transcriptie en deze transcripties worden vervolgens gecombineerd in één uniforme transcriptie. Zie [Inhoud in meerdere talen automatisch identificeren en transcriberen](multi-language-identification-transcription.md) voor meer informatie.
 * **Ondertiteling**: hiermee maakt u ondertiteling in drie indelingen: VTT, TTML, SRT.
 * **Twee kanaal verwerking**: automatisch detecteert afzonderlijke transcripten en samen voegingen op één tijd lijn.
 * **Ruis reductie**: Hiermee wist u de audio of ruis opnamen van telefonie (op basis van Skype-filters).

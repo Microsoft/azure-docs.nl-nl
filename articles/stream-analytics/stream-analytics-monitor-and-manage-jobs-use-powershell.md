@@ -3,16 +3,15 @@ title: Azure Stream Analytics-taken bewaken en beheren met Power shell
 description: In dit artikel wordt beschreven hoe u Azure PowerShell en cmdlets kunt gebruiken om Azure Stream Analytics taken te bewaken en te beheren.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/28/2017
-ms.openlocfilehash: 4d41e8231f5bd186408ea511c0f096a6a5f26c83
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 6b404516c513dea0888974ffb4fa3d8d43db6c44
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123639"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015178"
 ---
 # <a name="monitor-and-manage-stream-analytics-jobs-with-azure-powershell-cmdlets"></a>Stream Analytics-taken bewaken en beheren met Azure PowerShell-cmdlets
 Meer informatie over het bewaken en beheren van Stream Analytics resources met Azure PowerShell-cmdlets en Power shell-scripts waarmee basis Stream Analytics taken worden uitgevoerd.

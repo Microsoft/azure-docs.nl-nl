@@ -1,19 +1,18 @@
 ---
 title: Azure Stream Analytics integratie met Azure Machine Learning Studio (klassiek)
 description: In dit artikel wordt beschreven hoe u snel een eenvoudige Azure Stream Analytics-taak kunt instellen die Azure Machine Learning Studio (klassiek) integreert met behulp van een door de gebruiker gedefinieerde functie.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: krishna0815
+ms.author: krishmam
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9b08b59090d9dd23405f8a0ba86ce608e3a64902
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d7d74887b4b4e205645a45fa7e07768a1af73940
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011384"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015297"
 ---
 # <a name="do-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic"></a>Sentiment analyse met Azure Stream Analytics en Azure Machine Learning Studio (klassiek)
 
@@ -133,7 +132,7 @@ De taak haalt de invoer op uit het CSV-bestand dat u eerder hebt geüpload naar 
 
 De taak verzendt resultaten naar dezelfde Blob-opslag waar de invoer wordt ingevoerd.
 
-1. Ga naar de Stream Analytics-taak. Selecteer de optie **uitvoer** onder **taak topologie**. Selecteer **Add**  >  **Blob-opslag** toevoegen.
+1. Ga naar de Stream Analytics-taak. Selecteer de optie **uitvoer** onder **taak topologie**. Selecteer   >  **Blob-opslag** toevoegen.
 
 2. Vul het **Blob Storage** formulier in met de volgende waarden:
 

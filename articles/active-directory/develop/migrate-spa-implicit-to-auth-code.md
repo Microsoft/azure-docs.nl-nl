@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 05258e201c65138e53e861f0631eb33e08c9c199
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 391febcf8852147aedf5ef61d2442b2f50b4c9ae
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92673597"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014736"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Een JavaScript-app met één pagina migreren van impliciete toekenning naar autorisatiecodestroom
 
-Microsoft Authentication Library voor JavaScript (MSAL.js) v2.0 biedt ondersteuning voor de autorisatiecodestroom met PKCE en CORS voor toepassingen met één pagina op het Microsoft Identity-platform. Volg de stappen in de onderstaande secties om de MSAL.js 1.x-toepassing met impliciete toekenning te migreren naar MSAL.js 2.0+ (hierna *2. x* ) en de authenticatiecodestroom.
+Microsoft Authentication Library voor JavaScript (MSAL.js) v2.0 biedt ondersteuning voor de autorisatiecodestroom met PKCE en CORS voor toepassingen met één pagina op het Microsoft Identity-platform. Volg de stappen in de onderstaande secties om de MSAL.js 1.x-toepassing met impliciete toekenning te migreren naar MSAL.js 2.0+ (hierna *2. x*) en de authenticatiecodestroom.
 
 MSAL.js 2.x verbetert MSAL.js 1.x door de autorisatiecodestroom in de browser te ondersteunen in plaats van de impliciete toekenningsstroom. MSAL.js 2.x biedt **GEEN** ondersteuning voor de impliciete stroom.
 
@@ -29,8 +29,8 @@ MSAL.js 2.x verbetert MSAL.js 1.x door de autorisatiecodestroom in de browser te
 
 Als u uw toepassing wilt bijwerken naar MSAL.js 2.x en de authenticatiecodestroom, moet u drie primaire stappen uitvoeren:
 
-1. Wijzig de omleidings-URL(s) van uw [app-registratie](#switch-redirect-uris-to-spa-platform) van **Web** -platform naar **SPA** -platform.
-1. Werk de [code](#switch-redirect-uris-to-spa-platform) bij van MSAL.js 1.x naar **2.x** .
+1. Wijzig de omleidings-URL(s) van uw [app-registratie](#switch-redirect-uris-to-spa-platform) van **Web**-platform naar **SPA**-platform.
+1. Werk de [code](#switch-redirect-uris-to-spa-platform) bij van MSAL.js 1.x naar **2.x**.
 1. Schakel de [impliciete toekenning](#disable-implicit-grant-settings) in de app-registratie uit wanneer alle toepassingen die de registratie delen, zijn bijgewerkt naar MSAL.js 2.x en de authenticatiecodestroom.
 
 In de volgende secties wordt elke stap uitgebreid beschreven.
@@ -39,20 +39,20 @@ In de volgende secties wordt elke stap uitgebreid beschreven.
 
 Als u uw bestaande app-registratie voor uw toepassingen wilt blijven gebruiken, moet u in de Azure-portal de omleidings-URL's van de registratie bijwerken naar het SPA-platform. Hierdoor wordt de autorisatiecodestroom met PKCE- en CORS-ondersteuning ingeschakeld voor apps die gebruikmaken van de registratie (de code van uw toepassing moet nog wel worden bijgewerkt naar MSAL.js v2.x).
 
-Volg deze stappen voor app-registraties die momenteel zijn geconfigureerd met omleidings-URL’s voor het **Web** -platform:
+Volg deze stappen voor app-registraties die momenteel zijn geconfigureerd met omleidings-URL’s voor het **Web**-platform:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) en selecteer uw **Azure Active Directory** -tenant.
-1. Selecteer uw toepassing in **App-registraties** en klik vervolgens op **Verificatie** .
-1. Selecteer in de tegel **Web** -platform onder **Omleidings-URL's** de waarschuwingsbanner die aangeeft dat u de URLS's moet migreren.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> en selecteer uw **Azure Active Directory** Tenant.
+1. Selecteer uw toepassing in **App-registraties** en klik vervolgens op **Verificatie**.
+1. Selecteer in de tegel **Web**-platform onder **Omleidings-URL's** de waarschuwingsbanner die aangeeft dat u de URLS's moet migreren.
 
     :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Waarschuwingsbanner voor impliciete stroom in de webapp-tegel in de Azure-portal":::
-1. Selecteer *alleen* de omleidings-URL's waarvan de toepassingen MSAL.js 2.x gebruiken en selecteer vervolgens **Configureren** .
+1. Selecteer *alleen* de omleidings-URL's waarvan de toepassingen MSAL.js 2.x gebruiken en selecteer vervolgens **Configureren**.
 
-    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Waarschuwingsbanner voor impliciete stroom in de webapp-tegel in de Azure-portal":::
+    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Selecteer het deelvenster URL omleiden in het deelvenster SPA in de Azure-portal":::
 
-De omleidings-URLS's zouden nu moeten worden weergegeven in de **SPA** -platformtegel, wat betekent dat CORS-ondersteuning met de autorisatiecodestroom en PKCE is ingeschakeld voor deze URL's.
+De omleidings-URLS's zouden nu moeten worden weergegeven in de **SPA**-platformtegel, wat betekent dat CORS-ondersteuning met de autorisatiecodestroom en PKCE is ingeschakeld voor deze URL's.
 
-:::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-03-spa-redirect-uri-tile.png" alt-text="Waarschuwingsbanner voor impliciete stroom in de webapp-tegel in de Azure-portal":::
+:::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-03-spa-redirect-uri-tile.png" alt-text="De SAP-tegel in de app-registratie in de Azure-portal":::
 
 U kunt ook [een nieuwe app-registratie maken](scenario-spa-app-registration.md) in plaats van de omleidings-URL's in uw bestaande registratie bij te werken.
 

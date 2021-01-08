@@ -2,17 +2,17 @@
 title: Een Azure Resource Manager-sjabloon voor een Azure Stream Analytics-taak exporteren
 description: In dit artikel wordt beschreven hoe u een Azure Resource Manager sjabloon voor uw Azure Stream Analytics taak exporteert.
 services: stream-analytics
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 2afebe61c4b2998692c823e66d8fc73584ec1dc2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: aa17d83dcc14675db5ff6aa4597314baffbffdbb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93125645"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015416"
 ---
 # <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Een Azure Resource Manager-sjabloon voor een Azure Stream Analytics-taak exporteren
 
@@ -24,7 +24,7 @@ U kunt een Azure Stream Analytics taak opnieuw implementeren door de sjabloon Az
 
 Voordat u een sjabloon kunt exporteren, moet u eerst een bestaande Stream Analytics-taak openen in Visual Studio code. 
 
-Als u een taak wilt exporteren naar een lokaal project, zoekt u de taak die u wilt exporteren in de **Stream Analytics Verkenner** in de Azure Portal. Selecteer op de pagina **query** de optie **openen in Visual Studio** . Selecteer vervolgens **Visual Studio code** .
+Als u een taak wilt exporteren naar een lokaal project, zoekt u de taak die u wilt exporteren in de **Stream Analytics Verkenner** in de Azure Portal. Selecteer op de pagina **query** de optie **openen in Visual Studio**. Selecteer vervolgens **Visual Studio code**.
 
 ![Open Stream Analytics-taak in Visual Studio code](./media/resource-manager-export/open-job-vs-code.png)
 
@@ -58,7 +58,7 @@ Vervolgens voltooit u het Azure resource management-sjabloon parameter bestand.
 
 U bent klaar om uw Azure Stream Analytics-taak te implementeren met behulp van de Azure Resource Manager sjablonen die u hebt gegenereerd in de vorige sectie.
 
-Voer de volgende opdracht uit in een Power shell-venster. Zorg ervoor dat u de reaplce van *ResourceGroupName* , *TemplateFile* en *TemplateParameterFile* met de werkelijke naam van de resource groep en de volledige bestands paden naar het *JobTemplate.jsop* en *JobTemplate.parameters.jsop* bestanden in de **map Deploy** van uw werk ruimte.
+Voer de volgende opdracht uit in een Power shell-venster. Zorg ervoor dat u de reaplce van *ResourceGroupName*, *TemplateFile* en *TemplateParameterFile* met de werkelijke naam van de resource groep en de volledige bestands paden naar het *JobTemplate.jsop* en *JobTemplate.parameters.jsop* bestanden in de **map Deploy** van uw werk ruimte.
 
 Als Azure PowerShell niet is geconfigureerd, volgt u de stappen in de [module Azure PowerShell installeren](/powershell/azure/install-Az-ps).
 

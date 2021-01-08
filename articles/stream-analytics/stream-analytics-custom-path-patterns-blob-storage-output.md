@@ -1,19 +1,18 @@
 ---
 title: Aangepaste BLOB-uitvoer partitioneren Azure Stream Analytics
 description: In dit artikel worden de aangepaste paden voor het pad naar de tijd en de aangepaste velden of kenmerken van de Blob Storage-uitvoer van Azure Stream Analytics-taken beschreven.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7239c2e3cb42cb17b01904e8fc226ae2408dbb47
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: cb9d8edd24dcc8809f2b207a4db80653b0e140e4
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617422"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98014033"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Aangepaste BLOB-uitvoer partitioneren Azure Stream Analytics
 

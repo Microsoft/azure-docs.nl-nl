@@ -199,9 +199,9 @@
           href: event-hubs-kafka-spark-tutorial.md
         - name: Apache Flink aan een Event Hub koppelen
           href: event-hubs-kafka-flink-tutorial.md
-        - name: Apache Kafka Connect integreren met een hub (preview)
+        - name: Apache Kafka Connect integreren
           href: event-hubs-kafka-connect-tutorial.md
-        - name: Apache Kafka Connect (preview) integreren met Debezium
+        - name: Apache Kafka Connect integreren met Debezium
           href: event-hubs-kafka-connect-debezium.md
         - name: Akka-streams verbinden met een Event Hub
           href: event-hubs-kafka-akka-streams-tutorial.md

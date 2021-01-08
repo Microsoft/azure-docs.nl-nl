@@ -37,16 +37,12 @@
     - name: Voorbeelden van Azure PowerShell voor een toepassingsproxy
       href: application-proxy-powershell-samples.md
 - name: Concepten
-  expanded: false
+  expanded: true
   items:
     - name: Best practices voor app-beheer
       href: application-management-fundamentals.md
     - name: Algemene scenario's voor app-beheer
       href: common-scenarios.md
-    - name: Apps weergeven in je tenant
-      href: application-types.md
-    - name: Gebruikers toewijzen aan apps
-      href: ways-users-get-assigned-to-applications.md
     - name: Integratie van een cloud-app plannen
       items:
         - name: Aan de slag met app-integratie
@@ -286,6 +282,10 @@
       href: application-proxy-faq.md
     - name: Versiegeschiedenis van toepassingsproxy
       href: application-proxy-release-version-history.md
+    - name: Redenen dat apps verschijnen in ondernemingstoepassingen
+      href: application-types.md
+    - name: Redenen waarom gebruikers worden toegewezen aan een app
+      href: ways-users-get-assigned-to-applications.md
 - name: Resources
   items:
     - name: Ondersteunings- en Help-opties voor ontwikkelaars

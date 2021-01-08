@@ -13,12 +13,12 @@ ms.date: 04/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: 1f4e1def81fc79ec159ce6be825793a9bd8d0ce7
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: b29d8007ba7c6fb41209ad4f792069667416616b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286952"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011540"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Azure Active Directory-app-manifest
 
@@ -33,7 +33,7 @@ U kunt de kenmerken van een app configureren via de Azure Portal of programmatis
 
 Het toepassings manifest configureren:
 
-1. Ga naar [Azure Portal](https://portal.azure.com). Zoek en selecteer de **Azure Active Directory** service.
+1. Ga naar de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Zoek en selecteer de **Azure Active Directory** service.
 1. Selecteer **App-registraties**.
 1. Selecteer de app die u wilt configureren.
 1. Selecteer op de pagina **Overzicht** van de app de sectie **Manifest**. Een manifest editor op het web wordt geopend, zodat u het manifest in de portal kunt bewerken. Desgewenst kunt u **downloaden** selecteren om het manifest lokaal te bewerken en vervolgens **uploaden** gebruiken om het opnieuw toe te passen op uw toepassing.

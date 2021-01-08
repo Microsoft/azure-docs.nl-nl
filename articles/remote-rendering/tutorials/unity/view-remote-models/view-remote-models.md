@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 834df29597abaaadad98b232ce75b32a6431cfc2
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: d954d4c20dc267a8f62349b5e450710a78af8d9f
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574731"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724573"
 ---
 # <a name="tutorial-viewing-a-remotely-rendered-model"></a>Zelfstudie: U bekijkt een model dat extern wordt weergegeven
 
@@ -238,6 +238,14 @@ public class RemoteRenderingCoordinator : MonoBehaviour
     }
 
     [SerializeField]
+    private string accountAuthenticationDomain = "<enter your account authentication domain here>";
+    public string AccountAuthenticationDomain
+    {
+        get => accountAuthenticationDomain.Trim();
+        set => accountAuthenticationDomain = value;
+    }   
+
+    [SerializeField]
     private string accountKey = "<enter your account key here>";
     public string AccountKey {
         get => accountKey.Trim();
@@ -326,7 +334,7 @@ public class RemoteRenderingCoordinator : MonoBehaviour
     private async Task<AzureFrontendAccountInfo> GetDevelopmentCredentials()
     {
         Debug.LogWarning("Using development credentials! Not recommended for production.");
-        return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AccountId, AccountKey));
+        return await Task.FromResult(new AzureFrontendAccountInfo(AccountAuthenticationDomain, AccountDomain, AccountId, AccountKey));
     }
 
     /// <summary>
@@ -540,7 +548,7 @@ De remote rendering-coördinator en het vereiste script (*ARRServiceUnity*) zijn
 1. Voeg het *RemoteRenderingCoordinator*-script toe aan het GameObject **RemoteRenderingCoordinator**.\
 ![RemoteRenderingCoordinator-component toevoegen](./media/add-coordinator-script.png)
 1. Controleer of het *ARRServiceUnity*-script, dat wordt weergegeven als *Service* in de Inspector, automatisch wordt toegevoegd aan het GameObject. Ter informatie, dit is een resultaat dat `[RequireComponent(typeof(ARRServiceUnity))]` heeft bovenaan het **RemoteRenderingCoordinator**-script.
-1. Voeg uw Azure Remote Rendering-referenties en uw Accountdomein toe aan het coördinatorscript:\
+1. Voeg uw Azure Remote Rendering-referenties, uw accountverificatiedomein en het accountdomein toe aan het coördinatorscript:\
 ![Uw referenties toevoegen](./media/configure-coordinator-script.png)
 
 ## <a name="initialize-azure-remote-rendering"></a>Azure Remote Rendering initialiseren

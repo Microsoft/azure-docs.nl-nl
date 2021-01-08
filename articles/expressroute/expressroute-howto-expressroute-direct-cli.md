@@ -5,19 +5,28 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 12/14/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7931ad9e55d62d5fa2b1828d276e56f7c8cd02e1
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: aea51e56f2d96fa634b1ece2029c9ea5bf3f60fc
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286485"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011302"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>ExpressRoute direct configureren met behulp van de Azure CLI
 
 ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken met het wereld wijde netwerk van micro soft via peering-locaties strategisch gedistribueerd over de hele wereld. Zie [about ExpressRoute Direct Connect](expressroute-erdirect-about.md)(Engelstalig) voor meer informatie.
+
+## <a name="before-you-begin"></a>Voordat u begint
+
+Voordat u ExpressRoute direct gebruikt, moet u uw abonnement eerst registreren. Als u zich wilt inschrijven, stuurt u een E-mail naar <ExpressRouteDirect@microsoft.com> met uw abonnements-id, met inbegrip van de volgende gegevens:
+
+* Scenario's die u wilt uitvoeren met **ExpressRoute direct**
+* Locatie voorkeuren: Zie [partners en peering-locaties](expressroute-locations-providers.md) voor een volledige lijst met alle locaties
+* Tijdlijn voor implementatie
+* Eventuele andere vragen
 
 ## <a name="create-the-resource"></a><a name="resources"></a>De resource maken
 
@@ -50,7 +59,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    az network express-route port location list
    ```
 
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
   
    ```output
    [
@@ -117,7 +126,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    az network express-route port location show -l "Equinix-Ashburn-DC2"
    ```
 
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
 
    ```output
    {
@@ -155,7 +164,7 @@ ExpressRoute direct biedt u de mogelijkheid om rechtstreeks verbinding te maken 
    > U kunt ook het **encapsulation** -kenmerk instellen op **Dot1Q**. 
    >
 
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
 
    ```output
    {
@@ -223,7 +232,7 @@ Gebruik dit proces om een laag 1-test uit te voeren. Zorg ervoor dat elke Kruis 
    ```azurecli
    az network express-route port update -n Contoso-Direct -g Contoso-Direct-rg --set links[1].adminState="Enabled"
    ```
-   **Voorbeeld uitvoer**
+   **Voorbeelduitvoer**
 
    ```output
    {
@@ -297,7 +306,7 @@ Een circuit maken op de ExpressRoute direct-resource:
 
   Andere band breedten zijn 5 Gbps, 10 Gbps en 40 Gbps.
 
-  **Voorbeeld uitvoer**
+  **Voorbeelduitvoer**
 
   ```output
   {

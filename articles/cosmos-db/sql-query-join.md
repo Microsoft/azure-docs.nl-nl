@@ -1,25 +1,25 @@
 ---
 title: SQL-SAMENVOEG query's voor Azure Cosmos DB
 description: Meer informatie over het koppelen van meerdere tabellen in Azure Cosmos DB om de gegevens op te vragen
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 05/17/2019
-ms.author: mjbrown
-ms.openlocfilehash: c3fad0c7eed2b42a9ac340a091f17b90e22b000a
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.date: 01/07/2021
+ms.author: tisande
+ms.openlocfilehash: cb7b2e62a9fabeeca675edb8e6aa356213e0999e
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333831"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011375"
 ---
 # <a name="joins-in-azure-cosmos-db"></a>Samen voegen in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 In een relationele data base is het samen voegen van meerdere tabellen de logische corolling voor het ontwerpen van genormaliseerde schema's. De SQL-API maakt daarentegen gebruik van het Gedenormaliseerde gegevens model van items die zonder schema worden gebruikt. Dit is het logische equivalent van een *Self-deelname*.
 
-Inner joins resulteren in een volledig ander product van de sets die deel nemen aan de join. Het resultaat van een N-way-koppeling is een set N-element-Tuples, waarbij elke waarde in de tuple is gekoppeld aan de aliasset die deelneemt aan de samen voeging en toegankelijk is door naar die alias in andere componenten te verwijzen.
+Samen voegingen resulteren in een volledig ander product van de sets die deel nemen aan de deelname. Het resultaat van een N-way-koppeling is een set N-element-Tuples, waarbij elke waarde in de tuple is gekoppeld aan de aliasset die deelneemt aan de samen voeging en toegankelijk is door naar die alias in andere componenten te verwijzen.
 
 ## <a name="syntax"></a>Syntax
 
@@ -253,6 +253,8 @@ U ziet deze uitvoer:
       }
     ]
 ```
+
+Als uw query een koppeling en filters heeft, kunt u een deel van de query opnieuw schrijven als een [subquery](sql-query-subquery.md#optimize-join-expressions) om de prestaties te verbeteren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

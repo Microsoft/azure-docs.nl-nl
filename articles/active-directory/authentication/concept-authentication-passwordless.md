@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b4ac8f87e8e19d3487859849ba37272c501751d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: e1b82dbe169e01b68e7d4b8a4c243cb72d3a3e8b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744377"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013002"
 ---
 # <a name="passwordless-authentication-options-for-azure-active-directory"></a>Verificatie opties met een wacht woord voor Azure Active Directory
 
@@ -140,6 +140,7 @@ De volgende providers bieden FIDO2-beveiligings sleutels van verschillende vorm 
 | VinCSS | [https://passwordless.vincss.net](https://passwordless.vincss.net) |
 | KONA I | [https://konai.com/business/security/fido](https://konai.com/business/security/fido) |
 | Excelsecu | [https://www.excelsecu.com/productdetail/esecufido2secu.html](https://www.excelsecu.com/productdetail/esecufido2secu.html) |
+| Token2-Zwitser land | [https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key](https://www.token2.swiss/shop/product/token2-t2f2-alu-fido2-u2f-and-totp-security-key) |
 
 > [!NOTE]
 > Als u van plan bent om op NFC gebaseerde beveiligings sleutels te kopen en te gebruiken, moet u een ondersteunde NFC-lezer voor de beveiligings sleutel hebben. De NFC-lezer is geen vereisten of beperking van Azure. Neem contact op met de leverancier van uw op NFC gebaseerde beveiligings sleutel voor een lijst met ondersteunde NFC-lezers.
@@ -168,7 +169,7 @@ De keuze tussen deze drie opties met een wacht woord is afhankelijk van de verei
 
 Hier volgen enkele factoren waarmee u rekening moet houden bij het kiezen van micro soft-technologie voor een wacht woord:
 
-||**Windows Hello voor Bedrijven**|**Aanmelding zonder wacht woord met de Microsoft Authenticator-app**|**FIDO2-beveiligings sleutels**|
+||**Windows hello voor bedrijven**|**Aanmelding zonder wacht woord met de Microsoft Authenticator-app**|**FIDO2-beveiligings sleutels**|
 |:-|:-|:-|:-|
 |**Vereiste**| Windows 10, versie 1809 of hoger<br>Azure Active Directory| Microsoft Authenticator-app<br>Telefoon (iOS-en Android-apparaten met Android 6,0 of hoger.)|Windows 10, versie 1903 of hoger<br>Azure Active Directory|
 |**Modus**|Platform|Software|Hardware|

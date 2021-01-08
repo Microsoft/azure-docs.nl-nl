@@ -3,16 +3,15 @@ title: Query parallel Lise ring gebruiken en schalen in Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u Stream Analytics taken kunt schalen door het configureren van invoer partities, het afstemmen van de query definitie en het instellen van streaming-eenheden voor taken.
 author: JSeb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 326af3bc38ce70cc7cb205384bb4302c5ff73d28
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 9149413d070bbb5eb8d0f8d0c99fe5ff705bcefb
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704177"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012322"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Gebruik query parallel Lise ring in Azure Stream Analytics
 In dit artikel leest u hoe u parallel Lise ring in Azure Stream Analytics kunt gebruiken. U leert hoe u Stream Analytics taken kunt schalen door het configureren van invoer partities en het afstemmen van de definitie van de analyse query.
@@ -24,13 +23,13 @@ Een Stream Analytics taak definitie bevat ten minste één streaming-invoer, een
 ## <a name="partitions-in-inputs-and-outputs"></a>Partities in invoer en uitvoer
 Met partitioneren kunt u gegevens in subsets verdelen op basis van een [partitie sleutel](../event-hubs/event-hubs-scalability.md#partitions). Als uw invoer (bijvoorbeeld Event Hubs) is gepartitioneerd met een sleutel, is het raadzaam om deze partitie sleutel op te geven wanneer u invoer toevoegt aan uw Stream Analytics-taak. Het schalen van een Stream Analytics taak maakt gebruik van partities in de invoer en uitvoer. Een Stream Analytics taak kan verschillende partities parallel gebruiken en schrijven, waardoor de door Voer wordt verhoogd. 
 
-### <a name="inputs"></a>Invoer
+### <a name="inputs"></a>Invoerwaarden
 Alle Azure Stream Analytics invoer kan gebruikmaken van partitionering:
 -   EventHub (de partitie sleutel expliciet moet worden ingesteld met het sleutel woord PARTITION BY als u het compatibiliteits niveau 1,1 of lager gebruikt)
 -   IoT Hub (moet de partitie sleutel expliciet instellen met het sleutel woord PARTITION BY als u het compatibiliteits niveau 1,1 of lager gebruikt)
 -   Blob Storage
 
-### <a name="outputs"></a>Uitvoer
+### <a name="outputs"></a>Uitvoerwaarden
 
 Wanneer u werkt met Stream Analytics, kunt u gebruikmaken van partitionering in de uitvoer:
 -   Azure Data Lake Storage

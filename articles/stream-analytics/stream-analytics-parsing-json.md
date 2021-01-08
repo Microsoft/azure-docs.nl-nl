@@ -2,17 +2,17 @@
 title: JSON-en AVRO parseren in Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u complexe gegevens typen gebruikt zoals matrices, JSON-gegevens in CSV-indeling.
 ms.service: stream-analytics
-author: mamccrea
-ms.author: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.topic: conceptual
 ms.date: 01/29/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6c2eb4225cb014b3251d12470e4e9827150a5cf2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: f6cb131fb3ff3cab4122aac5e1c6960dee4f8421
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123350"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012237"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>JSON-en Avro-gegevens parseren in Azure Stream Analytics
 
@@ -121,7 +121,7 @@ WHERE
     GetRecordPropertyValue(input.SensorReadings, thresholds.SensorName) > thresholds.Value
 ```
 
-**GetRecordPropertyValue** selecteert de eigenschap in *SensorReadings* , die overeenkomt met de naam van de eigenschap die afkomstig is van de referentie gegevens. Vervolgens wordt de gekoppelde waarde uit *SensorReadings* geëxtraheerd.
+**GetRecordPropertyValue** selecteert de eigenschap in *SensorReadings*, die overeenkomt met de naam van de eigenschap die afkomstig is van de referentie gegevens. Vervolgens wordt de gekoppelde waarde uit *SensorReadings* geëxtraheerd.
 
 Het resultaat is:
 
@@ -207,7 +207,7 @@ U kunt vervolgens een stap in uw Stream Analytics query maken, zoals hieronder w
 
 Matrix gegevens typen zijn een geordende verzameling waarden. Enkele typische bewerkingen op matrix waarden worden hieronder beschreven. In deze voor beelden worden de functies [GetArrayElement](/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](/stream-analytics-query/getarraylength-azure-stream-analytics)en de operator [Apply](/stream-analytics-query/apply-azure-stream-analytics) gebruikt.
 
-Hier volgt een voor beeld van één gebeurtenis. Beide `CustomSensor03` en `SensorMetadata` zijn van het type **matrix** :
+Hier volgt een voor beeld van één gebeurtenis. Beide `CustomSensor03` en `SensorMetadata` zijn van het type **matrix**:
 
 ```json
 {

@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9d3a00491bc0628244a5a7907f0dee03a5f8d3c
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: fdff7e62753e75a14d6711b77dd451603353dae5
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744190"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012832"
 ---
 # <a name="authentication-methods-in-azure-active-directory---phone-options"></a>Verificatie methoden in Azure Active Directory-telefoon opties
 
@@ -58,6 +58,8 @@ Als u problemen ondervindt met telefoon verificatie voor Azure AD, raadpleegt u 
 
 * ' U hebt de limiet bereikt voor de verificatie aanroepen ' of ' u hebt de limiet voor de tekst verificatie codes ' bereikt tijdens het aanmelden
    * Micro soft kan in korte tijd herhaalde verificatie pogingen beperken die door dezelfde gebruiker worden uitgevoerd. Deze beperking is niet van toepassing op de Microsoft Authenticator of de verificatie code. Als u deze limieten hebt bereikt, kunt u de verificator-app gebruiken, verificatie code of het aanmelden over een paar minuten opnieuw proberen.
+* Fout bericht ' er zijn problemen met het verifiëren van uw account ' tijdens het aanmelden
+   * Micro soft mag spraak-of SMS-verificatie pogingen die door dezelfde gebruiker, hetzelfde telefoon nummer of dezelfde organisatie worden uitgevoerd, beperken of blok keren als gevolg van een groot aantal mislukte spraak-of SMS-verificatie pogingen. Als u dit probleem ondervindt, kunt u een andere methode proberen, zoals de verificator-app of verificatie code, of contact met uw beheerder maken voor ondersteuning.
 * De geblokkeerde beller-ID op één apparaat.
    * Bekijk alle geblokkeerde nummers die op het apparaat zijn geconfigureerd.
 * Onjuist telefoon nummer of onjuiste land-/regionummer of Verwar ring tussen privé telefoon nummer en telefoon nummer van werk.

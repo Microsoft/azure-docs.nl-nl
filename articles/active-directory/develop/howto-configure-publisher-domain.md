@@ -13,12 +13,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
-ms.openlocfilehash: d62328534157a1e2d9e53830be9d6b87e08c9e40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d793ed912af1c6fdd6e0da417b8709cad8bf08b9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87129267"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013631"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Procedure: het domein van de uitgever van een toepassing configureren
 
@@ -48,7 +48,7 @@ Als uw app is geregistreerd vóór 21 mei 2019, wordt de vraag van de toestemmin
 
 Voer de volgende stappen uit om het Uitgever domein van uw app in te stellen.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> met behulp van een werk-of school account of een persoonlijke Microsoft-account.
 
 1. Als uw account in meerdere Azure AD-tenants aanwezig is:
    1. Selecteer uw profiel in het menu in de rechterbovenhoek van de pagina en klik op **Schakelen tussen directory's**.
@@ -65,7 +65,7 @@ Voer de volgende stappen uit om het Uitgever domein van uw app in te stellen.
    - Selecteer **een domein configureren** als u nog geen domein hebt geconfigureerd.
    - Selecteer **domein bijwerken** als er al een domein is geconfigureerd.
 
-Als uw app is geregistreerd in een Tenant, worden er twee tabbladen weer geven waaruit u kunt kiezen: **Selecteer een geverifieerd domein** en **Controleer of er een nieuw domein**is.
+Als uw app is geregistreerd in een Tenant, worden er twee tabbladen weer geven waaruit u kunt kiezen: **Selecteer een geverifieerd domein** en **Controleer of er een nieuw domein** is.
 
 Als uw app niet is geregistreerd in een Tenant, ziet u alleen de optie om een nieuw domein voor uw toepassing te controleren.
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 61059c3e0f9737df6ace338f4252a338ea1f200c
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 680b1f3b6af186eba27a4dd926016a04cd863760
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663622"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013482"
 ---
 # <a name="app-service-environment-networking"></a>App Service Environment netwerken
 
@@ -34,7 +34,11 @@ De ASE heeft de volgende adressen bij het maken:
 | Windows uitgaand adres | De Windows-apps in deze ASE maken standaard gebruik van dit adres wanneer uitgaande oproepen naar Internet worden gemaakt. |
 | Uitgaand Linux-adres | De Linux-apps in deze ASE gebruiken standaard dit adres bij het maken van uitgaande oproepen naar het internet. |
 
-Als u het persoonlijke eind punt verwijdert dat door de ASE wordt gebruikt, is het niet mogelijk om de apps in uw ASE te bereiken. Verwijder niet de Azure DNS privé zone die aan uw ASE is gekoppeld.  
+De ASEv3 bevat details over de adressen die worden gebruikt door de ASE in het gedeelte **IP-adressen** van de ASE-Portal.
+
+![ASE-adressen in gebruikers interface](./media/networking/networking-ip-addresses.png)
+
+Als u het persoonlijke eind punt verwijdert dat door de ASE wordt gebruikt, is het niet mogelijk om de apps in uw ASE te bereiken.  
 
 De ASE gebruikt adressen in het uitgaande subnet ter ondersteuning van de infra structuur die wordt gebruikt door de ASE. Wanneer u uw App Service-abonnementen in uw ASE schaalt, gebruikt u meer adressen. Apps in de ASE hebben geen toegewezen adressen in het uitgaande subnet. De adressen die worden gebruikt door een app in het uitgaande subnet van een app, worden in de loop van de tijd gewijzigd.
 
@@ -48,7 +52,7 @@ In tegens telling tot de ASEv2 kunt u met ASEv3 netwerk beveiligings groepen (Ns
 
 ## <a name="dns"></a>DNS
 
-De apps in uw ASE gebruiken de DNS waarvoor uw VNet is geconfigureerd. Als u wilt dat sommige apps een andere DNS-server gebruiken, kunt u deze hand matig instellen op basis van de app-instellingen WEBSITE_DNS_SERVER en WEBSITE_DNS_ALT_SERVER. Met de app-instelling WEBSITE_DNS_ALT_SERVER configureert u de secundaire DNS-server. De secundaire DNS-server wordt alleen gebruikt wanneer er geen reactie is van de primaire DNS-server. 
+De apps in uw ASE gebruiken de DNS waarvoor uw VNet is geconfigureerd. Volg de instructies in [een app service Environment gebruiken](https://docs.microsoft.com/azure/app-service/environment/using#dns-configuration) om uw DNS-server te laten verwijzen naar uw ASE. Als u wilt dat sommige apps een andere DNS-server gebruiken dan uw VNet is geconfigureerd met, kunt u deze hand matig instellen op basis van de app-instellingen WEBSITE_DNS_SERVER en WEBSITE_DNS_ALT_SERVER. Met de app-instelling WEBSITE_DNS_ALT_SERVER configureert u de secundaire DNS-server. De secundaire DNS-server wordt alleen gebruikt wanneer er geen reactie is van de primaire DNS-server. 
 
 ## <a name="preview-limitation"></a>Voor beeld van beperking
 

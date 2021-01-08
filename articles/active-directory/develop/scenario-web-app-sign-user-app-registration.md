@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 30d646ff7d4f97289ff238211418ac57cd8167a4
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 7ca294d3d7764737d4e2be55aae25bc8ff08a8d1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107682"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011523"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Web-app die zich aanmeldt bij gebruikers: app-registratie
 
@@ -41,10 +41,10 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 > De te gebruiken Portal verschilt, afhankelijk van of uw toepassing wordt uitgevoerd in de Microsoft Azure open bare Cloud of in een nationale of soevereine Cloud. Zie [National Clouds](./authentication-national-cloud.md#app-registration-endpoints)(Engelstalig) voor meer informatie.
 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>. 
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
-1. Selecteer onder **beheren** de optie **app-registraties**  >  **nieuwe registratie**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -76,7 +76,7 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
     1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen. 
     1. Selecteer **accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)**.
     1. Selecteer **registreren** om de toepassing te registreren.
-1. Selecteer onder **beheren** de optie **verificatie**  >  **een platform toevoegen**.
+1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
 1. Selecteer **Web**.
 1. Voer voor **omleidings-URI** hetzelfde host-en poort nummer in, gevolgd door `/msal4jsample/secure/aad` voor de aanmeldings pagina. 
 1. Selecteer **Configureren**.

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 3679bf9d55ddccefddb4bf3b2a96ec1b427315af
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c0ceae8727681c045c3bbf3e6626937633b38997
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663526"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013529"
 ---
 # <a name="using-an-app-service-environment"></a>Een App Service Environment gebruiken
 
@@ -78,13 +78,20 @@ De SCM-URL wordt gebruikt voor toegang tot de kudu-console of voor het publicere
 
 ### <a name="dns-configuration"></a>DNS-configuratie 
 
-De ASE maakt gebruik van privé-eind punten voor binnenkomend verkeer en wordt automatisch geconfigureerd met Azure DNS persoonlijke zones. Als u uw eigen DNS-server wilt gebruiken, moet u de volgende records toevoegen:
+De ASE maakt gebruik van privé-eind punten voor inkomend verkeer. Het wordt niet automatisch geconfigureerd met Azure DNS persoonlijke zones. Als u uw eigen DNS-server wilt gebruiken, moet u de volgende records toevoegen:
 
 1. Maak een zone voor &lt;ASE name&gt;. appserviceenvironment.net
 1. een A-record in die zone maken die verwijst naar * naar het binnenkomende IP-adres dat wordt gebruikt door uw persoonlijke ASE-eind punt
 1. een A-record in die zone maken die verwijst naar @ naar het inkomende IP-adres dat wordt gebruikt door uw ASE-privé-eind punt
 1. Maak een zone in &lt;ASE name&gt;. appserviceenvironment.net met de naam SCM
 1. een A-record maken in de SCM-zone die * verwijst naar het IP-adres dat wordt gebruikt door uw persoonlijke ASE-eind punt
+
+DNS configureren in Azure DNS particuliere zones:
+
+1. Maak een Azure DNS privézone met de naam <ASE name>. appserviceenvironment.net
+1. Maak in die zone een A-record die * verwijst naar het IP-adres van de ILB
+1. Maak in die zone een A-record die @ verwijst naar het IP-adres van de ILB
+1. Maak in die zone een A-record die *.scm verwijst naar het IP-adres van de ILB
 
 De DNS-instellingen voor het standaard domein achtervoegsel van uw ASE beperken uw apps niet zodat deze alleen toegankelijk zijn voor die namen. U kunt een aangepaste domein naam instellen zonder validatie voor uw apps in een ASE. Als u vervolgens een zone met de naam *contoso.net* wilt maken, kunt u dit doen en deze naar het binnenkomende IP-adres laten wijzen. De aangepaste domein naam werkt voor app-aanvragen, maar niet voor de SCM-site. De SCM-site is alleen beschikbaar op *&lt; AppName &gt; . scm. &lt; asename &gt; . appserviceenvironment.net*. 
 
@@ -125,7 +132,7 @@ U kunt uw ASE integreren met Azure Monitor voor het verzenden van logboeken over
 Logboek registratie inschakelen voor uw ASE:
 
 1. Ga in de portal naar **Diagnostische instellingen**.
-1. Selecteer **Diagnostische instelling toevoegen**.
+1. Selecteer **Diagnostische instellingen toevoegen**.
 1. Geef een naam op voor de logboek integratie.
 1. Selecteer en configureer de gewenste logboek doelen.
 1. Selecteer **AppServiceEnvironmentPlatformLogs**.

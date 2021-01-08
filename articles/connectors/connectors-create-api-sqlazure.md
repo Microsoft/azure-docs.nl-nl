@@ -3,16 +3,16 @@ title: Verbinding maken met SQL Server, Azure SQL Database of Azure SQL Managed 
 description: Automatiseer taken voor SQL-data bases on-premises of in de Cloud met behulp van Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: estfan, jonfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 10/22/2020
+ms.date: 01/07/2021
 tags: connectors
-ms.openlocfilehash: ce7679fff86d2c96588cf2b704d44238535963b3
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 75c657236b6e06a7e0f6c717d746bcc8c034d423
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130932"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013444"
 ---
 # <a name="automate-workflows-for-a-sql-database-by-using-azure-logic-apps"></a>Werk stromen automatiseren voor een SQL database met behulp van Azure Logic Apps
 
@@ -38,7 +38,7 @@ Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps](
 
   * Voor Azure SQL Database kunt u deze informatie vinden in de connection string.
   
-    Als u deze teken reeks bijvoorbeeld wilt zoeken in de Azure Portal, opent u de data base. Selecteer in het menu Data Base ofwel **verbindings reeksen** of **Eigenschappen** :
+    Als u deze teken reeks bijvoorbeeld wilt zoeken in de Azure Portal, opent u de data base. Selecteer in het menu Data Base ofwel **verbindings reeksen** of **Eigenschappen**:
 
     `Server=tcp:{your-server-name}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
 
@@ -80,11 +80,11 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
    | [**SQL Server-verificatie**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | -Ondersteunt zowel de niet-ISE als de ISE SQL Server-connector. <p><p>-Vereist een geldige gebruikers naam en een sterk wacht woord die zijn gemaakt en opgeslagen in uw data base. <p>Raadpleeg de volgende onderwerpen voor meer informatie: <p>- [Overzicht van Azure SQL-beveiliging-verificatie](../azure-sql/database/security-overview.md#authentication) <br>- [Database toegang verlenen aan Azure SQL-verificatie en autorisatie](../azure-sql/database/logins-create-manage.md#authentication-and-authorization) |
    |||
 
-   Dit voor beeld gaat verder met **Azure AD Integrated** :
+   Dit voor beeld gaat verder met **Azure AD Integrated**:
 
    ![Scherm afbeelding met het verbindings venster ' SQL Server ' met de geopende lijst ' verificatie type ' en ' Azure AD Integrated ' geselecteerd.](./media/connectors-create-api-sqlazure/select-azure-ad-authentication.png)
 
-1. Nadat u **Azure AD Integrated** hebt geselecteerd, selecteert u **Aanmelden** . Selecteer uw gebruikers referenties voor verificatie op basis van het feit of u Azure SQL Database of Azure SQL Managed instance gebruikt.
+1. Nadat u **Azure AD Integrated** hebt geselecteerd, selecteert u **Aanmelden**. Selecteer uw gebruikers referenties voor verificatie op basis van het feit of u Azure SQL Database of Azure SQL Managed instance gebruikt.
 
 1. Selecteer deze waarden voor uw Data Base:
 
@@ -98,7 +98,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
    > [!TIP]
    > U hebt de volgende opties om uw data base en tabel gegevens op te geven:
    > 
-   > * Deze informatie vindt u in de connection string van uw data base. Zoek en open bijvoorbeeld uw data base in de Azure Portal. Selecteer in het menu Data Base ofwel **verbindings reeksen** of **Eigenschappen** , waar u deze teken reeks kunt vinden:
+   > * Deze informatie vindt u in de connection string van uw data base. Zoek en open bijvoorbeeld uw data base in de Azure Portal. Selecteer in het menu Data Base ofwel **verbindings reeksen** of **Eigenschappen**, waar u deze teken reeks kunt vinden:
    >
    >   `Server=tcp:{your-server-address}.database.windows.net,1433;Initial Catalog={your-database-name};Persist Security Info=False;User ID={your-user-name};Password={your-password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;`
    >
@@ -129,7 +129,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
    | [**SQL Server-verificatie**](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication) | -Ondersteunt zowel de niet-ISE als de ISE SQL Server-connector. <p><p>-Vereist een geldige gebruikers naam en een sterk wacht woord die zijn gemaakt en opgeslagen in uw SQL Server. <p>Zie [SQL Server-verificatie](/sql/relational-databases/security/choose-an-authentication-mode#connecting-through-sql-server-authentication)voor meer informatie. |
    |||
 
-   Dit voor beeld gaat door met **Windows-verificatie** :
+   Dit voor beeld gaat door met **Windows-verificatie**:
 
    ![Selecteer het verificatie type dat u wilt gebruiken](./media/connectors-create-api-sqlazure/select-windows-authentication.png)
 
@@ -142,7 +142,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
    | **Gebruikersnaam** | Ja | Uw gebruikers naam voor de SQL-Server en-data base |
    | **Wachtwoord** | Ja | Uw wacht woord voor de SQL-Server en-data base |
    | **Abonnement** |  Ja, voor Windows-verificatie | Het Azure-abonnement voor de gegevens gateway resource die u eerder hebt gemaakt in azure |
-   | **Verbindings gateway** | Ja, voor Windows-verificatie | De naam voor de gegevens gateway resource die u eerder hebt gemaakt in azure <p><p>**Tip** : als uw gateway niet in de lijst wordt weer gegeven, controleert u of u [uw gateway](../logic-apps/logic-apps-gateway-connection.md)correct hebt ingesteld. |
+   | **Verbindings gateway** | Ja, voor Windows-verificatie | De naam voor de gegevens gateway resource die u eerder hebt gemaakt in azure <p><p>**Tip**: als uw gateway niet in de lijst wordt weer gegeven, controleert u of u [uw gateway](../logic-apps/logic-apps-gateway-connection.md)correct hebt ingesteld. |
    |||
 
    > [!TIP]
@@ -157,7 +157,7 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
 
    ![SQL Server verbinding maken is voltooid](./media/connectors-create-api-sqlazure/sql-server-create-connection-complete.png)
 
-1. Wanneer u klaar bent, selecteert u **maken** .
+1. Wanneer u klaar bent, selecteert u **maken**.
 
 1. Ga nu verder met de stappen die u nog niet hebt voltooid in [een SQL-trigger toevoegen](#add-sql-trigger) of [een SQL-actie toevoegen](#add-sql-action).
 
@@ -178,12 +178,18 @@ De eerste keer dat u een SQL- [trigger](#add-sql-trigger) of [SQL-actie](#add-sq
 1. Als u andere beschik bare eigenschappen voor deze trigger wilt toevoegen, opent u de lijst **nieuwe para meter toevoegen** .
 
    Deze trigger retourneert slechts één rij uit de geselecteerde tabel en niets anders. Als u andere taken wilt uitvoeren, kunt u door gaan door een [SQL-connector actie](#add-sql-action) toe te voegen of door een [andere actie](../connectors/apis-list.md) uit te voeren waarmee de volgende taak wordt uitgevoerd in de werk stroom van de logische app.
-   
+
    Als u de gegevens in deze rij bijvoorbeeld wilt weer geven, kunt u andere acties toevoegen waarmee een bestand wordt gemaakt dat de velden uit de geretourneerde rij bevat, en vervolgens e-mail waarschuwingen verzenden. Zie de [referentie pagina van de connector](/connectors/sql/)voor meer informatie over andere beschik bare acties voor deze connector.
 
 1. Selecteer **Opslaan** op de werkbalk van de ontwerper.
 
    Hoewel met deze stap automatisch uw logische app in azure wordt ingeschakeld en gepubliceerd, is de enige actie die momenteel door uw logische app wordt uitgevoerd, het controleren van uw Data Base op basis van het opgegeven interval en de frequentie.
+
+<a name="trigger-recurrence-shift-drift"></a>
+
+### <a name="trigger-recurrence-shift-and-drift"></a>Verschuiving van terugkeer patroon en drift activeren
+
+Op verbindingen gebaseerde triggers waarbij u eerst een verbinding moet maken, zoals de SQL-trigger, verschillen van ingebouwde triggers die in Azure Logic Apps systeem eigen worden uitgevoerd, zoals de [terugkeer patroon trigger](../connectors/connectors-native-recurrence.md). In terugkerende activeringen op basis van een verbinding is de terugkeer planning niet het enige stuur programma dat de uitvoering beheert, en de tijd zone bepaalt alleen de eerste begin tijd. De volgende uitvoeringen zijn afhankelijk van het terugkeer schema, de laatste uitvoering van triggers *en* andere factoren die kunnen leiden tot een onverwacht gedrag of het produceren van onverwachte werking, zoals het niet behouden van het opgegeven schema wanneer zomer tijd (DST) begint en eindigt. Om ervoor te zorgen dat de tijd van het terugkeer patroon niet wordt verschoven wanneer het ZOMERtijd duurt, moet u het terugkeer patroon hand matig aanpassen zodat uw logische app op het verwachte tijdstip blijft worden uitgevoerd. Anders wordt de begin tijd één uur vooruit geschoven wanneer zomer tijd wordt gestart en één uur terug wanneer de DST eindigt. Zie [terugkeer patroon voor triggers op basis](../connectors/apis-list.md#recurrence-connection-based)van een verbinding voor meer informatie.
 
 <a name="add-sql-action"></a>
 
@@ -197,7 +203,7 @@ In dit voor beeld wordt de logische app gestart met de [terugkeer patroon](../co
 
    ![Een actie toevoegen aan uw logische app](./media/connectors-create-api-sqlazure/select-new-step-logic-app.png)
 
-   Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen** .
+   Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
 1. Voer in het zoekvak onder **Kies een actie** `sql server` in. Selecteer in de lijst acties de gewenste SQL-actie. In dit voor beeld wordt de actie **rij ophalen** gebruikt, waarmee één record wordt opgehaald.
 
@@ -242,13 +248,13 @@ Wanneer u een opgeslagen procedure aanroept met behulp van de SQL Server-connect
 
 1. De uitvoer indeling weer geven door een test uitvoering uit te voeren. Kopieer uw voorbeeld uitvoer en sla deze op.
 
-1. Selecteer in de ontwerp functie, onder de actie waar u de opgeslagen procedure aanroept, de optie **nieuwe stap** .
+1. Selecteer in de ontwerp functie, onder de actie waar u de opgeslagen procedure aanroept, de optie **nieuwe stap**.
 
 1. Zoek onder **Kies een actie** de actie [**JSON parseren**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action) en selecteer deze.
 
-1. Selecteer in de actie **JSON parseren** **voorbeeld lading gebruiken om schema te genereren** .
+1. Selecteer in de actie **JSON parseren** **voorbeeld lading gebruiken om schema te genereren**.
 
-1. Plak in het vak **een voor beeld van een JSON-nettolading invoeren of plakken** uw voorbeeld uitvoer en selecteer **gereed** .
+1. Plak in het vak **een voor beeld van een JSON-nettolading invoeren of plakken** uw voorbeeld uitvoer en selecteer **gereed**.
 
    > [!NOTE]
    > Als er een fout bericht wordt weer gegeven dat Logic Apps geen schema kan genereren, controleert u of de syntaxis van de voorbeeld uitvoer correct is ingedeeld. Als u het schema nog niet kunt genereren, voert u in het vak **schema** het schema hand matig in.
@@ -259,13 +265,17 @@ Wanneer u een opgeslagen procedure aanroept met behulp van de SQL Server-connect
 
 ## <a name="troubleshoot-problems"></a>Problemen oplossen
 
-* Problemen met de verbinding kunnen zich doorgaans voordoen, zodat u het probleem kunt oplossen door [verbindings fouten te SQL Server](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server). Enkele voorbeelden:
+<a name="connection-problems"></a>
 
-  * `A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections.`
+### <a name="connection-problems"></a>Verbindingsproblemen
 
-  * `(provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) (Microsoft SQL Server, Error: 53)`
+Problemen met de verbinding kunnen zich doorgaans voordoen, zodat u het probleem kunt oplossen door [verbindings fouten te SQL Server](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server). Hier volgen enkele voorbeelden:
 
-  * `(provider: TCP Provider, error: 0 - No such host is known.) (Microsoft SQL Server, Error: 11001)`
+* `A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections.`
+
+* `(provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) (Microsoft SQL Server, Error: 53)`
+
+* `(provider: TCP Provider, error: 0 - No such host is known.) (Microsoft SQL Server, Error: 11001)`
 
 ## <a name="connector-specific-details"></a>Connector-specifieke Details
 

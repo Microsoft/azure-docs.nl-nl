@@ -5,25 +5,25 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: article
-ms.date: 12/06/2018
+ms.date: 01/07/2021
 ms.author: duau
-ms.openlocfilehash: 4b57dec32a3a008cadf68c19ea52353a23fb2cd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae0a39d65bf0f1bc5221cd5e46493c489f7630f8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397491"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012662"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-nat"></a>Voor beelden van router configuraties voor het instellen en beheren van NAT
 
-Op deze pagina vindt u voor beelden van de NAT-configuratie voor Cisco ASA-en Juniper SRX-Series bij het werken met ExpressRoute. Deze zijn alleen bedoeld als voor beelden en mogen niet worden gebruikt als is. U kunt samen werken met uw leverancier om te voldoen aan de juiste configuraties voor uw netwerk.
+In dit artikel vindt u voor beelden van NAT-configuraties voor Cisco ASA-en Juniper SRX-reeks routers bij het werken met ExpressRoute. Deze router configuraties zijn alleen bedoeld als voor beelden en mogen niet worden gebruikt als is. U moet samen werken met uw leverancier om te voldoen aan de juiste configuraties voor uw netwerk.
 
 > [!IMPORTANT]
 > Voor beelden op deze pagina zijn bedoeld als louter voor hulp. U moet samen werken met het verkoop-en technische team van uw leverancier en uw netwerk team om te voorzien in de juiste configuraties om te voldoen aan uw behoeften. Micro soft biedt geen ondersteuning voor problemen met configuraties die op deze pagina worden weer gegeven. Neem contact op met de leverancier van uw apparaat voor ondersteunings problemen.
 > 
 > 
 
-* Voor beelden van router configuraties zijn van toepassing op de open bare en micro soft-peering van Azure. U moet NAT niet configureren voor persoonlijke Azure-peering. Bekijk [ExpressRoute-peerings](expressroute-circuit-peerings.md) en [ExpressRoute NAT-vereisten](expressroute-nat.md) voor meer informatie.
+* Voor beelden van router configuraties zijn van toepassing op de open bare en micro soft-peering van Azure. U configureert geen NAT voor persoonlijke Azure-peering. Bekijk [ExpressRoute-peerings](expressroute-circuit-peerings.md) en [ExpressRoute NAT-vereisten](expressroute-nat.md) voor meer informatie.
 
 * U moet afzonderlijke NAT IP-adres groepen gebruiken voor de connectiviteit met internet en ExpressRoute. Het gebruik van dezelfde NAT IP-adres groep via internet en ExpressRoute leidt tot asymmetrische route ring en verlies van connectiviteit.
 
@@ -361,5 +361,5 @@ Raadpleeg voor beelden op de pagina [routerings configuratie voorbeelden](expres
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de [Veelgestelde vragen over ExpressRoute](expressroute-faqs.md) voor meer informatie.
+Zie [Veelgestelde vragen over ExpressRoute](expressroute-faqs.md) voor meer informatie.
 

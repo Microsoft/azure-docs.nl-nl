@@ -1,19 +1,18 @@
 ---
 title: Taak bewaking in Azure Stream Analytics begrijpen
 description: In dit artikel wordt beschreven hoe u Azure Stream Analytics taken bewaken in de Azure Portal.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: f8e0d49c2a35a1e97c79e6d4b8c867a4a8ab88b3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5141c7fcfe1128574145930548f41731529c2ad8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006675"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012458"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Meer informatie over Stream Analytics taak bewaking en het bewaken van query's
 
@@ -58,7 +57,7 @@ U kunt het type grafiek, de weer gegeven metrische gegevens en het tijds bereik 
 Een ander interessant gegevens punt voor het bewaken van uw taak is de tijd van de laatste uitvoer, zoals weer gegeven op de pagina overzicht.
 Dit is de tijd van de toepassing (dus de tijd die de tijds tempel van de gebeurtenis gegevens gebruikt) van de laatste uitvoer van uw taak.
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html)
 
 ## <a name="next-steps"></a>Volgende stappen

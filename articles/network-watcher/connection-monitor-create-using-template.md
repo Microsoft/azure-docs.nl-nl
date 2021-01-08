@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/23/2020
+ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: c3b228d2652d5f7dcf7c6596ee5425b3f5f9a4d8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 46d569eae768178815a933d9a857e19bacdaaeb9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544000"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013223"
 ---
 # <a name="create-a-connection-monitor-using-the-arm-template"></a>Een verbindings monitor maken met de ARM-sjabloon
 

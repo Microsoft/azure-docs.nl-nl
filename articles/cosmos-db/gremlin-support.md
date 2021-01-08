@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 11/11/2020
 ms.author: sngun
-ms.openlocfilehash: a149f0b331a77462aa53b948fedf25dd1331969e
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 036338e90a3e7b466924d419400c0dcc692dec5f
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "94683621"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630748"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support-and-compatibility-with-tinkerpop-features"></a>Gremlin-graafondersteuning voor Azure Cosmos DB en compatibiliteit met TinkerPop-functies
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -195,31 +195,31 @@ _ **Lambda-expressies en functies** worden momenteel niet ondersteund. Dit geldt
 
 _ **Indexgebruik voor Gremlin-query's met `.V()`-stappen binnen doorkruising**: Momenteel gebruikt alleen de eerste aanroep van `.V()` in een doorkruising gebruik van de index om gekoppelde filters of predicaten op te lossen. Bij volgende aanroepen wordt de index niet geraadpleegd, wat de latentie en de kosten van de query zou kunnen verhogen.
     
-    Assuming default indexing, a typical read Gremlin query that starts with the `.V()` step would use parameters in its attached filtering steps, such as `.has()` or `.where()` to optimize the cost and performance of the query. For example:
+Uitgaande van standaardindexering, zou een typische Gremlin-query die begint met de stap `.V()` in de gekoppelde filterstappen parameters zoals `.has()` of `.where()` gebruiken om de kosten en de prestaties van de query te optimaliseren. Bijvoorbeeld:
 
-    ```java
-    g.V().has('category', 'A')
-    ```
+```java
+g.V().has('category', 'A')
+```
 
-    However, when more than one `.V()` step is included in the Gremlin query, the resolution of the data for the query might not be optimal. Take the following query as an example:
+Als er echter meer dan één `.V()`-stap is opgenomen in de Gremlin-query, is de resolutie van de gegevens voor de query mogelijk niet optimaal. Neem de volgende query als voorbeeld:
 
-    ```java
-    g.V().has('category', 'A').as('a').V().has('category', 'B').as('b').select('a', 'b')
-    ```
+```java
+g.V().has('category', 'A').as('a').V().has('category', 'B').as('b').select('a', 'b')
+```
 
-    This query will return two groups of vertices based on their property called `category`. In this case, only the first call, `g.V().has('category', 'A')` will make use of the index to resolve the vertices based on the values of their properties.
+Met deze query worden twee groepen hoekpunten geretourneerd op basis van hun eigenschap `category`. In dit geval maakt alleen de eerste aanroep, `g.V().has('category', 'A')`, gebruik van de index om de hoekpunten op te lossen op basis van de waarden van hun eigenschappen.
 
-    A workaround for this query is to use subtraversal steps such as `.map()` and `union()`. This is exemplified below:
+Een tijdelijke oplossing voor deze query is het gebruiken van subdoorkruisingsstappen zoals `.map()` en `union()`. Hieronder ziet u een voorbeeld:
 
-    ```java
-    // Query workaround using .map()
-    g.V().has('category', 'A').as('a').map(__.V().has('category', 'B')).as('b').select('a','b')
+```java
+// Query workaround using .map()
+g.V().has('category', 'A').as('a').map(__.V().has('category', 'B')).as('b').select('a','b')
 
-    // Query workaround using .union()
-    g.V().has('category', 'A').fold().union(unfold(), __.V().has('category', 'B'))
-    ```
+// Query workaround using .union()
+g.V().has('category', 'A').fold().union(unfold(), __.V().has('category', 'B'))
+```
 
-    You can review the performance of the queries by using the [Gremlin `executionProfile()` step](graph-execution-profile.md).
+U kunt de prestaties van de query's controleren met behulp van de [Gremlin-stap `executionProfile()`](graph-execution-profile.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

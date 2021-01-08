@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: justinha
-ms.openlocfilehash: 1fcd46870a4f85d1b88d22d77de5c201404c3a09
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 694ed5304e838057141b7df043565d58188fc870
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96619365"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98013036"
 ---
 # <a name="migrate-azure-active-directory-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Azure Active Directory Domain Services migreren van het klassieke virtuele netwerk model naar Resource Manager
 
@@ -155,8 +155,8 @@ De migratie naar het Resource Manager-implementatie model en het virtuele netwer
 |---------|--------------------|-----------------|-----------|-------------------|
 | [Stap 1: het nieuwe virtuele netwerk bijwerken en zoeken](#update-and-verify-virtual-network-settings) | Azure Portal | 15 minuten | Geen downtime vereist | N.v.t. |
 | [Stap 2: het beheerde domein voorbereiden voor migratie](#prepare-the-managed-domain-for-migration) | PowerShell | 15 – 30 minuten op gemiddeld | De downtime van Azure AD DS begint nadat deze opdracht is voltooid. | Terugdraaien en herstellen beschikbaar. |
-| [Stap 3: het beheerde domein verplaatsen naar een bestaand virtueel netwerk](#migrate-the-managed-domain) | PowerShell | 1 – 3 uur gemiddeld | Er is één domein controller beschikbaar zodra deze opdracht is voltooid, de downtime wordt beëindigd. | Bij fouten zijn zowel terugdraaien (Self-Service) als herstel beschikbaar. |
-| [Stap 4: testen en wachten op de replica domein controller](#test-and-verify-connectivity-after-the-migration)| Power shell en Azure Portal | 1 uur of langer, afhankelijk van het aantal tests | Beide domein controllers zijn beschikbaar en moeten normaal functioneren. | N.v.t. Zodra de eerste virtuele machine is gemigreerd, is er geen optie voor terugdraaien of herstellen. |
+| [Stap 3: het beheerde domein verplaatsen naar een bestaand virtueel netwerk](#migrate-the-managed-domain) | PowerShell | 1 – 3 uur gemiddeld | Er is één domein controller beschikbaar zodra deze opdracht is voltooid. | Bij fouten zijn zowel terugdraaien (Self-Service) als herstel beschikbaar. |
+| [Stap 4: testen en wachten op de replica domein controller](#test-and-verify-connectivity-after-the-migration)| Power shell en Azure Portal | 1 uur of langer, afhankelijk van het aantal tests | Beide domein controllers zijn beschikbaar en moeten normaal functioneren, downtime eindigt. | N.v.t. Zodra de eerste virtuele machine is gemigreerd, is er geen optie voor terugdraaien of herstellen. |
 | [Stap 5-optionele configuratie stappen](#optional-post-migration-configuration-steps) | Azure Portal en Vm's | N.v.t. | Geen downtime vereist | N.v.t. |
 
 > [!IMPORTANT]
@@ -262,16 +262,14 @@ In deze fase kunt u eventueel andere bestaande resources verplaatsen vanuit het 
 
 ## <a name="test-and-verify-connectivity-after-the-migration"></a>De connectiviteit na de migratie testen en controleren
 
-Het kan enige tijd duren voordat de tweede domein controller is geïmplementeerd en beschikbaar is voor gebruik in het beheerde domein.
+Het kan enige tijd duren voordat de tweede domein controller is geïmplementeerd en beschikbaar is voor gebruik in het beheerde domein. De tweede domein controller moet beschikbaar zijn 1-2 uur nadat de migratie-cmdlet is voltooid. Met het Resource Manager-implementatie model worden de netwerk bronnen voor het beheerde domein weer gegeven in de Azure Portal of Azure PowerShell. Als u wilt controleren of de tweede domein controller beschikbaar is, bekijkt u de **Eigenschappen** pagina voor het beheerde domein in het Azure Portal. Als er twee IP-adressen worden weer gegeven, is de tweede domein controller klaar.
 
-Met het Resource Manager-implementatie model worden de netwerk bronnen voor het beheerde domein weer gegeven in de Azure Portal of Azure PowerShell. Zie [netwerk bronnen die worden gebruikt door Azure AD DS][network-resources]voor meer informatie over deze netwerk bronnen en.
-
-Wanneer ten minste één domein controller beschikbaar is, voert u de volgende configuratie stappen uit voor netwerk connectiviteit met Vm's:
+Nadat de tweede domein controller beschikbaar is, voert u de volgende configuratie stappen uit voor netwerk connectiviteit met Vm's:
 
 * **DNS-server instellingen bijwerken** Als u wilt dat andere resources in het virtuele netwerk van Resource Manager het beheerde domein omzetten en gebruiken, werkt u de DNS-instellingen bij met de IP-adressen van de nieuwe domein controllers. De Azure Portal kan deze instellingen automatisch voor u configureren.
 
     Zie [DNS-instellingen bijwerken voor het virtuele Azure-netwerk][update-dns]voor meer informatie over het configureren van het virtuele netwerk van Resource Manager.
-* **Opnieuw op domein gebaseerde Vm's opnieuw opstarten** : als de IP-adressen van de DNS-server voor de AD DS domein controllers van Azure worden gewijzigd, start u alle vm's die zijn gekoppeld aan het domein opnieuw op, zodat ze de nieuwe DNS-server instellingen gebruiken. Als toepassingen of Vm's hand matig geconfigureerde DNS-instellingen hebben, moet u ze hand matig bijwerken met de nieuwe IP-adressen van de DNS-server van de domein controllers die worden weer gegeven in de Azure Portal.
+* **Opnieuw op domein gekoppelde Vm's opnieuw starten (optioneel)** Als de IP-adressen van de DNS-server voor de AD DS domein controllers van Azure worden gewijzigd, kunt u alle Vm's die zijn gekoppeld aan een domein opnieuw opstarten, zodat ze vervolgens de nieuwe DNS-server instellingen gebruiken. Als toepassingen of Vm's hand matig geconfigureerde DNS-instellingen hebben, moet u ze hand matig bijwerken met de nieuwe IP-adressen van de DNS-server van de domein controllers die worden weer gegeven in de Azure Portal. Het opnieuw opstarten van een domein gekoppelde Vm's voor komt verbindings problemen die worden veroorzaakt door IP-adressen die niet worden vernieuwd.
 
 Test nu de verbinding met het virtuele netwerk en de naam omzetting. Voer de volgende netwerk communicatie tests uit op een VM die is verbonden met het virtuele netwerk van Resource Manager of hieraan is gekoppeld:
 
@@ -280,7 +278,7 @@ Test nu de verbinding met het virtuele netwerk en de naam omzetting. Voer de vol
 1. Controleer de naam omzetting van het beheerde domein, zoals `nslookup aaddscontoso.com`
     * Geef de DNS-naam voor uw eigen beheerde domein op om te controleren of de DNS-instellingen juist zijn en worden omgezet.
 
-De tweede domein controller moet beschikbaar zijn 1-2 uur nadat de migratie-cmdlet is voltooid. Als u wilt controleren of de tweede domein controller beschikbaar is, bekijkt u de **Eigenschappen** pagina voor het beheerde domein in het Azure Portal. Als er twee IP-adressen worden weer gegeven, is de tweede domein controller klaar.
+Zie [netwerk bronnen die door Azure AD DS worden gebruikt][network-resources]voor meer informatie over andere netwerk bronnen.
 
 ## <a name="optional-post-migration-configuration-steps"></a>Optionele configuratie stappen na de migratie
 

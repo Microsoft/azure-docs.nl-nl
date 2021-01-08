@@ -3,16 +3,15 @@ title: Verwerking van real-time gebeurtenis met Azure Stream Analytics
 description: In dit artikel wordt de referentie architectuur beschreven voor het uitvoeren van real-time gebeurtenis verwerking en-analyse met behulp van Azure Stream Analytics.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/24/2017
-ms.openlocfilehash: 0aa489e1732a8be564b3cefe1ed74d7aaacb1456
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 858ec5fef065acba6934945a96c21fb1c26b3685
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124421"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012084"
 ---
 # <a name="reference-architecture-real-time-event-processing-with-microsoft-azure-stream-analytics"></a>Referentie architectuur: verwerking van realtime-gebeurtenissen met Microsoft Azure Stream Analytics
 De referentie architectuur voor de verwerking van realtime-gebeurtenissen met Azure Stream Analytics is bedoeld om een algemene blauw druk te bieden voor het implementeren van een realtime platform as a Service (PaaS)-stroom verwerkings oplossing met Microsoft Azure.
@@ -43,7 +42,7 @@ Microsoft Azure biedt een uitgebreide catalogus met analyse technologieën die o
 
 **Downloaden:** [verwerking van Real-Time gebeurtenis met Microsoft Azure stream Analytics](https://download.microsoft.com/download/6/2/3/623924DE-B083-4561-9624-C1AB62B5F82B/real-time-event-processing-with-microsoft-azure-stream-analytics.pdf)
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 Voor verdere hulp gaat u naar de [pagina van micro soft Q&een vraag voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html)
 
 ## <a name="next-steps"></a>Volgende stappen

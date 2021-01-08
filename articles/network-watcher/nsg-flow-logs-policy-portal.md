@@ -10,22 +10,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/01/2020
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 54b87da73d4427234e65e406d183525d55c6c00d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8da1130809c1802f4db963f4b4b000a848e9abaa
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948541"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011098"
 ---
 # <a name="quickstart-deploy-and-manage-nsg-flow-logs-using-azure-policy"></a>Quick Start: NSG-stroom logboeken implementeren en beheren met behulp van Azure Policy 
 
 ## <a name="overview"></a>Overzicht
-Met Azure Policy kunt u organisatiestandaarden afdwingen en compliance op schaal beoordelen. Veelvoorkomende use-cases voor Azure Policy zijn onder andere het implementeren van governance voor consistentie van resources, naleving van de regelgeving, beveiliging, kosten en beheer. In dit artikel gebruiken we twee ingebouwde beleids regels die beschikbaar zijn voor NSG-stroom Logboeken om de installatie van uw stroom logboeken te beheren. Het eerste beleid markeert alle Nsg's zonder dat er stroom logboeken zijn ingeschakeld. Het tweede beleid implementeert automatisch stroom logboeken voor Nsg's zonder dat er stroom logboeken zijn ingeschakeld. 
+Azure Policy helpt bij het afdwingen van organisatiestandaarden en bij het beoordelen van de naleving op schaal. Veelvoorkomende use-cases voor Azure Policy zijn onder andere het implementeren van governance voor consistentie van resources, naleving van de regelgeving, beveiliging, kosten en beheer. In dit artikel gebruiken we twee ingebouwde beleids regels die beschikbaar zijn voor NSG-stroom Logboeken om de installatie van uw stroom logboeken te beheren. Het eerste beleid markeert alle Nsg's zonder dat er stroom logboeken zijn ingeschakeld. Het tweede beleid implementeert automatisch stroom logboeken voor Nsg's zonder dat er stroom logboeken zijn ingeschakeld. 
 
 Als u voor de eerste keer een Azure-beleid maakt, kunt u het volgende lezen: 
-- [Overzicht van Azure Policy](../governance/policy/overview.md) 
+- [Overzicht van Azure-beleid](../governance/policy/overview.md) 
 - [Zelf studie voor het maken van beleid](../governance/policy/assign-policy-portal.md#create-a-policy-assignment).
 
 

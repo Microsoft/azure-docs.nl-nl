@@ -1,18 +1,17 @@
 ---
 title: Real-time IoT-gegevens stromen verwerken met Azure Stream Analytics
 description: IoT-sensortags en -gegevensstromen met Stream Analytics en realtime-gegevensverwerking
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/26/2019
-ms.openlocfilehash: 311aca139220622a0436d490e73a536c3fc898c9
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: a438401ff93c20d8759e6128936c3626bd3de484
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129011"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012679"
 ---
 # <a name="process-real-time-iot-data-streams-with-azure-stream-analytics"></a>Real-time IoT-gegevens stromen verwerken met Azure Stream Analytics
 
@@ -44,13 +43,13 @@ Voor het gebruiksgemak biedt deze introductiehandleiding een bestand met voorbee
 
 ## <a name="create-a-stream-analytics-job"></a>Een Stream Analytics-taak maken
 
-1. Selecteer in de [Azure Portal](https://portal.azure.com) **+ een resource maken** in het navigatie menu aan de linkerkant. Selecteer vervolgens **Stream Analytics taak** uit **Analytics** .
+1. Selecteer in de [Azure Portal](https://portal.azure.com) **+ een resource maken** in het navigatie menu aan de linkerkant. Selecteer vervolgens **Stream Analytics taak** uit **Analytics**.
    
     ![Een nieuwe Stream Analytics-taak maken](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)
 
 1. Voer een unieke taaknaam in en controleer of het abonnement het juiste abonnement is voor de taak. Maak een nieuwe resource groep of selecteer een bestaande in uw abonnement.
 
-1. Selecteer een locatie voor uw taak. Gebruik dezelfde locatie voor de resource groep en alle resources om de verwerkings snelheid te verhogen en de kosten te verlagen. Nadat u de configuraties hebt gemaakt, selecteert u **maken** .
+1. Selecteer een locatie voor uw taak. Gebruik dezelfde locatie voor de resource groep en alle resources om de verwerkings snelheid te verhogen en de kosten te verlagen. Nadat u de configuraties hebt gemaakt, selecteert u **maken**.
    
     ![Details van het maken van een nieuwe Stream Analytics-taak](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03.png)
 
@@ -60,7 +59,7 @@ De volgende stap na het maken van de taak is het schrijven van een query. U kunt
 Down load de [HelloWorldASA-InputStream.jsop](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json
 ) van github. Ga vervolgens naar uw Azure Stream Analytics-taak in de Azure Portal.
 
-Selecteer **query** onder **taak topologie** in het menu links. Selecteer vervolgens **voorbeeld invoer uploaden** . Upload het `HelloWorldASA-InputStream.json` bestand en selecteer **OK** .
+Selecteer **query** onder **taak topologie** in het menu links. Selecteer vervolgens **voorbeeld invoer uploaden**. Upload het `HelloWorldASA-InputStream.json` bestand en selecteer **OK**.
 
 ![Tegel Stream Analytics dashboard query](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-05.png)
 
@@ -125,7 +124,7 @@ HAVING Avg(temp)>100
 
 ![30-secondenfilterquery](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-10.png)
 
-U ziet resultaten die slechts 245 rijen en namen van Sens oren bevatten waarbij de gemiddelde Tempe ratuur aangeven groter is dan 100. In deze query wordt de stroom gebeurtenissen gegroepeerd op **dspl** , de sensornaam, en voor een **tumblingvenster** van 30 seconden. Tijdelijke query's moeten aangeven hoe de tijd moet worden uitgevoerd. Als u de **time stamp by** -component gebruikt, hebt u de kolom **OUTPUTTIME** opgegeven om tijden te koppelen aan alle tijdelijke berekeningen. Meer informatie over [time management](/stream-analytics-query/time-management-azure-stream-analytics) en [windowing functions](/stream-analytics-query/windowing-azure-stream-analytics)vindt u in.
+U ziet resultaten die slechts 245 rijen en namen van Sens oren bevatten waarbij de gemiddelde Tempe ratuur aangeven groter is dan 100. In deze query wordt de stroom gebeurtenissen gegroepeerd op **dspl**, de sensornaam, en voor een **tumblingvenster** van 30 seconden. Tijdelijke query's moeten aangeven hoe de tijd moet worden uitgevoerd. Als u de **time stamp by** -component gebruikt, hebt u de kolom **OUTPUTTIME** opgegeven om tijden te koppelen aan alle tijdelijke berekeningen. Meer informatie over [time management](/stream-analytics-query/time-management-azure-stream-analytics) en [windowing functions](/stream-analytics-query/windowing-azure-stream-analytics)vindt u in.
 
 ### <a name="query-detect-absence-of-events"></a>Query: detecteren van afwezigheid van gebeurtenissen
 
@@ -148,7 +147,7 @@ WHERE t2.dspl IS NULL
 
 ![Detecteren van afwezigheid van gebeurtenissen](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-11.png)
 
-We gebruiken hier een **LEFT OUTER** -join voor dezelfde gegevensstroom (self-join). Voor een **INNER** -join wordt alleen een resultaat geretourneerd wanneer een overeenkomst is gevonden.  Als in geval van een **LEFT OUTER** -join geen overeenkomst wordt gevonden met een gebeurtenis vanaf de linkerkant van de join, wordt een rij met NULL voor alle kolommen in de rechterkant geretourneerd. Deze techniek is heel nuttig om de afwezigheid van gebeurtenissen op te sporen. Zie voor meer informatie [samen voegen](/stream-analytics-query/join-azure-stream-analytics).
+We gebruiken hier een **LEFT OUTER**-join voor dezelfde gegevensstroom (self-join). Voor een **INNER**-join wordt alleen een resultaat geretourneerd wanneer een overeenkomst is gevonden.  Als in geval van een **LEFT OUTER**-join geen overeenkomst wordt gevonden met een gebeurtenis vanaf de linkerkant van de join, wordt een rij met NULL voor alle kolommen in de rechterkant geretourneerd. Deze techniek is heel nuttig om de afwezigheid van gebeurtenissen op te sporen. Zie voor meer informatie [samen voegen](/stream-analytics-query/join-azure-stream-analytics).
 
 ## <a name="conclusion"></a>Conclusie
 

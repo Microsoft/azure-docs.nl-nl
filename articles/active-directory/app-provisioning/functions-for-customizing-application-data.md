@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: fe18513bbfc69fb63f8b1b248b7cf02ad55b467d
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 462f60bbae9fd7b61993a2ccccd40fa5ca4ccc28
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027370"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012964"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Naslag informatie voor het schrijven van expressies voor kenmerk toewijzingen in azure AD
 
@@ -326,8 +326,8 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 | **geschreven** |Vereist |Kenmerk |Kenmerk met meerdere waarden dat moet worden doorzocht |
 | **TabIndex** |Vereist |Geheel getal | Index naar een item in de teken reeks met meerdere waarden|
 
-**Hierbij**
-`Item([proxyAddresses], 1)`
+**Voor beeld:** 
+ `Item([proxyAddresses], 1)` retourneert het tweede item in het kenmerk met meerdere waarden.
 
 ---
 ### <a name="join"></a>Koppelen

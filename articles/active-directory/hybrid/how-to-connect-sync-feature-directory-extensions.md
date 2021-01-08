@@ -16,12 +16,12 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74bc659c11c4f43ab3cf85cdc53f704cd07a1cde
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 25d4152783129fa1c5950d6cf6287332bf90d32a
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172364"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976874"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Azure AD Connect synchronisatie: Directory-extensies
 U kunt Directory-extensies gebruiken om het schema uit te breiden in Azure Active Directory (Azure AD) met uw eigen kenmerken van on-premises Active Directory. Met deze functie kunt u LOB-apps bouwen door gebruik te maken van kenmerken die u on-premises blijft beheren. Deze kenmerken kunnen worden gebruikt via [uitbrei dingen](/graph/extensibility-overview
@@ -46,7 +46,7 @@ In de installatie worden de volgende kenmerken weer gegeven. Dit zijn geldige ka
 
 
 >[!NOTE]
-> Hoewel Azure AD Connect ondersteuning biedt voor het synchroniseren van kenmerken met meerdere waarden Active Directory naar Azure AD als Directory-extensies met meerdere waarden, is er momenteel geen manier om de gegevens op te halen/te gebruiken die zijn geüpload in kenmerken van Directory-extensies met meerdere waarden.
+> Nadat Azure AD Connect gesynchroniseerd kenmerk met meerdere waarden Active Directory naar Azure AD als een uitbrei ding met meerdere waarden is toegevoegd, is het mogelijk om een kenmerk toe te voegen aan de SAML-claim. Maar het is niet mogelijk om deze gegevens via een API-aanroep te gebruiken.
 
 De lijst met kenmerken wordt gelezen uit de schema cache die is gemaakt tijdens de installatie van Azure AD Connect. Als u het Active Directory schema met aanvullende kenmerken hebt uitgebreid, moet u [het schema vernieuwen](how-to-connect-installation-wizard.md#refresh-directory-schema) voordat deze nieuwe kenmerken zichtbaar zijn.
 

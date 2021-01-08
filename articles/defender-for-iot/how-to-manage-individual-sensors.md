@@ -1,5 +1,5 @@
 ---
-title: Afzonderlijke Sens oren beheren
+title: Afzonderlijke sensoren beheren
 description: Meer informatie over het beheren van afzonderlijke Sens oren, waaronder het beheren van activerings bestanden, het uitvoeren van back-ups en het bijwerken van een zelfstandige sensor.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/22/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 87bc3b172fdbd99130dbb36cceb5f3d16fc39dbd
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: daaca1d7c6cf43f69241e6a23f8bdfaf4015ba23
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839883"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976942"
 ---
-# <a name="manage-individual-sensors"></a>Afzonderlijke Sens oren beheren
+# <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
 In dit artikel wordt beschreven hoe u afzonderlijke Sens oren beheert. Taken omvatten het beheren van activerings bestanden, het uitvoeren van back-ups en het bijwerken van een zelfstandige sensor.
 
@@ -426,8 +426,6 @@ U kunt waarschuwingen door sturen naar derden om informatie te geven over:
 - Niet-verbonden Sens oren
 
 - Externe back-upfouten
-
-:::image type="content" source="media/how-to-work-with-system-notifications/image81.png" alt-text="Scherm afbeelding van de weer gave e-mail status van beheer systeem.] (Media/image80.png)! [Scherm afbeelding van de status van het beheer systeem weer geven":::
 
 Deze informatie wordt verzonden wanneer u een doorstuur regel voor systeem meldingen maakt.
 

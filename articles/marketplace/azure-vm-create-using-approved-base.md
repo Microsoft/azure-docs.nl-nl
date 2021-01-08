@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: emuench
 ms.author: krsh
-ms.date: 10/20/2020
-ms.openlocfilehash: 74cab14cd162ba608a9c5d0168485e9055661f55
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.date: 01/06/2021
+ms.openlocfilehash: 9164c1e2542024a02bf4868658d0f29728f32c7b
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590784"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976857"
 ---
 # <a name="how-to-create-a-virtual-machine-using-an-approved-base"></a>Een virtuele machine maken met behulp van een goedgekeurde basis
 
@@ -40,15 +40,11 @@ Azure biedt een scala aan goedgekeurde Linux-distributies. Zie voor een actuele 
 2. Selecteer **Virtuele machines**.
 3. Selecteer **+ toevoegen** om het scherm **een virtuele machine maken** te openen.
 4. Selecteer de installatie kopie in de vervolg keuzelijst of selecteer **Bladeren alle open bare en persoonlijke installatie kopieën** om te zoeken of door alle beschik bare installatie kopieën van virtuele machines te bladeren.
-5. Als u een virtuele machine van **generatie 1** wilt maken, gaat u naar het tabblad **schijven** en stelt u de optie **Managed Disk gebruiken** in op **Nee** zodat u de VHD van uw virtuele machine in het opgegeven opslag account kunt ophalen
-
-   :::image type="content" source="media/create-vm/create-virtual-machine-sizes-2.png" alt-text="Selecteer niet-beheerde schijf.":::
-   
-6. Als u een virtuele machine van **generatie 2** wilt maken, gaat u naar het tabblad **Geavanceerd** en selecteert u de optie **generatie 2** .
+5. Als u een virtuele machine van **generatie 2** wilt maken, gaat u naar het tabblad **Geavanceerd** en selecteert u de optie **generatie 2** .
 
     :::image type="content" source="media/create-vm/vm-gen-option.png" alt-text="Selecteer gen 1 of gen 2.":::
 
-7. Selecteer de grootte van de virtuele machine die u wilt implementeren.
+6. Selecteer de grootte van de virtuele machine die u wilt implementeren.
 
     :::image type="content" source="media/create-vm/create-virtual-machine-sizes.png" alt-text="Selecteer een aanbevolen VM-grootte voor de geselecteerde installatie kopie.":::
 
@@ -56,7 +52,6 @@ Azure biedt een scala aan goedgekeurde Linux-distributies. Zie voor een actuele 
 8. Selecteer **beoordeling + maken** om uw keuzes te controleren. Wanneer het bericht **door gegeven validatie** wordt weer gegeven, selecteert u  **maken**.
 
 Azure begint met het inrichten van de virtuele machine die u hebt opgegeven. Volg de voortgang van de taak door het tabblad **virtual machines** te selecteren in het menu links. Nadat deze is gemaakt, wordt de status van de virtuele machine gewijzigd in **actief**.
-
 
 ## <a name="configure-the-vm"></a>De virtuele machine configureren
 

@@ -1,18 +1,18 @@
 ---
-title: Werken met de kaart voor sensor apparaten
+title: Werken met een sensorapparaatkaart
 description: De apparaattoewijzing biedt een grafische weer gave van de gedetecteerde netwerk apparaten. Gebruik de kaart voor het analyseren en beheren van apparaatgegevens, netwerk segmenten en het genereren van rapporten.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/07/2020
+ms.date: 1/7/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: dd0f28411dccab1a1dd36fbd01d2d1acbcc689e0
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: fd1721060bdc4b18f324a94f7c367bacde6ed4e8
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841354"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976755"
 ---
 # <a name="investigate-sensor-detections-in-the-device-map"></a>Detectie van sensors in de apparaattoewijzing onderzoeken
 
@@ -59,7 +59,7 @@ Elk subnet wordt weer gegeven als één entiteit op de apparaattoewijzing, inclu
 
 In de afbeelding hieronder ziet u een samengevouwen IT-subnet met 27 IT-netwerk elementen.
 
-:::image type="content" source="media/how-to-work-with-maps/shrunk-it-subnet.png" alt-text="een IT-subnet samengevouwen met 27 IT-netwerk elementen":::
+:::image type="content" source="media/how-to-work-with-maps/shrunk-it-subnet-v2.png" alt-text="een IT-subnet samengevouwen met 27 IT-netwerk elementen":::
 
 De functie voor het samen vouwen van IT-netwerken inschakelen:
 
@@ -120,7 +120,7 @@ De volgende vooraf gedefinieerde groepen zijn beschikbaar:
 
 | Groepsnaam | Beschrijving |
 |--|--|
-| **Bekende toepassingen of niet-standrad-poorten (standaard)** | Apparaten die gebruikmaken van gereserveerde poorten, zoals TCP. Apparaten die gebruikmaken van niet-standaard poorten of poorten waaraan geen alias is toegewezen. |
+| **Bekende toepassingen of niet-standaard poorten (standaard)** | Apparaten die gebruikmaken van gereserveerde poorten, zoals TCP. Apparaten die gebruikmaken van niet-standaard poorten of poorten waaraan geen alias is toegewezen. |
 | **OT protocollen (standaard)** | Apparaten die het verkeer verwerken. |
 | **Autorisatie (standaard)** | Apparaten die in het netwerk zijn gedetecteerd tijdens het trainings proces of die zijn toegevoegd aan het netwerk |
 | **Filters voor de inventarisatie van apparaten** | Apparaten gegroepeerd op basis van de filters worden opgeslagen in de inventarisatie tabel van het apparaat. |
@@ -226,7 +226,7 @@ Het pictogram apparaattype wordt weer gegeven met verbonden apparaten.
 
 In de gedetailleerde weer gave worden de labels en indica toren voor apparaten en apparaten en de volgende informatie gegeven:
 
-:::image type="content" source="media/how-to-work-with-maps/device-map.png" alt-text="Detailweergave":::
+:::image type="content" source="media/how-to-work-with-maps/device-map-v2.png" alt-text="Detailweergave":::
 
 ### <a name="control-the-zoom-view"></a>De zoom weergave bepalen
 
@@ -236,7 +236,7 @@ Welke kaart weergave wordt weer gegeven, is afhankelijk van het zoom niveau van 
 
 ### <a name="enable-simplified-zoom-views"></a>Vereenvoudigde zoom weergaven inschakelen
 
-Beheerders die beveiligings analisten en RO-gebruikers de mogelijkheid wilt geven om toegang te krijgen tot Brid-en apparaat-en type verbindings weergaven, moeten de vereenvoudigde weergave optie inschakelen.
+Beheerders die beveiligings analisten en RO-gebruikers de mogelijkheid wilt geven om toegang te krijgen tot vogel-en apparaat-en type verbindings weergaven, moeten de vereenvoudigde weergave optie inschakelen.
 
 Vereenvoudigde kaart weergaven inschakelen:
 
@@ -359,7 +359,7 @@ De volgende tabel bevat alle typen van het systeem:
 | Categorie | Apparaattype |
 |--|--|
 | DELEN | Technisch station <br /> PLC <br />Historian <br />HMI <br />Kopieer <br />DCS-controller <br />RTU <br />Industrieel verpakkings systeem <br />Industrieel schalen <br />Industriële robot <br />Sleuf <br />Meter <br />Variabel frequentie station  <br />Robot-controller <br />Servo-station <br />Pneumatisch apparaat <br />Baldakijn |
-| IT | Domeincontroller <br />DB-server <br />Werkstation <br />Server <br />Terminal station <br />Opslag <br />Smartphone <br />Tablet <br />Back-upserver |
+| IT | Domeincontroller <br />DB-server <br />Werkstation <br />Server <br />Terminal station <br />Storage <br />Smartphone <br />Tablet <br />Back-upserver |
 | IoT | IP-camera <br />Printer  <br />Perforatie Clock <br />Geldautomaat <br />Slimme TV <br />Game console <br />DVR <br />Configuratie scherm van deur <br />LOGISCHE <br />Thermostaat <br />Brand wekker <br />Slim licht <br />Slimme switch <br />Fire detector <br />IP-telefoon <br />Alarm systeem <br />Alarm Siren <br />Bewegingsherkenning <br />Korte <br />Vochtigheids sensor <br />Streepjescodescanner <br />Uninterruptible Power Supply <br />Bezoekers tellersysteem <br />Intercom <br />Streep |
 | Netwerk | Draadloos Toegangs punt <br />Router <br />Switch <br />Firewall <br />VPN Gateway <br />NTP-server <br />WiFi-ananas <br />Fysieke locatie <br />I/O-adapter <br /> Protocol conversie |
 

@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: a0abbacc55cff2f561323a22dd83311c87b1511d
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 90debef39b3e657bf96221dfaf5fa762d332a364
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584490"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976517"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -1217,7 +1217,7 @@ Stappen van de stroom voor het verlenen van de OAuth-code:
 > [!NOTE]
 > Het is momenteel niet mogelijk om OAuth in te stellen op een niet-galerie toepassing, maar u kunt handmatig een toegangstoken genereren op basis van uw autorisatieserver en deze invoeren in het geheime tokenveld van de niet-galerie toepassing. Hiermee kunt u de compatibiliteit van uw SCIM-server controleren met de Azure AD SCIM-client voordat u de app-galerie uitschakelt, die ondersteuning biedt voor de OAuth-codetoekenning.  
 
-**OAuth Bearer-tokens met lange levensduur:** Als uw toepassing geen ondersteuning biedt voor de overdrachtsstroom van de OAuth-autorisatiecode, kunt u ook een OAuth Bearer-token met lange levensduur genereren die een beheerder vervolgens kan gebruiken om de inrichtingsintegratie in te stellen. Het token moet permanent zijn, anders wordt de inrichtingstaak [in quarantaine geplaatst](application-provisioning-quarantine-status.md) wanneer het token verloopt. Dit token moet kleiner zijn dan 1kb.  
+**OAuth Bearer-tokens met lange levensduur:** Als uw toepassing geen ondersteuning biedt voor de overdrachtsstroom van de OAuth-autorisatiecode, kunt u ook een OAuth Bearer-token met lange levensduur genereren die een beheerder vervolgens kan gebruiken om de inrichtingsintegratie in te stellen. Het token moet permanent zijn, anders wordt de inrichtingstaak [in quarantaine geplaatst](application-provisioning-quarantine-status.md) wanneer het token verloopt.
 
 Voor aanvullende verificatie- en autorisatie methoden, kunt u ons benaderen via [UserVoice](https://aka.ms/appprovisioningfeaturerequest).
 

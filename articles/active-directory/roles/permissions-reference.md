@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d634978333e2b833324228fb0908cfba61a786d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 0d04f2d1717e1d95f8bcafb8f72f2b0a2f83a248
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919742"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976823"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -1434,6 +1434,14 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 
 | **Acties** | **Beschrijving** |
 | --- | --- |
+| micro soft. Directory/toepassingen/appRoles/update | App-rollen beheren en gedelegeerde machtigingen aanvragen voor toepassingen. |
+| micro soft. Directory/toepassingen/publiek/update | Doel groep voor alle typen toepassingen bijwerken. |
+| microsoft.directory/applications/authentication/update | Verificatie voor alle typen toepassingen bijwerken. |
+| micro soft. Directory/toepassingen/basis/bijwerken | Basis eigenschappen van alle typen toepassingen bijwerken. |
+| microsoft.directory/applications/credentials/update | Referenties bijwerken voor alle typen toepassingen. |
+| micro soft. Directory/toepassingen/eigen aren/bijwerken | Werk eigen aars bij voor alle typen toepassingen. |
+| micro soft. Directory/toepassingen/machtigingen/bijwerken | De weer gegeven machtigingen en de vereiste machtigingen voor alle typen toepassingen bijwerken. |
+| micro soft. Directory/toepassingen/beleid/update | Werk de eigenschap Applications. policies bij in Azure Active Directory. |
 | micro soft. map/Contacts/basis/update | Basis eigenschappen van contact personen in Azure Active Directory bijwerken. |
 | micro soft. map/Contacts/maken | Maak contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/verwijderen | Verwijder contact personen in Azure Active Directory. |
@@ -1467,6 +1475,14 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 
 | **Acties** | **Beschrijving** |
 | --- | --- |
+| micro soft. Directory/toepassingen/appRoles/update | App-rollen beheren en gedelegeerde machtigingen aanvragen voor toepassingen. |
+| micro soft. Directory/toepassingen/publiek/update | Doel groep voor alle typen toepassingen bijwerken. |
+| microsoft.directory/applications/authentication/update | Verificatie voor alle typen toepassingen bijwerken. |
+| micro soft. Directory/toepassingen/basis/bijwerken | Basis eigenschappen van alle typen toepassingen bijwerken. |
+| microsoft.directory/applications/credentials/update | Referenties bijwerken voor alle typen toepassingen. |
+| micro soft. Directory/toepassingen/eigen aren/bijwerken | Werk eigen aars bij voor alle typen toepassingen. |
+| micro soft. Directory/toepassingen/machtigingen/bijwerken | De weer gegeven machtigingen en de vereiste machtigingen voor alle typen toepassingen bijwerken. |
+| micro soft. Directory/toepassingen/beleid/update | Werk de eigenschap Applications. policies bij in Azure Active Directory. |
 | micro soft. map/Contacts/basis/update | Basis eigenschappen van contact personen in Azure Active Directory bijwerken. |
 | micro soft. map/Contacts/maken | Maak contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/verwijderen | Verwijder contact personen in Azure Active Directory. |

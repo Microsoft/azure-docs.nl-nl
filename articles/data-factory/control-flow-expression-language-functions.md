@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2019
-ms.openlocfilehash: 3c966f0efc51a3b2fa8908e060b4031ae1ad1e50
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1b10146e59cefb17ff267eb0b470dd83004a7c2a
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500016"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976568"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Expressies en functies in Azure Data Factory
 
@@ -178,15 +178,15 @@ Als u wilt werken met verzamelingen, meestal matrices, teken reeksen en soms, wo
 
 | Functie verzameling | Taak |
 | ------------------- | ---- |
-| [daarin](control-flow-expression-language-functions.md#contains) | Controleer of een verzameling een specifiek item heeft. |
-| [gelaten](control-flow-expression-language-functions.md#empty) | Controleer of een verzameling leeg is. |
+| [contains](control-flow-expression-language-functions.md#contains) | Controleer of een verzameling een specifiek item heeft. |
+| [leeg](control-flow-expression-language-functions.md#empty) | Controleer of een verzameling leeg is. |
 | [instantie](control-flow-expression-language-functions.md#first) | Het eerste item van een verzameling retour neren. |
 | [Snij punt](control-flow-expression-language-functions.md#intersection) | Een verzameling retour neren die *alleen* de gemeen schappelijke items in de opgegeven verzamelingen heeft. |
 | [Jointypen](control-flow-expression-language-functions.md#join) | Retourneert een teken reeks met *alle* items uit een matrix, gescheiden door het opgegeven teken. |
 | [duren](control-flow-expression-language-functions.md#last) | Het laatste item van een verzameling retour neren. |
 | [length](control-flow-expression-language-functions.md#length) | Retourneert het aantal items in een teken reeks of matrix. |
 | [verdergaan](control-flow-expression-language-functions.md#skip) | Verwijder items van de voor kant van een verzameling en retour neer *alle andere* items. |
-| [take](control-flow-expression-language-functions.md#take) | Items van de voor grond van een verzameling retour neren. |
+| [Houd](control-flow-expression-language-functions.md#take) | Items van de voor grond van een verzameling retour neren. |
 | [Réunion](control-flow-expression-language-functions.md#union) | Een verzameling retour neren die *alle* items uit de opgegeven verzamelingen bevat. | 
 
 ## <a name="logical-functions"></a>Logische functies  
@@ -217,12 +217,12 @@ Deze functies zijn handig in voor waarden en kunnen worden gebruikt om elk type 
 
 | Conversie functie | Taak |
 | ------------------- | ---- |
-| [matrix](control-flow-expression-language-functions.md#array) | Een matrix retour neren van een enkele opgegeven invoer. Zie [createArray](control-flow-expression-language-functions.md#createArray)voor meerdere invoer. |
+| [array](control-flow-expression-language-functions.md#array) | Een matrix retour neren van een enkele opgegeven invoer. Zie [createArray](control-flow-expression-language-functions.md#createArray)voor meerdere invoer. |
 | [base64](control-flow-expression-language-functions.md#base64) | Retourneert de met base64 gecodeerde versie voor een teken reeks. |
 | [base64ToBinary](control-flow-expression-language-functions.md#base64ToBinary) | Retourneert de binaire versie voor een base64-gecodeerde teken reeks. |
 | [base64ToString](control-flow-expression-language-functions.md#base64ToString) | Retourneert de versie van de teken reeks voor een base64-gecodeerde teken reeks. |
 | [waarde](control-flow-expression-language-functions.md#binary) | Retourneert de binaire versie voor een invoer waarde. |
-| [booleaans](control-flow-expression-language-functions.md#bool) | Retourneert de Booleaanse versie van een invoer waarde. |
+| [BOOL](control-flow-expression-language-functions.md#bool) | Retourneert de Booleaanse versie van een invoer waarde. |
 | [Voeg](control-flow-expression-language-functions.md#coalesce) | Retourneert de eerste waarde die niet null is van een of meer para meters. |
 | [createArray](control-flow-expression-language-functions.md#createArray) | Een matrix van meerdere invoer waarden retour neren. |
 | [dataUri](control-flow-expression-language-functions.md#dataUri) | De gegevens-URI voor een invoer waarde Retour neren. |
@@ -235,7 +235,7 @@ Deze functies zijn handig in voor waarden en kunnen worden gebruikt om elk type 
 | [float](control-flow-expression-language-functions.md#float) | Retourneert een drijvende-komma waarde voor een invoer waarde. |
 | [int](control-flow-expression-language-functions.md#int) | Retourneert de versie met gehele getallen voor een teken reeks. |
 | [JSON](control-flow-expression-language-functions.md#json) | De waarde of het object van het type JavaScript Object Notation (JSON) retour neren voor een teken reeks of XML. |
-| [tekenreeks](control-flow-expression-language-functions.md#string) | Retourneert de teken reeks versie voor een invoer waarde. |
+| [tekenreeksexpressie](control-flow-expression-language-functions.md#string) | Retourneert de teken reeks versie voor een invoer waarde. |
 | [uriComponent](control-flow-expression-language-functions.md#uriComponent) | De versie van de URI-code ring retour neren voor een invoer waarde door onveilige URL-tekens te vervangen door Escape tekens. |
 | [uriComponentToBinary](control-flow-expression-language-functions.md#uriComponentToBinary) | Retourneert de binaire versie voor een teken reeks met URI-code ring. |
 | [uriComponentToString](control-flow-expression-language-functions.md#uriComponentToString) | Retourneert de versie van de teken reeks voor een teken reeks met URI-code ring. |
@@ -546,7 +546,7 @@ and(<expression1>, <expression2>)
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | -----| ----------- |
-| waar of onwaar | Boolean | Retourneert waar als beide expressies waar zijn. Retourneert onwaar wanneer ten minste één expressie onwaar is. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als beide expressies waar zijn. Retourneert onwaar wanneer ten minste één expressie onwaar is. |
 ||||
 
 *Voorbeeld 1*
@@ -755,7 +755,7 @@ bool(<value>)
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | De Booleaanse versie voor de opgegeven waarde |
+| waar of onwaar | Boolean-waarde | De Booleaanse versie voor de opgegeven waarde |
 ||||
 
 *Voorbeeld*
@@ -841,7 +841,7 @@ En retourneert dit resultaat: `"HelloWorld"`
 
 <a name="contains"></a>
 
-### <a name="contains"></a>bevat
+### <a name="contains"></a>contains
 
 Controleer of een verzameling een specifiek item heeft.
 Retourneert waar wanneer het item is gevonden, of retourneert onwaar als het niet is gevonden.
@@ -866,7 +866,7 @@ Deze functie werkt met name voor deze typen verzamelingen:
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar wanneer het item is gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
+| waar of onwaar | Boolean-waarde | Retourneert waar wanneer het item is gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
 ||||
 
 *Voorbeeld 1*
@@ -965,7 +965,7 @@ En retourneert dit resultaat: `"2018-01-01T00:00:00.0000000"`
 In dit voor beeld wordt een tijd zone geconverteerd naar de opgegeven tijd zone en notatie:
 
 ```
-convertTimeZone('2018-01-01T80:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 'D')
+convertTimeZone('2018-01-01T08:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 'D')
 ```
 
 En retourneert dit resultaat: `"Monday, January 1, 2018"`
@@ -1413,7 +1413,7 @@ empty([<collection>])
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als de verzameling leeg is. Retourneert onwaar wanneer niet leeg is. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als de verzameling leeg is. Retourneert onwaar wanneer niet leeg is. |
 ||||
 
 *Voorbeeld*
@@ -1450,7 +1450,7 @@ endsWith('<text>', '<searchText>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar  | Boolean | Retourneert waar als de laatste subtekenreeks wordt gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
+| waar of onwaar  | Boolean-waarde | Retourneert waar als de laatste subtekenreeks wordt gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
 ||||
 
 *Voorbeeld 1*
@@ -1491,7 +1491,7 @@ equals('<object1>', '<object2>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als beide gelijkwaardig zijn. Retourneert onwaar als dat niet het equivalent is. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als beide gelijkwaardig zijn. Retourneert onwaar als dat niet het equivalent is. |
 ||||
 
 *Voorbeeld*
@@ -1712,7 +1712,7 @@ greater('<value>', '<compareTo>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als de eerste waarde groter is dan de tweede waarde. Retourneert onwaar als de eerste waarde gelijk is aan of kleiner is dan de tweede waarde. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als de eerste waarde groter is dan de tweede waarde. Retourneert onwaar als de eerste waarde gelijk is aan of kleiner is dan de tweede waarde. |
 ||||
 
 *Voorbeeld*
@@ -1749,7 +1749,7 @@ greaterOrEquals('<value>', '<compareTo>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als de eerste waarde groter is dan of gelijk is aan de tweede waarde. Retourneert onwaar als de eerste waarde lager is dan de tweede waarde. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als de eerste waarde groter is dan of gelijk is aan de tweede waarde. Retourneert onwaar als de eerste waarde lager is dan de tweede waarde. |
 ||||
 
 *Voorbeeld*
@@ -2148,7 +2148,7 @@ less('<value>', '<compareTo>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als de eerste waarde lager is dan de tweede waarde. Retourneert onwaar als de eerste waarde gelijk is aan of groter is dan de tweede waarde. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als de eerste waarde lager is dan de tweede waarde. Retourneert onwaar als de eerste waarde gelijk is aan of groter is dan de tweede waarde. |
 ||||
 
 *Voorbeeld*
@@ -2185,7 +2185,7 @@ lessOrEquals('<value>', '<compareTo>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar  | Boolean | Retourneert waar als de eerste waarde kleiner is dan of gelijk is aan de tweede waarde. Retourneert onwaar als de eerste waarde groter is dan de tweede waarde. |
+| waar of onwaar  | Boolean-waarde | Retourneert waar als de eerste waarde kleiner is dan of gelijk is aan de tweede waarde. Retourneert onwaar als de eerste waarde groter is dan de tweede waarde. |
 ||||
 
 *Voorbeeld*
@@ -2353,7 +2353,7 @@ not(<expression>)
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als de expressie onwaar is. Retourneert onwaar als de expressie waar is. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als de expressie onwaar is. Retourneert onwaar als de expressie waar is. |
 ||||
 
 *Voorbeeld 1*
@@ -2402,7 +2402,7 @@ or(<expression1>, <expression2>)
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar | Boolean | Retourneert waar als ten minste één expressie waar is. Retourneert onwaar als beide expressies onwaar zijn. |
+| waar of onwaar | Boolean-waarde | Retourneert waar als ten minste één expressie waar is. Retourneert onwaar als beide expressies onwaar zijn. |
 ||||
 
 *Voorbeeld 1*
@@ -2702,7 +2702,7 @@ startsWith('<text>', '<searchText>')
 
 | Retourwaarde | Type | Beschrijving |
 | ------------ | ---- | ----------- |
-| waar of onwaar  | Boolean | Retourneert waar als de eerste subtekenreeks wordt gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
+| waar of onwaar  | Boolean-waarde | Retourneert waar als de eerste subtekenreeks wordt gevonden. Retourneert onwaar wanneer deze niet is gevonden. |
 ||||
 
 *Voorbeeld 1*

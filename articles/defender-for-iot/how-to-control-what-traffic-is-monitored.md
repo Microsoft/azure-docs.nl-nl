@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 08afba8ade30775a49492f337bb5337320b9e282
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: b2f95ddb13896ed461a20f1948fef34569586d1f
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841035"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977066"
 ---
 # <a name="control-what-traffic-is-monitored"></a>Controleren welk verkeer wordt bewaakt
 
@@ -228,7 +228,7 @@ Als u een test Asset gebruikt, controleert u of de instellingen die u hebt gedef
 
 3. Voer een adres in het **adres voor zoeken** in voor het dialoog venster **test voor achterwaartse DNS-zoek opdracht voor Server** .
 
-    :::image type="content" source="media/how-to-enrich-asset-information/dns-reverse-looup-test-screen.png" alt-text="Scherm opname van het adres gebied voor lookup.":::
+    :::image type="content" source="media/how-to-enrich-asset-information/dns-reverse-lookup-test-screen.png" alt-text="Scherm opname van het adres gebied voor lookup.":::
 
 4. Selecteer **Testen**.
 

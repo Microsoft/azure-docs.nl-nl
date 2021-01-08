@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/31/2020
 ms.author: robreed
-ms.openlocfilehash: aa95d6792f2f5754a237c7bf5e90a11e2e011ede
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: b0502fb05043a54d81d768a7809d19b108cc6248
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861785"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976840"
 ---
 # <a name="custom-script-extension-for-windows"></a>Aangepaste scriptextensie voor Windows
 
@@ -50,6 +50,8 @@ U kunt de extensie configureren voor het gebruik van uw Azure Blob Storage-refer
 ### <a name="internet-connectivity"></a>Internet verbinding
 
 Als u een script extern moet downloaden, zoals van GitHub of Azure Storage, moeten er extra firewall-en netwerk beveiligings groep poorten worden geopend. Als uw script zich bijvoorbeeld in Azure Storage bevindt, kunt u toegang toestaan met de Azure NSG-service tags voor [opslag](../../virtual-network/network-security-groups-overview.md#service-tags).
+
+Houd er rekening mee dat de CustomScript-extensie geen manier heeft om certificaat validatie te omzeilen. Dus als u downloadt vanaf een beveiligde locatie met voor beeld. een zelfondertekend certificaat is het mogelijk dat er fouten optreden als *' het externe certificaat is ongeldig volgens de validatie procedure '*. Controleer of het certificaat juist is geïnstalleerd in het archief *vertrouwde basis certificerings instanties* op de virtuele machine.
 
 Als uw script zich op een lokale server bevindt, moet u mogelijk nog steeds extra firewall-en netwerk beveiligings groep poorten openen.
 
@@ -283,7 +285,7 @@ Als u [invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke
 ```error
 The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
 ```
-## <a name="virtual-machine-scale-sets"></a>Virtuele-machineschaalsets
+## <a name="virtual-machine-scale-sets"></a>Virtual Machine Scale Sets
 
 Zie [add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension?view=azps-3.3.0) voor meer informatie over het implementeren van de aangepaste script extensie voor een schaalset.
 

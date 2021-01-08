@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/26/2020
+ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: d0cb9dc3c54f409c3bdd71fbb57c823e15abc22d
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 68a384197409115343a81aea23b0f7d42166d716
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762959"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976806"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -53,9 +53,9 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Taalmodel                                   |
 | Bulgaars (Bulgarije)               | `bg-BG` | Taalmodel                                   |
 | Catalaans (Spanje)                    | `ca-ES` | Taalmodel                                   |
-| Chinees (Kantonees, traditioneel)   | `zh-HK` | Taalmodel                                   |
+| Chinees (Kantonees, traditioneel)   | `zh-HK` | Akoestisch model<br>Taalmodel                 |
 | Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Akoestisch model<br>Taalmodel                 |
-| Chinees (Taiwan Mandarijn)       | `zh-TW` | Taalmodel                                   |
+| Chinees (Taiwan Mandarijn)       | `zh-TW` | Akoestisch model<br>Taalmodel                 |
 | Kroatisch (Kroatië)                 | `hr-HR` | Taalmodel                                   |
 | Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Taal model                                   |
 | Deens (Denemarken)                   | `da-DK` | Taalmodel                                   |
@@ -83,8 +83,8 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Hongaars (Hongarije)                | `hu-HU` | Taal model                                   |
 | Ierse (Ierland)                     | `ga-IE` | Taalmodel                                   |
 | Italiaans (Italië)                    | `it-IT` | Akoestisch model<br>Taalmodel<br>Uitspraak van|
-| Japans (Japan)                   | `ja-JP` | Taalmodel                                   |
-| Koreaans (Korea)                     | `ko-KR` | Taalmodel                                   |
+| Japans (Japan)                   | `ja-JP` | Akoestisch model<br>Taalmodel                 |
+| Koreaans (Korea)                     | `ko-KR` | Akoestisch model<br>Taalmodel                 |
 | Lets (Letland)                   | `lv-LV` | Taalmodel                                   |
 | Litouws (Litouwen)             | `lt-LT` | Taalmodel                                   |
 | Maltees (Malta)                     | `mt-MT` | Taalmodel                                   |

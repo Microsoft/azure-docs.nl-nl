@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 06/04/2020
-ms.openlocfilehash: c855be6d31a1ee46434ecadbeae7a36dd6a3ff95
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 41423ce34a62dfdbd5b9a60f683a2366a94d1bfd
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018800"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976789"
 ---
 # <a name="limits-for-your-luis-model-and-keys"></a>Limieten voor uw LUIS-model en-sleutels
 LUIS heeft verschillende limiet gebieden. De eerste is de [model limiet](#model-limits), waarmee de intenties, entiteiten en onderdelen in Luis worden beheerd. Het tweede gebied is [quotum limieten](#key-limits) op basis van het sleutel type. Een derde gebied met limieten is de [toetscombinatie voor het beheren van de Luis](#keyboard-controls) -website. Een vierde gebied is de [wereld wijde toewijzing](luis-reference-regions.md) tussen de Luis-ontwerp website en de Luis- [eindpunt](luis-glossary.md#endpoint) api's.
@@ -30,7 +30,7 @@ Als uw app de limieten voor het LUIS-model overschrijdt, kunt u overwegen een [L
 | Externe entiteiten | geen limieten |
 | [Intents][intents]|500 per toepassing: 499 aangepaste intenties en de vereiste _geen_ intentie.<br>[Op verzen ding gebaseerde](https://aka.ms/dispatch-tool) toepassing heeft corresponderende 500-verzend bronnen.|
 | [Entiteiten weergeven](./luis-concept-entity-types.md) | Bovenliggend item: 50, onderliggend: 20.000 items. Canonieke naam is * standaard teken Max. Synoniemen waarden hebben geen beperking voor lengte. |
-| [machine learning-entiteiten + rollen](./luis-concept-entity-types.md):<br> werken<br>Simple<br>entiteits rol|Een limiet van 100 bovenliggende entiteiten of 330 entiteiten, afhankelijk van het aantal gebruikers dat het eerst voor komt. Een rol telt als een entiteit voor het doel van deze limiet. Een voor beeld is een samen stelling met een eenvoudige entiteit, die twee rollen heeft: 1 composiet + 1 eenvoudige + 2 rollen = 4 van de 330 entiteiten.<br>Subentiteiten kunnen Maxi maal vijf niveaus genest zijn.|
+| [machine learning-entiteiten + rollen](./luis-concept-entity-types.md):<br> werken<br>Simple<br>entiteits rol|Een limiet van 100 bovenliggende entiteiten of 330 entiteiten, afhankelijk van het aantal gebruikers dat het eerst voor komt. Een rol telt als een entiteit voor het doel van deze limiet. Een voor beeld is een samen stelling met een eenvoudige entiteit, die twee rollen heeft: 1 composiet + 1 eenvoudige + 2 rollen = 4 van de 330 entiteiten.<br>Subentiteiten kunnen tot vijf niveaus worden genest, met een maximum van 10 onderliggende items per niveau.|
 |Model als onderdeel| Het maximum aantal modellen dat kan worden gebruikt als onderdeel van een specifiek model om 10 modellen te zijn. Het maximum aantal woordgroepen lijsten dat als een functie voor een specifiek model wordt gebruikt, is 10 woordgroepen lijsten.|
 | [Preview-dynamische lijst entiteiten](./luis-migration-api-v3.md)|2 lijsten met een eindpunt aanvraag van ongeveer 1 KB per query|
 | [Patronen](luis-concept-patterns.md)|500 patronen per toepassing.<br>De maximale lengte van het patroon is 400 tekens.<br>3 patroon. alle entiteiten per patroon<br>Maxi maal 2 geneste optionele teksten in het patroon|
@@ -108,7 +108,7 @@ Gebruik de _soort_, `LUIS` , wanneer u resources in de Azure Portal filtert. De 
 
 ## <a name="keyboard-controls"></a>Toetsenbord besturings elementen
 
-|Toetsenbord invoer | Description |
+|Toetsenbord invoer | Beschrijving |
 |--|--|
 |Control + E|scha kelen tussen tokens en entiteiten in de lijst uitingen|
 

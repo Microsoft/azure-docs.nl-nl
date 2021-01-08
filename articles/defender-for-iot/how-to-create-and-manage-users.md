@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 22d0c59110ba033232fbdf41062b49e9a146ca6f
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: c33b3e5fee19edc5d4ac85284e507b53e96234a0
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955085"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977010"
 ---
 # <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
 
@@ -224,8 +224,6 @@ Het wacht woord opnieuw instellen voor een gebruiker met Cyberx of ondersteuning
 
 1. Selecteer **uploaden** in het scherm **wacht woord herstellen** . **Het venster bestand voor wachtwoord herstel uploaden** wordt geopend.
 
-   :::image type="content" source="media/password-recovery-images/upload.png" alt-text="Upload het herstel bestand om een nieuw wacht woord op te halen.":::
-
 1. Selecteer **Bladeren** om het bestand te zoeken `password_recovery.zip` of sleep het `password_recovery.zip` naar het venster.
 
     > [!NOTE]
@@ -267,7 +265,7 @@ Het wacht woord van een gebruiker opnieuw instellen op de on-premises beheer con
 
 1. Selecteer **Bijwerken**.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [Uw sensor](how-to-activate-and-set-up-your-sensor.md) 
  activeren en instellen [Uw on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md) 

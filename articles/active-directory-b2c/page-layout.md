@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: beb38be985457ea36b2cea9a6dc337ba305d503f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 4237aba81a01423a3356a30879fbd27450c876bd
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108498"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976500"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
@@ -51,7 +51,7 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 - De focus wordt nu op het wachtwoord veld geplaatst nadat het e-mail bericht is geverifieerd.
 - Verwijderd `autofocus` uit het besturings element selectie vakje. 
 - Er is ondersteuning toegevoegd voor een weergave besturings element voor verificatie via telefoon nummer.
-- U kunt nu het `data-preload="true"` kenmerk [in uw HTML-tags] (Customize-UI-with-HTML. MD #-richt lijnen toevoegen-voor
+- U kunt het kenmerk nu `data-preload="true"` toevoegen [in uw HTML-tags](customize-ui-with-html.md#guidelines-for-using-custom-page-content)
   - Laad gekoppelde CSS-bestanden op hetzelfde moment als uw HTML-sjabloon zodat er geen Flik kering is tussen het laden van de bestanden.
   - De volg orde bepalen waarin uw `script` Tags worden opgehaald en uitgevoerd voordat de pagina wordt geladen.
 - Het veld e-mail is nu `type=email` en mobiele toetsen borden bieden de juiste suggesties.

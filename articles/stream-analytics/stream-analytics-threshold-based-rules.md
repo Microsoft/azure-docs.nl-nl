@@ -1,17 +1,17 @@
 ---
 title: Configureer bare regels op basis van drempel waarden in Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u referentie gegevens gebruikt voor het bezorgen van een waarschuwings oplossing met geconfigureerde regels voor drempel waarden in Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/30/2018
-ms.openlocfilehash: 215835bf7f1e6676adba6541da70dcb86fc3500c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f9d132084f0254486be533daea6b54239f4e450
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86039038"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019972"
 ---
 # <a name="process-configurable-threshold-based-rules-in-azure-stream-analytics"></a>Configureer bare op drempel waarden gebaseerde regels verwerken in Azure Stream Analytics
 In dit artikel wordt beschreven hoe u referentie gegevens gebruikt voor het bezorgen van een waarschuwings oplossing die gebruikmaakt van Configureer bare regels op basis van drempel waarden in Azure Stream Analytics.
@@ -34,7 +34,7 @@ In het voor beeld worden waarschuwingen gegenereerd wanneer de samen voeging van
 
 In de query, voor elk deviceId en elke metrische waarde onder het apparaat-id, kunt u van 0 tot 5 dimensies instellen op GROUP BY. Alleen de gebeurtenissen met de bijbehorende filter waarden worden gegroepeerd. Eenmaal gegroepeerde aggregaties van min, Max, Gem, worden berekend op basis van een tumblingvenstertriggers-venster van 60 seconden. Filters voor de geaggregeerde waarden worden vervolgens berekend op basis van de geconfigureerde drempel waarde in de verwijzing om de uitvoer gebeurtenis voor waarschuwingen te genereren.
 
-Stel dat er een Stream Analytics-taak is met een referentie gegevens invoer met de naam **regels**en de gegevens invoer streamen met de naam **Metrics**. 
+Stel dat er een Stream Analytics-taak is met een referentie gegevens invoer met de naam **regels** en de gegevens invoer streamen met de naam **Metrics**. 
 
 ## <a name="reference-data"></a>Referentie gegevens
 In dit voor beeld wordt uitgelegd hoe een regel op basis van een drempel waarde kan worden weer gegeven. Een JSON-bestand bevat de referentie gegevens en wordt opgeslagen in Azure Blob Storage en die Blob Storage-container wordt gebruikt als referentie gegevens invoer met de naam **regels**. U kunt dit JSON-bestand overschrijven en de regel configuratie vervangen wanneer de tijd verloopt, zonder de streaming-taak te stoppen of te starten.
@@ -71,7 +71,7 @@ In dit voor beeld wordt uitgelegd hoe een regel op basis van een drempel waarde 
 ```
 
 ## <a name="example-streaming-query"></a>Voor beeld van streaming-query
-In dit voor beeld Stream Analytics query worden toegevoegd aan de referentie gegevens van de **regel** uit het bovenstaande voor beeld naar een invoer stroom met de naam **metrische**gegevens.
+In dit voor beeld Stream Analytics query worden toegevoegd aan de referentie gegevens van de **regel** uit het bovenstaande voor beeld naar een invoer stroom met de naam **metrische** gegevens.
 
 ```sql
 WITH transformedInput AS
@@ -281,7 +281,7 @@ In dit voor beeld wordt gebruikgemaakt van de **metrische** invoer gegevens die 
 }
 ```
 
-## <a name="example-output"></a>Voorbeeld uitvoer
+## <a name="example-output"></a>Voorbeelduitvoer
 In dit voor beeld wordt een enkele waarschuwings gebeurtenis geproduceerd op basis van de CPU-drempel regel die is gedefinieerd in de referentie gegevens. De gebeurtenis output bevat de naam van de waarschuwing en de geaggregeerde (gemiddelde, min, Max) van de overwogen velden. De gegevens van de uitvoer gebeurtenis bevatten de waarde voor veld sleutel nummer 2 `NodeName` `N024` als gevolg van de regel configuratie. (De JSON is gewijzigd om regel einden weer te geven voor de Lees baarheid.)
 
 ```JSON

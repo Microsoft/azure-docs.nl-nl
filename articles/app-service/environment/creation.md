@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 12c9fd43933f9f54e013752c5fe482ce31650536
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 52a43874060748479beebc994bf0a9b663cde9dc
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95238391"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020176"
 ---
 # <a name="create-an-app-service-environment"></a>Een App Service Environment maken
 
@@ -20,10 +20,9 @@ ms.locfileid: "95238391"
 > Dit artikel heeft betrekking op de App Service Environment v3 (preview-versie)
 > 
 
-De [app service Environment (ASE)][Intro] is een implementatie van één Tenant van de app service die in uw Azure Virtual Network (VNet) wordt ingevoerd.  ASEv3 biedt alleen ondersteuning voor het beschikbaar maken van apps op een privé adres in uw Vnet. Wanneer een ASEv3 wordt gemaakt tijdens de preview, worden er drie resources aan uw abonnement toegevoegd.
+De [app service Environment (ASE)][Intro] is een implementatie van één Tenant van de app service die in uw Azure Virtual Network (VNet) wordt ingevoerd.  ASEv3 biedt alleen ondersteuning voor het beschikbaar maken van apps op een privé adres in uw Vnet. Wanneer een ASEv3 wordt gemaakt tijdens de preview, worden deze resources toegevoegd aan uw abonnement.
 
 - App Service-omgeving
-- Azure DNS privé zone
 - Privé-eindpunt
 
 Voor een implementatie van een ASE is het gebruik van twee subnetten vereist.  Het persoonlijke eind punt bevindt zich in één subnet.  Dit subnet kan worden gebruikt voor andere zaken, zoals Vm's.  Het andere subnet wordt gebruikt voor uitgaande oproepen van de ASE.  Dit subnet kan niet worden gebruikt voor iets anders dan de ASE. 

@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: network-watcher
 ms.workload: infrastructure
-ms.date: 04/20/2018
+ms.date: 01/07/2021
 ms.author: damendo
 ms.custom: ''
-ms.openlocfilehash: 362157f023f7ed4d2da81962acd32e2da968193e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6569a99ec851da478151665921e7689e1c3488f1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84738784"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020195"
 ---
 # <a name="diagnose-a-virtual-machine-network-routing-problem---azure-powershell"></a>Een probleem met de route ring van een netwerk van een virtuele machine vaststellen-Azure PowerShell
 
@@ -94,7 +94,7 @@ Get-AzNetworkWatcherNextHop `
   -DestinationIPAddress 13.107.21.200
 ```
 
-Na een paar seconden is de uitvoer informeert dat de **NextHopType** **Internet**is en dat de **RouteTableId** **systeem route**is. Dit leidt ertoe dat u weet dat er een geldige route naar de bestemming is.
+Na een paar seconden is de uitvoer informeert dat de **NextHopType** **Internet** is en dat de **RouteTableId** **systeem route** is. Dit leidt ertoe dat u weet dat er een geldige route naar de bestemming is.
 
 Uitgaande communicatie van de VM naar 172.31.0.100 testen:
 
@@ -106,7 +106,7 @@ Get-AzNetworkWatcherNextHop `
   -DestinationIPAddress 172.31.0.100
 ```
 
-De uitvoer heeft informeert dat **geen** **NextHopType**is en dat de **RouteTableId** ook **systeem routes**zijn. Hieruit kunt u afleiden dat er wel een geldige systeemroute is naar de bestemming, maar dat er geen volgende hop is voor het routeren van het verkeer naar de bestemming.
+De uitvoer heeft informeert dat **geen** **NextHopType** is en dat de **RouteTableId** ook **systeem routes** zijn. Hieruit kunt u afleiden dat er wel een geldige systeemroute is naar de bestemming, maar dat er geen volgende hop is voor het routeren van het verkeer naar de bestemming.
 
 ## <a name="view-details-of-a-route"></a>Details van een route weergeven
 

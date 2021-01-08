@@ -2,18 +2,18 @@
 title: Realtime Twitter-sentiment analyse met Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u Stream Analytics gebruikt voor realtime Twitter-sentiment analyse. Stapsgewijze richt lijnen voor het genereren van gebeurtenissen naar gegevens op een live dash board.
 services: stream-analytics
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/10/2020
-ms.openlocfilehash: 0941e3d5141b5b8841f5d37e3db0d0b1b1474547
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3b321e318621c5687a2e3e5f0649985210a2d16c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019817"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019870"
 ---
 # <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Analyse van realtime Twitter-gevoel in Azure Stream Analytics
 
@@ -168,7 +168,7 @@ Nu Tweet-gebeurtenissen in realtime worden gestreamd vanuit Twitter, kunt u een 
 
 ## <a name="specify-the-job-query"></a>De taak query opgeven
 
-Stream Analytics ondersteunt een eenvoudig, declaratief query model dat trans formaties beschrijft. Meer informatie over de taal vindt u in de [Azure stream Analytics query language-referentie](/stream-analytics-query/stream-analytics-query-language-reference). Deze hand leiding helpt u bij het ontwerpen en testen van verschillende query's via Twitter-gegevens.
+Stream Analytics ondersteunt een eenvoudig, declaratief query model dat trans formaties beschrijft. Raadpleeg [Verwijzing voor Azure Stream Analytics-querytaal](/stream-analytics-query/stream-analytics-query-language-reference) voor meer informatie over de taal. Deze hand leiding helpt u bij het ontwerpen en testen van verschillende query's via Twitter-gegevens.
 
 Als u het aantal vermeldingen tussen de onderwerpen wilt vergelijken, kunt u een [tumblingvenstertriggers-venster](/stream-analytics-query/tumbling-window-azure-stream-analytics) gebruiken om elke vijf seconden het aantal vermeldingen per onderwerp op te halen.
 

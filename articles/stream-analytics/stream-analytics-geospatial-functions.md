@@ -1,18 +1,17 @@
 ---
 title: Inleiding tot Azure Stream Analytics georuimtelijke functies
 description: In dit artikel worden georuimtelijke functies beschreven die worden gebruikt in Azure Stream Analytics taken.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: krishna0815
+ms.author: krishmam
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 44e445f6d1dce8193109d6b5ad1742210458e74c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 8d01f43dd6e404bb8f8ae0898625ae1ea9d09fd6
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130405"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020431"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Inleiding tot Stream Analytics georuimtelijke functies
 
@@ -26,7 +25,7 @@ Voor beelden van scenario's die kunnen profiteren van georuimtelijke functies zi
 * Geoomheining
 * Telefonisch volgen over sites
 
-Stream Analytics query taal heeft zeven ingebouwde georuimtelijke functies: **CreateLineString** , **CreatePoint** , **CreatePolygon** , **ST_DISTANCE** , **ST_OVERLAPS** , **ST_INTERSECTS** en **ST_WITHIN** .
+Stream Analytics query taal heeft zeven ingebouwde georuimtelijke functies: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_INTERSECTS** en **ST_WITHIN**.
 
 ## <a name="createlinestring"></a>CreateLineString
 

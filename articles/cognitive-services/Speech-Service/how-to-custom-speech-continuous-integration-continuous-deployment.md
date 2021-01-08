@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: kaprochi
-ms.openlocfilehash: 7e27c3dd6e70d9a532c326d8187d82e14bf7ddda
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: d37fca06a3d2eafa0af9e31c3a30ac66be5404f0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591613"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020601"
 ---
 # <a name="cicd-for-custom-speech"></a>CI/CD voor Custom Speech
 
@@ -83,7 +83,7 @@ Voor een al geïmplementeerde DevOps-oplossing voor Custom Speech gaat u naar de
 De [opslag plaats van de speech DevOps-sjabloon](https://github.com/Azure-Samples/Speech-Service-DevOps-Template) biedt de infra structuur en gedetailleerde richt lijnen voor het volgende:
 
 - Kopieer de sjabloon opslagplaats naar uw GitHub-account en maak vervolgens Azure-resources en een [Service-Principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) voor de GITHUB acties CI/cd-werk stromen.
-- Door loop de '[dev Inner-lus](https://mitchdenny.com/the-inner-loop/)'. Werk de training bij en test gegevens van een functie vertakking, test de wijzigingen met een tijdelijk ontwikkel model en verhoog een pull-aanvraag om de wijzigingen voor te stellen en te controleren.
+- Door loop de '[dev Inner-lus](/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow)'. Werk de training bij en test gegevens van een functie vertakking, test de wijzigingen met een tijdelijk ontwikkel model en verhoog een pull-aanvraag om de wijzigingen voor te stellen en te controleren.
 - Wanneer trainings gegevens worden bijgewerkt in een *pull-aanvraag*, traint u modellen met de GitHub-acties CI-werk stroom.
 - Voer automatische nauwkeurigheids tests uit om de [Word-fout frequentie](how-to-custom-speech-evaluate-data.md#evaluate-custom-speech-accuracy) (wer) van een model vast te leggen. Sla de test resultaten op in Azure Blob.
 - Voer de CD-werk stroom uit om een eind punt te maken wanneer de WER wordt verbeterd.

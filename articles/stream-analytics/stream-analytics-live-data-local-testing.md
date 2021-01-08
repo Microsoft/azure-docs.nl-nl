@@ -1,19 +1,18 @@
 ---
 title: Live-gegevens testen met Azure Stream Analytics voor Visual Studio
 description: Meer informatie over hoe u uw Azure Stream Analytics-taak lokaal kunt testen met live streaming-gegevens.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: ajetasin
+ms.author: ajetasi
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0788d8b4f659364fcedc690185c9159a24434125
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 99e9ce85bb1e59b5016e836ff16d03cb3326ec8c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123911"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020363"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Live-gegevens lokaal testen met Azure Stream Analytics-hulpprogram ma's voor Visual Studio (preview)
 
@@ -31,7 +30,7 @@ De volgende lokale test opties worden ondersteund:
 
 ## <a name="local-testing-with-live-data"></a>Lokale tests met Live-gegevens
 
-1. Nadat u een [Azure stream Analytics Cloud project in Visual Studio](stream-analytics-quick-create-vs.md)hebt gemaakt, opent u **script. asaql** . De lokale test maakt standaard gebruik van lokale invoer en lokale uitvoer.
+1. Nadat u een [Azure stream Analytics Cloud project in Visual Studio](stream-analytics-quick-create-vs.md)hebt gemaakt, opent u **script. asaql**. De lokale test maakt standaard gebruik van lokale invoer en lokale uitvoer.
 
    ![Lokale invoer en lokale uitvoer van Visual Studio Azure Stream Analytics](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-local-input-output.png)
 
@@ -43,7 +42,7 @@ De volgende lokale test opties worden ondersteund:
 
    ![Start tijd van Visual Studio Live-gegevens Azure Stream Analytics](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-start-time.png)
 
-4. Klik op **lokaal uitvoeren** . Er wordt een console venster weer gegeven met de uitvoerings voortgang en taak gegevens. Als u het proces wilt stoppen, kunt u dit hand matig doen. 
+4. Klik op **lokaal uitvoeren**. Er wordt een console venster weer gegeven met de uitvoerings voortgang en taak gegevens. Als u het proces wilt stoppen, kunt u dit hand matig doen. 
 
    ![Azure Stream Analytics Visual Studio live data process-venster](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-process-window.png)
 

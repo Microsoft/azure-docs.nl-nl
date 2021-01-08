@@ -1,18 +1,17 @@
 ---
 title: Time handling in Azure Stream Analytics begrijpen
 description: Meer informatie over het kiezen van de beste start tijd, het afhandelen van late en vroege gebeurtenissen en informatie over de metrische gegevens voor time handling in Azure Stream Analytics.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: c8f40808834c64ad74673f1c5f0c19892607fdcc
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: f9dbdb3907b376df8de988730c6c48ed01bfccd0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127470"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019938"
 ---
 # <a name="understand-time-handling-in-azure-stream-analytics"></a>Time handling in Azure Stream Analytics begrijpen
 
@@ -24,9 +23,9 @@ Voor een betere bespreking van de discussie kunt u een aantal achtergrond concep
 
 - **Tijd** van de gebeurtenis: de tijd waarop de oorspronkelijke gebeurtenis heeft plaatsgevonden. Bijvoorbeeld wanneer een zwevende auto op de weg een bestaans hokje benadert.
 
-- **Verwerkings tijd** : de tijd waarop de gebeurtenis het verwerkings systeem bereikt en wordt waargenomen. Bijvoorbeeld wanneer een sensor die de telefoon gebruikt, de auto ziet en het computer systeem even duurt om de gegevens te verwerken.
+- **Verwerkings tijd**: de tijd waarop de gebeurtenis het verwerkings systeem bereikt en wordt waargenomen. Bijvoorbeeld wanneer een sensor die de telefoon gebruikt, de auto ziet en het computer systeem even duurt om de gegevens te verwerken.
 
-- **Water merk** : een markering voor een gebeurtenis die aangeeft tot welke punt gebeurtenissen zijn uitgevallen op de streaming-processor. Met water merken kan het systeem aangeven dat de voortgang van de gebeurtenissen duidelijk wordt geconsumeerd. Door de aard van streams, worden de binnenkomende gebeurtenis gegevens nooit gestopt, waardoor water merken de voortgang van een bepaald punt in de stroom aangeven.
+- **Water merk**: een markering voor een gebeurtenis die aangeeft tot welke punt gebeurtenissen zijn uitgevallen op de streaming-processor. Met water merken kan het systeem aangeven dat de voortgang van de gebeurtenissen duidelijk wordt geconsumeerd. Door de aard van streams, worden de binnenkomende gebeurtenis gegevens nooit gestopt, waardoor water merken de voortgang van een bepaald punt in de stroom aangeven.
 
    Het watermerk concept is belang rijk. Met water merken kunnen Stream Analytics bepalen wanneer het systeem volledige, juiste en herhaal bare resultaten kan produceren die niet hoeven te worden ingetrokken. De verwerking kan worden uitgevoerd op een voorspel bare en herhaal bare manier. Als er bijvoorbeeld een hertelling moet worden uitgevoerd voor een bepaalde voor waarde voor fout afhandeling, zijn water merken veilig begin-en eind punten.
 
@@ -76,7 +75,7 @@ Wanneer u ervoor kiest om **aankomst tijd** te gebruiken als de tijd van de gebe
 
 ## <a name="late-arriving-events"></a>Achterstallige gebeurtenissen
 
-Op basis van de definitie van het venster late aankomst tolerantie voor elk binnenkomend evenement Azure Stream Analytics de tijd van de **gebeurtenis** vergeleken met de **aankomst tijd** . Als de tijd van de gebeurtenis zich buiten het tolerantie venster bevindt, kunt u het systeem configureren om de gebeurtenis te verwijderen of de tijd van de gebeurtenis aan te passen binnen de tolerantie.
+Op basis van de definitie van het venster late aankomst tolerantie voor elk binnenkomend evenement Azure Stream Analytics de tijd van de **gebeurtenis** vergeleken met de **aankomst tijd**. Als de tijd van de gebeurtenis zich buiten het tolerantie venster bevindt, kunt u het systeem configureren om de gebeurtenis te verwijderen of de tijd van de gebeurtenis aan te passen binnen de tolerantie.
 
 Als er water merken worden gegenereerd, kan de service mogelijk gebeurtenissen ontvangen met een gebeurtenis tijd die lager is dan het water merk. U kunt de service zo configureren dat deze gebeurtenissen worden **neerzetten** of de tijd van de gebeurtenis **aanpassen** aan de watermerk waarde.
 
@@ -86,7 +85,7 @@ Als onderdeel van de aanpassing wordt het **systeem. time stamp** van de gebeurt
 
 De beschreven methode voor het genereren van de heuristische water merk werkt goed in de meeste gevallen waarin tijd voornamelijk wordt gesynchroniseerd tussen de verschillende afzenders van de gebeurtenis. In werkelijkheid, met name in veel IoT-scenario's, heeft het systeem echter weinig controle over de klok van de afzenders van de gebeurtenis. De afzenders van de gebeurtenis kunnen allerlei apparaten in het veld zijn, mogelijk op verschillende versies van hardware en software.
 
-In plaats van een water merk te gebruiken dat globaal is voor alle gebeurtenissen in een invoer partitie, heeft Stream Analytics een ander mechanisme met de naam **substreams** . U kunt substreams gebruiken in uw taak door een taak query te schrijven die gebruikmaakt van de component [**time stamp by**](/stream-analytics-query/timestamp-by-azure-stream-analytics) en het sleutel woord **over** . Als u de substream wilt aanwijzen, geeft u de naam van een sleutel kolom op achter het sleutel woord **over** , zoals een `deviceid` , zodat het systeem tijd beleid op die kolom toepast. Elke substream krijgt een eigen onafhankelijk water merk. Dit mechanisme is handig voor het genereren van tijdige uitvoer, bij het verwerken van grote klok scheefheden of netwerk vertragingen tussen gebeurtenis afzenders.
+In plaats van een water merk te gebruiken dat globaal is voor alle gebeurtenissen in een invoer partitie, heeft Stream Analytics een ander mechanisme met de naam **substreams**. U kunt substreams gebruiken in uw taak door een taak query te schrijven die gebruikmaakt van de component [**time stamp by**](/stream-analytics-query/timestamp-by-azure-stream-analytics) en het sleutel woord **over**. Als u de substream wilt aanwijzen, geeft u de naam van een sleutel kolom op achter het sleutel woord **over** , zoals een `deviceid` , zodat het systeem tijd beleid op die kolom toepast. Elke substream krijgt een eigen onafhankelijk water merk. Dit mechanisme is handig voor het genereren van tijdige uitvoer, bij het verwerken van grote klok scheefheden of netwerk vertragingen tussen gebeurtenis afzenders.
 
 Substreams zijn een unieke oplossing die wordt geleverd door Azure Stream Analytics en die niet worden aangeboden door andere systemen voor gegevensverwerking van gegevens stromen.
 

@@ -1,19 +1,18 @@
 ---
 title: Problemen met Azure Stream Analytics uitvoer oplossen
 description: In dit artikel worden technieken beschreven voor het oplossen van problemen met uw uitvoer verbindingen in Azure Stream Analytics taken.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 10/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6942fd68625fd8eac18ea899330fd99f31f771f7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 02a3a7ad73bf0434a215c5ab7a6e89c299e9518b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019834"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019853"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Problemen met Azure Stream Analytics uitvoer oplossen
 
@@ -109,7 +108,7 @@ Zodra de time-out hoger is dan 15 minuten, wordt de maximum waarde voor de Batch
 
 Wanneer u het oorspronkelijke compatibiliteits niveau (1,0) gebruikt, worden de namen van de kolommen Azure Stream Analytics gewijzigd in kleine letters. Dit gedrag is in latere compatibiliteits niveaus verholpen. Als u het probleem wilt behouden, gaat u naar compatibiliteits niveau 1,1 of hoger. Zie [compatibiliteits niveau voor stream Analytics taken](./stream-analytics-compatibility-level.md)voor meer informatie.
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

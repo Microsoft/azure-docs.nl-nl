@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/17/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1a7bd36a6e3f3cc5b785745fc51f0aede3b47b74
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 2029ec2d0b0f27d7078f381880cf7ca177d24ca0
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803303"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020198"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Gezichten met Azure Media Analytics redigeren
 
@@ -37,11 +37,14 @@ Gezichts redactie werkt door het detecteren van gezichten in elk frame van de vi
 
 Naast een volledig automatische modus, is er een twee richtings werk stroom, waarmee de selectie/de selectie van gevonden gezichten via een lijst met Id's mogelijk is. Als u een wille keurig aantal aanpassingen per kader wilt maken, gebruikt het MP een meta gegevensbestand in JSON-indeling. Deze werk stroom is opgesplitst in de modi **analyseren** en **redactie** . U kunt de twee modi combi neren in één fase waarmee beide taken in één taak worden uitgevoerd. deze modus heet **gecombineerd**.
 
+   > [!NOTE]
+   > De software met een gezichts detectie medium is vanaf juni 2020 verouderd, [Azure Media Services verouderde onderdelen](./legacy-components.md). U kunt overwegen Azure Media Services v3 API te gebruiken.
+
 ### <a name="combined-mode"></a>Gecombineerde modus
 
 Dit produceert automatisch een geredigeerde MP4 zonder hand matige invoer.
 
-| Fase | Bestandsnaam | Opmerkingen |
+| Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
 | Invoer Asset |Foo. Bar |Video in WMV-, MOV-of MP4-indeling |
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' gecombineerd '}} |
@@ -51,7 +54,7 @@ Dit produceert automatisch een geredigeerde MP4 zonder hand matige invoer.
 
 De **analyse** fase van de werk stroom met twee slagen neemt een video-invoer en produceert een JSON-bestand met gezichts locaties en JPG-afbeeldingen van elk gedetecteerd gezicht.
 
-| Fase | Bestandsnaam | Opmerkingen |
+| Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
 | Invoer Asset |Foo. Bar |Video in WMV-, MPV-of MP4-indeling |
 | Invoer configuratie |Vooraf ingestelde taak configuratie |{' version ': ' 1.0 ', ' opties ': {' mode ': ' analyse '}} |
@@ -117,7 +120,7 @@ Dit omvat een lijst met Id's voor vervagen, de oorspronkelijke video en de JSON 
 
 De uitvoer van de analyse fase bevat niet de oorspronkelijke video. De video moet worden geüpload naar de invoer Asset voor de redactie modus taak en als primair bestand zijn geselecteerd.
 
-| Fase | Bestandsnaam | Opmerkingen |
+| Fase | Bestandsnaam | Notities |
 | --- | --- | --- |
 | Invoer Asset |Foo. Bar |Video in WMV-, MPV-of MP4-indeling. Dezelfde video als in stap 1. |
 | Invoer Asset |foo_annotations.jsop |Meta gegevensbestand van de fase één, met optionele wijzigingen. |

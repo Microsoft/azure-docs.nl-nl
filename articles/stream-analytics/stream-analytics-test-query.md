@@ -1,19 +1,18 @@
 ---
 title: Een Azure Stream Analytics-taak testen met voorbeeld gegevens
 description: In dit artikel wordt beschreven hoe u met behulp van de Azure Portal een Azure Stream Analytics-taak, voorbeeld invoer en het uploaden van voorbeeld gegevens kunt testen.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: ajetasin
+ms.author: ajetasi
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 3/6/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8e08c4c34495b58c105560dba9d818be9ebf5e34
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: eff9103f476e6074ab46198ff8cc78588675569f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490964"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020040"
 ---
 # <a name="test-an-azure-stream-analytics-job-in-the-portal"></a>Een Azure Stream Analytics-taak testen in de portal
 
@@ -37,11 +36,11 @@ Azure Stream Analytics haalt automatisch gebeurtenissen op uit uw streaming-invo
     
    c. Als uw weer gegeven gegevens niet actueel zijn, selecteert u **vernieuwen** om de meest recente gebeurtenissen te bekijken.
 
-   De volgende tabel bevat een voor beeld van gegevens in de **tabel indeling** :
+   De volgende tabel bevat een voor beeld van gegevens in de **tabel indeling**:
 
    ![Voorbeeld invoer in tabel indeling Azure Stream Analytics](./media/stream-analytics-test-query/asa-sample-table.png)
 
-   De volgende tabel bevat een voor beeld van de gegevens in **RAW-indeling** :
+   De volgende tabel bevat een voor beeld van de gegevens in **RAW-indeling**:
 
    ![Voorbeeld invoer Azure Stream Analytics in RAW-indeling](./media/stream-analytics-test-query/asa-sample-raw.png)
 

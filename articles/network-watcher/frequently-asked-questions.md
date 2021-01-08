@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/10/2019
+ms.date: 01/07/2021
 ms.author: damendo
-ms.openlocfilehash: 959062d493d9eb47204be2488f216b70804b3605
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e7585880b98f62f819ff344c82846c2cfb1fd620
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965762"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019819"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Veelgestelde vragen over Azure Network Watcher
 De [Azure Network Watcher](./network-watcher-monitoring-overview.md) -service biedt een reeks hulpprogram ma's voor het bewaken, diagnosticeren, weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk. In dit artikel vindt u antwoorden op veelgestelde vragen over de service.
@@ -30,7 +30,7 @@ Network Watcher is ontworpen om de netwerk status van IaaS-onderdelen (Infrastru
 
 ### <a name="what-tools-does-network-watcher-provide"></a>Welke hulpprogram ma's Network Watcher bieden?
 Network Watcher biedt drie belang rijke sets mogelijkheden
-* Bewaking
+* Controleren
   * In de [topologie weergave](./view-network-topology.md) ziet u de resources in uw virtuele netwerk en de relaties daartussen.
   * Met [verbindings monitor](./connection-monitor.md) kunt u de connectiviteit en latentie tussen een virtuele machine en een andere netwerk bron bewaken.
   * Met [netwerk prestatie meter](../azure-monitor/insights/network-performance-monitor.md) kunt u connectiviteit en latentie bewaken over hybride netwerk architecturen, Expressroute-circuits en service/toepassings eindpunten.  

@@ -3,16 +3,15 @@ title: Fout opsporing op basis van gegevens in Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u de Azure Stream Analytics-taak kunt oplossen met behulp van het taak diagram en de metrische gegevens in de Azure Portal.
 author: jseb225
 ms.author: jeanb
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/01/2017
-ms.openlocfilehash: e4ee868125ee30d40ef0d9ca5a42881ad003e9a8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 6d20454515088ccca87665d9b3b27c0d82c3cdf9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123979"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020397"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Gegevensgestuurde foutopsporing met behulp van het taakdiagram
 
@@ -20,7 +19,7 @@ Het taak diagram op de Blade **bewaking** in het Azure Portal kan u helpen uw ta
 
 ## <a name="using-the-job-diagram"></a>Het taak diagram gebruiken
 
-Selecteer in de Azure Portal, terwijl u in een Stream Analytics-taak, onder **ondersteuning en probleem oplossing** , **taak diagram** :
+Selecteer in de Azure Portal, terwijl u in een Stream Analytics-taak, onder **ondersteuning en probleem oplossing**, **taak diagram**:
 
 ![Taak diagram met metrische gegevens-locatie](./media/stream-analytics-job-diagram-with-metrics/stream-analytics-job-diagram-with-metrics-portal-1.png)
 
@@ -78,7 +77,7 @@ Als de voor gaande query stap een invoer processor is, gebruikt u de metrische g
 *   In de achterstand van de **invoer (totaal)** wordt uitgelegd hoe veel meer berichten moeten worden gelezen voor Event hubs en Azure IOT hub-invoer. Wanneer dit aantal groter is dan 0, betekent dit dat uw taak de gegevens niet kan verwerken wanneer deze zich in bevindt. In dat geval moet u mogelijk het aantal streaming-eenheden verhogen en/of ervoor zorgen dat uw taak kan worden geparallelleerd. Op de  [pagina query parallel Lise ring](./stream-analytics-parallelization.md)vindt u meer informatie. 
 
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 Voor aanvullende hulp gaat u [naar onze micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html). 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -1,18 +1,17 @@
 ---
 title: Event Hubs uitvoer van Azure Stream Analytics
 description: In dit artikel wordt beschreven hoe u gegevens kunt uitvoeren van Azure Stream Analytics naar Azure Event Hubs.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: e01a4418681e0f78864eacbf70016cfb33fa6f53
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: c2bde64c17520f4cf66ddecd9fc55a9bdd9edc37
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739634"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020584"
 ---
 # <a name="event-hubs-output-from-azure-stream-analytics"></a>Event Hubs uitvoer van Azure Stream Analytics
 

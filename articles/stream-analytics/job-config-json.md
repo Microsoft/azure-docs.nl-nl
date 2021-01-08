@@ -1,17 +1,17 @@
 ---
 title: Azure Stream Analytics JobConfig.jsop velden
 description: In dit artikel vindt u een lijst met de ondersteunde velden voor de Azure Stream Analytics JobConfig.jsin het bestand dat wordt gebruikt voor het maken van taken in Visual Studio code.
-author: mamccrea
-ms.author: mamccrea
+author: su-jie
+ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/14/2020
-ms.openlocfilehash: bb1a1a0b9f3a5996af56ff2c4e2de91d78a6c260
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 0eebd0b62e973572a40b7b141ae908046700ba3c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129334"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020482"
 ---
 # <a name="azure-stream-analytics-jobconfigjson-fields"></a>Azure Stream Analytics JobConfig.jsop velden
 

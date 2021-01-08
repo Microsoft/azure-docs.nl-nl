@@ -1,16 +1,16 @@
 ---
 title: VM-extensie beheer met servers die geschikt zijn voor Azure-Arc
 description: Servers met Azure-Arc kunnen de implementatie van virtuele-machine uitbreidingen beheren die configuratie van de na de implementatie en Automation-taken bieden met niet-Azure Vm's.
-ms.date: 12/14/2020
+ms.date: 01/07/2021
 ms.topic: conceptual
-ms.openlocfilehash: 55e21f9c6bcd2dfe5f995093034773f2a87d9b03
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 5430b1c1318747cccfb95f031700fddaad716284
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504505"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020618"
 ---
-# <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Extensie beheer voor virtuele machines met servers die geschikt zijn voor Azure-Arc
+# <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Extensiebeheer voor virtuele machines met servers met Azure Arc
 
 Virtuele-machine-uitbrei dingen zijn kleine toepassingen die configuratie-en automatiserings taken na de implementatie leveren op Azure-Vm's. Als een virtuele machine bijvoorbeeld software-installatie, anti-virus beveiliging of een script kan uitvoeren, kan er een VM-extensie worden gebruikt.
 
@@ -43,20 +43,31 @@ De functionaliteit van de VM-extensie is alleen beschikbaar in de lijst met [ond
 
 In deze release ondersteunen we de volgende VM-extensies op Windows-en Linux-computers.
 
-|Extensie |Besturingssysteem |Publisher |Aanvullende informatie |
-|----------|---|----------|-----------------------|
-|CustomScriptExtension |Windows |Microsoft.Compute |[Aangepaste script extensie voor Windows](../../virtual-machines/extensions/custom-script-windows.md)|
-|DSC |Windows |Micro soft. Power shell|[Windows Power shell DSC-extensie](../../virtual-machines/extensions/dsc-windows.md)|
-|Log Analytics-agent |Windows |Micro soft. EnterpriseCloud. monitoring |[VM-extensie Log Analytics voor Windows](../../virtual-machines/extensions/oms-windows.md)|
-|Micro soft-afhankelijkheids agent | Windows |Microsoft.Compute | [Extensie van de virtuele machine van de afhankelijkheids agent voor Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
-|Key Vault | Windows | Microsoft.Compute | [Extensie van de virtuele machine Key Vault voor Windows](../../virtual-machines/extensions/key-vault-windows.md) |
-|CustomScript|Linux |Micro soft. Azure. extension |[Aangepaste script extensie voor Linux versie 2](../../virtual-machines/extensions/custom-script-linux.md) |
-|DSC |Linux |Micro soft. OSTCExtensions |[Power shell DSC-extensie voor Linux](../../virtual-machines/extensions/dsc-linux.md) |
-|Log Analytics-agent |Linux |Micro soft. EnterpriseCloud. monitoring |[VM-extensie Log Analytics voor Linux](../../virtual-machines/extensions/oms-linux.md) |
-|Micro soft-afhankelijkheids agent | Linux |Microsoft.Compute | [Extensie van de virtuele machine van de afhankelijkheids agent voor Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
-|Key Vault | Linux | Microsoft.Compute | [Extensie van de virtuele machine Key Vault voor Linux](../../virtual-machines/extensions/key-vault-linux.md) |
-
 Zie [overzicht van agents](agent-overview.md#agent-component-details)voor meer informatie over het Azure Connected machine agent-pakket en Details over het onderdeel van de extensie agent.
+
+### <a name="windows-extensions"></a>Windows-extensies
+
+|Toestelnummer |Publisher |Type |Aanvullende informatie |
+|----------|----------|-----|-----------------------|
+|Scanner voor geïntegreerd beveiligings probleem in azure Defender |Qualys |WindowsAgent.AzureSecurityCenter |[De geïntegreerde oplossing voor evaluatie van beveiligings problemen van Azure Defender voor Azure-en hybride computers](../../security-center/deploy-vulnerability-assessment-vm.md)|
+|Aangepaste scriptextensie |Microsoft.Compute | CustomScriptExtension |[Aangepaste script extensie voor Windows](../../virtual-machines/extensions/custom-script-windows.md)|
+|PowerShell DSC |Micro soft. Power shell |DSC |[Windows Power shell DSC-extensie](../../virtual-machines/extensions/dsc-windows.md)|
+|Log Analytics-agent |Micro soft. EnterpriseCloud. monitoring |MicrosoftMonitoringAgent |[VM-extensie Log Analytics voor Windows](../../virtual-machines/extensions/oms-windows.md)|
+|Azure Monitor voor VM's (inzichten) |Micro soft. Azure. monitoring. DependencyAgent |DependencyAgentWindows | [Extensie van de virtuele machine van de afhankelijkheids agent voor Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
+|Synchronisatie van certificaat Azure Key Vault | Micro soft. Azure. key. kluis |KeyVaultForWindows | [Extensie van de virtuele machine Key Vault voor Windows](../../virtual-machines/extensions/key-vault-windows.md) |
+|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorWindowsAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+
+### <a name="linux-extensions"></a>Linux-extensies
+
+|Toestelnummer |Publisher |Type |Aanvullende informatie |
+|----------|----------|-----|-----------------------|
+|Scanner voor geïntegreerd beveiligings probleem in azure Defender |Qualys |LinuxAgent.AzureSecurityCenter |[De geïntegreerde oplossing voor evaluatie van beveiligings problemen van Azure Defender voor Azure-en hybride computers](../../security-center/deploy-vulnerability-assessment-vm.md)|
+|Aangepaste scriptextensie |Micro soft. Azure. Extensions |CustomScript |[Aangepaste script extensie voor Linux versie 2](../../virtual-machines/extensions/custom-script-linux.md) |
+|PowerShell DSC |Micro soft. OSTCExtensions |DSCForLinux |[Power shell DSC-extensie voor Linux](../../virtual-machines/extensions/dsc-linux.md) |
+|Log Analytics-agent |Micro soft. EnterpriseCloud. monitoring |OmsAgentForLinux |[VM-extensie Log Analytics voor Linux](../../virtual-machines/extensions/oms-linux.md) |
+|Azure Monitor voor VM's (inzichten) |Micro soft. Azure. monitoring. DependencyAgent |DependencyAgentLinux |[Extensie van de virtuele machine van de afhankelijkheids agent voor Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
+|Synchronisatie van certificaat Azure Key Vault | Micro soft. Azure. key. kluis |KeyVaultForLinux | [Extensie van de virtuele machine Key Vault voor Linux](../../virtual-machines/extensions/key-vault-linux.md) |
+|Azure Monitor-agent |Micro soft. Azure. monitor |AzureMonitorLinuxAgent |[De Azure Monitor-agent installeren (preview-versie)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
 
 ## <a name="prerequisites"></a>Vereisten
 

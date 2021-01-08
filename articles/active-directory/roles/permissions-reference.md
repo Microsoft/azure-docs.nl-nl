@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d04f2d1717e1d95f8bcafb8f72f2b0a2f83a248
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: 6da053bb04e5ee3f2b2b307c382f2695663669e5
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976823"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020652"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -87,6 +87,14 @@ Met de rol [bevoorrechte verificatie beheerder](#privileged-authentication-admin
 >* Groeps eigenaren van beveiligings groepen en Microsoft 365, wie groepslid maatschap kan beheren. Deze groepen kunnen toegang verlenen tot gevoelige of persoonlijke informatie of kritieke configuratie in azure AD en elders.
 >* Beheerders in andere services buiten Azure AD, zoals Exchange Online, Office Security and Compliance Center en Human Resources Systems.
 >* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
+
+### <a name="attack-payload-author"></a>[Auteur van aanvals Payload](#attack-payload-author-permissions)
+
+Gebruikers met deze rol kunnen payloads voor aanvallen maken, maar niet daad werkelijk starten of plannen. Er zijn vervolgens nettoladingen voor aanvallen beschikbaar voor alle beheerders in de Tenant die ze kunnen gebruiken om een simulatie te maken.
+
+### <a name="attack-simulation-administrator"></a>[Simulatie beheerder voor aanvallen](#attack-simulation-administrator-permissions)
+
+Gebruikers met deze rol kunnen alle aspecten van het maken en beheren van aanvallen simuleren, starten/plannen van een simulatie en de beoordeling van simulatie resultaten. Leden van deze rol hebben deze toegang voor alle simulaties in de Tenant.
 
 ### <a name="azure-devops-administrator"></a>[Azure DevOps-beheerder](#azure-devops-administrator-permissions)
 
@@ -489,6 +497,10 @@ Gebruikers met deze rol kunnen [teams met gecertificeerde apparaten](https://www
 
 Gebruikers met deze rol kunnen alle aspecten van de werk belasting van micro soft teams beheren via micro soft teams & het beheer centrum van Skype voor bedrijven en de respectieve Power shell-modules. Dit omvat onder andere alle beheer hulpprogramma's die betrekking hebben op telefonie, berichten, vergaderingen en de teams zelf. Met deze rol verleent u ook de mogelijkheid om alle Microsoft 365 groepen te maken en beheren, ondersteunings tickets te beheren en de service status te controleren.
 
+### <a name="usage-summary-reports-reader"></a>[Lezer van gebruiks samenvattings rapporten](#usage-summary-reports-reader-permissions)
+
+Gebruikers met deze rol hebben toegang tot geaggregeerde gegevens op Tenant niveau en gerelateerde inzichten in Microsoft 365-beheer centrum voor gebruiks-en productiviteits Score, maar hebben geen toegang tot details of inzichten op gebruikers niveau. In Microsoft 365 beheer centrum voor de twee rapporten maken we onderscheid tussen geaggregeerde gegevens op Tenant niveau en Details van gebruikers niveau. Deze rol biedt een extra beveiligingslaag op individuele door de gebruiker Identificeer bare gegevens, die door klanten en juridische teams zijn aangevraagd. 
+
 ### <a name="user-administrator"></a>[Gebruikersbeheerder](#user-administrator-permissions)
 
 Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers met enkele beperkingen beheren (Zie de tabel) en het verloop beleid voor wacht woorden kan bijwerken. Daarnaast kunnen gebruikers met deze rol alle groepen maken en beheren. Deze rol omvat ook de mogelijkheid om gebruikers weergaven te maken en beheren, ondersteunings tickets te beheren en de service status te controleren. Gebruikers beheerders hebben geen machtiging om bepaalde gebruikers eigenschappen voor gebruikers te beheren in de meeste beheerders rollen. Gebruiker met deze rol heeft geen machtigingen voor het beheren van MFA. De functies die uitzonde ringen op deze beperking zijn, worden weer gegeven in de volgende tabel.
@@ -591,6 +603,25 @@ Voor het weer geven, instellen en opnieuw instellen van verificatie methode-info
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
 | micro soft. map/gebruikers/wacht woord/bijwerken | Update wacht woorden voor alle gebruikers in de organisatie van Microsoft 365. Raadpleeg de online documentatie voor meer informatie. |
+
+### <a name="attack-payload-author-permissions"></a>Auteurs machtigingen voor de aanvals Payload
+
+Kan een Payload voor aanvallen maken die later door een beheerder kan worden geïmplementeerd.
+
+| **Acties** | **Beschrijving** |
+| --- | --- |
+| micro soft. office365. protectionCenter/attackSimulator/Payload/allProperties/allTasks | Een nettolading voor aanvallen maken en beheren in aanvals Simulator. |
+| micro soft. office365. protectionCenter/attackSimulator/Reports/allProperties/lezen | Lees rapporten over simulatie van aanvallen, reacties en bijbehorende trainingen. |
+
+### <a name="attack-simulation-administrator-permissions"></a>Beheerder machtigingen voor simulatie van aanvallen
+
+Kan alle aspecten van simulatie van aanvals campagnes maken en beheren.
+
+| **Acties** | **Beschrijving** |
+| --- | --- |
+| micro soft. office365. protectionCenter/attackSimulator/Payload/allProperties/allTasks | Een nettolading voor aanvallen maken en beheren in aanvals Simulator. |
+| micro soft. office365. protectionCenter/attackSimulator/Reports/allProperties/lezen | Lees rapporten over simulatie van aanvallen, reacties en bijbehorende trainingen. |
+| micro soft. office365. protectionCenter/attackSimulator/simulatie/allProperties/allTasks | Simulatie sjablonen voor aanvallen in een aanvals Simulator maken en beheren. |
 
 ### <a name="azure-devops-administrator-permissions"></a>Beheerders machtigingen voor Azure DevOps
 
@@ -1876,6 +1907,14 @@ Kan de micro soft teams-service beheren.
 | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 | micro soft. teams//allProperties/allTasks | Alle resources in teams beheren. |
 
+### <a name="usage-summary-reports-reader-permissions"></a>Lees machtigingen voor gebruiks samenvattings rapporten
+Alleen aggregaties op Tenant niveau worden weer geven in het M365-gebruiks analyse en de productiviteits Score.
+
+| **Acties** | **Beschrijving** |
+| --- | --- |
+| micro soft. office365. usageReports/geleenheden/standaard/lezen | Lees geaggregeerde Office 365-gebruiks rapporten op Tenant niveau. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal.|
+
 ### <a name="user-administrator-permissions"></a>Gebruikers beheerders machtigingen
 Kan alle aspecten van gebruikers en groepen beheren, met inbegrip van het opnieuw instellen van wacht woorden voor beperkte beheerders.
 
@@ -1922,6 +1961,8 @@ Grafiek weergave naam | Weergave naam Azure Portal | directoryRoleTemplateId
 Toepassingsbeheerder | Toepassings beheerder | 9B895D92-2CD3-44C7-9D02-A6AC2D5EA5C3
 Toepassingsontwikkelaar | Toepassingsontwikkelaar | CF1C38E5-3621-4004-A7CB-879624DCED7C
 Verificatiebeheerder | Verificatie beheerder | c4e39bd9-1100-46d3-8c65-fb160da0071f
+Auteur van aanvals Payload | Auteur van aanvals Payload | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f
+Simulatie beheerder voor aanvallen | Simulatie beheerder voor aanvallen | c430b396-e693-46cc-96f3-db01bf8bb62a
 Azure DevOps-beheerder | Azure DevOps-beheerder | e3973bdf-4987-49ae-837a-ba8e231c7286
 Azure Information Protection-beheerder | Azure Information Protection beheerder | 7495fdc4-34c4-4d15-a289-98788ce399fd
 Beheerder van B2C IEF-sleutelset | Beheerder van B2C IEF-sleutelset | aaf43236-0c0d-4d5f-883a-6955382ac081
@@ -1985,6 +2026,7 @@ Ondersteuningstechnicus voor Teams-communicatie | Ondersteuningstechnicus voor T
 Ondersteuningsspecialist voor Teams-communicatie | Ondersteuningsspecialist voor Teams-communicatie | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
 Teams-apparaatbeheerder | Teams-apparaatbeheerder | 3d762c5a-1b6c-493f-843e-55a3b42923d4
 Teams-servicebeheerder | Teams-servicebeheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
+Lezer van gebruiks samenvattings rapporten | Lezer van gebruiks samenvattings rapporten | 75934031-6c7e-415a-99d7-48dbd49e875e
 Gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Gebruikersaccountbeheerder | Gebruikersbeheerder | fe930be7-5e62-47db-91af-98c3a49a38b1
 Werkplek apparaat toevoegen | Afgeschaft | c34f683f-4d5a-4403-affd-6615e00e3a7f

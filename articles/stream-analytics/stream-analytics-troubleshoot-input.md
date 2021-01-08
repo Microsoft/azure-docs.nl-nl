@@ -1,19 +1,18 @@
 ---
 title: Probleemoplossings invoer voor Azure Stream Analytics
 description: In dit artikel worden technieken beschreven voor het oplossen van problemen met de invoer verbindingen in Azure Stream Analytics taken.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: troubleshooting
 ms.date: 05/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 760c98ce9464e4d40f01256a973e07d9084c6dfe
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2d7171c9ec1e60447fb3342caa72098fb2eb9337
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123282"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019904"
 ---
 # <a name="troubleshoot-input-connections"></a>Problemen met invoerverbindingen oplossen
 
@@ -79,7 +78,7 @@ Voer de volgende stappen uit om een nieuwe consumenten groep toe te voegen in uw
 
 4. Selecteer de Event hub op naam.
 
-5. Selecteer op de pagina **Event hubs-exemplaar** , onder de kop **entiteiten** , **consumenten groepen** . Er wordt een gebruikers groep met de naam **$default** weer gegeven.
+5. Selecteer op de pagina **Event hubs-exemplaar** , onder de kop **entiteiten** , **consumenten groepen**. Er wordt een gebruikers groep met de naam **$default** weer gegeven.
 
 6. Selecteer **+ consumenten groep** om een nieuwe consumenten groep toe te voegen. 
 
@@ -165,7 +164,7 @@ SELECT foo FROM DataTwo
 
 Stream Analytics-taken gebruiken het ingebouwde [Event hub-compatibele eind punt](../iot-hub/iot-hub-devguide-messages-read-builtin.md) van IOT hub om verbinding te maken en gebeurtenissen van IOT hub te lezen. Als uw Lees bewerking per partitie de limieten van IoT Hub overschrijdt, kunt u de [oplossingen voor Event hub](#readers-per-partition-exceeds-event-hubs-limit) gebruiken om deze op te lossen. U kunt een Consumer groep maken voor het ingebouwde eind punt via IoT Hub Portal-eindpunt sessie of via de [IOT hub SDK](/rest/api/iothub/IotHubResource/CreateEventHubConsumerGroup).
 
-## <a name="get-help"></a>Hulp vragen
+## <a name="get-help"></a>Help opvragen
 
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 

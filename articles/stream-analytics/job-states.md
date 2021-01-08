@@ -1,24 +1,23 @@
 ---
 title: Azure Stream Analytics taakstatussen
 description: In dit artikel worden de vier verschillende statussen van een Stream Analytics taak beschreven. uitvoeren, gestopt, gedegradeerd en mislukt.
-author: sidram
+author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: 008493c6eb8840752be3815d30a5df5bad42aff2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: dd298fae148b9e1e51072e98a4e0e5ece10967f3
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023854"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020448"
 ---
 # <a name="azure-stream-analytics-job-states"></a>Azure Stream Analytics taakstatussen
 
 Een Stream Analytics taak kan op elk gewenst moment een van de volgende vier statussen hebben: actief, gestopt, gedegradeerd of mislukt. U kunt de status van uw taak vinden op de overzichts pagina van uw Stream Analytics-taak in de Azure Portal. 
 
-| Status | Beschrijving | Aanbevolen acties |
+| Staat | Beschrijving | Aanbevolen acties |
 | --- | --- | --- |
 | **Wordt uitgevoerd** | Uw taak wordt uitgevoerd op Azure-Lees gebeurtenissen die afkomstig zijn van de gedefinieerde invoer bronnen, de verwerking ervan en het schrijven van de resultaten naar de geconfigureerde uitvoer-Sinks. | Het is een best practice om de prestaties van uw taken te volgen door de [belangrijkste metrische gegevens](./stream-analytics-set-up-alerts.md#scenarios-to-monitor)te controleren. |
 | **Gestopt** | De taak is gestopt en verwerkt geen gebeurtenissen. | NA | 

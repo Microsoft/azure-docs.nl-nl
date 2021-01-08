@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/06/2020
 ms.author: tagore
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 07b511182950095c356887d72ffde75ac098674d
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 82eaa597796bf3772faa90a9dbc4151da935c46a
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94904710"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98027720"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>IaaS-resources van klassiek naar Azure Resource Manager migreren met behulp van Power shell
 
@@ -55,7 +55,7 @@ Zie [Azure PowerShell installeren en configureren](/powershell/azure/) voor de i
 ## <a name="step-3-ensure-that-youre-an-administrator-for-the-subscription"></a>Stap 3: Zorg ervoor dat u een beheerder bent voor het abonnement
 Als u deze migratie wilt uitvoeren, moet u worden toegevoegd als een cobeheerder voor het abonnement in de [Azure Portal](https://portal.azure.com).
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer in het menu **hub** de optie **abonnement**. Als u deze niet ziet, selecteert u **alle services**.
 3. Zoek de juiste abonnements vermelding en Bekijk het veld **mijn rol** . Voor een cobeheerder moet de waarde _account beheerder_ zijn.
 
@@ -265,7 +265,7 @@ Als de voor bereide configuratie goed lijkt, kunt u de resources door lopen en d
 Nadat u klaar bent met het migreren van de virtuele machines, voert u de volgende controles uit voordat u de opslag accounts migreert.
 
 > [!NOTE]
-> Als uw opslag account geen gekoppelde schijven of VM-gegevens heeft, kunt u rechtstreeks door gaan naar de sectie opslag accounts valideren en migratie starten.
+> Als uw opslag account geen gekoppelde schijven of VM-gegevens heeft, kunt u rechtstreeks door gaan naar de sectie opslag accounts valideren en migratie starten. Houd er ook rekening mee dat het verwijderen van de klassieke schijven, VM-installatie kopieën of installatie kopieën van besturings systemen de bron-VHD-bestanden in het opslag account niet verwijdert. Het verbreekt echter de lease op die VHD-bestanden, zodat ze opnieuw kunnen worden gebruikt om ARM-schijven of-installatie kopieën te maken na de migratie.
 
 * Controles van vereisten als u virtuele machines hebt gemigreerd of als uw opslag account schijf bronnen heeft:
     * Migreer de virtuele machines waarvan de schijven zijn opgeslagen in het opslag account.

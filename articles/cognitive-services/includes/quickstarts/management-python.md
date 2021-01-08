@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: d6dfa8ccc35b36bf7f1e85e6ab213bd4e4783eaf
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 616ad26e28db46f8c28aaa3fb763e2f0acf15409
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95095335"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745702"
 ---
 [Referentiedocumentatie](/python/api/azure-mgmt-cognitiveservices/azure.mgmt.cognitiveservices?view=azure-python) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices) | [Package (PyPi)](https://pypi.org/project/azure-mgmt-cognitiveservices/) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices/tests)
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="python-prerequisites"></a>Python-vereisten
 
 * Een geldig Azure-abonnement - [Maak een gratis abonnement](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
@@ -58,6 +58,10 @@ Voeg vervolgens de volgende code toe om een ​​**CognitiveServicesManagementC
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
+Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de functie **Maken**. Met deze functie voegt u een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende functie worden al deze argumenten gebruikt en wordt een resource gemaakt.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/azure_management_service/create_delete_resource.py?name=snippet_create)]
+
 ### <a name="choose-a-service-and-pricing-tier"></a>Een service en prijscategorie kiezen
 
 Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de [prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/) (of SKU) die u wilt. U gebruikt deze en andere informatie als parameters bij het maken van de resource. De volgende functie geeft een overzicht van de beschikbare soorten Cognitive Service.
@@ -67,12 +71,6 @@ Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebr
 [!INCLUDE [cognitive-services-subscription-types](../../../../includes/cognitive-services-subscription-types.md)]
 
 [!INCLUDE [SKUs and pricing](./sku-pricing.md)]
-
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
-
-Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de functie **Maken**. Met deze functie voegt u een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende functie worden al deze argumenten gebruikt en wordt een resource gemaakt.
-
-[!code-python[](~/cognitive-services-quickstart-code/python/azure_management_service/create_delete_resource.py?name=snippet_create)]
 
 ## <a name="view-your-resources"></a>Uw resources weergeven
 

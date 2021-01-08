@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 7b691dc408c65b2152c60276dbea826042ecb0d8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: eddee6bc0fdcd636b7b9ffb81b121052499251b2
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95096022"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745701"
 ---
 [Referentiedocumentatie](/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Pakket (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="javascript-prerequisites"></a>JavaScript-vereisten
 
 * Een geldig Azure-abonnement - [Maak een gratis abonnement](https://azure.microsoft.com/free/).
 * De huidige versie van [Node.js](https://nodejs.org/)
@@ -76,6 +76,10 @@ Voeg de volgende code toe aan het einde van uw `quickstart`-functie om beschikba
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
+Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de functie **Maken**. Met deze functie voegt u een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende functie worden al deze argumenten gebruikt en wordt een resource gemaakt.
+
+[!code-javascript[](~/cognitive-services-quickstart-code/javascript/azure_management_service/create_delete_resource.js?name=snippet_create)]
+
 ### <a name="choose-a-service-and-pricing-tier"></a>Een service en prijscategorie kiezen
 
 Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de [prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/) (of SKU) die u wilt. U gebruikt deze en andere informatie als parameters bij het maken van de resource. De volgende functie geeft een overzicht van de beschikbare soorten Cognitive Service.
@@ -85,12 +89,6 @@ Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebr
 [!INCLUDE [cognitive-services-subscription-types](../../../../includes/cognitive-services-subscription-types.md)]
 
 [!INCLUDE [SKUs and pricing](./sku-pricing.md)]
-
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
-
-Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de functie **Maken**. Met deze functie voegt u een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende functie worden al deze argumenten gebruikt en wordt een resource gemaakt.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/azure_management_service/create_delete_resource.js?name=snippet_create)]
 
 ## <a name="view-your-resources"></a>Uw resources weergeven
 

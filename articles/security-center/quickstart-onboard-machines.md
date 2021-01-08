@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 zone_pivot_groups: non-azure-machines
-ms.openlocfilehash: 572c657dd44db73b1401c72f0750fe8e000985ac
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 8d0d4726763e36bd889c2f564d116d454b2f62b9
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734351"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740603"
 ---
 # <a name="connect-your-non-azure-machines-to-security-center"></a>Uw niet-Azure-machines verbinden met Security Center
 
@@ -127,7 +127,7 @@ Zie [Windows-computers verbinden](../azure-monitor/platform/agent-windows.md#ins
 
 ## <a name="verifying"></a>Controleren
 
-Gefeliciteerd! Nu worden uw Azure- en niet-Azure-machines op één plek weergegeven. Open de pagina [Assetvoorraad](asset-inventory.md) en filter de relevante resourcetypen. Met de volgende pictogrammen worden de typen onderscheiden:
+Gefeliciteerd. Nu worden uw Azure- en niet-Azure-machines op één plek weergegeven. Open de pagina [Assetvoorraad](asset-inventory.md) en filter de relevante resourcetypen. Met de volgende pictogrammen worden de typen onderscheiden:
 
   ![ASC-pictogram voor andere computer dan Azure-computer](./media/quick-onboard-linux-computer/security-center-monitoring-icon1.png) Niet-Azure-machine
 
@@ -139,4 +139,4 @@ Gefeliciteerd! Nu worden uw Azure- en niet-Azure-machines op één plek weergege
 
 Op deze pagina werd uitgelegd hoe u uw niet-Azure-machines kunt toevoegen aan Azure Security Center. Om de status van deze niet-Azure-machines te controleren, gebruikt u de voorraad-hulpprogramma's zoals beschreven op de volgende pagina:
 
-- [Verken en beheer uw resources met hulpprogramma's voor assetvoorraad en -beheer](asset-inventory.md)
+- [Uw resources verkennen en beheren met assetvoorraad](asset-inventory.md)

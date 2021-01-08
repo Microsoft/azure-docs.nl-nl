@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 05/16/2018
+ms.date: 12/17/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8c82e3d2c978a7980d02bc686346acdcb21dd591
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b283add6cff1400cc3141f4fba3f0f3939ee34aa
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "66425743"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97665009"
 ---
 |  | **Point-to-Site** | **Site-to-Site** | **ExpressRoute** |
 | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ ms.locfileid: "66425743"
 | **Ondersteunde protocollen** |Secure Sockets Tunneling Protocol (SSTP), OpenVPN en IPsec |IPsec |Directe verbinding via VLAN's, NSP’s VPN-technologieën (MPLS, VPLS,...) |
 | **Routering** |RouteBased (dynamisch) |We ondersteunen PolicyBased (statische routering) en RouteBased (dynamische routering via VPN) |BGP |
 | **Verbindingstolerantie** |actief-passief |actief-passief of actief-actief |actief-actief |
-| **Typische gebruiksscenario's** |Maken van een prototype, dev/testen/labscenario's voor cloudservices en virtuele machines |Dev/testen/labscenario's en kleinschalige productie-workloads voor cloudservices en virtuele machines |Toegang tot alle Azure-services (gevalideerde lijst), workloads op bedrijfsniveau en bedrijfskritieke taken, back-up, Big Data, Azure als een DR-site |
+| **Typische gebruiksscenario's** |Toegang tot virtuele Azure-netwerken beveiligen voor externe gebruikers |Dev-/test-/labscenario's en kleinschalige tot middelgrote productieworkloads voor cloudservices en virtuele machines |Toegang tot alle Azure-services (gevalideerde lijst), workloads op bedrijfsniveau en bedrijfskritieke taken, back-up, Big Data, Azure als een DR-site |
 | **SLA** |[SLA](https://azure.microsoft.com/support/legal/sla/) |[SLA](https://azure.microsoft.com/support/legal/sla/) |[SLA](https://azure.microsoft.com/support/legal/sla/) |
 | **Prijzen** |[Prijzen](https://azure.microsoft.com/pricing/details/vpn-gateway/) |[Prijzen](https://azure.microsoft.com/pricing/details/vpn-gateway/) |[Prijzen](https://azure.microsoft.com/pricing/details/expressroute/) |
 | **Technische documentatie** |[VPN Gateway-documentatie](https://azure.microsoft.com/documentation/services/vpn-gateway/) |[VPN Gateway-documentatie](https://azure.microsoft.com/documentation/services/vpn-gateway/) |[Documentatie voor ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute/) |

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 89f59bba856d662aea0c3ed249d5a1462297ec60
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 63bbec6de8f122178289cc313e5d938e3b926af2
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309051"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673228"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Zelfstudie: Azure Active Directory-integratie met Adobe Captivate Prime
 
@@ -63,7 +63,7 @@ Om de integratie van Adobe Captivate Prime met Azure AD te configureren, moet u 
 
 4. Typ **Adobe Captivate Prime** in het zoekvak, selecteer **Adobe Captivate Prime** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Adobe Captivate Prime toevoegen vanuit de galerie](common/search-new-app.png)
+    ![Adobe Captivate Prime toevoegen vanuit de galerie](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -143,8 +143,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -168,7 +168,7 @@ In dit gedeelte geeft u Britta Simon de mogelijkheid om eenmalige aanmelding van
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -180,7 +180,7 @@ In dit gedeelte geeft u Britta Simon de mogelijkheid om eenmalige aanmelding van
 
 ### <a name="create-adobe-captivate-prime-test-user"></a>Een testgebruiker voor Adobe Captivate Prime maken
 
-In dit gedeelte maakt u een gebruiker met de naam Britta Simon in Adobe Captivate Prime. Neem contact op met het  [ondersteuningsteam van Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com) om de gebruikers toe te voegen aan het Adobe Captivate Prime-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In dit gedeelte maakt u een gebruiker met de naam Britta Simon in Adobe Captivate Prime. Neem contact op met het [ondersteuningsteam van Adobe Captivate Prime](mailto:captivateprimesupport@adobe.com) om de gebruikers toe te voegen op het Adobe Captivate Prime-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

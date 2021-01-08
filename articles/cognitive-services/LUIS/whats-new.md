@@ -5,18 +5,22 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 06/15/2020
-ms.openlocfilehash: fffe337a59ff343164a155fcd0f4d5616a32bf41
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 52f8aad0a429d3378d46265fab719b1cb9f07fd0
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334613"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813187"
 ---
 # <a name="whats-new-in-language-understanding"></a>Nieuwe functies in Language Understanding
 
 Meer informatie over nieuwe functies in de service. Dit kunnen releaseopmerkingen, video's, blogposts en andere soorten informatie zijn. Voeg een bladwijzer toe aan deze pagina om up-to-date te blijven over de service.
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="december-2020"></a>December 2020
+
+* Alle LUIS-gebruikers moeten [migreren naar een LUIS authorint-resource](luis-migration-authoring.md)
 
 ### <a name="june-2020"></a>Juni 2020
 

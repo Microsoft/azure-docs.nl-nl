@@ -3,23 +3,23 @@ title: De knop Implementeren in Azure
 description: Gebruik de knop om Azure Resource Manager sjablonen te implementeren vanuit een GitHub-opslag plaats.
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 65891cace1cb17614abbfe091e1592d6f13feff4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: abe59f377474540e9209691df8b1d1a7b806c26d
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185722"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028740"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Een implementatie knop gebruiken voor het implementeren van sjablonen uit de GitHub-opslag plaats
 
-In dit artikel wordt beschreven hoe u de knop **implementeren in azure** gebruikt om sjablonen te implementeren vanuit een github-opslag plaats. U kunt de knop rechtstreeks toevoegen aan het README.md-bestand in de GitHub-opslag plaats. U kunt ook de knop toevoegen aan een webpagina die verwijst naar de opslag plaats.
+In dit artikel wordt beschreven hoe u de knop **implementeren in azure** gebruikt om sjablonen te implementeren vanuit een github-opslag plaats. U kunt de knop rechtstreeks toevoegen aan het _README.MD_ -bestand in de GitHub-opslag plaats. U kunt ook de knop toevoegen aan een webpagina die verwijst naar de opslag plaats.
 
 Het implementatie bereik wordt bepaald door het sjabloon schema. Zie voor meer informatie:
 
-* [resource groepen](deploy-to-resource-group.md)
-* [geabonneerd](deploy-to-subscription.md)
-* [beheer groepen](deploy-to-management-group.md)
-* [tenants](deploy-to-tenant.md)
+- [resource groepen](deploy-to-resource-group.md)
+- [geabonneerd](deploy-to-subscription.md)
+- [beheer groepen](deploy-to-management-group.md)
+- [tenants](deploy-to-tenant.md)
 
 ## <a name="use-common-image"></a>Algemene installatie kopie gebruiken
 
@@ -78,7 +78,7 @@ U hebt de volledige URL voor de koppeling.
 
 Normaal gesp roken host u de sjabloon in een open bare opslag plaats. Als u een privé-opslag plaats gebruikt, moet u een token toevoegen om toegang te krijgen tot de onbewerkte inhoud van de sjabloon. Het token dat door GitHub wordt gegenereerd, is slechts voor een korte periode geldig. U moet de koppeling vaak bijwerken.
 
-Als u Git gebruikt [met Azure opslag plaatsen](/azure/devops/repos/git/) in plaats van een github opslag plaats, kunt u nog steeds de knop implementeren in azure gebruiken. Zorg ervoor dat uw opslag plaats openbaar is. Gebruik de [bewerking items](/rest/api/azure/devops/git/items/get) om de sjabloon op te halen. Uw aanvraag moet de volgende indeling hebben:
+Als u Git gebruikt [met Azure opslag plaatsen](/azure/devops/repos/git/) in plaats van een github opslag plaats, kunt u nog steeds de knop **implementeren in azure** gebruiken. Zorg ervoor dat uw opslag plaats openbaar is. Gebruik de [bewerking items](/rest/api/azure/devops/git/items/get) om de sjabloon op te halen. Uw aanvraag moet de volgende indeling hebben:
 
 ```http
 https://dev.azure.com/{organization-name}/{project-name}/_apis/git/repositories/{repository-name}/items?scopePath={url-encoded-path}&api-version=6.0
@@ -90,7 +90,7 @@ Deze aanvraag-URL versleutelen.
 
 Ten slotte plaatst u de koppeling en de afbeelding samen.
 
-Als u de knop met prijs verlaging in het README.md-bestand in uw GitHub-opslag plaats of een webpagina wilt toevoegen, gebruikt u:
+Als u de knop met prijs verlaging in het _README.MD_ -bestand in uw github-opslag plaats of een webpagina wilt toevoegen, gebruikt u:
 
 ```markdown
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
@@ -122,4 +122,4 @@ In de portal wordt een deel venster weer gegeven waarmee u eenvoudig parameter w
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](template-syntax.md)voor meer informatie over sjablonen.
+- Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over sjablonen.

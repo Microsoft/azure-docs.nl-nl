@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager kunt gebruiken
 ms.topic: overview
 ms.date: 09/01/2020
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: f3b3ebce3dd34637a787895e7724736adfc186fb
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: fad49db94195bbd2f9e5e32f8596f33fab586752
+ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032249"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97858515"
 ---
 # <a name="what-is-azure-resource-manager"></a>Wat is Azure Resource Manager?
 
@@ -33,7 +33,7 @@ Als u nog geen ervaring hebt met de Azure Resource Manager, zijn er enkele terme
 
 * **resource** - een beheerbaar item dat beschikbaar is via Azure. Virtuele machines, opslagaccounts, web-apps, databases en virtuele netwerken zijn voorbeelden van resources. Resourcegroepen, abonnementen, beheergroepen en tags zijn ook voorbeelden van resources.
 * **resourcegroep** - een container met gerelateerde resources voor een Azure-oplossing. De resourcegroep bevat die resources die u als groep wilt beheren. U bepaalt welke resources in een resourcegroep horen op basis van wat voor uw organisatie het meest zinvol is. Zie [Resourcegroepen](#resource-groups).
-* **resourceprovider** - een service die zorgt voor Azure-resources. Voorbeeld: een veelgebruikte resourceprovider is Microsoft.Compute, die de VM-resource levert. Microsoft.Storage is een andere algemene resourceprovider. Zie [Resourceproviders en -typen](resource-providers-and-types.md).
+* **resourceprovider** - een service die zorgt voor Azure-resources. Een veelgebruikte resourceprovider is bijvoorbeeld `Microsoft.Compute`, die de virtuele machine levert. `Microsoft.Storage` is een andere veel voorkomende resourceprovider. Zie [Resourceproviders en -typen](resource-providers-and-types.md).
 * **Resource Manager-sjabloon**: een JSON-bestand (JavaScript Object Notation) waarmee één of meer resources worden gedefinieerd voor implementatie in een resourcegroep, abonnement, beheergroep of tenant. De sjabloon kan worden gebruikt om de resources consistent en herhaaldelijk te implementeren. Zie [Overzicht van sjabloonimplementatie](../templates/overview.md).
 * **declaratieve syntaxis** - een syntaxis waarmee u kunt aangeven 'Dit is wat ik wil maken' zonder hiervoor de nodige reeks programmeeropdrachten te hoeven maken. De sjabloon Resource Manager is een voorbeeld van een declaratieve syntaxis. In het bestand definieert u de eigenschappen voor de infrastructuur te implementeren naar Azure.  Zie [Overzicht van sjabloonimplementatie](../templates/overview.md).
 
@@ -99,7 +99,7 @@ Er zijn een aantal belangrijke factoren waarmee u rekening moet houden bij het d
 
 ## <a name="resiliency-of-azure-resource-manager"></a>Tolerantie van Azure Resource Manager
 
-De Azure Resource Manager-service is ontworpen voor tolerantie en voortdurende beschikbaarheid. Resource Manager- en besturingsvlakbewerkingen (aanvragen die zijn verzonden naar management.azure.com) in de REST API zijn:
+De Azure Resource Manager-service is ontworpen voor tolerantie en voortdurende beschikbaarheid. Resource Manager-bewerkingen en besturingsvlakbewerkingen (aanvragen die zijn verzonden naar `management.azure.com`) in de REST API zijn:
 
 * Gedistribueerd over verschillende regio's. Sommige services zijn niet regionaal.
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/07/2020
+ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 0d5b6b7b3cf74ab740dbaeb8d86ab8bbb98e8531
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 0c43e085725ceb5db718c9b4c9c9d83787964d63
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357031"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813527"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-meraki-dashboard"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Meraki Dashboard
 
@@ -132,7 +132,7 @@ In deze sectie stelt u in dat B.Simon eenmalige aanmelding van Azure kan gebruik
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Een rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 
     ![gebruikersfunctie](./media/meraki-dashboard-tutorial/user-role.png)
 
@@ -143,7 +143,15 @@ In deze sectie stelt u in dat B.Simon eenmalige aanmelding van Azure kan gebruik
 
 ## <a name="configure-meraki-dashboard-sso"></a>Eenmalige aanmelding configureren voor Meraki Dashboard
 
-1. Meld u in een ander browservenster als beheerder aan bij Meraki Dashboard.
+1. Als u de configuratie in Meraki Dashboard wilt automatiseren, moet u de **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **Meraki Dashboard instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de Meraki Dashboard-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij Meraki Dashboard. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3-7 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Meraki Dashboard handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw Meraki Dashboard-bedrijfssite.
 
 1. Navigeer naar **Organization** -> **Settings**.
 

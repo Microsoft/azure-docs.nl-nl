@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 1b50fbfa0ec4116f7d0b5988e5be70d0db086732
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 74f9ed5913ca089e12d5958fe96eeb1552c9137a
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95096116"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97745703"
 ---
 [Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/management?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.CognitiveServices/) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Microsoft.Azure.Management.CognitiveServices/tests)
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="c-prerequisites"></a>C#-vereisten
 
 * Een geldig Azure-abonnement - [Maak een gratis abonnement](https://azure.microsoft.com/free/).
 * De huidige versie van [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
@@ -86,6 +86,10 @@ Voeg de volgende code toe aan uw **Main**-methode om beschikbare resources weer 
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
+Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de methode **maken**. Deze methode voegt een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende methode worden al deze argumenten gebruikt en wordt een resource gemaakt.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/azure_management_service/create_delete_resource.cs?name=snippet_create)]
+
 ### <a name="choose-a-service-and-pricing-tier"></a>Een service en prijscategorie kiezen
 
 Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de [prijscategorie](https://azure.microsoft.com/pricing/details/cognitive-services/) (of SKU) die u wilt. U gebruikt deze en andere informatie als parameters bij het maken van de resource. U kunt een lijst met beschikbare soorten Cognitive Services vinden door de volgende methode in uw script aan te roepen:
@@ -95,12 +99,6 @@ Wanneer u een nieuwe resource maakt, moet u weten welk soort service u wilt gebr
 [!INCLUDE [cognitive-services-subscription-types](../../../../includes/cognitive-services-subscription-types.md)]
 
 [!INCLUDE [SKUs and pricing](./sku-pricing.md)]
-
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
-
-Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de methode **maken**. Deze methode voegt een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende methode worden al deze argumenten gebruikt en wordt een resource gemaakt.
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/azure_management_service/create_delete_resource.cs?name=snippet_create)]
 
 ## <a name="view-your-resources"></a>Uw resources weergeven
 

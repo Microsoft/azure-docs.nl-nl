@@ -2,13 +2,13 @@
 title: Aanbevolen configuraties voor Apache Kafka-clients-Azure Event Hubs
 description: In dit artikel vindt u aanbevolen Apache Kafka configuraties voor clients die communiceren met Azure Event Hubs voor Apache Kafka.
 ms.topic: reference
-ms.date: 07/20/2020
-ms.openlocfilehash: f9a03d1d3433461a575b32cd69893408a8b0ef97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/07/2021
+ms.openlocfilehash: 713900a3cc7e2b9f6f176edb21455faa577098d6
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87096645"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028825"
 ---
 # <a name="recommended-configurations-for-apache-kafka-clients"></a>Aanbevolen configuraties voor Apache Kafka-clients
 Hier vindt u de aanbevolen configuraties voor het gebruik van Azure Event Hubs van Apache Kafka-client toepassingen. 
@@ -17,7 +17,7 @@ Hier vindt u de aanbevolen configuraties voor het gebruik van Azure Event Hubs v
 
 ### <a name="producer-and-consumer-configurations"></a>Producer-en consumenten configuraties
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|-----:|---
 `metadata.max.age.ms` | 180000 (bij benadering) | < 240000 | Kan worden gereduceerd om meta gegevens wijzigingen sneller op te halen.
 `connections.max.idle.ms`   | 180000 | < 240000 | Azure sluit binnenkomende TCP-> 240.000 MS, wat kan leiden tot het verzenden van Dead-verbindingen (weer gegeven als verlopen batches vanwege een time-out voor verzenden).
@@ -25,7 +25,7 @@ Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
 ### <a name="producer-configurations-only"></a>Alleen producer-configuraties
 U kunt de configuratie van de producent [hier](https://kafka.apache.org/documentation/#producerconfigs)vinden.
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|---:|---
 `max.request.size` | 1000000 | < 1046528 | Er worden verbindingen met de service afgesloten als er aanvragen van meer dan 1.046.528 bytes worden verzonden.  *Deze waarde **moet** worden gewijzigd en zal problemen veroorzaken bij het produceren van hoge door voer.*
 `retries` | > 0 | | Zie de documentatie voor meer delivery.timeout.ms-waarden.
@@ -39,7 +39,7 @@ Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
 ### <a name="consumer-configurations-only"></a>Alleen voor consumenten configuraties
 Configuratie van de consument vindt u [hier](https://kafka.apache.org/documentation/#consumerconfigs).
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|-----:|---
 `heartbeat.interval.ms` | 3000 | | 3000 is de standaard waarde en mag niet worden gewijzigd.
 `session.timeout.ms` | 30.000 |6000.. 300000| Begin met 30000, verhoog als u regel matig herverdeling wilt zien vanwege gemiste heartbeats.
@@ -50,14 +50,14 @@ Het hoofd `librdkafka` configuratie bestand ([koppeling](https://github.com/eden
 
 ### <a name="producer-and-consumer-configurations"></a>Producer-en consumenten configuraties
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|-----:|---
 `socket.keepalive.enable` | true | | Vereist als de verbinding naar behoren inactief moet zijn.  Azure sluit binnenkomende TCP-inactiviteit > 240.000 MS.
 `metadata.max.age.ms` | ~ 180000| < 240000 | Kan worden gereduceerd om meta gegevens wijzigingen sneller op te halen.
 
 ### <a name="producer-configurations-only"></a>Alleen producer-configuraties
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|-----:|---
 `retries` | > 0 | | De standaard waarde is 2. We raden u aan deze waarde te hand haven. 
 `request.timeout.ms` | 30000.. 60000 | > 20000| EH wordt intern ingesteld op een minimum van 20.000 MS.  `librdkafka` de standaard waarde is 5000, wat problematisch kan zijn. *Hoewel aanvragen met lagere time-outwaarden worden geaccepteerd, wordt het client gedrag niet gegarandeerd.*
@@ -67,7 +67,7 @@ Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
 
 ### <a name="consumer-configurations-only"></a>Alleen voor consumenten configuraties
 
-Eigenschap | Aanbevolen waarden | Toegestaan bereik | Notities
+Eigenschap | Aanbevolen waarden | Toegestaan bereik | Opmerkingen
 ---|---:|-----:|---
 `heartbeat.interval.ms` | 3000 || 3000 is de standaard waarde en mag niet worden gewijzigd.
 `session.timeout.ms` | 30.000 |6000.. 300000| Begin met 30000, verhoog als u regel matig herverdeling wilt zien vanwege gemiste heartbeats.
@@ -79,7 +79,7 @@ Raadpleeg de volgende tabel met veelvoorkomende fout scenario's met betrekking t
 
 Symptomen | Probleem | Oplossing
 ----|---|-----
-Fouten bij het door voeren van de offset vanwege herverdeling | Uw consument wacht te lang op het aanroepen van polling () en de service is bezig met het starten van de consument uit de groep. | U hebt verschillende mogelijkheden: <ul><li>sessietime-out verhogen</li><li>de omvang van de bericht batch verlagen om de verwerking te versnellen</li><li>Verbeter de verwerkings parallel Lise ring om te voor komen dat consumenten worden geblokkeerd. polling ()</li></ul> Het Toep assen van een combi natie van de drie is waarschijnlijk wisest.
+Fouten bij het door voeren van de offset vanwege herverdeling | Uw consument wacht te lang op het aanroepen van polling () en de service is bezig met het starten van de consument uit de groep. | U hebt verschillende mogelijkheden: <ul><li>Time-out van poll verwerking verhogen ( `max.poll.interval.ms` )</li><li>De omvang van de bericht batch verlagen om de verwerking te versnellen</li><li>Verbeter de verwerkings parallel Lise ring om te voor komen dat consumenten worden geblokkeerd. polling ()</li></ul> Het Toep assen van een combi natie van de drie is waarschijnlijk wisest.
 Netwerk uitzondering bij hoge door Voer | Gebruikt u Java-client + standaard Max. aanvraag. grootte?  Uw aanvragen zijn mogelijk te groot. | Zie Java-configuraties hierboven.
 
 ## <a name="next-steps"></a>Volgende stappen

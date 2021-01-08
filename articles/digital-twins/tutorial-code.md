@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 3225fff1c82822dee990804f934ada86068841e8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 96533c1742e8ad5fde9796ea2073f6e402ac8dcf
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011251"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862384"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Zelfstudie: Coderen met de Azure Digital Twins-API's
 
@@ -57,9 +57,12 @@ Hiermee maakt u een aantal bestanden in uw map, met daarin de naam *Program.cs* 
 
 Houd het opdrachtvenster geopend, omdat u het in de zelfstudie blijft gebruiken.
 
-Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. U kunt de onderstaande links gebruiken om naar de pakketten op NuGet te navigeren, waar u de consoleopdrachten (inclusief voor .NET CLI) kunt vinden om de meest recente versie van elk aan uw project toe te voegen.
-* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
-* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure.
+Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. U kunt de onderstaande koppelingen gebruiken om naar de pakketten op NuGet te navigeren. Hier vindt u de consoleopdrachten (inclusief voor .NET CLI) om elk pakket aan uw project toe te voegen.
+* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). Voeg de nieuwste versie toe.
+* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure. Voeg versie 1.2.2 toe.
+
+>[!NOTE]
+> Er is momenteel een [bekend probleem](troubleshoot-known-issues.md#issue-with-default-azure-credential-authentication-on-azureidentity-130) dat invloed heeft op de mogelijkheid om Azure.Identity-versie 1.3.0 te gebruiken met deze zelfstudie. Gebruik versie 1.2.2 zolang dit probleem zich blijft voordoen.
 
 ## <a name="get-started-with-project-code"></a>Aan de slag met projectcode
 

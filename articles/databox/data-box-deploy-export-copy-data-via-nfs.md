@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/01/2020
+ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: bd8e6d4175c57bd31c3fd83bf6f9669d2b65ffb2
-ms.sourcegitcommit: 487a9f5272300d60df2622c3d13e794d54680f90
+ms.openlocfilehash: 64bb5e94c4b18626d1f85d7e61252aae74202eb9
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91660837"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680620"
 ---
-# <a name="tutorial-copy-data-from-azure-data-box-via-nfs-preview"></a>Zelfstudie: Gegevens kopiëren uit Azure Data Box via NFS (preview)
+# <a name="tutorial-copy-data-from-azure-data-box-via-nfs"></a>Zelfstudie: Gegevens kopiëren uit Azure Data Box via NFS
 
 In deze zelfstudie wordt beschreven hoe u verbinding maakt met de lokale webinterface van uw Data Box en van daaruit gegevens kopieert naar een on-premises gegevensserver via NFS. De gegevens op uw Data Box worden geëxporteerd uit uw Azure Storage-account.
 
@@ -26,8 +26,6 @@ In deze zelfstudie leert u het volgende:
 > * Vereisten
 > * Verbinding maken met Data Box
 > * Gegevens kopiëren uit Data Box
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -79,11 +77,11 @@ Nadat u verbinding met de Data Box-shares hebt gemaakt, moet u de gegevens kopi�
 
 [!INCLUDE [data-box-export-review-logs](../../includes/data-box-export-review-logs.md)]
 
- U kunt nu beginnen met het kopiëren van de gegevens. Gebruik een hulpprogramma voor kopiëren dat op Robocopy lijkt als u een Linux-hostcomputer gebruikt. Voorbeelden van beschikbare alternatieven in Linux zijn [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) en [Ultracopier](https://ultracopier.first-world.info/).  
+ U kunt nu beginnen met het kopiëren van de gegevens. Gebruik een hulpprogramma voor kopiëren dat op Robocopy lijkt als u een Linux-hostcomputer gebruikt. Voorbeelden van beschikbare alternatieven in Linux zijn [`rsync`](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) of [Ultracopier](https://ultracopier.first-world.info/).  
 
 De opdracht `cp` is een van de beste opties om een map te kopiëren. Ga voor meer informatie over het gebruik naar [cp man-pagina’s](http://man7.org/linux/man-pages/man1/cp.1.html).
 
-Volg deze richtlijnen als u rsync gebruikt voor een kopie met meerdere threads:
+Volg deze richtlijnen als u de optie `rsync` gebruikt voor een kopie met meerdere threads:
 
 * Installeer het **CIFS Utils**- of **NFS Utils**-pakket, afhankelijk van het bestandssysteem dat uw Linux-client gebruikt.
 
@@ -91,7 +89,7 @@ Volg deze richtlijnen als u rsync gebruikt voor een kopie met meerdere threads:
 
     `sudo apt-get install nfs-utils`
 
-* Installeer **Rsync** en **Parallel** (varieert en is afhankelijk van de gedistribueerde Linux-versie).
+* Installeer `rsync` en **Parallel** (varieert en is afhankelijk van de gedistribueerde Linux-versie).
 
     `sudo apt-get install rsync`
    

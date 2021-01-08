@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 09/28/2020
-ms.openlocfilehash: bb9768c2a4d3be9ac0e06844c5ac0835707cf455
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.date: 01/08/2021
+ms.openlocfilehash: 71096334f46531bba26f0ead66169340107627cf
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945852"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028689"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory"></a>Gegevens kopiëren van MongoDB met behulp van Azure Data Factory
 
@@ -28,21 +28,25 @@ In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factor
 >[!IMPORTANT]
 >ADF release deze nieuwe versie van de MongoDB-connector, die betere ondersteuning voor systeem eigen MongoDB biedt. Raadpleeg het artikel [MongoDb connector (verouderd)](connector-mongodb-legacy.md) als u de vorige MongoDb-connector gebruikt in uw oplossing die wordt ondersteund als-is voor achterwaartse compatibiliteit.
 
+
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
 U kunt gegevens uit de MongoDB-data base kopiëren naar elk ondersteund Sink-gegevens archief. Zie de tabel [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevens archieven die worden ondersteund als bron/sinks door de Kopieer activiteit.
 
-Deze MongoDB-connector ondersteunt **met name versie 3,4**.
+Deze MongoDB-connector ondersteunt **met name versie 4,2**.
+
 
 ## <a name="prerequisites"></a>Vereisten
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
+
 
 ## <a name="getting-started"></a>Aan de slag
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
 De volgende secties bevatten informatie over eigenschappen die worden gebruikt voor het definiëren van Data Factory-entiteiten die specifiek zijn voor MongoDB-connector.
+
 
 ## <a name="linked-service-properties"></a>Eigenschappen van gekoppelde service
 
@@ -102,6 +106,7 @@ Zie [gegevens sets en gekoppelde services](concepts-datasets-linked-services.md)
 }
 ```
 
+
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
 
 Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledige lijst met secties en eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Deze sectie bevat een lijst met eigenschappen die door MongoDB-bron worden ondersteund.
@@ -118,7 +123,7 @@ De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopiee
 | cursorMethods. sort | Hiermee geeft u de volg orde waarin de query overeenkomende documenten retourneert. Raadpleeg [cursor. sort ()](https://docs.mongodb.com/manual/reference/method/cursor.sort/#cursor.sort). | Nee |
 | cursorMethods. Limit | Hiermee geeft u het maximum aantal documenten op dat door de server wordt geretourneerd. Raadpleeg [cursor. Limit ()](https://docs.mongodb.com/manual/reference/method/cursor.limit/#cursor.limit).  | Nee |
 | cursorMethods. Skip | Hiermee geeft u het aantal documenten op dat moet worden overgeslagen en waar MongoDB begint met het retour neren van resultaten. Raadpleeg [cursor. Skip ()](https://docs.mongodb.com/manual/reference/method/cursor.skip/#cursor.skip). | Nee |
-| batchSize | Hiermee geeft u het aantal documenten op dat moet worden geretourneerd in elke batch van het antwoord van de MongoDB-instantie. In de meeste gevallen heeft het wijzigen van de Batch grootte geen invloed op de gebruiker of de toepassing. Cosmos DB limieten voor elke batch kan niet groter zijn dan 40MB. Dit is de som van de grootte van het batchSize aantal documenten. Verlaag deze waarde dus als de grootte van het document groot is. | Nee<br/>(de standaard waarde is **100**) |
+| batchSize | Hiermee geeft u het aantal documenten op dat moet worden geretourneerd in elke batch van het antwoord van de MongoDB-instantie. In de meeste gevallen heeft het wijzigen van de Batch grootte geen invloed op de gebruiker of de toepassing. Cosmos DB limieten van elke batch kan niet groter zijn dan 40 MB. Dit is de som van de grootte van het batchSize aantal documenten, dus Verklein deze waarde als de grootte van het document groot is. | Nee<br/>(de standaard waarde is **100**) |
 
 >[!TIP]
 >ADF-ondersteuning die BSON-document verbruikt in de **strikte modus**. Zorg ervoor dat uw filter query in de strikte modus in plaats van in de shell modus is. Meer beschrijving vindt u in [MongoDb hand matig](https://docs.mongodb.com/manual/reference/mongodb-extended-json/index.html).
@@ -161,13 +166,16 @@ De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopiee
 ]
 ```
 
+
 ## <a name="export-json-documents-as-is"></a>JSON-documenten exporteren als-is
 
-U kunt deze MongoDB-connector gebruiken om JSON-documenten te exporteren als-afkomstig van een MongoDB-verzameling naar verschillende op bestanden gebaseerde archieven of Azure Cosmos DB. Om een dergelijke schema-neutraal kopie te krijgen, slaat u de sectie ' Structure ' (ook wel *schema*genoemd) in de gegevensset en schema toewijzing in de Kopieer activiteit over.
+U kunt deze MongoDB-connector gebruiken om JSON-documenten te exporteren als-afkomstig van een MongoDB-verzameling naar verschillende op bestanden gebaseerde archieven of Azure Cosmos DB. Om een dergelijke schema-neutraal kopie te krijgen, slaat u de sectie ' Structure ' (ook wel *schema* genoemd) in de gegevensset en schema toewijzing in de Kopieer activiteit over.
+
 
 ## <a name="schema-mapping"></a>Schema toewijzing
 
 Zie [schema toewijzing](copy-activity-schema-and-type-mapping.md#schema-mapping)als u gegevens van MongoDb naar tabellaire Sink wilt kopiëren.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats)voor een lijst met gegevens archieven die worden ondersteund als bronnen en sinks op basis van de Kopieer activiteit in azure Data Factory.

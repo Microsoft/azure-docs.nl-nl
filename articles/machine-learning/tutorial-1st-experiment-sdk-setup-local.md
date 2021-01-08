@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 05ac0f78345e1c1d7643f24410d53b209ab7c375
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 62a1f43fb73f0eda77ebb8f62f64c95ff4ad37a1
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574153"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734195"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -65,6 +65,9 @@ tutorial
 
 - `tutorial`: Map op het hoogste niveau van het project.
 - `.azureml`: Verborgen submap om Azure Machine Learning-configuratiebestanden op te slaan.
+
+> [!TIP]
+> Als u een Mac gebruikt, gebruikt u **Command + Shift + .** in een Finder-venster om de mogelijkheid in/uit te schakelen om mappen te zien en te maken die beginnen met een punt (.).  Of gebruik de opdrachtterminal om de map te maken.
 
 
 > [!div class="nextstepaction"]

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f47ee36c0e7806afc10f8f0907825378c2d24410
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: c801a276f3a116f00b34d750ca8bfec7e56d377b
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505542"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680731"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
 
@@ -58,13 +58,13 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 |                   | Inbellen vanuit een groepsaanroep als een PSTN-deelnemer                                                                    | ✔️   | ✔️            | ✔️   
 | Algemeen           | Uw microfoon, spreker en camera testen met een service voor audio testen (beschikbaar door het aanroepen van 8:echo123)                   |  ✔️  | ✔️            | ✔️   
 
-## <a name="calling-client-library-browser-support"></a>Browser ondersteuning voor clientbibliotheek aanroepen
+## <a name="javascript-calling-client-library-support-by-os-and-browser"></a>Ondersteuning voor aanroepen van clientbibliotheek met JavaScript via besturingssysteem en browser
 
 De volgende tabel bevat de set van ondersteunde browsers en versies die momenteel beschikbaar zijn.
 
-|                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    |
-| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ |
-| **De aanroepende clientbibliotheek gebruiken** | Chrome *, nieuwe Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** |
+|                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    | iPad OS|
+| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ | -------|
+| **De aanroepende clientbibliotheek gebruiken** | Chrome *, nieuwe Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** | Safari** |
 
 
 \* Let wel dat naast de vorige twee releases ook de meest recente versie van Chrome wordt ondersteund.<br/>

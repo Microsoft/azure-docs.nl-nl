@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/12/2020
 ms.author: juliako
-ms.openlocfilehash: 721af069a76497576b92c4203a93656d19c283aa
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 0fc28a1f808eeb2977b1dcca5046ed29933b8aa8
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217725"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028791"
 ---
 # <a name="video-indexer-frequently-asked-questions"></a>Veelgestelde vragen over Video Indexer
 
@@ -51,7 +51,7 @@ Meer informatie vindt u [in aan de slag.](video-indexer-get-started.md)
 
 ### <a name="do-i-need-coding-skills-to-use-video-indexer"></a>Heb ik codeer vaardigheden nodig om Video Indexer te gebruiken?
 
-U kunt de webinterface van Video Indexer gebruiken om uw account te evalueren, te configureren en te beheren zonder dat hiervoor **code ring vereist**is.  Wanneer u klaar bent voor het ontwikkelen van complexere toepassingen, kunt u de [video indexer-API](https://api-portal.videoindexer.ai/) gebruiken om video indexer te integreren in uw eigen toepassingen, websites of [aangepaste werk stromen met behulp van serverloze technologieën zoals Azure Logic apps](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) of Azure functions.
+U kunt de webinterface van Video Indexer gebruiken om uw account te evalueren, te configureren en te beheren zonder dat hiervoor **code ring vereist** is.  Wanneer u klaar bent voor het ontwikkelen van complexere toepassingen, kunt u de [video indexer-API](https://api-portal.videoindexer.ai/) gebruiken om video indexer te integreren in uw eigen toepassingen, websites of [aangepaste werk stromen met behulp van serverloze technologieën zoals Azure Logic apps](https://azure.microsoft.com/blog/logic-apps-flow-connectors-will-make-automating-video-indexer-simpler-than-ever/) of Azure functions.
 
 ### <a name="do-i-need-machine-learning-skills-to-use-video-indexer"></a>Heb ik machine learning vaardig heden nodig om Video Indexer te gebruiken?
 
@@ -183,7 +183,7 @@ Er zijn momenteel enkele overlap pingen in functies die worden aangeboden door d
 
 De Video Indexer-API bevat een autorisatie-API en een operations API. De autorisaties-API bevat aanroepen waarmee u een toegangs token kunt opgeven. Elke aanroep naar de Operations-API moet worden gekoppeld aan een toegangstoken dat overeenkomt met het autorisatiebereik van de aanroep.
 
-Toegangs tokens zijn nodig voor het gebruik van de Video Indexer-Api's om veiligheids redenen. Dit zorgt ervoor dat alle aanroepen afkomstig zijn van u of gebruikers met toegangs machtigingen voor uw account. 
+Toegangs tokens zijn nodig voor het gebruik van de Video Indexer-Api's om veiligheids redenen. Dit zorgt ervoor dat alle aanroepen afkomstig zijn van u of gebruikers met toegangs machtigingen voor uw account. 
 
 ### <a name="what-is-the-difference-between-account-access-token-user-access-token-and-video-access-token"></a>Wat is het verschil tussen account toegangs token, toegangs token voor gebruikers en video toegangs token?
 
@@ -197,7 +197,7 @@ Toegangs tokens verlopen elk uur, dus u moet elk uur een nieuw toegangs token ge
 
 ### <a name="what-are-the-login-options-to-video-indexer-developer-portal"></a>Wat zijn de aanmeldings opties voor Video Indexer ontwikkelaars Portal?
 
-U kunt zich aanmelden met Azure AD, Microsoft-account, Google account of Facebook-account. 
+Bekijk een release opmerking over [aanmeldings gegevens](release-notes.md#october-2020).
 
 Wanneer u uw e-mail account met een id-provider hebt geregistreerd, kunt u dit e-mail account niet gebruiken met een andere ID-provider.
 

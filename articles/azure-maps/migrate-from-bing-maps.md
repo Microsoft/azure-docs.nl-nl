@@ -3,22 +3,36 @@ title: 'Zelfstudie: Migreren vanuit Bing Maps naar Azure Maps | Microsoft Azure 
 description: Een zelfstudie over hoe u vanuit Bing Maps migreert naar Microsoft Azure Maps. U wordt begeleid bij het overschakelen naar Azure Maps-API's en SDK's.
 author: rbrundritt
 ms.author: richbrun
-ms.date: 9/10/2020
+ms.date: 12/17/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 0045520849ea20d3e53a30101e6db0f5d495ab15
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 52768874ef27bf87846d4abbd68e9e8c1972f996
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897004"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679444"
 ---
-# <a name="tutorial---migrate-from-bing-maps-to-azure-maps"></a>Zelfstudie: migreren van Bing Kaarten naar Azure Maps
+# <a name="tutorial-migrate-from-bing-maps-to-azure-maps"></a>Zelfstudie: Migrate van Bing Maps naar Azure Maps
 
-In deze handleiding vindt u informatie over het migreren van web-, mobiele en servertoepassingen van Bing Maps naar het Azure Maps-platform. Deze handleiding bevat vergelijkende codevoorbeelden, suggesties voor migratie en best practices voor migratie naar Azure Maps.
+In deze handleiding vindt u informatie over het migreren van web-, mobiele en servertoepassingen van Bing Maps naar het Azure Maps-platform. Deze handleiding bevat vergelijkende codevoorbeelden, suggesties voor migratie en best practices voor migratie naar Azure Maps. 
+
+In deze zelfstudie leert u:
+
+> [!div class="checklist"]
+> * Vergelijking op hoog niveau voor equivalente Bing Kaarten-functies die beschikbaar zijn in Azure Maps.
+> * Met welke licentieverschillen u rekening moet houden.
+> * Uw migratie plannen.
+> * Waar u technische resources en ondersteuning vindt.
+
+## <a name="prerequisites"></a>Vereisten
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+2. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel. Zie [Verificatie beheren in Azure Maps](how-to-manage-authentication.md) voor meer informatie over verificatie in Azure Maps.
 
 ## <a name="azure-maps-platform-overview"></a>Overzicht van het Azure Maps-platform
 
@@ -39,7 +53,7 @@ De volgende tabel bevat een lijst op hoofdlijnen van de functies van Bing Maps e
 | Automatische suggestie                           | ✓                  |
 | Routebeschrijving (inclusief voor vrachtwagens)          | ✓                  |
 | Afstandsmatrix                       | ✓                  |
-| Hoogtetoenames                            | Gepland            |
+| Hoogtetoenames                            | ✓ (Preview)        |
 | Afbeeldingen - Statische kaart                  | ✓                  |
 | Metagegevens van afbeeldingen                      | ✓                  |
 | Isochronen                            | ✓                  |
@@ -58,13 +72,13 @@ Bing Maps biedt basisverificatie op basis van een sleutel. Azure Maps biedt zowe
 
 ## <a name="licensing-considerations"></a>Licentieoverwegingen
 
-Wanneer u van Bing Maps naar Azure Maps migreert, moet u rekening houden met de volgende aspecten op het gebied van licenties.
+Wanneer u van Bing Kaarten naar Azure Maps migreert, moet u rekening houden met de volgende informatie met betrekking tot licenties.
 
--   Azure Maps brengt kosten in rekening voor het gebruik van interactieve kaarten op basis van het aantal geladen kaarttegels; Bing brengt kosten in rekening voor het laden van kaartbesturingselementen (sessies). In Azure Maps worden kaarttegels automatisch in de cache geplaatst om de kosten voor de ontwikkelaar te beperken. Er wordt één Azure Maps-transactie gegenereerd voor elke 15 kaarttegels die worden geladen. De interactieve SDK's van Azure Maps gebruiken tegels van 512 pixels en er wordt gemiddeld een of minder transacties per paginaweergave gegenereerd.
+* Azure Maps brengt kosten in rekening voor het gebruik van interactieve kaarten op basis van het aantal geladen kaarttegels; Bing brengt kosten in rekening voor het laden van kaartbesturingselementen (sessies). In Azure Maps worden kaarttegels automatisch opgeslagen in de cache om de kosten voor ontwikkelaars te verlagen. Er wordt één Azure Maps-transactie gegenereerd voor elke 15 kaarttegels die worden geladen. De interactieve SDK's van Azure Maps gebruiken tegels van 512 pixels en er wordt gemiddeld een of minder transacties per paginaweergave gegenereerd.
 
--   Met Azure Maps kunnen gegevens van het platform worden opgeslagen in Azure. Ook kunnen ze overeenkomstig de [gebruiksvoorwaarden](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) maximaal zes maanden ergens anders in een cachegeheugen worden opgeslagen.
+* Met Azure Maps kunnen gegevens van het platform worden opgeslagen in Azure. Ook kunnen ze overeenkomstig de [gebruiksvoorwaarden](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) maximaal zes maanden ergens anders in een cachegeheugen worden opgeslagen.
 
-Hier volgen enkele informatiebronnen met betrekking tot licenties voor Azure Maps:
+Hier volgen enkele resources met betrekking tot licenties voor Azure Maps:
 
 -   [Pagina met Azure Maps-prijzen](https://azure.microsoft.com/pricing/details/azure-maps/)
 -   [Azure-prijscalculator](https://azure.microsoft.com/pricing/calculator/?service=azure-maps)
@@ -73,7 +87,7 @@ Hier volgen enkele informatiebronnen met betrekking tot licenties voor Azure Map
 
 ## <a name="suggested-migration-plan"></a>Voorgesteld migratieplan
 
-Het volgende is een algemeen migratieplan.
+Hier volgt een voorbeeld van een migratieplan op hoog niveau.
 
 1.  Inventariseer de Bing Maps-SDK’s en -services die uw toepassing gebruikt en verifieer of Azure Maps alternatieve SDK’s en services biedt waarnaar u kunt migreren.
 2.  Maak een Azure-abonnement via <https://azure.com> als u nog geen abonnement hebt.
@@ -88,28 +102,28 @@ Ga als volgt te werk om een Azure Maps-account te maken en toegang te krijgen to
 
 1. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 2. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-3. Maak een [Azure Maps-account](./how-to-manage-account-keys.md). 
+3. Maak een [Azure Maps-account](./how-to-manage-account-keys.md).
 4. [Download uw Azure Maps-abonnementssleutel](./how-to-manage-authentication.md#view-authentication-details) of configureer Azure Active Directory-verificatie voor verbeterde beveiliging.
 
 ## <a name="azure-maps-technical-resources"></a>Technische informatiebronnen voor Azure Maps
 
 Hier volgt een lijst met nuttige technische informatiebronnen voor Azure Maps.
 
--   Overzicht: https://azure.com/maps
--   Documentatie: <https://aka.ms/AzureMapsDocs>
--   Voorbeelden van Web-SDK-code: <https://aka.ms/AzureMapsSamples>
--   Ontwikkelaarsforums: <https://aka.ms/AzureMapsForums>
--   Video's: <https://aka.ms/AzureMapsVideos>
--   Blog: <https://aka.ms/AzureMapsBlog>
--   Azure Maps-feedback (UserVoice): <https://aka.ms/AzureMapsFeedback>
+* Overzicht: <https://azure.com/maps>
+* Documentatie: <https://aka.ms/AzureMapsDocs>
+* Voorbeelden van Web-SDK-code: <https://aka.ms/AzureMapsSamples>
+* Ontwikkelaarsforums: <https://aka.ms/AzureMapsForums>
+* Video's: <https://aka.ms/AzureMapsVideos>
+* Blog: <https://aka.ms/AzureMapsBlog>
+* Azure Maps-feedback (UserVoice): <https://aka.ms/AzureMapsFeedback>
 
 ## <a name="migration-support"></a>Ondersteuning voor migratie
 
 Ontwikkelaars kunnen migratieondersteuning zoeken via de [forums](/answers/topics/azure-maps.html) of via een van de vele opties voor ondersteuning voor Azure: <https://azure.microsoft.com/support/options/>
 
-## <a name="new-terminology"></a>Nieuwe terminologie 
+## <a name="new-terminology"></a>Nieuwe terminologie
 
-Hieronder volgt een lijst met veelgebruikte Bing Maps-termen waarvoor een andere term wordt gebruikt in Azure Maps.
+De volgende lijst bevat algemene voorwaarden voor Bing Kaarten en de bijbehorende voorwaarden voor Azure Maps.
 
 | Bing Maps-term                    | Azure Maps-term                                                |
 |-----------------------------------|----------------------------------------------------------------|
@@ -128,12 +142,13 @@ Hieronder volgt een lijst met veelgebruikte Bing Maps-termen waarvoor een andere
 | Navigatiebalk                    | Kaartstijlkiezer, zoombesturingselement, besturingselement voor pitch, kompasbesturingselement |
 | Markeringspunt                           | Tekenlaag, symboollaag of HTML-markering                      |
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources die moeten worden opgeruimd.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 In de volgende artikelen vindt u meer informatie over het migreren van uw Bing Maps-toepassing:
 
 > [!div class="nextstepaction"]
 > [Een web-app migreren](migrate-from-bing-maps-web-app.md)
-
-> [!div class="nextstepaction"]
-> [Een webservice migreren](migrate-from-bing-maps-web-services.md)

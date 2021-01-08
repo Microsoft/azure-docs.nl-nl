@@ -5,15 +5,15 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 12/12/2018
+ms.date: 01/07/2021
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 16a86982813b667ed5c761da27c8e9e5a43ab6cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27f16ac7d7d799c5467b11fd93352dc5fdef666c
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322492"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028060"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>ExpressRoute Global Reach configureren met behulp van de Azure CLI
 
@@ -48,7 +48,7 @@ az account set --subscription <your subscription ID>
 
 ### <a name="identify-your-expressroute-circuits-for-configuration"></a>Uw ExpressRoute-circuits identificeren voor configuratie
 
-U kunt ExpressRoute Global Reach tussen twee ExpressRoute-circuits inschakelen, zolang ze zich in ondersteunde landen/regio's bevinden en op verschillende peering locaties zijn gemaakt. Als uw abonnement eigenaar is van beide circuits, kunt u een van beide circuits kiezen voor het uitvoeren van de configuratie, zoals verderop in dit artikel wordt uitgelegd. Als de twee circuits zich in verschillende Azure-abonnementen bevinden, moet u autorisatie hebben van een Azure-abonnement en moet u de autorisatie sleutel door geven wanneer u de configuratie opdracht in het andere Azure-abonnement uitvoert.
+U kunt ExpressRoute inschakelen Global Reach tussen twee ExpressRoute-circuits. De circuits moeten zich in ondersteunde landen/regio's bevinden en zijn gemaakt op verschillende peering-locaties. Als uw abonnement eigenaar is van beide circuits, kunt u een van beide circuits selecteren om de configuratie uit te voeren. Als de twee circuits zich echter in verschillende Azure-abonnementen bevinden, moet u een autorisatie sleutel maken op basis van een van de circuits. Met de autorisatie sleutel die is gegenereerd op basis van het eerste circuit, kunt u Global Reach inschakelen op het tweede circuit.
 
 ## <a name="enable-connectivity-between-your-on-premises-networks"></a>Connectiviteit tussen uw on-premises netwerken inschakelen
 
@@ -58,7 +58,7 @@ Wanneer u de opdracht uitvoert om connectiviteit in te scha kelen, moet u rekeni
 
   > /Subscriptions/{your_subscription_id}/resourceGroups/{your_resource_group}/providers/Microsoft.Network/expressRouteCircuits/{your_circuit_name}
 
-* het *adres voorvoegsel* moet een '/29 ' IPv4-subnet zijn (bijvoorbeeld: ' 10.0.0.0/29 '). We gebruiken IP-adressen in dit subnet om verbinding te maken tussen de twee ExpressRoute-circuits. U mag geen adressen gebruiken in dit subnet in uw Azure Virtual Networks of in uw on-premises netwerken.
+* het *adres voorvoegsel* moet een '/29 ' IPv4-subnet zijn (bijvoorbeeld: ' 10.0.0.0/29 '). We gebruiken IP-adressen in dit subnet om verbinding te maken tussen de twee ExpressRoute-circuits. U kunt geen adressen gebruiken in dit subnet in uw Azure Virtual Networks of in uw on-premises netwerken.
 
 Voer de volgende CLI-opdracht uit om twee ExpressRoute-circuits te verbinden:
 
@@ -94,7 +94,7 @@ Wanneer deze bewerking is voltooid, hebt u verbinding tussen uw on-premises netw
 
 ## <a name="enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions"></a>Connectiviteit tussen ExpressRoute-circuits in verschillende Azure-abonnementen inschakelen
 
-Als de twee circuits zich niet in hetzelfde Azure-abonnement bevinden, hebt u autorisatie nodig. In de volgende configuratie genereert u autorisatie in het abonnement van circuit 2 en geeft u de autorisatie sleutel door aan Circuit 1.
+Als de twee circuits zich niet in hetzelfde Azure-abonnement bevinden, hebt u autorisatie nodig. In de volgende configuratie genereert u autorisatie in het abonnement van circuit 2. Vervolgens geeft u de autorisatie sleutel door aan Circuit 1.
 
 1. Een autorisatie sleutel genereren:
 

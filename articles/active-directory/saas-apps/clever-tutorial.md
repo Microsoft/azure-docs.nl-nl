@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/24/2020
+ms.date: 12/17/2020
 ms.author: jeedes
-ms.openlocfilehash: d232048cbc5592b9b0fcacea6ee44e00e8d671e2
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 7275bd8bc51d5f2889c7fc9365e9187040049876
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92455830"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97722246"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-clever"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory bij Clever
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Clever kunt integreren met Azure Active Directo
 * In Azure AD bepalen wie er toegang heeft tot Clever.
 * Ervoor zorgen dat uw gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Clever.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,7 +38,6 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Clever ondersteunt door **SP** geïnitieerde eenmalige aanmelding
-* Zodra u Concur hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -49,7 +46,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het configureren van de integratie van Clever in Azure AD, moet u Clever vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
@@ -74,7 +71,7 @@ Voltooi de volgende stappen om eenmalige aanmelding via Azure AD bij Clever te c
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Clever** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in Azure Portal op de integratiepagina van de toepassing **Clever** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -114,42 +111,14 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Clever** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-clever-sso"></a>Eenmalige aanmelding bij Clever configureren
 
-1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Clever.
-
-1. Klik in de werkbalk op **Directe aanmelding**.
-
-    ![Directe aanmelding](./media/clever-tutorial/ic798984.png "Directe aanmelding")
-
-    > [!NOTE]
-    > Voordat u eenmalige aanmelding kunt testen, moet u contact opnemen met het [Clever-ondersteuningsteam](https://clever.com/about/contact/) om eenmalige aanmelding voor Microsoft 365 in de back-end in te schakelen.
-
-1. Voer op de pagina **Directe aanmelding** de volgende stappen uit:
- 
-    ![SSO-configuratie op de pagina voor instant aanmelding](./media/clever-tutorial/ic798985.png "Directe aanmelding")
-
-    a. Typ de **aanmeldings-URL**.
-
-    >[!NOTE]
-    >De **aanmeldings-URL** is een aangepaste waarde. Neem contact op met het [Clever-ondersteuningsteam](https://clever.com/about/contact/) om deze waarde te verkrijgen.
-
-    b. Selecteer **ADFS** als **Identiteitssysteem**.
-
-    c. Plak in het tekstvak **Metagegevens-URL** de waarde van **App-URL voor federatieve metagegevens** die u uit de Azure-portal hebt gekopieerd.
-
-    d. Klik op **Opslaan**.
+Volg de instructies in de [koppeling](https://support.clever.com/hc/articles/205889768-Single-Sign-On-SSO-Log-in-with-Office-365-Azure-) om eenmalige aanmelding te configureren aan de zijde van Clever.
 
 ### <a name="create-clever-test-user"></a>Testgebruiker voor Clever maken
 
@@ -162,16 +131,14 @@ Werk in het geval van Clever samen met het [Clever-ondersteuningsteam](https://c
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Clever klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van Clever waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Clever, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van Clever en initieer hier de aanmeldingsstroom.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Clever klikt, wordt u omgeleid naar de aanmeldings-URL van Clever. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Clever met Azure AD proberen](https://aad.portal.azure.com/)
+Zodra u Clever hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens in uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)

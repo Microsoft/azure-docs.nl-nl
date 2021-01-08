@@ -7,18 +7,21 @@ ms.service: storage
 ms.subservice: blobs
 ms.devlang: powershell
 ms.topic: sample
-ms.date: 11/07/2017
+ms.date: 12/29/2020
 ms.author: fryu
-ms.openlocfilehash: 2d921a968f50f64788ccbd7637bc04c8492a3f90
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: dfc338844e310102447e2498ee9cce8f28a79b9f
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96010891"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809561"
 ---
 # <a name="calculate-the-total-billing-size-of-a-blob-container"></a>De totale grootte van een blobcontainer berekenen voor facturering
 
 Met dit script wordt de grootte van een container in Azure Blob-opslag berekend voor het schatten van factureringskosten. Met het script wordt de totale grootte van de blobs in de container opgeteld.
+
+> [!IMPORTANT]
+> Met het voorbeeldscript uit dit artikel wordt de factureringsgrootte voor blobmomentopnamen mogelijk niet nauwkeurig berekend.
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
@@ -44,6 +47,7 @@ For-Each Signed Identifier[512 bytes]
 ```
 
 Hieronder ziet u de uitsplitsing:
+
 * 48 bytes overhead voor elke container, inclusief Tijdstip laatst gewijzigd, Machtigingen, Openbare instellingen en enkele systeemmetagegevens.
 
 * De containernaam wordt opgeslagen in Unicode. Vermenigvuldig dus het aantal tekens met twee.

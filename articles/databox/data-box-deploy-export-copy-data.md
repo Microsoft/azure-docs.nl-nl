@@ -6,17 +6,17 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 07/10/2020
+ms.date: 12/18/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: ecc6e1e1a543f3190e9f73512ca0b9ae45cc3fe9
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 495b4427fb7e456c60a489b9ce3d19c2a44bd918
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335210"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97680890"
 ---
-# <a name="tutorial-copy-data-from-azure-data-box-via-smb-preview"></a>Zelfstudie: Gegevens kopiëren uit Azure Data Box via SMB (preview)
+# <a name="tutorial-copy-data-from-azure-data-box-via-smb"></a>Zelfstudie: Gegevens kopiëren uit Azure Data Box via SMB
 
 In deze zelfstudie wordt beschreven hoe u verbinding maakt en gegevens kopieert vanaf uw Data Box naar een on-premises server met de lokale webinterface. Het Data Box-apparaat bevat gegevens die zijn geëxporteerd uit uw Azure Storage-account.
 
@@ -27,8 +27,6 @@ In deze zelfstudie leert u het volgende:
 > * Vereisten
 > * Verbinding maken met Data Box
 > * Gegevens kopiëren uit Data Box
-
-[!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -11,12 +11,12 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/28/2020
-ms.openlocfilehash: 3f8c296860fc36772a85039e27c86a72614c2a50
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e551925bbd1426256a81ac2ca3f245af7697245b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791049"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028009"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Aan de slag met SQL Database dynamische gegevens maskering met de Azure Portal
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "92791049"
 In dit artikel wordt beschreven hoe u [dynamische gegevens maskering](dynamic-data-masking-overview.md) implementeert met de Azure Portal. U kunt ook dynamische gegevens maskering implementeren met behulp van [Azure SQL database-cmdlets](/powershell/module/az.sql/) of de [rest API](/rest/api/sql/).
 
 > [!NOTE]
-> Deze functie kan niet worden ingesteld met behulp van de portal voor Azure Synapse (gebruik Power shell of REST API) of een door SQL beheerd exemplaar. Zie [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)voor meer informatie.
+> Deze functie kan niet worden ingesteld met behulp van de portal voor SQL Managed instance (gebruik Power shell of REST API). Zie [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)voor meer informatie.
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-the-azure-portal"></a>Dynamische gegevens maskering instellen voor uw data base met behulp van de Azure Portal
 
@@ -42,7 +42,7 @@ In dit artikel wordt beschreven hoe u [dynamische gegevens maskering](dynamic-da
 
     ![Scherm opname van de configuratie pagina voor het toevoegen van een Maskerings regel.](./media/dynamic-data-masking-configure-portal/6_ddm_add_mask.png)
 
-6. Selecteer het **schema** , de **tabel** en de **kolom** om het aangewezen veld voor maskering te definiëren.
+6. Selecteer het **schema**, de **tabel** en de **kolom** om het aangewezen veld voor maskering te definiëren.
 7. **Selecteer hoe u wilt maskeren** in de lijst met gevoelige gegevens maskerings categorieën.
 
     ![Scherm opname van de categorieën gevoelige gegevens maskering onder de sectie Selecteer hoe u wilt maskeren.](./media/dynamic-data-masking-configure-portal/7_ddm_mask_field_format.png)

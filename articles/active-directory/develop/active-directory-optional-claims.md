@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 1/05/2021
+ms.date: 1/06/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: fd3e4a4442f7da89ffee1557e7d908db805931ed
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 1debeab6e420d9021ebba1cecb2d551cf21c9fe2
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014867"
+ms.locfileid: "98028468"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -49,7 +49,7 @@ Hieronder vindt u de set optionele claims die standaard beschikbaar zijn voor he
 
 **Tabel 2: v 1.0 en v 2.0 optionele claim sets**
 
-| Naam                       |  Beschrijving   | Token type | Gebruikers type | Notities  |
+| Naam                       |  Beschrijving   | Token type | Gebruikers type | Opmerkingen  |
 |----------------------------|----------------|------------|-----------|--------|
 | `auth_time`                | Tijdstip waarop de laatste verificatie van de gebruiker is gestart. Zie OpenID Connect Connect spec.| JWT        |           |  |
 | `tenant_region_scope`      | De regio van de resource-Tenant | JWT        |           | |
@@ -87,10 +87,12 @@ Deze claims zijn altijd opgenomen in de Azure AD-tokens v 1.0, maar zijn niet op
 | `given_name`  | Voornaam                      | Hiermee wordt de eerste of de naam van de gebruiker opgegeven, zoals ingesteld op het gebruikers object.<br>"given_name": "Frank"                   | Ondersteund in MSA en Azure AD.  Vereist het `profile` bereik. |
 | `upn`         | User Principal Name | Een id voor de gebruiker die kan worden gebruikt met de para meter username_hint.  Geen duurzame id voor de gebruiker en mag niet worden gebruikt om unieke identiteits gebruikers informatie (bijvoorbeeld als een database sleutel) te gebruiken. Gebruik in plaats daarvan de gebruikers object-ID ( `oid` ) als een database sleutel. Gebruikers die zich aanmelden met een [alternatieve aanmeldings-id](../authentication/howto-authentication-use-email-signin.md) mogen niet worden weer gegeven als UPN (User Principal Name). Gebruik in plaats daarvan de volgende `preferred_username` claim voor het weer geven van de aanmeldings status voor de gebruiker. | Zie de onderstaande [aanvullende eigenschappen](#additional-properties-of-optional-claims) voor de configuratie van de claim. Vereist het `profile` bereik.|
 
+## <a name="v10-specific-optional-claims-set"></a>v 1.0-specifieke, optionele claim sets
+
+Sommige verbeteringen van de v2-token indeling zijn beschikbaar voor apps die gebruikmaken van de V1-token indeling, omdat deze bijdragen aan een betere beveiliging en betrouw baarheid. Deze worden niet doorgevoerd voor ID-tokens die zijn aangevraagd bij het v2-eind punt, noch toegangs tokens voor Api's die gebruikmaken van de v2-token indeling. Deze zijn alleen van toepassing op JWTs, geen SAML-tokens. 
 
 **Tabel 4: v 1.0-alleen optionele claims**
 
-Sommige verbeteringen van de v2-token indeling zijn beschikbaar voor apps die gebruikmaken van de V1-token indeling, omdat deze bijdragen aan een betere beveiliging en betrouw baarheid. Deze worden niet doorgevoerd voor ID-tokens die zijn aangevraagd bij het v2-eind punt, noch toegangs tokens voor Api's die gebruikmaken van de v2-token indeling. 
 
 | JWT-claim     | Naam                            | Beschrijving | Notities |
 |---------------|---------------------------------|-------------|-------|
@@ -245,7 +247,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via de gebruikers interface:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer **App-registraties** onder **Beheren**.
@@ -258,7 +260,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
 **Groepen optionele claims configureren via het toepassings manifest:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer in de lijst de toepassing waarvoor u de optionele claims wilt configureren.
@@ -389,7 +391,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Configuratie van de gebruikers interface:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 
 1. Zoek en selecteer de optie **Azure Active Directory**.
@@ -412,7 +414,7 @@ In het onderstaande voor beeld gebruikt u de gebruikers interface voor **token c
 
 **Manifest configuratie:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Nadat u bent geverifieerd, kiest u uw Azure AD-Tenant door deze te selecteren in de rechter bovenhoek van de pagina.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Zoek de toepassing waarvoor u de optionele claims wilt configureren in de lijst en selecteer deze.

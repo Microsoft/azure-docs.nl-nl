@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: f5cf432e3824ca0bb441a458a08fc7353291cf1f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: be8123d3c8a4acc684610aeaa9ee263c5defa17d
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490054"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813612"
 ---
 # <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
 
@@ -30,6 +30,17 @@ Gegevens worden verzameld met:
 > Naarmate Security Center is gegroeid, is het ook mogelijk om meer typen resources te bewaken. Het aantal extensies is ook gegroeid. Automatische inrichting is nu uitgebreid, zodat meer resourcetypen kunnen worden ondersteund door gebruik te maken van de mogelijkheden van Azure Policy.
 
 :::image type="content" source="./media/security-center-enable-data-collection/auto-provisioning-options.png" alt-text="Pagina-instellingen voor de automatisch inrichting van Security Center":::
+
+
+## <a name="availability"></a>Beschikbaarheid
+
+| Aspect                  | Details                                                                                                                                                                                                                      |
+|-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Releasestatus:          | **Functie**: Automatisch inrichten is algemeen beschikbaar (GA)<br>**Agent en extensies**: De Log Analytics-agent voor Azure-VM's is algemeen beschikbaar. De Microsoft Dependency-agent is beschikbaar in de preview-versie. De invoegtoepassing voor Kubernetes-beleid is algemeen beschikbaar                |
+| Prijzen:                | Gratis                                                                                                                                                                                                                         |
+| Ondersteunde bestemmingen: | ![Ja](./media/icons/yes-icon.png) Azure-machines<br>![Nee](./media/icons/no-icon.png) Azure Arc-machines<br>![Nee](./media/icons/no-icon.png) Kubernetes-knooppunten<br>![Nee](./media/icons/no-icon.png) Virtuele-machineschaalsets |
+| Clouds:                 | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, China Gov, andere overheden                                                                                                      |
+|                         |                                                                                                                                                                                                                              |
 
 
 ## <a name="why-use-auto-provisioning"></a>Wat is het nut van automatische inrichting?

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 03/25/2019
+ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: ffbfd3214242d8df5fe33faf465bc1da3eb9986d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 9d1d22d57464266239aea96f427020351eb749d5
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96580115"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740654"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-hyper-v"></a>Zelfstudie: Azure Data Box Gateway inrichten in Hyper-V
 
@@ -58,7 +58,7 @@ Voordat u een apparaat implementeert, controleert u het volgende:
   * Ten minste 8 GB RAM-geheugen.
   * Eén netwerkinterface.
   * Een besturingssysteemschijf van 250 GB.
-  * Een virtuele schijf van 2 TB voor gegevens.
+  * Een virtuele schijf van 2-TB voor gegevens.
 
 ### <a name="for-the-network-in-the-datacenter"></a>Voor het netwerk in het datacenter
 
@@ -79,7 +79,7 @@ Voor het maken van een virtueel apparaat hebt u het volgende nodig:
   * Ten minste 8 GB RAM-geheugen.
   * Eén netwerkinterface die is verbonden met het netwerk en verkeer naar internet kan routeren.
   * Een besturingssysteemschijf van 250 GB.
-  * Een virtuele schijf van 2 TB voor systeemgegevens.
+  * Een virtuele schijf van 2-TB voor systeemgegevens.
 
 ## <a name="bitlocker-considerations"></a>Aandachtspunten voor BitLocker
 
@@ -92,10 +92,11 @@ Voor het maken van een virtueel apparaat hebt u het volgende nodig:
 Voer de volgende stappen uit om een apparaat in de hypervisor in te richten.
 
 1. Kopieer de installatiekopie van het virtuele apparaat op de Windows Server-host naar een lokaal station. U hebt deze VHDX-installatiekopie gedownload via de Azure Portal. Noteer de locatie waar u de installatiekopie naartoe hebt gekopieerd, want u hebt deze installatiekopie verderop in de procedure nodig.
+
 2. Open **Serverbeheer**. Klik in de rechterbovenhoek op **Hulpprogramma's** en selecteer **Hyper-V-beheer**.
 
-    ![Selecteer Hyper-V-beheer in Serverbeheer](./media/data-box-gateway-deploy-provision-hyperv/image1.png)  
-  
+    ![Selecteer Hyper-V-beheer in Serverbeheer](./media/data-box-gateway-deploy-provision-hyperv/image1.png)
+
 3. In **Hyper-V-beheer** klikt u in het scopedeelvenster met de rechtermuisknop op uw systeemknooppunt om het contextmenu te openen. Klik vervolgens op **Nieuw** > **Virtuele machine**.
 
    ![Een nieuwe virtuele machine maken in Hyper-V-beheer](./media/data-box-gateway-deploy-provision-hyperv/image2.png)
@@ -118,13 +119,13 @@ Voer de volgende stappen uit om een apparaat in de hypervisor in te richten.
 10. Controleer de **Samenvatting** en klik op **Voltooien** om de virtuele machine te maken.
 
     ![De pagina Nieuwe virtuele machine van de wizard voltooien](./media/data-box-gateway-deploy-provision-hyperv/image8.png)
-11. U hebt vier virtuele processors nodig om te voldoen aan de minimale vereisten. Selecteer uw hostsysteem in het venster **Hyper-V-beheer** om 4 virtuele processors toe te voegen. Zoek in het rechterdeelvenster onder de lijst met **Virtuele Machines** de virtuele machine die u zojuist hebt gemaakt. Klik met de rechtermuisknop op de naam van de machine en selecteer **Instellingen**.
+11. U hebt vier virtuele processors nodig om te voldoen aan de minimale vereisten. Selecteer uw hostsysteem in het venster **Hyper-V-beheer** om vier virtuele processors toe te voegen. Zoek in het rechterdeelvenster onder de lijst met **Virtuele Machines** de virtuele machine die u zojuist hebt gemaakt. Klik met de rechtermuisknop op de naam van de machine en selecteer **Instellingen**.
 
     ![Instellingen voor virtuele machines](./media/data-box-gateway-deploy-provision-hyperv/image9.png)
 12. Klik op de pagina **Instellingen** in het linkerdeelvenster op **Processor**. Stel in het rechterdeelvenster **Aantal virtuele processors** in op 4 (of meer). Klik op **Toepassen**.
 
     ![Het aantal virtuele processors instellen op de pagina Instellingen](./media/data-box-gateway-deploy-provision-hyperv/image10.png)
-13. Om aan de minimale vereisten te voldoen, moet u ook een virtuele gegevensschijf van 2 TB toevoegen. Op de pagina **Instellingen** doet u het volgende:
+13. Om aan de minimale vereisten te voldoen, moet u ook een virtuele gegevensschijf van 2-TB toevoegen. Op de pagina **Instellingen** doet u het volgende:
 
     1. Selecteer in het linkerdeelvenster de optie **SCSI-controller**.
     2. In het rechterdeelvenster selecteert u de optie **Harde schijf** en klikt u op **Toevoegen**.
@@ -143,7 +144,7 @@ Voer de volgende stappen uit om een apparaat in de hypervisor in te richten.
     ![Pagina voor opgeven van naam en locatie](./media/data-box-gateway-deploy-provision-hyperv/image14.png)
 19. Op de pagina **Schijf configureren** selecteert u de optie **Nieuwe lege virtuele harde schijf maken** en geeft u een grootte op van **2 TB** (of meer).
 
-    Hoewel 2 TB de minimumvereiste is, kunt u altijd een grotere schijf inrichten. Houd er rekening mee dat u een ingerichte schijf niet kunt verkleinen. Een poging om de schijf te verkleinen resulteert in verlies van alle lokale gegevens op het apparaat. Uitbreiding van een gegevensschijf wordt niet ondersteund. Klik op **Volgende**.
+    Hoewel 2 TB de minimumvereiste is, kunt u altijd een grotere schijf inrichten. Houd er rekening mee dat u een schijf niet kunt verkleinen zodra deze is ingericht. Een poging om de schijf te verkleinen resulteert in verlies van alle lokale gegevens op het apparaat. Uitbreiding van een gegevensschijf wordt niet ondersteund. Klik op **Volgende**.
 
     ![Pagina voor configureren van schijfopslag](./media/data-box-gateway-deploy-provision-hyperv/image15.png)
 20. Op de pagina **Samenvatting** controleert u de details van uw virtuele gegevensschijf en als u tevreden bent, klikt u op **Voltooien** om de schijf te maken. De wizard wordt gesloten en er wordt een virtuele harde schijf aan uw machine toegevoegd.
@@ -152,6 +153,11 @@ Voer de volgende stappen uit om een apparaat in de hypervisor in te richten.
 21. Ga terug naar de pagina **Instellingen**. Klik op **OK** om de pagina **Instellingen** te sluiten en terug te keren naar het venster Hyper-V-beheer.
 
     ![De pagina Instellingen](./media/data-box-gateway-deploy-provision-hyperv/image17.png)
+
+Uw virtuele machine is nu volledig geconfigureerd.
+
+> [!NOTE]
+> U kunt geen nieuwe Data Box Gateway inrichten door de geconfigureerde VHD te kopiëren. Elk nieuw virtueel Data Box Gateway-apparaat moet worden ingericht op basis van een installatiekopie voor een virtueel apparaat voor Hyper-V, die wordt gedownload vanuit Azure Portal.
 
 ## <a name="start-the-virtual-device-and-get-the-ip"></a>Het virtuele apparaat starten en het IP-adres ophalen
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/15/2020
+ms.date: 12/16/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro R so I can use it to transfer data to Azure.
-ms.openlocfilehash: d992748e9829993acc28795778baae3eb92e88f3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7ca9b21838d35b54b4ed84d5aaf3aa797b02d9e0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464104"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97630765"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-r"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro R
 
@@ -41,7 +41,7 @@ Raadpleeg de volgende zelfstudies in de voorgeschreven volgorde voor het impleme
 |  | |
 |**Zelfstudies voor implementatie** |Deze zelfstudies zijn vereist als u uw Azure Stack Edge Pro R-apparaat in productie wilt implementeren. |
 |**[1. Azure Portal voorbereiden voor apparaat](azure-stack-edge-pro-r-deploy-prep.md)** |Maak en configureer uw Azure Stack Edge-resource voordat u een fysiek Azure Stack Edge-apparaat installeert. |
-|**[2. Het apparaat installeren](azure-stack-edge-pro-r-deploy-install.md)**|Uw fysieke apparaat uitpakken, opstellen en bekabelen.  |
+|**[2. Het apparaat installeren](azure-stack-edge-pro-r-deploy-install.md)**|Inspecteer en bekabel het fysieke apparaat.  |
 |**[3. Verbinding maken met het apparaat](azure-stack-edge-pro-r-deploy-connect.md)** |Zodra het apparaat is geïnstalleerd, maakt u verbinding met de lokale webinterface van het apparaat.  |
 |**[4. Netwerkinstellingen configureren](azure-stack-edge-pro-r-deploy-configure-network-compute-web-proxy.md)** |Configureer een netwerk, inclusief het rekennetwerk en de webproxy-instellingen voor uw apparaat.   |
 |**[5. Apparaatinstellingen configureren](azure-stack-edge-pro-r-deploy-set-up-device-update-time.md)** |Wijs een apparaatnaam en een DNS-domein toe, configureer de updateserver en de apparaattijd. |

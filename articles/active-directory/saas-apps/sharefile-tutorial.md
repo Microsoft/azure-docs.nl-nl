@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/04/2020
+ms.date: 12/21/2020
 ms.author: jeedes
-ms.openlocfilehash: e0cabcbaaf8e84ac1bdfd13c0ef4ab14f326fcf7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d7cafdcbbf44f3f501d54c13d1b4549c446ed8c8
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182282"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97723963"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Zelfstudie: Azure Active Directory-integratie met Citrix ShareFile
 
@@ -51,7 +51,7 @@ Om de integratie van Citrix ShareFile in Azure AD te configureren, moet u Citrix
 1. Typ in de sectie **Toevoegen uit de galerie** de naam **Citrix ShareFile** in het zoekvak.
 1. Selecteer **Citrix ShareFile** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren en testen
+## <a name="configure-and-test-azure-ad-sso-for-citrix-sharefile"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Citrix ShareFile
 
 In dit gedeelte gaat u eenmalige aanmelding van Azure AD met Citrix ShareFile configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Citrix ShareFile tot stand is gebracht.
@@ -60,10 +60,10 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     
-    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-    * **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    1. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 2. **[Eenmalige aanmelding voor Citrix ShareFile configureren](#configure-citrix-sharefile-sso)** : de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
-    * **[Testgebruiker voor Citrix ShareFile maken](#create-citrix-sharefile-test-user)** : een tegenhanger voor Britta Simon maken in Citrix ShareFile die wordt gekoppeld aan de Azure AD-voorstelling van de gebruiker.
+    1. **[Testgebruiker voor Citrix ShareFile maken](#create-citrix-sharefile-test-user)** : een tegenhanger voor Britta Simon maken in Citrix ShareFile die wordt gekoppeld aan de Azure AD-voorstelling van de gebruiker.
 3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
@@ -131,7 +131,15 @@ Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u d
 
 ## <a name="configure-citrix-sharefile-sso"></a>Eenmalige aanmelding voor Citrix ShareFile configureren
 
-1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van **Citrix ShareFile**.
+1. Als u de configuratie in **Citrix ShareFile** wilt automatiseren, moet u de **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **Citrix ShareFile instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de Citrix ShareFile-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij Citrix ShareFile. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3-7 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Citrix ShareFile handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw Citrix ShareFile-bedrijfssite.
 
 1. Klik in het **Dashboard** op **Instellingen** en selecteer **Beheerdersinstellingen**
 
@@ -184,13 +192,13 @@ Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u d
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Citrix ShareFile, waar u de aanmeldingsstroom kunt starten. 
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Citrix ShareFile, waar u de aanmeldingsstroom kunt starten.
 
-2. Ga rechtstreeks naar de aanmeldings-URL van Citrix ShareFile en start daar de aanmeldingsstroom.
+* Ga rechtstreeks naar de aanmeldings-URL van Citrix ShareFile en start daar de aanmeldingsstroom.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de Citrix ShareFile-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor Citrix ShareFile. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Citrix ShareFile klikt, wordt u omgeleid naar de aanmeldings-URL van Citrix ShareFile. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

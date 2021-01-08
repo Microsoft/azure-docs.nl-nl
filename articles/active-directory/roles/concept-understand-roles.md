@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 968ca6fa293e7bcc01bae6f48164c48c19b8267b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: db3eaef240e1f76e4c61a454e104336806666a7c
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501668"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803898"
 ---
 # <a name="understand-roles-in-azure-active-directory"></a>Rollen in Azure Active Directory begrijpen
 

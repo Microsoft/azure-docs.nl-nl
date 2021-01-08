@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/25/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 671ca73cfa898be532521599d1211d2a8081eb4b
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 0d833c32000eb91511782184ef4455bc1973a714
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563259"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97807906"
 ---
 # <a name="azure-synapse-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics
 
@@ -89,7 +89,7 @@ A: Op dit moment moet u uw Azure Data Factory-pijplijnen en gerelateerde artefac
 
 ### <a name="q-what-is-the-difference-between-apache-spark-for-synapse-and-apache-spark"></a>V: Wat is het verschil tussen Apache Spark voor Synapse en Apache Spark?
 
-A: Apache Spark voor Synapse IS Apache Spark met extra ondersteuning voor integraties met andere services (AAD, AzureML, enzovoort) en extra bibliotheken (mssparktuils, Hummingbird) en vooraf afgestemde prestatieconfiguraties.
+A: Apache Spark voor Synapse is Apache Spark met extra ondersteuning voor integraties met andere services (AAD, AzureML, enzovoort) en extra bibliotheken (mssparktuils, Hummingbird) en vooraf afgestemde prestatieconfiguraties.
 
 Elke workload die momenteel wordt uitgevoerd op Apache Spark, wordt zonder wijziging uitgevoerd op Apache Spark voor Azure Synapse. 
 

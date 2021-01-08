@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 12/16/2020
-ms.openlocfilehash: bc93c3643e329879e5118d1cfb61a356442df808
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 7d93002af866aa653972182a13ea37d37e912ce8
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618389"
+ms.locfileid: "97630306"
 ---
 # <a name="tutorial-shard-data-on-worker-nodes-in-azure-database-for-postgresql--hyperscale-citus"></a>Zelfstudie: Shardgegevens op werkknooppunten in Azure Database for PostgreSQL - Hyperscale (Citus)
 
@@ -171,8 +171,8 @@ We zien dat de shards even groot zijn. We hebben al gezien dat plaatsingen gelij
 
 De rijen in ons voorbeeld `users` zijn gelijkmatig gedistribueerd vanwege eigenschappen van de distributiekolom `email`.
 
-1. Het aantal e-mailadressen is groter dan of gelijk aan het aantal shards
-2. Het aantal rijen per e-mailadres is vergelijkbaar (in ons geval is er precies één rij per adres, omdat we het e-mailadres in een sleutel hebben gedeclareerd)
+1. Het aantal e-mailadressen is groter dan of gelijk aan het aantal shards.
+2. Het aantal rijen per e-mailadres is vergelijkbaar (in ons geval is er precies één rij per adres, omdat we het e-mailadres in een sleutel hebben gedeclareerd).
 
 Een willekeurige tabel en distributiekolom waarbij een van de eigenschappen mislukt, bevat uiteindelijk ongelijke gegevensgrootten in werkrollen, dit wordt *ongelijkheid in gegevens* genoemd.
 

@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2020
+ms.date: 12/28/2020
 ms.author: memildin
-ms.openlocfilehash: 484a8c7c230863f230719ddaf4e98a6248512bcc
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: f0015177332aa07ed65f9d0345a11bfdad170104
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560250"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862621"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -40,6 +40,12 @@ Updates in december omvatten:
 - [Globale beheerders kunnen nu machtigingen op tenantniveau aan zichzelf verlenen](#global-administrators-can-now-grant-themselves-tenant-level-permissions)
 - [Twee nieuwe Azure Defender-abonnementen: Azure Defender voor DNS en Azure Defender voor Resource Manager (in preview)](#two-new-azure-defender-plans-azure-defender-for-dns-and-azure-defender-for-resource-manager-in-preview)
 - [Pagina Nieuwe beveiligingswaarschuwingen in Azure Portal (preview)](#new-security-alerts-page-in-the-azure-portal-preview)
+- [Revitalized Security Center-ervaring in Azure SQL Database & SQL Managed Instance](#revitalized-security-center-experience-in-azure-sql-database--sql-managed-instance)
+- [Tools en filters voor inventarisatie van activa bijgewerkt](#asset-inventory-tools-and-filters-updated)
+- [Aanbeveling over web-apps die SSL-certificaten aanvragen die geen deel meer uitmaken van beveiligde score](#recommendation-about-web-apps-requesting-ssl-certificates-no-longer-part-of-secure-score)
+- [De aanbevelingspagina bevat nieuwe filters voor omgeving, ernst en beschikbare reacties](#recommendations-page-has-new-filters-for-environment-severity-and-available-responses)
+- [Continue export haalt nieuwe gegevenstypen en verbeterde deployifnotexist-beleidsregels op](#continuous-export-gets-new-data-types-and-improved-deployifnotexist-policies)
+
 
 ### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Azure Defender voor SQL-servers op computers is algemeen beschikbaar
 
@@ -114,6 +120,87 @@ Als u toegang wilt krijgen tot de nieuwe ervaring, gebruikt u de koppeling Nu pr
 :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar het nieuwe waarschuwingenproces (preview)":::
 
 Zie [Azure Defender-voorbeeldwaarschuwingen genereren](security-center-alert-validation.md#generate-sample-azure-defender-alerts) als u voorbeeldwaarschuwingen wilt maken vanuit het nieuwe waarschuwingenproces.
+
+
+### <a name="revitalized-security-center-experience-in-azure-sql-database--sql-managed-instance"></a>Revitalized Security Center-ervaring in Azure SQL Database & SQL Managed Instance 
+
+De Security Center-ervaring in SQL biedt toegang tot de volgende Security Center-functies en Azure Defender voor SQL-functies:
+
+- **Beveiligingsaanbevelingen**: Security Center analyseert periodiek de beveiligingsstatus van alle Azure-resources om mogelijke beveiligingsproblemen op te sporen. Vervolgens worden aanbevelingen gedaan om deze beveiligingsproblemen op te lossen en de beveiligingspostuur van de organisatie te verbeteren.
+- **Beveiligingswaarschuwingen**: een detectieservice die Azure SQL-activiteiten continu bewaakt als het gaat om bedreigingen (zoals SQL-injectie, brute-force-aanvallen en misbruik van bevoegdheden). Deze service activeert gedetailleerde en actiegerichte beveiligingswaarschuwingen in Security Center en biedt opties voor verder onderzoek met Azure Sentinel, de Azure-native SIEM-oplossing van Microsoft.
+- **Bevindingen**: een service voor evaluatie van beveiligingsproblemen die continu Azure SQL-configuraties bewaakt en beveiligingsproblemen helpt op te lossen. Evaluatiescans bieden een overzicht van de Azure SQL-beveiligingsstatussen met gedetailleerde beveiligingsresultaten.     
+
+:::image type="content" source="media/release-notes/azure-security-center-experience-in-sql.png" alt-text="De beveiligingsfuncties van Azure Security Center voor SQL zijn beschikbaar vanuit Azure SQL":::
+
+
+### <a name="asset-inventory-tools-and-filters-updated"></a>Tools en filters voor inventarisatie van activa bijgewerkt
+
+De voorraadpagina in Azure Security Center is vernieuwd met de volgende wijzigingen:
+
+- **Hulplijnen en feedback** toegevoegd aan de werkbalk. Hiermee opent u een deelvenster met koppelingen naar gerelateerde informatie en hulpprogramma's. 
+- **Het filter abonnementen** is toegevoegd aan de standaardfilters die beschikbaar zijn voor uw resources.
+- **Open query**-koppeling om de huidige filteropties te openen als een Azure Resource Graph-query (voorheen 'Weergeven in Resource Graph Explorer' genoemd).
+- **Operatoropties** voor elke filter. U kunt nu kiezen uit extra logische operators anders dan '='. U kunt bijvoorbeeld alle resources zoeken met actieve aanbevelingen waarvan de titels de tekenreeks 'versleutelen' bevatten. 
+
+    :::image type="content" source="media/release-notes/inventory-filter-operators.png" alt-text="Besturingselementen voor de operatoroptie in de filters van assetinventarisatie":::
+
+Voor meer informatie over voorraad, zie [Uw resources verkennen en beheren met assetvoorraad](asset-inventory.md).
+
+
+### <a name="recommendation-about-web-apps-requesting-ssl-certificates-no-longer-part-of-secure-score"></a>Aanbeveling over web-apps die SSL-certificaten aanvragen, maakt geen deel meer uit van beveiligde score
+
+De aanbeveling "Web-apps moeten een SSL-certificaat aanvragen voor alle binnenkomende aanvragen" is verplaatst van het beveiligingsbeheer **Toegang en machtigingen beheren** (maximaal 4 punten waard) naar **De aanbevolen procedures voor beveiliging implementeren** (geen punten waard). 
+
+Als u ervoor zorgt dat uw web-apps een certificaat aanvrage, worden ze absoluut veiliger. Voor openbare web-apps is het echter irrelevant. Als u toegang tot uw site hebt via HTTP en niet HTTPS, ontvangt u geen clientcertificaat. Als voor uw toepassing clientcertificaten zijn vereist, moet u dus geen aanvragen voor uw toepassing via HTTP toestaan. Voor meer informatie raadpleegt u [Wederzijdse TLS-verificatie voor Azure App Service configureren](../app-service/app-service-web-configure-tls-mutual-auth.md).
+
+Met deze wijziging is de aanbeveling nu een aanbevolen best practice die niet van invloed is op uw score. 
+
+Voor meer informatie over welke aanbevelingen zich in elk beveiligingsbeheer bevinden, raadpleegt u [Beveiligingscontroles en de bijbehorende aanbevelingen](secure-score-security-controls.md#security-controls-and-their-recommendations).
+
+
+### <a name="recommendations-page-has-new-filters-for-environment-severity-and-available-responses"></a>De aanbevelingspagina bevat nieuwe filters voor omgeving, ernst en beschikbare reacties
+
+Azure Security Center bewaakt alle verbonden bronnen en genereert beveiligingsaanbevelingen. Gebruik deze aanbevelingen om uw hybride cloudpostuur te versterken en naleving te volgen van de beleidsregels en standaarden die relevant zijn voor uw organisatie, branche en land.
+
+Naarmate Security Center de dekking en functies blijft uitbreiden, neemt de lijst van beveiligingsaanbevelingen elke maand toe. Zie, bijvoorbeeld, [Er zijn 29 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark).
+
+In de groeiende lijst moet u kunnen filteren op de aanbevelingen van de meeste interesses. In november hebben we filters toegevoegd aan de aanbevelingspagina (zie [Lijst met aanbevelingen bevat nu filters](#recommendations-list-now-includes-filters)).
+
+De filters die deze maand zijn toegevoegd bieden opties om de lijst met aanbevelingen te verfijnen op basis van:
+
+- **Omgeving**: aanbevelingen weergeven voor uw AWS, GCP of Azure-resources (of een combinatie hiervan)
+- **Ernst**: aanbevelingen weergeven op basis van de ernstclassificatie die is ingesteld door Security Center
+- **Antwoordacties**: aanbevelingen weergeven op basis van de beschikbaarheid van Security Center-antwoordopties: Snel oplossen, Weigeren en Afdwingen
+
+    > [!TIP]
+    > Het filter voor antwoordacties vervangt het filter **Snelle oplossing beschikbaar (Ja/Nee)** . 
+    > 
+    > Meer informatie over elk van deze antwoordopties:
+    > - [Snelle oplossingen voor herstel](security-center-remediate-recommendations.md#quick-fix-remediation)
+    > - [Onjuiste configuraties voorkomen met afdwingen/weigeren](prevent-misconfigurations.md)
+
+:::image type="content" source="./media/release-notes/added-recommendations-filters.png" alt-text="Aanbevelingen gegroepeerd op beveiligingsbeheer" lightbox="./media/release-notes/added-recommendations-filters.png":::
+
+### <a name="continuous-export-gets-new-data-types-and-improved-deployifnotexist-policies"></a>Continue export haalt nieuwe gegevenstypen en verbeterde deployifnotexist-beleidsregels op
+
+Met de hulpprogramma's van Azure Security Center voor continue export kunt u de aanbevelingen en waarschuwingen van Security Center exporteren voor gebruik met andere controle hulpprogramma's in uw omgeving.
+
+Met continue export kunt u volledig aanpassen wat waarheen wordt geëxporteerd. Voor meer informatie, zie [Security Center-gegevens continu exporteren](continuous-export.md).
+
+Deze hulpprogramma's zijn verbeterd en uitgebreid op de volgende manieren:
+
+- **Het deployifnotexist-beleid van continue export is verbeterd**. Het beleid is nu:
+
+    - **Controleer of de configuratie is ingeschakeld.** Als dat niet het geval is, wordt het beleid weergegeven als niet-compatibel en wordt er een compatibele resource gemaakt. Meer informatie over de meegeleverde Azure Policy-sjablonen vind u in het tabblad 'Implementeren op schaal met Azure Policy' in [Een continue export instellen](continuous-export.md#set-up-a-continuous-export).
+
+    - **Ondersteuning voor het exporteren van beveiligingsresultaten.** Wanneer u de Azure Policy sjablonen gebruikt, kunt u uw continue export configureren om bevindingen op te stellen. Dit is relevant bij het exporteren van aanbevelingen met 'subaanbevelingen' (zoals bevindingen van scanners voor beveiligingsevaluatie) of specifieke systeemupdates voor de 'hoofdaanbeveling': "Systeemupdates moeten op uw computers worden geïnstalleerd".
+    
+    - **Ondersteuning voor het exporteren van beveiligingsscoregegevens.**
+
+- **Gegevens over reglementaire nalevingsbeoordeling toegevoegd (in preview).** U kunt nu voortdurend updates exporteren naar compliance-evaluaties voor regelgeving, met inbegrip van aangepaste initiatieven, naar een Log Analytics-werkruimte of Event Hub. Deze functie is niet beschikbaar in nationale/onafhankelijke clouds.
+
+    :::image type="content" source="media/release-notes/continuous-export-regulatory-compliance-option.png" alt-text="De opties voor het opnemen van informatie van compliance-evaluaties voor regelgeving met uw continue exportgegevens.":::
+
 
 ## <a name="november-2020"></a>November 2020
 
@@ -464,7 +551,7 @@ Security Center analyseert periodiek de beveiligingsstatus van uw Azure-resource
 
 Wanneer een resource openstaande aanbevelingen heeft, worden deze weergegeven in de inventarisatie.
 
-Meer informatie vindt u in [Uw resources verkennen en beheren met hulpprogramma's voor assetinventarisatie en beheer](asset-inventory.md).
+Voor meer informatie raadpleegt u [Uw resources verkennen en beheren met assetvoorraad](asset-inventory.md).
 
 
 
@@ -805,7 +892,7 @@ De functie voor adaptieve toepassingsregelaars heeft twee belangrijke updates on
 
     * Een jokerteken aan het einde van een pad gebruiken om alle uitvoerbare bestanden in deze map en submappen toe te staan
 
-    * Een jokerteken in het midden van een pad gebruiken om het mogelijk te maken een bekende naam van een uitvoerbaar bestand te gebruiken met een veranderende mapnaam (bijvoorbeeld persoonlijke gebruikersmappen met een bekend uitvoerbaar bestand, automatisch gegenereerde mapnamen, enzovoort).
+    * Een jokerteken in het midden van een pad gebruiken om het mogelijk te maken een bekende naam van een uitvoerbaar bestand te gebruiken met een veranderende mapnaam (bijvoorbeeld persoonlijke gebruikersmappen met een bekend uitvoerbaar bestand, automatisch gegenereerde mapnamen, etc.).
 
 
 [Meer informatie over adaptieve toepassingsregelaars](security-center-adaptive-application.md).

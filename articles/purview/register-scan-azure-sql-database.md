@@ -1,18 +1,18 @@
 ---
 title: Azure SQL Database registeren en scannen
 description: In deze zelfstudie wordt beschreven hoe u Azure SQL Database scant
-author: hophan
+author: hophanms
 ms.author: hophan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 1fbeedd8643a777b29ebe4993eed7b664240621c
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 15708e35fa27bb4a1f72368df6f49ff747eb799b
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920282"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739787"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen
 
@@ -28,7 +28,7 @@ De gegevensbron van de Azure SQL Database biedt ondersteuning voor de volgende f
 
 ### <a name="known-limitations"></a>Bekende beperkingen
 
-Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) in een Azure SQL Database. 
+Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15&preserve-view=true) in een Azure SQL Database. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -89,7 +89,7 @@ Als u een service-principal wilt gebruiken, kunt u een bestaande gebruiken of ee
 De service-principal of beheerde identiteit moet gemachtigd zijn om metagegevens op te halen voor de database, schema's en tabellen. Deze moet ook in staat zijn om query's uit te voeren op tabellen voor het nemen van steekproeven voor classificatiedoeleinden.
 
 - [Azure AD-verificatie configureren en beheren met Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
-- Als u beheerde identiteit gebruikt, heeft uw Purview-account een eigen beheerde identiteit die in principe bestaat uit uw Purview-naam van het moment waarop u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in Azure SQL Database met de exacte beheerde identiteit van Purview of uw eigen service-principal door de zelfstudie te volgen op [De gebruiker van de service-principal in Azure SQL Database maken](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). U moet `db_owner` (**aanbevolen**) een machtiging toewijzen voor de identiteit. Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
+- Als u beheerde identiteit gebruikt, heeft uw Purview-account een eigen beheerde identiteit die in principe bestaat uit uw Purview-naam van het moment waarop u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in Azure SQL Database met de exacte beheerde identiteit van Purview of uw eigen service-principal door de zelfstudie te volgen op [De gebruiker van de service-principal in Azure SQL Database maken](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). U moet de juiste machtigingen (bijvoorbeeld `db_owner` of `db_datareader`) toewijzen aan de identiteit. Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
 
     ```sql
     CREATE USER [Username] FROM EXTERNAL PROVIDER
@@ -100,7 +100,7 @@ De service-principal of beheerde identiteit moet gemachtigd zijn om metagegevens
     ```
 
     > [!Note]
-    > De `Username` is uw eigen service-principal of beheerde identiteit van Purview
+    > De `Username` is uw eigen service-principal of beheerde identiteit van Purview. U kunt meer lezen over [functies voor vaste databases en de bijbehorende mogelijkheden](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
     
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>De service-principal toevoegen aan de sleutelkluis en de referentie van Purview
 

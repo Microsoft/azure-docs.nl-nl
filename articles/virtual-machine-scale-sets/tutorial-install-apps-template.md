@@ -9,12 +9,12 @@ ms.subservice: template
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 2d748f787b40bb26e9faebb028d71c6c3e30ee55
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d5eba5486e7d26e62379e0112cd4b95322e6dae1
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516557"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705231"
 ---
 # <a name="tutorial-install-applications-in-virtual-machine-scale-sets-with-an-azure-template"></a>Zelfstudie: Toepassingen installeren in een schaalset met een Azure-sjabloon
 Als u toepassingen wilt uitvoeren op de exemplaren van een virtuele machine (VM) in een schaalset, moet u eerst de toepassingsonderdelen en de vereiste bestanden installeren. In een vorige zelfstudie hebt u geleerd om een aangepaste VM-installatiekopie te maken en te gebruiken voor het implementeren van uw VM-exemplaren. Deze aangepaste installatiekopie bevat handmatige installaties van toepassingen en configuraties. U kunt de installatie van toepassingen op een schaalset ook automatiseren nadat elk VM-exemplaar is geïmplementeerd. Bovendien kunt u toepassingen bijwerken die al worden uitgevoerd in een schaalset. In deze zelfstudie leert u het volgende:
@@ -76,10 +76,10 @@ We gaan de voorbeeldsjabloon gebruiken om een schaalset te maken en de aangepast
 az group create --name myResourceGroup --location eastus
 ```
 
-Maak nu een schaalset voor virtuele machines met [az group deployment create](/cli/azure/group/deployment). Geef desgevraagd uw eigen gebruikersnaam en wachtwoord op voor gebruik als de referenties voor elk VM-exemplaar:
+Maak nu een schaalset voor virtuele machines met [az deployment group create](/cli/azure/deployment/group). Geef desgevraagd uw eigen gebruikersnaam en wachtwoord op voor gebruik als de referenties voor elk VM-exemplaar:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/azuredeploy.json
 ```
@@ -134,10 +134,10 @@ Als u de aangepaste scriptextensie wilt bijwerken, wijzigt u de sjabloon om deze
 }
 ```
 
-Gebruik [az group deployment create](/cli/azure/group/deployment) om de configuratie van de aangepaste scriptextensie opnieuw toe te passen op de VM-exemplaren in uw schaalset. De sjabloon *azuredeployv2.json* wordt gebruikt voor het toepassen van de bijgewerkte versie van de toepassing. In de praktijk bewerkt u de bestaande sjabloon *azuredeploy.json* om deze te laten verwijzen naar het bijgewerkte installatiescript, zoals u kunt zien in de vorige sectie. Wanneer u daarom wordt gevraagd, voert u de gebruikersnaam en het wachtwoord in die u hebt gebruikt bij het maken van de schaalset:
+Gebruik [az deployment group create](/cli/azure/deployment/group) om de configuratie van de aangepaste scriptextensie opnieuw toe te passen op de VM-exemplaren in uw schaalset. De sjabloon *azuredeployv2.json* wordt gebruikt voor het toepassen van de bijgewerkte versie van de toepassing. In de praktijk bewerkt u de bestaande sjabloon *azuredeploy.json* om deze te laten verwijzen naar het bijgewerkte installatiescript, zoals u kunt zien in de vorige sectie. Wanneer u daarom wordt gevraagd, voert u de gebruikersnaam en het wachtwoord in die u hebt gebruikt bij het maken van de schaalset:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/azuredeploy_v2.json
 ```

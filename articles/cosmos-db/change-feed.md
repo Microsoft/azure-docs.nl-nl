@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 04/08/2020
 ms.reviewer: sngun
 ms.custom: seodec18, "seo-nov-2020"
-ms.openlocfilehash: c8c479050b434904de57397e5e7d73594090e031
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: c6856a0cb70123f1a3570b611c81660a592fdc1b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94336128"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98027760"
 ---
 # <a name="change-feed-in-azure-cosmos-db"></a>Wijzigingenfeed in Azure Cosmos DB
-[!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
+[!INCLUDE[appliesto-all-apis-except-table](includes/appliesto-all-apis-except-table.md)]
 
 Change feed in Azure Cosmos DB is een permanente record met wijzigingen in een container in de volg orde waarin deze worden uitgevoerd. Ondersteuning voor de wijzigingenfeed in Azure Cosmos DB gebeurt door te luisteren naar een Azure Cosmos DB-container voor wijzigingen. Als output verschijnt er vervolgens een gesorteerde lijst met gewijzigde documenten op volgorde van wijziging. De persistente wijzigingen kunnen asynchroon en incrementeel worden verwerkt en de uitvoer kan worden verdeeld over een of meer consumenten voor parallelle verwerking.
 

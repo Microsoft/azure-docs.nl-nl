@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/20/2020
 ms.author: rohink
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: df180f0aefc817004e99d63998d000498c4d15aa
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 820641af00caea4ffca450be8aa81b5357ba1261
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310154"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97652956"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-cli"></a>Quickstart: Een privé-DNS-zone in Azure maken met behulp van de Azure CLI
 
@@ -21,13 +21,13 @@ In deze quickstart wordt stapsgewijs beschreven hoe u uw eerste privé-DNS-zone 
 
 Een DNS-zone wordt gebruikt om de DNS-records voor een bepaald domein te hosten. Als u uw domein wilt hosten in Azure DNS, moet u een DNS-zone maken voor die domeinnaam. Alle DNS-records voor uw domein worden vervolgens gemaakt binnen deze DNS-zone. Als u een privé-DNS-zone wilt publiceren naar uw virtuele netwerk, geeft u de lijst met virtuele netwerken op die records in de zone mogen omzetten.  Deze worden *gekoppelde* virtuele netwerken genoemd. Als automatische registratie is ingeschakeld, werkt Azure DNS ook de zonerecords bij wanneer er een virtuele machine wordt gemaakt, het IP-adres ervan wordt gewijzigd of deze wordt verwijderd.
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
 ## <a name="prerequisites"></a>Vereisten
 
-Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-U kunt deze quickstart desgewenst voltooien met behulp van [Azure PowerShell](private-dns-getstarted-powershell.md).
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+- U kunt deze quickstart ook voltooien met behulp van [Azure PowerShell](private-dns-getstarted-powershell.md).
 
 ## <a name="create-the-resource-group"></a>De resourcegroep maken
 
@@ -151,13 +151,13 @@ Herhaal voor myVM02.
 
 1. Ping vanuit de myVM02 Windows PowerShell-opdrachtprompt myVM01 met de naam van de automatisch geregistreerde hostnaam:
 
-   ```
+   ```powershell
    ping myVM01.private.contoso.com
    ```
 
    De uitvoer ziet er ongeveer als volgt uit:
 
-   ```
+   ```output
    PS C:\> ping myvm01.private.contoso.com
 
    Pinging myvm01.private.contoso.com [10.2.0.4] with 32 bytes of data:
@@ -175,13 +175,13 @@ Herhaal voor myVM02.
 
 2. Ping nu de **db**-naam die u eerder hebt gemaakt:
 
-   ```
+   ```powershell
    ping db.private.contoso.com
    ```
 
    De uitvoer ziet er ongeveer als volgt uit:
 
-   ```
+   ```output
    PS C:\> ping db.private.contoso.com
 
    Pinging db.private.contoso.com [10.2.0.4] with 32 bytes of data:

@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 9b6fc05cc2e97e8e0d74f7d19912afedb37c0fa5
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 45654d55ac07bc9056a41cacba6f8f5890c56580
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97366460"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808637"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -121,6 +121,8 @@ Verifieer een clientobject met de abonnementsvariabelen die u hebt gedefinieerd.
 
 U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
 * [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
+   
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
 * Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden. Ze zijn ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/test-assets). U kunt tevens de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. 
 
 

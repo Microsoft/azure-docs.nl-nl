@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
 ms.date: 02/12/2020
-ms.openlocfilehash: 5eb6788a558e4429296731f1693edd18bf92f98f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85c4298c0c83480c244cc12238c21160a4a4282e
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77198885"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822111"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Zelfstudie: Gegevens laden en query's uitvoeren in een Apache Spark-cluster in Azure HDInsight
 
@@ -28,7 +28,7 @@ In deze zelfstudie leert u het volgende:
 
 Een Apache Spark-cluster in HDInsight. Zie [Een Apache Spark-cluster maken](./apache-spark-jupyter-spark-sql-use-portal.md).
 
-## <a name="create-a-jupyter-notebook"></a>Een Jupyter-notebook maken
+## <a name="create-a-jupyter-notebook"></a>Een Jupyter Notebook maken
 
 Jupyter Notebook is een interactieve notitieblokomgeving die ondersteuning biedt voor verschillende programmeertalen. Via het notitieblok kunt u interactie hebben met uw gegevens, code combineren met markdown-tekst en eenvoudige visualisaties uitvoeren.
 
@@ -49,7 +49,7 @@ Toepassingen kunnen dataframes rechtstreeks maken vanuit bestanden of mappen op 
 
 ![Momentopname van gegevens voor de interactieve Spark SQL-query](./media/apache-spark-load-data-run-query/hdinsight-spark-sample-data-interactive-spark-sql-query.png "Momentopname van gegevens voor de interactieve Spark SQL-query")
 
-1. Plak de volgende code in een lege cel van het Jupyter-notebook en druk op **Shift+Enter** om de code uit te voeren. Met de code importeert u de typen die voor dit scenario zijn vereist:
+1. Plak de volgende code in een lege cel van het Jupyter-notebook en druk op **Shift + Enter** om de code uit te voeren. Met de code importeert u de typen die voor dit scenario zijn vereist:
 
     ```python
     from pyspark.sql import *
@@ -95,7 +95,7 @@ Zodra de tabel is gemaakt, kunt u een interactieve query uitvoeren op de gegeven
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Met HDInsight worden uw gegevens en Jupyter-notitieblokken opgeslagen in Azure Storage of Azure Data Lake Storage, zodat u een cluster veilig kunt verwijderen wanneer dit niet wordt gebruikt. Voor een HDInsight-cluster worden ook kosten in rekening gebracht, zelfs wanneer het niet wordt gebruikt. Aangezien de kosten voor het cluster vaak zoveel hoger zijn dan de kosten voor opslag, is het financieel gezien logischer clusters te verwijderen wanneer ze niet worden gebruikt. Als u direct verder wilt met de zelfstudie, is het beter om het cluster te behouden.
+Met HDInsight worden uw gegevens en Jupyter-notebooks opgeslagen in Azure Storage of Azure Data Lake Storage, zodat u een cluster veilig kunt verwijderen wanneer dit niet wordt gebruikt. Voor een HDInsight-cluster worden ook kosten in rekening gebracht, zelfs wanneer het niet wordt gebruikt. Aangezien de kosten voor het cluster vaak zoveel hoger zijn dan de kosten voor opslag, is het financieel gezien logischer clusters te verwijderen wanneer ze niet worden gebruikt. Als u direct verder wilt met de zelfstudie, is het beter om het cluster te behouden.
 
 Open het cluster in Azure Portal en selecteer **Verwijderen**.
 

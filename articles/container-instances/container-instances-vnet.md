@@ -4,12 +4,12 @@ description: Meer informatie over hoe u een container groep implementeert in een
 ms.topic: article
 ms.date: 07/02/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 02cf514e6c19387e3a9e2f1c78b65f346fff764e
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: b791d3f37809c2eca53f5a3cd34f7c44dd11ce40
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746906"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028876"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Containerinstanties implementeren in een virtueel Azure-netwerk
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u de opdracht [AZ container Create][az-conta
 Zie [scenario's en resources voor het virtuele netwerk voor Azure container instances](container-instances-virtual-network-concepts.md)voor netwerk scenario's en-beperkingen.
 
 > [!IMPORTANT]
-> Implementatie van container groep naar een virtueel netwerk is algemeen beschikbaar voor Linux-containers, in de meeste regio's waar Azure Container Instances beschikbaar is. Zie [regio's en resources Beschik baarheid](container-instances-virtual-network-concepts.md#where-to-deploy)voor meer informatie. 
+> Implementatie van container groep naar een virtueel netwerk is algemeen beschikbaar voor Linux-containers, in de meeste regio's waar Azure Container Instances beschikbaar is. Zie [regio's en resources Beschik baarheid][container-regions]voor meer informatie. 
 
 Voor beelden in dit artikel zijn ingedeeld voor de bash-shell. Als u de voor keur geeft aan een andere shell, zoals Power shell of opdracht prompt, past u de regel vervolg tekens dienovereenkomstig aan.
 
@@ -69,7 +69,7 @@ Een container groep implementeren in een bestaand virtueel netwerk:
 
 In het volgende voor beeld wordt een tweede container groep geïmplementeerd op hetzelfde subnet dat eerder is gemaakt en wordt de communicatie tussen de twee container instanties geverifieerd.
 
-Haal eerst het IP-adres op van de eerste container groep die u hebt geïmplementeerd, de *appcontainer* :
+Haal eerst het IP-adres op van de eerste container groep die u hebt geïmplementeerd, de *appcontainer*:
 
 ```azurecli
 az container show --resource-group myResourceGroup \
@@ -83,7 +83,7 @@ In de uitvoer wordt het IP-adres van de container groep in het privé-subnet wee
 10.0.0.4
 ```
 
-Stel nu `CONTAINER_GROUP_IP` in op het IP-adres dat u hebt opgehaald met de `az container show` opdracht en voer de volgende `az container create` opdracht uit. Deze tweede container, *commchecker* , voert een alpine Linux-installatie kopie uit en voert een uitvoer uit `wget` op basis van het IP-adres van het particuliere subnet van de container groep.
+Stel nu `CONTAINER_GROUP_IP` in op het IP-adres dat u hebt opgehaald met de `az container show` opdracht en voer de volgende `az container create` opdracht uit. Deze tweede container, *commchecker*, voert een alpine Linux-installatie kopie uit en voert een uitvoer uit `wget` op basis van het IP-adres van het particuliere subnet van de container groep.
 
 ```azurecli
 CONTAINER_GROUP_IP=<container-group-IP-address>
@@ -139,7 +139,7 @@ Voorbeelduitvoer:
 /subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkProfiles/aci-network-profile-aci-vnet-aci-subnet
 ```
 
-Wanneer u de netwerk profiel-ID hebt, kopieert u de volgende YAML naar een nieuw bestand met de naam *vnet-Deploy-ACI. yaml* . `networkProfile`Vervang onder de waarde door de `id` id die u zojuist hebt opgehaald en sla het bestand op. Met deze YAML maakt u een container groep met de naam *appcontaineryaml* in uw virtuele netwerk.
+Wanneer u de netwerk profiel-ID hebt, kopieert u de volgende YAML naar een nieuw bestand met de naam *vnet-Deploy-ACI. yaml*. `networkProfile`Vervang onder de waarde door de `id` id die u zojuist hebt opgehaald en sla het bestand op. Met deze YAML maakt u een container groep met de naam *appcontaineryaml* in uw virtuele netwerk.
 
 ```YAML
 apiVersion: '2019-12-01'
@@ -204,7 +204,7 @@ Voor deze functie zijn momenteel verschillende extra opdrachten vereist voor het
 Voordat u het script uitvoert, stelt `RES_GROUP` u de variabele in op de naam van de resource groep met het virtuele netwerk en het subnet dat moet worden verwijderd. Werk de naam van het virtuele netwerk bij als u de naam die u eerder hebt voorgesteld niet hebt gebruikt `aci-vnet` . Het script is geformatteerd voor de bash-shell. Als u de voor keur geeft aan een andere shell, zoals Power shell of opdracht prompt, moet u de toewijzings-en toegangs rechten van de variabele dienovereenkomstig aanpassen.
 
 > [!WARNING]
-> Met dit script worden resources verwijderd! Hiermee verwijdert u het virtuele netwerk en alle subnetten die het bevat. Zorg ervoor dat u *een* van de resources in het virtuele netwerk niet meer nodig hebt, met inbegrip van de subnetten die het bevat, voordat u dit script uitvoert. Nadat **deze bronnen zijn verwijderd, kunnen ze onherstelbaar zijn** .
+> Met dit script worden resources verwijderd! Hiermee verwijdert u het virtuele netwerk en alle subnetten die het bevat. Zorg ervoor dat u *een* van de resources in het virtuele netwerk niet meer nodig hebt, met inbegrip van de subnetten die het bevat, voordat u dit script uitvoert. Nadat **deze bronnen zijn verwijderd, kunnen ze onherstelbaar zijn**.
 
 ```azurecli
 # Replace <my-resource-group> with the name of your resource group
@@ -238,3 +238,4 @@ Zie [een Azure-container groep met VNet maken](https://github.com/Azure/azure-qu
 [az-container-show]: /cli/azure/container#az-container-show
 [az-network-vnet-create]: /cli/azure/network/vnet#az-network-vnet-create
 [az-network-profile-list]: /cli/azure/network/profile#az-network-profile-list
+[container-regions]: container-instances-region-availability.md

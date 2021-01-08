@@ -12,12 +12,12 @@ ms.date: 11/23/2020
 ms.author: mbullwin
 keywords: afwijkingsdetectie, machine learning, algoritmes
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 1a13b962a000e6e3b2143dc23f94b63c122bd963
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: d8698a17db8be6a3d5b26d764ef86702320ebfa4
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95999094"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705078"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Wat is de Anomaly Detector-API?
 
@@ -97,6 +97,6 @@ U kunt de paper [Time-Series Anomaly Detection Service at Microsoft](https://arx
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector-REST API](quickstarts/detect-data-anomalies-csharp.md)
+* [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector](quickstarts/client-libraries.md)
 * [Online demo](https://notebooks.azure.com/AzureAnomalyDetection/projects/anomalydetector) voor de Anomaly Detector-API
 * [Naslaginformatie over de REST API](https://aka.ms/anomaly-detector-rest-api-ref) van Anomaly Detector

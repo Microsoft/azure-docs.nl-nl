@@ -7,16 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 07/17/2019
+ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, synapse-analytics
-ms.openlocfilehash: 6f089a67262c78f31092780bb8b4d7d803d47e0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d8c67fa5373afc8ea8bae5a49b87309f3893a12
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91369090"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028723"
 ---
 # <a name="tutorial-load-data-to--azure-synapse-analytics-sql-pool"></a>Zelf studie: gegevens laden naar Azure Synapse Analytics SQL-groep
 
@@ -24,9 +24,6 @@ In deze zelf studie wordt gebruikgemaakt van poly Base om het WideWorldImporters
 
 > [!div class="checklist"]
 >
-> * Een Data Warehouse maken met behulp van SQL-groep in de Azure Portal
-> * Een serverfirewallregel ingesteld in Azure Portal
-> * Verbinding maken met de SQL-groep met SSMS
 > * Een gebruiker maken die wordt aangewezen om gegevens te laden
 > * Externe tabellen maken die gebruikmaken van Azure-blob als de gegevensbron
 > * De instructie CTAS T-SQL gebruiken om gegevens in uw datawarehouse te laden
@@ -40,110 +37,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 Download en installeer voordat u met deze zelfstudie begint de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio).
 
-## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
-
-Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-
-## <a name="create-a-blank-data-warehouse-in-sql-pool"></a>Een leeg Data Warehouse maken in de SQL-groep
-
-Een Azure SQL-pool wordt gemaakt met een gedefinieerde set [compute-resources](memory-concurrency-limits.md). De SQL-groep wordt gemaakt in een [Azure-resource groep](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) en in een [logische SQL-Server](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
-
-Volg deze stappen om een lege SQL-groep te maken.
-
-1. Selecteer **een resource maken** in de Azure Portal.
-
-1. Selecteer **data bases** op de pagina **Nieuw** en selecteer **Azure Synapse Analytics** onder **Aanbevolen** op de pagina **Nieuw** .
-
-    ![SQL-groep maken](./media/load-data-wideworldimportersdw/create-empty-data-warehouse.png)
-
-1. Vul de sectie **Project Details** in met de volgende gegevens:
-
-   | Instelling | Voorbeeld | Beschrijving |
-   | ------- | --------------- | ----------- |
-   | **Abonnement** | Uw abonnement  | Zie [Abonnementen](https://account.windowsazure.com/Subscriptions) voor meer informatie over uw abonnementen. |
-   | **Resourcegroep** | myResourceGroup | Zie [Naming conventions](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (Naamgevingsconventies) voor geldige resourcegroepnamen. |
-
-1. Geef onder **Details van SQL-groep**een naam op voor de SQL-groep. Vervolgens selecteert u een bestaande server in de vervolg keuzelijst of selecteert u **nieuwe maken** onder de **Server** instellingen om een nieuwe server te maken. Vul het formulier in met de volgende gegevens:
-
-    | Instelling | Voorgestelde waarde | Beschrijving |
-    | ------- | --------------- | ----------- |
-    |**Naam van SQL-pool**|SampleDW| Zie [Database-id's](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor geldige databasenamen. |
-    | **Servernaam** | Een wereldwijd unieke naam | Zie [Naming conventions](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (Naamgevingsconventies) voor geldige servernamen. |
-    | **Aanmeldgegevens van serverbeheerder** | Een geldige naam | Zie [Database-id's](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor geldige aanmeldingsnamen.|
-    | **Wachtwoord** | Een geldig wachtwoord | Uw wachtwoord moet uit minstens acht tekens bestaan en moet tekens bevatten uit drie van de volgende categorieën: hoofdletters, kleine letters, cijfers en niet-alfanumerieke tekens. |
-    | **Locatie** | Een geldige locatie | Zie [Azure-regio's](https://azure.microsoft.com/regions/) voor informatie over regio's. |
-
-    ![server maken](./media/load-data-wideworldimportersdw/create-database-server.png)
-
-1. **Selecteer prestatie niveau**. De schuif regelaar is standaard ingesteld op **DW1000c**. Verplaats de schuif regelaar omhoog en omlaag om de gewenste schaal van de prestaties te kiezen.
-
-    ![Server 2 maken](./media/load-data-wideworldimportersdw/create-data-warehouse.png)
-
-1. Stel op de pagina **extra instellingen** de optie **bestaande gegevens gebruiken** in op geen en behoud de **sortering** op de standaard waarde van *SQL_Latin1_General_CP1_CI_AS*.
-
-1. Selecteer **controleren + maken** om uw instellingen te controleren en selecteer vervolgens **maken** om uw data warehouse te maken. U kunt uw voortgang controleren door de pagina **implementatie** wordt geopend vanuit het menu **meldingen** .
-
-     ![Scherm opname toont meldingen met een implementatie die wordt uitgevoerd.](./media/load-data-wideworldimportersdw/notification.png)
-
-## <a name="create-a-server-level-firewall-rule"></a>Een serverfirewallregel maken
-
-De Azure Synapse Analytics-service maakt een firewall op server niveau die voor komt dat externe toepassingen en hulpprogram ma's verbinding maken met de server of data bases op de server. Als u de connectiviteit wilt inschakelen, kunt u firewallregels toevoegen waarmee connectiviteit voor bepaalde IP-adressen wordt ingeschakeld.  Volg deze stappen om een [firewallregel op serverniveau](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) te maken voor het IP-adres van uw client.
-
-> [!NOTE]
-> De Azure Synapse Analytics SQL-groep communiceert via poort 1433. Als u verbinding wilt maken vanuit een bedrijfsnetwerk, is uitgaand verkeer via poort 1433 mogelijk niet toegestaan vanwege de firewall van het netwerk. In dat geval kunt u alleen verbinding maken met uw server als uw IT-afdeling poort 1433 openstelt.
->
-
-1. Nadat de implementatie is voltooid, zoekt u de naam van de groep in het zoekvak in het navigatie menu en selecteert u de resource van de SQL-groep. Selecteer de servernaam.
-
-    ![Ga naar uw resource](./media/load-data-wideworldimportersdw/search-for-sql-pool.png)
-
-1. Selecteer de servernaam.
-    ![servernaam](././media/load-data-wideworldimportersdw/find-server-name.png)
-
-1. Selecteer **Firewallinstellingen weergeven**. De pagina **Firewallinstellingen** voor de server wordt geopend.
-
-    ![serverinstellingen](./media/load-data-wideworldimportersdw/server-settings.png)
-
-1. Selecteer op de pagina **firewalls en virtuele netwerken** de optie **client-IP toevoegen** om uw huidige IP-adres toe te voegen aan een nieuwe firewall regel. Een firewallregel kan poort 1433 openen voor een afzonderlijk IP-adres of voor een aantal IP-adressen.
-
-    ![serverfirewallregel](./media/load-data-wideworldimportersdw/server-firewall-rule.png)
-
-1. Selecteer **Opslaan**. Er wordt een firewallregel op serverniveau gemaakt voor uw huidige IP-adres, waarbij poort 1433 wordt geopend op de server.
-
-U kunt nu verbinding maken met de server met behulp van het IP-adres van de client. De verbinding werkt met SQL Server Management Studio of een ander hulpprogramma van uw keuze. Wanneer u verbinding maakt, gebruikt u het ServerAdmin-account dat u eerder hebt gemaakt.  
-
-> [!IMPORTANT]
-> Voor alle Azure-services is toegang via de SQL Database-firewall standaard ingeschakeld. Klik op **UIT** op deze pagina en klik vervolgens op **Opslaan** om de firewall uit te schakelen voor alle Azure-services.
-
-## <a name="get-the-fully-qualified-server-name"></a>De volledig gekwalificeerde servernaam ophalen
-
-De volledig gekwalificeerde server naam is wat wordt gebruikt om verbinding te maken met de server. Ga naar de resource van uw SQL-groep in het Azure Portal en Bekijk de volledig gekwalificeerde naam onder **Server naam**.
-
-![servernaam](././media/load-data-wideworldimportersdw/find-server-name.png)
-
-## <a name="connect-to-the-server-as-server-admin"></a>Als serverbeheerder verbinding maken met de server
-
-In deze sectie wordt gebruikgemaakt van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio) om een verbinding tot stand te brengen met de server.
-
-1. Open SQL Server Management Studio.
-
-2. Voer in het dialoogvenster **Verbinding maken met server** de volgende informatie in:
-
-    | Instelling      | Voorgestelde waarde | Beschrijving |
-    | ------------ | --------------- | ----------- |
-    | Servertype | Database-engine | Deze waarde is verplicht |
-    | Servernaam | De volledig gekwalificeerde servernaam | **Sqlpoolservername.database.Windows.net** is bijvoorbeeld een volledig gekwalificeerde server naam. |
-    | Verificatie | SQL Server-verificatie | SQL-verificatie is het enige verificatietype dat in deze zelfstudie is geconfigureerd. |
-    | Aanmelden | Het beheerdersaccount voor de server | Dit is het account dat u hebt opgegeven tijdens het maken van de server. |
-    | Wachtwoord | Het wachtwoord voor het beheerdersaccount voor de server | Dit is het wachtwoord dat u hebt opgegeven tijdens het maken van de server. |
-
-    ![verbinding maken met server](./media/load-data-wideworldimportersdw/connect-to-server.png)
-
-3. Klik op **Verbinden**. Het venster Objectverkenner wordt geopend in SQL Server Management Studio.
-
-4. Vouw **Databases** uit in Objectverkenner. Vouw **Systeemdatabases** en **Hoofd** uit om de objecten in de hoofddatabase weer te geven.  Vouw **SampleDW** uit om de objecten in uw nieuwe Data Base weer te geven.
-
-    ![databaseobjecten](./media/load-data-wideworldimportersdw/connected.png)
+In deze zelf studie wordt ervan uitgegaan dat u al een toegewezen SQL-groep hebt gemaakt in de volgende [zelf studie](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/create-data-warehouse-portal#connect-to-the-server-as-server-admin).
 
 ## <a name="create-a-user-for-loading-data"></a>Een gebruiker maken voor het laden van gegevens
 
@@ -184,13 +78,13 @@ Omdat u momenteel bent aangemeld als serverbeheerder, kunt u aanmeldingen en geb
 
 De eerste stap voor het laden van gegevens bestaat uit aanmelding als LoaderRC60.  
 
-1. Klik in Objectverkenner in het vervolgkeuzelijstmenu**Verbinden** en selecteer **Database-engine**. Het dialoogvenster **Verbinding maken met server** wordt geopend.
+1. Klik in Objectverkenner in het vervolgkeuzelijstmenu **Verbinden** en selecteer **Database-engine**. Het dialoogvenster **Verbinding maken met server** wordt geopend.
 
     ![Verbinding maken met nieuwe aanmelding](./media/load-data-wideworldimportersdw/connect-as-loading-user.png)
 
 2. Voer de volledig gekwalificeerde servernaam in en voer **LoaderRC60** als de aanmelding in.  Voer uw wachtwoord in voor LoaderRC60.
 
-3. Klik op **Verbinding maken**.
+3. Klik op **Verbinden**.
 
 4. Wanneer de verbinding gereed is, ziet u twee serververbindingen in Objectverkenner. Eén verbinding als de serverbeheerder en één verbinding als LoaderRC60.
 

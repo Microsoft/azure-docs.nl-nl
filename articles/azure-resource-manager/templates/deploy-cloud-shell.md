@@ -1,18 +1,18 @@
 ---
 title: Sjablonen implementeren met Cloud Shell
-description: Gebruik Azure Resource Manager en Cloud Shell om resources te implementeren in Azure. De resources worden gedefinieerd in een Azure Resource Manager sjabloon.
+description: Gebruik Azure Resource Manager en Azure Cloud Shell om resources te implementeren in Azure. De resources worden gedefinieerd in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: d0b519955cb877f5fb9640cc0cf95a898e1743ef
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c67251a33b6197603be27086bcc6cd047e0c414b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681439"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028604"
 ---
-# <a name="deploy-arm-templates-from-cloud-shell"></a>ARM-sjablonen implementeren vanuit Cloud Shell
+# <a name="deploy-arm-templates-from-azure-cloud-shell"></a>ARM-sjablonen implementeren vanuit Azure Cloud Shell
 
-U kunt [Cloud shell](../../cloud-shell/overview.md) gebruiken om een Azure Resource Manager sjabloon (arm-sjabloon) te implementeren. U kunt een ARM-sjabloon implementeren die extern is opgeslagen, of een ARM-sjabloon die is opgeslagen op het lokale opslag account voor Cloud Shell.
+U kunt [Azure Cloud shell](../../cloud-shell/overview.md) gebruiken om een Azure Resource Manager sjabloon (arm-sjabloon) te implementeren. U kunt een ARM-sjabloon implementeren die extern is opgeslagen, of een ARM-sjabloon die is opgeslagen op het lokale opslag account voor Cloud Shell.
 
 U kunt implementeren in elk bereik. In dit artikel wordt beschreven hoe u implementeert in een resource groep.
 
@@ -54,7 +54,7 @@ Als u een externe sjabloon wilt implementeren, geeft u de URI van de sjabloon op
 
 Als u een lokale sjabloon wilt implementeren, moet u eerst uw sjabloon uploaden naar het opslag account dat is verbonden met uw Cloud Shell-sessie.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Selecteer de Cloud Shell-resourcegroep. Het naampatroon is `cloud-shell-storage-<region>`.
 
@@ -62,27 +62,27 @@ Als u een lokale sjabloon wilt implementeren, moet u eerst uw sjabloon uploaden 
 
 1. Selecteer het opslagaccount voor Cloud Shell.
 
-   :::image type="content" source="./media/deploy-cloud-shell/cloud-shell-storage.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/cloud-shell-storage.png" alt-text="Opslagaccount selecteren":::
 
-1. Selecteer **Bestands shares** .
+1. Selecteer **Bestands shares**.
 
-   :::image type="content" source="./media/deploy-cloud-shell/files-shares.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/files-shares.png" alt-text="Bestands shares selecteren":::
 
 1. Selecteer de standaard bestands share voor Cloud Shell. De bestands share heeft de naam indeling van `cs-<user>-<domain>-com-<uniqueGuid>` .
 
-   :::image type="content" source="./media/deploy-cloud-shell/select-file-share.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/select-file-share.png" alt-text="Standaard bestands share":::
 
 1. Voeg een nieuwe map toe om uw sjablonen te bewaren. Selecteer de map.
 
-   :::image type="content" source="./media/deploy-cloud-shell/add-directory.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/add-directory.png" alt-text="Map toevoegen":::
 
-1. Selecteer **Uploaden** .
+1. Selecteer **Uploaden**.
 
-   :::image type="content" source="./media/deploy-cloud-shell/upload-template.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/upload-template.png" alt-text="Sjabloon uploaden":::
 
 1. Zoek de sjabloon en upload deze.
 
-   :::image type="content" source="./media/deploy-cloud-shell/select-template.png" alt-text="Cloud Shell openen":::
+   :::image type="content" source="./media/deploy-cloud-shell/select-template.png" alt-text="Sjabloon selecteren":::
 
 1. Open de Cloud Shell prompt.
 

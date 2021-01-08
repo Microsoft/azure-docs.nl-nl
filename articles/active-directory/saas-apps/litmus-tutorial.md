@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/06/2020
+ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 23db3457458d34852f164649137c2b20cf99238b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6aada87493a210d321a77a4225d279e7e16952b2
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006010"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813884"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-litmus"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Litmus
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Litmus kunt integreren met Azure Active Directo
 * In Azure AD beheren wie er toegang heeft tot Litmus.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Litmus.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,13 +38,12 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Litmus ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
-* Zodra u Litmus hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-litmus-from-the-gallery"></a>Litmus toevoegen vanuit de galerie
 
 Om de integratie van Litmus te configureren in Azure AD, moet u Litmus vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
@@ -54,11 +51,11 @@ Om de integratie van Litmus te configureren in Azure AD, moet u Litmus vanuit de
 1. Selecteer **Litmus** in de resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-litmus"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Litmus
+## <a name="configure-and-test-azure-ad-sso-for-litmus"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Litmus
 
 Configureer en test eenmalige aanmelding van Azure AD met Litmus met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Litmus.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Litmus te configureren en te testen:
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Litmus te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -71,7 +68,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Litmus te c
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Litmus**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in Azure Portal op de integratiepagina van de toepassing **Litmus** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -113,19 +110,23 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer **Litmus** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-litmus-sso"></a>Eenmalige aanmelding configureren in Litmus
 
-1. Meld u in een ander browservenster als beheerder aan bij Litmus.
+1. Als u de configuratie in Litmus wilt automatiseren, moet u de **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **Litmus instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de Litmus-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij Litmus. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 6 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Litmus handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw Litmus-bedrijfssite.
 
 1. Klik in het linkernavigatievenster op **Security**.
 
@@ -177,20 +178,20 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u in het toegangsvenster op de tegel Litmus klikt, wordt u automatisch aangemeld bij de instantie van Litmus waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Litmus, waar u de aanmeldingsstroom kunt initiëren.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* Ga rechtstreeks naar de aanmeldings-URL van Litmus en initieer hier de aanmeldingsstroom.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij het exemplaar van Litmus waarvoor u eenmalige aanmelding hebt ingesteld
 
-- [Litmus uitproberen met Azure AD](https://aad.portal.azure.com/)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in Mijn apps op de tegel Litmus klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het Litmus-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Litmus beveiligen met geavanceerde zichtbaarheid en controles](/cloud-app-security/proxy-intro-aad)
+Zodra u Litmus hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens in uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

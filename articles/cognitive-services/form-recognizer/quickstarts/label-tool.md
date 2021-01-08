@@ -11,12 +11,12 @@ ms.date: 09/30/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: 7671d8d58ffbd0fca444eefe53c46c99a4e76d37
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: a1cf919e17e22cb6280dce27faceb7cd034a6962
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96009327"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845548"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
@@ -106,7 +106,7 @@ U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma vo
    Met deze opdracht wordt het voorbeeldhulpprogramma voor labelen beschikbaar gemaakt via een webbrowser. Ga naar `http://localhost:3000`.
 
 > [!NOTE]
-> U kunt ook documenten labelen en modellen trainen met behulp van de REST API van Form Recognizer. Als u wilt trainen en analyseren met de REST API, raadpleegt u [Trainen met labels met behulp van de REST API en Python](./python-labeled-data.md).
+> U kunt ook documenten labelen en modellen trainen met behulp van de REST API van Form Recognizer. Als u wilt trainen en analyseren met de REST API, raadpleegt u [Trainen met labels met behulp van de REST API en Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md).
 
 ## <a name="set-up-input-data"></a>Invoergegevens instellen
 
@@ -137,7 +137,9 @@ Vul de velden in met de volgende waarden:
 
 * **Weergavenaam**: de weergavenaam van de verbinding.
 * **Beschrijving**: de beschrijving van het project.
-* **SAS-URL**: de Shared Access Signature-URL (SAS-URL) van de Azure Blob Storage-container. Als u de SAS-URL wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Stel de verlooptijd in op een tijdstip nadat u de service hebt gebruikt. Controleer of de machtigingen **Lezen** en **Schrijven**, **Verwijderen** en **Vermelden** zijn geselecteerd en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
+* **SAS-URL**: de Shared Access Signature-URL (SAS-URL) van de Azure Blob Storage-container. [!INCLUDE [get SAS URL](../includes/sas-instructions.md)]
+
+   :::image type="content" source="../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
 
 :::image type="content" source="../media/label-tool/connections.png" alt-text="Verbindingsinstellingen van het voorbeeldhulpprogramma voor labelen.":::
 
@@ -223,7 +225,7 @@ Volg de bovenstaande stappen om ten minste vijf formulieren te labelen.
 
 ### <a name="specify-tag-value-types"></a>Typen labelwaarden opgeven
 
-U kunt desgewenst het verwachte gegevenstype voor elk label instellen. Open het contextmenu rechts van een label en selecteer een type in het menu. Met deze functie kunnen bepaalde aannames worden gedaan waarmee de nauwkeurigheid van de tekstdetectie wordt verbeterd. Het zorgt er ook voor dat de gedetecteerde waarden worden geretourneerd in een gestandaardiseerde indeling in de uiteindelijke JSON-uitvoer. 
+U kunt desgewenst het verwachte gegevenstype voor elk label instellen. Open het contextmenu rechts van een label en selecteer een type in het menu. Met deze functie kunnen bepaalde aannames worden gedaan waarmee de nauwkeurigheid van de tekstdetectie wordt verbeterd. Het zorgt er ook voor dat de gedetecteerde waarden worden geretourneerd in een gestandaardiseerde indeling in de uiteindelijke JSON-uitvoer. Informatie over waardetypen wordt opgeslagen in het bestand *fields.json*, op hetzelfde pad als uw labelbestanden.
 
 > [!div class="mx-imgBorder"]
 > ![Selectie van waardetypen met het voorbeeldhulpprogramma voor labelen](../media/whats-new/formre-value-type.png)
@@ -266,7 +268,7 @@ De volgende waardetypen en variaties worden momenteel ondersteund:
 
 Klik in het linkerdeelvenster op het trainingspictogram om de pagina Training te openen. Klik vervolgens op de knop **Trainen** om het model te trainen. Zodra het trainingsproces is voltooid, krijgt u de volgende informatie te zien:
 
-* **Model-id**: de id van het model dat is gemaakt en getraind. Elke trainingsaanroep maakt een nieuw model met een eigen id. Kopieer deze tekenreeks naar een veilige locatie. U hebt deze nodig als u voorspellingsaanroepen wilt uitvoeren via de [REST API](./curl-train-extract.md) of [clientbibliotheek](./client-library.md).
+* **Model-id**: de id van het model dat is gemaakt en getraind. Elke trainingsaanroep maakt een nieuw model met een eigen id. Kopieer deze tekenreeks naar een veilige locatie. U hebt deze nodig als u voorspellingsaanroepen wilt uitvoeren via de [REST API](./client-library.md?pivots=programming-language-rest-api) of [clientbibliotheek](./client-library.md).
 * **Gemiddelde nauwkeurigheid**: de gemiddelde nauwkeurigheid van het model. U kunt de nauwkeurigheid van het model verbeteren door extra formulieren te labelen en opnieuw een training uit te voeren om een nieuw model te maken. We raden u aan te beginnen met het labelen van vijf formulieren en indien nodig meer formulieren toe te voegen.
 * De lijst met labels en de geschatte nauwkeurigheid per label.
 
@@ -276,7 +278,7 @@ Klik in het linkerdeelvenster op het trainingspictogram om de pagina Training te
 Nadat de training is voltooid, bekijkt u de waarde **Gemiddelde nauwkeurigheid**. Als deze laag is, moet u meer invoerdocumenten toevoegen en de bovenstaande stappen herhalen. De documenten die u al hebt gelabeld, blijven in de projectindex.
 
 > [!TIP]
-> U kunt het trainingsproces ook uitvoeren met een REST API-aanroep. Zie [Trainen met labels met behulp van Python](./python-labeled-data.md) voor meer informatie over hoe u dit doet.
+> U kunt het trainingsproces ook uitvoeren met een REST API-aanroep. Zie [Trainen met labels met behulp van Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md) voor meer informatie over hoe u dit doet.
 
 ## <a name="compose-trained-models"></a>Getrainde modellen samenstellen
 
@@ -299,7 +301,7 @@ Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u
 Klik aan de linkerkant op het voorspellingspictogram (gloeilamp) om het model te testen. Upload een formulierdocument dat u niet in het trainingsproces hebt gebruikt. Klik vervolgens aan de rechterkant op de knop **Voorspellen** om voorspellingen voor sleutels of waarden voor het formulier op te halen. Er worden labels toegepast in begrenzingsvakken en de betrouwbaarheid van elk label wordt gerapporteerd.
 
 > [!TIP]
-> U kunt de analyse-API ook met een REST-aanroep uitvoeren. Zie [Trainen met labels met behulp van Python](./python-labeled-data.md) voor meer informatie over hoe u dit doet.
+> U kunt de analyse-API ook met een REST-aanroep uitvoeren. Zie [Trainen met labels met behulp van Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md) voor meer informatie over hoe u dit doet.
 
 ## <a name="improve-results"></a>Resultaten verbeteren
 
@@ -326,7 +328,7 @@ Ga ten slotte naar de hoofdpagina (huispictogram) en klik op Cloudproject openen
 In deze quickstart hebt u geleerd hoe u het voorbeeldhulpprogramma voor labelen van Form Recognizer met Python gebruikt voor het trainen van een model met handmatig gelabelde gegevens. Als u uw eigen hulpprogramma wilt bouwen voor het labelen van trainingsgegevens, gebruikt u de REST API's die het trainen met gelabelde gegevens verwerken.
 
 > [!div class="nextstepaction"]
-> [Trainen met labels met behulp van Python](./python-labeled-data.md)
+> [Trainen met labels met behulp van Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md)
 
 * [Wat is Form Recognizer?](../overview.md)
-* [Quickstarts voor Form Recognizer-clientbibliotheken](client-library.md)
+* [Form Recognizer-quickstart](client-library.md)

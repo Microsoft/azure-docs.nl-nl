@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc,seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 4eb10298ac683c991835f86582d82fb952b314b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f56bb5e3ed8c953b67f1e88fc16846accaed995
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82195108"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97821278"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Zelfstudie: Gegevens van Apache Spark analyseren met Power BI in HDInsight
 
@@ -37,7 +37,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Het [Jupyter Notebook](https://jupyter.org/) dat u hebt gemaakt in de [vorige zelfstudie](apache-spark-load-data-run-query.md) bevat code voor het maken van een `hvac`-tabel. Deze tabel is gebaseerd op het CSV-bestand dat voor alle HDInsight Spark-clusters beschikbaar is op `\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv`. Gebruik de volgende procedure om de gegevens te controleren.
 
-1. Plak de volgende code uit het Jupyter-notebook en druk vervolgens op **Shift+Enter**. Deze code controleert of de tabellen bestaan.
+1. Plak de volgende code uit het Jupyter-notebook en druk vervolgens op **Shift + Enter**. Deze code controleert of de tabellen bestaan.
 
     ```PySpark
     %%sql

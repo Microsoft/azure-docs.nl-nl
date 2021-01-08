@@ -15,16 +15,16 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 6ac76b3d3cc8fb27734730275836fba0dbfb08fe
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 14203021846e97a53f59c3bc24a1586774613dec
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700304"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97704330"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een interne load balancer maken met Azure Portal om taken te verdelen over VM's
 
-Ga aan de slag met Azure Load Balancer via Azure Portal om een interne load balancer en twee virtuele machines te maken.
+Ga aan de slag met Azure Load Balancer via Azure Portal om een interne load balancer en drie virtuele machines te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -40,6 +40,8 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
 
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
@@ -197,7 +199,7 @@ In deze sectie maakt u een load balancer-regel:
     | Statustest | Selecteer **myHealthProbe**. |
     | Time-out voor inactiviteit (minuten) | Verplaats de schuifregelaar naar **15** minuten. |
     | Opnieuw instellen van TCP | Selecteer **Ingeschakeld**. |
-    | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet**. |
+    | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet.** |
 
 4. Laat de overige standaardwaarden staan en selecteer **OK**.
 
@@ -208,12 +210,12 @@ In deze sectie maakt u een load balancer-regel:
 
 In deze sectie doet u het volgende:
 
-* Maak twee virtuele machines voor de back-endpool van de load balancer.
+* Maak drie virtuele machines voor de back-endpool van de load balancer.
 * Installeer IIS op de virtuele machines om de load balancer te testen.
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u twee VM's (**myVM1** en **myVM2**).
+In deze sectie maakt u drie VM's (**myVM1**, **myVM2** en **myVM3**).
 
 Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder is gemaakt.
 
@@ -262,19 +264,21 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 6. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
+7. Volg de stappen 1 tot en met 8 om nog twee VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
-    | Instelling | VM 2|
-    | ------- | ----- |
-    | Naam |  **myVM2** |
-    | Beschikbaarheidszone | **2** |
-    | Netwerkbeveiligingsgroep | Het bestaande **myNSG** selecteren|
+    | Instelling | VM 2 | VM 3 |
+    | ------- | ----- | ---- |
+    | Naam |  **myVM2** | **myVM3** |
+    | Beschikbaarheidszone | **2** | **3** |
+    | Netwerkbeveiligingsgroep | Het bestaande **myNSG** selecteren| Het bestaande **myNSG** selecteren |
 
 
 # <a name="basic-sku"></a>[**Basis-SKU**](#tab/option-1-create-internal-load-balancer-basic)
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
 
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
@@ -445,13 +449,13 @@ In deze sectie maakt u een load balancer-regel:
 
 In deze sectie doet u het volgende:
 
-* Maak twee virtuele machines voor de back-endpool van de load balancer.
+* Maak drie virtuele machines voor de back-endpool van de load balancer.
 * Maak een beschikbaarheidsset voor de virtuele machines.
 * Installeer IIS op de virtuele machines om de load balancer te testen.
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-In deze sectie maakt u twee VM's (**myVM1** en **myVM2**).
+In deze sectie maakt u drie VM's (**myVM1**, **myVM2**, **myVM3**).
 
 De twee VM's worden toegevoegd aan een beschikbaarheidsset met de naam **myAvailabilitySet**.
 
@@ -498,13 +502,13 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
   
 6. Controleer de instellingen en selecteer vervolgens **Maken**.
 
-7. Volg stappen 1 tot en met 8 om een extra VM te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
+7. Volg de stappen 1 tot en met 8 om nog twee VM's te maken met de volgende waarden en alle andere instellingen hetzelfde als **myVM1**:
 
-    | Instelling | VM 2 |
-    | ------- | ----- |
-    | Naam |  **myVM2** |
-    | Beschikbaarheidsset| **myAvailabilitySet** selecteren |
-    | Netwerkbeveiligingsgroep | Het bestaande **myNSG** selecteren|
+    | Instelling | VM 2 | VM 3 |
+    | ------- | ----- | ---- |
+    | Naam |  **myVM2** | **myVM3** |
+    | Beschikbaarheidsset | **myAvailabilitySet** selecteren | **myAvailabilitySet** selecteren |
+    | Netwerkbeveiligingsgroep | Het bestaande **myNSG** selecteren | Het bestaande **myNSG** selecteren |
 
 ### <a name="add-virtual-machines-to-the-backend-pool"></a>Virtuele machines toevoegen aan de back-endpool
 
@@ -516,9 +520,9 @@ De virtuele machines die in de vorige stappen zijn gemaakt, moeten worden toegev
 
 3. Selecteer in **Gekoppeld aan** de optie **Virtuele machines**.
 
-4. Selecteer in **Virtuele machines** de optie **+ Toevoegen**.
+4. Selecteer in het gedeelte **Virtuele machines** de optie **+ Toevoegen**.
 
-5. Schakel de selectievakjes naast **myVM1** en **myVM2** in.
+5. Schakel de selectievakjes naast **myVM1**, **myVM2** en **myVM3** in.
 
 6. Selecteer **Toevoegen**.
 
@@ -598,7 +602,7 @@ In deze sectie maakt u een VM met de naam **myTestVM**.  Deze VM wordt gebruikt 
    ```
 8. Sluit de Bastion-sessie met **myVM1**.
 
-9. Herhaal de stappen 1 tot en met 6 om IIS en het bijgewerkte bestand iisstart.htm te installeren op **myVM2**.
+9. Herhaal stappen 1 tot en met 6 om IIS en het bijgewerkte bestand iisstart.htm te installeren op **myVM2** en **myVM3**.
 
 
 ## <a name="test-the-load-balancer"></a>Load balancer testen
@@ -630,9 +634,9 @@ Verwijder de resourcegroep, de load balancer en alle gerelateerde resources, wan
 In deze snelstart, gaat u het volgende doen:
 
 * U hebt in Azure een interne load balancer van het type Standard of Basic gemaakt
-* U hebt twee VM's aan de load balancer gekoppeld.
+* U hebt drie VM's aan de load balancer gekoppeld.
 * U hebt de verkeersregel en statustest van de load balancer geconfigureerd en vervolgens de load balancer getest. 
 
-Als u meer informatie wilt over Azure Load Balancer, gaat u naar
+Als u meer informatie wilt over Azure Load Balancer, gaat u naar:
 > [!div class="nextstepaction"]
 > [Wat is Azure Load Balancer?](load-balancer-overview.md)

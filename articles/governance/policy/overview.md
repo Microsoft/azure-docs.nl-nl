@@ -3,12 +3,12 @@ title: Overzicht van Azure-beleid
 description: Azure Policy is een service in Azure die u gebruikt om beleidsdefinities in uw Azure-omgeving te maken, toe te wijzen en te beheren.
 ms.date: 10/05/2020
 ms.topic: overview
-ms.openlocfilehash: 8a32e32afb544588bb033cc64ede5ecbe6e2bac2
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 96fd29b5e3d24bc3e678461a95005e004a8a3a80
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097385"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97803949"
 ---
 # <a name="what-is-azure-policy"></a>Wat is Azure Policy?
 
@@ -37,7 +37,7 @@ Zie [Evaluatietriggers](./how-to/get-compliance-data.md#evaluation-triggers) voo
 
 ### <a name="control-the-response-to-an-evaluation"></a>De reactie op een evaluatie beheren
 
-Bedrijfsregels voor het verwerken van niet-compatibele resources verschillen nogal tussen organisaties. Voorbeelden van hoe een organisatie wil dat het platform reageert op een niet-compatibele bron, zijn:
+Bedrijfsregels voor het verwerken van niet-compatibele resources verschillen nogal tussen organisaties. Enkele voorbeelden van hoe een organisatie wil dat het platform reageert op een niet-compatibele resource:
 
 - De resourcewijziging weigeren
 - De wijziging in de resource vastleggen
@@ -61,7 +61,7 @@ Het volgende overzicht van Azure Policy is afkomstig van build 2018. Voor het do
 
 ### <a name="azure-policy-and-azure-rbac"></a>Azure Policy en Azure RBAC
 
-Er zijn enkele belangrijke verschillen tussen Azure Policy en op rollen gebaseerd toegangsbeheer (Azure RBAC). Azure Policy evalueert de status door de eigenschappen te bekijken van resources die worden weergegeven in Resource Manager en de eigenschappen van sommige resourceproviders. In Azure Policy worden acties (ook wel _bewerkingen_ ) niet beperkt. Azure Policy zorgt ervoor dat de resourcestatus voldoet aan uw bedrijfsregels zonder dat het uitmaakt wie de wijziging heeft aangebracht of wie toestemming heeft om een wijziging aan te brengen.
+Er zijn enkele belangrijke verschillen tussen Azure Policy en op rollen gebaseerd toegangsbeheer (Azure RBAC). Azure Policy evalueert de status door de eigenschappen te bekijken van resources die worden weergegeven in Resource Manager en de eigenschappen van sommige resourceproviders. In Azure Policy worden acties (ook wel _bewerkingen_) niet beperkt. Azure Policy zorgt ervoor dat de resourcestatus voldoet aan uw bedrijfsregels zonder dat het uitmaakt wie de wijziging heeft aangebracht of wie toestemming heeft om een wijziging aan te brengen.
 
 Azure RBAC is gericht op het beheer van [gebruikersacties](../../role-based-access-control/resource-provider-operations.md) in verschillende bereiken. Als een actie moet worden beheerd, is Azure RBAC het meest geschikte hulpprogramma om te gebruiken. Zelfs als een persoon een actie mag uitvoeren, blokkeert Azure Policy toch het maken of bijwerken als het resultaat een niet-compatibele resource is.
 
@@ -74,12 +74,12 @@ Azure Policy heeft diverse machtigingen, oftewel bewerkingen, in twee verschille
 - [Microsoft.Authorization](../../role-based-access-control/resource-provider-operations.md#microsoftauthorization)
 - [Microsoft.PolicyInsights](../../role-based-access-control/resource-provider-operations.md#microsoftpolicyinsights)
 
-Veel ingebouwde rollen wijzen machtigingen toe aan Azure Policy-resources. De rol **Inzender voor resourcebeleid** bevat de meeste Azure Policy-bewerkingen. Degene met de rol **Eigenaar** heeft volledige rechten. Zowel **Inzender** als **Lezer** heeft toegang tot alle _lees_ bewerkingen in Azure Policy. Met **Inzender** kunnen resourceherstelacties worden geactiveerd, maar kunnen er geen definities of toewijzingen worden _gemaakt_ . De rol **Beheerder van gebruikerstoegang** is vereist om de benodigde machtigingen voor de beheerde identiteit van **deployIfNotExists** - of **modify** -toewijzingen te verlenen.
+Veel ingebouwde rollen wijzen machtigingen toe aan Azure Policy-resources. De rol **Inzender voor resourcebeleid** bevat de meeste Azure Policy-bewerkingen. Degene met de rol **Eigenaar** heeft volledige rechten. Zowel **Inzender** als **Lezer** heeft toegang tot alle _lees_ bewerkingen in Azure Policy. Met **Inzender** kunnen resourceherstelacties worden geactiveerd, maar kunnen er geen definities of toewijzingen worden _gemaakt_. De rol **Beheerder van gebruikerstoegang** is vereist om de benodigde machtigingen voor de beheerde identiteit van **deployIfNotExists**- of **modify**-toewijzingen te verlenen.
 
 Als geen van de ingebouwde rollen de vereiste machtigingen heeft, maakt u een [aangepaste rol](../../role-based-access-control/custom-roles.md).
 
 > [!NOTE]
-> Voor de beheerde identiteit van een **deployIfNotExists** - of **modify** -beleidstoewijzing zijn voldoende machtigingen nodig om resources te maken of bij te werken. Zie [Beleidsdefinities voor herstel configureren](./how-to/remediate-resources.md#configure-policy-definition) voor meer informatie.
+> Voor de beheerde identiteit van een **deployIfNotExists**- of **modify**-beleidstoewijzing zijn voldoende machtigingen nodig om resources te maken of bij te werken. Zie [Beleidsdefinities voor herstel configureren](./how-to/remediate-resources.md#configure-policy-definition) voor meer informatie.
 
 ### <a name="resources-covered-by-azure-policy"></a>Resources die worden gedekt door Azure Policy
 
@@ -94,7 +94,7 @@ Enkele tips om rekening mee te houden:
 - U kunt bij het maken van definities en toewijzingen gebruikmaken van organisatiehiërarchieën. Het is raadzaam om op een hoger niveau definities te maken, zoals op het niveau van de beheergroep of het abonnement. Vervolgens maakt u de toewijzing op het eerstvolgende onderliggende niveau. Als u een definitie voor een beheergroep maakt, kan de toewijzing worden gericht op een abonnement of resource in die beheergroep.
 
 - Het is raadzaam om initiatiefdefinities te maken en toe te wijzen, zelfs voor slechts één beleidsdefinitie.
-  U hebt bijvoorbeeld de beleidsdefinitie _policyDefA_ en u maakt deze met de initiatiefdefinitie _initiativeDefC_ . Als u later nog een beleidsdefinitie maakt voor _policyDefB_ , met doelen die lijken op die van _policyDefA_ , kunt u deze toevoegen bij _initiativeDefC_ en ze samen volgen.
+  U hebt bijvoorbeeld de beleidsdefinitie _policyDefA_ en u maakt deze met de initiatiefdefinitie _initiativeDefC_. Als u later nog een beleidsdefinitie maakt voor _policyDefB_, met doelen die lijken op die van _policyDefA_, kunt u deze toevoegen bij _initiativeDefC_ en ze samen volgen.
 
 - Als u een initiatieftoewijzing hebt gemaakt, worden beleidsdefinities die worden toegevoegd aan het initiatief ook deel van de toewijzingen van het initiatief.
 
@@ -124,7 +124,7 @@ Raadpleeg [Structuur van beleidsdefinities](./concepts/definition-structure.md) 
 
 Beleidsparameters helpen uw beleidsbeheer te vereenvoudigen door het aantal beleidsdefinities te verminderen dat u moet maken. U kunt bij het maken van een beleidsdefinitie parameters definiëren om deze algemener te maken. Vervolgens kunt u deze beleidsdefinitie hergebruiken voor verschillende scenario's. Dit doet u door verschillende waarden door te voeren bij het toepassen van de beleidsdefinitie. Bijvoorbeeld, door een reeks locaties voor een abonnement op te geven.
 
-Parameters worden gedefinieerd bij het maken van een beleidsdefinitie. Als een parameter wordt gedefinieerd, krijgt deze een naam en optioneel een waarde. U kunt bijvoorbeeld een parameter definiëren voor een beleid met de naam _locatie_ . Vervolgens kunt u deze verschillende waarden toekennen, zoals _EastUS_ of _WestUS_ bij het toewijzen van beleid.
+Parameters worden gedefinieerd bij het maken van een beleidsdefinitie. Als een parameter wordt gedefinieerd, krijgt deze een naam en optioneel een waarde. U kunt bijvoorbeeld een parameter definiëren voor een beleid met de naam _locatie_. Vervolgens kunt u deze verschillende waarden toekennen, zoals _EastUS_ of _WestUS_ bij het toewijzen van beleid.
 
 Zie [Definitiestructuur - parameters](./concepts/definition-structure.md#parameters) voor meer informatie over beleidsparameters.
 
@@ -138,22 +138,22 @@ Een initiatiefdefinitie is een verzameling beleidsdefinities die zijn aangepast 
 Onder dit initiatief vallen beleidsdefinities zoals:
 
 - **Niet-versleutelde SQL-database controleren in Security Center** – Voor het controleren van niet-versleutelde SQL-databases en -servers.
-- **OS-kwetsbaarheden controleren in Security Center** : voor het controleren van servers die niet voldoen aan de geconfigureerde uitgangswaarde.
+- **OS-kwetsbaarheden controleren in Security Center**: voor het controleren van servers die niet voldoen aan de geconfigureerde uitgangswaarde.
 - **Ontbrekende Endpoint Protection controleren in Security Center** – Voor het controleren van servers zonder een geïnstalleerde Endpoint Protection-agent.
 
 Net zoals beleidsparameters helpen initiatiefparameters om initiatiefbeheer te vereenvoudigen door redundantie te verminderen. Initiatiefparameters zijn de parameters die worden gebruikt voor de beleidsdefinities binnen het initiatief.
 
-Neem bijvoorbeeld een scenario met initiatiefdefinitie **initiativeC** , waarbij voor beleidsdefinities **policyA** en **policyB** elk een ander type parameter wordt verwacht:
+Neem bijvoorbeeld een scenario met initiatiefdefinitie **initiativeC**, waarbij voor beleidsdefinities **policyA** en **policyB** elk een ander type parameter wordt verwacht:
 
 | Beleid | Naam van parameter |Type parameter  |Opmerking |
 |---|---|---|---|
 | policyA | allowedLocations | matrix  |Op basis van deze parameter wordt een lijst met tekenreeksen verwacht voor een waarde, omdat het parametertype is gedefinieerd als een matrix |
 | policyB | allowedSingleLocation |tekenreeks |Op basis van deze parameter wordt één woord verwacht voor een waarde, omdat het parametertype is gedefinieerd als een tekenreeks |
 
-In dit scenario hebt u, bij het definiëren van de initiatiefparameters voor **initiativeC** , drie opties:
+In dit scenario hebt u, bij het definiëren van de initiatiefparameters voor **initiativeC**, drie opties:
 
 - Gebruik de parameters van de beleidsdefinities binnen dit initiatief: in dit voorbeeld worden _allowedLocations_ en _allowedSingleLocation_ initiatiefparameters voor **initiativeC** .
-- Geef waarden op voor de parameters van de beleidsdefinities binnen deze initiatiefdefinitie. In dit voorbeeld kunt u een lijst met locaties opgeven naar parameter van **policyA** – **allowedLocations** en parameter van **policyB** – **allowedSingleLocation** . U kunt ook waarden opgeven bij het toewijzen van dit initiatief.
+- Geef waarden op voor de parameters van de beleidsdefinities binnen deze initiatiefdefinitie. In dit voorbeeld kunt u een lijst met locaties opgeven naar parameter van **policyA** – **allowedLocations** en parameter van **policyB** – **allowedSingleLocation**. U kunt ook waarden opgeven bij het toewijzen van dit initiatief.
 - Geef een lijst met _waarde_ opties op die kunnen worden gebruikt bij het toewijzen van dit initiatief. Als u dit initiatief toewijst, kunnen de overgenomen parameters van de beleidsdefinities binnen het initiatief, alleen waarden hebben uit de opgegeven lijst.
 
 Als u waardeopties maakt in een initiatiefdefinitie, is het niet mogelijk om tijdens het toewijzen van het initiatief andere waarden op te geven, omdat deze niet op de lijst staan.

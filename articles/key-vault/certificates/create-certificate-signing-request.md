@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: 6d66648680aa14baa53372732df52a6c247a0117
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 42f649f9dd206b34f0fac8513ba742febed2dbcb
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483760"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724626"
 ---
 # <a name="creating-and-merging-csr-in-key-vault"></a>CSR in Key Vault maken en samenvoegen
 
@@ -38,7 +38,34 @@ Key Vault is een partnerschap aangegaan met de volgende twee certificeringsinsta
 De volgende stappen helpen u bij het maken van een certificaat van certificeringsinstanties die niet zijn gekoppeld aan Key Vault (GoDaddy is bijvoorbeeld is geen vertrouwde sleutelkluis-CA) 
 
 
-### <a name="azure-powershell"></a>Azure PowerShell
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
+
+1.  Als u CSR wilt genereren voor de CA van uw keuze, gaat u naar de sleutelkluis die u wilt toevoegen van het certificaat.
+2.  Selecteer op de eigenschappenpagina's van de sleutelkluis **Certificaten**.
+3.  Selecteer tabblad **Genereren/importeren**.
+4.  Kies op het scherm **Een certificaat maken** de volgende waarden:
+    - **Methode voor het maken van certificaten:** Genereren.
+    - **Naam van het certificaat:** ContosoManualCSRCertificate.
+    - **Type certificeringsinstantie (CA):** Certificaat dat is uitgegeven door een niet-geïntegreerde certificeringsinstantie
+    - **Onderwerp:** `"CN=www.contosoHRApp.com"`
+    - Selecteer de andere waarden naar wens. Klik op **Create**.
+
+    ![Certificaateigenschappen](../media/certificates/create-csr-merge-csr/create-certificate.png)  
+
+
+6.  U ziet dat het certificaat nu is toegevoegd in de lijst Certificaten. Selecteer dit nieuwe certificaat dat u zojuist hebt gemaakt. De huidige status van het certificaat is uitgeschakeld omdat het nog niet is uitgegeven door de CA.
+7. Klik op tabblad **Certificaatbewerking** en selecteer **CSR downloaden**.
+
+   ![Schermafbeelding met de knop CSR downloaden gemarkeerd.](../media/certificates/create-csr-merge-csr/download-csr.png)
+ 
+8.  Breng het CSR-bestand naar de certificeringsinstantie om de aanvraag te kunnen ondertekenen.
+9.  Zodra de aanvraag is ondertekend door de CA, gaat u terug naar het certificaatbestand om en kiest u **De ondertekende aanvraag samenvoegen** in hetzelfde Certificaatbewerkingsscherm.
+
+De certificaataanvraag is nu samengevoegd.
+
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 
 
@@ -68,36 +95,11 @@ De volgende stappen helpen u bij het maken van een certificaat van certificering
     ```
 
     De certificaataanvraag is nu succesvol samengevoegd.
-
-### <a name="azure-portal"></a>Azure Portal
-
-1.  Als u CSR wilt genereren voor de CA van uw keuze, gaat u naar de sleutelkluis die u wilt toevoegen van het certificaat.
-2.  Selecteer op de eigenschappenpagina's van de sleutelkluis **Certificaten**.
-3.  Selecteer tabblad **Genereren/importeren**.
-4.  Kies op het scherm **Een certificaat maken** de volgende waarden:
-    - **Methode voor het maken van certificaten:** Genereren.
-    - **Naam van het certificaat:** ContosoManualCSRCertificate.
-    - **Type certificeringsinstantie (CA):** Certificaat dat is uitgegeven door een niet-geïntegreerde certificeringsinstantie
-    - **Onderwerp:** `"CN=www.contosoHRApp.com"`
-    - Selecteer de andere waarden naar wens. Klik op **Create**.
-
-    ![Certificaateigenschappen](../media/certificates/create-csr-merge-csr/create-certificate.png)  
-
-
-6.  U ziet dat het certificaat nu is toegevoegd in de lijst Certificaten. Selecteer dit nieuwe certificaat dat u zojuist hebt gemaakt. De huidige status van het certificaat is uitgeschakeld omdat het nog niet is uitgegeven door de CA.
-7. Klik op tabblad **Certificaatbewerking** en selecteer **CSR downloaden**.
-
-   ![Schermafbeelding met de knop CSR downloaden gemarkeerd.](../media/certificates/create-csr-merge-csr/download-csr.png)
- 
-8.  Breng het CSR-bestand naar de certificeringsinstantie om de aanvraag te kunnen ondertekenen.
-9.  Zodra de aanvraag is ondertekend door de CA, gaat u terug naar het certificaatbestand om en kiest u **De ondertekende aanvraag samenvoegen** in hetzelfde Certificaatbewerkingsscherm.
-
-De certificaataanvraag is nu samengevoegd.
+---
 
 > [!NOTE]
 > Als uw waarden voor de RD-naam komma's bevatten, kunt u ze ook toevoegen aan het veld **Onderwerp** door de waarde tussen dubbele aanhalingstekens te plaatsen, zoals weergegeven in stap 4.
 > Voorbeeld van vermelding in 'Onderwerp': `DC=Contoso,OU="Docs,Contoso",CN=www.contosoHRApp.com`In dit voorbeeld bevat de relatieve DN-naam`OU` een waarde met een komma in de naam. De resulterende uitvoer voor `OU` is **Docs, Contoso**.
-
 
 ## <a name="adding-more-information-to-csr"></a>Meer informatie toevoegen aan CSR
 
@@ -118,6 +120,8 @@ Voorbeeld
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
+- Als u antwoorden op certificaataanvragen wilt bewaken of beheren, kunt u [hier](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-scenarios) meer lezen
+
 - **Fouttype 'De openbare sleutel van het certificaat van de eindentiteit in de opgegeven X.509-certificaatinhoud komt niet overeen met het openbare gedeelte van de opgegeven persoonlijke sleutel. Controleer of het certificaat geldig is.** 'Deze fout kan optreden als u de CSR niet samenvoegt met dezelfde CSR-aanvraag die is geïnitieerd. Telkens als een CSR wordt gemaakt, wordt er een persoonlijke sleutel gemaakt die moet worden vergeleken bij het samenvoegen van de ondertekende aanvraag.
     
 - Wanneer CSR wordt samengevoegd, wordt dan de gehele keten samengevoegd?
@@ -129,6 +133,7 @@ Raadpleeg de [Certificaatbewerkingen in de Key Vault REST API-referentie](/rest/
 
 - **Fouttype: 'De opgegeven onderwerpnaam is geen geldige X500 naam'** . Deze fout kan optreden als u 'speciale tekens' in de waarden van SubjectName hebt opgenomen. Bekijk de opmerkingen in respectievelijk de instructies in Azure Portal en PowerShell. 
 
+---
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Verificatie, aanvragen en antwoorden](../general/authentication-requests-and-responses.md)

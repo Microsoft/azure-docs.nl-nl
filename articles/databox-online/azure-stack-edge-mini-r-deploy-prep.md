@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/22/2020
+ms.date: 12/16/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Mini R device so I can use it to transfer data to Azure.
-ms.openlocfilehash: 54ac683dcc2b124c4a6410b2e8449fa7e969ce8c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6d41c186a5d239ad7228c37902f5691085e43dbf
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464188"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631241"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-mini-r"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Mini R
 
@@ -40,7 +40,7 @@ Raadpleeg de volgende zelfstudies in de voorgeschreven volgorde voor het impleme
 |  | |
 |**Zelfstudies voor implementatie** |Deze zelfstudies zijn vereist als u uw Azure Stack Edge Mini R-apparaat in productie wilt implementeren. |
 |**[1. Azure Portal voorbereiden voor apparaat](azure-stack-edge-mini-r-deploy-prep.md)** |Maak en configureer uw Azure Stack Edge-resource voordat u een fysiek apparaat installeert. |
-|**[2. Het apparaat installeren](azure-stack-edge-mini-r-deploy-install.md)**|Uw fysieke apparaat uitpakken, opstellen en bekabelen.  |
+|**[2. Het apparaat installeren](azure-stack-edge-mini-r-deploy-install.md)**|Inspecteer en bekabel het fysieke apparaat.  |
 |**[3. Verbinding maken met het apparaat](azure-stack-edge-mini-r-deploy-connect.md)** |Zodra het apparaat is geïnstalleerd, maakt u verbinding met de lokale webinterface van het apparaat.  |
 |**[4. Netwerkinstellingen configureren](azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy.md)** |Configureer een netwerk, inclusief het rekennetwerk en de webproxy-instellingen voor uw apparaat.   |
 |**[5. Apparaatinstellingen configureren](azure-stack-edge-mini-r-deploy-set-up-device-update-time.md)** |Wijs een apparaatnaam en een DNS-domein toe, configureer de updateserver en de apparaattijd. |

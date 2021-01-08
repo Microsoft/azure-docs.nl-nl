@@ -4,12 +4,12 @@ description: Meer informatie over het implementeren van een status monitor met d
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ed92156df9d8e1e07b56cea4b1e64edee11d68d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e70c50098ece516312e1e92984185624c276301b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77562119"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028417"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Het scenario bewaken in het Durable Functions-weers Watcher-voor beeld
 
@@ -28,7 +28,7 @@ In dit voor beeld worden de huidige weers omstandigheden van een locatie bewaakt
 * Monitors zijn schaalbaar. Omdat elke monitor een indelings exemplaar is, kunnen er meerdere monitors worden gemaakt zonder nieuwe functies te maken of meer code te definiëren.
 * Monitors kunnen eenvoudig worden geïntegreerd in grotere werk stromen. Een monitor kan één sectie van een complexere Orchestration-functie of een subindeling [zijn.](durable-functions-sub-orchestrations.md)
 
-## <a name="configuration"></a>Configuratie
+## <a name="configuration"></a>Configuration
 
 ### <a name="configuring-twilio-integration"></a>Twilio-integratie configureren
 
@@ -72,6 +72,9 @@ Hier volgt de code voor het implementeren van de functie:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_Monitor/index.js)]
 
+# <a name="python"></a>[Python](#tab/python)
+We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
+
 ---
 
 Deze Orchestrator-functie voert de volgende acties uit:
@@ -83,8 +86,7 @@ Deze Orchestrator-functie voert de volgende acties uit:
 5. Hiermee maakt u een duurzame timer om de indeling te hervatten bij het volgende polling-interval. In het voor beeld wordt een in code vastgelegde waarde gebruikt voor de boog.
 6. Blijft actief totdat de huidige UTC-tijd de verloop tijd van de monitor doorgeeft of een SMS-waarschuwing wordt verzonden.
 
-Meerdere Orchestrator-exemplaren kunnen tegelijkertijd worden uitgevoerd door de Orchestrator-functie meerdere keren aan te roepen. De locatie die moet worden bewaakt en het telefoon nummer waarnaar een SMS-waarschuwing moet worden verzonden.
-
+Meerdere Orchestrator-exemplaren kunnen tegelijkertijd worden uitgevoerd door de Orchestrator-functie meerdere keren aan te roepen. De locatie die moet worden bewaakt en het telefoon nummer waarnaar een SMS-waarschuwing moet worden verzonden. Ten slotte moet u er rekening mee houden dat de Orchestrator-functie *niet* wordt uitgevoerd tijdens het wachten op de timer, zodat er geen kosten in rekening worden gebracht.
 ### <a name="e3_getisclear-activity-function"></a>E3_GetIsClear-activiteit functie
 
 Net als bij andere voor beelden zijn de functies van de Help-activiteit reguliere functies die gebruikmaken van de `activityTrigger` trigger binding. De functie **E3_GetIsClear** haalt de huidige weers omstandigheden op met behulp van de weers ondergrondse API en bepaalt of de lucht duidelijk is.
@@ -102,6 +104,9 @@ De *function.jsop* wordt als volgt gedefinieerd:
 En dit is de implementatie.
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_GetIsClear/index.js)]
+
+# <a name="python"></a>[Python](#tab/python)
+We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
 
 ---
 
@@ -125,6 +130,9 @@ De *function.js* is eenvoudig:
 En dit is de code die het SMS-bericht verzendt:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_SendGoodWeatherAlert/index.js)]
+
+# <a name="python"></a>[Python](#tab/python)
+We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
 
 ---
 
@@ -169,7 +177,7 @@ U kunt de activiteit van de Orchestration bekijken door te kijken naar de functi
 2018-03-01T01:14:54.030 Function completed (Success, Id=561d0c78-ee6e-46cb-b6db-39ef639c9a2c, Duration=62ms)
 ```
 
-De indeling wordt [beëindigd](durable-functions-instance-management.md) zodra de time-out is bereikt of als er duidelijke skies zijn gedetecteerd. U kunt ook `TerminateAsync` (.net) of `terminate` (Java script) in een andere functie gebruiken of de **terminatePostUri** http post-webhook aanroepen waarnaar wordt verwezen in het 202-antwoord hierboven, waarbij wordt vervangen `{text}` door de reden voor beëindiging:
+De indeling wordt voltooid zodra de time-out is bereikt of als er heldere skies zijn gedetecteerd. U kunt ook de `terminate` API in een andere functie gebruiken of de **TERMINATEPOSTURI** http post-webhook aanroepen waarnaar wordt verwezen in het 202-antwoord hierboven. Als u de webhook wilt gebruiken, vervangt u door de `{text}` reden voor de vroege beëindiging. De HTTP POST-URL ziet er ongeveer als volgt uit:
 
 ```
 POST https://{host}/runtime/webhooks/durabletask/instances/f6893f25acf64df2ab53a35c09d52635/terminate?reason=Because&taskHub=SampleHubVS&connection=Storage&code={systemKey}

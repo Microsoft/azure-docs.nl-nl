@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: ae2361d12dfe18cadd80dd3b84405b2b17751e59
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 44a5131a7ad90feeeeff56e95b64e65f3f18855c
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584082"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97674154"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Zelfstudie: Azure Key Vault integreren in ARM-sjabloonimplementatie
 
@@ -32,6 +32,8 @@ Deze zelfstudie bestaat uit de volgende taken:
 > * Resources opschonen
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+
+Raadpleeg [Complexe cloudimplementaties beheren met behulp van geavanceerde functies voor ARM-sjablonen](/learn/modules/manage-deployments-advanced-arm-template-features/) voor een Microsoft Learn-module waarin wordt gebruikgemaakt van een beveiligde waarde uit een sleutelkluis.
 
 ## <a name="prerequisites"></a>Vereisten
 

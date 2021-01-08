@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: d82fa5b44d4797d4254a91b4caa72b7c6b5e02ab
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9a98a77b9cc89b7a1a05e676048775aa38c83733
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309232"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97671961"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Zelfstudie: Azure Active Directory-integratie met Adobe Experience Manager
 
@@ -65,7 +65,7 @@ Om de integratie van Adobe Experience Manager te configureren in Azure AD, moet 
 
 4. Typ **Adobe Experience Manager** in het zoekvak, selecteer **Adobe Experience Manager** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
 
-     ![Adobe Experience Manager toevoegen vanuit de galerie](common/search-new-app.png)
+    ![Adobe Experience Manager toevoegen vanuit de galerie](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -214,8 +214,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -239,7 +239,7 @@ In dit gedeelte geeft u Britta Simon de mogelijkheid om eenmalige aanmelding van
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -253,7 +253,7 @@ In dit gedeelte geeft u Britta Simon de mogelijkheid om eenmalige aanmelding van
 
 In deze sectie maakt u een gebruiker met de naam Britta Simon in Adobe Experience Manager. Als u de optie **Autocreate CRX Users** hebt geselecteerd, worden gebruikers automatisch gemaakt na een geslaagde verificatie.
 
-Als u de gebruikers handmatig wilt maken, neemt u contact op met het [ondersteuningsteam van Adobe Experience Manager](https://helpx.adobe.com/support/experience-manager.html) om de gebruikers toe te voegen aan het Adobe Experience Manager-platform.
+Als u de gebruikers handmatig wilt maken, neemt u contact op met het [ondersteuningsteam van Adobe Experience Manager](https://helpx.adobe.com/support/experience-manager.html) om de gebruikers toe te voegen op het Adobe Experience Manager-platform.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

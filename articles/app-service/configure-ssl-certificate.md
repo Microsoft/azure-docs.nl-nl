@@ -6,18 +6,21 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: dff98a5c54d2fee350e2b35dc00148c19ea233b8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 15a77835e3e618c17b9839aa5a010cd4d29cebe1
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956497"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97653109"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Een TLS/SSL-certificaat toevoegen in Azure App Service
 
 [Azure App Service](overview.md) biedt een uiterst schaalbare webhostingservice met self-patchfunctie. In dit artikel wordt beschreven hoe u een persoonlijk certificaat of een openbaar certificaat maakt, uploadt of importeert in App Service. 
 
 Nadat het certificaat is toegevoegd aan uw App Service-app of [functie-app](../azure-functions/index.yml), kunt u [er een aangepaste DNS-naam mee beveiligen](configure-ssl-bindings.md) of [het certificaat gebruiken in uw toepassingscode](configure-ssl-certificate-in-code.md).
+
+> [!NOTE]
+> Een certificaat dat is geüpload in een app, wordt opgeslagen in een implementatie-eenheid die is gekoppeld aan de combinatie van resourcegroep en regio van de app (intern wordt dit een *webruimte* genoemd). Hierdoor is het certificaat toegankelijk voor andere apps in dezelfde combinatie van resourcegroep en regio. 
 
 De volgende tabel bevat de beschikbare opties voor het toevoegen van certificaten in App Service:
 

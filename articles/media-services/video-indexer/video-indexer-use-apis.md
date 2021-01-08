@@ -8,29 +8,31 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 11/10/2020
+ms.date: 01/07/2021
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cdba4ce36322f9c3fb0f898cb7eb1d1185ed1dc6
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: fcd194e2503610db314f6a975a4afb1d27962f8c
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636942"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028177"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Zelfstudie: de Video Indexer-API gebruiken
 
 Video Indexer consolideert diverse AI-technologieën (audio en video kunst matige intelligentie) die door micro soft worden aangeboden in één geïntegreerde service, waardoor ontwikkeling eenvoudiger wordt. De Api's zijn zodanig ontworpen dat ontwikkel aars zich kunnen richten op het gebruik van media AI-technologieën zonder dat u zich zorgen hoeft te maken over schaal, wereld wijd bereik, Beschik baarheid en betrouw baarheid van Cloud platforms. U kunt de API gebruiken om uw bestanden te uploaden, gedetailleerde video inzichten te verkrijgen, Url's van een Inge sloten Insight-en speler-widgets op te halen en meer.
 
-Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij een gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met een betaalde optie maakt u een Video Indexer-account dat is [verbonden met uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor minuten voor de index. Zie [Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/)voor meer informatie.
+Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij een gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met een betaalde optie maakt u een Video Indexer-account dat is [verbonden met uw Azure-abonnement en een Azure Media Services-account](connect-to-azure.md). U betaalt voor geïndexeerde minuten. Zie [Prijzen van mediaservices](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie.
 
 In dit artikel wordt uitgelegd hoe ontwikkelaars kunnen profiteren van de [Video Indexer-API](https://api-portal.videoindexer.ai/).
 
 ## <a name="subscribe-to-the-api"></a>Abonneren op de API
 
 1. Meld u aan bij de [Video Indexer-ontwikkelaarsportal](https://api-portal.videoindexer.ai/).
+
+    Bekijk een release opmerking over [aanmeldings gegevens](release-notes.md#october-2020).
     
-    ![Aanmelden bij Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/video-indexer-api01.png)
+     ![Aanmelden bij Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/sign-in.png)
 
    > [!Important]
    > * U moet dezelfde provider gebruiken als voor het aanmelden bij Video Indexer.
@@ -40,14 +42,14 @@ In dit artikel wordt uitgelegd hoe ontwikkelaars kunnen profiteren van de [Video
 
     Selecteer het tabblad [producten](https://api-portal.videoindexer.ai/products) . Selecteer vervolgens autorisatie en abonneren.
     
-    ![Het tabblad producten in Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/video-indexer-api02.png)
+    ![Het tabblad producten in Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/authorization.png)
 
     > [!NOTE]
     > Nieuwe gebruikers worden automatisch geabonneerd op Autorisatie.
     
-    Nadat u zich hebt geabonneerd, kunt u uw abonnement vinden onder de autorisatie van **producten**  ->  **Authorization**. Op de pagina abonnement vindt u de primaire en secundaire sleutels. De sleutels moeten beveiligd zijn. De sleutels mogen alleen door uw servercode gebruikt worden. Ze zijn niet beschikbaar voor de client zijde (. js,. html, enzovoort).
+    Nadat u zich hebt geabonneerd, kunt u uw abonnement vinden onder de autorisatie van **producten**  ->  . Op de pagina abonnement vindt u de primaire en secundaire sleutels. De sleutels moeten beveiligd zijn. De sleutels mogen alleen door uw servercode gebruikt worden. Ze zijn niet beschikbaar voor de client zijde (. js,. html, enzovoort).
 
-    ![Abonnementen en sleutels in Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/video-indexer-api03.png)
+    ![Abonnementen en sleutels in Video Indexer ontwikkelaars Portal](./media/video-indexer-use-apis/subscriptions.png)
 
 > [!TIP]
 > Een gebruiker van Video Indexer kan met één abonnementssleutel verbinding maken met meerdere Video Indexer-accounts. U kunt deze Video Indexer-accounts vervolgens koppelen aan verschillende Media Services-accounts.
@@ -64,7 +66,7 @@ Elke aanroep naar de Operations-API moet worden gekoppeld aan een toegangstoken 
 
 U kunt bepalen of deze tokens alleen-lezen zijn of dat ze het bewerken toestaan door **allowEdit = True/False** op te geven.
 
-Voor de meeste server-naar-server-scenario's gebruikt u waarschijnlijk hetzelfde **account** token, omdat de **account bewerkingen en** **video** bewerkingen worden behandeld. Als u echter van plan bent om aan client zijde aanroepen naar Video Indexer te maken (bijvoorbeeld van Java script), zou u een **video** toegangs token willen gebruiken om te voor komen dat clients toegang krijgen tot het hele account. Dit is ook de reden dat bij het insluiten van Video Indexer client code in uw client (bijvoorbeeld met behulp van de **widget Get Insights** of het ophalen van een **speler** ), een token voor **video** toegang moet worden verstrekt.
+Voor de meeste server-naar-server-scenario's gebruikt u waarschijnlijk hetzelfde **account** token, omdat de **account bewerkingen en** **video** bewerkingen worden behandeld. Als u echter van plan bent om aan client zijde aanroepen naar Video Indexer te maken (bijvoorbeeld van Java script), zou u een **video** toegangs token willen gebruiken om te voor komen dat clients toegang krijgen tot het hele account. Dit is ook de reden dat bij het insluiten van Video Indexer client code in uw client (bijvoorbeeld met behulp van de **widget Get Insights** of het ophalen van een **speler**), een token voor **video** toegang moet worden verstrekt.
 
 Om het eenvoudiger te maken, kunt u **Authorization-API** > **GetAccounts** gebruiken om uw accounts op te halen zonder eerst een gebruikerstoken te verkrijgen. U kunt verzoeken om de accounts op te halen met behulp van geldige tokens, zodat u een extra aanroep om een accounttoken op te halen kunt overslaan.
 

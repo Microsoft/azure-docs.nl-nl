@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 704449a9d70a38f9a05a68df290a4c0d0e6aeb54
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 2aaa301a95f3f07ca81d20daba3ef28b812da0e6
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318917"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672335"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Zelfstudie: Integratie van Azure Active Directory met Alcumus Info Exchange
 
@@ -63,7 +63,7 @@ Als u de integratie van Alcumus Info Exchange in Azure AD wilt configureren, moe
 
 4. Typ **Alcumus Info Exchange** in het zoekvak, selecteer **Alcumus Info Exchange** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Alcumus Info Exchange in de resultatenlijst](common/search-new-app.png)
+    ![Alcumus Info Exchange in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -142,8 +142,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -167,7 +167,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -179,7 +179,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 ### <a name="create-alcumus-info-exchange-test-user"></a>Testgebruiker maken voor Alcumus Info Exchange
 
-In deze sectie gaat u in Alcumus Info Exchange een gebruiker maken met de naam Britta Simon. Werk samen met het  [ondersteuningsteam van Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com) om de gebruikers toe te voegen in het Alcumus Info Exchange-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie gaat u in Alcumus Info Exchange een gebruiker maken met de naam Britta Simon. Werk samen met het [ondersteuningsteam van Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com) om de gebruikers toe te voegen op het Alcumus Info Exchange-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

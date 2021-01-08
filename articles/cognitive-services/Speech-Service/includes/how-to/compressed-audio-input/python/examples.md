@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: amishu
-ms.openlocfilehash: 3000709f19b53eb6e79b4dae0559040ca025c9e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 58d547995d39505da18a6bca1a6c3925b95252a6
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87282727"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978800"
 ---
-Als u een gecomprimeerde audio-indeling naar de speech-service wilt streamen, maakt `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
+Als u de spraak-SDK wilt configureren voor het accepteren van gecomprimeerde audio-invoer, maakt u `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
 
 We gaan ervan uit dat uw use-case moet worden gebruikt `PullStream` voor een `MP3` bestand. Uw code kan er als volgt uitzien:
 

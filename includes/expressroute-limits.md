@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/25/2019
 ms.author: duau
 ms.custom: include file
-ms.openlocfilehash: 12c0acd5211a6fbcfd1e2861a3109b57fc67dbcf
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 54306b8bd8718a0a69f5b04ceaab15dff46d21a8
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97930552"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978789"
 ---
 | Resource | Limiet |
 | --- | --- |
@@ -21,7 +21,7 @@ ms.locfileid: "97930552"
 | ExpressRoute-circuits per regio per abonnement, met Azure Resource Manager |10 |
 | Het maximale aantal routes dat mag worden geadverteerd aan Azure-privépeering met ExpressRoute Standard |4000 |
 | Het maximale aantal routes dat mag worden geadverteerd aan Azure-privépeering met de ExpressRoute Premium-invoegtoepassing |10.000 |
-| Het maximale aantal routes dat mag worden geadverteerd vanaf Azure-privépeering vanuit de VNet-adresruimte voor een ExpressRoute-verbinding |200 |
+| Het maximale aantal routes dat mag worden geadverteerd vanaf Azure-privépeering vanuit de VNet-adresruimte voor een ExpressRoute-verbinding |1000 |
 | Het maximale aantal routes dat mag worden geadverteerd aan Microsoft-peering met ExpressRoute Standard |200 |
 | Het maximale aantal routes dat mag worden geadverteerd aan Microsoft-peering met de ExpressRoute Premium-invoegtoepassing |200 |
 | Het maximale aantal ExpressRoute-circuits dat mag worden gekoppeld aan hetzelfde virtuele netwerk op dezelfde peeringlocatie |4 |

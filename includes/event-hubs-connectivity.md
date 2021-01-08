@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/19/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: dac82692c76d9d36b1f25d7b93b5c3a2e2400672
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7ebb9dbce020086a716872c86221b97b4b7a6653
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002785"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978896"
 ---
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Welke poorten moet ik op de firewall openen? 
 U kunt de volgende protocollen met Azure Event Hubs gebruiken om gebeurtenissen te verzenden en te ontvangen:
@@ -53,7 +53,7 @@ Controleer ook of het IP-adres voor uw naam ruimte is toegestaan. Voer de volgen
     ```
 2. Noteer het IP-adres dat is geretourneerd in `Non-authoritative answer` . 
 
-Als u de **zone redundantie** voor uw naam ruimte gebruikt, moet u een aantal extra stappen uitvoeren: 
+Als u de **zone redundantie** voor uw naam ruimte gebruikt, moet u een paar extra stappen uitvoeren: 
 
 1. Eerst voert u Nslookup uit op de naam ruimte.
 
@@ -72,7 +72,7 @@ Als u de **zone redundantie** voor uw naam ruimte gebruikt, moet u een aantal ex
     > [!NOTE]
     > Het IP-adres dat door de `nslookup` opdracht wordt geretourneerd, is geen statisch IP-adres. Het blijft echter constant totdat de onderliggende implementatie wordt verwijderd of verplaatst naar een ander cluster.
 
-### <a name="where-can-i-find-client-ip-sending-or-receiving-messages-to-my-namespace"></a>Waar kan ik het IP-adres van de client vinden dat berichten naar mijn naam ruimte verzendt of ontvangt?
+### <a name="what-client-ips-are-sending-events-to-or-receiving-events-from-my-namespace"></a>Welke client Ip's verzenden gebeurtenissen naar of ontvangen gebeurtenissen van mijn naam ruimte?
 Schakel eerst [IP-filtering](../articles/event-hubs/event-hubs-ip-filtering.md) in voor de naam ruimte. 
 
 Schakel vervolgens de volgende instructies in [Diagnostische logboeken inschakelen](../articles/event-hubs/event-hubs-diagnostic-logs.md#enable-diagnostic-logs)in om Diagnostische logboeken in te scha kelen voor [Event hubs gebeurtenissen van een virtueel netwerk](../articles/event-hubs/event-hubs-diagnostic-logs.md#event-hubs-virtual-network-connection-event-schema) . U ziet het IP-adres waarvoor verbinding wordt geweigerd.
@@ -92,3 +92,6 @@ Schakel vervolgens de volgende instructies in [Diagnostische logboeken inschakel
 
 > [!IMPORTANT]
 > Virtuele netwerk logboeken worden alleen gegenereerd als de naam ruimte toegang tot **specifieke IP-adressen** (IP-filter regels) toestaat. Als u de toegang tot uw naam ruimte niet wilt beperken met behulp van deze functies en toch virtuele netwerk logboeken wilt ophalen voor het bijhouden van IP-adressen van clients die verbinding maken met de naam ruimte van Event Hubs, kunt u de volgende tijdelijke oplossing gebruiken: IP-filtering inschakelen en het totale adresseer bare IPv4-bereik toevoegen (1.0.0.0/1-255.0.0.0/1). Event Hubs biedt geen ondersteuning voor IPv6-adresbereiken. 
+
+> [!NOTE]
+> Op dit moment is het niet mogelijk om het bron-IP-adres van een afzonderlijk bericht of gebeurtenis te bepalen. 

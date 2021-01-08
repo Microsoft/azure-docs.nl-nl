@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
-ms.openlocfilehash: b565bf3bae61cf92133b957bb75fdae9545c030e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad32204739d728006362ef55657a2f433be7aefc
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81421861"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978856"
 ---
-Als u een gecomprimeerde audio-indeling naar de speech-service wilt streamen, maakt `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
+Als u de spraak-SDK wilt configureren voor het accepteren van gecomprimeerde audio-invoer, maakt u `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
 
 We gaan ervan uit dat u een invoer stroom klasse hebt aangeroepen `pushStream` en gebruikmaakt van Opus/OGG. Uw code kan er als volgt uitzien:
 

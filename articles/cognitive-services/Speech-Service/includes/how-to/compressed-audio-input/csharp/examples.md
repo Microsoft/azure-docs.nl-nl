@@ -5,14 +5,14 @@ ms.topic: include
 ms.date: 03/09/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 313d2717e6e40280ed37322d695a2129d833dd59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 754b9c5215299a6f7488633c0871bceb61cbedba
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934091"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978802"
 ---
-Als u een gecomprimeerde audio-indeling naar de speech-service wilt streamen, maakt `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
+Als u de spraak-SDK wilt configureren voor het accepteren van gecomprimeerde audio-invoer, maakt u `PullAudioInputStream` of `PushAudioInputStream` . Maak vervolgens een `AudioConfig` van een exemplaar van uw Stream-klasse, waarbij u de compressie-indeling van de stroom opgeeft.
 
 We gaan ervan uit dat u een invoer stroom klasse hebt aangeroepen `pushStream` en gebruikmaakt van Opus/OGG. Uw code kan er als volgt uitzien:
 

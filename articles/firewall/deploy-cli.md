@@ -7,12 +7,12 @@ ms.service: firewall
 ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 6993bd10caf2f7e489de8074e311f75710b83d82
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 4d611a6d575fbc94a555006882f77e5a31753164
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659434"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051425"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Azure Firewall implementeren en configureren met behulp van Azure CLI
 
@@ -48,7 +48,7 @@ Als u wilt, kunt u deze procedure volt ooien met behulp van de [Azure Portal](tu
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.4 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="set-up-the-network"></a>Het netwerk instellen
 
@@ -67,7 +67,7 @@ az group create --name Test-FW-RG --location eastus
 Dit virtuele netwerk heeft drie subnetten.
 
 > [!NOTE]
-> De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size) voor meer informatie over de grootte van het subnet.
+> De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size) voor meer informatie over de grootte van het subnet.
 
 ```azurecli-interactive
 az network vnet create \

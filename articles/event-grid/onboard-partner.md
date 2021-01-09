@@ -3,12 +3,12 @@ title: Onboarding als een Azure Event Grid partner met behulp van Azure Portal
 description: Gebruik Azure Portal om een Azure Event Grid partner onboarding te kunnen uitvoeren.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 8344fcd822bfcdc67e2c27b200d97fa70dfefdf2
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 44dece4d46a6d702d48fa49983818986fcd59f7b
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349383"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050949"
 ---
 # <a name="onboard-as-an-azure-event-grid-partner-using-the-azure-portal"></a>Onboarding als een Azure Event Grid partner met behulp van de Azure Portal
 In dit artikel wordt beschreven hoe SaaS-providers van derden, ook wel bekend als gebeurtenis uitgevers of partners, worden voorEvent Grid om gebeurtenissen van hun services te kunnen publiceren en hoe deze gebeurtenissen door eind gebruikers worden verbruikt.
@@ -44,7 +44,7 @@ Zorg ervoor dat u over het volgende beschikt om de resterende stappen te volt oo
 - Een Azure- [Tenant](../active-directory/develop/quickstart-create-new-tenant.md).
 
 ## <a name="register-a-partner-topic-type-optional"></a>Een type partner onderwerp registreren (optioneel)
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **alle services** in het navigatie deel venster links en typ **Event grid partner registraties** in de zoek balk en selecteer deze. 
 1. Selecteer op de pagina **Event grid partner registraties** **+ toevoegen** op de werk balk. 
 
@@ -82,7 +82,7 @@ Zorg ervoor dat u over het volgende beschikt om de resterende stappen te volt oo
     :::image type="content" source="./media/onboard-partner/add-partner-namespace-link.png" alt-text="Partner naam ruimten-koppeling toevoegen":::
 1. Geef op de pagina **partner naam ruimte maken-basis beginselen** de volgende informatie op.
     1. Voer de volgende stappen uit in de sectie **Project Details** : 
-        1. Selecteer een Azure- **abonnement**.
+        1. Selecteer een Azure-**abonnement**.
         1. Selecteer een bestaande **resource groep** of maak een resource groep. 
     1. Voer de volgende stappen uit in de sectie **naam ruimte Details** :
         1. Voer een **naam** in voor de naamruimte. 
@@ -112,7 +112,6 @@ Zorg ervoor dat u over het volgende beschikt om de resterende stappen te volt oo
     1. Voer in de sectie **kanaal Details** de volgende stappen uit:
         1. Voer bij **gebeurtenis kanaal naam** een naam in voor het gebeurtenis kanaal. 
         1. Voer de **bron** in. Zie [Cloud Events 1,0-specificaties](https://github.com/cloudevents/spec/blob/v1.0/spec.md#source-1) om een idee te krijgen van een geschikte waarde voor de bron. Zie ook [Dit schema voor Cloud gebeurtenissen](cloud-event-schema.md#sample-event-using-cloudevents-schema).
-        1. Voer de bron in (wat IS het?).
     1. Voer in de sectie **doel Details** Details in voor het doel partner onderwerp dat voor dit gebeurtenis kanaal wordt gemaakt. 
         1. Voer de **id in van het abonnement** waarin het partner onderwerp wordt gemaakt. 
         1. Voer de **naam in van de resource groep** waarin de bron van het partner onderwerp wordt gemaakt. 

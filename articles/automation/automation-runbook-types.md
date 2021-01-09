@@ -3,14 +3,14 @@ title: Azure Automation-runbooktypen
 description: In dit artikel worden de typen runbooks beschreven die u kunt gebruiken in Azure Automation en overwegingen om te bepalen welk type u moet gebruiken.
 services: automation
 ms.subservice: process-automation
-ms.date: 12/22/2020
+ms.date: 01/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 1a0c12297f19d30bf13ffbe594e0433c83914a8e
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: c1398d25b6d2540abea0012acd69555e5e53e25c
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733957"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050966"
 ---
 # <a name="azure-automation-runbook-types"></a>Azure Automation-runbooktypen
 
@@ -117,7 +117,6 @@ Python runbooks compileren onder python 2 en python 3. Python 3-runbooks zijn mo
 * Als u bibliotheken van derden wilt gebruiken, moet u [de pakketten importeren](python-packages.md) in het Automation-account.
 *    Het is niet mogelijk om met de cmdlet start-AutomationRunbook in de Power shell/Power shell-werk stroom een python 3-runbook (preview) te starten. U kunt de cmdlet **Start-AzAutomationRunbook** van de module AZ. Automation of de cmdlet **Start-AzureRmAutomationRunbook** van de AzureRm. Automation-module gebruiken om deze beperking te omzeilen.  
 * Python 3-runbooks (preview) en pakketten werken niet met Power shell.
-* Het gebruiken van een webhook om een Python-runbook te starten wordt niet ondersteund.
 * Azure Automation biedt geen ondersteuning voor **sys. stderr**.
 
 ### <a name="known-issues"></a>Bekende problemen

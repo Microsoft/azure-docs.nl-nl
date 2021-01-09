@@ -1,14 +1,14 @@
 ---
 title: Overzicht van het blauwdrukvoorbeeld voor Media
 description: Overzicht van het blauwdrukvoorbeeld voor Media. Met dit blauwdrukvoorbeeld kunnen klanten specifieke Media-beheeropties bekijken.
-ms.date: 08/13/2020
+ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: db7e67cb7f96a19a04efc001bc7752f7c9a02e73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2b9e29d8f5095947587107cc372beb34b18abb7
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88208241"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034982"
 ---
 # <a name="overview-of-the-media-blueprint-sample"></a>Overzicht van het blauwdrukvoorbeeld voor Media
 

@@ -110,7 +110,7 @@
 - name: Resources
   items:
     - name: Veelgestelde vragen
-      href: firewall-faq.md
+      href: firewall-faq.yml
     - name: Auteursjablonen
       href: ../azure-resource-manager/templates/template-syntax.md
     - name: Azure-roadmap

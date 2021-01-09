@@ -3,12 +3,12 @@ title: Scenario's voor het gebruik van een virtueel netwerk
 description: Scenario's, bronnen en beperkingen voor het implementeren van container groepen naar een virtueel Azure-netwerk.
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 2fb468a6a860bcc076043c30606922f43fbdb1ad
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 65d7fa46ebbb9b072b50731bff68b9b88809075d
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882429"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033826"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>Scenario's en resources voor het virtuele netwerk
 
@@ -33,6 +33,7 @@ Met container groepen die zijn geïmplementeerd in een virtueel Azure-netwerk, k
 * **Azure Load Balancer** het plaatsen van een Azure Load Balancer vóór container instanties in een groep met netwerk containers wordt niet ondersteund
 * **Globaal virtueel netwerk-peering** -wereld wijd peering (verbinding maken met virtuele netwerken tussen Azure-regio's) wordt niet ondersteund
 * **Openbaar IP-of DNS-label** -container groepen die zijn geïmplementeerd in een virtueel netwerk ondersteunen momenteel geen ondersteuning voor het rechtstreeks weer geven van containers op internet met een openbaar IP-adres of een Fully Qualified Domain name
+* **Virtual Network NAT** -container groepen die zijn geïmplementeerd in een virtueel netwerk, bieden momenteel geen ondersteuning voor het gebruik van een NAT-gateway resource voor uitgaande internet connectiviteit.
 
 ## <a name="other-limitations"></a>Andere beperkingen
 

@@ -1,28 +1,28 @@
 ---
-title: Azure Functions toevoegen en aanroepen vanuit Azure Logic Apps
-description: Aangepaste code in uw Azure Functions aanroepen en uitvoeren vanuit automatische taken en werk stromen in Azure Logic Apps
+title: Functies toevoegen en aanroepen vanuit Azure Logic Apps
+description: Aangepaste code aanroepen en uitvoeren in functies die zijn gemaakt in azure vanuit automatische taken en werk stromen in Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: 75693c57a8d120aad53a15d03ae4054bac8262af
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fd04e5a7f084de7a95f20b54b99a9e4590f10cd7
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023054"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034761"
 ---
-# <a name="call-azure-functions-from-azure-logic-apps"></a>Azure-functies aanroepen vanuit Azure Logic Apps
+# <a name="call-functions-from-azure-logic-apps"></a>Functies aanroepen vanuit Azure Logic Apps
 
-Als u code wilt uitvoeren waarmee een specifieke taak wordt uitgevoerd in uw Logic apps, kunt u uw eigen functie maken met behulp van [Azure functions](../azure-functions/functions-overview.md). Met deze service kunt u node.js-, C#- en F#-functies maken, zodat u geen volledige app of infrastructuur hoeft te bouwen om code uit te voeren. U kunt ook [Logic apps aanroepen vanuit Azure functions](#call-logic-app). Azure Functions biedt serverloze computers in de Cloud en is handig voor het uitvoeren van taken zoals deze voor beelden:
+Als u code wilt uitvoeren waarmee een specifieke taak wordt uitgevoerd in uw Logic apps, kunt u uw eigen functie maken met behulp van [Azure functions](../azure-functions/functions-overview.md). Met deze service kunt u node.js-, C#- en F#-functies maken, zodat u geen volledige app of infrastructuur hoeft te bouwen om code uit te voeren. U kunt ook [Logic apps aanroepen vanuit functies](#call-logic-app). Azure Functions biedt serverloze computers in de Cloud en is handig voor het uitvoeren van taken zoals deze voor beelden:
 
 * Breid het gedrag van uw logische app uit met functies in Node.js of C#.
 * Voer berekeningen uit in de werk stroom van uw logische app.
 * Geavanceerde opmaak of reken velden Toep assen in uw Logic apps.
 
-Als u code fragmenten wilt uitvoeren zonder Azure functions te maken, leert u hoe u [inline code kunt toevoegen en uitvoeren](../logic-apps/logic-apps-add-run-inline-code.md).
+Als u code fragmenten wilt uitvoeren zonder Azure Functions te gebruiken, leert u hoe u [inline code kunt toevoegen en uitvoeren](../logic-apps/logic-apps-add-run-inline-code.md).
 
 > [!NOTE]
 > Integratie tussen Logic Apps en Azure Functions werkt momenteel niet met sleuven ingeschakeld.
@@ -31,7 +31,7 @@ Als u code fragmenten wilt uitvoeren zonder Azure functions te maken, leert u ho
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
-* Een Azure-functie-app, een container voor Azure functions, samen met uw Azure-functie. Als u geen functie-app hebt, moet u [eerst uw functie-app maken](../azure-functions/functions-create-first-azure-function.md). U kunt de functie vervolgens buiten uw logische app maken in de Azure Portal, of [vanuit uw logische](#create-function-designer) app in de ontwerp functie voor logische apps.
+* Een functie-app, een container voor een functie die wordt gemaakt in Azure Functions, samen met de functie die u maakt. Als u geen functie-app hebt, moet u [eerst uw functie-app maken](../azure-functions/functions-create-first-azure-function.md). U kunt de functie vervolgens buiten uw logische app maken in de Azure Portal, of [vanuit uw logische](#create-function-designer) app in de ontwerp functie voor logische apps.
 
 * Wanneer u werkt met Logic apps, gelden dezelfde vereisten voor functie-apps en-functies, ongeacht of ze al dan niet bestaande of nieuw zijn:
 
@@ -41,7 +41,7 @@ Als u code fragmenten wilt uitvoeren zonder Azure functions te maken, leert u ho
 
   * De functie maakt gebruik van de **http-trigger** sjabloon.
 
-    De sjabloon voor de HTTP-trigger kan inhoud accepteren die `application/json` van het type is van uw logische app. Wanneer u een Azure-functie aan uw logische app toevoegt, worden in de Logic app Designer aangepaste functies weer gegeven die zijn gemaakt op basis van deze sjabloon binnen uw Azure-abonnement.
+    De sjabloon voor de HTTP-trigger kan inhoud accepteren die `application/json` van het type is van uw logische app. Wanneer u een functie aan uw logische app toevoegt, worden in de Logic app Designer aangepaste functies weer gegeven die zijn gemaakt op basis van deze sjabloon binnen uw Azure-abonnement.
 
   * De functie gebruikt geen aangepaste routes tenzij u een OpenAPI- [definitie](../azure-functions/functions-openapi-definition.md) (voorheen een [Swagger-bestand](https://swagger.io/)genoemd) hebt gedefinieerd.
 
@@ -61,7 +61,7 @@ Als u code fragmenten wilt uitvoeren zonder Azure functions te maken, leert u ho
 
 1. Stel in de functie-app [Cross-Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) in zodat alle oorsprongen zijn toegestaan door de volgende stappen uit te voeren:
 
-   1. Selecteer de functie-app in de lijst **functie-apps** . Selecteer **platform functies** CORS in het rechterdeel venster  >  **CORS**.
+   1. Selecteer de functie-app in de lijst **functie-apps** . Selecteer **platform functies** CORS in het rechterdeel venster  >  .
 
       ![Selecteer de functie-app > platform functies > CORS](./media/logic-apps-azure-functions/function-platform-features-cors.png)
 
@@ -96,15 +96,15 @@ Wat gebeurt er in deze functie:
    body: data.date.ToDateString();
    ```
 
-Nu u uw Azure-functie hebt gemaakt, volgt u de stappen voor het [toevoegen van functies aan Logic apps](#add-function-logic-app).
+Nu u uw functie in azure hebt gemaakt, volgt u de stappen om [functies toe te voegen aan Logic apps](#add-function-logic-app).
 
 <a name="create-function-designer"></a>
 
 ## <a name="create-functions-inside-logic-apps"></a>Functies in Logic apps maken
 
-U kunt Azure functions rechtstreeks vanuit de werk stroom van uw logische app maken met behulp van de ingebouwde Azure Functions actie in de Logic app Designer, maar u kunt deze methode alleen gebruiken voor Azure functions die zijn geschreven in Java script. Voor andere talen kunt u Azure functions maken via de Azure Functions-ervaring in de Azure Portal. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md)voor meer informatie.
+U kunt functies rechtstreeks vanuit de werk stroom van uw logische app maken met behulp van de ingebouwde Azure Functions actie in de Logic app Designer, maar u kunt deze methode alleen gebruiken voor functies die zijn geschreven in Java script. Voor andere talen kunt u functies maken via de Azure Functions-ervaring in de Azure Portal. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md)voor meer informatie.
 
-Voordat u een Azure-functie kunt maken, moet u echter al een Azure function-app hebben. Dit is een container voor uw functies. Als u geen functie-app hebt, moet u eerst die functie-app maken. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md).
+Voordat u de functie in azure kunt maken, moet u echter al een functie-app hebben. Dit is een container voor uw functies. Als u geen functie-app hebt, moet u eerst die functie-app maken. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md).
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
@@ -116,9 +116,9 @@ Voordat u een Azure-functie kunt maken, moet u echter al een Azure function-app 
 
 1. Voer in het zoekvak ' Azure functions ' in als uw filter. Selecteer in de lijst acties de actie **een Azure-functie kiezen** , bijvoorbeeld:
 
-   ![' Azure functions ' zoeken](./media/logic-apps-azure-functions/find-azure-functions-action.png)
+   ![Zoek functies in de Azure Portal.](./media/logic-apps-azure-functions/find-azure-functions-action.png)
 
-1. Selecteer de functie-app in de lijst functie-apps. Nadat de lijst met acties wordt geopend, selecteert u deze actie: **nieuwe functie maken**
+1. Selecteer de functie-app in de lijst functie-apps. Nadat de lijst met acties wordt geopend, selecteert u deze actie: **nieuwe functie maken**.
 
    ![Uw functie-app selecteren](./media/logic-apps-azure-functions/select-function-app-create-function.png)
 
@@ -155,13 +155,13 @@ Voordat u een Azure-functie kunt maken, moet u echter al een Azure function-app 
 
    ![Object casten als teken reeks](./media/logic-apps-azure-functions/function-request-body-string-cast-example.png)
 
-1. Als u andere details wilt opgeven, zoals de methode voor gebruik, aanvraag headers of query parameters, of verificatie, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de gewenste opties. Voor verificatie zijn uw opties afhankelijk van de geselecteerde functie. Zie [verificatie inschakelen voor Azure functions](#enable-authentication-functions).
+1. Als u andere details wilt opgeven, zoals de methode voor gebruik, aanvraag headers of query parameters, of verificatie, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de gewenste opties. Voor verificatie zijn uw opties afhankelijk van de geselecteerde functie. Zie [verificatie inschakelen voor functies](#enable-authentication-functions).
 
 <a name="add-function-logic-app"></a>
 
 ## <a name="add-existing-functions-to-logic-apps"></a>Bestaande functies toevoegen aan Logic apps
 
-Als u bestaande Azure-functies wilt aanroepen vanuit uw Logic apps, kunt u Azure functions, zoals elke andere actie, toevoegen in de ontwerp functie van de logische app.
+Als u bestaande functies wilt aanroepen vanuit uw Logic apps, kunt u functies toevoegen, zoals elke andere actie in de ontwerp functie van de logische app.
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
@@ -169,15 +169,15 @@ Als u bestaande Azure-functies wilt aanroepen vanuit uw Logic apps, kunt u Azure
 
 1. Voer onder **Kies een actie** in het zoekvak ' Azure functions ' in als uw filter. Selecteer in de lijst acties de actie **een Azure-functie kiezen** .
 
-   ![' Azure functions ' zoeken](./media/logic-apps-azure-functions/find-azure-functions-action.png)
+   ![Zoek een functie in Azure.](./media/logic-apps-azure-functions/find-azure-functions-action.png)
 
 1. Selecteer de functie-app in de lijst functie-apps. Nadat de lijst met functies wordt weer gegeven, selecteert u de functie.
 
-   ![De functie-app en Azure function selecteren](./media/logic-apps-azure-functions/select-function-app-existing-function.png)
+   ![Selecteer de functie-app en de functie](./media/logic-apps-azure-functions/select-function-app-existing-function.png)
 
    Voor functies met API-definities (Swagger-beschrijvingen) en die zijn [ingesteld zodat uw logische app deze functies kan vinden en gebruiken](#function-swagger), kunt u **Swagger-acties** selecteren.
 
-   ![Selecteer uw functie-app, "Swagger-acties" en uw Azure-functie](./media/logic-apps-azure-functions/select-function-app-existing-function-swagger.png)
+   ![Selecteer uw functie-app, "Swagger-acties" en uw functie](./media/logic-apps-azure-functions/select-function-app-existing-function-swagger.png)
 
 1. Geef in het vak **hoofd tekst** van de aanvraag de invoer van uw functie op die moet worden opgemaakt als een JavaScript object NOTATION (JSON)-object.
 
@@ -189,27 +189,27 @@ Als u bestaande Azure-functies wilt aanroepen vanuit uw Logic apps, kunt u Azure
 
    ![Object casten als teken reeks](./media/logic-apps-azure-functions/function-request-body-string-cast-example.png)
 
-1. Als u andere details wilt opgeven, zoals de methode voor het gebruik, aanvraag headers, query parameters of verificatie, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de gewenste opties. Voor verificatie zijn uw opties afhankelijk van de geselecteerde functie. Zie [verificatie inschakelen in azure functions](#enable-authentication-functions).
+1. Als u andere details wilt opgeven, zoals de methode voor het gebruik, aanvraag headers, query parameters of verificatie, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de gewenste opties. Voor verificatie zijn uw opties afhankelijk van de geselecteerde functie. Zie [verificatie inschakelen in functies](#enable-authentication-functions).
 
 <a name="call-logic-app"></a>
 
-## <a name="call-logic-apps-from-azure-functions"></a>Logische apps aanroepen vanuit Azure functions
+## <a name="call-logic-apps-from-functions"></a>Logische apps aanroepen vanuit functions
 
-Wanneer u een logische app vanuit een Azure-functie wilt activeren, moet de logische app beginnen met een trigger die een aanroepbaar eind punt biedt. U kunt bijvoorbeeld de logische app starten met de trigger **http**, **aanvragen**, **Azure queues** of **Event grid** . Verzend in uw functie een HTTP POST-aanvraag naar de URL van de trigger en voeg de payload toe die de logische app moet verwerken. Zie [Logic apps aanroepen, activeren of nesten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie.
+Wanneer u een logische app vanuit een functie wilt activeren, moet de logische app beginnen met een trigger die een aanroepbaar eind punt biedt. U kunt bijvoorbeeld de logische app starten met de trigger **http**, **aanvragen**, **Azure queues** of **Event grid** . Verzend in uw functie een HTTP POST-aanvraag naar de URL van de trigger en voeg de payload toe die de logische app moet verwerken. Zie [Logic apps aanroepen, activeren of nesten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie.
 
 <a name="enable-authentication-functions"></a>
 
-## <a name="enable-authentication-for-azure-functions"></a>Verificatie inschakelen voor Azure functions
+## <a name="enable-authentication-for-functions"></a>Verificatie inschakelen voor functies
 
 Voor het eenvoudig verifiëren van toegang tot andere bronnen die worden beveiligd door Azure Active Directory (Azure AD) zonder dat u zich hoeft aan te melden en referenties of geheimen te verstrekken, kan uw logische app gebruikmaken van een [beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) (voorheen bekend als managed service Identity of MSI). Azure beheert deze identiteit voor u en helpt u bij het beveiligen van uw referenties omdat u geen geheimen hoeft op te geven of te wisselen. Meer informatie over [Azure-Services die ondersteuning bieden voor beheerde identiteiten voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
 
-Als u uw logische app instelt voor het gebruik van de door het systeem toegewezen identiteit of een hand matig gemaakte door de gebruiker toegewezen identiteit, kunnen de Azure functions in uw logische app ook dezelfde identiteit voor verificatie gebruiken. Zie [verificatie toevoegen aan uitgaande oproepen](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)voor meer informatie over verificatie ondersteuning voor Azure functions in Logic apps.
+Als u uw logische app instelt voor het gebruik van de door het systeem toegewezen identiteit of een hand matig gemaakte, door de gebruiker toegewezen identiteit, kan de functie in uw logische app ook dezelfde identiteit voor verificatie gebruiken. Zie [verificatie toevoegen aan uitgaande oproepen](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)voor meer informatie over verificatie ondersteuning voor functies in Logic apps.
 
 Voer de volgende stappen uit om de beheerde identiteit in te stellen en te gebruiken met uw functie:
 
 1. Schakel de beheerde identiteit in voor uw logische app en stel de toegang van die identiteit in op de doel bron. Zie [toegang tot Azure-resources verifiëren door beheerde identiteiten te gebruiken in azure Logic apps](../logic-apps/create-managed-service-identity.md).
 
-1. Schakel de volgende stappen uit in uw Azure-functie en-functie-app:
+1. Schakel in uw functie-app verificatie in met de volgende stappen:
 
    * [Anonieme verificatie instellen in uw functie](#set-authentication-function-app)
    * [Azure AD-verificatie instellen in uw functie-app](#set-azure-ad-authentication)
@@ -218,7 +218,7 @@ Voer de volgende stappen uit om de beheerde identiteit in te stellen en te gebru
 
 ### <a name="set-up-anonymous-authentication-in-your-function"></a>Anonieme verificatie instellen in uw functie
 
-Als u de beheerde identiteit van uw logische app in uw Azure-functie wilt gebruiken, stelt u het verificatie niveau van uw functie in op anoniem. Anders genereert uw logische app de fout ' onjuiste aanvraag '.
+Als u de beheerde identiteit van uw logische app in uw functie wilt gebruiken, moet u het verificatie niveau van uw functie instellen op anoniem. Anders genereert uw logische app de fout ' onjuiste aanvraag '.
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)de functie-app en selecteer deze. Deze stappen gebruiken ' FabrikamFunctionApp ' als de voor beeld-functie-app.
 

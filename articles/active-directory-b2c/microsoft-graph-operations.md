@@ -11,12 +11,13 @@ ms.topic: reference
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e4463b932c95e224981b74093effbb355de24f6b
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.custom: fasttrack-edit
+ms.openlocfilehash: fed1e31380381b864530b3fa0b9e8c0886737d04
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509815"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033605"
 ---
 # <a name="microsoft-graph-operations-available-for-azure-ad-b2c"></a>Microsoft Graph bewerkingen die beschikbaar zijn voor Azure AD B2C
 
@@ -37,7 +38,7 @@ Zie voor meer informatie over het beheren van Azure AD B2C gebruikers accounts m
 ## <a name="user-phone-number-management"></a>Telefoon nummer beheer gebruiker
 
 - [Add](/graph/api/authentication-post-phonemethods)
-- [Ophalen](/graph/api/b2cauthenticationmethodspolicy-get)
+- [Toevoegen](/graph/api/b2cauthenticationmethodspolicy-get)
 - [Bijwerken](/graph/api/b2cauthenticationmethodspolicy-update)
 - [Verwijderen](/graph/api/phoneauthenticationmethod-delete)
 
@@ -57,10 +58,10 @@ De id-providers beheren die beschikbaar zijn voor uw gebruikers stromen in uw Az
 
 Vooraf gemaakte beleids regels configureren voor aanmelding, aanmelden, gecombineerde registratie en aanmelding, wacht woord opnieuw instellen en profiel update.
 
-- [Gebruikers stromen weer geven](/graph/api/identityuserflow-list)
-- [Een gebruikersstroom maken](/graph/api/identityuserflow-post-userflows)
-- [Een gebruikers stroom ophalen](/graph/api/identityuserflow-get)
-- [Een gebruikers stroom verwijderen](/graph/api/identityuserflow-delete)
+- [Gebruikers stromen weer geven](/graph/api/identitycontainer-list-b2cuserflows)
+- [Een gebruikersstroom maken](/graph/api/identitycontainer-post-b2cuserflows)
+- [Een gebruikers stroom ophalen](/graph/api/b2cidentityuserflow-get)
+- [Een gebruikers stroom verwijderen](/graph/api/b2cidentityuserflow-delete)
 
 ## <a name="custom-policies"></a>Aangepast beleid
 

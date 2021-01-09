@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: 75df985377e6ed1764985f8d0b6b44323f249b8a
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 04103de47e82764f7ec4effa84a9b2b7b90b9363
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632006"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034625"
 ---
 # <a name="monitoring-azure-cosmos-db-data-reference"></a>Azure Cosmos DB gegevens referentie bewaken
 
@@ -81,7 +81,7 @@ De volgende tabel geeft een overzicht van de eigenschappen van resource Logboeke
 | --- | --- | --- |
 | **time** | **TimeGenerated** | De datum en tijd (UTC) waarop de bewerking plaatsvond. |
 | **resourceId** | **Resource** | Het Azure Cosmos DB account waarvoor logboeken zijn ingeschakeld.|
-| **category** | **Categorie** | Voor Azure Cosmos DB zijn **DataPlaneRequests**, **MongoRequests**, **QueryRuntimeStatistics**, **PartitionKeyStatistics**, **PartitionKeyRUConsumption**, **ControlPlaneRequests** de beschik bare logboek typen. |
+| **category** | **Categorie** | Voor Azure Cosmos DB, **DataPlaneRequests**, **MongoRequests**, **QueryRuntimeStatistics**, **PartitionKeyStatistics**, **PartitionKeyRUConsumption**, **ControlPlaneRequests**, **CassandraRequests**, **GremlinRequests** zijn de beschik bare logboek typen. |
 | **operationName** | **OperationName** | De naam van de bewerking. De naam van de bewerking kan,,,,,,,,,,, of worden uitgevoerd  `Create` `Update` `Read` `ReadFeed` `Delete` `Replace` `Execute` `SqlQuery` `Query` `JSQuery` `Head` `HeadFeed` `Upsert` .   |
 | **properties** | n.v.t. | De inhoud van dit veld wordt beschreven in de volgende rijen. |
 | **activityId** | **activityId_g** | De unieke GUID voor de geregistreerde bewerking. |

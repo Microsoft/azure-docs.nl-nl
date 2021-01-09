@@ -3,12 +3,12 @@ title: Programmatisch beleid maken
 description: Dit artikel helpt u bij het programmatisch maken en beheren van beleids regels voor Azure Policy met Azure CLI, Azure PowerShell en REST API.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 86c1b60608780cba4d8ae27e3c82ace458f09a26
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 4c3a503e8d48573441093879511490608437b1e1
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920012"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033860"
 ---
 # <a name="programmatically-create-policies"></a>Programmatisch beleid maken
 
@@ -95,7 +95,7 @@ De eerste stap voor een betere zicht baarheid van uw resources is het maken en t
    - Abonnees `/subscriptions/{subId}`
    - Beheer groep- `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Zie [AZ. resources](/powershell/module/az.resources/#policies)(Engelstalig) voor meer informatie over het beheren van bron beleid met behulp van de Resource Manager Power shell-module.
+Zie [AZ. resources](/powershell/module/az.resources/#policy)(Engelstalig) voor meer informatie over het beheren van bron beleid met behulp van de Resource Manager Power shell-module.
 
 ### <a name="create-and-assign-a-policy-definition-using-armclient"></a>Een beleids definitie maken en toewijzen met behulp van ARMClient
 
@@ -242,7 +242,7 @@ Zie [Azure cli-resource beleid](/cli/azure/policy)voor meer informatie over hoe 
 Raadpleeg de volgende artikelen voor meer informatie over de opdrachten en query's in dit artikel.
 
 - [Azure REST API-resources](/rest/api/resources/)
-- [Azure PowerShell modules](/powershell/module/az.resources/#policies)
+- [Azure PowerShell modules](/powershell/module/az.resources/#policy)
 - [Azure CLI-beleids opdrachten](/cli/azure/policy)
 - [Naslag informatie over REST API van Azure Policy Insights-resource provider](/rest/api/policy-insights)
 - [Uw resources organiseren met Azure-beheergroepen](../../management-groups/overview.md).

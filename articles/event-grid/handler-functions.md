@@ -1,31 +1,31 @@
 ---
-title: Azure function als gebeurtenis-handler voor Azure Event Grid gebeurtenissen
-description: Hierin wordt beschreven hoe u Azure functions kunt gebruiken als gebeurtenis-handlers voor Event Grid-gebeurtenissen.
+title: Een functie in azure gebruiken als gebeurtenis-handler voor Azure Event Grid gebeurtenissen
+description: Hierin wordt beschreven hoe u functies kunt gebruiken die zijn gemaakt in en worden gehost door Azure Functions als gebeurtenis-handlers voor Event Grid-gebeurtenissen.
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: 9e04fd3e04dab7a50940c2a4a799a56d447fbb6e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5a1ec575b58829a422e4d263ae0324e0343d5ad3
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145760"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034965"
 ---
-# <a name="azure-function-as-an-event-handler-for-event-grid-events"></a>Azure function als gebeurtenis-handler voor Event Grid gebeurtenissen
+# <a name="use-a-function-as-an-event-handler-for-event-grid-events"></a>Een functie gebruiken als gebeurtenis-handler voor Event Grid gebeurtenissen
 
 Een gebeurtenis-handler is de plaats waar de gebeurtenis wordt verzonden. De handler heeft een actie nodig om de gebeurtenis te verwerken. Verschillende Azure-Services worden automatisch geconfigureerd voor het afhandelen van gebeurtenissen en **Azure functions** is een hiervan. 
 
 
-Ga op een van de volgende manieren te werk om een Azure-functie als handler voor gebeurtenissen te gebruiken: 
+Als u een functie in azure als een handler voor gebeurtenissen wilt gebruiken, volgt u een van de volgende benaderingen: 
 
--   Gebruik [Event grid trigger](../azure-functions/functions-bindings-event-grid-trigger.md).  Geef een **Azure-functie** op als het **type eind punt**. Vervolgens geeft u de Azure-functie-app en de functie op waarmee gebeurtenissen worden verwerkt. 
--   [Http-trigger](../azure-functions/functions-bindings-http-webhook.md)gebruiken.  Geef een **Webhook** op als het **type eind punt**. Geef vervolgens de URL op voor de Azure-functie waarmee gebeurtenissen worden verwerkt. 
+-   Gebruik [Event grid trigger](../azure-functions/functions-bindings-event-grid-trigger.md).  Geef een **Azure-functie** op als het **type eind punt**. Geef vervolgens de functie-app en de functie op waarmee gebeurtenissen worden verwerkt. 
+-   [Http-trigger](../azure-functions/functions-bindings-http-webhook.md)gebruiken.  Geef een **Webhook** op als het **type eind punt**. Geef vervolgens de URL op voor de functie waarmee gebeurtenissen worden verwerkt. 
 
 U wordt aangeraden de eerste benadering (Event Grid trigger) te gebruiken, omdat deze de volgende voor delen heeft ten opzichte van de tweede benadering:
 -   Event Grid triggers worden door Event Grid automatisch gevalideerd. Bij algemene HTTP-triggers moet u het [validatie antwoord](webhook-event-delivery.md) zelf implementeren.
 -   Event Grid past automatisch de snelheid aan waarmee gebeurtenissen worden afgeleverd aan een functie die wordt geactiveerd door een Event Grid gebeurtenis op basis van de waargenomen snelheid waarmee de functie gebeurtenissen kan verwerken. Met deze functie voor de prijs overeenkomst worden bezorgings fouten van de functie voor het verwerken van gebeurtenissen in de loop van de tijd van de functie van de gebeurtenis verwerkings frequentie in Avert. Schakel batch verwerking in voor het gebeurtenis abonnement om de efficiëntie bij hoge door voer te verbeteren. Zie [batching inschakelen](#enable-batching)voor meer informatie.
 
     > [!NOTE]
-    > Op dit moment kunt u geen Event Grid trigger gebruiken voor een Azure Functions-app wanneer de gebeurtenis wordt bezorgd in het **CloudEvents** -schema. Gebruik in plaats daarvan een HTTP-trigger.
+    > Op dit moment kunt u geen Event Grid trigger gebruiken voor een functie-app wanneer de gebeurtenis wordt geleverd in het **CloudEvents** -schema. Gebruik in plaats daarvan een HTTP-trigger.
 
 ## <a name="tutorials"></a>Zelfstudies
 
@@ -69,7 +69,7 @@ Op het moment dat u een abonnement maakt in de gebruikers interface, gaat u op d
 
 U kunt deze waarden voor een bestaand abonnement bijwerken op het tabblad **functies** van de pagina **Event grid onderwerp** . 
 
-:::image type="content" source="./media/custom-event-to-function/features-batch-settings.png" alt-text="Batch verwerking inschakelen op het moment van het maken van een abonnement":::
+:::image type="content" source="./media/custom-event-to-function/features-batch-settings.png" alt-text="Batch verwerking inschakelen na het maken":::
 
 ### <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
 U kunt **maxEventsPerBatch** en **preferredBatchSizeInKilobytes** instellen in een Azure Resource Manager sjabloon. Zie voor meer informatie [micro soft. EventGrid eventSubscriptions-sjabloon verwijzing](/azure/templates/microsoft.eventgrid/eventsubscriptions).

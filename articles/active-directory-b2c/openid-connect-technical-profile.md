@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8364e67e71143729e97c5253f0dfd7b30a1e5c2f
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: d088a2834f5acb643e4f626d02b49954cc9fa3c2
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559817"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033566"
 ---
 # <a name="define-an-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een OpenID Connect Connect Technical-profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -92,8 +92,9 @@ Het technische profiel retourneert ook claims die niet worden geretourneerd door
 | MarkAsFailureOnStatusCode5xx | Nee | Hiermee wordt aangegeven of een aanvraag naar een externe service als een fout moet worden gemarkeerd als de HTTP-status code zich in het 5xx bereik bevindt. De standaardwaarde is `false`. |
 | DiscoverMetadataByTokenIssuer | Nee | Geeft aan of de OIDC-meta gegevens moeten worden gedetecteerd met behulp van de verlener in het JWT-token. |
 | IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
-|token_endpoint_auth_method| Nee| Hiermee geeft u op hoe Azure AD B2C de Authentication-Header naar het eind punt van het token verzendt. Mogelijke waarden: `client_secret_post` (standaard), `private_key_jwt` (open bare preview) en `client_secret_basic` (open bare preview). Zie [OpenID Connect Connect client Authentication sectie](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)(Engelstalig) voor meer informatie. |
-|SingleLogoutEnabled| Nee| Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-behavior.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` .|
+| token_endpoint_auth_method | Nee | Hiermee geeft u op hoe Azure AD B2C de Authentication-Header naar het eind punt van het token verzendt. Mogelijke waarden: `client_secret_post` (standaard) en `client_secret_basic` (open bare preview). Zie [OpenID Connect Connect client Authentication sectie](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)(Engelstalig) voor meer informatie. |
+| token_signing_algorithm | Nee | Het handtekening algoritme dat wordt gebruikt voor client verklaringen wanneer de **token_endpoint_auth_method** meta gegevens worden ingesteld op `private_key_jwt` . Mogelijke waarden: `RS256` (standaard). |
+| SingleLogoutEnabled | Nee | Hiermee wordt aangegeven of tijdens het aanmelden het technische profiel probeert af te melden bij federatieve id-providers. Zie [Azure AD B2C Session-afmelding](session-overview.md#sign-out)voor meer informatie.  Mogelijke waarden: `true` (standaard) of `false` . |
 
 ```xml
 <Metadata>
@@ -124,7 +125,8 @@ Het element **CryptographicKeys** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| client_secret | Ja | Het client geheim van de identiteits provider toepassing. De cryptografische sleutel is alleen vereist als de **response_types** meta gegevens zijn ingesteld op `code` . In dit geval maakt Azure AD B2C een andere aanroep voor het uitwisselen van de autorisatie code voor een toegangs token. Als de meta gegevens zijn ingesteld op, `id_token` kunt u de cryptografische sleutel weglaten.  |
+| client_secret | Ja | Het client geheim van de identiteits provider toepassing. Deze cryptografische sleutel is alleen vereist als de **response_types** meta data is ingesteld op `code` en **token_endpoint_auth_method** is ingesteld op `client_secret_post` of `client_secret_basic` . In dit geval maakt Azure AD B2C een andere aanroep voor het uitwisselen van de autorisatie code voor een toegangs token. Als de meta gegevens zijn ingesteld op, `id_token` kunt u de cryptografische sleutel weglaten.  |
+| assertion_signing_key | Ja | De persoonlijke RSA-sleutel die wordt gebruikt voor het ondertekenen van de client bevestiging. Deze cryptografische sleutel is alleen vereist als de **token_endpoint_auth_method** meta gegevens zijn ingesteld op `private_key_jwt` . |
 
 ## <a name="redirect-uri"></a>Omleidings-URI
 

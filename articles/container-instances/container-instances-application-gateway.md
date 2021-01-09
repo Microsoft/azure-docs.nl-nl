@@ -3,12 +3,12 @@ title: Statisch IP-adres voor container groep
 description: Een container groep maken in een virtueel netwerk en een Azure Application gateway gebruiken om een statisch frontend-IP-adres beschikbaar te stellen voor een web-app met container
 ms.topic: article
 ms.date: 03/16/2020
-ms.openlocfilehash: bc128da0f4c2e92af98781cef45f48f9e8aeab31
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0131780fdb04a71837d5ae9bf5498bf2bd499f8a
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260782"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035050"
 ---
 # <a name="expose-a-static-ip-address-for-a-container-group"></a>Een statisch IP-adres voor een container groep beschikbaar maken
 
@@ -100,6 +100,9 @@ ACI_IP=$(az container show \
   --resource-group myResourceGroup \
   --query ipAddress.ip --output tsv)
 ```
+
+> [!IMPORTANT]
+> Als de container groep is gestopt, gestart of opnieuw wordt gestart, is het privé-IP-adres van de container groep onderhevig aan wijzigingen. Als dit het geval is, moet u de configuratie van de toepassings gateway bijwerken.
 
 ## <a name="create-application-gateway"></a>Een toepassingsgateway maken
 

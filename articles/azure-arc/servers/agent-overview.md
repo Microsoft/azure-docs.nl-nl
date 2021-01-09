@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 12/21/2020
+ms.date: 01/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: bff76cbaa678ed82538eb6d75633aa94cdce30bf
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 86d524665b70725108324b1d88521a4c3cb8ff05
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723266"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033962"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -57,7 +57,7 @@ De volgende versies van het Windows-en Linux-besturings systeem worden officieel
 - Amazon Linux 2 (x64)
 
 > [!WARNING]
-> In de naam van de Linux-hostnaam of de Windows-computer mag een van de gereserveerde woorden of handels merken niet worden gebruikt in de naam, anders mislukt het registreren van de verbonden computer met Azure. Zie [gereserveerde resource naam fouten oplossen](../../azure-resource-manager/templates/error-reserved-resource-name.md) voor een lijst met gereserveerde woorden.
+> In de naam van de Linux-host of de Windows-computer mag niet een van de gereserveerde woorden of merken voorkomen, anders mislukt het registreren van de verbonden machine met Azure. Zie [Fouten in de gereserveerde resourcenaam oplossen](../../azure-resource-manager/templates/error-reserved-resource-name.md) voor een lijst met de gereserveerde woorden.
 
 ### <a name="required-permissions"></a>Vereiste machtigingen
 
@@ -68,6 +68,8 @@ De volgende versies van het Windows-en Linux-besturings systeem worden officieel
 ### <a name="azure-subscription-and-service-limits"></a>Limieten voor het Azure-abonnement en de Azure-service
 
 Voordat u uw computers configureert met servers voor Azure-Arc, controleert u de limieten voor het Azure Resource Manager- [abonnement](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) en de beperkingen van de [resource groep](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) om het aantal machines te plannen dat moet worden verbonden.
+
+Servers met Azure-Arc ondersteunen Maxi maal 5.000 machine-exemplaren in een resource groep.
 
 ### <a name="transport-layer-security-12-protocol"></a>Transport Layer Security 1,2-protocol
 

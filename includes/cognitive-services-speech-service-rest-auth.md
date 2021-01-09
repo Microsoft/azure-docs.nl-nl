@@ -2,14 +2,14 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/29/2019
+ms.date: 01/08/2021
 ms.author: erhopf
-ms.openlocfilehash: 410b73d3f9011f9384fafa18394d9318e3eafa67
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 22127f81d871fe333750020196540db17e7544f7
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504488"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033441"
 ---
 ## <a name="authentication"></a>Verificatie
 
@@ -17,7 +17,7 @@ Elke aanvraag vereist een autorisatie-header. In deze tabel ziet u welke headers
 
 | Ondersteunde autorisatie headers | Spraak naar tekst | Tekst naar spraak |
 |------------------------|----------------|----------------|
-| Ocp-Apim-Subscription-Key | Ja | Nee |
+| Ocp-Apim-Subscription-Key | Ja | Ja |
 | Autorisatie: Bearer | Ja | Ja |
 
 Wanneer u de `Ocp-Apim-Subscription-Key` koptekst gebruikt, hoeft u alleen uw abonnements sleutel op te geven. Bijvoorbeeld:

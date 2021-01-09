@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: c2b440413599ce07112231af17daa0bc14817b76
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9ac283721526488f587fcabc68348dafac1835db
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832774"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033350"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Een beveiligings module op uw IoT Edge-apparaat implementeren
 
@@ -51,13 +51,13 @@ Gebruik de volgende stappen om een Defender for IoT-beveiligings module voor IoT
 
 1. Open **Marketplace** vanuit het Azure Portal.
 
-1. Selecteer **Internet of Things**, zoek vervolgens naar **Defender voor IOT** en selecteer deze.
+1. Selecteer **Internet of Things**, zoek naar **Azure Security Center voor IOT** en selecteer deze.
 
    :::image type="content" source="media/howto/edge-onboarding-8.png" alt-text="Selecteer Defender voor IoT":::
 
-1. Klik op **maken** om de implementatie te configureren.
+1. Selecteer **maken** om de implementatie te configureren.
 
-1. Kies het Azure- **abonnement** van uw IOT hub en selecteer vervolgens uw **IOT hub**.<br>Selecteer **implementeren op een apparaat** om één apparaat te richten of selecteer **implementeren op schaal** om meerdere apparaten te richten en klik op **maken**. Zie [How to deploy](../iot-edge/how-to-deploy-at-scale.md)(Engelstalig) voor meer informatie over de implementatie op schaal.
+1. Kies het Azure- **abonnement** van uw IOT hub en selecteer vervolgens uw **IOT hub**.<br>Selecteer **implementeren op een apparaat** om één apparaat te richten of selecteer **implementeren op schaal** om meerdere apparaten te richten en selecteer **maken**. Zie [How to deploy](../iot-edge/how-to-deploy-at-scale.md)(Engelstalig) voor meer informatie over de implementatie op schaal.
 
     >[!Note]
     >Als u **implementeren op schaal** hebt geselecteerd, voegt u de naam van het apparaat en de details toe voordat u doorgaat met het tabblad **modules toevoegen** in de volgende instructies.
@@ -68,7 +68,7 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
 
 1. Selecteer de **AzureSecurityCenterforIoT** -module.
 1. Wijzig op het tabblad **module-instellingen** de **naam** in **azureiotsecurity**.
-1. Voeg, indien nodig, een variabele toe op het tabblad **omgevings variabelen** (bijvoorbeeld debug-niveau).
+1. Voeg op het tabblad **omgevings variabelen** een variabele toe als dat nodig is (u kunt bijvoorbeeld het *fout opsporingsprogramma* toevoegen en instellen op een van de volgende waarden: fatale, fout, waarschuwing of ' informatie ').
 1. Voeg op het tabblad Opties voor het maken van de **container** de volgende configuratie toe:
 
     ``` json
@@ -107,13 +107,17 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
     
    Zie [beveiligings agenten configureren](./how-to-agent-configuration.md)voor meer informatie over het configureren van de agent.
 
-1. Selecteer **Bijwerken**.
+1. Selecteer **Update**.
 
 #### <a name="step-2-runtime-settings"></a>Stap 2: runtime-instellingen
 
 1. Selecteer **runtime-instellingen**.
-1. Wijzig onder **Edge hub** de **afbeelding** in **MCR.Microsoft.com/azureiotedge-hub:1.0.8.3**.
-1. Controleer of de **Create-opties** zijn ingesteld op de volgende configuratie:
+2. Wijzig onder **Edge hub** de **afbeelding** in **MCR.Microsoft.com/azureiotedge-hub:1.0.8.3**.
+
+    >[!Note]
+    > Momenteel wordt versie 1.0.8.3 of ouder ondersteund.
+
+3. Controleer of de **Create-opties** zijn ingesteld op de volgende configuratie:
 
     ``` json
     {
@@ -139,9 +143,9 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
     }
     ```
 
-1. Selecteer **Opslaan**.
+4. Selecteer **Opslaan**.
 
-1. Selecteer **Next**.
+5. Selecteer **Next**.
 
 #### <a name="step-3-specify-routes"></a>Stap 3: routes opgeven
 

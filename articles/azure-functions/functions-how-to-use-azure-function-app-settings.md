@@ -1,16 +1,16 @@
 ---
-title: Instellingen voor functie-apps in azure configureren
-description: Meer informatie over het configureren van instellingen voor Azure function-apps.
+title: Instellingen voor de functie-app configureren in Azure Functions
+description: Meer informatie over het configureren van instellingen voor de functie-app in Azure Functions.
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 746a97ecd9b0bdd676e70cca38edc75905e3e4bd
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 2526fd60d6e07ecf43864945f2b05858b41ca567
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936937"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035203"
 ---
 # <a name="manage-your-function-app"></a>Uw functie-app beheren 
 

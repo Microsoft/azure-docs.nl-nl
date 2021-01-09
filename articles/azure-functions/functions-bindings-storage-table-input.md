@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 20dc6cde9cce6a9d57047940a38adb5cf004ae6a
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 4fc2426189384856d2d2e95887cdabd2f9e9ebea
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347673"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033775"
 ---
 # <a name="azure-table-storage-input-bindings-for-azure-functions"></a>Invoer bindingen voor Azure Table Storage voor Azure Functions
 
@@ -296,97 +296,6 @@ public class Person : TableEntity
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-In het volgende voor beeld wordt een tabel-invoer binding weer gegeven in een *function.jsvoor* de bestands-en [Java script-code](functions-reference-node.md) die gebruikmaakt van de binding. De functie maakt gebruik van een wachtrij trigger om één tabelrij te lezen. 
-
-Het *function.js* bestand bevat een `partitionKey` en een `rowKey` . De `rowKey` waarde {Queue trigger} geeft aan dat de rij-sleutel afkomstig is uit de wachtrij bericht teken reeks.
-
-```json
-{
-  "bindings": [
-    {
-      "queueName": "myqueue-items",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "myQueueItem",
-      "type": "queueTrigger",
-      "direction": "in"
-    },
-    {
-      "name": "personEntity",
-      "type": "table",
-      "tableName": "Person",
-      "partitionKey": "Test",
-      "rowKey": "{queueTrigger}",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
-    }
-  ],
-  "disabled": false
-}
-```
-
-In de [configuratie](#configuration) sectie worden deze eigenschappen uitgelegd.
-
-Dit is de JavaScript-code:
-
-```javascript
-module.exports = function (context, myQueueItem) {
-    context.log('Node.js queue trigger function processed work item', myQueueItem);
-    context.log('Person entity name: ' + context.bindings.personEntity.Name);
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-Enkele tabelrij 
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "name": "messageJSON",
-      "type": "table",
-      "tableName": "messages",
-      "partitionKey": "message",
-      "rowKey": "{id}",
-      "connection": "AzureWebJobsStorage",
-      "direction": "in"
-    },
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ],
-      "route": "messages/{id}"
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
-    }
-  ],
-  "disabled": false
-}
-```
-
-```python
-import json
-
-import azure.functions as func
-
-def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
-
-    message = json.loads(messageJSON)
-    return func.HttpResponse(f"Table row: {messageJSON}")
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 In het volgende voor beeld ziet u een HTTP-geactiveerde functie die een lijst retourneert met objecten van de persoon die zich in een opgegeven partitie in tabel opslag bevinden. In het voor beeld wordt de partitie sleutel geëxtraheerd uit de http-route en de tabel naam en de verbinding zijn afkomstig uit de functie-instellingen. 
@@ -440,7 +349,7 @@ public HttpResponseMessage get(
 }
 ```
 
-In de volgende voor beelden wordt het filter gebruikt om een query uit te zoeken voor personen met een specifieke naam in een Azure-tabel en wordt het aantal mogelijke overeenkomsten beperkt tot 10 resultaten.
+In het volgende voor beeld wordt het filter gebruikt om een query uit te zoeken voor personen met een specifieke naam in een Azure-tabel en wordt het aantal mogelijke overeenkomsten beperkt tot 10 resultaten.
 
 ```java
 @FunctionName("getPersonsByName")
@@ -454,6 +363,143 @@ public Person[] get(
 
     return persons;
 }
+```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+In het volgende voor beeld wordt een tabel-invoer binding weer gegeven in een *function.jsvoor* de bestands-en [Java script-code](functions-reference-node.md) die gebruikmaakt van de binding. De functie maakt gebruik van een wachtrij trigger om één tabelrij te lezen. 
+
+Het *function.js* bestand bevat een `partitionKey` en een `rowKey` . De `rowKey` waarde {Queue trigger} geeft aan dat de rij-sleutel afkomstig is uit de wachtrij bericht teken reeks.
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "myQueueItem",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "personEntity",
+      "type": "table",
+      "tableName": "Person",
+      "partitionKey": "Test",
+      "rowKey": "{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+In de [configuratie](#configuration) sectie worden deze eigenschappen uitgelegd.
+
+Dit is de JavaScript-code:
+
+```javascript
+module.exports = function (context, myQueueItem) {
+    context.log('Node.js queue trigger function processed work item', myQueueItem);
+    context.log('Person entity name: ' + context.bindings.personEntity.Name);
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+De volgende functie maakt gebruik van een wachtrij trigger om één tabelrij als invoer naar een functie te lezen.
+
+In dit voor beeld geeft de binding configuratie een expliciete waarde voor de tabel `partitionKey` en maakt gebruik van een expressie om door te geven aan de `rowKey` . De `rowKey` expressie, `{queueTrigger}` geeft aan dat de rij-sleutel afkomstig is uit de wachtrij bericht teken reeks.
+
+Bindings configuratie in _function.jsop_:
+
+```json
+{
+  "bindings": [
+    {
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting",
+      "name": "MyQueueItem",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "PersonEntity",
+      "type": "table",
+      "tableName": "Person",
+      "partitionKey": "Test",
+      "rowKey": "{queueTrigger}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Power shell-code in _run.ps1_:
+
+```powershell
+param($MyQueueItem, $PersonEntity, $TriggerMetadata)
+Write-Host "PowerShell queue trigger function processed work item: $MyQueueItem"
+Write-Host "Person entity name: $($PersonEntity.Name)"
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+De volgende functie maakt gebruik van een wachtrij trigger om één tabelrij als invoer naar een functie te lezen.
+
+In dit voor beeld geeft de binding configuratie een expliciete waarde voor de tabel `partitionKey` en maakt gebruik van een expressie om door te geven aan de `rowKey` . De `rowKey` expressie `{id}` geeft aan dat de rij-sleutel afkomstig is uit de wachtrij bericht teken reeks.
+
+Bindings configuratie in het _function.js_ bestand:
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "messageJSON",
+      "type": "table",
+      "tableName": "messages",
+      "partitionKey": "message",
+      "rowKey": "{id}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "messages/{id}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ],
+  "disabled": false
+}
+```
+
+Python-code in het bestand *\_ \_ init \_ \_ . py* :
+
+```python
+import json
+
+import azure.functions as func
+
+def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
+
+    message = json.loads(messageJSON)
+    return func.HttpResponse(f"Table row: {messageJSON}")
 ```
 
 ---
@@ -522,17 +568,21 @@ Het opslag account dat moet worden gebruikt, wordt in de volgende volg orde bepa
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@TableInput` aantekening voor para meters waarvan de waarde afkomstig is uit de tabel opslag.  Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Kenmerken worden niet ondersteund door Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@TableInput` aantekening voor para meters waarvan de waarde afkomstig is uit de tabel opslag.  Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
 
 ---
 
@@ -548,7 +598,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**tableName** | **TableName** | De naam van de tabel.| 
 |**partitionKey** | **PartitionKey** |Optioneel. De partitie sleutel van de tabel entiteit die moet worden gelezen. Zie de sectie [gebruik](#usage) voor richt lijnen voor het gebruik van deze eigenschap.| 
 |**rowKey** |**RowKey** | Optioneel. De rij van de tabel entiteit die moet worden gelezen. Zie de sectie [gebruik](#usage) voor richt lijnen voor het gebruik van deze eigenschap.| 
-|**take** |**Houd** | Optioneel. Het maximum aantal entiteiten dat in Java script kan worden gelezen. Zie de sectie [gebruik](#usage) voor richt lijnen voor het gebruik van deze eigenschap.| 
+|**Houd** |**Houd** | Optioneel. Het maximum aantal entiteiten dat in Java script kan worden gelezen. Zie de sectie [gebruik](#usage) voor richt lijnen voor het gebruik van deze eigenschap.| 
 |**Filterwebonderdelen** |**Filter** | Optioneel. Een OData-filter expressie voor tabel invoer in Java script. Zie de sectie [gebruik](#usage) voor richt lijnen voor het gebruik van deze eigenschap.| 
 |**connection** |**Verbinding** | De naam van een app-instelling die de opslag connection string bevat die moet worden gebruikt voor deze binding. De instelling kan de naam zijn van een vooringestelde app-instelling voor ' AzureWebJobs ' of connection string naam. Als de naam van de instelling bijvoorbeeld ' AzureWebJobsMyStorage ' is, kunt u hier ' mijn opslag ' opgeven. De functions-runtime zoekt automatisch naar een app-instelling met de naam ' AzureWebJobsMyStorage '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .|
 
@@ -582,17 +632,21 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
   > [!NOTE]
   > `IQueryable` wordt niet ondersteund in de [runtime van functions v2](functions-versions.md). U kunt ook de [methode para meter CloudTable param gebruiken](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) om de tabel te lezen met behulp van de SDK van Azure Storage. Als u probeert verbinding te maken met `CloudTable` een fout bericht, moet u ervoor zorgen dat u een verwijzing naar [de juiste versie van de Storage SDK](./functions-bindings-storage-table.md#azure-storage-sdk-version-in-functions-1x)hebt.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Met het kenmerk [TableInput](/java/api/com.microsoft.azure.functions.annotation.tableinput) krijgt u toegang tot de tabelrij waarin de functie is geactiveerd.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Stel de `filter` Eigenschappen en in `take` . Niet instellen `partitionKey` of `rowKey` . Open de entiteit (of entiteiten) van de invoer tabel met behulp van `context.bindings.<BINDING_NAME>` . De gedeserialiseerd objecten hebben `RowKey` en `PartitionKey` Eigenschappen.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Gegevens worden door gegeven aan de invoer parameter zoals opgegeven door de `name` sleutel in de *function.jsvoor* het bestand. Opgeven `partitionKey` en `rowKey` Hiermee kunt u filteren op specifieke records. Zie het [Power shell-voor beeld](#example) voor meer informatie.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Tabel gegevens worden door gegeven aan de functie als een JSON-teken reeks. Deserialiseren van het bericht door aan te roepen `json.loads` zoals wordt weer gegeven in het invoer [voorbeeld](#example).
-
-# <a name="java"></a>[Java](#tab/java)
-
-Met het kenmerk [TableInput](/java/api/com.microsoft.azure.functions.annotation.tableinput) krijgt u toegang tot de tabelrij waarin de functie is geactiveerd.
 
 ---
 

@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: 0018b7bafa8ff2ecd328a150df752082c85484e2
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: bc80a4f5c6c2919f0cb3faa15958fb75eed70270
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608507"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035220"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Continue levering met behulp van GitHub-actie
 
-Gebruik [github-acties](https://github.com/features/actions) om een werk stroom te definiëren om automatisch code te bouwen en te implementeren in uw Azure-functie-app. 
+Gebruik [github-acties](https://github.com/features/actions) om een werk stroom te definiëren om automatisch code te bouwen en te implementeren in uw functie-app in azure functions. 
 
-In GitHub acties is een [werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functions-app-project bouwt en implementeert op GitHub. 
+In GitHub acties is een [werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functie-app-project bouwt en implementeert op GitHub. 
 
 Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom. 
 
@@ -187,6 +187,7 @@ In het volgende voor beeld ziet u het deel van de werk stroom dat de functie-app
 ---
 
 ## <a name="deploy-the-function-app"></a>De functie-app implementeren
+
 Gebruik de `Azure/functions-action` actie om uw code te implementeren in een functie-app. Deze actie heeft drie para meters:
 
 |Parameter |Uitleg  |
@@ -202,7 +203,7 @@ In het volgende voor beeld wordt versie 1 van de `functions-action` en a gebruik
 Stel een .NET Linux-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy DotNet project to Azure function app with a Linux environment
+name: Deploy DotNet project to function app with a Linux environment
 
 on:
   [push]
@@ -241,7 +242,7 @@ jobs:
 Stel een .NET Windows-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy DotNet project to Azure function app with a Windows environment
+name: Deploy DotNet project to function app with a Windows environment
 
 on:
   [push]
@@ -283,7 +284,7 @@ jobs:
 Stel een Java Linux-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy Java project to Azure Function App
+name: Deploy Java project to function app
 
 on:
   [push]
@@ -325,7 +326,7 @@ jobs:
 Stel een Java Windows-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy Java project to Azure Function App
+name: Deploy Java project to function app
 
 on:
   [push]
@@ -369,7 +370,7 @@ jobs:
 Stel een Node.JS Linux-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy Node.js project to Azure Function App
+name: Deploy Node.js project to function app
 
 on:
   [push]
@@ -411,7 +412,7 @@ jobs:
 Stel een Node.JS Windows-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy Node.js project to Azure Function App
+name: Deploy Node.js project to function app
 
 on:
   [push]
@@ -455,7 +456,7 @@ jobs:
 Stel een python Linux-werk stroom in die gebruikmaakt van een publicatie profiel.
 
 ```yaml
-name: Deploy Python project to Azure Function App
+name: Deploy Python project to function app
 
 on:
   [push]

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: c2620b52c426871b0ec85e3db237be2d373d42f1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9a1a55bdf21b74116450ca32f66d891f1aa206d3
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458700"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045407"
 ---
 # <a name="add-tags-to-digital-twins"></a>Tags toevoegen aan digitale apparaatdubbels 
 
@@ -32,23 +32,7 @@ Markerings Tags worden gemodelleerd als een [DTDL](https://github.com/Azure/open
 
 Hier volgt een uittreksel van een dubbel model waarmee een markerings code wordt geïmplementeerd als een eigenschap:
 
-```json
-{
-  "@type": "Property",
-  "name": "tags",
-  "schema": {
-    "@type": "Map",
-    "mapKey": {
-      "name": "tagName",
-      "schema": "string"
-    },
-    "mapValue": {
-      "name": "tagValue",
-      "schema": "boolean"
-    }
-  }
-}
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/tags.json" range="2-16":::
 
 ### <a name="add-marker-tags-to-digital-twins"></a>Markerings Tags toevoegen aan digitale apparaatdubbels
 
@@ -56,11 +40,7 @@ Zodra de `tags` eigenschap deel uitmaakt van een digitaal en dubbel model, kunt 
 
 Hier volgt een voor beeld waarin de markering `tags` voor drie apparaatdubbels wordt ingevuld:
 
-```csharp
-entity-01: "tags": { "red": true, "round": true } 
-entity-02: "tags": { "blue": true, "round": true } 
-entity-03: "tags": { "red": true, "large": true } 
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="TagPropertiesMarker":::
 
 ### <a name="query-with-marker-tags"></a>Query met markerings Tags
 
@@ -68,15 +48,11 @@ Zodra Tags zijn toegevoegd aan digitale apparaatdubbels, kunnen de tags worden g
 
 Hier volgt een query om alle apparaatdubbels op te halen die zijn gelabeld als ' Red ': 
 
-```sql
-SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags1":::
 
 U kunt ook labels combi neren voor complexere query's. Hier volgt een query voor het ophalen van alle apparaatdubbels die worden afgerond en niet rood: 
 
-```sql
-SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.round) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags2":::
 
 ## <a name="value-tags"></a>Waarde-labels 
 
@@ -88,23 +64,7 @@ Waarde-labels worden gemodelleerd als een [DTDL](https://github.com/Azure/opendi
 
 Hier volgt een uittreksel van een dubbel model waarmee een waarde-tag wordt geïmplementeerd als een eigenschap:
 
-```json
-{
-  "@type": "Property",
-  "name": "tags",
-  "schema": {
-    "@type": "Map",
-    "mapKey": {
-      "name": "tagName",
-      "schema": "string"
-    },
-    "mapValue": {
-      "name": "tagValue",
-      "schema": "string"
-    }
-  }
-} 
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/tags.json" range="17-31":::
 
 ### <a name="add-value-tags-to-digital-twins"></a>Waarde-Tags toevoegen aan digitale apparaatdubbels
 
@@ -112,11 +72,7 @@ Net als bij markeringen Tags kunt u de waardecode instellen in een digitale dubb
 
 Hier volgt een voor beeld waarin de waarde `tags` voor drie apparaatdubbels wordt ingevuld:
 
-```csharp
-entity-01: "tags": { "red": "", "size": "large" } 
-entity-02: "tags": { "purple": "", "size": "small" } 
-entity-03: "tags": { "red": "", "size": "small" } 
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="TagPropertiesValue":::
 
 Houd er rekening mee dat `red` `purple` in dit voor beeld als markeringen Tags worden gebruikt.
 
@@ -124,17 +80,13 @@ Houd er rekening mee dat `red` `purple` in dit voor beeld als markeringen Tags w
 
 Net als bij markeringen Tags kunt u de apparaatdubbels gebruiken om de waarde in query's te filteren. U kunt ook de labels Tags en markeringen samen gebruiken.
 
-In het bovenstaande voor beeld `red` wordt gebruikt als markerings code. Hier volgt een query om alle apparaatdubbels op te halen die zijn gelabeld als ' Red ': 
+In het bovenstaande voor beeld `red` wordt gebruikt als markerings code. Houd er rekening mee dat dit een query is voor het ophalen van alle apparaatdubbels die zijn gelabeld als ' Red ': 
 
-```sql
-SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags1":::
 
 Hier volgt een query om alle entiteiten te verkrijgen die klein zijn (waarde-tag) en niet rood: 
 
-```sql
-SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND tags.size = 'small' 
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerValueTags":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

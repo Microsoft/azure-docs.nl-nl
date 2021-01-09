@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 12/07/2020
-ms.openlocfilehash: 6ad58283ad9078088f241a67426657eb7a538e10
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 0114c75d99d79041631e5078deb33f77863dc35a
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96781127"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043775"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Migratie van oplossingen voor co-sell van een OCP-GTM naar de commerciële Marketplace
 
@@ -136,7 +136,7 @@ Lees de juiste [publicatie handleiding](publisher-guide-by-offer-type.md)voor ge
 
     :::image type="content" source="media/co-sell-migrate/offer-setup.png" alt-text="De tabbladen Overzicht instellen in partner centrum.":::
 
-3. Sommige van de verkopers gerichte gegevens van micro soft zijn gekopieerd van de GTM-oplossing van OCP. Voltooi de resterende vereiste informatie op het tabblad **samen met micro soft** om te zorgen dat uw aanbieding klaar is voor samen verkopen. Wanneer u klaar bent, selecteert u **controleren en publiceren**.
+3. Sommige van de verkopers gerichte gegevens van micro soft zijn gekopieerd van de GTM-oplossing van OCP. Voltooi de resterende vereiste informatie op het tabblad **samen met micro soft** om te zorgen dat uw aanbieding klaar is voor samen verkopen. Wanneer u klaar bent, selecteert u **controleren en publiceren**. Zie voor meer informatie [het verzenden van materialen voor co-verkoop in Partner Center](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center).
 
     :::image type="content" source="media/co-sell-migrate/co-sell-page.png" alt-text="Het tabblad co-sell bieden in het partner centrum.":::
 
@@ -154,4 +154,6 @@ Lees de juiste [publicatie handleiding](publisher-guide-by-offer-type.md)voor ge
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Doorverkopen via CSP-partners](cloud-solution-providers.md)
+- [Het verzenden van materialen voor coselling in Partner Center](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center)
 - Deze [Veelgestelde vragen](https://partner.microsoft.com/resources/detail/co-sell-requirements-publish-commercial-marketplace-faq-pdf) (PDF) weer geven
+

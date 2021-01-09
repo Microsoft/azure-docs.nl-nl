@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 22bedcf7921e3c8d4f2566a70515eef3e3b136b6
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a0f2b971eae5d37e8fb0771e213075289af6c519
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461019"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045254"
 ---
 # <a name="understand-event-data"></a>Informatie over gebeurtenis gegevens
 
@@ -262,20 +262,7 @@ De hoofd tekst van de `Twin.Update` melding is een JSON-patch document met de up
 
 Stel bijvoorbeeld dat een digitaal is bijgewerkt met behulp van de volgende patch.
 
-```json
-[
-    {
-        "op": "replace",
-        "value": 40,
-        "path": "/Temperature"
-    },
-    {
-        "op": "add",
-        "value": 30,
-        "path": "/comp1/prop1"
-    }
-]
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/patch-component-2.json":::
 
 De bijbehorende melding (als synchroon door de service wordt uitgevoerd, zoals Azure Digital Apparaatdubbels het bijwerken van een digitale dubbele) zou een hoofd tekst hebben als:
 

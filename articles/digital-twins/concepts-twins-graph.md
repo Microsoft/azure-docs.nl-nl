@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: a1fc5be93e2b9729838aa9fb3a777936003c5f45
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: d9a6eb572b1ab870fdb848f8b0989f88e6dbc3c0
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356384"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045951"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Meer informatie over digitale apparaatdubbels en hun twee grafieken
 
@@ -25,7 +25,7 @@ In een Azure Digital Apparaatdubbels-oplossing worden de entiteiten in uw omgevi
 
 Voordat u een digitale dubbele in uw Azure Digital Apparaatdubbels-exemplaar kunt maken, moet u een *model* hebben dat naar de service wordt geüpload. Een model beschrijft de set eigenschappen, telemetrie-berichten en relaties die een bepaalde dubbele kan hebben, onder andere. Zie [*concepten: Custom modelers*](concepts-models.md)(Engelstalig) voor informatie over de typen die in een model zijn gedefinieerd.
 
-Na het maken en uploaden van een model, kan uw client-app een exemplaar van het type maken. Dit is een digitale dubbele. Nadat u bijvoorbeeld een model van de *vloer* hebt gemaakt, kunt u een of meer digitale apparaatdubbels maken die gebruikmaken van dit type (zoals een *Floor* -type met dubbele naam *GroundFloor* , een andere met de naam *Floor2* , enzovoort). 
+Na het maken en uploaden van een model, kan uw client-app een exemplaar van het type maken. Dit is een digitale dubbele. Nadat u bijvoorbeeld een model van de *vloer* hebt gemaakt, kunt u een of meer digitale apparaatdubbels maken die gebruikmaken van dit type (zoals een *Floor*-type met dubbele naam *GroundFloor*, een andere met de naam *Floor2*, enzovoort). 
 
 ## <a name="relationships-a-graph-of-digital-twins"></a>Relaties: een grafiek met digitale apparaatdubbels
 
@@ -47,7 +47,7 @@ Hieronder vindt u een code fragment van de clientcode die gebruikmaakt van de [D
 
 U kunt de eigenschappen van een dubbele waarde initialiseren wanneer deze wordt gemaakt of later instellen. Als u een dubbele met geïnitialiseerde eigenschappen wilt maken, moet u een JSON-document maken dat de benodigde initialisatie waarden verschaft.
 
-[!INCLUDE [Azure Digital Twins code: create twin](../../includes/digital-twins-code-create-twin.md)]
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="CreateTwin_noHelper":::
 
 U kunt ook een helper-klasse met de naam gebruiken `BasicDigitalTwin` om eigenschaps velden in een ' twee ' object direct sneller op te slaan als alternatief voor het gebruik van een woorden lijst. Zie voor meer informatie over de Help-klasse en voor beelden van het gebruik van het artikel [*een digitale dubbele sectie maken*](how-to-manage-twin.md#create-a-digital-twin) van *How-to: Manage Digital apparaatdubbels*.
 
@@ -58,25 +58,7 @@ U kunt ook een helper-klasse met de naam gebruiken `BasicDigitalTwin` om eigensc
 
 Hier volgt een voor beeld van een client code die gebruikmaakt van de [DigitalTwins-api's](/rest/api/digital-twins/dataplane/twins) voor het bouwen van een relatie tussen een van de twee *basis* typen, *GroundFloor* en een *kamer* type digitale dubbele naam *Cafe*.
 
-```csharp
-// Create Twins, using functions similar to the previous sample
-await CreateRoom("Cafe", 70, 66);
-await CreateFloor("GroundFloor", averageTemperature=70);
-// Create relationships
-var relationship = new BasicRelationship
-{
-    TargetId = "Cafe",
-    Name = "contains"
-};
-try
-{
-    string relId = $"GroundFloor-contains-Cafe";
-    await client.CreateOrReplaceRelationshipAsync<BasicRelationship>("GroundFloor", relId, relationship);
-} catch(ErrorResponseException e)
-{
-    Console.WriteLine($"*** Error creating relationship: {e.Response.StatusCode}");
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_other.cs" id="CreateRelationship_3":::
 
 ## <a name="json-representations-of-graph-elements"></a>JSON-representaties van grafiek elementen
 
@@ -90,7 +72,7 @@ Wanneer het wordt weer gegeven als een JSON-object, worden de volgende velden we
 | --- | --- |
 | `$dtId` | Een door de gebruiker gegeven teken reeks voor de ID van de digitale dubbele |
 | `$etag` | Standaard-HTTP-veld toegewezen door de webserver |
-| `$conformance` | Een enum met de status van de conformiteit van deze digitale twee richting *(conformiteit* , *non-conformiteit* , *onbekend* ) |
+| `$conformance` | Een enum met de status van de conformiteit van deze digitale twee richting *(conformiteit*, *non-conformiteit*, *onbekend*) |
 | `{propertyName}` | De waarde van een eigenschap in JSON ( `string` , Number type of object) |
 | `$relationships` | De URL van het pad naar de verzameling relationships. Dit veld is niet aanwezig als de digitale twee kanten geen uitgaande relatie randen hebben. |
 | `$metadata.$model` | Beschrijving De ID van de model interface die dit digitale dubbele |

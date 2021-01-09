@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: d54994a7c64718835e70381f92abed83ef693018
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: ef018e58f8336220b96eba568c94efc40a0fb0c7
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938508"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045390"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Open bare Azure-Load Balancer bijwerken
 [Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](./skus.md#skus)voor meer informatie over Load Balancer SKU.
@@ -120,10 +120,6 @@ Het duurt meestal ongeveer 5-10 minuten voordat het script is voltooid en het ka
 ### <a name="does-the-azure-powershell-script-also-switch-over-the-traffic-from-my-basic-load-balancer-to-the-newly-created-standard-load-balancer"></a>Schakelt het Azure PowerShell script ook over op het verkeer van mijn basis Load Balancer naar de zojuist gemaakte Standard Load Balancer?
 
 Ja. Het Azure PowerShell script voert niet alleen een upgrade uit van het open bare IP-adres, kopieert de configuratie van Basic naar Standard Load Balancer, maar migreert ook de virtuele machine naar achter de zojuist gemaakte standaard open bare Load Balancer. 
-
-### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>Er zijn problemen opgetreden bij het gebruik van dit script. Hoe kan ik hulp krijgen?
-  
-U kunt een e-mail verzenden naar slbupgradesupport@microsoft.com , een ondersteunings aanvraag openen met ondersteuning voor Azure of beide.
 
 ## <a name="next-steps"></a>Volgende stappen
 

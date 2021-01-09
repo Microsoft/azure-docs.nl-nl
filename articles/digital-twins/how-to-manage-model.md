@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ca56c285baff9982ff465b0d4115d15eadedb8c9
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: a8b2fdf99b33df3322748b7e073cc4ab18957c84
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534752"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045237"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
 
@@ -36,40 +36,12 @@ Bekijk een voor beeld waarin een zieken huis hun kamers digitaal wil vertegenwoo
 
 De eerste stap bij de oplossing is het maken van modellen om aspecten van het zieken huis weer te geven. In dit scenario kan een patiënt kamer als volgt worden beschreven:
 
-```json
-{
-  "@id": "dtmi:com:contoso:PatientRoom;1",
-  "@type": "Interface",
-  "@context": "dtmi:dtdl:context;2",
-  "displayName": "Patient Room",
-  "contents": [
-    {
-      "@type": "Property",
-      "name": "visitorCount",
-      "schema": "double"
-    },
-    {
-      "@type": "Property",
-      "name": "handWashCount",
-      "schema": "double"
-    },
-    {
-      "@type": "Property",
-      "name": "handWashPercentage",
-      "schema": "double"
-    },
-    {
-      "@type": "Relationship",
-      "name": "hasDevices"
-    }
-  ]
-}
-```
+:::code language="json" source="~/digital-twins-docs-samples/models/PatientRoom.json":::
 
 > [!NOTE]
 > Dit is een voorbeeld hoofdtekst voor een JSON-bestand waarin een model is gedefinieerd en opgeslagen om te worden geüpload als onderdeel van een client project. De REST API roept daarentegen een matrix met model definities aan zoals de hierboven beschreven (die is toegewezen aan een `IEnumerable<string>` in de .NET SDK). Als u dit model direct wilt gebruiken in de REST API, plaatst u het tussen vier Kante haken.
 
-Dit model definieert een naam en een unieke ID voor de patiënt kamer en eigenschappen om het aantal bezoekers en de status van de hand te geven (deze tellers worden bijgewerkt op basis van bewegings sensoren en slimme zeep-dispensers en worden gebruikt om een eigenschap van het *handwash percentage* te berekenen). Het model definieert ook een relatie *hasDevices* , die wordt gebruikt voor het verbinden van een [digitale apparaatdubbels](concepts-twins-graph.md) op basis van dit *room* -model op de werkelijke apparaten.
+Dit model definieert een naam en een unieke ID voor de patiënt kamer en eigenschappen om het aantal bezoekers en de status van de hand te geven (deze tellers worden bijgewerkt op basis van bewegings sensoren en slimme zeep-dispensers en worden gebruikt om een eigenschap van het *handwash percentage* te berekenen). Het model definieert ook een relatie *hasDevices*, die wordt gebruikt voor het verbinden van een [digitale apparaatdubbels](concepts-twins-graph.md) op basis van dit *room* -model op de werkelijke apparaten.
 
 U kunt aan de slag met deze methode om modellen te definiëren voor de weers huizen, zones of het zieken huis zelf.
 
@@ -86,48 +58,16 @@ Zodra de modellen zijn gemaakt, kunt u deze uploaden naar het Azure Digital Appa
 
 Wanneer u klaar bent voor het uploaden van een model, kunt u het volgende code fragment gebruiken:
 
-```csharp
-// 'client' is an instance of DigitalTwinsClient
-// Read model file into string (not part of SDK)
-StreamReader r = new StreamReader("MyModelFile.json");
-string dtdl = r.ReadToEnd(); r.Close();
-string[] dtdls = new string[] { dtdl };
-client.CreateModels(dtdls);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="CreateModel":::
 
 Houd er rekening mee dat de `CreateModels` methode meerdere bestanden in één trans actie accepteert. Hier volgt een voor beeld om te illustreren:
 
-```csharp
-var dtdlFiles = Directory.EnumerateFiles(sourceDirectory, "*.json");
-
-List<string> dtdlStrings = new List<string>();
-foreach (string fileName in dtdlFiles)
-{
-    // Read model file into string (not part of SDK)
-    StreamReader r = new StreamReader(fileName);
-    string dtdl = r.ReadToEnd(); r.Close();
-    dtdlStrings.Add(dtdl);
-}
-client.CreateModels(dtdlStrings);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="CreateModels_multi":::
 
 Model bestanden kunnen meer dan één model bevatten. In dit geval moeten de modellen in een JSON-matrix worden geplaatst. Bijvoorbeeld:
 
-```json
-[
-  {
-    "@id": "dtmi:com:contoso:Planet",
-    "@type": "Interface",
-    //...
-  },
-  {
-    "@id": "dtmi:com:contoso:Moon",
-    "@type": "Interface",
-    //...
-  }
-]
-```
- 
+:::code language="json" source="~/digital-twins-docs-samples/models/Planet-Moon.json":::
+
 Bij het uploaden worden model bestanden gevalideerd door de service.
 
 ## <a name="retrieve-models"></a>Modellen ophalen
@@ -141,18 +81,7 @@ Hier zijn uw opties voor het volgende:
 
 Hier volgen enkele voor beelden van aanroepen:
 
-```csharp
-// 'client' is a valid DigitalTwinsClient object
-
-// Get a single model, metadata and data
-DigitalTwinsModelData md1 = client.GetModel(id);
-
-// Get a list of the metadata of all available models
-Pageable<DigitalTwinsModelData> pmd2 = client.GetModels();
-
-// Get models and metadata for a model ID, including all dependencies (models that it inherits from, components it references)
-Pageable<DigitalTwinsModelData> pmd3 = client.GetModels(new GetModelsOptions { IncludeModelDefinition = true });
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="GetModels":::
 
 De API roept alle retour objecten op om modellen op te halen `DigitalTwinsModelData` . `DigitalTwinsModelData` bevat meta gegevens over het model dat is opgeslagen in het Azure Digital Apparaatdubbels-exemplaar, zoals de naam, de DTMI en de aanmaak datum van het model. Het `DigitalTwinsModelData` object bevat ook optioneel het model zelf. Afhankelijk van de para meters kunt u de opgehaalde aanroepen gebruiken om alleen meta gegevens op te halen (wat handig is in scenario's waarin u een lijst met beschik bare hulpprogram ma's voor de gebruikers interface wilt weer geven) of het hele model.
 
@@ -208,12 +137,7 @@ Dit zijn afzonderlijke functies en ze zijn niet van invloed op elkaar, maar ze k
 
 Dit is de code voor het buiten gebruik stellen van een model:
 
-```csharp
-// 'client' is a valid DigitalTwinsClient  
-client.DecommissionModel(dtmiOfPlanetInterface);
-// Write some code that deletes or transitions digital twins
-//...
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="DecommissionModel":::
 
 De status van de buiten gebruik stellen van een model is opgenomen in de records die worden `ModelData` geretourneerd door de api's voor het ophalen van het model.
 
@@ -244,10 +168,8 @@ Zelfs als een model voldoet aan de vereisten om het direct te verwijderen, kunt 
 6. Het model verwijderen 
 
 Als u een model wilt verwijderen, gebruikt u deze aanroep:
-```csharp
-// 'client' is a valid DigitalTwinsClient
-await client.DeleteModelAsync(IDToDelete);
-```
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="DeleteModel":::
 
 #### <a name="after-deletion-twins-without-models"></a>Na verwijdering: Apparaatdubbels zonder modellen
 

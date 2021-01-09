@@ -5,13 +5,13 @@ author: ThomasWeiss
 ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/23/2020
-ms.openlocfilehash: c5086eee805ffbcdf0741eae4db405b1bcbe8692
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.date: 01/08/2021
+ms.openlocfilehash: d39bc35d1edcbcfef4c7774259112ec5144efa15
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760356"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044336"
 ---
 # <a name="azure-cosmos-db-serverless-preview"></a>Azure Cosmos DB serverloze (preview-versie)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,16 +31,13 @@ Wanneer u Azure Cosmos DB gebruikt, worden voor elke database bewerking de koste
 
 ## <a name="use-cases"></a>Use-cases
 
-Azure Cosmos DB server het beste geschikt is voor scenario's waar u verwacht:
-
-- **Laag, onregelmatig en onvoorspelbaar verkeer**: omdat het inrichten van capaciteit in dergelijke situaties niet vereist is en het mogelijk is dat de kosten worden verboden
-- **Matige prestaties**: omdat containers van serverloze [specifieke prestatie kenmerken](#performance) hebben
-
-Om deze redenen moet Azure Cosmos DB serverloze worden overwogen in de volgende situaties:
+Azure Cosmos DB serverloze best passende scenario's waarbij u loopt **af en toe zonder voor speld verkeer** met lange inactieve tijden. Omdat het inrichten van de capaciteit in dergelijke situaties niet vereist is en de kosten kunnen worden verboden, Azure Cosmos DB serverloos moet worden overwogen in de volgende gebruiks gevallen:
 
 - Aan de slag met Azure Cosmos DB
-- Ontwikkeling, testen en prototypen van nieuwe toepassingen
-- Kleine tot middel grote toepassingen uitvoeren met onregelmatige verkeer dat moeilijk te voors pellen is
+- Toepassingen uitvoeren met
+    - bursteel, onregelmatig verkeer dat moeilijk te voors pellen is, of
+    - laag (<10%) gemiddelde verkeers verhouding voor piek uren
+- Ontwikkelen, testen, prototypen en uitvoeren in productie nieuwe toepassingen waarbij het verkeers patroon onbekend is
 - Integreren met serverloze Compute-services zoals [Azure functions](../azure-functions/functions-overview.md)
 
 Zie de [keuze tussen ingerichte door Voer en serverloos](throughput-serverless.md) artikel voor meer informatie over het kiezen van de aanbieding die het beste bij uw gebruik past.
@@ -74,14 +71,7 @@ U kunt dezelfde grafiek vinden wanneer u Azure Monitor gebruikt, zoals [hier](mo
 
 ## <a name="performance"></a><a id="performance"></a>Prestaties
 
-Serverloze resources geven specifieke prestatie kenmerken door die afwijken van de ingerichte doorvoer resources:
-
-- **Beschik baarheid**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de beschik baarheid van serverloze containers gedekt door een Service Level Agreement (Sla) van 99,9% wanneer Beschikbaarheidszones (zone redundantie) niet wordt gebruikt. De SLA is 99,99% wanneer Beschikbaarheidszones worden gebruikt.
-- **Latentie**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de latentie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 10 milliseconden of minder voor punt-en 30 milliseconden of minder voor schrijf bewerkingen. Een lees bewerking voor een punt bestaat uit het ophalen van één item met de ID en partitie sleutel waarde.
-- **Burstie**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de burstie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 95%. Dit betekent dat de maximale burstie ten minste 95% van de tijd kan worden bereikt.
-
-> [!NOTE]
-> Als Azure-Preview wordt Azure Cosmos DB serverloos uitgesloten van service overeenkomsten (SLA). De prestatie-eigenschappen die hierboven worden vermeld, worden geleverd als een preview van wat deze aanbieding zal leveren wanneer algemeen beschikbaar is.
+Serverloze resources geven specifieke prestatie kenmerken door die afwijken van de ingerichte doorvoer resources. Nadat de aanbieding zonder server algemeen beschikbaar is, wordt de latentie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 10 milliseconden of minder voor punt-en 30 milliseconden of minder voor schrijf bewerkingen. Een lees bewerking voor een punt bestaat uit het ophalen van één item met de ID en partitie sleutel waarde.
 
 ## <a name="next-steps"></a>Volgende stappen
 
